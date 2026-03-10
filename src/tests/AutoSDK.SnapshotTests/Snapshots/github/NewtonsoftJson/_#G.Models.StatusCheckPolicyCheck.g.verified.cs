@@ -19,8 +19,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("app_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? AppId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("app_id")]
+        public int? AppId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

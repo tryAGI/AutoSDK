@@ -54,8 +54,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("unit_name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? UnitName { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("unit_name")]
+        public string? UnitName { get; set; }
 
         /// <summary>
         /// 
@@ -89,8 +89,8 @@ namespace G
             int monthlyPriceInCents,
             string name,
             global::G.WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel priceModel,
-            string? unitName,
-            int yearlyPriceInCents)
+            int yearlyPriceInCents,
+            string? unitName)
         {
             this.Bullets = bullets ?? throw new global::System.ArgumentNullException(nameof(bullets));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
@@ -99,8 +99,8 @@ namespace G
             this.MonthlyPriceInCents = monthlyPriceInCents;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.PriceModel = priceModel;
-            this.UnitName = unitName ?? throw new global::System.ArgumentNullException(nameof(unitName));
             this.YearlyPriceInCents = yearlyPriceInCents;
+            this.UnitName = unitName;
         }
 
         /// <summary>

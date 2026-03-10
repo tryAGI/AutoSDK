@@ -27,8 +27,7 @@ namespace G
         /// A git repository
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repo")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPullRequestReviewCommentDeletedPullRequestHeadRepo? Repo { get; set; }
+        public global::G.WebhookPullRequestReviewCommentDeletedPullRequestHeadRepo? Repo { get; set; }
 
         /// <summary>
         /// 
@@ -41,8 +40,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPullRequestReviewCommentDeletedPullRequestHeadUser? User { get; set; }
+        public global::G.WebhookPullRequestReviewCommentDeletedPullRequestHeadUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -66,15 +64,15 @@ namespace G
         public WebhookPullRequestReviewCommentDeletedPullRequestHead(
             string label,
             string @ref,
-            global::G.WebhookPullRequestReviewCommentDeletedPullRequestHeadRepo? repo,
             string sha,
+            global::G.WebhookPullRequestReviewCommentDeletedPullRequestHeadRepo? repo,
             global::G.WebhookPullRequestReviewCommentDeletedPullRequestHeadUser? user)
         {
             this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
             this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
-            this.Repo = repo ?? throw new global::System.ArgumentNullException(nameof(repo));
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.Repo = repo;
+            this.User = user;
         }
 
         /// <summary>

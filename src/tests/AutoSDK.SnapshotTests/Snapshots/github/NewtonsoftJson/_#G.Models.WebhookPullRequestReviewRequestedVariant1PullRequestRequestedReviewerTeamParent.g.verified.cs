@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// Description of the team
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -106,7 +106,6 @@ namespace G
         /// URL for the team
         /// </param>
         public WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerTeamParent(
-            string? description,
             string htmlUrl,
             int id,
             string membersUrl,
@@ -116,9 +115,9 @@ namespace G
             global::G.WebhookPullRequestReviewRequestedVariant1PullRequestRequestedReviewerTeamParentPrivacy privacy,
             string repositoriesUrl,
             string slug,
-            string url)
+            string url,
+            string? description)
         {
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.MembersUrl = membersUrl ?? throw new global::System.ArgumentNullException(nameof(membersUrl));
@@ -129,6 +128,7 @@ namespace G
             this.RepositoriesUrl = repositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(repositoriesUrl));
             this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Description = description;
         }
 
         /// <summary>

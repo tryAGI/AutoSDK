@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("finish_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CompletionResponseStreamChoiceFinishReason? FinishReason { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("finish_reason")]
+        public global::G.CompletionResponseStreamChoiceFinishReason? FinishReason { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

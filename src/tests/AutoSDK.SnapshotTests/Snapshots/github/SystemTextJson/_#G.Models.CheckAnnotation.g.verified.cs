@@ -38,48 +38,42 @@ namespace G
         /// </summary>
         /// <example>5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_column")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? StartColumn { get; set; }
+        public int? StartColumn { get; set; }
 
         /// <summary>
         /// Example: 10
         /// </summary>
         /// <example>10</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_column")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? EndColumn { get; set; }
+        public int? EndColumn { get; set; }
 
         /// <summary>
         /// Example: warning
         /// </summary>
         /// <example>warning</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotation_level")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? AnnotationLevel { get; set; }
+        public string? AnnotationLevel { get; set; }
 
         /// <summary>
         /// Example: Spell Checker
         /// </summary>
         /// <example>Spell Checker</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Title { get; set; }
+        public string? Title { get; set; }
 
         /// <summary>
         /// Example: Check your spelling for 'banaas'.
         /// </summary>
         /// <example>Check your spelling for 'banaas'.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Message { get; set; }
+        public string? Message { get; set; }
 
         /// <summary>
         /// Example: Do you mean 'bananas' or 'banana'?
         /// </summary>
         /// <example>Do you mean 'bananas' or 'banana'?</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("raw_details")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? RawDetails { get; set; }
+        public string? RawDetails { get; set; }
 
         /// <summary>
         /// 
@@ -132,24 +126,24 @@ namespace G
             string path,
             int startLine,
             int endLine,
+            string blobHref,
             int? startColumn,
             int? endColumn,
             string? annotationLevel,
             string? title,
             string? message,
-            string? rawDetails,
-            string blobHref)
+            string? rawDetails)
         {
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.StartLine = startLine;
             this.EndLine = endLine;
+            this.BlobHref = blobHref ?? throw new global::System.ArgumentNullException(nameof(blobHref));
             this.StartColumn = startColumn;
             this.EndColumn = endColumn;
-            this.AnnotationLevel = annotationLevel ?? throw new global::System.ArgumentNullException(nameof(annotationLevel));
-            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.RawDetails = rawDetails ?? throw new global::System.ArgumentNullException(nameof(rawDetails));
-            this.BlobHref = blobHref ?? throw new global::System.ArgumentNullException(nameof(blobHref));
+            this.AnnotationLevel = annotationLevel;
+            this.Title = title;
+            this.Message = message;
+            this.RawDetails = rawDetails;
         }
 
         /// <summary>

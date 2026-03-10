@@ -92,8 +92,8 @@ namespace G
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("metadata", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("metadata")]
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
         /// An object representing an error response from the Eval API.
@@ -169,8 +169,8 @@ namespace G
             global::System.Collections.Generic.IList<global::G.EvalRunPerModelUsageItem> perModelUsage,
             global::System.Collections.Generic.IList<global::G.EvalRunPerTestingCriteriaResult> perTestingCriteriaResults,
             global::G.OneOf<global::G.CreateEvalJsonlRunDataSource, global::G.CreateEvalCompletionsRunDataSource, global::G.CreateEvalResponsesRunDataSource> dataSource,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::G.EvalApiError error,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::G.EvalRunObject @object = global::G.EvalRunObject.EvalRun)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -184,9 +184,9 @@ namespace G
             this.PerModelUsage = perModelUsage ?? throw new global::System.ArgumentNullException(nameof(perModelUsage));
             this.PerTestingCriteriaResults = perTestingCriteriaResults ?? throw new global::System.ArgumentNullException(nameof(perTestingCriteriaResults));
             this.DataSource = dataSource;
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
             this.Object = @object;
+            this.Metadata = metadata;
         }
 
         /// <summary>

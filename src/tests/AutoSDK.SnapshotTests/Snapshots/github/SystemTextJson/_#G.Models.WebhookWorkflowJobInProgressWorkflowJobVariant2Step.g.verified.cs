@@ -13,15 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? CompletedAt { get; set; }
+        public string? CompletedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Conclusion { get; set; }
+        public string? Conclusion { get; set; }
 
         /// <summary>
         /// 
@@ -41,8 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("started_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? StartedAt { get; set; }
+        public string? StartedAt { get; set; }
 
         /// <summary>
         /// 
@@ -71,19 +68,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookWorkflowJobInProgressWorkflowJobVariant2Step(
-            string? completedAt,
-            string? conclusion,
             string name,
             int number,
-            string? startedAt,
-            global::G.WebhookWorkflowJobInProgressWorkflowJobVariant2StepStatus status)
+            global::G.WebhookWorkflowJobInProgressWorkflowJobVariant2StepStatus status,
+            string? completedAt,
+            string? conclusion,
+            string? startedAt)
         {
-            this.CompletedAt = completedAt ?? throw new global::System.ArgumentNullException(nameof(completedAt));
-            this.Conclusion = conclusion ?? throw new global::System.ArgumentNullException(nameof(conclusion));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Number = number;
-            this.StartedAt = startedAt ?? throw new global::System.ArgumentNullException(nameof(startedAt));
             this.Status = status;
+            this.CompletedAt = completedAt;
+            this.Conclusion = conclusion;
+            this.StartedAt = startedAt;
         }
 
         /// <summary>

@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("sha", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Sha { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("sha")]
+        public string? Sha { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Url { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("url")]
+        public string? Url { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,8 +36,8 @@ namespace G
             string? sha,
             string? url)
         {
-            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Sha = sha;
+            this.Url = url;
         }
 
         /// <summary>

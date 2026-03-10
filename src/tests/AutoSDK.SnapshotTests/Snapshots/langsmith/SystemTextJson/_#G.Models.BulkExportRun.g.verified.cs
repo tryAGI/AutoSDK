@@ -68,8 +68,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finished_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? FinishedAt { get; set; }
+        public global::System.DateTime? FinishedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -101,9 +100,9 @@ namespace G
             global::G.BulkExportRunStatus status,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            global::System.DateTime? finishedAt,
             int? retryNumber,
-            object? errors)
+            object? errors,
+            global::System.DateTime? finishedAt)
         {
             this.BulkExportId = bulkExportId;
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
@@ -111,9 +110,9 @@ namespace G
             this.Status = status;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.FinishedAt = finishedAt ?? throw new global::System.ArgumentNullException(nameof(finishedAt));
             this.RetryNumber = retryNumber;
             this.Errors = errors;
+            this.FinishedAt = finishedAt;
         }
 
         /// <summary>

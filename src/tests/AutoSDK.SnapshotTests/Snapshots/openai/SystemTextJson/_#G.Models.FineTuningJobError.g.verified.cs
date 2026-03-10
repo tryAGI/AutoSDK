@@ -27,8 +27,7 @@ namespace G
         /// The parameter that was invalid, usually `training_file` or `validation_file`. This field will be null if the failure was not parameter-specific.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("param")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Param { get; set; }
+        public string? Param { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -58,7 +57,7 @@ namespace G
         {
             this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.Param = param ?? throw new global::System.ArgumentNullException(nameof(param));
+            this.Param = param;
         }
 
         /// <summary>

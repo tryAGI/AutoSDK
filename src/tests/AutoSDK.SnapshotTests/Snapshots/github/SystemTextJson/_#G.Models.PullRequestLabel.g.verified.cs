@@ -41,8 +41,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -82,17 +81,17 @@ namespace G
             string nodeId,
             string url,
             string name,
-            string? description,
             string color,
-            bool @default)
+            bool @default,
+            string? description)
         {
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Color = color ?? throw new global::System.ArgumentNullException(nameof(color));
             this.Default = @default;
+            this.Description = description;
         }
 
         /// <summary>

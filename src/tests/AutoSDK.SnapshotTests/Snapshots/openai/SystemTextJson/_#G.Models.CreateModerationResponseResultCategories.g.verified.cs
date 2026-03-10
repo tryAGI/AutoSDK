@@ -41,15 +41,13 @@ namespace G
         /// Content that includes instructions or advice that facilitate the planning or execution of wrongdoing, or that gives advice or instruction on how to commit illicit acts. For example, "how to shoplift" would fit this category.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("illicit")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool? Illicit { get; set; }
+        public bool? Illicit { get; set; }
 
         /// <summary>
         /// Content that includes instructions or advice that facilitate the planning or execution of wrongdoing that also includes violence, or that gives advice or instruction on the procurement of any weapon.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("illicit/violent")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool? IllicitViolent { get; set; }
+        public bool? IllicitViolent { get; set; }
 
         /// <summary>
         /// Content that promotes, encourages, or depicts acts of self-harm, such as suicide, cutting, and eating disorders.
@@ -156,22 +154,20 @@ namespace G
             bool hateThreatening,
             bool harassment,
             bool harassmentThreatening,
-            bool? illicit,
-            bool? illicitViolent,
             bool selfHarm,
             bool selfHarmIntent,
             bool selfHarmInstructions,
             bool sexual,
             bool sexualMinors,
             bool violence,
-            bool violenceGraphic)
+            bool violenceGraphic,
+            bool? illicit,
+            bool? illicitViolent)
         {
             this.Hate = hate;
             this.HateThreatening = hateThreatening;
             this.Harassment = harassment;
             this.HarassmentThreatening = harassmentThreatening;
-            this.Illicit = illicit;
-            this.IllicitViolent = illicitViolent;
             this.SelfHarm = selfHarm;
             this.SelfHarmIntent = selfHarmIntent;
             this.SelfHarmInstructions = selfHarmInstructions;
@@ -179,6 +175,8 @@ namespace G
             this.SexualMinors = sexualMinors;
             this.Violence = violence;
             this.ViolenceGraphic = violenceGraphic;
+            this.Illicit = illicit;
+            this.IllicitViolent = illicitViolent;
         }
 
         /// <summary>

@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPackageUpdatedPackagePackageVersionReleaseAuthor? Author { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("author")]
+        public global::G.WebhookPackageUpdatedPackagePackageVersionReleaseAuthor? Author { get; set; }
 
         /// <summary>
         /// 
@@ -96,7 +96,6 @@ namespace G
         /// <param name="targetCommitish"></param>
         /// <param name="url"></param>
         public WebhookPackageUpdatedPackagePackageVersionRelease(
-            global::G.WebhookPackageUpdatedPackagePackageVersionReleaseAuthor? author,
             string createdAt,
             bool draft,
             string htmlUrl,
@@ -106,9 +105,9 @@ namespace G
             string publishedAt,
             string tagName,
             string targetCommitish,
-            string url)
+            string url,
+            global::G.WebhookPackageUpdatedPackagePackageVersionReleaseAuthor? author)
         {
-            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.Draft = draft;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
@@ -119,6 +118,7 @@ namespace G
             this.TagName = tagName ?? throw new global::System.ArgumentNullException(nameof(tagName));
             this.TargetCommitish = targetCommitish ?? throw new global::System.ArgumentNullException(nameof(targetCommitish));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Author = author;
         }
 
         /// <summary>

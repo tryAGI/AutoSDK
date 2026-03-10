@@ -42,8 +42,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("permission_on_resource", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.PronunciationDictionaryVersionResponseModelPermissionOnResource2? PermissionOnResource { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("permission_on_resource")]
+        public global::G.PronunciationDictionaryVersionResponseModelPermissionOnResource2? PermissionOnResource { get; set; }
 
         /// <summary>
         /// 
@@ -87,9 +87,9 @@ namespace G
             string pronunciationDictionaryId,
             string dictionaryName,
             string versionName,
-            global::G.PronunciationDictionaryVersionResponseModelPermissionOnResource2? permissionOnResource,
             string createdBy,
             int creationTimeUnix,
+            global::G.PronunciationDictionaryVersionResponseModelPermissionOnResource2? permissionOnResource,
             int? archivedTimeUnix)
         {
             this.VersionId = versionId ?? throw new global::System.ArgumentNullException(nameof(versionId));
@@ -97,9 +97,9 @@ namespace G
             this.PronunciationDictionaryId = pronunciationDictionaryId ?? throw new global::System.ArgumentNullException(nameof(pronunciationDictionaryId));
             this.DictionaryName = dictionaryName ?? throw new global::System.ArgumentNullException(nameof(dictionaryName));
             this.VersionName = versionName ?? throw new global::System.ArgumentNullException(nameof(versionName));
-            this.PermissionOnResource = permissionOnResource ?? throw new global::System.ArgumentNullException(nameof(permissionOnResource));
             this.CreatedBy = createdBy ?? throw new global::System.ArgumentNullException(nameof(createdBy));
             this.CreationTimeUnix = creationTimeUnix;
+            this.PermissionOnResource = permissionOnResource;
             this.ArchivedTimeUnix = archivedTimeUnix;
         }
 

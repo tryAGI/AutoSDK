@@ -35,8 +35,7 @@ namespace G
         /// A set of resources that are made available to the assistant's tools in this thread. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_resources")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ThreadObjectToolResources? ToolResources { get; set; }
+        public global::G.ThreadObjectToolResources? ToolResources { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -46,8 +45,7 @@ namespace G
         /// with a maximum length of 512 characters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -83,15 +81,15 @@ namespace G
         public ThreadObject(
             string id,
             global::System.DateTimeOffset createdAt,
+            global::G.ThreadObjectObject @object,
             global::G.ThreadObjectToolResources? toolResources,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata,
-            global::G.ThreadObjectObject @object)
+            global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
-            this.ToolResources = toolResources ?? throw new global::System.ArgumentNullException(nameof(toolResources));
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.Object = @object;
+            this.ToolResources = toolResources;
+            this.Metadata = metadata;
         }
 
         /// <summary>

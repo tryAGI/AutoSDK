@@ -27,15 +27,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conversation_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? ConversationId { get; set; }
+        public string? ConversationId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sip_call_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? SipCallId { get; set; }
+        public string? SipCallId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,8 +59,8 @@ namespace G
         {
             this.Success = success;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.ConversationId = conversationId ?? throw new global::System.ArgumentNullException(nameof(conversationId));
-            this.SipCallId = sipCallId ?? throw new global::System.ArgumentNullException(nameof(sipCallId));
+            this.ConversationId = conversationId;
+            this.SipCallId = sipCallId;
         }
 
         /// <summary>

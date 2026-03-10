@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Content { get; set; }
+        public string? Content { get; set; }
 
         /// <summary>
         /// 
@@ -56,7 +55,7 @@ namespace G
             global::G.ChatCompletionMessageRole role,
             global::System.Collections.Generic.IList<global::G.ToolChoice2>? toolCalls)
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Content = content;
             this.Role = role;
             this.ToolCalls = toolCalls;
         }

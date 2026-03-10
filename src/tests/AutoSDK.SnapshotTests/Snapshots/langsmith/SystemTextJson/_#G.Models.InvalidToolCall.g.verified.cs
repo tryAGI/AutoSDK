@@ -15,29 +15,25 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("args")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Args { get; set; }
+        public string? Args { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Id { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Error { get; set; }
+        public string? Error { get; set; }
 
         /// <summary>
         /// 
@@ -69,10 +65,10 @@ namespace G
             string? error,
             string? type)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Args = args ?? throw new global::System.ArgumentNullException(nameof(args));
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
+            this.Name = name;
+            this.Args = args;
+            this.Id = id;
+            this.Error = error;
             this.Type = type;
         }
 

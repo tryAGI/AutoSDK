@@ -30,8 +30,8 @@ namespace G
         /// <summary>
         /// The token for the next page, if any.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("next_page", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? NextPage { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("next_page")]
+        public string? NextPage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -57,13 +57,13 @@ namespace G
         public VectorStoreFileContentResponse(
             global::System.Collections.Generic.IList<global::G.VectorStoreFileContentResponseDataItem> data,
             bool hasMore,
-            string? nextPage,
-            global::G.VectorStoreFileContentResponseObject @object)
+            global::G.VectorStoreFileContentResponseObject @object,
+            string? nextPage)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.HasMore = hasMore;
-            this.NextPage = nextPage ?? throw new global::System.ArgumentNullException(nameof(nextPage));
             this.Object = @object;
+            this.NextPage = nextPage;
         }
 
         /// <summary>

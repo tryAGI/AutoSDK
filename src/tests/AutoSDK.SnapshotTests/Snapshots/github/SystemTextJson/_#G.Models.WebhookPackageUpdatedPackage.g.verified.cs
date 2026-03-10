@@ -20,8 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -62,8 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPackageUpdatedPackageOwner? Owner { get; set; }
+        public global::G.WebhookPackageUpdatedPackageOwner? Owner { get; set; }
 
         /// <summary>
         /// 
@@ -83,8 +81,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("registry")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPackageUpdatedPackageRegistry? Registry { get; set; }
+        public global::G.WebhookPackageUpdatedPackageRegistry? Registry { get; set; }
 
         /// <summary>
         /// 
@@ -119,30 +116,30 @@ namespace G
 #endif
         public WebhookPackageUpdatedPackage(
             string createdAt,
-            string? description,
             string ecosystem,
             string htmlUrl,
             int id,
             string name,
             string @namespace,
-            global::G.WebhookPackageUpdatedPackageOwner? owner,
             string packageType,
             global::G.WebhookPackageUpdatedPackagePackageVersion packageVersion,
-            global::G.WebhookPackageUpdatedPackageRegistry? registry,
-            string updatedAt)
+            string updatedAt,
+            string? description,
+            global::G.WebhookPackageUpdatedPackageOwner? owner,
+            global::G.WebhookPackageUpdatedPackageRegistry? registry)
         {
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Ecosystem = ecosystem ?? throw new global::System.ArgumentNullException(nameof(ecosystem));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Namespace = @namespace ?? throw new global::System.ArgumentNullException(nameof(@namespace));
-            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.PackageType = packageType ?? throw new global::System.ArgumentNullException(nameof(packageType));
             this.PackageVersion = packageVersion ?? throw new global::System.ArgumentNullException(nameof(packageVersion));
-            this.Registry = registry ?? throw new global::System.ArgumentNullException(nameof(registry));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
+            this.Description = description;
+            this.Owner = owner;
+            this.Registry = registry;
         }
 
         /// <summary>

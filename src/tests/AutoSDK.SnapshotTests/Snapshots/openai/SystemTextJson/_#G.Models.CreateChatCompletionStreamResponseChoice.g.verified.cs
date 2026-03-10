@@ -30,8 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionStreamResponseChoiceFinishReasonJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CreateChatCompletionStreamResponseChoiceFinishReason? FinishReason { get; set; }
+        public global::G.CreateChatCompletionStreamResponseChoiceFinishReason? FinishReason { get; set; }
 
         /// <summary>
         /// The index of the choice in the list of choices.
@@ -69,14 +68,14 @@ namespace G
 #endif
         public CreateChatCompletionStreamResponseChoice(
             global::G.ChatCompletionStreamResponseDelta delta,
-            global::G.CreateChatCompletionStreamResponseChoiceFinishReason? finishReason,
             int index,
-            global::G.CreateChatCompletionStreamResponseChoiceLogprobs? logprobs)
+            global::G.CreateChatCompletionStreamResponseChoiceLogprobs? logprobs,
+            global::G.CreateChatCompletionStreamResponseChoiceFinishReason? finishReason)
         {
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
-            this.FinishReason = finishReason;
             this.Index = index;
             this.Logprobs = logprobs;
+            this.FinishReason = finishReason;
         }
 
         /// <summary>

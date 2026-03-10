@@ -66,8 +66,8 @@ namespace G
         /// <summary>
         /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("line", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? Line { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("line")]
+        public int? Line { get; set; }
 
         /// <summary>
         /// The node ID of the pull request review comment.
@@ -84,8 +84,8 @@ namespace G
         /// <summary>
         /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("original_line", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? OriginalLine { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("original_line")]
+        public int? OriginalLine { get; set; }
 
         /// <summary>
         /// The index of the original line in the diff to which the comment applies.
@@ -96,8 +96,8 @@ namespace G
         /// <summary>
         /// The first line of the range for a multi-line comment.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("original_start_line", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? OriginalStartLine { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("original_start_line")]
+        public int? OriginalStartLine { get; set; }
 
         /// <summary>
         /// The relative path of the file to which the comment applies.
@@ -108,14 +108,14 @@ namespace G
         /// <summary>
         /// The line index in the diff to which the comment applies.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("position", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? Position { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("position")]
+        public int? Position { get; set; }
 
         /// <summary>
         /// The ID of the pull request review to which the comment belongs.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("pull_request_review_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? PullRequestReviewId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("pull_request_review_id")]
+        public int? PullRequestReviewId { get; set; }
 
         /// <summary>
         /// URL for the pull request that the review comment belongs to.
@@ -138,15 +138,15 @@ namespace G
         /// <summary>
         /// The first line of the range for a multi-line comment.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("start_line", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? StartLine { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("start_line")]
+        public int? StartLine { get; set; }
 
         /// <summary>
         /// The side of the first line of the range for a multi-line comment.<br/>
         /// Default Value: RIGHT
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("start_side", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPullRequestReviewThreadResolvedThreadCommentStartSide? StartSide { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("start_side")]
+        public global::G.WebhookPullRequestReviewThreadResolvedThreadCommentStartSide? StartSide { get; set; }
 
         /// <summary>
         /// The level at which the comment is targeted, can be a diff line or a file.
@@ -169,8 +169,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPullRequestReviewThreadResolvedThreadCommentUser? User { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("user")]
+        public global::G.WebhookPullRequestReviewThreadResolvedThreadCommentUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -262,25 +262,25 @@ namespace G
             string diffHunk,
             string htmlUrl,
             int id,
-            int? line,
             string nodeId,
             string originalCommitId,
-            int? originalLine,
             int originalPosition,
-            int? originalStartLine,
             string path,
-            int? position,
-            int? pullRequestReviewId,
             string pullRequestUrl,
             global::G.WebhookPullRequestReviewThreadResolvedThreadCommentReactions reactions,
             global::G.WebhookPullRequestReviewThreadResolvedThreadCommentSide side,
-            int? startLine,
-            global::G.WebhookPullRequestReviewThreadResolvedThreadCommentStartSide? startSide,
             global::System.DateTime updatedAt,
             string url,
-            global::G.WebhookPullRequestReviewThreadResolvedThreadCommentUser? user,
             int? inReplyToId,
-            global::G.WebhookPullRequestReviewThreadResolvedThreadCommentSubjectType? subjectType)
+            int? line,
+            int? originalLine,
+            int? originalStartLine,
+            int? position,
+            int? pullRequestReviewId,
+            int? startLine,
+            global::G.WebhookPullRequestReviewThreadResolvedThreadCommentStartSide? startSide,
+            global::G.WebhookPullRequestReviewThreadResolvedThreadCommentSubjectType? subjectType,
+            global::G.WebhookPullRequestReviewThreadResolvedThreadCommentUser? user)
         {
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
             this.AuthorAssociation = authorAssociation;
@@ -290,25 +290,25 @@ namespace G
             this.DiffHunk = diffHunk ?? throw new global::System.ArgumentNullException(nameof(diffHunk));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
-            this.Line = line;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.OriginalCommitId = originalCommitId ?? throw new global::System.ArgumentNullException(nameof(originalCommitId));
-            this.OriginalLine = originalLine;
             this.OriginalPosition = originalPosition;
-            this.OriginalStartLine = originalStartLine;
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
-            this.Position = position;
-            this.PullRequestReviewId = pullRequestReviewId;
             this.PullRequestUrl = pullRequestUrl ?? throw new global::System.ArgumentNullException(nameof(pullRequestUrl));
             this.Reactions = reactions ?? throw new global::System.ArgumentNullException(nameof(reactions));
             this.Side = side;
-            this.StartLine = startLine;
-            this.StartSide = startSide;
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
             this.InReplyToId = inReplyToId;
+            this.Line = line;
+            this.OriginalLine = originalLine;
+            this.OriginalStartLine = originalStartLine;
+            this.Position = position;
+            this.PullRequestReviewId = pullRequestReviewId;
+            this.StartLine = startLine;
+            this.StartSide = startSide;
             this.SubjectType = subjectType;
+            this.User = user;
         }
 
         /// <summary>

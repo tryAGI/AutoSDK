@@ -35,15 +35,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Parameters { get; set; }
+        public object? Parameters { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool? Strict { get; set; }
+        public bool? Strict { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -69,16 +67,16 @@ namespace G
 #endif
         public FunctionTool(
             string name,
+            string? description,
             object? parameters,
             bool? strict,
-            string? description,
             global::G.FunctionToolType type = global::G.FunctionToolType.Function)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
-            this.Strict = strict ?? throw new global::System.ArgumentNullException(nameof(strict));
             this.Type = type;
             this.Description = description;
+            this.Parameters = parameters;
+            this.Strict = strict;
         }
 
         /// <summary>

@@ -27,8 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook_secret")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? WebhookSecret { get; set; }
+        public string? WebhookSecret { get; set; }
 
         /// <summary>
         /// 
@@ -56,13 +55,13 @@ namespace G
         public AppsCreateFromManifestResponse2(
             string clientId,
             string clientSecret,
-            string? webhookSecret,
-            string pem)
+            string pem,
+            string? webhookSecret)
         {
             this.ClientId = clientId ?? throw new global::System.ArgumentNullException(nameof(clientId));
             this.ClientSecret = clientSecret ?? throw new global::System.ArgumentNullException(nameof(clientSecret));
-            this.WebhookSecret = webhookSecret ?? throw new global::System.ArgumentNullException(nameof(webhookSecret));
             this.Pem = pem ?? throw new global::System.ArgumentNullException(nameof(pem));
+            this.WebhookSecret = webhookSecret;
         }
 
         /// <summary>

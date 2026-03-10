@@ -55,8 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_read_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? LastReadAt { get; set; }
+        public string? LastReadAt { get; set; }
 
         /// <summary>
         /// 
@@ -105,9 +104,9 @@ namespace G
             string reason,
             bool unread,
             string updatedAt,
-            string? lastReadAt,
             string url,
-            string subscriptionUrl)
+            string subscriptionUrl,
+            string? lastReadAt)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
@@ -115,9 +114,9 @@ namespace G
             this.Reason = reason ?? throw new global::System.ArgumentNullException(nameof(reason));
             this.Unread = unread;
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
-            this.LastReadAt = lastReadAt ?? throw new global::System.ArgumentNullException(nameof(lastReadAt));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.SubscriptionUrl = subscriptionUrl ?? throw new global::System.ArgumentNullException(nameof(subscriptionUrl));
+            this.LastReadAt = lastReadAt;
         }
 
         /// <summary>

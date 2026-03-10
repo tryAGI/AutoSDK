@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("blocked_user", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhooksUser? BlockedUser { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("blocked_user")]
+        public global::G.WebhooksUser? BlockedUser { get; set; }
 
         /// <summary>
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
@@ -90,18 +90,18 @@ namespace G
         /// A GitHub user.
         /// </param>
         public WebhookOrgBlockBlocked(
-            global::G.WebhooksUser? blockedUser,
             global::G.OrganizationSimpleWebhooks organization,
             global::G.SimpleUser sender,
             global::G.WebhookOrgBlockBlockedAction action,
+            global::G.WebhooksUser? blockedUser,
             global::G.EnterpriseWebhooks? enterprise,
             global::G.SimpleInstallation? installation,
             global::G.RepositoryWebhooks? repository)
         {
-            this.BlockedUser = blockedUser ?? throw new global::System.ArgumentNullException(nameof(blockedUser));
             this.Organization = organization ?? throw new global::System.ArgumentNullException(nameof(organization));
             this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Action = action;
+            this.BlockedUser = blockedUser;
             this.Enterprise = enterprise;
             this.Installation = installation;
             this.Repository = repository;

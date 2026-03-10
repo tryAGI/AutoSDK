@@ -30,8 +30,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("scheduled_time_unix", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? ScheduledTimeUnix { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("scheduled_time_unix")]
+        public int? ScheduledTimeUnix { get; set; }
 
         /// <summary>
         /// 
@@ -57,14 +57,14 @@ namespace G
             string callName,
             string agentId,
             string agentPhoneNumberId,
-            int? scheduledTimeUnix,
-            global::System.Collections.Generic.IList<global::G.OutboundCallRecipient> recipients)
+            global::System.Collections.Generic.IList<global::G.OutboundCallRecipient> recipients,
+            int? scheduledTimeUnix)
         {
             this.CallName = callName ?? throw new global::System.ArgumentNullException(nameof(callName));
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.AgentPhoneNumberId = agentPhoneNumberId ?? throw new global::System.ArgumentNullException(nameof(agentPhoneNumberId));
-            this.ScheduledTimeUnix = scheduledTimeUnix ?? throw new global::System.ArgumentNullException(nameof(scheduledTimeUnix));
             this.Recipients = recipients ?? throw new global::System.ArgumentNullException(nameof(recipients));
+            this.ScheduledTimeUnix = scheduledTimeUnix;
         }
 
         /// <summary>

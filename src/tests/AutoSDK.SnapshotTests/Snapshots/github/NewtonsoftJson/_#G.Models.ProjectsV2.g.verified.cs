@@ -42,8 +42,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -55,8 +55,8 @@ namespace G
         /// Example: 2022-04-28T12:00:00Z
         /// </summary>
         /// <example>2022-04-28T12:00:00Z</example>
-        [global::Newtonsoft.Json.JsonProperty("closed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? ClosedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("closed_at")]
+        public global::System.DateTime? ClosedAt { get; set; }
 
         /// <summary>
         /// Example: 2022-04-28T12:00:00Z
@@ -81,21 +81,21 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("short_description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? ShortDescription { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("short_description")]
+        public string? ShortDescription { get; set; }
 
         /// <summary>
         /// Example: 2022-04-28T12:00:00Z
         /// </summary>
         /// <example>2022-04-28T12:00:00Z</example>
-        [global::Newtonsoft.Json.JsonProperty("deleted_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? DeletedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("deleted_at")]
+        public global::System.DateTime? DeletedAt { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("deleted_by", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? DeletedBy { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("deleted_by")]
+        public global::G.NullableSimpleUser? DeletedBy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -140,12 +140,12 @@ namespace G
             global::G.SimpleUser owner,
             global::G.SimpleUser creator,
             string title,
-            string? description,
             bool @public,
-            global::System.DateTime? closedAt,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             int number,
+            string? description,
+            global::System.DateTime? closedAt,
             string? shortDescription,
             global::System.DateTime? deletedAt,
             global::G.NullableSimpleUser? deletedBy)
@@ -155,15 +155,15 @@ namespace G
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Public = @public;
-            this.ClosedAt = closedAt;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.Number = number;
-            this.ShortDescription = shortDescription ?? throw new global::System.ArgumentNullException(nameof(shortDescription));
+            this.Description = description;
+            this.ClosedAt = closedAt;
+            this.ShortDescription = shortDescription;
             this.DeletedAt = deletedAt;
-            this.DeletedBy = deletedBy ?? throw new global::System.ArgumentNullException(nameof(deletedBy));
+            this.DeletedBy = deletedBy;
         }
 
         /// <summary>

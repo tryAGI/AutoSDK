@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// The Target language.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("language", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Language { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("language")]
+        public string? Language { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +30,7 @@ namespace G
         public BodyAddALanguageToTheResourceV1DubbingResourceDubbingIdLanguagePost(
             string? language)
         {
-            this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
+            this.Language = language;
         }
 
         /// <summary>

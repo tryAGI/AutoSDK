@@ -54,24 +54,21 @@ namespace G
         /// </summary>
         /// <example>pkg:/npm/%40actions/core@1.1.0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("package_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? PackageUrl { get; set; }
+        public string? PackageUrl { get; set; }
 
         /// <summary>
         /// Example: MIT
         /// </summary>
         /// <example>MIT</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("license")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? License { get; set; }
+        public string? License { get; set; }
 
         /// <summary>
         /// Example: https://github.com/github/actions
         /// </summary>
         /// <example>https://github.com/github/actions</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_repository_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? SourceRepositoryUrl { get; set; }
+        public string? SourceRepositoryUrl { get; set; }
 
         /// <summary>
         /// 
@@ -132,22 +129,22 @@ namespace G
             string ecosystem,
             string name,
             string version,
+            global::System.Collections.Generic.IList<global::G.DependencyGraphDiffItemVulnerabilitie> vulnerabilities,
+            global::G.DependencyGraphDiffItemScope scope,
             string? packageUrl,
             string? license,
-            string? sourceRepositoryUrl,
-            global::System.Collections.Generic.IList<global::G.DependencyGraphDiffItemVulnerabilitie> vulnerabilities,
-            global::G.DependencyGraphDiffItemScope scope)
+            string? sourceRepositoryUrl)
         {
             this.ChangeType = changeType;
             this.Manifest = manifest ?? throw new global::System.ArgumentNullException(nameof(manifest));
             this.Ecosystem = ecosystem ?? throw new global::System.ArgumentNullException(nameof(ecosystem));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
-            this.PackageUrl = packageUrl ?? throw new global::System.ArgumentNullException(nameof(packageUrl));
-            this.License = license ?? throw new global::System.ArgumentNullException(nameof(license));
-            this.SourceRepositoryUrl = sourceRepositoryUrl ?? throw new global::System.ArgumentNullException(nameof(sourceRepositoryUrl));
             this.Vulnerabilities = vulnerabilities ?? throw new global::System.ArgumentNullException(nameof(vulnerabilities));
             this.Scope = scope;
+            this.PackageUrl = packageUrl;
+            this.License = license;
+            this.SourceRepositoryUrl = sourceRepositoryUrl;
         }
 
         /// <summary>

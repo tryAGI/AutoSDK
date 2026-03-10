@@ -56,15 +56,13 @@ namespace G
         /// The number of repositories the token is requesting access to. This field is only populated when `repository_selection` is `subset`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_count")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? RepositoryCount { get; set; }
+        public int? RepositoryCount { get; set; }
 
         /// <summary>
         /// An array of repository objects the token is requesting access to. This field is only populated when `repository_selection` is `subset`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repositories")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.PersonalAccessTokenRequestRepositorie>? Repositories { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PersonalAccessTokenRequestRepositorie>? Repositories { get; set; }
 
         /// <summary>
         /// Date and time when the request for access was created.
@@ -84,15 +82,13 @@ namespace G
         /// Date and time when the associated fine-grained personal access token expires.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token_expires_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? TokenExpiresAt { get; set; }
+        public string? TokenExpiresAt { get; set; }
 
         /// <summary>
         /// Date and time when the associated fine-grained personal access token was last used for authentication.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token_last_used_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? TokenLastUsedAt { get; set; }
+        public string? TokenLastUsedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -149,10 +145,10 @@ namespace G
             global::G.PersonalAccessTokenRequestPermissionsUpgraded permissionsUpgraded,
             global::G.PersonalAccessTokenRequestPermissionsResult permissionsResult,
             global::G.PersonalAccessTokenRequestRepositorySelection repositorySelection,
-            int? repositoryCount,
-            global::System.Collections.Generic.IList<global::G.PersonalAccessTokenRequestRepositorie>? repositories,
             string createdAt,
             bool tokenExpired,
+            int? repositoryCount,
+            global::System.Collections.Generic.IList<global::G.PersonalAccessTokenRequestRepositorie>? repositories,
             string? tokenExpiresAt,
             string? tokenLastUsedAt)
         {
@@ -162,12 +158,12 @@ namespace G
             this.PermissionsUpgraded = permissionsUpgraded ?? throw new global::System.ArgumentNullException(nameof(permissionsUpgraded));
             this.PermissionsResult = permissionsResult ?? throw new global::System.ArgumentNullException(nameof(permissionsResult));
             this.RepositorySelection = repositorySelection;
-            this.RepositoryCount = repositoryCount;
-            this.Repositories = repositories ?? throw new global::System.ArgumentNullException(nameof(repositories));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.TokenExpired = tokenExpired;
-            this.TokenExpiresAt = tokenExpiresAt ?? throw new global::System.ArgumentNullException(nameof(tokenExpiresAt));
-            this.TokenLastUsedAt = tokenLastUsedAt ?? throw new global::System.ArgumentNullException(nameof(tokenLastUsedAt));
+            this.RepositoryCount = repositoryCount;
+            this.Repositories = repositories;
+            this.TokenExpiresAt = tokenExpiresAt;
+            this.TokenLastUsedAt = tokenLastUsedAt;
         }
 
         /// <summary>

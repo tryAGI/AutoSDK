@@ -50,8 +50,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("label")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Label { get; set; }
+        public string? Label { get; set; }
 
         /// <summary>
         /// State of the release asset.
@@ -100,8 +99,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uploader")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? Uploader { get; set; }
+        public global::G.NullableSimpleUser? Uploader { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -141,13 +139,13 @@ namespace G
             int id,
             string nodeId,
             string name,
-            string? label,
             global::G.ReleaseAssetState state,
             string contentType,
             int size,
             int downloadCount,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
+            string? label,
             global::G.NullableSimpleUser? uploader)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
@@ -155,14 +153,14 @@ namespace G
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
             this.State = state;
             this.ContentType = contentType ?? throw new global::System.ArgumentNullException(nameof(contentType));
             this.Size = size;
             this.DownloadCount = downloadCount;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.Uploader = uploader ?? throw new global::System.ArgumentNullException(nameof(uploader));
+            this.Label = label;
+            this.Uploader = uploader;
         }
 
         /// <summary>

@@ -120,14 +120,14 @@ namespace G
         /// <summary>
         /// The number of redemptions redeemed during the current live stream. The number counts against the `max_per_stream_setting` limit. This field is **null** if the broadcaster’s stream isn’t live or _max\_per\_stream\_setting_ isn’t enabled.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("redemptions_redeemed_current_stream", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? RedemptionsRedeemedCurrentStream { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("redemptions_redeemed_current_stream")]
+        public int? RedemptionsRedeemedCurrentStream { get; set; }
 
         /// <summary>
         /// The timestamp of when the cooldown period expires. Is **null** if the reward isn’t in a cooldown state. See the `global_cooldown_setting` field.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("cooldown_expires_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? CooldownExpiresAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("cooldown_expires_at")]
+        public global::System.DateTime? CooldownExpiresAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

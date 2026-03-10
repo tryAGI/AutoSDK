@@ -33,8 +33,8 @@ namespace G
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("actor", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? Actor { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("actor")]
+        public global::G.NullableSimpleUser? Actor { get; set; }
 
         /// <summary>
         /// Example: closed
@@ -47,15 +47,15 @@ namespace G
         /// Example: 6dcb09b5b57875f334f61aebed695e2e4193db5e
         /// </summary>
         /// <example>6dcb09b5b57875f334f61aebed695e2e4193db5e</example>
-        [global::Newtonsoft.Json.JsonProperty("commit_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? CommitId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("commit_id")]
+        public string? CommitId { get; set; }
 
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/commits/6dcb09b5b57875f334f61aebed695e2e4193db5e
         /// </summary>
         /// <example>https://api.github.com/repos/octocat/Hello-World/commits/6dcb09b5b57875f334f61aebed695e2e4193db5e</example>
-        [global::Newtonsoft.Json.JsonProperty("commit_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? CommitUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("commit_url")]
+        public string? CommitUrl { get; set; }
 
         /// <summary>
         /// Example: 2011-04-14T16:00:49Z
@@ -226,11 +226,11 @@ namespace G
             long id,
             string nodeId,
             string url,
-            global::G.NullableSimpleUser? actor,
             string @event,
+            global::System.DateTime createdAt,
+            global::G.NullableSimpleUser? actor,
             string? commitId,
             string? commitUrl,
-            global::System.DateTime createdAt,
             global::G.NullableIssue? issue,
             global::G.IssueEventLabel? label,
             global::G.NullableSimpleUser? assignee,
@@ -249,11 +249,11 @@ namespace G
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
             this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));
-            this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
-            this.CommitUrl = commitUrl ?? throw new global::System.ArgumentNullException(nameof(commitUrl));
             this.CreatedAt = createdAt;
+            this.Actor = actor;
+            this.CommitId = commitId;
+            this.CommitUrl = commitUrl;
             this.Issue = issue;
             this.Label = label;
             this.Assignee = assignee;

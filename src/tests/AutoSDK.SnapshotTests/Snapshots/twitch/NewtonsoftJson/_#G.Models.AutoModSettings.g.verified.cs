@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// The default AutoMod level for the broadcaster. This field is **null** if the broadcaster has set one or more of the individual settings.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("overall_level", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? OverallLevel { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("overall_level")]
+        public int? OverallLevel { get; set; }
 
         /// <summary>
         /// The Automod level for discrimination against disability.
@@ -120,7 +120,6 @@ namespace G
         public AutoModSettings(
             string broadcasterId,
             string moderatorId,
-            int? overallLevel,
             int disability,
             int aggression,
             int sexualitySexOrGender,
@@ -128,11 +127,11 @@ namespace G
             int bullying,
             int swearing,
             int raceEthnicityOrReligion,
-            int sexBasedTerms)
+            int sexBasedTerms,
+            int? overallLevel)
         {
             this.BroadcasterId = broadcasterId ?? throw new global::System.ArgumentNullException(nameof(broadcasterId));
             this.ModeratorId = moderatorId ?? throw new global::System.ArgumentNullException(nameof(moderatorId));
-            this.OverallLevel = overallLevel;
             this.Disability = disability;
             this.Aggression = aggression;
             this.SexualitySexOrGender = sexualitySexOrGender;
@@ -141,6 +140,7 @@ namespace G
             this.Swearing = swearing;
             this.RaceEthnicityOrReligion = raceEthnicityOrReligion;
             this.SexBasedTerms = sexBasedTerms;
+            this.OverallLevel = overallLevel;
         }
 
         /// <summary>

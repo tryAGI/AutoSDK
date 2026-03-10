@@ -27,16 +27,14 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_by")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookCodeScanningAlertClosedByUserAlertDismissedBy? DismissedBy { get; set; }
+        public global::G.WebhookCodeScanningAlertClosedByUserAlertDismissedBy? DismissedBy { get; set; }
 
         /// <summary>
         /// The reason for dismissing or closing the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookCodeScanningAlertClosedByUserAlertDismissedReasonJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookCodeScanningAlertClosedByUserAlertDismissedReason? DismissedReason { get; set; }
+        public global::G.WebhookCodeScanningAlertClosedByUserAlertDismissedReason? DismissedReason { get; set; }
 
         /// <summary>
         /// The GitHub URL of the alert resource.
@@ -125,26 +123,26 @@ namespace G
         public WebhookCodeScanningAlertClosedByUserAlert(
             global::System.DateTime createdAt,
             global::System.DateTime dismissedAt,
-            global::G.WebhookCodeScanningAlertClosedByUserAlertDismissedBy? dismissedBy,
-            global::G.WebhookCodeScanningAlertClosedByUserAlertDismissedReason? dismissedReason,
             string htmlUrl,
             int number,
             global::G.WebhookCodeScanningAlertClosedByUserAlertRule rule,
             global::G.WebhookCodeScanningAlertClosedByUserAlertState state,
             global::G.WebhookCodeScanningAlertClosedByUserAlertTool tool,
             string url,
+            global::G.WebhookCodeScanningAlertClosedByUserAlertDismissedBy? dismissedBy,
+            global::G.WebhookCodeScanningAlertClosedByUserAlertDismissedReason? dismissedReason,
             global::G.WebhookCodeScanningAlertClosedByUserAlertMostRecentInstance? mostRecentInstance)
         {
             this.CreatedAt = createdAt;
             this.DismissedAt = dismissedAt;
-            this.DismissedBy = dismissedBy ?? throw new global::System.ArgumentNullException(nameof(dismissedBy));
-            this.DismissedReason = dismissedReason;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Number = number;
             this.Rule = rule ?? throw new global::System.ArgumentNullException(nameof(rule));
             this.State = state;
             this.Tool = tool ?? throw new global::System.ArgumentNullException(nameof(tool));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.DismissedBy = dismissedBy;
+            this.DismissedReason = dismissedReason;
             this.MostRecentInstance = mostRecentInstance;
         }
 

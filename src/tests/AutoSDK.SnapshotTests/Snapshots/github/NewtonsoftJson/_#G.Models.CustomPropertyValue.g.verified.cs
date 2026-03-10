@@ -20,8 +20,8 @@ namespace G
         /// <summary>
         /// The value assigned to the property
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("value", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? Value { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("value")]
+        public global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

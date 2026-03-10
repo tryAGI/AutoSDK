@@ -76,8 +76,7 @@ namespace G
         /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("line")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? Line { get; set; }
+        public int? Line { get; set; }
 
         /// <summary>
         /// The node ID of the pull request review comment.
@@ -111,8 +110,7 @@ namespace G
         /// The first line of the range for a multi-line comment.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("original_start_line")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? OriginalStartLine { get; set; }
+        public int? OriginalStartLine { get; set; }
 
         /// <summary>
         /// The relative path of the file to which the comment applies.
@@ -125,15 +123,13 @@ namespace G
         /// The line index in the diff to which the comment applies.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("position")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? Position { get; set; }
+        public int? Position { get; set; }
 
         /// <summary>
         /// The ID of the pull request review to which the comment belongs.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_request_review_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? PullRequestReviewId { get; set; }
+        public int? PullRequestReviewId { get; set; }
 
         /// <summary>
         /// URL for the pull request that the review comment belongs to.
@@ -161,8 +157,7 @@ namespace G
         /// The first line of the range for a multi-line comment.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_line")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? StartLine { get; set; }
+        public int? StartLine { get; set; }
 
         /// <summary>
         /// The side of the first line of the range for a multi-line comment.<br/>
@@ -170,8 +165,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_side")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhooksReviewCommentStartSideJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksReviewCommentStartSide? StartSide { get; set; }
+        public global::G.WebhooksReviewCommentStartSide? StartSide { get; set; }
 
         /// <summary>
         /// The level at which the comment is targeted, can be a diff line or a file.
@@ -198,8 +192,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksReviewCommentUser? User { get; set; }
+        public global::G.WebhooksReviewCommentUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -294,25 +287,25 @@ namespace G
             string diffHunk,
             string htmlUrl,
             int id,
-            int? line,
             string nodeId,
             string originalCommitId,
             int originalLine,
             int originalPosition,
-            int? originalStartLine,
             string path,
-            int? position,
-            int? pullRequestReviewId,
             string pullRequestUrl,
             global::G.WebhooksReviewCommentReactions reactions,
             global::G.WebhooksReviewCommentSide side,
-            int? startLine,
-            global::G.WebhooksReviewCommentStartSide? startSide,
             global::System.DateTime updatedAt,
             string url,
-            global::G.WebhooksReviewCommentUser? user,
             int? inReplyToId,
-            global::G.WebhooksReviewCommentSubjectType? subjectType)
+            int? line,
+            int? originalStartLine,
+            int? position,
+            int? pullRequestReviewId,
+            int? startLine,
+            global::G.WebhooksReviewCommentStartSide? startSide,
+            global::G.WebhooksReviewCommentSubjectType? subjectType,
+            global::G.WebhooksReviewCommentUser? user)
         {
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
             this.AuthorAssociation = authorAssociation;
@@ -322,25 +315,25 @@ namespace G
             this.DiffHunk = diffHunk ?? throw new global::System.ArgumentNullException(nameof(diffHunk));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
-            this.Line = line;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.OriginalCommitId = originalCommitId ?? throw new global::System.ArgumentNullException(nameof(originalCommitId));
             this.OriginalLine = originalLine;
             this.OriginalPosition = originalPosition;
-            this.OriginalStartLine = originalStartLine;
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
-            this.Position = position;
-            this.PullRequestReviewId = pullRequestReviewId;
             this.PullRequestUrl = pullRequestUrl ?? throw new global::System.ArgumentNullException(nameof(pullRequestUrl));
             this.Reactions = reactions ?? throw new global::System.ArgumentNullException(nameof(reactions));
             this.Side = side;
-            this.StartLine = startLine;
-            this.StartSide = startSide;
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
             this.InReplyToId = inReplyToId;
+            this.Line = line;
+            this.OriginalStartLine = originalStartLine;
+            this.Position = position;
+            this.PullRequestReviewId = pullRequestReviewId;
+            this.StartLine = startLine;
+            this.StartSide = startSide;
             this.SubjectType = subjectType;
+            this.User = user;
         }
 
         /// <summary>

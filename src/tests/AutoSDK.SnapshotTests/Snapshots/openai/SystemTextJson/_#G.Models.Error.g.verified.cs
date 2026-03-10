@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Code { get; set; }
+        public string? Code { get; set; }
 
         /// <summary>
         /// 
@@ -27,8 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("param")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Param { get; set; }
+        public string? Param { get; set; }
 
         /// <summary>
         /// 
@@ -54,15 +52,15 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Error(
-            string? code,
             string message,
-            string? param,
-            string type)
+            string type,
+            string? code,
+            string? param)
         {
-            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.Param = param ?? throw new global::System.ArgumentNullException(nameof(param));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Code = code;
+            this.Param = param;
         }
 
         /// <summary>

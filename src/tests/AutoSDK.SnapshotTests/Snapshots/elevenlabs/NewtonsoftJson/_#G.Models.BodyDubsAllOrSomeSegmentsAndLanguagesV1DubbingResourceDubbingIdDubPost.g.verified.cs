@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// Dub only these languages for each segment.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("languages", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string>? Languages { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("languages")]
+        public global::System.Collections.Generic.IList<string>? Languages { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,7 +41,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? languages)
         {
             this.Segments = segments ?? throw new global::System.ArgumentNullException(nameof(segments));
-            this.Languages = languages ?? throw new global::System.ArgumentNullException(nameof(languages));
+            this.Languages = languages;
         }
 
         /// <summary>

@@ -27,8 +27,8 @@ namespace G
         /// `content_filter` if content was omitted due to a flag from our content filters,<br/>
         /// `tool_calls` if the model called a tool, or `function_call` (deprecated) if the model called a function.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("finish_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CreateChatCompletionStreamResponseChoiceFinishReason? FinishReason { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("finish_reason")]
+        public global::G.CreateChatCompletionStreamResponseChoiceFinishReason? FinishReason { get; set; }
 
         /// <summary>
         /// The index of the choice in the list of choices.
@@ -62,14 +62,14 @@ namespace G
         /// </param>
         public CreateChatCompletionStreamResponseChoice(
             global::G.ChatCompletionStreamResponseDelta delta,
-            global::G.CreateChatCompletionStreamResponseChoiceFinishReason? finishReason,
             int index,
-            global::G.CreateChatCompletionStreamResponseChoiceLogprobs? logprobs)
+            global::G.CreateChatCompletionStreamResponseChoiceLogprobs? logprobs,
+            global::G.CreateChatCompletionStreamResponseChoiceFinishReason? finishReason)
         {
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
-            this.FinishReason = finishReason;
             this.Index = index;
             this.Logprobs = logprobs;
+            this.FinishReason = finishReason;
         }
 
         /// <summary>

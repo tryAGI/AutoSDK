@@ -56,8 +56,7 @@ namespace G
         /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("line")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? Line { get; set; }
+        public int? Line { get; set; }
 
         /// <summary>
         /// The node ID of the commit comment.
@@ -70,15 +69,13 @@ namespace G
         /// The relative path of the file to which the comment applies.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Path { get; set; }
+        public string? Path { get; set; }
 
         /// <summary>
         /// The line index in the diff to which the comment applies.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("position")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? Position { get; set; }
+        public int? Position { get; set; }
 
         /// <summary>
         /// 
@@ -104,8 +101,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookCommitCommentCreatedCommentUser? User { get; set; }
+        public global::G.WebhookCommitCommentCreatedCommentUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -156,14 +152,14 @@ namespace G
             string createdAt,
             string htmlUrl,
             int id,
-            int? line,
             string nodeId,
-            string? path,
-            int? position,
             string updatedAt,
             string url,
-            global::G.WebhookCommitCommentCreatedCommentUser? user,
-            global::G.WebhookCommitCommentCreatedCommentReactions? reactions)
+            int? line,
+            string? path,
+            int? position,
+            global::G.WebhookCommitCommentCreatedCommentReactions? reactions,
+            global::G.WebhookCommitCommentCreatedCommentUser? user)
         {
             this.AuthorAssociation = authorAssociation;
             this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
@@ -171,14 +167,14 @@ namespace G
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
-            this.Line = line;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
-            this.Position = position;
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.Line = line;
+            this.Path = path;
+            this.Position = position;
             this.Reactions = reactions;
+            this.User = user;
         }
 
         /// <summary>

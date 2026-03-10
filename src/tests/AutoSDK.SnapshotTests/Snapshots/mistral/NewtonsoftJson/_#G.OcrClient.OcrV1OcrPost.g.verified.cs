@@ -227,8 +227,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.OCRResponse> OcrV1OcrPostAsync(
-            string? model,
             global::G.AnyOf<global::G.DocumentURLChunk, global::G.ImageURLChunk> document,
+            string? model = default,
             string? id = default,
             global::System.Collections.Generic.IList<int>? pages = default,
             bool? includeImageBase64 = default,

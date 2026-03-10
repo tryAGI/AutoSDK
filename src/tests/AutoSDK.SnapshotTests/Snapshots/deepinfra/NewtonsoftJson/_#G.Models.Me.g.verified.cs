@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("email", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Email { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("email")]
+        public string? Email { get; set; }
 
         /// <summary>
         /// 
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("picture", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Picture { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("picture")]
+        public string? Picture { get; set; }
 
         /// <summary>
         /// 
@@ -164,17 +164,17 @@ namespace G
         /// <param name="vercelConnection"></param>
         public Me(
             string uid,
-            string? email,
             bool emailVerified,
             string displayName,
             string provider,
-            string? picture,
             bool isAdmin,
             string name,
             bool isBusinessAccount,
             string company,
             string website,
+            string? email,
             bool? requireEmailVerified,
+            string? picture,
             bool? isTeamAccount,
             bool? isTeamOwner,
             string? teamRole,
@@ -183,17 +183,17 @@ namespace G
             global::G.MeVercelConnection2? vercelConnection)
         {
             this.Uid = uid ?? throw new global::System.ArgumentNullException(nameof(uid));
-            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.EmailVerified = emailVerified;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Provider = provider ?? throw new global::System.ArgumentNullException(nameof(provider));
-            this.Picture = picture ?? throw new global::System.ArgumentNullException(nameof(picture));
             this.IsAdmin = isAdmin;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.IsBusinessAccount = isBusinessAccount;
             this.Company = company ?? throw new global::System.ArgumentNullException(nameof(company));
             this.Website = website ?? throw new global::System.ArgumentNullException(nameof(website));
+            this.Email = email;
             this.RequireEmailVerified = requireEmailVerified;
+            this.Picture = picture;
             this.IsTeamAccount = isTeamAccount;
             this.IsTeamOwner = isTeamOwner;
             this.TeamRole = teamRole;

@@ -48,8 +48,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("weight")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required double? Weight { get; set; }
+        public double? Weight { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

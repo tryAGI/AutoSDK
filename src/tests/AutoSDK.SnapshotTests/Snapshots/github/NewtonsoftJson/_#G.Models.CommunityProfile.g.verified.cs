@@ -20,15 +20,15 @@ namespace G
         /// Example: My first repository on GitHub!
         /// </summary>
         /// <example>My first repository on GitHub!</example>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// Example: example.com
         /// </summary>
         /// <example>example.com</example>
-        [global::Newtonsoft.Json.JsonProperty("documentation", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Documentation { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("documentation")]
+        public string? Documentation { get; set; }
 
         /// <summary>
         /// 
@@ -40,8 +40,8 @@ namespace G
         /// Example: 2017-02-28T19:09:29Z
         /// </summary>
         /// <example>2017-02-28T19:09:29Z</example>
-        [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? UpdatedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("updated_at")]
+        public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// Example: true
@@ -77,16 +77,16 @@ namespace G
         /// </param>
         public CommunityProfile(
             int healthPercentage,
+            global::G.CommunityProfileFiles files,
             string? description,
             string? documentation,
-            global::G.CommunityProfileFiles files,
             global::System.DateTime? updatedAt,
             bool? contentReportsEnabled)
         {
             this.HealthPercentage = healthPercentage;
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.Documentation = documentation ?? throw new global::System.ArgumentNullException(nameof(documentation));
             this.Files = files ?? throw new global::System.ArgumentNullException(nameof(files));
+            this.Description = description;
+            this.Documentation = documentation;
             this.UpdatedAt = updatedAt;
             this.ContentReportsEnabled = contentReportsEnabled;
         }

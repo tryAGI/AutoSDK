@@ -42,20 +42,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("path", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Path { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("path")]
+        public string? Path { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("position", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? Position { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("position")]
+        public int? Position { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("line", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? Line { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("line")]
+        public int? Line { get; set; }
 
         /// <summary>
         /// 
@@ -66,8 +66,8 @@ namespace G
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? User { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("user")]
+        public global::G.NullableSimpleUser? User { get; set; }
 
         /// <summary>
         /// 
@@ -129,14 +129,14 @@ namespace G
             int id,
             string nodeId,
             string body,
-            string? path,
-            int? position,
-            int? line,
             string commitId,
-            global::G.NullableSimpleUser? user,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             global::G.AuthorAssociation authorAssociation,
+            string? path,
+            int? position,
+            int? line,
+            global::G.NullableSimpleUser? user,
             global::G.ReactionRollup? reactions)
         {
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
@@ -144,14 +144,14 @@ namespace G
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
-            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
-            this.Position = position;
-            this.Line = line;
             this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.AuthorAssociation = authorAssociation;
+            this.Path = path;
+            this.Position = position;
+            this.Line = line;
+            this.User = user;
             this.Reactions = reactions;
         }
 

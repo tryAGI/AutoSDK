@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPackageUpdatedPackagePackageVersionReleaseAuthor? Author { get; set; }
+        public global::G.WebhookPackageUpdatedPackagePackageVersionReleaseAuthor? Author { get; set; }
 
         /// <summary>
         /// 
@@ -110,7 +109,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookPackageUpdatedPackagePackageVersionRelease(
-            global::G.WebhookPackageUpdatedPackagePackageVersionReleaseAuthor? author,
             string createdAt,
             bool draft,
             string htmlUrl,
@@ -120,9 +118,9 @@ namespace G
             string publishedAt,
             string tagName,
             string targetCommitish,
-            string url)
+            string url,
+            global::G.WebhookPackageUpdatedPackagePackageVersionReleaseAuthor? author)
         {
-            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.Draft = draft;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
@@ -133,6 +131,7 @@ namespace G
             this.TagName = tagName ?? throw new global::System.ArgumentNullException(nameof(tagName));
             this.TargetCommitish = targetCommitish ?? throw new global::System.ArgumentNullException(nameof(targetCommitish));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Author = author;
         }
 
         /// <summary>

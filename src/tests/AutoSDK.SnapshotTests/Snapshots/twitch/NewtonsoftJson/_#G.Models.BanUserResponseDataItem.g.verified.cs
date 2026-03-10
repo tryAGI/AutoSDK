@@ -36,8 +36,8 @@ namespace G
         /// <summary>
         /// The UTC date and time (in RFC3339 format) that the timeout will end. Is **null** if the user was banned instead of being put in a timeout.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("end_time", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? EndTime { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("end_time")]
+        public global::System.DateTime? EndTime { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

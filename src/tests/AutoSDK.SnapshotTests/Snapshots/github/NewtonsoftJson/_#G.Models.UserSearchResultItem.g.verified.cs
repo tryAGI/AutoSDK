@@ -36,8 +36,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("gravatar_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? GravatarId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("gravatar_id")]
+        public string? GravatarId { get; set; }
 
         /// <summary>
         /// 
@@ -261,7 +261,6 @@ namespace G
             long id,
             string nodeId,
             string avatarUrl,
-            string? gravatarId,
             string url,
             string htmlUrl,
             string followersUrl,
@@ -276,6 +275,7 @@ namespace G
             string starredUrl,
             string eventsUrl,
             bool siteAdmin,
+            string? gravatarId,
             int? publicRepos,
             int? publicGists,
             int? followers,
@@ -296,7 +296,6 @@ namespace G
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
-            this.GravatarId = gravatarId ?? throw new global::System.ArgumentNullException(nameof(gravatarId));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.FollowersUrl = followersUrl ?? throw new global::System.ArgumentNullException(nameof(followersUrl));
@@ -311,6 +310,7 @@ namespace G
             this.StarredUrl = starredUrl ?? throw new global::System.ArgumentNullException(nameof(starredUrl));
             this.EventsUrl = eventsUrl ?? throw new global::System.ArgumentNullException(nameof(eventsUrl));
             this.SiteAdmin = siteAdmin;
+            this.GravatarId = gravatarId;
             this.PublicRepos = publicRepos;
             this.PublicGists = publicGists;
             this.Followers = followers;

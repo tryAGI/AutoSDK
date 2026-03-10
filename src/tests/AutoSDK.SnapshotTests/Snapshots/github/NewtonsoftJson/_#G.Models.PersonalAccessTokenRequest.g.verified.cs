@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// The number of repositories the token is requesting access to. This field is only populated when `repository_selection` is `subset`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("repository_count", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? RepositoryCount { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("repository_count")]
+        public int? RepositoryCount { get; set; }
 
         /// <summary>
         /// An array of repository objects the token is requesting access to. This field is only populated when `repository_selection` is `subset`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("repositories", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.PersonalAccessTokenRequestRepositorie>? Repositories { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("repositories")]
+        public global::System.Collections.Generic.IList<global::G.PersonalAccessTokenRequestRepositorie>? Repositories { get; set; }
 
         /// <summary>
         /// Date and time when the request for access was created.
@@ -72,14 +72,14 @@ namespace G
         /// <summary>
         /// Date and time when the associated fine-grained personal access token expires.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("token_expires_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? TokenExpiresAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("token_expires_at")]
+        public string? TokenExpiresAt { get; set; }
 
         /// <summary>
         /// Date and time when the associated fine-grained personal access token was last used for authentication.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("token_last_used_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? TokenLastUsedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("token_last_used_at")]
+        public string? TokenLastUsedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -133,10 +133,10 @@ namespace G
             global::G.PersonalAccessTokenRequestPermissionsUpgraded permissionsUpgraded,
             global::G.PersonalAccessTokenRequestPermissionsResult permissionsResult,
             global::G.PersonalAccessTokenRequestRepositorySelection repositorySelection,
-            int? repositoryCount,
-            global::System.Collections.Generic.IList<global::G.PersonalAccessTokenRequestRepositorie>? repositories,
             string createdAt,
             bool tokenExpired,
+            int? repositoryCount,
+            global::System.Collections.Generic.IList<global::G.PersonalAccessTokenRequestRepositorie>? repositories,
             string? tokenExpiresAt,
             string? tokenLastUsedAt)
         {
@@ -146,12 +146,12 @@ namespace G
             this.PermissionsUpgraded = permissionsUpgraded ?? throw new global::System.ArgumentNullException(nameof(permissionsUpgraded));
             this.PermissionsResult = permissionsResult ?? throw new global::System.ArgumentNullException(nameof(permissionsResult));
             this.RepositorySelection = repositorySelection;
-            this.RepositoryCount = repositoryCount;
-            this.Repositories = repositories ?? throw new global::System.ArgumentNullException(nameof(repositories));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.TokenExpired = tokenExpired;
-            this.TokenExpiresAt = tokenExpiresAt ?? throw new global::System.ArgumentNullException(nameof(tokenExpiresAt));
-            this.TokenLastUsedAt = tokenLastUsedAt ?? throw new global::System.ArgumentNullException(nameof(tokenLastUsedAt));
+            this.RepositoryCount = repositoryCount;
+            this.Repositories = repositories;
+            this.TokenExpiresAt = tokenExpiresAt;
+            this.TokenLastUsedAt = tokenLastUsedAt;
         }
 
         /// <summary>

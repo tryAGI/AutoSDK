@@ -27,8 +27,7 @@ namespace G
         /// A list of integers representing the UTF-8 bytes representation of the token. Useful in instances where characters are represented by multiple tokens and their byte representations must be combined to generate the correct text representation. Can be `null` if there is no bytes representation for the token.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<int>? Bytes { get; set; }
+        public global::System.Collections.Generic.IList<int>? Bytes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -58,7 +57,7 @@ namespace G
         {
             this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
             this.Logprob = logprob;
-            this.Bytes = bytes ?? throw new global::System.ArgumentNullException(nameof(bytes));
+            this.Bytes = bytes;
         }
 
         /// <summary>

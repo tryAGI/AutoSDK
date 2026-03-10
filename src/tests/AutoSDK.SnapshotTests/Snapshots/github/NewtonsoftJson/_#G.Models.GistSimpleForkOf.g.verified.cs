@@ -84,8 +84,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -96,8 +96,8 @@ namespace G
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? User { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("user")]
+        public global::G.NullableSimpleUser? User { get; set; }
 
         /// <summary>
         /// 
@@ -175,10 +175,10 @@ namespace G
             bool @public,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            string? description,
             int comments,
-            global::G.NullableSimpleUser? user,
             string commentsUrl,
+            string? description,
+            global::G.NullableSimpleUser? user,
             global::G.NullableSimpleUser? owner,
             bool? truncated,
             global::System.Collections.Generic.IList<object>? forks,
@@ -196,10 +196,10 @@ namespace G
             this.Public = @public;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Comments = comments;
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
             this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
+            this.Description = description;
+            this.User = user;
             this.Owner = owner;
             this.Truncated = truncated;
             this.Forks = forks;

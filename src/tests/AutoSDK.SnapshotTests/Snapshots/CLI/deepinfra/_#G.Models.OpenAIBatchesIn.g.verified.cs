@@ -35,8 +35,7 @@ namespace G
         /// Optional metadata to be stored with the batch.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Metadata { get; set; }
+        public object? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -70,8 +69,8 @@ namespace G
         {
             this.InputFileId = inputFileId ?? throw new global::System.ArgumentNullException(nameof(inputFileId));
             this.Endpoint = endpoint;
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.CompletionWindow = completionWindow;
+            this.Metadata = metadata;
         }
 
         /// <summary>

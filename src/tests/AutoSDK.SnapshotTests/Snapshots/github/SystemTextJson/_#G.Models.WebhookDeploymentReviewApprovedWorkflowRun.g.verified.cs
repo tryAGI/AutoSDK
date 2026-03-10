@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookDeploymentReviewApprovedWorkflowRunActor? Actor { get; set; }
+        public global::G.WebhookDeploymentReviewApprovedWorkflowRunActor? Actor { get; set; }
 
         /// <summary>
         /// 
@@ -53,8 +52,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookDeploymentReviewApprovedWorkflowRunConclusionJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookDeploymentReviewApprovedWorkflowRunConclusion? Conclusion { get; set; }
+        public global::G.WebhookDeploymentReviewApprovedWorkflowRunConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// 
@@ -214,8 +212,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("triggering_actor")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookDeploymentReviewApprovedWorkflowRunTriggeringActor? TriggeringActor { get; set; }
+        public global::G.WebhookDeploymentReviewApprovedWorkflowRunTriggeringActor? TriggeringActor { get; set; }
 
         /// <summary>
         /// 
@@ -292,10 +289,8 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookDeploymentReviewApprovedWorkflowRun(
-            global::G.WebhookDeploymentReviewApprovedWorkflowRunActor? actor,
             int checkSuiteId,
             string checkSuiteNodeId,
-            global::G.WebhookDeploymentReviewApprovedWorkflowRunConclusion? conclusion,
             global::System.DateTime createdAt,
             string displayTitle,
             string @event,
@@ -311,13 +306,14 @@ namespace G
             int runNumber,
             global::System.DateTime runStartedAt,
             global::G.WebhookDeploymentReviewApprovedWorkflowRunStatus status,
-            global::G.WebhookDeploymentReviewApprovedWorkflowRunTriggeringActor? triggeringActor,
             global::System.DateTime updatedAt,
             string url,
             int workflowId,
+            global::G.WebhookDeploymentReviewApprovedWorkflowRunActor? actor,
             string? artifactsUrl,
             string? cancelUrl,
             string? checkSuiteUrl,
+            global::G.WebhookDeploymentReviewApprovedWorkflowRunConclusion? conclusion,
             object? headCommit,
             global::G.WebhookDeploymentReviewApprovedWorkflowRunHeadRepository? headRepository,
             string? jobsUrl,
@@ -326,12 +322,11 @@ namespace G
             global::System.Collections.Generic.IList<global::G.WebhookDeploymentReviewApprovedWorkflowRunReferencedWorkflow>? referencedWorkflows,
             global::G.WebhookDeploymentReviewApprovedWorkflowRunRepository? repository,
             string? rerunUrl,
+            global::G.WebhookDeploymentReviewApprovedWorkflowRunTriggeringActor? triggeringActor,
             string? workflowUrl)
         {
-            this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
             this.CheckSuiteId = checkSuiteId;
             this.CheckSuiteNodeId = checkSuiteNodeId ?? throw new global::System.ArgumentNullException(nameof(checkSuiteNodeId));
-            this.Conclusion = conclusion;
             this.CreatedAt = createdAt;
             this.DisplayTitle = displayTitle ?? throw new global::System.ArgumentNullException(nameof(displayTitle));
             this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));
@@ -347,13 +342,14 @@ namespace G
             this.RunNumber = runNumber;
             this.RunStartedAt = runStartedAt;
             this.Status = status;
-            this.TriggeringActor = triggeringActor ?? throw new global::System.ArgumentNullException(nameof(triggeringActor));
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.WorkflowId = workflowId;
+            this.Actor = actor;
             this.ArtifactsUrl = artifactsUrl;
             this.CancelUrl = cancelUrl;
             this.CheckSuiteUrl = checkSuiteUrl;
+            this.Conclusion = conclusion;
             this.HeadCommit = headCommit;
             this.HeadRepository = headRepository;
             this.JobsUrl = jobsUrl;
@@ -362,6 +358,7 @@ namespace G
             this.ReferencedWorkflows = referencedWorkflows;
             this.Repository = repository;
             this.RerunUrl = rerunUrl;
+            this.TriggeringActor = triggeringActor;
             this.WorkflowUrl = workflowUrl;
         }
 

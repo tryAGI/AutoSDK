@@ -21,15 +21,13 @@ namespace G
         /// Metaproperties for Git author/committer information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableGitUser? Author { get; set; }
+        public global::G.NullableGitUser? Author { get; set; }
 
         /// <summary>
         /// Metaproperties for Git author/committer information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("committer")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableGitUser? Committer { get; set; }
+        public global::G.NullableGitUser? Committer { get; set; }
 
         /// <summary>
         /// Example: Fix all the bugs
@@ -91,19 +89,19 @@ namespace G
 #endif
         public CommitCommit1(
             string url,
-            global::G.NullableGitUser? author,
-            global::G.NullableGitUser? committer,
             string message,
             int commentCount,
             global::G.CommitCommit1Tree tree,
+            global::G.NullableGitUser? author,
+            global::G.NullableGitUser? committer,
             global::G.Verification? verification)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
-            this.Committer = committer ?? throw new global::System.ArgumentNullException(nameof(committer));
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.CommentCount = commentCount;
             this.Tree = tree ?? throw new global::System.ArgumentNullException(nameof(tree));
+            this.Author = author;
+            this.Committer = committer;
             this.Verification = verification;
         }
 

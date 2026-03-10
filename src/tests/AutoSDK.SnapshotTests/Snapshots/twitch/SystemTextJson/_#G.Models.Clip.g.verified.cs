@@ -120,8 +120,7 @@ namespace G
         /// Note that there’s a delay between when a clip is created during a broadcast and when the offset is set. During the delay period, `vod_offset` is **null**. The delay is indeterminant but is typically minutes long.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vod_offset")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? VodOffset { get; set; }
+        public int? VodOffset { get; set; }
 
         /// <summary>
         /// A Boolean value that indicates if the clip is featured or not.
@@ -211,8 +210,8 @@ namespace G
             global::System.DateTime createdAt,
             string thumbnailUrl,
             float duration,
-            int? vodOffset,
-            bool isFeatured)
+            bool isFeatured,
+            int? vodOffset)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
@@ -229,8 +228,8 @@ namespace G
             this.CreatedAt = createdAt;
             this.ThumbnailUrl = thumbnailUrl ?? throw new global::System.ArgumentNullException(nameof(thumbnailUrl));
             this.Duration = duration;
-            this.VodOffset = vodOffset;
             this.IsFeatured = isFeatured;
+            this.VodOffset = vodOffset;
         }
 
         /// <summary>

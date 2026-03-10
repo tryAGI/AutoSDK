@@ -59,8 +59,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("external_reference")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? ExternalReference { get; set; }
+        public string? ExternalReference { get; set; }
 
         /// <summary>
         /// 
@@ -156,7 +155,6 @@ namespace G
             string affectedRange,
             string createdAt,
             string externalIdentifier,
-            string? externalReference,
             string ghsaId,
             int id,
             string nodeId,
@@ -165,6 +163,7 @@ namespace G
             string? dismissReason,
             string? dismissedAt,
             global::G.WebhooksAlertDismisser? dismisser,
+            string? externalReference,
             string? fixReason,
             global::System.DateTime? fixedAt,
             string? fixedIn,
@@ -174,7 +173,6 @@ namespace G
             this.AffectedRange = affectedRange ?? throw new global::System.ArgumentNullException(nameof(affectedRange));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.ExternalIdentifier = externalIdentifier ?? throw new global::System.ArgumentNullException(nameof(externalIdentifier));
-            this.ExternalReference = externalReference ?? throw new global::System.ArgumentNullException(nameof(externalReference));
             this.GhsaId = ghsaId ?? throw new global::System.ArgumentNullException(nameof(ghsaId));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
@@ -183,6 +181,7 @@ namespace G
             this.DismissReason = dismissReason;
             this.DismissedAt = dismissedAt;
             this.Dismisser = dismisser;
+            this.ExternalReference = externalReference;
             this.FixReason = fixReason;
             this.FixedAt = fixedAt;
             this.FixedIn = fixedIn;

@@ -30,8 +30,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CreateCompletionResponseChoiceLogprobs? Logprobs { get; set; }
+        public global::G.CreateCompletionResponseChoiceLogprobs? Logprobs { get; set; }
 
         /// <summary>
         /// 
@@ -63,13 +62,13 @@ namespace G
         public CreateCompletionResponseChoice(
             global::G.CreateCompletionResponseChoiceFinishReason finishReason,
             int index,
-            global::G.CreateCompletionResponseChoiceLogprobs? logprobs,
-            string text)
+            string text,
+            global::G.CreateCompletionResponseChoiceLogprobs? logprobs)
         {
             this.FinishReason = finishReason;
             this.Index = index;
-            this.Logprobs = logprobs ?? throw new global::System.ArgumentNullException(nameof(logprobs));
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Logprobs = logprobs;
         }
 
         /// <summary>

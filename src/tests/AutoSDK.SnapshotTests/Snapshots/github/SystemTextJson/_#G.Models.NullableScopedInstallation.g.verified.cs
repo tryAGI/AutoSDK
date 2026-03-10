@@ -31,8 +31,7 @@ namespace G
         /// </summary>
         /// <example>config.yaml</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("single_file_name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? SingleFileName { get; set; }
+        public string? SingleFileName { get; set; }
 
         /// <summary>
         /// Example: true
@@ -100,17 +99,17 @@ namespace G
         public NullableScopedInstallation(
             global::G.AppPermissions permissions,
             global::G.NullableScopedInstallationRepositorySelection repositorySelection,
-            string? singleFileName,
             string repositoriesUrl,
             global::G.SimpleUser account,
+            string? singleFileName,
             bool? hasMultipleSingleFiles,
             global::System.Collections.Generic.IList<string>? singleFilePaths)
         {
             this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
             this.RepositorySelection = repositorySelection;
-            this.SingleFileName = singleFileName ?? throw new global::System.ArgumentNullException(nameof(singleFileName));
             this.RepositoriesUrl = repositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(repositoriesUrl));
             this.Account = account ?? throw new global::System.ArgumentNullException(nameof(account));
+            this.SingleFileName = singleFileName;
             this.HasMultipleSingleFiles = hasMultipleSingleFiles;
             this.SingleFilePaths = singleFilePaths;
         }

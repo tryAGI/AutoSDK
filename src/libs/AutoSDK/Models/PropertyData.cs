@@ -72,6 +72,12 @@ public record struct PropertyData(
         {
             isRequired = false;
         }
+        // Nullable properties already default to null in C#.
+        // The JSON contract is preserved by [JsonRequired].
+        if (isRequired && type.CSharpTypeNullability)
+        {
+            isRequired = false;
+        }
 
         return new PropertyData(
             Id: propertyName,

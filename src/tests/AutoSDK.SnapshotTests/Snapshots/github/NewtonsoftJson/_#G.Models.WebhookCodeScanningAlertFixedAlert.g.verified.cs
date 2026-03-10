@@ -18,20 +18,20 @@ namespace G
         /// <summary>
         /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("dismissed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? DismissedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("dismissed_at")]
+        public global::System.DateTime? DismissedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("dismissed_by", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookCodeScanningAlertFixedAlertDismissedBy? DismissedBy { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("dismissed_by")]
+        public global::G.WebhookCodeScanningAlertFixedAlertDismissedBy? DismissedBy { get; set; }
 
         /// <summary>
         /// The reason for dismissing or closing the alert.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("dismissed_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookCodeScanningAlertFixedAlertDismissedReason? DismissedReason { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("dismissed_reason")]
+        public global::G.WebhookCodeScanningAlertFixedAlertDismissedReason? DismissedReason { get; set; }
 
         /// <summary>
         /// The GitHub URL of the alert resource.
@@ -116,27 +116,27 @@ namespace G
         /// <param name="url"></param>
         public WebhookCodeScanningAlertFixedAlert(
             global::System.DateTime createdAt,
-            global::System.DateTime? dismissedAt,
-            global::G.WebhookCodeScanningAlertFixedAlertDismissedBy? dismissedBy,
-            global::G.WebhookCodeScanningAlertFixedAlertDismissedReason? dismissedReason,
             string htmlUrl,
             int number,
             global::G.WebhookCodeScanningAlertFixedAlertRule rule,
             global::G.WebhookCodeScanningAlertFixedAlertTool tool,
             string url,
+            global::System.DateTime? dismissedAt,
+            global::G.WebhookCodeScanningAlertFixedAlertDismissedBy? dismissedBy,
+            global::G.WebhookCodeScanningAlertFixedAlertDismissedReason? dismissedReason,
             string? instancesUrl,
             global::G.WebhookCodeScanningAlertFixedAlertMostRecentInstance? mostRecentInstance,
             global::G.WebhookCodeScanningAlertFixedAlertState state)
         {
             this.CreatedAt = createdAt;
-            this.DismissedAt = dismissedAt;
-            this.DismissedBy = dismissedBy ?? throw new global::System.ArgumentNullException(nameof(dismissedBy));
-            this.DismissedReason = dismissedReason;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Number = number;
             this.Rule = rule ?? throw new global::System.ArgumentNullException(nameof(rule));
             this.Tool = tool ?? throw new global::System.ArgumentNullException(nameof(tool));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.DismissedAt = dismissedAt;
+            this.DismissedBy = dismissedBy;
+            this.DismissedReason = dismissedReason;
             this.InstancesUrl = instancesUrl;
             this.MostRecentInstance = mostRecentInstance;
             this.State = state;

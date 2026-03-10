@@ -68,8 +68,7 @@ namespace G
         /// </summary>
         /// <example>This your first repo!</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -843,7 +842,6 @@ namespace G
             global::G.SimpleUser owner,
             bool @private,
             string htmlUrl,
-            string? description,
             bool fork,
             string url,
             string archiveUrl,
@@ -882,6 +880,7 @@ namespace G
             string teamsUrl,
             string treesUrl,
             string hooksUrl,
+            string? description,
             string? gitUrl,
             string? sshUrl,
             string? cloneUrl,
@@ -931,7 +930,6 @@ namespace G
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.Private = @private;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Fork = fork;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.ArchiveUrl = archiveUrl ?? throw new global::System.ArgumentNullException(nameof(archiveUrl));
@@ -970,6 +968,7 @@ namespace G
             this.TeamsUrl = teamsUrl ?? throw new global::System.ArgumentNullException(nameof(teamsUrl));
             this.TreesUrl = treesUrl ?? throw new global::System.ArgumentNullException(nameof(treesUrl));
             this.HooksUrl = hooksUrl ?? throw new global::System.ArgumentNullException(nameof(hooksUrl));
+            this.Description = description;
             this.GitUrl = gitUrl;
             this.SshUrl = sshUrl;
             this.CloneUrl = cloneUrl;

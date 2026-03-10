@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public object? Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public object? Description { get; set; }
 
         /// <summary>
         /// 
@@ -72,8 +72,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("registry", Required = global::Newtonsoft.Json.Required.Always)]
-        public object? Registry { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("registry")]
+        public object? Registry { get; set; }
 
         /// <summary>
         /// 
@@ -104,7 +104,6 @@ namespace G
         /// <param name="updatedAt"></param>
         public WebhookRegistryPackageUpdatedRegistryPackage(
             string createdAt,
-            object? description,
             string ecosystem,
             string htmlUrl,
             int id,
@@ -113,11 +112,11 @@ namespace G
             global::G.WebhookRegistryPackageUpdatedRegistryPackageOwner owner,
             string packageType,
             global::G.WebhookRegistryPackageUpdatedRegistryPackagePackageVersion packageVersion,
-            object? registry,
-            string updatedAt)
+            string updatedAt,
+            object? description,
+            object? registry)
         {
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Ecosystem = ecosystem ?? throw new global::System.ArgumentNullException(nameof(ecosystem));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
@@ -126,8 +125,9 @@ namespace G
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.PackageType = packageType ?? throw new global::System.ArgumentNullException(nameof(packageType));
             this.PackageVersion = packageVersion ?? throw new global::System.ArgumentNullException(nameof(packageVersion));
-            this.Registry = registry ?? throw new global::System.ArgumentNullException(nameof(registry));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
+            this.Description = description;
+            this.Registry = registry;
         }
 
         /// <summary>

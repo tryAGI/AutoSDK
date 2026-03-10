@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("from", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? From { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("from")]
+        public string? From { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +28,7 @@ namespace G
         public WebhookRepositoryEditedChangesDescription(
             string? from)
         {
-            this.From = from ?? throw new global::System.ArgumentNullException(nameof(from));
+            this.From = from;
         }
 
         /// <summary>

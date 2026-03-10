@@ -62,22 +62,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("git_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? GitUrl { get; set; }
+        public string? GitUrl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? HtmlUrl { get; set; }
+        public string? HtmlUrl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("download_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? DownloadUrl { get; set; }
+        public string? DownloadUrl { get; set; }
 
         /// <summary>
         /// 
@@ -116,11 +113,11 @@ namespace G
             string path,
             string sha,
             string url,
+            global::G.ContentSubmoduleLinks links,
+            global::G.ContentSubmoduleType type,
             string? gitUrl,
             string? htmlUrl,
-            string? downloadUrl,
-            global::G.ContentSubmoduleLinks links,
-            global::G.ContentSubmoduleType type)
+            string? downloadUrl)
         {
             this.SubmoduleGitUrl = submoduleGitUrl ?? throw new global::System.ArgumentNullException(nameof(submoduleGitUrl));
             this.Size = size;
@@ -128,11 +125,11 @@ namespace G
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.GitUrl = gitUrl ?? throw new global::System.ArgumentNullException(nameof(gitUrl));
-            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.DownloadUrl = downloadUrl ?? throw new global::System.ArgumentNullException(nameof(downloadUrl));
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
             this.Type = type;
+            this.GitUrl = gitUrl;
+            this.HtmlUrl = htmlUrl;
+            this.DownloadUrl = downloadUrl;
         }
 
         /// <summary>

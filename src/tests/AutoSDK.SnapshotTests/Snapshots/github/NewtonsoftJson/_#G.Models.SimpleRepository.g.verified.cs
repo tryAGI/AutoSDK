@@ -66,8 +66,8 @@ namespace G
         /// Example: This your first repo!
         /// </summary>
         /// <example>This your first repo!</example>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// Whether the repository is a fork.
@@ -569,7 +569,6 @@ namespace G
             global::G.SimpleUser owner,
             bool @private,
             string htmlUrl,
-            string? description,
             bool fork,
             string url,
             string archiveUrl,
@@ -607,7 +606,8 @@ namespace G
             string tagsUrl,
             string teamsUrl,
             string treesUrl,
-            string hooksUrl)
+            string hooksUrl,
+            string? description)
         {
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
@@ -616,7 +616,6 @@ namespace G
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.Private = @private;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Fork = fork;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.ArchiveUrl = archiveUrl ?? throw new global::System.ArgumentNullException(nameof(archiveUrl));
@@ -655,6 +654,7 @@ namespace G
             this.TeamsUrl = teamsUrl ?? throw new global::System.ArgumentNullException(nameof(teamsUrl));
             this.TreesUrl = treesUrl ?? throw new global::System.ArgumentNullException(nameof(treesUrl));
             this.HooksUrl = hooksUrl ?? throw new global::System.ArgumentNullException(nameof(hooksUrl));
+            this.Description = description;
         }
 
         /// <summary>

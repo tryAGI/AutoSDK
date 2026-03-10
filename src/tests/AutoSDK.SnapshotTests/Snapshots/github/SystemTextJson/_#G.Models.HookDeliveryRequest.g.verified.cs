@@ -13,15 +13,13 @@ namespace G
         /// The request headers sent with the webhook delivery.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("headers")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Headers { get; set; }
+        public object? Headers { get; set; }
 
         /// <summary>
         /// The webhook payload.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Payload { get; set; }
+        public object? Payload { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,8 +43,8 @@ namespace G
             object? headers,
             object? payload)
         {
-            this.Headers = headers ?? throw new global::System.ArgumentNullException(nameof(headers));
-            this.Payload = payload ?? throw new global::System.ArgumentNullException(nameof(payload));
+            this.Headers = headers;
+            this.Payload = payload;
         }
 
         /// <summary>

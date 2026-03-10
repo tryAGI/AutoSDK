@@ -20,15 +20,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("login")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Login { get; set; }
+        public string? Login { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Email { get; set; }
+        public string? Email { get; set; }
 
         /// <summary>
         /// 
@@ -127,27 +125,27 @@ namespace G
 #endif
         public OrganizationInvitation(
             long id,
-            string? login,
-            string? email,
             string role,
             string createdAt,
             global::G.SimpleUser inviter,
             int teamCount,
             string nodeId,
             string invitationTeamsUrl,
+            string? login,
+            string? email,
             string? failedAt,
             string? failedReason,
             string? invitationSource)
         {
             this.Id = id;
-            this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
-            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.Role = role ?? throw new global::System.ArgumentNullException(nameof(role));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.Inviter = inviter ?? throw new global::System.ArgumentNullException(nameof(inviter));
             this.TeamCount = teamCount;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.InvitationTeamsUrl = invitationTeamsUrl ?? throw new global::System.ArgumentNullException(nameof(invitationTeamsUrl));
+            this.Login = login;
+            this.Email = email;
             this.FailedAt = failedAt;
             this.FailedReason = failedReason;
             this.InvitationSource = invitationSource;

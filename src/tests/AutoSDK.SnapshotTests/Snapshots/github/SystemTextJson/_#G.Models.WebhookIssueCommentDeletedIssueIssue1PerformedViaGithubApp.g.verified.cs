@@ -13,15 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// The list of events for the GitHub app
@@ -33,8 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("external_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? ExternalUrl { get; set; }
+        public string? ExternalUrl { get; set; }
 
         /// <summary>
         /// 
@@ -47,8 +44,7 @@ namespace G
         /// Unique identifier of the GitHub app
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// The name of the GitHub app
@@ -68,8 +64,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppOwner? Owner { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppOwner? Owner { get; set; }
 
         /// <summary>
         /// The set of permissions for the GitHub app
@@ -87,8 +82,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? UpdatedAt { get; set; }
+        public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -125,31 +119,31 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubApp(
-            global::System.DateTime? createdAt,
-            string? description,
-            string? externalUrl,
             string htmlUrl,
-            int? id,
             string name,
             string nodeId,
-            global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppOwner? owner,
-            global::System.DateTime? updatedAt,
+            global::System.DateTime? createdAt,
+            string? description,
             global::System.Collections.Generic.IList<global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent>? events,
+            string? externalUrl,
+            int? id,
+            global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppOwner? owner,
             global::G.WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissions? permissions,
-            string? slug)
+            string? slug,
+            global::System.DateTime? updatedAt)
         {
-            this.CreatedAt = createdAt;
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.ExternalUrl = externalUrl ?? throw new global::System.ArgumentNullException(nameof(externalUrl));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
-            this.UpdatedAt = updatedAt;
+            this.CreatedAt = createdAt;
+            this.Description = description;
             this.Events = events;
+            this.ExternalUrl = externalUrl;
+            this.Id = id;
+            this.Owner = owner;
             this.Permissions = permissions;
             this.Slug = slug;
+            this.UpdatedAt = updatedAt;
         }
 
         /// <summary>

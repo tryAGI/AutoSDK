@@ -90,8 +90,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -412,15 +411,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("homepage")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Homepage { get; set; }
+        public string? Homepage { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("language")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Language { get; set; }
+        public string? Language { get; set; }
 
         /// <summary>
         /// 
@@ -452,8 +449,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mirror_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? MirrorUrl { get; set; }
+        public string? MirrorUrl { get; set; }
 
         /// <summary>
         /// 
@@ -503,8 +499,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("license")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.PullRequestHeadRepoLicense? License { get; set; }
+        public global::G.PullRequestHeadRepoLicense? License { get; set; }
 
         /// <summary>
         /// 
@@ -704,7 +699,6 @@ namespace G
             string contentsUrl,
             string contributorsUrl,
             string deploymentsUrl,
-            string? description,
             string downloadsUrl,
             string eventsUrl,
             bool fork,
@@ -750,14 +744,10 @@ namespace G
             bool hasWiki,
             bool hasPages,
             bool hasDiscussions,
-            string? homepage,
-            string? language,
             bool archived,
             bool disabled,
-            string? mirrorUrl,
             int openIssues,
             int openIssuesCount,
-            global::G.PullRequestHeadRepoLicense? license,
             global::System.DateTime pushedAt,
             int size,
             string sshUrl,
@@ -767,13 +757,18 @@ namespace G
             int watchersCount,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
+            string? description,
+            string? homepage,
+            string? language,
             string? masterBranch,
             string? visibility,
+            string? mirrorUrl,
             global::G.PullRequestHeadRepoPermissions? permissions,
             string? tempCloneToken,
             bool? allowMergeCommit,
             bool? allowSquashMerge,
             bool? allowRebaseMerge,
+            global::G.PullRequestHeadRepoLicense? license,
             global::System.Collections.Generic.IList<string>? topics,
             bool? allowForking,
             bool? isTemplate,
@@ -790,7 +785,6 @@ namespace G
             this.ContentsUrl = contentsUrl ?? throw new global::System.ArgumentNullException(nameof(contentsUrl));
             this.ContributorsUrl = contributorsUrl ?? throw new global::System.ArgumentNullException(nameof(contributorsUrl));
             this.DeploymentsUrl = deploymentsUrl ?? throw new global::System.ArgumentNullException(nameof(deploymentsUrl));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.DownloadsUrl = downloadsUrl ?? throw new global::System.ArgumentNullException(nameof(downloadsUrl));
             this.EventsUrl = eventsUrl ?? throw new global::System.ArgumentNullException(nameof(eventsUrl));
             this.Fork = fork;
@@ -836,14 +830,10 @@ namespace G
             this.HasWiki = hasWiki;
             this.HasPages = hasPages;
             this.HasDiscussions = hasDiscussions;
-            this.Homepage = homepage ?? throw new global::System.ArgumentNullException(nameof(homepage));
-            this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
             this.Archived = archived;
             this.Disabled = disabled;
-            this.MirrorUrl = mirrorUrl ?? throw new global::System.ArgumentNullException(nameof(mirrorUrl));
             this.OpenIssues = openIssues;
             this.OpenIssuesCount = openIssuesCount;
-            this.License = license ?? throw new global::System.ArgumentNullException(nameof(license));
             this.PushedAt = pushedAt;
             this.Size = size;
             this.SshUrl = sshUrl ?? throw new global::System.ArgumentNullException(nameof(sshUrl));
@@ -853,13 +843,18 @@ namespace G
             this.WatchersCount = watchersCount;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.Description = description;
+            this.Homepage = homepage;
+            this.Language = language;
             this.MasterBranch = masterBranch;
             this.Visibility = visibility;
+            this.MirrorUrl = mirrorUrl;
             this.Permissions = permissions;
             this.TempCloneToken = tempCloneToken;
             this.AllowMergeCommit = allowMergeCommit;
             this.AllowSquashMerge = allowSquashMerge;
             this.AllowRebaseMerge = allowRebaseMerge;
+            this.License = license;
             this.Topics = topics;
             this.AllowForking = allowForking;
             this.IsTemplate = isTemplate;

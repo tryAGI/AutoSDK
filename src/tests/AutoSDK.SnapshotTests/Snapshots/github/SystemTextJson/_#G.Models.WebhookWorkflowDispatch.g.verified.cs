@@ -21,8 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Inputs { get; set; }
+        public object? Inputs { get; set; }
 
         /// <summary>
         /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>
@@ -105,21 +104,21 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookWorkflowDispatch(
-            object? inputs,
             string @ref,
             global::G.RepositoryWebhooks repository,
             global::G.SimpleUser sender,
             string workflow,
             global::G.EnterpriseWebhooks? enterprise,
+            object? inputs,
             global::G.SimpleInstallation? installation,
             global::G.OrganizationSimpleWebhooks? organization)
         {
-            this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
             this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Workflow = workflow ?? throw new global::System.ArgumentNullException(nameof(workflow));
             this.Enterprise = enterprise;
+            this.Inputs = inputs;
             this.Installation = installation;
             this.Organization = organization;
         }

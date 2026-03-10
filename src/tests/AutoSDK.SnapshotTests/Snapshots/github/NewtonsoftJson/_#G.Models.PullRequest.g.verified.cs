@@ -134,8 +134,8 @@ namespace G
         /// Example: Please pull these awesome changes
         /// </summary>
         /// <example>Please pull these awesome changes</example>
-        [global::Newtonsoft.Json.JsonProperty("body", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Body { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("body")]
+        public string? Body { get; set; }
 
         /// <summary>
         /// 
@@ -146,8 +146,8 @@ namespace G
         /// <summary>
         /// A collection of related issues and pull requests.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("milestone", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableMilestone? Milestone { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("milestone")]
+        public global::G.NullableMilestone? Milestone { get; set; }
 
         /// <summary>
         /// Example: too heated
@@ -174,28 +174,28 @@ namespace G
         /// Example: 2011-01-26T19:01:12Z
         /// </summary>
         /// <example>2011-01-26T19:01:12Z</example>
-        [global::Newtonsoft.Json.JsonProperty("closed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? ClosedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("closed_at")]
+        public global::System.DateTime? ClosedAt { get; set; }
 
         /// <summary>
         /// Example: 2011-01-26T19:01:12Z
         /// </summary>
         /// <example>2011-01-26T19:01:12Z</example>
-        [global::Newtonsoft.Json.JsonProperty("merged_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? MergedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("merged_at")]
+        public global::System.DateTime? MergedAt { get; set; }
 
         /// <summary>
         /// Example: e5bd3914e2e596debea16f433f57875b5b90bcd6
         /// </summary>
         /// <example>e5bd3914e2e596debea16f433f57875b5b90bcd6</example>
-        [global::Newtonsoft.Json.JsonProperty("merge_commit_sha", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? MergeCommitSha { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("merge_commit_sha")]
+        public string? MergeCommitSha { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("assignee", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? Assignee { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("assignee")]
+        public global::G.NullableSimpleUser? Assignee { get; set; }
 
         /// <summary>
         /// 
@@ -244,8 +244,8 @@ namespace G
         /// <summary>
         /// The status of auto merging a pull request.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("auto_merge", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AutoMerge? AutoMerge { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("auto_merge")]
+        public global::G.AutoMerge? AutoMerge { get; set; }
 
         /// <summary>
         /// Indicates whether or not the pull request is a draft.<br/>
@@ -265,8 +265,8 @@ namespace G
         /// Example: true
         /// </summary>
         /// <example>true</example>
-        [global::Newtonsoft.Json.JsonProperty("mergeable", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool? Mergeable { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("mergeable")]
+        public bool? Mergeable { get; set; }
 
         /// <summary>
         /// Example: true
@@ -285,8 +285,8 @@ namespace G
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("merged_by", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? MergedBy { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("merged_by")]
+        public global::G.NullableSimpleUser? MergedBy { get; set; }
 
         /// <summary>
         /// Example: 10
@@ -499,24 +499,15 @@ namespace G
             bool locked,
             string title,
             global::G.SimpleUser user,
-            string? body,
             global::System.Collections.Generic.IList<global::G.PullRequestLabel> labels,
-            global::G.NullableMilestone? milestone,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            global::System.DateTime? closedAt,
-            global::System.DateTime? mergedAt,
-            string? mergeCommitSha,
-            global::G.NullableSimpleUser? assignee,
             global::G.PullRequestHead head,
             global::G.PullRequestBase @base,
             global::G.PullRequestLinks links,
             global::G.AuthorAssociation authorAssociation,
-            global::G.AutoMerge? autoMerge,
             bool merged,
-            bool? mergeable,
             string mergeableState,
-            global::G.NullableSimpleUser? mergedBy,
             int comments,
             int reviewComments,
             bool maintainerCanModify,
@@ -524,12 +515,21 @@ namespace G
             int additions,
             int deletions,
             int changedFiles,
+            string? body,
+            global::G.NullableMilestone? milestone,
             string? activeLockReason,
+            global::System.DateTime? closedAt,
+            global::System.DateTime? mergedAt,
+            string? mergeCommitSha,
+            global::G.NullableSimpleUser? assignee,
             global::System.Collections.Generic.IList<global::G.SimpleUser>? assignees,
             global::System.Collections.Generic.IList<global::G.SimpleUser>? requestedReviewers,
             global::System.Collections.Generic.IList<global::G.TeamSimple>? requestedTeams,
+            global::G.AutoMerge? autoMerge,
             bool? draft,
-            bool? rebaseable)
+            bool? mergeable,
+            bool? rebaseable,
+            global::G.NullableSimpleUser? mergedBy)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Id = id;
@@ -548,24 +548,15 @@ namespace G
             this.Locked = locked;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
-            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
             this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
-            this.Milestone = milestone ?? throw new global::System.ArgumentNullException(nameof(milestone));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.ClosedAt = closedAt;
-            this.MergedAt = mergedAt;
-            this.MergeCommitSha = mergeCommitSha ?? throw new global::System.ArgumentNullException(nameof(mergeCommitSha));
-            this.Assignee = assignee ?? throw new global::System.ArgumentNullException(nameof(assignee));
             this.Head = head ?? throw new global::System.ArgumentNullException(nameof(head));
             this.Base = @base ?? throw new global::System.ArgumentNullException(nameof(@base));
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
             this.AuthorAssociation = authorAssociation;
-            this.AutoMerge = autoMerge ?? throw new global::System.ArgumentNullException(nameof(autoMerge));
             this.Merged = merged;
-            this.Mergeable = mergeable;
             this.MergeableState = mergeableState ?? throw new global::System.ArgumentNullException(nameof(mergeableState));
-            this.MergedBy = mergedBy ?? throw new global::System.ArgumentNullException(nameof(mergedBy));
             this.Comments = comments;
             this.ReviewComments = reviewComments;
             this.MaintainerCanModify = maintainerCanModify;
@@ -573,12 +564,21 @@ namespace G
             this.Additions = additions;
             this.Deletions = deletions;
             this.ChangedFiles = changedFiles;
+            this.Body = body;
+            this.Milestone = milestone;
             this.ActiveLockReason = activeLockReason;
+            this.ClosedAt = closedAt;
+            this.MergedAt = mergedAt;
+            this.MergeCommitSha = mergeCommitSha;
+            this.Assignee = assignee;
             this.Assignees = assignees;
             this.RequestedReviewers = requestedReviewers;
             this.RequestedTeams = requestedTeams;
+            this.AutoMerge = autoMerge;
             this.Draft = draft;
+            this.Mergeable = mergeable;
             this.Rebaseable = rebaseable;
+            this.MergedBy = mergedBy;
         }
 
         /// <summary>

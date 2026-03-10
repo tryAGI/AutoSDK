@@ -13,15 +13,13 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_reason")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.BetaMessageDeltaStopReason2? StopReason { get; set; }
+        public global::G.BetaMessageDeltaStopReason2? StopReason { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_sequence")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? StopSequence { get; set; }
+        public string? StopSequence { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,8 +43,8 @@ namespace G
             global::G.BetaMessageDeltaStopReason2? stopReason,
             string? stopSequence)
         {
-            this.StopReason = stopReason ?? throw new global::System.ArgumentNullException(nameof(stopReason));
-            this.StopSequence = stopSequence ?? throw new global::System.ArgumentNullException(nameof(stopSequence));
+            this.StopReason = stopReason;
+            this.StopSequence = stopSequence;
         }
 
         /// <summary>

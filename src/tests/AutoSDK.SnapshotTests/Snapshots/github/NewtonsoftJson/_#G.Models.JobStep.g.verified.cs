@@ -22,8 +22,8 @@ namespace G
         /// Example: success
         /// </summary>
         /// <example>success</example>
-        [global::Newtonsoft.Json.JsonProperty("conclusion", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Conclusion { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("conclusion")]
+        public string? Conclusion { get; set; }
 
         /// <summary>
         /// The name of the job.<br/>
@@ -90,16 +90,16 @@ namespace G
         /// </param>
         public JobStep(
             global::G.JobStepStatus status,
-            string? conclusion,
             string name,
             int number,
+            string? conclusion,
             global::System.DateTime? startedAt,
             global::System.DateTime? completedAt)
         {
             this.Status = status;
-            this.Conclusion = conclusion ?? throw new global::System.ArgumentNullException(nameof(conclusion));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Number = number;
+            this.Conclusion = conclusion;
             this.StartedAt = startedAt;
             this.CompletedAt = completedAt;
         }

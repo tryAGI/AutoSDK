@@ -65,8 +65,7 @@ namespace G
         /// </summary>
         /// <example>A great team.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// The level of privacy this team should have<br/>
@@ -247,7 +246,6 @@ namespace G
             string htmlUrl,
             string name,
             string slug,
-            string? description,
             string permission,
             string membersUrl,
             string repositoriesUrl,
@@ -256,6 +254,7 @@ namespace G
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             global::G.TeamOrganization organization,
+            string? description,
             global::G.TeamFullPrivacy? privacy,
             global::G.TeamFullNotificationSetting? notificationSetting,
             global::G.NullableTeamSimple? parent,
@@ -267,7 +266,6 @@ namespace G
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Permission = permission ?? throw new global::System.ArgumentNullException(nameof(permission));
             this.MembersUrl = membersUrl ?? throw new global::System.ArgumentNullException(nameof(membersUrl));
             this.RepositoriesUrl = repositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(repositoriesUrl));
@@ -276,6 +274,7 @@ namespace G
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.Organization = organization ?? throw new global::System.ArgumentNullException(nameof(organization));
+            this.Description = description;
             this.Privacy = privacy;
             this.NotificationSetting = notificationSetting;
             this.Parent = parent;

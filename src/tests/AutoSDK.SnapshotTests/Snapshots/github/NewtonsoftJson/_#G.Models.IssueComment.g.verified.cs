@@ -60,8 +60,8 @@ namespace G
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? User { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("user")]
+        public global::G.NullableSimpleUser? User { get; set; }
 
         /// <summary>
         /// Example: 2011-04-14T16:00:49Z
@@ -151,7 +151,6 @@ namespace G
             string nodeId,
             string url,
             string htmlUrl,
-            global::G.NullableSimpleUser? user,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             string issueUrl,
@@ -159,6 +158,7 @@ namespace G
             string? body,
             string? bodyText,
             string? bodyHtml,
+            global::G.NullableSimpleUser? user,
             global::G.NullableIntegration? performedViaGithubApp,
             global::G.ReactionRollup? reactions)
         {
@@ -166,7 +166,6 @@ namespace G
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.IssueUrl = issueUrl ?? throw new global::System.ArgumentNullException(nameof(issueUrl));
@@ -174,6 +173,7 @@ namespace G
             this.Body = body;
             this.BodyText = bodyText;
             this.BodyHtml = bodyHtml;
+            this.User = user;
             this.PerformedViaGithubApp = performedViaGithubApp;
             this.Reactions = reactions;
         }

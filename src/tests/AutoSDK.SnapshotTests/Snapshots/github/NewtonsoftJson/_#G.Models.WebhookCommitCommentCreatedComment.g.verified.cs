@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("line", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? Line { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("line")]
+        public int? Line { get; set; }
 
         /// <summary>
         /// The node ID of the commit comment.
@@ -60,14 +60,14 @@ namespace G
         /// <summary>
         /// The relative path of the file to which the comment applies.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("path", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Path { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("path")]
+        public string? Path { get; set; }
 
         /// <summary>
         /// The line index in the diff to which the comment applies.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("position", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? Position { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("position")]
+        public int? Position { get; set; }
 
         /// <summary>
         /// 
@@ -90,8 +90,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookCommitCommentCreatedCommentUser? User { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("user")]
+        public global::G.WebhookCommitCommentCreatedCommentUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -139,14 +139,14 @@ namespace G
             string createdAt,
             string htmlUrl,
             int id,
-            int? line,
             string nodeId,
-            string? path,
-            int? position,
             string updatedAt,
             string url,
-            global::G.WebhookCommitCommentCreatedCommentUser? user,
-            global::G.WebhookCommitCommentCreatedCommentReactions? reactions)
+            int? line,
+            string? path,
+            int? position,
+            global::G.WebhookCommitCommentCreatedCommentReactions? reactions,
+            global::G.WebhookCommitCommentCreatedCommentUser? user)
         {
             this.AuthorAssociation = authorAssociation;
             this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
@@ -154,14 +154,14 @@ namespace G
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
-            this.Line = line;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
-            this.Position = position;
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.Line = line;
+            this.Path = path;
+            this.Position = position;
             this.Reactions = reactions;
+            this.User = user;
         }
 
         /// <summary>

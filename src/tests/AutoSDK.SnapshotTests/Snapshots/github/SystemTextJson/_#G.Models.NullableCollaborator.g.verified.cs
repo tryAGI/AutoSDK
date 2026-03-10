@@ -58,8 +58,7 @@ namespace G
         /// </summary>
         /// <example>41d064eb2195891e12d0413f63227ea7</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("gravatar_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? GravatarId { get; set; }
+        public string? GravatarId { get; set; }
 
         /// <summary>
         /// Example: https://api.github.com/users/octocat
@@ -253,7 +252,6 @@ namespace G
             long id,
             string nodeId,
             string avatarUrl,
-            string? gravatarId,
             string url,
             string htmlUrl,
             string followersUrl,
@@ -270,13 +268,13 @@ namespace G
             string roleName,
             string? email,
             string? name,
+            string? gravatarId,
             global::G.NullableCollaboratorPermissions? permissions)
         {
             this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
-            this.GravatarId = gravatarId ?? throw new global::System.ArgumentNullException(nameof(gravatarId));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.FollowersUrl = followersUrl ?? throw new global::System.ArgumentNullException(nameof(followersUrl));
@@ -293,6 +291,7 @@ namespace G
             this.RoleName = roleName ?? throw new global::System.ArgumentNullException(nameof(roleName));
             this.Email = email;
             this.Name = name;
+            this.GravatarId = gravatarId;
             this.Permissions = permissions;
         }
 

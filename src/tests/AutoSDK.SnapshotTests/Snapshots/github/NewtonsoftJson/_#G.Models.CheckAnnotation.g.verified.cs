@@ -34,43 +34,43 @@ namespace G
         /// Example: 5
         /// </summary>
         /// <example>5</example>
-        [global::Newtonsoft.Json.JsonProperty("start_column", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? StartColumn { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("start_column")]
+        public int? StartColumn { get; set; }
 
         /// <summary>
         /// Example: 10
         /// </summary>
         /// <example>10</example>
-        [global::Newtonsoft.Json.JsonProperty("end_column", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? EndColumn { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("end_column")]
+        public int? EndColumn { get; set; }
 
         /// <summary>
         /// Example: warning
         /// </summary>
         /// <example>warning</example>
-        [global::Newtonsoft.Json.JsonProperty("annotation_level", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? AnnotationLevel { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("annotation_level")]
+        public string? AnnotationLevel { get; set; }
 
         /// <summary>
         /// Example: Spell Checker
         /// </summary>
         /// <example>Spell Checker</example>
-        [global::Newtonsoft.Json.JsonProperty("title", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Title { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("title")]
+        public string? Title { get; set; }
 
         /// <summary>
         /// Example: Check your spelling for 'banaas'.
         /// </summary>
         /// <example>Check your spelling for 'banaas'.</example>
-        [global::Newtonsoft.Json.JsonProperty("message", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Message { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("message")]
+        public string? Message { get; set; }
 
         /// <summary>
         /// Example: Do you mean 'bananas' or 'banana'?
         /// </summary>
         /// <example>Do you mean 'bananas' or 'banana'?</example>
-        [global::Newtonsoft.Json.JsonProperty("raw_details", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? RawDetails { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("raw_details")]
+        public string? RawDetails { get; set; }
 
         /// <summary>
         /// 
@@ -119,24 +119,24 @@ namespace G
             string path,
             int startLine,
             int endLine,
+            string blobHref,
             int? startColumn,
             int? endColumn,
             string? annotationLevel,
             string? title,
             string? message,
-            string? rawDetails,
-            string blobHref)
+            string? rawDetails)
         {
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.StartLine = startLine;
             this.EndLine = endLine;
+            this.BlobHref = blobHref ?? throw new global::System.ArgumentNullException(nameof(blobHref));
             this.StartColumn = startColumn;
             this.EndColumn = endColumn;
-            this.AnnotationLevel = annotationLevel ?? throw new global::System.ArgumentNullException(nameof(annotationLevel));
-            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.RawDetails = rawDetails ?? throw new global::System.ArgumentNullException(nameof(rawDetails));
-            this.BlobHref = blobHref ?? throw new global::System.ArgumentNullException(nameof(blobHref));
+            this.AnnotationLevel = annotationLevel;
+            this.Title = title;
+            this.Message = message;
+            this.RawDetails = rawDetails;
         }
 
         /// <summary>

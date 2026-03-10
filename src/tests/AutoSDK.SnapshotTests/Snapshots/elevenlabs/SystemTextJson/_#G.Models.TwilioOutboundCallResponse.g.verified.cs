@@ -27,15 +27,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conversation_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? ConversationId { get; set; }
+        public string? ConversationId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("callSid")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? CallSid { get; set; }
+        public string? CallSid { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,8 +59,8 @@ namespace G
         {
             this.Success = success;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.ConversationId = conversationId ?? throw new global::System.ArgumentNullException(nameof(conversationId));
-            this.CallSid = callSid ?? throw new global::System.ArgumentNullException(nameof(callSid));
+            this.ConversationId = conversationId;
+            this.CallSid = callSid;
         }
 
         /// <summary>

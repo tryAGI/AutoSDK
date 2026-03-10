@@ -30,8 +30,7 @@ namespace G
         /// </summary>
         /// <example>master</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("head_branch")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? HeadBranch { get; set; }
+        public string? HeadBranch { get; set; }
 
         /// <summary>
         /// The SHA of the head commit that is being checked.<br/>
@@ -49,8 +48,7 @@ namespace G
         /// <example>completed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CheckSuiteStatusJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CheckSuiteStatus? Status { get; set; }
+        public global::G.CheckSuiteStatus? Status { get; set; }
 
         /// <summary>
         /// Example: neutral
@@ -58,46 +56,40 @@ namespace G
         /// <example>neutral</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CheckSuiteConclusionJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CheckSuiteConclusion? Conclusion { get; set; }
+        public global::G.CheckSuiteConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// Example: https://api.github.com/repos/github/hello-world/check-suites/5
         /// </summary>
         /// <example>https://api.github.com/repos/github/hello-world/check-suites/5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Url { get; set; }
+        public string? Url { get; set; }
 
         /// <summary>
         /// Example: 146e867f55c26428e5f9fade55a9bbf5e95a7912
         /// </summary>
         /// <example>146e867f55c26428e5f9fade55a9bbf5e95a7912</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("before")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Before { get; set; }
+        public string? Before { get; set; }
 
         /// <summary>
         /// Example: d6fde92930d4715a2b49857d24b940956b26d2d3
         /// </summary>
         /// <example>d6fde92930d4715a2b49857d24b940956b26d2d3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("after")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? After { get; set; }
+        public string? After { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_requests")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.PullRequestMinimal>? PullRequests { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PullRequestMinimal>? PullRequests { get; set; }
 
         /// <summary>
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("app")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableIntegration? App { get; set; }
+        public global::G.NullableIntegration? App { get; set; }
 
         /// <summary>
         /// Minimal Repository
@@ -110,15 +102,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? UpdatedAt { get; set; }
+        public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// A commit.
@@ -213,8 +203,12 @@ namespace G
         public CheckSuite(
             int id,
             string nodeId,
-            string? headBranch,
             string headSha,
+            global::G.MinimalRepository repository,
+            global::G.SimpleCommit headCommit,
+            int latestCheckRunsCount,
+            string checkRunsUrl,
+            string? headBranch,
             global::G.CheckSuiteStatus? status,
             global::G.CheckSuiteConclusion? conclusion,
             string? url,
@@ -222,32 +216,28 @@ namespace G
             string? after,
             global::System.Collections.Generic.IList<global::G.PullRequestMinimal>? pullRequests,
             global::G.NullableIntegration? app,
-            global::G.MinimalRepository repository,
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt,
-            global::G.SimpleCommit headCommit,
-            int latestCheckRunsCount,
-            string checkRunsUrl,
             bool? rerequestable,
             bool? runsRerequestable)
         {
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.HeadBranch = headBranch ?? throw new global::System.ArgumentNullException(nameof(headBranch));
             this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
-            this.Status = status;
-            this.Conclusion = conclusion;
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Before = before ?? throw new global::System.ArgumentNullException(nameof(before));
-            this.After = after ?? throw new global::System.ArgumentNullException(nameof(after));
-            this.PullRequests = pullRequests ?? throw new global::System.ArgumentNullException(nameof(pullRequests));
-            this.App = app ?? throw new global::System.ArgumentNullException(nameof(app));
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.HeadCommit = headCommit ?? throw new global::System.ArgumentNullException(nameof(headCommit));
             this.LatestCheckRunsCount = latestCheckRunsCount;
             this.CheckRunsUrl = checkRunsUrl ?? throw new global::System.ArgumentNullException(nameof(checkRunsUrl));
+            this.HeadBranch = headBranch;
+            this.Status = status;
+            this.Conclusion = conclusion;
+            this.Url = url;
+            this.Before = before;
+            this.After = after;
+            this.PullRequests = pullRequests;
+            this.App = app;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.Rerequestable = rerequestable;
             this.RunsRerequestable = runsRerequestable;
         }

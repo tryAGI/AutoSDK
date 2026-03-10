@@ -58,8 +58,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflow")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksWorkflow? Workflow { get; set; }
+        public global::G.WebhooksWorkflow? Workflow { get; set; }
 
         /// <summary>
         /// 
@@ -107,21 +106,21 @@ namespace G
         public WebhookWorkflowRunInProgress(
             global::G.RepositoryWebhooks repository,
             global::G.SimpleUser sender,
-            global::G.WebhooksWorkflow? workflow,
             global::G.WebhookWorkflowRunInProgressWorkflowRun workflowRun,
             global::G.WebhookWorkflowRunInProgressAction action,
             global::G.EnterpriseWebhooks? enterprise,
             global::G.SimpleInstallation? installation,
-            global::G.OrganizationSimpleWebhooks? organization)
+            global::G.OrganizationSimpleWebhooks? organization,
+            global::G.WebhooksWorkflow? workflow)
         {
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
-            this.Workflow = workflow ?? throw new global::System.ArgumentNullException(nameof(workflow));
             this.WorkflowRun = workflowRun ?? throw new global::System.ArgumentNullException(nameof(workflowRun));
             this.Action = action;
             this.Enterprise = enterprise;
             this.Installation = installation;
             this.Organization = organization;
+            this.Workflow = workflow;
         }
 
         /// <summary>

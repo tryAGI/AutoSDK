@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Content { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("content")]
+        public string? Content { get; set; }
 
         /// <summary>
         /// 
@@ -51,7 +51,7 @@ namespace G
             global::G.ChatCompletionMessageRole role,
             global::System.Collections.Generic.IList<global::G.ToolChoice2>? toolCalls)
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Content = content;
             this.Role = role;
             this.ToolCalls = toolCalls;
         }

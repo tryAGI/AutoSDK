@@ -52,8 +52,8 @@ namespace G
         ///   <br/>
         /// This field is **null** if the term was added manually or was permanently blocked by AutoMod.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("expires_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? ExpiresAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("expires_at")]
+        public global::System.DateTime? ExpiresAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// The `client_payload` that was specified in the `POST /repos/{owner}/{repo}/dispatches` request body.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("client_payload", Required = global::Newtonsoft.Json.Required.Always)]
-        public object? ClientPayload { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("client_payload")]
+        public object? ClientPayload { get; set; }
 
         /// <summary>
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
@@ -103,19 +103,19 @@ namespace G
         public WebhookRepositoryDispatchSample(
             string action,
             string branch,
-            object? clientPayload,
             global::G.SimpleInstallation installation,
             global::G.RepositoryWebhooks repository,
             global::G.SimpleUser sender,
+            object? clientPayload,
             global::G.EnterpriseWebhooks? enterprise,
             global::G.OrganizationSimpleWebhooks? organization)
         {
             this.Action = action ?? throw new global::System.ArgumentNullException(nameof(action));
             this.Branch = branch ?? throw new global::System.ArgumentNullException(nameof(branch));
-            this.ClientPayload = clientPayload ?? throw new global::System.ArgumentNullException(nameof(clientPayload));
             this.Installation = installation ?? throw new global::System.ArgumentNullException(nameof(installation));
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
+            this.ClientPayload = clientPayload;
             this.Enterprise = enterprise;
             this.Organization = organization;
         }

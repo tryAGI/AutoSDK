@@ -27,8 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Text { get; set; }
+        public string? Text { get; set; }
 
         /// <summary>
         /// 
@@ -41,8 +40,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("media_ref")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DubbingMediaReference? MediaRef { get; set; }
+        public global::G.DubbingMediaReference? MediaRef { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -64,15 +62,15 @@ namespace G
         public DubbedSegment(
             double startTime,
             double endTime,
-            string? text,
             bool audioStale,
+            string? text,
             global::G.DubbingMediaReference? mediaRef)
         {
             this.StartTime = startTime;
             this.EndTime = endTime;
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.AudioStale = audioStale;
-            this.MediaRef = mediaRef ?? throw new global::System.ArgumentNullException(nameof(mediaRef));
+            this.Text = text;
+            this.MediaRef = mediaRef;
         }
 
         /// <summary>

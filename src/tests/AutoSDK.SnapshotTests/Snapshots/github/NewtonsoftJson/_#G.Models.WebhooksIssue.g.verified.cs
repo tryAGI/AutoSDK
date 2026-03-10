@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("active_lock_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhooksIssueActiveLockReason? ActiveLockReason { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("active_lock_reason")]
+        public global::G.WebhooksIssueActiveLockReason? ActiveLockReason { get; set; }
 
         /// <summary>
         /// 
@@ -36,14 +36,14 @@ namespace G
         /// <summary>
         /// Contents of the issue
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("body", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Body { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("body")]
+        public string? Body { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("closed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? ClosedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("closed_at")]
+        public global::System.DateTime? ClosedAt { get; set; }
 
         /// <summary>
         /// 
@@ -108,8 +108,8 @@ namespace G
         /// <summary>
         /// A collection of related issues and pull requests.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("milestone", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhooksIssueMilestone? Milestone { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("milestone")]
+        public global::G.WebhooksIssueMilestone? Milestone { get; set; }
 
         /// <summary>
         /// 
@@ -186,8 +186,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhooksIssueUser? User { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("user")]
+        public global::G.WebhooksIssueUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -243,11 +243,8 @@ namespace G
         /// </param>
         /// <param name="user"></param>
         public WebhooksIssue(
-            global::G.WebhooksIssueActiveLockReason? activeLockReason,
             global::System.Collections.Generic.IList<global::G.WebhooksIssueAssignee2> assignees,
             global::G.WebhooksIssueAuthorAssociation authorAssociation,
-            string? body,
-            global::System.DateTime? closedAt,
             int comments,
             string commentsUrl,
             global::System.DateTime createdAt,
@@ -255,7 +252,6 @@ namespace G
             string htmlUrl,
             long id,
             string labelsUrl,
-            global::G.WebhooksIssueMilestone? milestone,
             string nodeId,
             int number,
             global::G.WebhooksIssueReactions reactions,
@@ -263,22 +259,23 @@ namespace G
             string title,
             global::System.DateTime updatedAt,
             string url,
-            global::G.WebhooksIssueUser? user,
+            global::G.WebhooksIssueActiveLockReason? activeLockReason,
             global::G.WebhooksIssueAssignee? assignee,
+            string? body,
+            global::System.DateTime? closedAt,
             bool? draft,
             global::System.Collections.Generic.IList<global::G.WebhooksIssueLabel>? labels,
             bool? locked,
+            global::G.WebhooksIssueMilestone? milestone,
             global::G.WebhooksIssuePerformedViaGithubApp? performedViaGithubApp,
             global::G.WebhooksIssuePullRequest? pullRequest,
             global::G.WebhooksIssueState? state,
             string? stateReason,
-            string? timelineUrl)
+            string? timelineUrl,
+            global::G.WebhooksIssueUser? user)
         {
-            this.ActiveLockReason = activeLockReason;
             this.Assignees = assignees ?? throw new global::System.ArgumentNullException(nameof(assignees));
             this.AuthorAssociation = authorAssociation;
-            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
-            this.ClosedAt = closedAt;
             this.Comments = comments;
             this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
             this.CreatedAt = createdAt;
@@ -286,7 +283,6 @@ namespace G
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.LabelsUrl = labelsUrl ?? throw new global::System.ArgumentNullException(nameof(labelsUrl));
-            this.Milestone = milestone ?? throw new global::System.ArgumentNullException(nameof(milestone));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Number = number;
             this.Reactions = reactions ?? throw new global::System.ArgumentNullException(nameof(reactions));
@@ -294,16 +290,20 @@ namespace G
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.ActiveLockReason = activeLockReason;
             this.Assignee = assignee;
+            this.Body = body;
+            this.ClosedAt = closedAt;
             this.Draft = draft;
             this.Labels = labels;
             this.Locked = locked;
+            this.Milestone = milestone;
             this.PerformedViaGithubApp = performedViaGithubApp;
             this.PullRequest = pullRequest;
             this.State = state;
             this.StateReason = stateReason;
             this.TimelineUrl = timelineUrl;
+            this.User = user;
         }
 
         /// <summary>

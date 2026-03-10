@@ -19,8 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignee")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookIssueCommentDeletedIssueVariant2Assignee? Assignee { get; set; }
+        public global::G.WebhookIssueCommentDeletedIssueVariant2Assignee? Assignee { get; set; }
 
         /// <summary>
         /// 
@@ -218,11 +217,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookIssueCommentDeletedIssueVariant2(
-            global::G.WebhookIssueCommentDeletedIssueVariant2Assignee? assignee,
             global::System.Collections.Generic.IList<global::G.WebhookIssueCommentDeletedIssueVariant2Label> labels,
             bool locked,
             global::G.WebhookIssueCommentDeletedIssueVariant2State state,
             string? activeLockReason,
+            global::G.WebhookIssueCommentDeletedIssueVariant2Assignee? assignee,
             global::System.Collections.Generic.IList<object>? assignees,
             string? authorAssociation,
             string? body,
@@ -246,11 +245,11 @@ namespace G
             string? url,
             global::G.WebhookIssueCommentDeletedIssueVariant2User? user)
         {
-            this.Assignee = assignee ?? throw new global::System.ArgumentNullException(nameof(assignee));
             this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
             this.Locked = locked;
             this.State = state;
             this.ActiveLockReason = activeLockReason;
+            this.Assignee = assignee;
             this.Assignees = assignees;
             this.AuthorAssociation = authorAssociation;
             this.Body = body;

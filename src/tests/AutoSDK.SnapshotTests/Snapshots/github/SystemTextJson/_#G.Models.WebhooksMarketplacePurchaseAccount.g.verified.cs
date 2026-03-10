@@ -34,8 +34,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_billing_email")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? OrganizationBillingEmail { get; set; }
+        public string? OrganizationBillingEmail { get; set; }
 
         /// <summary>
         /// 
@@ -65,14 +64,14 @@ namespace G
             int id,
             string login,
             string nodeId,
-            string? organizationBillingEmail,
-            string type)
+            string type,
+            string? organizationBillingEmail)
         {
             this.Id = id;
             this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.OrganizationBillingEmail = organizationBillingEmail ?? throw new global::System.ArgumentNullException(nameof(organizationBillingEmail));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.OrganizationBillingEmail = organizationBillingEmail;
         }
 
         /// <summary>

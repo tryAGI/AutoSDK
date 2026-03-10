@@ -30,8 +30,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("organization_billing_email", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? OrganizationBillingEmail { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("organization_billing_email")]
+        public string? OrganizationBillingEmail { get; set; }
 
         /// <summary>
         /// 
@@ -57,14 +57,14 @@ namespace G
             int id,
             string login,
             string nodeId,
-            string? organizationBillingEmail,
-            string type)
+            string type,
+            string? organizationBillingEmail)
         {
             this.Id = id;
             this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.OrganizationBillingEmail = organizationBillingEmail ?? throw new global::System.ArgumentNullException(nameof(organizationBillingEmail));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.OrganizationBillingEmail = organizationBillingEmail;
         }
 
         /// <summary>

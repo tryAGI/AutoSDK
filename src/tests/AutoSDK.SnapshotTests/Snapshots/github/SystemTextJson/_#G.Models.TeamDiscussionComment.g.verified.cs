@@ -13,8 +13,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? Author { get; set; }
+        public global::G.NullableSimpleUser? Author { get; set; }
 
         /// <summary>
         /// The main text of the comment.<br/>
@@ -54,8 +53,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_edited_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? LastEditedAt { get; set; }
+        public global::System.DateTime? LastEditedAt { get; set; }
 
         /// <summary>
         /// Example: https://api.github.com/organizations/1/team/2403582/discussions/1
@@ -163,32 +161,32 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TeamDiscussionComment(
-            global::G.NullableSimpleUser? author,
             string body,
             string bodyHtml,
             string bodyVersion,
             global::System.DateTime createdAt,
-            global::System.DateTime? lastEditedAt,
             string discussionUrl,
             string htmlUrl,
             string nodeId,
             int number,
             global::System.DateTime updatedAt,
             string url,
+            global::G.NullableSimpleUser? author,
+            global::System.DateTime? lastEditedAt,
             global::G.ReactionRollup? reactions)
         {
-            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
             this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
             this.BodyHtml = bodyHtml ?? throw new global::System.ArgumentNullException(nameof(bodyHtml));
             this.BodyVersion = bodyVersion ?? throw new global::System.ArgumentNullException(nameof(bodyVersion));
             this.CreatedAt = createdAt;
-            this.LastEditedAt = lastEditedAt;
             this.DiscussionUrl = discussionUrl ?? throw new global::System.ArgumentNullException(nameof(discussionUrl));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Number = number;
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Author = author;
+            this.LastEditedAt = lastEditedAt;
             this.Reactions = reactions;
         }
 

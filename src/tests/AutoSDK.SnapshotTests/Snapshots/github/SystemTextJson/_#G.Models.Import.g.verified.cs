@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vcs")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Vcs { get; set; }
+        public string? Vcs { get; set; }
 
         /// <summary>
         /// 
@@ -193,13 +192,13 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Import(
-            string? vcs,
             string vcsUrl,
             global::G.ImportStatus status,
             string url,
             string htmlUrl,
             string authorsUrl,
             string repositoryUrl,
+            string? vcs,
             bool? useLfs,
             string? svcRoot,
             string? tfvcProject,
@@ -217,13 +216,13 @@ namespace G
             int? authorsCount,
             string? svnRoot)
         {
-            this.Vcs = vcs ?? throw new global::System.ArgumentNullException(nameof(vcs));
             this.VcsUrl = vcsUrl ?? throw new global::System.ArgumentNullException(nameof(vcsUrl));
             this.Status = status;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.AuthorsUrl = authorsUrl ?? throw new global::System.ArgumentNullException(nameof(authorsUrl));
             this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
+            this.Vcs = vcs;
             this.UseLfs = useLfs;
             this.SvcRoot = svcRoot;
             this.TfvcProject = tfvcProject;

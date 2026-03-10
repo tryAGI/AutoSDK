@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("old_issue", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookIssuesOpenedChangesOldIssue? OldIssue { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("old_issue")]
+        public global::G.WebhookIssuesOpenedChangesOldIssue? OldIssue { get; set; }
 
         /// <summary>
         /// A git repository
@@ -37,11 +37,11 @@ namespace G
         /// A git repository
         /// </param>
         public WebhookIssuesOpenedChanges(
-            global::G.WebhookIssuesOpenedChangesOldIssue? oldIssue,
-            global::G.WebhookIssuesOpenedChangesOldRepository oldRepository)
+            global::G.WebhookIssuesOpenedChangesOldRepository oldRepository,
+            global::G.WebhookIssuesOpenedChangesOldIssue? oldIssue)
         {
-            this.OldIssue = oldIssue ?? throw new global::System.ArgumentNullException(nameof(oldIssue));
             this.OldRepository = oldRepository ?? throw new global::System.ArgumentNullException(nameof(oldRepository));
+            this.OldIssue = oldIssue;
         }
 
         /// <summary>

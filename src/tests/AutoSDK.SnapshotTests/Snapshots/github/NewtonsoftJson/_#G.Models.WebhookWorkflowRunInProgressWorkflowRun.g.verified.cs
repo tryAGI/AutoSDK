@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("actor", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookWorkflowRunInProgressWorkflowRunActor? Actor { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("actor")]
+        public global::G.WebhookWorkflowRunInProgressWorkflowRunActor? Actor { get; set; }
 
         /// <summary>
         /// 
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("conclusion", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookWorkflowRunInProgressWorkflowRunConclusion? Conclusion { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("conclusion")]
+        public global::G.WebhookWorkflowRunInProgressWorkflowRunConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// 
@@ -66,8 +66,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("head_branch", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? HeadBranch { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("head_branch")]
+        public string? HeadBranch { get; set; }
 
         /// <summary>
         /// 
@@ -114,8 +114,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Name { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// 
@@ -132,8 +132,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("previous_attempt_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? PreviousAttemptUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("previous_attempt_url")]
+        public string? PreviousAttemptUrl { get; set; }
 
         /// <summary>
         /// 
@@ -186,8 +186,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("triggering_actor", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookWorkflowRunInProgressWorkflowRunTriggeringActor? TriggeringActor { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("triggering_actor")]
+        public global::G.WebhookWorkflowRunInProgressWorkflowRunTriggeringActor? TriggeringActor { get; set; }
 
         /// <summary>
         /// 
@@ -257,16 +257,13 @@ namespace G
         /// <param name="workflowId"></param>
         /// <param name="workflowUrl"></param>
         public WebhookWorkflowRunInProgressWorkflowRun(
-            global::G.WebhookWorkflowRunInProgressWorkflowRunActor? actor,
             string artifactsUrl,
             string cancelUrl,
             int checkSuiteId,
             string checkSuiteNodeId,
             string checkSuiteUrl,
-            global::G.WebhookWorkflowRunInProgressWorkflowRunConclusion? conclusion,
             global::System.DateTime createdAt,
             string @event,
-            string? headBranch,
             global::G.WebhookWorkflowRunInProgressWorkflowRunHeadCommit headCommit,
             global::G.WebhookWorkflowRunInProgressWorkflowRunHeadRepository headRepository,
             string headSha,
@@ -274,10 +271,8 @@ namespace G
             int id,
             string jobsUrl,
             string logsUrl,
-            string? name,
             string nodeId,
             string path,
-            string? previousAttemptUrl,
             global::System.Collections.Generic.IList<global::G.WebhookWorkflowRunInProgressWorkflowRunPullRequest> pullRequests,
             global::G.WebhookWorkflowRunInProgressWorkflowRunRepository repository,
             string rerunUrl,
@@ -285,23 +280,25 @@ namespace G
             int runNumber,
             global::System.DateTime runStartedAt,
             global::G.WebhookWorkflowRunInProgressWorkflowRunStatus status,
-            global::G.WebhookWorkflowRunInProgressWorkflowRunTriggeringActor? triggeringActor,
             global::System.DateTime updatedAt,
             string url,
             int workflowId,
             string workflowUrl,
-            global::System.Collections.Generic.IList<global::G.WebhookWorkflowRunInProgressWorkflowRunReferencedWorkflow>? referencedWorkflows)
+            global::G.WebhookWorkflowRunInProgressWorkflowRunActor? actor,
+            global::G.WebhookWorkflowRunInProgressWorkflowRunConclusion? conclusion,
+            string? headBranch,
+            string? name,
+            string? previousAttemptUrl,
+            global::System.Collections.Generic.IList<global::G.WebhookWorkflowRunInProgressWorkflowRunReferencedWorkflow>? referencedWorkflows,
+            global::G.WebhookWorkflowRunInProgressWorkflowRunTriggeringActor? triggeringActor)
         {
-            this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
             this.ArtifactsUrl = artifactsUrl ?? throw new global::System.ArgumentNullException(nameof(artifactsUrl));
             this.CancelUrl = cancelUrl ?? throw new global::System.ArgumentNullException(nameof(cancelUrl));
             this.CheckSuiteId = checkSuiteId;
             this.CheckSuiteNodeId = checkSuiteNodeId ?? throw new global::System.ArgumentNullException(nameof(checkSuiteNodeId));
             this.CheckSuiteUrl = checkSuiteUrl ?? throw new global::System.ArgumentNullException(nameof(checkSuiteUrl));
-            this.Conclusion = conclusion;
             this.CreatedAt = createdAt;
             this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));
-            this.HeadBranch = headBranch ?? throw new global::System.ArgumentNullException(nameof(headBranch));
             this.HeadCommit = headCommit ?? throw new global::System.ArgumentNullException(nameof(headCommit));
             this.HeadRepository = headRepository ?? throw new global::System.ArgumentNullException(nameof(headRepository));
             this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
@@ -309,10 +306,8 @@ namespace G
             this.Id = id;
             this.JobsUrl = jobsUrl ?? throw new global::System.ArgumentNullException(nameof(jobsUrl));
             this.LogsUrl = logsUrl ?? throw new global::System.ArgumentNullException(nameof(logsUrl));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
-            this.PreviousAttemptUrl = previousAttemptUrl ?? throw new global::System.ArgumentNullException(nameof(previousAttemptUrl));
             this.PullRequests = pullRequests ?? throw new global::System.ArgumentNullException(nameof(pullRequests));
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.RerunUrl = rerunUrl ?? throw new global::System.ArgumentNullException(nameof(rerunUrl));
@@ -320,12 +315,17 @@ namespace G
             this.RunNumber = runNumber;
             this.RunStartedAt = runStartedAt;
             this.Status = status;
-            this.TriggeringActor = triggeringActor ?? throw new global::System.ArgumentNullException(nameof(triggeringActor));
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.WorkflowId = workflowId;
             this.WorkflowUrl = workflowUrl ?? throw new global::System.ArgumentNullException(nameof(workflowUrl));
+            this.Actor = actor;
+            this.Conclusion = conclusion;
+            this.HeadBranch = headBranch;
+            this.Name = name;
+            this.PreviousAttemptUrl = previousAttemptUrl;
             this.ReferencedWorkflows = referencedWorkflows;
+            this.TriggeringActor = triggeringActor;
         }
 
         /// <summary>

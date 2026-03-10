@@ -96,8 +96,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflow_run")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookDeploymentReviewRejectedWorkflowRun? WorkflowRun { get; set; }
+        public global::G.WebhookDeploymentReviewRejectedWorkflowRun? WorkflowRun { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -145,7 +144,6 @@ namespace G
             global::G.RepositoryWebhooks repository,
             global::G.SimpleUser sender,
             string since,
-            global::G.WebhookDeploymentReviewRejectedWorkflowRun? workflowRun,
             global::G.WebhookDeploymentReviewRejectedAction action,
             global::G.WebhooksApprover? approver,
             string? comment,
@@ -153,13 +151,13 @@ namespace G
             global::G.SimpleInstallation? installation,
             global::System.Collections.Generic.IList<global::G.WebhooksReviewer>? reviewers,
             global::G.WebhooksWorkflowJobRun? workflowJobRun,
-            global::System.Collections.Generic.IList<global::G.WebhookDeploymentReviewRejectedWorkflowJobRun>? workflowJobRuns)
+            global::System.Collections.Generic.IList<global::G.WebhookDeploymentReviewRejectedWorkflowJobRun>? workflowJobRuns,
+            global::G.WebhookDeploymentReviewRejectedWorkflowRun? workflowRun)
         {
             this.Organization = organization ?? throw new global::System.ArgumentNullException(nameof(organization));
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Since = since ?? throw new global::System.ArgumentNullException(nameof(since));
-            this.WorkflowRun = workflowRun ?? throw new global::System.ArgumentNullException(nameof(workflowRun));
             this.Action = action;
             this.Approver = approver;
             this.Comment = comment;
@@ -168,6 +166,7 @@ namespace G
             this.Reviewers = reviewers;
             this.WorkflowJobRun = workflowJobRun;
             this.WorkflowJobRuns = workflowJobRuns;
+            this.WorkflowRun = workflowRun;
         }
 
         /// <summary>

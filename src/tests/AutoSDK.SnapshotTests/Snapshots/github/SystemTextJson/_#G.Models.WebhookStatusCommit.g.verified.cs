@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookStatusCommitAuthor? Author { get; set; }
+        public global::G.WebhookStatusCommitAuthor? Author { get; set; }
 
         /// <summary>
         /// 
@@ -34,8 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("committer")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookStatusCommitCommitter? Committer { get; set; }
+        public global::G.WebhookStatusCommitCommitter? Committer { get; set; }
 
         /// <summary>
         /// 
@@ -94,25 +92,25 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookStatusCommit(
-            global::G.WebhookStatusCommitAuthor? author,
             string commentsUrl,
             global::G.WebhookStatusCommitCommit commit,
-            global::G.WebhookStatusCommitCommitter? committer,
             string htmlUrl,
             string nodeId,
             global::System.Collections.Generic.IList<global::G.WebhookStatusCommitParent> parents,
             string sha,
-            string url)
+            string url,
+            global::G.WebhookStatusCommitAuthor? author,
+            global::G.WebhookStatusCommitCommitter? committer)
         {
-            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
             this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
             this.Commit = commit ?? throw new global::System.ArgumentNullException(nameof(commit));
-            this.Committer = committer ?? throw new global::System.ArgumentNullException(nameof(committer));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Parents = parents ?? throw new global::System.ArgumentNullException(nameof(parents));
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Author = author;
+            this.Committer = committer;
         }
 
         /// <summary>

@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.FileCommitContent? Content { get; set; }
+        public global::G.FileCommitContent? Content { get; set; }
 
         /// <summary>
         /// 
@@ -38,11 +37,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FileCommit(
-            global::G.FileCommitContent? content,
-            global::G.FileCommitCommit commit)
+            global::G.FileCommitCommit commit,
+            global::G.FileCommitContent? content)
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Commit = commit ?? throw new global::System.ArgumentNullException(nameof(commit));
+            this.Content = content;
         }
 
         /// <summary>

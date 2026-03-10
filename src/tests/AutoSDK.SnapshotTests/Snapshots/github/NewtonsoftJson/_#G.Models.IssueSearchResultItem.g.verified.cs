@@ -90,8 +90,8 @@ namespace G
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? User { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("user")]
+        public global::G.NullableSimpleUser? User { get; set; }
 
         /// <summary>
         /// 
@@ -114,14 +114,14 @@ namespace G
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("assignee", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? Assignee { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("assignee")]
+        public global::G.NullableSimpleUser? Assignee { get; set; }
 
         /// <summary>
         /// A collection of related issues and pull requests.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("milestone", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableMilestone? Milestone { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("milestone")]
+        public global::G.NullableMilestone? Milestone { get; set; }
 
         /// <summary>
         /// 
@@ -144,8 +144,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("closed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? ClosedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("closed_at")]
+        public global::System.DateTime? ClosedAt { get; set; }
 
         /// <summary>
         /// 
@@ -290,20 +290,20 @@ namespace G
             int number,
             string title,
             bool locked,
-            global::G.NullableSimpleUser? user,
             global::System.Collections.Generic.IList<global::G.IssueSearchResultItemLabel> labels,
             string state,
-            global::G.NullableSimpleUser? assignee,
-            global::G.NullableMilestone? milestone,
             int comments,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            global::System.DateTime? closedAt,
             double score,
             global::G.AuthorAssociation authorAssociation,
             string? activeLockReason,
             global::System.Collections.Generic.IList<global::G.SimpleUser>? assignees,
+            global::G.NullableSimpleUser? user,
             string? stateReason,
+            global::G.NullableSimpleUser? assignee,
+            global::G.NullableMilestone? milestone,
+            global::System.DateTime? closedAt,
             global::System.Collections.Generic.IList<global::G.SearchResultTextMatche>? textMatches,
             global::G.IssueSearchResultItemPullRequest? pullRequest,
             string? body,
@@ -326,20 +326,20 @@ namespace G
             this.Number = number;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Locked = locked;
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
             this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
-            this.Assignee = assignee ?? throw new global::System.ArgumentNullException(nameof(assignee));
-            this.Milestone = milestone ?? throw new global::System.ArgumentNullException(nameof(milestone));
             this.Comments = comments;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.ClosedAt = closedAt;
             this.Score = score;
             this.AuthorAssociation = authorAssociation;
             this.ActiveLockReason = activeLockReason;
             this.Assignees = assignees;
+            this.User = user;
             this.StateReason = stateReason;
+            this.Assignee = assignee;
+            this.Milestone = milestone;
+            this.ClosedAt = closedAt;
             this.TextMatches = textMatches;
             this.PullRequest = pullRequest;
             this.Body = body;

@@ -41,8 +41,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("gravatar_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? GravatarId { get; set; }
+        public string? GravatarId { get; set; }
 
         /// <summary>
         /// 
@@ -139,36 +138,31 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("company")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Company { get; set; }
+        public string? Company { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("blog")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Blog { get; set; }
+        public string? Blog { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("location")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Location { get; set; }
+        public string? Location { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Email { get; set; }
+        public string? Email { get; set; }
 
         /// <summary>
         /// 
@@ -180,15 +174,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hireable")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool? Hireable { get; set; }
+        public bool? Hireable { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bio")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Bio { get; set; }
+        public string? Bio { get; set; }
 
         /// <summary>
         /// 
@@ -352,7 +344,6 @@ namespace G
             long id,
             string nodeId,
             string avatarUrl,
-            string? gravatarId,
             string url,
             string htmlUrl,
             string followersUrl,
@@ -366,20 +357,21 @@ namespace G
             string receivedEventsUrl,
             string type,
             bool siteAdmin,
-            string? name,
-            string? company,
-            string? blog,
-            string? location,
-            string? email,
-            bool? hireable,
-            string? bio,
             int publicRepos,
             int publicGists,
             int followers,
             int following,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
+            string? gravatarId,
+            string? name,
+            string? company,
+            string? blog,
+            string? location,
+            string? email,
             string? notificationEmail,
+            bool? hireable,
+            string? bio,
             string? twitterUsername,
             global::G.PublicUserPlan? plan,
             global::System.DateTime? suspendedAt,
@@ -393,7 +385,6 @@ namespace G
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
-            this.GravatarId = gravatarId ?? throw new global::System.ArgumentNullException(nameof(gravatarId));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.FollowersUrl = followersUrl ?? throw new global::System.ArgumentNullException(nameof(followersUrl));
@@ -407,20 +398,21 @@ namespace G
             this.ReceivedEventsUrl = receivedEventsUrl ?? throw new global::System.ArgumentNullException(nameof(receivedEventsUrl));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.SiteAdmin = siteAdmin;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Company = company ?? throw new global::System.ArgumentNullException(nameof(company));
-            this.Blog = blog ?? throw new global::System.ArgumentNullException(nameof(blog));
-            this.Location = location ?? throw new global::System.ArgumentNullException(nameof(location));
-            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
-            this.Hireable = hireable;
-            this.Bio = bio ?? throw new global::System.ArgumentNullException(nameof(bio));
             this.PublicRepos = publicRepos;
             this.PublicGists = publicGists;
             this.Followers = followers;
             this.Following = following;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.GravatarId = gravatarId;
+            this.Name = name;
+            this.Company = company;
+            this.Blog = blog;
+            this.Location = location;
+            this.Email = email;
             this.NotificationEmail = notificationEmail;
+            this.Hireable = hireable;
+            this.Bio = bio;
             this.TwitterUsername = twitterUsername;
             this.Plan = plan;
             this.SuspendedAt = suspendedAt;

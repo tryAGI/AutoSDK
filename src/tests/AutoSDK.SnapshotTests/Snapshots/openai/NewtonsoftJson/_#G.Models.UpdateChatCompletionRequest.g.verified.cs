@@ -16,8 +16,8 @@ namespace G
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("metadata", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("metadata")]
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +38,7 @@ namespace G
         public UpdateChatCompletionRequest(
             global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
+            this.Metadata = metadata;
         }
 
         /// <summary>

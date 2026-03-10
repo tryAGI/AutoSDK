@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("userId", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Guid? UserId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("userId")]
+        public global::System.Guid? UserId { get; set; }
 
         /// <summary>
         /// 
@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("projectId", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Guid? ProjectId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("projectId")]
+        public global::System.Guid? ProjectId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,12 +40,12 @@ namespace G
         /// <param name="connectionKey"></param>
         /// <param name="projectId"></param>
         public UpdateConnectionRequest(
-            global::System.Guid? userId,
             global::System.Guid connectionKey,
+            global::System.Guid? userId,
             global::System.Guid? projectId)
         {
-            this.UserId = userId;
             this.ConnectionKey = connectionKey;
+            this.UserId = userId;
             this.ProjectId = projectId;
         }
 

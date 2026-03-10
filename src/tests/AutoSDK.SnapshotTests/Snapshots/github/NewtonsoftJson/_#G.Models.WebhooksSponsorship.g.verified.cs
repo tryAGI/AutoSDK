@@ -36,14 +36,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("sponsor", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhooksSponsorshipSponsor? Sponsor { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("sponsor")]
+        public global::G.WebhooksSponsorshipSponsor? Sponsor { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("sponsorable", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhooksSponsorshipSponsorable? Sponsorable { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("sponsorable")]
+        public global::G.WebhooksSponsorshipSponsorable? Sponsorable { get; set; }
 
         /// <summary>
         /// The `tier_changed` and `pending_tier_change` will include the original tier before the change or pending change. For more information, see the pending tier change payload.
@@ -73,18 +73,18 @@ namespace G
             string createdAt,
             string nodeId,
             string privacyLevel,
-            global::G.WebhooksSponsorshipSponsor? sponsor,
-            global::G.WebhooksSponsorshipSponsorable? sponsorable,
             global::G.WebhooksSponsorshipTier tier,
-            global::G.WebhooksSponsorshipMaintainer? maintainer)
+            global::G.WebhooksSponsorshipMaintainer? maintainer,
+            global::G.WebhooksSponsorshipSponsor? sponsor,
+            global::G.WebhooksSponsorshipSponsorable? sponsorable)
         {
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.PrivacyLevel = privacyLevel ?? throw new global::System.ArgumentNullException(nameof(privacyLevel));
-            this.Sponsor = sponsor ?? throw new global::System.ArgumentNullException(nameof(sponsor));
-            this.Sponsorable = sponsorable ?? throw new global::System.ArgumentNullException(nameof(sponsorable));
             this.Tier = tier ?? throw new global::System.ArgumentNullException(nameof(tier));
             this.Maintainer = maintainer;
+            this.Sponsor = sponsor;
+            this.Sponsorable = sponsorable;
         }
 
         /// <summary>

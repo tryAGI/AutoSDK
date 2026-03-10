@@ -155,8 +155,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhooks")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.RunRulesWebhookSchema>? Webhooks { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RunRulesWebhookSchema>? Webhooks { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -254,7 +253,6 @@ namespace G
             global::System.Guid tenantId,
             string displayName,
             double samplingRate,
-            global::System.Collections.Generic.IList<global::G.RunRulesWebhookSchema>? webhooks,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             int evaluatorVersion,
@@ -277,6 +275,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.EvaluatorTopLevel>? evaluators,
             global::System.Collections.Generic.IList<global::G.CodeEvaluatorTopLevel>? codeEvaluators,
             global::System.Collections.Generic.IList<global::G.RunRulesPagerdutyAlertSchema>? alerts,
+            global::System.Collections.Generic.IList<global::G.RunRulesWebhookSchema>? webhooks,
             bool? extendOnly,
             global::System.DateTime? backfillFrom,
             bool? transient)
@@ -285,7 +284,6 @@ namespace G
             this.TenantId = tenantId;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.SamplingRate = samplingRate;
-            this.Webhooks = webhooks ?? throw new global::System.ArgumentNullException(nameof(webhooks));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.EvaluatorVersion = evaluatorVersion;
@@ -308,6 +306,7 @@ namespace G
             this.Evaluators = evaluators;
             this.CodeEvaluators = codeEvaluators;
             this.Alerts = alerts;
+            this.Webhooks = webhooks;
             this.ExtendOnly = extendOnly;
             this.BackfillFrom = backfillFrom;
             this.Transient = transient;

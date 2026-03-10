@@ -20,8 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("app_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? AppId { get; set; }
+        public int? AppId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

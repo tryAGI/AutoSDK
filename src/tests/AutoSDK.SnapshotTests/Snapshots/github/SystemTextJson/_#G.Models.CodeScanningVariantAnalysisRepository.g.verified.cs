@@ -56,8 +56,7 @@ namespace G
         /// </summary>
         /// <example>2011-01-26T19:14:43Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? UpdatedAt { get; set; }
+        public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

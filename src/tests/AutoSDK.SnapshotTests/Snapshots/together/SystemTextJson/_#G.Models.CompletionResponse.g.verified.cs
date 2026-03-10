@@ -33,8 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.UsageData? Usage { get; set; }
+        public global::G.UsageData? Usage { get; set; }
 
         /// <summary>
         /// 
@@ -79,18 +78,18 @@ namespace G
         public CompletionResponse(
             string id,
             global::System.Collections.Generic.IList<global::G.CompletionChoicesDataItem> choices,
-            global::G.UsageData? usage,
             int created,
             string model,
             global::System.Collections.Generic.IList<global::G.PromptPartItem>? prompt,
+            global::G.UsageData? usage,
             global::G.CompletionResponseObject @object)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
-            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
             this.Created = created;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Prompt = prompt;
+            this.Usage = usage;
             this.Object = @object;
         }
 

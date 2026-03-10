@@ -41,8 +41,7 @@ namespace G
         /// The token for the next page, if any.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_page")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? NextPage { get; set; }
+        public string? NextPage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -73,14 +72,14 @@ namespace G
             global::System.Collections.Generic.IList<string> searchQuery,
             global::System.Collections.Generic.IList<global::G.VectorStoreSearchResultItem> data,
             bool hasMore,
-            string? nextPage,
-            global::G.VectorStoreSearchResultsPageObject @object)
+            global::G.VectorStoreSearchResultsPageObject @object,
+            string? nextPage)
         {
             this.SearchQuery = searchQuery ?? throw new global::System.ArgumentNullException(nameof(searchQuery));
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.HasMore = hasMore;
-            this.NextPage = nextPage ?? throw new global::System.ArgumentNullException(nameof(nextPage));
             this.Object = @object;
+            this.NextPage = nextPage;
         }
 
         /// <summary>

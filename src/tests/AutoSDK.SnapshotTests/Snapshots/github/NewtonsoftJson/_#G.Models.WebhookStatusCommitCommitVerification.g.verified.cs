@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("payload", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Payload { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("payload")]
+        public string? Payload { get; set; }
 
         /// <summary>
         /// 
@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("signature", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Signature { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("signature")]
+        public string? Signature { get; set; }
 
         /// <summary>
         /// 
@@ -47,15 +47,15 @@ namespace G
         /// <param name="signature"></param>
         /// <param name="verified"></param>
         public WebhookStatusCommitCommitVerification(
-            string? payload,
             global::G.WebhookStatusCommitCommitVerificationReason reason,
-            string? signature,
-            bool verified)
+            bool verified,
+            string? payload,
+            string? signature)
         {
-            this.Payload = payload ?? throw new global::System.ArgumentNullException(nameof(payload));
             this.Reason = reason;
-            this.Signature = signature ?? throw new global::System.ArgumentNullException(nameof(signature));
             this.Verified = verified;
+            this.Payload = payload;
+            this.Signature = signature;
         }
 
         /// <summary>

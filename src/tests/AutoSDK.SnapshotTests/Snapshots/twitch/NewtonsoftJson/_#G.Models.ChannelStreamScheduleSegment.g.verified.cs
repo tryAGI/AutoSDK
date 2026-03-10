@@ -36,8 +36,8 @@ namespace G
         /// <summary>
         /// Indicates whether the broadcaster canceled this segment of a recurring broadcast. If the broadcaster canceled this segment, this field is set to the same value that’s in the `end_time` field; otherwise, it’s set to **null**.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("canceled_until", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? CanceledUntil { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("canceled_until")]
+        public string? CanceledUntil { get; set; }
 
         /// <summary>
         /// The type of content that the broadcaster plans to stream or **null** if not specified.
@@ -86,17 +86,17 @@ namespace G
             global::System.DateTime startTime,
             global::System.DateTime endTime,
             string title,
-            string? canceledUntil,
             global::G.ChannelStreamScheduleSegmentCategory category,
-            bool isRecurring)
+            bool isRecurring,
+            string? canceledUntil)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.CanceledUntil = canceledUntil ?? throw new global::System.ArgumentNullException(nameof(canceledUntil));
             this.Category = category ?? throw new global::System.ArgumentNullException(nameof(category));
             this.IsRecurring = isRecurring;
+            this.CanceledUntil = canceledUntil;
         }
 
         /// <summary>

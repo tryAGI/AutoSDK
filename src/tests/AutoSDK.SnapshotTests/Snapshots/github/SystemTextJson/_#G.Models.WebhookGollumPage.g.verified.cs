@@ -42,8 +42,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Summary { get; set; }
+        public string? Summary { get; set; }
 
         /// <summary>
         /// The current page title.
@@ -85,15 +84,15 @@ namespace G
             string htmlUrl,
             string pageName,
             string sha,
-            string? summary,
-            string title)
+            string title,
+            string? summary)
         {
             this.Action = action;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.PageName = pageName ?? throw new global::System.ArgumentNullException(nameof(pageName));
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
-            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Summary = summary;
         }
 
         /// <summary>

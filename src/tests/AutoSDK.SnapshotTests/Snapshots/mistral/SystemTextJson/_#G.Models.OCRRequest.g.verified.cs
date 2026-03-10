@@ -15,8 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Model { get; set; }
+        public string? Model { get; set; }
 
         /// <summary>
         /// 
@@ -86,16 +85,16 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OCRRequest(
-            string? model,
             global::G.AnyOf<global::G.DocumentURLChunk, global::G.ImageURLChunk> document,
+            string? model,
             string? id,
             global::System.Collections.Generic.IList<int>? pages,
             bool? includeImageBase64,
             int? imageLimit,
             int? imageMinSize)
         {
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Document = document;
+            this.Model = model;
             this.Id = id;
             this.Pages = pages;
             this.IncludeImageBase64 = includeImageBase64;

@@ -30,8 +30,8 @@ namespace G
         /// <summary>
         /// The dimensions of the PDF Page's screenshot image
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("dimensions", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OCRPageDimensions? Dimensions { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("dimensions")]
+        public global::G.OCRPageDimensions? Dimensions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -63,7 +63,7 @@ namespace G
             this.Index = index;
             this.Markdown = markdown ?? throw new global::System.ArgumentNullException(nameof(markdown));
             this.Images = images ?? throw new global::System.ArgumentNullException(nameof(images));
-            this.Dimensions = dimensions ?? throw new global::System.ArgumentNullException(nameof(dimensions));
+            this.Dimensions = dimensions;
         }
 
         /// <summary>

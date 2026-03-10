@@ -153,8 +153,7 @@ namespace G
         /// </summary>
         /// <example>Please pull these awesome changes</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Body { get; set; }
+        public string? Body { get; set; }
 
         /// <summary>
         /// 
@@ -167,8 +166,7 @@ namespace G
         /// A collection of related issues and pull requests.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("milestone")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableMilestone? Milestone { get; set; }
+        public global::G.NullableMilestone? Milestone { get; set; }
 
         /// <summary>
         /// Example: too heated
@@ -198,31 +196,27 @@ namespace G
         /// </summary>
         /// <example>2011-01-26T19:01:12Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("closed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? ClosedAt { get; set; }
+        public global::System.DateTime? ClosedAt { get; set; }
 
         /// <summary>
         /// Example: 2011-01-26T19:01:12Z
         /// </summary>
         /// <example>2011-01-26T19:01:12Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("merged_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? MergedAt { get; set; }
+        public global::System.DateTime? MergedAt { get; set; }
 
         /// <summary>
         /// Example: e5bd3914e2e596debea16f433f57875b5b90bcd6
         /// </summary>
         /// <example>e5bd3914e2e596debea16f433f57875b5b90bcd6</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_sha")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? MergeCommitSha { get; set; }
+        public string? MergeCommitSha { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignee")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? Assignee { get; set; }
+        public global::G.NullableSimpleUser? Assignee { get; set; }
 
         /// <summary>
         /// 
@@ -277,8 +271,7 @@ namespace G
         /// The status of auto merging a pull request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auto_merge")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AutoMerge? AutoMerge { get; set; }
+        public global::G.AutoMerge? AutoMerge { get; set; }
 
         /// <summary>
         /// Indicates whether or not the pull request is a draft.<br/>
@@ -300,8 +293,7 @@ namespace G
         /// </summary>
         /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("mergeable")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool? Mergeable { get; set; }
+        public bool? Mergeable { get; set; }
 
         /// <summary>
         /// Example: true
@@ -322,8 +314,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merged_by")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? MergedBy { get; set; }
+        public global::G.NullableSimpleUser? MergedBy { get; set; }
 
         /// <summary>
         /// Example: 10
@@ -546,24 +537,15 @@ namespace G
             bool locked,
             string title,
             global::G.SimpleUser user,
-            string? body,
             global::System.Collections.Generic.IList<global::G.PullRequestLabel> labels,
-            global::G.NullableMilestone? milestone,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            global::System.DateTime? closedAt,
-            global::System.DateTime? mergedAt,
-            string? mergeCommitSha,
-            global::G.NullableSimpleUser? assignee,
             global::G.PullRequestHead head,
             global::G.PullRequestBase @base,
             global::G.PullRequestLinks links,
             global::G.AuthorAssociation authorAssociation,
-            global::G.AutoMerge? autoMerge,
             bool merged,
-            bool? mergeable,
             string mergeableState,
-            global::G.NullableSimpleUser? mergedBy,
             int comments,
             int reviewComments,
             bool maintainerCanModify,
@@ -571,12 +553,21 @@ namespace G
             int additions,
             int deletions,
             int changedFiles,
+            string? body,
+            global::G.NullableMilestone? milestone,
             string? activeLockReason,
+            global::System.DateTime? closedAt,
+            global::System.DateTime? mergedAt,
+            string? mergeCommitSha,
+            global::G.NullableSimpleUser? assignee,
             global::System.Collections.Generic.IList<global::G.SimpleUser>? assignees,
             global::System.Collections.Generic.IList<global::G.SimpleUser>? requestedReviewers,
             global::System.Collections.Generic.IList<global::G.TeamSimple>? requestedTeams,
+            global::G.AutoMerge? autoMerge,
             bool? draft,
-            bool? rebaseable)
+            bool? mergeable,
+            bool? rebaseable,
+            global::G.NullableSimpleUser? mergedBy)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Id = id;
@@ -595,24 +586,15 @@ namespace G
             this.Locked = locked;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
-            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
             this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
-            this.Milestone = milestone ?? throw new global::System.ArgumentNullException(nameof(milestone));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.ClosedAt = closedAt;
-            this.MergedAt = mergedAt;
-            this.MergeCommitSha = mergeCommitSha ?? throw new global::System.ArgumentNullException(nameof(mergeCommitSha));
-            this.Assignee = assignee ?? throw new global::System.ArgumentNullException(nameof(assignee));
             this.Head = head ?? throw new global::System.ArgumentNullException(nameof(head));
             this.Base = @base ?? throw new global::System.ArgumentNullException(nameof(@base));
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
             this.AuthorAssociation = authorAssociation;
-            this.AutoMerge = autoMerge ?? throw new global::System.ArgumentNullException(nameof(autoMerge));
             this.Merged = merged;
-            this.Mergeable = mergeable;
             this.MergeableState = mergeableState ?? throw new global::System.ArgumentNullException(nameof(mergeableState));
-            this.MergedBy = mergedBy ?? throw new global::System.ArgumentNullException(nameof(mergedBy));
             this.Comments = comments;
             this.ReviewComments = reviewComments;
             this.MaintainerCanModify = maintainerCanModify;
@@ -620,12 +602,21 @@ namespace G
             this.Additions = additions;
             this.Deletions = deletions;
             this.ChangedFiles = changedFiles;
+            this.Body = body;
+            this.Milestone = milestone;
             this.ActiveLockReason = activeLockReason;
+            this.ClosedAt = closedAt;
+            this.MergedAt = mergedAt;
+            this.MergeCommitSha = mergeCommitSha;
+            this.Assignee = assignee;
             this.Assignees = assignees;
             this.RequestedReviewers = requestedReviewers;
             this.RequestedTeams = requestedTeams;
+            this.AutoMerge = autoMerge;
             this.Draft = draft;
+            this.Mergeable = mergeable;
             this.Rebaseable = rebaseable;
+            this.MergedBy = mergedBy;
         }
 
         /// <summary>

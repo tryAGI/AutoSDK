@@ -20,8 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vector_string")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? VectorString { get; set; }
+        public string? VectorString { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,7 +41,7 @@ namespace G
             string? vectorString)
         {
             this.Score = score;
-            this.VectorString = vectorString ?? throw new global::System.ArgumentNullException(nameof(vectorString));
+            this.VectorString = vectorString;
         }
 
         /// <summary>

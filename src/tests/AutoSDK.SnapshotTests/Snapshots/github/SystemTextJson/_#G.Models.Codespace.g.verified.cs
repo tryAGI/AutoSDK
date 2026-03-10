@@ -40,8 +40,7 @@ namespace G
         /// </summary>
         /// <example>26a7c758-7299-4a73-b978-5a92a7ae98a0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? EnvironmentId { get; set; }
+        public string? EnvironmentId { get; set; }
 
         /// <summary>
         /// A GitHub user.
@@ -68,8 +67,7 @@ namespace G
         /// A description of the machine powering a codespace.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("machine")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableCodespaceMachine? Machine { get; set; }
+        public global::G.NullableCodespaceMachine? Machine { get; set; }
 
         /// <summary>
         /// Path to devcontainer.json from repo root used to create Codespace.<br/>
@@ -85,8 +83,7 @@ namespace G
         /// </summary>
         /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("prebuild")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool? Prebuild { get; set; }
+        public bool? Prebuild { get; set; }
 
         /// <summary>
         /// Example: 2011-01-26T19:01:12Z
@@ -153,8 +150,7 @@ namespace G
         /// </summary>
         /// <example>60</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("idle_timeout_minutes")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? IdleTimeoutMinutes { get; set; }
+        public int? IdleTimeoutMinutes { get; set; }
 
         /// <summary>
         /// URL to access this codespace on the web.
@@ -194,8 +190,7 @@ namespace G
         /// API URL for the Pull Request associated with this codespace, if any.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pulls_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? PullsUrl { get; set; }
+        public string? PullsUrl { get; set; }
 
         /// <summary>
         /// 
@@ -371,12 +366,9 @@ namespace G
         public Codespace(
             long id,
             string name,
-            string? environmentId,
             global::G.SimpleUser owner,
             global::G.SimpleUser billableOwner,
             global::G.MinimalRepository repository,
-            global::G.NullableCodespaceMachine? machine,
-            bool? prebuild,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             global::System.DateTime lastUsedAt,
@@ -384,16 +376,19 @@ namespace G
             string url,
             global::G.CodespaceGitStatus gitStatus,
             global::G.CodespaceLocation location,
-            int? idleTimeoutMinutes,
             string webUrl,
             string machinesUrl,
             string startUrl,
             string stopUrl,
-            string? pullsUrl,
             global::System.Collections.Generic.IList<string> recentFolders,
             string? displayName,
+            string? environmentId,
+            global::G.NullableCodespaceMachine? machine,
             string? devcontainerPath,
+            bool? prebuild,
+            int? idleTimeoutMinutes,
             string? publishUrl,
+            string? pullsUrl,
             global::G.CodespaceRuntimeConstraints? runtimeConstraints,
             bool? pendingOperation,
             string? pendingOperationDisabledReason,
@@ -404,12 +399,9 @@ namespace G
         {
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.EnvironmentId = environmentId ?? throw new global::System.ArgumentNullException(nameof(environmentId));
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.BillableOwner = billableOwner ?? throw new global::System.ArgumentNullException(nameof(billableOwner));
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
-            this.Machine = machine ?? throw new global::System.ArgumentNullException(nameof(machine));
-            this.Prebuild = prebuild;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.LastUsedAt = lastUsedAt;
@@ -417,16 +409,19 @@ namespace G
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.GitStatus = gitStatus ?? throw new global::System.ArgumentNullException(nameof(gitStatus));
             this.Location = location;
-            this.IdleTimeoutMinutes = idleTimeoutMinutes;
             this.WebUrl = webUrl ?? throw new global::System.ArgumentNullException(nameof(webUrl));
             this.MachinesUrl = machinesUrl ?? throw new global::System.ArgumentNullException(nameof(machinesUrl));
             this.StartUrl = startUrl ?? throw new global::System.ArgumentNullException(nameof(startUrl));
             this.StopUrl = stopUrl ?? throw new global::System.ArgumentNullException(nameof(stopUrl));
-            this.PullsUrl = pullsUrl ?? throw new global::System.ArgumentNullException(nameof(pullsUrl));
             this.RecentFolders = recentFolders ?? throw new global::System.ArgumentNullException(nameof(recentFolders));
             this.DisplayName = displayName;
+            this.EnvironmentId = environmentId;
+            this.Machine = machine;
             this.DevcontainerPath = devcontainerPath;
+            this.Prebuild = prebuild;
+            this.IdleTimeoutMinutes = idleTimeoutMinutes;
             this.PublishUrl = publishUrl;
+            this.PullsUrl = pullsUrl;
             this.RuntimeConstraints = runtimeConstraints;
             this.PendingOperation = pendingOperation;
             this.PendingOperationDisabledReason = pendingOperationDisabledReason;

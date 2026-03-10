@@ -21,8 +21,7 @@ namespace G
         /// The Common Vulnerabilities and Exposures (CVE) ID.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cve_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? CveId { get; set; }
+        public string? CveId { get; set; }
 
         /// <summary>
         /// The API URL for the advisory.<br/>
@@ -51,16 +50,14 @@ namespace G
         /// A detailed description of what the advisory entails.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// The severity of the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositoryAdvisorySeverityJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryAdvisorySeverity? Severity { get; set; }
+        public global::G.RepositoryAdvisorySeverity? Severity { get; set; }
 
         /// <summary>
         /// The author of the advisory.<br/>
@@ -136,15 +133,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vulnerabilities")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryVulnerability>? Vulnerabilities { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryVulnerability>? Vulnerabilities { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cvss")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryAdvisoryCvss? Cvss { get; set; }
+        public global::G.RepositoryAdvisoryCvss? Cvss { get; set; }
 
         /// <summary>
         /// 
@@ -162,15 +157,13 @@ namespace G
         /// A list of only the CWE IDs.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cwe_ids")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string>? CweIds { get; set; }
+        public global::System.Collections.Generic.IList<string>? CweIds { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credits")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredit2>? Credits { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredit2>? Credits { get; set; }
 
         /// <summary>
         /// Included only in responses
@@ -182,15 +175,13 @@ namespace G
         /// A list of users that collaborate on the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("collaborating_users")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.SimpleUser>? CollaboratingUsers { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SimpleUser>? CollaboratingUsers { get; set; }
 
         /// <summary>
         /// A list of teams that collaborate on the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("collaborating_teams")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.Team>? CollaboratingTeams { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Team>? CollaboratingTeams { get; set; }
 
         /// <summary>
         /// A temporary private fork of the advisory's repository for collaborating on a fix.<br/>
@@ -296,17 +287,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RepositoryAdvisory(
-            string? cveId,
             string summary,
+            global::G.RepositoryAdvisoryState state,
+            string? cveId,
             string? description,
             global::G.RepositoryAdvisorySeverity? severity,
-            global::G.RepositoryAdvisoryState state,
-            global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryVulnerability>? vulnerabilities,
-            global::G.RepositoryAdvisoryCvss? cvss,
-            global::System.Collections.Generic.IList<string>? cweIds,
-            global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredit2>? credits,
-            global::System.Collections.Generic.IList<global::G.SimpleUser>? collaboratingUsers,
-            global::System.Collections.Generic.IList<global::G.Team>? collaboratingTeams,
             global::G.SimpleUser? author,
             global::G.SimpleUser? publisher,
             global::System.DateTime? createdAt,
@@ -315,29 +300,29 @@ namespace G
             global::System.DateTime? closedAt,
             global::System.DateTime? withdrawnAt,
             global::G.RepositoryAdvisorySubmission? submission,
+            global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryVulnerability>? vulnerabilities,
+            global::G.RepositoryAdvisoryCvss? cvss,
             global::G.CvssSeverities? cvssSeverities,
             global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCwe>? cwes,
+            global::System.Collections.Generic.IList<string>? cweIds,
+            global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredit2>? credits,
             global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredit>? creditsDetailed,
+            global::System.Collections.Generic.IList<global::G.SimpleUser>? collaboratingUsers,
+            global::System.Collections.Generic.IList<global::G.Team>? collaboratingTeams,
             global::G.SimpleRepository? privateFork,
             string ghsaId = default!,
             string url = default!,
             string htmlUrl = default!,
             global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryIdentifier> identifiers = default!)
         {
-            this.CveId = cveId ?? throw new global::System.ArgumentNullException(nameof(cveId));
             this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.Severity = severity;
             this.State = state;
-            this.Vulnerabilities = vulnerabilities ?? throw new global::System.ArgumentNullException(nameof(vulnerabilities));
-            this.Cvss = cvss ?? throw new global::System.ArgumentNullException(nameof(cvss));
-            this.CweIds = cweIds ?? throw new global::System.ArgumentNullException(nameof(cweIds));
-            this.Credits = credits ?? throw new global::System.ArgumentNullException(nameof(credits));
-            this.CollaboratingUsers = collaboratingUsers ?? throw new global::System.ArgumentNullException(nameof(collaboratingUsers));
-            this.CollaboratingTeams = collaboratingTeams ?? throw new global::System.ArgumentNullException(nameof(collaboratingTeams));
             this.GhsaId = ghsaId;
+            this.CveId = cveId;
             this.Url = url;
             this.HtmlUrl = htmlUrl;
+            this.Description = description;
+            this.Severity = severity;
             this.Author = author;
             this.Publisher = publisher;
             this.Identifiers = identifiers;
@@ -347,9 +332,15 @@ namespace G
             this.ClosedAt = closedAt;
             this.WithdrawnAt = withdrawnAt;
             this.Submission = submission;
+            this.Vulnerabilities = vulnerabilities;
+            this.Cvss = cvss;
             this.CvssSeverities = cvssSeverities;
             this.Cwes = cwes;
+            this.CweIds = cweIds;
+            this.Credits = credits;
             this.CreditsDetailed = creditsDetailed;
+            this.CollaboratingUsers = collaboratingUsers;
+            this.CollaboratingTeams = collaboratingTeams;
             this.PrivateFork = privateFork;
         }
 

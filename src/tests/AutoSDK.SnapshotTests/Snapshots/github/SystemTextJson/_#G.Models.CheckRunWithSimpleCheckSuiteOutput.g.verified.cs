@@ -27,22 +27,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Summary { get; set; }
+        public string? Summary { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Text { get; set; }
+        public string? Text { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Title { get; set; }
+        public string? Title { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -70,9 +67,9 @@ namespace G
         {
             this.AnnotationsCount = annotationsCount;
             this.AnnotationsUrl = annotationsUrl ?? throw new global::System.ArgumentNullException(nameof(annotationsUrl));
-            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
-            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Summary = summary;
+            this.Text = text;
+            this.Title = title;
         }
 
         /// <summary>

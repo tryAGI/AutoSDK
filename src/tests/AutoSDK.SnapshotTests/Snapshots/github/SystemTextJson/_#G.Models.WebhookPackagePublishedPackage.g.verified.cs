@@ -13,15 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? CreatedAt { get; set; }
+        public string? CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -62,8 +60,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPackagePublishedPackageOwner? Owner { get; set; }
+        public global::G.WebhookPackagePublishedPackageOwner? Owner { get; set; }
 
         /// <summary>
         /// 
@@ -76,22 +73,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("package_version")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPackagePublishedPackagePackageVersion? PackageVersion { get; set; }
+        public global::G.WebhookPackagePublishedPackagePackageVersion? PackageVersion { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("registry")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPackagePublishedPackageRegistry? Registry { get; set; }
+        public global::G.WebhookPackagePublishedPackageRegistry? Registry { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? UpdatedAt { get; set; }
+        public string? UpdatedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -118,31 +112,31 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookPackagePublishedPackage(
-            string? createdAt,
-            string? description,
             string ecosystem,
             string htmlUrl,
             int id,
             string name,
             string @namespace,
-            global::G.WebhookPackagePublishedPackageOwner? owner,
             string packageType,
+            string? createdAt,
+            string? description,
+            global::G.WebhookPackagePublishedPackageOwner? owner,
             global::G.WebhookPackagePublishedPackagePackageVersion? packageVersion,
             global::G.WebhookPackagePublishedPackageRegistry? registry,
             string? updatedAt)
         {
-            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Ecosystem = ecosystem ?? throw new global::System.ArgumentNullException(nameof(ecosystem));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Namespace = @namespace ?? throw new global::System.ArgumentNullException(nameof(@namespace));
-            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.PackageType = packageType ?? throw new global::System.ArgumentNullException(nameof(packageType));
-            this.PackageVersion = packageVersion ?? throw new global::System.ArgumentNullException(nameof(packageVersion));
-            this.Registry = registry ?? throw new global::System.ArgumentNullException(nameof(registry));
-            this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
+            this.CreatedAt = createdAt;
+            this.Description = description;
+            this.Owner = owner;
+            this.PackageVersion = packageVersion;
+            this.Registry = registry;
+            this.UpdatedAt = updatedAt;
         }
 
         /// <summary>

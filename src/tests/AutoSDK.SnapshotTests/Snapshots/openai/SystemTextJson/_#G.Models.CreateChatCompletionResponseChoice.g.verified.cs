@@ -38,8 +38,7 @@ namespace G
         /// Log probability information for the choice.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CreateChatCompletionResponseChoiceLogprobs? Logprobs { get; set; }
+        public global::G.CreateChatCompletionResponseChoiceLogprobs? Logprobs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -77,7 +76,7 @@ namespace G
             this.FinishReason = finishReason;
             this.Index = index;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.Logprobs = logprobs ?? throw new global::System.ArgumentNullException(nameof(logprobs));
+            this.Logprobs = logprobs;
         }
 
         /// <summary>

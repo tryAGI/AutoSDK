@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("label")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Label { get; set; }
+        public string? Label { get; set; }
 
         /// <summary>
         /// 
@@ -27,8 +26,7 @@ namespace G
         /// A git repository
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repo")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPullRequestUnlabeledPullRequestHeadRepo? Repo { get; set; }
+        public global::G.WebhookPullRequestUnlabeledPullRequestHeadRepo? Repo { get; set; }
 
         /// <summary>
         /// 
@@ -41,8 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPullRequestUnlabeledPullRequestHeadUser? User { get; set; }
+        public global::G.WebhookPullRequestUnlabeledPullRequestHeadUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -64,17 +61,17 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookPullRequestUnlabeledPullRequestHead(
-            string? label,
             string @ref,
-            global::G.WebhookPullRequestUnlabeledPullRequestHeadRepo? repo,
             string sha,
+            string? label,
+            global::G.WebhookPullRequestUnlabeledPullRequestHeadRepo? repo,
             global::G.WebhookPullRequestUnlabeledPullRequestHeadUser? user)
         {
-            this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
             this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
-            this.Repo = repo ?? throw new global::System.ArgumentNullException(nameof(repo));
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.Label = label;
+            this.Repo = repo;
+            this.User = user;
         }
 
         /// <summary>

@@ -31,8 +31,8 @@ namespace G
         /// <summary>
         /// Optional metadata to be stored with the batch.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("metadata", Required = global::Newtonsoft.Json.Required.Always)]
-        public object? Metadata { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("metadata")]
+        public object? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -63,8 +63,8 @@ namespace G
         {
             this.InputFileId = inputFileId ?? throw new global::System.ArgumentNullException(nameof(inputFileId));
             this.Endpoint = endpoint;
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.CompletionWindow = completionWindow;
+            this.Metadata = metadata;
         }
 
         /// <summary>

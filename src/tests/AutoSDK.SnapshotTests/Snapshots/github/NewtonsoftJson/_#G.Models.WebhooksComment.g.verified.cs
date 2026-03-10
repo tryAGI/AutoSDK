@@ -60,8 +60,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("parent_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? ParentId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("parent_id")]
+        public int? ParentId { get; set; }
 
         /// <summary>
         /// 
@@ -84,8 +84,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhooksCommentUser? User { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("user")]
+        public global::G.WebhooksCommentUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -120,10 +120,10 @@ namespace G
             string htmlUrl,
             int id,
             string nodeId,
-            int? parentId,
             global::G.WebhooksCommentReactions reactions,
             string repositoryUrl,
             string updatedAt,
+            int? parentId,
             global::G.WebhooksCommentUser? user)
         {
             this.AuthorAssociation = authorAssociation;
@@ -134,11 +134,11 @@ namespace G
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.ParentId = parentId;
             this.Reactions = reactions ?? throw new global::System.ArgumentNullException(nameof(reactions));
             this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.ParentId = parentId;
+            this.User = user;
         }
 
         /// <summary>

@@ -13,29 +13,25 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("active_lock_reason")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? ActiveLockReason { get; set; }
+        public string? ActiveLockReason { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("answer_chosen_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? AnswerChosenAt { get; set; }
+        public string? AnswerChosenAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("answer_chosen_by")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DiscussionAnswerChosenBy? AnswerChosenBy { get; set; }
+        public global::G.DiscussionAnswerChosenBy? AnswerChosenBy { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("answer_html_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? AnswerHtmlUrl { get; set; }
+        public string? AnswerHtmlUrl { get; set; }
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -138,8 +134,7 @@ namespace G
         /// <example>resolved</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("state_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DiscussionStateReasonJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DiscussionStateReason? StateReason { get; set; }
+        public global::G.DiscussionStateReason? StateReason { get; set; }
 
         /// <summary>
         /// 
@@ -165,8 +160,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DiscussionUser? User { get; set; }
+        public global::G.DiscussionUser? User { get; set; }
 
         /// <summary>
         /// 
@@ -219,10 +213,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Discussion(
-            string? activeLockReason,
-            string? answerChosenAt,
-            global::G.DiscussionAnswerChosenBy? answerChosenBy,
-            string? answerHtmlUrl,
             global::G.DiscussionAuthorAssociation authorAssociation,
             string body,
             global::G.DiscussionCategory category,
@@ -235,18 +225,18 @@ namespace G
             int number,
             string repositoryUrl,
             global::G.DiscussionState state,
-            global::G.DiscussionStateReason? stateReason,
             string title,
             global::System.DateTime updatedAt,
-            global::G.DiscussionUser? user,
+            string? activeLockReason,
+            string? answerChosenAt,
+            global::G.DiscussionAnswerChosenBy? answerChosenBy,
+            string? answerHtmlUrl,
             global::G.DiscussionReactions? reactions,
+            global::G.DiscussionStateReason? stateReason,
             string? timelineUrl,
+            global::G.DiscussionUser? user,
             global::System.Collections.Generic.IList<global::G.Label>? labels)
         {
-            this.ActiveLockReason = activeLockReason ?? throw new global::System.ArgumentNullException(nameof(activeLockReason));
-            this.AnswerChosenAt = answerChosenAt ?? throw new global::System.ArgumentNullException(nameof(answerChosenAt));
-            this.AnswerChosenBy = answerChosenBy ?? throw new global::System.ArgumentNullException(nameof(answerChosenBy));
-            this.AnswerHtmlUrl = answerHtmlUrl ?? throw new global::System.ArgumentNullException(nameof(answerHtmlUrl));
             this.AuthorAssociation = authorAssociation;
             this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
             this.Category = category ?? throw new global::System.ArgumentNullException(nameof(category));
@@ -259,12 +249,16 @@ namespace G
             this.Number = number;
             this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
             this.State = state;
-            this.StateReason = stateReason;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.UpdatedAt = updatedAt;
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.ActiveLockReason = activeLockReason;
+            this.AnswerChosenAt = answerChosenAt;
+            this.AnswerChosenBy = answerChosenBy;
+            this.AnswerHtmlUrl = answerHtmlUrl;
             this.Reactions = reactions;
+            this.StateReason = stateReason;
             this.TimelineUrl = timelineUrl;
+            this.User = user;
             this.Labels = labels;
         }
 

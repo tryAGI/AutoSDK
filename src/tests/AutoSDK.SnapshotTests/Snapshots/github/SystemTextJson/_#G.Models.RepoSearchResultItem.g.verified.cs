@@ -41,8 +41,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? Owner { get; set; }
+        public global::G.NullableSimpleUser? Owner { get; set; }
 
         /// <summary>
         /// 
@@ -62,8 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -104,8 +102,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("homepage")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Homepage { get; set; }
+        public string? Homepage { get; set; }
 
         /// <summary>
         /// 
@@ -132,8 +129,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("language")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Language { get; set; }
+        public string? Language { get; set; }
 
         /// <summary>
         /// 
@@ -480,8 +476,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mirror_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? MirrorUrl { get; set; }
+        public string? MirrorUrl { get; set; }
 
         /// <summary>
         /// 
@@ -548,8 +543,7 @@ namespace G
         /// License Simple
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("license")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableLicenseSimple? License { get; set; }
+        public global::G.NullableLicenseSimple? License { get; set; }
 
         /// <summary>
         /// 
@@ -734,20 +728,16 @@ namespace G
             string nodeId,
             string name,
             string fullName,
-            global::G.NullableSimpleUser? owner,
             bool @private,
             string htmlUrl,
-            string? description,
             bool fork,
             string url,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             global::System.DateTime pushedAt,
-            string? homepage,
             int size,
             int stargazersCount,
             int watchersCount,
-            string? language,
             int forksCount,
             int openIssuesCount,
             string defaultBranch,
@@ -795,7 +785,6 @@ namespace G
             int forks,
             int openIssues,
             int watchers,
-            string? mirrorUrl,
             bool hasIssues,
             bool hasProjects,
             bool hasPages,
@@ -803,11 +792,16 @@ namespace G
             bool hasDownloads,
             bool archived,
             bool disabled,
-            global::G.NullableLicenseSimple? license,
+            global::G.NullableSimpleUser? owner,
+            string? description,
+            string? homepage,
+            string? language,
             string? masterBranch,
             global::System.Collections.Generic.IList<string>? topics,
+            string? mirrorUrl,
             bool? hasDiscussions,
             string? visibility,
+            global::G.NullableLicenseSimple? license,
             global::G.RepoSearchResultItemPermissions? permissions,
             global::System.Collections.Generic.IList<global::G.SearchResultTextMatche>? textMatches,
             string? tempCloneToken,
@@ -824,20 +818,16 @@ namespace G
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.FullName = fullName ?? throw new global::System.ArgumentNullException(nameof(fullName));
-            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.Private = @private;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Fork = fork;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.PushedAt = pushedAt;
-            this.Homepage = homepage ?? throw new global::System.ArgumentNullException(nameof(homepage));
             this.Size = size;
             this.StargazersCount = stargazersCount;
             this.WatchersCount = watchersCount;
-            this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
             this.ForksCount = forksCount;
             this.OpenIssuesCount = openIssuesCount;
             this.DefaultBranch = defaultBranch ?? throw new global::System.ArgumentNullException(nameof(defaultBranch));
@@ -885,7 +875,6 @@ namespace G
             this.Forks = forks;
             this.OpenIssues = openIssues;
             this.Watchers = watchers;
-            this.MirrorUrl = mirrorUrl ?? throw new global::System.ArgumentNullException(nameof(mirrorUrl));
             this.HasIssues = hasIssues;
             this.HasProjects = hasProjects;
             this.HasPages = hasPages;
@@ -893,11 +882,16 @@ namespace G
             this.HasDownloads = hasDownloads;
             this.Archived = archived;
             this.Disabled = disabled;
-            this.License = license ?? throw new global::System.ArgumentNullException(nameof(license));
+            this.Owner = owner;
+            this.Description = description;
+            this.Homepage = homepage;
+            this.Language = language;
             this.MasterBranch = masterBranch;
             this.Topics = topics;
+            this.MirrorUrl = mirrorUrl;
             this.HasDiscussions = hasDiscussions;
             this.Visibility = visibility;
+            this.License = license;
             this.Permissions = permissions;
             this.TextMatches = textMatches;
             this.TempCloneToken = tempCloneToken;

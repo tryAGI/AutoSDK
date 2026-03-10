@@ -30,8 +30,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("latest_cursor", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? LatestCursor { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("latest_cursor")]
+        public string? LatestCursor { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,7 +55,7 @@ namespace G
             this.RowsWritten = rowsWritten;
             this.ExportedFiles = exportedFiles ?? throw new global::System.ArgumentNullException(nameof(exportedFiles));
             this.ExportPath = exportPath ?? throw new global::System.ArgumentNullException(nameof(exportPath));
-            this.LatestCursor = latestCursor ?? throw new global::System.ArgumentNullException(nameof(latestCursor));
+            this.LatestCursor = latestCursor;
         }
 
         /// <summary>

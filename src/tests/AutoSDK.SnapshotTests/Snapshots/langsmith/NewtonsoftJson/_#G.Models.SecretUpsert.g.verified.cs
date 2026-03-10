@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("value", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Value { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("value")]
+        public string? Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,7 +37,7 @@ namespace G
             string? value)
         {
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
-            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+            this.Value = value;
         }
 
         /// <summary>

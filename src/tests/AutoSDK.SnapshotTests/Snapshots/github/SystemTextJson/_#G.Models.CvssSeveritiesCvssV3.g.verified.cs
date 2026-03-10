@@ -13,8 +13,7 @@ namespace G
         /// The CVSS 3 vector string.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vector_string")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? VectorString { get; set; }
+        public string? VectorString { get; set; }
 
         /// <summary>
         /// The CVSS 3 score.<br/>
@@ -46,7 +45,7 @@ namespace G
             string? vectorString,
             double? score)
         {
-            this.VectorString = vectorString ?? throw new global::System.ArgumentNullException(nameof(vectorString));
+            this.VectorString = vectorString;
             this.Score = score;
         }
 

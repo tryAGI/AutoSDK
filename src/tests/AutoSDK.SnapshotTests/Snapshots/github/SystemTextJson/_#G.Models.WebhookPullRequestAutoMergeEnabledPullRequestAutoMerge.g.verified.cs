@@ -13,22 +13,19 @@ namespace G
         /// Commit message for the merge commit.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_message")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? CommitMessage { get; set; }
+        public string? CommitMessage { get; set; }
 
         /// <summary>
         /// Title for the merge commit message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_title")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? CommitTitle { get; set; }
+        public string? CommitTitle { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled_by")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPullRequestAutoMergeEnabledPullRequestAutoMergeEnabledBy? EnabledBy { get; set; }
+        public global::G.WebhookPullRequestAutoMergeEnabledPullRequestAutoMergeEnabledBy? EnabledBy { get; set; }
 
         /// <summary>
         /// The merge method to use.
@@ -61,15 +58,15 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookPullRequestAutoMergeEnabledPullRequestAutoMerge(
+            global::G.WebhookPullRequestAutoMergeEnabledPullRequestAutoMergeMergeMethod mergeMethod,
             string? commitMessage,
             string? commitTitle,
-            global::G.WebhookPullRequestAutoMergeEnabledPullRequestAutoMergeEnabledBy? enabledBy,
-            global::G.WebhookPullRequestAutoMergeEnabledPullRequestAutoMergeMergeMethod mergeMethod)
+            global::G.WebhookPullRequestAutoMergeEnabledPullRequestAutoMergeEnabledBy? enabledBy)
         {
-            this.CommitMessage = commitMessage ?? throw new global::System.ArgumentNullException(nameof(commitMessage));
-            this.CommitTitle = commitTitle ?? throw new global::System.ArgumentNullException(nameof(commitTitle));
-            this.EnabledBy = enabledBy ?? throw new global::System.ArgumentNullException(nameof(enabledBy));
             this.MergeMethod = mergeMethod;
+            this.CommitMessage = commitMessage;
+            this.CommitTitle = commitTitle;
+            this.EnabledBy = enabledBy;
         }
 
         /// <summary>

@@ -48,22 +48,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? HtmlUrl { get; set; }
+        public string? HtmlUrl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("git_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? GitUrl { get; set; }
+        public string? GitUrl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("download_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? DownloadUrl { get; set; }
+        public string? DownloadUrl { get; set; }
 
         /// <summary>
         /// 
@@ -97,8 +94,7 @@ namespace G
         /// License Simple
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("license")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableLicenseSimple? License { get; set; }
+        public global::G.NullableLicenseSimple? License { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -133,13 +129,13 @@ namespace G
             string sha,
             int size,
             string url,
-            string? htmlUrl,
-            string? gitUrl,
-            string? downloadUrl,
             string type,
             string content,
             string encoding,
             global::G.LicenseContentLinks links,
+            string? htmlUrl,
+            string? gitUrl,
+            string? downloadUrl,
             global::G.NullableLicenseSimple? license)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -147,14 +143,14 @@ namespace G
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
             this.Size = size;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.GitUrl = gitUrl ?? throw new global::System.ArgumentNullException(nameof(gitUrl));
-            this.DownloadUrl = downloadUrl ?? throw new global::System.ArgumentNullException(nameof(downloadUrl));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Encoding = encoding ?? throw new global::System.ArgumentNullException(nameof(encoding));
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
-            this.License = license ?? throw new global::System.ArgumentNullException(nameof(license));
+            this.HtmlUrl = htmlUrl;
+            this.GitUrl = gitUrl;
+            this.DownloadUrl = downloadUrl;
+            this.License = license;
         }
 
         /// <summary>

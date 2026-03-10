@@ -28,8 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookCodeScanningAlertReopenedByUserAlertRuleSeverityJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity? Severity { get; set; }
+        public global::G.WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity? Severity { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

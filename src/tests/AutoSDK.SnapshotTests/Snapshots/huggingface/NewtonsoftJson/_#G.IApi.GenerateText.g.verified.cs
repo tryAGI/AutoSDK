@@ -32,7 +32,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.GenerateTextResponseValue>> GenerateTextAsync(
             string modelId,
-            string? inputs,
+            string? inputs = default,
             global::G.GenerateTextRequestParameters? parameters = default,
             global::G.GenerateTextRequestOptions? options = default,
             global::System.Threading.CancellationToken cancellationToken = default);

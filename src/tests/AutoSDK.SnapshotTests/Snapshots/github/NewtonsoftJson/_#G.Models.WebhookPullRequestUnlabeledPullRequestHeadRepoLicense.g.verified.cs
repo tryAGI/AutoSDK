@@ -36,8 +36,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Url { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("url")]
+        public string? Url { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -64,7 +64,7 @@ namespace G
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.SpdxId = spdxId ?? throw new global::System.ArgumentNullException(nameof(spdxId));
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Url = url;
         }
 
         /// <summary>

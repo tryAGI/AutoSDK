@@ -59,8 +59,7 @@ namespace G
         /// This field is **null** if the term was added manually or was permanently blocked by AutoMod.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? ExpiresAt { get; set; }
+        public global::System.DateTime? ExpiresAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

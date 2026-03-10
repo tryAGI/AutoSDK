@@ -38,8 +38,7 @@ namespace G
         /// </summary>
         /// <example>https://github.com/github/docs/blob/main/CODE_OF_CONDUCT.md</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? HtmlUrl { get; set; }
+        public string? HtmlUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -74,7 +73,7 @@ namespace G
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.HtmlUrl = htmlUrl;
         }
 
         /// <summary>

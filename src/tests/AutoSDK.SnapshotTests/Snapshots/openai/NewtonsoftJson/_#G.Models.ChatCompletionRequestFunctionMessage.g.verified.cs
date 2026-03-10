@@ -20,9 +20,9 @@ namespace G
         /// <summary>
         /// The contents of the function message.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonProperty("content")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public string? Content { get; set; } = default!;
+        public string? Content { get; set; }
 
         /// <summary>
         /// The name of the function to call.
@@ -50,13 +50,13 @@ namespace G
         /// The name of the function to call.
         /// </param>
         public ChatCompletionRequestFunctionMessage(
-            string? content,
             string name,
-            global::G.ChatCompletionRequestFunctionMessageRole role)
+            global::G.ChatCompletionRequestFunctionMessageRole role,
+            string? content)
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Role = role;
+            this.Content = content;
         }
 
         /// <summary>

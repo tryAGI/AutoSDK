@@ -20,8 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignee")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksUser? Assignee { get; set; }
+        public global::G.WebhooksUser? Assignee { get; set; }
 
         /// <summary>
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
@@ -115,22 +114,22 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookPullRequestAssigned(
-            global::G.WebhooksUser? assignee,
             int number,
             global::G.WebhookPullRequestAssignedPullRequest pullRequest,
             global::G.RepositoryWebhooks repository,
             global::G.SimpleUser sender,
             global::G.WebhookPullRequestAssignedAction action,
+            global::G.WebhooksUser? assignee,
             global::G.EnterpriseWebhooks? enterprise,
             global::G.SimpleInstallation? installation,
             global::G.OrganizationSimpleWebhooks? organization)
         {
-            this.Assignee = assignee ?? throw new global::System.ArgumentNullException(nameof(assignee));
             this.Number = number;
             this.PullRequest = pullRequest ?? throw new global::System.ArgumentNullException(nameof(pullRequest));
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Action = action;
+            this.Assignee = assignee;
             this.Enterprise = enterprise;
             this.Installation = installation;
             this.Organization = organization;

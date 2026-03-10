@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("git", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Git { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("git")]
+        public string? Git { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("html", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Html { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("html")]
+        public string? Html { get; set; }
 
         /// <summary>
         /// 
@@ -40,13 +40,13 @@ namespace G
         /// <param name="html"></param>
         /// <param name="self"></param>
         public ContentDirectoryItemLinks(
+            string self,
             string? git,
-            string? html,
-            string self)
+            string? html)
         {
-            this.Git = git ?? throw new global::System.ArgumentNullException(nameof(git));
-            this.Html = html ?? throw new global::System.ArgumentNullException(nameof(html));
             this.Self = self ?? throw new global::System.ArgumentNullException(nameof(self));
+            this.Git = git;
+            this.Html = html;
         }
 
         /// <summary>

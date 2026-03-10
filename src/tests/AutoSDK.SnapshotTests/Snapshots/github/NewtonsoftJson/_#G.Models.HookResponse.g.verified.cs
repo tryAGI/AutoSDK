@@ -12,20 +12,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("code", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? Code { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("code")]
+        public int? Code { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Status { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("status")]
+        public string? Status { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("message", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Message { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("message")]
+        public string? Message { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,8 +45,8 @@ namespace G
             string? message)
         {
             this.Code = code;
-            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Status = status;
+            this.Message = message;
         }
 
         /// <summary>

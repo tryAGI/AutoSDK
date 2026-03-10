@@ -27,8 +27,7 @@ namespace G
         /// A list of scopes that this authorization is in.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scopes")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string>? Scopes { get; set; }
+        public global::System.Collections.Generic.IList<string>? Scopes { get; set; }
 
         /// <summary>
         /// 
@@ -41,15 +40,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token_last_eight")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? TokenLastEight { get; set; }
+        public string? TokenLastEight { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hashed_token")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? HashedToken { get; set; }
+        public string? HashedToken { get; set; }
 
         /// <summary>
         /// 
@@ -62,15 +59,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("note")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Note { get; set; }
+        public string? Note { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("note_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? NoteUrl { get; set; }
+        public string? NoteUrl { get; set; }
 
         /// <summary>
         /// 
@@ -90,8 +85,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fingerprint")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Fingerprint { get; set; }
+        public string? Fingerprint { get; set; }
 
         /// <summary>
         /// A GitHub user.
@@ -109,8 +103,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? ExpiresAt { get; set; }
+        public global::System.DateTime? ExpiresAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -146,35 +139,35 @@ namespace G
         public Authorization(
             long id,
             string url,
-            global::System.Collections.Generic.IList<string>? scopes,
             string token,
-            string? tokenLastEight,
-            string? hashedToken,
             global::G.AuthorizationApp app,
-            string? note,
-            string? noteUrl,
             global::System.DateTime updatedAt,
             global::System.DateTime createdAt,
+            global::System.Collections.Generic.IList<string>? scopes,
+            string? tokenLastEight,
+            string? hashedToken,
+            string? note,
+            string? noteUrl,
             string? fingerprint,
-            global::System.DateTime? expiresAt,
             global::G.NullableSimpleUser? user,
-            global::G.NullableScopedInstallation? installation)
+            global::G.NullableScopedInstallation? installation,
+            global::System.DateTime? expiresAt)
         {
             this.Id = id;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Scopes = scopes ?? throw new global::System.ArgumentNullException(nameof(scopes));
             this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
-            this.TokenLastEight = tokenLastEight ?? throw new global::System.ArgumentNullException(nameof(tokenLastEight));
-            this.HashedToken = hashedToken ?? throw new global::System.ArgumentNullException(nameof(hashedToken));
             this.App = app ?? throw new global::System.ArgumentNullException(nameof(app));
-            this.Note = note ?? throw new global::System.ArgumentNullException(nameof(note));
-            this.NoteUrl = noteUrl ?? throw new global::System.ArgumentNullException(nameof(noteUrl));
             this.UpdatedAt = updatedAt;
             this.CreatedAt = createdAt;
-            this.Fingerprint = fingerprint ?? throw new global::System.ArgumentNullException(nameof(fingerprint));
-            this.ExpiresAt = expiresAt;
+            this.Scopes = scopes;
+            this.TokenLastEight = tokenLastEight;
+            this.HashedToken = hashedToken;
+            this.Note = note;
+            this.NoteUrl = noteUrl;
+            this.Fingerprint = fingerprint;
             this.User = user;
             this.Installation = installation;
+            this.ExpiresAt = expiresAt;
         }
 
         /// <summary>

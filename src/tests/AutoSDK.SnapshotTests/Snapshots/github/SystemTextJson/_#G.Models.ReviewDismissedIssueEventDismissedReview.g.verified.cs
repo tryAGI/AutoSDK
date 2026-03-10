@@ -27,8 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissal_message")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? DismissalMessage { get; set; }
+        public string? DismissalMessage { get; set; }
 
         /// <summary>
         /// 
@@ -60,7 +59,7 @@ namespace G
         {
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
             this.ReviewId = reviewId;
-            this.DismissalMessage = dismissalMessage ?? throw new global::System.ArgumentNullException(nameof(dismissalMessage));
+            this.DismissalMessage = dismissalMessage;
             this.DismissalCommitId = dismissalCommitId;
         }
 

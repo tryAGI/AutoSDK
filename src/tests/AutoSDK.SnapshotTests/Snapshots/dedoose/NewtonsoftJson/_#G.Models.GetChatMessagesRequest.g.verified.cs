@@ -24,14 +24,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("lastRevievedProjectMessageId", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Guid? LastRevievedProjectMessageId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("lastRevievedProjectMessageId")]
+        public global::System.Guid? LastRevievedProjectMessageId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("lastRecievedGlobalMessageId", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Guid? LastRecievedGlobalMessageId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("lastRecievedGlobalMessageId")]
+        public global::System.Guid? LastRecievedGlobalMessageId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

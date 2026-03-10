@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// The CVSS vector.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("vector_string", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? VectorString { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("vector_string")]
+        public string? VectorString { get; set; }
 
         /// <summary>
         /// The CVSS score.<br/>
@@ -42,7 +42,7 @@ namespace G
             string? vectorString,
             double? score)
         {
-            this.VectorString = vectorString ?? throw new global::System.ArgumentNullException(nameof(vectorString));
+            this.VectorString = vectorString;
             this.Score = score;
         }
 

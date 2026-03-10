@@ -24,20 +24,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhooksRelease1Author? Author { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("author")]
+        public global::G.WebhooksRelease1Author? Author { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("body", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Body { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("body")]
+        public string? Body { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? CreatedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("created_at")]
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// 
@@ -66,8 +66,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Name { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// 
@@ -84,8 +84,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("published_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? PublishedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("published_at")]
+        public global::System.DateTime? PublishedAt { get; set; }
 
         /// <summary>
         /// 
@@ -102,8 +102,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("tarball_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? TarballUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("tarball_url")]
+        public string? TarballUrl { get; set; }
 
         /// <summary>
         /// Specifies the commitish value that determines where the Git tag is created from.
@@ -126,8 +126,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("zipball_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? ZipballUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("zipball_url")]
+        public string? ZipballUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -169,45 +169,45 @@ namespace G
         public WebhooksRelease1(
             global::System.Collections.Generic.IList<global::G.WebhooksRelease1Asset> assets,
             string assetsUrl,
-            global::G.WebhooksRelease1Author? author,
-            string? body,
-            global::System.DateTime? createdAt,
             bool draft,
             string htmlUrl,
             int id,
-            string? name,
             string nodeId,
             bool prerelease,
-            global::System.DateTime? publishedAt,
             string tagName,
-            string? tarballUrl,
             string targetCommitish,
             string uploadUrl,
             string url,
-            string? zipballUrl,
+            global::G.WebhooksRelease1Author? author,
+            string? body,
+            global::System.DateTime? createdAt,
             string? discussionUrl,
-            global::G.WebhooksRelease1Reactions? reactions)
+            string? name,
+            global::System.DateTime? publishedAt,
+            global::G.WebhooksRelease1Reactions? reactions,
+            string? tarballUrl,
+            string? zipballUrl)
         {
             this.Assets = assets ?? throw new global::System.ArgumentNullException(nameof(assets));
             this.AssetsUrl = assetsUrl ?? throw new global::System.ArgumentNullException(nameof(assetsUrl));
-            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
-            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
-            this.CreatedAt = createdAt;
             this.Draft = draft;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Prerelease = prerelease;
-            this.PublishedAt = publishedAt;
             this.TagName = tagName ?? throw new global::System.ArgumentNullException(nameof(tagName));
-            this.TarballUrl = tarballUrl ?? throw new global::System.ArgumentNullException(nameof(tarballUrl));
             this.TargetCommitish = targetCommitish ?? throw new global::System.ArgumentNullException(nameof(targetCommitish));
             this.UploadUrl = uploadUrl ?? throw new global::System.ArgumentNullException(nameof(uploadUrl));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.ZipballUrl = zipballUrl ?? throw new global::System.ArgumentNullException(nameof(zipballUrl));
+            this.Author = author;
+            this.Body = body;
+            this.CreatedAt = createdAt;
             this.DiscussionUrl = discussionUrl;
+            this.Name = name;
+            this.PublishedAt = publishedAt;
             this.Reactions = reactions;
+            this.TarballUrl = tarballUrl;
+            this.ZipballUrl = zipballUrl;
         }
 
         /// <summary>

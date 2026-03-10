@@ -34,8 +34,8 @@ namespace G
         /// with a maximum length of 64 characters. Values are strings with a maximum <br/>
         /// length of 512 characters, booleans, or numbers.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("attributes", Required = global::Newtonsoft.Json.Required.Always)]
-        public object? Attributes { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("attributes")]
+        public object? Attributes { get; set; }
 
         /// <summary>
         /// Content chunks from the file.
@@ -75,14 +75,14 @@ namespace G
             string fileId,
             string filename,
             double score,
-            object? attributes,
-            global::System.Collections.Generic.IList<global::G.VectorStoreSearchResultContentObject> content)
+            global::System.Collections.Generic.IList<global::G.VectorStoreSearchResultContentObject> content,
+            object? attributes)
         {
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.Score = score;
-            this.Attributes = attributes ?? throw new global::System.ArgumentNullException(nameof(attributes));
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Attributes = attributes;
         }
 
         /// <summary>

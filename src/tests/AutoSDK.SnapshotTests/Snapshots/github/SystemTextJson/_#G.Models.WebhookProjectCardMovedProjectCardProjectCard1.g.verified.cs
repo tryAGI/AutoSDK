@@ -53,8 +53,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creator")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookProjectCardMovedProjectCardProjectCard1Creator? Creator { get; set; }
+        public global::G.WebhookProjectCardMovedProjectCardProjectCard1Creator? Creator { get; set; }
 
         /// <summary>
         /// The project card's ID
@@ -74,8 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("note")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Note { get; set; }
+        public string? Note { get; set; }
 
         /// <summary>
         /// 
@@ -132,29 +130,29 @@ namespace G
             int columnId,
             string columnUrl,
             global::System.DateTime createdAt,
-            global::G.WebhookProjectCardMovedProjectCardProjectCard1Creator? creator,
             int id,
             string nodeId,
-            string? note,
             string projectUrl,
             global::System.DateTime updatedAt,
             string url,
             int? afterId,
-            string? contentUrl)
+            string? contentUrl,
+            global::G.WebhookProjectCardMovedProjectCardProjectCard1Creator? creator,
+            string? note)
         {
             this.Archived = archived;
             this.ColumnId = columnId;
             this.ColumnUrl = columnUrl ?? throw new global::System.ArgumentNullException(nameof(columnUrl));
             this.CreatedAt = createdAt;
-            this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.Note = note ?? throw new global::System.ArgumentNullException(nameof(note));
             this.ProjectUrl = projectUrl ?? throw new global::System.ArgumentNullException(nameof(projectUrl));
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.AfterId = afterId;
             this.ContentUrl = contentUrl;
+            this.Creator = creator;
+            this.Note = note;
         }
 
         /// <summary>

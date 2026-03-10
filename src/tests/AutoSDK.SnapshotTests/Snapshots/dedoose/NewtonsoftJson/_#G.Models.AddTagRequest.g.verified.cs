@@ -36,26 +36,26 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("weightMin", Required = global::Newtonsoft.Json.Required.Always)]
-        public double? WeightMin { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("weightMin")]
+        public double? WeightMin { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("weightMax", Required = global::Newtonsoft.Json.Required.Always)]
-        public double? WeightMax { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("weightMax")]
+        public double? WeightMax { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("weightDefault", Required = global::Newtonsoft.Json.Required.Always)]
-        public double? WeightDefault { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("weightDefault")]
+        public double? WeightDefault { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("allowDecimalWeights", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool? AllowDecimalWeights { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("allowDecimalWeights")]
+        public bool? AllowDecimalWeights { get; set; }
 
         /// <summary>
         /// 
@@ -86,21 +86,21 @@ namespace G
             string title,
             string description,
             bool isWeighted,
+            int color,
             double? weightMin,
             double? weightMax,
             double? weightDefault,
-            bool? allowDecimalWeights,
-            int color)
+            bool? allowDecimalWeights)
         {
             this.ProjectId = projectId;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.IsWeighted = isWeighted;
+            this.Color = color;
             this.WeightMin = weightMin;
             this.WeightMax = weightMax;
             this.WeightDefault = weightDefault;
             this.AllowDecimalWeights = allowDecimalWeights;
-            this.Color = color;
         }
 
         /// <summary>

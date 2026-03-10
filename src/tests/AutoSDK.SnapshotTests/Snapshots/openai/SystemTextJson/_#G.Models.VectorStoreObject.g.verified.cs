@@ -78,8 +78,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_active_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? LastActiveAt { get; set; }
+        public global::System.DateTimeOffset? LastActiveAt { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -89,8 +88,7 @@ namespace G
         /// with a maximum length of 512 characters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -146,11 +144,11 @@ namespace G
             int usageBytes,
             global::G.VectorStoreObjectFileCounts fileCounts,
             global::G.VectorStoreObjectStatus status,
-            global::System.DateTimeOffset? lastActiveAt,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::G.VectorStoreObjectObject @object,
             global::G.VectorStoreExpirationAfter? expiresAfter,
-            global::System.DateTimeOffset? expiresAt)
+            global::System.DateTimeOffset? expiresAt,
+            global::System.DateTimeOffset? lastActiveAt,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
@@ -158,11 +156,11 @@ namespace G
             this.UsageBytes = usageBytes;
             this.FileCounts = fileCounts ?? throw new global::System.ArgumentNullException(nameof(fileCounts));
             this.Status = status;
-            this.LastActiveAt = lastActiveAt;
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.Object = @object;
             this.ExpiresAfter = expiresAfter;
             this.ExpiresAt = expiresAt;
+            this.LastActiveAt = lastActiveAt;
+            this.Metadata = metadata;
         }
 
         /// <summary>

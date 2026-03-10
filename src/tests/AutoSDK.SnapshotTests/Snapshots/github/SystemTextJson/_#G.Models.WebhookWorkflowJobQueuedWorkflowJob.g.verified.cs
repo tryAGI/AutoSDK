@@ -20,15 +20,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? CompletedAt { get; set; }
+        public string? CompletedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Conclusion { get; set; }
+        public string? Conclusion { get; set; }
 
         /// <summary>
         /// The time that the job created.
@@ -104,29 +102,25 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("runner_group_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? RunnerGroupId { get; set; }
+        public int? RunnerGroupId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("runner_group_name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? RunnerGroupName { get; set; }
+        public string? RunnerGroupName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("runner_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? RunnerId { get; set; }
+        public int? RunnerId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("runner_name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? RunnerName { get; set; }
+        public string? RunnerName { get; set; }
 
         /// <summary>
         /// 
@@ -147,15 +141,13 @@ namespace G
         /// The name of the current branch.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("head_branch")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? HeadBranch { get; set; }
+        public string? HeadBranch { get; set; }
 
         /// <summary>
         /// The name of the workflow.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflow_name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? WorkflowName { get; set; }
+        public string? WorkflowName { get; set; }
 
         /// <summary>
         /// 
@@ -214,8 +206,6 @@ namespace G
 #endif
         public WebhookWorkflowJobQueuedWorkflowJob(
             string checkRunUrl,
-            string? completedAt,
-            string? conclusion,
             string createdAt,
             string headSha,
             string htmlUrl,
@@ -226,20 +216,20 @@ namespace G
             int runAttempt,
             double runId,
             string runUrl,
+            global::System.DateTime startedAt,
+            global::G.WebhookWorkflowJobQueuedWorkflowJobStatus status,
+            global::System.Collections.Generic.IList<global::G.WebhookWorkflowJobQueuedWorkflowJobStep> steps,
+            string url,
+            string? completedAt,
+            string? conclusion,
             int? runnerGroupId,
             string? runnerGroupName,
             int? runnerId,
             string? runnerName,
-            global::System.DateTime startedAt,
-            global::G.WebhookWorkflowJobQueuedWorkflowJobStatus status,
             string? headBranch,
-            string? workflowName,
-            global::System.Collections.Generic.IList<global::G.WebhookWorkflowJobQueuedWorkflowJobStep> steps,
-            string url)
+            string? workflowName)
         {
             this.CheckRunUrl = checkRunUrl ?? throw new global::System.ArgumentNullException(nameof(checkRunUrl));
-            this.CompletedAt = completedAt ?? throw new global::System.ArgumentNullException(nameof(completedAt));
-            this.Conclusion = conclusion ?? throw new global::System.ArgumentNullException(nameof(conclusion));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
@@ -250,16 +240,18 @@ namespace G
             this.RunAttempt = runAttempt;
             this.RunId = runId;
             this.RunUrl = runUrl ?? throw new global::System.ArgumentNullException(nameof(runUrl));
-            this.RunnerGroupId = runnerGroupId;
-            this.RunnerGroupName = runnerGroupName ?? throw new global::System.ArgumentNullException(nameof(runnerGroupName));
-            this.RunnerId = runnerId;
-            this.RunnerName = runnerName ?? throw new global::System.ArgumentNullException(nameof(runnerName));
             this.StartedAt = startedAt;
             this.Status = status;
-            this.HeadBranch = headBranch ?? throw new global::System.ArgumentNullException(nameof(headBranch));
-            this.WorkflowName = workflowName ?? throw new global::System.ArgumentNullException(nameof(workflowName));
             this.Steps = steps ?? throw new global::System.ArgumentNullException(nameof(steps));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.CompletedAt = completedAt;
+            this.Conclusion = conclusion;
+            this.RunnerGroupId = runnerGroupId;
+            this.RunnerGroupName = runnerGroupName;
+            this.RunnerId = runnerId;
+            this.RunnerName = runnerName;
+            this.HeadBranch = headBranch;
+            this.WorkflowName = workflowName;
         }
 
         /// <summary>

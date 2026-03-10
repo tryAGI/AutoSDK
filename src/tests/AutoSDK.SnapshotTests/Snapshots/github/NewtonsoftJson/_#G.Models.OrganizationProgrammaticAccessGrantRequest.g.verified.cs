@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// Reason for requesting access.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Reason { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("reason")]
+        public string? Reason { get; set; }
 
         /// <summary>
         /// A GitHub user.
@@ -60,14 +60,14 @@ namespace G
         /// <summary>
         /// Date and time when the associated fine-grained personal access token expires.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("token_expires_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? TokenExpiresAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("token_expires_at")]
+        public string? TokenExpiresAt { get; set; }
 
         /// <summary>
         /// Date and time when the associated fine-grained personal access token was last used for authentication.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("token_last_used_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? TokenLastUsedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("token_last_used_at")]
+        public string? TokenLastUsedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -110,26 +110,26 @@ namespace G
         /// </param>
         public OrganizationProgrammaticAccessGrantRequest(
             int id,
-            string? reason,
             global::G.SimpleUser owner,
             global::G.OrganizationProgrammaticAccessGrantRequestRepositorySelection repositorySelection,
             string repositoriesUrl,
             global::G.OrganizationProgrammaticAccessGrantRequestPermissions permissions,
             string createdAt,
             bool tokenExpired,
+            string? reason,
             string? tokenExpiresAt,
             string? tokenLastUsedAt)
         {
             this.Id = id;
-            this.Reason = reason ?? throw new global::System.ArgumentNullException(nameof(reason));
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.RepositorySelection = repositorySelection;
             this.RepositoriesUrl = repositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(repositoriesUrl));
             this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.TokenExpired = tokenExpired;
-            this.TokenExpiresAt = tokenExpiresAt ?? throw new global::System.ArgumentNullException(nameof(tokenExpiresAt));
-            this.TokenLastUsedAt = tokenLastUsedAt ?? throw new global::System.ArgumentNullException(nameof(tokenLastUsedAt));
+            this.Reason = reason;
+            this.TokenExpiresAt = tokenExpiresAt;
+            this.TokenLastUsedAt = tokenLastUsedAt;
         }
 
         /// <summary>

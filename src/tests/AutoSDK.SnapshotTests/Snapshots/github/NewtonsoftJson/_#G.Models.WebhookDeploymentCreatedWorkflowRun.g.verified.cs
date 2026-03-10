@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("actor", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookDeploymentCreatedWorkflowRunActor? Actor { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("actor")]
+        public global::G.WebhookDeploymentCreatedWorkflowRunActor? Actor { get; set; }
 
         /// <summary>
         /// 
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("conclusion", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookDeploymentCreatedWorkflowRunConclusion? Conclusion { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("conclusion")]
+        public global::G.WebhookDeploymentCreatedWorkflowRunConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// 
@@ -264,10 +264,8 @@ namespace G
         /// <param name="workflowId"></param>
         /// <param name="workflowUrl"></param>
         public WebhookDeploymentCreatedWorkflowRun(
-            global::G.WebhookDeploymentCreatedWorkflowRunActor? actor,
             int checkSuiteId,
             string checkSuiteNodeId,
-            global::G.WebhookDeploymentCreatedWorkflowRunConclusion? conclusion,
             global::System.DateTime createdAt,
             string displayTitle,
             string @event,
@@ -286,9 +284,11 @@ namespace G
             global::System.DateTime updatedAt,
             string url,
             int workflowId,
+            global::G.WebhookDeploymentCreatedWorkflowRunActor? actor,
             string? artifactsUrl,
             string? cancelUrl,
             string? checkSuiteUrl,
+            global::G.WebhookDeploymentCreatedWorkflowRunConclusion? conclusion,
             object? headCommit,
             global::G.WebhookDeploymentCreatedWorkflowRunHeadRepository? headRepository,
             string? jobsUrl,
@@ -300,10 +300,8 @@ namespace G
             global::G.WebhookDeploymentCreatedWorkflowRunTriggeringActor? triggeringActor,
             string? workflowUrl)
         {
-            this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
             this.CheckSuiteId = checkSuiteId;
             this.CheckSuiteNodeId = checkSuiteNodeId ?? throw new global::System.ArgumentNullException(nameof(checkSuiteNodeId));
-            this.Conclusion = conclusion;
             this.CreatedAt = createdAt;
             this.DisplayTitle = displayTitle ?? throw new global::System.ArgumentNullException(nameof(displayTitle));
             this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));
@@ -322,9 +320,11 @@ namespace G
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.WorkflowId = workflowId;
+            this.Actor = actor;
             this.ArtifactsUrl = artifactsUrl;
             this.CancelUrl = cancelUrl;
             this.CheckSuiteUrl = checkSuiteUrl;
+            this.Conclusion = conclusion;
             this.HeadCommit = headCommit;
             this.HeadRepository = headRepository;
             this.JobsUrl = jobsUrl;

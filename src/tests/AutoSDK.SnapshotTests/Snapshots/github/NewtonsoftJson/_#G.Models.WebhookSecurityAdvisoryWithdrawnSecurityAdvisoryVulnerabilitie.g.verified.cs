@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("first_patched_version", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitieFirstPatchedVersion? FirstPatchedVersion { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("first_patched_version")]
+        public global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitieFirstPatchedVersion? FirstPatchedVersion { get; set; }
 
         /// <summary>
         /// 
@@ -47,15 +47,15 @@ namespace G
         /// <param name="severity"></param>
         /// <param name="vulnerableVersionRange"></param>
         public WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitie(
-            global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitieFirstPatchedVersion? firstPatchedVersion,
             global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiePackage package,
             string severity,
-            string vulnerableVersionRange)
+            string vulnerableVersionRange,
+            global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitieFirstPatchedVersion? firstPatchedVersion)
         {
-            this.FirstPatchedVersion = firstPatchedVersion ?? throw new global::System.ArgumentNullException(nameof(firstPatchedVersion));
             this.Package = package ?? throw new global::System.ArgumentNullException(nameof(package));
             this.Severity = severity ?? throw new global::System.ArgumentNullException(nameof(severity));
             this.VulnerableVersionRange = vulnerableVersionRange ?? throw new global::System.ArgumentNullException(nameof(vulnerableVersionRange));
+            this.FirstPatchedVersion = firstPatchedVersion;
         }
 
         /// <summary>

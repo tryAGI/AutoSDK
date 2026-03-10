@@ -30,8 +30,8 @@ namespace G
         /// <summary>
         /// Maximum number of characters that the character limit can be exceeded by. Managed by the workspace admin.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("max_character_limit_extension", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? MaxCharacterLimitExtension { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("max_character_limit_extension")]
+        public int? MaxCharacterLimitExtension { get; set; }
 
         /// <summary>
         /// Whether the user can extend their character limit.
@@ -202,7 +202,6 @@ namespace G
             string tier,
             int characterCount,
             int characterLimit,
-            int? maxCharacterLimitExtension,
             bool canExtendCharacterLimit,
             bool allowedToExtendCharacterLimit,
             int voiceSlotsUsed,
@@ -214,6 +213,7 @@ namespace G
             bool canUseInstantVoiceCloning,
             bool canUseProfessionalVoiceCloning,
             global::G.SubscriptionStatusType status,
+            int? maxCharacterLimitExtension,
             int? nextCharacterCountResetUnix,
             int? maxVoiceAddEdits,
             global::G.SubscriptionResponseModelCurrency2? currency,
@@ -223,7 +223,6 @@ namespace G
             this.Tier = tier ?? throw new global::System.ArgumentNullException(nameof(tier));
             this.CharacterCount = characterCount;
             this.CharacterLimit = characterLimit;
-            this.MaxCharacterLimitExtension = maxCharacterLimitExtension ?? throw new global::System.ArgumentNullException(nameof(maxCharacterLimitExtension));
             this.CanExtendCharacterLimit = canExtendCharacterLimit;
             this.AllowedToExtendCharacterLimit = allowedToExtendCharacterLimit;
             this.VoiceSlotsUsed = voiceSlotsUsed;
@@ -235,6 +234,7 @@ namespace G
             this.CanUseInstantVoiceCloning = canUseInstantVoiceCloning;
             this.CanUseProfessionalVoiceCloning = canUseProfessionalVoiceCloning;
             this.Status = status;
+            this.MaxCharacterLimitExtension = maxCharacterLimitExtension;
             this.NextCharacterCountResetUnix = nextCharacterCountResetUnix;
             this.MaxVoiceAddEdits = maxVoiceAddEdits;
             this.Currency = currency;

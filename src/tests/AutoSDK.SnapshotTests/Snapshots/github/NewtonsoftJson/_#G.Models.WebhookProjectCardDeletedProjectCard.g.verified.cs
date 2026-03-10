@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("column_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? ColumnId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("column_id")]
+        public int? ColumnId { get; set; }
 
         /// <summary>
         /// 
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("creator", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookProjectCardDeletedProjectCardCreator? Creator { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("creator")]
+        public global::G.WebhookProjectCardDeletedProjectCardCreator? Creator { get; set; }
 
         /// <summary>
         /// The project card's ID
@@ -66,8 +66,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("note", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Note { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("note")]
+        public string? Note { get; set; }
 
         /// <summary>
         /// 
@@ -115,32 +115,32 @@ namespace G
         /// <param name="url"></param>
         public WebhookProjectCardDeletedProjectCard(
             bool archived,
-            int? columnId,
             string columnUrl,
             global::System.DateTime createdAt,
-            global::G.WebhookProjectCardDeletedProjectCardCreator? creator,
             int id,
             string nodeId,
-            string? note,
             string projectUrl,
             global::System.DateTime updatedAt,
             string url,
             int? afterId,
-            string? contentUrl)
+            int? columnId,
+            string? contentUrl,
+            global::G.WebhookProjectCardDeletedProjectCardCreator? creator,
+            string? note)
         {
             this.Archived = archived;
-            this.ColumnId = columnId;
             this.ColumnUrl = columnUrl ?? throw new global::System.ArgumentNullException(nameof(columnUrl));
             this.CreatedAt = createdAt;
-            this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.Note = note ?? throw new global::System.ArgumentNullException(nameof(note));
             this.ProjectUrl = projectUrl ?? throw new global::System.ArgumentNullException(nameof(projectUrl));
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.AfterId = afterId;
+            this.ColumnId = columnId;
             this.ContentUrl = contentUrl;
+            this.Creator = creator;
+            this.Note = note;
         }
 
         /// <summary>

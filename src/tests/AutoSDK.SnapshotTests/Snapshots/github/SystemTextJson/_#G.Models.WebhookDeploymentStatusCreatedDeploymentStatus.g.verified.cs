@@ -20,8 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creator")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookDeploymentStatusCreatedDeploymentStatusCreator? Creator { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedDeploymentStatusCreator? Creator { get; set; }
 
         /// <summary>
         /// 
@@ -148,7 +147,6 @@ namespace G
 #endif
         public WebhookDeploymentStatusCreatedDeploymentStatus(
             string createdAt,
-            global::G.WebhookDeploymentStatusCreatedDeploymentStatusCreator? creator,
             string deploymentUrl,
             string description,
             string environment,
@@ -159,12 +157,12 @@ namespace G
             string targetUrl,
             string updatedAt,
             string url,
+            global::G.WebhookDeploymentStatusCreatedDeploymentStatusCreator? creator,
             string? environmentUrl,
             string? logUrl,
             global::G.WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubApp? performedViaGithubApp)
         {
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
-            this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
             this.DeploymentUrl = deploymentUrl ?? throw new global::System.ArgumentNullException(nameof(deploymentUrl));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Environment = environment ?? throw new global::System.ArgumentNullException(nameof(environment));
@@ -175,6 +173,7 @@ namespace G
             this.TargetUrl = targetUrl ?? throw new global::System.ArgumentNullException(nameof(targetUrl));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Creator = creator;
             this.EnvironmentUrl = environmentUrl;
             this.LogUrl = logUrl;
             this.PerformedViaGithubApp = performedViaGithubApp;

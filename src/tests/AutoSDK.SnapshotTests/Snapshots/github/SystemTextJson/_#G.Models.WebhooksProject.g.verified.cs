@@ -13,8 +13,7 @@ namespace G
         /// Body of the project
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Body { get; set; }
+        public string? Body { get; set; }
 
         /// <summary>
         /// 
@@ -34,8 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creator")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksProjectCreator? Creator { get; set; }
+        public global::G.WebhooksProjectCreator? Creator { get; set; }
 
         /// <summary>
         /// 
@@ -133,10 +131,8 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhooksProject(
-            string? body,
             string columnsUrl,
             global::System.DateTime createdAt,
-            global::G.WebhooksProjectCreator? creator,
             string htmlUrl,
             int id,
             string name,
@@ -145,12 +141,12 @@ namespace G
             string ownerUrl,
             global::G.WebhooksProjectState state,
             global::System.DateTime updatedAt,
-            string url)
+            string url,
+            string? body,
+            global::G.WebhooksProjectCreator? creator)
         {
-            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
             this.ColumnsUrl = columnsUrl ?? throw new global::System.ArgumentNullException(nameof(columnsUrl));
             this.CreatedAt = createdAt;
-            this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -160,6 +156,8 @@ namespace G
             this.State = state;
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Body = body;
+            this.Creator = creator;
         }
 
         /// <summary>

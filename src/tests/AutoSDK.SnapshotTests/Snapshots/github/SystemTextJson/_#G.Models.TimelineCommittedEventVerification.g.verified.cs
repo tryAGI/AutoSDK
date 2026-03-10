@@ -27,15 +27,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("signature")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Signature { get; set; }
+        public string? Signature { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Payload { get; set; }
+        public string? Payload { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,8 +59,8 @@ namespace G
         {
             this.Verified = verified;
             this.Reason = reason ?? throw new global::System.ArgumentNullException(nameof(reason));
-            this.Signature = signature ?? throw new global::System.ArgumentNullException(nameof(signature));
-            this.Payload = payload ?? throw new global::System.ArgumentNullException(nameof(payload));
+            this.Signature = signature;
+            this.Payload = payload;
         }
 
         /// <summary>

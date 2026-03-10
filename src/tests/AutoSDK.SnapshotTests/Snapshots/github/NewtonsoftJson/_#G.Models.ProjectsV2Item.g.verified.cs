@@ -63,8 +63,8 @@ namespace G
         /// Example: 2022-04-28T12:00:00Z
         /// </summary>
         /// <example>2022-04-28T12:00:00Z</example>
-        [global::Newtonsoft.Json.JsonProperty("archived_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? ArchivedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("archived_at")]
+        public global::System.DateTime? ArchivedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -100,20 +100,20 @@ namespace G
             global::G.ProjectsV2ItemContentType contentType,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            global::System.DateTime? archivedAt,
             string? nodeId,
             string? projectNodeId,
-            global::G.SimpleUser? creator)
+            global::G.SimpleUser? creator,
+            global::System.DateTime? archivedAt)
         {
             this.Id = id;
             this.ContentNodeId = contentNodeId ?? throw new global::System.ArgumentNullException(nameof(contentNodeId));
             this.ContentType = contentType;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.ArchivedAt = archivedAt;
             this.NodeId = nodeId;
             this.ProjectNodeId = projectNodeId;
             this.Creator = creator;
+            this.ArchivedAt = archivedAt;
         }
 
         /// <summary>

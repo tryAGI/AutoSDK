@@ -58,8 +58,8 @@ namespace G
         /// Example: Deploy request from hubot
         /// </summary>
         /// <example>Deploy request from hubot</example>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// Example: 2012-07-20T01:19:13Z
@@ -173,12 +173,12 @@ namespace G
             string nodeId,
             string task,
             string environment,
-            string? description,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             string statusesUrl,
             string repositoryUrl,
             string? originalEnvironment,
+            string? description,
             bool? transientEnvironment,
             bool? productionEnvironment,
             global::G.NullableIntegration? performedViaGithubApp)
@@ -188,12 +188,12 @@ namespace G
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Task = task ?? throw new global::System.ArgumentNullException(nameof(task));
             this.Environment = environment ?? throw new global::System.ArgumentNullException(nameof(environment));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.StatusesUrl = statusesUrl ?? throw new global::System.ArgumentNullException(nameof(statusesUrl));
             this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
             this.OriginalEnvironment = originalEnvironment;
+            this.Description = description;
             this.TransientEnvironment = transientEnvironment;
             this.ProductionEnvironment = productionEnvironment;
             this.PerformedViaGithubApp = performedViaGithubApp;

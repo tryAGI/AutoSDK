@@ -26,8 +26,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("logprobs", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CreateCompletionResponseChoiceLogprobs? Logprobs { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("logprobs")]
+        public global::G.CreateCompletionResponseChoiceLogprobs? Logprobs { get; set; }
 
         /// <summary>
         /// 
@@ -55,13 +55,13 @@ namespace G
         public CreateCompletionResponseChoice(
             global::G.CreateCompletionResponseChoiceFinishReason finishReason,
             int index,
-            global::G.CreateCompletionResponseChoiceLogprobs? logprobs,
-            string text)
+            string text,
+            global::G.CreateCompletionResponseChoiceLogprobs? logprobs)
         {
             this.FinishReason = finishReason;
             this.Index = index;
-            this.Logprobs = logprobs ?? throw new global::System.ArgumentNullException(nameof(logprobs));
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Logprobs = logprobs;
         }
 
         /// <summary>

@@ -84,8 +84,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Owner { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("owner")]
+        public string? Owner { get; set; }
 
         /// <summary>
         /// 
@@ -188,7 +188,6 @@ namespace G
             bool isPublic,
             bool isArchived,
             global::System.Collections.Generic.IList<string> tags,
-            string? owner,
             string fullName,
             int numLikes,
             int numDownloads,
@@ -198,6 +197,7 @@ namespace G
             string? readme,
             global::System.Guid? originalRepoId,
             global::System.Guid? upstreamRepoId,
+            string? owner,
             bool? likedByAuthUser,
             string? lastCommitHash,
             string? originalRepoFullName,
@@ -212,7 +212,6 @@ namespace G
             this.IsPublic = isPublic;
             this.IsArchived = isArchived;
             this.Tags = tags ?? throw new global::System.ArgumentNullException(nameof(tags));
-            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.FullName = fullName ?? throw new global::System.ArgumentNullException(nameof(fullName));
             this.NumLikes = numLikes;
             this.NumDownloads = numDownloads;
@@ -222,6 +221,7 @@ namespace G
             this.Readme = readme;
             this.OriginalRepoId = originalRepoId;
             this.UpstreamRepoId = upstreamRepoId;
+            this.Owner = owner;
             this.LikedByAuthUser = likedByAuthUser;
             this.LastCommitHash = lastCommitHash;
             this.OriginalRepoFullName = originalRepoFullName;

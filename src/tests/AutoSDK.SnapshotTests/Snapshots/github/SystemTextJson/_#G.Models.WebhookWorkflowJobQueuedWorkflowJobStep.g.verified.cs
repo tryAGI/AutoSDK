@@ -13,16 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? CompletedAt { get; set; }
+        public string? CompletedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookWorkflowJobQueuedWorkflowJobStepConclusionJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookWorkflowJobQueuedWorkflowJobStepConclusion? Conclusion { get; set; }
+        public global::G.WebhookWorkflowJobQueuedWorkflowJobStepConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// 
@@ -42,8 +40,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("started_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? StartedAt { get; set; }
+        public string? StartedAt { get; set; }
 
         /// <summary>
         /// 
@@ -72,19 +69,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookWorkflowJobQueuedWorkflowJobStep(
-            string? completedAt,
-            global::G.WebhookWorkflowJobQueuedWorkflowJobStepConclusion? conclusion,
             string name,
             int number,
-            string? startedAt,
-            global::G.WebhookWorkflowJobQueuedWorkflowJobStepStatus status)
+            global::G.WebhookWorkflowJobQueuedWorkflowJobStepStatus status,
+            string? completedAt,
+            global::G.WebhookWorkflowJobQueuedWorkflowJobStepConclusion? conclusion,
+            string? startedAt)
         {
-            this.CompletedAt = completedAt ?? throw new global::System.ArgumentNullException(nameof(completedAt));
-            this.Conclusion = conclusion;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Number = number;
-            this.StartedAt = startedAt ?? throw new global::System.ArgumentNullException(nameof(startedAt));
             this.Status = status;
+            this.CompletedAt = completedAt;
+            this.Conclusion = conclusion;
+            this.StartedAt = startedAt;
         }
 
         /// <summary>

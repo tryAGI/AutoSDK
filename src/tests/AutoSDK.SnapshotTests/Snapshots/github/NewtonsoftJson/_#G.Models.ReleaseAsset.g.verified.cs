@@ -44,8 +44,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("label", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Label { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("label")]
+        public string? Label { get; set; }
 
         /// <summary>
         /// State of the release asset.
@@ -86,8 +86,8 @@ namespace G
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("uploader", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? Uploader { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("uploader")]
+        public global::G.NullableSimpleUser? Uploader { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -124,13 +124,13 @@ namespace G
             int id,
             string nodeId,
             string name,
-            string? label,
             global::G.ReleaseAssetState state,
             string contentType,
             int size,
             int downloadCount,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
+            string? label,
             global::G.NullableSimpleUser? uploader)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
@@ -138,14 +138,14 @@ namespace G
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
             this.State = state;
             this.ContentType = contentType ?? throw new global::System.ArgumentNullException(nameof(contentType));
             this.Size = size;
             this.DownloadCount = downloadCount;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.Uploader = uploader ?? throw new global::System.ArgumentNullException(nameof(uploader));
+            this.Label = label;
+            this.Uploader = uploader;
         }
 
         /// <summary>

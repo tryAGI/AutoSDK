@@ -50,8 +50,8 @@ namespace G
         /// <summary>
         /// The last error associated with this vector store file. Will be `null` if there are no errors.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("last_error", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.VectorStoreFileObjectLastError? LastError { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("last_error")]
+        public global::G.VectorStoreFileObjectLastError? LastError { get; set; }
 
         /// <summary>
         /// The strategy used to chunk the file.
@@ -115,8 +115,8 @@ namespace G
             global::System.DateTimeOffset createdAt,
             string vectorStoreId,
             global::G.VectorStoreFileObjectStatus status,
-            global::G.VectorStoreFileObjectLastError? lastError,
             global::G.VectorStoreFileObjectObject @object,
+            global::G.VectorStoreFileObjectLastError? lastError,
             global::G.OneOf<global::G.StaticChunkingStrategyResponseParam, global::G.OtherChunkingStrategyResponseParam>? chunkingStrategy,
             object? attributes)
         {
@@ -125,8 +125,8 @@ namespace G
             this.CreatedAt = createdAt;
             this.VectorStoreId = vectorStoreId ?? throw new global::System.ArgumentNullException(nameof(vectorStoreId));
             this.Status = status;
-            this.LastError = lastError ?? throw new global::System.ArgumentNullException(nameof(lastError));
             this.Object = @object;
+            this.LastError = lastError;
             this.ChunkingStrategy = chunkingStrategy;
             this.Attributes = attributes;
         }

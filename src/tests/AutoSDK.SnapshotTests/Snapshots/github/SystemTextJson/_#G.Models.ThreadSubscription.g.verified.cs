@@ -28,16 +28,14 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reason")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Reason { get; set; }
+        public string? Reason { get; set; }
 
         /// <summary>
         /// Example: 2012-10-06T21:34:12Z
         /// </summary>
         /// <example>2012-10-06T21:34:12Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// Example: https://api.github.com/notifications/threads/1/subscription
@@ -93,17 +91,17 @@ namespace G
         public ThreadSubscription(
             bool subscribed,
             bool ignored,
+            string url,
             string? reason,
             global::System.DateTime? createdAt,
-            string url,
             string? threadUrl,
             string? repositoryUrl)
         {
             this.Subscribed = subscribed;
             this.Ignored = ignored;
-            this.Reason = reason ?? throw new global::System.ArgumentNullException(nameof(reason));
-            this.CreatedAt = createdAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Reason = reason;
+            this.CreatedAt = createdAt;
             this.ThreadUrl = threadUrl;
             this.RepositoryUrl = repositoryUrl;
         }

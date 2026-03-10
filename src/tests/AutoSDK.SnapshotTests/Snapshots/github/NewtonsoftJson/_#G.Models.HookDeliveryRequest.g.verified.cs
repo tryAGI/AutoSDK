@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// The request headers sent with the webhook delivery.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("headers", Required = global::Newtonsoft.Json.Required.Always)]
-        public object? Headers { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("headers")]
+        public object? Headers { get; set; }
 
         /// <summary>
         /// The webhook payload.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("payload", Required = global::Newtonsoft.Json.Required.Always)]
-        public object? Payload { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("payload")]
+        public object? Payload { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,8 +40,8 @@ namespace G
             object? headers,
             object? payload)
         {
-            this.Headers = headers ?? throw new global::System.ArgumentNullException(nameof(headers));
-            this.Payload = payload ?? throw new global::System.ArgumentNullException(nameof(payload));
+            this.Headers = headers;
+            this.Payload = payload;
         }
 
         /// <summary>

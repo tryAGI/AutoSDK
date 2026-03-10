@@ -41,8 +41,7 @@ namespace G
         /// The permission on the resource of the pronunciation dictionary.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permission_on_resource")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2? PermissionOnResource { get; set; }
+        public global::G.GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2? PermissionOnResource { get; set; }
 
         /// <summary>
         /// The user ID of the creator of the pronunciation dictionary.
@@ -63,8 +62,7 @@ namespace G
         /// The archive time of the pronunciation dictionary in Unix timestamp.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived_time_unix")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? ArchivedTimeUnix { get; set; }
+        public int? ArchivedTimeUnix { get; set; }
 
         /// <summary>
         /// The description of the pronunciation dictionary.
@@ -116,9 +114,9 @@ namespace G
             string latestVersionId,
             int latestVersionRulesNum,
             string name,
-            global::G.GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2? permissionOnResource,
             string createdBy,
             global::System.DateTimeOffset creationTimeUnix,
+            global::G.GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2? permissionOnResource,
             int? archivedTimeUnix,
             string? description)
         {
@@ -126,10 +124,10 @@ namespace G
             this.LatestVersionId = latestVersionId ?? throw new global::System.ArgumentNullException(nameof(latestVersionId));
             this.LatestVersionRulesNum = latestVersionRulesNum;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.PermissionOnResource = permissionOnResource ?? throw new global::System.ArgumentNullException(nameof(permissionOnResource));
             this.CreatedBy = createdBy ?? throw new global::System.ArgumentNullException(nameof(createdBy));
             this.CreationTimeUnix = creationTimeUnix;
-            this.ArchivedTimeUnix = archivedTimeUnix ?? throw new global::System.ArgumentNullException(nameof(archivedTimeUnix));
+            this.PermissionOnResource = permissionOnResource;
+            this.ArchivedTimeUnix = archivedTimeUnix;
             this.Description = description;
         }
 

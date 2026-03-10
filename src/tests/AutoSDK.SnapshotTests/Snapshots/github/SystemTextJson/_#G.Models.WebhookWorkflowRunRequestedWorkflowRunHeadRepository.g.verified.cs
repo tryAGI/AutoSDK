@@ -90,8 +90,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -251,8 +250,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookWorkflowRunRequestedWorkflowRunHeadRepositoryOwner? Owner { get; set; }
+        public global::G.WebhookWorkflowRunRequestedWorkflowRunHeadRepositoryOwner? Owner { get; set; }
 
         /// <summary>
         /// Whether the repository is private or public.
@@ -407,7 +405,6 @@ namespace G
             string contentsUrl,
             string contributorsUrl,
             string deploymentsUrl,
-            string? description,
             string downloadsUrl,
             string eventsUrl,
             bool fork,
@@ -430,7 +427,6 @@ namespace G
             string name,
             string nodeId,
             string notificationsUrl,
-            global::G.WebhookWorkflowRunRequestedWorkflowRunHeadRepositoryOwner? owner,
             bool @private,
             string pullsUrl,
             string releasesUrl,
@@ -441,7 +437,9 @@ namespace G
             string tagsUrl,
             string teamsUrl,
             string treesUrl,
-            string url)
+            string url,
+            string? description,
+            global::G.WebhookWorkflowRunRequestedWorkflowRunHeadRepositoryOwner? owner)
         {
             this.ArchiveUrl = archiveUrl ?? throw new global::System.ArgumentNullException(nameof(archiveUrl));
             this.AssigneesUrl = assigneesUrl ?? throw new global::System.ArgumentNullException(nameof(assigneesUrl));
@@ -454,7 +452,6 @@ namespace G
             this.ContentsUrl = contentsUrl ?? throw new global::System.ArgumentNullException(nameof(contentsUrl));
             this.ContributorsUrl = contributorsUrl ?? throw new global::System.ArgumentNullException(nameof(contributorsUrl));
             this.DeploymentsUrl = deploymentsUrl ?? throw new global::System.ArgumentNullException(nameof(deploymentsUrl));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.DownloadsUrl = downloadsUrl ?? throw new global::System.ArgumentNullException(nameof(downloadsUrl));
             this.EventsUrl = eventsUrl ?? throw new global::System.ArgumentNullException(nameof(eventsUrl));
             this.Fork = fork;
@@ -477,7 +474,6 @@ namespace G
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.NotificationsUrl = notificationsUrl ?? throw new global::System.ArgumentNullException(nameof(notificationsUrl));
-            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.Private = @private;
             this.PullsUrl = pullsUrl ?? throw new global::System.ArgumentNullException(nameof(pullsUrl));
             this.ReleasesUrl = releasesUrl ?? throw new global::System.ArgumentNullException(nameof(releasesUrl));
@@ -489,6 +485,8 @@ namespace G
             this.TeamsUrl = teamsUrl ?? throw new global::System.ArgumentNullException(nameof(teamsUrl));
             this.TreesUrl = treesUrl ?? throw new global::System.ArgumentNullException(nameof(treesUrl));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Description = description;
+            this.Owner = owner;
         }
 
         /// <summary>

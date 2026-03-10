@@ -55,14 +55,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OneOf<global::G.SimpleUser, global::G.EmptyObject>? Author { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("author")]
+        public global::G.OneOf<global::G.SimpleUser, global::G.EmptyObject>? Author { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("committer", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OneOf<global::G.SimpleUser, global::G.EmptyObject>? Committer { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("committer")]
+        public global::G.OneOf<global::G.SimpleUser, global::G.EmptyObject>? Committer { get; set; }
 
         /// <summary>
         /// 
@@ -119,9 +119,9 @@ namespace G
             string htmlUrl,
             string commentsUrl,
             global::G.CommitCommit1 commit1,
+            global::System.Collections.Generic.IList<global::G.CommitParent> parents,
             global::G.OneOf<global::G.SimpleUser, global::G.EmptyObject>? author,
             global::G.OneOf<global::G.SimpleUser, global::G.EmptyObject>? committer,
-            global::System.Collections.Generic.IList<global::G.CommitParent> parents,
             global::G.CommitStats? stats,
             global::System.Collections.Generic.IList<global::G.DiffEntry>? files)
         {
@@ -131,9 +131,9 @@ namespace G
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
             this.Commit1 = commit1 ?? throw new global::System.ArgumentNullException(nameof(commit1));
+            this.Parents = parents ?? throw new global::System.ArgumentNullException(nameof(parents));
             this.Author = author;
             this.Committer = committer;
-            this.Parents = parents ?? throw new global::System.ArgumentNullException(nameof(parents));
             this.Stats = stats;
             this.Files = files;
         }

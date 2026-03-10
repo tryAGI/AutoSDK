@@ -15,8 +15,7 @@ namespace G
         /// </summary>
         /// <example>Update all gems</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("note")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Note { get; set; }
+        public string? Note { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,7 +36,7 @@ namespace G
         public ProjectsCreateCardRequestVariant1(
             string? note)
         {
-            this.Note = note ?? throw new global::System.ArgumentNullException(nameof(note));
+            this.Note = note;
         }
 
         /// <summary>

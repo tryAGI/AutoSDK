@@ -42,20 +42,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? HtmlUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("html_url")]
+        public string? HtmlUrl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("git_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? GitUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("git_url")]
+        public string? GitUrl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("download_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? DownloadUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("download_url")]
+        public string? DownloadUrl { get; set; }
 
         /// <summary>
         /// 
@@ -84,8 +84,8 @@ namespace G
         /// <summary>
         /// License Simple
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("license", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableLicenseSimple? License { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("license")]
+        public global::G.NullableLicenseSimple? License { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -117,13 +117,13 @@ namespace G
             string sha,
             int size,
             string url,
-            string? htmlUrl,
-            string? gitUrl,
-            string? downloadUrl,
             string type,
             string content,
             string encoding,
             global::G.LicenseContentLinks links,
+            string? htmlUrl,
+            string? gitUrl,
+            string? downloadUrl,
             global::G.NullableLicenseSimple? license)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -131,14 +131,14 @@ namespace G
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
             this.Size = size;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.GitUrl = gitUrl ?? throw new global::System.ArgumentNullException(nameof(gitUrl));
-            this.DownloadUrl = downloadUrl ?? throw new global::System.ArgumentNullException(nameof(downloadUrl));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Encoding = encoding ?? throw new global::System.ArgumentNullException(nameof(encoding));
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
-            this.License = license ?? throw new global::System.ArgumentNullException(nameof(license));
+            this.HtmlUrl = htmlUrl;
+            this.GitUrl = gitUrl;
+            this.DownloadUrl = downloadUrl;
+            this.License = license;
         }
 
         /// <summary>

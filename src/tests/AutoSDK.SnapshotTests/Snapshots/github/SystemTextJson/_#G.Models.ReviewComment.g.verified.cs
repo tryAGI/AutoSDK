@@ -22,8 +22,7 @@ namespace G
         /// </summary>
         /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_request_review_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required long? PullRequestReviewId { get; set; }
+        public long? PullRequestReviewId { get; set; }
 
         /// <summary>
         /// Example: 10
@@ -62,8 +61,7 @@ namespace G
         /// </summary>
         /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("position")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? Position { get; set; }
+        public int? Position { get; set; }
 
         /// <summary>
         /// Example: 4
@@ -100,8 +98,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? User { get; set; }
+        public global::G.NullableSimpleUser? User { get; set; }
 
         /// <summary>
         /// Example: Great stuff
@@ -323,16 +320,13 @@ namespace G
 #endif
         public ReviewComment(
             string url,
-            long? pullRequestReviewId,
             long id,
             string nodeId,
             string diffHunk,
             string path,
-            int? position,
             int originalPosition,
             string commitId,
             string originalCommitId,
-            global::G.NullableSimpleUser? user,
             string body,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
@@ -340,7 +334,10 @@ namespace G
             string pullRequestUrl,
             global::G.AuthorAssociation authorAssociation,
             global::G.ReviewCommentLinks links,
+            long? pullRequestReviewId,
+            int? position,
             int? inReplyToId,
+            global::G.NullableSimpleUser? user,
             string? bodyText,
             string? bodyHtml,
             global::G.ReactionRollup? reactions,
@@ -352,16 +349,13 @@ namespace G
             int? originalStartLine)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.PullRequestReviewId = pullRequestReviewId;
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.DiffHunk = diffHunk ?? throw new global::System.ArgumentNullException(nameof(diffHunk));
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
-            this.Position = position;
             this.OriginalPosition = originalPosition;
             this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
             this.OriginalCommitId = originalCommitId ?? throw new global::System.ArgumentNullException(nameof(originalCommitId));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
             this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
@@ -369,7 +363,10 @@ namespace G
             this.PullRequestUrl = pullRequestUrl ?? throw new global::System.ArgumentNullException(nameof(pullRequestUrl));
             this.AuthorAssociation = authorAssociation;
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
+            this.PullRequestReviewId = pullRequestReviewId;
+            this.Position = position;
             this.InReplyToId = inReplyToId;
+            this.User = user;
             this.BodyText = bodyText;
             this.BodyHtml = bodyHtml;
             this.Reactions = reactions;

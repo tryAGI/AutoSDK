@@ -301,11 +301,11 @@ namespace G
             string title,
             string description,
             bool isWeighted,
-            double? weightMin,
-            double? weightMax,
-            double? weightDefault,
             bool allowDecimalWeights,
             double color,
+            double? weightMin = default,
+            double? weightMax = default,
+            double? weightDefault = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.AddTagWithParentRequest

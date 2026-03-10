@@ -25,8 +25,7 @@ namespace G
         /// </summary>
         /// <example>success</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Conclusion { get; set; }
+        public string? Conclusion { get; set; }
 
         /// <summary>
         /// The name of the job.<br/>
@@ -98,16 +97,16 @@ namespace G
 #endif
         public JobStep(
             global::G.JobStepStatus status,
-            string? conclusion,
             string name,
             int number,
+            string? conclusion,
             global::System.DateTime? startedAt,
             global::System.DateTime? completedAt)
         {
             this.Status = status;
-            this.Conclusion = conclusion ?? throw new global::System.ArgumentNullException(nameof(conclusion));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Number = number;
+            this.Conclusion = conclusion;
             this.StartedAt = startedAt;
             this.CompletedAt = completedAt;
         }

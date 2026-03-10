@@ -55,8 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -99,8 +98,8 @@ namespace G
             string name,
             string color,
             bool @default,
-            string? description,
             double score,
+            string? description,
             global::System.Collections.Generic.IList<global::G.SearchResultTextMatche>? textMatches)
         {
             this.Id = id;
@@ -109,8 +108,8 @@ namespace G
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Color = color ?? throw new global::System.ArgumentNullException(nameof(color));
             this.Default = @default;
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Score = score;
+            this.Description = description;
             this.TextMatches = textMatches;
         }
 

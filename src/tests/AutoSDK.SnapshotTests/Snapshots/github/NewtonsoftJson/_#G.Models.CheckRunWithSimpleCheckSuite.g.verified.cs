@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("app", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableIntegration? App { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("app")]
+        public global::G.NullableIntegration? App { get; set; }
 
         /// <summary>
         /// A suite of checks performed on the code of a given code change
@@ -25,15 +25,15 @@ namespace G
         /// Example: 2018-05-04T01:14:52Z
         /// </summary>
         /// <example>2018-05-04T01:14:52Z</example>
-        [global::Newtonsoft.Json.JsonProperty("completed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? CompletedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("completed_at")]
+        public global::System.DateTime? CompletedAt { get; set; }
 
         /// <summary>
         /// Example: neutral
         /// </summary>
         /// <example>neutral</example>
-        [global::Newtonsoft.Json.JsonProperty("conclusion", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CheckRunWithSimpleCheckSuiteConclusion? Conclusion { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("conclusion")]
+        public global::G.CheckRunWithSimpleCheckSuiteConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// A deployment created as the result of an Actions check run from a workflow that references an environment
@@ -188,10 +188,7 @@ namespace G
         /// Example: https://api.github.com/repos/github/hello-world/check-runs/4
         /// </param>
         public CheckRunWithSimpleCheckSuite(
-            global::G.NullableIntegration? app,
             global::G.SimpleCheckSuite checkSuite,
-            global::System.DateTime? completedAt,
-            global::G.CheckRunWithSimpleCheckSuiteConclusion? conclusion,
             string detailsUrl,
             string externalId,
             string headSha,
@@ -204,12 +201,12 @@ namespace G
             global::System.DateTime startedAt,
             global::G.CheckRunWithSimpleCheckSuiteStatus status,
             string url,
+            global::G.NullableIntegration? app,
+            global::System.DateTime? completedAt,
+            global::G.CheckRunWithSimpleCheckSuiteConclusion? conclusion,
             global::G.DeploymentSimple? deployment)
         {
-            this.App = app ?? throw new global::System.ArgumentNullException(nameof(app));
             this.CheckSuite = checkSuite ?? throw new global::System.ArgumentNullException(nameof(checkSuite));
-            this.CompletedAt = completedAt;
-            this.Conclusion = conclusion;
             this.DetailsUrl = detailsUrl ?? throw new global::System.ArgumentNullException(nameof(detailsUrl));
             this.ExternalId = externalId ?? throw new global::System.ArgumentNullException(nameof(externalId));
             this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
@@ -222,6 +219,9 @@ namespace G
             this.StartedAt = startedAt;
             this.Status = status;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.App = app;
+            this.CompletedAt = completedAt;
+            this.Conclusion = conclusion;
             this.Deployment = deployment;
         }
 

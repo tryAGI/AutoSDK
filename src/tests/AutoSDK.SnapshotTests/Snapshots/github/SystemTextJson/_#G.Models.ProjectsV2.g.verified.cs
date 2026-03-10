@@ -48,8 +48,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -63,8 +62,7 @@ namespace G
         /// </summary>
         /// <example>2022-04-28T12:00:00Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("closed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? ClosedAt { get; set; }
+        public global::System.DateTime? ClosedAt { get; set; }
 
         /// <summary>
         /// Example: 2022-04-28T12:00:00Z
@@ -93,23 +91,20 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("short_description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? ShortDescription { get; set; }
+        public string? ShortDescription { get; set; }
 
         /// <summary>
         /// Example: 2022-04-28T12:00:00Z
         /// </summary>
         /// <example>2022-04-28T12:00:00Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? DeletedAt { get; set; }
+        public global::System.DateTime? DeletedAt { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted_by")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? DeletedBy { get; set; }
+        public global::G.NullableSimpleUser? DeletedBy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -157,12 +152,12 @@ namespace G
             global::G.SimpleUser owner,
             global::G.SimpleUser creator,
             string title,
-            string? description,
             bool @public,
-            global::System.DateTime? closedAt,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             int number,
+            string? description,
+            global::System.DateTime? closedAt,
             string? shortDescription,
             global::System.DateTime? deletedAt,
             global::G.NullableSimpleUser? deletedBy)
@@ -172,15 +167,15 @@ namespace G
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Public = @public;
-            this.ClosedAt = closedAt;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.Number = number;
-            this.ShortDescription = shortDescription ?? throw new global::System.ArgumentNullException(nameof(shortDescription));
+            this.Description = description;
+            this.ClosedAt = closedAt;
+            this.ShortDescription = shortDescription;
             this.DeletedAt = deletedAt;
-            this.DeletedBy = deletedBy ?? throw new global::System.ArgumentNullException(nameof(deletedBy));
+            this.DeletedBy = deletedBy;
         }
 
         /// <summary>

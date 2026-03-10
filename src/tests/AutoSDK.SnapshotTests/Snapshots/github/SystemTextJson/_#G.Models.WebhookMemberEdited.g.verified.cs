@@ -43,8 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("member")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksUser? Member { get; set; }
+        public global::G.WebhooksUser? Member { get; set; }
 
         /// <summary>
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
@@ -108,21 +107,21 @@ namespace G
 #endif
         public WebhookMemberEdited(
             global::G.WebhookMemberEditedChanges changes,
-            global::G.WebhooksUser? member,
             global::G.RepositoryWebhooks repository,
             global::G.SimpleUser sender,
             global::G.WebhookMemberEditedAction action,
             global::G.EnterpriseWebhooks? enterprise,
             global::G.SimpleInstallation? installation,
+            global::G.WebhooksUser? member,
             global::G.OrganizationSimpleWebhooks? organization)
         {
             this.Changes = changes ?? throw new global::System.ArgumentNullException(nameof(changes));
-            this.Member = member ?? throw new global::System.ArgumentNullException(nameof(member));
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Action = action;
             this.Enterprise = enterprise;
             this.Installation = installation;
+            this.Member = member;
             this.Organization = organization;
         }
 

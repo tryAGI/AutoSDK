@@ -30,8 +30,7 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.CitationsVariant1Item2>? Citations { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CitationsVariant1Item2>? Citations { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -60,8 +59,8 @@ namespace G
             global::G.BetaResponseTextBlockType type = global::G.BetaResponseTextBlockType.Text)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
-            this.Citations = citations ?? throw new global::System.ArgumentNullException(nameof(citations));
             this.Type = type;
+            this.Citations = citations;
         }
 
         /// <summary>

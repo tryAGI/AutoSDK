@@ -48,8 +48,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("label")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Label { get; set; }
+        public string? Label { get; set; }
 
         /// <summary>
         /// The file name of the asset.
@@ -134,12 +133,12 @@ namespace G
             global::System.DateTime createdAt,
             int downloadCount,
             int id,
-            string? label,
             string name,
             string nodeId,
             int size,
             global::System.DateTime updatedAt,
             string url,
+            string? label,
             global::G.WebhooksRelease1AssetState state,
             global::G.WebhooksRelease1AssetUploader? uploader)
         {
@@ -148,12 +147,12 @@ namespace G
             this.CreatedAt = createdAt;
             this.DownloadCount = downloadCount;
             this.Id = id;
-            this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Size = size;
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Label = label;
             this.State = state;
             this.Uploader = uploader;
         }

@@ -97,8 +97,7 @@ namespace G
         /// </summary>
         /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_teams")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? MaxTeams { get; set; }
+        public int? MaxTeams { get; set; }
 
         /// <summary>
         /// The maximum allowable members per team.<br/>
@@ -106,8 +105,7 @@ namespace G
         /// </summary>
         /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_members")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? MaxMembers { get; set; }
+        public int? MaxMembers { get; set; }
 
         /// <summary>
         /// The selected editor for the assignment.<br/>
@@ -160,8 +158,7 @@ namespace G
         /// </summary>
         /// <example>2011-01-26T19:06:43Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("deadline")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? Deadline { get; set; }
+        public global::System.DateTime? Deadline { get; set; }
 
         /// <summary>
         /// A GitHub repository view for Classroom
@@ -273,16 +270,16 @@ namespace G
             string slug,
             bool studentsAreRepoAdmins,
             bool feedbackPullRequestsEnabled,
-            int? maxTeams,
-            int? maxMembers,
             string editor,
             int accepted,
             int submitted,
             int passing,
             string language,
-            global::System.DateTime? deadline,
             global::G.SimpleClassroomRepository starterCodeRepository,
-            global::G.Classroom classroom)
+            global::G.Classroom classroom,
+            int? maxTeams,
+            int? maxMembers,
+            global::System.DateTime? deadline)
         {
             this.Id = id;
             this.PublicRepo = publicRepo;
@@ -293,16 +290,16 @@ namespace G
             this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
             this.StudentsAreRepoAdmins = studentsAreRepoAdmins;
             this.FeedbackPullRequestsEnabled = feedbackPullRequestsEnabled;
-            this.MaxTeams = maxTeams;
-            this.MaxMembers = maxMembers;
             this.Editor = editor ?? throw new global::System.ArgumentNullException(nameof(editor));
             this.Accepted = accepted;
             this.Submitted = submitted;
             this.Passing = passing;
             this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
-            this.Deadline = deadline;
             this.StarterCodeRepository = starterCodeRepository ?? throw new global::System.ArgumentNullException(nameof(starterCodeRepository));
             this.Classroom = classroom ?? throw new global::System.ArgumentNullException(nameof(classroom));
+            this.MaxTeams = maxTeams;
+            this.MaxMembers = maxMembers;
+            this.Deadline = deadline;
         }
 
         /// <summary>

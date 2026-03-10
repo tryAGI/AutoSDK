@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Commit { get; set; }
+        public string? Commit { get; set; }
 
         /// <summary>
         /// 
@@ -41,8 +40,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pusher")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPageBuildBuildPusher? Pusher { get; set; }
+        public global::G.WebhookPageBuildBuildPusher? Pusher { get; set; }
 
         /// <summary>
         /// 
@@ -86,23 +84,23 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookPageBuildBuild(
-            string? commit,
             string createdAt,
             int duration,
             global::G.WebhookPageBuildBuildError error,
-            global::G.WebhookPageBuildBuildPusher? pusher,
             string status,
             string updatedAt,
-            string url)
+            string url,
+            string? commit,
+            global::G.WebhookPageBuildBuildPusher? pusher)
         {
-            this.Commit = commit ?? throw new global::System.ArgumentNullException(nameof(commit));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.Duration = duration;
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
-            this.Pusher = pusher ?? throw new global::System.ArgumentNullException(nameof(pusher));
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Commit = commit;
+            this.Pusher = pusher;
         }
 
         /// <summary>

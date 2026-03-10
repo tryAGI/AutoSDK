@@ -30,8 +30,8 @@ namespace G
         /// <summary>
         /// The generated image encoded in base64.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("result", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Result { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("result")]
+        public string? Result { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -57,13 +57,13 @@ namespace G
         public ImageGenToolCall(
             string id,
             global::G.ImageGenToolCallStatus status,
-            string? result,
-            global::G.ImageGenToolCallType type)
+            global::G.ImageGenToolCallType type,
+            string? result)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Status = status;
-            this.Result = result ?? throw new global::System.ArgumentNullException(nameof(result));
             this.Type = type;
+            this.Result = result;
         }
 
         /// <summary>

@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("after", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? After { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("after")]
+        public string? After { get; set; }
 
         /// <summary>
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("before", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Before { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("before")]
+        public string? Before { get; set; }
 
         /// <summary>
         /// 
@@ -36,8 +36,8 @@ namespace G
         /// <summary>
         /// The summary conclusion for all check runs that are part of the check suite. This value will be `null` until the check run has completed.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("conclusion", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookCheckSuiteRerequestedCheckSuiteConclusion? Conclusion { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("conclusion")]
+        public global::G.WebhookCheckSuiteRerequestedCheckSuiteConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// 
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// The head branch name the changes are on.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("head_branch", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? HeadBranch { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("head_branch")]
+        public string? HeadBranch { get; set; }
 
         /// <summary>
         /// 
@@ -102,8 +102,8 @@ namespace G
         /// <summary>
         /// The summary status for all check runs that are part of the check suite. Can be `requested`, `in_progress`, or `completed`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookCheckSuiteRerequestedCheckSuiteStatus? Status { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("status")]
+        public global::G.WebhookCheckSuiteRerequestedCheckSuiteStatus? Status { get; set; }
 
         /// <summary>
         /// 
@@ -159,43 +159,43 @@ namespace G
         /// URL that points to the check suite API resource.
         /// </param>
         public WebhookCheckSuiteRerequestedCheckSuite(
-            string? after,
             global::G.WebhookCheckSuiteRerequestedCheckSuiteApp app,
-            string? before,
             string checkRunsUrl,
-            global::G.WebhookCheckSuiteRerequestedCheckSuiteConclusion? conclusion,
             global::System.DateTime createdAt,
-            string? headBranch,
             global::G.WebhookCheckSuiteRerequestedCheckSuiteHeadCommit headCommit,
             string headSha,
             int id,
             int latestCheckRunsCount,
             string nodeId,
             global::System.Collections.Generic.IList<global::G.WebhookCheckSuiteRerequestedCheckSuitePullRequest> pullRequests,
-            global::G.WebhookCheckSuiteRerequestedCheckSuiteStatus? status,
             global::System.DateTime updatedAt,
             string url,
+            string? after,
+            string? before,
+            global::G.WebhookCheckSuiteRerequestedCheckSuiteConclusion? conclusion,
+            string? headBranch,
             bool? rerequestable,
-            bool? runsRerequestable)
+            bool? runsRerequestable,
+            global::G.WebhookCheckSuiteRerequestedCheckSuiteStatus? status)
         {
-            this.After = after ?? throw new global::System.ArgumentNullException(nameof(after));
             this.App = app ?? throw new global::System.ArgumentNullException(nameof(app));
-            this.Before = before ?? throw new global::System.ArgumentNullException(nameof(before));
             this.CheckRunsUrl = checkRunsUrl ?? throw new global::System.ArgumentNullException(nameof(checkRunsUrl));
-            this.Conclusion = conclusion;
             this.CreatedAt = createdAt;
-            this.HeadBranch = headBranch ?? throw new global::System.ArgumentNullException(nameof(headBranch));
             this.HeadCommit = headCommit ?? throw new global::System.ArgumentNullException(nameof(headCommit));
             this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
             this.Id = id;
             this.LatestCheckRunsCount = latestCheckRunsCount;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.PullRequests = pullRequests ?? throw new global::System.ArgumentNullException(nameof(pullRequests));
-            this.Status = status;
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.After = after;
+            this.Before = before;
+            this.Conclusion = conclusion;
+            this.HeadBranch = headBranch;
             this.Rerequestable = rerequestable;
             this.RunsRerequestable = runsRerequestable;
+            this.Status = status;
         }
 
         /// <summary>

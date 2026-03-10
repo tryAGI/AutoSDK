@@ -27,22 +27,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("language")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Language { get; set; }
+        public string? Language { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RenderType2? Type { get; set; }
+        public global::G.RenderType2? Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("media_ref")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DubbingMediaReference? MediaRef { get; set; }
+        public global::G.DubbingMediaReference? MediaRef { get; set; }
 
         /// <summary>
         /// 
@@ -73,17 +70,17 @@ namespace G
         public Render(
             string id,
             int version,
+            global::G.RenderStatus status,
             string? language,
             global::G.RenderType2? type,
-            global::G.DubbingMediaReference? mediaRef,
-            global::G.RenderStatus status)
+            global::G.DubbingMediaReference? mediaRef)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Version = version;
-            this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
-            this.MediaRef = mediaRef ?? throw new global::System.ArgumentNullException(nameof(mediaRef));
             this.Status = status;
+            this.Language = language;
+            this.Type = type;
+            this.MediaRef = mediaRef;
         }
 
         /// <summary>

@@ -34,8 +34,8 @@ namespace G
         /// Example: public
         /// </summary>
         /// <example>public</example>
-        [global::Newtonsoft.Json.JsonProperty("visibility", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Visibility { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("visibility")]
+        public string? Visibility { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -67,7 +67,7 @@ namespace G
             this.Email1 = email1 ?? throw new global::System.ArgumentNullException(nameof(email1));
             this.Primary = primary;
             this.Verified = verified;
-            this.Visibility = visibility ?? throw new global::System.ArgumentNullException(nameof(visibility));
+            this.Visibility = visibility;
         }
 
         /// <summary>

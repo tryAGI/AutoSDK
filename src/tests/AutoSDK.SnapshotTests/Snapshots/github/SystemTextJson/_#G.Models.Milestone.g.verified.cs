@@ -84,15 +84,13 @@ namespace G
         /// </summary>
         /// <example>Tracking milestone for version 1.0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creator")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? Creator { get; set; }
+        public global::G.NullableSimpleUser? Creator { get; set; }
 
         /// <summary>
         /// Example: 4
@@ -131,16 +129,14 @@ namespace G
         /// </summary>
         /// <example>2013-02-12T13:22:01Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("closed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? ClosedAt { get; set; }
+        public global::System.DateTime? ClosedAt { get; set; }
 
         /// <summary>
         /// Example: 2012-10-09T23:39:01Z
         /// </summary>
         /// <example>2012-10-09T23:39:01Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("due_on")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? DueOn { get; set; }
+        public global::System.DateTime? DueOn { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -215,12 +211,12 @@ namespace G
             int number,
             global::G.MilestoneState state,
             string title,
-            string? description,
-            global::G.NullableSimpleUser? creator,
             int openIssues,
             int closedIssues,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
+            string? description,
+            global::G.NullableSimpleUser? creator,
             global::System.DateTime? closedAt,
             global::System.DateTime? dueOn)
         {
@@ -232,12 +228,12 @@ namespace G
             this.Number = number;
             this.State = state;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
             this.OpenIssues = openIssues;
             this.ClosedIssues = closedIssues;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.Description = description;
+            this.Creator = creator;
             this.ClosedAt = closedAt;
             this.DueOn = dueOn;
         }

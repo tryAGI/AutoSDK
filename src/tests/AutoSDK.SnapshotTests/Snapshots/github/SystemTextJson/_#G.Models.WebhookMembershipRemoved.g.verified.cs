@@ -36,8 +36,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("member")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksUser? Member { get; set; }
+        public global::G.WebhooksUser? Member { get; set; }
 
         /// <summary>
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
@@ -66,8 +65,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sender")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookMembershipRemovedSender? Sender { get; set; }
+        public global::G.WebhookMembershipRemovedSender? Sender { get; set; }
 
         /// <summary>
         /// Groups of organization members that gives permissions on specified repositories.
@@ -116,25 +114,25 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookMembershipRemoved(
-            global::G.WebhooksUser? member,
             global::G.OrganizationSimpleWebhooks organization,
             global::G.WebhookMembershipRemovedScope scope,
-            global::G.WebhookMembershipRemovedSender? sender,
             global::G.WebhooksTeam team,
             global::G.WebhookMembershipRemovedAction action,
             global::G.EnterpriseWebhooks? enterprise,
             global::G.SimpleInstallation? installation,
-            global::G.RepositoryWebhooks? repository)
+            global::G.WebhooksUser? member,
+            global::G.RepositoryWebhooks? repository,
+            global::G.WebhookMembershipRemovedSender? sender)
         {
-            this.Member = member ?? throw new global::System.ArgumentNullException(nameof(member));
             this.Organization = organization ?? throw new global::System.ArgumentNullException(nameof(organization));
             this.Scope = scope;
-            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Team = team ?? throw new global::System.ArgumentNullException(nameof(team));
             this.Action = action;
             this.Enterprise = enterprise;
             this.Installation = installation;
+            this.Member = member;
             this.Repository = repository;
+            this.Sender = sender;
         }
 
         /// <summary>

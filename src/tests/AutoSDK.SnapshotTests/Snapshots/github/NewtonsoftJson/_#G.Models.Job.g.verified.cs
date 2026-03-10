@@ -66,8 +66,8 @@ namespace G
         /// Example: https://github.com/github/hello-world/runs/4
         /// </summary>
         /// <example>https://github.com/github/hello-world/runs/4</example>
-        [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? HtmlUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("html_url")]
+        public string? HtmlUrl { get; set; }
 
         /// <summary>
         /// The phase of the lifecycle that the job is currently in.<br/>
@@ -82,8 +82,8 @@ namespace G
         /// Example: success
         /// </summary>
         /// <example>success</example>
-        [global::Newtonsoft.Json.JsonProperty("conclusion", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.JobConclusion? Conclusion { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("conclusion")]
+        public global::G.JobConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// The time that the job created, in ISO 8601 format.<br/>
@@ -106,8 +106,8 @@ namespace G
         /// Example: 2019-08-08T08:00:00-07:00
         /// </summary>
         /// <example>2019-08-08T08:00:00-07:00</example>
-        [global::Newtonsoft.Json.JsonProperty("completed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? CompletedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("completed_at")]
+        public global::System.DateTime? CompletedAt { get; set; }
 
         /// <summary>
         /// The name of the job.<br/>
@@ -143,48 +143,48 @@ namespace G
         /// Example: 1
         /// </summary>
         /// <example>1</example>
-        [global::Newtonsoft.Json.JsonProperty("runner_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? RunnerId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("runner_id")]
+        public int? RunnerId { get; set; }
 
         /// <summary>
         /// The name of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)<br/>
         /// Example: my runner
         /// </summary>
         /// <example>my runner</example>
-        [global::Newtonsoft.Json.JsonProperty("runner_name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? RunnerName { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("runner_name")]
+        public string? RunnerName { get; set; }
 
         /// <summary>
         /// The ID of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)<br/>
         /// Example: 2
         /// </summary>
         /// <example>2</example>
-        [global::Newtonsoft.Json.JsonProperty("runner_group_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? RunnerGroupId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("runner_group_id")]
+        public int? RunnerGroupId { get; set; }
 
         /// <summary>
         /// The name of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)<br/>
         /// Example: my runner group
         /// </summary>
         /// <example>my runner group</example>
-        [global::Newtonsoft.Json.JsonProperty("runner_group_name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? RunnerGroupName { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("runner_group_name")]
+        public string? RunnerGroupName { get; set; }
 
         /// <summary>
         /// The name of the workflow.<br/>
         /// Example: Build
         /// </summary>
         /// <example>Build</example>
-        [global::Newtonsoft.Json.JsonProperty("workflow_name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? WorkflowName { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("workflow_name")]
+        public string? WorkflowName { get; set; }
 
         /// <summary>
         /// The name of the current branch.<br/>
         /// Example: main
         /// </summary>
         /// <example>main</example>
-        [global::Newtonsoft.Json.JsonProperty("head_branch", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? HeadBranch { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("head_branch")]
+        public string? HeadBranch { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -288,23 +288,23 @@ namespace G
             string nodeId,
             string headSha,
             string url,
-            string? htmlUrl,
             global::G.JobStatus status,
-            global::G.JobConclusion? conclusion,
             global::System.DateTime createdAt,
             global::System.DateTime startedAt,
-            global::System.DateTime? completedAt,
             string name,
             string checkRunUrl,
             global::System.Collections.Generic.IList<string> labels,
+            int? runAttempt,
+            string? htmlUrl,
+            global::G.JobConclusion? conclusion,
+            global::System.DateTime? completedAt,
+            global::System.Collections.Generic.IList<global::G.JobStep>? steps,
             int? runnerId,
             string? runnerName,
             int? runnerGroupId,
             string? runnerGroupName,
             string? workflowName,
-            string? headBranch,
-            int? runAttempt,
-            global::System.Collections.Generic.IList<global::G.JobStep>? steps)
+            string? headBranch)
         {
             this.Id = id;
             this.RunId = runId;
@@ -312,23 +312,23 @@ namespace G
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Status = status;
-            this.Conclusion = conclusion;
             this.CreatedAt = createdAt;
             this.StartedAt = startedAt;
-            this.CompletedAt = completedAt;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CheckRunUrl = checkRunUrl ?? throw new global::System.ArgumentNullException(nameof(checkRunUrl));
             this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
-            this.RunnerId = runnerId;
-            this.RunnerName = runnerName ?? throw new global::System.ArgumentNullException(nameof(runnerName));
-            this.RunnerGroupId = runnerGroupId;
-            this.RunnerGroupName = runnerGroupName ?? throw new global::System.ArgumentNullException(nameof(runnerGroupName));
-            this.WorkflowName = workflowName ?? throw new global::System.ArgumentNullException(nameof(workflowName));
-            this.HeadBranch = headBranch ?? throw new global::System.ArgumentNullException(nameof(headBranch));
             this.RunAttempt = runAttempt;
+            this.HtmlUrl = htmlUrl;
+            this.Conclusion = conclusion;
+            this.CompletedAt = completedAt;
             this.Steps = steps;
+            this.RunnerId = runnerId;
+            this.RunnerName = runnerName;
+            this.RunnerGroupId = runnerGroupId;
+            this.RunnerGroupName = runnerGroupName;
+            this.WorkflowName = workflowName;
+            this.HeadBranch = headBranch;
         }
 
         /// <summary>

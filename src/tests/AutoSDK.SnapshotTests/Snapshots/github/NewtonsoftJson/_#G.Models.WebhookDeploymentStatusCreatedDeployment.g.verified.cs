@@ -20,14 +20,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("creator", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookDeploymentStatusCreatedDeploymentCreator? Creator { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("creator")]
+        public global::G.WebhookDeploymentStatusCreatedDeploymentCreator? Creator { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -56,8 +56,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("payload", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OneOf<string, object>? Payload { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("payload")]
+        public global::G.OneOf<string, object>? Payload { get; set; }
 
         /// <summary>
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
@@ -150,13 +150,10 @@ namespace G
         /// <param name="url"></param>
         public WebhookDeploymentStatusCreatedDeployment(
             string createdAt,
-            global::G.WebhookDeploymentStatusCreatedDeploymentCreator? creator,
-            string? description,
             string environment,
             int id,
             string nodeId,
             string originalEnvironment,
-            global::G.OneOf<string, object>? payload,
             string @ref,
             string repositoryUrl,
             string sha,
@@ -164,18 +161,18 @@ namespace G
             string task,
             string updatedAt,
             string url,
+            global::G.WebhookDeploymentStatusCreatedDeploymentCreator? creator,
+            string? description,
+            global::G.OneOf<string, object>? payload,
             global::G.WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubApp? performedViaGithubApp,
             bool? productionEnvironment,
             bool? transientEnvironment)
         {
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
-            this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Environment = environment ?? throw new global::System.ArgumentNullException(nameof(environment));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.OriginalEnvironment = originalEnvironment ?? throw new global::System.ArgumentNullException(nameof(originalEnvironment));
-            this.Payload = payload;
             this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
             this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
@@ -183,6 +180,9 @@ namespace G
             this.Task = task ?? throw new global::System.ArgumentNullException(nameof(task));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Creator = creator;
+            this.Description = description;
+            this.Payload = payload;
             this.PerformedViaGithubApp = performedViaGithubApp;
             this.ProductionEnvironment = productionEnvironment;
             this.TransientEnvironment = transientEnvironment;

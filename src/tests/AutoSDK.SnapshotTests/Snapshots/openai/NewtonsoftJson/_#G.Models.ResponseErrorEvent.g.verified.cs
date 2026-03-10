@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// The error code.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("code", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Code { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("code")]
+        public string? Code { get; set; }
 
         /// <summary>
         /// The error message.
@@ -30,8 +30,8 @@ namespace G
         /// <summary>
         /// The error parameter.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("param", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Param { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("param")]
+        public string? Param { get; set; }
 
         /// <summary>
         /// The sequence number of this event.
@@ -64,17 +64,17 @@ namespace G
         /// The sequence number of this event.
         /// </param>
         public ResponseErrorEvent(
-            string? code,
             string message,
-            string? param,
             int sequenceNumber,
-            global::G.ResponseErrorEventType type)
+            global::G.ResponseErrorEventType type,
+            string? code,
+            string? param)
         {
-            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.Param = param ?? throw new global::System.ArgumentNullException(nameof(param));
             this.SequenceNumber = sequenceNumber;
             this.Type = type;
+            this.Code = code;
+            this.Param = param;
         }
 
         /// <summary>

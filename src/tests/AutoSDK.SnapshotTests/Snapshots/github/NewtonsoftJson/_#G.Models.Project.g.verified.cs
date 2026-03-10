@@ -64,8 +64,8 @@ namespace G
         /// Example: This project represents the sprint of the first week in January
         /// </summary>
         /// <example>This project represents the sprint of the first week in January</example>
-        [global::Newtonsoft.Json.JsonProperty("body", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Body { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("body")]
+        public string? Body { get; set; }
 
         /// <summary>
         /// Example: 1
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("creator", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? Creator { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("creator")]
+        public global::G.NullableSimpleUser? Creator { get; set; }
 
         /// <summary>
         /// Example: 2011-04-10T20:09:31Z
@@ -179,12 +179,12 @@ namespace G
             int id,
             string nodeId,
             string name,
-            string? body,
             int number,
             string state,
-            global::G.NullableSimpleUser? creator,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
+            string? body,
+            global::G.NullableSimpleUser? creator,
             global::G.ProjectOrganizationPermission? organizationPermission,
             bool? @private)
         {
@@ -195,12 +195,12 @@ namespace G
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
             this.Number = number;
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
-            this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.Body = body;
+            this.Creator = creator;
             this.OrganizationPermission = organizationPermission;
             this.Private = @private;
         }

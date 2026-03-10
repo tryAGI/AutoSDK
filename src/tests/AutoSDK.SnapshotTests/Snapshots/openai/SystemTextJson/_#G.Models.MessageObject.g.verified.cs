@@ -52,24 +52,21 @@ namespace G
         /// On an incomplete message, details about why the message is incomplete.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("incomplete_details")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MessageObjectIncompleteDetails? IncompleteDetails { get; set; }
+        public global::G.MessageObjectIncompleteDetails? IncompleteDetails { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the message was completed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? CompletedAt { get; set; }
+        public global::System.DateTimeOffset? CompletedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the message was marked as incomplete.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("incomplete_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? IncompleteAt { get; set; }
+        public global::System.DateTimeOffset? IncompleteAt { get; set; }
 
         /// <summary>
         /// The entity that produced the message. One of `user` or `assistant`.
@@ -90,22 +87,19 @@ namespace G
         /// If applicable, the ID of the [assistant](/docs/api-reference/assistants) that authored this message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assistant_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? AssistantId { get; set; }
+        public string? AssistantId { get; set; }
 
         /// <summary>
         /// The ID of the [run](/docs/api-reference/runs) associated with the creation of this message. Value is `null` when messages are created manually using the create message or create thread endpoints.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? RunId { get; set; }
+        public string? RunId { get; set; }
 
         /// <summary>
         /// A list of files attached to the message, and the tools they were added to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attachments")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.MessageObjectAttachment>? Attachments { get; set; }
+        public global::System.Collections.Generic.IList<global::G.MessageObjectAttachment>? Attachments { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -115,8 +109,7 @@ namespace G
         /// with a maximum length of 512 characters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -181,31 +174,31 @@ namespace G
             global::System.DateTimeOffset createdAt,
             string threadId,
             global::G.MessageObjectStatus status,
+            global::G.MessageObjectRole role,
+            global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageContentTextObject, global::G.MessageContentRefusalObject>> content,
+            global::G.MessageObjectObject @object,
             global::G.MessageObjectIncompleteDetails? incompleteDetails,
             global::System.DateTimeOffset? completedAt,
             global::System.DateTimeOffset? incompleteAt,
-            global::G.MessageObjectRole role,
-            global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageContentTextObject, global::G.MessageContentRefusalObject>> content,
             string? assistantId,
             string? runId,
             global::System.Collections.Generic.IList<global::G.MessageObjectAttachment>? attachments,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata,
-            global::G.MessageObjectObject @object)
+            global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
             this.ThreadId = threadId ?? throw new global::System.ArgumentNullException(nameof(threadId));
             this.Status = status;
-            this.IncompleteDetails = incompleteDetails ?? throw new global::System.ArgumentNullException(nameof(incompleteDetails));
-            this.CompletedAt = completedAt;
-            this.IncompleteAt = incompleteAt;
             this.Role = role;
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.AssistantId = assistantId ?? throw new global::System.ArgumentNullException(nameof(assistantId));
-            this.RunId = runId ?? throw new global::System.ArgumentNullException(nameof(runId));
-            this.Attachments = attachments ?? throw new global::System.ArgumentNullException(nameof(attachments));
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.Object = @object;
+            this.IncompleteDetails = incompleteDetails;
+            this.CompletedAt = completedAt;
+            this.IncompleteAt = incompleteAt;
+            this.AssistantId = assistantId;
+            this.RunId = runId;
+            this.Attachments = attachments;
+            this.Metadata = metadata;
         }
 
         /// <summary>

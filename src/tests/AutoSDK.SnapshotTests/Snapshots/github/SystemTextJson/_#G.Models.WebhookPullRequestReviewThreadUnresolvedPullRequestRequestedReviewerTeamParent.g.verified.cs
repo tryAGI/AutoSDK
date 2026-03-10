@@ -13,8 +13,7 @@ namespace G
         /// Description of the team
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -121,7 +120,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerTeamParent(
-            string? description,
             string htmlUrl,
             int id,
             string membersUrl,
@@ -131,9 +129,9 @@ namespace G
             global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewerTeamParentPrivacy privacy,
             string repositoriesUrl,
             string slug,
-            string url)
+            string url,
+            string? description)
         {
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.MembersUrl = membersUrl ?? throw new global::System.ArgumentNullException(nameof(membersUrl));
@@ -144,6 +142,7 @@ namespace G
             this.RepositoriesUrl = repositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(repositoriesUrl));
             this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Description = description;
         }
 
         /// <summary>

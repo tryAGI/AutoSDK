@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Payload { get; set; }
+        public string? Payload { get; set; }
 
         /// <summary>
         /// 
@@ -28,8 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("signature")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Signature { get; set; }
+        public string? Signature { get; set; }
 
         /// <summary>
         /// 
@@ -55,15 +53,15 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookStatusCommitCommitVerification(
-            string? payload,
             global::G.WebhookStatusCommitCommitVerificationReason reason,
-            string? signature,
-            bool verified)
+            bool verified,
+            string? payload,
+            string? signature)
         {
-            this.Payload = payload ?? throw new global::System.ArgumentNullException(nameof(payload));
             this.Reason = reason;
-            this.Signature = signature ?? throw new global::System.ArgumentNullException(nameof(signature));
             this.Verified = verified;
+            this.Payload = payload;
+            this.Signature = signature;
         }
 
         /// <summary>

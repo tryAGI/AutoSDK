@@ -27,15 +27,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("free_trial_ends_on")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? FreeTrialEndsOn { get; set; }
+        public string? FreeTrialEndsOn { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_billing_date")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? NextBillingDate { get; set; }
+        public string? NextBillingDate { get; set; }
 
         /// <summary>
         /// 
@@ -80,19 +78,19 @@ namespace G
         public WebhooksMarketplacePurchase(
             global::G.WebhooksMarketplacePurchaseAccount account,
             string billingCycle,
-            string? freeTrialEndsOn,
-            string? nextBillingDate,
             bool onFreeTrial,
             global::G.WebhooksMarketplacePurchasePlan plan,
-            int unitCount)
+            int unitCount,
+            string? freeTrialEndsOn,
+            string? nextBillingDate)
         {
             this.Account = account ?? throw new global::System.ArgumentNullException(nameof(account));
             this.BillingCycle = billingCycle ?? throw new global::System.ArgumentNullException(nameof(billingCycle));
-            this.FreeTrialEndsOn = freeTrialEndsOn ?? throw new global::System.ArgumentNullException(nameof(freeTrialEndsOn));
-            this.NextBillingDate = nextBillingDate ?? throw new global::System.ArgumentNullException(nameof(nextBillingDate));
             this.OnFreeTrial = onFreeTrial;
             this.Plan = plan ?? throw new global::System.ArgumentNullException(nameof(plan));
             this.UnitCount = unitCount;
+            this.FreeTrialEndsOn = freeTrialEndsOn;
+            this.NextBillingDate = nextBillingDate;
         }
 
         /// <summary>

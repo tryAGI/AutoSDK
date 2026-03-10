@@ -48,8 +48,7 @@ namespace G
         /// License Simple
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("license")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableLicenseSimple? License { get; set; }
+        public global::G.NullableLicenseSimple? License { get; set; }
 
         /// <summary>
         /// A GitHub user.
@@ -98,8 +97,7 @@ namespace G
         /// </summary>
         /// <example>This your first repo!</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -425,8 +423,7 @@ namespace G
         /// </summary>
         /// <example>git:git.example.com/octocat/Hello-World</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("mirror_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? MirrorUrl { get; set; }
+        public string? MirrorUrl { get; set; }
 
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/hooks
@@ -449,15 +446,13 @@ namespace G
         /// </summary>
         /// <example>https://github.com</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("homepage")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Homepage { get; set; }
+        public string? Homepage { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("language")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Language { get; set; }
+        public string? Language { get; set; }
 
         /// <summary>
         /// Example: 9
@@ -613,24 +608,21 @@ namespace G
         /// </summary>
         /// <example>2011-01-26T19:06:43Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("pushed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? PushedAt { get; set; }
+        public global::System.DateTime? PushedAt { get; set; }
 
         /// <summary>
         /// Example: 2011-01-26T19:01:12Z
         /// </summary>
         /// <example>2011-01-26T19:01:12Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// Example: 2011-01-26T19:14:43Z
         /// </summary>
         /// <example>2011-01-26T19:14:43Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? UpdatedAt { get; set; }
+        public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// Whether to allow rebase merges for pull requests.<br/>
@@ -1132,12 +1124,10 @@ namespace G
             string nodeId,
             string name,
             string fullName,
-            global::G.NullableLicenseSimple? license,
             int forks,
             global::G.SimpleUser owner,
             bool @private,
             string htmlUrl,
-            string? description,
             bool fork,
             string url,
             string archiveUrl,
@@ -1178,11 +1168,8 @@ namespace G
             string teamsUrl,
             string treesUrl,
             string cloneUrl,
-            string? mirrorUrl,
             string hooksUrl,
             string svnUrl,
-            string? homepage,
-            string? language,
             int forksCount,
             int stargazersCount,
             int watchersCount,
@@ -1196,18 +1183,23 @@ namespace G
             bool hasDownloads,
             bool archived,
             bool disabled,
-            global::System.DateTime? pushedAt,
-            global::System.DateTime? createdAt,
-            global::System.DateTime? updatedAt,
             int openIssues,
             int watchers,
+            global::G.NullableLicenseSimple? license,
             global::G.NullableSimpleUser? organization,
             global::G.RepositoryWebhooksPermissions? permissions,
+            string? description,
+            string? mirrorUrl,
+            string? homepage,
+            string? language,
             bool? isTemplate,
             global::System.Collections.Generic.IList<string>? topics,
             object? customProperties,
             bool? hasDiscussions,
             string? visibility,
+            global::System.DateTime? pushedAt,
+            global::System.DateTime? createdAt,
+            global::System.DateTime? updatedAt,
             bool? allowRebaseMerge,
             global::G.RepositoryWebhooksTemplateRepository? templateRepository,
             string? tempCloneToken,
@@ -1232,12 +1224,10 @@ namespace G
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.FullName = fullName ?? throw new global::System.ArgumentNullException(nameof(fullName));
-            this.License = license ?? throw new global::System.ArgumentNullException(nameof(license));
             this.Forks = forks;
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.Private = @private;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Fork = fork;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.ArchiveUrl = archiveUrl ?? throw new global::System.ArgumentNullException(nameof(archiveUrl));
@@ -1278,11 +1268,8 @@ namespace G
             this.TeamsUrl = teamsUrl ?? throw new global::System.ArgumentNullException(nameof(teamsUrl));
             this.TreesUrl = treesUrl ?? throw new global::System.ArgumentNullException(nameof(treesUrl));
             this.CloneUrl = cloneUrl ?? throw new global::System.ArgumentNullException(nameof(cloneUrl));
-            this.MirrorUrl = mirrorUrl ?? throw new global::System.ArgumentNullException(nameof(mirrorUrl));
             this.HooksUrl = hooksUrl ?? throw new global::System.ArgumentNullException(nameof(hooksUrl));
             this.SvnUrl = svnUrl ?? throw new global::System.ArgumentNullException(nameof(svnUrl));
-            this.Homepage = homepage ?? throw new global::System.ArgumentNullException(nameof(homepage));
-            this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
             this.ForksCount = forksCount;
             this.StargazersCount = stargazersCount;
             this.WatchersCount = watchersCount;
@@ -1296,18 +1283,23 @@ namespace G
             this.HasDownloads = hasDownloads;
             this.Archived = archived;
             this.Disabled = disabled;
-            this.PushedAt = pushedAt;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.OpenIssues = openIssues;
             this.Watchers = watchers;
+            this.License = license;
             this.Organization = organization;
             this.Permissions = permissions;
+            this.Description = description;
+            this.MirrorUrl = mirrorUrl;
+            this.Homepage = homepage;
+            this.Language = language;
             this.IsTemplate = isTemplate;
             this.Topics = topics;
             this.CustomProperties = customProperties;
             this.HasDiscussions = hasDiscussions;
             this.Visibility = visibility;
+            this.PushedAt = pushedAt;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.AllowRebaseMerge = allowRebaseMerge;
             this.TemplateRepository = templateRepository;
             this.TempCloneToken = tempCloneToken;

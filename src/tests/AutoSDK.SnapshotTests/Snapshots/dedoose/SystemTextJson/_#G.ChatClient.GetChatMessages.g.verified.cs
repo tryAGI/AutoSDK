@@ -292,8 +292,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.ChatMessageVO>> GetChatMessagesAsync(
             global::System.Guid userId,
             global::System.Guid projectId,
-            global::System.Guid? lastRevievedProjectMessageId,
-            global::System.Guid? lastRecievedGlobalMessageId,
+            global::System.Guid? lastRevievedProjectMessageId = default,
+            global::System.Guid? lastRecievedGlobalMessageId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.GetChatMessagesRequest

@@ -34,8 +34,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scheduled_time_unix")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? ScheduledTimeUnix { get; set; }
+        public int? ScheduledTimeUnix { get; set; }
 
         /// <summary>
         /// 
@@ -65,14 +64,14 @@ namespace G
             string callName,
             string agentId,
             string agentPhoneNumberId,
-            int? scheduledTimeUnix,
-            global::System.Collections.Generic.IList<global::G.OutboundCallRecipient> recipients)
+            global::System.Collections.Generic.IList<global::G.OutboundCallRecipient> recipients,
+            int? scheduledTimeUnix)
         {
             this.CallName = callName ?? throw new global::System.ArgumentNullException(nameof(callName));
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.AgentPhoneNumberId = agentPhoneNumberId ?? throw new global::System.ArgumentNullException(nameof(agentPhoneNumberId));
-            this.ScheduledTimeUnix = scheduledTimeUnix ?? throw new global::System.ArgumentNullException(nameof(scheduledTimeUnix));
             this.Recipients = recipients ?? throw new global::System.ArgumentNullException(nameof(recipients));
+            this.ScheduledTimeUnix = scheduledTimeUnix;
         }
 
         /// <summary>

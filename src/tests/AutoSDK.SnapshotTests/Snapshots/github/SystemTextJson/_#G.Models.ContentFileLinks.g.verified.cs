@@ -13,15 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("git")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Git { get; set; }
+        public string? Git { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Html { get; set; }
+        public string? Html { get; set; }
 
         /// <summary>
         /// 
@@ -46,13 +44,13 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ContentFileLinks(
+            string self,
             string? git,
-            string? html,
-            string self)
+            string? html)
         {
-            this.Git = git ?? throw new global::System.ArgumentNullException(nameof(git));
-            this.Html = html ?? throw new global::System.ArgumentNullException(nameof(html));
             this.Self = self ?? throw new global::System.ArgumentNullException(nameof(self));
+            this.Git = git;
+            this.Html = html;
         }
 
         /// <summary>

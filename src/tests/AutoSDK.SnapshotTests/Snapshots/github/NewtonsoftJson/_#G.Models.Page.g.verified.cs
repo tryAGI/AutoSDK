@@ -22,16 +22,16 @@ namespace G
         /// Example: built
         /// </summary>
         /// <example>built</example>
-        [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.PageStatus? Status { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("status")]
+        public global::G.PageStatus? Status { get; set; }
 
         /// <summary>
         /// The Pages site's custom domain<br/>
         /// Example: example.com
         /// </summary>
         /// <example>example.com</example>
-        [global::Newtonsoft.Json.JsonProperty("cname", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Cname { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("cname")]
+        public string? Cname { get; set; }
 
         /// <summary>
         /// The state if the domain is verified<br/>
@@ -153,10 +153,10 @@ namespace G
         /// </param>
         public Page(
             string url,
-            global::G.PageStatus? status,
-            string? cname,
             bool custom404,
             bool @public,
+            global::G.PageStatus? status,
+            string? cname,
             global::G.PageProtectedDomainState? protectedDomainState,
             global::System.DateTime? pendingDomainUnverifiedAt,
             string? htmlUrl,
@@ -166,10 +166,10 @@ namespace G
             bool? httpsEnforced)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Status = status;
-            this.Cname = cname ?? throw new global::System.ArgumentNullException(nameof(cname));
             this.Custom404 = custom404;
             this.Public = @public;
+            this.Status = status;
+            this.Cname = cname;
             this.ProtectedDomainState = protectedDomainState;
             this.PendingDomainUnverifiedAt = pendingDomainUnverifiedAt;
             this.HtmlUrl = htmlUrl;

@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Name { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("color", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Color { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("color")]
+        public string? Color { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,8 +36,8 @@ namespace G
             string? name,
             string? color)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Color = color ?? throw new global::System.ArgumentNullException(nameof(color));
+            this.Name = name;
+            this.Color = color;
         }
 
         /// <summary>

@@ -26,8 +26,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Reason { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("reason")]
+        public string? Reason { get; set; }
 
         /// <summary>
         /// Example: 2012-10-06T21:34:12Z
@@ -79,17 +79,17 @@ namespace G
         public RepositorySubscription(
             bool subscribed,
             bool ignored,
-            string? reason,
             global::System.DateTime createdAt,
             string url,
-            string repositoryUrl)
+            string repositoryUrl,
+            string? reason)
         {
             this.Subscribed = subscribed;
             this.Ignored = ignored;
-            this.Reason = reason ?? throw new global::System.ArgumentNullException(nameof(reason));
             this.CreatedAt = createdAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
+            this.Reason = reason;
         }
 
         /// <summary>

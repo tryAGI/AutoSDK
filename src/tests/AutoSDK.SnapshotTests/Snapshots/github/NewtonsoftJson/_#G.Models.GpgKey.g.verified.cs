@@ -26,8 +26,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("primary_key_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? PrimaryKeyId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("primary_key_id")]
+        public int? PrimaryKeyId { get; set; }
 
         /// <summary>
         /// Example: 3262EFF25BA0D270
@@ -93,8 +93,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("expires_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? ExpiresAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("expires_at")]
+        public global::System.DateTime? ExpiresAt { get; set; }
 
         /// <summary>
         /// Example: true
@@ -106,8 +106,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("raw_key", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? RawKey { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("raw_key")]
+        public string? RawKey { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -155,7 +155,6 @@ namespace G
         /// <param name="rawKey"></param>
         public GpgKey(
             long id,
-            int? primaryKeyId,
             string keyId,
             string publicKey,
             global::System.Collections.Generic.IList<global::G.GpgKeyEmail> emails,
@@ -165,13 +164,13 @@ namespace G
             bool canEncryptStorage,
             bool canCertify,
             global::System.DateTime createdAt,
-            global::System.DateTime? expiresAt,
             bool revoked,
-            string? rawKey,
-            string? name)
+            string? name,
+            int? primaryKeyId,
+            global::System.DateTime? expiresAt,
+            string? rawKey)
         {
             this.Id = id;
-            this.PrimaryKeyId = primaryKeyId;
             this.KeyId = keyId ?? throw new global::System.ArgumentNullException(nameof(keyId));
             this.PublicKey = publicKey ?? throw new global::System.ArgumentNullException(nameof(publicKey));
             this.Emails = emails ?? throw new global::System.ArgumentNullException(nameof(emails));
@@ -181,10 +180,11 @@ namespace G
             this.CanEncryptStorage = canEncryptStorage;
             this.CanCertify = canCertify;
             this.CreatedAt = createdAt;
-            this.ExpiresAt = expiresAt;
             this.Revoked = revoked;
-            this.RawKey = rawKey ?? throw new global::System.ArgumentNullException(nameof(rawKey));
             this.Name = name;
+            this.PrimaryKeyId = primaryKeyId;
+            this.ExpiresAt = expiresAt;
+            this.RawKey = rawKey;
         }
 
         /// <summary>

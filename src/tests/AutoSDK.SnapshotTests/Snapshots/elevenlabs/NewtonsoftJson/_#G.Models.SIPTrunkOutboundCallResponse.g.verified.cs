@@ -24,14 +24,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("conversation_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? ConversationId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("conversation_id")]
+        public string? ConversationId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("sip_call_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? SipCallId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("sip_call_id")]
+        public string? SipCallId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,8 +54,8 @@ namespace G
         {
             this.Success = success;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.ConversationId = conversationId ?? throw new global::System.ArgumentNullException(nameof(conversationId));
-            this.SipCallId = sipCallId ?? throw new global::System.ArgumentNullException(nameof(sipCallId));
+            this.ConversationId = conversationId;
+            this.SipCallId = sipCallId;
         }
 
         /// <summary>

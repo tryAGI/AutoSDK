@@ -36,8 +36,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("summary", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Summary { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("summary")]
+        public string? Summary { get; set; }
 
         /// <summary>
         /// The current page title.
@@ -75,15 +75,15 @@ namespace G
             string htmlUrl,
             string pageName,
             string sha,
-            string? summary,
-            string title)
+            string title,
+            string? summary)
         {
             this.Action = action;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.PageName = pageName ?? throw new global::System.ArgumentNullException(nameof(pageName));
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
-            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Summary = summary;
         }
 
         /// <summary>

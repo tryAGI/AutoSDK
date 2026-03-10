@@ -47,8 +47,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creator")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? Creator { get; set; }
+        public global::G.NullableSimpleUser? Creator { get; set; }
 
         /// <summary>
         /// A short description of the status.<br/>
@@ -198,13 +197,13 @@ namespace G
             long id,
             string nodeId,
             global::G.DeploymentStatusState state,
-            global::G.NullableSimpleUser? creator,
             string description,
             string targetUrl,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             string deploymentUrl,
             string repositoryUrl,
+            global::G.NullableSimpleUser? creator,
             string? environment,
             string? environmentUrl,
             string? logUrl,
@@ -214,13 +213,13 @@ namespace G
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.State = state;
-            this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.TargetUrl = targetUrl ?? throw new global::System.ArgumentNullException(nameof(targetUrl));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.DeploymentUrl = deploymentUrl ?? throw new global::System.ArgumentNullException(nameof(deploymentUrl));
             this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
+            this.Creator = creator;
             this.Environment = environment;
             this.EnvironmentUrl = environmentUrl;
             this.LogUrl = logUrl;

@@ -24,14 +24,14 @@ namespace G
         /// <summary>
         /// First ID in the `data` list. Can be used as the `before_id` for the previous page.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("first_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? FirstId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("first_id")]
+        public string? FirstId { get; set; }
 
         /// <summary>
         /// Last ID in the `data` list. Can be used as the `after_id` for the next page.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("last_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? LastId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("last_id")]
+        public string? LastId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -60,8 +60,8 @@ namespace G
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.HasMore = hasMore;
-            this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
-            this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
+            this.FirstId = firstId;
+            this.LastId = lastId;
         }
 
         /// <summary>

@@ -42,8 +42,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("weight", Required = global::Newtonsoft.Json.Required.Always)]
-        public double? Weight { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("weight")]
+        public double? Weight { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

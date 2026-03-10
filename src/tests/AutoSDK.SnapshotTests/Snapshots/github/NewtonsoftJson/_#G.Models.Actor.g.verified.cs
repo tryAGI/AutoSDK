@@ -30,8 +30,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("gravatar_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? GravatarId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("gravatar_id")]
+        public string? GravatarId { get; set; }
 
         /// <summary>
         /// 
@@ -63,17 +63,17 @@ namespace G
         public Actor(
             int id,
             string login,
-            string? gravatarId,
             string url,
             string avatarUrl,
-            string? displayLogin)
+            string? displayLogin,
+            string? gravatarId)
         {
             this.Id = id;
             this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
-            this.GravatarId = gravatarId ?? throw new global::System.ArgumentNullException(nameof(gravatarId));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
             this.DisplayLogin = displayLogin;
+            this.GravatarId = gravatarId;
         }
 
         /// <summary>

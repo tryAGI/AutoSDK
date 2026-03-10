@@ -24,14 +24,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Url { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("url")]
+        public string? Url { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("spdx_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? SpdxId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("spdx_id")]
+        public string? SpdxId { get; set; }
 
         /// <summary>
         /// 
@@ -56,15 +56,15 @@ namespace G
         public PullRequestHeadRepoLicense(
             string key,
             string name,
+            string nodeId,
             string? url,
-            string? spdxId,
-            string nodeId)
+            string? spdxId)
         {
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.SpdxId = spdxId ?? throw new global::System.ArgumentNullException(nameof(spdxId));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Url = url;
+            this.SpdxId = spdxId;
         }
 
         /// <summary>

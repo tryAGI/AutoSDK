@@ -29,15 +29,13 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("invitee")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? Invitee { get; set; }
+        public global::G.NullableSimpleUser? Invitee { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inviter")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? Inviter { get; set; }
+        public global::G.NullableSimpleUser? Inviter { get; set; }
 
         /// <summary>
         /// The permission associated with the invitation.<br/>
@@ -133,24 +131,24 @@ namespace G
         public RepositoryInvitation(
             long id,
             global::G.MinimalRepository repository,
-            global::G.NullableSimpleUser? invitee,
-            global::G.NullableSimpleUser? inviter,
             global::G.RepositoryInvitationPermissions permissions,
             global::System.DateTime createdAt,
             string url,
             string htmlUrl,
             string nodeId,
+            global::G.NullableSimpleUser? invitee,
+            global::G.NullableSimpleUser? inviter,
             bool? expired)
         {
             this.Id = id;
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
-            this.Invitee = invitee ?? throw new global::System.ArgumentNullException(nameof(invitee));
-            this.Inviter = inviter ?? throw new global::System.ArgumentNullException(nameof(inviter));
             this.Permissions = permissions;
             this.CreatedAt = createdAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Invitee = invitee;
+            this.Inviter = inviter;
             this.Expired = expired;
         }
 

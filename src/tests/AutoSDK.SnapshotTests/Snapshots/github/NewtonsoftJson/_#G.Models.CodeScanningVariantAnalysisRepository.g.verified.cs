@@ -50,8 +50,8 @@ namespace G
         /// Example: 2011-01-26T19:14:43Z
         /// </summary>
         /// <example>2011-01-26T19:14:43Z</example>
-        [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? UpdatedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("updated_at")]
+        public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

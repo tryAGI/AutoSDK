@@ -20,22 +20,19 @@ namespace G
         /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? DismissedAt { get; set; }
+        public string? DismissedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_by")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? DismissedBy { get; set; }
+        public object? DismissedBy { get; set; }
 
         /// <summary>
         /// The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_reason")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? DismissedReason { get; set; }
+        public string? DismissedReason { get; set; }
 
         /// <summary>
         /// The GitHub URL of the alert resource.
@@ -123,27 +120,27 @@ namespace G
 #endif
         public WebhookCodeScanningAlertReopenedAlert(
             global::System.DateTime createdAt,
-            string? dismissedAt,
-            object? dismissedBy,
-            string? dismissedReason,
             string htmlUrl,
             int number,
             global::G.WebhookCodeScanningAlertReopenedAlertRule rule,
             global::G.WebhookCodeScanningAlertReopenedAlertState state,
             global::G.WebhookCodeScanningAlertReopenedAlertTool tool,
             string url,
+            string? dismissedAt,
+            object? dismissedBy,
+            string? dismissedReason,
             global::G.WebhookCodeScanningAlertReopenedAlertMostRecentInstance? mostRecentInstance)
         {
             this.CreatedAt = createdAt;
-            this.DismissedAt = dismissedAt ?? throw new global::System.ArgumentNullException(nameof(dismissedAt));
-            this.DismissedBy = dismissedBy ?? throw new global::System.ArgumentNullException(nameof(dismissedBy));
-            this.DismissedReason = dismissedReason ?? throw new global::System.ArgumentNullException(nameof(dismissedReason));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Number = number;
             this.Rule = rule ?? throw new global::System.ArgumentNullException(nameof(rule));
             this.State = state;
             this.Tool = tool ?? throw new global::System.ArgumentNullException(nameof(tool));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.DismissedAt = dismissedAt;
+            this.DismissedBy = dismissedBy;
+            this.DismissedReason = dismissedReason;
             this.MostRecentInstance = mostRecentInstance;
         }
 

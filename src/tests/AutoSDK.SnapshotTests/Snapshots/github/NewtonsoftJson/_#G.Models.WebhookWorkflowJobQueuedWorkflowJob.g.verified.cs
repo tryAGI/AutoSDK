@@ -18,14 +18,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("completed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? CompletedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("completed_at")]
+        public string? CompletedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("conclusion", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Conclusion { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("conclusion")]
+        public string? Conclusion { get; set; }
 
         /// <summary>
         /// The time that the job created.
@@ -90,26 +90,26 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("runner_group_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? RunnerGroupId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("runner_group_id")]
+        public int? RunnerGroupId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("runner_group_name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? RunnerGroupName { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("runner_group_name")]
+        public string? RunnerGroupName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("runner_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? RunnerId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("runner_id")]
+        public int? RunnerId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("runner_name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? RunnerName { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("runner_name")]
+        public string? RunnerName { get; set; }
 
         /// <summary>
         /// 
@@ -126,14 +126,14 @@ namespace G
         /// <summary>
         /// The name of the current branch.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("head_branch", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? HeadBranch { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("head_branch")]
+        public string? HeadBranch { get; set; }
 
         /// <summary>
         /// The name of the workflow.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("workflow_name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? WorkflowName { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("workflow_name")]
+        public string? WorkflowName { get; set; }
 
         /// <summary>
         /// 
@@ -187,8 +187,6 @@ namespace G
         /// <param name="url"></param>
         public WebhookWorkflowJobQueuedWorkflowJob(
             string checkRunUrl,
-            string? completedAt,
-            string? conclusion,
             string createdAt,
             string headSha,
             string htmlUrl,
@@ -199,20 +197,20 @@ namespace G
             int runAttempt,
             double runId,
             string runUrl,
+            global::System.DateTime startedAt,
+            global::G.WebhookWorkflowJobQueuedWorkflowJobStatus status,
+            global::System.Collections.Generic.IList<global::G.WebhookWorkflowJobQueuedWorkflowJobStep> steps,
+            string url,
+            string? completedAt,
+            string? conclusion,
             int? runnerGroupId,
             string? runnerGroupName,
             int? runnerId,
             string? runnerName,
-            global::System.DateTime startedAt,
-            global::G.WebhookWorkflowJobQueuedWorkflowJobStatus status,
             string? headBranch,
-            string? workflowName,
-            global::System.Collections.Generic.IList<global::G.WebhookWorkflowJobQueuedWorkflowJobStep> steps,
-            string url)
+            string? workflowName)
         {
             this.CheckRunUrl = checkRunUrl ?? throw new global::System.ArgumentNullException(nameof(checkRunUrl));
-            this.CompletedAt = completedAt ?? throw new global::System.ArgumentNullException(nameof(completedAt));
-            this.Conclusion = conclusion ?? throw new global::System.ArgumentNullException(nameof(conclusion));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
@@ -223,16 +221,18 @@ namespace G
             this.RunAttempt = runAttempt;
             this.RunId = runId;
             this.RunUrl = runUrl ?? throw new global::System.ArgumentNullException(nameof(runUrl));
-            this.RunnerGroupId = runnerGroupId;
-            this.RunnerGroupName = runnerGroupName ?? throw new global::System.ArgumentNullException(nameof(runnerGroupName));
-            this.RunnerId = runnerId;
-            this.RunnerName = runnerName ?? throw new global::System.ArgumentNullException(nameof(runnerName));
             this.StartedAt = startedAt;
             this.Status = status;
-            this.HeadBranch = headBranch ?? throw new global::System.ArgumentNullException(nameof(headBranch));
-            this.WorkflowName = workflowName ?? throw new global::System.ArgumentNullException(nameof(workflowName));
             this.Steps = steps ?? throw new global::System.ArgumentNullException(nameof(steps));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.CompletedAt = completedAt;
+            this.Conclusion = conclusion;
+            this.RunnerGroupId = runnerGroupId;
+            this.RunnerGroupName = runnerGroupName;
+            this.RunnerId = runnerId;
+            this.RunnerName = runnerName;
+            this.HeadBranch = headBranch;
+            this.WorkflowName = workflowName;
         }
 
         /// <summary>

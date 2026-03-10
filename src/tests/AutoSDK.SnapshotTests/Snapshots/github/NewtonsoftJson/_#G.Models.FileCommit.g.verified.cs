@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.FileCommitContent? Content { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("content")]
+        public global::G.FileCommitContent? Content { get; set; }
 
         /// <summary>
         /// 
@@ -33,11 +33,11 @@ namespace G
         /// <param name="content"></param>
         /// <param name="commit"></param>
         public FileCommit(
-            global::G.FileCommitContent? content,
-            global::G.FileCommitCommit commit)
+            global::G.FileCommitCommit commit,
+            global::G.FileCommitContent? content)
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Commit = commit ?? throw new global::System.ArgumentNullException(nameof(commit));
+            this.Content = content;
         }
 
         /// <summary>

@@ -23,8 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? Value { get; set; }
+        public global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

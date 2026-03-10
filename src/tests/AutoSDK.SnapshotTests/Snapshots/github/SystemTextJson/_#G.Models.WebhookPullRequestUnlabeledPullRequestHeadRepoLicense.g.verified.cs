@@ -41,8 +41,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Url { get; set; }
+        public string? Url { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -72,7 +71,7 @@ namespace G
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.SpdxId = spdxId ?? throw new global::System.ArgumentNullException(nameof(spdxId));
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Url = url;
         }
 
         /// <summary>

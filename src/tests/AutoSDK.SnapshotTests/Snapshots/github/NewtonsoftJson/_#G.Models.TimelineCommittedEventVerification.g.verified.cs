@@ -24,14 +24,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("signature", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Signature { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("signature")]
+        public string? Signature { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("payload", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Payload { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("payload")]
+        public string? Payload { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,8 +54,8 @@ namespace G
         {
             this.Verified = verified;
             this.Reason = reason ?? throw new global::System.ArgumentNullException(nameof(reason));
-            this.Signature = signature ?? throw new global::System.ArgumentNullException(nameof(signature));
-            this.Payload = payload ?? throw new global::System.ArgumentNullException(nameof(payload));
+            this.Signature = signature;
+            this.Payload = payload;
         }
 
         /// <summary>

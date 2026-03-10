@@ -30,8 +30,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("overall_feedback", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? OverallFeedback { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("overall_feedback")]
+        public string? OverallFeedback { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,7 +55,7 @@ namespace G
             this.MessageIndex = messageIndex;
             this.Metaprompt = metaprompt ?? throw new global::System.ArgumentNullException(nameof(metaprompt));
             this.Examples = examples ?? throw new global::System.ArgumentNullException(nameof(examples));
-            this.OverallFeedback = overallFeedback ?? throw new global::System.ArgumentNullException(nameof(overallFeedback));
+            this.OverallFeedback = overallFeedback;
         }
 
         /// <summary>

@@ -97,8 +97,8 @@ namespace G
         /// <summary>
         /// The UTC date and time (in RFC3339 format) of when the poll ended. If `status` is ACTIVE, this field is set to **null**.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("ended_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? EndedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("ended_at")]
+        public global::System.DateTime? EndedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

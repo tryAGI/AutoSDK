@@ -36,8 +36,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Id { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
         /// 
@@ -69,7 +68,7 @@ namespace G
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Args = args ?? throw new global::System.ArgumentNullException(nameof(args));
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Id = id;
             this.Type = type;
         }
 

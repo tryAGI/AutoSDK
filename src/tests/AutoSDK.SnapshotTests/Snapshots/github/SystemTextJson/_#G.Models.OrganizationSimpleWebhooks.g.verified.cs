@@ -103,8 +103,7 @@ namespace G
         /// </summary>
         /// <example>A great organization</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -179,7 +178,7 @@ namespace G
             this.MembersUrl = membersUrl ?? throw new global::System.ArgumentNullException(nameof(membersUrl));
             this.PublicMembersUrl = publicMembersUrl ?? throw new global::System.ArgumentNullException(nameof(publicMembersUrl));
             this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Description = description;
         }
 
         /// <summary>

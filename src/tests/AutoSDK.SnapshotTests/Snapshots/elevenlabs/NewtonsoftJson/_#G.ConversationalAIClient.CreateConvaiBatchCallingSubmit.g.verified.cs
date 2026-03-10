@@ -221,9 +221,9 @@ namespace G
             string callName,
             string agentId,
             string agentPhoneNumberId,
-            int? scheduledTimeUnix,
             global::System.Collections.Generic.IList<global::G.OutboundCallRecipient> recipients,
             string? xiApiKey = default,
+            int? scheduledTimeUnix = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodySubmitABatchCallRequestV1ConvaiBatchCallingSubmitPost

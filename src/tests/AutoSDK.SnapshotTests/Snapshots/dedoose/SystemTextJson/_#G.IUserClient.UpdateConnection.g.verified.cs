@@ -27,9 +27,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<bool> UpdateConnectionAsync(
-            global::System.Guid? userId,
             global::System.Guid connectionKey,
-            global::System.Guid? projectId,
+            global::System.Guid? userId = default,
+            global::System.Guid? projectId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -42,14 +42,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("token_usage", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? TokenUsage { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("token_usage")]
+        public int? TokenUsage { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("sampled_model_name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? SampledModelName { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("sampled_model_name")]
+        public string? SampledModelName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -82,7 +82,7 @@ namespace G
             this.ExecutionTime = executionTime;
             this.Scores = scores ?? throw new global::System.ArgumentNullException(nameof(scores));
             this.TokenUsage = tokenUsage;
-            this.SampledModelName = sampledModelName ?? throw new global::System.ArgumentNullException(nameof(sampledModelName));
+            this.SampledModelName = sampledModelName;
         }
 
         /// <summary>

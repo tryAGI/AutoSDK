@@ -14,8 +14,8 @@ namespace G
         /// Example: Update all gems
         /// </summary>
         /// <example>Update all gems</example>
-        [global::Newtonsoft.Json.JsonProperty("note", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Note { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("note")]
+        public string? Note { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,7 +33,7 @@ namespace G
         public ProjectsCreateCardRequestVariant1(
             string? note)
         {
-            this.Note = note ?? throw new global::System.ArgumentNullException(nameof(note));
+            this.Note = note;
         }
 
         /// <summary>

@@ -29,8 +29,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? User { get; set; }
+        public global::G.NullableSimpleUser? User { get; set; }
 
         /// <summary>
         /// 
@@ -75,15 +74,15 @@ namespace G
         public GistCommit(
             string url,
             string version,
-            global::G.NullableSimpleUser? user,
             global::G.GistCommitChangeStatus changeStatus,
-            global::System.DateTime committedAt)
+            global::System.DateTime committedAt,
+            global::G.NullableSimpleUser? user)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
             this.ChangeStatus = changeStatus ?? throw new global::System.ArgumentNullException(nameof(changeStatus));
             this.CommittedAt = committedAt;
+            this.User = user;
         }
 
         /// <summary>

@@ -27,15 +27,13 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("param")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Param { get; set; }
+        public string? Param { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Code { get; set; }
+        public string? Code { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -65,8 +63,8 @@ namespace G
         {
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
-            this.Param = param ?? throw new global::System.ArgumentNullException(nameof(param));
-            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
+            this.Param = param;
+            this.Code = code;
         }
 
         /// <summary>

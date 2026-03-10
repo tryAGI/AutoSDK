@@ -41,8 +41,8 @@ namespace G
         /// Example: Github - Code thigns happen here
         /// </summary>
         /// <example>Github - Code thigns happen here</example>
-        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Name { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// Example: https://github.com/images/error/octocat_happy.gif
@@ -83,15 +83,15 @@ namespace G
             string login,
             string nodeId,
             string htmlUrl,
-            string? name,
-            string avatarUrl)
+            string avatarUrl,
+            string? name)
         {
             this.Id = id;
             this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
+            this.Name = name;
         }
 
         /// <summary>

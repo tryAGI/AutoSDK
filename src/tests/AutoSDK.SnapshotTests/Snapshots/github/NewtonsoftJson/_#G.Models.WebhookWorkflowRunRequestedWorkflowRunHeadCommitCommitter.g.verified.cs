@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("email", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Email { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("email")]
+        public string? Email { get; set; }
 
         /// <summary>
         /// The git author's name.
@@ -49,14 +49,14 @@ namespace G
         /// </param>
         /// <param name="username"></param>
         public WebhookWorkflowRunRequestedWorkflowRunHeadCommitCommitter(
-            string? email,
             string name,
             global::System.DateTime? date,
+            string? email,
             string? username)
         {
-            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Date = date;
+            this.Email = email;
             this.Username = username;
         }
 

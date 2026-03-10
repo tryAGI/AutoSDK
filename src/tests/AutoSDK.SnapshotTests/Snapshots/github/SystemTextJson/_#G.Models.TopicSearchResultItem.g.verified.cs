@@ -20,36 +20,31 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? DisplayName { get; set; }
+        public string? DisplayName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("short_description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? ShortDescription { get; set; }
+        public string? ShortDescription { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_by")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? CreatedBy { get; set; }
+        public string? CreatedBy { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("released")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Released { get; set; }
+        public string? Released { get; set; }
 
         /// <summary>
         /// 
@@ -146,16 +141,16 @@ namespace G
 #endif
         public TopicSearchResultItem(
             string name,
-            string? displayName,
-            string? shortDescription,
-            string? description,
-            string? createdBy,
-            string? released,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             bool featured,
             bool curated,
             double score,
+            string? displayName,
+            string? shortDescription,
+            string? description,
+            string? createdBy,
+            string? released,
             int? repositoryCount,
             string? logoUrl,
             global::System.Collections.Generic.IList<global::G.SearchResultTextMatche>? textMatches,
@@ -163,16 +158,16 @@ namespace G
             global::System.Collections.Generic.IList<global::G.TopicSearchResultItemAliase>? aliases)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
-            this.ShortDescription = shortDescription ?? throw new global::System.ArgumentNullException(nameof(shortDescription));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.CreatedBy = createdBy ?? throw new global::System.ArgumentNullException(nameof(createdBy));
-            this.Released = released ?? throw new global::System.ArgumentNullException(nameof(released));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.Featured = featured;
             this.Curated = curated;
             this.Score = score;
+            this.DisplayName = displayName;
+            this.ShortDescription = shortDescription;
+            this.Description = description;
+            this.CreatedBy = createdBy;
+            this.Released = released;
             this.RepositoryCount = repositoryCount;
             this.LogoUrl = logoUrl;
             this.TextMatches = textMatches;

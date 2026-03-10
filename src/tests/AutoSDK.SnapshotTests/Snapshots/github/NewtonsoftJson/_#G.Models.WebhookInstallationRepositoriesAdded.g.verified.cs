@@ -64,8 +64,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("requester", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhooksUser? Requester { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("requester")]
+        public global::G.WebhooksUser? Requester { get; set; }
 
         /// <summary>
         /// A GitHub user.
@@ -117,23 +117,23 @@ namespace G
             global::System.Collections.Generic.IList<global::G.WebhooksRepositoriesAddedItem> repositoriesAdded,
             global::System.Collections.Generic.IList<global::G.WebhookInstallationRepositoriesAddedRepositoriesRemovedItem> repositoriesRemoved,
             global::G.WebhooksRepositorySelection repositorySelection,
-            global::G.WebhooksUser? requester,
             global::G.SimpleUser sender,
             global::G.WebhookInstallationRepositoriesAddedAction action,
             global::G.EnterpriseWebhooks? enterprise,
             global::G.OrganizationSimpleWebhooks? organization,
-            global::G.RepositoryWebhooks? repository)
+            global::G.RepositoryWebhooks? repository,
+            global::G.WebhooksUser? requester)
         {
             this.Installation = installation ?? throw new global::System.ArgumentNullException(nameof(installation));
             this.RepositoriesAdded = repositoriesAdded ?? throw new global::System.ArgumentNullException(nameof(repositoriesAdded));
             this.RepositoriesRemoved = repositoriesRemoved ?? throw new global::System.ArgumentNullException(nameof(repositoriesRemoved));
             this.RepositorySelection = repositorySelection;
-            this.Requester = requester ?? throw new global::System.ArgumentNullException(nameof(requester));
             this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Action = action;
             this.Enterprise = enterprise;
             this.Organization = organization;
             this.Repository = repository;
+            this.Requester = requester;
         }
 
         /// <summary>

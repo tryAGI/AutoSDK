@@ -20,8 +20,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("inputs", Required = global::Newtonsoft.Json.Required.Always)]
-        public object? Inputs { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("inputs")]
+        public object? Inputs { get; set; }
 
         /// <summary>
         /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>
@@ -97,21 +97,21 @@ namespace G
         /// </param>
         /// <param name="workflow"></param>
         public WebhookWorkflowDispatch(
-            object? inputs,
             string @ref,
             global::G.RepositoryWebhooks repository,
             global::G.SimpleUser sender,
             string workflow,
             global::G.EnterpriseWebhooks? enterprise,
+            object? inputs,
             global::G.SimpleInstallation? installation,
             global::G.OrganizationSimpleWebhooks? organization)
         {
-            this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
             this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Workflow = workflow ?? throw new global::System.ArgumentNullException(nameof(workflow));
             this.Enterprise = enterprise;
+            this.Inputs = inputs;
             this.Installation = installation;
             this.Organization = organization;
         }

@@ -52,8 +52,8 @@ namespace G
         /// Example: master
         /// </summary>
         /// <example>master</example>
-        [global::Newtonsoft.Json.JsonProperty("head_branch", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? HeadBranch { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("head_branch")]
+        public string? HeadBranch { get; set; }
 
         /// <summary>
         /// The SHA of the head commit that points to the version of the workflow being run.<br/>
@@ -104,15 +104,15 @@ namespace G
         /// Example: completed
         /// </summary>
         /// <example>completed</example>
-        [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Status { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("status")]
+        public string? Status { get; set; }
 
         /// <summary>
         /// Example: neutral
         /// </summary>
         /// <example>neutral</example>
-        [global::Newtonsoft.Json.JsonProperty("conclusion", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Conclusion { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("conclusion")]
+        public string? Conclusion { get; set; }
 
         /// <summary>
         /// The ID of the parent workflow.<br/>
@@ -140,8 +140,8 @@ namespace G
         /// <summary>
         /// Pull requests that are open with a `head_sha` or `head_branch` that matches the workflow run. The returned pull requests do not necessarily indicate pull requests that triggered the run.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("pull_requests", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.PullRequestMinimal>? PullRequests { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("pull_requests")]
+        public global::System.Collections.Generic.IList<global::G.PullRequestMinimal>? PullRequests { get; set; }
 
         /// <summary>
         /// 
@@ -240,8 +240,8 @@ namespace G
         /// <summary>
         /// A commit.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("head_commit", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleCommit? HeadCommit { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("head_commit")]
+        public global::G.NullableSimpleCommit? HeadCommit { get; set; }
 
         /// <summary>
         /// Minimal Repository
@@ -403,17 +403,13 @@ namespace G
         public WorkflowRun(
             int id,
             string nodeId,
-            string? headBranch,
             string headSha,
             string path,
             int runNumber,
             string @event,
-            string? status,
-            string? conclusion,
             int workflowId,
             string url,
             string htmlUrl,
-            global::System.Collections.Generic.IList<global::G.PullRequestMinimal>? pullRequests,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             string jobsUrl,
@@ -423,34 +419,34 @@ namespace G
             string cancelUrl,
             string rerunUrl,
             string workflowUrl,
-            global::G.NullableSimpleCommit? headCommit,
             global::G.MinimalRepository repository,
             global::G.MinimalRepository headRepository,
             string displayTitle,
             string? name,
             int? checkSuiteId,
             string? checkSuiteNodeId,
+            string? headBranch,
             int? runAttempt,
             global::System.Collections.Generic.IList<global::G.ReferencedWorkflow>? referencedWorkflows,
+            string? status,
+            string? conclusion,
+            global::System.Collections.Generic.IList<global::G.PullRequestMinimal>? pullRequests,
             global::G.SimpleUser? actor,
             global::G.SimpleUser? triggeringActor,
             global::System.DateTime? runStartedAt,
             string? previousAttemptUrl,
+            global::G.NullableSimpleCommit? headCommit,
             int? headRepositoryId)
         {
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.HeadBranch = headBranch ?? throw new global::System.ArgumentNullException(nameof(headBranch));
             this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.RunNumber = runNumber;
             this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));
-            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
-            this.Conclusion = conclusion ?? throw new global::System.ArgumentNullException(nameof(conclusion));
             this.WorkflowId = workflowId;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.PullRequests = pullRequests ?? throw new global::System.ArgumentNullException(nameof(pullRequests));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.JobsUrl = jobsUrl ?? throw new global::System.ArgumentNullException(nameof(jobsUrl));
@@ -460,19 +456,23 @@ namespace G
             this.CancelUrl = cancelUrl ?? throw new global::System.ArgumentNullException(nameof(cancelUrl));
             this.RerunUrl = rerunUrl ?? throw new global::System.ArgumentNullException(nameof(rerunUrl));
             this.WorkflowUrl = workflowUrl ?? throw new global::System.ArgumentNullException(nameof(workflowUrl));
-            this.HeadCommit = headCommit ?? throw new global::System.ArgumentNullException(nameof(headCommit));
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.HeadRepository = headRepository ?? throw new global::System.ArgumentNullException(nameof(headRepository));
             this.DisplayTitle = displayTitle ?? throw new global::System.ArgumentNullException(nameof(displayTitle));
             this.Name = name;
             this.CheckSuiteId = checkSuiteId;
             this.CheckSuiteNodeId = checkSuiteNodeId;
+            this.HeadBranch = headBranch;
             this.RunAttempt = runAttempt;
             this.ReferencedWorkflows = referencedWorkflows;
+            this.Status = status;
+            this.Conclusion = conclusion;
+            this.PullRequests = pullRequests;
             this.Actor = actor;
             this.TriggeringActor = triggeringActor;
             this.RunStartedAt = runStartedAt;
             this.PreviousAttemptUrl = previousAttemptUrl;
+            this.HeadCommit = headCommit;
             this.HeadRepositoryId = headRepositoryId;
         }
 

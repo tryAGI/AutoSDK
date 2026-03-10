@@ -94,8 +94,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("unit_name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? UnitName { get; set; }
+        public string? UnitName { get; set; }
 
         /// <summary>
         /// Example: published
@@ -173,9 +172,9 @@ namespace G
             int yearlyPriceInCents,
             global::G.MarketplaceListingPlanPriceModel priceModel,
             bool hasFreeTrial,
-            string? unitName,
             string state,
-            global::System.Collections.Generic.IList<string> bullets)
+            global::System.Collections.Generic.IList<string> bullets,
+            string? unitName)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.AccountsUrl = accountsUrl ?? throw new global::System.ArgumentNullException(nameof(accountsUrl));
@@ -187,9 +186,9 @@ namespace G
             this.YearlyPriceInCents = yearlyPriceInCents;
             this.PriceModel = priceModel;
             this.HasFreeTrial = hasFreeTrial;
-            this.UnitName = unitName ?? throw new global::System.ArgumentNullException(nameof(unitName));
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
             this.Bullets = bullets ?? throw new global::System.ArgumentNullException(nameof(bullets));
+            this.UnitName = unitName;
         }
 
         /// <summary>

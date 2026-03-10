@@ -32,14 +32,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("parameters", Required = global::Newtonsoft.Json.Required.Always)]
-        public object? Parameters { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("parameters")]
+        public object? Parameters { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("strict", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool? Strict { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("strict")]
+        public bool? Strict { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,16 +62,16 @@ namespace G
         /// <param name="strict"></param>
         public FunctionTool(
             string name,
+            string? description,
             object? parameters,
             bool? strict,
-            string? description,
             global::G.FunctionToolType type = global::G.FunctionToolType.Function)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
-            this.Strict = strict ?? throw new global::System.ArgumentNullException(nameof(strict));
             this.Type = type;
             this.Description = description;
+            this.Parameters = parameters;
+            this.Strict = strict;
         }
 
         /// <summary>

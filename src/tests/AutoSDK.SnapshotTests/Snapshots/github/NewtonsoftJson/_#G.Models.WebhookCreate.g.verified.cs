@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// The repository's current description.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
@@ -121,24 +121,24 @@ namespace G
         /// A GitHub user.
         /// </param>
         public WebhookCreate(
-            string? description,
             string masterBranch,
             string pusherType,
             string @ref,
             global::G.WebhookCreateRefType refType,
             global::G.RepositoryWebhooks repository,
             global::G.SimpleUser sender,
+            string? description,
             global::G.EnterpriseWebhooks? enterprise,
             global::G.SimpleInstallation? installation,
             global::G.OrganizationSimpleWebhooks? organization)
         {
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.MasterBranch = masterBranch ?? throw new global::System.ArgumentNullException(nameof(masterBranch));
             this.PusherType = pusherType ?? throw new global::System.ArgumentNullException(nameof(pusherType));
             this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
             this.RefType = refType;
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
+            this.Description = description;
             this.Enterprise = enterprise;
             this.Installation = installation;
             this.Organization = organization;

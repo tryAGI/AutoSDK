@@ -14,8 +14,8 @@ namespace G
         /// Example: This is a test.
         /// </summary>
         /// <example>This is a test.</example>
-        [global::Newtonsoft.Json.JsonProperty("inputs", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Inputs { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("inputs")]
+        public string? Inputs { get; set; }
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
             global::G.GenerateTextRequestParameters? parameters,
             global::G.GenerateTextRequestOptions? options)
         {
-            this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
+            this.Inputs = inputs;
             this.Parameters = parameters;
             this.Options = options;
         }

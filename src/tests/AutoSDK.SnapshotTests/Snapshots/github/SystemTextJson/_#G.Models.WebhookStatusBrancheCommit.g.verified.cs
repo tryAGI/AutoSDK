@@ -13,15 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sha")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Sha { get; set; }
+        public string? Sha { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Url { get; set; }
+        public string? Url { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,8 +39,8 @@ namespace G
             string? sha,
             string? url)
         {
-            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Sha = sha;
+            this.Url = url;
         }
 
         /// <summary>

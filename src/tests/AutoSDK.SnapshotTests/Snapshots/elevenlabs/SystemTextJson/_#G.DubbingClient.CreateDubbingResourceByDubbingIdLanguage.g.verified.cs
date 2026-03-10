@@ -228,8 +228,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.LanguageAddedResponse> CreateDubbingResourceByDubbingIdLanguageAsync(
             string dubbingId,
-            string? language,
             string? xiApiKey = default,
+            string? language = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodyAddALanguageToTheResourceV1DubbingResourceDubbingIdLanguagePost

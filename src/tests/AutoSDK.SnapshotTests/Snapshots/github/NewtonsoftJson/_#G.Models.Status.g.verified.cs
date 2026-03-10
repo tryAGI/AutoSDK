@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("avatar_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? AvatarUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("avatar_url")]
+        public string? AvatarUrl { get; set; }
 
         /// <summary>
         /// 
@@ -42,14 +42,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("target_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? TargetUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("target_url")]
+        public string? TargetUrl { get; set; }
 
         /// <summary>
         /// 
@@ -72,8 +72,8 @@ namespace G
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("creator", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? Creator { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("creator")]
+        public global::G.NullableSimpleUser? Creator { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -99,28 +99,28 @@ namespace G
         /// </param>
         public Status(
             string url,
-            string? avatarUrl,
             int id,
             string nodeId,
             string state,
-            string? description,
-            string? targetUrl,
             string context,
             string createdAt,
             string updatedAt,
+            string? avatarUrl,
+            string? description,
+            string? targetUrl,
             global::G.NullableSimpleUser? creator)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.TargetUrl = targetUrl ?? throw new global::System.ArgumentNullException(nameof(targetUrl));
             this.Context = context ?? throw new global::System.ArgumentNullException(nameof(context));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
-            this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
+            this.AvatarUrl = avatarUrl;
+            this.Description = description;
+            this.TargetUrl = targetUrl;
+            this.Creator = creator;
         }
 
         /// <summary>

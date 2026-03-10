@@ -24,20 +24,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("summary", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Summary { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("summary")]
+        public string? Summary { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Text { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("text")]
+        public string? Text { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("title", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Title { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("title")]
+        public string? Title { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,9 +62,9 @@ namespace G
         {
             this.AnnotationsCount = annotationsCount;
             this.AnnotationsUrl = annotationsUrl ?? throw new global::System.ArgumentNullException(nameof(annotationsUrl));
-            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
-            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Summary = summary;
+            this.Text = text;
+            this.Title = title;
         }
 
         /// <summary>

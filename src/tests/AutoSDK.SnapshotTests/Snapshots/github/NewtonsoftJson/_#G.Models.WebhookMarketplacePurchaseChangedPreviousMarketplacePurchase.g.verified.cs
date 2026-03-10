@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("free_trial_ends_on", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? FreeTrialEndsOn { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("free_trial_ends_on")]
+        public string? FreeTrialEndsOn { get; set; }
 
         /// <summary>
         /// 
@@ -36,8 +36,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("on_free_trial", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool? OnFreeTrial { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("on_free_trial")]
+        public bool? OnFreeTrial { get; set; }
 
         /// <summary>
         /// 
@@ -70,19 +70,19 @@ namespace G
         public WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase(
             global::G.WebhookMarketplacePurchaseChangedPreviousMarketplacePurchaseAccount account,
             string billingCycle,
-            string? freeTrialEndsOn,
-            bool? onFreeTrial,
             global::G.WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan plan,
             int unitCount,
-            string? nextBillingDate)
+            string? freeTrialEndsOn,
+            string? nextBillingDate,
+            bool? onFreeTrial)
         {
             this.Account = account ?? throw new global::System.ArgumentNullException(nameof(account));
             this.BillingCycle = billingCycle ?? throw new global::System.ArgumentNullException(nameof(billingCycle));
-            this.FreeTrialEndsOn = freeTrialEndsOn ?? throw new global::System.ArgumentNullException(nameof(freeTrialEndsOn));
-            this.OnFreeTrial = onFreeTrial;
             this.Plan = plan ?? throw new global::System.ArgumentNullException(nameof(plan));
             this.UnitCount = unitCount;
+            this.FreeTrialEndsOn = freeTrialEndsOn;
             this.NextBillingDate = nextBillingDate;
+            this.OnFreeTrial = onFreeTrial;
         }
 
         /// <summary>

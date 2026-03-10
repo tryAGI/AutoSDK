@@ -37,8 +37,8 @@ namespace G
         /// * `"stop_sequence"`: we reached a stop sequence — either provided by you via the `stop_sequences` parameter, or a stop sequence built into the model<br/>
         /// * `"max_tokens"`: we exceeded `max_tokens_to_sample` or the model's maximum
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("stop_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? StopReason { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("stop_reason")]
+        public string? StopReason { get; set; }
 
         /// <summary>
         /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
@@ -79,15 +79,15 @@ namespace G
         public CompletionResponse(
             string id,
             string completion,
-            string? stopReason,
             global::G.Model model,
+            string? stopReason,
             global::G.CompletionResponseType type = global::G.CompletionResponseType.Completion)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Completion = completion ?? throw new global::System.ArgumentNullException(nameof(completion));
-            this.StopReason = stopReason ?? throw new global::System.ArgumentNullException(nameof(stopReason));
             this.Model = model;
             this.Type = type;
+            this.StopReason = stopReason;
         }
 
         /// <summary>

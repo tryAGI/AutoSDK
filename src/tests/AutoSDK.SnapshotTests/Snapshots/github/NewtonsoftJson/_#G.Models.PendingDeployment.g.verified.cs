@@ -28,8 +28,8 @@ namespace G
         /// Example: 2020-11-23T22:00:40Z
         /// </summary>
         /// <example>2020-11-23T22:00:40Z</example>
-        [global::Newtonsoft.Json.JsonProperty("wait_timer_started_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? WaitTimerStartedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("wait_timer_started_at")]
+        public global::System.DateTime? WaitTimerStartedAt { get; set; }
 
         /// <summary>
         /// Whether the currently authenticated user can approve the deployment<br/>
@@ -73,15 +73,15 @@ namespace G
         public PendingDeployment(
             global::G.PendingDeploymentEnvironment environment,
             int waitTimer,
-            global::System.DateTime? waitTimerStartedAt,
             bool currentUserCanApprove,
-            global::System.Collections.Generic.IList<global::G.PendingDeploymentReviewer> reviewers)
+            global::System.Collections.Generic.IList<global::G.PendingDeploymentReviewer> reviewers,
+            global::System.DateTime? waitTimerStartedAt)
         {
             this.Environment = environment ?? throw new global::System.ArgumentNullException(nameof(environment));
             this.WaitTimer = waitTimer;
-            this.WaitTimerStartedAt = waitTimerStartedAt;
             this.CurrentUserCanApprove = currentUserCanApprove;
             this.Reviewers = reviewers ?? throw new global::System.ArgumentNullException(nameof(reviewers));
+            this.WaitTimerStartedAt = waitTimerStartedAt;
         }
 
         /// <summary>

@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("from", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool? From { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("from")]
+        public bool? From { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

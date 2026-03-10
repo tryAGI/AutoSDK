@@ -42,8 +42,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("closed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? ClosedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("closed_at")]
+        public string? ClosedAt { get; set; }
 
         /// <summary>
         /// 
@@ -208,13 +208,13 @@ namespace G
         /// <param name="url"></param>
         /// <param name="user"></param>
         public WebhookIssuesClosedIssueVariant2(
-            string? closedAt,
             global::G.WebhookIssuesClosedIssueVariant2State state,
             string? activeLockReason,
             object? assignee,
             global::System.Collections.Generic.IList<object>? assignees,
             string? authorAssociation,
             string? body,
+            string? closedAt,
             int? comments,
             string? commentsUrl,
             string? createdAt,
@@ -236,13 +236,13 @@ namespace G
             string? url,
             global::G.WebhookIssuesClosedIssueVariant2User? user)
         {
-            this.ClosedAt = closedAt ?? throw new global::System.ArgumentNullException(nameof(closedAt));
             this.State = state;
             this.ActiveLockReason = activeLockReason;
             this.Assignee = assignee;
             this.Assignees = assignees;
             this.AuthorAssociation = authorAssociation;
             this.Body = body;
+            this.ClosedAt = closedAt;
             this.Comments = comments;
             this.CommentsUrl = commentsUrl;
             this.CreatedAt = createdAt;

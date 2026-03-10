@@ -42,14 +42,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("commit_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? CommitId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("commit_id")]
+        public string? CommitId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("commit_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? CommitUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("commit_url")]
+        public string? CommitUrl { get; set; }
 
         /// <summary>
         /// 
@@ -60,8 +60,8 @@ namespace G
         /// <summary>
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("performed_via_github_app", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableIntegration? PerformedViaGithubApp { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("performed_via_github_app")]
+        public global::G.NullableIntegration? PerformedViaGithubApp { get; set; }
 
         /// <summary>
         /// A GitHub user.
@@ -118,11 +118,11 @@ namespace G
             string url,
             global::G.SimpleUser actor,
             string @event,
+            string createdAt,
+            global::G.SimpleUser reviewRequester,
             string? commitId,
             string? commitUrl,
-            string createdAt,
             global::G.NullableIntegration? performedViaGithubApp,
-            global::G.SimpleUser reviewRequester,
             global::G.Team? requestedTeam,
             global::G.SimpleUser? requestedReviewer)
         {
@@ -131,11 +131,11 @@ namespace G
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
             this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));
-            this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
-            this.CommitUrl = commitUrl ?? throw new global::System.ArgumentNullException(nameof(commitUrl));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
-            this.PerformedViaGithubApp = performedViaGithubApp ?? throw new global::System.ArgumentNullException(nameof(performedViaGithubApp));
             this.ReviewRequester = reviewRequester ?? throw new global::System.ArgumentNullException(nameof(reviewRequester));
+            this.CommitId = commitId;
+            this.CommitUrl = commitUrl;
+            this.PerformedViaGithubApp = performedViaGithubApp;
             this.RequestedTeam = requestedTeam;
             this.RequestedReviewer = requestedReviewer;
         }

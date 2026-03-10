@@ -48,15 +48,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? CommitId { get; set; }
+        public string? CommitId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? CommitUrl { get; set; }
+        public string? CommitUrl { get; set; }
 
         /// <summary>
         /// 
@@ -69,8 +67,7 @@ namespace G
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("performed_via_github_app")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableIntegration? PerformedViaGithubApp { get; set; }
+        public global::G.NullableIntegration? PerformedViaGithubApp { get; set; }
 
         /// <summary>
         /// 
@@ -110,9 +107,9 @@ namespace G
             string url,
             global::G.SimpleUser actor,
             string @event,
+            string createdAt,
             string? commitId,
             string? commitUrl,
-            string createdAt,
             global::G.NullableIntegration? performedViaGithubApp,
             string? stateReason)
         {
@@ -121,10 +118,10 @@ namespace G
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
             this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));
-            this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
-            this.CommitUrl = commitUrl ?? throw new global::System.ArgumentNullException(nameof(commitUrl));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
-            this.PerformedViaGithubApp = performedViaGithubApp ?? throw new global::System.ArgumentNullException(nameof(performedViaGithubApp));
+            this.CommitId = commitId;
+            this.CommitUrl = commitUrl;
+            this.PerformedViaGithubApp = performedViaGithubApp;
             this.StateReason = stateReason;
         }
 

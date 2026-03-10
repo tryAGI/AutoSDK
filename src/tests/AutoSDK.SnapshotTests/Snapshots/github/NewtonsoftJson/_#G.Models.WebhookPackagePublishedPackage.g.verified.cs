@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? CreatedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("created_at")]
+        public string? CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -54,8 +54,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPackagePublishedPackageOwner? Owner { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("owner")]
+        public global::G.WebhookPackagePublishedPackageOwner? Owner { get; set; }
 
         /// <summary>
         /// 
@@ -66,20 +66,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("package_version", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPackagePublishedPackagePackageVersion? PackageVersion { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("package_version")]
+        public global::G.WebhookPackagePublishedPackagePackageVersion? PackageVersion { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("registry", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPackagePublishedPackageRegistry? Registry { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("registry")]
+        public global::G.WebhookPackagePublishedPackageRegistry? Registry { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? UpdatedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("updated_at")]
+        public string? UpdatedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -103,31 +103,31 @@ namespace G
         /// <param name="registry"></param>
         /// <param name="updatedAt"></param>
         public WebhookPackagePublishedPackage(
-            string? createdAt,
-            string? description,
             string ecosystem,
             string htmlUrl,
             int id,
             string name,
             string @namespace,
-            global::G.WebhookPackagePublishedPackageOwner? owner,
             string packageType,
+            string? createdAt,
+            string? description,
+            global::G.WebhookPackagePublishedPackageOwner? owner,
             global::G.WebhookPackagePublishedPackagePackageVersion? packageVersion,
             global::G.WebhookPackagePublishedPackageRegistry? registry,
             string? updatedAt)
         {
-            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Ecosystem = ecosystem ?? throw new global::System.ArgumentNullException(nameof(ecosystem));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Namespace = @namespace ?? throw new global::System.ArgumentNullException(nameof(@namespace));
-            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.PackageType = packageType ?? throw new global::System.ArgumentNullException(nameof(packageType));
-            this.PackageVersion = packageVersion ?? throw new global::System.ArgumentNullException(nameof(packageVersion));
-            this.Registry = registry ?? throw new global::System.ArgumentNullException(nameof(registry));
-            this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
+            this.CreatedAt = createdAt;
+            this.Description = description;
+            this.Owner = owner;
+            this.PackageVersion = packageVersion;
+            this.Registry = registry;
+            this.UpdatedAt = updatedAt;
         }
 
         /// <summary>

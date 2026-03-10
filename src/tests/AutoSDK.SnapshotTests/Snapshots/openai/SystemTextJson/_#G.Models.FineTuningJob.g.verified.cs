@@ -28,23 +28,20 @@ namespace G
         /// For fine-tuning jobs that have `failed`, this will contain more information on the cause of the failure.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.FineTuningJobError? Error { get; set; }
+        public global::G.FineTuningJobError? Error { get; set; }
 
         /// <summary>
         /// The name of the fine-tuned model that is being created. The value will be null if the fine-tuning job is still running.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fine_tuned_model")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? FineTunedModel { get; set; }
+        public string? FineTunedModel { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the fine-tuning job was finished. The value will be null if the fine-tuning job is still running.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finished_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? FinishedAt { get; set; }
+        public global::System.DateTimeOffset? FinishedAt { get; set; }
 
         /// <summary>
         /// The hyperparameters used for the fine-tuning job. This value will only be returned when running `supervised` jobs.
@@ -93,8 +90,7 @@ namespace G
         /// The total number of billable tokens processed by this fine-tuning job. The value will be null if the fine-tuning job is still running.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trained_tokens")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? TrainedTokens { get; set; }
+        public int? TrainedTokens { get; set; }
 
         /// <summary>
         /// The file ID used for training. You can retrieve the training data with the [Files API](/docs/api-reference/files/retrieve-contents).
@@ -107,8 +103,7 @@ namespace G
         /// The file ID used for validation. You can retrieve the validation results with the [Files API](/docs/api-reference/files/retrieve-contents).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("validation_file")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? ValidationFile { get; set; }
+        public string? ValidationFile { get; set; }
 
         /// <summary>
         /// A list of integrations to enable for this fine-tuning job.
@@ -222,19 +217,19 @@ namespace G
         public FineTuningJob(
             string id,
             global::System.DateTimeOffset createdAt,
-            global::G.FineTuningJobError? error,
-            string? fineTunedModel,
-            global::System.DateTimeOffset? finishedAt,
             global::G.FineTuningJobHyperparameters hyperparameters,
             string model,
             string organizationId,
             global::System.Collections.Generic.IList<string> resultFiles,
             global::G.FineTuningJobStatus status,
-            int? trainedTokens,
             string trainingFile,
-            string? validationFile,
             int seed,
+            global::G.FineTuningJobError? error,
+            string? fineTunedModel,
+            global::System.DateTimeOffset? finishedAt,
             global::G.FineTuningJobObject @object,
+            int? trainedTokens,
+            string? validationFile,
             global::System.Collections.Generic.IList<global::G.FineTuningIntegration>? integrations,
             global::System.DateTimeOffset? estimatedFinish,
             global::G.FineTuneMethod? method,
@@ -242,19 +237,19 @@ namespace G
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
-            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
-            this.FineTunedModel = fineTunedModel ?? throw new global::System.ArgumentNullException(nameof(fineTunedModel));
-            this.FinishedAt = finishedAt;
             this.Hyperparameters = hyperparameters ?? throw new global::System.ArgumentNullException(nameof(hyperparameters));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.OrganizationId = organizationId ?? throw new global::System.ArgumentNullException(nameof(organizationId));
             this.ResultFiles = resultFiles ?? throw new global::System.ArgumentNullException(nameof(resultFiles));
             this.Status = status;
-            this.TrainedTokens = trainedTokens;
             this.TrainingFile = trainingFile ?? throw new global::System.ArgumentNullException(nameof(trainingFile));
-            this.ValidationFile = validationFile ?? throw new global::System.ArgumentNullException(nameof(validationFile));
             this.Seed = seed;
+            this.Error = error;
+            this.FineTunedModel = fineTunedModel;
+            this.FinishedAt = finishedAt;
             this.Object = @object;
+            this.TrainedTokens = trainedTokens;
+            this.ValidationFile = validationFile;
             this.Integrations = integrations;
             this.EstimatedFinish = estimatedFinish;
             this.Method = method;

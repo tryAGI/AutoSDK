@@ -27,8 +27,8 @@ namespace G
         /// Example: config.yaml
         /// </summary>
         /// <example>config.yaml</example>
-        [global::Newtonsoft.Json.JsonProperty("single_file_name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? SingleFileName { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("single_file_name")]
+        public string? SingleFileName { get; set; }
 
         /// <summary>
         /// Example: true
@@ -91,17 +91,17 @@ namespace G
         public NullableScopedInstallation(
             global::G.AppPermissions permissions,
             global::G.NullableScopedInstallationRepositorySelection repositorySelection,
-            string? singleFileName,
             string repositoriesUrl,
             global::G.SimpleUser account,
+            string? singleFileName,
             bool? hasMultipleSingleFiles,
             global::System.Collections.Generic.IList<string>? singleFilePaths)
         {
             this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
             this.RepositorySelection = repositorySelection;
-            this.SingleFileName = singleFileName ?? throw new global::System.ArgumentNullException(nameof(singleFileName));
             this.RepositoriesUrl = repositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(repositoriesUrl));
             this.Account = account ?? throw new global::System.ArgumentNullException(nameof(account));
+            this.SingleFileName = singleFileName;
             this.HasMultipleSingleFiles = hasMultipleSingleFiles;
             this.SingleFilePaths = singleFilePaths;
         }

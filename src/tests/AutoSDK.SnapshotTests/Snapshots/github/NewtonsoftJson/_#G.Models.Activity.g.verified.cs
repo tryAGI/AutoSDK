@@ -66,8 +66,8 @@ namespace G
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("actor", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? Actor { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("actor")]
+        public global::G.NullableSimpleUser? Actor { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -124,7 +124,7 @@ namespace G
             this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
             this.Timestamp = timestamp;
             this.ActivityType = activityType;
-            this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
+            this.Actor = actor;
         }
 
         /// <summary>

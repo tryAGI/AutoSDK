@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? User { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("user")]
+        public global::G.NullableSimpleUser? User { get; set; }
 
         /// <summary>
         /// 
@@ -101,7 +101,7 @@ namespace G
             this.Role = role;
             this.OrganizationUrl = organizationUrl ?? throw new global::System.ArgumentNullException(nameof(organizationUrl));
             this.Organization = organization ?? throw new global::System.ArgumentNullException(nameof(organization));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.User = user;
             this.Permissions = permissions;
         }
 

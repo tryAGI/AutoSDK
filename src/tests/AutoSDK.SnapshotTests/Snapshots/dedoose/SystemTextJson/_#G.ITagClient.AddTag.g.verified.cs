@@ -37,11 +37,11 @@ namespace G
             string title,
             string description,
             bool isWeighted,
-            double? weightMin,
-            double? weightMax,
-            double? weightDefault,
-            bool? allowDecimalWeights,
             int color,
+            double? weightMin = default,
+            double? weightMax = default,
+            double? weightDefault = default,
+            bool? allowDecimalWeights = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// Description of the team
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -120,7 +120,6 @@ namespace G
         /// URL for the team
         /// </param>
         public WebhookPullRequestUnassignedPullRequestRequestedReviewerTeam(
-            string? description,
             string htmlUrl,
             int id,
             string membersUrl,
@@ -132,9 +131,9 @@ namespace G
             string slug,
             string url,
             bool? deleted,
+            string? description,
             global::G.WebhookPullRequestUnassignedPullRequestRequestedReviewerTeamParent? parent)
         {
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.MembersUrl = membersUrl ?? throw new global::System.ArgumentNullException(nameof(membersUrl));
@@ -146,6 +145,7 @@ namespace G
             this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Deleted = deleted;
+            this.Description = description;
             this.Parent = parent;
         }
 

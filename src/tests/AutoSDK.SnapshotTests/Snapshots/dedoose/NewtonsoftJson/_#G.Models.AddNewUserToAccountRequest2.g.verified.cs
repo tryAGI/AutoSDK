@@ -54,8 +54,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("groupId", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Guid? GroupId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("groupId")]
+        public global::System.Guid? GroupId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

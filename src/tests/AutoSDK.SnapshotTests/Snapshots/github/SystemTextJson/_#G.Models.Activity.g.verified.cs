@@ -75,8 +75,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? Actor { get; set; }
+        public global::G.NullableSimpleUser? Actor { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -136,7 +135,7 @@ namespace G
             this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
             this.Timestamp = timestamp;
             this.ActivityType = activityType;
-            this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
+            this.Actor = actor;
         }
 
         /// <summary>

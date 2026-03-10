@@ -60,8 +60,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("finished_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? FinishedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("finished_at")]
+        public global::System.DateTime? FinishedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -90,9 +90,9 @@ namespace G
             global::G.BulkExportRunStatus status,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            global::System.DateTime? finishedAt,
             int? retryNumber,
-            object? errors)
+            object? errors,
+            global::System.DateTime? finishedAt)
         {
             this.BulkExportId = bulkExportId;
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
@@ -100,9 +100,9 @@ namespace G
             this.Status = status;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.FinishedAt = finishedAt ?? throw new global::System.ArgumentNullException(nameof(finishedAt));
             this.RetryNumber = retryNumber;
             this.Errors = errors;
+            this.FinishedAt = finishedAt;
         }
 
         /// <summary>

@@ -46,8 +46,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? User { get; set; }
+        public global::G.NullableSimpleUser? User { get; set; }
 
         /// <summary>
         /// Example: 2011-04-18T23:23:56Z
@@ -118,19 +117,19 @@ namespace G
             string nodeId,
             string url,
             string body,
-            global::G.NullableSimpleUser? user,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            global::G.AuthorAssociation authorAssociation)
+            global::G.AuthorAssociation authorAssociation,
+            global::G.NullableSimpleUser? user)
         {
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.AuthorAssociation = authorAssociation;
+            this.User = user;
         }
 
         /// <summary>

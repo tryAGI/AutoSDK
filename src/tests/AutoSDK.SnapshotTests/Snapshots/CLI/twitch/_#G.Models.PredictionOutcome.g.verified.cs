@@ -41,8 +41,7 @@ namespace G
         /// A list of viewers who were the top predictors; otherwise, **null** if none.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_predictors")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.PredictionOutcomeTopPredictor>? TopPredictors { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PredictionOutcomeTopPredictor>? TopPredictors { get; set; }
 
         /// <summary>
         /// The color that visually identifies this outcome in the UX. Possible values are:  <br/>
@@ -97,15 +96,15 @@ namespace G
             string title,
             int users,
             int channelPoints,
-            global::System.Collections.Generic.IList<global::G.PredictionOutcomeTopPredictor>? topPredictors,
-            global::G.PredictionOutcomeColor color)
+            global::G.PredictionOutcomeColor color,
+            global::System.Collections.Generic.IList<global::G.PredictionOutcomeTopPredictor>? topPredictors)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Users = users;
             this.ChannelPoints = channelPoints;
-            this.TopPredictors = topPredictors ?? throw new global::System.ArgumentNullException(nameof(topPredictors));
             this.Color = color;
+            this.TopPredictors = topPredictors;
         }
 
         /// <summary>

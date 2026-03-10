@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("dismissal_message", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? DismissalMessage { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("dismissal_message")]
+        public string? DismissalMessage { get; set; }
 
         /// <summary>
         /// 
@@ -54,7 +54,7 @@ namespace G
         {
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
             this.ReviewId = reviewId;
-            this.DismissalMessage = dismissalMessage ?? throw new global::System.ArgumentNullException(nameof(dismissalMessage));
+            this.DismissalMessage = dismissalMessage;
             this.DismissalCommitId = dismissalCommitId;
         }
 

@@ -90,8 +90,8 @@ namespace G
         /// Example: A great organization
         /// </summary>
         /// <example>A great organization</example>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// Example: github
@@ -345,8 +345,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("archived_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? ArchivedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("archived_at")]
+        public global::System.DateTime? ArchivedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -508,7 +508,6 @@ namespace G
             string membersUrl,
             string publicMembersUrl,
             string avatarUrl,
-            string? description,
             bool hasOrganizationProjects,
             bool hasRepositoryProjects,
             int publicRepos,
@@ -519,7 +518,7 @@ namespace G
             global::System.DateTime createdAt,
             string type,
             global::System.DateTime updatedAt,
-            global::System.DateTime? archivedAt,
+            string? description,
             string? name,
             string? company,
             string? blog,
@@ -545,7 +544,8 @@ namespace G
             bool? membersCanCreatePublicPages,
             bool? membersCanCreatePrivatePages,
             bool? membersCanForkPrivateRepositories,
-            bool? webCommitSignoffRequired)
+            bool? webCommitSignoffRequired,
+            global::System.DateTime? archivedAt)
         {
             this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
             this.Id = id;
@@ -558,7 +558,6 @@ namespace G
             this.MembersUrl = membersUrl ?? throw new global::System.ArgumentNullException(nameof(membersUrl));
             this.PublicMembersUrl = publicMembersUrl ?? throw new global::System.ArgumentNullException(nameof(publicMembersUrl));
             this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.HasOrganizationProjects = hasOrganizationProjects;
             this.HasRepositoryProjects = hasRepositoryProjects;
             this.PublicRepos = publicRepos;
@@ -569,7 +568,7 @@ namespace G
             this.CreatedAt = createdAt;
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.UpdatedAt = updatedAt;
-            this.ArchivedAt = archivedAt;
+            this.Description = description;
             this.Name = name;
             this.Company = company;
             this.Blog = blog;
@@ -596,6 +595,7 @@ namespace G
             this.MembersCanCreatePrivatePages = membersCanCreatePrivatePages;
             this.MembersCanForkPrivateRepositories = membersCanForkPrivateRepositories;
             this.WebCommitSignoffRequired = webCommitSignoffRequired;
+            this.ArchivedAt = archivedAt;
         }
 
         /// <summary>

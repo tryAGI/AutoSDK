@@ -20,22 +20,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Email { get; set; }
+        public string? Email { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("failed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? FailedAt { get; set; }
+        public global::System.DateTime? FailedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("failed_reason")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? FailedReason { get; set; }
+        public string? FailedReason { get; set; }
 
         /// <summary>
         /// 
@@ -55,15 +52,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inviter")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookOrganizationMemberInvitedInvitationInviter? Inviter { get; set; }
+        public global::G.WebhookOrganizationMemberInvitedInvitationInviter? Inviter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("login")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Login { get; set; }
+        public string? Login { get; set; }
 
         /// <summary>
         /// 
@@ -118,29 +113,29 @@ namespace G
 #endif
         public WebhookOrganizationMemberInvitedInvitation(
             global::System.DateTime createdAt,
-            string? email,
-            global::System.DateTime? failedAt,
-            string? failedReason,
             double id,
             string invitationTeamsUrl,
-            global::G.WebhookOrganizationMemberInvitedInvitationInviter? inviter,
-            string? login,
             string nodeId,
             string role,
             double teamCount,
+            string? email,
+            global::System.DateTime? failedAt,
+            string? failedReason,
+            global::G.WebhookOrganizationMemberInvitedInvitationInviter? inviter,
+            string? login,
             string? invitationSource)
         {
             this.CreatedAt = createdAt;
-            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
-            this.FailedAt = failedAt;
-            this.FailedReason = failedReason ?? throw new global::System.ArgumentNullException(nameof(failedReason));
             this.Id = id;
             this.InvitationTeamsUrl = invitationTeamsUrl ?? throw new global::System.ArgumentNullException(nameof(invitationTeamsUrl));
-            this.Inviter = inviter ?? throw new global::System.ArgumentNullException(nameof(inviter));
-            this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Role = role ?? throw new global::System.ArgumentNullException(nameof(role));
             this.TeamCount = teamCount;
+            this.Email = email;
+            this.FailedAt = failedAt;
+            this.FailedReason = failedReason;
+            this.Inviter = inviter;
+            this.Login = login;
             this.InvitationSource = invitationSource;
         }
 

@@ -20,29 +20,25 @@ namespace G
         /// X coordinate of top-left corner of the extracted image
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_left_x")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? TopLeftX { get; set; }
+        public int? TopLeftX { get; set; }
 
         /// <summary>
         /// Y coordinate of top-left corner of the extracted image
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_left_y")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? TopLeftY { get; set; }
+        public int? TopLeftY { get; set; }
 
         /// <summary>
         /// X coordinate of bottom-right corner of the extracted image
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bottom_right_x")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? BottomRightX { get; set; }
+        public int? BottomRightX { get; set; }
 
         /// <summary>
         /// Y coordinate of bottom-right corner of the extracted image
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bottom_right_y")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? BottomRightY { get; set; }
+        public int? BottomRightY { get; set; }
 
         /// <summary>
         /// Base64 string of the extracted image
@@ -89,10 +85,10 @@ namespace G
             string? imageBase64)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.TopLeftX = topLeftX ?? throw new global::System.ArgumentNullException(nameof(topLeftX));
-            this.TopLeftY = topLeftY ?? throw new global::System.ArgumentNullException(nameof(topLeftY));
-            this.BottomRightX = bottomRightX ?? throw new global::System.ArgumentNullException(nameof(bottomRightX));
-            this.BottomRightY = bottomRightY ?? throw new global::System.ArgumentNullException(nameof(bottomRightY));
+            this.TopLeftX = topLeftX;
+            this.TopLeftY = topLeftY;
+            this.BottomRightX = bottomRightX;
+            this.BottomRightY = bottomRightY;
             this.ImageBase64 = imageBase64;
         }
 

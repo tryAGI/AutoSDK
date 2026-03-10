@@ -40,8 +40,7 @@ namespace G
         /// </summary>
         /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("external_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? ExternalId { get; set; }
+        public string? ExternalId { get; set; }
 
         /// <summary>
         /// Example: https://api.github.com/repos/github/hello-world/check-runs/4
@@ -56,16 +55,14 @@ namespace G
         /// </summary>
         /// <example>https://github.com/github/hello-world/runs/4</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? HtmlUrl { get; set; }
+        public string? HtmlUrl { get; set; }
 
         /// <summary>
         /// Example: https://example.com
         /// </summary>
         /// <example>https://example.com</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("details_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? DetailsUrl { get; set; }
+        public string? DetailsUrl { get; set; }
 
         /// <summary>
         /// The phase of the lifecycle that the check is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check runs.<br/>
@@ -83,24 +80,21 @@ namespace G
         /// <example>neutral</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CheckRunConclusionJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CheckRunConclusion? Conclusion { get; set; }
+        public global::G.CheckRunConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// Example: 2018-05-04T01:14:52Z
         /// </summary>
         /// <example>2018-05-04T01:14:52Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("started_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? StartedAt { get; set; }
+        public global::System.DateTime? StartedAt { get; set; }
 
         /// <summary>
         /// Example: 2018-05-04T01:14:52Z
         /// </summary>
         /// <example>2018-05-04T01:14:52Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? CompletedAt { get; set; }
+        public global::System.DateTime? CompletedAt { get; set; }
 
         /// <summary>
         /// 
@@ -122,15 +116,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("check_suite")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CheckRunCheckSuite? CheckSuite { get; set; }
+        public global::G.CheckRunCheckSuite? CheckSuite { get; set; }
 
         /// <summary>
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("app")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableIntegration? App { get; set; }
+        public global::G.NullableIntegration? App { get; set; }
 
         /// <summary>
         /// Pull requests that are open with a `head_sha` or `head_branch` that matches the check. The returned pull requests do not necessarily indicate pull requests that triggered the check.
@@ -212,37 +204,37 @@ namespace G
             long id,
             string headSha,
             string nodeId,
-            string? externalId,
             string url,
+            global::G.CheckRunStatus status,
+            global::G.CheckRunOutput output,
+            string name,
+            global::System.Collections.Generic.IList<global::G.PullRequestMinimal> pullRequests,
+            string? externalId,
             string? htmlUrl,
             string? detailsUrl,
-            global::G.CheckRunStatus status,
             global::G.CheckRunConclusion? conclusion,
             global::System.DateTime? startedAt,
             global::System.DateTime? completedAt,
-            global::G.CheckRunOutput output,
-            string name,
             global::G.CheckRunCheckSuite? checkSuite,
             global::G.NullableIntegration? app,
-            global::System.Collections.Generic.IList<global::G.PullRequestMinimal> pullRequests,
             global::G.DeploymentSimple? deployment)
         {
             this.Id = id;
             this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.ExternalId = externalId ?? throw new global::System.ArgumentNullException(nameof(externalId));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.DetailsUrl = detailsUrl ?? throw new global::System.ArgumentNullException(nameof(detailsUrl));
             this.Status = status;
+            this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.PullRequests = pullRequests ?? throw new global::System.ArgumentNullException(nameof(pullRequests));
+            this.ExternalId = externalId;
+            this.HtmlUrl = htmlUrl;
+            this.DetailsUrl = detailsUrl;
             this.Conclusion = conclusion;
             this.StartedAt = startedAt;
             this.CompletedAt = completedAt;
-            this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.CheckSuite = checkSuite ?? throw new global::System.ArgumentNullException(nameof(checkSuite));
-            this.App = app ?? throw new global::System.ArgumentNullException(nameof(app));
-            this.PullRequests = pullRequests ?? throw new global::System.ArgumentNullException(nameof(pullRequests));
+            this.CheckSuite = checkSuite;
+            this.App = app;
             this.Deployment = deployment;
         }
 

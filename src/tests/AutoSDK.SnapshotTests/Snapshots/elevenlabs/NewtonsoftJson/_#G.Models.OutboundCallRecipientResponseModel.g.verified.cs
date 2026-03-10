@@ -42,8 +42,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("conversation_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? ConversationId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("conversation_id")]
+        public string? ConversationId { get; set; }
 
         /// <summary>
         /// 
@@ -81,7 +81,7 @@ namespace G
             this.Status = status;
             this.CreatedAtUnix = createdAtUnix;
             this.UpdatedAtUnix = updatedAtUnix;
-            this.ConversationId = conversationId ?? throw new global::System.ArgumentNullException(nameof(conversationId));
+            this.ConversationId = conversationId;
             this.ConversationInitiationClientData = conversationInitiationClientData;
         }
 

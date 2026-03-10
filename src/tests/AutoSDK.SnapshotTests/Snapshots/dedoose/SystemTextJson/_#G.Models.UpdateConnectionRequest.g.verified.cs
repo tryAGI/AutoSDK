@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("userId")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid? UserId { get; set; }
+        public global::System.Guid? UserId { get; set; }
 
         /// <summary>
         /// 
@@ -27,8 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projectId")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid? ProjectId { get; set; }
+        public global::System.Guid? ProjectId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,12 +44,12 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UpdateConnectionRequest(
-            global::System.Guid? userId,
             global::System.Guid connectionKey,
+            global::System.Guid? userId,
             global::System.Guid? projectId)
         {
-            this.UserId = userId;
             this.ConnectionKey = connectionKey;
+            this.UserId = userId;
             this.ProjectId = projectId;
         }
 

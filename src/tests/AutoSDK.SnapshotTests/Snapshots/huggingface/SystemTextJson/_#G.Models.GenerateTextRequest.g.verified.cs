@@ -15,8 +15,7 @@ namespace G
         /// </summary>
         /// <example>This is a test.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Inputs { get; set; }
+        public string? Inputs { get; set; }
 
         /// <summary>
         /// 
@@ -53,7 +52,7 @@ namespace G
             global::G.GenerateTextRequestParameters? parameters,
             global::G.GenerateTextRequestOptions? options)
         {
-            this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
+            this.Inputs = inputs;
             this.Parameters = parameters;
             this.Options = options;
         }

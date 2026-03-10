@@ -62,8 +62,8 @@ namespace G
         /// Example: 1711471534
         /// </summary>
         /// <example>1711471534</example>
-        [global::Newtonsoft.Json.JsonProperty("last_used_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTimeOffset? LastUsedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("last_used_at")]
+        public global::System.DateTimeOffset? LastUsedAt { get; set; }
 
         /// <summary>
         /// 
@@ -115,18 +115,18 @@ namespace G
             string name,
             string redactedValue,
             global::System.DateTimeOffset createdAt,
-            global::System.DateTimeOffset? lastUsedAt,
             global::G.AdminApiKeyOwner owner,
-            string? value)
+            string? value,
+            global::System.DateTimeOffset? lastUsedAt)
         {
             this.Object = @object ?? throw new global::System.ArgumentNullException(nameof(@object));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.RedactedValue = redactedValue ?? throw new global::System.ArgumentNullException(nameof(redactedValue));
             this.CreatedAt = createdAt;
-            this.LastUsedAt = lastUsedAt;
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.Value = value;
+            this.LastUsedAt = lastUsedAt;
         }
 
         /// <summary>

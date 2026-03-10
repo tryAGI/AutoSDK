@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPackageUpdatedPackagePackageVersionAuthor? Author { get; set; }
+        public global::G.WebhookPackageUpdatedPackagePackageVersionAuthor? Author { get; set; }
 
         /// <summary>
         /// 
@@ -213,7 +212,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookPackageUpdatedPackagePackageVersion(
-            global::G.WebhookPackageUpdatedPackagePackageVersionAuthor? author,
             string body,
             string bodyHtml,
             string createdAt,
@@ -229,6 +227,7 @@ namespace G
             string targetOid,
             string updatedAt,
             string version,
+            global::G.WebhookPackageUpdatedPackagePackageVersionAuthor? author,
             global::System.Collections.Generic.IList<global::G.WebhookPackageUpdatedPackagePackageVersionDockerMetadataItem>? dockerMetadata,
             bool? draft,
             string? manifest,
@@ -239,7 +238,6 @@ namespace G
             string? sourceUrl,
             string? tagName)
         {
-            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
             this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
             this.BodyHtml = bodyHtml ?? throw new global::System.ArgumentNullException(nameof(bodyHtml));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
@@ -255,6 +253,7 @@ namespace G
             this.TargetOid = targetOid ?? throw new global::System.ArgumentNullException(nameof(targetOid));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
             this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
+            this.Author = author;
             this.DockerMetadata = dockerMetadata;
             this.Draft = draft;
             this.Manifest = manifest;

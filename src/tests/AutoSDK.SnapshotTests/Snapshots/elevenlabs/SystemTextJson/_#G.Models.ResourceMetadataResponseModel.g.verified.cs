@@ -28,8 +28,7 @@ namespace G
         /// The ID of the user who created the resource.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creator_user_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? CreatorUserId { get; set; }
+        public string? CreatorUserId { get; set; }
 
         /// <summary>
         /// A mapping of roles to group IDs. When the resource is shared with a user, the group id is the user's id.
@@ -75,15 +74,15 @@ namespace G
         public ResourceMetadataResponseModel(
             string resourceId,
             global::G.WorkspaceResourceType resourceType,
-            string? creatorUserId,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>> roleToGroupIds,
-            global::System.Collections.Generic.IList<global::G.ShareOptionResponseModel> shareOptions)
+            global::System.Collections.Generic.IList<global::G.ShareOptionResponseModel> shareOptions,
+            string? creatorUserId)
         {
             this.ResourceId = resourceId ?? throw new global::System.ArgumentNullException(nameof(resourceId));
             this.ResourceType = resourceType;
-            this.CreatorUserId = creatorUserId ?? throw new global::System.ArgumentNullException(nameof(creatorUserId));
             this.RoleToGroupIds = roleToGroupIds ?? throw new global::System.ArgumentNullException(nameof(roleToGroupIds));
             this.ShareOptions = shareOptions ?? throw new global::System.ArgumentNullException(nameof(shareOptions));
+            this.CreatorUserId = creatorUserId;
         }
 
         /// <summary>

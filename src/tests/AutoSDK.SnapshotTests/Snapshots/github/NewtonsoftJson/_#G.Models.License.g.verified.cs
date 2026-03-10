@@ -27,15 +27,15 @@ namespace G
         /// Example: MIT
         /// </summary>
         /// <example>MIT</example>
-        [global::Newtonsoft.Json.JsonProperty("spdx_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? SpdxId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("spdx_id")]
+        public string? SpdxId { get; set; }
 
         /// <summary>
         /// Example: https://api.github.com/licenses/mit
         /// </summary>
         /// <example>https://api.github.com/licenses/mit</example>
-        [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Url { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("url")]
+        public string? Url { get; set; }
 
         /// <summary>
         /// Example: MDc6TGljZW5zZW1pdA==
@@ -203,8 +203,6 @@ namespace G
         public License(
             string key,
             string name,
-            string? spdxId,
-            string? url,
             string nodeId,
             string htmlUrl,
             string description,
@@ -213,12 +211,12 @@ namespace G
             global::System.Collections.Generic.IList<string> conditions,
             global::System.Collections.Generic.IList<string> limitations,
             string body,
-            bool featured)
+            bool featured,
+            string? spdxId,
+            string? url)
         {
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.SpdxId = spdxId ?? throw new global::System.ArgumentNullException(nameof(spdxId));
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
@@ -228,6 +226,8 @@ namespace G
             this.Limitations = limitations ?? throw new global::System.ArgumentNullException(nameof(limitations));
             this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
             this.Featured = featured;
+            this.SpdxId = spdxId;
+            this.Url = url;
         }
 
         /// <summary>

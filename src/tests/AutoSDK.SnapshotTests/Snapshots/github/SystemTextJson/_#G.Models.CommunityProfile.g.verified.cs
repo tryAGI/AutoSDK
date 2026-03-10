@@ -22,16 +22,14 @@ namespace G
         /// </summary>
         /// <example>My first repository on GitHub!</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Example: example.com
         /// </summary>
         /// <example>example.com</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("documentation")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Documentation { get; set; }
+        public string? Documentation { get; set; }
 
         /// <summary>
         /// 
@@ -45,8 +43,7 @@ namespace G
         /// </summary>
         /// <example>2017-02-28T19:09:29Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? UpdatedAt { get; set; }
+        public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// Example: true
@@ -85,16 +82,16 @@ namespace G
 #endif
         public CommunityProfile(
             int healthPercentage,
+            global::G.CommunityProfileFiles files,
             string? description,
             string? documentation,
-            global::G.CommunityProfileFiles files,
             global::System.DateTime? updatedAt,
             bool? contentReportsEnabled)
         {
             this.HealthPercentage = healthPercentage;
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.Documentation = documentation ?? throw new global::System.ArgumentNullException(nameof(documentation));
             this.Files = files ?? throw new global::System.ArgumentNullException(nameof(files));
+            this.Description = description;
+            this.Documentation = documentation;
             this.UpdatedAt = updatedAt;
             this.ContentReportsEnabled = contentReportsEnabled;
         }

@@ -63,15 +63,13 @@ namespace G
         /// Date and time when the associated fine-grained personal access token expires.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token_expires_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? TokenExpiresAt { get; set; }
+        public string? TokenExpiresAt { get; set; }
 
         /// <summary>
         /// Date and time when the associated fine-grained personal access token was last used for authentication.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token_last_used_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? TokenLastUsedAt { get; set; }
+        public string? TokenLastUsedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -130,8 +128,8 @@ namespace G
             this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
             this.AccessGrantedAt = accessGrantedAt ?? throw new global::System.ArgumentNullException(nameof(accessGrantedAt));
             this.TokenExpired = tokenExpired;
-            this.TokenExpiresAt = tokenExpiresAt ?? throw new global::System.ArgumentNullException(nameof(tokenExpiresAt));
-            this.TokenLastUsedAt = tokenLastUsedAt ?? throw new global::System.ArgumentNullException(nameof(tokenLastUsedAt));
+            this.TokenExpiresAt = tokenExpiresAt;
+            this.TokenLastUsedAt = tokenLastUsedAt;
         }
 
         /// <summary>

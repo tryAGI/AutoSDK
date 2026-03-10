@@ -30,16 +30,14 @@ namespace G
         /// </summary>
         /// <example>https://api.github.com/licenses/mit</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Url { get; set; }
+        public string? Url { get; set; }
 
         /// <summary>
         /// Example: MIT
         /// </summary>
         /// <example>MIT</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("spdx_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? SpdxId { get; set; }
+        public string? SpdxId { get; set; }
 
         /// <summary>
         /// Example: MDc6TGljZW5zZW1pdA==
@@ -86,16 +84,16 @@ namespace G
         public NullableLicenseSimple(
             string key,
             string name,
+            string nodeId,
             string? url,
             string? spdxId,
-            string nodeId,
             string? htmlUrl)
         {
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.SpdxId = spdxId ?? throw new global::System.ArgumentNullException(nameof(spdxId));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Url = url;
+            this.SpdxId = spdxId;
             this.HtmlUrl = htmlUrl;
         }
 

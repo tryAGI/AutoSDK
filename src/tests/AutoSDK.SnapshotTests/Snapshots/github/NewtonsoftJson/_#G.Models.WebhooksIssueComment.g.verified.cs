@@ -54,8 +54,8 @@ namespace G
         /// <summary>
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("performed_via_github_app", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Integration? PerformedViaGithubApp { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("performed_via_github_app")]
+        public global::G.Integration? PerformedViaGithubApp { get; set; }
 
         /// <summary>
         /// 
@@ -78,8 +78,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhooksIssueCommentUser? User { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("user")]
+        public global::G.WebhooksIssueCommentUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -120,10 +120,10 @@ namespace G
             long id,
             string issueUrl,
             string nodeId,
-            global::G.Integration? performedViaGithubApp,
             global::G.WebhooksIssueCommentReactions reactions,
             global::System.DateTime updatedAt,
             string url,
+            global::G.Integration? performedViaGithubApp,
             global::G.WebhooksIssueCommentUser? user)
         {
             this.AuthorAssociation = authorAssociation;
@@ -133,11 +133,11 @@ namespace G
             this.Id = id;
             this.IssueUrl = issueUrl ?? throw new global::System.ArgumentNullException(nameof(issueUrl));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.PerformedViaGithubApp = performedViaGithubApp ?? throw new global::System.ArgumentNullException(nameof(performedViaGithubApp));
             this.Reactions = reactions ?? throw new global::System.ArgumentNullException(nameof(reactions));
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.PerformedViaGithubApp = performedViaGithubApp;
+            this.User = user;
         }
 
         /// <summary>

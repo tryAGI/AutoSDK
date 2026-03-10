@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_patched_version")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitieFirstPatchedVersion? FirstPatchedVersion { get; set; }
+        public global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitieFirstPatchedVersion? FirstPatchedVersion { get; set; }
 
         /// <summary>
         /// 
@@ -54,15 +53,15 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitie(
-            global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitieFirstPatchedVersion? firstPatchedVersion,
             global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiePackage package,
             string severity,
-            string vulnerableVersionRange)
+            string vulnerableVersionRange,
+            global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitieFirstPatchedVersion? firstPatchedVersion)
         {
-            this.FirstPatchedVersion = firstPatchedVersion ?? throw new global::System.ArgumentNullException(nameof(firstPatchedVersion));
             this.Package = package ?? throw new global::System.ArgumentNullException(nameof(package));
             this.Severity = severity ?? throw new global::System.ArgumentNullException(nameof(severity));
             this.VulnerableVersionRange = vulnerableVersionRange ?? throw new global::System.ArgumentNullException(nameof(vulnerableVersionRange));
+            this.FirstPatchedVersion = firstPatchedVersion;
         }
 
         /// <summary>

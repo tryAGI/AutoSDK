@@ -42,8 +42,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("gravatar_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? GravatarId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("gravatar_id")]
+        public string? GravatarId { get; set; }
 
         /// <summary>
         /// 
@@ -150,7 +150,6 @@ namespace G
             string followersUrl,
             string followingUrl,
             string gistsUrl,
-            string? gravatarId,
             string htmlUrl,
             int id,
             string nodeId,
@@ -162,14 +161,14 @@ namespace G
             string starredUrl,
             string subscriptionsUrl,
             string type,
-            string url)
+            string url,
+            string? gravatarId)
         {
             this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
             this.EventsUrl = eventsUrl ?? throw new global::System.ArgumentNullException(nameof(eventsUrl));
             this.FollowersUrl = followersUrl ?? throw new global::System.ArgumentNullException(nameof(followersUrl));
             this.FollowingUrl = followingUrl ?? throw new global::System.ArgumentNullException(nameof(followingUrl));
             this.GistsUrl = gistsUrl ?? throw new global::System.ArgumentNullException(nameof(gistsUrl));
-            this.GravatarId = gravatarId ?? throw new global::System.ArgumentNullException(nameof(gravatarId));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
@@ -182,6 +181,7 @@ namespace G
             this.SubscriptionsUrl = subscriptionsUrl ?? throw new global::System.ArgumentNullException(nameof(subscriptionsUrl));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.GravatarId = gravatarId;
         }
 
         /// <summary>

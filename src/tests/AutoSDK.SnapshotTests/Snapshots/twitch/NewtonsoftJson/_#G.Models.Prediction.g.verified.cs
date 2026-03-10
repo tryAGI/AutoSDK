@@ -42,8 +42,8 @@ namespace G
         /// <summary>
         /// The ID of the winning outcome. Is **null** unless `status` is RESOLVED.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("winning_outcome_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? WinningOutcomeId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("winning_outcome_id")]
+        public string? WinningOutcomeId { get; set; }
 
         /// <summary>
         /// The list of possible outcomes for the prediction.
@@ -77,14 +77,14 @@ namespace G
         /// <summary>
         /// The UTC date and time of when the Prediction ended. If `status` is ACTIVE, this is set to **null**.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("ended_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? EndedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("ended_at")]
+        public global::System.DateTime? EndedAt { get; set; }
 
         /// <summary>
         /// The UTC date and time of when the Prediction was locked. If `status` is not LOCKED, this is set to **null**.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("locked_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? LockedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("locked_at")]
+        public global::System.DateTime? LockedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -142,11 +142,11 @@ namespace G
             string broadcasterName,
             string broadcasterLogin,
             string title,
-            string? winningOutcomeId,
             global::System.Collections.Generic.IList<global::G.PredictionOutcome> outcomes,
             int predictionWindow,
             global::G.PredictionStatus status,
             global::System.DateTime createdAt,
+            string? winningOutcomeId,
             global::System.DateTime? endedAt,
             global::System.DateTime? lockedAt)
         {
@@ -155,11 +155,11 @@ namespace G
             this.BroadcasterName = broadcasterName ?? throw new global::System.ArgumentNullException(nameof(broadcasterName));
             this.BroadcasterLogin = broadcasterLogin ?? throw new global::System.ArgumentNullException(nameof(broadcasterLogin));
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.WinningOutcomeId = winningOutcomeId ?? throw new global::System.ArgumentNullException(nameof(winningOutcomeId));
             this.Outcomes = outcomes ?? throw new global::System.ArgumentNullException(nameof(outcomes));
             this.PredictionWindow = predictionWindow;
             this.Status = status;
             this.CreatedAt = createdAt;
+            this.WinningOutcomeId = winningOutcomeId;
             this.EndedAt = endedAt;
             this.LockedAt = lockedAt;
         }

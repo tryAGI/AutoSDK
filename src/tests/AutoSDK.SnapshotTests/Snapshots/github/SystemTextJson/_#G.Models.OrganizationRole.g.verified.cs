@@ -40,8 +40,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? Organization { get; set; }
+        public global::G.NullableSimpleUser? Organization { get; set; }
 
         /// <summary>
         /// The date and time the role was created.
@@ -94,18 +93,18 @@ namespace G
             long id,
             string name,
             global::System.Collections.Generic.IList<string> permissions,
-            global::G.NullableSimpleUser? organization,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            string? description)
+            string? description,
+            global::G.NullableSimpleUser? organization)
         {
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
-            this.Organization = organization ?? throw new global::System.ArgumentNullException(nameof(organization));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.Description = description;
+            this.Organization = organization;
         }
 
         /// <summary>

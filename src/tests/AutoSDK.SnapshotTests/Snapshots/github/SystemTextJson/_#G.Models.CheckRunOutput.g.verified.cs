@@ -13,22 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Title { get; set; }
+        public string? Title { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Summary { get; set; }
+        public string? Summary { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Text { get; set; }
+        public string? Text { get; set; }
 
         /// <summary>
         /// 
@@ -62,17 +59,17 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CheckRunOutput(
+            int annotationsCount,
+            string annotationsUrl,
             string? title,
             string? summary,
-            string? text,
-            int annotationsCount,
-            string annotationsUrl)
+            string? text)
         {
-            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.AnnotationsCount = annotationsCount;
             this.AnnotationsUrl = annotationsUrl ?? throw new global::System.ArgumentNullException(nameof(annotationsUrl));
+            this.Title = title;
+            this.Summary = summary;
+            this.Text = text;
         }
 
         /// <summary>

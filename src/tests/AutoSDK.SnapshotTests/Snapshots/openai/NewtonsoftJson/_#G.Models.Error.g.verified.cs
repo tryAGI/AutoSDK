@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("code", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Code { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("code")]
+        public string? Code { get; set; }
 
         /// <summary>
         /// 
@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("param", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Param { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("param")]
+        public string? Param { get; set; }
 
         /// <summary>
         /// 
@@ -47,15 +47,15 @@ namespace G
         /// <param name="param"></param>
         /// <param name="type"></param>
         public Error(
-            string? code,
             string message,
-            string? param,
-            string type)
+            string type,
+            string? code,
+            string? param)
         {
-            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.Param = param ?? throw new global::System.ArgumentNullException(nameof(param));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Code = code;
+            this.Param = param;
         }
 
         /// <summary>

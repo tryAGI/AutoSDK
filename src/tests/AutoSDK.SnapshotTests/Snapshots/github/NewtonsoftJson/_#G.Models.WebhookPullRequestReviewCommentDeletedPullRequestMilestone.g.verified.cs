@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("closed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? ClosedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("closed_at")]
+        public global::System.DateTime? ClosedAt { get; set; }
 
         /// <summary>
         /// 
@@ -30,20 +30,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("creator", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPullRequestReviewCommentDeletedPullRequestMilestoneCreator? Creator { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("creator")]
+        public global::G.WebhookPullRequestReviewCommentDeletedPullRequestMilestoneCreator? Creator { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("due_on", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? DueOn { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("due_on")]
+        public global::System.DateTime? DueOn { get; set; }
 
         /// <summary>
         /// 
@@ -137,12 +137,8 @@ namespace G
         /// <param name="updatedAt"></param>
         /// <param name="url"></param>
         public WebhookPullRequestReviewCommentDeletedPullRequestMilestone(
-            global::System.DateTime? closedAt,
             int closedIssues,
             global::System.DateTime createdAt,
-            global::G.WebhookPullRequestReviewCommentDeletedPullRequestMilestoneCreator? creator,
-            string? description,
-            global::System.DateTime? dueOn,
             string htmlUrl,
             int id,
             string labelsUrl,
@@ -152,14 +148,14 @@ namespace G
             global::G.WebhookPullRequestReviewCommentDeletedPullRequestMilestoneState state,
             string title,
             global::System.DateTime updatedAt,
-            string url)
+            string url,
+            global::System.DateTime? closedAt,
+            global::G.WebhookPullRequestReviewCommentDeletedPullRequestMilestoneCreator? creator,
+            string? description,
+            global::System.DateTime? dueOn)
         {
-            this.ClosedAt = closedAt;
             this.ClosedIssues = closedIssues;
             this.CreatedAt = createdAt;
-            this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.DueOn = dueOn;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.LabelsUrl = labelsUrl ?? throw new global::System.ArgumentNullException(nameof(labelsUrl));
@@ -170,6 +166,10 @@ namespace G
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.ClosedAt = closedAt;
+            this.Creator = creator;
+            this.Description = description;
+            this.DueOn = dueOn;
         }
 
         /// <summary>

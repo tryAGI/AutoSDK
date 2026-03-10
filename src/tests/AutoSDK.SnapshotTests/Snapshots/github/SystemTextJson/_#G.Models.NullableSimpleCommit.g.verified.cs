@@ -47,15 +47,13 @@ namespace G
         /// Information about the Git author
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleCommitAuthor? Author { get; set; }
+        public global::G.NullableSimpleCommitAuthor? Author { get; set; }
 
         /// <summary>
         /// Information about the Git committer
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("committer")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleCommitCommitter? Committer { get; set; }
+        public global::G.NullableSimpleCommitCommitter? Committer { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -102,8 +100,8 @@ namespace G
             this.TreeId = treeId ?? throw new global::System.ArgumentNullException(nameof(treeId));
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Timestamp = timestamp;
-            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
-            this.Committer = committer ?? throw new global::System.ArgumentNullException(nameof(committer));
+            this.Author = author;
+            this.Committer = committer;
         }
 
         /// <summary>

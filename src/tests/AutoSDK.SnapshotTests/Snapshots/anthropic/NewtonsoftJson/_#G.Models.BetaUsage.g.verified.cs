@@ -19,15 +19,15 @@ namespace G
         /// The number of input tokens used to create the cache entry.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("cache_creation_input_tokens", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? CacheCreationInputTokens { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("cache_creation_input_tokens")]
+        public int? CacheCreationInputTokens { get; set; }
 
         /// <summary>
         /// The number of input tokens read from the cache.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("cache_read_input_tokens", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? CacheReadInputTokens { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("cache_read_input_tokens")]
+        public int? CacheReadInputTokens { get; set; }
 
         /// <summary>
         /// The number of output tokens which were used.
@@ -60,14 +60,14 @@ namespace G
         /// </param>
         public BetaUsage(
             int inputTokens,
+            int outputTokens,
             int? cacheCreationInputTokens,
-            int? cacheReadInputTokens,
-            int outputTokens)
+            int? cacheReadInputTokens)
         {
             this.InputTokens = inputTokens;
-            this.CacheCreationInputTokens = cacheCreationInputTokens ?? throw new global::System.ArgumentNullException(nameof(cacheCreationInputTokens));
-            this.CacheReadInputTokens = cacheReadInputTokens ?? throw new global::System.ArgumentNullException(nameof(cacheReadInputTokens));
             this.OutputTokens = outputTokens;
+            this.CacheCreationInputTokens = cacheCreationInputTokens;
+            this.CacheReadInputTokens = cacheReadInputTokens;
         }
 
         /// <summary>

@@ -62,8 +62,7 @@ namespace G
         /// The permission on the resource of the pronunciation dictionary.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permission_on_resource")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AddPronunciationDictionaryResponseModelPermissionOnResource2? PermissionOnResource { get; set; }
+        public global::G.AddPronunciationDictionaryResponseModelPermissionOnResource2? PermissionOnResource { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -108,8 +107,8 @@ namespace G
             global::System.DateTimeOffset creationTimeUnix,
             string versionId,
             int versionRulesNum,
-            global::G.AddPronunciationDictionaryResponseModelPermissionOnResource2? permissionOnResource,
-            string? description)
+            string? description,
+            global::G.AddPronunciationDictionaryResponseModelPermissionOnResource2? permissionOnResource)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -117,8 +116,8 @@ namespace G
             this.CreationTimeUnix = creationTimeUnix;
             this.VersionId = versionId ?? throw new global::System.ArgumentNullException(nameof(versionId));
             this.VersionRulesNum = versionRulesNum;
-            this.PermissionOnResource = permissionOnResource ?? throw new global::System.ArgumentNullException(nameof(permissionOnResource));
             this.Description = description;
+            this.PermissionOnResource = permissionOnResource;
         }
 
         /// <summary>

@@ -13,8 +13,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? Author { get; set; }
+        public global::G.NullableSimpleUser? Author { get; set; }
 
         /// <summary>
         /// Example: 135
@@ -54,13 +53,13 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ContributorActivity(
-            global::G.NullableSimpleUser? author,
             int total,
-            global::System.Collections.Generic.IList<global::G.ContributorActivityWeek> weeks)
+            global::System.Collections.Generic.IList<global::G.ContributorActivityWeek> weeks,
+            global::G.NullableSimpleUser? author)
         {
-            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
             this.Total = total;
             this.Weeks = weeks ?? throw new global::System.ArgumentNullException(nameof(weeks));
+            this.Author = author;
         }
 
         /// <summary>

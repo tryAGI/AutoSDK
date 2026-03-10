@@ -52,8 +52,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookCodeScanningAlertCreatedAlertRuleSeverityJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookCodeScanningAlertCreatedAlertRuleSeverity? Severity { get; set; }
+        public global::G.WebhookCodeScanningAlertCreatedAlertRuleSeverity? Severity { get; set; }
 
         /// <summary>
         /// 
@@ -92,20 +91,20 @@ namespace G
         public WebhookCodeScanningAlertCreatedAlertRule(
             string description,
             string id,
-            global::G.WebhookCodeScanningAlertCreatedAlertRuleSeverity? severity,
             string? fullDescription,
             string? help,
             string? helpUri,
             string? name,
+            global::G.WebhookCodeScanningAlertCreatedAlertRuleSeverity? severity,
             global::System.Collections.Generic.IList<string>? tags)
         {
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Severity = severity;
             this.FullDescription = fullDescription;
             this.Help = help;
             this.HelpUri = helpUri;
             this.Name = name;
+            this.Severity = severity;
             this.Tags = tags;
         }
 

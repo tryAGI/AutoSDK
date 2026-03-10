@@ -30,20 +30,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("train_split", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? TrainSplit { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("train_split")]
+        public string? TrainSplit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("dev_split", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? DevSplit { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("dev_split")]
+        public string? DevSplit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("test_split", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? TestSplit { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("test_split")]
+        public string? TestSplit { get; set; }
 
         /// <summary>
         /// 
@@ -85,22 +85,22 @@ namespace G
             int messageIndex,
             string taskDescription,
             string datasetName,
-            string? trainSplit,
-            string? devSplit,
-            string? testSplit,
             global::System.Collections.Generic.IList<global::System.Guid> evaluators,
             int numEpochs,
-            bool autoCommit)
+            bool autoCommit,
+            string? trainSplit,
+            string? devSplit,
+            string? testSplit)
         {
             this.MessageIndex = messageIndex;
             this.TaskDescription = taskDescription ?? throw new global::System.ArgumentNullException(nameof(taskDescription));
             this.DatasetName = datasetName ?? throw new global::System.ArgumentNullException(nameof(datasetName));
-            this.TrainSplit = trainSplit ?? throw new global::System.ArgumentNullException(nameof(trainSplit));
-            this.DevSplit = devSplit ?? throw new global::System.ArgumentNullException(nameof(devSplit));
-            this.TestSplit = testSplit ?? throw new global::System.ArgumentNullException(nameof(testSplit));
             this.Evaluators = evaluators ?? throw new global::System.ArgumentNullException(nameof(evaluators));
             this.NumEpochs = numEpochs;
             this.AutoCommit = autoCommit;
+            this.TrainSplit = trainSplit;
+            this.DevSplit = devSplit;
+            this.TestSplit = testSplit;
         }
 
         /// <summary>

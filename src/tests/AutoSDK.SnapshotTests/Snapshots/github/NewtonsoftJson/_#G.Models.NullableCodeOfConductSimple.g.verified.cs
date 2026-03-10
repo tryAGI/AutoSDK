@@ -34,8 +34,8 @@ namespace G
         /// Example: https://github.com/github/docs/blob/main/CODE_OF_CONDUCT.md
         /// </summary>
         /// <example>https://github.com/github/docs/blob/main/CODE_OF_CONDUCT.md</example>
-        [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? HtmlUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("html_url")]
+        public string? HtmlUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -67,7 +67,7 @@ namespace G
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.HtmlUrl = htmlUrl;
         }
 
         /// <summary>

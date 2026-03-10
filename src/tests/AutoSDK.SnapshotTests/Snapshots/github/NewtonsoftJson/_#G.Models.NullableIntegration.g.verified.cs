@@ -42,8 +42,8 @@ namespace G
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? Owner { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("owner")]
+        public global::G.NullableSimpleUser? Owner { get; set; }
 
         /// <summary>
         /// The name of the GitHub app<br/>
@@ -57,8 +57,8 @@ namespace G
         /// Example: The description of the app.
         /// </summary>
         /// <example>The description of the app.</example>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// Example: https://example.com
@@ -202,9 +202,7 @@ namespace G
         public NullableIntegration(
             int id,
             string nodeId,
-            global::G.NullableSimpleUser? owner,
             string name,
-            string? description,
             string externalUrl,
             string htmlUrl,
             global::System.DateTime createdAt,
@@ -213,6 +211,8 @@ namespace G
             global::System.Collections.Generic.IList<string> events,
             string? slug,
             string? clientId,
+            global::G.NullableSimpleUser? owner,
+            string? description,
             int? installationsCount,
             string? clientSecret,
             string? webhookSecret,
@@ -220,9 +220,7 @@ namespace G
         {
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.ExternalUrl = externalUrl ?? throw new global::System.ArgumentNullException(nameof(externalUrl));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.CreatedAt = createdAt;
@@ -231,6 +229,8 @@ namespace G
             this.Events = events ?? throw new global::System.ArgumentNullException(nameof(events));
             this.Slug = slug;
             this.ClientId = clientId;
+            this.Owner = owner;
+            this.Description = description;
             this.InstallationsCount = installationsCount;
             this.ClientSecret = clientSecret;
             this.WebhookSecret = webhookSecret;

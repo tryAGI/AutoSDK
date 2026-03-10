@@ -152,8 +152,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// Returns whether or not this repository is disabled.
@@ -271,8 +271,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("homepage", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Homepage { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("homepage")]
+        public string? Homepage { get; set; }
 
         /// <summary>
         /// 
@@ -331,8 +331,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("language", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Language { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("language")]
+        public string? Language { get; set; }
 
         /// <summary>
         /// 
@@ -343,8 +343,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("license", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPullRequestUnlabeledPullRequestHeadRepoLicense? License { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("license")]
+        public global::G.WebhookPullRequestUnlabeledPullRequestHeadRepoLicense? License { get; set; }
 
         /// <summary>
         /// 
@@ -379,8 +379,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("mirror_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? MirrorUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("mirror_url")]
+        public string? MirrorUrl { get; set; }
 
         /// <summary>
         /// The name of the repository.
@@ -421,8 +421,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPullRequestUnlabeledPullRequestHeadRepoOwner? Owner { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("owner")]
+        public global::G.WebhookPullRequestUnlabeledPullRequestHeadRepoOwner? Owner { get; set; }
 
         /// <summary>
         /// 
@@ -451,8 +451,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("pushed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OneOf<int?, global::System.DateTime?>? PushedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("pushed_at")]
+        public global::G.OneOf<int?, global::System.DateTime?>? PushedAt { get; set; }
 
         /// <summary>
         /// 
@@ -788,7 +788,6 @@ namespace G
             global::G.OneOf<int?, global::System.DateTime?> createdAt,
             string defaultBranch,
             string deploymentsUrl,
-            string? description,
             string downloadsUrl,
             string eventsUrl,
             bool fork,
@@ -806,7 +805,6 @@ namespace G
             bool hasProjects,
             bool hasWiki,
             bool hasDiscussions,
-            string? homepage,
             string hooksUrl,
             string htmlUrl,
             long id,
@@ -815,21 +813,16 @@ namespace G
             string issuesUrl,
             string keysUrl,
             string labelsUrl,
-            string? language,
             string languagesUrl,
-            global::G.WebhookPullRequestUnlabeledPullRequestHeadRepoLicense? license,
             string mergesUrl,
             string milestonesUrl,
-            string? mirrorUrl,
             string name,
             string nodeId,
             string notificationsUrl,
             int openIssues,
             int openIssuesCount,
-            global::G.WebhookPullRequestUnlabeledPullRequestHeadRepoOwner? owner,
             bool @private,
             string pullsUrl,
-            global::G.OneOf<int?, global::System.DateTime?>? pushedAt,
             string releasesUrl,
             int size,
             string sshUrl,
@@ -855,14 +848,21 @@ namespace G
             bool? allowSquashMerge,
             bool? allowUpdateBranch,
             bool? deleteBranchOnMerge,
+            string? description,
             bool? disabled,
+            string? homepage,
             bool? isTemplate,
+            string? language,
+            global::G.WebhookPullRequestUnlabeledPullRequestHeadRepoLicense? license,
             string? masterBranch,
             global::G.WebhookPullRequestUnlabeledPullRequestHeadRepoMergeCommitMessage? mergeCommitMessage,
             global::G.WebhookPullRequestUnlabeledPullRequestHeadRepoMergeCommitTitle? mergeCommitTitle,
+            string? mirrorUrl,
             string? organization,
+            global::G.WebhookPullRequestUnlabeledPullRequestHeadRepoOwner? owner,
             global::G.WebhookPullRequestUnlabeledPullRequestHeadRepoPermissions? permissions,
             bool? @public,
+            global::G.OneOf<int?, global::System.DateTime?>? pushedAt,
             string? roleName,
             global::G.WebhookPullRequestUnlabeledPullRequestHeadRepoSquashMergeCommitMessage? squashMergeCommitMessage,
             global::G.WebhookPullRequestUnlabeledPullRequestHeadRepoSquashMergeCommitTitle? squashMergeCommitTitle,
@@ -885,7 +885,6 @@ namespace G
             this.CreatedAt = createdAt;
             this.DefaultBranch = defaultBranch ?? throw new global::System.ArgumentNullException(nameof(defaultBranch));
             this.DeploymentsUrl = deploymentsUrl ?? throw new global::System.ArgumentNullException(nameof(deploymentsUrl));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.DownloadsUrl = downloadsUrl ?? throw new global::System.ArgumentNullException(nameof(downloadsUrl));
             this.EventsUrl = eventsUrl ?? throw new global::System.ArgumentNullException(nameof(eventsUrl));
             this.Fork = fork;
@@ -903,7 +902,6 @@ namespace G
             this.HasProjects = hasProjects;
             this.HasWiki = hasWiki;
             this.HasDiscussions = hasDiscussions;
-            this.Homepage = homepage ?? throw new global::System.ArgumentNullException(nameof(homepage));
             this.HooksUrl = hooksUrl ?? throw new global::System.ArgumentNullException(nameof(hooksUrl));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
@@ -912,21 +910,16 @@ namespace G
             this.IssuesUrl = issuesUrl ?? throw new global::System.ArgumentNullException(nameof(issuesUrl));
             this.KeysUrl = keysUrl ?? throw new global::System.ArgumentNullException(nameof(keysUrl));
             this.LabelsUrl = labelsUrl ?? throw new global::System.ArgumentNullException(nameof(labelsUrl));
-            this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
             this.LanguagesUrl = languagesUrl ?? throw new global::System.ArgumentNullException(nameof(languagesUrl));
-            this.License = license ?? throw new global::System.ArgumentNullException(nameof(license));
             this.MergesUrl = mergesUrl ?? throw new global::System.ArgumentNullException(nameof(mergesUrl));
             this.MilestonesUrl = milestonesUrl ?? throw new global::System.ArgumentNullException(nameof(milestonesUrl));
-            this.MirrorUrl = mirrorUrl ?? throw new global::System.ArgumentNullException(nameof(mirrorUrl));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.NotificationsUrl = notificationsUrl ?? throw new global::System.ArgumentNullException(nameof(notificationsUrl));
             this.OpenIssues = openIssues;
             this.OpenIssuesCount = openIssuesCount;
-            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.Private = @private;
             this.PullsUrl = pullsUrl ?? throw new global::System.ArgumentNullException(nameof(pullsUrl));
-            this.PushedAt = pushedAt;
             this.ReleasesUrl = releasesUrl ?? throw new global::System.ArgumentNullException(nameof(releasesUrl));
             this.Size = size;
             this.SshUrl = sshUrl ?? throw new global::System.ArgumentNullException(nameof(sshUrl));
@@ -952,14 +945,21 @@ namespace G
             this.AllowSquashMerge = allowSquashMerge;
             this.AllowUpdateBranch = allowUpdateBranch;
             this.DeleteBranchOnMerge = deleteBranchOnMerge;
+            this.Description = description;
             this.Disabled = disabled;
+            this.Homepage = homepage;
             this.IsTemplate = isTemplate;
+            this.Language = language;
+            this.License = license;
             this.MasterBranch = masterBranch;
             this.MergeCommitMessage = mergeCommitMessage;
             this.MergeCommitTitle = mergeCommitTitle;
+            this.MirrorUrl = mirrorUrl;
             this.Organization = organization;
+            this.Owner = owner;
             this.Permissions = permissions;
             this.Public = @public;
+            this.PushedAt = pushedAt;
             this.RoleName = roleName;
             this.SquashMergeCommitMessage = squashMergeCommitMessage;
             this.SquashMergeCommitTitle = squashMergeCommitTitle;

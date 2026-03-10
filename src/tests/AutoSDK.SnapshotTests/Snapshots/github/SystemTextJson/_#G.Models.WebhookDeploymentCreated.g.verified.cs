@@ -65,15 +65,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflow")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksWorkflow? Workflow { get; set; }
+        public global::G.WebhooksWorkflow? Workflow { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflow_run")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookDeploymentCreatedWorkflowRun? WorkflowRun { get; set; }
+        public global::G.WebhookDeploymentCreatedWorkflowRun? WorkflowRun { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -118,22 +116,22 @@ namespace G
             global::G.WebhookDeploymentCreatedDeployment deployment,
             global::G.RepositoryWebhooks repository,
             global::G.SimpleUser sender,
-            global::G.WebhooksWorkflow? workflow,
-            global::G.WebhookDeploymentCreatedWorkflowRun? workflowRun,
             global::G.WebhookDeploymentCreatedAction action,
             global::G.EnterpriseWebhooks? enterprise,
             global::G.SimpleInstallation? installation,
-            global::G.OrganizationSimpleWebhooks? organization)
+            global::G.OrganizationSimpleWebhooks? organization,
+            global::G.WebhooksWorkflow? workflow,
+            global::G.WebhookDeploymentCreatedWorkflowRun? workflowRun)
         {
             this.Deployment = deployment ?? throw new global::System.ArgumentNullException(nameof(deployment));
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
-            this.Workflow = workflow ?? throw new global::System.ArgumentNullException(nameof(workflow));
-            this.WorkflowRun = workflowRun ?? throw new global::System.ArgumentNullException(nameof(workflowRun));
             this.Action = action;
             this.Enterprise = enterprise;
             this.Installation = installation;
             this.Organization = organization;
+            this.Workflow = workflow;
+            this.WorkflowRun = workflowRun;
         }
 
         /// <summary>

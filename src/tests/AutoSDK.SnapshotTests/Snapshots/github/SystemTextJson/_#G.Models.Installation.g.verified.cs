@@ -25,8 +25,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("account")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.SimpleUser, global::G.Enterprise>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AnyOf<global::G.SimpleUser, global::G.Enterprise>? Account { get; set; }
+        public global::G.AnyOf<global::G.SimpleUser, global::G.Enterprise>? Account { get; set; }
 
         /// <summary>
         /// Describe whether all repositories have been selected or there's a selection involved
@@ -118,8 +117,7 @@ namespace G
         /// </summary>
         /// <example>config.yaml</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("single_file_name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? SingleFileName { get; set; }
+        public string? SingleFileName { get; set; }
 
         /// <summary>
         /// Example: true
@@ -147,15 +145,13 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("suspended_by")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? SuspendedBy { get; set; }
+        public global::G.NullableSimpleUser? SuspendedBy { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("suspended_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? SuspendedAt { get; set; }
+        public global::System.DateTime? SuspendedAt { get; set; }
 
         /// <summary>
         /// Example: "test_13f1e99741e3e004@d7e1eb0bc0a1ba12.com"
@@ -230,7 +226,6 @@ namespace G
 #endif
         public Installation(
             int id,
-            global::G.AnyOf<global::G.SimpleUser, global::G.Enterprise>? account,
             global::G.InstallationRepositorySelection repositorySelection,
             string accessTokensUrl,
             string repositoriesUrl,
@@ -242,16 +237,16 @@ namespace G
             global::System.Collections.Generic.IList<string> events,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            string? singleFileName,
             string appSlug,
-            global::G.NullableSimpleUser? suspendedBy,
-            global::System.DateTime? suspendedAt,
+            global::G.AnyOf<global::G.SimpleUser, global::G.Enterprise>? account,
+            string? singleFileName,
             bool? hasMultipleSingleFiles,
             global::System.Collections.Generic.IList<string>? singleFilePaths,
+            global::G.NullableSimpleUser? suspendedBy,
+            global::System.DateTime? suspendedAt,
             string? contactEmail)
         {
             this.Id = id;
-            this.Account = account;
             this.RepositorySelection = repositorySelection;
             this.AccessTokensUrl = accessTokensUrl ?? throw new global::System.ArgumentNullException(nameof(accessTokensUrl));
             this.RepositoriesUrl = repositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(repositoriesUrl));
@@ -263,12 +258,13 @@ namespace G
             this.Events = events ?? throw new global::System.ArgumentNullException(nameof(events));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.SingleFileName = singleFileName ?? throw new global::System.ArgumentNullException(nameof(singleFileName));
             this.AppSlug = appSlug ?? throw new global::System.ArgumentNullException(nameof(appSlug));
-            this.SuspendedBy = suspendedBy ?? throw new global::System.ArgumentNullException(nameof(suspendedBy));
-            this.SuspendedAt = suspendedAt;
+            this.Account = account;
+            this.SingleFileName = singleFileName;
             this.HasMultipleSingleFiles = hasMultipleSingleFiles;
             this.SingleFilePaths = singleFilePaths;
+            this.SuspendedBy = suspendedBy;
+            this.SuspendedAt = suspendedAt;
             this.ContactEmail = contactEmail;
         }
 

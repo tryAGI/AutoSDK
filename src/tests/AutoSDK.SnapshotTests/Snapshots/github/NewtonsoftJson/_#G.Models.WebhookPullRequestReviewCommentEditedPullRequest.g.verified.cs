@@ -20,14 +20,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("active_lock_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPullRequestReviewCommentEditedPullRequestActiveLockReason? ActiveLockReason { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("active_lock_reason")]
+        public global::G.WebhookPullRequestReviewCommentEditedPullRequestActiveLockReason? ActiveLockReason { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("assignee", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPullRequestReviewCommentEditedPullRequestAssignee? Assignee { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("assignee")]
+        public global::G.WebhookPullRequestReviewCommentEditedPullRequestAssignee? Assignee { get; set; }
 
         /// <summary>
         /// 
@@ -56,14 +56,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("body", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Body { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("body")]
+        public string? Body { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("closed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? ClosedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("closed_at")]
+        public string? ClosedAt { get; set; }
 
         /// <summary>
         /// 
@@ -134,20 +134,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("merge_commit_sha", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? MergeCommitSha { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("merge_commit_sha")]
+        public string? MergeCommitSha { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("merged_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? MergedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("merged_at")]
+        public string? MergedAt { get; set; }
 
         /// <summary>
         /// A collection of related issues and pull requests.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("milestone", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPullRequestReviewCommentEditedPullRequestMilestone? Milestone { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("milestone")]
+        public global::G.WebhookPullRequestReviewCommentEditedPullRequestMilestone? Milestone { get; set; }
 
         /// <summary>
         /// 
@@ -224,8 +224,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPullRequestReviewCommentEditedPullRequestUser? User { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("user")]
+        public global::G.WebhookPullRequestReviewCommentEditedPullRequestUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -280,13 +280,9 @@ namespace G
         /// <param name="user"></param>
         public WebhookPullRequestReviewCommentEditedPullRequest(
             global::G.WebhookPullRequestReviewCommentEditedPullRequestLinks links,
-            global::G.WebhookPullRequestReviewCommentEditedPullRequestActiveLockReason? activeLockReason,
-            global::G.WebhookPullRequestReviewCommentEditedPullRequestAssignee? assignee,
             global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewCommentEditedPullRequestAssignee2> assignees,
             global::G.WebhookPullRequestReviewCommentEditedPullRequestAuthorAssociation authorAssociation,
             global::G.WebhookPullRequestReviewCommentEditedPullRequestBase @base,
-            string? body,
-            string? closedAt,
             string commentsUrl,
             string commitsUrl,
             string createdAt,
@@ -297,9 +293,6 @@ namespace G
             string issueUrl,
             global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewCommentEditedPullRequestLabel> labels,
             bool locked,
-            string? mergeCommitSha,
-            string? mergedAt,
-            global::G.WebhookPullRequestReviewCommentEditedPullRequestMilestone? milestone,
             string nodeId,
             int number,
             string patchUrl,
@@ -312,18 +305,21 @@ namespace G
             string title,
             string updatedAt,
             string url,
-            global::G.WebhookPullRequestReviewCommentEditedPullRequestUser? user,
+            global::G.WebhookPullRequestReviewCommentEditedPullRequestActiveLockReason? activeLockReason,
+            global::G.WebhookPullRequestReviewCommentEditedPullRequestAssignee? assignee,
             global::G.WebhookPullRequestReviewCommentEditedPullRequestAutoMerge? autoMerge,
-            bool? draft)
+            string? body,
+            string? closedAt,
+            bool? draft,
+            string? mergeCommitSha,
+            string? mergedAt,
+            global::G.WebhookPullRequestReviewCommentEditedPullRequestMilestone? milestone,
+            global::G.WebhookPullRequestReviewCommentEditedPullRequestUser? user)
         {
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
-            this.ActiveLockReason = activeLockReason;
-            this.Assignee = assignee ?? throw new global::System.ArgumentNullException(nameof(assignee));
             this.Assignees = assignees ?? throw new global::System.ArgumentNullException(nameof(assignees));
             this.AuthorAssociation = authorAssociation;
             this.Base = @base ?? throw new global::System.ArgumentNullException(nameof(@base));
-            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
-            this.ClosedAt = closedAt ?? throw new global::System.ArgumentNullException(nameof(closedAt));
             this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
             this.CommitsUrl = commitsUrl ?? throw new global::System.ArgumentNullException(nameof(commitsUrl));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
@@ -334,9 +330,6 @@ namespace G
             this.IssueUrl = issueUrl ?? throw new global::System.ArgumentNullException(nameof(issueUrl));
             this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
             this.Locked = locked;
-            this.MergeCommitSha = mergeCommitSha ?? throw new global::System.ArgumentNullException(nameof(mergeCommitSha));
-            this.MergedAt = mergedAt ?? throw new global::System.ArgumentNullException(nameof(mergedAt));
-            this.Milestone = milestone ?? throw new global::System.ArgumentNullException(nameof(milestone));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Number = number;
             this.PatchUrl = patchUrl ?? throw new global::System.ArgumentNullException(nameof(patchUrl));
@@ -349,9 +342,16 @@ namespace G
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.ActiveLockReason = activeLockReason;
+            this.Assignee = assignee;
             this.AutoMerge = autoMerge;
+            this.Body = body;
+            this.ClosedAt = closedAt;
             this.Draft = draft;
+            this.MergeCommitSha = mergeCommitSha;
+            this.MergedAt = mergedAt;
+            this.Milestone = milestone;
+            this.User = user;
         }
 
         /// <summary>

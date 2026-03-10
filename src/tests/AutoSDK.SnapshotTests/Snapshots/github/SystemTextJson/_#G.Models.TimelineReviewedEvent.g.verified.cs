@@ -46,8 +46,7 @@ namespace G
         /// </summary>
         /// <example>This looks great.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Body { get; set; }
+        public string? Body { get; set; }
 
         /// <summary>
         /// Example: CHANGES_REQUESTED
@@ -170,13 +169,13 @@ namespace G
             int id,
             string nodeId,
             global::G.SimpleUser user,
-            string? body,
             string state,
             string htmlUrl,
             string pullRequestUrl,
             global::G.TimelineReviewedEventLinks links,
             string commitId,
             global::G.AuthorAssociation authorAssociation,
+            string? body,
             global::System.DateTime? submittedAt,
             string? bodyHtml,
             string? bodyText)
@@ -185,13 +184,13 @@ namespace G
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
-            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.PullRequestUrl = pullRequestUrl ?? throw new global::System.ArgumentNullException(nameof(pullRequestUrl));
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
             this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
             this.AuthorAssociation = authorAssociation;
+            this.Body = body;
             this.SubmittedAt = submittedAt;
             this.BodyHtml = bodyHtml;
             this.BodyText = bodyText;

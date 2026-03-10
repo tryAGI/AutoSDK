@@ -96,8 +96,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? HtmlUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("html_url")]
+        public string? HtmlUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -152,14 +152,14 @@ namespace G
             string key,
             string name,
             string url,
-            string? htmlUrl,
-            string? body)
+            string? body,
+            string? htmlUrl)
         {
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Body = body;
+            this.HtmlUrl = htmlUrl;
         }
 
         /// <summary>

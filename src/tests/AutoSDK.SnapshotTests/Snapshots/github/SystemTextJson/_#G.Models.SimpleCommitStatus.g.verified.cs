@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -48,8 +47,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? TargetUrl { get; set; }
+        public string? TargetUrl { get; set; }
 
         /// <summary>
         /// 
@@ -61,8 +59,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("avatar_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? AvatarUrl { get; set; }
+        public string? AvatarUrl { get; set; }
 
         /// <summary>
         /// 
@@ -109,29 +106,29 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SimpleCommitStatus(
-            string? description,
             int id,
             string nodeId,
             string state,
             string context,
-            string? targetUrl,
-            string? avatarUrl,
             string url,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            bool? required)
+            string? description,
+            string? targetUrl,
+            bool? required,
+            string? avatarUrl)
         {
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
             this.Context = context ?? throw new global::System.ArgumentNullException(nameof(context));
-            this.TargetUrl = targetUrl ?? throw new global::System.ArgumentNullException(nameof(targetUrl));
-            this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.Description = description;
+            this.TargetUrl = targetUrl;
             this.Required = required;
+            this.AvatarUrl = avatarUrl;
         }
 
         /// <summary>

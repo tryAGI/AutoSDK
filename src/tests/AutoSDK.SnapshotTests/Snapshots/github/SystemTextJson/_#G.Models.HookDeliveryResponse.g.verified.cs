@@ -13,15 +13,13 @@ namespace G
         /// The response headers received when the delivery was made.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("headers")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Headers { get; set; }
+        public object? Headers { get; set; }
 
         /// <summary>
         /// The response payload received.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Payload { get; set; }
+        public string? Payload { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,8 +43,8 @@ namespace G
             object? headers,
             string? payload)
         {
-            this.Headers = headers ?? throw new global::System.ArgumentNullException(nameof(headers));
-            this.Payload = payload ?? throw new global::System.ArgumentNullException(nameof(payload));
+            this.Headers = headers;
+            this.Payload = payload;
         }
 
         /// <summary>

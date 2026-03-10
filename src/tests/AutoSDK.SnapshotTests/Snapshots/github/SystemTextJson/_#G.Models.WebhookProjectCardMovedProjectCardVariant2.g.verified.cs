@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("after_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required double? AfterId { get; set; }
+        public double? AfterId { get; set; }
 
         /// <summary>
         /// 

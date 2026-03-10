@@ -41,8 +41,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("md5")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Md5 { get; set; }
+        public string? Md5 { get; set; }
 
         /// <summary>
         /// 
@@ -55,15 +54,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sha1")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Sha1 { get; set; }
+        public string? Sha1 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sha256")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Sha256 { get; set; }
+        public string? Sha256 { get; set; }
 
         /// <summary>
         /// 
@@ -76,8 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? State { get; set; }
+        public string? State { get; set; }
 
         /// <summary>
         /// 
@@ -114,25 +110,25 @@ namespace G
             string createdAt,
             string downloadUrl,
             int id,
-            string? md5,
             string name,
+            int size,
+            string updatedAt,
+            string? md5,
             string? sha1,
             string? sha256,
-            int size,
-            string? state,
-            string updatedAt)
+            string? state)
         {
             this.ContentType = contentType ?? throw new global::System.ArgumentNullException(nameof(contentType));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.DownloadUrl = downloadUrl ?? throw new global::System.ArgumentNullException(nameof(downloadUrl));
             this.Id = id;
-            this.Md5 = md5 ?? throw new global::System.ArgumentNullException(nameof(md5));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Sha1 = sha1 ?? throw new global::System.ArgumentNullException(nameof(sha1));
-            this.Sha256 = sha256 ?? throw new global::System.ArgumentNullException(nameof(sha256));
             this.Size = size;
-            this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
+            this.Md5 = md5;
+            this.Sha1 = sha1;
+            this.Sha256 = sha256;
+            this.State = state;
         }
 
         /// <summary>

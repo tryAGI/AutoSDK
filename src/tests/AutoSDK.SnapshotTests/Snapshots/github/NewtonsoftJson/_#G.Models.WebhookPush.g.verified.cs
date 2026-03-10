@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("base_ref", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? BaseRef { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("base_ref")]
+        public string? BaseRef { get; set; }
 
         /// <summary>
         /// The SHA of the most recent commit on `ref` before the push.
@@ -68,8 +68,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("head_commit", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPushHeadCommit? HeadCommit { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("head_commit")]
+        public global::G.WebhookPushHeadCommit? HeadCommit { get; set; }
 
         /// <summary>
         /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>
@@ -170,35 +170,35 @@ namespace G
         /// </param>
         public WebhookPush(
             string after,
-            string? baseRef,
             string before,
             global::System.Collections.Generic.IList<global::G.WebhookPushCommit> commits,
             string compare,
             bool created,
             bool deleted,
             bool forced,
-            global::G.WebhookPushHeadCommit? headCommit,
             global::G.WebhookPushPusher pusher,
             string @ref,
             global::G.WebhookPushRepository repository,
+            string? baseRef,
             global::G.EnterpriseWebhooks? enterprise,
+            global::G.WebhookPushHeadCommit? headCommit,
             global::G.SimpleInstallation? installation,
             global::G.OrganizationSimpleWebhooks? organization,
             global::G.SimpleUser? sender)
         {
             this.After = after ?? throw new global::System.ArgumentNullException(nameof(after));
-            this.BaseRef = baseRef ?? throw new global::System.ArgumentNullException(nameof(baseRef));
             this.Before = before ?? throw new global::System.ArgumentNullException(nameof(before));
             this.Commits = commits ?? throw new global::System.ArgumentNullException(nameof(commits));
             this.Compare = compare ?? throw new global::System.ArgumentNullException(nameof(compare));
             this.Created = created;
             this.Deleted = deleted;
             this.Forced = forced;
-            this.HeadCommit = headCommit ?? throw new global::System.ArgumentNullException(nameof(headCommit));
             this.Pusher = pusher ?? throw new global::System.ArgumentNullException(nameof(pusher));
             this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
+            this.BaseRef = baseRef;
             this.Enterprise = enterprise;
+            this.HeadCommit = headCommit;
             this.Installation = installation;
             this.Organization = organization;
             this.Sender = sender;

@@ -75,8 +75,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_by")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? DismissedBy { get; set; }
+        public global::G.NullableSimpleUser? DismissedBy { get; set; }
 
         /// <summary>
         /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
@@ -90,8 +89,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeScanningAlertDismissedReasonJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CodeScanningAlertDismissedReason? DismissedReason { get; set; }
+        public global::G.CodeScanningAlertDismissedReason? DismissedReason { get; set; }
 
         /// <summary>
         /// The dismissal comment associated with the dismissal of the alert.
@@ -191,15 +189,15 @@ namespace G
 #endif
         public CodeScanningOrganizationAlertItems(
             global::G.CodeScanningAlertState state,
-            global::G.NullableSimpleUser? dismissedBy,
-            global::G.CodeScanningAlertDismissedReason? dismissedReason,
             global::G.CodeScanningAlertRuleSummary rule,
             global::G.CodeScanningAnalysisTool tool,
             global::G.CodeScanningAlertInstance mostRecentInstance,
             global::G.SimpleRepository repository,
             global::System.DateTime? updatedAt,
             global::System.DateTime? fixedAt,
+            global::G.NullableSimpleUser? dismissedBy,
             global::System.DateTime? dismissedAt,
+            global::G.CodeScanningAlertDismissedReason? dismissedReason,
             string? dismissedComment,
             int number = default!,
             global::System.DateTime createdAt = default!,
@@ -208,8 +206,6 @@ namespace G
             string instancesUrl = default!)
         {
             this.State = state;
-            this.DismissedBy = dismissedBy ?? throw new global::System.ArgumentNullException(nameof(dismissedBy));
-            this.DismissedReason = dismissedReason;
             this.Rule = rule ?? throw new global::System.ArgumentNullException(nameof(rule));
             this.Tool = tool ?? throw new global::System.ArgumentNullException(nameof(tool));
             this.MostRecentInstance = mostRecentInstance ?? throw new global::System.ArgumentNullException(nameof(mostRecentInstance));
@@ -221,7 +217,9 @@ namespace G
             this.HtmlUrl = htmlUrl;
             this.InstancesUrl = instancesUrl;
             this.FixedAt = fixedAt;
+            this.DismissedBy = dismissedBy;
             this.DismissedAt = dismissedAt;
+            this.DismissedReason = dismissedReason;
             this.DismissedComment = dismissedComment;
         }
 

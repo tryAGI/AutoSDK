@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("repo", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.PullRequestHeadRepo? Repo { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("repo")]
+        public global::G.PullRequestHeadRepo? Repo { get; set; }
 
         /// <summary>
         /// 
@@ -56,15 +56,15 @@ namespace G
         public PullRequestHead(
             string label,
             string @ref,
-            global::G.PullRequestHeadRepo? repo,
             string sha,
-            global::G.PullRequestHeadUser user)
+            global::G.PullRequestHeadUser user,
+            global::G.PullRequestHeadRepo? repo)
         {
             this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
             this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
-            this.Repo = repo ?? throw new global::System.ArgumentNullException(nameof(repo));
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
             this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.Repo = repo;
         }
 
         /// <summary>

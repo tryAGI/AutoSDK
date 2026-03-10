@@ -20,15 +20,13 @@ namespace G
         /// The code scanning alert involved in the event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("alert")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookCodeScanningAlertReopenedAlert? Alert { get; set; }
+        public global::G.WebhookCodeScanningAlertReopenedAlert? Alert { get; set; }
 
         /// <summary>
         /// The commit SHA of the code scanning alert. When the action is `reopened_by_user` or `closed_by_user`, the event was triggered by the `sender` and this value will be empty.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_oid")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? CommitOid { get; set; }
+        public string? CommitOid { get; set; }
 
         /// <summary>
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
@@ -57,8 +55,7 @@ namespace G
         /// The Git reference of the code scanning alert. When the action is `reopened_by_user` or `closed_by_user`, the event was triggered by the `sender` and this value will be empty.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ref")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Ref { get; set; }
+        public string? Ref { get; set; }
 
         /// <summary>
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
@@ -119,25 +116,25 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookCodeScanningAlertReopened(
-            global::G.WebhookCodeScanningAlertReopenedAlert? alert,
-            string? commitOid,
-            string? @ref,
             global::G.RepositoryWebhooks repository,
             global::G.SimpleUser sender,
             global::G.WebhookCodeScanningAlertReopenedAction action,
+            global::G.WebhookCodeScanningAlertReopenedAlert? alert,
+            string? commitOid,
             global::G.EnterpriseWebhooks? enterprise,
             global::G.SimpleInstallation? installation,
-            global::G.OrganizationSimpleWebhooks? organization)
+            global::G.OrganizationSimpleWebhooks? organization,
+            string? @ref)
         {
-            this.Alert = alert ?? throw new global::System.ArgumentNullException(nameof(alert));
-            this.CommitOid = commitOid ?? throw new global::System.ArgumentNullException(nameof(commitOid));
-            this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Action = action;
+            this.Alert = alert;
+            this.CommitOid = commitOid;
             this.Enterprise = enterprise;
             this.Installation = installation;
             this.Organization = organization;
+            this.Ref = @ref;
         }
 
         /// <summary>

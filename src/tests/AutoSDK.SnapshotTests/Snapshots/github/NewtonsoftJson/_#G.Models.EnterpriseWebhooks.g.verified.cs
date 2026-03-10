@@ -65,15 +65,15 @@ namespace G
         /// Example: 2019-01-26T19:01:12Z
         /// </summary>
         /// <example>2019-01-26T19:01:12Z</example>
-        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? CreatedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("created_at")]
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// Example: 2019-01-26T19:14:43Z
         /// </summary>
         /// <example>2019-01-26T19:14:43Z</example>
-        [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? UpdatedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("updated_at")]
+        public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// 
@@ -127,22 +127,22 @@ namespace G
             string nodeId,
             string name,
             string slug,
-            global::System.DateTime? createdAt,
-            global::System.DateTime? updatedAt,
             string avatarUrl,
             string? description,
-            string? websiteUrl)
+            string? websiteUrl,
+            global::System.DateTime? createdAt,
+            global::System.DateTime? updatedAt)
         {
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
             this.Description = description;
             this.WebsiteUrl = websiteUrl;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
         }
 
         /// <summary>

@@ -84,8 +84,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("withdrawn_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? WithdrawnAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("withdrawn_at")]
+        public string? WithdrawnAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -121,8 +121,8 @@ namespace G
             string summary,
             string updatedAt,
             global::System.Collections.Generic.IList<global::G.WebhooksSecurityAdvisoryVulnerabilitie> vulnerabilities,
-            string? withdrawnAt,
-            global::G.CvssSeverities? cvssSeverities)
+            global::G.CvssSeverities? cvssSeverities,
+            string? withdrawnAt)
         {
             this.Cvss = cvss ?? throw new global::System.ArgumentNullException(nameof(cvss));
             this.Cwes = cwes ?? throw new global::System.ArgumentNullException(nameof(cwes));
@@ -135,8 +135,8 @@ namespace G
             this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
             this.Vulnerabilities = vulnerabilities ?? throw new global::System.ArgumentNullException(nameof(vulnerabilities));
-            this.WithdrawnAt = withdrawnAt ?? throw new global::System.ArgumentNullException(nameof(withdrawnAt));
             this.CvssSeverities = cvssSeverities;
+            this.WithdrawnAt = withdrawnAt;
         }
 
         /// <summary>

@@ -33,8 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("gravatar_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? GravatarId { get; set; }
+        public string? GravatarId { get; set; }
 
         /// <summary>
         /// 
@@ -71,17 +70,17 @@ namespace G
         public Actor(
             int id,
             string login,
-            string? gravatarId,
             string url,
             string avatarUrl,
-            string? displayLogin)
+            string? displayLogin,
+            string? gravatarId)
         {
             this.Id = id;
             this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
-            this.GravatarId = gravatarId ?? throw new global::System.ArgumentNullException(nameof(gravatarId));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
             this.DisplayLogin = displayLogin;
+            this.GravatarId = gravatarId;
         }
 
         /// <summary>

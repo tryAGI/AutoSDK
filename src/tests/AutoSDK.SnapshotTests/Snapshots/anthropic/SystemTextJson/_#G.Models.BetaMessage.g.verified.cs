@@ -79,8 +79,7 @@ namespace G
         /// In non-streaming mode this value is always non-null. In streaming mode, it is null in the `message_start` event and non-null otherwise.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_reason")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.BetaMessageStopReason2? StopReason { get; set; }
+        public global::G.BetaMessageStopReason2? StopReason { get; set; }
 
         /// <summary>
         /// Which custom stop sequence was generated, if any.<br/>
@@ -88,8 +87,7 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_sequence")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? StopSequence { get; set; }
+        public string? StopSequence { get; set; }
 
         /// <summary>
         /// Billing and rate-limit usage.<br/>
@@ -176,20 +174,20 @@ namespace G
             string id,
             global::System.Collections.Generic.IList<global::G.BetaContentBlock> content,
             global::G.Model model,
+            global::G.BetaUsage usage,
             global::G.BetaMessageStopReason2? stopReason,
             string? stopSequence,
-            global::G.BetaUsage usage,
             global::G.BetaMessageType type = global::G.BetaMessageType.Message,
             global::G.BetaMessageRole role = global::G.BetaMessageRole.Assistant)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Model = model;
-            this.StopReason = stopReason ?? throw new global::System.ArgumentNullException(nameof(stopReason));
-            this.StopSequence = stopSequence ?? throw new global::System.ArgumentNullException(nameof(stopSequence));
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
             this.Type = type;
             this.Role = role;
+            this.StopReason = stopReason;
+            this.StopSequence = stopSequence;
         }
 
         /// <summary>

@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? Author { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("author")]
+        public global::G.NullableSimpleUser? Author { get; set; }
 
         /// <summary>
         /// Example: 135
@@ -48,13 +48,13 @@ namespace G
         /// Example: [{"w":"1367712000","a":6898,"d":77,"c":10}]
         /// </param>
         public ContributorActivity(
-            global::G.NullableSimpleUser? author,
             int total,
-            global::System.Collections.Generic.IList<global::G.ContributorActivityWeek> weeks)
+            global::System.Collections.Generic.IList<global::G.ContributorActivityWeek> weeks,
+            global::G.NullableSimpleUser? author)
         {
-            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
             this.Total = total;
             this.Weeks = weeks ?? throw new global::System.ArgumentNullException(nameof(weeks));
+            this.Author = author;
         }
 
         /// <summary>

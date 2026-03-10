@@ -24,20 +24,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("language", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Language { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("language")]
+        public string? Language { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RenderType2? Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.RenderType2? Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("media_ref", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.DubbingMediaReference? MediaRef { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("media_ref")]
+        public global::G.DubbingMediaReference? MediaRef { get; set; }
 
         /// <summary>
         /// 
@@ -63,17 +63,17 @@ namespace G
         public Render(
             string id,
             int version,
+            global::G.RenderStatus status,
             string? language,
             global::G.RenderType2? type,
-            global::G.DubbingMediaReference? mediaRef,
-            global::G.RenderStatus status)
+            global::G.DubbingMediaReference? mediaRef)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Version = version;
-            this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
-            this.MediaRef = mediaRef ?? throw new global::System.ArgumentNullException(nameof(mediaRef));
             this.Status = status;
+            this.Language = language;
+            this.Type = type;
+            this.MediaRef = mediaRef;
         }
 
         /// <summary>

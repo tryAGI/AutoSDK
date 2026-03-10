@@ -66,8 +66,8 @@ namespace G
         /// <summary>
         /// Breakdown of Copilot code completions usage by language and editor
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("breakdown", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.CopilotUsageMetricsBreakdownItem>? Breakdown { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("breakdown")]
+        public global::System.Collections.Generic.IList<global::G.CopilotUsageMetricsBreakdownItem>? Breakdown { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -110,7 +110,6 @@ namespace G
         /// </param>
         public CopilotUsageMetrics(
             global::System.DateTime day,
-            global::System.Collections.Generic.IList<global::G.CopilotUsageMetricsBreakdownItem>? breakdown,
             int? totalSuggestionsCount,
             int? totalAcceptancesCount,
             int? totalLinesSuggested,
@@ -118,10 +117,10 @@ namespace G
             int? totalActiveUsers,
             int? totalChatAcceptances,
             int? totalChatTurns,
-            int? totalActiveChatUsers)
+            int? totalActiveChatUsers,
+            global::System.Collections.Generic.IList<global::G.CopilotUsageMetricsBreakdownItem>? breakdown)
         {
             this.Day = day;
-            this.Breakdown = breakdown ?? throw new global::System.ArgumentNullException(nameof(breakdown));
             this.TotalSuggestionsCount = totalSuggestionsCount;
             this.TotalAcceptancesCount = totalAcceptancesCount;
             this.TotalLinesSuggested = totalLinesSuggested;
@@ -130,6 +129,7 @@ namespace G
             this.TotalChatAcceptances = totalChatAcceptances;
             this.TotalChatTurns = totalChatTurns;
             this.TotalActiveChatUsers = totalActiveChatUsers;
+            this.Breakdown = breakdown;
         }
 
         /// <summary>

@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("free_trial_ends_on", Required = global::Newtonsoft.Json.Required.Always)]
-        public object? FreeTrialEndsOn { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("free_trial_ends_on")]
+        public object? FreeTrialEndsOn { get; set; }
 
         /// <summary>
         /// 
@@ -70,18 +70,18 @@ namespace G
         public WebhooksPreviousMarketplacePurchase(
             global::G.WebhooksPreviousMarketplacePurchaseAccount account,
             string billingCycle,
-            object? freeTrialEndsOn,
             bool onFreeTrial,
             global::G.WebhooksPreviousMarketplacePurchasePlan plan,
             int unitCount,
+            object? freeTrialEndsOn,
             string? nextBillingDate)
         {
             this.Account = account ?? throw new global::System.ArgumentNullException(nameof(account));
             this.BillingCycle = billingCycle ?? throw new global::System.ArgumentNullException(nameof(billingCycle));
-            this.FreeTrialEndsOn = freeTrialEndsOn ?? throw new global::System.ArgumentNullException(nameof(freeTrialEndsOn));
             this.OnFreeTrial = onFreeTrial;
             this.Plan = plan ?? throw new global::System.ArgumentNullException(nameof(plan));
             this.UnitCount = unitCount;
+            this.FreeTrialEndsOn = freeTrialEndsOn;
             this.NextBillingDate = nextBillingDate;
         }
 

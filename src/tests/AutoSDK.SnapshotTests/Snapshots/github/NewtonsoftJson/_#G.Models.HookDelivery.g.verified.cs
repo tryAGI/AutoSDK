@@ -78,24 +78,24 @@ namespace G
         /// Example: opened
         /// </summary>
         /// <example>opened</example>
-        [global::Newtonsoft.Json.JsonProperty("action", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Action { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("action")]
+        public string? Action { get; set; }
 
         /// <summary>
         /// The id of the GitHub App installation associated with this event.<br/>
         /// Example: 123
         /// </summary>
         /// <example>123</example>
-        [global::Newtonsoft.Json.JsonProperty("installation_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? InstallationId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("installation_id")]
+        public int? InstallationId { get; set; }
 
         /// <summary>
         /// The id of the repository associated with this event.<br/>
         /// Example: 123
         /// </summary>
         /// <example>123</example>
-        [global::Newtonsoft.Json.JsonProperty("repository_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? RepositoryId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("repository_id")]
+        public int? RepositoryId { get; set; }
 
         /// <summary>
         /// Time when the webhook delivery was throttled.<br/>
@@ -197,11 +197,11 @@ namespace G
             string status,
             int statusCode,
             string @event,
+            global::G.HookDeliveryRequest request,
+            global::G.HookDeliveryResponse response,
             string? action,
             int? installationId,
             int? repositoryId,
-            global::G.HookDeliveryRequest request,
-            global::G.HookDeliveryResponse response,
             global::System.DateTime? throttledAt,
             string? url)
         {
@@ -213,11 +213,11 @@ namespace G
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.StatusCode = statusCode;
             this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));
-            this.Action = action ?? throw new global::System.ArgumentNullException(nameof(action));
-            this.InstallationId = installationId;
-            this.RepositoryId = repositoryId;
             this.Request = request ?? throw new global::System.ArgumentNullException(nameof(request));
             this.Response = response ?? throw new global::System.ArgumentNullException(nameof(response));
+            this.Action = action;
+            this.InstallationId = installationId;
+            this.RepositoryId = repositoryId;
             this.ThrottledAt = throttledAt;
             this.Url = url;
         }

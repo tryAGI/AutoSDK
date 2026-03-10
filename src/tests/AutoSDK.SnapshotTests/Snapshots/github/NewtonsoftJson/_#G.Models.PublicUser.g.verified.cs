@@ -36,8 +36,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("gravatar_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? GravatarId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("gravatar_id")]
+        public string? GravatarId { get; set; }
 
         /// <summary>
         /// 
@@ -120,32 +120,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Name { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("company", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Company { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("company")]
+        public string? Company { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("blog", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Blog { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("blog")]
+        public string? Blog { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("location", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Location { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("location")]
+        public string? Location { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("email", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Email { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("email")]
+        public string? Email { get; set; }
 
         /// <summary>
         /// 
@@ -156,14 +156,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("hireable", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool? Hireable { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("hireable")]
+        public bool? Hireable { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("bio", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Bio { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("bio")]
+        public string? Bio { get; set; }
 
         /// <summary>
         /// 
@@ -318,7 +318,6 @@ namespace G
             long id,
             string nodeId,
             string avatarUrl,
-            string? gravatarId,
             string url,
             string htmlUrl,
             string followersUrl,
@@ -332,20 +331,21 @@ namespace G
             string receivedEventsUrl,
             string type,
             bool siteAdmin,
-            string? name,
-            string? company,
-            string? blog,
-            string? location,
-            string? email,
-            bool? hireable,
-            string? bio,
             int publicRepos,
             int publicGists,
             int followers,
             int following,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
+            string? gravatarId,
+            string? name,
+            string? company,
+            string? blog,
+            string? location,
+            string? email,
             string? notificationEmail,
+            bool? hireable,
+            string? bio,
             string? twitterUsername,
             global::G.PublicUserPlan? plan,
             global::System.DateTime? suspendedAt,
@@ -359,7 +359,6 @@ namespace G
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
-            this.GravatarId = gravatarId ?? throw new global::System.ArgumentNullException(nameof(gravatarId));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.FollowersUrl = followersUrl ?? throw new global::System.ArgumentNullException(nameof(followersUrl));
@@ -373,20 +372,21 @@ namespace G
             this.ReceivedEventsUrl = receivedEventsUrl ?? throw new global::System.ArgumentNullException(nameof(receivedEventsUrl));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.SiteAdmin = siteAdmin;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Company = company ?? throw new global::System.ArgumentNullException(nameof(company));
-            this.Blog = blog ?? throw new global::System.ArgumentNullException(nameof(blog));
-            this.Location = location ?? throw new global::System.ArgumentNullException(nameof(location));
-            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
-            this.Hireable = hireable;
-            this.Bio = bio ?? throw new global::System.ArgumentNullException(nameof(bio));
             this.PublicRepos = publicRepos;
             this.PublicGists = publicGists;
             this.Followers = followers;
             this.Following = following;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.GravatarId = gravatarId;
+            this.Name = name;
+            this.Company = company;
+            this.Blog = blog;
+            this.Location = location;
+            this.Email = email;
             this.NotificationEmail = notificationEmail;
+            this.Hireable = hireable;
+            this.Bio = bio;
             this.TwitterUsername = twitterUsername;
             this.Plan = plan;
             this.SuspendedAt = suspendedAt;

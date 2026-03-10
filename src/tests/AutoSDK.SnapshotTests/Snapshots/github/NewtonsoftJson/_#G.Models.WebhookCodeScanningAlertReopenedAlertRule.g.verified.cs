@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// The severity of the alert.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("severity", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookCodeScanningAlertReopenedAlertRuleSeverity? Severity { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("severity")]
+        public global::G.WebhookCodeScanningAlertReopenedAlertRuleSeverity? Severity { get; set; }
 
         /// <summary>
         /// 
@@ -85,20 +85,20 @@ namespace G
         public WebhookCodeScanningAlertReopenedAlertRule(
             string description,
             string id,
-            global::G.WebhookCodeScanningAlertReopenedAlertRuleSeverity? severity,
             string? fullDescription,
             string? help,
             string? helpUri,
             string? name,
+            global::G.WebhookCodeScanningAlertReopenedAlertRuleSeverity? severity,
             global::System.Collections.Generic.IList<string>? tags)
         {
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Severity = severity;
             this.FullDescription = fullDescription;
             this.Help = help;
             this.HelpUri = helpUri;
             this.Name = name;
+            this.Severity = severity;
             this.Tags = tags;
         }
 

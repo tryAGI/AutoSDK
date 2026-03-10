@@ -38,8 +38,7 @@ namespace G
         /// The length of time, in minutes, that users must follow the broadcaster before being able to participate in the chat room. Is **null** if `follower_mode` is **false**.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("follower_mode_duration")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? FollowerModeDuration { get; set; }
+        public int? FollowerModeDuration { get; set; }
 
         /// <summary>
         /// The moderator’s ID. The response includes this field only if the request specifies a user access token that includes the **moderator:read:chat\_settings** scope.
@@ -80,8 +79,7 @@ namespace G
         /// Is **null** if slow\_mode is **false**.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("slow_mode_wait_time")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? SlowModeWaitTime { get; set; }
+        public int? SlowModeWaitTime { get; set; }
 
         /// <summary>
         /// A Boolean value that determines whether only users that subscribe to the broadcaster’s channel may talk in the chat room.  <br/>
@@ -168,26 +166,26 @@ namespace G
             string broadcasterId,
             bool emoteMode,
             bool followerMode,
-            int? followerModeDuration,
             bool slowMode,
-            int? slowModeWaitTime,
             bool subscriberMode,
             bool uniqueChatMode,
+            int? followerModeDuration,
             string? moderatorId,
             bool? nonModeratorChatDelay,
-            int? nonModeratorChatDelayDuration)
+            int? nonModeratorChatDelayDuration,
+            int? slowModeWaitTime)
         {
             this.BroadcasterId = broadcasterId ?? throw new global::System.ArgumentNullException(nameof(broadcasterId));
             this.EmoteMode = emoteMode;
             this.FollowerMode = followerMode;
-            this.FollowerModeDuration = followerModeDuration;
             this.SlowMode = slowMode;
-            this.SlowModeWaitTime = slowModeWaitTime;
             this.SubscriberMode = subscriberMode;
             this.UniqueChatMode = uniqueChatMode;
+            this.FollowerModeDuration = followerModeDuration;
             this.ModeratorId = moderatorId;
             this.NonModeratorChatDelay = nonModeratorChatDelay;
             this.NonModeratorChatDelayDuration = nonModeratorChatDelayDuration;
+            this.SlowModeWaitTime = slowModeWaitTime;
         }
 
         /// <summary>

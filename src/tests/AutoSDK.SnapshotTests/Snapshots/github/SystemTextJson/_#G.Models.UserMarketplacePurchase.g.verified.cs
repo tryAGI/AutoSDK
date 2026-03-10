@@ -22,15 +22,13 @@ namespace G
         /// </summary>
         /// <example>2017-11-11T00:00:00Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_billing_date")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? NextBillingDate { get; set; }
+        public global::System.DateTime? NextBillingDate { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("unit_count")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? UnitCount { get; set; }
+        public int? UnitCount { get; set; }
 
         /// <summary>
         /// Example: true
@@ -45,16 +43,14 @@ namespace G
         /// </summary>
         /// <example>2017-11-11T00:00:00Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("free_trial_ends_on")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? FreeTrialEndsOn { get; set; }
+        public global::System.DateTime? FreeTrialEndsOn { get; set; }
 
         /// <summary>
         /// Example: 2017-11-02T01:12:12Z
         /// </summary>
         /// <example>2017-11-02T01:12:12Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? UpdatedAt { get; set; }
+        public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// 
@@ -104,22 +100,22 @@ namespace G
 #endif
         public UserMarketplacePurchase(
             string billingCycle,
+            bool onFreeTrial,
+            global::G.MarketplaceAccount account,
+            global::G.MarketplaceListingPlan plan,
             global::System.DateTime? nextBillingDate,
             int? unitCount,
-            bool onFreeTrial,
             global::System.DateTime? freeTrialEndsOn,
-            global::System.DateTime? updatedAt,
-            global::G.MarketplaceAccount account,
-            global::G.MarketplaceListingPlan plan)
+            global::System.DateTime? updatedAt)
         {
             this.BillingCycle = billingCycle ?? throw new global::System.ArgumentNullException(nameof(billingCycle));
-            this.NextBillingDate = nextBillingDate;
-            this.UnitCount = unitCount;
             this.OnFreeTrial = onFreeTrial;
-            this.FreeTrialEndsOn = freeTrialEndsOn;
-            this.UpdatedAt = updatedAt;
             this.Account = account ?? throw new global::System.ArgumentNullException(nameof(account));
             this.Plan = plan ?? throw new global::System.ArgumentNullException(nameof(plan));
+            this.NextBillingDate = nextBillingDate;
+            this.UnitCount = unitCount;
+            this.FreeTrialEndsOn = freeTrialEndsOn;
+            this.UpdatedAt = updatedAt;
         }
 
         /// <summary>

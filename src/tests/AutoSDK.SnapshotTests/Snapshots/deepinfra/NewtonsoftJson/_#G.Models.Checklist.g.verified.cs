@@ -54,14 +54,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("limit", Required = global::Newtonsoft.Json.Required.Always)]
-        public double? Limit { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("limit")]
+        public double? Limit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("suspend_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SuspendReason? SuspendReason { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("suspend_reason")]
+        public global::G.SuspendReason? SuspendReason { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -97,24 +97,24 @@ namespace G
         /// <param name="suspendReason"></param>
         public Checklist(
             double stripeBalance,
-            double? limit,
-            global::G.SuspendReason? suspendReason,
             bool? email,
             bool? billingAddress,
             bool? paymentMethod,
             bool? suspended,
             double? overdueInvoices,
-            int? lastChecked)
+            int? lastChecked,
+            double? limit,
+            global::G.SuspendReason? suspendReason)
         {
             this.StripeBalance = stripeBalance;
-            this.Limit = limit ?? throw new global::System.ArgumentNullException(nameof(limit));
-            this.SuspendReason = suspendReason ?? throw new global::System.ArgumentNullException(nameof(suspendReason));
             this.Email = email;
             this.BillingAddress = billingAddress;
             this.PaymentMethod = paymentMethod;
             this.Suspended = suspended;
             this.OverdueInvoices = overdueInvoices;
             this.LastChecked = lastChecked;
+            this.Limit = limit;
+            this.SuspendReason = suspendReason;
         }
 
         /// <summary>

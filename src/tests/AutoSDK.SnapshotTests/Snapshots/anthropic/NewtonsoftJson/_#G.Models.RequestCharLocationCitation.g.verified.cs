@@ -30,8 +30,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("document_title", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? DocumentTitle { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("document_title")]
+        public string? DocumentTitle { get; set; }
 
         /// <summary>
         /// 
@@ -63,17 +63,17 @@ namespace G
         public RequestCharLocationCitation(
             string citedText,
             int documentIndex,
-            string? documentTitle,
             int startCharIndex,
             int endCharIndex,
-            global::G.RequestCharLocationCitationType type)
+            global::G.RequestCharLocationCitationType type,
+            string? documentTitle)
         {
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.DocumentIndex = documentIndex;
-            this.DocumentTitle = documentTitle ?? throw new global::System.ArgumentNullException(nameof(documentTitle));
             this.StartCharIndex = startCharIndex;
             this.EndCharIndex = endCharIndex;
             this.Type = type;
+            this.DocumentTitle = documentTitle;
         }
 
         /// <summary>

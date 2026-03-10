@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// A list of message content tokens with log probability information.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.ChatCompletionTokenLogprob>? Content { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("content")]
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionTokenLogprob>? Content { get; set; }
 
         /// <summary>
         /// A list of message refusal tokens with log probability information.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("refusal", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.ChatCompletionTokenLogprob>? Refusal { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("refusal")]
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionTokenLogprob>? Refusal { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,8 +40,8 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ChatCompletionTokenLogprob>? content,
             global::System.Collections.Generic.IList<global::G.ChatCompletionTokenLogprob>? refusal)
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.Refusal = refusal ?? throw new global::System.ArgumentNullException(nameof(refusal));
+            this.Content = content;
+            this.Refusal = refusal;
         }
 
         /// <summary>

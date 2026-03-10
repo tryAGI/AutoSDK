@@ -42,8 +42,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("default_workspace_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Guid? DefaultWorkspaceId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("default_workspace_id")]
+        public global::System.Guid? DefaultWorkspaceId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -73,7 +73,7 @@ namespace G
             this.UpdatedAt = updatedAt;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.OrganizationId = organizationId;
-            this.DefaultWorkspaceId = defaultWorkspaceId ?? throw new global::System.ArgumentNullException(nameof(defaultWorkspaceId));
+            this.DefaultWorkspaceId = defaultWorkspaceId;
         }
 
         /// <summary>

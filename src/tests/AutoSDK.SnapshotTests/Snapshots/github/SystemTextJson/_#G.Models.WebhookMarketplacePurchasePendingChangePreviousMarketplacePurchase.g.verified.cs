@@ -27,8 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("free_trial_ends_on")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? FreeTrialEndsOn { get; set; }
+        public string? FreeTrialEndsOn { get; set; }
 
         /// <summary>
         /// 
@@ -79,18 +78,18 @@ namespace G
         public WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchase(
             global::G.WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchaseAccount account,
             string billingCycle,
-            string? freeTrialEndsOn,
             bool onFreeTrial,
             global::G.WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlan plan,
             int unitCount,
+            string? freeTrialEndsOn,
             string? nextBillingDate)
         {
             this.Account = account ?? throw new global::System.ArgumentNullException(nameof(account));
             this.BillingCycle = billingCycle ?? throw new global::System.ArgumentNullException(nameof(billingCycle));
-            this.FreeTrialEndsOn = freeTrialEndsOn ?? throw new global::System.ArgumentNullException(nameof(freeTrialEndsOn));
             this.OnFreeTrial = onFreeTrial;
             this.Plan = plan ?? throw new global::System.ArgumentNullException(nameof(plan));
             this.UnitCount = unitCount;
+            this.FreeTrialEndsOn = freeTrialEndsOn;
             this.NextBillingDate = nextBillingDate;
         }
 

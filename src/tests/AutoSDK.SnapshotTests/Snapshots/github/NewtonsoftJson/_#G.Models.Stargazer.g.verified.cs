@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? User { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("user")]
+        public global::G.NullableSimpleUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,7 +39,7 @@ namespace G
             global::G.NullableSimpleUser? user)
         {
             this.StarredAt = starredAt;
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.User = user;
         }
 
         /// <summary>

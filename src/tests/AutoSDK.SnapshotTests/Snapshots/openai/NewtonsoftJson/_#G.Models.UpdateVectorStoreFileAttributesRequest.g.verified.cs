@@ -16,8 +16,8 @@ namespace G
         /// with a maximum length of 64 characters. Values are strings with a maximum <br/>
         /// length of 512 characters, booleans, or numbers.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("attributes", Required = global::Newtonsoft.Json.Required.Always)]
-        public object? Attributes { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("attributes")]
+        public object? Attributes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +38,7 @@ namespace G
         public UpdateVectorStoreFileAttributesRequest(
             object? attributes)
         {
-            this.Attributes = attributes ?? throw new global::System.ArgumentNullException(nameof(attributes));
+            this.Attributes = attributes;
         }
 
         /// <summary>

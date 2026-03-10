@@ -112,8 +112,7 @@ namespace G
         /// The UTC date and time (in RFC3339 format) of when the poll ended. If `status` is ACTIVE, this field is set to **null**.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ended_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? EndedAt { get; set; }
+        public global::System.DateTime? EndedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

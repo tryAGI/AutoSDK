@@ -29,8 +29,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? User { get; set; }
+        public global::G.NullableSimpleUser? User { get; set; }
 
         /// <summary>
         /// The reaction to use<br/>
@@ -81,15 +80,15 @@ namespace G
         public Reaction(
             int id,
             string nodeId,
-            global::G.NullableSimpleUser? user,
             global::G.ReactionContent content,
-            global::System.DateTime createdAt)
+            global::System.DateTime createdAt,
+            global::G.NullableSimpleUser? user)
         {
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
             this.Content = content;
             this.CreatedAt = createdAt;
+            this.User = user;
         }
 
         /// <summary>

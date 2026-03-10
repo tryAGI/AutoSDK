@@ -13,16 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? CompletedAt { get; set; }
+        public global::System.DateTime? CompletedAt { get; set; }
 
         /// <summary>
         /// The result of the completed check run. This value will be `null` until the check run has completed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookDeploymentStatusCreatedCheckRunConclusionJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookDeploymentStatusCreatedCheckRunConclusion? Conclusion { get; set; }
+        public global::G.WebhookDeploymentStatusCreatedCheckRunConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// 
@@ -130,8 +128,6 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookDeploymentStatusCreatedCheckRun(
-            global::System.DateTime? completedAt,
-            global::G.WebhookDeploymentStatusCreatedCheckRunConclusion? conclusion,
             string detailsUrl,
             string externalId,
             string headSha,
@@ -141,10 +137,10 @@ namespace G
             string nodeId,
             global::System.DateTime startedAt,
             global::G.WebhookDeploymentStatusCreatedCheckRunStatus status,
-            string url)
+            string url,
+            global::System.DateTime? completedAt,
+            global::G.WebhookDeploymentStatusCreatedCheckRunConclusion? conclusion)
         {
-            this.CompletedAt = completedAt;
-            this.Conclusion = conclusion;
             this.DetailsUrl = detailsUrl ?? throw new global::System.ArgumentNullException(nameof(detailsUrl));
             this.ExternalId = externalId ?? throw new global::System.ArgumentNullException(nameof(externalId));
             this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
@@ -155,6 +151,8 @@ namespace G
             this.StartedAt = startedAt;
             this.Status = status;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.CompletedAt = completedAt;
+            this.Conclusion = conclusion;
         }
 
         /// <summary>

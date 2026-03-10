@@ -24,8 +24,7 @@ namespace G
         /// </summary>
         /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_request_review_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required long? PullRequestReviewId { get; set; }
+        public long? PullRequestReviewId { get; set; }
 
         /// <summary>
         /// The ID of the pull request review comment.<br/>
@@ -365,7 +364,6 @@ namespace G
 #endif
         public PullRequestReviewComment(
             string url,
-            long? pullRequestReviewId,
             long id,
             string nodeId,
             string diffHunk,
@@ -380,6 +378,7 @@ namespace G
             string pullRequestUrl,
             global::G.AuthorAssociation authorAssociation,
             global::G.PullRequestReviewCommentLinks links,
+            long? pullRequestReviewId,
             int? position,
             int? originalPosition,
             int? inReplyToId,
@@ -395,7 +394,6 @@ namespace G
             string? bodyText)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.PullRequestReviewId = pullRequestReviewId;
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.DiffHunk = diffHunk ?? throw new global::System.ArgumentNullException(nameof(diffHunk));
@@ -410,6 +408,7 @@ namespace G
             this.PullRequestUrl = pullRequestUrl ?? throw new global::System.ArgumentNullException(nameof(pullRequestUrl));
             this.AuthorAssociation = authorAssociation;
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
+            this.PullRequestReviewId = pullRequestReviewId;
             this.Position = position;
             this.OriginalPosition = originalPosition;
             this.InReplyToId = inReplyToId;

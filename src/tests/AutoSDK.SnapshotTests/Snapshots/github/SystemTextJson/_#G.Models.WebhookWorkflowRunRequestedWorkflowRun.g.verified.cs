@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookWorkflowRunRequestedWorkflowRunActor? Actor { get; set; }
+        public global::G.WebhookWorkflowRunRequestedWorkflowRunActor? Actor { get; set; }
 
         /// <summary>
         /// 
@@ -56,8 +55,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookWorkflowRunRequestedWorkflowRunConclusionJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookWorkflowRunRequestedWorkflowRunConclusion? Conclusion { get; set; }
+        public global::G.WebhookWorkflowRunRequestedWorkflowRunConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// 
@@ -77,8 +75,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("head_branch")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? HeadBranch { get; set; }
+        public string? HeadBranch { get; set; }
 
         /// <summary>
         /// 
@@ -133,8 +130,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// 
@@ -154,8 +150,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("previous_attempt_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? PreviousAttemptUrl { get; set; }
+        public string? PreviousAttemptUrl { get; set; }
 
         /// <summary>
         /// 
@@ -217,8 +212,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("triggering_actor")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookWorkflowRunRequestedWorkflowRunTriggeringActor? TriggeringActor { get; set; }
+        public global::G.WebhookWorkflowRunRequestedWorkflowRunTriggeringActor? TriggeringActor { get; set; }
 
         /// <summary>
         /// 
@@ -303,16 +297,13 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookWorkflowRunRequestedWorkflowRun(
-            global::G.WebhookWorkflowRunRequestedWorkflowRunActor? actor,
             string artifactsUrl,
             string cancelUrl,
             int checkSuiteId,
             string checkSuiteNodeId,
             string checkSuiteUrl,
-            global::G.WebhookWorkflowRunRequestedWorkflowRunConclusion? conclusion,
             global::System.DateTime createdAt,
             string @event,
-            string? headBranch,
             global::G.WebhookWorkflowRunRequestedWorkflowRunHeadCommit headCommit,
             global::G.WebhookWorkflowRunRequestedWorkflowRunHeadRepository headRepository,
             string headSha,
@@ -320,10 +311,8 @@ namespace G
             int id,
             string jobsUrl,
             string logsUrl,
-            string? name,
             string nodeId,
             string path,
-            string? previousAttemptUrl,
             global::System.Collections.Generic.IList<global::G.WebhookWorkflowRunRequestedWorkflowRunPullRequest> pullRequests,
             global::G.WebhookWorkflowRunRequestedWorkflowRunRepository repository,
             string rerunUrl,
@@ -331,24 +320,26 @@ namespace G
             int runNumber,
             global::System.DateTime runStartedAt,
             global::G.WebhookWorkflowRunRequestedWorkflowRunStatus status,
-            global::G.WebhookWorkflowRunRequestedWorkflowRunTriggeringActor? triggeringActor,
             global::System.DateTime updatedAt,
             string url,
             int workflowId,
             string workflowUrl,
             string displayTitle,
-            global::System.Collections.Generic.IList<global::G.WebhookWorkflowRunRequestedWorkflowRunReferencedWorkflow>? referencedWorkflows)
+            global::G.WebhookWorkflowRunRequestedWorkflowRunActor? actor,
+            global::G.WebhookWorkflowRunRequestedWorkflowRunConclusion? conclusion,
+            string? headBranch,
+            string? name,
+            string? previousAttemptUrl,
+            global::System.Collections.Generic.IList<global::G.WebhookWorkflowRunRequestedWorkflowRunReferencedWorkflow>? referencedWorkflows,
+            global::G.WebhookWorkflowRunRequestedWorkflowRunTriggeringActor? triggeringActor)
         {
-            this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
             this.ArtifactsUrl = artifactsUrl ?? throw new global::System.ArgumentNullException(nameof(artifactsUrl));
             this.CancelUrl = cancelUrl ?? throw new global::System.ArgumentNullException(nameof(cancelUrl));
             this.CheckSuiteId = checkSuiteId;
             this.CheckSuiteNodeId = checkSuiteNodeId ?? throw new global::System.ArgumentNullException(nameof(checkSuiteNodeId));
             this.CheckSuiteUrl = checkSuiteUrl ?? throw new global::System.ArgumentNullException(nameof(checkSuiteUrl));
-            this.Conclusion = conclusion;
             this.CreatedAt = createdAt;
             this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));
-            this.HeadBranch = headBranch ?? throw new global::System.ArgumentNullException(nameof(headBranch));
             this.HeadCommit = headCommit ?? throw new global::System.ArgumentNullException(nameof(headCommit));
             this.HeadRepository = headRepository ?? throw new global::System.ArgumentNullException(nameof(headRepository));
             this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
@@ -356,10 +347,8 @@ namespace G
             this.Id = id;
             this.JobsUrl = jobsUrl ?? throw new global::System.ArgumentNullException(nameof(jobsUrl));
             this.LogsUrl = logsUrl ?? throw new global::System.ArgumentNullException(nameof(logsUrl));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
-            this.PreviousAttemptUrl = previousAttemptUrl ?? throw new global::System.ArgumentNullException(nameof(previousAttemptUrl));
             this.PullRequests = pullRequests ?? throw new global::System.ArgumentNullException(nameof(pullRequests));
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.RerunUrl = rerunUrl ?? throw new global::System.ArgumentNullException(nameof(rerunUrl));
@@ -367,13 +356,18 @@ namespace G
             this.RunNumber = runNumber;
             this.RunStartedAt = runStartedAt;
             this.Status = status;
-            this.TriggeringActor = triggeringActor ?? throw new global::System.ArgumentNullException(nameof(triggeringActor));
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.WorkflowId = workflowId;
             this.WorkflowUrl = workflowUrl ?? throw new global::System.ArgumentNullException(nameof(workflowUrl));
             this.DisplayTitle = displayTitle ?? throw new global::System.ArgumentNullException(nameof(displayTitle));
+            this.Actor = actor;
+            this.Conclusion = conclusion;
+            this.HeadBranch = headBranch;
+            this.Name = name;
+            this.PreviousAttemptUrl = previousAttemptUrl;
             this.ReferencedWorkflows = referencedWorkflows;
+            this.TriggeringActor = triggeringActor;
         }
 
         /// <summary>

@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("after_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public double? AfterId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("after_id")]
+        public double? AfterId { get; set; }
 
         /// <summary>
         /// 

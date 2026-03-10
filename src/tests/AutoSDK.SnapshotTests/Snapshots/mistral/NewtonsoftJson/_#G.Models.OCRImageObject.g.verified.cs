@@ -18,26 +18,26 @@ namespace G
         /// <summary>
         /// X coordinate of top-left corner of the extracted image
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("top_left_x", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? TopLeftX { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("top_left_x")]
+        public int? TopLeftX { get; set; }
 
         /// <summary>
         /// Y coordinate of top-left corner of the extracted image
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("top_left_y", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? TopLeftY { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("top_left_y")]
+        public int? TopLeftY { get; set; }
 
         /// <summary>
         /// X coordinate of bottom-right corner of the extracted image
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("bottom_right_x", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? BottomRightX { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("bottom_right_x")]
+        public int? BottomRightX { get; set; }
 
         /// <summary>
         /// Y coordinate of bottom-right corner of the extracted image
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("bottom_right_y", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? BottomRightY { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("bottom_right_y")]
+        public int? BottomRightY { get; set; }
 
         /// <summary>
         /// Base64 string of the extracted image
@@ -81,10 +81,10 @@ namespace G
             string? imageBase64)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.TopLeftX = topLeftX ?? throw new global::System.ArgumentNullException(nameof(topLeftX));
-            this.TopLeftY = topLeftY ?? throw new global::System.ArgumentNullException(nameof(topLeftY));
-            this.BottomRightX = bottomRightX ?? throw new global::System.ArgumentNullException(nameof(bottomRightX));
-            this.BottomRightY = bottomRightY ?? throw new global::System.ArgumentNullException(nameof(bottomRightY));
+            this.TopLeftX = topLeftX;
+            this.TopLeftY = topLeftY;
+            this.BottomRightX = bottomRightX;
+            this.BottomRightY = bottomRightY;
             this.ImageBase64 = imageBase64;
         }
 

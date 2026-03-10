@@ -18,20 +18,20 @@ namespace G
         /// <summary>
         /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("dismissed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public object? DismissedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("dismissed_at")]
+        public object? DismissedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("dismissed_by", Required = global::Newtonsoft.Json.Required.Always)]
-        public object? DismissedBy { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("dismissed_by")]
+        public object? DismissedBy { get; set; }
 
         /// <summary>
         /// The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("dismissed_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public object? DismissedReason { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("dismissed_reason")]
+        public object? DismissedReason { get; set; }
 
         /// <summary>
         /// The GitHub URL of the alert resource.
@@ -109,27 +109,27 @@ namespace G
         /// <param name="url"></param>
         public WebhookCodeScanningAlertReopenedByUserAlert(
             global::System.DateTime createdAt,
-            object? dismissedAt,
-            object? dismissedBy,
-            object? dismissedReason,
             string htmlUrl,
             int number,
             global::G.WebhookCodeScanningAlertReopenedByUserAlertRule rule,
             global::G.WebhookCodeScanningAlertReopenedByUserAlertState state,
             global::G.WebhookCodeScanningAlertReopenedByUserAlertTool tool,
             string url,
+            object? dismissedAt,
+            object? dismissedBy,
+            object? dismissedReason,
             global::G.WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstance? mostRecentInstance)
         {
             this.CreatedAt = createdAt;
-            this.DismissedAt = dismissedAt ?? throw new global::System.ArgumentNullException(nameof(dismissedAt));
-            this.DismissedBy = dismissedBy ?? throw new global::System.ArgumentNullException(nameof(dismissedBy));
-            this.DismissedReason = dismissedReason ?? throw new global::System.ArgumentNullException(nameof(dismissedReason));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Number = number;
             this.Rule = rule ?? throw new global::System.ArgumentNullException(nameof(rule));
             this.State = state;
             this.Tool = tool ?? throw new global::System.ArgumentNullException(nameof(tool));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.DismissedAt = dismissedAt;
+            this.DismissedBy = dismissedBy;
+            this.DismissedReason = dismissedReason;
             this.MostRecentInstance = mostRecentInstance;
         }
 

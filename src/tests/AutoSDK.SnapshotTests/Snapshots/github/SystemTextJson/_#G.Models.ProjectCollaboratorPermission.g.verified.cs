@@ -20,8 +20,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? User { get; set; }
+        public global::G.NullableSimpleUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,7 +43,7 @@ namespace G
             global::G.NullableSimpleUser? user)
         {
             this.Permission = permission ?? throw new global::System.ArgumentNullException(nameof(permission));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.User = user;
         }
 
         /// <summary>

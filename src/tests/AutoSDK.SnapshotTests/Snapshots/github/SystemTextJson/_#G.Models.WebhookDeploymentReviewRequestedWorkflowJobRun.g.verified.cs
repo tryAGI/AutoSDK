@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Conclusion { get; set; }
+        public object? Conclusion { get; set; }
 
         /// <summary>
         /// 
@@ -48,8 +47,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// 
@@ -86,23 +84,23 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookDeploymentReviewRequestedWorkflowJobRun(
-            object? conclusion,
             string createdAt,
             string environment,
             string htmlUrl,
             int id,
-            string? name,
             string status,
-            string updatedAt)
+            string updatedAt,
+            object? conclusion,
+            string? name)
         {
-            this.Conclusion = conclusion ?? throw new global::System.ArgumentNullException(nameof(conclusion));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.Environment = environment ?? throw new global::System.ArgumentNullException(nameof(environment));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
+            this.Conclusion = conclusion;
+            this.Name = name;
         }
 
         /// <summary>

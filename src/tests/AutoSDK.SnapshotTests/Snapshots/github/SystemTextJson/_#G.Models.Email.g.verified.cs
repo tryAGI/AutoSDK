@@ -38,8 +38,7 @@ namespace G
         /// </summary>
         /// <example>public</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Visibility { get; set; }
+        public string? Visibility { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -74,7 +73,7 @@ namespace G
             this.Email1 = email1 ?? throw new global::System.ArgumentNullException(nameof(email1));
             this.Primary = primary;
             this.Verified = verified;
-            this.Visibility = visibility ?? throw new global::System.ArgumentNullException(nameof(visibility));
+            this.Visibility = visibility;
         }
 
         /// <summary>

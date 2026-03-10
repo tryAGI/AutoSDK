@@ -25,15 +25,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Reason { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("reason")]
+        public string? Reason { get; set; }
 
         /// <summary>
         /// Example: 2012-10-06T21:34:12Z
         /// </summary>
         /// <example>2012-10-06T21:34:12Z</example>
-        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? CreatedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("created_at")]
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// Example: https://api.github.com/notifications/threads/1/subscription
@@ -85,17 +85,17 @@ namespace G
         public ThreadSubscription(
             bool subscribed,
             bool ignored,
+            string url,
             string? reason,
             global::System.DateTime? createdAt,
-            string url,
             string? threadUrl,
             string? repositoryUrl)
         {
             this.Subscribed = subscribed;
             this.Ignored = ignored;
-            this.Reason = reason ?? throw new global::System.ArgumentNullException(nameof(reason));
-            this.CreatedAt = createdAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Reason = reason;
+            this.CreatedAt = createdAt;
             this.ThreadUrl = threadUrl;
             this.RepositoryUrl = repositoryUrl;
         }

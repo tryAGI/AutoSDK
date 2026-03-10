@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Text { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("text")]
+        public string? Text { get; set; }
 
         /// <summary>
         /// 
@@ -36,8 +36,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("media_ref", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.DubbingMediaReference? MediaRef { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("media_ref")]
+        public global::G.DubbingMediaReference? MediaRef { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -56,15 +56,15 @@ namespace G
         public DubbedSegment(
             double startTime,
             double endTime,
-            string? text,
             bool audioStale,
+            string? text,
             global::G.DubbingMediaReference? mediaRef)
         {
             this.StartTime = startTime;
             this.EndTime = endTime;
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.AudioStale = audioStale;
-            this.MediaRef = mediaRef ?? throw new global::System.ArgumentNullException(nameof(mediaRef));
+            this.Text = text;
+            this.MediaRef = mediaRef;
         }
 
         /// <summary>

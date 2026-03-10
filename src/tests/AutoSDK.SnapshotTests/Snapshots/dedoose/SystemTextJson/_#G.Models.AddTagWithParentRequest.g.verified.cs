@@ -48,22 +48,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("weightMin")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required double? WeightMin { get; set; }
+        public double? WeightMin { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("weightMax")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required double? WeightMax { get; set; }
+        public double? WeightMax { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("weightDefault")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required double? WeightDefault { get; set; }
+        public double? WeightDefault { get; set; }
 
         /// <summary>
         /// 
@@ -107,22 +104,22 @@ namespace G
             string title,
             string description,
             bool isWeighted,
+            bool allowDecimalWeights,
+            double color,
             double? weightMin,
             double? weightMax,
-            double? weightDefault,
-            bool allowDecimalWeights,
-            double color)
+            double? weightDefault)
         {
             this.ProejctId = proejctId;
             this.ParentTagId = parentTagId;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.IsWeighted = isWeighted;
+            this.AllowDecimalWeights = allowDecimalWeights;
+            this.Color = color;
             this.WeightMin = weightMin;
             this.WeightMax = weightMax;
             this.WeightDefault = weightDefault;
-            this.AllowDecimalWeights = allowDecimalWeights;
-            this.Color = color;
         }
 
         /// <summary>

@@ -14,8 +14,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Model { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("model")]
+        public string? Model { get; set; }
 
         /// <summary>
         /// 
@@ -80,16 +80,16 @@ namespace G
         /// Minimum height and width of image to extract
         /// </param>
         public OCRRequest(
-            string? model,
             global::G.AnyOf<global::G.DocumentURLChunk, global::G.ImageURLChunk> document,
+            string? model,
             string? id,
             global::System.Collections.Generic.IList<int>? pages,
             bool? includeImageBase64,
             int? imageLimit,
             int? imageMinSize)
         {
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Document = document;
+            this.Model = model;
             this.Id = id;
             this.Pages = pages;
             this.IncludeImageBase64 = includeImageBase64;

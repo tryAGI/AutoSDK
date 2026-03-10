@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("message", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Message { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("message")]
+        public string? Message { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +28,7 @@ namespace G
         public PageBuildError(
             string? message)
         {
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Message = message;
         }
 
         /// <summary>

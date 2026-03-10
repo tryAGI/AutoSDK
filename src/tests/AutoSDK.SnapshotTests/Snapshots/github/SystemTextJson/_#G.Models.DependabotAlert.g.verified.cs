@@ -93,23 +93,20 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_by")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? DismissedBy { get; set; }
+        public global::G.NullableSimpleUser? DismissedBy { get; set; }
 
         /// <summary>
         /// The reason that the alert was dismissed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DependabotAlertDismissedReasonJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DependabotAlertDismissedReason? DismissedReason { get; set; }
+        public global::G.DependabotAlertDismissedReason? DismissedReason { get; set; }
 
         /// <summary>
         /// An optional comment associated with the alert's dismissal.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_comment")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? DismissedComment { get; set; }
+        public string? DismissedComment { get; set; }
 
         /// <summary>
         /// The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
@@ -195,10 +192,10 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DependabotAlert(
+            global::System.DateTime? dismissedAt,
             global::G.NullableSimpleUser? dismissedBy,
             global::G.DependabotAlertDismissedReason? dismissedReason,
             string? dismissedComment,
-            global::System.DateTime? dismissedAt,
             global::System.DateTime? fixedAt,
             global::System.DateTime? autoDismissedAt,
             int number = default!,
@@ -211,9 +208,6 @@ namespace G
             global::System.DateTime createdAt = default!,
             global::System.DateTime updatedAt = default!)
         {
-            this.DismissedBy = dismissedBy ?? throw new global::System.ArgumentNullException(nameof(dismissedBy));
-            this.DismissedReason = dismissedReason;
-            this.DismissedComment = dismissedComment ?? throw new global::System.ArgumentNullException(nameof(dismissedComment));
             this.Number = number;
             this.State = state;
             this.Dependency = dependency;
@@ -224,6 +218,9 @@ namespace G
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.DismissedAt = dismissedAt;
+            this.DismissedBy = dismissedBy;
+            this.DismissedReason = dismissedReason;
+            this.DismissedComment = dismissedComment;
             this.FixedAt = fixedAt;
             this.AutoDismissedAt = autoDismissedAt;
         }

@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("active_lock_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesLockedIssueActiveLockReasonJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookIssuesLockedIssueActiveLockReason? ActiveLockReason { get; set; }
+        public global::G.WebhookIssuesLockedIssueActiveLockReason? ActiveLockReason { get; set; }
 
         /// <summary>
         /// 
@@ -42,15 +41,13 @@ namespace G
         /// Contents of the issue
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Body { get; set; }
+        public string? Body { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("closed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? ClosedAt { get; set; }
+        public global::System.DateTime? ClosedAt { get; set; }
 
         /// <summary>
         /// 
@@ -124,8 +121,7 @@ namespace G
         /// A collection of related issues and pull requests.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("milestone")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookIssuesLockedIssueMilestone? Milestone { get; set; }
+        public global::G.WebhookIssuesLockedIssueMilestone? Milestone { get; set; }
 
         /// <summary>
         /// 
@@ -211,8 +207,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookIssuesLockedIssueUser? User { get; set; }
+        public global::G.WebhookIssuesLockedIssueUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -271,11 +266,8 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookIssuesLockedIssue(
-            global::G.WebhookIssuesLockedIssueActiveLockReason? activeLockReason,
             global::System.Collections.Generic.IList<global::G.WebhookIssuesLockedIssueAssignee2> assignees,
             global::G.WebhookIssuesLockedIssueAuthorAssociation authorAssociation,
-            string? body,
-            global::System.DateTime? closedAt,
             int comments,
             string commentsUrl,
             global::System.DateTime createdAt,
@@ -284,7 +276,6 @@ namespace G
             long id,
             string labelsUrl,
             bool locked,
-            global::G.WebhookIssuesLockedIssueMilestone? milestone,
             string nodeId,
             int number,
             global::G.WebhookIssuesLockedIssueReactions reactions,
@@ -292,21 +283,22 @@ namespace G
             string title,
             global::System.DateTime updatedAt,
             string url,
-            global::G.WebhookIssuesLockedIssueUser? user,
+            global::G.WebhookIssuesLockedIssueActiveLockReason? activeLockReason,
             global::G.WebhookIssuesLockedIssueAssignee? assignee,
+            string? body,
+            global::System.DateTime? closedAt,
             bool? draft,
             global::System.Collections.Generic.IList<global::G.WebhookIssuesLockedIssueLabel>? labels,
+            global::G.WebhookIssuesLockedIssueMilestone? milestone,
             global::G.WebhookIssuesLockedIssuePerformedViaGithubApp? performedViaGithubApp,
             global::G.WebhookIssuesLockedIssuePullRequest? pullRequest,
             global::G.WebhookIssuesLockedIssueState? state,
             string? stateReason,
-            string? timelineUrl)
+            string? timelineUrl,
+            global::G.WebhookIssuesLockedIssueUser? user)
         {
-            this.ActiveLockReason = activeLockReason;
             this.Assignees = assignees ?? throw new global::System.ArgumentNullException(nameof(assignees));
             this.AuthorAssociation = authorAssociation;
-            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
-            this.ClosedAt = closedAt;
             this.Comments = comments;
             this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
             this.CreatedAt = createdAt;
@@ -315,7 +307,6 @@ namespace G
             this.Id = id;
             this.LabelsUrl = labelsUrl ?? throw new global::System.ArgumentNullException(nameof(labelsUrl));
             this.Locked = locked;
-            this.Milestone = milestone ?? throw new global::System.ArgumentNullException(nameof(milestone));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Number = number;
             this.Reactions = reactions ?? throw new global::System.ArgumentNullException(nameof(reactions));
@@ -323,15 +314,19 @@ namespace G
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.ActiveLockReason = activeLockReason;
             this.Assignee = assignee;
+            this.Body = body;
+            this.ClosedAt = closedAt;
             this.Draft = draft;
             this.Labels = labels;
+            this.Milestone = milestone;
             this.PerformedViaGithubApp = performedViaGithubApp;
             this.PullRequest = pullRequest;
             this.State = state;
             this.StateReason = stateReason;
             this.TimelineUrl = timelineUrl;
+            this.User = user;
         }
 
         /// <summary>

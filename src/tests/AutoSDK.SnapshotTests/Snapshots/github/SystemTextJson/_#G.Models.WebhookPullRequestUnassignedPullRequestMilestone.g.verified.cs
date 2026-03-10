@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("closed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? ClosedAt { get; set; }
+        public global::System.DateTime? ClosedAt { get; set; }
 
         /// <summary>
         /// 
@@ -34,22 +33,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creator")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPullRequestUnassignedPullRequestMilestoneCreator? Creator { get; set; }
+        public global::G.WebhookPullRequestUnassignedPullRequestMilestoneCreator? Creator { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("due_on")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? DueOn { get; set; }
+        public global::System.DateTime? DueOn { get; set; }
 
         /// <summary>
         /// 
@@ -157,12 +153,8 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookPullRequestUnassignedPullRequestMilestone(
-            global::System.DateTime? closedAt,
             int closedIssues,
             global::System.DateTime createdAt,
-            global::G.WebhookPullRequestUnassignedPullRequestMilestoneCreator? creator,
-            string? description,
-            global::System.DateTime? dueOn,
             string htmlUrl,
             int id,
             string labelsUrl,
@@ -172,14 +164,14 @@ namespace G
             global::G.WebhookPullRequestUnassignedPullRequestMilestoneState state,
             string title,
             global::System.DateTime updatedAt,
-            string url)
+            string url,
+            global::System.DateTime? closedAt,
+            global::G.WebhookPullRequestUnassignedPullRequestMilestoneCreator? creator,
+            string? description,
+            global::System.DateTime? dueOn)
         {
-            this.ClosedAt = closedAt;
             this.ClosedIssues = closedIssues;
             this.CreatedAt = createdAt;
-            this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.DueOn = dueOn;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.LabelsUrl = labelsUrl ?? throw new global::System.ArgumentNullException(nameof(labelsUrl));
@@ -190,6 +182,10 @@ namespace G
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.ClosedAt = closedAt;
+            this.Creator = creator;
+            this.Description = description;
+            this.DueOn = dueOn;
         }
 
         /// <summary>

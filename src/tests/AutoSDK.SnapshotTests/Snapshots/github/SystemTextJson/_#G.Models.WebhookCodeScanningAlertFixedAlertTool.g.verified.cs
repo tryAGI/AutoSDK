@@ -26,8 +26,7 @@ namespace G
         /// The version of the tool used to detect the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Version { get; set; }
+        public string? Version { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,12 +49,12 @@ namespace G
 #endif
         public WebhookCodeScanningAlertFixedAlertTool(
             string name,
-            string? version,
-            string? guid)
+            string? guid,
+            string? version)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
             this.Guid = guid;
+            this.Version = version;
         }
 
         /// <summary>

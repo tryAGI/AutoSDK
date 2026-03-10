@@ -301,7 +301,7 @@ namespace G
             string email,
             string phone,
             string encryptedPass,
-            global::System.Guid? groupId,
+            global::System.Guid? groupId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.AddNewUserToAccountRequest2

@@ -23,26 +23,26 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Name { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("args", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Args { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("args")]
+        public string? Args { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Id { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("id")]
+        public string? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? Index { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("index")]
+        public int? Index { get; set; }
 
         /// <summary>
         /// 
@@ -71,10 +71,10 @@ namespace G
             int? index,
             string? type)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Args = args ?? throw new global::System.ArgumentNullException(nameof(args));
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Index = index ?? throw new global::System.ArgumentNullException(nameof(index));
+            this.Name = name;
+            this.Args = args;
+            this.Id = id;
+            this.Index = index;
             this.Type = type;
         }
 

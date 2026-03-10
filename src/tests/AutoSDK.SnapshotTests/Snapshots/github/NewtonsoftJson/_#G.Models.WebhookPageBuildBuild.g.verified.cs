@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("commit", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Commit { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("commit")]
+        public string? Commit { get; set; }
 
         /// <summary>
         /// 
@@ -36,8 +36,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("pusher", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPageBuildBuildPusher? Pusher { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("pusher")]
+        public global::G.WebhookPageBuildBuildPusher? Pusher { get; set; }
 
         /// <summary>
         /// 
@@ -75,23 +75,23 @@ namespace G
         /// <param name="updatedAt"></param>
         /// <param name="url"></param>
         public WebhookPageBuildBuild(
-            string? commit,
             string createdAt,
             int duration,
             global::G.WebhookPageBuildBuildError error,
-            global::G.WebhookPageBuildBuildPusher? pusher,
             string status,
             string updatedAt,
-            string url)
+            string url,
+            string? commit,
+            global::G.WebhookPageBuildBuildPusher? pusher)
         {
-            this.Commit = commit ?? throw new global::System.ArgumentNullException(nameof(commit));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.Duration = duration;
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
-            this.Pusher = pusher ?? throw new global::System.ArgumentNullException(nameof(pusher));
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Commit = commit;
+            this.Pusher = pusher;
         }
 
         /// <summary>

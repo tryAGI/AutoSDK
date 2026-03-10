@@ -68,32 +68,32 @@ namespace G
         /// <summary>
         /// The last error associated with this run step. Will be `null` if there are no errors.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("last_error", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RunStepObjectLastError? LastError { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("last_error")]
+        public global::G.RunStepObjectLastError? LastError { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run step expired. A step is considered expired if the parent run is expired.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("expired_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTimeOffset? ExpiredAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("expired_at")]
+        public global::System.DateTimeOffset? ExpiredAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run step was cancelled.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("cancelled_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTimeOffset? CancelledAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("cancelled_at")]
+        public global::System.DateTimeOffset? CancelledAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run step failed.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("failed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTimeOffset? FailedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("failed_at")]
+        public global::System.DateTimeOffset? FailedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run step completed.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("completed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTimeOffset? CompletedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("completed_at")]
+        public global::System.DateTimeOffset? CompletedAt { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -102,14 +102,14 @@ namespace G
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("metadata", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("metadata")]
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
         /// Usage statistics related to the run step. This value will be `null` while the run step's status is `in_progress`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("usage", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RunStepCompletionUsage? Usage { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("usage")]
+        public global::G.RunStepCompletionUsage? Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -181,14 +181,14 @@ namespace G
             global::G.RunStepObjectType type,
             global::G.RunStepObjectStatus status,
             global::G.OneOf<global::G.RunStepDetailsMessageCreationObject, global::G.RunStepDetailsToolCallsObject> stepDetails,
+            global::G.RunStepObjectObject @object,
             global::G.RunStepObjectLastError? lastError,
             global::System.DateTimeOffset? expiredAt,
             global::System.DateTimeOffset? cancelledAt,
             global::System.DateTimeOffset? failedAt,
             global::System.DateTimeOffset? completedAt,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
-            global::G.RunStepCompletionUsage? usage,
-            global::G.RunStepObjectObject @object)
+            global::G.RunStepCompletionUsage? usage)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
@@ -198,14 +198,14 @@ namespace G
             this.Type = type;
             this.Status = status;
             this.StepDetails = stepDetails;
-            this.LastError = lastError ?? throw new global::System.ArgumentNullException(nameof(lastError));
+            this.Object = @object;
+            this.LastError = lastError;
             this.ExpiredAt = expiredAt;
             this.CancelledAt = cancelledAt;
             this.FailedAt = failedAt;
             this.CompletedAt = completedAt;
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
-            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
-            this.Object = @object;
+            this.Metadata = metadata;
+            this.Usage = usage;
         }
 
         /// <summary>

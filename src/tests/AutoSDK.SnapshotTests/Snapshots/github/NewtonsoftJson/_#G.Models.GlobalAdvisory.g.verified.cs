@@ -56,8 +56,8 @@ namespace G
         /// <summary>
         /// A detailed description of what the advisory entails.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// The type of advisory.<br/>
@@ -76,8 +76,8 @@ namespace G
         /// <summary>
         /// The URL of the advisory's source code.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("source_code_location", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? SourceCodeLocation { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("source_code_location")]
+        public string? SourceCodeLocation { get; set; }
 
         /// <summary>
         /// Included only in responses
@@ -88,8 +88,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("references", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string>? References { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("references")]
+        public global::System.Collections.Generic.IList<string>? References { get; set; }
 
         /// <summary>
         /// The date and time of when the advisory was published, in ISO 8601 format.<br/>
@@ -132,14 +132,14 @@ namespace G
         /// <summary>
         /// The products and respective version ranges affected by the advisory.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("vulnerabilities", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.Vulnerability>? Vulnerabilities { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("vulnerabilities")]
+        public global::System.Collections.Generic.IList<global::G.Vulnerability>? Vulnerabilities { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("cvss", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.GlobalAdvisoryCvss? Cvss { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("cvss")]
+        public global::G.GlobalAdvisoryCvss? Cvss { get; set; }
 
         /// <summary>
         /// 
@@ -150,8 +150,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("cwes", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.GlobalAdvisoryCwe>? Cwes { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("cwes")]
+        public global::System.Collections.Generic.IList<global::G.GlobalAdvisoryCwe>? Cwes { get; set; }
 
         /// <summary>
         /// 
@@ -249,20 +249,20 @@ namespace G
         /// </param>
         public GlobalAdvisory(
             string summary,
-            string? description,
             global::G.GlobalAdvisorySeverity severity,
-            string? sourceCodeLocation,
-            global::System.Collections.Generic.IList<string>? references,
-            global::System.Collections.Generic.IList<global::G.Vulnerability>? vulnerabilities,
-            global::G.GlobalAdvisoryCvss? cvss,
-            global::System.Collections.Generic.IList<global::G.GlobalAdvisoryCwe>? cwes,
             string? cveId,
             string? repositoryAdvisoryUrl,
+            string? description,
+            string? sourceCodeLocation,
             global::System.Collections.Generic.IList<global::G.GlobalAdvisoryIdentifier>? identifiers,
+            global::System.Collections.Generic.IList<string>? references,
             global::System.DateTime? githubReviewedAt,
             global::System.DateTime? nvdPublishedAt,
             global::System.DateTime? withdrawnAt,
+            global::System.Collections.Generic.IList<global::G.Vulnerability>? vulnerabilities,
+            global::G.GlobalAdvisoryCvss? cvss,
             global::G.CvssSeverities? cvssSeverities,
+            global::System.Collections.Generic.IList<global::G.GlobalAdvisoryCwe>? cwes,
             global::G.GlobalAdvisoryEpss? epss,
             global::System.Collections.Generic.IList<global::G.GlobalAdvisoryCredit>? credits,
             string ghsaId = default!,
@@ -273,26 +273,26 @@ namespace G
             global::System.DateTime updatedAt = default!)
         {
             this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Severity = severity;
-            this.SourceCodeLocation = sourceCodeLocation ?? throw new global::System.ArgumentNullException(nameof(sourceCodeLocation));
-            this.References = references ?? throw new global::System.ArgumentNullException(nameof(references));
-            this.Vulnerabilities = vulnerabilities ?? throw new global::System.ArgumentNullException(nameof(vulnerabilities));
-            this.Cvss = cvss ?? throw new global::System.ArgumentNullException(nameof(cvss));
-            this.Cwes = cwes ?? throw new global::System.ArgumentNullException(nameof(cwes));
             this.GhsaId = ghsaId;
             this.CveId = cveId;
             this.Url = url;
             this.HtmlUrl = htmlUrl;
             this.RepositoryAdvisoryUrl = repositoryAdvisoryUrl;
+            this.Description = description;
             this.Type = type;
+            this.SourceCodeLocation = sourceCodeLocation;
             this.Identifiers = identifiers;
+            this.References = references;
             this.PublishedAt = publishedAt;
             this.UpdatedAt = updatedAt;
             this.GithubReviewedAt = githubReviewedAt;
             this.NvdPublishedAt = nvdPublishedAt;
             this.WithdrawnAt = withdrawnAt;
+            this.Vulnerabilities = vulnerabilities;
+            this.Cvss = cvss;
             this.CvssSeverities = cvssSeverities;
+            this.Cwes = cwes;
             this.Epss = epss;
             this.Credits = credits;
         }

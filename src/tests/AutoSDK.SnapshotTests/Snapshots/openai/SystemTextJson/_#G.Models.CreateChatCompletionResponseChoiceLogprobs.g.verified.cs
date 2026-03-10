@@ -13,15 +13,13 @@ namespace G
         /// A list of message content tokens with log probability information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.ChatCompletionTokenLogprob>? Content { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionTokenLogprob>? Content { get; set; }
 
         /// <summary>
         /// A list of message refusal tokens with log probability information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("refusal")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.ChatCompletionTokenLogprob>? Refusal { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionTokenLogprob>? Refusal { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,8 +43,8 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ChatCompletionTokenLogprob>? content,
             global::System.Collections.Generic.IList<global::G.ChatCompletionTokenLogprob>? refusal)
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.Refusal = refusal ?? throw new global::System.ArgumentNullException(nameof(refusal));
+            this.Content = content;
+            this.Refusal = refusal;
         }
 
         /// <summary>

@@ -40,8 +40,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("member", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhooksUser? Member { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("member")]
+        public global::G.WebhooksUser? Member { get; set; }
 
         /// <summary>
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
@@ -97,22 +97,22 @@ namespace G
         /// A GitHub user.
         /// </param>
         public WebhookMemberAdded(
-            global::G.WebhooksUser? member,
             global::G.RepositoryWebhooks repository,
             global::G.SimpleUser sender,
             global::G.WebhookMemberAddedAction action,
             global::G.WebhookMemberAddedChanges? changes,
             global::G.EnterpriseWebhooks? enterprise,
             global::G.SimpleInstallation? installation,
+            global::G.WebhooksUser? member,
             global::G.OrganizationSimpleWebhooks? organization)
         {
-            this.Member = member ?? throw new global::System.ArgumentNullException(nameof(member));
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Action = action;
             this.Changes = changes;
             this.Enterprise = enterprise;
             this.Installation = installation;
+            this.Member = member;
             this.Organization = organization;
         }
 

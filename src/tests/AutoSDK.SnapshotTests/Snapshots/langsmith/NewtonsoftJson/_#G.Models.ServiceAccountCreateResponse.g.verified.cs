@@ -42,8 +42,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("default_workspace_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Guid? DefaultWorkspaceId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("default_workspace_id")]
+        public global::System.Guid? DefaultWorkspaceId { get; set; }
 
         /// <summary>
         /// 
@@ -73,16 +73,16 @@ namespace G
             global::System.DateTime updatedAt,
             string name,
             global::System.Guid organizationId,
-            global::System.Guid? defaultWorkspaceId,
-            global::System.Guid organizationIdentityId)
+            global::System.Guid organizationIdentityId,
+            global::System.Guid? defaultWorkspaceId)
         {
             this.Id = id;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.OrganizationId = organizationId;
-            this.DefaultWorkspaceId = defaultWorkspaceId ?? throw new global::System.ArgumentNullException(nameof(defaultWorkspaceId));
             this.OrganizationIdentityId = organizationIdentityId;
+            this.DefaultWorkspaceId = defaultWorkspaceId;
         }
 
         /// <summary>

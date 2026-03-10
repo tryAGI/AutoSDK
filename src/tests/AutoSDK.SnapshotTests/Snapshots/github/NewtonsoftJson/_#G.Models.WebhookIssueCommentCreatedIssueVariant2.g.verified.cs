@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("assignee", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookIssueCommentCreatedIssueVariant2Assignee? Assignee { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("assignee")]
+        public global::G.WebhookIssueCommentCreatedIssueVariant2Assignee? Assignee { get; set; }
 
         /// <summary>
         /// 
@@ -210,11 +210,11 @@ namespace G
         /// <param name="url"></param>
         /// <param name="user"></param>
         public WebhookIssueCommentCreatedIssueVariant2(
-            global::G.WebhookIssueCommentCreatedIssueVariant2Assignee? assignee,
             global::System.Collections.Generic.IList<global::G.WebhookIssueCommentCreatedIssueVariant2Label> labels,
             bool locked,
             global::G.WebhookIssueCommentCreatedIssueVariant2State state,
             string? activeLockReason,
+            global::G.WebhookIssueCommentCreatedIssueVariant2Assignee? assignee,
             global::System.Collections.Generic.IList<object>? assignees,
             string? authorAssociation,
             string? body,
@@ -238,11 +238,11 @@ namespace G
             string? url,
             global::G.WebhookIssueCommentCreatedIssueVariant2User? user)
         {
-            this.Assignee = assignee ?? throw new global::System.ArgumentNullException(nameof(assignee));
             this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
             this.Locked = locked;
             this.State = state;
             this.ActiveLockReason = activeLockReason;
+            this.Assignee = assignee;
             this.Assignees = assignees;
             this.AuthorAssociation = authorAssociation;
             this.Body = body;

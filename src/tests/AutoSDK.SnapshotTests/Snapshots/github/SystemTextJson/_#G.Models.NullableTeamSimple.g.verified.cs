@@ -58,8 +58,7 @@ namespace G
         /// </summary>
         /// <example>A great team.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Permission that the team will have for its repositories<br/>
@@ -183,11 +182,11 @@ namespace G
             string url,
             string membersUrl,
             string name,
-            string? description,
             string permission,
             string htmlUrl,
             string repositoriesUrl,
             string slug,
+            string? description,
             string? privacy,
             string? notificationSetting,
             string? ldapDn)
@@ -197,11 +196,11 @@ namespace G
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.MembersUrl = membersUrl ?? throw new global::System.ArgumentNullException(nameof(membersUrl));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Permission = permission ?? throw new global::System.ArgumentNullException(nameof(permission));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.RepositoriesUrl = repositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(repositoriesUrl));
             this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
+            this.Description = description;
             this.Privacy = privacy;
             this.NotificationSetting = notificationSetting;
             this.LdapDn = ldapDn;

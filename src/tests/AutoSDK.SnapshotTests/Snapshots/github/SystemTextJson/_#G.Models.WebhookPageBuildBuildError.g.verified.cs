@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Message { get; set; }
+        public string? Message { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,7 +31,7 @@ namespace G
         public WebhookPageBuildBuildError(
             string? message)
         {
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Message = message;
         }
 
         /// <summary>

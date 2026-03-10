@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("vector_string", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? VectorString { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("vector_string")]
+        public string? VectorString { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,7 +37,7 @@ namespace G
             string? vectorString)
         {
             this.Score = score;
-            this.VectorString = vectorString ?? throw new global::System.ArgumentNullException(nameof(vectorString));
+            this.VectorString = vectorString;
         }
 
         /// <summary>

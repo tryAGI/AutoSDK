@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPackagePublishedPackagePackageVersionReleaseAuthor? Author { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("author")]
+        public global::G.WebhookPackagePublishedPackagePackageVersionReleaseAuthor? Author { get; set; }
 
         /// <summary>
         /// 
@@ -42,8 +42,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Name { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// 
@@ -96,29 +96,29 @@ namespace G
         /// <param name="targetCommitish"></param>
         /// <param name="url"></param>
         public WebhookPackagePublishedPackagePackageVersionRelease(
-            global::G.WebhookPackagePublishedPackagePackageVersionReleaseAuthor? author,
             string createdAt,
             bool draft,
             string htmlUrl,
             int id,
-            string? name,
             bool prerelease,
             string publishedAt,
             string tagName,
             string targetCommitish,
-            string url)
+            string url,
+            global::G.WebhookPackagePublishedPackagePackageVersionReleaseAuthor? author,
+            string? name)
         {
-            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.Draft = draft;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Prerelease = prerelease;
             this.PublishedAt = publishedAt ?? throw new global::System.ArgumentNullException(nameof(publishedAt));
             this.TagName = tagName ?? throw new global::System.ArgumentNullException(nameof(tagName));
             this.TargetCommitish = targetCommitish ?? throw new global::System.ArgumentNullException(nameof(targetCommitish));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Author = author;
+            this.Name = name;
         }
 
         /// <summary>

@@ -60,8 +60,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("requested_reviewer", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPullRequestReviewRequestRemovedVariant1RequestedReviewer? RequestedReviewer { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("requested_reviewer")]
+        public global::G.WebhookPullRequestReviewRequestRemovedVariant1RequestedReviewer? RequestedReviewer { get; set; }
 
         /// <summary>
         /// A GitHub user.
@@ -109,22 +109,22 @@ namespace G
             int number,
             global::G.WebhookPullRequestReviewRequestRemovedVariant1PullRequest pullRequest,
             global::G.RepositoryWebhooks repository,
-            global::G.WebhookPullRequestReviewRequestRemovedVariant1RequestedReviewer? requestedReviewer,
             global::G.SimpleUser sender,
             global::G.WebhookPullRequestReviewRequestRemovedVariant1Action action,
             global::G.EnterpriseWebhooks? enterprise,
             global::G.SimpleInstallation? installation,
-            global::G.OrganizationSimpleWebhooks? organization)
+            global::G.OrganizationSimpleWebhooks? organization,
+            global::G.WebhookPullRequestReviewRequestRemovedVariant1RequestedReviewer? requestedReviewer)
         {
             this.Number = number;
             this.PullRequest = pullRequest ?? throw new global::System.ArgumentNullException(nameof(pullRequest));
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
-            this.RequestedReviewer = requestedReviewer ?? throw new global::System.ArgumentNullException(nameof(requestedReviewer));
             this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Action = action;
             this.Enterprise = enterprise;
             this.Installation = installation;
             this.Organization = organization;
+            this.RequestedReviewer = requestedReviewer;
         }
 
         /// <summary>

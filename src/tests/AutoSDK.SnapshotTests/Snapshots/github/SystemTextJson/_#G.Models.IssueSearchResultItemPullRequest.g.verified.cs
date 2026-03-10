@@ -19,29 +19,25 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("diff_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? DiffUrl { get; set; }
+        public string? DiffUrl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? HtmlUrl { get; set; }
+        public string? HtmlUrl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("patch_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? PatchUrl { get; set; }
+        public string? PatchUrl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Url { get; set; }
+        public string? Url { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,17 +57,17 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public IssueSearchResultItemPullRequest(
+            global::System.DateTime? mergedAt,
             string? diffUrl,
             string? htmlUrl,
             string? patchUrl,
-            string? url,
-            global::System.DateTime? mergedAt)
+            string? url)
         {
-            this.DiffUrl = diffUrl ?? throw new global::System.ArgumentNullException(nameof(diffUrl));
-            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.PatchUrl = patchUrl ?? throw new global::System.ArgumentNullException(nameof(patchUrl));
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.MergedAt = mergedAt;
+            this.DiffUrl = diffUrl;
+            this.HtmlUrl = htmlUrl;
+            this.PatchUrl = patchUrl;
+            this.Url = url;
         }
 
         /// <summary>

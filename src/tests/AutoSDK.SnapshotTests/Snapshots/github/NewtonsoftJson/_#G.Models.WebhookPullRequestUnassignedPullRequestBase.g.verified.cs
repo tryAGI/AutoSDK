@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("label", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Label { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("label")]
+        public string? Label { get; set; }
 
         /// <summary>
         /// 
@@ -36,8 +36,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPullRequestUnassignedPullRequestBaseUser? User { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("user")]
+        public global::G.WebhookPullRequestUnassignedPullRequestBaseUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -56,17 +56,17 @@ namespace G
         /// <param name="sha"></param>
         /// <param name="user"></param>
         public WebhookPullRequestUnassignedPullRequestBase(
-            string? label,
             string @ref,
             global::G.WebhookPullRequestUnassignedPullRequestBaseRepo repo,
             string sha,
+            string? label,
             global::G.WebhookPullRequestUnassignedPullRequestBaseUser? user)
         {
-            this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
             this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
             this.Repo = repo ?? throw new global::System.ArgumentNullException(nameof(repo));
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.Label = label;
+            this.User = user;
         }
 
         /// <summary>

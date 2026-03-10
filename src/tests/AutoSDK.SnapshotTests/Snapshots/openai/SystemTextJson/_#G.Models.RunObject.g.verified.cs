@@ -59,62 +59,54 @@ namespace G
         /// Details on the action required to continue the run. Will be `null` if no action is required.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("required_action")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RunObjectRequiredAction? RequiredAction { get; set; }
+        public global::G.RunObjectRequiredAction? RequiredAction { get; set; }
 
         /// <summary>
         /// The last error associated with this run. Will be `null` if there are no errors.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_error")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RunObjectLastError? LastError { get; set; }
+        public global::G.RunObjectLastError? LastError { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run will expire.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? ExpiresAt { get; set; }
+        public global::System.DateTimeOffset? ExpiresAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run was started.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("started_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? StartedAt { get; set; }
+        public global::System.DateTimeOffset? StartedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run was cancelled.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cancelled_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? CancelledAt { get; set; }
+        public global::System.DateTimeOffset? CancelledAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run failed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("failed_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? FailedAt { get; set; }
+        public global::System.DateTimeOffset? FailedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run was completed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? CompletedAt { get; set; }
+        public global::System.DateTimeOffset? CompletedAt { get; set; }
 
         /// <summary>
         /// Details on why the run is incomplete. Will be `null` if the run is not incomplete.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("incomplete_details")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RunObjectIncompleteDetails? IncompleteDetails { get; set; }
+        public global::G.RunObjectIncompleteDetails? IncompleteDetails { get; set; }
 
         /// <summary>
         /// The model that the [assistant](/docs/api-reference/assistants) used for this run.
@@ -146,15 +138,13 @@ namespace G
         /// with a maximum length of 512 characters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
         /// Usage statistics related to the run. This value will be `null` if the run is not in a terminal state (i.e. `in_progress`, `queued`, etc.).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RunCompletionUsage? Usage { get; set; }
+        public global::G.RunCompletionUsage? Usage { get; set; }
 
         /// <summary>
         /// The sampling temperature used for this run. If not set, defaults to 1.
@@ -172,15 +162,13 @@ namespace G
         /// The maximum number of prompt tokens specified to have been used over the course of the run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_prompt_tokens")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? MaxPromptTokens { get; set; }
+        public int? MaxPromptTokens { get; set; }
 
         /// <summary>
         /// The maximum number of completion tokens specified to have been used over the course of the run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_completion_tokens")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? MaxCompletionTokens { get; set; }
+        public int? MaxCompletionTokens { get; set; }
 
         /// <summary>
         /// 
@@ -321,6 +309,14 @@ namespace G
             string threadId,
             string assistantId,
             global::G.RunObjectStatus status,
+            string model,
+            string instructions,
+            global::System.Collections.Generic.IList<global::G.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearch, global::G.AssistantToolsFunction>> tools,
+            global::G.AllOf<global::G.TruncationObject, object> truncationStrategy,
+            global::G.AllOf<global::G.AssistantsApiToolChoiceOption?, object> toolChoice,
+            bool parallelToolCalls,
+            global::G.AssistantsApiResponseFormatOption responseFormat,
+            global::G.RunObjectObject @object,
             global::G.RunObjectRequiredAction? requiredAction,
             global::G.RunObjectLastError? lastError,
             global::System.DateTimeOffset? expiresAt,
@@ -329,48 +325,40 @@ namespace G
             global::System.DateTimeOffset? failedAt,
             global::System.DateTimeOffset? completedAt,
             global::G.RunObjectIncompleteDetails? incompleteDetails,
-            string model,
-            string instructions,
-            global::System.Collections.Generic.IList<global::G.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearch, global::G.AssistantToolsFunction>> tools,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::G.RunCompletionUsage? usage,
-            int? maxPromptTokens,
-            int? maxCompletionTokens,
-            global::G.AllOf<global::G.TruncationObject, object> truncationStrategy,
-            global::G.AllOf<global::G.AssistantsApiToolChoiceOption?, object> toolChoice,
-            bool parallelToolCalls,
-            global::G.AssistantsApiResponseFormatOption responseFormat,
-            global::G.RunObjectObject @object,
             double? temperature,
-            double? topP)
+            double? topP,
+            int? maxPromptTokens,
+            int? maxCompletionTokens)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
             this.ThreadId = threadId ?? throw new global::System.ArgumentNullException(nameof(threadId));
             this.AssistantId = assistantId ?? throw new global::System.ArgumentNullException(nameof(assistantId));
             this.Status = status;
-            this.RequiredAction = requiredAction ?? throw new global::System.ArgumentNullException(nameof(requiredAction));
-            this.LastError = lastError ?? throw new global::System.ArgumentNullException(nameof(lastError));
-            this.ExpiresAt = expiresAt;
-            this.StartedAt = startedAt;
-            this.CancelledAt = cancelledAt;
-            this.FailedAt = failedAt;
-            this.CompletedAt = completedAt;
-            this.IncompleteDetails = incompleteDetails ?? throw new global::System.ArgumentNullException(nameof(incompleteDetails));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Instructions = instructions ?? throw new global::System.ArgumentNullException(nameof(instructions));
             this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
-            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
-            this.MaxPromptTokens = maxPromptTokens;
-            this.MaxCompletionTokens = maxCompletionTokens;
             this.TruncationStrategy = truncationStrategy;
             this.ToolChoice = toolChoice;
             this.ParallelToolCalls = parallelToolCalls;
             this.ResponseFormat = responseFormat;
             this.Object = @object;
+            this.RequiredAction = requiredAction;
+            this.LastError = lastError;
+            this.ExpiresAt = expiresAt;
+            this.StartedAt = startedAt;
+            this.CancelledAt = cancelledAt;
+            this.FailedAt = failedAt;
+            this.CompletedAt = completedAt;
+            this.IncompleteDetails = incompleteDetails;
+            this.Metadata = metadata;
+            this.Usage = usage;
             this.Temperature = temperature;
             this.TopP = topP;
+            this.MaxPromptTokens = maxPromptTokens;
+            this.MaxCompletionTokens = maxCompletionTokens;
         }
 
         /// <summary>

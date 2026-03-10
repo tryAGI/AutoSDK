@@ -20,8 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -126,7 +125,6 @@ namespace G
 #endif
         public WebhookRepositoryTransferredChangesOwnerFromOrganization(
             string avatarUrl,
-            string? description,
             string eventsUrl,
             string hooksUrl,
             int id,
@@ -137,10 +135,10 @@ namespace G
             string publicMembersUrl,
             string reposUrl,
             string url,
+            string? description,
             string? htmlUrl)
         {
             this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.EventsUrl = eventsUrl ?? throw new global::System.ArgumentNullException(nameof(eventsUrl));
             this.HooksUrl = hooksUrl ?? throw new global::System.ArgumentNullException(nameof(hooksUrl));
             this.Id = id;
@@ -151,6 +149,7 @@ namespace G
             this.PublicMembersUrl = publicMembersUrl ?? throw new global::System.ArgumentNullException(nameof(publicMembersUrl));
             this.ReposUrl = reposUrl ?? throw new global::System.ArgumentNullException(nameof(reposUrl));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Description = description;
             this.HtmlUrl = htmlUrl;
         }
 

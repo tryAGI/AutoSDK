@@ -28,8 +28,7 @@ namespace G
         /// Collaborator
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableCollaborator? User { get; set; }
+        public global::G.NullableCollaborator? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -57,7 +56,7 @@ namespace G
         {
             this.Permission = permission ?? throw new global::System.ArgumentNullException(nameof(permission));
             this.RoleName = roleName ?? throw new global::System.ArgumentNullException(nameof(roleName));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.User = user;
         }
 
         /// <summary>

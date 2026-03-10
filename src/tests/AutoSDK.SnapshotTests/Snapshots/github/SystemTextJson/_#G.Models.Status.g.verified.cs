@@ -20,8 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("avatar_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? AvatarUrl { get; set; }
+        public string? AvatarUrl { get; set; }
 
         /// <summary>
         /// 
@@ -48,15 +47,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? TargetUrl { get; set; }
+        public string? TargetUrl { get; set; }
 
         /// <summary>
         /// 
@@ -83,8 +80,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creator")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? Creator { get; set; }
+        public global::G.NullableSimpleUser? Creator { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -113,28 +109,28 @@ namespace G
 #endif
         public Status(
             string url,
-            string? avatarUrl,
             int id,
             string nodeId,
             string state,
-            string? description,
-            string? targetUrl,
             string context,
             string createdAt,
             string updatedAt,
+            string? avatarUrl,
+            string? description,
+            string? targetUrl,
             global::G.NullableSimpleUser? creator)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.TargetUrl = targetUrl ?? throw new global::System.ArgumentNullException(nameof(targetUrl));
             this.Context = context ?? throw new global::System.ArgumentNullException(nameof(context));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
-            this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
+            this.AvatarUrl = avatarUrl;
+            this.Description = description;
+            this.TargetUrl = targetUrl;
+            this.Creator = creator;
         }
 
         /// <summary>

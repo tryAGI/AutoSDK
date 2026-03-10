@@ -34,8 +34,7 @@ namespace G
         /// The dimensions of the PDF Page's screenshot image
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dimensions")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OCRPageDimensions? Dimensions { get; set; }
+        public global::G.OCRPageDimensions? Dimensions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -70,7 +69,7 @@ namespace G
             this.Index = index;
             this.Markdown = markdown ?? throw new global::System.ArgumentNullException(nameof(markdown));
             this.Images = images ?? throw new global::System.ArgumentNullException(nameof(images));
-            this.Dimensions = dimensions ?? throw new global::System.ArgumentNullException(nameof(dimensions));
+            this.Dimensions = dimensions;
         }
 
         /// <summary>

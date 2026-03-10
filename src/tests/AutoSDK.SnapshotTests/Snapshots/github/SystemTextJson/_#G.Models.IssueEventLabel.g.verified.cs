@@ -13,15 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("color")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Color { get; set; }
+        public string? Color { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,8 +39,8 @@ namespace G
             string? name,
             string? color)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Color = color ?? throw new global::System.ArgumentNullException(nameof(color));
+            this.Name = name;
+            this.Color = color;
         }
 
         /// <summary>

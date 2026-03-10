@@ -34,8 +34,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("document_title")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? DocumentTitle { get; set; }
+        public string? DocumentTitle { get; set; }
 
         /// <summary>
         /// 
@@ -72,17 +71,17 @@ namespace G
         public RequestContentBlockLocationCitation(
             string citedText,
             int documentIndex,
-            string? documentTitle,
             int startBlockIndex,
             int endBlockIndex,
-            global::G.RequestContentBlockLocationCitationType type)
+            global::G.RequestContentBlockLocationCitationType type,
+            string? documentTitle)
         {
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.DocumentIndex = documentIndex;
-            this.DocumentTitle = documentTitle ?? throw new global::System.ArgumentNullException(nameof(documentTitle));
             this.StartBlockIndex = startBlockIndex;
             this.EndBlockIndex = endBlockIndex;
             this.Type = type;
+            this.DocumentTitle = documentTitle;
         }
 
         /// <summary>

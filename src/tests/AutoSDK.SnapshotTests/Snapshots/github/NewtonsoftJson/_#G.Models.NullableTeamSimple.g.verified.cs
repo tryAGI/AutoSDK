@@ -52,8 +52,8 @@ namespace G
         /// Example: A great team.
         /// </summary>
         /// <example>A great team.</example>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// Permission that the team will have for its repositories<br/>
@@ -170,11 +170,11 @@ namespace G
             string url,
             string membersUrl,
             string name,
-            string? description,
             string permission,
             string htmlUrl,
             string repositoriesUrl,
             string slug,
+            string? description,
             string? privacy,
             string? notificationSetting,
             string? ldapDn)
@@ -184,11 +184,11 @@ namespace G
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.MembersUrl = membersUrl ?? throw new global::System.ArgumentNullException(nameof(membersUrl));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Permission = permission ?? throw new global::System.ArgumentNullException(nameof(permission));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.RepositoriesUrl = repositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(repositoriesUrl));
             this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
+            this.Description = description;
             this.Privacy = privacy;
             this.NotificationSetting = notificationSetting;
             this.LdapDn = ldapDn;

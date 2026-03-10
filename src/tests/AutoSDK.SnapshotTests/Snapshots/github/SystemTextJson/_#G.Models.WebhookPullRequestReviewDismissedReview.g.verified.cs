@@ -28,8 +28,7 @@ namespace G
         /// The text of the review.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Body { get; set; }
+        public string? Body { get; set; }
 
         /// <summary>
         /// A commit SHA for the review.
@@ -85,8 +84,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPullRequestReviewDismissedReviewUser? User { get; set; }
+        public global::G.WebhookPullRequestReviewDismissedReviewUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -122,7 +120,6 @@ namespace G
         public WebhookPullRequestReviewDismissedReview(
             global::G.WebhookPullRequestReviewDismissedReviewLinks links,
             global::G.WebhookPullRequestReviewDismissedReviewAuthorAssociation authorAssociation,
-            string? body,
             string commitId,
             string htmlUrl,
             int id,
@@ -130,11 +127,11 @@ namespace G
             string pullRequestUrl,
             global::G.WebhookPullRequestReviewDismissedReviewState state,
             global::System.DateTime submittedAt,
+            string? body,
             global::G.WebhookPullRequestReviewDismissedReviewUser? user)
         {
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
             this.AuthorAssociation = authorAssociation;
-            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
             this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
@@ -142,7 +139,8 @@ namespace G
             this.PullRequestUrl = pullRequestUrl ?? throw new global::System.ArgumentNullException(nameof(pullRequestUrl));
             this.State = state;
             this.SubmittedAt = submittedAt;
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.Body = body;
+            this.User = user;
         }
 
         /// <summary>

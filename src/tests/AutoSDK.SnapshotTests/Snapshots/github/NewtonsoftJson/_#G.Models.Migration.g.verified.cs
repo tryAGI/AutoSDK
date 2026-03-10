@@ -19,8 +19,8 @@ namespace G
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? Owner { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("owner")]
+        public global::G.NullableSimpleUser? Owner { get; set; }
 
         /// <summary>
         /// Example: 0b989ba4-242f-11e5-81e1-c7b6966d2516
@@ -173,7 +173,6 @@ namespace G
         /// </param>
         public Migration(
             long id,
-            global::G.NullableSimpleUser? owner,
             string guid,
             string state,
             bool lockRepositories,
@@ -188,11 +187,11 @@ namespace G
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             string nodeId,
+            global::G.NullableSimpleUser? owner,
             string? archiveUrl,
             global::System.Collections.Generic.IList<string>? exclude)
         {
             this.Id = id;
-            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.Guid = guid ?? throw new global::System.ArgumentNullException(nameof(guid));
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
             this.LockRepositories = lockRepositories;
@@ -207,6 +206,7 @@ namespace G
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Owner = owner;
             this.ArchiveUrl = archiveUrl;
             this.Exclude = exclude;
         }

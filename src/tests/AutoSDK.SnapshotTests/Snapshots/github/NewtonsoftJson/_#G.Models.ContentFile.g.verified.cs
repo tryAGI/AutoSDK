@@ -60,20 +60,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("git_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? GitUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("git_url")]
+        public string? GitUrl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? HtmlUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("html_url")]
+        public string? HtmlUrl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("download_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? DownloadUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("download_url")]
+        public string? DownloadUrl { get; set; }
 
         /// <summary>
         /// 
@@ -130,11 +130,11 @@ namespace G
             string content,
             string sha,
             string url,
+            global::G.ContentFileLinks links,
+            global::G.ContentFileType type,
             string? gitUrl,
             string? htmlUrl,
             string? downloadUrl,
-            global::G.ContentFileLinks links,
-            global::G.ContentFileType type,
             string? target,
             string? submoduleGitUrl)
         {
@@ -145,11 +145,11 @@ namespace G
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.GitUrl = gitUrl ?? throw new global::System.ArgumentNullException(nameof(gitUrl));
-            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.DownloadUrl = downloadUrl ?? throw new global::System.ArgumentNullException(nameof(downloadUrl));
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
             this.Type = type;
+            this.GitUrl = gitUrl;
+            this.HtmlUrl = htmlUrl;
+            this.DownloadUrl = downloadUrl;
             this.Target = target;
             this.SubmoduleGitUrl = submoduleGitUrl;
         }

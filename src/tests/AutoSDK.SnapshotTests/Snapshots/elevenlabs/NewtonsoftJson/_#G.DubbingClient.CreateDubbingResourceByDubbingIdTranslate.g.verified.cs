@@ -232,8 +232,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.SegmentTranslationResponse> CreateDubbingResourceByDubbingIdTranslateAsync(
             string dubbingId,
             global::System.Collections.Generic.IList<string> segments,
-            global::System.Collections.Generic.IList<string>? languages,
             string? xiApiKey = default,
+            global::System.Collections.Generic.IList<string>? languages = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodyTranslatesAllOrSomeSegmentsAndLanguagesV1DubbingResourceDubbingIdTranslatePost

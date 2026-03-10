@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? CreatedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("created_at")]
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// The list of events for the GitHub app
@@ -30,8 +30,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("external_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? ExternalUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("external_url")]
+        public string? ExternalUrl { get; set; }
 
         /// <summary>
         /// 
@@ -42,8 +42,8 @@ namespace G
         /// <summary>
         /// Unique identifier of the GitHub app
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? Id { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("id")]
+        public int? Id { get; set; }
 
         /// <summary>
         /// The name of the GitHub app
@@ -60,8 +60,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookIssuesDeletedIssuePerformedViaGithubAppOwner? Owner { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("owner")]
+        public global::G.WebhookIssuesDeletedIssuePerformedViaGithubAppOwner? Owner { get; set; }
 
         /// <summary>
         /// The set of permissions for the GitHub app
@@ -78,8 +78,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("updated_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? UpdatedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("updated_at")]
+        public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -113,31 +113,31 @@ namespace G
         /// </param>
         /// <param name="updatedAt"></param>
         public WebhookIssuesDeletedIssuePerformedViaGithubApp(
-            global::System.DateTime? createdAt,
-            string? description,
-            string? externalUrl,
             string htmlUrl,
-            int? id,
             string name,
             string nodeId,
-            global::G.WebhookIssuesDeletedIssuePerformedViaGithubAppOwner? owner,
-            global::System.DateTime? updatedAt,
+            global::System.DateTime? createdAt,
+            string? description,
             global::System.Collections.Generic.IList<global::G.WebhookIssuesDeletedIssuePerformedViaGithubAppEvent>? events,
+            string? externalUrl,
+            int? id,
+            global::G.WebhookIssuesDeletedIssuePerformedViaGithubAppOwner? owner,
             global::G.WebhookIssuesDeletedIssuePerformedViaGithubAppPermissions? permissions,
-            string? slug)
+            string? slug,
+            global::System.DateTime? updatedAt)
         {
-            this.CreatedAt = createdAt;
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.ExternalUrl = externalUrl ?? throw new global::System.ArgumentNullException(nameof(externalUrl));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
-            this.UpdatedAt = updatedAt;
+            this.CreatedAt = createdAt;
+            this.Description = description;
             this.Events = events;
+            this.ExternalUrl = externalUrl;
+            this.Id = id;
+            this.Owner = owner;
             this.Permissions = permissions;
             this.Slug = slug;
+            this.UpdatedAt = updatedAt;
         }
 
         /// <summary>

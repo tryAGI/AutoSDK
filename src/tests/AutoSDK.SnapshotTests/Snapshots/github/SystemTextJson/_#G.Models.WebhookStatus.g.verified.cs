@@ -47,8 +47,7 @@ namespace G
         /// The optional human-readable description added to the status.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
@@ -121,8 +120,7 @@ namespace G
         /// The optional link added to the status.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? TargetUrl { get; set; }
+        public string? TargetUrl { get; set; }
 
         /// <summary>
         /// 
@@ -193,37 +191,37 @@ namespace G
             global::G.WebhookStatusCommit commit,
             string context,
             string createdAt,
-            string? description,
             int id,
             string name,
             global::G.RepositoryWebhooks repository,
             global::G.SimpleUser sender,
             string sha,
             global::G.WebhookStatusState state,
-            string? targetUrl,
             string updatedAt,
             string? avatarUrl,
+            string? description,
             global::G.EnterpriseWebhooks? enterprise,
             global::G.SimpleInstallation? installation,
-            global::G.OrganizationSimpleWebhooks? organization)
+            global::G.OrganizationSimpleWebhooks? organization,
+            string? targetUrl)
         {
             this.Branches = branches ?? throw new global::System.ArgumentNullException(nameof(branches));
             this.Commit = commit ?? throw new global::System.ArgumentNullException(nameof(commit));
             this.Context = context ?? throw new global::System.ArgumentNullException(nameof(context));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
             this.State = state;
-            this.TargetUrl = targetUrl ?? throw new global::System.ArgumentNullException(nameof(targetUrl));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
             this.AvatarUrl = avatarUrl;
+            this.Description = description;
             this.Enterprise = enterprise;
             this.Installation = installation;
             this.Organization = organization;
+            this.TargetUrl = targetUrl;
         }
 
         /// <summary>

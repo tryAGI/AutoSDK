@@ -34,8 +34,8 @@ namespace G
         /// <summary>
         /// The length of time, in minutes, that users must follow the broadcaster before being able to participate in the chat room. Is **null** if `follower_mode` is **false**.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("follower_mode_duration", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? FollowerModeDuration { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("follower_mode_duration")]
+        public int? FollowerModeDuration { get; set; }
 
         /// <summary>
         /// The moderator’s ID. The response includes this field only if the request specifies a user access token that includes the **moderator:read:chat\_settings** scope.
@@ -52,8 +52,8 @@ namespace G
         /// <summary>
         /// The amount of time, in seconds, that messages are delayed before appearing in chat. Is **null** if `non_moderator_chat_delay` is **false**.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("non_moderator_chat_delay_duration", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? NonModeratorChatDelayDuration { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("non_moderator_chat_delay_duration")]
+        public int? NonModeratorChatDelayDuration { get; set; }
 
         /// <summary>
         /// A Boolean value that determines whether the broadcaster limits how often users in the chat room are allowed to send messages.  <br/>
@@ -70,8 +70,8 @@ namespace G
         ///   <br/>
         /// Is **null** if slow\_mode is **false**.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("slow_mode_wait_time", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? SlowModeWaitTime { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("slow_mode_wait_time")]
+        public int? SlowModeWaitTime { get; set; }
 
         /// <summary>
         /// A Boolean value that determines whether only users that subscribe to the broadcaster’s channel may talk in the chat room.  <br/>
@@ -149,26 +149,26 @@ namespace G
             string broadcasterId,
             bool emoteMode,
             bool followerMode,
-            int? followerModeDuration,
             bool nonModeratorChatDelay,
-            int? nonModeratorChatDelayDuration,
             bool slowMode,
-            int? slowModeWaitTime,
             bool subscriberMode,
             bool uniqueChatMode,
-            string? moderatorId)
+            int? followerModeDuration,
+            string? moderatorId,
+            int? nonModeratorChatDelayDuration,
+            int? slowModeWaitTime)
         {
             this.BroadcasterId = broadcasterId ?? throw new global::System.ArgumentNullException(nameof(broadcasterId));
             this.EmoteMode = emoteMode;
             this.FollowerMode = followerMode;
-            this.FollowerModeDuration = followerModeDuration;
             this.NonModeratorChatDelay = nonModeratorChatDelay;
-            this.NonModeratorChatDelayDuration = nonModeratorChatDelayDuration;
             this.SlowMode = slowMode;
-            this.SlowModeWaitTime = slowModeWaitTime;
             this.SubscriberMode = subscriberMode;
             this.UniqueChatMode = uniqueChatMode;
+            this.FollowerModeDuration = followerModeDuration;
             this.ModeratorId = moderatorId;
+            this.NonModeratorChatDelayDuration = nonModeratorChatDelayDuration;
+            this.SlowModeWaitTime = slowModeWaitTime;
         }
 
         /// <summary>

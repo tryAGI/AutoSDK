@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("devcontainer_path", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? DevcontainerPath { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("devcontainer_path")]
+        public string? DevcontainerPath { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,7 +37,7 @@ namespace G
             string? devcontainerPath)
         {
             this.Location = location ?? throw new global::System.ArgumentNullException(nameof(location));
-            this.DevcontainerPath = devcontainerPath ?? throw new global::System.ArgumentNullException(nameof(devcontainerPath));
+            this.DevcontainerPath = devcontainerPath;
         }
 
         /// <summary>

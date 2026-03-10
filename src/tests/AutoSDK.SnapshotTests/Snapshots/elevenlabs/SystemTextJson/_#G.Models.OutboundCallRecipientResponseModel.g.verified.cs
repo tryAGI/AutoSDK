@@ -49,8 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conversation_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? ConversationId { get; set; }
+        public string? ConversationId { get; set; }
 
         /// <summary>
         /// 
@@ -91,7 +90,7 @@ namespace G
             this.Status = status;
             this.CreatedAtUnix = createdAtUnix;
             this.UpdatedAtUnix = updatedAtUnix;
-            this.ConversationId = conversationId ?? throw new global::System.ArgumentNullException(nameof(conversationId));
+            this.ConversationId = conversationId;
             this.ConversationInitiationClientData = conversationInitiationClientData;
         }
 

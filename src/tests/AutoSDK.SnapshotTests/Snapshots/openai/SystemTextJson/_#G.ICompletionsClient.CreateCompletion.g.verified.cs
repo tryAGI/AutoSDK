@@ -114,7 +114,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateCompletionResponse> CreateCompletionAsync(
             global::G.AnyOf<string, global::G.CreateCompletionRequestModel?> model,
-            global::G.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>? prompt,
+            global::G.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>? prompt = default,
             int? bestOf = default,
             bool? echo = default,
             double? frequencyPenalty = default,

@@ -59,8 +59,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requestor")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksUser? Requestor { get; set; }
+        public global::G.WebhooksUser? Requestor { get; set; }
 
         /// <summary>
         /// 
@@ -94,8 +93,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflow_run")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookDeploymentReviewRequestedWorkflowRun? WorkflowRun { get; set; }
+        public global::G.WebhookDeploymentReviewRequestedWorkflowRun? WorkflowRun { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -141,28 +139,28 @@ namespace G
             string environment,
             global::G.OrganizationSimpleWebhooks organization,
             global::G.RepositoryWebhooks repository,
-            global::G.WebhooksUser? requestor,
             global::System.Collections.Generic.IList<global::G.WebhookDeploymentReviewRequestedReviewer> reviewers,
             global::G.SimpleUser sender,
             string since,
             global::G.WebhookDeploymentReviewRequestedWorkflowJobRun workflowJobRun,
-            global::G.WebhookDeploymentReviewRequestedWorkflowRun? workflowRun,
             global::G.WebhookDeploymentReviewRequestedAction action,
             global::G.EnterpriseWebhooks? enterprise,
-            global::G.SimpleInstallation? installation)
+            global::G.SimpleInstallation? installation,
+            global::G.WebhooksUser? requestor,
+            global::G.WebhookDeploymentReviewRequestedWorkflowRun? workflowRun)
         {
             this.Environment = environment ?? throw new global::System.ArgumentNullException(nameof(environment));
             this.Organization = organization ?? throw new global::System.ArgumentNullException(nameof(organization));
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
-            this.Requestor = requestor ?? throw new global::System.ArgumentNullException(nameof(requestor));
             this.Reviewers = reviewers ?? throw new global::System.ArgumentNullException(nameof(reviewers));
             this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Since = since ?? throw new global::System.ArgumentNullException(nameof(since));
             this.WorkflowJobRun = workflowJobRun ?? throw new global::System.ArgumentNullException(nameof(workflowJobRun));
-            this.WorkflowRun = workflowRun ?? throw new global::System.ArgumentNullException(nameof(workflowRun));
             this.Action = action;
             this.Enterprise = enterprise;
             this.Installation = installation;
+            this.Requestor = requestor;
+            this.WorkflowRun = workflowRun;
         }
 
         /// <summary>

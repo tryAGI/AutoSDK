@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// Commit message for the merge commit.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("commit_message", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? CommitMessage { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("commit_message")]
+        public string? CommitMessage { get; set; }
 
         /// <summary>
         /// Title for the merge commit message.
@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("enabled_by", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPullRequestUnlockedPullRequestAutoMergeEnabledBy? EnabledBy { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("enabled_by")]
+        public global::G.WebhookPullRequestUnlockedPullRequestAutoMergeEnabledBy? EnabledBy { get; set; }
 
         /// <summary>
         /// The merge method to use.
@@ -53,15 +53,15 @@ namespace G
         /// The merge method to use.
         /// </param>
         public WebhookPullRequestUnlockedPullRequestAutoMerge(
-            string? commitMessage,
             string commitTitle,
-            global::G.WebhookPullRequestUnlockedPullRequestAutoMergeEnabledBy? enabledBy,
-            global::G.WebhookPullRequestUnlockedPullRequestAutoMergeMergeMethod mergeMethod)
+            global::G.WebhookPullRequestUnlockedPullRequestAutoMergeMergeMethod mergeMethod,
+            string? commitMessage,
+            global::G.WebhookPullRequestUnlockedPullRequestAutoMergeEnabledBy? enabledBy)
         {
-            this.CommitMessage = commitMessage ?? throw new global::System.ArgumentNullException(nameof(commitMessage));
             this.CommitTitle = commitTitle ?? throw new global::System.ArgumentNullException(nameof(commitTitle));
-            this.EnabledBy = enabledBy ?? throw new global::System.ArgumentNullException(nameof(enabledBy));
             this.MergeMethod = mergeMethod;
+            this.CommitMessage = commitMessage;
+            this.EnabledBy = enabledBy;
         }
 
         /// <summary>

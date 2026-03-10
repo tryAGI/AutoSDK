@@ -62,8 +62,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Body { get; set; }
+        public string? Body { get; set; }
 
         /// <summary>
         /// 
@@ -161,13 +160,13 @@ namespace G
             int id,
             string nodeId,
             string name,
-            string? body,
             int number,
             string state,
             global::G.SimpleUser creator,
             string createdAt,
             string updatedAt,
             global::G.TeamProjectPermissions permissions,
+            string? body,
             string? organizationPermission,
             bool? @private)
         {
@@ -178,13 +177,13 @@ namespace G
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
             this.Number = number;
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
             this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
             this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
+            this.Body = body;
             this.OrganizationPermission = organizationPermission;
             this.Private = @private;
         }

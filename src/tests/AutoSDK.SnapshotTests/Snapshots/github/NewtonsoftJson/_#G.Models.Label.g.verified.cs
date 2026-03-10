@@ -45,8 +45,8 @@ namespace G
         /// Example: Something isn't working
         /// </summary>
         /// <example>Something isn't working</example>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// 6-character hex code, without the leading #, identifying the color<br/>
@@ -105,17 +105,17 @@ namespace G
             string nodeId,
             string url,
             string name,
-            string? description,
             string color,
-            bool @default)
+            bool @default,
+            string? description)
         {
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Color = color ?? throw new global::System.ArgumentNullException(nameof(color));
             this.Default = @default;
+            this.Description = description;
         }
 
         /// <summary>

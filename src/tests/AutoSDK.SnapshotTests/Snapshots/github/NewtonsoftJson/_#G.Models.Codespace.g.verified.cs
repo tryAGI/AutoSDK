@@ -37,8 +37,8 @@ namespace G
         /// Example: 26a7c758-7299-4a73-b978-5a92a7ae98a0
         /// </summary>
         /// <example>26a7c758-7299-4a73-b978-5a92a7ae98a0</example>
-        [global::Newtonsoft.Json.JsonProperty("environment_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? EnvironmentId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("environment_id")]
+        public string? EnvironmentId { get; set; }
 
         /// <summary>
         /// A GitHub user.
@@ -61,8 +61,8 @@ namespace G
         /// <summary>
         /// A description of the machine powering a codespace.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("machine", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableCodespaceMachine? Machine { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("machine")]
+        public global::G.NullableCodespaceMachine? Machine { get; set; }
 
         /// <summary>
         /// Path to devcontainer.json from repo root used to create Codespace.<br/>
@@ -77,8 +77,8 @@ namespace G
         /// Example: false
         /// </summary>
         /// <example>false</example>
-        [global::Newtonsoft.Json.JsonProperty("prebuild", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool? Prebuild { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("prebuild")]
+        public bool? Prebuild { get; set; }
 
         /// <summary>
         /// Example: 2011-01-26T19:01:12Z
@@ -135,8 +135,8 @@ namespace G
         /// Example: 60
         /// </summary>
         /// <example>60</example>
-        [global::Newtonsoft.Json.JsonProperty("idle_timeout_minutes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? IdleTimeoutMinutes { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("idle_timeout_minutes")]
+        public int? IdleTimeoutMinutes { get; set; }
 
         /// <summary>
         /// URL to access this codespace on the web.
@@ -171,8 +171,8 @@ namespace G
         /// <summary>
         /// API URL for the Pull Request associated with this codespace, if any.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("pulls_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? PullsUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("pulls_url")]
+        public string? PullsUrl { get; set; }
 
         /// <summary>
         /// 
@@ -344,12 +344,9 @@ namespace G
         public Codespace(
             long id,
             string name,
-            string? environmentId,
             global::G.SimpleUser owner,
             global::G.SimpleUser billableOwner,
             global::G.MinimalRepository repository,
-            global::G.NullableCodespaceMachine? machine,
-            bool? prebuild,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             global::System.DateTime lastUsedAt,
@@ -357,16 +354,19 @@ namespace G
             string url,
             global::G.CodespaceGitStatus gitStatus,
             global::G.CodespaceLocation location,
-            int? idleTimeoutMinutes,
             string webUrl,
             string machinesUrl,
             string startUrl,
             string stopUrl,
-            string? pullsUrl,
             global::System.Collections.Generic.IList<string> recentFolders,
             string? displayName,
+            string? environmentId,
+            global::G.NullableCodespaceMachine? machine,
             string? devcontainerPath,
+            bool? prebuild,
+            int? idleTimeoutMinutes,
             string? publishUrl,
+            string? pullsUrl,
             global::G.CodespaceRuntimeConstraints? runtimeConstraints,
             bool? pendingOperation,
             string? pendingOperationDisabledReason,
@@ -377,12 +377,9 @@ namespace G
         {
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.EnvironmentId = environmentId ?? throw new global::System.ArgumentNullException(nameof(environmentId));
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.BillableOwner = billableOwner ?? throw new global::System.ArgumentNullException(nameof(billableOwner));
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
-            this.Machine = machine ?? throw new global::System.ArgumentNullException(nameof(machine));
-            this.Prebuild = prebuild;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.LastUsedAt = lastUsedAt;
@@ -390,16 +387,19 @@ namespace G
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.GitStatus = gitStatus ?? throw new global::System.ArgumentNullException(nameof(gitStatus));
             this.Location = location;
-            this.IdleTimeoutMinutes = idleTimeoutMinutes;
             this.WebUrl = webUrl ?? throw new global::System.ArgumentNullException(nameof(webUrl));
             this.MachinesUrl = machinesUrl ?? throw new global::System.ArgumentNullException(nameof(machinesUrl));
             this.StartUrl = startUrl ?? throw new global::System.ArgumentNullException(nameof(startUrl));
             this.StopUrl = stopUrl ?? throw new global::System.ArgumentNullException(nameof(stopUrl));
-            this.PullsUrl = pullsUrl ?? throw new global::System.ArgumentNullException(nameof(pullsUrl));
             this.RecentFolders = recentFolders ?? throw new global::System.ArgumentNullException(nameof(recentFolders));
             this.DisplayName = displayName;
+            this.EnvironmentId = environmentId;
+            this.Machine = machine;
             this.DevcontainerPath = devcontainerPath;
+            this.Prebuild = prebuild;
+            this.IdleTimeoutMinutes = idleTimeoutMinutes;
             this.PublishUrl = publishUrl;
+            this.PullsUrl = pullsUrl;
             this.RuntimeConstraints = runtimeConstraints;
             this.PendingOperation = pendingOperation;
             this.PendingOperationDisabledReason = pendingOperationDisabledReason;

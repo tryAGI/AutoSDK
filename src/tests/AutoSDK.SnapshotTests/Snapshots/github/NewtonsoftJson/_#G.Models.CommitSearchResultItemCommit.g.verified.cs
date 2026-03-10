@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// Metaproperties for Git author/committer information.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("committer", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableGitUser? Committer { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("committer")]
+        public global::G.NullableGitUser? Committer { get; set; }
 
         /// <summary>
         /// 
@@ -71,19 +71,19 @@ namespace G
         /// <param name="verification"></param>
         public CommitSearchResultItemCommit(
             global::G.CommitSearchResultItemCommitAuthor author,
-            global::G.NullableGitUser? committer,
             int commentCount,
             string message,
             global::G.CommitSearchResultItemCommitTree tree,
             string url,
+            global::G.NullableGitUser? committer,
             global::G.Verification? verification)
         {
             this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
-            this.Committer = committer ?? throw new global::System.ArgumentNullException(nameof(committer));
             this.CommentCount = commentCount;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Tree = tree ?? throw new global::System.ArgumentNullException(nameof(tree));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Committer = committer;
             this.Verification = verification;
         }
 

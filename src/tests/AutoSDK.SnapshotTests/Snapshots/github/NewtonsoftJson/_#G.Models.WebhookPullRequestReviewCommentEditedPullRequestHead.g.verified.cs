@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// A git repository
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("repo", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPullRequestReviewCommentEditedPullRequestHeadRepo? Repo { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("repo")]
+        public global::G.WebhookPullRequestReviewCommentEditedPullRequestHeadRepo? Repo { get; set; }
 
         /// <summary>
         /// 
@@ -36,8 +36,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPullRequestReviewCommentEditedPullRequestHeadUser? User { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("user")]
+        public global::G.WebhookPullRequestReviewCommentEditedPullRequestHeadUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -58,15 +58,15 @@ namespace G
         public WebhookPullRequestReviewCommentEditedPullRequestHead(
             string label,
             string @ref,
-            global::G.WebhookPullRequestReviewCommentEditedPullRequestHeadRepo? repo,
             string sha,
+            global::G.WebhookPullRequestReviewCommentEditedPullRequestHeadRepo? repo,
             global::G.WebhookPullRequestReviewCommentEditedPullRequestHeadUser? user)
         {
             this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
             this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
-            this.Repo = repo ?? throw new global::System.ArgumentNullException(nameof(repo));
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.Repo = repo;
+            this.User = user;
         }
 
         /// <summary>

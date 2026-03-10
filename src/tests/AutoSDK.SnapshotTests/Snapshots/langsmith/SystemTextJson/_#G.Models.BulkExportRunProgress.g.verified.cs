@@ -34,8 +34,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("latest_cursor")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? LatestCursor { get; set; }
+        public string? LatestCursor { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,7 +61,7 @@ namespace G
             this.RowsWritten = rowsWritten;
             this.ExportedFiles = exportedFiles ?? throw new global::System.ArgumentNullException(nameof(exportedFiles));
             this.ExportPath = exportPath ?? throw new global::System.ArgumentNullException(nameof(exportPath));
-            this.LatestCursor = latestCursor ?? throw new global::System.ArgumentNullException(nameof(latestCursor));
+            this.LatestCursor = latestCursor;
         }
 
         /// <summary>

@@ -12,26 +12,26 @@ namespace G
         /// <summary>
         /// Require status checks to pass before merging. Set to `null` to disable.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("required_status_checks", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ReposUpdateBranchProtectionRequestRequiredStatusChecks? RequiredStatusChecks { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("required_status_checks")]
+        public global::G.ReposUpdateBranchProtectionRequestRequiredStatusChecks? RequiredStatusChecks { get; set; }
 
         /// <summary>
         /// Enforce all configured restrictions for administrators. Set to `true` to enforce required status checks for repository administrators. Set to `null` to disable.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("enforce_admins", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool? EnforceAdmins { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("enforce_admins")]
+        public bool? EnforceAdmins { get; set; }
 
         /// <summary>
         /// Require at least one approving review on a pull request, before merging. Set to `null` to disable.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("required_pull_request_reviews", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ReposUpdateBranchProtectionRequestRequiredPullRequestReviews? RequiredPullRequestReviews { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("required_pull_request_reviews")]
+        public global::G.ReposUpdateBranchProtectionRequestRequiredPullRequestReviews? RequiredPullRequestReviews { get; set; }
 
         /// <summary>
         /// Restrict who can push to the protected branch. User, app, and team `restrictions` are only available for organization-owned repositories. Set to `null` to disable.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("restrictions", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ReposUpdateBranchProtectionRequestRestrictions? Restrictions { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("restrictions")]
+        public global::G.ReposUpdateBranchProtectionRequestRestrictions? Restrictions { get; set; }
 
         /// <summary>
         /// Enforces a linear commit Git history, which prevents anyone from pushing merge commits to a branch. Set to `true` to enforce a linear commit history. Set to `false` to disable a linear commit Git history. Your repository must allow squash merging or rebase merging before you can enable a linear commit history. Default: `false`. For more information, see "[Requiring a linear commit history](https://docs.github.com/github/administering-a-repository/requiring-a-linear-commit-history)" in the GitHub Help documentation.
@@ -134,10 +134,10 @@ namespace G
             bool? lockBranch,
             bool? allowForkSyncing)
         {
-            this.RequiredStatusChecks = requiredStatusChecks ?? throw new global::System.ArgumentNullException(nameof(requiredStatusChecks));
+            this.RequiredStatusChecks = requiredStatusChecks;
             this.EnforceAdmins = enforceAdmins;
-            this.RequiredPullRequestReviews = requiredPullRequestReviews ?? throw new global::System.ArgumentNullException(nameof(requiredPullRequestReviews));
-            this.Restrictions = restrictions ?? throw new global::System.ArgumentNullException(nameof(restrictions));
+            this.RequiredPullRequestReviews = requiredPullRequestReviews;
+            this.Restrictions = restrictions;
             this.RequiredLinearHistory = requiredLinearHistory;
             this.AllowForcePushes = allowForcePushes;
             this.AllowDeletions = allowDeletions;

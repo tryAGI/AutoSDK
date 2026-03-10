@@ -41,8 +41,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -102,8 +101,7 @@ namespace G
         /// Groups of organization members that gives permissions on specified repositories.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableTeamSimple? Parent { get; set; }
+        public global::G.NullableTeamSimple? Parent { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -140,31 +138,31 @@ namespace G
             string nodeId,
             string name,
             string slug,
-            string? description,
             string permission,
             string url,
             string htmlUrl,
             string membersUrl,
             string repositoriesUrl,
-            global::G.NullableTeamSimple? parent,
+            string? description,
             string? privacy,
             string? notificationSetting,
-            global::G.TeamPermissions? permissions)
+            global::G.TeamPermissions? permissions,
+            global::G.NullableTeamSimple? parent)
         {
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Permission = permission ?? throw new global::System.ArgumentNullException(nameof(permission));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.MembersUrl = membersUrl ?? throw new global::System.ArgumentNullException(nameof(membersUrl));
             this.RepositoriesUrl = repositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(repositoriesUrl));
-            this.Parent = parent ?? throw new global::System.ArgumentNullException(nameof(parent));
+            this.Description = description;
             this.Privacy = privacy;
             this.NotificationSetting = notificationSetting;
             this.Permissions = permissions;
+            this.Parent = parent;
         }
 
         /// <summary>

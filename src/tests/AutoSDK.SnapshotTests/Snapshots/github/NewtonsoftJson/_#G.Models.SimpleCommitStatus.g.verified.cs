@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -42,8 +42,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("target_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? TargetUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("target_url")]
+        public string? TargetUrl { get; set; }
 
         /// <summary>
         /// 
@@ -54,8 +54,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("avatar_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? AvatarUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("avatar_url")]
+        public string? AvatarUrl { get; set; }
 
         /// <summary>
         /// 
@@ -96,29 +96,29 @@ namespace G
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         public SimpleCommitStatus(
-            string? description,
             int id,
             string nodeId,
             string state,
             string context,
-            string? targetUrl,
-            string? avatarUrl,
             string url,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            bool? required)
+            string? description,
+            string? targetUrl,
+            bool? required,
+            string? avatarUrl)
         {
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
             this.Context = context ?? throw new global::System.ArgumentNullException(nameof(context));
-            this.TargetUrl = targetUrl ?? throw new global::System.ArgumentNullException(nameof(targetUrl));
-            this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.Description = description;
+            this.TargetUrl = targetUrl;
             this.Required = required;
+            this.AvatarUrl = avatarUrl;
         }
 
         /// <summary>

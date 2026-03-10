@@ -20,8 +20,7 @@ namespace G
         /// The ID of the stream that the video originated from if the video's type is "archive;" otherwise, **null**.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? StreamId { get; set; }
+        public string? StreamId { get; set; }
 
         /// <summary>
         /// The ID of the broadcaster that owns the video.
@@ -130,8 +129,7 @@ namespace G
         /// The segments that Twitch Audio Recognition muted; otherwise, **null**.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("muted_segments")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.VideoMutedSegment>? MutedSegments { get; set; }
+        public global::System.Collections.Generic.IList<global::G.VideoMutedSegment>? MutedSegments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -202,7 +200,6 @@ namespace G
 #endif
         public Video(
             string id,
-            string? streamId,
             string userId,
             string userLogin,
             string userName,
@@ -217,10 +214,10 @@ namespace G
             string language,
             global::G.VideoType type,
             string duration,
+            string? streamId,
             global::System.Collections.Generic.IList<global::G.VideoMutedSegment>? mutedSegments)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.StreamId = streamId ?? throw new global::System.ArgumentNullException(nameof(streamId));
             this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
             this.UserLogin = userLogin ?? throw new global::System.ArgumentNullException(nameof(userLogin));
             this.UserName = userName ?? throw new global::System.ArgumentNullException(nameof(userName));
@@ -235,7 +232,8 @@ namespace G
             this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
             this.Type = type;
             this.Duration = duration ?? throw new global::System.ArgumentNullException(nameof(duration));
-            this.MutedSegments = mutedSegments ?? throw new global::System.ArgumentNullException(nameof(mutedSegments));
+            this.StreamId = streamId;
+            this.MutedSegments = mutedSegments;
         }
 
         /// <summary>

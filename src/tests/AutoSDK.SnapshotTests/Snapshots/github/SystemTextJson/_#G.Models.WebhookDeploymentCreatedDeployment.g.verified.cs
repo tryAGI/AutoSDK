@@ -22,15 +22,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creator")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookDeploymentCreatedDeploymentCreator? Creator { get; set; }
+        public global::G.WebhookDeploymentCreatedDeploymentCreator? Creator { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -169,8 +167,6 @@ namespace G
 #endif
         public WebhookDeploymentCreatedDeployment(
             string createdAt,
-            global::G.WebhookDeploymentCreatedDeploymentCreator? creator,
-            string? description,
             string environment,
             int id,
             string nodeId,
@@ -183,13 +179,13 @@ namespace G
             string task,
             string updatedAt,
             string url,
+            global::G.WebhookDeploymentCreatedDeploymentCreator? creator,
+            string? description,
             global::G.WebhookDeploymentCreatedDeploymentPerformedViaGithubApp? performedViaGithubApp,
             bool? productionEnvironment,
             bool? transientEnvironment)
         {
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
-            this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Environment = environment ?? throw new global::System.ArgumentNullException(nameof(environment));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
@@ -202,6 +198,8 @@ namespace G
             this.Task = task ?? throw new global::System.ArgumentNullException(nameof(task));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Creator = creator;
+            this.Description = description;
             this.PerformedViaGithubApp = performedViaGithubApp;
             this.ProductionEnvironment = productionEnvironment;
             this.TransientEnvironment = transientEnvironment;

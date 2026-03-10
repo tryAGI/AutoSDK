@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// The text of the review.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("body", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Body { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("body")]
+        public string? Body { get; set; }
 
         /// <summary>
         /// A commit SHA for the review.
@@ -66,14 +66,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("submitted_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? SubmittedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("submitted_at")]
+        public global::System.DateTime? SubmittedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhooksReviewUser? User { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("user")]
+        public global::G.WebhooksReviewUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -106,27 +106,27 @@ namespace G
         public WebhooksReview(
             global::G.WebhooksReviewLinks links,
             global::G.WebhooksReviewAuthorAssociation authorAssociation,
-            string? body,
             string commitId,
             string htmlUrl,
             int id,
             string nodeId,
             string pullRequestUrl,
             string state,
+            string? body,
             global::System.DateTime? submittedAt,
             global::G.WebhooksReviewUser? user)
         {
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
             this.AuthorAssociation = authorAssociation;
-            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
             this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.PullRequestUrl = pullRequestUrl ?? throw new global::System.ArgumentNullException(nameof(pullRequestUrl));
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
+            this.Body = body;
             this.SubmittedAt = submittedAt;
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.User = user;
         }
 
         /// <summary>

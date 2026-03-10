@@ -23,8 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("active_lock_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewRequestRemovedVariant2PullRequestActiveLockReasonJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestActiveLockReason? ActiveLockReason { get; set; }
+        public global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestActiveLockReason? ActiveLockReason { get; set; }
 
         /// <summary>
         /// 
@@ -36,8 +35,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignee")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestAssignee? Assignee { get; set; }
+        public global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestAssignee? Assignee { get; set; }
 
         /// <summary>
         /// 
@@ -58,8 +56,7 @@ namespace G
         /// The status of auto merging a pull request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auto_merge")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestAutoMerge? AutoMerge { get; set; }
+        public global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestAutoMerge? AutoMerge { get; set; }
 
         /// <summary>
         /// 
@@ -72,8 +69,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Body { get; set; }
+        public string? Body { get; set; }
 
         /// <summary>
         /// 
@@ -85,8 +81,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("closed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? ClosedAt { get; set; }
+        public global::System.DateTime? ClosedAt { get; set; }
 
         /// <summary>
         /// 
@@ -193,8 +188,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_sha")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? MergeCommitSha { get; set; }
+        public string? MergeCommitSha { get; set; }
 
         /// <summary>
         /// 
@@ -218,8 +212,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merged_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? MergedAt { get; set; }
+        public global::System.DateTime? MergedAt { get; set; }
 
         /// <summary>
         /// 
@@ -231,8 +224,7 @@ namespace G
         /// A collection of related issues and pull requests.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("milestone")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestMilestone? Milestone { get; set; }
+        public global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestMilestone? Milestone { get; set; }
 
         /// <summary>
         /// 
@@ -335,8 +327,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestUser? User { get; set; }
+        public global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -416,14 +407,9 @@ namespace G
 #endif
         public WebhookPullRequestReviewRequestRemovedVariant2PullRequest(
             global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestLinks links,
-            global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestActiveLockReason? activeLockReason,
-            global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestAssignee? assignee,
             global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestAssignee2> assignees,
             global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestAuthorAssociation authorAssociation,
-            global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestAutoMerge? autoMerge,
             global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestBase @base,
-            string? body,
-            global::System.DateTime? closedAt,
             string commentsUrl,
             string commitsUrl,
             global::System.DateTime createdAt,
@@ -435,9 +421,6 @@ namespace G
             string issueUrl,
             global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestLabel> labels,
             bool locked,
-            string? mergeCommitSha,
-            global::System.DateTime? mergedAt,
-            global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestMilestone? milestone,
             string nodeId,
             int number,
             string patchUrl,
@@ -450,29 +433,32 @@ namespace G
             string title,
             global::System.DateTime updatedAt,
             string url,
-            global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestUser? user,
+            global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestActiveLockReason? activeLockReason,
             int? additions,
+            global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestAssignee? assignee,
+            global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestAutoMerge? autoMerge,
+            string? body,
             int? changedFiles,
+            global::System.DateTime? closedAt,
             int? comments,
             int? commits,
             int? deletions,
             bool? maintainerCanModify,
+            string? mergeCommitSha,
             bool? mergeable,
             string? mergeableState,
             bool? merged,
+            global::System.DateTime? mergedAt,
             global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestMergedBy? mergedBy,
+            global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestMilestone? milestone,
             bool? rebaseable,
-            int? reviewComments)
+            int? reviewComments,
+            global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestUser? user)
         {
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
-            this.ActiveLockReason = activeLockReason;
-            this.Assignee = assignee ?? throw new global::System.ArgumentNullException(nameof(assignee));
             this.Assignees = assignees ?? throw new global::System.ArgumentNullException(nameof(assignees));
             this.AuthorAssociation = authorAssociation;
-            this.AutoMerge = autoMerge ?? throw new global::System.ArgumentNullException(nameof(autoMerge));
             this.Base = @base ?? throw new global::System.ArgumentNullException(nameof(@base));
-            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
-            this.ClosedAt = closedAt;
             this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
             this.CommitsUrl = commitsUrl ?? throw new global::System.ArgumentNullException(nameof(commitsUrl));
             this.CreatedAt = createdAt;
@@ -484,9 +470,6 @@ namespace G
             this.IssueUrl = issueUrl ?? throw new global::System.ArgumentNullException(nameof(issueUrl));
             this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
             this.Locked = locked;
-            this.MergeCommitSha = mergeCommitSha ?? throw new global::System.ArgumentNullException(nameof(mergeCommitSha));
-            this.MergedAt = mergedAt;
-            this.Milestone = milestone ?? throw new global::System.ArgumentNullException(nameof(milestone));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Number = number;
             this.PatchUrl = patchUrl ?? throw new global::System.ArgumentNullException(nameof(patchUrl));
@@ -499,19 +482,27 @@ namespace G
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.ActiveLockReason = activeLockReason;
             this.Additions = additions;
+            this.Assignee = assignee;
+            this.AutoMerge = autoMerge;
+            this.Body = body;
             this.ChangedFiles = changedFiles;
+            this.ClosedAt = closedAt;
             this.Comments = comments;
             this.Commits = commits;
             this.Deletions = deletions;
             this.MaintainerCanModify = maintainerCanModify;
+            this.MergeCommitSha = mergeCommitSha;
             this.Mergeable = mergeable;
             this.MergeableState = mergeableState;
             this.Merged = merged;
+            this.MergedAt = mergedAt;
             this.MergedBy = mergedBy;
+            this.Milestone = milestone;
             this.Rebaseable = rebaseable;
             this.ReviewComments = reviewComments;
+            this.User = user;
         }
 
         /// <summary>

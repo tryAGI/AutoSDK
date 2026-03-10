@@ -71,8 +71,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requester")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksUser? Requester { get; set; }
+        public global::G.WebhooksUser? Requester { get; set; }
 
         /// <summary>
         /// A GitHub user.
@@ -128,23 +127,23 @@ namespace G
             global::System.Collections.Generic.IList<global::G.WebhooksRepositoriesAddedItem> repositoriesAdded,
             global::System.Collections.Generic.IList<global::G.WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem> repositoriesRemoved,
             global::G.WebhooksRepositorySelection repositorySelection,
-            global::G.WebhooksUser? requester,
             global::G.SimpleUser sender,
             global::G.WebhookInstallationRepositoriesRemovedAction action,
             global::G.EnterpriseWebhooks? enterprise,
             global::G.OrganizationSimpleWebhooks? organization,
-            global::G.RepositoryWebhooks? repository)
+            global::G.RepositoryWebhooks? repository,
+            global::G.WebhooksUser? requester)
         {
             this.Installation = installation ?? throw new global::System.ArgumentNullException(nameof(installation));
             this.RepositoriesAdded = repositoriesAdded ?? throw new global::System.ArgumentNullException(nameof(repositoriesAdded));
             this.RepositoriesRemoved = repositoriesRemoved ?? throw new global::System.ArgumentNullException(nameof(repositoriesRemoved));
             this.RepositorySelection = repositorySelection;
-            this.Requester = requester ?? throw new global::System.ArgumentNullException(nameof(requester));
             this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Action = action;
             this.Enterprise = enterprise;
             this.Organization = organization;
             this.Repository = repository;
+            this.Requester = requester;
         }
 
         /// <summary>

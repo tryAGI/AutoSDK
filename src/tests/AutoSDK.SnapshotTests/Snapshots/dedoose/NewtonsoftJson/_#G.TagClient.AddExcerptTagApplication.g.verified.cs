@@ -297,7 +297,7 @@ namespace G
             global::System.Guid resourceId,
             global::System.Guid excerptId,
             global::System.Guid tagId,
-            double? weight,
+            double? weight = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.AddExcerptTagApplicationRequest

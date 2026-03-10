@@ -27,8 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -86,19 +85,19 @@ namespace G
         public WebhookPullRequestUnassignedPullRequestLabel(
             string color,
             bool @default,
-            string? description,
             int id,
             string name,
             string nodeId,
-            string url)
+            string url,
+            string? description)
         {
             this.Color = color ?? throw new global::System.ArgumentNullException(nameof(color));
             this.Default = @default;
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Description = description;
         }
 
         /// <summary>

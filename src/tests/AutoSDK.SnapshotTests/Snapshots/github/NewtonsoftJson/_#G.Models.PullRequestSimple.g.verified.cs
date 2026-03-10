@@ -124,15 +124,15 @@ namespace G
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? User { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("user")]
+        public global::G.NullableSimpleUser? User { get; set; }
 
         /// <summary>
         /// Example: Please pull these awesome changes
         /// </summary>
         /// <example>Please pull these awesome changes</example>
-        [global::Newtonsoft.Json.JsonProperty("body", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Body { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("body")]
+        public string? Body { get; set; }
 
         /// <summary>
         /// 
@@ -143,8 +143,8 @@ namespace G
         /// <summary>
         /// A collection of related issues and pull requests.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("milestone", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableMilestone? Milestone { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("milestone")]
+        public global::G.NullableMilestone? Milestone { get; set; }
 
         /// <summary>
         /// Example: too heated
@@ -171,28 +171,28 @@ namespace G
         /// Example: 2011-01-26T19:01:12Z
         /// </summary>
         /// <example>2011-01-26T19:01:12Z</example>
-        [global::Newtonsoft.Json.JsonProperty("closed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? ClosedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("closed_at")]
+        public global::System.DateTime? ClosedAt { get; set; }
 
         /// <summary>
         /// Example: 2011-01-26T19:01:12Z
         /// </summary>
         /// <example>2011-01-26T19:01:12Z</example>
-        [global::Newtonsoft.Json.JsonProperty("merged_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? MergedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("merged_at")]
+        public global::System.DateTime? MergedAt { get; set; }
 
         /// <summary>
         /// Example: e5bd3914e2e596debea16f433f57875b5b90bcd6
         /// </summary>
         /// <example>e5bd3914e2e596debea16f433f57875b5b90bcd6</example>
-        [global::Newtonsoft.Json.JsonProperty("merge_commit_sha", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? MergeCommitSha { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("merge_commit_sha")]
+        public string? MergeCommitSha { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("assignee", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? Assignee { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("assignee")]
+        public global::G.NullableSimpleUser? Assignee { get; set; }
 
         /// <summary>
         /// 
@@ -241,8 +241,8 @@ namespace G
         /// <summary>
         /// The status of auto merging a pull request.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("auto_merge", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AutoMerge? AutoMerge { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("auto_merge")]
+        public global::G.AutoMerge? AutoMerge { get; set; }
 
         /// <summary>
         /// Indicates whether or not the pull request is a draft.<br/>
@@ -374,25 +374,25 @@ namespace G
             string state,
             bool locked,
             string title,
-            global::G.NullableSimpleUser? user,
-            string? body,
             global::System.Collections.Generic.IList<global::G.PullRequestSimpleLabel> labels,
-            global::G.NullableMilestone? milestone,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            global::System.DateTime? closedAt,
-            global::System.DateTime? mergedAt,
-            string? mergeCommitSha,
-            global::G.NullableSimpleUser? assignee,
             global::G.PullRequestSimpleHead head,
             global::G.PullRequestSimpleBase @base,
             global::G.PullRequestSimpleLinks links,
             global::G.AuthorAssociation authorAssociation,
-            global::G.AutoMerge? autoMerge,
+            global::G.NullableSimpleUser? user,
+            string? body,
+            global::G.NullableMilestone? milestone,
             string? activeLockReason,
+            global::System.DateTime? closedAt,
+            global::System.DateTime? mergedAt,
+            string? mergeCommitSha,
+            global::G.NullableSimpleUser? assignee,
             global::System.Collections.Generic.IList<global::G.SimpleUser>? assignees,
             global::System.Collections.Generic.IList<global::G.SimpleUser>? requestedReviewers,
             global::System.Collections.Generic.IList<global::G.Team>? requestedTeams,
+            global::G.AutoMerge? autoMerge,
             bool? draft)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
@@ -411,25 +411,25 @@ namespace G
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
             this.Locked = locked;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
-            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
             this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
-            this.Milestone = milestone ?? throw new global::System.ArgumentNullException(nameof(milestone));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.ClosedAt = closedAt;
-            this.MergedAt = mergedAt;
-            this.MergeCommitSha = mergeCommitSha ?? throw new global::System.ArgumentNullException(nameof(mergeCommitSha));
-            this.Assignee = assignee ?? throw new global::System.ArgumentNullException(nameof(assignee));
             this.Head = head ?? throw new global::System.ArgumentNullException(nameof(head));
             this.Base = @base ?? throw new global::System.ArgumentNullException(nameof(@base));
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
             this.AuthorAssociation = authorAssociation;
-            this.AutoMerge = autoMerge ?? throw new global::System.ArgumentNullException(nameof(autoMerge));
+            this.User = user;
+            this.Body = body;
+            this.Milestone = milestone;
             this.ActiveLockReason = activeLockReason;
+            this.ClosedAt = closedAt;
+            this.MergedAt = mergedAt;
+            this.MergeCommitSha = mergeCommitSha;
+            this.Assignee = assignee;
             this.Assignees = assignees;
             this.RequestedReviewers = requestedReviewers;
             this.RequestedTeams = requestedTeams;
+            this.AutoMerge = autoMerge;
             this.Draft = draft;
         }
 

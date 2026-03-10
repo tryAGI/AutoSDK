@@ -72,8 +72,8 @@ namespace G
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("dismissed_by", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? DismissedBy { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("dismissed_by")]
+        public global::G.NullableSimpleUser? DismissedBy { get; set; }
 
         /// <summary>
         /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// **Required when the state is dismissed.** The reason for dismissing or closing the alert.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("dismissed_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CodeScanningAlertDismissedReason? DismissedReason { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("dismissed_reason")]
+        public global::G.CodeScanningAlertDismissedReason? DismissedReason { get; set; }
 
         /// <summary>
         /// The dismissal comment associated with the dismissal of the alert.
@@ -179,15 +179,15 @@ namespace G
         /// </param>
         public CodeScanningOrganizationAlertItems(
             global::G.CodeScanningAlertState state,
-            global::G.NullableSimpleUser? dismissedBy,
-            global::G.CodeScanningAlertDismissedReason? dismissedReason,
             global::G.CodeScanningAlertRuleSummary rule,
             global::G.CodeScanningAnalysisTool tool,
             global::G.CodeScanningAlertInstance mostRecentInstance,
             global::G.SimpleRepository repository,
             global::System.DateTime? updatedAt,
             global::System.DateTime? fixedAt,
+            global::G.NullableSimpleUser? dismissedBy,
             global::System.DateTime? dismissedAt,
+            global::G.CodeScanningAlertDismissedReason? dismissedReason,
             string? dismissedComment,
             int number = default!,
             global::System.DateTime createdAt = default!,
@@ -196,8 +196,6 @@ namespace G
             string instancesUrl = default!)
         {
             this.State = state;
-            this.DismissedBy = dismissedBy ?? throw new global::System.ArgumentNullException(nameof(dismissedBy));
-            this.DismissedReason = dismissedReason;
             this.Rule = rule ?? throw new global::System.ArgumentNullException(nameof(rule));
             this.Tool = tool ?? throw new global::System.ArgumentNullException(nameof(tool));
             this.MostRecentInstance = mostRecentInstance ?? throw new global::System.ArgumentNullException(nameof(mostRecentInstance));
@@ -209,7 +207,9 @@ namespace G
             this.HtmlUrl = htmlUrl;
             this.InstancesUrl = instancesUrl;
             this.FixedAt = fixedAt;
+            this.DismissedBy = dismissedBy;
             this.DismissedAt = dismissedAt;
+            this.DismissedReason = dismissedReason;
             this.DismissedComment = dismissedComment;
         }
 

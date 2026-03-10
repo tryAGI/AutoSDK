@@ -42,14 +42,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("value", Required = global::Newtonsoft.Json.Required.Always)]
-        public double? Value { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("value")]
+        public double? Value { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("groups", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.Dictionary<string, double>? Groups { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("groups")]
+        public global::System.Collections.Generic.Dictionary<string, double>? Groups { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -81,8 +81,8 @@ namespace G
             this.BillableMetricName = billableMetricName ?? throw new global::System.ArgumentNullException(nameof(billableMetricName));
             this.StartTimestamp = startTimestamp ?? throw new global::System.ArgumentNullException(nameof(startTimestamp));
             this.EndTimestamp = endTimestamp ?? throw new global::System.ArgumentNullException(nameof(endTimestamp));
-            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
-            this.Groups = groups ?? throw new global::System.ArgumentNullException(nameof(groups));
+            this.Value = value;
+            this.Groups = groups;
         }
 
         /// <summary>

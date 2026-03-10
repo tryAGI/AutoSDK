@@ -62,8 +62,8 @@ namespace G
         /// Example: ready
         /// </summary>
         /// <example>ready</example>
-        [global::Newtonsoft.Json.JsonProperty("prebuild_availability", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CodespaceMachinePrebuildAvailability? PrebuildAvailability { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("prebuild_availability")]
+        public global::G.CodespaceMachinePrebuildAvailability? PrebuildAvailability { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

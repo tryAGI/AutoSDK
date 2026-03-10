@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -54,8 +54,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPackageUpdatedPackageOwner? Owner { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("owner")]
+        public global::G.WebhookPackageUpdatedPackageOwner? Owner { get; set; }
 
         /// <summary>
         /// 
@@ -72,8 +72,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("registry", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookPackageUpdatedPackageRegistry? Registry { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("registry")]
+        public global::G.WebhookPackageUpdatedPackageRegistry? Registry { get; set; }
 
         /// <summary>
         /// 
@@ -104,30 +104,30 @@ namespace G
         /// <param name="updatedAt"></param>
         public WebhookPackageUpdatedPackage(
             string createdAt,
-            string? description,
             string ecosystem,
             string htmlUrl,
             int id,
             string name,
             string @namespace,
-            global::G.WebhookPackageUpdatedPackageOwner? owner,
             string packageType,
             global::G.WebhookPackageUpdatedPackagePackageVersion packageVersion,
-            global::G.WebhookPackageUpdatedPackageRegistry? registry,
-            string updatedAt)
+            string updatedAt,
+            string? description,
+            global::G.WebhookPackageUpdatedPackageOwner? owner,
+            global::G.WebhookPackageUpdatedPackageRegistry? registry)
         {
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Ecosystem = ecosystem ?? throw new global::System.ArgumentNullException(nameof(ecosystem));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Namespace = @namespace ?? throw new global::System.ArgumentNullException(nameof(@namespace));
-            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.PackageType = packageType ?? throw new global::System.ArgumentNullException(nameof(packageType));
             this.PackageVersion = packageVersion ?? throw new global::System.ArgumentNullException(nameof(packageVersion));
-            this.Registry = registry ?? throw new global::System.ArgumentNullException(nameof(registry));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
+            this.Description = description;
+            this.Owner = owner;
+            this.Registry = registry;
         }
 
         /// <summary>

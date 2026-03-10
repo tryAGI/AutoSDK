@@ -19,8 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Email { get; set; }
+        public string? Email { get; set; }
 
         /// <summary>
         /// The git author's name.
@@ -54,14 +53,14 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookPushHeadCommitAuthor(
-            string? email,
             string name,
             global::System.DateTime? date,
+            string? email,
             string? username)
         {
-            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Date = date;
+            this.Email = email;
             this.Username = username;
         }
 

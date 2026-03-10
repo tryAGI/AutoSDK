@@ -56,15 +56,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required double? Limit { get; set; }
+        public double? Limit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("suspend_reason")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SuspendReason? SuspendReason { get; set; }
+        public global::G.SuspendReason? SuspendReason { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -103,24 +101,24 @@ namespace G
 #endif
         public Checklist(
             double stripeBalance,
-            double? limit,
-            global::G.SuspendReason? suspendReason,
             bool? email,
             bool? billingAddress,
             bool? paymentMethod,
             bool? suspended,
             double? overdueInvoices,
-            int? lastChecked)
+            int? lastChecked,
+            double? limit,
+            global::G.SuspendReason? suspendReason)
         {
             this.StripeBalance = stripeBalance;
-            this.Limit = limit ?? throw new global::System.ArgumentNullException(nameof(limit));
-            this.SuspendReason = suspendReason ?? throw new global::System.ArgumentNullException(nameof(suspendReason));
             this.Email = email;
             this.BillingAddress = billingAddress;
             this.PaymentMethod = paymentMethod;
             this.Suspended = suspended;
             this.OverdueInvoices = overdueInvoices;
             this.LastChecked = lastChecked;
+            this.Limit = limit;
+            this.SuspendReason = suspendReason;
         }
 
         /// <summary>

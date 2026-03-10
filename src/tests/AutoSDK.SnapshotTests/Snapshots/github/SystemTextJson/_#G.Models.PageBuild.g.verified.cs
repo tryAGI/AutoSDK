@@ -34,8 +34,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pusher")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? Pusher { get; set; }
+        public global::G.NullableSimpleUser? Pusher { get; set; }
 
         /// <summary>
         /// 
@@ -91,20 +90,20 @@ namespace G
             string url,
             string status,
             global::G.PageBuildError error,
-            global::G.NullableSimpleUser? pusher,
             string commit,
             int duration,
             global::System.DateTime createdAt,
-            global::System.DateTime updatedAt)
+            global::System.DateTime updatedAt,
+            global::G.NullableSimpleUser? pusher)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
-            this.Pusher = pusher ?? throw new global::System.ArgumentNullException(nameof(pusher));
             this.Commit = commit ?? throw new global::System.ArgumentNullException(nameof(commit));
             this.Duration = duration;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.Pusher = pusher;
         }
 
         /// <summary>

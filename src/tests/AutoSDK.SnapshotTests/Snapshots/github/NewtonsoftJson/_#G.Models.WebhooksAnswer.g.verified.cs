@@ -60,8 +60,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("parent_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public object? ParentId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("parent_id")]
+        public object? ParentId { get; set; }
 
         /// <summary>
         /// 
@@ -84,8 +84,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhooksAnswerUser? User { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("user")]
+        public global::G.WebhooksAnswerUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -120,11 +120,11 @@ namespace G
             string htmlUrl,
             int id,
             string nodeId,
-            object? parentId,
             string repositoryUrl,
             global::System.DateTime updatedAt,
-            global::G.WebhooksAnswerUser? user,
-            global::G.WebhooksAnswerReactions? reactions)
+            object? parentId,
+            global::G.WebhooksAnswerReactions? reactions,
+            global::G.WebhooksAnswerUser? user)
         {
             this.AuthorAssociation = authorAssociation;
             this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
@@ -134,11 +134,11 @@ namespace G
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.ParentId = parentId ?? throw new global::System.ArgumentNullException(nameof(parentId));
             this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
             this.UpdatedAt = updatedAt;
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.ParentId = parentId;
             this.Reactions = reactions;
+            this.User = user;
         }
 
         /// <summary>

@@ -42,8 +42,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("label", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Label { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("label")]
+        public string? Label { get; set; }
 
         /// <summary>
         /// The file name of the asset.
@@ -119,12 +119,12 @@ namespace G
             global::System.DateTime createdAt,
             int downloadCount,
             int id,
-            string? label,
             string name,
             string nodeId,
             int size,
             global::System.DateTime updatedAt,
             string url,
+            string? label,
             global::G.WebhookReleasePrereleasedReleaseAssetState state,
             global::G.WebhookReleasePrereleasedReleaseAssetUploader? uploader)
         {
@@ -133,12 +133,12 @@ namespace G
             this.CreatedAt = createdAt;
             this.DownloadCount = downloadCount;
             this.Id = id;
-            this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Size = size;
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Label = label;
             this.State = state;
             this.Uploader = uploader;
         }

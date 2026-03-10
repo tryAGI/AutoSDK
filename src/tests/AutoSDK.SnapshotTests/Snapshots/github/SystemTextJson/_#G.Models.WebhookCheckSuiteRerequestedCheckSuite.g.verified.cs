@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("after")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? After { get; set; }
+        public string? After { get; set; }
 
         /// <summary>
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
@@ -27,8 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("before")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Before { get; set; }
+        public string? Before { get; set; }
 
         /// <summary>
         /// 
@@ -42,8 +40,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookCheckSuiteRerequestedCheckSuiteConclusionJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookCheckSuiteRerequestedCheckSuiteConclusion? Conclusion { get; set; }
+        public global::G.WebhookCheckSuiteRerequestedCheckSuiteConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// 
@@ -56,8 +53,7 @@ namespace G
         /// The head branch name the changes are on.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("head_branch")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? HeadBranch { get; set; }
+        public string? HeadBranch { get; set; }
 
         /// <summary>
         /// 
@@ -118,8 +114,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookCheckSuiteRerequestedCheckSuiteStatusJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookCheckSuiteRerequestedCheckSuiteStatus? Status { get; set; }
+        public global::G.WebhookCheckSuiteRerequestedCheckSuiteStatus? Status { get; set; }
 
         /// <summary>
         /// 
@@ -180,43 +175,43 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookCheckSuiteRerequestedCheckSuite(
-            string? after,
             global::G.WebhookCheckSuiteRerequestedCheckSuiteApp app,
-            string? before,
             string checkRunsUrl,
-            global::G.WebhookCheckSuiteRerequestedCheckSuiteConclusion? conclusion,
             global::System.DateTime createdAt,
-            string? headBranch,
             global::G.WebhookCheckSuiteRerequestedCheckSuiteHeadCommit headCommit,
             string headSha,
             int id,
             int latestCheckRunsCount,
             string nodeId,
             global::System.Collections.Generic.IList<global::G.WebhookCheckSuiteRerequestedCheckSuitePullRequest> pullRequests,
-            global::G.WebhookCheckSuiteRerequestedCheckSuiteStatus? status,
             global::System.DateTime updatedAt,
             string url,
+            string? after,
+            string? before,
+            global::G.WebhookCheckSuiteRerequestedCheckSuiteConclusion? conclusion,
+            string? headBranch,
             bool? rerequestable,
-            bool? runsRerequestable)
+            bool? runsRerequestable,
+            global::G.WebhookCheckSuiteRerequestedCheckSuiteStatus? status)
         {
-            this.After = after ?? throw new global::System.ArgumentNullException(nameof(after));
             this.App = app ?? throw new global::System.ArgumentNullException(nameof(app));
-            this.Before = before ?? throw new global::System.ArgumentNullException(nameof(before));
             this.CheckRunsUrl = checkRunsUrl ?? throw new global::System.ArgumentNullException(nameof(checkRunsUrl));
-            this.Conclusion = conclusion;
             this.CreatedAt = createdAt;
-            this.HeadBranch = headBranch ?? throw new global::System.ArgumentNullException(nameof(headBranch));
             this.HeadCommit = headCommit ?? throw new global::System.ArgumentNullException(nameof(headCommit));
             this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
             this.Id = id;
             this.LatestCheckRunsCount = latestCheckRunsCount;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.PullRequests = pullRequests ?? throw new global::System.ArgumentNullException(nameof(pullRequests));
-            this.Status = status;
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.After = after;
+            this.Before = before;
+            this.Conclusion = conclusion;
+            this.HeadBranch = headBranch;
             this.Rerequestable = rerequestable;
             this.RunsRerequestable = runsRerequestable;
+            this.Status = status;
         }
 
         /// <summary>

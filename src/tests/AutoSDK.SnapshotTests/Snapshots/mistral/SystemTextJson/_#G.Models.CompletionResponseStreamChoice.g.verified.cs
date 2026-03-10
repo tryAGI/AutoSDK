@@ -28,8 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CompletionResponseStreamChoiceFinishReasonJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CompletionResponseStreamChoiceFinishReason? FinishReason { get; set; }
+        public global::G.CompletionResponseStreamChoiceFinishReason? FinishReason { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public string? Type { get; set; }
 
         /// <summary>
         /// Actor
@@ -54,8 +54,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? CreatedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("created_at")]
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -80,22 +80,22 @@ namespace G
         /// <param name="createdAt"></param>
         public Event(
             string id,
-            string? type,
             global::G.Actor actor,
             global::G.EventRepo repo,
             global::G.EventPayload payload,
             bool @public,
-            global::System.DateTime? createdAt,
-            global::G.Actor? org)
+            string? type,
+            global::G.Actor? org,
+            global::System.DateTime? createdAt)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
             this.Repo = repo ?? throw new global::System.ArgumentNullException(nameof(repo));
             this.Payload = payload ?? throw new global::System.ArgumentNullException(nameof(payload));
             this.Public = @public;
-            this.CreatedAt = createdAt;
+            this.Type = type;
             this.Org = org;
+            this.CreatedAt = createdAt;
         }
 
         /// <summary>

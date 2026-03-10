@@ -36,14 +36,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("tarball_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? TarballUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("tarball_url")]
+        public string? TarballUrl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("zipball_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? ZipballUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("zipball_url")]
+        public string? ZipballUrl { get; set; }
 
         /// <summary>
         /// 
@@ -76,8 +76,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Name { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// 
@@ -110,8 +110,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("published_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? PublishedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("published_at")]
+        public global::System.DateTime? PublishedAt { get; set; }
 
         /// <summary>
         /// A GitHub user.
@@ -208,20 +208,20 @@ namespace G
             string htmlUrl,
             string assetsUrl,
             string uploadUrl,
-            string? tarballUrl,
-            string? zipballUrl,
             int id,
             string nodeId,
             string tagName,
             string targetCommitish,
-            string? name,
             bool draft,
             bool prerelease,
             global::System.DateTime createdAt,
-            global::System.DateTime? publishedAt,
             global::G.SimpleUser author,
             global::System.Collections.Generic.IList<global::G.ReleaseAsset> assets,
+            string? tarballUrl,
+            string? zipballUrl,
+            string? name,
             string? body,
+            global::System.DateTime? publishedAt,
             string? bodyHtml,
             string? bodyText,
             int? mentionsCount,
@@ -232,20 +232,20 @@ namespace G
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.AssetsUrl = assetsUrl ?? throw new global::System.ArgumentNullException(nameof(assetsUrl));
             this.UploadUrl = uploadUrl ?? throw new global::System.ArgumentNullException(nameof(uploadUrl));
-            this.TarballUrl = tarballUrl ?? throw new global::System.ArgumentNullException(nameof(tarballUrl));
-            this.ZipballUrl = zipballUrl ?? throw new global::System.ArgumentNullException(nameof(zipballUrl));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.TagName = tagName ?? throw new global::System.ArgumentNullException(nameof(tagName));
             this.TargetCommitish = targetCommitish ?? throw new global::System.ArgumentNullException(nameof(targetCommitish));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Draft = draft;
             this.Prerelease = prerelease;
             this.CreatedAt = createdAt;
-            this.PublishedAt = publishedAt;
             this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
             this.Assets = assets ?? throw new global::System.ArgumentNullException(nameof(assets));
+            this.TarballUrl = tarballUrl;
+            this.ZipballUrl = zipballUrl;
+            this.Name = name;
             this.Body = body;
+            this.PublishedAt = publishedAt;
             this.BodyHtml = bodyHtml;
             this.BodyText = bodyText;
             this.MentionsCount = mentionsCount;

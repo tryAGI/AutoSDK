@@ -20,8 +20,8 @@ namespace G
         /// <summary>
         /// The ID of the version of the pronunciation dictionary
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("version_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? VersionId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("version_id")]
+        public string? VersionId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,7 +43,7 @@ namespace G
             string? versionId)
         {
             this.PronunciationDictionaryId = pronunciationDictionaryId ?? throw new global::System.ArgumentNullException(nameof(pronunciationDictionaryId));
-            this.VersionId = versionId ?? throw new global::System.ArgumentNullException(nameof(versionId));
+            this.VersionId = versionId;
         }
 
         /// <summary>

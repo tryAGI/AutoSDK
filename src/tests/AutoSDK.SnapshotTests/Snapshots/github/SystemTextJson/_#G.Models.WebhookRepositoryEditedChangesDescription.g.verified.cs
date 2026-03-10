@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("from")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? From { get; set; }
+        public string? From { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,7 +31,7 @@ namespace G
         public WebhookRepositoryEditedChangesDescription(
             string? from)
         {
-            this.From = from ?? throw new global::System.ArgumentNullException(nameof(from));
+            this.From = from;
         }
 
         /// <summary>

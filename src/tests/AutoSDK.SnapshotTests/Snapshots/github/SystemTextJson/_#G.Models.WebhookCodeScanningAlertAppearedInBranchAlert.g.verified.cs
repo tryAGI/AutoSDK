@@ -20,23 +20,20 @@ namespace G
         /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? DismissedAt { get; set; }
+        public global::System.DateTime? DismissedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_by")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookCodeScanningAlertAppearedInBranchAlertDismissedBy? DismissedBy { get; set; }
+        public global::G.WebhookCodeScanningAlertAppearedInBranchAlertDismissedBy? DismissedBy { get; set; }
 
         /// <summary>
         /// The reason for dismissing or closing the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookCodeScanningAlertAppearedInBranchAlertDismissedReasonJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason? DismissedReason { get; set; }
+        public global::G.WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason? DismissedReason { get; set; }
 
         /// <summary>
         /// The GitHub URL of the alert resource.
@@ -124,27 +121,27 @@ namespace G
 #endif
         public WebhookCodeScanningAlertAppearedInBranchAlert(
             global::System.DateTime createdAt,
-            global::System.DateTime? dismissedAt,
-            global::G.WebhookCodeScanningAlertAppearedInBranchAlertDismissedBy? dismissedBy,
-            global::G.WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason? dismissedReason,
             string htmlUrl,
             int number,
             global::G.WebhookCodeScanningAlertAppearedInBranchAlertRule rule,
             global::G.WebhookCodeScanningAlertAppearedInBranchAlertState state,
             global::G.WebhookCodeScanningAlertAppearedInBranchAlertTool tool,
             string url,
+            global::System.DateTime? dismissedAt,
+            global::G.WebhookCodeScanningAlertAppearedInBranchAlertDismissedBy? dismissedBy,
+            global::G.WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason? dismissedReason,
             global::G.WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance? mostRecentInstance)
         {
             this.CreatedAt = createdAt;
-            this.DismissedAt = dismissedAt;
-            this.DismissedBy = dismissedBy ?? throw new global::System.ArgumentNullException(nameof(dismissedBy));
-            this.DismissedReason = dismissedReason;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Number = number;
             this.Rule = rule ?? throw new global::System.ArgumentNullException(nameof(rule));
             this.State = state;
             this.Tool = tool ?? throw new global::System.ArgumentNullException(nameof(tool));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.DismissedAt = dismissedAt;
+            this.DismissedBy = dismissedBy;
+            this.DismissedReason = dismissedReason;
             this.MostRecentInstance = mostRecentInstance;
         }
 

@@ -237,9 +237,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.OpenAIBatch> CreateOpenaiBatchV1OpenaiBatchesPostAsync(
             string inputFileId,
             global::G.OpenAIBatchesInEndpoint endpoint,
-            object? metadata,
             string? xiApiKey = default,
             string completionWindow = "24h",
+            object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.OpenAIBatchesIn

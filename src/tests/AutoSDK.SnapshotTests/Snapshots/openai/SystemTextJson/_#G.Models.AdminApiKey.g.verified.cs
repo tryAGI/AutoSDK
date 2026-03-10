@@ -70,8 +70,7 @@ namespace G
         /// <example>1711471534</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_used_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? LastUsedAt { get; set; }
+        public global::System.DateTimeOffset? LastUsedAt { get; set; }
 
         /// <summary>
         /// 
@@ -127,18 +126,18 @@ namespace G
             string name,
             string redactedValue,
             global::System.DateTimeOffset createdAt,
-            global::System.DateTimeOffset? lastUsedAt,
             global::G.AdminApiKeyOwner owner,
-            string? value)
+            string? value,
+            global::System.DateTimeOffset? lastUsedAt)
         {
             this.Object = @object ?? throw new global::System.ArgumentNullException(nameof(@object));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.RedactedValue = redactedValue ?? throw new global::System.ArgumentNullException(nameof(redactedValue));
             this.CreatedAt = createdAt;
-            this.LastUsedAt = lastUsedAt;
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.Value = value;
+            this.LastUsedAt = lastUsedAt;
         }
 
         /// <summary>

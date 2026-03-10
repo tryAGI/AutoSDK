@@ -41,8 +41,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? Size { get; set; }
+        public int? Size { get; set; }
 
         /// <summary>
         /// 
@@ -81,16 +80,16 @@ namespace G
             string encoding,
             string url,
             string sha,
-            int? size,
             string nodeId,
+            int? size,
             string? highlightedContent)
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Encoding = encoding ?? throw new global::System.ArgumentNullException(nameof(encoding));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
-            this.Size = size;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Size = size;
             this.HighlightedContent = highlightedContent;
         }
 

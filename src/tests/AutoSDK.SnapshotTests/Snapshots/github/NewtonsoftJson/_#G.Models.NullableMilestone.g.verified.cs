@@ -74,14 +74,14 @@ namespace G
         /// Example: Tracking milestone for version 1.0
         /// </summary>
         /// <example>Tracking milestone for version 1.0</example>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Description { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("creator", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? Creator { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("creator")]
+        public global::G.NullableSimpleUser? Creator { get; set; }
 
         /// <summary>
         /// Example: 4
@@ -115,15 +115,15 @@ namespace G
         /// Example: 2013-02-12T13:22:01Z
         /// </summary>
         /// <example>2013-02-12T13:22:01Z</example>
-        [global::Newtonsoft.Json.JsonProperty("closed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? ClosedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("closed_at")]
+        public global::System.DateTime? ClosedAt { get; set; }
 
         /// <summary>
         /// Example: 2012-10-09T23:39:01Z
         /// </summary>
         /// <example>2012-10-09T23:39:01Z</example>
-        [global::Newtonsoft.Json.JsonProperty("due_on", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTime? DueOn { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("due_on")]
+        public global::System.DateTime? DueOn { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -195,12 +195,12 @@ namespace G
             int number,
             global::G.NullableMilestoneState state,
             string title,
-            string? description,
-            global::G.NullableSimpleUser? creator,
             int openIssues,
             int closedIssues,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
+            string? description,
+            global::G.NullableSimpleUser? creator,
             global::System.DateTime? closedAt,
             global::System.DateTime? dueOn)
         {
@@ -212,12 +212,12 @@ namespace G
             this.Number = number;
             this.State = state;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
             this.OpenIssues = openIssues;
             this.ClosedIssues = closedIssues;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.Description = description;
+            this.Creator = creator;
             this.ClosedAt = closedAt;
             this.DueOn = dueOn;
         }

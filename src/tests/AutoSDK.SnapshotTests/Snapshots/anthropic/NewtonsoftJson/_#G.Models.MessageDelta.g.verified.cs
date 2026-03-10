@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("stop_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MessageDeltaStopReason2? StopReason { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("stop_reason")]
+        public global::G.MessageDeltaStopReason2? StopReason { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("stop_sequence", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? StopSequence { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("stop_sequence")]
+        public string? StopSequence { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,8 +40,8 @@ namespace G
             global::G.MessageDeltaStopReason2? stopReason,
             string? stopSequence)
         {
-            this.StopReason = stopReason ?? throw new global::System.ArgumentNullException(nameof(stopReason));
-            this.StopSequence = stopSequence ?? throw new global::System.ArgumentNullException(nameof(stopSequence));
+            this.StopReason = stopReason;
+            this.StopSequence = stopSequence;
         }
 
         /// <summary>

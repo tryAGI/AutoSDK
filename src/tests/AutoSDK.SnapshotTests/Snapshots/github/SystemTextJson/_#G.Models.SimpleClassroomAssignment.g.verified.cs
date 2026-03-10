@@ -158,8 +158,7 @@ namespace G
         /// </summary>
         /// <example>2011-01-26T19:06:43Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("deadline")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? Deadline { get; set; }
+        public global::System.DateTime? Deadline { get; set; }
 
         /// <summary>
         /// A GitHub Classroom classroom
@@ -266,10 +265,10 @@ namespace G
             int submitted,
             int passing,
             string language,
-            global::System.DateTime? deadline,
             global::G.SimpleClassroom classroom,
             int? maxTeams,
-            int? maxMembers)
+            int? maxMembers,
+            global::System.DateTime? deadline)
         {
             this.Id = id;
             this.PublicRepo = publicRepo;
@@ -285,10 +284,10 @@ namespace G
             this.Submitted = submitted;
             this.Passing = passing;
             this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
-            this.Deadline = deadline;
             this.Classroom = classroom ?? throw new global::System.ArgumentNullException(nameof(classroom));
             this.MaxTeams = maxTeams;
             this.MaxMembers = maxMembers;
+            this.Deadline = deadline;
         }
 
         /// <summary>

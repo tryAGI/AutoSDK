@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("from")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool? From { get; set; }
+        public bool? From { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

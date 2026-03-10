@@ -42,14 +42,14 @@ namespace G
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? Author { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("author")]
+        public global::G.NullableSimpleUser? Author { get; set; }
 
         /// <summary>
         /// Metaproperties for Git author/committer information.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("committer", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableGitUser? Committer { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("committer")]
+        public global::G.NullableGitUser? Committer { get; set; }
 
         /// <summary>
         /// 
@@ -114,12 +114,12 @@ namespace G
             string htmlUrl,
             string commentsUrl,
             global::G.CommitSearchResultItemCommit commit,
-            global::G.NullableSimpleUser? author,
-            global::G.NullableGitUser? committer,
             global::System.Collections.Generic.IList<global::G.CommitSearchResultItemParent> parents,
             global::G.MinimalRepository repository,
             double score,
             string nodeId,
+            global::G.NullableSimpleUser? author,
+            global::G.NullableGitUser? committer,
             global::System.Collections.Generic.IList<global::G.SearchResultTextMatche>? textMatches)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
@@ -127,12 +127,12 @@ namespace G
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
             this.Commit = commit ?? throw new global::System.ArgumentNullException(nameof(commit));
-            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
-            this.Committer = committer ?? throw new global::System.ArgumentNullException(nameof(committer));
             this.Parents = parents ?? throw new global::System.ArgumentNullException(nameof(parents));
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.Score = score;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Author = author;
+            this.Committer = committer;
             this.TextMatches = textMatches;
         }
 

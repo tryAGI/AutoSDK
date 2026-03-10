@@ -35,14 +35,14 @@ namespace G
         /// Example: Add payload for delete Project column
         /// </summary>
         /// <example>Add payload for delete Project column</example>
-        [global::Newtonsoft.Json.JsonProperty("note", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Note { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("note")]
+        public string? Note { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("creator", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? Creator { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("creator")]
+        public global::G.NullableSimpleUser? Creator { get; set; }
 
         /// <summary>
         /// Example: 2016-09-05T14:21:06Z
@@ -149,12 +149,12 @@ namespace G
             string url,
             long id,
             string nodeId,
-            string? note,
-            global::G.NullableSimpleUser? creator,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             string columnUrl,
             string projectUrl,
+            string? note,
+            global::G.NullableSimpleUser? creator,
             bool? archived,
             string? columnName,
             string? projectId,
@@ -163,12 +163,12 @@ namespace G
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.Note = note ?? throw new global::System.ArgumentNullException(nameof(note));
-            this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.ColumnUrl = columnUrl ?? throw new global::System.ArgumentNullException(nameof(columnUrl));
             this.ProjectUrl = projectUrl ?? throw new global::System.ArgumentNullException(nameof(projectUrl));
+            this.Note = note;
+            this.Creator = creator;
             this.Archived = archived;
             this.ColumnName = columnName;
             this.ProjectId = projectId;

@@ -12,20 +12,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("title", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Title { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("title")]
+        public string? Title { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("summary", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Summary { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("summary")]
+        public string? Summary { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? Text { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("text")]
+        public string? Text { get; set; }
 
         /// <summary>
         /// 
@@ -54,17 +54,17 @@ namespace G
         /// <param name="annotationsCount"></param>
         /// <param name="annotationsUrl"></param>
         public CheckRunOutput(
+            int annotationsCount,
+            string annotationsUrl,
             string? title,
             string? summary,
-            string? text,
-            int annotationsCount,
-            string annotationsUrl)
+            string? text)
         {
-            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.AnnotationsCount = annotationsCount;
             this.AnnotationsUrl = annotationsUrl ?? throw new global::System.ArgumentNullException(nameof(annotationsUrl));
+            this.Title = title;
+            this.Summary = summary;
+            this.Text = text;
         }
 
         /// <summary>

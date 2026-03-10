@@ -97,8 +97,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -111,8 +110,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? User { get; set; }
+        public global::G.NullableSimpleUser? User { get; set; }
 
         /// <summary>
         /// 
@@ -194,10 +192,10 @@ namespace G
             bool @public,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            string? description,
             int comments,
-            global::G.NullableSimpleUser? user,
             string commentsUrl,
+            string? description,
+            global::G.NullableSimpleUser? user,
             global::G.SimpleUser? owner,
             bool? truncated,
             global::System.Collections.Generic.IList<object>? forks,
@@ -215,10 +213,10 @@ namespace G
             this.Public = @public;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Comments = comments;
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
             this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
+            this.Description = description;
+            this.User = user;
             this.Owner = owner;
             this.Truncated = truncated;
             this.Forks = forks;

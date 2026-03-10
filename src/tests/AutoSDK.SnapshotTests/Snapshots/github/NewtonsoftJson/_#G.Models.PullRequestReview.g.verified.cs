@@ -27,8 +27,8 @@ namespace G
         /// <summary>
         /// A GitHub user.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("user", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? User { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("user")]
+        public global::G.NullableSimpleUser? User { get; set; }
 
         /// <summary>
         /// The text of the review.<br/>
@@ -76,8 +76,8 @@ namespace G
         /// Example: 54bb654c9e6025347f57900a4a5c2313a96b8035
         /// </summary>
         /// <example>54bb654c9e6025347f57900a4a5c2313a96b8035</example>
-        [global::Newtonsoft.Json.JsonProperty("commit_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string? CommitId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("commit_id")]
+        public string? CommitId { get; set; }
 
         /// <summary>
         /// 
@@ -146,29 +146,29 @@ namespace G
         public PullRequestReview(
             long id,
             string nodeId,
-            global::G.NullableSimpleUser? user,
             string body,
             string state,
             string htmlUrl,
             string pullRequestUrl,
             global::G.PullRequestReviewLinks links,
-            string? commitId,
             global::G.AuthorAssociation authorAssociation,
+            global::G.NullableSimpleUser? user,
             global::System.DateTime? submittedAt,
+            string? commitId,
             string? bodyHtml,
             string? bodyText)
         {
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
             this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.PullRequestUrl = pullRequestUrl ?? throw new global::System.ArgumentNullException(nameof(pullRequestUrl));
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
-            this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
             this.AuthorAssociation = authorAssociation;
+            this.User = user;
             this.SubmittedAt = submittedAt;
+            this.CommitId = commitId;
             this.BodyHtml = bodyHtml;
             this.BodyText = bodyText;
         }

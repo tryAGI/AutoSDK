@@ -41,8 +41,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksMembershipUser? User { get; set; }
+        public global::G.WebhooksMembershipUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -72,7 +71,7 @@ namespace G
             this.Role = role ?? throw new global::System.ArgumentNullException(nameof(role));
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.User = user;
         }
 
         /// <summary>
