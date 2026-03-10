@@ -93,20 +93,25 @@ public static class OpenApiExtensions
             return;
         }
 
-        if (!string.IsNullOrEmpty(concreteSchema.Minimum) || !string.IsNullOrEmpty(concreteSchema.Maximum))
+        if (!string.IsNullOrEmpty(concreteSchema.Minimum) || !string.IsNullOrEmpty(concreteSchema.Maximum) ||
+            !string.IsNullOrEmpty(concreteSchema.ExclusiveMinimum) || !string.IsNullOrEmpty(concreteSchema.ExclusiveMaximum))
         {
             var (min, max) = GetTypeRange(concreteSchema);
-            if (!string.IsNullOrEmpty(concreteSchema.Minimum) &&
-                decimal.TryParse(concreteSchema.Minimum, NumberStyles.Any, CultureInfo.InvariantCulture, out var minValue) &&
-                minValue < min)
+            if (IsOutOfRange(concreteSchema.Minimum, min, isMin: true))
             {
                 concreteSchema.Minimum = null;
             }
-            if (!string.IsNullOrEmpty(concreteSchema.Maximum) &&
-                decimal.TryParse(concreteSchema.Maximum, NumberStyles.Any, CultureInfo.InvariantCulture, out var maxValue) &&
-                maxValue > max)
+            if (IsOutOfRange(concreteSchema.Maximum, max, isMin: false))
             {
                 concreteSchema.Maximum = null;
+            }
+            if (IsOutOfRange(concreteSchema.ExclusiveMinimum, min, isMin: true))
+            {
+                concreteSchema.ExclusiveMinimum = null;
+            }
+            if (IsOutOfRange(concreteSchema.ExclusiveMaximum, max, isMin: false))
+            {
+                concreteSchema.ExclusiveMaximum = null;
             }
         }
 
@@ -128,6 +133,17 @@ public static class OpenApiExtensions
         }
         SanitizeSchemaNumericConstraints(concreteSchema.Items);
         SanitizeSchemaNumericConstraints(concreteSchema.AdditionalProperties);
+    }
+
+    private static bool IsOutOfRange(string? value, decimal bound, bool isMin)
+    {
+        if (string.IsNullOrEmpty(value))
+        {
+            return false;
+        }
+
+        return decimal.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out var parsed) &&
+               (isMin ? parsed < bound : parsed > bound);
     }
 
     private static (decimal Min, decimal Max) GetTypeRange(OpenApiSchema schema)
