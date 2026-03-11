@@ -79,6 +79,8 @@ public partial class Tests
     [DataRow("deepinfra.json", JsonSerializerType.SystemTextJson)]
     [DataRow("circular-refs.yaml", JsonSerializerType.NewtonsoftJson)]
     [DataRow("circular-refs.yaml", JsonSerializerType.SystemTextJson)]
+    [DataRow("additional-properties-collision.yaml", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("additional-properties-collision.yaml", JsonSerializerType.SystemTextJson)]
     public Task SdkGenerator(string fileName, JsonSerializerType jsonSerializerType)
     {
         if (fileName == "")

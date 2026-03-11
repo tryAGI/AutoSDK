@@ -81,12 +81,14 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         var requiredKeyword = isRequiredKeywordSupported
             ? " required"
             : string.Empty;
-        var additionalPropertiesPostfix = modelData.ClassName == "AdditionalProperties"
-            ? "2"
-            : string.Empty;
         var properties = modelData.Properties.Where(x =>
             !modelData.IsBaseClass ||
             x.Id != modelData.DiscriminatorPropertyName).ToArray();
+        var hasAdditionalPropertiesProperty = properties.Any(x =>
+            x.Name == "AdditionalProperties");
+        var additionalPropertiesPostfix = modelData.ClassName == "AdditionalProperties" || hasAdditionalPropertiesProperty
+            ? "2"
+            : string.Empty;
 
         return $@" 
     {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
