@@ -43,6 +43,9 @@ namespace G
         /// <param name="file">
         /// The file to transcribe. All major audio and video formats are supported. Exactly one of the file or cloud_storage_url parameters must be provided. The file size must be less than 3.0GB.
         /// </param>
+        /// <param name="filename">
+        /// The file to transcribe. All major audio and video formats are supported. Exactly one of the file or cloud_storage_url parameters must be provided. The file size must be less than 3.0GB.
+        /// </param>
         /// <param name="languageCode">
         /// An ISO-639-1 or ISO-639-3 language_code corresponding to the language of the audio file. Can sometimes improve transcription performance if known beforehand. Defaults to null, in this case the language is predicted automatically.
         /// </param>
@@ -112,6 +115,7 @@ namespace G
             bool? enableLogging = default,
             string? xiApiKey = default,
             byte[]? file = default,
+            string? filename = default,
             string? languageCode = default,
             bool? tagAudioEvents = default,
             int? numSpeakers = default,

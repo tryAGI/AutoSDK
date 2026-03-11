@@ -276,8 +276,20 @@ public static class OpenApiSchemaExtensions
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
         // Check if String flag is set (handles nullable types like ["string", "null"])
-        return (schema.Type != null && (schema.Type & JsonSchemaType.String) == JsonSchemaType.String) &&
-               schema.Format == "binary";
+        if ((schema.Type != null && (schema.Type & JsonSchemaType.String) == JsonSchemaType.String) &&
+            schema.Format == "binary")
+        {
+            return true;
+        }
+
+        // Handle nullable anyOf pattern: anyOf: [{type: string, format: binary}, {type: null}]
+        if (schema.IsNullableAnyOf())
+        {
+            var nonNullSchema = schema.AnyOf?.FirstOrDefault(x => !x.IsNullType());
+            return nonNullSchema != null && nonNullSchema.IsBinary();
+        }
+
+        return false;
     }
 
     public static bool IsUnixTimestamp(

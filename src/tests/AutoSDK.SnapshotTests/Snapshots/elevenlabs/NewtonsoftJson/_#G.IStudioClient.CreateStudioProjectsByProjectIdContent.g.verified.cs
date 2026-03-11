@@ -41,6 +41,9 @@ namespace G
         /// <param name="fromDocument">
         /// An optional .epub, .pdf, .txt or similar file can be provided. If provided, we will initialize the Studio project with its content. If this is set, 'from_url' and 'from_content' must be null. If neither 'from_url', 'from_document', 'from_content' are provided we will initialize the Studio project as blank.
         /// </param>
+        /// <param name="fromDocumentname">
+        /// An optional .epub, .pdf, .txt or similar file can be provided. If provided, we will initialize the Studio project with its content. If this is set, 'from_url' and 'from_content' must be null. If neither 'from_url', 'from_document', 'from_content' are provided we will initialize the Studio project as blank.
+        /// </param>
         /// <param name="fromContentJson">
         ///     An optional content to initialize the Studio project with. If this is set, 'from_url' and 'from_document' must be null. If neither 'from_url', 'from_document', 'from_content' are provided we will initialize the Studio project as blank.<br/>
         ///     Example:<br/>
@@ -58,6 +61,7 @@ namespace G
             string? xiApiKey = default,
             string? fromUrl = default,
             byte[]? fromDocument = default,
+            string? fromDocumentname = default,
             string? fromContentJson = default,
             bool? autoConvert = default,
             global::System.Threading.CancellationToken cancellationToken = default);

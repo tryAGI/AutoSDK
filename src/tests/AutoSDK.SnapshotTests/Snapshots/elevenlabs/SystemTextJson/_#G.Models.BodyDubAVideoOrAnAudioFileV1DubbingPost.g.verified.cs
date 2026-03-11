@@ -16,10 +16,22 @@ namespace G
         public byte[]? File { get; set; }
 
         /// <summary>
+        /// A list of file paths to audio recordings intended for voice cloning
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
+        public string? Filename { get; set; }
+
+        /// <summary>
         /// CSV file containing transcription/translation metadata
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("csv_file")]
         public byte[]? CsvFile { get; set; }
+
+        /// <summary>
+        /// CSV file containing transcription/translation metadata
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("csv_filename")]
+        public string? CsvFilename { get; set; }
 
         /// <summary>
         /// For use only with csv input
@@ -30,8 +42,20 @@ namespace G
         /// <summary>
         /// For use only with csv input
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("foreground_audio_filename")]
+        public string? ForegroundAudioFilename { get; set; }
+
+        /// <summary>
+        /// For use only with csv input
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("background_audio_file")]
         public byte[]? BackgroundAudioFile { get; set; }
+
+        /// <summary>
+        /// For use only with csv input
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("background_audio_filename")]
+        public string? BackgroundAudioFilename { get; set; }
 
         /// <summary>
         /// Name of the dubbing project.
@@ -150,13 +174,25 @@ namespace G
         /// <param name="file">
         /// A list of file paths to audio recordings intended for voice cloning
         /// </param>
+        /// <param name="filename">
+        /// A list of file paths to audio recordings intended for voice cloning
+        /// </param>
         /// <param name="csvFile">
+        /// CSV file containing transcription/translation metadata
+        /// </param>
+        /// <param name="csvFilename">
         /// CSV file containing transcription/translation metadata
         /// </param>
         /// <param name="foregroundAudioFile">
         /// For use only with csv input
         /// </param>
+        /// <param name="foregroundAudioFilename">
+        /// For use only with csv input
+        /// </param>
         /// <param name="backgroundAudioFile">
+        /// For use only with csv input
+        /// </param>
+        /// <param name="backgroundAudioFilename">
         /// For use only with csv input
         /// </param>
         /// <param name="name">
@@ -220,9 +256,13 @@ namespace G
 #endif
         public BodyDubAVideoOrAnAudioFileV1DubbingPost(
             byte[]? file,
+            string? filename,
             byte[]? csvFile,
+            string? csvFilename,
             byte[]? foregroundAudioFile,
+            string? foregroundAudioFilename,
             byte[]? backgroundAudioFile,
+            string? backgroundAudioFilename,
             string? name,
             string? sourceUrl,
             string? sourceLang,
@@ -241,9 +281,13 @@ namespace G
             double? csvFps)
         {
             this.File = file;
+            this.Filename = filename;
             this.CsvFile = csvFile;
+            this.CsvFilename = csvFilename;
             this.ForegroundAudioFile = foregroundAudioFile;
+            this.ForegroundAudioFilename = foregroundAudioFilename;
             this.BackgroundAudioFile = backgroundAudioFile;
+            this.BackgroundAudioFilename = backgroundAudioFilename;
             this.Name = name;
             this.SourceUrl = sourceUrl;
             this.SourceLang = sourceLang;

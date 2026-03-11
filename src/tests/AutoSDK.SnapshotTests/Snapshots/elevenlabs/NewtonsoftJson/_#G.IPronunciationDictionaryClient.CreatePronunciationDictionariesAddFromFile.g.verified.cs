@@ -34,6 +34,9 @@ namespace G
         /// <param name="file">
         /// A lexicon .pls file which we will use to initialize the project with.
         /// </param>
+        /// <param name="filename">
+        /// A lexicon .pls file which we will use to initialize the project with.
+        /// </param>
         /// <param name="description">
         /// A description of the pronunciation dictionary, used for identification only.
         /// </param>
@@ -46,6 +49,7 @@ namespace G
             string name,
             string? xiApiKey = default,
             byte[]? file = default,
+            string? filename = default,
             string? description = default,
             global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess2? workspaceAccess = default,
             global::System.Threading.CancellationToken cancellationToken = default);

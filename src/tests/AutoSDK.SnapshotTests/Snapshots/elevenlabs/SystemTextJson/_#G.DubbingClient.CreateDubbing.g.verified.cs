@@ -77,30 +77,54 @@ namespace G
             if (request.File != default)
             {
 
+                var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.File}"),
-                    name: "\"file\"");
+                    content: __contentFile,
+                    name: "\"file\"",
+                    fileName: request.Filename != null ? $"\"{request.Filename}\"" : string.Empty);
+                if (__contentFile.Headers.ContentDisposition != null)
+                {
+                    __contentFile.Headers.ContentDisposition.FileNameStar = null;
+                }
             } 
             if (request.CsvFile != default)
             {
 
+                var __contentCsvFile = new global::System.Net.Http.ByteArrayContent(request.CsvFile ?? global::System.Array.Empty<byte>());
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.CsvFile}"),
-                    name: "\"csv_file\"");
+                    content: __contentCsvFile,
+                    name: "\"csv_file\"",
+                    fileName: request.CsvFilename != null ? $"\"{request.CsvFilename}\"" : string.Empty);
+                if (__contentCsvFile.Headers.ContentDisposition != null)
+                {
+                    __contentCsvFile.Headers.ContentDisposition.FileNameStar = null;
+                }
             } 
             if (request.ForegroundAudioFile != default)
             {
 
+                var __contentForegroundAudioFile = new global::System.Net.Http.ByteArrayContent(request.ForegroundAudioFile ?? global::System.Array.Empty<byte>());
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.ForegroundAudioFile}"),
-                    name: "\"foreground_audio_file\"");
+                    content: __contentForegroundAudioFile,
+                    name: "\"foreground_audio_file\"",
+                    fileName: request.ForegroundAudioFilename != null ? $"\"{request.ForegroundAudioFilename}\"" : string.Empty);
+                if (__contentForegroundAudioFile.Headers.ContentDisposition != null)
+                {
+                    __contentForegroundAudioFile.Headers.ContentDisposition.FileNameStar = null;
+                }
             } 
             if (request.BackgroundAudioFile != default)
             {
 
+                var __contentBackgroundAudioFile = new global::System.Net.Http.ByteArrayContent(request.BackgroundAudioFile ?? global::System.Array.Empty<byte>());
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.BackgroundAudioFile}"),
-                    name: "\"background_audio_file\"");
+                    content: __contentBackgroundAudioFile,
+                    name: "\"background_audio_file\"",
+                    fileName: request.BackgroundAudioFilename != null ? $"\"{request.BackgroundAudioFilename}\"" : string.Empty);
+                if (__contentBackgroundAudioFile.Headers.ContentDisposition != null)
+                {
+                    __contentBackgroundAudioFile.Headers.ContentDisposition.FileNameStar = null;
+                }
             } 
             if (request.Name != default)
             {
@@ -356,13 +380,25 @@ namespace G
         /// <param name="file">
         /// A list of file paths to audio recordings intended for voice cloning
         /// </param>
+        /// <param name="filename">
+        /// A list of file paths to audio recordings intended for voice cloning
+        /// </param>
         /// <param name="csvFile">
+        /// CSV file containing transcription/translation metadata
+        /// </param>
+        /// <param name="csvFilename">
         /// CSV file containing transcription/translation metadata
         /// </param>
         /// <param name="foregroundAudioFile">
         /// For use only with csv input
         /// </param>
+        /// <param name="foregroundAudioFilename">
+        /// For use only with csv input
+        /// </param>
         /// <param name="backgroundAudioFile">
+        /// For use only with csv input
+        /// </param>
+        /// <param name="backgroundAudioFilename">
         /// For use only with csv input
         /// </param>
         /// <param name="name">
@@ -426,9 +462,13 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.DoDubbingResponseModel> CreateDubbingAsync(
             string? xiApiKey = default,
             byte[]? file = default,
+            string? filename = default,
             byte[]? csvFile = default,
+            string? csvFilename = default,
             byte[]? foregroundAudioFile = default,
+            string? foregroundAudioFilename = default,
             byte[]? backgroundAudioFile = default,
+            string? backgroundAudioFilename = default,
             string? name = default,
             string? sourceUrl = default,
             string? sourceLang = default,
@@ -450,9 +490,13 @@ namespace G
             var __request = new global::G.BodyDubAVideoOrAnAudioFileV1DubbingPost
             {
                 File = file,
+                Filename = filename,
                 CsvFile = csvFile,
+                CsvFilename = csvFilename,
                 ForegroundAudioFile = foregroundAudioFile,
+                ForegroundAudioFilename = foregroundAudioFilename,
                 BackgroundAudioFile = backgroundAudioFile,
+                BackgroundAudioFilename = backgroundAudioFilename,
                 Name = name,
                 SourceUrl = sourceUrl,
                 SourceLang = sourceLang,
