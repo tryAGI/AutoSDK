@@ -53,11 +53,27 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         {
             SdkFeatureUsage.Always => true,
             SdkFeatureUsage.InSupportedTargetFrameworks
-                when targetFramework.StartsWith("net8", StringComparison.OrdinalIgnoreCase) => true,
-            SdkFeatureUsage.InSupportedTargetFrameworks
-                when targetFramework.StartsWith("net9", StringComparison.OrdinalIgnoreCase) => true,
+                when IsNetVersionAtLeast(targetFramework, 8) => true,
             _ => false,
         };
+    }
+
+    private static bool IsNetVersionAtLeast(string targetFramework, int minMajor)
+    {
+        // Match "net" followed by digits (e.g., "net8.0", "net10.0")
+        // Exclude "netstandard" and "netcoreapp" prefixes
+        if (!targetFramework.StartsWith("net", StringComparison.OrdinalIgnoreCase) ||
+            targetFramework.StartsWith("netstandard", StringComparison.OrdinalIgnoreCase) ||
+            targetFramework.StartsWith("netcoreapp", StringComparison.OrdinalIgnoreCase))
+        {
+            return false;
+        }
+
+        var versionPart = targetFramework.Substring(3); // Remove "net"
+        var dotIndex = versionPart.IndexOf('.');
+        var majorStr = dotIndex >= 0 ? versionPart.Substring(0, dotIndex) : versionPart;
+
+        return int.TryParse(majorStr, out var major) && major >= minMajor;
     }
 
     private static string GetDefaultValue(PropertyData property, bool isRequiredKeywordSupported)
