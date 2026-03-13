@@ -44,6 +44,65 @@ public partial class DataTests
     }
 
     [TestMethod]
+    public void IgnoreOpenApiErrors_SkipsUnresolvedNestedReferences()
+    {
+        var settings = DefaultSettings with
+        {
+            IgnoreOpenApiErrors = true,
+        };
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: Test
+                              version: 1.0.0
+                            paths:
+                              /items:
+                                get:
+                                  operationId: getItems
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            type: object
+                                            properties:
+                                              item:
+                                                type: object
+                                                properties:
+                                                  broken:
+                                                    $ref: '#/components/schemas/MissingType'
+                            components:
+                              schemas:
+                                ExistingType:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                            """;
+
+        var data = Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        data.Methods.Should().ContainSingle();
+        EnumerateContexts(data.FilteredSchemas)
+            .Should()
+            .NotContain(x => x.ReferenceId == "MissingType");
+
+        static IEnumerable<AutoSDK.Models.SchemaContext> EnumerateContexts(IEnumerable<AutoSDK.Models.SchemaContext> contexts)
+        {
+            foreach (var context in contexts)
+            {
+                yield return context;
+
+                foreach (var child in EnumerateContexts(context.Children))
+                {
+                    yield return child;
+                }
+            }
+        }
+    }
+
+    [TestMethod]
     [DataRow("ai21.json")]
     [DataRow("anthropic.yaml")]
     [DataRow("assemblyai.yaml")]

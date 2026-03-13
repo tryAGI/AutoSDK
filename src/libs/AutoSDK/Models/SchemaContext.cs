@@ -481,7 +481,9 @@ public class SchemaContext(
 
         if (IsReference)
         {
-            return [this, ..ResolvedReference!.WithAllChildren(level + 1, maxDepth: maxDepth, visited: visited)];
+            return ResolvedReference == null
+                ? []
+                : [this, ..ResolvedReference.WithAllChildren(level + 1, maxDepth: maxDepth, visited: visited)];
         }
 
         var result = new List<SchemaContext> { this };

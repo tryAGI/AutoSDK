@@ -70,6 +70,7 @@ public static class Data
         // Filter out unresolved references
         if (unresolvedReferences.Count > 0)
         {
+            DetachUnresolvedReferences(schemas, unresolvedReferences);
             schemas = schemas.Where(x => !unresolvedReferences.Contains(x)).ToArray();
         }
 
@@ -405,5 +406,20 @@ public static class Data
                 Total: totalTime.Elapsed
                 )
             );
+    }
+
+    private static void DetachUnresolvedReferences(
+        IReadOnlyCollection<SchemaContext> schemas,
+        HashSet<SchemaContext> unresolvedReferences)
+    {
+        foreach (var schema in schemas)
+        {
+            if (schema.Children.Count == 0)
+            {
+                continue;
+            }
+
+            schema.Children = [..schema.Children.Where(x => !unresolvedReferences.Contains(x))];
+        }
     }
 }
