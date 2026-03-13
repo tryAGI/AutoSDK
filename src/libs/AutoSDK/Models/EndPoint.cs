@@ -160,7 +160,6 @@ public record struct EndPoint(
                     ? StreamFormat.ServerSentEvents
                     : StreamFormat.None;
 
-        var firstTag = (operation.Operation.Tags ?? new HashSet<OpenApiTagReference>()).FirstOrDefault();
         var successResponse = responses.Any(x => x.Is2XX && !string.IsNullOrWhiteSpace(x.Type.CSharpTypeRaw))
             ? responses.First(x => x.Is2XX && !string.IsNullOrWhiteSpace(x.Type.CSharpTypeRaw))
             : responses.Any(x => x.Is2XX)
@@ -172,12 +171,10 @@ public record struct EndPoint(
             Id: streamFormat == StreamFormat.ServerSentEvents && preferredMimeType == "text/event-stream"
                 ? operation.MethodName + "AsStream"
                 : operation.MethodName,
-            ClassName: operation.Settings.GroupByTags && firstTag != null
-                ? ClientNameGenerator.Generate(operation.Settings, firstTag)
+            ClassName: operation.Settings.GroupByTags && operation.Tag != Tag.Empty
+                ? ClientNameGenerator.Generate(operation.Tag)
                 : operation.Settings.ClassName.Replace(".", string.Empty),
-            Tag: firstTag != null ?
-                Tag.FromTag(firstTag, operation.GlobalSettings)
-                : Tag.Empty,
+            Tag: operation.Tag,
             BaseUrl: string.Empty,
             StreamFormat: streamFormat,
             Path: preparedPath,

@@ -114,6 +114,8 @@ public static class Data
             };
         }
 
+        var resolvedTags = ClientNameGenerator.ResolveTags(settings, allTags);
+
         var maxDepth = schemas.Count == 0
             ? 20
             : schemas.Max(x => x.Depth);
@@ -188,7 +190,7 @@ public static class Data
             .Distinct()
             .ToImmutableArray();
 
-        var operations = openApiDocument.GetOperations(settings, globalSettings, filteredSchemas);
+        var operations = openApiDocument.GetOperations(settings, globalSettings, filteredSchemas, resolvedTags);
         ModelNameGenerator.ResolveCollisions(operations);
         
         var filteredOperations = settings.GenerateSdk || settings.GenerateMethods
@@ -301,18 +303,23 @@ public static class Data
                  settings.IncludeTags.Contains(x.Name)) &&
                 !settings.ExcludeTags.Contains(x.Name))
             .ToArray();
+        var resolvedIncludedTags = includedTags
+            .Select(tag => resolvedTags.TryGetValue(tag.Name ?? string.Empty, out var resolvedTag)
+                ? resolvedTag
+                : Tag.FromTag(tag, settings))
+            .ToArray();
         Client[] clients = settings.GenerateSdk || settings.GenerateConstructors ? [new Client(
                 Id: "MainConstructor",
                 ClassName: settings.ClassName.Replace(".", string.Empty),
                 BaseUrl: openApiDocument.Servers!.FirstOrDefault()?.Url ?? string.Empty,
                 Clients: settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors)
                     ? [
-                        .. includedTags.Select(tag => PropertyData.Default with
+                        .. resolvedIncludedTags.Select(tag => PropertyData.Default with
                         {
-                            Name = ClientNameGenerator.GeneratePropertyName(settings, tag),
+                            Name = tag.SafeName,
                             Type = TypeData.Default with
                             {
-                                CSharpTypeRaw = ClientNameGenerator.Generate(settings, tag),
+                                CSharpTypeRaw = ClientNameGenerator.Generate(tag),
                             },
                             Summary = tag.Description?.ClearForXml() ?? string.Empty,
                         })
@@ -326,10 +333,10 @@ public static class Data
         if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
         {
             clients = clients.Concat(
-                includedTags
+                resolvedIncludedTags
                     .Select(tag => new Client(
                         Id: "Constructors",
-                        ClassName: ClientNameGenerator.Generate(settings, tag),
+                        ClassName: ClientNameGenerator.Generate(tag),
                         BaseUrl: openApiDocument.Servers!.FirstOrDefault()?.Url ?? string.Empty,
                         Clients: [],
                         Summary: tag.Description?.ClearForXml() ?? string.Empty,
@@ -375,7 +382,7 @@ public static class Data
             Authorizations: settings.GenerateSdk || settings.GenerateConstructors
                 ? authorizations.ToImmutableArray()
                 : [],
-            Tags: includedTags.Select(x => Tag.FromTag(x, settings)).ToImmutableArray(),
+            Tags: resolvedIncludedTags.ToImmutableArray(),
             Converters: new Client(
                 Id: "Converters",
                 ClassName: string.Empty,

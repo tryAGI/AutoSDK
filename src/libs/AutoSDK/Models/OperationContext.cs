@@ -20,6 +20,7 @@ public class OperationContext(
     public IList<OpenApiSecurityRequirement> GlobalSecurityRequirements { get; set; } = [];
     
     public HashSet<string> Tags { get; set; } = [];
+    public Tag Tag { get; set; } = Tag.Empty;
 
     public string MethodName { get; set; } = string.Empty;
     
@@ -30,9 +31,12 @@ public class OperationContext(
         string operationPath,
         System.Net.Http.HttpMethod operationType,
         IReadOnlyCollection<SchemaContext> filteredSchemas,
-        IList<OpenApiSecurityRequirement> globalSecurityRequirements)
+        IList<OpenApiSecurityRequirement> globalSecurityRequirements,
+        IReadOnlyDictionary<string, Tag>? resolvedTags = null)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
+
+        var firstTag = (operation.Tags ?? new HashSet<OpenApiTagReference>()).FirstOrDefault();
 
         var context = new OperationContext(settings, globalSettings, operation, operationPath, operationType)
         {
@@ -41,6 +45,13 @@ public class OperationContext(
                 .ToArray(),
             Tags = [..(operation.Tags ?? new HashSet<OpenApiTagReference>()).Select(tag => tag.Name).Where(name => name != null).Cast<string>()],
             GlobalSecurityRequirements = globalSecurityRequirements,
+            Tag = firstTag != null &&
+                  firstTag.Name != null &&
+                  resolvedTags?.TryGetValue(firstTag.Name, out var resolvedTag) == true
+                ? resolvedTag
+                : firstTag != null
+                    ? Tag.FromTag(firstTag, settings)
+                    : Tag.Empty,
         };
         context.MethodName = context.GetMethodName();
         

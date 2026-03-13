@@ -123,7 +123,8 @@ public static class TraversalTreeHelper
         this OpenApiDocument openApiDocument,
         Settings settings,
         Settings globalSettings,
-        IReadOnlyCollection<SchemaContext> filteredSchemas)
+        IReadOnlyCollection<SchemaContext> filteredSchemas,
+        IReadOnlyDictionary<string, Tag>? resolvedTags = null)
     {
         openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
 
@@ -136,7 +137,8 @@ public static class TraversalTreeHelper
                     operationPath: x.Key,
                     operationType: y.Key,
                     filteredSchemas: filteredSchemas,
-                    globalSecurityRequirements: openApiDocument.Security ?? [])))
+                    globalSecurityRequirements: openApiDocument.Security ?? [],
+                    resolvedTags: resolvedTags)))
             .ToArray() ?? [];
     }
 }

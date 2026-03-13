@@ -6,40 +6,65 @@ namespace AutoSDK.Models;
 public record struct Tag(
     string Name,
     string Description,
-    Settings GlobalSettings
+    Settings GlobalSettings,
+    string SafeName,
+    string SingularizedName
 )
 {
-    public string SafeName => ClientNameGenerator.GeneratePropertyName(GlobalSettings, this);
-    public string SingularizedName => SafeName.EndsWith("ies", StringComparison.OrdinalIgnoreCase)
-        ? SafeName.TrimEnd('s', 'e', 'i') + "y"
-        : SafeName.TrimEnd('s');
-
     public static Tag Empty => new(
         Name: string.Empty,
         Description: string.Empty,
-        GlobalSettings: Settings.Default);
+        GlobalSettings: Settings.Default,
+        SafeName: string.Empty,
+        SingularizedName: string.Empty);
 
     public static Tag FromTag(OpenApiTagReference tag, Settings settings)
     {
+        return FromTag(tag, settings, safeName: null);
+    }
+
+    public static Tag FromTag(OpenApiTagReference tag, Settings settings, string? safeName)
+    {
         tag = tag ?? throw new ArgumentNullException(nameof(tag));
 
-        var value = new Tag(
-            Name: tag.Name ?? string.Empty,
-            Description: tag.Description ?? string.Empty,
-            GlobalSettings: settings);
-
-        return value;
+        return Create(
+            name: tag.Name ?? string.Empty,
+            description: tag.Description ?? string.Empty,
+            settings: settings,
+            safeName: safeName);
     }
 
     public static Tag FromTag(OpenApiTag tag, Settings settings)
     {
+        return FromTag(tag, settings, safeName: null);
+    }
+
+    public static Tag FromTag(OpenApiTag tag, Settings settings, string? safeName)
+    {
         tag = tag ?? throw new ArgumentNullException(nameof(tag));
 
-        var value = new Tag(
-            Name: tag.Name ?? string.Empty,
-            Description: tag.Description ?? string.Empty,
-            GlobalSettings: settings);
+        return Create(
+            name: tag.Name ?? string.Empty,
+            description: tag.Description ?? string.Empty,
+            settings: settings,
+            safeName: safeName);
+    }
 
-        return value;
+    private static Tag Create(
+        string name,
+        string description,
+        Settings settings,
+        string? safeName)
+    {
+        safeName ??= ClientNameGenerator.GeneratePropertyName(settings, name);
+
+        return new Tag(
+            Name: name,
+            Description: description,
+            GlobalSettings: settings,
+            SafeName: safeName,
+            SingularizedName: safeName.EndsWith("ies", StringComparison.OrdinalIgnoreCase)
+                ? safeName.TrimEnd('s', 'e', 'i') + "y"
+                : safeName.TrimEnd('s'));
     }
 }
