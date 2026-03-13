@@ -58,19 +58,22 @@ public record struct EndPointResponse(
         }
 
         var response = responses.First();
-
-        var contentType = response.MimeType.Contains("application/octet-stream")
-            ? ContentType.ByteArray
-            : ContentType.String;
         var responseContext = operation.Schemas.FirstOrDefault(x =>
             x.Hint == Hint.Response &&
             x.ResponseStatusCode == response.StatusCode &&
             (x.ContentType == null || x.ContentType == response.MimeType));
+        var isBinaryResponse = response.MimeType.IsBinaryResponseMimeType() ||
+                               responseContext?.TypeData.CSharpTypeWithoutNullability == "byte[]" ||
+                               responseContext?.TypeData.IsBinary == true;
+        var contentType = isBinaryResponse
+            ? ContentType.ByteArray
+            : ContentType.String;
         TypeData? responseType = contentType switch
         {
             ContentType.ByteArray => TypeData.Default with
             {
                 CSharpTypeRaw = "byte[]",
+                IsBinary = true,
             },
             _ => responseContext?.TypeData,
         };

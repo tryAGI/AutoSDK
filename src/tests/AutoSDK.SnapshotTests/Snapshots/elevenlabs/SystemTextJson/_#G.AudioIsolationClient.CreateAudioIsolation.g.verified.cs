@@ -19,6 +19,11 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+        partial void ProcessCreateAudioIsolationResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref byte[] content);
+
         /// <summary>
         /// Audio Isolation<br/>
         /// Removes background noise from audio
@@ -29,7 +34,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task CreateAudioIsolationAsync(
+        public async global::System.Threading.Tasks.Task<byte[]> CreateAudioIsolationAsync(
 
             global::G.BodyAudioIsolationV1AudioIsolationPost request,
             string? xiApiKey = default,
@@ -160,11 +165,16 @@ namespace G
 #endif
                 ).ConfigureAwait(false);
 
+                ProcessCreateAudioIsolationResponseContent(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response,
+                    content: ref __content);
 
                 try
                 {
                     __response.EnsureSuccessStatusCode();
 
+                    return __content;
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -192,6 +202,7 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
+                    return __content;
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -231,7 +242,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task CreateAudioIsolationAsync(
+        public async global::System.Threading.Tasks.Task<byte[]> CreateAudioIsolationAsync(
             byte[] audio,
             string audioname,
             string? xiApiKey = default,
@@ -247,7 +258,7 @@ namespace G
                 PreviewB64 = previewB64,
             };
 
-            await CreateAudioIsolationAsync(
+            return await CreateAudioIsolationAsync(
                 xiApiKey: xiApiKey,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

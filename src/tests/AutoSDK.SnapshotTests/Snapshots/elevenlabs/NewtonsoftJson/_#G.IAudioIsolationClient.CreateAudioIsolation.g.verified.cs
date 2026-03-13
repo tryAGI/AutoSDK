@@ -15,7 +15,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task CreateAudioIsolationAsync(
+        global::System.Threading.Tasks.Task<byte[]> CreateAudioIsolationAsync(
 
             global::G.BodyAudioIsolationV1AudioIsolationPost request,
             string? xiApiKey = default,
@@ -43,7 +43,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task CreateAudioIsolationAsync(
+        global::System.Threading.Tasks.Task<byte[]> CreateAudioIsolationAsync(
             byte[] audio,
             string audioname,
             string? xiApiKey = default,
