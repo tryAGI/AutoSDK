@@ -270,6 +270,9 @@ internal sealed class GenerateCommand : Command
             .Concat([Sources.Polyfills(settings)])
             .Concat([Sources.Exceptions(settings)])
             .Concat([Sources.PathBuilder(settings)])
+            .Concat(data.Methods.Any(static x => x.RawStream)
+                ? [Sources.ResponseStream(data.Converters.Settings)]
+                : [])
             .Concat([Sources.UnixTimestampJsonConverter(settings)])
             .Where(x => !x.IsEmpty)
             .ToArray();
