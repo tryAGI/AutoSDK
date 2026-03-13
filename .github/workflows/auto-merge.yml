@@ -31,11 +31,11 @@ jobs:
         run: gh pr review --approve "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
-          # Use a non-GITHUB_TOKEN secret so the merge can trigger downstream workflows.
-          GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Enable auto-merge
         run: gh pr merge --auto --merge "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
+          # Use a non-GITHUB_TOKEN secret so the merge can trigger downstream workflows.
           GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
