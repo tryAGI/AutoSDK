@@ -11,6 +11,7 @@ public class SummaryGenerator : IMethodNameGenerator
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
 
         var methodName = operation.Operation.Summary?
+            .StripExperimentalStagePrefix()
             .Replace("'", string.Empty)
             .Replace("’", string.Empty)
             .ToPropertyName()

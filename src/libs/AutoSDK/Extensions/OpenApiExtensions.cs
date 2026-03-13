@@ -769,27 +769,70 @@ public static class OpenApiExtensions
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
 
-        // In Microsoft.OpenApi 3.0, extension values are IOpenApiExtension, not JsonNode directly
-        // Check for specific extension keys instead
-        if ((operation.Extensions?.TryGetValue("x-stage", out var stage) ?? false) &&
-            stage is JsonValue stageJsonValue && stageJsonValue.TryGetValue<string>(out var stageString))
+        if (TryGetExtensionString(operation, "x-stage", out var stageString))
         {
-            return stageString;
+            return NormalizeExperimentalStage(stageString);
         }
 
-        if ((operation.Extensions?.TryGetValue("x-alpha", out var alpha) ?? false) &&
-            alpha is JsonValue alphaJsonValue && alphaJsonValue.TryGetValue<bool>(out var alphaBoolean) && alphaBoolean)
+        if (TryGetExtensionBoolean(operation, "x-alpha"))
         {
             return "Alpha";
         }
 
-        if ((operation.Extensions?.TryGetValue("x-beta", out var beta) ?? false) &&
-            beta is JsonValue betaJsonValue && betaJsonValue.TryGetValue<bool>(out var betaBoolean) && betaBoolean)
+        if (TryGetExtensionBoolean(operation, "x-beta"))
         {
             return "Beta";
         }
 
+        if (TryGetExtensionString(operation, "x-fern-availability", out var availability))
+        {
+            return NormalizeExperimentalStage(availability);
+        }
+
+        return GetExperimentalStageFromSummary(operation.Summary);
+    }
+
+    public static string GetExperimentalStageFromSummary(this string? summary)
+    {
+        if (string.IsNullOrWhiteSpace(summary))
+        {
+            return string.Empty;
+        }
+
+        var trimmed = (summary ?? string.Empty).TrimStart();
+
+        foreach (var (prefix, stage) in ExperimentalStagePrefixes)
+        {
+            if (trimmed.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
+            {
+                return stage;
+            }
+        }
+
         return string.Empty;
+    }
+
+    public static string StripExperimentalStagePrefix(this string? summary)
+    {
+        if (string.IsNullOrWhiteSpace(summary))
+        {
+            return string.Empty;
+        }
+
+        var trimmed = (summary ?? string.Empty).Trim();
+
+        foreach (var (prefix, _) in ExperimentalStagePrefixes)
+        {
+            if (!trimmed.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
+            {
+                continue;
+            }
+
+            var remainder = trimmed.Substring(prefix.Length).TrimStart(' ', '\t', ':', '-', '_');
+            return string.IsNullOrWhiteSpace(remainder) ? trimmed : remainder;
+        }
+
+        return trimmed;
     }
 
     public static string ClearForXml(this string text)
@@ -887,6 +930,106 @@ public static class OpenApiExtensions
         }
 
         return @enum;
+    }
+
+    private static readonly (string Prefix, string Stage)[] ExperimentalStagePrefixes =
+    [
+        ("[Alpha]", "Alpha"),
+        ("[Beta]", "Beta"),
+        ("[Experimental]", "Experimental"),
+        ("Alpha", "Alpha"),
+        ("Beta", "Beta"),
+        ("Experimental", "Experimental"),
+    ];
+
+    private static string NormalizeExperimentalStage(string? stage)
+    {
+        var normalized = stage?.Trim() ?? string.Empty;
+        if (normalized.Length == 0)
+        {
+            return string.Empty;
+        }
+
+        return normalized.ToUpperInvariant() switch
+        {
+            "ALPHA" => "Alpha",
+            "BETA" => "Beta",
+            "EXPERIMENTAL" => "Experimental",
+            "GENERALLY-AVAILABLE" => string.Empty,
+            "DEPRECATED" => string.Empty,
+            _ => normalized,
+        };
+    }
+
+    private static bool TryGetExtensionString(OpenApiOperation operation, string name, out string value)
+    {
+        value = string.Empty;
+
+        if (!(operation.Extensions?.TryGetValue(name, out var extension) ?? false))
+        {
+            return false;
+        }
+
+        if (TryGetJsonString(extension, out var stringValue))
+        {
+            value = stringValue;
+            return true;
+        }
+
+        return false;
+    }
+
+    private static bool TryGetExtensionBoolean(OpenApiOperation operation, string name)
+    {
+        if (!(operation.Extensions?.TryGetValue(name, out var extension) ?? false))
+        {
+            return false;
+        }
+
+        return TryGetJsonBoolean(extension, out var booleanValue) && booleanValue;
+    }
+
+    private static bool TryGetJsonString(IOpenApiExtension extension, out string value)
+    {
+        value = string.Empty;
+
+        var node = extension switch
+        {
+            JsonValue jsonValue => jsonValue,
+            JsonNodeExtension jsonNodeExtension => jsonNodeExtension.Node,
+            _ => null,
+        };
+
+        if (node is JsonValue stringNode &&
+            stringNode.TryGetValue<string>(out var stringValue) &&
+            !string.IsNullOrWhiteSpace(stringValue))
+        {
+            value = stringValue;
+            return true;
+        }
+
+        return false;
+    }
+
+    private static bool TryGetJsonBoolean(IOpenApiExtension extension, out bool value)
+    {
+        value = false;
+
+        var node = extension switch
+        {
+            JsonValue jsonValue => jsonValue,
+            JsonNodeExtension jsonNodeExtension => jsonNodeExtension.Node,
+            _ => null,
+        };
+
+        if (node is JsonValue booleanNode &&
+            booleanNode.TryGetValue<bool>(out var booleanValue))
+        {
+            value = booleanValue;
+            return true;
+        }
+
+        return false;
     }
     
     public static Dictionary<string, PropertyData> ComputeEnum(
