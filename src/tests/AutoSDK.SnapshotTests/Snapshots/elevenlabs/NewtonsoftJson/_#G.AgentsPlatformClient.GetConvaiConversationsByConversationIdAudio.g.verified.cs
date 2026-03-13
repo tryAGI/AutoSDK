@@ -19,6 +19,11 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+        partial void ProcessGetConvaiConversationsByConversationIdAudioResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref byte[] content);
+
         /// <summary>
         /// Get Conversation Audio<br/>
         /// Get the audio recording of a particular conversation
@@ -31,7 +36,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task GetConvaiConversationsByConversationIdAudioAsync(
+        public async global::System.Threading.Tasks.Task<byte[]> GetConvaiConversationsByConversationIdAudioAsync(
             string conversationId,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -127,11 +132,16 @@ namespace G
 #endif
                 ).ConfigureAwait(false);
 
+                ProcessGetConvaiConversationsByConversationIdAudioResponseContent(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response,
+                    content: ref __content);
 
                 try
                 {
                     __response.EnsureSuccessStatusCode();
 
+                    return __content;
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -159,6 +169,7 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
+                    return __content;
                 }
                 catch (global::System.Exception __ex)
                 {

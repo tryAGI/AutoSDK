@@ -119,12 +119,6 @@ public record struct EndPoint(
         var responses = (operation.Operation.Responses ?? new Dictionary<string, IOpenApiResponse>())
             .Select(x => EndPointResponse.FromResponse(x, operation, preferredMimeType: preferredMimeType))
             .ToArray();
-        var contentType = responses
-            .Any(x =>
-                x.MimeType.Contains("application/octet-stream") ||
-                x.MimeType.Contains("audio/mpeg"))
-            ? ContentType.ByteArray
-            : ContentType.String;
 
         foreach (var requestProperty in requestContext?.ResolvedReference?.ClassData?.Properties ??
                                         requestContext?.ClassData?.Properties ??
@@ -167,6 +161,13 @@ public record struct EndPoint(
                     : StreamFormat.None;
 
         var firstTag = (operation.Operation.Tags ?? new HashSet<OpenApiTagReference>()).FirstOrDefault();
+        var successResponse = responses.Any(x => x.Is2XX && !string.IsNullOrWhiteSpace(x.Type.CSharpTypeRaw))
+            ? responses.First(x => x.Is2XX && !string.IsNullOrWhiteSpace(x.Type.CSharpTypeRaw))
+            : responses.Any(x => x.Is2XX)
+                ? responses.First(x => x.Is2XX)
+                : responses.Any(x => x.IsDefault)
+                    ? responses.First(x => x.IsDefault)
+                    : EndPointResponse.Default;
         var endPoint = new EndPoint(
             Id: streamFormat == StreamFormat.ServerSentEvents && preferredMimeType == "text/event-stream"
                 ? operation.MethodName + "AsStream"
@@ -182,18 +183,12 @@ public record struct EndPoint(
             Path: preparedPath,
             RequestMediaType: requestMediaType,
             Parameters: parameters.ToImmutableArray(),
-            SuccessResponse: responses.Any(x => x.Is2XX && !string.IsNullOrWhiteSpace(x.Type.CSharpTypeRaw))
-                ? responses.First(x => x.Is2XX && !string.IsNullOrWhiteSpace(x.Type.CSharpTypeRaw))
-                : responses.Any(x => x.Is2XX)
-                    ? responses.First(x => x.Is2XX)
-                    : responses.Any(x => x.IsDefault)
-                        ? responses.First(x => x.IsDefault)
-                        : EndPointResponse.Default,
+            SuccessResponse: successResponse,
             ErrorResponses: responses.Where(x => !x.Is2XX).ToImmutableArray(),
             QueryParameters: queryParameters.ToImmutableArray(),
             Authorizations: authorizations,
             HttpMethod: operation.OperationType,
-            ContentType: contentType,
+            ContentType: successResponse.ContentType,
             Summary: operation.Operation.GetXmlDocumentationSummary(),
             Description: operation.Operation.Description ?? string.Empty,
             BaseUrlSummary: string.Empty,
