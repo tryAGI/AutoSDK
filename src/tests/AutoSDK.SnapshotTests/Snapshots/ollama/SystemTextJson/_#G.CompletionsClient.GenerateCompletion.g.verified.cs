@@ -103,6 +103,11 @@ namespace G
             while (!__reader.EndOfStream && !cancellationToken.IsCancellationRequested)
             {
                 var __content = await __reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
+                if (global::System.String.IsNullOrWhiteSpace(__content))
+                {
+                    continue;
+                }
+
                 var __streamedResponse = global::G.GenerateCompletionResponse.FromJson(__content, JsonSerializerOptions) ??
                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
 

@@ -172,6 +172,8 @@ paths:
             generatedCode.Should().Contain("IAsyncEnumerable<");
             generatedCode.Should().Contain("HttpCompletionOption.ResponseHeadersRead");
             generatedCode.Should().Contain("ReadLineAsync()");
+            generatedCode.Should().Contain("String.IsNullOrWhiteSpace(__content)");
+            generatedCode.Should().Contain("continue;");
             generatedCode.Should().Contain("yield return __streamedResponse;");
             generatedCode.Should().NotContain("Task<byte[]>");
         }
