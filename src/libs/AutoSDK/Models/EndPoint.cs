@@ -36,6 +36,8 @@ public record struct EndPoint(
 )
 {
     public bool Stream => StreamFormat != StreamFormat.None;
+    public bool RawStream => StreamFormat == StreamFormat.Binary;
+    public bool EnumerableStream => Stream && !RawStream;
     public string MethodName => $"{NotAsyncMethodName}Async";
     public string NotAsyncMethodName => Id.ToPropertyName();
     public bool IsMultipartFormData => RequestMediaType == "multipart/form-data";
@@ -152,6 +154,13 @@ public record struct EndPoint(
             });
         }
         
+        var successResponse = responses.Any(x => x.Is2XX && !string.IsNullOrWhiteSpace(x.Type.CSharpTypeRaw))
+            ? responses.First(x => x.Is2XX && !string.IsNullOrWhiteSpace(x.Type.CSharpTypeRaw))
+            : responses.Any(x => x.Is2XX)
+                ? responses.First(x => x.Is2XX)
+                : responses.Any(x => x.IsDefault)
+                    ? responses.First(x => x.IsDefault)
+                    : EndPointResponse.Default;
         var streamFormat = preferredMimeType == "text/event-stream"
             ? StreamFormat.ServerSentEvents
             : responses.Any(x => x.MimeType.Contains("application/x-ndjson"))
@@ -160,13 +169,32 @@ public record struct EndPoint(
                     ? StreamFormat.ServerSentEvents
                     : StreamFormat.None;
 
-        var successResponse = responses.Any(x => x.Is2XX && !string.IsNullOrWhiteSpace(x.Type.CSharpTypeRaw))
-            ? responses.First(x => x.Is2XX && !string.IsNullOrWhiteSpace(x.Type.CSharpTypeRaw))
-            : responses.Any(x => x.Is2XX)
-                ? responses.First(x => x.Is2XX)
-                : responses.Any(x => x.IsDefault)
-                    ? responses.First(x => x.IsDefault)
-                    : EndPointResponse.Default;
+        if (streamFormat == StreamFormat.None &&
+            HasBooleanFernStreamingExtension(operation.Operation))
+        {
+            var isJsonStream =
+                successResponse.MimeType.Contains("application/json", StringComparison.OrdinalIgnoreCase) ||
+                successResponse.MimeType.Contains("+json", StringComparison.OrdinalIgnoreCase);
+
+            if (isJsonStream)
+            {
+                streamFormat = StreamFormat.Ndjson;
+            }
+            else
+            {
+                streamFormat = StreamFormat.Binary;
+                successResponse = successResponse with
+                {
+                    ContentType = ContentType.Stream,
+                    Type = TypeData.Default with
+                    {
+                        CSharpTypeRaw = "global::System.IO.Stream",
+                        Namespace = "System",
+                        Settings = operation.Settings,
+                    },
+                };
+            }
+        }
         var endPoint = new EndPoint(
             Id: streamFormat == StreamFormat.ServerSentEvents && preferredMimeType == "text/event-stream"
                 ? operation.MethodName + "AsStream"
@@ -203,5 +231,38 @@ public record struct EndPoint(
             RequestType: requestType ?? TypeData.Default);
         
         return endPoint;
+    }
+
+    private static bool HasBooleanFernStreamingExtension(OpenApiOperation operation)
+    {
+        if (!(operation.Extensions ?? new Dictionary<string, IOpenApiExtension>())
+            .TryGetValue("x-fern-streaming", out var extension))
+        {
+            return false;
+        }
+
+        var extensionType = extension.GetType();
+        var jsonNode = extension as JsonNode ??
+                       extensionType
+                           .GetProperty(
+                               "Node",
+                               System.Reflection.BindingFlags.Instance |
+                               System.Reflection.BindingFlags.Public |
+                               System.Reflection.BindingFlags.NonPublic)?
+                           .GetValue(extension) as JsonNode ??
+                       extensionType
+                           .GetField(
+                               "jsonNode",
+                               System.Reflection.BindingFlags.Instance |
+                               System.Reflection.BindingFlags.Public |
+                               System.Reflection.BindingFlags.NonPublic)?
+                           .GetValue(extension) as JsonNode;
+        if (jsonNode is JsonValue jsonValue &&
+            jsonValue.TryGetValue<bool>(out var isStreaming))
+        {
+            return isStreaming;
+        }
+
+        return bool.TryParse(jsonNode?.ToString() ?? extension.ToString(), out var parsed) && parsed;
     }
 }

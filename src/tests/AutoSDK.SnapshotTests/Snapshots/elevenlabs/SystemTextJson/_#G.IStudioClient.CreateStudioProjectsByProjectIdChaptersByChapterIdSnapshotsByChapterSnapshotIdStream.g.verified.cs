@@ -24,7 +24,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<byte[]> CreateStudioProjectsByProjectIdChaptersByChapterIdSnapshotsByChapterSnapshotIdStreamAsync(
+        global::System.Threading.Tasks.Task<global::System.IO.Stream> CreateStudioProjectsByProjectIdChaptersByChapterIdSnapshotsByChapterSnapshotIdStreamAsync(
             string projectId,
             string chapterId,
             string chapterSnapshotId,
@@ -55,7 +55,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<byte[]> CreateStudioProjectsByProjectIdChaptersByChapterIdSnapshotsByChapterSnapshotIdStreamAsync(
+        global::System.Threading.Tasks.Task<global::System.IO.Stream> CreateStudioProjectsByProjectIdChaptersByChapterIdSnapshotsByChapterSnapshotIdStreamAsync(
             string projectId,
             string chapterId,
             string chapterSnapshotId,

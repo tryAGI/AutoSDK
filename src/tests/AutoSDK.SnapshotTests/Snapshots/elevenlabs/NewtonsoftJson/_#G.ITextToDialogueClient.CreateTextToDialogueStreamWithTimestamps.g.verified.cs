@@ -19,7 +19,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.StreamingAudioChunkWithTimestampsAndVoiceSegmentsResponseModel> CreateTextToDialogueStreamWithTimestampsAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::G.StreamingAudioChunkWithTimestampsAndVoiceSegmentsResponseModel> CreateTextToDialogueStreamWithTimestampsAsync(
 
             global::G.BodyTextToDialogueStreamWithTimestamps request,
             global::G.AllowedOutputFormats? outputFormat = default,
@@ -62,7 +62,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.StreamingAudioChunkWithTimestampsAndVoiceSegmentsResponseModel> CreateTextToDialogueStreamWithTimestampsAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::G.StreamingAudioChunkWithTimestampsAndVoiceSegmentsResponseModel> CreateTextToDialogueStreamWithTimestampsAsync(
             global::System.Collections.Generic.IList<global::G.DialogueInput> inputs,
             global::G.AllowedOutputFormats? outputFormat = default,
             string? xiApiKey = default,

@@ -105,14 +105,16 @@ namespace {endPoint.Settings.Namespace}
     public static string GenerateMethod(
         EndPoint endPoint, bool isInterface = false)
     {
-        var taskType = endPoint.Stream
+        var taskType = endPoint.RawStream
+            ? "global::System.Threading.Tasks.Task<global::System.IO.Stream>"
+            : endPoint.EnumerableStream
             ? string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
                 ? throw new InvalidOperationException($"Streamed responses must have a response type. OperationId: {endPoint.Id}.")
                 : $"global::System.Collections.Generic.IAsyncEnumerable<{endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability}>"
             : string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
                 ? "global::System.Threading.Tasks.Task"
                 : $"global::System.Threading.Tasks.Task<{endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability}>";
-        var cancellationTokenAttribute = endPoint.Stream && !isInterface
+        var cancellationTokenAttribute = endPoint.EnumerableStream && !isInterface
             ? "[global::System.Runtime.CompilerServices.EnumeratorCancellation] "
             : string.Empty;
         var body = isInterface
@@ -199,13 +201,16 @@ namespace {endPoint.Settings.Namespace}
                 {x.ParameterName}: {x.ParameterName}").Inject(emptyValue: "")}{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @",
                 request: request")});
 
-            using var __response = await HttpClient.SendAsync(
+            {(endPoint.RawStream ? "" : "using ")}var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.{(endPoint.Stream
                     // https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/http/httpclient-migrate-from-httpwebrequest#usage-of-buffering-properties
                     ? nameof(HttpCompletionOption.ResponseHeadersRead)
                     : nameof(HttpCompletionOption.ResponseContentRead))},
                 cancellationToken: cancellationToken).ConfigureAwait(false);
+{(endPoint.RawStream ? @"
+            try
+            {" : " ")}
 
             ProcessResponse(
                 client: HttpClient,
@@ -214,6 +219,13 @@ namespace {endPoint.Settings.Namespace}
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 {GenerateResponse(endPoint)}
+{(endPoint.RawStream ? @"
+            }
+            catch
+            {
+                __response.Dispose();
+                throw;
+            }" : " ")}
         }}";
 
         return $@" 
@@ -467,6 +479,38 @@ namespace {endPoint.Settings.Namespace}
                 }};
             }}").Inject() : " ";
 
+        if (endPoint.RawStream)
+        {
+            return @$"{errors}
+
+            try
+            {{
+                __response.EnsureSuccessStatusCode();
+
+                var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
+
+                return new global::{endPoint.GlobalSettings.Namespace}.ResponseStream(__response, __content);
+            }}
+            catch (global::System.Exception __ex)
+            {{
+                throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
+                    message: __response.ReasonPhrase ?? string.Empty,
+                    innerException: __ex,
+                    statusCode: __response.StatusCode)
+                {{
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                }};
+            }}
+ ";
+        }
+
         return @$"{errors}
 
             if (ReadResponseAsString)
@@ -653,22 +697,24 @@ namespace {endPoint.Settings.Namespace}
             return " ";
         }
 
-        var taskType = endPoint.Stream
+        var taskType = endPoint.RawStream
+            ? "global::System.Threading.Tasks.Task<global::System.IO.Stream>"
+            : endPoint.EnumerableStream
             ? string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
                 ? throw new InvalidOperationException($"Streamed responses must have a response type. OperationId: {endPoint.Id}.")
                 : $"global::System.Collections.Generic.IAsyncEnumerable<{endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability}>"
             : string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
                 ? "global::System.Threading.Tasks.Task"
                 : $"global::System.Threading.Tasks.Task<{endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability}>";
-        var cancellationTokenAttribute = endPoint.Stream && !isInterface
+        var cancellationTokenAttribute = endPoint.EnumerableStream && !isInterface
             ? "[global::System.Runtime.CompilerServices.EnumeratorCancellation] "
             : string.Empty;
-        var response = endPoint.Stream
+        var response = endPoint.EnumerableStream
             ? "var __enumerable = "
             : string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
                 ? "await "
                 : "return await ";
-        var configureAwaitResponse = !endPoint.Stream
+        var configureAwaitResponse = !endPoint.EnumerableStream
             ? ".ConfigureAwait(false)"
             : string.Empty;
         var body = isInterface
@@ -688,7 +734,7 @@ namespace {endPoint.Settings.Namespace}
                 {x.ParameterName}: {x.ParameterName},").Inject()}
                 request: __request,
                 cancellationToken: cancellationToken){configureAwaitResponse};
-{(endPoint.Stream ? @"
+{(endPoint.EnumerableStream ? @"
             
             await foreach (var __response in __enumerable)
             {

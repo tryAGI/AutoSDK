@@ -21,11 +21,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateTextToDialogueStreamResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref byte[] content);
-
         /// <summary>
         /// Text To Dialogue (Multi-Voice) Streaming<br/>
         /// Converts a list of text and voice ID pairs into speech (dialogue) and returns an audio stream.
@@ -40,7 +35,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<byte[]> CreateTextToDialogueStreamAsync(
+        public async global::System.Threading.Tasks.Task<global::System.IO.Stream> CreateTextToDialogueStreamAsync(
 
             global::G.BodyTextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPost request,
             global::G.AllowedOutputFormats? outputFormat = default,
@@ -94,10 +89,13 @@ namespace G
                 xiApiKey: xiApiKey,
                 request: request);
 
-            using var __response = await HttpClient.SendAsync(
+            var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
-                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseHeadersRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            try
+            {
 
             ProcessResponse(
                 client: HttpClient,
@@ -143,66 +141,37 @@ namespace G
                 };
             }
 
-            if (ReadResponseAsString)
+            try
             {
-                var __content = await __response.Content.ReadAsByteArrayAsync(
+                __response.EnsureSuccessStatusCode();
+
+                var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
                     cancellationToken
 #endif
                 ).ConfigureAwait(false);
 
-                ProcessCreateTextToDialogueStreamResponseContent(
-                    httpClient: HttpClient,
-                    httpResponseMessage: __response,
-                    content: ref __content);
-
-                try
-                {
-                    __response.EnsureSuccessStatusCode();
-
-                    return __content;
-                }
-                catch (global::System.Exception __ex)
-                {
-                    throw new global::G.ApiException(
-                        message: __response.ReasonPhrase ?? string.Empty,
-                        innerException: __ex,
-                        statusCode: __response.StatusCode)
-                    {
-                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                            __response.Headers,
-                            h => h.Key,
-                            h => h.Value),
-                    };
-                }
+                return new global::G.ResponseStream(__response, __content);
             }
-            else
+            catch (global::System.Exception __ex)
             {
-                try
+                throw new global::G.ApiException(
+                    message: __response.ReasonPhrase ?? string.Empty,
+                    innerException: __ex,
+                    statusCode: __response.StatusCode)
                 {
-                    __response.EnsureSuccessStatusCode();
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
 
-                    var __content = await __response.Content.ReadAsByteArrayAsync(
-#if NET5_0_OR_GREATER
-                        cancellationToken
-#endif
-                    ).ConfigureAwait(false);
-
-                    return __content;
-                }
-                catch (global::System.Exception __ex)
-                {
-                    throw new global::G.ApiException(
-                        message: __response.ReasonPhrase ?? string.Empty,
-                        innerException: __ex,
-                        statusCode: __response.StatusCode)
-                    {
-                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                            __response.Headers,
-                            h => h.Key,
-                            h => h.Value),
-                    };
-                }
+            }
+            catch
+            {
+                __response.Dispose();
+                throw;
             }
         }
 
@@ -242,7 +211,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<byte[]> CreateTextToDialogueStreamAsync(
+        public async global::System.Threading.Tasks.Task<global::System.IO.Stream> CreateTextToDialogueStreamAsync(
             global::System.Collections.Generic.IList<global::G.DialogueInput> inputs,
             global::G.AllowedOutputFormats? outputFormat = default,
             string? xiApiKey = default,

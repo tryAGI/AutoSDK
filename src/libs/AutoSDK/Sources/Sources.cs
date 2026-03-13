@@ -382,4 +382,13 @@ public static partial class Sources
             Name: $"{settings.Namespace}.PathBuilder.g.cs",
             Text: GeneratePathBuilder(settings, cancellationToken: cancellationToken));
     }
+
+    public static FileWithName ResponseStream(
+        Settings settings,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{settings.Namespace}.ResponseStream.g.cs",
+            Text: GenerateResponseStream(settings));
+    }
 }
