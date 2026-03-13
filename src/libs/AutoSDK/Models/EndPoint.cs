@@ -226,7 +226,7 @@ public record struct EndPoint(
                 operation.MethodName.FirstWord().ToLowerInvariant(),
             Settings: operation.Settings,
             GlobalSettings: operation.GlobalSettings,
-            IsDeprecated: operation.Operation.Deprecated,
+            IsDeprecated: operation.Operation.IsDeprecated(),
             ExperimentalStage: operation.Operation.GetExperimentalStage(),
             RequestType: requestType ?? TypeData.Default);
         

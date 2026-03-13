@@ -249,6 +249,29 @@ paths:
     }
 
     [TestMethod]
+    public void FernAvailabilityDeprecatedOperation_MarkedInTitle()
+    {
+        var (operations, _) = LoadSpec(@"openapi: 3.0.1
+info:
+  title: Test
+  version: 1.0.0
+paths:
+  /old:
+    get:
+      operationId: oldEndpoint
+      summary: Old endpoint
+      x-fern-availability: deprecated
+      responses:
+        '200':
+          description: OK
+");
+
+        var result = Sources.GenerateHttpRequest(operations[0]);
+
+        result.Should().Contain("### [DEPRECATED] Old endpoint");
+    }
+
+    [TestMethod]
     public void BearerAuth_EmitsAuthorizationHeader()
     {
         var (operations, _) = LoadSpec(@"openapi: 3.0.1

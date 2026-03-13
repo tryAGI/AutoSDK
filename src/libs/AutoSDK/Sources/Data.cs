@@ -198,7 +198,7 @@ public static class Data
                     .Where(operation =>
                     {
                         if (settings.ExcludeDeprecatedOperations &&
-                            operation.Operation.Deprecated)
+                            operation.Operation.IsDeprecated())
                         {
                             return false;
                         }

@@ -64,7 +64,7 @@ public record struct ModelData(
                 : [],
             Summary: context.Schema.GetSummary(),
             Description: context.Schema.Description ?? string.Empty,
-            IsDeprecated: context.Schema.Deprecated,
+            IsDeprecated: context.Schema.IsDeprecated(),
             BaseClass: context.IsDerivedClass
                 ? context.BaseClassContext.Id
                 : string.Empty,

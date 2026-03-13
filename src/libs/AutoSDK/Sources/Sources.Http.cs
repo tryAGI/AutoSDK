@@ -45,7 +45,7 @@ public static partial class Sources
         var summary = !string.IsNullOrWhiteSpace(op.Summary)
             ? op.Summary
             : op.Description;
-        var deprecated = op.Deprecated ? "[DEPRECATED] " : "";
+        var deprecated = op.IsDeprecated() ? "[DEPRECATED] " : "";
         var title = !string.IsNullOrWhiteSpace(summary)
             ? string.Concat(deprecated, summary)
             : string.Concat(deprecated, method, " ", operation.OperationPath);
