@@ -5,24 +5,13 @@ namespace AutoSDK.IntegrationTests;
 [TestClass]
 public class CliTests
 {
-    // [DataTestMethod]
-    // [DataRow("github.yaml")]
-    // [DataRow("ipinfo.yaml")]
-    // [DataRow("langsmith.json")]
-    // [DataRow("ollama.yaml")]
-    // [DataRow("openai.yaml")]
-    // [DataRow("petstore.yaml")]
-    // [DataRow("replicate.json")]
-    // [DataRow("huggingface.yaml")]
-    // [DataRow("ai21.json")]
-    // [DataRow("cohere.yaml")]
-    // [DataRow("special-cases.yaml")]
-    // [DataRow("twitch.json")]
-    // [DataRow("https://dedoose-rest-api.onrender.com/swagger/v1/swagger.json")]
-    // [DataRow("together.yaml")]
-    // [DataRow("mystic.yaml")]
-    // [DataRow("heygen.yaml")]
-    public async Task Generate(string spec)
+    [TestMethod]
+    public async Task Generate_ElevenLabsStreamingSdk()
+    {
+        await GenerateAsync("elevenlabs.json");
+    }
+
+    private static async Task GenerateAsync(string spec)
     {
         var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
         try
@@ -46,6 +35,9 @@ public class CliTests
             Directory.EnumerateFiles(tempDirectory, "*", SearchOption.AllDirectories)
                 .Should()
                 .NotBeEmpty();
+            Directory.EnumerateFiles(tempDirectory, "*.ResponseStream.g.cs", SearchOption.AllDirectories)
+                .Should()
+                .ContainSingle();
 
             await File.WriteAllTextAsync(Path.Combine(tempDirectory, "Oag.csproj"), @"<Project Sdk=""Microsoft.NET.Sdk"">
 
