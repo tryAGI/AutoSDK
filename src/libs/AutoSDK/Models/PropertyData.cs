@@ -91,7 +91,7 @@ public record struct PropertyData(
             IsWriteOnly: context.Schema.WriteOnly,
             IsMultiPartFormDataFilename: false,
             Settings: context.Settings,
-            IsDeprecated: context.Schema.Deprecated,
+            IsDeprecated: context.Schema.IsDeprecated(),
             DefaultValue: context.Schema is { ReadOnly: true } && !type.CSharpTypeNullability
                 ? "default!"
                 : context.GetDefaultValue(),

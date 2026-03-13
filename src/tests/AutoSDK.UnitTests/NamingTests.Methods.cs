@@ -105,4 +105,70 @@ public partial class NamingTests
         endPoint.MethodName.Should().Be("GetInsightsJobsAsync");
         endPoint.ExperimentalStage.Should().Be("Beta");
     }
+
+    [TestMethod]
+    public void FernAvailabilityDeprecated_MapsToDeprecatedOperation()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "LangSmith",
+            ClassName = "LangSmithClient",
+            ClsCompliantEnumPrefix = "x",
+            MethodNamingConvention = MethodNamingConvention.Summary,
+        };
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: Test
+                              version: 1.0.0
+                            paths:
+                              /old:
+                                get:
+                                  summary: Old endpoint
+                                  x-fern-availability: deprecated
+                                  responses:
+                                    '200':
+                                      description: OK
+                            """;
+
+        var document = yaml.GetOpenApiDocument(settings);
+        var schemas = document.GetSchemas(settings);
+        var context = document.GetOperations(settings, globalSettings: settings, filteredSchemas: schemas).Single();
+        var endPoint = EndPoint.FromSchema(context);
+
+        context.Operation.IsDeprecated().Should().BeTrue();
+        endPoint.IsDeprecated.Should().BeTrue();
+        endPoint.ExperimentalStage.Should().BeEmpty();
+    }
+
+    [TestMethod]
+    public void FernAvailabilityDeprecated_MapsToDeprecatedSchemaAndProperty()
+    {
+        var models = PrepareModels("""
+                                  openapi: 3.0.1
+                                  info:
+                                    title: Test
+                                    version: 1.0.0
+                                  components:
+                                    schemas:
+                                      DeprecatedModel:
+                                        type: object
+                                        x-fern-availability: deprecated
+                                        properties:
+                                          old_value:
+                                            type: string
+                                            x-fern-availability: deprecated
+                                  """);
+        foreach (var model in models)
+        {
+            model.ComputeData();
+        }
+
+        var modelData = ModelData.FromSchemaContext(models.Should().ContainSingle().Subject);
+        var property = modelData.Properties.Should().ContainSingle().Subject;
+
+        modelData.IsDeprecated.Should().BeTrue();
+        property.IsDeprecated.Should().BeTrue();
+        property.Type.IsDeprecated.Should().BeTrue();
+    }
 }

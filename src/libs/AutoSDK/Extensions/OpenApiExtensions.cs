@@ -769,27 +769,45 @@ public static class OpenApiExtensions
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
 
-        if (TryGetExtensionString(operation, "x-stage", out var stageString))
+        if (TryGetExtensionString(operation.Extensions, "x-stage", out var stageString))
         {
             return NormalizeExperimentalStage(stageString);
         }
 
-        if (TryGetExtensionBoolean(operation, "x-alpha"))
+        if (TryGetExtensionBoolean(operation.Extensions, "x-alpha"))
         {
             return "Alpha";
         }
 
-        if (TryGetExtensionBoolean(operation, "x-beta"))
+        if (TryGetExtensionBoolean(operation.Extensions, "x-beta"))
         {
             return "Beta";
         }
 
-        if (TryGetExtensionString(operation, "x-fern-availability", out var availability))
+        if (TryGetAvailability(operation.Extensions, out var availability))
         {
             return NormalizeExperimentalStage(availability);
         }
 
         return GetExperimentalStageFromSummary(operation.Summary);
+    }
+
+    public static bool IsDeprecated(this OpenApiOperation operation)
+    {
+        operation = operation ?? throw new ArgumentNullException(nameof(operation));
+
+        return operation.Deprecated ||
+               TryGetAvailability(operation.Extensions, out var availability) &&
+               string.Equals(availability, "Deprecated", StringComparison.Ordinal);
+    }
+
+    public static bool IsDeprecated(this IOpenApiSchema schema)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+
+        return schema.Deprecated ||
+               TryGetAvailability(schema.Extensions, out var availability) &&
+               string.Equals(availability, "Deprecated", StringComparison.Ordinal);
     }
 
     public static string GetExperimentalStageFromSummary(this string? summary)
@@ -961,11 +979,45 @@ public static class OpenApiExtensions
         };
     }
 
-    private static bool TryGetExtensionString(OpenApiOperation operation, string name, out string value)
+    private static string NormalizeAvailability(string? availability)
+    {
+        var normalized = availability?.Trim() ?? string.Empty;
+        if (normalized.Length == 0)
+        {
+            return string.Empty;
+        }
+
+        return normalized.ToUpperInvariant() switch
+        {
+            "ALPHA" => "Alpha",
+            "BETA" => "Beta",
+            "DEPRECATED" => "Deprecated",
+            "GENERALLY-AVAILABLE" => "GenerallyAvailable",
+            _ => normalized,
+        };
+    }
+
+    private static bool TryGetAvailability(IDictionary<string, IOpenApiExtension>? extensions, out string availability)
+    {
+        availability = string.Empty;
+
+        if (!TryGetExtensionString(extensions, "x-fern-availability", out var rawAvailability))
+        {
+            return false;
+        }
+
+        availability = NormalizeAvailability(rawAvailability);
+        return !string.IsNullOrWhiteSpace(availability);
+    }
+
+    private static bool TryGetExtensionString(
+        IDictionary<string, IOpenApiExtension>? extensions,
+        string name,
+        out string value)
     {
         value = string.Empty;
 
-        if (!(operation.Extensions?.TryGetValue(name, out var extension) ?? false))
+        if (!(extensions?.TryGetValue(name, out var extension) ?? false))
         {
             return false;
         }
@@ -979,9 +1031,11 @@ public static class OpenApiExtensions
         return false;
     }
 
-    private static bool TryGetExtensionBoolean(OpenApiOperation operation, string name)
+    private static bool TryGetExtensionBoolean(
+        IDictionary<string, IOpenApiExtension>? extensions,
+        string name)
     {
-        if (!(operation.Extensions?.TryGetValue(name, out var extension) ?? false))
+        if (!(extensions?.TryGetValue(name, out var extension) ?? false))
         {
             return false;
         }

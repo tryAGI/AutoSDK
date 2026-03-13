@@ -6,6 +6,44 @@ namespace AutoSDK.UnitTests;
 public partial class DataTests
 {
     [TestMethod]
+    public void ExcludeDeprecatedOperations_UsesFernAvailability()
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateSdk = true,
+            GenerateModels = true,
+            ExcludeDeprecatedOperations = true,
+            MethodNamingConvention = MethodNamingConvention.Summary,
+        };
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: Test
+                              version: 1.0.0
+                            paths:
+                              /old:
+                                get:
+                                  summary: Old endpoint
+                                  x-fern-availability: deprecated
+                                  responses:
+                                    '200':
+                                      description: OK
+                              /new:
+                                get:
+                                  summary: New endpoint
+                                  responses:
+                                    '200':
+                                      description: OK
+                            """;
+
+        var data = Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        data.Methods.Should().HaveCount(1);
+        data.Methods[0].MethodName.Should().Be("NewEndpointAsync");
+    }
+
+    [TestMethod]
     [DataRow("ai21.json")]
     [DataRow("anthropic.yaml")]
     [DataRow("assemblyai.yaml")]

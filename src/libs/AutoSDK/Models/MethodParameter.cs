@@ -94,7 +94,7 @@ public record struct MethodParameter(
             Style: parameter.Style,
             Explode: parameter.Explode,
             Settings: context.Settings,
-            IsDeprecated: context.Schema.Deprecated,
+            IsDeprecated: context.Schema.IsDeprecated(),
             DefaultValue: context.GetDefaultValue(),
             Summary: context.Schema.GetSummary(),
             Description:

@@ -198,7 +198,7 @@ public record struct TypeData(
             Namespace: type.StartsWith("global::System.", StringComparison.Ordinal)
                 ? "System"
                 : context.Settings.Namespace,
-            IsDeprecated: context.Schema.Deprecated,
+            IsDeprecated: context.Schema.IsDeprecated(),
             Settings: context.Settings);
     }
 
