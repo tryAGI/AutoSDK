@@ -66,6 +66,7 @@ public static class OpenApiExtensions
         }
 
         openApiDocument.SanitizeNumericConstraints();
+        openApiDocument.SanitizeDiscriminators();
 
         return openApiDocument;
     }
@@ -133,6 +134,73 @@ public static class OpenApiExtensions
         }
         SanitizeSchemaNumericConstraints(concreteSchema.Items);
         SanitizeSchemaNumericConstraints(concreteSchema.AdditionalProperties);
+    }
+
+    public static void SanitizeDiscriminators(this OpenApiDocument document)
+    {
+        document = document ?? throw new ArgumentNullException(nameof(document));
+
+        var componentIds = new HashSet<string>(
+            document.Components?.Schemas?.Keys ?? Enumerable.Empty<string>(),
+            StringComparer.Ordinal);
+
+        foreach (var schema in document.Components?.Schemas?.Values ?? Enumerable.Empty<IOpenApiSchema>())
+        {
+            SanitizeSchemaDiscriminators(schema, componentIds);
+        }
+    }
+
+    private static void SanitizeSchemaDiscriminators(
+        IOpenApiSchema? schema,
+        ISet<string> componentIds)
+    {
+        if (schema is not OpenApiSchema concreteSchema)
+        {
+            return;
+        }
+
+        if (concreteSchema.Discriminator?.Mapping is { Count: > 0 } mapping)
+        {
+            var validMappings = mapping
+                .Where(x => x.Value.Reference?.Id is { } id && componentIds.Contains(id))
+                .ToDictionary(x => x.Key, x => x.Value, StringComparer.Ordinal);
+            var hasCompositionChildren =
+                (concreteSchema.OneOf?.Count ?? 0) > 0 ||
+                (concreteSchema.AnyOf?.Count ?? 0) > 0 ||
+                (concreteSchema.AllOf?.Count ?? 0) > 0;
+
+            if (validMappings.Count == 0 && !hasCompositionChildren)
+            {
+                concreteSchema.Discriminator = null;
+            }
+            else if (validMappings.Count > 0 && validMappings.Count != mapping.Count)
+            {
+                concreteSchema.Discriminator = new OpenApiDiscriminator
+                {
+                    PropertyName = concreteSchema.Discriminator.PropertyName,
+                    Mapping = validMappings,
+                };
+            }
+        }
+
+        foreach (var property in concreteSchema.Properties?.Values ?? Enumerable.Empty<IOpenApiSchema>())
+        {
+            SanitizeSchemaDiscriminators(property, componentIds);
+        }
+        foreach (var child in concreteSchema.AnyOf ?? Enumerable.Empty<IOpenApiSchema>())
+        {
+            SanitizeSchemaDiscriminators(child, componentIds);
+        }
+        foreach (var child in concreteSchema.OneOf ?? Enumerable.Empty<IOpenApiSchema>())
+        {
+            SanitizeSchemaDiscriminators(child, componentIds);
+        }
+        foreach (var child in concreteSchema.AllOf ?? Enumerable.Empty<IOpenApiSchema>())
+        {
+            SanitizeSchemaDiscriminators(child, componentIds);
+        }
+        SanitizeSchemaDiscriminators(concreteSchema.Items, componentIds);
+        SanitizeSchemaDiscriminators(concreteSchema.AdditionalProperties, componentIds);
     }
 
     private static bool IsOutOfRange(string? value, decimal bound, bool isMin)
