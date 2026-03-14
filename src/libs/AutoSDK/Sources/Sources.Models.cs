@@ -97,9 +97,7 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         var requiredKeyword = isRequiredKeywordSupported
             ? " required"
             : string.Empty;
-        var properties = modelData.Properties.Where(x =>
-            !modelData.IsBaseClass ||
-            x.Id != modelData.DiscriminatorPropertyName).ToArray();
+        var properties = modelData.Properties;
         var hasAdditionalPropertiesProperty = properties.Any(x =>
             x.Name == "AdditionalProperties");
         var additionalPropertiesPostfix = modelData.ClassName == "AdditionalProperties" || hasAdditionalPropertiesProperty

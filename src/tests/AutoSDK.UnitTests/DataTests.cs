@@ -1,5 +1,6 @@
 ﻿using AutoSDK.Generation;
 using AutoSDK.Naming.Methods;
+using AutoSDK.Serialization.Json;
 
 namespace AutoSDK.UnitTests;
 
@@ -100,6 +101,97 @@ public partial class DataTests
                 }
             }
         }
+    }
+
+    [TestMethod]
+    public void DiscriminatorOnlyOneOfWrapper_DoesNotExposeHiddenDiscriminatorToConvenienceOverload()
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateModels = true,
+            GenerateSdk = true,
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            TargetFramework = "net8.0",
+        };
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: repro
+                              version: 1.0.0
+                            paths:
+                              /items:
+                                post:
+                                  operationId: createItem
+                                  requestBody:
+                                    required: true
+                                    content:
+                                      application/json:
+                                        schema:
+                                          $ref: '#/components/schemas/CreateItemRequest'
+                                  responses:
+                                    '200':
+                                      description: ok
+                                      content:
+                                        application/json:
+                                          schema:
+                                            $ref: '#/components/schemas/OkResponse'
+                            components:
+                              schemas:
+                                OkResponse:
+                                  type: object
+                                  properties:
+                                    ok:
+                                      type: boolean
+                                CreateTextRequest:
+                                  type: object
+                                  required:
+                                    - type
+                                    - text
+                                  properties:
+                                    type:
+                                      type: string
+                                      default: text
+                                    text:
+                                      type: string
+                                CreateNumberRequest:
+                                  type: object
+                                  required:
+                                    - type
+                                    - number
+                                  properties:
+                                    type:
+                                      type: string
+                                      default: number
+                                    number:
+                                      type: integer
+                                CreateItemRequest:
+                                  required:
+                                    - type
+                                  properties:
+                                    type:
+                                      type: string
+                                      default: text
+                                  discriminator:
+                                    propertyName: type
+                                    mapping:
+                                      text: '#/components/schemas/CreateTextRequest'
+                                      number: '#/components/schemas/CreateNumberRequest'
+                                  oneOf:
+                                    - $ref: '#/components/schemas/CreateTextRequest'
+                                    - $ref: '#/components/schemas/CreateNumberRequest'
+                            """;
+
+        var data = Data.Prepare(((yaml, settings), GlobalSettings: settings));
+        var requestModel = data.Classes.Single(x => x.ClassName == "CreateItemRequest");
+        var endPoint = data.Methods.Should().ContainSingle().Subject;
+        var generatedEndPoint = Sources.GenerateEndPoint(endPoint);
+
+        requestModel.IsBaseClass.Should().BeTrue();
+        requestModel.Properties.Should().BeEmpty();
+        endPoint.Parameters.Where(x => x.Location == null).Should().BeEmpty();
+        generatedEndPoint.Should().NotContain("Type = type");
+        generatedEndPoint.Should().NotContain(" string type,");
     }
 
     [TestMethod]

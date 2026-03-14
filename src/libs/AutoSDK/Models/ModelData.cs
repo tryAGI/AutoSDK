@@ -48,17 +48,7 @@ public record struct ModelData(
             Namespace: context.Settings.Namespace,
             Style: context.Schema.IsEnum() ? ModelStyle.Enumeration : context.Settings.ModelStyle,
             Settings: context.Settings,
-            Properties: context.IsDerivedClass
-                ? context.DerivedClassContext.Children
-                    .Where(x => x is { IsProperty: true, PropertyData: not null })
-                    .SelectMany(x => x.ComputedProperties)
-                    .ToImmutableArray()
-                : !context.Schema.IsEnum()
-                    ? context.Children
-                        .Where(x => x is { IsProperty: true, PropertyData: not null })
-                        .SelectMany(x => x.ComputedProperties)
-                        .ToImmutableArray()
-                    : [],
+            Properties: GetVisibleProperties(context),
             EnumValues: context.Schema.IsEnum()
                 ? context.ComputeEnum().Values.ToImmutableArray()
                 : [],
@@ -77,6 +67,33 @@ public record struct ModelData(
                 .Select(x => (ClassName: x.Value.Reference?.Id ?? string.Empty, Discriminator: x.Key))
                 .ToImmutableArray() ?? []
             );
+    }
+
+    private static ImmutableArray<PropertyData> GetVisibleProperties(SchemaContext context)
+    {
+        var properties = context.IsDerivedClass
+            ? context.DerivedClassContext.Children
+                .Where(x => x is { IsProperty: true, PropertyData: not null })
+                .SelectMany(x => x.ComputedProperties)
+                .ToImmutableArray()
+            : !context.Schema.IsEnum()
+                ? context.Children
+                    .Where(x => x is { IsProperty: true, PropertyData: not null })
+                    .SelectMany(x => x.ComputedProperties)
+                    .ToImmutableArray()
+                : [];
+
+        var discriminatorPropertyName = context.IsBaseClass
+            ? context.Schema.Discriminator?.PropertyName
+            : null;
+        if (string.IsNullOrWhiteSpace(discriminatorPropertyName))
+        {
+            return properties;
+        }
+
+        return properties
+            .Where(x => x.Id != discriminatorPropertyName)
+            .ToImmutableArray();
     }
 
     public string ClassName => Id;// Settings.NamingConvention switch
