@@ -32,7 +32,7 @@ namespace G
         /// <param name="ref"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.ContentTree> ReposGetContentAsync(
+        global::System.Threading.Tasks.Task<global::G.ReposGetContentResponse> ReposGetContentAsync(
             string owner,
             string repo,
             string path,
