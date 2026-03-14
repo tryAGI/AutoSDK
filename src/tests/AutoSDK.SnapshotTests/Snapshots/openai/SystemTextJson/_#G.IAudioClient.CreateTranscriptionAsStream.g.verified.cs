@@ -54,14 +54,6 @@ namespace G
         /// The timestamp granularities to populate for this transcription. `response_format` must be set `verbose_json` to use timestamp granularities. Either or both of these options are supported: `word`, or `segment`. Note: There is no additional latency for segment timestamps, but generating word timestamps incurs additional latency.<br/>
         /// Default Value: [segment]
         /// </param>
-        /// <param name="stream">
-        /// If set to true, the model response data will be streamed to the client<br/>
-        /// as it is generated using [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format). <br/>
-        /// See the [Streaming section of the Speech-to-Text guide](/docs/guides/speech-to-text?lang=curl#streaming-transcriptions)<br/>
-        /// for more information.<br/>
-        /// Note: Streaming is not supported for the `whisper-1` model and will be ignored.<br/>
-        /// Default Value: false
-        /// </param>
         /// <param name="chunkingStrategy">
         /// Controls how the audio is cut into chunks. When set to `"auto"`, the server first normalizes loudness and then uses voice activity detection (VAD) to choose boundaries. `server_vad` object can be provided to tweak VAD detection parameters manually. If unset, the audio is transcribed as a single block. 
         /// </param>
@@ -77,7 +69,6 @@ namespace G
             double? temperature = default,
             global::System.Collections.Generic.IList<global::G.TranscriptionInclude>? include = default,
             global::System.Collections.Generic.IList<global::G.CreateTranscriptionRequestTimestampGranularitie>? timestampGranularities = default,
-            bool? stream = default,
             global::G.AnyOf<global::G.CreateTranscriptionRequestChunkingStrategy?, global::G.VadConfig>? chunkingStrategy = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

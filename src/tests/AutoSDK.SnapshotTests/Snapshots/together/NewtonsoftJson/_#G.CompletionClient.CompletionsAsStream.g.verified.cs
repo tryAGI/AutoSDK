@@ -31,6 +31,28 @@ namespace G
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+
+            request = new global::G.CompletionRequest
+            {
+                Prompt = request.Prompt,
+                Model = request.Model,
+                MaxTokens = request.MaxTokens,
+                Stop = request.Stop,
+                Temperature = request.Temperature,
+                TopP = request.TopP,
+                TopK = request.TopK,
+                RepetitionPenalty = request.RepetitionPenalty,
+                Stream = true,
+                Logprobs = request.Logprobs,
+                Echo = request.Echo,
+                N = request.N,
+                SafetyModel = request.SafetyModel,
+                MinP = request.MinP,
+                PresencePenalty = request.PresencePenalty,
+                FrequencyPenalty = request.FrequencyPenalty,
+                LogitBias = request.LogitBias,
+                Seed = request.Seed,
+            };
             PrepareArguments(
                 client: HttpClient);
             PrepareCompletionsAsStreamArguments(
@@ -163,9 +185,6 @@ namespace G
         /// <param name="repetitionPenalty">
         /// A number that controls the diversity of generated text by reducing the likelihood of repeated sequences. Higher values decrease repetition.
         /// </param>
-        /// <param name="stream">
-        /// If true, stream tokens as Server-Sent Events as the model generates them instead of waiting for the full model response. The stream terminates with `data: [DONE]`. If false, return a single JSON object containing the results.
-        /// </param>
         /// <param name="logprobs">
         /// Determines the number of most likely tokens to return at each token position log probabilities to return.
         /// </param>
@@ -207,7 +226,6 @@ namespace G
             float? topP = default,
             int? topK = default,
             float? repetitionPenalty = default,
-            bool? stream = default,
             int? logprobs = default,
             bool? echo = default,
             int? n = default,
@@ -229,7 +247,7 @@ namespace G
                 TopP = topP,
                 TopK = topK,
                 RepetitionPenalty = repetitionPenalty,
-                Stream = stream,
+                Stream = true,
                 Logprobs = logprobs,
                 Echo = echo,
                 N = n,

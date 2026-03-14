@@ -32,7 +32,8 @@ public record struct EndPoint(
     Settings GlobalSettings,
     bool IsDeprecated,
     string ExperimentalStage,
-    TypeData RequestType
+    TypeData RequestType,
+    bool? ForcedRequestStreamValue
 )
 {
     public bool Stream => StreamFormat != StreamFormat.None;
@@ -46,7 +47,11 @@ public record struct EndPoint(
     
     public string InterfaceFileNameWithoutExtension => $"{Settings.Namespace}.I{ClassName}.{Id.ToPropertyName()}";
     
-    public static EndPoint FromSchema(OperationContext operation, string? preferredMimeType = null)
+    public static EndPoint FromSchema(
+        OperationContext operation,
+        string? preferredMimeType = null,
+        string? methodNameSuffix = null,
+        bool? forcedRequestStreamValue = null)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
         
@@ -196,9 +201,9 @@ public record struct EndPoint(
             }
         }
         var endPoint = new EndPoint(
-            Id: streamFormat == StreamFormat.ServerSentEvents && preferredMimeType == "text/event-stream"
-                ? operation.MethodName + "AsStream"
-                : operation.MethodName,
+            Id: string.IsNullOrWhiteSpace(methodNameSuffix)
+                ? operation.MethodName
+                : operation.MethodName + methodNameSuffix,
             ClassName: operation.Settings.GroupByTags && operation.Tag != Tag.Empty
                 ? ClientNameGenerator.Generate(operation.Tag)
                 : operation.Settings.ClassName.Replace(".", string.Empty),
@@ -228,8 +233,9 @@ public record struct EndPoint(
             GlobalSettings: operation.GlobalSettings,
             IsDeprecated: operation.Operation.IsDeprecated(),
             ExperimentalStage: operation.Operation.GetExperimentalStage(),
-            RequestType: requestType ?? TypeData.Default);
-        
+            RequestType: requestType ?? TypeData.Default,
+            ForcedRequestStreamValue: forcedRequestStreamValue);
+
         return endPoint;
     }
 

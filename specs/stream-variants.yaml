@@ -1,0 +1,103 @@
+openapi: 3.0.3
+info:
+  title: Stream Variants
+  version: 1.0.0
+servers:
+  - url: https://example.com
+paths:
+  /ndjson:
+    post:
+      operationId: createMessage
+      tags:
+        - Messages
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MessageRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+            application/x-ndjson:
+              schema:
+                $ref: '#/components/schemas/MessageEvent'
+  /events:
+    post:
+      operationId: createEvent
+      tags:
+        - Messages
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EventRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EventResponse'
+            text/event-stream:
+              schema:
+                $ref: '#/components/schemas/EventChunk'
+components:
+  schemas:
+    MessageRequest:
+      type: object
+      required:
+        - prompt
+      properties:
+        prompt:
+          type: string
+        stream:
+          type: boolean
+          default: true
+    MessageResponse:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+    MessageEvent:
+      type: object
+      required:
+        - delta
+      properties:
+        delta:
+          type: string
+    EventRequest:
+      type: object
+      required:
+        - input
+      properties:
+        input:
+          type: string
+        stream:
+          type: boolean
+          default: true
+    EventResponse:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+        accepted:
+          type: boolean
+    EventChunk:
+      type: object
+      required:
+        - token
+      properties:
+        token:
+          type: string

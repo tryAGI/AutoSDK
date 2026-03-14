@@ -102,6 +102,65 @@ namespace {endPoint.Settings.Namespace}
         };
     }
 
+    private static bool IsRequestStreamParameter(MethodParameter parameter)
+    {
+        return parameter.Location == null &&
+               string.Equals(parameter.Id, "stream", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static string GetRequestPropertyName(MethodParameter parameter)
+    {
+        return parameter.Name.StartsWith("request", StringComparison.Ordinal)
+            ? parameter.Name.Replace("request", string.Empty)
+            : parameter.Name;
+    }
+
+    private static string GetPinnedRequestPropertyValue(
+        EndPoint endPoint,
+        MethodParameter parameter,
+        string sourceRequestExpression)
+    {
+        if (IsRequestStreamParameter(parameter) && endPoint.ForcedRequestStreamValue is bool forcedRequestStreamValue)
+        {
+            return forcedRequestStreamValue ? "true" : "false";
+        }
+
+        return $"{sourceRequestExpression}.{GetRequestPropertyName(parameter)}";
+    }
+
+    private static string GeneratePinnedRequestCopy(EndPoint endPoint, string sourceRequestExpression)
+    {
+        if (endPoint.ForcedRequestStreamValue is null)
+        {
+            return " ";
+        }
+
+        var requestParameters = endPoint.Parameters
+            .Where(static x => x.Location == null)
+            .ToArray();
+        if (!requestParameters.Any(IsRequestStreamParameter))
+        {
+            return " ";
+        }
+
+        return @$"
+            request = new {endPoint.RequestType.CSharpTypeWithoutNullability}
+            {{
+{requestParameters.Select(x => $@"
+{(x.IsDeprecated ? "#pragma warning disable CS0618 // Type or member is obsolete" : " ")}
+                {GetRequestPropertyName(x)} = {GetPinnedRequestPropertyValue(endPoint, x, sourceRequestExpression)},
+{(x.IsDeprecated ? "#pragma warning restore CS0618 // Type or member is obsolete" : " ")}".TrimEnd()).Inject()}
+            }};
+ ".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static IEnumerable<MethodParameter> GetExtensionMethodParameters(EndPoint endPoint)
+    {
+        return endPoint.Parameters
+            .Where(static x => x is { IsDeprecated: false } or { IsRequired: true } or { IsDeprecated: true, Location: not null })
+            .Where(x => !(endPoint.ForcedRequestStreamValue is not null && IsRequestStreamParameter(x)));
+    }
+
     public static string GenerateMethod(
         EndPoint endPoint, bool isInterface = false)
     {
@@ -124,6 +183,7 @@ namespace {endPoint.Settings.Namespace}
 {(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) || endPoint.RequestType.IsAnyOfLike ? " " : @" 
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 ")}
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) || endPoint.RequestType.IsAnyOfLike ? " " : GeneratePinnedRequestCopy(endPoint, "request"))}
             PrepareArguments(
                 client: HttpClient);
             Prepare{endPoint.NotAsyncMethodName}Arguments(
@@ -730,7 +790,7 @@ namespace {endPoint.Settings.Namespace}
             {{
 {endPoint.Parameters.Where(x => x.Location == null && (x.IsRequired || !x.IsDeprecated)).Select(x => $@"
 {(x.IsDeprecated ? "#pragma warning disable CS0618 // Type or member is obsolete" : " ")}
-                {(x.Name.StartsWith("request", StringComparison.Ordinal) ? x.Name.Replace("request", string.Empty) : x.Name)} = {x.ParameterName},
+                {GetRequestPropertyName(x)} = {(IsRequestStreamParameter(x) && endPoint.ForcedRequestStreamValue is bool forcedRequestStreamValue ? (forcedRequestStreamValue ? "true" : "false") : x.ParameterName)},
 {(x.IsDeprecated ? "#pragma warning restore CS0618 // Type or member is obsolete" : " ")}".TrimEnd()).Inject()}
             }};
 
@@ -747,9 +807,7 @@ namespace {endPoint.Settings.Namespace}
             }" : " ")}
         }}";
 
-        var parameters = endPoint.Parameters
-            .Where(static x => x is { IsDeprecated: false } or { IsRequired: true } or { IsDeprecated: true, Location: not null })
-            .ToList();
+        var parameters = GetExtensionMethodParameters(endPoint).ToList();
 
         return $@"
         {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}

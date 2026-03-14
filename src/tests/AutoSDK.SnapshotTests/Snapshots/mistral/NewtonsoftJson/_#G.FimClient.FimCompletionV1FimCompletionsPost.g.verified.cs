@@ -36,6 +36,20 @@ namespace G
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+
+            request = new global::G.FIMCompletionRequest
+            {
+                Model = request.Model,
+                Temperature = request.Temperature,
+                TopP = request.TopP,
+                MaxTokens = request.MaxTokens,
+                Stream = false,
+                Stop = request.Stop,
+                RandomSeed = request.RandomSeed,
+                Prompt = request.Prompt,
+                Suffix = request.Suffix,
+                MinTokens = request.MinTokens,
+            };
             PrepareArguments(
                 client: HttpClient);
             PrepareFimCompletionV1FimCompletionsPostArguments(
@@ -225,10 +239,6 @@ namespace G
         /// <param name="maxTokens">
         /// The maximum number of tokens to generate in the completion. The token count of your prompt plus `max_tokens` cannot exceed the model's context length.
         /// </param>
-        /// <param name="stream">
-        /// Whether to stream back partial progress. If set, tokens will be sent as data-only server-side events as they become available, with the stream terminated by a data: [DONE] message. Otherwise, the server will hold the request open until the timeout or until completion, with the response containing the full result as JSON.<br/>
-        /// Default Value: false
-        /// </param>
         /// <param name="stop">
         /// Stop generation if this token is detected. Or if one of these tokens is detected when providing an array
         /// </param>
@@ -252,7 +262,6 @@ namespace G
             double? temperature = default,
             double? topP = default,
             int? maxTokens = default,
-            bool? stream = default,
             global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
             int? randomSeed = default,
             string? suffix = default,
@@ -265,7 +274,7 @@ namespace G
                 Temperature = temperature,
                 TopP = topP,
                 MaxTokens = maxTokens,
-                Stream = stream,
+                Stream = false,
                 Stop = stop,
                 RandomSeed = randomSeed,
                 Prompt = prompt,

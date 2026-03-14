@@ -218,35 +218,7 @@ public static class Data
                 : [];
         
         var methods = filteredOperations
-            .SelectMany(operation =>
-            {
-                // Check what response content types this operation produces
-                var responseContentTypes = (operation.Operation.Responses ?? new Dictionary<string, IOpenApiResponse>())
-                    .SelectMany(r => (r.Value?.Content ?? new Dictionary<string, IOpenApiMediaType>())
-                        .Where(c => r.Key.StartsWith("2", StringComparison.OrdinalIgnoreCase))
-                        .Select(c => c.Key))
-                    .ToArray();
-
-                bool hasSse = responseContentTypes.Any(ct => ct.Contains("text/event-stream"));
-                bool hasJson = responseContentTypes.Any(ct =>
-                    ct.Contains("application/json") ||
-                    ct.Contains("application/x-ndjson"));
-
-                if (hasSse && hasJson)
-                {
-                    // Generate both a regular JSON endpoint and an SSE streaming endpoint
-                    var jsonEndPoint = EndPoint.FromSchema(operation, preferredMimeType: "application/json");
-                    var sseEndPoint = EndPoint.FromSchema(operation, preferredMimeType: "text/event-stream");
-                    return new[] { jsonEndPoint, sseEndPoint };
-                }
-
-                if (hasSse && !hasJson)
-                {
-                    return new[] { EndPoint.FromSchema(operation, preferredMimeType: "text/event-stream") };
-                }
-
-                return new[] { EndPoint.FromSchema(operation) };
-            })
+            .SelectMany(CreateEndPoints)
             .ToImmutableArray();
 
         if (settings.GenerateCli)
@@ -406,6 +378,87 @@ public static class Data
                 Total: totalTime.Elapsed
                 )
             );
+    }
+
+    private static IEnumerable<EndPoint> CreateEndPoints(OperationContext operation)
+    {
+        var responseContentTypes = (operation.Operation.Responses ?? new Dictionary<string, IOpenApiResponse>())
+            .SelectMany(response => (response.Value?.Content ?? new Dictionary<string, IOpenApiMediaType>())
+                .Where(_ => response.Key.StartsWith("2", StringComparison.OrdinalIgnoreCase))
+                .Select(content => content.Key))
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .ToArray();
+
+        var hasJson = responseContentTypes.Any(static contentType =>
+            contentType.Contains("application/json", StringComparison.OrdinalIgnoreCase));
+        var hasNdjson = responseContentTypes.Any(static contentType =>
+            contentType.Contains("application/x-ndjson", StringComparison.OrdinalIgnoreCase));
+        var hasSse = responseContentTypes.Any(static contentType =>
+            contentType.Contains("text/event-stream", StringComparison.OrdinalIgnoreCase));
+
+        var endPoints = new List<EndPoint>();
+
+        if (hasJson)
+        {
+            endPoints.Add(EndPoint.FromSchema(
+                operation,
+                preferredMimeType: "application/json",
+                forcedRequestStreamValue: hasNdjson || hasSse ? false : null));
+        }
+
+        if (hasSse)
+        {
+            endPoints.Add(EndPoint.FromSchema(
+                operation,
+                preferredMimeType: "text/event-stream",
+                methodNameSuffix: GetStreamMethodSuffix(
+                    hasRegularJsonVariant: hasJson,
+                    hasAnotherStreamingVariant: hasNdjson,
+                    streamFormat: StreamFormat.ServerSentEvents),
+                forcedRequestStreamValue: hasJson ? true : null));
+        }
+
+        if (hasNdjson)
+        {
+            endPoints.Add(EndPoint.FromSchema(
+                operation,
+                preferredMimeType: "application/x-ndjson",
+                methodNameSuffix: GetStreamMethodSuffix(
+                    hasRegularJsonVariant: hasJson,
+                    hasAnotherStreamingVariant: hasSse,
+                    streamFormat: StreamFormat.Ndjson),
+                forcedRequestStreamValue: hasJson ? true : null));
+        }
+
+        if (endPoints.Count == 0)
+        {
+            endPoints.Add(EndPoint.FromSchema(operation));
+        }
+
+        return endPoints;
+    }
+
+    private static string? GetStreamMethodSuffix(
+        bool hasRegularJsonVariant,
+        bool hasAnotherStreamingVariant,
+        StreamFormat streamFormat)
+    {
+        if (!hasRegularJsonVariant && !hasAnotherStreamingVariant)
+        {
+            return null;
+        }
+
+        if (!hasAnotherStreamingVariant)
+        {
+            return "AsStream";
+        }
+
+        return streamFormat switch
+        {
+            StreamFormat.ServerSentEvents => "AsServerSentEventsStream",
+            StreamFormat.Ndjson => "AsNdjsonStream",
+            _ => "AsStream",
+        };
     }
 
     private static void DetachUnresolvedReferences(

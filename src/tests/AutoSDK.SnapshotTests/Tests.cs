@@ -43,6 +43,8 @@ public partial class Tests
     [DataRow("replicate.json", JsonSerializerType.SystemTextJson)]
     [DataRow("special-cases.yaml", JsonSerializerType.NewtonsoftJson)]
     [DataRow("special-cases.yaml", JsonSerializerType.SystemTextJson)]
+    [DataRow("stream-variants.yaml", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("stream-variants.yaml", JsonSerializerType.SystemTextJson)]
     [DataRow("together.yaml", JsonSerializerType.NewtonsoftJson)]
     [DataRow("together.yaml", JsonSerializerType.SystemTextJson)]
     [DataRow("twitch.json", JsonSerializerType.NewtonsoftJson)]
