@@ -38,13 +38,14 @@ namespace G
 
         /// <summary>
         /// Simple Single Corpus Query<br/>
+        /// The [**Query APIs**](/docs/rest-api/queries) enable Retrieval Augmented Generation (RAG), allowing you to search your data and generate AI-powered summaries. Vectara provides three query types to match different search needs:<br/>
+        /// * [**Single corpus query**](/docs/rest-api/search-corpus): For a simple search within a single data source.<br/>
+        /// * [**Advanced single corpus query**](/docs/rest-api/query-corpus): For full-featured search and RAG within one corpus, supporting advanced features like table summarization, metadata filtering, and reranking.<br/>
+        /// * [**Multiple corpora query**](/docs/rest-api/query): For searching across one or more corpora with full RAG capabilities.<br/>
         /// Search a single corpus with a straightforward query request, specifying the corpus key and query parameters.<br/>
-        /// * Specify the unique `corpus_key` identifying the corpus to query. The `corpus_key` is <br/>
-        /// [created in the Vectara Console UI](https://docs.vectara.com/docs/console-ui/creating-a-corpus) or the [Create Corpus API definition](https://docs.vectara.com/docs/api-reference/admin-apis/create-corpus). When creating a new corpus, you have the option to assign a custom `corpus_key` following your preferred naming convention. This key serves as a unique identifier for the corpus, allowing it to be referenced in search requests. For more information, see [Corpus Key Definition](https://docs.vectara.com/docs/api-reference/search-apis/search#corpus-key-definition).<br/>
+        /// * Specify the unique `corpus_key` identifying the corpus to query. The `corpus_key` is created in the Vectara Console or the [Create Corpus API](https://docs.vectara.com/docs/rest-api/create-corpus), and the corpus key is part of that process. When creating a new corpus, you have the option to assign a custom `corpus_key` following your preferred naming convention. This key serves as a unique identifier for the corpus, allowing it to be referenced in search requests.<br/>
         /// * Enter the search `query` string for the corpus, which is the question you want to ask.<br/>
-        /// * Set the maximum number of results (`limit`) to return. **Default**: 10, **minimum**: 1<br/>
-        /// * Define the `offset` position from which to start in the result set.<br/>
-        /// For more detailed information, see this [Query API guide](https://docs.vectara.com/docs/api-reference/search-apis/search).
+        /// * Set the maximum number of results (`limit`) to return. **Default**: 10, **minimum**: 1
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>

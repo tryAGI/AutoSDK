@@ -5,9 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Role of the API key. <br/>
-    /// A serving API key can only perform query type requests on its corpora. A serving and<br/>
-    /// indexing key can perform both indexing and query type requests on its corpora.<br/>
+    /// Role of the API key. A serving API key can only perform query type requests on its corpora. A serving and indexing key can perform both indexing and query type requests on its corpora.<br/>
     /// A personal API key has all the same permissions as the creator of the API key.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]

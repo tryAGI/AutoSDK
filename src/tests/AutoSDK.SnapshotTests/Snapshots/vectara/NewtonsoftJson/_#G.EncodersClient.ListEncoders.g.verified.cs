@@ -32,7 +32,7 @@ namespace G
 
         /// <summary>
         /// List encoders<br/>
-        /// Encoders are used to store and retrieve from a corpus.
+        /// The List Encoders API retrieves a list of available encoders used for embedding documents and queries.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>

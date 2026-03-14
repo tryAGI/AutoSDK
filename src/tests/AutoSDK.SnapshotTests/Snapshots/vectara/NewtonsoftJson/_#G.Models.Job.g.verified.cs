@@ -10,8 +10,10 @@ namespace G
     public sealed partial class Job
     {
         /// <summary>
-        /// The ID of the job.
+        /// The ID of the job.<br/>
+        /// Example: job_1234
         /// </summary>
+        /// <example>job_1234</example>
         [global::Newtonsoft.Json.JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -67,7 +69,8 @@ namespace G
         /// Initializes a new instance of the <see cref="Job" /> class.
         /// </summary>
         /// <param name="id">
-        /// The ID of the job.
+        /// The ID of the job.<br/>
+        /// Example: job_1234
         /// </param>
         /// <param name="type">
         /// The type of job.

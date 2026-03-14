@@ -32,6 +32,12 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
+        /// Specification for which generation to use during table summarization. If not specified, the platform uses the default summarizer. All parameters are optional and overrides the default values.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("generation")]
+        public global::G.TableGenerationSpec? Generation { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -51,14 +57,19 @@ namespace G
         /// The description of the table extractor.<br/>
         /// Example: Uses the AWS Textract service to extract tables.
         /// </param>
+        /// <param name="generation">
+        /// Specification for which generation to use during table summarization. If not specified, the platform uses the default summarizer. All parameters are optional and overrides the default values.
+        /// </param>
         public TableExtractor(
             string? name,
             bool? isDefault,
-            string? description)
+            string? description,
+            global::G.TableGenerationSpec? generation)
         {
             this.Name = name;
             this.IsDefault = isDefault;
             this.Description = description;
+            this.Generation = generation;
         }
 
         /// <summary>

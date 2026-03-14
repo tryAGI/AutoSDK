@@ -5,8 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Sets a chunking strategy that creates one chunk per sentence.<br/>
-    /// This is the default strategy used when no chunking strategy is specified.
+    /// Sets a chunking strategy that creates one chunk per sentence. This is the default strategy used when no chunking strategy is specified.
     /// </summary>
     public sealed partial class SentenceChunkingStrategy
     {

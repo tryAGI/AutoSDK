@@ -16,8 +16,10 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.AppClient>? AppClients { get; set; }
 
         /// <summary>
-        /// The standard metadata in the response of a list operation.
+        /// The standard metadata in the response of a list operation.<br/>
+        /// Example: {"page_key":"eyJvZmZzZXQiOjF9"}
         /// </summary>
+        /// <example>{"page_key":"eyJvZmZzZXQiOjF9"}</example>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
         public global::G.ListMetadata? Metadata { get; set; }
 
@@ -34,7 +36,8 @@ namespace G
         /// List of App Clients.
         /// </param>
         /// <param name="metadata">
-        /// The standard metadata in the response of a list operation.
+        /// The standard metadata in the response of a list operation.<br/>
+        /// Example: {"page_key":"eyJvZmZzZXQiOjF9"}
         /// </param>
         public ListAppClientsResponse(
             global::System.Collections.Generic.IList<global::G.AppClient>? appClients,

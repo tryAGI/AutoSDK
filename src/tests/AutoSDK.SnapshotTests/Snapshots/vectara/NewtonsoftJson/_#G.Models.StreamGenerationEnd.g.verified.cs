@@ -5,14 +5,12 @@
 namespace G
 {
     /// <summary>
-    /// The end of generation. There may still be more information such as the<br/>
-    /// factual consistency score, but generation has stopped.
+    /// The end of generation. There may still be more information such as the factual consistency score, but generation has stopped.
     /// </summary>
     public sealed partial class StreamGenerationEnd
     {
         /// <summary>
-        /// Then end of generation will be denoted with an object<br/>
-        /// with the type `generation_end`.<br/>
+        /// Then end of generation will be denoted with an object with the type `generation_end`.<br/>
         /// Default Value: generation_end
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
@@ -28,8 +26,7 @@ namespace G
         /// Initializes a new instance of the <see cref="StreamGenerationEnd" /> class.
         /// </summary>
         /// <param name="type">
-        /// Then end of generation will be denoted with an object<br/>
-        /// with the type `generation_end`.<br/>
+        /// Then end of generation will be denoted with an object with the type `generation_end`.<br/>
         /// Default Value: generation_end
         /// </param>
         public StreamGenerationEnd(

@@ -19,9 +19,9 @@ namespace G
 
         /// <summary>
         /// The name for the corpus. If unset or null, then the corpus will remain in the same state.<br/>
-        /// Example: new-name
+        /// Example: new-corpus-name
         /// </summary>
-        /// <example>new-name</example>
+        /// <example>new-corpus-name</example>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; }
 
@@ -54,7 +54,7 @@ namespace G
         /// </param>
         /// <param name="name">
         /// The name for the corpus. If unset or null, then the corpus will remain in the same state.<br/>
-        /// Example: new-name
+        /// Example: new-corpus-name
         /// </param>
         /// <param name="description">
         /// Description of the corpus. If unset or null, then the corpus will remain in the same state.<br/>

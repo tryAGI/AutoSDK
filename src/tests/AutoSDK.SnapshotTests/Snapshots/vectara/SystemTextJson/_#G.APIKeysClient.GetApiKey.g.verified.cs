@@ -28,7 +28,8 @@ namespace G
 
         /// <summary>
         /// Get an API key<br/>
-        /// Retrieve details of a specific API key by its ID.
+        /// The Get API Key API lists all existing API keys for a customer ID. It also shows what corpora are accessed by these keys and with what permissions.<br/>
+        /// This capability can provide insights into key usage and status and help you manage the lifecycle and security of your API keys.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>

@@ -28,7 +28,8 @@ namespace G
         public bool IsValue1 => Value1 != null;
 
         /// <summary>
-        /// Search parameters to retrieve knowledge for the query.
+        /// Search parameters to retrieve knowledge for the query.<br/>
+        /// Example: {"limit":50}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SearchParameters? Value2 { get; init; }

@@ -10,26 +10,34 @@ namespace G
     public sealed partial class ComputeCorpusSizeResponse
     {
         /// <summary>
-        /// Number of documents in the corpus
+        /// Number of documents in the corpus<br/>
+        /// Example: 14
         /// </summary>
+        /// <example>14</example>
         [global::Newtonsoft.Json.JsonProperty("used_docs")]
         public long? UsedDocs { get; set; }
 
         /// <summary>
-        /// Number of document parts in the corpus
+        /// Number of document parts in the corpus<br/>
+        /// Example: 5893
         /// </summary>
+        /// <example>5893</example>
         [global::Newtonsoft.Json.JsonProperty("used_parts")]
         public long? UsedParts { get; set; }
 
         /// <summary>
-        /// Total number of characters in the corpus
+        /// Total number of characters in the corpus<br/>
+        /// Example: 1459786
         /// </summary>
+        /// <example>1459786</example>
         [global::Newtonsoft.Json.JsonProperty("used_characters")]
         public long? UsedCharacters { get; set; }
 
         /// <summary>
-        /// Number of metadata characters in the corpus
+        /// Number of metadata characters in the corpus<br/>
+        /// Example: 56294
         /// </summary>
+        /// <example>56294</example>
         [global::Newtonsoft.Json.JsonProperty("used_metadata_characters")]
         public long? UsedMetadataCharacters { get; set; }
 
@@ -43,16 +51,20 @@ namespace G
         /// Initializes a new instance of the <see cref="ComputeCorpusSizeResponse" /> class.
         /// </summary>
         /// <param name="usedDocs">
-        /// Number of documents in the corpus
+        /// Number of documents in the corpus<br/>
+        /// Example: 14
         /// </param>
         /// <param name="usedParts">
-        /// Number of document parts in the corpus
+        /// Number of document parts in the corpus<br/>
+        /// Example: 5893
         /// </param>
         /// <param name="usedCharacters">
-        /// Total number of characters in the corpus
+        /// Total number of characters in the corpus<br/>
+        /// Example: 1459786
         /// </param>
         /// <param name="usedMetadataCharacters">
-        /// Number of metadata characters in the corpus
+        /// Number of metadata characters in the corpus<br/>
+        /// Example: 56294
         /// </param>
         public ComputeCorpusSizeResponse(
             long? usedDocs,

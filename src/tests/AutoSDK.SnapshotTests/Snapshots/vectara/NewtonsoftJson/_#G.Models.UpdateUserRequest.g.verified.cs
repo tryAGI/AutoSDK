@@ -16,10 +16,28 @@ namespace G
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// The new role names of the user.
+        /// The new customer-level role names of the user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("api_roles")]
         public global::System.Collections.Generic.IList<global::G.ApiRole>? ApiRoles { get; set; }
+
+        /// <summary>
+        /// New corpus-specific role assignments for the user.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("corpus_roles")]
+        public global::System.Collections.Generic.IList<global::G.CorpusRole>? CorpusRoles { get; set; }
+
+        /// <summary>
+        /// New agent-specific role assignments for the user.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("agent_roles")]
+        public global::System.Collections.Generic.IList<global::G.AgentRole>? AgentRoles { get; set; }
+
+        /// <summary>
+        /// The description of the user.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -34,14 +52,29 @@ namespace G
         /// Indicates whether to enable or disable the user.
         /// </param>
         /// <param name="apiRoles">
-        /// The new role names of the user.
+        /// The new customer-level role names of the user.
+        /// </param>
+        /// <param name="corpusRoles">
+        /// New corpus-specific role assignments for the user.
+        /// </param>
+        /// <param name="agentRoles">
+        /// New agent-specific role assignments for the user.
+        /// </param>
+        /// <param name="description">
+        /// The description of the user.
         /// </param>
         public UpdateUserRequest(
             bool? enabled,
-            global::System.Collections.Generic.IList<global::G.ApiRole>? apiRoles)
+            global::System.Collections.Generic.IList<global::G.ApiRole>? apiRoles,
+            global::System.Collections.Generic.IList<global::G.CorpusRole>? corpusRoles,
+            global::System.Collections.Generic.IList<global::G.AgentRole>? agentRoles,
+            string? description)
         {
             this.Enabled = enabled;
             this.ApiRoles = apiRoles;
+            this.CorpusRoles = corpusRoles;
+            this.AgentRoles = agentRoles;
+            this.Description = description;
         }
 
         /// <summary>

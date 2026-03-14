@@ -13,6 +13,18 @@ namespace G
         /// 
         /// </summary>
         OpenaiCompatible,
+        /// <summary>
+        /// 
+        /// </summary>
+        OpenaiResponses,
+        /// <summary>
+        /// 
+        /// </summary>
+        VertexAi,
+        /// <summary>
+        /// 
+        /// </summary>
+        Anthropic,
     }
 
     /// <summary>
@@ -28,6 +40,9 @@ namespace G
             return value switch
             {
                 CreateLLMRequestDiscriminatorType.OpenaiCompatible => "openai-compatible",
+                CreateLLMRequestDiscriminatorType.OpenaiResponses => "openai-responses",
+                CreateLLMRequestDiscriminatorType.VertexAi => "vertex-ai",
+                CreateLLMRequestDiscriminatorType.Anthropic => "anthropic",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -39,6 +54,9 @@ namespace G
             return value switch
             {
                 "openai-compatible" => CreateLLMRequestDiscriminatorType.OpenaiCompatible,
+                "openai-responses" => CreateLLMRequestDiscriminatorType.OpenaiResponses,
+                "vertex-ai" => CreateLLMRequestDiscriminatorType.VertexAi,
+                "anthropic" => CreateLLMRequestDiscriminatorType.Anthropic,
                 _ => null,
             };
         }

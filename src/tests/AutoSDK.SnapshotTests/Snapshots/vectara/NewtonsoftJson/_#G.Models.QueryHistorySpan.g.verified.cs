@@ -101,8 +101,7 @@ namespace G
         public bool IsFcs => Fcs != null;
 
         /// <summary>
-        /// Provides detailed information about a rewritten query generated for a specific corpus<br/>
-        /// when intelligent query rewriting is enabled.
+        /// Provides detailed information about a rewritten query generated for a specific corpus when intelligent query rewriting is enabled.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RewrittenQuerySpan? RewrittenQuery { get; init; }

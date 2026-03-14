@@ -11,23 +11,29 @@ namespace G
     {
         /// <summary>
         /// Must be "header" for header-based auth<br/>
-        /// Default Value: header
+        /// Default Value: header<br/>
+        /// Example: header
         /// </summary>
         /// <default>"header"</default>
+        /// <example>header</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Type { get; set; } = "header";
 
         /// <summary>
-        /// The header name to use (e.g. x-api-key)
+        /// The header name to use (e.g. x-api-key)<br/>
+        /// Example: x-api-key
         /// </summary>
+        /// <example>x-api-key</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("header")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Header { get; set; }
 
         /// <summary>
-        /// The header value to use
+        /// The header value to use<br/>
+        /// Example: sk-ant.....
         /// </summary>
+        /// <example>sk-ant.....</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Value { get; set; }
@@ -43,13 +49,16 @@ namespace G
         /// </summary>
         /// <param name="type">
         /// Must be "header" for header-based auth<br/>
-        /// Default Value: header
+        /// Default Value: header<br/>
+        /// Example: header
         /// </param>
         /// <param name="header">
-        /// The header name to use (e.g. x-api-key)
+        /// The header name to use (e.g. x-api-key)<br/>
+        /// Example: x-api-key
         /// </param>
         /// <param name="value">
-        /// The header value to use
+        /// The header value to use<br/>
+        /// Example: sk-ant.....
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

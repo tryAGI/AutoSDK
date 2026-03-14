@@ -107,7 +107,7 @@ public static class OpenApiSchemaExtensions
 
         return
             (schema.OneOf?.Any() ?? false) &&
-            (schema.Properties?.Count ?? 0) == 0; // OneOf with properties is not supported
+            ((schema.Properties?.Count ?? 0) == 0 || HasOnlySharedBaseDiscriminatorWrapperProperty(schema));
     }
 
     public static bool IsAnyOf(
@@ -134,6 +134,41 @@ public static class OpenApiSchemaExtensions
         return
             (schema.AllOf?.Any() ?? false) &&
             (schema.Properties?.Count ?? 0) == 0; // AllOf with properties is not supported
+    }
+
+    // Some specs wrap a shared-base discriminated oneOf in a discriminator-only property bag.
+    // That wrapper should still be treated as a named union instead of collapsing to a base class.
+    private static bool HasOnlySharedBaseDiscriminatorWrapperProperty(IOpenApiSchema schema)
+    {
+        if (schema.Discriminator?.PropertyName is not { Length: > 0 } discriminatorPropertyName ||
+            schema.Properties is not { Count: 1 } properties ||
+            !properties.ContainsKey(discriminatorPropertyName))
+        {
+            return false;
+        }
+
+        var sharedBaseReferenceIds = (schema.OneOf ?? [])
+            .Select(GetSharedBaseReferenceId)
+            .Where(static x => !string.IsNullOrWhiteSpace(x))
+            .Distinct(StringComparer.Ordinal)
+            .ToArray();
+
+        return sharedBaseReferenceIds.Length == 1;
+    }
+
+    private static string? GetSharedBaseReferenceId(IOpenApiSchema schema)
+    {
+        var resolvedSchema = schema.ResolveIfRequired();
+        var baseReferenceIds = (resolvedSchema.AllOf ?? [])
+            .Where(static x => x.IsSchemaReference())
+            .Select(static x => x.GetReferenceId())
+            .Where(static x => !string.IsNullOrWhiteSpace(x))
+            .Distinct(StringComparer.Ordinal)
+            .ToArray();
+
+        return baseReferenceIds.Length == 1
+            ? baseReferenceIds[0]
+            : null;
     }
     
     public static bool IsArray(

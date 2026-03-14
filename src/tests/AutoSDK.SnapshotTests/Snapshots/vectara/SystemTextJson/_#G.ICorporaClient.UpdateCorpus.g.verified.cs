@@ -7,12 +7,8 @@ namespace G
     {
         /// <summary>
         /// Update a corpus<br/>
-        /// Enable, disable, or update the name and description of a corpus. This lets you<br/>
-        /// manage data availability without deleting the corpus, which is useful for <br/>
-        /// maintenance and security purposes. The `corpus_key` uniquely identifies the corpus. <br/>
-        /// For more information, see [Corpus Key Definition](https://docs.vectara.com/docs/api-reference/search-apis/search#corpus-key-definition). <br/>
-        /// Consider updating the name and description of a corpus dynamically to help keep your data <br/>
-        /// aligned with changing business needs.
+        /// The Update Corpus API lets you enable, disable, or update the name and description of a corpus. This is useful to manage the availability of data within the system, such as when you need to take the corpus offline without having to delete the corpus.<br/>
+        /// This lets you utilize automated scripts to programmatically control the availability of corpora based on certain conditions. For example, quickly disable a corpus for maintenance updates or in response to security incidents.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -33,12 +29,8 @@ namespace G
 
         /// <summary>
         /// Update a corpus<br/>
-        /// Enable, disable, or update the name and description of a corpus. This lets you<br/>
-        /// manage data availability without deleting the corpus, which is useful for <br/>
-        /// maintenance and security purposes. The `corpus_key` uniquely identifies the corpus. <br/>
-        /// For more information, see [Corpus Key Definition](https://docs.vectara.com/docs/api-reference/search-apis/search#corpus-key-definition). <br/>
-        /// Consider updating the name and description of a corpus dynamically to help keep your data <br/>
-        /// aligned with changing business needs.
+        /// The Update Corpus API lets you enable, disable, or update the name and description of a corpus. This is useful to manage the availability of data within the system, such as when you need to take the corpus offline without having to delete the corpus.<br/>
+        /// This lets you utilize automated scripts to programmatically control the availability of corpora based on certain conditions. For example, quickly disable a corpus for maintenance updates or in response to security incidents.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -52,7 +44,7 @@ namespace G
         /// </param>
         /// <param name="name">
         /// The name for the corpus. If unset or null, then the corpus will remain in the same state.<br/>
-        /// Example: new-name
+        /// Example: new-corpus-name
         /// </param>
         /// <param name="description">
         /// Description of the corpus. If unset or null, then the corpus will remain in the same state.<br/>

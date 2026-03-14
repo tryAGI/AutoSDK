@@ -38,6 +38,18 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.ApiRole>? ApiRoles { get; set; }
 
         /// <summary>
+        /// Corpus-specific role assignments for this App Client.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("corpus_roles")]
+        public global::System.Collections.Generic.IList<global::G.CorpusRole>? CorpusRoles { get; set; }
+
+        /// <summary>
+        /// Agent-specific role assignments for this App Client.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_roles")]
+        public global::System.Collections.Generic.IList<global::G.AgentRole>? AgentRoles { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -59,6 +71,12 @@ namespace G
         /// <param name="apiRoles">
         /// API roles that the client credentials will have.
         /// </param>
+        /// <param name="corpusRoles">
+        /// Corpus-specific role assignments for this App Client.
+        /// </param>
+        /// <param name="agentRoles">
+        /// Agent-specific role assignments for this App Client.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -66,12 +84,16 @@ namespace G
             string name,
             string type,
             string? description,
-            global::System.Collections.Generic.IList<global::G.ApiRole>? apiRoles)
+            global::System.Collections.Generic.IList<global::G.ApiRole>? apiRoles,
+            global::System.Collections.Generic.IList<global::G.CorpusRole>? corpusRoles,
+            global::System.Collections.Generic.IList<global::G.AgentRole>? agentRoles)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Description = description;
             this.ApiRoles = apiRoles;
+            this.CorpusRoles = corpusRoles;
+            this.AgentRoles = agentRoles;
         }
 
         /// <summary>

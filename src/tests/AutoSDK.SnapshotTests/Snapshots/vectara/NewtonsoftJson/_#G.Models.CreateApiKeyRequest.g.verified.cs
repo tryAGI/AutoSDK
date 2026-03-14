@@ -16,21 +16,36 @@ namespace G
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// Role of the API key. <br/>
-        /// A serving API key can only perform query type requests on its corpora. A serving and<br/>
-        /// indexing key can perform both indexing and query type requests on its corpora.<br/>
-        /// A personal API key has all the same permissions as the creator of the API key.
+        /// Customer-level roles for this API key.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("api_key_role", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ApiKeyRole ApiKeyRole { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("api_roles")]
+        public global::System.Collections.Generic.IList<global::G.ApiRole>? ApiRoles { get; set; }
 
         /// <summary>
-        /// Corpora this API key has roles on if it is not a Personal API key.<br/>
-        /// This property should be null or missing if this `api_key_role` is<br/>
-        /// `personal`.
+        /// Role of the API key. A serving API key can only perform query type requests on its corpora. A serving and indexing key can perform both indexing and query type requests on its corpora.<br/>
+        /// A personal API key has all the same permissions as the creator of the API key.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("api_key_role")]
+        public global::G.ApiKeyRole? ApiKeyRole { get; set; }
+
+        /// <summary>
+        /// Deprecated: Use corpus_roles instead. Corpora this API key has roles on.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("corpus_keys")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.Collections.Generic.IList<string>? CorpusKeys { get; set; }
+
+        /// <summary>
+        /// Corpus-specific role assignments for this API key.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("corpus_roles")]
+        public global::System.Collections.Generic.IList<global::G.CorpusRole>? CorpusRoles { get; set; }
+
+        /// <summary>
+        /// Agent-specific role assignments for this API key.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("agent_roles")]
+        public global::System.Collections.Generic.IList<global::G.AgentRole>? AgentRoles { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,25 +59,31 @@ namespace G
         /// <param name="name">
         /// The human-readable name of the API key.
         /// </param>
+        /// <param name="apiRoles">
+        /// Customer-level roles for this API key.
+        /// </param>
         /// <param name="apiKeyRole">
-        /// Role of the API key. <br/>
-        /// A serving API key can only perform query type requests on its corpora. A serving and<br/>
-        /// indexing key can perform both indexing and query type requests on its corpora.<br/>
+        /// Role of the API key. A serving API key can only perform query type requests on its corpora. A serving and indexing key can perform both indexing and query type requests on its corpora.<br/>
         /// A personal API key has all the same permissions as the creator of the API key.
         /// </param>
-        /// <param name="corpusKeys">
-        /// Corpora this API key has roles on if it is not a Personal API key.<br/>
-        /// This property should be null or missing if this `api_key_role` is<br/>
-        /// `personal`.
+        /// <param name="corpusRoles">
+        /// Corpus-specific role assignments for this API key.
+        /// </param>
+        /// <param name="agentRoles">
+        /// Agent-specific role assignments for this API key.
         /// </param>
         public CreateApiKeyRequest(
             string name,
-            global::G.ApiKeyRole apiKeyRole,
-            global::System.Collections.Generic.IList<string>? corpusKeys)
+            global::System.Collections.Generic.IList<global::G.ApiRole>? apiRoles,
+            global::G.ApiKeyRole? apiKeyRole,
+            global::System.Collections.Generic.IList<global::G.CorpusRole>? corpusRoles,
+            global::System.Collections.Generic.IList<global::G.AgentRole>? agentRoles)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.ApiRoles = apiRoles;
             this.ApiKeyRole = apiKeyRole;
-            this.CorpusKeys = corpusKeys;
+            this.CorpusRoles = corpusRoles;
+            this.AgentRoles = agentRoles;
         }
 
         /// <summary>

@@ -3,7 +3,7 @@
 
 namespace G
 {
-    public sealed partial class CreateOpenAILLMRequest
+    public readonly partial struct CreateOpenAILLMRequest
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -42,7 +42,7 @@ namespace G
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::G.CreateOpenAILLMRequest),
-                jsonSerializerContext) as global::G.CreateOpenAILLMRequest;
+                jsonSerializerContext) as global::G.CreateOpenAILLMRequest?;
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace G
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::G.CreateOpenAILLMRequest),
-                jsonSerializerContext).ConfigureAwait(false)) as global::G.CreateOpenAILLMRequest;
+                jsonSerializerContext).ConfigureAwait(false)) as global::G.CreateOpenAILLMRequest?;
         }
 
         /// <summary>

@@ -18,8 +18,10 @@ namespace G
         public string? CorpusKey { get; set; }
 
         /// <summary>
-        /// Query for a particular corpus that will override the overall query if present.
+        /// Query for a particular corpus that will override the overall query if present.<br/>
+        /// Example: What are some important facts in my-corpus?
         /// </summary>
+        /// <example>What are some important facts in my-corpus?</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("query")]
         public string? Query { get; set; }
 
@@ -37,7 +39,8 @@ namespace G
         /// Example: my-corpus
         /// </param>
         /// <param name="query">
-        /// Query for a particular corpus that will override the overall query if present.
+        /// Query for a particular corpus that will override the overall query if present.<br/>
+        /// Example: What are some important facts in my-corpus?
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

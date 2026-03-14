@@ -16,8 +16,10 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.Reranker>? Rerankers { get; set; }
 
         /// <summary>
-        /// The standard metadata in the response of a list operation.
+        /// The standard metadata in the response of a list operation.<br/>
+        /// Example: {"page_key":"eyJvZmZzZXQiOjF9"}
         /// </summary>
+        /// <example>{"page_key":"eyJvZmZzZXQiOjF9"}</example>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
         public global::G.ListMetadata? Metadata { get; set; }
 
@@ -34,7 +36,8 @@ namespace G
         /// An array of rerankers.
         /// </param>
         /// <param name="metadata">
-        /// The standard metadata in the response of a list operation.
+        /// The standard metadata in the response of a list operation.<br/>
+        /// Example: {"page_key":"eyJvZmZzZXQiOjF9"}
         /// </param>
         public ListRerankersResponse(
             global::System.Collections.Generic.IList<global::G.Reranker>? rerankers,

@@ -10,8 +10,10 @@ namespace G
     public sealed partial class QueryFullResponse
     {
         /// <summary>
-        /// The summary of the search results.
+        /// The summary of the search results.<br/>
+        /// Example: The carbon reduction efforts by EU banks in 2023 show...
         /// </summary>
+        /// <example>The carbon reduction efforts by EU banks in 2023 show...</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
         public string? Summary { get; set; }
 
@@ -30,16 +32,16 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.IndividualSearchResult>? SearchResults { get; set; }
 
         /// <summary>
-        /// Indicates the probability that the summary is factually consistent with the results.<br/>
-        /// The system excludes this property if it encounters excessively large outputs or search<br/>
-        /// results.
+        /// Indicates the probability that the summary is factually consistent with the results. The system excludes this property if it encounters excessively large outputs or search results.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("factual_consistency_score")]
         public float? FactualConsistencyScore { get; set; }
 
         /// <summary>
-        /// The rendered prompt sent to the LLM. Useful when creating customer `prompt_template` templates.
+        /// The rendered prompt sent to the LLM. Useful when creating customer `prompt_template` templates.<br/>
+        /// Example: [{"role": "system", "content": "You are an ESG analyst."}, {"role": "user", "content": "What are the carbon reduction initiatives by EU banks in 2023?"}, {"role": "assistant", "content": "${vectaraQueryResults[0].getText()}"}]
         /// </summary>
+        /// <example>[{"role": "system", "content": "You are an ESG analyst."}, {"role": "user", "content": "What are the carbon reduction initiatives by EU banks in 2023?"}, {"role": "assistant", "content": "${vectaraQueryResults[0].getText()}"}]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("rendered_prompt")]
         public string? RenderedPrompt { get; set; }
 
@@ -50,9 +52,10 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.QueryWarning>? Warnings { get; set; }
 
         /// <summary>
-        /// The rewritten queries for the corpora that were searched. Only populated when <br/>
-        /// intelligent_query_rewriting is enabled.
+        /// The rewritten queries for the corpora that were searched. Only populated when `intelligent_query_rewriting` is enabled.<br/>
+        /// Example: [{"corpus_key":"fin_docs","filter_extraction":{"query":"ESG compliance trends in EU","metadata_filter":"doc.industry = \u0027banking\u0027 AND doc.region = \u0027EU\u0027 AND doc.year = 2023"}}]
         /// </summary>
+        /// <example>[{"corpus_key":"fin_docs","filter_extraction":{"query":"ESG compliance trends in EU","metadata_filter":"doc.industry = \u0027banking\u0027 AND doc.region = \u0027EU\u0027 AND doc.year = 2023"}}]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("rewritten_queries")]
         public global::System.Collections.Generic.IList<global::G.RewrittenQuery>? RewrittenQueries { get; set; }
 
@@ -66,7 +69,8 @@ namespace G
         /// Initializes a new instance of the <see cref="QueryFullResponse" /> class.
         /// </summary>
         /// <param name="summary">
-        /// The summary of the search results.
+        /// The summary of the search results.<br/>
+        /// Example: The carbon reduction efforts by EU banks in 2023 show...
         /// </param>
         /// <param name="responseLanguage">
         /// Languages that the Vectara platform supports.<br/>
@@ -76,19 +80,18 @@ namespace G
         /// The ranked search results.
         /// </param>
         /// <param name="factualConsistencyScore">
-        /// Indicates the probability that the summary is factually consistent with the results.<br/>
-        /// The system excludes this property if it encounters excessively large outputs or search<br/>
-        /// results.
+        /// Indicates the probability that the summary is factually consistent with the results. The system excludes this property if it encounters excessively large outputs or search results.
         /// </param>
         /// <param name="renderedPrompt">
-        /// The rendered prompt sent to the LLM. Useful when creating customer `prompt_template` templates.
+        /// The rendered prompt sent to the LLM. Useful when creating customer `prompt_template` templates.<br/>
+        /// Example: [{"role": "system", "content": "You are an ESG analyst."}, {"role": "user", "content": "What are the carbon reduction initiatives by EU banks in 2023?"}, {"role": "assistant", "content": "${vectaraQueryResults[0].getText()}"}]
         /// </param>
         /// <param name="warnings">
         /// Non-fatal warnings that occurred during request processing
         /// </param>
         /// <param name="rewrittenQueries">
-        /// The rewritten queries for the corpora that were searched. Only populated when <br/>
-        /// intelligent_query_rewriting is enabled.
+        /// The rewritten queries for the corpora that were searched. Only populated when `intelligent_query_rewriting` is enabled.<br/>
+        /// Example: [{"corpus_key":"fin_docs","filter_extraction":{"query":"ESG compliance trends in EU","metadata_filter":"doc.industry = \u0027banking\u0027 AND doc.region = \u0027EU\u0027 AND doc.year = 2023"}}]
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

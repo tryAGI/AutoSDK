@@ -17,10 +17,7 @@ namespace G
         public bool AllowAnyResource { get; set; } = default!;
 
         /// <summary>
-        /// Object with keys of resource paths to a list of allowed resources.<br/>
-        /// A resource path starts with either body, path, or implicit.<br/>
-        /// A body or path resource is within the operation body, and an implicit<br/>
-        /// resource is a resource implied by the request.
+        /// Object with keys of resource paths to a list of allowed resources. A resource path starts with either body, path, or implicit. A body or path resource is within the operation body, and an implicit resource is a resource implied by the request.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allowed_resources")]
         public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? AllowedResources { get; set; }
@@ -39,10 +36,7 @@ namespace G
         /// Default Value: true
         /// </param>
         /// <param name="allowedResources">
-        /// Object with keys of resource paths to a list of allowed resources.<br/>
-        /// A resource path starts with either body, path, or implicit.<br/>
-        /// A body or path resource is within the operation body, and an implicit<br/>
-        /// resource is a resource implied by the request.
+        /// Object with keys of resource paths to a list of allowed resources. A resource path starts with either body, path, or implicit. A body or path resource is within the operation body, and an implicit resource is a resource implied by the request.
         /// </param>
         public ApiOperationPolicy(
             bool allowAnyResource,

@@ -5,14 +5,12 @@
 namespace G
 {
     /// <summary>
-    /// How much storage the document used. This information is currently not returned when<br/>
-    /// retrieving the document, and only returned when indexing a document.
+    /// How much storage the document used. This information is currently not returned when retrieving the document, and only returned when indexing a document.
     /// </summary>
     public sealed partial class DocumentStorageUsage
     {
         /// <summary>
-        /// Number of bytes used by document counting towards maximum corpus size, and<br/>
-        /// towards any billing plans.
+        /// Number of bytes used by document counting towards maximum corpus size, and towards any billing plans.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes_used")]
         public long? BytesUsed { get; set; }
@@ -33,8 +31,7 @@ namespace G
         /// Initializes a new instance of the <see cref="DocumentStorageUsage" /> class.
         /// </summary>
         /// <param name="bytesUsed">
-        /// Number of bytes used by document counting towards maximum corpus size, and<br/>
-        /// towards any billing plans.
+        /// Number of bytes used by document counting towards maximum corpus size, and towards any billing plans.
         /// </param>
         /// <param name="metadataBytesUsed">
         /// Number of metadata bytes used by a document.

@@ -10,8 +10,7 @@ namespace G
     public sealed partial class StreamSearchResponse
     {
         /// <summary>
-        /// When the streaming event has the search results, the<br/>
-        /// type will be `search_results`.<br/>
+        /// When the streaming event has the search results, the type will be `search_results`.<br/>
         /// Default Value: search_results
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -24,9 +23,10 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.IndividualSearchResult>? SearchResults { get; set; }
 
         /// <summary>
-        /// The rewritten queries for the corpora that were searched. Only populated when <br/>
-        /// intelligent_query_rewriting is enabled.
+        /// The rewritten queries for the corpora that were searched. Only populated when `intelligent_query_rewriting` is enabled.<br/>
+        /// Example: [{"corpus_key":"fin_docs","filter_extraction":{"query":"ESG compliance trends in EU","metadata_filter":"doc.industry = \u0027banking\u0027 AND doc.year = 2023"}}, {"corpus_key":"legal_docs","filter_extraction":{"query":"ESG regulations for EU banks","metadata_filter":"doc.jurisdiction = \u0027EU\u0027 AND doc.year = 2023"}}]
         /// </summary>
+        /// <example>[{"corpus_key":"fin_docs","filter_extraction":{"query":"ESG compliance trends in EU","metadata_filter":"doc.industry = \u0027banking\u0027 AND doc.year = 2023"}}, {"corpus_key":"legal_docs","filter_extraction":{"query":"ESG regulations for EU banks","metadata_filter":"doc.jurisdiction = \u0027EU\u0027 AND doc.year = 2023"}}]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("rewritten_queries")]
         public global::System.Collections.Generic.IList<global::G.RewrittenQuery>? RewrittenQueries { get; set; }
 
@@ -40,16 +40,15 @@ namespace G
         /// Initializes a new instance of the <see cref="StreamSearchResponse" /> class.
         /// </summary>
         /// <param name="type">
-        /// When the streaming event has the search results, the<br/>
-        /// type will be `search_results`.<br/>
+        /// When the streaming event has the search results, the type will be `search_results`.<br/>
         /// Default Value: search_results
         /// </param>
         /// <param name="searchResults">
         /// The ranked search results.
         /// </param>
         /// <param name="rewrittenQueries">
-        /// The rewritten queries for the corpora that were searched. Only populated when <br/>
-        /// intelligent_query_rewriting is enabled.
+        /// The rewritten queries for the corpora that were searched. Only populated when `intelligent_query_rewriting` is enabled.<br/>
+        /// Example: [{"corpus_key":"fin_docs","filter_extraction":{"query":"ESG compliance trends in EU","metadata_filter":"doc.industry = \u0027banking\u0027 AND doc.year = 2023"}}, {"corpus_key":"legal_docs","filter_extraction":{"query":"ESG regulations for EU banks","metadata_filter":"doc.jurisdiction = \u0027EU\u0027 AND doc.year = 2023"}}]
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

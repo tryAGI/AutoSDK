@@ -7,7 +7,8 @@ namespace G
     /// <summary>
     /// Non-fatal warnings that occurred during query processing.<br/>
     ///  *  `exceeded_max_input_length_fcs`: The input to the Factual Consistency Score model exceeded the maximum allowed length, so no score is being returned<br/>
-    ///  *  `intelligent_query_rewriting_failed`: Intelligent query rewriting failed due to an internal error
+    ///  *  `intelligent_query_rewriting_failed`: Intelligent query rewriting failed due to an internal error<br/>
+    ///  *  `fcs_language_not_supported`: The summary language is not supported by the Factual Consistency Score model
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum QueryWarning
@@ -22,6 +23,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="intelligent_query_rewriting_failed")]
         IntelligentQueryRewritingFailed,
+        /// <summary>
+        /// The summary language is not supported by the Factual Consistency Score model
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="fcs_language_not_supported")]
+        FcsLanguageNotSupported,
     }
 
     /// <summary>
@@ -38,6 +44,7 @@ namespace G
             {
                 QueryWarning.ExceededMaxInputLengthFcs => "exceeded_max_input_length_fcs",
                 QueryWarning.IntelligentQueryRewritingFailed => "intelligent_query_rewriting_failed",
+                QueryWarning.FcsLanguageNotSupported => "fcs_language_not_supported",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,6 +57,7 @@ namespace G
             {
                 "exceeded_max_input_length_fcs" => QueryWarning.ExceededMaxInputLengthFcs,
                 "intelligent_query_rewriting_failed" => QueryWarning.IntelligentQueryRewritingFailed,
+                "fcs_language_not_supported" => QueryWarning.FcsLanguageNotSupported,
                 _ => null,
             };
         }

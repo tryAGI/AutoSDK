@@ -20,6 +20,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        BulkDeleteDocuments,
+        /// <summary>
+        /// 
+        /// </summary>
         Unknown,
     }
 
@@ -37,6 +41,7 @@ namespace G
             {
                 JobType.RebuildVectorIndex => "rebuild_vector_index",
                 JobType.ReplaceFilterAttributes => "replace_filter_attributes",
+                JobType.BulkDeleteDocuments => "bulk_delete_documents",
                 JobType.Unknown => "unknown",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -50,6 +55,7 @@ namespace G
             {
                 "rebuild_vector_index" => JobType.RebuildVectorIndex,
                 "replace_filter_attributes" => JobType.ReplaceFilterAttributes,
+                "bulk_delete_documents" => JobType.BulkDeleteDocuments,
                 "unknown" => JobType.Unknown,
                 _ => null,
             };

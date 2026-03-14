@@ -1,4 +1,5 @@
 ﻿//HintName: G.Models.CreateOpenAILLMRequest.g.cs
+#pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
 
@@ -7,110 +8,215 @@ namespace G
     /// <summary>
     /// Request to create an OpenAI-compatible Large Language Model connection.
     /// </summary>
-    public sealed partial class CreateOpenAILLMRequest
+    public readonly partial struct CreateOpenAILLMRequest : global::System.IEquatable<CreateOpenAILLMRequest>
     {
         /// <summary>
-        /// Must be "openai-compatible" for OpenAI and OpenAI-compatible APIs (like Anthropic Claude, Azure OpenAI, etc)<br/>
-        /// Default Value: openai-compatible
+        /// Common fields for OpenAI-compatible and Responses API LLM requests.
         /// </summary>
-        /// <default>"openai-compatible"</default>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Type { get; set; } = default!;
+#if NET6_0_OR_GREATER
+        public global::G.OpenAILLMRequestBase? Value1 { get; init; }
+#else
+        public global::G.OpenAILLMRequestBase? Value1 { get; }
+#endif
 
         /// <summary>
-        /// Name to reference the LLM.  This will be used in other endpoints (like query) when using this LLM.<br/>
-        /// If this name conflicts with a global LLM (a LLM that is precofnigured with the Vectara platform),<br/>
-        /// then it will override that LLM for all usages.
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Name { get; set; } = default!;
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+#endif
+        public bool IsValue1 => Value1 != null;
 
         /// <summary>
-        /// Description of the LLM.
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description")]
-        public string? Description { get; set; }
+#if NET6_0_OR_GREATER
+        public global::G.CreateOpenAILLMRequestVariant2? Value2 { get; init; }
+#else
+        public global::G.CreateOpenAILLMRequestVariant2? Value2 { get; }
+#endif
 
         /// <summary>
-        /// The model name to use with the API (e.g. gpt-4, claude-2, etc). This is used in the API request to the remote LLM provider.
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Model { get; set; } = default!;
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+#endif
+        public bool IsValue2 => Value2 != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator CreateOpenAILLMRequest(global::G.OpenAILLMRequestBase value) => new CreateOpenAILLMRequest((global::G.OpenAILLMRequestBase?)value);
 
         /// <summary>
-        /// The URI endpoint for the API (can be OpenAI or any compatible API endpoint)
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("uri", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Uri { get; set; } = default!;
+        public static implicit operator global::G.OpenAILLMRequestBase?(CreateOpenAILLMRequest @this) => @this.Value1;
 
         /// <summary>
-        /// Authentication configuration for an LLM
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("auth")]
-        public global::G.RemoteAuth? Auth { get; set; }
-
-        /// <summary>
-        /// Any additional parameters that are required for the LLM during the test call.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("test_model_parameters")]
-        public object? TestModelParameters { get; set; }
-
-        /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
-        /// </summary>
-        [global::Newtonsoft.Json.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CreateOpenAILLMRequest" /> class.
-        /// </summary>
-        /// <param name="type">
-        /// Must be "openai-compatible" for OpenAI and OpenAI-compatible APIs (like Anthropic Claude, Azure OpenAI, etc)<br/>
-        /// Default Value: openai-compatible
-        /// </param>
-        /// <param name="name">
-        /// Name to reference the LLM.  This will be used in other endpoints (like query) when using this LLM.<br/>
-        /// If this name conflicts with a global LLM (a LLM that is precofnigured with the Vectara platform),<br/>
-        /// then it will override that LLM for all usages.
-        /// </param>
-        /// <param name="description">
-        /// Description of the LLM.
-        /// </param>
-        /// <param name="model">
-        /// The model name to use with the API (e.g. gpt-4, claude-2, etc). This is used in the API request to the remote LLM provider.
-        /// </param>
-        /// <param name="uri">
-        /// The URI endpoint for the API (can be OpenAI or any compatible API endpoint)
-        /// </param>
-        /// <param name="auth">
-        /// Authentication configuration for an LLM
-        /// </param>
-        /// <param name="testModelParameters">
-        /// Any additional parameters that are required for the LLM during the test call.
-        /// </param>
-        public CreateOpenAILLMRequest(
-            string type,
-            string name,
-            string model,
-            string uri,
-            string? description,
-            global::G.RemoteAuth? auth,
-            object? testModelParameters)
+        public CreateOpenAILLMRequest(global::G.OpenAILLMRequestBase? value)
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.Uri = uri ?? throw new global::System.ArgumentNullException(nameof(uri));
-            this.Description = description;
-            this.Auth = auth;
-            this.TestModelParameters = testModelParameters;
+            Value1 = value;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateOpenAILLMRequest" /> class.
+        /// 
         /// </summary>
-        public CreateOpenAILLMRequest()
+        public static implicit operator CreateOpenAILLMRequest(global::G.CreateOpenAILLMRequestVariant2 value) => new CreateOpenAILLMRequest((global::G.CreateOpenAILLMRequestVariant2?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.CreateOpenAILLMRequestVariant2?(CreateOpenAILLMRequest @this) => @this.Value2;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CreateOpenAILLMRequest(global::G.CreateOpenAILLMRequestVariant2? value)
         {
+            Value2 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CreateOpenAILLMRequest(
+            global::G.OpenAILLMRequestBase? value1,
+            global::G.CreateOpenAILLMRequestVariant2? value2
+            )
+        {
+            Value1 = value1;
+            Value2 = value2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Object =>
+            Value2 as object ??
+            Value1 as object 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override string? ToString() =>
+            Value1?.ToString() ??
+            Value2?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Validate()
+        {
+            return IsValue1 && IsValue2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::G.OpenAILLMRequestBase?, TResult>? value1 = null,
+            global::System.Func<global::G.CreateOpenAILLMRequestVariant2?, TResult>? value2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsValue1 && value1 != null)
+            {
+                return value1(Value1!);
+            }
+            else if (IsValue2 && value2 != null)
+            {
+                return value2(Value2!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::G.OpenAILLMRequestBase?>? value1 = null,
+            global::System.Action<global::G.CreateOpenAILLMRequestVariant2?>? value2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsValue1)
+            {
+                value1?.Invoke(Value1!);
+            }
+            else if (IsValue2)
+            {
+                value2?.Invoke(Value2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override int GetHashCode()
+        {
+            var fields = new object?[]
+            {
+                Value1,
+                typeof(global::G.OpenAILLMRequestBase),
+                Value2,
+                typeof(global::G.CreateOpenAILLMRequestVariant2),
+            };
+            const int offset = unchecked((int)2166136261);
+            const int prime = 16777619;
+            static int HashCodeAggregator(int hashCode, object? value) => value == null
+                ? (hashCode ^ 0) * prime
+                : (hashCode ^ value.GetHashCode()) * prime;
+
+            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Equals(CreateOpenAILLMRequest other)
+        {
+            return
+                global::System.Collections.Generic.EqualityComparer<global::G.OpenAILLMRequestBase?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.CreateOpenAILLMRequestVariant2?>.Default.Equals(Value2, other.Value2) 
+                ;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator ==(CreateOpenAILLMRequest obj1, CreateOpenAILLMRequest obj2)
+        {
+            return global::System.Collections.Generic.EqualityComparer<CreateOpenAILLMRequest>.Default.Equals(obj1, obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator !=(CreateOpenAILLMRequest obj1, CreateOpenAILLMRequest obj2)
+        {
+            return !(obj1 == obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is CreateOpenAILLMRequest o && Equals(o);
         }
     }
 }

@@ -11,29 +11,41 @@ namespace G
     {
         /// <summary>
         /// The text of the document part.<br/>
-        /// Example: I'm a nice document part.
+        /// Example: This invoice includes customer billing history for Q1.
         /// </summary>
-        /// <example>I'm a nice document part.</example>
+        /// <example>This invoice includes customer billing history for Q1.</example>
         [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
         public string Text { get; set; } = default!;
 
         /// <summary>
         /// The metadata for a document part. These may be used in metadata filters at query time if filter attributes are configured on the corpus.<br/>
-        /// Example: {"nice_rank":9000}
+        /// Example: {"part.rank":9000}
         /// </summary>
-        /// <example>{"nice_rank":9000}</example>
+        /// <example>{"part.rank":9000}</example>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
         public object? Metadata { get; set; }
 
         /// <summary>
-        /// The ID of the table that this document part belongs to.
+        /// The ID of the table that this document part is summarizing.<br/>
+        /// Example: billing_table_111
         /// </summary>
+        /// <example>billing_table_111</example>
         [global::Newtonsoft.Json.JsonProperty("table_id")]
         public string? TableId { get; set; }
 
         /// <summary>
-        /// The context text for the document part.
+        /// The ID of the image that this document part is summarizing.<br/>
+        /// Example: image_1
         /// </summary>
+        /// <example>image_1</example>
+        [global::Newtonsoft.Json.JsonProperty("image_id")]
+        public string? ImageId { get; set; }
+
+        /// <summary>
+        /// The context text for the document part.<br/>
+        /// Example: This document part is part of the table Customer Billing Info.
+        /// </summary>
+        /// <example>This document part is part of the table Customer Billing Info.</example>
         [global::Newtonsoft.Json.JsonProperty("context")]
         public string? Context { get; set; }
 
@@ -54,17 +66,23 @@ namespace G
         /// </summary>
         /// <param name="text">
         /// The text of the document part.<br/>
-        /// Example: I'm a nice document part.
+        /// Example: This invoice includes customer billing history for Q1.
         /// </param>
         /// <param name="metadata">
         /// The metadata for a document part. These may be used in metadata filters at query time if filter attributes are configured on the corpus.<br/>
-        /// Example: {"nice_rank":9000}
+        /// Example: {"part.rank":9000}
         /// </param>
         /// <param name="tableId">
-        /// The ID of the table that this document part belongs to.
+        /// The ID of the table that this document part is summarizing.<br/>
+        /// Example: billing_table_111
+        /// </param>
+        /// <param name="imageId">
+        /// The ID of the image that this document part is summarizing.<br/>
+        /// Example: image_1
         /// </param>
         /// <param name="context">
-        /// The context text for the document part.
+        /// The context text for the document part.<br/>
+        /// Example: This document part is part of the table Customer Billing Info.
         /// </param>
         /// <param name="customDimensions">
         /// The custom dimensions as additional weights.
@@ -73,12 +91,14 @@ namespace G
             string text,
             object? metadata,
             string? tableId,
+            string? imageId,
             string? context,
             global::System.Collections.Generic.Dictionary<string, double>? customDimensions)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Metadata = metadata;
             this.TableId = tableId;
+            this.ImageId = imageId;
             this.Context = context;
             this.CustomDimensions = customDimensions;
         }

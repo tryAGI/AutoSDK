@@ -281,7 +281,16 @@ namespace G
         /// Indicates whether to enable or disable the user.
         /// </param>
         /// <param name="apiRoles">
-        /// The new role names of the user.
+        /// The new customer-level role names of the user.
+        /// </param>
+        /// <param name="corpusRoles">
+        /// New corpus-specific role assignments for the user.
+        /// </param>
+        /// <param name="agentRoles">
+        /// New agent-specific role assignments for the user.
+        /// </param>
+        /// <param name="description">
+        /// The description of the user.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -291,12 +300,18 @@ namespace G
             int? requestTimeoutMillis = default,
             bool? enabled = default,
             global::System.Collections.Generic.IList<global::G.ApiRole>? apiRoles = default,
+            global::System.Collections.Generic.IList<global::G.CorpusRole>? corpusRoles = default,
+            global::System.Collections.Generic.IList<global::G.AgentRole>? agentRoles = default,
+            string? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.UpdateUserRequest
             {
                 Enabled = enabled,
                 ApiRoles = apiRoles,
+                CorpusRoles = corpusRoles,
+                AgentRoles = agentRoles,
+                Description = description,
             };
 
             return await UpdateUserAsync(

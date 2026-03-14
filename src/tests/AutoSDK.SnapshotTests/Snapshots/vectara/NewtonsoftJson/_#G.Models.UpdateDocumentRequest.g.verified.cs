@@ -5,16 +5,15 @@
 namespace G
 {
     /// <summary>
-    /// Schema for updating the document. For PUT requests, the request body metadata replaces the existing<br/>
-    /// metadata. For PATCH requests, the request body metadata is merged with the existing metadata, <br/>
-    /// adding or modifying only the specified fields.
+    /// Schema for updating the document. For PUT requests, the request body metadata replaces the existing metadata. For PATCH requests, the request body metadata is merged with the existing metadata, adding or modifying only the specified fields.
     /// </summary>
     public sealed partial class UpdateDocumentRequest
     {
         /// <summary>
-        /// The metadata for a document as an arbitrary object. Properties of this object<br/>
-        /// can be used by document level filter attributes.
+        /// The metadata for a document as an arbitrary object. Properties of this object can be used by document level filter attributes.<br/>
+        /// Example: {"title":"2024 ESG Annual Report \u2013 EuroBank","region":"EU","industry":"banking","year":2024}
         /// </summary>
+        /// <example>{"title":"2024 ESG Annual Report \u2013 EuroBank","region":"EU","industry":"banking","year":2024}</example>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
         public object? Metadata { get; set; }
 
@@ -28,8 +27,8 @@ namespace G
         /// Initializes a new instance of the <see cref="UpdateDocumentRequest" /> class.
         /// </summary>
         /// <param name="metadata">
-        /// The metadata for a document as an arbitrary object. Properties of this object<br/>
-        /// can be used by document level filter attributes.
+        /// The metadata for a document as an arbitrary object. Properties of this object can be used by document level filter attributes.<br/>
+        /// Example: {"title":"2024 ESG Annual Report \u2013 EuroBank","region":"EU","industry":"banking","year":2024}
         /// </param>
         public UpdateDocumentRequest(
             object? metadata)

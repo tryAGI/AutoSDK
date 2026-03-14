@@ -17,27 +17,24 @@ namespace G
         public string? Type { get; set; }
 
         /// <summary>
-        /// The unique name of the encoder<br/>
-        /// Example: my-openai-encoder
+        /// A unique name for the encoder<br/>
+        /// Example: openai-text-encoder
         /// </summary>
-        /// <example>my-openai-encoder</example>
+        /// <example>openai-text-encoder</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
         /// A description of what this encoder does<br/>
-        /// Example: OpenAI text embedding encoder
+        /// Example: description
         /// </summary>
-        /// <example>OpenAI text embedding encoder</example>
+        /// <example>description</example>
         [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
         public string Description { get; set; } = default!;
 
         /// <summary>
-        /// The number of dimensions in the output embedding vector. If provided and the model supports truncation,<br/>
-        /// the response will be truncated to this number of dimensions.<br/>
-        /// Example: 1536
+        /// The number of dimensions in the output embedding vector. If provided and the model supports truncation, the response will be truncated to this number of dimensions.
         /// </summary>
-        /// <example>1536</example>
         [global::Newtonsoft.Json.JsonProperty("output_dimensions")]
         public int? OutputDimensions { get; set; }
 
@@ -77,17 +74,15 @@ namespace G
         /// Default Value: openai-compatible
         /// </param>
         /// <param name="name">
-        /// The unique name of the encoder<br/>
-        /// Example: my-openai-encoder
+        /// A unique name for the encoder<br/>
+        /// Example: openai-text-encoder
         /// </param>
         /// <param name="description">
         /// A description of what this encoder does<br/>
-        /// Example: OpenAI text embedding encoder
+        /// Example: description
         /// </param>
         /// <param name="outputDimensions">
-        /// The number of dimensions in the output embedding vector. If provided and the model supports truncation,<br/>
-        /// the response will be truncated to this number of dimensions.<br/>
-        /// Example: 1536
+        /// The number of dimensions in the output embedding vector. If provided and the model supports truncation, the response will be truncated to this number of dimensions.
         /// </param>
         /// <param name="uri">
         /// The URI endpoint for the embedding API (can be OpenAI or any compatible embedding API endpoint)<br/>

@@ -1,0 +1,54 @@
+﻿//HintName: G.JsonConverters.BulkDeleteDocumentsResponseDiscriminatorResponseType.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class BulkDeleteDocumentsResponseDiscriminatorResponseTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.BulkDeleteDocumentsResponseDiscriminatorResponseType>
+    {
+        /// <inheritdoc />
+        public override global::G.BulkDeleteDocumentsResponseDiscriminatorResponseType Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::G.BulkDeleteDocumentsResponseDiscriminatorResponseTypeExtensions.ToEnum(stringValue) ?? default;
+                    }
+                    
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::G.BulkDeleteDocumentsResponseDiscriminatorResponseType)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::G.BulkDeleteDocumentsResponseDiscriminatorResponseType);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::G.BulkDeleteDocumentsResponseDiscriminatorResponseType value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteStringValue(global::G.BulkDeleteDocumentsResponseDiscriminatorResponseTypeExtensions.ToValueString(value));
+        }
+    }
+}

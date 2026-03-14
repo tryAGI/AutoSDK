@@ -10,8 +10,7 @@ namespace G
     public sealed partial class StreamResponseEnd
     {
         /// <summary>
-        /// Then end of stream will be denoted with an object<br/>
-        /// with the type `end`.<br/>
+        /// Then end of stream will be denoted with an object with the type `end`.<br/>
         /// Default Value: end
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
@@ -27,8 +26,7 @@ namespace G
         /// Initializes a new instance of the <see cref="StreamResponseEnd" /> class.
         /// </summary>
         /// <param name="type">
-        /// Then end of stream will be denoted with an object<br/>
-        /// with the type `end`.<br/>
+        /// Then end of stream will be denoted with an object with the type `end`.<br/>
         /// Default Value: end
         /// </param>
         public StreamResponseEnd(

@@ -28,7 +28,10 @@ namespace G
 
         /// <summary>
         /// Get an LLM<br/>
-        /// Get details about a specific LLM.
+        /// The Get LLM API allows users to retrieve details about a specific Large Language Model (LLM) that has been configured within the Vectara platform. This API provides metadata about the LLM, including its name, description, model type, API endpoint, and authentication method.<br/>
+        /// Use this API to verify model configurations, confirm connectivity details, and ensure that the correct LLM is being utilized within their workflows.<br/>
+        /// ## Authentication methods<br/>
+        /// The request requires authentication details, and you can provide them either as a Bearer token or custom header-based authentication.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>

@@ -3,7 +3,7 @@
 
 namespace G
 {
-    public sealed partial class CreateOpenAILLMRequest
+    public readonly partial struct CreateOpenAILLMRequest
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

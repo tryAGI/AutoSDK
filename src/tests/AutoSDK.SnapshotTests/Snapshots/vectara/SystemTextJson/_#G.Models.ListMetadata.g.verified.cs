@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The standard metadata in the response of a list operation.
+    /// The standard metadata in the response of a list operation.<br/>
+    /// Example: {"page_key":"eyJvZmZzZXQiOjF9"}
     /// </summary>
     public sealed partial class ListMetadata
     {

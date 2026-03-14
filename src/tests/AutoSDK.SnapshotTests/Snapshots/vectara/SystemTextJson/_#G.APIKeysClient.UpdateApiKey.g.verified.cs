@@ -30,7 +30,8 @@ namespace G
 
         /// <summary>
         /// Update an API key<br/>
-        /// Update an API key such as the roles attached to the key.
+        /// The Update API Key API lets you enable or disable specific API keys. You can use this endpoint to temporarily disable access without deleting the key.<br/>
+        /// This capability is useful for scenarios like maintenance windows, or when your team no longer requires access to a specific corpus.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -235,7 +236,8 @@ namespace G
 
         /// <summary>
         /// Update an API key<br/>
-        /// Update an API key such as the roles attached to the key.
+        /// The Update API Key API lets you enable or disable specific API keys. You can use this endpoint to temporarily disable access without deleting the key.<br/>
+        /// This capability is useful for scenarios like maintenance windows, or when your team no longer requires access to a specific corpus.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>

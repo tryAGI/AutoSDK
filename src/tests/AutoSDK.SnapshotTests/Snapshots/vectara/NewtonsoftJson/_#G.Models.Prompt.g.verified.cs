@@ -5,9 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// A prompt that can be used with a LLM. A prompt is the template that is used to render<br/>
-    /// the text sent to the LLM. It also contains various default model settings such as<br/>
-    /// temperature.
+    /// A prompt that can be used with a LLM. A prompt is the template that is used to render the text sent to the LLM. It also contains various default model settings such as temperature.
     /// </summary>
     public sealed partial class Prompt
     {

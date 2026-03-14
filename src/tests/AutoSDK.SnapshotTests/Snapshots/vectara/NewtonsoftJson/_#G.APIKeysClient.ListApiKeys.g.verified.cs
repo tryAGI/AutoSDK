@@ -34,7 +34,7 @@ namespace G
 
         /// <summary>
         /// List API keys<br/>
-        /// Retrieve a list of API keys for the customer account with optional filtering.
+        /// The List API Keys API lists all existing API keys for a customer ID. It also shows what corpora are accessed by these keys and with what permissions. This capability can provide insights into key usage and status and help you manage the lifecycle and security of your API keys.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -47,9 +47,7 @@ namespace G
         /// Example: my-corpus
         /// </param>
         /// <param name="apiKeyRole">
-        /// Role of the API key. <br/>
-        /// A serving API key can only perform query type requests on its corpora. A serving and<br/>
-        /// indexing key can perform both indexing and query type requests on its corpora.<br/>
+        /// Role of the API key. A serving API key can only perform query type requests on its corpora. A serving and indexing key can perform both indexing and query type requests on its corpora.<br/>
         /// A personal API key has all the same permissions as the creator of the API key.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

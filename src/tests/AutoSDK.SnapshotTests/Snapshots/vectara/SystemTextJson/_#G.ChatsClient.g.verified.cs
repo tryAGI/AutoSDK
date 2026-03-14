@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Create, manage, and interact with chat sessions for conversational AI<br/>
+    /// Deprecated: use Agents instead. Chat endpoints are no longer supported.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

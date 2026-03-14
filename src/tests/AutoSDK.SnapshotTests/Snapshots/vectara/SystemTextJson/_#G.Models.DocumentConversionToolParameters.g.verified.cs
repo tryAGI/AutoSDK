@@ -1,0 +1,78 @@
+﻿//HintName: G.Models.DocumentConversionToolParameters.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Configurable parameters for the document conversion tool. If not overridden, they will be required by the LLM to fill in.
+    /// </summary>
+    public sealed partial class DocumentConversionToolParameters
+    {
+        /// <summary>
+        /// The ID of the artifact to convert.<br/>
+        /// Example: art_abc123
+        /// </summary>
+        /// <example>art_abc123</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("artifact_id")]
+        public string? ArtifactId { get; set; }
+
+        /// <summary>
+        /// Output format for the converted document.<br/>
+        /// Example: markdown
+        /// </summary>
+        /// <example>markdown</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_format")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DocumentConversionToolParametersOutputFormatJsonConverter))]
+        public global::G.DocumentConversionToolParametersOutputFormat? OutputFormat { get; set; }
+
+        /// <summary>
+        /// Optional description for the converted artifact.<br/>
+        /// Example: PDF converted to markdown
+        /// </summary>
+        /// <example>PDF converted to markdown</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DocumentConversionToolParameters" /> class.
+        /// </summary>
+        /// <param name="artifactId">
+        /// The ID of the artifact to convert.<br/>
+        /// Example: art_abc123
+        /// </param>
+        /// <param name="outputFormat">
+        /// Output format for the converted document.<br/>
+        /// Example: markdown
+        /// </param>
+        /// <param name="description">
+        /// Optional description for the converted artifact.<br/>
+        /// Example: PDF converted to markdown
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public DocumentConversionToolParameters(
+            string? artifactId,
+            global::G.DocumentConversionToolParametersOutputFormat? outputFormat,
+            string? description)
+        {
+            this.ArtifactId = artifactId;
+            this.OutputFormat = outputFormat;
+            this.Description = description;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DocumentConversionToolParameters" /> class.
+        /// </summary>
+        public DocumentConversionToolParameters()
+        {
+        }
+    }
+}

@@ -10,8 +10,7 @@ namespace G
     public sealed partial class StreamError
     {
         /// <summary>
-        /// If the stream errors, an event with type `error` will<br/>
-        /// be sent.<br/>
+        /// If the stream errors, an event with type `error` will be sent.<br/>
         /// Default Value: error
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
@@ -33,8 +32,7 @@ namespace G
         /// Initializes a new instance of the <see cref="StreamError" /> class.
         /// </summary>
         /// <param name="type">
-        /// If the stream errors, an event with type `error` will<br/>
-        /// be sent.<br/>
+        /// If the stream errors, an event with type `error` will be sent.<br/>
         /// Default Value: error
         /// </param>
         /// <param name="messages">

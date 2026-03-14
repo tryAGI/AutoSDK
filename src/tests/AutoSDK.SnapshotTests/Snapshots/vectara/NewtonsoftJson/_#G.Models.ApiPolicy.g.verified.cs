@@ -16,9 +16,7 @@ namespace G
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// Operations that are allowed by the API role. Each operation may only allow<br/>
-        /// certain resources that are described by a resource path to resource value<br/>
-        /// map. If the value is null, then the operation is allowed on any resource.
+        /// Operations that are allowed by the API role. Each operation may only allow certain resources that are described by a resource path to resource value map. If the value is null, then the operation is allowed on any resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allowed_operations", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.Dictionary<string, global::G.ApiOperationPolicy> AllowedOperations { get; set; } = default!;
@@ -36,9 +34,7 @@ namespace G
         /// The name of the API role.
         /// </param>
         /// <param name="allowedOperations">
-        /// Operations that are allowed by the API role. Each operation may only allow<br/>
-        /// certain resources that are described by a resource path to resource value<br/>
-        /// map. If the value is null, then the operation is allowed on any resource.
+        /// Operations that are allowed by the API role. Each operation may only allow certain resources that are described by a resource path to resource value map. If the value is null, then the operation is allowed on any resource.
         /// </param>
         public ApiPolicy(
             string name,

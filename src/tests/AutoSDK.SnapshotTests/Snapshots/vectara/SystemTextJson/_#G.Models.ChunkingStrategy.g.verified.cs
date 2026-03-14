@@ -6,8 +6,7 @@
 namespace G
 {
     /// <summary>
-    /// Choose how to split documents into chunks during indexing. This is optional - if you do not set a chunking strategy,<br/>
-    /// the platform uses the default strategy which creates one chunk (docpart) per sentence.
+    /// Choose how to split documents into chunks during indexing. This is optional - if you do not set a chunking strategy, the platform uses the default strategy which creates one chunk (docpart) per sentence.
     /// </summary>
     public readonly partial struct ChunkingStrategy : global::System.IEquatable<ChunkingStrategy>
     {
@@ -17,8 +16,7 @@ namespace G
         public global::G.ChunkingStrategyDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// Sets a chunking strategy that limits the number of maximum characters per chunk.<br/>
-        /// The chunks do not cross section boundaries.
+        /// Sets a chunking strategy that limits the number of maximum characters per chunk. The chunks do not cross section boundaries.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MaxCharsChunkingStrategy? MaxCharsChunkingStrategy { get; init; }
@@ -35,8 +33,7 @@ namespace G
         public bool IsMaxCharsChunkingStrategy => MaxCharsChunkingStrategy != null;
 
         /// <summary>
-        /// Sets a chunking strategy that creates one chunk per sentence.<br/>
-        /// This is the default strategy used when no chunking strategy is specified.
+        /// Sets a chunking strategy that creates one chunk per sentence. This is the default strategy used when no chunking strategy is specified.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SentenceChunkingStrategy? SentenceChunkingStrategy { get; init; }

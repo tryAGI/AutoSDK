@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The metadata for a document as an arbitrary JSON object. Properties of this object<br/>
-    /// can be used by document level filter attributes.
+    /// The metadata for a document as an arbitrary JSON object. Properties of this object can be used by document level filter attributes.<br/>
+    /// Example: {"region":"EU","industry":"banking","year":2024}
     /// </summary>
     public sealed partial class StructuredDocumentMetadata
     {

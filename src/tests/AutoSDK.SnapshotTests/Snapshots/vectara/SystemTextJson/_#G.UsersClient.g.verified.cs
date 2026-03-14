@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Create, manage, and authenticate users within the platform for user administration<br/>
+    /// Create, manage, and authenticate users within the platform for user administration.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

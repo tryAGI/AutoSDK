@@ -10,8 +10,10 @@ namespace G
     public sealed partial class Corpus
     {
         /// <summary>
-        /// Vectara ID of the corpus.
+        /// Vectara ID of the corpus.<br/>
+        /// Example: crp_1
         /// </summary>
+        /// <example>crp_1</example>
         [global::Newtonsoft.Json.JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -24,14 +26,18 @@ namespace G
         public string? Key { get; set; }
 
         /// <summary>
-        /// Name for the corpus. This value defaults to the key.
+        /// Name for the corpus. This value defaults to the key.<br/>
+        /// Example: Vectara Content
         /// </summary>
+        /// <example>Vectara Content</example>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// Corpus description.
+        /// Corpus description.<br/>
+        /// Example: Description about the Vectara Content corpus.
         /// </summary>
+        /// <example>Description about the Vectara Content corpus.</example>
         [global::Newtonsoft.Json.JsonProperty("description")]
         public string? Description { get; set; }
 
@@ -48,24 +54,21 @@ namespace G
         public bool? ChatHistoryCorpus { get; set; }
 
         /// <summary>
-        /// Queries made to this corpus are considered answers, and not questions.<br/>
-        /// This swaps the semantics of the encoder used at query time.<br/>
+        /// Queries made to this corpus are considered answers, and not questions. This swaps the semantics of the encoder used at query time.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("queries_are_answers")]
         public bool? QueriesAreAnswers { get; set; }
 
         /// <summary>
-        /// Documents inside this corpus are considered questions, and not answers.<br/>
-        /// This swaps the semantics of the encoder used at indexing.<br/>
+        /// Documents inside this corpus are considered questions, and not answers. This swaps the semantics of the encoder used at indexing.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("documents_are_questions")]
         public bool? DocumentsAreQuestions { get; set; }
 
         /// <summary>
-        /// The encoder used by the corpus.<br/>
-        /// *Deprecated*: Use `encoder_name` instead
+        /// The encoder used by the corpus. *Deprecated*: Use `encoder_name` instead
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("encoder_id")]
         [global::System.Obsolete("This property marked as deprecated.")]
@@ -119,17 +122,20 @@ namespace G
         /// Initializes a new instance of the <see cref="Corpus" /> class.
         /// </summary>
         /// <param name="id">
-        /// Vectara ID of the corpus.
+        /// Vectara ID of the corpus.<br/>
+        /// Example: crp_1
         /// </param>
         /// <param name="key">
         /// A user-provided key for a corpus.<br/>
         /// Example: my-corpus
         /// </param>
         /// <param name="name">
-        /// Name for the corpus. This value defaults to the key.
+        /// Name for the corpus. This value defaults to the key.<br/>
+        /// Example: Vectara Content
         /// </param>
         /// <param name="description">
-        /// Corpus description.
+        /// Corpus description.<br/>
+        /// Example: Description about the Vectara Content corpus.
         /// </param>
         /// <param name="enabled">
         /// Specifies whether the corpus is enabled or not.
@@ -138,13 +144,11 @@ namespace G
         /// Indicates that this corpus does not store documents and stores chats instead.
         /// </param>
         /// <param name="queriesAreAnswers">
-        /// Queries made to this corpus are considered answers, and not questions.<br/>
-        /// This swaps the semantics of the encoder used at query time.<br/>
+        /// Queries made to this corpus are considered answers, and not questions. This swaps the semantics of the encoder used at query time.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="documentsAreQuestions">
-        /// Documents inside this corpus are considered questions, and not answers.<br/>
-        /// This swaps the semantics of the encoder used at indexing.<br/>
+        /// Documents inside this corpus are considered questions, and not answers. This swaps the semantics of the encoder used at indexing.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="encoderName">

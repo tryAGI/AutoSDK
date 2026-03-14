@@ -7,8 +7,7 @@ namespace G
     {
         /// <summary>
         /// Replace the document metadata.<br/>
-        /// Replaces metadata of a document identified by its unique `document_id` <br/>
-        /// from a specific corpus.
+        /// Replaces metadata of a document identified by its unique `document_id` from a specific corpus.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -31,8 +30,7 @@ namespace G
 
         /// <summary>
         /// Replace the document metadata.<br/>
-        /// Replaces metadata of a document identified by its unique `document_id` <br/>
-        /// from a specific corpus.
+        /// Replaces metadata of a document identified by its unique `document_id` from a specific corpus.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -42,8 +40,8 @@ namespace G
         /// </param>
         /// <param name="documentId"></param>
         /// <param name="metadata">
-        /// The metadata for a document as an arbitrary object. Properties of this object<br/>
-        /// can be used by document level filter attributes.
+        /// The metadata for a document as an arbitrary object. Properties of this object can be used by document level filter attributes.<br/>
+        /// Example: {"title":"2024 ESG Annual Report \u2013 EuroBank","region":"EU","industry":"banking","year":2024}
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Search parameters to retrieve knowledge for the query.
+    /// Search parameters to retrieve knowledge for the query.<br/>
+    /// Example: {"limit":50}
     /// </summary>
     public sealed partial class SearchParameters
     {
@@ -24,15 +25,15 @@ namespace G
         public int? Limit { get; set; }
 
         /// <summary>
-        /// Configuration on the presentation of each document part in the result set.
+        /// Configuration on the presentation of each document part in the result set. You can only use characters_before/after or sentences_before/after, but not both. If you specify both in the query, sentences_before/after takes precedence<br/>
+        /// Example: {"sentences_before":2,"sentences_after":2,"start_tag":"\u003Cem\u003E","end_tag":"\u003C/em\u003E"}
         /// </summary>
+        /// <example>{"sentences_before":2,"sentences_after":2,"start_tag":"\u003Cem\u003E","end_tag":"\u003C/em\u003E"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("context_configuration")]
         public global::G.ContextConfiguration? ContextConfiguration { get; set; }
 
         /// <summary>
-        /// Rerank results of the search. Rerankers are very powerful tools to improve the order of search results.<br/>
-        /// By default the search will use the most powerful reranker available to the customer's plan.<br/>
-        /// To disable reranking, set the reranker `type` to `"none"`.
+        /// Rerank results of the search. Rerankers are very powerful tools to improve the order of search results. By default the search will use the most powerful reranker available to the customer's plan. To disable reranking, set the reranker `type` to `"none"`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reranker")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SearchRerankerJsonConverter))]
@@ -56,12 +57,11 @@ namespace G
         /// Default Value: 10
         /// </param>
         /// <param name="contextConfiguration">
-        /// Configuration on the presentation of each document part in the result set.
+        /// Configuration on the presentation of each document part in the result set. You can only use characters_before/after or sentences_before/after, but not both. If you specify both in the query, sentences_before/after takes precedence<br/>
+        /// Example: {"sentences_before":2,"sentences_after":2,"start_tag":"\u003Cem\u003E","end_tag":"\u003C/em\u003E"}
         /// </param>
         /// <param name="reranker">
-        /// Rerank results of the search. Rerankers are very powerful tools to improve the order of search results.<br/>
-        /// By default the search will use the most powerful reranker available to the customer's plan.<br/>
-        /// To disable reranking, set the reranker `type` to `"none"`.
+        /// Rerank results of the search. Rerankers are very powerful tools to improve the order of search results. By default the search will use the most powerful reranker available to the customer's plan. To disable reranking, set the reranker `type` to `"none"`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -1,0 +1,20 @@
+﻿//HintName: G.Models.AgentToolConfigurations.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// A map of tool configurations available to the agent. The key is the name of the tool configuration and the value is an agent tool configuration.<br/>
+    /// Example: {"customer_search":{"type":"corpora_search","argument_override":{"query":"customer support documentation"}}}
+    /// </summary>
+    public sealed partial class AgentToolConfigurations
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

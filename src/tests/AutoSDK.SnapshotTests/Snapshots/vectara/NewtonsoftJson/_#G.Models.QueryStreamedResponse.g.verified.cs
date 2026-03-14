@@ -50,8 +50,7 @@ namespace G
         public bool IsGenerationChunk => GenerationChunk != null;
 
         /// <summary>
-        /// The end of generation. There may still be more information such as the<br/>
-        /// factual consistency score, but generation has stopped.
+        /// The end of generation. There may still be more information such as the factual consistency score, but generation has stopped.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StreamGenerationEnd? GenerationEnd { get; init; }

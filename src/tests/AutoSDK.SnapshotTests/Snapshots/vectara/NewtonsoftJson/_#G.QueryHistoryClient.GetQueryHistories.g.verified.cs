@@ -14,6 +14,7 @@ namespace G
             ref global::System.DateTime? startedAfter,
             ref global::System.DateTime? startedBefore,
             ref string? chatId,
+            ref string? historyId,
             ref int? limit,
             ref string? pageKey);
         partial void PrepareGetQueryHistoriesRequest(
@@ -25,6 +26,7 @@ namespace G
             global::System.DateTime? startedAfter,
             global::System.DateTime? startedBefore,
             string? chatId,
+            string? historyId,
             int? limit,
             string? pageKey);
         partial void ProcessGetQueryHistoriesResponse(
@@ -38,7 +40,8 @@ namespace G
 
         /// <summary>
         /// List the history of previous queries<br/>
-        /// Retrieve query histories.
+        /// The List Query Histories API allows you to retrieve, update, and manage query history for a specific corpus. This API is particularly useful for tracking query performance, debugging individual queries, and retrieving detailed information such as the call stack of a query execution.<br/>
+        /// You can specify the `corpus_key`, `chat_id`, and the `limit` which is the maximum number of historical queries to list.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -46,6 +49,7 @@ namespace G
         /// <param name="startedAfter"></param>
         /// <param name="startedBefore"></param>
         /// <param name="chatId"></param>
+        /// <param name="historyId"></param>
         /// <param name="limit">
         /// Default Value: 10
         /// </param>
@@ -59,6 +63,7 @@ namespace G
             global::System.DateTime? startedAfter = default,
             global::System.DateTime? startedBefore = default,
             string? chatId = default,
+            string? historyId = default,
             int? limit = default,
             string? pageKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -73,6 +78,7 @@ namespace G
                 startedAfter: ref startedAfter,
                 startedBefore: ref startedBefore,
                 chatId: ref chatId,
+                historyId: ref historyId,
                 limit: ref limit,
                 pageKey: ref pageKey);
 
@@ -84,6 +90,7 @@ namespace G
                 .AddOptionalParameter("started_after", startedAfter?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("started_before", startedBefore?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("chat_id", chatId)
+                .AddOptionalParameter("history_id", historyId)
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("page_key", pageKey) 
                 ; 
@@ -134,6 +141,7 @@ namespace G
                 startedAfter: startedAfter,
                 startedBefore: startedBefore,
                 chatId: chatId,
+                historyId: historyId,
                 limit: limit,
                 pageKey: pageKey);
 

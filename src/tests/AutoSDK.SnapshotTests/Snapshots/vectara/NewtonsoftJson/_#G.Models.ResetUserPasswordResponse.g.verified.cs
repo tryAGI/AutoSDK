@@ -16,8 +16,7 @@ namespace G
         public string? OneTimeCode { get; set; }
 
         /// <summary>
-        /// The link where to enter the `one_time_code`.<br/>
-        /// This is optional, and is only populated for some Vectara deployments.
+        /// The link where to enter the `one_time_code`. This is optional, and is only populated for some Vectara deployments.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("one_time_code_link")]
         public string? OneTimeCodeLink { get; set; }
@@ -35,8 +34,7 @@ namespace G
         /// A one time code that can be used to reset the password. This is optional, and is only populated for some Vectara deployments.
         /// </param>
         /// <param name="oneTimeCodeLink">
-        /// The link where to enter the `one_time_code`.<br/>
-        /// This is optional, and is only populated for some Vectara deployments.
+        /// The link where to enter the `one_time_code`. This is optional, and is only populated for some Vectara deployments.
         /// </param>
         public ResetUserPasswordResponse(
             string? oneTimeCode,

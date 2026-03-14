@@ -10,8 +10,10 @@ namespace G
     public sealed partial class Cell
     {
         /// <summary>
-        /// A text value.
+        /// A text value.<br/>
+        /// Example: Bank A
         /// </summary>
+        /// <example>Bank A</example>
         [global::Newtonsoft.Json.JsonProperty("text_value")]
         public string? TextValue { get; set; }
 
@@ -34,14 +36,18 @@ namespace G
         public bool? BoolValue { get; set; }
 
         /// <summary>
-        /// The number of columns the cell spans. This field is optional; if not specified, default is 1. Must be greater than 0.
+        /// The number of columns the cell spans. This field is optional; if not specified, default is 1. Must be greater than 0.<br/>
+        /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("colspan")]
         public int? Colspan { get; set; }
 
         /// <summary>
-        /// The number of rows the cell spans. This field is optional; if not specified, default is 1. Must be greater than 0.
+        /// The number of rows the cell spans. This field is optional; if not specified, default is 1. Must be greater than 0.<br/>
+        /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("rowspan")]
         public int? Rowspan { get; set; }
 
@@ -55,7 +61,8 @@ namespace G
         /// Initializes a new instance of the <see cref="Cell" /> class.
         /// </summary>
         /// <param name="textValue">
-        /// A text value.
+        /// A text value.<br/>
+        /// Example: Bank A
         /// </param>
         /// <param name="intValue">
         /// A signed 64-bit integer value.
@@ -67,10 +74,12 @@ namespace G
         /// A boolean value.
         /// </param>
         /// <param name="colspan">
-        /// The number of columns the cell spans. This field is optional; if not specified, default is 1. Must be greater than 0.
+        /// The number of columns the cell spans. This field is optional; if not specified, default is 1. Must be greater than 0.<br/>
+        /// Example: 1
         /// </param>
         /// <param name="rowspan">
-        /// The number of rows the cell spans. This field is optional; if not specified, default is 1. Must be greater than 0.
+        /// The number of rows the cell spans. This field is optional; if not specified, default is 1. Must be greater than 0.<br/>
+        /// Example: 1
         /// </param>
         public Cell(
             string? textValue,

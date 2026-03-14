@@ -16,8 +16,10 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.Corpus>? Corpora { get; set; }
 
         /// <summary>
-        /// The standard metadata in the response of a list operation.
+        /// The standard metadata in the response of a list operation.<br/>
+        /// Example: {"page_key":"eyJvZmZzZXQiOjF9"}
         /// </summary>
+        /// <example>{"page_key":"eyJvZmZzZXQiOjF9"}</example>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
         public global::G.ListMetadata? Metadata { get; set; }
 
@@ -32,7 +34,8 @@ namespace G
         /// </summary>
         /// <param name="corpora"></param>
         /// <param name="metadata">
-        /// The standard metadata in the response of a list operation.
+        /// The standard metadata in the response of a list operation.<br/>
+        /// Example: {"page_key":"eyJvZmZzZXQiOjF9"}
         /// </param>
         public ListCorporaResponse(
             global::System.Collections.Generic.IList<global::G.Corpus>? corpora,

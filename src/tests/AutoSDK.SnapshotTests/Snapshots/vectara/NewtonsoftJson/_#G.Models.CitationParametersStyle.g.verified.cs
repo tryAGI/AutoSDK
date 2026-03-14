@@ -5,9 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The citation style to be used in summary.<br/>
-    /// Can be one of:<br/>
-    /// * `numeric` - Citations formatted as simple numerals: \[1\], \[2\] ...<br/>
+    /// The citation style that you want to use in the summary: <br/>
+    /// * `numeric` - Citations formatted as simple numerals: \[1\], \[2\], etc.<br/>
     /// * `none` - Citations removed from text.<br/>
     /// * `html` - Citation formatted as a URL like `&lt;a href="url_pattern"&gt;text_pattern&lt;/a&gt;`.<br/>
     /// * `markdown` - Formatted as `[text_pattern](url_pattern)`.
@@ -21,7 +20,7 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="none")]
         None,
         /// <summary>
-        /// \[1\], \[2\] ...
+        /// \[1\], \[2\], etc.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="numeric")]
         Numeric,

@@ -1,0 +1,52 @@
+﻿//HintName: G.Models.ListSessionArtifactsSortBy.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Default Value: created_at
+    /// </summary>
+    public enum ListSessionArtifactsSortBy
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        CreatedAt,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdatedAt,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ListSessionArtifactsSortByExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ListSessionArtifactsSortBy value)
+        {
+            return value switch
+            {
+                ListSessionArtifactsSortBy.CreatedAt => "created_at",
+                ListSessionArtifactsSortBy.UpdatedAt => "updated_at",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ListSessionArtifactsSortBy? ToEnum(string value)
+        {
+            return value switch
+            {
+                "created_at" => ListSessionArtifactsSortBy.CreatedAt,
+                "updated_at" => ListSessionArtifactsSortBy.UpdatedAt,
+                _ => null,
+            };
+        }
+    }
+}

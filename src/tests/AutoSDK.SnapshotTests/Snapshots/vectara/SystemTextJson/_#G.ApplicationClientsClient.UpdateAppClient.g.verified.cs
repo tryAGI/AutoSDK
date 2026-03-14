@@ -246,6 +246,12 @@ namespace G
         /// <param name="apiRoles">
         /// The new roles attached to the App Client. These roles will replace the current roles.
         /// </param>
+        /// <param name="corpusRoles">
+        /// The new corpus role assignments. These will replace the current corpus roles.
+        /// </param>
+        /// <param name="agentRoles">
+        /// The new agent role assignments. These will replace the current agent roles.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AppClient> UpdateAppClientAsync(
@@ -254,12 +260,16 @@ namespace G
             int? requestTimeoutMillis = default,
             string? description = default,
             global::System.Collections.Generic.IList<global::G.ApiRole>? apiRoles = default,
+            global::System.Collections.Generic.IList<global::G.CorpusRole>? corpusRoles = default,
+            global::System.Collections.Generic.IList<global::G.AgentRole>? agentRoles = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.UpdateAppClientRequest
             {
                 Description = description,
                 ApiRoles = apiRoles,
+                CorpusRoles = corpusRoles,
+                AgentRoles = agentRoles,
             };
 
             return await UpdateAppClientAsync(

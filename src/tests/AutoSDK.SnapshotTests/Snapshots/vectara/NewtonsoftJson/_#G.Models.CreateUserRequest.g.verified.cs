@@ -28,10 +28,22 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
-        /// The role names assigned to the user.
+        /// The customer-level role names assigned to the user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("api_roles")]
         public global::System.Collections.Generic.IList<global::G.ApiRole>? ApiRoles { get; set; }
+
+        /// <summary>
+        /// Corpus-specific role assignments for the user.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("corpus_roles")]
+        public global::System.Collections.Generic.IList<global::G.CorpusRole>? CorpusRoles { get; set; }
+
+        /// <summary>
+        /// Agent-specific role assignments for the user.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("agent_roles")]
+        public global::System.Collections.Generic.IList<global::G.AgentRole>? AgentRoles { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,18 +64,28 @@ namespace G
         /// The description of the user.
         /// </param>
         /// <param name="apiRoles">
-        /// The role names assigned to the user.
+        /// The customer-level role names assigned to the user.
+        /// </param>
+        /// <param name="corpusRoles">
+        /// Corpus-specific role assignments for the user.
+        /// </param>
+        /// <param name="agentRoles">
+        /// Agent-specific role assignments for the user.
         /// </param>
         public CreateUserRequest(
             string email,
             string? username,
             string? description,
-            global::System.Collections.Generic.IList<global::G.ApiRole>? apiRoles)
+            global::System.Collections.Generic.IList<global::G.ApiRole>? apiRoles,
+            global::System.Collections.Generic.IList<global::G.CorpusRole>? corpusRoles,
+            global::System.Collections.Generic.IList<global::G.AgentRole>? agentRoles)
         {
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.Username = username;
             this.Description = description;
             this.ApiRoles = apiRoles;
+            this.CorpusRoles = corpusRoles;
+            this.AgentRoles = agentRoles;
         }
 
         /// <summary>

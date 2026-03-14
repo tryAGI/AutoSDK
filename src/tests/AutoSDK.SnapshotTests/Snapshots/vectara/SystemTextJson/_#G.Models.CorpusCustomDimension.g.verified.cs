@@ -5,8 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Custom dimensions attached to all document parts in a corpus. Allows arbitrary<br/>
-    /// modification of the score for many purposes.
+    /// Custom dimensions attached to all document parts in a corpus. Allows arbitrary modification of the score for many purposes.
     /// </summary>
     public sealed partial class CorpusCustomDimension
     {
@@ -28,9 +27,7 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
-        /// Default value of a custom dimension on a document part if the custom<br/>
-        /// dimension value is not specified when the document part is indexed.<br/>
-        /// A value of 0 means that custom dimension is not considered.<br/>
+        /// Default value of a custom dimension on a document part if the custom dimension value is not specified when the document part is indexed. A value of 0 means that custom dimension is not considered.<br/>
         /// Default Value: 0<br/>
         /// Example: 0
         /// </summary>
@@ -39,9 +36,7 @@ namespace G
         public double? IndexingDefault { get; set; }
 
         /// <summary>
-        /// Default value of a custom dimension for a query if the value<br/>
-        /// of the custom dimension is not specified when querying the corpus.<br/>
-        /// A value of 0 means that custom dimension is not considered.<br/>
+        /// Default value of a custom dimension for a query if the value of the custom dimension is not specified when querying the corpus. A value of 0 means that custom dimension is not considered.<br/>
         /// Default Value: 0<br/>
         /// Example: 0
         /// </summary>
@@ -67,16 +62,12 @@ namespace G
         /// Example: Product importance.
         /// </param>
         /// <param name="indexingDefault">
-        /// Default value of a custom dimension on a document part if the custom<br/>
-        /// dimension value is not specified when the document part is indexed.<br/>
-        /// A value of 0 means that custom dimension is not considered.<br/>
+        /// Default value of a custom dimension on a document part if the custom dimension value is not specified when the document part is indexed. A value of 0 means that custom dimension is not considered.<br/>
         /// Default Value: 0<br/>
         /// Example: 0
         /// </param>
         /// <param name="queryingDefault">
-        /// Default value of a custom dimension for a query if the value<br/>
-        /// of the custom dimension is not specified when querying the corpus.<br/>
-        /// A value of 0 means that custom dimension is not considered.<br/>
+        /// Default value of a custom dimension for a query if the value of the custom dimension is not specified when querying the corpus. A value of 0 means that custom dimension is not considered.<br/>
         /// Default Value: 0<br/>
         /// Example: 0
         /// </param>

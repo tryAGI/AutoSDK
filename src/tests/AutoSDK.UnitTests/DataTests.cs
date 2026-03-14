@@ -296,20 +296,22 @@ public partial class DataTests
                                         compaction_message:
                                           type: string
                                 CreateInputRequest:
-                                  required:
-                                    - type
-                                  oneOf:
-                                    - $ref: '#/components/schemas/CreateInputMessageRequest'
-                                    - $ref: '#/components/schemas/CreateInterruptRequest'
-                                    - $ref: '#/components/schemas/CreateCompactRequest'
+                                  properties:
+                                    type:
+                                      type: string
+                                      default: input_message
                                   description: A request to create input for an agent session.
+                                  x-vectara-base-schema: '#/CreateInputRequestBase'
                                   discriminator:
                                     propertyName: type
                                     mapping:
                                       input_message: '#/components/schemas/CreateInputMessageRequest'
                                       interrupt: '#/components/schemas/CreateInterruptRequest'
                                       compact: '#/components/schemas/CreateCompactRequest'
-                                  x-vectara-base-schema: '#/CreateInputRequestBase'
+                                  oneOf:
+                                    - $ref: '#/components/schemas/CreateInputMessageRequest'
+                                    - $ref: '#/components/schemas/CreateInterruptRequest'
+                                    - $ref: '#/components/schemas/CreateCompactRequest'
                             """;
 
         var data = Data.Prepare(((yaml, settings), GlobalSettings: settings));
@@ -322,6 +324,31 @@ public partial class DataTests
         anyOf.SubType.Should().Be("OneOf");
         anyOf.Properties.Select(x => x.Name).Should().Contain(["InputMessage", "Interrupt", "Compact"]);
         generatedAnyOf.Should().Contain("public readonly partial struct CreateInputRequest");
+        endPoint.RequestType.CSharpTypeWithoutNullability.Should().Be("global::G.CreateInputRequest");
+        generatedEndPoint.Should().Contain("global::G.CreateInputRequest request");
+        generatedEndPoint.Should().NotContain("object request");
+    }
+
+    [TestMethod]
+    public void VectaraOfficialSpec_CreateInputRequest_PreservesNamedRequestUnion()
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateModels = true,
+            GenerateSdk = true,
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            TargetFramework = "net8.0",
+        };
+
+        var data = Data.Prepare(((new H.Resource("vectara.yaml").AsString(), settings), GlobalSettings: settings));
+        var anyOf = data.AnyOfs.Single(x => x.Name == "CreateInputRequest");
+        var endPoint = data.Methods.Single(x => x.MethodName == "CreateAgentInputAsync");
+        var generatedEndPoint = Sources.GenerateEndPoint(endPoint);
+
+        data.Classes.Should().NotContain(x => x.ClassName == "CreateInputRequest");
+        anyOf.SubType.Should().Be("OneOf");
+        anyOf.Properties.Select(x => x.Name).Should().Contain(["InputMessage", "Interrupt", "Compact"]);
         endPoint.RequestType.CSharpTypeWithoutNullability.Should().Be("global::G.CreateInputRequest");
         generatedEndPoint.Should().Contain("global::G.CreateInputRequest request");
         generatedEndPoint.Should().NotContain("object request");

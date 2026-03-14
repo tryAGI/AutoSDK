@@ -5,8 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Provides detailed information about a rewritten query generated for a specific corpus<br/>
-    /// when intelligent query rewriting is enabled.
+    /// Provides detailed information about a rewritten query generated for a specific corpus when intelligent query rewriting is enabled.
     /// </summary>
     public sealed partial class RewrittenQuerySpan
     {
@@ -29,7 +28,7 @@ namespace G
         public int? LatencyMillis { get; set; }
 
         /// <summary>
-        /// When the span started.
+        /// ISO date time that indicates when the span started.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("started_at")]
         public global::System.DateTime? StartedAt { get; set; }
@@ -65,7 +64,7 @@ namespace G
         /// Time taken in milliseconds.
         /// </param>
         /// <param name="startedAt">
-        /// When the span started.
+        /// ISO date time that indicates when the span started.
         /// </param>
         /// <param name="warnings">
         /// Warnings that occurred during query rewriting.

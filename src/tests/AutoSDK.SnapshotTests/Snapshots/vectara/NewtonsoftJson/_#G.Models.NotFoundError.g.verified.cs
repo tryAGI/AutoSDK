@@ -22,7 +22,7 @@ namespace G
         public global::System.Collections.Generic.IList<string>? Messages { get; set; }
 
         /// <summary>
-        /// ID of the request that can be used to help Vectara support debug what went wrong.
+        /// The ID of the request that can be used to help Vectara support debug what went wrong.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("request_id")]
         public string? RequestId { get; set; }
@@ -41,7 +41,7 @@ namespace G
         /// </param>
         /// <param name="messages"></param>
         /// <param name="requestId">
-        /// ID of the request that can be used to help Vectara support debug what went wrong.
+        /// The ID of the request that can be used to help Vectara support debug what went wrong.
         /// </param>
         public NotFoundError(
             string? id,

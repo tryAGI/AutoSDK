@@ -7,7 +7,8 @@ namespace G
     {
         /// <summary>
         /// List rerankers<br/>
-        /// Rerankers are used to improve the ranking (ordering) of search results.
+        /// The List Rerankers API retrieves a list of available rerankers used to improve the ranking and ordering of search results.<br/>
+        /// For more information about the available rerankers, see [Reranking overview](https://docs.vectara.com/docs/search-and-retrieval/rerankers/reranking-overview).
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>

@@ -52,10 +52,22 @@ namespace G
         public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
-        /// The role names of the user.
+        /// The customer-level role names of the user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("api_roles")]
         public global::System.Collections.Generic.IList<global::G.ApiRole>? ApiRoles { get; set; }
+
+        /// <summary>
+        /// Corpus-specific role assignments for the user.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("corpus_roles")]
+        public global::System.Collections.Generic.IList<global::G.CorpusRole>? CorpusRoles { get; set; }
+
+        /// <summary>
+        /// Agent-specific role assignments for the user.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_roles")]
+        public global::System.Collections.Generic.IList<global::G.AgentRole>? AgentRoles { get; set; }
 
         /// <summary>
         /// What actions a principal can take on the Vectara platform.
@@ -94,7 +106,13 @@ namespace G
         /// When a user property was last updated.
         /// </param>
         /// <param name="apiRoles">
-        /// The role names of the user.
+        /// The customer-level role names of the user.
+        /// </param>
+        /// <param name="corpusRoles">
+        /// Corpus-specific role assignments for the user.
+        /// </param>
+        /// <param name="agentRoles">
+        /// Agent-specific role assignments for the user.
         /// </param>
         /// <param name="apiPolicy">
         /// What actions a principal can take on the Vectara platform.
@@ -111,6 +129,8 @@ namespace G
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt,
             global::System.Collections.Generic.IList<global::G.ApiRole>? apiRoles,
+            global::System.Collections.Generic.IList<global::G.CorpusRole>? corpusRoles,
+            global::System.Collections.Generic.IList<global::G.AgentRole>? agentRoles,
             global::G.ApiPolicy? apiPolicy)
         {
             this.Id = id;
@@ -121,6 +141,8 @@ namespace G
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.ApiRoles = apiRoles;
+            this.CorpusRoles = corpusRoles;
+            this.AgentRoles = agentRoles;
             this.ApiPolicy = apiPolicy;
         }
 

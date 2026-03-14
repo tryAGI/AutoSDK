@@ -5,27 +5,31 @@
 namespace G
 {
     /// <summary>
-    /// Bundle of default values used when calling generation. All values except<br/>
-    /// model name can be overridden at generation time.
+    /// Bundle of default values used when calling generation. All values except model name can be overridden at generation time.
     /// </summary>
     public sealed partial class GenerationPreset
     {
         /// <summary>
-        /// Name of the generation preset to be used with configuring generation.
+        /// Name of the generation preset to be used with configuring generation.<br/>
+        /// Example: Mockingbird 2.0
         /// </summary>
+        /// <example>Mockingbird 2.0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// Description of the generation preset.
+        /// Description of the generation preset.<br/>
+        /// Example: Mockingbird LLM 2.0 prompt for summarizing query results as an answer. Designed for RAG.
         /// </summary>
+        /// <example>Mockingbird LLM 2.0 prompt for summarizing query results as an answer. Designed for RAG.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// Name of the model that these presets are used with. The list of available names can be<br/>
-        /// fetched by the `GET /v2/llms` endpoint.
+        /// Name of the model that these presets are used with. The list of available names can be fetched by the `GET /v2/llms` endpoint.<br/>
+        /// Example: mockingbird-2.0
         /// </summary>
+        /// <example>mockingbird-2.0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm_name")]
         public string? LlmName { get; set; }
 
@@ -36,35 +40,42 @@ namespace G
         public string? PromptTemplate { get; set; }
 
         /// <summary>
-        /// Preset maximum number of search results that will be available to the prompt.
+        /// Preset maximum number of search results that will be available to the prompt.<br/>
+        /// Example: 50
         /// </summary>
+        /// <example>50</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_used_search_results")]
         public int? MaxUsedSearchResults { get; set; }
 
         /// <summary>
-        /// Preset maximum number of tokens to be returned by the generation.
+        /// Preset maximum number of tokens to be returned by the generation.<br/>
+        /// Example: 500
         /// </summary>
+        /// <example>500</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]
         public int? MaxTokens { get; set; }
 
         /// <summary>
-        /// The sampling temperature to use. Higher values make the output more random, while lower<br/>
-        /// values make it more focused and deterministic.
+        /// The sampling temperature to use. Higher values make the output more random, while lower values make it more focused and deterministic.<br/>
+        /// Example: 0.4
         /// </summary>
+        /// <example>0.4</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
         public float? Temperature { get; set; }
 
         /// <summary>
-        /// Higher values penalize new tokens based on their existing frequency in the generation so far,<br/>
-        /// decreasing the model's likelihood to repeat the same line verbatim.
+        /// Higher values penalize new tokens based on their existing frequency in the generation so far, decreasing the model's likelihood to repeat the same line verbatim.<br/>
+        /// Example: 0.2
         /// </summary>
+        /// <example>0.2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("frequency_penalty")]
         public float? FrequencyPenalty { get; set; }
 
         /// <summary>
-        /// Higher values penalize new tokens based on whether they appear in the generation so far,<br/>
-        /// increasing the model's likelihood to talk about new topics.
+        /// Higher values penalize new tokens based on whether they appear in the generation so far, increasing the model's likelihood to talk about new topics.<br/>
+        /// Example: 0.2
         /// </summary>
+        /// <example>0.2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("presence_penalty")]
         public float? PresencePenalty { get; set; }
 
@@ -90,35 +101,39 @@ namespace G
         /// Initializes a new instance of the <see cref="GenerationPreset" /> class.
         /// </summary>
         /// <param name="name">
-        /// Name of the generation preset to be used with configuring generation.
+        /// Name of the generation preset to be used with configuring generation.<br/>
+        /// Example: Mockingbird 2.0
         /// </param>
         /// <param name="description">
-        /// Description of the generation preset.
+        /// Description of the generation preset.<br/>
+        /// Example: Mockingbird LLM 2.0 prompt for summarizing query results as an answer. Designed for RAG.
         /// </param>
         /// <param name="llmName">
-        /// Name of the model that these presets are used with. The list of available names can be<br/>
-        /// fetched by the `GET /v2/llms` endpoint.
+        /// Name of the model that these presets are used with. The list of available names can be fetched by the `GET /v2/llms` endpoint.<br/>
+        /// Example: mockingbird-2.0
         /// </param>
         /// <param name="promptTemplate">
         /// Preset template used to render the prompt sent to generation.
         /// </param>
         /// <param name="maxUsedSearchResults">
-        /// Preset maximum number of search results that will be available to the prompt.
+        /// Preset maximum number of search results that will be available to the prompt.<br/>
+        /// Example: 50
         /// </param>
         /// <param name="maxTokens">
-        /// Preset maximum number of tokens to be returned by the generation.
+        /// Preset maximum number of tokens to be returned by the generation.<br/>
+        /// Example: 500
         /// </param>
         /// <param name="temperature">
-        /// The sampling temperature to use. Higher values make the output more random, while lower<br/>
-        /// values make it more focused and deterministic.
+        /// The sampling temperature to use. Higher values make the output more random, while lower values make it more focused and deterministic.<br/>
+        /// Example: 0.4
         /// </param>
         /// <param name="frequencyPenalty">
-        /// Higher values penalize new tokens based on their existing frequency in the generation so far,<br/>
-        /// decreasing the model's likelihood to repeat the same line verbatim.
+        /// Higher values penalize new tokens based on their existing frequency in the generation so far, decreasing the model's likelihood to repeat the same line verbatim.<br/>
+        /// Example: 0.2
         /// </param>
         /// <param name="presencePenalty">
-        /// Higher values penalize new tokens based on whether they appear in the generation so far,<br/>
-        /// increasing the model's likelihood to talk about new topics.
+        /// Higher values penalize new tokens based on whether they appear in the generation so far, increasing the model's likelihood to talk about new topics.<br/>
+        /// Example: 0.2
         /// </param>
         /// <param name="enabled">
         /// Indicates whether the prompt is enabled.

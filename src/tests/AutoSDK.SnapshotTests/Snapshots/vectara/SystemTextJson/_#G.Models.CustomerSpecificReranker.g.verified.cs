@@ -10,17 +10,14 @@ namespace G
     public sealed partial class CustomerSpecificReranker
     {
         /// <summary>
-        /// When the type is `customer_reranker`, you can specify the `reranker_name` of a reranker. `reranker_id` is deprecated.<br/>
-        /// The retrieval engine will then rerank results using that reranker.<br/>
+        /// When the type is `customer_reranker`, you can specify the `reranker_name` of a reranker. `reranker_id` is deprecated. The retrieval engine will then rerank results using that reranker.<br/>
         /// Default Value: customer_reranker
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string? Type { get; set; }
 
         /// <summary>
-        /// The ID of the reranker. The multilingual reranker that may be specified is rnk_272725719.<br/>
-        /// Do not specify the MMR reranker ID here, and instead, use the MMR reranker object type.<br/>
-        /// **Deprecated**: Use `reranker_name` instead.<br/>
+        /// The ID of the reranker. The multilingual reranker that may be specified is rnk_272725719. Do not specify the MMR reranker ID here, and instead, use the MMR reranker object type. **Deprecated**: Use `reranker_name` instead.<br/>
         /// Example: rnk_272725719
         /// </summary>
         /// <example>rnk_272725719</example>
@@ -37,31 +34,35 @@ namespace G
         public string? RerankerName { get; set; }
 
         /// <summary>
-        /// Specifies the maximum number of results to be returned after the reranking process. <br/>
-        /// When a reranker is applied, it performs the following steps:<br/>
+        /// Specifies the maximum number of results to be returned after the reranking process. When a reranker is applied, it performs the following steps:<br/>
         /// 1. Reranks all input results according to its algorithm.<br/>
         /// 2. Sorts the reranked results based on their new scores.<br/>
         /// 3. Returns the top N results, where N is the value specified by this limit.<br/>
-        /// Note: This limit is applied per reranking stage. In a chain of rerankers, <br/>
-        /// each reranker can have its own limit, potentially reducing the number of <br/>
-        /// results at each stage.
+        /// Note: This limit is applied per reranking stage. In a chain of rerankers, each reranker can have its own limit, potentially reducing the number of results at each stage.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// Specifies the minimum score threshold for results to be included after the reranking process.<br/>
-        /// When a reranker is applied with a cutoff, it performs the following steps:<br/>
-        /// 1. Reranks all input results according to its algorithm.<br/>
-        /// 2. Applies the cutoff, removing any results with scores below the specified threshold.<br/>
-        /// 3. Returns the remaining results, sorted by their new scores.<br/>
-        /// Note: This cutoff is applied per reranking stage. In a chain of rerankers,<br/>
-        /// each reranker can have its own cutoff, potentially further reducing the number of<br/>
-        /// results at each stage. If both 'limit' and 'cutoff' are specified, the cutoff<br/>
-        /// is applied first, followed by the limit.
+        /// Specifies the minimum score threshold for results to be included after the reranking process. When a reranker is applied with a cutoff, it performs the following steps:<br/>
+        /// 1. Reranks all input results according to its algorithm. 2. Applies the cutoff, removing any results with scores below the specified threshold. 3. Returns the remaining results, sorted by their new scores.<br/>
+        /// Note: This cutoff is applied per reranking stage. In a chain of rerankers, each reranker can have its own cutoff, potentially further reducing the number of results at each stage. If both 'limit' and 'cutoff' are specified, the cutoff is applied first, followed by the limit.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cutoff")]
         public float? Cutoff { get; set; }
+
+        /// <summary>
+        /// If true, the reranker will use text with context (see "context_configuration") for scoring.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("include_context")]
+        public bool? IncludeContext { get; set; }
+
+        /// <summary>
+        /// Instructions for instruction-following rerankers that guide relevance scoring behavior. Only applicable to rerankers that support custom instructions.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
+        public string? Instructions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -73,8 +74,7 @@ namespace G
         /// Initializes a new instance of the <see cref="CustomerSpecificReranker" /> class.
         /// </summary>
         /// <param name="type">
-        /// When the type is `customer_reranker`, you can specify the `reranker_name` of a reranker. `reranker_id` is deprecated.<br/>
-        /// The retrieval engine will then rerank results using that reranker.<br/>
+        /// When the type is `customer_reranker`, you can specify the `reranker_name` of a reranker. `reranker_id` is deprecated. The retrieval engine will then rerank results using that reranker.<br/>
         /// Default Value: customer_reranker
         /// </param>
         /// <param name="rerankerName">
@@ -82,25 +82,23 @@ namespace G
         /// Example: Rerank_Multilingual_v1
         /// </param>
         /// <param name="limit">
-        /// Specifies the maximum number of results to be returned after the reranking process. <br/>
-        /// When a reranker is applied, it performs the following steps:<br/>
+        /// Specifies the maximum number of results to be returned after the reranking process. When a reranker is applied, it performs the following steps:<br/>
         /// 1. Reranks all input results according to its algorithm.<br/>
         /// 2. Sorts the reranked results based on their new scores.<br/>
         /// 3. Returns the top N results, where N is the value specified by this limit.<br/>
-        /// Note: This limit is applied per reranking stage. In a chain of rerankers, <br/>
-        /// each reranker can have its own limit, potentially reducing the number of <br/>
-        /// results at each stage.
+        /// Note: This limit is applied per reranking stage. In a chain of rerankers, each reranker can have its own limit, potentially reducing the number of results at each stage.
         /// </param>
         /// <param name="cutoff">
-        /// Specifies the minimum score threshold for results to be included after the reranking process.<br/>
-        /// When a reranker is applied with a cutoff, it performs the following steps:<br/>
-        /// 1. Reranks all input results according to its algorithm.<br/>
-        /// 2. Applies the cutoff, removing any results with scores below the specified threshold.<br/>
-        /// 3. Returns the remaining results, sorted by their new scores.<br/>
-        /// Note: This cutoff is applied per reranking stage. In a chain of rerankers,<br/>
-        /// each reranker can have its own cutoff, potentially further reducing the number of<br/>
-        /// results at each stage. If both 'limit' and 'cutoff' are specified, the cutoff<br/>
-        /// is applied first, followed by the limit.
+        /// Specifies the minimum score threshold for results to be included after the reranking process. When a reranker is applied with a cutoff, it performs the following steps:<br/>
+        /// 1. Reranks all input results according to its algorithm. 2. Applies the cutoff, removing any results with scores below the specified threshold. 3. Returns the remaining results, sorted by their new scores.<br/>
+        /// Note: This cutoff is applied per reranking stage. In a chain of rerankers, each reranker can have its own cutoff, potentially further reducing the number of results at each stage. If both 'limit' and 'cutoff' are specified, the cutoff is applied first, followed by the limit.
+        /// </param>
+        /// <param name="includeContext">
+        /// If true, the reranker will use text with context (see "context_configuration") for scoring.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="instructions">
+        /// Instructions for instruction-following rerankers that guide relevance scoring behavior. Only applicable to rerankers that support custom instructions.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -109,12 +107,16 @@ namespace G
             string? type,
             string? rerankerName,
             int? limit,
-            float? cutoff)
+            float? cutoff,
+            bool? includeContext,
+            string? instructions)
         {
             this.Type = type;
             this.RerankerName = rerankerName;
             this.Limit = limit;
             this.Cutoff = cutoff;
+            this.IncludeContext = includeContext;
+            this.Instructions = instructions;
         }
 
         /// <summary>

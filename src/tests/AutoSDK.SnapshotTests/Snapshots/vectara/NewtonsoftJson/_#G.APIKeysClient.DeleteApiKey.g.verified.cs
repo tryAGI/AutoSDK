@@ -23,7 +23,9 @@ namespace G
 
         /// <summary>
         /// Delete an API key<br/>
-        /// Delete API keys to help you manage the security and lifecycle of API keys in your application.
+        /// The Delete API Key API lets you delete one or more existing API keys. <br/>
+        /// This capability is useful for managing the lifecycle and security of <br/>
+        /// API keys such as when they are no longer needed or when a key is compromised.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>

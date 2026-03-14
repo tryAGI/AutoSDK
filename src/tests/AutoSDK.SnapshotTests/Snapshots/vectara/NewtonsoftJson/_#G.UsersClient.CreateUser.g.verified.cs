@@ -28,7 +28,7 @@ namespace G
 
         /// <summary>
         /// Create a user in the current customer account<br/>
-        /// Create a user for the current customer account.
+        /// Create a user for the current customer account. For example, a company wants to onboard new team members efficiently and this endpoint lets you streamline the process by adding new users programmatically, assigning appropriate roles, and setting up access permissions.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -266,7 +266,7 @@ namespace G
 
         /// <summary>
         /// Create a user in the current customer account<br/>
-        /// Create a user for the current customer account.
+        /// Create a user for the current customer account. For example, a company wants to onboard new team members efficiently and this endpoint lets you streamline the process by adding new users programmatically, assigning appropriate roles, and setting up access permissions.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -280,7 +280,13 @@ namespace G
         /// The description of the user.
         /// </param>
         /// <param name="apiRoles">
-        /// The role names assigned to the user.
+        /// The customer-level role names assigned to the user.
+        /// </param>
+        /// <param name="corpusRoles">
+        /// Corpus-specific role assignments for the user.
+        /// </param>
+        /// <param name="agentRoles">
+        /// Agent-specific role assignments for the user.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -291,6 +297,8 @@ namespace G
             string? username = default,
             string? description = default,
             global::System.Collections.Generic.IList<global::G.ApiRole>? apiRoles = default,
+            global::System.Collections.Generic.IList<global::G.CorpusRole>? corpusRoles = default,
+            global::System.Collections.Generic.IList<global::G.AgentRole>? agentRoles = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.CreateUserRequest
@@ -299,6 +307,8 @@ namespace G
                 Username = username,
                 Description = description,
                 ApiRoles = apiRoles,
+                CorpusRoles = corpusRoles,
+                AgentRoles = agentRoles,
             };
 
             return await CreateUserAsync(

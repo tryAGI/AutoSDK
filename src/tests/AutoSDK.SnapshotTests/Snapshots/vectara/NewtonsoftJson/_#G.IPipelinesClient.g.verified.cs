@@ -1,0 +1,42 @@
+﻿//HintName: G.IPipelinesClient.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Create and manage automated data pipelines. A pipeline is a one-directional flow that sends all data from a source system to an agent, creating a new session per source record for the agent to act on. This is distinct from agent schedules (recurring single executions) and connectors (bidirectional chat integrations like Slack).<br/>
+    /// If no httpClient is provided, a new one will be created.<br/>
+    /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+    /// </summary>
+    public partial interface IPipelinesClient : global::System.IDisposable
+    {
+        /// <summary>
+        /// The HttpClient instance.
+        /// </summary>
+        public global::System.Net.Http.HttpClient HttpClient { get; }
+
+        /// <summary>
+        /// The base URL for the API.
+        /// </summary>
+        public System.Uri? BaseUri { get; }
+
+        /// <summary>
+        /// The authorizations to use for the requests.
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.EndPointAuthorization> Authorizations { get; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the response content should be read as a string.
+        /// True by default in debug builds, false otherwise.
+        /// </summary>
+        public bool ReadResponseAsString { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; }
+
+
+    }
+}

@@ -5,25 +5,11 @@
 namespace G
 {
     /// <summary>
-    /// Vectara provides an end-to-end platform for creating GenAI products using <br/>
-    /// a simple to use API.<br/>
-    /// You can [sign up for an account](https://console.vectara.com/signup) and <br/>
-    /// then view several [API Recipes](https://docs.vectara.com/docs/api-recipes) with example queries <br/>
-    /// and parameter values.<br/>
-    /// The Vectara API Playground lets you experiment with REST endpoints from <br/>
-    /// your browser. Select an endpoint to view its definition, including the <br/>
-    /// required or optional headers, body, responses, and sample commands. On the <br/>
-    /// right side of each endpoint page, like [Get Corpus](/docs/rest-api/get-corpus), you manually <br/>
-    /// enter your API Key or OAuth Bearer Token, `customer_id`, and then any <br/>
-    /// required body parameters like the `corpusID` before sending the API <br/>
-    /// request.<br/>
-    /// :::note<br/>
-    /// Vectara supports two primary methods of authentication: API keys and OAuth <br/>
-    /// 2.0, which are applicable to all endpoints. Query API Keys are used for <br/>
-    /// read-only querying operations, while Index API Keys provide read and write <br/>
-    /// access. The OAuth 2.0 operations authenticate with a Bearer Token via the <br/>
-    /// OAuth 2.0 client credentials grant. Review the [**OAuth 2.0 section**](https://docs.vectara.com/docs/learn/authentication/oauth-2) about <br/>
-    /// how to generate the token.<br/>
+    /// REST APIs provide a traditional integration path for web-based applications.<br/>
+    /// You can find all of our APIs at `https://api.vectara.io/v2/&lt;api-endpoint&gt;` The API endpoints are outlined in the various subsections of this API Reference section and are designed to be intuitive and follow a standard RESTful structure.<br/>
+    /// - The current version is **v2**.<br/>
+    /// - `api-endpoint` follows a hierarchical structure, using lowercase and hyphens.<br/>
+    ///   For example, `/corpora/:corpus_key/documents`.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -57,16 +43,97 @@ namespace G
 
 
         /// <summary>
-        /// Authenticate with the API using OAuth 2.0 or API keys
+        /// Create and interact with AI agents that can use tools and corpora to perform complex queries.
         /// </summary>
-        public AuthenticationClient Authentication => new AuthenticationClient(HttpClient, authorizations: Authorizations)
+        public AgentsClient Agents => new AgentsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Perform search and Retrieval Augmented Generation (RAG) operations on one or more corpora
+        /// Manage agent sessions and interact with agents through conversational events.
+        /// </summary>
+        public AgentSessionsClient AgentSessions => new AgentSessionsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Create and manage scheduled automated execution of agents at specified intervals.
+        /// </summary>
+        public AgentSchedulesClient AgentSchedules => new AgentSchedulesClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// List predefined guardrails for validating tool calls, agent outputs, and agent actions.
+        /// </summary>
+        public GuardrailsClient Guardrails => new GuardrailsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Create and manage instructions that guide agent behavior.
+        /// </summary>
+        public InstructionsClient Instructions => new InstructionsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Manage and discover tools available for AI agents to use in their workflows.
+        /// </summary>
+        public ToolsClient Tools => new ToolsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Manage tool servers that provide access to external tools for AI agents.
+        /// </summary>
+        public ToolServersClient ToolServers => new ToolServersClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Create and manage connectors that allow agents to receive events from external platforms like Slack.
+        /// </summary>
+        public AgentConnectorsClient AgentConnectors => new AgentConnectorsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Create and manage automated data pipelines. A pipeline is a one-directional flow that sends all data from a source system to an agent, creating a new session per source record for the agent to act on. This is distinct from agent schedules (recurring single executions) and connectors (bidirectional chat integrations like Slack).
+        /// </summary>
+        public PipelinesClient Pipelines => new PipelinesClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Monitor pipeline execution runs and their processing outcomes.
+        /// </summary>
+        public PipelineRunsClient PipelineRuns => new PipelineRunsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// The Query APIs are the primary interface for searching your data and generating AI-powered summaries. After indexing documents into corpora, you use these endpoints to retrieve relevant information and optionally generate grounded summaries using Retrieval Augmented Generation (RAG).
         /// </summary>
         public QueriesClient Queries => new QueriesClient(HttpClient, authorizations: Authorizations)
         {
@@ -75,7 +142,16 @@ namespace G
         };
 
         /// <summary>
-        /// Upload files to a corpus for automatic parsing, text extraction, chunking, and indexing
+        /// Query across arbitrary metadata fields in a corpus.
+        /// </summary>
+        public MetadataQueryClient MetadataQuery => new MetadataQueryClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Upload files to a corpus for automatic parsing, text extraction, chunking, and indexing.
         /// </summary>
         public UploadClient Upload => new UploadClient(HttpClient, authorizations: Authorizations)
         {
@@ -84,7 +160,7 @@ namespace G
         };
 
         /// <summary>
-        /// Index and manage both core and structured documents to enable efficient search and retrieval
+        /// Index and manage both core and structured documents to enable efficient search and retrieval.
         /// </summary>
         public IndexClient Index => new IndexClient(HttpClient, authorizations: Authorizations)
         {
@@ -93,7 +169,7 @@ namespace G
         };
 
         /// <summary>
-        /// Create, manage, and update corpora and their associated settings
+        /// Create, manage, and update corpora and their associated settings.
         /// </summary>
         public CorporaClient Corpora => new CorporaClient(HttpClient, authorizations: Authorizations)
         {
@@ -102,7 +178,7 @@ namespace G
         };
 
         /// <summary>
-        /// Retrieve and manage documents stored in a corpus for administrative tasks
+        /// Retrieve and manage documents stored in a corpus for administrative tasks.
         /// </summary>
         public DocumentsClient Documents => new DocumentsClient(HttpClient, authorizations: Authorizations)
         {
@@ -111,16 +187,7 @@ namespace G
         };
 
         /// <summary>
-        /// Create, manage, and interact with chat sessions for conversational AI
-        /// </summary>
-        public ChatsClient Chats => new ChatsClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// Manage generation presets for controlling the behavior of generative AI responses
+        /// Manage generation presets for controlling the behavior of generative AI responses.
         /// </summary>
         public GenerationPresetsClient GenerationPresets => new GenerationPresetsClient(HttpClient, authorizations: Authorizations)
         {
@@ -129,7 +196,7 @@ namespace G
         };
 
         /// <summary>
-        /// Retrieve and manage the history of previous queries for analytics and auditing
+        /// Retrieve and manage the history of previous queries for analytics and auditing.
         /// </summary>
         public QueryHistoryClient QueryHistory => new QueryHistoryClient(HttpClient, authorizations: Authorizations)
         {
@@ -138,7 +205,16 @@ namespace G
         };
 
         /// <summary>
-        /// Create, manage, and revoke API keys for secure access to the platform
+        /// Authenticate with the API using OAuth 2.0 or API keys.
+        /// </summary>
+        public AuthenticationClient Authentication => new AuthenticationClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Create, manage, and revoke API keys for secure access to the platform.
         /// </summary>
         public ApiKeysClient ApiKeys => new ApiKeysClient(HttpClient, authorizations: Authorizations)
         {
@@ -147,7 +223,7 @@ namespace G
         };
 
         /// <summary>
-        /// Configure and manage application clients for OAuth authentication
+        /// Configure and manage application clients for OAuth authentication.
         /// </summary>
         public ApplicationClientsClient ApplicationClients => new ApplicationClientsClient(HttpClient, authorizations: Authorizations)
         {
@@ -156,7 +232,7 @@ namespace G
         };
 
         /// <summary>
-        /// List LLMs for text summarization, chat, and other generation tasks
+        /// List LLMs for text summarization, chat, and other generation tasks.
         /// </summary>
         public LargeLanguageModelsClient LargeLanguageModels => new LargeLanguageModelsClient(HttpClient, authorizations: Authorizations)
         {
@@ -165,7 +241,7 @@ namespace G
         };
 
         /// <summary>
-        /// List available encoders (such as Boomerang) that turn text into vectors
+        /// List available encoders (such as Boomerang) that turn text into vectors.
         /// </summary>
         public EncodersClient Encoders => new EncodersClient(HttpClient, authorizations: Authorizations)
         {
@@ -174,7 +250,7 @@ namespace G
         };
 
         /// <summary>
-        /// List rerankers for reranking search results
+        /// List rerankers for reranking search results.
         /// </summary>
         public RerankersClient Rerankers => new RerankersClient(HttpClient, authorizations: Authorizations)
         {
@@ -183,7 +259,7 @@ namespace G
         };
 
         /// <summary>
-        /// Monitor background jobs such as rebuilding indexes or updating corpus settings
+        /// Monitor background jobs such as rebuilding indexes or updating corpus settings.
         /// </summary>
         public JobsClient Jobs => new JobsClient(HttpClient, authorizations: Authorizations)
         {
@@ -192,7 +268,7 @@ namespace G
         };
 
         /// <summary>
-        /// Create, manage, and authenticate users within the platform for user administration
+        /// Create, manage, and authenticate users within the platform for user administration.
         /// </summary>
         public UsersClient Users => new UsersClient(HttpClient, authorizations: Authorizations)
         {
@@ -201,9 +277,54 @@ namespace G
         };
 
         /// <summary>
-        /// List available extractors for tabular data from documents
+        /// List available extractors for tabular data from documents.
         /// </summary>
         public TableExtractorsClient TableExtractors => new TableExtractorsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// API for managing hallucination correction, including listing available models and correcting hallucinated content in generated text.
+        /// </summary>
+        public HallucinationCorrectorsClient HallucinationCorrectors => new HallucinationCorrectorsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Create model responses for chat conversations using OpenAI-compatible endpoints.
+        /// </summary>
+        public LlmChatCompletionsClient LlmChatCompletions => new LlmChatCompletionsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Evaluate text quality metrics like factual consistency and hallucination detection.
+        /// </summary>
+        public FactualConsistencyEvaluationClient FactualConsistencyEvaluation => new FactualConsistencyEvaluationClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Retrieve customer configuration and authentication details.
+        /// </summary>
+        public CustomerConfigurationClient CustomerConfiguration => new CustomerConfigurationClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Deprecated: use Agents instead. Chat endpoints are no longer supported.
+        /// </summary>
+        public ChatsClient Chats => new ChatsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

@@ -1,0 +1,49 @@
+﻿//HintName: G.Models.StructuredIndexingToolVariant2.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class StructuredIndexingToolVariant2
+    {
+        /// <summary>
+        /// This should always be `structured_indexing`.<br/>
+        /// Default Value: structured_indexing<br/>
+        /// Example: structured_indexing
+        /// </summary>
+        /// <default>"structured_indexing"</default>
+        /// <example>structured_indexing</example>
+        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Type { get; set; } = default!;
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StructuredIndexingToolVariant2" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// This should always be `structured_indexing`.<br/>
+        /// Default Value: structured_indexing<br/>
+        /// Example: structured_indexing
+        /// </param>
+        public StructuredIndexingToolVariant2(
+            string type)
+        {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StructuredIndexingToolVariant2" /> class.
+        /// </summary>
+        public StructuredIndexingToolVariant2()
+        {
+        }
+    }
+}

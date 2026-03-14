@@ -7,7 +7,8 @@
 namespace G
 {
     /// <summary>
-    /// Request to search a specific corpus within a customer account and optionally generate a response using RAG techniques.
+    /// Request to search a specific corpus within a customer account and optionally generate a response using RAG techniques.<br/>
+    /// Example: {"query":"How to configure OAuth2 for microservices in Kubernetes?","search":{"metadata_filter":"doc.topic = \u0027authentication\u0027 and doc.platform = \u0027kubernetes\u0027","lexical_interpolation":0.005,"limit":50,"context_configuration":{"sentences_before":2,"sentences_after":2,"start_tag":"\u003Cem\u003E","end_tag":"\u003C/em\u003E"},"reranker":{"type":"customer_reranker","reranker_name":"Rerank_Multilingual_v1","limit":50,"include_context":true}},"generation":{"generation_preset_name":"vectara-summary-ext-24-05-med-omni","max_used_search_results":10,"citations":{"style":"markdown","url_pattern":"https://vectara.com/documents/{doc.id}","text_pattern":"{doc.title}"}},"save_history":true,"intelligent_query_rewriting":true}
     /// </summary>
     public sealed partial class QueryCorpusRequest
     {
@@ -45,8 +46,7 @@ namespace G
         public bool? SaveHistory { get; set; }
 
         /// <summary>
-        /// Indicates whether to enable intelligent query rewriting. When enabled, the platform will attempt to<br/>
-        /// extract metadata filter and rewrite the query to improve search results.<br/>
+        /// [Tech Preview] Indicates whether to enable intelligent query rewriting. When enabled, the platform will attempt to extract metadata filter and rewrite the query to improve search results. Read [here](https://docs.vectara.com/docs/search-and-retrieval/intelligent-query-rewriting) for more details.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("intelligent_query_rewriting")]
@@ -78,8 +78,7 @@ namespace G
         /// Indicates whether to save the query to query history.
         /// </param>
         /// <param name="intelligentQueryRewriting">
-        /// Indicates whether to enable intelligent query rewriting. When enabled, the platform will attempt to<br/>
-        /// extract metadata filter and rewrite the query to improve search results.<br/>
+        /// [Tech Preview] Indicates whether to enable intelligent query rewriting. When enabled, the platform will attempt to extract metadata filter and rewrite the query to improve search results. Read [here](https://docs.vectara.com/docs/search-and-retrieval/intelligent-query-rewriting) for more details.<br/>
         /// Default Value: false
         /// </param>
 #if NET7_0_OR_GREATER

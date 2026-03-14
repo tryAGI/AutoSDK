@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Arbitrary object that will be attached as document metadata to the extracted document.
+    /// Arbitrary object that will be attached as document metadata to the extracted document.<br/>
+    /// Example: {"department":"engineering","doc_type\u0022":"architecture_diagram"}
     /// </summary>
     public sealed partial class UploadFileRequestMetadata
     {

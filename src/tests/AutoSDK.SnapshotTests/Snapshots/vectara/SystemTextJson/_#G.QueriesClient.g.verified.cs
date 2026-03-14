@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Perform search and Retrieval Augmented Generation (RAG) operations on one or more corpora<br/>
+    /// The Query APIs are the primary interface for searching your data and generating AI-powered summaries. After indexing documents into corpora, you use these endpoints to retrieve relevant information and optionally generate grounded summaries using Retrieval Augmented Generation (RAG).<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

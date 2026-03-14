@@ -23,8 +23,11 @@ namespace G
 
         /// <summary>
         /// Delete a corpus and all its data<br/>
-        /// Permanently delete a corpus and all its associated data. The `corpus_key` uniquely identifies <br/>
-        /// the corpus. For more information, see [Corpus Key Definition](https://docs.vectara.com/docs/api-reference/search-apis/search#corpus-key-definition).
+        /// Permanently delete a corpus and all its associated data. The `corpus_key` uniquely identifies the corpus. <br/>
+        /// Upon successful completion, space quota consumed by the corpus will be freed, and the corpus will no longer be useable for future indexing or querying.<br/>
+        /// :::note<br/>
+        /// The corpus_key assigned to the corpus will be released and can be reused.<br/>
+        /// :::
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>

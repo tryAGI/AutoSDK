@@ -1,0 +1,222 @@
+﻿//HintName: G.Models.DynamicVectaraTool.g.cs
+#pragma warning disable CS0618 // Type or member is obsolete
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// A tool type for built-in Vectara tools that have implementations within the platform but do not have a dedicated tool type schema. Examples include tools like `sub_agent`, `corpora_search`, `web_search`, and similar platform-provided capabilities. Use the List Tools endpoint to discover available tools and obtain the `tool_id` required for configuration.
+    /// </summary>
+    public readonly partial struct DynamicVectaraTool : global::System.IEquatable<DynamicVectaraTool>
+    {
+        /// <summary>
+        /// Base properties shared by all tool types.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ToolBase? Value1 { get; init; }
+#else
+        public global::G.ToolBase? Value1 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+#endif
+        public bool IsValue1 => Value1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.DynamicVectaraToolVariant2? Value2 { get; init; }
+#else
+        public global::G.DynamicVectaraToolVariant2? Value2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+#endif
+        public bool IsValue2 => Value2 != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator DynamicVectaraTool(global::G.ToolBase value) => new DynamicVectaraTool((global::G.ToolBase?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ToolBase?(DynamicVectaraTool @this) => @this.Value1;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DynamicVectaraTool(global::G.ToolBase? value)
+        {
+            Value1 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator DynamicVectaraTool(global::G.DynamicVectaraToolVariant2 value) => new DynamicVectaraTool((global::G.DynamicVectaraToolVariant2?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.DynamicVectaraToolVariant2?(DynamicVectaraTool @this) => @this.Value2;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DynamicVectaraTool(global::G.DynamicVectaraToolVariant2? value)
+        {
+            Value2 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DynamicVectaraTool(
+            global::G.ToolBase? value1,
+            global::G.DynamicVectaraToolVariant2? value2
+            )
+        {
+            Value1 = value1;
+            Value2 = value2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Object =>
+            Value2 as object ??
+            Value1 as object 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override string? ToString() =>
+            Value1?.ToString() ??
+            Value2?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Validate()
+        {
+            return IsValue1 && IsValue2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::G.ToolBase?, TResult>? value1 = null,
+            global::System.Func<global::G.DynamicVectaraToolVariant2?, TResult>? value2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsValue1 && value1 != null)
+            {
+                return value1(Value1!);
+            }
+            else if (IsValue2 && value2 != null)
+            {
+                return value2(Value2!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::G.ToolBase?>? value1 = null,
+            global::System.Action<global::G.DynamicVectaraToolVariant2?>? value2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsValue1)
+            {
+                value1?.Invoke(Value1!);
+            }
+            else if (IsValue2)
+            {
+                value2?.Invoke(Value2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override int GetHashCode()
+        {
+            var fields = new object?[]
+            {
+                Value1,
+                typeof(global::G.ToolBase),
+                Value2,
+                typeof(global::G.DynamicVectaraToolVariant2),
+            };
+            const int offset = unchecked((int)2166136261);
+            const int prime = 16777619;
+            static int HashCodeAggregator(int hashCode, object? value) => value == null
+                ? (hashCode ^ 0) * prime
+                : (hashCode ^ value.GetHashCode()) * prime;
+
+            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Equals(DynamicVectaraTool other)
+        {
+            return
+                global::System.Collections.Generic.EqualityComparer<global::G.ToolBase?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.DynamicVectaraToolVariant2?>.Default.Equals(Value2, other.Value2) 
+                ;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator ==(DynamicVectaraTool obj1, DynamicVectaraTool obj2)
+        {
+            return global::System.Collections.Generic.EqualityComparer<DynamicVectaraTool>.Default.Equals(obj1, obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator !=(DynamicVectaraTool obj1, DynamicVectaraTool obj2)
+        {
+            return !(obj1 == obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is DynamicVectaraTool o && Equals(o);
+        }
+    }
+}

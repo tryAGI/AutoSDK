@@ -11,15 +11,19 @@ namespace G
     {
         /// <summary>
         /// Must be "bearer" for bearer token auth<br/>
-        /// Default Value: bearer
+        /// Default Value: bearer<br/>
+        /// Example: bearer
         /// </summary>
         /// <default>"bearer"</default>
+        /// <example>bearer</example>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
         public string Type { get; set; } = default!;
 
         /// <summary>
-        /// The bearer token to use for authentication
+        /// The bearer token to use for authentication<br/>
+        /// Example: abcdef......
         /// </summary>
+        /// <example>abcdef......</example>
         [global::Newtonsoft.Json.JsonProperty("token", Required = global::Newtonsoft.Json.Required.Always)]
         public string Token { get; set; } = default!;
 
@@ -34,10 +38,12 @@ namespace G
         /// </summary>
         /// <param name="type">
         /// Must be "bearer" for bearer token auth<br/>
-        /// Default Value: bearer
+        /// Default Value: bearer<br/>
+        /// Example: bearer
         /// </param>
         /// <param name="token">
-        /// The bearer token to use for authentication
+        /// The bearer token to use for authentication<br/>
+        /// Example: abcdef......
         /// </param>
         public BearerAuth(
             string type,

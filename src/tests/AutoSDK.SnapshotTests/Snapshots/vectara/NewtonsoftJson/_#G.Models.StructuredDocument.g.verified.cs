@@ -10,19 +10,20 @@ namespace G
     public sealed partial class StructuredDocument
     {
         /// <summary>
-        /// The document ID must be unique within the corpus.
+        /// The document ID must be unique within the corpus.<br/>
+        /// Example: esg_report_2024
         /// </summary>
+        /// <example>esg_report_2024</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public string Id { get; set; } = default!;
 
         /// <summary>
-        /// When the type of the indexed document is `structured` the rest of<br/>
-        /// the object is expected to follow this schema. It allows you to create a document<br/>
-        /// that follows normal document conventions. The Vectara platform will then<br/>
-        /// create document parts using its internal algorithm.<br/>
-        /// Default Value: structured
+        /// When the type of the indexed document is `structured` the rest of the object is expected to follow this schema. It allows you to create a document that follows normal document conventions. The Vectara platform will then create document parts using its internal algorithm.<br/>
+        /// Default Value: structured<br/>
+        /// Example: 2024 ESG Annual Report
         /// </summary>
         /// <default>"structured"</default>
+        /// <example>2024 ESG Annual Report</example>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
         public string Type { get; set; } = default!;
 
@@ -33,15 +34,18 @@ namespace G
         public string? Title { get; set; }
 
         /// <summary>
-        /// The description of the document.
+        /// The description of the document.<br/>
+        /// Example: Comprehensive report on EuroBank’s environmental, social, and governance initiatives for 2024.
         /// </summary>
+        /// <example>Comprehensive report on EuroBank’s environmental, social, and governance initiatives for 2024.</example>
         [global::Newtonsoft.Json.JsonProperty("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// The metadata for a document as an arbitrary JSON object. Properties of this object<br/>
-        /// can be used by document level filter attributes.
+        /// The metadata for a document as an arbitrary JSON object. Properties of this object can be used by document level filter attributes.<br/>
+        /// Example: {"region":"EU","industry":"banking","year":2024}
         /// </summary>
+        /// <example>{"region":"EU","industry":"banking","year":2024}</example>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
         public object? Metadata { get; set; }
 
@@ -58,8 +62,7 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.StructuredDocumentSection> Sections { get; set; } = default!;
 
         /// <summary>
-        /// Choose how to split documents into chunks during indexing. This is optional - if you do not set a chunking strategy,<br/>
-        /// the platform uses the default strategy which creates one chunk (docpart) per sentence.
+        /// Choose how to split documents into chunks during indexing. This is optional - if you do not set a chunking strategy, the platform uses the default strategy which creates one chunk (docpart) per sentence.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("chunking_strategy")]
         public global::G.ChunkingStrategy? ChunkingStrategy { get; set; }
@@ -74,24 +77,24 @@ namespace G
         /// Initializes a new instance of the <see cref="StructuredDocument" /> class.
         /// </summary>
         /// <param name="id">
-        /// The document ID must be unique within the corpus.
+        /// The document ID must be unique within the corpus.<br/>
+        /// Example: esg_report_2024
         /// </param>
         /// <param name="type">
-        /// When the type of the indexed document is `structured` the rest of<br/>
-        /// the object is expected to follow this schema. It allows you to create a document<br/>
-        /// that follows normal document conventions. The Vectara platform will then<br/>
-        /// create document parts using its internal algorithm.<br/>
-        /// Default Value: structured
+        /// When the type of the indexed document is `structured` the rest of the object is expected to follow this schema. It allows you to create a document that follows normal document conventions. The Vectara platform will then create document parts using its internal algorithm.<br/>
+        /// Default Value: structured<br/>
+        /// Example: 2024 ESG Annual Report
         /// </param>
         /// <param name="title">
         /// The title of the document.
         /// </param>
         /// <param name="description">
-        /// The description of the document.
+        /// The description of the document.<br/>
+        /// Example: Comprehensive report on EuroBank’s environmental, social, and governance initiatives for 2024.
         /// </param>
         /// <param name="metadata">
-        /// The metadata for a document as an arbitrary JSON object. Properties of this object<br/>
-        /// can be used by document level filter attributes.
+        /// The metadata for a document as an arbitrary JSON object. Properties of this object can be used by document level filter attributes.<br/>
+        /// Example: {"region":"EU","industry":"banking","year":2024}
         /// </param>
         /// <param name="customDimensions">
         /// The custom dimensions as additional weights.
@@ -100,8 +103,7 @@ namespace G
         /// The subsection of the document.
         /// </param>
         /// <param name="chunkingStrategy">
-        /// Choose how to split documents into chunks during indexing. This is optional - if you do not set a chunking strategy,<br/>
-        /// the platform uses the default strategy which creates one chunk (docpart) per sentence.
+        /// Choose how to split documents into chunks during indexing. This is optional - if you do not set a chunking strategy, the platform uses the default strategy which creates one chunk (docpart) per sentence.
         /// </param>
         public StructuredDocument(
             string id,

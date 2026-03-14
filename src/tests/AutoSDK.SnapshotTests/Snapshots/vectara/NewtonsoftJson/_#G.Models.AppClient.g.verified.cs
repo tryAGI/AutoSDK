@@ -10,8 +10,7 @@ namespace G
     public sealed partial class AppClient
     {
         /// <summary>
-        /// The Vectara App Client ID. This ID is not used during an OAuth<br/>
-        /// flow.  However, the ID used within the Vectara API.
+        /// The Vectara App Client ID. This ID is not used during an OAuth flow.  However, the ID used within the Vectara API.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
         public string? Id { get; set; }
@@ -47,6 +46,18 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.ApiRole>? ApiRoles { get; set; }
 
         /// <summary>
+        /// Corpus-specific role assignments for this App Client.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("corpus_roles")]
+        public global::System.Collections.Generic.IList<global::G.CorpusRole>? CorpusRoles { get; set; }
+
+        /// <summary>
+        /// Agent-specific role assignments for this App Client.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("agent_roles")]
+        public global::System.Collections.Generic.IList<global::G.AgentRole>? AgentRoles { get; set; }
+
+        /// <summary>
         /// What actions a principal can take on the Vectara platform.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("api_policy")]
@@ -62,8 +73,7 @@ namespace G
         /// Initializes a new instance of the <see cref="AppClient" /> class.
         /// </summary>
         /// <param name="id">
-        /// The Vectara App Client ID. This ID is not used during an OAuth<br/>
-        /// flow.  However, the ID used within the Vectara API.
+        /// The Vectara App Client ID. This ID is not used during an OAuth flow.  However, the ID used within the Vectara API.
         /// </param>
         /// <param name="name">
         /// The human-readable name of the App Client.
@@ -80,6 +90,12 @@ namespace G
         /// <param name="apiRoles">
         /// The API roles attached to the App Client.
         /// </param>
+        /// <param name="corpusRoles">
+        /// Corpus-specific role assignments for this App Client.
+        /// </param>
+        /// <param name="agentRoles">
+        /// Agent-specific role assignments for this App Client.
+        /// </param>
         /// <param name="apiPolicy">
         /// What actions a principal can take on the Vectara platform.
         /// </param>
@@ -90,6 +106,8 @@ namespace G
             string? clientId,
             string? clientSecret,
             global::System.Collections.Generic.IList<global::G.ApiRole>? apiRoles,
+            global::System.Collections.Generic.IList<global::G.CorpusRole>? corpusRoles,
+            global::System.Collections.Generic.IList<global::G.AgentRole>? agentRoles,
             global::G.ApiPolicy? apiPolicy)
         {
             this.Id = id;
@@ -98,6 +116,8 @@ namespace G
             this.ClientId = clientId;
             this.ClientSecret = clientSecret;
             this.ApiRoles = apiRoles;
+            this.CorpusRoles = corpusRoles;
+            this.AgentRoles = agentRoles;
             this.ApiPolicy = apiPolicy;
         }
 

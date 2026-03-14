@@ -10,8 +10,7 @@ namespace G
     public sealed partial class UserFunctionReranker
     {
         /// <summary>
-        /// When the type is `userfn`, you can define custom reranking functions using document-level metadata,<br/>
-        /// part-level metadata, or scores generated from the request-level metadata.<br/>
+        /// When the type is `userfn`, you can define custom reranking functions using document-level metadata, part-level metadata, or scores generated from the request-level metadata.<br/>
         /// Default Value: userfn
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -31,23 +30,15 @@ namespace G
         /// 1. Reranks all input results according to its algorithm.<br/>
         /// 2. Sorts the reranked results based on their new scores.<br/>
         /// 3. Returns the top N results, where N is the value specified by this limit.<br/>
-        /// Note: This limit is applied per reranking stage. In a chain of rerankers, <br/>
-        /// each reranker can have its own limit, potentially reducing the number of <br/>
-        /// results at each stage.
+        /// Note: This limit is applied per reranking stage. In a chain of rerankers, each reranker can have its own limit, potentially reducing the number of results at each stage.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// Specifies the minimum score threshold for results to be included after the reranking process.<br/>
-        /// When a reranker is applied with a cutoff, it performs the following steps:<br/>
-        /// 1. Reranks all input results according to its algorithm.<br/>
-        /// 2. Applies the cutoff, removing any results with scores below the specified threshold.<br/>
-        /// 3. Returns the remaining results, sorted by their new scores.<br/>
-        /// Note: This cutoff is applied per reranking stage. In a chain of rerankers,<br/>
-        /// each reranker can have its own cutoff, potentially further reducing the number of<br/>
-        /// results at each stage. If both 'limit' and 'cutoff' are specified, the cutoff<br/>
-        /// is applied first, followed by the limit.
+        /// Specifies the minimum score threshold for results to be included after the reranking process. When a reranker is applied with a cutoff, it performs the following steps:<br/>
+        /// 1. Reranks all input results according to its algorithm. 2. Applies the cutoff, removing any results with scores below the specified threshold. 3. Returns the remaining results, sorted by their new scores.<br/>
+        /// Note: This cutoff is applied per reranking stage. In a chain of rerankers, each reranker can have its own cutoff, potentially further reducing the number of results at each stage. If both 'limit' and 'cutoff' are specified, the cutoff is applied first, followed by the limit.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cutoff")]
         public float? Cutoff { get; set; }
@@ -62,8 +53,7 @@ namespace G
         /// Initializes a new instance of the <see cref="UserFunctionReranker" /> class.
         /// </summary>
         /// <param name="type">
-        /// When the type is `userfn`, you can define custom reranking functions using document-level metadata,<br/>
-        /// part-level metadata, or scores generated from the request-level metadata.<br/>
+        /// When the type is `userfn`, you can define custom reranking functions using document-level metadata, part-level metadata, or scores generated from the request-level metadata.<br/>
         /// Default Value: userfn
         /// </param>
         /// <param name="userFunction">
@@ -76,20 +66,12 @@ namespace G
         /// 1. Reranks all input results according to its algorithm.<br/>
         /// 2. Sorts the reranked results based on their new scores.<br/>
         /// 3. Returns the top N results, where N is the value specified by this limit.<br/>
-        /// Note: This limit is applied per reranking stage. In a chain of rerankers, <br/>
-        /// each reranker can have its own limit, potentially reducing the number of <br/>
-        /// results at each stage.
+        /// Note: This limit is applied per reranking stage. In a chain of rerankers, each reranker can have its own limit, potentially reducing the number of results at each stage.
         /// </param>
         /// <param name="cutoff">
-        /// Specifies the minimum score threshold for results to be included after the reranking process.<br/>
-        /// When a reranker is applied with a cutoff, it performs the following steps:<br/>
-        /// 1. Reranks all input results according to its algorithm.<br/>
-        /// 2. Applies the cutoff, removing any results with scores below the specified threshold.<br/>
-        /// 3. Returns the remaining results, sorted by their new scores.<br/>
-        /// Note: This cutoff is applied per reranking stage. In a chain of rerankers,<br/>
-        /// each reranker can have its own cutoff, potentially further reducing the number of<br/>
-        /// results at each stage. If both 'limit' and 'cutoff' are specified, the cutoff<br/>
-        /// is applied first, followed by the limit.
+        /// Specifies the minimum score threshold for results to be included after the reranking process. When a reranker is applied with a cutoff, it performs the following steps:<br/>
+        /// 1. Reranks all input results according to its algorithm. 2. Applies the cutoff, removing any results with scores below the specified threshold. 3. Returns the remaining results, sorted by their new scores.<br/>
+        /// Note: This cutoff is applied per reranking stage. In a chain of rerankers, each reranker can have its own cutoff, potentially further reducing the number of results at each stage. If both 'limit' and 'cutoff' are specified, the cutoff is applied first, followed by the limit.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

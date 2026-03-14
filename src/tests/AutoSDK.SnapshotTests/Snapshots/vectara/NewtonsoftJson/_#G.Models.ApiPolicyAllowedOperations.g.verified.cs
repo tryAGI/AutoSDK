@@ -5,9 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Operations that are allowed by the API role. Each operation may only allow<br/>
-    /// certain resources that are described by a resource path to resource value<br/>
-    /// map. If the value is null, then the operation is allowed on any resource.
+    /// Operations that are allowed by the API role. Each operation may only allow certain resources that are described by a resource path to resource value map. If the value is null, then the operation is allowed on any resource.
     /// </summary>
     public sealed partial class ApiPolicyAllowedOperations
     {

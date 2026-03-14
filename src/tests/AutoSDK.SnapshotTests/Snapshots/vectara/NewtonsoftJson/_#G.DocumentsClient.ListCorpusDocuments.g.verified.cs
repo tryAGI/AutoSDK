@@ -34,9 +34,10 @@ namespace G
 
         /// <summary>
         /// List the documents in the corpus<br/>
-        /// Retrieve a list of documents stored in a specific corpus. This endpoint <br/>
-        /// provides an overview of document metadata without returning the full content of <br/>
-        /// each document.
+        /// The List Documents API enables you to retrieve a list of documents stored in a specific corpus. This endpoint provides an overview of document metadata, including document IDs, tables (if table extraction is enabled), and pagination details. <br/>
+        /// Use this API for viewing documents indexed so far and helping you decide to remove documents that are no longer needed. It helps you manage the document lifecycle in your environment.<br/>
+        /// This information enables you to catalog and inventory large amounts of data while also retrieving lists of documents for further analysis. For example, developers can utilize the metadata to to build custom search and filtering capabilities into their applications. If you enabled tabled extraction, this endpoint also returns the tables that this document contains.<br/>
+        /// Currently Document Admin APIs do not allow you to access the text of your documents.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>

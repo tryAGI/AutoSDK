@@ -7,12 +7,8 @@ namespace G
     {
         /// <summary>
         /// Replace the filter attributes of a corpus<br/>
-        /// Replace the filter attributes of a corpus. This does not happen immediately, as<br/>
-        /// this operation creates a job that completes asynchronously. These new filter <br/>
-        /// attributes will not work until the job completes.<br/>
-        /// You can monitor the status of the filter change using the returned job ID. The <br/>
-        /// `corpus_key` uniquely identifies the corpus. For more information, see <br/>
-        /// [Corpus Key Definition](https://docs.vectara.com/docs/api-reference/search-apis/search#corpus-key-definition).
+        /// Replace the filter attributes of a corpus. This does not happen immediately, as this operation creates a job that completes asynchronously. These new filter attributes will not work until the job completes.<br/>
+        /// You can monitor the status of the filter change using the returned job ID. The `corpus_key` uniquely identifies the corpus.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -33,12 +29,8 @@ namespace G
 
         /// <summary>
         /// Replace the filter attributes of a corpus<br/>
-        /// Replace the filter attributes of a corpus. This does not happen immediately, as<br/>
-        /// this operation creates a job that completes asynchronously. These new filter <br/>
-        /// attributes will not work until the job completes.<br/>
-        /// You can monitor the status of the filter change using the returned job ID. The <br/>
-        /// `corpus_key` uniquely identifies the corpus. For more information, see <br/>
-        /// [Corpus Key Definition](https://docs.vectara.com/docs/api-reference/search-apis/search#corpus-key-definition).
+        /// Replace the filter attributes of a corpus. This does not happen immediately, as this operation creates a job that completes asynchronously. These new filter attributes will not work until the job completes.<br/>
+        /// You can monitor the status of the filter change using the returned job ID. The `corpus_key` uniquely identifies the corpus.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
