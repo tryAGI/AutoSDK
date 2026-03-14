@@ -319,7 +319,7 @@ public record struct TypeData(
             (null, "string") => "string",
             ("object", _) => "object",
 
-            (null, null) when (context.IsClass && context.ClassData?.Properties.Length > 0) || context.IsEnum =>
+            (null, null) when HasDeclaredClassProperties(context) || context.IsEnum =>
                 $"global::{context.Settings.Namespace}.{context.Id}",
             // Schema with const value should be treated as string
             (null, null) when context.Schema.IsConst() => "string",
@@ -361,6 +361,20 @@ public record struct TypeData(
         var hint = context.IsAnyOf ? Hint.AnyOf : context.IsOneOf ? Hint.OneOf : Hint.AllOf;
         var types = GetDistinctChildTypes(context, hint);
         return types.Length == 1;
+    }
+
+    private static bool HasDeclaredClassProperties(SchemaContext context)
+    {
+        if (!context.IsClass)
+        {
+            return false;
+        }
+
+        var propertyContexts = context.IsDerivedClass
+            ? context.DerivedClassContext.Children
+            : context.Children;
+
+        return propertyContexts.Any(static x => x.IsProperty);
     }
 
     public static bool GetCSharpNullability(

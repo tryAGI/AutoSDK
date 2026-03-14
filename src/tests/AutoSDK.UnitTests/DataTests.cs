@@ -190,8 +190,141 @@ public partial class DataTests
         requestModel.IsBaseClass.Should().BeTrue();
         requestModel.Properties.Should().BeEmpty();
         endPoint.Parameters.Where(x => x.Location == null).Should().BeEmpty();
+        endPoint.RequestType.CSharpTypeWithoutNullability.Should().Be("global::G.CreateItemRequest");
         generatedEndPoint.Should().NotContain("Type = type");
         generatedEndPoint.Should().NotContain(" string type,");
+        generatedEndPoint.Should().Contain("global::G.CreateItemRequest request");
+        generatedEndPoint.Should().NotContain("object request");
+    }
+
+    [TestMethod]
+    public void SharedBaseDiscriminatorOneOfWrapper_PreservesNamedRequestUnion()
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateModels = true,
+            GenerateSdk = true,
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            TargetFramework = "net8.0",
+        };
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: repro
+                              version: 1.0.0
+                            paths:
+                              /agent-input:
+                                post:
+                                  operationId: createAgentInput
+                                  requestBody:
+                                    required: true
+                                    content:
+                                      application/json:
+                                        schema:
+                                          $ref: '#/components/schemas/CreateInputRequest'
+                                  responses:
+                                    '200':
+                                      description: ok
+                                      content:
+                                        application/json:
+                                          schema:
+                                            $ref: '#/components/schemas/AgentResponse'
+                            components:
+                              schemas:
+                                AgentResponse:
+                                  type: object
+                                  properties:
+                                    ok:
+                                      type: boolean
+                                AgentInput:
+                                  type: object
+                                  properties:
+                                    text:
+                                      type: string
+                                InputBehavior:
+                                  type: string
+                                  enum:
+                                    - append
+                                    - replace
+                                CreateInputRequestBase:
+                                  type: object
+                                  properties:
+                                    stream_response:
+                                      type: boolean
+                                      default: false
+                                CreateInputMessageRequest:
+                                  allOf:
+                                    - $ref: '#/components/schemas/CreateInputRequestBase'
+                                    - required:
+                                        - messages
+                                      type: object
+                                      properties:
+                                        type:
+                                          type: string
+                                          default: input_message
+                                        messages:
+                                          type: array
+                                          items:
+                                            $ref: '#/components/schemas/AgentInput'
+                                        since:
+                                          type: string
+                                        behavior:
+                                          $ref: '#/components/schemas/InputBehavior'
+                                CreateInterruptRequest:
+                                  allOf:
+                                    - $ref: '#/components/schemas/CreateInputRequestBase'
+                                    - required:
+                                        - type
+                                      type: object
+                                      properties:
+                                        type:
+                                          type: string
+                                          default: interrupt
+                                CreateCompactRequest:
+                                  allOf:
+                                    - $ref: '#/components/schemas/CreateInputRequestBase'
+                                    - required:
+                                        - type
+                                      type: object
+                                      properties:
+                                        type:
+                                          type: string
+                                          default: compact
+                                        compact_up_to_event_id:
+                                          type: string
+                                        compaction_message:
+                                          type: string
+                                CreateInputRequest:
+                                  required:
+                                    - type
+                                  oneOf:
+                                    - $ref: '#/components/schemas/CreateInputMessageRequest'
+                                    - $ref: '#/components/schemas/CreateInterruptRequest'
+                                    - $ref: '#/components/schemas/CreateCompactRequest'
+                                  description: A request to create input for an agent session.
+                                  discriminator:
+                                    propertyName: type
+                                    mapping:
+                                      input_message: '#/components/schemas/CreateInputMessageRequest'
+                                      interrupt: '#/components/schemas/CreateInterruptRequest'
+                                      compact: '#/components/schemas/CreateCompactRequest'
+                                  x-vectara-base-schema: '#/CreateInputRequestBase'
+                            """;
+
+        var data = Data.Prepare(((yaml, settings), GlobalSettings: settings));
+        var anyOf = data.AnyOfs.Single(x => x.Name == "CreateInputRequest");
+        var endPoint = data.Methods.Should().ContainSingle().Subject;
+        var generatedAnyOf = Sources.GenerateAnyOf(anyOf);
+        var generatedEndPoint = Sources.GenerateEndPoint(endPoint);
+
+        data.Classes.Should().NotContain(x => x.ClassName == "CreateInputRequest");
+        anyOf.SubType.Should().Be("OneOf");
+        anyOf.Properties.Select(x => x.Name).Should().Contain(["InputMessage", "Interrupt", "Compact"]);
+        generatedAnyOf.Should().Contain("public readonly partial struct CreateInputRequest");
+        endPoint.RequestType.CSharpTypeWithoutNullability.Should().Be("global::G.CreateInputRequest");
+        generatedEndPoint.Should().Contain("global::G.CreateInputRequest request");
+        generatedEndPoint.Should().NotContain("object request");
     }
 
     [TestMethod]
