@@ -251,7 +251,7 @@ public static class StringExtensions
             // Handle all-caps single words (e.g. "SUCCEEDED" → "Succeeded")
             if (propertyName.Length > 1 && propertyName == propertyName.ToUpperInvariant())
             {
-                return propertyName[0] + propertyName.Substring(1).ToLowerInvariant();
+                return NormalizeAllCapsWord(propertyName);
             }
 
             return propertyName;
@@ -262,8 +262,19 @@ public static class StringExtensions
             propertyName
                 .Split(separator)
                 .Select(word => word.Length > 1 && word == word.ToUpperInvariant()
-                    ? word[0] + word.Substring(1).ToLowerInvariant()
+                    ? NormalizeAllCapsWord(word)
                     : word.ToPropertyName()));
+    }
+
+    private static string NormalizeAllCapsWord(string value)
+    {
+        var chars = value.ToCharArray();
+        for (var i = 1; i < chars.Length; i++)
+        {
+            chars[i] = char.ToLowerInvariant(chars[i]);
+        }
+
+        return new string(chars);
     }
     
     private readonly static string[] NewLine = { "\n" };

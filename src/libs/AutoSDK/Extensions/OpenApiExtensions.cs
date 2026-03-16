@@ -222,11 +222,9 @@ public static class OpenApiExtensions
             return (decimal.MinValue, decimal.MaxValue);
         }
 
-        return schema.Format?.ToLowerInvariant() switch
-        {
-            "int32" => (int.MinValue, int.MaxValue),
-            _ => (long.MinValue, long.MaxValue),
-        };
+        return string.Equals(schema.Format, "int32", StringComparison.OrdinalIgnoreCase)
+            ? (int.MinValue, int.MaxValue)
+            : (long.MinValue, long.MaxValue);
     }
     
     public static void InjectBaseUrl(
@@ -285,14 +283,14 @@ public static class OpenApiExtensions
 
             if (schemeType == SecuritySchemeType.Http)
             {
-                schemeName = $"http_{namePart.ToLowerInvariant()}";
+                schemeName = $"http_{ToInvariantLowercase(namePart)}";
                 securityScheme.Type = SecuritySchemeType.Http;
                 securityScheme.Scheme = namePart;
                 securityScheme.In = location;
             }
             else
             {
-                schemeName = $"apikey_{namePart.ToLowerInvariant()}";
+                schemeName = $"apikey_{ToInvariantLowercase(namePart)}";
                 securityScheme.Type = schemeType;
                 securityScheme.In = location;
                 securityScheme.Name = namePart;
@@ -908,7 +906,7 @@ public static class OpenApiExtensions
             return string.Empty;
         }
 
-        var trimmed = (summary ?? string.Empty).TrimStart();
+        var trimmed = summary!.TrimStart();
 
         foreach (var (prefix, stage) in ExperimentalStagePrefixes)
         {
@@ -928,7 +926,7 @@ public static class OpenApiExtensions
             return string.Empty;
         }
 
-        var trimmed = (summary ?? string.Empty).Trim();
+        var trimmed = summary!.Trim();
 
         foreach (var (prefix, _) in ExperimentalStagePrefixes)
         {
@@ -1281,5 +1279,17 @@ public static class OpenApiExtensions
             .Where(x => x.Value.OperationId != null)
             .Select(x => x.Value.OperationId!)
             .ToArray();
+    }
+
+    private static string ToInvariantLowercase(string value)
+    {
+        value = value ?? throw new ArgumentNullException(nameof(value));
+        var chars = value.ToCharArray();
+        for (var i = 0; i < chars.Length; i++)
+        {
+            chars[i] = char.ToLowerInvariant(chars[i]);
+        }
+
+        return new string(chars);
     }
 }
