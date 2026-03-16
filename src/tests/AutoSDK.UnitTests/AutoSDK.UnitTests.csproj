@@ -38,6 +38,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\libs\AutoSDK\AutoSDK.csproj" />
+    <ProjectReference Include="..\..\libs\AutoSDK.Docs\AutoSDK.Docs.csproj" />
   </ItemGroup>
 
 </Project>

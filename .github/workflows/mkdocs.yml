@@ -7,7 +7,9 @@ on:
       - 'docs/**'
       - 'mkdocs.yml'
       - 'examples/**'
-      - 'src/helpers/GenerateDocs/**'
+      - 'src/libs/AutoSDK.Docs/**'
+      - 'src/libs/AutoSDK.CLI/**'
+      - 'autosdk.docs.json'
       - '.github/workflows/mkdocs.yml'
       - 'README.md'
 
@@ -36,10 +38,10 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: 9.0.x
+          dotnet-version: 10.0.x
         
       - name: Generate docs
-        run: dotnet run --project src/helpers/GenerateDocs/GenerateDocs.csproj .
+        run: dotnet run --project src/libs/AutoSDK.CLI/AutoSDK.CLI.csproj -- docs sync .
 
       - name: Build with MkDocs
         run: |

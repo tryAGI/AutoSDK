@@ -121,8 +121,6 @@ internal sealed class InitializeCommand : Command
                 H.Resources.docs_css_extra_css,
                 H.Resources.docs_media_icon128_png,
                 H.Resources.mkdocs_yml,
-                H.Resources.src_helpers_GenerateDocs_GenerateDocs_csproj,
-                H.Resources.src_helpers_GenerateDocs_Program_cs,
             });
         }
         if (addTests)

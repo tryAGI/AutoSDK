@@ -7,6 +7,7 @@ var rootCommand = new RootCommand(
 rootCommand.Subcommands.Add(new GenerateCommand());
 rootCommand.Subcommands.Add(new HttpCommand());
 rootCommand.Subcommands.Add(new CliCommand());
+rootCommand.Subcommands.Add(new DocsCommand());
 rootCommand.Subcommands.Add(new SimplifyCommand());
 rootCommand.Subcommands.Add(new ConvertCommand());
 rootCommand.Subcommands.Add(new InitializeCommand());

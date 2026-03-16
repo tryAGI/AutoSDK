@@ -1,7 +1,8 @@
 site_name: $SolutionName$ .NET Documentation
 nav:
 - Overview: index.md
-# EXAMPLES #
+# EXAMPLES:START
+# EXAMPLES:END
         
 theme:
   name: material
