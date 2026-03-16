@@ -199,14 +199,14 @@ public static class OpenApiSchemaExtensions
     }
 
     /// <summary>
-    /// Checks if the schema has a const value (a single constant string value).
+    /// Checks if the schema has a const value.
     /// In OpenAPI 3.1+, const is used to define a single allowed value.
     /// </summary>
     public static bool IsConst(this IOpenApiSchema schema)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
-        return !string.IsNullOrEmpty(schema.Const);
+        return schema.Const != null;
     }
 
     /// <summary>
@@ -243,8 +243,8 @@ public static class OpenApiSchemaExtensions
     }
 
     /// <summary>
-    /// Checks if the schema is a string type or has a string const value.
-    /// This handles schemas with const values that don't have an explicit type.
+    /// Checks if the schema is a string type or has a const value.
+    /// This is primarily used for schemas whose explicit type is omitted.
     /// </summary>
     public static bool IsStringOrConst(this IOpenApiSchema schema)
     {
@@ -256,8 +256,7 @@ public static class OpenApiSchemaExtensions
             return true;
         }
 
-        // Has a const value (which is always a string in OpenAPI)
-        if (!string.IsNullOrEmpty(schema.Const))
+        if (schema.Const != null)
         {
             return true;
         }

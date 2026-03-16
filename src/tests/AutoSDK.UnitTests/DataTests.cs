@@ -7,6 +7,75 @@ namespace AutoSDK.UnitTests;
 public partial class DataTests
 {
     [TestMethod]
+    [DataRow(JsonSerializerType.NewtonsoftJson)]
+    [DataRow(JsonSerializerType.SystemTextJson)]
+    public void PrimitiveConstValues_AreEmittedAsTypedLiterals(JsonSerializerType jsonSerializerType)
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateModels = true,
+            GenerateSdk = true,
+            JsonSerializerType = jsonSerializerType,
+            TargetFramework = jsonSerializerType is JsonSerializerType.SystemTextJson
+                ? "net8.0"
+                : "net6.0",
+        };
+        const string json = """
+                            {
+                              "openapi": "3.1.0",
+                              "info": { "title": "t", "version": "1" },
+                              "paths": {
+                                "/x": {
+                                  "post": {
+                                    "operationId": "createX",
+                                    "requestBody": {
+                                      "required": true,
+                                      "content": {
+                                        "application/json": {
+                                          "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                              "n": { "type": "number", "const": 8 },
+                                              "i": { "type": "integer", "const": 3 },
+                                              "b": { "type": "boolean", "const": true },
+                                              "s": { "type": "string", "const": "x" }
+                                            },
+                                            "required": ["n", "i", "b", "s"]
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "responses": {
+                                      "200": { "description": "ok" }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                            """;
+
+        var data = Data.Prepare(((json, settings), GlobalSettings: settings));
+        var generatedModel = string.Join("\n\n", data.Classes.Select(x => Sources.GenerateModel(x)));
+        var generatedMethod = string.Join("\n\n", data.Methods.Select(x => Sources.GenerateEndPoint(x)));
+
+        generatedModel.Should().Contain("public double N { get; set; } = 8;");
+        generatedModel.Should().Contain("public int I { get; set; } = 3;");
+        generatedModel.Should().Contain("public bool B { get; set; } = true;");
+        generatedModel.Should().Contain("public string S { get; set; } = \"x\";");
+        generatedMethod.Should().Contain("double n = 8,");
+        generatedMethod.Should().Contain("int i = 3,");
+        generatedMethod.Should().Contain("bool b = true,");
+        generatedMethod.Should().Contain("string s = \"x\",");
+        generatedModel.Should().NotContain("= \"8\";");
+        generatedModel.Should().NotContain("= \"3\";");
+        generatedModel.Should().NotContain("= \"True\";");
+        generatedMethod.Should().NotContain("double n = \"8\"");
+        generatedMethod.Should().NotContain("int i = \"3\"");
+        generatedMethod.Should().NotContain("bool b = \"True\"");
+    }
+
+    [TestMethod]
     public void ExcludeDeprecatedOperations_UsesFernAvailability()
     {
         var settings = DefaultSettings with

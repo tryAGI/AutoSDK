@@ -1,0 +1,56 @@
+﻿//HintName: G.Models.RequestGen3aTurboRatio.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// The resolution of the output video.<br/>
+    /// Example: 1280:768
+    /// </summary>
+    [global::System.Runtime.Serialization.DataContract]
+    public enum RequestGen3aTurboRatio
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="768:1280")]
+        x768_1280,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="1280:768")]
+        x1280_768,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class RequestGen3aTurboRatioExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this RequestGen3aTurboRatio value)
+        {
+            return value switch
+            {
+                RequestGen3aTurboRatio.x768_1280 => "768:1280",
+                RequestGen3aTurboRatio.x1280_768 => "1280:768",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static RequestGen3aTurboRatio? ToEnum(string value)
+        {
+            return value switch
+            {
+                "768:1280" => RequestGen3aTurboRatio.x768_1280,
+                "1280:768" => RequestGen3aTurboRatio.x1280_768,
+                _ => null,
+            };
+        }
+    }
+}

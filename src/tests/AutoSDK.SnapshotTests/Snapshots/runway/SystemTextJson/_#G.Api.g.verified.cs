@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// API for generating videos from images and managing tasks. Generated from https://docs.dev.runwayml.com/api/<br/>
+    /// The API makes generative AI models available, at the same credits prices listed here ($0.01 per credit): https://help.runwayml.com/hc/en-us/articles/15124877443219-How-do-credits-work<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -41,22 +41,121 @@ namespace G
                 DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
                 Converters =
                 {
-                    new global::G.JsonConverters.CreateVideoFromImageRequestModelJsonConverter(),
-                    new global::G.JsonConverters.CreateVideoFromImageRequestModelNullableJsonConverter(),
-                    new global::G.JsonConverters.CreateVideoFromImageRequestRatioJsonConverter(),
-                    new global::G.JsonConverters.CreateVideoFromImageRequestRatioNullableJsonConverter(),
-                    new global::G.JsonConverters.CreateVideoFromImageXRunwayVersionJsonConverter(),
-                    new global::G.JsonConverters.CreateVideoFromImageXRunwayVersionNullableJsonConverter(),
-                    new global::G.JsonConverters.GetTaskDetailXRunwayVersionJsonConverter(),
-                    new global::G.JsonConverters.GetTaskDetailXRunwayVersionNullableJsonConverter(),
-                    new global::G.JsonConverters.CancelOrDeleteTaskXRunwayVersionJsonConverter(),
-                    new global::G.JsonConverters.CancelOrDeleteTaskXRunwayVersionNullableJsonConverter(),
-                    new global::G.JsonConverters.GetTaskDetailResponseStatusJsonConverter(),
-                    new global::G.JsonConverters.GetTaskDetailResponseStatusNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestGen4TurboRatioJsonConverter(),
+                    new global::G.JsonConverters.RequestGen4TurboRatioNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestGen4TurboContentModerationPublicFigureThresholdJsonConverter(),
+                    new global::G.JsonConverters.RequestGen4TurboContentModerationPublicFigureThresholdNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestVeo31PromptImagePromptImagePositionJsonConverter(),
+                    new global::G.JsonConverters.RequestVeo31PromptImagePromptImagePositionNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestVeo31RatioJsonConverter(),
+                    new global::G.JsonConverters.RequestVeo31RatioNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestGen3aTurboPromptImagePromptImagePositionJsonConverter(),
+                    new global::G.JsonConverters.RequestGen3aTurboPromptImagePromptImagePositionNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestGen3aTurboRatioJsonConverter(),
+                    new global::G.JsonConverters.RequestGen3aTurboRatioNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestGen3aTurboContentModerationPublicFigureThresholdJsonConverter(),
+                    new global::G.JsonConverters.RequestGen3aTurboContentModerationPublicFigureThresholdNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestVeo31FastPromptImagePromptImagePositionJsonConverter(),
+                    new global::G.JsonConverters.RequestVeo31FastPromptImagePromptImagePositionNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestVeo31FastRatioJsonConverter(),
+                    new global::G.JsonConverters.RequestVeo31FastRatioNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestVeo3RatioJsonConverter(),
+                    new global::G.JsonConverters.RequestVeo3RatioNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestVeo31Ratio2JsonConverter(),
+                    new global::G.JsonConverters.RequestVeo31Ratio2NullableJsonConverter(),
+                    new global::G.JsonConverters.RequestVeo31FastRatio2JsonConverter(),
+                    new global::G.JsonConverters.RequestVeo31FastRatio2NullableJsonConverter(),
+                    new global::G.JsonConverters.RequestVeo3Ratio2JsonConverter(),
+                    new global::G.JsonConverters.RequestVeo3Ratio2NullableJsonConverter(),
+                    new global::G.JsonConverters.RequestGen4AlephRatioJsonConverter(),
+                    new global::G.JsonConverters.RequestGen4AlephRatioNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestGen4AlephContentModerationPublicFigureThresholdJsonConverter(),
+                    new global::G.JsonConverters.RequestGen4AlephContentModerationPublicFigureThresholdNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestGen4ImageTurboRatioJsonConverter(),
+                    new global::G.JsonConverters.RequestGen4ImageTurboRatioNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestGen4ImageTurboContentModerationPublicFigureThresholdJsonConverter(),
+                    new global::G.JsonConverters.RequestGen4ImageTurboContentModerationPublicFigureThresholdNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestGen4ImageRatioJsonConverter(),
+                    new global::G.JsonConverters.RequestGen4ImageRatioNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestGen4ImageContentModerationPublicFigureThresholdJsonConverter(),
+                    new global::G.JsonConverters.RequestGen4ImageContentModerationPublicFigureThresholdNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestGemini25FlashRatioJsonConverter(),
+                    new global::G.JsonConverters.RequestGemini25FlashRatioNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestActTwoRatioJsonConverter(),
+                    new global::G.JsonConverters.RequestActTwoRatioNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestActTwoContentModerationPublicFigureThresholdJsonConverter(),
+                    new global::G.JsonConverters.RequestActTwoContentModerationPublicFigureThresholdNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestElevenMultilingualStsV2VoiceRunwayPresetVoicePresetIdJsonConverter(),
+                    new global::G.JsonConverters.RequestElevenMultilingualStsV2VoiceRunwayPresetVoicePresetIdNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestElevenMultilingualV2VoiceRunwayPresetVoicePresetIdJsonConverter(),
+                    new global::G.JsonConverters.RequestElevenMultilingualV2VoiceRunwayPresetVoicePresetIdNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestElevenVoiceDubbingTargetLangJsonConverter(),
+                    new global::G.JsonConverters.RequestElevenVoiceDubbingTargetLangNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestTypeJsonConverter(),
+                    new global::G.JsonConverters.RequestTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.ResponseResultUsedCreditModelJsonConverter(),
+                    new global::G.JsonConverters.ResponseResultUsedCreditModelNullableJsonConverter(),
+                    new global::G.JsonConverters.ResponseModelJsonConverter(),
+                    new global::G.JsonConverters.ResponseModelNullableJsonConverter(),
+                    new global::G.JsonConverters.RequestJsonConverter(),
+                    new global::G.JsonConverters.Request2JsonConverter(),
+                    new global::G.JsonConverters.Request3JsonConverter(),
+                    new global::G.JsonConverters.ReferencesItemJsonConverter(),
+                    new global::G.JsonConverters.Request4JsonConverter(),
+                    new global::G.JsonConverters.Request5JsonConverter(),
+                    new global::G.JsonConverters.CharacterJsonConverter(),
+                    new global::G.JsonConverters.Request6JsonConverter(),
+                    new global::G.JsonConverters.Request7JsonConverter(),
+                    new global::G.JsonConverters.MediaJsonConverter(),
+                    new global::G.JsonConverters.Request8JsonConverter(),
+                    new global::G.JsonConverters.Request9JsonConverter(),
+                    new global::G.JsonConverters.Request10JsonConverter(),
+                    new global::G.JsonConverters.ResponseJsonConverter(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<string?, global::System.Collections.Generic.IList<global::G.RequestGen4TurboPromptImagePromptImage>>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<string?, global::System.Collections.Generic.IList<global::G.RequestVeo31PromptImagePromptImage>>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<string?, global::System.Collections.Generic.IList<global::G.RequestGen3aTurboPromptImagePromptImage>>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<string?, global::System.Collections.Generic.IList<global::G.RequestVeo31FastPromptImagePromptImage>>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<string?, global::System.Collections.Generic.IList<global::G.RequestVeo3PromptImagePromptImage>>(),
                     new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 
+
+        /// <summary>
+        /// These endpoints all kick off tasks to create generations.
+        /// </summary>
+        public StartGeneratingClient StartGenerating => new StartGeneratingClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Endpoints for managing tasks that have been submitted.
+        /// </summary>
+        public TaskManagementClient TaskManagement => new TaskManagementClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Endpoints for uploading media files.
+        /// </summary>
+        public UploadsClient Uploads => new UploadsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OrganizationClient Organization => new OrganizationClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
 
         /// <summary>
         /// Creates a new instance of the Api.

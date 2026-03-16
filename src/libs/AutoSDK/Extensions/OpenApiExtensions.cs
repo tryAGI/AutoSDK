@@ -675,12 +675,12 @@ public static class OpenApiExtensions
         // {
         //     return context.TypeData.Value.CSharpTypeWithoutNullability + "." + context.CombinedEnumOriginalSchema.Value.Value.Enum.First().ToEnumValue(context.Settings).Name;
         // }
-        // Handle const values as defaults when no explicit default is set (string types only)
+        // Treat primitive const values as compile-time defaults.
         if (context.Schema.IsConst() && context.Schema.Default == null &&
             !context.TypeData.IsEnum &&
             !(context.Schema.Enum?.Any() ?? false))
         {
-            return $"\"{context.Schema.Const}\"";
+            return GetConstLiteral(context);
         }
 
         var defaultString = context.Schema.Default?.GetString();
@@ -761,6 +761,29 @@ public static class OpenApiExtensions
         }
         
         return context.Schema.Default?.GetString();
+    }
+
+    private static string? GetConstLiteral(SchemaContext context)
+    {
+        var constValue = context.Schema.Const;
+        if (constValue == null)
+        {
+            return null;
+        }
+
+        return context.TypeData.CSharpTypeWithoutNullability switch
+        {
+            "string" => $"\"{constValue.ClearForCSharp()}\"",
+            "bool" when bool.TryParse(constValue, out var value) => value ? "true" : "false",
+            "byte" when byte.TryParse(constValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) => value.ToString(CultureInfo.InvariantCulture),
+            "short" when short.TryParse(constValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) => value.ToString(CultureInfo.InvariantCulture),
+            "int" when int.TryParse(constValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) => value.ToString(CultureInfo.InvariantCulture),
+            "long" when long.TryParse(constValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) => value.ToString(CultureInfo.InvariantCulture) + "L",
+            "float" when float.TryParse(constValue, NumberStyles.Float, CultureInfo.InvariantCulture, out var value) => value.ToString(CultureInfo.InvariantCulture) + "F",
+            "double" when double.TryParse(constValue, NumberStyles.Float, CultureInfo.InvariantCulture, out var value) => value.ToString("R", CultureInfo.InvariantCulture),
+            "decimal" when decimal.TryParse(constValue, NumberStyles.Float, CultureInfo.InvariantCulture, out var value) => value.ToString(CultureInfo.InvariantCulture) + "M",
+            _ => null,
+        };
     }
     
     public static string GetSummary(this IOpenApiSchema schema)
