@@ -32,8 +32,8 @@
     <PackageReference Include="Microsoft.OpenApi" Version="3.4.0" />
     <PackageReference Include="Microsoft.OpenApi.YamlReader" Version="3.4.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
-    <PackageReference Include="System.Collections.Immutable" Version="10.0.3" />
-    <PackageReference Include="System.Text.Json" Version="10.0.3" />
+    <PackageReference Include="System.Collections.Immutable" Version="10.0.5" />
+    <PackageReference Include="System.Text.Json" Version="10.0.5" />
   </ItemGroup>
 
   <ItemGroup>
