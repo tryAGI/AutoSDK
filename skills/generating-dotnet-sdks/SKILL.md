@@ -114,7 +114,6 @@ This creates a full project structure including:
 - Solution file (`.slnx`)
 - GitHub Actions workflows (CI, auto-update, auto-merge, MkDocs)
 - Integration test project
-- FixOpenApiSpec helper
 - TrimmingHelper for NativeAOT validation
 - `generate.sh` regeneration script
 - `README.md`, `LICENSE`, `.gitignore`
@@ -160,7 +159,6 @@ MyApi/
 │   │   └── *.cs                      # Hand-written extensions
 │   ├── tests/IntegrationTests/
 │   └── helpers/
-│       ├── FixOpenApiSpec/            # OpenAPI 3.1 -> 3.0 converter
 │       ├── GenerateDocs/              # Doc generation
 │       └── TrimmingHelper/            # NativeAOT validation
 └── .github/workflows/
@@ -177,11 +175,6 @@ Every SDK includes a `generate.sh` script that automates the full regeneration p
 dotnet tool install --global autosdk.cli --prerelease
 rm -rf Generated
 curl -o openapi.yaml https://example.com/openapi.yaml
-dotnet run --project ../../helpers/FixOpenApiSpec openapi.yaml
-if [ $? -ne 0 ]; then
-  echo "Failed, exiting..."
-  exit 1
-fi
 autosdk generate openapi.yaml \
   --namespace Anthropic \
   --clientClassName AnthropicClient \
@@ -190,9 +183,9 @@ autosdk generate openapi.yaml \
   --exclude-deprecated-operations
 ```
 
-The pipeline: install CLI -> download spec -> fix spec (3.1->3.0) -> generate.
+The pipeline: install CLI -> download spec -> optionally patch the spec inline in `generate.sh` -> generate.
 
-If the spec lacks authentication definitions (no `securitySchemes`), use `--security-scheme` instead of patching the spec in FixOpenApiSpec:
+If the spec lacks authentication definitions (no `securitySchemes`), use `--security-scheme` instead of patching the spec manually:
 
 ```bash
 autosdk generate openapi.yaml \
@@ -266,7 +259,7 @@ The `generate` command's most important configuration flags:
 Common issues and solutions:
 
 - **"Could not find part of the path"** -- Enable Windows long paths in registry
-- **OpenAPI 3.1 spec errors** -- Run FixOpenApiSpec helper before generation
+- **Malformed or incomplete specs** -- Patch the downloaded spec inline in `generate.sh` with `jq`, `yq`, `sed`, or `perl` before generation
 - **Missing operations** -- Check that operationIds exist in the spec; use `--ignore-openapi-errors` if needed
 - **Naming collisions** -- AutoSDK resolves these automatically via suffixes
 - **No auth constructors generated** -- Spec is missing `securitySchemes`; use `--security-scheme "ApiKey:Header:x-api-key"` to inject auth

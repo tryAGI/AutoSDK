@@ -176,7 +176,7 @@ This inserts the URL at position 0 in the spec's `servers` list, taking preceden
 
 ## Injecting Security Schemes
 
-Many OpenAPI specs (e.g., Anthropic) lack `securitySchemes` definitions, which means the generated SDK won't include authentication constructors. Instead of patching the spec in FixOpenApiSpec, use the `--security-scheme` CLI option:
+Many OpenAPI specs (e.g., Anthropic) lack `securitySchemes` definitions, which means the generated SDK won't include authentication constructors. Instead of patching the spec manually, use the `--security-scheme` CLI option:
 
 ```bash
 # API key in a custom header
@@ -214,26 +214,23 @@ For the source generator approach, use the MSBuild property (semicolon-separated
 
 This injects the security schemes into the OpenAPI document at generation time, producing the same auth constructors as if the spec defined them natively.
 
-## The FixOpenApiSpec Helper
+## Inline Spec Patching In generate.sh
 
-Every SDK project includes a `FixOpenApiSpec` helper that preprocesses the OpenAPI spec before generation. It handles:
+AutoSDK now parses OpenAPI 3.1 specs directly, so scaffolded SDKs do not include a separate fixer project. When an upstream spec still needs local cleanup, patch it inline in `generate.sh` before calling `autosdk generate`.
 
-- Converting OpenAPI 3.1 to 3.0 format
-- Fixing common spec issues (missing operationIds, invalid references)
-- Normalizing schema structures
+Common approaches:
 
-Usage in the regeneration pipeline:
+- `jq` for JSON spec tweaks
+- `yq` for YAML/JSON structural edits
+- `sed` or `perl` for small text replacements
 
-```bash
-dotnet run --project ../../helpers/FixOpenApiSpec openapi.yaml
-```
-
-To customize spec fixing for your API, modify `src/helpers/FixOpenApiSpec/Program.cs`. Common customizations:
+Typical customizations:
 
 - Remove or rename conflicting operations
 - Add missing operationIds
 - Fix invalid schema references
-- Merge or split spec files
+- Inject missing `info` / `servers` metadata
+- Normalize defaults or examples that create noisy diffs
 
 ## CI Auto-Update Workflow
 
@@ -241,7 +238,7 @@ The standard `auto-update.yml` GitHub Actions workflow automatically:
 
 1. Runs every 3 hours on a cron schedule
 2. Downloads the latest OpenAPI spec from the provider
-3. Runs FixOpenApiSpec
+3. Applies any inline spec patches from `generate.sh`
 4. Regenerates the SDK with `generate.sh`
 5. Opens a pull request if changes are detected
 

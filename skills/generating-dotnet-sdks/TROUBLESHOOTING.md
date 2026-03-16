@@ -21,20 +21,17 @@ Official docs: https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-fi
 
 **Symptom:** Parse errors or unexpected behavior when using an OpenAPI 3.1 specification.
 
-**Cause:** AutoSDK uses Microsoft.OpenApi.NET for parsing which historically targeted OpenAPI 3.0. While newer versions support 3.1 natively, some features may need conversion.
+**Cause:** AutoSDK parses OpenAPI 3.1 natively now, but some upstream specs are still malformed or omit required metadata.
 
-**Solution:** Use the FixOpenApiSpec helper included in every scaffolded SDK project:
+**Solution:** Patch the downloaded spec inline in `generate.sh` before calling `autosdk generate`. Use the lightest tool that fits the problem:
 
 ```bash
-dotnet run --project src/helpers/FixOpenApiSpec openapi.yaml
+jq '.info.title //= "My API"' openapi.yaml > openapi.fixed.json && mv openapi.fixed.json openapi.yaml
 ```
 
-This converts OpenAPI 3.1 features to 3.0-compatible equivalents:
-- `type: [string, null]` -> `type: string` with `nullable: true`
-- `const` values -> `enum` with single value
-- `examples` array -> `example` single value
-
-Always run FixOpenApiSpec before `autosdk generate` in your `generate.sh` script.
+Other common tools:
+- `yq` for YAML-aware structural edits
+- `sed` / `perl` for small text replacements
 
 ## Spec Parse Errors
 
@@ -53,7 +50,7 @@ autosdk generate openapi.yaml \
 
 This is enabled by default in CLI mode. For warnings, use `--ignore-openapi-warnings` (also enabled by default).
 
-If specific errors cause generation problems, fix them in the FixOpenApiSpec helper before generation.
+If specific errors cause generation problems, fix them in the `generate.sh` preprocessing step before generation.
 
 ## Missing Operations in Output
 
@@ -61,7 +58,7 @@ If specific errors cause generation problems, fix them in the FixOpenApiSpec hel
 
 **Possible causes and solutions:**
 
-1. **Missing operationIds:** AutoSDK requires `operationId` on each operation to generate method names. Add missing operationIds in your FixOpenApiSpec helper.
+1. **Missing operationIds:** AutoSDK requires `operationId` on each operation to generate method names. Add missing operationIds in your preprocessing step.
 
 2. **Deprecated operations:** If using `--exclude-deprecated-operations`, deprecated endpoints are intentionally skipped. Remove the flag to include them.
 
@@ -82,7 +79,7 @@ dotnet tool update --global autosdk.cli --prerelease
 ```
 
 If collisions persist, you can:
-- Rename schemas in your FixOpenApiSpec helper
+- Rename schemas in your preprocessing step
 - Use `--methodNamingConvention MethodAndPath` for method name collisions
 - Exclude specific operations with `AutoSDK_ExcludeOperationIds`
 

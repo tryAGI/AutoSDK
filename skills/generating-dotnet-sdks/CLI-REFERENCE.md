@@ -172,10 +172,6 @@ Scaffolds a complete SDK project structure with CI/CD, tests, and documentation.
 │   │   ├── Tests.cs
 │   │   └── Tests.Test.cs
 │   └── helpers/
-│       ├── FixOpenApiSpec/
-│       │   ├── FixOpenApiSpec.csproj
-│       │   ├── Program.cs
-│       │   └── Properties/launchSettings.json
 │       ├── GenerateDocs/              # if --add-mkdocs
 │       │   ├── GenerateDocs.csproj
 │       │   └── Program.cs

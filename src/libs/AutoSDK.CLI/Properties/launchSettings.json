@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "FixOpenApiSpec": {
+    "AutoSDK.CLI": {
       "commandName": "Project",
       "commandLineArgs": ""
     }
