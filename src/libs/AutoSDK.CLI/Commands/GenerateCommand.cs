@@ -129,6 +129,14 @@ internal sealed class GenerateCommand : Command
         DefaultValueFactory = _ => string.Empty,
         Description = "Server base URL to inject (e.g., 'https://api.elevenlabs.io'). Useful for specs missing a servers field.",
     };
+
+    private Option<string[]> OpenApiOverrides { get; } = new(
+        name: "--openapi-override")
+    {
+        DefaultValueFactory = _ => Array.Empty<string>(),
+        Description = "OpenAPI override as 'path=action'. Actions: object, dictionary, remove. Repeatable.",
+        AllowMultipleArgumentsPerToken = true,
+    };
     
     public GenerateCommand() : base(name: "generate", description: "Generates client sdk using a OpenAPI spec.")
     {
@@ -148,6 +156,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(GenerateCli);
         Options.Add(SecuritySchemes);
         Options.Add(BaseUrl);
+        Options.Add(OpenApiOverrides);
 
         SetAction(HandleAsync);
     }
@@ -178,6 +187,7 @@ internal sealed class GenerateCommand : Command
             GenerateCli = parseResult.GetRequiredValue(GenerateCli),
             SecuritySchemes = parseResult.GetRequiredValue(SecuritySchemes).ToImmutableArray(),
             BaseUrl = parseResult.GetRequiredValue(BaseUrl),
+            OpenApiOverrides = parseResult.GetRequiredValue(OpenApiOverrides).ToImmutableArray(),
         };
             
         Console.WriteLine($"Loading {input}...");

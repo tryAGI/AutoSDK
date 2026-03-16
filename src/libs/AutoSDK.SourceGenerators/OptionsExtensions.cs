@@ -78,7 +78,9 @@ public static class OptionsExtensions
             GenerateCli: options.GetBoolGlobalOption(nameof(Settings.GenerateCli), prefix, defaultValue: Settings.Default.GenerateCli),
             SecuritySchemes: (options.GetGlobalOption(nameof(Settings.SecuritySchemes), prefix)?.Split(';') ??
                               []).ToImmutableArray(),
-            BaseUrl: options.GetGlobalOption(nameof(Settings.BaseUrl), prefix) ?? string.Empty);
+            BaseUrl: options.GetGlobalOption(nameof(Settings.BaseUrl), prefix) ?? string.Empty,
+            OpenApiOverrides: (options.GetGlobalOption(nameof(Settings.OpenApiOverrides), prefix)?.Split(';') ??
+                               []).Where(static x => !string.IsNullOrWhiteSpace(x)).ToImmutableArray());
         
         string? GetOptionFromAdditionalText(string name)
         {

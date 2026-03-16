@@ -71,6 +71,10 @@ public static class OpenApiExtensions
         {
             openApiDocument = openApiDocument.AddMissingPathParameters();
         }
+        if (settings.OpenApiOverrides.Length > 0)
+        {
+            openApiDocument.ApplyOpenApiOverrides(settings);
+        }
 
         openApiDocument.SanitizeNumericConstraints();
         openApiDocument.InferLargeIntegerFormats();
@@ -196,6 +200,291 @@ info:
                 inheritedTitle: null,
                 inheritedDescription: null);
         }
+    }
+
+    public static void ApplyOpenApiOverrides(
+        this OpenApiDocument document,
+        Settings settings)
+    {
+        document = document ?? throw new ArgumentNullException(nameof(document));
+
+        foreach (var rawOverride in settings.OpenApiOverrides)
+        {
+            if (!TryParseOpenApiOverride(rawOverride, out var path, out var action))
+            {
+                Console.WriteLine($"Invalid OpenAPI override '{rawOverride}'. Expected 'path=action'.");
+                continue;
+            }
+
+            if (!TryResolveOverrideTarget(document, path, out var target))
+            {
+                Console.WriteLine($"OpenAPI override target '{path}' was not found.");
+                continue;
+            }
+
+            switch (action)
+            {
+                case OpenApiOverrideAction.Object:
+                    target.Replace(CreateOverrideSchema(target.Schema, action));
+                    break;
+                case OpenApiOverrideAction.Dictionary:
+                    target.Replace(CreateOverrideSchema(target.Schema, action));
+                    break;
+                case OpenApiOverrideAction.Remove:
+                    if (target.Remove == null)
+                    {
+                        Console.WriteLine($"OpenAPI override target '{path}' cannot be removed.");
+                        continue;
+                    }
+
+                    target.Remove();
+                    break;
+                default:
+                    throw new InvalidOperationException($"Unsupported OpenAPI override action '{action}'.");
+            }
+        }
+    }
+
+    private static bool TryParseOpenApiOverride(
+        string rawOverride,
+        out string path,
+        out OpenApiOverrideAction action)
+    {
+        path = string.Empty;
+        action = default;
+
+        if (string.IsNullOrWhiteSpace(rawOverride))
+        {
+            return false;
+        }
+
+        var index = rawOverride.LastIndexOf('=');
+        if (index <= 0 || index == rawOverride.Length - 1)
+        {
+            return false;
+        }
+
+        path = rawOverride.Substring(0, index).Trim();
+        var actionText = rawOverride.Substring(index + 1).Trim();
+
+        return !string.IsNullOrWhiteSpace(path) &&
+               Enum.TryParse(actionText, ignoreCase: true, out action);
+    }
+
+    private static bool TryResolveOverrideTarget(
+        OpenApiDocument document,
+        string path,
+        out OpenApiOverrideTarget target)
+    {
+        target = null!;
+
+        const string prefix = "#/components/schemas/";
+        if (!path.StartsWith(prefix, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        var segments = path.Substring(prefix.Length)
+            .Split('/')
+            .Where(static x => x.Length > 0)
+            .Select(DecodePointerSegment)
+            .ToArray();
+        if (segments.Length == 0)
+        {
+            return false;
+        }
+
+        var componentId = segments[0];
+        if (!(document.Components?.Schemas?.TryGetValue(componentId, out var rootSchema) ?? false))
+        {
+            return false;
+        }
+
+        target = new OpenApiOverrideTarget(
+            rootSchema,
+            schema => document.Components!.Schemas![componentId] = schema,
+            () => document.Components!.Schemas!.Remove(componentId));
+
+        var index = 1;
+        while (index < segments.Length)
+        {
+            if (target.Schema is not OpenApiSchema concreteSchema)
+            {
+                return false;
+            }
+
+            var token = segments[index++];
+            switch (token)
+            {
+                case "properties":
+                {
+                    if (index >= segments.Length)
+                    {
+                        return false;
+                    }
+
+                    var propertyName = segments[index++];
+                    if (!(concreteSchema.Properties?.TryGetValue(propertyName, out var propertySchema) ?? false))
+                    {
+                        return false;
+                    }
+
+                    target = new OpenApiOverrideTarget(
+                        propertySchema,
+                        schema => concreteSchema.Properties![propertyName] = schema,
+                        () =>
+                        {
+                            concreteSchema.Properties!.Remove(propertyName);
+                            if (concreteSchema.Required?.Contains(propertyName) == true)
+                            {
+                                concreteSchema.Required = new HashSet<string>(
+                                    concreteSchema.Required.Where(x => x != propertyName),
+                                    StringComparer.Ordinal);
+                            }
+                        });
+                    break;
+                }
+                case "items":
+                {
+                    if (concreteSchema.Items == null)
+                    {
+                        return false;
+                    }
+
+                    target = new OpenApiOverrideTarget(
+                        concreteSchema.Items,
+                        schema => concreteSchema.Items = schema,
+                        () => concreteSchema.Items = null);
+                    break;
+                }
+                case "additionalProperties":
+                {
+                    if (concreteSchema.AdditionalProperties == null)
+                    {
+                        return false;
+                    }
+
+                    target = new OpenApiOverrideTarget(
+                        concreteSchema.AdditionalProperties,
+                        schema => concreteSchema.AdditionalProperties = schema,
+                        () => concreteSchema.AdditionalProperties = null);
+                    break;
+                }
+                case "anyOf":
+                case "oneOf":
+                case "allOf":
+                {
+                    if (index >= segments.Length ||
+                        !int.TryParse(segments[index++], NumberStyles.Integer, CultureInfo.InvariantCulture, out var itemIndex))
+                    {
+                        return false;
+                    }
+
+                    IList<IOpenApiSchema>? collection = token switch
+                    {
+                        "anyOf" => concreteSchema.AnyOf,
+                        "oneOf" => concreteSchema.OneOf,
+                        "allOf" => concreteSchema.AllOf,
+                        _ => null,
+                    };
+                    if (collection == null || itemIndex < 0 || itemIndex >= collection.Count)
+                    {
+                        return false;
+                    }
+
+                    target = new OpenApiOverrideTarget(
+                        collection[itemIndex],
+                        schema => collection[itemIndex] = schema,
+                        () => collection.RemoveAt(itemIndex));
+                    break;
+                }
+                default:
+                    return false;
+            }
+        }
+
+        return true;
+    }
+
+    private static string DecodePointerSegment(string segment)
+    {
+        return segment
+            .Replace("~1", "/")
+            .Replace("~0", "~");
+    }
+
+    private static OpenApiSchema CreateOverrideSchema(
+        IOpenApiSchema source,
+        OpenApiOverrideAction action)
+    {
+        if (source is OpenApiSchema schema)
+        {
+            return action switch
+            {
+                OpenApiOverrideAction.Object => new OpenApiSchema
+                {
+                    Type = JsonSchemaType.Object,
+                    Title = schema.Title,
+                    Description = schema.Description,
+                    Default = schema.Default,
+                    Example = schema.Example,
+                },
+                OpenApiOverrideAction.Dictionary => new OpenApiSchema
+                {
+                    Type = JsonSchemaType.Object,
+                    Title = schema.Title,
+                    Description = schema.Description,
+                    Default = schema.Default,
+                    Example = schema.Example,
+                    AdditionalProperties = new OpenApiSchema
+                    {
+                        Type = JsonSchemaType.Object,
+                    },
+                },
+                _ => throw new InvalidOperationException($"Unsupported OpenAPI override action '{action}'."),
+            };
+        }
+
+        return action switch
+        {
+            OpenApiOverrideAction.Object => new OpenApiSchema
+            {
+                Type = JsonSchemaType.Object,
+            },
+            OpenApiOverrideAction.Dictionary => new OpenApiSchema
+            {
+                Type = JsonSchemaType.Object,
+                AdditionalProperties = new OpenApiSchema
+                {
+                    Type = JsonSchemaType.Object,
+                },
+            },
+            _ => throw new InvalidOperationException($"Unsupported OpenAPI override action '{action}'."),
+        };
+    }
+
+    private sealed class OpenApiOverrideTarget
+    {
+        public OpenApiOverrideTarget(
+            IOpenApiSchema schema,
+            Action<IOpenApiSchema> replace,
+            Action? remove)
+        {
+            Schema = schema;
+            Replace = replace;
+            Remove = remove;
+        }
+
+        public IOpenApiSchema Schema { get; }
+        public Action<IOpenApiSchema> Replace { get; }
+        public Action? Remove { get; }
+    }
+
+    private enum OpenApiOverrideAction
+    {
+        Object,
+        Dictionary,
+        Remove,
     }
 
     private static void SanitizeSchemaNumericConstraints(IOpenApiSchema? schema)

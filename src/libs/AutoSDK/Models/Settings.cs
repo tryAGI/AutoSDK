@@ -51,7 +51,8 @@ public record struct Settings(
     bool GenerateCli,
 
     ImmutableArray<string> SecuritySchemes,
-    string BaseUrl)
+    string BaseUrl,
+    ImmutableArray<string> OpenApiOverrides)
 {
     public static Settings Default => new(
         TargetFramework: "net10.0",
@@ -93,6 +94,7 @@ public record struct Settings(
         FromCli: false,
         GenerateCli: false,
         SecuritySchemes: ImmutableArray<string>.Empty,
-        BaseUrl: string.Empty
+        BaseUrl: string.Empty,
+        OpenApiOverrides: ImmutableArray<string>.Empty
     );
 }

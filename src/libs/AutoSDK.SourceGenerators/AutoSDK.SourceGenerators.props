@@ -100,6 +100,8 @@
 
     <!-- Server base URL to inject (e.g., 'https://api.elevenlabs.io'). Default: Empty -->
     <CompilerVisibleProperty Include="AutoSDK_BaseUrl"/>
+    <!-- OpenAPI overrides as 'path=action' separated by ;. Actions: object, dictionary, remove. Default: Empty -->
+    <CompilerVisibleProperty Include="AutoSDK_OpenApiOverrides"/>
   </ItemGroup>
 
   <ItemGroup>
