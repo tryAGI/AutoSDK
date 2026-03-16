@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Bytes { get; set; }
+        public required long Bytes { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the file was created.
@@ -113,7 +113,7 @@ namespace G
 #endif
         public OpenAIFile(
             string id,
-            int bytes,
+            long bytes,
             global::System.DateTimeOffset createdAt,
             string filename,
             global::G.OpenAIFilePurpose purpose,

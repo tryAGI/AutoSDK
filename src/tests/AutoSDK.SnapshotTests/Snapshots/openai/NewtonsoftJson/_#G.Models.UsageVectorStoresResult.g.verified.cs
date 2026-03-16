@@ -19,7 +19,7 @@ namespace G
         /// The vector stores usage in bytes.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int UsageBytes { get; set; } = default!;
+        public long UsageBytes { get; set; } = default!;
 
         /// <summary>
         /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
@@ -44,7 +44,7 @@ namespace G
         /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
         /// </param>
         public UsageVectorStoresResult(
-            int usageBytes,
+            long usageBytes,
             global::G.UsageVectorStoresResultObject @object,
             string? projectId)
         {

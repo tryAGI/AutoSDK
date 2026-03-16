@@ -41,7 +41,7 @@ namespace G
         /// </summary>
         /// <example>32</example>
         [global::Newtonsoft.Json.JsonProperty("memory_used_mb")]
-        public int? MemoryUsedMb { get; set; }
+        public long? MemoryUsedMb { get; set; }
 
         /// <summary>
         /// Results of input/output schema validation.
@@ -82,7 +82,7 @@ namespace G
             string type,
             object output,
             int latencyMillis,
-            int? memoryUsedMb,
+            long? memoryUsedMb,
             global::G.TestToolSuccessResponseValidationResults? validationResults)
         {
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));

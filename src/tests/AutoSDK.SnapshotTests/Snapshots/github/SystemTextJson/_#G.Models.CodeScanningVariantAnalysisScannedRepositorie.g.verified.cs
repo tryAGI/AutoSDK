@@ -34,7 +34,7 @@ namespace G
         /// The size of the artifact. This is only available for successful analyses.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("artifact_size_in_bytes")]
-        public int? ArtifactSizeInBytes { get; set; }
+        public long? ArtifactSizeInBytes { get; set; }
 
         /// <summary>
         /// The reason of the failure of this repo task. This is only available if the repository task has failed.
@@ -73,7 +73,7 @@ namespace G
             global::G.CodeScanningVariantAnalysisRepository repository,
             global::G.CodeScanningVariantAnalysisStatus analysisStatus,
             int? resultCount,
-            int? artifactSizeInBytes,
+            long? artifactSizeInBytes,
             string? failureMessage)
         {
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));

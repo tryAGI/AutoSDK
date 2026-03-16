@@ -31,7 +31,7 @@ namespace G
         /// The size of the file in bytes.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int SizeBytes { get; set; } = default!;
+        public long SizeBytes { get; set; } = default!;
 
         /// <summary>
         /// The date of the file in Unix time.
@@ -67,7 +67,7 @@ namespace G
             string fileId,
             string fileName,
             string mimeType,
-            int sizeBytes,
+            long sizeBytes,
             int uploadDateUnix)
         {
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));

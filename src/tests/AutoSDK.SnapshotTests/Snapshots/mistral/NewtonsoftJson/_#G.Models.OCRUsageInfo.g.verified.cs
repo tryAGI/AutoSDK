@@ -19,7 +19,7 @@ namespace G
         /// Document size in bytes
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("doc_size_bytes")]
-        public int? DocSizeBytes { get; set; }
+        public long? DocSizeBytes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +38,7 @@ namespace G
         /// </param>
         public OCRUsageInfo(
             int pagesProcessed,
-            int? docSizeBytes)
+            long? docSizeBytes)
         {
             this.PagesProcessed = pagesProcessed;
             this.DocSizeBytes = docSizeBytes;

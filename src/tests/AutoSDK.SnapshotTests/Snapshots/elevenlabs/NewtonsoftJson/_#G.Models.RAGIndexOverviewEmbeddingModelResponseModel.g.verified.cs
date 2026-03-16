@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("used_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int UsedBytes { get; set; } = default!;
+        public long UsedBytes { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -34,7 +34,7 @@ namespace G
         /// <param name="usedBytes"></param>
         public RAGIndexOverviewEmbeddingModelResponseModel(
             global::G.EmbeddingModelEnum model,
-            int usedBytes)
+            long usedBytes)
         {
             this.Model = model;
             this.UsedBytes = usedBytes;

@@ -23,7 +23,7 @@ namespace G
         /// </summary>
         /// <example>2322142</example>
         [global::Newtonsoft.Json.JsonProperty("active_caches_size_in_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int ActiveCachesSizeInBytes { get; set; } = default!;
+        public long ActiveCachesSizeInBytes { get; set; } = default!;
 
         /// <summary>
         /// The number of active caches in the repository.<br/>
@@ -56,7 +56,7 @@ namespace G
         /// </param>
         public ActionsCacheUsageByRepository(
             string fullName,
-            int activeCachesSizeInBytes,
+            long activeCachesSizeInBytes,
             int activeCachesCount)
         {
             this.FullName = fullName ?? throw new global::System.ArgumentNullException(nameof(fullName));

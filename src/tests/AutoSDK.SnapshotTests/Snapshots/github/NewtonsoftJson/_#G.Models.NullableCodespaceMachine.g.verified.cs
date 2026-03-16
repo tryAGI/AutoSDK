@@ -39,7 +39,7 @@ namespace G
         /// </summary>
         /// <example>68719476736</example>
         [global::Newtonsoft.Json.JsonProperty("storage_in_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int StorageInBytes { get; set; } = default!;
+        public long StorageInBytes { get; set; } = default!;
 
         /// <summary>
         /// How much memory is available to the codespace.<br/>
@@ -47,7 +47,7 @@ namespace G
         /// </summary>
         /// <example>17179869184</example>
         [global::Newtonsoft.Json.JsonProperty("memory_in_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int MemoryInBytes { get; set; } = default!;
+        public long MemoryInBytes { get; set; } = default!;
 
         /// <summary>
         /// How many cores are available to the codespace.<br/>
@@ -106,8 +106,8 @@ namespace G
             string name,
             string displayName,
             string operatingSystem,
-            int storageInBytes,
-            int memoryInBytes,
+            long storageInBytes,
+            long memoryInBytes,
             int cpus,
             global::G.NullableCodespaceMachinePrebuildAvailability? prebuildAvailability)
         {

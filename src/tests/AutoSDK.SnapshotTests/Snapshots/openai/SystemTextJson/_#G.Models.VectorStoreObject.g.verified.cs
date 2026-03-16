@@ -43,7 +43,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int UsageBytes { get; set; }
+        public required long UsageBytes { get; set; }
 
         /// <summary>
         /// 
@@ -141,7 +141,7 @@ namespace G
             string id,
             global::System.DateTimeOffset createdAt,
             string name,
-            int usageBytes,
+            long usageBytes,
             global::G.VectorStoreObjectFileCounts fileCounts,
             global::G.VectorStoreObjectStatus status,
             global::G.VectorStoreObjectObject @object,

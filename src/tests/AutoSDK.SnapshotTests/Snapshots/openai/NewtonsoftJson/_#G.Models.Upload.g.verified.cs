@@ -33,7 +33,7 @@ namespace G
         /// The intended number of bytes to be uploaded.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Bytes { get; set; } = default!;
+        public long Bytes { get; set; } = default!;
 
         /// <summary>
         /// The intended purpose of the file. [Please refer here](/docs/api-reference/files/object#files/object-purpose) for acceptable values.
@@ -103,7 +103,7 @@ namespace G
             string id,
             global::System.DateTimeOffset createdAt,
             string filename,
-            int bytes,
+            long bytes,
             string purpose,
             global::G.UploadStatus status,
             global::System.DateTimeOffset expiresAt,

@@ -56,7 +56,7 @@ namespace G
         /// </summary>
         /// <example>1024</example>
         [global::Newtonsoft.Json.JsonProperty("size_in_bytes")]
-        public int? SizeInBytes { get; set; }
+        public long? SizeInBytes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -95,7 +95,7 @@ namespace G
             string? version,
             global::System.DateTime? lastAccessedAt,
             global::System.DateTime? createdAt,
-            int? sizeInBytes)
+            long? sizeInBytes)
         {
             this.Id = id;
             this.Ref = @ref;

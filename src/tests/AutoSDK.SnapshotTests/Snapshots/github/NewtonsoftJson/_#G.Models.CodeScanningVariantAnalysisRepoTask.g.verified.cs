@@ -25,7 +25,7 @@ namespace G
         /// The size of the artifact. This is only available for successful analyses.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("artifact_size_in_bytes")]
-        public int? ArtifactSizeInBytes { get; set; }
+        public long? ArtifactSizeInBytes { get; set; }
 
         /// <summary>
         /// The number of results in the case of a successful analysis. This is only available for successful analyses.
@@ -93,7 +93,7 @@ namespace G
         public CodeScanningVariantAnalysisRepoTask(
             global::G.SimpleRepository repository,
             global::G.CodeScanningVariantAnalysisStatus analysisStatus,
-            int? artifactSizeInBytes,
+            long? artifactSizeInBytes,
             int? resultCount,
             string? failureMessage,
             string? databaseCommitSha,

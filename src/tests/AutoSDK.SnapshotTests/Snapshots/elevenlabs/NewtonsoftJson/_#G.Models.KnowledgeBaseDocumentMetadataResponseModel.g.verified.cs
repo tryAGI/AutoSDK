@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int SizeBytes { get; set; } = default!;
+        public long SizeBytes { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,7 +42,7 @@ namespace G
         public KnowledgeBaseDocumentMetadataResponseModel(
             int createdAtUnixSecs,
             int lastUpdatedAtUnixSecs,
-            int sizeBytes)
+            long sizeBytes)
         {
             this.CreatedAtUnixSecs = createdAtUnixSecs;
             this.LastUpdatedAtUnixSecs = lastUpdatedAtUnixSecs;

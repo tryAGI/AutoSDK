@@ -37,7 +37,7 @@ namespace G
         /// </summary>
         /// <example>12345</example>
         [global::Newtonsoft.Json.JsonProperty("size_in_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int SizeInBytes { get; set; } = default!;
+        public long SizeInBytes { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/repos/github/hello-world/actions/artifacts/5
@@ -123,7 +123,7 @@ namespace G
             int id,
             string nodeId,
             string name,
-            int sizeInBytes,
+            long sizeInBytes,
             string url,
             string archiveDownloadUrl,
             bool expired,

@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_file_size")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int MaxFileSize { get; set; }
+        public required long MaxFileSize { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,7 +32,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RepositoryRuleMaxFileSizeParameters(
-            int maxFileSize)
+            long maxFileSize)
         {
             this.MaxFileSize = maxFileSize;
         }

@@ -183,7 +183,7 @@
     Name(string)[Library management],
     Path(string)[Library management],
     FileType(string)[Library management],
-    SizeBytes(int)[Library management],
+    SizeBytes(long)[Library management],
     Labels(array)[Library management],
       LabelsItem(string)[Library management],
     PublicUrl(string)[Library management],

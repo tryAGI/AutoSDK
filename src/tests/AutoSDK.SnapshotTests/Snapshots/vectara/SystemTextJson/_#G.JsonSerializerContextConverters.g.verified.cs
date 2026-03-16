@@ -247,7 +247,7 @@ namespace G
             typeof(global::G.JsonConverters.OneOfJsonConverter<int?, global::G.EagerReference>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<int?, global::G.EagerReference>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<bool?, global::G.EagerReference>),
-            typeof(global::G.JsonConverters.OneOfJsonConverter<int?, global::G.EagerReference>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<long?, global::G.EagerReference>),
             typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.User, global::G.CreateUserResponse2>),
             typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };

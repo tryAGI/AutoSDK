@@ -25,7 +25,7 @@ namespace G
         /// <example>2322142</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("active_caches_size_in_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ActiveCachesSizeInBytes { get; set; }
+        public required long ActiveCachesSizeInBytes { get; set; }
 
         /// <summary>
         /// The number of active caches in the repository.<br/>
@@ -62,7 +62,7 @@ namespace G
 #endif
         public ActionsCacheUsageByRepository(
             string fullName,
-            int activeCachesSizeInBytes,
+            long activeCachesSizeInBytes,
             int activeCachesCount)
         {
             this.FullName = fullName ?? throw new global::System.ArgumentNullException(nameof(fullName));

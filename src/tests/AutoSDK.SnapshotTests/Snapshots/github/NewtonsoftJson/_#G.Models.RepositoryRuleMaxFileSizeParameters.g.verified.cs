@@ -13,7 +13,7 @@ namespace G
         /// The maximum file size allowed in megabytes. This limit does not apply to Git Large File Storage (Git LFS).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_file_size", Required = global::Newtonsoft.Json.Required.Always)]
-        public int MaxFileSize { get; set; } = default!;
+        public long MaxFileSize { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +28,7 @@ namespace G
         /// The maximum file size allowed in megabytes. This limit does not apply to Git Large File Storage (Git LFS).
         /// </param>
         public RepositoryRuleMaxFileSizeParameters(
-            int maxFileSize)
+            long maxFileSize)
         {
             this.MaxFileSize = maxFileSize;
         }

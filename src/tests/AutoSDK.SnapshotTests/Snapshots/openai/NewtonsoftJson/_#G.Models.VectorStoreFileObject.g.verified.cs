@@ -27,7 +27,7 @@ namespace G
         /// The total vector store usage in bytes. Note that this may be different from the original file size.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int UsageBytes { get; set; } = default!;
+        public long UsageBytes { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the vector store file was created.
@@ -111,7 +111,7 @@ namespace G
         /// </param>
         public VectorStoreFileObject(
             string id,
-            int usageBytes,
+            long usageBytes,
             global::System.DateTimeOffset createdAt,
             string vectorStoreId,
             global::G.VectorStoreFileObjectStatus status,

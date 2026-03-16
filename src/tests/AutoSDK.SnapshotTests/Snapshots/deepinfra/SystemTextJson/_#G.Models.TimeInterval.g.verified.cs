@@ -19,7 +19,7 @@ namespace G
         /// Default Value: 4000000000000L
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("to")]
-        public int? To { get; set; }
+        public long? To { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,7 +41,7 @@ namespace G
 #endif
         public TimeInterval(
             int? fr,
-            int? to)
+            long? to)
         {
             this.Fr = fr;
             this.To = to;

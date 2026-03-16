@@ -48,7 +48,7 @@ namespace G
         /// The size of the file, in bytes.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sizeBytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int SizeBytes { get; set; } = default!;
+        public long SizeBytes { get; set; } = default!;
 
         /// <summary>
         /// Any string labels you have associated with the file. You can apply arbitrary<br/>
@@ -155,7 +155,7 @@ namespace G
             global::System.Guid fileId,
             string name,
             string fileType,
-            int sizeBytes,
+            long sizeBytes,
             global::System.Guid createdBy,
             global::System.DateTime creationDate,
             global::System.DateTime lastUpdated,

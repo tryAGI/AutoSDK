@@ -96,7 +96,7 @@ namespace G
         /// The next maximum verification attempts reset time in Unix milliseconds.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_max_verification_attempts_reset_unix_ms")]
-        public int? NextMaxVerificationAttemptsResetUnixMs { get; set; }
+        public long? NextMaxVerificationAttemptsResetUnixMs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -166,7 +166,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? sliceIds,
             global::G.ManualVerificationResponseModel? manualVerification,
             int? maxVerificationAttempts,
-            int? nextMaxVerificationAttemptsResetUnixMs)
+            long? nextMaxVerificationAttemptsResetUnixMs)
         {
             this.IsAllowedToFineTune = isAllowedToFineTune;
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));

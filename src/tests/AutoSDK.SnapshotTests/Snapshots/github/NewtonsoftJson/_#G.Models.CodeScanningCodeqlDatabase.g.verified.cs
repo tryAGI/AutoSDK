@@ -43,7 +43,7 @@ namespace G
         /// The size of the CodeQL database file in bytes.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Size { get; set; } = default!;
+        public long Size { get; set; } = default!;
 
         /// <summary>
         /// The date and time at which the CodeQL database was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
@@ -114,7 +114,7 @@ namespace G
             string language,
             global::G.SimpleUser uploader,
             string contentType,
-            int size,
+            long size,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             string url,

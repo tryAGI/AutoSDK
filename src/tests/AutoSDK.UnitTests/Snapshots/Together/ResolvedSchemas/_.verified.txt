@@ -311,7 +311,7 @@
     Object(string)[Files],
     CreatedAt(int)[Files],
     Filename(string)[Files],
-    Bytes(int)[Files],
+    Bytes(long)[Files],
     FileResponsePurpose(enum)[Files],
     Processed(bool)[Files],
     FileResponseFileType(enum)[Files],

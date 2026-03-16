@@ -52,7 +52,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sizeBytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int SizeBytes { get; set; }
+        public required long SizeBytes { get; set; }
 
         /// <summary>
         /// Any string labels you have associated with the file. You can apply arbitrary<br/>
@@ -166,7 +166,7 @@ namespace G
             global::System.Guid fileId,
             string name,
             string fileType,
-            int sizeBytes,
+            long sizeBytes,
             global::System.Guid createdBy,
             global::System.DateTime creationDate,
             global::System.DateTime lastUpdated,

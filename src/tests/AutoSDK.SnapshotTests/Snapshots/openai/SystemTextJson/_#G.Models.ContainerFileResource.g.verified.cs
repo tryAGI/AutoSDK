@@ -43,7 +43,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Bytes { get; set; }
+        public required long Bytes { get; set; }
 
         /// <summary>
         /// Path of the file in the container.
@@ -97,7 +97,7 @@ namespace G
             string @object,
             string containerId,
             global::System.DateTimeOffset createdAt,
-            int bytes,
+            long bytes,
             string path,
             string source)
         {

@@ -49,7 +49,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Size { get; set; }
+        public required long Size { get; set; }
 
         /// <summary>
         /// The date and time at which the CodeQL database was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
@@ -126,7 +126,7 @@ namespace G
             string language,
             global::G.SimpleUser uploader,
             string contentType,
-            int size,
+            long size,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             string url,

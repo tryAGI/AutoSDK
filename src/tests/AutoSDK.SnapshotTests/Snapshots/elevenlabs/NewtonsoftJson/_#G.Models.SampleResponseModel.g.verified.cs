@@ -31,7 +31,7 @@ namespace G
         /// The size of the sample file in bytes.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int SizeBytes { get; set; } = default!;
+        public long SizeBytes { get; set; } = default!;
 
         /// <summary>
         /// The hash of the sample file.
@@ -116,7 +116,7 @@ namespace G
             string sampleId,
             string fileName,
             string mimeType,
-            int sizeBytes,
+            long sizeBytes,
             string hash,
             double? durationSecs,
             bool? removeBackgroundNoise,

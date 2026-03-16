@@ -431,7 +431,7 @@ namespace G
         /// </summary>
         /// <example>108</example>
         [global::Newtonsoft.Json.JsonProperty("size", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Size { get; set; } = default!;
+        public long Size { get; set; } = default!;
 
         /// <summary>
         /// The default branch of the repository.<br/>
@@ -1101,7 +1101,7 @@ namespace G
             int forksCount,
             int stargazersCount,
             int watchersCount,
-            int size,
+            long size,
             string defaultBranch,
             int openIssuesCount,
             bool hasIssues,

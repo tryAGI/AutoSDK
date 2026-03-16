@@ -41,7 +41,7 @@ namespace G
         /// </summary>
         /// <example>2664</example>
         [global::Newtonsoft.Json.JsonProperty("bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Bytes { get; set; } = default!;
+        public long Bytes { get; set; } = default!;
 
         /// <summary>
         /// Example: fine-tune
@@ -104,7 +104,7 @@ namespace G
             string @object,
             int createdAt,
             string filename,
-            int bytes,
+            long bytes,
             bool processed,
             global::G.FileResponseFileType fileType,
             int lineCount,

@@ -54,7 +54,7 @@ namespace G
         /// The maximum audio megabytes per minute. Only present for relevant models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_audio_megabytes_per_1_minute")]
-        public int? MaxAudioMegabytesPer1Minute { get; set; }
+        public long? MaxAudioMegabytesPer1Minute { get; set; }
 
         /// <summary>
         /// The maximum requests per day. Only present for relevant models.
@@ -114,7 +114,7 @@ namespace G
             int maxTokensPer1Minute,
             global::G.ProjectRateLimitObject @object,
             int? maxImagesPer1Minute,
-            int? maxAudioMegabytesPer1Minute,
+            long? maxAudioMegabytesPer1Minute,
             int? maxRequestsPer1Day,
             int? batch1DayMaxInputTokens)
         {

@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Bytes { get; set; }
+        public required long Bytes { get; set; }
 
         /// <summary>
         /// The UNIX timestamp (in seconds) of the event.
@@ -119,7 +119,7 @@ namespace G
         public RetrieveFileOut(
             global::System.Guid id,
             string @object,
-            int bytes,
+            long bytes,
             global::System.DateTimeOffset createdAt,
             string filename,
             global::G.FilePurpose purpose,

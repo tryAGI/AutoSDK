@@ -281,7 +281,7 @@ namespace G
                     new global::G.JsonConverters.OneOfJsonConverter<int?, global::G.EagerReference>(),
                     new global::G.JsonConverters.OneOfJsonConverter<int?, global::G.EagerReference>(),
                     new global::G.JsonConverters.OneOfJsonConverter<bool?, global::G.EagerReference>(),
-                    new global::G.JsonConverters.OneOfJsonConverter<int?, global::G.EagerReference>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<long?, global::G.EagerReference>(),
                     new global::G.JsonConverters.AllOfJsonConverter<global::G.User, global::G.CreateUserResponse2>(),
                     new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }

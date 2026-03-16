@@ -41,7 +41,7 @@ namespace G
         /// <example>12345</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("size_in_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int SizeInBytes { get; set; }
+        public required long SizeInBytes { get; set; }
 
         /// <summary>
         /// Example: https://api.github.com/repos/github/hello-world/actions/artifacts/5
@@ -133,7 +133,7 @@ namespace G
             int id,
             string nodeId,
             string name,
-            int sizeInBytes,
+            long sizeInBytes,
             string url,
             string archiveDownloadUrl,
             bool expired,

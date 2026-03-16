@@ -14,21 +14,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_gigabytes_bandwidth_used")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int TotalGigabytesBandwidthUsed { get; set; }
+        public required long TotalGigabytesBandwidthUsed { get; set; }
 
         /// <summary>
         /// Total paid storage space (GB) for GitHuub Packages.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_paid_gigabytes_bandwidth_used")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int TotalPaidGigabytesBandwidthUsed { get; set; }
+        public required long TotalPaidGigabytesBandwidthUsed { get; set; }
 
         /// <summary>
         /// Free storage space (GB) for GitHub Packages.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("included_gigabytes_bandwidth")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int IncludedGigabytesBandwidth { get; set; }
+        public required long IncludedGigabytesBandwidth { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,9 +52,9 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PackagesBillingUsage(
-            int totalGigabytesBandwidthUsed,
-            int totalPaidGigabytesBandwidthUsed,
-            int includedGigabytesBandwidth)
+            long totalGigabytesBandwidthUsed,
+            long totalPaidGigabytesBandwidthUsed,
+            long includedGigabytesBandwidth)
         {
             this.TotalGigabytesBandwidthUsed = totalGigabytesBandwidthUsed;
             this.TotalPaidGigabytesBandwidthUsed = totalPaidGigabytesBandwidthUsed;

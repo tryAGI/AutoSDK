@@ -37,7 +37,7 @@ namespace G
         /// Size of the file in bytes.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Bytes { get; set; } = default!;
+        public long Bytes { get; set; } = default!;
 
         /// <summary>
         /// Path of the file in the container.
@@ -86,7 +86,7 @@ namespace G
             string @object,
             string containerId,
             global::System.DateTimeOffset createdAt,
-            int bytes,
+            long bytes,
             string path,
             string source)
         {

@@ -46,7 +46,7 @@ namespace G
         /// <example>2664</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Bytes { get; set; }
+        public required long Bytes { get; set; }
 
         /// <summary>
         /// Example: fine-tune
@@ -117,7 +117,7 @@ namespace G
             string @object,
             int createdAt,
             string filename,
-            int bytes,
+            long bytes,
             bool processed,
             global::G.FileResponseFileType fileType,
             int lineCount,

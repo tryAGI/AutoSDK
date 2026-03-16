@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_active_caches_size_in_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int TotalActiveCachesSizeInBytes { get; set; }
+        public required long TotalActiveCachesSizeInBytes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,7 +43,7 @@ namespace G
 #endif
         public ActionsCacheUsageOrgEnterprise(
             int totalActiveCachesCount,
-            int totalActiveCachesSizeInBytes)
+            long totalActiveCachesSizeInBytes)
         {
             this.TotalActiveCachesCount = totalActiveCachesCount;
             this.TotalActiveCachesSizeInBytes = totalActiveCachesSizeInBytes;

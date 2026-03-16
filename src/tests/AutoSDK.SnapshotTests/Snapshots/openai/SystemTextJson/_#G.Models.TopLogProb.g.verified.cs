@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<int> Bytes { get; set; }
+        public required global::System.Collections.Generic.IList<long> Bytes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,7 +48,7 @@ namespace G
         public TopLogProb(
             string token,
             double logprob,
-            global::System.Collections.Generic.IList<int> bytes)
+            global::System.Collections.Generic.IList<long> bytes)
         {
             this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
             this.Logprob = logprob;

@@ -392,7 +392,7 @@ namespace G
         /// The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size")]
-        public int? Size { get; set; }
+        public long? Size { get; set; }
 
         /// <summary>
         /// 
@@ -843,7 +843,7 @@ namespace G
             int? forksCount,
             int? stargazersCount,
             int? watchersCount,
-            int? size,
+            long? size,
             string? defaultBranch,
             int? openIssuesCount,
             bool? isTemplate,

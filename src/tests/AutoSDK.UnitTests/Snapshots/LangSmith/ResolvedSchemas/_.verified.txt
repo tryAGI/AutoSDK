@@ -372,7 +372,7 @@
     ScaleUpNthreadsLimit(int)[info],
     ScaleDownNemptyTrigger(int)[info],
     SizeLimit(int)[info],
-    SizeLimitBytes(int)[info],
+    SizeLimitBytes(long)[info],
   BodyParamsForRunSchema(class)[run, public],
     BodyParamsForRunSchemaId(class)[run, public],
       IdVariant1(array)[run, public],

@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int SizeBytes { get; set; }
+        public required long SizeBytes { get; set; }
 
         /// <summary>
         /// The hash of the sample file.
@@ -124,7 +124,7 @@ namespace G
             string sampleId,
             string fileName,
             string mimeType,
-            int sizeBytes,
+            long sizeBytes,
             string hash,
             double? durationSecs,
             bool? removeBackgroundNoise,

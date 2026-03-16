@@ -69,7 +69,7 @@
   SuspendReason(enum),
   TimeInterval(class),
     Fr(int),
-    To(int),
+    To(long),
   UsageItem(class),
     ModelMeta(ref),
     Units(int),

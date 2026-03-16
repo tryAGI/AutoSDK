@@ -43,7 +43,7 @@ namespace G
         /// <example>68719476736</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("storage_in_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int StorageInBytes { get; set; }
+        public required long StorageInBytes { get; set; }
 
         /// <summary>
         /// How much memory is available to the codespace.<br/>
@@ -52,7 +52,7 @@ namespace G
         /// <example>17179869184</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("memory_in_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int MemoryInBytes { get; set; }
+        public required long MemoryInBytes { get; set; }
 
         /// <summary>
         /// How many cores are available to the codespace.<br/>
@@ -116,8 +116,8 @@ namespace G
             string name,
             string displayName,
             string operatingSystem,
-            int storageInBytes,
-            int memoryInBytes,
+            long storageInBytes,
+            long memoryInBytes,
             int cpus,
             global::G.CodespaceMachinePrebuildAvailability? prebuildAvailability)
         {

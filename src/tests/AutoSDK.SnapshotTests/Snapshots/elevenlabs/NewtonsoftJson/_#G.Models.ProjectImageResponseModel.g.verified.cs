@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file_size_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int FileSizeBytes { get; set; } = default!;
+        public long FileSizeBytes { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -166,7 +166,7 @@ namespace G
             string filename,
             string signedUrl,
             string thumbnailSignedUrl,
-            int fileSizeBytes,
+            long fileSizeBytes,
             int width,
             int height,
             int offsetMs,

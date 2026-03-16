@@ -13,19 +13,19 @@ namespace G
         /// Sum of the free and paid storage space (GB) for GitHuub Packages.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_gigabytes_bandwidth_used", Required = global::Newtonsoft.Json.Required.Always)]
-        public int TotalGigabytesBandwidthUsed { get; set; } = default!;
+        public long TotalGigabytesBandwidthUsed { get; set; } = default!;
 
         /// <summary>
         /// Total paid storage space (GB) for GitHuub Packages.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_paid_gigabytes_bandwidth_used", Required = global::Newtonsoft.Json.Required.Always)]
-        public int TotalPaidGigabytesBandwidthUsed { get; set; } = default!;
+        public long TotalPaidGigabytesBandwidthUsed { get; set; } = default!;
 
         /// <summary>
         /// Free storage space (GB) for GitHub Packages.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("included_gigabytes_bandwidth", Required = global::Newtonsoft.Json.Required.Always)]
-        public int IncludedGigabytesBandwidth { get; set; } = default!;
+        public long IncludedGigabytesBandwidth { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,9 +46,9 @@ namespace G
         /// Free storage space (GB) for GitHub Packages.
         /// </param>
         public PackagesBillingUsage(
-            int totalGigabytesBandwidthUsed,
-            int totalPaidGigabytesBandwidthUsed,
-            int includedGigabytesBandwidth)
+            long totalGigabytesBandwidthUsed,
+            long totalPaidGigabytesBandwidthUsed,
+            long includedGigabytesBandwidth)
         {
             this.TotalGigabytesBandwidthUsed = totalGigabytesBandwidthUsed;
             this.TotalPaidGigabytesBandwidthUsed = totalPaidGigabytesBandwidthUsed;

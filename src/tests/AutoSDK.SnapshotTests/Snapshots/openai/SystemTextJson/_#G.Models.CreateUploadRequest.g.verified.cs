@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Bytes { get; set; }
+        public required long Bytes { get; set; }
 
         /// <summary>
         /// The MIME type of the file.<br/>
@@ -69,7 +69,7 @@ namespace G
         public CreateUploadRequest(
             string filename,
             global::G.CreateUploadRequestPurpose purpose,
-            int bytes,
+            long bytes,
             string mimeType)
         {
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));

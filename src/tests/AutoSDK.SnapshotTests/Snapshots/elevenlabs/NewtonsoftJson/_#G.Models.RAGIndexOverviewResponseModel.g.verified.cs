@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_used_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int TotalUsedBytes { get; set; } = default!;
+        public long TotalUsedBytes { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_max_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int TotalMaxBytes { get; set; } = default!;
+        public long TotalMaxBytes { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -40,8 +40,8 @@ namespace G
         /// <param name="totalMaxBytes"></param>
         /// <param name="models"></param>
         public RAGIndexOverviewResponseModel(
-            int totalUsedBytes,
-            int totalMaxBytes,
+            long totalUsedBytes,
+            long totalMaxBytes,
             global::System.Collections.Generic.IList<global::G.RAGIndexOverviewEmbeddingModelResponseModel> models)
         {
             this.TotalUsedBytes = totalUsedBytes;

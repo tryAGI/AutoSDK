@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int SizeBytes { get; set; }
+        public required long SizeBytes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,7 +48,7 @@ namespace G
         public KnowledgeBaseDocumentMetadataResponseModel(
             int createdAtUnixSecs,
             int lastUpdatedAtUnixSecs,
-            int sizeBytes)
+            long sizeBytes)
         {
             this.CreatedAtUnixSecs = createdAtUnixSecs;
             this.LastUpdatedAtUnixSecs = lastUpdatedAtUnixSecs;

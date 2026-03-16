@@ -37,7 +37,7 @@ namespace G
         /// The total number of bytes used by the files in the vector store.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int UsageBytes { get; set; } = default!;
+        public long UsageBytes { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -127,7 +127,7 @@ namespace G
             string id,
             global::System.DateTimeOffset createdAt,
             string name,
-            int usageBytes,
+            long usageBytes,
             global::G.VectorStoreObjectFileCounts fileCounts,
             global::G.VectorStoreObjectStatus status,
             global::G.VectorStoreObjectObject @object,

@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.Json.Nodes;
+using System.Text.RegularExpressions;
 using AutoSDK.Helpers;
 using Microsoft.OpenApi;
 using AutoSDK.Models;
@@ -28,6 +29,12 @@ public static class OpenApiExtensions
         readerSettings.AddYamlReader();
 
         var (openApiDocument, diagnostics) = OpenApiDocument.Parse(yamlOrJson, settings: readerSettings);
+        if (openApiDocument == null &&
+            TryPromoteOpenApiFragment(yamlOrJson, out var promotedText))
+        {
+            Console.WriteLine("Detected OpenAPI fragment without header. Retrying with synthesized metadata.");
+            (openApiDocument, diagnostics) = OpenApiDocument.Parse(promotedText, settings: readerSettings);
+        }
         if (openApiDocument == null)
         {
             throw new InvalidOperationException("Document is null");
@@ -66,9 +73,99 @@ public static class OpenApiExtensions
         }
 
         openApiDocument.SanitizeNumericConstraints();
+        openApiDocument.InferLargeIntegerFormats();
         openApiDocument.SanitizeDiscriminators();
 
         return openApiDocument;
+    }
+
+    private static bool TryPromoteOpenApiFragment(
+        string text,
+        out string promotedText)
+    {
+        promotedText = string.Empty;
+
+        if (string.IsNullOrWhiteSpace(text))
+        {
+            return false;
+        }
+
+        return TryPromoteJsonOpenApiFragment(text, out promotedText) ||
+               TryPromoteYamlOpenApiFragment(text, out promotedText);
+    }
+
+    private static bool TryPromoteJsonOpenApiFragment(
+        string text,
+        out string promotedText)
+    {
+        promotedText = string.Empty;
+
+        JsonNode? node;
+        try
+        {
+            node = JsonNode.Parse(text);
+        }
+        catch
+        {
+            return false;
+        }
+
+        if (node is not JsonObject jsonObject ||
+            jsonObject.ContainsKey("openapi") ||
+            jsonObject.ContainsKey("swagger") ||
+            !LooksLikeOpenApiFragment(jsonObject))
+        {
+            return false;
+        }
+
+        var promotedObject = new JsonObject
+        {
+            ["openapi"] = "3.0.1",
+            ["info"] = new JsonObject
+            {
+                ["title"] = "AutoSDK Generated Fragment",
+                ["version"] = "1.0.0",
+            },
+        };
+
+        foreach (var property in jsonObject)
+        {
+            promotedObject[property.Key] = property.Value?.DeepClone();
+        }
+
+        promotedText = promotedObject.ToJsonString();
+        return true;
+    }
+
+    private static bool TryPromoteYamlOpenApiFragment(
+        string text,
+        out string promotedText)
+    {
+        promotedText = string.Empty;
+
+        if (Regex.IsMatch(text, @"(?m)^\s*(openapi|swagger)\s*:") ||
+            !Regex.IsMatch(text, @"(?m)^\s*(paths|components|tags|servers|security)\s*:"))
+        {
+            return false;
+        }
+
+        promotedText = """
+openapi: 3.0.1
+info:
+  title: AutoSDK Generated Fragment
+  version: 1.0.0
+
+""" + text;
+        return true;
+    }
+
+    private static bool LooksLikeOpenApiFragment(JsonObject jsonObject)
+    {
+        return jsonObject.ContainsKey("paths") ||
+               jsonObject.ContainsKey("components") ||
+               jsonObject.ContainsKey("tags") ||
+               jsonObject.ContainsKey("servers") ||
+               jsonObject.ContainsKey("security");
     }
 
     /// <summary>
@@ -84,6 +181,20 @@ public static class OpenApiExtensions
         foreach (var schema in document.Components?.Schemas?.Values ?? Enumerable.Empty<IOpenApiSchema>())
         {
             SanitizeSchemaNumericConstraints(schema);
+        }
+    }
+
+    public static void InferLargeIntegerFormats(this OpenApiDocument document)
+    {
+        document = document ?? throw new ArgumentNullException(nameof(document));
+
+        foreach (var schema in document.Components?.Schemas?.Values ?? Enumerable.Empty<IOpenApiSchema>())
+        {
+            InferSchemaLargeIntegerFormats(
+                schema,
+                propertyName: null,
+                inheritedTitle: null,
+                inheritedDescription: null);
         }
     }
 
@@ -134,6 +245,176 @@ public static class OpenApiExtensions
         }
         SanitizeSchemaNumericConstraints(concreteSchema.Items);
         SanitizeSchemaNumericConstraints(concreteSchema.AdditionalProperties);
+    }
+
+    private static void InferSchemaLargeIntegerFormats(
+        IOpenApiSchema? schema,
+        string? propertyName,
+        string? inheritedTitle,
+        string? inheritedDescription)
+    {
+        if (schema is not OpenApiSchema concreteSchema)
+        {
+            return;
+        }
+
+        if (ShouldInferInt64(
+                concreteSchema,
+                propertyName,
+                inheritedTitle,
+                inheritedDescription))
+        {
+            concreteSchema.Format = "int64";
+        }
+
+        foreach (var property in concreteSchema.Properties ?? Enumerable.Empty<KeyValuePair<string, IOpenApiSchema>>())
+        {
+            InferSchemaLargeIntegerFormats(
+                property.Value,
+                property.Key,
+                concreteSchema.Title,
+                concreteSchema.Description);
+        }
+        foreach (var child in concreteSchema.AnyOf ?? Enumerable.Empty<IOpenApiSchema>())
+        {
+            InferSchemaLargeIntegerFormats(
+                child,
+                propertyName,
+                concreteSchema.Title ?? inheritedTitle,
+                concreteSchema.Description ?? inheritedDescription);
+        }
+        foreach (var child in concreteSchema.OneOf ?? Enumerable.Empty<IOpenApiSchema>())
+        {
+            InferSchemaLargeIntegerFormats(
+                child,
+                propertyName,
+                concreteSchema.Title ?? inheritedTitle,
+                concreteSchema.Description ?? inheritedDescription);
+        }
+        foreach (var child in concreteSchema.AllOf ?? Enumerable.Empty<IOpenApiSchema>())
+        {
+            InferSchemaLargeIntegerFormats(
+                child,
+                propertyName,
+                concreteSchema.Title ?? inheritedTitle,
+                concreteSchema.Description ?? inheritedDescription);
+        }
+        InferSchemaLargeIntegerFormats(
+            concreteSchema.Items,
+            propertyName,
+            concreteSchema.Title ?? inheritedTitle,
+            concreteSchema.Description ?? inheritedDescription);
+        InferSchemaLargeIntegerFormats(
+            concreteSchema.AdditionalProperties,
+            propertyName,
+            concreteSchema.Title ?? inheritedTitle,
+            concreteSchema.Description ?? inheritedDescription);
+    }
+
+    private static bool ShouldInferInt64(
+        OpenApiSchema schema,
+        string? propertyName,
+        string? inheritedTitle,
+        string? inheritedDescription)
+    {
+        var isInteger = (schema.Type & JsonSchemaType.Integer) == JsonSchemaType.Integer;
+        if (!isInteger || !string.IsNullOrWhiteSpace(schema.Format))
+        {
+            return false;
+        }
+
+        return ExceedsInt32Range(schema.Minimum) ||
+               ExceedsInt32Range(schema.Maximum) ||
+               ExceedsInt32Range(schema.ExclusiveMinimum) ||
+               ExceedsInt32Range(schema.ExclusiveMaximum) ||
+               ExceedsInt32Range(schema.Default) ||
+               ExceedsInt32Range(schema.Example) ||
+               HasLargeIntegerHint(
+                   propertyName,
+                   schema.Title ?? inheritedTitle,
+                   schema.Description ?? inheritedDescription);
+    }
+
+    private static bool ExceedsInt32Range(string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value) ||
+            !decimal.TryParse(value, NumberStyles.Integer, CultureInfo.InvariantCulture, out var parsed))
+        {
+            return false;
+        }
+
+        return parsed < int.MinValue || parsed > int.MaxValue;
+    }
+
+    private static bool ExceedsInt32Range(JsonNode? value)
+    {
+        if (!TryGetIntegerValue(value, out var parsed))
+        {
+            return false;
+        }
+
+        return parsed < int.MinValue || parsed > int.MaxValue;
+    }
+
+    private static bool TryGetIntegerValue(
+        JsonNode? value,
+        out long parsed)
+    {
+        parsed = 0;
+
+        if (value is not JsonValue jsonValue)
+        {
+            return false;
+        }
+
+        if (jsonValue.TryGetValue<long>(out parsed))
+        {
+            return true;
+        }
+
+        if (jsonValue.TryGetValue<int>(out var intValue))
+        {
+            parsed = intValue;
+            return true;
+        }
+
+        if (jsonValue.TryGetValue<decimal>(out var decimalValue) &&
+            decimal.Truncate(decimalValue) == decimalValue &&
+            decimalValue >= long.MinValue &&
+            decimalValue <= long.MaxValue)
+        {
+            parsed = (long)decimalValue;
+            return true;
+        }
+
+        if (jsonValue.TryGetValue<string>(out var stringValue) &&
+            long.TryParse(stringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out parsed))
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private static bool HasLargeIntegerHint(
+        string? propertyName,
+        string? title,
+        string? description)
+    {
+        var combined = string.Join(
+            "\n",
+            new[] { propertyName, title, description }
+                .Where(static x => !string.IsNullOrWhiteSpace(x)))
+            .ToUpperInvariant();
+
+        return combined.Contains("NANOSECOND", StringComparison.Ordinal) ||
+               combined.Contains(" BYTE", StringComparison.Ordinal) ||
+               combined.Contains("BYTES", StringComparison.Ordinal) ||
+               (((combined.Contains("UNIX", StringComparison.Ordinal) ||
+                  combined.Contains("EPOCH", StringComparison.Ordinal)) &&
+                 (combined.Contains("MILLISECOND", StringComparison.Ordinal) ||
+                  combined.Contains("UNIX_MS", StringComparison.Ordinal) ||
+                  combined.Contains("UNIX MS", StringComparison.Ordinal))));
     }
 
     public static void SanitizeDiscriminators(this OpenApiDocument document)

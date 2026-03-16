@@ -25,7 +25,7 @@ namespace G
         /// The size of the file, in bytes.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Bytes { get; set; } = default!;
+        public long Bytes { get; set; } = default!;
 
         /// <summary>
         /// The UNIX timestamp (in seconds) of the event.
@@ -96,7 +96,7 @@ namespace G
         public UploadFileOut(
             global::System.Guid id,
             string @object,
-            int bytes,
+            long bytes,
             global::System.DateTimeOffset createdAt,
             string filename,
             global::G.FilePurpose purpose,

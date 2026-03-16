@@ -478,7 +478,7 @@ namespace G
         /// <example>108</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Size { get; set; }
+        public required long Size { get; set; }
 
         /// <summary>
         /// The default branch of the repository.<br/>
@@ -1133,7 +1133,7 @@ namespace G
             int forksCount,
             int stargazersCount,
             int watchersCount,
-            int size,
+            long size,
             string defaultBranch,
             int openIssuesCount,
             bool hasIssues,

@@ -42,7 +42,7 @@ namespace G
         /// </summary>
         /// <example>32</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("memory_used_mb")]
-        public int? MemoryUsedMb { get; set; }
+        public long? MemoryUsedMb { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -76,7 +76,7 @@ namespace G
             string type,
             global::G.TestToolErrorResponseError error,
             int latencyMillis,
-            int? memoryUsedMb)
+            long? memoryUsedMb)
         {
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));

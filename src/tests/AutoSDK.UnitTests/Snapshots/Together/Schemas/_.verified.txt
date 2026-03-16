@@ -311,7 +311,7 @@
     Object(string),
     CreatedAt(int),
     Filename(string),
-    Bytes(int),
+    Bytes(long),
     FileResponsePurpose(enum),
     Processed(bool),
     FileResponseFileType(enum),

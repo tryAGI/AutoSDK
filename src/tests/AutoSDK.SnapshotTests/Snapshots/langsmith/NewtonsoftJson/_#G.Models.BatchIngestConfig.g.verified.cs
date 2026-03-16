@@ -43,7 +43,7 @@ namespace G
         /// Default Value: 20971520
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size_limit_bytes")]
-        public int? SizeLimitBytes { get; set; }
+        public long? SizeLimitBytes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -78,7 +78,7 @@ namespace G
             int? scaleUpNthreadsLimit,
             int? scaleDownNemptyTrigger,
             int? sizeLimit,
-            int? sizeLimitBytes)
+            long? sizeLimitBytes)
         {
             this.UseMultipartEndpoint = useMultipartEndpoint;
             this.ScaleUpQsizeTrigger = scaleUpQsizeTrigger;

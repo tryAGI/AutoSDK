@@ -51,7 +51,7 @@ namespace G
             int? maxRequestsPer1Minute = default,
             int? maxTokensPer1Minute = default,
             int? maxImagesPer1Minute = default,
-            int? maxAudioMegabytesPer1Minute = default,
+            long? maxAudioMegabytesPer1Minute = default,
             int? maxRequestsPer1Day = default,
             int? batch1DayMaxInputTokens = default,
             global::System.Threading.CancellationToken cancellationToken = default);

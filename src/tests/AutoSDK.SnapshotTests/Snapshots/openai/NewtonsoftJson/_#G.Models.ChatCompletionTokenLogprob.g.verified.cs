@@ -25,7 +25,7 @@ namespace G
         /// A list of integers representing the UTF-8 bytes representation of the token. Useful in instances where characters are represented by multiple tokens and their byte representations must be combined to generate the correct text representation. Can be `null` if there is no bytes representation for the token.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("bytes")]
-        public global::System.Collections.Generic.IList<int>? Bytes { get; set; }
+        public global::System.Collections.Generic.IList<long>? Bytes { get; set; }
 
         /// <summary>
         /// List of the most likely tokens and their log probability, at this token position. In rare cases, there may be fewer than the number of requested `top_logprobs` returned.
@@ -58,7 +58,7 @@ namespace G
             string token,
             double logprob,
             global::System.Collections.Generic.IList<global::G.ChatCompletionTokenLogprobTopLogprob> topLogprobs,
-            global::System.Collections.Generic.IList<int>? bytes)
+            global::System.Collections.Generic.IList<long>? bytes)
         {
             this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
             this.Logprob = logprob;

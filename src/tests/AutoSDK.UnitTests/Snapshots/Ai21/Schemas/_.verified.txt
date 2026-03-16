@@ -146,7 +146,7 @@
     Name(string),
     Path(string),
     FileType(string),
-    SizeBytes(int),
+    SizeBytes(long),
     Labels(array),
       LabelsItem(string),
     PublicUrl(string),

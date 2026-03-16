@@ -26,7 +26,7 @@ namespace G
         /// The number of bytes in the file you are uploading.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Bytes { get; set; } = default!;
+        public long Bytes { get; set; } = default!;
 
         /// <summary>
         /// The MIME type of the file.<br/>
@@ -61,7 +61,7 @@ namespace G
         public CreateUploadRequest(
             string filename,
             global::G.CreateUploadRequestPurpose purpose,
-            int bytes,
+            long bytes,
             string mimeType)
         {
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));

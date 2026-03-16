@@ -38,7 +38,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Bytes { get; set; }
+        public required long Bytes { get; set; }
 
         /// <summary>
         /// The intended purpose of the file. [Please refer here](/docs/api-reference/files/object#files/object-purpose) for acceptable values.
@@ -118,7 +118,7 @@ namespace G
             string id,
             global::System.DateTimeOffset createdAt,
             string filename,
-            int bytes,
+            long bytes,
             string purpose,
             global::G.UploadStatus status,
             global::System.DateTimeOffset expiresAt,

@@ -14,14 +14,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_used_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int TotalUsedBytes { get; set; }
+        public required long TotalUsedBytes { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_max_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int TotalMaxBytes { get; set; }
+        public required long TotalMaxBytes { get; set; }
 
         /// <summary>
         /// 
@@ -46,8 +46,8 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RAGIndexOverviewResponseModel(
-            int totalUsedBytes,
-            int totalMaxBytes,
+            long totalUsedBytes,
+            long totalMaxBytes,
             global::System.Collections.Generic.IList<global::G.RAGIndexOverviewEmbeddingModelResponseModel> models)
         {
             this.TotalUsedBytes = totalUsedBytes;

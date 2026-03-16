@@ -78,8 +78,8 @@ namespace G
         /// Maximum response size in bytes before truncation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_content_bytes")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<int?, global::G.EagerReference>))]
-        public global::G.OneOf<int?, global::G.EagerReference>? MaxContentBytes { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<long?, global::G.EagerReference>))]
+        public global::G.OneOf<long?, global::G.EagerReference>? MaxContentBytes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -133,7 +133,7 @@ namespace G
             global::G.OneOf<int?, global::G.EagerReference>? headLines,
             global::G.OneOf<int?, global::G.EagerReference>? tailLines,
             global::G.OneOf<bool?, global::G.EagerReference>? sslVerify,
-            global::G.OneOf<int?, global::G.EagerReference>? maxContentBytes)
+            global::G.OneOf<long?, global::G.EagerReference>? maxContentBytes)
         {
             this.Url = url;
             this.Method = method;

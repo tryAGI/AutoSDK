@@ -54,7 +54,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_size_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int FileSizeBytes { get; set; }
+        public required long FileSizeBytes { get; set; }
 
         /// <summary>
         /// 
@@ -182,7 +182,7 @@ namespace G
             string filename,
             string signedUrl,
             string thumbnailSignedUrl,
-            int fileSizeBytes,
+            long fileSizeBytes,
             int width,
             int height,
             int offsetMs,

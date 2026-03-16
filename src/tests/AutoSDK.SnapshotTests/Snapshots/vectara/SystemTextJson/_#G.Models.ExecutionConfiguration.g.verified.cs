@@ -25,7 +25,7 @@ namespace G
         /// </summary>
         /// <example>100</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_memory_mb")]
-        public int? MaxMemoryMb { get; set; }
+        public long? MaxMemoryMb { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,7 +51,7 @@ namespace G
 #endif
         public ExecutionConfiguration(
             int? maxExecutionTimeSeconds,
-            int? maxMemoryMb)
+            long? maxMemoryMb)
         {
             this.MaxExecutionTimeSeconds = maxExecutionTimeSeconds;
             this.MaxMemoryMb = maxMemoryMb;

@@ -215,7 +215,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Upload> CreateUploadAsync(
             string filename,
             global::G.CreateUploadRequestPurpose purpose,
-            int bytes,
+            long bytes,
             string mimeType,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

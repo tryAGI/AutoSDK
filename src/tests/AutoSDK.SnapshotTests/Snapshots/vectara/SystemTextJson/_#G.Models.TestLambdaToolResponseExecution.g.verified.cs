@@ -46,7 +46,7 @@ namespace G
         /// </summary>
         /// <example>32</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("memory_used_mb")]
-        public int? MemoryUsedMb { get; set; }
+        public long? MemoryUsedMb { get; set; }
 
         /// <summary>
         /// Results of input/output schema validation.
@@ -93,7 +93,7 @@ namespace G
             object? output,
             global::G.TestLambdaToolResponseExecutionError? error,
             int? latencyMillis,
-            int? memoryUsedMb,
+            long? memoryUsedMb,
             global::G.TestLambdaToolResponseExecutionValidationResults? validationResults)
         {
             this.Success = success;

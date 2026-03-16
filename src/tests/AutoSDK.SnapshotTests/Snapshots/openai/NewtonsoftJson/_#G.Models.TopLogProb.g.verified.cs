@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<int> Bytes { get; set; } = default!;
+        public global::System.Collections.Generic.IList<long> Bytes { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,7 +42,7 @@ namespace G
         public TopLogProb(
             string token,
             double logprob,
-            global::System.Collections.Generic.IList<int> bytes)
+            global::System.Collections.Generic.IList<long> bytes)
         {
             this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
             this.Logprob = logprob;
