@@ -113,8 +113,9 @@ namespace G
                     }
                     else
                     {
-                        var __contentStream_400 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_400 = await global::G.DeleteConnectorResponse2.FromJsonStreamAsync(__contentStream_400, JsonSerializerOptions).ConfigureAwait(false);
+                        __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_400 = global::G.DeleteConnectorResponse2.FromJson(__content_400, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -150,8 +151,9 @@ namespace G
                     }
                     else
                     {
-                        var __contentStream_401 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_401 = await global::G.DeleteConnectorResponse3.FromJsonStreamAsync(__contentStream_401, JsonSerializerOptions).ConfigureAwait(false);
+                        __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_401 = global::G.DeleteConnectorResponse3.FromJson(__content_401, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -187,8 +189,9 @@ namespace G
                     }
                     else
                     {
-                        var __contentStream_403 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_403 = await global::G.DeleteConnectorResponse4.FromJsonStreamAsync(__contentStream_403, JsonSerializerOptions).ConfigureAwait(false);
+                        __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_403 = global::G.DeleteConnectorResponse4.FromJson(__content_403, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -224,8 +227,9 @@ namespace G
                     }
                     else
                     {
-                        var __contentStream_404 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_404 = await global::G.DeleteConnectorResponse5.FromJsonStreamAsync(__contentStream_404, JsonSerializerOptions).ConfigureAwait(false);
+                        __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_404 = global::G.DeleteConnectorResponse5.FromJson(__content_404, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -261,8 +265,9 @@ namespace G
                     }
                     else
                     {
-                        var __contentStream_422 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_422 = await global::G.DeleteConnectorResponse6.FromJsonStreamAsync(__contentStream_422, JsonSerializerOptions).ConfigureAwait(false);
+                        __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_422 = global::G.DeleteConnectorResponse6.FromJson(__content_422, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -298,8 +303,9 @@ namespace G
                     }
                     else
                     {
-                        var __contentStream_429 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_429 = await global::G.DeleteConnectorResponse7.FromJsonStreamAsync(__contentStream_429, JsonSerializerOptions).ConfigureAwait(false);
+                        __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_429 = global::G.DeleteConnectorResponse7.FromJson(__content_429, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -335,8 +341,9 @@ namespace G
                     }
                     else
                     {
-                        var __contentStream_498 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_498 = await global::G.DeleteConnectorResponse8.FromJsonStreamAsync(__contentStream_498, JsonSerializerOptions).ConfigureAwait(false);
+                        __content_498 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_498 = global::G.DeleteConnectorResponse8.FromJson(__content_498, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -372,8 +379,9 @@ namespace G
                     }
                     else
                     {
-                        var __contentStream_499 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_499 = await global::G.DeleteConnectorResponse9.FromJsonStreamAsync(__contentStream_499, JsonSerializerOptions).ConfigureAwait(false);
+                        __content_499 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_499 = global::G.DeleteConnectorResponse9.FromJson(__content_499, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -409,8 +417,9 @@ namespace G
                     }
                     else
                     {
-                        var __contentStream_500 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_500 = await global::G.DeleteConnectorResponse10.FromJsonStreamAsync(__contentStream_500, JsonSerializerOptions).ConfigureAwait(false);
+                        __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_500 = global::G.DeleteConnectorResponse10.FromJson(__content_500, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -446,8 +455,9 @@ namespace G
                     }
                     else
                     {
-                        var __contentStream_501 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_501 = await global::G.DeleteConnectorResponse11.FromJsonStreamAsync(__contentStream_501, JsonSerializerOptions).ConfigureAwait(false);
+                        __content_501 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_501 = global::G.DeleteConnectorResponse11.FromJson(__content_501, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -483,8 +493,9 @@ namespace G
                     }
                     else
                     {
-                        var __contentStream_503 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_503 = await global::G.DeleteConnectorResponse12.FromJsonStreamAsync(__contentStream_503, JsonSerializerOptions).ConfigureAwait(false);
+                        __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_503 = global::G.DeleteConnectorResponse12.FromJson(__content_503, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -520,8 +531,9 @@ namespace G
                     }
                     else
                     {
-                        var __contentStream_504 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_504 = await global::G.DeleteConnectorResponse13.FromJsonStreamAsync(__contentStream_504, JsonSerializerOptions).ConfigureAwait(false);
+                        __content_504 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_504 = global::G.DeleteConnectorResponse13.FromJson(__content_504, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -597,11 +609,25 @@ namespace G
                 }
                 catch (global::System.Exception __ex)
                 {
+                    string? __content = null;
+                    try
+                    {
+                        __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                            cancellationToken
+#endif
+                        ).ConfigureAwait(false);
+                    }
+                    catch (global::System.Exception)
+                    {
+                    }
+
                     throw new global::G.ApiException(
-                        message: __response.ReasonPhrase ?? string.Empty,
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
                         innerException: __ex,
                         statusCode: __response.StatusCode)
                     {
+                        ResponseBody = __content,
                         ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                             __response.Headers,
                             h => h.Key,

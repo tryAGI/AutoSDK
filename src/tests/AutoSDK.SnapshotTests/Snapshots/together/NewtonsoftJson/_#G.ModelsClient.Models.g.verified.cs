@@ -95,8 +95,9 @@ namespace G
                     }
                     else
                     {
-                        var __contentStream_400 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_400 = await global::G.ErrorData.FromJsonStreamAsync(__contentStream_400, JsonSerializerOptions).ConfigureAwait(false);
+                        __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_400 = global::G.ErrorData.FromJson(__content_400, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -132,8 +133,9 @@ namespace G
                     }
                     else
                     {
-                        var __contentStream_401 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_401 = await global::G.ErrorData.FromJsonStreamAsync(__contentStream_401, JsonSerializerOptions).ConfigureAwait(false);
+                        __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_401 = global::G.ErrorData.FromJson(__content_401, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -169,8 +171,9 @@ namespace G
                     }
                     else
                     {
-                        var __contentStream_404 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_404 = await global::G.ErrorData.FromJsonStreamAsync(__contentStream_404, JsonSerializerOptions).ConfigureAwait(false);
+                        __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_404 = global::G.ErrorData.FromJson(__content_404, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -206,8 +209,9 @@ namespace G
                     }
                     else
                     {
-                        var __contentStream_429 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_429 = await global::G.ErrorData.FromJsonStreamAsync(__contentStream_429, JsonSerializerOptions).ConfigureAwait(false);
+                        __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_429 = global::G.ErrorData.FromJson(__content_429, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -243,8 +247,9 @@ namespace G
                     }
                     else
                     {
-                        var __contentStream_504 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                        __value_504 = await global::G.ErrorData.FromJsonStreamAsync(__contentStream_504, JsonSerializerOptions).ConfigureAwait(false);
+                        __content_504 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_504 = global::G.ErrorData.FromJson(__content_504, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -324,11 +329,25 @@ namespace G
                 }
                 catch (global::System.Exception __ex)
                 {
+                    string? __content = null;
+                    try
+                    {
+                        __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                            cancellationToken
+#endif
+                        ).ConfigureAwait(false);
+                    }
+                    catch (global::System.Exception)
+                    {
+                    }
+
                     throw new global::G.ApiException(
-                        message: __response.ReasonPhrase ?? string.Empty,
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
                         innerException: __ex,
                         statusCode: __response.StatusCode)
                     {
+                        ResponseBody = __content,
                         ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                             __response.Headers,
                             h => h.Key,

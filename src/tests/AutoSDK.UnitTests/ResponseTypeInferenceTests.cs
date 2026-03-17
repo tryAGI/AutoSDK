@@ -179,6 +179,168 @@ paths:
         }
     }
 
+    [TestMethod]
+    public void ErrorResponse_StreamPath_PopulatesResponseBody()
+    {
+        var endPoint = LoadEndPoint(@"openapi: 3.0.1
+info:
+  title: Test
+  version: 1.0.0
+paths:
+  /items:
+    get:
+      operationId: listItems
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+");
+
+        var generatedCode = Sources.GenerateEndPoint(endPoint);
+
+        // Error handler else (stream) branch should read as string, not stream
+        generatedCode.Should().Contain("ResponseBody = __content_400");
+        // The else branch should use ReadAsStringAsync for error responses
+        generatedCode.Should().NotContain("__contentStream_400");
+    }
+
+    [TestMethod]
+    public void SuccessPath_StreamCatch_PopulatesResponseBody()
+    {
+        var endPoint = LoadEndPoint(@"openapi: 3.0.1
+info:
+  title: Test
+  version: 1.0.0
+paths:
+  /items:
+    get:
+      operationId: listItems
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+");
+
+        var generatedCode = Sources.GenerateEndPoint(endPoint);
+
+        // The stream catch block should attempt to read response body
+        // and populate ResponseBody in ApiException
+        generatedCode.Should().Contain("ResponseBody = __content,");
+    }
+
+    [TestMethod]
+    public void RawStream_Catch_PopulatesResponseBody()
+    {
+        var endPoint = LoadEndPoint(@"openapi: 3.0.1
+info:
+  title: Test
+  version: 1.0.0
+paths:
+  /audio:
+    get:
+      operationId: getAudio
+      x-fern-streaming: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+");
+
+        var generatedCode = Sources.GenerateEndPoint(endPoint);
+
+        // RawStream catch block should populate ResponseBody
+        generatedCode.Should().Contain("ResponseBody = __content,");
+    }
+
+    [TestMethod]
+    public void SseStream_Catch_PopulatesResponseBody()
+    {
+        var settings = DefaultSettings;
+        var data = AutoSDK.Generation.Data.Prepare(((@"openapi: 3.0.1
+info:
+  title: Test
+  version: 1.0.0
+paths:
+  /events:
+    get:
+      operationId: streamEvents
+      responses:
+        '200':
+          description: OK
+          content:
+            text/event-stream:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: string
+", settings), GlobalSettings: settings));
+        var endPoint = data.Methods.Single();
+
+        endPoint.StreamFormat.Should().Be(StreamFormat.ServerSentEvents);
+
+        var generatedCode = Sources.GenerateEndPoint(endPoint);
+
+        // SSE catch block should populate ResponseBody
+        generatedCode.Should().Contain("ResponseBody = __content,");
+    }
+
+    [TestMethod]
+    public void NdjsonStream_Catch_PopulatesResponseBody()
+    {
+        var settings = DefaultSettings;
+        var data = AutoSDK.Generation.Data.Prepare(((@"openapi: 3.0.1
+info:
+  title: Test
+  version: 1.0.0
+paths:
+  /events:
+    get:
+      operationId: streamEvents
+      responses:
+        '200':
+          description: OK
+          content:
+            application/x-ndjson:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: string
+", settings), GlobalSettings: settings));
+        var endPoint = data.Methods.Single();
+
+        endPoint.StreamFormat.Should().Be(StreamFormat.Ndjson);
+
+        var generatedCode = Sources.GenerateEndPoint(endPoint);
+
+        // NDJSON catch block should populate ResponseBody
+        generatedCode.Should().Contain("ResponseBody = __content,");
+    }
+
     private static EndPoint LoadEndPoint(string yaml)
     {
         var settings = DefaultSettings;

@@ -408,11 +408,25 @@ namespace {endPoint.Settings.Namespace}
             }}
             catch (global::System.Net.Http.HttpRequestException __ex)
             {{
+                string? __content = null;
+                try
+                {{
+                    __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+                }}
+                catch (global::System.Exception)
+                {{
+                }}
+
                 throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __ex,
                     statusCode: __response.StatusCode)
                 {{
+                    ResponseBody = __content,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -436,7 +450,16 @@ namespace {endPoint.Settings.Namespace}
                 }}
 
                 var __streamedResponse = {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
-                                       throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");
+                                       throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
+                                           message: $""Response deserialization failed for \""{{__content}}\"" "",
+                                           statusCode: __response.StatusCode)
+                                       {{
+                                           ResponseBody = __content,
+                                           ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                               __response.Headers,
+                                               h => h.Key,
+                                               h => h.Value),
+                                       }};
 
                 yield return __streamedResponse;
             }}
@@ -452,11 +475,25 @@ namespace {endPoint.Settings.Namespace}
             }}
             catch (global::System.Net.Http.HttpRequestException __ex)
             {{
+                string? __content = null;
+                try
+                {{
+                    __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+                }}
+                catch (global::System.Exception)
+                {{
+                }}
+
                 throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __ex,
                     statusCode: __response.StatusCode)
                 {{
+                    ResponseBody = __content,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -480,7 +517,16 @@ namespace {endPoint.Settings.Namespace}
                 }}
 
                 var __streamedResponse = {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
-                                       throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");
+                                       throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
+                                           message: $""Response deserialization failed for \""{{__content}}\"" "",
+                                           statusCode: __response.StatusCode)
+                                       {{
+                                           ResponseBody = __content,
+                                           ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                               __response.Headers,
+                                               h => h.Key,
+                                               h => h.Value),
+                                       }};
 
                 yield return __streamedResponse;
             }}
@@ -517,9 +563,9 @@ namespace {endPoint.Settings.Namespace}
                     }}
                     else
                     {{
-                        var __contentStream_{x.StatusCode} = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-{(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@" 
-                        __value_{x.StatusCode} = {jsonSerializer.GenerateDeserializeFromStreamCall($"__contentStream_{x.StatusCode}", x.Type, endPoint.Settings.JsonSerializerContext)};" : " ")}
+                        __content_{x.StatusCode} = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+{(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@"
+                        __value_{x.StatusCode} = {jsonSerializer.GenerateDeserializeCall($"__content_{x.StatusCode}", x.Type, endPoint.Settings.JsonSerializerContext)};" : " ")}
                     }}
                 }}
                 catch (global::System.Exception __ex)
@@ -562,11 +608,25 @@ namespace {endPoint.Settings.Namespace}
             }}
             catch (global::System.Exception __ex)
             {{
+                string? __content = null;
+                try
+                {{
+                    __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+                }}
+                catch (global::System.Exception)
+                {{
+                }}
+
                 throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __ex,
                     statusCode: __response.StatusCode)
                 {{
+                    ResponseBody = __content,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -665,11 +725,25 @@ namespace {endPoint.Settings.Namespace}
                 }}
                 catch (global::System.Exception __ex)
                 {{
+                    string? __content = null;
+                    try
+                    {{
+                        __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                            cancellationToken
+#endif
+                        ).ConfigureAwait(false);
+                    }}
+                    catch (global::System.Exception)
+                    {{
+                    }}
+
                     throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
-                        message: __response.ReasonPhrase ?? string.Empty,
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
                         innerException: __ex,
                         statusCode: __response.StatusCode)
                     {{
+                        ResponseBody = __content,
                         ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                             __response.Headers,
                             h => h.Key,
