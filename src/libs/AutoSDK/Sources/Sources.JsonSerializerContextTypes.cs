@@ -22,14 +22,7 @@ public static partial class Sources
             .Distinct()
             .ToArray();
 
-        // Generate concrete List<T> counterparts for IList<T> types
-        var concreteListTypes = distinctTypes
-            .Where(x => x.Contains("System.Collections.Generic.IList<"))
-            .Select(x => x.Replace(
-                "System.Collections.Generic.IList<",
-                "System.Collections.Generic.List<"))
-            .Distinct()
-            .ToArray();
+        var concreteListTypes = GetConcreteListTypes(distinctTypes);
 
         return $@"
 #nullable enable
