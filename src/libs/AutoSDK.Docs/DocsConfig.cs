@@ -31,6 +31,8 @@ public sealed record DocsConfig
 
     public string? MkDocsExamplesEndMarker { get; init; }
 
+    public Dictionary<string, string>? ClientReplacements { get; init; }
+
     public static async Task<DocsConfig> LoadAsync(
         string solutionDirectory,
         string? configPath = null,

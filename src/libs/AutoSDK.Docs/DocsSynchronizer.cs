@@ -43,7 +43,7 @@ public static class DocsSynchronizer
         var examples = Directory.Exists(project.ExampleSourceDirectory)
             ? Directory
                 .EnumerateFiles(project.ExampleSourceDirectory, "*.cs", SearchOption.AllDirectories)
-                .Select(path => LoadMetadataExample(path, project.ClientClassName, project.ApiKeyVariableName))
+                .Select(path => LoadMetadataExample(path, project.ClientClassName, project.ApiKeyVariableName, project.ClientReplacements))
                 .OrderBy(x => x.Order)
                 .ThenBy(x => x.Title, StringComparer.Ordinal)
                 .ToList()
@@ -96,7 +96,7 @@ public static class DocsSynchronizer
             ? Directory
                 .EnumerateFiles(project.ExampleSourceDirectory, "Tests.*.cs", SearchOption.AllDirectories)
                 .OrderBy(Path.GetFileName, StringComparer.Ordinal)
-                .Select(path => LoadLegacySample(path, project.ClientClassName, project.ApiKeyVariableName))
+                .Select(path => LoadLegacySample(path, project.ClientClassName, project.ApiKeyVariableName, project.ClientReplacements))
                 .ToList()
             : [];
 
@@ -138,7 +138,7 @@ public static class DocsSynchronizer
             ? Directory
                 .EnumerateFiles(project.ExampleSourceDirectory, "Examples.*.cs", SearchOption.AllDirectories)
                 .OrderBy(Path.GetFileName, StringComparer.Ordinal)
-                .Select(path => LoadMarkerSample(path, project.ClientClassName, project.ApiKeyVariableName))
+                .Select(path => LoadMarkerSample(path, project.ClientClassName, project.ApiKeyVariableName, project.ClientReplacements))
                 .ToList()
             : [];
 
@@ -168,7 +168,8 @@ public static class DocsSynchronizer
     private static MetadataExampleDocument LoadMetadataExample(
         string path,
         string clientClassName,
-        string apiKeyVariableName)
+        string apiKeyVariableName,
+        IReadOnlyDictionary<string, string>? clientReplacements)
     {
         var text = NormalizeNewlines(File.ReadAllText(path));
         var metadata = ExampleMetadata.Parse(text, path);
@@ -179,13 +180,14 @@ public static class DocsSynchronizer
             metadata.Title,
             metadata.Slug,
             metadata.Description,
-            TransformCode(body, clientClassName, apiKeyVariableName));
+            TransformCode(body, clientClassName, apiKeyVariableName, clientReplacements));
     }
 
     private static LegacyExampleDocument LoadLegacySample(
         string path,
         string clientClassName,
-        string apiKeyVariableName)
+        string apiKeyVariableName,
+        IReadOnlyDictionary<string, string>? clientReplacements)
     {
         var text = NormalizeNewlines(File.ReadAllText(path));
         var body = TryExtractSingleTestMethodBody(text, path) ??
@@ -194,13 +196,14 @@ public static class DocsSynchronizer
 
         return new LegacyExampleDocument(
             Path.GetExtension(Path.GetFileNameWithoutExtension(path)).TrimStart('.'),
-            TransformCode(body, clientClassName, apiKeyVariableName));
+            TransformCode(body, clientClassName, apiKeyVariableName, clientReplacements));
     }
 
     private static MarkerExampleDocument LoadMarkerSample(
         string path,
         string clientClassName,
-        string apiKeyVariableName)
+        string apiKeyVariableName,
+        IReadOnlyDictionary<string, string>? clientReplacements)
     {
         const string marker = "// # START EXAMPLE #";
 
@@ -214,7 +217,7 @@ public static class DocsSynchronizer
 
         return new MarkerExampleDocument(
             Path.GetFileNameWithoutExtension(path).Replace("Examples.", string.Empty, StringComparison.Ordinal),
-            TransformCode(code, clientClassName, apiKeyVariableName));
+            TransformCode(code, clientClassName, apiKeyVariableName, clientReplacements));
     }
 
     private static string ExtractSingleTestMethodBody(string text, string path)
@@ -267,7 +270,8 @@ public static class DocsSynchronizer
     private static string TransformCode(
         string code,
         string clientClassName,
-        string apiKeyVariableName)
+        string apiKeyVariableName,
+        IReadOnlyDictionary<string, string>? clientReplacements = null)
     {
         var lines = Deindent(code)
             .Split('\n')
@@ -283,8 +287,21 @@ public static class DocsSynchronizer
             var line = originalLine
                 .Replace("using var client = GetAuthenticatedClient();", $"using var client = {replacement};", StringComparison.Ordinal)
                 .Replace("var client = GetAuthenticatedClient();", $"var client = {replacement};", StringComparison.Ordinal)
-                .Replace("GetAuthenticatedClient()", replacement, StringComparison.Ordinal)
-                .Replace("////", "//", StringComparison.Ordinal);
+                .Replace("GetAuthenticatedClient()", replacement, StringComparison.Ordinal);
+
+            if (clientReplacements is not null)
+            {
+                foreach (var (pattern, className) in clientReplacements)
+                {
+                    var customReplacement = $"new {className}({apiKeyVariableName})";
+                    line = line
+                        .Replace($"using var client = {pattern};", $"using var client = {customReplacement};", StringComparison.Ordinal)
+                        .Replace($"var client = {pattern};", $"var client = {customReplacement};", StringComparison.Ordinal)
+                        .Replace(pattern, customReplacement, StringComparison.Ordinal);
+                }
+            }
+
+            line = line.Replace("////", "//", StringComparison.Ordinal);
 
             var trimmed = line.Trim();
             if (trimmed.Contains(".Should()", StringComparison.Ordinal) ||
@@ -661,7 +678,8 @@ public static class DocsSynchronizer
         string ReadmeExamplesStartMarker,
         string ReadmeExamplesEndMarker,
         string MkDocsExamplesStartMarker,
-        string MkDocsExamplesEndMarker)
+        string MkDocsExamplesEndMarker,
+        IReadOnlyDictionary<string, string>? ClientReplacements)
     {
         public static ResolvedProject Create(string solutionDirectory, DocsConfig config)
         {
@@ -713,7 +731,8 @@ public static class DocsSynchronizer
                 config.ReadmeExamplesStartMarker ?? "<!-- EXAMPLES:START -->",
                 config.ReadmeExamplesEndMarker ?? "<!-- EXAMPLES:END -->",
                 config.MkDocsExamplesStartMarker ?? "# EXAMPLES:START",
-                config.MkDocsExamplesEndMarker ?? "# EXAMPLES:END");
+                config.MkDocsExamplesEndMarker ?? "# EXAMPLES:END",
+                config.ClientReplacements);
         }
 
         private static string ResolvePath(string solutionDirectory, string? configuredPath, string defaultPath)

@@ -207,6 +207,85 @@ public sealed class DocsSyncTests
         }
     }
 
+    [TestMethod]
+    public async Task SyncAsync_MetadataMode_AppliesCustomClientReplacements()
+    {
+        var root = CreateTempDirectory();
+
+        try
+        {
+            Directory.CreateDirectory(Path.Combine(root, "docs"));
+            Directory.CreateDirectory(Path.Combine(root, "src", "libs", "HuggingFace"));
+            Directory.CreateDirectory(Path.Combine(root, "src", "tests", "IntegrationTests", "Examples"));
+
+            await File.WriteAllTextAsync(
+                Path.Combine(root, "autosdk.docs.json"),
+                """
+                {
+                    "clientReplacements": {
+                        "GetAuthenticatedInferenceClient()": "HuggingFaceInferenceClient",
+                        "GetAuthenticatedEmbeddingClient()": "HuggingFaceEmbeddingClient"
+                    }
+                }
+                """);
+            await File.WriteAllTextAsync(
+                Path.Combine(root, "README.md"),
+                """
+                # HuggingFace
+
+                <!-- EXAMPLES:START -->
+                <!-- EXAMPLES:END -->
+                """);
+            await File.WriteAllTextAsync(
+                Path.Combine(root, "mkdocs.yml"),
+                """
+                nav:
+                - Overview: index.md
+                # EXAMPLES:START
+                # EXAMPLES:END
+                """);
+            await File.WriteAllTextAsync(
+                Path.Combine(root, "src", "libs", "HuggingFace", "HuggingFace.csproj"),
+                "<Project Sdk=\"Microsoft.NET.Sdk\" />");
+            await File.WriteAllTextAsync(
+                Path.Combine(root, "src", "tests", "IntegrationTests", "Examples", "Inference.cs"),
+                """
+                /*
+                title: Inference
+                order: 1
+
+                Run inference using a dedicated client.
+                */
+                namespace HuggingFace.IntegrationTests;
+
+                public partial class Tests
+                {
+                    [TestMethod]
+                    public async Task Inference()
+                    {
+                        using var client = GetAuthenticatedInferenceClient();
+                        var response = await client.InferAsync();
+                        response.Should().NotBeNull();
+                    }
+                }
+                """);
+
+            var result = await DocsSynchronizer.SyncAsync(root);
+
+            result.Mode.Should().Be("metadata");
+            result.ExampleCount.Should().Be(1);
+
+            var examplePage = await File.ReadAllTextAsync(Path.Combine(root, "docs", "examples", "inference.md"));
+            examplePage.Should().Contain("new HuggingFaceInferenceClient(apiKey)");
+            examplePage.Should().NotContain("GetAuthenticatedInferenceClient");
+            examplePage.Should().NotContain(".Should()");
+        }
+        finally
+        {
+            Directory.Delete(root, recursive: true);
+        }
+    }
+
     private static string CreateTempDirectory()
     {
         var path = Path.Combine(Path.GetTempPath(), "autosdk-docs-" + Guid.NewGuid().ToString("N"));
