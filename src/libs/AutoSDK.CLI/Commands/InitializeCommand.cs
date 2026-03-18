@@ -105,8 +105,6 @@ internal sealed class InitializeCommand : Command
             H.Resources.LICENSE,
             H.Resources.README_md,
             H.Resources.src_Directory_Build_props,
-            H.Resources.src_helpers_TrimmingHelper_Program_cs,
-            H.Resources.src_helpers_TrimmingHelper_TrimmingHelper_csproj,
             H.Resources.src_key_snk,
             H.Resources.src_libs__SolutionName___SolutionName__csproj,
             H.Resources.src_libs__SolutionName__generate_sh,

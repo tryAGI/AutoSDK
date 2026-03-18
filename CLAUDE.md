@@ -66,6 +66,7 @@ dotnet tool uninstall --global autosdk.cli
 - Commands in `Commands/`:
   - `generate`: Main SDK generation
   - `initialize`: Scaffold new SDK project structure
+  - `trim`: Validate trimming/NativeAOT compatibility for a .csproj
   - `cli`: Generate CLI commands
   - `convert`: Convert OpenAPI formats
   - `simplify`: Simplify OpenAPI specs

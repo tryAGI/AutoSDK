@@ -11,6 +11,7 @@ rootCommand.Subcommands.Add(new DocsCommand());
 rootCommand.Subcommands.Add(new SimplifyCommand());
 rootCommand.Subcommands.Add(new ConvertCommand());
 rootCommand.Subcommands.Add(new InitializeCommand());
+rootCommand.Subcommands.Add(new TrimCommand());
 rootCommand.Subcommands.Add(new AiCommand());
 
 return await rootCommand.Parse(args).InvokeAsync().ConfigureAwait(false);
