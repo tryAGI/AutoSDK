@@ -263,6 +263,7 @@ public sealed class DocsSyncTests
                     [TestMethod]
                     public async Task Inference()
                     {
+                        var apiKey = GetApiKey();
                         using var client = GetAuthenticatedInferenceClient();
                         var response = await client.InferAsync();
                         response.Should().NotBeNull();
@@ -278,6 +279,7 @@ public sealed class DocsSyncTests
             var examplePage = await File.ReadAllTextAsync(Path.Combine(root, "docs", "examples", "inference.md"));
             examplePage.Should().Contain("new HuggingFaceInferenceClient(apiKey)");
             examplePage.Should().NotContain("GetAuthenticatedInferenceClient");
+            examplePage.Should().NotContain("GetApiKey()");
             examplePage.Should().NotContain(".Should()");
         }
         finally

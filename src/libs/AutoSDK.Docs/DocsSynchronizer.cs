@@ -306,7 +306,8 @@ public static class DocsSynchronizer
             var trimmed = line.Trim();
             if (trimmed.Contains(".Should()", StringComparison.Ordinal) ||
                 trimmed.Contains(".Should(", StringComparison.Ordinal) ||
-                trimmed.StartsWith("Assert.", StringComparison.Ordinal))
+                trimmed.StartsWith("Assert.", StringComparison.Ordinal) ||
+                trimmed.Contains("GetApiKey()", StringComparison.Ordinal))
             {
                 continue;
             }
