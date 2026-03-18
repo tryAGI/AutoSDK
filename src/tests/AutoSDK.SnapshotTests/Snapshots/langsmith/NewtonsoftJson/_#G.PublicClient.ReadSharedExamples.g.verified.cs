@@ -88,7 +88,7 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("id", id?.ToString())
-                .AddOptionalParameter("as_of", asOf?.ToString() ?? string.Empty)
+                .AddOptionalParameter("as_of", asOf?.ToString())
                 .AddOptionalParameter("metadata", metadata)
                 .AddOptionalParameter("offset", offset?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString())

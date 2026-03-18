@@ -61,7 +61,7 @@ namespace G
                 path: "/v1/text-to-dialogue/with-timestamps",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("output_format", outputFormat?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("output_format", outputFormat?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

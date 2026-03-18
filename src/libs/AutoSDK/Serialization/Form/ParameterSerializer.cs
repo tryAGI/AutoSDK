@@ -114,7 +114,7 @@ public static class ParameterSerializer
         {
             return [parameter with
             {
-                Value = $"{parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}.ToString() ?? string.Empty",
+                Value = $"{parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}.ToString(){(parameter.IsRequired ? " ?? string.Empty" : "")}",
             }];
         }
         if (parameter.Type.IsEnum)

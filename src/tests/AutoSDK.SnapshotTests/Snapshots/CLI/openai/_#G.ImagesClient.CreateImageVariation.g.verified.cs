@@ -75,7 +75,7 @@ namespace G
             if (request.Model != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent(request.Model?.ToString() ?? string.Empty),
+                    content: new global::System.Net.Http.StringContent(request.Model?.ToString()),
                     name: "model");
             } 
             if (request.N != default)

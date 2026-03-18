@@ -69,7 +69,7 @@ namespace G
             }
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent(request.Image.ToString() ?? string.Empty),
+                content: new global::System.Net.Http.StringContent(request.Image.ToString()),
                 name: "image");
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
@@ -90,7 +90,7 @@ namespace G
             if (request.Model != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent(request.Model?.ToString() ?? string.Empty),
+                    content: new global::System.Net.Http.StringContent(request.Model?.ToString()),
                     name: "model");
             } 
             if (request.N != default)

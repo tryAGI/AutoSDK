@@ -50,7 +50,7 @@ namespace G
                 path: $"/api/v1/datasets/{datasetId}/splits",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("as_of", asOf?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("as_of", asOf?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

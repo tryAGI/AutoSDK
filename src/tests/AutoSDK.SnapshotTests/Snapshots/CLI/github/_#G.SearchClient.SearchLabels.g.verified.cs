@@ -78,7 +78,7 @@ namespace G
                 path: "/search/labels",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddRequiredParameter("repository_id", repositoryId.ToString()) 
+                .AddRequiredParameter("repository_id", repositoryId.ToString() ?? string.Empty) 
                 .AddRequiredParameter("q", q) 
                 .AddOptionalParameter("sort", sort?.ToValueString()) 
                 .AddOptionalParameter("order", order?.ToValueString()) 

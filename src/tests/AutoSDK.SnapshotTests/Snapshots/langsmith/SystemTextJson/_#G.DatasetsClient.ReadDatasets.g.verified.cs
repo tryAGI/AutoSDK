@@ -98,7 +98,7 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("id", id?.ToString())
-                .AddOptionalParameter("data_type", dataType?.ToString() ?? string.Empty)
+                .AddOptionalParameter("data_type", dataType?.ToString())
                 .AddOptionalParameter("name", name)
                 .AddOptionalParameter("name_contains", nameContains)
                 .AddOptionalParameter("metadata", metadata)

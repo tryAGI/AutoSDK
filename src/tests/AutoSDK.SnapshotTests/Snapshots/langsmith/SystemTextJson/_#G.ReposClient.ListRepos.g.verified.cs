@@ -133,7 +133,7 @@ namespace G
                 .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle)
                 .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
                 .AddOptionalParameter("sort_field", sortField)
-                .AddOptionalParameter("sort_direction", sortDirection?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("sort_direction", sortDirection?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

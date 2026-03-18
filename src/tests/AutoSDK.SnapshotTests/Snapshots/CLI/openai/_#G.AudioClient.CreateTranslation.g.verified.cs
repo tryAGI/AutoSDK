@@ -73,7 +73,7 @@ namespace G
                 name: "file",
                 fileName: request.Filename ?? string.Empty);
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent(request.Model.ToString() ?? string.Empty),
+                content: new global::System.Net.Http.StringContent(request.Model.ToString()),
                 name: "model");
             if (request.Prompt != default)
             {

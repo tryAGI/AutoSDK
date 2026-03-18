@@ -55,7 +55,7 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddRequiredParameter("Side", side.ToValueString()) 
-                .AddRequiredParameter("LevelsToDisplay", levelsToDisplay.ToString()) 
+                .AddRequiredParameter("LevelsToDisplay", levelsToDisplay.ToString() ?? string.Empty) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

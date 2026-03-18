@@ -88,8 +88,8 @@ namespace G
                 path: "/v1/usage/character-stats",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddRequiredParameter("start_unix", startUnix.ToString()) 
-                .AddRequiredParameter("end_unix", endUnix.ToString()) 
+                .AddRequiredParameter("start_unix", startUnix.ToString() ?? string.Empty) 
+                .AddRequiredParameter("end_unix", endUnix.ToString() ?? string.Empty) 
                 .AddOptionalParameter("include_workspace_metrics", includeWorkspaceMetrics?.ToString()) 
                 .AddOptionalParameter("breakdown_type", breakdownType?.ToValueString()) 
                 .AddOptionalParameter("aggregation_interval", aggregationInterval?.ToValueString()) 

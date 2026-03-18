@@ -49,7 +49,7 @@ namespace G
                 path: "/api/downline/for-tree",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddRequiredParameter("SeedUserId", seedUserId.ToString()) 
+                .AddRequiredParameter("SeedUserId", seedUserId.ToString() ?? string.Empty) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
