@@ -1,7 +1,4 @@
 <Solution>
-  <Folder Name="/helpers/">
-    <Project Path="src/helpers/GenerateDocs/GenerateDocs.csproj" />
-  </Folder>
   <Folder Name="/libs/">
     <Project Path="src/libs/AutoSDK.CLI/AutoSDK.CLI.csproj" />
     <Project Path="src/libs/AutoSDK.Docs/AutoSDK.Docs.csproj" />
