@@ -18,6 +18,11 @@ public static partial class Sources
             return string.Empty;
         }
 
+        // Extract class name from fully-qualified JsonSerializerContext setting
+        var contextClassName = client.Settings.JsonSerializerContext.Contains(".")
+            ? client.Settings.JsonSerializerContext.Substring(client.Settings.JsonSerializerContext.LastIndexOf('.') + 1)
+            : "SourceGenerationContext";
+
         return $@"
 #nullable enable
 
@@ -36,7 +41,7 @@ namespace {client.Settings.Namespace}
 ").Inject()}
         }})]
 {(types.IsEmpty ? " " : GenerateJsonSerializableAttributes(client, types))}
-    public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
+    public sealed partial class {contextClassName} : global::System.Text.Json.Serialization.JsonSerializerContext
     {{
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();

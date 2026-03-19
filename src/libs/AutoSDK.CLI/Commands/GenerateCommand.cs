@@ -145,6 +145,13 @@ internal sealed class GenerateCommand : Command
         Description = "Override class name for the generated WebSocket client (AsyncAPI specs only).",
     };
 
+    private Option<string> JsonSerializerContextName { get; } = new(
+        name: "--json-serializer-context")
+    {
+        DefaultValueFactory = _ => string.Empty,
+        Description = "Override the JsonSerializerContext class name (default: SourceGenerationContext). Useful when generating multiple specs to the same project.",
+    };
+
     public GenerateCommand() : base(name: "generate", description: "Generates client sdk using an OpenAPI or AsyncAPI spec.")
     {
         Arguments.Add(Input);
@@ -165,6 +172,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(BaseUrl);
         Options.Add(OpenApiOverrides);
         Options.Add(WebSocketClientClassName);
+        Options.Add(JsonSerializerContextName);
 
         SetAction(HandleAsync);
     }
@@ -176,7 +184,11 @@ internal sealed class GenerateCommand : Command
         bool singleFile = parseResult.GetRequiredValue(SingleFile);
         
         var namespaceValue = parseResult.GetRequiredValue(Namespace);
-        
+        var contextName = parseResult.GetRequiredValue(JsonSerializerContextName);
+        var contextClassName = string.IsNullOrWhiteSpace(contextName)
+            ? "SourceGenerationContext"
+            : contextName;
+
         Settings settings = Settings.Default with
         {
             TargetFramework = parseResult.GetRequiredValue(TargetFramework),
@@ -185,7 +197,7 @@ internal sealed class GenerateCommand : Command
             ClsCompliantEnumPrefix = parseResult.GetRequiredValue(ClsCompliantEnumPrefix),
             MethodNamingConvention = parseResult.GetRequiredValue(MethodNamingConvention),
             ExcludeDeprecatedOperations = parseResult.GetRequiredValue(ExcludeDeprecatedOperations),
-            JsonSerializerContext = $"{namespaceValue}.SourceGenerationContext",
+            JsonSerializerContext = $"{namespaceValue}.{contextClassName}",
             GenerateJsonSerializerContextTypes = true,
             ComputeDiscriminators = parseResult.GetRequiredValue(ComputeDiscriminators),
             GenerateModelValidationMethods = parseResult.GetRequiredValue(GenerateModelValidationMethods),

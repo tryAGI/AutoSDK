@@ -32,10 +32,10 @@ public static partial class Sources
         string deserializeAndYield;
         if (isValueType)
         {
-            // Value types (structs/anyOf) — Deserialize<T> returns T directly, no null check needed
+            // Value types (structs/anyOf) — use non-generic Deserialize with cast (no null check needed for value types)
             var deserializeCall = hasOptions
                 ? $"global::System.Text.Json.JsonSerializer.Deserialize<{eventTypeName}>(json, JsonSerializerOptions)"
-                : $"global::System.Text.Json.JsonSerializer.Deserialize<{eventTypeName}>(json, JsonSerializerContext)";
+                : $"({eventTypeName})global::System.Text.Json.JsonSerializer.Deserialize(json, typeof({eventTypeName}), JsonSerializerContext)!";
             deserializeAndYield = $@"                    var @event = {deserializeCall};
 
                     yield return @event;";

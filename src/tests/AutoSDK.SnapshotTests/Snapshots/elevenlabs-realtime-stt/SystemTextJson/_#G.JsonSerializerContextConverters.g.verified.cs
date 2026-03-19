@@ -24,7 +24,6 @@ namespace G
             typeof(global::G.JsonConverters.ServerEventDiscriminatorMessageTypeJsonConverter),
             typeof(global::G.JsonConverters.ServerEventDiscriminatorMessageTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.ServerEventJsonConverter),
-            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

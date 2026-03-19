@@ -234,7 +234,7 @@ public static partial class Sources
         CancellationToken cancellationToken = default)
     {
         return new FileWithName(
-            Name: "JsonConverters.UnixTimestamp.g.cs",
+            Name: $"{settings.Namespace}.JsonConverters.UnixTimestamp.g.cs",
             Text: GenerateUnixTimestampJsonConverter(settings, cancellationToken: cancellationToken));
     }
     

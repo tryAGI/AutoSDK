@@ -650,10 +650,6 @@ public static class AsyncApiData
                     $"global::{settings.Namespace}.JsonConverters.{x.AnyOfData?.SubType}JsonConverter<{string.Join(", ", x.Children
                         .Where(y => y.Hint == (x.IsAnyOf ? Hint.AnyOf : x.IsOneOf ? Hint.OneOf : Hint.AllOf))
                         .Select(y => y.TypeData.CSharpTypeWithNullabilityForValueTypes))}>"))
-            .Concat(new[]
-            {
-                $"global::{globalSettings.Namespace}.JsonConverters.UnixTimestampJsonConverter",
-            })
             .ToImmutableArray();
     }
 }
