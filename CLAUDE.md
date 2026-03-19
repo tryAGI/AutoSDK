@@ -232,4 +232,4 @@ The leading `"\n"` creates a true empty line that is preserved, adding visual sp
 - **Build**: Microsoft.CodeAnalysis.CSharp (Roslyn)
 - **Testing**: MSTest, AwesomeAssertions, Verify
 - **CLI**: System.CommandLine
-- **Target Frameworks**: net4.6.2, netstandard2.0, net8.0, net9.0
+- **Target Frameworks**: net4.6.2, netstandard2.0, net10.0 (AutoSDK core); net10.0 only (generated SDKs)
