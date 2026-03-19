@@ -69,7 +69,7 @@ internal sealed class SpecFromDocsCommand : Command
                 : throw new InvalidOperationException("Please set OPENAI_API_KEY environment variable."));
 
         var openAiResponse = await openAiApi.Chat.CreateChatCompletionAsAsync<OpenApiSpecResponse>(
-            model: CreateChatCompletionRequestModel.Gpt4o20240806,
+            model: "gpt-4o-2024-08-06",
             messages:
             [
                 "Please convert this markdown to valid OpenAPI 3.0 schema.",
