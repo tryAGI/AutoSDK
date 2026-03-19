@@ -38,8 +38,9 @@ internal sealed class SpecFromDocsCommand : Command
         Console.WriteLine($"Loading {uri}...");
         
         using var firecrawlApi = new FirecrawlApp(apiKey:
-            Environment.GetEnvironmentVariable("FIRECRAWL_API_KEY") ??
-            throw new InvalidOperationException("Please set FIRECRAWL_API_KEY environment variable."));
+            Environment.GetEnvironmentVariable("FIRECRAWL_API_KEY") is { Length: > 0 } firecrawlApiKey
+                ? firecrawlApiKey
+                : throw new InvalidOperationException("Please set FIRECRAWL_API_KEY environment variable."));
         var firecrawlResponse = await firecrawlApi.Scraping.ScrapeAndExtractFromUrlAsync(
             new Firecrawl.AllOf<ScrapeAndExtractFromUrlRequest2, ScrapeOptions>
             {
@@ -63,8 +64,9 @@ internal sealed class SpecFromDocsCommand : Command
         Console.WriteLine("Generating...");
         
         using var openAiApi = new OpenAiClient(apiKey:
-            Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??
-            throw new InvalidOperationException("Please set OPENAI_API_KEY environment variable."));
+            Environment.GetEnvironmentVariable("OPENAI_API_KEY") is { Length: > 0 } openAiApiKey
+                ? openAiApiKey
+                : throw new InvalidOperationException("Please set OPENAI_API_KEY environment variable."));
 
         var openAiResponse = await openAiApi.Chat.CreateChatCompletionAsAsync<OpenApiSpecResponse>(
             model: CreateChatCompletionRequestModel.Gpt4o20240806,
