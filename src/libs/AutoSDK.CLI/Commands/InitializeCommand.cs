@@ -116,6 +116,7 @@ internal sealed class InitializeCommand : Command
             resources.AddRange(new []
             {
                 H.Resources.__github_workflows_mkdocs_yml,
+                H.Resources.autosdk_docs_json,
                 H.Resources.docs_css_extra_css,
                 H.Resources.docs_media_icon128_png,
                 H.Resources.mkdocs_yml,
