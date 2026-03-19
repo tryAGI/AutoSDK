@@ -165,7 +165,7 @@ Why two projects?
 - **Patterns**: Nullable reference types, expression-bodied members, pattern matching
 - **Error Handling**: Validate parameters with explicit null checks
 - **Formatting**: 4 spaces indentation, braces on new lines
-- **Testing**: MSTest with FluentAssertions (unit), Verify (snapshot)
+- **Testing**: MSTest with AwesomeAssertions (unit), Verify (snapshot)
 
 ## Common Workflows
 
@@ -197,6 +197,6 @@ Why two projects?
 
 - **Runtime**: Microsoft.OpenApi, Microsoft.OpenApi.Readers
 - **Build**: Microsoft.CodeAnalysis.CSharp (Roslyn)
-- **Testing**: MSTest, FluentAssertions, Verify
+- **Testing**: MSTest, AwesomeAssertions, Verify
 - **CLI**: System.CommandLine
 - **Target Frameworks**: net4.6.2, netstandard2.0, net8.0, net9.0
