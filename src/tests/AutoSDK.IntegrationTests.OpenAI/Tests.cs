@@ -8,8 +8,9 @@ public class OpenAiTests
     private static OpenAiClient GetAuthorizedApi()
     {
         var apiKey =
-            Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??
-            throw new AssertInconclusiveException("OPENAI_API_KEY environment variable is not found.");
+            Environment.GetEnvironmentVariable("OPENAI_API_KEY") is { Length: > 0 } apiKeyValue
+                ? apiKeyValue
+                : throw new AssertInconclusiveException("OPENAI_API_KEY environment variable is not found.");
 
         var client = new OpenAiClient();
         client.AuthorizeUsingBearer(apiKey);
