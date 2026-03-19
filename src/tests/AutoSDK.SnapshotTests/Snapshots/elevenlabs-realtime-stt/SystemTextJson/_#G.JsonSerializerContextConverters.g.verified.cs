@@ -21,6 +21,9 @@ namespace G
             typeof(global::G.JsonConverters.CommittedTranscriptPayloadMessageTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.ErrorPayloadMessageTypeJsonConverter),
             typeof(global::G.JsonConverters.ErrorPayloadMessageTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.ServerEventDiscriminatorMessageTypeJsonConverter),
+            typeof(global::G.JsonConverters.ServerEventDiscriminatorMessageTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.ServerEventJsonConverter),
             typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }

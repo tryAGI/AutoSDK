@@ -27,9 +27,31 @@ public static partial class Sources
         }
 
         var hasOptions = string.IsNullOrWhiteSpace(wsClient.Settings.JsonSerializerContext);
-        var deserializeCall = hasOptions
-            ? $"global::System.Text.Json.JsonSerializer.Deserialize<{eventTypeName}>(json, JsonSerializerOptions)"
-            : $"({eventTypeName}?)global::System.Text.Json.JsonSerializer.Deserialize(json, typeof({eventTypeName}), JsonSerializerContext)";
+        var isValueType = wsClient.IsReceiveEventValueType;
+
+        string deserializeAndYield;
+        if (isValueType)
+        {
+            // Value types (structs/anyOf) — Deserialize<T> returns T directly, no null check needed
+            var deserializeCall = hasOptions
+                ? $"global::System.Text.Json.JsonSerializer.Deserialize<{eventTypeName}>(json, JsonSerializerOptions)"
+                : $"global::System.Text.Json.JsonSerializer.Deserialize<{eventTypeName}>(json, JsonSerializerContext)";
+            deserializeAndYield = $@"                    var @event = {deserializeCall};
+
+                    yield return @event;";
+        }
+        else
+        {
+            // Reference types — null check with ?? throw
+            var deserializeCall = hasOptions
+                ? $"global::System.Text.Json.JsonSerializer.Deserialize<{eventTypeName}>(json, JsonSerializerOptions)"
+                : $"({eventTypeName}?)global::System.Text.Json.JsonSerializer.Deserialize(json, typeof({eventTypeName}), JsonSerializerContext)";
+            deserializeAndYield = $@"                    var @event = {deserializeCall} ??
+                                 throw new global::System.InvalidOperationException(
+                                     $""Response deserialization failed for \""{{json}}\"" "");
+
+                    yield return @event;";
+        }
 
         return $@"
 #nullable enable
@@ -79,11 +101,7 @@ namespace {wsClient.Settings.Namespace}
                 if (result.MessageType == global::System.Net.WebSockets.WebSocketMessageType.Text)
                 {{
                     string json = global::System.Text.Encoding.UTF8.GetString(buffer, 0, result.Count);
-                    var @event = {deserializeCall} ??
-                                 throw new global::System.InvalidOperationException(
-                                     $""Response deserialization failed for \""{{json}}\"" "");
-
-                    yield return @event;
+{deserializeAndYield}
                 }}
                 else if (result.MessageType == global::System.Net.WebSockets.WebSocketMessageType.Close)
                 {{

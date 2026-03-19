@@ -82,6 +82,18 @@ namespace G
         /// 
         /// </summary>
         public global::G.ErrorPayloadMessageType? Type13 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ServerEvent? Type14 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ServerEventDiscriminator? Type15 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ServerEventDiscriminatorMessageType? Type16 { get; set; }
 
     }
 }

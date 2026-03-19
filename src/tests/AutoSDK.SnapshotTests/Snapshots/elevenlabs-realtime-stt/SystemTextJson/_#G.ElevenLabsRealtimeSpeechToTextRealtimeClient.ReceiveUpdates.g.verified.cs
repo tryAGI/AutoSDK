@@ -11,7 +11,7 @@ namespace G
         /// </summary>
         /// <param name="cancellationToken">A cancellation token.</param>
         /// <returns>An async enumerable of server events.</returns>
-        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.SessionStartedPayload> ReceiveUpdatesAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.ServerEvent> ReceiveUpdatesAsync(
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             if (!IsConnected)
@@ -47,9 +47,7 @@ namespace G
                 if (result.MessageType == global::System.Net.WebSockets.WebSocketMessageType.Text)
                 {
                     string json = global::System.Text.Encoding.UTF8.GetString(buffer, 0, result.Count);
-                    var @event = (global::G.SessionStartedPayload?)global::System.Text.Json.JsonSerializer.Deserialize(json, typeof(global::G.SessionStartedPayload), JsonSerializerContext) ??
-                                 throw new global::System.InvalidOperationException(
-                                     $"Response deserialization failed for \"{json}\" ");
+                    var @event = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ServerEvent>(json, JsonSerializerContext);
 
                     yield return @event;
                 }

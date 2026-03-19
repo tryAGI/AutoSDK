@@ -2,6 +2,7 @@
 
 using System.Collections.Immutable;
 using System.Diagnostics;
+using System.Text.Json.Nodes;
 using AutoSDK.Extensions;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
@@ -29,6 +30,10 @@ public static class AsyncApiData
 
         // Parse AsyncAPI document
         var asyncApiDoc = text.GetAsyncApiDocument(settings, cancellationToken);
+
+        // If multiple receive message types exist, inject a synthetic oneOf wrapper schema
+        // for discriminated union deserialization (before bridging to OpenAPI)
+        var syntheticEventSchemaName = InjectSyntheticServerEventSchema(asyncApiDoc);
 
         // Bridge schemas to OpenAPI for reuse of model generation
         var openApiDocument = asyncApiDoc.BridgeSchemasToOpenApi(settings, cancellationToken);
@@ -125,7 +130,7 @@ public static class AsyncApiData
 
         // Build WebSocket endpoints from AsyncAPI operations
         var (webSocketClients, webSocketOperations) = BuildWebSocketData(
-            asyncApiDoc, settings, globalSettings, componentSchemas);
+            asyncApiDoc, settings, globalSettings, componentSchemas, syntheticEventSchemaName);
 
         // Build authorization from AsyncAPI security schemes
         var authorizations = BuildAuthorizations(asyncApiDoc, settings, globalSettings);
@@ -191,7 +196,8 @@ public static class AsyncApiData
         AsyncApiDocument asyncApiDoc,
         Settings settings,
         Settings globalSettings,
-        Dictionary<string, SchemaContext> componentSchemas)
+        Dictionary<string, SchemaContext> componentSchemas,
+        string? syntheticEventSchemaName)
     {
         var wsClients = new List<WebSocketClient>();
         var wsOperations = new List<WebSocketEndPoint>();
@@ -256,15 +262,22 @@ public static class AsyncApiData
 
         // Determine the base receive event type
         TypeData baseReceiveEventType = default;
-        if (receiveOps.Count == 1)
+        var isReceiveEventValueType = false;
+        if (!string.IsNullOrEmpty(syntheticEventSchemaName) &&
+            receiveOps.Count > 1 &&
+            componentSchemas.TryGetValue(syntheticEventSchemaName, out var eventSchema))
+        {
+            // Use the synthetic oneOf wrapper type for discriminated union deserialization
+            baseReceiveEventType = eventSchema.TypeData;
+            isReceiveEventValueType = true; // anyOf/oneOf types are generated as structs
+        }
+        else if (receiveOps.Count == 1)
         {
             baseReceiveEventType = receiveOps[0].MessageType;
         }
         else if (receiveOps.Count > 1)
         {
-            // When there are multiple receive message types, we need a common base type.
-            // For now, use the first one. In practice, AsyncAPI specs often define a
-            // discriminated union (oneOf/anyOf) for server events.
+            // Fallback: use the first receive type if synthetic schema wasn't created
             baseReceiveEventType = receiveOps[0].MessageType;
         }
 
@@ -285,6 +298,7 @@ public static class AsyncApiData
             Converters: ImmutableArray<string>.Empty)
         {
             BaseReceiveEventType = baseReceiveEventType,
+            IsReceiveEventValueType = isReceiveEventValueType,
         };
 
         wsClients.Add(wsClient);
@@ -413,6 +427,197 @@ public static class AsyncApiData
             _ =>
                 ("Bearer", new[] { "apiKey" }, ParameterLocation.Header, SecuritySchemeType.Http),
         };
+    }
+
+    /// <summary>
+    /// When multiple receive message types exist, injects a synthetic oneOf wrapper schema
+    /// (named "ServerEvent") into the AsyncAPI components for discriminated union deserialization.
+    /// Returns the synthetic schema name, or null if not needed.
+    /// </summary>
+    private static string? InjectSyntheticServerEventSchema(AsyncApiDocument asyncApiDoc)
+    {
+        // Collect all unique receive payload schema names with their discriminator values
+        var receiveSchemas = new List<(string SchemaName, string DiscriminatorValue)>();
+        var seenSchemas = new HashSet<string>(StringComparer.Ordinal);
+
+        foreach (var kvp in asyncApiDoc.Operations)
+        {
+            var operation = kvp.Value;
+            if (operation.IsSend)
+            {
+                continue;
+            }
+
+            foreach (var msgRef in operation.Messages)
+            {
+                var schemaName = ResolvePayloadSchemaName(msgRef.Ref, asyncApiDoc);
+                if (string.IsNullOrEmpty(schemaName) || !seenSchemas.Add(schemaName))
+                {
+                    continue;
+                }
+
+                var discriminatorValue = GetDiscriminatorValue(asyncApiDoc, schemaName);
+                receiveSchemas.Add((schemaName, discriminatorValue));
+            }
+        }
+
+        // Only synthesize if there are multiple receive types
+        if (receiveSchemas.Count <= 1)
+        {
+            return null;
+        }
+
+        // Find the common discriminator property name
+        var discriminatorProperty = FindDiscriminatorProperty(asyncApiDoc, receiveSchemas);
+
+        // Build the oneOf array and discriminator mapping
+        var oneOfArray = new JsonArray();
+        var mapping = new JsonObject();
+
+        foreach (var (schemaName, discriminatorValue) in receiveSchemas)
+        {
+            oneOfArray.Add(new JsonObject
+            {
+                ["$ref"] = $"#/components/schemas/{schemaName}",
+            });
+
+            if (!string.IsNullOrEmpty(discriminatorValue))
+            {
+                mapping[discriminatorValue] = $"#/components/schemas/{schemaName}";
+            }
+        }
+
+        var syntheticSchema = new JsonObject
+        {
+            ["oneOf"] = oneOfArray,
+        };
+
+        // Only add discriminator if we have mapping values
+        if (mapping.Count > 0)
+        {
+            syntheticSchema["discriminator"] = new JsonObject
+            {
+                ["propertyName"] = discriminatorProperty,
+                ["mapping"] = mapping,
+            };
+        }
+
+        const string schemaName2 = "ServerEvent";
+        asyncApiDoc.Components.Schemas[schemaName2] = syntheticSchema;
+
+        return schemaName2;
+    }
+
+    /// <summary>
+    /// Resolves a message reference to the payload schema name.
+    /// </summary>
+    private static string ResolvePayloadSchemaName(string messageRef, AsyncApiDocument doc)
+    {
+        AsyncApiMessage? message = null;
+
+        if (!string.IsNullOrEmpty(messageRef))
+        {
+            var parts = messageRef.TrimStart('#', '/').Split('/');
+            if (parts.Length >= 4 &&
+                parts[0] == "channels" &&
+                parts[2] == "messages" &&
+                doc.Channels.TryGetValue(parts[1], out var channel))
+            {
+                channel.Messages.TryGetValue(parts[3], out message);
+            }
+            else if (parts.Length >= 3 &&
+                     parts[0] == "components" &&
+                     parts[1] == "messages")
+            {
+                doc.Components.Messages.TryGetValue(parts[2], out message);
+            }
+        }
+
+        if (message?.Payload == null)
+        {
+            return string.Empty;
+        }
+
+        var payloadRef = message.Payload["$ref"]?.GetValue<string>();
+        if (!string.IsNullOrEmpty(payloadRef))
+        {
+            var lastSlash = payloadRef.LastIndexOf('/');
+            return lastSlash >= 0 ? payloadRef.Substring(lastSlash + 1) : payloadRef;
+        }
+
+        return string.Empty;
+    }
+
+    /// <summary>
+    /// Gets the discriminator enum value from a schema's discriminator property.
+    /// For example, a "message_type" property with enum: ["session_started"] returns "session_started".
+    /// </summary>
+    private static string GetDiscriminatorValue(
+        AsyncApiDocument doc, string schemaName)
+    {
+        if (doc.Components.Schemas.TryGetValue(schemaName, out var schema) &&
+            schema is JsonObject schemaObj &&
+            schemaObj["properties"] is JsonObject props)
+        {
+            // Look for any property with a single-value enum
+            foreach (var kvp in props)
+            {
+                if (kvp.Value is JsonObject propObj &&
+                    propObj["enum"] is JsonArray enumValues &&
+                    enumValues.Count == 1)
+                {
+                    return enumValues[0]?.GetValue<string>() ?? string.Empty;
+                }
+            }
+        }
+
+        return string.Empty;
+    }
+
+    /// <summary>
+    /// Finds the common discriminator property name across all receive schemas.
+    /// Returns the property name that exists on all schemas with single-value enums.
+    /// </summary>
+    private static string FindDiscriminatorProperty(
+        AsyncApiDocument doc,
+        List<(string SchemaName, string DiscriminatorValue)> receiveSchemas)
+    {
+        var propertyCounts = new Dictionary<string, int>(StringComparer.Ordinal);
+
+        foreach (var (schemaName, _) in receiveSchemas)
+        {
+            if (doc.Components.Schemas.TryGetValue(schemaName, out var schema) &&
+                schema is JsonObject schemaObj &&
+                schemaObj["properties"] is JsonObject props)
+            {
+                foreach (var kvp in props)
+                {
+                    if (kvp.Value is JsonObject propObj &&
+                        propObj["enum"] is JsonArray enumArray &&
+                        enumArray.Count == 1)
+                    {
+                        if (!propertyCounts.ContainsKey(kvp.Key))
+                        {
+                            propertyCounts[kvp.Key] = 0;
+                        }
+
+                        propertyCounts[kvp.Key]++;
+                    }
+                }
+            }
+        }
+
+        // Return the property that exists on all schemas with single-value enum
+        foreach (var kvp in propertyCounts)
+        {
+            if (kvp.Value == receiveSchemas.Count)
+            {
+                return kvp.Key;
+            }
+        }
+
+        // Default fallback
+        return "message_type";
     }
 
     private static ImmutableArray<string> BuildConverters(

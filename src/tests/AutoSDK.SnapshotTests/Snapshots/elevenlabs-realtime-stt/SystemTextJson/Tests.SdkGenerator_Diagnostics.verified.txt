@@ -1,1 +1,52 @@
-﻿[]
+﻿[
+  {
+    Location: /*
+                    string json = global::System.Text.Encoding.UTF8.GetString(buffer, 0, result.Count);
+                    var @event = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ServerEvent>(json, JsonSerializerContext);
+                                                                                                            ^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.ElevenLabsRealtimeSpeechToTextRealtimeClient.ReceiveUpdates.g.cs: (48,108)-(48,112),
+    Message: Argument 1: cannot convert from 'string' to 'System.IO.Stream',
+    Severity: Error,
+    Descriptor: {
+      Id: CS1503,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1503),
+      MessageFormat: Argument {0}: cannot convert from '{1}' to '{2}',
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+                    string json = global::System.Text.Encoding.UTF8.GetString(buffer, 0, result.Count);
+                    var @event = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ServerEvent>(json, JsonSerializerContext);
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.ElevenLabsRealtimeSpeechToTextRealtimeClient.ReceiveUpdates.g.cs: (48,114)-(48,135),
+    Message: Argument 2: cannot convert from 'System.Text.Json.Serialization.JsonSerializerContext' to 'System.Text.Json.JsonSerializerOptions?',
+    Severity: Error,
+    Descriptor: {
+      Id: CS1503,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1503),
+      MessageFormat: Argument {0}: cannot convert from '{1}' to '{2}',
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  }
+]

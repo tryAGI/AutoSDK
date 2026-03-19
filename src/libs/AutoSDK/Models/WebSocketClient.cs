@@ -27,4 +27,10 @@ public record struct WebSocketClient(
     /// or a discriminated union type if multiple).
     /// </summary>
     public TypeData BaseReceiveEventType { get; set; }
+
+    /// <summary>
+    /// Whether the base receive event type is a value type (struct/anyOf).
+    /// When true, the null-coalescing pattern (?? throw) cannot be used in deserialization.
+    /// </summary>
+    public bool IsReceiveEventValueType { get; set; }
 }
