@@ -16,29 +16,125 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            var
-            readerCopy = reader;
-            global::G.TranscriptParamsVariant1? value1 = default;
-            try
+            using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
+            var __rawJson = __jsonDocument.RootElement.GetRawText();
+            var __jsonProps = new global::System.Collections.Generic.HashSet<string>();
+            if (__jsonDocument.RootElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptParamsVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptParamsVariant1> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptParamsVariant1).Name}");
-                value1 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
-            }
-            catch (global::System.Text.Json.JsonException)
-            {
+                foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
+                {
+                    __jsonProps.Add(__jsonProp.Name);
+                }
             }
 
-            readerCopy = reader;
+            var __score0 = 0;
+            if (__jsonProps.Contains("audio_url")) __score0++;
+            var __score1 = 0;
+            if (__jsonProps.Contains("language_code")) __score1++;
+            if (__jsonProps.Contains("language_detection")) __score1++;
+            if (__jsonProps.Contains("language_confidence_threshold")) __score1++;
+            if (__jsonProps.Contains("speech_model")) __score1++;
+            if (__jsonProps.Contains("punctuate")) __score1++;
+            if (__jsonProps.Contains("format_text")) __score1++;
+            if (__jsonProps.Contains("disfluencies")) __score1++;
+            if (__jsonProps.Contains("dual_channel")) __score1++;
+            if (__jsonProps.Contains("webhook_url")) __score1++;
+            if (__jsonProps.Contains("webhook_auth_header_name")) __score1++;
+            if (__jsonProps.Contains("webhook_auth_header_value")) __score1++;
+            if (__jsonProps.Contains("auto_highlights")) __score1++;
+            if (__jsonProps.Contains("audio_start_from")) __score1++;
+            if (__jsonProps.Contains("audio_end_at")) __score1++;
+            if (__jsonProps.Contains("word_boost")) __score1++;
+            if (__jsonProps.Contains("boost_param")) __score1++;
+            if (__jsonProps.Contains("filter_profanity")) __score1++;
+            if (__jsonProps.Contains("redact_pii")) __score1++;
+            if (__jsonProps.Contains("redact_pii_audio")) __score1++;
+            if (__jsonProps.Contains("redact_pii_audio_quality")) __score1++;
+            if (__jsonProps.Contains("redact_pii_policies")) __score1++;
+            if (__jsonProps.Contains("redact_pii_sub")) __score1++;
+            if (__jsonProps.Contains("speaker_labels")) __score1++;
+            if (__jsonProps.Contains("speakers_expected")) __score1++;
+            if (__jsonProps.Contains("content_safety")) __score1++;
+            if (__jsonProps.Contains("content_safety_confidence")) __score1++;
+            if (__jsonProps.Contains("iab_categories")) __score1++;
+            if (__jsonProps.Contains("custom_spelling")) __score1++;
+            if (__jsonProps.Contains("sentiment_analysis")) __score1++;
+            if (__jsonProps.Contains("auto_chapters")) __score1++;
+            if (__jsonProps.Contains("entity_detection")) __score1++;
+            if (__jsonProps.Contains("speech_threshold")) __score1++;
+            if (__jsonProps.Contains("summarization")) __score1++;
+            if (__jsonProps.Contains("summary_model")) __score1++;
+            if (__jsonProps.Contains("summary_type")) __score1++;
+            if (__jsonProps.Contains("custom_topics")) __score1++;
+            if (__jsonProps.Contains("topics")) __score1++;
+            var __bestScore = 0;
+            var __bestIndex = -1;
+            if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
+            if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
+
+            global::G.TranscriptParamsVariant1? value1 = default;
             global::G.TranscriptOptionalParams? value2 = default;
-            try
+            if (__bestIndex >= 0)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptOptionalParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptOptionalParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptOptionalParams).Name}");
-                value2 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                if (__bestIndex == 0)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptParamsVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptParamsVariant1> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptParamsVariant1).Name}");
+                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 1)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptOptionalParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptOptionalParams> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptOptionalParams).Name}");
+                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
             }
-            catch (global::System.Text.Json.JsonException)
+
+            if (value1 == null && value2 == null)
             {
+                try
+                {
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptParamsVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptParamsVariant1> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptParamsVariant1).Name}");
+                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+
+                try
+                {
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptOptionalParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptOptionalParams> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptOptionalParams).Name}");
+                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
             }
 
             var __value = new global::G.TranscriptParams(
@@ -46,19 +142,6 @@ namespace G.JsonConverters
 
                 value2
                 );
-
-            if (value1 != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptParamsVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptParamsVariant1> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptParamsVariant1).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (value2 != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptOptionalParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptOptionalParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptOptionalParams).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
 
             return __value;
         }

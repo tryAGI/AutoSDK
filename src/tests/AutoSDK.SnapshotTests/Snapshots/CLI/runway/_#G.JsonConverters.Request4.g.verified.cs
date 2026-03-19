@@ -16,41 +16,134 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            var
-            readerCopy = reader;
+            using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
+            var __rawJson = __jsonDocument.RootElement.GetRawText();
+            var __jsonProps = new global::System.Collections.Generic.HashSet<string>();
+            if (__jsonDocument.RootElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+            {
+                foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
+                {
+                    __jsonProps.Add(__jsonProp.Name);
+                }
+            }
+
+            var __score0 = 0;
+            if (__jsonProps.Contains("promptText")) __score0++;
+            if (__jsonProps.Contains("seed")) __score0++;
+            if (__jsonProps.Contains("ratio")) __score0++;
+            if (__jsonProps.Contains("referenceImages")) __score0++;
+            if (__jsonProps.Contains("contentModeration")) __score0++;
+            if (__jsonProps.Contains("model")) __score0++;
+            var __score1 = 0;
+            if (__jsonProps.Contains("promptText")) __score1++;
+            if (__jsonProps.Contains("seed")) __score1++;
+            if (__jsonProps.Contains("ratio")) __score1++;
+            if (__jsonProps.Contains("referenceImages")) __score1++;
+            if (__jsonProps.Contains("contentModeration")) __score1++;
+            if (__jsonProps.Contains("model")) __score1++;
+            var __score2 = 0;
+            if (__jsonProps.Contains("promptText")) __score2++;
+            if (__jsonProps.Contains("ratio")) __score2++;
+            if (__jsonProps.Contains("referenceImages")) __score2++;
+            if (__jsonProps.Contains("model")) __score2++;
+            var __bestScore = 0;
+            var __bestIndex = -1;
+            if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
+            if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
+            if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
+
             global::G.RequestGen4ImageTurbo? gen4ImageTurbo = default;
-            try
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestGen4ImageTurbo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestGen4ImageTurbo> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestGen4ImageTurbo).Name}");
-                gen4ImageTurbo = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
-            }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
-            readerCopy = reader;
             global::G.RequestGen4Image? gen4Image = default;
-            try
+            global::G.RequestGemini25Flash? gemini25Flash = default;
+            if (__bestIndex >= 0)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestGen4Image), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestGen4Image> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestGen4Image).Name}");
-                gen4Image = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
-            }
-            catch (global::System.Text.Json.JsonException)
-            {
+                if (__bestIndex == 0)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestGen4ImageTurbo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestGen4ImageTurbo> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestGen4ImageTurbo).Name}");
+                        gen4ImageTurbo = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 1)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestGen4Image), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestGen4Image> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestGen4Image).Name}");
+                        gen4Image = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 2)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestGemini25Flash), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestGemini25Flash> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestGemini25Flash).Name}");
+                        gemini25Flash = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
             }
 
-            readerCopy = reader;
-            global::G.RequestGemini25Flash? gemini25Flash = default;
-            try
+            if (gen4ImageTurbo == null && gen4Image == null && gemini25Flash == null)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestGemini25Flash), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestGemini25Flash> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestGemini25Flash).Name}");
-                gemini25Flash = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
-            }
-            catch (global::System.Text.Json.JsonException)
-            {
+                try
+                {
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestGen4ImageTurbo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestGen4ImageTurbo> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestGen4ImageTurbo).Name}");
+                    gen4ImageTurbo = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+
+                try
+                {
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestGen4Image), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestGen4Image> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestGen4Image).Name}");
+                    gen4Image = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+
+                try
+                {
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestGemini25Flash), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestGemini25Flash> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestGemini25Flash).Name}");
+                    gemini25Flash = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
             }
 
             var __value = new global::G.Request4(
@@ -60,25 +153,6 @@ namespace G.JsonConverters
 
                 gemini25Flash
                 );
-
-            if (gen4ImageTurbo != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestGen4ImageTurbo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestGen4ImageTurbo> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestGen4ImageTurbo).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (gen4Image != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestGen4Image), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestGen4Image> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestGen4Image).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (gemini25Flash != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestGemini25Flash), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestGemini25Flash> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestGemini25Flash).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
 
             return __value;
         }

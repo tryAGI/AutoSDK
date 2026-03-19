@@ -70,12 +70,18 @@ public record struct AnyOfData(
                         ? titleName
                         : SmartNamedAnyOfNames.ComputePropertyName(children, className, i);
 
+                var resolvedSchema = x.Schema.ResolveIfRequired();
+                var jsonPropertyNames = resolvedSchema.Properties != null
+                    ? resolvedSchema.Properties.Keys.ToImmutableArray()
+                    : ImmutableArray<string>.Empty;
+
                 return PropertyData.Default with
                 {
                     Type = x.TypeData,
                     Name = name,
                     Summary = x.Schema.GetSummary(),
                     DiscriminatorValue = discriminatorValue,
+                    JsonPropertyNames = jsonPropertyNames.AsEquatableArray(),
                 };
             }).ToImmutableArray().AsEquatableArray()
             : Enumerable

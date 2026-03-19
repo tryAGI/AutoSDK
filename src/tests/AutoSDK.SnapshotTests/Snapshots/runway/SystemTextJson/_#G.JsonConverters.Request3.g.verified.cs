@@ -16,29 +16,68 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            var
-            readerCopy = reader;
-            global::G.RequestGen4Aleph? gen4Aleph = default;
-            try
+            using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
+            var __rawJson = __jsonDocument.RootElement.GetRawText();
+            var __jsonProps = new global::System.Collections.Generic.HashSet<string>();
+            if (__jsonDocument.RootElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestGen4Aleph), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestGen4Aleph> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestGen4Aleph).Name}");
-                gen4Aleph = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
+                {
+                    __jsonProps.Add(__jsonProp.Name);
+                }
             }
-            catch (global::System.Text.Json.JsonException)
+
+            var __score0 = 0;
+            if (__jsonProps.Contains("videoUri")) __score0++;
+            if (__jsonProps.Contains("promptText")) __score0++;
+            if (__jsonProps.Contains("ratio")) __score0++;
+            if (__jsonProps.Contains("seed")) __score0++;
+            if (__jsonProps.Contains("references")) __score0++;
+            if (__jsonProps.Contains("contentModeration")) __score0++;
+            if (__jsonProps.Contains("model")) __score0++;
+            var __bestScore = 0;
+            var __bestIndex = -1;
+            if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
+
+            global::G.RequestGen4Aleph? gen4Aleph = default;
+            if (__bestIndex >= 0)
             {
+                if (__bestIndex == 0)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestGen4Aleph), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestGen4Aleph> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestGen4Aleph).Name}");
+                        gen4Aleph = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+            }
+
+            if (gen4Aleph == null)
+            {
+                try
+                {
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestGen4Aleph), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestGen4Aleph> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestGen4Aleph).Name}");
+                    gen4Aleph = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
             }
 
             var __value = new global::G.Request3(
                 gen4Aleph
                 );
-
-            if (gen4Aleph != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestGen4Aleph), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestGen4Aleph> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestGen4Aleph).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
 
             return __value;
         }

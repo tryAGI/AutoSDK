@@ -33,6 +33,9 @@ namespace AutoSDK.JsonConverters
             catch (global::System.Text.Json.JsonException)
             {
             }
+            catch (global::System.InvalidOperationException)
+            {
+            }
         
             readerCopy = reader;
             T2? value2 = default;
@@ -50,6 +53,9 @@ namespace AutoSDK.JsonConverters
                 }
             }
             catch (global::System.Text.Json.JsonException)
+            {
+            }
+            catch (global::System.InvalidOperationException)
             {
             }
         

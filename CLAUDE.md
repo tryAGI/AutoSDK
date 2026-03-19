@@ -159,6 +159,39 @@ Why two projects?
 - `Record`: Immutable records
 - `ReadonlyRecordStruct`: Value types for performance
 
+### Code Generation String Template Conventions
+
+The `Sources/` code generation templates use two key extension methods that interact:
+- **`Inject()`** (`StringExtensions.cs`): Concatenates strings and trims leading/trailing `\r`/`\n` characters. Returns `" "` (space) if empty.
+- **`RemoveBlankLinesWhereOnlyWhitespaces()`**: Removes lines that contain only whitespace (but keeps truly empty lines).
+
+These methods create a convention for controlling blank lines in generated output:
+
+| Pattern | Effect | Use Case |
+|---------|--------|----------|
+| `$@" \n` (space after `"`) | Line is removed by `RemoveBlankLinesWhereOnlyWhitespaces()` | Separator between items — prevents unwanted blank lines |
+| `$@"\n` (no space after `"`) | Empty line is preserved in output | Intentional blank line between code sections |
+
+**Example — trimmed separator (no blank line between items):**
+```csharp
+anyOfData.Properties.Select((x, i) => $@"
+            {(i == 0 ? "" : "else ")}if (...)
+            {{
+            }}
+").Inject()
+```
+The leading `" \n"` creates a whitespace-only line that gets removed, preventing blank lines between `if/else if` blocks.
+
+**Example — preserved blank line (intentional spacing):**
+```csharp
+anyOfData.Properties.Select(x => $@"
+                {x.ParameterName},
+").Inject()
+```
+The leading `"\n"` creates a true empty line that is preserved, adding visual spacing between constructor arguments.
+
+**Key rule**: When writing `$@"` inside a `.Select()` lambda for `Inject()`, always consider whether you want the first line trimmed away (use trailing space: `$@" \n`) or preserved as a blank line (use no space: `$@"\n`).
+
 ## Code Style Guidelines
 - **Naming**: PascalCase for types/methods, camelCase for parameters/variables
 - **Structure**: Using directives at top, followed by namespace

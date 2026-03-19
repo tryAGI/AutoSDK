@@ -161,6 +161,27 @@ public partial class JsonTests
         });
         deserialization.Should().Throw<JsonException>();
     }
+
+    [TestMethod]
+    public void AnyOf_InvalidOperationException_Handled_SystemTextJson()
+    {
+        // When TypeInfoResolver doesn't know the type, GetTypeInfo throws InvalidOperationException.
+        // The converter should catch it and fall through to the next variant.
+        const string json = "{\"status\":\"pulling manifest\"}";
+
+        // Use a TypeInfoResolver that only knows about PullModelResponse2 (not PullModelResponse).
+        // This forces an InvalidOperationException when trying to deserialize as PullModelResponse.
+        var options = new JsonSerializerOptions
+        {
+            TypeInfoResolver = TestSourceGenerationContext.Default,
+            Converters = { new AnyOfConverterFactorySystemTextJson() }
+        };
+
+        var response = JsonSerializer.Deserialize<AnyOf<PullModelResponse2, PullModelResponse>>(json, options);
+        response.Should().NotBeNull();
+        response.Value1.Should().NotBeNull();
+        response.Value1!.Status.Should().Be(PullModelResponseStatus2.PullingManifest);
+    }
 }
 
 public class PetByAge

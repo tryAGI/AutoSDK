@@ -28,6 +28,9 @@ namespace G.JsonConverters
             catch (global::System.Text.Json.JsonException)
             {
             }
+            catch (global::System.InvalidOperationException)
+            {
+            }
 
             var __value = new global::G.LemurTaskResponse(
                 @string

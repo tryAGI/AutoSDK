@@ -16,41 +16,128 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            var
-            readerCopy = reader;
+            using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
+            var __rawJson = __jsonDocument.RootElement.GetRawText();
+            var __jsonProps = new global::System.Collections.Generic.HashSet<string>();
+            if (__jsonDocument.RootElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+            {
+                foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
+                {
+                    __jsonProps.Add(__jsonProp.Name);
+                }
+            }
+
+            var __score0 = 0;
+            if (__jsonProps.Contains("type")) __score0++;
+            if (__jsonProps.Contains("text")) __score0++;
+            var __score1 = 0;
+            if (__jsonProps.Contains("type")) __score1++;
+            if (__jsonProps.Contains("image_url")) __score1++;
+            if (__jsonProps.Contains("file_id")) __score1++;
+            if (__jsonProps.Contains("detail")) __score1++;
+            var __score2 = 0;
+            if (__jsonProps.Contains("type")) __score2++;
+            if (__jsonProps.Contains("file_id")) __score2++;
+            if (__jsonProps.Contains("filename")) __score2++;
+            if (__jsonProps.Contains("file_data")) __score2++;
+            var __bestScore = 0;
+            var __bestIndex = -1;
+            if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
+            if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
+            if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
+
             global::G.InputTextContent? inputText = default;
-            try
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputTextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputTextContent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputTextContent).Name}");
-                inputText = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
-            }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
-            readerCopy = reader;
             global::G.InputImageContent? inputImage = default;
-            try
+            global::G.InputFileContent? inputFile = default;
+            if (__bestIndex >= 0)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputImageContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputImageContent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputImageContent).Name}");
-                inputImage = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
-            }
-            catch (global::System.Text.Json.JsonException)
-            {
+                if (__bestIndex == 0)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputTextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputTextContent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputTextContent).Name}");
+                        inputText = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 1)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputImageContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputImageContent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputImageContent).Name}");
+                        inputImage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 2)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputFileContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputFileContent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputFileContent).Name}");
+                        inputFile = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
             }
 
-            readerCopy = reader;
-            global::G.InputFileContent? inputFile = default;
-            try
+            if (inputText == null && inputImage == null && inputFile == null)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputFileContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputFileContent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputFileContent).Name}");
-                inputFile = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
-            }
-            catch (global::System.Text.Json.JsonException)
-            {
+                try
+                {
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputTextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputTextContent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputTextContent).Name}");
+                    inputText = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+
+                try
+                {
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputImageContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputImageContent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputImageContent).Name}");
+                    inputImage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+
+                try
+                {
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputFileContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputFileContent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputFileContent).Name}");
+                    inputFile = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
             }
 
             var __value = new global::G.InputContent(
@@ -60,25 +147,6 @@ namespace G.JsonConverters
 
                 inputFile
                 );
-
-            if (inputText != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputTextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputTextContent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputTextContent).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (inputImage != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputImageContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputImageContent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputImageContent).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (inputFile != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputFileContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputFileContent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputFileContent).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
 
             return __value;
         }

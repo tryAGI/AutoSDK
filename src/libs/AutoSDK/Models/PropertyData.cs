@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using AutoSDK.Extensions;
 using AutoSDK.Helpers;
 using AutoSDK.Naming.Properties;
@@ -19,7 +20,8 @@ public record struct PropertyData(
     string Summary,
     string Description,
     string ConverterType,
-    string DiscriminatorValue)
+    string DiscriminatorValue,
+    EquatableArray<string> JsonPropertyNames)
 {
     public static PropertyData Default => new(
         Id: string.Empty,
@@ -36,7 +38,8 @@ public record struct PropertyData(
         Summary: string.Empty,
         Description: string.Empty,
         ConverterType: string.Empty,
-        DiscriminatorValue: string.Empty);
+        DiscriminatorValue: string.Empty,
+        JsonPropertyNames: ImmutableArray<string>.Empty.AsEquatableArray());
 
     public static PropertyData FromSchemaContext(SchemaContext context)
     {
@@ -102,7 +105,8 @@ public record struct PropertyData(
             Summary: context.Schema.GetSummary(),
             Description: context.Schema.Description ?? string.Empty,
             ConverterType: type.ConverterType,
-            DiscriminatorValue: string.Empty);
+            DiscriminatorValue: string.Empty,
+            JsonPropertyNames: ImmutableArray<string>.Empty.AsEquatableArray());
     }
 
     public string ParameterName => Name
