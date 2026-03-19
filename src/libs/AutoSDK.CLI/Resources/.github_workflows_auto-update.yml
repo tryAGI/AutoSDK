@@ -2,6 +2,7 @@ name: Opens a new PR if there are OpenAPI updates
 on:
   schedule:
     - cron: '0 */3 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -13,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Git user
         run: |
@@ -29,10 +30,10 @@ jobs:
           git checkout -b ${{ steps.branch.outputs.branch_name }} origin/main
           git rebase main
 
-      - name: Install .NET SDK
-        uses: actions/setup-dotnet@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: 9.0.x
+          dotnet-version: 10.0.x
 
       - name: Generate code
         run: |
@@ -60,7 +61,7 @@ jobs:
       - name: Wait for 15 seconds
         if: steps.changes.outputs.has_changes == 'true'
         run: sleep 15
-      
+
       - name: Create pull request
         if: steps.changes.outputs.has_changes == 'true'
         run: gh pr create -B main -H ${{ steps.branch.outputs.branch_name }} --title 'feat:@coderabbitai' --body '@coderabbitai summary'
