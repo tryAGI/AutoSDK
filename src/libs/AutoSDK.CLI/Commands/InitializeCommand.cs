@@ -127,7 +127,7 @@ internal sealed class InitializeCommand : Command
             {
                 H.Resources.src_tests_IntegrationTests__SolutionName__IntegrationTests_csproj,
                 H.Resources.src_tests_IntegrationTests_Tests_cs,
-                H.Resources.src_tests_IntegrationTests_Tests_Test_cs,
+                H.Resources.src_tests_IntegrationTests_Examples_Generate_cs,
             });
         }
         else

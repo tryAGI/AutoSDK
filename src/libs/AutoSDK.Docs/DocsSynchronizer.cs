@@ -23,13 +23,7 @@ public static class DocsSynchronizer
 
         Directory.CreateDirectory(project.DocsDirectory);
 
-        return project.Mode switch
-        {
-            ExampleMode.Metadata => await SyncMetadataExamplesAsync(project, cancellationToken).ConfigureAwait(false),
-            ExampleMode.Marker => await SyncMarkerExamplesAsync(project, cancellationToken).ConfigureAwait(false),
-            ExampleMode.Legacy => await SyncLegacyExamplesAsync(project, cancellationToken).ConfigureAwait(false),
-            _ => throw new InvalidOperationException($"Unsupported docs mode '{project.Mode}'."),
-        };
+        return await SyncMetadataExamplesAsync(project, cancellationToken).ConfigureAwait(false);
     }
 
     private static async Task<DocsSyncResult> SyncMetadataExamplesAsync(
@@ -38,14 +32,21 @@ public static class DocsSynchronizer
     {
         Directory.CreateDirectory(project.OutputDirectory);
         DeleteMarkdownFiles(project.OutputDirectory);
-        DeleteDirectoryIfExists(project.LegacyOutputDirectory);
+
+        // Clean up legacy output directories if they exist
+        var legacyOutputDirectory = Path.Combine(project.DocsDirectory, "samples");
+        DeleteDirectoryIfExists(legacyOutputDirectory);
 
         var examples = new List<MetadataExampleDocument>();
         if (Directory.Exists(project.ExampleSourceDirectory))
         {
             foreach (var path in Directory.EnumerateFiles(project.ExampleSourceDirectory, "*.cs", SearchOption.AllDirectories))
             {
-                examples.Add(await LoadMetadataExampleAsync(path, project.ClientClassName, project.ApiKeyVariableName, project.ClientReplacements, cancellationToken).ConfigureAwait(false));
+                var example = await TryLoadMetadataExampleAsync(path, project.ClientClassName, project.ApiKeyVariableName, project.ClientReplacements, cancellationToken).ConfigureAwait(false);
+                if (example is not null)
+                {
+                    examples.Add(example);
+                }
             }
             examples = examples
                 .OrderBy(x => x.Order)
@@ -85,105 +86,7 @@ public static class DocsSynchronizer
         return new DocsSyncResult("metadata", examples.Count, project.OutputDirectory);
     }
 
-    private static async Task<DocsSyncResult> SyncLegacyExamplesAsync(
-        ResolvedProject project,
-        CancellationToken cancellationToken)
-    {
-        Directory.CreateDirectory(project.OutputDirectory);
-        DeleteMarkdownFiles(project.OutputDirectory);
-        DeleteDirectoryIfExists(project.MetadataOutputDirectory);
-
-        var readme = await File.ReadAllTextAsync(project.ReadmePath, cancellationToken).ConfigureAwait(false);
-        await File.WriteAllTextAsync(Path.Combine(project.DocsDirectory, "index.md"), readme, cancellationToken).ConfigureAwait(false);
-
-        var samples = new List<LegacyExampleDocument>();
-        if (Directory.Exists(project.ExampleSourceDirectory))
-        {
-            var paths = Directory
-                .EnumerateFiles(project.ExampleSourceDirectory, "Tests.*.cs", SearchOption.AllDirectories)
-                .OrderBy(Path.GetFileName, StringComparer.Ordinal)
-                .ToList();
-            foreach (var path in paths)
-            {
-                var sample = await TryLoadLegacySampleAsync(path, project.ClientClassName, project.ApiKeyVariableName, project.ClientReplacements, cancellationToken).ConfigureAwait(false);
-                if (sample is not null)
-                {
-                    samples.Add(sample);
-                }
-            }
-        }
-
-        foreach (var sample in samples)
-        {
-            var path = Path.Combine(project.OutputDirectory, $"{sample.Name}.md");
-            await File.WriteAllTextAsync(
-                path,
-                $@"```csharp
-{sample.Code}
-```",
-                cancellationToken).ConfigureAwait(false);
-        }
-
-        var mkDocs = NormalizeNewlines(await File.ReadAllTextAsync(project.MkDocsPath, cancellationToken).ConfigureAwait(false));
-        mkDocs = ReplaceBlockOrPlaceholder(
-            mkDocs,
-            project.MkDocsExamplesStartMarker,
-            project.MkDocsExamplesEndMarker,
-            "# EXAMPLES #",
-            BuildMkDocsExamples(samples.Select(x => (x.Name, $"samples/{x.Name}.md")).ToList()));
-        await File.WriteAllTextAsync(project.MkDocsPath, mkDocs, cancellationToken).ConfigureAwait(false);
-
-        return new DocsSyncResult("legacy", samples.Count, project.OutputDirectory);
-    }
-
-    private static async Task<DocsSyncResult> SyncMarkerExamplesAsync(
-        ResolvedProject project,
-        CancellationToken cancellationToken)
-    {
-        Directory.CreateDirectory(project.OutputDirectory);
-        DeleteMarkdownFiles(project.OutputDirectory);
-        DeleteDirectoryIfExists(project.MetadataOutputDirectory);
-
-        var readme = await File.ReadAllTextAsync(project.ReadmePath, cancellationToken).ConfigureAwait(false);
-        await File.WriteAllTextAsync(Path.Combine(project.DocsDirectory, "index.md"), readme, cancellationToken).ConfigureAwait(false);
-
-        var samples = new List<MarkerExampleDocument>();
-        if (Directory.Exists(project.ExampleSourceDirectory))
-        {
-            var paths = Directory
-                .EnumerateFiles(project.ExampleSourceDirectory, "Examples.*.cs", SearchOption.AllDirectories)
-                .OrderBy(Path.GetFileName, StringComparer.Ordinal)
-                .ToList();
-            foreach (var path in paths)
-            {
-                samples.Add(await LoadMarkerSampleAsync(path, project.ClientClassName, project.ApiKeyVariableName, project.ClientReplacements, cancellationToken).ConfigureAwait(false));
-            }
-        }
-
-        foreach (var sample in samples)
-        {
-            var path = Path.Combine(project.OutputDirectory, $"{sample.Name}.md");
-            await File.WriteAllTextAsync(
-                path,
-                $@"```csharp
-{sample.Code}
-```",
-                cancellationToken).ConfigureAwait(false);
-        }
-
-        var mkDocs = NormalizeNewlines(await File.ReadAllTextAsync(project.MkDocsPath, cancellationToken).ConfigureAwait(false));
-        mkDocs = ReplaceBlockOrPlaceholder(
-            mkDocs,
-            project.MkDocsExamplesStartMarker,
-            project.MkDocsExamplesEndMarker,
-            "# EXAMPLES #",
-            BuildGroupedMkDocsExamples(samples));
-        await File.WriteAllTextAsync(project.MkDocsPath, mkDocs, cancellationToken).ConfigureAwait(false);
-
-        return new DocsSyncResult("marker", samples.Count, project.OutputDirectory);
-    }
-
-    private static async Task<MetadataExampleDocument> LoadMetadataExampleAsync(
+    private static async Task<MetadataExampleDocument?> TryLoadMetadataExampleAsync(
         string path,
         string clientClassName,
         string apiKeyVariableName,
@@ -191,67 +94,28 @@ public static class DocsSynchronizer
         CancellationToken cancellationToken = default)
     {
         var text = NormalizeNewlines(await File.ReadAllTextAsync(path, cancellationToken).ConfigureAwait(false));
-        var metadata = ExampleMetadata.Parse(text, path);
-        var body = ExtractSingleTestMethodBody(text, path);
+        var metadata = ExampleMetadata.TryParse(text, path);
 
-        return new MetadataExampleDocument(
-            metadata.Order,
-            metadata.Title,
-            metadata.Slug,
-            metadata.Description,
-            TransformCode(body, clientClassName, apiKeyVariableName, clientReplacements));
-    }
+        var title = metadata?.Title ?? Path.GetFileNameWithoutExtension(path);
+        var order = metadata?.Order ?? 0;
+        var slug = metadata?.Slug ?? ExampleMetadata.Slugify(title);
+        var description = metadata?.Description ?? string.Empty;
 
-    private static async Task<LegacyExampleDocument?> TryLoadLegacySampleAsync(
-        string path,
-        string clientClassName,
-        string apiKeyVariableName,
-        IReadOnlyDictionary<string, string>? clientReplacements,
-        CancellationToken cancellationToken = default)
-    {
-        var text = NormalizeNewlines(await File.ReadAllTextAsync(path, cancellationToken).ConfigureAwait(false));
-        var body = TryExtractSingleTestMethodBody(text, path) ??
-                   TryExtractSingleTestMethodBody(UncommentDisabledCode(text), path);
-
+        var body = TryExtractSingleTestMethodBody(text);
         if (body is null)
         {
             return null;
         }
 
-        return new LegacyExampleDocument(
-            Path.GetExtension(Path.GetFileNameWithoutExtension(path)).TrimStart('.'),
+        return new MetadataExampleDocument(
+            order,
+            title,
+            slug,
+            description,
             TransformCode(body, clientClassName, apiKeyVariableName, clientReplacements));
     }
 
-    private static async Task<MarkerExampleDocument> LoadMarkerSampleAsync(
-        string path,
-        string clientClassName,
-        string apiKeyVariableName,
-        IReadOnlyDictionary<string, string>? clientReplacements,
-        CancellationToken cancellationToken = default)
-    {
-        const string marker = "// # START EXAMPLE #";
-
-        var text = NormalizeNewlines(await File.ReadAllTextAsync(path, cancellationToken).ConfigureAwait(false));
-        var markerIndex = text.IndexOf(marker, StringComparison.Ordinal);
-        var code = markerIndex >= 0
-            ? text[(markerIndex + marker.Length)..].Trim()
-            : TryExtractSingleTestMethodBody(text, path) ??
-              TryExtractSingleTestMethodBody(UncommentDisabledCode(text), path) ??
-              throw new InvalidOperationException($"Could not extract an example body from '{path}'.");
-
-        return new MarkerExampleDocument(
-            Path.GetFileNameWithoutExtension(path).Replace("Examples.", string.Empty, StringComparison.Ordinal),
-            TransformCode(code, clientClassName, apiKeyVariableName, clientReplacements));
-    }
-
-    private static string ExtractSingleTestMethodBody(string text, string path)
-    {
-        return TryExtractSingleTestMethodBody(text, path) ??
-               throw new InvalidOperationException($"Expected exactly one [TestMethod] with a block body in '{path}'.");
-    }
-
-    private static string? TryExtractSingleTestMethodBody(string text, string path)
+    private static string? TryExtractSingleTestMethodBody(string text)
     {
         var syntaxTree = CSharpSyntaxTree.ParseText(text);
         var root = syntaxTree.GetRoot();
@@ -261,11 +125,6 @@ public static class DocsSynchronizer
             .Where(HasTestMethodAttribute)
             .ToList();
 
-        if (methods.Count == 0)
-        {
-            return null;
-        }
-
         if (methods.Count != 1)
         {
             return null;
@@ -274,7 +133,7 @@ public static class DocsSynchronizer
         var method = methods[0];
         if (method.Body is null)
         {
-            throw new InvalidOperationException($"Method '{method.Identifier.Text}' in '{path}' must use a block body.");
+            return null;
         }
 
         return text[method.Body.OpenBraceToken.Span.End..method.Body.CloseBraceToken.Span.Start];
@@ -417,51 +276,6 @@ public static class DocsSynchronizer
         return builder.ToString().TrimEnd();
     }
 
-    private static string BuildGroupedMkDocsExamples(List<MarkerExampleDocument> samples)
-    {
-        if (samples.Count == 0)
-        {
-            return string.Empty;
-        }
-
-        var builder = new StringBuilder();
-        builder.AppendLine("- Examples:");
-
-        foreach (var group in samples
-                     .GroupBy(sample => GetSampleGroup(sample.Name), StringComparer.Ordinal)
-                     .OrderBy(group => group.Key, StringComparer.Ordinal))
-        {
-            var items = group
-                .OrderBy(sample => sample.Name, StringComparer.Ordinal)
-                .ToList();
-
-            if (items.Count == 1 && items[0].Name == group.Key)
-            {
-                builder.Append("  - ");
-                builder.Append(group.Key);
-                builder.Append(": samples/");
-                builder.Append(items[0].Name);
-                builder.AppendLine(".md");
-                continue;
-            }
-
-            builder.Append("  - ");
-            builder.Append(group.Key);
-            builder.AppendLine(":");
-
-            foreach (var item in items)
-            {
-                builder.Append("    - ");
-                builder.Append(GetSampleVariant(item.Name, group.Key));
-                builder.Append(": samples/");
-                builder.Append(item.Name);
-                builder.AppendLine(".md");
-            }
-        }
-
-        return builder.ToString().TrimEnd();
-    }
-
     private static bool HasMarkerBlock(string content, string startMarker, string endMarker)
     {
         return content.Contains(startMarker, StringComparison.Ordinal) &&
@@ -519,35 +333,6 @@ public static class DocsSynchronizer
         var after = content[end..];
 
         return $"{before}\n{replacement}\n{after}";
-    }
-
-    private static string UncommentDisabledCode(string source)
-    {
-        return string.Join(
-            '\n',
-            NormalizeNewlines(source)
-                .Split('\n')
-                .Select(UncommentLine));
-    }
-
-    private static string UncommentLine(string line)
-    {
-        var indentationLength = line.TakeWhile(char.IsWhiteSpace).Count();
-        var indentation = line[..indentationLength];
-        var remainder = line[indentationLength..];
-
-        if (!remainder.StartsWith("//", StringComparison.Ordinal))
-        {
-            return line;
-        }
-
-        remainder = remainder[2..];
-        if (remainder.StartsWith(' '))
-        {
-            remainder = remainder[1..];
-        }
-
-        return indentation + remainder;
     }
 
     private static string Deindent(string text)
@@ -608,19 +393,14 @@ public static class DocsSynchronizer
         string Description,
         string Code);
 
-    internal sealed record LegacyExampleDocument(string Name, string Code);
-
-    internal sealed record MarkerExampleDocument(string Name, string Code);
-
     internal sealed record ExampleMetadata(int Order, string Title, string Slug, string Description)
     {
-        public static ExampleMetadata Parse(string text, string path)
+        public static ExampleMetadata? TryParse(string text, string path)
         {
             var match = Regex.Match(text, @"^\s*/\*(.*?)\*/", RegexOptions.Singleline);
             if (!match.Success)
             {
-                throw new InvalidOperationException(
-                    $"Example file '{path}' must start with a block comment containing docs metadata.");
+                return null;
             }
 
             var lines = match.Groups[1].Value
@@ -645,8 +425,8 @@ public static class DocsSynchronizer
                 var separatorIndex = line.IndexOf(':', StringComparison.Ordinal);
                 if (separatorIndex < 0)
                 {
-                    throw new InvalidOperationException(
-                        $"Invalid metadata line '{line}' in '{path}'. Expected 'key: value'.");
+                    // Not valid metadata — treat as no front matter
+                    return null;
                 }
 
                 var key = line[..separatorIndex].Trim();
@@ -657,7 +437,8 @@ public static class DocsSynchronizer
             var description = string.Join('\n', lines.Skip(index)).Trim();
             if (!values.TryGetValue("title", out var title) || string.IsNullOrWhiteSpace(title))
             {
-                throw new InvalidOperationException($"Example file '{path}' is missing required 'title' metadata.");
+                // No title means this isn't valid front matter
+                return null;
             }
 
             var slug = values.TryGetValue("slug", out var explicitSlug) && !string.IsNullOrWhiteSpace(explicitSlug)
@@ -671,7 +452,7 @@ public static class DocsSynchronizer
             return new ExampleMetadata(order, title, slug, description);
         }
 
-        private static string Slugify(string value)
+        public static string Slugify(string value)
         {
             var slug = string.Concat(value.Select(char.ToLowerInvariant));
             slug = Regex.Replace(slug, @"[^a-z0-9]+", "-");
@@ -679,23 +460,13 @@ public static class DocsSynchronizer
         }
     }
 
-    internal enum ExampleMode
-    {
-        Metadata,
-        Marker,
-        Legacy,
-    }
-
     internal sealed record ResolvedProject(
-        ExampleMode Mode,
         string SolutionDirectory,
         string ReadmePath,
         string MkDocsPath,
         string DocsDirectory,
         string ExampleSourceDirectory,
         string OutputDirectory,
-        string MetadataOutputDirectory,
-        string LegacyOutputDirectory,
         string Namespace,
         string BrandName,
         string ClientClassName,
@@ -710,17 +481,14 @@ public static class DocsSynchronizer
         public static ResolvedProject Create(string solutionDirectory, DocsConfig config)
         {
             var docsDirectory = Path.Combine(solutionDirectory, "docs");
-            var metadataSourceDirectory = ResolvePath(
+            var exampleSourceDirectory = ResolvePath(
                 solutionDirectory,
                 config.ExampleSourceDirectory,
                 Path.Combine(solutionDirectory, "src", "tests", "IntegrationTests", "Examples"));
-            var legacySourceDirectory = Path.Combine(solutionDirectory, "src", "tests", "IntegrationTests");
-            var markerSourceDirectory = Path.Combine(solutionDirectory, "src", "tests");
-            var mode = Directory.Exists(metadataSourceDirectory)
-                ? ExampleMode.Metadata
-                : HasMarkerExamples(markerSourceDirectory)
-                    ? ExampleMode.Marker
-                    : ExampleMode.Legacy;
+            var outputDirectory = ResolvePath(
+                solutionDirectory,
+                config.DocsExamplesDirectory,
+                Path.Combine(docsDirectory, "examples"));
 
             var namespaceValue = config.Namespace ?? InferNamespace(solutionDirectory);
             var brandName = config.BrandName ?? namespaceValue;
@@ -728,27 +496,14 @@ public static class DocsSynchronizer
             var clientClassName = config.ClientClassName ?? InferClientClassName(solutionDirectory) ?? $"{namespaceValue}Client";
             var exampleIntro = config.ExampleIntro ??
                                $"This example assumes `using {namespaceValue};` is in scope and `{apiKeyVariableName}` contains your {brandName} API key.";
-            var metadataOutputDirectory = ResolvePath(
-                solutionDirectory,
-                config.DocsExamplesDirectory,
-                Path.Combine(docsDirectory, "examples"));
-            var legacyOutputDirectory = Path.Combine(docsDirectory, "samples");
 
             return new ResolvedProject(
-                mode,
                 solutionDirectory,
                 Path.Combine(solutionDirectory, "README.md"),
                 Path.Combine(solutionDirectory, "mkdocs.yml"),
                 docsDirectory,
-                mode switch
-                {
-                    ExampleMode.Metadata => metadataSourceDirectory,
-                    ExampleMode.Marker => markerSourceDirectory,
-                    _ => legacySourceDirectory,
-                },
-                mode == ExampleMode.Metadata ? metadataOutputDirectory : legacyOutputDirectory,
-                metadataOutputDirectory,
-                legacyOutputDirectory,
+                exampleSourceDirectory,
+                outputDirectory,
                 namespaceValue,
                 brandName,
                 clientClassName,
@@ -805,12 +560,6 @@ public static class DocsSynchronizer
             return TryReadGenerateArgument(solutionDirectory, "--clientClassName");
         }
 
-        private static bool HasMarkerExamples(string testsDirectory)
-        {
-            return Directory.Exists(testsDirectory) &&
-                   Directory.EnumerateFiles(testsDirectory, "Examples.*.cs", SearchOption.AllDirectories).Any();
-        }
-
         private static string? TryReadGenerateArgument(string solutionDirectory, string argumentName)
         {
             var libsDirectory = Path.Combine(solutionDirectory, "src", "libs");
@@ -840,20 +589,5 @@ public static class DocsSynchronizer
                 ? match.Groups[1].Value.Trim()
                 : null;
         }
-    }
-
-    private static string GetSampleGroup(string sampleName)
-    {
-        var separatorIndex = sampleName.LastIndexOf('.');
-        return separatorIndex > 0
-            ? sampleName[..separatorIndex]
-            : sampleName;
-    }
-
-    private static string GetSampleVariant(string sampleName, string groupName)
-    {
-        return sampleName.Length > groupName.Length + 1
-            ? sampleName[(groupName.Length + 1)..]
-            : sampleName;
     }
 }

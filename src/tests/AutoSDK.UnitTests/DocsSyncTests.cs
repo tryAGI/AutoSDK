@@ -6,65 +6,6 @@ namespace AutoSDK.UnitTests;
 public sealed class DocsSyncTests
 {
     [TestMethod]
-    public async Task SyncAsync_LegacyMode_ExtractsDisabledTestExamples()
-    {
-        var root = CreateTempDirectory();
-
-        try
-        {
-            Directory.CreateDirectory(Path.Combine(root, "docs"));
-            Directory.CreateDirectory(Path.Combine(root, "src", "libs", "Firecrawl"));
-            Directory.CreateDirectory(Path.Combine(root, "src", "tests", "IntegrationTests"));
-
-            await File.WriteAllTextAsync(Path.Combine(root, "README.md"), "# Firecrawl\n");
-            await File.WriteAllTextAsync(
-                Path.Combine(root, "mkdocs.yml"),
-                """
-                nav:
-                - Overview: index.md
-                # EXAMPLES:START
-                # EXAMPLES:END
-                """);
-            await File.WriteAllTextAsync(
-                Path.Combine(root, "src", "libs", "Firecrawl", "Firecrawl.csproj"),
-                "<Project Sdk=\"Microsoft.NET.Sdk\" />");
-            await File.WriteAllTextAsync(
-                Path.Combine(root, "src", "tests", "IntegrationTests", "Tests.Crawl.cs"),
-                """
-                namespace Firecrawl.IntegrationTests;
-
-                public partial class Tests
-                {
-                    // [TestMethod]
-                    // public async Task Crawl()
-                    // {
-                    //     using var client = GetAuthenticatedClient();
-                    //     response.Should().NotBeNull();
-                    //     Console.WriteLine("ok");
-                    // }
-                }
-                """);
-
-            var result = await DocsSynchronizer.SyncAsync(root);
-
-            result.Mode.Should().Be("legacy");
-            result.ExampleCount.Should().Be(1);
-
-            var sample = await File.ReadAllTextAsync(Path.Combine(root, "docs", "samples", "Crawl.md"));
-            sample.Should().Contain("new FirecrawlClient(apiKey)");
-            sample.Should().Contain("Console.WriteLine(\"ok\");");
-            sample.Should().NotContain(".Should()");
-
-            var mkDocs = await File.ReadAllTextAsync(Path.Combine(root, "mkdocs.yml"));
-            mkDocs.Should().Contain("samples/Crawl.md");
-        }
-        finally
-        {
-            Directory.Delete(root, recursive: true);
-        }
-    }
-
-    [TestMethod]
     public async Task SyncAsync_MetadataMode_UpdatesReadmeAndExamplePages()
     {
         var root = CreateTempDirectory();
@@ -135,71 +76,6 @@ public sealed class DocsSyncTests
 
             var mkDocs = await File.ReadAllTextAsync(Path.Combine(root, "mkdocs.yml"));
             mkDocs.Should().Contain("examples/speech-to-text.md");
-        }
-        finally
-        {
-            Directory.Delete(root, recursive: true);
-        }
-    }
-
-    [TestMethod]
-    public async Task SyncAsync_MarkerMode_GroupsExamplesInMkDocs()
-    {
-        var root = CreateTempDirectory();
-
-        try
-        {
-            Directory.CreateDirectory(Path.Combine(root, "docs"));
-            Directory.CreateDirectory(Path.Combine(root, "src", "libs", "OpenAI"));
-            Directory.CreateDirectory(Path.Combine(root, "src", "tests", "OpenAI.IntegrationTests"));
-
-            await File.WriteAllTextAsync(Path.Combine(root, "README.md"), "# OpenAI\n");
-            await File.WriteAllTextAsync(
-                Path.Combine(root, "mkdocs.yml"),
-                """
-                nav:
-                - Overview: index.md
-                # EXAMPLES:START
-                # EXAMPLES:END
-                """);
-            await File.WriteAllTextAsync(
-                Path.Combine(root, "src", "libs", "OpenAI", "OpenAI.csproj"),
-                "<Project Sdk=\"Microsoft.NET.Sdk\" />");
-            await File.WriteAllTextAsync(
-                Path.Combine(root, "src", "tests", "OpenAI.IntegrationTests", "Examples.Chat.Simple.cs"),
-                """
-                namespace OpenAI.IntegrationTests;
-
-                public partial class Examples
-                {
-                    // # START EXAMPLE #
-                    using var client = GetAuthenticatedClient();
-                    response.Should().NotBeNull();
-                    Console.WriteLine("simple");
-                }
-                """);
-            await File.WriteAllTextAsync(
-                Path.Combine(root, "src", "tests", "OpenAI.IntegrationTests", "Examples.Chat.Streaming.cs"),
-                """
-                namespace OpenAI.IntegrationTests;
-
-                public partial class Examples
-                {
-                    // # START EXAMPLE #
-                    using var client = GetAuthenticatedClient();
-                    Console.WriteLine("streaming");
-                }
-                """);
-
-            var result = await DocsSynchronizer.SyncAsync(root);
-
-            result.Mode.Should().Be("marker");
-            result.ExampleCount.Should().Be(2);
-
-            var mkDocs = await File.ReadAllTextAsync(Path.Combine(root, "mkdocs.yml"));
-            mkDocs.Should().Contain("  - Chat:");
-            mkDocs.Should().Contain("    - Simple: samples/Chat.Simple.md");
-            mkDocs.Should().Contain("    - Streaming: samples/Chat.Streaming.md");
         }
         finally
         {
@@ -281,6 +157,130 @@ public sealed class DocsSyncTests
             examplePage.Should().NotContain("GetAuthenticatedInferenceClient");
             examplePage.Should().NotContain("GetApiKey()");
             examplePage.Should().NotContain(".Should()");
+        }
+        finally
+        {
+            Directory.Delete(root, recursive: true);
+        }
+    }
+
+    [TestMethod]
+    public async Task SyncAsync_NoFrontMatter_DerivesTitleFromFilename()
+    {
+        var root = CreateTempDirectory();
+
+        try
+        {
+            Directory.CreateDirectory(Path.Combine(root, "docs"));
+            Directory.CreateDirectory(Path.Combine(root, "src", "libs", "Tavily"));
+            Directory.CreateDirectory(Path.Combine(root, "src", "tests", "IntegrationTests", "Examples"));
+
+            await File.WriteAllTextAsync(Path.Combine(root, "README.md"), "# Tavily\n");
+            await File.WriteAllTextAsync(
+                Path.Combine(root, "mkdocs.yml"),
+                """
+                nav:
+                - Overview: index.md
+                # EXAMPLES:START
+                # EXAMPLES:END
+                """);
+            await File.WriteAllTextAsync(
+                Path.Combine(root, "src", "libs", "Tavily", "Tavily.csproj"),
+                "<Project Sdk=\"Microsoft.NET.Sdk\" />");
+            await File.WriteAllTextAsync(
+                Path.Combine(root, "src", "tests", "IntegrationTests", "Examples", "Search.cs"),
+                """
+                namespace Tavily.IntegrationTests;
+
+                public partial class Tests
+                {
+                    [TestMethod]
+                    public async Task Search()
+                    {
+                        using var client = GetAuthenticatedClient();
+                        var response = await client.SearchAsync("hello");
+                        response.Should().NotBeNull();
+                    }
+                }
+                """);
+
+            var result = await DocsSynchronizer.SyncAsync(root);
+
+            result.Mode.Should().Be("metadata");
+            result.ExampleCount.Should().Be(1);
+
+            var examplePage = await File.ReadAllTextAsync(Path.Combine(root, "docs", "examples", "search.md"));
+            examplePage.Should().Contain("# Search");
+            examplePage.Should().Contain("new TavilyClient(apiKey)");
+            examplePage.Should().NotContain(".Should()");
+
+            var mkDocs = await File.ReadAllTextAsync(Path.Combine(root, "mkdocs.yml"));
+            mkDocs.Should().Contain("examples/search.md");
+        }
+        finally
+        {
+            Directory.Delete(root, recursive: true);
+        }
+    }
+
+    [TestMethod]
+    public async Task SyncAsync_SkipsFilesWithNoTestMethod()
+    {
+        var root = CreateTempDirectory();
+
+        try
+        {
+            Directory.CreateDirectory(Path.Combine(root, "docs"));
+            Directory.CreateDirectory(Path.Combine(root, "src", "libs", "TestSdk"));
+            Directory.CreateDirectory(Path.Combine(root, "src", "tests", "IntegrationTests", "Examples"));
+
+            await File.WriteAllTextAsync(Path.Combine(root, "README.md"), "# TestSdk\n");
+            await File.WriteAllTextAsync(
+                Path.Combine(root, "mkdocs.yml"),
+                """
+                nav:
+                - Overview: index.md
+                # EXAMPLES:START
+                # EXAMPLES:END
+                """);
+            await File.WriteAllTextAsync(
+                Path.Combine(root, "src", "libs", "TestSdk", "TestSdk.csproj"),
+                "<Project Sdk=\"Microsoft.NET.Sdk\" />");
+            // File with no test method
+            await File.WriteAllTextAsync(
+                Path.Combine(root, "src", "tests", "IntegrationTests", "Examples", "CommentedOut.cs"),
+                """
+                // namespace TestSdk.IntegrationTests;
+                //
+                // public partial class Tests
+                // {
+                //     [TestMethod]
+                //     public async Task Commented() { }
+                // }
+                """);
+            // File with a valid test method
+            await File.WriteAllTextAsync(
+                Path.Combine(root, "src", "tests", "IntegrationTests", "Examples", "Valid.cs"),
+                """
+                namespace TestSdk.IntegrationTests;
+
+                public partial class Tests
+                {
+                    [TestMethod]
+                    public async Task Valid()
+                    {
+                        using var client = GetAuthenticatedClient();
+                    }
+                }
+                """);
+
+            var result = await DocsSynchronizer.SyncAsync(root);
+
+            result.ExampleCount.Should().Be(1);
+
+            var mkDocs = await File.ReadAllTextAsync(Path.Combine(root, "mkdocs.yml"));
+            mkDocs.Should().Contain("examples/valid.md");
+            mkDocs.Should().NotContain("commented");
         }
         finally
         {
