@@ -19,6 +19,9 @@ using $SolutionName$;
 using var client = new $ClientName$(apiKey);
 ```
 
+<!-- EXAMPLES:START -->
+<!-- EXAMPLES:END -->
+
 ## Support
 
 Priority place for bugs: https://github.com/$CompanyName$/$SolutionName$/issues  
