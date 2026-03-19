@@ -137,8 +137,15 @@ internal sealed class GenerateCommand : Command
         Description = "OpenAPI override as 'path=action'. Actions: object, dictionary, remove. Repeatable.",
         AllowMultipleArgumentsPerToken = true,
     };
-    
-    public GenerateCommand() : base(name: "generate", description: "Generates client sdk using a OpenAPI spec.")
+
+    private Option<string> WebSocketClientClassName { get; } = new(
+        name: "--websocket-class-name")
+    {
+        DefaultValueFactory = _ => string.Empty,
+        Description = "Override class name for the generated WebSocket client (AsyncAPI specs only).",
+    };
+
+    public GenerateCommand() : base(name: "generate", description: "Generates client sdk using an OpenAPI or AsyncAPI spec.")
     {
         Arguments.Add(Input);
         Options.Add(Output);
@@ -157,6 +164,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(SecuritySchemes);
         Options.Add(BaseUrl);
         Options.Add(OpenApiOverrides);
+        Options.Add(WebSocketClientClassName);
 
         SetAction(HandleAsync);
     }
@@ -188,6 +196,8 @@ internal sealed class GenerateCommand : Command
             SecuritySchemes = parseResult.GetRequiredValue(SecuritySchemes).ToImmutableArray(),
             BaseUrl = parseResult.GetRequiredValue(BaseUrl),
             OpenApiOverrides = parseResult.GetRequiredValue(OpenApiOverrides).ToImmutableArray(),
+            GenerateWebSocketClient = true,
+            WebSocketClientClassName = parseResult.GetRequiredValue(WebSocketClientClassName),
         };
             
         Console.WriteLine($"Loading {input}...");
@@ -284,6 +294,16 @@ internal sealed class GenerateCommand : Command
                 ? [Sources.ResponseStream(data.Converters.Settings)]
                 : [])
             .Concat([Sources.UnixTimestampJsonConverter(settings)])
+            // WebSocket client generation (from AsyncAPI specs)
+            .Concat(data.WebSocketClients
+                .SelectMany(x => new []
+                {
+                    Sources.WebSocketClient(x),
+                    Sources.WebSocketReceiveMethod(x),
+                }))
+            .Concat(data.WebSocketOperations
+                .Where(x => x.Direction == AutoSDK.Models.WebSocketDirection.Send)
+                .Select(x => Sources.WebSocketSendMethod(x)))
             .Where(x => !x.IsEmpty)
             .ToArray();
         

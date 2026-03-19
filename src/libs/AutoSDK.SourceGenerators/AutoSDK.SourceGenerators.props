@@ -102,10 +102,17 @@
     <CompilerVisibleProperty Include="AutoSDK_BaseUrl"/>
     <!-- OpenAPI overrides as 'path=action' separated by ;. Actions: object, dictionary, remove. Default: Empty -->
     <CompilerVisibleProperty Include="AutoSDK_OpenApiOverrides"/>
+
+    <!-- WebSocket client generation -->
+    <!-- true/false. Default: true (when AsyncAPI detected) -->
+    <CompilerVisibleProperty Include="AutoSDK_GenerateWebSocketClient"/>
+    <!-- Override class name for the generated WebSocket client. Default: auto from spec title -->
+    <CompilerVisibleProperty Include="AutoSDK_WebSocketClientClassName"/>
   </ItemGroup>
 
   <ItemGroup>
     <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="AutoSDK_OpenApiSpecification" />
+    <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="AutoSDK_AsyncApiSpecification" />
     <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="AutoSDK_Namespace" />
     <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="AutoSDK_ClassName" />
   </ItemGroup>

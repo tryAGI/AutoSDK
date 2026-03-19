@@ -83,6 +83,8 @@ public partial class Tests
     [DataRow("circular-refs.yaml", JsonSerializerType.SystemTextJson)]
     [DataRow("additional-properties-collision.yaml", JsonSerializerType.NewtonsoftJson)]
     [DataRow("additional-properties-collision.yaml", JsonSerializerType.SystemTextJson)]
+    [DataRow("elevenlabs-realtime-stt.json", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("elevenlabs-realtime-stt.json", JsonSerializerType.SystemTextJson)]
     public Task SdkGenerator(string fileName, JsonSerializerType jsonSerializerType)
     {
         if (fileName == "")
@@ -152,13 +154,19 @@ public partial class Tests
             {
                 ["build_property.AutoSDK_MethodNamingConvention"] = "MethodAndPath",
             },
+            "elevenlabs-realtime-stt.json" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_JsonSerializerContext"] = jsonSerializerType is JsonSerializerType.SystemTextJson
+                    ? "G.SourceGenerationContext"
+                    : string.Empty,
+            },
             "luma.yaml" => new Dictionary<string, string>
             {
                 ["build_property.AutoSDK_ComputeDiscriminators"] = "true",
             },
             _ => new Dictionary<string, string>(),
         };
-        
+
         return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
             new CustomAdditionalText(
                 path: resource.FileName,

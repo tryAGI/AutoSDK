@@ -12,4 +12,6 @@ public record struct Data(
     Client Converters,
     IReadOnlyList<SchemaContext> Schemas,
     IReadOnlyList<SchemaContext> FilteredSchemas,
-    Times Times);
+    Times Times,
+    EquatableArray<WebSocketClient> WebSocketClients = default,
+    EquatableArray<WebSocketEndPoint> WebSocketOperations = default);

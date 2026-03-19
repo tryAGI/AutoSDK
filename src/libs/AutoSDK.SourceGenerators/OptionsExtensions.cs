@@ -80,7 +80,9 @@ public static class OptionsExtensions
                               []).ToImmutableArray(),
             BaseUrl: options.GetGlobalOption(nameof(Settings.BaseUrl), prefix) ?? string.Empty,
             OpenApiOverrides: (options.GetGlobalOption(nameof(Settings.OpenApiOverrides), prefix)?.Split(';') ??
-                               []).Where(static x => !string.IsNullOrWhiteSpace(x)).ToImmutableArray());
+                               []).Where(static x => !string.IsNullOrWhiteSpace(x)).ToImmutableArray(),
+            GenerateWebSocketClient: options.GetBoolGlobalOption(nameof(Settings.GenerateWebSocketClient), prefix, defaultValue: Settings.Default.GenerateWebSocketClient),
+            WebSocketClientClassName: options.GetGlobalOption(nameof(Settings.WebSocketClientClassName), prefix) ?? string.Empty);
         
         string? GetOptionFromAdditionalText(string name)
         {

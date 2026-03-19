@@ -47,7 +47,8 @@ public class SdkGenerator : IIncrementalGenerator
         var data = context.AdditionalTextsProvider
             .Combine(context.AnalyzerConfigOptionsProvider)
             .Where(static pair =>
-                pair.Right.GetOption(pair.Left, "OpenApiSpecification", prefix: "AutoSDK")?.ToUpperInvariant() == "TRUE")
+                pair.Right.GetOption(pair.Left, "OpenApiSpecification", prefix: "AutoSDK")?.ToUpperInvariant() == "TRUE" ||
+                pair.Right.GetOption(pair.Left, "AsyncApiSpecification", prefix: "AutoSDK")?.ToUpperInvariant() == "TRUE")
             .Select((pair, cancellationToken) => (
                 GetContent(pair.Left, cancellationToken),
                 pair.Right.GetSettings(prefix: "AutoSDK", additionalText: pair.Left)))
@@ -153,6 +154,24 @@ public class SdkGenerator : IIncrementalGenerator
         data
             .Select(static (x, _) => x.Converters)
             .SelectAndReportExceptions((x, c) => Sources.JsonSerializerContextConverters(x, c)
+                .AsFileWithName(), context, Id)
+            .AddSource(context);
+
+        // WebSocket client generation (from AsyncAPI specs)
+        data
+            .SelectMany(static (x, _) => x.WebSocketClients)
+            .SelectAndReportExceptions((x, c) => Sources.WebSocketClient(x, c)
+                .AsFileWithName(), context, Id)
+            .AddSource(context);
+        data
+            .SelectMany(static (x, _) => x.WebSocketOperations)
+            .Where(static x => x.Direction == AutoSDK.Models.WebSocketDirection.Send)
+            .SelectAndReportExceptions((x, c) => Sources.WebSocketSendMethod(x, c)
+                .AsFileWithName(), context, Id)
+            .AddSource(context);
+        data
+            .SelectMany(static (x, _) => x.WebSocketClients)
+            .SelectAndReportExceptions((x, c) => Sources.WebSocketReceiveMethod(x, c)
                 .AsFileWithName(), context, Id)
             .AddSource(context);
     }

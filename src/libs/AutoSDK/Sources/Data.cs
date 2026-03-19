@@ -21,6 +21,12 @@ public static class Data
         
         var ((text, settings), globalSettings) = tuple;
 
+        // Detect spec format and delegate to AsyncAPI pipeline if needed
+        if (SpecFormatDetector.DetectFormat(text) == SpecFormat.AsyncApi)
+        {
+            return AsyncApiData.Prepare(tuple, cancellationToken);
+        }
+
         var openApiDocument = text.GetOpenApiDocument(settings, cancellationToken);
 
         var schemas = openApiDocument.GetSchemas(settings);
