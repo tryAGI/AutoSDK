@@ -57,7 +57,7 @@ internal sealed class TrimCommand : Command
         var fullCsprojPath = Path.GetFullPath(csprojPath);
         if (!File.Exists(fullCsprojPath))
         {
-            Console.Error.WriteLine($"Error: File not found: {fullCsprojPath}");
+            await Console.Error.WriteLineAsync($"Error: File not found: {fullCsprojPath}").ConfigureAwait(false);
             return;
         }
 
@@ -153,7 +153,7 @@ internal sealed class TrimCommand : Command
             using var process = Process.Start(psi);
             if (process == null)
             {
-                Console.Error.WriteLine("Error: Failed to start dotnet process.");
+                await Console.Error.WriteLineAsync("Error: Failed to start dotnet process.").ConfigureAwait(false);
                 return;
             }
 
@@ -169,7 +169,7 @@ internal sealed class TrimCommand : Command
                 }
                 if (!string.IsNullOrWhiteSpace(stderr))
                 {
-                    Console.Error.WriteLine(stderr);
+                    await Console.Error.WriteLineAsync(stderr).ConfigureAwait(false);
                 }
             }
 
@@ -201,18 +201,18 @@ internal sealed class TrimCommand : Command
             {
                 if (errors.Count > 0)
                 {
-                    Console.Error.WriteLine($"Build failed with {errors.Count} error(s):");
-                    Console.Error.WriteLine();
+                    await Console.Error.WriteLineAsync($"Build failed with {errors.Count} error(s):").ConfigureAwait(false);
+                    await Console.Error.WriteLineAsync().ConfigureAwait(false);
                     foreach (var error in errors)
                     {
-                        Console.Error.WriteLine($"  {error}");
+                        await Console.Error.WriteLineAsync($"  {error}").ConfigureAwait(false);
                     }
-                    Console.Error.WriteLine();
+                    await Console.Error.WriteLineAsync().ConfigureAwait(false);
                 }
                 else if (!verbose)
                 {
-                    Console.Error.WriteLine("Build failed. Run with --verbose for details.");
-                    Console.Error.WriteLine();
+                    await Console.Error.WriteLineAsync("Build failed. Run with --verbose for details.").ConfigureAwait(false);
+                    await Console.Error.WriteLineAsync().ConfigureAwait(false);
                 }
 
                 Environment.ExitCode = 1;

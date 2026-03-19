@@ -97,7 +97,7 @@ public static class DocsSynchronizer
                 .EnumerateFiles(project.ExampleSourceDirectory, "Tests.*.cs", SearchOption.AllDirectories)
                 .OrderBy(Path.GetFileName, StringComparer.Ordinal)
                 .Select(path => TryLoadLegacySample(path, project.ClientClassName, project.ApiKeyVariableName, project.ClientReplacements))
-                .Where(x => x is not null)
+                .OfType<LegacyExampleDocument>()
                 .ToList()
             : [];
 
