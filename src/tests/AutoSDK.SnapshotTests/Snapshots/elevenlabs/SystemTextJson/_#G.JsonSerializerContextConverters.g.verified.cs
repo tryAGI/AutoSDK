@@ -848,8 +848,8 @@ namespace G
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.NonStreamingOutputFormats?, global::G.AllowedOutputFormats?>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.NonStreamingOutputFormats?, global::G.AllowedOutputFormats?>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.DubbingTranscriptResponseModel, string>),
-            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.SpeechToTextChunkResponseModel, global::G.MultichannelSpeechToTextResponseModel, global::G.SpeechToTextWebhookResponseModel, global::G.SpeechToTextChunkResponseModel, global::G.MultichannelSpeechToTextResponseModel>),
-            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.SpeechToTextChunkResponseModel, global::G.MultichannelSpeechToTextResponseModel, global::G.SpeechToTextChunkResponseModel, global::G.MultichannelSpeechToTextResponseModel>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.SpeechToTextChunkResponseModel, global::G.MultichannelSpeechToTextResponseModel, global::G.SpeechToTextWebhookResponseModel>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.SpeechToTextChunkResponseModel, global::G.MultichannelSpeechToTextResponseModel>),
             typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }

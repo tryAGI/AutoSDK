@@ -261,7 +261,7 @@ public static class Data
                     string.IsNullOrWhiteSpace(x.AnyOfData.Value.Name))
                 .Select(x => $"global::{settings.Namespace}.JsonConverters.{x.AnyOfData?.SubType}JsonConverter<{
                     string.Join(", ", x.Children
-                        .Where(y => y.Hint is Hint.AnyOf or Hint.OneOf or Hint.AllOf)
+                        .Where(y => y.Hint == (x.IsAnyOf ? Hint.AnyOf : x.IsOneOf ? Hint.OneOf : Hint.AllOf))
                         .Select(y => y.TypeData.CSharpTypeWithNullabilityForValueTypes))}>"))
             // Unix Timestamp converter
             .Concat([

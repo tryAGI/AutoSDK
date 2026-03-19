@@ -878,8 +878,8 @@ namespace G
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.NonStreamingOutputFormats?, global::G.AllowedOutputFormats?>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.NonStreamingOutputFormats?, global::G.AllowedOutputFormats?>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.DubbingTranscriptResponseModel, string>(),
-                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.SpeechToTextChunkResponseModel, global::G.MultichannelSpeechToTextResponseModel, global::G.SpeechToTextWebhookResponseModel, global::G.SpeechToTextChunkResponseModel, global::G.MultichannelSpeechToTextResponseModel>(),
-                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.SpeechToTextChunkResponseModel, global::G.MultichannelSpeechToTextResponseModel, global::G.SpeechToTextChunkResponseModel, global::G.MultichannelSpeechToTextResponseModel>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.SpeechToTextChunkResponseModel, global::G.MultichannelSpeechToTextResponseModel, global::G.SpeechToTextWebhookResponseModel>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.SpeechToTextChunkResponseModel, global::G.MultichannelSpeechToTextResponseModel>(),
                     new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
