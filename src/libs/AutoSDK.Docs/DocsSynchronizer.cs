@@ -96,7 +96,8 @@ public static class DocsSynchronizer
             ? Directory
                 .EnumerateFiles(project.ExampleSourceDirectory, "Tests.*.cs", SearchOption.AllDirectories)
                 .OrderBy(Path.GetFileName, StringComparer.Ordinal)
-                .Select(path => LoadLegacySample(path, project.ClientClassName, project.ApiKeyVariableName, project.ClientReplacements))
+                .Select(path => TryLoadLegacySample(path, project.ClientClassName, project.ApiKeyVariableName, project.ClientReplacements))
+                .Where(x => x is not null)
                 .ToList()
             : [];
 
@@ -183,7 +184,7 @@ public static class DocsSynchronizer
             TransformCode(body, clientClassName, apiKeyVariableName, clientReplacements));
     }
 
-    private static LegacyExampleDocument LoadLegacySample(
+    private static LegacyExampleDocument? TryLoadLegacySample(
         string path,
         string clientClassName,
         string apiKeyVariableName,
@@ -191,8 +192,12 @@ public static class DocsSynchronizer
     {
         var text = NormalizeNewlines(File.ReadAllText(path));
         var body = TryExtractSingleTestMethodBody(text, path) ??
-                   TryExtractSingleTestMethodBody(UncommentDisabledCode(text), path) ??
-                   throw new InvalidOperationException($"Could not extract a [TestMethod] body from '{path}'.");
+                   TryExtractSingleTestMethodBody(UncommentDisabledCode(text), path);
+
+        if (body is null)
+        {
+            return null;
+        }
 
         return new LegacyExampleDocument(
             Path.GetExtension(Path.GetFileNameWithoutExtension(path)).TrimStart('.'),
@@ -243,7 +248,7 @@ public static class DocsSynchronizer
 
         if (methods.Count != 1)
         {
-            throw new InvalidOperationException($"Expected exactly one [TestMethod] in '{path}', found {methods.Count}.");
+            return null;
         }
 
         var method = methods[0];
