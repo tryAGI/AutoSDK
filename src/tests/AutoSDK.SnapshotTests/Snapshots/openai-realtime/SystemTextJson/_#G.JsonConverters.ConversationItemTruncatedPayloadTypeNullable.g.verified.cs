@@ -1,0 +1,61 @@
+﻿//HintName: G.JsonConverters.ConversationItemTruncatedPayloadTypeNullable.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class ConversationItemTruncatedPayloadTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ConversationItemTruncatedPayloadType?>
+    {
+        /// <inheritdoc />
+        public override global::G.ConversationItemTruncatedPayloadType? Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::G.ConversationItemTruncatedPayloadTypeExtensions.ToEnum(stringValue);
+                    }
+                    
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::G.ConversationItemTruncatedPayloadType)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::G.ConversationItemTruncatedPayloadType?);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::G.ConversationItemTruncatedPayloadType? value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::G.ConversationItemTruncatedPayloadTypeExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

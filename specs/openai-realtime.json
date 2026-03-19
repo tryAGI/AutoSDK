@@ -1,0 +1,1210 @@
+{
+  "asyncapi": "3.0.0",
+  "info": {
+    "title": "OpenAI Realtime API",
+    "version": "1.0.0",
+    "description": "OpenAI Realtime API for bidirectional audio/text conversations over WebSocket."
+  },
+  "servers": {
+    "production": {
+      "host": "api.openai.com",
+      "pathname": "/v1/realtime",
+      "protocol": "wss",
+      "description": "OpenAI Realtime WebSocket server",
+      "security": [
+        {
+          "$ref": "#/components/securitySchemes/bearer"
+        }
+      ]
+    }
+  },
+  "channels": {
+    "realtime": {
+      "address": "/v1/realtime",
+      "messages": {
+        "SessionUpdate": {
+          "$ref": "#/components/messages/SessionUpdate"
+        },
+        "InputAudioBufferAppend": {
+          "$ref": "#/components/messages/InputAudioBufferAppend"
+        },
+        "InputAudioBufferCommit": {
+          "$ref": "#/components/messages/InputAudioBufferCommit"
+        },
+        "InputAudioBufferClear": {
+          "$ref": "#/components/messages/InputAudioBufferClear"
+        },
+        "ConversationItemCreate": {
+          "$ref": "#/components/messages/ConversationItemCreate"
+        },
+        "ConversationItemTruncate": {
+          "$ref": "#/components/messages/ConversationItemTruncate"
+        },
+        "ConversationItemDelete": {
+          "$ref": "#/components/messages/ConversationItemDelete"
+        },
+        "ResponseCreate": {
+          "$ref": "#/components/messages/ResponseCreate"
+        },
+        "ResponseCancel": {
+          "$ref": "#/components/messages/ResponseCancel"
+        },
+        "ServerEvent": {
+          "$ref": "#/components/messages/ServerEvent"
+        }
+      }
+    }
+  },
+  "operations": {
+    "sendSessionUpdate": {
+      "action": "send",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/SessionUpdate"
+        }
+      ]
+    },
+    "sendInputAudioBufferAppend": {
+      "action": "send",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/InputAudioBufferAppend"
+        }
+      ]
+    },
+    "sendInputAudioBufferCommit": {
+      "action": "send",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/InputAudioBufferCommit"
+        }
+      ]
+    },
+    "sendInputAudioBufferClear": {
+      "action": "send",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/InputAudioBufferClear"
+        }
+      ]
+    },
+    "sendConversationItemCreate": {
+      "action": "send",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ConversationItemCreate"
+        }
+      ]
+    },
+    "sendConversationItemTruncate": {
+      "action": "send",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ConversationItemTruncate"
+        }
+      ]
+    },
+    "sendConversationItemDelete": {
+      "action": "send",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ConversationItemDelete"
+        }
+      ]
+    },
+    "sendResponseCreate": {
+      "action": "send",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ResponseCreate"
+        }
+      ]
+    },
+    "sendResponseCancel": {
+      "action": "send",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ResponseCancel"
+        }
+      ]
+    },
+    "receiveServerEvent": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ServerEvent"
+        }
+      ]
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "messages": {
+      "SessionUpdate": {
+        "name": "SessionUpdate",
+        "payload": {
+          "$ref": "#/components/schemas/SessionUpdatePayload"
+        }
+      },
+      "InputAudioBufferAppend": {
+        "name": "InputAudioBufferAppend",
+        "payload": {
+          "$ref": "#/components/schemas/InputAudioBufferAppendPayload"
+        }
+      },
+      "InputAudioBufferCommit": {
+        "name": "InputAudioBufferCommit",
+        "payload": {
+          "$ref": "#/components/schemas/InputAudioBufferCommitPayload"
+        }
+      },
+      "InputAudioBufferClear": {
+        "name": "InputAudioBufferClear",
+        "payload": {
+          "$ref": "#/components/schemas/InputAudioBufferClearPayload"
+        }
+      },
+      "ConversationItemCreate": {
+        "name": "ConversationItemCreate",
+        "payload": {
+          "$ref": "#/components/schemas/ConversationItemCreatePayload"
+        }
+      },
+      "ConversationItemTruncate": {
+        "name": "ConversationItemTruncate",
+        "payload": {
+          "$ref": "#/components/schemas/ConversationItemTruncatePayload"
+        }
+      },
+      "ConversationItemDelete": {
+        "name": "ConversationItemDelete",
+        "payload": {
+          "$ref": "#/components/schemas/ConversationItemDeletePayload"
+        }
+      },
+      "ResponseCreate": {
+        "name": "ResponseCreate",
+        "payload": {
+          "$ref": "#/components/schemas/ResponseCreatePayload"
+        }
+      },
+      "ResponseCancel": {
+        "name": "ResponseCancel",
+        "payload": {
+          "$ref": "#/components/schemas/ResponseCancelPayload"
+        }
+      },
+      "ServerEvent": {
+        "name": "ServerEvent",
+        "payload": {
+          "$ref": "#/components/schemas/ServerEvent"
+        }
+      }
+    },
+    "schemas": {
+      "AudioFormat": {
+        "type": "string",
+        "description": "The format of input/output audio.",
+        "enum": ["pcm16", "g711_ulaw", "g711_alaw"]
+      },
+      "Session": {
+        "type": "object",
+        "description": "Realtime session configuration.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The unique ID of the session."
+          },
+          "object": {
+            "type": "string",
+            "enum": ["realtime.session"],
+            "description": "The object type."
+          },
+          "model": {
+            "type": "string",
+            "description": "The default model used for this session."
+          },
+          "modalities": {
+            "type": "array",
+            "description": "The set of modalities the model can respond with.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "instructions": {
+            "type": "string",
+            "description": "The default system instructions."
+          },
+          "voice": {
+            "type": "string",
+            "enum": ["alloy", "echo", "shimmer"],
+            "description": "The voice the model uses to respond."
+          },
+          "input_audio_format": {
+            "$ref": "#/components/schemas/AudioFormat"
+          },
+          "output_audio_format": {
+            "$ref": "#/components/schemas/AudioFormat"
+          },
+          "input_audio_transcription": {
+            "type": "object",
+            "description": "Configuration for input audio transcription.",
+            "properties": {
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether transcription is enabled."
+              },
+              "model": {
+                "type": "string",
+                "description": "The model to use for transcription."
+              }
+            }
+          },
+          "turn_detection": {
+            "type": "object",
+            "description": "Configuration for turn detection.",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["server_vad", "none"],
+                "description": "The type of turn detection."
+              },
+              "threshold": {
+                "type": "number",
+                "description": "Activation threshold for VAD (0.0 to 1.0)."
+              },
+              "prefix_padding_ms": {
+                "type": "integer",
+                "description": "Amount of audio to include before speech starts (in milliseconds)."
+              },
+              "silence_duration_ms": {
+                "type": "integer",
+                "description": "Duration of silence to detect speech stop (in milliseconds)."
+              }
+            }
+          },
+          "tools": {
+            "type": "array",
+            "description": "Tools (functions) available to the model.",
+            "items": {
+              "$ref": "#/components/schemas/Tool"
+            }
+          },
+          "tool_choice": {
+            "type": "string",
+            "enum": ["auto", "none", "required"],
+            "description": "How the model chooses tools."
+          },
+          "temperature": {
+            "type": "number",
+            "description": "Sampling temperature for the model."
+          },
+          "max_output_tokens": {
+            "type": "integer",
+            "description": "Maximum number of output tokens for a single assistant response."
+          }
+        }
+      },
+      "Tool": {
+        "type": "object",
+        "description": "A tool (function) available to the model.",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The type of the tool, e.g., 'function'."
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the function."
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the function."
+          },
+          "parameters": {
+            "type": "object",
+            "description": "Parameters of the function in JSON Schema.",
+            "additionalProperties": true
+          }
+        }
+      },
+      "Conversation": {
+        "type": "object",
+        "description": "A realtime Conversation.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The unique ID of the conversation."
+          },
+          "object": {
+            "type": "string",
+            "enum": ["realtime.conversation"],
+            "description": "The object type."
+          }
+        }
+      },
+      "ConversationItemContentPart": {
+        "type": "object",
+        "description": "A content part within a conversation item.",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["input_text", "input_audio", "text", "audio"],
+            "description": "The content type."
+          },
+          "text": {
+            "type": "string",
+            "description": "The text content."
+          },
+          "audio": {
+            "type": "string",
+            "description": "Base64-encoded audio bytes."
+          },
+          "transcript": {
+            "type": "string",
+            "description": "The transcript of the audio."
+          }
+        }
+      },
+      "ConversationItem": {
+        "type": "object",
+        "description": "A realtime conversation item.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The unique ID of the item."
+          },
+          "object": {
+            "type": "string",
+            "enum": ["realtime.item"],
+            "description": "The object type."
+          },
+          "type": {
+            "type": "string",
+            "enum": ["message", "function_call", "function_call_output"],
+            "description": "The type of the item."
+          },
+          "status": {
+            "type": "string",
+            "enum": ["completed", "in_progress", "incomplete"],
+            "description": "The status of the item."
+          },
+          "role": {
+            "type": "string",
+            "enum": ["user", "assistant", "system"],
+            "description": "The role of the message sender."
+          },
+          "content": {
+            "type": "array",
+            "description": "The content of the message.",
+            "items": {
+              "$ref": "#/components/schemas/ConversationItemContentPart"
+            }
+          },
+          "call_id": {
+            "type": "string",
+            "description": "The ID of the function call (for function_call items)."
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the function being called."
+          },
+          "arguments": {
+            "type": "string",
+            "description": "The arguments of the function call."
+          },
+          "output": {
+            "type": "string",
+            "description": "The output of the function call (for function_call_output items)."
+          }
+        }
+      },
+      "ContentPart": {
+        "type": "object",
+        "description": "A content part in a response.",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["text", "audio"],
+            "description": "The content type."
+          },
+          "text": {
+            "type": "string",
+            "description": "The text content."
+          },
+          "audio": {
+            "type": "string",
+            "description": "Base64-encoded audio data."
+          },
+          "transcript": {
+            "type": "string",
+            "description": "The transcript of the audio."
+          }
+        }
+      },
+      "ErrorDetails": {
+        "type": "object",
+        "description": "Details of an error.",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The type of error."
+          },
+          "code": {
+            "type": "string",
+            "description": "Error code, if any."
+          },
+          "message": {
+            "type": "string",
+            "description": "A human-readable error message."
+          },
+          "param": {
+            "type": "string",
+            "description": "Parameter related to the error, if any."
+          },
+          "event_id": {
+            "type": "string",
+            "description": "The event_id of the client event that caused the error."
+          }
+        }
+      },
+      "UsageDetails": {
+        "type": "object",
+        "description": "Usage statistics for a response.",
+        "properties": {
+          "total_tokens": {
+            "type": "integer",
+            "description": "The total number of tokens used."
+          },
+          "input_tokens": {
+            "type": "integer",
+            "description": "The number of input tokens used."
+          },
+          "output_tokens": {
+            "type": "integer",
+            "description": "The number of output tokens used."
+          }
+        }
+      },
+      "Response": {
+        "type": "object",
+        "description": "The response resource.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The unique ID of the response."
+          },
+          "object": {
+            "type": "string",
+            "enum": ["realtime.response"],
+            "description": "The object type."
+          },
+          "status": {
+            "type": "string",
+            "enum": ["completed", "in_progress", "cancelled", "failed", "incomplete"],
+            "description": "The status of the response."
+          },
+          "status_details": {
+            "type": "object",
+            "description": "Additional details about the status.",
+            "additionalProperties": true
+          },
+          "output": {
+            "type": "array",
+            "description": "The list of output items generated by the response.",
+            "items": {
+              "$ref": "#/components/schemas/ConversationItem"
+            }
+          },
+          "usage": {
+            "$ref": "#/components/schemas/UsageDetails"
+          }
+        }
+      },
+      "RateLimitInfo": {
+        "type": "object",
+        "description": "Rate limit information.",
+        "properties": {
+          "name": {
+            "type": "string",
+            "enum": ["requests", "tokens", "input_tokens", "output_tokens"],
+            "description": "The name of the rate limit."
+          },
+          "limit": {
+            "type": "integer",
+            "description": "The maximum allowed value."
+          },
+          "remaining": {
+            "type": "integer",
+            "description": "The remaining value before the limit is reached."
+          },
+          "reset_seconds": {
+            "type": "number",
+            "description": "Seconds until the rate limit resets."
+          }
+        }
+      },
+      "ResponseConfig": {
+        "type": "object",
+        "description": "Configuration for a response.",
+        "properties": {
+          "modalities": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["text", "audio"]
+            },
+            "description": "The modalities for the response."
+          },
+          "instructions": {
+            "type": "string",
+            "description": "Instructions for the model."
+          },
+          "voice": {
+            "type": "string",
+            "enum": ["alloy", "echo", "shimmer"],
+            "description": "The voice the model uses to respond."
+          },
+          "output_audio_format": {
+            "$ref": "#/components/schemas/AudioFormat"
+          },
+          "tools": {
+            "type": "array",
+            "description": "Tools (functions) available to the model.",
+            "items": {
+              "$ref": "#/components/schemas/Tool"
+            }
+          },
+          "tool_choice": {
+            "type": "string",
+            "enum": ["auto", "none", "required"],
+            "description": "How the model chooses tools."
+          },
+          "temperature": {
+            "type": "number",
+            "description": "Sampling temperature."
+          },
+          "max_output_tokens": {
+            "type": "integer",
+            "description": "Maximum number of output tokens."
+          }
+        }
+      },
+
+      "SessionUpdatePayload": {
+        "type": "object",
+        "description": "Send this event to update the session's default configuration.",
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "description": "Optional client-generated ID used to identify this event."
+          },
+          "type": {
+            "type": "string",
+            "enum": ["session.update"],
+            "description": "The event type."
+          },
+          "session": {
+            "$ref": "#/components/schemas/Session"
+          }
+        },
+        "required": ["type"]
+      },
+      "InputAudioBufferAppendPayload": {
+        "type": "object",
+        "description": "Send this event to append audio bytes to the input audio buffer.",
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "description": "Optional client-generated ID."
+          },
+          "type": {
+            "type": "string",
+            "enum": ["input_audio_buffer.append"],
+            "description": "The event type."
+          },
+          "audio": {
+            "type": "string",
+            "description": "Base64-encoded audio bytes."
+          }
+        },
+        "required": ["type", "audio"]
+      },
+      "InputAudioBufferCommitPayload": {
+        "type": "object",
+        "description": "Send this event to commit audio bytes to a user message.",
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "description": "Optional client-generated ID."
+          },
+          "type": {
+            "type": "string",
+            "enum": ["input_audio_buffer.commit"],
+            "description": "The event type."
+          }
+        },
+        "required": ["type"]
+      },
+      "InputAudioBufferClearPayload": {
+        "type": "object",
+        "description": "Send this event to clear the audio bytes in the buffer.",
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "description": "Optional client-generated ID."
+          },
+          "type": {
+            "type": "string",
+            "enum": ["input_audio_buffer.clear"],
+            "description": "The event type."
+          }
+        },
+        "required": ["type"]
+      },
+      "ConversationItemCreatePayload": {
+        "type": "object",
+        "description": "Send this event when adding an item to the conversation.",
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "description": "Optional client-generated ID."
+          },
+          "type": {
+            "type": "string",
+            "enum": ["conversation.item.create"],
+            "description": "The event type."
+          },
+          "previous_item_id": {
+            "type": "string",
+            "description": "The ID of the preceding item after which the new item will be inserted."
+          },
+          "item": {
+            "$ref": "#/components/schemas/ConversationItem"
+          }
+        },
+        "required": ["type", "item"]
+      },
+      "ConversationItemTruncatePayload": {
+        "type": "object",
+        "description": "Send this event to truncate a previous assistant message's audio.",
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "description": "Optional client-generated ID."
+          },
+          "type": {
+            "type": "string",
+            "enum": ["conversation.item.truncate"],
+            "description": "The event type."
+          },
+          "item_id": {
+            "type": "string",
+            "description": "The ID of the assistant message item to truncate."
+          },
+          "content_index": {
+            "type": "integer",
+            "description": "The index of the content part to truncate."
+          },
+          "audio_end_ms": {
+            "type": "integer",
+            "description": "Inclusive duration up to which audio is truncated, in milliseconds."
+          }
+        },
+        "required": ["type", "item_id", "content_index", "audio_end_ms"]
+      },
+      "ConversationItemDeletePayload": {
+        "type": "object",
+        "description": "Send this event to remove any item from the conversation history.",
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "description": "Optional client-generated ID."
+          },
+          "type": {
+            "type": "string",
+            "enum": ["conversation.item.delete"],
+            "description": "The event type."
+          },
+          "item_id": {
+            "type": "string",
+            "description": "The ID of the item to delete."
+          }
+        },
+        "required": ["type", "item_id"]
+      },
+      "ResponseCreatePayload": {
+        "type": "object",
+        "description": "Send this event to trigger a response generation.",
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "description": "Optional client-generated ID."
+          },
+          "type": {
+            "type": "string",
+            "enum": ["response.create"],
+            "description": "The event type."
+          },
+          "response": {
+            "$ref": "#/components/schemas/ResponseConfig"
+          }
+        },
+        "required": ["type"]
+      },
+      "ResponseCancelPayload": {
+        "type": "object",
+        "description": "Send this event to cancel an in-progress response.",
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "description": "Optional client-generated ID."
+          },
+          "type": {
+            "type": "string",
+            "enum": ["response.cancel"],
+            "description": "The event type."
+          }
+        },
+        "required": ["type"]
+      },
+
+      "ErrorPayload": {
+        "type": "object",
+        "description": "Returned when an error occurs.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["error"], "description": "The event type." },
+          "error": { "$ref": "#/components/schemas/ErrorDetails" }
+        },
+        "required": ["type", "event_id"]
+      },
+      "SessionCreatedPayload": {
+        "type": "object",
+        "description": "Returned when a session is created.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["session.created"], "description": "The event type." },
+          "session": { "$ref": "#/components/schemas/Session" }
+        },
+        "required": ["type", "event_id"]
+      },
+      "SessionUpdatedPayload": {
+        "type": "object",
+        "description": "Returned when a session is updated.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["session.updated"], "description": "The event type." },
+          "session": { "$ref": "#/components/schemas/Session" }
+        },
+        "required": ["type", "event_id"]
+      },
+      "ConversationCreatedPayload": {
+        "type": "object",
+        "description": "Returned when a conversation is created.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["conversation.created"], "description": "The event type." },
+          "conversation": { "$ref": "#/components/schemas/Conversation" }
+        },
+        "required": ["type", "event_id"]
+      },
+      "ConversationItemCreatedPayload": {
+        "type": "object",
+        "description": "Returned when a conversation item is created.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["conversation.item.created"], "description": "The event type." },
+          "previous_item_id": { "type": "string", "description": "The ID of the preceding item." },
+          "item": { "$ref": "#/components/schemas/ConversationItem" }
+        },
+        "required": ["type", "event_id"]
+      },
+      "ConversationItemInputAudioTranscriptionCompletedPayload": {
+        "type": "object",
+        "description": "Returned when input audio transcription succeeds.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["conversation.item.input_audio_transcription.completed"], "description": "The event type." },
+          "item_id": { "type": "string", "description": "The ID of the user message item." },
+          "content_index": { "type": "integer", "description": "The index of the content part containing the audio." },
+          "transcript": { "type": "string", "description": "The transcribed text." }
+        },
+        "required": ["type", "event_id"]
+      },
+      "ConversationItemInputAudioTranscriptionFailedPayload": {
+        "type": "object",
+        "description": "Returned when input audio transcription fails.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["conversation.item.input_audio_transcription.failed"], "description": "The event type." },
+          "item_id": { "type": "string", "description": "The ID of the user message item." },
+          "content_index": { "type": "integer", "description": "The index of the content part containing the audio." },
+          "error": { "$ref": "#/components/schemas/ErrorDetails" }
+        },
+        "required": ["type", "event_id"]
+      },
+      "ConversationItemTruncatedPayload": {
+        "type": "object",
+        "description": "Returned when an assistant audio message item is truncated.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["conversation.item.truncated"], "description": "The event type." },
+          "item_id": { "type": "string", "description": "The ID of the assistant message item that was truncated." },
+          "content_index": { "type": "integer", "description": "The index of the content part that was truncated." },
+          "audio_end_ms": { "type": "integer", "description": "The duration up to which the audio was truncated, in milliseconds." }
+        },
+        "required": ["type", "event_id"]
+      },
+      "ConversationItemDeletedPayload": {
+        "type": "object",
+        "description": "Returned when an item in the conversation is deleted.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["conversation.item.deleted"], "description": "The event type." },
+          "item_id": { "type": "string", "description": "The ID of the item that was deleted." }
+        },
+        "required": ["type", "event_id"]
+      },
+      "InputAudioBufferCommittedPayload": {
+        "type": "object",
+        "description": "Returned when an input audio buffer is committed.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["input_audio_buffer.committed"], "description": "The event type." },
+          "previous_item_id": { "type": "string", "description": "The ID of the preceding item." },
+          "item_id": { "type": "string", "description": "The ID of the user message item that will be created." }
+        },
+        "required": ["type", "event_id"]
+      },
+      "InputAudioBufferClearedPayload": {
+        "type": "object",
+        "description": "Returned when the input audio buffer is cleared.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["input_audio_buffer.cleared"], "description": "The event type." }
+        },
+        "required": ["type", "event_id"]
+      },
+      "InputAudioBufferSpeechStartedPayload": {
+        "type": "object",
+        "description": "Returned when speech is detected in server VAD mode.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["input_audio_buffer.speech_started"], "description": "The event type." },
+          "audio_start_ms": { "type": "integer", "description": "Milliseconds since the session started when speech was detected." },
+          "item_id": { "type": "string", "description": "The ID of the user message item that will be created when speech stops." }
+        },
+        "required": ["type", "event_id"]
+      },
+      "InputAudioBufferSpeechStoppedPayload": {
+        "type": "object",
+        "description": "Returned when speech stops in server VAD mode.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["input_audio_buffer.speech_stopped"], "description": "The event type." },
+          "audio_end_ms": { "type": "integer", "description": "Milliseconds since the session started when speech stopped." },
+          "item_id": { "type": "string", "description": "The ID of the user message item that will be created." }
+        },
+        "required": ["type", "event_id"]
+      },
+      "ResponseCreatedPayload": {
+        "type": "object",
+        "description": "Returned when a new Response is created.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["response.created"], "description": "The event type." },
+          "response": { "$ref": "#/components/schemas/Response" }
+        },
+        "required": ["type", "event_id"]
+      },
+      "ResponseDonePayload": {
+        "type": "object",
+        "description": "Returned when a Response is done streaming.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["response.done"], "description": "The event type." },
+          "response": { "$ref": "#/components/schemas/Response" }
+        },
+        "required": ["type", "event_id"]
+      },
+      "ResponseOutputItemAddedPayload": {
+        "type": "object",
+        "description": "Returned when a new Item is created during response generation.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["response.output_item.added"], "description": "The event type." },
+          "response_id": { "type": "string", "description": "The ID of the response." },
+          "output_index": { "type": "integer", "description": "The index of the output item in the response." },
+          "item": { "$ref": "#/components/schemas/ConversationItem" }
+        },
+        "required": ["type", "event_id"]
+      },
+      "ResponseOutputItemDonePayload": {
+        "type": "object",
+        "description": "Returned when an Item is done streaming.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["response.output_item.done"], "description": "The event type." },
+          "response_id": { "type": "string", "description": "The ID of the response." },
+          "output_index": { "type": "integer", "description": "The index of the output item in the response." },
+          "item": { "$ref": "#/components/schemas/ConversationItem" }
+        },
+        "required": ["type", "event_id"]
+      },
+      "ResponseContentPartAddedPayload": {
+        "type": "object",
+        "description": "Returned when a new content part is added to an assistant message item.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["response.content_part.added"], "description": "The event type." },
+          "response_id": { "type": "string", "description": "The ID of the response." },
+          "item_id": { "type": "string", "description": "The ID of the item." },
+          "output_index": { "type": "integer", "description": "The index of the output item in the response." },
+          "content_index": { "type": "integer", "description": "The index of the content part." },
+          "part": { "$ref": "#/components/schemas/ContentPart" }
+        },
+        "required": ["type", "event_id"]
+      },
+      "ResponseContentPartDonePayload": {
+        "type": "object",
+        "description": "Returned when a content part is done streaming.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["response.content_part.done"], "description": "The event type." },
+          "response_id": { "type": "string", "description": "The ID of the response." },
+          "item_id": { "type": "string", "description": "The ID of the item." },
+          "output_index": { "type": "integer", "description": "The index of the output item in the response." },
+          "content_index": { "type": "integer", "description": "The index of the content part." },
+          "part": { "$ref": "#/components/schemas/ContentPart" }
+        },
+        "required": ["type", "event_id"]
+      },
+      "ResponseTextDeltaPayload": {
+        "type": "object",
+        "description": "Returned when the text value of a content part is updated.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["response.text.delta"], "description": "The event type." },
+          "response_id": { "type": "string", "description": "The ID of the response." },
+          "item_id": { "type": "string", "description": "The ID of the item." },
+          "output_index": { "type": "integer", "description": "The index of the output item." },
+          "content_index": { "type": "integer", "description": "The index of the content part." },
+          "delta": { "type": "string", "description": "The text delta." }
+        },
+        "required": ["type", "event_id"]
+      },
+      "ResponseTextDonePayload": {
+        "type": "object",
+        "description": "Returned when the text value of a content part is done streaming.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["response.text.done"], "description": "The event type." },
+          "response_id": { "type": "string", "description": "The ID of the response." },
+          "item_id": { "type": "string", "description": "The ID of the item." },
+          "output_index": { "type": "integer", "description": "The index of the output item." },
+          "content_index": { "type": "integer", "description": "The index of the content part." },
+          "text": { "type": "string", "description": "The final text content." }
+        },
+        "required": ["type", "event_id"]
+      },
+      "ResponseAudioTranscriptDeltaPayload": {
+        "type": "object",
+        "description": "Returned when the model-generated transcription of audio output is updated.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["response.audio_transcript.delta"], "description": "The event type." },
+          "response_id": { "type": "string", "description": "The ID of the response." },
+          "item_id": { "type": "string", "description": "The ID of the item." },
+          "output_index": { "type": "integer", "description": "The index of the output item." },
+          "content_index": { "type": "integer", "description": "The index of the content part." },
+          "delta": { "type": "string", "description": "The transcript delta." }
+        },
+        "required": ["type", "event_id"]
+      },
+      "ResponseAudioTranscriptDonePayload": {
+        "type": "object",
+        "description": "Returned when the model-generated transcription of audio output is done.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["response.audio_transcript.done"], "description": "The event type." },
+          "response_id": { "type": "string", "description": "The ID of the response." },
+          "item_id": { "type": "string", "description": "The ID of the item." },
+          "output_index": { "type": "integer", "description": "The index of the output item." },
+          "content_index": { "type": "integer", "description": "The index of the content part." },
+          "transcript": { "type": "string", "description": "The final transcript of the audio." }
+        },
+        "required": ["type", "event_id"]
+      },
+      "ResponseAudioDeltaPayload": {
+        "type": "object",
+        "description": "Returned when the model-generated audio is updated.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["response.audio.delta"], "description": "The event type." },
+          "response_id": { "type": "string", "description": "The ID of the response." },
+          "item_id": { "type": "string", "description": "The ID of the item." },
+          "output_index": { "type": "integer", "description": "The index of the output item." },
+          "content_index": { "type": "integer", "description": "The index of the content part." },
+          "delta": { "type": "string", "description": "Base64-encoded audio data delta." }
+        },
+        "required": ["type", "event_id"]
+      },
+      "ResponseAudioDonePayload": {
+        "type": "object",
+        "description": "Returned when the model-generated audio is done.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["response.audio.done"], "description": "The event type." },
+          "response_id": { "type": "string", "description": "The ID of the response." },
+          "item_id": { "type": "string", "description": "The ID of the item." },
+          "output_index": { "type": "integer", "description": "The index of the output item." },
+          "content_index": { "type": "integer", "description": "The index of the content part." }
+        },
+        "required": ["type", "event_id"]
+      },
+      "ResponseFunctionCallArgumentsDeltaPayload": {
+        "type": "object",
+        "description": "Returned when the model-generated function call arguments are updated.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["response.function_call_arguments.delta"], "description": "The event type." },
+          "response_id": { "type": "string", "description": "The ID of the response." },
+          "item_id": { "type": "string", "description": "The ID of the function call item." },
+          "output_index": { "type": "integer", "description": "The index of the output item." },
+          "call_id": { "type": "string", "description": "The ID of the function call." },
+          "delta": { "type": "string", "description": "The arguments delta as a JSON string." }
+        },
+        "required": ["type", "event_id"]
+      },
+      "ResponseFunctionCallArgumentsDonePayload": {
+        "type": "object",
+        "description": "Returned when the model-generated function call arguments are done streaming.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["response.function_call_arguments.done"], "description": "The event type." },
+          "response_id": { "type": "string", "description": "The ID of the response." },
+          "item_id": { "type": "string", "description": "The ID of the function call item." },
+          "output_index": { "type": "integer", "description": "The index of the output item." },
+          "call_id": { "type": "string", "description": "The ID of the function call." },
+          "arguments": { "type": "string", "description": "The final arguments as a JSON string." }
+        },
+        "required": ["type", "event_id"]
+      },
+      "RateLimitsUpdatedPayload": {
+        "type": "object",
+        "description": "Emitted after every response.done event to indicate updated rate limits.",
+        "properties": {
+          "event_id": { "type": "string", "description": "The unique ID of the server event." },
+          "type": { "type": "string", "enum": ["rate_limits.updated"], "description": "The event type." },
+          "rate_limits": {
+            "type": "array",
+            "description": "List of rate limit information.",
+            "items": { "$ref": "#/components/schemas/RateLimitInfo" }
+          }
+        },
+        "required": ["type", "event_id"]
+      },
+      "ServerEvent": {
+        "oneOf": [
+          { "$ref": "#/components/schemas/ErrorPayload" },
+          { "$ref": "#/components/schemas/SessionCreatedPayload" },
+          { "$ref": "#/components/schemas/SessionUpdatedPayload" },
+          { "$ref": "#/components/schemas/ConversationCreatedPayload" },
+          { "$ref": "#/components/schemas/ConversationItemCreatedPayload" },
+          { "$ref": "#/components/schemas/ConversationItemInputAudioTranscriptionCompletedPayload" },
+          { "$ref": "#/components/schemas/ConversationItemInputAudioTranscriptionFailedPayload" },
+          { "$ref": "#/components/schemas/ConversationItemTruncatedPayload" },
+          { "$ref": "#/components/schemas/ConversationItemDeletedPayload" },
+          { "$ref": "#/components/schemas/InputAudioBufferCommittedPayload" },
+          { "$ref": "#/components/schemas/InputAudioBufferClearedPayload" },
+          { "$ref": "#/components/schemas/InputAudioBufferSpeechStartedPayload" },
+          { "$ref": "#/components/schemas/InputAudioBufferSpeechStoppedPayload" },
+          { "$ref": "#/components/schemas/ResponseCreatedPayload" },
+          { "$ref": "#/components/schemas/ResponseDonePayload" },
+          { "$ref": "#/components/schemas/ResponseOutputItemAddedPayload" },
+          { "$ref": "#/components/schemas/ResponseOutputItemDonePayload" },
+          { "$ref": "#/components/schemas/ResponseContentPartAddedPayload" },
+          { "$ref": "#/components/schemas/ResponseContentPartDonePayload" },
+          { "$ref": "#/components/schemas/ResponseTextDeltaPayload" },
+          { "$ref": "#/components/schemas/ResponseTextDonePayload" },
+          { "$ref": "#/components/schemas/ResponseAudioTranscriptDeltaPayload" },
+          { "$ref": "#/components/schemas/ResponseAudioTranscriptDonePayload" },
+          { "$ref": "#/components/schemas/ResponseAudioDeltaPayload" },
+          { "$ref": "#/components/schemas/ResponseAudioDonePayload" },
+          { "$ref": "#/components/schemas/ResponseFunctionCallArgumentsDeltaPayload" },
+          { "$ref": "#/components/schemas/ResponseFunctionCallArgumentsDonePayload" },
+          { "$ref": "#/components/schemas/RateLimitsUpdatedPayload" }
+        ],
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "error": "#/components/schemas/ErrorPayload",
+            "session.created": "#/components/schemas/SessionCreatedPayload",
+            "session.updated": "#/components/schemas/SessionUpdatedPayload",
+            "conversation.created": "#/components/schemas/ConversationCreatedPayload",
+            "conversation.item.created": "#/components/schemas/ConversationItemCreatedPayload",
+            "conversation.item.input_audio_transcription.completed": "#/components/schemas/ConversationItemInputAudioTranscriptionCompletedPayload",
+            "conversation.item.input_audio_transcription.failed": "#/components/schemas/ConversationItemInputAudioTranscriptionFailedPayload",
+            "conversation.item.truncated": "#/components/schemas/ConversationItemTruncatedPayload",
+            "conversation.item.deleted": "#/components/schemas/ConversationItemDeletedPayload",
+            "input_audio_buffer.committed": "#/components/schemas/InputAudioBufferCommittedPayload",
+            "input_audio_buffer.cleared": "#/components/schemas/InputAudioBufferClearedPayload",
+            "input_audio_buffer.speech_started": "#/components/schemas/InputAudioBufferSpeechStartedPayload",
+            "input_audio_buffer.speech_stopped": "#/components/schemas/InputAudioBufferSpeechStoppedPayload",
+            "response.created": "#/components/schemas/ResponseCreatedPayload",
+            "response.done": "#/components/schemas/ResponseDonePayload",
+            "response.output_item.added": "#/components/schemas/ResponseOutputItemAddedPayload",
+            "response.output_item.done": "#/components/schemas/ResponseOutputItemDonePayload",
+            "response.content_part.added": "#/components/schemas/ResponseContentPartAddedPayload",
+            "response.content_part.done": "#/components/schemas/ResponseContentPartDonePayload",
+            "response.text.delta": "#/components/schemas/ResponseTextDeltaPayload",
+            "response.text.done": "#/components/schemas/ResponseTextDonePayload",
+            "response.audio_transcript.delta": "#/components/schemas/ResponseAudioTranscriptDeltaPayload",
+            "response.audio_transcript.done": "#/components/schemas/ResponseAudioTranscriptDonePayload",
+            "response.audio.delta": "#/components/schemas/ResponseAudioDeltaPayload",
+            "response.audio.done": "#/components/schemas/ResponseAudioDonePayload",
+            "response.function_call_arguments.delta": "#/components/schemas/ResponseFunctionCallArgumentsDeltaPayload",
+            "response.function_call_arguments.done": "#/components/schemas/ResponseFunctionCallArgumentsDonePayload",
+            "rate_limits.updated": "#/components/schemas/RateLimitsUpdatedPayload"
+          }
+        }
+      }
+    }
+  }
+}

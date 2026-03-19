@@ -85,6 +85,8 @@ public partial class Tests
     [DataRow("additional-properties-collision.yaml", JsonSerializerType.SystemTextJson)]
     [DataRow("elevenlabs-realtime-stt.json", JsonSerializerType.NewtonsoftJson)]
     [DataRow("elevenlabs-realtime-stt.json", JsonSerializerType.SystemTextJson)]
+    [DataRow("openai-realtime.json", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("openai-realtime.json", JsonSerializerType.SystemTextJson)]
     public Task SdkGenerator(string fileName, JsonSerializerType jsonSerializerType)
     {
         if (fileName == "")
@@ -155,6 +157,12 @@ public partial class Tests
                 ["build_property.AutoSDK_MethodNamingConvention"] = "MethodAndPath",
             },
             "elevenlabs-realtime-stt.json" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_JsonSerializerContext"] = jsonSerializerType is JsonSerializerType.SystemTextJson
+                    ? "G.SourceGenerationContext"
+                    : string.Empty,
+            },
+            "openai-realtime.json" => new Dictionary<string, string>
             {
                 ["build_property.AutoSDK_JsonSerializerContext"] = jsonSerializerType is JsonSerializerType.SystemTextJson
                     ? "G.SourceGenerationContext"
