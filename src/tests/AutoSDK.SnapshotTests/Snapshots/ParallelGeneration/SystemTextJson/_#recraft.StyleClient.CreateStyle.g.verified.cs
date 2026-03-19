@@ -53,9 +53,18 @@ namespace recraft
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Images, x => x))}]"),
-                name: "\"images\"");
+            for (var __iImages = 0; __iImages < request.Images.Count; __iImages++)
+            {
+                var __contentImages = new global::System.Net.Http.ByteArrayContent(request.Images[__iImages]);
+                __httpRequestContent.Add(
+                    content: __contentImages,
+                    name: "\"images\"",
+                    fileName: $"\"file{__iImages}.bin\"");
+                if (__contentImages.Headers.ContentDisposition != null)
+                {
+                    __contentImages.Headers.ContentDisposition.FileNameStar = null;
+                }
+            }
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.Style.ToValueString()}"),
                 name: "\"style\"");

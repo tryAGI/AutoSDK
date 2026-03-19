@@ -90,9 +90,18 @@ namespace G
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.Purpose}"),
                 name: "\"purpose\"");
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.File, x => x))}]"),
-                name: "\"file\"");
+            for (var __iFile = 0; __iFile < request.File.Count; __iFile++)
+            {
+                var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File[__iFile]);
+                __httpRequestContent.Add(
+                    content: __contentFile,
+                    name: "\"file\"",
+                    fileName: $"\"file{__iFile}.bin\"");
+                if (__contentFile.Headers.ContentDisposition != null)
+                {
+                    __contentFile.Headers.ContentDisposition.FileNameStar = null;
+                }
+            }
             __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(

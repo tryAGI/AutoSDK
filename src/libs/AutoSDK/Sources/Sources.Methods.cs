@@ -769,6 +769,7 @@ namespace {endPoint.Settings.Namespace}
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
 {endPoint.Parameters.Where(x => !x.IsMultiPartFormDataFilename).Select(x =>
 {
+    var isBinaryArray = x.Type.IsArray && !x.Type.SubTypes.IsEmpty && x.Type.SubTypes[0].Unbox<TypeData>().IsBinary;
     var add = x.Type.IsBinary ? @$"
             var __content{x.Name} = new global::System.Net.Http.ByteArrayContent(request.{x.Name} ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
@@ -778,6 +779,19 @@ namespace {endPoint.Settings.Namespace}
             if (__content{x.Name}.Headers.ContentDisposition != null)
             {{
                 __content{x.Name}.Headers.ContentDisposition.FileNameStar = null;
+            }}
+ " : isBinaryArray ? @$"
+            for (var __i{x.Name} = 0; __i{x.Name} < request.{x.Name}.Count; __i{x.Name}++)
+            {{
+                var __content{x.Name} = new global::System.Net.Http.ByteArrayContent(request.{x.Name}[__i{x.Name}]);
+                __httpRequestContent.Add(
+                    content: __content{x.Name},
+                    name: ""\""{x.Id}\"""",
+                    fileName: $""\""file{{__i{x.Name}}}.bin\"""");
+                if (__content{x.Name}.Headers.ContentDisposition != null)
+                {{
+                    __content{x.Name}.Headers.ContentDisposition.FileNameStar = null;
+                }}
             }}
  " : @$"
             __httpRequestContent.Add(
