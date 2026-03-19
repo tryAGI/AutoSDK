@@ -40,14 +40,18 @@ public static class DocsSynchronizer
         DeleteMarkdownFiles(project.OutputDirectory);
         DeleteDirectoryIfExists(project.LegacyOutputDirectory);
 
-        var examples = Directory.Exists(project.ExampleSourceDirectory)
-            ? Directory
-                .EnumerateFiles(project.ExampleSourceDirectory, "*.cs", SearchOption.AllDirectories)
-                .Select(path => LoadMetadataExample(path, project.ClientClassName, project.ApiKeyVariableName, project.ClientReplacements))
+        var examples = new List<MetadataExampleDocument>();
+        if (Directory.Exists(project.ExampleSourceDirectory))
+        {
+            foreach (var path in Directory.EnumerateFiles(project.ExampleSourceDirectory, "*.cs", SearchOption.AllDirectories))
+            {
+                examples.Add(await LoadMetadataExampleAsync(path, project.ClientClassName, project.ApiKeyVariableName, project.ClientReplacements, cancellationToken).ConfigureAwait(false));
+            }
+            examples = examples
                 .OrderBy(x => x.Order)
                 .ThenBy(x => x.Title, StringComparer.Ordinal)
-                .ToList()
-            : [];
+                .ToList();
+        }
 
         var readme = NormalizeNewlines(await File.ReadAllTextAsync(project.ReadmePath, cancellationToken).ConfigureAwait(false));
         if (HasMarkerBlock(readme, project.ReadmeExamplesStartMarker, project.ReadmeExamplesEndMarker))
@@ -92,14 +96,22 @@ public static class DocsSynchronizer
         var readme = await File.ReadAllTextAsync(project.ReadmePath, cancellationToken).ConfigureAwait(false);
         await File.WriteAllTextAsync(Path.Combine(project.DocsDirectory, "index.md"), readme, cancellationToken).ConfigureAwait(false);
 
-        var samples = Directory.Exists(project.ExampleSourceDirectory)
-            ? Directory
+        var samples = new List<LegacyExampleDocument>();
+        if (Directory.Exists(project.ExampleSourceDirectory))
+        {
+            var paths = Directory
                 .EnumerateFiles(project.ExampleSourceDirectory, "Tests.*.cs", SearchOption.AllDirectories)
                 .OrderBy(Path.GetFileName, StringComparer.Ordinal)
-                .Select(path => TryLoadLegacySample(path, project.ClientClassName, project.ApiKeyVariableName, project.ClientReplacements))
-                .OfType<LegacyExampleDocument>()
-                .ToList()
-            : [];
+                .ToList();
+            foreach (var path in paths)
+            {
+                var sample = await TryLoadLegacySampleAsync(path, project.ClientClassName, project.ApiKeyVariableName, project.ClientReplacements, cancellationToken).ConfigureAwait(false);
+                if (sample is not null)
+                {
+                    samples.Add(sample);
+                }
+            }
+        }
 
         foreach (var sample in samples)
         {
@@ -135,13 +147,18 @@ public static class DocsSynchronizer
         var readme = await File.ReadAllTextAsync(project.ReadmePath, cancellationToken).ConfigureAwait(false);
         await File.WriteAllTextAsync(Path.Combine(project.DocsDirectory, "index.md"), readme, cancellationToken).ConfigureAwait(false);
 
-        var samples = Directory.Exists(project.ExampleSourceDirectory)
-            ? Directory
+        var samples = new List<MarkerExampleDocument>();
+        if (Directory.Exists(project.ExampleSourceDirectory))
+        {
+            var paths = Directory
                 .EnumerateFiles(project.ExampleSourceDirectory, "Examples.*.cs", SearchOption.AllDirectories)
                 .OrderBy(Path.GetFileName, StringComparer.Ordinal)
-                .Select(path => LoadMarkerSample(path, project.ClientClassName, project.ApiKeyVariableName, project.ClientReplacements))
-                .ToList()
-            : [];
+                .ToList();
+            foreach (var path in paths)
+            {
+                samples.Add(await LoadMarkerSampleAsync(path, project.ClientClassName, project.ApiKeyVariableName, project.ClientReplacements, cancellationToken).ConfigureAwait(false));
+            }
+        }
 
         foreach (var sample in samples)
         {
@@ -166,13 +183,14 @@ public static class DocsSynchronizer
         return new DocsSyncResult("marker", samples.Count, project.OutputDirectory);
     }
 
-    private static MetadataExampleDocument LoadMetadataExample(
+    private static async Task<MetadataExampleDocument> LoadMetadataExampleAsync(
         string path,
         string clientClassName,
         string apiKeyVariableName,
-        IReadOnlyDictionary<string, string>? clientReplacements)
+        IReadOnlyDictionary<string, string>? clientReplacements,
+        CancellationToken cancellationToken = default)
     {
-        var text = NormalizeNewlines(File.ReadAllText(path));
+        var text = NormalizeNewlines(await File.ReadAllTextAsync(path, cancellationToken).ConfigureAwait(false));
         var metadata = ExampleMetadata.Parse(text, path);
         var body = ExtractSingleTestMethodBody(text, path);
 
@@ -184,13 +202,14 @@ public static class DocsSynchronizer
             TransformCode(body, clientClassName, apiKeyVariableName, clientReplacements));
     }
 
-    private static LegacyExampleDocument? TryLoadLegacySample(
+    private static async Task<LegacyExampleDocument?> TryLoadLegacySampleAsync(
         string path,
         string clientClassName,
         string apiKeyVariableName,
-        IReadOnlyDictionary<string, string>? clientReplacements)
+        IReadOnlyDictionary<string, string>? clientReplacements,
+        CancellationToken cancellationToken = default)
     {
-        var text = NormalizeNewlines(File.ReadAllText(path));
+        var text = NormalizeNewlines(await File.ReadAllTextAsync(path, cancellationToken).ConfigureAwait(false));
         var body = TryExtractSingleTestMethodBody(text, path) ??
                    TryExtractSingleTestMethodBody(UncommentDisabledCode(text), path);
 
@@ -204,15 +223,16 @@ public static class DocsSynchronizer
             TransformCode(body, clientClassName, apiKeyVariableName, clientReplacements));
     }
 
-    private static MarkerExampleDocument LoadMarkerSample(
+    private static async Task<MarkerExampleDocument> LoadMarkerSampleAsync(
         string path,
         string clientClassName,
         string apiKeyVariableName,
-        IReadOnlyDictionary<string, string>? clientReplacements)
+        IReadOnlyDictionary<string, string>? clientReplacements,
+        CancellationToken cancellationToken = default)
     {
         const string marker = "// # START EXAMPLE #";
 
-        var text = NormalizeNewlines(File.ReadAllText(path));
+        var text = NormalizeNewlines(await File.ReadAllTextAsync(path, cancellationToken).ConfigureAwait(false));
         var markerIndex = text.IndexOf(marker, StringComparison.Ordinal);
         var code = markerIndex >= 0
             ? text[(markerIndex + marker.Length)..].Trim()

@@ -76,7 +76,7 @@ internal sealed class TrimCommand : Command
                 assemblyName = asmElement.Value;
             }
         }
-        catch
+        catch (Exception ex) when (ex is System.Xml.XmlException or IOException)
         {
             // Fallback to filename-based name
         }
@@ -132,11 +132,11 @@ internal sealed class TrimCommand : Command
                 Path.Combine(tempDir, "TrimmingCheck.csproj"),
                 trimmingCsproj).ConfigureAwait(false);
 
-            Console.WriteLine($"Validating trimming compatibility for {projectName}...");
-            Console.WriteLine($"  Target framework: {targetFramework}");
-            Console.WriteLine($"  Runtime identifier: {rid}");
-            Console.WriteLine($"  Assembly name: {assemblyName}");
-            Console.WriteLine();
+            await Console.Out.WriteLineAsync($"Validating trimming compatibility for {projectName}...").ConfigureAwait(false);
+            await Console.Out.WriteLineAsync($"  Target framework: {targetFramework}").ConfigureAwait(false);
+            await Console.Out.WriteLineAsync($"  Runtime identifier: {rid}").ConfigureAwait(false);
+            await Console.Out.WriteLineAsync($"  Assembly name: {assemblyName}").ConfigureAwait(false);
+            await Console.Out.WriteLineAsync().ConfigureAwait(false);
 
             // Run dotnet publish
             var psi = new ProcessStartInfo
@@ -165,7 +165,7 @@ internal sealed class TrimCommand : Command
             {
                 if (!string.IsNullOrWhiteSpace(stdout))
                 {
-                    Console.WriteLine(stdout);
+                    await Console.Out.WriteLineAsync(stdout).ConfigureAwait(false);
                 }
                 if (!string.IsNullOrWhiteSpace(stderr))
                 {
@@ -188,13 +188,13 @@ internal sealed class TrimCommand : Command
 
             if (trimmingWarnings.Count > 0)
             {
-                Console.WriteLine($"Found {trimmingWarnings.Count} trimming warning(s):");
-                Console.WriteLine();
+                await Console.Out.WriteLineAsync($"Found {trimmingWarnings.Count} trimming warning(s):").ConfigureAwait(false);
+                await Console.Out.WriteLineAsync().ConfigureAwait(false);
                 foreach (var warning in trimmingWarnings)
                 {
-                    Console.WriteLine($"  {warning}");
+                    await Console.Out.WriteLineAsync($"  {warning}").ConfigureAwait(false);
                 }
-                Console.WriteLine();
+                await Console.Out.WriteLineAsync().ConfigureAwait(false);
             }
 
             if (errors.Count > 0 || process.ExitCode != 0)
@@ -221,7 +221,7 @@ internal sealed class TrimCommand : Command
 
             if (trimmingWarnings.Count == 0)
             {
-                Console.WriteLine("No trimming warnings found. The project is trimming-compatible.");
+                await Console.Out.WriteLineAsync("No trimming warnings found. The project is trimming-compatible.").ConfigureAwait(false);
             }
             else
             {
@@ -238,7 +238,7 @@ internal sealed class TrimCommand : Command
                     Directory.Delete(tempDir, recursive: true);
                 }
             }
-            catch
+            catch (IOException)
             {
                 // Best effort cleanup
             }
