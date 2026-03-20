@@ -184,7 +184,15 @@ public static class Data
         {
             schema.ComputeData();
         }
-        
+
+        // Second pass: recompute schemas involved in circular references.
+        // After the first pass all TypeData is set, so cyclic schemas now
+        // produce their final results. Then force-memoize everything.
+        foreach (var schema in filteredSchemas)
+        {
+            schema.RecomputeDataIfNeeded();
+        }
+
         computeDataTime.Stop();
         
         var computeDataClassesTime = Stopwatch.StartNew();

@@ -461,6 +461,46 @@ public class SchemaContext(
         return fullyComputed;
     }
 
+    /// <summary>
+    /// Second pass for circular reference schemas: recompute data now that all
+    /// TypeData is set from the first pass, then force-memoize.
+    /// </summary>
+    public void RecomputeDataIfNeeded()
+    {
+        if (_dataComputed)
+        {
+            return;
+        }
+
+        // All TypeData is now set from the first pass — recompute this node's data
+        TypeData = IsReference
+            ? ResolvedReference?.TypeData ??
+              throw new InvalidOperationException("Resolved reference must have type data.")
+            : TypeData.FromSchemaContext(this);
+        if (IsReference && ResolvedReference != null && TypeData != TypeData.Default)
+        {
+            TypeData = TypeData with
+            {
+                CSharpTypeRaw = TypeData.GetCSharpType(ResolvedReference),
+                CSharpTypeNullability = TypeData.GetCSharpNullability(ResolvedReference, this),
+            };
+        }
+        if (IsProperty)
+        {
+            PropertyData = Models.PropertyData.FromSchemaContext(this);
+        }
+        if (Hint is Models.Hint.Parameter)
+        {
+            ParameterData = MethodParameter.FromSchemaContext(this);
+        }
+        if (IsAnyOfLikeStructure && !TypeData.IsCollapsedAnyOfLike(this))
+        {
+            AnyOfData = global::AutoSDK.Models.AnyOfData.FromSchemaContext(this);
+        }
+
+        _dataComputed = true;
+    }
+
     public bool HasAnyTag(params string[] tags)
     {
         return
