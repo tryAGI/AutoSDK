@@ -12,116 +12,139 @@ public static class TraversalTreeHelper
     {
         openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
 
-        var operations = openApiDocument.Paths?
-            .SelectMany(x => (x.Value.Operations ?? new Dictionary<System.Net.Http.HttpMethod, OpenApiOperation>())
-                // Skip operations marked with x-fern-ignore: true or x-hidden: true (opt-in via UseExtensionNaming)
-                .Where(y => !settings.UseExtensionNaming ||
-                            (!OpenApiExtensions.GetExtensionBooleanValue(y.Value.Extensions, "x-fern-ignore") &&
-                             !OpenApiExtensions.GetExtensionBooleanValue(y.Value.Extensions, "x-hidden")))
-                .Select(y => (
-                    OperationPath: x.Key,
-                    OperationType: y.Key,
-                    Operation: y.Value)))
-            .ToArray() ?? [];
-        
-        return (openApiDocument.Components?.Schemas?
-            .SelectMany(schema => SchemaContext.FromSchema(
-                schema: schema.Value,
-                settings: settings,
-                componentId: schema.Key,
-                hint: Hint.Component)) ?? [])
-            .Concat(operations
-                .Where(x => x.Operation.RequestBody != null)
-                .SelectMany(x => (x.Operation.RequestBody!.Content ?? new Dictionary<string, IOpenApiMediaType>())
-                    .Select(y => (
-                        x.OperationPath,
-                        x.OperationType,
-                        x.Operation,
-                        ContentType: y.Key,
-                        MediaType: y.Value)))
-                .Where(x => x.MediaType.Schema != null)
-                .SelectMany(x => SchemaContext.FromSchema(
-                    schema: x.MediaType.Schema!,
+        var result = new List<SchemaContext>();
+
+        // Component schemas
+        if (openApiDocument.Components?.Schemas != null)
+        {
+            foreach (var schema in openApiDocument.Components.Schemas)
+            {
+                result.AddRange(SchemaContext.FromSchema(
+                    schema: schema.Value,
                     settings: settings,
-                    operationPath: x.OperationPath,
-                    operationType: x.OperationType,
-                    operation: x.Operation,
-                    contentType: x.ContentType,
-                    mediaType: x.MediaType,
-                    hint: Hint.Request)))
-            .Concat(operations
-                .SelectMany(x => (x.Operation.Parameters ?? [])
-                    .Select(y => (
-                        x.OperationPath,
-                        x.OperationType,
-                        x.Operation,
-                        Parameter: y)))
-                .Where(x => x.Parameter.Schema != null)
-                .SelectMany(x => SchemaContext.FromSchema(
-                    schema: x.Parameter.Schema!,
-                    settings: settings,
-                    operationPath: x.OperationPath,
-                    operationType: x.OperationType,
-                    operation: x.Operation,
-                    contentType: null,
-                    mediaType: null,
-                    parameter: x.Parameter,
-                    hint: Hint.Parameter)))
-            .Concat(operations
-                .SelectMany(x => (x.Operation.Parameters ?? []).Select(y => (
-                    x.OperationPath,
-                    x.OperationType,
-                    x.Operation,
-                    Parameter: y)))
-                .SelectMany(x => (x.Parameter.Content ?? new Dictionary<string, IOpenApiMediaType>())
-                    .Select(y => (
-                        x.OperationPath,
-                        x.OperationType,
-                        x.Operation,
-                        x.Parameter,
-                        ContentType: y.Key,
-                        MediaType: y.Value)))
-                .Where(x => x.MediaType.Schema != null)
-                .SelectMany(x => SchemaContext.FromSchema(
-                    schema: x.MediaType.Schema!,
-                    settings: settings,
-                    operationPath: x.OperationPath,
-                    operationType: x.OperationType,
-                    operation: x.Operation,
-                    contentType: x.ContentType,
-                    mediaType: x.MediaType,
-                    parameter: x.Parameter,
-                    hint: Hint.Parameter)))
-            .Concat(operations
-                .SelectMany(x => (x.Operation.Responses ?? [])
-                    .Select(y => (
-                        x.OperationPath,
-                        x.OperationType,
-                        x.Operation,
-                        ResponseStatusCode: y.Key,
-                        Response: y.Value)))
-                .SelectMany(x => (x.Response.Content ?? new Dictionary<string, IOpenApiMediaType>())
-                    .Select(y => (
-                        x.OperationPath,
-                        x.OperationType,
-                        x.Operation,
-                        x.ResponseStatusCode,
-                        x.Response,
-                        ContentType: y.Key,
-                        MediaType: y.Value)))
-                .Where(x => x.MediaType.Schema != null)
-                .SelectMany(x => SchemaContext.FromSchema(
-                    schema: x.MediaType.Schema!,
-                    settings: settings,
-                    operationPath: x.OperationPath,
-                    operationType: x.OperationType,
-                    operation: x.Operation,
-                    contentType: x.ContentType,
-                    mediaType: x.MediaType,
-                    responseStatusCode: x.ResponseStatusCode,
-                    response: x.Response,
-                    hint: Hint.Response)))
-            .ToArray();
+                    componentId: schema.Key,
+                    hint: Hint.Component));
+            }
+        }
+
+        // Collect filtered operations once to avoid repeated path/extension checks
+        var paths = openApiDocument.Paths;
+        if (paths == null)
+        {
+            return result;
+        }
+
+        var operations = new List<(string OperationPath, System.Net.Http.HttpMethod OperationType, OpenApiOperation Operation)>();
+        foreach (var path in paths)
+        {
+            foreach (var op in path.Value.Operations ?? new Dictionary<System.Net.Http.HttpMethod, OpenApiOperation>())
+            {
+                if (settings.UseExtensionNaming &&
+                    (OpenApiExtensions.GetExtensionBooleanValue(op.Value.Extensions, "x-fern-ignore") ||
+                     OpenApiExtensions.GetExtensionBooleanValue(op.Value.Extensions, "x-hidden")))
+                {
+                    continue;
+                }
+                operations.Add((path.Key, op.Key, op.Value));
+            }
+        }
+
+        // Process in same order as original: all request bodies, then all parameters,
+        // then all parameter content, then all responses — preserving schema ordering
+        // that name collision resolution depends on.
+
+        // Request bodies
+        foreach (var (operationPath, operationType, operation) in operations)
+        {
+            if (operation.RequestBody == null) continue;
+            foreach (var content in operation.RequestBody.Content ?? new Dictionary<string, IOpenApiMediaType>())
+            {
+                if (content.Value.Schema != null)
+                {
+                    result.AddRange(SchemaContext.FromSchema(
+                        schema: content.Value.Schema,
+                        settings: settings,
+                        operationPath: operationPath,
+                        operationType: operationType,
+                        operation: operation,
+                        contentType: content.Key,
+                        mediaType: content.Value,
+                        hint: Hint.Request));
+                }
+            }
+        }
+
+        // Parameters (schema)
+        foreach (var (operationPath, operationType, operation) in operations)
+        {
+            foreach (var param in operation.Parameters ?? [])
+            {
+                if (param.Schema != null)
+                {
+                    result.AddRange(SchemaContext.FromSchema(
+                        schema: param.Schema,
+                        settings: settings,
+                        operationPath: operationPath,
+                        operationType: operationType,
+                        operation: operation,
+                        contentType: null,
+                        mediaType: null,
+                        parameter: param,
+                        hint: Hint.Parameter));
+                }
+            }
+        }
+
+        // Parameters (content)
+        foreach (var (operationPath, operationType, operation) in operations)
+        {
+            foreach (var param in operation.Parameters ?? [])
+            {
+                foreach (var content in param.Content ?? new Dictionary<string, IOpenApiMediaType>())
+                {
+                    if (content.Value.Schema != null)
+                    {
+                        result.AddRange(SchemaContext.FromSchema(
+                            schema: content.Value.Schema,
+                            settings: settings,
+                            operationPath: operationPath,
+                            operationType: operationType,
+                            operation: operation,
+                            contentType: content.Key,
+                            mediaType: content.Value,
+                            parameter: param,
+                            hint: Hint.Parameter));
+                    }
+                }
+            }
+        }
+
+        // Responses
+        foreach (var (operationPath, operationType, operation) in operations)
+        {
+            foreach (var response in operation.Responses ?? new Dictionary<string, IOpenApiResponse>())
+            {
+                foreach (var content in response.Value.Content ?? new Dictionary<string, IOpenApiMediaType>())
+                {
+                    if (content.Value.Schema != null)
+                    {
+                        result.AddRange(SchemaContext.FromSchema(
+                            schema: content.Value.Schema,
+                            settings: settings,
+                            operationPath: operationPath,
+                            operationType: operationType,
+                            operation: operation,
+                            contentType: content.Key,
+                            mediaType: content.Value,
+                            responseStatusCode: response.Key,
+                            response: response.Value,
+                            hint: Hint.Response));
+                    }
+                }
+            }
+        }
+
+        return result;
     }
     
     public static IReadOnlyList<OperationContext> GetOperations(

@@ -24,14 +24,23 @@ public record struct AnyOfData(
     public static AnyOfData FromSchemaContext(SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
-        
-        var children = context.Children
-            .Where(x => x.Hint == (context.IsAnyOf
-                ? Hint.AnyOf
-                : context.IsOneOf
-                    ? Hint.OneOf
-                    : Hint.AllOf))
-            .ToList();
+
+        var targetHint = context.IsAnyOf
+            ? Hint.AnyOf
+            : context.IsOneOf
+                ? Hint.OneOf
+                : Hint.AllOf;
+
+        // Collect matching children without LINQ
+        var children = new List<SchemaContext>();
+        for (var i = 0; i < context.Children.Count; i++)
+        {
+            if (context.Children[i].Hint == targetHint)
+            {
+                children.Add(context.Children[i]);
+            }
+        }
+
         var className = context.Id.ToClassName();
         TypeData? discriminatorType = null;
         string? discriminatorPropertyName = null;
@@ -39,7 +48,14 @@ public record struct AnyOfData(
         if (context.Schema.Discriminator != null &&
             (context.Schema.Discriminator.Mapping?.Count ?? 0) != 0)
         {
-            discriminatorType = context.Children.FirstOrDefault(x => x.Hint == Hint.Discriminator)?.TypeData;
+            for (var i = 0; i < context.Children.Count; i++)
+            {
+                if (context.Children[i].Hint == Hint.Discriminator)
+                {
+                    discriminatorType = context.Children[i].TypeData;
+                    break;
+                }
+            }
             discriminatorPropertyName = (context.Schema.Discriminator.PropertyName ?? string.Empty).ToPropertyName()
                 .ToCSharpName(context.Settings, context.Parent);
         }
@@ -50,17 +66,16 @@ public record struct AnyOfData(
                 ? context.Schema.OneOf?.Count ?? 0
                 : context.Schema.AllOf?.Count ?? 0;
         var discriminatorPropName = context.Schema.Discriminator?.PropertyName ?? string.Empty;
-        var properties = context.IsNamedAnyOfLike
-            ? children.Select((x, i) =>
+        EquatableArray<PropertyData> properties;
+        if (context.IsNamedAnyOfLike)
+        {
+            var builder = ImmutableArray.CreateBuilder<PropertyData>(children.Count);
+            for (var i = 0; i < children.Count; i++)
             {
+                var x = children[i];
                 // Compute discriminator value from mapping, const, or single-enum
                 var discriminatorValue = ComputeDiscriminatorValue(context, x, discriminatorPropName);
 
-                // Fallback chain for property name:
-                // 1. Discriminator const/enum value
-                // 2. Schema title (if not same as enclosing type)
-                // 3. Smart name (existing logic)
-                // 4. Value{i+1} (inside SmartNamedAnyOfNames.ComputePropertyName fallback)
                 var titleName = !string.IsNullOrWhiteSpace(x.Schema.Title)
                     ? x.Schema.Title!.ToClassName()
                     : null;
@@ -71,30 +86,44 @@ public record struct AnyOfData(
                         : SmartNamedAnyOfNames.ComputePropertyName(children, className, i);
 
                 var resolvedSchema = x.Schema.ResolveIfRequired();
-                var jsonPropertyNames = resolvedSchema.Properties != null
-                    ? resolvedSchema.Properties.Keys.ToImmutableArray()
-                    : ImmutableArray<string>.Empty;
+                var jsonPropertyNames = ImmutableArray<string>.Empty;
+                if (resolvedSchema.Properties is { Count: > 0 } props)
+                {
+                    var jpnBuilder = ImmutableArray.CreateBuilder<string>(props.Count);
+                    foreach (var key in props.Keys)
+                    {
+                        jpnBuilder.Add(key);
+                    }
+                    jsonPropertyNames = jpnBuilder.MoveToImmutable();
+                }
 
-                return PropertyData.Default with
+                builder.Add(PropertyData.Default with
                 {
                     Type = x.TypeData,
                     Name = name,
                     Summary = x.Schema.GetSummary(),
                     DiscriminatorValue = discriminatorValue,
                     JsonPropertyNames = jsonPropertyNames.AsEquatableArray(),
-                };
-            }).ToImmutableArray().AsEquatableArray()
-            : Enumerable
-                .Range(1, count)
-                .Select(i => PropertyData.Default with
+                });
+            }
+            properties = builder.MoveToImmutable().AsEquatableArray();
+        }
+        else
+        {
+            var builder = ImmutableArray.CreateBuilder<PropertyData>(count);
+            for (var i = 1; i <= count; i++)
+            {
+                builder.Add(PropertyData.Default with
                 {
                     Name = $"Value{i}",
                     Type = TypeData.Default with
                     {
                         CSharpTypeRaw = $"T{i}",
                     },
-                })
-                .ToImmutableArray().AsEquatableArray();
+                });
+            }
+            properties = builder.MoveToImmutable().AsEquatableArray();
+        }
 
         // Deduplicate property names
         if (context.IsNamedAnyOfLike && !properties.IsEmpty)
@@ -183,39 +212,51 @@ public record struct AnyOfData(
     private static EquatableArray<PropertyData> DeduplicatePropertyNames(
         EquatableArray<PropertyData> properties)
     {
-        var names = properties.Select(x => x.Name).ToList();
-        var duplicates = names
-            .Select((name, i) => (name, i))
-            .GroupBy(x => x.name, StringComparer.Ordinal)
-            .Where(g => g.Count() > 1);
-
-        foreach (var group in duplicates)
-        {
-            var suffix = 1;
-            foreach (var (_, i) in group)
-            {
-                names[i] = $"{names[i]}{suffix++}";
-            }
-        }
-
-        var hasChanges = false;
+        // Build name list and detect duplicates in a single pass
+        var names = new string[properties.Length];
+        var nameCounts = new Dictionary<string, int>(StringComparer.Ordinal);
         for (var i = 0; i < properties.Length; i++)
         {
-            if (properties[i].Name != names[i])
+            names[i] = properties[i].Name;
+            nameCounts.TryGetValue(names[i], out var c);
+            nameCounts[names[i]] = c + 1;
+        }
+
+        // Only process if there are actual duplicates
+        var hasDuplicates = false;
+        foreach (var kvp in nameCounts)
+        {
+            if (kvp.Value > 1)
             {
-                hasChanges = true;
+                hasDuplicates = true;
                 break;
             }
         }
-
-        if (!hasChanges)
+        if (!hasDuplicates)
         {
             return properties;
         }
 
-        return properties
-            .Select((p, i) => p with { Name = names[i] })
-            .ToImmutableArray()
-            .AsEquatableArray();
+        // Append suffixes to duplicate names
+        var suffixes = new Dictionary<string, int>(StringComparer.Ordinal);
+        for (var i = 0; i < names.Length; i++)
+        {
+            if (nameCounts[names[i]] > 1)
+            {
+                suffixes.TryGetValue(names[i], out var suffix);
+                suffix++;
+                suffixes[names[i]] = suffix;
+                names[i] = $"{names[i]}{suffix}";
+            }
+        }
+
+        var builder = ImmutableArray.CreateBuilder<PropertyData>(properties.Length);
+        for (var i = 0; i < properties.Length; i++)
+        {
+            builder.Add(properties[i].Name != names[i]
+                ? properties[i] with { Name = names[i] }
+                : properties[i]);
+        }
+        return builder.MoveToImmutable().AsEquatableArray();
     }
 }
