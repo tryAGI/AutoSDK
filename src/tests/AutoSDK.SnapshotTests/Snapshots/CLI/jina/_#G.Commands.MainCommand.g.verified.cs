@@ -7,11 +7,11 @@ namespace G
     internal sealed class MainCommand : global::System.CommandLine.RootCommand
     {
         public MainCommand(
-            EmbeddingGroupCommand command0,
-            BulkEmbeddingGroupCommand command1,
-            RerankGroupCommand command2,
-            ClassificationGroupCommand command3,
-            MultiVectorGroupCommand command4)
+            BulkEmbeddingGroupCommand command0,
+            ClassificationGroupCommand command1,
+            EmbeddingGroupCommand command2,
+            MultiVectorGroupCommand command3,
+            RerankGroupCommand command4)
             : base(
                 description: "CLI tool")
         {

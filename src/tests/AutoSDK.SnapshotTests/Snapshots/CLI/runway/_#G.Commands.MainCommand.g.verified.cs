@@ -7,10 +7,10 @@ namespace G
     internal sealed class MainCommand : global::System.CommandLine.RootCommand
     {
         public MainCommand(
-            StartGeneratingGroupCommand command0,
-            TaskManagementGroupCommand command1,
-            UploadGroupCommand command2,
-            OrganizationGroupCommand command3)
+            OrganizationGroupCommand command0,
+            StartGeneratingGroupCommand command1,
+            TaskManagementGroupCommand command2,
+            UploadGroupCommand command3)
             : base(
                 description: "CLI tool")
         {

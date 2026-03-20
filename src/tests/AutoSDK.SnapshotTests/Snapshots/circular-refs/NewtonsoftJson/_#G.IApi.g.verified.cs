@@ -44,7 +44,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TreesClient Trees { get; }
+        public ChainClient Chain { get; }
 
         /// <summary>
         /// 
@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ChainClient Chain { get; }
+        public TreesClient Trees { get; }
 
     }
 }

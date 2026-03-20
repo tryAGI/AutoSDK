@@ -52,6 +52,21 @@ namespace G
         public AudioClient Audio { get; }
 
         /// <summary>
+        /// List user actions and configuration changes within this organization.
+        /// </summary>
+        public AuditLogsClient AuditLogs { get; }
+
+        /// <summary>
+        /// Create large batches of API requests to run asynchronously.
+        /// </summary>
+        public BatchClient Batch { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CertificatesClient Certificates { get; }
+
+        /// <summary>
         /// Given a list of messages comprising a conversation, the model will return a response.
         /// </summary>
         public ChatClient Chat { get; }
@@ -72,29 +87,24 @@ namespace G
         public EvalsClient Evals { get; }
 
         /// <summary>
-        /// Manage fine-tuning jobs to tailor a model to your specific training data.
-        /// </summary>
-        public FineTuningClient FineTuning { get; }
-
-        /// <summary>
-        /// Create large batches of API requests to run asynchronously.
-        /// </summary>
-        public BatchClient Batch { get; }
-
-        /// <summary>
         /// Files are used to upload documents that can be used with features like Assistants and Fine-tuning.
         /// </summary>
         public FilesClient Files { get; }
 
         /// <summary>
-        /// Use Uploads to upload large files in multiple parts.
+        /// Manage fine-tuning jobs to tailor a model to your specific training data.
         /// </summary>
-        public UploadsClient Uploads { get; }
+        public FineTuningClient FineTuning { get; }
 
         /// <summary>
         /// Given a prompt and/or an input image, the model will generate a new image.
         /// </summary>
         public ImagesClient Images { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InvitesClient Invites { get; }
 
         /// <summary>
         /// List and describe the various models available in the API.
@@ -107,34 +117,9 @@ namespace G
         public ModerationsClient Moderations { get; }
 
         /// <summary>
-        /// List user actions and configuration changes within this organization.
-        /// </summary>
-        public AuditLogsClient AuditLogs { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public CertificatesClient Certificates { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public UsageClient Usage { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public InvitesClient Invites { get; }
-
-        /// <summary>
         /// 
         /// </summary>
         public ProjectsClient Projects { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public UsersClient Users { get; }
 
         /// <summary>
         /// 
@@ -145,6 +130,21 @@ namespace G
         /// 
         /// </summary>
         public ResponsesClient Responses { get; }
+
+        /// <summary>
+        /// Use Uploads to upload large files in multiple parts.
+        /// </summary>
+        public UploadsClient Uploads { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public UsageClient Usage { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public UsersClient Users { get; }
 
         /// <summary>
         /// 

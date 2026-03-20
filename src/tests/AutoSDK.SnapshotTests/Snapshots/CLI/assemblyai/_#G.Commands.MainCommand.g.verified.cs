@@ -8,9 +8,9 @@ namespace G
     {
         public MainCommand(
             FileGroupCommand command0,
-            TranscriptGroupCommand command1,
+            LeMUR2GroupCommand command1,
             RealtimeGroupCommand command2,
-            LeMUR2GroupCommand command3)
+            TranscriptGroupCommand command3)
             : base(
                 description: "CLI tool")
         {

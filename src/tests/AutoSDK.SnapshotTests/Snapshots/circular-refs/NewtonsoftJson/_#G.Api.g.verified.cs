@@ -41,7 +41,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TreesClient Trees => new TreesClient(HttpClient, authorizations: Authorizations)
+        public ChainClient Chain => new ChainClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -59,7 +59,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ChainClient Chain => new ChainClient(HttpClient, authorizations: Authorizations)
+        public TreesClient Trees => new TreesClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

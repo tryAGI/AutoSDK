@@ -51,27 +51,9 @@ namespace G
 
 
         /// <summary>
-        /// General API.
+        /// Abuse Contact API.
         /// </summary>
-        public GeneralClient General => new GeneralClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// Single info API.
-        /// </summary>
-        public SingleClient Single => new SingleClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// Privacy Detection API.
-        /// </summary>
-        public PrivacyDetectionClient PrivacyDetection => new PrivacyDetectionClient(HttpClient, authorizations: Authorizations)
+        public AbuseClient Abuse => new AbuseClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -87,15 +69,6 @@ namespace G
         };
 
         /// <summary>
-        /// IP Ranges API.
-        /// </summary>
-        public RangesClient Ranges => new RangesClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
         /// Hosted Domains API.
         /// </summary>
         public DomainsClient Domains => new DomainsClient(HttpClient, authorizations: Authorizations)
@@ -105,9 +78,36 @@ namespace G
         };
 
         /// <summary>
-        /// Abuse Contact API.
+        /// General API.
         /// </summary>
-        public AbuseClient Abuse => new AbuseClient(HttpClient, authorizations: Authorizations)
+        public GeneralClient General => new GeneralClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Privacy Detection API.
+        /// </summary>
+        public PrivacyDetectionClient PrivacyDetection => new PrivacyDetectionClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// IP Ranges API.
+        /// </summary>
+        public RangesClient Ranges => new RangesClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Single info API.
+        /// </summary>
+        public SingleClient Single => new SingleClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

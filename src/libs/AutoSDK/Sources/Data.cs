@@ -308,6 +308,7 @@ public static class Data
             methods.Select(m => m.Tag.SafeName));
         resolvedIncludedTags = resolvedIncludedTags
             .Where(tag => tagsWithMethods.Contains(tag.SafeName))
+            .OrderBy(tag => tag.SafeName, StringComparer.Ordinal)
             .ToArray();
         Client[] clients = settings.GenerateSdk || settings.GenerateConstructors ? [new Client(
                 Id: "MainConstructor",

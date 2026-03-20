@@ -65,18 +65,18 @@ namespace G
 
 
         /// <summary>
-        /// Given a prompt, the model will generate a completion.
+        /// Given a list of messages comprising a conversation, the model will return a response.
         /// </summary>
-        public CompletionsClient Completions => new CompletionsClient(HttpClient, authorizations: Authorizations)
+        public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Given a list of messages comprising a conversation, the model will return a response.
+        /// Given a prompt, the model will generate a completion.
         /// </summary>
-        public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations)
+        public CompletionsClient Completions => new CompletionsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

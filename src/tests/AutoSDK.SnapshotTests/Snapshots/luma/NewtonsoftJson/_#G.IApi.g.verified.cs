@@ -44,7 +44,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PingClient Ping { get; }
+        public CreditsClient Credits { get; }
 
         /// <summary>
         /// 
@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CreditsClient Credits { get; }
+        public PingClient Ping { get; }
 
     }
 }

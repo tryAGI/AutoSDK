@@ -105,7 +105,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public JambaCompleteClient JambaComplete => new JambaCompleteClient(HttpClient, authorizations: Authorizations)
+        public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -132,25 +132,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ParaphraseClient Paraphrase => new ParaphraseClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public SummarizeClient Summarize => new SummarizeClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public SegmentationClient Segmentation => new SegmentationClient(HttpClient, authorizations: Authorizations)
+        public JambaCompleteClient JambaComplete => new JambaCompleteClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -168,6 +150,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public ParaphraseClient Paraphrase => new ParaphraseClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public RagEngineClient RagEngine => new RagEngineClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
@@ -177,7 +168,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations)
+        public SegmentationClient Segmentation => new SegmentationClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SummarizeClient Summarize => new SummarizeClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

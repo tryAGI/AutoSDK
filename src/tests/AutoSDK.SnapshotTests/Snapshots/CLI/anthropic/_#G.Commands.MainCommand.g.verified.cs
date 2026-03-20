@@ -7,9 +7,9 @@ namespace G
     internal sealed class MainCommand : global::System.CommandLine.RootCommand
     {
         public MainCommand(
-            MessageGroupCommand command0,
-            TextCompletionGroupCommand command1,
-            MessageBatcheGroupCommand command2)
+            MessageBatcheGroupCommand command0,
+            MessageGroupCommand command1,
+            TextCompletionGroupCommand command2)
             : base(
                 description: "CLI tool")
         {

@@ -43,17 +43,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public MessageBatchesClient MessageBatches { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public MessagesClient Messages { get; }
 
         /// <summary>
         /// 
         /// </summary>
         public TextCompletionsClient TextCompletions { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public MessageBatchesClient MessageBatches { get; }
 
     }
 }

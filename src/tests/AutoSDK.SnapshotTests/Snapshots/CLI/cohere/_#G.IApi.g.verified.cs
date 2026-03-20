@@ -46,12 +46,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public V2Client V2 { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public EmbedJobs2Client EmbedJobs2 { get; }
+        public Connectors2Client Connectors2 { get; }
 
         /// <summary>
         /// 
@@ -61,7 +56,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public Connectors2Client Connectors2 { get; }
+        public EmbedJobs2Client EmbedJobs2 { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Finetuning2Client Finetuning2 { get; }
 
         /// <summary>
         /// 
@@ -71,7 +71,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public Finetuning2Client Finetuning2 { get; }
+        public V2Client V2 { get; }
 
     }
 }

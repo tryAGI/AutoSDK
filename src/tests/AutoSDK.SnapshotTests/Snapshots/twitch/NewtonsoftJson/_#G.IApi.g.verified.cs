@@ -67,12 +67,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ChannelsClient Channels { get; }
+        public CCLsClient CCLs { get; }
 
         /// <summary>
         /// 
         /// </summary>
         public ChannelPointsClient ChannelPoints { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChannelsClient Channels { get; }
 
         /// <summary>
         /// 
@@ -97,22 +102,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CCLsClient CCLs { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public EntitlementsClient Entitlements { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public ExtensionsClient Extensions { get; }
+        public EventSubClient EventSub { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public EventSubClient EventSub { get; }
+        public ExtensionsClient Extensions { get; }
 
         /// <summary>
         /// 

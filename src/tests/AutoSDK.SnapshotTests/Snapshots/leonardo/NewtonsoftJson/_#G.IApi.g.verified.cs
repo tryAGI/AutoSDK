@@ -64,12 +64,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public MotionClient Motion { get; }
+        public ModelsClient Models { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public ModelsClient Models { get; }
+        public MotionClient Motion { get; }
 
         /// <summary>
         /// 

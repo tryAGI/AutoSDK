@@ -42,39 +42,9 @@ namespace G
 
 
         /// <summary>
-        /// Transcribe your audio files with detailed speaker annotations and precise timestamps using our cutting-edge model.
-        /// </summary>
-        public SpeechToTextClient SpeechToText { get; }
-
-        /// <summary>
-        /// Access the different models of the platform.
-        /// </summary>
-        public ModelsClient Models { get; }
-
-        /// <summary>
-        /// Access to voices created either by you or ElevenLabs.
-        /// </summary>
-        public VoicesClient Voices { get; }
-
-        /// <summary>
-        /// Access to your samples. A sample is any audio file you attached to a voice. A voice can have one or more samples.
-        /// </summary>
-        public SamplesClient Samples { get; }
-
-        /// <summary>
-        /// Access to workspace related endpoints.
-        /// </summary>
-        public WorkspaceClient Workspace { get; }
-
-        /// <summary>
         /// 
         /// </summary>
-        public HistoryClient History { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public TextToSoundEffectsClient TextToSoundEffects { get; }
+        public AgentsPlatformClient AgentsPlatform { get; }
 
         /// <summary>
         /// 
@@ -84,7 +54,92 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TextToSpeech2Client TextToSpeech2 { get; }
+        public AudioNative2Client AudioNative2 { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ConversationalAiClient ConversationalAi { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ConversationalAi2Client ConversationalAi2 { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DubbingClient Dubbing { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ForcedAlignment2Client ForcedAlignment2 { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public HistoryClient History { get; }
+
+        /// <summary>
+        /// Access the different models of the platform.
+        /// </summary>
+        public ModelsClient Models { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public MusicClient Music { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public MusicGenerationClient MusicGeneration { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public PronunciationDictionariesClient PronunciationDictionaries { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public PronunciationDictionaryClient PronunciationDictionary { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public PvcVoicesClient PvcVoices { get; }
+
+        /// <summary>
+        /// Access to your samples. A sample is any audio file you attached to a voice. A voice can have one or more samples.
+        /// </summary>
+        public SamplesClient Samples { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SingleUseTokenClient SingleUseToken { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SpeechToSpeech2Client SpeechToSpeech2 { get; }
+
+        /// <summary>
+        /// Transcribe your audio files with detailed speaker annotations and precise timestamps using our cutting-edge model.
+        /// </summary>
+        public SpeechToTextClient SpeechToText { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SpeechToText2Client SpeechToText2 { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public StudioClient Studio { get; }
 
         /// <summary>
         /// 
@@ -94,7 +149,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SpeechToSpeech2Client SpeechToSpeech2 { get; }
+        public TextToSoundEffectsClient TextToSoundEffects { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TextToSpeech2Client TextToSpeech2 { get; }
 
         /// <summary>
         /// 
@@ -109,37 +169,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public UserClient User { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public StudioClient Studio { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public DubbingClient Dubbing { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AudioNative2Client AudioNative2 { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public UsageClient Usage { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public PronunciationDictionaryClient PronunciationDictionary { get; }
+        public UserClient User { get; }
 
         /// <summary>
-        /// 
+        /// Access to voices created either by you or ElevenLabs.
         /// </summary>
-        public PronunciationDictionariesClient PronunciationDictionaries { get; }
+        public VoicesClient Voices { get; }
 
         /// <summary>
         /// 
@@ -147,49 +187,9 @@ namespace G
         public WebhooksClient Webhooks { get; }
 
         /// <summary>
-        /// 
+        /// Access to workspace related endpoints.
         /// </summary>
-        public SpeechToText2Client SpeechToText2 { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public SingleUseTokenClient SingleUseToken { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ForcedAlignment2Client ForcedAlignment2 { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AgentsPlatformClient AgentsPlatform { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ConversationalAi2Client ConversationalAi2 { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ConversationalAiClient ConversationalAi { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public MusicGenerationClient MusicGeneration { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public MusicClient Music { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public PvcVoicesClient PvcVoices { get; }
+        public WorkspaceClient Workspace { get; }
 
     }
 }

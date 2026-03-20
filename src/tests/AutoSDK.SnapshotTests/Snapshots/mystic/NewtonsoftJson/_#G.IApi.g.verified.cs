@@ -43,52 +43,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PipelinesClient Pipelines { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public UsersClient Users { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public TokensClient Tokens { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RunsClient Runs { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public BillingClient Billing { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public PointersClient Pointers { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public PipelineFamiliesClient PipelineFamilies { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public FilesClient Files { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public MetricsClient Metrics { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public LogsClient Logs { get; }
 
         /// <summary>
         /// 
@@ -103,12 +58,57 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public FilesClient Files { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public LogsClient Logs { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public MetricsClient Metrics { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public PipelineFamiliesClient PipelineFamilies { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public PipelinesClient Pipelines { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public PointersClient Pointers { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ResourcesClient Resources { get; }
 
         /// <summary>
         /// 
         /// </summary>
+        public RunsClient Runs { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ScalingConfigurationsClient ScalingConfigurations { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TokensClient Tokens { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public UsersClient Users { get; }
 
     }
 }

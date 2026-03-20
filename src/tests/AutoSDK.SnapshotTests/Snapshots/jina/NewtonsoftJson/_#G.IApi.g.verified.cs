@@ -44,17 +44,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public EmbeddingsClient Embeddings { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public BulkEmbeddingsClient BulkEmbeddings { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RerankClient Rerank { get; }
 
         /// <summary>
         /// 
@@ -64,7 +54,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public EmbeddingsClient Embeddings { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public MultiVectorClient MultiVector { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RerankClient Rerank { get; }
 
     }
 }

@@ -7,9 +7,9 @@ namespace G
     internal sealed class MainCommand : global::System.CommandLine.RootCommand
     {
         public MainCommand(
-            TreeGroupCommand command0,
+            ChainGroupCommand command0,
             SchemaGroupCommand command1,
-            ChainGroupCommand command2)
+            TreeGroupCommand command2)
             : base(
                 description: "CLI tool")
         {

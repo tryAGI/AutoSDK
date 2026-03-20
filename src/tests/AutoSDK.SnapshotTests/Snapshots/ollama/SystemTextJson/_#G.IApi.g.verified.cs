@@ -42,14 +42,14 @@ namespace G
 
 
         /// <summary>
-        /// Given a prompt, the model will generate a completion.
-        /// </summary>
-        public CompletionsClient Completions { get; }
-
-        /// <summary>
         /// Given a list of messages comprising a conversation, the model will return a response.
         /// </summary>
         public ChatClient Chat { get; }
+
+        /// <summary>
+        /// Given a prompt, the model will generate a completion.
+        /// </summary>
+        public CompletionsClient Completions { get; }
 
         /// <summary>
         /// Get a vector representation of a given input.

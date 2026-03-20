@@ -42,19 +42,9 @@ namespace G
 
 
         /// <summary>
-        /// General API.
+        /// Abuse Contact API.
         /// </summary>
-        public GeneralClient General { get; }
-
-        /// <summary>
-        /// Single info API.
-        /// </summary>
-        public SingleClient Single { get; }
-
-        /// <summary>
-        /// Privacy Detection API.
-        /// </summary>
-        public PrivacyDetectionClient PrivacyDetection { get; }
+        public AbuseClient Abuse { get; }
 
         /// <summary>
         /// ASN API.
@@ -62,19 +52,29 @@ namespace G
         public AsnClient Asn { get; }
 
         /// <summary>
-        /// IP Ranges API.
-        /// </summary>
-        public RangesClient Ranges { get; }
-
-        /// <summary>
         /// Hosted Domains API.
         /// </summary>
         public DomainsClient Domains { get; }
 
         /// <summary>
-        /// Abuse Contact API.
+        /// General API.
         /// </summary>
-        public AbuseClient Abuse { get; }
+        public GeneralClient General { get; }
+
+        /// <summary>
+        /// Privacy Detection API.
+        /// </summary>
+        public PrivacyDetectionClient PrivacyDetection { get; }
+
+        /// <summary>
+        /// IP Ranges API.
+        /// </summary>
+        public RangesClient Ranges { get; }
+
+        /// <summary>
+        /// Single info API.
+        /// </summary>
+        public SingleClient Single { get; }
 
     }
 }

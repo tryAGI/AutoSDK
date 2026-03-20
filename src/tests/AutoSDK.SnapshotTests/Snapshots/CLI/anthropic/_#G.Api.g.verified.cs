@@ -528,6 +528,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public MessageBatchesClient MessageBatches => new MessageBatchesClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public MessagesClient Messages => new MessagesClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
@@ -538,15 +547,6 @@ namespace G
         /// 
         /// </summary>
         public TextCompletionsClient TextCompletions => new TextCompletionsClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public MessageBatchesClient MessageBatches => new MessageBatchesClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

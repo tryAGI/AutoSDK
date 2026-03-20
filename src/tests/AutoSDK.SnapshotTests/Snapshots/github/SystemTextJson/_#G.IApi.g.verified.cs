@@ -67,9 +67,19 @@ namespace G
         public ChecksClient Checks { get; }
 
         /// <summary>
+        /// Interact with GitHub Classroom.
+        /// </summary>
+        public ClassroomClient Classroom { get; }
+
+        /// <summary>
         /// Retrieve code scanning alerts from a repository.
         /// </summary>
         public CodeScanningClient CodeScanning { get; }
+
+        /// <summary>
+        /// Endpoints to manage Code security using the REST API.
+        /// </summary>
+        public CodeSecurityClient CodeSecurity { get; }
 
         /// <summary>
         /// Insight into codes of conduct for your communities.
@@ -77,9 +87,14 @@ namespace G
         public CodesOfConductClient CodesOfConduct { get; }
 
         /// <summary>
-        /// List emojis available to use on GitHub.
+        /// Endpoints to manage Codespaces using the REST API.
         /// </summary>
-        public EmojisClient Emojis { get; }
+        public CodespacesClient Codespaces { get; }
+
+        /// <summary>
+        /// Endpoints to manage Copilot using the REST API.
+        /// </summary>
+        public CopilotClient Copilot { get; }
 
         /// <summary>
         /// Endpoints to manage Dependabot.
@@ -90,6 +105,11 @@ namespace G
         /// Endpoints to access Dependency Graph features.
         /// </summary>
         public DependencyGraphClient DependencyGraph { get; }
+
+        /// <summary>
+        /// List emojis available to use on GitHub.
+        /// </summary>
+        public EmojisClient Emojis { get; }
 
         /// <summary>
         /// View, modify your gists.
@@ -105,6 +125,11 @@ namespace G
         /// View gitignore templates
         /// </summary>
         public GitignoreClient Gitignore { get; }
+
+        /// <summary>
+        /// Owner or admin management of users interactions.
+        /// </summary>
+        public InteractionsClient Interactions { get; }
 
         /// <summary>
         /// Interact with GitHub Issues.
@@ -182,6 +207,11 @@ namespace G
         public SecretScanningClient SecretScanning { get; }
 
         /// <summary>
+        /// Manage security advisories.
+        /// </summary>
+        public SecurityAdvisoriesClient SecurityAdvisories { get; }
+
+        /// <summary>
         /// Interact with GitHub Teams.
         /// </summary>
         public TeamsClient Teams { get; }
@@ -190,36 +220,6 @@ namespace G
         /// Interact with and view information about users and also current user.
         /// </summary>
         public UsersClient Users { get; }
-
-        /// <summary>
-        /// Endpoints to manage Codespaces using the REST API.
-        /// </summary>
-        public CodespacesClient Codespaces { get; }
-
-        /// <summary>
-        /// Endpoints to manage Copilot using the REST API.
-        /// </summary>
-        public CopilotClient Copilot { get; }
-
-        /// <summary>
-        /// Manage security advisories.
-        /// </summary>
-        public SecurityAdvisoriesClient SecurityAdvisories { get; }
-
-        /// <summary>
-        /// Owner or admin management of users interactions.
-        /// </summary>
-        public InteractionsClient Interactions { get; }
-
-        /// <summary>
-        /// Interact with GitHub Classroom.
-        /// </summary>
-        public ClassroomClient Classroom { get; }
-
-        /// <summary>
-        /// Endpoints to manage Code security using the REST API.
-        /// </summary>
-        public CodeSecurityClient CodeSecurity { get; }
 
     }
 }

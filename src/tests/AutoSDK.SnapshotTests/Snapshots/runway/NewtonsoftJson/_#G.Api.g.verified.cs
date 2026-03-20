@@ -39,6 +39,15 @@ namespace G
 
 
         /// <summary>
+        /// 
+        /// </summary>
+        public OrganizationClient Organization => new OrganizationClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
         /// These endpoints all kick off tasks to create generations.
         /// </summary>
         public StartGeneratingClient StartGenerating => new StartGeneratingClient(HttpClient, authorizations: Authorizations)
@@ -60,15 +69,6 @@ namespace G
         /// Endpoints for uploading media files.
         /// </summary>
         public UploadsClient Uploads => new UploadsClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public OrganizationClient Organization => new OrganizationClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

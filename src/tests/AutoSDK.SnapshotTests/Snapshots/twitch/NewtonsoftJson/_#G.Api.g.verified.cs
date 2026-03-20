@@ -76,7 +76,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ChannelsClient Channels => new ChannelsClient(HttpClient, authorizations: Authorizations)
+        public CCLsClient CCLs => new CCLsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -86,6 +86,15 @@ namespace G
         /// 
         /// </summary>
         public ChannelPointsClient ChannelPoints => new ChannelPointsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChannelsClient Channels => new ChannelsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -130,15 +139,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CCLsClient CCLs => new CCLsClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
         public EntitlementsClient Entitlements => new EntitlementsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
@@ -148,7 +148,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ExtensionsClient Extensions => new ExtensionsClient(HttpClient, authorizations: Authorizations)
+        public EventSubClient EventSub => new EventSubClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -157,7 +157,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public EventSubClient EventSub => new EventSubClient(HttpClient, authorizations: Authorizations)
+        public ExtensionsClient Extensions => new ExtensionsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

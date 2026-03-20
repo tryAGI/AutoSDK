@@ -50,7 +50,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TranscriptsClient Transcripts => new TranscriptsClient(HttpClient, authorizations: Authorizations)
+        public LeMUR2Client LeMUR2 => new LeMUR2Client(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -68,7 +68,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public LeMUR2Client LeMUR2 => new LeMUR2Client(HttpClient, authorizations: Authorizations)
+        public TranscriptsClient Transcripts => new TranscriptsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

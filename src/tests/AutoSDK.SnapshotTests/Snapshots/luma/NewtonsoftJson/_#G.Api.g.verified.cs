@@ -41,7 +41,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PingClient Ping => new PingClient(HttpClient, authorizations: Authorizations)
+        public CreditsClient Credits => new CreditsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -59,7 +59,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CreditsClient Credits => new CreditsClient(HttpClient, authorizations: Authorizations)
+        public PingClient Ping => new PingClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

@@ -7,16 +7,16 @@ namespace G
     internal sealed class MainCommand : global::System.CommandLine.RootCommand
     {
         public MainCommand(
-            ListGroupCommand command0,
+            AssetGroupCommand command0,
             CreateVideoApiGroupCommand command1,
-            TemplateApiGroupCommand command2,
-            VideoTranslateApiGroupCommand command3,
+            ListGroupCommand command2,
+            PersonalizedVideoGroupCommand command3,
             StreamingApiGroupCommand command4,
-            WebhookGroupCommand command5,
-            TalkingPhotoGroupCommand command6,
-            PersonalizedVideoGroupCommand command7,
-            UserGroupCommand command8,
-            AssetGroupCommand command9)
+            TalkingPhotoGroupCommand command5,
+            TemplateApiGroupCommand command6,
+            UserGroupCommand command7,
+            VideoTranslateApiGroupCommand command8,
+            WebhookGroupCommand command9)
             : base(
                 description: "CLI tool")
         {

@@ -46,6 +46,41 @@ namespace G
 
 
         /// <summary>
+        /// 
+        /// </summary>
+        public AgentArtifactsClient AgentArtifacts { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AgentEventsClient AgentEvents { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AgentSchedules2Client AgentSchedules2 { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AgentSessions2Client AgentSessions2 { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Agents2Client Agents2 { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ApiKeys2Client ApiKeys2 { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AppClientsClient AppClients { get; }
+
+        /// <summary>
         /// Authenticate with the API using OAuth 2.0 or API keys.
         /// </summary>
         public AuthenticationClient Authentication { get; }
@@ -58,12 +93,47 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public Upload2Client Upload2 { get; }
+        public Documents2Client Documents2 { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Documents2Client Documents2 { get; }
+        public Encoders2Client Encoders2 { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FactualConsistencyClient FactualConsistency { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public GenerationPresets2Client GenerationPresets2 { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public HallucinationCorrectors2Client HallucinationCorrectors2 { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Instructions2Client Instructions2 { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Jobs2Client Jobs2 { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public LlmClient Llm { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public LlmsClient Llms { get; }
 
         /// <summary>
         /// 
@@ -83,62 +153,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public LlmsClient Llms { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public LlmClient Llm { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public GenerationPresets2Client GenerationPresets2 { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public FactualConsistencyClient FactualConsistency { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Encoders2Client Encoders2 { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public Rerankers2Client Rerankers2 { get; }
 
         /// <summary>
         /// 
         /// </summary>
         public TableExtractors2Client TableExtractors2 { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public HallucinationCorrectors2Client HallucinationCorrectors2 { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Jobs2Client Jobs2 { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Users2Client Users2 { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ApiKeys2Client ApiKeys2 { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AppClientsClient AppClients { get; }
 
         /// <summary>
         /// 
@@ -153,32 +173,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public Instructions2Client Instructions2 { get; }
+        public Upload2Client Upload2 { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Agents2Client Agents2 { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AgentSessions2Client AgentSessions2 { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AgentEventsClient AgentEvents { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AgentArtifactsClient AgentArtifacts { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AgentSchedules2Client AgentSchedules2 { get; }
+        public Users2Client Users2 { get; }
 
     }
 }

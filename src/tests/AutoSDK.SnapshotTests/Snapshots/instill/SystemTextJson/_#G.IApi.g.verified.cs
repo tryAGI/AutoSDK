@@ -42,19 +42,9 @@ namespace G
 
 
         /// <summary>
-        /// Namespaces (e.g. User, Organization) that structure the resource hierarchy.
+        /// Ready-to-use AI applications.
         /// </summary>
-        public NamespaceClient Namespace { get; }
-
-        /// <summary>
-        /// Pipeline orchestration in VDP (Versatile Data Pipeline).
-        /// </summary>
-        public VdpClient Vdp { get; }
-
-        /// <summary>
-        /// AI Model resources for MLOps/LLMOps.
-        /// </summary>
-        public ModelClient Model { get; }
+        public AppClient App { get; }
 
         /// <summary>
         /// Data orchestration for unified unstructured data representation.
@@ -62,19 +52,29 @@ namespace G
         public ArtifactClient Artifact { get; }
 
         /// <summary>
-        /// Ready-to-use AI applications.
-        /// </summary>
-        public AppClient App { get; }
-
-        /// <summary>
         /// Resource usage metrics.
         /// </summary>
         public MetricsClient Metrics { get; }
 
         /// <summary>
+        /// AI Model resources for MLOps/LLMOps.
+        /// </summary>
+        public ModelClient Model { get; }
+
+        /// <summary>
+        /// Namespaces (e.g. User, Organization) that structure the resource hierarchy.
+        /// </summary>
+        public NamespaceClient Namespace { get; }
+
+        /// <summary>
         /// Pricing plans on Instill Cloud.
         /// </summary>
         public SubscriptionClient Subscription { get; }
+
+        /// <summary>
+        /// Pipeline orchestration in VDP (Versatile Data Pipeline).
+        /// </summary>
+        public VdpClient Vdp { get; }
 
     }
 }

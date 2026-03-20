@@ -49,7 +49,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TranscriptsClient Transcripts { get; }
+        public LeMUR2Client LeMUR2 { get; }
 
         /// <summary>
         /// 
@@ -59,7 +59,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public LeMUR2Client LeMUR2 { get; }
+        public TranscriptsClient Transcripts { get; }
 
     }
 }

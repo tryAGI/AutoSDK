@@ -42,24 +42,19 @@ namespace G
 
 
         /// <summary>
-        /// Chat
-        /// </summary>
-        public ChatClient Chat { get; }
-
-        /// <summary>
-        /// FIM
-        /// </summary>
-        public FimClient Fim { get; }
-
-        /// <summary>
         /// Agents
         /// </summary>
         public AgentsClient Agents { get; }
 
         /// <summary>
-        /// Embeddings
+        /// Batch
         /// </summary>
-        public EmbeddingsClient Embeddings { get; }
+        public BatchClient Batch { get; }
+
+        /// <summary>
+        /// Chat
+        /// </summary>
+        public ChatClient Chat { get; }
 
         /// <summary>
         /// Classifiers
@@ -67,9 +62,19 @@ namespace G
         public ClassifiersClient Classifiers { get; }
 
         /// <summary>
+        /// Embeddings
+        /// </summary>
+        public EmbeddingsClient Embeddings { get; }
+
+        /// <summary>
         /// Files
         /// </summary>
         public FilesClient Files { get; }
+
+        /// <summary>
+        /// FIM
+        /// </summary>
+        public FimClient Fim { get; }
 
         /// <summary>
         /// Fine Tuning
@@ -80,11 +85,6 @@ namespace G
         /// Models
         /// </summary>
         public ModelsClient Models { get; }
-
-        /// <summary>
-        /// Batch
-        /// </summary>
-        public BatchClient Batch { get; }
 
         /// <summary>
         /// OCR API

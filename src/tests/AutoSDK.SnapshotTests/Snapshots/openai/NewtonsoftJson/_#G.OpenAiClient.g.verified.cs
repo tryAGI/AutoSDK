@@ -57,6 +57,33 @@ namespace G
         };
 
         /// <summary>
+        /// List user actions and configuration changes within this organization.
+        /// </summary>
+        public AuditLogsClient AuditLogs => new AuditLogsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Create large batches of API requests to run asynchronously.
+        /// </summary>
+        public BatchClient Batch => new BatchClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CertificatesClient Certificates => new CertificatesClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
         /// Given a list of messages comprising a conversation, the model will return a response.
         /// </summary>
         public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations)
@@ -93,24 +120,6 @@ namespace G
         };
 
         /// <summary>
-        /// Manage fine-tuning jobs to tailor a model to your specific training data.
-        /// </summary>
-        public FineTuningClient FineTuning => new FineTuningClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// Create large batches of API requests to run asynchronously.
-        /// </summary>
-        public BatchClient Batch => new BatchClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
         /// Files are used to upload documents that can be used with features like Assistants and Fine-tuning.
         /// </summary>
         public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations)
@@ -120,9 +129,9 @@ namespace G
         };
 
         /// <summary>
-        /// Use Uploads to upload large files in multiple parts.
+        /// Manage fine-tuning jobs to tailor a model to your specific training data.
         /// </summary>
-        public UploadsClient Uploads => new UploadsClient(HttpClient, authorizations: Authorizations)
+        public FineTuningClient FineTuning => new FineTuningClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -132,6 +141,15 @@ namespace G
         /// Given a prompt and/or an input image, the model will generate a new image.
         /// </summary>
         public ImagesClient Images => new ImagesClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InvitesClient Invites => new InvitesClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -156,54 +174,9 @@ namespace G
         };
 
         /// <summary>
-        /// List user actions and configuration changes within this organization.
-        /// </summary>
-        public AuditLogsClient AuditLogs => new AuditLogsClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public CertificatesClient Certificates => new CertificatesClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public UsageClient Usage => new UsageClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public InvitesClient Invites => new InvitesClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
         /// 
         /// </summary>
         public ProjectsClient Projects => new ProjectsClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public UsersClient Users => new UsersClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -222,6 +195,33 @@ namespace G
         /// 
         /// </summary>
         public ResponsesClient Responses => new ResponsesClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Use Uploads to upload large files in multiple parts.
+        /// </summary>
+        public UploadsClient Uploads => new UploadsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public UsageClient Usage => new UsageClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public UsersClient Users => new UsersClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

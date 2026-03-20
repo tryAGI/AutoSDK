@@ -89,6 +89,21 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public FileStorageClient FileStorage { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InformationClient Information { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public LoginClient Login { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public MemoClient Memo { get; }
 
         /// <summary>
@@ -130,21 +145,6 @@ namespace G
         /// 
         /// </summary>
         public UsersClient Users { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public FileStorageClient FileStorage { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public LoginClient Login { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public InformationClient Information { get; }
 
     }
 }

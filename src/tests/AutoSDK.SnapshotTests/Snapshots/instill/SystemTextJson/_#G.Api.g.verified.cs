@@ -169,27 +169,9 @@ namespace G
 
 
         /// <summary>
-        /// Namespaces (e.g. User, Organization) that structure the resource hierarchy.
+        /// Ready-to-use AI applications.
         /// </summary>
-        public NamespaceClient Namespace => new NamespaceClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// Pipeline orchestration in VDP (Versatile Data Pipeline).
-        /// </summary>
-        public VdpClient Vdp => new VdpClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// AI Model resources for MLOps/LLMOps.
-        /// </summary>
-        public ModelClient Model => new ModelClient(HttpClient, authorizations: Authorizations)
+        public AppClient App => new AppClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -205,15 +187,6 @@ namespace G
         };
 
         /// <summary>
-        /// Ready-to-use AI applications.
-        /// </summary>
-        public AppClient App => new AppClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
         /// Resource usage metrics.
         /// </summary>
         public MetricsClient Metrics => new MetricsClient(HttpClient, authorizations: Authorizations)
@@ -223,9 +196,36 @@ namespace G
         };
 
         /// <summary>
+        /// AI Model resources for MLOps/LLMOps.
+        /// </summary>
+        public ModelClient Model => new ModelClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Namespaces (e.g. User, Organization) that structure the resource hierarchy.
+        /// </summary>
+        public NamespaceClient Namespace => new NamespaceClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
         /// Pricing plans on Instill Cloud.
         /// </summary>
         public SubscriptionClient Subscription => new SubscriptionClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Pipeline orchestration in VDP (Versatile Data Pipeline).
+        /// </summary>
+        public VdpClient Vdp => new VdpClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

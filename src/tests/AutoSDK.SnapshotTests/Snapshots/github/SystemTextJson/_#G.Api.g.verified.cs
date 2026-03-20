@@ -5911,9 +5911,27 @@ namespace G
         };
 
         /// <summary>
+        /// Interact with GitHub Classroom.
+        /// </summary>
+        public ClassroomClient Classroom => new ClassroomClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
         /// Retrieve code scanning alerts from a repository.
         /// </summary>
         public CodeScanningClient CodeScanning => new CodeScanningClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Endpoints to manage Code security using the REST API.
+        /// </summary>
+        public CodeSecurityClient CodeSecurity => new CodeSecurityClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -5929,9 +5947,18 @@ namespace G
         };
 
         /// <summary>
-        /// List emojis available to use on GitHub.
+        /// Endpoints to manage Codespaces using the REST API.
         /// </summary>
-        public EmojisClient Emojis => new EmojisClient(HttpClient, authorizations: Authorizations)
+        public CodespacesClient Codespaces => new CodespacesClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Endpoints to manage Copilot using the REST API.
+        /// </summary>
+        public CopilotClient Copilot => new CopilotClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -5950,6 +5977,15 @@ namespace G
         /// Endpoints to access Dependency Graph features.
         /// </summary>
         public DependencyGraphClient DependencyGraph => new DependencyGraphClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// List emojis available to use on GitHub.
+        /// </summary>
+        public EmojisClient Emojis => new EmojisClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -5977,6 +6013,15 @@ namespace G
         /// View gitignore templates
         /// </summary>
         public GitignoreClient Gitignore => new GitignoreClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Owner or admin management of users interactions.
+        /// </summary>
+        public InteractionsClient Interactions => new InteractionsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -6118,6 +6163,15 @@ namespace G
         };
 
         /// <summary>
+        /// Manage security advisories.
+        /// </summary>
+        public SecurityAdvisoriesClient SecurityAdvisories => new SecurityAdvisoriesClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
         /// Interact with GitHub Teams.
         /// </summary>
         public TeamsClient Teams => new TeamsClient(HttpClient, authorizations: Authorizations)
@@ -6130,60 +6184,6 @@ namespace G
         /// Interact with and view information about users and also current user.
         /// </summary>
         public UsersClient Users => new UsersClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// Endpoints to manage Codespaces using the REST API.
-        /// </summary>
-        public CodespacesClient Codespaces => new CodespacesClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// Endpoints to manage Copilot using the REST API.
-        /// </summary>
-        public CopilotClient Copilot => new CopilotClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// Manage security advisories.
-        /// </summary>
-        public SecurityAdvisoriesClient SecurityAdvisories => new SecurityAdvisoriesClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// Owner or admin management of users interactions.
-        /// </summary>
-        public InteractionsClient Interactions => new InteractionsClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// Interact with GitHub Classroom.
-        /// </summary>
-        public ClassroomClient Classroom => new ClassroomClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// Endpoints to manage Code security using the REST API.
-        /// </summary>
-        public CodeSecurityClient CodeSecurity => new CodeSecurityClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

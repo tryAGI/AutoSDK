@@ -51,6 +51,46 @@ namespace G
 
 
         /// <summary>
+        /// Create, restore and check the status of backups. &lt;br/&gt;&lt;br/&gt;See the [backups page](https://weaviate.io/developers/weaviate/configuration/backups) for a general introduction, configuration, and tech background of backups.
+        /// </summary>
+        public BackupsClient Backups { get; }
+
+        /// <summary>
+        /// Create, update and delete multiple objects and references at once. &lt;br/&gt;&lt;br/&gt;Note that object-level errors may be reported even in a successful batch request. Accordingly, we recommend you check the response body for errors.
+        /// </summary>
+        public BatchClient Batch { get; }
+
+        /// <summary>
+        /// Perform classification operations
+        /// </summary>
+        public ClassificationsClient Classifications { get; }
+
+        /// <summary>
+        /// Retrieve information about the cluster.
+        /// </summary>
+        public ClusterClient Cluster { get; }
+
+        /// <summary>
+        /// Query data using the GraphQL query language. See the [Weaviate GraphQL documentation](https://weaviate.io/developers/weaviate/api/graphql) for query syntax details.
+        /// </summary>
+        public GraphqlClient Graphql { get; }
+
+        /// <summary>
+        /// Retrieve information about the server such as the hostname, location, versions and modules.
+        /// </summary>
+        public MetaClient Meta { get; }
+
+        /// <summary>
+        /// Retrieve information about relevant nodes in the cluster. The query can be for the entire cluster, or for a particular collection.
+        /// </summary>
+        public NodesClient Nodes { get; }
+
+        /// <summary>
+        /// Create, update and delete objects and cross-references.
+        /// </summary>
+        public ObjectsClient Objects { get; }
+
+        /// <summary>
         /// The root of the API. Note the base url is `/v1`.
         /// </summary>
         public RootClient Root { get; }
@@ -61,49 +101,9 @@ namespace G
         public SchemaClient Schema { get; }
 
         /// <summary>
-        /// Create, update and delete objects and cross-references.
-        /// </summary>
-        public ObjectsClient Objects { get; }
-
-        /// <summary>
-        /// Create, update and delete multiple objects and references at once. &lt;br/&gt;&lt;br/&gt;Note that object-level errors may be reported even in a successful batch request. Accordingly, we recommend you check the response body for errors.
-        /// </summary>
-        public BatchClient Batch { get; }
-
-        /// <summary>
-        /// Create, restore and check the status of backups. &lt;br/&gt;&lt;br/&gt;See the [backups page](https://weaviate.io/developers/weaviate/configuration/backups) for a general introduction, configuration, and tech background of backups.
-        /// </summary>
-        public BackupsClient Backups { get; }
-
-        /// <summary>
-        /// Retrieve information about the server such as the hostname, location, versions and modules.
-        /// </summary>
-        public MetaClient Meta { get; }
-
-        /// <summary>
-        /// Retrieve information about the cluster.
-        /// </summary>
-        public ClusterClient Cluster { get; }
-
-        /// <summary>
-        /// Retrieve information about relevant nodes in the cluster. The query can be for the entire cluster, or for a particular collection.
-        /// </summary>
-        public NodesClient Nodes { get; }
-
-        /// <summary>
         /// `.well-known` endpoints. If OpenID Connect (OIDC) authentication is enabled, this endpoint includes OIDC configuration details.
         /// </summary>
         public WellKnownClient WellKnown { get; }
-
-        /// <summary>
-        /// Query data using the GraphQL query language. See the [Weaviate GraphQL documentation](https://weaviate.io/developers/weaviate/api/graphql) for query syntax details.
-        /// </summary>
-        public GraphqlClient Graphql { get; }
-
-        /// <summary>
-        /// Perform classification operations
-        /// </summary>
-        public ClassificationsClient Classifications { get; }
 
     }
 }

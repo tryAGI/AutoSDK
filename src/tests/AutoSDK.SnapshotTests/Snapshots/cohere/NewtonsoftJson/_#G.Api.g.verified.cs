@@ -43,16 +43,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public V2Client V2 => new V2Client(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public EmbedJobs2Client EmbedJobs2 => new EmbedJobs2Client(HttpClient, authorizations: Authorizations)
+        public Connectors2Client Connectors2 => new Connectors2Client(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -70,7 +61,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public Connectors2Client Connectors2 => new Connectors2Client(HttpClient, authorizations: Authorizations)
+        public EmbedJobs2Client EmbedJobs2 => new EmbedJobs2Client(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Finetuning2Client Finetuning2 => new Finetuning2Client(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -88,7 +88,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public Finetuning2Client Finetuning2 => new Finetuning2Client(HttpClient, authorizations: Authorizations)
+        public V2Client V2 => new V2Client(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

@@ -44,7 +44,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public JambaCompleteClient JambaComplete { get; }
+        public ChatClient Chat { get; }
 
         /// <summary>
         /// 
@@ -59,17 +59,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ParaphraseClient Paraphrase { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public SummarizeClient Summarize { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public SegmentationClient Segmentation { get; }
+        public JambaCompleteClient JambaComplete { get; }
 
         /// <summary>
         /// 
@@ -79,12 +69,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public ParaphraseClient Paraphrase { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public RagEngineClient RagEngine { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatClient Chat { get; }
+        public SegmentationClient Segmentation { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SummarizeClient Summarize { get; }
 
     }
 }
