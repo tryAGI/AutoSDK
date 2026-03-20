@@ -56,6 +56,13 @@ public class SchemaContext(
     
     public TypeData TypeData { get; set; } = TypeData.Default;
     private bool _dataComputed;
+    private bool _tagsComputed;
+
+    /// <summary>
+    /// True if this schema is part of a circular reference chain.
+    /// Set during cycle detection after reference resolution.
+    /// </summary>
+    public bool IsInCycle { get; set; }
     
     public bool IsClass =>
         Type == "class" ||
@@ -533,6 +540,12 @@ public class SchemaContext(
     
     public void ComputeTags(HashSet<string>? parentTags = null, int level = 0, int maxDepth = 20, HashSet<SchemaContext>? visited = null)
     {
+        // Skip if already computed and no new parent tags to add
+        if (_tagsComputed && (parentTags == null || parentTags.Count == 0 || parentTags.IsSubsetOf(Tags)))
+        {
+            return;
+        }
+
         // Prevent infinite recursion for circular references
         if (level > maxDepth)
         {
@@ -565,5 +578,7 @@ public class SchemaContext(
             child.ComputeTags(Tags, level + 1, maxDepth: maxDepth, visited: visited);
         }
         ResolvedReference?.ComputeTags(Tags, level + 1, maxDepth: maxDepth, visited: visited);
+
+        _tagsComputed = true;
     }
 }

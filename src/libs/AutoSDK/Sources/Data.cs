@@ -80,6 +80,10 @@ public static class Data
             schemas = schemas.Where(x => !unresolvedReferences.Contains(x)).ToArray();
         }
 
+        // Detect circular references so ComputeData can skip re-traversal
+        // of cyclic subtrees during the first pass.
+        DetectCycles(schemas);
+
         resolveReferencesTime.Stop();
         
         var filteringTime = Stopwatch.StartNew();
@@ -513,6 +517,78 @@ public static class Data
             }
 
             schema.Children = [..schema.Children.Where(x => !unresolvedReferences.Contains(x))];
+        }
+    }
+
+    /// <summary>
+    /// Detects schemas involved in circular reference chains and marks them
+    /// with <see cref="SchemaContext.IsInCycle"/>. Uses DFS with three-color
+    /// marking (white/gray/black) to find back-edges in the schema graph.
+    /// </summary>
+    private static void DetectCycles(IReadOnlyCollection<SchemaContext> schemas)
+    {
+        // 0 = white (unvisited), 1 = gray (in progress), 2 = black (done)
+        var color = new Dictionary<SchemaContext, byte>(schemas.Count);
+        var cycleNodes = new HashSet<SchemaContext>();
+
+        foreach (var schema in schemas)
+        {
+            if (!color.ContainsKey(schema))
+            {
+                DetectCyclesDfs(schema, color, cycleNodes, []);
+            }
+        }
+
+        foreach (var node in cycleNodes)
+        {
+            node.IsInCycle = true;
+        }
+    }
+
+    private static void DetectCyclesDfs(
+        SchemaContext node,
+        Dictionary<SchemaContext, byte> color,
+        HashSet<SchemaContext> cycleNodes,
+        List<SchemaContext> stack)
+    {
+        color[node] = 1; // gray
+        stack.Add(node);
+
+        foreach (var neighbor in GetNeighbors(node))
+        {
+            if (!color.TryGetValue(neighbor, out var c))
+            {
+                // White — recurse
+                DetectCyclesDfs(neighbor, color, cycleNodes, stack);
+            }
+            else if (c == 1)
+            {
+                // Gray — back-edge found, mark all nodes in the cycle
+                var idx = stack.LastIndexOf(neighbor);
+                if (idx >= 0)
+                {
+                    for (var i = idx; i < stack.Count; i++)
+                    {
+                        cycleNodes.Add(stack[i]);
+                    }
+                }
+            }
+            // Black (2) — already fully processed, skip
+        }
+
+        stack.RemoveAt(stack.Count - 1);
+        color[node] = 2; // black
+
+        static IEnumerable<SchemaContext> GetNeighbors(SchemaContext ctx)
+        {
+            if (ctx.ResolvedReference != null)
+            {
+                yield return ctx.ResolvedReference;
+            }
+            foreach (var child in ctx.Children)
+            {
+                yield return child;
+            }
         }
     }
 }
