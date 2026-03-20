@@ -87,6 +87,10 @@ public partial class Tests
     [DataRow("elevenlabs-realtime-stt.json", JsonSerializerType.SystemTextJson)]
     [DataRow("openai-realtime.json", JsonSerializerType.NewtonsoftJson)]
     [DataRow("openai-realtime.json", JsonSerializerType.SystemTextJson)]
+    [DataRow("elevenlabs-realtime-stt-xref.json", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("elevenlabs-realtime-stt-xref.json", JsonSerializerType.SystemTextJson)]
+    [DataRow("xai-realtime.json", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("xai-realtime.json", JsonSerializerType.SystemTextJson)]
     public Task SdkGenerator(string fileName, JsonSerializerType jsonSerializerType)
     {
         if (fileName == "")
@@ -163,6 +167,19 @@ public partial class Tests
                     : string.Empty,
             },
             "openai-realtime.json" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_JsonSerializerContext"] = jsonSerializerType is JsonSerializerType.SystemTextJson
+                    ? "G.SourceGenerationContext"
+                    : string.Empty,
+            },
+            "elevenlabs-realtime-stt-xref.json" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_TypesNamespace"] = "ExternalTypes",
+                ["build_property.AutoSDK_JsonSerializerContext"] = jsonSerializerType is JsonSerializerType.SystemTextJson
+                    ? "ExternalTypes.SourceGenerationContext"
+                    : string.Empty,
+            },
+            "xai-realtime.json" => new Dictionary<string, string>
             {
                 ["build_property.AutoSDK_JsonSerializerContext"] = jsonSerializerType is JsonSerializerType.SystemTextJson
                     ? "G.SourceGenerationContext"

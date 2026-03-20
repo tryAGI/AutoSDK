@@ -28,6 +28,15 @@ public static class AsyncApiData
 
         var ((text, settings), globalSettings) = tuple;
 
+        // When TypesNamespace is set, use it for schema/type resolution so that
+        // generated type references point to the external namespace (e.g., global::MyApi.TypeName)
+        // while the WebSocket client class itself remains in the main Namespace.
+        var typesNamespace = !string.IsNullOrEmpty(settings.TypesNamespace)
+            ? settings.TypesNamespace
+            : settings.Namespace;
+        var typesSettings = settings with { Namespace = typesNamespace };
+        var skipModels = !string.IsNullOrEmpty(settings.TypesNamespace) && !settings.GenerateModels;
+
         // Parse AsyncAPI document
         var asyncApiDoc = text.GetAsyncApiDocument(settings, cancellationToken);
 
@@ -38,8 +47,9 @@ public static class AsyncApiData
         // Bridge schemas to OpenAPI for reuse of model generation
         var openApiDocument = asyncApiDoc.BridgeSchemasToOpenApi(settings, cancellationToken);
 
-        // Use existing schema traversal on the bridged OpenAPI document
-        var schemas = openApiDocument.GetSchemas(settings);
+        // Use existing schema traversal on the bridged OpenAPI document.
+        // Pass typesSettings so that all schema contexts (and their TypeData) use the types namespace.
+        var schemas = openApiDocument.GetSchemas(typesSettings);
 
         traversalTreeTime.Stop();
 
@@ -108,25 +118,33 @@ public static class AsyncApiData
 
         var computeDataClassesTime = Stopwatch.StartNew();
 
-        var classes = filteredSchemas
-            .Where(x => x is { IsReference: false, IsAnyOfLikeStructure: false })
-            .Select(x => x.ClassData)
-            .Where(x => x is not null)
-            .Select(x => x!.Value)
-            .ToImmutableArray();
-        var enums = filteredSchemas
-            .Where(x => x is { IsReference: false, IsAnyOfLikeStructure: false })
-            .Select(x => x.EnumData)
-            .Where(x => x is not null)
-            .Select(x => x!.Value)
-            .ToImmutableArray();
-        var anyOfDatas = filteredSchemas
-            .Where(x => x is { IsReference: false, IsAnyOfLikeStructure: true })
-            .Select(x => x.AnyOfData)
-            .Where(x => x is not null)
-            .Select(x => x!.Value)
-            .Distinct()
-            .ToImmutableArray();
+        // When skipModels is true (TypesNamespace set + GenerateModels false),
+        // return empty model collections since models live in the external namespace.
+        var classes = skipModels
+            ? ImmutableArray<ModelData>.Empty
+            : filteredSchemas
+                .Where(x => x is { IsReference: false, IsAnyOfLikeStructure: false })
+                .Select(x => x.ClassData)
+                .Where(x => x is not null)
+                .Select(x => x!.Value)
+                .ToImmutableArray();
+        var enums = skipModels
+            ? ImmutableArray<ModelData>.Empty
+            : filteredSchemas
+                .Where(x => x is { IsReference: false, IsAnyOfLikeStructure: false })
+                .Select(x => x.EnumData)
+                .Where(x => x is not null)
+                .Select(x => x!.Value)
+                .ToImmutableArray();
+        var anyOfDatas = skipModels
+            ? ImmutableArray<AnyOfData>.Empty
+            : filteredSchemas
+                .Where(x => x is { IsReference: false, IsAnyOfLikeStructure: true })
+                .Select(x => x.AnyOfData)
+                .Where(x => x is not null)
+                .Select(x => x!.Value)
+                .Distinct()
+                .ToImmutableArray();
 
         // Build WebSocket endpoints from AsyncAPI operations
         var (webSocketClients, webSocketOperations) = BuildWebSocketData(
@@ -135,8 +153,10 @@ public static class AsyncApiData
         // Build authorization from AsyncAPI security schemes
         var authorizations = BuildAuthorizations(asyncApiDoc, settings, globalSettings);
 
-        // Build converters list
-        var converters = BuildConverters(enums, anyOfDatas, filteredSchemas, settings, globalSettings);
+        // Build converters list (use typesSettings for namespace references)
+        var converters = skipModels
+            ? ImmutableArray<string>.Empty
+            : BuildConverters(enums, anyOfDatas, filteredSchemas, typesSettings, globalSettings);
 
         // Build the "client" entry for JSON converter references
         var converterClient = new Client(
@@ -150,16 +170,18 @@ public static class AsyncApiData
             GlobalSettings: globalSettings,
             Converters: converters);
 
-        var types = settings.GenerateJsonSerializerContextTypes
-            ? filteredSchemas
-                .Where(x =>
-                    x.TypeData != TypeData.Default &&
-                    !string.IsNullOrWhiteSpace(x.TypeData.CSharpType))
-                .Select(x => x.TypeData)
-                .GroupBy(x => x.CSharpTypeWithNullability)
-                .Select(x => x.First())
-                .ToImmutableArray()
-            : ImmutableArray<TypeData>.Empty;
+        var types = skipModels
+            ? ImmutableArray<TypeData>.Empty
+            : settings.GenerateJsonSerializerContextTypes
+                ? filteredSchemas
+                    .Where(x =>
+                        x.TypeData != TypeData.Default &&
+                        !string.IsNullOrWhiteSpace(x.TypeData.CSharpType))
+                    .Select(x => x.TypeData)
+                    .GroupBy(x => x.CSharpTypeWithNullability)
+                    .Select(x => x.First())
+                    .ToImmutableArray()
+                : ImmutableArray<TypeData>.Empty;
 
         classes = classes
             .Select(x => x with { SchemaContext = default! })

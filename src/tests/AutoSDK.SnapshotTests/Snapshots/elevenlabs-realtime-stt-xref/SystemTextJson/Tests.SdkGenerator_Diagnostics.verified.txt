@@ -1,0 +1,177 @@
+﻿[
+  {
+    Location: /*
+{
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::G.JsonSerializerContextTypes))]
+                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
+*/
+ : (4,78)-(4,104),
+    Message: The type or namespace name 'JsonSerializerContextTypes' does not exist in the namespace 'G' (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0234,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0234),
+      MessageFormat: The type or namespace name '{0}' does not exist in the namespace '{1}' (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::ExternalTypes.SourceGenerationContext.Default;
+                                                                                                                          ^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.ElevenLabsRealtimeSpeechToTextRealtimeClient.g.cs: (21,122)-(21,135),
+    Message: The type or namespace name 'ExternalTypes' could not be found in the global namespace (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0400,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0400),
+      MessageFormat: The type or namespace name '{0}' could not be found in the global namespace (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        public async global::System.Threading.Tasks.Task SendInputAudioChunkAsync(
+            global::ExternalTypes.InputAudioChunkPayload message,
+                    ^^^^^^^^^^^^^
+            global::System.Threading.CancellationToken cancellationToken = default)
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.ElevenLabsRealtimeSpeechToTextRealtimeClient.InputAudioChunk.g.cs: (13,20)-(13,33),
+    Message: The type or namespace name 'ExternalTypes' could not be found in the global namespace (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0400,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0400),
+      MessageFormat: The type or namespace name '{0}' could not be found in the global namespace (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+
+            var json = global::System.Text.Json.JsonSerializer.Serialize(message, typeof(global::ExternalTypes.InputAudioChunkPayload), JsonSerializerContext);
+                                                                                                 ^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.ElevenLabsRealtimeSpeechToTextRealtimeClient.InputAudioChunk.g.cs: (18,97)-(18,110),
+    Message: The type or namespace name 'ExternalTypes' could not be found in the global namespace (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0400,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0400),
+      MessageFormat: The type or namespace name '{0}' could not be found in the global namespace (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+        /// <returns>An async enumerable of server events.</returns>
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::ExternalTypes.ServerEvent> ReceiveUpdatesAsync(
+                                                                                 ^^^^^^^^^^^^^
+            [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.ElevenLabsRealtimeSpeechToTextRealtimeClient.ReceiveUpdates.g.cs: (12,81)-(12,94),
+    Message: The type or namespace name 'ExternalTypes' could not be found in the global namespace (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0400,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0400),
+      MessageFormat: The type or namespace name '{0}' could not be found in the global namespace (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+                    string json = global::System.Text.Encoding.UTF8.GetString(buffer, 0, result.Count);
+                    var @event = (global::ExternalTypes.ServerEvent)global::System.Text.Json.JsonSerializer.Deserialize(json, typeof(global::ExternalTypes.ServerEvent), JsonSerializerContext)!;
+                                                                                                                                             ^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.ElevenLabsRealtimeSpeechToTextRealtimeClient.ReceiveUpdates.g.cs: (48,141)-(48,154),
+    Message: The type or namespace name 'ExternalTypes' could not be found in the global namespace (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0400,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0400),
+      MessageFormat: The type or namespace name '{0}' could not be found in the global namespace (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  },
+  {
+    Location: /*
+                    string json = global::System.Text.Encoding.UTF8.GetString(buffer, 0, result.Count);
+                    var @event = (global::ExternalTypes.ServerEvent)global::System.Text.Json.JsonSerializer.Deserialize(json, typeof(global::ExternalTypes.ServerEvent), JsonSerializerContext)!;
+                                          ^^^^^^^^^^^^^
+
+*/
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.SdkGenerator\G.ElevenLabsRealtimeSpeechToTextRealtimeClient.ReceiveUpdates.g.cs: (48,42)-(48,55),
+    Message: The type or namespace name 'ExternalTypes' could not be found in the global namespace (are you missing an assembly reference?),
+    Severity: Error,
+    Descriptor: {
+      Id: CS0400,
+      Title: ,
+      HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0400),
+      MessageFormat: The type or namespace name '{0}' could not be found in the global namespace (are you missing an assembly reference?),
+      Category: Compiler,
+      DefaultSeverity: Error,
+      IsEnabledByDefault: true,
+      CustomTags: [
+        Compiler,
+        Telemetry,
+        NotConfigurable
+      ]
+    }
+  }
+]

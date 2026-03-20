@@ -1,0 +1,769 @@
+{
+  "asyncapi": "3.0.0",
+  "info": {
+    "title": "xAI Realtime Voice Agent",
+    "version": "1.0.0",
+    "description": "xAI Realtime Voice Agent API for bidirectional audio/text streaming over WebSocket."
+  },
+  "servers": {
+    "production": {
+      "host": "api.x.ai",
+      "pathname": "/v1/realtime",
+      "protocol": "wss",
+      "description": "xAI Realtime WebSocket server",
+      "security": [
+        {
+          "$ref": "#/components/securitySchemes/bearer"
+        }
+      ]
+    }
+  },
+  "channels": {
+    "realtime": {
+      "address": "/v1/realtime",
+      "messages": {
+        "SessionUpdate": {
+          "$ref": "#/components/messages/SessionUpdate"
+        },
+        "ConversationItemCreate": {
+          "$ref": "#/components/messages/ConversationItemCreate"
+        },
+        "InputAudioBufferAppend": {
+          "$ref": "#/components/messages/InputAudioBufferAppend"
+        },
+        "InputAudioBufferCommit": {
+          "$ref": "#/components/messages/InputAudioBufferCommit"
+        },
+        "ResponseCreate": {
+          "$ref": "#/components/messages/ResponseCreate"
+        },
+        "SessionCreated": {
+          "$ref": "#/components/messages/SessionCreated"
+        },
+        "SessionUpdated": {
+          "$ref": "#/components/messages/SessionUpdated"
+        },
+        "ConversationCreated": {
+          "$ref": "#/components/messages/ConversationCreated"
+        },
+        "ConversationItemAdded": {
+          "$ref": "#/components/messages/ConversationItemAdded"
+        },
+        "InputAudioBufferSpeechStarted": {
+          "$ref": "#/components/messages/InputAudioBufferSpeechStarted"
+        },
+        "InputAudioBufferSpeechStopped": {
+          "$ref": "#/components/messages/InputAudioBufferSpeechStopped"
+        },
+        "InputAudioBufferCommitted": {
+          "$ref": "#/components/messages/InputAudioBufferCommitted"
+        },
+        "InputAudioTranscriptionCompleted": {
+          "$ref": "#/components/messages/InputAudioTranscriptionCompleted"
+        },
+        "ResponseCreated": {
+          "$ref": "#/components/messages/ResponseCreated"
+        },
+        "ResponseDone": {
+          "$ref": "#/components/messages/ResponseDone"
+        },
+        "ResponseOutputItemAdded": {
+          "$ref": "#/components/messages/ResponseOutputItemAdded"
+        },
+        "ResponseOutputAudioTranscriptDelta": {
+          "$ref": "#/components/messages/ResponseOutputAudioTranscriptDelta"
+        },
+        "ResponseOutputAudioTranscriptDone": {
+          "$ref": "#/components/messages/ResponseOutputAudioTranscriptDone"
+        },
+        "ResponseOutputAudioDelta": {
+          "$ref": "#/components/messages/ResponseOutputAudioDelta"
+        },
+        "ResponseOutputAudioDone": {
+          "$ref": "#/components/messages/ResponseOutputAudioDone"
+        },
+        "ResponseFunctionCallArgumentsDone": {
+          "$ref": "#/components/messages/ResponseFunctionCallArgumentsDone"
+        },
+        "ResponseMcpCallArgumentsDone": {
+          "$ref": "#/components/messages/ResponseMcpCallArgumentsDone"
+        },
+        "ResponseMcpCallCompleted": {
+          "$ref": "#/components/messages/ResponseMcpCallCompleted"
+        },
+        "ResponseMcpCallFailed": {
+          "$ref": "#/components/messages/ResponseMcpCallFailed"
+        },
+        "McpListToolsCompleted": {
+          "$ref": "#/components/messages/McpListToolsCompleted"
+        },
+        "Error": {
+          "$ref": "#/components/messages/Error"
+        }
+      }
+    }
+  },
+  "operations": {
+    "sendSessionUpdate": {
+      "action": "send",
+      "summary": "Update session configuration (voice, instructions, tools, audio format, turn detection).",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/SessionUpdate" }]
+    },
+    "sendConversationItemCreate": {
+      "action": "send",
+      "summary": "Add a user message or function call output to the conversation.",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/ConversationItemCreate" }]
+    },
+    "sendInputAudioBufferAppend": {
+      "action": "send",
+      "summary": "Append base64-encoded audio data to the input buffer.",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/InputAudioBufferAppend" }]
+    },
+    "sendInputAudioBufferCommit": {
+      "action": "send",
+      "summary": "Commit the current input audio buffer.",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/InputAudioBufferCommit" }]
+    },
+    "sendResponseCreate": {
+      "action": "send",
+      "summary": "Request a response from the model.",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/ResponseCreate" }]
+    },
+    "receiveSessionCreated": {
+      "action": "receive",
+      "summary": "Session has been created.",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/SessionCreated" }]
+    },
+    "receiveSessionUpdated": {
+      "action": "receive",
+      "summary": "Session configuration has been updated.",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/SessionUpdated" }]
+    },
+    "receiveConversationCreated": {
+      "action": "receive",
+      "summary": "A new conversation has been created.",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/ConversationCreated" }]
+    },
+    "receiveConversationItemAdded": {
+      "action": "receive",
+      "summary": "A conversation item has been added.",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/ConversationItemAdded" }]
+    },
+    "receiveInputAudioBufferSpeechStarted": {
+      "action": "receive",
+      "summary": "Speech detected in audio input (VAD).",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/InputAudioBufferSpeechStarted" }]
+    },
+    "receiveInputAudioBufferSpeechStopped": {
+      "action": "receive",
+      "summary": "Speech has stopped in audio input (VAD).",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/InputAudioBufferSpeechStopped" }]
+    },
+    "receiveInputAudioBufferCommitted": {
+      "action": "receive",
+      "summary": "Audio buffer has been committed.",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/InputAudioBufferCommitted" }]
+    },
+    "receiveInputAudioTranscriptionCompleted": {
+      "action": "receive",
+      "summary": "Audio transcription has been completed.",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/InputAudioTranscriptionCompleted" }]
+    },
+    "receiveResponseCreated": {
+      "action": "receive",
+      "summary": "A response has been created.",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/ResponseCreated" }]
+    },
+    "receiveResponseDone": {
+      "action": "receive",
+      "summary": "A response has completed.",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/ResponseDone" }]
+    },
+    "receiveResponseOutputItemAdded": {
+      "action": "receive",
+      "summary": "An output item has been added to the response.",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/ResponseOutputItemAdded" }]
+    },
+    "receiveResponseOutputAudioTranscriptDelta": {
+      "action": "receive",
+      "summary": "Incremental audio transcript text.",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/ResponseOutputAudioTranscriptDelta" }]
+    },
+    "receiveResponseOutputAudioTranscriptDone": {
+      "action": "receive",
+      "summary": "Audio transcript completed.",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/ResponseOutputAudioTranscriptDone" }]
+    },
+    "receiveResponseOutputAudioDelta": {
+      "action": "receive",
+      "summary": "Incremental audio data (base64).",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/ResponseOutputAudioDelta" }]
+    },
+    "receiveResponseOutputAudioDone": {
+      "action": "receive",
+      "summary": "Audio output completed.",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/ResponseOutputAudioDone" }]
+    },
+    "receiveResponseFunctionCallArgumentsDone": {
+      "action": "receive",
+      "summary": "Function call arguments completed.",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/ResponseFunctionCallArgumentsDone" }]
+    },
+    "receiveResponseMcpCallArgumentsDone": {
+      "action": "receive",
+      "summary": "MCP tool call arguments completed.",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/ResponseMcpCallArgumentsDone" }]
+    },
+    "receiveResponseMcpCallCompleted": {
+      "action": "receive",
+      "summary": "MCP tool call completed.",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/ResponseMcpCallCompleted" }]
+    },
+    "receiveResponseMcpCallFailed": {
+      "action": "receive",
+      "summary": "MCP tool call failed.",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/ResponseMcpCallFailed" }]
+    },
+    "receiveMcpListToolsCompleted": {
+      "action": "receive",
+      "summary": "MCP tool list retrieved.",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/McpListToolsCompleted" }]
+    },
+    "receiveError": {
+      "action": "receive",
+      "summary": "An error occurred.",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [{ "$ref": "#/channels/realtime/messages/Error" }]
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "messages": {
+      "SessionUpdate": {
+        "name": "SessionUpdate",
+        "payload": { "$ref": "#/components/schemas/SessionUpdatePayload" }
+      },
+      "ConversationItemCreate": {
+        "name": "ConversationItemCreate",
+        "payload": { "$ref": "#/components/schemas/ConversationItemCreatePayload" }
+      },
+      "InputAudioBufferAppend": {
+        "name": "InputAudioBufferAppend",
+        "payload": { "$ref": "#/components/schemas/InputAudioBufferAppendPayload" }
+      },
+      "InputAudioBufferCommit": {
+        "name": "InputAudioBufferCommit",
+        "payload": { "$ref": "#/components/schemas/InputAudioBufferCommitPayload" }
+      },
+      "ResponseCreate": {
+        "name": "ResponseCreate",
+        "payload": { "$ref": "#/components/schemas/ResponseCreatePayload" }
+      },
+      "SessionCreated": {
+        "name": "SessionCreated",
+        "payload": { "$ref": "#/components/schemas/SessionCreatedEvent" }
+      },
+      "SessionUpdated": {
+        "name": "SessionUpdated",
+        "payload": { "$ref": "#/components/schemas/SessionUpdatedEvent" }
+      },
+      "ConversationCreated": {
+        "name": "ConversationCreated",
+        "payload": { "$ref": "#/components/schemas/ConversationCreatedEvent" }
+      },
+      "ConversationItemAdded": {
+        "name": "ConversationItemAdded",
+        "payload": { "$ref": "#/components/schemas/ConversationItemAddedEvent" }
+      },
+      "InputAudioBufferSpeechStarted": {
+        "name": "InputAudioBufferSpeechStarted",
+        "payload": { "$ref": "#/components/schemas/InputAudioBufferSpeechStartedEvent" }
+      },
+      "InputAudioBufferSpeechStopped": {
+        "name": "InputAudioBufferSpeechStopped",
+        "payload": { "$ref": "#/components/schemas/InputAudioBufferSpeechStoppedEvent" }
+      },
+      "InputAudioBufferCommitted": {
+        "name": "InputAudioBufferCommitted",
+        "payload": { "$ref": "#/components/schemas/InputAudioBufferCommittedEvent" }
+      },
+      "InputAudioTranscriptionCompleted": {
+        "name": "InputAudioTranscriptionCompleted",
+        "payload": { "$ref": "#/components/schemas/InputAudioTranscriptionCompletedEvent" }
+      },
+      "ResponseCreated": {
+        "name": "ResponseCreated",
+        "payload": { "$ref": "#/components/schemas/ResponseCreatedEvent" }
+      },
+      "ResponseDone": {
+        "name": "ResponseDone",
+        "payload": { "$ref": "#/components/schemas/ResponseDoneEvent" }
+      },
+      "ResponseOutputItemAdded": {
+        "name": "ResponseOutputItemAdded",
+        "payload": { "$ref": "#/components/schemas/ResponseOutputItemAddedEvent" }
+      },
+      "ResponseOutputAudioTranscriptDelta": {
+        "name": "ResponseOutputAudioTranscriptDelta",
+        "payload": { "$ref": "#/components/schemas/ResponseOutputAudioTranscriptDeltaEvent" }
+      },
+      "ResponseOutputAudioTranscriptDone": {
+        "name": "ResponseOutputAudioTranscriptDone",
+        "payload": { "$ref": "#/components/schemas/ResponseOutputAudioTranscriptDoneEvent" }
+      },
+      "ResponseOutputAudioDelta": {
+        "name": "ResponseOutputAudioDelta",
+        "payload": { "$ref": "#/components/schemas/ResponseOutputAudioDeltaEvent" }
+      },
+      "ResponseOutputAudioDone": {
+        "name": "ResponseOutputAudioDone",
+        "payload": { "$ref": "#/components/schemas/ResponseOutputAudioDoneEvent" }
+      },
+      "ResponseFunctionCallArgumentsDone": {
+        "name": "ResponseFunctionCallArgumentsDone",
+        "payload": { "$ref": "#/components/schemas/ResponseFunctionCallArgumentsDoneEvent" }
+      },
+      "ResponseMcpCallArgumentsDone": {
+        "name": "ResponseMcpCallArgumentsDone",
+        "payload": { "$ref": "#/components/schemas/ResponseMcpCallArgumentsDoneEvent" }
+      },
+      "ResponseMcpCallCompleted": {
+        "name": "ResponseMcpCallCompleted",
+        "payload": { "$ref": "#/components/schemas/ResponseMcpCallCompletedEvent" }
+      },
+      "ResponseMcpCallFailed": {
+        "name": "ResponseMcpCallFailed",
+        "payload": { "$ref": "#/components/schemas/ResponseMcpCallFailedEvent" }
+      },
+      "McpListToolsCompleted": {
+        "name": "McpListToolsCompleted",
+        "payload": { "$ref": "#/components/schemas/McpListToolsCompletedEvent" }
+      },
+      "Error": {
+        "name": "Error",
+        "payload": { "$ref": "#/components/schemas/ErrorEvent" }
+      }
+    },
+    "schemas": {
+      "SessionConfig": {
+        "type": "object",
+        "description": "Configuration for an xAI Realtime session.",
+        "properties": {
+          "instructions": { "type": "string", "description": "System-level instructions for the agent." },
+          "voice": { "type": "string", "description": "Voice to use for audio output.", "enum": ["Eve", "Ara", "Rex", "Sal", "Leo"] },
+          "turn_detection": { "$ref": "#/components/schemas/TurnDetection" },
+          "audio": { "$ref": "#/components/schemas/AudioConfig" },
+          "tools": { "type": "array", "items": { "$ref": "#/components/schemas/Tool" }, "description": "Tools available to the agent." },
+          "modalities": { "type": "array", "items": { "type": "string" }, "description": "Response modalities (e.g. text, audio)." }
+        }
+      },
+      "TurnDetection": {
+        "type": "object",
+        "description": "Server VAD turn detection configuration. Null for manual mode.",
+        "properties": {
+          "type": { "type": "string", "description": "Turn detection type: server_vad or null for manual." },
+          "threshold": { "type": "number", "description": "VAD sensitivity threshold (0.1 - 0.9)." },
+          "silence_duration_ms": { "type": "integer", "description": "Milliseconds of silence before ending a turn (0 - 10000)." },
+          "prefix_padding_ms": { "type": "integer", "description": "Milliseconds of audio to include before speech start (0 - 10000)." }
+        }
+      },
+      "AudioConfig": {
+        "type": "object",
+        "description": "Audio format configuration.",
+        "properties": {
+          "input": { "$ref": "#/components/schemas/AudioDirectionConfig" },
+          "output": { "$ref": "#/components/schemas/AudioDirectionConfig" }
+        }
+      },
+      "AudioDirectionConfig": {
+        "type": "object",
+        "description": "Audio direction (input or output) configuration.",
+        "properties": {
+          "format": { "$ref": "#/components/schemas/AudioFormatConfig" }
+        }
+      },
+      "AudioFormatConfig": {
+        "type": "object",
+        "description": "Audio format specification.",
+        "properties": {
+          "type": { "type": "string", "description": "Audio format type: audio/pcm, audio/pcmu, or audio/pcma." },
+          "rate": { "type": "integer", "description": "Sample rate in Hz (8000, 16000, 22050, 24000, 32000, 44100, 48000)." }
+        }
+      },
+      "Tool": {
+        "type": "object",
+        "description": "Tool definition for the Realtime session.",
+        "properties": {
+          "type": { "type": "string", "description": "Tool type: function, file_search, web_search, or x_search." },
+          "name": { "type": "string", "description": "Function name (for function tools)." },
+          "description": { "type": "string", "description": "Function description (for function tools)." },
+          "parameters": { "type": "object", "description": "Function parameters JSON Schema (for function tools)." },
+          "vector_store_ids": { "type": "array", "items": { "type": "string" }, "description": "Collection IDs (for file_search tools)." },
+          "max_num_results": { "type": "integer", "description": "Max search results (for file_search tools)." },
+          "allowed_x_handles": { "type": "array", "items": { "type": "string" }, "description": "Allowed X handles (for x_search tools)." }
+        }
+      },
+      "ConversationItem": {
+        "type": "object",
+        "description": "A conversation item (message or function output).",
+        "properties": {
+          "type": { "type": "string", "description": "Item type: message or function_call_output." },
+          "id": { "type": "string", "description": "Item ID." },
+          "role": { "type": "string", "description": "Role: user or assistant." },
+          "status": { "type": "string", "description": "Item status (e.g. completed, in_progress)." },
+          "content": { "type": "array", "items": { "$ref": "#/components/schemas/ContentPart" }, "description": "Content parts." },
+          "call_id": { "type": "string", "description": "Function call ID (for function_call_output items)." },
+          "output": { "type": "string", "description": "Function output JSON string." }
+        }
+      },
+      "ContentPart": {
+        "type": "object",
+        "description": "A content part within a conversation item.",
+        "properties": {
+          "type": { "type": "string", "description": "Content type: input_text, text, or audio." },
+          "text": { "type": "string", "description": "Text content." },
+          "transcript": { "type": "string", "description": "Audio transcript." }
+        }
+      },
+      "SessionInfo": {
+        "type": "object",
+        "description": "Session information from the server.",
+        "properties": {
+          "id": { "type": "string", "description": "Session ID." },
+          "object": { "type": "string", "description": "Object type (realtime.session)." },
+          "model": { "type": "string", "description": "Model being used." },
+          "voice": { "type": "string", "description": "Session voice." },
+          "instructions": { "type": "string", "description": "Session instructions." }
+        }
+      },
+      "ConversationInfo": {
+        "type": "object",
+        "description": "Conversation information from the server.",
+        "properties": {
+          "id": { "type": "string", "description": "Conversation ID." },
+          "object": { "type": "string", "description": "Object type (realtime.conversation)." }
+        }
+      },
+      "ResponseInfo": {
+        "type": "object",
+        "description": "Response information from the server.",
+        "properties": {
+          "id": { "type": "string", "description": "Response ID." },
+          "object": { "type": "string", "description": "Object type." },
+          "status": { "type": "string", "description": "Response status (in_progress, completed)." }
+        }
+      },
+      "RealtimeError": {
+        "type": "object",
+        "description": "Error details.",
+        "properties": {
+          "type": { "type": "string", "description": "Error type." },
+          "code": { "type": "string", "description": "Error code." },
+          "message": { "type": "string", "description": "Human-readable error message." },
+          "param": { "type": "string", "description": "Parameter that caused the error." }
+        }
+      },
+      "ResponseConfig": {
+        "type": "object",
+        "description": "Response configuration for response.create events.",
+        "properties": {
+          "modalities": { "type": "array", "items": { "type": "string" }, "description": "Response modalities." }
+        }
+      },
+
+      "SessionUpdatePayload": {
+        "type": "object",
+        "description": "Update session configuration.",
+        "properties": {
+          "type": { "type": "string", "enum": ["session.update"] },
+          "event_id": { "type": "string", "description": "Optional event ID." },
+          "session": { "$ref": "#/components/schemas/SessionConfig" }
+        },
+        "required": ["type", "session"]
+      },
+      "ConversationItemCreatePayload": {
+        "type": "object",
+        "description": "Add a conversation item.",
+        "properties": {
+          "type": { "type": "string", "enum": ["conversation.item.create"] },
+          "event_id": { "type": "string", "description": "Optional event ID." },
+          "item": { "$ref": "#/components/schemas/ConversationItem" }
+        },
+        "required": ["type", "item"]
+      },
+      "InputAudioBufferAppendPayload": {
+        "type": "object",
+        "description": "Append audio data to the input buffer.",
+        "properties": {
+          "type": { "type": "string", "enum": ["input_audio_buffer.append"] },
+          "event_id": { "type": "string", "description": "Optional event ID." },
+          "audio": { "type": "string", "description": "Base64-encoded audio data." }
+        },
+        "required": ["type", "audio"]
+      },
+      "InputAudioBufferCommitPayload": {
+        "type": "object",
+        "description": "Commit the current input audio buffer.",
+        "properties": {
+          "type": { "type": "string", "enum": ["input_audio_buffer.commit"] },
+          "event_id": { "type": "string", "description": "Optional event ID." }
+        },
+        "required": ["type"]
+      },
+      "ResponseCreatePayload": {
+        "type": "object",
+        "description": "Request a response from the model.",
+        "properties": {
+          "type": { "type": "string", "enum": ["response.create"] },
+          "event_id": { "type": "string", "description": "Optional event ID." },
+          "response": { "$ref": "#/components/schemas/ResponseConfig" }
+        },
+        "required": ["type"]
+      },
+
+      "SessionCreatedEvent": {
+        "type": "object",
+        "description": "Session has been created.",
+        "properties": {
+          "type": { "type": "string", "enum": ["session.created"] },
+          "event_id": { "type": "string" },
+          "session": { "$ref": "#/components/schemas/SessionInfo" }
+        }
+      },
+      "SessionUpdatedEvent": {
+        "type": "object",
+        "description": "Session configuration has been updated.",
+        "properties": {
+          "type": { "type": "string", "enum": ["session.updated"] },
+          "event_id": { "type": "string" },
+          "session": { "$ref": "#/components/schemas/SessionInfo" }
+        }
+      },
+      "ConversationCreatedEvent": {
+        "type": "object",
+        "description": "A new conversation has been created.",
+        "properties": {
+          "type": { "type": "string", "enum": ["conversation.created"] },
+          "event_id": { "type": "string" },
+          "conversation": { "$ref": "#/components/schemas/ConversationInfo" }
+        }
+      },
+      "ConversationItemAddedEvent": {
+        "type": "object",
+        "description": "A conversation item has been added.",
+        "properties": {
+          "type": { "type": "string", "enum": ["conversation.item.added"] },
+          "event_id": { "type": "string" },
+          "item": { "$ref": "#/components/schemas/ConversationItem" }
+        }
+      },
+      "InputAudioBufferSpeechStartedEvent": {
+        "type": "object",
+        "description": "Speech detected in audio input (VAD).",
+        "properties": {
+          "type": { "type": "string", "enum": ["input_audio_buffer.speech_started"] },
+          "event_id": { "type": "string" }
+        }
+      },
+      "InputAudioBufferSpeechStoppedEvent": {
+        "type": "object",
+        "description": "Speech has stopped in audio input (VAD).",
+        "properties": {
+          "type": { "type": "string", "enum": ["input_audio_buffer.speech_stopped"] },
+          "event_id": { "type": "string" }
+        }
+      },
+      "InputAudioBufferCommittedEvent": {
+        "type": "object",
+        "description": "Audio buffer has been committed.",
+        "properties": {
+          "type": { "type": "string", "enum": ["input_audio_buffer.committed"] },
+          "event_id": { "type": "string" },
+          "item_id": { "type": "string" },
+          "previous_item_id": { "type": "string" }
+        }
+      },
+      "InputAudioTranscriptionCompletedEvent": {
+        "type": "object",
+        "description": "Audio transcription has been completed.",
+        "properties": {
+          "type": { "type": "string", "enum": ["input_audio_transcription.completed"] },
+          "event_id": { "type": "string" },
+          "item_id": { "type": "string" },
+          "transcript": { "type": "string" }
+        }
+      },
+      "ResponseCreatedEvent": {
+        "type": "object",
+        "description": "A response has been created.",
+        "properties": {
+          "type": { "type": "string", "enum": ["response.created"] },
+          "event_id": { "type": "string" },
+          "response": { "$ref": "#/components/schemas/ResponseInfo" }
+        }
+      },
+      "ResponseDoneEvent": {
+        "type": "object",
+        "description": "A response has completed.",
+        "properties": {
+          "type": { "type": "string", "enum": ["response.done"] },
+          "event_id": { "type": "string" },
+          "response": { "$ref": "#/components/schemas/ResponseInfo" }
+        }
+      },
+      "ResponseOutputItemAddedEvent": {
+        "type": "object",
+        "description": "An output item has been added to the response.",
+        "properties": {
+          "type": { "type": "string", "enum": ["response.output_item.added"] },
+          "event_id": { "type": "string" },
+          "response_id": { "type": "string" },
+          "output_index": { "type": "integer" },
+          "item": { "$ref": "#/components/schemas/ConversationItem" }
+        }
+      },
+      "ResponseOutputAudioTranscriptDeltaEvent": {
+        "type": "object",
+        "description": "Incremental audio transcript text.",
+        "properties": {
+          "type": { "type": "string", "enum": ["response.output_audio_transcript.delta"] },
+          "event_id": { "type": "string" },
+          "response_id": { "type": "string" },
+          "item_id": { "type": "string" },
+          "output_index": { "type": "integer" },
+          "content_index": { "type": "integer" },
+          "delta": { "type": "string" }
+        }
+      },
+      "ResponseOutputAudioTranscriptDoneEvent": {
+        "type": "object",
+        "description": "Audio transcript completed.",
+        "properties": {
+          "type": { "type": "string", "enum": ["response.output_audio_transcript.done"] },
+          "event_id": { "type": "string" },
+          "response_id": { "type": "string" },
+          "item_id": { "type": "string" },
+          "output_index": { "type": "integer" },
+          "content_index": { "type": "integer" },
+          "transcript": { "type": "string" }
+        }
+      },
+      "ResponseOutputAudioDeltaEvent": {
+        "type": "object",
+        "description": "Incremental audio data (base64).",
+        "properties": {
+          "type": { "type": "string", "enum": ["response.output_audio.delta"] },
+          "event_id": { "type": "string" },
+          "response_id": { "type": "string" },
+          "item_id": { "type": "string" },
+          "output_index": { "type": "integer" },
+          "content_index": { "type": "integer" },
+          "delta": { "type": "string" }
+        }
+      },
+      "ResponseOutputAudioDoneEvent": {
+        "type": "object",
+        "description": "Audio output completed.",
+        "properties": {
+          "type": { "type": "string", "enum": ["response.output_audio.done"] },
+          "event_id": { "type": "string" },
+          "response_id": { "type": "string" },
+          "item_id": { "type": "string" },
+          "output_index": { "type": "integer" },
+          "content_index": { "type": "integer" }
+        }
+      },
+      "ResponseFunctionCallArgumentsDoneEvent": {
+        "type": "object",
+        "description": "Function call arguments completed.",
+        "properties": {
+          "type": { "type": "string", "enum": ["response.function_call_arguments.done"] },
+          "event_id": { "type": "string" },
+          "response_id": { "type": "string" },
+          "item_id": { "type": "string" },
+          "output_index": { "type": "integer" },
+          "call_id": { "type": "string" },
+          "name": { "type": "string" },
+          "arguments": { "type": "string" }
+        }
+      },
+      "ResponseMcpCallArgumentsDoneEvent": {
+        "type": "object",
+        "description": "MCP tool call arguments completed.",
+        "properties": {
+          "type": { "type": "string", "enum": ["response.mcp_call_arguments.done"] },
+          "event_id": { "type": "string" },
+          "response_id": { "type": "string" },
+          "item_id": { "type": "string" },
+          "output_index": { "type": "integer" },
+          "call_id": { "type": "string" },
+          "name": { "type": "string" },
+          "arguments": { "type": "string" }
+        }
+      },
+      "ResponseMcpCallCompletedEvent": {
+        "type": "object",
+        "description": "MCP tool call completed.",
+        "properties": {
+          "type": { "type": "string", "enum": ["response.mcp_call.completed"] },
+          "event_id": { "type": "string" }
+        }
+      },
+      "ResponseMcpCallFailedEvent": {
+        "type": "object",
+        "description": "MCP tool call failed.",
+        "properties": {
+          "type": { "type": "string", "enum": ["response.mcp_call.failed"] },
+          "event_id": { "type": "string" }
+        }
+      },
+      "McpListToolsCompletedEvent": {
+        "type": "object",
+        "description": "MCP tool list retrieved.",
+        "properties": {
+          "type": { "type": "string", "enum": ["mcp_list_tools.completed"] },
+          "event_id": { "type": "string" }
+        }
+      },
+      "ErrorEvent": {
+        "type": "object",
+        "description": "An error occurred.",
+        "properties": {
+          "type": { "type": "string", "enum": ["error"] },
+          "event_id": { "type": "string" },
+          "error": { "$ref": "#/components/schemas/RealtimeError" }
+        }
+      }
+    }
+  }
+}

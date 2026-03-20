@@ -152,6 +152,20 @@ internal sealed class GenerateCommand : Command
         Description = "Override the JsonSerializerContext class name (default: SourceGenerationContext). Useful when generating multiple specs to the same project.",
     };
 
+    private Option<string> TypesNamespace { get; } = new(
+        name: "--types-namespace")
+    {
+        DefaultValueFactory = _ => string.Empty,
+        Description = "Namespace to use for type references instead of the main namespace. Used for cross-namespace schema referencing where models live in a different namespace.",
+    };
+
+    private Option<bool> GenerateModels { get; } = new(
+        name: "--generate-models")
+    {
+        DefaultValueFactory = _ => true,
+        Description = "Generate model classes, enums, and JSON converters. Set to false when referencing types from an existing namespace via --types-namespace.",
+    };
+
     public GenerateCommand() : base(name: "generate", description: "Generates client sdk using an OpenAPI or AsyncAPI spec.")
     {
         Arguments.Add(Input);
@@ -173,6 +187,8 @@ internal sealed class GenerateCommand : Command
         Options.Add(OpenApiOverrides);
         Options.Add(WebSocketClientClassName);
         Options.Add(JsonSerializerContextName);
+        Options.Add(TypesNamespace);
+        Options.Add(GenerateModels);
 
         SetAction(HandleAsync);
     }
@@ -189,6 +205,14 @@ internal sealed class GenerateCommand : Command
             ? "SourceGenerationContext"
             : contextName;
 
+        var generateModels = parseResult.GetRequiredValue(GenerateModels);
+        var typesNamespaceValue = parseResult.GetRequiredValue(TypesNamespace);
+
+        if (!generateModels && string.IsNullOrWhiteSpace(typesNamespaceValue))
+        {
+            Console.WriteLine("Warning: --generate-models false without --types-namespace means no model files will be generated and type references will use the main namespace. This is likely a misconfiguration. Consider adding --types-namespace to reference types from an existing namespace.");
+        }
+
         Settings settings = Settings.Default with
         {
             TargetFramework = parseResult.GetRequiredValue(TargetFramework),
@@ -199,6 +223,7 @@ internal sealed class GenerateCommand : Command
             ExcludeDeprecatedOperations = parseResult.GetRequiredValue(ExcludeDeprecatedOperations),
             JsonSerializerContext = $"{namespaceValue}.{contextClassName}",
             GenerateJsonSerializerContextTypes = true,
+            GenerateModels = generateModels,
             ComputeDiscriminators = parseResult.GetRequiredValue(ComputeDiscriminators),
             GenerateModelValidationMethods = parseResult.GetRequiredValue(GenerateModelValidationMethods),
             IgnoreOpenApiErrors = parseResult.GetRequiredValue(IgnoreOpenApiErrors),
@@ -210,6 +235,7 @@ internal sealed class GenerateCommand : Command
             OpenApiOverrides = parseResult.GetRequiredValue(OpenApiOverrides).ToImmutableArray(),
             GenerateWebSocketClient = true,
             WebSocketClientClassName = parseResult.GetRequiredValue(WebSocketClientClassName),
+            TypesNamespace = typesNamespaceValue,
         };
             
         Console.WriteLine($"Loading {input}...");
@@ -255,69 +281,82 @@ internal sealed class GenerateCommand : Command
                 .Concat([Sources.AddCommands(data.Methods, data.Tags)])
                 .Where(x => !x.IsEmpty)
                 .ToArray()
-            : data.Enums
-            .SelectMany(x => new []
-            {
-                Sources.Enum(x),
-                Sources.EnumJsonConverter(x),
-                Sources.EnumNullableJsonConverter(x),
-            })
-            .Concat(data.Classes
+            : generateModels
+            ? data.Enums
                 .SelectMany(x => new []
                 {
-                    Sources.Class(x),
-                    Sources.ClassJsonExtensions(x),
-                    Sources.ClassValidation(x),
-                }))
-            .Concat(data.Methods
-                .SelectMany(x => new []
-                {
-                    Sources.Method(x),
-                    Sources.MethodInterface(x),
-                }))
-            .Concat(data.Clients
-                .SelectMany(x => new []
-                {
-                    Sources.Client(x),
-                    Sources.ClientInterface(x),
-                }))
-            .Concat(data.Authorizations
-                .SelectMany(x => new []
-                {
-                    Sources.Authorization(x),
-                    Sources.AuthorizationInterface(x),
-                }))
-            .Concat([Sources.MainAuthorizationConstructor(data.Authorizations)])
-            .Concat(data.AnyOfs
-                .SelectMany(x => new []
-                {
-                    Sources.AnyOf(x),
-                    Sources.AnyOfJsonExtensions(x),
-                    Sources.AnyOfJsonConverter(x),
-                    //Sources.AnyOfJsonConverterFactory(x),
-                    Sources.AnyOfValidation(x),
-                }))
-            .Concat([Sources.JsonSerializerContext(data.Converters, data.Types)])
-            .Concat([Sources.JsonSerializerContextTypes(data.Types)])
-            .Concat([Sources.Polyfills(settings)])
-            .Concat([Sources.Exceptions(settings)])
-            .Concat([Sources.PathBuilder(settings)])
-            .Concat(data.Methods.Any(static x => x.RawStream)
-                ? [Sources.ResponseStream(data.Converters.Settings)]
-                : [])
-            .Concat([Sources.UnixTimestampJsonConverter(settings)])
-            // WebSocket client generation (from AsyncAPI specs)
-            .Concat(data.WebSocketClients
+                    Sources.Enum(x),
+                    Sources.EnumJsonConverter(x),
+                    Sources.EnumNullableJsonConverter(x),
+                })
+                .Concat(data.Classes
+                    .SelectMany(x => new []
+                    {
+                        Sources.Class(x),
+                        Sources.ClassJsonExtensions(x),
+                        Sources.ClassValidation(x),
+                    }))
+                .Concat(data.Methods
+                    .SelectMany(x => new []
+                    {
+                        Sources.Method(x),
+                        Sources.MethodInterface(x),
+                    }))
+                .Concat(data.Clients
+                    .SelectMany(x => new []
+                    {
+                        Sources.Client(x),
+                        Sources.ClientInterface(x),
+                    }))
+                .Concat(data.Authorizations
+                    .SelectMany(x => new []
+                    {
+                        Sources.Authorization(x),
+                        Sources.AuthorizationInterface(x),
+                    }))
+                .Concat([Sources.MainAuthorizationConstructor(data.Authorizations)])
+                .Concat(data.AnyOfs
+                    .SelectMany(x => new []
+                    {
+                        Sources.AnyOf(x),
+                        Sources.AnyOfJsonExtensions(x),
+                        Sources.AnyOfJsonConverter(x),
+                        //Sources.AnyOfJsonConverterFactory(x),
+                        Sources.AnyOfValidation(x),
+                    }))
+                .Concat([Sources.JsonSerializerContext(data.Converters, data.Types)])
+                .Concat([Sources.JsonSerializerContextTypes(data.Types)])
+                .Concat([Sources.Polyfills(settings)])
+                .Concat([Sources.Exceptions(settings)])
+                .Concat([Sources.PathBuilder(settings)])
+                .Concat(data.Methods.Any(static x => x.RawStream)
+                    ? [Sources.ResponseStream(data.Converters.Settings)]
+                    : [])
+                .Concat([Sources.UnixTimestampJsonConverter(settings)])
+                // WebSocket client generation (from AsyncAPI specs)
+                .Concat(data.WebSocketClients
+                    .SelectMany(x => new []
+                    {
+                        Sources.WebSocketClient(x),
+                        Sources.WebSocketReceiveMethod(x),
+                    }))
+                .Concat(data.WebSocketOperations
+                    .Where(x => x.Direction == AutoSDK.Models.WebSocketDirection.Send)
+                    .Select(x => Sources.WebSocketSendMethod(x)))
+                .Where(x => !x.IsEmpty)
+                .ToArray()
+            // When generate-models is false, only output WebSocket client files
+            : data.WebSocketClients
                 .SelectMany(x => new []
                 {
                     Sources.WebSocketClient(x),
                     Sources.WebSocketReceiveMethod(x),
-                }))
-            .Concat(data.WebSocketOperations
-                .Where(x => x.Direction == AutoSDK.Models.WebSocketDirection.Send)
-                .Select(x => Sources.WebSocketSendMethod(x)))
-            .Where(x => !x.IsEmpty)
-            .ToArray();
+                })
+                .Concat(data.WebSocketOperations
+                    .Where(x => x.Direction == AutoSDK.Models.WebSocketDirection.Send)
+                    .Select(x => Sources.WebSocketSendMethod(x)))
+                .Where(x => !x.IsEmpty)
+                .ToArray();
         
         Directory.CreateDirectory(output);
         

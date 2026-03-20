@@ -55,7 +55,8 @@ public record struct Settings(
     ImmutableArray<string> OpenApiOverrides,
 
     bool GenerateWebSocketClient,
-    string WebSocketClientClassName)
+    string WebSocketClientClassName,
+    string TypesNamespace)
 {
     public static Settings Default => new(
         TargetFramework: "net10.0",
@@ -100,6 +101,7 @@ public record struct Settings(
         BaseUrl: string.Empty,
         OpenApiOverrides: ImmutableArray<string>.Empty,
         GenerateWebSocketClient: true,
-        WebSocketClientClassName: string.Empty
+        WebSocketClientClassName: string.Empty,
+        TypesNamespace: string.Empty
     );
 }
