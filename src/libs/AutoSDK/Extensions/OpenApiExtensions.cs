@@ -1923,26 +1923,49 @@ info:
         string description,
         Settings settings)
     {
-        var values = @enum
-            .Select(value => ((JsonNode?)value).ToEnumValue(
-                description: description,
-                settings))
-            .Where(value => !string.IsNullOrWhiteSpace(value.Name))
-            .Distinct()
-            .ToDictionary(x => x.Id, x => x);
-
-        if (values.All(x => x.Value.Name.ToUpperInvariant().Contains(enumName.ToUpperInvariant())))
+        var values = new Dictionary<string, PropertyData>();
+        for (var i = 0; i < @enum.Count; i++)
         {
-            values = values.ToDictionary(
-                x => x.Key,
-                x => x.Value with
+            var value = ((JsonNode?)@enum[i]).ToEnumValue(
+                description: description,
+                settings);
+            if (!string.IsNullOrWhiteSpace(value.Name) && !values.ContainsKey(value.Id))
+            {
+                values[value.Id] = value;
+            }
+        }
+
+        // Check if all names contain the enum name (case-insensitive)
+        var allContainEnumName = values.Count > 0;
+        if (allContainEnumName)
+        {
+            var enumNameUpper = enumName.ToUpperInvariant();
+            foreach (var kvp in values)
+            {
+                if (!kvp.Value.Name.ToUpperInvariant().Contains(enumNameUpper))
                 {
-                    Name = x.Value.Name.Remove(
-                        x.Value.Name.IndexOf(enumName, StringComparison.OrdinalIgnoreCase),
+                    allContainEnumName = false;
+                    break;
+                }
+            }
+        }
+
+        if (allContainEnumName)
+        {
+            // Rebuild in-place by collecting keys first to avoid mutation during iteration
+            var keys = new List<string>(values.Keys);
+            foreach (var key in keys)
+            {
+                var v = values[key];
+                values[key] = v with
+                {
+                    Name = v.Name.Remove(
+                        v.Name.IndexOf(enumName, StringComparison.OrdinalIgnoreCase),
                         enumName.Length).ToEnumValue(
                         description: description,
                         settings).Name,
-                });
+                };
+            }
         }
 
         return values;

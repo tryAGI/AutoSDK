@@ -98,6 +98,47 @@ public record struct TypeData(
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
 
+        // Fast path for simple primitive types — skip all LINQ/builder machinery
+        if (!context.Schema.IsEnum() &&
+            !context.Schema.IsAnyOf() && !context.Schema.IsOneOf() && !context.Schema.IsAllOf() &&
+            !context.Schema.IsArray() && !context.Schema.IsBinary() && !context.Schema.IsBase64() &&
+            context.Schema.ResolveIfRequired() is not { Properties.Count: > 0 })
+        {
+            var primitiveType = GetCSharpType(context);
+            if (primitiveType is "bool" or "int" or "long" or "short" or "byte" or "float" or "double"
+                or "decimal" or "char" or "string" or "object" or "byte[]"
+                or "global::System.DateTime" or "global::System.DateTimeOffset" or "global::System.Guid")
+            {
+                return new TypeData(
+                    CSharpTypeRaw: primitiveType,
+                    CSharpTypeNullability: GetCSharpNullability(context),
+                    IsBaseClass: false,
+                    IsDerivedClass: false,
+                    IsValueType: ContextIsValueType(context),
+                    IsNullable: context.Schema.IsNullable() || context.Schema.IsNullableAnyOf(),
+                    IsArray: false,
+                    IsEnum: false,
+                    IsBase64: false,
+                    IsDate: context.Schema.IsDate(),
+                    IsDateTime: context.Schema.IsDateTime(),
+                    IsBinary: false,
+                    IsUnixTimestamp: context.Schema.IsUnixTimestamp(),
+                    AnyOfCount: 0,
+                    OneOfCount: 0,
+                    AllOfCount: 0,
+                    IsComponent: context.IsComponent,
+                    HasDiscriminator: context.Schema.Discriminator != null,
+                    Properties: ImmutableArray<string>.Empty,
+                    EnumValues: ImmutableArray<string>.Empty,
+                    SubTypes: ImmutableArray<Box>.Empty,
+                    Namespace: primitiveType.StartsWith("global::System.", StringComparison.Ordinal)
+                        ? "System"
+                        : context.Settings.Namespace,
+                    IsDeprecated: context.Schema.IsDeprecated(),
+                    Settings: context.Settings);
+            }
+        }
+
         var properties = ImmutableArray<string>.Empty;
         if (context.Schema.ResolveIfRequired() is { } referenceSchema)
         {
@@ -298,9 +339,9 @@ public record struct TypeData(
             (_, _) when context.Schema.IsOneOf() && !context.IsNamedAnyOfLike && GetDistinctChildTypes(context, Hint.OneOf) is { Length: 1 } distinctOneOf => distinctOneOf[0],
             (_, _) when context.Schema.IsAllOf() && !context.IsNamedAnyOfLike && GetDistinctChildTypes(context, Hint.AllOf) is { Length: 1 } distinctAllOf => distinctAllOf[0],
 
-            (_, _) when context.Schema.IsAnyOf() => $"global::{context.Settings.Namespace}.AnyOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AnyOf).Select(x => x.TypeData.CSharpTypeWithNullabilityForValueTypes))}>",
-            (_, _) when context.Schema.IsOneOf() => $"global::{context.Settings.Namespace}.OneOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.OneOf).Select(x => x.TypeData.CSharpTypeWithNullabilityForValueTypes))}>",
-            (_, _) when context.Schema.IsAllOf() => $"global::{context.Settings.Namespace}.AllOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AllOf).Select(x => x.TypeData.CSharpTypeWithNullabilityForValueTypes))}>",
+            (_, _) when context.Schema.IsAnyOf() => $"global::{context.Settings.Namespace}.AnyOf<{JoinChildTypes(context, Hint.AnyOf)}>",
+            (_, _) when context.Schema.IsOneOf() => $"global::{context.Settings.Namespace}.OneOf<{JoinChildTypes(context, Hint.OneOf)}>",
+            (_, _) when context.Schema.IsAllOf() => $"global::{context.Settings.Namespace}.AllOf<{JoinChildTypes(context, Hint.AllOf)}>",
 
             ("object", _) or (null, _) when
                 context.Schema.IsSchemaReference() &&
@@ -384,11 +425,49 @@ public record struct TypeData(
     /// </summary>
     private static string[] GetDistinctChildTypes(SchemaContext context, Hint hint)
     {
-        return context.Children
-            .Where(x => x.Hint == hint)
-            .Select(x => x.TypeData.CSharpTypeWithoutNullability)
-            .Distinct(StringComparer.Ordinal)
-            .ToArray();
+        // Avoid LINQ allocations: manual loop with inline dedup
+        var seen = new HashSet<string>(StringComparer.Ordinal);
+        var count = 0;
+        for (var i = 0; i < context.Children.Count; i++)
+        {
+            var child = context.Children[i];
+            if (child.Hint == hint && seen.Add(child.TypeData.CSharpTypeWithoutNullability))
+            {
+                count++;
+            }
+        }
+        if (count == 0) return [];
+
+        var result = new string[count];
+        var idx = 0;
+        seen.Clear();
+        for (var i = 0; i < context.Children.Count; i++)
+        {
+            var child = context.Children[i];
+            if (child.Hint == hint && seen.Add(child.TypeData.CSharpTypeWithoutNullability))
+            {
+                result[idx++] = child.TypeData.CSharpTypeWithoutNullability;
+            }
+        }
+        return result;
+    }
+
+    /// <summary>
+    /// Joins child type names for a given hint, avoiding LINQ .Where().Select() allocations.
+    /// </summary>
+    private static string JoinChildTypes(SchemaContext context, Hint hint)
+    {
+        var sb = new System.Text.StringBuilder();
+        for (var i = 0; i < context.Children.Count; i++)
+        {
+            var child = context.Children[i];
+            if (child.Hint == hint)
+            {
+                if (sb.Length > 0) sb.Append(", ");
+                sb.Append(child.TypeData.CSharpTypeWithNullabilityForValueTypes);
+            }
+        }
+        return sb.ToString();
     }
 
     /// <summary>

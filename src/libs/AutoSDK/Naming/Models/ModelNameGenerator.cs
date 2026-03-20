@@ -133,49 +133,71 @@ public static class ModelNameGenerator
     
     public static void ResolveCollisions(IReadOnlyCollection<SchemaContext> contexts)
     {
+        // Use dictionary-based grouping to avoid per-iteration LINQ + ToUpperInvariant allocations
+        var groups = new Dictionary<string, List<SchemaContext>>(StringComparer.OrdinalIgnoreCase);
         while (true)
         {
-            var contextsWithCollision = contexts
-                .Where(x => !x.IsReference && (x.IsClass || x.IsEnum || x.IsAnyOfLikeStructure))
-                // Sometimes there are still collisions for file names with different casing
-                .GroupBy(x => x.Id.ToUpperInvariant())
-                .Where(x => x.Count() > 1)
-                .ToArray();
-            if (contextsWithCollision.Length == 0)
+            groups.Clear();
+            var hasCollisions = false;
+            foreach (var context in contexts)
             {
-                break;
-            }
-            
-            foreach (var group in contextsWithCollision)
-            {
-                var i = 2;
-                foreach (var context in group.Skip(1))
+                if (context.IsReference || (!context.IsClass && !context.IsEnum && !context.IsAnyOfLikeStructure))
                 {
-                    context.Id += $"{i++}";
+                    continue;
+                }
+                if (!groups.TryGetValue(context.Id, out var list))
+                {
+                    list = [context];
+                    groups[context.Id] = list;
+                }
+                else
+                {
+                    list.Add(context);
+                    hasCollisions = true;
+                }
+            }
+            if (!hasCollisions) break;
+
+            foreach (var group in groups.Values)
+            {
+                if (group.Count <= 1) continue;
+                for (var i = 1; i < group.Count; i++)
+                {
+                    group[i].Id += $"{i + 1}";
                 }
             }
         }
     }
-    
+
     public static void ResolveCollisions(IReadOnlyCollection<OperationContext> contexts)
     {
+        var groups = new Dictionary<(string, string), List<OperationContext>>();
         while (true)
         {
-            var schemasWithCollision = contexts
-                .GroupBy(x => (x.MethodName, x.Tags.FirstOrDefault() ?? string.Empty))
-                .Where(x => x.Count() > 1)
-                .ToArray();
-            if (schemasWithCollision.Length == 0)
+            groups.Clear();
+            var hasCollisions = false;
+            foreach (var context in contexts)
             {
-                break;
-            }
-            
-            foreach (var group in schemasWithCollision)
-            {
-                var i = 2;
-                foreach (var context in group.Skip(1))
+                var key = (context.MethodName, context.Tags.FirstOrDefault() ?? string.Empty);
+                if (!groups.TryGetValue(key, out var list))
                 {
-                    context.MethodName += $"{i++}";
+                    list = [context];
+                    groups[key] = list;
+                }
+                else
+                {
+                    list.Add(context);
+                    hasCollisions = true;
+                }
+            }
+            if (!hasCollisions) break;
+
+            foreach (var group in groups.Values)
+            {
+                if (group.Count <= 1) continue;
+                for (var i = 1; i < group.Count; i++)
+                {
+                    group[i].MethodName += $"{i + 1}";
                 }
             }
         }
