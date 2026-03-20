@@ -57,6 +57,7 @@ public class SchemaContext(
     public TypeData TypeData { get; set; } = TypeData.Default;
     private bool _dataComputed;
     private bool _tagsComputed;
+    private int _lastInputsHash;
 
     /// <summary>
     /// True if this schema is part of a circular reference chain.
@@ -462,6 +463,16 @@ public class SchemaContext(
 
     private void ComputeNodeData()
     {
+        // Skip recomputation if inputs (children/reference TypeData) haven't changed.
+        // This avoids re-creating ImmutableArrays and record copies for cyclic schemas
+        // whose dependencies produce the same TypeData across outer-loop iterations.
+        var inputsHash = ComputeInputsHash();
+        if (TypeData != TypeData.Default && inputsHash == _lastInputsHash)
+        {
+            return;
+        }
+        _lastInputsHash = inputsHash;
+
         TypeData = IsReference
             ? ResolvedReference?.TypeData ??
               throw new InvalidOperationException("Resolved reference must have type data.")
@@ -486,6 +497,25 @@ public class SchemaContext(
         {
             AnyOfData = global::AutoSDK.Models.AnyOfData.FromSchemaContext(this);
         }
+    }
+
+    /// <summary>
+    /// Computes a hash of the inputs that determine this schema's TypeData:
+    /// children TypeData and resolved reference TypeData. Used to skip
+    /// redundant ComputeNodeData calls when inputs haven't changed.
+    /// </summary>
+    private int ComputeInputsHash()
+    {
+        var hash = new HashCode();
+        if (ResolvedReference != null)
+        {
+            hash.Add(ResolvedReference.TypeData.GetHashCode());
+        }
+        for (var i = 0; i < Children.Count; i++)
+        {
+            hash.Add(Children[i].TypeData.GetHashCode());
+        }
+        return hash.ToHashCode();
     }
 
     public bool HasAnyTag(params string[] tags)
