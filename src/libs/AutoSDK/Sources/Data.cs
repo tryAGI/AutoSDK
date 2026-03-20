@@ -185,9 +185,10 @@ public static class Data
             schema.ComputeData();
         }
 
-        // Second pass: recompute schemas involved in circular references.
+        // Second pass: recompute only schemas involved in circular references.
         // After the first pass all TypeData is set, so cyclic schemas now
-        // produce their final results. Then force-memoize everything.
+        // produce their final results with complete data. O(k) where k is
+        // the number of unmemoized schemas (~10% for specs with circular refs).
         foreach (var schema in filteredSchemas)
         {
             schema.RecomputeDataIfNeeded();

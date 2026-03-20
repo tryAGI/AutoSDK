@@ -432,31 +432,8 @@ public class SchemaContext(
 
         // Only memoize if no subtree was cut short by depth/cycle limits
         _dataComputed = fullyComputed;
-        
-        TypeData = IsReference
-            ? ResolvedReference?.TypeData ??
-              throw new InvalidOperationException("Resolved reference must have type data.")
-            : TypeData.FromSchemaContext(this);
-        if (IsReference && ResolvedReference != null && TypeData != TypeData.Default)
-        {
-            TypeData = TypeData with
-            {
-                CSharpTypeRaw = TypeData.GetCSharpType(ResolvedReference),
-                CSharpTypeNullability = TypeData.GetCSharpNullability(ResolvedReference, this),
-            };
-        }
-        if (IsProperty)
-        {
-            PropertyData = Models.PropertyData.FromSchemaContext(this);
-        }
-        if (Hint is Models.Hint.Parameter)
-        {
-            ParameterData = MethodParameter.FromSchemaContext(this);
-        }
-        if (IsAnyOfLikeStructure && !TypeData.IsCollapsedAnyOfLike(this))
-        {
-            AnyOfData = global::AutoSDK.Models.AnyOfData.FromSchemaContext(this);
-        }
+
+        ComputeNodeData();
 
         return fullyComputed;
     }
@@ -472,7 +449,12 @@ public class SchemaContext(
             return;
         }
 
-        // All TypeData is now set from the first pass — recompute this node's data
+        ComputeNodeData();
+        _dataComputed = true;
+    }
+
+    private void ComputeNodeData()
+    {
         TypeData = IsReference
             ? ResolvedReference?.TypeData ??
               throw new InvalidOperationException("Resolved reference must have type data.")
@@ -497,8 +479,6 @@ public class SchemaContext(
         {
             AnyOfData = global::AutoSDK.Models.AnyOfData.FromSchemaContext(this);
         }
-
-        _dataComputed = true;
     }
 
     public bool HasAnyTag(params string[] tags)
