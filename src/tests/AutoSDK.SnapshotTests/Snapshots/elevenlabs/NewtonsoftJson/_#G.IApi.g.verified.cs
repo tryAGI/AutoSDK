@@ -69,51 +69,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TextToVoiceClient TextToVoice { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public StudioClient Studio { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public DubbingClient Dubbing { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public PronunciationDictionaryClient PronunciationDictionary { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public SingleUseTokenClient SingleUseToken { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AgentsPlatformClient AgentsPlatform { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ConversationalAiClient ConversationalAi { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public MusicGenerationClient MusicGeneration { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public PvcVoicesClient PvcVoices { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public HistoryClient History { get; }
 
         /// <summary>
@@ -144,6 +99,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public TextToVoiceClient TextToVoice { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public TextToVoice2Client TextToVoice2 { get; }
 
         /// <summary>
@@ -154,12 +114,27 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public StudioClient Studio { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DubbingClient Dubbing { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public AudioNative2Client AudioNative2 { get; }
 
         /// <summary>
         /// 
         /// </summary>
         public UsageClient Usage { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public PronunciationDictionaryClient PronunciationDictionary { get; }
 
         /// <summary>
         /// 
@@ -179,7 +154,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public SingleUseTokenClient SingleUseToken { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ForcedAlignment2Client ForcedAlignment2 { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AgentsPlatformClient AgentsPlatform { get; }
 
         /// <summary>
         /// 
@@ -189,7 +174,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public ConversationalAiClient ConversationalAi { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public MusicGenerationClient MusicGeneration { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public MusicClient Music { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public PvcVoicesClient PvcVoices { get; }
 
     }
 }

@@ -86,87 +86,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TextToVoiceClient TextToVoice => new TextToVoiceClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public StudioClient Studio => new StudioClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public DubbingClient Dubbing => new DubbingClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public PronunciationDictionaryClient PronunciationDictionary => new PronunciationDictionaryClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public SingleUseTokenClient SingleUseToken => new SingleUseTokenClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AgentsPlatformClient AgentsPlatform => new AgentsPlatformClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ConversationalAiClient ConversationalAi => new ConversationalAiClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public MusicGenerationClient MusicGeneration => new MusicGenerationClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public PvcVoicesClient PvcVoices => new PvcVoicesClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
         public HistoryClient History => new HistoryClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
@@ -221,6 +140,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public TextToVoiceClient TextToVoice => new TextToVoiceClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public TextToVoice2Client TextToVoice2 => new TextToVoice2Client(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
@@ -239,6 +167,24 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public StudioClient Studio => new StudioClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DubbingClient Dubbing => new DubbingClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public AudioNative2Client AudioNative2 => new AudioNative2Client(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
@@ -249,6 +195,15 @@ namespace G
         /// 
         /// </summary>
         public UsageClient Usage => new UsageClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public PronunciationDictionaryClient PronunciationDictionary => new PronunciationDictionaryClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -284,7 +239,25 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public SingleUseTokenClient SingleUseToken => new SingleUseTokenClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ForcedAlignment2Client ForcedAlignment2 => new ForcedAlignment2Client(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AgentsPlatformClient AgentsPlatform => new AgentsPlatformClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -302,7 +275,34 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public ConversationalAiClient ConversationalAi => new ConversationalAiClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public MusicGenerationClient MusicGeneration => new MusicGenerationClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public MusicClient Music => new MusicClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public PvcVoicesClient PvcVoices => new PvcVoicesClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
