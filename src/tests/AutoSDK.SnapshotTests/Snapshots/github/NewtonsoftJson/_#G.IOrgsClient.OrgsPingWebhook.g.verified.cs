@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// Ping an organization webhook<br/>
         /// This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event)<br/>

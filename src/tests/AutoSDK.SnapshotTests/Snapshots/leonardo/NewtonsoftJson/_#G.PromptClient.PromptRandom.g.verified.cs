@@ -20,6 +20,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Generate a Random prompt<br/>
         /// This endpoint returns a random prompt

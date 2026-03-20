@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPipelineFamiliesClient
     {
+
         /// <summary>
         /// Index<br/>
         /// List pipeline families.<br/>

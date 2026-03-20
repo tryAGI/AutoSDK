@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IIssuesClient
     {
+
         /// <summary>
         /// List issue events<br/>
         /// Lists all events for an issue.

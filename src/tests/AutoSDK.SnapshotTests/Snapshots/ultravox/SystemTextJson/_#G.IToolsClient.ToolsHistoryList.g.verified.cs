@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IToolsClient
     {
+
         /// <summary>
         /// 
         /// </summary>

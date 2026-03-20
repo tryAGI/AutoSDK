@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPointersClient
     {
+
         /// <summary>
         /// Index<br/>
         /// Retrieve a paginated set of pipeline pointers that satisfy query parameters.<br/>

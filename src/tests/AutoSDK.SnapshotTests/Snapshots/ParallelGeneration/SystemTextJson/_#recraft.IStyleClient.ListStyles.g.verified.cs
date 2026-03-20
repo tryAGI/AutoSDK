@@ -5,6 +5,7 @@ namespace recraft
 {
     public partial interface IStyleClient
     {
+
         /// <summary>
         /// List Styles
         /// </summary>

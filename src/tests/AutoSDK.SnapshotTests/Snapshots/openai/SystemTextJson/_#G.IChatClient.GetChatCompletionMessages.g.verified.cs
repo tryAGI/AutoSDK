@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IChatClient
     {
+
         /// <summary>
         /// Get the messages in a stored chat completion. Only Chat Completions that<br/>
         /// have been created with the `store` parameter set to `true` will be<br/>

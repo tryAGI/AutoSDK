@@ -19,6 +19,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Remove user as a collaborator<br/>
         /// Removes a collaborator from an organization project. You must be an organization owner or a project `admin` to remove a collaborator.

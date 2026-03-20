@@ -6,11 +6,12 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// LeMUR response
     /// </summary>
     public readonly partial struct LemurResponse : global::System.IEquatable<LemurResponse>
     {
         /// <summary>
+        /// LeMUR string response<br/>
         /// Example: {"request_id":"5e1b27c2-691f-4414-8bc5-f14678442f9e","response":"Based on the transcript, the following locations were mentioned as being affected by wildfire smoke from Canada:\n\n- Maine\n- Maryland\n- Minnesota\n- Mid Atlantic region\n- Northeast region\n- New York City\n- Baltimore\n","usage":{"input_tokens":27,"output_tokens":3}}
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -28,6 +29,7 @@ namespace G
         public bool IsString => String != null;
 
         /// <summary>
+        /// LeMUR question &amp; answer response<br/>
         /// Example: {"request_id":"5e1b27c2-691f-4414-8bc5-f14678442f9e","response":[{"answer":"CA, US","question":"Where are there wildfires?"},{"answer":"yes","question":"Is global warming affecting wildfires?"}],"usage":{"input_tokens":27,"output_tokens":3}}
         /// </summary>
 #if NET6_0_OR_GREATER

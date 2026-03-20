@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List gists for a user<br/>
         /// Lists public gists for the specified user:

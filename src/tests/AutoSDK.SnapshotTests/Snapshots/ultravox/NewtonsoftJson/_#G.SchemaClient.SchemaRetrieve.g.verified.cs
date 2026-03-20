@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// OpenApi3 schema for this API. Format can be selected via content negotiation.<br/>
         /// - YAML: application/vnd.oai.openapi<br/>

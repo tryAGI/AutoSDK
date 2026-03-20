@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// Claim Pending Organization Invite
         /// </summary>

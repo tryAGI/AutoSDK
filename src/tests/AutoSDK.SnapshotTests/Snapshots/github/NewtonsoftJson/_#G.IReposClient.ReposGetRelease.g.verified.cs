@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Get a release<br/>
         /// Gets a public release with the specified release ID.<br/>

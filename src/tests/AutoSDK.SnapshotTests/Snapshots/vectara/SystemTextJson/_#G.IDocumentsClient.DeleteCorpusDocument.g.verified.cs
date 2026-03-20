@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IDocumentsClient
     {
+
         /// <summary>
         /// Delete a document<br/>
         /// Permanently delete a document identified by its unique `document_id` from a specific corpus. This operation cannot be undone, so use it with caution.

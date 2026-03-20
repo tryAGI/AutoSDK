@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAgentsClient
     {
+
         /// <summary>
         /// Get agent<br/>
         /// The Get Agent API enables you to retrieve the complete configuration and operational details of a specific AI agent, providing comprehensive visibility into agent capabilities, tool integrations, behavioral instructions, and metadata.<br/>

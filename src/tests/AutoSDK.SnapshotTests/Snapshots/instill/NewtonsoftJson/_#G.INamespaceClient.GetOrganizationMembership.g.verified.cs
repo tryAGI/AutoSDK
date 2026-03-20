@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface INamespaceClient
     {
+
         /// <summary>
         /// Get a an organization membership<br/>
         /// Returns the details of a user membership within an organization.

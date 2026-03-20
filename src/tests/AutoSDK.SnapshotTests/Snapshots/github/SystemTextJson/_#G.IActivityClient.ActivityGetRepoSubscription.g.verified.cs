@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActivityClient
     {
+
         /// <summary>
         /// Get a repository subscription<br/>
         /// Gets information about whether the authenticated user is subscribed to the repository.

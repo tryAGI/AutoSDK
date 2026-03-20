@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get all organization repository rulesets<br/>
         /// Get all the repository rulesets for an organization.

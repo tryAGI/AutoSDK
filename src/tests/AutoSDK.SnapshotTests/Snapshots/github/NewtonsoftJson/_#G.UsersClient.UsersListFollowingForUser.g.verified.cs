@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List the people a user follows<br/>
         /// Lists the people who the specified user follows.

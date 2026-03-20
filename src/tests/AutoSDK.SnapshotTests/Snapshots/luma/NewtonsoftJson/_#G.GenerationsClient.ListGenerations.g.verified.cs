@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List generations<br/>
         /// Retrieve a list of generations with optional filtering and sorting

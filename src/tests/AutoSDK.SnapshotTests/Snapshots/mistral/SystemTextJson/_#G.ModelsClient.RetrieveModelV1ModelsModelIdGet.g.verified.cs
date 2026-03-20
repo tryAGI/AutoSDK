@@ -22,6 +22,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Retrieve Model<br/>
         /// Retrieve a model information.

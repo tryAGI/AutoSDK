@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Gets the broadcaster’s Shield Mode activation status.<br/>
         /// Gets the broadcaster’s Shield Mode activation status.<br/>

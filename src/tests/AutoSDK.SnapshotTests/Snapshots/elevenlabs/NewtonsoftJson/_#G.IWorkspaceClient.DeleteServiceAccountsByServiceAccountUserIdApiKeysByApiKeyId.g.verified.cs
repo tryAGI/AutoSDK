@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IWorkspaceClient
     {
+
         /// <summary>
         /// Delete Service Account Api Key<br/>
         /// Delete an existing API key for a service account

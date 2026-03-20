@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IModelClient
     {
+
         /// <summary>
         /// Get a model definition<br/>
         /// Returns the details of a model definition.

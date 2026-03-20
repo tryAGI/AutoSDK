@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IApplicationClientsClient
     {
+
         /// <summary>
         /// Update an App Client<br/>
         /// Update the configuration or settings of an existing application client.
@@ -12,6 +13,7 @@ namespace G
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
         /// <param name="appClientId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

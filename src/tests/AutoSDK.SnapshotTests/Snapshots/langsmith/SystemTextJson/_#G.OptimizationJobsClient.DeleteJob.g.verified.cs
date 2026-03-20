@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Delete Job<br/>
         /// Delete a prompt optimization job.

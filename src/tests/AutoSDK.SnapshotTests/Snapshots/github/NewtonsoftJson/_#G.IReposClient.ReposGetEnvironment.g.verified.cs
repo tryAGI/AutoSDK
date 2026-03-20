@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Get an environment<br/>
         /// &gt; [!NOTE]<br/>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICodespacesClient
     {
+
         /// <summary>
         /// List selected repositories for a user secret<br/>
         /// List the repositories that have been granted the ability to use a user's development environment secret.<br/>

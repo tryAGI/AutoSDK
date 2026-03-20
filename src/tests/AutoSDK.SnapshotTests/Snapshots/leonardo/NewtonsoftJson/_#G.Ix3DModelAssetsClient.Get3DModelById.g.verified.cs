@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface Ix3dModelAssetsClient
     {
+
         /// <summary>
         /// Get 3D Model by ID<br/>
         /// This endpoint gets the specific 3D model
@@ -16,6 +17,7 @@ namespace G
         /// Default Value: 10
         /// </param>
         /// <param name="id"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

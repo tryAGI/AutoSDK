@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IEncodersClient
     {
+
         /// <summary>
         /// List encoders<br/>
         /// The List Encoders API retrieves a list of available encoders used for embedding documents and queries.

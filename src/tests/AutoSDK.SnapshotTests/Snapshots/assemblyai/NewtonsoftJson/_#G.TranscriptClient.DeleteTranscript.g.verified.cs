@@ -22,6 +22,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Delete transcript<br/>
         /// Remove the data from the transcript and mark it as deleted.

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IManageClient
     {
+
         /// <summary>
         /// Delete an API key.
         /// </summary>

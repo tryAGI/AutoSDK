@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAssistantsClient
     {
+
         /// <summary>
         /// Retrieves a thread.
         /// </summary>

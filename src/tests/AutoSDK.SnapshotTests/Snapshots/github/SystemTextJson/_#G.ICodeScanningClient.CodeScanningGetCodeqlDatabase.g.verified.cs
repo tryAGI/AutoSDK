@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICodeScanningClient
     {
+
         /// <summary>
         /// Get a CodeQL database for a repository<br/>
         /// Gets a CodeQL database for a language in a repository.<br/>

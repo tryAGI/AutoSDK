@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IToolsClient
     {
+
         /// <summary>
         /// Test a tool by executing it with the provided parameters.
         /// </summary>

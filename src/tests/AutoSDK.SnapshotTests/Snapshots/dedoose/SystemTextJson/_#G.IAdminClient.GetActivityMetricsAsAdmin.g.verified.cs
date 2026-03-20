@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAdminClient
     {
+
         /// <summary>
         /// GetActivityMetrics<br/>
         /// GetActivityMetrics

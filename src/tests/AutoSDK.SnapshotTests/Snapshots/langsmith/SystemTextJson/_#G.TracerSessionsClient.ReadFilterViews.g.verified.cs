@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Read Filter Views<br/>
         /// Get all filter views for a session.

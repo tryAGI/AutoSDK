@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUsersClient
     {
+
         /// <summary>
         /// List GPG keys for a user<br/>
         /// Lists the GPG keys for a user. This information is accessible by anyone.

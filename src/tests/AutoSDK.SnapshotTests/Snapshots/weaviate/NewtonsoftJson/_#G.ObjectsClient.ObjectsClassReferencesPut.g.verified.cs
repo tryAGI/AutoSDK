@@ -27,6 +27,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Replace cross-references.<br/>
         /// Replace **all** references in cross-reference property of an object.
@@ -38,6 +39,7 @@ namespace G
         /// Default Value: QUORUM
         /// </param>
         /// <param name="tenant"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

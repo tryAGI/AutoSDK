@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUsersClient
     {
+
         /// <summary>
         /// List users<br/>
         /// Lists all users, in the order that they signed up on GitHub. This list includes personal user accounts and organization accounts.<br/>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IGistsClient
     {
+
         /// <summary>
         /// Delete a gist comment
         /// </summary>

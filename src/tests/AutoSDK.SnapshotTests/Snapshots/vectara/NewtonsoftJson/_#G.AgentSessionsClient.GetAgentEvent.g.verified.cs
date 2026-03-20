@@ -30,6 +30,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get event in agent session<br/>
         /// Retrieve the details of a specific event within an agent session.

@@ -17,6 +17,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Remove a collection (and its data).<br/>
         /// Remove a collection from the schema. This will also delete all the objects in the collection.

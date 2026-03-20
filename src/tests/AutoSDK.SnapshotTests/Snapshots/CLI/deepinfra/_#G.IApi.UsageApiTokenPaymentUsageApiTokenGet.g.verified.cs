@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IApi
     {
+
         /// <summary>
         /// Usage Api Token
         /// </summary>

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Completed
     /// </summary>
     public sealed partial class TranscriptListItemCompleted
     {

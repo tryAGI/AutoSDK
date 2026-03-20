@@ -5,9 +5,11 @@ namespace G
 {
     public partial interface IModelsClient
     {
+
         /// <summary>
         /// Creates a model with another name from an existing model.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

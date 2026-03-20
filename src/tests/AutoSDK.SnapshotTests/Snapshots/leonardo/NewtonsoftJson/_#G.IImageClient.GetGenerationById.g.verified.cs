@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IImageClient
     {
+
         /// <summary>
         /// Get a Single Generation<br/>
         /// This endpoint will provide information about a specific generation

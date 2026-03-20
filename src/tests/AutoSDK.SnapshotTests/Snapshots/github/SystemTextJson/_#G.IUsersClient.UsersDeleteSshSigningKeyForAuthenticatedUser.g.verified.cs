@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUsersClient
     {
+
         /// <summary>
         /// Delete an SSH signing key for the authenticated user<br/>
         /// Deletes an SSH signing key from the authenticated user's GitHub account.<br/>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IGitignoreClient
     {
+
         /// <summary>
         /// Get all gitignore templates<br/>
         /// List all templates available to pass as an option when [creating a repository](https://docs.github.com/rest/repos/repos#create-a-repository-for-the-authenticated-user).

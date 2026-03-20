@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// Get an organization secret<br/>
         /// Gets a single organization secret without revealing its encrypted value.<br/>

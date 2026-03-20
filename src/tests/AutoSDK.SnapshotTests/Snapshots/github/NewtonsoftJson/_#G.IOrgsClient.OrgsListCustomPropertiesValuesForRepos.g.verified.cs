@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// List custom property values for organization repositories<br/>
         /// Lists organization repositories with all of their custom property values.<br/>

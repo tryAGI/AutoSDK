@@ -22,6 +22,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get single init image<br/>
         /// This endpoint will return a single init image

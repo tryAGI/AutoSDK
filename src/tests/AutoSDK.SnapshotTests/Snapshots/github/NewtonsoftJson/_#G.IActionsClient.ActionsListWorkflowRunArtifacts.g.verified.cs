@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// List workflow run artifacts<br/>
         /// Lists artifacts for a workflow run.<br/>

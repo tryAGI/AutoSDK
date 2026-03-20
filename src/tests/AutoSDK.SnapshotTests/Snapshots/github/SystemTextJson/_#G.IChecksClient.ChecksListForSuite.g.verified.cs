@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IChecksClient
     {
+
         /// <summary>
         /// List check runs in a check suite<br/>
         /// Lists check runs for a check suite using its `id`.<br/>

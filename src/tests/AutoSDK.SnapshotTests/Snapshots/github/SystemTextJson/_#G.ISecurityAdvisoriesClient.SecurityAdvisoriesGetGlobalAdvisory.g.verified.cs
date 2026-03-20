@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISecurityAdvisoriesClient
     {
+
         /// <summary>
         /// Get a global security advisory<br/>
         /// Gets a global security advisory using its GitHub Security Advisory (GHSA) identifier.

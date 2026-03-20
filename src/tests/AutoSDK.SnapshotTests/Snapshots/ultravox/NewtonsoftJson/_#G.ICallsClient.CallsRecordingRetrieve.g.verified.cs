@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICallsClient
     {
+
         /// <summary>
         /// Returns or redirects to a recording of the call.
         /// </summary>

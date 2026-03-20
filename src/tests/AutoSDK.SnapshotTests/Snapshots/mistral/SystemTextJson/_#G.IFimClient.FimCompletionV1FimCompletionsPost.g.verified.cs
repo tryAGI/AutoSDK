@@ -5,10 +5,12 @@ namespace G
 {
     public partial interface IFimClient
     {
+
         /// <summary>
         /// Fim Completion<br/>
         /// FIM completion.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

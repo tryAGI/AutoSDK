@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// List organization invitation teams<br/>
         /// List all teams associated with an invitation. In order to see invitations in an organization, the authenticated user must be an organization owner.

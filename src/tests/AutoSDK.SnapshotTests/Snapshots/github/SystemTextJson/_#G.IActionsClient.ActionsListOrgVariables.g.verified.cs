@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// List organization variables<br/>
         /// Lists all organization variables.<br/>

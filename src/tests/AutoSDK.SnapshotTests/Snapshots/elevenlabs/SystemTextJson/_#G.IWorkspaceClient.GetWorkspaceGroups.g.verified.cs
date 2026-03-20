@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IWorkspaceClient
     {
+
         /// <summary>
         /// Get All Groups<br/>
         /// Get all groups in the workspace

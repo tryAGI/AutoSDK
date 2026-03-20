@@ -5,11 +5,13 @@ namespace G
 {
     public partial interface IFeedbackClient
     {
+
         /// <summary>
         /// Create Feedback With Token Post<br/>
         /// Create a new feedback with a token.
         /// </summary>
         /// <param name="token"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

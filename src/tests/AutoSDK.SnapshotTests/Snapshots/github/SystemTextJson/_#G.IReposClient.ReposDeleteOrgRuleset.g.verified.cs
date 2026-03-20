@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Delete an organization repository ruleset<br/>
         /// Delete a ruleset for an organization.

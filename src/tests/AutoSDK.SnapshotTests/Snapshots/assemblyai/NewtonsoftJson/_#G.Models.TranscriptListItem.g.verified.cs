@@ -5,18 +5,19 @@
 namespace G
 {
     /// <summary>
+    /// Transcript list item<br/>
     /// Example: {"id":"9ea68fd3-f953-42c1-9742-976c447fb463","resource_url":"https://api.assemblyai.com/v2/transcript/9ea68fd3-f953-42c1-9742-976c447fb463","status":"completed","created":"2023-11-02T21:49:25.586965","completed":"2023-11-02T21:49:25.586965","audio_url":"https://github.com/AssemblyAI-Examples/audio-examples/raw/main/20230607_me_canadian_wildfires.mp3","error":""}
     /// </summary>
     public sealed partial class TranscriptListItem
     {
         /// <summary>
-        /// 
+        /// ID
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Guid Id { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Resource URL
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resource_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string ResourceUrl { get; set; } = default!;
@@ -28,19 +29,19 @@ namespace G
         public global::G.TranscriptStatus Status { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Created
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created", Required = global::Newtonsoft.Json.Required.Always)]
         public string Created { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Completed
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completed", Required = global::Newtonsoft.Json.Required.Always)]
         public object Completed { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Audio URL
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("audio_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string AudioUrl { get; set; } = default!;
@@ -60,14 +61,24 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscriptListItem" /> class.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="resourceUrl"></param>
+        /// <param name="id">
+        /// ID
+        /// </param>
+        /// <param name="resourceUrl">
+        /// Resource URL
+        /// </param>
         /// <param name="status">
         /// The status of your transcript. Possible values are queued, processing, completed, or error.
         /// </param>
-        /// <param name="created"></param>
-        /// <param name="completed"></param>
-        /// <param name="audioUrl"></param>
+        /// <param name="created">
+        /// Created
+        /// </param>
+        /// <param name="completed">
+        /// Completed
+        /// </param>
+        /// <param name="audioUrl">
+        /// Audio URL
+        /// </param>
         /// <param name="error">
         /// Error message of why the transcript failed
         /// </param>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICodespacesClient
     {
+
         /// <summary>
         /// Update a codespace for the authenticated user<br/>
         /// Updates a codespace owned by the authenticated user. Currently only the codespace's machine type and recent folders can be modified using this endpoint.<br/>
@@ -12,6 +13,7 @@ namespace G
         /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// </summary>
         /// <param name="codespaceName"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

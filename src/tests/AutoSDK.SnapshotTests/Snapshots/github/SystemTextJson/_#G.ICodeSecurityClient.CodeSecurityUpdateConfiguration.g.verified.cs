@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICodeSecurityClient
     {
+
         /// <summary>
         /// Update a code security configuration<br/>
         /// Updates a code security configuration in an organization.<br/>
@@ -13,6 +14,7 @@ namespace G
         /// </summary>
         /// <param name="org"></param>
         /// <param name="configurationId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

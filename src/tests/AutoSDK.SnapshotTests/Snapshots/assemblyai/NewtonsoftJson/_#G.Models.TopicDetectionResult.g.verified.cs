@@ -17,7 +17,7 @@ namespace G
         public string Text { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Labels
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels")]
         public global::System.Collections.Generic.IList<global::G.TopicDetectionResultLabel>? Labels { get; set; }
@@ -42,7 +42,9 @@ namespace G
         /// <param name="text">
         /// The text in the transcript in which a detected topic occurs
         /// </param>
-        /// <param name="labels"></param>
+        /// <param name="labels">
+        /// Labels
+        /// </param>
         /// <param name="timestamp">
         /// Timestamp containing a start and end property in milliseconds<br/>
         /// Example: {"start":3978,"end":5114}

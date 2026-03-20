@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IDubbingClient
     {
+
         /// <summary>
         /// Delete Dubbing<br/>
         /// Deletes a dubbing project.

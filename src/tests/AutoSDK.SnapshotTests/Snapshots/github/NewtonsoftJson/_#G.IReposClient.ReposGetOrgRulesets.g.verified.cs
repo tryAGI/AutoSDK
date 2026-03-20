@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Get all organization repository rulesets<br/>
         /// Get all the repository rulesets for an organization.

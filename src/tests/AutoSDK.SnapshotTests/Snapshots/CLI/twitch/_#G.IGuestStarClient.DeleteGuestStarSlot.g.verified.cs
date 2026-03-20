@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IGuestStarClient
     {
+
         /// <summary>
         /// BETA Allows a caller to remove a slot assignment from a user participating in an active Guest Star session.<br/>
         /// BETA Allows a caller to remove a slot assignment from a user participating in an active Guest Star session. This revokes their access to the session immediately and disables their access to publish or subscribe to media within the session.<br/>

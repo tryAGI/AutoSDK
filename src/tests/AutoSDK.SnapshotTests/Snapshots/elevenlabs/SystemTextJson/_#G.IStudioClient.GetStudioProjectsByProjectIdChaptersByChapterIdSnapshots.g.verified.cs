@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IStudioClient
     {
+
         /// <summary>
         /// List Chapter Snapshots<br/>
         /// Gets information about all the snapshots of a chapter. Each snapshot can be downloaded as audio. Whenever a chapter is converted a snapshot will automatically be created.

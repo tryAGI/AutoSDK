@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// Enable or disable a security feature for an organization<br/>
         /// &gt; [!WARNING]<br/>
@@ -16,9 +17,11 @@ namespace G
         /// <param name="org"></param>
         /// <param name="securityProduct"></param>
         /// <param name="enablement"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
+
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task OrgsEnableOrDisableSecurityProductOnAllOrgReposAsync(
             string org,
@@ -45,6 +48,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
+
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task OrgsEnableOrDisableSecurityProductOnAllOrgReposAsync(
             string org,

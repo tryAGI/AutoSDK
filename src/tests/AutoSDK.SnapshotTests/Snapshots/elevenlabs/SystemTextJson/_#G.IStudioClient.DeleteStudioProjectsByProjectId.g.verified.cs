@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IStudioClient
     {
+
         /// <summary>
         /// Delete Studio Project<br/>
         /// Deletes a Studio project.

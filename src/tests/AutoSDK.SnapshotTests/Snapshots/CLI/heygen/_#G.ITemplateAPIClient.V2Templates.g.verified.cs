@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ITemplateApiClient
     {
+
         /// <summary>
         /// v2/templates<br/>
         /// v2/templates

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IVideoTranslateApiClient
     {
+
         /// <summary>
         /// v2/video_translate/target_languages<br/>
         /// v2/video_translate/target_languages

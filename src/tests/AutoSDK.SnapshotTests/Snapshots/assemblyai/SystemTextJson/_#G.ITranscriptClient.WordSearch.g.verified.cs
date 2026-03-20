@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ITranscriptClient
     {
+
         /// <summary>
         /// Search words in transcript<br/>
         /// Search through the transcript for keywords. You can search for individual words, numbers, or phrases containing up to five words or numbers.

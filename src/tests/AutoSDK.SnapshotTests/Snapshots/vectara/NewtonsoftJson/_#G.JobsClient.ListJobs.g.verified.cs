@@ -34,6 +34,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List jobs<br/>
         /// List jobs for the account. Jobs are background processes like replacing the filterable metadata attributes.

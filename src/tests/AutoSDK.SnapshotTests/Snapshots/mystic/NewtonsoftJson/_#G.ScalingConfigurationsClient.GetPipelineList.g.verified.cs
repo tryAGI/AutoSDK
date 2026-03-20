@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get Pipeline List<br/>
         /// Get a list of pipelines scoped to the user which use a scaling configuration

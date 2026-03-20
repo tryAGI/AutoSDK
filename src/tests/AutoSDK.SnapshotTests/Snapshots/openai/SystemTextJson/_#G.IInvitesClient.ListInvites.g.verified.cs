@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IInvitesClient
     {
+
         /// <summary>
         /// Returns a list of invites in the organization.
         /// </summary>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Get a repository rule suite<br/>
         /// Gets information about a suite of rule evaluations from within a repository.<br/>

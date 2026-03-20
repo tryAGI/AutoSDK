@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUsersClient
     {
+
         /// <summary>
         /// Retrieves a user by their identifier.
         /// </summary>

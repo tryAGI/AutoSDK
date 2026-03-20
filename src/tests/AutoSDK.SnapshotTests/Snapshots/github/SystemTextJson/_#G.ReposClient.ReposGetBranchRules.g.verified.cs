@@ -30,6 +30,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get rules for a branch<br/>
         /// Returns all active rules that apply to the specified branch. The branch does not need to exist; rules that would apply<br/>

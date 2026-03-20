@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Search User Groups<br/>
         /// Searches for user groups in the workspace. Multiple or no groups may be returned.

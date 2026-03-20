@@ -5,6 +5,7 @@ namespace petstore
 {
     public partial interface IpetstoreClient
     {
+
         /// <summary>
         /// List all pets
         /// </summary>

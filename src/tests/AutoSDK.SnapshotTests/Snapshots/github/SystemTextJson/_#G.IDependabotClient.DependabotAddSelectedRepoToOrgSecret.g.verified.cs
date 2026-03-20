@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IDependabotClient
     {
+
         /// <summary>
         /// Add selected repository to an organization secret<br/>
         /// Adds a repository to an organization secret when the `visibility` for<br/>

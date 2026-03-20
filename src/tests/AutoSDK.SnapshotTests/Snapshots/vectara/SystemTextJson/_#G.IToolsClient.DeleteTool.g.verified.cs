@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IToolsClient
     {
+
         /// <summary>
         /// Delete tool<br/>
         /// Permanently delete a tool and its configuration. This action cannot be undone. Agents attempting to use a deleted tool will fail, so ensure that agent configurations are updated before removing a tool.

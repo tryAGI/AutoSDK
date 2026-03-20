@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOpenAiClient
     {
+
         /// <summary>
         /// Retrieve Container<br/>
         /// Retrieves a container.

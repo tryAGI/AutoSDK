@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IVoicesClient
     {
+
         /// <summary>
         /// Get Voice<br/>
         /// Returns metadata about a specific voice.

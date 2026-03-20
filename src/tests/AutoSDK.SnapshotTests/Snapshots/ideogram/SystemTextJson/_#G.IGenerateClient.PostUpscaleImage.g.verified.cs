@@ -5,11 +5,13 @@ namespace G
 {
     public partial interface IGenerateClient
     {
+
         /// <summary>
         /// Upscale provided images synchronously with an optional prompt.<br/>
         /// A request to upscale a provided image with Ideogram.<br/>
         /// Supported image formats include JPEG, PNG, and WEBP
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

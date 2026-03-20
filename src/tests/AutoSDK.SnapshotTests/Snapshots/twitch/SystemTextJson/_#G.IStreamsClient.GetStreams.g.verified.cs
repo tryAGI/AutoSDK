@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IStreamsClient
     {
+
         /// <summary>
         /// Gets a list of all streams.<br/>
         /// Gets a list of all streams. The list is in descending order by the number of viewers watching the stream. Because viewers come and go during a stream, it’s possible to find duplicate or missing streams in the list as you page through the results.<br/>

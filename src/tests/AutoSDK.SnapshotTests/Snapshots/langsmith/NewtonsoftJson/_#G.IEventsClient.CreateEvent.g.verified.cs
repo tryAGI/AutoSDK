@@ -5,9 +5,11 @@ namespace G
 {
     public partial interface IEventsClient
     {
+
         /// <summary>
         /// Create Event
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// Get Current Sso Settings<br/>
         /// Get SSO provider settings for the current organization.

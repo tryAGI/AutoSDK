@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
+
         /// <summary>
         /// Get Documentation From Knowledge Base<br/>
         /// Get details about a specific documentation making up the agent's knowledge base

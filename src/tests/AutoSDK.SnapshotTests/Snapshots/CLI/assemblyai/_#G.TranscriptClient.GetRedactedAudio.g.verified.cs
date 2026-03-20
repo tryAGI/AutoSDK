@@ -22,6 +22,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get redacted audio<br/>
         /// Retrieve the redacted audio object containing the status and URL to the redacted audio.

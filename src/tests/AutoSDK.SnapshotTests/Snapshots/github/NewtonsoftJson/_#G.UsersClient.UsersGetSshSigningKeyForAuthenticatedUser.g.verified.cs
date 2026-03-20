@@ -22,6 +22,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get an SSH signing key for the authenticated user<br/>
         /// Gets extended details for an SSH signing key.<br/>

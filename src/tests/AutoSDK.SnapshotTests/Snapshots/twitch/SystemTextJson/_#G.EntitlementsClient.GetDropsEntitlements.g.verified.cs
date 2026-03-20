@@ -32,6 +32,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Gets an organization’s list of entitlements that have been granted to a game, a user, or both.<br/>
         /// Gets an organization’s list of entitlements that have been granted to a game, a user, or both.<br/>

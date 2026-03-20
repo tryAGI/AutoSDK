@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IDocumentsClient
     {
+
         /// <summary>
         /// List the documents in the corpus<br/>
         /// The List Documents API enables you to retrieve a list of documents stored in a specific corpus. This endpoint provides an overview of document metadata, including document IDs, tables (if table extraction is enabled), and pagination details. <br/>

@@ -62,6 +62,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Text Search Conversation Messages<br/>
         /// Search through conversation transcript messages by full-text and fuzzy search

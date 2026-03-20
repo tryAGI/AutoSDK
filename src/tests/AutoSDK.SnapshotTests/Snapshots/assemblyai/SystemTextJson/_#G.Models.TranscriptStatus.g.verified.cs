@@ -10,19 +10,19 @@ namespace G
     public enum TranscriptStatus
     {
         /// <summary>
-        /// 
+        /// The audio file is in the queue to be processed by the API.
         /// </summary>
         Queued,
         /// <summary>
-        /// 
+        /// The audio file is being processed by the API.
         /// </summary>
         Processing,
         /// <summary>
-        /// 
+        /// The transcript job has been completed successfully.
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        /// An error occurred while processing the audio file.
         /// </summary>
         Error,
     }

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Remove a repository collaborator<br/>
         /// Removes a collaborator from a repository.<br/>

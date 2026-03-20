@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IModelClient
     {
+
         /// <summary>
         /// List available regions<br/>
         /// Returns a paginated list of available regions.

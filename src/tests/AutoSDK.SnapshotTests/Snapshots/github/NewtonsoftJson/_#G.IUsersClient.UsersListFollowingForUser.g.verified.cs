@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUsersClient
     {
+
         /// <summary>
         /// List the people a user follows<br/>
         /// Lists the people who the specified user follows.

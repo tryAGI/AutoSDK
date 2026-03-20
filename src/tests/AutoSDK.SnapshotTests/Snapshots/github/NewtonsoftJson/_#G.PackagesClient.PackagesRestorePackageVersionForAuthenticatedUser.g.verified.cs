@@ -21,6 +21,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Restore a package version for the authenticated user<br/>
         /// Restores a package version owned by the authenticated user.<br/>

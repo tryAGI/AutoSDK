@@ -39,7 +39,7 @@ namespace G
 
 
         /// <summary>
-        /// Chat Completion API.
+        /// Chat
         /// </summary>
         public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations)
         {
@@ -48,7 +48,7 @@ namespace G
         };
 
         /// <summary>
-        /// Fill-in-the-middle API.
+        /// FIM
         /// </summary>
         public FimClient Fim => new FimClient(HttpClient, authorizations: Authorizations)
         {
@@ -57,7 +57,7 @@ namespace G
         };
 
         /// <summary>
-        /// Agents API.
+        /// Agents
         /// </summary>
         public AgentsClient Agents => new AgentsClient(HttpClient, authorizations: Authorizations)
         {
@@ -66,7 +66,7 @@ namespace G
         };
 
         /// <summary>
-        /// Embeddings API.
+        /// Embeddings
         /// </summary>
         public EmbeddingsClient Embeddings => new EmbeddingsClient(HttpClient, authorizations: Authorizations)
         {
@@ -75,7 +75,7 @@ namespace G
         };
 
         /// <summary>
-        /// Classifiers API.
+        /// Classifiers
         /// </summary>
         public ClassifiersClient Classifiers => new ClassifiersClient(HttpClient, authorizations: Authorizations)
         {
@@ -84,7 +84,7 @@ namespace G
         };
 
         /// <summary>
-        /// Files API
+        /// Files
         /// </summary>
         public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations)
         {
@@ -93,7 +93,7 @@ namespace G
         };
 
         /// <summary>
-        /// Fine-tuning API
+        /// Fine Tuning
         /// </summary>
         public FineTuningClient FineTuning => new FineTuningClient(HttpClient, authorizations: Authorizations)
         {
@@ -102,7 +102,7 @@ namespace G
         };
 
         /// <summary>
-        /// Model Management API
+        /// Models
         /// </summary>
         public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations)
         {
@@ -111,7 +111,7 @@ namespace G
         };
 
         /// <summary>
-        /// Batch API
+        /// Batch
         /// </summary>
         public BatchClient Batch => new BatchClient(HttpClient, authorizations: Authorizations)
         {

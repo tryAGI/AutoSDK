@@ -32,6 +32,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Bulk delete documents from a corpus<br/>
         /// Initiates an asynchronous bulk delete operation for documents in a corpus.<br/>

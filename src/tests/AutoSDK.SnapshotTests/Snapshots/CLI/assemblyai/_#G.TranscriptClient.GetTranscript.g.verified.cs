@@ -22,6 +22,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get transcript<br/>
         /// Get the transcript resource. The transcript is ready when the "status" is "completed".

@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Index<br/>
         /// Retrieve a paginated set of scaling configurations

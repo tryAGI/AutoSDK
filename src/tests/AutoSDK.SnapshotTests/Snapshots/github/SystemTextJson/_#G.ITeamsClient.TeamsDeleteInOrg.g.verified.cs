@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ITeamsClient
     {
+
         /// <summary>
         /// Delete a team<br/>
         /// To delete a team, the authenticated user must be an organization owner or team maintainer.<br/>

@@ -5,10 +5,12 @@ namespace G
 {
     public partial interface IEmbeddingsClient
     {
+
         /// <summary>
         /// Create embedding<br/>
         /// Query an embedding model for a given string of text.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

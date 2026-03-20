@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IFineTuningClient
     {
+
         /// <summary>
         /// Download model<br/>
         /// Download a compressed fine-tuned model or checkpoint to local disk.

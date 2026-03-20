@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Retry A Batch Call.<br/>
         /// Retry a batch call, calling failed and no-response recipients again.

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IStyleClient
     {
+
         /// <summary>
         /// Delete Style
         /// </summary>

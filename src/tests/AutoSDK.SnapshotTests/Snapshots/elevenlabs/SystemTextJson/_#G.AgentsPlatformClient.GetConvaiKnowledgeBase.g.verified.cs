@@ -42,6 +42,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get Knowledge Base List<br/>
         /// Get a list of available knowledge base documents

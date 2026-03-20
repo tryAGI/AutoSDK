@@ -22,6 +22,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Gets the list of Twitch teams that the broadcaster is a member of.<br/>
         /// Gets the list of Twitch teams that the broadcaster is a member of.<br/>

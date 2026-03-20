@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// List Ttl Settings<br/>
         /// List out the configured TTL settings for a given org (org-level and tenant-level).

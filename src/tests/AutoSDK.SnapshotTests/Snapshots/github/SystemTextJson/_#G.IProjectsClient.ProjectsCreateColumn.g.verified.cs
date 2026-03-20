@@ -5,11 +5,13 @@ namespace G
 {
     public partial interface IProjectsClient
     {
+
         /// <summary>
         /// Create a project column<br/>
         /// Creates a new project column.
         /// </summary>
         /// <param name="projectId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ILogsClient
     {
+
         /// <summary>
         /// Get Pipeline Startup Logs<br/>
         /// Get the logs for pipeline starting up

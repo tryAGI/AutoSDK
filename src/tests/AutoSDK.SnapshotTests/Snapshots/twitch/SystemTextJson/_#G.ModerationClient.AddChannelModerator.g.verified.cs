@@ -19,6 +19,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Adds a moderator to the broadcaster’s chat room.<br/>
         /// Adds a moderator to the broadcaster’s chat room.<br/>

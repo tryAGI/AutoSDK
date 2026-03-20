@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IExtensionsClient
     {
+
         /// <summary>
         /// Gets information about an extension.<br/>
         /// Gets information about an extension.<br/>

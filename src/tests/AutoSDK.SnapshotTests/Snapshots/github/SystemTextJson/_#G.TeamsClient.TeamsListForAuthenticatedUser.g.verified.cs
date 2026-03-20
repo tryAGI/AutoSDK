@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List teams for the authenticated user<br/>
         /// List all of the teams across all of the organizations to which the authenticated<br/>

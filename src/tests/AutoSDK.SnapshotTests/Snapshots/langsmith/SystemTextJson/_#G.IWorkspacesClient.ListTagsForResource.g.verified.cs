@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IWorkspacesClient
     {
+
         /// <summary>
         /// List Tags For Resource
         /// </summary>

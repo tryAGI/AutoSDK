@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IMetaClient
     {
+
         /// <summary>
         /// GitHub API Root<br/>
         /// Get Hypermedia links to resources accessible in GitHub's REST API

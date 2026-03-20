@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUploadClient
     {
+
         /// <summary>
         /// Upload a file to the corpus<br/>
         /// Upload a file to a corpus for automatic text extraction, chunking, and indexing. This endpoint is designed for unstructured documents where you want Vectara to handle parsing for you. Each uploaded file can be up to **10 MB**.<br/>
@@ -75,6 +76,7 @@ namespace G
         /// A user-provided key for a corpus.<br/>
         /// Example: my-corpus
         /// </param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

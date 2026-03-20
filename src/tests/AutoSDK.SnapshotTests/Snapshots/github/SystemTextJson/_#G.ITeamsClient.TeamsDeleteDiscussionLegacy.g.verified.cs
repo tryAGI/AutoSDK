@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ITeamsClient
     {
+
         /// <summary>
         /// Delete a discussion (Legacy)<br/>
         /// &gt; [!WARNING]<br/>
@@ -16,6 +17,7 @@ namespace G
         /// <param name="discussionNumber"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
+
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task TeamsDeleteDiscussionLegacyAsync(
             int teamId,

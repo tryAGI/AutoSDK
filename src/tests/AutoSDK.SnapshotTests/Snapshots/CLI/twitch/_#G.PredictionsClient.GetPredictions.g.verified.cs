@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Gets a list of Channel Points Predictions that the broadcaster created.<br/>
         /// Gets a list of Channel Points Predictions that the broadcaster created.<br/>

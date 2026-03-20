@@ -30,6 +30,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Create or update an environment secret<br/>
         /// Creates or updates an environment secret with an encrypted value. Encrypt your secret using<br/>
@@ -41,6 +42,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="environmentName"></param>
         /// <param name="secretName"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

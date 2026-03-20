@@ -21,6 +21,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Cancel a GitHub Pages deployment<br/>
         /// Cancels a GitHub Pages deployment.<br/>

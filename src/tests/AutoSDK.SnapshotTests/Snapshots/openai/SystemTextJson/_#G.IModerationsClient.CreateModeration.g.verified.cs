@@ -5,10 +5,12 @@ namespace G
 {
     public partial interface IModerationsClient
     {
+
         /// <summary>
         /// Classifies if text and/or image inputs are potentially harmful. Learn<br/>
         /// more in the [moderation guide](/docs/guides/moderation).
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

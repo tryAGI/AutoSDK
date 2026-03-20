@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISamplesClient
     {
+
         /// <summary>
         /// Delete Sample<br/>
         /// Removes a sample by its ID.

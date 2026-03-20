@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List GPG keys for the authenticated user<br/>
         /// Lists the current user's GPG keys.<br/>

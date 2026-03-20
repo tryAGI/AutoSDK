@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IApi
     {
+
         /// <summary>
         /// Deploy List
         /// </summary>
@@ -14,6 +15,7 @@ namespace G
         /// <param name="xiApiKey"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
+
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.DeploymentOut>> DeployListDeployListGetAsync(
             string? status = default,

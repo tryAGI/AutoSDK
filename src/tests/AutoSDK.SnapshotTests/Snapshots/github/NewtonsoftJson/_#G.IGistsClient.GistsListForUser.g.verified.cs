@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IGistsClient
     {
+
         /// <summary>
         /// List gists for a user<br/>
         /// Lists public gists for the specified user:

@@ -5,11 +5,13 @@ namespace G
 {
     public partial interface ISchemaClient
     {
+
         /// <summary>
         /// Update an existing collection.<br/>
         /// Alter an existing collection definition. &lt;br/&gt;&lt;br/&gt;Note that not all settings are mutable ([see this list](https://weaviate.io/developers/weaviate/config-refs/schema#mutability)). To update any other (i.e. immutable) setting, you need to delete the collection, re-create it with the correct setting and then re-import the data. &lt;br/&gt;&lt;br/&gt;This endpoint cannot be used to modify properties. Instead use POST /v1/schema/{className}/properties. A typical use case for this endpoint is to update a index configuration, such as `vectorIndexConfig/dynamicEfFactor`. &lt;br/&gt;&lt;br/&gt;You should attach a body to this PUT request with the entire new configuration of the collection.
         /// </summary>
         /// <param name="className"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

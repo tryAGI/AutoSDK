@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IToolsClient
     {
+
         /// <summary>
         /// Test Lambda tool without creation<br/>
         /// Test a Lambda tool without creating it first. This endpoint allows you to validate code, discover schemas, and test execution before committing to tool creation.<br/>
@@ -17,6 +18,7 @@ namespace G
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

@@ -22,6 +22,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get a secret for the authenticated user<br/>
         /// Gets a development environment secret available to a user's codespaces without revealing its encrypted value.<br/>

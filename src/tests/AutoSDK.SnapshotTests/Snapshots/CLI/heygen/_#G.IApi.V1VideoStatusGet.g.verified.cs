@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IApi
     {
+
         /// <summary>
         /// v1/video_status.get<br/>
         /// v1/video_status.get

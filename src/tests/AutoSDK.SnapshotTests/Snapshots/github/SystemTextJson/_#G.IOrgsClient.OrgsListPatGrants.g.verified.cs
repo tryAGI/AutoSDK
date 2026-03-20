@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// List fine-grained personal access tokens with access to organization resources<br/>
         /// Lists approved fine-grained personal access tokens owned by organization members that can access organization resources.<br/>

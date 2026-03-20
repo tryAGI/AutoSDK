@@ -21,6 +21,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Removes a single chat message or all chat messages from the broadcaster’s chat room.<br/>
         /// Removes a single chat message or all chat messages from the broadcaster’s chat room.<br/>

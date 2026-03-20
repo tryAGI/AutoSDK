@@ -5,11 +5,13 @@ namespace G
 {
     public partial interface IApi
     {
+
         /// <summary>
         /// Rerank V1 API<br/>
         /// This endpoint takes in a query and a list of texts and produces an ordered array with each text assigned a relevance score.
         /// </summary>
         /// <param name="xClientName"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

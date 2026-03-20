@@ -5,10 +5,12 @@ namespace G
 {
     public partial interface IEmbeddingsClient
     {
+
         /// <summary>
         /// Embeddings<br/>
         /// Embeddings
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

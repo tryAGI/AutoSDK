@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IProjectsClient
     {
+
         /// <summary>
         /// Retrieves a service account in the project.
         /// </summary>

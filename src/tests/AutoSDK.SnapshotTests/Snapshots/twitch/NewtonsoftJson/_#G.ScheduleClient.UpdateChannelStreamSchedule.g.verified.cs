@@ -25,6 +25,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Updates the broadcaster’s schedule settings, such as scheduling a vacation.<br/>
         /// Updates the broadcaster’s schedule settings, such as scheduling a vacation.<br/>

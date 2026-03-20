@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get a check run<br/>
         /// Gets a single check run using its `id`.<br/>

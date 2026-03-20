@@ -1358,8 +1358,17 @@ info:
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
+        // Use x-label as fallback when description is missing
+        var description = schema.Description;
+        if (string.IsNullOrWhiteSpace(description) &&
+            TryGetExtensionStringValue(schema.Extensions, "x-label", out var label) &&
+            !string.IsNullOrWhiteSpace(label))
+        {
+            description = label;
+        }
+
         // Remove any XML tags from the description
-        var summary = schema.Description?.ClearForXml() ?? string.Empty;
+        var summary = description?.ClearForXml() ?? string.Empty;
         var @default = schema.Default.GetString()?.ClearForXml();
         if (!string.IsNullOrWhiteSpace(@default))
         {
@@ -1467,6 +1476,36 @@ info:
         return schema.Deprecated ||
                TryGetAvailability(schema.Extensions, out var availability) &&
                string.Equals(availability, "Deprecated", StringComparison.Ordinal);
+    }
+
+    /// <summary>
+    /// Gets a custom deprecation message from x-stainless-deprecation-message extension.
+    /// </summary>
+    public static string GetDeprecationMessage(this OpenApiOperation operation)
+    {
+        operation = operation ?? throw new ArgumentNullException(nameof(operation));
+
+        if (TryGetExtensionString(operation.Extensions, "x-stainless-deprecation-message", out var message))
+        {
+            return message;
+        }
+
+        return string.Empty;
+    }
+
+    /// <summary>
+    /// Gets a custom deprecation message from x-stainless-deprecation-message extension on a schema.
+    /// </summary>
+    public static string GetDeprecationMessage(this IOpenApiSchema schema)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+
+        if (TryGetExtensionString(schema.Extensions, "x-stainless-deprecation-message", out var message))
+        {
+            return message;
+        }
+
+        return string.Empty;
     }
 
     public static string GetExperimentalStageFromSummary(this string? summary)
@@ -1590,7 +1629,7 @@ info:
             context.Settings);
 
         if ((context.Schema.Extensions?.TryGetValue("x-enum-descriptions", out var descriptions) ?? false) &&
-            descriptions is JsonNode descriptionsNode && descriptionsNode is JsonArray descriptionsArray)
+            TryGetExtensionJsonNode(descriptions) is JsonArray descriptionsArray)
         {
             var i = 0;
             foreach (var description in descriptionsArray)
@@ -1603,6 +1642,59 @@ info:
                     };
                 }
                 i++;
+            }
+        }
+
+        // x-enum-varnames: parallel string array providing PascalCase C# names for enum values
+        if ((context.Schema.Extensions?.TryGetValue("x-enum-varnames", out var varnames) ?? false) &&
+            TryGetExtensionJsonNode(varnames) is JsonArray varnamesArray)
+        {
+            var i = 0;
+            foreach (var varname in varnamesArray)
+            {
+                if (i < @enum.Count &&
+                    varname is JsonValue varValue && varValue.TryGetValue<string>(out var varString) &&
+                    !string.IsNullOrWhiteSpace(varString))
+                {
+                    @enum[@enum.Keys.ElementAt(i)] = @enum[@enum.Keys.ElementAt(i)] with
+                    {
+                        Name = varString.ToPropertyName(),
+                    };
+                }
+                i++;
+            }
+        }
+
+        // x-fern-enum: object-map format with { value: { description, name/casing } } for enum overrides
+        if ((context.Schema.Extensions?.TryGetValue("x-fern-enum", out var fernEnum) ?? false) &&
+            TryGetExtensionJsonNode(fernEnum) is { } fernEnumNode)
+        {
+            // x-fern-enum can be either an array of objects or an object map keyed by enum value
+            if (fernEnumNode is JsonArray fernEnumArray)
+            {
+                var i = 0;
+                foreach (var item in fernEnumArray)
+                {
+                    if (i < @enum.Count && item is JsonObject itemObj)
+                    {
+                        ApplyFernEnumItem(itemObj, @enum, i);
+                    }
+                    i++;
+                }
+            }
+            else if (fernEnumNode is JsonObject fernEnumObj)
+            {
+                foreach (var kvp in fernEnumObj)
+                {
+                    if (kvp.Value is JsonObject itemObj && @enum.ContainsKey(kvp.Key))
+                    {
+                        var index = @enum.Keys.ToList().IndexOf(kvp.Key);
+                        if (index >= 0)
+                        {
+                            ApplyFernEnumItem(itemObj, @enum, index);
+                        }
+                    }
+                }
             }
         }
 
@@ -1653,6 +1745,43 @@ info:
             "DEPRECATED" => "Deprecated",
             "GENERALLY-AVAILABLE" => "GenerallyAvailable",
             _ => normalized,
+        };
+    }
+
+    private static void ApplyFernEnumItem(JsonObject itemObj, Dictionary<string, PropertyData> @enum, int index)
+    {
+        var current = @enum[@enum.Keys.ElementAt(index)];
+
+        // Extract name from "name" field or "casing.pascal" field
+        string? nameOverride = null;
+        if (itemObj.TryGetPropertyValue("name", out var nameNode) &&
+            nameNode is JsonValue nameValue && nameValue.TryGetValue<string>(out var nameStr) &&
+            !string.IsNullOrWhiteSpace(nameStr))
+        {
+            nameOverride = nameStr.ToPropertyName();
+        }
+        else if (itemObj.TryGetPropertyValue("casing", out var casingNode) &&
+                 casingNode is JsonObject casingObj &&
+                 casingObj.TryGetPropertyValue("pascal", out var pascalNode) &&
+                 pascalNode is JsonValue pascalValue && pascalValue.TryGetValue<string>(out var pascalStr) &&
+                 !string.IsNullOrWhiteSpace(pascalStr))
+        {
+            nameOverride = pascalStr;
+        }
+
+        // Extract description
+        string? descOverride = null;
+        if (itemObj.TryGetPropertyValue("description", out var descNode) &&
+            descNode is JsonValue descValue && descValue.TryGetValue<string>(out var descStr) &&
+            !string.IsNullOrWhiteSpace(descStr))
+        {
+            descOverride = ClearForXml(descStr);
+        }
+
+        @enum[@enum.Keys.ElementAt(index)] = current with
+        {
+            Name = nameOverride ?? current.Name,
+            Summary = descOverride ?? current.Summary,
         };
     }
 
@@ -1744,7 +1873,50 @@ info:
 
         return false;
     }
-    
+
+    /// <summary>
+    /// Public helper to extract a string value from an OpenAPI extension.
+    /// Used by naming generators and other extension-processing code.
+    /// </summary>
+    public static bool TryGetExtensionStringValue(IOpenApiExtension extension, out string value)
+    {
+        return TryGetJsonString(extension, out value);
+    }
+
+    /// <summary>
+    /// Public helper to extract a JsonNode from an OpenAPI extension.
+    /// </summary>
+    public static JsonNode? TryGetExtensionJsonNode(IOpenApiExtension extension)
+    {
+        return extension switch
+        {
+            JsonNode jsonNode => jsonNode,
+            JsonNodeExtension jsonNodeExtension => jsonNodeExtension.Node,
+            _ => null,
+        };
+    }
+
+    /// <summary>
+    /// Public helper to extract a string value from an OpenAPI extensions dictionary by key.
+    /// </summary>
+    public static bool TryGetExtensionStringValue(
+        IDictionary<string, IOpenApiExtension>? extensions,
+        string name,
+        out string value)
+    {
+        return TryGetExtensionString(extensions, name, out value);
+    }
+
+    /// <summary>
+    /// Public helper to check a boolean OpenAPI extension value.
+    /// </summary>
+    public static bool GetExtensionBooleanValue(
+        IDictionary<string, IOpenApiExtension>? extensions,
+        string name)
+    {
+        return TryGetExtensionBoolean(extensions, name);
+    }
+
     public static Dictionary<string, PropertyData> ComputeEnum(
         this IList<JsonNode> @enum,
         string enumName,

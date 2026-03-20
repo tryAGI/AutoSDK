@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// List outside collaborators for an organization<br/>
         /// List all users who are outside collaborators of an organization.

@@ -6,6 +6,7 @@
 namespace G
 {
     /// <summary>
+    /// LeMUR string response<br/>
     /// Example: {"request_id":"5e1b27c2-691f-4414-8bc5-f14678442f9e","response":"Based on the transcript, the following locations were mentioned as being affected by wildfire smoke from Canada:\n\n- Maine\n- Maryland\n- Minnesota\n- Mid Atlantic region\n- Northeast region\n- New York City\n- Baltimore\n","usage":{"input_tokens":27,"output_tokens":3}}
     /// </summary>
     public readonly partial struct LemurStringResponse : global::System.IEquatable<LemurStringResponse>
@@ -28,6 +29,7 @@ namespace G
         public bool IsValue1 => Value1 != null;
 
         /// <summary>
+        /// LeMUR base response<br/>
         /// Example: {"request_id":"5e1b27c2-691f-4414-8bc5-f14678442f9e","usage":{"input_tokens":27,"output_tokens":3}}
         /// </summary>
 #if NET6_0_OR_GREATER

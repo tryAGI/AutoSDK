@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAppClient
     {
+
         /// <summary>
         /// List all apps info<br/>
         /// Returns a paginated list of apps.

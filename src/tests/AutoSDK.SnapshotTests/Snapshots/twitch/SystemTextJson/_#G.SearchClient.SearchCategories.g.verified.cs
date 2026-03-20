@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Gets the games or categories that match the specified query.<br/>
         /// Gets the games or categories that match the specified query.<br/>

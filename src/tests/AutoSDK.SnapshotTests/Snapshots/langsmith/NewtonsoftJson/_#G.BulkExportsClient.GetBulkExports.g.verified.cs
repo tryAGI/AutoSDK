@@ -20,6 +20,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get Bulk Exports<br/>
         /// Get the current workspace's bulk exports

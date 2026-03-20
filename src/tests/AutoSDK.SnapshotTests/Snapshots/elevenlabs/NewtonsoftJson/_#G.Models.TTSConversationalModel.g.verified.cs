@@ -11,12 +11,12 @@ namespace G
     public enum TTSConversationalModel
     {
         /// <summary>
-        /// 
+        /// Deprecated: Use eleven_flash_v2 instead.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="eleven_turbo_v2")]
         ElevenTurboV2,
         /// <summary>
-        /// 
+        /// Deprecated: Use eleven_flash_v2_5 instead.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="eleven_turbo_v2_5")]
         ElevenTurboV25,

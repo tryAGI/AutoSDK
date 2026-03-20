@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IStudioClient
     {
+
         /// <summary>
         /// List Studio Projects<br/>
         /// Returns a list of your Studio projects with metadata.

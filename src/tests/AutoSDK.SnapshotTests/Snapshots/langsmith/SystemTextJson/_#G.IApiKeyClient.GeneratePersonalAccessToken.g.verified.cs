@@ -5,10 +5,12 @@ namespace G
 {
     public partial interface IApiKeyClient
     {
+
         /// <summary>
         /// Generate Personal Access Token<br/>
         /// Generate a Personal Access Token the user
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

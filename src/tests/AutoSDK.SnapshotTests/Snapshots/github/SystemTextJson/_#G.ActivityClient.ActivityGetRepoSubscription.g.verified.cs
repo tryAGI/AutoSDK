@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get a repository subscription<br/>
         /// Gets information about whether the authenticated user is subscribed to the repository.

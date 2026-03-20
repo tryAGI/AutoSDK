@@ -21,6 +21,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Delete a discussion comment (Legacy)<br/>
         /// &gt; [!WARNING]<br/>
@@ -33,6 +34,7 @@ namespace G
         /// <param name="commentNumber"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
+
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task TeamsDeleteDiscussionCommentLegacyAsync(
             int teamId,

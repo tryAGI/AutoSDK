@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
+
         /// <summary>
         /// List Agents<br/>
         /// Returns a list of your agents and their metadata.

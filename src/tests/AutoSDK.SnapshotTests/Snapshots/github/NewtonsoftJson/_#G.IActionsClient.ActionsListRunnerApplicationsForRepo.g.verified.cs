@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// List runner applications for a repository<br/>
         /// Lists binaries for the runner application that you can download and run.<br/>

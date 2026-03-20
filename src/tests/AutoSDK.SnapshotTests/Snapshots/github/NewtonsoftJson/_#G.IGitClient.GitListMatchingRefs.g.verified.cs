@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IGitClient
     {
+
         /// <summary>
         /// List matching references<br/>
         /// Returns an array of references from your Git database that match the supplied name. The `:ref` in the URL must be formatted as `heads/&lt;branch name&gt;` for branches and `tags/&lt;tag name&gt;` for tags. If the `:ref` doesn't exist in the repository, but existing refs start with `:ref`, they will be returned as an array.<br/>

@@ -17,6 +17,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Unfollow a user<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `user:follow` scope to use this endpoint.

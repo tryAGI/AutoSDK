@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Delete a model version<br/>
         /// Deletes a model version, accesing it by its resource name, which is defined by the<br/>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface INamespaceClient
     {
+
         /// <summary>
         /// List organizations<br/>
         /// Returns a paginated list of organizations.

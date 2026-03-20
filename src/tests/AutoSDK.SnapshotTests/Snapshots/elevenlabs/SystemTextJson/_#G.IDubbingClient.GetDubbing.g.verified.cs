@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IDubbingClient
     {
+
         /// <summary>
         /// List Dubs<br/>
         /// List the dubs you have access to.

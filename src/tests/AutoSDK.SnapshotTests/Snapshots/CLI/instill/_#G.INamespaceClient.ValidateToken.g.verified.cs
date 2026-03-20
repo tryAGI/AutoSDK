@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface INamespaceClient
     {
+
         /// <summary>
         /// Validate an API token<br/>
         /// Validates an API token.

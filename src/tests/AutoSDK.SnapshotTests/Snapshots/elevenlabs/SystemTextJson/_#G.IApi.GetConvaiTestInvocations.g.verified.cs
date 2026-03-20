@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IApi
     {
+
         /// <summary>
         /// List Test Invocations<br/>
         /// Lists all test invocations with pagination support and optional search filtering.

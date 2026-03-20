@@ -32,7 +32,7 @@ namespace G
         public required int End { get; set; }
 
         /// <summary>
-        /// 
+        /// Sentiment
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sentiment")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SentimentJsonConverter))]
@@ -70,7 +70,9 @@ namespace G
         /// <param name="end">
         /// The ending time, in milliseconds, of the sentence
         /// </param>
-        /// <param name="sentiment"></param>
+        /// <param name="sentiment">
+        /// Sentiment
+        /// </param>
         /// <param name="confidence">
         /// The confidence score for the detected sentiment of the sentence, from 0 to 1
         /// </param>

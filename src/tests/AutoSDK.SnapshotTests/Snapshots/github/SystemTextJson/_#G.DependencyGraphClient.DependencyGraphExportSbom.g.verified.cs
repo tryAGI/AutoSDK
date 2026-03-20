@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Export a software bill of materials (SBOM) for a repository.<br/>
         /// Exports the software bill of materials (SBOM) for a repository in SPDX JSON format.

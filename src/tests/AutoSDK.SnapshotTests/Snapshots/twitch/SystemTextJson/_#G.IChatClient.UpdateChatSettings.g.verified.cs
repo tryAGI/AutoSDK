@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IChatClient
     {
+
         /// <summary>
         /// Updates the broadcaster’s chat settings.<br/>
         /// Updates the broadcaster’s chat settings.<br/>
@@ -18,6 +19,7 @@ namespace G
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

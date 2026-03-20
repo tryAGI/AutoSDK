@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IChannelPointsClient
     {
+
         /// <summary>
         /// Gets a list of redemptions for a custom reward.<br/>
         /// Gets a list of redemptions for the specified custom reward. The app used to create the reward is the only app that may get the redemptions.<br/>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISingleClient
     {
+
         /// <summary>
         /// Returns the current organization.<br/>
         /// Returns the current organization.

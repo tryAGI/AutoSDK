@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICodeSecurityClient
     {
+
         /// <summary>
         /// Attach a configuration to repositories<br/>
         /// Attach a code security configuration to a set of repositories. If the repositories specified are already attached to a configuration, they will be re-attached to the provided configuration.<br/>
@@ -14,6 +15,7 @@ namespace G
         /// </summary>
         /// <param name="org"></param>
         /// <param name="configurationId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IChatClient
     {
+
         /// <summary>
         /// Gets the broadcaster’s list of custom emotes.<br/>
         /// Gets the broadcaster’s list of custom emotes. Broadcasters create these custom emotes for users who subscribe to or follow the channel or cheer Bits in the channel’s chat window. [Learn More](https://dev.twitch.tv/docs/irc/emotes)<br/>

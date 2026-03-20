@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAssetsClient
     {
+
         /// <summary>
         /// v1/asset (upload)<br/>
         /// v1/asset (upload)

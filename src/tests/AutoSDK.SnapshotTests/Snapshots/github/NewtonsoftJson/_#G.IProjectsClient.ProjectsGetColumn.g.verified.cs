@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IProjectsClient
     {
+
         /// <summary>
         /// Get a project column<br/>
         /// Gets information about a project column.

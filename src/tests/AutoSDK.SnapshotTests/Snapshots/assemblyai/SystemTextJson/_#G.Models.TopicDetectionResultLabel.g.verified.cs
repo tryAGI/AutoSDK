@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Label
     /// </summary>
     public sealed partial class TopicDetectionResultLabel
     {

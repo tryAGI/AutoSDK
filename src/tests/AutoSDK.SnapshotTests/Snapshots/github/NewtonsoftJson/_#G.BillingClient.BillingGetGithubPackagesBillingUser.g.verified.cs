@@ -22,6 +22,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get GitHub Packages billing for a user<br/>
         /// Gets the free and paid storage used for GitHub Packages in gigabytes.<br/>

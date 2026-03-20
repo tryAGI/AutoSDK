@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IMetricsClient
     {
+
         /// <summary>
         /// List model trigger time charts<br/>
         /// Returns a timeline of model trigger counts for a given requester. The<br/>

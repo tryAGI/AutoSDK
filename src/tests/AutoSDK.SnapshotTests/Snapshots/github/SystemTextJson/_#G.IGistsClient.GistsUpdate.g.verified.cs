@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IGistsClient
     {
+
         /// <summary>
         /// Update a gist<br/>
         /// Allows you to update a gist's description and to update, delete, or rename gist files. Files<br/>
@@ -16,6 +17,7 @@ namespace G
         /// - **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
         /// </summary>
         /// <param name="gistId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

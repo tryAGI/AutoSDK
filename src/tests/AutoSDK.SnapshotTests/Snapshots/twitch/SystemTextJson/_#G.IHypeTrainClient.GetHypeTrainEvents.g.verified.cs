@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IHypeTrainClient
     {
+
         /// <summary>
         /// Gets information about the broadcaster’s current or most recent Hype Train event.<br/>
         /// Gets information about the broadcaster’s current or most recent Hype Train event.<br/>

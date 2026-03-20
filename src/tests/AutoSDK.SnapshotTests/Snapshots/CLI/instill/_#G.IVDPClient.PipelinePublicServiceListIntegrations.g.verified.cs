@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IVdpClient
     {
+
         /// <summary>
         /// List integrations<br/>
         /// Returns a paginated list of available integrations.

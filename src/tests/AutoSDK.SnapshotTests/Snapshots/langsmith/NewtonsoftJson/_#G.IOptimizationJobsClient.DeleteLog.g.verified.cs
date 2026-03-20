@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOptimizationJobsClient
     {
+
         /// <summary>
         /// Delete Log<br/>
         /// Delete a prompt optimization job log.

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// Delete an environment variable<br/>
         /// Deletes an environment variable using the variable name.<br/>

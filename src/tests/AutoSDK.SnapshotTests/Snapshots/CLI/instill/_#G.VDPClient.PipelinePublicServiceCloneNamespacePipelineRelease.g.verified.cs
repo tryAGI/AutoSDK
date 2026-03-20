@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Clone a pipeline release<br/>
         /// Clones a pipeline release owned by a namespace. The new pipeline may have a different<br/>
@@ -36,6 +37,7 @@ namespace G
         /// <param name="namespaceId"></param>
         /// <param name="pipelineId"></param>
         /// <param name="releaseId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

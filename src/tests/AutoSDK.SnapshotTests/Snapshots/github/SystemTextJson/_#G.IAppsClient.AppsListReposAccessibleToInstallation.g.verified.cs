@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAppsClient
     {
+
         /// <summary>
         /// List repositories accessible to the app installation<br/>
         /// List repositories that an app installation can access.

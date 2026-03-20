@@ -5,11 +5,13 @@ namespace G
 {
     public partial interface IExamplesClient
     {
+
         /// <summary>
         /// Update Examples<br/>
         /// This endpoint allows clients to update existing examples in a specified dataset by sending a multipart/form-data PATCH request.<br/>
         /// Each form part contains either JSON-encoded data or binary attachment files to update an example.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

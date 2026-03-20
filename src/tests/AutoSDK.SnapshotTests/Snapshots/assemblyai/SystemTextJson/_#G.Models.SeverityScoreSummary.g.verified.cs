@@ -5,26 +5,27 @@
 namespace G
 {
     /// <summary>
+    /// Severity score summary<br/>
     /// Example: {"low":0.5733263024656846,"medium":0.42667369753431533,"high":0}
     /// </summary>
     public sealed partial class SeverityScoreSummary
     {
         /// <summary>
-        /// 
+        /// Low
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("low")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Low { get; set; }
 
         /// <summary>
-        /// 
+        /// Medium
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("medium")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Medium { get; set; }
 
         /// <summary>
-        /// 
+        /// High
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("high")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -39,9 +40,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="SeverityScoreSummary" /> class.
         /// </summary>
-        /// <param name="low"></param>
-        /// <param name="medium"></param>
-        /// <param name="high"></param>
+        /// <param name="low">
+        /// Low
+        /// </param>
+        /// <param name="medium">
+        /// Medium
+        /// </param>
+        /// <param name="high">
+        /// High
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

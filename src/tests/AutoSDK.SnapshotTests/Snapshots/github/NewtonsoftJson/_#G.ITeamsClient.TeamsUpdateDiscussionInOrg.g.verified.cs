@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ITeamsClient
     {
+
         /// <summary>
         /// Update a discussion<br/>
         /// Edits the title and body text of a discussion post. Only the parameters you provide are updated.<br/>
@@ -15,6 +16,7 @@ namespace G
         /// <param name="org"></param>
         /// <param name="teamSlug"></param>
         /// <param name="discussionNumber"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

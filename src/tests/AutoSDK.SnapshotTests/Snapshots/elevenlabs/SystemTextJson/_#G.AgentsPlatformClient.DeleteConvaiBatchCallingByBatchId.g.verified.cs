@@ -19,6 +19,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Delete A Batch Call.<br/>
         /// Permanently delete a batch call and all recipient records. Conversations remain in history.

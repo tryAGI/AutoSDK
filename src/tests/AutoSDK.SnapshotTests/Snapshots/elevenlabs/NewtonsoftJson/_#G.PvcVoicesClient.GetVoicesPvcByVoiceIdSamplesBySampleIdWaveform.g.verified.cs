@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Retrieve Voice Sample Visual Waveform<br/>
         /// Retrieve the visual waveform of a voice sample.

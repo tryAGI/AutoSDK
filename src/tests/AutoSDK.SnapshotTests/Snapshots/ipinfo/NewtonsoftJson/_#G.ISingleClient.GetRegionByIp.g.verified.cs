@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISingleClient
     {
+
         /// <summary>
         /// Returns a region for the selected IP.<br/>
         /// Returns a region for the selected IP.

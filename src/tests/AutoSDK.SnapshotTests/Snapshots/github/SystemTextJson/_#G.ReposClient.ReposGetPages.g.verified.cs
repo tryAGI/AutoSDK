@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get a GitHub Pages site<br/>
         /// Gets information about a GitHub Pages site.<br/>

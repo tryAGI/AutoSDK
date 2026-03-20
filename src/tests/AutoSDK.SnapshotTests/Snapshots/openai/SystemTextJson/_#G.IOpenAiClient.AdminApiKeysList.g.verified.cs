@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOpenAiClient
     {
+
         /// <summary>
         /// List organization API keys<br/>
         /// Retrieve a paginated list of organization admin API keys.

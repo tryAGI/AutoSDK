@@ -29,7 +29,7 @@ namespace G
         public int End { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Sentiment
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sentiment", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.Sentiment Sentiment { get; set; } = default!;
@@ -64,7 +64,9 @@ namespace G
         /// <param name="end">
         /// The ending time, in milliseconds, of the sentence
         /// </param>
-        /// <param name="sentiment"></param>
+        /// <param name="sentiment">
+        /// Sentiment
+        /// </param>
         /// <param name="confidence">
         /// The confidence score for the detected sentiment of the sentence, from 0 to 1
         /// </param>

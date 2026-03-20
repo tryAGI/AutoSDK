@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Text/Image to Image<br/>
         /// This endpoint will start a new task to generate images from text and/or image(s)
@@ -31,9 +32,25 @@ namespace G
         /// <param name="xRunwayVersion">
         /// Default Value: 2024-11-06
         /// </param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
+
+        /// <remarks>
+        /// // npm install --save @runwayml/sdk<br/>
+        /// import RunwayML from '@runwayml/sdk';<br/>
+        /// // The env var RUNWAYML_API_SECRET is expected to contain your API key.<br/>
+        /// const client = new RunwayML();<br/>
+        /// const task = await client.textToImage<br/>
+        ///   .create({<br/>
+        ///     model: 'gen4_image',<br/>
+        ///     promptText: 'A serene landscape with mountains',<br/>
+        ///     ratio: '1360:768',<br/>
+        ///   })<br/>
+        ///   .waitForTaskOutput();<br/>
+        /// console.log(task);
+        /// </remarks>
         public async global::System.Threading.Tasks.Task<global::G.Response9> CreateTextToImageAsync(
 
             global::G.Request4 request,

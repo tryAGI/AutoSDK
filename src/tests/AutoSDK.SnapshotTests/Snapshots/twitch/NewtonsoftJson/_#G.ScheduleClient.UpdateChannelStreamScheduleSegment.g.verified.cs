@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Updates a scheduled broadcast segment.<br/>
         /// Updates a scheduled broadcast segment.<br/>
@@ -35,6 +36,7 @@ namespace G
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="id"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

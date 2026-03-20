@@ -17,6 +17,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Block a user<br/>
         /// Blocks the given user and returns a 204. If the authenticated user cannot block the given user a 422 is returned.

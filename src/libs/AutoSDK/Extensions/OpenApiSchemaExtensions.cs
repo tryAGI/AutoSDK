@@ -78,6 +78,7 @@ public static class OpenApiSchemaExtensions
     /// <summary>
     /// Checks if the schema is nullable.
     /// In OpenAPI 3.1+, nullable is expressed via type array including "null".
+    /// Also supports Swagger 2.x-style x-nullable extension.
     /// </summary>
     public static bool IsNullable(this IOpenApiSchema schema)
     {
@@ -85,7 +86,18 @@ public static class OpenApiSchemaExtensions
 
         // In OpenAPI 3.1+, nullable is expressed as type: ["string", "null"]
         // The Type property may include Null flag
-        return (schema.Type & JsonSchemaType.Null) == JsonSchemaType.Null;
+        if ((schema.Type & JsonSchemaType.Null) == JsonSchemaType.Null)
+        {
+            return true;
+        }
+
+        // Swagger 2.x-style x-nullable extension fallback
+        if (OpenApiExtensions.GetExtensionBooleanValue(schema.Extensions, "x-nullable"))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     /// <summary>
@@ -201,12 +213,26 @@ public static class OpenApiSchemaExtensions
     /// <summary>
     /// Checks if the schema has a const value.
     /// In OpenAPI 3.1+, const is used to define a single allowed value.
+    /// Also checks x-stainless-const extension when a default value exists (used by OpenAI).
     /// </summary>
     public static bool IsConst(this IOpenApiSchema schema)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
-        return schema.Const != null;
+        if (schema.Const != null)
+        {
+            return true;
+        }
+
+        // x-stainless-const marks discriminator fields as constant.
+        // Only treat as const when there's a default value to use.
+        if (OpenApiExtensions.GetExtensionBooleanValue(schema.Extensions, "x-stainless-const") &&
+            schema.Default != null)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     /// <summary>

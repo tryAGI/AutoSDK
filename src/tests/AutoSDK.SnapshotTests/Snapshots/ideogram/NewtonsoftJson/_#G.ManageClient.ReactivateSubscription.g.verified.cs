@@ -20,6 +20,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Reactivates a subscription by attempting to re-enable Metronome billing.
         /// </summary>

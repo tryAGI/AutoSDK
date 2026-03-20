@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IDubbingClient
     {
+
         /// <summary>
         /// Move Segments Between Speakers<br/>
         /// Change the attribution of one or more segments to a different speaker.
@@ -15,6 +16,7 @@ namespace G
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

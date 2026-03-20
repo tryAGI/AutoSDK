@@ -5,11 +5,13 @@ namespace G
 {
     public partial interface IPublicClient
     {
+
         /// <summary>
         /// Read Shared Dataset Examples With Runs<br/>
         /// Get examples with associated runs from sessions in a dataset that has been shared.
         /// </summary>
         /// <param name="shareToken"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

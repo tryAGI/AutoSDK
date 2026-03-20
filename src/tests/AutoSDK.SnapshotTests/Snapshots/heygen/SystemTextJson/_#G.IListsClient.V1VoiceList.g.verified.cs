@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IListsClient
     {
+
         /// <summary>
         /// v1/voice.list<br/>
         /// v1/voice.list

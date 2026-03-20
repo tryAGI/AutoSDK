@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Gets information about a released extension.<br/>
         /// Gets information about a released extension. Returns the extension if its `state` is Released.<br/>

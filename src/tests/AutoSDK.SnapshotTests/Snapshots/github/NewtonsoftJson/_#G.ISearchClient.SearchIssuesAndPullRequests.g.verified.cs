@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISearchClient
     {
+
         /// <summary>
         /// Search issues and pull requests<br/>
         /// Find issues by state and keyword. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).<br/>

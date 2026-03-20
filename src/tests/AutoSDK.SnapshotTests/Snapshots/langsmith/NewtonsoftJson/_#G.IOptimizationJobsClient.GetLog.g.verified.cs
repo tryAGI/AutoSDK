@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOptimizationJobsClient
     {
+
         /// <summary>
         /// Get Log<br/>
         /// Get a specific prompt optimization job log.

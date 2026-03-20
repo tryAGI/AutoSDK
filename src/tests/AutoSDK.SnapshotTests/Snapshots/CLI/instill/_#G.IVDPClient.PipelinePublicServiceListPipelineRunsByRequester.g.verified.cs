@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IVdpClient
     {
+
         /// <summary>
         /// List Pipeline Runs of a Namespace (user or organization)<br/>
         /// Returns a paginated list of runs for 1 or more pipelines. This is mainly used by dashboard.<br/>

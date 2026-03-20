@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ITeamsClient
     {
+
         /// <summary>
         /// List discussion comments (Legacy)<br/>
         /// &gt; [!WARNING]<br/>
@@ -25,6 +26,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
+
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TeamDiscussionComment>> TeamsListDiscussionCommentsLegacyAsync(
             int teamId,

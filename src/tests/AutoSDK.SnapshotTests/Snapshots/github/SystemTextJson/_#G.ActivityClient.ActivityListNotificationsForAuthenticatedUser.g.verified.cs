@@ -32,6 +32,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List notifications for the authenticated user<br/>
         /// List all notifications for the current user, sorted by most recently updated.

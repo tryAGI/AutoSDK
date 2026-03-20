@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IGistsClient
     {
+
         /// <summary>
         /// List public gists<br/>
         /// List public gists sorted by most recently updated to least recently updated.<br/>

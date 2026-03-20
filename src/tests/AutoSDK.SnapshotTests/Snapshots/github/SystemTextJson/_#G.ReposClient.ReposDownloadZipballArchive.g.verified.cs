@@ -21,6 +21,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Download a repository archive (zip)<br/>
         /// Gets a redirect URL to download a zip archive for a repository. If you omit `:ref`, the repository’s default branch (usually<br/>

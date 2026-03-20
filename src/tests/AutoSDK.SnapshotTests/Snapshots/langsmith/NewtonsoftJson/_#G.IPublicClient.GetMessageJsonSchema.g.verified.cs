@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPublicClient
     {
+
         /// <summary>
         /// Get Message Json Schema
         /// </summary>

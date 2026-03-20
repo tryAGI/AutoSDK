@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IObjectsClient
     {
+
         /// <summary>
         /// Get an object.<br/>
         /// Get a data object based on its collection and UUID. Also available as Websocket bus.

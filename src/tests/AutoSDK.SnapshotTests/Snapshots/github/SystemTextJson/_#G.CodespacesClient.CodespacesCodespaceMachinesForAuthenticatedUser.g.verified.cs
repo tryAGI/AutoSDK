@@ -22,6 +22,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List machine types for a codespace<br/>
         /// List the machine types a codespace can transition to use.<br/>

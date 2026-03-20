@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List pipeline trigger time charts<br/>
         /// Returns a timeline of pipline trigger counts for the pipelines of a given<br/>

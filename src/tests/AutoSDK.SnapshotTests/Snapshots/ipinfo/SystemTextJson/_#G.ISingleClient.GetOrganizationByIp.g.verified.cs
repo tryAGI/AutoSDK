@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISingleClient
     {
+
         /// <summary>
         /// Returns a organization for the selected IP.<br/>
         /// Returns a organization for the selected IP.

@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get a secret<br/>
         /// Returns the details of an namespace-owned secret by its resource name,<br/>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IVectorStoresClient
     {
+
         /// <summary>
         /// Returns a list of vector store files.
         /// </summary>

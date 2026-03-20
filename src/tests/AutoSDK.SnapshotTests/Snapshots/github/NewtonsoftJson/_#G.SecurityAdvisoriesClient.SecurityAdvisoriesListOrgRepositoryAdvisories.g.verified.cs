@@ -34,6 +34,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List repository security advisories for an organization<br/>
         /// Lists repository security advisories for an organization.<br/>

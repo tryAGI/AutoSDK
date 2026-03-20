@@ -5,10 +5,12 @@ namespace G
 {
     public partial interface IVariationClient
     {
+
         /// <summary>
         /// Create unzoom<br/>
         /// This endpoint will create an unzoom variation for the provided image ID
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

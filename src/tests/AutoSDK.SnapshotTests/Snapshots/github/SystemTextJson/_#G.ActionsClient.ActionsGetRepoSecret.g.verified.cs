@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get a repository secret<br/>
         /// Gets a single repository secret without revealing its encrypted value.<br/>

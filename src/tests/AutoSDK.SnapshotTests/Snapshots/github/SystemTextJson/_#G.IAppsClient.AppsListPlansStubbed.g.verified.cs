@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAppsClient
     {
+
         /// <summary>
         /// List plans (stubbed)<br/>
         /// Lists all plans that are part of your GitHub Marketplace listing.<br/>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICodeScanningClient
     {
+
         /// <summary>
         /// Delete a code scanning analysis from a repository<br/>
         /// Deletes a specified code scanning analysis from a repository.<br/>

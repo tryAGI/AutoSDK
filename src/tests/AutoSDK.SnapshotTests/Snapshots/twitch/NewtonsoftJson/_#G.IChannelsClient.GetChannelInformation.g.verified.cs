@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IChannelsClient
     {
+
         /// <summary>
         /// Gets information about one or more channels.<br/>
         /// Gets information about one or more channels.<br/>

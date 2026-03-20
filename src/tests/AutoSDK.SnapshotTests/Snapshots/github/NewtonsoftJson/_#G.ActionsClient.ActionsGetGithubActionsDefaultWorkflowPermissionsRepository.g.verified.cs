@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get default workflow permissions for a repository<br/>
         /// Gets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in a repository,<br/>

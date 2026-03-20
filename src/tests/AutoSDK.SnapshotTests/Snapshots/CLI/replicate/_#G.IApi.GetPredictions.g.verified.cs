@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IApi
     {
+
         /// <summary>
         /// Get a prediction<br/>
         /// Get the current state of a prediction.<br/>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// List pending organization invitations<br/>
         /// The return hash contains a `role` field which refers to the Organization<br/>

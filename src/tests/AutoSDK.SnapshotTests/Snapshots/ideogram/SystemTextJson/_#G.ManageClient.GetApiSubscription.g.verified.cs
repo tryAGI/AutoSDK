@@ -20,6 +20,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Retrieve data relevant to creating an API subscription.
         /// </summary>

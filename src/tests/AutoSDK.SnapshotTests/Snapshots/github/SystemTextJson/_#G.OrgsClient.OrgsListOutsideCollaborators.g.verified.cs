@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List outside collaborators for an organization<br/>
         /// List all users who are outside collaborators of an organization.

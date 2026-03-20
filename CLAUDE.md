@@ -102,6 +102,28 @@ Important settings:
 - `AutoSDK_JsonSerializerContext`: Enable trimming support
 - `AutoSDK_ModelStyle`: Class/Record/ReadonlyRecordStruct
 - `AutoSDK_MethodNamingConvention`: SimpleOperationId/MethodAndPath/OperationIdWithDots
+- `AutoSDK_UseExtensionNaming`: Use OpenAPI `x-` extensions for naming/grouping (default: true)
+
+#### OpenAPI `x-` Extension Support
+
+AutoSDK recognizes vendor extensions (`x-*`) in OpenAPI specs to improve generated code quality.
+
+**Always-on extensions** (not affected by `UseExtensionNaming`):
+- `x-enum-varnames`: Override enum member names via parallel string array
+- `x-fern-enum`: Override enum member names/descriptions via object map
+- `x-enum-descriptions`: Set enum member XML doc summaries
+- `x-nullable`: Swagger 2.x nullable fallback
+- `x-displayName`: Tag display names for client class XML docs
+- `x-stainless-deprecation-message`: Custom `[Obsolete()]` message text
+- `x-label`: Fallback summary when `description` is empty
+- `x-stainless-const`: Mark properties as const (when `default` exists)
+- `x-codeSamples`: Code samples emitted as `<remarks>` XML docs
+
+**Gated by `UseExtensionNaming`** (breaking: affects generated names/structure):
+- `x-fern-sdk-method-name`: Override method names
+- `x-fern-sdk-group-name`: Override client grouping (overrides tags)
+- `x-fern-type-name`: Override class/type names
+- `x-fern-ignore` / `x-hidden`: Skip endpoint/schema generation
 
 ### Integration Test Pattern
 

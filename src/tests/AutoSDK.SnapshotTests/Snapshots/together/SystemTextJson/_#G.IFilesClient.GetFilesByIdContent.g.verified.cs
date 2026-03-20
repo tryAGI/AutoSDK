@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IFilesClient
     {
+
         /// <summary>
         /// Get file contents<br/>
         /// Get the contents of a single uploaded data file.

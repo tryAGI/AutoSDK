@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// Delete an artifact<br/>
         /// Deletes an artifact for a workflow run.<br/>

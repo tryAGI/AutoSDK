@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IMigrationsClient
     {
+
         /// <summary>
         /// Unlock an organization repository<br/>
         /// Unlocks a repository that was locked for migration. You should unlock each migrated repository and [delete them](https://docs.github.com/rest/repos/repos#delete-a-repository) when the migration is complete and you no longer need the source data.

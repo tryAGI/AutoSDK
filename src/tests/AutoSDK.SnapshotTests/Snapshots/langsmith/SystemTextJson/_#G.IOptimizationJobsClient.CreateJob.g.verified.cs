@@ -5,12 +5,14 @@ namespace G
 {
     public partial interface IOptimizationJobsClient
     {
+
         /// <summary>
         /// Create Job<br/>
         /// Create a new prompt optimization job.
         /// </summary>
         /// <param name="repo"></param>
         /// <param name="owner"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

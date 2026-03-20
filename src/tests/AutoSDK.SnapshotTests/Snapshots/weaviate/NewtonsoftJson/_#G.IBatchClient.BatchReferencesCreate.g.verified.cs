@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IBatchClient
     {
+
         /// <summary>
         /// Batch create cross-references.<br/>
         /// Batch create cross-references between collections items (objects or objects) in bulk.
@@ -12,6 +13,7 @@ namespace G
         /// <param name="consistencyLevel">
         /// Default Value: QUORUM
         /// </param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

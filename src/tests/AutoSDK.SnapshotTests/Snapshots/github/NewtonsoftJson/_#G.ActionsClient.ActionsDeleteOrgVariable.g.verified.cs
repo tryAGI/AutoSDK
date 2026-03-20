@@ -19,6 +19,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Delete an organization variable<br/>
         /// Deletes an organization variable using the variable name.<br/>

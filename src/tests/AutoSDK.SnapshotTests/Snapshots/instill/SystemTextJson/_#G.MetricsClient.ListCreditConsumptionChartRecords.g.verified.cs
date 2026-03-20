@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List Instill Credit consumption time charts<br/>
         /// Returns a timeline of Instill Credit consumption for a given owner. The<br/>

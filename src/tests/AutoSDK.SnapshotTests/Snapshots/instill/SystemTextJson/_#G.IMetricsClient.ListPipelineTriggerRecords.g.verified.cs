@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IMetricsClient
     {
+
         /// <summary>
         /// List pipeline triggers<br/>
         /// Returns a paginated list of pipeline executions.

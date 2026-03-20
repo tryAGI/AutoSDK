@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUsersClient
     {
+
         /// <summary>
         /// Index<br/>
         /// Retrieve a paginated set of invites to all teams.

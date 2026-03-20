@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IApiKeyClient
     {
+
         /// <summary>
         /// Delete Api Key<br/>
         /// Delete an api key for the user

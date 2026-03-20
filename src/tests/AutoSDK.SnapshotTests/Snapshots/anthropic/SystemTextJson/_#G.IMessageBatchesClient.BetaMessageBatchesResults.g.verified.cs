@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IMessageBatchesClient
     {
+
         /// <summary>
         /// Retrieve Message Batch results<br/>
         /// Streams the results of a Message Batch as a `.jsonl` file.<br/>

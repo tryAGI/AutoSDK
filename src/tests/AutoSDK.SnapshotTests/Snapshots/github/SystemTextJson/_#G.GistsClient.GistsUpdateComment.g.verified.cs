@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Update a gist comment<br/>
         /// Updates a comment on a gist.<br/>
@@ -35,6 +36,7 @@ namespace G
         /// </summary>
         /// <param name="gistId"></param>
         /// <param name="commentId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

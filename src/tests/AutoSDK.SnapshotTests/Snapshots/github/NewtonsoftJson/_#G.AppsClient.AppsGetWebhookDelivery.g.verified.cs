@@ -22,6 +22,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get a delivery for an app webhook<br/>
         /// Returns a delivery for the webhook configured for a GitHub App.<br/>

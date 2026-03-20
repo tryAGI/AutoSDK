@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
+
         /// <summary>
         /// Delete Rag Index.<br/>
         /// Delete RAG index for the knowledgebase document.

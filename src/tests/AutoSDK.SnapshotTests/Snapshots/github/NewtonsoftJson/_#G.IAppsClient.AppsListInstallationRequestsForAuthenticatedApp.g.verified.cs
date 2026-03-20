@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAppsClient
     {
+
         /// <summary>
         /// List installation requests for the authenticated app<br/>
         /// Lists all the pending installation requests for the authenticated GitHub App.

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// Get GitHub Actions permissions for an organization<br/>
         /// Gets the GitHub Actions permissions policy for repositories and allowed actions and reusable workflows in an organization.<br/>

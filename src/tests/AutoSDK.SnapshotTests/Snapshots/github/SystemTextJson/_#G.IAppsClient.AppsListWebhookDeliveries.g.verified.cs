@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAppsClient
     {
+
         /// <summary>
         /// List deliveries for an app webhook<br/>
         /// Returns a list of webhook deliveries for the webhook configured for a GitHub App.<br/>

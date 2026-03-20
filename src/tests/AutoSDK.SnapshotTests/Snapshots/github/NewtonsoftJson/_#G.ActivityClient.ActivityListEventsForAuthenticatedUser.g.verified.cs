@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List events for the authenticated user<br/>
         /// If you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events.<br/>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
+
         /// <summary>
         /// Get Mcp Server<br/>
         /// Retrieve a specific MCP server configuration from the workspace.

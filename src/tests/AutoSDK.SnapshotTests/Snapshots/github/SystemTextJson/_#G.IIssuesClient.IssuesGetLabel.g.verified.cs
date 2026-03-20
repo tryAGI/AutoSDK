@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IIssuesClient
     {
+
         /// <summary>
         /// Get a label<br/>
         /// Gets a label using the given name.

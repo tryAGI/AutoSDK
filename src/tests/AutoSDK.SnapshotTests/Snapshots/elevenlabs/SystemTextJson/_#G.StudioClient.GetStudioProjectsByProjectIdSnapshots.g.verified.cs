@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List Studio Project Snapshots<br/>
         /// Retrieves a list of snapshots for a Studio project.

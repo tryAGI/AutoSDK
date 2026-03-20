@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface INamespaceClient
     {
+
         /// <summary>
         /// List users<br/>
         /// Returns a paginated list of users.

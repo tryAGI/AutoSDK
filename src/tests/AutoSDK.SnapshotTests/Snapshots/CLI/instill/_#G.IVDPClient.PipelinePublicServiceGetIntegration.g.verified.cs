@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IVdpClient
     {
+
         /// <summary>
         /// Get an integration<br/>
         /// Returns the details of an integration.

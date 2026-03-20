@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IScalingConfigurationsClient
     {
+
         /// <summary>
         /// Delete<br/>
         /// Delete a scaling configuration

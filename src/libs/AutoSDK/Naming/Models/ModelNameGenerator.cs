@@ -69,7 +69,16 @@ public static class ModelNameGenerator
     public static string ComputeClassName(this SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
-        
+
+        // x-fern-type-name overrides the generated class name (opt-in via UseExtensionNaming)
+        if (context.Settings.UseExtensionNaming &&
+            OpenApiExtensions.TryGetExtensionStringValue(
+                context.Schema.Extensions, "x-fern-type-name", out var fernTypeName) &&
+            !string.IsNullOrWhiteSpace(fernTypeName))
+        {
+            return fernTypeName.ToClassName();
+        }
+
         if (context.ComponentId != null)
         {
             return context.ComponentId.ToCSharpName(context.Settings, context.Parent).ToClassName();

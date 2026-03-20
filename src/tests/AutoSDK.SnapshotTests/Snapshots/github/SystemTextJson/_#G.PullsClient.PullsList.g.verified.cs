@@ -38,6 +38,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List pull requests<br/>
         /// Lists pull requests in a specified repository.<br/>

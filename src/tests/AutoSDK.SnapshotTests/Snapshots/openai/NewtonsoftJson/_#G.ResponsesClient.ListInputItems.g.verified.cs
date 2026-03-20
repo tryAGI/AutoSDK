@@ -32,6 +32,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Returns a list of input items for a given response.
         /// </summary>

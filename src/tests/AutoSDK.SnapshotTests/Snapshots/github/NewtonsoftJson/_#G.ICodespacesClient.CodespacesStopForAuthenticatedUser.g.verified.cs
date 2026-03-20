@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICodespacesClient
     {
+
         /// <summary>
         /// Stop a codespace for the authenticated user<br/>
         /// Stops a user's codespace.<br/>

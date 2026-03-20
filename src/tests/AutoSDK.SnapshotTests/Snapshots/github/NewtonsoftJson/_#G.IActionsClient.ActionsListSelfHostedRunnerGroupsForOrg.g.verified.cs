@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// List self-hosted runner groups for an organization<br/>
         /// Lists all self-hosted runner groups configured in an organization and inherited from an enterprise.<br/>

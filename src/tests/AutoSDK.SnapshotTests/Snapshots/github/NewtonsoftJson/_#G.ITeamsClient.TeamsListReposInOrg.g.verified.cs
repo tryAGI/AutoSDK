@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ITeamsClient
     {
+
         /// <summary>
         /// List team repositories<br/>
         /// Lists a team's repositories visible to the authenticated user.<br/>

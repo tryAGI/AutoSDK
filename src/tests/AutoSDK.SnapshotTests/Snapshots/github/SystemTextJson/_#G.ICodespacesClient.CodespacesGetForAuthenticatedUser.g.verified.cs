@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICodespacesClient
     {
+
         /// <summary>
         /// Get a codespace for the authenticated user<br/>
         /// Gets information about a user's codespace.<br/>

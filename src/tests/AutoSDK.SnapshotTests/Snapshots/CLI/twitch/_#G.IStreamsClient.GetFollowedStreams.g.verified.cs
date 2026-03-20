@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IStreamsClient
     {
+
         /// <summary>
         /// Gets the list of broadcasters that the user follows and that are streaming live.<br/>
         /// Gets the list of broadcasters that the user follows and that are streaming live.<br/>

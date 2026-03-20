@@ -19,6 +19,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Cancel an import<br/>
         /// Stop an import for a repository.<br/>
@@ -29,6 +30,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
+
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task MigrationsCancelImportAsync(
             string owner,

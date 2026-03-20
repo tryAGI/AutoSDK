@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
+
         /// <summary>
         /// Delete Agent Draft<br/>
         /// Delete a draft for an agent

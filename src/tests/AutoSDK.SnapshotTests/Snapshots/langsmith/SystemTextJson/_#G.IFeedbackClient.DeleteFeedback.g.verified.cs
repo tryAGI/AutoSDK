@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IFeedbackClient
     {
+
         /// <summary>
         /// Delete Feedback<br/>
         /// Delete a feedback.

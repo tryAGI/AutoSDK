@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IStudioClient
     {
+
         /// <summary>
         /// List Studio Project Snapshots<br/>
         /// Retrieves a list of snapshots for a Studio project.

@@ -22,6 +22,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Gets the list of Bits products that belongs to the extension.<br/>
         /// Gets the list of Bits products that belongs to the extension. The client ID in the app access token identifies the extension.<br/>

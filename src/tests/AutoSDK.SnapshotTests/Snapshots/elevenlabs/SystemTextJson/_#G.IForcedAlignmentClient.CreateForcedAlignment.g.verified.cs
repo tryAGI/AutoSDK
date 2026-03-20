@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IForcedAlignmentClient
     {
+
         /// <summary>
         /// Create Forced Alignment<br/>
         /// Force align an audio file to text. Use this endpoint to get the timing information for each character and word in an audio file based on a provided text transcript.
@@ -12,6 +13,7 @@ namespace G
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

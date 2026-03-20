@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ILoginClient
     {
+
         /// <summary>
         /// Get RSA Public Key<br/>
         /// Retrieves RSA public information.

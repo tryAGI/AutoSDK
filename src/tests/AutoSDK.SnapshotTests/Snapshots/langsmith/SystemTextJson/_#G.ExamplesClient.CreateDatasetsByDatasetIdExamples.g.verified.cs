@@ -17,11 +17,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Upload Examples<br/>
         /// This endpoint allows clients to upload examples to a specified dataset by sending a multipart/form-data POST request.<br/>
         /// Each form part contains either JSON-encoded data or binary attachment files associated with an example.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

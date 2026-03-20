@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICorporaClient
     {
+
         /// <summary>
         /// Compute the current size of a corpus<br/>
         /// Compute the current size of a corpus, including number of documents, parts, and characters. The `corpus_key` uniquely identifies the corpus.

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IClusterClient
     {
+
         /// <summary>
         /// List Clusters<br/>
         /// List all clusters belonging to a user/team

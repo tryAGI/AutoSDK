@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// Delete a GitHub Actions cache for a repository (using a cache ID)<br/>
         /// Deletes a GitHub Actions cache for a repository, using a cache ID.<br/>

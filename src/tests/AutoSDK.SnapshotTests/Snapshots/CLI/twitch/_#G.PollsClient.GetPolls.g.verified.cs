@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Gets a list of polls that the broadcaster created.<br/>
         /// Gets a list of polls that the broadcaster created.<br/>

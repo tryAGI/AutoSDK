@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// List public organization members<br/>
         /// Members of an organization can choose to have their membership publicized or not.

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IArtifactClient
     {
+
         /// <summary>
         /// Get Object Download URL<br/>
         /// Returns the download URL of an object.

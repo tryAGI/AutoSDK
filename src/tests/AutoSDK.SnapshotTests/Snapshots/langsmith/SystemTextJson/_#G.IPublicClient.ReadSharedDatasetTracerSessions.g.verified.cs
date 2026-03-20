@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPublicClient
     {
+
         /// <summary>
         /// Read Shared Dataset Tracer Sessions<br/>
         /// Get projects run on a dataset that has been shared.

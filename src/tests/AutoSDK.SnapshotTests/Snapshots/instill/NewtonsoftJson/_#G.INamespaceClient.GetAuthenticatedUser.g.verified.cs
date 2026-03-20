@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface INamespaceClient
     {
+
         /// <summary>
         /// Get the authenticated user<br/>
         /// Returns the details of the authenticated user.

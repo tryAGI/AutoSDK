@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IConnectorsClient
     {
+
         /// <summary>
         /// Delete a Connector<br/>
         /// Delete a connector by ID. See ['Connectors'](https://docs.cohere.com/docs/connectors) for more information.

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IDocumentsClient
     {
+
         /// <summary>
         /// Bulk delete documents from a corpus<br/>
         /// Initiates an asynchronous bulk delete operation for documents in a corpus.<br/>

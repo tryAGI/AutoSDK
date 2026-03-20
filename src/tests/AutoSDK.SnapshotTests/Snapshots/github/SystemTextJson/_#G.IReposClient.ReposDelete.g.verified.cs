@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Delete a repository<br/>
         /// Deleting a repository requires admin access.<br/>

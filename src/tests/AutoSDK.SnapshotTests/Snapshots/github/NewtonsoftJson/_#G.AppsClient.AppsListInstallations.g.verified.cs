@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List installations for the authenticated app<br/>
         /// The permissions the installation has are included under the `permissions` key.<br/>

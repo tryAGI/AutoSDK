@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IProjectsClient
     {
+
         /// <summary>
         /// List user projects<br/>
         /// Lists projects for a user.

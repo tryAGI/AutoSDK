@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Delete Pvc Voice Sample<br/>
         /// Delete a sample from a PVC voice.

@@ -5,10 +5,12 @@ namespace G
 {
     public partial interface IBulkEmbeddingsClient
     {
+
         /// <summary>
         /// Start Bulk Embedding<br/>
         /// Upload a file and get embeddings for each row
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOpenAiClient
     {
+
         /// <summary>
         /// Delete an organization admin API key<br/>
         /// Delete the specified admin API key.

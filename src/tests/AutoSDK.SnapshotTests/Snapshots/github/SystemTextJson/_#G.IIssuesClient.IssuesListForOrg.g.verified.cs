@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IIssuesClient
     {
+
         /// <summary>
         /// List organization issues assigned to the authenticated user<br/>
         /// List issues in an organization assigned to the authenticated user.<br/>

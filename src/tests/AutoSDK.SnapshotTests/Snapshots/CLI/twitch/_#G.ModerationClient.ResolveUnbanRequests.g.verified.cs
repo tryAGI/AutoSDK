@@ -30,6 +30,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// NEW Resolves an unban request by approving or denying it.<br/>
         /// NEW Resolves an unban request by approving or denying it.<br/>

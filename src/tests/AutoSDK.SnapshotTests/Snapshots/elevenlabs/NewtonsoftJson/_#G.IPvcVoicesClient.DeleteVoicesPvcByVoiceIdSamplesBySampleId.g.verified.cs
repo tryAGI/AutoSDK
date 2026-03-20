@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPvcVoicesClient
     {
+
         /// <summary>
         /// Delete Pvc Voice Sample<br/>
         /// Delete a sample from a PVC voice.

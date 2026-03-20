@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
+
         /// <summary>
         /// Get Documentation Chunk From Knowledge Base<br/>
         /// Get details about a specific documentation part used by RAG.

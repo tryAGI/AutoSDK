@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// List deployment statuses<br/>
         /// Users with pull access can view deployment statuses for a deployment:

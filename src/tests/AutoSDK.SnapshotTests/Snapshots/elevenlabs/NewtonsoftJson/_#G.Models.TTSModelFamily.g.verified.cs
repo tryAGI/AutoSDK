@@ -11,7 +11,7 @@ namespace G
     public enum TTSModelFamily
     {
         /// <summary>
-        /// 
+        /// Deprecated: Use flash instead.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="turbo")]
         Turbo,

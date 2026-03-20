@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IGuestStarClient
     {
+
         /// <summary>
         /// BETA Sends an invite to a specified guest on behalf of the broadcaster for a Guest Star session in progress.<br/>
         /// BETA Sends an invite to a specified guest on behalf of the broadcaster for a Guest Star session in progress.<br/>

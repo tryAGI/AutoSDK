@@ -18,7 +18,7 @@ namespace G
         public global::G.AudioIntelligenceModelStatus Status { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Results
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("results", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.ContentSafetyLabelResult> Results { get; set; } = default!;
@@ -47,7 +47,9 @@ namespace G
         /// <param name="status">
         /// Either success, or unavailable in the rare case that the model failed
         /// </param>
-        /// <param name="results"></param>
+        /// <param name="results">
+        /// Results
+        /// </param>
         /// <param name="summary">
         /// A summary of the Content Moderation confidence results for the entire audio file
         /// </param>

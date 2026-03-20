@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IModelClient
     {
+
         /// <summary>
         /// Create a new model<br/>
         /// Creates a new model under the parenthood of a namespace. This is an<br/>
@@ -14,6 +15,7 @@ namespace G
         /// operation.
         /// </summary>
         /// <param name="namespaceId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

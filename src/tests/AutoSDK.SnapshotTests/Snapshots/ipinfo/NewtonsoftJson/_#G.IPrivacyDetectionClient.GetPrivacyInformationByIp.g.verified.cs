@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPrivacyDetectionClient
     {
+
         /// <summary>
         /// Returns privacy information about the selected IP.<br/>
         /// Returns privacy information about the selected IP.

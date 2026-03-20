@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// List commit comments for a repository<br/>
         /// Lists the commit comments for a specified repository. Comments are ordered by ascending ID.<br/>

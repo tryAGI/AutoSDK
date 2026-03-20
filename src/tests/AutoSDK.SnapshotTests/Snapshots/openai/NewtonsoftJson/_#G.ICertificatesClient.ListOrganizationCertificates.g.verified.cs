@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICertificatesClient
     {
+
         /// <summary>
         /// List uploaded certificates for this organization.
         /// </summary>

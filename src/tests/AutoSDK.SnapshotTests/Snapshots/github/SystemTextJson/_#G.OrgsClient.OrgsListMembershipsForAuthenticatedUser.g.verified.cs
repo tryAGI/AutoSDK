@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List organization memberships for the authenticated user<br/>
         /// Lists all of the authenticated user's organization memberships.

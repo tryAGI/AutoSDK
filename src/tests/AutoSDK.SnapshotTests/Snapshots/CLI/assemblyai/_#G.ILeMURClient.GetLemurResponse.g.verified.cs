@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ILeMURClient
     {
+
         /// <summary>
         /// Retrieve LeMUR response<br/>
         /// Retrieve a LeMUR response that was previously generated.

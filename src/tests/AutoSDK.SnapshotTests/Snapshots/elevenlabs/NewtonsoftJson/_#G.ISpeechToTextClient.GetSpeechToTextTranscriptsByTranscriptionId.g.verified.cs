@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISpeechToTextClient
     {
+
         /// <summary>
         /// Get Transcript By Id<br/>
         /// Retrieve a previously generated transcript by its ID.

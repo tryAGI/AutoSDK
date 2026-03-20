@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IModelPriceMapClient
     {
+
         /// <summary>
         /// Delete Model Price
         /// </summary>

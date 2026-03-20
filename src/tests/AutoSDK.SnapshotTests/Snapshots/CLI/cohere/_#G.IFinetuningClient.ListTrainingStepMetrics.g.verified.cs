@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IFinetuningClient
     {
+
         /// <summary>
         /// Retrieves metrics measured during the training of a fine-tuned model.
         /// </summary>

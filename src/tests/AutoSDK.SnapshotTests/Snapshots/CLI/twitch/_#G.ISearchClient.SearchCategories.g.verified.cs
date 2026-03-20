@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISearchClient
     {
+
         /// <summary>
         /// Gets the games or categories that match the specified query.<br/>
         /// Gets the games or categories that match the specified query.<br/>

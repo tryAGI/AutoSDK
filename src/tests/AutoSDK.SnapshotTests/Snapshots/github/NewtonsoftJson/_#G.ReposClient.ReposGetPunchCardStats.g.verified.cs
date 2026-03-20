@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get the hourly commit count for each day<br/>
         /// Each array contains the day number, hour number, and number of commits:<br/>

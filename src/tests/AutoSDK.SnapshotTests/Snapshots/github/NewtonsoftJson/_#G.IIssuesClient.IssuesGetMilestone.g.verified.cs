@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IIssuesClient
     {
+
         /// <summary>
         /// Get a milestone<br/>
         /// Gets a milestone using the given milestone number.

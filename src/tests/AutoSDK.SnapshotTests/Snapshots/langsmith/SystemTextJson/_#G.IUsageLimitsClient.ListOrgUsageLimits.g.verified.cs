@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUsageLimitsClient
     {
+
         /// <summary>
         /// List Org Usage Limits<br/>
         /// List out the configured usage limits for a given organization.

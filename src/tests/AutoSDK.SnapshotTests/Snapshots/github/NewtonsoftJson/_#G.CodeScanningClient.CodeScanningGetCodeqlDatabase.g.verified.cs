@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get a CodeQL database for a repository<br/>
         /// Gets a CodeQL database for a language in a repository.<br/>

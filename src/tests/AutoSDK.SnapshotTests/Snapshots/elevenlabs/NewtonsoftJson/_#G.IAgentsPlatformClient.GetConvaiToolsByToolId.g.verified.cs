@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
+
         /// <summary>
         /// Get Tool<br/>
         /// Get tool that is available in the workspace.

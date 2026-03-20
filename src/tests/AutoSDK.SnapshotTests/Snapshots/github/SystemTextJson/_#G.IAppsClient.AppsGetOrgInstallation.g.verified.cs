@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAppsClient
     {
+
         /// <summary>
         /// Get an organization installation for the authenticated app<br/>
         /// Enables an authenticated GitHub App to find the organization's installation information.<br/>

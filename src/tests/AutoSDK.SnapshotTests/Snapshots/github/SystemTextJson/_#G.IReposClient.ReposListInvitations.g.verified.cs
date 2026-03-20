@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// List repository invitations<br/>
         /// When authenticating as a user with admin rights to a repository, this endpoint will list all currently open repository invitations.

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPromptClient
     {
+
         /// <summary>
         /// Generate a Random prompt<br/>
         /// This endpoint returns a random prompt

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IFinetuningClient
     {
+
         /// <summary>
         /// Returns a fine-tuned model by ID.
         /// </summary>

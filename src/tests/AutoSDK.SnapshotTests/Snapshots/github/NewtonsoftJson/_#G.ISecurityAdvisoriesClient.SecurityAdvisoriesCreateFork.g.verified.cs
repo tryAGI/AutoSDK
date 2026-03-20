@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISecurityAdvisoriesClient
     {
+
         /// <summary>
         /// Create a temporary private fork<br/>
         /// Create a temporary private fork to collaborate on fixing a security vulnerability in your repository.<br/>

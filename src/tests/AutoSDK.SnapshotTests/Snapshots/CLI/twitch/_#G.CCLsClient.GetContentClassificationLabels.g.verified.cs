@@ -22,6 +22,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Gets information about Twitch content classification labels.<br/>
         /// Gets information about Twitch content classification labels.<br/>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPublicClient
     {
+
         /// <summary>
         /// Get Shared Run By Id<br/>
         /// Get the shared run.

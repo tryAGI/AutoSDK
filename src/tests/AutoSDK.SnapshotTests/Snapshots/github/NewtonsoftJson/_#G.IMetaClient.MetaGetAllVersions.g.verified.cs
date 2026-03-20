@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IMetaClient
     {
+
         /// <summary>
         /// Get all API versions<br/>
         /// Get all supported GitHub API versions.

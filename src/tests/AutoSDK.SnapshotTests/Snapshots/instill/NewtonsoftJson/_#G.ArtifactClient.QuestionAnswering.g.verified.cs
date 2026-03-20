@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Ask a question<br/>
         /// Asks a question.
@@ -35,6 +36,7 @@ namespace G
         /// <param name="namespaceId"></param>
         /// <param name="catalogId"></param>
         /// <param name="instillRequesterUid"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

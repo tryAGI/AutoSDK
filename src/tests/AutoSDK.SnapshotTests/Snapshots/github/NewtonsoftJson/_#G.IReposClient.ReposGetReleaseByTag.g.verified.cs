@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Get a release by tag name<br/>
         /// Get a published release with the specified tag.

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPredictionsClient
     {
+
         /// <summary>
         /// Gets a list of Channel Points Predictions that the broadcaster created.<br/>
         /// Gets a list of Channel Points Predictions that the broadcaster created.<br/>

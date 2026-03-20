@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// Create a remove token for an organization<br/>
         /// Returns a token that you can pass to the `config` script to remove a self-hosted runner from an organization. The token expires after one hour.<br/>

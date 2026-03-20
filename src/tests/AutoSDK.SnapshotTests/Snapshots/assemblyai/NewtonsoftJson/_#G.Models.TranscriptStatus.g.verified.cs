@@ -11,22 +11,22 @@ namespace G
     public enum TranscriptStatus
     {
         /// <summary>
-        /// 
+        /// The audio file is in the queue to be processed by the API.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="queued")]
         Queued,
         /// <summary>
-        /// 
+        /// The audio file is being processed by the API.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="processing")]
         Processing,
         /// <summary>
-        /// 
+        /// The transcript job has been completed successfully.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="completed")]
         Completed,
         /// <summary>
-        /// 
+        /// An error occurred while processing the audio file.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="error")]
         Error,

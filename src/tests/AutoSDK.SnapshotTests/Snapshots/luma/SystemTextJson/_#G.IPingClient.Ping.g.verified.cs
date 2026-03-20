@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPingClient
     {
+
         /// <summary>
         /// Ping<br/>
         /// Check if the API is running

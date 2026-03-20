@@ -34,6 +34,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get costs details for the organization.
         /// </summary>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPackagesClient
     {
+
         /// <summary>
         /// Delete package version for a user<br/>
         /// Deletes a specific package version for a user. If the package is public and the package version has more than 5,000 downloads, you cannot delete the package version. In this scenario, contact GitHub support for further assistance.<br/>

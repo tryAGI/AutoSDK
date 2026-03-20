@@ -5,10 +5,12 @@ namespace G
 {
     public partial interface IDatasetClient
     {
+
         /// <summary>
         /// Create a Dataset<br/>
         /// This endpoint creates a new dataset
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

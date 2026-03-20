@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// List repository access to a self-hosted runner group in an organization<br/>
         /// Lists the repositories with access to a self-hosted runner group configured in an organization.<br/>

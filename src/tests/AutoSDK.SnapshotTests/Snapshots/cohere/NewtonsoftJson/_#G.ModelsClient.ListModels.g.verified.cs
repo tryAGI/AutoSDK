@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List Models<br/>
         /// Returns a list of models available for use. The list contains models from Cohere as well as your fine-tuned models.

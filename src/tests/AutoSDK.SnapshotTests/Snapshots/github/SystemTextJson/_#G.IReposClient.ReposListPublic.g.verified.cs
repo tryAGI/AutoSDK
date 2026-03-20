@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// List public repositories<br/>
         /// Lists all public repositories in the order that they were created.<br/>

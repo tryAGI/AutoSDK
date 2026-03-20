@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// List organization repositories<br/>
         /// Lists repositories for the specified organization.<br/>

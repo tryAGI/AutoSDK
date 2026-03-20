@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IModelClient
     {
+
         /// <summary>
         /// Watch the state of a model version<br/>
         /// Returns the state of a model. The model resource allocation and scaling actions take some<br/>

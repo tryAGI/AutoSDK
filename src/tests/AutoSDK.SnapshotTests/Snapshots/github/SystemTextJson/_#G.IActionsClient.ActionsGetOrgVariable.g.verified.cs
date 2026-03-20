@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// Get an organization variable<br/>
         /// Gets a specific variable in an organization.<br/>

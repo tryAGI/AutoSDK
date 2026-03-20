@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISearchClient
     {
+
         /// <summary>
         /// Gets the channels that match the specified query and have streamed content within the past 6 months.<br/>
         /// Gets the channels that match the specified query and have streamed content within the past 6 months.<br/>

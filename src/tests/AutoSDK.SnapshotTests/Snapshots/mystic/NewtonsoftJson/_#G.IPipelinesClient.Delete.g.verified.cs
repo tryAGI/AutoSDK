@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPipelinesClient
     {
+
         /// <summary>
         /// Delete<br/>
         /// Delete a pipeline.

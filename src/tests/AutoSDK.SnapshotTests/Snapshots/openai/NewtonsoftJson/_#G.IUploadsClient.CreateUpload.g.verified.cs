@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUploadsClient
     {
+
         /// <summary>
         /// Creates an intermediate [Upload](/docs/api-reference/uploads/object) object<br/>
         /// that you can add [Parts](/docs/api-reference/uploads/part-object) to.<br/>
@@ -21,6 +22,7 @@ namespace G
         /// follow the documentation on [creating a<br/>
         /// File](/docs/api-reference/files/create).
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

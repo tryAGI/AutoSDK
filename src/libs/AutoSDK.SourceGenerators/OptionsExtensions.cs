@@ -53,6 +53,7 @@ public static class OptionsExtensions
             ExcludeTags: (options.GetGlobalOption(nameof(Settings.ExcludeTags), prefix)?.Split(';') ??
                                   []).ToImmutableArray(),
             ExcludeDeprecatedOperations: options.GetBoolGlobalOption(nameof(Settings.ExcludeDeprecatedOperations), prefix, defaultValue: Settings.Default.ExcludeDeprecatedOperations),
+            UseExtensionNaming: options.GetBoolGlobalOption(nameof(Settings.UseExtensionNaming), prefix, defaultValue: Settings.Default.UseExtensionNaming),
             JsonSerializerContext: options.GetGlobalOption(nameof(Settings.JsonSerializerContext), prefix) ?? string.Empty,
             GenerateJsonSerializerContextTypes: options.GetBoolGlobalOption(nameof(Settings.GenerateJsonSerializerContextTypes), prefix, defaultValue: Settings.Default.GenerateJsonSerializerContextTypes),
             ComputeDiscriminators: options.GetBoolGlobalOption(nameof(Settings.ComputeDiscriminators), prefix, defaultValue: Settings.Default.ComputeDiscriminators),

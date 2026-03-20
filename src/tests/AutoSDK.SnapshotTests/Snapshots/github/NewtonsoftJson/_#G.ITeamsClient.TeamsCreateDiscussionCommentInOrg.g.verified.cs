@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ITeamsClient
     {
+
         /// <summary>
         /// Create a discussion comment<br/>
         /// Creates a new comment on a team discussion.<br/>
@@ -16,6 +17,7 @@ namespace G
         /// <param name="org"></param>
         /// <param name="teamSlug"></param>
         /// <param name="discussionNumber"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

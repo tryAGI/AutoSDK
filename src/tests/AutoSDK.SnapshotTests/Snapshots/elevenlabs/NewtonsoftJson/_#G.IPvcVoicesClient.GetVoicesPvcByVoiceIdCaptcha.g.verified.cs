@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPvcVoicesClient
     {
+
         /// <summary>
         /// Get Pvc Voice Captcha<br/>
         /// Get captcha for PVC voice verification.

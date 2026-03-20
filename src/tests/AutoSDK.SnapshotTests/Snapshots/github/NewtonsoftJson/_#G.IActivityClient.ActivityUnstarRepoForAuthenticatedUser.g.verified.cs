@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActivityClient
     {
+
         /// <summary>
         /// Unstar a repository for the authenticated user<br/>
         /// Unstar a repository that the authenticated user has previously starred.

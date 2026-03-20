@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// Delete a workflow run<br/>
         /// Deletes a specific workflow run.<br/>

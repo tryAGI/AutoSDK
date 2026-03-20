@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IArtifactClient
     {
+
         /// <summary>
         /// Retrieve similar chunks<br/>
         /// Returns the similar chunks.
@@ -12,6 +13,7 @@ namespace G
         /// <param name="namespaceId"></param>
         /// <param name="catalogId"></param>
         /// <param name="instillRequesterUid"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

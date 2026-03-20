@@ -5,10 +5,12 @@ namespace G
 {
     public partial interface IModelsClient
     {
+
         /// <summary>
         /// Download a model from the ollama library.<br/>
         /// Cancelled pulls are resumed from where they left off, and multiple calls will share the same download progress.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

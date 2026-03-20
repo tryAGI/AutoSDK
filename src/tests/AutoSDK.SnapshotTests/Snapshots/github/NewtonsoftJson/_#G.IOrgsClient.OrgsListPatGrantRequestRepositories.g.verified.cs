@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// List repositories requested to be accessed by a fine-grained personal access token<br/>
         /// Lists the repositories a fine-grained personal access token request is requesting access to.<br/>

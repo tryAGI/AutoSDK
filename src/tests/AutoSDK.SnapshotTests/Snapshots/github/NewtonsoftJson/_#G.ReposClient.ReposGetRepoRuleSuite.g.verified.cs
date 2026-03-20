@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get a repository rule suite<br/>
         /// Gets information about a suite of rule evaluations from within a repository.<br/>

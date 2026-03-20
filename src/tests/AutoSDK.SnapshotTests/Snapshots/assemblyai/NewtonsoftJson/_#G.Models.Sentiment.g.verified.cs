@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Sentiment
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum Sentiment

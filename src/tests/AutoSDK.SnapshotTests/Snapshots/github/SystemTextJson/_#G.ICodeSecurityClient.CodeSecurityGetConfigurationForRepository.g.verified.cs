@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICodeSecurityClient
     {
+
         /// <summary>
         /// Get the code security configuration associated with a repository<br/>
         /// Get the code security configuration that manages a repository's code security settings.<br/>

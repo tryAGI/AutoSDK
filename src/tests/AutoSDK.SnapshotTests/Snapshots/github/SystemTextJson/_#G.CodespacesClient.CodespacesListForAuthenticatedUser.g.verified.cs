@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List codespaces for the authenticated user<br/>
         /// Lists the authenticated user's codespaces.<br/>

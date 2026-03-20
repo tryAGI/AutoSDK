@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Delete a release<br/>
         /// Users with push access to the repository can delete a release.

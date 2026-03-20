@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IApi
     {
+
         /// <summary>
         /// Github Login<br/>
         /// Initiate github SSO login flow. Callback is /github/callback

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IModelClient
     {
+
         /// <summary>
         /// Trigger model inference<br/>
         /// Triggers the latest deployed model version to infer the result of a set of task or<br/>
@@ -13,6 +14,7 @@ namespace G
         /// <param name="namespaceId"></param>
         /// <param name="modelId"></param>
         /// <param name="instillRequesterUid"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

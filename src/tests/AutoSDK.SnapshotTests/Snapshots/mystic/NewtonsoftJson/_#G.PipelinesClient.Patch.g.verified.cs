@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Patch<br/>
         /// Update selected fields on a pipeline
@@ -35,6 +36,7 @@ namespace G
         /// <param name="pipelineId"></param>
         /// <param name="pointer"></param>
         /// <param name="pipelineIdOrPointer"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

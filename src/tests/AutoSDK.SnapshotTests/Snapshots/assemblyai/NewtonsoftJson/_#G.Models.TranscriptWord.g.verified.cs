@@ -5,30 +5,31 @@
 namespace G
 {
     /// <summary>
+    /// Word<br/>
     /// Example: {"text":"Smoke","start":250,"end":650,"confidence":0.97465,"speaker":""}
     /// </summary>
     public sealed partial class TranscriptWord
     {
         /// <summary>
-        /// 
+        /// Confidence
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("confidence", Required = global::Newtonsoft.Json.Required.Always)]
         public double Confidence { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Start
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start", Required = global::Newtonsoft.Json.Required.Always)]
         public int Start { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// End
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end", Required = global::Newtonsoft.Json.Required.Always)]
         public int End { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Text
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
         public string Text { get; set; } = default!;
@@ -48,10 +49,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscriptWord" /> class.
         /// </summary>
-        /// <param name="confidence"></param>
-        /// <param name="start"></param>
-        /// <param name="end"></param>
-        /// <param name="text"></param>
+        /// <param name="confidence">
+        /// Confidence
+        /// </param>
+        /// <param name="start">
+        /// Start
+        /// </param>
+        /// <param name="end">
+        /// End
+        /// </param>
+        /// <param name="text">
+        /// Text
+        /// </param>
         /// <param name="speaker">
         /// The speaker of the sentence if [Speaker Diarization](https://www.assemblyai.com/docs/models/speaker-diarization) is enabled, else null
         /// </param>

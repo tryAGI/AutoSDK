@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUsersClient
     {
+
         /// <summary>
         /// List social accounts for a user<br/>
         /// Lists social media accounts for a user. This endpoint is accessible by anyone.

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IChannelsClient
     {
+
         /// <summary>
         /// Gets a list of users that follow the specified broadcaster. You can also use this endpoint to see whether a specific user follows the broadcaster.<br/>
         /// Gets a list of users that follow the specified broadcaster. You can also use this endpoint to see whether a specific user follows the broadcaster.<br/>

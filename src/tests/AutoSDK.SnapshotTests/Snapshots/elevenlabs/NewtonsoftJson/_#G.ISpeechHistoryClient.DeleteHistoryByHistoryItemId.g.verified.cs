@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISpeechHistoryClient
     {
+
         /// <summary>
         /// Delete History Item<br/>
         /// Delete a history item by its ID

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IExamplesClient
     {
+
         /// <summary>
         /// Delete Example<br/>
         /// Delete a specific example.

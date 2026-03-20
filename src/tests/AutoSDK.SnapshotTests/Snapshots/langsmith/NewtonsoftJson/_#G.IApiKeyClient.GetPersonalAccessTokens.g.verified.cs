@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IApiKeyClient
     {
+
         /// <summary>
         /// Get Personal Access Tokens<br/>
         /// Get the current users PATs for this tenant

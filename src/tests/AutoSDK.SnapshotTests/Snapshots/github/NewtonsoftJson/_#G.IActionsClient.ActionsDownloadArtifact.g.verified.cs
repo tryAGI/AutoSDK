@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// Download an artifact<br/>
         /// Gets a redirect URL to download an archive for a repository. This URL expires after 1 minute. Look for `Location:` in<br/>

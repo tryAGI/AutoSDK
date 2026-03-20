@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ITokensClient
     {
+
         /// <summary>
         /// Index<br/>
         /// Retrieve a Catalyst API Bearer token for an authenticated user.

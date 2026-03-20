@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPullsClient
     {
+
         /// <summary>
         /// List pull requests files<br/>
         /// Lists the files in a specified pull request.<br/>

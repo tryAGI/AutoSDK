@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICodespacesClient
     {
+
         /// <summary>
         /// Remove selected repository from an organization secret<br/>
         /// Removes a repository from an organization development environment secret when the `visibility`<br/>

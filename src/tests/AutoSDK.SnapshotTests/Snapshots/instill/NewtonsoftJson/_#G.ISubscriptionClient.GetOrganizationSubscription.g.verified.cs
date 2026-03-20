@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISubscriptionClient
     {
+
         /// <summary>
         /// Get the subscription of an organization<br/>
         /// Returns the subscription details of an organization.

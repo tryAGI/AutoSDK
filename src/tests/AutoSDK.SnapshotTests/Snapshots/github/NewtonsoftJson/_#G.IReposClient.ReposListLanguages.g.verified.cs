@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// List repository languages<br/>
         /// Lists languages for the specified repository. The value shown for each language is the number of bytes of code written in that language.

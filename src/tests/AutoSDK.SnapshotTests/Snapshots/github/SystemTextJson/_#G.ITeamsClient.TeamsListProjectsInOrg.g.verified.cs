@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ITeamsClient
     {
+
         /// <summary>
         /// List team projects<br/>
         /// Lists the organization projects for a team.<br/>

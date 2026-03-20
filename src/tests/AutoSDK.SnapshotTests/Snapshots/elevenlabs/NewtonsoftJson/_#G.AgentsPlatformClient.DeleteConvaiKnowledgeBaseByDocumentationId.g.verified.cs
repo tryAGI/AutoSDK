@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Delete Knowledge Base Document Or Folder<br/>
         /// Delete a document or folder from the knowledge base.

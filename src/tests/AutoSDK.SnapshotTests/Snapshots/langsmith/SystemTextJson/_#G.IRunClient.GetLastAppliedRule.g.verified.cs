@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IRunClient
     {
+
         /// <summary>
         /// Get Last Applied Rule<br/>
         /// Get the last applied rule.

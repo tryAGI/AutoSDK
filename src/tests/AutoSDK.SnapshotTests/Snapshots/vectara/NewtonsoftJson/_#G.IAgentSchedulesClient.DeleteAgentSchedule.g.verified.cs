@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAgentSchedulesClient
     {
+
         /// <summary>
         /// Delete agent schedule<br/>
         /// Delete an agent schedule. This stops all future executions of the schedule.<br/>

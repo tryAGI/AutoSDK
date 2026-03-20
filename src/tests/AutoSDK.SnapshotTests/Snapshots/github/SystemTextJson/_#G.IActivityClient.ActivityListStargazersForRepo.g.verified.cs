@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActivityClient
     {
+
         /// <summary>
         /// List stargazers<br/>
         /// Lists the people that have starred the repository.<br/>

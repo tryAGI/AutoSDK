@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICloudClient
     {
+
         /// <summary>
         /// List Regions<br/>
         /// Get all the available regions under a project

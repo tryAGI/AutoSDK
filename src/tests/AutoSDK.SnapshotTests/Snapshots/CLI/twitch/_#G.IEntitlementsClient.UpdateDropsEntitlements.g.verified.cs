@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IEntitlementsClient
     {
+
         /// <summary>
         /// Updates the Drop entitlement’s fulfillment status.<br/>
         /// Updates the Drop entitlement’s fulfillment status.<br/>
@@ -16,6 +17,7 @@ namespace G
         /// __Authorization:__<br/>
         /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens). The client ID in the access token must own the game.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

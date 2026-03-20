@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICodespacesClient
     {
+
         /// <summary>
         /// Delete a codespace for the authenticated user<br/>
         /// Deletes a user's codespace.<br/>

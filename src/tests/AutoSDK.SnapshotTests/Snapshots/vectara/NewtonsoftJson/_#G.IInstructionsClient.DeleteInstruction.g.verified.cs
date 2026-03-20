@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IInstructionsClient
     {
+
         /// <summary>
         /// Delete instruction<br/>
         /// Permanently delete an instruction and all its associated configuration.<br/>

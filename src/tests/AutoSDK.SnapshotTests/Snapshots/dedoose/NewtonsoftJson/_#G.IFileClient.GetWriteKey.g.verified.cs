@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IFileClient
     {
+
         /// <summary>
         /// GetWriteKey<br/>
         /// GetWriteKey

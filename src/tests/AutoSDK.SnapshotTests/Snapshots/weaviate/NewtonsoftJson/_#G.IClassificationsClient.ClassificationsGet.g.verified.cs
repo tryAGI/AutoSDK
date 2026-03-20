@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IClassificationsClient
     {
+
         /// <summary>
         /// View previously created classification<br/>
         /// Get status, results and metadata of a previously created classification

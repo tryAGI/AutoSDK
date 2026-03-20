@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IDatasetsClient
     {
+
         /// <summary>
         /// Sync Index<br/>
         /// Sync an index for a dataset.

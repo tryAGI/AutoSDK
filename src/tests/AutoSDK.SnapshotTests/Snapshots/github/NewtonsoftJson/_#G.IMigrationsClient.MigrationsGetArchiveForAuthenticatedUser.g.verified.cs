@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IMigrationsClient
     {
+
         /// <summary>
         /// Download a user migration archive<br/>
         /// Fetches the URL to download the migration archive as a `tar.gz` file. Depending on the resources your repository uses, the migration archive can contain JSON files with data for these objects:<br/>

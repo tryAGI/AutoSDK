@@ -5,10 +5,12 @@ namespace G
 {
     public partial interface ITrainingClient
     {
+
         /// <summary>
         /// GetTestResultTagApps<br/>
         /// GetTestResultTagApps
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IApiKeyClient
     {
+
         /// <summary>
         /// Delete Personal Access Token<br/>
         /// Delete a Personal Access Token for the user

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUsageClient
     {
+
         /// <summary>
         /// Get costs details for the organization.
         /// </summary>

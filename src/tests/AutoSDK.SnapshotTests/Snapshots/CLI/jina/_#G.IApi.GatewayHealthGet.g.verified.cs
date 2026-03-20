@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IApi
     {
+
         /// <summary>
         /// Get the health of Universal API service<br/>
         /// Get the health of this Gateway service.<br/>

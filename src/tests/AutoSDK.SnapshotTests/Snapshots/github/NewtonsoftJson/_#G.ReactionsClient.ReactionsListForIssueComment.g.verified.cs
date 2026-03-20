@@ -32,6 +32,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List reactions for an issue comment<br/>
         /// List the reactions to an [issue comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment).

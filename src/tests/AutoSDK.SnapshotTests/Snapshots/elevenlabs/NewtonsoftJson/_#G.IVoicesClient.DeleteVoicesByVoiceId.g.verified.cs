@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IVoicesClient
     {
+
         /// <summary>
         /// Delete Voice<br/>
         /// Deletes a voice by its ID.

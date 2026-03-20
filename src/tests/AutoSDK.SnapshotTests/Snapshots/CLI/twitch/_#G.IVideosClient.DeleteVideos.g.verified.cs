@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IVideosClient
     {
+
         /// <summary>
         /// Deletes one or more videos.<br/>
         /// Deletes one or more videos. You may delete past broadcasts, highlights, or uploads.<br/>

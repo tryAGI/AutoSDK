@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IFineTuningClient
     {
+
         /// <summary>
         /// Resume a fine-tune job.
         /// </summary>

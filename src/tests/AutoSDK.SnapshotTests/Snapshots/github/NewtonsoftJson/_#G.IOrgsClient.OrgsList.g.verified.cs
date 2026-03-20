@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// List organizations<br/>
         /// Lists all organizations, in the order that they were created.<br/>

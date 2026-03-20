@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReactionsClient
     {
+
         /// <summary>
         /// Delete a release reaction<br/>
         /// &gt; [!NOTE]<br/>

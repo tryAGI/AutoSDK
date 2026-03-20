@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISecurityClient
     {
+
         /// <summary>
         /// StopImpersonation<br/>
         /// StopImpersonation

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ITaskManagementClient
     {
+
         /// <summary>
         /// Cancel or delete a task<br/>
         /// Tasks that are running, pending, or throttled can be canceled by invoking this method. Invoking this method for other tasks will delete them.<br/>
@@ -16,6 +17,14 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
+
+        /// <remarks>
+        /// // npm install --save @runwayml/sdk<br/>
+        /// import RunwayML from '@runwayml/sdk';<br/>
+        /// // The env var RUNWAYML_API_SECRET is expected to contain your API key.<br/>
+        /// const client = new RunwayML();<br/>
+        /// await client.tasks.delete('17f20503-6c24-4c16-946b-35dbbce2af2f');
+        /// </remarks>
         global::System.Threading.Tasks.Task DeleteTasksByIdAsync(
             global::System.Guid id,
             string xRunwayVersion = "2024-11-06",

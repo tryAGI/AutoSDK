@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IEventSubClient
     {
+
         /// <summary>
         /// Gets a list of EventSub subscriptions that the client in the access token created.<br/>
         /// Gets a list of EventSub subscriptions that the client in the access token created.<br/>

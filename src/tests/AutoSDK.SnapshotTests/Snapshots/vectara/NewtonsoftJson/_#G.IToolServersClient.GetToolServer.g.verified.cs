@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IToolServersClient
     {
+
         /// <summary>
         /// Get tool Server<br/>
         /// Retrieve details about a specific tool server by its Id.

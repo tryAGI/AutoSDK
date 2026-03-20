@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Download a repository archive (tar)<br/>
         /// Gets a redirect URL to download a tar archive for a repository. If you omit `:ref`, the repository’s default branch (usually<br/>

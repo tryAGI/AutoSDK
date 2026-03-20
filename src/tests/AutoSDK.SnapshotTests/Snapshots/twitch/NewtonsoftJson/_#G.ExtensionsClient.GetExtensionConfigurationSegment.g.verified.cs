@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Gets the specified configuration segment from the specified extension.<br/>
         /// Gets the specified configuration segment from the specified extension.<br/>

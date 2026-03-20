@@ -23,6 +23,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Add or update team repository permissions (Legacy)<br/>
         /// &gt; [!WARNING]<br/>
@@ -33,9 +34,11 @@ namespace G
         /// <param name="teamId"></param>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
+
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task TeamsAddOrUpdateRepoPermissionsLegacyAsync(
             int teamId,
@@ -264,6 +267,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
+
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task TeamsAddOrUpdateRepoPermissionsLegacyAsync(
             int teamId,

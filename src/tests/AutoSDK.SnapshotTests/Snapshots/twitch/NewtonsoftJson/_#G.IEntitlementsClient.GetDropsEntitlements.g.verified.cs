@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IEntitlementsClient
     {
+
         /// <summary>
         /// Gets an organization’s list of entitlements that have been granted to a game, a user, or both.<br/>
         /// Gets an organization’s list of entitlements that have been granted to a game, a user, or both.<br/>

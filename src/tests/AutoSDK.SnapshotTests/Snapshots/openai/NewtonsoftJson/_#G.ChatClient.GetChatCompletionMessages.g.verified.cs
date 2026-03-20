@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get the messages in a stored chat completion. Only Chat Completions that<br/>
         /// have been created with the `store` parameter set to `true` will be<br/>

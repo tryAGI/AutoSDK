@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IMigrationsClient
     {
+
         /// <summary>
         /// Cancel an import<br/>
         /// Stop an import for a repository.<br/>
@@ -15,6 +16,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
+
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task MigrationsCancelImportAsync(
             string owner,

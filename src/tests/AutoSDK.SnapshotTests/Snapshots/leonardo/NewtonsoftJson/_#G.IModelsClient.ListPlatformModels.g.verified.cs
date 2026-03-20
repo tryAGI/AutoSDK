@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IModelsClient
     {
+
         /// <summary>
         /// List Platform Models<br/>
         /// Get a list of public Platform Models available for use with generations.

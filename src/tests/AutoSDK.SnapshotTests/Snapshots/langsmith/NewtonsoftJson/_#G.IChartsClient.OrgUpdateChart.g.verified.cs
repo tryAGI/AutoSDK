@@ -5,11 +5,13 @@ namespace G
 {
     public partial interface IChartsClient
     {
+
         /// <summary>
         /// Org Update Chart<br/>
         /// Update a chart.
         /// </summary>
         /// <param name="chartId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

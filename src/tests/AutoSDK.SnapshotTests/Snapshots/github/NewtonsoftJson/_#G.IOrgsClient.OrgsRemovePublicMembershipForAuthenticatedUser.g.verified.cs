@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// Remove public organization membership for the authenticated user<br/>
         /// Removes the public membership for the authenticated user from the specified organization, unless public visibility is enforced by default.

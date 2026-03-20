@@ -5,10 +5,12 @@ namespace G
 {
     public partial interface ICorporaClient
     {
+
         /// <summary>
         /// Request a presigned URL for uploading a document.
         /// </summary>
         /// <param name="corpusId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

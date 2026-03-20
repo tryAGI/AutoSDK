@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IModelsClient
     {
+
         /// <summary>
         /// List all models<br/>
         /// Lists all of Together's open-source models

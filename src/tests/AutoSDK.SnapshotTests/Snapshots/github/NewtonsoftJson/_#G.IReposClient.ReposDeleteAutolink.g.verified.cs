@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Delete an autolink reference from a repository<br/>
         /// This deletes a single autolink reference by ID that was configured for the given repository.<br/>

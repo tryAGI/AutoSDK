@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
+
         /// <summary>
         /// Get Live Count<br/>
         /// Get the live count of the ongoing conversations.

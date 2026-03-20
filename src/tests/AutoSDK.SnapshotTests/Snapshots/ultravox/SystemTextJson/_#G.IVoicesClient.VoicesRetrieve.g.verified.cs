@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IVoicesClient
     {
+
         /// <summary>
         /// 
         /// </summary>

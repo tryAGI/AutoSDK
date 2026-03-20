@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IGeneralClient
     {
+
         /// <summary>
         /// Returns information about the current IP.<br/>
         /// Returns information about the current IP.

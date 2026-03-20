@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IFilesClient
     {
+
         /// <summary>
         /// Index<br/>
         /// Retrieve a paginated set of pipeline file instances.

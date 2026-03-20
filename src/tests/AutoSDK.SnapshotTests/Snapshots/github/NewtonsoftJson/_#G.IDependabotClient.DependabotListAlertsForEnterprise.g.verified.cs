@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IDependabotClient
     {
+
         /// <summary>
         /// List Dependabot alerts for an enterprise<br/>
         /// Lists Dependabot alerts for repositories that are owned by the specified enterprise.<br/>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActivityClient
     {
+
         /// <summary>
         /// List repositories starred by a user<br/>
         /// Lists repositories a user has starred.<br/>

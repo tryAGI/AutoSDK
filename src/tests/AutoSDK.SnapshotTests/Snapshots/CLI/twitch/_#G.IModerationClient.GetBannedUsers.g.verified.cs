@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IModerationClient
     {
+
         /// <summary>
         /// Gets all users that the broadcaster banned or put in a timeout.<br/>
         /// Gets all users that the broadcaster banned or put in a timeout.<br/>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IVectorStoresClient
     {
+
         /// <summary>
         /// Delete a vector store file. This will remove the file from the vector store but the file itself will not be deleted. To delete the file, use the [delete file](/docs/api-reference/files/delete) endpoint.
         /// </summary>

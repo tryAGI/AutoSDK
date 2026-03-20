@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IIssuesClient
     {
+
         /// <summary>
         /// List milestones<br/>
         /// Lists milestones for a repository.

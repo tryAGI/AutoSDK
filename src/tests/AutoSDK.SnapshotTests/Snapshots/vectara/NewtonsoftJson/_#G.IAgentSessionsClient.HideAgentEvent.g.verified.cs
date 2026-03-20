@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAgentSessionsClient
     {
+
         /// <summary>
         /// Hide event<br/>
         /// Manually hide an event in a session. Sets hide_reason to 'manual'.

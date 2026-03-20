@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOpenAiClient
     {
+
         /// <summary>
         /// Retrieve a single organization API key<br/>
         /// Get details for a specific organization API key by its ID.

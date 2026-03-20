@@ -15,6 +15,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// v2/talking_photo/&lt;id&gt; (delete)<br/>
         /// v2/talking_photo/&lt;id&gt; (delete)

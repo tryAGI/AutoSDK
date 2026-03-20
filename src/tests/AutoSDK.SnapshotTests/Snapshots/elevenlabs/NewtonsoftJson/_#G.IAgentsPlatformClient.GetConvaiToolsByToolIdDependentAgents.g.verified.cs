@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
+
         /// <summary>
         /// Get Dependent Agents List<br/>
         /// Get a list of agents depending on this tool

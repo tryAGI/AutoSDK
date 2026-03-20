@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActivityClient
     {
+
         /// <summary>
         /// List repository notifications for the authenticated user<br/>
         /// Lists all notifications for the current user in the specified repository.

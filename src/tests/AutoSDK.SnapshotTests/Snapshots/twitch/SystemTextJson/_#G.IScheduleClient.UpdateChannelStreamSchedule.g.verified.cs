@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IScheduleClient
     {
+
         /// <summary>
         /// Updates the broadcaster’s schedule settings, such as scheduling a vacation.<br/>
         /// Updates the broadcaster’s schedule settings, such as scheduling a vacation.<br/>

@@ -24,12 +24,14 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Search a vector store for relevant chunks based on a query and file attributes filter.
         /// </summary>
         /// <param name="vectorStoreId">
         /// Example: vs_abc123
         /// </param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

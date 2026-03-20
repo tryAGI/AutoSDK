@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUserClient
     {
+
         /// <summary>
         /// v2/user/remaining_quota<br/>
         /// v2/user/remaining_quota

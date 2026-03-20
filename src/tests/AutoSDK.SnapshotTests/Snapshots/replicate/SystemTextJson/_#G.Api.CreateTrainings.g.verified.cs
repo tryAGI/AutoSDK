@@ -23,6 +23,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Create a training<br/>
         /// Start a new training of the model version you specify.<br/>
@@ -70,6 +71,7 @@ namespace G
         /// <param name="modelOwner"></param>
         /// <param name="modelName"></param>
         /// <param name="versionId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

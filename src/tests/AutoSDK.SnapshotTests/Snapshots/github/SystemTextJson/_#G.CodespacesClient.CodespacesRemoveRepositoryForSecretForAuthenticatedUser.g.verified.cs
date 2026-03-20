@@ -19,6 +19,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Remove a selected repository from a user secret<br/>
         /// Removes a repository from the selected repositories for a user's development environment secret.<br/>

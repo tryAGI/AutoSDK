@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICorporaClient
     {
+
         /// <summary>
         /// Retrieve metadata about a corpus<br/>
         /// The Get Corpus API lets you view metadata about a specific corpus. This is useful for getting information about a corpus without performing a search. This operation does not search the corpus contents. Specify the `corpus_key` to identify the corpus whose metadata you want to retrieve.<br/>

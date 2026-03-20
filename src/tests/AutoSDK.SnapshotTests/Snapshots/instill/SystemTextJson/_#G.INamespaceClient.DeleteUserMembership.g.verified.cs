@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface INamespaceClient
     {
+
         /// <summary>
         /// Delete a user membership<br/>
         /// Accesses and deletes a user membership by parent and membership IDs.

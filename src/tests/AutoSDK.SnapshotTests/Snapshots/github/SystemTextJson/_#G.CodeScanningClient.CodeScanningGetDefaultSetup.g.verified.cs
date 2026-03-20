@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get a code scanning default setup configuration<br/>
         /// Gets a code scanning default setup configuration.<br/>

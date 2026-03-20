@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IProjectsClient
     {
+
         /// <summary>
         /// Delete a project column<br/>
         /// Deletes a project column.

@@ -5,11 +5,13 @@ namespace G
 {
     public partial interface IPlaygroundSettingsClient
     {
+
         /// <summary>
         /// Update Playground Settings<br/>
         /// Update playground settings.
         /// </summary>
         /// <param name="playgroundSettingsId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

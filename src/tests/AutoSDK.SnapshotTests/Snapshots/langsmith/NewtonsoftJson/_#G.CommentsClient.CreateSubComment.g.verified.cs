@@ -28,12 +28,14 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Create Sub Comment
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="parentCommentId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

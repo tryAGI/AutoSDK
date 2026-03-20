@@ -24,11 +24,13 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Upload dataset image<br/>
         /// This endpoint returns presigned details to upload a dataset image to S3
         /// </summary>
         /// <param name="datasetId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

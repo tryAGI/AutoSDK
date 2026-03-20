@@ -30,6 +30,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Hide event<br/>
         /// Manually hide an event in a session. Sets hide_reason to 'manual'.

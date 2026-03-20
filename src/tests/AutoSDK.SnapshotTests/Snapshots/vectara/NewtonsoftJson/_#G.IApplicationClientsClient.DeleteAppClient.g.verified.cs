@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IApplicationClientsClient
     {
+
         /// <summary>
         /// Delete an App Client<br/>
         /// Remove an application client configuration from the customer account.

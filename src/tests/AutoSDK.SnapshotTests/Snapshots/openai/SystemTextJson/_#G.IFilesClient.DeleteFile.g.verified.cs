@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IFilesClient
     {
+
         /// <summary>
         /// Delete a file.
         /// </summary>

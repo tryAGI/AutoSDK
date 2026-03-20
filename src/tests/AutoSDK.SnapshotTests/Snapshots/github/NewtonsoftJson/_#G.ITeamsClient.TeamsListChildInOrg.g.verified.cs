@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ITeamsClient
     {
+
         /// <summary>
         /// List child teams<br/>
         /// Lists the child teams of the team specified by `{team_slug}`.<br/>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IDependencyGraphClient
     {
+
         /// <summary>
         /// Export a software bill of materials (SBOM) for a repository.<br/>
         /// Exports the software bill of materials (SBOM) for a repository in SPDX JSON format.

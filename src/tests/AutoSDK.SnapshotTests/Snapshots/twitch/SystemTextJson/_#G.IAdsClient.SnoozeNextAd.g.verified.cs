@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAdsClient
     {
+
         /// <summary>
         /// Pushes back the timestamp of the upcoming automatic mid-roll ad by 5 minutes.<br/>
         /// If available, pushes back the timestamp of the upcoming automatic mid-roll ad by 5 minutes. This endpoint duplicates the snooze functionality in the creator dashboard’s Ads Manager.<br/>

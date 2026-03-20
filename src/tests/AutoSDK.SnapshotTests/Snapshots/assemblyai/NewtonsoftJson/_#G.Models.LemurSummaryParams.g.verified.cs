@@ -6,11 +6,13 @@
 namespace G
 {
     /// <summary>
+    /// LeMUR summary parameters<br/>
     /// Example: {"transcript_ids":["47b95ba5-8889-44d8-bc80-5de38306e582"],"context":"This is an interview about wildfires.","final_model":"default","temperature":0,"max_output_size":3000}
     /// </summary>
     public readonly partial struct LemurSummaryParams : global::System.IEquatable<LemurSummaryParams>
     {
         /// <summary>
+        /// LeMUR base parameters<br/>
         /// Example: {"transcript_ids":["85f9b381-e90c-46ed-beca-7d76245d375e","7c3acd18-df4d-4432-88f5-1e89f8827eea"],"context":"This is an interview about wildfires.","final_model":"default","temperature":0,"max_output_size":3000}
         /// </summary>
 #if NET6_0_OR_GREATER

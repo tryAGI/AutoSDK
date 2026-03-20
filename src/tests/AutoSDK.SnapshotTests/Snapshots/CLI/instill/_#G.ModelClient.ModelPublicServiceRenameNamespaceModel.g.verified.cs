@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Rename a model<br/>
         /// Renames a model, accesing it by its resource name, which is defined by the<br/>
@@ -33,6 +34,7 @@ namespace G
         /// </summary>
         /// <param name="namespaceId"></param>
         /// <param name="modelId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

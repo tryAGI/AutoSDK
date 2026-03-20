@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get Signed Url<br/>
         /// Get a signed url to start a conversation with an agent with an agent that requires authorization
@@ -47,6 +48,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
+
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.ConversationSignedUrlResponseModel> GetConvaiConversationGetSignedUrl2Async(
             string agentId,

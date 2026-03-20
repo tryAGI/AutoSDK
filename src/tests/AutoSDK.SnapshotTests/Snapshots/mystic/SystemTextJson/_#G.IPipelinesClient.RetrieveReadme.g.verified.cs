@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPipelinesClient
     {
+
         /// <summary>
         /// Retrieve Readme<br/>
         /// Retrieve a pipeline's readme.

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPullsClient
     {
+
         /// <summary>
         /// Update a review for a pull request<br/>
         /// Updates the contents of a specified review summary comment.<br/>
@@ -18,6 +19,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="pullNumber"></param>
         /// <param name="reviewId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IFineTuningClient
     {
+
         /// <summary>
         /// List job events<br/>
         /// List the events for a single fine-tuning job.

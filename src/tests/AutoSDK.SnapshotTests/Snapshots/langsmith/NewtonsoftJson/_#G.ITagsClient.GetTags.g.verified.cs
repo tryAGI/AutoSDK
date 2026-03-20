@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ITagsClient
     {
+
         /// <summary>
         /// Get Tags
         /// </summary>

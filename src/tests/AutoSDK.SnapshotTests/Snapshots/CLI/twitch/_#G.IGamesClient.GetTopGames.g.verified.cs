@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IGamesClient
     {
+
         /// <summary>
         /// Gets information about all broadcasts on Twitch.<br/>
         /// Gets information about all broadcasts on Twitch.<br/>

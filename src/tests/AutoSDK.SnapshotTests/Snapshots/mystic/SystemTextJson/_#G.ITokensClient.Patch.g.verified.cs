@@ -5,11 +5,13 @@ namespace G
 {
     public partial interface ITokensClient
     {
+
         /// <summary>
         /// Patch<br/>
         /// Update selected fields of an API Bearer token for an authenticated user.
         /// </summary>
         /// <param name="tokenId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

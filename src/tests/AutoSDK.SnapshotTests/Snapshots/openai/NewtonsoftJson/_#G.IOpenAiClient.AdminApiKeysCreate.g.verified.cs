@@ -5,10 +5,12 @@ namespace G
 {
     public partial interface IOpenAiClient
     {
+
         /// <summary>
         /// Create an organization admin API key<br/>
         /// Create a new admin-level API key for the organization.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

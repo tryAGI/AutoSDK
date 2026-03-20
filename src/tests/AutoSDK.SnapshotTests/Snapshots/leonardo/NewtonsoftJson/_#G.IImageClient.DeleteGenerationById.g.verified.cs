@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IImageClient
     {
+
         /// <summary>
         /// Delete a Single Generation<br/>
         /// This endpoint deletes a specific generation

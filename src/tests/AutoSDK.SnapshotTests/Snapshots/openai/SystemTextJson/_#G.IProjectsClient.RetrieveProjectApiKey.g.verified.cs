@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IProjectsClient
     {
+
         /// <summary>
         /// Retrieves an API key in the project.
         /// </summary>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAdminClient
     {
+
         /// <summary>
         /// GetRevenueSegments<br/>
         /// GetRevenueSegments

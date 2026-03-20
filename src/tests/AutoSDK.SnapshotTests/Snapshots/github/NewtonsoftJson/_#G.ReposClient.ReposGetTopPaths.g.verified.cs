@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get top referral paths<br/>
         /// Get the top 10 popular contents over the last 14 days.

@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List supported table extractors<br/>
         /// Table extractors are used to extract tabular data from documents during indexing.

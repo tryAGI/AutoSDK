@@ -30,6 +30,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List encoders<br/>
         /// The List Encoders API retrieves a list of available encoders used for embedding documents and queries.

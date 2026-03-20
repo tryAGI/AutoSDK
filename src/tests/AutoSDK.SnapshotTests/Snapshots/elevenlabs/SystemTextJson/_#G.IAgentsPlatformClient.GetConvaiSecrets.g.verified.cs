@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
+
         /// <summary>
         /// Get Convai Workspace Secrets<br/>
         /// Get all workspace secrets for the user

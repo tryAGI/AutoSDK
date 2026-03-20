@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IJobsClient
     {
+
         /// <summary>
         /// Get a job by ID<br/>
         /// Get a job by a specific `job_id`. Jobs are background processes like replacing the filterable metadata attributes.

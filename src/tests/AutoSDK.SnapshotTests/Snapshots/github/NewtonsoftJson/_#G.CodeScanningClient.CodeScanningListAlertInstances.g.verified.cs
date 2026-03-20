@@ -34,6 +34,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List instances of a code scanning alert<br/>
         /// Lists all instances of the specified code scanning alert.<br/>

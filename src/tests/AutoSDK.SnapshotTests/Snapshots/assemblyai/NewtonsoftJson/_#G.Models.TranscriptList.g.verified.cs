@@ -19,7 +19,7 @@ namespace G
         public global::G.PageDetails PageDetails { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Transcripts
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transcripts", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.TranscriptListItem> Transcripts { get; set; } = default!;
@@ -37,7 +37,9 @@ namespace G
         /// Details of the transcript page. Transcripts are sorted from newest to oldest. The previous URL always points to a page with older transcripts.<br/>
         /// Example: {"limit":10,"result_count":10,"current_url":"https://api.assemblyai.com/v2/transcript?limit=10","prev_url":"https://api.assemblyai.com/v2/transcript?limit=10\u0026before_id=62npeahu2b-a8ea-4112-854c-69542c20d90c","next_url":"https://api.assemblyai.com/v2/transcript?limit=10\u0026after_id=62nfw3mlar-01ad-4631-92f6-629929496eed"}
         /// </param>
-        /// <param name="transcripts"></param>
+        /// <param name="transcripts">
+        /// Transcripts
+        /// </param>
         public TranscriptList(
             global::G.PageDetails pageDetails,
             global::System.Collections.Generic.IList<global::G.TranscriptListItem> transcripts)

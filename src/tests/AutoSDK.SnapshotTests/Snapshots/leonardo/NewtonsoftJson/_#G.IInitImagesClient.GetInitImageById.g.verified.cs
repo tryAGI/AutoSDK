@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IInitImagesClient
     {
+
         /// <summary>
         /// Get single init image<br/>
         /// This endpoint will return a single init image

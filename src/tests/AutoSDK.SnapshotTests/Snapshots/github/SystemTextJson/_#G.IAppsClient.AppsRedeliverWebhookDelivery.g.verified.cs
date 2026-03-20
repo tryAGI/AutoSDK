@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAppsClient
     {
+
         /// <summary>
         /// Redeliver a delivery for an app webhook<br/>
         /// Redeliver a delivery for the webhook configured for a GitHub App.<br/>

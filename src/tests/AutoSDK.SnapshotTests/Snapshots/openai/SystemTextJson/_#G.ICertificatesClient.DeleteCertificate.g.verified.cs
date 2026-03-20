@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICertificatesClient
     {
+
         /// <summary>
         /// Delete a certificate from the organization.<br/>
         /// The certificate must be inactive for the organization and all projects.

@@ -22,6 +22,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Returns privacy information about the selected IP.<br/>
         /// Returns privacy information about the selected IP.

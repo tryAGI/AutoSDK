@@ -34,6 +34,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List tool servers<br/>
         /// Retrieve a list of available tool servers that expose various tools.

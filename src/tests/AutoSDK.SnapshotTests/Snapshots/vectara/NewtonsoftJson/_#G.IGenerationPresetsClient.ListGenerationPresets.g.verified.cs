@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IGenerationPresetsClient
     {
+
         /// <summary>
         /// List generation presets<br/>
         /// Organizations often struggle to fine-tune query responses and maintain consistency across different use cases. Vectara creates and maintains predefined generation presets for our users which provides a flexible and powerful way to utilize generation parameters. Each preset includes a complete Velocity template for the prompt along with other generation parameters. Presets are typically associated with a single LLM.<br/>

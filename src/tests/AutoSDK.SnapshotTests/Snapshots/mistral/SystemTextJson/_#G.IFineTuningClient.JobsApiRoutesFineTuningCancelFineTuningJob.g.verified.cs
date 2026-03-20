@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IFineTuningClient
     {
+
         /// <summary>
         /// Cancel Fine Tuning Job<br/>
         /// Request the cancellation of a fine tuning job.

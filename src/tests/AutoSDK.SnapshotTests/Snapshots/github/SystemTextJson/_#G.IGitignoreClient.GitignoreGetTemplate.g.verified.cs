@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IGitignoreClient
     {
+
         /// <summary>
         /// Get a gitignore template<br/>
         /// Get the content of a gitignore template.<br/>

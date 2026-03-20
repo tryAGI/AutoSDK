@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IWorkspacesClient
     {
+
         /// <summary>
         /// Delete Pending Workspace Invite
         /// </summary>

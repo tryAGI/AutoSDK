@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUsersClient
     {
+
         /// <summary>
         /// Gets information about one or more users.<br/>
         /// Gets information about one or more users.  <br/>

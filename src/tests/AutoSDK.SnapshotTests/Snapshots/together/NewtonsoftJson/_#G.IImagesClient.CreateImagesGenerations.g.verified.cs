@@ -5,10 +5,12 @@ namespace G
 {
     public partial interface IImagesClient
     {
+
         /// <summary>
         /// Create image<br/>
         /// Use an image model to generate an image for a given prompt.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

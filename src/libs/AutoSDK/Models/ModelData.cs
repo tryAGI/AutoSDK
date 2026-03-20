@@ -16,6 +16,7 @@ public record struct ModelData(
     string Summary,
     string Description,
     bool IsDeprecated,
+    string DeprecationMessage,
     string BaseClass,
     bool IsBaseClass,
     bool IsDerivedClass,
@@ -55,6 +56,7 @@ public record struct ModelData(
             Summary: context.Schema.GetSummary(),
             Description: context.Schema.Description ?? string.Empty,
             IsDeprecated: context.Schema.IsDeprecated(),
+            DeprecationMessage: context.Schema.GetDeprecationMessage(),
             BaseClass: context.IsDerivedClass
                 ? context.BaseClassContext.Id
                 : string.Empty,

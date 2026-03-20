@@ -30,6 +30,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List rerankers<br/>
         /// The List Rerankers API retrieves a list of available rerankers used to improve the ranking and ordering of search results.<br/>

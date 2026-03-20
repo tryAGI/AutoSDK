@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// Get a repository variable<br/>
         /// Gets a specific variable in a repository.<br/>

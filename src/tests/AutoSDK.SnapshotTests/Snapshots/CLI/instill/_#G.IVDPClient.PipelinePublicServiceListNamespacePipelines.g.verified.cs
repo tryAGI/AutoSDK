@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IVdpClient
     {
+
         /// <summary>
         /// List namespace pipelines<br/>
         /// Returns a paginated list of pipelines of a namespace

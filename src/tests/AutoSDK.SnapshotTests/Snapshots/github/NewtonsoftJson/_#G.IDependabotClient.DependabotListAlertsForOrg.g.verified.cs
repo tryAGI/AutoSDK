@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IDependabotClient
     {
+
         /// <summary>
         /// List Dependabot alerts for an organization<br/>
         /// Lists Dependabot alerts for an organization.<br/>

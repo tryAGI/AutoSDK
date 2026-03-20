@@ -40,6 +40,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List secret scanning alerts for an enterprise<br/>
         /// Lists secret scanning alerts for eligible repositories in an enterprise, from newest to oldest.<br/>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IMigrationsClient
     {
+
         /// <summary>
         /// List user migrations<br/>
         /// Lists all migrations a user has started.

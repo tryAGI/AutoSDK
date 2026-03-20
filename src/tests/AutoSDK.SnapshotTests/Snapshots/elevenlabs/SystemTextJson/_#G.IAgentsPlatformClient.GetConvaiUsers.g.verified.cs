@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
+
         /// <summary>
         /// Get Conversation Users<br/>
         /// Get distinct users from conversations with pagination.

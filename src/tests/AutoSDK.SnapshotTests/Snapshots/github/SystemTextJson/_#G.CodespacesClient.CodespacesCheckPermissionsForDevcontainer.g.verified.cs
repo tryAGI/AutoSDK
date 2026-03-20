@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Check if permissions defined by a devcontainer have been accepted by the authenticated user<br/>
         /// Checks whether the permissions defined by a given devcontainer configuration have been accepted by the authenticated user.<br/>

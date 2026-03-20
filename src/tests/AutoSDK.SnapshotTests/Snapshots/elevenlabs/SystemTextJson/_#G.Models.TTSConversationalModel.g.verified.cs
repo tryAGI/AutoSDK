@@ -10,11 +10,11 @@ namespace G
     public enum TTSConversationalModel
     {
         /// <summary>
-        /// 
+        /// Deprecated: Use eleven_flash_v2 instead.
         /// </summary>
         ElevenTurboV2,
         /// <summary>
-        /// 
+        /// Deprecated: Use eleven_flash_v2_5 instead.
         /// </summary>
         ElevenTurboV25,
         /// <summary>

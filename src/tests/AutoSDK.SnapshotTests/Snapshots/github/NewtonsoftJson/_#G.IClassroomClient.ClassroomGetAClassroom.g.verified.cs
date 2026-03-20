@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IClassroomClient
     {
+
         /// <summary>
         /// Get a classroom<br/>
         /// Gets a GitHub Classroom classroom for the current user. Classroom will only be returned if the current user is an administrator of the GitHub Classroom.

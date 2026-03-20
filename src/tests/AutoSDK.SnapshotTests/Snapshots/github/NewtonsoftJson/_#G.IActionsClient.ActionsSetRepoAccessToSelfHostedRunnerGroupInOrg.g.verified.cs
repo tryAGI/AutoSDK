@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// Set repository access for a self-hosted runner group in an organization<br/>
         /// Replaces the list of repositories that have access to a self-hosted runner group configured in an organization.<br/>
@@ -12,6 +13,7 @@ namespace G
         /// </summary>
         /// <param name="org"></param>
         /// <param name="runnerGroupId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

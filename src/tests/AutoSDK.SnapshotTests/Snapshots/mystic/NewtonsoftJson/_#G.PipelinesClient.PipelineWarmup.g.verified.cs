@@ -23,12 +23,14 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Pipeline Warmup
         /// </summary>
         /// <param name="pipelineIdOrPointer"></param>
         /// <param name="pipelineId"></param>
         /// <param name="pointer"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

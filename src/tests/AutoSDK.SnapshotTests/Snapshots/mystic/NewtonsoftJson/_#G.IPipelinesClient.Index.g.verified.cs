@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPipelinesClient
     {
+
         /// <summary>
         /// Index<br/>
         /// Retrieve a paginated set of pipelines.

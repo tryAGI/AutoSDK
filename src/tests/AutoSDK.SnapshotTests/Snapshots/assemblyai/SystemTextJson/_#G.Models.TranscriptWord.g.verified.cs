@@ -5,33 +5,34 @@
 namespace G
 {
     /// <summary>
+    /// Word<br/>
     /// Example: {"text":"Smoke","start":250,"end":650,"confidence":0.97465,"speaker":""}
     /// </summary>
     public sealed partial class TranscriptWord
     {
         /// <summary>
-        /// 
+        /// Confidence
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("confidence")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Confidence { get; set; }
 
         /// <summary>
-        /// 
+        /// Start
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Start { get; set; }
 
         /// <summary>
-        /// 
+        /// End
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int End { get; set; }
 
         /// <summary>
-        /// 
+        /// Text
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -52,10 +53,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscriptWord" /> class.
         /// </summary>
-        /// <param name="confidence"></param>
-        /// <param name="start"></param>
-        /// <param name="end"></param>
-        /// <param name="text"></param>
+        /// <param name="confidence">
+        /// Confidence
+        /// </param>
+        /// <param name="start">
+        /// Start
+        /// </param>
+        /// <param name="end">
+        /// End
+        /// </param>
+        /// <param name="text">
+        /// Text
+        /// </param>
         /// <param name="speaker">
         /// The speaker of the sentence if [Speaker Diarization](https://www.assemblyai.com/docs/models/speaker-diarization) is enabled, else null
         /// </param>

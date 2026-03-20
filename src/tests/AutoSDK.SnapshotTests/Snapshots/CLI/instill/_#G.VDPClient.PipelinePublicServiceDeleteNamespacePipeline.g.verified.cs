@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Delete a pipeline<br/>
         /// Deletes a pipeline, accesing it by its resource name, which is defined by<br/>

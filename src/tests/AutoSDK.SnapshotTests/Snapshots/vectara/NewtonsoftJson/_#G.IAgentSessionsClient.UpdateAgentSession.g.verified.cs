@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAgentSessionsClient
     {
+
         /// <summary>
         /// Update agent session<br/>
         /// Update the configuration of an existing agent session. This endpoint enables you to modify fields such as the name, description, or metadata.<br/>
@@ -20,6 +21,7 @@ namespace G
         /// A unique key that identifies an agent session.<br/>
         /// Example: customer_support_chat
         /// </param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

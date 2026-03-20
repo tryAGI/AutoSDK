@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IDubbingClient
     {
+
         /// <summary>
         /// Get The Dubbing Resource For An Id.<br/>
         /// Given a dubbing ID generated from the '/v1/dubbing' endpoint with studio enabled, returns the dubbing resource.

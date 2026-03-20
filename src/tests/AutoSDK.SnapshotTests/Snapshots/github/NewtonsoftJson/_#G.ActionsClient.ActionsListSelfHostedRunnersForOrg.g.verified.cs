@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List self-hosted runners for an organization<br/>
         /// Lists all self-hosted runners configured in an organization.<br/>

@@ -23,6 +23,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// BETA Revokes a previously sent invite for a Guest Star session.<br/>
         /// BETA Revokes a previously sent invite for a Guest Star session.<br/>

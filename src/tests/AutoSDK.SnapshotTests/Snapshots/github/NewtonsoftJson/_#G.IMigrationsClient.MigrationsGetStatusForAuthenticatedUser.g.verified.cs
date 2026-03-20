@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IMigrationsClient
     {
+
         /// <summary>
         /// Get a user migration status<br/>
         /// Fetches a single user migration. The response includes the `state` of the migration, which can be one of the following values:<br/>

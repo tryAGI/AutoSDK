@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// Get the review history for a workflow run<br/>
         /// Anyone with read access to the repository can use this endpoint.<br/>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// List artifacts for a repository<br/>
         /// Lists all artifacts for a repository.<br/>

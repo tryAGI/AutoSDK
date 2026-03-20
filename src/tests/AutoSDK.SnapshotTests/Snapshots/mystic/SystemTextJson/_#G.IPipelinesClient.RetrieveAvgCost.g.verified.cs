@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPipelinesClient
     {
+
         /// <summary>
         /// Retrieve Avg Cost<br/>
         /// Retrieve a pipeline's average cost per run over the past 1000 runs.

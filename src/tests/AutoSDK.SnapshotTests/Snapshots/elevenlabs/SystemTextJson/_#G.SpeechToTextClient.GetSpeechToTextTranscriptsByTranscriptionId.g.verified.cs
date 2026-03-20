@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get Transcript By Id<br/>
         /// Retrieve a previously generated transcript by its ID.

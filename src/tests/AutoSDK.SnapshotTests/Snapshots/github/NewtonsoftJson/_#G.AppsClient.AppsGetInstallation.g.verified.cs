@@ -22,6 +22,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get an installation for the authenticated app<br/>
         /// Enables an authenticated GitHub App to find an installation's information using the installation id.<br/>

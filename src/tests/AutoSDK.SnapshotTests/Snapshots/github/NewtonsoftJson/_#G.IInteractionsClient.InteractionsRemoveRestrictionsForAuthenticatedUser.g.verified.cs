@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IInteractionsClient
     {
+
         /// <summary>
         /// Remove interaction restrictions from your public repositories<br/>
         /// Removes any interaction restrictions from your public repositories.

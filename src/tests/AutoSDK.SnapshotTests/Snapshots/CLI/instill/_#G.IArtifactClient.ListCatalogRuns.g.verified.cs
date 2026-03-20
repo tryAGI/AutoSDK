@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IArtifactClient
     {
+
         /// <summary>
         /// List Catalog Runs<br/>
         /// Returns a paginated list of catalog runs.

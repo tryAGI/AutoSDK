@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IApi
     {
+
         /// <summary>
         /// Delete a model version<br/>
         /// Delete a model version and all associated predictions, including all output files.<br/>

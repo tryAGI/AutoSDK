@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IChatClient
     {
+
         /// <summary>
         /// **Starting a new project?** We recommend trying [Responses](/docs/api-reference/responses) <br/>
         /// to take advantage of the latest OpenAI platform features. Compare<br/>
@@ -19,6 +20,7 @@ namespace G
         /// unsupported parameters in reasoning models, <br/>
         /// [refer to the reasoning guide](/docs/guides/reasoning).
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

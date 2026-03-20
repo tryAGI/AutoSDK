@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IImageClient
     {
+
         /// <summary>
         /// Get generations by user ID<br/>
         /// This endpoint returns all generations by a specific user

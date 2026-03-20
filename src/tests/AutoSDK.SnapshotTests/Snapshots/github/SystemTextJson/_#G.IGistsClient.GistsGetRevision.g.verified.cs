@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IGistsClient
     {
+
         /// <summary>
         /// Get a gist revision<br/>
         /// Gets a specified gist revision.<br/>

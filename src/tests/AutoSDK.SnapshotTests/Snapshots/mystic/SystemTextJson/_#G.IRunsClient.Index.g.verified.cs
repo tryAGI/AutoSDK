@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IRunsClient
     {
+
         /// <summary>
         /// Index<br/>
         /// Retrieve a paginated set of runs that satisfy query parameters.<br/>

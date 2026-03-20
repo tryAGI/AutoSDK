@@ -21,6 +21,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Remove selected repository from an organization secret<br/>
         /// Removes a repository from an organization secret when the `visibility`<br/>

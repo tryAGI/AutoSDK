@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
+
         /// <summary>
         /// Get Mcp Tool Configuration Override<br/>
         /// Retrieve configuration overrides for a specific MCP tool.

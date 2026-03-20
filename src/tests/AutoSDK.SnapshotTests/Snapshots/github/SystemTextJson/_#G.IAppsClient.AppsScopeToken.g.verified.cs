@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAppsClient
     {
+
         /// <summary>
         /// Create a scoped access token<br/>
         /// Use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specify<br/>
@@ -13,6 +14,7 @@ namespace G
         /// Invalid tokens will return `404 NOT FOUND`.
         /// </summary>
         /// <param name="clientId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// NEW Retrieves emotes available to the user across all channels.<br/>
         /// NEW Retrieves emotes available to the user across all channels.<br/>

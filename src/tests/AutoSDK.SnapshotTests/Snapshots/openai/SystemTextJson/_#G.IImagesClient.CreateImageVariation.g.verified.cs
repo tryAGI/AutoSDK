@@ -5,9 +5,11 @@ namespace G
 {
     public partial interface IImagesClient
     {
+
         /// <summary>
         /// Creates a variation of a given image. This endpoint only supports `dall-e-2`.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

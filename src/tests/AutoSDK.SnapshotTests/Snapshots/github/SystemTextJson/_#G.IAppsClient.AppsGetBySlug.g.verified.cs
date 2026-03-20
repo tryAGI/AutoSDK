@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAppsClient
     {
+
         /// <summary>
         /// Get an app<br/>
         /// &gt; [!NOTE]<br/>

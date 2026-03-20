@@ -5,9 +5,11 @@ namespace G
 {
     public partial interface IAssistantsClient
     {
+
         /// <summary>
         /// Create an assistant with a model and instructions.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IManageClient
     {
+
         /// <summary>
         /// Reactivates a subscription by attempting to re-enable Metronome billing.
         /// </summary>

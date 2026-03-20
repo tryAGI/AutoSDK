@@ -21,6 +21,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Delete an autolink reference from a repository<br/>
         /// This deletes a single autolink reference by ID that was configured for the given repository.<br/>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Update a deployment branch policy<br/>
         /// Updates a deployment branch or tag policy for an environment.<br/>
@@ -14,6 +15,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="environmentName"></param>
         /// <param name="branchPolicyId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

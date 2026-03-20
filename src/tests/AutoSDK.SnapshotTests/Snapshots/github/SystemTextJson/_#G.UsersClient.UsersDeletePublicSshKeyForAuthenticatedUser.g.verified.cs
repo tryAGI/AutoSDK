@@ -17,6 +17,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Delete a public SSH key for the authenticated user<br/>
         /// Removes a public SSH key from the authenticated user's GitHub account.<br/>

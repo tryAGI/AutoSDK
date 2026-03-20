@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List GPG keys for a user<br/>
         /// Lists the GPG keys for a user. This information is accessible by anyone.

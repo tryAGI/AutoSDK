@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// List repository organization variables<br/>
         /// Lists all organization variables shared with a repository.<br/>

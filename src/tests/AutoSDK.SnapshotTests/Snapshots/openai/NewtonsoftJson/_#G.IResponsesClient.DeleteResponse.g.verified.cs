@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IResponsesClient
     {
+
         /// <summary>
         /// Deletes a model response with the given ID.
         /// </summary>

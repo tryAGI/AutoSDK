@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAccountsClient
     {
+
         /// <summary>
         /// Redirects to the billing portal for the current account.
         /// </summary>

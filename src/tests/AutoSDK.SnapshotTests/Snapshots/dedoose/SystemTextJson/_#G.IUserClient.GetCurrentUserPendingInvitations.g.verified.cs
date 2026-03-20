@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUserClient
     {
+
         /// <summary>
         /// GetCurrentUserPendingInvitations<br/>
         /// GetCurrentUserPendingInvitations

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IProjectsClient
     {
+
         /// <summary>
         /// Archives a project in the organization. Archived projects cannot be used or updated.
         /// </summary>

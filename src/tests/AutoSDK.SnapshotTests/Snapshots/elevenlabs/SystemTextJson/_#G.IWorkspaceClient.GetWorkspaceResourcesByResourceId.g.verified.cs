@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IWorkspaceClient
     {
+
         /// <summary>
         /// Get Resource<br/>
         /// Gets the metadata of a resource by ID.

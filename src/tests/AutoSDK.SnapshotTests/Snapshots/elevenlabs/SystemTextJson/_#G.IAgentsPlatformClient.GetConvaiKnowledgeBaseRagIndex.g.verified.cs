@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
+
         /// <summary>
         /// Get Rag Index Overview.<br/>
         /// Provides total size and other information of RAG indexes used by knowledgebase documents

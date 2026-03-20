@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List secrets for the authenticated user<br/>
         /// Lists all development environment secrets available for a user's codespaces without revealing their<br/>

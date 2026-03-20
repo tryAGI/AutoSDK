@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IFineTuningClient
     {
+
         /// <summary>
         /// List job<br/>
         /// List the metadata for a single fine-tuning job.

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IChannelPointsClient
     {
+
         /// <summary>
         /// Updates a redemption’s status.<br/>
         /// Updates a redemption’s status. You may update a redemption only if its status is UNFULFILLED. The app used to create the reward is the only app that may update the redemption.<br/>
@@ -14,6 +15,7 @@ namespace G
         /// <param name="id"></param>
         /// <param name="broadcasterId"></param>
         /// <param name="rewardId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

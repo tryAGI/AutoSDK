@@ -30,6 +30,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Gets all users that the broadcaster banned or put in a timeout.<br/>
         /// Gets all users that the broadcaster banned or put in a timeout.<br/>

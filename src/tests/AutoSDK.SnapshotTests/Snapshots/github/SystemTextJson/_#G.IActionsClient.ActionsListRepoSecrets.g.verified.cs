@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// List repository secrets<br/>
         /// Lists all secrets available in a repository without revealing their encrypted<br/>

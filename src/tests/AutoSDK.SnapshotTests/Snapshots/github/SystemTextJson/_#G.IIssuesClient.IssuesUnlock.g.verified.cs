@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IIssuesClient
     {
+
         /// <summary>
         /// Unlock an issue<br/>
         /// Users with push access can unlock an issue's conversation.

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IInstructionsClient
     {
+
         /// <summary>
         /// Test instruction<br/>
         /// Test an instruction template using supplied context and available tools. This endpoint evaluates Velocity expressions such as `$tools`, `${session.metadata.field}`, or `${agent.metadata.field}`, and returns the fully rendered template output. Use this operation to validate formatting, logic, or metadata-dependent behavior before deploying instructions to agents.
@@ -18,6 +19,7 @@ namespace G
         /// <param name="version">
         /// Example: 1
         /// </param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

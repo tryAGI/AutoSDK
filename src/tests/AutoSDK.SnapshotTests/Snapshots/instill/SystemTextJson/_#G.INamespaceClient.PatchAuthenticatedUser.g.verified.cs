@@ -5,12 +5,14 @@ namespace G
 {
     public partial interface INamespaceClient
     {
+
         /// <summary>
         /// Update the authenticated user<br/>
         /// Updates the information of the authenticated user.<br/>
         /// In REST requests, only the supplied user fields will be taken into account<br/>
         /// when updating the resource.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

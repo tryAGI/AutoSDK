@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPronunciationDictionaryClient
     {
+
         /// <summary>
         /// Set Rules On The Pronunciation Dictionary<br/>
         /// Replaces all existing rules on the pronunciation dictionary with the provided ones.
@@ -15,6 +16,7 @@ namespace G
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

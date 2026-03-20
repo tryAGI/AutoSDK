@@ -5,10 +5,12 @@ namespace G
 {
     public partial interface IFineTuningClient
     {
+
         /// <summary>
         /// Create job<br/>
         /// Use a model to create a fine-tuning job.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IEvalsClient
     {
+
         /// <summary>
         /// List evaluations for a project.
         /// </summary>

@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get Playground Conversation<br/>
         /// Returns the latest conversation of auth user(e.g. login user and api key user).

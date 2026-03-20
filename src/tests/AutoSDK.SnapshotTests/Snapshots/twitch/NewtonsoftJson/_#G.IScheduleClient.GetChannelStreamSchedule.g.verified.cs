@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IScheduleClient
     {
+
         /// <summary>
         /// Gets the broadcaster’s streaming schedule.<br/>
         /// Gets the broadcaster’s streaming schedule. You can get the entire schedule or specific segments of the schedule. [Learn More](https://help.twitch.tv/s/article/channel-page-setup#Schedule)<br/>

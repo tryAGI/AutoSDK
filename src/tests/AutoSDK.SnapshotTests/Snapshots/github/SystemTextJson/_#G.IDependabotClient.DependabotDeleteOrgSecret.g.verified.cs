@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IDependabotClient
     {
+
         /// <summary>
         /// Delete an organization secret<br/>
         /// Deletes a secret in an organization using the secret name.<br/>

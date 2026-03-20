@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List selected repositories for an organization variable<br/>
         /// Lists all repositories that can access an organization variable<br/>

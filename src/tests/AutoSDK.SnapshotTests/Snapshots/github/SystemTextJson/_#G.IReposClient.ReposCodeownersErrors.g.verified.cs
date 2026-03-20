@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// List CODEOWNERS errors<br/>
         /// List any syntax errors that are detected in the CODEOWNERS<br/>

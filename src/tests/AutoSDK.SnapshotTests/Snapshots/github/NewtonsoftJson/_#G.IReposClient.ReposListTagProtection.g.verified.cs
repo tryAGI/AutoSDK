@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Deprecated - List tag protection states for a repository<br/>
         /// &gt; [!WARNING]<br/>
@@ -16,6 +17,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
+
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TagProtection>> ReposListTagProtectionAsync(
             string owner,

@@ -6,11 +6,13 @@
 namespace G
 {
     /// <summary>
+    /// LeMUR task response<br/>
     /// Example: {"request_id":"5e1b27c2-691f-4414-8bc5-f14678442f9e","response":"Based on the transcript, the following locations were mentioned as being affected by wildfire smoke from Canada:\n\n- Maine\n- Maryland\n- Minnesota\n- Mid Atlantic region\n- Northeast region\n- New York City\n- Baltimore\n","usage":{"input_tokens":27,"output_tokens":3}}
     /// </summary>
     public readonly partial struct LemurTaskResponse : global::System.IEquatable<LemurTaskResponse>
     {
         /// <summary>
+        /// LeMUR string response<br/>
         /// Example: {"request_id":"5e1b27c2-691f-4414-8bc5-f14678442f9e","response":"Based on the transcript, the following locations were mentioned as being affected by wildfire smoke from Canada:\n\n- Maine\n- Maryland\n- Minnesota\n- Mid Atlantic region\n- Northeast region\n- New York City\n- Baltimore\n","usage":{"input_tokens":27,"output_tokens":3}}
         /// </summary>
 #if NET6_0_OR_GREATER

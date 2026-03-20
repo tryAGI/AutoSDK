@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
+
         /// <summary>
         /// Delete A Batch Call.<br/>
         /// Permanently delete a batch call and all recipient records. Conversations remain in history.

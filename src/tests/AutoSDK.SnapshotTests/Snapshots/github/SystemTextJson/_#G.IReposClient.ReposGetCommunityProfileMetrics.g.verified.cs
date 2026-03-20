@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Get community profile metrics<br/>
         /// Returns all community profile metrics for a repository. The repository cannot be a fork.<br/>

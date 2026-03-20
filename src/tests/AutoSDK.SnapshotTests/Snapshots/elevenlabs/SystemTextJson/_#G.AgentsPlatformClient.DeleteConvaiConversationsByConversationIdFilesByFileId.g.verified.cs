@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Delete File Upload<br/>
         /// Remove a file upload from a conversation. Only possible if the file hasn't already been used in the conversation.

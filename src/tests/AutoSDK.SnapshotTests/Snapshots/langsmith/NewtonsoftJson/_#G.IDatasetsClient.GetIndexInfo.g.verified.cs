@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IDatasetsClient
     {
+
         /// <summary>
         /// Get Index Info<br/>
         /// Get index info.

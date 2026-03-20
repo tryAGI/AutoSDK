@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICodespacesClient
     {
+
         /// <summary>
         /// List available machine types for a repository<br/>
         /// List the machine types available for a given repository based on its configuration.<br/>

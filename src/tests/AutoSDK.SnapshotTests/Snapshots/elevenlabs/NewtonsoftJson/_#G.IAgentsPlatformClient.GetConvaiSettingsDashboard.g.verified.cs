@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
+
         /// <summary>
         /// Get Convai Dashboard Settings<br/>
         /// Retrieve Convai dashboard settings for the workspace

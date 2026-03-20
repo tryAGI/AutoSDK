@@ -5,11 +5,13 @@ namespace G
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// Update Sso Settings<br/>
         /// Update SSO provider settings defaults for the current organization.
         /// </summary>
         /// <param name="id"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

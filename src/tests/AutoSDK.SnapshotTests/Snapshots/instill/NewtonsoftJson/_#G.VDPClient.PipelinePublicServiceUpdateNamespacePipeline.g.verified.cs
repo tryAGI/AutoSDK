@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Update a pipeline<br/>
         /// Udpates a pipeline, accessing it by its resource name, which is defined by<br/>
@@ -36,6 +37,7 @@ namespace G
         /// </summary>
         /// <param name="namespaceId"></param>
         /// <param name="pipelineId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

@@ -46,6 +46,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List Dependabot alerts for an organization<br/>
         /// Lists Dependabot alerts for an organization.<br/>

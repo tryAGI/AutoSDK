@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IModerationClient
     {
+
         /// <summary>
         /// Adds the specified user as a VIP in the broadcaster’s channel.<br/>
         /// Adds the specified user as a VIP in the broadcaster’s channel.<br/>

@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List team repositories<br/>
         /// Lists a team's repositories visible to the authenticated user.<br/>

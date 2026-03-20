@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get an issue comment<br/>
         /// You can use the REST API to get comments on issues and pull requests. Every pull request is an issue, but not every issue is a pull request.<br/>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICCLsClient
     {
+
         /// <summary>
         /// Gets information about Twitch content classification labels.<br/>
         /// Gets information about Twitch content classification labels.<br/>

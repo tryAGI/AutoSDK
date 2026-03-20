@@ -15,6 +15,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Validate<br/>
         /// Validates a header token or cookie JWT.

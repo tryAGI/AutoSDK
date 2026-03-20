@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Delete a pending review for a pull request<br/>
         /// Deletes a pull request review that has not been submitted. Submitted reviews cannot be deleted.<br/>

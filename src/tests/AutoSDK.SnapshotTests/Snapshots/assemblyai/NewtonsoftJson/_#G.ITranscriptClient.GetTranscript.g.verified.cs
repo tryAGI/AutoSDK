@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ITranscriptClient
     {
+
         /// <summary>
         /// Get transcript<br/>
         /// Get the transcript resource. The transcript is ready when the "status" is "completed".

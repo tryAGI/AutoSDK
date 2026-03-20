@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Deprecated - Delete a tag protection state for a repository<br/>
         /// &gt; [!WARNING]<br/>
@@ -17,6 +18,7 @@ namespace G
         /// <param name="tagProtectionId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
+
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task ReposDeleteTagProtectionAsync(
             string owner,

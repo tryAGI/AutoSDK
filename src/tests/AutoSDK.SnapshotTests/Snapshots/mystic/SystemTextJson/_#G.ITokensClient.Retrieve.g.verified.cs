@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ITokensClient
     {
+
         /// <summary>
         /// Retrieve<br/>
         /// Retrieve an API Bearer token for an authenticated user.

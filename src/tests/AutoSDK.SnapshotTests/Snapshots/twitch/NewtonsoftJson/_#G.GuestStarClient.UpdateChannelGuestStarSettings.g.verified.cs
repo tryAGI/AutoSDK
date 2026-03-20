@@ -19,6 +19,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// BETA Mutates the channel settings for configuration of the Guest Star feature for a particular host.<br/>
         /// BETA Mutates the channel settings for configuration of the Guest Star feature for a particular host.<br/>
@@ -27,6 +28,7 @@ namespace G
         /// * Requires OAuth Scope: `channel:manage:guest_star`
         /// </summary>
         /// <param name="broadcasterId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IVectorStoresClient
     {
+
         /// <summary>
         /// Update attributes on a vector store file.
         /// </summary>
@@ -14,6 +15,7 @@ namespace G
         /// <param name="fileId">
         /// Example: file-abc123
         /// </param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

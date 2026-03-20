@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ITokensClient
     {
+
         /// <summary>
         /// Validate<br/>
         /// Validates a header token or cookie JWT.

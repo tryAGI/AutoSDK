@@ -5,12 +5,14 @@ namespace G
 {
     public partial interface IFilesClient
     {
+
         /// <summary>
         /// Upload File<br/>
         /// Upload a file that can be used across various endpoints.<br/>
         /// The size of individual files can be a maximum of 512 MB. The Fine-tuning API only supports .jsonl files.<br/>
         /// Please contact us if you need to increase these storage limits.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

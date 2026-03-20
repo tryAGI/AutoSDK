@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUsersClient
     {
+
         /// <summary>
         /// Get User Public Profile<br/>
         /// Retrieve a user's public profile

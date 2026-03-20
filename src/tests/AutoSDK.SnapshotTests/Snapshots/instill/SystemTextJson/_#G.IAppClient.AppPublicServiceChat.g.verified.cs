@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAppClient
     {
+
         /// <summary>
         /// Chat<br/>
         /// Chat sends a message asynchronously and streams back the response.<br/>
@@ -13,6 +14,7 @@ namespace G
         /// </summary>
         /// <param name="namespaceId"></param>
         /// <param name="appId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

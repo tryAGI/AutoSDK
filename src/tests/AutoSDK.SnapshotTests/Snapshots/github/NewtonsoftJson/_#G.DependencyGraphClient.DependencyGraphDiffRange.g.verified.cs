@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get a diff of the dependencies between commits<br/>
         /// Gets the diff of the dependency changes between two commits of a repository, based on the changes to the dependency manifests made in those commits.

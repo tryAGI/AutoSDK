@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IBillingClient
     {
+
         /// <summary>
         /// Upcoming Invoice
         /// </summary>

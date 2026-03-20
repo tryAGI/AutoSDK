@@ -10,11 +10,11 @@ namespace G
     public enum SpeechModel2
     {
         /// <summary>
-        /// 
+        /// The best model optimized for accuracy.
         /// </summary>
         Best,
         /// <summary>
-        /// 
+        /// A lightweight, lower cost model for a wide range of languages.
         /// </summary>
         Nano,
     }

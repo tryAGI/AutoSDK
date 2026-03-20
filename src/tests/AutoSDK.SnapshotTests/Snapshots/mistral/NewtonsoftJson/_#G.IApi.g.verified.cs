@@ -42,47 +42,47 @@ namespace G
 
 
         /// <summary>
-        /// Chat Completion API.
+        /// Chat
         /// </summary>
         public ChatClient Chat { get; }
 
         /// <summary>
-        /// Fill-in-the-middle API.
+        /// FIM
         /// </summary>
         public FimClient Fim { get; }
 
         /// <summary>
-        /// Agents API.
+        /// Agents
         /// </summary>
         public AgentsClient Agents { get; }
 
         /// <summary>
-        /// Embeddings API.
+        /// Embeddings
         /// </summary>
         public EmbeddingsClient Embeddings { get; }
 
         /// <summary>
-        /// Classifiers API.
+        /// Classifiers
         /// </summary>
         public ClassifiersClient Classifiers { get; }
 
         /// <summary>
-        /// Files API
+        /// Files
         /// </summary>
         public FilesClient Files { get; }
 
         /// <summary>
-        /// Fine-tuning API
+        /// Fine Tuning
         /// </summary>
         public FineTuningClient FineTuning { get; }
 
         /// <summary>
-        /// Model Management API
+        /// Models
         /// </summary>
         public ModelsClient Models { get; }
 
         /// <summary>
-        /// Batch API
+        /// Batch
         /// </summary>
         public BatchClient Batch { get; }
 

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IBackupsClient
     {
+
         /// <summary>
         /// List backups in progress<br/>
         /// List all backups in progress

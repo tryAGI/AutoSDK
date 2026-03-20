@@ -20,6 +20,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Gets an extension’s list of shared secrets.<br/>
         /// Gets an extension’s list of shared secrets.<br/>

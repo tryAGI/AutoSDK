@@ -15,6 +15,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Remove interaction restrictions from your public repositories<br/>
         /// Removes any interaction restrictions from your public repositories.

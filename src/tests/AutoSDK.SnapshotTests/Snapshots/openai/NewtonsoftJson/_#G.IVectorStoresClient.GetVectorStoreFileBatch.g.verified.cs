@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IVectorStoresClient
     {
+
         /// <summary>
         /// Retrieves a vector store file batch.
         /// </summary>

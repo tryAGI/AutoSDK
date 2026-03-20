@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// Review a request to access organization resources with a fine-grained personal access token<br/>
         /// Approves or denies a pending request to access organization resources via a fine-grained personal access token.<br/>
@@ -12,6 +13,7 @@ namespace G
         /// </summary>
         /// <param name="org"></param>
         /// <param name="patRequestId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// Cancel a workflow run<br/>
         /// Cancels a workflow run using its `id`.<br/>

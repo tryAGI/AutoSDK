@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// Get a custom property for an organization<br/>
         /// Gets a custom property that is defined for an organization.<br/>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IChatClient
     {
+
         /// <summary>
         /// Updates the color used for the user’s name in chat.<br/>
         /// Updates the color used for the user’s name in chat.<br/>

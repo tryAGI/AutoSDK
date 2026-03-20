@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IApi
     {
+
         /// <summary>
         /// Get a collection of models<br/>
         /// Example cURL request:<br/>

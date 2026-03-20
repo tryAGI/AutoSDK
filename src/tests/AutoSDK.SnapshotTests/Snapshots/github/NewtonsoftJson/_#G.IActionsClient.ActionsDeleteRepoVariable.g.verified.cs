@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// Delete a repository variable<br/>
         /// Deletes a repository variable using the variable name.<br/>

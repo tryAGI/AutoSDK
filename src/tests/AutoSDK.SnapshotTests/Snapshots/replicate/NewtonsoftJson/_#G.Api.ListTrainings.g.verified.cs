@@ -15,6 +15,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// List trainings<br/>
         /// Get a paginated list of trainings that you've created. This will include trainings created from the API and the website. It will return 100 records per page.<br/>

@@ -5,12 +5,14 @@ namespace G
 {
     public partial interface IVdpClient
     {
+
         /// <summary>
         /// Update a connection<br/>
         /// Updates a connection with the supplied connection fields.
         /// </summary>
         /// <param name="namespaceId"></param>
         /// <param name="connectionId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

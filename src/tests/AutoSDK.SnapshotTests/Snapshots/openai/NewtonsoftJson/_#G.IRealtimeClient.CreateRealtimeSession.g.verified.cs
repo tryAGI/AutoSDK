@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IRealtimeClient
     {
+
         /// <summary>
         /// Create an ephemeral API token for use in client-side applications with the<br/>
         /// Realtime API. Can be configured with the same session parameters as the<br/>
@@ -13,6 +14,7 @@ namespace G
         /// a usable ephemeral API token that can be used to authenticate browser clients<br/>
         /// for the Realtime API.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

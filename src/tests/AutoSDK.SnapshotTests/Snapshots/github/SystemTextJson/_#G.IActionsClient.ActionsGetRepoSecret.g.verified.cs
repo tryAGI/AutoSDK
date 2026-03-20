@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// Get a repository secret<br/>
         /// Gets a single repository secret without revealing its encrypted value.<br/>

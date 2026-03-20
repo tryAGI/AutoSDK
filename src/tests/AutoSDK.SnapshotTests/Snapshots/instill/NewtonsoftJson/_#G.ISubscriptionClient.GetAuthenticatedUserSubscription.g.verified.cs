@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISubscriptionClient
     {
+
         /// <summary>
         /// Get the subscription of the authenticated user<br/>
         /// Returns the subscription details of the authenticated user.

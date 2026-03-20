@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
+
         /// <summary>
         /// Get Knowledge Base Summaries By Ids<br/>
         /// Gets multiple knowledge base document summaries by their IDs.

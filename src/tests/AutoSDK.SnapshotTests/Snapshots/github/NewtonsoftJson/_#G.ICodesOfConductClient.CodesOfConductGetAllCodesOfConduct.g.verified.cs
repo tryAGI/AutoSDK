@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICodesOfConductClient
     {
+
         /// <summary>
         /// Get all codes of conduct<br/>
         /// Returns array of all GitHub's codes of conduct.

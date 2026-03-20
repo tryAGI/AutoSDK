@@ -22,12 +22,24 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Create a new cloned voice from an audio sample. The created voice will be private to your account.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
+
+        /// <remarks>
+        /// curl --request POST \<br/>
+        /// --url https://api.ultravox.ai/api/voices \<br/>
+        /// --header 'Content-Type: multipart/form-data' \<br/>
+        /// --header 'X-API-Key: &lt;your-api-key&gt;' \<br/>
+        /// --form 'file=@/path/to/voice.mp3' \<br/>
+        /// --form 'name=My Custom Voice' \<br/>
+        /// --form 'description=Voice recorded on Jan 1, 2024'
+        /// </remarks>
         public async global::System.Threading.Tasks.Task<global::G.Voice> VoicesCreateAsync(
 
             global::G.VoicesCreateRequest request,

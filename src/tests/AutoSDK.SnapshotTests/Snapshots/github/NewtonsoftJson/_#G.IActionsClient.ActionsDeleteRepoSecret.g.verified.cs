@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// Delete a repository secret<br/>
         /// Deletes a secret in a repository using the secret name.<br/>

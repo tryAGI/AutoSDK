@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IVoicesClient
     {
+
         /// <summary>
         /// Get Voices V2<br/>
         /// Gets a list of all available voices for a user with search, filtering and pagination.

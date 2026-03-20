@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPackagesClient
     {
+
         /// <summary>
         /// Get list of conflicting packages during Docker migration for user<br/>
         /// Lists all packages that are in a specific user's namespace, that the requesting user has access to, and that encountered a conflict during Docker migration.<br/>

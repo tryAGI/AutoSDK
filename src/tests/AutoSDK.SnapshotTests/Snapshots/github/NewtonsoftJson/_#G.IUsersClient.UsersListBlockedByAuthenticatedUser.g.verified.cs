@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUsersClient
     {
+
         /// <summary>
         /// List users blocked by the authenticated user<br/>
         /// List the users you've blocked on your personal account.

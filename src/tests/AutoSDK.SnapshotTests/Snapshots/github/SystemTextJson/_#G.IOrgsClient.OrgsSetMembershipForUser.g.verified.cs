@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// Set organization membership for a user<br/>
         /// Only authenticated organization owners can add a member to the organization or update the member's role.<br/>
@@ -16,6 +17,7 @@ namespace G
         /// </summary>
         /// <param name="org"></param>
         /// <param name="username"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

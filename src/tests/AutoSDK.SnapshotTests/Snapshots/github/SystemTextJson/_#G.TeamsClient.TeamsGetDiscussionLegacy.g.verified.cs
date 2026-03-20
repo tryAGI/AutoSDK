@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get a discussion (Legacy)<br/>
         /// &gt; [!WARNING]<br/>
@@ -35,6 +36,7 @@ namespace G
         /// <param name="discussionNumber"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
+
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.TeamDiscussion> TeamsGetDiscussionLegacyAsync(
             int teamId,

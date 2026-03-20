@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IApi
     {
+
         /// <summary>
         /// Create a prediction using an official model<br/>
         /// Create a prediction for the deployment and inputs you provide.<br/>
@@ -24,6 +25,7 @@ namespace G
         /// <param name="prefer">
         /// Example: wait=5
         /// </param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

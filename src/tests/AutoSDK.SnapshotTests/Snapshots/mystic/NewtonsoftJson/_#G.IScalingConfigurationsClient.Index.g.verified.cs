@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IScalingConfigurationsClient
     {
+
         /// <summary>
         /// Index<br/>
         /// Retrieve a paginated set of scaling configurations

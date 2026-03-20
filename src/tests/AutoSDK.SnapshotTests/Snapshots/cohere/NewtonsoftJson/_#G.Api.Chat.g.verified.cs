@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Chat V1 API<br/>
         /// Generates a text response to a user message.<br/>
@@ -33,6 +34,7 @@ namespace G
         /// </summary>
         /// <param name="xClientName"></param>
         /// <param name="accepts"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

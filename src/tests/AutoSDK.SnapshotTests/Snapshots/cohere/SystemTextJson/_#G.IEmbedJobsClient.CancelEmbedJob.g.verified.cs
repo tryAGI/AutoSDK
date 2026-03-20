@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IEmbedJobsClient
     {
+
         /// <summary>
         /// Cancel an Embed Job<br/>
         /// This API allows users to cancel an active embed job. Once invoked, the embedding process will be terminated, and users will be charged for the embeddings processed up to the cancellation point. It's important to note that partial results will not be available to users after cancellation.

@@ -5,6 +5,7 @@ namespace recraft
 {
     public partial interface IUserClient
     {
+
         /// <summary>
         /// Get current user info
         /// </summary>

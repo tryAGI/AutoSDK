@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IStudioClient
     {
+
         /// <summary>
         /// Get Chapter Snapshot<br/>
         /// Returns the chapter snapshot.

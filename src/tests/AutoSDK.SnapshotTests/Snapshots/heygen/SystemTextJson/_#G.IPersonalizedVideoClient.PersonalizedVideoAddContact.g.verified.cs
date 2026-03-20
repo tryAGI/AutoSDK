@@ -5,10 +5,12 @@ namespace G
 {
     public partial interface IPersonalizedVideoClient
     {
+
         /// <summary>
         /// personalized_video/add_contact<br/>
         /// personalized_video/add_contact
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUsersClient
     {
+
         /// <summary>
         /// Block a user<br/>
         /// Blocks the given user and returns a 204. If the authenticated user cannot block the given user a 422 is returned.

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAppsClient
     {
+
         /// <summary>
         /// Revoke an installation access token<br/>
         /// Revokes the installation token you're using to authenticate as an installation and access this endpoint.<br/>

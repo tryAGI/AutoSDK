@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IModerationClient
     {
+
         /// <summary>
         /// Checks whether AutoMod would flag the specified message for review.<br/>
         /// Checks whether AutoMod would flag the specified message for review.<br/>
@@ -20,6 +21,7 @@ namespace G
         /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **moderation:read** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

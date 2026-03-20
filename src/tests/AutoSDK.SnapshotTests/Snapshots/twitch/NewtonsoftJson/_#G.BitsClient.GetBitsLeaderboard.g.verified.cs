@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Gets the Bits leaderboard for the authenticated broadcaster.<br/>
         /// Gets the Bits leaderboard for the authenticated broadcaster.<br/>

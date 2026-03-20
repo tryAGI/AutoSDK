@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IMetaClient
     {
+
         /// <summary>
         /// Get instance metadata.<br/>
         /// Returns meta information about the server. Can be used to provide information to another Weaviate instance that wants to interact with the current instance.

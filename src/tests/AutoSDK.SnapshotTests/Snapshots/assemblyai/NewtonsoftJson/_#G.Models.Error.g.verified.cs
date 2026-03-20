@@ -5,6 +5,7 @@
 namespace G
 {
     /// <summary>
+    /// Error<br/>
     /// Example: {"error":"format_text must be a Boolean"}
     /// </summary>
     public sealed partial class Error
@@ -16,7 +17,7 @@ namespace G
         public string Error1 { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Status
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
         public string? Status { get; set; }
@@ -33,7 +34,9 @@ namespace G
         /// <param name="error1">
         /// Error message
         /// </param>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// Status
+        /// </param>
         public Error(
             string error1,
             string? status)

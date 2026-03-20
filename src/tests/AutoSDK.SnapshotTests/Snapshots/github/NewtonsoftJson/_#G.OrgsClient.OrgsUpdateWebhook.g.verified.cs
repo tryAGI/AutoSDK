@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Update an organization webhook<br/>
         /// Updates a webhook configured in an organization. When you update a webhook,<br/>
@@ -39,6 +40,7 @@ namespace G
         /// </summary>
         /// <param name="org"></param>
         /// <param name="hookId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

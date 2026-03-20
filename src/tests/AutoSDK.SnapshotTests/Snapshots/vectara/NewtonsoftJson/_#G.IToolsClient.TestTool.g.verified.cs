@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IToolsClient
     {
+
         /// <summary>
         /// Test Lambda tool<br/>
         /// Execute a Lambda tool with test inputs to verify it works correctly.<br/>
@@ -16,6 +17,7 @@ namespace G
         /// <param name="toolId">
         /// Example: tol_python_function_123
         /// </param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

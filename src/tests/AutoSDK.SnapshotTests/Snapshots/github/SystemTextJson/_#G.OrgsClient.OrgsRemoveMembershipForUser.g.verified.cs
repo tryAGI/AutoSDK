@@ -19,6 +19,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Remove organization membership for a user<br/>
         /// In order to remove a user's membership with an organization, the authenticated user must be an organization owner.<br/>

@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get a repository public key<br/>
         /// Gets your public key, which you need to encrypt secrets. You need to<br/>

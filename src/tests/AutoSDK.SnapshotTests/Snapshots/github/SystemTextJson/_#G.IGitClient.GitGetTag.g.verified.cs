@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IGitClient
     {
+
         /// <summary>
         /// Get a tag<br/>
         /// **Signature verification object**<br/>

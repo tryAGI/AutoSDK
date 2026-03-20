@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAppClient
     {
+
         /// <summary>
         /// Restart Playground Conversation<br/>
         /// Creates a new conversation and uses the auth user UID as creator UID and<br/>

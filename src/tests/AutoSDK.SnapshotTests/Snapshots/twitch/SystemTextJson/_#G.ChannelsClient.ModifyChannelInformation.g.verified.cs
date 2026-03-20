@@ -19,6 +19,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Updates a channel’s properties.<br/>
         /// Updates a channel’s properties.<br/>
@@ -28,6 +29,7 @@ namespace G
         /// All fields are optional, but you must specify at least one field.
         /// </summary>
         /// <param name="broadcasterId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

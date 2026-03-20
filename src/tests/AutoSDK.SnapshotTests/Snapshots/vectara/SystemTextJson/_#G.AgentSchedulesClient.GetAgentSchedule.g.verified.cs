@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get agent schedule<br/>
         /// Retrieve the full details of a specific agent schedule using its unique schedule key. The response includes the schedule's configuration, execution history, and timestamps.

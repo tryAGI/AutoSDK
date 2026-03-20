@@ -54,6 +54,8 @@
     <CompilerVisibleProperty Include="AutoSDK_IncludeTags"/>
     <!-- List of ids separated by ;. Default: Empty -->
     <CompilerVisibleProperty Include="AutoSDK_ExcludeTags"/>
+    <!-- Use x-fern-sdk-method-name, x-fern-sdk-group-name, x-oaiMeta.name extensions for naming. true/false. Default: false -->
+    <CompilerVisibleProperty Include="AutoSDK_UseExtensionNaming"/>
     <!-- Full name with namespace of JsonSerializerContext to enable trimming support for System.Text.Json. Default: Empty -->
     <CompilerVisibleProperty Include="AutoSDK_JsonSerializerContext"/>
     <!-- Allow you to specify only one type for JsonSerializerContext to enable trimming support for System.Text.Json. true/false. Default: false -->

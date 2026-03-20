@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Test a connection<br/>
         /// Makes a request to the 3rd party app that the connection is configured to<br/>

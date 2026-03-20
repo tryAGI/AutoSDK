@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IMetricsClient
     {
+
         /// <summary>
         /// Top Pipelines Usage<br/>
         /// Retrieve usage metrics for top 'num_pipelines' (in terms of number of<br/>

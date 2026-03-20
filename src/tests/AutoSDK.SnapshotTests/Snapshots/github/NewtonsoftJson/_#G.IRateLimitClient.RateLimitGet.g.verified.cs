@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IRateLimitClient
     {
+
         /// <summary>
         /// Get rate limit status for the authenticated user<br/>
         /// &gt; [!NOTE]<br/>

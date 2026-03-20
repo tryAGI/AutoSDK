@@ -20,6 +20,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Returns the version of the Ollama server.<br/>
         /// This endpoint returns the version of the Ollama server.

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISingleClient
     {
+
         /// <summary>
         /// Returns a city for the selected IP.<br/>
         /// Returns a city for the selected IP.

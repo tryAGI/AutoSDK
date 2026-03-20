@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Gets all users allowed to moderate the broadcaster’s chat room.<br/>
         /// Gets all users allowed to moderate the broadcaster’s chat room.<br/>

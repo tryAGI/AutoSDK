@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IModelClient
     {
+
         /// <summary>
         /// Get the details of the long-running operation from a namespace model<br/>
         /// with a particular version<br/>

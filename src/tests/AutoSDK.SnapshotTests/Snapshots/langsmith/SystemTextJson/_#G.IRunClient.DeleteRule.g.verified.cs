@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IRunClient
     {
+
         /// <summary>
         /// Delete Rule<br/>
         /// Delete a run rule.

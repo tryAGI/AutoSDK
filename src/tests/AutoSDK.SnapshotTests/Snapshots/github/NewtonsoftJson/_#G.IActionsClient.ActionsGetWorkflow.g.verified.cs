@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// Get a workflow<br/>
         /// Gets a specific workflow. You can replace `workflow_id` with the workflow<br/>

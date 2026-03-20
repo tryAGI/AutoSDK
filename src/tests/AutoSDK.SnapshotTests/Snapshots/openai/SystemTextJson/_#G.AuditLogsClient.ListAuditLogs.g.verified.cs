@@ -38,6 +38,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List user actions and configuration changes within this organization.
         /// </summary>

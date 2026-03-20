@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// Create or update custom properties for an organization<br/>
         /// Creates new or updates existing custom properties defined for an organization in a batch.<br/>
@@ -13,6 +14,7 @@ namespace G
         ///   - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
         /// </summary>
         /// <param name="org"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// Create or update an organization secret<br/>
         /// Creates or updates an organization secret with an encrypted value. Encrypt your secret using<br/>
@@ -14,6 +15,7 @@ namespace G
         /// </summary>
         /// <param name="org"></param>
         /// <param name="secretName"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

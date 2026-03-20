@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get a package version for a user<br/>
         /// Gets a specific package version for a public package owned by a specified user.<br/>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISearchClient
     {
+
         /// <summary>
         /// Search labels<br/>
         /// Find labels in a repository with names or descriptions that match search keywords. Returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).<br/>

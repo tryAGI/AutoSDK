@@ -20,6 +20,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// GitHub API Root<br/>
         /// Get Hypermedia links to resources accessible in GitHub's REST API

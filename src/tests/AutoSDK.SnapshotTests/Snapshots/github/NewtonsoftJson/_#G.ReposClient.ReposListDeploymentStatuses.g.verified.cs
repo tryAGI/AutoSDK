@@ -30,6 +30,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List deployment statuses<br/>
         /// Users with pull access can view deployment statuses for a deployment:

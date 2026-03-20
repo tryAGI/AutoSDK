@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IInstructionsClient
     {
+
         /// <summary>
         /// Delete instruction version<br/>
         /// Permanently delete the specified version of the instruction. This action cannot be undone.

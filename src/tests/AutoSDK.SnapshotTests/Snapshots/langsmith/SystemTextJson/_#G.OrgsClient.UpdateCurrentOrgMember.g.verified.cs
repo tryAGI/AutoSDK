@@ -24,11 +24,13 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Update Current Org Member<br/>
         /// This is used for updating a user's role (all auth modes) or full_name/password (basic auth)
         /// </summary>
         /// <param name="identityId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

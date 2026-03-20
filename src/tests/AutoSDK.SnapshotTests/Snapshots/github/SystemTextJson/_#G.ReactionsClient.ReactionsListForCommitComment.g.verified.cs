@@ -32,6 +32,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List reactions for a commit comment<br/>
         /// List the reactions to a [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment).

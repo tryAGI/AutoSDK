@@ -20,6 +20,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get the authenticated account<br/>
         /// Returns information about the user or organization associated with the provided API token.<br/>

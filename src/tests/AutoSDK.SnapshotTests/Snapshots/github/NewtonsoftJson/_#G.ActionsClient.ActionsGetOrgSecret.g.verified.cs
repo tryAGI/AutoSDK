@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get an organization secret<br/>
         /// Gets a single organization secret without revealing its encrypted value.<br/>

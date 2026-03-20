@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IScalingConfigurationsClient
     {
+
         /// <summary>
         /// Get By Name<br/>
         /// Retrieve a scaling configuration

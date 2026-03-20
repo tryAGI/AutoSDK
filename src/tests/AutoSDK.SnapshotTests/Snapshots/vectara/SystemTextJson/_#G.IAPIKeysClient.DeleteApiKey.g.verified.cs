@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IApiKeysClient
     {
+
         /// <summary>
         /// Delete an API key<br/>
         /// The Delete API Key API lets you delete one or more existing API keys. <br/>

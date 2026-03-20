@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAppsClient
     {
+
         /// <summary>
         /// List installations for the authenticated app<br/>
         /// The permissions the installation has are included under the `permissions` key.<br/>

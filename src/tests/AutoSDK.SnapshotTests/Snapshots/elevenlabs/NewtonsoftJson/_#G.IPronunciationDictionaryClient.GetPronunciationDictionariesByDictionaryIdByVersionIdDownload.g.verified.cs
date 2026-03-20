@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPronunciationDictionaryClient
     {
+
         /// <summary>
         /// Get A Pls File With A Pronunciation Dictionary Version Rules<br/>
         /// Get a PLS file with a pronunciation dictionary version rules

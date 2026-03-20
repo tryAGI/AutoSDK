@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ITranscriptClient
     {
+
         /// <summary>
         /// Get redacted audio<br/>
         /// Retrieve the redacted audio object containing the status and URL to the redacted audio.

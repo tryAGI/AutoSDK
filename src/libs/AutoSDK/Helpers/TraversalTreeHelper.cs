@@ -1,3 +1,4 @@
+using AutoSDK.Extensions;
 using AutoSDK.Models;
 using Microsoft.OpenApi;
 
@@ -13,6 +14,10 @@ public static class TraversalTreeHelper
 
         var operations = openApiDocument.Paths?
             .SelectMany(x => (x.Value.Operations ?? new Dictionary<System.Net.Http.HttpMethod, OpenApiOperation>())
+                // Skip operations marked with x-fern-ignore: true or x-hidden: true (opt-in via UseExtensionNaming)
+                .Where(y => !settings.UseExtensionNaming ||
+                            (!OpenApiExtensions.GetExtensionBooleanValue(y.Value.Extensions, "x-fern-ignore") &&
+                             !OpenApiExtensions.GetExtensionBooleanValue(y.Value.Extensions, "x-hidden")))
                 .Select(y => (
                     OperationPath: x.Key,
                     OperationType: y.Key,
@@ -130,6 +135,10 @@ public static class TraversalTreeHelper
 
         return openApiDocument.Paths?
             .SelectMany(x => (x.Value.Operations ?? new Dictionary<System.Net.Http.HttpMethod, OpenApiOperation>())
+                // Skip operations marked with x-fern-ignore: true or x-hidden: true (opt-in via UseExtensionNaming)
+                .Where(y => !settings.UseExtensionNaming ||
+                            (!OpenApiExtensions.GetExtensionBooleanValue(y.Value.Extensions, "x-fern-ignore") &&
+                             !OpenApiExtensions.GetExtensionBooleanValue(y.Value.Extensions, "x-hidden")))
                 .Select(y => OperationContext.FromOperation(
                     settings: settings,
                     globalSettings: globalSettings,

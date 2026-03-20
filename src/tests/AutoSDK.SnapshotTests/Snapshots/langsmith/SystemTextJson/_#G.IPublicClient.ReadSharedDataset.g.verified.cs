@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPublicClient
     {
+
         /// <summary>
         /// Read Shared Dataset<br/>
         /// Get dataset by ids or the shared dataset if not specifed.

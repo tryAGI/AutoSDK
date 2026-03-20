@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IChatClient
     {
+
         /// <summary>
         /// Gets the list of users that are connected to the broadcaster’s chat session.<br/>
         /// Gets the list of users that are connected to the broadcaster’s chat session.<br/>

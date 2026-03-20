@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActivityClient
     {
+
         /// <summary>
         /// List notifications for the authenticated user<br/>
         /// List all notifications for the current user, sorted by most recently updated.

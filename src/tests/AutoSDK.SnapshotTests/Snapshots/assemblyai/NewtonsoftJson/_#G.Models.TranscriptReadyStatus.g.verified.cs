@@ -11,12 +11,12 @@ namespace G
     public enum TranscriptReadyStatus
     {
         /// <summary>
-        /// 
+        /// The transcript job has been completed successfully.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="completed")]
         Completed,
         /// <summary>
-        /// 
+        /// An error occurred while processing the audio file.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="error")]
         Error,

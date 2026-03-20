@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPackagesClient
     {
+
         /// <summary>
         /// Restore package version for a user<br/>
         /// Restores a specific package version for a user.<br/>

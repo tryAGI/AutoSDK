@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IApiKeysClient
     {
+
         /// <summary>
         /// Update an API key<br/>
         /// The Update API Key API lets you enable or disable specific API keys. You can use this endpoint to temporarily disable access without deleting the key.<br/>
@@ -13,6 +14,7 @@ namespace G
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
         /// <param name="apiKeyId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

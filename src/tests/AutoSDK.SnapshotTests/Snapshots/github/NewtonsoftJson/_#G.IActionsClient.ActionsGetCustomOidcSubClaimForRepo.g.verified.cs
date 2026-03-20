@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// Get the customization template for an OIDC subject claim for a repository<br/>
         /// Gets the customization template for an OpenID Connect (OIDC) subject claim.<br/>

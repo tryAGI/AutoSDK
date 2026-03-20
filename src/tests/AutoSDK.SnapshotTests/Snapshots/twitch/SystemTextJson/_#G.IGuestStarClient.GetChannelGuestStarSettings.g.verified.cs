@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IGuestStarClient
     {
+
         /// <summary>
         /// BETA Gets the channel settings for configuration of the Guest Star feature for a particular host.<br/>
         /// BETA Gets the channel settings for configuration of the Guest Star feature for a particular host.<br/>

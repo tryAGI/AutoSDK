@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Get latest Pages build<br/>
         /// Gets information about the single most recent build of a GitHub Pages site.<br/>

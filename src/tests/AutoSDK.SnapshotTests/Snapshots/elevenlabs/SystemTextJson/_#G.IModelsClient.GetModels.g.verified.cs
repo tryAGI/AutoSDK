@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IModelsClient
     {
+
         /// <summary>
         /// Get Models<br/>
         /// Gets a list of available models.

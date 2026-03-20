@@ -22,6 +22,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get GitHub Actions billing for a user<br/>
         /// Gets the summary of the free and paid GitHub Actions minutes used.<br/>

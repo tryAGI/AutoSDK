@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Get the weekly commit activity<br/>
         /// Returns a weekly aggregate of the number of additions and deletions pushed to a repository.<br/>

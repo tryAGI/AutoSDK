@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ITracerSessionsClient
     {
+
         /// <summary>
         /// Read Filter Views<br/>
         /// Get all filter views for a session.

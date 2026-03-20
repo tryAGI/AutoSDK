@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IClipsClient
     {
+
         /// <summary>
         /// Creates a clip from the broadcaster’s stream.<br/>
         /// Creates a clip from the broadcaster’s stream.<br/>

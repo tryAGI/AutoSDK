@@ -5,24 +5,25 @@
 namespace G
 {
     /// <summary>
+    /// Severity score summary<br/>
     /// Example: {"low":0.5733263024656846,"medium":0.42667369753431533,"high":0}
     /// </summary>
     public sealed partial class SeverityScoreSummary
     {
         /// <summary>
-        /// 
+        /// Low
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("low", Required = global::Newtonsoft.Json.Required.Always)]
         public double Low { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Medium
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("medium", Required = global::Newtonsoft.Json.Required.Always)]
         public double Medium { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// High
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("high", Required = global::Newtonsoft.Json.Required.Always)]
         public double High { get; set; } = default!;
@@ -36,9 +37,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="SeverityScoreSummary" /> class.
         /// </summary>
-        /// <param name="low"></param>
-        /// <param name="medium"></param>
-        /// <param name="high"></param>
+        /// <param name="low">
+        /// Low
+        /// </param>
+        /// <param name="medium">
+        /// Medium
+        /// </param>
+        /// <param name="high">
+        /// High
+        /// </param>
         public SeverityScoreSummary(
             double low,
             double medium,

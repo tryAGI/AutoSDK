@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IClusterClient
     {
+
         /// <summary>
         /// List Pipelines<br/>
         /// List pipelines deployed to a given cluster

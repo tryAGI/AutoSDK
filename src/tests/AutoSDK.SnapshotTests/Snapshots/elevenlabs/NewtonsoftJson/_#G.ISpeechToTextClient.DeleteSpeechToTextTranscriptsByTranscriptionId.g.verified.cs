@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISpeechToTextClient
     {
+
         /// <summary>
         /// Delete Transcript By Id<br/>
         /// Delete a previously generated transcript by its ID.

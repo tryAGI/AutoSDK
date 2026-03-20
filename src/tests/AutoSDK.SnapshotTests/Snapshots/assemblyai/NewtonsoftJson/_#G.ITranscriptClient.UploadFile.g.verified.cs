@@ -5,10 +5,12 @@ namespace G
 {
     public partial interface ITranscriptClient
     {
+
         /// <summary>
         /// Upload a media file<br/>
         /// Upload a media file to AssemblyAI's servers.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPublicClient
     {
+
         /// <summary>
         /// Read Shared Dataset Tracer Sessions Bulk<br/>
         /// Get sessions from multiple datasets using share tokens.

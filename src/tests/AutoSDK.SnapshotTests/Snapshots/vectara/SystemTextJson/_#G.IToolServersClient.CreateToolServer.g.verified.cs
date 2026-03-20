@@ -5,12 +5,14 @@ namespace G
 {
     public partial interface IToolServersClient
     {
+
         /// <summary>
         /// Create tool server<br/>
         /// Create a new tool server to expose tools for use by agents.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

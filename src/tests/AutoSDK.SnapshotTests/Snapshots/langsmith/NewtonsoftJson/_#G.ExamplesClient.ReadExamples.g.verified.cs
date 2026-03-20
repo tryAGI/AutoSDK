@@ -44,6 +44,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Read Examples<br/>
         /// Get all examples by query params

@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Delete a code scanning analysis from a repository<br/>
         /// Deletes a specified code scanning analysis from a repository.<br/>

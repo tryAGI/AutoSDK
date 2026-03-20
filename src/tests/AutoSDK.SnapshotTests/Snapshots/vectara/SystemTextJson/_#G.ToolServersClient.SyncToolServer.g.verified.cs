@@ -21,6 +21,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Synchronize tool server<br/>
         /// Trigger a synchronization of the tool server to ensure it is up-to-date with the latest tools.

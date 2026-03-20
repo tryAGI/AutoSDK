@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ITextToSpeechClient
     {
+
         /// <summary>
         /// Text To Speech<br/>
         /// Converts text into speech using a voice of your choice and returns audio.
@@ -32,6 +33,7 @@ namespace G
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

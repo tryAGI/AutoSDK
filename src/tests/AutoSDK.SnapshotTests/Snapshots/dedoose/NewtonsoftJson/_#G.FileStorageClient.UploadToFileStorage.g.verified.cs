@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Upload File<br/>
         /// Uploads a file to the storage system and returns the file path.
@@ -35,6 +36,7 @@ namespace G
         /// <param name="name"></param>
         /// <param name="projectId"></param>
         /// <param name="uploadType"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

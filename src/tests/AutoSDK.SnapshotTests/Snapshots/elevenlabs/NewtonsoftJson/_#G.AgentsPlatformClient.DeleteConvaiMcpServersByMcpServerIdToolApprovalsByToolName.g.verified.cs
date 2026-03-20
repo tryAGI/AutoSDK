@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Delete Mcp Server Tool Approval<br/>
         /// Remove approval for a specific MCP tool when using per-tool approval mode.

@@ -12,12 +12,12 @@ namespace G
     public enum RedactPiiAudioQuality
     {
         /// <summary>
-        /// //www.assemblyai.com/docs/models/pii-redaction) for more details.
+        /// MP3 audio format is lower quality and lower size than WAV.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="mp3")]
         Mp3,
         /// <summary>
-        /// //www.assemblyai.com/docs/models/pii-redaction) for more details.
+        /// WAV audio format is the highest quality (no compression) and larger size than MP3.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="wav")]
         Wav,

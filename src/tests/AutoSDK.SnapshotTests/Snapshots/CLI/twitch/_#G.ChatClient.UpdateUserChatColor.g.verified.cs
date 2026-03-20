@@ -19,6 +19,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Updates the color used for the user’s name in chat.<br/>
         /// Updates the color used for the user’s name in chat.<br/>

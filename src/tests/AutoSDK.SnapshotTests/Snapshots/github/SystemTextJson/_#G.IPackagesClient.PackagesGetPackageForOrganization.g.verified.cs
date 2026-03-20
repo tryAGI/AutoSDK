@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPackagesClient
     {
+
         /// <summary>
         /// Get a package for an organization<br/>
         /// Gets a specific package in an organization.<br/>

@@ -21,6 +21,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Delete an environment<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IQueriesClient
     {
+
         /// <summary>
         /// Advanced Single Corpus Query<br/>
         /// Perform an advanced query on a specific corpus to find relevant results, generate summaries, highlight relevant snippets, and use Retrieval Augmented Generation.<br/>
@@ -136,6 +137,7 @@ namespace G
         /// A user-provided key for a corpus.<br/>
         /// Example: my-corpus
         /// </param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

@@ -5,11 +5,13 @@ namespace G
 {
     public partial interface ICertificatesClient
     {
+
         /// <summary>
         /// Activate certificates at the project level.<br/>
         /// You can atomically and idempotently activate up to 10 certificates at a time.
         /// </summary>
         /// <param name="projectId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

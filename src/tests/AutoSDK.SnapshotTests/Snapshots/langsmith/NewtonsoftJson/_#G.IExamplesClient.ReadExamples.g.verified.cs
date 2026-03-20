@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IExamplesClient
     {
+
         /// <summary>
         /// Read Examples<br/>
         /// Get all examples by query params

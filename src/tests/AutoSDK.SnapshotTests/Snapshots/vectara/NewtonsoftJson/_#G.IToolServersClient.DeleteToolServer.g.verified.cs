@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IToolServersClient
     {
+
         /// <summary>
         /// Delete tool server<br/>
         /// Permanently delete a tool server and all its associated configuration and tools. This action cannot be undone.

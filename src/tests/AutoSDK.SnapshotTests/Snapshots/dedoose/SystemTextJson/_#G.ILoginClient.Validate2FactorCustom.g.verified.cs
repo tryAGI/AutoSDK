@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ILoginClient
     {
+
         /// <summary>
         /// Validate Two-Factor Authentication<br/>
         /// Validates two-factor authentication credentials and returns user data.

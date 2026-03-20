@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISingleClient
     {
+
         /// <summary>
         /// Returns a timezone for the selected IP.<br/>
         /// Returns a timezone for the selected IP.

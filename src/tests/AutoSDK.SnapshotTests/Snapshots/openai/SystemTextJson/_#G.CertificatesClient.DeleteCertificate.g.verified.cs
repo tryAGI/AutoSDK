@@ -22,6 +22,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Delete a certificate from the organization.<br/>
         /// The certificate must be inactive for the organization and all projects.

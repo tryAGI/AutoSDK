@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAuthClient
     {
+
         /// <summary>
         /// Oauth Provider Callback
         /// </summary>

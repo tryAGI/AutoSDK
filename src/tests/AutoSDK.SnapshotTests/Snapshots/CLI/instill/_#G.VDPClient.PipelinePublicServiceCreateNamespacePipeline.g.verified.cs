@@ -24,11 +24,13 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Create a new pipeline<br/>
         /// Creates a new pipeline under a namespace.
         /// </summary>
         /// <param name="namespaceId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

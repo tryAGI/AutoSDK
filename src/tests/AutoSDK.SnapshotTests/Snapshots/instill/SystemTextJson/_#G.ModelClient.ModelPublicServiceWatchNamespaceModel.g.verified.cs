@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Watch the state of a model version<br/>
         /// Returns the state of a model. The model resource allocation and scaling actions take some<br/>

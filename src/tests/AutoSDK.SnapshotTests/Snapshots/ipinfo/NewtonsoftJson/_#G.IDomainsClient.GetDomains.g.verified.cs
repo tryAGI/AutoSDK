@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IDomainsClient
     {
+
         /// <summary>
         /// Our Hosted Domains, or Reverse IP API returns a list of all of the domains hosted on the provided IP address.<br/>
         /// Returns a list of all of the domains hosted on the provided IP address.

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IExamplesClient
     {
+
         /// <summary>
         /// Count Examples<br/>
         /// Count all examples by query params

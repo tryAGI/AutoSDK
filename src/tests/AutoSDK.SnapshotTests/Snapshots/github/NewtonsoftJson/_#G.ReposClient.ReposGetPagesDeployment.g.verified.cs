@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get the status of a GitHub Pages deployment<br/>
         /// Gets the current status of a GitHub Pages deployment.<br/>

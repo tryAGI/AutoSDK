@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUsersClient
     {
+
         /// <summary>
         /// Gets the active extensions that the broadcaster has installed for each configuration.<br/>
         /// Gets the active extensions that the broadcaster has installed for each configuration.<br/>

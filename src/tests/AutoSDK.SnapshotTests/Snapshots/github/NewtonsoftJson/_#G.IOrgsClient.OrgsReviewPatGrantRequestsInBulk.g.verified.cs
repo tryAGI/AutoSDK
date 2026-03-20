@@ -5,12 +5,14 @@ namespace G
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// Review requests to access organization resources with fine-grained personal access tokens<br/>
         /// Approves or denies multiple pending requests to access organization resources via a fine-grained personal access token.<br/>
         /// Only GitHub Apps can use this endpoint.
         /// </summary>
         /// <param name="org"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

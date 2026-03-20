@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IEmbedJobsClient
     {
+
         /// <summary>
         /// Fetch an Embed Job<br/>
         /// This API retrieves the details about an embed job started by the same user.

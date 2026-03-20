@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAccountsClient
     {
+
         /// <summary>
         /// Gets aggregated call usage.
         /// </summary>

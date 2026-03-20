@@ -5,11 +5,13 @@ namespace G
 {
     public partial interface IProjectsClient
     {
+
         /// <summary>
         /// Modifies a user's role in the project.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="userId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

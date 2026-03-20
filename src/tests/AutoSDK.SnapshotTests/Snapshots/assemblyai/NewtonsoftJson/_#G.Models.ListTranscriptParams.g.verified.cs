@@ -5,6 +5,7 @@
 namespace G
 {
     /// <summary>
+    /// List transcript parameters<br/>
     /// Example: {"after_id":"a7c5cafd-2c2e-4bdd-b0b2-69dade2f7a1b","before_id":"9ea68fd3-f953-42c1-9742-976c447fb463","created_on":"2023-11-03","limit":2,"status":"completed","throttled_only":false}
     /// </summary>
     public sealed partial class ListTranscriptParams

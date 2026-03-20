@@ -5,10 +5,12 @@ namespace G
 {
     public partial interface IAssistantsClient
     {
+
         /// <summary>
         /// Modifies a thread.
         /// </summary>
         /// <param name="threadId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IBackupsClient
     {
+
         /// <summary>
         /// Cancel backup<br/>
         /// Cancel created backup with specified ID

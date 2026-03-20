@@ -19,6 +19,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Set public organization membership for the authenticated user<br/>
         /// The user can publicize their own membership. (A user cannot publicize the membership for another user.)<br/>

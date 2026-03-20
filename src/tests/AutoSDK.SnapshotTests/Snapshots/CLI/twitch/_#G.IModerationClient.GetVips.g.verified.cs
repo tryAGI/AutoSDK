@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IModerationClient
     {
+
         /// <summary>
         /// Gets a list of the broadcaster’s VIPs.<br/>
         /// Gets a list of the broadcaster’s VIPs.<br/>

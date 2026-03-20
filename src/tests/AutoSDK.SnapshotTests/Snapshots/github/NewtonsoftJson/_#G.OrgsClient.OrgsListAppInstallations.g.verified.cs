@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List app installations for an organization<br/>
         /// Lists all GitHub Apps in an organization. The installation count includes<br/>

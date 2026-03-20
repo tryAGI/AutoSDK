@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// **NOTE:** Calling this endpoint requires an [admin API key](../admin-api-keys).<br/>
         /// This enables organization owners to share fine-tuned models with other projects in their organization.
@@ -31,6 +32,7 @@ namespace G
         /// <param name="fineTunedModelCheckpoint">
         /// Example: ft:gpt-4o-mini-2024-07-18:org:weather:B7R9VjQd
         /// </param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

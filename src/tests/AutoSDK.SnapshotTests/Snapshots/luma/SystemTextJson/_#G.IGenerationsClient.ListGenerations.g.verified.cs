@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IGenerationsClient
     {
+
         /// <summary>
         /// List generations<br/>
         /// Retrieve a list of generations with optional filtering and sorting

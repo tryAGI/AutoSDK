@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IDocumentsClient
     {
+
         /// <summary>
         /// Retrieve a document<br/>
         /// The Retrieve Document API enables you to fetch the content and metadata of a specific document from a corpus, identified by its unique `document_id` from a specific corpus. Use this endpoint to view the full details of a document, including its text, metadata, and associated tables, if table extraction is enabled.<br/>

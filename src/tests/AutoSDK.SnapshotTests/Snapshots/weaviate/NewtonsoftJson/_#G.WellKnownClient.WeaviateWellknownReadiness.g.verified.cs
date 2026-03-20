@@ -15,6 +15,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Get application readiness.<br/>
         /// Determines whether the application is ready to receive traffic. Can be used for kubernetes readiness probe.

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ILeMURClient
     {
+
         /// <summary>
         /// Purge LeMUR request data<br/>
         /// Delete the data for a previously submitted LeMUR request.<br/>

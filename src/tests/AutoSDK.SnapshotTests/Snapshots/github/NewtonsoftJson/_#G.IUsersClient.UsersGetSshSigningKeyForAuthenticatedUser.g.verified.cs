@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUsersClient
     {
+
         /// <summary>
         /// Get an SSH signing key for the authenticated user<br/>
         /// Gets extended details for an SSH signing key.<br/>

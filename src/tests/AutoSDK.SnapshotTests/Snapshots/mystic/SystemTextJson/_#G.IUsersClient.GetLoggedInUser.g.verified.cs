@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUsersClient
     {
+
         /// <summary>
         /// Get Logged In User<br/>
         /// Retrieve the currently logged in user.

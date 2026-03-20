@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IWellKnownClient
     {
+
         /// <summary>
         /// Get application readiness.<br/>
         /// Determines whether the application is ready to receive traffic. Can be used for kubernetes readiness probe.

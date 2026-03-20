@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISchemaClient
     {
+
         /// <summary>
         /// Get the list of tenants.<br/>
         /// Get all tenants from a collection.

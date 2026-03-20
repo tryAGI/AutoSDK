@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IApi
     {
+
         /// <summary>
         /// Get Test Invocation<br/>
         /// Gets a test invocation by ID.

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IConduitsClient
     {
+
         /// <summary>
         /// NEW Gets a lists of all shards for a conduit.<br/>
         /// NEW Gets a lists of all shards for a [conduit](https://dev.twitch.tv/docs/eventsub/handling-conduit-events).<br/>

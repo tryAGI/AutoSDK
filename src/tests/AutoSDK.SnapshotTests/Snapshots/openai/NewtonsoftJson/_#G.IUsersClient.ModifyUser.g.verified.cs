@@ -5,10 +5,12 @@ namespace G
 {
     public partial interface IUsersClient
     {
+
         /// <summary>
         /// Modifies a user's role in the organization.
         /// </summary>
         /// <param name="userId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

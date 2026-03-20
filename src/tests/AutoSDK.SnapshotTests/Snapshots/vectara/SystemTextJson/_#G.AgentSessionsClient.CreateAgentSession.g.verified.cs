@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Create agent session<br/>
         /// Create a new session for interacting with an agent. A session is the conversation container that maintains state across all messages, events, tool use, and agent responses.<br/>
@@ -55,6 +56,7 @@ namespace G
         /// A unique key that identifies an agent.<br/>
         /// Example: customer_support
         /// </param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

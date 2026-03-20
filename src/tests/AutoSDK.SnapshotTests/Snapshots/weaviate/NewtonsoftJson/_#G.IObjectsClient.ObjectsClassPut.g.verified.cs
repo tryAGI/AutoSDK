@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IObjectsClient
     {
+
         /// <summary>
         /// Update an object.<br/>
         /// Update an object based on its uuid and collection. This (`put`) method replaces the object with the provided object.
@@ -14,6 +15,7 @@ namespace G
         /// <param name="consistencyLevel">
         /// Default Value: QUORUM
         /// </param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

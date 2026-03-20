@@ -22,6 +22,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List organization memberships<br/>
         /// Returns a paginated list of the user memberships in an organization.

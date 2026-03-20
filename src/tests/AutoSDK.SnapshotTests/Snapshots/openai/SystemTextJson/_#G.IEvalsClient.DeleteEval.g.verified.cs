@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IEvalsClient
     {
+
         /// <summary>
         /// Delete an evaluation.
         /// </summary>

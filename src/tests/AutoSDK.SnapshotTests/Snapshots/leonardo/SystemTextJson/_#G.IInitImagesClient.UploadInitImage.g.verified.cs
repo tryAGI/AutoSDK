@@ -5,10 +5,12 @@ namespace G
 {
     public partial interface IInitImagesClient
     {
+
         /// <summary>
         /// Upload init image<br/>
         /// This endpoint returns presigned details to upload an init image to S3
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

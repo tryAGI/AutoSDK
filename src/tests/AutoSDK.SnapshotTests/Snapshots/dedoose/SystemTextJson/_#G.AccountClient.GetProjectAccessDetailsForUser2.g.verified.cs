@@ -22,6 +22,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get Project Access Details<br/>
         /// Retrieves detailed information about a user's project access permissions.

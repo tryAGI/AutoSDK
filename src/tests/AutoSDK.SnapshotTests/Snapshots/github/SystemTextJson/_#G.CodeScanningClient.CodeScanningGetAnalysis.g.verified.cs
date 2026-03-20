@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get a code scanning analysis for a repository<br/>
         /// Gets a specified code scanning analysis for a repository.<br/>

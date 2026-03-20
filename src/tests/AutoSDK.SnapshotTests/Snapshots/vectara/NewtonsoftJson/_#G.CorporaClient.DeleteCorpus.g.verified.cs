@@ -21,6 +21,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Delete a corpus and all its data<br/>
         /// Permanently delete a corpus and all its associated data. The `corpus_key` uniquely identifies the corpus. <br/>

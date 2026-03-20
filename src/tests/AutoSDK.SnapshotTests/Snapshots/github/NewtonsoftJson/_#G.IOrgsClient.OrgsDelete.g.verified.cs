@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// Delete an organization<br/>
         /// Deletes an organization and all its repositories.<br/>

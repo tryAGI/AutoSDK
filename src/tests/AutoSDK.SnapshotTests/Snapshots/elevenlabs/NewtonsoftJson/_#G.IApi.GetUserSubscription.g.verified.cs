@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IApi
     {
+
         /// <summary>
         /// Get User Subscription Info<br/>
         /// Gets extended information about the users subscription

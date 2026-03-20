@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IStudioClient
     {
+
         /// <summary>
         /// Convert Studio Project<br/>
         /// Starts conversion of a Studio project and all of its chapters.

@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Delete a user membership<br/>
         /// Accesses and deletes a user membership by parent and membership IDs.

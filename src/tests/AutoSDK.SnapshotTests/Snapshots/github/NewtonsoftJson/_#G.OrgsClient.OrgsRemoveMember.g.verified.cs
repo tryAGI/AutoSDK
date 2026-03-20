@@ -19,6 +19,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Remove an organization member<br/>
         /// Removing a user from this list will remove them from all teams and they will no longer have any access to the organization's repositories.

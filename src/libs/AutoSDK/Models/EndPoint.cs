@@ -31,9 +31,11 @@ public record struct EndPoint(
     Settings Settings,
     Settings GlobalSettings,
     bool IsDeprecated,
+    string DeprecationMessage,
     string ExperimentalStage,
     TypeData RequestType,
-    bool? ForcedRequestStreamValue
+    bool? ForcedRequestStreamValue,
+    string Remarks
 )
 {
     public bool Stream => StreamFormat != StreamFormat.None;
@@ -223,20 +225,87 @@ public record struct EndPoint(
             Description: operation.Operation.Description ?? string.Empty,
             BaseUrlSummary: string.Empty,
             CliAction:
-                ((operation.Operation.Extensions ?? new Dictionary<string, IOpenApiExtension>())
-                    .FirstOrDefault(x => x.Key == "x-cli-action")
-                    .Value is JsonValue cliActionValue && cliActionValue.TryGetValue<string>(out var cliActionStr)
+                (OpenApiExtensions.TryGetExtensionStringValue(
+                    operation.Operation.Extensions, "x-cli-action", out var cliActionStr)
                     ? cliActionStr
                     : null) ??
                 operation.MethodName.FirstWord().ToLowerInvariant(),
             Settings: operation.Settings,
             GlobalSettings: operation.GlobalSettings,
             IsDeprecated: operation.Operation.IsDeprecated(),
+            DeprecationMessage: operation.Operation.GetDeprecationMessage(),
             ExperimentalStage: operation.Operation.GetExperimentalStage(),
             RequestType: requestType ?? TypeData.Default,
-            ForcedRequestStreamValue: forcedRequestStreamValue);
+            ForcedRequestStreamValue: forcedRequestStreamValue,
+            Remarks: GetCodeSamplesRemarks(operation.Operation));
 
         return endPoint;
+    }
+
+    private static string GetCodeSamplesRemarks(OpenApiOperation operation)
+    {
+        if (!(operation.Extensions ?? new Dictionary<string, IOpenApiExtension>())
+            .TryGetValue("x-codeSamples", out var extension))
+        {
+            return string.Empty;
+        }
+
+        var jsonNode = OpenApiExtensions.TryGetExtensionJsonNode(extension);
+        if (jsonNode is not JsonArray samplesArray || samplesArray.Count == 0)
+        {
+            return string.Empty;
+        }
+
+        // Prefer C# sample, then curl, then first available
+        JsonObject? bestSample = null;
+        foreach (var item in samplesArray)
+        {
+            if (item is not JsonObject sample)
+            {
+                continue;
+            }
+
+            var lang = string.Empty;
+            if (sample.TryGetPropertyValue("lang", out var langNode) &&
+                langNode is JsonValue langValue &&
+                langValue.TryGetValue<string>(out var langStr))
+            {
+                lang = langStr;
+            }
+
+            if (string.Equals(lang, "csharp", StringComparison.OrdinalIgnoreCase) ||
+                string.Equals(lang, "c#", StringComparison.OrdinalIgnoreCase))
+            {
+                bestSample = sample;
+                break;
+            }
+
+            if (bestSample == null ||
+                string.Equals(lang, "curl", StringComparison.OrdinalIgnoreCase))
+            {
+                bestSample = sample;
+            }
+        }
+
+        if (bestSample == null)
+        {
+            return string.Empty;
+        }
+
+        var source = string.Empty;
+        if (bestSample.TryGetPropertyValue("source", out var sourceNode) &&
+            sourceNode is JsonValue sourceValue &&
+            sourceValue.TryGetValue<string>(out var sourceStr))
+        {
+            source = sourceStr;
+        }
+
+        if (string.IsNullOrWhiteSpace(source))
+        {
+            return string.Empty;
+        }
+
+        return source.ClearForXml();
     }
 
     private static bool HasBooleanFernStreamingExtension(OpenApiOperation operation)
@@ -247,22 +316,7 @@ public record struct EndPoint(
             return false;
         }
 
-        var extensionType = extension.GetType();
-        var jsonNode = extension as JsonNode ??
-                       extensionType
-                           .GetProperty(
-                               "Node",
-                               System.Reflection.BindingFlags.Instance |
-                               System.Reflection.BindingFlags.Public |
-                               System.Reflection.BindingFlags.NonPublic)?
-                           .GetValue(extension) as JsonNode ??
-                       extensionType
-                           .GetField(
-                               "jsonNode",
-                               System.Reflection.BindingFlags.Instance |
-                               System.Reflection.BindingFlags.Public |
-                               System.Reflection.BindingFlags.NonPublic)?
-                           .GetValue(extension) as JsonNode;
+        var jsonNode = OpenApiExtensions.TryGetExtensionJsonNode(extension);
         if (jsonNode is JsonValue jsonValue &&
             jsonValue.TryGetValue<bool>(out var isStreaming))
         {

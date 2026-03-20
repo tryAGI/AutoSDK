@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICodeScanningClient
     {
+
         /// <summary>
         /// Get a code scanning default setup configuration<br/>
         /// Gets a code scanning default setup configuration.<br/>

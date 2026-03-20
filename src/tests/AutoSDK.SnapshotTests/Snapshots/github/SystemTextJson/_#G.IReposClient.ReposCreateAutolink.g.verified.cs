@@ -5,12 +5,14 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Create an autolink reference for a repository<br/>
         /// Users with admin access to the repository can create an autolink.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

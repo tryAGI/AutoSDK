@@ -20,6 +20,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get interaction restrictions for your public repositories<br/>
         /// Shows which type of GitHub user can interact with your public repositories and when the restriction expires.

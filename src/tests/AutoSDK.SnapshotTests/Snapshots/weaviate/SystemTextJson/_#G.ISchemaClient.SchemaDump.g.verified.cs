@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISchemaClient
     {
+
         /// <summary>
         /// Get the entire schema.<br/>
         /// Fetch an array of all collection definitions from the schema.

@@ -5,10 +5,12 @@ namespace G
 {
     public partial interface IPointersClient
     {
+
         /// <summary>
         /// Create<br/>
         /// Create a pipeline pointer instance.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

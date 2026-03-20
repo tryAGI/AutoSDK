@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReactionsClient
     {
+
         /// <summary>
         /// Delete a commit comment reaction<br/>
         /// &gt; [!NOTE]<br/>

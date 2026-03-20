@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IModerationClient
     {
+
         /// <summary>
         /// Removes the word or phrase from the broadcaster’s list of blocked terms.<br/>
         /// Removes the word or phrase from the broadcaster’s list of blocked terms.<br/>

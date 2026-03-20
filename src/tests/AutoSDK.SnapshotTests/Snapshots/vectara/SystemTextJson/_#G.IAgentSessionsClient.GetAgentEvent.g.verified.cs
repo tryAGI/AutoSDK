@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAgentSessionsClient
     {
+
         /// <summary>
         /// Get event in agent session<br/>
         /// Retrieve the details of a specific event within an agent session.

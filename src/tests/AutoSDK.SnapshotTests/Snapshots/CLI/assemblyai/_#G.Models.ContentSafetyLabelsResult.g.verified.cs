@@ -20,7 +20,7 @@ namespace G
         public required global::G.AudioIntelligenceModelStatus Status { get; set; }
 
         /// <summary>
-        /// 
+        /// Results
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("results")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -52,7 +52,9 @@ namespace G
         /// <param name="status">
         /// Either success, or unavailable in the rare case that the model failed
         /// </param>
-        /// <param name="results"></param>
+        /// <param name="results">
+        /// Results
+        /// </param>
         /// <param name="summary">
         /// A summary of the Content Moderation confidence results for the entire audio file
         /// </param>

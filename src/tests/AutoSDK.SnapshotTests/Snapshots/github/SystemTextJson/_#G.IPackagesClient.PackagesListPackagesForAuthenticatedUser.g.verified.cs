@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPackagesClient
     {
+
         /// <summary>
         /// List packages for the authenticated user's namespace<br/>
         /// Lists packages owned by the authenticated user within the user's namespace.<br/>

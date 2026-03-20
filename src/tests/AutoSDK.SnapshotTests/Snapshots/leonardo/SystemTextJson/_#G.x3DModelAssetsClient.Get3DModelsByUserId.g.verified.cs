@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get 3D models by user ID<br/>
         /// This endpoint returns all 3D models by a specific user
@@ -39,6 +40,7 @@ namespace G
         /// Default Value: 10
         /// </param>
         /// <param name="userId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

@@ -19,6 +19,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Check if a repository is starred by the authenticated user<br/>
         /// Whether the authenticated user has starred the repository.

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// Create a registration token for an organization<br/>
         /// Returns a token that you can pass to the `config` script. The token expires after one hour.<br/>

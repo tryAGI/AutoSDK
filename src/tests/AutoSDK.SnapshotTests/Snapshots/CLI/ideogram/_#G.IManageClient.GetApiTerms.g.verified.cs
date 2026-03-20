@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IManageClient
     {
+
         /// <summary>
         /// Retrieve the latest terms of service for API usage.
         /// </summary>

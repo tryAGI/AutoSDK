@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IOrgsClient
     {
+
         /// <summary>
         /// Delete Current Org Pending Member<br/>
         /// When an admin deletes a pending member invite.

@@ -24,6 +24,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Generate<br/>
         /// &lt;Warning&gt;<br/>
@@ -32,6 +33,7 @@ namespace G
         /// Generates realistic text conditioned on a given input.
         /// </summary>
         /// <param name="xClientName"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IApi
     {
+
         /// <summary>
         /// Text To Speech Stream
         /// </summary>
@@ -12,6 +13,7 @@ namespace G
         /// <param name="outputFormat"></param>
         /// <param name="xDeepinfraSource"></param>
         /// <param name="xiApiKey"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Delete a deploy key<br/>
         /// Deploy keys are immutable. If you need to update a key, remove the key and create a new one instead.

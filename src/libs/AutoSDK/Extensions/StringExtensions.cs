@@ -240,6 +240,25 @@ public static class StringExtensions
 {spaces}/// </param>";
     }
     
+    public static string ToXmlDocumentationRemarks(
+        this string text,
+        int level = 4)
+    {
+        text = text ?? throw new ArgumentNullException(nameof(text));
+
+        if (string.IsNullOrWhiteSpace(text))
+        {
+            return string.Empty;
+        }
+
+        var spaces = new string(' ', level);
+        var value = ToXmlDocumentation(text, level);
+
+        return $@"/// <remarks>
+{value}
+{spaces}/// </remarks>";
+    }
+
     public static string UseWordSeparator(
         this string propertyName,
         params char[] separator)

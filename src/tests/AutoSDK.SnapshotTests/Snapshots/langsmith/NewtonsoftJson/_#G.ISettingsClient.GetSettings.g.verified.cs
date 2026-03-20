@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISettingsClient
     {
+
         /// <summary>
         /// Get Settings<br/>
         /// Get settings.

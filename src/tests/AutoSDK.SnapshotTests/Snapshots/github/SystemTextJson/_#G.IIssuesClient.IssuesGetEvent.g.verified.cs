@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IIssuesClient
     {
+
         /// <summary>
         /// Get an issue event<br/>
         /// Gets a single event by the event id.

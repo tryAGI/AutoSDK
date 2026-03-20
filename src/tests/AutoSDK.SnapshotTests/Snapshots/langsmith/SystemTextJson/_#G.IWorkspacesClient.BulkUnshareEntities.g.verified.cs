@@ -5,10 +5,12 @@ namespace G
 {
     public partial interface IWorkspacesClient
     {
+
         /// <summary>
         /// Bulk Unshare Entities<br/>
         /// Bulk unshare entities by share tokens for the workspace.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

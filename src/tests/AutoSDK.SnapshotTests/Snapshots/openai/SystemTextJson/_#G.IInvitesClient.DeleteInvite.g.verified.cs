@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IInvitesClient
     {
+
         /// <summary>
         /// Delete an invite. If the invite has already been accepted, it cannot be deleted.
         /// </summary>

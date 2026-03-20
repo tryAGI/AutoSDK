@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUsageClient
     {
+
         /// <summary>
         /// Get embeddings usage details for the organization.
         /// </summary>

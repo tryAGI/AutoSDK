@@ -5,11 +5,13 @@ namespace G
 {
     public partial interface IScalingConfigurationsClient
     {
+
         /// <summary>
         /// Patch<br/>
         /// Patch a scaling configuration
         /// </summary>
         /// <param name="name"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

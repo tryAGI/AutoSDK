@@ -23,6 +23,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Check if a user can be assigned to a issue<br/>
         /// Checks if a user has permission to be assigned to a specific issue.<br/>

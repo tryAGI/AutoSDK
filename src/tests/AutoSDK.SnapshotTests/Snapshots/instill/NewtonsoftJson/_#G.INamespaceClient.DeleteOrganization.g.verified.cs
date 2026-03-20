@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface INamespaceClient
     {
+
         /// <summary>
         /// Delete an organization<br/>
         /// Accesses and deletes an organization by ID.

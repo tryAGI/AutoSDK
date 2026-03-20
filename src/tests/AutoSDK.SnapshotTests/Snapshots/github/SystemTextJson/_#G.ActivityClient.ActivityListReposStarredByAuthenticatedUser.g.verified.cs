@@ -28,6 +28,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List repositories starred by the authenticated user<br/>
         /// Lists repositories the authenticated user has starred.<br/>

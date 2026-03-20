@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Get a delivery for a repository webhook<br/>
         /// Returns a delivery for a webhook configured in a repository.

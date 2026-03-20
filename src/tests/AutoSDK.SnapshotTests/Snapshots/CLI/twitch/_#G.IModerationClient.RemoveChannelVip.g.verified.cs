@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IModerationClient
     {
+
         /// <summary>
         /// Removes the specified user as a VIP in the broadcaster’s channel.<br/>
         /// Removes the specified user as a VIP in the broadcaster’s channel.<br/>

@@ -22,6 +22,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get a user<br/>
         /// Provides publicly available information about someone with a GitHub account.<br/>

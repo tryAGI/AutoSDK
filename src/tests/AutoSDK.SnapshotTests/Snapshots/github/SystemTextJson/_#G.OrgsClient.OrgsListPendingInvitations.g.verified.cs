@@ -30,6 +30,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List pending organization invitations<br/>
         /// The return hash contains a `role` field which refers to the Organization<br/>

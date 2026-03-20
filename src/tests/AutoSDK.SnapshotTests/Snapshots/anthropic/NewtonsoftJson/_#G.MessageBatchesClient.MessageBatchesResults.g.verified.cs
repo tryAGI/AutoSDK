@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Retrieve Message Batch results<br/>
         /// Streams the results of a Message Batch as a `.jsonl` file.<br/>

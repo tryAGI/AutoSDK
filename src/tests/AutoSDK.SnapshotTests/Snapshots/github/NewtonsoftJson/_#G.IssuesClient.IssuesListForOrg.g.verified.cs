@@ -38,6 +38,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List organization issues assigned to the authenticated user<br/>
         /// List issues in an organization assigned to the authenticated user.<br/>

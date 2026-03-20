@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Sentiment
     /// </summary>
     public enum Sentiment
     {

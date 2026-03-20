@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IApi
     {
+
         /// <summary>
         /// Logs Query<br/>
         /// Query inference logs.<br/>

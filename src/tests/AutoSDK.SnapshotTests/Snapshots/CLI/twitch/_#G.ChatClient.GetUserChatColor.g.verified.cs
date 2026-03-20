@@ -22,6 +22,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Gets the color used for the user’s name in chat.<br/>
         /// Gets the color used for the user’s name in chat.<br/>

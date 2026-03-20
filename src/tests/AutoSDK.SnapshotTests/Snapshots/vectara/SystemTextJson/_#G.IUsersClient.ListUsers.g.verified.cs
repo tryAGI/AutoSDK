@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUsersClient
     {
+
         /// <summary>
         /// List users in the account<br/>
         /// The List Users API lets you list all users on your team and also their corpus access and customer-level authorizations.<br/>

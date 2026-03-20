@@ -22,6 +22,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get a GPG key for the authenticated user<br/>
         /// View extended details for a single GPG key.<br/>

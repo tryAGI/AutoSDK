@@ -5,12 +5,14 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Update an organization repository ruleset<br/>
         /// Update a ruleset for an organization.
         /// </summary>
         /// <param name="org"></param>
         /// <param name="rulesetId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

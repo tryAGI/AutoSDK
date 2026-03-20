@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Get all custom property values for a repository<br/>
         /// Gets all custom property values that are set for a repository.<br/>

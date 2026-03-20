@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IStudioClient
     {
+
         /// <summary>
         /// Get Chapter<br/>
         /// Returns information about a specific chapter.

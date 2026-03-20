@@ -19,6 +19,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Removes the specified user as a VIP in the broadcaster’s channel.<br/>
         /// Removes the specified user as a VIP in the broadcaster’s channel.<br/>

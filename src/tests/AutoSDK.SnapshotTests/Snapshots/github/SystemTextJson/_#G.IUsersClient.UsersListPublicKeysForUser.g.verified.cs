@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUsersClient
     {
+
         /// <summary>
         /// List public keys for a user<br/>
         /// Lists the _verified_ public SSH keys for a user. This is accessible by anyone.

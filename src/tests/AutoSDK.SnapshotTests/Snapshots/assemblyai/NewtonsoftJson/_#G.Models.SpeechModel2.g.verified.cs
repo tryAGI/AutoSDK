@@ -11,12 +11,12 @@ namespace G
     public enum SpeechModel2
     {
         /// <summary>
-        /// 
+        /// The best model optimized for accuracy.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="best")]
         Best,
         /// <summary>
-        /// 
+        /// A lightweight, lower cost model for a wide range of languages.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="nano")]
         Nano,

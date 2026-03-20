@@ -300,7 +300,7 @@ public static class Data
                             {
                                 CSharpTypeRaw = ClientNameGenerator.Generate(tag),
                             },
-                            Summary = tag.Description?.ClearForXml() ?? string.Empty,
+                            Summary = (!string.IsNullOrWhiteSpace(tag.DisplayName) ? tag.DisplayName : tag.Description)?.ClearForXml() ?? string.Empty,
                         })
                     ]
                     : [],
@@ -318,7 +318,7 @@ public static class Data
                         ClassName: ClientNameGenerator.Generate(tag),
                         BaseUrl: openApiDocument.Servers!.FirstOrDefault()?.Url ?? string.Empty,
                         Clients: [],
-                        Summary: tag.Description?.ClearForXml() ?? string.Empty,
+                        Summary: (!string.IsNullOrWhiteSpace(tag.DisplayName) ? tag.DisplayName : tag.Description)?.ClearForXml() ?? string.Empty,
                         BaseUrlSummary: openApiDocument.Servers!.FirstOrDefault()?.Description?.ClearForXml() ?? string.Empty,
                         Settings: settings,
                         GlobalSettings: globalSettings,

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISingleClient
     {
+
         /// <summary>
         /// Returns a postal for the selected IP.<br/>
         /// Returns a postal for the selected IP.

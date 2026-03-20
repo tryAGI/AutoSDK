@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISchemaClient
     {
+
         /// <summary>
         /// Get the shard status<br/>
         /// Get the status of every shard in the cluster.

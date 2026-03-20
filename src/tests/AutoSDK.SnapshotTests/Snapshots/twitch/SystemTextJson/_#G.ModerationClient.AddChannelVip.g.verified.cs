@@ -19,6 +19,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Adds the specified user as a VIP in the broadcaster’s channel.<br/>
         /// Adds the specified user as a VIP in the broadcaster’s channel.<br/>

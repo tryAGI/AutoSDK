@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICloudClient
     {
+
         /// <summary>
         /// Get Accelerator Availability
         /// </summary>

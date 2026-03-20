@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IVdpClient
     {
+
         /// <summary>
         /// Delete a connection<br/>
         /// Deletes a connection.

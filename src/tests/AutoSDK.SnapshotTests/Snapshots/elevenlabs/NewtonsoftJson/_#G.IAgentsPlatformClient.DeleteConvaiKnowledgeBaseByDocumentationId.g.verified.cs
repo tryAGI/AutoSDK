@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
+
         /// <summary>
         /// Delete Knowledge Base Document Or Folder<br/>
         /// Delete a document or folder from the knowledge base.

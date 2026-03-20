@@ -20,6 +20,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get Top Blog Posts<br/>
         /// Returns the top blog posts from the Dedoose blog.

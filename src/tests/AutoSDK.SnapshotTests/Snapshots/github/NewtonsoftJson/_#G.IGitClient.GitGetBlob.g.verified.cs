@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IGitClient
     {
+
         /// <summary>
         /// Get a blob<br/>
         /// The `content` in the response will always be Base64 encoded.<br/>

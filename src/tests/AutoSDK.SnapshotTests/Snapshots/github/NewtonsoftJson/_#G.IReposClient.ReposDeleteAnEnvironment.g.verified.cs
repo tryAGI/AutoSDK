@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IReposClient
     {
+
         /// <summary>
         /// Delete an environment<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.

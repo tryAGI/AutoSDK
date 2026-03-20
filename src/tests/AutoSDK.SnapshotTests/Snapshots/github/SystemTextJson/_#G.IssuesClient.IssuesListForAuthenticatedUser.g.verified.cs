@@ -36,6 +36,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List user account issues assigned to the authenticated user<br/>
         /// List issues across owned and member repositories assigned to the authenticated user.<br/>

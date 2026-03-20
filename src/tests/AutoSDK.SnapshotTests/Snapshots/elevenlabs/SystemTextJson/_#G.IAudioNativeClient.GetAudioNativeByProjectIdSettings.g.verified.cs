@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAudioNativeClient
     {
+
         /// <summary>
         /// Get Audio Native Project Settings<br/>
         /// Get player settings for the specific project.

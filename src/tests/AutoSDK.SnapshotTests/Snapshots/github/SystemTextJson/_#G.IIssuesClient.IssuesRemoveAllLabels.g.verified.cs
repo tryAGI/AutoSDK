@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IIssuesClient
     {
+
         /// <summary>
         /// Remove all labels from an issue<br/>
         /// Removes all labels from an issue.

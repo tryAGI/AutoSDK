@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IMetricsClient
     {
+
         /// <summary>
         /// List pipeline trigger time charts<br/>
         /// Returns a timeline of pipline trigger counts for the pipelines of a given<br/>

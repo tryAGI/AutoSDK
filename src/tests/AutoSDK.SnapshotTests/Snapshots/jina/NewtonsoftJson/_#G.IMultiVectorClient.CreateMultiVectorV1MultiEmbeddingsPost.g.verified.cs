@@ -5,13 +5,16 @@ namespace G
 {
     public partial interface IMultiVectorClient
     {
+
         /// <summary>
         /// Create Multi Vector<br/>
         /// Create multiple vector representations of the given input texts. One vector representation for each token in the input text.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
+
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.ColbertModelEmbeddingsOutput> CreateMultiVectorV1MultiEmbeddingsPostAsync(
 
@@ -42,6 +45,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
+
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.ColbertModelEmbeddingsOutput> CreateMultiVectorV1MultiEmbeddingsPostAsync(
             string model,

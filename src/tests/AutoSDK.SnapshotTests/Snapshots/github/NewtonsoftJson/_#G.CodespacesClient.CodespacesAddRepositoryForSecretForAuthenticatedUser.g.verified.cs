@@ -19,6 +19,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Add a selected repository to a user secret<br/>
         /// Adds a repository to the selected repositories for a user's development environment secret.<br/>

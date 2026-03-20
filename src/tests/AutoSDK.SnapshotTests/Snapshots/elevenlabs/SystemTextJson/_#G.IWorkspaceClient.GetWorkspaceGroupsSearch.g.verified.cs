@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IWorkspaceClient
     {
+
         /// <summary>
         /// Search User Groups<br/>
         /// Searches for user groups in the workspace. Multiple or no groups may be returned.

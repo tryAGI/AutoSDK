@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// Delete an organization variable<br/>
         /// Deletes an organization variable using the variable name.<br/>

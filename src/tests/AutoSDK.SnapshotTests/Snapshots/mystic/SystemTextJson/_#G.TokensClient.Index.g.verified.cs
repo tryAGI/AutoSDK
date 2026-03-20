@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Index<br/>
         /// Retrieve a Catalyst API Bearer token for an authenticated user.

@@ -22,6 +22,7 @@ namespace petstore
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Info for a specific pet
         /// </summary>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ITeamsClient
     {
+
         /// <summary>
         /// List team members<br/>
         /// Team members will include the members of child teams.<br/>

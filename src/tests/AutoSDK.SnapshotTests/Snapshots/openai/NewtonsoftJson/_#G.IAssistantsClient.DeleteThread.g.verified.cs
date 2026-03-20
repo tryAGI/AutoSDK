@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAssistantsClient
     {
+
         /// <summary>
         /// Delete a thread.
         /// </summary>

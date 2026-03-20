@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IDubbingClient
     {
+
         /// <summary>
         /// Retrieve A Transcript<br/>
         /// Fetch the transcript for one of the languages in a dub.

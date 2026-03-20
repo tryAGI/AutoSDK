@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICompletionClient
     {
+
         /// <summary>
         /// Custom j2-ultra complete
         /// </summary>
@@ -15,6 +16,7 @@ namespace G
         /// <param name="requestStartTime">
         /// Default Value: 1730898830008L
         /// </param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

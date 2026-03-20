@@ -5,12 +5,14 @@ namespace G
 {
     public partial interface IAppClient
     {
+
         /// <summary>
         /// Update a app info<br/>
         /// Updates the information of an app.
         /// </summary>
         /// <param name="namespaceId"></param>
         /// <param name="appId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

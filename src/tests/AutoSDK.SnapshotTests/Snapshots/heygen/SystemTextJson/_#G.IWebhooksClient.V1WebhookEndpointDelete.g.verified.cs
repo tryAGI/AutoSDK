@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IWebhooksClient
     {
+
         /// <summary>
         /// v1/webhook/endpoint.delete<br/>
         /// v1/webhook/endpoint.delete

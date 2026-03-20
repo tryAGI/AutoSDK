@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IIndexClient
     {
+
         /// <summary>
         /// Replace the document metadata.<br/>
         /// Replaces metadata of a document identified by its unique `document_id` from a specific corpus.
@@ -16,6 +17,7 @@ namespace G
         /// Example: my-corpus
         /// </param>
         /// <param name="documentId"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

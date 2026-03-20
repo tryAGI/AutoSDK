@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IModerationClient
     {
+
         /// <summary>
         /// Adds a moderator to the broadcaster’s chat room.<br/>
         /// Adds a moderator to the broadcaster’s chat room.<br/>

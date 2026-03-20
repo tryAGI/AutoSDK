@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IModerationClient
     {
+
         /// <summary>
         /// NEW Gets a list of unban requests for a broadcaster’s channel.<br/>
         /// NEW Gets a list of unban requests for a broadcaster’s channel.<br/>

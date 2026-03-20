@@ -48,6 +48,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List code scanning alerts for a repository<br/>
         /// Lists code scanning alerts.<br/>

@@ -1,3 +1,4 @@
+using AutoSDK.Extensions;
 using AutoSDK.Naming.Methods;
 using Microsoft.OpenApi;
 
@@ -45,16 +46,45 @@ public class OperationContext(
                 .ToArray(),
             Tags = [..(operation.Tags ?? new HashSet<OpenApiTagReference>()).Select(tag => tag.Name).Where(name => name != null).Cast<string>()],
             GlobalSecurityRequirements = globalSecurityRequirements,
-            Tag = firstTag != null &&
-                  firstTag.Name != null &&
-                  resolvedTags?.TryGetValue(firstTag.Name, out var resolvedTag) == true
-                ? resolvedTag
-                : firstTag != null
-                    ? Tag.FromTag(firstTag, settings)
-                    : Tag.Empty,
+            Tag = GetOperationTag(operation, settings, firstTag, resolvedTags),
         };
         context.MethodName = context.GetMethodName();
-        
+
         return context;
+    }
+
+    private static Tag GetOperationTag(
+        OpenApiOperation operation,
+        Settings settings,
+        OpenApiTagReference? firstTag,
+        IReadOnlyDictionary<string, Tag>? resolvedTags)
+    {
+        // x-fern-sdk-group-name overrides the tag/group for this operation (opt-in via UseExtensionNaming)
+        if (settings.UseExtensionNaming &&
+            OpenApiExtensions.TryGetExtensionStringValue(
+                operation.Extensions, "x-fern-sdk-group-name", out var groupName) &&
+            !string.IsNullOrWhiteSpace(groupName))
+        {
+            // Check if there's already a resolved tag with this name
+            if (resolvedTags?.TryGetValue(groupName, out var existingTag) == true)
+            {
+                return existingTag;
+            }
+
+            // Create a new tag from the group name
+            return Tag.Create(groupName, settings);
+        }
+
+        // Default: use the first OpenAPI tag
+        if (firstTag != null &&
+            firstTag.Name != null &&
+            resolvedTags?.TryGetValue(firstTag.Name, out var resolvedTag) == true)
+        {
+            return resolvedTag;
+        }
+
+        return firstTag != null
+            ? Tag.FromTag(firstTag, settings)
+            : Tag.Empty;
     }
 }

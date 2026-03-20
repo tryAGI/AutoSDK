@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IDatasetsClient
     {
+
         /// <summary>
         /// Remove Index<br/>
         /// Remove an index for a dataset.

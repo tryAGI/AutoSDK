@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUsageClient
     {
+
         /// <summary>
         /// Get vector stores usage details for the organization.
         /// </summary>

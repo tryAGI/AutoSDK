@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ISecurityAdvisoriesClient
     {
+
         /// <summary>
         /// List repository security advisories<br/>
         /// Lists security advisories in a repository.<br/>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IDubbingClient
     {
+
         /// <summary>
         /// Get Dubbing<br/>
         /// Returns metadata about a dubbing project, including whether it's still in progress or not

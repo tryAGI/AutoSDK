@@ -16,8 +16,7 @@ namespace G
         /// <default>global::G.WebSearchPreviewToolType.WebSearchPreview</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebSearchPreviewToolTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebSearchPreviewToolType Type { get; set; } = global::G.WebSearchPreviewToolType.WebSearchPreview;
+        public global::G.WebSearchPreviewToolType Type { get; set; } = global::G.WebSearchPreviewToolType.WebSearchPreview;
 
         /// <summary>
         /// 
@@ -53,9 +52,9 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebSearchPreviewTool(
-            global::G.WebSearchPreviewToolType type,
             global::G.ApproximateLocation? userLocation,
-            global::G.WebSearchPreviewToolSearchContextSize? searchContextSize)
+            global::G.WebSearchPreviewToolSearchContextSize? searchContextSize,
+            global::G.WebSearchPreviewToolType type = global::G.WebSearchPreviewToolType.WebSearchPreview)
         {
             this.Type = type;
             this.UserLocation = userLocation;

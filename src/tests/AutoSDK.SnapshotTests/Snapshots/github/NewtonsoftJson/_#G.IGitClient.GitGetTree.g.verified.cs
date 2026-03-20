@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IGitClient
     {
+
         /// <summary>
         /// Get a tree<br/>
         /// Returns a single tree using the SHA1 value or ref name for that tree.<br/>

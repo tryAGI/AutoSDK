@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IFineTuningClient
     {
+
         /// <summary>
         /// List checkpoints for a fine-tuning job.
         /// </summary>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IRunsClient
     {
+
         /// <summary>
         /// Retrieve Detailed<br/>
         /// Retrieve a more detailed version of a run.

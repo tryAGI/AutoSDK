@@ -30,6 +30,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List repositories starred by a user<br/>
         /// Lists repositories a user has starred.<br/>

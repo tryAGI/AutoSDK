@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Retrieve Avg Cost<br/>
         /// Retrieve a pipeline's average cost per run over the past 1000 runs.

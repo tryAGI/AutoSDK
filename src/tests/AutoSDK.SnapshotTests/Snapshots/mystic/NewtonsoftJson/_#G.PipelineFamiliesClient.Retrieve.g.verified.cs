@@ -22,6 +22,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Retrieve<br/>
         /// Retrieve a pipeline family by name with its latest pipeline.<br/>

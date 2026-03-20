@@ -26,6 +26,7 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get a webhook delivery for an organization webhook<br/>
         /// Returns a delivery for a webhook configured in an organization.<br/>

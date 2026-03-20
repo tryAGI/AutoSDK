@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IAdminClient
     {
+
         /// <summary>
         /// GetSignupSegments<br/>
         /// GetSignupSegments

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IModerationClient
     {
+
         /// <summary>
         /// NEW Resolves an unban request by approving or denying it.<br/>
         /// NEW Resolves an unban request by approving or denying it.<br/>

@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IEventSubClient
     {
+
         /// <summary>
         /// Deletes an EventSub subscription.<br/>
         /// Deletes an EventSub subscription.<br/>

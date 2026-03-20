@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IPullsClient
     {
+
         /// <summary>
         /// Delete a pending review for a pull request<br/>
         /// Deletes a pull request review that has not been submitted. Submitted reviews cannot be deleted.<br/>

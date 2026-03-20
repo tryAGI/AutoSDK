@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICodeScanningClient
     {
+
         /// <summary>
         /// List code scanning alerts for a repository<br/>
         /// Lists code scanning alerts.<br/>

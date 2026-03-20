@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface ICopilotClient
     {
+
         /// <summary>
         /// Add teams to the Copilot subscription for an organization<br/>
         /// &gt; [!NOTE]<br/>
@@ -19,6 +20,7 @@ namespace G
         /// OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `admin:org` scopes to use this endpoint.
         /// </summary>
         /// <param name="org"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

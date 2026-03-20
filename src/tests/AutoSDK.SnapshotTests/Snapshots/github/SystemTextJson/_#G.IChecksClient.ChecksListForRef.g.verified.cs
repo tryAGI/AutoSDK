@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IChecksClient
     {
+
         /// <summary>
         /// List check runs for a Git reference<br/>
         /// Lists check runs for a commit ref. The `ref` can be a SHA, branch name, or a tag name.<br/>

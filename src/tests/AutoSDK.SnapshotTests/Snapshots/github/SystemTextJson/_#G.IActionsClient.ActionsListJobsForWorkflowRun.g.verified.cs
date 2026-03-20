@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IActionsClient
     {
+
         /// <summary>
         /// List jobs for a workflow run<br/>
         /// Lists jobs for a workflow run. You can use parameters to narrow the list of results. For more information<br/>

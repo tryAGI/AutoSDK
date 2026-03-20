@@ -5,6 +5,7 @@ namespace G
 {
     public partial interface IUsersClient
     {
+
         /// <summary>
         /// Get a user<br/>
         /// Provides publicly available information about someone with a GitHub account.<br/>
