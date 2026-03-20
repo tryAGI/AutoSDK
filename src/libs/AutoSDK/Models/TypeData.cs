@@ -101,32 +101,30 @@ public record struct TypeData(
         var properties = ImmutableArray<string>.Empty;
         if (context.Schema.ResolveIfRequired() is { } referenceSchema)
         {
-            properties = (referenceSchema.Properties ?? new Dictionary<string, IOpenApiSchema>())
-                .Select(x => x.Key)
-                .ToImmutableArray();
+            var props = referenceSchema.Properties ?? new Dictionary<string, IOpenApiSchema>();
+            if (props.Count > 0)
+            {
+                var builder = ImmutableArray.CreateBuilder<string>(props.Count);
+                foreach (var kvp in props)
+                {
+                    builder.Add(kvp.Key);
+                }
+                properties = builder.MoveToImmutable();
+            }
         }
 
         var subTypes = ImmutableArray<TypeData>.Empty;
         if (context.Schema.IsAnyOf())
         {
-            subTypes = context.Children
-                .Where(x => x is { Hint: Hint.AnyOf } && x.TypeData != Default)
-                .Select(x => x.TypeData)
-                .ToImmutableArray();
+            subTypes = CollectChildTypeData(context.Children, Hint.AnyOf);
         }
         else if (context.Schema.IsOneOf())
         {
-            subTypes = context.Children
-                .Where(x => x is { Hint: Hint.OneOf } && x.TypeData != Default)
-                .Select(x => x.TypeData)
-                .ToImmutableArray();
+            subTypes = CollectChildTypeData(context.Children, Hint.OneOf);
         }
         else if (context.Schema.IsAllOf())
         {
-            subTypes = context.Children
-                .Where(x => x is { Hint: Hint.AllOf } && x.TypeData != Default)
-                .Select(x => x.TypeData)
-                .ToImmutableArray();
+            subTypes = CollectChildTypeData(context.Children, Hint.AllOf);
         }
         if (context.Schema.IsArray())
         {
@@ -157,15 +155,30 @@ public record struct TypeData(
                 .Select(value => ((JsonNode?)value).ToEnumValue(
                     description: context.Parameter?.Description ?? context.Schema.Description ?? string.Empty,
                     context.Settings)).ToArray();
-            properties = values
-                .Select(x => x.Name)
-                .ToImmutableArray();
-            enumValues = values
-                .Select(x => x.Id)
-                .ToImmutableArray();
+            var nameBuilder = ImmutableArray.CreateBuilder<string>(values.Length);
+            var idBuilder = ImmutableArray.CreateBuilder<string>(values.Length);
+            foreach (var v in values)
+            {
+                nameBuilder.Add(v.Name);
+                idBuilder.Add(v.Id);
+            }
+            properties = nameBuilder.MoveToImmutable();
+            enumValues = idBuilder.MoveToImmutable();
         }
 
         var type = GetCSharpType(context);
+
+        // Build boxed SubTypes without intermediate LINQ allocation
+        var boxedSubTypes = ImmutableArray<Box>.Empty;
+        if (!subTypes.IsEmpty)
+        {
+            var boxBuilder = ImmutableArray.CreateBuilder<Box>(subTypes.Length);
+            foreach (var s in subTypes)
+            {
+                boxBuilder.Add(s.Box());
+            }
+            boxedSubTypes = boxBuilder.MoveToImmutable();
+        }
 
         return new TypeData(
             CSharpTypeRaw: type,
@@ -194,12 +207,45 @@ public record struct TypeData(
             HasDiscriminator: context.Schema.Discriminator != null,
             Properties: properties,
             EnumValues: enumValues,
-            SubTypes: subTypes.Select(s => s.Box()).ToImmutableArray(),
+            SubTypes: boxedSubTypes,
             Namespace: type.StartsWith("global::System.", StringComparison.Ordinal)
                 ? "System"
                 : context.Settings.Namespace,
             IsDeprecated: context.Schema.IsDeprecated(),
             Settings: context.Settings);
+    }
+
+    /// <summary>
+    /// Collects TypeData from children matching a specific hint, avoiding LINQ allocations.
+    /// </summary>
+    private static ImmutableArray<TypeData> CollectChildTypeData(IList<SchemaContext> children, Hint hint)
+    {
+        // Count matching children first to pre-allocate exactly
+        var count = 0;
+        for (var i = 0; i < children.Count; i++)
+        {
+            var child = children[i];
+            if (child.Hint == hint && child.TypeData != Default)
+            {
+                count++;
+            }
+        }
+
+        if (count == 0)
+        {
+            return ImmutableArray<TypeData>.Empty;
+        }
+
+        var builder = ImmutableArray.CreateBuilder<TypeData>(count);
+        for (var i = 0; i < children.Count; i++)
+        {
+            var child = children[i];
+            if (child.Hint == hint && child.TypeData != Default)
+            {
+                builder.Add(child.TypeData);
+            }
+        }
+        return builder.MoveToImmutable();
     }
 
     public static bool ContextIsValueType(SchemaContext context)
