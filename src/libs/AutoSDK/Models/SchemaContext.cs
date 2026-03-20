@@ -421,7 +421,7 @@ public class SchemaContext(
             return false;
         }
 
-        visited ??= [];
+        visited ??= new HashSet<SchemaContext>();
         if (!visited.Add(this))
         {
             return false;
@@ -552,7 +552,7 @@ public class SchemaContext(
             return;
         }
 
-        visited ??= [];
+        visited ??= new HashSet<SchemaContext>();
         if (!visited.Add(this))
         {
             return;

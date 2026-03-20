@@ -17,6 +17,9 @@ public static class Data
         CancellationToken cancellationToken = default)
     {
         var totalTime = Stopwatch.StartNew();
+#if NET
+        var allocBefore = GC.GetTotalAllocatedBytes(precise: true);
+#endif
         var traversalTreeTime = Stopwatch.StartNew();
         
         var ((text, settings), globalSettings) = tuple;
@@ -32,7 +35,10 @@ public static class Data
         var schemas = openApiDocument.GetSchemas(settings);
         
         traversalTreeTime.Stop();
-        
+#if NET
+        var allocAfterTree = GC.GetTotalAllocatedBytes(precise: true);
+#endif
+
         var namingTime = Stopwatch.StartNew();
 
         foreach (var schema in schemas.Where(x => x.IsModel))
@@ -43,7 +49,10 @@ public static class Data
         ModelNameGenerator.ResolveCollisions(schemas);
         
         namingTime.Stop();
-        
+#if NET
+        var allocAfterNaming = GC.GetTotalAllocatedBytes(precise: true);
+#endif
+
         var resolveReferencesTime = Stopwatch.StartNew();
         
         var componentSchemas = schemas
@@ -85,7 +94,10 @@ public static class Data
         DetectCycles(schemas);
 
         resolveReferencesTime.Stop();
-        
+#if NET
+        var allocAfterResolve = GC.GetTotalAllocatedBytes(precise: true);
+#endif
+
         var filteringTime = Stopwatch.StartNew();
 
         var includedOperationIds = new HashSet<string>(settings.IncludeOperationIds);
@@ -142,13 +154,16 @@ public static class Data
         var maxDepth = schemas.Count == 0
             ? 20
             : schemas.Max(x => x.Depth);
+        var tagsVisited = new HashSet<SchemaContext>();
         foreach (var context in schemas.Where(x => x.Operation != null))
         {
-            context.ComputeTags(maxDepth: maxDepth);
+            tagsVisited.Clear();
+            context.ComputeTags(maxDepth: maxDepth, visited: tagsVisited);
         }
         foreach (var context in schemas)
         {
-            context.ComputeTags(maxDepth: maxDepth);
+            tagsVisited.Clear();
+            context.ComputeTags(maxDepth: maxDepth, visited: tagsVisited);
         }
         
         var includedModels = new HashSet<string>(settings.IncludeModels);
@@ -181,12 +196,17 @@ public static class Data
             .ToArray();
         
         filteringTime.Stop();
-        
+#if NET
+        var allocAfterFilter = GC.GetTotalAllocatedBytes(precise: true);
+#endif
+
         var computeDataTime = Stopwatch.StartNew();
 
+        var sharedVisited = new HashSet<SchemaContext>();
         foreach (var schema in filteredSchemas)
         {
-            schema.ComputeData();
+            sharedVisited.Clear();
+            schema.ComputeData(visited: sharedVisited);
         }
 
         // Second pass: recompute only schemas involved in circular references.
@@ -199,7 +219,10 @@ public static class Data
         }
 
         computeDataTime.Stop();
-        
+#if NET
+        var allocAfterData = GC.GetTotalAllocatedBytes(precise: true);
+#endif
+
         var computeDataClassesTime = Stopwatch.StartNew();
         
         var classes = filteredSchemas
@@ -389,6 +412,11 @@ public static class Data
             })
             .ToImmutableArray();
         
+        computeDataClassesTime.Stop();
+#if NET
+        var allocAfterClasses = GC.GetTotalAllocatedBytes(precise: true);
+#endif
+
         return new Models.Data(
             Classes: classes,
             Enums: enums,
@@ -420,6 +448,15 @@ public static class Data
                 ComputeData: computeDataTime.Elapsed,
                 ComputeDataClasses: computeDataClassesTime.Elapsed,
                 Total: totalTime.Elapsed
+#if NET
+                ,
+                AllocTraversalTree: allocAfterTree - allocBefore,
+                AllocNaming: allocAfterNaming - allocAfterTree,
+                AllocResolveReferences: allocAfterResolve - allocAfterNaming,
+                AllocFiltering: allocAfterFilter - allocAfterResolve,
+                AllocComputeData: allocAfterData - allocAfterFilter,
+                AllocComputeDataClasses: allocAfterClasses - allocAfterData
+#endif
                 )
             );
     }

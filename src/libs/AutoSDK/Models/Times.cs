@@ -7,5 +7,11 @@ public record struct Times(
     TimeSpan Filtering,
     TimeSpan ComputeData,
     TimeSpan ComputeDataClasses,
-    TimeSpan Total
+    TimeSpan Total,
+    long AllocTraversalTree = 0,
+    long AllocNaming = 0,
+    long AllocResolveReferences = 0,
+    long AllocFiltering = 0,
+    long AllocComputeData = 0,
+    long AllocComputeDataClasses = 0
 );

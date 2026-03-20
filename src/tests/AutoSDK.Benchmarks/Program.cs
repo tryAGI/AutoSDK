@@ -16,9 +16,12 @@ if (args.Length > 0 && args[0] == "--profile")
         ("ElevenLabs", benchmarks.ElevenLabs),
     };
 
+    // Timing header
     Console.WriteLine("{0,-14} {1,8} {2,8} {3,8} {4,8} {5,8} {6,8} {7,8}  {8,7}  {9,7}  {10,8}  {11,5}  {12,5}  {13,5}",
         "Spec", "Tree", "Naming", "Resolve", "Filter", "Data", "Classes", "Total", "Schemas", "Filtered", "AllocMB", "Gen0", "Gen1", "Gen2");
     Console.WriteLine(new string('-', 145));
+
+    var allData = new List<(string Name, AutoSDK.Models.Data Data, double AllocMB, int Gen0, int Gen1, int Gen2)>();
 
     foreach (var (name, run) in specs)
     {
@@ -39,6 +42,8 @@ if (args.Length > 0 && args[0] == "--profile")
         var gen1 = GC.CollectionCount(1) - gen1Before;
         var gen2 = GC.CollectionCount(2) - gen2Before;
 
+        allData.Add((name, data, allocMB, gen0, gen1, gen2));
+
         var t = data.Times;
         Console.WriteLine("{0,-14} {1,7:F0}ms {2,7:F0}ms {3,7:F0}ms {4,7:F0}ms {5,7:F0}ms {6,7:F0}ms {7,7:F0}ms  {8,7}  {9,7}  {10,7:F0}MB  {11,5}  {12,5}  {13,5}",
             name,
@@ -55,6 +60,25 @@ if (args.Length > 0 && args[0] == "--profile")
             gen0,
             gen1,
             gen2);
+    }
+
+    // Per-phase allocation breakdown
+    Console.WriteLine();
+    Console.WriteLine("Per-phase allocation (MB):");
+    Console.WriteLine("{0,-14} {1,10} {2,10} {3,10} {4,10} {5,10} {6,10}",
+        "Spec", "Tree", "Naming", "Resolve", "Filter", "Data", "Classes");
+    Console.WriteLine(new string('-', 80));
+    foreach (var (name, data, _, _, _, _) in allData)
+    {
+        var t = data.Times;
+        Console.WriteLine("{0,-14} {1,9:F1}M {2,9:F1}M {3,9:F1}M {4,9:F1}M {5,9:F1}M {6,9:F1}M",
+            name,
+            t.AllocTraversalTree / (1024.0 * 1024.0),
+            t.AllocNaming / (1024.0 * 1024.0),
+            t.AllocResolveReferences / (1024.0 * 1024.0),
+            t.AllocFiltering / (1024.0 * 1024.0),
+            t.AllocComputeData / (1024.0 * 1024.0),
+            t.AllocComputeDataClasses / (1024.0 * 1024.0));
     }
 }
 else
