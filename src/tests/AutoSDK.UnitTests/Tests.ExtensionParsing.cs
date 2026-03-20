@@ -753,4 +753,114 @@ public class ExtensionParsingTests
         data.Classes.Should().HaveCount(1);
         data.Classes[0].ClassName.Should().Be("ChatV2Response");
     }
+
+    [TestMethod]
+    public void XFernSdkGroupName_EmptyTagsFilteredFromResolvedTags()
+    {
+        // When x-fern-sdk-group-name reassigns ALL operations away from their original tag,
+        // that original tag should be excluded from the resolved tags list.
+        const string json = """
+                            {
+                              "openapi": "3.0.1",
+                              "info": { "title": "Test", "version": "1.0.0" },
+                              "tags": [
+                                { "name": "OriginalTag" },
+                                { "name": "OtherTag" }
+                              ],
+                              "paths": {
+                                "/files/upload": {
+                                  "post": {
+                                    "operationId": "uploadFile",
+                                    "x-fern-sdk-group-name": "files",
+                                    "tags": ["OriginalTag"],
+                                    "responses": {
+                                      "200": { "description": "OK" }
+                                    }
+                                  }
+                                },
+                                "/other": {
+                                  "get": {
+                                    "operationId": "getOther",
+                                    "tags": ["OtherTag"],
+                                    "responses": {
+                                      "200": { "description": "OK" }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateSdk = true,
+            GroupByTags = true,
+            UseExtensionNaming = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((json, settings), GlobalSettings: settings));
+
+        // OriginalTag lost its only method to x-fern-sdk-group-name: "files",
+        // so it should be excluded from Tags (no empty sub-client generated).
+        data.Tags.Select(t => t.SafeName).Should().NotContain("OriginalTag");
+        // The ad-hoc "files" tag and "OtherTag" should remain (they have methods).
+        data.Tags.Select(t => t.SafeName).Should().Contain("Files");
+        data.Tags.Select(t => t.SafeName).Should().Contain("OtherTag");
+    }
+
+    [TestMethod]
+    public void CliCommandClassName_IncludesTagPrefix_WhenGrouped()
+    {
+        // When multiple groups have methods with the same name (e.g. "create"),
+        // CliCommandClassName includes the tag prefix to avoid collisions.
+        const string json = """
+                            {
+                              "openapi": "3.0.1",
+                              "info": { "title": "Test", "version": "1.0.0" },
+                              "paths": {
+                                "/datasets": {
+                                  "post": {
+                                    "operationId": "createDataset",
+                                    "x-fern-sdk-group-name": "datasets",
+                                    "x-fern-sdk-method-name": "create",
+                                    "tags": ["Data"],
+                                    "responses": {
+                                      "200": { "description": "OK" }
+                                    }
+                                  }
+                                },
+                                "/connectors": {
+                                  "post": {
+                                    "operationId": "createConnector",
+                                    "x-fern-sdk-group-name": "connectors",
+                                    "x-fern-sdk-method-name": "create",
+                                    "tags": ["Data"],
+                                    "responses": {
+                                      "200": { "description": "OK" }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateSdk = true,
+            GroupByTags = true,
+            UseExtensionNaming = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((json, settings), GlobalSettings: settings));
+
+        data.Methods.Should().HaveCount(2);
+        var cliNames = data.Methods.Select(m => m.CliCommandClassName).ToArray();
+        // Both methods are named "Create" but in different groups,
+        // so CliCommandClassName should include the tag prefix.
+        cliNames.Should().OnlyHaveUniqueItems();
+        cliNames.Should().Contain("DatasetsCreateCommand");
+        // Second "create" method gets a "2" suffix from collision resolution,
+        // then tag prefix makes it unique across groups.
+        cliNames.Should().Contain("ConnectorsCreate2Command");
+    }
 }

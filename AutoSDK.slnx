@@ -55,6 +55,7 @@
     <File Path=".github/workflows/pull-request.yml" />
   </Folder>
   <Folder Name="/tests/">
+    <Project Path="src/tests/AutoSDK.Benchmarks/AutoSDK.Benchmarks.csproj" />
     <Project Path="src/tests/AutoSDK.IntegrationTests.Cli/AutoSDK.IntegrationTests.Cli.csproj" />
     <Project Path="src/tests/AutoSDK.SnapshotTests/AutoSDK.SnapshotTests.csproj" />
     <Project Path="src/tests/AutoSDK.UnitTests/AutoSDK.UnitTests.csproj" />
