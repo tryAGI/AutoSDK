@@ -68,22 +68,36 @@ public class SchemaContext(
     public bool IsClass =>
         Type == "class" ||
         IsDerivedClass;// || ResolvedReference?.IsClass == true;
-    //public ModelData? ClassData { get; set; }
-    public ModelData? ClassData => IsClass
-        ? //IsReference
-            //? ModelData.FromSchemaContext(ResolvedReference!)
-            //:
-            ModelData.FromSchemaContext(this)
-        : null;
-    
+    private ModelData? _classData;
+    private bool _classDataComputed;
+    public ModelData? ClassData
+    {
+        get
+        {
+            if (!_classDataComputed)
+            {
+                _classData = IsClass ? ModelData.FromSchemaContext(this) : null;
+                _classDataComputed = true;
+            }
+            return _classData;
+        }
+    }
+
     public bool IsEnum => Type == "enum";// || ResolvedReference?.IsEnum == true;
-    //public ModelData? EnumData { get; set; }
-    public ModelData? EnumData => IsEnum
-         ? //IsReference
-             //? ModelData.FromSchemaContext(ResolvedReference!)
-             //:
-             ModelData.FromSchemaContext(this)
-         : null;
+    private ModelData? _enumData;
+    private bool _enumDataComputed;
+    public ModelData? EnumData
+    {
+        get
+        {
+            if (!_enumDataComputed)
+            {
+                _enumData = IsEnum ? ModelData.FromSchemaContext(this) : null;
+                _enumDataComputed = true;
+            }
+            return _enumData;
+        }
+    }
     public string? ClassName { get; set; }
     
     public AnyOfData? AnyOfData { get; set; }

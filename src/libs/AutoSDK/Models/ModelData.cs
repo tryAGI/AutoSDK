@@ -29,23 +29,58 @@ public record struct ModelData(
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
 
-        var parents = new List<ModelData>();
+        // Collect parents without LINQ — walk up the tree
+        var parentCount = 0;
         var parent = context.Parent;
         while (parent != null)
         {
             if (parent.ClassData.HasValue)
             {
-                parents.Add(parent.ClassData!.Value);
+                parentCount++;
             }
             parent = parent.Parent;
         }
 
-        parents.Reverse();
+        var boxedParents = ImmutableArray<Box>.Empty;
+        if (parentCount > 0)
+        {
+            var builder = ImmutableArray.CreateBuilder<Box>(parentCount);
+            // Walk again — fill from end to start for correct order
+            var parentArray = new ModelData[parentCount];
+            var idx = parentCount - 1;
+            parent = context.Parent;
+            while (parent != null)
+            {
+                if (parent.ClassData.HasValue)
+                {
+                    parentArray[idx--] = parent.ClassData!.Value;
+                }
+                parent = parent.Parent;
+            }
+            foreach (var p in parentArray)
+            {
+                builder.Add(p.Box());
+            }
+            boxedParents = builder.MoveToImmutable();
+        }
+
+        // Build DerivedTypes without LINQ
+        var mapping = context.Schema.Discriminator?.Mapping;
+        EquatableArray<(string ClassName, string Discriminator)> derivedTypes = default;
+        if (mapping is { Count: > 0 })
+        {
+            var dtBuilder = ImmutableArray.CreateBuilder<(string ClassName, string Discriminator)>(mapping.Count);
+            foreach (var kvp in mapping)
+            {
+                dtBuilder.Add((ClassName: kvp.Value.Reference?.Id ?? string.Empty, Discriminator: kvp.Key));
+            }
+            derivedTypes = dtBuilder.MoveToImmutable().AsEquatableArray();
+        }
 
         return new ModelData(
             SchemaContext: context,
             Id: context.Id,
-            Parents: parents.Select(p => p.Box()).ToImmutableArray(),
+            Parents: boxedParents,
             Namespace: context.Settings.Namespace,
             Style: context.Schema.IsEnum() ? ModelStyle.Enumeration : context.Settings.ModelStyle,
             Settings: context.Settings,
@@ -63,39 +98,46 @@ public record struct ModelData(
             IsBaseClass: context.IsBaseClass,
             IsDerivedClass: context.IsDerivedClass,
             DiscriminatorPropertyName: context.Schema.Discriminator?.PropertyName ?? string.Empty,
-            DerivedTypes: context.Schema.Discriminator?.Mapping?
-                // Old Code for Microsoft.OpenApi 1.x
-                //.Select(x => (ClassName: x.Value.Replace("#/components/schemas/", string.Empty), Discriminator: x.Key))
-                .Select(x => (ClassName: x.Value.Reference?.Id ?? string.Empty, Discriminator: x.Key))
-                .ToImmutableArray() ?? []
+            DerivedTypes: derivedTypes
             );
     }
 
     private static ImmutableArray<PropertyData> GetVisibleProperties(SchemaContext context)
     {
-        var properties = context.IsDerivedClass
+        var source = context.IsDerivedClass
             ? context.DerivedClassContext.Children
-                .Where(x => x is { IsProperty: true, PropertyData: not null })
-                .SelectMany(x => x.ComputedProperties)
-                .ToImmutableArray()
             : !context.Schema.IsEnum()
                 ? context.Children
-                    .Where(x => x is { IsProperty: true, PropertyData: not null })
-                    .SelectMany(x => x.ComputedProperties)
-                    .ToImmutableArray()
-                : [];
+                : null;
+
+        if (source == null || source.Count == 0)
+        {
+            return [];
+        }
 
         var discriminatorPropertyName = context.IsBaseClass
             ? context.Schema.Discriminator?.PropertyName
             : null;
-        if (string.IsNullOrWhiteSpace(discriminatorPropertyName))
+        var hasDiscriminator = !string.IsNullOrWhiteSpace(discriminatorPropertyName);
+
+        var builder = ImmutableArray.CreateBuilder<PropertyData>();
+        for (var i = 0; i < source.Count; i++)
         {
-            return properties;
+            var child = source[i];
+            if (child is not { IsProperty: true, PropertyData: not null })
+            {
+                continue;
+            }
+            foreach (var prop in child.ComputedProperties)
+            {
+                if (!hasDiscriminator || prop.Id != discriminatorPropertyName)
+                {
+                    builder.Add(prop);
+                }
+            }
         }
 
-        return properties
-            .Where(x => x.Id != discriminatorPropertyName)
-            .ToImmutableArray();
+        return builder.ToImmutable();
     }
 
     public string ClassName => Id;// Settings.NamingConvention switch

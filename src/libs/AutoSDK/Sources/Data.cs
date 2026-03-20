@@ -225,25 +225,38 @@ public static class Data
 
         var computeDataClassesTime = Stopwatch.StartNew();
         
-        var classes = filteredSchemas
-            .Where(x => x is { IsReference: false, IsAnyOfLikeStructure: false })
-            .Select(x => x.ClassData)
-            .Where(x => x is not null)
-            .Select(x => x!.Value)
-            .ToImmutableArray();
-        var enums = filteredSchemas
-            .Where(x => x is { IsReference: false, IsAnyOfLikeStructure: false })
-            .Select(x => x.EnumData)
-            .Where(x => x is not null)
-            .Select(x => x!.Value)
-            .ToImmutableArray();
-        var anyOfDatas = filteredSchemas
-            .Where(x => x is { IsReference: false, IsAnyOfLikeStructure: true })
-            .Select(x => x.AnyOfData)
-            .Where(x => x is not null)
-            .Select(x => x!.Value)
-            .Distinct()
-            .ToImmutableArray();
+        var classesBuilder = ImmutableArray.CreateBuilder<ModelData>();
+        var enumsBuilder = ImmutableArray.CreateBuilder<ModelData>();
+        var anyOfSet = new HashSet<AnyOfData>();
+        var anyOfBuilder = ImmutableArray.CreateBuilder<AnyOfData>();
+        foreach (var schema in filteredSchemas)
+        {
+            if (schema.IsReference)
+            {
+                continue;
+            }
+            if (schema.IsAnyOfLikeStructure)
+            {
+                if (schema.AnyOfData is { } anyOf && anyOfSet.Add(anyOf))
+                {
+                    anyOfBuilder.Add(anyOf);
+                }
+            }
+            else
+            {
+                if (schema.ClassData is { } classData)
+                {
+                    classesBuilder.Add(classData);
+                }
+                if (schema.EnumData is { } enumData)
+                {
+                    enumsBuilder.Add(enumData);
+                }
+            }
+        }
+        var classes = classesBuilder.ToImmutable();
+        var enums = enumsBuilder.ToImmutable();
+        var anyOfDatas = anyOfBuilder.ToImmutable();
 
         var operations = openApiDocument.GetOperations(settings, globalSettings, filteredSchemas, resolvedTags);
         ModelNameGenerator.ResolveCollisions(operations);
