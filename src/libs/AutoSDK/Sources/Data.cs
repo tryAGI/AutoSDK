@@ -95,7 +95,8 @@ public static class Data
             excludedOperationIds.UnionWith(openApiDocument.FindAllOperationIdsForTag(tag));
         }
         
-        // Find all tags used in operations besides the ones defined in the document
+        // Find all tags used in operations besides the ones defined in the document.
+        // Also collect ad-hoc group names from x-fern-sdk-group-name extensions in a single pass.
         var allTags = openApiDocument.Tags!;
         foreach (var operation in (openApiDocument.Paths ?? new OpenApiPaths())
                      .SelectMany(x => x.Value.Operations ?? new Dictionary<System.Net.Http.HttpMethod, OpenApiOperation>())
@@ -111,23 +112,15 @@ public static class Data
                     allTags.Add(new OpenApiTag { Name = tag.Name, Description = tag.Description });
                 }
             }
-        }
 
-        // Also collect ad-hoc group names from x-fern-sdk-group-name extensions.
-        // These create new tags that need sub-client classes, just like regular tags.
-        if (settings.UseExtensionNaming)
-        {
-            foreach (var operation in (openApiDocument.Paths ?? new OpenApiPaths())
-                         .SelectMany(x => x.Value.Operations ?? new Dictionary<System.Net.Http.HttpMethod, OpenApiOperation>())
-                         .Select(x => x.Value))
+            // x-fern-sdk-group-name creates new tags that need sub-client classes, just like regular tags.
+            if (settings.UseExtensionNaming &&
+                OpenApiExtensions.TryGetExtensionStringValue(
+                    operation.Extensions, "x-fern-sdk-group-name", out var groupName) &&
+                !string.IsNullOrWhiteSpace(groupName) &&
+                allTags.All(x => x.Name != groupName))
             {
-                if (OpenApiExtensions.TryGetExtensionStringValue(
-                        operation.Extensions, "x-fern-sdk-group-name", out var groupName) &&
-                    !string.IsNullOrWhiteSpace(groupName) &&
-                    allTags.All(x => x.Name != groupName))
-                {
-                    allTags.Add(new OpenApiTag { Name = groupName });
-                }
+                allTags.Add(new OpenApiTag { Name = groupName });
             }
         }
 

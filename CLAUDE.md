@@ -121,9 +121,11 @@ AutoSDK recognizes vendor extensions (`x-*`) in OpenAPI specs to improve generat
 
 **Gated by `UseExtensionNaming`** (breaking: affects generated names/structure):
 - `x-fern-sdk-method-name`: Override method names
-- `x-fern-sdk-group-name`: Override client grouping (overrides tags)
+- `x-fern-sdk-group-name`: Override client grouping (overrides tags). Ad-hoc group names are pre-scanned from operations and added to `allTags` in a single pass (`Data.cs`), ensuring sub-client classes are generated. Tags with no assigned methods after reassignment are filtered out to prevent empty sub-clients.
 - `x-fern-type-name`: Override class/type names
 - `x-fern-ignore` / `x-hidden`: Skip endpoint/schema generation
+
+**CLI command naming**: `EndPoint.CliCommandClassName` includes a tag prefix (e.g., `ConnectorsCreateCommand`) to avoid class name collisions when multiple groups share the same method name. Used by `Sources.CLI.Command.cs`, `Sources.CLI.GroupCommand.cs`, and `Sources.CLI.AddCommands.cs`.
 
 ### Integration Test Pattern
 
