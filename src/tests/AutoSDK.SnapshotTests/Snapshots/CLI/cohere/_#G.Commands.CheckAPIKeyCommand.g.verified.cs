@@ -17,7 +17,7 @@ namespace G
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
 
-            global::G.CheckAPIKeyResponse response,
+            global::G.CheckApiKeyResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
 

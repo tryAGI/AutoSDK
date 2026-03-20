@@ -6,8 +6,8 @@
                                                                                                                  ^^^^^^^^
             name: "children")
 */
- AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.CreateTreeCommand.g.cs: (37,113)-(37,121),
-    Message: 'CreateTreeCommand.Children' hides inherited member 'Command.Children'. Use the new keyword if hiding was intended.,
+ AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.CliGenerator\G.Commands.TreesCreateTreeCommand.g.cs: (37,113)-(37,121),
+    Message: 'TreesCreateTreeCommand.Children' hides inherited member 'Command.Children'. Use the new keyword if hiding was intended.,
     Severity: Warning,
     WarningLevel: 2,
     Descriptor: {

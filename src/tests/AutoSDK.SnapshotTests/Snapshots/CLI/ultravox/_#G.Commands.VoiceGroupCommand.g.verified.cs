@@ -7,10 +7,10 @@ namespace G
     internal sealed partial class VoiceGroupCommand : global::System.CommandLine.Command
     {
         public VoiceGroupCommand(
-            VoicesListCommand command0,
-            VoicesCreateCommand command1,
-            VoicesRetrieveCommand command2,
-            VoicesDestroyCommand command3)
+            VoicesVoicesListCommand command0,
+            VoicesVoicesCreateCommand command1,
+            VoicesVoicesRetrieveCommand command2,
+            VoicesVoicesDestroyCommand command3)
             : base(
                 name: "voice")
         {

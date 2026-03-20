@@ -2582,7 +2582,7 @@
   AppClient(ref)[Application Clients],
   Error(ref)[Application Clients],
   Error(ref)[Application Clients],
-  GetOAuthTokenResponse(class)[Authentication],
+  GetTokenResponse(class)[Authentication],
     AccessToken(string)[Authentication],
     TokenType(string)[Authentication],
     ExpiresIn(int)[Authentication],

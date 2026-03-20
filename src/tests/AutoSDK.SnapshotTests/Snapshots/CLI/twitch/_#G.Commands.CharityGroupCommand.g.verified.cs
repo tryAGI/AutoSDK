@@ -7,8 +7,8 @@ namespace G
     internal sealed partial class CharityGroupCommand : global::System.CommandLine.Command
     {
         public CharityGroupCommand(
-            GetCharityCampaignCommand command0,
-            GetCharityCampaignDonationsCommand command1)
+            CharityGetCharityCampaignCommand command0,
+            CharityGetCharityCampaignDonationsCommand command1)
             : base(
                 name: "charity")
         {

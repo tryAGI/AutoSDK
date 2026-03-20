@@ -7,8 +7,8 @@ namespace G
     internal sealed partial class CreateVideoApiGroupCommand : global::System.CommandLine.Command
     {
         public CreateVideoApiGroupCommand(
-            V2VideoGenerateCommand command0,
-            V1VideoDeleteCommand command1)
+            CreateVideoApiV2VideoGenerateCommand command0,
+            CreateVideoApiV1VideoDeleteCommand command1)
             : base(
                 name: "createvideoapi")
         {

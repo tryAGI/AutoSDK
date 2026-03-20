@@ -8,17 +8,14 @@ namespace G
     {
         public GroupCommand(
             ChatCommand command0,
-            Chatv2Command command1,
-            GenerateCommand command2,
-            EmbedCommand command3,
-            Embedv2Command command4,
-            RerankCommand command5,
-            Rerankv2Command command6,
-            ClassifyCommand command7,
-            SummarizeCommand command8,
-            TokenizeCommand command9,
-            DetokenizeCommand command10,
-            CheckAPIKeyCommand command11)
+            GenerateCommand command1,
+            EmbedCommand command2,
+            RerankCommand command3,
+            ClassifyCommand command4,
+            SummarizeCommand command5,
+            TokenizeCommand command6,
+            DetokenizeCommand command7,
+            CheckAPIKeyCommand command8)
             : base(
                 name: "")
         {
@@ -31,9 +28,6 @@ namespace G
             Subcommands.Add(command6);
             Subcommands.Add(command7);
             Subcommands.Add(command8);
-            Subcommands.Add(command9);
-            Subcommands.Add(command10);
-            Subcommands.Add(command11);
         }
     }
 }

@@ -7,10 +7,10 @@ namespace G
     internal sealed partial class WebhookGroupCommand : global::System.CommandLine.Command
     {
         public WebhookGroupCommand(
-            V1WebhookWebhookListCommand command0,
-            V1WebhookEndpointAddCommand command1,
-            V1WebhookEndpointDeleteCommand command2,
-            V1WebhookEndpointListCommand command3)
+            WebhooksV1WebhookWebhookListCommand command0,
+            WebhooksV1WebhookEndpointAddCommand command1,
+            WebhooksV1WebhookEndpointDeleteCommand command2,
+            WebhooksV1WebhookEndpointListCommand command3)
             : base(
                 name: "webhook")
         {

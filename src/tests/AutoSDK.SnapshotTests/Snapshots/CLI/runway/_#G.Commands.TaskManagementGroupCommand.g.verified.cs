@@ -7,8 +7,8 @@ namespace G
     internal sealed partial class TaskManagementGroupCommand : global::System.CommandLine.Command
     {
         public TaskManagementGroupCommand(
-            GetTasksByIdCommand command0,
-            DeleteTasksByIdCommand command1)
+            TaskManagementGetTasksByIdCommand command0,
+            TaskManagementDeleteTasksByIdCommand command1)
             : base(
                 name: "taskmanagement")
         {

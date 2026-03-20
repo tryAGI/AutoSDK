@@ -31,9 +31,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatToolCallsChunkEventVariant2? Value2 { get; init; }
+        public global::G.ChatToolCallsChunkEventT7lliu? Value2 { get; init; }
 #else
-        public global::G.ChatToolCallsChunkEventVariant2? Value2 { get; }
+        public global::G.ChatToolCallsChunkEventT7lliu? Value2 { get; }
 #endif
 
         /// <summary>
@@ -64,17 +64,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatToolCallsChunkEvent(global::G.ChatToolCallsChunkEventVariant2 value) => new ChatToolCallsChunkEvent((global::G.ChatToolCallsChunkEventVariant2?)value);
+        public static implicit operator ChatToolCallsChunkEvent(global::G.ChatToolCallsChunkEventT7lliu value) => new ChatToolCallsChunkEvent((global::G.ChatToolCallsChunkEventT7lliu?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatToolCallsChunkEventVariant2?(ChatToolCallsChunkEvent @this) => @this.Value2;
+        public static implicit operator global::G.ChatToolCallsChunkEventT7lliu?(ChatToolCallsChunkEvent @this) => @this.Value2;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatToolCallsChunkEvent(global::G.ChatToolCallsChunkEventVariant2? value)
+        public ChatToolCallsChunkEvent(global::G.ChatToolCallsChunkEventT7lliu? value)
         {
             Value2 = value;
         }
@@ -84,7 +84,7 @@ namespace G
         /// </summary>
         public ChatToolCallsChunkEvent(
             global::G.ChatStreamEvent? value1,
-            global::G.ChatToolCallsChunkEventVariant2? value2
+            global::G.ChatToolCallsChunkEventT7lliu? value2
             )
         {
             Value1 = value1;
@@ -120,7 +120,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.ChatStreamEvent?, TResult>? value1 = null,
-            global::System.Func<global::G.ChatToolCallsChunkEventVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.ChatToolCallsChunkEventT7lliu?, TResult>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,7 +145,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.ChatStreamEvent?>? value1 = null,
-            global::System.Action<global::G.ChatToolCallsChunkEventVariant2?>? value2 = null,
+            global::System.Action<global::G.ChatToolCallsChunkEventT7lliu?>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -173,7 +173,7 @@ namespace G
                 Value1,
                 typeof(global::G.ChatStreamEvent),
                 Value2,
-                typeof(global::G.ChatToolCallsChunkEventVariant2),
+                typeof(global::G.ChatToolCallsChunkEventT7lliu),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -191,7 +191,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.ChatStreamEvent?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatToolCallsChunkEventVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatToolCallsChunkEventT7lliu?>.Default.Equals(Value2, other.Value2) 
                 ;
         }
 

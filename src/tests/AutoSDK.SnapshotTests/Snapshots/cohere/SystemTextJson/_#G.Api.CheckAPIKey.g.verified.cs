@@ -29,7 +29,7 @@ namespace G
         /// <param name="xClientName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.CheckAPIKeyResponse> CheckAPIKeyAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CheckApiKeyResponse> CheckAPIKeyAsync(
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -97,19 +97,19 @@ namespace G
             {
                 string? __content_400 = null;
                 global::System.Exception? __exception_400 = null;
-                global::G.CheckAPIKeyResponse2? __value_400 = null;
+                global::G.NotFoundErrorBody29? __value_400 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_400 = global::G.CheckAPIKeyResponse2.FromJson(__content_400, JsonSerializerOptions);
+                        __value_400 = global::G.NotFoundErrorBody29.FromJson(__content_400, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_400 = global::G.CheckAPIKeyResponse2.FromJson(__content_400, JsonSerializerOptions);
+                        __value_400 = global::G.NotFoundErrorBody29.FromJson(__content_400, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -117,7 +117,7 @@ namespace G
                     __exception_400 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.CheckAPIKeyResponse2>(
+                throw new global::G.ApiException<global::G.NotFoundErrorBody29>(
                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_400,
                     statusCode: __response.StatusCode)
@@ -135,19 +135,19 @@ namespace G
             {
                 string? __content_401 = null;
                 global::System.Exception? __exception_401 = null;
-                global::G.CheckAPIKeyResponse3? __value_401 = null;
+                global::G.UnauthorizedErrorBody57? __value_401 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_401 = global::G.CheckAPIKeyResponse3.FromJson(__content_401, JsonSerializerOptions);
+                        __value_401 = global::G.UnauthorizedErrorBody57.FromJson(__content_401, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_401 = global::G.CheckAPIKeyResponse3.FromJson(__content_401, JsonSerializerOptions);
+                        __value_401 = global::G.UnauthorizedErrorBody57.FromJson(__content_401, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -155,7 +155,7 @@ namespace G
                     __exception_401 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.CheckAPIKeyResponse3>(
+                throw new global::G.ApiException<global::G.UnauthorizedErrorBody57>(
                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_401,
                     statusCode: __response.StatusCode)
@@ -173,19 +173,19 @@ namespace G
             {
                 string? __content_403 = null;
                 global::System.Exception? __exception_403 = null;
-                global::G.CheckAPIKeyResponse4? __value_403 = null;
+                global::G.BadRequestErrorBody29? __value_403 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_403 = global::G.CheckAPIKeyResponse4.FromJson(__content_403, JsonSerializerOptions);
+                        __value_403 = global::G.BadRequestErrorBody29.FromJson(__content_403, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_403 = global::G.CheckAPIKeyResponse4.FromJson(__content_403, JsonSerializerOptions);
+                        __value_403 = global::G.BadRequestErrorBody29.FromJson(__content_403, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -193,7 +193,7 @@ namespace G
                     __exception_403 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.CheckAPIKeyResponse4>(
+                throw new global::G.ApiException<global::G.BadRequestErrorBody29>(
                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_403,
                     statusCode: __response.StatusCode)
@@ -211,19 +211,19 @@ namespace G
             {
                 string? __content_404 = null;
                 global::System.Exception? __exception_404 = null;
-                global::G.CheckAPIKeyResponse5? __value_404 = null;
+                global::G.UnauthorizedErrorBody58? __value_404 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_404 = global::G.CheckAPIKeyResponse5.FromJson(__content_404, JsonSerializerOptions);
+                        __value_404 = global::G.UnauthorizedErrorBody58.FromJson(__content_404, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_404 = global::G.CheckAPIKeyResponse5.FromJson(__content_404, JsonSerializerOptions);
+                        __value_404 = global::G.UnauthorizedErrorBody58.FromJson(__content_404, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -231,7 +231,7 @@ namespace G
                     __exception_404 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.CheckAPIKeyResponse5>(
+                throw new global::G.ApiException<global::G.UnauthorizedErrorBody58>(
                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_404,
                     statusCode: __response.StatusCode)
@@ -249,19 +249,19 @@ namespace G
             {
                 string? __content_422 = null;
                 global::System.Exception? __exception_422 = null;
-                global::G.CheckAPIKeyResponse6? __value_422 = null;
+                global::G.UnprocessableEntityErrorBody29? __value_422 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_422 = global::G.CheckAPIKeyResponse6.FromJson(__content_422, JsonSerializerOptions);
+                        __value_422 = global::G.UnprocessableEntityErrorBody29.FromJson(__content_422, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_422 = global::G.CheckAPIKeyResponse6.FromJson(__content_422, JsonSerializerOptions);
+                        __value_422 = global::G.UnprocessableEntityErrorBody29.FromJson(__content_422, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -269,7 +269,7 @@ namespace G
                     __exception_422 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.CheckAPIKeyResponse6>(
+                throw new global::G.ApiException<global::G.UnprocessableEntityErrorBody29>(
                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_422,
                     statusCode: __response.StatusCode)
@@ -287,19 +287,19 @@ namespace G
             {
                 string? __content_429 = null;
                 global::System.Exception? __exception_429 = null;
-                global::G.CheckAPIKeyResponse7? __value_429 = null;
+                global::G.GatewayTimeoutErrorBody29? __value_429 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_429 = global::G.CheckAPIKeyResponse7.FromJson(__content_429, JsonSerializerOptions);
+                        __value_429 = global::G.GatewayTimeoutErrorBody29.FromJson(__content_429, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_429 = global::G.CheckAPIKeyResponse7.FromJson(__content_429, JsonSerializerOptions);
+                        __value_429 = global::G.GatewayTimeoutErrorBody29.FromJson(__content_429, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -307,7 +307,7 @@ namespace G
                     __exception_429 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.CheckAPIKeyResponse7>(
+                throw new global::G.ApiException<global::G.GatewayTimeoutErrorBody29>(
                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_429,
                     statusCode: __response.StatusCode)
@@ -325,19 +325,19 @@ namespace G
             {
                 string? __content_498 = null;
                 global::System.Exception? __exception_498 = null;
-                global::G.CheckAPIKeyResponse8? __value_498 = null;
+                global::G.ForbiddenErrorBody29? __value_498 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_498 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_498 = global::G.CheckAPIKeyResponse8.FromJson(__content_498, JsonSerializerOptions);
+                        __value_498 = global::G.ForbiddenErrorBody29.FromJson(__content_498, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_498 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_498 = global::G.CheckAPIKeyResponse8.FromJson(__content_498, JsonSerializerOptions);
+                        __value_498 = global::G.ForbiddenErrorBody29.FromJson(__content_498, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -345,7 +345,7 @@ namespace G
                     __exception_498 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.CheckAPIKeyResponse8>(
+                throw new global::G.ApiException<global::G.ForbiddenErrorBody29>(
                     message: __content_498 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_498,
                     statusCode: __response.StatusCode)
@@ -363,19 +363,19 @@ namespace G
             {
                 string? __content_499 = null;
                 global::System.Exception? __exception_499 = null;
-                global::G.CheckAPIKeyResponse9? __value_499 = null;
+                global::G.InternalServerErrorBody29? __value_499 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_499 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_499 = global::G.CheckAPIKeyResponse9.FromJson(__content_499, JsonSerializerOptions);
+                        __value_499 = global::G.InternalServerErrorBody29.FromJson(__content_499, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_499 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_499 = global::G.CheckAPIKeyResponse9.FromJson(__content_499, JsonSerializerOptions);
+                        __value_499 = global::G.InternalServerErrorBody29.FromJson(__content_499, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -383,7 +383,7 @@ namespace G
                     __exception_499 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.CheckAPIKeyResponse9>(
+                throw new global::G.ApiException<global::G.InternalServerErrorBody29>(
                     message: __content_499 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_499,
                     statusCode: __response.StatusCode)
@@ -401,19 +401,19 @@ namespace G
             {
                 string? __content_500 = null;
                 global::System.Exception? __exception_500 = null;
-                global::G.CheckAPIKeyResponse10? __value_500 = null;
+                global::G.ServiceUnavailableErrorBody29? __value_500 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_500 = global::G.CheckAPIKeyResponse10.FromJson(__content_500, JsonSerializerOptions);
+                        __value_500 = global::G.ServiceUnavailableErrorBody29.FromJson(__content_500, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_500 = global::G.CheckAPIKeyResponse10.FromJson(__content_500, JsonSerializerOptions);
+                        __value_500 = global::G.ServiceUnavailableErrorBody29.FromJson(__content_500, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -421,7 +421,7 @@ namespace G
                     __exception_500 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.CheckAPIKeyResponse10>(
+                throw new global::G.ApiException<global::G.ServiceUnavailableErrorBody29>(
                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_500,
                     statusCode: __response.StatusCode)
@@ -439,19 +439,19 @@ namespace G
             {
                 string? __content_501 = null;
                 global::System.Exception? __exception_501 = null;
-                global::G.CheckAPIKeyResponse11? __value_501 = null;
+                global::G.NotImplementedErrorBody29? __value_501 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_501 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_501 = global::G.CheckAPIKeyResponse11.FromJson(__content_501, JsonSerializerOptions);
+                        __value_501 = global::G.NotImplementedErrorBody29.FromJson(__content_501, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_501 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_501 = global::G.CheckAPIKeyResponse11.FromJson(__content_501, JsonSerializerOptions);
+                        __value_501 = global::G.NotImplementedErrorBody29.FromJson(__content_501, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -459,7 +459,7 @@ namespace G
                     __exception_501 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.CheckAPIKeyResponse11>(
+                throw new global::G.ApiException<global::G.NotImplementedErrorBody29>(
                     message: __content_501 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_501,
                     statusCode: __response.StatusCode)
@@ -477,19 +477,19 @@ namespace G
             {
                 string? __content_503 = null;
                 global::System.Exception? __exception_503 = null;
-                global::G.CheckAPIKeyResponse12? __value_503 = null;
+                global::G.TooManyRequestsErrorBody29? __value_503 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_503 = global::G.CheckAPIKeyResponse12.FromJson(__content_503, JsonSerializerOptions);
+                        __value_503 = global::G.TooManyRequestsErrorBody29.FromJson(__content_503, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_503 = global::G.CheckAPIKeyResponse12.FromJson(__content_503, JsonSerializerOptions);
+                        __value_503 = global::G.TooManyRequestsErrorBody29.FromJson(__content_503, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -497,7 +497,7 @@ namespace G
                     __exception_503 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.CheckAPIKeyResponse12>(
+                throw new global::G.ApiException<global::G.TooManyRequestsErrorBody29>(
                     message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_503,
                     statusCode: __response.StatusCode)
@@ -515,19 +515,19 @@ namespace G
             {
                 string? __content_504 = null;
                 global::System.Exception? __exception_504 = null;
-                global::G.CheckAPIKeyResponse13? __value_504 = null;
+                global::G.InvalidTokenErrorBody29? __value_504 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_504 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_504 = global::G.CheckAPIKeyResponse13.FromJson(__content_504, JsonSerializerOptions);
+                        __value_504 = global::G.InvalidTokenErrorBody29.FromJson(__content_504, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_504 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_504 = global::G.CheckAPIKeyResponse13.FromJson(__content_504, JsonSerializerOptions);
+                        __value_504 = global::G.InvalidTokenErrorBody29.FromJson(__content_504, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -535,7 +535,7 @@ namespace G
                     __exception_504 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.CheckAPIKeyResponse13>(
+                throw new global::G.ApiException<global::G.InvalidTokenErrorBody29>(
                     message: __content_504 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_504,
                     statusCode: __response.StatusCode)
@@ -571,7 +571,7 @@ namespace G
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::G.CheckAPIKeyResponse.FromJson(__content, JsonSerializerOptions) ??
+                        global::G.CheckApiKeyResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -602,7 +602,7 @@ namespace G
                     ).ConfigureAwait(false);
 
                     return
-                        await global::G.CheckAPIKeyResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::G.CheckApiKeyResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

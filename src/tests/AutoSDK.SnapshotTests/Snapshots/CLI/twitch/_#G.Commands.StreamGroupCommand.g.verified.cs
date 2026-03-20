@@ -7,11 +7,11 @@ namespace G
     internal sealed partial class StreamGroupCommand : global::System.CommandLine.Command
     {
         public StreamGroupCommand(
-            GetStreamKeyCommand command0,
-            GetStreamsCommand command1,
-            GetFollowedStreamsCommand command2,
-            CreateStreamMarkerCommand command3,
-            GetStreamMarkersCommand command4)
+            StreamsGetStreamKeyCommand command0,
+            StreamsGetStreamsCommand command1,
+            StreamsGetFollowedStreamsCommand command2,
+            StreamsCreateStreamMarkerCommand command3,
+            StreamsGetStreamMarkersCommand command4)
             : base(
                 name: "stream")
         {

@@ -19,73 +19,73 @@ namespace G
         {
             // Register individual command services as singletons
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                V1VoiceListCommand>(services);
+                ListsV1VoiceListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                V1AvatarListCommand>(services);
+                ListsV1AvatarListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                V2VoicesCommand>(services);
+                ListsV2VoicesCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                V2AvatarsCommand>(services);
+                ListsV2AvatarsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                V1VideoListCommand>(services);
+                ListsV1VideoListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                V2VideoGenerateCommand>(services);
+                CreateVideoApiV2VideoGenerateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                V1VideoDeleteCommand>(services);
+                CreateVideoApiV1VideoDeleteCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                V2TemplatesCommand>(services);
+                TemplateApiV2TemplatesCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                V2TemplateIdCommand>(services);
+                TemplateApiV2TemplateIdCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                V2TemplateGenerateCommand>(services);
+                TemplateApiV2TemplateGenerateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                V2VideoTranslateTargetLanguagesCommand>(services);
+                VideoTranslateApiV2VideoTranslateTargetLanguagesCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                V2VideoTranslateCommand>(services);
+                VideoTranslateApiV2VideoTranslateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                V2VideoTranslateIdStatusCommand>(services);
+                VideoTranslateApiV2VideoTranslateIdStatusCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                StreamingNewCommand>(services);
+                StreamingApiStreamingNewCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                StreamingStartCommand>(services);
+                StreamingApiStreamingStartCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                StreamingListCommand>(services);
+                StreamingApiStreamingListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                StreamingIceCommand>(services);
+                StreamingApiStreamingIceCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                StreamingTaskCommand>(services);
+                StreamingApiStreamingTaskCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                StreamingStopCommand>(services);
+                StreamingApiStreamingStopCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                StreamingInterruptCommand>(services);
+                StreamingApiStreamingInterruptCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                StreamingCreateTokenCommand>(services);
+                StreamingApiStreamingCreateTokenCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                StreamingAvatarListCommand>(services);
+                StreamingApiStreamingAvatarListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                V1WebhookWebhookListCommand>(services);
+                WebhooksV1WebhookWebhookListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                V1WebhookEndpointAddCommand>(services);
+                WebhooksV1WebhookEndpointAddCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                V1WebhookEndpointDeleteCommand>(services);
+                WebhooksV1WebhookEndpointDeleteCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                V1WebhookEndpointListCommand>(services);
+                WebhooksV1WebhookEndpointListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                V1TalkingPhotoListCommand>(services);
+                TalkingPhotoV1TalkingPhotoListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                V1TalkingPhotoUploadCommand>(services);
+                TalkingPhotoV1TalkingPhotoUploadCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                V2TalkingPhotoIdDeleteCommand>(services);
+                TalkingPhotoV2TalkingPhotoIdDeleteCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PersonalizedVideoAddContactCommand>(services);
+                PersonalizedVideoPersonalizedVideoAddContactCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PersonalizedVideoAudienceDetailCommand>(services);
+                PersonalizedVideoPersonalizedVideoAudienceDetailCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PersonalizedVideoProjectDetailCommand>(services);
+                PersonalizedVideoPersonalizedVideoProjectDetailCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                V2UserRemainingQuotaCommand>(services);
+                UserV2UserRemainingQuotaCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                V1AssetUploadCommand>(services);
+                AssetsV1AssetUploadCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 V1VideoStatusGetCommand>(services);
 

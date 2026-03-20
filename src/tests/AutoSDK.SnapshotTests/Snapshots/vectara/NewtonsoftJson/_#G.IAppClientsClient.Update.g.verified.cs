@@ -1,0 +1,56 @@
+﻿//HintName: G.IAppClientsClient.Update.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IAppClientsClient
+    {
+        /// <summary>
+        /// Update an App Client<br/>
+        /// Update the configuration or settings of an existing application client.
+        /// </summary>
+        /// <param name="requestTimeout"></param>
+        /// <param name="requestTimeoutMillis"></param>
+        /// <param name="appClientId"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AppClient> UpdateAsync(
+            string appClientId,
+
+            global::G.UpdateAppClientRequest request,
+            int? requestTimeout = default,
+            int? requestTimeoutMillis = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update an App Client<br/>
+        /// Update the configuration or settings of an existing application client.
+        /// </summary>
+        /// <param name="requestTimeout"></param>
+        /// <param name="requestTimeoutMillis"></param>
+        /// <param name="appClientId"></param>
+        /// <param name="description">
+        /// The new App Client description.
+        /// </param>
+        /// <param name="apiRoles">
+        /// The new roles attached to the App Client. These roles will replace the current roles.
+        /// </param>
+        /// <param name="corpusRoles">
+        /// The new corpus role assignments. These will replace the current corpus roles.
+        /// </param>
+        /// <param name="agentRoles">
+        /// The new agent role assignments. These will replace the current agent roles.
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AppClient> UpdateAsync(
+            string appClientId,
+            int? requestTimeout = default,
+            int? requestTimeoutMillis = default,
+            string? description = default,
+            global::System.Collections.Generic.IList<global::G.ApiRole>? apiRoles = default,
+            global::System.Collections.Generic.IList<global::G.CorpusRole>? corpusRoles = default,
+            global::System.Collections.Generic.IList<global::G.AgentRole>? agentRoles = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

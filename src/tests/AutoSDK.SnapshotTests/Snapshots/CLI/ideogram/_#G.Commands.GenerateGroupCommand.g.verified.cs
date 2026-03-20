@@ -7,9 +7,9 @@ namespace G
     internal sealed partial class GenerateGroupCommand : global::System.CommandLine.Command
     {
         public GenerateGroupCommand(
-            PostGenerateImageCommand command0,
-            PostRemixImageCommand command1,
-            PostUpscaleImageCommand command2)
+            GeneratePostGenerateImageCommand command0,
+            GeneratePostRemixImageCommand command1,
+            GeneratePostUpscaleImageCommand command2)
             : base(
                 name: "generate")
         {

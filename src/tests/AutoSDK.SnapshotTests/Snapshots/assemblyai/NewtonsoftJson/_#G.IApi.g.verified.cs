@@ -42,19 +42,24 @@ namespace G
 
 
         /// <summary>
-        /// Transcript related operations
+        /// 
         /// </summary>
-        public TranscriptClient Transcript { get; }
+        public FilesClient Files { get; }
 
         /// <summary>
-        /// LeMUR related operations
+        /// 
         /// </summary>
-        public LeMURClient LeMUR { get; }
+        public TranscriptsClient Transcripts { get; }
 
         /// <summary>
-        /// Streaming Speech-to-Text
+        /// 
         /// </summary>
-        public StreamingClient Streaming { get; }
+        public RealtimeClient Realtime { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public LeMUR2Client LeMUR2 { get; }
 
     }
 }

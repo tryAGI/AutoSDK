@@ -7,8 +7,8 @@ namespace G
     internal sealed partial class VideoGroupCommand : global::System.CommandLine.Command
     {
         public VideoGroupCommand(
-            GetVideosCommand command0,
-            DeleteVideosCommand command1)
+            VideosGetVideosCommand command0,
+            VideosDeleteVideosCommand command1)
             : base(
                 name: "video")
         {

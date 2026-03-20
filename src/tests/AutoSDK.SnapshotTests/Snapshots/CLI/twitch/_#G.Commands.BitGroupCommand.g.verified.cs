@@ -7,9 +7,9 @@ namespace G
     internal sealed partial class BitGroupCommand : global::System.CommandLine.Command
     {
         public BitGroupCommand(
-            GetBitsLeaderboardCommand command0,
-            GetCheermotesCommand command1,
-            GetExtensionTransactionsCommand command2)
+            BitsGetBitsLeaderboardCommand command0,
+            BitsGetCheermotesCommand command1,
+            BitsGetExtensionTransactionsCommand command2)
             : base(
                 name: "bit")
         {

@@ -7,11 +7,11 @@ namespace G
     internal sealed partial class ListGroupCommand : global::System.CommandLine.Command
     {
         public ListGroupCommand(
-            V1VoiceListCommand command0,
-            V1AvatarListCommand command1,
-            V2VoicesCommand command2,
-            V2AvatarsCommand command3,
-            V1VideoListCommand command4)
+            ListsV1VoiceListCommand command0,
+            ListsV1AvatarListCommand command1,
+            ListsV2VoicesCommand command2,
+            ListsV2AvatarsCommand command3,
+            ListsV1VideoListCommand command4)
             : base(
                 name: "list")
         {

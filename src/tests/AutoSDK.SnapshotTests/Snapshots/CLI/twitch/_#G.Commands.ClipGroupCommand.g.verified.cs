@@ -7,8 +7,8 @@ namespace G
     internal sealed partial class ClipGroupCommand : global::System.CommandLine.Command
     {
         public ClipGroupCommand(
-            CreateClipCommand command0,
-            GetClipsCommand command1)
+            ClipsCreateClipCommand command0,
+            ClipsGetClipsCommand command1)
             : base(
                 name: "clip")
         {

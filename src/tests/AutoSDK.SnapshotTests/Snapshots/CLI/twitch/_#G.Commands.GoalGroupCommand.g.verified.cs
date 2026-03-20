@@ -7,7 +7,7 @@ namespace G
     internal sealed partial class GoalGroupCommand : global::System.CommandLine.Command
     {
         public GoalGroupCommand(
-            GetCreatorGoalsCommand command0)
+            GoalsGetCreatorGoalsCommand command0)
             : base(
                 name: "goal")
         {

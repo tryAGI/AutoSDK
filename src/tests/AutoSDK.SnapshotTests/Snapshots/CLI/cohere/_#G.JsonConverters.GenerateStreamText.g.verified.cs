@@ -39,7 +39,7 @@ namespace G.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             global::G.GenerateStreamEvent? value1 = default;
-            global::G.GenerateStreamTextVariant2? value2 = default;
+            global::G.GenerateStreamTextYai5v6? value2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -61,8 +61,8 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamTextVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamTextVariant2> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateStreamTextVariant2).Name}");
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamTextYai5v6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamTextYai5v6> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateStreamTextYai5v6).Name}");
                         value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
@@ -91,8 +91,8 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamTextVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamTextVariant2> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateStreamTextVariant2).Name}");
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamTextYai5v6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamTextYai5v6> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateStreamTextYai5v6).Name}");
                     value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
@@ -129,8 +129,8 @@ namespace G.JsonConverters
             }
             else if (value.IsValue2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamTextVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamTextVariant2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateStreamTextVariant2).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamTextYai5v6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamTextYai5v6?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateStreamTextYai5v6).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
             }
         }

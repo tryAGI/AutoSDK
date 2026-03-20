@@ -19,35 +19,35 @@ namespace G
         {
             // Register individual command services as singletons
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetTasksByIdCommand>(services);
+                TaskManagementGetTasksByIdCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                DeleteTasksByIdCommand>(services);
+                TaskManagementDeleteTasksByIdCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateImageToVideoCommand>(services);
+                StartGeneratingCreateImageToVideoCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateTextToVideoCommand>(services);
+                StartGeneratingCreateTextToVideoCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateVideoToVideoCommand>(services);
+                StartGeneratingCreateVideoToVideoCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateTextToImageCommand>(services);
+                StartGeneratingCreateTextToImageCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateCharacterPerformanceCommand>(services);
+                StartGeneratingCreateCharacterPerformanceCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateSoundEffectCommand>(services);
+                StartGeneratingCreateSoundEffectCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateSpeechToSpeechCommand>(services);
+                StartGeneratingCreateSpeechToSpeechCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateTextToSpeechCommand>(services);
+                StartGeneratingCreateTextToSpeechCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateVoiceDubbingCommand>(services);
+                StartGeneratingCreateVoiceDubbingCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateVoiceIsolationCommand>(services);
+                StartGeneratingCreateVoiceIsolationCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetOrganizationCommand>(services);
+                OrganizationGetOrganizationCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateOrganizationUsageCommand>(services);
+                OrganizationCreateOrganizationUsageCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateUploadsCommand>(services);
+                UploadsCreateUploadsCommand>(services);
 
             // Register grouped command services as singletons
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<

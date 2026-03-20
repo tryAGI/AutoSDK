@@ -112,7 +112,25 @@ public static class Data
                 }
             }
         }
-        
+
+        // Also collect ad-hoc group names from x-fern-sdk-group-name extensions.
+        // These create new tags that need sub-client classes, just like regular tags.
+        if (settings.UseExtensionNaming)
+        {
+            foreach (var operation in (openApiDocument.Paths ?? new OpenApiPaths())
+                         .SelectMany(x => x.Value.Operations ?? new Dictionary<System.Net.Http.HttpMethod, OpenApiOperation>())
+                         .Select(x => x.Value))
+            {
+                if (OpenApiExtensions.TryGetExtensionStringValue(
+                        operation.Extensions, "x-fern-sdk-group-name", out var groupName) &&
+                    !string.IsNullOrWhiteSpace(groupName) &&
+                    allTags.All(x => x.Name != groupName))
+                {
+                    allTags.Add(new OpenApiTag { Name = groupName });
+                }
+            }
+        }
+
         if (settings.GroupByTags && allTags.Count < 2)
         {
             settings = settings with
@@ -286,6 +304,16 @@ public static class Data
             .Select(tag => resolvedTags.TryGetValue(tag.Name ?? string.Empty, out var resolvedTag)
                 ? resolvedTag
                 : Tag.FromTag(tag, settings))
+            .ToArray();
+
+        // Filter tags to only those that actually have methods assigned.
+        // x-fern-sdk-group-name can reassign operations away from their original tags,
+        // leaving some tags with no methods. We exclude those to avoid generating
+        // empty sub-clients or orphaned CLI group commands.
+        var tagsWithMethods = new HashSet<string>(
+            methods.Select(m => m.Tag.SafeName));
+        resolvedIncludedTags = resolvedIncludedTags
+            .Where(tag => tagsWithMethods.Contains(tag.SafeName))
             .ToArray();
         Client[] clients = settings.GenerateSdk || settings.GenerateConstructors ? [new Client(
                 Id: "MainConstructor",

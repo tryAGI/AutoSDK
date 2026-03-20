@@ -19,47 +19,47 @@ namespace G
         {
             // Register individual command services as singletons
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MessagesPostCommand>(services);
+                MessagesMessagesPostCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CompletePostCommand>(services);
+                TextCompletionsCompletePostCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 ModelsListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 ModelsGetCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MessageBatchesPostCommand>(services);
+                MessageBatchesMessageBatchesPostCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MessageBatchesListCommand>(services);
+                MessageBatchesMessageBatchesListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MessageBatchesRetrieveCommand>(services);
+                MessageBatchesMessageBatchesRetrieveCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MessageBatchesDeleteCommand>(services);
+                MessageBatchesMessageBatchesDeleteCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MessageBatchesCancelCommand>(services);
+                MessageBatchesMessageBatchesCancelCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MessageBatchesResultsCommand>(services);
+                MessageBatchesMessageBatchesResultsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MessagesCountTokensPostCommand>(services);
+                MessagesMessagesCountTokensPostCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                BetaMessagesPostCommand>(services);
+                MessagesBetaMessagesPostCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 BetaModelsListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 BetaModelsGetCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                BetaMessageBatchesPostCommand>(services);
+                MessageBatchesBetaMessageBatchesPostCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                BetaMessageBatchesListCommand>(services);
+                MessageBatchesBetaMessageBatchesListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                BetaMessageBatchesRetrieveCommand>(services);
+                MessageBatchesBetaMessageBatchesRetrieveCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                BetaMessageBatchesDeleteCommand>(services);
+                MessageBatchesBetaMessageBatchesDeleteCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                BetaMessageBatchesCancelCommand>(services);
+                MessageBatchesBetaMessageBatchesCancelCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                BetaMessageBatchesResultsCommand>(services);
+                MessageBatchesBetaMessageBatchesResultsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                BetaMessagesCountTokensPostCommand>(services);
+                MessagesBetaMessagesCountTokensPostCommand>(services);
 
             // Register grouped command services as singletons
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<

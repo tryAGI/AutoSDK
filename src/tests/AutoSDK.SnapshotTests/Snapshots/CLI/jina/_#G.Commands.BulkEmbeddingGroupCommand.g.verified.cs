@@ -7,9 +7,9 @@ namespace G
     internal sealed partial class BulkEmbeddingGroupCommand : global::System.CommandLine.Command
     {
         public BulkEmbeddingGroupCommand(
-            StartBulkEmbeddingV1BulkEmbeddingsPostCommand command0,
-            RetrieveJobV1BulkEmbeddingsJobIdGetCommand command1,
-            DownloadResultV1BulkEmbeddingsJobIdDownloadResultPostCommand command2)
+            BulkEmbeddingsStartBulkEmbeddingV1BulkEmbeddingsPostCommand command0,
+            BulkEmbeddingsRetrieveJobV1BulkEmbeddingsJobIdGetCommand command1,
+            BulkEmbeddingsDownloadResultV1BulkEmbeddingsJobIdDownloadResultPostCommand command2)
             : base(
                 name: "bulkembedding")
         {

@@ -31,9 +31,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.GenerateStreamEndVariant2? Value2 { get; init; }
+        public global::G.GenerateStreamEndUbzr0t? Value2 { get; init; }
 #else
-        public global::G.GenerateStreamEndVariant2? Value2 { get; }
+        public global::G.GenerateStreamEndUbzr0t? Value2 { get; }
 #endif
 
         /// <summary>
@@ -64,17 +64,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator GenerateStreamEnd(global::G.GenerateStreamEndVariant2 value) => new GenerateStreamEnd((global::G.GenerateStreamEndVariant2?)value);
+        public static implicit operator GenerateStreamEnd(global::G.GenerateStreamEndUbzr0t value) => new GenerateStreamEnd((global::G.GenerateStreamEndUbzr0t?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.GenerateStreamEndVariant2?(GenerateStreamEnd @this) => @this.Value2;
+        public static implicit operator global::G.GenerateStreamEndUbzr0t?(GenerateStreamEnd @this) => @this.Value2;
 
         /// <summary>
         /// 
         /// </summary>
-        public GenerateStreamEnd(global::G.GenerateStreamEndVariant2? value)
+        public GenerateStreamEnd(global::G.GenerateStreamEndUbzr0t? value)
         {
             Value2 = value;
         }
@@ -84,7 +84,7 @@ namespace G
         /// </summary>
         public GenerateStreamEnd(
             global::G.GenerateStreamEvent? value1,
-            global::G.GenerateStreamEndVariant2? value2
+            global::G.GenerateStreamEndUbzr0t? value2
             )
         {
             Value1 = value1;
@@ -120,7 +120,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.GenerateStreamEvent?, TResult>? value1 = null,
-            global::System.Func<global::G.GenerateStreamEndVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.GenerateStreamEndUbzr0t?, TResult>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,7 +145,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.GenerateStreamEvent?>? value1 = null,
-            global::System.Action<global::G.GenerateStreamEndVariant2?>? value2 = null,
+            global::System.Action<global::G.GenerateStreamEndUbzr0t?>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -173,7 +173,7 @@ namespace G
                 Value1,
                 typeof(global::G.GenerateStreamEvent),
                 Value2,
-                typeof(global::G.GenerateStreamEndVariant2),
+                typeof(global::G.GenerateStreamEndUbzr0t),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -191,7 +191,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.GenerateStreamEvent?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.GenerateStreamEndVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.GenerateStreamEndUbzr0t?>.Default.Equals(Value2, other.Value2) 
                 ;
         }
 

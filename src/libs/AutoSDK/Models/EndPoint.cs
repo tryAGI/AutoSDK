@@ -43,6 +43,9 @@ public record struct EndPoint(
     public bool EnumerableStream => Stream && !RawStream;
     public string MethodName => $"{NotAsyncMethodName}Async";
     public string NotAsyncMethodName => Id.ToPropertyName();
+    public string CliCommandClassName => Tag != Tag.Empty && !string.IsNullOrWhiteSpace(Tag.SafeName)
+        ? $"{Tag.SafeName}{NotAsyncMethodName}Command"
+        : $"{NotAsyncMethodName}Command";
     public bool IsMultipartFormData => RequestMediaType == "multipart/form-data";
     
     public string FileNameWithoutExtension => $"{Settings.Namespace}.{ClassName}.{Id.ToPropertyName()}";

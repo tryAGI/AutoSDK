@@ -20,7 +20,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("results")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.RerankResponseResult> Results { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.RerankResponseResultsItem> Results { get; set; }
 
         /// <summary>
         /// 
@@ -46,7 +46,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RerankResponse(
-            global::System.Collections.Generic.IList<global::G.RerankResponseResult> results,
+            global::System.Collections.Generic.IList<global::G.RerankResponseResultsItem> results,
             string? id,
             global::G.ApiMeta? meta)
         {

@@ -19,137 +19,137 @@ namespace G
         {
             // Register individual command services as singletons
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AccountsListCommand>(services);
+                AccountsAccountsListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AccountsMeRetrieveCommand>(services);
+                AccountsAccountsMeRetrieveCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AccountsMeBillingSubscriptionRetrieveCommand>(services);
+                AccountsAccountsMeBillingSubscriptionRetrieveCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AccountsMeUsageCallsRetrieveCommand>(services);
+                AccountsAccountsMeUsageCallsRetrieveCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AgentsListCommand>(services);
+                AgentsAgentsListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AgentsCreateCommand>(services);
+                AgentsAgentsCreateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AgentsRetrieveCommand>(services);
+                AgentsAgentsRetrieveCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AgentsPartialUpdateCommand>(services);
+                AgentsAgentsPartialUpdateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AgentsDestroyCommand>(services);
+                AgentsAgentsDestroyCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AgentsCallsListCommand>(services);
+                AgentsAgentsCallsListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AgentsCallsCreateCommand>(services);
+                AgentsAgentsCallsCreateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ApiKeysListCommand>(services);
+                ApiKeysApiKeysListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ApiKeysCreateCommand>(services);
+                ApiKeysApiKeysCreateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ApiKeysRetrieveCommand>(services);
+                ApiKeysApiKeysRetrieveCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ApiKeysUpdateCommand>(services);
+                ApiKeysApiKeysUpdateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ApiKeysPartialUpdateCommand>(services);
+                ApiKeysApiKeysPartialUpdateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ApiKeysDestroyCommand>(services);
+                ApiKeysApiKeysDestroyCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CallsListCommand>(services);
+                CallsCallsListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CallsCreateCommand>(services);
+                CallsCallsCreateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CallsRetrieveCommand>(services);
+                CallsCallsRetrieveCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CallsDestroyCommand>(services);
+                CallsCallsDestroyCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CallsMessagesListCommand>(services);
+                CallsCallsMessagesListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CallsRecordingRetrieveCommand>(services);
+                CallsCallsRecordingRetrieveCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CallsStagesListCommand>(services);
+                CallsCallsStagesListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CallsStagesRetrieveCommand>(services);
+                CallsCallsStagesRetrieveCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CallsStagesMessagesListCommand>(services);
+                CallsCallsStagesMessagesListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CallsStagesMessagesAudioRetrieveCommand>(services);
+                CallsCallsStagesMessagesAudioRetrieveCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CallsStagesToolsListCommand>(services);
+                CallsCallsStagesToolsListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CallsToolsListCommand>(services);
+                CallsCallsToolsListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CorporaListCommand>(services);
+                CorporaCorporaListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CorporaCreateCommand>(services);
+                CorporaCorporaCreateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CorporaRetrieveCommand>(services);
+                CorporaCorporaRetrieveCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CorporaUpdateCommand>(services);
+                CorporaCorporaUpdateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CorporaPartialUpdateCommand>(services);
+                CorporaCorporaPartialUpdateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CorporaDestroyCommand>(services);
+                CorporaCorporaDestroyCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CorporaQueryCommand>(services);
+                CorporaCorporaQueryCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CorporaSourcesListCommand>(services);
+                CorporaCorporaSourcesListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CorporaSourcesCreateCommand>(services);
+                CorporaCorporaSourcesCreateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CorporaSourcesRetrieveCommand>(services);
+                CorporaCorporaSourcesRetrieveCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CorporaSourcesUpdateCommand>(services);
+                CorporaCorporaSourcesUpdateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CorporaSourcesPartialUpdateCommand>(services);
+                CorporaCorporaSourcesPartialUpdateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CorporaSourcesDestroyCommand>(services);
+                CorporaCorporaSourcesDestroyCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CorporaSourcesDocumentsListCommand>(services);
+                CorporaCorporaSourcesDocumentsListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CorporaSourcesDocumentsRetrieveCommand>(services);
+                CorporaCorporaSourcesDocumentsRetrieveCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CorporaUploadsCreateCommand>(services);
+                CorporaCorporaUploadsCreateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                DeletedCallsListCommand>(services);
+                DeletedCallsDeletedCallsListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                DeletedCallsRetrieveCommand>(services);
+                DeletedCallsDeletedCallsRetrieveCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelsListCommand>(services);
+                ModelsModelsListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                SchemaRetrieveCommand>(services);
+                SchemaSchemaRetrieveCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ToolsListCommand>(services);
+                ToolsToolsListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ToolsCreateCommand>(services);
+                ToolsToolsCreateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ToolsRetrieveCommand>(services);
+                ToolsToolsRetrieveCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ToolsUpdateCommand>(services);
+                ToolsToolsUpdateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ToolsDestroyCommand>(services);
+                ToolsToolsDestroyCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ToolsHistoryListCommand>(services);
+                ToolsToolsHistoryListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ToolsTestCreateCommand>(services);
+                ToolsToolsTestCreateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                VoicesListCommand>(services);
+                VoicesVoicesListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                VoicesCreateCommand>(services);
+                VoicesVoicesCreateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                VoicesRetrieveCommand>(services);
+                VoicesVoicesRetrieveCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                VoicesDestroyCommand>(services);
+                VoicesVoicesDestroyCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                WebhooksListCommand>(services);
+                WebhooksWebhooksListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                WebhooksCreateCommand>(services);
+                WebhooksWebhooksCreateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                WebhooksRetrieveCommand>(services);
+                WebhooksWebhooksRetrieveCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                WebhooksUpdateCommand>(services);
+                WebhooksWebhooksUpdateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                WebhooksPartialUpdateCommand>(services);
+                WebhooksWebhooksPartialUpdateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                WebhooksDestroyCommand>(services);
+                WebhooksWebhooksDestroyCommand>(services);
 
             // Register grouped command services as singletons
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<

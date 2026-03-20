@@ -47,6 +47,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
+        [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.ConversationSignedUrlResponseModel> GetConvaiConversationGetSignedUrlAsync(
             string agentId,
             bool? includeConversationId = default,
@@ -64,7 +65,7 @@ namespace G
                 xiApiKey: ref xiApiKey);
 
             var __pathBuilder = new global::G.PathBuilder(
-                path: "/v1/convai/conversation/get-signed-url",
+                path: "/v1/convai/conversation/get_signed_url",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("agent_id", agentId)

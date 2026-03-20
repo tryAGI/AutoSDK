@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CheckAPIKeyResponse.g.cs
+﻿//HintName: G.Models.CheckApiKeyResponse.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class CheckAPIKeyResponse
+    public sealed partial class CheckApiKeyResponse
     {
         /// <summary>
         /// 
@@ -34,12 +34,12 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CheckAPIKeyResponse" /> class.
+        /// Initializes a new instance of the <see cref="CheckApiKeyResponse" /> class.
         /// </summary>
         /// <param name="valid"></param>
         /// <param name="organizationId"></param>
         /// <param name="ownerId"></param>
-        public CheckAPIKeyResponse(
+        public CheckApiKeyResponse(
             bool valid,
             string? organizationId,
             string? ownerId)
@@ -50,9 +50,9 @@ namespace G
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CheckAPIKeyResponse" /> class.
+        /// Initializes a new instance of the <see cref="CheckApiKeyResponse" /> class.
         /// </summary>
-        public CheckAPIKeyResponse()
+        public CheckApiKeyResponse()
         {
         }
     }

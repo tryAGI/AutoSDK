@@ -2582,7 +2582,7 @@
   AppClient(ref),
   Error(ref),
   Error(ref),
-  GetOAuthTokenResponse(class),
+  GetTokenResponse(class),
     AccessToken(string),
     TokenType(string),
     ExpiresIn(int),

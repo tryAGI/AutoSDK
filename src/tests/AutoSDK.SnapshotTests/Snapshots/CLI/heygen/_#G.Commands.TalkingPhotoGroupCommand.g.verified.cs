@@ -7,9 +7,9 @@ namespace G
     internal sealed partial class TalkingPhotoGroupCommand : global::System.CommandLine.Command
     {
         public TalkingPhotoGroupCommand(
-            V1TalkingPhotoListCommand command0,
-            V1TalkingPhotoUploadCommand command1,
-            V2TalkingPhotoIdDeleteCommand command2)
+            TalkingPhotoV1TalkingPhotoListCommand command0,
+            TalkingPhotoV1TalkingPhotoUploadCommand command1,
+            TalkingPhotoV2TalkingPhotoIdDeleteCommand command2)
             : base(
                 name: "talkingphoto")
         {

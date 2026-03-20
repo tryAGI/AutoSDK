@@ -7,7 +7,7 @@ namespace G
     internal sealed partial class RerankGroupCommand : global::System.CommandLine.Command
     {
         public RerankGroupCommand(
-            RankV1RerankPostCommand command0)
+            RerankRankV1RerankPostCommand command0)
             : base(
                 name: "rerank")
         {

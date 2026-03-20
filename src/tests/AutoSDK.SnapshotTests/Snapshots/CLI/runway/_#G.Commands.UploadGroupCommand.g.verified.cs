@@ -7,7 +7,7 @@ namespace G
     internal sealed partial class UploadGroupCommand : global::System.CommandLine.Command
     {
         public UploadGroupCommand(
-            CreateUploadsCommand command0)
+            UploadsCreateUploadsCommand command0)
             : base(
                 name: "upload")
         {

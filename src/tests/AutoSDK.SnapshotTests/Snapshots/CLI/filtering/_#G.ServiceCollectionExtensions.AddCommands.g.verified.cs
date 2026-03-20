@@ -19,49 +19,49 @@ namespace G
         {
             // Register individual command services as singletons
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MigrationsListForOrgCommand>(services);
+                MigrationsMigrationsListForOrgCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MigrationsStartForOrgCommand>(services);
+                MigrationsMigrationsStartForOrgCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MigrationsGetStatusForOrgCommand>(services);
+                MigrationsMigrationsGetStatusForOrgCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MigrationsDownloadArchiveForOrgCommand>(services);
+                MigrationsMigrationsDownloadArchiveForOrgCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MigrationsDeleteArchiveForOrgCommand>(services);
+                MigrationsMigrationsDeleteArchiveForOrgCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MigrationsUnlockRepoForOrgCommand>(services);
+                MigrationsMigrationsUnlockRepoForOrgCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MigrationsListReposForOrgCommand>(services);
+                MigrationsMigrationsListReposForOrgCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MigrationsGetImportStatusCommand>(services);
+                MigrationsMigrationsGetImportStatusCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MigrationsStartImportCommand>(services);
+                MigrationsMigrationsStartImportCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MigrationsUpdateImportCommand>(services);
+                MigrationsMigrationsUpdateImportCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MigrationsCancelImportCommand>(services);
+                MigrationsMigrationsCancelImportCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MigrationsGetCommitAuthorsCommand>(services);
+                MigrationsMigrationsGetCommitAuthorsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MigrationsMapCommitAuthorCommand>(services);
+                MigrationsMigrationsMapCommitAuthorCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MigrationsGetLargeFilesCommand>(services);
+                MigrationsMigrationsGetLargeFilesCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MigrationsSetLfsPreferenceCommand>(services);
+                MigrationsMigrationsSetLfsPreferenceCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MigrationsListForAuthenticatedUserCommand>(services);
+                MigrationsMigrationsListForAuthenticatedUserCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MigrationsStartForAuthenticatedUserCommand>(services);
+                MigrationsMigrationsStartForAuthenticatedUserCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MigrationsGetStatusForAuthenticatedUserCommand>(services);
+                MigrationsMigrationsGetStatusForAuthenticatedUserCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MigrationsGetArchiveForAuthenticatedUserCommand>(services);
+                MigrationsMigrationsGetArchiveForAuthenticatedUserCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MigrationsDeleteArchiveForAuthenticatedUserCommand>(services);
+                MigrationsMigrationsDeleteArchiveForAuthenticatedUserCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MigrationsUnlockRepoForAuthenticatedUserCommand>(services);
+                MigrationsMigrationsUnlockRepoForAuthenticatedUserCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MigrationsListReposForAuthenticatedUserCommand>(services);
+                MigrationsMigrationsListReposForAuthenticatedUserCommand>(services);
 
             // Register grouped command services as singletons
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<

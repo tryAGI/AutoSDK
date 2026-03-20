@@ -7,21 +7,21 @@ namespace G
     internal sealed partial class AppGroupCommand : global::System.CommandLine.Command
     {
         public AppGroupCommand(
-            AppPublicServiceListAppsCommand command0,
-            AppPublicServiceCreateAppCommand command1,
-            AppPublicServiceUpdateAppCommand command2,
-            AppPublicServiceDeleteAppCommand command3,
-            AppPublicServiceListConversationsCommand command4,
-            AppPublicServiceCreateConversationCommand command5,
-            AppPublicServiceUpdateConversationCommand command6,
-            AppPublicServiceDeleteConversationCommand command7,
-            AppPublicServiceListMessagesCommand command8,
-            AppPublicServiceCreateMessageCommand command9,
-            AppPublicServiceUpdateMessageCommand command10,
-            AppPublicServiceDeleteMessageCommand command11,
-            AppPublicServiceGetPlaygroundConversationCommand command12,
-            AppPublicServiceRestartPlaygroundConversationCommand command13,
-            AppPublicServiceChatCommand command14)
+            AppAppPublicServiceListAppsCommand command0,
+            AppAppPublicServiceCreateAppCommand command1,
+            AppAppPublicServiceUpdateAppCommand command2,
+            AppAppPublicServiceDeleteAppCommand command3,
+            AppAppPublicServiceListConversationsCommand command4,
+            AppAppPublicServiceCreateConversationCommand command5,
+            AppAppPublicServiceUpdateConversationCommand command6,
+            AppAppPublicServiceDeleteConversationCommand command7,
+            AppAppPublicServiceListMessagesCommand command8,
+            AppAppPublicServiceCreateMessageCommand command9,
+            AppAppPublicServiceUpdateMessageCommand command10,
+            AppAppPublicServiceDeleteMessageCommand command11,
+            AppAppPublicServiceGetPlaygroundConversationCommand command12,
+            AppAppPublicServiceRestartPlaygroundConversationCommand command13,
+            AppAppPublicServiceChatCommand command14)
             : base(
                 name: "app")
         {

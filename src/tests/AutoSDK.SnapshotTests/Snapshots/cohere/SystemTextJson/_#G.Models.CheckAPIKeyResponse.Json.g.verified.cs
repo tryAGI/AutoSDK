@@ -1,9 +1,9 @@
-﻿//HintName: G.Models.CheckAPIKeyResponse.Json.g.cs
+﻿//HintName: G.Models.CheckApiKeyResponse.Json.g.cs
 #nullable enable
 
 namespace G
 {
-    public sealed partial class CheckAPIKeyResponse
+    public sealed partial class CheckApiKeyResponse
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -35,14 +35,14 @@ namespace G
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::G.CheckAPIKeyResponse? FromJson(
+        public static global::G.CheckApiKeyResponse? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::G.CheckAPIKeyResponse),
-                jsonSerializerContext) as global::G.CheckAPIKeyResponse;
+                typeof(global::G.CheckApiKeyResponse),
+                jsonSerializerContext) as global::G.CheckApiKeyResponse;
         }
 
         /// <summary>
@@ -52,11 +52,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::G.CheckAPIKeyResponse? FromJson(
+        public static global::G.CheckApiKeyResponse? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.CheckAPIKeyResponse>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.CheckApiKeyResponse>(
                 json,
                 jsonSerializerOptions);
         }
@@ -64,14 +64,14 @@ namespace G
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::G.CheckAPIKeyResponse?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::G.CheckApiKeyResponse?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::G.CheckAPIKeyResponse),
-                jsonSerializerContext).ConfigureAwait(false)) as global::G.CheckAPIKeyResponse;
+                typeof(global::G.CheckApiKeyResponse),
+                jsonSerializerContext).ConfigureAwait(false)) as global::G.CheckApiKeyResponse;
         }
 
         /// <summary>
@@ -81,11 +81,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::G.CheckAPIKeyResponse?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::G.CheckApiKeyResponse?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::G.CheckAPIKeyResponse?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::G.CheckApiKeyResponse?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

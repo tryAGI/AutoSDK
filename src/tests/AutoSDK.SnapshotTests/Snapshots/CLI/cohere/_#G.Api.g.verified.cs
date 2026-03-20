@@ -57,8 +57,8 @@ namespace G
                     new global::G.JsonConverters.FinishReasonNullableJsonConverter(),
                     new global::G.JsonConverters.ChatStreamEventEventTypeJsonConverter(),
                     new global::G.JsonConverters.ChatStreamEventEventTypeNullableJsonConverter(),
-                    new global::G.JsonConverters.ChatStreamEndEventVariant2FinishReasonJsonConverter(),
-                    new global::G.JsonConverters.ChatStreamEndEventVariant2FinishReasonNullableJsonConverter(),
+                    new global::G.JsonConverters.ChatStreamEndEventY8gq2xFinishReasonJsonConverter(),
+                    new global::G.JsonConverters.ChatStreamEndEventY8gq2xFinishReasonNullableJsonConverter(),
                     new global::G.JsonConverters.StreamedChatResponseDiscriminatorEventTypeJsonConverter(),
                     new global::G.JsonConverters.StreamedChatResponseDiscriminatorEventTypeNullableJsonConverter(),
                     new global::G.JsonConverters.TextContentTypeJsonConverter(),
@@ -109,10 +109,10 @@ namespace G
                     new global::G.JsonConverters.AssistantMessageResponseContentItemDiscriminatorTypeNullableJsonConverter(),
                     new global::G.JsonConverters.ChatStreamEventTypeTypeJsonConverter(),
                     new global::G.JsonConverters.ChatStreamEventTypeTypeNullableJsonConverter(),
-                    new global::G.JsonConverters.ChatMessageStartEventVariant2DeltaMessageRoleJsonConverter(),
-                    new global::G.JsonConverters.ChatMessageStartEventVariant2DeltaMessageRoleNullableJsonConverter(),
-                    new global::G.JsonConverters.ChatContentStartEventVariant2DeltaMessageContentTypeJsonConverter(),
-                    new global::G.JsonConverters.ChatContentStartEventVariant2DeltaMessageContentTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.ChatMessageStartEventDeltaMessageRoleJsonConverter(),
+                    new global::G.JsonConverters.ChatMessageStartEventDeltaMessageRoleNullableJsonConverter(),
+                    new global::G.JsonConverters.ChatContentStartEventDeltaMessageContentTypeJsonConverter(),
+                    new global::G.JsonConverters.ChatContentStartEventDeltaMessageContentTypeNullableJsonConverter(),
                     new global::G.JsonConverters.StreamedChatResponseV2DiscriminatorTypeJsonConverter(),
                     new global::G.JsonConverters.StreamedChatResponseV2DiscriminatorTypeNullableJsonConverter(),
                     new global::G.JsonConverters.GenerateStreamEventEventTypeJsonConverter(),
@@ -175,8 +175,8 @@ namespace G
                     new global::G.JsonConverters.GenerateRequestReturnLikelihoodsNullableJsonConverter(),
                     new global::G.JsonConverters.EmbedRequestTruncateJsonConverter(),
                     new global::G.JsonConverters.EmbedRequestTruncateNullableJsonConverter(),
-                    new global::G.JsonConverters.Embedv2RequestTruncateJsonConverter(),
-                    new global::G.JsonConverters.Embedv2RequestTruncateNullableJsonConverter(),
+                    new global::G.JsonConverters.V2EmbedRequestTruncateJsonConverter(),
+                    new global::G.JsonConverters.V2EmbedRequestTruncateNullableJsonConverter(),
                     new global::G.JsonConverters.ClassifyRequestTruncateJsonConverter(),
                     new global::G.JsonConverters.ClassifyRequestTruncateNullableJsonConverter(),
                     new global::G.JsonConverters.SummarizeRequestLengthJsonConverter(),
@@ -243,36 +243,9 @@ namespace G
 
 
         /// <summary>
-        /// Datasets API
+        /// 
         /// </summary>
-        public DatasetsClient Datasets => new DatasetsClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// Connectors API
-        /// </summary>
-        public ConnectorsClient Connectors => new ConnectorsClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// Embed Jobs API
-        /// </summary>
-        public EmbedJobsClient EmbedJobs => new EmbedJobsClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// Finetuning API (Beta)
-        /// </summary>
-        public FinetuningClient Finetuning => new FinetuningClient(HttpClient, authorizations: Authorizations)
+        public V2Client V2 => new V2Client(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -281,7 +254,43 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations)
+        public EmbedJobs2Client EmbedJobs2 => new EmbedJobs2Client(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Datasets2Client Datasets2 => new Datasets2Client(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Connectors2Client Connectors2 => new Connectors2Client(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Models2Client Models2 => new Models2Client(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Finetuning2Client Finetuning2 => new Finetuning2Client(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

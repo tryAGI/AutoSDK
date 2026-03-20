@@ -81,7 +81,7 @@ public record struct Settings(
         IncludeTags: ImmutableArray<string>.Empty,
         ExcludeTags: ImmutableArray<string>.Empty,
         ExcludeDeprecatedOperations: false,
-        UseExtensionNaming: false,
+        UseExtensionNaming: true,
         JsonSerializerContext: string.Empty,
         GenerateJsonSerializerContextTypes: false,
         ComputeDiscriminators: false,

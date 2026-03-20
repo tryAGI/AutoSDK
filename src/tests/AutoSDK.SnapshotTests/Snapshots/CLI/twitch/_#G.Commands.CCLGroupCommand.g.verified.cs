@@ -7,7 +7,7 @@ namespace G
     internal sealed partial class CCLGroupCommand : global::System.CommandLine.Command
     {
         public CCLGroupCommand(
-            GetContentClassificationLabelsCommand command0)
+            CCLsGetContentClassificationLabelsCommand command0)
             : base(
                 name: "ccl")
         {

@@ -7,8 +7,8 @@ namespace G
     internal sealed partial class ClassificationGroupCommand : global::System.CommandLine.Command
     {
         public ClassificationGroupCommand(
-            TrainV1TrainPostCommand command0,
-            ClassifyV1ClassifyPostCommand command1)
+            ClassificationTrainV1TrainPostCommand command0,
+            ClassificationClassifyV1ClassifyPostCommand command1)
             : base(
                 name: "classification")
         {

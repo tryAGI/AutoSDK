@@ -39,27 +39,36 @@ namespace G
 
 
         /// <summary>
-        /// Transcript related operations
+        /// 
         /// </summary>
-        public TranscriptClient Transcript => new TranscriptClient(HttpClient, authorizations: Authorizations)
+        public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// LeMUR related operations
+        /// 
         /// </summary>
-        public LeMURClient LeMUR => new LeMURClient(HttpClient, authorizations: Authorizations)
+        public TranscriptsClient Transcripts => new TranscriptsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Streaming Speech-to-Text
+        /// 
         /// </summary>
-        public StreamingClient Streaming => new StreamingClient(HttpClient, authorizations: Authorizations)
+        public RealtimeClient Realtime => new RealtimeClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public LeMUR2Client LeMUR2 => new LeMUR2Client(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

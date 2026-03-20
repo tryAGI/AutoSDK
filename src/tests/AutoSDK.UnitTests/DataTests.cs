@@ -408,6 +408,7 @@ public partial class DataTests
             GenerateSdk = true,
             JsonSerializerType = JsonSerializerType.SystemTextJson,
             TargetFramework = "net8.0",
+            UseExtensionNaming = false,
         };
 
         var data = Data.Prepare(((new H.Resource("vectara.yaml").AsString(), settings), GlobalSettings: settings));

@@ -7,18 +7,18 @@ namespace G
     internal sealed partial class GuestStarGroupCommand : global::System.CommandLine.Command
     {
         public GuestStarGroupCommand(
-            GetChannelGuestStarSettingsCommand command0,
-            UpdateChannelGuestStarSettingsCommand command1,
-            GetGuestStarSessionCommand command2,
-            CreateGuestStarSessionCommand command3,
-            EndGuestStarSessionCommand command4,
-            GetGuestStarInvitesCommand command5,
-            SendGuestStarInviteCommand command6,
-            DeleteGuestStarInviteCommand command7,
-            AssignGuestStarSlotCommand command8,
-            UpdateGuestStarSlotCommand command9,
-            DeleteGuestStarSlotCommand command10,
-            UpdateGuestStarSlotSettingsCommand command11)
+            GuestStarGetChannelGuestStarSettingsCommand command0,
+            GuestStarUpdateChannelGuestStarSettingsCommand command1,
+            GuestStarGetGuestStarSessionCommand command2,
+            GuestStarCreateGuestStarSessionCommand command3,
+            GuestStarEndGuestStarSessionCommand command4,
+            GuestStarGetGuestStarInvitesCommand command5,
+            GuestStarSendGuestStarInviteCommand command6,
+            GuestStarDeleteGuestStarInviteCommand command7,
+            GuestStarAssignGuestStarSlotCommand command8,
+            GuestStarUpdateGuestStarSlotCommand command9,
+            GuestStarDeleteGuestStarSlotCommand command10,
+            GuestStarUpdateGuestStarSlotSettingsCommand command11)
             : base(
                 name: "gueststar")
         {

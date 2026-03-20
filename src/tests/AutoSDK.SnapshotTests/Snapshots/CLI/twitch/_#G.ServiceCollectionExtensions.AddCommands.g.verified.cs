@@ -19,279 +19,279 @@ namespace G
         {
             // Register individual command services as singletons
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                StartCommercialCommand>(services);
+                AdsStartCommercialCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetAdScheduleCommand>(services);
+                AdsGetAdScheduleCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                SnoozeNextAdCommand>(services);
+                AdsSnoozeNextAdCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetExtensionAnalyticsCommand>(services);
+                AnalyticsGetExtensionAnalyticsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetGameAnalyticsCommand>(services);
+                AnalyticsGetGameAnalyticsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetBitsLeaderboardCommand>(services);
+                BitsGetBitsLeaderboardCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetCheermotesCommand>(services);
+                BitsGetCheermotesCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetExtensionTransactionsCommand>(services);
+                BitsGetExtensionTransactionsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetChannelInformationCommand>(services);
+                ChannelsGetChannelInformationCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModifyChannelInformationCommand>(services);
+                ChannelsModifyChannelInformationCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetChannelEditorsCommand>(services);
+                ChannelsGetChannelEditorsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetFollowedChannelsCommand>(services);
+                ChannelsGetFollowedChannelsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetChannelFollowersCommand>(services);
+                ChannelsGetChannelFollowersCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateCustomRewardsCommand>(services);
+                ChannelPointsCreateCustomRewardsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                DeleteCustomRewardCommand>(services);
+                ChannelPointsDeleteCustomRewardCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetCustomRewardCommand>(services);
+                ChannelPointsGetCustomRewardCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UpdateCustomRewardCommand>(services);
+                ChannelPointsUpdateCustomRewardCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetCustomRewardRedemptionCommand>(services);
+                ChannelPointsGetCustomRewardRedemptionCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UpdateRedemptionStatusCommand>(services);
+                ChannelPointsUpdateRedemptionStatusCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetCharityCampaignCommand>(services);
+                CharityGetCharityCampaignCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetCharityCampaignDonationsCommand>(services);
+                CharityGetCharityCampaignDonationsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetChattersCommand>(services);
+                ChatGetChattersCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetChannelEmotesCommand>(services);
+                ChatGetChannelEmotesCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetGlobalEmotesCommand>(services);
+                ChatGetGlobalEmotesCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetEmoteSetsCommand>(services);
+                ChatGetEmoteSetsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetChannelChatBadgesCommand>(services);
+                ChatGetChannelChatBadgesCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetGlobalChatBadgesCommand>(services);
+                ChatGetGlobalChatBadgesCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetChatSettingsCommand>(services);
+                ChatGetChatSettingsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UpdateChatSettingsCommand>(services);
+                ChatUpdateChatSettingsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetUserEmotesCommand>(services);
+                ChatGetUserEmotesCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                SendChatAnnouncementCommand>(services);
+                ChatSendChatAnnouncementCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                SendAShoutoutCommand>(services);
+                ChatSendAShoutoutCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                SendChatMessageCommand>(services);
+                ChatSendChatMessageCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetUserChatColorCommand>(services);
+                ChatGetUserChatColorCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UpdateUserChatColorCommand>(services);
+                ChatUpdateUserChatColorCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateClipCommand>(services);
+                ClipsCreateClipCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetClipsCommand>(services);
+                ClipsGetClipsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetConduitsCommand>(services);
+                ConduitsGetConduitsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateConduitsCommand>(services);
+                ConduitsCreateConduitsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UpdateConduitsCommand>(services);
+                ConduitsUpdateConduitsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                DeleteConduitCommand>(services);
+                ConduitsDeleteConduitCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetConduitShardsCommand>(services);
+                ConduitsGetConduitShardsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UpdateConduitShardsCommand>(services);
+                ConduitsUpdateConduitShardsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetContentClassificationLabelsCommand>(services);
+                CCLsGetContentClassificationLabelsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetDropsEntitlementsCommand>(services);
+                EntitlementsGetDropsEntitlementsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UpdateDropsEntitlementsCommand>(services);
+                EntitlementsUpdateDropsEntitlementsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetExtensionConfigurationSegmentCommand>(services);
+                ExtensionsGetExtensionConfigurationSegmentCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                SetExtensionConfigurationSegmentCommand>(services);
+                ExtensionsSetExtensionConfigurationSegmentCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                SetExtensionRequiredConfigurationCommand>(services);
+                ExtensionsSetExtensionRequiredConfigurationCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                SendExtensionPubsubMessageCommand>(services);
+                ExtensionsSendExtensionPubsubMessageCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetExtensionLiveChannelsCommand>(services);
+                ExtensionsGetExtensionLiveChannelsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetExtensionSecretsCommand>(services);
+                ExtensionsGetExtensionSecretsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateExtensionSecretCommand>(services);
+                ExtensionsCreateExtensionSecretCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                SendExtensionChatMessageCommand>(services);
+                ExtensionsSendExtensionChatMessageCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetExtensionsCommand>(services);
+                ExtensionsGetExtensionsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetReleasedExtensionsCommand>(services);
+                ExtensionsGetReleasedExtensionsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetExtensionBitsProductsCommand>(services);
+                ExtensionsGetExtensionBitsProductsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UpdateExtensionBitsProductCommand>(services);
+                ExtensionsUpdateExtensionBitsProductCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateEventsubSubscriptionCommand>(services);
+                EventSubCreateEventsubSubscriptionCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                DeleteEventsubSubscriptionCommand>(services);
+                EventSubDeleteEventsubSubscriptionCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetEventsubSubscriptionsCommand>(services);
+                EventSubGetEventsubSubscriptionsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetTopGamesCommand>(services);
+                GamesGetTopGamesCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetGamesCommand>(services);
+                GamesGetGamesCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetCreatorGoalsCommand>(services);
+                GoalsGetCreatorGoalsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetChannelGuestStarSettingsCommand>(services);
+                GuestStarGetChannelGuestStarSettingsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UpdateChannelGuestStarSettingsCommand>(services);
+                GuestStarUpdateChannelGuestStarSettingsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetGuestStarSessionCommand>(services);
+                GuestStarGetGuestStarSessionCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateGuestStarSessionCommand>(services);
+                GuestStarCreateGuestStarSessionCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                EndGuestStarSessionCommand>(services);
+                GuestStarEndGuestStarSessionCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetGuestStarInvitesCommand>(services);
+                GuestStarGetGuestStarInvitesCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                SendGuestStarInviteCommand>(services);
+                GuestStarSendGuestStarInviteCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                DeleteGuestStarInviteCommand>(services);
+                GuestStarDeleteGuestStarInviteCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AssignGuestStarSlotCommand>(services);
+                GuestStarAssignGuestStarSlotCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UpdateGuestStarSlotCommand>(services);
+                GuestStarUpdateGuestStarSlotCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                DeleteGuestStarSlotCommand>(services);
+                GuestStarDeleteGuestStarSlotCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UpdateGuestStarSlotSettingsCommand>(services);
+                GuestStarUpdateGuestStarSlotSettingsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetHypeTrainEventsCommand>(services);
+                HypeTrainGetHypeTrainEventsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CheckAutomodStatusCommand>(services);
+                ModerationCheckAutomodStatusCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ManageHeldAutomodMessagesCommand>(services);
+                ModerationManageHeldAutomodMessagesCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetAutomodSettingsCommand>(services);
+                ModerationGetAutomodSettingsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UpdateAutomodSettingsCommand>(services);
+                ModerationUpdateAutomodSettingsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetBannedUsersCommand>(services);
+                ModerationGetBannedUsersCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                BanUserCommand>(services);
+                ModerationBanUserCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UnbanUserCommand>(services);
+                ModerationUnbanUserCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetUnbanRequestsCommand>(services);
+                ModerationGetUnbanRequestsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ResolveUnbanRequestsCommand>(services);
+                ModerationResolveUnbanRequestsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetBlockedTermsCommand>(services);
+                ModerationGetBlockedTermsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AddBlockedTermCommand>(services);
+                ModerationAddBlockedTermCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                RemoveBlockedTermCommand>(services);
+                ModerationRemoveBlockedTermCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                DeleteChatMessagesCommand>(services);
+                ModerationDeleteChatMessagesCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetModeratedChannelsCommand>(services);
+                ModerationGetModeratedChannelsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetModeratorsCommand>(services);
+                ModerationGetModeratorsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AddChannelModeratorCommand>(services);
+                ModerationAddChannelModeratorCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                RemoveChannelModeratorCommand>(services);
+                ModerationRemoveChannelModeratorCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetVipsCommand>(services);
+                ModerationGetVipsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AddChannelVipCommand>(services);
+                ModerationAddChannelVipCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                RemoveChannelVipCommand>(services);
+                ModerationRemoveChannelVipCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UpdateShieldModeStatusCommand>(services);
+                ModerationUpdateShieldModeStatusCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetShieldModeStatusCommand>(services);
+                ModerationGetShieldModeStatusCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetPollsCommand>(services);
+                PollsGetPollsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreatePollCommand>(services);
+                PollsCreatePollCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                EndPollCommand>(services);
+                PollsEndPollCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetPredictionsCommand>(services);
+                PredictionsGetPredictionsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreatePredictionCommand>(services);
+                PredictionsCreatePredictionCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                EndPredictionCommand>(services);
+                PredictionsEndPredictionCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                StartARaidCommand>(services);
+                RaidsStartARaidCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CancelARaidCommand>(services);
+                RaidsCancelARaidCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetChannelStreamScheduleCommand>(services);
+                ScheduleGetChannelStreamScheduleCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetChannelIcalendarCommand>(services);
+                ScheduleGetChannelIcalendarCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UpdateChannelStreamScheduleCommand>(services);
+                ScheduleUpdateChannelStreamScheduleCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateChannelStreamScheduleSegmentCommand>(services);
+                ScheduleCreateChannelStreamScheduleSegmentCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UpdateChannelStreamScheduleSegmentCommand>(services);
+                ScheduleUpdateChannelStreamScheduleSegmentCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                DeleteChannelStreamScheduleSegmentCommand>(services);
+                ScheduleDeleteChannelStreamScheduleSegmentCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                SearchCategoriesCommand>(services);
+                SearchSearchCategoriesCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                SearchChannelsCommand>(services);
+                SearchSearchChannelsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetStreamKeyCommand>(services);
+                StreamsGetStreamKeyCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetStreamsCommand>(services);
+                StreamsGetStreamsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetFollowedStreamsCommand>(services);
+                StreamsGetFollowedStreamsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateStreamMarkerCommand>(services);
+                StreamsCreateStreamMarkerCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetStreamMarkersCommand>(services);
+                StreamsGetStreamMarkersCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetBroadcasterSubscriptionsCommand>(services);
+                SubscriptionsGetBroadcasterSubscriptionsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CheckUserSubscriptionCommand>(services);
+                SubscriptionsCheckUserSubscriptionCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetAllStreamTagsCommand>(services);
+                TagsGetAllStreamTagsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetStreamTagsCommand>(services);
+                TagsGetStreamTagsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetChannelTeamsCommand>(services);
+                TeamsGetChannelTeamsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetTeamsCommand>(services);
+                TeamsGetTeamsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetUsersCommand>(services);
+                UsersGetUsersCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UpdateUserCommand>(services);
+                UsersUpdateUserCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetUserBlockListCommand>(services);
+                UsersGetUserBlockListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                BlockUserCommand>(services);
+                UsersBlockUserCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UnblockUserCommand>(services);
+                UsersUnblockUserCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetUserExtensionsCommand>(services);
+                UsersGetUserExtensionsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetUserActiveExtensionsCommand>(services);
+                UsersGetUserActiveExtensionsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UpdateUserExtensionsCommand>(services);
+                UsersUpdateUserExtensionsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetVideosCommand>(services);
+                VideosGetVideosCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                DeleteVideosCommand>(services);
+                VideosDeleteVideosCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                SendWhisperCommand>(services);
+                WhispersSendWhisperCommand>(services);
 
             // Register grouped command services as singletons
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<

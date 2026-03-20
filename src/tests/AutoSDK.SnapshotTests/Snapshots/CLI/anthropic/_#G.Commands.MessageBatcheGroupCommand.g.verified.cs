@@ -7,18 +7,18 @@ namespace G
     internal sealed partial class MessageBatcheGroupCommand : global::System.CommandLine.Command
     {
         public MessageBatcheGroupCommand(
-            MessageBatchesPostCommand command0,
-            MessageBatchesListCommand command1,
-            MessageBatchesRetrieveCommand command2,
-            MessageBatchesDeleteCommand command3,
-            MessageBatchesCancelCommand command4,
-            MessageBatchesResultsCommand command5,
-            BetaMessageBatchesPostCommand command6,
-            BetaMessageBatchesListCommand command7,
-            BetaMessageBatchesRetrieveCommand command8,
-            BetaMessageBatchesDeleteCommand command9,
-            BetaMessageBatchesCancelCommand command10,
-            BetaMessageBatchesResultsCommand command11)
+            MessageBatchesMessageBatchesPostCommand command0,
+            MessageBatchesMessageBatchesListCommand command1,
+            MessageBatchesMessageBatchesRetrieveCommand command2,
+            MessageBatchesMessageBatchesDeleteCommand command3,
+            MessageBatchesMessageBatchesCancelCommand command4,
+            MessageBatchesMessageBatchesResultsCommand command5,
+            MessageBatchesBetaMessageBatchesPostCommand command6,
+            MessageBatchesBetaMessageBatchesListCommand command7,
+            MessageBatchesBetaMessageBatchesRetrieveCommand command8,
+            MessageBatchesBetaMessageBatchesDeleteCommand command9,
+            MessageBatchesBetaMessageBatchesCancelCommand command10,
+            MessageBatchesBetaMessageBatchesResultsCommand command11)
             : base(
                 name: "messagebatche")
         {

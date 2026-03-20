@@ -7,7 +7,7 @@ namespace G
     internal sealed partial class TextCompletionGroupCommand : global::System.CommandLine.Command
     {
         public TextCompletionGroupCommand(
-            CompletePostCommand command0)
+            TextCompletionsCompletePostCommand command0)
             : base(
                 name: "textcompletion")
         {

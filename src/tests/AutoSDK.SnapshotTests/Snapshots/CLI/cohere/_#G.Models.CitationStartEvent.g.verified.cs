@@ -31,9 +31,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CitationStartEventVariant2? Value2 { get; init; }
+        public global::G.CitationStartEventT3df62? Value2 { get; init; }
 #else
-        public global::G.CitationStartEventVariant2? Value2 { get; }
+        public global::G.CitationStartEventT3df62? Value2 { get; }
 #endif
 
         /// <summary>
@@ -64,17 +64,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CitationStartEvent(global::G.CitationStartEventVariant2 value) => new CitationStartEvent((global::G.CitationStartEventVariant2?)value);
+        public static implicit operator CitationStartEvent(global::G.CitationStartEventT3df62 value) => new CitationStartEvent((global::G.CitationStartEventT3df62?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CitationStartEventVariant2?(CitationStartEvent @this) => @this.Value2;
+        public static implicit operator global::G.CitationStartEventT3df62?(CitationStartEvent @this) => @this.Value2;
 
         /// <summary>
         /// 
         /// </summary>
-        public CitationStartEvent(global::G.CitationStartEventVariant2? value)
+        public CitationStartEvent(global::G.CitationStartEventT3df62? value)
         {
             Value2 = value;
         }
@@ -84,7 +84,7 @@ namespace G
         /// </summary>
         public CitationStartEvent(
             global::G.ChatStreamEventType? value1,
-            global::G.CitationStartEventVariant2? value2
+            global::G.CitationStartEventT3df62? value2
             )
         {
             Value1 = value1;
@@ -120,7 +120,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.ChatStreamEventType?, TResult>? value1 = null,
-            global::System.Func<global::G.CitationStartEventVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.CitationStartEventT3df62?, TResult>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,7 +145,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.ChatStreamEventType?>? value1 = null,
-            global::System.Action<global::G.CitationStartEventVariant2?>? value2 = null,
+            global::System.Action<global::G.CitationStartEventT3df62?>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -173,7 +173,7 @@ namespace G
                 Value1,
                 typeof(global::G.ChatStreamEventType),
                 Value2,
-                typeof(global::G.CitationStartEventVariant2),
+                typeof(global::G.CitationStartEventT3df62),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -191,7 +191,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.ChatStreamEventType?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.CitationStartEventVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.CitationStartEventT3df62?>.Default.Equals(Value2, other.Value2) 
                 ;
         }
 

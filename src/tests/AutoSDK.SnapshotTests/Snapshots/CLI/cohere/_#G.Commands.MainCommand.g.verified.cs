@@ -7,11 +7,12 @@ namespace G
     internal sealed class MainCommand : global::System.CommandLine.RootCommand
     {
         public MainCommand(
-            DatasetGroupCommand command0,
-            ConnectorGroupCommand command1,
-            EmbedJobGroupCommand command2,
-            FinetuningGroupCommand command3,
-            ModelGroupCommand command4)
+            V2GroupCommand command0,
+            EmbedJobs2GroupCommand command1,
+            Datasets2GroupCommand command2,
+            Connectors2GroupCommand command3,
+            Models2GroupCommand command4,
+            Finetuning2GroupCommand command5)
             : base(
                 description: "CLI tool")
         {
@@ -20,6 +21,7 @@ namespace G
             Subcommands.Add(command2);
             Subcommands.Add(command3);
             Subcommands.Add(command4);
+            Subcommands.Add(command5);
         }
     }
 }

@@ -7,7 +7,7 @@ namespace G
     internal sealed partial class HypeTrainGroupCommand : global::System.CommandLine.Command
     {
         public HypeTrainGroupCommand(
-            GetHypeTrainEventsCommand command0)
+            HypeTrainGetHypeTrainEventsCommand command0)
             : base(
                 name: "hypetrain")
         {

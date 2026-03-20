@@ -7,8 +7,8 @@ namespace G
     internal sealed partial class SearchGroupCommand : global::System.CommandLine.Command
     {
         public SearchGroupCommand(
-            SearchCategoriesCommand command0,
-            SearchChannelsCommand command1)
+            SearchSearchCategoriesCommand command0,
+            SearchSearchChannelsCommand command1)
             : base(
                 name: "search")
         {

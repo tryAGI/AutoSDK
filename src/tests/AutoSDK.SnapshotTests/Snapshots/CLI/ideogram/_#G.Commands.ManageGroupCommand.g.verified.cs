@@ -7,15 +7,15 @@ namespace G
     internal sealed partial class ManageGroupCommand : global::System.CommandLine.Command
     {
         public ManageGroupCommand(
-            GetApiKeysCommand command0,
-            CreateApiKeyCommand command1,
-            DeleteSingleApiKeyCommand command2,
-            ReactivateSubscriptionCommand command3,
-            GetApiStripeSubscriptionCommand command4,
-            GetApiSubscriptionCommand command5,
-            PostApiSubscriptionCommand command6,
-            GetApiTermsCommand command7,
-            PostApiTermsCommand command8)
+            ManageGetApiKeysCommand command0,
+            ManageCreateApiKeyCommand command1,
+            ManageDeleteSingleApiKeyCommand command2,
+            ManageReactivateSubscriptionCommand command3,
+            ManageGetApiStripeSubscriptionCommand command4,
+            ManageGetApiSubscriptionCommand command5,
+            ManagePostApiSubscriptionCommand command6,
+            ManageGetApiTermsCommand command7,
+            ManagePostApiTermsCommand command8)
             : base(
                 name: "manage")
         {

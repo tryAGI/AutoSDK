@@ -7,8 +7,8 @@ namespace G
     internal sealed partial class AnalyticGroupCommand : global::System.CommandLine.Command
     {
         public AnalyticGroupCommand(
-            GetExtensionAnalyticsCommand command0,
-            GetGameAnalyticsCommand command1)
+            AnalyticsGetExtensionAnalyticsCommand command0,
+            AnalyticsGetGameAnalyticsCommand command1)
             : base(
                 name: "analytic")
         {

@@ -2285,7 +2285,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetOAuthTokenResponse? Type564 { get; set; }
+        public global::G.GetTokenResponse? Type564 { get; set; }
 
         /// <summary>
         /// 

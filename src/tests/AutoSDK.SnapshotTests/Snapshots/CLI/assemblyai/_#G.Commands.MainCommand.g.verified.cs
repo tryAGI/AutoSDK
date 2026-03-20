@@ -7,15 +7,17 @@ namespace G
     internal sealed class MainCommand : global::System.CommandLine.RootCommand
     {
         public MainCommand(
-            TranscriptGroupCommand command0,
-            LeMURGroupCommand command1,
-            StreamingGroupCommand command2)
+            FileGroupCommand command0,
+            TranscriptGroupCommand command1,
+            RealtimeGroupCommand command2,
+            LeMUR2GroupCommand command3)
             : base(
                 description: "CLI tool")
         {
             Subcommands.Add(command0);
             Subcommands.Add(command1);
             Subcommands.Add(command2);
+            Subcommands.Add(command3);
         }
     }
 }

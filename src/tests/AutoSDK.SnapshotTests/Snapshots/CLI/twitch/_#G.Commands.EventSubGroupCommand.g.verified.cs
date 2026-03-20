@@ -7,9 +7,9 @@ namespace G
     internal sealed partial class EventSubGroupCommand : global::System.CommandLine.Command
     {
         public EventSubGroupCommand(
-            CreateEventsubSubscriptionCommand command0,
-            DeleteEventsubSubscriptionCommand command1,
-            GetEventsubSubscriptionsCommand command2)
+            EventSubCreateEventsubSubscriptionCommand command0,
+            EventSubDeleteEventsubSubscriptionCommand command1,
+            EventSubGetEventsubSubscriptionsCommand command2)
             : base(
                 name: "eventsub")
         {

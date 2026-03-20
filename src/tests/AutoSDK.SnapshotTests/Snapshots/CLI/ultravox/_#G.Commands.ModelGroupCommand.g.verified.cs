@@ -7,7 +7,7 @@ namespace G
     internal sealed partial class ModelGroupCommand : global::System.CommandLine.Command
     {
         public ModelGroupCommand(
-            ModelsListCommand command0)
+            ModelsModelsListCommand command0)
             : base(
                 name: "model")
         {

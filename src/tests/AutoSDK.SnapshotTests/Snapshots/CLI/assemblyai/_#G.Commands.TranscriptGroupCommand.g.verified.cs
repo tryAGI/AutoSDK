@@ -7,16 +7,15 @@ namespace G
     internal sealed partial class TranscriptGroupCommand : global::System.CommandLine.Command
     {
         public TranscriptGroupCommand(
-            UploadFileCommand command0,
-            CreateTranscriptCommand command1,
-            ListTranscriptsCommand command2,
-            GetTranscriptCommand command3,
-            DeleteTranscriptCommand command4,
-            GetSubtitlesCommand command5,
-            GetTranscriptSentencesCommand command6,
-            GetTranscriptParagraphsCommand command7,
-            WordSearchCommand command8,
-            GetRedactedAudioCommand command9)
+            TranscriptsSubmitCommand command0,
+            TranscriptsListCommand command1,
+            TranscriptsGetCommand command2,
+            TranscriptsDeleteCommand command3,
+            TranscriptsGetSubtitlesCommand command4,
+            TranscriptsGetSentencesCommand command5,
+            TranscriptsGetParagraphsCommand command6,
+            TranscriptsWordSearchCommand command7,
+            TranscriptsGetRedactedAudioCommand command8)
             : base(
                 name: "transcript")
         {
@@ -29,7 +28,6 @@ namespace G
             Subcommands.Add(command6);
             Subcommands.Add(command7);
             Subcommands.Add(command8);
-            Subcommands.Add(command9);
         }
     }
 }

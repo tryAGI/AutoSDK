@@ -7,8 +7,8 @@ namespace G
     internal sealed partial class RaidGroupCommand : global::System.CommandLine.Command
     {
         public RaidGroupCommand(
-            StartARaidCommand command0,
-            CancelARaidCommand command1)
+            RaidsStartARaidCommand command0,
+            RaidsCancelARaidCommand command1)
             : base(
                 name: "raid")
         {

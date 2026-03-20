@@ -7,10 +7,10 @@ namespace G
     internal sealed partial class AccountGroupCommand : global::System.CommandLine.Command
     {
         public AccountGroupCommand(
-            AccountsListCommand command0,
-            AccountsMeRetrieveCommand command1,
-            AccountsMeBillingSubscriptionRetrieveCommand command2,
-            AccountsMeUsageCallsRetrieveCommand command3)
+            AccountsAccountsListCommand command0,
+            AccountsAccountsMeRetrieveCommand command1,
+            AccountsAccountsMeBillingSubscriptionRetrieveCommand command2,
+            AccountsAccountsMeUsageCallsRetrieveCommand command3)
             : base(
                 name: "account")
         {

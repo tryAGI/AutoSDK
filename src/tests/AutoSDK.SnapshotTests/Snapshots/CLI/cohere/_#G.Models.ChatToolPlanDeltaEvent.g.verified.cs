@@ -31,9 +31,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatToolPlanDeltaEventVariant2? Value2 { get; init; }
+        public global::G.ChatToolPlanDeltaEvent2obfex? Value2 { get; init; }
 #else
-        public global::G.ChatToolPlanDeltaEventVariant2? Value2 { get; }
+        public global::G.ChatToolPlanDeltaEvent2obfex? Value2 { get; }
 #endif
 
         /// <summary>
@@ -64,17 +64,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatToolPlanDeltaEvent(global::G.ChatToolPlanDeltaEventVariant2 value) => new ChatToolPlanDeltaEvent((global::G.ChatToolPlanDeltaEventVariant2?)value);
+        public static implicit operator ChatToolPlanDeltaEvent(global::G.ChatToolPlanDeltaEvent2obfex value) => new ChatToolPlanDeltaEvent((global::G.ChatToolPlanDeltaEvent2obfex?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatToolPlanDeltaEventVariant2?(ChatToolPlanDeltaEvent @this) => @this.Value2;
+        public static implicit operator global::G.ChatToolPlanDeltaEvent2obfex?(ChatToolPlanDeltaEvent @this) => @this.Value2;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatToolPlanDeltaEvent(global::G.ChatToolPlanDeltaEventVariant2? value)
+        public ChatToolPlanDeltaEvent(global::G.ChatToolPlanDeltaEvent2obfex? value)
         {
             Value2 = value;
         }
@@ -84,7 +84,7 @@ namespace G
         /// </summary>
         public ChatToolPlanDeltaEvent(
             global::G.ChatStreamEventType? value1,
-            global::G.ChatToolPlanDeltaEventVariant2? value2
+            global::G.ChatToolPlanDeltaEvent2obfex? value2
             )
         {
             Value1 = value1;
@@ -120,7 +120,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.ChatStreamEventType?, TResult>? value1 = null,
-            global::System.Func<global::G.ChatToolPlanDeltaEventVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.ChatToolPlanDeltaEvent2obfex?, TResult>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,7 +145,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.ChatStreamEventType?>? value1 = null,
-            global::System.Action<global::G.ChatToolPlanDeltaEventVariant2?>? value2 = null,
+            global::System.Action<global::G.ChatToolPlanDeltaEvent2obfex?>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -173,7 +173,7 @@ namespace G
                 Value1,
                 typeof(global::G.ChatStreamEventType),
                 Value2,
-                typeof(global::G.ChatToolPlanDeltaEventVariant2),
+                typeof(global::G.ChatToolPlanDeltaEvent2obfex),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -191,7 +191,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.ChatStreamEventType?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatToolPlanDeltaEventVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatToolPlanDeltaEvent2obfex?>.Default.Equals(Value2, other.Value2) 
                 ;
         }
 

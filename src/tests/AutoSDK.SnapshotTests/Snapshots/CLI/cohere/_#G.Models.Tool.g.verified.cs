@@ -36,7 +36,7 @@ namespace G
         /// ```
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameter_definitions")]
-        public global::System.Collections.Generic.Dictionary<string, global::G.ToolParameterDefinitions2>? ParameterDefinitions { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.ToolParameterDefinitionsValue>? ParameterDefinitions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -71,7 +71,7 @@ namespace G
         public Tool(
             string name,
             string description,
-            global::System.Collections.Generic.Dictionary<string, global::G.ToolParameterDefinitions2>? parameterDefinitions)
+            global::System.Collections.Generic.Dictionary<string, global::G.ToolParameterDefinitionsValue>? parameterDefinitions)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));

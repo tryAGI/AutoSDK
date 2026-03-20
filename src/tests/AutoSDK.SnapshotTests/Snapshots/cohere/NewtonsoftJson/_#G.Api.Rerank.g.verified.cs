@@ -112,19 +112,19 @@ namespace G
             {
                 string? __content_400 = null;
                 global::System.Exception? __exception_400 = null;
-                global::G.RerankResponse2? __value_400 = null;
+                global::G.NotFoundErrorBody10? __value_400 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_400 = global::G.RerankResponse2.FromJson(__content_400, JsonSerializerOptions);
+                        __value_400 = global::G.NotFoundErrorBody10.FromJson(__content_400, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_400 = global::G.RerankResponse2.FromJson(__content_400, JsonSerializerOptions);
+                        __value_400 = global::G.NotFoundErrorBody10.FromJson(__content_400, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -132,7 +132,7 @@ namespace G
                     __exception_400 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.RerankResponse2>(
+                throw new global::G.ApiException<global::G.NotFoundErrorBody10>(
                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_400,
                     statusCode: __response.StatusCode)
@@ -150,19 +150,19 @@ namespace G
             {
                 string? __content_401 = null;
                 global::System.Exception? __exception_401 = null;
-                global::G.RerankResponse3? __value_401 = null;
+                global::G.UnauthorizedErrorBody19? __value_401 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_401 = global::G.RerankResponse3.FromJson(__content_401, JsonSerializerOptions);
+                        __value_401 = global::G.UnauthorizedErrorBody19.FromJson(__content_401, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_401 = global::G.RerankResponse3.FromJson(__content_401, JsonSerializerOptions);
+                        __value_401 = global::G.UnauthorizedErrorBody19.FromJson(__content_401, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -170,7 +170,7 @@ namespace G
                     __exception_401 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.RerankResponse3>(
+                throw new global::G.ApiException<global::G.UnauthorizedErrorBody19>(
                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_401,
                     statusCode: __response.StatusCode)
@@ -188,19 +188,19 @@ namespace G
             {
                 string? __content_403 = null;
                 global::System.Exception? __exception_403 = null;
-                global::G.RerankResponse4? __value_403 = null;
+                global::G.BadRequestErrorBody10? __value_403 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_403 = global::G.RerankResponse4.FromJson(__content_403, JsonSerializerOptions);
+                        __value_403 = global::G.BadRequestErrorBody10.FromJson(__content_403, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_403 = global::G.RerankResponse4.FromJson(__content_403, JsonSerializerOptions);
+                        __value_403 = global::G.BadRequestErrorBody10.FromJson(__content_403, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -208,7 +208,7 @@ namespace G
                     __exception_403 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.RerankResponse4>(
+                throw new global::G.ApiException<global::G.BadRequestErrorBody10>(
                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_403,
                     statusCode: __response.StatusCode)
@@ -226,19 +226,19 @@ namespace G
             {
                 string? __content_404 = null;
                 global::System.Exception? __exception_404 = null;
-                global::G.RerankResponse5? __value_404 = null;
+                global::G.UnauthorizedErrorBody20? __value_404 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_404 = global::G.RerankResponse5.FromJson(__content_404, JsonSerializerOptions);
+                        __value_404 = global::G.UnauthorizedErrorBody20.FromJson(__content_404, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_404 = global::G.RerankResponse5.FromJson(__content_404, JsonSerializerOptions);
+                        __value_404 = global::G.UnauthorizedErrorBody20.FromJson(__content_404, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -246,7 +246,7 @@ namespace G
                     __exception_404 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.RerankResponse5>(
+                throw new global::G.ApiException<global::G.UnauthorizedErrorBody20>(
                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_404,
                     statusCode: __response.StatusCode)
@@ -264,19 +264,19 @@ namespace G
             {
                 string? __content_422 = null;
                 global::System.Exception? __exception_422 = null;
-                global::G.RerankResponse6? __value_422 = null;
+                global::G.UnprocessableEntityErrorBody10? __value_422 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_422 = global::G.RerankResponse6.FromJson(__content_422, JsonSerializerOptions);
+                        __value_422 = global::G.UnprocessableEntityErrorBody10.FromJson(__content_422, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_422 = global::G.RerankResponse6.FromJson(__content_422, JsonSerializerOptions);
+                        __value_422 = global::G.UnprocessableEntityErrorBody10.FromJson(__content_422, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -284,7 +284,7 @@ namespace G
                     __exception_422 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.RerankResponse6>(
+                throw new global::G.ApiException<global::G.UnprocessableEntityErrorBody10>(
                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_422,
                     statusCode: __response.StatusCode)
@@ -302,19 +302,19 @@ namespace G
             {
                 string? __content_429 = null;
                 global::System.Exception? __exception_429 = null;
-                global::G.RerankResponse7? __value_429 = null;
+                global::G.GatewayTimeoutErrorBody10? __value_429 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_429 = global::G.RerankResponse7.FromJson(__content_429, JsonSerializerOptions);
+                        __value_429 = global::G.GatewayTimeoutErrorBody10.FromJson(__content_429, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_429 = global::G.RerankResponse7.FromJson(__content_429, JsonSerializerOptions);
+                        __value_429 = global::G.GatewayTimeoutErrorBody10.FromJson(__content_429, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -322,7 +322,7 @@ namespace G
                     __exception_429 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.RerankResponse7>(
+                throw new global::G.ApiException<global::G.GatewayTimeoutErrorBody10>(
                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_429,
                     statusCode: __response.StatusCode)
@@ -340,19 +340,19 @@ namespace G
             {
                 string? __content_498 = null;
                 global::System.Exception? __exception_498 = null;
-                global::G.RerankResponse8? __value_498 = null;
+                global::G.ForbiddenErrorBody10? __value_498 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_498 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_498 = global::G.RerankResponse8.FromJson(__content_498, JsonSerializerOptions);
+                        __value_498 = global::G.ForbiddenErrorBody10.FromJson(__content_498, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_498 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_498 = global::G.RerankResponse8.FromJson(__content_498, JsonSerializerOptions);
+                        __value_498 = global::G.ForbiddenErrorBody10.FromJson(__content_498, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -360,7 +360,7 @@ namespace G
                     __exception_498 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.RerankResponse8>(
+                throw new global::G.ApiException<global::G.ForbiddenErrorBody10>(
                     message: __content_498 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_498,
                     statusCode: __response.StatusCode)
@@ -378,19 +378,19 @@ namespace G
             {
                 string? __content_499 = null;
                 global::System.Exception? __exception_499 = null;
-                global::G.RerankResponse9? __value_499 = null;
+                global::G.InternalServerErrorBody10? __value_499 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_499 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_499 = global::G.RerankResponse9.FromJson(__content_499, JsonSerializerOptions);
+                        __value_499 = global::G.InternalServerErrorBody10.FromJson(__content_499, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_499 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_499 = global::G.RerankResponse9.FromJson(__content_499, JsonSerializerOptions);
+                        __value_499 = global::G.InternalServerErrorBody10.FromJson(__content_499, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -398,7 +398,7 @@ namespace G
                     __exception_499 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.RerankResponse9>(
+                throw new global::G.ApiException<global::G.InternalServerErrorBody10>(
                     message: __content_499 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_499,
                     statusCode: __response.StatusCode)
@@ -416,19 +416,19 @@ namespace G
             {
                 string? __content_500 = null;
                 global::System.Exception? __exception_500 = null;
-                global::G.RerankResponse10? __value_500 = null;
+                global::G.ServiceUnavailableErrorBody10? __value_500 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_500 = global::G.RerankResponse10.FromJson(__content_500, JsonSerializerOptions);
+                        __value_500 = global::G.ServiceUnavailableErrorBody10.FromJson(__content_500, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_500 = global::G.RerankResponse10.FromJson(__content_500, JsonSerializerOptions);
+                        __value_500 = global::G.ServiceUnavailableErrorBody10.FromJson(__content_500, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -436,7 +436,7 @@ namespace G
                     __exception_500 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.RerankResponse10>(
+                throw new global::G.ApiException<global::G.ServiceUnavailableErrorBody10>(
                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_500,
                     statusCode: __response.StatusCode)
@@ -454,19 +454,19 @@ namespace G
             {
                 string? __content_501 = null;
                 global::System.Exception? __exception_501 = null;
-                global::G.RerankResponse11? __value_501 = null;
+                global::G.NotImplementedErrorBody10? __value_501 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_501 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_501 = global::G.RerankResponse11.FromJson(__content_501, JsonSerializerOptions);
+                        __value_501 = global::G.NotImplementedErrorBody10.FromJson(__content_501, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_501 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_501 = global::G.RerankResponse11.FromJson(__content_501, JsonSerializerOptions);
+                        __value_501 = global::G.NotImplementedErrorBody10.FromJson(__content_501, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -474,7 +474,7 @@ namespace G
                     __exception_501 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.RerankResponse11>(
+                throw new global::G.ApiException<global::G.NotImplementedErrorBody10>(
                     message: __content_501 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_501,
                     statusCode: __response.StatusCode)
@@ -492,19 +492,19 @@ namespace G
             {
                 string? __content_503 = null;
                 global::System.Exception? __exception_503 = null;
-                global::G.RerankResponse12? __value_503 = null;
+                global::G.TooManyRequestsErrorBody10? __value_503 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_503 = global::G.RerankResponse12.FromJson(__content_503, JsonSerializerOptions);
+                        __value_503 = global::G.TooManyRequestsErrorBody10.FromJson(__content_503, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_503 = global::G.RerankResponse12.FromJson(__content_503, JsonSerializerOptions);
+                        __value_503 = global::G.TooManyRequestsErrorBody10.FromJson(__content_503, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -512,7 +512,7 @@ namespace G
                     __exception_503 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.RerankResponse12>(
+                throw new global::G.ApiException<global::G.TooManyRequestsErrorBody10>(
                     message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_503,
                     statusCode: __response.StatusCode)
@@ -530,19 +530,19 @@ namespace G
             {
                 string? __content_504 = null;
                 global::System.Exception? __exception_504 = null;
-                global::G.RerankResponse13? __value_504 = null;
+                global::G.InvalidTokenErrorBody10? __value_504 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_504 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_504 = global::G.RerankResponse13.FromJson(__content_504, JsonSerializerOptions);
+                        __value_504 = global::G.InvalidTokenErrorBody10.FromJson(__content_504, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_504 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_504 = global::G.RerankResponse13.FromJson(__content_504, JsonSerializerOptions);
+                        __value_504 = global::G.InvalidTokenErrorBody10.FromJson(__content_504, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -550,7 +550,7 @@ namespace G
                     __exception_504 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.RerankResponse13>(
+                throw new global::G.ApiException<global::G.InvalidTokenErrorBody10>(
                     message: __content_504 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_504,
                     statusCode: __response.StatusCode)

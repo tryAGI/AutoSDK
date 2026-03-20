@@ -19,7 +19,7 @@ namespace G
         /// An ordered list of ranked documents
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("results", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.RerankResponseResult> Results { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.RerankResponseResultsItem> Results { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -42,7 +42,7 @@ namespace G
         /// </param>
         /// <param name="meta"></param>
         public RerankResponse(
-            global::System.Collections.Generic.IList<global::G.RerankResponseResult> results,
+            global::System.Collections.Generic.IList<global::G.RerankResponseResultsItem> results,
             string? id,
             global::G.ApiMeta? meta)
         {

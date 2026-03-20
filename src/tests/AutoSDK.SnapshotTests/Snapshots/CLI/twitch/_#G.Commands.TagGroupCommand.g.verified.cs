@@ -7,8 +7,8 @@ namespace G
     internal sealed partial class TagGroupCommand : global::System.CommandLine.Command
     {
         public TagGroupCommand(
-            GetAllStreamTagsCommand command0,
-            GetStreamTagsCommand command1)
+            TagsGetAllStreamTagsCommand command0,
+            TagsGetStreamTagsCommand command1)
             : base(
                 name: "tag")
         {

@@ -7,7 +7,7 @@ namespace G
     internal sealed partial class VisionGroupCommand : global::System.CommandLine.Command
     {
         public VisionGroupCommand(
-            PostDescribeCommand command0)
+            VisionPostDescribeCommand command0)
             : base(
                 name: "vision")
         {

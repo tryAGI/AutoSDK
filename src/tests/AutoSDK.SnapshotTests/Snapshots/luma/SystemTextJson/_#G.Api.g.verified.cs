@@ -94,15 +94,6 @@ namespace G
         };
 
         /// <summary>
-        /// 
-        /// </summary>
-        public ImageClient Image => new ImageClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
         /// Creates a new instance of the Api.
         /// If no httpClient is provided, a new one will be created.
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.

@@ -7,18 +7,18 @@ namespace G
     internal sealed partial class CallGroupCommand : global::System.CommandLine.Command
     {
         public CallGroupCommand(
-            CallsListCommand command0,
-            CallsCreateCommand command1,
-            CallsRetrieveCommand command2,
-            CallsDestroyCommand command3,
-            CallsMessagesListCommand command4,
-            CallsRecordingRetrieveCommand command5,
-            CallsStagesListCommand command6,
-            CallsStagesRetrieveCommand command7,
-            CallsStagesMessagesListCommand command8,
-            CallsStagesMessagesAudioRetrieveCommand command9,
-            CallsStagesToolsListCommand command10,
-            CallsToolsListCommand command11)
+            CallsCallsListCommand command0,
+            CallsCallsCreateCommand command1,
+            CallsCallsRetrieveCommand command2,
+            CallsCallsDestroyCommand command3,
+            CallsCallsMessagesListCommand command4,
+            CallsCallsRecordingRetrieveCommand command5,
+            CallsCallsStagesListCommand command6,
+            CallsCallsStagesRetrieveCommand command7,
+            CallsCallsStagesMessagesListCommand command8,
+            CallsCallsStagesMessagesAudioRetrieveCommand command9,
+            CallsCallsStagesToolsListCommand command10,
+            CallsCallsToolsListCommand command11)
             : base(
                 name: "call")
         {

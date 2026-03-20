@@ -56,10 +56,5 @@ namespace G
         /// </summary>
         public CreditsClient Credits { get; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public ImageClient Image { get; }
-
     }
 }

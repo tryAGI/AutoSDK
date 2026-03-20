@@ -82,7 +82,7 @@ public static partial class Sources
         CancellationToken cancellationToken = default)
     {
         return new FileWithName(
-            Name: $"{endPoint.GlobalSettings.Namespace}.Commands.{endPoint.NotAsyncMethodName}Command.g.cs",
+            Name: $"{endPoint.GlobalSettings.Namespace}.Commands.{endPoint.CliCommandClassName}.g.cs",
             Text: GenerateCommand(endPoint, cancellationToken: cancellationToken));
     }
     

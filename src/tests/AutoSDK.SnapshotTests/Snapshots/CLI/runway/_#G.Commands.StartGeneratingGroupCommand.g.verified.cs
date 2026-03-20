@@ -7,16 +7,16 @@ namespace G
     internal sealed partial class StartGeneratingGroupCommand : global::System.CommandLine.Command
     {
         public StartGeneratingGroupCommand(
-            CreateImageToVideoCommand command0,
-            CreateTextToVideoCommand command1,
-            CreateVideoToVideoCommand command2,
-            CreateTextToImageCommand command3,
-            CreateCharacterPerformanceCommand command4,
-            CreateSoundEffectCommand command5,
-            CreateSpeechToSpeechCommand command6,
-            CreateTextToSpeechCommand command7,
-            CreateVoiceDubbingCommand command8,
-            CreateVoiceIsolationCommand command9)
+            StartGeneratingCreateImageToVideoCommand command0,
+            StartGeneratingCreateTextToVideoCommand command1,
+            StartGeneratingCreateVideoToVideoCommand command2,
+            StartGeneratingCreateTextToImageCommand command3,
+            StartGeneratingCreateCharacterPerformanceCommand command4,
+            StartGeneratingCreateSoundEffectCommand command5,
+            StartGeneratingCreateSpeechToSpeechCommand command6,
+            StartGeneratingCreateTextToSpeechCommand command7,
+            StartGeneratingCreateVoiceDubbingCommand command8,
+            StartGeneratingCreateVoiceIsolationCommand command9)
             : base(
                 name: "startgenerating")
         {

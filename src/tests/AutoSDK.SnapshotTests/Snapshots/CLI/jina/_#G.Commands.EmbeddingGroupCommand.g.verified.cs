@@ -7,7 +7,7 @@ namespace G
     internal sealed partial class EmbeddingGroupCommand : global::System.CommandLine.Command
     {
         public EmbeddingGroupCommand(
-            CreateEmbeddingV1EmbeddingsPostCommand command0)
+            EmbeddingsCreateEmbeddingV1EmbeddingsPostCommand command0)
             : base(
                 name: "embedding")
         {

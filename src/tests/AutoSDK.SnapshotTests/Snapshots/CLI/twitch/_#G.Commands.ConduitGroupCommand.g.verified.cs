@@ -7,12 +7,12 @@ namespace G
     internal sealed partial class ConduitGroupCommand : global::System.CommandLine.Command
     {
         public ConduitGroupCommand(
-            GetConduitsCommand command0,
-            CreateConduitsCommand command1,
-            UpdateConduitsCommand command2,
-            DeleteConduitCommand command3,
-            GetConduitShardsCommand command4,
-            UpdateConduitShardsCommand command5)
+            ConduitsGetConduitsCommand command0,
+            ConduitsCreateConduitsCommand command1,
+            ConduitsUpdateConduitsCommand command2,
+            ConduitsDeleteConduitCommand command3,
+            ConduitsGetConduitShardsCommand command4,
+            ConduitsUpdateConduitShardsCommand command5)
             : base(
                 name: "conduit")
         {

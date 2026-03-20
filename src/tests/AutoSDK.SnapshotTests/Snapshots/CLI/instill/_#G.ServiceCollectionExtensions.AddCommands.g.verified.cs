@@ -19,253 +19,253 @@ namespace G
         {
             // Register individual command services as singletons
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AppPublicServiceListAppsCommand>(services);
+                AppAppPublicServiceListAppsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AppPublicServiceCreateAppCommand>(services);
+                AppAppPublicServiceCreateAppCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AppPublicServiceUpdateAppCommand>(services);
+                AppAppPublicServiceUpdateAppCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AppPublicServiceDeleteAppCommand>(services);
+                AppAppPublicServiceDeleteAppCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AppPublicServiceListConversationsCommand>(services);
+                AppAppPublicServiceListConversationsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AppPublicServiceCreateConversationCommand>(services);
+                AppAppPublicServiceCreateConversationCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AppPublicServiceUpdateConversationCommand>(services);
+                AppAppPublicServiceUpdateConversationCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AppPublicServiceDeleteConversationCommand>(services);
+                AppAppPublicServiceDeleteConversationCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AppPublicServiceListMessagesCommand>(services);
+                AppAppPublicServiceListMessagesCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AppPublicServiceCreateMessageCommand>(services);
+                AppAppPublicServiceCreateMessageCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AppPublicServiceUpdateMessageCommand>(services);
+                AppAppPublicServiceUpdateMessageCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AppPublicServiceDeleteMessageCommand>(services);
+                AppAppPublicServiceDeleteMessageCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AppPublicServiceGetPlaygroundConversationCommand>(services);
+                AppAppPublicServiceGetPlaygroundConversationCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AppPublicServiceRestartPlaygroundConversationCommand>(services);
+                AppAppPublicServiceRestartPlaygroundConversationCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                AppPublicServiceChatCommand>(services);
+                AppAppPublicServiceChatCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ListCatalogsCommand>(services);
+                ArtifactListCatalogsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateCatalogCommand>(services);
+                ArtifactCreateCatalogCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetFileCatalogCommand>(services);
+                ArtifactGetFileCatalogCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UpdateCatalogCommand>(services);
+                ArtifactUpdateCatalogCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                DeleteCatalogCommand>(services);
+                ArtifactDeleteCatalogCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ListCatalogFilesCommand>(services);
+                ArtifactListCatalogFilesCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UploadCatalogFileCommand>(services);
+                ArtifactUploadCatalogFileCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                DeleteCatalogFileCommand>(services);
+                ArtifactDeleteCatalogFileCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ProcessCatalogFilesCommand>(services);
+                ArtifactProcessCatalogFilesCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ListChunksCommand>(services);
+                ArtifactListChunksCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetSourceFileCommand>(services);
+                ArtifactGetSourceFileCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UpdateChunkCommand>(services);
+                ArtifactUpdateChunkCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                SimilarityChunksSearchCommand>(services);
+                ArtifactSimilarityChunksSearchCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                QuestionAnsweringCommand>(services);
+                ArtifactQuestionAnsweringCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ListCatalogRunsCommand>(services);
+                ArtifactListCatalogRunsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetObjectUploadURLCommand>(services);
+                ArtifactGetObjectUploadURLCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetObjectDownloadURLCommand>(services);
+                ArtifactGetObjectDownloadURLCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetAuthenticatedUserCommand>(services);
+                NamespaceGetAuthenticatedUserCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PatchAuthenticatedUserCommand>(services);
+                NamespacePatchAuthenticatedUserCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ListUsersCommand>(services);
+                NamespaceListUsersCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetUserCommand>(services);
+                NamespaceGetUserCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ListOrganizationsCommand>(services);
+                NamespaceListOrganizationsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateOrganizationCommand>(services);
+                NamespaceCreateOrganizationCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetOrganizationCommand>(services);
+                NamespaceGetOrganizationCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                DeleteOrganizationCommand>(services);
+                NamespaceDeleteOrganizationCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UpdateOrganizationCommand>(services);
+                NamespaceUpdateOrganizationCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ListUserMembershipsCommand>(services);
+                NamespaceListUserMembershipsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetUserMembershipCommand>(services);
+                NamespaceGetUserMembershipCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UpdateUserMembershipCommand>(services);
+                NamespaceUpdateUserMembershipCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                DeleteUserMembershipCommand>(services);
+                NamespaceDeleteUserMembershipCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ListOrganizationMembershipsCommand>(services);
+                NamespaceListOrganizationMembershipsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetOrganizationMembershipCommand>(services);
+                NamespaceGetOrganizationMembershipCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                UpdateOrganizationMembershipCommand>(services);
+                NamespaceUpdateOrganizationMembershipCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                DeleteOrganizationMembershipCommand>(services);
+                NamespaceDeleteOrganizationMembershipCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetAuthenticatedUserSubscriptionCommand>(services);
+                SubscriptionGetAuthenticatedUserSubscriptionCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetOrganizationSubscriptionCommand>(services);
+                SubscriptionGetOrganizationSubscriptionCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ListTokensCommand>(services);
+                NamespaceListTokensCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateTokenCommand>(services);
+                NamespaceCreateTokenCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetTokenCommand>(services);
+                NamespaceGetTokenCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                DeleteTokenCommand>(services);
+                NamespaceDeleteTokenCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ValidateTokenCommand>(services);
+                NamespaceValidateTokenCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetRemainingCreditCommand>(services);
+                SubscriptionGetRemainingCreditCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CheckNamespaceCommand>(services);
+                NamespaceCheckNamespaceCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ListPipelineTriggerRecordsCommand>(services);
+                MetricsListPipelineTriggerRecordsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ListPipelineTriggerChartRecordsCommand>(services);
+                MetricsListPipelineTriggerChartRecordsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ListModelTriggerChartRecordsCommand>(services);
+                MetricsListModelTriggerChartRecordsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ListCreditConsumptionChartRecordsCommand>(services);
+                MetricsListCreditConsumptionChartRecordsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelPublicServiceListModelDefinitionsCommand>(services);
+                ModelModelPublicServiceListModelDefinitionsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelPublicServiceListAvailableRegionsCommand>(services);
+                ModelModelPublicServiceListAvailableRegionsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelPublicServiceGetModelDefinitionCommand>(services);
+                ModelModelPublicServiceGetModelDefinitionCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelPublicServiceListModelsCommand>(services);
+                ModelModelPublicServiceListModelsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelPublicServiceListNamespaceModelsCommand>(services);
+                ModelModelPublicServiceListNamespaceModelsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelPublicServiceCreateNamespaceModelCommand>(services);
+                ModelModelPublicServiceCreateNamespaceModelCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelPublicServiceGetNamespaceModelCommand>(services);
+                ModelModelPublicServiceGetNamespaceModelCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelPublicServiceDeleteNamespaceModelCommand>(services);
+                ModelModelPublicServiceDeleteNamespaceModelCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelPublicServiceUpdateNamespaceModelCommand>(services);
+                ModelModelPublicServiceUpdateNamespaceModelCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelPublicServiceRenameNamespaceModelCommand>(services);
+                ModelModelPublicServiceRenameNamespaceModelCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelPublicServiceWatchNamespaceModelCommand>(services);
+                ModelModelPublicServiceWatchNamespaceModelCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelPublicServiceWatchNamespaceLatestModelCommand>(services);
+                ModelModelPublicServiceWatchNamespaceLatestModelCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelPublicServiceListNamespaceModelVersionsCommand>(services);
+                ModelModelPublicServiceListNamespaceModelVersionsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelPublicServiceDeleteNamespaceModelVersionCommand>(services);
+                ModelModelPublicServiceDeleteNamespaceModelVersionCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelPublicServiceTriggerNamespaceModelCommand>(services);
+                ModelModelPublicServiceTriggerNamespaceModelCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelPublicServiceTriggerAsyncNamespaceModelCommand>(services);
+                ModelModelPublicServiceTriggerAsyncNamespaceModelCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelPublicServiceTriggerNamespaceLatestModelCommand>(services);
+                ModelModelPublicServiceTriggerNamespaceLatestModelCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelPublicServiceTriggerAsyncNamespaceLatestModelCommand>(services);
+                ModelModelPublicServiceTriggerAsyncNamespaceLatestModelCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelPublicServiceGetNamespaceModelOperationCommand>(services);
+                ModelModelPublicServiceGetNamespaceModelOperationCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelPublicServiceGetNamespaceLatestModelOperationCommand>(services);
+                ModelModelPublicServiceGetNamespaceLatestModelOperationCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelPublicServiceGetModelOperationCommand>(services);
+                ModelModelPublicServiceGetModelOperationCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelPublicServiceListModelRunsCommand>(services);
+                ModelModelPublicServiceListModelRunsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ModelPublicServiceListModelRunsByRequesterCommand>(services);
+                ModelModelPublicServiceListModelRunsByRequesterCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceListPipelinesCommand>(services);
+                VdpPipelinePublicServiceListPipelinesCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceListNamespacePipelinesCommand>(services);
+                VdpPipelinePublicServiceListNamespacePipelinesCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceCreateNamespacePipelineCommand>(services);
+                VdpPipelinePublicServiceCreateNamespacePipelineCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceGetNamespacePipelineCommand>(services);
+                VdpPipelinePublicServiceGetNamespacePipelineCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceDeleteNamespacePipelineCommand>(services);
+                VdpPipelinePublicServiceDeleteNamespacePipelineCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceUpdateNamespacePipelineCommand>(services);
+                VdpPipelinePublicServiceUpdateNamespacePipelineCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceValidateNamespacePipelineCommand>(services);
+                VdpPipelinePublicServiceValidateNamespacePipelineCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceRenameNamespacePipelineCommand>(services);
+                VdpPipelinePublicServiceRenameNamespacePipelineCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceCloneNamespacePipelineCommand>(services);
+                VdpPipelinePublicServiceCloneNamespacePipelineCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceTriggerNamespacePipelineCommand>(services);
+                VdpPipelinePublicServiceTriggerNamespacePipelineCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceTriggerNamespacePipelineWithStreamCommand>(services);
+                VdpPipelinePublicServiceTriggerNamespacePipelineWithStreamCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceTriggerAsyncNamespacePipelineCommand>(services);
+                VdpPipelinePublicServiceTriggerAsyncNamespacePipelineCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceListNamespacePipelineReleasesCommand>(services);
+                VdpPipelinePublicServiceListNamespacePipelineReleasesCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceCreateNamespacePipelineReleaseCommand>(services);
+                VdpPipelinePublicServiceCreateNamespacePipelineReleaseCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceGetNamespacePipelineReleaseCommand>(services);
+                VdpPipelinePublicServiceGetNamespacePipelineReleaseCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceDeleteNamespacePipelineReleaseCommand>(services);
+                VdpPipelinePublicServiceDeleteNamespacePipelineReleaseCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceUpdateNamespacePipelineReleaseCommand>(services);
+                VdpPipelinePublicServiceUpdateNamespacePipelineReleaseCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceCloneNamespacePipelineReleaseCommand>(services);
+                VdpPipelinePublicServiceCloneNamespacePipelineReleaseCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceTriggerNamespacePipelineReleaseCommand>(services);
+                VdpPipelinePublicServiceTriggerNamespacePipelineReleaseCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceTriggerAsyncNamespacePipelineReleaseCommand>(services);
+                VdpPipelinePublicServiceTriggerAsyncNamespacePipelineReleaseCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceListNamespaceSecretsCommand>(services);
+                VdpPipelinePublicServiceListNamespaceSecretsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceCreateNamespaceSecretCommand>(services);
+                VdpPipelinePublicServiceCreateNamespaceSecretCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceGetNamespaceSecretCommand>(services);
+                VdpPipelinePublicServiceGetNamespaceSecretCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceDeleteNamespaceSecretCommand>(services);
+                VdpPipelinePublicServiceDeleteNamespaceSecretCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceUpdateNamespaceSecretCommand>(services);
+                VdpPipelinePublicServiceUpdateNamespaceSecretCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceListComponentDefinitionsCommand>(services);
+                VdpPipelinePublicServiceListComponentDefinitionsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceGetOperationCommand>(services);
+                VdpPipelinePublicServiceGetOperationCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceListPipelineRunsCommand>(services);
+                VdpPipelinePublicServiceListPipelineRunsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceListComponentRunsCommand>(services);
+                VdpPipelinePublicServiceListComponentRunsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceListPipelineRunsByRequesterCommand>(services);
+                VdpPipelinePublicServiceListPipelineRunsByRequesterCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceListNamespaceConnectionsCommand>(services);
+                VdpPipelinePublicServiceListNamespaceConnectionsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceCreateNamespaceConnectionCommand>(services);
+                VdpPipelinePublicServiceCreateNamespaceConnectionCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceGetNamespaceConnectionCommand>(services);
+                VdpPipelinePublicServiceGetNamespaceConnectionCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceDeleteNamespaceConnectionCommand>(services);
+                VdpPipelinePublicServiceDeleteNamespaceConnectionCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceUpdateNamespaceConnectionCommand>(services);
+                VdpPipelinePublicServiceUpdateNamespaceConnectionCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceTestNamespaceConnectionCommand>(services);
+                VdpPipelinePublicServiceTestNamespaceConnectionCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceListPipelineIDsByConnectionIDCommand>(services);
+                VdpPipelinePublicServiceListPipelineIDsByConnectionIDCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceListIntegrationsCommand>(services);
+                VdpPipelinePublicServiceListIntegrationsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PipelinePublicServiceGetIntegrationCommand>(services);
+                VdpPipelinePublicServiceGetIntegrationCommand>(services);
 
             // Register grouped command services as singletons
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<

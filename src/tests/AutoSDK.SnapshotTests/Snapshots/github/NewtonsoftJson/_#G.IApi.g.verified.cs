@@ -122,11 +122,6 @@ namespace G
         public MarkdownClient Markdown { get; }
 
         /// <summary>
-        /// Interact with GitHub Merge Queues.
-        /// </summary>
-        public MergeQueueClient MergeQueue { get; }
-
-        /// <summary>
         /// Endpoints that give information about the API.
         /// </summary>
         public MetaClient Meta { get; }
@@ -220,16 +215,6 @@ namespace G
         /// Interact with GitHub Classroom.
         /// </summary>
         public ClassroomClient Classroom { get; }
-
-        /// <summary>
-        /// Desktop specific endpoints.
-        /// </summary>
-        public DesktopClient Desktop { get; }
-
-        /// <summary>
-        /// Endpoints to manage GitHub Enterprise Teams.
-        /// </summary>
-        public EnterpriseTeamsClient EnterpriseTeams { get; }
 
         /// <summary>
         /// Endpoints to manage Code security using the REST API.

@@ -19,31 +19,31 @@ namespace G
         {
             // Register individual command services as singletons
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PostDescribeCommand>(services);
+                VisionPostDescribeCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PostGenerateImageCommand>(services);
+                GeneratePostGenerateImageCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetApiKeysCommand>(services);
+                ManageGetApiKeysCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                CreateApiKeyCommand>(services);
+                ManageCreateApiKeyCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                DeleteSingleApiKeyCommand>(services);
+                ManageDeleteSingleApiKeyCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ReactivateSubscriptionCommand>(services);
+                ManageReactivateSubscriptionCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetApiStripeSubscriptionCommand>(services);
+                ManageGetApiStripeSubscriptionCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetApiSubscriptionCommand>(services);
+                ManageGetApiSubscriptionCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PostApiSubscriptionCommand>(services);
+                ManagePostApiSubscriptionCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GetApiTermsCommand>(services);
+                ManageGetApiTermsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PostApiTermsCommand>(services);
+                ManagePostApiTermsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PostRemixImageCommand>(services);
+                GeneratePostRemixImageCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                PostUpscaleImageCommand>(services);
+                GeneratePostUpscaleImageCommand>(services);
 
             // Register grouped command services as singletons
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<

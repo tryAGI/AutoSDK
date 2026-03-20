@@ -7,8 +7,8 @@ namespace G
     internal sealed partial class TreeGroupCommand : global::System.CommandLine.Command
     {
         public TreeGroupCommand(
-            GetTreesCommand command0,
-            CreateTreeCommand command1)
+            TreesGetTreesCommand command0,
+            TreesCreateTreeCommand command1)
             : base(
                 name: "tree")
         {

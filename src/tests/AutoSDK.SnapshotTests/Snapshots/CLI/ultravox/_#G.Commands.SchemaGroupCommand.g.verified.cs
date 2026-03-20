@@ -7,7 +7,7 @@ namespace G
     internal sealed partial class SchemaGroupCommand : global::System.CommandLine.Command
     {
         public SchemaGroupCommand(
-            SchemaRetrieveCommand command0)
+            SchemaSchemaRetrieveCommand command0)
             : base(
                 name: "schema")
         {

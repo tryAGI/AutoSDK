@@ -7,14 +7,14 @@ namespace G
     internal sealed partial class UserGroupCommand : global::System.CommandLine.Command
     {
         public UserGroupCommand(
-            GetUsersCommand command0,
-            UpdateUserCommand command1,
-            GetUserBlockListCommand command2,
-            BlockUserCommand command3,
-            UnblockUserCommand command4,
-            GetUserExtensionsCommand command5,
-            GetUserActiveExtensionsCommand command6,
-            UpdateUserExtensionsCommand command7)
+            UsersGetUsersCommand command0,
+            UsersUpdateUserCommand command1,
+            UsersGetUserBlockListCommand command2,
+            UsersBlockUserCommand command3,
+            UsersUnblockUserCommand command4,
+            UsersGetUserExtensionsCommand command5,
+            UsersGetUserActiveExtensionsCommand command6,
+            UsersUpdateUserExtensionsCommand command7)
             : base(
                 name: "user")
         {

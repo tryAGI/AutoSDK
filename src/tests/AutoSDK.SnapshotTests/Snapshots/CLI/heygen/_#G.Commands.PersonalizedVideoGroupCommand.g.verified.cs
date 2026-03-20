@@ -7,9 +7,9 @@ namespace G
     internal sealed partial class PersonalizedVideoGroupCommand : global::System.CommandLine.Command
     {
         public PersonalizedVideoGroupCommand(
-            PersonalizedVideoAddContactCommand command0,
-            PersonalizedVideoAudienceDetailCommand command1,
-            PersonalizedVideoProjectDetailCommand command2)
+            PersonalizedVideoPersonalizedVideoAddContactCommand command0,
+            PersonalizedVideoPersonalizedVideoAudienceDetailCommand command1,
+            PersonalizedVideoPersonalizedVideoProjectDetailCommand command2)
             : base(
                 name: "personalizedvideo")
         {

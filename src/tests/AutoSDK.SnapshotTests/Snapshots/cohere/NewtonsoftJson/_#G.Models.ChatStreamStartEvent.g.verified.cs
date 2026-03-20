@@ -31,9 +31,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatStreamStartEventVariant2? Value2 { get; init; }
+        public global::G.ChatStreamStartEvent5v9jyv? Value2 { get; init; }
 #else
-        public global::G.ChatStreamStartEventVariant2? Value2 { get; }
+        public global::G.ChatStreamStartEvent5v9jyv? Value2 { get; }
 #endif
 
         /// <summary>
@@ -64,17 +64,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatStreamStartEvent(global::G.ChatStreamStartEventVariant2 value) => new ChatStreamStartEvent((global::G.ChatStreamStartEventVariant2?)value);
+        public static implicit operator ChatStreamStartEvent(global::G.ChatStreamStartEvent5v9jyv value) => new ChatStreamStartEvent((global::G.ChatStreamStartEvent5v9jyv?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatStreamStartEventVariant2?(ChatStreamStartEvent @this) => @this.Value2;
+        public static implicit operator global::G.ChatStreamStartEvent5v9jyv?(ChatStreamStartEvent @this) => @this.Value2;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatStreamStartEvent(global::G.ChatStreamStartEventVariant2? value)
+        public ChatStreamStartEvent(global::G.ChatStreamStartEvent5v9jyv? value)
         {
             Value2 = value;
         }
@@ -84,7 +84,7 @@ namespace G
         /// </summary>
         public ChatStreamStartEvent(
             global::G.ChatStreamEvent? value1,
-            global::G.ChatStreamStartEventVariant2? value2
+            global::G.ChatStreamStartEvent5v9jyv? value2
             )
         {
             Value1 = value1;
@@ -120,7 +120,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.ChatStreamEvent?, TResult>? value1 = null,
-            global::System.Func<global::G.ChatStreamStartEventVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.ChatStreamStartEvent5v9jyv?, TResult>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,7 +145,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.ChatStreamEvent?>? value1 = null,
-            global::System.Action<global::G.ChatStreamStartEventVariant2?>? value2 = null,
+            global::System.Action<global::G.ChatStreamStartEvent5v9jyv?>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -173,7 +173,7 @@ namespace G
                 Value1,
                 typeof(global::G.ChatStreamEvent),
                 Value2,
-                typeof(global::G.ChatStreamStartEventVariant2),
+                typeof(global::G.ChatStreamStartEvent5v9jyv),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -191,7 +191,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.ChatStreamEvent?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatStreamStartEventVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatStreamStartEvent5v9jyv?>.Default.Equals(Value2, other.Value2) 
                 ;
         }
 

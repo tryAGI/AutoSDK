@@ -7,8 +7,8 @@ namespace G
     internal sealed partial class DeletedCallGroupCommand : global::System.CommandLine.Command
     {
         public DeletedCallGroupCommand(
-            DeletedCallsListCommand command0,
-            DeletedCallsRetrieveCommand command1)
+            DeletedCallsDeletedCallsListCommand command0,
+            DeletedCallsDeletedCallsRetrieveCommand command1)
             : base(
                 name: "deletedcall")
         {

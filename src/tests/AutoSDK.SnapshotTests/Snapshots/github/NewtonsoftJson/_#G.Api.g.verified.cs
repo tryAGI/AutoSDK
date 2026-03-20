@@ -183,15 +183,6 @@ namespace G
         };
 
         /// <summary>
-        /// Interact with GitHub Merge Queues.
-        /// </summary>
-        public MergeQueueClient MergeQueue => new MergeQueueClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
         /// Endpoints that give information about the API.
         /// </summary>
         public MetaClient Meta => new MetaClient(HttpClient, authorizations: Authorizations)
@@ -357,24 +348,6 @@ namespace G
         /// Interact with GitHub Classroom.
         /// </summary>
         public ClassroomClient Classroom => new ClassroomClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// Desktop specific endpoints.
-        /// </summary>
-        public DesktopClient Desktop => new DesktopClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// Endpoints to manage GitHub Enterprise Teams.
-        /// </summary>
-        public EnterpriseTeamsClient EnterpriseTeams => new EnterpriseTeamsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

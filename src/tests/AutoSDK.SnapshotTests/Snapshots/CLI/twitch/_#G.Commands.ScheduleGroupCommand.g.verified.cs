@@ -7,12 +7,12 @@ namespace G
     internal sealed partial class ScheduleGroupCommand : global::System.CommandLine.Command
     {
         public ScheduleGroupCommand(
-            GetChannelStreamScheduleCommand command0,
-            GetChannelIcalendarCommand command1,
-            UpdateChannelStreamScheduleCommand command2,
-            CreateChannelStreamScheduleSegmentCommand command3,
-            UpdateChannelStreamScheduleSegmentCommand command4,
-            DeleteChannelStreamScheduleSegmentCommand command5)
+            ScheduleGetChannelStreamScheduleCommand command0,
+            ScheduleGetChannelIcalendarCommand command1,
+            ScheduleUpdateChannelStreamScheduleCommand command2,
+            ScheduleCreateChannelStreamScheduleSegmentCommand command3,
+            ScheduleUpdateChannelStreamScheduleSegmentCommand command4,
+            ScheduleDeleteChannelStreamScheduleSegmentCommand command5)
             : base(
                 name: "schedule")
         {

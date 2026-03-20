@@ -7,7 +7,7 @@ namespace G
     internal sealed partial class WhisperGroupCommand : global::System.CommandLine.Command
     {
         public WhisperGroupCommand(
-            SendWhisperCommand command0)
+            WhispersSendWhisperCommand command0)
             : base(
                 name: "whisper")
         {

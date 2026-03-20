@@ -25,12 +25,12 @@ namespace {values[0].Settings.Namespace}
     internal sealed partial class {tag.SingularizedName}GroupCommand : global::System.CommandLine.Command
     {{
         public {tag.SingularizedName}GroupCommand(
-{values.Select(x => $"{x.NotAsyncMethodName}Command").Distinct().Select((type, i) => @$"
+{values.Select(x => x.CliCommandClassName).Distinct().Select((type, i) => @$"
             {type} command{i},").Inject().TrimEnd(',')})
             : base(
                 name: ""{tag.SingularizedName.ToLowerInvariant()}"")
         {{
-{values.Select(x => $"{x.NotAsyncMethodName}Command").Distinct().Select((type, i) => @$"
+{values.Select(x => x.CliCommandClassName).Distinct().Select((type, i) => @$"
             Subcommands.Add(command{i});").Inject()}
         }}
     }}

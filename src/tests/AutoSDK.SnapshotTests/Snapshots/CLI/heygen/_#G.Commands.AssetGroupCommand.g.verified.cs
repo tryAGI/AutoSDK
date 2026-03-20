@@ -7,7 +7,7 @@ namespace G
     internal sealed partial class AssetGroupCommand : global::System.CommandLine.Command
     {
         public AssetGroupCommand(
-            V1AssetUploadCommand command0)
+            AssetsV1AssetUploadCommand command0)
             : base(
                 name: "asset")
         {

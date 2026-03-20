@@ -1,0 +1,238 @@
+﻿//HintName: G.AudioIsolation2Client.Stream.g.cs
+
+#nullable enable
+
+namespace G
+{
+    public partial class AudioIsolation2Client
+    {
+        partial void PrepareStreamArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string? xiApiKey,
+            global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPost request);
+        partial void PrepareStreamRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string? xiApiKey,
+            global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPost request);
+        partial void ProcessStreamResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        /// <summary>
+        /// Audio Isolation Stream<br/>
+        /// Removes background noise from audio and streams the result
+        /// </summary>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::System.IO.Stream> StreamAsync(
+
+            global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPost request,
+            string? xiApiKey = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
+            PrepareArguments(
+                client: HttpClient);
+            PrepareStreamArguments(
+                httpClient: HttpClient,
+                xiApiKey: ref xiApiKey,
+                request: request);
+
+            var __pathBuilder = new global::G.PathBuilder(
+                path: "/v1/audio-isolation/stream",
+                baseUri: HttpClient.BaseAddress); 
+            var __path = __pathBuilder.ToString();
+            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                method: global::System.Net.Http.HttpMethod.Post,
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+#if NET6_0_OR_GREATER
+            __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+            __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
+
+            if (xiApiKey != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("xi-api-key", xiApiKey.ToString());
+            }
+
+            using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            if (xiApiKey != default)
+            {
+
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{xiApiKey}"),
+                    name: "\"xi-api-key\"");
+            }
+            var __contentAudio = new global::System.Net.Http.ByteArrayContent(request.Audio ?? global::System.Array.Empty<byte>());
+            __httpRequestContent.Add(
+                content: __contentAudio,
+                name: "\"audio\"",
+                fileName: request.Audioname != null ? $"\"{request.Audioname}\"" : string.Empty);
+            if (__contentAudio.Headers.ContentDisposition != null)
+            {
+                __contentAudio.Headers.ContentDisposition.FileNameStar = null;
+            }
+            if (request.FileFormat != default)
+            {
+
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.FileFormat}"),
+                    name: "\"file_format\"");
+            }
+            __httpRequest.Content = __httpRequestContent;
+
+            PrepareRequest(
+                client: HttpClient,
+                request: __httpRequest);
+            PrepareStreamRequest(
+                httpClient: HttpClient,
+                httpRequestMessage: __httpRequest,
+                xiApiKey: xiApiKey,
+                request: request);
+
+            var __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseHeadersRead,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            try
+            {
+
+            ProcessResponse(
+                client: HttpClient,
+                response: __response);
+            ProcessStreamResponse(
+                httpClient: HttpClient,
+                httpResponseMessage: __response);
+            // Validation Error
+            if ((int)__response.StatusCode == 422)
+            {
+                string? __content_422 = null;
+                global::System.Exception? __exception_422 = null;
+                global::G.HTTPValidationError? __value_422 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_422 = global::G.HTTPValidationError.FromJson(__content_422, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_422 = global::G.HTTPValidationError.FromJson(__content_422, JsonSerializerOptions);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_422 = __ex;
+                }
+
+                throw new global::G.ApiException<global::G.HTTPValidationError>(
+                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_422,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_422,
+                    ResponseObject = __value_422,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+
+            try
+            {
+                __response.EnsureSuccessStatusCode();
+
+                var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
+
+                return new global::G.ResponseStream(__response, __content);
+            }
+            catch (global::System.Exception __ex)
+            {
+                string? __content = null;
+                try
+                {
+                    __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+                }
+                catch (global::System.Exception)
+                {
+                }
+
+                throw new global::G.ApiException(
+                    message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __ex,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+
+            }
+            catch
+            {
+                __response.Dispose();
+                throw;
+            }
+        }
+        /// <summary>
+        /// Audio Isolation Stream<br/>
+        /// Removes background noise from audio and streams the result
+        /// </summary>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
+        /// <param name="audio">
+        /// The audio file from which vocals/speech will be isolated from.
+        /// </param>
+        /// <param name="audioname">
+        /// The audio file from which vocals/speech will be isolated from.
+        /// </param>
+        /// <param name="fileFormat">
+        /// The format of input audio. Options are 'pcm_s16le_16' or 'other' For `pcm_s16le_16`, the input audio must be 16-bit PCM at a 16kHz sample rate, single channel (mono), and little-endian byte order. Latency will be lower than with passing an encoded waveform.<br/>
+        /// Default Value: other
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<global::System.IO.Stream> StreamAsync(
+            byte[] audio,
+            string audioname,
+            string? xiApiKey = default,
+            global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormat2? fileFormat = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __request = new global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPost
+            {
+                Audio = audio,
+                Audioname = audioname,
+                FileFormat = fileFormat,
+            };
+
+            return await StreamAsync(
+                xiApiKey: xiApiKey,
+                request: __request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+    }
+}

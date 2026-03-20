@@ -98,26 +98,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CredentialsClient Credentials { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public GcpClient Gcp { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AwsClient Aws { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AzureClient Azure { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public ClusterClient Cluster { get; }
 
         /// <summary>

@@ -7,23 +7,23 @@ namespace G
     internal sealed partial class ArtifactGroupCommand : global::System.CommandLine.Command
     {
         public ArtifactGroupCommand(
-            ListCatalogsCommand command0,
-            CreateCatalogCommand command1,
-            GetFileCatalogCommand command2,
-            UpdateCatalogCommand command3,
-            DeleteCatalogCommand command4,
-            ListCatalogFilesCommand command5,
-            UploadCatalogFileCommand command6,
-            DeleteCatalogFileCommand command7,
-            ProcessCatalogFilesCommand command8,
-            ListChunksCommand command9,
-            GetSourceFileCommand command10,
-            UpdateChunkCommand command11,
-            SimilarityChunksSearchCommand command12,
-            QuestionAnsweringCommand command13,
-            ListCatalogRunsCommand command14,
-            GetObjectUploadURLCommand command15,
-            GetObjectDownloadURLCommand command16)
+            ArtifactListCatalogsCommand command0,
+            ArtifactCreateCatalogCommand command1,
+            ArtifactGetFileCatalogCommand command2,
+            ArtifactUpdateCatalogCommand command3,
+            ArtifactDeleteCatalogCommand command4,
+            ArtifactListCatalogFilesCommand command5,
+            ArtifactUploadCatalogFileCommand command6,
+            ArtifactDeleteCatalogFileCommand command7,
+            ArtifactProcessCatalogFilesCommand command8,
+            ArtifactListChunksCommand command9,
+            ArtifactGetSourceFileCommand command10,
+            ArtifactUpdateChunkCommand command11,
+            ArtifactSimilarityChunksSearchCommand command12,
+            ArtifactQuestionAnsweringCommand command13,
+            ArtifactListCatalogRunsCommand command14,
+            ArtifactGetObjectUploadURLCommand command15,
+            ArtifactGetObjectDownloadURLCommand command16)
             : base(
                 name: "artifact")
         {

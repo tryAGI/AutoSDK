@@ -7,7 +7,7 @@ namespace G
     internal sealed partial class UserGroupCommand : global::System.CommandLine.Command
     {
         public UserGroupCommand(
-            GetCurrentUserCommand command0)
+            UserGetCurrentUserCommand command0)
             : base(
                 name: "user")
         {

@@ -7,12 +7,12 @@ namespace G
     internal sealed partial class ChannelPointGroupCommand : global::System.CommandLine.Command
     {
         public ChannelPointGroupCommand(
-            CreateCustomRewardsCommand command0,
-            DeleteCustomRewardCommand command1,
-            GetCustomRewardCommand command2,
-            UpdateCustomRewardCommand command3,
-            GetCustomRewardRedemptionCommand command4,
-            UpdateRedemptionStatusCommand command5)
+            ChannelPointsCreateCustomRewardsCommand command0,
+            ChannelPointsDeleteCustomRewardCommand command1,
+            ChannelPointsGetCustomRewardCommand command2,
+            ChannelPointsUpdateCustomRewardCommand command3,
+            ChannelPointsGetCustomRewardRedemptionCommand command4,
+            ChannelPointsUpdateRedemptionStatusCommand command5)
             : base(
                 name: "channelpoint")
         {

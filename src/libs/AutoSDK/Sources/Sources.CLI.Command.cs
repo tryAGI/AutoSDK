@@ -37,7 +37,7 @@ public static partial class Sources
 
 namespace {endPoint.Settings.Namespace}
 {{
-    internal sealed partial class {endPoint.NotAsyncMethodName}Command : global::System.CommandLine.Command
+    internal sealed partial class {endPoint.CliCommandClassName} : global::System.CommandLine.Command
     {{
         private readonly {clientType} _client;
         private readonly global::System.IServiceProvider _serviceProvider;
@@ -80,7 +80,7 @@ namespace {endPoint.Settings.Namespace}
         };
 " : TrimmedLine)}
 
-        public {endPoint.NotAsyncMethodName}Command(
+        public {endPoint.CliCommandClassName}(
             {clientType} client,
             global::System.IServiceProvider serviceProvider) : base(
             name: ""{endPoint.CliAction}"",

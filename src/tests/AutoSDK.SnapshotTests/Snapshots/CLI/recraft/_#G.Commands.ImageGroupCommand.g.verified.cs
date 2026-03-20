@@ -7,11 +7,11 @@ namespace G
     internal sealed partial class ImageGroupCommand : global::System.CommandLine.Command
     {
         public ImageGroupCommand(
-            ClarityUpscaleCommand command0,
-            GenerateImageCommand command1,
-            GenerativeUpscaleCommand command2,
-            RemoveBackgroundCommand command3,
-            VectorizeImageCommand command4)
+            ImageClarityUpscaleCommand command0,
+            ImageGenerateImageCommand command1,
+            ImageGenerativeUpscaleCommand command2,
+            ImageRemoveBackgroundCommand command3,
+            ImageVectorizeImageCommand command4)
             : base(
                 name: "image")
         {

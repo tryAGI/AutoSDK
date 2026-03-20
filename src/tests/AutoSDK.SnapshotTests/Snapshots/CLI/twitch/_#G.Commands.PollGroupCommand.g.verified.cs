@@ -7,9 +7,9 @@ namespace G
     internal sealed partial class PollGroupCommand : global::System.CommandLine.Command
     {
         public PollGroupCommand(
-            GetPollsCommand command0,
-            CreatePollCommand command1,
-            EndPollCommand command2)
+            PollsGetPollsCommand command0,
+            PollsCreatePollCommand command1,
+            PollsEndPollCommand command2)
             : base(
                 name: "poll")
         {
