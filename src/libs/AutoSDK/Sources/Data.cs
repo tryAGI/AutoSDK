@@ -98,14 +98,15 @@ public static class Data
         // Find all tags used in operations besides the ones defined in the document.
         // Also collect ad-hoc group names from x-fern-sdk-group-name extensions in a single pass.
         var allTags = openApiDocument.Tags!;
+        var knownTagNames = new HashSet<string>(
+            allTags.Where(x => x.Name != null).Select(x => x.Name!));
         foreach (var operation in (openApiDocument.Paths ?? new OpenApiPaths())
                      .SelectMany(x => x.Value.Operations ?? new Dictionary<System.Net.Http.HttpMethod, OpenApiOperation>())
                      .Select(x => x.Value))
         {
             foreach (var tag in operation.Tags ?? new HashSet<OpenApiTagReference>())
             {
-                var existingTag = allTags.FirstOrDefault(x => x.Name == tag.Name);
-                if (existingTag is null)
+                if (tag.Name != null && knownTagNames.Add(tag.Name))
                 {
                     // In OpenAPI 3.0+, Tags collection contains OpenApiTag, but operation.Tags contains OpenApiTagReference
                     // Create a new OpenApiTag from the reference
@@ -118,7 +119,7 @@ public static class Data
                 OpenApiExtensions.TryGetExtensionStringValue(
                     operation.Extensions, "x-fern-sdk-group-name", out var groupName) &&
                 !string.IsNullOrWhiteSpace(groupName) &&
-                allTags.All(x => x.Name != groupName))
+                knownTagNames.Add(groupName))
             {
                 allTags.Add(new OpenApiTag { Name = groupName });
             }
