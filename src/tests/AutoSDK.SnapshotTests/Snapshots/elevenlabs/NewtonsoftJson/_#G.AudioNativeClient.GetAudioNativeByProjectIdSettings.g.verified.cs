@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Audio Native Project Settings<br/>
         /// Get player settings for the specific project.

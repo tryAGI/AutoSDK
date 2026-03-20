@@ -22,7 +22,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Delete an invite. If the invite has already been accepted, it cannot be deleted.
         /// </summary>

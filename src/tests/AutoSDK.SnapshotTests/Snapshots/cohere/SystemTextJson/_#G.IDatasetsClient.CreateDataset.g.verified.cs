@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IDatasetsClient
     {
-
         /// <summary>
         /// Create a Dataset<br/>
         /// Create a dataset by uploading a file. See ['Dataset Creation'](https://docs.cohere.com/docs/datasets#dataset-creation) for more information.
@@ -21,7 +20,6 @@ namespace G
         /// <param name="textSeparator"></param>
         /// <param name="csvDelimiter"></param>
         /// <param name="xClientName"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -38,7 +36,6 @@ namespace G
             string? csvDelimiter = default,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a Dataset<br/>
         /// Create a dataset by uploading a file. See ['Dataset Creation'](https://docs.cohere.com/docs/datasets#dataset-creation) for more information.

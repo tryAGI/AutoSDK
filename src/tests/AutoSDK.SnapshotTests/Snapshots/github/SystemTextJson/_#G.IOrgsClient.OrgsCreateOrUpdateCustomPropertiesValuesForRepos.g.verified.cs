@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// Create or update custom property values for organization repositories<br/>
         /// Create new or update existing custom property values for repositories in a batch that belong to an organization.<br/>
@@ -17,7 +16,6 @@ namespace G
         ///   - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_values_editor` in the organization.
         /// </summary>
         /// <param name="org"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -26,7 +24,6 @@ namespace G
 
             global::G.OrgsCreateOrUpdateCustomPropertiesValuesForReposRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create or update custom property values for organization repositories<br/>
         /// Create new or update existing custom property values for repositories in a batch that belong to an organization.<br/>

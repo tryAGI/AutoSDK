@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// List Mcp Server Tools<br/>
         /// Retrieve all tools available for a specific MCP server configuration.

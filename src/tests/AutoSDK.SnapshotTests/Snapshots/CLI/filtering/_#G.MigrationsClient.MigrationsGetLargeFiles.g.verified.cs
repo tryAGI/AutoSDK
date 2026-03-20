@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get large files<br/>
         /// List files larger than 100MB found during the import<br/>
@@ -35,7 +34,6 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.PorterLargeFile>> MigrationsGetLargeFilesAsync(
             string owner,

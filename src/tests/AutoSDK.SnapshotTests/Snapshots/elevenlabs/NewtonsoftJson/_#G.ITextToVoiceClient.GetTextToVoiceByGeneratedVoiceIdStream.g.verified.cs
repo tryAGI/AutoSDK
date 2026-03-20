@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITextToVoiceClient
     {
-
         /// <summary>
         /// Text To Voice Preview Streaming<br/>
         /// Stream a voice preview that was created via the /v1/text-to-voice/design endpoint.

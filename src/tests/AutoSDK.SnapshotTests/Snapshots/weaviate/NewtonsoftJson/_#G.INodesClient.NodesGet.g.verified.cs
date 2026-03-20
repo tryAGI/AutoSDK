@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface INodesClient
     {
-
         /// <summary>
         /// Node information for the database.<br/>
         /// Returns node information for the entire database.

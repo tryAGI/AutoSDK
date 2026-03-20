@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IModelsClient
     {
-
         /// <summary>
         /// Delete a Single Custom Model by ID<br/>
         /// This endpoint will delete a specific custom model

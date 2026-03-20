@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITeamsClient
     {
-
         /// <summary>
         /// Update a discussion comment<br/>
         /// Edits the body text of a discussion comment.<br/>
@@ -17,7 +16,6 @@ namespace G
         /// <param name="teamSlug"></param>
         /// <param name="discussionNumber"></param>
         /// <param name="commentNumber"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -29,7 +27,6 @@ namespace G
 
             global::G.TeamsUpdateDiscussionCommentInOrgRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update a discussion comment<br/>
         /// Edits the body text of a discussion comment.<br/>

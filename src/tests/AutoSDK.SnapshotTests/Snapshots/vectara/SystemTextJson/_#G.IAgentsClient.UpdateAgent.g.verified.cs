@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsClient
     {
-
         /// <summary>
         /// Update agent<br/>
         /// The Update Agent API enables you to modify an existing agent configuration, including tool assignments, behavioral instructions, model parameters, and operational metadata.<br/>
@@ -17,7 +16,6 @@ namespace G
         /// A unique key that identifies an agent.<br/>
         /// Example: customer_support
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -28,7 +26,6 @@ namespace G
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update agent<br/>
         /// The Update Agent API enables you to modify an existing agent configuration, including tool assignments, behavioral instructions, model parameters, and operational metadata.<br/>

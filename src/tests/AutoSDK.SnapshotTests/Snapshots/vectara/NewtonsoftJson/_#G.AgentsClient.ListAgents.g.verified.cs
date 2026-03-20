@@ -32,7 +32,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List agents<br/>
         /// The List Agents API enables you to retrieve a paginated list of all agents available to the authenticated user. This is useful for managing and monitoring agent deployments across use cases and environments.

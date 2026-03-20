@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITextCompletionsClient
     {
-
         /// <summary>
         /// Create a Text Completion<br/>
         /// [Legacy] Create a Text Completion.<br/>
@@ -16,7 +15,6 @@ namespace G
         /// The version of the Anthropic API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -25,7 +23,6 @@ namespace G
             global::G.CompletionRequest request,
             string? anthropicVersion = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a Text Completion<br/>
         /// [Legacy] Create a Text Completion.<br/>

@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get a repository README for a directory<br/>
         /// Gets the README from a repository directory.<br/>

@@ -22,14 +22,12 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Stream Run<br/>
         /// Submit a new streaming run request, where the run output is streamed as<br/>
         /// it becomes available, rather than waiting for all the data to be<br/>
         /// generated.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -219,7 +217,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Stream Run<br/>
         /// Submit a new streaming run request, where the run output is streamed as<br/>

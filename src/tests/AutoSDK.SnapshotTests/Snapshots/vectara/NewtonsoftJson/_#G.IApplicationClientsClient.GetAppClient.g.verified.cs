@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IApplicationClientsClient
     {
-
         /// <summary>
         /// Get an App Client<br/>
         /// Retrieve details of a specific application client by its ID.

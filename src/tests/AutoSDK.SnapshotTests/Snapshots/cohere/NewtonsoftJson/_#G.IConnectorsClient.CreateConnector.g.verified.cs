@@ -5,13 +5,11 @@ namespace G
 {
     public partial interface IConnectorsClient
     {
-
         /// <summary>
         /// Create a Connector<br/>
         /// Creates a new connector. The connector is tested during registration and will cancel registration when the test is unsuccessful. See ['Creating and Deploying a Connector'](https://docs.cohere.com/v1/docs/creating-and-deploying-a-connector) for more information.
         /// </summary>
         /// <param name="xClientName"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -20,7 +18,6 @@ namespace G
             global::G.CreateConnectorRequest request,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a Connector<br/>
         /// Creates a new connector. The connector is tested during registration and will cancel registration when the test is unsuccessful. See ['Creating and Deploying a Connector'](https://docs.cohere.com/v1/docs/creating-and-deploying-a-connector) for more information.

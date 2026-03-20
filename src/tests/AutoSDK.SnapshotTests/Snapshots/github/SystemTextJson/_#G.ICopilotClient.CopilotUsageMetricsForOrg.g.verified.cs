@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICopilotClient
     {
-
         /// <summary>
         /// Get a summary of Copilot usage for organization members<br/>
         /// &gt; [!NOTE]<br/>

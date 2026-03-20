@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAppClient
     {
-
         /// <summary>
         /// Delete a conversation<br/>
         /// Deletes a conversation.

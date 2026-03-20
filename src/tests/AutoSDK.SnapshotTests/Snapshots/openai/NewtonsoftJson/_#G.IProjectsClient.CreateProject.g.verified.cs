@@ -5,11 +5,9 @@ namespace G
 {
     public partial interface IProjectsClient
     {
-
         /// <summary>
         /// Create a new project in the organization. Projects can be created and archived, but cannot be deleted.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace G
 
             global::G.ProjectCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a new project in the organization. Projects can be created and archived, but cannot be deleted.
         /// </summary>

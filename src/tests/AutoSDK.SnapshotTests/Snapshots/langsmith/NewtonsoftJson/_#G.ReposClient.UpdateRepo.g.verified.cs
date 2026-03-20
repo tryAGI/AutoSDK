@@ -26,14 +26,12 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Update Repo<br/>
         /// Update a repo.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -233,7 +231,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Update Repo<br/>
         /// Update a repo.

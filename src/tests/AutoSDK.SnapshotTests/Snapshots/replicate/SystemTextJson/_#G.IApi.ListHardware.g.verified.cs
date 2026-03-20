@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IApi
     {
-
         /// <summary>
         /// List available hardware for models<br/>
         /// Example cURL request:<br/>

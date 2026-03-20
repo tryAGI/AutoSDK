@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Generate Documents Signed Url
         /// </summary>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICopilotClient
     {
-
         /// <summary>
         /// Get Copilot seat information and settings for an organization<br/>
         /// &gt; [!NOTE]<br/>

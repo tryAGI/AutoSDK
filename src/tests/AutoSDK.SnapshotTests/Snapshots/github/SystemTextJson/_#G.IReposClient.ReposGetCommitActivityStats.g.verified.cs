@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// Get the last year of commit activity<br/>
         /// Returns the last year of commit activity grouped by week. The `days` array is a group of commits per day, starting on `Sunday`.

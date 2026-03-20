@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Bans a user from participating in a broadcaster’s chat room or puts them in a timeout.<br/>
         /// Bans a user from participating in the specified broadcaster’s chat room or puts them in a timeout.<br/>
@@ -38,7 +37,6 @@ namespace G
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -369,7 +367,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Bans a user from participating in a broadcaster’s chat room or puts them in a timeout.<br/>
         /// Bans a user from participating in the specified broadcaster’s chat room or puts them in a timeout.<br/>

@@ -32,7 +32,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get repositories associated with a code security configuration<br/>
         /// Lists the repositories associated with a code security configuration in an organization.<br/>

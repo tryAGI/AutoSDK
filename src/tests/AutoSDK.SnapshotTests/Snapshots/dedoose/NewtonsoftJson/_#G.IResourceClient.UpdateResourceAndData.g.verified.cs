@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IResourceClient
     {
-
         /// <summary>
         /// UpdateResourceAndData<br/>
         /// UpdateResourceAndData
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.UpdateResourceAndDataRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// UpdateResourceAndData<br/>
         /// UpdateResourceAndData

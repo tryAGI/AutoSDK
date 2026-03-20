@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IFinetuningClient
     {
-
         /// <summary>
         /// Lists fine-tuned models.
         /// </summary>

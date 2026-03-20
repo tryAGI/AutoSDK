@@ -20,7 +20,6 @@ namespace recraft
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get current user info
         /// </summary>

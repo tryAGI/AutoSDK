@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// Get allowed actions and reusable workflows for a repository<br/>
         /// Gets the settings for selected actions and reusable workflows that are allowed in a repository. To use this endpoint, the repository policy for `allowed_actions` must be configured to `selected`. For more information, see "[Set GitHub Actions permissions for a repository](#set-github-actions-permissions-for-a-repository)."<br/>

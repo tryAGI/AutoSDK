@@ -34,7 +34,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Returns a list of run steps belonging to a run.
         /// </summary>

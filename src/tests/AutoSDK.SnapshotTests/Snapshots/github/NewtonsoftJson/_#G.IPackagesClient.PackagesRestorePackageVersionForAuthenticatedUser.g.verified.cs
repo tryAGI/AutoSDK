@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPackagesClient
     {
-
         /// <summary>
         /// Restore a package version for the authenticated user<br/>
         /// Restores a package version owned by the authenticated user.<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IStreamingApiClient
     {
-
         /// <summary>
         /// streaming/avatar.list<br/>
         /// streaming/avatar.list

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentSchedulesClient
     {
-
         /// <summary>
         /// List agent schedules<br/>
         /// List all schedules for the specified agent. This endpoint returns high-level information about each schedule including execution status and next scheduled execution time.

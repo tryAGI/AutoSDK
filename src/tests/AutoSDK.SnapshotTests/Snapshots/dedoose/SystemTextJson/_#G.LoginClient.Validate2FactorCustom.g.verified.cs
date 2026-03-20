@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Validate Two-Factor Authentication<br/>
         /// Validates two-factor authentication credentials and returns user data.

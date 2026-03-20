@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IFineTuningClient
     {
-
         /// <summary>
         /// Get info about a fine-tuning job.<br/>
         /// [Learn more about fine-tuning](/docs/guides/model-optimization)

@@ -20,7 +20,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get all API versions<br/>
         /// Get all supported GitHub API versions.

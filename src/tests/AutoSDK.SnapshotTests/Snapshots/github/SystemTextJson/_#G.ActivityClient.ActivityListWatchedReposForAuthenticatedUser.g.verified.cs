@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List repositories watched by the authenticated user<br/>
         /// Lists repositories the authenticated user is watching.

@@ -22,7 +22,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Delete Sso Settings<br/>
         /// Delete SSO provider settings for the current organization.

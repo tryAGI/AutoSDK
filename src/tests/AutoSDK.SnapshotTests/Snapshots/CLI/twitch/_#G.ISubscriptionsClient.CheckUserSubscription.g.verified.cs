@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ISubscriptionsClient
     {
-
         /// <summary>
         /// Checks whether the user subscribes to the broadcaster’s channel.<br/>
         /// Checks whether the user subscribes to the broadcaster’s channel.<br/>

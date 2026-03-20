@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IGitClient
     {
-
         /// <summary>
         /// Delete a reference<br/>
         /// Deletes the provided reference.

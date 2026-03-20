@@ -34,7 +34,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List events in agent session<br/>
         /// List all events in a specific agent session, with optional pagination.

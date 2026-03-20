@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List Test Invocations<br/>
         /// Lists all test invocations with pagination support and optional search filtering.

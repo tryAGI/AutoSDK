@@ -20,7 +20,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Create Examples<br/>
         /// Create a new example.

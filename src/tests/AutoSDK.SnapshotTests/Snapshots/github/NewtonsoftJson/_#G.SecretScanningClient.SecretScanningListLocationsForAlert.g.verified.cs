@@ -30,7 +30,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List locations for a secret scanning alert<br/>
         /// Lists all locations for a given secret scanning alert for an eligible repository.<br/>

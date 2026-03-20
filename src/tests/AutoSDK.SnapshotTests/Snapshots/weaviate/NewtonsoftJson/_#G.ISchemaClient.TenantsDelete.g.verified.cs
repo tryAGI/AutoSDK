@@ -5,13 +5,11 @@ namespace G
 {
     public partial interface ISchemaClient
     {
-
         /// <summary>
         /// Delete tenant(s).<br/>
         /// Delete tenants from a collection
         /// </summary>
         /// <param name="className"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

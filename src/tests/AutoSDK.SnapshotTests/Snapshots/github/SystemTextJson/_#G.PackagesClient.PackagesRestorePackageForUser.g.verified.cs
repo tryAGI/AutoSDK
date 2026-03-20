@@ -23,7 +23,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Restore a package for a user<br/>
         /// Restores an entire package for a user.<br/>

@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface ITagClient
     {
-
         /// <summary>
         /// GetTagsByProject<br/>
         /// GetTagsByProject
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.GetTagsByProjectRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// GetTagsByProject<br/>
         /// GetTagsByProject

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IUsersClient
     {
-
         /// <summary>
         /// List social accounts for the authenticated user<br/>
         /// Lists all of your social accounts.

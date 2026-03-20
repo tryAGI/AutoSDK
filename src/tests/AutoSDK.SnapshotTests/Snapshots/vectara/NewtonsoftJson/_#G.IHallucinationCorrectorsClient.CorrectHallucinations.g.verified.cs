@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IHallucinationCorrectorsClient
     {
-
         /// <summary>
         /// Corrects hallucinations in generated text based on source documents<br/>
         /// The Hallucination Correctors API enables users to automatically detect and correct factual inaccuracies, commonly referred to as hallucinations, in generated summaries or responses. By comparing a user-provided summary against one or more source documents, the API returns a corrected version of the summary with minimal necessary edits.<br/>
@@ -17,7 +16,6 @@ namespace G
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -27,7 +25,6 @@ namespace G
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Corrects hallucinations in generated text based on source documents<br/>
         /// The Hallucination Correctors API enables users to automatically detect and correct factual inaccuracies, commonly referred to as hallucinations, in generated summaries or responses. By comparing a user-provided summary against one or more source documents, the API returns a corrected version of the summary with minimal necessary edits.<br/>

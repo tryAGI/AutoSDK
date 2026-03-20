@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPullsClient
     {
-
         /// <summary>
         /// List commits on a pull request<br/>
         /// Lists a maximum of 250 commits for a pull request. To receive a complete<br/>

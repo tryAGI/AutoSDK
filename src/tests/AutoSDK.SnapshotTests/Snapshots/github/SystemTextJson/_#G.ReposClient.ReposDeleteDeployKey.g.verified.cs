@@ -21,7 +21,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Delete a deploy key<br/>
         /// Deploy keys are immutable. If you need to update a key, remove the key and create a new one instead.

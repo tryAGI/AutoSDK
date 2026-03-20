@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IVdpClient
     {
-
         /// <summary>
         /// Get a namespace connection<br/>
         /// Returns the details of a connection.

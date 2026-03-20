@@ -38,7 +38,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List messages<br/>
         /// Returns a paginated list of messages.

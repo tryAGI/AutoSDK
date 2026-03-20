@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get community profile metrics<br/>
         /// Returns all community profile metrics for a repository. The repository cannot be a fork.<br/>

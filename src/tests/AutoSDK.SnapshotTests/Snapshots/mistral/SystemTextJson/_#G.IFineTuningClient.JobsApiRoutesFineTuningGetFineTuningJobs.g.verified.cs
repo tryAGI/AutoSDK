@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IFineTuningClient
     {
-
         /// <summary>
         /// Get Fine Tuning Jobs<br/>
         /// Get a list of fine-tuning jobs for your organization and user.

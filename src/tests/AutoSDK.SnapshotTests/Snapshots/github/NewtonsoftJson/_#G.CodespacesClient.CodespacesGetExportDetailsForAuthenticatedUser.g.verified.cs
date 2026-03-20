@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get details about a codespace export<br/>
         /// Gets information about an export of a codespace.<br/>

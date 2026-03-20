@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPersonalizedVideoClient
     {
-
         /// <summary>
         /// personalized_video/audience/detail<br/>
         /// personalized_video/audience/detail

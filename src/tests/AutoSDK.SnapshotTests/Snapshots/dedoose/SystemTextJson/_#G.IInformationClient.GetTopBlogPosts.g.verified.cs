@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IInformationClient
     {
-
         /// <summary>
         /// Get Top Blog Posts<br/>
         /// Returns the top blog posts from the Dedoose blog.

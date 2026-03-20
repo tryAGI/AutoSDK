@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICodeScanningClient
     {
-
         /// <summary>
         /// Get the summary of a CodeQL variant analysis<br/>
         /// Gets the summary of a CodeQL variant analysis.<br/>

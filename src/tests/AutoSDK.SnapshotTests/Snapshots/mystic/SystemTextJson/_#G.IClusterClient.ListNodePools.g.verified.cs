@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IClusterClient
     {
-
         /// <summary>
         /// List Node Pools<br/>
         /// List node pools for a given cluster

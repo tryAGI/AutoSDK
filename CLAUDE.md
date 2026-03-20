@@ -183,6 +183,15 @@ Why two projects?
 
 ### Code Generation String Template Conventions
 
+> **CRITICAL WARNING — Trailing Space Convention**
+>
+> In `Sources/` template strings, a **trailing space** after `@"` or `$@"` controls whether the first line is trimmed or preserved. **Never remove trailing spaces** from template string openers — this causes unwanted blank lines in ALL generated output files (thousands of snapshot changes).
+>
+> - `$@" \n` (space after `"`) → first line is `" "` (whitespace-only) → **TRIMMED** by `RemoveBlankLinesWhereOnlyWhitespaces()`
+> - `$@"\n` (no space after `"`) → first line is `""` (empty, length 0) → **PRESERVED** as blank line
+>
+> When editing ternary expressions inside templates (e.g., changing `@" \n...[Obsolete]..."` to `$@" \n...[Obsolete("custom")]..."`), always preserve the space between `"` and the newline. The same applies to `return $@" \n` at the start of template methods.
+
 The `Sources/` code generation templates use two key extension methods that interact:
 - **`Inject()`** (`StringExtensions.cs`): Concatenates strings and trims leading/trailing `\r`/`\n` characters. Returns `" "` (space) if empty.
 - **`RemoveBlankLinesWhereOnlyWhitespaces()`**: Removes lines that contain only whitespace (but keeps truly empty lines).

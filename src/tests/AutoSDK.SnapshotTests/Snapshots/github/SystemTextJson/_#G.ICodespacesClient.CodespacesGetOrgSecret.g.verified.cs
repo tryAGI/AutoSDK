@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICodespacesClient
     {
-
         /// <summary>
         /// Get an organization secret<br/>
         /// Gets an organization development environment secret without revealing its encrypted value.<br/>

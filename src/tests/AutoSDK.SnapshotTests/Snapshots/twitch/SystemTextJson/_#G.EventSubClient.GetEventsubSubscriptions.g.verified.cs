@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Gets a list of EventSub subscriptions that the client in the access token created.<br/>
         /// Gets a list of EventSub subscriptions that the client in the access token created.<br/>

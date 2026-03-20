@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Metadata For A Pronunciation Dictionary<br/>
         /// Get metadata for a pronunciation dictionary

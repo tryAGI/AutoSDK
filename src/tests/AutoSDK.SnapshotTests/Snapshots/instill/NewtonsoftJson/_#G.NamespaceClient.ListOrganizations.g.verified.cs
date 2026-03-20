@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List organizations<br/>
         /// Returns a paginated list of organizations.

@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List project columns<br/>
         /// Lists the project columns in a project.

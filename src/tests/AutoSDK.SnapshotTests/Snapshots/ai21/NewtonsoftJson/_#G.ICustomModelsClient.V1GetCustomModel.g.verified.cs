@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICustomModelsClient
     {
-
         /// <summary>
         /// Get Custom Model
         /// </summary>

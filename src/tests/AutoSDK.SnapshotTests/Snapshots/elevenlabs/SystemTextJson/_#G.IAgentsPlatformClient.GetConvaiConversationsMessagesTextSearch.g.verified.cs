@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// Text Search Conversation Messages<br/>
         /// Search through conversation transcript messages by full-text and fuzzy search

@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get all autolinks of a repository<br/>
         /// Gets all autolinks that are configured for a repository.<br/>

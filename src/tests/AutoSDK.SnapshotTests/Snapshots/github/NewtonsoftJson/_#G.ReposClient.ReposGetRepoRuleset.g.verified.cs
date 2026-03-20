@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get a repository ruleset<br/>
         /// Get a ruleset for a repository.<br/>

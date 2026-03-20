@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// Get repository permissions for a user<br/>
         /// Checks the repository permission of a collaborator. The possible repository<br/>

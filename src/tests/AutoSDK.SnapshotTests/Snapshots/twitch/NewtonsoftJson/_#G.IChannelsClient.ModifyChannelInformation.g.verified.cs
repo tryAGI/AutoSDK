@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IChannelsClient
     {
-
         /// <summary>
         /// Updates a channel’s properties.<br/>
         /// Updates a channel’s properties.<br/>
@@ -15,7 +14,6 @@ namespace G
         /// All fields are optional, but you must specify at least one field.
         /// </summary>
         /// <param name="broadcasterId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -24,7 +22,6 @@ namespace G
 
             global::G.ModifyChannelInformationBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Updates a channel’s properties.<br/>
         /// Updates a channel’s properties.<br/>

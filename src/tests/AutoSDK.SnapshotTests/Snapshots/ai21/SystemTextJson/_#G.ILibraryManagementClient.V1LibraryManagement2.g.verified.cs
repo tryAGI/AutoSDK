@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ILibraryManagementClient
     {
-
         /// <summary>
         /// Get File By Id<br/>
         /// Retrieve a list of documents in the user's library. Optionally specify a<br/>

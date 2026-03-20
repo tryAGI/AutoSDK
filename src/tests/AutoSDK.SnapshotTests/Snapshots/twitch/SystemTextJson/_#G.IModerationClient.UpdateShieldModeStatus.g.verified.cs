@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IModerationClient
     {
-
         /// <summary>
         /// Activates or deactivates the broadcaster’s Shield Mode.<br/>
         /// Activates or deactivates the broadcaster’s Shield Mode.<br/>
@@ -15,7 +14,6 @@ namespace G
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -25,7 +23,6 @@ namespace G
 
             global::G.UpdateShieldModeStatusBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Activates or deactivates the broadcaster’s Shield Mode.<br/>
         /// Activates or deactivates the broadcaster’s Shield Mode.<br/>

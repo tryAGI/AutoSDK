@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ISecretScanningClient
     {
-
         /// <summary>
         /// List locations for a secret scanning alert<br/>
         /// Lists all locations for a given secret scanning alert for an eligible repository.<br/>

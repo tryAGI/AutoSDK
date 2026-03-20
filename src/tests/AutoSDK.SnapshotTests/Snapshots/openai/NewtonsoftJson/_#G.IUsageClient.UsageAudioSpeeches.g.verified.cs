@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IUsageClient
     {
-
         /// <summary>
         /// Get audio speeches usage details for the organization.
         /// </summary>

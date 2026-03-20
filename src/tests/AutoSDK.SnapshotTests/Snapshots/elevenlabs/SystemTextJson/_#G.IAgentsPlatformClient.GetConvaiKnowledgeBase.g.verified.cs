@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// Get Knowledge Base List<br/>
         /// Get a list of available knowledge base documents

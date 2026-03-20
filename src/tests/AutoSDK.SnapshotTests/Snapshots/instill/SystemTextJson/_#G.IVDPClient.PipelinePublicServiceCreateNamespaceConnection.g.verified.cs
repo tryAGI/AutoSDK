@@ -5,13 +5,11 @@ namespace G
 {
     public partial interface IVdpClient
     {
-
         /// <summary>
         /// Create a connection<br/>
         /// Creates a connection under the ownership of a namespace.
         /// </summary>
         /// <param name="namespaceId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -20,7 +18,6 @@ namespace G
 
             global::G.Connection request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a connection<br/>
         /// Creates a connection under the ownership of a namespace.

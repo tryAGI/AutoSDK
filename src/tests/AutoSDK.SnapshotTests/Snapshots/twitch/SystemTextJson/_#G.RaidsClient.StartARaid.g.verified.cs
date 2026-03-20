@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Raid another channel by sending the broadcaster’s viewers to the targeted channel.<br/>
         /// Raid another channel by sending the broadcaster’s viewers to the targeted channel.<br/>

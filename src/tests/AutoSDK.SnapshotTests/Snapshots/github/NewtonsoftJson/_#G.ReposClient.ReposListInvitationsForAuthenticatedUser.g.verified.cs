@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List repository invitations for the authenticated user<br/>
         /// When authenticating as a user, this endpoint will list all currently open repository invitations for that user.

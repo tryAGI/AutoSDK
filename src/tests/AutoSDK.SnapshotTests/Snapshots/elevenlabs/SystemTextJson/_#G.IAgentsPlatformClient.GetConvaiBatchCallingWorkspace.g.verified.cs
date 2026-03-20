@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// Get All Batch Calls For A Workspace.<br/>
         /// Get all batch calls for the current workspace.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// Update a repository variable<br/>
         /// Updates a repository variable that you can reference in a GitHub Actions workflow.<br/>
@@ -15,7 +14,6 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="name"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -26,7 +24,6 @@ namespace G
 
             global::G.ActionsUpdateRepoVariableRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update a repository variable<br/>
         /// Updates a repository variable that you can reference in a GitHub Actions workflow.<br/>

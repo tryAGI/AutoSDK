@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IVoicesClient
     {
-
         /// <summary>
         /// List all voices in your account.
         /// </summary>

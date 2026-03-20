@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IDubbingClient
     {
-
         /// <summary>
         /// Search The Elevenlabs Library For Voices Similar To A Speaker.<br/>
         /// Fetch the top 10 similar voices to a speaker, including the voice IDs, names, descriptions, and, where possible, a sample audio recording.

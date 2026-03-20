@@ -20,7 +20,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Create a Run<br/>
         /// Queues a single run for ingestion. The request body must be a JSON-encoded run object that follows the Run schema.

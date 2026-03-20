@@ -22,7 +22,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Deletes one or more videos.<br/>
         /// Deletes one or more videos. You may delete past broadcasts, highlights, or uploads.<br/>

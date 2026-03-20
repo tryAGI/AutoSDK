@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// Get an environment secret<br/>
         /// Gets a single environment secret without revealing its encrypted value.<br/>

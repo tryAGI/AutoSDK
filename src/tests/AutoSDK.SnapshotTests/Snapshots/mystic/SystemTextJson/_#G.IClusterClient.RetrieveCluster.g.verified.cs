@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IClusterClient
     {
-
         /// <summary>
         /// Retrieve Cluster<br/>
         /// Retrieve a cluster for a user

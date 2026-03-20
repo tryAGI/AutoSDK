@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICommentsClient
     {
-
         /// <summary>
         /// Get Comments
         /// </summary>

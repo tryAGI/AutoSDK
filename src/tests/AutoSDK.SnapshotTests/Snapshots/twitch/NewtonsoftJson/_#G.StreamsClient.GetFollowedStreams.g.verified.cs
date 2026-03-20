@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Gets the list of broadcasters that the user follows and that are streaming live.<br/>
         /// Gets the list of broadcasters that the user follows and that are streaming live.<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IVectorStoresClient
     {
-
         /// <summary>
         /// Delete a vector store.
         /// </summary>

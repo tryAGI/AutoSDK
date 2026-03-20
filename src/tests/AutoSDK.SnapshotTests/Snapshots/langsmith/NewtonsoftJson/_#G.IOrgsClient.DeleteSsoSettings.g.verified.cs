@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// Delete Sso Settings<br/>
         /// Delete SSO provider settings for the current organization.

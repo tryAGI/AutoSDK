@@ -24,13 +24,11 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Org Update Section<br/>
         /// Update a section.
         /// </summary>
         /// <param name="sectionId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -227,7 +225,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Org Update Section<br/>
         /// Update a section.

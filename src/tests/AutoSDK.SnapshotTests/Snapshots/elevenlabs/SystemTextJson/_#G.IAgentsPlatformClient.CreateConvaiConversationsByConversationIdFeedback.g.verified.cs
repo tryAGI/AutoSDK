@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// Send Conversation Feedback<br/>
         /// Send the feedback for the given conversation
@@ -13,7 +12,6 @@ namespace G
         /// <param name="conversationId">
         /// The id of the conversation you're taking the action on.
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -22,7 +20,6 @@ namespace G
 
             global::G.ConversationFeedbackRequestModel request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Send Conversation Feedback<br/>
         /// Send the feedback for the given conversation

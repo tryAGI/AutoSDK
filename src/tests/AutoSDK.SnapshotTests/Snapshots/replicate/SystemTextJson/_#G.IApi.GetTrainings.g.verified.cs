@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IApi
     {
-
         /// <summary>
         /// Get a training<br/>
         /// Get the current state of a training.<br/>

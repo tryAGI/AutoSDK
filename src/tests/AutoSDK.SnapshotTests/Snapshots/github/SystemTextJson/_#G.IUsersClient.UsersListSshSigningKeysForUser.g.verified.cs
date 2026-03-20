@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IUsersClient
     {
-
         /// <summary>
         /// List SSH signing keys for a user<br/>
         /// Lists the SSH signing keys for a user. This operation is accessible by anyone.

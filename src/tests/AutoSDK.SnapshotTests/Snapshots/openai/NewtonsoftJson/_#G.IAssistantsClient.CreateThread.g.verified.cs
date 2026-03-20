@@ -5,11 +5,9 @@ namespace G
 {
     public partial interface IAssistantsClient
     {
-
         /// <summary>
         /// Create a thread.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace G
 
             global::G.CreateThreadRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a thread.
         /// </summary>

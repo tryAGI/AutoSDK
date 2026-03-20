@@ -19,7 +19,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Deletes a broadcast from the broadcaster’s streaming schedule.<br/>
         /// Removes a broadcast segment from the broadcaster’s streaming schedule.<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// Get a commit comment<br/>
         /// Gets a specified commit comment.<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IUsageLimitsClient
     {
-
         /// <summary>
         /// List Usage Limits<br/>
         /// List out the configured usage limits for a given tenant.

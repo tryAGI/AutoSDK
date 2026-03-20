@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IMigrationsClient
     {
-
         /// <summary>
         /// Download an organization migration archive<br/>
         /// Fetches the URL to a migration archive.

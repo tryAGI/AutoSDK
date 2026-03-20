@@ -34,7 +34,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List review comments in a repository<br/>
         /// Lists review comments for all pull requests in a repository. By default,<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// Remove all custom labels from a self-hosted runner for an organization<br/>
         /// Remove all custom labels from a self-hosted runner configured in an<br/>

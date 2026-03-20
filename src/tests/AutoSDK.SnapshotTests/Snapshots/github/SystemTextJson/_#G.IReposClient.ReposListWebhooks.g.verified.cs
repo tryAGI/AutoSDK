@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// List repository webhooks<br/>
         /// Lists webhooks for a repository. `last response` may return null if there have not been any deliveries within 30 days.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// Get a workflow run attempt<br/>
         /// Gets a specific workflow run attempt.<br/>

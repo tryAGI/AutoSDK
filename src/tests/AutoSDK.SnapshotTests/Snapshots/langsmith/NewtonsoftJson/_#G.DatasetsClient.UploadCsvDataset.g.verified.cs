@@ -22,12 +22,10 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Upload Csv Dataset<br/>
         /// Create a new dataset from a CSV file.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -257,7 +255,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Upload Csv Dataset<br/>
         /// Create a new dataset from a CSV file.

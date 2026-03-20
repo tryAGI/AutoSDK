@@ -30,7 +30,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Trigger a pipeline release<br/>
         /// Triggers the synchronous execution of of a pipeline. While the trigger<br/>
@@ -44,7 +43,6 @@ namespace G
         /// <param name="pipelineId"></param>
         /// <param name="releaseId"></param>
         /// <param name="instillRequesterUid"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -294,7 +292,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Trigger a pipeline release<br/>
         /// Triggers the synchronous execution of of a pipeline. While the trigger<br/>

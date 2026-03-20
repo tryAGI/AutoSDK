@@ -22,7 +22,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Retrieve a single organization API key<br/>
         /// Get details for a specific organization API key by its ID.

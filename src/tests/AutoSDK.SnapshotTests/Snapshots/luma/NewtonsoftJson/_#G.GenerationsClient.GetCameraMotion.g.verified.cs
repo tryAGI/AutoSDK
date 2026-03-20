@@ -20,7 +20,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get camera motions<br/>
         /// Get all possible camera motions

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IVdpClient
     {
-
         /// <summary>
         /// Clone a pipeline<br/>
         /// Clones a pipeline owned by a namespace. The new pipeline may have a different<br/>
@@ -13,7 +12,6 @@ namespace G
         /// </summary>
         /// <param name="namespaceId"></param>
         /// <param name="pipelineId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -23,7 +21,6 @@ namespace G
 
             global::G.CloneNamespacePipelineBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Clone a pipeline<br/>
         /// Clones a pipeline owned by a namespace. The new pipeline may have a different<br/>

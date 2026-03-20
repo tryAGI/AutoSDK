@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IInstructionsClient
     {
-
         /// <summary>
         /// List instructions<br/>
         /// List all instructions available to the authenticated user, with optional filtering and pagination. This endpoint returns high-level information about each instruction, including name, status, and version details.

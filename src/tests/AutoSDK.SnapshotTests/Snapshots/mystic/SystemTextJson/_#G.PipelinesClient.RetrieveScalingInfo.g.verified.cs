@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Retrieve Scaling Info<br/>
         /// Get real-time scaling information for the given pipeline.

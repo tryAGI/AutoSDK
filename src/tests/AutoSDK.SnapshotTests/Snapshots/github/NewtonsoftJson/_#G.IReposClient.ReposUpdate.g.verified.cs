@@ -5,14 +5,12 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// Update a repository<br/>
         /// **Note**: To edit a repository's topics, use the [Replace all repository topics](https://docs.github.com/rest/repos/repos#replace-all-repository-topics) endpoint.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -22,7 +20,6 @@ namespace G
 
             global::G.ReposUpdateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update a repository<br/>
         /// **Note**: To edit a repository's topics, use the [Replace all repository topics](https://docs.github.com/rest/repos/repos#replace-all-repository-topics) endpoint.

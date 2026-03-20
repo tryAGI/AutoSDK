@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Cancel A Batch Call.<br/>
         /// Cancel a running batch call and set all recipients to cancelled status.

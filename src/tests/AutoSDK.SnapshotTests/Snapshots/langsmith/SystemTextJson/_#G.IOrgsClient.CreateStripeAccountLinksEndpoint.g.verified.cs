@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// Create Stripe Account Links Endpoint<br/>
         /// Kick off a Stripe account link flow.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.StripeAccountLinksCreate request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create Stripe Account Links Endpoint<br/>
         /// Kick off a Stripe account link flow.

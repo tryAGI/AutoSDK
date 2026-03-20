@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAppClient
     {
-
         /// <summary>
         /// List conversations<br/>
         /// Returns a paginated list of conversations.

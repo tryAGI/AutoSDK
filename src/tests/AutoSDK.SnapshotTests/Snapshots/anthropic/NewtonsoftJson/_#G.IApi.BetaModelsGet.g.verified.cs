@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IApi
     {
-
         /// <summary>
         /// Get a Model<br/>
         /// Get a specific model.<br/>

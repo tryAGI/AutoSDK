@@ -32,7 +32,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Top Pipelines Usage<br/>
         /// Retrieve usage metrics for top 'num_pipelines' (in terms of number of<br/>

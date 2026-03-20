@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IQueryHistoryClient
     {
-
         /// <summary>
         /// List the history of previous queries<br/>
         /// The List Query Histories API allows you to retrieve, update, and manage query history for a specific corpus. This API is particularly useful for tracking query performance, debugging individual queries, and retrieving detailed information such as the call stack of a query execution.<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IUsersClient
     {
-
         /// <summary>
         /// List SSH signing keys for the authenticated user<br/>
         /// Lists the SSH signing keys for the authenticated user's GitHub account.<br/>

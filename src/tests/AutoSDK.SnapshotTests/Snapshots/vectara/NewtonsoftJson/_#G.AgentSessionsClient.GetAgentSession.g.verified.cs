@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get agent session<br/>
         /// Retrieve the full details of a specific agent session using its unique session key. The response includes the session's configuration, metadata, timestamps, and other stored properties. Use this endpoint to inspect the current state of a session or verify its configuration.

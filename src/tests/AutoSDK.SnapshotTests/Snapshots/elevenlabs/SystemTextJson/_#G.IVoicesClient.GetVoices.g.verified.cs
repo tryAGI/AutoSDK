@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IVoicesClient
     {
-
         /// <summary>
         /// List Voices<br/>
         /// Returns a list of all available voices for a user.

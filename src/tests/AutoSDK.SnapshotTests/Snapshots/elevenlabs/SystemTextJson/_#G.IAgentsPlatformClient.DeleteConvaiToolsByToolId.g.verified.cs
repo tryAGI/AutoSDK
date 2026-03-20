@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// Delete Tool<br/>
         /// Delete tool from the workspace.

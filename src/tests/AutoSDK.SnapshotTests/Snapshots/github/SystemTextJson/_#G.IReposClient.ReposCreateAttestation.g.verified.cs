@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// Create an attestation<br/>
         /// Store an artifact attestation and associate it with a repository.<br/>
@@ -14,7 +13,6 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -24,7 +22,6 @@ namespace G
 
             global::G.ReposCreateAttestationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create an attestation<br/>
         /// Store an artifact attestation and associate it with a repository.<br/>

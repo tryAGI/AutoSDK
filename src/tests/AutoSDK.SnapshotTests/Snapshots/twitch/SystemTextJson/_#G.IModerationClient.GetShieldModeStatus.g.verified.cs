@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IModerationClient
     {
-
         /// <summary>
         /// Gets the broadcaster’s Shield Mode activation status.<br/>
         /// Gets the broadcaster’s Shield Mode activation status.<br/>

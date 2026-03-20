@@ -17,7 +17,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Cancel a pending raid.<br/>
         /// Cancel a pending raid.<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICreateVideoApiClient
     {
-
         /// <summary>
         /// v1/video.delete<br/>
         /// v1/video.delete

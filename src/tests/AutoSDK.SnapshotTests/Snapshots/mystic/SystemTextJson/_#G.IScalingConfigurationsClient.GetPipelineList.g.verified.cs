@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IScalingConfigurationsClient
     {
-
         /// <summary>
         /// Get Pipeline List<br/>
         /// Get a list of pipelines scoped to the user which use a scaling configuration

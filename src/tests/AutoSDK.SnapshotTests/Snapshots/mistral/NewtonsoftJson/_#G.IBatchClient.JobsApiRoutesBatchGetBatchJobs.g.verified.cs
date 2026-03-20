@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IBatchClient
     {
-
         /// <summary>
         /// Get Batch Jobs<br/>
         /// Get a list of batch jobs for your organization and user.

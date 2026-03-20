@@ -32,7 +32,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List reactions for a release<br/>
         /// List the reactions to a [release](https://docs.github.com/rest/releases/releases#get-a-release).

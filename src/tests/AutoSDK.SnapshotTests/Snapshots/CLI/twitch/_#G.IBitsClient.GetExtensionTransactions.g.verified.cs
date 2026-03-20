@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IBitsClient
     {
-
         /// <summary>
         /// Gets an extension’s list of transactions.<br/>
         /// Gets an extension’s list of transactions. A transaction records the exchange of a currency (for example, Bits) for a digital product.<br/>

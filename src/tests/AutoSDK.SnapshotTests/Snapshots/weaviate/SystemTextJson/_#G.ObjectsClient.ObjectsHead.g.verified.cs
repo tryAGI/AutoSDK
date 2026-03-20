@@ -17,7 +17,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Check if object exists.<br/>
         /// Checks if an object exists in the system based on its UUID.
@@ -25,7 +24,6 @@ namespace G
         /// <param name="id"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task ObjectsHeadAsync(
             global::System.Guid id,

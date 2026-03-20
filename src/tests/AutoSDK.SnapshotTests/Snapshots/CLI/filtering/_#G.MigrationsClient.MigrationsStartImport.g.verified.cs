@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Start an import<br/>
         /// Start a source import to a GitHub repository using GitHub Importer.<br/>
@@ -37,11 +36,9 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.Import> MigrationsStartImportAsync(
             string owner,
@@ -299,7 +296,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Start an import<br/>
         /// Start a source import to a GitHub repository using GitHub Importer.<br/>
@@ -327,7 +323,6 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.Import> MigrationsStartImportAsync(
             string owner,

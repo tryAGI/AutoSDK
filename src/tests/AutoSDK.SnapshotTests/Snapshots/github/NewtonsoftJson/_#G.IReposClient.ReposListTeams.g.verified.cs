@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// List repository teams<br/>
         /// Lists the teams that have access to the specified repository and that are also visible to the authenticated user.<br/>

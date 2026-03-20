@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActivityClient
     {
-
         /// <summary>
         /// List public events for a network of repositories<br/>
         /// &gt; [!NOTE]<br/>

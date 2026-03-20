@@ -5,13 +5,11 @@ namespace G
 {
     public partial interface IUsersClient
     {
-
         /// <summary>
         /// Create a GPG key for the authenticated user<br/>
         /// Adds a GPG key to the authenticated user's GitHub account.<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `write:gpg_key` scope to use this endpoint.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -19,7 +17,6 @@ namespace G
 
             global::G.UsersCreateGpgKeyForAuthenticatedUserRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a GPG key for the authenticated user<br/>
         /// Adds a GPG key to the authenticated user's GitHub account.<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IUsersClient
     {
-
         /// <summary>
         /// Lists all of the users in the organization.
         /// </summary>

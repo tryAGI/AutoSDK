@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IInformationClient
     {
-
         /// <summary>
         /// Get Service Messages<br/>
         /// Returns the service messages from an XML source.

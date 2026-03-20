@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get a custom property for an organization<br/>
         /// Gets a custom property that is defined for an organization.<br/>

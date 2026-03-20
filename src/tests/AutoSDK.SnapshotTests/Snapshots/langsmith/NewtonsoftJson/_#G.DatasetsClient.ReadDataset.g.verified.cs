@@ -22,7 +22,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Read Dataset<br/>
         /// Get a specific dataset.

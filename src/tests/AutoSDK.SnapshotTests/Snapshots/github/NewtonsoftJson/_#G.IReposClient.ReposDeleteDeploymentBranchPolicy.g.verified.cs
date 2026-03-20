@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// Delete a deployment branch policy<br/>
         /// Deletes a deployment branch or tag policy for an environment.<br/>

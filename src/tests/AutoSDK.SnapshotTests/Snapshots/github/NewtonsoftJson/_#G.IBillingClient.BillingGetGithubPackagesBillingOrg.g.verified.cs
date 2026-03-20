@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IBillingClient
     {
-
         /// <summary>
         /// Get GitHub Packages billing for an organization<br/>
         /// Gets the free and paid storage used for GitHub Packages in gigabytes.<br/>

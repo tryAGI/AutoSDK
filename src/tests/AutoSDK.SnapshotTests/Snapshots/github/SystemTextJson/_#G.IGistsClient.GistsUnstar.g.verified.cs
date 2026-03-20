@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IGistsClient
     {
-
         /// <summary>
         /// Unstar a gist
         /// </summary>

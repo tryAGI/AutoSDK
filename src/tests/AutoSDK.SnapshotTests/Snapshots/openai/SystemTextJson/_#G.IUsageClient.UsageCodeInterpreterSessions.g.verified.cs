@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IUsageClient
     {
-
         /// <summary>
         /// Get code interpreter sessions usage details for the organization.
         /// </summary>

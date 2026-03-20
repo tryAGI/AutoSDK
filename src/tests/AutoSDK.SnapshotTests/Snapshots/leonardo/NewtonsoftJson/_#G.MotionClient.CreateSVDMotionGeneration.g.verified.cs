@@ -22,12 +22,10 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Create SVD Motion Generation<br/>
         /// This endpoint will generate a SVD motion generation.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -183,7 +181,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Create SVD Motion Generation<br/>
         /// This endpoint will generate a SVD motion generation.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICloudClient
     {
-
         /// <summary>
         /// List Projects<br/>
         /// Get all projects on a user's cloud account

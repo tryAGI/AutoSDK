@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Count tokens in a Message<br/>
         /// Count the number of tokens in a Message.<br/>
@@ -35,7 +34,6 @@ namespace G
         /// The version of the Anthropic API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -222,7 +220,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Count tokens in a Message<br/>
         /// Count the number of tokens in a Message.<br/>

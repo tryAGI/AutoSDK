@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get a pipeline release<br/>
         /// Gets the details of a pipeline release, where the pipeline is identified<br/>

@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get All Batch Calls For A Workspace.<br/>
         /// Get all batch calls for the current workspace.

@@ -22,7 +22,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List Feedback Ingest Tokens<br/>
         /// List all feedback ingest tokens for a run.

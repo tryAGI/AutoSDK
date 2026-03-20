@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPipelineFamiliesClient
     {
-
         /// <summary>
         /// Retrieve<br/>
         /// Retrieve a pipeline family by name with its latest pipeline.<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICodespacesClient
     {
-
         /// <summary>
         /// Start a codespace for the authenticated user<br/>
         /// Starts a user's codespace.<br/>

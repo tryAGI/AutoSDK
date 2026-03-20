@@ -30,7 +30,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List check run annotations<br/>
         /// Lists annotations for a check run using the annotation `id`.<br/>

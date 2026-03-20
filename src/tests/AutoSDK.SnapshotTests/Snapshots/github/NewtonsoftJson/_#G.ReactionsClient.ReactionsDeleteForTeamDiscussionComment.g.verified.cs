@@ -25,7 +25,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Delete team discussion comment reaction<br/>
         /// &gt; [!NOTE]<br/>

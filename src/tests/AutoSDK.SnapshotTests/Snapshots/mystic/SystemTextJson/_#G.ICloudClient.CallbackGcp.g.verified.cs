@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICloudClient
     {
-
         /// <summary>
         /// Callback Gcp
         /// </summary>

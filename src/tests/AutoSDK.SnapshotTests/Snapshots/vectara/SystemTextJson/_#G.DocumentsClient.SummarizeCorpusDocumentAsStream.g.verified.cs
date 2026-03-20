@@ -25,7 +25,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Summarize a document<br/>
         /// Organizations often struggle with extracting relevant insights from extensive documentation, such as vendor quotes, financial statements, and technical reports. Manually reviewing these documents is both time-consuming and prone to errors. <br/>
@@ -79,7 +78,6 @@ namespace G
         /// Example: my-corpus
         /// </param>
         /// <param name="documentId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -234,7 +232,6 @@ namespace G
                 yield return __streamedResponse;
             }
         }
-
         /// <summary>
         /// Summarize a document<br/>
         /// Organizations often struggle with extracting relevant insights from extensive documentation, such as vendor quotes, financial statements, and technical reports. Manually reviewing these documents is both time-consuming and prone to errors. <br/>

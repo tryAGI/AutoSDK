@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List subscriptions for the authenticated user<br/>
         /// Lists the active subscriptions for the authenticated user.

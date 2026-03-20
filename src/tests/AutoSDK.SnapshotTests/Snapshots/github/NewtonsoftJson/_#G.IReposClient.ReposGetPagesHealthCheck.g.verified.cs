@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// Get a DNS health check for GitHub Pages<br/>
         /// Gets a health check of the DNS settings for the `CNAME` record configured for a repository's GitHub Pages.<br/>

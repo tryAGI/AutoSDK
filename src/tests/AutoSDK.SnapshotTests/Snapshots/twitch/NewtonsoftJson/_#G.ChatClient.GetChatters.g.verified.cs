@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Gets the list of users that are connected to the broadcaster’s chat session.<br/>
         /// Gets the list of users that are connected to the broadcaster’s chat session.<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IExtensionsClient
     {
-
         /// <summary>
         /// Gets the specified configuration segment from the specified extension.<br/>
         /// Gets the specified configuration segment from the specified extension.<br/>

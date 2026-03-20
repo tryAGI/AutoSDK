@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IMigrationsClient
     {
-
         /// <summary>
         /// Map a commit author<br/>
         /// Update an author's identity for the import. Your application can continue updating authors any time before you push<br/>
@@ -16,11 +15,9 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="authorId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.PorterAuthor> MigrationsMapCommitAuthorAsync(
             string owner,
@@ -29,7 +26,6 @@ namespace G
 
             global::G.MigrationsMapCommitAuthorRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Map a commit author<br/>
         /// Update an author's identity for the import. Your application can continue updating authors any time before you push<br/>
@@ -48,7 +44,6 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.PorterAuthor> MigrationsMapCommitAuthorAsync(
             string owner,

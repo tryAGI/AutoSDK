@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IFilesClient
     {
-
         /// <summary>
         /// Retrieve<br/>
         /// Retrieve a file instance.

@@ -30,7 +30,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List hallucination correctors<br/>
         /// The List Hallucination Correctors API enables users to list available hallucination correctors used for detecting and correcting hallucinations in AI-generated content. Vectara provides these models as part of its broader hallucination evaluation framework, and the Hallucination Correctors endpoint uses these models to propose factual corrections to summaries and other generative outputs.<br/>

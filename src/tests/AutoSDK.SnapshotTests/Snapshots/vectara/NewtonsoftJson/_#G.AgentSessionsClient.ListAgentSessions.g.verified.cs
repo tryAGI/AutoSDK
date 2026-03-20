@@ -32,7 +32,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List agent sessions<br/>
         /// List all agent sessions for the specified agent. This endpoint returns high-level information about each session, with optional filtering and pagination. Use this operation to browse existing sessions or to locate a specific session key for further inspection or updates.

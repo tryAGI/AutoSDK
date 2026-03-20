@@ -22,7 +22,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Gets emotes for one or more specified emote sets.<br/>
         /// Gets emotes for one or more specified emote sets.<br/>

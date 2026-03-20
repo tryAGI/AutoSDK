@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IManageClient
     {
-
         /// <summary>
         /// Retrieve current API keys and their respective data.
         /// </summary>

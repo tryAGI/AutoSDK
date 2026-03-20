@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Github Login<br/>
         /// Initiate github SSO login flow. Callback is /github/callback

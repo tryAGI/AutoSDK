@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// List labels for a self-hosted runner for a repository<br/>
         /// Lists all labels for a self-hosted runner configured in a repository.<br/>

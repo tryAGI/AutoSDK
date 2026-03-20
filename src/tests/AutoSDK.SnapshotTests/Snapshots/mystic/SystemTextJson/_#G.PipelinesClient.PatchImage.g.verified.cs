@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Patch Image<br/>
         /// Update the image avatar of a pipeline. The new image url<br/>
@@ -37,7 +36,6 @@ namespace G
         /// <param name="pipelineId"></param>
         /// <param name="pointer"></param>
         /// <param name="pipelineIdOrPointer"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -266,7 +264,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Patch Image<br/>
         /// Update the image avatar of a pipeline. The new image url<br/>

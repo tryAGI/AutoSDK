@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IApi
     {
-
         /// <summary>
         /// Create a model<br/>
         /// Create a model.<br/>
@@ -36,7 +35,6 @@ namespace G
         /// ```<br/>
         /// Note that there is a limit of 1,000 models per account. For most purposes, we recommend using a single model and pushing new [versions](https://replicate.com/docs/how-does-replicate-work#versions) of the model as you make changes to it.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -44,7 +42,6 @@ namespace G
 
             global::G.ModelsCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a model<br/>
         /// Create a model.<br/>

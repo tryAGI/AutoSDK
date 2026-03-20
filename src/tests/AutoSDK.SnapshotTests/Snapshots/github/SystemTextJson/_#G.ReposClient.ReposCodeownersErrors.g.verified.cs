@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List CODEOWNERS errors<br/>
         /// List any syntax errors that are detected in the CODEOWNERS<br/>

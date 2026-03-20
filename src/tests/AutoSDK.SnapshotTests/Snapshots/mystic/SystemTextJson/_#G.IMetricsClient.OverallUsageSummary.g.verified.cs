@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IMetricsClient
     {
-
         /// <summary>
         /// Overall Usage Summary
         /// </summary>

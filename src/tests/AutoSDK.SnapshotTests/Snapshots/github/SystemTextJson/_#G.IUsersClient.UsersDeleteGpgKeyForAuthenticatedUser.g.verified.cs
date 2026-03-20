@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IUsersClient
     {
-
         /// <summary>
         /// Delete a GPG key for the authenticated user<br/>
         /// Removes a GPG key from the authenticated user's GitHub account.<br/>

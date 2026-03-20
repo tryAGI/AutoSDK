@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// Delete Whatsapp Account<br/>
         /// Delete a WhatsApp account

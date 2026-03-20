@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Upload a file<br/>
         /// Uploads a temporary media file that can be referenced in API generation requests. The uploaded files will be automatically expired and deleted after a period of time. It is strongly recommended to use our SDKs for this which have a simplified interface that directly accepts file objects.
@@ -32,11 +31,9 @@ namespace G
         /// <param name="xRunwayVersion">
         /// Default Value: 2024-11-06
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         /// <remarks>
         /// // npm install --save @runwayml/sdk<br/>
         /// import RunwayML from '@runwayml/sdk';<br/>
@@ -255,7 +252,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Upload a file<br/>
         /// Uploads a temporary media file that can be referenced in API generation requests. The uploaded files will be automatically expired and deleted after a period of time. It is strongly recommended to use our SDKs for this which have a simplified interface that directly accepts file objects.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IChartsClient
     {
-
         /// <summary>
         /// Read Sections<br/>
         /// Get all sections for the tenant.

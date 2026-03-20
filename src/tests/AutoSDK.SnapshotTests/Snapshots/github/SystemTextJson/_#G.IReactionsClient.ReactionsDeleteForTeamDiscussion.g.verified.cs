@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReactionsClient
     {
-
         /// <summary>
         /// Delete team discussion reaction<br/>
         /// &gt; [!NOTE]<br/>

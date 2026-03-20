@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ISecretScanningClient
     {
-
         /// <summary>
         /// Get a secret scanning alert<br/>
         /// Gets a single secret scanning alert detected in an eligible repository.<br/>

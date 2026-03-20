@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IResourceClient
     {
-
         /// <summary>
         /// LockResource<br/>
         /// LockResource
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.LockResourceRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// LockResource<br/>
         /// LockResource

@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List child teams<br/>
         /// Lists the child teams of the team specified by `{team_slug}`.<br/>

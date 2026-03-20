@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IVdpClient
     {
-
         /// <summary>
         /// Get a pipeline<br/>
         /// Returns the details of a pipeline.

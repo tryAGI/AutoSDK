@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Restart Playground Conversation<br/>
         /// Creates a new conversation and uses the auth user UID as creator UID and<br/>

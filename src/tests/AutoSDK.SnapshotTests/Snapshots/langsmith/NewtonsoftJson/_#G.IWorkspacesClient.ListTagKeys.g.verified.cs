@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IWorkspacesClient
     {
-
         /// <summary>
         /// List Tag Keys
         /// </summary>

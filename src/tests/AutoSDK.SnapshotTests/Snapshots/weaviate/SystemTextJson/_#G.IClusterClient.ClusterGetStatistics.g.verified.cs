@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IClusterClient
     {
-
         /// <summary>
         /// See Raft cluster statistics<br/>
         /// Returns Raft cluster statistics of Weaviate DB.

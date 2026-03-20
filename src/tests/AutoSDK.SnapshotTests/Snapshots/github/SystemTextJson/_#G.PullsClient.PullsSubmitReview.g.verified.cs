@@ -30,7 +30,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Submit a review for a pull request<br/>
         /// Submits a pending review for a pull request. For more information about creating a pending review for a pull request, see "[Create a review for a pull request](https://docs.github.com/rest/pulls/reviews#create-a-review-for-a-pull-request)."<br/>
@@ -44,7 +43,6 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="pullNumber"></param>
         /// <param name="reviewId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -310,7 +308,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Submit a review for a pull request<br/>
         /// Submits a pending review for a pull request. For more information about creating a pending review for a pull request, see "[Create a review for a pull request](https://docs.github.com/rest/pulls/reviews#create-a-review-for-a-pull-request)."<br/>

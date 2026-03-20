@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ISecurityClient
     {
-
         /// <summary>
         /// GetVersion<br/>
         /// GetVersion

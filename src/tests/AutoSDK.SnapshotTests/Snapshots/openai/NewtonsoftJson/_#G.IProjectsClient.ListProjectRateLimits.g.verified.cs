@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IProjectsClient
     {
-
         /// <summary>
         /// Returns the rate limits per model for a project.
         /// </summary>

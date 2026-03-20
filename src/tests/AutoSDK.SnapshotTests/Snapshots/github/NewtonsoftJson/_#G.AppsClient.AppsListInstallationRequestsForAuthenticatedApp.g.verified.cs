@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List installation requests for the authenticated app<br/>
         /// Lists all the pending installation requests for the authenticated GitHub App.

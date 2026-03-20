@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// Get Agent Summaries<br/>
         /// Returns summaries for the specified agents.

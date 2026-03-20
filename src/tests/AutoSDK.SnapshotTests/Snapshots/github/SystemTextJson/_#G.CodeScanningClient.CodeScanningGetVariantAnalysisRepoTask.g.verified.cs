@@ -30,7 +30,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get the analysis status of a repository in a CodeQL variant analysis<br/>
         /// Gets the analysis status of a repository in a CodeQL variant analysis.<br/>

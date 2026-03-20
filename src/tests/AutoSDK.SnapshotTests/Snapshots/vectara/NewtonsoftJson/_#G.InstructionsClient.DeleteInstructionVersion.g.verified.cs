@@ -23,7 +23,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Delete instruction version<br/>
         /// Permanently delete the specified version of the instruction. This action cannot be undone.

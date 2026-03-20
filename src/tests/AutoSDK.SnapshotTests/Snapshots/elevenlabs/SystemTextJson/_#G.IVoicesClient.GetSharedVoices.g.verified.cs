@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IVoicesClient
     {
-
         /// <summary>
         /// Get Voices<br/>
         /// Retrieves a list of shared voices.

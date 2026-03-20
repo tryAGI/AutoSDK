@@ -5,14 +5,12 @@ namespace G
 {
     public partial interface IUsersClient
     {
-
         /// <summary>
         /// Create a user in the current customer account<br/>
         /// Create a user for the current customer account. For example, a company wants to onboard new team members efficiently and this endpoint lets you streamline the process by adding new users programmatically, assigning appropriate roles, and setting up access permissions.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -22,7 +20,6 @@ namespace G
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a user in the current customer account<br/>
         /// Create a user for the current customer account. For example, a company wants to onboard new team members efficiently and this endpoint lets you streamline the process by adding new users programmatically, assigning appropriate roles, and setting up access permissions.

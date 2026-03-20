@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Gets information about all broadcasts on Twitch.<br/>
         /// Gets information about all broadcasts on Twitch.<br/>

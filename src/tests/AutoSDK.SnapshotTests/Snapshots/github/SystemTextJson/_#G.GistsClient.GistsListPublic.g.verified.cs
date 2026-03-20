@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List public gists<br/>
         /// List public gists sorted by most recently updated to least recently updated.<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICommitsClient
     {
-
         /// <summary>
         /// Get Commit<br/>
         /// Download a repo.

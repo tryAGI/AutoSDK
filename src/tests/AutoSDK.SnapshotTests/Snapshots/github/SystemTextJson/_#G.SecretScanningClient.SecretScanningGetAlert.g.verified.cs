@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get a secret scanning alert<br/>
         /// Gets a single secret scanning alert detected in an eligible repository.<br/>

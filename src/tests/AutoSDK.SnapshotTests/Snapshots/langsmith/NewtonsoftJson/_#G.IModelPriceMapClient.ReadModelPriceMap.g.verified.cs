@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IModelPriceMapClient
     {
-
         /// <summary>
         /// Read Model Price Map
         /// </summary>

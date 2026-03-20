@@ -30,7 +30,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Gets a list of users that subscribe to the specified broadcaster.<br/>
         /// Gets a list of users that subscribe to the specified broadcaster.<br/>

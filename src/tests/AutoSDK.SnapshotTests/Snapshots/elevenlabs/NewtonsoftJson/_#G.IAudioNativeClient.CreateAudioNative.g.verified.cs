@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAudioNativeClient
     {
-
         /// <summary>
         /// Creates Audio Native Enabled Project.<br/>
         /// Creates Audio Native enabled project, optionally starts conversion and returns project ID and embeddable HTML snippet.
@@ -13,7 +12,6 @@ namespace G
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -22,7 +20,6 @@ namespace G
             global::G.BodyCreatesAudioNativeEnabledProjectV1AudioNativePost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Creates Audio Native Enabled Project.<br/>
         /// Creates Audio Native enabled project, optionally starts conversion and returns project ID and embeddable HTML snippet.

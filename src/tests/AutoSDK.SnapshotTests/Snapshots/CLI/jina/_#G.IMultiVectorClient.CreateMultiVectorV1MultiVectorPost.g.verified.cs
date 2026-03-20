@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IMultiVectorClient
     {
-
         /// <summary>
         /// Create Multi Vector<br/>
         /// Create multiple vector representations of the given input texts. One vector representation for each token in the input text.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.TextEmbeddingAPIInput request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create Multi Vector<br/>
         /// Create multiple vector representations of the given input texts. One vector representation for each token in the input text.

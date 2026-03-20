@@ -5,13 +5,11 @@ namespace G
 {
     public partial interface IApi
     {
-
         /// <summary>
         /// Openai Audio Speech
         /// </summary>
         /// <param name="xDeepinfraSource"></param>
         /// <param name="xiApiKey"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -21,7 +19,6 @@ namespace G
             string? xDeepinfraSource = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Openai Audio Speech
         /// </summary>

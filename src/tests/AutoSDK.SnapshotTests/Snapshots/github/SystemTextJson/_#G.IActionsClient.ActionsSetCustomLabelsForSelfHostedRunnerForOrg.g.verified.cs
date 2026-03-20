@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// Set custom labels for a self-hosted runner for an organization<br/>
         /// Remove all previous custom labels and set the new custom labels for a specific<br/>
@@ -15,7 +14,6 @@ namespace G
         /// </summary>
         /// <param name="org"></param>
         /// <param name="runnerId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -25,7 +23,6 @@ namespace G
 
             global::G.ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Set custom labels for a self-hosted runner for an organization<br/>
         /// Remove all previous custom labels and set the new custom labels for a specific<br/>

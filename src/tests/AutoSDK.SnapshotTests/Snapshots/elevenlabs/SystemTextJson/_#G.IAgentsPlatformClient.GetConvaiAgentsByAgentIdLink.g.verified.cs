@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// Get Shareable Agent Link<br/>
         /// Get the current link used to share the agent with others

@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Adds a word or phrase to the broadcaster’s list of blocked terms.<br/>
         /// Adds a word or phrase to the broadcaster’s list of blocked terms. These are the terms that the broadcaster doesn’t want used in their chat room.<br/>
@@ -35,7 +34,6 @@ namespace G
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -300,7 +298,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Adds a word or phrase to the broadcaster’s list of blocked terms.<br/>
         /// Adds a word or phrase to the broadcaster’s list of blocked terms. These are the terms that the broadcaster doesn’t want used in their chat room.<br/>

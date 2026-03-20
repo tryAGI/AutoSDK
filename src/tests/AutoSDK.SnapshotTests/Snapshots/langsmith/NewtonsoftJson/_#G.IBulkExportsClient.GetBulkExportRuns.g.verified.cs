@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IBulkExportsClient
     {
-
         /// <summary>
         /// Get Bulk Export Runs<br/>
         /// Get a bulk export's runs

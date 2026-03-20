@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List CodeQL databases for a repository<br/>
         /// Lists the CodeQL databases that are available in a repository.<br/>

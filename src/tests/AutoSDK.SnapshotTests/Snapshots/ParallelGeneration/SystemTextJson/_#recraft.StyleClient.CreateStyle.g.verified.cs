@@ -22,11 +22,9 @@ namespace recraft
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Create Style
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::recraft.ApiException"></exception>
@@ -177,7 +175,6 @@ namespace recraft
                 }
             }
         }
-
         /// <summary>
         /// Create Style
         /// </summary>

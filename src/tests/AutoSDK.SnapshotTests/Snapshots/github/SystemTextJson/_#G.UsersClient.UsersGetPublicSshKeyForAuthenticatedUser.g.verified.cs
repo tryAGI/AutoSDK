@@ -22,7 +22,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get a public SSH key for the authenticated user<br/>
         /// View extended details for a single public SSH key.<br/>

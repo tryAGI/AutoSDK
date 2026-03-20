@@ -5,13 +5,11 @@ namespace G
 {
     public partial interface IPointersClient
     {
-
         /// <summary>
         /// Pointers Patch<br/>
         /// Update a pipeline pointer instance.
         /// </summary>
         /// <param name="pointer"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -20,7 +18,6 @@ namespace G
 
             global::G.PointerPatch request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Pointers Patch<br/>
         /// Update a pipeline pointer instance.

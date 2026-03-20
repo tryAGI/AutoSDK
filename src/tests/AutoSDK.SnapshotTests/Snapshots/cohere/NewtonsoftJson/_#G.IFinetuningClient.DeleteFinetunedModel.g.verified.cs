@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IFinetuningClient
     {
-
         /// <summary>
         /// Deletes a fine-tuned model.
         /// </summary>

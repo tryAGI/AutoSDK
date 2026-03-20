@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IResponsesClient
     {
-
         /// <summary>
         /// Returns a list of input items for a given response.
         /// </summary>

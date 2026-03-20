@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ISchemaClient
     {
-
         /// <summary>
         /// Get a single collection schema.
         /// </summary>

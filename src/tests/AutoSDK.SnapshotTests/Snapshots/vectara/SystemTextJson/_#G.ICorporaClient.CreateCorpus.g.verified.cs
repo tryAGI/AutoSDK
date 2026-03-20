@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICorporaClient
     {
-
         /// <summary>
         /// Create a corpus<br/>
         /// The Create Corpus API lets you create a corpus to store and manage your documents. A corpus is a container for documents and their associated metadata. When creating a corpus, you can specify various settings such as the corpus key, name, description, encoder, and filter attributes.<br/>
@@ -28,7 +27,6 @@ namespace G
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -38,7 +36,6 @@ namespace G
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a corpus<br/>
         /// The Create Corpus API lets you create a corpus to store and manage your documents. A corpus is a container for documents and their associated metadata. When creating a corpus, you can specify various settings such as the corpus key, name, description, encoder, and filter attributes.<br/>

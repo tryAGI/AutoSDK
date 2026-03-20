@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Studio Project<br/>
         /// Returns information about a specific Studio project. This endpoint returns more detailed information about a project than `GET /v1/studio`.

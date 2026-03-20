@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get a code security configuration<br/>
         /// Gets a code security configuration available in an organization.<br/>

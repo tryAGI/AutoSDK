@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// Get an autolink reference of a repository<br/>
         /// This returns a single autolink reference by ID that was configured for the given repository.<br/>

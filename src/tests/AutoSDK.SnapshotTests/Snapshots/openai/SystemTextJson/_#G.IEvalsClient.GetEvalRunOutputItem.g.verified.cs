@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IEvalsClient
     {
-
         /// <summary>
         /// Get an evaluation run output item by ID.
         /// </summary>

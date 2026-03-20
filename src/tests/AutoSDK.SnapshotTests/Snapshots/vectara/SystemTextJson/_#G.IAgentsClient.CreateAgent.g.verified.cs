@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsClient
     {
-
         /// <summary>
         /// Create agent<br/>
         /// Create a new agent. An agent is compromised as 3 main things of functionality:<br/>
@@ -35,7 +34,6 @@ namespace G
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -45,7 +43,6 @@ namespace G
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create agent<br/>
         /// Create a new agent. An agent is compromised as 3 main things of functionality:<br/>

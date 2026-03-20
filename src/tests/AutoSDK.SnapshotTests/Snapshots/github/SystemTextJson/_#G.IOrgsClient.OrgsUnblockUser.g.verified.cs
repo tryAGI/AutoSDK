@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// Unblock a user from an organization<br/>
         /// Unblocks the given user on behalf of the specified organization.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITalkingPhotoClient
     {
-
         /// <summary>
         /// v1/talking_photo.list<br/>
         /// v1/talking_photo.list

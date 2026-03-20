@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IVdpClient
     {
-
         /// <summary>
         /// Validate a pipeline<br/>
         /// Validates a pipeline by its resource name, which is defined by the parent<br/>
@@ -14,7 +13,6 @@ namespace G
         /// </summary>
         /// <param name="namespaceId"></param>
         /// <param name="pipelineId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -24,7 +22,6 @@ namespace G
 
             object request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Validate a pipeline<br/>
         /// Validates a pipeline by its resource name, which is defined by the parent<br/>

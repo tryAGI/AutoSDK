@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IWorkspaceClient
     {
-
         /// <summary>
         /// Get Service Account Api Keys Route<br/>
         /// Get all API keys for a service account

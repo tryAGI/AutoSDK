@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ISearchClient
     {
-
         /// <summary>
         /// Search commits<br/>
         /// Find commits via various criteria on the default branch (usually `main`). This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).<br/>

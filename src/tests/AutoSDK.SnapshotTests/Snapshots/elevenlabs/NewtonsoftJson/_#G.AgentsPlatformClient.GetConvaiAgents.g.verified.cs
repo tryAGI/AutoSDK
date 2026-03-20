@@ -36,7 +36,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List Agents<br/>
         /// Returns a list of your agents and their metadata.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IGitClient
     {
-
         /// <summary>
         /// Create a commit<br/>
         /// Creates a new Git [commit object](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects).<br/>
@@ -36,7 +35,6 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -46,7 +44,6 @@ namespace G
 
             global::G.GitCreateCommitRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a commit<br/>
         /// Creates a new Git [commit object](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects).<br/>

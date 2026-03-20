@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ISubscriptionClient
     {
-
         /// <summary>
         /// Get the remaining Instill Credit<br/>
         /// This endpoint returns the remaining [Instill Credit](https://www.instill.tech/docs/vdp/credit) of a given user or<br/>

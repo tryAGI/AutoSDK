@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICorporaClient
     {
-
         /// <summary>
         /// Remove all documents and data in a corpus<br/>
         /// Resets a corpus, which removes all documents and data from the specified corpus, while keeping the corpus itself. The `corpus_key` uniquely identifies the corpus. For more information, see [Create a corpus](https://docs.vectara.com/docs/rest-api/create-corpus).

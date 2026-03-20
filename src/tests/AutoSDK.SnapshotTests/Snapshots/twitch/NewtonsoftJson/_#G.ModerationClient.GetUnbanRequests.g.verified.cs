@@ -32,7 +32,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// NEW Gets a list of unban requests for a broadcaster’s channel.<br/>
         /// NEW Gets a list of unban requests for a broadcaster’s channel.<br/>

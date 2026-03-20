@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITeamsClient
     {
-
         /// <summary>
         /// List discussions<br/>
         /// List all discussions on a team's page.<br/>

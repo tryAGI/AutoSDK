@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List public organization members<br/>
         /// Members of an organization can choose to have their membership publicized or not.

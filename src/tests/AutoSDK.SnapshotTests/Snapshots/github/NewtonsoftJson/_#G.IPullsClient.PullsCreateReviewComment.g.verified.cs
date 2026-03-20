@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPullsClient
     {
-
         /// <summary>
         /// Create a review comment for a pull request<br/>
         /// Creates a review comment on the diff of a specified pull request. To add a regular comment to a pull request timeline, see "[Create an issue comment](https://docs.github.com/rest/issues/comments#create-an-issue-comment)."<br/>
@@ -22,7 +21,6 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="pullNumber"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -33,7 +31,6 @@ namespace G
 
             global::G.PullsCreateReviewCommentRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a review comment for a pull request<br/>
         /// Creates a review comment on the diff of a specified pull request. To add a regular comment to a pull request timeline, see "[Create an issue comment](https://docs.github.com/rest/issues/comments#create-an-issue-comment)."<br/>

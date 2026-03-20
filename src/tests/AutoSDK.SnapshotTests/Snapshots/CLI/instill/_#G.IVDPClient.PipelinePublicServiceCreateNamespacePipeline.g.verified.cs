@@ -5,13 +5,11 @@ namespace G
 {
     public partial interface IVdpClient
     {
-
         /// <summary>
         /// Create a new pipeline<br/>
         /// Creates a new pipeline under a namespace.
         /// </summary>
         /// <param name="namespaceId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -20,7 +18,6 @@ namespace G
 
             global::G.Pipeline request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a new pipeline<br/>
         /// Creates a new pipeline under a namespace.

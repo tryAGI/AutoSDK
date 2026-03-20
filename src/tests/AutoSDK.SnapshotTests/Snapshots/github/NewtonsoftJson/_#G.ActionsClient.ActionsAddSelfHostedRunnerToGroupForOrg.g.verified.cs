@@ -21,7 +21,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Add a self-hosted runner to a group for an organization<br/>
         /// Adds a self-hosted runner to a runner group configured in an organization.<br/>

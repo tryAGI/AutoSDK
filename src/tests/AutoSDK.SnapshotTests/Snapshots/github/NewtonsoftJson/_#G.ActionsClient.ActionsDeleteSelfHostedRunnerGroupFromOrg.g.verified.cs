@@ -19,7 +19,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Delete a self-hosted runner group from an organization<br/>
         /// Deletes a self-hosted runner group for an organization.<br/>

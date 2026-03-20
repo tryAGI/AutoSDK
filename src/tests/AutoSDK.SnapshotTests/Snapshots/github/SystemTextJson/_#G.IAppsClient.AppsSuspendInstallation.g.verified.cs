@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAppsClient
     {
-
         /// <summary>
         /// Suspend an app installation<br/>
         /// Suspends a GitHub App on a user, organization, or business account, which blocks the app from accessing the account's resources. When a GitHub App is suspended, the app's access to the GitHub API or webhook events is blocked for that account.<br/>

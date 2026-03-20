@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IUsersClient
     {
-
         /// <summary>
         /// Unblock a user<br/>
         /// Unblocks the given user and returns a 204.

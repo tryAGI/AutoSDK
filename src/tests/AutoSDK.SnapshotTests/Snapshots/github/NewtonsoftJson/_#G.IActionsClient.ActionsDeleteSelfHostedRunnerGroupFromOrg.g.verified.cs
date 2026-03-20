@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// Delete a self-hosted runner group from an organization<br/>
         /// Deletes a self-hosted runner group for an organization.<br/>

@@ -22,7 +22,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get the entire schema.<br/>
         /// Fetch an array of all collection definitions from the schema.

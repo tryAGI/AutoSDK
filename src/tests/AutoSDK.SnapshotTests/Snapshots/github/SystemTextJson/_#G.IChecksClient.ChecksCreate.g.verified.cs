@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IChecksClient
     {
-
         /// <summary>
         /// Create a check run<br/>
         /// Creates a new check run for a specific commit in a repository.<br/>
@@ -16,7 +15,6 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -26,7 +24,6 @@ namespace G
 
             global::G.ChecksCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a check run<br/>
         /// Creates a new check run for a specific commit in a repository.<br/>

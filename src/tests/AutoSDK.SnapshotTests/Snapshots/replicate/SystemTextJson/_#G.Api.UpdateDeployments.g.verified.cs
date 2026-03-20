@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Update a deployment<br/>
         /// Update properties of an existing deployment, including hardware, min/max instances, and the deployment's underlying model [version](https://replicate.com/docs/how-does-replicate-work#versions).<br/>
@@ -67,7 +66,6 @@ namespace G
         /// </summary>
         /// <param name="deploymentOwner"></param>
         /// <param name="deploymentName"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -229,7 +227,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Update a deployment<br/>
         /// Update properties of an existing deployment, including hardware, min/max instances, and the deployment's underlying model [version](https://replicate.com/docs/how-does-replicate-work#versions).<br/>

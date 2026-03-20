@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IWhispersClient
     {
-
         /// <summary>
         /// Sends a whisper message to the specified user.<br/>
         /// Sends a whisper message to the specified user.<br/>
@@ -17,7 +16,6 @@ namespace G
         /// </summary>
         /// <param name="fromUserId"></param>
         /// <param name="toUserId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -27,7 +25,6 @@ namespace G
 
             global::G.SendWhisperBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Sends a whisper message to the specified user.<br/>
         /// Sends a whisper message to the specified user.<br/>

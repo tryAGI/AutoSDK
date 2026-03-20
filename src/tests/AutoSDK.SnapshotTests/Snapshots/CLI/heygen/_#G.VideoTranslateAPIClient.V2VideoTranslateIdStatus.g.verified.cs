@@ -15,7 +15,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// v2/video_translate/&lt;id&gt; (status)<br/>
         /// v2/video_translate/&lt;id&gt; (status)

@@ -36,7 +36,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List check runs in a check suite<br/>
         /// Lists check runs for a check suite using its `id`.<br/>

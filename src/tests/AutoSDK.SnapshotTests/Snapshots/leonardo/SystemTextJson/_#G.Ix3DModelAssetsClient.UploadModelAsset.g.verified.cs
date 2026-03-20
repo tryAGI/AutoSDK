@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface Ix3dModelAssetsClient
     {
-
         /// <summary>
         /// Upload 3D Model<br/>
         /// This endpoint returns presigned details to upload a 3D model to S3
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.UploadModelAssetRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Upload 3D Model<br/>
         /// This endpoint returns presigned details to upload a 3D model to S3

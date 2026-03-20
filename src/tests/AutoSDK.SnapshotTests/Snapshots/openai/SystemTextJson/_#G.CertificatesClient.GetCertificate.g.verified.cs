@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get a certificate that has been uploaded to the organization.<br/>
         /// You can get a certificate regardless of whether it is active or not.

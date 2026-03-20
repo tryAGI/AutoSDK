@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IRealtimeCanvasClient
     {
-
         /// <summary>
         /// Perform instant refine on a LCM image<br/>
         /// This endpoint will perform instant refine on a LCM image
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.PerformInstantRefineRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Perform instant refine on a LCM image<br/>
         /// This endpoint will perform instant refine on a LCM image

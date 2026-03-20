@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IProjectsClient
     {
-
         /// <summary>
         /// Deletes an API key from the project.
         /// </summary>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReactionsClient
     {
-
         /// <summary>
         /// List reactions for an issue<br/>
         /// List the reactions to an [issue](https://docs.github.com/rest/issues/issues#get-an-issue).

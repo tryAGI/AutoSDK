@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IModerationClient
     {
-
         /// <summary>
         /// Gets all users allowed to moderate the broadcaster’s chat room.<br/>
         /// Gets all users allowed to moderate the broadcaster’s chat room.<br/>

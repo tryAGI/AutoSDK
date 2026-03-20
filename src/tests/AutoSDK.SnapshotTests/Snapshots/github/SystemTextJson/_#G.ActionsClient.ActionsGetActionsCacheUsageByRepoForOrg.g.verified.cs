@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List repositories with GitHub Actions cache usage for an organization<br/>
         /// Lists repositories and their GitHub Actions cache usage for an organization.<br/>

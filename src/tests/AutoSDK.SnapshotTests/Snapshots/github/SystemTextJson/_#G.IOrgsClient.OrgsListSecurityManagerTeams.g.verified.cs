@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// List security manager teams<br/>
         /// Lists teams that are security managers for an organization. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."<br/>

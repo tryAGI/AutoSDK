@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// Confirm Checkout Session Completion Endpoint<br/>
         /// Complete a Stripe checkout session flow.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.StripeCheckoutSessionsConfirm request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Confirm Checkout Session Completion Endpoint<br/>
         /// Complete a Stripe checkout session flow.

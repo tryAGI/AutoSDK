@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReactionsClient
     {
-
         /// <summary>
         /// Create reaction for a team discussion comment<br/>
         /// Create a reaction to a [team discussion comment](https://docs.github.com/rest/teams/discussion-comments#get-a-discussion-comment).<br/>
@@ -18,7 +17,6 @@ namespace G
         /// <param name="teamSlug"></param>
         /// <param name="discussionNumber"></param>
         /// <param name="commentNumber"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -30,7 +28,6 @@ namespace G
 
             global::G.ReactionsCreateForTeamDiscussionCommentInOrgRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create reaction for a team discussion comment<br/>
         /// Create a reaction to a [team discussion comment](https://docs.github.com/rest/teams/discussion-comments#get-a-discussion-comment).<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IApi
     {
-
         /// <summary>
         /// Github Cli Login<br/>
         /// deepctl is calling this request waiting for auth token during login.<br/>

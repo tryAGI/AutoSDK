@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// Get GitHub Actions cache usage for an organization<br/>
         /// Gets the total GitHub Actions cache usage for an organization.<br/>

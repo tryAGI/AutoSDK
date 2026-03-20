@@ -5,7 +5,6 @@ namespace recraft
 {
     public partial interface IStyleClient
     {
-
         /// <summary>
         /// Delete Style
         /// </summary>

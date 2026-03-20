@@ -22,12 +22,10 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Perform a GraphQL query.<br/>
         /// Get a response based on a GraphQL query
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -330,7 +328,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Perform a GraphQL query.<br/>
         /// Get a response based on a GraphQL query

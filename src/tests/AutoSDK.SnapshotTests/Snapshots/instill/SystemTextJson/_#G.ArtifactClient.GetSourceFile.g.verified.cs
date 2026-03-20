@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get catalog single-source-of-truth file<br/>
         /// Gets the single-source-of-truth file of a catalog.

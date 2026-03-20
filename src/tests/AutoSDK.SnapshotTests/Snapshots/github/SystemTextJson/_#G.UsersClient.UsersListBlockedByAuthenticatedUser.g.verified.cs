@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List users blocked by the authenticated user<br/>
         /// List the users you've blocked on your personal account.

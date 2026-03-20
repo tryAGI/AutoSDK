@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Add assignees to an issue<br/>
         /// Adds up to 10 assignees to an issue. Users already assigned to an issue are not replaced.
@@ -36,7 +35,6 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="issueNumber"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -185,7 +183,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Add assignees to an issue<br/>
         /// Adds up to 10 assignees to an issue. Users already assigned to an issue are not replaced.

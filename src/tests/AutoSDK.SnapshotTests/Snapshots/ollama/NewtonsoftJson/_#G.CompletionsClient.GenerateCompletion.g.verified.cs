@@ -17,12 +17,10 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Generate a response for a given prompt with a provided model.<br/>
         /// The final response object will include statistics and additional data from the request.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -139,7 +137,6 @@ namespace G
                 yield return __streamedResponse;
             }
         }
-
         /// <summary>
         /// Generate a response for a given prompt with a provided model.<br/>
         /// The final response object will include statistics and additional data from the request.

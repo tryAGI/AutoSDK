@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get a package for a user<br/>
         /// Gets a specific package metadata for a public package owned by a user.<br/>

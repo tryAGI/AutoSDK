@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Update an import<br/>
         /// An import can be updated with credentials or a project choice by passing in the appropriate parameters in this API<br/>
@@ -39,11 +38,9 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.Import> MigrationsUpdateImportAsync(
             string owner,
@@ -225,7 +222,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Update an import<br/>
         /// An import can be updated with credentials or a project choice by passing in the appropriate parameters in this API<br/>
@@ -254,7 +250,6 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.Import> MigrationsUpdateImportAsync(
             string owner,

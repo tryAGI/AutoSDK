@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// List repository variables<br/>
         /// Lists all repository variables.<br/>

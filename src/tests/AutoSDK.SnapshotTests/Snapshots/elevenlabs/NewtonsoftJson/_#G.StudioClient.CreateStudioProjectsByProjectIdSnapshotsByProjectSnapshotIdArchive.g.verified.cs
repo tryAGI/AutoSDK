@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref byte[] content);
 
-
         /// <summary>
         /// Stream Archive With Studio Project Audio<br/>
         /// Returns a compressed archive of the Studio project's audio.

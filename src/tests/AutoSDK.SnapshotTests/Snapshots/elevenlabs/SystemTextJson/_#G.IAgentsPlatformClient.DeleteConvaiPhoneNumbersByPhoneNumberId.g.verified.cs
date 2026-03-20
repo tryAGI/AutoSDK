@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// Delete Phone Number<br/>
         /// Delete Phone Number by ID

@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get a deployment branch policy<br/>
         /// Gets a deployment branch or tag policy for an environment.<br/>

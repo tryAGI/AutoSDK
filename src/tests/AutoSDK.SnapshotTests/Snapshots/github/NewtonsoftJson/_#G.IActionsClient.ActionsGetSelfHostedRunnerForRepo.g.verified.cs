@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// Get a self-hosted runner for a repository<br/>
         /// Gets a specific self-hosted runner configured in a repository.<br/>

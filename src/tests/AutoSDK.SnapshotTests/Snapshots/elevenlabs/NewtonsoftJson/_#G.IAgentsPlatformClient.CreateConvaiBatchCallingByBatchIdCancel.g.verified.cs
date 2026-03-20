@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// Cancel A Batch Call.<br/>
         /// Cancel a running batch call and set all recipients to cancelled status.

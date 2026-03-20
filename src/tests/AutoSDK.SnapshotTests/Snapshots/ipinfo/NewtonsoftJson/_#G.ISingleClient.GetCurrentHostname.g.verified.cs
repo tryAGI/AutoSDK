@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ISingleClient
     {
-
         /// <summary>
         /// Returns the current hostname.<br/>
         /// Returns the current hostname.

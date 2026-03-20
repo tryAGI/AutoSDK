@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface ITagClient
     {
-
         /// <summary>
         /// StartRetroUpcodeJob<br/>
         /// StartRetroUpcodeJob
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.StartRetroUpcodeJobRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// StartRetroUpcodeJob<br/>
         /// StartRetroUpcodeJob

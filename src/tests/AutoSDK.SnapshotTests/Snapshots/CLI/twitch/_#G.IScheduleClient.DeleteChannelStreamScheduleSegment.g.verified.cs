@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IScheduleClient
     {
-
         /// <summary>
         /// Deletes a broadcast from the broadcaster’s streaming schedule.<br/>
         /// Removes a broadcast segment from the broadcaster’s streaming schedule.<br/>

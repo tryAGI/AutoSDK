@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List repository secrets<br/>
         /// Lists all development environment secrets available in a repository without revealing their encrypted<br/>

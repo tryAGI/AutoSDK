@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPvcVoicesClient
     {
-
         /// <summary>
         /// Retrieve Voice Sample Audio<br/>
         /// Retrieve the first 30 seconds of voice sample audio with or without noise removal.

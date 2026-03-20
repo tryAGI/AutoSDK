@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITranscriptClient
     {
-
         /// <summary>
         /// Delete transcript<br/>
         /// Remove the data from the transcript and mark it as deleted.

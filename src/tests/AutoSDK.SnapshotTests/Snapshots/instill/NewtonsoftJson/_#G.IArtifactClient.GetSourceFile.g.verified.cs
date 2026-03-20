@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IArtifactClient
     {
-
         /// <summary>
         /// Get catalog single-source-of-truth file<br/>
         /// Gets the single-source-of-truth file of a catalog.

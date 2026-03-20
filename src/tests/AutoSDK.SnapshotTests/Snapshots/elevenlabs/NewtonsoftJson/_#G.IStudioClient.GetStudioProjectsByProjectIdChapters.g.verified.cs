@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IStudioClient
     {
-
         /// <summary>
         /// List Chapters<br/>
         /// Returns a list of a Studio project's chapters.

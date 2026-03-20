@@ -21,7 +21,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Delete an artifact<br/>
         /// Deletes an artifact for a workflow run.<br/>

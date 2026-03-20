@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IObjectsClient
     {
-
         /// <summary>
         /// Delete a cross-reference.<br/>
         /// Delete the single reference that is given in the body from the list of references that this property has.
@@ -13,11 +12,9 @@ namespace G
         /// <param name="id"></param>
         /// <param name="propertyName"></param>
         /// <param name="tenant"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task ObjectsReferencesDeleteAsync(
             global::System.Guid id,
@@ -26,7 +23,6 @@ namespace G
             global::G.SingleRef request,
             string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Delete a cross-reference.<br/>
         /// Delete the single reference that is given in the body from the list of references that this property has.
@@ -51,7 +47,6 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task ObjectsReferencesDeleteAsync(
             global::System.Guid id,

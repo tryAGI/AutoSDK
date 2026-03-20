@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// List commits<br/>
         /// **Signature verification object**<br/>

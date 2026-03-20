@@ -22,7 +22,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Gets the channel’s stream key.<br/>
         /// Gets the channel’s stream key.<br/>

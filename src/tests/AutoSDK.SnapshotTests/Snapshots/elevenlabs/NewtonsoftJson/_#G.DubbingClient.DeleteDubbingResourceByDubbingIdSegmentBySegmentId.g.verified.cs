@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Deletes A Single Segment<br/>
         /// Deletes a single segment from the dubbing.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// Deprecated - Create a tag protection state for a repository<br/>
         /// &gt; [!WARNING]<br/>
@@ -15,11 +14,9 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.TagProtection> ReposCreateTagProtectionAsync(
             string owner,
@@ -27,7 +24,6 @@ namespace G
 
             global::G.ReposCreateTagProtectionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Deprecated - Create a tag protection state for a repository<br/>
         /// &gt; [!WARNING]<br/>
@@ -42,7 +38,6 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.TagProtection> ReposCreateTagProtectionAsync(
             string owner,

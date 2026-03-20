@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IBillingClient
     {
-
         /// <summary>
         /// Get shared storage billing for a user<br/>
         /// Gets the estimated paid and estimated total storage used for GitHub Actions and GitHub Packages.<br/>

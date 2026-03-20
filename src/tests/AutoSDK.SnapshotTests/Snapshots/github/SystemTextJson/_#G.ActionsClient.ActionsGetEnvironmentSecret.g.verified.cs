@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get an environment secret<br/>
         /// Gets a single environment secret without revealing its encrypted value.<br/>

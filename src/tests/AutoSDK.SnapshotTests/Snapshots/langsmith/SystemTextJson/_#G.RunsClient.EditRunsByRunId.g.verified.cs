@@ -20,7 +20,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Update a Run<br/>
         /// Updates a run identified by its ID. The body should contain only the fields to be changed; unknown fields are ignored.

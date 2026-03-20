@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentSessionsClient
     {
-
         /// <summary>
         /// List events in agent session<br/>
         /// List all events in a specific agent session, with optional pagination.

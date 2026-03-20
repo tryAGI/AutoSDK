@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPronunciationDictionaryClient
     {
-
         /// <summary>
         /// Get Pronunciation Dictionaries<br/>
         /// Get a list of the pronunciation dictionaries you have access to and their metadata

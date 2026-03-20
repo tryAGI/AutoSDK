@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAuditLogsClient
     {
-
         /// <summary>
         /// List user actions and configuration changes within this organization.
         /// </summary>

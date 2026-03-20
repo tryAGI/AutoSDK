@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IWorkspaceClient
     {
-
         /// <summary>
         /// Get Workspace Service Accounts<br/>
         /// List all service accounts in the workspace

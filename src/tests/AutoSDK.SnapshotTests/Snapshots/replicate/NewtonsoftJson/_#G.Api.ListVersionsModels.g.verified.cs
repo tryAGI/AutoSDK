@@ -19,7 +19,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// List model versions<br/>
         /// Example cURL request:<br/>

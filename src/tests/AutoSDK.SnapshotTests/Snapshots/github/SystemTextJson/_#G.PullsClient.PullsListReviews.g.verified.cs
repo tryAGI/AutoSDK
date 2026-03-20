@@ -30,7 +30,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List reviews for a pull request<br/>
         /// Lists all reviews for a specified pull request. The list of reviews returns in chronological order.<br/>

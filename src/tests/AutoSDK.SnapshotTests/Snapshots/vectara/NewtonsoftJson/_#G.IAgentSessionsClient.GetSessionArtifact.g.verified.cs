@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentSessionsClient
     {
-
         /// <summary>
         /// Get session artifact<br/>
         /// Retrieve a specific artifact by its unique `artifact_id`, including metadata and base64-encoded file content.

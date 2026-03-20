@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface INamespaceClient
     {
-
         /// <summary>
         /// List user memberships<br/>
         /// Returns the memberships of a user.

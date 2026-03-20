@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITranscriptClient
     {
-
         /// <summary>
         /// Get sentences in transcript<br/>
         /// Get the transcript split by sentences. The API will attempt to semantically segment the transcript into sentences to create more reader-friendly transcripts.

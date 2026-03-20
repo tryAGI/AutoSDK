@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// Download workflow run attempt logs<br/>
         /// Gets a redirect URL to download an archive of log files for a specific workflow run attempt. This link expires after<br/>

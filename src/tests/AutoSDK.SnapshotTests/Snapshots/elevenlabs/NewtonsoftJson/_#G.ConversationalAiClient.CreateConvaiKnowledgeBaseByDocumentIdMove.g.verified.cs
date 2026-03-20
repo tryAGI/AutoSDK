@@ -21,7 +21,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Move Entity To Folder<br/>
         /// Moves the entity from one folder to another.
@@ -32,7 +31,6 @@ namespace G
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -212,7 +210,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Move Entity To Folder<br/>
         /// Moves the entity from one folder to another.

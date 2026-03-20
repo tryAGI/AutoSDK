@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IDescriptorClient
     {
-
         /// <summary>
         /// ForceDeleteDescriptorSetPolled<br/>
         /// ForceDeleteDescriptorSetPolled
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.ForceDeleteDescriptorSetPolledRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// ForceDeleteDescriptorSetPolled<br/>
         /// ForceDeleteDescriptorSetPolled

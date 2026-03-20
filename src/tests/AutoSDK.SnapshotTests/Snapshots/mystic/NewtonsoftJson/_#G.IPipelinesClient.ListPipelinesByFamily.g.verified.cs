@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPipelinesClient
     {
-
         /// <summary>
         /// List Pipelines By Family<br/>
         /// Retrieve all pipelines for a given pipeline family.<br/>

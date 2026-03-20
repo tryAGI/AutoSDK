@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITeamsClient
     {
-
         /// <summary>
         /// Delete a discussion<br/>
         /// Delete a discussion from a team's page.<br/>

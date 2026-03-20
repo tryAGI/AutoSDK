@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// Returns The Size Of The Agent'S Knowledge Base<br/>
         /// Returns the number of pages in the agent's knowledge base.

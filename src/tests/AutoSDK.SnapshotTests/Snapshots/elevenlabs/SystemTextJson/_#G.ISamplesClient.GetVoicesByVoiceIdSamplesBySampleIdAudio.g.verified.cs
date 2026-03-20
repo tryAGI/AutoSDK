@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ISamplesClient
     {
-
         /// <summary>
         /// Get Audio From Sample<br/>
         /// Returns the audio corresponding to a sample attached to a voice.

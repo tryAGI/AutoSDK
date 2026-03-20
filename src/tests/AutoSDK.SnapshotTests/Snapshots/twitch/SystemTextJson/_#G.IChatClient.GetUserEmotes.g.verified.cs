@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IChatClient
     {
-
         /// <summary>
         /// NEW Retrieves emotes available to the user across all channels.<br/>
         /// NEW Retrieves emotes available to the user across all channels.<br/>

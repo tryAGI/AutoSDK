@@ -32,7 +32,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List Message Batches<br/>
         /// List all Message Batches within a Workspace. Most recently created batches are returned first.<br/>

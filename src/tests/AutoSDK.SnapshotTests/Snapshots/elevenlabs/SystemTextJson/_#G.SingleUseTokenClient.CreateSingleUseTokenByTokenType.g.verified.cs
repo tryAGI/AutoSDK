@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Create Single Use Token<br/>
         /// Generate a time limited single-use token with embedded authentication for frontend clients.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ISingleClient
     {
-
         /// <summary>
         /// Returns a hostname for the selected IP.<br/>
         /// Returns a hostname for the selected IP.

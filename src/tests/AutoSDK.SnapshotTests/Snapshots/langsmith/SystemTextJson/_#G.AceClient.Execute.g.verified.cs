@@ -22,12 +22,10 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Execute<br/>
         /// Execute some custom code for testing purposes.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -217,7 +215,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Execute<br/>
         /// Execute some custom code for testing purposes.

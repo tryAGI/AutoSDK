@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IDependabotClient
     {
-
         /// <summary>
         /// List organization secrets<br/>
         /// Lists all secrets available in an organization without revealing their<br/>

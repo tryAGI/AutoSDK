@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IObjectsClient
     {
-
         /// <summary>
         /// Replace cross-references.<br/>
         /// Replace **all** references in cross-reference property of an object.
@@ -17,7 +16,6 @@ namespace G
         /// Default Value: QUORUM
         /// </param>
         /// <param name="tenant"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>

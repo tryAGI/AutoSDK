@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IMigrationsClient
     {
-
         /// <summary>
         /// Start a user migration<br/>
         /// Initiates the generation of a user migration archive.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.MigrationsStartForAuthenticatedUserRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Start a user migration<br/>
         /// Initiates the generation of a user migration archive.

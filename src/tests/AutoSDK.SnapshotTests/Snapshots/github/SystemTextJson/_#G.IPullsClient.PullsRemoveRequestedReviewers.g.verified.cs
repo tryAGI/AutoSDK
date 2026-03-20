@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPullsClient
     {
-
         /// <summary>
         /// Remove requested reviewers from a pull request<br/>
         /// Removes review requests from a pull request for a given set of users and/or teams.
@@ -13,7 +12,6 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="pullNumber"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -24,7 +22,6 @@ namespace G
 
             global::G.PullsRemoveRequestedReviewersRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Remove requested reviewers from a pull request<br/>
         /// Removes review requests from a pull request for a given set of users and/or teams.

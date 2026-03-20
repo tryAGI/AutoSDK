@@ -22,16 +22,13 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Create Multi Vector<br/>
         /// Create multiple vector representations of the given input texts. One vector representation for each token in the input text.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.ColbertModelEmbeddingsOutput> CreateMultiVectorV1MultiEmbeddingsPostAsync(
 
@@ -223,7 +220,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Create Multi Vector<br/>
         /// Create multiple vector representations of the given input texts. One vector representation for each token in the input text.
@@ -248,7 +244,6 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.ColbertModelEmbeddingsOutput> CreateMultiVectorV1MultiEmbeddingsPostAsync(
             string model,

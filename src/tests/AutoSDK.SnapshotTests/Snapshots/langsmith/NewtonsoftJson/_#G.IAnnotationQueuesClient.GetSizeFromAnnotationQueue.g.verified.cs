@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAnnotationQueuesClient
     {
-
         /// <summary>
         /// Get Size From Annotation Queue
         /// </summary>

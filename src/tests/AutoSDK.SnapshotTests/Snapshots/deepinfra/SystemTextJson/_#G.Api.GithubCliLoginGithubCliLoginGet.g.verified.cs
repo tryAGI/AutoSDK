@@ -22,7 +22,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Github Cli Login<br/>
         /// deepctl is calling this request waiting for auth token during login.<br/>

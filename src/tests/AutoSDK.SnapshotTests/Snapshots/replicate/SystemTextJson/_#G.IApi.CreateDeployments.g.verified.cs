@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IApi
     {
-
         /// <summary>
         /// Create a deployment<br/>
         /// Create a new deployment:<br/>
@@ -50,7 +49,6 @@ namespace G
         /// }<br/>
         /// ```
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -58,7 +56,6 @@ namespace G
 
             global::G.DeploymentsCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a deployment<br/>
         /// Create a new deployment:<br/>

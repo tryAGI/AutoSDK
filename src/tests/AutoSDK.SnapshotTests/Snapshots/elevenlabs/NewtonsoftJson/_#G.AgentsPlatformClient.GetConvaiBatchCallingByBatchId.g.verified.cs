@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get A Batch Call By Id.<br/>
         /// Get detailed information about a batch call including all recipients.

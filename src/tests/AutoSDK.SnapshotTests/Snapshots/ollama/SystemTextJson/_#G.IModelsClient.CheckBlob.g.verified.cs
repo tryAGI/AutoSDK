@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IModelsClient
     {
-
         /// <summary>
         /// Ensures that the file blob used for a FROM or ADAPTER field exists on the server.<br/>
         /// This is checking your Ollama server and not Ollama.ai.

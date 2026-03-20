@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// List organization rule suites<br/>
         /// Lists suites of rule evaluations at the organization level.<br/>

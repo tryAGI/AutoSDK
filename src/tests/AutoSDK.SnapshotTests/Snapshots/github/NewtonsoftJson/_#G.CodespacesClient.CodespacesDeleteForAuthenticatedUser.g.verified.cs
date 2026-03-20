@@ -22,7 +22,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Delete a codespace for the authenticated user<br/>
         /// Deletes a user's codespace.<br/>

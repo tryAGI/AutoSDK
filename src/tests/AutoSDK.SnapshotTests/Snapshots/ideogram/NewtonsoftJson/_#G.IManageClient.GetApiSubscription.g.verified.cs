@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IManageClient
     {
-
         /// <summary>
         /// Retrieve data relevant to creating an API subscription.
         /// </summary>

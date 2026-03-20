@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IModelsClient
     {
-
         /// <summary>
         /// Train a Custom Model<br/>
         /// This endpoint will train a new custom model
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.CreateModelRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Train a Custom Model<br/>
         /// This endpoint will train a new custom model

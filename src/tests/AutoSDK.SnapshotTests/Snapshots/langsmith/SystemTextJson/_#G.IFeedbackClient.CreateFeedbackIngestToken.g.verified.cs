@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IFeedbackClient
     {
-
         /// <summary>
         /// Create Feedback Ingest Token<br/>
         /// Create a new feedback ingest token.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.AnyOf<global::G.FeedbackIngestTokenCreateSchema, global::System.Collections.Generic.IList<global::G.FeedbackIngestTokenCreateSchema>> request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create Feedback Ingest Token<br/>
         /// Create a new feedback ingest token.

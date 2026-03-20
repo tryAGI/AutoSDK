@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPullsClient
     {
-
         /// <summary>
         /// List reviews for a pull request<br/>
         /// Lists all reviews for a specified pull request. The list of reviews returns in chronological order.<br/>

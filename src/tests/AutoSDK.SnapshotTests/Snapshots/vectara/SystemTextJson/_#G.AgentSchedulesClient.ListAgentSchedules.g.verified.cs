@@ -30,7 +30,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List agent schedules<br/>
         /// List all schedules for the specified agent. This endpoint returns high-level information about each schedule including execution status and next scheduled execution time.

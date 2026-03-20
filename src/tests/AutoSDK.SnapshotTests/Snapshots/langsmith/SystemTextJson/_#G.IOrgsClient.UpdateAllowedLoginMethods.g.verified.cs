@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// Update Allowed Login Methods<br/>
         /// Update allowed login methods for the current organization.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.AllowedLoginMethodsUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update Allowed Login Methods<br/>
         /// Update allowed login methods for the current organization.

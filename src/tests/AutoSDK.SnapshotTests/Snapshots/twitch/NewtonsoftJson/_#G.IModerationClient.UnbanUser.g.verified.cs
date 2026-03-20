@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IModerationClient
     {
-
         /// <summary>
         /// Removes the ban or timeout that was placed on the specified user.<br/>
         /// Removes the ban or timeout that was placed on the specified user.<br/>

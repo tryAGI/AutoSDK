@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Update a team<br/>
         /// To edit a team, the authenticated user must either be an organization owner or a team maintainer.<br/>
@@ -35,7 +34,6 @@ namespace G
         /// </summary>
         /// <param name="org"></param>
         /// <param name="teamSlug"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -295,7 +293,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Update a team<br/>
         /// To edit a team, the authenticated user must either be an organization owner or a team maintainer.<br/>

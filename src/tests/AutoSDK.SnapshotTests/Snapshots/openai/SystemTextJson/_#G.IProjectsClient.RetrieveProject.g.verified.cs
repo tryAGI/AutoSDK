@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IProjectsClient
     {
-
         /// <summary>
         /// Retrieves a project.
         /// </summary>

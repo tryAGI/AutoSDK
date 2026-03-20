@@ -5,11 +5,9 @@ namespace G
 {
     public partial interface ICloudClient
     {
-
         /// <summary>
         /// Create Gcp Service Account
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace G
 
             global::G.BodyCreateGcpServiceAccountV4CloudProviderGcpServiceAccountsPost request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create Gcp Service Account
         /// </summary>

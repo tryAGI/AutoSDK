@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICreditsClient
     {
-
         /// <summary>
         /// Get credits<br/>
         /// Get the credits information for the api user

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IConnectorsClient
     {
-
         /// <summary>
         /// List Connectors<br/>
         /// Returns a list of connectors ordered by descending creation date (newer first). See ['Managing your Connector'](https://docs.cohere.com/docs/managing-your-connector) for more information.

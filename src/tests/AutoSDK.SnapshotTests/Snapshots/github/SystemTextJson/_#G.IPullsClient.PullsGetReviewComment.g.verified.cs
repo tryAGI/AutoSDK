@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPullsClient
     {
-
         /// <summary>
         /// Get a review comment for a pull request<br/>
         /// Provides details for a specified review comment.<br/>

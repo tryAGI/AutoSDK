@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List SSH signing keys for the authenticated user<br/>
         /// Lists the SSH signing keys for the authenticated user's GitHub account.<br/>

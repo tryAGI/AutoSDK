@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Document Source File Url<br/>
         /// Get a signed URL to download the original source file of a file-type document from the knowledge base

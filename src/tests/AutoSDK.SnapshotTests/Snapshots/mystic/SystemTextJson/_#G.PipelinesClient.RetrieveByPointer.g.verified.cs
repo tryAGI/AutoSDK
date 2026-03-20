@@ -30,7 +30,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Retrieve By Pointer<br/>
         /// Retrieve details for a pipeline by pointer name.<br/>

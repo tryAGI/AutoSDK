@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IModelsClient
     {
-
         /// <summary>
         /// Delete a fine-tuned model. You must have the Owner role in your organization to delete a model.
         /// </summary>

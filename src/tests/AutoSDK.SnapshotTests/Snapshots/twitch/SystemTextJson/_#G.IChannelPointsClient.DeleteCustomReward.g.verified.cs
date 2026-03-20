@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IChannelPointsClient
     {
-
         /// <summary>
         /// Deletes a custom reward that the broadcaster created.<br/>
         /// Deletes a custom reward that the broadcaster created.<br/>

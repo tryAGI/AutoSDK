@@ -22,7 +22,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get shared storage billing for a user<br/>
         /// Gets the estimated paid and estimated total storage used for GitHub Actions and GitHub Packages.<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IBitsClient
     {
-
         /// <summary>
         /// Gets the Bits leaderboard for the authenticated broadcaster.<br/>
         /// Gets the Bits leaderboard for the authenticated broadcaster.<br/>

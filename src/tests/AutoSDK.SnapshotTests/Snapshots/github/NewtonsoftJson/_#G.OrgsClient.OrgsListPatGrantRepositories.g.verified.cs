@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List repositories a fine-grained personal access token has access to<br/>
         /// Lists the repositories a fine-grained personal access token has access to.<br/>

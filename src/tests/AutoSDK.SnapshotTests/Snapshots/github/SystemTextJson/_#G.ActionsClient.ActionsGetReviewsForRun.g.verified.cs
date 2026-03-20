@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get the review history for a workflow run<br/>
         /// Anyone with read access to the repository can use this endpoint.<br/>

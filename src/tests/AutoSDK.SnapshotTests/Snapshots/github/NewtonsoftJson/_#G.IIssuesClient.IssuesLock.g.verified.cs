@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IIssuesClient
     {
-
         /// <summary>
         /// Lock an issue<br/>
         /// Users with push access can lock an issue or pull request's conversation.<br/>
@@ -14,7 +13,6 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="issueNumber"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -25,7 +23,6 @@ namespace G
 
             global::G.IssuesLockRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Lock an issue<br/>
         /// Users with push access can lock an issue or pull request's conversation.<br/>

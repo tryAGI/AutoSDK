@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IProjectsClient
     {
-
         /// <summary>
         /// Remove user as a collaborator<br/>
         /// Removes a collaborator from an organization project. You must be an organization owner or a project `admin` to remove a collaborator.

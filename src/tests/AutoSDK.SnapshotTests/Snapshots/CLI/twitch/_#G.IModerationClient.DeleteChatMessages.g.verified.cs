@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IModerationClient
     {
-
         /// <summary>
         /// Removes a single chat message or all chat messages from the broadcaster’s chat room.<br/>
         /// Removes a single chat message or all chat messages from the broadcaster’s chat room.<br/>

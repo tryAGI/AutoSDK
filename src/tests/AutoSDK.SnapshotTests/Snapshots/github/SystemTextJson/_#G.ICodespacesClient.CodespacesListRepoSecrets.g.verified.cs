@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICodespacesClient
     {
-
         /// <summary>
         /// List repository secrets<br/>
         /// Lists all development environment secrets available in a repository without revealing their encrypted<br/>

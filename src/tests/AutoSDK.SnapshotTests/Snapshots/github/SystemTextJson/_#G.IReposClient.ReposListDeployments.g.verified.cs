@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// List deployments<br/>
         /// Simple filtering of deployments is available via query parameters:

@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Redeliver a delivery for a repository webhook<br/>
         /// Redeliver a webhook delivery for a webhook configured in a repository.

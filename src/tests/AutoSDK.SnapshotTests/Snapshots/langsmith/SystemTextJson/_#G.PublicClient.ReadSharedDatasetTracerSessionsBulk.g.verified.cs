@@ -22,7 +22,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Read Shared Dataset Tracer Sessions Bulk<br/>
         /// Get sessions from multiple datasets using share tokens.

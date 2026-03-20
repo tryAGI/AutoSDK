@@ -19,7 +19,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Remove users from Codespaces access for an organization<br/>
         /// Codespaces for the specified users will no longer be billed to the organization.<br/>
@@ -28,11 +27,9 @@ namespace G
         /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// </summary>
         /// <param name="org"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task CodespacesDeleteCodespacesAccessUsersAsync(
             string org,
@@ -343,7 +340,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Remove users from Codespaces access for an organization<br/>
         /// Codespaces for the specified users will no longer be billed to the organization.<br/>
@@ -357,7 +353,6 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task CodespacesDeleteCodespacesAccessUsersAsync(
             string org,

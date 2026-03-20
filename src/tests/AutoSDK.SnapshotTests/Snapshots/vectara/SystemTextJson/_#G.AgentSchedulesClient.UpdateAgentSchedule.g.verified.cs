@@ -30,7 +30,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Update agent schedule<br/>
         /// Update an existing agent schedule. All fields are optional - only provided fields will be updated (PATCH semantics).<br/>
@@ -47,7 +46,6 @@ namespace G
         /// for consistency with other Vectara API resources (AgentKey, SessionKey, CorpusKey, etc.).<br/>
         /// Example: daily-report
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -339,7 +337,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Update agent schedule<br/>
         /// Update an existing agent schedule. All fields are optional - only provided fields will be updated (PATCH semantics).<br/>

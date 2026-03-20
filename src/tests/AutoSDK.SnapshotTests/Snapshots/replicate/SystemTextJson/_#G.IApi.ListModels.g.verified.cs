@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IApi
     {
-
         /// <summary>
         /// List public models<br/>
         /// Get a paginated list of public models.<br/>

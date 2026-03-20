@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IEvalsClient
     {
-
         /// <summary>
         /// Cancel an ongoing evaluation run.
         /// </summary>

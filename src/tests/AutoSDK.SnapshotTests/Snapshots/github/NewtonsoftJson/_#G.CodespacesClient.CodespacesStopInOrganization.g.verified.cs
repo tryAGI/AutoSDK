@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Stop a codespace for an organization user<br/>
         /// Stops a user's codespace.<br/>

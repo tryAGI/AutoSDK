@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IChartsClient
     {
-
         /// <summary>
         /// Org Delete Section<br/>
         /// Delete a section.

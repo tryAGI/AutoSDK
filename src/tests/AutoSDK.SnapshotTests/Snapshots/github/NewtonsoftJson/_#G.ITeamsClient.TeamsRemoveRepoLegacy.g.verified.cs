@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITeamsClient
     {
-
         /// <summary>
         /// Remove a repository from a team (Legacy)<br/>
         /// &gt; [!WARNING]<br/>
@@ -17,7 +16,6 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task TeamsRemoveRepoLegacyAsync(
             int teamId,

@@ -5,14 +5,12 @@ namespace G
 {
     public partial interface IExtensionsClient
     {
-
         /// <summary>
         /// Adds or updates a Bits product that the extension created.<br/>
         /// Adds or updates a Bits product that the extension created. If the SKU doesn’t exist, the product is added. You may update all fields except the `sku` field.<br/>
         /// __Authorization:__<br/>
         /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens). The client ID in the app access token must match the extension’s client ID.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -20,7 +18,6 @@ namespace G
 
             global::G.UpdateExtensionBitsProductBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Adds or updates a Bits product that the extension created.<br/>
         /// Adds or updates a Bits product that the extension created. If the SKU doesn’t exist, the product is added. You may update all fields except the `sku` field.<br/>

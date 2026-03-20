@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Cancel a vector store file batch. This attempts to cancel the processing of files in this batch as soon as possible.
         /// </summary>

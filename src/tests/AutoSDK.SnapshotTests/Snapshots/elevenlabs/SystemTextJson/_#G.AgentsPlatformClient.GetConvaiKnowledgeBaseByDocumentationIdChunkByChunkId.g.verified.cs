@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Documentation Chunk From Knowledge Base<br/>
         /// Get details about a specific documentation part used by RAG.

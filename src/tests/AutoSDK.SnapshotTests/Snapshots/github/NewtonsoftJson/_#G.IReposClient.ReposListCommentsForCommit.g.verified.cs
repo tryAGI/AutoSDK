@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// List commit comments<br/>
         /// Lists the comments for a specified commit.<br/>

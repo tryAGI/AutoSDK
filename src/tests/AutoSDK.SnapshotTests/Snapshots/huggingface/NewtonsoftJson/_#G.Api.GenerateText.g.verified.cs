@@ -24,12 +24,10 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Creates a completion for the provided prompt and parameters.
         /// </summary>
         /// <param name="modelId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -172,7 +170,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Creates a completion for the provided prompt and parameters.
         /// </summary>

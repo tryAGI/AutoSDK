@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICodeSecurityClient
     {
-
         /// <summary>
         /// Get default code security configurations<br/>
         /// Lists the default code security configurations for an organization.<br/>

@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IWebhooksClient
     {
-
         /// <summary>
         /// 
         /// </summary>
         /// <param name="webhookId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -19,7 +17,6 @@ namespace G
 
             global::G.PatchedWebhook request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// 
         /// </summary>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IInformationClient
     {
-
         /// <summary>
         /// Get Client Versions<br/>
         /// Returns a dictionary of client versions from an XML source.

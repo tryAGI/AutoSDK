@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IRunsClient
     {
-
         /// <summary>
         /// Create a Run<br/>
         /// Queues a single run for ingestion. The request body must be a JSON-encoded run object that follows the Run schema.

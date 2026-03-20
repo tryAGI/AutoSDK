@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IApi
     {
-
         /// <summary>
         /// Deployment Logs Query<br/>
         /// Query deployment logs.<br/>

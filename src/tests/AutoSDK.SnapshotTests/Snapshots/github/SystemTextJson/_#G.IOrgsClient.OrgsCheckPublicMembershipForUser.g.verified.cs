@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// Check public organization membership for a user<br/>
         /// Check if the provided user is a public member of the organization.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICodespacesClient
     {
-
         /// <summary>
         /// List codespaces for a user in organization<br/>
         /// Lists the codespaces that a member of an organization has for repositories in that organization.<br/>

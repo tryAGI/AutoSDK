@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IProjectsClient
     {
-
         /// <summary>
         /// Adds a user to the project. Users must already be members of the organization to be added to a project.
         /// </summary>
         /// <param name="projectId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -19,7 +17,6 @@ namespace G
 
             global::G.ProjectUserCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Adds a user to the project. Users must already be members of the organization to be added to a project.
         /// </summary>

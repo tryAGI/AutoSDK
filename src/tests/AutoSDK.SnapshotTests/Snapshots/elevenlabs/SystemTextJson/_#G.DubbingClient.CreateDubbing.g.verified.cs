@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Dub A Video Or An Audio File<br/>
         /// Dubs a provided audio or video file into given language.
@@ -32,7 +31,6 @@ namespace G
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -386,7 +384,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Dub A Video Or An Audio File<br/>
         /// Dubs a provided audio or video file into given language.

@@ -5,14 +5,12 @@ namespace G
 {
     public partial interface IChatClient
     {
-
         /// <summary>
         /// Modify a stored chat completion. Only Chat Completions that have been<br/>
         /// created with the `store` parameter set to `true` can be modified. Currently,<br/>
         /// the only supported modification is to update the `metadata` field.
         /// </summary>
         /// <param name="completionId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -21,7 +19,6 @@ namespace G
 
             global::G.UpdateChatCompletionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Modify a stored chat completion. Only Chat Completions that have been<br/>
         /// created with the `store` parameter set to `true` can be modified. Currently,<br/>

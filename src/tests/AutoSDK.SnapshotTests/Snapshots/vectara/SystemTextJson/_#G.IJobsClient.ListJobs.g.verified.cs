@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IJobsClient
     {
-
         /// <summary>
         /// List jobs<br/>
         /// List jobs for the account. Jobs are background processes like replacing the filterable metadata attributes.

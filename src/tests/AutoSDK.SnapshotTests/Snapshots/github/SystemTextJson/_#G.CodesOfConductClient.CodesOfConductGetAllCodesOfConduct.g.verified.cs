@@ -20,7 +20,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get all codes of conduct<br/>
         /// Returns array of all GitHub's codes of conduct.

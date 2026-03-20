@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// Update a self-hosted runner group for an organization<br/>
         /// Updates the `name` and `visibility` of a self-hosted runner group in an organization.<br/>
@@ -13,7 +12,6 @@ namespace G
         /// </summary>
         /// <param name="org"></param>
         /// <param name="runnerGroupId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -23,7 +21,6 @@ namespace G
 
             global::G.ActionsUpdateSelfHostedRunnerGroupForOrgRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update a self-hosted runner group for an organization<br/>
         /// Updates the `name` and `visibility` of a self-hosted runner group in an organization.<br/>

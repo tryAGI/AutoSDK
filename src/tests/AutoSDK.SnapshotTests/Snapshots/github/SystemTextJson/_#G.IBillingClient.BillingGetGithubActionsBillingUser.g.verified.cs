@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IBillingClient
     {
-
         /// <summary>
         /// Get GitHub Actions billing for a user<br/>
         /// Gets the summary of the free and paid GitHub Actions minutes used.<br/>

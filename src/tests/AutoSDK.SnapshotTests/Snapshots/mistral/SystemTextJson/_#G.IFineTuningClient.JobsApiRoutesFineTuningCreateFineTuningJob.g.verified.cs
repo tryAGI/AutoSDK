@@ -5,13 +5,11 @@ namespace G
 {
     public partial interface IFineTuningClient
     {
-
         /// <summary>
         /// Create Fine Tuning Job<br/>
         /// Create a new fine-tuning job, it will be queued for processing.
         /// </summary>
         /// <param name="dryRun"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -20,7 +18,6 @@ namespace G
             global::G.JobIn request,
             bool? dryRun = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create Fine Tuning Job<br/>
         /// Create a new fine-tuning job, it will be queued for processing.

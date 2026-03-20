@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IModelClient
     {
-
         /// <summary>
         /// Update a model<br/>
         /// Updates a model, accessing it by its resource name, which is defined by<br/>
@@ -15,7 +14,6 @@ namespace G
         /// </summary>
         /// <param name="namespaceId"></param>
         /// <param name="modelId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -25,7 +23,6 @@ namespace G
 
             global::G.Model request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update a model<br/>
         /// Updates a model, accessing it by its resource name, which is defined by<br/>

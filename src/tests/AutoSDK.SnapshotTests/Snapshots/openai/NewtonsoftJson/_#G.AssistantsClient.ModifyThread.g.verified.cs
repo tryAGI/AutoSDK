@@ -24,12 +24,10 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Modifies a thread.
         /// </summary>
         /// <param name="threadId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -188,7 +186,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Modifies a thread.
         /// </summary>

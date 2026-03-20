@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICodespacesClient
     {
-
         /// <summary>
         /// Get details about a codespace export<br/>
         /// Gets information about an export of a codespace.<br/>

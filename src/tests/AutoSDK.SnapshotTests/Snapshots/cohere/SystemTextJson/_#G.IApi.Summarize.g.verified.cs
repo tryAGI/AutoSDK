@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IApi
     {
-
         /// <summary>
         /// Summarize<br/>
         /// &lt;Warning&gt;<br/>
@@ -14,7 +13,6 @@ namespace G
         /// Generates a summary in English for a given text.
         /// </summary>
         /// <param name="xClientName"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -23,7 +21,6 @@ namespace G
             global::G.SummarizeRequest request,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Summarize<br/>
         /// &lt;Warning&gt;<br/>

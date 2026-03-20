@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IIssuesClient
     {
-
         /// <summary>
         /// List repository issues<br/>
         /// List issues in a repository. Only open issues will be listed.<br/>

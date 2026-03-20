@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IFineTuningClient
     {
-
         /// <summary>
         /// Get status updates for a fine-tuning job.
         /// </summary>

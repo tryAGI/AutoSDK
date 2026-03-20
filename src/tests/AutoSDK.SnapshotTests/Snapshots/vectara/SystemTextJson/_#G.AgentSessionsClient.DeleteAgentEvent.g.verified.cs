@@ -25,7 +25,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Delete event<br/>
         /// Permanently delete an event from a session. Removes the event from both the metadata database and the encrypted event store.

@@ -21,7 +21,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Delete an LLM<br/>
         /// The Delete LLM API enables users to remove a previously configured custom Large Language Model (LLM) from their Vectara account. This functionality is essential for managing active LLM configurations and ensuring that only relevant models are available for use. Built-in LLMs cannot be deleted, ensuring that core system models remain accessible.<br/>

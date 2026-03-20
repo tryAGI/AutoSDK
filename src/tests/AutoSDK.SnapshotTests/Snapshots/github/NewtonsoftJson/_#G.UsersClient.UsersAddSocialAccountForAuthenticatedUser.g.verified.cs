@@ -22,13 +22,11 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Add social accounts for the authenticated user<br/>
         /// Add one or more social accounts to the authenticated user's profile.<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -353,7 +351,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Add social accounts for the authenticated user<br/>
         /// Add one or more social accounts to the authenticated user's profile.<br/>

@@ -20,7 +20,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get rate limit status for the authenticated user<br/>
         /// &gt; [!NOTE]<br/>

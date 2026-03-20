@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IFilesClient
     {
-
         /// <summary>
         /// Returns information about a specific file.
         /// </summary>

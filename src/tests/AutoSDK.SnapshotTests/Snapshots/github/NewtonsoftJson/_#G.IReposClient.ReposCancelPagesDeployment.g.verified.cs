@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// Cancel a GitHub Pages deployment<br/>
         /// Cancels a GitHub Pages deployment.<br/>

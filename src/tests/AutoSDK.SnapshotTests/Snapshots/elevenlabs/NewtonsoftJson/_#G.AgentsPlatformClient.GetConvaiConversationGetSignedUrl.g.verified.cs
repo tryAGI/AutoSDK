@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Signed Url<br/>
         /// Get a signed url to start a conversation with an agent with an agent that requires authorization

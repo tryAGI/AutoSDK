@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICodespacesClient
     {
-
         /// <summary>
         /// Export a codespace for the authenticated user<br/>
         /// Triggers an export of the specified codespace and returns a URL and ID where the status of the export can be monitored.<br/>

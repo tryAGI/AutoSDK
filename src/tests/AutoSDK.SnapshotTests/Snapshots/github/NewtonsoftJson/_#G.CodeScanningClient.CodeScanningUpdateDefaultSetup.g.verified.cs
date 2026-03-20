@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Update a code scanning default setup configuration<br/>
         /// Updates a code scanning default setup configuration.<br/>
@@ -34,7 +33,6 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -332,7 +330,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Update a code scanning default setup configuration<br/>
         /// Updates a code scanning default setup configuration.<br/>

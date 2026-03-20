@@ -32,7 +32,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List agent schedule executions<br/>
         /// List all execution attempts for a schedule, ordered by most recent first.

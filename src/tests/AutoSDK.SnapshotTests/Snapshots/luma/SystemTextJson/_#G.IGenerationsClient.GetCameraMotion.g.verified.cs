@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IGenerationsClient
     {
-
         /// <summary>
         /// Get camera motions<br/>
         /// Get all possible camera motions

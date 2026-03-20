@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// List GitHub Pages builds<br/>
         /// Lists builts of a GitHub Pages site.<br/>

@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Dubbing<br/>
         /// Returns metadata about a dubbing project, including whether it's still in progress or not

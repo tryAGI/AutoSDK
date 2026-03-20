@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IWorkspacesClient
     {
-
         /// <summary>
         /// Get Current Workspace Stats
         /// </summary>

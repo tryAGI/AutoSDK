@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IExamplesClient
     {
-
         /// <summary>
         /// Create Examples<br/>
         /// Create a new example.

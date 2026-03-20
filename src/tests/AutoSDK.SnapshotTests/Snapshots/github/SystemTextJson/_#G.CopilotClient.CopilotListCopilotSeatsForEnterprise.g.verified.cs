@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List all Copilot seat assignments for an enterprise<br/>
         /// &gt; [!NOTE]<br/>

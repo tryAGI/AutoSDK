@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IUsersClient
     {
-
         /// <summary>
         /// List GPG keys for the authenticated user<br/>
         /// Lists the current user's GPG keys.<br/>

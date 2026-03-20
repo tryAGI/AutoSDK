@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAnnotationQueuesClient
     {
-
         /// <summary>
         /// Get Runs From Annotation Queue
         /// </summary>

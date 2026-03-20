@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IMetaClient
     {
-
         /// <summary>
         /// Get Octocat<br/>
         /// Get the octocat as ASCII art

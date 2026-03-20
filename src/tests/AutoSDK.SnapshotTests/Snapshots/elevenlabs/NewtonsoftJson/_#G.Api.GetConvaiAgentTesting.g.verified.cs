@@ -38,7 +38,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List Agent Response Tests<br/>
         /// Lists all agent response tests with pagination support and optional search filtering.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// List self-hosted runners for an organization<br/>
         /// Lists all self-hosted runners configured in an organization.<br/>

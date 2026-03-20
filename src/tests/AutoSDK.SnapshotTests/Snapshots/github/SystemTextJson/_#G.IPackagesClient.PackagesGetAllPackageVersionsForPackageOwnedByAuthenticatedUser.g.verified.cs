@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPackagesClient
     {
-
         /// <summary>
         /// List package versions for a package owned by the authenticated user<br/>
         /// Lists package versions for a package owned by the authenticated user.<br/>

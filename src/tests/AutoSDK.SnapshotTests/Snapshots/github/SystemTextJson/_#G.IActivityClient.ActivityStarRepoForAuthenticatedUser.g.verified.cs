@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActivityClient
     {
-
         /// <summary>
         /// Star a repository for the authenticated user<br/>
         /// Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."

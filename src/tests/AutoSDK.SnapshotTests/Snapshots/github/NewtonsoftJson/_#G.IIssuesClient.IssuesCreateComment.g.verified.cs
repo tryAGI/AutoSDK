@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IIssuesClient
     {
-
         /// <summary>
         /// Create an issue comment<br/>
         /// You can use the REST API to create comments on issues and pull requests. Every pull request is an issue, but not every issue is a pull request.<br/>
@@ -22,7 +21,6 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="issueNumber"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -33,7 +31,6 @@ namespace G
 
             global::G.IssuesCreateCommentRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create an issue comment<br/>
         /// You can use the REST API to create comments on issues and pull requests. Every pull request is an issue, but not every issue is a pull request.<br/>

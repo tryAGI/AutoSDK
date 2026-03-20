@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPackagesClient
     {
-
         /// <summary>
         /// List packages for an organization<br/>
         /// Lists packages in an organization readable by the user.<br/>

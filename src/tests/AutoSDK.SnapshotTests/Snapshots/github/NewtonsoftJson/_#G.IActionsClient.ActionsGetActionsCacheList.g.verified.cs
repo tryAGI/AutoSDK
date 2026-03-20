@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// List GitHub Actions caches for a repository<br/>
         /// Lists the GitHub Actions caches for a repository.<br/>

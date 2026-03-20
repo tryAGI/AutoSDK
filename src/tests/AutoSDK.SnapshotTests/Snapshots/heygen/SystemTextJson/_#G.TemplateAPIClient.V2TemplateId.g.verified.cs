@@ -15,7 +15,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// v2/template/&lt;id&gt;<br/>
         /// v2/template/&lt;id&gt;

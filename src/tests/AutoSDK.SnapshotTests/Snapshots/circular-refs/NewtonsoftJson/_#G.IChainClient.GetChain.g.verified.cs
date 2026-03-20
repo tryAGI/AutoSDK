@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IChainClient
     {
-
         /// <summary>
         /// Get chain
         /// </summary>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// List users blocked by an organization<br/>
         /// List the users blocked by an organization.

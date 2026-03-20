@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IExtensionsClient
     {
-
         /// <summary>
         /// Gets information about a released extension.<br/>
         /// Gets information about a released extension. Returns the extension if its `state` is Released.<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IIssuesClient
     {
-
         /// <summary>
         /// Delete a label<br/>
         /// Deletes a label using the given label name.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IUsersClient
     {
-
         /// <summary>
         /// List email addresses for the authenticated user<br/>
         /// Lists all of your email addresses, and specifies which one is visible<br/>

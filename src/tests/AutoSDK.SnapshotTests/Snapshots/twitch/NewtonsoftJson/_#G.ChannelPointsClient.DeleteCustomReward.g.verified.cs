@@ -19,7 +19,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Deletes a custom reward that the broadcaster created.<br/>
         /// Deletes a custom reward that the broadcaster created.<br/>

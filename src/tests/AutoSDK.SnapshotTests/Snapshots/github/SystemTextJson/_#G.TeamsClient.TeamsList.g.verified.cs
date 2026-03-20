@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List teams<br/>
         /// Lists all teams in an organization that are visible to the authenticated user.

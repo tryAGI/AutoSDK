@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPvcVoicesClient
     {
-
         /// <summary>
         /// Retrieve Voice Sample Visual Waveform<br/>
         /// Retrieve the visual waveform of a voice sample.

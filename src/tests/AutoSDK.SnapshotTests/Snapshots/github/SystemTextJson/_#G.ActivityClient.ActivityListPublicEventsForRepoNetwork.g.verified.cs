@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List public events for a network of repositories<br/>
         /// &gt; [!NOTE]<br/>

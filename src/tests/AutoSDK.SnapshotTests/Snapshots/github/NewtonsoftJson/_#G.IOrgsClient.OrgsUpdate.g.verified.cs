@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// Update an organization<br/>
         /// &gt; [!WARNING]<br/>
@@ -17,7 +16,6 @@ namespace G
         /// OAuth app tokens and personal access tokens (classic) need the `admin:org` or `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="org"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -26,7 +24,6 @@ namespace G
 
             global::G.OrgsUpdateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update an organization<br/>
         /// &gt; [!WARNING]<br/>

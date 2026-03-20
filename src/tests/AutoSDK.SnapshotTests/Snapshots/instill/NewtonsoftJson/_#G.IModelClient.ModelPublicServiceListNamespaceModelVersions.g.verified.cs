@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IModelClient
     {
-
         /// <summary>
         /// List namespace model versions<br/>
         /// Returns a paginated list of version of a model namespace that belong to the specified namespace.<br/>

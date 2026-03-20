@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IDependabotClient
     {
-
         /// <summary>
         /// List repository secrets<br/>
         /// Lists all secrets available in a repository without revealing their encrypted<br/>

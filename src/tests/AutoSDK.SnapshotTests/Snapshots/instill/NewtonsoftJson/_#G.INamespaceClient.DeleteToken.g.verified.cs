@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface INamespaceClient
     {
-
         /// <summary>
         /// Delete an API token<br/>
         /// Deletes an API token.

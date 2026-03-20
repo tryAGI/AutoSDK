@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ILibraryManagementClient
     {
-
         /// <summary>
         /// Delete File<br/>
         /// Delete the specified file from the library.<br/>

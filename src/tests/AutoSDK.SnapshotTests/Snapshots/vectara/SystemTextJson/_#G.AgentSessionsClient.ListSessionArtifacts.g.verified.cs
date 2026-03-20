@@ -36,7 +36,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List session artifacts<br/>
         /// List all artifacts stored in a specific agent session, with cursor-based pagination. Artifacts are files either uploaded by the user, or generated within a session. This endpoint shows you what files exist in a session, but does not include the file content.

@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Query credit usage<br/>
         /// Fetch credit usage data broken down by model and day for the organization associated with the API key used to make the request. Up to 90 days of data can be queried at a time.
@@ -32,11 +31,9 @@ namespace G
         /// <param name="xRunwayVersion">
         /// Default Value: 2024-11-06
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         /// <remarks>
         /// // npm install --save @runwayml/sdk<br/>
         /// import RunwayML from '@runwayml/sdk';<br/>
@@ -203,7 +200,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Query credit usage<br/>
         /// Fetch credit usage data broken down by model and day for the organization associated with the API key used to make the request. Up to 90 days of data can be queried at a time.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IObjectsClient
     {
-
         /// <summary>
         /// Update an object.<br/>
         /// Updates an object based on its UUID. Given meta-data and schema values are validated. LastUpdateTime is set to the time this function is called.
@@ -14,11 +13,9 @@ namespace G
         /// <param name="consistencyLevel">
         /// Default Value: QUORUM
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.Object> ObjectsUpdateAsync(
             global::System.Guid id,
@@ -26,7 +23,6 @@ namespace G
             global::G.Object request,
             global::G.ObjectsUpdateConsistencyLevel? consistencyLevel = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update an object.<br/>
         /// Updates an object based on its UUID. Given meta-data and schema values are validated. LastUpdateTime is set to the time this function is called.
@@ -67,7 +63,6 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.Object> ObjectsUpdateAsync(
             global::System.Guid id,

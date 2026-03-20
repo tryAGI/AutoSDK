@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICorporaClient
     {
-
         /// <summary>
         /// 
         /// </summary>

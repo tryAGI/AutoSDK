@@ -44,7 +44,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List secret scanning alerts for a repository<br/>
         /// Lists secret scanning alerts for an eligible repository, from newest to oldest.<br/>

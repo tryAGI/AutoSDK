@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ISchemasClient
     {
-
         /// <summary>
         /// Get schemas
         /// </summary>

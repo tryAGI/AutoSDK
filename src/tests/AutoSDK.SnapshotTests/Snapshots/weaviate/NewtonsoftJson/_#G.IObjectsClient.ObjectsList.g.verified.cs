@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IObjectsClient
     {
-
         /// <summary>
         /// Get a list of objects.<br/>
         /// Lists all objects in reverse order of creation. The data will be returned as an array of objects. &lt;br/&gt;&lt;br/&gt;Tip: If you are looking to list all objects in a collection, use the `after` parameter.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPublicClient
     {
-
         /// <summary>
         /// Read Shared Feedbacks
         /// </summary>

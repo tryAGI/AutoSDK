@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IToolsClient
     {
-
         /// <summary>
         /// List all tools in your account.
         /// </summary>

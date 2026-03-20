@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IMessageBatchesClient
     {
-
         /// <summary>
         /// Delete a Message Batch<br/>
         /// Delete a Message Batch.<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IGitClient
     {
-
         /// <summary>
         /// Get a reference<br/>
         /// Returns a single reference from your Git database. The `:ref` in the URL must be formatted as `heads/&lt;branch name&gt;` for branches and `tags/&lt;tag name&gt;` for tags. If the `:ref` doesn't match an existing ref, a `404` is returned.<br/>

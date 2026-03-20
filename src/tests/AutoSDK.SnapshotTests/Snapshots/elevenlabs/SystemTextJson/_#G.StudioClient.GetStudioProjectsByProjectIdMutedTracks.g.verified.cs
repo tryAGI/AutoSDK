@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Project Muted Tracks<br/>
         /// Returns a list of chapter IDs that have muted tracks in a project.

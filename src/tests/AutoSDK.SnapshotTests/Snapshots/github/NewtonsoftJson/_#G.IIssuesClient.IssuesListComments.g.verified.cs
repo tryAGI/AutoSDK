@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IIssuesClient
     {
-
         /// <summary>
         /// List issue comments<br/>
         /// You can use the REST API to list comments on issues and pull requests. Every pull request is an issue, but not every issue is a pull request.<br/>

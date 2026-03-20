@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// Get Conversation Audio<br/>
         /// Get the audio recording of a particular conversation

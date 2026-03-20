@@ -40,7 +40,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List commits<br/>
         /// **Signature verification object**<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IModelClient
     {
-
         /// <summary>
         /// List namespace models<br/>
         /// Returns a paginated list of models.

@@ -22,7 +22,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Fine Tuning Job<br/>
         /// Get a fine-tuned job details by its UUID.

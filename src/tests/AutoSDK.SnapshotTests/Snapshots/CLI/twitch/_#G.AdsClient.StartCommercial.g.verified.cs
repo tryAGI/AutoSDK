@@ -22,7 +22,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Starts a commercial on the specified channel.<br/>
         /// Starts a commercial on the specified channel.<br/>
@@ -31,7 +30,6 @@ namespace G
         /// __Authorization:__<br/>
         /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:edit:commercial** scope.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -319,7 +317,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Starts a commercial on the specified channel.<br/>
         /// Starts a commercial on the specified channel.<br/>

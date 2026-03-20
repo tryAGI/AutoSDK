@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IUploadsClient
     {
-
         /// <summary>
         /// Cancels the Upload. No Parts may be added after an Upload is cancelled.
         /// </summary>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// List environment variables<br/>
         /// Lists all environment variables.<br/>

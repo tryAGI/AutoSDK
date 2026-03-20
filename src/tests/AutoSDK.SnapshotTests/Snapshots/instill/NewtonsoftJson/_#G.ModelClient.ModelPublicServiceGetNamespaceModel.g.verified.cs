@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get a model<br/>
         /// Returns the detail of a model, accessing it by the model ID and its parent namespace.

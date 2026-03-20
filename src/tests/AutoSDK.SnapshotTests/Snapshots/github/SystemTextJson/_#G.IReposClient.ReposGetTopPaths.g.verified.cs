@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// Get top referral paths<br/>
         /// Get the top 10 popular contents over the last 14 days.

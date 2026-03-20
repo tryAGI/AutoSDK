@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IProjectsClient
     {
-
         /// <summary>
         /// Delete a project<br/>
         /// Deletes a project board. Returns a `404 Not Found` status if projects are disabled.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITokensClient
     {
-
         /// <summary>
         /// Delete<br/>
         /// Delete an API Bearer token for an authenticated user.

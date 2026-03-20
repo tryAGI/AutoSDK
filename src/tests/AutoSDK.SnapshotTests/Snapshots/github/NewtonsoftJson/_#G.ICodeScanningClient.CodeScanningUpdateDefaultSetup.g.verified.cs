@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICodeScanningClient
     {
-
         /// <summary>
         /// Update a code scanning default setup configuration<br/>
         /// Updates a code scanning default setup configuration.<br/>
@@ -13,7 +12,6 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -23,7 +21,6 @@ namespace G
 
             global::G.CodeScanningDefaultSetupUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update a code scanning default setup configuration<br/>
         /// Updates a code scanning default setup configuration.<br/>

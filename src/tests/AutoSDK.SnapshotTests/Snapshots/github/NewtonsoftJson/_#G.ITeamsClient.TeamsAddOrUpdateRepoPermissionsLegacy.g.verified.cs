@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITeamsClient
     {
-
         /// <summary>
         /// Add or update team repository permissions (Legacy)<br/>
         /// &gt; [!WARNING]<br/>
@@ -16,11 +15,9 @@ namespace G
         /// <param name="teamId"></param>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task TeamsAddOrUpdateRepoPermissionsLegacyAsync(
             int teamId,
@@ -29,7 +26,6 @@ namespace G
 
             global::G.TeamsAddOrUpdateRepoPermissionsLegacyRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Add or update team repository permissions (Legacy)<br/>
         /// &gt; [!WARNING]<br/>
@@ -45,7 +41,6 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task TeamsAddOrUpdateRepoPermissionsLegacyAsync(
             int teamId,

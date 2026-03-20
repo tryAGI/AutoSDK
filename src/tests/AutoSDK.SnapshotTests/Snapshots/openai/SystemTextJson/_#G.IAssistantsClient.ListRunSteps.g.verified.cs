@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAssistantsClient
     {
-
         /// <summary>
         /// Returns a list of run steps belonging to a run.
         /// </summary>

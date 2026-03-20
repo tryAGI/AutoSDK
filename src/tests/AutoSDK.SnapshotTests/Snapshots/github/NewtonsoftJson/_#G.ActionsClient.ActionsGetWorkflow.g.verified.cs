@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get a workflow<br/>
         /// Gets a specific workflow. You can replace `workflow_id` with the workflow<br/>

@@ -30,7 +30,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List environment secrets<br/>
         /// Lists all secrets available in an environment without revealing their<br/>

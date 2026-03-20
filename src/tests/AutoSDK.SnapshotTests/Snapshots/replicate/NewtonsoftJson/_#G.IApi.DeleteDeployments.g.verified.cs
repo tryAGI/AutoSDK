@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IApi
     {
-
         /// <summary>
         /// Delete a deployment<br/>
         /// Delete a deployment<br/>

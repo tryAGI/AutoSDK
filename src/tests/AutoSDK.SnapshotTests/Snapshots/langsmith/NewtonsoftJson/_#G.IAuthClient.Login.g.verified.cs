@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAuthClient
     {
-
         /// <summary>
         /// Login
         /// </summary>

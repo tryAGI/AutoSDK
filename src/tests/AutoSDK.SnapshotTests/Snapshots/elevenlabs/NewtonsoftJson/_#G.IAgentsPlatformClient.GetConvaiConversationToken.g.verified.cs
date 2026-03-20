@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// Get Webrtc Token<br/>
         /// Get a WebRTC session token for real-time communication.

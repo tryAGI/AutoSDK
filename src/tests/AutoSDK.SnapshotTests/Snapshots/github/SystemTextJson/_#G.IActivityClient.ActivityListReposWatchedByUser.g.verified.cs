@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActivityClient
     {
-
         /// <summary>
         /// List repositories watched by a user<br/>
         /// Lists repositories a user is watching.

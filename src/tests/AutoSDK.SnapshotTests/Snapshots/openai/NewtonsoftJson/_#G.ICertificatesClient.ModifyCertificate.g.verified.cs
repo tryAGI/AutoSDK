@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface ICertificatesClient
     {
-
         /// <summary>
         /// Modify a certificate. Note that only the name can be modified.
         /// </summary>
         /// <param name="certificateId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -19,7 +17,6 @@ namespace G
 
             global::G.ModifyCertificateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Modify a certificate. Note that only the name can be modified.
         /// </summary>

@@ -5,14 +5,12 @@ namespace G
 {
     public partial interface IConduitsClient
     {
-
         /// <summary>
         /// NEW Updates a conduit’s shard count.<br/>
         /// NEW Updates a [conduit’s](https://dev.twitch.tv/docs/eventsub/handling-conduit-events) shard count. To delete shards, update the count to a lower number, and the shards above the count will be deleted. For example, if the existing shard count is 100, by resetting shard count to 50, shards 50-99 are disabled.<br/>
         /// __Authorization:__<br/>
         /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -20,7 +18,6 @@ namespace G
 
             global::G.UpdateConduitsBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// NEW Updates a conduit’s shard count.<br/>
         /// NEW Updates a [conduit’s](https://dev.twitch.tv/docs/eventsub/handling-conduit-events) shard count. To delete shards, update the count to a lower number, and the shards above the count will be deleted. For example, if the existing shard count is 100, by resetting shard count to 50, shards 50-99 are disabled.<br/>

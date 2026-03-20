@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get instruction<br/>
         /// Retrieve the full definition of a specific instruction, including its template, metadata, enabled status, and version. Instruction templates may contain Velocity expressions that reference tools and metadata. If no version is specified, the latest version is returned.

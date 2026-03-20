@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IApi
     {
-
         /// <summary>
         /// Get the authenticated account<br/>
         /// Returns information about the user or organization associated with the provided API token.<br/>

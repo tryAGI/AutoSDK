@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Add labels to an issue<br/>
         /// Adds labels to an issue. If you provide an empty array of labels, all labels are removed from the issue. 
@@ -36,7 +35,6 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="issueNumber"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -335,7 +333,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Add labels to an issue<br/>
         /// Adds labels to an issue. If you provide an empty array of labels, all labels are removed from the issue. 

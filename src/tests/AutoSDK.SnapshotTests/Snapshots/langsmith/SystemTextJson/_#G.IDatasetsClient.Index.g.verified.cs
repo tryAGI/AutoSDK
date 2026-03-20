@@ -5,13 +5,11 @@ namespace G
 {
     public partial interface IDatasetsClient
     {
-
         /// <summary>
         /// Index<br/>
         /// Index a dataset.
         /// </summary>
         /// <param name="datasetId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -20,7 +18,6 @@ namespace G
 
             global::G.DatasetIndexRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Index<br/>
         /// Index a dataset.

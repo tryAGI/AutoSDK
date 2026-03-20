@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IOpenAiClient
     {
-
         /// <summary>
         /// List Containers<br/>
         /// Lists containers.

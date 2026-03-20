@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IRunClient
     {
-
         /// <summary>
         /// Generate Query For Runs<br/>
         /// Get runs filter expression query for a given natural language query.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.RequestBodyForRunsGenerateQuery request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Generate Query For Runs<br/>
         /// Get runs filter expression query for a given natural language query.

@@ -40,7 +40,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List fine-grained personal access tokens with access to organization resources<br/>
         /// Lists approved fine-grained personal access tokens owned by organization members that can access organization resources.<br/>

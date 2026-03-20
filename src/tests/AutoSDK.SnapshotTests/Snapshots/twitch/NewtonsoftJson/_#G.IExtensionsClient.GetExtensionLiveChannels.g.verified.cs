@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IExtensionsClient
     {
-
         /// <summary>
         /// Gets a list of broadcasters that are streaming live and have installed or activated the extension.<br/>
         /// Gets a list of broadcasters that are streaming live and have installed or activated the extension.<br/>

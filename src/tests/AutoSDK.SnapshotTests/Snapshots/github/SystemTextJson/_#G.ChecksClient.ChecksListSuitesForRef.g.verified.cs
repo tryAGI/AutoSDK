@@ -34,7 +34,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List check suites for a Git reference<br/>
         /// Lists check suites for a commit `ref`. The `ref` can be a SHA, branch name, or a tag name.<br/>

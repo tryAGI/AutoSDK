@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentSessionsClient
     {
-
         /// <summary>
         /// Delete event<br/>
         /// Permanently delete an event from a session. Removes the event from both the metadata database and the encrypted event store.

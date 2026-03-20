@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Text to speech<br/>
         /// This endpoint will start a new task to generate speech from text.
@@ -32,11 +31,9 @@ namespace G
         /// <param name="xRunwayVersion">
         /// Default Value: 2024-11-06
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         /// <remarks>
         /// // npm install --save @runwayml/sdk<br/>
         /// import RunwayML from '@runwayml/sdk';<br/>
@@ -248,7 +245,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Text to speech<br/>
         /// This endpoint will start a new task to generate speech from text.

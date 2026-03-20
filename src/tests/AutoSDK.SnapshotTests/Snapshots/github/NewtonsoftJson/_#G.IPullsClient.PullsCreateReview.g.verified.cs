@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPullsClient
     {
-
         /// <summary>
         /// Create a review for a pull request<br/>
         /// Creates a review on a specified pull request.<br/>
@@ -23,7 +22,6 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="pullNumber"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -34,7 +32,6 @@ namespace G
 
             global::G.PullsCreateReviewRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a review for a pull request<br/>
         /// Creates a review on a specified pull request.<br/>

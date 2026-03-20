@@ -288,15 +288,14 @@ namespace {endPoint.Settings.Namespace}
             }" : " ")}
         }}";
 
-        return $@"
+        return $@" 
         {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
 {endPoint.Parameters.Where(x => x.Location != null).Select(x => $@"
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
-{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @"
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @" 
         /// <param name=""request""></param>")}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
-        /// <exception cref=""global::{endPoint.Settings.Namespace}.ApiException""></exception>
-{(string.IsNullOrWhiteSpace(endPoint.Remarks) ? " " : $@"
+        /// <exception cref=""global::{endPoint.Settings.Namespace}.ApiException""></exception>{(string.IsNullOrWhiteSpace(endPoint.Remarks) ? "" : $@"
         {endPoint.Remarks.ToXmlDocumentationRemarks(level: 8)}")}
         {GenerateEndPointAttributes(endPoint)}
         {(isInterface ? "" : "public async ")}{taskType} {endPoint.MethodName}(
@@ -899,7 +898,7 @@ namespace {endPoint.Settings.Namespace}
 
         var parameters = GetExtensionMethodParameters(endPoint).ToList();
 
-        return $@"
+        return $@" 
         {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
 {parameters.Select(x => $@"
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
@@ -922,7 +921,7 @@ namespace {endPoint.Settings.Namespace}
     private static string GenerateEndPointAttributes(EndPoint endPoint)
     {
         return @$" 
-{(endPoint.IsDeprecated ? $@"
+{(endPoint.IsDeprecated ? $@" 
         [global::System.Obsolete(""{(!string.IsNullOrWhiteSpace(endPoint.DeprecationMessage) ? endPoint.DeprecationMessage.ClearForCSharp() : "This method marked as deprecated.")}"")]" : " ")}
  
 {(endPoint.Settings.UseExperimentalAttributes is

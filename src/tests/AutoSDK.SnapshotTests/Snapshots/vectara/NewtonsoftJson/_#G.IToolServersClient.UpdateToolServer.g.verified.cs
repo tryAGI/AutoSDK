@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IToolServersClient
     {
-
         /// <summary>
         /// Update tool server<br/>
         /// Update the configuration of a specific tool server.
@@ -15,7 +14,6 @@ namespace G
         /// <param name="toolServerId">
         /// Example: tsr_rag_search
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -26,7 +24,6 @@ namespace G
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update tool server<br/>
         /// Update the configuration of a specific tool server.

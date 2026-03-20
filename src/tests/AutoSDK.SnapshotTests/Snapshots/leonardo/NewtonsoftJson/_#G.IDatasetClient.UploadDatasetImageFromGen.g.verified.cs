@@ -5,13 +5,11 @@ namespace G
 {
     public partial interface IDatasetClient
     {
-
         /// <summary>
         /// Upload a Single Generated Image to a Dataset<br/>
         /// This endpoint will upload a previously generated image to the dataset
         /// </summary>
         /// <param name="datasetId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -20,7 +18,6 @@ namespace G
 
             global::G.UploadDatasetImageFromGenRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Upload a Single Generated Image to a Dataset<br/>
         /// This endpoint will upload a previously generated image to the dataset

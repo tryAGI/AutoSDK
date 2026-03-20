@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List public SSH keys for the authenticated user<br/>
         /// Lists the public SSH keys for the authenticated user's GitHub account.<br/>

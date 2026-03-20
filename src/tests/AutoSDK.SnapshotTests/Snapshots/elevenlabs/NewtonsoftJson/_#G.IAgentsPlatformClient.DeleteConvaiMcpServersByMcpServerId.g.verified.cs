@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// Delete Mcp Server<br/>
         /// Delete a specific MCP server configuration from the workspace.

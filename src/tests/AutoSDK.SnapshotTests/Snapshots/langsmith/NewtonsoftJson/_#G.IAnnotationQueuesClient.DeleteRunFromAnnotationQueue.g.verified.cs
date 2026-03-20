@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAnnotationQueuesClient
     {
-
         /// <summary>
         /// Delete Run From Annotation Queue
         /// </summary>

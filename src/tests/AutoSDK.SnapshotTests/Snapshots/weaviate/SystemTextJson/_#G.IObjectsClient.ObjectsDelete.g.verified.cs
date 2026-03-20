@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IObjectsClient
     {
-
         /// <summary>
         /// Delete an object.<br/>
         /// Deletes an object from the database based on its UUID.
@@ -17,7 +16,6 @@ namespace G
         /// <param name="tenant"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task ObjectsDeleteAsync(
             global::System.Guid id,

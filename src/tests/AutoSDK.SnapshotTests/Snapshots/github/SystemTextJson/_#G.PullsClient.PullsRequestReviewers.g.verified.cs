@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Request reviewers for a pull request<br/>
         /// Requests reviews for a pull request from a given set of users and/or teams.<br/>
@@ -37,7 +36,6 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="pullNumber"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -257,7 +255,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Request reviewers for a pull request<br/>
         /// Requests reviews for a pull request from a given set of users and/or teams.<br/>

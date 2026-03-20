@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IIssuesClient
     {
-
         /// <summary>
         /// List labels for an issue<br/>
         /// Lists all labels for an issue.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IUsersClient
     {
-
         /// <summary>
         /// Check if a person is followed by the authenticated user
         /// </summary>

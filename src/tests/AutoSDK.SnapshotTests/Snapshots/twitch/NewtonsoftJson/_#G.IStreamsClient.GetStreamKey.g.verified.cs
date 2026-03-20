@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IStreamsClient
     {
-
         /// <summary>
         /// Gets the channel’s stream key.<br/>
         /// Gets the channel’s stream key.<br/>

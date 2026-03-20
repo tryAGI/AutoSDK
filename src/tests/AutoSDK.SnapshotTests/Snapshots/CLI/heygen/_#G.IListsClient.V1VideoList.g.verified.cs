@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IListsClient
     {
-
         /// <summary>
         /// v1/video.list<br/>
         /// v1/video.list

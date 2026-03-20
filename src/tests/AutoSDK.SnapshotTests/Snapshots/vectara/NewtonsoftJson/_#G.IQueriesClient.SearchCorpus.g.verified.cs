@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IQueriesClient
     {
-
         /// <summary>
         /// Simple Single Corpus Query<br/>
         /// The [**Query APIs**](/docs/rest-api/queries) enable Retrieval Augmented Generation (RAG), allowing you to search your data and generate AI-powered summaries. Vectara provides three query types to match different search needs:<br/>

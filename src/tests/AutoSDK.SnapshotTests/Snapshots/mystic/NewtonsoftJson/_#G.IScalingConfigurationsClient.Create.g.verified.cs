@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IScalingConfigurationsClient
     {
-
         /// <summary>
         /// Create<br/>
         /// Create a scaling configuration for pipelines
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.ScalingConfigCreate request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create<br/>
         /// Create a scaling configuration for pipelines

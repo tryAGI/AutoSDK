@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List organization invitation teams<br/>
         /// List all teams associated with an invitation. In order to see invitations in an organization, the authenticated user must be an organization owner.

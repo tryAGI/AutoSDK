@@ -5,13 +5,11 @@ namespace G
 {
     public partial interface IFineTuningClient
     {
-
         /// <summary>
         /// Creates a fine-tuning job which begins the process of creating a new model from a given dataset.<br/>
         /// Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.<br/>
         /// [Learn more about fine-tuning](/docs/guides/model-optimization)
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -19,7 +17,6 @@ namespace G
 
             global::G.CreateFineTuningJobRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Creates a fine-tuning job which begins the process of creating a new model from a given dataset.<br/>
         /// Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.<br/>

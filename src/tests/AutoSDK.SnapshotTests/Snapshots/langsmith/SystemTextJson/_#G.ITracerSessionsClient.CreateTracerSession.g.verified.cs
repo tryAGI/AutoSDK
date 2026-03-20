@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITracerSessionsClient
     {
-
         /// <summary>
         /// Create Tracer Session<br/>
         /// Create a new session.
@@ -13,7 +12,6 @@ namespace G
         /// <param name="upsert">
         /// Default Value: false
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -22,7 +20,6 @@ namespace G
             global::G.TracerSessionCreate request,
             bool? upsert = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create Tracer Session<br/>
         /// Create a new session.

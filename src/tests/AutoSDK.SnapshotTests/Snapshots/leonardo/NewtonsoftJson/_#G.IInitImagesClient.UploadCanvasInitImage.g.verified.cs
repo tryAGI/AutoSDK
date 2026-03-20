@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IInitImagesClient
     {
-
         /// <summary>
         /// Upload Canvas Editor init and mask image<br/>
         /// This endpoint returns presigned details to upload an init image and a mask image to S3
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.UploadCanvasInitImageRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Upload Canvas Editor init and mask image<br/>
         /// This endpoint returns presigned details to upload an init image and a mask image to S3

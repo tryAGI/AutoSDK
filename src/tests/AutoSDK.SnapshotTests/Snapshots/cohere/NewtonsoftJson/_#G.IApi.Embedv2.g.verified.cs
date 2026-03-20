@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IApi
     {
-
         /// <summary>
         /// Embed V2 API<br/>
         /// This endpoint returns text embeddings. An embedding is a list of floating point numbers that captures semantic information about the text that it represents.<br/>
@@ -13,7 +12,6 @@ namespace G
         /// If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](https://docs.cohere.com/docs/semantic-search).
         /// </summary>
         /// <param name="xClientName"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -22,7 +20,6 @@ namespace G
             global::G.Embedv2Request request,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Embed V2 API<br/>
         /// This endpoint returns text embeddings. An embedding is a list of floating point numbers that captures semantic information about the text that it represents.<br/>

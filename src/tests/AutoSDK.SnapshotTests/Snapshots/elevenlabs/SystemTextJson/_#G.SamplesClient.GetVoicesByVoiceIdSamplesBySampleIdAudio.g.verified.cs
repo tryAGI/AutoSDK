@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref byte[] content);
 
-
         /// <summary>
         /// Get Audio From Sample<br/>
         /// Returns the audio corresponding to a sample attached to a voice.

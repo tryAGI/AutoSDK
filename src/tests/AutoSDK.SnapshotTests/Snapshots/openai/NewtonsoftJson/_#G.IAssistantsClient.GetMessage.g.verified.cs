@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAssistantsClient
     {
-
         /// <summary>
         /// Retrieve a message.
         /// </summary>

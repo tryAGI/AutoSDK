@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPollsClient
     {
-
         /// <summary>
         /// Creates a poll that viewers in the broadcaster’s channel can vote on.<br/>
         /// Creates a poll that viewers in the broadcaster’s channel can vote on.<br/>
@@ -13,7 +12,6 @@ namespace G
         /// __Authorization:__<br/>
         /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:polls** scope.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -21,7 +19,6 @@ namespace G
 
             global::G.CreatePollBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Creates a poll that viewers in the broadcaster’s channel can vote on.<br/>
         /// Creates a poll that viewers in the broadcaster’s channel can vote on.<br/>

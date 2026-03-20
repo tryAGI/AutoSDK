@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List public email addresses for the authenticated user<br/>
         /// Lists your publicly visible email address, which you can set with the<br/>

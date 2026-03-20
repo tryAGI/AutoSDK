@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IResponsesClient
     {
-
         /// <summary>
         /// Cancels a model response with the given ID. Only responses created with<br/>
         /// the `background` parameter set to `true` can be cancelled. <br/>

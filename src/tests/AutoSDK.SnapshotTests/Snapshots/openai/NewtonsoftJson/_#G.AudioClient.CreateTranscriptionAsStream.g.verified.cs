@@ -17,11 +17,9 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Transcribes audio into the input language.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -233,7 +231,6 @@ namespace G
                 yield return __streamedResponse;
             }
         }
-
         /// <summary>
         /// Transcribes audio into the input language.
         /// </summary>

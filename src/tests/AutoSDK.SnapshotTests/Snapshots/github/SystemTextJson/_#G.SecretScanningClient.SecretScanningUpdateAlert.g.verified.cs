@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Update a secret scanning alert<br/>
         /// Updates the status of a secret scanning alert in an eligible repository.<br/>
@@ -41,7 +40,6 @@ namespace G
         /// The security alert number.<br/>
         /// Included only in responses
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -327,7 +325,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Update a secret scanning alert<br/>
         /// Updates the status of a secret scanning alert in an eligible repository.<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IOptimizationJobsClient
     {
-
         /// <summary>
         /// List Jobs<br/>
         /// List all prompt optimization jobs.

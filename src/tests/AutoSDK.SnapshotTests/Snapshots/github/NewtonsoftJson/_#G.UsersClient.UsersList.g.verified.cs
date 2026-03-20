@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List users<br/>
         /// Lists all users, in the order that they signed up on GitHub. This list includes personal user accounts and organization accounts.<br/>

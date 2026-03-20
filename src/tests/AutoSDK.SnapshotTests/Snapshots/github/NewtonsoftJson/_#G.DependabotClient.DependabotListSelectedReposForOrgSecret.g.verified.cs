@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List selected repositories for an organization secret<br/>
         /// Lists all repositories that have been selected when the `visibility`<br/>

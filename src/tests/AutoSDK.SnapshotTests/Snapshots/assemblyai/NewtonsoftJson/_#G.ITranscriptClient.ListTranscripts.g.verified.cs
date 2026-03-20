@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITranscriptClient
     {
-
         /// <summary>
         /// List transcripts<br/>
         /// Retrieve a list of transcripts you created.<br/>

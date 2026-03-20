@@ -5,14 +5,12 @@ namespace G
 {
     public partial interface IIssuesClient
     {
-
         /// <summary>
         /// Create a milestone<br/>
         /// Creates a milestone.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -22,7 +20,6 @@ namespace G
 
             global::G.IssuesCreateMilestoneRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a milestone<br/>
         /// Creates a milestone.

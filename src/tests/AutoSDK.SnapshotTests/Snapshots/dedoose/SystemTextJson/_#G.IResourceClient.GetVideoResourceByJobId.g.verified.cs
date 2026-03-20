@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IResourceClient
     {
-
         /// <summary>
         /// GetVideoResourceByJobId<br/>
         /// GetVideoResourceByJobId
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.GetVideoResourceByJobIdRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// GetVideoResourceByJobId<br/>
         /// GetVideoResourceByJobId

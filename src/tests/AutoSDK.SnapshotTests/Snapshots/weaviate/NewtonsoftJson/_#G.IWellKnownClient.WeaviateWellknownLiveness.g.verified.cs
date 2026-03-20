@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IWellKnownClient
     {
-
         /// <summary>
         /// Get application liveness.<br/>
         /// Determines whether the application is alive. Can be used for kubernetes liveness probe

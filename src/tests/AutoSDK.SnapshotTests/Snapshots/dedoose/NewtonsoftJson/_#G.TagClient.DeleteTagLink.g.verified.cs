@@ -22,12 +22,10 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// DeleteTagLink<br/>
         /// DeleteTagLink
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -297,7 +295,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// DeleteTagLink<br/>
         /// DeleteTagLink

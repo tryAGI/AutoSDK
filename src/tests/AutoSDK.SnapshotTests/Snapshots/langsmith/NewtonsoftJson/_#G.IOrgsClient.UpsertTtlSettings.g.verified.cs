@@ -5,11 +5,9 @@ namespace G
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// Upsert Ttl Settings
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace G
 
             global::G.UpsertTTLSettingsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Upsert Ttl Settings
         /// </summary>

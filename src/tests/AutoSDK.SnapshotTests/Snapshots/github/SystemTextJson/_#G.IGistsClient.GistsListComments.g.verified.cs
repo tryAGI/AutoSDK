@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IGistsClient
     {
-
         /// <summary>
         /// List gist comments<br/>
         /// Lists the comments on a gist.<br/>

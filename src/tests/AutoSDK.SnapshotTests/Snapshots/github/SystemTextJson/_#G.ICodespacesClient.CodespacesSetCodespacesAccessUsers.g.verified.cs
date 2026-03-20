@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICodespacesClient
     {
-
         /// <summary>
         /// Add users to Codespaces access for an organization<br/>
         /// Codespaces for the specified users will be billed to the organization.<br/>
@@ -14,18 +13,15 @@ namespace G
         /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// </summary>
         /// <param name="org"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task CodespacesSetCodespacesAccessUsersAsync(
             string org,
 
             global::G.CodespacesSetCodespacesAccessUsersRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Add users to Codespaces access for an organization<br/>
         /// Codespaces for the specified users will be billed to the organization.<br/>
@@ -39,7 +35,6 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task CodespacesSetCodespacesAccessUsersAsync(
             string org,

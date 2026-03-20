@@ -5,11 +5,9 @@ namespace G
 {
     public partial interface IInvitesClient
     {
-
         /// <summary>
         /// Create an invite for a user to the organization. The invite must be accepted by the user before they have access to the organization.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace G
 
             global::G.InviteRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create an invite for a user to the organization. The invite must be accepted by the user before they have access to the organization.
         /// </summary>

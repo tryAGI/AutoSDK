@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// Set the level of access for workflows outside of the repository<br/>
         /// Sets the level of access that workflows outside of the repository have to actions and reusable workflows in the repository.<br/>
@@ -15,7 +14,6 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -25,7 +23,6 @@ namespace G
 
             global::G.ActionsWorkflowAccessToRepository request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Set the level of access for workflows outside of the repository<br/>
         /// Sets the level of access that workflows outside of the repository have to actions and reusable workflows in the repository.<br/>

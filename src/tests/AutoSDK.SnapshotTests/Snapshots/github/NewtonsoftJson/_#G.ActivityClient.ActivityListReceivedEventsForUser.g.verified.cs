@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List events received by the authenticated user<br/>
         /// These are events that you've received by watching repositories and following users. If you are authenticated as the<br/>

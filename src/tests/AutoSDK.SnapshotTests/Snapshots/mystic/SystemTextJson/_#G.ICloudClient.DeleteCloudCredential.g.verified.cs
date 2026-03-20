@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICloudClient
     {
-
         /// <summary>
         /// Delete Cloud Credential
         /// </summary>

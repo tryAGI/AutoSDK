@@ -24,12 +24,10 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Creates a new service account in the project. This also returns an unredacted API key for the service account.
         /// </summary>
         /// <param name="projectId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -226,7 +224,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Creates a new service account in the project. This also returns an unredacted API key for the service account.
         /// </summary>

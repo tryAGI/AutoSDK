@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List repository access to a self-hosted runner group in an organization<br/>
         /// Lists the repositories with access to a self-hosted runner group configured in an organization.<br/>

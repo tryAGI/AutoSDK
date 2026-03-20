@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IRunsClient
     {
-
         /// <summary>
         /// Ingest Runs (Batch JSON)<br/>
         /// Ingests a batch of runs in a single JSON payload. The payload must have `post` and/or `patch` arrays containing run objects. \<br/>

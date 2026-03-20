@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get an API key<br/>
         /// The Get API Key API lists all existing API keys for a customer ID. It also shows what corpora are accessed by these keys and with what permissions.<br/>

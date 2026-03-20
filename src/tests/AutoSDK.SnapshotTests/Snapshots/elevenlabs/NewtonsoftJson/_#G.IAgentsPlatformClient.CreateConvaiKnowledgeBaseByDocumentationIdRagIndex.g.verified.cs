@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// Compute Rag Index.<br/>
         /// In case the document is not RAG indexed, it triggers rag indexing task, otherwise it just returns the current status.
@@ -16,7 +15,6 @@ namespace G
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -26,7 +24,6 @@ namespace G
             global::G.RAGIndexRequestModel request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Compute Rag Index.<br/>
         /// In case the document is not RAG indexed, it triggers rag indexing task, otherwise it just returns the current status.

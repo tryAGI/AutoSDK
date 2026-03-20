@@ -32,7 +32,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List deliveries for a repository webhook<br/>
         /// Returns a list of webhook deliveries for a webhook configured in a repository.

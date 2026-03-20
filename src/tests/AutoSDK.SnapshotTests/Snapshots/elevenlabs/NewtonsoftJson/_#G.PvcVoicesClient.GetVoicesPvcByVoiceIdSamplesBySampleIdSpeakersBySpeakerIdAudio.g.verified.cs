@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Retrieve Separated Speaker Audio<br/>
         /// Retrieve the separated audio for a specific speaker.

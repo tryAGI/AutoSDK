@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICharityClient
     {
-
         /// <summary>
         /// Gets the list of donations that users have made to the broadcaster’s active charity campaign.<br/>
         /// Gets the list of donations that users have made to the broadcaster’s active charity campaign.<br/>

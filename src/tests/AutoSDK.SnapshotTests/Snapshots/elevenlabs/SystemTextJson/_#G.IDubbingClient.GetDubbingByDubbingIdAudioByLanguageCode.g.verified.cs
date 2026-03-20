@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IDubbingClient
     {
-
         /// <summary>
         /// Get Dubbed File<br/>
         /// Returns dub as a streamed MP3 or MP4 file. If this dub has been edited using Dubbing Studio you need to use the resource render endpoint as this endpoint only returns the original automatic dub result.

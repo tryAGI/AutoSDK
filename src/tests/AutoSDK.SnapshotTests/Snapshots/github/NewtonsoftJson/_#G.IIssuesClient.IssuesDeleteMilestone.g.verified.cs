@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IIssuesClient
     {
-
         /// <summary>
         /// Delete a milestone<br/>
         /// Deletes a milestone using the given milestone number.

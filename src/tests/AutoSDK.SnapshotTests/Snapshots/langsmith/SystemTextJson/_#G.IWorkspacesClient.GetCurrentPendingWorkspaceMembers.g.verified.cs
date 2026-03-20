@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IWorkspacesClient
     {
-
         /// <summary>
         /// Get Current Pending Workspace Members
         /// </summary>

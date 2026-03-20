@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Update Git LFS preference<br/>
         /// You can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This ability<br/>
@@ -38,11 +37,9 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.Import> MigrationsSetLfsPreferenceAsync(
             string owner,
@@ -262,7 +259,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Update Git LFS preference<br/>
         /// You can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This ability<br/>
@@ -279,7 +275,6 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.Import> MigrationsSetLfsPreferenceAsync(
             string owner,

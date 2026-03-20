@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IIssuesClient
     {
-
         /// <summary>
         /// List timeline events for an issue<br/>
         /// List all timeline events for an issue.

@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get a job for a workflow run<br/>
         /// Gets a specific job in a workflow run.<br/>

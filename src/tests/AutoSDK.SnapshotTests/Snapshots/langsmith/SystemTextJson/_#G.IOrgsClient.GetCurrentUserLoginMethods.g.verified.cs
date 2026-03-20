@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// Get Current User Login Methods<br/>
         /// Get login methods for the current user.

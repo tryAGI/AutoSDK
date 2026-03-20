@@ -46,7 +46,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Read Feedbacks<br/>
         /// List all Feedback by query params.

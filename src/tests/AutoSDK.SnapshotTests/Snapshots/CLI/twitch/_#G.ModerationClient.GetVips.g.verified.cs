@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Gets a list of the broadcaster’s VIPs.<br/>
         /// Gets a list of the broadcaster’s VIPs.<br/>

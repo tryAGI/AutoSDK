@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IGuestStarClient
     {
-
         /// <summary>
         /// BETA Gets information about an ongoing Guest Star session for a particular channel.<br/>
         /// BETA Gets information about an ongoing Guest Star session for a particular channel.<br/>

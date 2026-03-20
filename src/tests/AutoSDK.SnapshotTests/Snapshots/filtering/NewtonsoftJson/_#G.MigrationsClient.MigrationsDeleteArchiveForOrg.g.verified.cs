@@ -19,7 +19,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Delete an organization migration archive<br/>
         /// Deletes a previous migration archive. Migration archives are automatically deleted after seven days.

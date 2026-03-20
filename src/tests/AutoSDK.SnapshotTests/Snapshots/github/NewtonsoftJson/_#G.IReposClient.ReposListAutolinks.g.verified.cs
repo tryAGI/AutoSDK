@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// Get all autolinks of a repository<br/>
         /// Gets all autolinks that are configured for a repository.<br/>

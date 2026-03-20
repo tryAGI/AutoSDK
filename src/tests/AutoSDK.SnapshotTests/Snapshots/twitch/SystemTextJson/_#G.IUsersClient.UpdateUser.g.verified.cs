@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IUsersClient
     {
-
         /// <summary>
         /// Updates the user’s information.<br/>
         /// Updates the specified user’s information. The user ID in the OAuth token identifies the user whose information you want to update.<br/>

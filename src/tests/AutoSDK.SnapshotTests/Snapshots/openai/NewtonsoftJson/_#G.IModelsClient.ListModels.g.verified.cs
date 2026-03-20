@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IModelsClient
     {
-
         /// <summary>
         /// Lists the currently available models, and provides basic information about each one such as the owner and availability.
         /// </summary>

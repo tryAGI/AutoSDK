@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IMigrationsClient
     {
-
         /// <summary>
         /// Get an organization migration status<br/>
         /// Fetches the status of a migration.<br/>

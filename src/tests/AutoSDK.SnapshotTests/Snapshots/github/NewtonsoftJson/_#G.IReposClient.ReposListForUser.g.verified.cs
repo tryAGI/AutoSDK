@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// List repositories for a user<br/>
         /// Lists public repositories for the specified user.

@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IUserClient
     {
-
         /// <summary>
         /// ValidateUser2<br/>
         /// ValidateUser2
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.ValidateUser2Request request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// ValidateUser2<br/>
         /// ValidateUser2

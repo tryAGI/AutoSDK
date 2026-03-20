@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ISearchClient
     {
-
         /// <summary>
         /// Search topics<br/>
         /// Find topics via various criteria. Results are sorted by best match. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api). See "[Searching topics](https://docs.github.com/articles/searching-topics/)" for a detailed list of qualifiers.<br/>

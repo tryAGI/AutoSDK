@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IApi
     {
-
         /// <summary>
         /// Check API key<br/>
         /// Checks that the api key in the Authorization header is valid and active

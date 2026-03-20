@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Create or update file contents<br/>
         /// Creates a new file or replaces an existing file in a repository.<br/>
@@ -39,7 +38,6 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="path"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -302,7 +300,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Create or update file contents<br/>
         /// Creates a new file or replaces an existing file in a repository.<br/>

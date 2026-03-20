@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IChatClient
     {
-
         /// <summary>
         /// Gets the broadcaster’s chat settings.<br/>
         /// Gets the broadcaster’s chat settings.<br/>

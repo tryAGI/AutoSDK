@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List organization secrets<br/>
         /// Lists all secrets available in an organization without revealing their<br/>

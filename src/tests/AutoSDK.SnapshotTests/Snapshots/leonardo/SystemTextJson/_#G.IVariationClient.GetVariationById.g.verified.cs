@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IVariationClient
     {
-
         /// <summary>
         /// Get variation by ID<br/>
         /// This endpoint will get the variation by ID

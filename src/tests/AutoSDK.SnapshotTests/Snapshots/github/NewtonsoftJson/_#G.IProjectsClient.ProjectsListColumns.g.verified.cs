@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IProjectsClient
     {
-
         /// <summary>
         /// List project columns<br/>
         /// Lists the project columns in a project.

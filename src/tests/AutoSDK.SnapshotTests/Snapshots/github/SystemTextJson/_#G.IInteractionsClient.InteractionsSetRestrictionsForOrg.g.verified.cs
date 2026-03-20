@@ -5,13 +5,11 @@ namespace G
 {
     public partial interface IInteractionsClient
     {
-
         /// <summary>
         /// Set interaction restrictions for an organization<br/>
         /// Temporarily restricts interactions to a certain type of GitHub user in any public repository in the given organization. You must be an organization owner to set these restrictions. Setting the interaction limit at the organization level will overwrite any interaction limits that are set for individual repositories owned by the organization.
         /// </summary>
         /// <param name="org"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -20,7 +18,6 @@ namespace G
 
             global::G.InteractionLimit request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Set interaction restrictions for an organization<br/>
         /// Temporarily restricts interactions to a certain type of GitHub user in any public repository in the given organization. You must be an organization owner to set these restrictions. Setting the interaction limit at the organization level will overwrite any interaction limits that are set for individual repositories owned by the organization.

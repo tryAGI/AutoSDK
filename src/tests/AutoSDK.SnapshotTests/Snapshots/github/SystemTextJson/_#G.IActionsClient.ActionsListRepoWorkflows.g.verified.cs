@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// List repository workflows<br/>
         /// Lists the workflows in a repository.<br/>

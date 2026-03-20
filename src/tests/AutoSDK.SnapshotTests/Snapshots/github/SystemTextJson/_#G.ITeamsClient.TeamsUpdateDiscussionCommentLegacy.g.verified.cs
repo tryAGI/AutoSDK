@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITeamsClient
     {
-
         /// <summary>
         /// Update a discussion comment (Legacy)<br/>
         /// &gt; [!WARNING]<br/>
@@ -16,11 +15,9 @@ namespace G
         /// <param name="teamId"></param>
         /// <param name="discussionNumber"></param>
         /// <param name="commentNumber"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.TeamDiscussionComment> TeamsUpdateDiscussionCommentLegacyAsync(
             int teamId,
@@ -29,7 +26,6 @@ namespace G
 
             global::G.TeamsUpdateDiscussionCommentLegacyRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update a discussion comment (Legacy)<br/>
         /// &gt; [!WARNING]<br/>
@@ -45,7 +41,6 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.TeamDiscussionComment> TeamsUpdateDiscussionCommentLegacyAsync(
             int teamId,

@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IApi
     {
-
         /// <summary>
         /// Creates a completion for the provided prompt and parameters.
         /// </summary>
         /// <param name="modelId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -19,7 +17,6 @@ namespace G
 
             global::G.GenerateTextRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Creates a completion for the provided prompt and parameters.
         /// </summary>

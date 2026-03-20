@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IUsersClient
     {
-
         /// <summary>
         /// Get a user<br/>
         /// Get a user and view details like the email, username, and associated roles.

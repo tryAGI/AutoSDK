@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPullsClient
     {
-
         /// <summary>
         /// List pull requests<br/>
         /// Lists pull requests in a specified repository.<br/>

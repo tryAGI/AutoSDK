@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITeamsClient
     {
-
         /// <summary>
         /// Get a discussion comment<br/>
         /// Get a specific comment on a team discussion.<br/>

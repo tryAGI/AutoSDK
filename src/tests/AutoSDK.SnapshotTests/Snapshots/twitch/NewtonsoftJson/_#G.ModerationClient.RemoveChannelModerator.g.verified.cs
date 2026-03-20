@@ -19,7 +19,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Removes a moderator from the broadcaster’s chat room.<br/>
         /// Removes a moderator from the broadcaster’s chat room.<br/>

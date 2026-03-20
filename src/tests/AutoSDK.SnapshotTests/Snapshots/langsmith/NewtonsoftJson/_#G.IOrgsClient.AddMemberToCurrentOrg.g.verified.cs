@@ -5,11 +5,9 @@ namespace G
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// Add Member To Current Org
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace G
 
             global::G.PendingIdentityCreate request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Add Member To Current Org
         /// </summary>

@@ -25,7 +25,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// BETA Allows a previously invited user to be assigned a slot within the active Guest Star session.<br/>
         /// BETA Allows a previously invited user to be assigned a slot within the active Guest Star session, once that guest has indicated they are ready to join.<br/>

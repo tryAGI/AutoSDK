@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IArtifactClient
     {
-
         /// <summary>
         /// Delete a file<br/>
         /// Deletes a file.

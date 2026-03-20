@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Create a discussion (Legacy)<br/>
         /// &gt; [!WARNING]<br/>
@@ -34,11 +33,9 @@ namespace G
         /// OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
         /// </summary>
         /// <param name="teamId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.TeamDiscussion> TeamsCreateDiscussionLegacyAsync(
             int teamId,
@@ -179,7 +176,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Create a discussion (Legacy)<br/>
         /// &gt; [!WARNING]<br/>
@@ -201,7 +197,6 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.TeamDiscussion> TeamsCreateDiscussionLegacyAsync(
             int teamId,

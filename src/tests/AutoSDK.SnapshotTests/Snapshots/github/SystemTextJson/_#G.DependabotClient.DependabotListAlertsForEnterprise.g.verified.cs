@@ -46,7 +46,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List Dependabot alerts for an enterprise<br/>
         /// Lists Dependabot alerts for repositories that are owned by the specified enterprise.<br/>

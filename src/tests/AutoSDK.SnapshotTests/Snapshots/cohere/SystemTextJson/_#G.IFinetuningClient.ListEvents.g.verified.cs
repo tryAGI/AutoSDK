@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IFinetuningClient
     {
-
         /// <summary>
         /// Retrieves the chronology of statuses the fine-tuned model has been through.
         /// </summary>

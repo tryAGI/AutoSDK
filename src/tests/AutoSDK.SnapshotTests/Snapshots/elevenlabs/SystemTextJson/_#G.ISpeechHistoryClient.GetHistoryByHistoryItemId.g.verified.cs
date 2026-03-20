@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ISpeechHistoryClient
     {
-
         /// <summary>
         /// Get History Item<br/>
         /// Retrieves a history item.

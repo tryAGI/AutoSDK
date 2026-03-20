@@ -30,7 +30,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get a commit<br/>
         /// Returns the contents of a single commit reference. You must have `read` access for the repository to use this endpoint.<br/>

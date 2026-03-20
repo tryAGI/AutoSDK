@@ -21,7 +21,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Add selected repository to an organization secret<br/>
         /// Adds a repository to an organization secret when the `visibility` for<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPublicClient
     {
-
         /// <summary>
         /// Count Shared Examples<br/>
         /// Count all examples by query params

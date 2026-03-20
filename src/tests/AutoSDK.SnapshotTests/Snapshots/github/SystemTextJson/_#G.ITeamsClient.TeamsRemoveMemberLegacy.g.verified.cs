@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITeamsClient
     {
-
         /// <summary>
         /// Remove team member (Legacy)<br/>
         /// The "Remove team member" endpoint (described below) is deprecated.<br/>
@@ -19,7 +18,6 @@ namespace G
         /// <param name="username"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task TeamsRemoveMemberLegacyAsync(
             int teamId,

@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface ICompletionsClient
     {
-
         /// <summary>
         /// Generate a response for a given prompt with a provided model.<br/>
         /// The final response object will include statistics and additional data from the request.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.GenerateCompletionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Generate a response for a given prompt with a provided model.<br/>
         /// The final response object will include statistics and additional data from the request.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IManageClient
     {
-
         /// <summary>
         /// Retrieve data relevant to connecting to Stripe.
         /// </summary>

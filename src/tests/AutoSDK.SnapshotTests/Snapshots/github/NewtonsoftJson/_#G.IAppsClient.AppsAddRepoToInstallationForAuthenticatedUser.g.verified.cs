@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAppsClient
     {
-
         /// <summary>
         /// Add a repository to an app installation<br/>
         /// Add a single repository to an installation. The authenticated user must have admin access to the repository.    <br/>

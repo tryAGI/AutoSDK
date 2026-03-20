@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// Delete File Upload<br/>
         /// Remove a file upload from a conversation. Only possible if the file hasn't already been used in the conversation.

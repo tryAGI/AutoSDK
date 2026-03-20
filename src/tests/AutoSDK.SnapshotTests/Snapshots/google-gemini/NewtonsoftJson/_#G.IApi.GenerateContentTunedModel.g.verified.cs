@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IApi
     {
-
         /// <summary>
         /// Generates a response from the model given an input `GenerateContentRequest`.
         /// </summary>
         /// <param name="tunedModelId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -19,7 +17,6 @@ namespace G
 
             global::G.GenerateContentRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Generates a response from the model given an input `GenerateContentRequest`.
         /// </summary>

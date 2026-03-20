@@ -30,7 +30,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List custom deployment rule integrations available for an environment<br/>
         /// Gets all custom deployment protection rule integrations that are available for an environment.<br/>

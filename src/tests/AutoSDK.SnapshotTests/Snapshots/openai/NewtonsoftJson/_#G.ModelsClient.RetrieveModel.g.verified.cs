@@ -22,7 +22,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Retrieves a model instance, providing basic information about the model such as the owner and permissioning.
         /// </summary>

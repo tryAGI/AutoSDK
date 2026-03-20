@@ -25,7 +25,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// BETA Allows a user to update the assigned slot for a particular user within the active Guest Star session.<br/>
         /// BETA Allows a user to update the assigned slot for a particular user within the active Guest Star session.<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IMetaClient
     {
-
         /// <summary>
         /// Get the Zen of GitHub<br/>
         /// Get a random sentence from the Zen of GitHub

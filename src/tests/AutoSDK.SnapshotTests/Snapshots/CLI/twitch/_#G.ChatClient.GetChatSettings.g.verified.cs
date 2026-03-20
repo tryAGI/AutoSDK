@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Gets the broadcaster’s chat settings.<br/>
         /// Gets the broadcaster’s chat settings.<br/>

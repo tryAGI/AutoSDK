@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IDependabotClient
     {
-
         /// <summary>
         /// Get a repository public key<br/>
         /// Gets your public key, which you need to encrypt secrets. You need to<br/>

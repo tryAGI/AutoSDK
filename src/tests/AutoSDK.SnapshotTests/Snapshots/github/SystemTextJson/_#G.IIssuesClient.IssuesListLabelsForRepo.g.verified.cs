@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IIssuesClient
     {
-
         /// <summary>
         /// List labels for a repository<br/>
         /// Lists all labels for a repository.

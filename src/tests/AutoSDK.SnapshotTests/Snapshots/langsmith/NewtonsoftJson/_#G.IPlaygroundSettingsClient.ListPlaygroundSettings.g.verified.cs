@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPlaygroundSettingsClient
     {
-
         /// <summary>
         /// List Playground Settings<br/>
         /// Get all playground settings for this tenant id.

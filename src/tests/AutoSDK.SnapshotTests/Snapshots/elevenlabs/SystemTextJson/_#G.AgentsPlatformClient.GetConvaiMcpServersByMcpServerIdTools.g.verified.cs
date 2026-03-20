@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List Mcp Server Tools<br/>
         /// Retrieve all tools available for a specific MCP server configuration.

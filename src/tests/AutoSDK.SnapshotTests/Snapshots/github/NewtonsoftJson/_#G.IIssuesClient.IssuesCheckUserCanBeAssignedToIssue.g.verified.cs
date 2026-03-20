@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IIssuesClient
     {
-
         /// <summary>
         /// Check if a user can be assigned to a issue<br/>
         /// Checks if a user has permission to be assigned to a specific issue.<br/>

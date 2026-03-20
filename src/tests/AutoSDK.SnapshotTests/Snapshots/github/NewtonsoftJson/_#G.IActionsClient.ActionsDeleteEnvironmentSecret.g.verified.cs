@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// Delete an environment secret<br/>
         /// Deletes a secret in an environment using the secret name.<br/>

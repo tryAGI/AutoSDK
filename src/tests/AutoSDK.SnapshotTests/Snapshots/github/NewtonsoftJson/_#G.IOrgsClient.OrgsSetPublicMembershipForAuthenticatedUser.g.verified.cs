@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// Set public organization membership for the authenticated user<br/>
         /// The user can publicize their own membership. (A user cannot publicize the membership for another user.)<br/>

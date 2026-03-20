@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IDependabotClient
     {
-
         /// <summary>
         /// Remove selected repository from an organization secret<br/>
         /// Removes a repository from an organization secret when the `visibility`<br/>

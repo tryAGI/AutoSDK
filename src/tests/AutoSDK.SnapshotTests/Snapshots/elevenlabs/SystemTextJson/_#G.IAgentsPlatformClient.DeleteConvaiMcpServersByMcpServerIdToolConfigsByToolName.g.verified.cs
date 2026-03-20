@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// Delete Mcp Tool Configuration Override<br/>
         /// Remove configuration overrides for a specific MCP tool.

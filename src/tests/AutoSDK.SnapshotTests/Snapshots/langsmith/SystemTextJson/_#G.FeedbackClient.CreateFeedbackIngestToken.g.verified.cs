@@ -22,12 +22,10 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Create Feedback Ingest Token<br/>
         /// Create a new feedback ingest token.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -219,7 +217,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Create Feedback Ingest Token<br/>
         /// Create a new feedback ingest token.

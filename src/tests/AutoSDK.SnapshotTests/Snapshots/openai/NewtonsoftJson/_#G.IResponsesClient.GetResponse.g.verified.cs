@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IResponsesClient
     {
-
         /// <summary>
         /// Retrieves a model response with the given ID.
         /// </summary>

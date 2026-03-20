@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IBatchClient
     {
-
         /// <summary>
         /// Cancel Batch Job<br/>
         /// Request the cancellation of a batch job.

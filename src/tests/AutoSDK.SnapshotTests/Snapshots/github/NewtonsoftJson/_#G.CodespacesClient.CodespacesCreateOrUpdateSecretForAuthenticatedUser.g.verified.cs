@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Create or update a secret for the authenticated user<br/>
         /// Creates or updates a development environment secret for a user's codespace with an encrypted value. Encrypt your secret using<br/>
@@ -33,7 +32,6 @@ namespace G
         /// OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
         /// </summary>
         /// <param name="secretName"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -252,7 +250,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Create or update a secret for the authenticated user<br/>
         /// Creates or updates a development environment secret for a user's codespace with an encrypted value. Encrypt your secret using<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IUsersClient
     {
-
         /// <summary>
         /// Get Connection Key<br/>
         /// Returns the current connection key.

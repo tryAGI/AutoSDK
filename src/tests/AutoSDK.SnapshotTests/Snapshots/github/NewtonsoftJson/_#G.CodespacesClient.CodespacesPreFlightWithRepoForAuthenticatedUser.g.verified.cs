@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get default attributes for a codespace<br/>
         /// Gets the default attributes for codespaces created by the user with the repository.<br/>

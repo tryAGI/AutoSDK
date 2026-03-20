@@ -22,7 +22,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Gets the active extensions that the broadcaster has installed for each configuration.<br/>
         /// Gets the active extensions that the broadcaster has installed for each configuration.<br/>

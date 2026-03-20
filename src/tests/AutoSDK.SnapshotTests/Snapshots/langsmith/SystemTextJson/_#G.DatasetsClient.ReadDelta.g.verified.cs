@@ -24,13 +24,11 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Read Delta<br/>
         /// Fetch the number of regressions/improvements for each example in a dataset, between sessions[0] and sessions[1].
         /// </summary>
         /// <param name="datasetId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -227,7 +225,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Read Delta<br/>
         /// Fetch the number of regressions/improvements for each example in a dataset, between sessions[0] and sessions[1].

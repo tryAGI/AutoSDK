@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IFileClient
     {
-
         /// <summary>
         /// GetExportJobFileURI<br/>
         /// GetExportJobFileURI
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.GetExportJobFileURIRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// GetExportJobFileURI<br/>
         /// GetExportJobFileURI

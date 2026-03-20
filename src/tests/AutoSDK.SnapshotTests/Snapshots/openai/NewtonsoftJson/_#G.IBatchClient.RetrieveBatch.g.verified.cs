@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IBatchClient
     {
-
         /// <summary>
         /// Retrieves a batch.
         /// </summary>

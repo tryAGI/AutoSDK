@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITextToSpeechClient
     {
-
         /// <summary>
         /// Text To Speech Streaming With Timestamps<br/>
         /// Converts text into speech using a voice of your choice and returns a stream of JSONs containing audio as a base64 encoded string together with information on when which character was spoken.
@@ -33,7 +32,6 @@ namespace G
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -46,7 +44,6 @@ namespace G
             global::G.TextToSpeechStreamWithTimestampsOutputFormat? outputFormat = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Text To Speech Streaming With Timestamps<br/>
         /// Converts text into speech using a voice of your choice and returns a stream of JSONs containing audio as a base64 encoded string together with information on when which character was spoken.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// Get a deployment branch policy<br/>
         /// Gets a deployment branch or tag policy for an environment.<br/>

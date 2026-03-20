@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IUserClient
     {
-
         /// <summary>
         /// GetCurrentAccountStatus<br/>
         /// GetCurrentAccountStatus

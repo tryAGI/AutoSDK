@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Create a repository webhook<br/>
         /// Repositories can have multiple webhooks installed. Each webhook should have a unique `config`. Multiple webhooks can<br/>
@@ -34,7 +33,6 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -294,7 +292,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Create a repository webhook<br/>
         /// Repositories can have multiple webhooks installed. Each webhook should have a unique `config`. Multiple webhooks can<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// Re-run a job from a workflow run<br/>
         /// Re-run a job and its dependent jobs in a workflow run.<br/>
@@ -14,7 +13,6 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="jobId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -25,7 +23,6 @@ namespace G
 
             global::G.ActionsReRunJobForWorkflowRunRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Re-run a job from a workflow run<br/>
         /// Re-run a job and its dependent jobs in a workflow run.<br/>

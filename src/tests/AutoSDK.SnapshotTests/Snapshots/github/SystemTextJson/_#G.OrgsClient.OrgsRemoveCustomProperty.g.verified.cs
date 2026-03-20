@@ -19,7 +19,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Remove a custom property for an organization<br/>
         /// Removes a custom property that is defined for an organization.<br/>

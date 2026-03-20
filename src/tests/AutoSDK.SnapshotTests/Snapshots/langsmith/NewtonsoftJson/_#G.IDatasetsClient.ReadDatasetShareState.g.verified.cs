@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IDatasetsClient
     {
-
         /// <summary>
         /// Read Dataset Share State<br/>
         /// Get the state of sharing a dataset

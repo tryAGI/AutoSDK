@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get a repository security advisory<br/>
         /// Get a repository security advisory using its GitHub Security Advisory (GHSA) identifier.<br/>

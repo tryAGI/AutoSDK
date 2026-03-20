@@ -36,7 +36,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Tools<br/>
         /// Get all available tools in the workspace.

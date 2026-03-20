@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// Get a commit<br/>
         /// Returns the contents of a single commit reference. You must have `read` access for the repository to use this endpoint.<br/>

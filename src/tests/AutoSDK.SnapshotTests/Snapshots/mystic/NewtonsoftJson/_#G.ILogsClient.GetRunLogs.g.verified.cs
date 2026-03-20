@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ILogsClient
     {
-
         /// <summary>
         /// Get Run Logs<br/>
         /// Get the pipeline logs for a run

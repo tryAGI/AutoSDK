@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Cancel a workflow run<br/>
         /// Cancels a workflow run using its `id`.<br/>

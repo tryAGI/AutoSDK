@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IMigrationsClient
     {
-
         /// <summary>
         /// List repositories for a user migration<br/>
         /// Lists all the repositories for this user migration.

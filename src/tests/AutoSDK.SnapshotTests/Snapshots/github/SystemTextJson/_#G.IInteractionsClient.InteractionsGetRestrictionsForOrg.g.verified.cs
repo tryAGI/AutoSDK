@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IInteractionsClient
     {
-
         /// <summary>
         /// Get interaction restrictions for an organization<br/>
         /// Shows which type of GitHub user can interact with this organization and when the restriction expires. If there is no restrictions, you will see an empty response.

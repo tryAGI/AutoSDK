@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Gets a list of channels that the specified user has moderator privileges in.<br/>
         /// Gets a list of channels that the specified user has moderator privileges in.<br/>

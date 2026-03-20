@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICodeScanningClient
     {
-
         /// <summary>
         /// Create a CodeQL variant analysis<br/>
         /// Creates a new CodeQL variant analysis, which will run a CodeQL query against one or more repositories.<br/>
@@ -16,7 +15,6 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -26,7 +24,6 @@ namespace G
 
             global::G.CodeScanningCreateVariantAnalysisRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a CodeQL variant analysis<br/>
         /// Creates a new CodeQL variant analysis, which will run a CodeQL query against one or more repositories.<br/>

@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List codespaces for a user in organization<br/>
         /// Lists the codespaces that a member of an organization has for repositories in that organization.<br/>

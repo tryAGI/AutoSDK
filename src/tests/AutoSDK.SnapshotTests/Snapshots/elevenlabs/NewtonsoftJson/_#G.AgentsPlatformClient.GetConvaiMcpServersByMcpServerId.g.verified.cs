@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Mcp Server<br/>
         /// Retrieve a specific MCP server configuration from the workspace.

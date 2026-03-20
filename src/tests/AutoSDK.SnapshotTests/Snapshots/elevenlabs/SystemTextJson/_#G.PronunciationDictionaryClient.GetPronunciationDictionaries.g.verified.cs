@@ -30,7 +30,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Pronunciation Dictionaries<br/>
         /// Get a list of the pronunciation dictionaries you have access to and their metadata

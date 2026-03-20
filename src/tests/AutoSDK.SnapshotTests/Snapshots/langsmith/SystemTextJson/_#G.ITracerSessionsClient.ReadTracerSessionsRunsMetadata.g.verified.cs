@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITracerSessionsClient
     {
-
         /// <summary>
         /// Read Tracer Sessions Runs Metadata<br/>
         /// Given a session, a number K, and (optionally) a list of metadata keys, return the top K values for each key.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITtlSettingsClient
     {
-
         /// <summary>
         /// List Ttl Settings<br/>
         /// List out the configured TTL settings for a given tenant.

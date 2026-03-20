@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICustomModelsClient
     {
-
         /// <summary>
         /// Update Model
         /// </summary>
@@ -13,7 +12,6 @@ namespace G
         /// <param name="requestStartTime">
         /// Default Value: 1730898830008L
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -23,7 +21,6 @@ namespace G
             global::G.CustomModelUpdateBody request,
             int? requestStartTime = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update Model
         /// </summary>

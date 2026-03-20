@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// Get a repository README<br/>
         /// Gets the preferred README for a repository.<br/>

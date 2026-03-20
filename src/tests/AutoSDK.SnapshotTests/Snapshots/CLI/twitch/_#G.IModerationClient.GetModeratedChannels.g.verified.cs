@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IModerationClient
     {
-
         /// <summary>
         /// Gets a list of channels that the specified user has moderator privileges in.<br/>
         /// Gets a list of channels that the specified user has moderator privileges in.<br/>

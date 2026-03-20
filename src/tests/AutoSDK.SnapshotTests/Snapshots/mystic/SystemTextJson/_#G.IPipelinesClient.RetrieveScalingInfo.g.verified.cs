@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPipelinesClient
     {
-
         /// <summary>
         /// Retrieve Scaling Info<br/>
         /// Get real-time scaling information for the given pipeline.

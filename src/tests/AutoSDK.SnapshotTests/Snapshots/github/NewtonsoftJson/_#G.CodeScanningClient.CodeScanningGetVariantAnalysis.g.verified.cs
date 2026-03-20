@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get the summary of a CodeQL variant analysis<br/>
         /// Gets the summary of a CodeQL variant analysis.<br/>

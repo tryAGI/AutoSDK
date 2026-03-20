@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IProjectsClient
     {
-
         /// <summary>
         /// List project cards<br/>
         /// Lists the project cards in a project.

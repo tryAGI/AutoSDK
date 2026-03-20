@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IDatasetsClient
     {
-
         /// <summary>
         /// Download Dataset Csv<br/>
         /// Download a dataset as CSV format.

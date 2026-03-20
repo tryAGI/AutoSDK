@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPvcVoicesClient
     {
-
         /// <summary>
         /// Retrieve Separated Speaker Audio<br/>
         /// Retrieve the separated audio for a specific speaker.

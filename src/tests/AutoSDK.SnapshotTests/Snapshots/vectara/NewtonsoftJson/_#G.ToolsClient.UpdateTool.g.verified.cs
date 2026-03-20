@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Update tool<br/>
         /// Update an existing tool’s configuration, including its metadata, enabled status, or other properties. Updating a tool modifies how agents can invoke it during conversation.
@@ -38,7 +37,6 @@ namespace G
         /// <param name="toolId">
         /// Example: tol_rag_search
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -325,7 +323,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Update tool<br/>
         /// Update an existing tool’s configuration, including its metadata, enabled status, or other properties. Updating a tool modifies how agents can invoke it during conversation.

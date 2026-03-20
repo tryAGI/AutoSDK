@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get an environment public key<br/>
         /// Get the public key for an environment, which you need to encrypt environment<br/>

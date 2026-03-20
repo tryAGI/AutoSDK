@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPublicClient
     {
-
         /// <summary>
         /// Get Tool Def Json Schema
         /// </summary>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// Create configuration for a just-in-time runner for a repository<br/>
         /// Generates a configuration that can be passed to the runner application at startup.<br/>
@@ -14,7 +13,6 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -24,7 +22,6 @@ namespace G
 
             global::G.ActionsGenerateRunnerJitconfigForRepoRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create configuration for a just-in-time runner for a repository<br/>
         /// Generates a configuration that can be passed to the runner application at startup.<br/>

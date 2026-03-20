@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List organization events for the authenticated user<br/>
         /// This is the user's organization dashboard. You must be authenticated as the user to view this.<br/>

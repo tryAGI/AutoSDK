@@ -5,11 +5,9 @@ namespace recraft
 {
     public partial interface IImageClient
     {
-
         /// <summary>
         /// Generative Upscale
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::recraft.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace recraft
 
             global::recraft.ProcessImageRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Generative Upscale
         /// </summary>

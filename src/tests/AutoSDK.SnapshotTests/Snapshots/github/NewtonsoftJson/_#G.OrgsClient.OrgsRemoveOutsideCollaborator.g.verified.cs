@@ -19,7 +19,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Remove outside collaborator from an organization<br/>
         /// Removing a user from this list will remove them from all the organization's repositories.

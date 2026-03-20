@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IToolServersClient
     {
-
         /// <summary>
         /// List tool servers<br/>
         /// Retrieve a list of available tool servers that expose various tools.

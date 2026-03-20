@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IStudioClient
     {
-
         /// <summary>
         /// Convert Chapter<br/>
         /// Starts conversion of a specific chapter.

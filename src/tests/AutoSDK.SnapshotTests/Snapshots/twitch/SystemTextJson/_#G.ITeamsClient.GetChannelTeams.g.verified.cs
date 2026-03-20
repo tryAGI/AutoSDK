@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITeamsClient
     {
-
         /// <summary>
         /// Gets the list of Twitch teams that the broadcaster is a member of.<br/>
         /// Gets the list of Twitch teams that the broadcaster is a member of.<br/>

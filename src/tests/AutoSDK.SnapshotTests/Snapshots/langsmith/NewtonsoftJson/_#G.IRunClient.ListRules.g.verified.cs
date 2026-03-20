@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IRunClient
     {
-
         /// <summary>
         /// List Rules<br/>
         /// List all run rules.

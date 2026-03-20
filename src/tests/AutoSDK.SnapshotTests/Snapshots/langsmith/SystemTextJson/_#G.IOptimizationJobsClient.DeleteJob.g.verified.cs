@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IOptimizationJobsClient
     {
-
         /// <summary>
         /// Delete Job<br/>
         /// Delete a prompt optimization job.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IObjectsClient
     {
-
         /// <summary>
         /// Add a cross-reference.<br/>
         /// Add a single reference to an object. This adds a reference to the array of cross-references of the given property in the source object specified by its collection name and id
@@ -17,7 +16,6 @@ namespace G
         /// Default Value: QUORUM
         /// </param>
         /// <param name="tenant"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -30,7 +28,6 @@ namespace G
             global::G.ObjectsClassReferencesCreateConsistencyLevel? consistencyLevel = default,
             string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Add a cross-reference.<br/>
         /// Add a single reference to an object. This adds a reference to the array of cross-references of the given property in the source object specified by its collection name and id

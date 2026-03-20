@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPackagesClient
     {
-
         /// <summary>
         /// Restore a package for an organization<br/>
         /// Restores an entire package in an organization.<br/>

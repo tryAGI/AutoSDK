@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IChatClient
     {
-
         /// <summary>
         /// Generate the next message in a chat with a provided model.<br/>
         /// This is a streaming endpoint, so there will be a series of responses. The final response object will include statistics and additional data from the request.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.GenerateChatCompletionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Generate the next message in a chat with a provided model.<br/>
         /// This is a streaming endpoint, so there will be a series of responses. The final response object will include statistics and additional data from the request.

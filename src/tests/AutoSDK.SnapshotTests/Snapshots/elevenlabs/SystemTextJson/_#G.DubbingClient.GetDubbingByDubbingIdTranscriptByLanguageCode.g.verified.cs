@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Dubbed Transcript<br/>
         /// Returns transcript for the dub as an SRT or WEBVTT file.
@@ -48,7 +47,6 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.DubbingTranscriptResponseModel, string>> GetDubbingByDubbingIdTranscriptByLanguageCodeAsync(
             string dubbingId,

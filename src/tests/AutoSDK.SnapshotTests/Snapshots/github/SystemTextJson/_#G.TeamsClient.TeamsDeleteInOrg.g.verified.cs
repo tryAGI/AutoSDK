@@ -19,7 +19,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Delete a team<br/>
         /// To delete a team, the authenticated user must be an organization owner or team maintainer.<br/>

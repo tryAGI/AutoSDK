@@ -36,7 +36,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List organization rule suites<br/>
         /// Lists suites of rule evaluations at the organization level.<br/>

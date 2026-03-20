@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IVideoTranslateApiClient
     {
-
         /// <summary>
         /// v2/video_translate/&lt;id&gt; (status)<br/>
         /// v2/video_translate/&lt;id&gt; (status)

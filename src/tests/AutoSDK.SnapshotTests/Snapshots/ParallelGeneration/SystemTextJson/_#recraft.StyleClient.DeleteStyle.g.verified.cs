@@ -22,7 +22,6 @@ namespace recraft
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Delete Style
         /// </summary>

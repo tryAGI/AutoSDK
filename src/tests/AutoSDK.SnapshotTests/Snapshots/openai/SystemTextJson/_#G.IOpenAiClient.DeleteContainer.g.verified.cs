@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IOpenAiClient
     {
-
         /// <summary>
         /// Delete Container<br/>
         /// Delete a container.

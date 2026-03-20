@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IModelClient
     {
-
         /// <summary>
         /// List Model Runs of a Namespace (user or organization)<br/>
         /// Returns a paginated list of runs for 1 or more models. This is mainly used by dashboard.<br/>

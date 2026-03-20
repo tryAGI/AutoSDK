@@ -34,7 +34,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List the releases in a pipeline<br/>
         /// Lists the commited versions of a pipeline, identified by its resource<br/>

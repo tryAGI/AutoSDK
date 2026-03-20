@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get a blob<br/>
         /// The `content` in the response will always be Base64 encoded.<br/>

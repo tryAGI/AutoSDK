@@ -32,7 +32,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List jobs for a workflow run attempt<br/>
         /// Lists jobs for a specific workflow run attempt. You can use parameters to narrow the list of results. For more information<br/>

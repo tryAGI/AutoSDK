@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// List Agent Branches<br/>
         /// Returns a list of branches an agent has

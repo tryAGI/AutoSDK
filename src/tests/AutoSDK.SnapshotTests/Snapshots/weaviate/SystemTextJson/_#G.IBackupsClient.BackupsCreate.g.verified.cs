@@ -5,13 +5,11 @@ namespace G
 {
     public partial interface IBackupsClient
     {
-
         /// <summary>
         /// Start a backup process<br/>
         /// Start creating a backup for a set of collections. &lt;br/&gt;&lt;br/&gt;Notes: &lt;br/&gt;- Weaviate uses gzip compression by default. &lt;br/&gt;- Weaviate stays usable while a backup process is ongoing.
         /// </summary>
         /// <param name="backend"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -20,7 +18,6 @@ namespace G
 
             global::G.BackupCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Start a backup process<br/>
         /// Start creating a backup for a set of collections. &lt;br/&gt;&lt;br/&gt;Notes: &lt;br/&gt;- Weaviate uses gzip compression by default. &lt;br/&gt;- Weaviate stays usable while a backup process is ongoing.

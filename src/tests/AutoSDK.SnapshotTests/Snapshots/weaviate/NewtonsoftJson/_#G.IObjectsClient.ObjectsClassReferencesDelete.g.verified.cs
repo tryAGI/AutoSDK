@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IObjectsClient
     {
-
         /// <summary>
         /// Delete a cross-reference.<br/>
         /// Delete the single reference that is given in the body from the list of references that this property has.
@@ -17,7 +16,6 @@ namespace G
         /// Default Value: QUORUM
         /// </param>
         /// <param name="tenant"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -30,7 +28,6 @@ namespace G
             global::G.ObjectsClassReferencesDeleteConsistencyLevel? consistencyLevel = default,
             string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Delete a cross-reference.<br/>
         /// Delete the single reference that is given in the body from the list of references that this property has.

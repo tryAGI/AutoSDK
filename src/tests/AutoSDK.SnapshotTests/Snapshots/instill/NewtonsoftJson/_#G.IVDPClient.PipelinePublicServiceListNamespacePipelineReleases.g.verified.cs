@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IVdpClient
     {
-
         /// <summary>
         /// List the releases in a pipeline<br/>
         /// Lists the commited versions of a pipeline, identified by its resource<br/>

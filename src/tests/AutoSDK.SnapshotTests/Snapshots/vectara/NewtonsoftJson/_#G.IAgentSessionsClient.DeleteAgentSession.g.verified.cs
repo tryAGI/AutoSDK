@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentSessionsClient
     {
-
         /// <summary>
         /// Delete agent session<br/>
         /// Permanently delete an agent session. This action cannot be undone.

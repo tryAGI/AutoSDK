@@ -22,7 +22,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Cancels a model response with the given ID. Only responses created with<br/>
         /// the `background` parameter set to `true` can be cancelled. <br/>

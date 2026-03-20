@@ -40,7 +40,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Read Datasets<br/>
         /// Get all datasets by query params and owner.

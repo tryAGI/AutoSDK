@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IDependabotClient
     {
-
         /// <summary>
         /// Get a repository secret<br/>
         /// Gets a single repository secret without revealing its encrypted value.<br/>

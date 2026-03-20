@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IArtifactClient
     {
-
         /// <summary>
         /// Delete a catalog<br/>
         /// Deletes a catalog.

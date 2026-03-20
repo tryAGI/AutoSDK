@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Completes the [Upload](/docs/api-reference/uploads/object). <br/>
         /// Within the returned Upload object, there is a nested [File](/docs/api-reference/files/object) object that is ready to use in the rest of the platform.<br/>
@@ -34,7 +33,6 @@ namespace G
         /// <param name="uploadId">
         /// Example: upload_abc123
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -193,7 +191,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Completes the [Upload](/docs/api-reference/uploads/object). <br/>
         /// Within the returned Upload object, there is a nested [File](/docs/api-reference/files/object) object that is ready to use in the rest of the platform.<br/>

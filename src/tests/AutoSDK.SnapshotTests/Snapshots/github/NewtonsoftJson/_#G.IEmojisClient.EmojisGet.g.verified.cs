@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IEmojisClient
     {
-
         /// <summary>
         /// Get emojis<br/>
         /// Lists all the emojis available to use on GitHub.

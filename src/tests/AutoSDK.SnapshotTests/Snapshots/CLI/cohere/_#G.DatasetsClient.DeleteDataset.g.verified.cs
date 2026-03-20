@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Delete a Dataset<br/>
         /// Delete a dataset by ID. Datasets are automatically deleted after 30 days, but they can also be deleted manually.

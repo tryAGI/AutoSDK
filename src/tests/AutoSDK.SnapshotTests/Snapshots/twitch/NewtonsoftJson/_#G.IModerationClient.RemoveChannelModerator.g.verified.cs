@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IModerationClient
     {
-
         /// <summary>
         /// Removes a moderator from the broadcaster’s chat room.<br/>
         /// Removes a moderator from the broadcaster’s chat room.<br/>

@@ -30,7 +30,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List available machine types for a repository<br/>
         /// List the machine types available for a given repository based on its configuration.<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IDatasetsClient
     {
-
         /// <summary>
         /// Get Dataset Versions<br/>
         /// Get dataset versions.

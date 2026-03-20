@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// List custom deployment rule integrations available for an environment<br/>
         /// Gets all custom deployment protection rule integrations that are available for an environment.<br/>

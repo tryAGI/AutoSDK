@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICopilotClient
     {
-
         /// <summary>
         /// Remove users from the Copilot subscription for an organization<br/>
         /// &gt; [!NOTE]<br/>
@@ -18,7 +17,6 @@ namespace G
         /// OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `admin:org` scopes to use this endpoint.
         /// </summary>
         /// <param name="org"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -27,7 +25,6 @@ namespace G
 
             global::G.CopilotCancelCopilotSeatAssignmentForUsersRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Remove users from the Copilot subscription for an organization<br/>
         /// &gt; [!NOTE]<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IGenerationsClient
     {
-
         /// <summary>
         /// Delete a generation<br/>
         /// Remove a specific generation by its ID

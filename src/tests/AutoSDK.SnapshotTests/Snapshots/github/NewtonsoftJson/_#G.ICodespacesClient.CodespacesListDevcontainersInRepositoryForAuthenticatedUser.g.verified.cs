@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICodespacesClient
     {
-
         /// <summary>
         /// List devcontainer configurations in a repository for the authenticated user<br/>
         /// Lists the devcontainer.json files associated with a specified repository and the authenticated user. These files<br/>

@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface ITenantClient
     {
-
         /// <summary>
         /// Create Tenant<br/>
         /// Create a new organization and corresponding workspace.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.TenantCreate request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create Tenant<br/>
         /// Create a new organization and corresponding workspace.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IMessageBatchesClient
     {
-
         /// <summary>
         /// Cancel a Message Batch<br/>
         /// Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a `canceling` state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.<br/>

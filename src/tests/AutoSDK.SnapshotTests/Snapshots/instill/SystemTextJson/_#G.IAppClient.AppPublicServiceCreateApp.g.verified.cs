@@ -5,13 +5,11 @@ namespace G
 {
     public partial interface IAppClient
     {
-
         /// <summary>
         /// Create an app<br/>
         /// Creates an app.
         /// </summary>
         /// <param name="namespaceId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -20,7 +18,6 @@ namespace G
 
             global::G.CreateAppBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create an app<br/>
         /// Creates an app.

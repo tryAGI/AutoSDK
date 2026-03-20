@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Replace agent<br/>
         /// The Replace Agent API enables you to completely replace an existing agent configuration, including its corpora, tools, and generation presets. This endpoint performs a full replacement of the agent definition, unlike the Update Agent API which only modifies specified fields.
@@ -39,7 +38,6 @@ namespace G
         /// A unique key that identifies an agent.<br/>
         /// Example: customer_support
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -328,7 +326,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Replace agent<br/>
         /// The Replace Agent API enables you to completely replace an existing agent configuration, including its corpora, tools, and generation presets. This endpoint performs a full replacement of the agent definition, unlike the Update Agent API which only modifies specified fields.

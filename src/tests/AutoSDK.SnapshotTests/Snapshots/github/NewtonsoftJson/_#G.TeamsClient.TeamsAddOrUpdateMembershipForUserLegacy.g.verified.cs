@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Add or update team membership for a user (Legacy)<br/>
         /// &gt; [!WARNING]<br/>
@@ -40,11 +39,9 @@ namespace G
         /// </summary>
         /// <param name="teamId"></param>
         /// <param name="username"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.TeamMembership> TeamsAddOrUpdateMembershipForUserLegacyAsync(
             int teamId,
@@ -292,7 +289,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Add or update team membership for a user (Legacy)<br/>
         /// &gt; [!WARNING]<br/>
@@ -312,7 +308,6 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.TeamMembership> TeamsAddOrUpdateMembershipForUserLegacyAsync(
             int teamId,

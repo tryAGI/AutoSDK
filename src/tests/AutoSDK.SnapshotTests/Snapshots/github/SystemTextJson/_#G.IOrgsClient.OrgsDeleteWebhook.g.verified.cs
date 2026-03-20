@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// Delete an organization webhook<br/>
         /// You must be an organization owner to use this endpoint.<br/>

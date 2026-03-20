@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAppsClient
     {
-
         /// <summary>
         /// Unsuspend an app installation<br/>
         /// Removes a GitHub App installation suspension.<br/>

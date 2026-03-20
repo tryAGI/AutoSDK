@@ -5,13 +5,11 @@ namespace G
 {
     public partial interface IRunClient
     {
-
         /// <summary>
         /// Group Runs<br/>
         /// Get runs grouped by an expression
         /// </summary>
         /// <param name="accept"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -20,7 +18,6 @@ namespace G
             global::G.RunGroupRequest request,
             string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Group Runs<br/>
         /// Get runs grouped by an expression

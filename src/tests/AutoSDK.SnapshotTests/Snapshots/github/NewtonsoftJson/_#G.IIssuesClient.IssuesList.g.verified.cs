@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IIssuesClient
     {
-
         /// <summary>
         /// List issues assigned to the authenticated user<br/>
         /// List issues assigned to the authenticated user across all visible repositories including owned repositories, member<br/>

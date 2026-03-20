@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// List organization members<br/>
         /// List all users who are members of an organization. If the authenticated user is also a member of this organization then both concealed and public members will be returned.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IDatasetsClient
     {
-
         /// <summary>
         /// Read Datasets<br/>
         /// Get all datasets by query params and owner.

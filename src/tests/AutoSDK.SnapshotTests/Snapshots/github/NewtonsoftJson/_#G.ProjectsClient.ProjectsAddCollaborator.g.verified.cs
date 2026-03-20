@@ -21,14 +21,12 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Add project collaborator<br/>
         /// Adds a collaborator to an organization project and sets their permission level. You must be an organization owner or a project `admin` to add a collaborator.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="username"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -349,7 +347,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Add project collaborator<br/>
         /// Adds a collaborator to an organization project and sets their permission level. You must be an organization owner or a project `admin` to add a collaborator.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAppClient
     {
-
         /// <summary>
         /// Get Playground Conversation<br/>
         /// Returns the latest conversation of auth user(e.g. login user and api key user).

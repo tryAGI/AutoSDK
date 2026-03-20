@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IGoalsClient
     {
-
         /// <summary>
         /// Gets the broadcaster’s list of active goals.<br/>
         /// Gets the broadcaster’s list of active goals. Use this endpoint to get the current progress of each goal.<br/>

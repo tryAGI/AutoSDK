@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IFeedbackClient
     {
-
         /// <summary>
         /// List Feedback Ingest Tokens<br/>
         /// List all feedback ingest tokens for a run.

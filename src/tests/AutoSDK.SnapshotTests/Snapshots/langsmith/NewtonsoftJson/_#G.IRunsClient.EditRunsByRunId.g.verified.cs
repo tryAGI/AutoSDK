@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IRunsClient
     {
-
         /// <summary>
         /// Update a Run<br/>
         /// Updates a run identified by its ID. The body should contain only the fields to be changed; unknown fields are ignored.

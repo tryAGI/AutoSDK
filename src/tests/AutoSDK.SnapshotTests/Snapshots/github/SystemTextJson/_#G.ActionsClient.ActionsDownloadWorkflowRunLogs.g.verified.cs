@@ -21,7 +21,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Download workflow run logs<br/>
         /// Gets a redirect URL to download an archive of log files for a workflow run. This link expires after 1 minute. Look for<br/>

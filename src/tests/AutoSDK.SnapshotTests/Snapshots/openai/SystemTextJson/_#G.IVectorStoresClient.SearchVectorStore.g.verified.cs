@@ -5,14 +5,12 @@ namespace G
 {
     public partial interface IVectorStoresClient
     {
-
         /// <summary>
         /// Search a vector store for relevant chunks based on a query and file attributes filter.
         /// </summary>
         /// <param name="vectorStoreId">
         /// Example: vs_abc123
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -21,7 +19,6 @@ namespace G
 
             global::G.VectorStoreSearchRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Search a vector store for relevant chunks based on a query and file attributes filter.
         /// </summary>

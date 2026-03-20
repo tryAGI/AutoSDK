@@ -30,7 +30,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Unhide event<br/>
         /// Unhide a hidden event in a session. Clears the hide_reason.

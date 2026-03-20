@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IApi
     {
-
         /// <summary>
         /// Returns the version of the Ollama server.<br/>
         /// This endpoint returns the version of the Ollama server.

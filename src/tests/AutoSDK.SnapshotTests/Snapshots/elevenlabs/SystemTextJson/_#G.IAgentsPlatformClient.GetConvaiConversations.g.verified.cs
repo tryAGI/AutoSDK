@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// Get Conversations<br/>
         /// Get all conversations of agents that user owns. With option to restrict to a specific agent.

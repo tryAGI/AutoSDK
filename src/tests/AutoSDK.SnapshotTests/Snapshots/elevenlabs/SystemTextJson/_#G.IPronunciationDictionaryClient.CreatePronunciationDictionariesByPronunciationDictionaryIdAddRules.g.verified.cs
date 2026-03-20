@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPronunciationDictionaryClient
     {
-
         /// <summary>
         /// Add Rules To The Pronunciation Dictionary<br/>
         /// Add rules to the pronunciation dictionary. If a rule with the same string_to_replace already exists, it will be replaced.
@@ -16,7 +15,6 @@ namespace G
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -26,7 +24,6 @@ namespace G
             global::G.BodyAddRulesToThePronunciationDictionaryV1PronunciationDictionariesPronunciationDictionaryIdAddRulesPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Add Rules To The Pronunciation Dictionary<br/>
         /// Add rules to the pronunciation dictionary. If a rule with the same string_to_replace already exists, it will be replaced.

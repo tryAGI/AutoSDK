@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IDubbingClient
     {
-
         /// <summary>
         /// Deletes A Single Segment<br/>
         /// Deletes a single segment from the dubbing.

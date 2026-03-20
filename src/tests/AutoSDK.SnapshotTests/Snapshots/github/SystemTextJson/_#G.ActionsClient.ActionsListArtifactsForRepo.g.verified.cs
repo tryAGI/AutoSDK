@@ -30,7 +30,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List artifacts for a repository<br/>
         /// Lists all artifacts for a repository.<br/>

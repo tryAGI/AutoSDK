@@ -24,13 +24,11 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Update catalog chunk<br/>
         /// Updates a catalog chunk.
         /// </summary>
         /// <param name="chunkUid"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -265,7 +263,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Update catalog chunk<br/>
         /// Updates a catalog chunk.

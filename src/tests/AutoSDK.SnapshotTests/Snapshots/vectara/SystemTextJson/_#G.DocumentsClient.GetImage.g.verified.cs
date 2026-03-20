@@ -30,7 +30,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Retrieve an image from a document<br/>
         /// Returns a specific image that is embedded within a document. The `image_id` uniquely identifies the image within the document. Use this endpoint to fetch the raw image data and associated metadata.

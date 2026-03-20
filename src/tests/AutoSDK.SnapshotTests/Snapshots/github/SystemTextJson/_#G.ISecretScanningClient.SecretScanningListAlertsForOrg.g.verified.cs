@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ISecretScanningClient
     {
-
         /// <summary>
         /// List secret scanning alerts for an organization<br/>
         /// Lists secret scanning alerts for eligible repositories in an organization, from newest to oldest.<br/>

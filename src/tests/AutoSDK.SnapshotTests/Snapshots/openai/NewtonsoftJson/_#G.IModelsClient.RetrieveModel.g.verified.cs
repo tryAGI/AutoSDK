@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IModelsClient
     {
-
         /// <summary>
         /// Retrieves a model instance, providing basic information about the model such as the owner and permissioning.
         /// </summary>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// Get Agent Widget Config<br/>
         /// Retrieve the widget configuration for an agent

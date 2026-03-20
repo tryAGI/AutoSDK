@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICertificatesClient
     {
-
         /// <summary>
         /// Get a certificate that has been uploaded to the organization.<br/>
         /// You can get a certificate regardless of whether it is active or not.

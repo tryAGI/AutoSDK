@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get the weekly commit activity<br/>
         /// Returns a weekly aggregate of the number of additions and deletions pushed to a repository.<br/>

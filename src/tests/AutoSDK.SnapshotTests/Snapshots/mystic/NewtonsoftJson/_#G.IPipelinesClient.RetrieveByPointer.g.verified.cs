@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPipelinesClient
     {
-
         /// <summary>
         /// Retrieve By Pointer<br/>
         /// Retrieve details for a pipeline by pointer name.<br/>

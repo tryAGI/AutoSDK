@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// Add selected repository to an organization secret<br/>
         /// Adds a repository to an organization secret when the `visibility` for<br/>

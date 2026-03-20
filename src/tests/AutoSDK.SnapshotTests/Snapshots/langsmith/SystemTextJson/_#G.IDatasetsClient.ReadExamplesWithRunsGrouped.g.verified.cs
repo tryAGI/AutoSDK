@@ -5,13 +5,11 @@ namespace G
 {
     public partial interface IDatasetsClient
     {
-
         /// <summary>
         /// Read Examples With Runs Grouped<br/>
         /// Fetch examples for a dataset, and fetch the runs for each example if they are associated with the given session_ids.
         /// </summary>
         /// <param name="datasetId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -20,7 +18,6 @@ namespace G
 
             global::G.QueryGroupedExamplesWithRuns request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Read Examples With Runs Grouped<br/>
         /// Fetch examples for a dataset, and fetch the runs for each example if they are associated with the given session_ids.

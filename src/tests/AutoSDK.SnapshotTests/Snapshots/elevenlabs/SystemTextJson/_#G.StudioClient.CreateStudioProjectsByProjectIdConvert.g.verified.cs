@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Convert Studio Project<br/>
         /// Starts conversion of a Studio project and all of its chapters.

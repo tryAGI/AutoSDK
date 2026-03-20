@@ -20,7 +20,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Owned Or Used<br/>
         /// Get a lean list of pipelines that the user/team has either used or owns.

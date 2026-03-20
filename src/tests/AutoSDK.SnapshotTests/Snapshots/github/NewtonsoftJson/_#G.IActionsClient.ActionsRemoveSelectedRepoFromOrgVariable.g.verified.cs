@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// Remove selected repository from an organization variable<br/>
         /// Removes a repository from an organization variable that is<br/>

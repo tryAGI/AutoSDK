@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IChatClient
     {
-
         /// <summary>
         /// Gets emotes for one or more specified emote sets.<br/>
         /// Gets emotes for one or more specified emote sets.<br/>

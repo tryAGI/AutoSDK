@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IVdpClient
     {
-
         /// <summary>
         /// Trigger a pipeline release<br/>
         /// Triggers the synchronous execution of of a pipeline. While the trigger<br/>
@@ -19,7 +18,6 @@ namespace G
         /// <param name="pipelineId"></param>
         /// <param name="releaseId"></param>
         /// <param name="instillRequesterUid"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -31,7 +29,6 @@ namespace G
             global::G.TriggerNamespacePipelineReleaseBody request,
             string? instillRequesterUid = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Trigger a pipeline release<br/>
         /// Triggers the synchronous execution of of a pipeline. While the trigger<br/>

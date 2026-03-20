@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAppsClient
     {
-
         /// <summary>
         /// List subscriptions for the authenticated user<br/>
         /// Lists the active subscriptions for the authenticated user.

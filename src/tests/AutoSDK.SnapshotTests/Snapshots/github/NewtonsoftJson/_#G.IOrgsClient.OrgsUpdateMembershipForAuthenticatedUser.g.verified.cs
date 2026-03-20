@@ -5,13 +5,11 @@ namespace G
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// Update an organization membership for the authenticated user<br/>
         /// Converts the authenticated user to an active member of the organization, if that user has a pending invitation from the organization.
         /// </summary>
         /// <param name="org"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -20,7 +18,6 @@ namespace G
 
             global::G.OrgsUpdateMembershipForAuthenticatedUserRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update an organization membership for the authenticated user<br/>
         /// Converts the authenticated user to an active member of the organization, if that user has a pending invitation from the organization.

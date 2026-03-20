@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITeamsClient
     {
-
         /// <summary>
         /// Add or update team membership for a user<br/>
         /// Adds an organization member to a team. An authenticated organization owner or team maintainer can add organization members to a team.<br/>
@@ -20,7 +19,6 @@ namespace G
         /// <param name="org"></param>
         /// <param name="teamSlug"></param>
         /// <param name="username"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -31,7 +29,6 @@ namespace G
 
             global::G.TeamsAddOrUpdateMembershipForUserInOrgRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Add or update team membership for a user<br/>
         /// Adds an organization member to a team. An authenticated organization owner or team maintainer can add organization members to a team.<br/>

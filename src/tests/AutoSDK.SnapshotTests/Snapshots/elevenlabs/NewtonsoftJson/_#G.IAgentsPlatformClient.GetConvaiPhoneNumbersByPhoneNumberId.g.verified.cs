@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// Get Phone Number<br/>
         /// Retrieve Phone Number details by ID

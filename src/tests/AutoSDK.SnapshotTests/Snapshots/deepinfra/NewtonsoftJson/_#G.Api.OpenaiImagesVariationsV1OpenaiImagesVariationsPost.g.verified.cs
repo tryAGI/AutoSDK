@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Openai Images Variations<br/>
         /// Generate a similar image using OpenAI Images Variations API

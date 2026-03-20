@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IStudioClient
     {
-
         /// <summary>
         /// Get Project Muted Tracks<br/>
         /// Returns a list of chapter IDs that have muted tracks in a project.

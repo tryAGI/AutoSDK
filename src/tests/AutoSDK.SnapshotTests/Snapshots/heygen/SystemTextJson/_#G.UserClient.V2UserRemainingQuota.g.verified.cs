@@ -15,7 +15,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// v2/user/remaining_quota<br/>
         /// v2/user/remaining_quota

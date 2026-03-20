@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAppClient
     {
-
         /// <summary>
         /// Update a conversation<br/>
         /// Updates a conversation.
@@ -13,7 +12,6 @@ namespace G
         /// <param name="namespaceId"></param>
         /// <param name="appId"></param>
         /// <param name="conversationId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -24,7 +22,6 @@ namespace G
 
             global::G.UpdateConversationBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update a conversation<br/>
         /// Updates a conversation.

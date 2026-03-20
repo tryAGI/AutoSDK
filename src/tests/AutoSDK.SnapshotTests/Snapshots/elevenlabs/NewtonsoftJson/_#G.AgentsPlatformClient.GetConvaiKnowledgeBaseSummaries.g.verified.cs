@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Knowledge Base Summaries By Ids<br/>
         /// Gets multiple knowledge base document summaries by their IDs.

@@ -5,13 +5,11 @@ namespace G
 {
     public partial interface IUsersClient
     {
-
         /// <summary>
         /// Delete social accounts for the authenticated user<br/>
         /// Deletes one or more social accounts from the authenticated user's profile.<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -19,7 +17,6 @@ namespace G
 
             global::G.UsersDeleteSocialAccountForAuthenticatedUserRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Delete social accounts for the authenticated user<br/>
         /// Deletes one or more social accounts from the authenticated user's profile.<br/>

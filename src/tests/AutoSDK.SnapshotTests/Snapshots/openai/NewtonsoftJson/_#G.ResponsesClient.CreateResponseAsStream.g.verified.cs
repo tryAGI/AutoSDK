@@ -17,7 +17,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Creates a model response. Provide [text](/docs/guides/text) or<br/>
         /// [image](/docs/guides/images) inputs to generate [text](/docs/guides/text)<br/>
@@ -27,7 +26,6 @@ namespace G
         /// or [file search](/docs/guides/tools-file-search) to use your own data<br/>
         /// as input for the model's response.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -158,7 +156,6 @@ namespace G
                 yield return __streamedResponse;
             }
         }
-
         /// <summary>
         /// Creates a model response. Provide [text](/docs/guides/text) or<br/>
         /// [image](/docs/guides/images) inputs to generate [text](/docs/guides/text)<br/>

@@ -36,7 +36,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List repository notifications for the authenticated user<br/>
         /// Lists all notifications for the current user in the specified repository.

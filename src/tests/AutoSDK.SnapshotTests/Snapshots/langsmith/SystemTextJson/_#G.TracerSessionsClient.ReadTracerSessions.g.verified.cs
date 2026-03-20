@@ -54,7 +54,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Read Tracer Sessions<br/>
         /// Get all sessions.

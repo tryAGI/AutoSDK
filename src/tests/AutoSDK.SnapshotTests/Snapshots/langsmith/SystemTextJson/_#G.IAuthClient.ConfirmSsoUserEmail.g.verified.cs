@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IAuthClient
     {
-
         /// <summary>
         /// Confirm Sso User Email<br/>
         /// Confirm the email of an SSO user.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.SSOConfirmEmailRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Confirm Sso User Email<br/>
         /// Confirm the email of an SSO user.

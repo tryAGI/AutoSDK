@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// Get an environment variable<br/>
         /// Gets a specific variable in an environment.<br/>

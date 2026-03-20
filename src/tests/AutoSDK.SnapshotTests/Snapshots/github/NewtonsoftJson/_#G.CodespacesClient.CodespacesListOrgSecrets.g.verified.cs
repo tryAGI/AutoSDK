@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List organization secrets<br/>
         /// Lists all Codespaces development environment secrets available at the organization-level without revealing their encrypted<br/>

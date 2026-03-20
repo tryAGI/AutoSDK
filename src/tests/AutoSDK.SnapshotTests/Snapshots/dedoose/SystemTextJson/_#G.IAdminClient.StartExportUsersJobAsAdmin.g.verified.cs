@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAdminClient
     {
-
         /// <summary>
         /// StartExportUsersJob<br/>
         /// StartExportUsersJob

@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Read Examples With Runs<br/>
         /// Fetch examples for a dataset, and fetch the runs for each example if they are associated with the given session_ids.
@@ -35,7 +34,6 @@ namespace G
         /// <param name="format">
         /// Response format, e.g., 'csv'
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -238,7 +236,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Read Examples With Runs<br/>
         /// Fetch examples for a dataset, and fetch the runs for each example if they are associated with the given session_ids.

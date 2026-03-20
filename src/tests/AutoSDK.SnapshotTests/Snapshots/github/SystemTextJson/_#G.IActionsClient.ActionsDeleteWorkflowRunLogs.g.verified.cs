@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// Delete workflow run logs<br/>
         /// Deletes all logs for a workflow run.<br/>

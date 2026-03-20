@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Gets the list of donations that users have made to the broadcaster’s active charity campaign.<br/>
         /// Gets the list of donations that users have made to the broadcaster’s active charity campaign.<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IRaidsClient
     {
-
         /// <summary>
         /// Cancel a pending raid.<br/>
         /// Cancel a pending raid.<br/>

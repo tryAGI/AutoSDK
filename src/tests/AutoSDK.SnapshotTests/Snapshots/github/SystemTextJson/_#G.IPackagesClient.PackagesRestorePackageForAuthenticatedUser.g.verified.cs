@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPackagesClient
     {
-
         /// <summary>
         /// Restore a package for the authenticated user<br/>
         /// Restores a package owned by the authenticated user.<br/>

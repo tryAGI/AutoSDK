@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get a commit object<br/>
         /// Gets a Git [commit object](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects).<br/>

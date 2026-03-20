@@ -64,7 +64,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Conversations<br/>
         /// Get all conversations of agents that user owns. With option to restrict to a specific agent.

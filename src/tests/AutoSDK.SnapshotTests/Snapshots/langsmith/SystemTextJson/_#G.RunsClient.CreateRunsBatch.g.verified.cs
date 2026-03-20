@@ -20,7 +20,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Ingest Runs (Batch JSON)<br/>
         /// Ingests a batch of runs in a single JSON payload. The payload must have `post` and/or `patch` arrays containing run objects. \<br/>

@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IGraphqlClient
     {
-
         /// <summary>
         /// Perform a GraphQL query.<br/>
         /// Get a response based on a GraphQL query
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.GraphQLQuery request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Perform a GraphQL query.<br/>
         /// Get a response based on a GraphQL query

@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IProjectsClient
     {
-
         /// <summary>
         /// Creates a new service account in the project. This also returns an unredacted API key for the service account.
         /// </summary>
         /// <param name="projectId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -19,7 +17,6 @@ namespace G
 
             global::G.ProjectServiceAccountCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Creates a new service account in the project. This also returns an unredacted API key for the service account.
         /// </summary>

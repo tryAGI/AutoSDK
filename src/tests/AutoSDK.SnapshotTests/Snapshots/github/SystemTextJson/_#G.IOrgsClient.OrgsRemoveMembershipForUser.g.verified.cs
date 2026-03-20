@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// Remove organization membership for a user<br/>
         /// In order to remove a user's membership with an organization, the authenticated user must be an organization owner.<br/>

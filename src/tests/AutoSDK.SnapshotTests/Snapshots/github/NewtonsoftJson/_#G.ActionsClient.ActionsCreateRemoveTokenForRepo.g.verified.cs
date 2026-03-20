@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Create a remove token for a repository<br/>
         /// Returns a token that you can pass to the `config` script to remove a self-hosted runner from an repository. The token expires after one hour.<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IMigrationsClient
     {
-
         /// <summary>
         /// Delete an organization migration archive<br/>
         /// Deletes a previous migration archive. Migration archives are automatically deleted after seven days.

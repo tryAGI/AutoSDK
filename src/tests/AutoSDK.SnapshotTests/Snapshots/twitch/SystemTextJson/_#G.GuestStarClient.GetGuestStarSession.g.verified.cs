@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// BETA Gets information about an ongoing Guest Star session for a particular channel.<br/>
         /// BETA Gets information about an ongoing Guest Star session for a particular channel.<br/>

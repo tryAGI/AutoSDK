@@ -22,11 +22,9 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Creates an embedding vector representing the input text.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -182,7 +180,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Creates an embedding vector representing the input text.
         /// </summary>

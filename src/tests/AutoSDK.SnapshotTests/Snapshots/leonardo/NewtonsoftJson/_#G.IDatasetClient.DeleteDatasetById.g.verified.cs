@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IDatasetClient
     {
-
         /// <summary>
         /// Delete a Single Dataset by ID<br/>
         /// This endpoint deletes the specific dataset

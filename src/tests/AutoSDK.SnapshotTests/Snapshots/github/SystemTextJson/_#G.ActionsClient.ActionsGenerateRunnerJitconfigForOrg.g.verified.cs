@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Create configuration for a just-in-time runner for an organization<br/>
         /// Generates a configuration that can be passed to the runner application at startup.<br/>
@@ -32,7 +31,6 @@ namespace G
         /// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="org"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -251,7 +249,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Create configuration for a just-in-time runner for an organization<br/>
         /// Generates a configuration that can be passed to the runner application at startup.<br/>

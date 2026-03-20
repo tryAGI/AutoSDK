@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// List Whatsapp Accounts<br/>
         /// List all WhatsApp accounts

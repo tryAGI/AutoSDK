@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface INamespaceClient
     {
-
         /// <summary>
         /// Delete an organization membership<br/>
         /// Deletes a user membership within an organization.

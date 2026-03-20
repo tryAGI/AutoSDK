@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IChannelPointsClient
     {
-
         /// <summary>
         /// Updates a custom reward.<br/>
         /// Updates a custom reward. The app used to create the reward is the only app that may update the reward.<br/>
@@ -16,7 +15,6 @@ namespace G
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="id"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -26,7 +24,6 @@ namespace G
 
             global::G.UpdateCustomRewardBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Updates a custom reward.<br/>
         /// Updates a custom reward. The app used to create the reward is the only app that may update the reward.<br/>

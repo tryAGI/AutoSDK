@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IExtensionsClient
     {
-
         /// <summary>
         /// Gets an extension’s list of shared secrets.<br/>
         /// Gets an extension’s list of shared secrets.<br/>

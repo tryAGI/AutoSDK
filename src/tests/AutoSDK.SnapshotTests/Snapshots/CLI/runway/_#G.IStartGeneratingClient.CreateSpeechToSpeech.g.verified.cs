@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IStartGeneratingClient
     {
-
         /// <summary>
         /// Speech to speech<br/>
         /// This endpoint will start a new task to convert speech from one voice to another in audio or video.
@@ -13,11 +12,9 @@ namespace G
         /// <param name="xRunwayVersion">
         /// Default Value: 2024-11-06
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-
         /// <remarks>
         /// // npm install --save @runwayml/sdk<br/>
         /// import RunwayML from '@runwayml/sdk';<br/>
@@ -57,7 +54,6 @@ namespace G
             global::G.Request7 request,
             string xRunwayVersion = "2024-11-06",
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Speech to speech<br/>
         /// This endpoint will start a new task to convert speech from one voice to another in audio or video.

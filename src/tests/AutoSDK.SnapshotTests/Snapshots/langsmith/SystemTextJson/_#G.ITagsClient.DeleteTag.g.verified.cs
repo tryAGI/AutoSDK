@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITagsClient
     {
-
         /// <summary>
         /// Delete Tag
         /// </summary>

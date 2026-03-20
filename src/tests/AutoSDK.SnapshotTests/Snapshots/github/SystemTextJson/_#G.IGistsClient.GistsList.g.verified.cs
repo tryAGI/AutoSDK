@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IGistsClient
     {
-
         /// <summary>
         /// List gists for the authenticated user<br/>
         /// Lists the authenticated user's gists or if called anonymously, this endpoint returns all public gists:

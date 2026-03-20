@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICommitsClient
     {
-
         /// <summary>
         /// List Commits<br/>
         /// Get all commits.

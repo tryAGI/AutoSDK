@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPvcVoicesClient
     {
-
         /// <summary>
         /// Retrieve Speaker Separation Status<br/>
         /// Retrieve the status of the speaker separation process and the list of detected speakers if complete.

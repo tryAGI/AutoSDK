@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IStreamsClient
     {
-
         /// <summary>
         /// Adds a marker to a live stream.<br/>
         /// Adds a marker to a live stream. A marker is an arbitrary point in a live stream that the broadcaster or editor wants to mark, so they can return to that spot later to create video highlights (see Video Producer, Highlights in the Twitch UX).<br/>
@@ -17,7 +16,6 @@ namespace G
         /// __Authorization:__<br/>
         /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:broadcast** scope.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -25,7 +23,6 @@ namespace G
 
             global::G.CreateStreamMarkerBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Adds a marker to a live stream.<br/>
         /// Adds a marker to a live stream. A marker is an arbitrary point in a live stream that the broadcaster or editor wants to mark, so they can return to that spot later to create video highlights (see Video Producer, Highlights in the Twitch UX).<br/>

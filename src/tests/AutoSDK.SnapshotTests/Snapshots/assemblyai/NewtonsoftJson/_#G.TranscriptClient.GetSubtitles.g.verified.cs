@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get subtitles for transcript<br/>
         /// Export your transcript in SRT or VTT format to use with a video player for subtitles and closed captions.

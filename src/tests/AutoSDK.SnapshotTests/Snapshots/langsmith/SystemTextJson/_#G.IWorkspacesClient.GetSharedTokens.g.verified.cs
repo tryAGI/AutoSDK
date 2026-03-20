@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IWorkspacesClient
     {
-
         /// <summary>
         /// Get Shared Tokens<br/>
         /// List all shared entities and their tokens by the workspace.

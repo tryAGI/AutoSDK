@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IIndexClient
     {
-
         /// <summary>
         /// Add a document to a corpus<br/>
         /// Add a document to a corpus for indexing, making its content available for search, retrieval, and generation. This endpoint supports two ingestion modes: **structured** documents and **core** documents. These modes offer different levels of control over document structure and chunking.<br/>
@@ -40,7 +39,6 @@ namespace G
         /// <param name="waitFor">
         /// Default Value: searchable
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -52,7 +50,6 @@ namespace G
             int? requestTimeoutMillis = default,
             global::G.CreateCorpusDocumentWaitFor? waitFor = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Add a document to a corpus<br/>
         /// Add a document to a corpus for indexing, making its content available for search, retrieval, and generation. This endpoint supports two ingestion modes: **structured** documents and **core** documents. These modes offer different levels of control over document structure and chunking.<br/>

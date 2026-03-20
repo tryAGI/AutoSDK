@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// List environment secrets<br/>
         /// Lists all secrets available in an environment without revealing their<br/>

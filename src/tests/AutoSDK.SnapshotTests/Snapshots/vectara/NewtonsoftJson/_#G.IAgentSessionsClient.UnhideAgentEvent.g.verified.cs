@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentSessionsClient
     {
-
         /// <summary>
         /// Unhide event<br/>
         /// Unhide a hidden event in a session. Clears the hide_reason.

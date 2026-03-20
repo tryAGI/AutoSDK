@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// Disable a custom protection rule for an environment<br/>
         /// Disables a custom deployment protection rule for an environment.<br/>

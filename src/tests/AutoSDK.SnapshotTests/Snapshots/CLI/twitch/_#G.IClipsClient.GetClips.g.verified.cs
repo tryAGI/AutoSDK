@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IClipsClient
     {
-
         /// <summary>
         /// Gets one or more video clips.<br/>
         /// Gets one or more video clips that were captured from streams. For information about clips, see [How to use clips](https://help.twitch.tv/s/article/how-to-use-clips).<br/>

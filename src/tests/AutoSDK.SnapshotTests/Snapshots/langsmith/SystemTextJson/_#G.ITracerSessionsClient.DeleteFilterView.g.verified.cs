@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITracerSessionsClient
     {
-
         /// <summary>
         /// Delete Filter View<br/>
         /// Delete a specific filter view.

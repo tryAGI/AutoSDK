@@ -5,14 +5,12 @@ namespace G
 {
     public partial interface IApi
     {
-
         /// <summary>
         /// Generates an embedding from the model given an input `Content`.
         /// </summary>
         /// <param name="modelId">
         /// Default Value: embedding-001
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -21,7 +19,6 @@ namespace G
             global::G.EmbedContentRequest request,
             string modelId = "embedding-001",
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Generates an embedding from the model given an input `Content`.
         /// </summary>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActivityClient
     {
-
         /// <summary>
         /// List watchers<br/>
         /// Lists the people watching the specified repository.

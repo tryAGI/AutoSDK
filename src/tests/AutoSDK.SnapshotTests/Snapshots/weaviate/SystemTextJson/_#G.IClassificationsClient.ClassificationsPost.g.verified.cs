@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IClassificationsClient
     {
-
         /// <summary>
         /// Starts a classification.<br/>
         /// Trigger a classification based on the specified params. Classifications will run in the background, use GET /classifications/&lt;id&gt; to retrieve the status of your classification.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.Classification request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Starts a classification.<br/>
         /// Trigger a classification based on the specified params. Classifications will run in the background, use GET /classifications/&lt;id&gt; to retrieve the status of your classification.

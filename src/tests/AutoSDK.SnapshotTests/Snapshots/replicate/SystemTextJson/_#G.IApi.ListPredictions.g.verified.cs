@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IApi
     {
-
         /// <summary>
         /// List predictions<br/>
         /// Get a paginated list of predictions that you've created. This will include predictions created from the API and the website. It will return 100 records per page.<br/>

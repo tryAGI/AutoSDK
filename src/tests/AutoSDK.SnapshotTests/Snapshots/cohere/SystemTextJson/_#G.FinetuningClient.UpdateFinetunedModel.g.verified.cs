@@ -26,13 +26,11 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Updates a fine-tuned model.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="xClientName"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -428,7 +426,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Updates a fine-tuned model.
         /// </summary>

@@ -19,7 +19,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Text To Voice Preview Streaming<br/>
         /// Stream a voice preview that was created via the /v1/text-to-voice/design endpoint.

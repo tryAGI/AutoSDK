@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActivityClient
     {
-
         /// <summary>
         /// List events for the authenticated user<br/>
         /// If you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events.<br/>

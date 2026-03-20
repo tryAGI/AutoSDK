@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Rag Indexes Of The Specified Knowledgebase Document.<br/>
         /// Provides information about all RAG indexes of the specified knowledgebase document.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ISingleUseTokenClient
     {
-
         /// <summary>
         /// Create Single Use Token<br/>
         /// Generate a time limited single-use token with embedded authentication for frontend clients.

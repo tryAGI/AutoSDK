@@ -22,7 +22,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Cancels the Upload. No Parts may be added after an Upload is cancelled.
         /// </summary>

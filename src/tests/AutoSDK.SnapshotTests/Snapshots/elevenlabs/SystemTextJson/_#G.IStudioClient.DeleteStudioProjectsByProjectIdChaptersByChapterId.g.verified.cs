@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IStudioClient
     {
-
         /// <summary>
         /// Delete Chapter<br/>
         /// Deletes a chapter.

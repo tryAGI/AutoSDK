@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IArtifactClient
     {
-
         /// <summary>
         /// Get file catalog<br/>
         /// Get the catalog file.

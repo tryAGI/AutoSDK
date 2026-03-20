@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICorporaClient
     {
-
         /// <summary>
         /// Get filter attribute statistics for corpus metadata<br/>
         /// Retrieve statistics and value distributions for filter attributes in a corpus. This endpoint provides insights into the metadata structure and content distribution, enabling users to understand available filter values and build effective metadata queries.<br/>

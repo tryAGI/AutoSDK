@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICodeScanningClient
     {
-
         /// <summary>
         /// Get the analysis status of a repository in a CodeQL variant analysis<br/>
         /// Gets the analysis status of a repository in a CodeQL variant analysis.<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// Get an artifact<br/>
         /// Gets a specific artifact for a workflow run.<br/>

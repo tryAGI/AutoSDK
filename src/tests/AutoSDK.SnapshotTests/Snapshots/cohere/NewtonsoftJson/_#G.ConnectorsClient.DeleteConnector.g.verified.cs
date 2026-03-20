@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Delete a Connector<br/>
         /// Delete a connector by ID. See ['Connectors'](https://docs.cohere.com/docs/connectors) for more information.

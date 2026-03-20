@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAssistantsClient
     {
-
         /// <summary>
         /// Cancels a run that is `in_progress`.
         /// </summary>

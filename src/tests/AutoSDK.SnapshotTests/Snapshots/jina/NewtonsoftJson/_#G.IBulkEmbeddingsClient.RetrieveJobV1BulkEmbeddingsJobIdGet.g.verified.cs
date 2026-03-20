@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IBulkEmbeddingsClient
     {
-
         /// <summary>
         /// Retrieve Job
         /// </summary>

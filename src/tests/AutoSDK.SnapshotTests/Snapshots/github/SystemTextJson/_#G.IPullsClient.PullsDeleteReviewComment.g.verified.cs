@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPullsClient
     {
-
         /// <summary>
         /// Delete a review comment for a pull request<br/>
         /// Deletes a review comment.

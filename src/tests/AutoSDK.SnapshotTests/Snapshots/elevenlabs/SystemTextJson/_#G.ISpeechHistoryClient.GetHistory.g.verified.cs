@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ISpeechHistoryClient
     {
-
         /// <summary>
         /// List Generated Items<br/>
         /// Returns a list of your generated audio.

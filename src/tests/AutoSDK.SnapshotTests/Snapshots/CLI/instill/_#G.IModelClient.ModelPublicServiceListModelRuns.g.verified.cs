@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IModelClient
     {
-
         /// <summary>
         /// List model runs<br/>
         /// Returns a paginated list of model runs.

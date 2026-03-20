@@ -15,7 +15,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Get application liveness.<br/>
         /// Determines whether the application is alive. Can be used for kubernetes liveness probe

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IApiKeysClient
     {
-
         /// <summary>
         /// List API keys<br/>
         /// The List API Keys API lists all existing API keys for a customer ID. It also shows what corpora are accessed by these keys and with what permissions. This capability can provide insights into key usage and status and help you manage the lifecycle and security of your API keys.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IStudioClient
     {
-
         /// <summary>
         /// Get Studio Project<br/>
         /// Returns information about a specific Studio project. This endpoint returns more detailed information about a project than `GET /v1/studio`.

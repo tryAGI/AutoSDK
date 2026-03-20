@@ -22,7 +22,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Copilot seat information and settings for an organization<br/>
         /// &gt; [!NOTE]<br/>

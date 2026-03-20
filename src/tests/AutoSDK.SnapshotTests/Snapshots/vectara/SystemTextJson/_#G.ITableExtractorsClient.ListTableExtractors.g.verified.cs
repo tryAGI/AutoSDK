@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ITableExtractorsClient
     {
-
         /// <summary>
         /// List supported table extractors<br/>
         /// Table extractors are used to extract tabular data from documents during indexing.

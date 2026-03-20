@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ISubscriptionsClient
     {
-
         /// <summary>
         /// Gets a list of users that subscribe to the specified broadcaster.<br/>
         /// Gets a list of users that subscribe to the specified broadcaster.<br/>

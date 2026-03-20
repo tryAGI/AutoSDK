@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActionsClient
     {
-
         /// <summary>
         /// Create an organization variable<br/>
         /// Creates an organization variable that you can reference in a GitHub Actions workflow.<br/>
@@ -13,7 +12,6 @@ namespace G
         /// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="org"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -22,7 +20,6 @@ namespace G
 
             global::G.ActionsCreateOrgVariableRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create an organization variable<br/>
         /// Creates an organization variable that you can reference in a GitHub Actions workflow.<br/>

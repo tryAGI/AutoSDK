@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Re-run failed jobs from a workflow run<br/>
         /// Re-run all of the failed jobs and their dependent jobs in a workflow run using the `id` of the workflow run.<br/>
@@ -37,7 +36,6 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="runId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -186,7 +184,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Re-run failed jobs from a workflow run<br/>
         /// Re-run all of the failed jobs and their dependent jobs in a workflow run using the `id` of the workflow run.<br/>

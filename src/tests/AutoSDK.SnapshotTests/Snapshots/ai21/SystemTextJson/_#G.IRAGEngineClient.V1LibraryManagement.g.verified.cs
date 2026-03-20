@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IRagEngineClient
     {
-
         /// <summary>
         /// Generate Documents Signed Url
         /// </summary>

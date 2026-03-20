@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IApiKeysClient
     {
-
         /// <summary>
         /// Gets an API key.
         /// </summary>

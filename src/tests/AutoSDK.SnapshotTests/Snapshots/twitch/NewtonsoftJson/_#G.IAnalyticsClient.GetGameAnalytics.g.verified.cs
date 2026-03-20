@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAnalyticsClient
     {
-
         /// <summary>
         /// Gets an analytics report for one or more games.<br/>
         /// Gets an analytics report for one or more games. The response contains the URLs used to download the reports (CSV files). [Learn more](https://dev.twitch.tv/docs/insights)<br/>

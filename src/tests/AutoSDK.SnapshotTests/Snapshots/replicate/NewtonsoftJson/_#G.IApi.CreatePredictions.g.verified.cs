@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IApi
     {
-
         /// <summary>
         /// Create a prediction<br/>
         /// Create a prediction for the model version and inputs you provide.<br/>
@@ -23,7 +22,6 @@ namespace G
         /// <param name="prefer">
         /// Example: wait=5
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -32,7 +30,6 @@ namespace G
             global::G.VersionPredictionRequest request,
             string? prefer = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a prediction<br/>
         /// Create a prediction for the model version and inputs you provide.<br/>

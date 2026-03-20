@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IWorkspaceClient
     {
-
         /// <summary>
         /// Delete Workspace Webhook<br/>
         /// Delete the specified workspace webhook

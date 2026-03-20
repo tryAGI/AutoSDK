@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IDependabotClient
     {
-
         /// <summary>
         /// Delete a repository secret<br/>
         /// Deletes a secret in a repository using the secret name.<br/>

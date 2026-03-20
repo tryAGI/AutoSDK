@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IAssistantsClient
     {
-
         /// <summary>
         /// Modifies an assistant.
         /// </summary>
         /// <param name="assistantId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -19,7 +17,6 @@ namespace G
 
             global::G.ModifyAssistantRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Modifies an assistant.
         /// </summary>

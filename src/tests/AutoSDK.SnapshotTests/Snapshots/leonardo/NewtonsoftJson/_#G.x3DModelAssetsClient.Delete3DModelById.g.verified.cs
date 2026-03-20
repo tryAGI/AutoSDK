@@ -24,13 +24,11 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Delete 3D Model by ID<br/>
         /// This endpoint deletes the specific 3D Model
         /// </summary>
         /// <param name="id"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -189,7 +187,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Delete 3D Model by ID<br/>
         /// This endpoint deletes the specific 3D Model

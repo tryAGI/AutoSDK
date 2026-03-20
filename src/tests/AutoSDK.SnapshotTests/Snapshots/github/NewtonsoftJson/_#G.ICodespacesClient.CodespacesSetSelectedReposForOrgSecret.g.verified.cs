@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICodespacesClient
     {
-
         /// <summary>
         /// Set selected repositories for an organization secret<br/>
         /// Replaces all repositories for an organization development environment secret when the `visibility`<br/>
@@ -15,7 +14,6 @@ namespace G
         /// </summary>
         /// <param name="org"></param>
         /// <param name="secretName"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -25,7 +23,6 @@ namespace G
 
             global::G.CodespacesSetSelectedReposForOrgSecretRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Set selected repositories for an organization secret<br/>
         /// Replaces all repositories for an organization development environment secret when the `visibility`<br/>

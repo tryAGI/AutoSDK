@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IBulkEmbeddingsClient
     {
-
         /// <summary>
         /// Download Result
         /// </summary>

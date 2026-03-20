@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Run Tests On The Agent<br/>
         /// Run selected tests on the agent with provided configuration. If the agent configuration is provided, it will be used to override default agent configuration.
@@ -37,7 +36,6 @@ namespace G
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -227,7 +225,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Run Tests On The Agent<br/>
         /// Run selected tests on the agent with provided configuration. If the agent configuration is provided, it will be used to override default agent configuration.

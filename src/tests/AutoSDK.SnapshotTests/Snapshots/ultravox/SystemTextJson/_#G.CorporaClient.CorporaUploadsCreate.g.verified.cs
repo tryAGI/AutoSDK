@@ -24,12 +24,10 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Request a presigned URL for uploading a document.
         /// </summary>
         /// <param name="corpusId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -188,7 +186,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Request a presigned URL for uploading a document.
         /// </summary>

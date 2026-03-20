@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentSchedulesClient
     {
-
         /// <summary>
         /// Create agent schedule<br/>
         /// Create a new schedule for automatically executing an agent at specified intervals. Each execution creates a new session with the configured message and metadata.<br/>
@@ -36,7 +35,6 @@ namespace G
         /// A unique key that identifies an agent.<br/>
         /// Example: customer_support
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -47,7 +45,6 @@ namespace G
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create agent schedule<br/>
         /// Create a new schedule for automatically executing an agent at specified intervals. Each execution creates a new session with the configured message and metadata.<br/>

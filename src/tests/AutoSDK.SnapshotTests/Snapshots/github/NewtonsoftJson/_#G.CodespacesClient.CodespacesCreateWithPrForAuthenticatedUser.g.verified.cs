@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Create a codespace from a pull request<br/>
         /// Creates a codespace owned by the authenticated user for the specified pull request.<br/>
@@ -37,7 +36,6 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="pullNumber"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -338,7 +336,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Create a codespace from a pull request<br/>
         /// Creates a codespace owned by the authenticated user for the specified pull request.<br/>

@@ -23,7 +23,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Disable a custom protection rule for an environment<br/>
         /// Disables a custom deployment protection rule for an environment.<br/>

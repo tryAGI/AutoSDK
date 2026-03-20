@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActivityClient
     {
-
         /// <summary>
         /// Get a thread<br/>
         /// Gets information about a notification thread.

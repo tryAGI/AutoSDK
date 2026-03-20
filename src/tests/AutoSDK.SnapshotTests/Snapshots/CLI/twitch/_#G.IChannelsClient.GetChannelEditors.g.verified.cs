@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IChannelsClient
     {
-
         /// <summary>
         /// Gets the broadcaster’s list editors.<br/>
         /// Gets the broadcaster’s list editors.<br/>

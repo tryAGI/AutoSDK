@@ -24,7 +24,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Creates a clip from the broadcaster’s stream.<br/>
         /// Creates a clip from the broadcaster’s stream.<br/>

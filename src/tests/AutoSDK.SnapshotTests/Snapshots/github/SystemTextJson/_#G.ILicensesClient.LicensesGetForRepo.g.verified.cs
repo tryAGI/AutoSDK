@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ILicensesClient
     {
-
         /// <summary>
         /// Get the license for a repository<br/>
         /// This method returns the contents of the repository's license file, if one is detected.<br/>

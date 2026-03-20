@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IArtifactClient
     {
-
         /// <summary>
         /// Get all catalogs info<br/>
         /// Returns a paginated list of catalogs.

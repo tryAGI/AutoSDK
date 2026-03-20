@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAccountClient
     {
-
         /// <summary>
         /// GetAccountDetailsForCurrentUser<br/>
         /// GetAccountDetailsForCurrentUser

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IApplicationClientsClient
     {
-
         /// <summary>
         /// List App Clients<br/>
         /// Retrieve a list of application clients configured for the customer account.

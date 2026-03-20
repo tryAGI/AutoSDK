@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List component definitions<br/>
         /// Returns a paginated list of component definitions, regardless their type.<br/>

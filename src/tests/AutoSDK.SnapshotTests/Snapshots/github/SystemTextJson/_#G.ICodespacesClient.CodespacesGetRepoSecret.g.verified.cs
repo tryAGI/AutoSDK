@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICodespacesClient
     {
-
         /// <summary>
         /// Get a repository secret<br/>
         /// Gets a single repository development environment secret without revealing its encrypted value.<br/>

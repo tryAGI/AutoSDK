@@ -38,7 +38,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List Pipelines By Family<br/>
         /// Retrieve all pipelines for a given pipeline family.<br/>

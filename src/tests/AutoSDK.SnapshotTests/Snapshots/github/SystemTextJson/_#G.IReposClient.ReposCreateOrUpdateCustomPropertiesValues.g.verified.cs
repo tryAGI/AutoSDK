@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// Create or update custom property values for a repository<br/>
         /// Create new or update existing custom property values for a repository.<br/>
@@ -14,7 +13,6 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -24,7 +22,6 @@ namespace G
 
             global::G.ReposCreateOrUpdateCustomPropertiesValuesRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create or update custom property values for a repository<br/>
         /// Create new or update existing custom property values for a repository.<br/>

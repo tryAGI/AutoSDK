@@ -5,14 +5,12 @@ namespace G
 {
     public partial interface IGenerateClient
     {
-
         /// <summary>
         /// Remix provided images synchronously based on a given prompt and optional parameters<br/>
         /// A request to remix a provided image with Ideogram. Input images<br/>
         /// are cropped to the chosen aspect ratio before being remixed.<br/>
         /// Supported image formats include JPEG, PNG, and WEBP
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -20,7 +18,6 @@ namespace G
 
             global::G.RemixImageRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Remix provided images synchronously based on a given prompt and optional parameters<br/>
         /// A request to remix a provided image with Ideogram. Input images<br/>

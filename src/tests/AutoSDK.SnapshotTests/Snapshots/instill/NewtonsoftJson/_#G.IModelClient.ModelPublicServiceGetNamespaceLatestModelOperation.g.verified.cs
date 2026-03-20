@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IModelClient
     {
-
         /// <summary>
         /// Get the details of the latest long-running operation from a namespace model<br/>
         /// This method allows requesters to request the status and outcome of<br/>

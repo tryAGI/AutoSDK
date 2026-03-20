@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ILicensesClient
     {
-
         /// <summary>
         /// Get a license<br/>
         /// Gets information about a specific license. For more information, see "[Licensing a repository ](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)."

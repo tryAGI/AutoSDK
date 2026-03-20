@@ -5,11 +5,9 @@ namespace G
 {
     public partial interface IModelsClient
     {
-
         /// <summary>
         /// Show details about a model including modelfile, template, parameters, license, and system prompt.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace G
 
             global::G.ModelInfoRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Show details about a model including modelfile, template, parameters, license, and system prompt.
         /// </summary>

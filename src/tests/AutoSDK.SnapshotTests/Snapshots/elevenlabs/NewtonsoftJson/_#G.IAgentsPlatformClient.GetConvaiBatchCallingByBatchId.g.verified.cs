@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// Get A Batch Call By Id.<br/>
         /// Get detailed information about a batch call including all recipients.

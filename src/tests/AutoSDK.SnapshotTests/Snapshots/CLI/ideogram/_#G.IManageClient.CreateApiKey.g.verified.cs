@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IManageClient
     {
-
         /// <summary>
         /// Creates an API key.
         /// </summary>

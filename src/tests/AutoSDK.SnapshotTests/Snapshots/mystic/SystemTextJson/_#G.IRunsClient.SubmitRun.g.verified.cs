@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IRunsClient
     {
-
         /// <summary>
         /// Submit Run<br/>
         /// Submits a new run request
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.RunCreate request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Submit Run<br/>
         /// Submits a new run request

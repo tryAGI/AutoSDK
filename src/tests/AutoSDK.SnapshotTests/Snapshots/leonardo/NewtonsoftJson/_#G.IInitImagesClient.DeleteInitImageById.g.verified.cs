@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IInitImagesClient
     {
-
         /// <summary>
         /// Delete init image<br/>
         /// This endpoint deletes an init image

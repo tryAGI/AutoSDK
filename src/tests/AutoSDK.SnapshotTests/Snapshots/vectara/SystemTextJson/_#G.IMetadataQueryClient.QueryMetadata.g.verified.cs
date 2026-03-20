@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IMetadataQueryClient
     {
-
         /// <summary>
         /// Query across metadata fields in a corpus<br/>
         /// Query for documents in a specific corpus using fuzzy matching across specified metadata fields. The search first applies any exact metadata filters to narrow the results, then performs fuzzy matching on the remaining documents using the specified field queries.
@@ -16,7 +15,6 @@ namespace G
         /// A user-provided key for a corpus.<br/>
         /// Example: my-corpus
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -27,7 +25,6 @@ namespace G
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Query across metadata fields in a corpus<br/>
         /// Query for documents in a specific corpus using fuzzy matching across specified metadata fields. The search first applies any exact metadata filters to narrow the results, then performs fuzzy matching on the remaining documents using the specified field queries.

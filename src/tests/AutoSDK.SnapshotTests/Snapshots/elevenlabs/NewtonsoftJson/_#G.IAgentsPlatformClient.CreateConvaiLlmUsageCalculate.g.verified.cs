@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// Calculate Expected Llm Usage<br/>
         /// Returns a list of LLM models and the expected cost for using them based on the provided values.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace G
 
             global::G.LLMUsageCalculatorPublicRequestModel request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Calculate Expected Llm Usage<br/>
         /// Returns a list of LLM models and the expected cost for using them based on the provided values.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICloudClient
     {
-
         /// <summary>
         /// List Credentials<br/>
         /// List all credentials belonging to a user

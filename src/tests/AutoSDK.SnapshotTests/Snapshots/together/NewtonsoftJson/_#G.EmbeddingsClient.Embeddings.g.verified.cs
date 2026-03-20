@@ -22,12 +22,10 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Create embedding<br/>
         /// Query an embedding model for a given string of text.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -411,7 +409,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Create embedding<br/>
         /// Query an embedding model for a given string of text.

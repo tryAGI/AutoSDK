@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IFileStorageClient
     {
-
         /// <summary>
         /// Get String<br/>
         /// Retrieves file data from the storage system based on the specified data path.

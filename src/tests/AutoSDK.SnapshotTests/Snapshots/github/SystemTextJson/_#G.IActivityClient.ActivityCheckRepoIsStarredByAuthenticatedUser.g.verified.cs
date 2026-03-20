@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IActivityClient
     {
-
         /// <summary>
         /// Check if a repository is starred by the authenticated user<br/>
         /// Whether the authenticated user has starred the repository.

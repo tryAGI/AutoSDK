@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IChatClient
     {
-
         /// <summary>
         /// Gets all global emotes.<br/>
         /// Gets the list of [global emotes](https://www.twitch.tv/creatorcamp/en/learn-the-basics/emotes/). Global emotes are Twitch-created emotes that users can use in any Twitch chat.<br/>

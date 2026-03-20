@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Download model<br/>
         /// Download a compressed fine-tuned model or checkpoint to local disk.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IChecksClient
     {
-
         /// <summary>
         /// Get a check suite<br/>
         /// Gets a single check suite using its `id`.<br/>

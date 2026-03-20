@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface INamespaceClient
     {
-
         /// <summary>
         /// Update an organization<br/>
         /// Accesses and updates an organization by ID.<br/>
@@ -13,7 +12,6 @@ namespace G
         /// account when updating the resource.
         /// </summary>
         /// <param name="organizationId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -22,7 +20,6 @@ namespace G
 
             global::G.Organization request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update an organization<br/>
         /// Accesses and updates an organization by ID.<br/>

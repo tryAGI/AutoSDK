@@ -5,14 +5,12 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// Update a repository invitation
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="invitationId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -23,7 +21,6 @@ namespace G
 
             global::G.ReposUpdateInvitationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update a repository invitation
         /// </summary>

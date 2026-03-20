@@ -26,7 +26,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Gets a list of custom rewards that the specified broadcaster created.<br/>
         /// Gets a list of custom rewards that the specified broadcaster created.<br/>

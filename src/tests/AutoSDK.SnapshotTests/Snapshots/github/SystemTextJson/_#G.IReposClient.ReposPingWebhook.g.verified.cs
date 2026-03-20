@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// Ping a repository webhook<br/>
         /// This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event) to be sent to the hook.

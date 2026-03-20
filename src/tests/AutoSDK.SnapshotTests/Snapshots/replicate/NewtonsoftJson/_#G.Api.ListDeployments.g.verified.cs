@@ -20,7 +20,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List deployments<br/>
         /// Get a list of deployments associated with the current account, including the latest release configuration for each deployment.<br/>

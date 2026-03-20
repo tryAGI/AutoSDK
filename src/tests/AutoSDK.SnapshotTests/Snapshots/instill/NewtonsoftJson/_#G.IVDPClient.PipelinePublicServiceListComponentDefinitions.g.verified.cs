@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IVdpClient
     {
-
         /// <summary>
         /// List component definitions<br/>
         /// Returns a paginated list of component definitions, regardless their type.<br/>

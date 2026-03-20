@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IModelsClient
     {
-
         /// <summary>
         /// List Models<br/>
         /// Returns a list of models available for use. The list contains models from Cohere as well as your fine-tuned models.

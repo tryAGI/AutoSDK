@@ -5,14 +5,12 @@ namespace G
 {
     public partial interface IApi
     {
-
         /// <summary>
         /// Classify<br/>
         /// This endpoint makes a prediction about which label fits the specified text inputs best. To make a prediction, Classify uses the provided `examples` of text + label pairs as a reference.<br/>
         /// Note: [Fine-tuned models](https://docs.cohere.com/docs/classify-fine-tuning) trained on classification examples don't require the `examples` parameter to be passed in explicitly.
         /// </summary>
         /// <param name="xClientName"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -21,7 +19,6 @@ namespace G
             global::G.ClassifyRequest request,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Classify<br/>
         /// This endpoint makes a prediction about which label fits the specified text inputs best. To make a prediction, Classify uses the provided `examples` of text + label pairs as a reference.<br/>

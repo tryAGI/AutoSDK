@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface ICodespacesClient
     {
-
         /// <summary>
         /// Delete an organization secret<br/>
         /// Deletes an organization development environment secret using the secret name.<br/>

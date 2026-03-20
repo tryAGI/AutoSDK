@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Retrieve Voice Sample Audio<br/>
         /// Retrieve the first 30 seconds of voice sample audio with or without noise removal.

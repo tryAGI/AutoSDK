@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// Get an organization<br/>
         /// Gets information about an organization.<br/>

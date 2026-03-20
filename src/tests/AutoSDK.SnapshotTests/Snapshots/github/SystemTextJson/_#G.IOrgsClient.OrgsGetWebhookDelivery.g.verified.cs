@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// Get a webhook delivery for an organization webhook<br/>
         /// Returns a delivery for a webhook configured in an organization.<br/>

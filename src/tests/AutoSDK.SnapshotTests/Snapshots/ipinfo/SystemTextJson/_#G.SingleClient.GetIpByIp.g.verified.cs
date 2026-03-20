@@ -22,7 +22,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Returns a ip for the selected IP. Yes, I know this is a pointless method.<br/>
         /// Returns a ip for the selected IP. Yes, I know this is a pointless method.

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentsPlatformClient
     {
-
         /// <summary>
         /// Delete Convai Workspace Secret<br/>
         /// Delete a workspace secret if it's not in use

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IReposClient
     {
-
         /// <summary>
         /// Get the status of a GitHub Pages deployment<br/>
         /// Gets the current status of a GitHub Pages deployment.<br/>

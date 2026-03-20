@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IFilesClient
     {
-
         /// <summary>
         /// List all files<br/>
         /// List the metadata for all uploaded data files.

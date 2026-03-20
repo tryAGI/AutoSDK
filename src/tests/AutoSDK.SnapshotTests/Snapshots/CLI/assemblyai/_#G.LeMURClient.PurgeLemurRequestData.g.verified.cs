@@ -22,7 +22,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Purge LeMUR request data<br/>
         /// Delete the data for a previously submitted LeMUR request.<br/>

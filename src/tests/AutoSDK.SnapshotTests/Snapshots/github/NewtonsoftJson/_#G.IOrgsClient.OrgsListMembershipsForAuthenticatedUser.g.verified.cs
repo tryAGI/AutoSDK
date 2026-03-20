@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IOrgsClient
     {
-
         /// <summary>
         /// List organization memberships for the authenticated user<br/>
         /// Lists all of the authenticated user's organization memberships.

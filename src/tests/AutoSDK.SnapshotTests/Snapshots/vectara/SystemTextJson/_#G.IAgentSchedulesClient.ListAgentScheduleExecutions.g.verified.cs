@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAgentSchedulesClient
     {
-
         /// <summary>
         /// List agent schedule executions<br/>
         /// List all execution attempts for a schedule, ordered by most recent first.

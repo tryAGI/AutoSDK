@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IAccountClient
     {
-
         /// <summary>
         /// Get Project Access Details<br/>
         /// Retrieves detailed information about a user's project access permissions.

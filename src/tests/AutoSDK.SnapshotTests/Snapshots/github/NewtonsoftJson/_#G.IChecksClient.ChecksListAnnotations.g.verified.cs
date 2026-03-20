@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IChecksClient
     {
-
         /// <summary>
         /// List check run annotations<br/>
         /// Lists annotations for a check run using the annotation `id`.<br/>

@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IRunClient
     {
-
         /// <summary>
         /// Unshare Run<br/>
         /// Unshare a run.

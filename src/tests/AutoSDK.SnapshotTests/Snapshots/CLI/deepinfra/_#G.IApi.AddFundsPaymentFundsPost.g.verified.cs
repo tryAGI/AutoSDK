@@ -5,12 +5,10 @@ namespace G
 {
     public partial interface IApi
     {
-
         /// <summary>
         /// Add Funds
         /// </summary>
         /// <param name="session"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -19,7 +17,6 @@ namespace G
             global::G.AddFundsIn request,
             object? session = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Add Funds
         /// </summary>

@@ -30,7 +30,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Interact with an agent<br/>
         /// Create a new input to an agent to interact with it.
@@ -45,7 +44,6 @@ namespace G
         /// A unique key that identifies an agent session.<br/>
         /// Example: customer_support_chat
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -449,7 +447,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Interact with an agent<br/>
         /// Create a new input to an agent to interact with it.

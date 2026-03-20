@@ -5,7 +5,6 @@ namespace G
 {
     public partial interface IPollsClient
     {
-
         /// <summary>
         /// Gets a list of polls that the broadcaster created.<br/>
         /// Gets a list of polls that the broadcaster created.<br/>

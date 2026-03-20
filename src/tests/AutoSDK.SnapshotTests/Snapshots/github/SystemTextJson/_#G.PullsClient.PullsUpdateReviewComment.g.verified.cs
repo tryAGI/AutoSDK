@@ -28,7 +28,6 @@ namespace G
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Update a review comment for a pull request<br/>
         /// Edits the content of a specified review comment.<br/>
@@ -41,7 +40,6 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="commentId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -190,7 +188,6 @@ namespace G
                 }
             }
         }
-
         /// <summary>
         /// Update a review comment for a pull request<br/>
         /// Edits the content of a specified review comment.<br/>
