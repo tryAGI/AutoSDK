@@ -7,6 +7,15 @@ namespace AutoSDK.Generation;
 
 public static partial class Sources
 {
+    /// <summary>
+    /// A single-space string used as a "trimmed line" placeholder in template ternaries.
+    /// <see cref="StringExtensions.RemoveBlankLinesWhereOnlyWhitespaces"/> removes any line
+    /// that contains only whitespace, so emitting <c>" "</c> effectively suppresses a line.
+    /// Use this as the false-branch of conditionals inside <c>$@"..."</c> templates:
+    /// <code>{(condition ? "content" : TrimmedLine)}</code>
+    /// </summary>
+    internal const string TrimmedLine = " ";
+
     public static FileWithName HttpFile(
         string tag,
         IReadOnlyList<OperationContext> operations,

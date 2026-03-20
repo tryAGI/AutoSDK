@@ -13,7 +13,7 @@ public static partial class Sources
     {
         return $@"
 {(modelData.Properties.Any(x => x.Type.CSharpType.Contains("AnyOf<") || x.Type.CSharpType.Contains("OneOf<") || x.Type.CSharpType.Contains("AllOf<")) ? @"#pragma warning disable CS0618 // Type or member is obsolete
-" : " ")}
+" : TrimmedLine)}
 #nullable enable
 
 namespace {modelData.Namespace}
@@ -106,14 +106,14 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
 
         return $@" 
     {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
-    {(modelData.IsDeprecated ? $"[global::System.Obsolete(\"{(!string.IsNullOrWhiteSpace(modelData.DeprecationMessage) ? modelData.DeprecationMessage.ClearForCSharp() : "This model marked as deprecated.")}\")]" : " ")}
+    {(modelData.IsDeprecated ? $"[global::System.Obsolete(\"{(!string.IsNullOrWhiteSpace(modelData.DeprecationMessage) ? modelData.DeprecationMessage.ClearForCSharp() : "This model marked as deprecated.")}\")]" : TrimmedLine)}
     {(modelData.Settings.JsonSerializerType == JsonSerializerType.SystemTextJson && modelData.IsBaseClass ? @$" 
     [global::System.Text.Json.Serialization.JsonPolymorphic(
         TypeDiscriminatorPropertyName = ""{modelData.DiscriminatorPropertyName}"",
         IgnoreUnrecognizedTypeDiscriminators = true,
         UnknownDerivedTypeHandling = global::System.Text.Json.Serialization.JsonUnknownDerivedTypeHandling.FallBackToBaseType)]
 {modelData.DerivedTypes.Select(x => $@"
-    [global::System.Text.Json.Serialization.JsonDerivedType(typeof({modelData.Namespace}.{x.ClassName}), typeDiscriminator: ""{x.Discriminator}"")]").Inject()}" : " ")}
+    [global::System.Text.Json.Serialization.JsonDerivedType(typeof({modelData.Namespace}.{x.ClassName}), typeDiscriminator: ""{x.Discriminator}"")]").Inject()}" : TrimmedLine)}
     public{(modelData.IsBaseClass ? "" : " sealed")} partial class {modelData.ClassName}{(!string.IsNullOrWhiteSpace(modelData.BaseClass) ? $" : {modelData.BaseClass}" : "")}
     {{
 {properties.Select(property => @$"
@@ -123,7 +123,7 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         {jsonSerializer.GeneratePropertyAttribute(property.Id, property.IsRequired)}
         {jsonSerializer.GenerateConverterAttribute(property.ConverterType)}
         {(property.IsRequired ? jsonSerializer.GenerateRequiredAttribute() : string.Empty)}
-        {(modelData.IsDeprecated || (property.Type is { IsDeprecated: true, IsAnyOfLike: false } && !property.IsRequired) ? $"[global::System.Obsolete(\"{(!string.IsNullOrWhiteSpace(modelData.DeprecationMessage) ? modelData.DeprecationMessage.ClearForCSharp() : "This property marked as deprecated.")}\")]" : " ")}
+        {(modelData.IsDeprecated || (property.Type is { IsDeprecated: true, IsAnyOfLike: false } && !property.IsRequired) ? $"[global::System.Obsolete(\"{(!string.IsNullOrWhiteSpace(modelData.DeprecationMessage) ? modelData.DeprecationMessage.ClearForCSharp() : "This property marked as deprecated.")}\")]" : TrimmedLine)}
         public{(property.IsRequired ? requiredKeyword : "")} {property.Type.CSharpType} {property.Name} {{ get; set; }}{GetDefaultValue(property, isRequiredKeywordSupported)}
 ").Inject()}
 
@@ -131,7 +131,7 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         {"Additional properties that are not explicitly defined in the schema".ToXmlDocumentationSummary(level: 8)}
         {jsonSerializer.GenerateExtensionDataAttribute()}
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties{additionalPropertiesPostfix} {{ get; set; }} = new global::System.Collections.Generic.Dictionary<string, object>();
- " : " ")}
+ " : TrimmedLine)}
  
 {(properties.Any(static x => x.IsRequired || !x.IsDeprecated) ? $@"
         /// <summary>
@@ -141,11 +141,11 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
 {(modelData.Settings.UseSetsRequiredMembersAttributes is SdkFeatureUsage.Always or SdkFeatureUsage.InSupportedTargetFrameworks ? @$" 
 {(modelData.Settings.UseExperimentalAttributes is SdkFeatureUsage.InSupportedTargetFrameworks ? @" 
-#if NET7_0_OR_GREATER" : " ")}
+#if NET7_0_OR_GREATER" : TrimmedLine)}
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 {(modelData.Settings.UseExperimentalAttributes is SdkFeatureUsage.InSupportedTargetFrameworks ? @" 
-#endif" : " ")}
- " : " ")}
+#endif" : TrimmedLine)}
+ " : TrimmedLine)}
         public {modelData.ClassName}(
  {string.Join(",",
      properties.Where(static x => x.IsRequired).Select(x => $@"
@@ -160,7 +160,7 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
 {properties.Where(static x => x is { IsRequired: false, IsDeprecated: false }).Select(x => $@"
             this.{x.Name} = {x.ParameterName};").Inject()}
         }}
- " : " ")}
+ " : TrimmedLine)}
 {(properties.Any(static x => !x.IsDeprecated) ? $@"
         /// <summary>
         /// Initializes a new instance of the <see cref=""{modelData.ClassName}"" /> class.
@@ -168,7 +168,7 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         public {modelData.ClassName}()
         {{
         }}
- " : " ")}
+ " : TrimmedLine)}
     }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
 }

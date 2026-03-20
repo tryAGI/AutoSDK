@@ -57,7 +57,7 @@ namespace {client.Settings.Namespace}
                 ? "JsonSerializerOptions = JsonSerializerOptions,"
                 : "JsonSerializerContext = JsonSerializerContext,")}
         }};
-").Inject() : " ")}
+").Inject() : TrimmedLine)}
 
         /// <summary>
         /// Creates a new instance of the {client.ClassName}.
@@ -158,7 +158,7 @@ namespace {client.Settings.Namespace}
 {(client.Clients.Length != 0 ? "\n" + client.Clients.Select(x => $@"
         {x.Summary.ToXmlDocumentationSummary(level: 8)}
         public {x.Type.CSharpType} {x.Name} {{ get; }}
-").Inject() : " ")}
+").Inject() : TrimmedLine)}
 
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();

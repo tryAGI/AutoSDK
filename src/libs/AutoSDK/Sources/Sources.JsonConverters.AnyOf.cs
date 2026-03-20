@@ -63,7 +63,7 @@ public static partial class Sources
             if (!__value.Validate())
             {{
                 throw new global::System.Text.Json.JsonException($""Invalid JSON format for {anyOfData.SubType}<{string.Join(", ", anyOfData.Properties.Select(x => $"{{nameof({x.Type.CSharpTypeWithoutNullability})}}"))}>"");
-            }}" : " ")}";
+            }}" : TrimmedLine)}";
         }
         else if (hasPropertyInfo)
         {
@@ -146,7 +146,7 @@ public static partial class Sources
             if (!__value.Validate())
             {{
                 throw new global::System.Text.Json.JsonException($""Invalid JSON format for {anyOfData.SubType}<{string.Join(", ", anyOfData.Properties.Select(x => $"{{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"))}>"");
-            }}" : " ")}";
+            }}" : TrimmedLine)}";
         }
         else
         {
@@ -237,7 +237,7 @@ public static partial class Sources
             if (!__value.Validate())
             {{
                 throw new global::System.Text.Json.JsonException($""Invalid JSON format for {anyOfData.SubType}<{string.Join(", ", anyOfData.Properties.Select(x => $"{{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"))}>"");
-            }}" : " ")}";
+            }}" : TrimmedLine)}";
         }
 
         return $@"#nullable enable
@@ -255,7 +255,7 @@ namespace {anyOfData.Namespace}.JsonConverters
             global::System.Text.Json.JsonSerializerOptions options)
         {{
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));{(anyOfData.IsTrimming ? @"
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException(""TypeInfoResolver is not set."");" : " ")}
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException(""TypeInfoResolver is not set."");" : TrimmedLine)}
 
 {read}
 
@@ -269,13 +269,13 @@ namespace {anyOfData.Namespace}.JsonConverters
             global::System.Text.Json.JsonSerializerOptions options)
         {{
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));{(anyOfData.IsTrimming ? @"
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException(""TypeInfoResolver is not set."");" : " ")}
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException(""TypeInfoResolver is not set."");" : TrimmedLine)}
 {(anyOfData.Settings.ValidateAnyOfs ? @$"
 
             if (!value.Validate())
             {{
                 throw new global::System.Text.Json.JsonException($""Invalid {anyOfData.SubType}<{string.Join(", ", anyOfData.Properties.Select(x => $"{{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"))}> object."");
-            }}" : " ")}
+            }}" : TrimmedLine)}
 
 {anyOfData.Properties.Select((x, i) => $@" 
             {(i == 0 ? "" : "else ")}if (value.Is{x.Name})

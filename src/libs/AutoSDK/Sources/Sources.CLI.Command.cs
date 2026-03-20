@@ -48,12 +48,12 @@ namespace {endPoint.Settings.Namespace}
 {endPoint.Parameters.Select((x, i) => @$"
             {x.Type.CSharpType} {x.ParameterName},").Inject()}
 {(hasDirectRequestBody ? $@"
-            {endPoint.RequestType.CSharpType} request," : " ")}
+            {endPoint.RequestType.CSharpType} request," : TrimmedLine)}
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
 {(canReturn ? $@"
-            {endPoint.SuccessResponse.Type.CSharpType} response," : " ")}
+            {endPoint.SuccessResponse.Type.CSharpType} response," : TrimmedLine)}
             global::System.Threading.CancellationToken cancellationToken);
 
 {endPoint.Parameters.Where(x => x.IsRequired).Select((x, i) => @$"
@@ -78,7 +78,7 @@ namespace {endPoint.Settings.Namespace}
         {
             Description = @""The request body as JSON."",
         };
-" : " ")}
+" : TrimmedLine)}
 
         public {endPoint.NotAsyncMethodName}Command(
             {clientType} client,
@@ -94,7 +94,7 @@ namespace {endPoint.Settings.Namespace}
 {endPoint.Parameters.Where(x => !x.IsRequired).Select((x, i) => @$"
             Options.Add({x.Name.ToPropertyName()});").Inject()}
 {(hasDirectRequestBody ? @"
-            Arguments.Add(RequestBody);" : " ")}
+            Arguments.Add(RequestBody);" : TrimmedLine)}
 
             Initialize();
 
@@ -110,14 +110,14 @@ namespace {endPoint.Settings.Namespace}
 {(hasDirectRequestBody ? $@"
             var __requestBodyJson = parseResult.GetRequiredValue(RequestBody);
             var request = global::System.Text.Json.JsonSerializer.Deserialize<{endPoint.RequestType.CSharpTypeWithoutNullability}>(__requestBodyJson) ??
-                throw new global::System.InvalidOperationException(""Failed to deserialize request body."");" : " ")}
+                throw new global::System.InvalidOperationException(""Failed to deserialize request body."");" : TrimmedLine)}
 
             Validate(
                 parseResult: parseResult,
 {endPoint.Parameters.Select((x, i) => @$"
                 {x.ParameterName}: {x.ParameterName},").Inject()}
 {(hasDirectRequestBody ? @"
-                request: request," : " ")}
+                request: request," : TrimmedLine)}
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
@@ -129,13 +129,13 @@ namespace {endPoint.Settings.Namespace}
 {endPoint.Parameters.Select((x, i) => @$"
                 {x.ParameterName}: {x.ParameterName},").Inject()}
 {(hasDirectRequestBody ? @"
-                request: request," : " ")}
+                request: request," : TrimmedLine)}
                 cancellationToken: cancellationToken);
 
             Complete(
                 parseResult: parseResult,
 {(canReturn ? @"
-                response: response," : " ")}
+                response: response," : TrimmedLine)}
                 cancellationToken: cancellationToken);
         }}
     }}

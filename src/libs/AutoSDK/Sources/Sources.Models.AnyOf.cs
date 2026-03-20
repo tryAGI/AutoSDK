@@ -35,7 +35,7 @@ public static partial class Sources
 {(!anyOfData.IsNamed ||
   anyOfData.DiscriminatorType == null ||
   anyOfData.DiscriminatorPropertyName == null ||
-  anyOfData.Properties.Any(x => string.IsNullOrWhiteSpace(x.DiscriminatorValue)) ? " " : $@" 
+  anyOfData.Properties.Any(x => string.IsNullOrWhiteSpace(x.DiscriminatorValue)) ? TrimmedLine : $@" 
             {anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}{anyOfData.DiscriminatorPropertyName}? {anyOfData.DiscriminatorPropertyName.ToParameterName()},
  ")}
 {anyOfData.Properties.Select(x => $@" 
@@ -46,13 +46,13 @@ public static partial class Sources
 {(!anyOfData.IsNamed ||
   anyOfData.DiscriminatorType == null ||
   anyOfData.DiscriminatorPropertyName == null ||
-  anyOfData.Properties.Any(x => string.IsNullOrWhiteSpace(x.DiscriminatorValue)) ? " " : $@" 
+  anyOfData.Properties.Any(x => string.IsNullOrWhiteSpace(x.DiscriminatorValue)) ? TrimmedLine : $@" 
             {anyOfData.DiscriminatorPropertyName} = {anyOfData.DiscriminatorPropertyName.ToParameterName()};
 ")}
 {anyOfData.Properties.Select(x => $@" 
             {x.Name} = {x.ParameterName};
 ").Inject()}
-        }}" : " ";
+        }}" : TrimmedLine;
         var objectProperty =
             anyOfData.Properties.Any(x => x.ParameterName == "object") ||
             anyOfData.DiscriminatorPropertyName == "Object"
@@ -71,7 +71,7 @@ namespace {anyOfData.Namespace}
 {(!anyOfData.IsNamed ||
   anyOfData.DiscriminatorType == null ||
   anyOfData.DiscriminatorPropertyName == null ||
-  anyOfData.Properties.Any(x => string.IsNullOrWhiteSpace(x.DiscriminatorValue)) ? " " : $@" 
+  anyOfData.Properties.Any(x => string.IsNullOrWhiteSpace(x.DiscriminatorValue)) ? TrimmedLine : $@" 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public {anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}{anyOfData.DiscriminatorPropertyName}? {anyOfData.DiscriminatorPropertyName} {{ get; }}
 ")}

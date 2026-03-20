@@ -40,7 +40,7 @@ namespace {client.Settings.Namespace}
             typeof({x}),
 ").Inject()}
         }})]
-{(types.IsEmpty ? " " : GenerateJsonSerializableAttributes(client, types))}
+{(types.IsEmpty ? TrimmedLine : GenerateJsonSerializableAttributes(client, types))}
     public sealed partial class {contextClassName} : global::System.Text.Json.Serialization.JsonSerializerContext
     {{
     }}

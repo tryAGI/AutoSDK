@@ -51,7 +51,7 @@ namespace {endPoint.Settings.Namespace}
         partial void Process{endPoint.NotAsyncMethodName}Response(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
-{(string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType) || endPoint.Stream ? " " : $@"
+{(string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType) || endPoint.Stream ? TrimmedLine : $@"
         partial void Process{endPoint.NotAsyncMethodName}ResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -132,7 +132,7 @@ namespace {endPoint.Settings.Namespace}
     {
         if (endPoint.ForcedRequestStreamValue is null)
         {
-            return " ";
+            return TrimmedLine;
         }
 
         var requestParameters = endPoint.Parameters
@@ -140,16 +140,16 @@ namespace {endPoint.Settings.Namespace}
             .ToArray();
         if (!requestParameters.Any(IsRequestStreamParameter))
         {
-            return " ";
+            return TrimmedLine;
         }
 
         return @$"
             request = new {endPoint.RequestType.CSharpTypeWithoutNullability}
             {{
 {requestParameters.Select(x => $@"
-{(x.IsDeprecated ? "#pragma warning disable CS0618 // Type or member is obsolete" : " ")}
+{(x.IsDeprecated ? "#pragma warning disable CS0618 // Type or member is obsolete" : TrimmedLine)}
                 {GetRequestPropertyName(x)} = {GetPinnedRequestPropertyValue(endPoint, x, sourceRequestExpression)},
-{(x.IsDeprecated ? "#pragma warning restore CS0618 // Type or member is obsolete" : " ")}".TrimEnd()).Inject()}
+{(x.IsDeprecated ? "#pragma warning restore CS0618 // Type or member is obsolete" : TrimmedLine)}".TrimEnd()).Inject()}
             }};
  ".RemoveBlankLinesWhereOnlyWhitespaces();
     }
@@ -180,10 +180,10 @@ namespace {endPoint.Settings.Namespace}
             ? ";"
             : @$"
         {{
-{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) || endPoint.RequestType.IsAnyOfLike ? " " : @" 
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) || endPoint.RequestType.IsAnyOfLike ? TrimmedLine : @" 
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 ")}
-{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) || endPoint.RequestType.IsAnyOfLike ? " " : GeneratePinnedRequestCopy(endPoint, "request"))}
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) || endPoint.RequestType.IsAnyOfLike ? TrimmedLine : GeneratePinnedRequestCopy(endPoint, "request"))}
             PrepareArguments(
                 client: HttpClient);
             Prepare{endPoint.NotAsyncMethodName}Arguments(
@@ -203,7 +203,7 @@ namespace {endPoint.Settings.Namespace}
                 null => string.Empty," : $@"
                 {x.Type.CSharpTypeWithoutNullability}.{y.Property} => ""{y.Value}"",").Inject()}
                 _ => throw new global::System.NotImplementedException(""Enum value not implemented.""),
-            }};").Inject() : " ")}
+            }};").Inject() : TrimmedLine)}
 {GeneratePathAndQuery(endPoint)}
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: {GetHttpMethod(endPoint.HttpMethod)},
@@ -211,7 +211,7 @@ namespace {endPoint.Settings.Namespace}
 #if NET6_0_OR_GREATER
 {           // Use HTTP/3.0 or HTTP/2.0 if available
             // https://learn.microsoft.com/en-us/dotnet/core/extensions/httpclient-http3#httpclient-settings
-    " "}
+    TrimmedLine}
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
@@ -233,8 +233,8 @@ namespace {endPoint.Settings.Namespace}
                 {{
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }}
-            }}" : " ")}
-{(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : " ")}
+            }}" : TrimmedLine)}
+{(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : TrimmedLine)}
 {endPoint.Parameters
     .Where(x => x is { Location: ParameterLocation.Header, IsRequired: true })
     .Select(x => $@"
@@ -246,7 +246,7 @@ namespace {endPoint.Settings.Namespace}
             {{
                 __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum && !x.Type.IsAnyOfLike ? "?.ToValueString() ?? string.Empty" : ".ToString()")});
             }}").Inject()}
-{(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : " ")}
+{(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : TrimmedLine)}
  
 {GenerateRequestData(endPoint)}
 
@@ -270,7 +270,7 @@ namespace {endPoint.Settings.Namespace}
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 {(endPoint.RawStream ? @"
             try
-            {" : " ")}
+            {" : TrimmedLine)}
 
             ProcessResponse(
                 client: HttpClient,
@@ -285,14 +285,14 @@ namespace {endPoint.Settings.Namespace}
             {
                 __response.Dispose();
                 throw;
-            }" : " ")}
+            }" : TrimmedLine)}
         }}";
 
         return $@" 
         {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
 {endPoint.Parameters.Where(x => x.Location != null).Select(x => $@"
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
-{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @" 
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : @" 
         /// <param name=""request""></param>")}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::{endPoint.Settings.Namespace}.ApiException""></exception>{(string.IsNullOrWhiteSpace(endPoint.Remarks) ? "" : $@"
@@ -301,7 +301,7 @@ namespace {endPoint.Settings.Namespace}
         {(isInterface ? "" : "public async ")}{taskType} {endPoint.MethodName}(
 {endPoint.Parameters.Where(x => x is { Location: not null, IsRequired: true } && !x.HasSchemaDefault).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName},").Inject()}
-{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @$"
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : @$"
             {endPoint.RequestType.CSharpTypeWithoutNullability} request,")}
 {endPoint.Parameters.Where(x => x is { Location: not null } && (!x.IsRequired || x.HasSchemaDefault)).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}
@@ -553,20 +553,20 @@ namespace {endPoint.Settings.Namespace}
                 string? __content_{x.StatusCode} = null;
                 global::System.Exception? __exception_{x.StatusCode} = null;
 {(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@" 
-                {x.Type.CSharpTypeWithoutNullability}? __value_{x.StatusCode} = null;" : " ")}
+                {x.Type.CSharpTypeWithoutNullability}? __value_{x.StatusCode} = null;" : TrimmedLine)}
                 try
                 {{
                     if (ReadResponseAsString)
                     {{
                         __content_{x.StatusCode} = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 {(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@" 
-                        __value_{x.StatusCode} = {jsonSerializer.GenerateDeserializeCall($"__content_{x.StatusCode}", x.Type, endPoint.Settings.JsonSerializerContext)};" : " ")}
+                        __value_{x.StatusCode} = {jsonSerializer.GenerateDeserializeCall($"__content_{x.StatusCode}", x.Type, endPoint.Settings.JsonSerializerContext)};" : TrimmedLine)}
                     }}
                     else
                     {{
                         __content_{x.StatusCode} = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 {(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@"
-                        __value_{x.StatusCode} = {jsonSerializer.GenerateDeserializeCall($"__content_{x.StatusCode}", x.Type, endPoint.Settings.JsonSerializerContext)};" : " ")}
+                        __value_{x.StatusCode} = {jsonSerializer.GenerateDeserializeCall($"__content_{x.StatusCode}", x.Type, endPoint.Settings.JsonSerializerContext)};" : TrimmedLine)}
                     }}
                 }}
                 catch (global::System.Exception __ex)
@@ -583,13 +583,13 @@ namespace {endPoint.Settings.Namespace}
                 {{
                     ResponseBody = __content_{x.StatusCode},
 {(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@" 
-                    ResponseObject = __value_{x.StatusCode}," : " ")}
+                    ResponseObject = __value_{x.StatusCode}," : TrimmedLine)}
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
                         h => h.Value),
                 }};
-            }}").Inject() : " ";
+            }}").Inject() : TrimmedLine;
 
         if (endPoint.RawStream)
         {
@@ -656,19 +656,19 @@ namespace {endPoint.Settings.Namespace}
                 ProcessResponseContent(
                     client: HttpClient,
                     response: __response,
-                    content: ref __content);" : " ")}
+                    content: ref __content);" : TrimmedLine)}
 {(!string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType) ? @$" 
                 Process{endPoint.NotAsyncMethodName}ResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
-                    content: ref __content);" : " ")}
+                    content: ref __content);" : TrimmedLine)}
 
                 try
                 {{
                     __response.EnsureSuccessStatusCode();
 
 {(string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
-    ? " "
+    ? TrimmedLine
     : endPoint is { ContentType: ContentType.String, SuccessResponse.Type.CSharpTypeWithoutNullability: not "string" } ? $@" 
                     return
                         {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
@@ -685,7 +685,7 @@ namespace {endPoint.Settings.Namespace}
                         statusCode: __response.StatusCode)
                     {{
 {(endPoint.ContentType == ContentType.String ? $@" 
-                        ResponseBody = __content," : " ")}
+                        ResponseBody = __content," : TrimmedLine)}
                         ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                             __response.Headers,
                             h => h.Key,
@@ -717,7 +717,7 @@ namespace {endPoint.Settings.Namespace}
                     ).ConfigureAwait(false);
 
 {(string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
-    ? " "
+    ? TrimmedLine
     : endPoint is { ContentType: ContentType.String, SuccessResponse.Type.CSharpTypeWithoutNullability: not "string" } ? $@" 
                     return
                         {jsonSerializer.GenerateDeserializeFromStreamCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
@@ -760,7 +760,7 @@ namespace {endPoint.Settings.Namespace}
     {
         if (string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType))
         {
-            return " ";
+            return TrimmedLine;
         }
 
         var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
@@ -848,7 +848,7 @@ namespace {endPoint.Settings.Namespace}
             endPoint.RequestType.IsBinary ||
             endPoint.RequestType.CSharpTypeWithoutNullability is "string")
         {
-            return " ";
+            return TrimmedLine;
         }
 
         var taskType = endPoint.RawStream
@@ -878,9 +878,9 @@ namespace {endPoint.Settings.Namespace}
             var __request = new {endPoint.RequestType.CSharpTypeWithoutNullability}
             {{
 {endPoint.Parameters.Where(x => x.Location == null && (x.IsRequired || !x.IsDeprecated)).Select(x => $@"
-{(x.IsDeprecated ? "#pragma warning disable CS0618 // Type or member is obsolete" : " ")}
+{(x.IsDeprecated ? "#pragma warning disable CS0618 // Type or member is obsolete" : TrimmedLine)}
                 {GetRequestPropertyName(x)} = {(IsRequestStreamParameter(x) && endPoint.ForcedRequestStreamValue is bool forcedRequestStreamValue ? (forcedRequestStreamValue ? "true" : "false") : x.ParameterName)},
-{(x.IsDeprecated ? "#pragma warning restore CS0618 // Type or member is obsolete" : " ")}".TrimEnd()).Inject()}
+{(x.IsDeprecated ? "#pragma warning restore CS0618 // Type or member is obsolete" : TrimmedLine)}".TrimEnd()).Inject()}
             }};
 
             {response}{endPoint.MethodName}(
@@ -893,7 +893,7 @@ namespace {endPoint.Settings.Namespace}
             await foreach (var __response in __enumerable)
             {
                 yield return __response;
-            }" : " ")}
+            }" : TrimmedLine)}
         }}";
 
         var parameters = GetExtensionMethodParameters(endPoint).ToList();
@@ -922,7 +922,7 @@ namespace {endPoint.Settings.Namespace}
     {
         return @$" 
 {(endPoint.IsDeprecated ? $@" 
-        [global::System.Obsolete(""{(!string.IsNullOrWhiteSpace(endPoint.DeprecationMessage) ? endPoint.DeprecationMessage.ClearForCSharp() : "This method marked as deprecated.")}"")]" : " ")}
+        [global::System.Obsolete(""{(!string.IsNullOrWhiteSpace(endPoint.DeprecationMessage) ? endPoint.DeprecationMessage.ClearForCSharp() : "This method marked as deprecated.")}"")]" : TrimmedLine)}
  
 {(endPoint.Settings.UseExperimentalAttributes is
       SdkFeatureUsage.Always or
@@ -930,10 +930,10 @@ namespace {endPoint.Settings.Namespace}
     !string.IsNullOrWhiteSpace(endPoint.ExperimentalStage)
             ? $@" 
 {(endPoint.Settings.UseExperimentalAttributes is SdkFeatureUsage.InSupportedTargetFrameworks ? @" 
-#if NET8_0_OR_GREATER" : " ")}
+#if NET8_0_OR_GREATER" : TrimmedLine)}
         [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: ""{endPoint.Settings.Namespace.Replace(".", "_").ToUpperInvariant()}_{endPoint.ExperimentalStage.ToUpperInvariant()}_001"")]
 {(endPoint.Settings.UseExperimentalAttributes is SdkFeatureUsage.InSupportedTargetFrameworks ? @" 
-#endif" : " ")}"
-            : " ")}";
+#endif" : TrimmedLine)}"
+            : TrimmedLine)}";
     }
 }
