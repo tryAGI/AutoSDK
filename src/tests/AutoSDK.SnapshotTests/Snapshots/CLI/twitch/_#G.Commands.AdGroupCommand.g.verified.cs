@@ -7,9 +7,9 @@ namespace G
     internal sealed partial class AdGroupCommand : global::System.CommandLine.Command
     {
         public AdGroupCommand(
-            AdsStartCommercialCommand command0,
-            AdsGetAdScheduleCommand command1,
-            AdsSnoozeNextAdCommand command2)
+            AdsGetAdScheduleCommand command0,
+            AdsSnoozeNextAdCommand command1,
+            AdsStartCommercialCommand command2)
             : base(
                 name: "ad")
         {

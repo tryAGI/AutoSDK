@@ -7,9 +7,9 @@ namespace G
     internal sealed partial class StyleGroupCommand : global::System.CommandLine.Command
     {
         public StyleGroupCommand(
-            StyleListStylesCommand command0,
-            StyleCreateStyleCommand command1,
-            StyleDeleteStyleCommand command2)
+            StyleCreateStyleCommand command0,
+            StyleDeleteStyleCommand command1,
+            StyleListStylesCommand command2)
             : base(
                 name: "style")
         {

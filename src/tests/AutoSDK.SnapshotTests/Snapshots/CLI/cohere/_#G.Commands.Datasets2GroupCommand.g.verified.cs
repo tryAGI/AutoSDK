@@ -8,10 +8,10 @@ namespace G
     {
         public Datasets2GroupCommand(
             Datasets2CreateCommand command0,
-            Datasets2ListCommand command1,
-            Datasets2GetUsageCommand command2,
-            Datasets2GetCommand command3,
-            Datasets2DeleteCommand command4)
+            Datasets2DeleteCommand command1,
+            Datasets2GetCommand command2,
+            Datasets2GetUsageCommand command3,
+            Datasets2ListCommand command4)
             : base(
                 name: "datasets2")
         {

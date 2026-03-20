@@ -7,12 +7,12 @@ namespace G
     internal sealed partial class ApiKeyGroupCommand : global::System.CommandLine.Command
     {
         public ApiKeyGroupCommand(
-            ApiKeysApiKeysListCommand command0,
-            ApiKeysApiKeysCreateCommand command1,
-            ApiKeysApiKeysRetrieveCommand command2,
-            ApiKeysApiKeysUpdateCommand command3,
-            ApiKeysApiKeysPartialUpdateCommand command4,
-            ApiKeysApiKeysDestroyCommand command5)
+            ApiKeysApiKeysCreateCommand command0,
+            ApiKeysApiKeysDestroyCommand command1,
+            ApiKeysApiKeysListCommand command2,
+            ApiKeysApiKeysPartialUpdateCommand command3,
+            ApiKeysApiKeysRetrieveCommand command4,
+            ApiKeysApiKeysUpdateCommand command5)
             : base(
                 name: "apikey")
         {

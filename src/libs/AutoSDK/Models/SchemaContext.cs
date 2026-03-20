@@ -55,6 +55,7 @@ public class SchemaContext(
     public bool IsOperation => OperationPath != null;
     
     public TypeData TypeData { get; set; } = TypeData.Default;
+    private bool _dataComputed;
     
     public bool IsClass =>
         Type == "class" ||
@@ -399,25 +400,38 @@ public class SchemaContext(
         return [context, ..children];
     }
     
-    public void ComputeData(int level = 0, int maxDepth = 20, HashSet<SchemaContext>? visited = null)
+    public bool ComputeData(int level = 0, int maxDepth = 20, HashSet<SchemaContext>? visited = null)
     {
+        // Skip if already fully computed (memoization across all callers)
+        if (_dataComputed)
+        {
+            return true;
+        }
+
         // Prevent infinite recursion for circular references
         if (level > maxDepth)
         {
-            return;
+            return false;
         }
 
         visited ??= [];
         if (!visited.Add(this))
         {
-            return;
+            return false;
         }
 
-        ResolvedReference?.ComputeData(level + 1, maxDepth: maxDepth, visited: visited);
+        var fullyComputed = true;
+        if (ResolvedReference != null)
+        {
+            fullyComputed &= ResolvedReference.ComputeData(level + 1, maxDepth: maxDepth, visited: visited);
+        }
         foreach (var child in Children)
         {
-            child.ComputeData(level + 1, maxDepth: maxDepth, visited: visited);
+            fullyComputed &= child.ComputeData(level + 1, maxDepth: maxDepth, visited: visited);
         }
+
+        // Only memoize if no subtree was cut short by depth/cycle limits
+        _dataComputed = fullyComputed;
         
         TypeData = IsReference
             ? ResolvedReference?.TypeData ??
@@ -443,8 +457,10 @@ public class SchemaContext(
         {
             AnyOfData = global::AutoSDK.Models.AnyOfData.FromSchemaContext(this);
         }
+
+        return fullyComputed;
     }
-    
+
     public bool HasAnyTag(params string[] tags)
     {
         return

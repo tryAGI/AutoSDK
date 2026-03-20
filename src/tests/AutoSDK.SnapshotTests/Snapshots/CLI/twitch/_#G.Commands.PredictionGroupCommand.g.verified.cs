@@ -7,9 +7,9 @@ namespace G
     internal sealed partial class PredictionGroupCommand : global::System.CommandLine.Command
     {
         public PredictionGroupCommand(
-            PredictionsGetPredictionsCommand command0,
-            PredictionsCreatePredictionCommand command1,
-            PredictionsEndPredictionCommand command2)
+            PredictionsCreatePredictionCommand command0,
+            PredictionsEndPredictionCommand command1,
+            PredictionsGetPredictionsCommand command2)
             : base(
                 name: "prediction")
         {

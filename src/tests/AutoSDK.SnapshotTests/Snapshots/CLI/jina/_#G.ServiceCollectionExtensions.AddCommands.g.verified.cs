@@ -19,25 +19,25 @@ namespace G
         {
             // Register individual command services as singletons
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                EmbeddingsCreateEmbeddingV1EmbeddingsPostCommand>(services);
-            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                BulkEmbeddingsStartBulkEmbeddingV1BulkEmbeddingsPostCommand>(services);
-            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                BulkEmbeddingsRetrieveJobV1BulkEmbeddingsJobIdGetCommand>(services);
+                GatewayHealthGetCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 BulkEmbeddingsDownloadResultV1BulkEmbeddingsJobIdDownloadResultPostCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                RerankRankV1RerankPostCommand>(services);
+                BulkEmbeddingsRetrieveJobV1BulkEmbeddingsJobIdGetCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                ClassificationTrainV1TrainPostCommand>(services);
+                BulkEmbeddingsStartBulkEmbeddingV1BulkEmbeddingsPostCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 ClassificationClassifyV1ClassifyPostCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                MultiVectorCreateMultiVectorV1MultiVectorPostCommand>(services);
+                ClassificationTrainV1TrainPostCommand>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
+                EmbeddingsCreateEmbeddingV1EmbeddingsPostCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 MultiVectorCreateMultiVectorV1MultiEmbeddingsPostCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GatewayHealthGetCommand>(services);
+                MultiVectorCreateMultiVectorV1MultiVectorPostCommand>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
+                RerankRankV1RerankPostCommand>(services);
 
             // Register grouped command services as singletons
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<

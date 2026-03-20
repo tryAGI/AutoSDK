@@ -7,21 +7,21 @@ namespace G
     internal sealed partial class CorporaGroupCommand : global::System.CommandLine.Command
     {
         public CorporaGroupCommand(
-            CorporaCorporaListCommand command0,
-            CorporaCorporaCreateCommand command1,
-            CorporaCorporaRetrieveCommand command2,
-            CorporaCorporaUpdateCommand command3,
-            CorporaCorporaPartialUpdateCommand command4,
-            CorporaCorporaDestroyCommand command5,
-            CorporaCorporaQueryCommand command6,
-            CorporaCorporaSourcesListCommand command7,
-            CorporaCorporaSourcesCreateCommand command8,
-            CorporaCorporaSourcesRetrieveCommand command9,
-            CorporaCorporaSourcesUpdateCommand command10,
+            CorporaCorporaCreateCommand command0,
+            CorporaCorporaDestroyCommand command1,
+            CorporaCorporaListCommand command2,
+            CorporaCorporaPartialUpdateCommand command3,
+            CorporaCorporaQueryCommand command4,
+            CorporaCorporaRetrieveCommand command5,
+            CorporaCorporaSourcesCreateCommand command6,
+            CorporaCorporaSourcesDestroyCommand command7,
+            CorporaCorporaSourcesDocumentsListCommand command8,
+            CorporaCorporaSourcesDocumentsRetrieveCommand command9,
+            CorporaCorporaSourcesListCommand command10,
             CorporaCorporaSourcesPartialUpdateCommand command11,
-            CorporaCorporaSourcesDestroyCommand command12,
-            CorporaCorporaSourcesDocumentsListCommand command13,
-            CorporaCorporaSourcesDocumentsRetrieveCommand command14,
+            CorporaCorporaSourcesRetrieveCommand command12,
+            CorporaCorporaSourcesUpdateCommand command13,
+            CorporaCorporaUpdateCommand command14,
             CorporaCorporaUploadsCreateCommand command15)
             : base(
                 name: "corpora")

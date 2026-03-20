@@ -7,12 +7,12 @@ namespace G
     internal sealed partial class LeMUR2GroupCommand : global::System.CommandLine.Command
     {
         public LeMUR2GroupCommand(
-            LeMUR2TaskCommand command0,
-            LeMUR2SummaryCommand command1,
-            LeMUR2QuestionAnswerCommand command2,
-            LeMUR2ActionItemsCommand command3,
-            LeMUR2GetResponseCommand command4,
-            LeMUR2PurgeRequestDataCommand command5)
+            LeMUR2ActionItemsCommand command0,
+            LeMUR2GetResponseCommand command1,
+            LeMUR2PurgeRequestDataCommand command2,
+            LeMUR2QuestionAnswerCommand command3,
+            LeMUR2SummaryCommand command4,
+            LeMUR2TaskCommand command5)
             : base(
                 name: "lemur2")
         {

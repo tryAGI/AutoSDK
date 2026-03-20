@@ -7,10 +7,10 @@ namespace G
     internal sealed partial class GroupCommand : global::System.CommandLine.Command
     {
         public GroupCommand(
-            ModelsListCommand command0,
-            ModelsGetCommand command1,
-            BetaModelsListCommand command2,
-            BetaModelsGetCommand command3)
+            BetaModelsGetCommand command0,
+            BetaModelsListCommand command1,
+            ModelsGetCommand command2,
+            ModelsListCommand command3)
             : base(
                 name: "")
         {

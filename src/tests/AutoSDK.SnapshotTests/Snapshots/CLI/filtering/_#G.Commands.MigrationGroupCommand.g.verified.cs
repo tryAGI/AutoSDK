@@ -7,28 +7,28 @@ namespace G
     internal sealed partial class MigrationGroupCommand : global::System.CommandLine.Command
     {
         public MigrationGroupCommand(
-            MigrationsMigrationsListForOrgCommand command0,
-            MigrationsMigrationsStartForOrgCommand command1,
-            MigrationsMigrationsGetStatusForOrgCommand command2,
+            MigrationsMigrationsCancelImportCommand command0,
+            MigrationsMigrationsDeleteArchiveForAuthenticatedUserCommand command1,
+            MigrationsMigrationsDeleteArchiveForOrgCommand command2,
             MigrationsMigrationsDownloadArchiveForOrgCommand command3,
-            MigrationsMigrationsDeleteArchiveForOrgCommand command4,
-            MigrationsMigrationsUnlockRepoForOrgCommand command5,
-            MigrationsMigrationsListReposForOrgCommand command6,
-            MigrationsMigrationsGetImportStatusCommand command7,
-            MigrationsMigrationsStartImportCommand command8,
-            MigrationsMigrationsUpdateImportCommand command9,
-            MigrationsMigrationsCancelImportCommand command10,
-            MigrationsMigrationsGetCommitAuthorsCommand command11,
-            MigrationsMigrationsMapCommitAuthorCommand command12,
-            MigrationsMigrationsGetLargeFilesCommand command13,
-            MigrationsMigrationsSetLfsPreferenceCommand command14,
-            MigrationsMigrationsListForAuthenticatedUserCommand command15,
+            MigrationsMigrationsGetArchiveForAuthenticatedUserCommand command4,
+            MigrationsMigrationsGetCommitAuthorsCommand command5,
+            MigrationsMigrationsGetImportStatusCommand command6,
+            MigrationsMigrationsGetLargeFilesCommand command7,
+            MigrationsMigrationsGetStatusForAuthenticatedUserCommand command8,
+            MigrationsMigrationsGetStatusForOrgCommand command9,
+            MigrationsMigrationsListForAuthenticatedUserCommand command10,
+            MigrationsMigrationsListForOrgCommand command11,
+            MigrationsMigrationsListReposForAuthenticatedUserCommand command12,
+            MigrationsMigrationsListReposForOrgCommand command13,
+            MigrationsMigrationsMapCommitAuthorCommand command14,
+            MigrationsMigrationsSetLfsPreferenceCommand command15,
             MigrationsMigrationsStartForAuthenticatedUserCommand command16,
-            MigrationsMigrationsGetStatusForAuthenticatedUserCommand command17,
-            MigrationsMigrationsGetArchiveForAuthenticatedUserCommand command18,
-            MigrationsMigrationsDeleteArchiveForAuthenticatedUserCommand command19,
-            MigrationsMigrationsUnlockRepoForAuthenticatedUserCommand command20,
-            MigrationsMigrationsListReposForAuthenticatedUserCommand command21)
+            MigrationsMigrationsStartForOrgCommand command17,
+            MigrationsMigrationsStartImportCommand command18,
+            MigrationsMigrationsUnlockRepoForAuthenticatedUserCommand command19,
+            MigrationsMigrationsUnlockRepoForOrgCommand command20,
+            MigrationsMigrationsUpdateImportCommand command21)
             : base(
                 name: "migration")
         {

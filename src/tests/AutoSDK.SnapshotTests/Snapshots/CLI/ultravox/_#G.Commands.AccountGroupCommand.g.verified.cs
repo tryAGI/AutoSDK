@@ -8,8 +8,8 @@ namespace G
     {
         public AccountGroupCommand(
             AccountsAccountsListCommand command0,
-            AccountsAccountsMeRetrieveCommand command1,
-            AccountsAccountsMeBillingSubscriptionRetrieveCommand command2,
+            AccountsAccountsMeBillingSubscriptionRetrieveCommand command1,
+            AccountsAccountsMeRetrieveCommand command2,
             AccountsAccountsMeUsageCallsRetrieveCommand command3)
             : base(
                 name: "account")

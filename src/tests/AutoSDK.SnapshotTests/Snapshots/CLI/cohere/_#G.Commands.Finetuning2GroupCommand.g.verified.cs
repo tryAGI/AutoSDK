@@ -7,13 +7,13 @@ namespace G
     internal sealed partial class Finetuning2GroupCommand : global::System.CommandLine.Command
     {
         public Finetuning2GroupCommand(
-            Finetuning2ListFinetunedModelsCommand command0,
-            Finetuning2CreateFinetunedModelCommand command1,
-            Finetuning2UpdateFinetunedModelCommand command2,
-            Finetuning2GetFinetunedModelCommand command3,
-            Finetuning2DeleteFinetunedModelCommand command4,
-            Finetuning2ListEventsCommand command5,
-            Finetuning2ListTrainingStepMetricsCommand command6)
+            Finetuning2CreateFinetunedModelCommand command0,
+            Finetuning2DeleteFinetunedModelCommand command1,
+            Finetuning2GetFinetunedModelCommand command2,
+            Finetuning2ListEventsCommand command3,
+            Finetuning2ListFinetunedModelsCommand command4,
+            Finetuning2ListTrainingStepMetricsCommand command5,
+            Finetuning2UpdateFinetunedModelCommand command6)
             : base(
                 name: "finetuning2")
         {

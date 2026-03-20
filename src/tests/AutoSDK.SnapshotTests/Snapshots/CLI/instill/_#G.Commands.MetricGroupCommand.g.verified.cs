@@ -7,10 +7,10 @@ namespace G
     internal sealed partial class MetricGroupCommand : global::System.CommandLine.Command
     {
         public MetricGroupCommand(
-            MetricsListPipelineTriggerRecordsCommand command0,
-            MetricsListPipelineTriggerChartRecordsCommand command1,
-            MetricsListModelTriggerChartRecordsCommand command2,
-            MetricsListCreditConsumptionChartRecordsCommand command3)
+            MetricsListCreditConsumptionChartRecordsCommand command0,
+            MetricsListModelTriggerChartRecordsCommand command1,
+            MetricsListPipelineTriggerChartRecordsCommand command2,
+            MetricsListPipelineTriggerRecordsCommand command3)
             : base(
                 name: "metric")
         {

@@ -237,6 +237,8 @@ public static class Data
         
         var methods = filteredOperations
             .SelectMany(CreateEndPoints)
+            .OrderBy(m => m.Tag.SafeName, StringComparer.Ordinal)
+            .ThenBy(m => m.NotAsyncMethodName, StringComparer.Ordinal)
             .ToImmutableArray();
 
         if (settings.GenerateCli)

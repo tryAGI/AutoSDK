@@ -7,9 +7,9 @@ namespace G
     internal sealed partial class VideoTranslateApiGroupCommand : global::System.CommandLine.Command
     {
         public VideoTranslateApiGroupCommand(
-            VideoTranslateApiV2VideoTranslateTargetLanguagesCommand command0,
-            VideoTranslateApiV2VideoTranslateCommand command1,
-            VideoTranslateApiV2VideoTranslateIdStatusCommand command2)
+            VideoTranslateApiV2VideoTranslateCommand command0,
+            VideoTranslateApiV2VideoTranslateIdStatusCommand command1,
+            VideoTranslateApiV2VideoTranslateTargetLanguagesCommand command2)
             : base(
                 name: "videotranslateapi")
         {

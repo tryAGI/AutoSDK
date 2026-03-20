@@ -7,8 +7,8 @@ namespace G
     internal sealed partial class GameGroupCommand : global::System.CommandLine.Command
     {
         public GameGroupCommand(
-            GamesGetTopGamesCommand command0,
-            GamesGetGamesCommand command1)
+            GamesGetGamesCommand command0,
+            GamesGetTopGamesCommand command1)
             : base(
                 name: "game")
         {

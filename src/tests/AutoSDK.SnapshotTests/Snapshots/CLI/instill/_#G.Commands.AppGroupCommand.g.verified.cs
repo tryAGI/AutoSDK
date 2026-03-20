@@ -7,21 +7,21 @@ namespace G
     internal sealed partial class AppGroupCommand : global::System.CommandLine.Command
     {
         public AppGroupCommand(
-            AppAppPublicServiceListAppsCommand command0,
+            AppAppPublicServiceChatCommand command0,
             AppAppPublicServiceCreateAppCommand command1,
-            AppAppPublicServiceUpdateAppCommand command2,
-            AppAppPublicServiceDeleteAppCommand command3,
-            AppAppPublicServiceListConversationsCommand command4,
-            AppAppPublicServiceCreateConversationCommand command5,
-            AppAppPublicServiceUpdateConversationCommand command6,
-            AppAppPublicServiceDeleteConversationCommand command7,
-            AppAppPublicServiceListMessagesCommand command8,
-            AppAppPublicServiceCreateMessageCommand command9,
-            AppAppPublicServiceUpdateMessageCommand command10,
-            AppAppPublicServiceDeleteMessageCommand command11,
-            AppAppPublicServiceGetPlaygroundConversationCommand command12,
-            AppAppPublicServiceRestartPlaygroundConversationCommand command13,
-            AppAppPublicServiceChatCommand command14)
+            AppAppPublicServiceCreateConversationCommand command2,
+            AppAppPublicServiceCreateMessageCommand command3,
+            AppAppPublicServiceDeleteAppCommand command4,
+            AppAppPublicServiceDeleteConversationCommand command5,
+            AppAppPublicServiceDeleteMessageCommand command6,
+            AppAppPublicServiceGetPlaygroundConversationCommand command7,
+            AppAppPublicServiceListAppsCommand command8,
+            AppAppPublicServiceListConversationsCommand command9,
+            AppAppPublicServiceListMessagesCommand command10,
+            AppAppPublicServiceRestartPlaygroundConversationCommand command11,
+            AppAppPublicServiceUpdateAppCommand command12,
+            AppAppPublicServiceUpdateConversationCommand command13,
+            AppAppPublicServiceUpdateMessageCommand command14)
             : base(
                 name: "app")
         {

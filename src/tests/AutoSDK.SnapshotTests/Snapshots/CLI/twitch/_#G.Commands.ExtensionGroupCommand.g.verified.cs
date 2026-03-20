@@ -7,17 +7,17 @@ namespace G
     internal sealed partial class ExtensionGroupCommand : global::System.CommandLine.Command
     {
         public ExtensionGroupCommand(
-            ExtensionsGetExtensionConfigurationSegmentCommand command0,
-            ExtensionsSetExtensionConfigurationSegmentCommand command1,
-            ExtensionsSetExtensionRequiredConfigurationCommand command2,
-            ExtensionsSendExtensionPubsubMessageCommand command3,
-            ExtensionsGetExtensionLiveChannelsCommand command4,
-            ExtensionsGetExtensionSecretsCommand command5,
-            ExtensionsCreateExtensionSecretCommand command6,
+            ExtensionsCreateExtensionSecretCommand command0,
+            ExtensionsGetExtensionBitsProductsCommand command1,
+            ExtensionsGetExtensionConfigurationSegmentCommand command2,
+            ExtensionsGetExtensionLiveChannelsCommand command3,
+            ExtensionsGetExtensionSecretsCommand command4,
+            ExtensionsGetExtensionsCommand command5,
+            ExtensionsGetReleasedExtensionsCommand command6,
             ExtensionsSendExtensionChatMessageCommand command7,
-            ExtensionsGetExtensionsCommand command8,
-            ExtensionsGetReleasedExtensionsCommand command9,
-            ExtensionsGetExtensionBitsProductsCommand command10,
+            ExtensionsSendExtensionPubsubMessageCommand command8,
+            ExtensionsSetExtensionConfigurationSegmentCommand command9,
+            ExtensionsSetExtensionRequiredConfigurationCommand command10,
             ExtensionsUpdateExtensionBitsProductCommand command11)
             : base(
                 name: "extension")

@@ -7,23 +7,23 @@ namespace G
     internal sealed partial class ArtifactGroupCommand : global::System.CommandLine.Command
     {
         public ArtifactGroupCommand(
-            ArtifactListCatalogsCommand command0,
-            ArtifactCreateCatalogCommand command1,
-            ArtifactGetFileCatalogCommand command2,
-            ArtifactUpdateCatalogCommand command3,
-            ArtifactDeleteCatalogCommand command4,
-            ArtifactListCatalogFilesCommand command5,
-            ArtifactUploadCatalogFileCommand command6,
-            ArtifactDeleteCatalogFileCommand command7,
-            ArtifactProcessCatalogFilesCommand command8,
-            ArtifactListChunksCommand command9,
-            ArtifactGetSourceFileCommand command10,
-            ArtifactUpdateChunkCommand command11,
-            ArtifactSimilarityChunksSearchCommand command12,
-            ArtifactQuestionAnsweringCommand command13,
-            ArtifactListCatalogRunsCommand command14,
-            ArtifactGetObjectUploadURLCommand command15,
-            ArtifactGetObjectDownloadURLCommand command16)
+            ArtifactCreateCatalogCommand command0,
+            ArtifactDeleteCatalogCommand command1,
+            ArtifactDeleteCatalogFileCommand command2,
+            ArtifactGetFileCatalogCommand command3,
+            ArtifactGetObjectDownloadURLCommand command4,
+            ArtifactGetObjectUploadURLCommand command5,
+            ArtifactGetSourceFileCommand command6,
+            ArtifactListCatalogFilesCommand command7,
+            ArtifactListCatalogRunsCommand command8,
+            ArtifactListCatalogsCommand command9,
+            ArtifactListChunksCommand command10,
+            ArtifactProcessCatalogFilesCommand command11,
+            ArtifactQuestionAnsweringCommand command12,
+            ArtifactSimilarityChunksSearchCommand command13,
+            ArtifactUpdateCatalogCommand command14,
+            ArtifactUpdateChunkCommand command15,
+            ArtifactUploadCatalogFileCommand command16)
             : base(
                 name: "artifact")
         {

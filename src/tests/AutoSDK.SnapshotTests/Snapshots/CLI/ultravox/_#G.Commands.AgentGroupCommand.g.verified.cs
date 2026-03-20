@@ -7,13 +7,13 @@ namespace G
     internal sealed partial class AgentGroupCommand : global::System.CommandLine.Command
     {
         public AgentGroupCommand(
-            AgentsAgentsListCommand command0,
-            AgentsAgentsCreateCommand command1,
-            AgentsAgentsRetrieveCommand command2,
-            AgentsAgentsPartialUpdateCommand command3,
-            AgentsAgentsDestroyCommand command4,
-            AgentsAgentsCallsListCommand command5,
-            AgentsAgentsCallsCreateCommand command6)
+            AgentsAgentsCallsCreateCommand command0,
+            AgentsAgentsCallsListCommand command1,
+            AgentsAgentsCreateCommand command2,
+            AgentsAgentsDestroyCommand command3,
+            AgentsAgentsListCommand command4,
+            AgentsAgentsPartialUpdateCommand command5,
+            AgentsAgentsRetrieveCommand command6)
             : base(
                 name: "agent")
         {

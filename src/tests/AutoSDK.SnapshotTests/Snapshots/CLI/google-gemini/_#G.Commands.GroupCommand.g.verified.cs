@@ -7,18 +7,18 @@ namespace G
     internal sealed partial class GroupCommand : global::System.CommandLine.Command
     {
         public GroupCommand(
-            ListModelsCommand command0,
-            GetModelCommand command1,
-            GenerateContentCommand command2,
-            EmbedContentCommand command3,
-            BatchEmbedContentsCommand command4,
-            CountTokensCommand command5,
+            BatchEmbedContentsCommand command0,
+            CancelTunedModelOperationCommand command1,
+            CountTokensCommand command2,
+            DeleteOperationCommand command3,
+            EmbedContentCommand command4,
+            GenerateContentCommand command5,
             GenerateContentTunedModelCommand command6,
-            ListTunedModelOperationsCommand command7,
+            GetModelCommand command7,
             GetTunedModelOperationCommand command8,
-            CancelTunedModelOperationCommand command9,
+            ListModelsCommand command9,
             ListOperationsCommand command10,
-            DeleteOperationCommand command11)
+            ListTunedModelOperationsCommand command11)
             : base(
                 name: "")
         {

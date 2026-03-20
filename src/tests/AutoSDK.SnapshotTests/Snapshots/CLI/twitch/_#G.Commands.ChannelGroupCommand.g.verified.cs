@@ -7,11 +7,11 @@ namespace G
     internal sealed partial class ChannelGroupCommand : global::System.CommandLine.Command
     {
         public ChannelGroupCommand(
-            ChannelsGetChannelInformationCommand command0,
-            ChannelsModifyChannelInformationCommand command1,
-            ChannelsGetChannelEditorsCommand command2,
+            ChannelsGetChannelEditorsCommand command0,
+            ChannelsGetChannelFollowersCommand command1,
+            ChannelsGetChannelInformationCommand command2,
             ChannelsGetFollowedChannelsCommand command3,
-            ChannelsGetChannelFollowersCommand command4)
+            ChannelsModifyChannelInformationCommand command4)
             : base(
                 name: "channel")
         {

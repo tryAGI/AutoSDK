@@ -7,19 +7,19 @@ namespace G
     internal sealed partial class ChatGroupCommand : global::System.CommandLine.Command
     {
         public ChatGroupCommand(
-            ChatGetChattersCommand command0,
+            ChatGetChannelChatBadgesCommand command0,
             ChatGetChannelEmotesCommand command1,
-            ChatGetGlobalEmotesCommand command2,
-            ChatGetEmoteSetsCommand command3,
-            ChatGetChannelChatBadgesCommand command4,
+            ChatGetChatSettingsCommand command2,
+            ChatGetChattersCommand command3,
+            ChatGetEmoteSetsCommand command4,
             ChatGetGlobalChatBadgesCommand command5,
-            ChatGetChatSettingsCommand command6,
-            ChatUpdateChatSettingsCommand command7,
+            ChatGetGlobalEmotesCommand command6,
+            ChatGetUserChatColorCommand command7,
             ChatGetUserEmotesCommand command8,
-            ChatSendChatAnnouncementCommand command9,
-            ChatSendAShoutoutCommand command10,
+            ChatSendAShoutoutCommand command9,
+            ChatSendChatAnnouncementCommand command10,
             ChatSendChatMessageCommand command11,
-            ChatGetUserChatColorCommand command12,
+            ChatUpdateChatSettingsCommand command12,
             ChatUpdateUserChatColorCommand command13)
             : base(
                 name: "chat")

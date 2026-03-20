@@ -7,10 +7,10 @@ namespace G
     internal sealed partial class MessageGroupCommand : global::System.CommandLine.Command
     {
         public MessageGroupCommand(
-            MessagesMessagesPostCommand command0,
-            MessagesMessagesCountTokensPostCommand command1,
-            MessagesBetaMessagesPostCommand command2,
-            MessagesBetaMessagesCountTokensPostCommand command3)
+            MessagesBetaMessagesCountTokensPostCommand command0,
+            MessagesBetaMessagesPostCommand command1,
+            MessagesMessagesCountTokensPostCommand command2,
+            MessagesMessagesPostCommand command3)
             : base(
                 name: "message")
         {

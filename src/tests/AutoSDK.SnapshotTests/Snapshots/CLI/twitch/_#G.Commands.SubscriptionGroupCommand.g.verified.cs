@@ -7,8 +7,8 @@ namespace G
     internal sealed partial class SubscriptionGroupCommand : global::System.CommandLine.Command
     {
         public SubscriptionGroupCommand(
-            SubscriptionsGetBroadcasterSubscriptionsCommand command0,
-            SubscriptionsCheckUserSubscriptionCommand command1)
+            SubscriptionsCheckUserSubscriptionCommand command0,
+            SubscriptionsGetBroadcasterSubscriptionsCommand command1)
             : base(
                 name: "subscription")
         {

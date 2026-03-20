@@ -8,14 +8,14 @@ namespace G
     {
         public GroupCommand(
             ChatCommand command0,
-            GenerateCommand command1,
-            EmbedCommand command2,
-            RerankCommand command3,
-            ClassifyCommand command4,
-            SummarizeCommand command5,
-            TokenizeCommand command6,
-            DetokenizeCommand command7,
-            CheckAPIKeyCommand command8)
+            CheckAPIKeyCommand command1,
+            ClassifyCommand command2,
+            DetokenizeCommand command3,
+            EmbedCommand command4,
+            GenerateCommand command5,
+            RerankCommand command6,
+            SummarizeCommand command7,
+            TokenizeCommand command8)
             : base(
                 name: "")
         {

@@ -7,13 +7,13 @@ namespace G
     internal sealed partial class ToolGroupCommand : global::System.CommandLine.Command
     {
         public ToolGroupCommand(
-            ToolsToolsListCommand command0,
-            ToolsToolsCreateCommand command1,
-            ToolsToolsRetrieveCommand command2,
-            ToolsToolsUpdateCommand command3,
-            ToolsToolsDestroyCommand command4,
-            ToolsToolsHistoryListCommand command5,
-            ToolsToolsTestCreateCommand command6)
+            ToolsToolsCreateCommand command0,
+            ToolsToolsDestroyCommand command1,
+            ToolsToolsHistoryListCommand command2,
+            ToolsToolsListCommand command3,
+            ToolsToolsRetrieveCommand command4,
+            ToolsToolsTestCreateCommand command5,
+            ToolsToolsUpdateCommand command6)
             : base(
                 name: "tool")
         {

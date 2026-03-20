@@ -7,8 +7,8 @@ namespace G
     internal sealed partial class OrganizationGroupCommand : global::System.CommandLine.Command
     {
         public OrganizationGroupCommand(
-            OrganizationGetOrganizationCommand command0,
-            OrganizationCreateOrganizationUsageCommand command1)
+            OrganizationCreateOrganizationUsageCommand command0,
+            OrganizationGetOrganizationCommand command1)
             : base(
                 name: "organization")
         {

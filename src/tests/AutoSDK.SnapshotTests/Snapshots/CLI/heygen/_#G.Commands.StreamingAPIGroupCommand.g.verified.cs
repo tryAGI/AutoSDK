@@ -7,15 +7,15 @@ namespace G
     internal sealed partial class StreamingApiGroupCommand : global::System.CommandLine.Command
     {
         public StreamingApiGroupCommand(
-            StreamingApiStreamingNewCommand command0,
-            StreamingApiStreamingStartCommand command1,
-            StreamingApiStreamingListCommand command2,
-            StreamingApiStreamingIceCommand command3,
-            StreamingApiStreamingTaskCommand command4,
-            StreamingApiStreamingStopCommand command5,
-            StreamingApiStreamingInterruptCommand command6,
-            StreamingApiStreamingCreateTokenCommand command7,
-            StreamingApiStreamingAvatarListCommand command8)
+            StreamingApiStreamingAvatarListCommand command0,
+            StreamingApiStreamingCreateTokenCommand command1,
+            StreamingApiStreamingIceCommand command2,
+            StreamingApiStreamingInterruptCommand command3,
+            StreamingApiStreamingListCommand command4,
+            StreamingApiStreamingNewCommand command5,
+            StreamingApiStreamingStartCommand command6,
+            StreamingApiStreamingStopCommand command7,
+            StreamingApiStreamingTaskCommand command8)
             : base(
                 name: "streamingapi")
         {
