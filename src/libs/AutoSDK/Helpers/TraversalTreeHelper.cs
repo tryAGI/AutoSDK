@@ -37,7 +37,9 @@ public static class TraversalTreeHelper
         var operations = new List<(string OperationPath, System.Net.Http.HttpMethod OperationType, OpenApiOperation Operation)>();
         foreach (var path in paths)
         {
-            foreach (var op in path.Value.Operations ?? new Dictionary<System.Net.Http.HttpMethod, OpenApiOperation>())
+            var pathOps = path.Value.Operations;
+            if (pathOps == null) continue;
+            foreach (var op in pathOps)
             {
                 if (settings.UseExtensionNaming &&
                     (OpenApiExtensions.GetExtensionBooleanValue(op.Value.Extensions, "x-fern-ignore") ||
@@ -56,8 +58,9 @@ public static class TraversalTreeHelper
         // Request bodies
         foreach (var (operationPath, operationType, operation) in operations)
         {
-            if (operation.RequestBody == null) continue;
-            foreach (var content in operation.RequestBody.Content ?? new Dictionary<string, IOpenApiMediaType>())
+            var requestContent = operation.RequestBody?.Content;
+            if (requestContent == null) continue;
+            foreach (var content in requestContent)
             {
                 if (content.Value.Schema != null)
                 {
@@ -77,7 +80,9 @@ public static class TraversalTreeHelper
         // Parameters (schema)
         foreach (var (operationPath, operationType, operation) in operations)
         {
-            foreach (var param in operation.Parameters ?? [])
+            var parameters = operation.Parameters;
+            if (parameters == null) continue;
+            foreach (var param in parameters)
             {
                 if (param.Schema != null)
                 {
@@ -98,9 +103,13 @@ public static class TraversalTreeHelper
         // Parameters (content)
         foreach (var (operationPath, operationType, operation) in operations)
         {
-            foreach (var param in operation.Parameters ?? [])
+            var parameters = operation.Parameters;
+            if (parameters == null) continue;
+            foreach (var param in parameters)
             {
-                foreach (var content in param.Content ?? new Dictionary<string, IOpenApiMediaType>())
+                var paramContent = param.Content;
+                if (paramContent == null) continue;
+                foreach (var content in paramContent)
                 {
                     if (content.Value.Schema != null)
                     {
@@ -122,9 +131,13 @@ public static class TraversalTreeHelper
         // Responses
         foreach (var (operationPath, operationType, operation) in operations)
         {
-            foreach (var response in operation.Responses ?? new Dictionary<string, IOpenApiResponse>())
+            var responses = operation.Responses;
+            if (responses == null) continue;
+            foreach (var response in responses)
             {
-                foreach (var content in response.Value.Content ?? new Dictionary<string, IOpenApiMediaType>())
+                var responseContent = response.Value.Content;
+                if (responseContent == null) continue;
+                foreach (var content in responseContent)
                 {
                     if (content.Value.Schema != null)
                     {
@@ -146,7 +159,7 @@ public static class TraversalTreeHelper
 
         return result;
     }
-    
+
     public static IReadOnlyList<OperationContext> GetOperations(
         this OpenApiDocument openApiDocument,
         Settings settings,
@@ -156,21 +169,34 @@ public static class TraversalTreeHelper
     {
         openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
 
-        return openApiDocument.Paths?
-            .SelectMany(x => (x.Value.Operations ?? new Dictionary<System.Net.Http.HttpMethod, OpenApiOperation>())
+        var pathItems = openApiDocument.Paths;
+        if (pathItems == null) return [];
+
+        var results = new List<OperationContext>();
+        foreach (var path in pathItems)
+        {
+            var pathOps = path.Value.Operations;
+            if (pathOps == null) continue;
+            foreach (var op in pathOps)
+            {
                 // Skip operations marked with x-fern-ignore: true or x-hidden: true (opt-in via UseExtensionNaming)
-                .Where(y => !settings.UseExtensionNaming ||
-                            (!OpenApiExtensions.GetExtensionBooleanValue(y.Value.Extensions, "x-fern-ignore") &&
-                             !OpenApiExtensions.GetExtensionBooleanValue(y.Value.Extensions, "x-hidden")))
-                .Select(y => OperationContext.FromOperation(
+                if (settings.UseExtensionNaming &&
+                    (OpenApiExtensions.GetExtensionBooleanValue(op.Value.Extensions, "x-fern-ignore") ||
+                     OpenApiExtensions.GetExtensionBooleanValue(op.Value.Extensions, "x-hidden")))
+                {
+                    continue;
+                }
+                results.Add(OperationContext.FromOperation(
                     settings: settings,
                     globalSettings: globalSettings,
-                    operation: y.Value,
-                    operationPath: x.Key,
-                    operationType: y.Key,
+                    operation: op.Value,
+                    operationPath: path.Key,
+                    operationType: op.Key,
                     filteredSchemas: filteredSchemas,
                     globalSecurityRequirements: openApiDocument.Security ?? [],
-                    resolvedTags: resolvedTags)))
-            .ToArray() ?? [];
+                    resolvedTags: resolvedTags));
+            }
+        }
+        return results;
     }
 }

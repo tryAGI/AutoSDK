@@ -140,18 +140,14 @@ public record struct TypeData(
         }
 
         var properties = ImmutableArray<string>.Empty;
-        if (context.Schema.ResolveIfRequired() is { } referenceSchema)
+        if (context.Schema.ResolveIfRequired() is { Properties: { Count: > 0 } props })
         {
-            var props = referenceSchema.Properties ?? new Dictionary<string, IOpenApiSchema>();
-            if (props.Count > 0)
+            var builder = ImmutableArray.CreateBuilder<string>(props.Count);
+            foreach (var kvp in props)
             {
-                var builder = ImmutableArray.CreateBuilder<string>(props.Count);
-                foreach (var kvp in props)
-                {
-                    builder.Add(kvp.Key);
-                }
-                properties = builder.MoveToImmutable();
+                builder.Add(kvp.Key);
             }
+            properties = builder.MoveToImmutable();
         }
 
         var subTypes = ImmutableArray<TypeData>.Empty;

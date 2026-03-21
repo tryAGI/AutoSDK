@@ -33,16 +33,22 @@ public static class StringExtensions
     /// <exception cref="ArgumentException"></exception>
     public static string ToPropertyName(this string input)
     {
-        return input switch
-        {
-            null => throw new ArgumentNullException(nameof(input)),
-            "" => string.Empty,
+        if (input is null) throw new ArgumentNullException(nameof(input));
+        if (input.Length == 0) return string.Empty;
+
+        var upper = char.ToUpperInvariant(input[0]);
+        // Fast path: if first char is already uppercase, return as-is
+        if (upper == input[0]) return input;
+
 #if NET6_0_OR_GREATER
-            _ => string.Concat(input[0].ToString().ToUpper(CultureInfo.InvariantCulture), input.AsSpan(1)),
+        return string.Create(input.Length, (upper, input), static (span, state) =>
+        {
+            span[0] = state.upper;
+            state.input.AsSpan(1).CopyTo(span[1..]);
+        });
 #else
-            _ => input[0].ToString().ToUpper(CultureInfo.InvariantCulture) + input.Substring(1),
+        return upper + input.Substring(1);
 #endif
-        };
     }
     
     /// <summary>
@@ -58,20 +64,30 @@ public static class StringExtensions
         {
             null => throw new ArgumentNullException(nameof(input)),
             "" => string.Empty,
-            "Event" => "@event",
-            "event" => "@event",
-            "Object" => "@object",
-            "object" => "@object",
-            "Namespace" => "@namespace",
-            "namespace" => "@namespace",
-#pragma warning disable CA1308 // Normalize strings to uppercase
-#if NET6_0_OR_GREATER
-            _ => string.Concat(input[0].ToString().ToLower(CultureInfo.InvariantCulture), input.AsSpan(1)),
-#else
-            _ => input[0].ToString().ToLower(CultureInfo.InvariantCulture) + input.Substring(1),
-#endif
-#pragma warning restore CA1308 // Normalize strings to uppercase
+            "Event" or "event" => "@event",
+            "Object" or "object" => "@object",
+            "Namespace" or "namespace" => "@namespace",
+            _ => ToParameterNameCore(input),
         };
+
+#pragma warning disable CA1308 // Normalize strings to uppercase
+        static string ToParameterNameCore(string input)
+        {
+            var lower = char.ToLowerInvariant(input[0]);
+            // Fast path: if first char is already lowercase, return as-is
+            if (lower == input[0]) return input;
+
+#if NET6_0_OR_GREATER
+            return string.Create(input.Length, (lower, input), static (span, state) =>
+            {
+                span[0] = state.lower;
+                state.input.AsSpan(1).CopyTo(span[1..]);
+            });
+#else
+            return lower + input.Substring(1);
+#endif
+        }
+#pragma warning restore CA1308 // Normalize strings to uppercase
     }
     
     /// <summary>
@@ -283,7 +299,7 @@ public static class StringExtensions
         if (!hasSeparator)
         {
             // Handle all-caps single words (e.g. "SUCCEEDED" → "Succeeded")
-            if (propertyName.Length > 1 && propertyName == propertyName.ToUpperInvariant())
+            if (propertyName.Length > 1 && IsAllUpperCase(propertyName))
             {
                 return NormalizeAllCapsWord(propertyName);
             }
@@ -295,9 +311,25 @@ public static class StringExtensions
             string.Empty,
             propertyName
                 .Split(separator)
-                .Select(word => word.Length > 1 && word == word.ToUpperInvariant()
+                .Select(word => word.Length > 1 && IsAllUpperCase(word)
                     ? NormalizeAllCapsWord(word)
                     : word.ToPropertyName()));
+    }
+
+    /// <summary>
+    /// Non-allocating check for whether a string is all uppercase letters.
+    /// Replaces the pattern <c>s == s.ToUpperInvariant()</c> which allocates a full copy.
+    /// </summary>
+    private static bool IsAllUpperCase(string value)
+    {
+        for (var i = 0; i < value.Length; i++)
+        {
+            if (char.IsLetter(value[i]) && !char.IsUpper(value[i]))
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     private static string NormalizeAllCapsWord(string value)

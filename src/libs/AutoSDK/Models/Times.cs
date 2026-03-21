@@ -1,6 +1,7 @@
 namespace AutoSDK.Models;
 
 public record struct Times(
+    TimeSpan Parsing,
     TimeSpan TraversalTree,
     TimeSpan Naming,
     TimeSpan ResolveReferences,
@@ -8,6 +9,7 @@ public record struct Times(
     TimeSpan ComputeData,
     TimeSpan ComputeDataClasses,
     TimeSpan Total,
+    long AllocParsing = 0,
     long AllocTraversalTree = 0,
     long AllocNaming = 0,
     long AllocResolveReferences = 0,

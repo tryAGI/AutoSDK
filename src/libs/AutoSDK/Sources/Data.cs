@@ -20,8 +20,8 @@ public static class Data
 #if NET
         var allocBefore = GC.GetTotalAllocatedBytes(precise: true);
 #endif
-        var traversalTreeTime = Stopwatch.StartNew();
-        
+        var parsingTime = Stopwatch.StartNew();
+
         var ((text, settings), globalSettings) = tuple;
 
         // Detect spec format and delegate to AsyncAPI pipeline if needed
@@ -32,8 +32,15 @@ public static class Data
 
         var openApiDocument = text.GetOpenApiDocument(settings, cancellationToken);
 
+        parsingTime.Stop();
+#if NET
+        var allocAfterParsing = GC.GetTotalAllocatedBytes(precise: true);
+#endif
+
+        var traversalTreeTime = Stopwatch.StartNew();
+
         var schemas = openApiDocument.GetSchemas(settings);
-        
+
         traversalTreeTime.Stop();
 #if NET
         var allocAfterTree = GC.GetTotalAllocatedBytes(precise: true);
@@ -454,6 +461,7 @@ public static class Data
             Schemas: schemas,
             FilteredSchemas: filteredSchemas,
             Times: new Times(
+                Parsing: parsingTime.Elapsed,
                 TraversalTree: traversalTreeTime.Elapsed,
                 Naming: namingTime.Elapsed,
                 ResolveReferences: resolveReferencesTime.Elapsed,
@@ -463,7 +471,8 @@ public static class Data
                 Total: totalTime.Elapsed
 #if NET
                 ,
-                AllocTraversalTree: allocAfterTree - allocBefore,
+                AllocParsing: allocAfterParsing - allocBefore,
+                AllocTraversalTree: allocAfterTree - allocAfterParsing,
                 AllocNaming: allocAfterNaming - allocAfterTree,
                 AllocResolveReferences: allocAfterResolve - allocAfterNaming,
                 AllocFiltering: allocAfterFilter - allocAfterResolve,

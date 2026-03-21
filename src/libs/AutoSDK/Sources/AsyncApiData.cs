@@ -203,6 +203,7 @@ public static class AsyncApiData
             Schemas: schemas,
             FilteredSchemas: filteredSchemas,
             Times: new Times(
+                Parsing: TimeSpan.Zero,
                 TraversalTree: traversalTreeTime.Elapsed,
                 Naming: namingTime.Elapsed,
                 ResolveReferences: resolveReferencesTime.Elapsed,
