@@ -267,6 +267,145 @@ public partial class DataTests
     }
 
     [TestMethod]
+    public void Issue161_DiscriminatorBasedRequestBody_DoesNotGenerateNonCompilingOverload()
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateModels = true,
+            GenerateSdk = true,
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            TargetFramework = "net8.0",
+        };
+        const string yaml = """
+                            openapi: 3.0.0
+                            info:
+                              title: Repro
+                              version: 1.0.0
+                            paths:
+                              /pets:
+                                post:
+                                  operationId: createPet
+                                  requestBody:
+                                    required: true
+                                    content:
+                                      application/json:
+                                        schema:
+                                          $ref: '#/components/schemas/PetRequest'
+                                  responses:
+                                    '200':
+                                      description: ok
+                                      content:
+                                        application/json:
+                                          schema:
+                                            type: string
+                            components:
+                              schemas:
+                                PetRequest:
+                                  type: object
+                                  properties:
+                                    type:
+                                      type: string
+                                      default: cat
+                                  discriminator:
+                                    propertyName: type
+                                    mapping:
+                                      cat: '#/components/schemas/CatRequest'
+                                      dog: '#/components/schemas/DogRequest'
+                                  oneOf:
+                                    - $ref: '#/components/schemas/CatRequest'
+                                    - $ref: '#/components/schemas/DogRequest'
+                                CatRequest:
+                                  type: object
+                                  properties:
+                                    type:
+                                      type: string
+                                      default: cat
+                                    name:
+                                      type: string
+                                  required: [name]
+                                DogRequest:
+                                  type: object
+                                  properties:
+                                    type:
+                                      type: string
+                                      default: dog
+                                    bark:
+                                      type: boolean
+                                  required: [bark]
+                            """;
+
+        var data = Data.Prepare(((yaml, settings), GlobalSettings: settings));
+        var requestModel = data.Classes.Single(x => x.ClassName == "PetRequest");
+        var endPoint = data.Methods.Should().ContainSingle().Subject;
+        var generatedEndPoint = Sources.GenerateEndPoint(endPoint);
+
+        // PetRequest is a discriminator base class with empty visible properties
+        requestModel.IsBaseClass.Should().BeTrue();
+        requestModel.Properties.Should().BeEmpty();
+
+        // The primary method should accept typed PetRequest parameter
+        endPoint.RequestType.CSharpTypeWithoutNullability.Should().Be("global::G.PetRequest");
+        generatedEndPoint.Should().Contain("global::G.PetRequest request");
+
+        // No convenience overload that would reference the non-existent Type property
+        generatedEndPoint.Should().NotContain("Type = type");
+        generatedEndPoint.Should().NotContain(" string type,");
+        generatedEndPoint.Should().NotContain("string? type");
+    }
+
+    [TestMethod]
+    public void NonDiscriminator_EmptyBodyParams_StillGeneratesConvenienceOverload()
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateModels = true,
+            GenerateSdk = true,
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            TargetFramework = "net8.0",
+        };
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: test
+                              version: 1.0.0
+                            paths:
+                              /ping:
+                                post:
+                                  operationId: sendPing
+                                  requestBody:
+                                    required: true
+                                    content:
+                                      application/json:
+                                        schema:
+                                          $ref: '#/components/schemas/PingRequest'
+                                  responses:
+                                    '200':
+                                      description: ok
+                            components:
+                              schemas:
+                                PingRequest:
+                                  type: object
+                                  properties:
+                                    version:
+                                      type: string
+                                      const: "1.0"
+                            """;
+
+        var data = Data.Prepare(((yaml, settings), GlobalSettings: settings));
+        var requestModel = data.Classes.Single(x => x.ClassName == "PingRequest");
+        var endPoint = data.Methods.Should().ContainSingle().Subject;
+        var generatedEndPoint = Sources.GenerateEndPoint(endPoint);
+
+        // Not a base class — regular type with all-const properties
+        requestModel.IsBaseClass.Should().BeFalse();
+
+        // Convenience overload should still be generated (constructs PingRequest for caller)
+        generatedEndPoint.Should().Contain("new global::G.PingRequest");
+    }
+
+    [TestMethod]
     public void SharedBaseDiscriminatorOneOfWrapper_PreservesNamedRequestUnion()
     {
         var settings = DefaultSettings with

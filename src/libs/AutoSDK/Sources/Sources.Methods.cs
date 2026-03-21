@@ -859,6 +859,15 @@ namespace {endPoint.Settings.Namespace}
             return TrimmedLine;
         }
 
+        // Skip convenience overload for discriminator base classes where all properties
+        // were filtered out — the overload would just construct an empty base instance
+        // with no way to specify which variant to use
+        if (endPoint.RequestType.IsBaseClass &&
+            !endPoint.Parameters.Any(x => x.Location == null))
+        {
+            return TrimmedLine;
+        }
+
         var taskType = endPoint.RawStream
             ? "global::System.Threading.Tasks.Task<global::System.IO.Stream>"
             : endPoint.EnumerableStream

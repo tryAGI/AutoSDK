@@ -277,28 +277,5 @@ namespace G
                 }
             }
         }
-        /// <summary>
-        /// Create an App Client<br/>
-        /// An App Client is used for OAuth 2.0 authentication when calling Vectara APIs.
-        /// </summary>
-        /// <param name="requestTimeout"></param>
-        /// <param name="requestTimeoutMillis"></param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AppClient> CreateAsync(
-            int? requestTimeout = default,
-            int? requestTimeoutMillis = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::G.CreateAppClientRequest
-            {
-            };
-
-            return await CreateAsync(
-                requestTimeout: requestTimeout,
-                requestTimeoutMillis: requestTimeoutMillis,
-                request: __request,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
     }
 }
