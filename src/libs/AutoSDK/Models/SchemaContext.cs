@@ -449,8 +449,14 @@ public class SchemaContext(
         }
 
         // Build direct children list from the accumulated results (only depth+1 descendants)
+        // Count first to pre-allocate exactly
         var childDepth = depth + 1;
-        var directChildren = new List<SchemaContext>();
+        var childCount = 0;
+        for (var j = childrenStart + 1; j < result.Count; j++)
+        {
+            if (result[j].Depth == childDepth) childCount++;
+        }
+        var directChildren = new List<SchemaContext>(childCount);
         for (var j = childrenStart + 1; j < result.Count; j++)
         {
             if (result[j].Depth == childDepth)
@@ -565,16 +571,19 @@ public class SchemaContext(
     /// </summary>
     private int ComputeInputsHash()
     {
-        var hash = new HashCode();
+        // Use simple XOR+rotate instead of allocating HashCode struct per call.
+        // Called ~61K times for large specs; this avoids per-call overhead.
+        var h = 0;
         if (ResolvedReference != null)
         {
-            hash.Add(ResolvedReference.TypeData.GetHashCode());
+            h = ResolvedReference.TypeData.GetHashCode();
         }
         for (var i = 0; i < Children.Count; i++)
         {
-            hash.Add(Children[i].TypeData.GetHashCode());
+            // Rotate left by 5 and XOR to mix bits
+            h = ((h << 5) | (int)((uint)h >> 27)) ^ Children[i].TypeData.GetHashCode();
         }
-        return hash.ToHashCode();
+        return h;
     }
 
     public bool HasAnyTag(params string[] tags)

@@ -334,6 +334,16 @@ public static class StringExtensions
 
     private static string NormalizeAllCapsWord(string value)
     {
+#if NET6_0_OR_GREATER
+        return string.Create(value.Length, value, static (span, src) =>
+        {
+            span[0] = src[0]; // Keep first char uppercase
+            for (var i = 1; i < src.Length; i++)
+            {
+                span[i] = char.ToLowerInvariant(src[i]);
+            }
+        });
+#else
         var chars = value.ToCharArray();
         for (var i = 1; i < chars.Length; i++)
         {
@@ -341,6 +351,7 @@ public static class StringExtensions
         }
 
         return new string(chars);
+#endif
     }
     
     private readonly static string[] NewLine = { "\n" };
