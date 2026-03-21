@@ -73,22 +73,34 @@ public static class ModelNameGenerator
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
 
+        // Return cached result if already computed (avoids full recomputation on repeated calls)
+        if (context.CachedComputedClassName != null)
+        {
+            return context.CachedComputedClassName;
+        }
+
+        string className;
+
         // x-fern-type-name overrides the generated class name (opt-in via UseExtensionNaming)
         if (context.Settings.UseExtensionNaming &&
             OpenApiExtensions.TryGetExtensionStringValue(
                 context.Schema.Extensions, "x-fern-type-name", out var fernTypeName) &&
             !string.IsNullOrWhiteSpace(fernTypeName))
         {
-            return fernTypeName.ToClassName();
+            className = fernTypeName.ToClassName();
+            context.CachedComputedClassName = className;
+            return className;
         }
 
         if (context.ComponentId != null)
         {
-            return context.ComponentId.ToCSharpName(context.Settings, context.Parent).ToClassName();
+            className = context.ComponentId.ToCSharpName(context.Settings, context.Parent).ToClassName();
+            context.CachedComputedClassName = className;
+            return className;
         }
 
-        // Use cached ClassName from parent if already computed (avoids recursive recomputation)
-        var parentClassName = context.Parent?.ClassName ?? context.Parent?.ComputeClassName();
+        // Use cached ComputeClassName from parent if already computed (avoids recursive recomputation)
+        var parentClassName = context.Parent?.ComputeClassName();
         var helperName = context.ComputeHelperName();
         var id = parentClassName + helperName;
         if (string.IsNullOrWhiteSpace(id))
@@ -96,7 +108,7 @@ public static class ModelNameGenerator
             throw new InvalidOperationException("Id is required. Invalid info.");
         }
 
-        var className = id.ToClassName();
+        className = id.ToClassName();
 
         // Special case for anyOf/oneOf/allOf with a single non-basic type
         if (context.Hint is Hint.AnyOf or Hint.OneOf or Hint.AllOf &&
@@ -104,7 +116,7 @@ public static class ModelNameGenerator
                 .Count(x => x.IsEnum || x.IsClass || x is { IsAnyOf: true, IsComponent: true }) == 1 &&
             context.Parent?.IsComponent != true)
         {
-            className = parentClassName ?? context.Parent?.ComputeClassName() ?? string.Empty;
+            className = parentClassName ?? string.Empty;
         }
 
         // Special case for anyOf/oneOf/allOf with a single Enum type without reference
@@ -122,6 +134,7 @@ public static class ModelNameGenerator
             className = className.Substring(0, className.Length - 5);
         }
 
+        context.CachedComputedClassName = className;
         return className;
     }
     

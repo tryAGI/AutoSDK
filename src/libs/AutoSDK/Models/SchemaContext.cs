@@ -59,12 +59,6 @@ public class SchemaContext(
     private bool _tagsComputed;
     private int _lastInputsHash;
 
-#if NET
-    // Diagnostic counters for ComputeNodeData optimization
-    [ThreadStatic] public static int ComputeNodeDataCalls;
-    [ThreadStatic] public static int ComputeNodeDataHashSkips;
-#endif
-
     /// <summary>
     /// True if this schema is part of a circular reference chain.
     /// Set during cycle detection after reference resolution.
@@ -105,7 +99,13 @@ public class SchemaContext(
         }
     }
     public string? ClassName { get; set; }
-    
+
+    /// <summary>
+    /// Cached unsanitized class name from ComputeClassName (before SanitizeName).
+    /// Used to avoid recursive recomputation of parent class names.
+    /// </summary>
+    internal string? CachedComputedClassName { get; set; }
+
     public AnyOfData? AnyOfData { get; set; }
     public string? VariantName { get; set; }
     
@@ -268,13 +268,40 @@ public class SchemaContext(
         int? index = null,
         int depth = 0)
     {
+        var result = new List<SchemaContext>();
+        FromSchemaCore(
+            result, schema, settings, parent, componentId, propertyName,
+            operationPath, operationType, operation, contentType, mediaType,
+            parameter, responseStatusCode, response, hint, index, depth);
+        return result;
+    }
+
+    private static void FromSchemaCore(
+        List<SchemaContext> result,
+        IOpenApiSchema schema,
+        Settings settings,
+        SchemaContext? parent,
+        string? componentId,
+        string? propertyName,
+        string? operationPath,
+        System.Net.Http.HttpMethod? operationType,
+        OpenApiOperation? operation,
+        string? contentType,
+        IOpenApiMediaType? mediaType,
+        IOpenApiParameter? parameter,
+        string? responseStatusCode,
+        IOpenApiResponse? response,
+        Hint? hint,
+        int? index,
+        int depth)
+    {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
         var referenceId = schema.GetReferenceId();
         if (referenceId != null &&
             componentId != referenceId)
         {
-            return [new SchemaContext(
+            result.Add(new SchemaContext(
                 settings,
                 schema,
                 id: referenceId.ToCSharpName(settings, parent),
@@ -295,9 +322,10 @@ public class SchemaContext(
                 ResponseStatusCode = responseStatusCode,
                 Response = response,
                 Depth = depth,
-            }];
+            });
+            return;
         }
-        
+
         var context = new SchemaContext(
             settings,
             schema,
@@ -319,73 +347,77 @@ public class SchemaContext(
             Response = response,
             Depth = depth,
         };
-        
-        var children = new List<SchemaContext>();
+
+        // Track where children start in the result list
+        var childrenStart = result.Count;
+        result.Add(context);
+
         if (schema.Items != null)
         {
-            children.AddRange(FromSchema(
-                schema: schema.Items,
-                settings: settings,
-                parent: context,
-                hint: Models.Hint.ArrayItem,
-                depth: depth + 1));
+            FromSchemaCore(
+                result, schema.Items, settings, context, componentId: null,
+                propertyName: null, operationPath: null, operationType: null,
+                operation: null, contentType: null, mediaType: null,
+                parameter: null, responseStatusCode: null, response: null,
+                hint: Models.Hint.ArrayItem, index: null, depth: depth + 1);
         }
         if (schema.AdditionalProperties != null)
         {
-            children.AddRange(FromSchema(
-                schema: schema.AdditionalProperties,
-                settings: settings,
-                parent: context,
-                hint: Models.Hint.AdditionalProperties,
-                depth: depth + 1));
+            FromSchemaCore(
+                result, schema.AdditionalProperties, settings, context, componentId: null,
+                propertyName: null, operationPath: null, operationType: null,
+                operation: null, contentType: null, mediaType: null,
+                parameter: null, responseStatusCode: null, response: null,
+                hint: Models.Hint.AdditionalProperties, index: null, depth: depth + 1);
         }
-        
+
         var i = 0;
-        foreach (var property in (schema.Properties ?? new Dictionary<string, IOpenApiSchema>())
-            .Where(x => x.Value != null))
+        var properties = schema.Properties;
+        if (properties != null)
         {
-            children.AddRange(FromSchema(
-                schema: property.Value,
-                settings: settings,
-                parent: context,
-                hint: Models.Hint.Property,
-                propertyName: property.Key,
-                index: i++,
-                depth: depth + 1));
+            foreach (var property in properties)
+            {
+                if (property.Value != null)
+                {
+                    FromSchemaCore(
+                        result, property.Value, settings, context, componentId: null,
+                        propertyName: property.Key, operationPath: null, operationType: null,
+                        operation: null, contentType: null, mediaType: null,
+                        parameter: null, responseStatusCode: null, response: null,
+                        hint: Models.Hint.Property, index: i++, depth: depth + 1);
+                }
+            }
         }
 
         i = 0;
         foreach (var item in schema.AnyOf ?? [])
         {
-            children.AddRange(FromSchema(
-                schema: item,
-                settings: settings,
-                parent: context,
-                hint: Models.Hint.AnyOf,
-                index: i++,
-                depth: depth + 1));
+            FromSchemaCore(
+                result, item, settings, context, componentId: null,
+                propertyName: null, operationPath: null, operationType: null,
+                operation: null, contentType: null, mediaType: null,
+                parameter: null, responseStatusCode: null, response: null,
+                hint: Models.Hint.AnyOf, index: i++, depth: depth + 1);
         }
         i = 0;
         foreach (var item in schema.OneOf ?? [])
         {
-            children.AddRange(FromSchema(
-                schema: item,
-                settings: settings,
-                parent: context,
-                hint: Models.Hint.OneOf,
-                index: i++,
-                depth: depth + 1));
+            FromSchemaCore(
+                result, item, settings, context, componentId: null,
+                propertyName: null, operationPath: null, operationType: null,
+                operation: null, contentType: null, mediaType: null,
+                parameter: null, responseStatusCode: null, response: null,
+                hint: Models.Hint.OneOf, index: i++, depth: depth + 1);
         }
         i = 0;
         foreach (var item in schema.AllOf ?? [])
         {
-            children.AddRange(FromSchema(
-                schema: item,
-                settings: settings,
-                parent: context,
-                hint: Models.Hint.AllOf,
-                index: i++,
-                depth: depth + 1));
+            FromSchemaCore(
+                result, item, settings, context, componentId: null,
+                propertyName: null, operationPath: null, operationType: null,
+                operation: null, contentType: null, mediaType: null,
+                parameter: null, responseStatusCode: null, response: null,
+                hint: Models.Hint.AllOf, index: i++, depth: depth + 1);
         }
 
         if (schema.Discriminator != null && schema.Discriminator.PropertyName != null &&
@@ -407,25 +439,32 @@ public class SchemaContext(
                     }
                 }
             };
-            children.AddRange(FromSchema(
-                schema: discriminatorSchema,
-                settings: settings,
-                parent: context,
-                hint: Models.Hint.Discriminator,
-                depth: depth + 1));
+            FromSchemaCore(
+                result, discriminatorSchema, settings, context,
+                componentId: null, propertyName: null, operationPath: null,
+                operationType: null, operation: null, contentType: null,
+                mediaType: null, parameter: null, responseStatusCode: null,
+                response: null, hint: Models.Hint.Discriminator, index: null,
+                depth: depth + 1);
         }
-        
-        context.Children = children
-            .Where(x => x.Depth == depth + 1)
-            .ToList();
-        
+
+        // Build direct children list from the accumulated results (only depth+1 descendants)
+        var childDepth = depth + 1;
+        var directChildren = new List<SchemaContext>();
+        for (var j = childrenStart + 1; j < result.Count; j++)
+        {
+            if (result[j].Depth == childDepth)
+            {
+                directChildren.Add(result[j]);
+            }
+        }
+        context.Children = directChildren;
+
         // We need to fix name, so it doesn't conflict with real used name() and not to be handled as name conflict.
         if (schema.HasAllOfTypeForMetadata(propertyName: propertyName))
         {
             context.Id += "_AllOf1Wrapped";
         }
-        
-        return [context, ..children];
     }
     
     public bool ComputeData(int level = 0, int maxDepth = 20, HashSet<SchemaContext>? visited = null)
@@ -486,15 +525,9 @@ public class SchemaContext(
         // Skip recomputation if inputs (children/reference TypeData) haven't changed.
         // This avoids re-creating ImmutableArrays and record copies for cyclic schemas
         // whose dependencies produce the same TypeData across outer-loop iterations.
-#if NET
-        ComputeNodeDataCalls++;
-#endif
         var inputsHash = ComputeInputsHash();
         if (TypeData != TypeData.Default && inputsHash == _lastInputsHash)
         {
-#if NET
-            ComputeNodeDataHashSkips++;
-#endif
             return;
         }
         _lastInputsHash = inputsHash;
