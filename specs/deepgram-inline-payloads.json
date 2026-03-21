@@ -1,0 +1,293 @@
+{
+  "asyncapi": "3.0.0",
+  "info": {
+    "title": "Deepgram Inline Payloads",
+    "version": "1.0.0",
+    "description": "Test fixture: inline message payloads (no pre-existing payload schemas), per-channel server refs, operationTraits, binary messages, nested inline objects, and mixed enum/const discriminators."
+  },
+  "servers": {
+    "production": {
+      "host": "api.deepgram.com",
+      "protocol": "wss",
+      "description": "Deepgram production streaming endpoint"
+    },
+    "agent": {
+      "host": "agent.deepgram.com",
+      "protocol": "wss",
+      "description": "Deepgram agent-specific server"
+    }
+  },
+  "channels": {
+    "ListenV1": {
+      "address": "/v1/listen",
+      "description": "Speech-to-text streaming channel.",
+      "servers": [
+        { "$ref": "#/servers/production" }
+      ],
+      "messages": {
+        "audioData": {
+          "$ref": "#/components/messages/AudioData"
+        },
+        "results": {
+          "$ref": "#/components/messages/ListenV1Results"
+        },
+        "metadata": {
+          "$ref": "#/components/messages/ListenV1Metadata"
+        }
+      }
+    },
+    "AgentV1": {
+      "address": "/v1/agent",
+      "description": "AI agent voice channel.",
+      "servers": [
+        { "$ref": "#/servers/agent" }
+      ],
+      "messages": {
+        "agentConfig": {
+          "$ref": "#/components/messages/AgentConfig"
+        },
+        "agentStarted": {
+          "$ref": "#/components/messages/AgentStarted"
+        },
+        "agentThinking": {
+          "$ref": "#/components/messages/AgentThinking"
+        }
+      }
+    }
+  },
+  "operations": {
+    "sendAudioData": {
+      "action": "send",
+      "channel": { "$ref": "#/channels/ListenV1" },
+      "summary": "Send binary audio data for transcription.",
+      "messages": [
+        { "$ref": "#/channels/ListenV1/messages/audioData" }
+      ],
+      "traits": [
+        { "$ref": "#/components/operationTraits/deepgramAuth" }
+      ]
+    },
+    "receiveListenV1Results": {
+      "action": "receive",
+      "channel": { "$ref": "#/channels/ListenV1" },
+      "summary": "Receive transcription results.",
+      "messages": [
+        { "$ref": "#/channels/ListenV1/messages/results" }
+      ]
+    },
+    "receiveListenV1Metadata": {
+      "action": "receive",
+      "channel": { "$ref": "#/channels/ListenV1" },
+      "summary": "Receive session metadata.",
+      "messages": [
+        { "$ref": "#/channels/ListenV1/messages/metadata" }
+      ]
+    },
+    "sendAgentConfig": {
+      "action": "send",
+      "channel": { "$ref": "#/channels/AgentV1" },
+      "summary": "Send agent configuration.",
+      "messages": [
+        { "$ref": "#/channels/AgentV1/messages/agentConfig" }
+      ],
+      "traits": [
+        { "$ref": "#/components/operationTraits/deepgramAuth" }
+      ]
+    },
+    "receiveAgentStarted": {
+      "action": "receive",
+      "channel": { "$ref": "#/channels/AgentV1" },
+      "summary": "Receive agent started event.",
+      "messages": [
+        { "$ref": "#/channels/AgentV1/messages/agentStarted" }
+      ]
+    },
+    "receiveAgentThinking": {
+      "action": "receive",
+      "channel": { "$ref": "#/channels/AgentV1" },
+      "summary": "Receive agent thinking event.",
+      "messages": [
+        { "$ref": "#/channels/AgentV1/messages/agentThinking" }
+      ]
+    }
+  },
+  "components": {
+    "messages": {
+      "AudioData": {
+        "name": "AudioData",
+        "summary": "Binary audio data for transcription.",
+        "contentType": "application/octet-stream",
+        "payload": {
+          "type": "string",
+          "format": "binary"
+        }
+      },
+      "ListenV1Results": {
+        "name": "ListenV1Results",
+        "summary": "Transcription result from the server.",
+        "contentType": "application/json",
+        "payload": {
+          "type": "object",
+          "description": "Transcription result from the server.",
+          "required": ["type", "channel_index", "duration", "start", "channel"],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["Results"]
+            },
+            "channel_index": {
+              "type": "array",
+              "items": { "type": "number" },
+              "description": "The index of the channel."
+            },
+            "duration": {
+              "type": "number",
+              "description": "Duration of audio segment in seconds."
+            },
+            "start": {
+              "type": "number",
+              "description": "Start time of audio segment in seconds."
+            },
+            "is_final": {
+              "type": "boolean",
+              "description": "Whether this is a final result."
+            },
+            "channel": {
+              "type": "object",
+              "description": "Channel alternatives.",
+              "required": ["alternatives"],
+              "properties": {
+                "alternatives": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "description": "A transcription alternative.",
+                    "required": ["transcript", "confidence"],
+                    "properties": {
+                      "transcript": {
+                        "type": "string",
+                        "description": "The transcript text."
+                      },
+                      "confidence": {
+                        "type": "number",
+                        "description": "Confidence score."
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "ListenV1Metadata": {
+        "name": "ListenV1Metadata",
+        "summary": "Session metadata.",
+        "contentType": "application/json",
+        "payload": {
+          "type": "object",
+          "description": "Metadata about the transcription session.",
+          "required": ["type", "request_id"],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["Metadata"]
+            },
+            "request_id": {
+              "type": "string",
+              "format": "uuid",
+              "description": "Unique request identifier."
+            },
+            "duration": {
+              "type": "number",
+              "description": "Audio duration in seconds."
+            }
+          }
+        }
+      },
+      "AgentConfig": {
+        "name": "AgentConfig",
+        "summary": "Agent configuration message.",
+        "contentType": "application/json",
+        "payload": {
+          "type": "object",
+          "description": "Configuration for the AI agent.",
+          "required": ["type", "model"],
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "AgentConfig"
+            },
+            "model": {
+              "type": "string",
+              "description": "The model to use."
+            },
+            "instructions": {
+              "type": "string",
+              "description": "Agent instructions."
+            }
+          }
+        }
+      },
+      "AgentStarted": {
+        "name": "AgentStarted",
+        "summary": "Agent started event.",
+        "contentType": "application/json",
+        "payload": {
+          "type": "object",
+          "description": "Indicates the agent has started.",
+          "required": ["type", "agent_id"],
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "AgentStarted"
+            },
+            "agent_id": {
+              "type": "string",
+              "description": "The agent identifier."
+            },
+            "session_id": {
+              "type": "string",
+              "description": "The session identifier."
+            }
+          }
+        }
+      },
+      "AgentThinking": {
+        "name": "AgentThinking",
+        "summary": "Agent thinking event.",
+        "contentType": "application/json",
+        "payload": {
+          "type": "object",
+          "description": "Indicates the agent is processing.",
+          "required": ["type", "content"],
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "AgentThinking"
+            },
+            "content": {
+              "type": "string",
+              "description": "The thinking content."
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "token": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Deepgram API key"
+      }
+    },
+    "operationTraits": {
+      "deepgramAuth": {
+        "description": "Requires Deepgram API key authentication.",
+        "security": [
+          { "token": [] }
+        ]
+      }
+    }
+  }
+}

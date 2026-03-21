@@ -556,6 +556,22 @@ public static class AsyncApiExtensions
             }
         }
 
+        // Parse server references (e.g., servers: [{ "$ref": "#/servers/production" }])
+        if (channelObj["servers"] is JsonArray serversArray)
+        {
+            foreach (var serverNode in serversArray)
+            {
+                if (serverNode is JsonObject serverRefObj)
+                {
+                    var refStr = serverRefObj["$ref"]?.GetValue<string>() ?? string.Empty;
+                    if (refStr.StartsWith("#/servers/", StringComparison.Ordinal))
+                    {
+                        channel.ServerRefs.Add(refStr.Substring("#/servers/".Length));
+                    }
+                }
+            }
+        }
+
         return channel;
     }
 
@@ -620,6 +636,22 @@ public static class AsyncApiExtensions
             }
         }
 
+        // Parse trait references
+        if (opObj["traits"] is JsonArray traitsArray)
+        {
+            foreach (var traitNode in traitsArray)
+            {
+                if (traitNode is JsonObject traitObj)
+                {
+                    var refStr = traitObj["$ref"]?.GetValue<string>() ?? string.Empty;
+                    if (!string.IsNullOrEmpty(refStr))
+                    {
+                        op.TraitRefs.Add(refStr);
+                    }
+                }
+            }
+        }
+
         return op;
     }
 
@@ -676,6 +708,48 @@ public static class AsyncApiExtensions
                         In = schemeObj["in"]?.GetValue<string>() ?? string.Empty,
                         Description = schemeObj["description"]?.GetValue<string>() ?? string.Empty,
                     };
+                }
+            }
+        }
+
+        if (componentsObj["operationTraits"] is JsonObject operationTraits)
+        {
+            foreach (var kvp in operationTraits)
+            {
+                var name = kvp.Key;
+                var node = kvp.Value;
+                if (node is JsonObject traitObj)
+                {
+                    var trait = new AsyncApiOperationTrait
+                    {
+                        Description = traitObj["description"]?.GetValue<string>() ?? string.Empty,
+                    };
+
+                    if (traitObj["security"] is JsonArray secArray)
+                    {
+                        foreach (var secNode in secArray)
+                        {
+                            if (secNode is JsonObject secObj)
+                            {
+                                var secEntry = new Dictionary<string, List<string>>();
+                                foreach (var secKvp in secObj)
+                                {
+                                    var scopes = new List<string>();
+                                    if (secKvp.Value is JsonArray scopeArray)
+                                    {
+                                        foreach (var scope in scopeArray)
+                                        {
+                                            scopes.Add(scope?.GetValue<string>() ?? string.Empty);
+                                        }
+                                    }
+                                    secEntry[secKvp.Key] = scopes;
+                                }
+                                trait.Security.Add(secEntry);
+                            }
+                        }
+                    }
+
+                    components.OperationTraits[name] = trait;
                 }
             }
         }

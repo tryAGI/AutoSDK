@@ -67,4 +67,9 @@ public sealed class AsyncApiComponents
     /// Reusable security scheme definitions.
     /// </summary>
     public Dictionary<string, AsyncApiSecurityScheme> SecuritySchemes { get; set; } = new();
+
+    /// <summary>
+    /// Reusable operation trait definitions.
+    /// </summary>
+    public Dictionary<string, AsyncApiOperationTrait> OperationTraits { get; set; } = new();
 }

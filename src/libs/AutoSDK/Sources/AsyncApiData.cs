@@ -40,6 +40,11 @@ public static class AsyncApiData
         // Parse AsyncAPI document
         var asyncApiDoc = text.GetAsyncApiDocument(settings, cancellationToken);
 
+        // Extract inline payload schemas from component messages into component schemas.
+        // Must run BEFORE InjectSyntheticServerEventSchemas so that extracted schemas
+        // participate in discriminated union generation.
+        ExtractInlinePayloadSchemas(asyncApiDoc);
+
         // If multiple receive message types exist, inject synthetic oneOf wrapper schemas
         // for discriminated union deserialization (before bridging to OpenAPI)
         var syntheticEventSchemaNames = InjectSyntheticServerEventSchemas(asyncApiDoc);
@@ -236,9 +241,9 @@ public static class AsyncApiData
                 ? asyncApiDoc.Info.Title.ToClassName() + "RealtimeClient"
                 : settings.ClassName.Replace(".", string.Empty) + "RealtimeClient";
 
-        // Get server info
-        var server = asyncApiDoc.Servers.Values.FirstOrDefault();
-        var protocol = server?.Protocol ?? "wss";
+        // Get default server info (fallback when channels don't specify servers)
+        var defaultServer = asyncApiDoc.Servers.Values.FirstOrDefault();
+        var protocol = defaultServer?.Protocol ?? "wss";
 
         // Build authorizations (shared across all channels)
         var authorizations = BuildAuthorizations(asyncApiDoc, settings, globalSettings);
@@ -258,6 +263,15 @@ public static class AsyncApiData
                 continue;
             }
 
+            // Resolve per-channel server (falls back to first global server)
+            var channelServer = defaultServer;
+            if (channel.ServerRefs.Count > 0 &&
+                asyncApiDoc.Servers.TryGetValue(channel.ServerRefs[0], out var resolvedServer))
+            {
+                channelServer = resolvedServer;
+                protocol = channelServer.Protocol;
+            }
+
             // Determine class name for this channel
             var className = isMultiChannel
                 ? classNamePrefix.Replace("RealtimeClient", string.Empty) + channelName.ToClassName() + "RealtimeClient"
@@ -265,8 +279,8 @@ public static class AsyncApiData
 
             // Determine base URL for this channel
             var baseUrl = isMultiChannel
-                ? (server?.GetHostUrl() ?? string.Empty) + (string.IsNullOrEmpty(channel.Address) ? string.Empty : "/" + channel.Address.TrimStart('/'))
-                : server?.GetUrl() ?? string.Empty;
+                ? (channelServer?.GetHostUrl() ?? string.Empty) + (string.IsNullOrEmpty(channel.Address) ? string.Empty : "/" + channel.Address.TrimStart('/'))
+                : channelServer?.GetUrl() ?? string.Empty;
 
             var sendOps = new List<WebSocketEndPoint>();
             var receiveOps = new List<WebSocketEndPoint>();
@@ -706,6 +720,159 @@ public static class AsyncApiData
 
         // Default fallback
         return "message_type";
+    }
+
+    /// <summary>
+    /// Extracts inline payload schemas from component messages into component schemas.
+    /// This allows upstream AsyncAPI specs (which define payloads inline in messages)
+    /// to work natively without manual curation.
+    /// </summary>
+    private static void ExtractInlinePayloadSchemas(AsyncApiDocument asyncApiDoc)
+    {
+        foreach (var kvp in asyncApiDoc.Components.Messages.ToList())
+        {
+            var messageName = kvp.Key;
+            var message = kvp.Value;
+
+            if (message.Payload == null)
+            {
+                continue;
+            }
+
+            // Skip payloads that are already $ref
+            if (message.Payload["$ref"] != null)
+            {
+                continue;
+            }
+
+            // Skip binary payloads (type: string, format: binary)
+            var payloadType = message.Payload["type"]?.GetValue<string>();
+            var payloadFormat = message.Payload["format"]?.GetValue<string>();
+            if (payloadType == "string" && payloadFormat == "binary")
+            {
+                continue;
+            }
+
+            // Skip non-object payloads
+            if (payloadType != "object")
+            {
+                continue;
+            }
+
+            // Skip if a schema with this name already exists
+            if (asyncApiDoc.Components.Schemas.ContainsKey(messageName))
+            {
+                continue;
+            }
+
+            // Extract nested inline objects from properties recursively
+            ExtractNestedInlineObjects(asyncApiDoc, message.Payload, messageName);
+
+            // Add the payload as a named schema
+            asyncApiDoc.Components.Schemas[messageName] = message.Payload.DeepClone();
+
+            // Replace the message payload with a $ref
+            message.Payload = new JsonObject
+            {
+                ["$ref"] = $"#/components/schemas/{messageName}",
+            };
+        }
+
+        // Sync channel message copies — channel messages parsed from $ref to component
+        // messages are independent copies; update their Payload to match.
+        foreach (var channel in asyncApiDoc.Channels.Values)
+        {
+            foreach (var chMsgKvp in channel.Messages)
+            {
+                var chMsg = chMsgKvp.Value;
+
+                // Only sync messages that reference component messages
+                if (string.IsNullOrEmpty(chMsg.Ref))
+                {
+                    continue;
+                }
+
+                // Extract the component message name from the ref
+                var refParts = chMsg.Ref.TrimStart('#', '/').Split('/');
+                if (refParts.Length >= 3 &&
+                    refParts[0] == "components" &&
+                    refParts[1] == "messages" &&
+                    asyncApiDoc.Components.Messages.TryGetValue(refParts[2], out var compMsg))
+                {
+                    chMsg.Payload = compMsg.Payload?.DeepClone();
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Recursively extracts nested anonymous inline object schemas from properties.
+    /// For example, a message "ListenV1ResultsEvent" with an inline object property "channel"
+    /// will produce a new schema "ListenV1ResultsEventChannel".
+    /// </summary>
+    private static void ExtractNestedInlineObjects(
+        AsyncApiDocument doc, JsonNode payload, string parentName)
+    {
+        if (payload is not JsonObject payloadObj ||
+            payloadObj["properties"] is not JsonObject props)
+        {
+            return;
+        }
+
+        foreach (var propKvp in props.ToList())
+        {
+            var propName = propKvp.Key;
+            var propValue = propKvp.Value;
+
+            if (propValue is not JsonObject propObj)
+            {
+                continue;
+            }
+
+            var propType = propObj["type"]?.GetValue<string>();
+
+            if (propType == "object" && propObj["$ref"] == null && propObj["properties"] != null)
+            {
+                // This is an inline object — extract it
+                var nestedName = parentName + propName.ToClassName();
+
+                // Recurse first to handle deeply nested objects
+                ExtractNestedInlineObjects(doc, propObj, nestedName);
+
+                // Add to schemas if not already present
+                if (!doc.Components.Schemas.ContainsKey(nestedName))
+                {
+                    doc.Components.Schemas[nestedName] = propObj.DeepClone();
+                }
+
+                // Replace inline definition with $ref
+                props[propName] = new JsonObject
+                {
+                    ["$ref"] = $"#/components/schemas/{nestedName}",
+                };
+            }
+            else if (propType == "array" && propObj["items"] is JsonObject itemsObj)
+            {
+                // Check if array items are inline objects
+                var itemsType = itemsObj["type"]?.GetValue<string>();
+                if (itemsType == "object" && itemsObj["$ref"] == null && itemsObj["properties"] != null)
+                {
+                    var nestedName = parentName + propName.ToClassName();
+
+                    ExtractNestedInlineObjects(doc, itemsObj, nestedName);
+
+                    if (!doc.Components.Schemas.ContainsKey(nestedName))
+                    {
+                        doc.Components.Schemas[nestedName] = itemsObj.DeepClone();
+                    }
+
+                    propObj["items"] = new JsonObject
+                    {
+                        ["$ref"] = $"#/components/schemas/{nestedName}",
+                    };
+                }
+            }
+        }
     }
 
     private static ImmutableArray<string> BuildConverters(

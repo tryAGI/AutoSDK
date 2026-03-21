@@ -25,6 +25,13 @@ public sealed class AsyncApiChannel
     /// Channel parameters (path variables, query params).
     /// </summary>
     public Dictionary<string, AsyncApiParameter> Parameters { get; set; } = new();
+
+    /// <summary>
+    /// Server references for this channel (e.g., ["production", "agent"]).
+    /// Extracted from $ref paths like "#/servers/production".
+    /// When non-empty, the first entry determines the base URL for this channel.
+    /// </summary>
+    public List<string> ServerRefs { get; set; } = new();
 }
 
 /// <summary>

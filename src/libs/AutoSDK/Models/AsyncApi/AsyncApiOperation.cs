@@ -36,6 +36,11 @@ public sealed class AsyncApiOperation
     public List<AsyncApiOperationMessage> Messages { get; set; } = new();
 
     /// <summary>
+    /// References to operation traits (e.g., ["#/components/operationTraits/deepgram"]).
+    /// </summary>
+    public List<string> TraitRefs { get; set; } = new();
+
+    /// <summary>
     /// Whether this is a send (client→server) operation.
     /// </summary>
     public bool IsSend => string.Equals(Action, "send", StringComparison.OrdinalIgnoreCase);

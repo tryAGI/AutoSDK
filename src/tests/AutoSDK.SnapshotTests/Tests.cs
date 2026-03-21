@@ -95,6 +95,8 @@ public partial class Tests
     [DataRow("deepgram-multichannel.json", JsonSerializerType.SystemTextJson)]
     [DataRow("deepgram-const-discriminator.json", JsonSerializerType.NewtonsoftJson)]
     [DataRow("deepgram-const-discriminator.json", JsonSerializerType.SystemTextJson)]
+    [DataRow("deepgram-inline-payloads.json", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("deepgram-inline-payloads.json", JsonSerializerType.SystemTextJson)]
     public Task SdkGenerator(string fileName, JsonSerializerType jsonSerializerType)
     {
         if (fileName == "")
@@ -196,6 +198,12 @@ public partial class Tests
                     : string.Empty,
             },
             "deepgram-const-discriminator.json" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_JsonSerializerContext"] = jsonSerializerType is JsonSerializerType.SystemTextJson
+                    ? "G.SourceGenerationContext"
+                    : string.Empty,
+            },
+            "deepgram-inline-payloads.json" => new Dictionary<string, string>
             {
                 ["build_property.AutoSDK_JsonSerializerContext"] = jsonSerializerType is JsonSerializerType.SystemTextJson
                     ? "G.SourceGenerationContext"
