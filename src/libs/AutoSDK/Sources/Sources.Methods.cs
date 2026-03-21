@@ -329,7 +329,7 @@ namespace {endPoint.Settings.Namespace}
             : string.Empty;
 
         return property.Type.IsAnyOfLike
-            ? $"{name}{(property.IsRequired ? "" : "?")}.ToString() ?? string.Empty"
+            ? $"{name}{(property.Type.CSharpTypeNullability ? "?" : "")}.ToString() ?? string.Empty"
             : $"$\"{{{name}{additionalConvert}}}\"";
     }
 
