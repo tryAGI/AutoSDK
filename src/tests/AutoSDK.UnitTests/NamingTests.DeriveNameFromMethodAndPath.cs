@@ -62,4 +62,14 @@ public partial class NamingTests
     {
         MethodAndPathGenerator.DeriveNameFromMethodAndPath(method, path).Should().Be(expected);
     }
+
+    [TestMethod]
+    [DataRow("GET", "/models/", "GetModels")]
+    [DataRow("GET", "/models", "GetModels")]
+    [DataRow("POST", "/v1/chat/completions/", "CreateChatCompletions")]
+    [DataRow("POST", "/api/resources/", "CreateResources")]
+    public void DeriveNameFromMethodAndPath_TrailingSlashNormalization(string method, string path, string expected)
+    {
+        MethodAndPathGenerator.DeriveNameFromMethodAndPath(method, path).Should().Be(expected);
+    }
 }

@@ -64,6 +64,9 @@ public class MethodAndPathGenerator : IMethodNameGenerator
 
     private static string StripCommonPrefixes(string path)
     {
+        // Normalize trailing slash so /models/ and /models produce the same name
+        path = path.TrimEnd('/');
+
         if (path.StartsWith("/api", StringComparison.OrdinalIgnoreCase))
             path = path.Substring(4);
 
