@@ -422,11 +422,13 @@ public record struct TypeData(
     /// <summary>
     /// Returns distinct C# types from children of a union hint, or empty if no children.
     /// Used to collapse identical anyOf/oneOf/allOf types.
+    /// Reuses a thread-static HashSet to avoid per-call allocation.
     /// </summary>
+    [ThreadStatic] private static HashSet<string>? s_distinctSeen;
     private static string[] GetDistinctChildTypes(SchemaContext context, Hint hint)
     {
-        // Avoid LINQ allocations: manual loop with inline dedup
-        var seen = new HashSet<string>(StringComparer.Ordinal);
+        var seen = s_distinctSeen ??= new HashSet<string>(StringComparer.Ordinal);
+        seen.Clear();
         var count = 0;
         for (var i = 0; i < context.Children.Count; i++)
         {
@@ -454,10 +456,13 @@ public record struct TypeData(
 
     /// <summary>
     /// Joins child type names for a given hint, avoiding LINQ .Where().Select() allocations.
+    /// Reuses a thread-static StringBuilder to avoid per-call allocation.
     /// </summary>
+    [ThreadStatic] private static System.Text.StringBuilder? s_joinBuilder;
     private static string JoinChildTypes(SchemaContext context, Hint hint)
     {
-        var sb = new System.Text.StringBuilder();
+        var sb = s_joinBuilder ??= new System.Text.StringBuilder();
+        sb.Clear();
         for (var i = 0; i < context.Children.Count; i++)
         {
             var child = context.Children[i];

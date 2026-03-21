@@ -265,7 +265,22 @@ public static class StringExtensions
     {
         propertyName = propertyName ?? throw new ArgumentNullException(nameof(propertyName));
 
-        if (!separator.Any(propertyName.Contains))
+        // Check if any separator char exists in the string (avoids LINQ/delegate allocation)
+        var hasSeparator = false;
+        for (var i = 0; i < propertyName.Length; i++)
+        {
+            for (var j = 0; j < separator.Length; j++)
+            {
+                if (propertyName[i] == separator[j])
+                {
+                    hasSeparator = true;
+                    break;
+                }
+            }
+            if (hasSeparator) break;
+        }
+
+        if (!hasSeparator)
         {
             // Handle all-caps single words (e.g. "SUCCEEDED" → "Succeeded")
             if (propertyName.Length > 1 && propertyName == propertyName.ToUpperInvariant())

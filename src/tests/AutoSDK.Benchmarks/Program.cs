@@ -21,7 +21,7 @@ if (args.Length > 0 && args[0] == "--profile")
         "Spec", "Tree", "Naming", "Resolve", "Filter", "Data", "Classes", "Total", "Schemas", "Filtered", "AllocMB", "Gen0", "Gen1", "Gen2");
     Console.WriteLine(new string('-', 145));
 
-    var allData = new List<(string Name, AutoSDK.Models.Data Data, double AllocMB, int Gen0, int Gen1, int Gen2)>();
+    var allData = new List<(string Name, AutoSDK.Models.Data Data, double AllocMB, int Gen0, int Gen1, int Gen2, int CndCalls, int CndSkips)>();
 
     foreach (var (name, run) in specs)
     {
@@ -34,6 +34,10 @@ if (args.Length > 0 && args[0] == "--profile")
         var gen2Before = GC.CollectionCount(2);
         var allocBefore = GC.GetTotalAllocatedBytes(precise: true);
 
+        // Reset diagnostic counters
+        AutoSDK.Models.SchemaContext.ComputeNodeDataCalls = 0;
+        AutoSDK.Models.SchemaContext.ComputeNodeDataHashSkips = 0;
+
         var data = run();
 
         var allocAfter = GC.GetTotalAllocatedBytes(precise: true);
@@ -42,7 +46,10 @@ if (args.Length > 0 && args[0] == "--profile")
         var gen1 = GC.CollectionCount(1) - gen1Before;
         var gen2 = GC.CollectionCount(2) - gen2Before;
 
-        allData.Add((name, data, allocMB, gen0, gen1, gen2));
+        var cndCalls = AutoSDK.Models.SchemaContext.ComputeNodeDataCalls;
+        var cndSkips = AutoSDK.Models.SchemaContext.ComputeNodeDataHashSkips;
+
+        allData.Add((name, data, allocMB, gen0, gen1, gen2, cndCalls, cndSkips));
 
         var t = data.Times;
         Console.WriteLine("{0,-14} {1,7:F0}ms {2,7:F0}ms {3,7:F0}ms {4,7:F0}ms {5,7:F0}ms {6,7:F0}ms {7,7:F0}ms  {8,7}  {9,7}  {10,7:F0}MB  {11,5}  {12,5}  {13,5}",
@@ -68,7 +75,7 @@ if (args.Length > 0 && args[0] == "--profile")
     Console.WriteLine("{0,-14} {1,10} {2,10} {3,10} {4,10} {5,10} {6,10}",
         "Spec", "Tree", "Naming", "Resolve", "Filter", "Data", "Classes");
     Console.WriteLine(new string('-', 80));
-    foreach (var (name, data, _, _, _, _) in allData)
+    foreach (var (name, data, _, _, _, _, _, _) in allData)
     {
         var t = data.Times;
         Console.WriteLine("{0,-14} {1,9:F1}M {2,9:F1}M {3,9:F1}M {4,9:F1}M {5,9:F1}M {6,9:F1}M",
@@ -79,6 +86,20 @@ if (args.Length > 0 && args[0] == "--profile")
             t.AllocFiltering / (1024.0 * 1024.0),
             t.AllocComputeData / (1024.0 * 1024.0),
             t.AllocComputeDataClasses / (1024.0 * 1024.0));
+    }
+
+    // ComputeNodeData diagnostic counters
+    Console.WriteLine();
+    Console.WriteLine("ComputeNodeData hash diagnostics:");
+    Console.WriteLine("{0,-14} {1,10} {2,10} {3,10} {4,10}",
+        "Spec", "Calls", "Skipped", "Computed", "SkipRate");
+    Console.WriteLine(new string('-', 60));
+    foreach (var (name, _, _, _, _, _, cndCalls, cndSkips) in allData)
+    {
+        var computed = cndCalls - cndSkips;
+        var skipRate = cndCalls > 0 ? (100.0 * cndSkips / cndCalls) : 0.0;
+        Console.WriteLine("{0,-14} {1,10} {2,10} {3,10} {4,9:F1}%",
+            name, cndCalls, cndSkips, computed, skipRate);
     }
 }
 else

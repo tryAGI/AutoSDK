@@ -30,36 +30,39 @@ public static class ModelNameGenerator
         var helper = hint switch
         {
             Hint.ArrayItem => "Item",
-            Hint.Request => operation?.OperationId + "Request",
-            Hint.Response => operation?.OperationId + "Response",
-            Hint.Parameter => operation?.OperationId + "_" + parameter?.Name,
+            Hint.Request => string.Concat(operation?.OperationId, "Request"),
+            Hint.Response => string.Concat(operation?.OperationId, "Response"),
+            Hint.Parameter => string.Concat(operation?.OperationId, "_", parameter?.Name),
             Hint.AnyOf or Hint.OneOf or Hint.AllOf when !string.IsNullOrWhiteSpace(title) => title!.ToClassName(),
-            Hint.AnyOf or Hint.OneOf or Hint.AllOf => $"Variant{(index != null ? $"{index + 1}" : "")}",
+            Hint.AnyOf or Hint.OneOf or Hint.AllOf => index != null ? string.Concat("Variant", (index + 1).ToString()) : "Variant",
             Hint.Discriminator => "Discriminator",
             //_ when propertyName != null => propertyName,
             _ => null,
         };
-        var id = parent?.Id + helper?.ToCSharpName(settings, parent);
+        var csharpHelper = helper?.ToCSharpName(settings, parent);
+        var id = parent != null && csharpHelper != null
+            ? string.Concat(parent.Id, csharpHelper)
+            : csharpHelper ?? parent?.Id;
         if (string.IsNullOrWhiteSpace(id))
         {
             throw new InvalidOperationException("Id is required. Invalid info.");
         }
 
-        return id;
+        return id!;
     }
     
     public static string? ComputeHelperName(this SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
-        
+
         return (context.Hint switch
         {
             Hint.ArrayItem => "Item",
-            Hint.Request => context.Operation?.OperationId + "Request",
-            Hint.Response => context.Operation?.OperationId + "Response",
-            Hint.Parameter => context.Operation?.OperationId + "_" + context.Parameter?.Name,
+            Hint.Request => string.Concat(context.Operation?.OperationId, "Request"),
+            Hint.Response => string.Concat(context.Operation?.OperationId, "Response"),
+            Hint.Parameter => string.Concat(context.Operation?.OperationId, "_", context.Parameter?.Name),
             Hint.AnyOf or Hint.OneOf or Hint.AllOf when !string.IsNullOrWhiteSpace(context.Schema.Title) => context.Schema.Title!.ToClassName(),
-            Hint.AnyOf or Hint.OneOf or Hint.AllOf => $"Variant{(context.Index != null ? $"{context.Index + 1}" : "")}",
+            Hint.AnyOf or Hint.OneOf or Hint.AllOf => context.Index != null ? string.Concat("Variant", (context.Index + 1).ToString()) : "Variant",
             Hint.Discriminator => "Discriminator",
             _ when context.PropertyName != null => context.PropertyName,
             _ => null,
@@ -84,40 +87,41 @@ public static class ModelNameGenerator
             return context.ComponentId.ToCSharpName(context.Settings, context.Parent).ToClassName();
         }
 
-        // NamingConvention.InnerClasses => Parents.IsEmpty ? Name : $"_{Name}",
-        var id = context.Parent?.ComputeClassName() + context.ComputeHelperName();
+        // Use cached ClassName from parent if already computed (avoids recursive recomputation)
+        var parentClassName = context.Parent?.ClassName ?? context.Parent?.ComputeClassName();
+        var helperName = context.ComputeHelperName();
+        var id = parentClassName + helperName;
         if (string.IsNullOrWhiteSpace(id))
         {
             throw new InvalidOperationException("Id is required. Invalid info.");
         }
 
         var className = id.ToClassName();
-        
+
         // Special case for anyOf/oneOf/allOf with a single non-basic type
         if (context.Hint is Hint.AnyOf or Hint.OneOf or Hint.AllOf &&
             context.Parent?.Children
                 .Count(x => x.IsEnum || x.IsClass || x is { IsAnyOf: true, IsComponent: true }) == 1 &&
             context.Parent?.IsComponent != true)
         {
-            className = $"{context.Parent?.ComputeClassName()}";
+            className = parentClassName ?? context.Parent?.ComputeClassName() ?? string.Empty;
         }
-        
+
         // Special case for anyOf/oneOf/allOf with a single Enum type without reference
         else if (context.Hint is Hint.AnyOf or Hint.OneOf or Hint.AllOf &&
             context.Parent?.Children
                 .Count(x => x.IsEnum && x is { IsReference: false }) == 1)
         {
-            var variantName = ComputeHelperName(context)!;
-            className = className.Substring(0, className.Length - variantName.Length) + "Enum";
+            className = className.Substring(0, className.Length - (helperName?.Length ?? 0)) + "Enum";
         }
-        
+
         // Special case for array items with pluralized property name
         if (context.Hint is Hint.ArrayItem &&
             className.EndsWith("sItem", StringComparison.Ordinal))
         {
             className = className.Substring(0, className.Length - 5);
         }
-        
+
         return className;
     }
     

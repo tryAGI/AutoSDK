@@ -62,7 +62,16 @@ public static class CSharpPropertyNameGenerator
                 : clsCompliantEnumPrefix) + name;
         }
 
-        if (!name.Skip(1).Any(InvalidSubsequentChar))
+        var needsSanitize = false;
+        for (var i = 1; i < name.Length; i++)
+        {
+            if (InvalidSubsequentChar(name[i]))
+            {
+                needsSanitize = true;
+                break;
+            }
+        }
+        if (!needsSanitize)
         {
             return name;
         }

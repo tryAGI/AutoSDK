@@ -59,6 +59,12 @@ public class SchemaContext(
     private bool _tagsComputed;
     private int _lastInputsHash;
 
+#if NET
+    // Diagnostic counters for ComputeNodeData optimization
+    [ThreadStatic] public static int ComputeNodeDataCalls;
+    [ThreadStatic] public static int ComputeNodeDataHashSkips;
+#endif
+
     /// <summary>
     /// True if this schema is part of a circular reference chain.
     /// Set during cycle detection after reference resolution.
@@ -480,9 +486,15 @@ public class SchemaContext(
         // Skip recomputation if inputs (children/reference TypeData) haven't changed.
         // This avoids re-creating ImmutableArrays and record copies for cyclic schemas
         // whose dependencies produce the same TypeData across outer-loop iterations.
+#if NET
+        ComputeNodeDataCalls++;
+#endif
         var inputsHash = ComputeInputsHash();
         if (TypeData != TypeData.Default && inputsHash == _lastInputsHash)
         {
+#if NET
+            ComputeNodeDataHashSkips++;
+#endif
             return;
         }
         _lastInputsHash = inputsHash;
