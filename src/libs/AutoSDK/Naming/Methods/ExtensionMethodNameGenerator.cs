@@ -28,7 +28,7 @@ public class ExtensionMethodNameGenerator : IMethodNameGenerator
         {
             return fernMethodName
                 .ToPropertyName()
-                .UseWordSeparator('\\', '-', '.', '_', '/', '}', '{', '<', '>', ' ', '(', ')');
+                .UseWordSeparator(StringExtensions.MethodSeparators);
         }
 
         // Try x-oaiMeta.name (OpenAI metadata)
@@ -41,7 +41,7 @@ public class ExtensionMethodNameGenerator : IMethodNameGenerator
         {
             return oaiName
                 .ToPropertyName()
-                .UseWordSeparator('\\', '-', '.', '_', '/', '}', '{', '<', '>', ' ', '(', ')');
+                .UseWordSeparator(StringExtensions.MethodSeparators);
         }
 
         return null;

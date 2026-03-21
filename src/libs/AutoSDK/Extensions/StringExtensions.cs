@@ -382,12 +382,27 @@ public static class StringExtensions
             : propertyName;
     }
     
+    private static readonly char[] ClassNameSeparators =
+        ['_', '-', '.', ' ', '\\', '/', '[', ']', ',', ';', ':', '(', ')', '{', '}', '!', '?', '#', '@', '&', '|', '+', '=', '<', '>', '~', '`', '"', '\''];
+
+    internal static readonly char[] PropertySeparators =
+        ['_', '+', '-', '.', '/', '(', '[', ']', ')'];
+
+    internal static readonly char[] MethodSeparators =
+        ['\\', '-', '.', '_', '/', '}', '{', '<', '>', ' ', '(', ')'];
+
+    internal static readonly char[] EnumSeparators =
+        ['_', '-', ' ', '.'];
+
+    internal static readonly char[] PathSeparators =
+        ['/', '\\', '-', '.', '_', '/', '}', '{'];
+
     public static string ToClassName(
         this string text)
     {
         return text
             .ToPropertyName()
-            .UseWordSeparator('_', '-', '.', ' ', '\\', '/', '[', ']', ',', ';', ':', '(', ')', '{', '}', '!', '?', '#', '@', '&', '|', '+', '=', '<', '>', '~', '`', '"', '\'');
+            .UseWordSeparator(ClassNameSeparators);
     }
     
     public static string ReplaceIfEquals(

@@ -150,72 +150,67 @@ public record struct TypeData(
             properties = builder.MoveToImmutable();
         }
 
-        var subTypes = ImmutableArray<TypeData>.Empty;
+        // Collect child type data directly as boxed values in a single pass
+        var boxedSubTypes = ImmutableArray<Box>.Empty;
         if (context.Schema.IsAnyOf())
         {
-            subTypes = CollectChildTypeData(context.Children, Hint.AnyOf);
+            boxedSubTypes = CollectChildBoxedTypeData(context.Children, Hint.AnyOf);
         }
         else if (context.Schema.IsOneOf())
         {
-            subTypes = CollectChildTypeData(context.Children, Hint.OneOf);
+            boxedSubTypes = CollectChildBoxedTypeData(context.Children, Hint.OneOf);
         }
         else if (context.Schema.IsAllOf())
         {
-            subTypes = CollectChildTypeData(context.Children, Hint.AllOf);
+            boxedSubTypes = CollectChildBoxedTypeData(context.Children, Hint.AllOf);
         }
         if (context.Schema.IsArray())
         {
-            subTypes = [
-                context.Children
-                    .FirstOrDefault(x => x is { Hint: Hint.ArrayItem } && x.TypeData != Default)
-                    ?.TypeData ??
-                Default with
+            TypeData arrayItemType = Default;
+            for (var ci = 0; ci < context.Children.Count; ci++)
+            {
+                var child = context.Children[ci];
+                if (child is { Hint: Hint.ArrayItem } && child.TypeData != Default)
+                {
+                    arrayItemType = child.TypeData;
+                    break;
+                }
+            }
+            if (arrayItemType == Default)
+            {
+                arrayItemType = Default with
                 {
                     IsEnum = context.Schema.Items != null && context.Schema.Items.IsEnum(),
-                },
-            ];
+                };
+            }
+            boxedSubTypes = [arrayItemType.Box()];
         }
         if (context.Schema.IsBinary() || context.Schema.IsBase64())
         {
-            subTypes = [
-                Default with
-                {
-                    CSharpTypeRaw = "byte",
-                },
-            ];
+            boxedSubTypes = [(Default with { CSharpTypeRaw = "byte" }).Box()];
         }
 
         var enumValues = ImmutableArray<string>.Empty;
         if (context.Schema.IsEnum())
         {
-            var values = (context.Schema.Enum ?? [])
-                .Select(value => ((JsonNode?)value).ToEnumValue(
-                    description: context.Parameter?.Description ?? context.Schema.Description ?? string.Empty,
-                    context.Settings)).ToArray();
-            var nameBuilder = ImmutableArray.CreateBuilder<string>(values.Length);
-            var idBuilder = ImmutableArray.CreateBuilder<string>(values.Length);
-            foreach (var v in values)
+            var enumSource = context.Schema.Enum;
+            if (enumSource != null && enumSource.Count > 0)
             {
-                nameBuilder.Add(v.Name);
-                idBuilder.Add(v.Id);
+                var description = context.Parameter?.Description ?? context.Schema.Description ?? string.Empty;
+                var nameBuilder = ImmutableArray.CreateBuilder<string>(enumSource.Count);
+                var idBuilder = ImmutableArray.CreateBuilder<string>(enumSource.Count);
+                foreach (var value in enumSource)
+                {
+                    var ev = ((JsonNode?)value).ToEnumValue(description, context.Settings);
+                    nameBuilder.Add(ev.Name);
+                    idBuilder.Add(ev.Id);
+                }
+                properties = nameBuilder.MoveToImmutable();
+                enumValues = idBuilder.MoveToImmutable();
             }
-            properties = nameBuilder.MoveToImmutable();
-            enumValues = idBuilder.MoveToImmutable();
         }
 
         var type = GetCSharpType(context);
-
-        // Build boxed SubTypes without intermediate LINQ allocation
-        var boxedSubTypes = ImmutableArray<Box>.Empty;
-        if (!subTypes.IsEmpty)
-        {
-            var boxBuilder = ImmutableArray.CreateBuilder<Box>(subTypes.Length);
-            foreach (var s in subTypes)
-            {
-                boxBuilder.Add(s.Box());
-            }
-            boxedSubTypes = boxBuilder.MoveToImmutable();
-        }
 
         return new TypeData(
             CSharpTypeRaw: type,
@@ -253,9 +248,10 @@ public record struct TypeData(
     }
 
     /// <summary>
-    /// Collects TypeData from children matching a specific hint, avoiding LINQ allocations.
+    /// Collects TypeData from children matching a specific hint directly as boxed values,
+    /// avoiding the intermediate ImmutableArray&lt;TypeData&gt; allocation.
     /// </summary>
-    private static ImmutableArray<TypeData> CollectChildTypeData(IList<SchemaContext> children, Hint hint)
+    private static ImmutableArray<Box> CollectChildBoxedTypeData(IList<SchemaContext> children, Hint hint)
     {
         // Count matching children first to pre-allocate exactly
         var count = 0;
@@ -270,16 +266,16 @@ public record struct TypeData(
 
         if (count == 0)
         {
-            return ImmutableArray<TypeData>.Empty;
+            return ImmutableArray<Box>.Empty;
         }
 
-        var builder = ImmutableArray.CreateBuilder<TypeData>(count);
+        var builder = ImmutableArray.CreateBuilder<Box>(count);
         for (var i = 0; i < children.Count; i++)
         {
             var child = children[i];
             if (child.Hint == hint && child.TypeData != Default)
             {
-                builder.Add(child.TypeData);
+                builder.Add(child.TypeData.Box());
             }
         }
         return builder.MoveToImmutable();

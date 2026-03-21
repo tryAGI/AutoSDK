@@ -1989,7 +1989,7 @@ info:
         var name = id
             .ReplacePlusAndMinusOnStart()
             .ToPropertyName()
-            .UseWordSeparator('_', '-', ' ', '.')
+            .UseWordSeparator(StringExtensions.EnumSeparators)
             .Replace("+", "Plus")
             .Replace("*", "Any")
             .Replace("[]", "Array")

@@ -95,7 +95,7 @@ public static class CSharpPropertyNameGenerator
     {
         return name
             .ReplacePlusAndMinusOnStart()
-            .UseWordSeparator('_', '+', '-', '.', '/', '(', '[', ']', ')');
+            .UseWordSeparator(StringExtensions.PropertySeparators);
     }
 
     internal static string ToCSharpName(this string text, Settings settings, SchemaContext? parent)

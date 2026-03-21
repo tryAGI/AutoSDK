@@ -11,6 +11,6 @@ public class OperationIdGenerator : IMethodNameGenerator
 
         return operation.Operation.OperationId?
             .ToPropertyName()
-            .UseWordSeparator('\\', '-', '.', '_', '/', '}', '{', '<', '>', ' ', '(', ')');
+            .UseWordSeparator(StringExtensions.MethodSeparators);
     }
 }

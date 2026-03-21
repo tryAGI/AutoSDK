@@ -109,7 +109,7 @@ public record struct MethodParameter(
     {
         return name
             .ReplacePlusAndMinusOnStart()
-            .UseWordSeparator('_', '+', '-', '.', '/', '(', '[', ']', ')');
+            .UseWordSeparator(StringExtensions.PropertySeparators);
     }
 
     public string ParameterName => Name

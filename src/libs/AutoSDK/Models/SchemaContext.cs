@@ -390,34 +390,43 @@ public class SchemaContext(
         }
 
         i = 0;
-        foreach (var item in schema.AnyOf ?? [])
+        if (schema.AnyOf != null)
         {
-            FromSchemaCore(
-                result, item, settings, context, componentId: null,
-                propertyName: null, operationPath: null, operationType: null,
-                operation: null, contentType: null, mediaType: null,
-                parameter: null, responseStatusCode: null, response: null,
-                hint: Models.Hint.AnyOf, index: i++, depth: depth + 1);
+            foreach (var item in schema.AnyOf)
+            {
+                FromSchemaCore(
+                    result, item, settings, context, componentId: null,
+                    propertyName: null, operationPath: null, operationType: null,
+                    operation: null, contentType: null, mediaType: null,
+                    parameter: null, responseStatusCode: null, response: null,
+                    hint: Models.Hint.AnyOf, index: i++, depth: depth + 1);
+            }
         }
         i = 0;
-        foreach (var item in schema.OneOf ?? [])
+        if (schema.OneOf != null)
         {
-            FromSchemaCore(
-                result, item, settings, context, componentId: null,
-                propertyName: null, operationPath: null, operationType: null,
-                operation: null, contentType: null, mediaType: null,
-                parameter: null, responseStatusCode: null, response: null,
-                hint: Models.Hint.OneOf, index: i++, depth: depth + 1);
+            foreach (var item in schema.OneOf)
+            {
+                FromSchemaCore(
+                    result, item, settings, context, componentId: null,
+                    propertyName: null, operationPath: null, operationType: null,
+                    operation: null, contentType: null, mediaType: null,
+                    parameter: null, responseStatusCode: null, response: null,
+                    hint: Models.Hint.OneOf, index: i++, depth: depth + 1);
+            }
         }
         i = 0;
-        foreach (var item in schema.AllOf ?? [])
+        if (schema.AllOf != null)
         {
-            FromSchemaCore(
-                result, item, settings, context, componentId: null,
-                propertyName: null, operationPath: null, operationType: null,
-                operation: null, contentType: null, mediaType: null,
-                parameter: null, responseStatusCode: null, response: null,
-                hint: Models.Hint.AllOf, index: i++, depth: depth + 1);
+            foreach (var item in schema.AllOf)
+            {
+                FromSchemaCore(
+                    result, item, settings, context, componentId: null,
+                    propertyName: null, operationPath: null, operationType: null,
+                    operation: null, contentType: null, mediaType: null,
+                    parameter: null, responseStatusCode: null, response: null,
+                    hint: Models.Hint.AllOf, index: i++, depth: depth + 1);
+            }
         }
 
         if (schema.Discriminator != null && schema.Discriminator.PropertyName != null &&

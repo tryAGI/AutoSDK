@@ -15,7 +15,7 @@ public class SummaryGenerator : IMethodNameGenerator
             .Replace("'", string.Empty)
             .Replace("’", string.Empty)
             .ToPropertyName()
-            .UseWordSeparator('\\', '-', '.', '_', '/', '}', '{', '<', '>', ' ', '(', ')');
+            .UseWordSeparator(StringExtensions.MethodSeparators);
 
         return CSharpPropertyNameGenerator.SanitizeName(
             methodName,

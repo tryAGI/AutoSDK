@@ -34,6 +34,6 @@ public class MethodAndPathGenerator : IMethodNameGenerator
         
         path = path.Replace("{", "{By{");
         
-        return $"{prefix}{path.TrimStart('/').ToPropertyName().UseWordSeparator('/', '\\', '-', '.', '_', '/', '}', '{')}";
+        return $"{prefix}{path.TrimStart('/').ToPropertyName().UseWordSeparator(StringExtensions.PathSeparators)}";
     }
 }
