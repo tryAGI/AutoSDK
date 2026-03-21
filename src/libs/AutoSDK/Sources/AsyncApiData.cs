@@ -395,17 +395,52 @@ public static class AsyncApiData
             var paramName = kvp.Key;
             var propNode = kvp.Value;
 
-            // Resolve $ref to component schema
-            var refPath = propNode?["$ref"]?.GetValue<string>();
-            if (refPath == null) continue;
+            // Try $ref first, then handle inline schemas
+            TypeData type;
+            string summary;
+            string description;
 
-            var schemaName = refPath.Split('/').Last();
-            if (!componentSchemas.TryGetValue(schemaName, out var schemaContext))
+            var refPath = propNode?["$ref"]?.GetValue<string>();
+            if (refPath != null)
             {
-                continue;
+                var schemaName = refPath.Split('/').Last();
+                if (!componentSchemas.TryGetValue(schemaName, out var schemaContext))
+                {
+                    continue;
+                }
+
+                type = schemaContext.TypeData;
+                summary = schemaContext.Schema.GetSummary();
+                description = schemaContext.Schema.Description ?? string.Empty;
+            }
+            else
+            {
+                // Handle inline schema (e.g., {"type": "string"}, {"type": "integer"})
+                var inlineType = propNode?["type"]?.GetValue<string>();
+                if (inlineType == null) continue;
+
+                var inlineFormat = propNode?["format"]?.GetValue<string>();
+                var csharpType = MapInlineSchemaType(inlineType, inlineFormat);
+                if (csharpType == null) continue;
+
+                var isValueType = csharpType is "bool" or "int" or "long" or "short"
+                    or "byte" or "float" or "double" or "decimal" or "char"
+                    or "global::System.DateTime" or "global::System.DateTimeOffset"
+                    or "global::System.Guid";
+
+                type = TypeData.Default with
+                {
+                    CSharpTypeRaw = csharpType,
+                    IsValueType = isValueType,
+                    Settings = settings,
+                    Namespace = csharpType.StartsWith("global::System.", StringComparison.Ordinal)
+                        ? "System"
+                        : settings.Namespace,
+                };
+                summary = string.Empty;
+                description = propNode?["description"]?.GetValue<string>() ?? string.Empty;
             }
 
-            var type = schemaContext.TypeData;
             var isRequired = channel.BindingsQueryRequired.Contains(paramName);
 
             // Make type nullable if not required
@@ -434,10 +469,10 @@ public static class AsyncApiData
                 Settings: settings,
                 DefaultValue: null,
                 IsDeprecated: false,
-                Summary: schemaContext.Schema.GetSummary(),
-                Description: schemaContext.Schema.Description ?? string.Empty,
+                Summary: summary,
+                Description: description,
                 ConverterType: type.ConverterType,
-                Properties: schemaContext.ClassData?.Properties ?? []);
+                Properties: ImmutableArray<PropertyData>.Empty);
 
             // Use existing serializer to fill in Value expression
             var serialized = ParameterSerializer.SerializeQueryParameter(methodParam);
@@ -455,6 +490,28 @@ public static class AsyncApiData
         });
 
         return result.ToImmutableArray();
+    }
+
+    /// <summary>
+    /// Maps a JSON Schema type/format to a C# type string for inline binding parameters.
+    /// </summary>
+    private static string? MapInlineSchemaType(string type, string? format)
+    {
+        return (type, format) switch
+        {
+            ("boolean", _) => "bool",
+            ("integer", "int64") => "long",
+            ("integer", _) => "int",
+            ("number", "float") => "float",
+            ("number", "decimal") => "decimal",
+            ("number", _) => "double",
+            ("string", "date") => "global::System.DateTime",
+            ("string", "date-time") => "global::System.DateTime",
+            ("string", "uuid") => "global::System.Guid",
+            ("string", _) => "string",
+            ("object", _) => "object",
+            _ => null,
+        };
     }
 
     private static string ExtractMessageName(string refPath)

@@ -11,6 +11,8 @@ namespace G
     {
         private readonly global::System.Type[] _types = new global::System.Type[]
         {
+            typeof(global::G.JsonConverters.ListenV1ModelJsonConverter),
+            typeof(global::G.JsonConverters.ListenV1ModelNullableJsonConverter),
             typeof(global::G.JsonConverters.ListenV1ResultsTypeJsonConverter),
             typeof(global::G.JsonConverters.ListenV1ResultsTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.ListenV1MetadataTypeJsonConverter),

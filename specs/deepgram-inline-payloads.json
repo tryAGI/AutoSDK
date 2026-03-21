@@ -3,7 +3,7 @@
   "info": {
     "title": "Deepgram Inline Payloads",
     "version": "1.0.0",
-    "description": "Test fixture: inline message payloads (no pre-existing payload schemas), per-channel server refs, operationTraits, binary messages, nested inline objects, and mixed enum/const discriminators."
+    "description": "Test fixture: inline message payloads (no pre-existing payload schemas), per-channel server refs, operationTraits, binary messages, nested inline objects, mixed enum/const discriminators, and channel bindings (ws.query) with $ref and inline schemas."
   },
   "servers": {
     "production": {
@@ -24,6 +24,27 @@
       "servers": [
         { "$ref": "#/servers/production" }
       ],
+      "bindings": {
+        "ws": {
+          "query": {
+            "type": "object",
+            "properties": {
+              "model": {
+                "$ref": "#/components/schemas/ListenV1Model"
+              },
+              "language": {
+                "type": "string",
+                "description": "BCP-47 language tag for the primary spoken language."
+              },
+              "sample_rate": {
+                "type": "integer",
+                "description": "Sample rate of the audio stream in Hz."
+              }
+            },
+            "required": ["model"]
+          }
+        }
+      },
       "messages": {
         "audioData": {
           "$ref": "#/components/messages/AudioData"
@@ -272,6 +293,13 @@
             }
           }
         }
+      }
+    },
+    "schemas": {
+      "ListenV1Model": {
+        "type": "string",
+        "description": "AI model used for transcription.",
+        "enum": ["nova-3", "nova-2", "base", "enhanced"]
       }
     },
     "securitySchemes": {

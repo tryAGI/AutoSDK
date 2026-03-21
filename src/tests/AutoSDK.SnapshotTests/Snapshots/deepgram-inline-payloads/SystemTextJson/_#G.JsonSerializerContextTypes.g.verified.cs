@@ -29,87 +29,91 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListenV1ResultsChannelAlternatives? Type0 { get; set; }
+        public global::G.ListenV1Model? Type0 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public string? Type1 { get; set; }
+        public global::G.ListenV1ResultsChannelAlternatives? Type1 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double? Type2 { get; set; }
+        public string? Type2 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListenV1ResultsChannel? Type3 { get; set; }
+        public double? Type3 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ListenV1ResultsChannelAlternatives>? Type4 { get; set; }
+        public global::G.ListenV1ResultsChannel? Type4 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListenV1Results? Type5 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ListenV1ResultsChannelAlternatives>? Type5 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListenV1ResultsType? Type6 { get; set; }
+        public global::G.ListenV1Results? Type6 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<double>? Type7 { get; set; }
+        public global::G.ListenV1ResultsType? Type7 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public bool? Type8 { get; set; }
+        public global::System.Collections.Generic.IList<double>? Type8 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListenV1Metadata? Type9 { get; set; }
+        public bool? Type9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListenV1MetadataType? Type10 { get; set; }
+        public global::G.ListenV1Metadata? Type10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Guid? Type11 { get; set; }
+        public global::G.ListenV1MetadataType? Type11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentConfig? Type12 { get; set; }
+        public global::System.Guid? Type12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentStarted? Type13 { get; set; }
+        public global::G.AgentConfig? Type13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentThinking? Type14 { get; set; }
+        public global::G.AgentStarted? Type14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListenV1ServerEvent? Type15 { get; set; }
+        public global::G.AgentThinking? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListenV1ServerEventDiscriminator? Type16 { get; set; }
+        public global::G.ListenV1ServerEvent? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListenV1ServerEventDiscriminatorType? Type17 { get; set; }
+        public global::G.ListenV1ServerEventDiscriminator? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentV1ServerEvent? Type18 { get; set; }
+        public global::G.ListenV1ServerEventDiscriminatorType? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentV1ServerEventDiscriminator? Type19 { get; set; }
+        public global::G.AgentV1ServerEvent? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentV1ServerEventDiscriminatorType? Type20 { get; set; }
+        public global::G.AgentV1ServerEventDiscriminator? Type20 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AgentV1ServerEventDiscriminatorType? Type21 { get; set; }
 
         /// <summary>
         /// 
