@@ -6,6 +6,8 @@ namespace AutoSDK.Naming.Methods;
 
 public class MethodAndPathGenerator : IMethodNameGenerator
 {
+    private static readonly Regex VersionPrefixRegex = new(@"^/v\d+(?:beta\d*)?(?=/|$)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+    private static readonly Regex PathParameterRegex = new(@"\{[^}]+\}", RegexOptions.Compiled);
     public string TryGenerate(OperationContext operation)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
@@ -54,7 +56,7 @@ public class MethodAndPathGenerator : IMethodNameGenerator
 
         // Remove path parameters for cleaner type names
         // e.g., /models/{repo_id}/settings → /models/settings → ModelsSettings
-        path = Regex.Replace(path, @"\{[^}]+\}", "");
+        path = PathParameterRegex.Replace(path, "");
         // Clean up double slashes from removed params
         while (path.Contains("//"))
             path = path.Replace("//", "/");
@@ -71,7 +73,7 @@ public class MethodAndPathGenerator : IMethodNameGenerator
             path = path.Substring(4);
 
         // Strip version prefixes like /v1, /v2, /v3, /v1beta, /v2beta1, etc.
-        var versionMatch = Regex.Match(path, @"^/v\d+(?:beta\d*)?(?=/|$)", RegexOptions.IgnoreCase);
+        var versionMatch = VersionPrefixRegex.Match(path);
         if (versionMatch.Success)
             path = path.Substring(versionMatch.Length);
 
