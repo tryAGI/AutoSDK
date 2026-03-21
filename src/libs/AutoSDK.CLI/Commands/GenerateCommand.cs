@@ -142,7 +142,9 @@ internal sealed class GenerateCommand : Command
         name: "--websocket-class-name")
     {
         DefaultValueFactory = _ => string.Empty,
-        Description = "Override class name for the generated WebSocket client (AsyncAPI specs only).",
+        Description = "Override class name for the generated WebSocket client (AsyncAPI specs only). " +
+                      "For single-channel specs, used as the full class name. " +
+                      "For multi-channel specs, used as a prefix (e.g., 'Deepgram' produces 'DeepgramListenV1RealtimeClient').",
     };
 
     private Option<string> JsonSerializerContextName { get; } = new(

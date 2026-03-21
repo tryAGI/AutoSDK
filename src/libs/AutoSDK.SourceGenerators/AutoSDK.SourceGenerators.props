@@ -108,7 +108,9 @@
     <!-- WebSocket client generation -->
     <!-- true/false. Default: true (when AsyncAPI detected) -->
     <CompilerVisibleProperty Include="AutoSDK_GenerateWebSocketClient"/>
-    <!-- Override class name for the generated WebSocket client. Default: auto from spec title -->
+    <!-- Override class name for the generated WebSocket client. Default: auto from spec title.
+         For single-channel specs, used as the full class name.
+         For multi-channel specs, used as a prefix (e.g., 'Deepgram' produces 'DeepgramListenV1RealtimeClient'). -->
     <CompilerVisibleProperty Include="AutoSDK_WebSocketClientClassName"/>
     <!-- Namespace to use for type references in generated WebSocket client code.
          When set, type references use this namespace instead of the main Namespace.
