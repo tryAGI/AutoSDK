@@ -339,7 +339,7 @@ public record struct TypeData(
             (_, _) when context.Schema.IsUnixTimestamp() => "global::System.DateTimeOffset",
 
             (_, _) when isArray =>
-                $"{context.Children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.TypeData.CSharpTypeWithoutNullability}".AsArray(),
+                $"{FindChildType(context.Children, Hint.ArrayItem)}".AsArray(),
             // Fallback if `items` property is missing (openai specification)
             ("array", _) => "byte[]",
 
@@ -348,7 +348,7 @@ public record struct TypeData(
 
             // Handle nullable anyOf pattern: anyOf: [X, {type: null}] -> nullable X
             (_, _) when context.Schema.IsNullableAnyOf() =>
-                context.Children.FirstOrDefault(x => x.Hint == Hint.AnyOf && !x.Schema.IsNullType())?.TypeData.CSharpTypeWithoutNullability ?? "object",
+                FindNonNullAnyOfChildType(context.Children) ?? "object",
 
             (_, _) when isAnyOf && !context.IsNamedAnyOfLike && GetDistinctChildTypes(context, Hint.AnyOf) is { Length: 1 } distinctAnyOf => distinctAnyOf[0],
             (_, _) when isOneOf && !context.IsNamedAnyOfLike && GetDistinctChildTypes(context, Hint.OneOf) is { Length: 1 } distinctOneOf => distinctOneOf[0],
@@ -375,9 +375,9 @@ public record struct TypeData(
 
             ("object", _) when
                 context.Schema.AdditionalProperties?.Type is not null =>
-                $"global::System.Collections.Generic.Dictionary<string, {context.Children.FirstOrDefault(x => x.Hint == Hint.AdditionalProperties)?.TypeData.CSharpType}>",
+                $"global::System.Collections.Generic.Dictionary<string, {FindChildCSharpType(context.Children, Hint.AdditionalProperties)}>",
 
-            ("string", _) when (context.Schema.Enum?.Any() ?? false) =>
+            ("string", _) when (context.Schema.Enum?.Count ?? 0) > 0 =>
                 $"global::{context.Settings.Namespace}.{context.Id}",
 
             (null, "boolean") => "bool",
@@ -432,6 +432,54 @@ public record struct TypeData(
         };
 
         return type;
+    }
+
+    /// <summary>
+    /// Finds CSharpTypeWithoutNullability from the first child matching the given hint.
+    /// Replaces FirstOrDefault LINQ in switch expressions.
+    /// </summary>
+    private static string? FindChildType(IList<SchemaContext> children, Hint hint)
+    {
+        for (var i = 0; i < children.Count; i++)
+        {
+            var child = children[i];
+            if (child.Hint == hint && child.TypeData != Default)
+            {
+                return child.TypeData.CSharpTypeWithoutNullability;
+            }
+        }
+        return null;
+    }
+
+    /// <summary>
+    /// Finds CSharpType from the first child matching the given hint.
+    /// </summary>
+    private static string? FindChildCSharpType(IList<SchemaContext> children, Hint hint)
+    {
+        for (var i = 0; i < children.Count; i++)
+        {
+            if (children[i].Hint == hint)
+            {
+                return children[i].TypeData.CSharpType;
+            }
+        }
+        return null;
+    }
+
+    /// <summary>
+    /// Finds the first non-null AnyOf child's CSharpTypeWithoutNullability.
+    /// </summary>
+    private static string? FindNonNullAnyOfChildType(IList<SchemaContext> children)
+    {
+        for (var i = 0; i < children.Count; i++)
+        {
+            var child = children[i];
+            if (child.Hint == Hint.AnyOf && !child.Schema.IsNullType())
+            {
+                return child.TypeData.CSharpTypeWithoutNullability;
+            }
+        }
+        return null;
     }
 
     /// <summary>

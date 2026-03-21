@@ -172,6 +172,22 @@ public static class TraversalTreeHelper
         var pathItems = openApiDocument.Paths;
         if (pathItems == null) return [];
 
+        // Pre-build operation → schemas lookup to avoid O(ops × schemas) scan
+        var schemasByOperation = new Dictionary<OpenApiOperation, List<SchemaContext>>();
+        foreach (var schema in filteredSchemas)
+        {
+            if (schema.Operation != null)
+            {
+                if (!schemasByOperation.TryGetValue(schema.Operation, out var list))
+                {
+                    list = new List<SchemaContext>();
+                    schemasByOperation[schema.Operation] = list;
+                }
+                list.Add(schema);
+            }
+        }
+
+        var globalSecurity = openApiDocument.Security ?? [];
         var results = new List<OperationContext>();
         foreach (var path in pathItems)
         {
@@ -186,14 +202,17 @@ public static class TraversalTreeHelper
                 {
                     continue;
                 }
+
+                schemasByOperation.TryGetValue(op.Value, out var operationSchemas);
+
                 results.Add(OperationContext.FromOperation(
                     settings: settings,
                     globalSettings: globalSettings,
                     operation: op.Value,
                     operationPath: path.Key,
                     operationType: op.Key,
-                    filteredSchemas: filteredSchemas,
-                    globalSecurityRequirements: openApiDocument.Security ?? [],
+                    operationSchemas: operationSchemas,
+                    globalSecurityRequirements: globalSecurity,
                     resolvedTags: resolvedTags));
             }
         }

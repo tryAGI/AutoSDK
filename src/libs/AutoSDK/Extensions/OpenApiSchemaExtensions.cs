@@ -378,6 +378,6 @@ public static class OpenApiSchemaExtensions
                    null or
                    "int64" or
                    "int32" &&
-               schema.Description?.ToUpperInvariant().Contains("UNIX TIMESTAMP") == true);
+               schema.Description?.IndexOf("unix timestamp", StringComparison.OrdinalIgnoreCase) >= 0);
     }
 }

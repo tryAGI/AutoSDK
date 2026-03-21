@@ -31,20 +31,40 @@ public class OperationContext(
         OpenApiOperation operation,
         string operationPath,
         System.Net.Http.HttpMethod operationType,
-        IReadOnlyCollection<SchemaContext> filteredSchemas,
+        List<SchemaContext>? operationSchemas,
         IList<OpenApiSecurityRequirement> globalSecurityRequirements,
         IReadOnlyDictionary<string, Tag>? resolvedTags = null)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
 
-        var firstTag = (operation.Tags ?? new HashSet<OpenApiTagReference>()).FirstOrDefault();
+        var operationTags = operation.Tags;
+        OpenApiTagReference? firstTag = null;
+        if (operationTags != null)
+        {
+            foreach (var t in operationTags)
+            {
+                firstTag = t;
+                break;
+            }
+        }
+
+        // Build tags set without LINQ
+        var tags = new HashSet<string>();
+        if (operationTags != null)
+        {
+            foreach (var tag in operationTags)
+            {
+                if (tag.Name != null)
+                {
+                    tags.Add(tag.Name);
+                }
+            }
+        }
 
         var context = new OperationContext(settings, globalSettings, operation, operationPath, operationType)
         {
-            Schemas = filteredSchemas
-                .Where(schema => schema.Operation == operation)
-                .ToArray(),
-            Tags = [..(operation.Tags ?? new HashSet<OpenApiTagReference>()).Select(tag => tag.Name).Where(name => name != null).Cast<string>()],
+            Schemas = operationSchemas ?? (IReadOnlyCollection<SchemaContext>)[],
+            Tags = tags,
             GlobalSecurityRequirements = globalSecurityRequirements,
             Tag = GetOperationTag(operation, settings, firstTag, resolvedTags),
         };
