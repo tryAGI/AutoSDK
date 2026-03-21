@@ -120,7 +120,7 @@ public record struct ModelData(
             : null;
         var hasDiscriminator = !string.IsNullOrWhiteSpace(discriminatorPropertyName);
 
-        var builder = ImmutableArray.CreateBuilder<PropertyData>();
+        var builder = ImmutableArray.CreateBuilder<PropertyData>(source.Count);
         for (var i = 0; i < source.Count; i++)
         {
             var child = source[i];

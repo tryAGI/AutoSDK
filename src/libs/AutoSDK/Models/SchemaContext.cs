@@ -567,7 +567,7 @@ public class SchemaContext(
         {
             ParameterData = MethodParameter.FromSchemaContext(this);
         }
-        if (IsAnyOfLikeStructure && !TypeData.IsCollapsedAnyOfLike(this))
+        if (IsAnyOfLikeStructure && TypeData.IsAnyOfLike)
         {
             AnyOfData = global::AutoSDK.Models.AnyOfData.FromSchemaContext(this);
         }

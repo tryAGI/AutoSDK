@@ -115,7 +115,7 @@ public record struct TypeData(
             !isArray && !isBinary && !isBase64 &&
             schema.ResolveIfRequired() is not { Properties.Count: > 0 })
         {
-            cachedType = GetCSharpType(context);
+            cachedType = GetCSharpTypeCore(context, isArray, isAnyOf, isOneOf, isAllOf);
             if (cachedType is "bool" or "int" or "long" or "short" or "byte" or "float" or "double"
                 or "decimal" or "char" or "string" or "object" or "byte[]"
                 or "global::System.DateTime" or "global::System.DateTimeOffset" or "global::System.Guid")
@@ -221,7 +221,7 @@ public record struct TypeData(
             }
         }
 
-        var type = cachedType ?? GetCSharpType(context);
+        var type = cachedType ?? GetCSharpTypeCore(context, isArray, isAnyOf, isOneOf, isAllOf);
         var isNullable = schema.IsNullable() || schema.IsNullableAnyOf();
         var collapsed = (isAnyOf || isOneOf || isAllOf) ? IsCollapsedAnyOfLike(context) : false;
 
@@ -322,17 +322,27 @@ public record struct TypeData(
 
     public static string GetCSharpType(SchemaContext context)
     {
+        return GetCSharpTypeCore(context,
+            isArray: context.Schema.IsArray(),
+            isAnyOf: context.Schema.IsAnyOf(),
+            isOneOf: context.Schema.IsOneOf(),
+            isAllOf: context.Schema.IsAllOf());
+    }
+
+    internal static string GetCSharpTypeCore(SchemaContext context,
+        bool isArray, bool isAnyOf, bool isOneOf, bool isAllOf)
+    {
         context = context ?? throw new ArgumentNullException(nameof(context));
 
         var type = (context.Schema.Type.ToTypeString(), context.Schema.Format) switch
         {
             (_, _) when context.Schema.IsUnixTimestamp() => "global::System.DateTimeOffset",
 
-            (_, _) when context.Schema.IsArray() =>
+            (_, _) when isArray =>
                 $"{context.Children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.TypeData.CSharpTypeWithoutNullability}".AsArray(),
             // Fallback if `items` property is missing (openai specification)
             ("array", _) => "byte[]",
-                
+
             (_, _) when context.IsNamedAnyOfLike => $"global::{context.Settings.Namespace}.{context.Id}",
             (_, _) when context.IsDerivedClass => $"global::{context.Settings.Namespace}.{context.Id}",
 
@@ -340,13 +350,13 @@ public record struct TypeData(
             (_, _) when context.Schema.IsNullableAnyOf() =>
                 context.Children.FirstOrDefault(x => x.Hint == Hint.AnyOf && !x.Schema.IsNullType())?.TypeData.CSharpTypeWithoutNullability ?? "object",
 
-            (_, _) when context.Schema.IsAnyOf() && !context.IsNamedAnyOfLike && GetDistinctChildTypes(context, Hint.AnyOf) is { Length: 1 } distinctAnyOf => distinctAnyOf[0],
-            (_, _) when context.Schema.IsOneOf() && !context.IsNamedAnyOfLike && GetDistinctChildTypes(context, Hint.OneOf) is { Length: 1 } distinctOneOf => distinctOneOf[0],
-            (_, _) when context.Schema.IsAllOf() && !context.IsNamedAnyOfLike && GetDistinctChildTypes(context, Hint.AllOf) is { Length: 1 } distinctAllOf => distinctAllOf[0],
+            (_, _) when isAnyOf && !context.IsNamedAnyOfLike && GetDistinctChildTypes(context, Hint.AnyOf) is { Length: 1 } distinctAnyOf => distinctAnyOf[0],
+            (_, _) when isOneOf && !context.IsNamedAnyOfLike && GetDistinctChildTypes(context, Hint.OneOf) is { Length: 1 } distinctOneOf => distinctOneOf[0],
+            (_, _) when isAllOf && !context.IsNamedAnyOfLike && GetDistinctChildTypes(context, Hint.AllOf) is { Length: 1 } distinctAllOf => distinctAllOf[0],
 
-            (_, _) when context.Schema.IsAnyOf() => $"global::{context.Settings.Namespace}.AnyOf<{JoinChildTypes(context, Hint.AnyOf)}>",
-            (_, _) when context.Schema.IsOneOf() => $"global::{context.Settings.Namespace}.OneOf<{JoinChildTypes(context, Hint.OneOf)}>",
-            (_, _) when context.Schema.IsAllOf() => $"global::{context.Settings.Namespace}.AllOf<{JoinChildTypes(context, Hint.AllOf)}>",
+            (_, _) when isAnyOf => $"global::{context.Settings.Namespace}.AnyOf<{JoinChildTypes(context, Hint.AnyOf)}>",
+            (_, _) when isOneOf => $"global::{context.Settings.Namespace}.OneOf<{JoinChildTypes(context, Hint.OneOf)}>",
+            (_, _) when isAllOf => $"global::{context.Settings.Namespace}.AllOf<{JoinChildTypes(context, Hint.AllOf)}>",
 
             ("object", _) or (null, _) when
                 context.Schema.IsSchemaReference() &&

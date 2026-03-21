@@ -12,6 +12,8 @@ namespace AutoSDK.Generation;
 
 public static class Data
 {
+    [ThreadStatic] private static System.Text.StringBuilder? s_converterBuilder;
+
     public static Models.Data Prepare(
         ((string Text, Settings Settings) Context, Settings GlobalSettings) tuple,
         CancellationToken cancellationToken = default)
@@ -312,38 +314,54 @@ public static class Data
             .Select(x => Authorization.FromOpenApiSecurityScheme(x.Key, settings, globalSettings))
             .ToArray();
 
-        var converters =
-            // Enum converters
-            enums
-                .Where(x =>
-                    x.Style == ModelStyle.Enumeration &&
-                    x.Settings.JsonSerializerType != JsonSerializerType.NewtonsoftJson)
-                .SelectMany(x => new[]
+        var convertersBuilder = ImmutableArray.CreateBuilder<string>();
+        // Enum converters
+        foreach (var x in enums)
+        {
+            if (x.Style == ModelStyle.Enumeration &&
+                x.Settings.JsonSerializerType != JsonSerializerType.NewtonsoftJson)
+            {
+                convertersBuilder.Add($"global::{settings.Namespace}.JsonConverters.{x.ClassName}JsonConverter");
+                convertersBuilder.Add($"global::{settings.Namespace}.JsonConverters.{x.ClassName}NullableJsonConverter");
+            }
+        }
+        // Named AnyOf converters
+        foreach (var x in anyOfDatas)
+        {
+            if (x.Settings.JsonSerializerType == JsonSerializerType.SystemTextJson &&
+                !string.IsNullOrWhiteSpace(x.Name))
+            {
+                convertersBuilder.Add($"global::{settings.Namespace}.JsonConverters.{x.Name}JsonConverter");
+            }
+        }
+        // Generic AnyOf converters
+        foreach (var x in filteredSchemas)
+        {
+            if (x.Settings.JsonSerializerType == JsonSerializerType.SystemTextJson &&
+                x.AnyOfData.HasValue &&
+                string.IsNullOrWhiteSpace(x.AnyOfData.Value.Name))
+            {
+                var hint = x.IsAnyOf ? Hint.AnyOf : x.IsOneOf ? Hint.OneOf : Hint.AllOf;
+                var sb = s_converterBuilder ??= new System.Text.StringBuilder();
+                sb.Clear();
+                sb.Append($"global::{settings.Namespace}.JsonConverters.{x.AnyOfData?.SubType}JsonConverter<");
+                var first = true;
+                foreach (var y in x.Children)
                 {
-                    $"global::{settings.Namespace}.JsonConverters.{x.ClassName}JsonConverter",
-                    $"global::{settings.Namespace}.JsonConverters.{x.ClassName}NullableJsonConverter"
-                })
-            // Named AnyOf converters
-            .Concat(anyOfDatas
-                .Where(x =>
-                    x.Settings.JsonSerializerType == JsonSerializerType.SystemTextJson &&
-                    !string.IsNullOrWhiteSpace(x.Name))
-                .Select(x => $"global::{settings.Namespace}.JsonConverters.{x.Name}JsonConverter"))
-            // Generic AnyOf converters
-            .Concat(filteredSchemas
-                .Where(x =>
-                    x.Settings.JsonSerializerType == JsonSerializerType.SystemTextJson &&
-                    x.AnyOfData.HasValue &&
-                    string.IsNullOrWhiteSpace(x.AnyOfData.Value.Name))
-                .Select(x => $"global::{settings.Namespace}.JsonConverters.{x.AnyOfData?.SubType}JsonConverter<{
-                    string.Join(", ", x.Children
-                        .Where(y => y.Hint == (x.IsAnyOf ? Hint.AnyOf : x.IsOneOf ? Hint.OneOf : Hint.AllOf))
-                        .Select(y => y.TypeData.CSharpTypeWithNullabilityForValueTypes))}>"))
-            // Unix Timestamp converter
-            .Concat([
-                $"global::{globalSettings.Namespace}.JsonConverters.UnixTimestampJsonConverter",
-            ])
-            .ToImmutableArray();
+                    if (y.Hint == hint)
+                    {
+                        if (!first) sb.Append(", ");
+                        sb.Append(y.TypeData.CSharpTypeWithNullabilityForValueTypes);
+                        first = false;
+                    }
+                }
+                sb.Append('>');
+                convertersBuilder.Add(sb.ToString());
+            }
+        }
+        // Unix Timestamp converter
+        convertersBuilder.Add($"global::{globalSettings.Namespace}.JsonConverters.UnixTimestampJsonConverter");
+        var converters = convertersBuilder.ToImmutable();
         
         var includedTags = allTags
             .Where(x =>
