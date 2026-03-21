@@ -86,7 +86,7 @@ public record struct ModelData(
             Settings: context.Settings,
             Properties: GetVisibleProperties(context),
             EnumValues: context.Schema.IsEnum()
-                ? context.ComputeEnum().Values.ToImmutableArray()
+                ? ToImmutablePropertyDataArray(context.ComputeEnum())
                 : [],
             Summary: context.Schema.GetSummary(),
             Description: context.Schema.Description ?? string.Empty,
@@ -138,6 +138,18 @@ public record struct ModelData(
         }
 
         return builder.ToImmutable();
+    }
+
+    private static ImmutableArray<PropertyData> ToImmutablePropertyDataArray(Dictionary<string, PropertyData> dict)
+    {
+        if (dict.Count == 0) return [];
+
+        var builder = ImmutableArray.CreateBuilder<PropertyData>(dict.Count);
+        foreach (var kvp in dict)
+        {
+            builder.Add(kvp.Value);
+        }
+        return builder.MoveToImmutable();
     }
 
     public string ClassName => Id;// Settings.NamingConvention switch

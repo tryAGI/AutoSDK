@@ -180,7 +180,7 @@ public static class TraversalTreeHelper
             {
                 if (!schemasByOperation.TryGetValue(schema.Operation, out var list))
                 {
-                    list = new List<SchemaContext>();
+                    list = new List<SchemaContext>(8);
                     schemasByOperation[schema.Operation] = list;
                 }
                 list.Add(schema);

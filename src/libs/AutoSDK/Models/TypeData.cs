@@ -567,7 +567,11 @@ public record struct TypeData(
             ? context.DerivedClassContext.Children
             : context.Children;
 
-        return propertyContexts.Any(static x => x.IsProperty);
+        for (var i = 0; i < propertyContexts.Count; i++)
+        {
+            if (propertyContexts[i].IsProperty) return true;
+        }
+        return false;
     }
 
     public static bool GetCSharpNullability(

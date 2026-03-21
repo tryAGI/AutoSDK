@@ -1939,10 +1939,9 @@ info:
         var allContainEnumName = values.Count > 0;
         if (allContainEnumName)
         {
-            var enumNameUpper = enumName.ToUpperInvariant();
             foreach (var kvp in values)
             {
-                if (!kvp.Value.Name.ToUpperInvariant().Contains(enumNameUpper))
+                if (kvp.Value.Name.IndexOf(enumName, StringComparison.OrdinalIgnoreCase) < 0)
                 {
                     allContainEnumName = false;
                     break;
