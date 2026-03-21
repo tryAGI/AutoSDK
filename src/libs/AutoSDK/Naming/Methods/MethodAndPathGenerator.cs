@@ -67,8 +67,10 @@ public class MethodAndPathGenerator : IMethodNameGenerator
         if (path.StartsWith("/api", StringComparison.OrdinalIgnoreCase))
             path = path.Substring(4);
 
-        if (path.StartsWith("/v1", StringComparison.OrdinalIgnoreCase))
-            path = path.Substring(3);
+        // Strip version prefixes like /v1, /v2, /v3, /v1beta, /v2beta1, etc.
+        var versionMatch = Regex.Match(path, @"^/v\d+(?:beta\d*)?(?=/|$)", RegexOptions.IgnoreCase);
+        if (versionMatch.Success)
+            path = path.Substring(versionMatch.Length);
 
         if (path.StartsWith("/api", StringComparison.OrdinalIgnoreCase))
             path = path.Substring(4);
