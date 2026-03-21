@@ -15,5 +15,6 @@ public record struct Times(
     long AllocResolveReferences = 0,
     long AllocFiltering = 0,
     long AllocComputeData = 0,
-    long AllocComputeDataClasses = 0
+    long AllocComputeDataClasses = 0,
+    long AllocFilterTags = 0
 );

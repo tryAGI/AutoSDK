@@ -9,9 +9,9 @@ namespace AutoSDK.UnitTests;
 /// Run all: dotnet test --filter "TestCategory=Benchmark"
 ///
 /// Baseline (2026-03-21, net10.0, Apple Silicon):
-///   ElevenLabs: 587ms / 397MB (11,820 schemas)
-///   OpenAI:     368ms / 170MB  (4,933 schemas)
-///   GitHub:    1497ms / 1086MB (42,052 schemas)
+///   ElevenLabs: 587ms / 306MB (11,820 schemas) [was 397MB]
+///   OpenAI:     368ms / 148MB  (4,933 schemas) [was 170MB]
+///   GitHub:    1497ms / 961MB (42,052 schemas) [was 1086MB]
 /// </summary>
 [TestClass]
 public class BenchmarkTests

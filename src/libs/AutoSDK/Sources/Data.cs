@@ -144,30 +144,45 @@ public static class Data
         // Find all tags used in operations besides the ones defined in the document.
         // Also collect ad-hoc group names from x-fern-sdk-group-name extensions in a single pass.
         var allTags = openApiDocument.Tags!;
-        var knownTagNames = new HashSet<string>(
-            allTags.Where(x => x.Name != null).Select(x => x.Name!));
-        foreach (var operation in (openApiDocument.Paths ?? new OpenApiPaths())
-                     .SelectMany(x => x.Value.Operations ?? new Dictionary<System.Net.Http.HttpMethod, OpenApiOperation>())
-                     .Select(x => x.Value))
+        var knownTagNames = new HashSet<string>();
+        foreach (var tag in allTags)
         {
-            foreach (var tag in operation.Tags ?? new HashSet<OpenApiTagReference>())
+            if (tag.Name != null)
             {
-                if (tag.Name != null && knownTagNames.Add(tag.Name))
-                {
-                    // In OpenAPI 3.0+, Tags collection contains OpenApiTag, but operation.Tags contains OpenApiTagReference
-                    // Create a new OpenApiTag from the reference
-                    allTags.Add(new OpenApiTag { Name = tag.Name, Description = tag.Description });
-                }
+                knownTagNames.Add(tag.Name);
             }
-
-            // x-fern-sdk-group-name creates new tags that need sub-client classes, just like regular tags.
-            if (settings.UseExtensionNaming &&
-                OpenApiExtensions.TryGetExtensionStringValue(
-                    operation.Extensions, "x-fern-sdk-group-name", out var groupName) &&
-                !string.IsNullOrWhiteSpace(groupName) &&
-                knownTagNames.Add(groupName))
+        }
+        var paths = openApiDocument.Paths ?? new OpenApiPaths();
+        foreach (var pathEntry in paths)
+        {
+            var pathOps = pathEntry.Value.Operations;
+            if (pathOps == null)
             {
-                allTags.Add(new OpenApiTag { Name = groupName });
+                continue;
+            }
+            foreach (var opEntry in pathOps)
+            {
+                var operation = opEntry.Value;
+                if (operation.Tags != null)
+                {
+                    foreach (var tag in operation.Tags)
+                    {
+                        if (tag.Name != null && knownTagNames.Add(tag.Name))
+                        {
+                            allTags.Add(new OpenApiTag { Name = tag.Name, Description = tag.Description });
+                        }
+                    }
+                }
+
+                // x-fern-sdk-group-name creates new tags that need sub-client classes, just like regular tags.
+                if (settings.UseExtensionNaming &&
+                    OpenApiExtensions.TryGetExtensionStringValue(
+                        operation.Extensions, "x-fern-sdk-group-name", out var groupName) &&
+                    !string.IsNullOrWhiteSpace(groupName) &&
+                    knownTagNames.Add(groupName))
+                {
+                    allTags.Add(new OpenApiTag { Name = groupName });
+                }
             }
         }
 
@@ -189,6 +204,9 @@ public static class Data
                 maxDepth = schemas[i].Depth;
             }
         }
+#if NET
+        var allocBeforeTags = GC.GetTotalAllocatedBytes(precise: true);
+#endif
         var tagsVisited = new HashSet<SchemaContext>();
         for (var i = 0; i < schemas.Count; i++)
         {
@@ -203,6 +221,9 @@ public static class Data
             tagsVisited.Clear();
             schemas[i].ComputeTags(maxDepth: maxDepth, visited: tagsVisited);
         }
+#if NET
+        var allocAfterTags = GC.GetTotalAllocatedBytes(precise: true);
+#endif
 
         var includedModels = new HashSet<string>(settings.IncludeModels);
         var excludedModels = new HashSet<string>(settings.ExcludeModels);
@@ -259,27 +280,30 @@ public static class Data
             filteredSchemas = new List<SchemaContext>(collected);
         }
 
-        // Remove metadata-only allOf/anyOf/oneOf wrappers (single item, no properties)
-        var filteredCount = 0;
-        for (var i = 0; i < filteredSchemas.Count; i++)
+        // Remove metadata-only allOf/anyOf/oneOf wrappers (single item, no properties).
+        // Use single-pass approach: collect non-metadata schemas directly.
         {
-            if (!filteredSchemas[i].HasAllOfTypeForMetadata())
-            {
-                filteredCount++;
-            }
-        }
-        if (filteredCount < filteredSchemas.Count)
-        {
-            var filtered = new SchemaContext[filteredCount];
-            var idx = 0;
+            var hasAny = false;
             for (var i = 0; i < filteredSchemas.Count; i++)
             {
-                if (!filteredSchemas[i].HasAllOfTypeForMetadata())
+                if (filteredSchemas[i].IsAllOfForMetadata)
                 {
-                    filtered[idx++] = filteredSchemas[i];
+                    hasAny = true;
+                    break;
                 }
             }
-            filteredSchemas = filtered;
+            if (hasAny)
+            {
+                var filtered = new List<SchemaContext>(filteredSchemas.Count);
+                for (var i = 0; i < filteredSchemas.Count; i++)
+                {
+                    if (!filteredSchemas[i].IsAllOfForMetadata)
+                    {
+                        filtered.Add(filteredSchemas[i]);
+                    }
+                }
+                filteredSchemas = filtered;
+            }
         }
         
         filteringTime.Stop();
@@ -573,7 +597,8 @@ public static class Data
                 AllocResolveReferences: allocAfterResolve - allocAfterNaming,
                 AllocFiltering: allocAfterFilter - allocAfterResolve,
                 AllocComputeData: allocAfterData - allocAfterFilter,
-                AllocComputeDataClasses: allocAfterClasses - allocAfterData
+                AllocComputeDataClasses: allocAfterClasses - allocAfterData,
+                AllocFilterTags: allocAfterTags - allocBeforeTags
 #endif
                 )
             );

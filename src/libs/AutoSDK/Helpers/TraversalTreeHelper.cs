@@ -19,11 +19,12 @@ public static class TraversalTreeHelper
         {
             foreach (var schema in openApiDocument.Components.Schemas)
             {
-                result.AddRange(SchemaContext.FromSchema(
-                    schema: schema.Value,
-                    settings: settings,
-                    componentId: schema.Key,
-                    hint: Hint.Component));
+                SchemaContext.FromSchemaCore(
+                    result, schema.Value, settings, parent: null, componentId: schema.Key,
+                    propertyName: null, operationPath: null, operationType: null,
+                    operation: null, contentType: null, mediaType: null,
+                    parameter: null, responseStatusCode: null, response: null,
+                    hint: Hint.Component, index: null, depth: 0);
             }
         }
 
@@ -64,15 +65,12 @@ public static class TraversalTreeHelper
             {
                 if (content.Value.Schema != null)
                 {
-                    result.AddRange(SchemaContext.FromSchema(
-                        schema: content.Value.Schema,
-                        settings: settings,
-                        operationPath: operationPath,
-                        operationType: operationType,
-                        operation: operation,
-                        contentType: content.Key,
-                        mediaType: content.Value,
-                        hint: Hint.Request));
+                    SchemaContext.FromSchemaCore(
+                        result, content.Value.Schema, settings, parent: null, componentId: null,
+                        propertyName: null, operationPath: operationPath, operationType: operationType,
+                        operation: operation, contentType: content.Key, mediaType: content.Value,
+                        parameter: null, responseStatusCode: null, response: null,
+                        hint: Hint.Request, index: null, depth: 0);
                 }
             }
         }
@@ -86,16 +84,12 @@ public static class TraversalTreeHelper
             {
                 if (param.Schema != null)
                 {
-                    result.AddRange(SchemaContext.FromSchema(
-                        schema: param.Schema,
-                        settings: settings,
-                        operationPath: operationPath,
-                        operationType: operationType,
-                        operation: operation,
-                        contentType: null,
-                        mediaType: null,
-                        parameter: param,
-                        hint: Hint.Parameter));
+                    SchemaContext.FromSchemaCore(
+                        result, param.Schema, settings, parent: null, componentId: null,
+                        propertyName: null, operationPath: operationPath, operationType: operationType,
+                        operation: operation, contentType: null, mediaType: null,
+                        parameter: param, responseStatusCode: null, response: null,
+                        hint: Hint.Parameter, index: null, depth: 0);
                 }
             }
         }
@@ -113,16 +107,12 @@ public static class TraversalTreeHelper
                 {
                     if (content.Value.Schema != null)
                     {
-                        result.AddRange(SchemaContext.FromSchema(
-                            schema: content.Value.Schema,
-                            settings: settings,
-                            operationPath: operationPath,
-                            operationType: operationType,
-                            operation: operation,
-                            contentType: content.Key,
-                            mediaType: content.Value,
-                            parameter: param,
-                            hint: Hint.Parameter));
+                        SchemaContext.FromSchemaCore(
+                            result, content.Value.Schema, settings, parent: null, componentId: null,
+                            propertyName: null, operationPath: operationPath, operationType: operationType,
+                            operation: operation, contentType: content.Key, mediaType: content.Value,
+                            parameter: param, responseStatusCode: null, response: null,
+                            hint: Hint.Parameter, index: null, depth: 0);
                     }
                 }
             }
@@ -141,17 +131,12 @@ public static class TraversalTreeHelper
                 {
                     if (content.Value.Schema != null)
                     {
-                        result.AddRange(SchemaContext.FromSchema(
-                            schema: content.Value.Schema,
-                            settings: settings,
-                            operationPath: operationPath,
-                            operationType: operationType,
-                            operation: operation,
-                            contentType: content.Key,
-                            mediaType: content.Value,
-                            responseStatusCode: response.Key,
-                            response: response.Value,
-                            hint: Hint.Response));
+                        SchemaContext.FromSchemaCore(
+                            result, content.Value.Schema, settings, parent: null, componentId: null,
+                            propertyName: null, operationPath: operationPath, operationType: operationType,
+                            operation: operation, contentType: content.Key, mediaType: content.Value,
+                            parameter: null, responseStatusCode: response.Key, response: response.Value,
+                            hint: Hint.Response, index: null, depth: 0);
                     }
                 }
             }

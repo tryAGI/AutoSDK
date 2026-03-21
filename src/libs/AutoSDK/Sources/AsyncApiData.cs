@@ -102,7 +102,7 @@ public static class AsyncApiData
 
         // For AsyncAPI, include all schemas (no tag-based filtering)
         var filteredSchemas = schemas
-            .Where(x => !x.HasAllOfTypeForMetadata())
+            .Where(x => !x.IsAllOfForMetadata)
             .ToArray();
 
         filteringTime.Stop();

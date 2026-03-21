@@ -13,7 +13,7 @@ public class SchemaContext(
     string type)
 {
     public SchemaContext? Parent { get; set; }
-    public IList<SchemaContext> Children { get; set; } = [];
+    public IList<SchemaContext> Children { get; set; } = Array.Empty<SchemaContext>();
 
     public Settings Settings { get; set; } = settings;
     public IOpenApiSchema Schema { get; set; } = schema;
@@ -24,7 +24,12 @@ public class SchemaContext(
     public bool IsReference => ReferenceId != null;
     public SchemaContext? ResolvedReference { get; set; }
     
-    public IList<SchemaContext> Links { get; set; } = [];
+    private IList<SchemaContext>? _links;
+    public IList<SchemaContext> Links
+    {
+        get => _links ??= [];
+        set => _links = value;
+    }
     
     public Hint? Hint { get; set; }
     public int? Index { get; set; }
@@ -64,6 +69,13 @@ public class SchemaContext(
     /// Set during cycle detection after reference resolution.
     /// </summary>
     public bool IsInCycle { get; set; }
+
+    /// <summary>
+    /// Cached result of <see cref="OpenApiExtensions.HasAllOfTypeForMetadata(SchemaContext)"/>.
+    /// Computed once to avoid repeated access to IOpenApiSchema property accessors.
+    /// </summary>
+    private bool? _isAllOfForMetadata;
+    public bool IsAllOfForMetadata => _isAllOfForMetadata ??= this.HasAllOfTypeForMetadata();
     
     public bool IsClass =>
         Type == "class" ||
@@ -292,7 +304,7 @@ public class SchemaContext(
         return result;
     }
 
-    private static void FromSchemaCore(
+    internal static void FromSchemaCore(
         List<SchemaContext> result,
         IOpenApiSchema schema,
         Settings settings,
@@ -726,9 +738,12 @@ public class SchemaContext(
                 }
             }
         }
-        foreach (var tag in parentTags ?? [])
+        if (parentTags != null)
         {
-            Tags.Add(tag);
+            foreach (var tag in parentTags)
+            {
+                Tags.Add(tag);
+            }
         }
 
         foreach (var child in Children)
