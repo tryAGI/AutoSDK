@@ -91,6 +91,8 @@ public partial class Tests
     [DataRow("elevenlabs-realtime-stt-xref.json", JsonSerializerType.SystemTextJson)]
     [DataRow("xai-realtime.json", JsonSerializerType.NewtonsoftJson)]
     [DataRow("xai-realtime.json", JsonSerializerType.SystemTextJson)]
+    [DataRow("deepgram-multichannel.json", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("deepgram-multichannel.json", JsonSerializerType.SystemTextJson)]
     public Task SdkGenerator(string fileName, JsonSerializerType jsonSerializerType)
     {
         if (fileName == "")
@@ -180,6 +182,12 @@ public partial class Tests
                     : string.Empty,
             },
             "xai-realtime.json" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_JsonSerializerContext"] = jsonSerializerType is JsonSerializerType.SystemTextJson
+                    ? "G.SourceGenerationContext"
+                    : string.Empty,
+            },
+            "deepgram-multichannel.json" => new Dictionary<string, string>
             {
                 ["build_property.AutoSDK_JsonSerializerContext"] = jsonSerializerType is JsonSerializerType.SystemTextJson
                     ? "G.SourceGenerationContext"

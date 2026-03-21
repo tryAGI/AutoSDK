@@ -39,4 +39,14 @@ public sealed class AsyncApiServer
         var path = string.IsNullOrEmpty(Pathname) ? string.Empty : "/" + Pathname.TrimStart('/');
         return $"{Protocol}://{host}{path}";
     }
+
+    /// <summary>
+    /// Returns protocol + host without pathname, for multi-channel mode
+    /// where each channel's address provides the path.
+    /// </summary>
+    public string GetHostUrl()
+    {
+        var host = Host.TrimEnd('/');
+        return $"{Protocol}://{host}";
+    }
 }

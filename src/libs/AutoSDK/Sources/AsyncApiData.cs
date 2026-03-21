@@ -40,9 +40,9 @@ public static class AsyncApiData
         // Parse AsyncAPI document
         var asyncApiDoc = text.GetAsyncApiDocument(settings, cancellationToken);
 
-        // If multiple receive message types exist, inject a synthetic oneOf wrapper schema
+        // If multiple receive message types exist, inject synthetic oneOf wrapper schemas
         // for discriminated union deserialization (before bridging to OpenAPI)
-        var syntheticEventSchemaName = InjectSyntheticServerEventSchema(asyncApiDoc);
+        var syntheticEventSchemaNames = InjectSyntheticServerEventSchemas(asyncApiDoc);
 
         // Bridge schemas to OpenAPI for reuse of model generation
         var openApiDocument = asyncApiDoc.BridgeSchemasToOpenApi(settings, cancellationToken);
@@ -150,7 +150,7 @@ public static class AsyncApiData
 
         // Build WebSocket endpoints from AsyncAPI operations
         var (webSocketClients, webSocketOperations) = BuildWebSocketData(
-            asyncApiDoc, settings, globalSettings, componentSchemas, syntheticEventSchemaName);
+            asyncApiDoc, settings, globalSettings, componentSchemas, syntheticEventSchemaNames);
 
         // Build authorization from AsyncAPI security schemes
         var authorizations = BuildAuthorizations(asyncApiDoc, settings, globalSettings);
@@ -222,111 +222,137 @@ public static class AsyncApiData
         Settings settings,
         Settings globalSettings,
         Dictionary<string, SchemaContext> componentSchemas,
-        string? syntheticEventSchemaName)
+        Dictionary<string, string> syntheticEventSchemaNames)
     {
         var wsClients = new List<WebSocketClient>();
         var wsOperations = new List<WebSocketEndPoint>();
 
-        // Determine WebSocket client class name
-        var className = !string.IsNullOrWhiteSpace(settings.WebSocketClientClassName)
+        var isMultiChannel = asyncApiDoc.Channels.Count > 1;
+
+        // Determine class name prefix
+        var classNamePrefix = !string.IsNullOrWhiteSpace(settings.WebSocketClientClassName)
             ? settings.WebSocketClientClassName
             : !string.IsNullOrWhiteSpace(asyncApiDoc.Info.Title)
                 ? asyncApiDoc.Info.Title.ToClassName() + "RealtimeClient"
                 : settings.ClassName.Replace(".", string.Empty) + "RealtimeClient";
 
-        // Get base URL from first server
-        var baseUrl = asyncApiDoc.Servers.Values.FirstOrDefault()?.GetUrl() ?? string.Empty;
-        var protocol = asyncApiDoc.Servers.Values.FirstOrDefault()?.Protocol ?? "wss";
+        // Get server info
+        var server = asyncApiDoc.Servers.Values.FirstOrDefault();
+        var protocol = server?.Protocol ?? "wss";
 
-        var sendOps = new List<WebSocketEndPoint>();
-        var receiveOps = new List<WebSocketEndPoint>();
-
-        foreach (var kvp in asyncApiDoc.Operations)
-        {
-            var operation = kvp.Value;
-            var direction = operation.IsSend ? WebSocketDirection.Send : WebSocketDirection.Receive;
-            var channelAddress = string.Empty;
-
-            // Resolve channel address
-            if (!string.IsNullOrEmpty(operation.ChannelName) &&
-                asyncApiDoc.Channels.TryGetValue(operation.ChannelName, out var channel))
-            {
-                channelAddress = channel.Address;
-            }
-
-            // Process each message in the operation
-            foreach (var msgRef in operation.Messages)
-            {
-                var messageName = ExtractMessageName(msgRef.Ref);
-                var messageType = ResolveMessageType(
-                    msgRef.Ref, asyncApiDoc, componentSchemas, settings);
-
-                var wsOp = new WebSocketEndPoint(
-                    Id: messageName,
-                    ClassName: className,
-                    ChannelAddress: channelAddress,
-                    Direction: direction,
-                    MessageType: messageType,
-                    MessageName: messageName,
-                    Summary: operation.Summary,
-                    Settings: settings,
-                    GlobalSettings: globalSettings);
-
-                wsOperations.Add(wsOp);
-
-                if (direction == WebSocketDirection.Send)
-                {
-                    sendOps.Add(wsOp);
-                }
-                else
-                {
-                    receiveOps.Add(wsOp);
-                }
-            }
-        }
-
-        // Determine the base receive event type
-        TypeData baseReceiveEventType = default;
-        var isReceiveEventValueType = false;
-        if (!string.IsNullOrEmpty(syntheticEventSchemaName) &&
-            receiveOps.Count > 1 &&
-            componentSchemas.TryGetValue(syntheticEventSchemaName, out var eventSchema))
-        {
-            // Use the synthetic oneOf wrapper type for discriminated union deserialization
-            baseReceiveEventType = eventSchema.TypeData;
-            isReceiveEventValueType = true; // anyOf/oneOf types are generated as structs
-        }
-        else if (receiveOps.Count == 1)
-        {
-            baseReceiveEventType = receiveOps[0].MessageType;
-        }
-        else if (receiveOps.Count > 1)
-        {
-            // Fallback: use the first receive type if synthetic schema wasn't created
-            baseReceiveEventType = receiveOps[0].MessageType;
-        }
-
-        // Build authorizations from AsyncAPI security schemes
+        // Build authorizations (shared across all channels)
         var authorizations = BuildAuthorizations(asyncApiDoc, settings, globalSettings);
 
-        var wsClient = new WebSocketClient(
-            Id: "WebSocketClient",
-            ClassName: className,
-            BaseUrl: baseUrl,
-            Protocol: protocol,
-            SendOperations: sendOps.ToImmutableArray(),
-            ReceiveOperations: receiveOps.ToImmutableArray(),
-            Authorizations: authorizations.ToImmutableArray(),
-            Summary: asyncApiDoc.Info.Description?.ClearForXml() ?? string.Empty,
-            Settings: settings,
-            GlobalSettings: globalSettings,
-            Converters: ImmutableArray<string>.Empty)
+        foreach (var channelKvp in asyncApiDoc.Channels)
         {
-            BaseReceiveEventType = baseReceiveEventType,
-            IsReceiveEventValueType = isReceiveEventValueType,
-        };
+            var channelName = channelKvp.Key;
+            var channel = channelKvp.Value;
 
-        wsClients.Add(wsClient);
+            // Filter operations that belong to this channel
+            var channelOperations = asyncApiDoc.Operations
+                .Where(kvp => kvp.Value.ChannelName == channelName)
+                .ToList();
+
+            if (channelOperations.Count == 0)
+            {
+                continue;
+            }
+
+            // Determine class name for this channel
+            var className = isMultiChannel
+                ? classNamePrefix.Replace("RealtimeClient", string.Empty) + channelName.ToClassName() + "RealtimeClient"
+                : classNamePrefix;
+
+            // Determine base URL for this channel
+            var baseUrl = isMultiChannel
+                ? (server?.GetHostUrl() ?? string.Empty) + (string.IsNullOrEmpty(channel.Address) ? string.Empty : "/" + channel.Address.TrimStart('/'))
+                : server?.GetUrl() ?? string.Empty;
+
+            var sendOps = new List<WebSocketEndPoint>();
+            var receiveOps = new List<WebSocketEndPoint>();
+
+            foreach (var kvp in channelOperations)
+            {
+                var operation = kvp.Value;
+                var direction = operation.IsSend ? WebSocketDirection.Send : WebSocketDirection.Receive;
+
+                // Process each message in the operation
+                foreach (var msgRef in operation.Messages)
+                {
+                    var messageName = ExtractMessageName(msgRef.Ref);
+                    var messageType = ResolveMessageType(
+                        msgRef.Ref, asyncApiDoc, componentSchemas, settings);
+
+                    var wsOp = new WebSocketEndPoint(
+                        Id: messageName,
+                        ClassName: className,
+                        ChannelAddress: channel.Address,
+                        Direction: direction,
+                        MessageType: messageType,
+                        MessageName: messageName,
+                        Summary: operation.Summary,
+                        Settings: settings,
+                        GlobalSettings: globalSettings);
+
+                    wsOperations.Add(wsOp);
+
+                    if (direction == WebSocketDirection.Send)
+                    {
+                        sendOps.Add(wsOp);
+                    }
+                    else
+                    {
+                        receiveOps.Add(wsOp);
+                    }
+                }
+            }
+
+            // Determine the base receive event type for this channel
+            TypeData baseReceiveEventType = default;
+            var isReceiveEventValueType = false;
+
+            if (syntheticEventSchemaNames.TryGetValue(channelName, out var syntheticEventSchemaName) &&
+                receiveOps.Count > 1 &&
+                componentSchemas.TryGetValue(syntheticEventSchemaName, out var eventSchema))
+            {
+                // Use the synthetic oneOf wrapper type for discriminated union deserialization
+                baseReceiveEventType = eventSchema.TypeData;
+                isReceiveEventValueType = true; // anyOf/oneOf types are generated as structs
+            }
+            else if (receiveOps.Count == 1)
+            {
+                baseReceiveEventType = receiveOps[0].MessageType;
+            }
+            else if (receiveOps.Count > 1)
+            {
+                // Fallback: use the first receive type if synthetic schema wasn't created
+                baseReceiveEventType = receiveOps[0].MessageType;
+            }
+
+            // Use channel description if available, else spec description
+            var summary = !string.IsNullOrWhiteSpace(channel.Description)
+                ? channel.Description.ClearForXml()
+                : asyncApiDoc.Info.Description?.ClearForXml() ?? string.Empty;
+
+            var wsClient = new WebSocketClient(
+                Id: isMultiChannel ? $"WebSocketClient_{channelName}" : "WebSocketClient",
+                ClassName: className,
+                BaseUrl: baseUrl,
+                Protocol: protocol,
+                SendOperations: sendOps.ToImmutableArray(),
+                ReceiveOperations: receiveOps.ToImmutableArray(),
+                Authorizations: authorizations.ToImmutableArray(),
+                Summary: summary,
+                Settings: settings,
+                GlobalSettings: globalSettings,
+                Converters: ImmutableArray<string>.Empty)
+            {
+                BaseReceiveEventType = baseReceiveEventType,
+                IsReceiveEventValueType = isReceiveEventValueType,
+            };
+
+            wsClients.Add(wsClient);
+        }
 
         return (wsClients, wsOperations);
     }
@@ -455,15 +481,19 @@ public static class AsyncApiData
     }
 
     /// <summary>
-    /// When multiple receive message types exist, injects a synthetic oneOf wrapper schema
-    /// (named "ServerEvent") into the AsyncAPI components for discriminated union deserialization.
-    /// Returns the synthetic schema name, or null if not needed.
+    /// When multiple receive message types exist, injects synthetic oneOf wrapper schemas
+    /// into the AsyncAPI components for discriminated union deserialization.
+    /// For single-channel specs, produces one "ServerEvent" schema (backward compat).
+    /// For multi-channel specs, produces per-channel "{ChannelName}ServerEvent" schemas.
+    /// Returns a dictionary of channel name → synthetic schema name.
     /// </summary>
-    private static string? InjectSyntheticServerEventSchema(AsyncApiDocument asyncApiDoc)
+    private static Dictionary<string, string> InjectSyntheticServerEventSchemas(AsyncApiDocument asyncApiDoc)
     {
-        // Collect all unique receive payload schema names with their discriminator values
-        var receiveSchemas = new List<(string SchemaName, string DiscriminatorValue)>();
-        var seenSchemas = new HashSet<string>(StringComparer.Ordinal);
+        var result = new Dictionary<string, string>(StringComparer.Ordinal);
+        var isMultiChannel = asyncApiDoc.Channels.Count > 1;
+
+        // Group receive operations by channel
+        var channelReceiveSchemas = new Dictionary<string, List<(string SchemaName, string DiscriminatorValue)>>(StringComparer.Ordinal);
 
         foreach (var kvp in asyncApiDoc.Operations)
         {
@@ -472,6 +502,16 @@ public static class AsyncApiData
             {
                 continue;
             }
+
+            var channelName = operation.ChannelName ?? string.Empty;
+
+            if (!channelReceiveSchemas.TryGetValue(channelName, out var schemas))
+            {
+                schemas = new List<(string SchemaName, string DiscriminatorValue)>();
+                channelReceiveSchemas[channelName] = schemas;
+            }
+
+            var seenSchemas = new HashSet<string>(schemas.Select(s => s.SchemaName), StringComparer.Ordinal);
 
             foreach (var msgRef in operation.Messages)
             {
@@ -482,55 +522,66 @@ public static class AsyncApiData
                 }
 
                 var discriminatorValue = GetDiscriminatorValue(asyncApiDoc, schemaName);
-                receiveSchemas.Add((schemaName, discriminatorValue));
+                schemas.Add((schemaName, discriminatorValue));
             }
         }
 
-        // Only synthesize if there are multiple receive types
-        if (receiveSchemas.Count <= 1)
+        // For each channel with >1 receive types, build a synthetic schema
+        foreach (var channelKvp2 in channelReceiveSchemas)
         {
-            return null;
-        }
+            var channelName = channelKvp2.Key;
+            var receiveSchemas = channelKvp2.Value;
 
-        // Find the common discriminator property name
-        var discriminatorProperty = FindDiscriminatorProperty(asyncApiDoc, receiveSchemas);
-
-        // Build the oneOf array and discriminator mapping
-        var oneOfArray = new JsonArray();
-        var mapping = new JsonObject();
-
-        foreach (var (schemaName, discriminatorValue) in receiveSchemas)
-        {
-            oneOfArray.Add(new JsonObject
+            if (receiveSchemas.Count <= 1)
             {
-                ["$ref"] = $"#/components/schemas/{schemaName}",
-            });
-
-            if (!string.IsNullOrEmpty(discriminatorValue))
-            {
-                mapping[discriminatorValue] = $"#/components/schemas/{schemaName}";
+                continue;
             }
-        }
 
-        var syntheticSchema = new JsonObject
-        {
-            ["oneOf"] = oneOfArray,
-        };
+            // Find the common discriminator property name
+            var discriminatorProperty = FindDiscriminatorProperty(asyncApiDoc, receiveSchemas);
 
-        // Only add discriminator if we have mapping values
-        if (mapping.Count > 0)
-        {
-            syntheticSchema["discriminator"] = new JsonObject
+            // Build the oneOf array and discriminator mapping
+            var oneOfArray = new JsonArray();
+            var mapping = new JsonObject();
+
+            foreach (var entry in receiveSchemas)
             {
-                ["propertyName"] = discriminatorProperty,
-                ["mapping"] = mapping,
+                oneOfArray.Add(new JsonObject
+                {
+                    ["$ref"] = $"#/components/schemas/{entry.SchemaName}",
+                });
+
+                if (!string.IsNullOrEmpty(entry.DiscriminatorValue))
+                {
+                    mapping[entry.DiscriminatorValue] = $"#/components/schemas/{entry.SchemaName}";
+                }
+            }
+
+            var syntheticSchema = new JsonObject
+            {
+                ["oneOf"] = oneOfArray,
             };
+
+            // Only add discriminator if we have mapping values
+            if (mapping.Count > 0)
+            {
+                syntheticSchema["discriminator"] = new JsonObject
+                {
+                    ["propertyName"] = discriminatorProperty,
+                    ["mapping"] = mapping,
+                };
+            }
+
+            // Single-channel: "ServerEvent" (backward compat); multi-channel: "{ChannelName}ServerEvent"
+            var syntheticName = isMultiChannel
+                ? channelName.ToClassName() + "ServerEvent"
+                : "ServerEvent";
+
+            asyncApiDoc.Components.Schemas[syntheticName] = syntheticSchema;
+            result[channelName] = syntheticName;
         }
 
-        const string schemaName2 = "ServerEvent";
-        asyncApiDoc.Components.Schemas[schemaName2] = syntheticSchema;
-
-        return schemaName2;
+        return result;
     }
 
     /// <summary>
