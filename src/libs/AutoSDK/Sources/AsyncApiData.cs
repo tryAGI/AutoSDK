@@ -8,6 +8,8 @@ using AutoSDK.Helpers;
 using AutoSDK.Models;
 using AutoSDK.Models.AsyncApi;
 using AutoSDK.Naming.Models;
+using AutoSDK.Naming.Properties;
+using AutoSDK.Serialization.Form;
 using AutoSDK.Serialization.Json;
 using Microsoft.OpenApi;
 
@@ -348,6 +350,10 @@ public static class AsyncApiData
                 ? channel.Description.ClearForXml()
                 : asyncApiDoc.Info.Description?.ClearForXml() ?? string.Empty;
 
+            // Build query parameters from channel bindings (ws.query)
+            var queryParams = BuildChannelQueryParameters(
+                channel, componentSchemas, settings);
+
             var wsClient = new WebSocketClient(
                 Id: isMultiChannel ? $"WebSocketClient_{channelName}" : "WebSocketClient",
                 ClassName: className,
@@ -356,6 +362,7 @@ public static class AsyncApiData
                 SendOperations: sendOps.ToImmutableArray(),
                 ReceiveOperations: receiveOps.ToImmutableArray(),
                 Authorizations: authorizations.ToImmutableArray(),
+                QueryParameters: queryParams,
                 Summary: summary,
                 Settings: settings,
                 GlobalSettings: globalSettings,
@@ -369,6 +376,85 @@ public static class AsyncApiData
         }
 
         return (wsClients, wsOperations);
+    }
+
+    private static ImmutableArray<MethodParameter> BuildChannelQueryParameters(
+        AsyncApiChannel channel,
+        Dictionary<string, SchemaContext> componentSchemas,
+        Settings settings)
+    {
+        if (channel.BindingsQueryProperties.Count == 0)
+        {
+            return ImmutableArray<MethodParameter>.Empty;
+        }
+
+        var result = new List<MethodParameter>();
+
+        foreach (var kvp in channel.BindingsQueryProperties)
+        {
+            var paramName = kvp.Key;
+            var propNode = kvp.Value;
+
+            // Resolve $ref to component schema
+            var refPath = propNode?["$ref"]?.GetValue<string>();
+            if (refPath == null) continue;
+
+            var schemaName = refPath.Split('/').Last();
+            if (!componentSchemas.TryGetValue(schemaName, out var schemaContext))
+            {
+                continue;
+            }
+
+            var type = schemaContext.TypeData;
+            var isRequired = channel.BindingsQueryRequired.Contains(paramName);
+
+            // Make type nullable if not required
+            if (!isRequired && !type.CSharpTypeNullability)
+            {
+                type = type with { CSharpTypeNullability = true };
+            }
+
+            var name = paramName.ToPropertyName();
+            name = MethodParameter.HandleWordSeparators(name);
+            name = CSharpPropertyNameGenerator.SanitizeName(
+                name, settings.ClsCompliantEnumPrefix, true);
+
+            var methodParam = new MethodParameter(
+                Id: paramName,
+                Name: name,
+                Value: string.Empty,
+                Delimiter: string.Empty,
+                Selector: string.Empty,
+                Type: type,
+                IsRequired: isRequired,
+                IsMultiPartFormDataFilename: false,
+                Location: ParameterLocation.Query,
+                Style: ParameterStyle.Form,
+                Explode: true,
+                Settings: settings,
+                DefaultValue: null,
+                IsDeprecated: false,
+                Summary: schemaContext.Schema.GetSummary(),
+                Description: schemaContext.Schema.Description ?? string.Empty,
+                ConverterType: type.ConverterType,
+                Properties: schemaContext.ClassData?.Properties ?? []);
+
+            // Use existing serializer to fill in Value expression
+            var serialized = ParameterSerializer.SerializeQueryParameter(methodParam);
+            result.AddRange(serialized);
+        }
+
+        // Sort: required params first, then optional
+        result.Sort((a, b) =>
+        {
+            if (a.IsRequired != b.IsRequired)
+            {
+                return a.IsRequired ? -1 : 1;
+            }
+            return string.Compare(a.Id, b.Id, StringComparison.Ordinal);
+        });
+
+        return result.ToImmutableArray();
     }
 
     private static string ExtractMessageName(string refPath)

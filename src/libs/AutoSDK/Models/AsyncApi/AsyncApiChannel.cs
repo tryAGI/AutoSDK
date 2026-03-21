@@ -1,3 +1,5 @@
+using System.Text.Json.Nodes;
+
 namespace AutoSDK.Models.AsyncApi;
 
 /// <summary>
@@ -32,6 +34,17 @@ public sealed class AsyncApiChannel
     /// When non-empty, the first entry determines the base URL for this channel.
     /// </summary>
     public List<string> ServerRefs { get; set; } = new();
+
+    /// <summary>
+    /// Query parameters from bindings.ws.query.properties, keyed by parameter name.
+    /// Values are the raw JSON nodes (typically $ref or inline schemas).
+    /// </summary>
+    public Dictionary<string, JsonNode?> BindingsQueryProperties { get; set; } = new();
+
+    /// <summary>
+    /// Required query parameter names from bindings.ws.query.required.
+    /// </summary>
+    public HashSet<string> BindingsQueryRequired { get; set; } = new();
 }
 
 /// <summary>

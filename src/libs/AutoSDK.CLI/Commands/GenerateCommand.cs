@@ -342,6 +342,13 @@ internal sealed class GenerateCommand : Command
                         Sources.WebSocketClient(x),
                         Sources.WebSocketReceiveMethod(x),
                     }))
+                // PathBuilder for WebSocket namespaces with query parameters
+                .Concat(data.WebSocketClients
+                    .Where(x => x.QueryParameters.Length > 0 &&
+                                x.Settings.Namespace != settings.Namespace)
+                    .Select(x => x.Settings)
+                    .Distinct()
+                    .Select(s => Sources.PathBuilder(s)))
                 .Concat(data.WebSocketOperations
                     .Where(x => x.Direction == AutoSDK.Models.WebSocketDirection.Send)
                     .Select(x => Sources.WebSocketSendMethod(x)))

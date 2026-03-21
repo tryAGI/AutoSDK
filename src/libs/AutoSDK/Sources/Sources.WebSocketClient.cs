@@ -1,4 +1,5 @@
 using AutoSDK.Extensions;
+using AutoSDK.Helpers;
 using AutoSDK.Models;
 using Microsoft.OpenApi;
 
@@ -60,15 +61,7 @@ namespace {wsClient.Settings.Namespace}
 
 {GenerateWebSocketAuthorizationConstructors(wsClient)}
 
-        /// <inheritdoc cref=""global::System.Net.WebSockets.ClientWebSocket.ConnectAsync(global::System.Uri, global::System.Threading.CancellationToken)""/>
-        public async global::System.Threading.Tasks.Task ConnectAsync(
-            global::System.Uri? uri = null,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {{
-            uri ??= new global::System.Uri(DefaultBaseUrl);
-
-            await _clientWebSocket.ConnectAsync(uri, cancellationToken).ConfigureAwait(false);
-        }}
+{GenerateConnectAsync(wsClient)}
 
         /// <summary>
         /// Sends a raw text message over the WebSocket connection.
@@ -254,5 +247,129 @@ namespace {wsClient.Settings.Namespace}
         }
 
         return result.ToString();
+    }
+
+    private static string GenerateConnectAsync(WebSocketClient wsClient)
+    {
+        var queryParams = wsClient.QueryParameters.ToArray();
+
+        if (queryParams.Length == 0)
+        {
+            // No query parameters — simple ConnectAsync
+            return $@"
+        /// <inheritdoc cref=""global::System.Net.WebSockets.ClientWebSocket.ConnectAsync(global::System.Uri, global::System.Threading.CancellationToken)""/>
+        public async global::System.Threading.Tasks.Task ConnectAsync(
+            global::System.Uri? uri = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {{
+            uri ??= new global::System.Uri(DefaultBaseUrl);
+
+            await _clientWebSocket.ConnectAsync(uri, cancellationToken).ConfigureAwait(false);
+        }}";
+        }
+
+        // Generate typed ConnectAsync with query parameters
+        var xmlDoc = new System.Text.StringBuilder();
+        var parameterSignature = new System.Text.StringBuilder();
+        var pathBuilderCalls = new System.Text.StringBuilder();
+
+        xmlDoc.AppendLine("        /// <summary>");
+        xmlDoc.AppendLine("        /// Connects to the WebSocket server with typed query parameters.");
+        xmlDoc.AppendLine("        /// </summary>");
+
+        // Required parameters first, then optional
+        var isFirst = true;
+        foreach (var param in queryParams)
+        {
+            // XML doc for this parameter — collapse to single line
+            var xmlSummary = !string.IsNullOrWhiteSpace(param.Description)
+                ? param.Description.ClearForXml()
+                : !string.IsNullOrWhiteSpace(param.Summary)
+                    ? param.Summary.ClearForXml()
+                    : string.Empty;
+
+            if (!string.IsNullOrWhiteSpace(xmlSummary))
+            {
+                // Replace newlines with spaces to keep XML doc on one line
+                xmlSummary = xmlSummary
+                    .Replace("\r\n", " ")
+                    .Replace("\r", " ")
+                    .Replace("\n", " ")
+                    .Trim();
+                xmlDoc.AppendLine($"        /// <param name=\"{param.ParameterName}\">{xmlSummary}</param>");
+            }
+
+            // Parameter signature
+            if (!isFirst)
+            {
+                parameterSignature.AppendLine(",");
+            }
+            isFirst = false;
+
+            if (param.IsRequired)
+            {
+                parameterSignature.Append(
+                    $"            {param.Type.CSharpTypeWithoutNullability} {param.ParameterName}");
+            }
+            else
+            {
+                parameterSignature.Append(
+                    $"            {param.Type.CSharpType} {param.ParameterName} = default");
+            }
+
+            // Build PathBuilder calls
+            var additionalArguments = param.Type.IsArray
+                ? $", delimiter: \"{param.Delimiter}\", explode: {(param.Explode ? "true" : "false")}"
+                : string.Empty;
+            if (param.Type.IsArray && param.Type.SubTypes[0].Unbox<TypeData>().CSharpTypeWithoutNullability is not "string")
+            {
+                additionalArguments = $", selector: static x => {param.Selector}" + additionalArguments;
+            }
+
+            if (param.IsRequired && !param.Type.IsNullable)
+            {
+                // For non-nullable required params, replace ?. with . since the type is non-nullable
+                var value = param.Value.Replace("?.", ".");
+                pathBuilderCalls.AppendLine(
+                    $"                .AddRequiredParameter(\"{param.Id}\", {value}{additionalArguments})");
+            }
+            else
+            {
+                pathBuilderCalls.AppendLine(
+                    $"                .AddOptionalParameter(\"{param.Id}\", {param.Value}{additionalArguments})");
+            }
+        }
+
+        var hasRequired = queryParams.Any(p => p.IsRequired);
+
+        // Only generate simple overload when there are required params,
+        // otherwise it's ambiguous with the typed overload (all optional)
+        var simpleOverload = hasRequired ? $@"
+
+        /// <inheritdoc cref=""global::System.Net.WebSockets.ClientWebSocket.ConnectAsync(global::System.Uri, global::System.Threading.CancellationToken)""/>
+        public async global::System.Threading.Tasks.Task ConnectAsync(
+            global::System.Uri? uri = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {{
+            uri ??= new global::System.Uri(DefaultBaseUrl);
+
+            await _clientWebSocket.ConnectAsync(uri, cancellationToken).ConfigureAwait(false);
+        }}" : string.Empty;
+
+        return $@"
+{xmlDoc}        public async global::System.Threading.Tasks.Task ConnectAsync(
+{parameterSignature},
+            global::System.Uri? uri = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {{
+            var __pathBuilder = new global::{wsClient.Settings.Namespace}.PathBuilder(
+                path: uri?.ToString() ?? DefaultBaseUrl);
+            __pathBuilder
+{pathBuilderCalls}                ;
+            var __path = __pathBuilder.ToString();
+
+            await _clientWebSocket.ConnectAsync(
+                new global::System.Uri(__path), cancellationToken).ConfigureAwait(false);
+        }}{simpleOverload}";
     }
 }

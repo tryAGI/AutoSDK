@@ -572,6 +572,31 @@ public static class AsyncApiExtensions
             }
         }
 
+        // Parse channel bindings (ws.query for WebSocket query parameters)
+        if (channelObj["bindings"] is JsonObject bindings &&
+            bindings["ws"] is JsonObject wsBinding &&
+            wsBinding["query"] is JsonObject queryBinding)
+        {
+            if (queryBinding["properties"] is JsonObject queryProps)
+            {
+                foreach (var kvp in queryProps)
+                {
+                    channel.BindingsQueryProperties[kvp.Key] = kvp.Value?.DeepClone();
+                }
+            }
+            if (queryBinding["required"] is JsonArray requiredArray)
+            {
+                foreach (var item in requiredArray)
+                {
+                    var name = item?.GetValue<string>();
+                    if (!string.IsNullOrEmpty(name))
+                    {
+                        channel.BindingsQueryRequired.Add(name);
+                    }
+                }
+            }
+        }
+
         return channel;
     }
 
