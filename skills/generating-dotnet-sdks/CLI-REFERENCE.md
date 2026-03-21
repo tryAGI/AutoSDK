@@ -18,13 +18,13 @@ dotnet tool update --global autosdk.cli --prerelease
 
 ### `autosdk generate <input>`
 
-Generates a C# SDK from an OpenAPI specification.
+Generates a C# SDK from an OpenAPI or AsyncAPI specification.
 
 **Arguments:**
 
 | Argument | Type | Description |
 |----------|------|-------------|
-| `input` | string | Path to OpenAPI spec file or URL (YAML or JSON) |
+| `input` | string | Path to OpenAPI or AsyncAPI spec file or URL (YAML or JSON) |
 
 **Options:**
 
@@ -45,6 +45,10 @@ Generates a C# SDK from an OpenAPI specification.
 | `--generate-cli` | | bool | `false` | Generate CLI command classes for the API (System.CommandLine-based) |
 | `--security-scheme` | | string[] | (none) | Inject a security scheme as `Type:Location:Name`. Repeatable. See below for format |
 | `--base-url` | | string | (none) | Server base URL to inject (e.g., `https://api.example.com`). Useful for specs missing a `servers` field |
+| `--websocket-class-name` | | string | (none) | Override class name for the generated WebSocket client (AsyncAPI specs only) |
+| `--types-namespace` | | string | (none) | Namespace for type references instead of the main namespace. Used for cross-namespace schema referencing where models live in a different namespace |
+| `--generate-models` | | bool | `true` | Generate model classes, enums, and JSON converters. Set to `false` when referencing types from an existing namespace via `--types-namespace` |
+| `--json-serializer-context` | | string | `SourceGenerationContext` | Override the `JsonSerializerContext` class name. Useful when generating multiple specs into the same project |
 
 **Examples:**
 
@@ -118,6 +122,21 @@ autosdk generate openapi.yaml \
   --clientClassName MyApiClient \
   --base-url "https://api.example.com/v1" \
   --security-scheme "ApiKey:Header:x-api-key"
+
+# Generate WebSocket client from AsyncAPI spec
+autosdk generate asyncapi.yaml \
+  --namespace MyApi.Realtime \
+  --websocket-class-name MyRealtimeClient \
+  --output Generated
+
+# AsyncAPI with cross-namespace schema referencing (share models with REST API)
+autosdk generate asyncapi.yaml \
+  --namespace MyApi.Realtime \
+  --websocket-class-name MyRealtimeClient \
+  --types-namespace MyApi \
+  --generate-models false \
+  --json-serializer-context MyApi.SourceGenerationContext \
+  --output Generated
 ```
 
 **Namespace/ClassName auto-derivation:** If `--namespace` or `--clientClassName` are not specified, they are derived from the input filename. For example, `my-cool-api.yaml` produces namespace `MyCoolApi` and client class `MyCoolApiClient`. Special characters (`\`, `-`, `.`, `_`, `/`) are treated as word separators and converted to PascalCase.
@@ -340,3 +359,50 @@ The `--methodNamingConvention` option controls how C# method names are derived f
 | `OperationIdWithDots` | Preserves dots in operationId as namespace separators | `pets.list` -> `PetsList` |
 
 If the primary convention fails to produce a unique name, the fallback convention `MethodAndPath` is used automatically.
+
+---
+
+## AsyncAPI / WebSocket Generation
+
+AutoSDK supports [AsyncAPI 3.0](https://www.asyncapi.com/) specifications for generating typed WebSocket clients. The `generate` command auto-detects whether the input is an OpenAPI or AsyncAPI spec.
+
+**What gets generated from an AsyncAPI spec:**
+- A WebSocket client class with connect/disconnect lifecycle
+- Typed `Send*` methods for publish operations
+- Typed `Receive*` methods (via event callbacks) for subscribe operations
+- All associated models, enums, and JSON converters
+
+### Cross-Namespace Schema Referencing
+
+When an API has both REST (OpenAPI) and WebSocket (AsyncAPI) specs that share model types, generate them into separate namespaces while avoiding model duplication:
+
+```bash
+# Step 1: Generate REST API (models + HTTP client)
+autosdk generate openapi.yaml \
+  --namespace MyApi \
+  --clientClassName MyApiClient \
+  --output Generated
+
+# Step 2: Generate WebSocket client referencing existing REST types
+autosdk generate asyncapi.yaml \
+  --namespace MyApi.Realtime \
+  --websocket-class-name MyRealtimeClient \
+  --types-namespace MyApi \
+  --generate-models false \
+  --json-serializer-context MyApi.SourceGenerationContext \
+  --output Generated
+```
+
+| Option | Purpose |
+|--------|---------|
+| `--types-namespace <ns>` | Generated code uses `global::<ns>.{TypeName}` references instead of its own namespace |
+| `--generate-models false` | Skips model/enum/converter generation (they already exist in the types namespace) |
+| `--json-serializer-context <ctx>` | References an existing `JsonSerializerContext` from the types namespace |
+| `--websocket-class-name <name>` | Overrides the generated WebSocket client class name |
+
+> **Constraint:** AsyncAPI schema names must match the target namespace's type names. If they differ (e.g., OpenAI where AsyncAPI uses different names), use separate namespaces with full model generation instead.
+
+**Real-world SDKs using AsyncAPI:**
+- [tryAGI/OpenAI](https://github.com/tryAGI/OpenAI) — REST + Realtime WebSocket API
+- [tryAGI/ElevenLabs](https://github.com/tryAGI/ElevenLabs) — REST + Realtime Speech-to-Text WebSocket API
+- [tryAGI/Xai](https://github.com/tryAGI/Xai) — REST + Realtime Voice Agent WebSocket API

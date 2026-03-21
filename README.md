@@ -123,7 +123,7 @@ https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitat
  
 # AsyncAPI / WebSocket Support
 
-AutoSDK can generate typed WebSocket clients from [AsyncAPI](https://www.asyncapi.com/) specifications, producing send/receive methods for each channel operation.
+AutoSDK can generate typed WebSocket clients from [AsyncAPI 3.0](https://www.asyncapi.com/) specifications, producing send/receive methods for each channel operation.
 
 ## Basic Usage
 ```bash
@@ -171,6 +171,7 @@ Key options:
 ### Real-world examples
 - [tryAGI/OpenAI](https://github.com/tryAGI/OpenAI) — REST API + Realtime WebSocket API
 - [tryAGI/ElevenLabs](https://github.com/tryAGI/ElevenLabs) — REST API + Realtime Speech-to-Text WebSocket API
+- [tryAGI/Xai](https://github.com/tryAGI/Xai) — REST API + Realtime Voice Agent WebSocket API
 
 ## 🤖 Claude Code Skill
 
@@ -205,6 +206,7 @@ Skill source: [`skills/generating-dotnet-sdks/`](skills/generating-dotnet-sdks/)
 ## 📚Examples of use in real SDKs📚
 - https://github.com/tryAGI/OpenAI — REST + WebSocket (AsyncAPI)
 - https://github.com/tryAGI/ElevenLabs — REST + WebSocket (AsyncAPI)
+- https://github.com/tryAGI/Xai — REST + WebSocket (AsyncAPI)
 - https://github.com/tryAGI/Ollama
 - https://github.com/tryAGI/Anthropic
 - https://github.com/tryAGI/LangSmith
