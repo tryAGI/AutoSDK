@@ -168,6 +168,7 @@ public static class TraversalTreeHelper
         IReadOnlyDictionary<string, Tag>? resolvedTags = null)
     {
         openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
+        filteredSchemas = filteredSchemas ?? throw new ArgumentNullException(nameof(filteredSchemas));
 
         var pathItems = openApiDocument.Paths;
         if (pathItems == null) return [];

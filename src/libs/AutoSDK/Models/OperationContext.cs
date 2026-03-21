@@ -31,7 +31,7 @@ public class OperationContext(
         OpenApiOperation operation,
         string operationPath,
         System.Net.Http.HttpMethod operationType,
-        List<SchemaContext>? operationSchemas,
+        IReadOnlyList<SchemaContext>? operationSchemas,
         IList<OpenApiSecurityRequirement> globalSecurityRequirements,
         IReadOnlyDictionary<string, Tag>? resolvedTags = null)
     {

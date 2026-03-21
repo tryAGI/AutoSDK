@@ -169,33 +169,43 @@ public record struct AnyOfData(
             return string.Empty;
         }
 
-        // 1. Try discriminator mapping (existing logic)
-        var mappingValue = context.Schema.Discriminator?.Mapping?
-            .FirstOrDefault(y =>
-                y.Value.Reference?.Id?.Contains(child.Id) == true ||
-                ((child.Schema.Properties?.ContainsKey(discriminatorPropName) ?? false) &&
-                 (child.Schema.Properties![discriminatorPropName].Enum?.Count ?? 0) == 1 &&
-                 (child.Schema.Properties[discriminatorPropName].Enum?.FirstOrDefault())
-                     ?.GetString() == y.Key))
-            .Key;
-        if (!string.IsNullOrEmpty(mappingValue))
+        // 1. Try discriminator mapping
+        var mapping = context.Schema.Discriminator?.Mapping;
+        if (mapping != null)
         {
-            return mappingValue!.ToEnumValue(string.Empty, context.Settings).Name;
+            // Pre-check child discriminator property for single-enum matching
+            string? childEnumStr = null;
+            if (child.Schema.Properties?.ContainsKey(discriminatorPropName) == true)
+            {
+                var childDiscProp = child.Schema.Properties[discriminatorPropName];
+                if ((childDiscProp.Enum?.Count ?? 0) == 1)
+                {
+                    childEnumStr = childDiscProp.Enum![0]?.GetString();
+                }
+            }
+
+            foreach (var kvp in mapping)
+            {
+                if (kvp.Value.Reference?.Id?.Contains(child.Id) == true ||
+                    (childEnumStr != null && childEnumStr == kvp.Key))
+                {
+                    return kvp.Key.ToEnumValue(string.Empty, context.Settings).Name;
+                }
+            }
         }
 
         // 2. Try const value on the discriminator property
-        if (child.Schema.Properties?.ContainsKey(discriminatorPropName) == true)
+        if (child.Schema.Properties?.TryGetValue(discriminatorPropName, out var discProp2) == true)
         {
-            var discProp = child.Schema.Properties[discriminatorPropName];
-            if (!string.IsNullOrEmpty(discProp.Const))
+            if (!string.IsNullOrEmpty(discProp2.Const))
             {
-                return discProp.Const!.ToEnumValue(string.Empty, context.Settings).Name;
+                return discProp2.Const!.ToEnumValue(string.Empty, context.Settings).Name;
             }
 
             // 3. Try single-enum value on the discriminator property
-            if ((discProp.Enum?.Count ?? 0) == 1)
+            if ((discProp2.Enum?.Count ?? 0) == 1)
             {
-                var enumValue = discProp.Enum?.FirstOrDefault()?.GetString();
+                var enumValue = discProp2.Enum![0]?.GetString();
                 if (!string.IsNullOrEmpty(enumValue))
                 {
                     return enumValue!.ToEnumValue(string.Empty, context.Settings).Name;

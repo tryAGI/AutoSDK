@@ -148,6 +148,7 @@ public static class ModelNameGenerator
     
     public static void ResolveCollisions(IReadOnlyCollection<SchemaContext> contexts)
     {
+        contexts = contexts ?? throw new ArgumentNullException(nameof(contexts));
         // Use dictionary-based grouping to avoid per-iteration LINQ + ToUpperInvariant allocations
         var groups = new Dictionary<string, List<SchemaContext>>(StringComparer.OrdinalIgnoreCase);
         while (true)

@@ -508,4 +508,42 @@ public partial class DataTests
             data: Data.Prepare(((new H.Resource(resourceName).AsString(), settings), GlobalSettings: settings)),
             resourceName: Path.GetFileNameWithoutExtension(resourceName));
     }
+
+    [TestMethod]
+    [DataRow("elevenlabs.json")]
+    [DataRow("openai.yaml")]
+    [DataRow("github.yaml")]
+    public void AllocationBenchmark(string resourceName)
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateJsonSerializerContextTypes = true,
+            IgnoreOpenApiErrors = true,
+        };
+
+        // Warm up
+        Data.Prepare(((new H.Resource(resourceName).AsString(), settings), GlobalSettings: settings));
+
+        // Measure
+        var data = Data.Prepare(((new H.Resource(resourceName).AsString(), settings), GlobalSettings: settings));
+        var t = data.Times;
+
+        var totalAllocMB = (t.AllocParsing + t.AllocTraversalTree + t.AllocNaming +
+            t.AllocResolveReferences + t.AllocFiltering + t.AllocComputeData +
+            t.AllocComputeDataClasses) / (1024.0 * 1024.0);
+
+        // Allocation tracking requires net10.0 build of AutoSDK (uses #if NET).
+        // When test project references netstandard2.0, allocation values will be 0.
+        Console.WriteLine($"=== {resourceName} Benchmark (warm) ===");
+        Console.WriteLine($"  Parse:   {t.Parsing.TotalMilliseconds,7:F0}ms  {t.AllocParsing / (1024.0 * 1024.0),7:F1}MB");
+        Console.WriteLine($"  Tree:    {t.TraversalTree.TotalMilliseconds,7:F0}ms  {t.AllocTraversalTree / (1024.0 * 1024.0),7:F1}MB");
+        Console.WriteLine($"  Naming:  {t.Naming.TotalMilliseconds,7:F0}ms  {t.AllocNaming / (1024.0 * 1024.0),7:F1}MB");
+        Console.WriteLine($"  Resolve: {t.ResolveReferences.TotalMilliseconds,7:F0}ms  {t.AllocResolveReferences / (1024.0 * 1024.0),7:F1}MB");
+        Console.WriteLine($"  Filter:  {t.Filtering.TotalMilliseconds,7:F0}ms  {t.AllocFiltering / (1024.0 * 1024.0),7:F1}MB");
+        Console.WriteLine($"  Data:    {t.ComputeData.TotalMilliseconds,7:F0}ms  {t.AllocComputeData / (1024.0 * 1024.0),7:F1}MB");
+        Console.WriteLine($"  Classes: {t.ComputeDataClasses.TotalMilliseconds,7:F0}ms  {t.AllocComputeDataClasses / (1024.0 * 1024.0),7:F1}MB");
+        Console.WriteLine($"  TOTAL:   {t.Total.TotalMilliseconds,7:F0}ms  {totalAllocMB,7:F1}MB");
+        Console.WriteLine($"  Schemas: {data.Schemas.Count}  Filtered: {data.FilteredSchemas.Count}");
+        Console.WriteLine($"  Classes: {data.Classes.Length}  Enums: {data.Enums.Length}  Methods: {data.Methods.Length}");
+    }
 }
