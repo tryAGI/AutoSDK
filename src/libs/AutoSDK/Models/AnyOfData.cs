@@ -169,19 +169,18 @@ public record struct AnyOfData(
             return string.Empty;
         }
 
+        // Single lookup of the child's discriminator property (used by all 3 strategies)
+        var hasChildDiscProp = child.Schema.Properties?.ContainsKey(discriminatorPropName) == true;
+        var childDiscProp = hasChildDiscProp ? child.Schema.Properties![discriminatorPropName] : null;
+
         // 1. Try discriminator mapping
         var mapping = context.Schema.Discriminator?.Mapping;
         if (mapping != null)
         {
-            // Pre-check child discriminator property for single-enum matching
             string? childEnumStr = null;
-            if (child.Schema.Properties?.ContainsKey(discriminatorPropName) == true)
+            if (childDiscProp != null && (childDiscProp.Enum?.Count ?? 0) == 1)
             {
-                var childDiscProp = child.Schema.Properties[discriminatorPropName];
-                if ((childDiscProp.Enum?.Count ?? 0) == 1)
-                {
-                    childEnumStr = childDiscProp.Enum![0]?.GetString();
-                }
+                childEnumStr = childDiscProp.Enum![0]?.GetString();
             }
 
             foreach (var kvp in mapping)
@@ -195,17 +194,17 @@ public record struct AnyOfData(
         }
 
         // 2. Try const value on the discriminator property
-        if (child.Schema.Properties?.TryGetValue(discriminatorPropName, out var discProp2) == true)
+        if (childDiscProp != null)
         {
-            if (!string.IsNullOrEmpty(discProp2.Const))
+            if (!string.IsNullOrEmpty(childDiscProp.Const))
             {
-                return discProp2.Const!.ToEnumValue(string.Empty, context.Settings).Name;
+                return childDiscProp.Const!.ToEnumValue(string.Empty, context.Settings).Name;
             }
 
             // 3. Try single-enum value on the discriminator property
-            if ((discProp2.Enum?.Count ?? 0) == 1)
+            if ((childDiscProp.Enum?.Count ?? 0) == 1)
             {
-                var enumValue = discProp2.Enum![0]?.GetString();
+                var enumValue = childDiscProp.Enum![0]?.GetString();
                 if (!string.IsNullOrEmpty(enumValue))
                 {
                     return enumValue!.ToEnumValue(string.Empty, context.Settings).Name;
