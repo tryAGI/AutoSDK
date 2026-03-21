@@ -93,27 +93,31 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListenV1ServerEvent? Type16 { get; set; }
+        public global::G.ListenV1Encoding? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListenV1ServerEventDiscriminator? Type17 { get; set; }
+        public global::G.ListenV1ServerEvent? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListenV1ServerEventDiscriminatorType? Type18 { get; set; }
+        public global::G.ListenV1ServerEventDiscriminator? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentV1ServerEvent? Type19 { get; set; }
+        public global::G.ListenV1ServerEventDiscriminatorType? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentV1ServerEventDiscriminator? Type20 { get; set; }
+        public global::G.AgentV1ServerEvent? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentV1ServerEventDiscriminatorType? Type21 { get; set; }
+        public global::G.AgentV1ServerEventDiscriminator? Type21 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AgentV1ServerEventDiscriminatorType? Type22 { get; set; }
 
         /// <summary>
         /// 

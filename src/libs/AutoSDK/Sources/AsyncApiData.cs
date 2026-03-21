@@ -47,6 +47,9 @@ public static class AsyncApiData
         // participate in discriminated union generation.
         ExtractInlinePayloadSchemas(asyncApiDoc);
 
+        // Extract inline enum schemas from channel bindings.ws.query into component schemas.
+        ExtractInlineBindingEnumSchemas(asyncApiDoc);
+
         // If multiple receive message types exist, inject synthetic oneOf wrapper schemas
         // for discriminated union deserialization (before bridging to OpenAPI)
         var syntheticEventSchemaNames = InjectSyntheticServerEventSchemas(asyncApiDoc);
@@ -863,6 +866,52 @@ public static class AsyncApiData
 
         // Default fallback
         return "message_type";
+    }
+
+    /// <summary>
+    /// Extracts inline enum schemas from channel bindings.ws.query.properties into
+    /// component schemas. This allows inline enums like {"type": "string", "enum": [...]}
+    /// to be generated as proper C# enum types.
+    /// </summary>
+    private static void ExtractInlineBindingEnumSchemas(AsyncApiDocument asyncApiDoc)
+    {
+        foreach (var channelKvp in asyncApiDoc.Channels)
+        {
+            var channelName = channelKvp.Key;
+            var channel = channelKvp.Value;
+
+            if (channel.BindingsQueryProperties.Count == 0)
+            {
+                continue;
+            }
+
+            foreach (var propName in channel.BindingsQueryProperties.Keys.ToList())
+            {
+                var propNode = channel.BindingsQueryProperties[propName];
+                if (propNode == null) continue;
+
+                // Skip properties that are already $ref
+                if (propNode["$ref"] != null) continue;
+
+                // Only extract inline enums
+                if (propNode["enum"] is not JsonArray enumArray || enumArray.Count == 0) continue;
+
+                // Generate schema name: {ChannelName}{PascalCasedPropertyName}
+                var schemaName = channelName + propName.ToPropertyName();
+
+                // Skip if schema already exists
+                if (asyncApiDoc.Components.Schemas.ContainsKey(schemaName)) continue;
+
+                // Add as component schema
+                asyncApiDoc.Components.Schemas[schemaName] = propNode.DeepClone();
+
+                // Replace inline with $ref
+                channel.BindingsQueryProperties[propName] = new JsonObject
+                {
+                    ["$ref"] = $"#/components/schemas/{schemaName}",
+                };
+            }
+        }
     }
 
     /// <summary>

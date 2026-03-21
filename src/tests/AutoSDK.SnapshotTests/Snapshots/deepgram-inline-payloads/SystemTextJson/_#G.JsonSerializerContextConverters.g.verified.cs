@@ -17,6 +17,8 @@ namespace G
             typeof(global::G.JsonConverters.ListenV1ResultsTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.ListenV1MetadataTypeJsonConverter),
             typeof(global::G.JsonConverters.ListenV1MetadataTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.ListenV1EncodingJsonConverter),
+            typeof(global::G.JsonConverters.ListenV1EncodingNullableJsonConverter),
             typeof(global::G.JsonConverters.ListenV1ServerEventDiscriminatorTypeJsonConverter),
             typeof(global::G.JsonConverters.ListenV1ServerEventDiscriminatorTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.AgentV1ServerEventDiscriminatorTypeJsonConverter),
