@@ -771,12 +771,20 @@ namespace {endPoint.Settings.Namespace}
 {endPoint.Parameters.Where(x => !x.IsMultiPartFormDataFilename).Select(x =>
 {
     var isBinaryArray = x.Type.IsArray && !x.Type.SubTypes.IsEmpty && x.Type.SubTypes[0].Unbox<TypeData>().IsBinary;
+    // Resolve the actual filename property: prefer the synthetic companion, fall back to
+    // a case-insensitive match among siblings (e.g. FileName from file_name for binary file)
+    var filenamePropName = x.Type.IsBinary
+        ? endPoint.Parameters
+            .Where(p => string.Equals(p.Name, x.Name + "name", StringComparison.OrdinalIgnoreCase))
+            .Select(p => p.Name)
+            .FirstOrDefault() ?? (x.Name + "name")
+        : string.Empty;
     var add = x.Type.IsBinary ? @$"
             var __content{x.Name} = new global::System.Net.Http.ByteArrayContent(request.{x.Name} ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
                 content: __content{x.Name},
                 name: ""\""{x.Id}\"""",
-                fileName: request.{x.Name + "name"} != null ? $""\""{{request.{x.Name + "name"}}}\"""" : string.Empty);
+                fileName: request.{filenamePropName} != null ? $""\""{{request.{filenamePropName}}}\"""" : string.Empty);
             if (__content{x.Name}.Headers.ContentDisposition != null)
             {{
                 __content{x.Name}.Headers.ContentDisposition.FileNameStar = null;

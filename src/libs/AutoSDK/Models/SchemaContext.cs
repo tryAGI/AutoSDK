@@ -196,11 +196,27 @@ public class SchemaContext(
 
         var targetName = PropertyName + suffix;
         var siblings = Parent.Children;
+        // Check 1: Exact JSON property name match
         for (var i = 0; i < siblings.Count; i++)
         {
             if (siblings[i].PropertyName == targetName)
             {
                 return true;
+            }
+        }
+        // Check 2: Case-insensitive C# property name collision
+        // Catches cases like file_name (FileName) vs synthetic filename (Filename)
+        if (PropertyData != null)
+        {
+            var syntheticCSharpName = PropertyData.Value.Name + suffix;
+            for (var i = 0; i < siblings.Count; i++)
+            {
+                var sibling = siblings[i];
+                if (sibling == this || sibling.PropertyData == null) continue;
+                if (string.Equals(sibling.PropertyData.Value.Name, syntheticCSharpName, StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
             }
         }
         return false;

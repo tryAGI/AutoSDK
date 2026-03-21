@@ -223,7 +223,7 @@ public record struct AnyOfData(
     {
         // Build name list and detect duplicates in a single pass
         var names = new string[properties.Length];
-        var nameCounts = new Dictionary<string, int>(StringComparer.Ordinal);
+        var nameCounts = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
         for (var i = 0; i < properties.Length; i++)
         {
             names[i] = properties[i].Name;
@@ -247,7 +247,7 @@ public record struct AnyOfData(
         }
 
         // Append suffixes to duplicate names
-        var suffixes = new Dictionary<string, int>(StringComparer.Ordinal);
+        var suffixes = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
         for (var i = 0; i < names.Length; i++)
         {
             if (nameCounts[names[i]] > 1)

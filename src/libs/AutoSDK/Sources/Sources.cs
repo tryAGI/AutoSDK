@@ -135,7 +135,7 @@ public static partial class Sources
         CancellationToken cancellationToken = default)
     {
         var name = string.IsNullOrWhiteSpace(data.Name)
-            ? $"{data.SubType}.{data.Count}"
+            ? $"{data.Namespace}.{data.SubType}.{data.Count}"
             : $"{data.Namespace}.Models.{data.Name}";
         
         return new FileWithName(
@@ -148,7 +148,7 @@ public static partial class Sources
         CancellationToken cancellationToken = default)
     {
         var name = string.IsNullOrWhiteSpace(data.Name)
-            ? $"{data.SubType}.{data.Count}"
+            ? $"{data.Namespace}.{data.SubType}.{data.Count}"
             : $"{data.Namespace}.Models.{data.Name}";
         
         return new FileWithName(
@@ -166,7 +166,7 @@ public static partial class Sources
         }
 
         var name = string.IsNullOrWhiteSpace(data.Name)
-            ? $"{data.SubType}.{data.Count}"
+            ? $"{data.Namespace}.{data.SubType}.{data.Count}"
             : $"{data.Namespace}.Models.{data.Name}";
         
         return new FileWithName(

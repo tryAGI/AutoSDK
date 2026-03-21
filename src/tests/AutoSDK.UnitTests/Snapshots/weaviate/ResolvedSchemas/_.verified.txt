@@ -615,7 +615,7 @@
   WeaviateRootResponse(class)[root],
     Links(array)[root],
       Link(ref)[root],
-  Response(class)[well-known],
+  GetWellKnownOpenidConfigurationResponse(class)[well-known],
     Href(string)[well-known],
     ClientId(string)[well-known],
     Scopes(array)[well-known],

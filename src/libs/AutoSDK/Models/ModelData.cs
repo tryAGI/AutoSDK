@@ -137,7 +137,65 @@ public record struct ModelData(
             }
         }
 
-        return builder.ToImmutable();
+        return DeduplicatePropertyNamesCaseInsensitive(builder.ToImmutable());
+    }
+
+    /// <summary>
+    /// Safety net: detects C# property names that collide case-insensitively
+    /// (e.g. FileName vs Filename) and appends numeric suffixes to duplicates.
+    /// </summary>
+    private static ImmutableArray<PropertyData> DeduplicatePropertyNamesCaseInsensitive(
+        ImmutableArray<PropertyData> properties)
+    {
+        if (properties.Length <= 1) return properties;
+
+        // Count case-insensitive occurrences
+        var nameCounts = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+        for (var i = 0; i < properties.Length; i++)
+        {
+            nameCounts.TryGetValue(properties[i].Name, out var c);
+            nameCounts[properties[i].Name] = c + 1;
+        }
+
+        // Check if any names collide case-insensitively
+        var hasCaseCollision = false;
+        foreach (var kvp in nameCounts)
+        {
+            if (kvp.Value > 1)
+            {
+                hasCaseCollision = true;
+                break;
+            }
+        }
+        if (!hasCaseCollision) return properties;
+
+        // Rename colliders: first occurrence keeps its name, subsequent get numeric suffixes
+        var suffixCounters = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+        var builder = ImmutableArray.CreateBuilder<PropertyData>(properties.Length);
+        for (var i = 0; i < properties.Length; i++)
+        {
+            var prop = properties[i];
+            if (nameCounts[prop.Name] > 1)
+            {
+                suffixCounters.TryGetValue(prop.Name, out var suffix);
+                suffix++;
+                suffixCounters[prop.Name] = suffix;
+                if (suffix == 1)
+                {
+                    // First occurrence keeps original name
+                    builder.Add(prop);
+                }
+                else
+                {
+                    builder.Add(prop with { Name = $"{prop.Name}{suffix}" });
+                }
+            }
+            else
+            {
+                builder.Add(prop);
+            }
+        }
+        return builder.MoveToImmutable();
     }
 
     private static ImmutableArray<PropertyData> ToImmutablePropertyDataArray(Dictionary<string, PropertyData> dict)

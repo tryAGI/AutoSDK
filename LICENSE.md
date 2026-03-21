@@ -31,6 +31,19 @@ Professional License - If there are up to 10 developers in your company who are 
 
 Enterprise License - If your company has more than 10 developers using AutoSDK, the Enterprise License is the right choice. You can also sell SDK generation based on AutoSDK as a service.
 
+### Pricing
+
+- **Professional License:** $499/year per company (up to 10 developers)
+- **Enterprise License:** $2,499/year per company (unlimited developers)
+
+Purchase at: https://autosdk.net/pricing
+
+### License Keys
+
+Upon purchasing a license, you will receive a license key in the format `ASDK-XXXX-XXXX-XXXX-XXXX`. This key serves as proof of your license purchase for your company's compliance records. AutoSDK uses compliance-based licensing — the NuGet package does not enforce license keys at runtime.
+
+You can view and manage your license key at: https://autosdk.net/app/license
+
 ### Beyond Compliance
 
 Remember, purchasing a license isn't just about adhering to our guidelines, but also supporting the development of AutoSDK. Your contribution helps us to improve the library and offer top-notch support to all users.
@@ -83,4 +96,4 @@ Title, ownership rights, and intellectual property rights in and to the Software
 
 ### Limitation Of Liability
 
-THIS SOFTWARE IS PROVIDED "AS IS," WITHOUT A WARRANTY OF ANY KIND. ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY EXCLUDED. OPENAPIGENERATOR AND ITS LICENSORS SHALL NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR DISTRIBUTING THE SOFTWARE OR ITS DERIVATIVES. IN NO EVENT WILL QUESTPDF OR ITS LICENSORS BE LIABLE FOR ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL, CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR INABILITY TO USE SOFTWARE, EVEN IF QUESTPDF HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+THIS SOFTWARE IS PROVIDED "AS IS," WITHOUT A WARRANTY OF ANY KIND. ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY EXCLUDED. AUTOSDK AND ITS LICENSORS SHALL NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR DISTRIBUTING THE SOFTWARE OR ITS DERIVATIVES. IN NO EVENT WILL AUTOSDK OR ITS LICENSORS BE LIABLE FOR ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL, CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR INABILITY TO USE SOFTWARE, EVEN IF AUTOSDK HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.

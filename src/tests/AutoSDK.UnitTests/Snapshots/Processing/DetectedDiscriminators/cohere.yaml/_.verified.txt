@@ -198,6 +198,8 @@ paths:
                   x-fern-audiences:
                     - public
                 response_format:
+                  x-fern-audiences:
+                    - public
                   $ref: '#/components/schemas/ResponseFormat'
                 safety_mode:
                   enum:
@@ -781,6 +783,8 @@ paths:
                   x-fern-audiences:
                     - public
                 messages:
+                  x-fern-audiences:
+                    - public
                   $ref: '#/components/schemas/ChatMessages'
                 reasoning_effort:
                   $ref: '#/components/schemas/ReasoningEffort'
@@ -807,8 +811,12 @@ paths:
                   x-fern-audiences:
                     - public
                 citation_options:
+                  x-fern-audiences:
+                    - public
                   $ref: '#/components/schemas/CitationOptions'
                 response_format:
+                  x-fern-audiences:
+                    - public
                   $ref: '#/components/schemas/ResponseFormatV2'
                 safety_mode:
                   enum:
@@ -1665,6 +1673,8 @@ paths:
                   x-fern-audiences:
                     - public
                 input_type:
+                  x-fern-audiences:
+                    - public
                   $ref: '#/components/schemas/EmbedInputType'
                 embedding_types:
                   type: array
@@ -4934,6 +4944,8 @@ paths:
                   x-fern-audiences:
                     - public
                 input_type:
+                  x-fern-audiences:
+                    - public
                   $ref: '#/components/schemas/EmbedInputType'
                 inputs:
                   type: array
@@ -8577,6 +8589,8 @@ paths:
                     x-fern-audiences:
                       - public
                   meta:
+                    x-fern-audiences:
+                      - public
                     $ref: '#/components/schemas/ApiMeta'
                 x-fern-audiences:
                   - public
@@ -8742,6 +8756,8 @@ paths:
                     x-fern-audiences:
                       - public
                   meta:
+                    x-fern-audiences:
+                      - public
                     $ref: '#/components/schemas/ApiMeta'
                 x-fern-audiences:
                   - public
@@ -8849,6 +8865,8 @@ paths:
                   maxItems: 2500
                   type: array
                   items:
+                    x-fern-audiences:
+                      - public
                     $ref: '#/components/schemas/ClassifyExample'
                   description: "An array of examples to provide context to the model. Each example is a text string and its associated label/class. Each unique label requires at least 2 examples associated with it; the maximum number of examples is 2500, and each example has a maximum length of 512 tokens. The values should be structured as `{text: \"...\",label: \"...\"}`.\nNote: [Fine-tuned Models](https://docs.cohere.com/docs/classify-fine-tuning) trained on classification examples don't require the `examples` parameter to be passed in explicitly."
                   writeOnly: true
@@ -8996,6 +9014,8 @@ paths:
                     x-fern-audiences:
                       - public
                   meta:
+                    x-fern-audiences:
+                      - public
                     $ref: '#/components/schemas/ApiMeta'
                 x-fern-audiences:
                   - public
@@ -9706,6 +9726,8 @@ paths:
                     x-fern-audiences:
                       - public
                   meta:
+                    x-fern-audiences:
+                      - public
                     $ref: '#/components/schemas/ApiMeta'
                 x-fern-audiences:
                   - public
@@ -9839,6 +9861,8 @@ paths:
                     x-fern-audiences:
                       - public
                   meta:
+                    x-fern-audiences:
+                      - public
                     $ref: '#/components/schemas/ApiMeta'
                 x-fern-audiences:
                   - public
@@ -9991,6 +10015,8 @@ paths:
                     x-fern-audiences:
                       - public
                   meta:
+                    x-fern-audiences:
+                      - public
                     $ref: '#/components/schemas/ApiMeta'
                 x-fern-audiences:
                   - public
@@ -10585,6 +10611,8 @@ paths:
           in: query
           description: 'When provided, filters the list of models to only those that are compatible with the specified endpoint.'
           schema:
+            x-fern-audiences:
+              - public
             $ref: '#/components/schemas/CompatibleEndpoint'
         - name: default_only
           in: query
@@ -11490,6 +11518,8 @@ components:
         - message
       properties:
         role:
+          x-fern-audiences:
+            - public
           $ref: '#/components/schemas/ChatRole'
         message:
           minLength: 1
@@ -11750,9 +11780,13 @@ components:
       type: object
       properties:
         search_query:
+          x-fern-audiences:
+            - public
           $ref: '#/components/schemas/ChatSearchQuery'
         connector:
           description: "The connector from which this result comes from.\n"
+          x-fern-audiences:
+            - public
           $ref: '#/components/schemas/ChatSearchResultConnector'
         document_ids:
           minLength: 0
@@ -11925,6 +11959,8 @@ components:
           x-fern-audiences:
             - public
         finish_reason:
+          x-fern-audiences:
+            - public
           $ref: '#/components/schemas/FinishReason'
         tool_calls:
           type: array
@@ -11941,6 +11977,8 @@ components:
           x-fern-audiences:
             - public
         meta:
+          x-fern-audiences:
+            - public
           $ref: '#/components/schemas/ApiMeta'
       x-fern-type-name: NonStreamedChatResponse
     ChatStreamEvent:
@@ -12087,6 +12125,8 @@ components:
                 - public
             response:
               description: "The consolidated response from the model. Contains the generated reply and all the other information streamed back in the previous events.\n"
+              x-fern-audiences:
+                - public
               $ref: '#/components/schemas/NonStreamedChatResponse'
           x-fern-type-name: ChatStreamEndEvent-y8gq2x
       x-fern-type-name: ChatStreamEndEvent
@@ -12123,6 +12163,8 @@ components:
           type: object
           properties:
             tool_call_delta:
+              x-fern-audiences:
+                - public
               $ref: '#/components/schemas/ToolCallDelta'
             text:
               type: string
@@ -12999,11 +13041,16 @@ components:
         generations:
           type: array
           items:
+            x-fern-audiences:
+              - public
+            x-fern-type-name: Generation-9h264n
             $ref: '#/components/schemas/SingleGeneration'
           description: List of generated results
           x-fern-audiences:
             - public
         meta:
+          x-fern-audiences:
+            - public
           $ref: '#/components/schemas/ApiMeta'
       x-fern-type-name: Generation
     GenerateStreamEvent:
@@ -13057,6 +13104,8 @@ components:
           x-fern-audiences:
             - public
         finish_reason:
+          x-fern-audiences:
+            - public
           $ref: '#/components/schemas/FinishReason'
       x-fern-type-name: SingleGenerationInStream
     GenerateStreamEnd:
@@ -13073,6 +13122,8 @@ components:
               x-fern-audiences:
                 - public
             finish_reason:
+              x-fern-audiences:
+                - public
               $ref: '#/components/schemas/FinishReason'
             response:
               required:
@@ -13117,6 +13168,8 @@ components:
               x-fern-audiences:
                 - public
             finish_reason:
+              x-fern-audiences:
+                - public
               $ref: '#/components/schemas/FinishReason'
             err:
               type: string
@@ -13238,11 +13291,15 @@ components:
         images:
           type: array
           items:
+            x-fern-audiences:
+              - public
             $ref: '#/components/schemas/Image'
           description: The image entries for which embeddings were returned.
           x-fern-audiences:
             - public
         meta:
+          x-fern-audiences:
+            - public
           $ref: '#/components/schemas/ApiMeta'
       x-examples:
         Example:
@@ -14402,11 +14459,15 @@ components:
         images:
           type: array
           items:
+            x-fern-audiences:
+              - public
             $ref: '#/components/schemas/Image'
           description: The image entries for which embeddings were returned.
           x-fern-audiences:
             - public
         meta:
+          x-fern-audiences:
+            - public
           $ref: '#/components/schemas/ApiMeta'
       x-examples:
         Example:
@@ -15703,6 +15764,8 @@ components:
           x-fern-audiences:
             - public
         meta:
+          x-fern-audiences:
+            - public
           $ref: '#/components/schemas/ApiMeta'
       x-fern-type-name: EmbedJob
     ListEmbedJobResponse:
@@ -15734,6 +15797,8 @@ components:
           x-fern-audiences:
             - public
         input_type:
+          x-fern-audiences:
+            - public
           $ref: '#/components/schemas/EmbedInputType'
         name:
           type: string
@@ -15767,6 +15832,8 @@ components:
           x-fern-audiences:
             - public
         meta:
+          x-fern-audiences:
+            - public
           $ref: '#/components/schemas/ApiMeta'
       description: Response from creating an embed job.
       x-fern-type-name: CreateEmbedJobResponse
@@ -16070,8 +16137,12 @@ components:
           x-fern-audiences:
             - public
         dataset_type:
+          x-fern-audiences:
+            - public
           $ref: '#/components/schemas/DatasetType'
         validation_status:
+          x-fern-audiences:
+            - public
           $ref: '#/components/schemas/DatasetValidationStatus'
         validation_error:
           type: string
@@ -16214,6 +16285,8 @@ components:
             - public
         oauth:
           description: The OAuth 2.0 configuration for the connector.
+          x-fern-audiences:
+            - public
           $ref: '#/components/schemas/ConnectorOAuth'
         auth_status:
           enum:
@@ -16303,6 +16376,8 @@ components:
       type: object
       properties:
         type:
+          x-fern-audiences:
+            - public
           $ref: '#/components/schemas/AuthTokenType'
         token:
           type: string
@@ -16342,6 +16417,8 @@ components:
             - public
         oauth:
           description: The OAuth 2.0 configuration for the connector. Cannot be specified if service_auth is specified.
+          x-fern-audiences:
+            - public
           $ref: '#/components/schemas/CreateConnectorOAuth'
         active:
           type: boolean
@@ -16357,6 +16434,8 @@ components:
             - public
         service_auth:
           description: The service to service authentication configuration for the connector. Cannot be specified if oauth is specified.
+          x-fern-audiences:
+            - public
           $ref: '#/components/schemas/CreateConnectorServiceAuth'
       x-fern-type-name: CreateConnectorRequest
     CreateConnectorResponse:
@@ -16402,6 +16481,8 @@ components:
             - public
         oauth:
           description: The OAuth 2.0 configuration for the connector. Cannot be specified if service_auth is specified.
+          x-fern-audiences:
+            - public
           $ref: '#/components/schemas/CreateConnectorOAuth'
         active:
           type: boolean
@@ -16415,6 +16496,8 @@ components:
             - public
         service_auth:
           description: The service to service authentication configuration for the connector. Cannot be specified if oauth is specified.
+          x-fern-audiences:
+            - public
           $ref: '#/components/schemas/CreateConnectorServiceAuth'
       x-fern-type-name: UpdateConnectorRequest
     UpdateConnectorResponse:
@@ -16547,6 +16630,8 @@ components:
           x-fern-audiences:
             - public
         meta:
+          x-fern-audiences:
+            - public
           $ref: '#/components/schemas/ApiMeta'
       x-fern-type-name: LogLikelihoodResponse
     Cluster:
@@ -16669,6 +16754,8 @@ components:
           x-fern-audiences:
             - public
         meta:
+          x-fern-audiences:
+            - public
           $ref: '#/components/schemas/ApiMeta'
       description: Response for getting a cluster job.
       x-fern-type-name: GetClusterJobResponse
@@ -16688,6 +16775,8 @@ components:
           x-fern-audiences:
             - public
         meta:
+          x-fern-audiences:
+            - public
           $ref: '#/components/schemas/ApiMeta'
       x-fern-type-name: ListClusterJobsResponse
     CreateClusterJobRequest:
