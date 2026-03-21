@@ -98,49 +98,60 @@ public record struct TypeData(
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
 
-        // Fast path for simple primitive types — skip all LINQ/builder machinery
-        if (!context.Schema.IsEnum() &&
-            !context.Schema.IsAnyOf() && !context.Schema.IsOneOf() && !context.Schema.IsAllOf() &&
-            !context.Schema.IsArray() && !context.Schema.IsBinary() && !context.Schema.IsBase64() &&
-            context.Schema.ResolveIfRequired() is not { Properties.Count: > 0 })
+        // Cache schema type checks — each is called 2-3x otherwise
+        var schema = context.Schema;
+        var isEnum = schema.IsEnum();
+        var isAnyOf = schema.IsAnyOf();
+        var isOneOf = schema.IsOneOf();
+        var isAllOf = schema.IsAllOf();
+        var isArray = schema.IsArray();
+        var isBinary = schema.IsBinary();
+        var isBase64 = schema.IsBase64();
+
+        // Fast path for simple primitive types — skip all builder machinery
+        // Cache the result so we don't call GetCSharpType twice on fallthrough
+        string? cachedType = null;
+        if (!isEnum && !isAnyOf && !isOneOf && !isAllOf &&
+            !isArray && !isBinary && !isBase64 &&
+            schema.ResolveIfRequired() is not { Properties.Count: > 0 })
         {
-            var primitiveType = GetCSharpType(context);
-            if (primitiveType is "bool" or "int" or "long" or "short" or "byte" or "float" or "double"
+            cachedType = GetCSharpType(context);
+            if (cachedType is "bool" or "int" or "long" or "short" or "byte" or "float" or "double"
                 or "decimal" or "char" or "string" or "object" or "byte[]"
                 or "global::System.DateTime" or "global::System.DateTimeOffset" or "global::System.Guid")
             {
                 return new TypeData(
-                    CSharpTypeRaw: primitiveType,
+                    CSharpTypeRaw: cachedType,
                     CSharpTypeNullability: GetCSharpNullability(context),
                     IsBaseClass: false,
                     IsDerivedClass: false,
                     IsValueType: ContextIsValueType(context),
-                    IsNullable: context.Schema.IsNullable() || context.Schema.IsNullableAnyOf(),
+                    IsNullable: schema.IsNullable() || schema.IsNullableAnyOf(),
                     IsArray: false,
                     IsEnum: false,
                     IsBase64: false,
-                    IsDate: context.Schema.IsDate(),
-                    IsDateTime: context.Schema.IsDateTime(),
+                    IsDate: schema.IsDate(),
+                    IsDateTime: schema.IsDateTime(),
                     IsBinary: false,
-                    IsUnixTimestamp: context.Schema.IsUnixTimestamp(),
+                    IsUnixTimestamp: schema.IsUnixTimestamp(),
                     AnyOfCount: 0,
                     OneOfCount: 0,
                     AllOfCount: 0,
                     IsComponent: context.IsComponent,
-                    HasDiscriminator: context.Schema.Discriminator != null,
+                    HasDiscriminator: schema.Discriminator != null,
                     Properties: ImmutableArray<string>.Empty,
                     EnumValues: ImmutableArray<string>.Empty,
                     SubTypes: ImmutableArray<Box>.Empty,
-                    Namespace: primitiveType.StartsWith("global::System.", StringComparison.Ordinal)
+                    Namespace: cachedType.StartsWith("global::System.", StringComparison.Ordinal)
                         ? "System"
                         : context.Settings.Namespace,
-                    IsDeprecated: context.Schema.IsDeprecated(),
+                    IsDeprecated: schema.IsDeprecated(),
                     Settings: context.Settings);
             }
         }
 
         var properties = ImmutableArray<string>.Empty;
-        if (context.Schema.ResolveIfRequired() is { Properties: { Count: > 0 } props })
+        if (schema.ResolveIfRequired() is { Properties: { Count: > 0 } props })
         {
             var builder = ImmutableArray.CreateBuilder<string>(props.Count);
             foreach (var kvp in props)
@@ -152,19 +163,19 @@ public record struct TypeData(
 
         // Collect child type data directly as boxed values in a single pass
         var boxedSubTypes = ImmutableArray<Box>.Empty;
-        if (context.Schema.IsAnyOf())
+        if (isAnyOf)
         {
             boxedSubTypes = CollectChildBoxedTypeData(context.Children, Hint.AnyOf);
         }
-        else if (context.Schema.IsOneOf())
+        else if (isOneOf)
         {
             boxedSubTypes = CollectChildBoxedTypeData(context.Children, Hint.OneOf);
         }
-        else if (context.Schema.IsAllOf())
+        else if (isAllOf)
         {
             boxedSubTypes = CollectChildBoxedTypeData(context.Children, Hint.AllOf);
         }
-        if (context.Schema.IsArray())
+        if (isArray)
         {
             TypeData arrayItemType = Default;
             for (var ci = 0; ci < context.Children.Count; ci++)
@@ -180,23 +191,23 @@ public record struct TypeData(
             {
                 arrayItemType = Default with
                 {
-                    IsEnum = context.Schema.Items != null && context.Schema.Items.IsEnum(),
+                    IsEnum = schema.Items != null && schema.Items.IsEnum(),
                 };
             }
             boxedSubTypes = [arrayItemType.Box()];
         }
-        if (context.Schema.IsBinary() || context.Schema.IsBase64())
+        if (isBinary || isBase64)
         {
             boxedSubTypes = [(Default with { CSharpTypeRaw = "byte" }).Box()];
         }
 
         var enumValues = ImmutableArray<string>.Empty;
-        if (context.Schema.IsEnum())
+        if (isEnum)
         {
-            var enumSource = context.Schema.Enum;
+            var enumSource = schema.Enum;
             if (enumSource != null && enumSource.Count > 0)
             {
-                var description = context.Parameter?.Description ?? context.Schema.Description ?? string.Empty;
+                var description = context.Parameter?.Description ?? schema.Description ?? string.Empty;
                 var nameBuilder = ImmutableArray.CreateBuilder<string>(enumSource.Count);
                 var idBuilder = ImmutableArray.CreateBuilder<string>(enumSource.Count);
                 foreach (var value in enumSource)
@@ -210,7 +221,9 @@ public record struct TypeData(
             }
         }
 
-        var type = GetCSharpType(context);
+        var type = cachedType ?? GetCSharpType(context);
+        var isNullable = schema.IsNullable() || schema.IsNullableAnyOf();
+        var collapsed = (isAnyOf || isOneOf || isAllOf) ? IsCollapsedAnyOfLike(context) : false;
 
         return new TypeData(
             CSharpTypeRaw: type,
@@ -218,32 +231,32 @@ public record struct TypeData(
             IsBaseClass: context.IsBaseClass,
             IsDerivedClass: context.IsDerivedClass,
             IsValueType: ContextIsValueType(context),
-            IsNullable: context.Schema.IsNullable() || context.Schema.IsNullableAnyOf(),
-            IsArray: context.Schema.IsArray(),
-            IsEnum: context.Schema.IsEnum(),
-            IsBase64: context.Schema.IsBase64(),
-            IsDate: context.Schema.IsDate(),
-            IsDateTime: context.Schema.IsDateTime(),
-            IsBinary: context.Schema.IsBinary(),
-            IsUnixTimestamp: context.Schema.IsUnixTimestamp(),
-            AnyOfCount: context.Schema.IsAnyOf() && !IsCollapsedAnyOfLike(context)
-                ? context.Schema.AnyOf?.Count ?? 0
+            IsNullable: isNullable,
+            IsArray: isArray,
+            IsEnum: isEnum,
+            IsBase64: isBase64,
+            IsDate: schema.IsDate(),
+            IsDateTime: schema.IsDateTime(),
+            IsBinary: isBinary,
+            IsUnixTimestamp: schema.IsUnixTimestamp(),
+            AnyOfCount: isAnyOf && !collapsed
+                ? schema.AnyOf?.Count ?? 0
                 : 0,
-            OneOfCount: context.Schema.IsOneOf() && !IsCollapsedAnyOfLike(context)
-                ? context.Schema.OneOf?.Count ?? 0
+            OneOfCount: isOneOf && !collapsed
+                ? schema.OneOf?.Count ?? 0
                 : 0,
-            AllOfCount: context.Schema.IsAllOf() && !IsCollapsedAnyOfLike(context)
-                ? context.Schema.AllOf?.Count ?? 0
+            AllOfCount: isAllOf && !collapsed
+                ? schema.AllOf?.Count ?? 0
                 : 0,
             IsComponent: context.IsComponent,
-            HasDiscriminator: context.Schema.Discriminator != null,
+            HasDiscriminator: schema.Discriminator != null,
             Properties: properties,
             EnumValues: enumValues,
             SubTypes: boxedSubTypes,
             Namespace: type.StartsWith("global::System.", StringComparison.Ordinal)
                 ? "System"
                 : context.Settings.Namespace,
-            IsDeprecated: context.Schema.IsDeprecated(),
+            IsDeprecated: schema.IsDeprecated(),
             Settings: context.Settings);
     }
 

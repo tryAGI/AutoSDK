@@ -109,9 +109,11 @@ public static class AsyncApiData
 
         var computeDataTime = Stopwatch.StartNew();
 
+        var sharedVisited = new HashSet<SchemaContext>();
         foreach (var schema in filteredSchemas)
         {
-            schema.ComputeData();
+            sharedVisited.Clear();
+            schema.ComputeData(visited: sharedVisited);
         }
 
         computeDataTime.Stop();
