@@ -121,7 +121,7 @@ namespace {anyOfData.Namespace}
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public override string? ToString() =>
 {anyOfData.Properties.Select(x => $@" 
-            {x.Name}{(x.Type.IsEnum ? "?.ToValueString()" : "?.ToString()")} ??
+            {x.Name}{(x.Type.IsEnum ? "?.ToValueString()" : x.Type.CSharpTypeWithoutNullability == "bool" ? "?.ToString().ToLowerInvariant()" : "?.ToString()")} ??
 ").Inject().TrimEnd('?', '\n')}
             ;
 
