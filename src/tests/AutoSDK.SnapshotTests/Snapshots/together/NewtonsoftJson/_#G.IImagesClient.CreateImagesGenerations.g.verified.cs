@@ -14,7 +14,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ImageResponse> CreateImagesGenerationsAsync(
 
-            global::G.Request request,
+            global::G.CreateImagesGenerationsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create image<br/>

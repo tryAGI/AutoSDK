@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareCreateDatasetsByDatasetIdExamplesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::G.Request request);
+            global::G.CreateDatasetsExamplesRequest request);
         partial void PrepareCreateDatasetsByDatasetIdExamplesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.Request request);
+            global::G.CreateDatasetsExamplesRequest request);
         partial void ProcessCreateDatasetsByDatasetIdExamplesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -27,7 +27,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task CreateDatasetsByDatasetIdExamplesAsync(
 
-            global::G.Request request,
+            global::G.CreateDatasetsExamplesRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -365,7 +365,7 @@ namespace G
             string? x_exampleId_Attachments_name_name = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.Request
+            var __request = new global::G.CreateDatasetsExamplesRequest
             {
                 x_exampleId_ = x_exampleId_,
                 x_exampleId_name = x_exampleId_name,

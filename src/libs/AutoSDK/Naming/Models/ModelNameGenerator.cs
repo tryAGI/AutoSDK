@@ -1,6 +1,7 @@
 using Microsoft.OpenApi;
 using AutoSDK.Extensions;
 using AutoSDK.Models;
+using AutoSDK.Naming.Methods;
 using AutoSDK.Naming.Properties;
 
 namespace AutoSDK.Naming.Models;
@@ -16,7 +17,9 @@ public static class ModelNameGenerator
         string? propertyName = null,
         string? componentId = null,
         int? index = null,
-        string? title = null)
+        string? title = null,
+        string? operationPath = null,
+        System.Net.Http.HttpMethod? operationType = null)
     {
         if (propertyName != null)
         {
@@ -30,9 +33,24 @@ public static class ModelNameGenerator
         var helper = hint switch
         {
             Hint.ArrayItem => "Item",
-            Hint.Request => string.Concat(operation?.OperationId, "Request"),
-            Hint.Response => string.Concat(operation?.OperationId, "Response"),
-            Hint.Parameter => string.Concat(operation?.OperationId, "_", parameter?.Name),
+            Hint.Request => string.Concat(
+                operation?.OperationId
+                    ?? (operationType != null && operationPath != null
+                        ? MethodAndPathGenerator.DeriveNameFromMethodAndPath(operationType.Method, operationPath)
+                        : null),
+                "Request"),
+            Hint.Response => string.Concat(
+                operation?.OperationId
+                    ?? (operationType != null && operationPath != null
+                        ? MethodAndPathGenerator.DeriveNameFromMethodAndPath(operationType.Method, operationPath)
+                        : null),
+                "Response"),
+            Hint.Parameter => string.Concat(
+                operation?.OperationId
+                    ?? (operationType != null && operationPath != null
+                        ? MethodAndPathGenerator.DeriveNameFromMethodAndPath(operationType.Method, operationPath)
+                        : null),
+                "_", parameter?.Name),
             Hint.AnyOf or Hint.OneOf or Hint.AllOf when !string.IsNullOrWhiteSpace(title) => title!.ToClassName(),
             Hint.AnyOf or Hint.OneOf or Hint.AllOf => index != null ? string.Concat("Variant", (index + 1).ToString()) : "Variant",
             Hint.Discriminator => "Discriminator",
@@ -58,9 +76,24 @@ public static class ModelNameGenerator
         return (context.Hint switch
         {
             Hint.ArrayItem => "Item",
-            Hint.Request => string.Concat(context.Operation?.OperationId, "Request"),
-            Hint.Response => string.Concat(context.Operation?.OperationId, "Response"),
-            Hint.Parameter => string.Concat(context.Operation?.OperationId, "_", context.Parameter?.Name),
+            Hint.Request => string.Concat(
+                context.Operation?.OperationId
+                    ?? (context.OperationType != null && context.OperationPath != null
+                        ? MethodAndPathGenerator.DeriveNameFromMethodAndPath(context.OperationType.Method, context.OperationPath)
+                        : null),
+                "Request"),
+            Hint.Response => string.Concat(
+                context.Operation?.OperationId
+                    ?? (context.OperationType != null && context.OperationPath != null
+                        ? MethodAndPathGenerator.DeriveNameFromMethodAndPath(context.OperationType.Method, context.OperationPath)
+                        : null),
+                "Response"),
+            Hint.Parameter => string.Concat(
+                context.Operation?.OperationId
+                    ?? (context.OperationType != null && context.OperationPath != null
+                        ? MethodAndPathGenerator.DeriveNameFromMethodAndPath(context.OperationType.Method, context.OperationPath)
+                        : null),
+                "_", context.Parameter?.Name),
             Hint.AnyOf or Hint.OneOf or Hint.AllOf when !string.IsNullOrWhiteSpace(context.Schema.Title) => context.Schema.Title!.ToClassName(),
             Hint.AnyOf or Hint.OneOf or Hint.AllOf => context.Index != null ? string.Concat("Variant", (context.Index + 1).ToString()) : "Variant",
             Hint.Discriminator => "Discriminator",

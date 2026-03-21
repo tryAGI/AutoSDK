@@ -15,7 +15,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task CreateDatasetsByDatasetIdExamplesAsync(
 
-            global::G.Request request,
+            global::G.CreateDatasetsExamplesRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload Examples<br/>

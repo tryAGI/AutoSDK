@@ -294,9 +294,9 @@ namespace G
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.RunStats, global::System.Collections.Generic.Dictionary<string, global::G.RunStats>>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.FeedbackIngestTokenSchema, global::System.Collections.Generic.IList<global::G.FeedbackIngestTokenSchema>>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::G.PublicExampleWithRuns>, global::System.Collections.Generic.IList<global::G.ExampleWithRunsCH>>(),
-                    new global::G.JsonConverters.AllOfJsonConverter<string, global::G.Response3>(),
-                    new global::G.JsonConverters.AllOfJsonConverter<string, global::G.Response6>(),
-                    new global::G.JsonConverters.AllOfJsonConverter<string, global::G.Response10>(),
+                    new global::G.JsonConverters.AllOfJsonConverter<string, global::G.CreateRunsResponse3>(),
+                    new global::G.JsonConverters.AllOfJsonConverter<string, global::G.CreateRunsBatchResponse3>(),
+                    new global::G.JsonConverters.AllOfJsonConverter<string, global::G.PatchRunsResponse3>(),
                     new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };

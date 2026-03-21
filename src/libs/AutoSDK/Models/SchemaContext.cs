@@ -357,7 +357,7 @@ public class SchemaContext(
         var context = new SchemaContext(
             settings,
             schema,
-            id: ModelNameGenerator.ComputeId(settings, parent, hint, operation, parameter, propertyName, componentId, index, title: schema.Title),
+            id: ModelNameGenerator.ComputeId(settings, parent, hint, operation, parameter, propertyName, componentId, index, title: schema.Title, operationPath: operationPath, operationType: operationType),
             type: ComputeType(schema, isComponent: componentId != null))
         {
             Parent = parent,

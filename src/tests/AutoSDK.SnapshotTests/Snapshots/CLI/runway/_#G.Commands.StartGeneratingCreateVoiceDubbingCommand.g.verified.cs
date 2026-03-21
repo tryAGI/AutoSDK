@@ -17,7 +17,7 @@ namespace G
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
 
-            global::G.Response19 response,
+            global::G.CreateVoiceDubbingResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
         private global::System.CommandLine.Argument<string> XRunwayVersion { get; } = new(

@@ -14,9 +14,9 @@ namespace G
         /// Passing an image reference allows the model to emulate the style or content of the reference in the output.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RequestGen4AlephReferenceImageReference? Image { get; init; }
+        public global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference? Image { get; init; }
 #else
-        public global::G.RequestGen4AlephReferenceImageReference? Image { get; }
+        public global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference? Image { get; }
 #endif
 
         /// <summary>
@@ -29,17 +29,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ReferencesItem(global::G.RequestGen4AlephReferenceImageReference value) => new ReferencesItem((global::G.RequestGen4AlephReferenceImageReference?)value);
+        public static implicit operator ReferencesItem(global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference value) => new ReferencesItem((global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RequestGen4AlephReferenceImageReference?(ReferencesItem @this) => @this.Image;
+        public static implicit operator global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference?(ReferencesItem @this) => @this.Image;
 
         /// <summary>
         /// 
         /// </summary>
-        public ReferencesItem(global::G.RequestGen4AlephReferenceImageReference? value)
+        public ReferencesItem(global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference? value)
         {
             Image = value;
         }
@@ -70,7 +70,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RequestGen4AlephReferenceImageReference?, TResult>? image = null,
+            global::System.Func<global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference?, TResult>? image = null,
             bool validate = true)
         {
             if (validate)
@@ -90,7 +90,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RequestGen4AlephReferenceImageReference?>? image = null,
+            global::System.Action<global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference?>? image = null,
             bool validate = true)
         {
             if (validate)
@@ -112,7 +112,7 @@ namespace G
             var fields = new object?[]
             {
                 Image,
-                typeof(global::G.RequestGen4AlephReferenceImageReference),
+                typeof(global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -129,7 +129,7 @@ namespace G
         public bool Equals(ReferencesItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.RequestGen4AlephReferenceImageReference?>.Default.Equals(Image, other.Image) 
+                global::System.Collections.Generic.EqualityComparer<global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference?>.Default.Equals(Image, other.Image) 
                 ;
         }
 

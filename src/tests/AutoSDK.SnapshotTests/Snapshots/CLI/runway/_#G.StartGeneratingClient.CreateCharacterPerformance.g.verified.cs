@@ -9,12 +9,12 @@ namespace G
         partial void PrepareCreateCharacterPerformanceArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string xRunwayVersion,
-            global::G.Request5 request);
+            global::G.CreateCharacterPerformanceRequest request);
         partial void PrepareCreateCharacterPerformanceRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string xRunwayVersion,
-            global::G.Request5 request);
+            global::G.CreateCharacterPerformanceRequest request);
         partial void ProcessCreateCharacterPerformanceResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -55,9 +55,9 @@ namespace G
         ///   .waitForTaskOutput();<br/>
         /// console.log(task);
         /// </remarks>
-        public async global::System.Threading.Tasks.Task<global::G.Response11> CreateCharacterPerformanceAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreateCharacterPerformanceResponse> CreateCharacterPerformanceAsync(
 
-            global::G.Request5 request,
+            global::G.CreateCharacterPerformanceRequest request,
             string xRunwayVersion = "2024-11-06",
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -130,19 +130,19 @@ namespace G
             {
                 string? __content_429 = null;
                 global::System.Exception? __exception_429 = null;
-                global::G.Response12? __value_429 = null;
+                global::G.CreateCharacterPerformanceResponse2? __value_429 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_429 = global::G.Response12.FromJson(__content_429, JsonSerializerOptions);
+                        __value_429 = global::G.CreateCharacterPerformanceResponse2.FromJson(__content_429, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_429 = global::G.Response12.FromJson(__content_429, JsonSerializerOptions);
+                        __value_429 = global::G.CreateCharacterPerformanceResponse2.FromJson(__content_429, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -150,7 +150,7 @@ namespace G
                     __exception_429 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.Response12>(
+                throw new global::G.ApiException<global::G.CreateCharacterPerformanceResponse2>(
                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_429,
                     statusCode: __response.StatusCode)
@@ -186,7 +186,7 @@ namespace G
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::G.Response11.FromJson(__content, JsonSerializerOptions) ??
+                        global::G.CreateCharacterPerformanceResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -217,7 +217,7 @@ namespace G
                     ).ConfigureAwait(false);
 
                     return
-                        await global::G.Response11.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::G.CreateCharacterPerformanceResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -258,11 +258,11 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.Response11> CreateCharacterPerformanceAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreateCharacterPerformanceResponse> CreateCharacterPerformanceAsync(
             string xRunwayVersion = "2024-11-06",
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.Request5
+            var __request = new global::G.CreateCharacterPerformanceRequest
             {
             };
 

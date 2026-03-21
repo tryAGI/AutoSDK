@@ -2009,15 +2009,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Request? Type495 { get; set; }
+        public global::G.CreateDatasetsExamplesRequest? Type495 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Request2? Type496 { get; set; }
+        public global::G.PatchDatasetsExamplesRequest? Type496 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Request3? Type497 { get; set; }
+        public global::G.CreateRunsMultipartRequest? Type497 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2257,27 +2257,27 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<string, global::G.Response3>? Type557 { get; set; }
+        public global::G.AllOf<string, global::G.CreateRunsResponse3>? Type557 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Response3? Type558 { get; set; }
+        public global::G.CreateRunsResponse3? Type558 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<string, global::G.Response6>? Type559 { get; set; }
+        public global::G.AllOf<string, global::G.CreateRunsBatchResponse3>? Type559 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Response6? Type560 { get; set; }
+        public global::G.CreateRunsBatchResponse3? Type560 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<string, global::G.Response10>? Type561 { get; set; }
+        public global::G.AllOf<string, global::G.PatchRunsResponse3>? Type561 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Response10? Type562 { get; set; }
+        public global::G.PatchRunsResponse3? Type562 { get; set; }
 
         /// <summary>
         /// 

@@ -593,11 +593,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Request? Type141 { get; set; }
+        public global::G.CreateImagesGenerationsRequest? Type141 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Request2? Type142 { get; set; }
+        public global::G.CreateFineTunesRequest? Type142 { get; set; }
         /// <summary>
         /// 
         /// </summary>

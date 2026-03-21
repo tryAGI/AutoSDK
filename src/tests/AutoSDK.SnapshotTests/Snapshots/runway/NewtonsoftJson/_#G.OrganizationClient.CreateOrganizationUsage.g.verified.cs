@@ -9,12 +9,12 @@ namespace G
         partial void PrepareCreateOrganizationUsageArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string xRunwayVersion,
-            global::G.Request11 request);
+            global::G.CreateOrganizationUsageRequest request);
         partial void PrepareCreateOrganizationUsageRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string xRunwayVersion,
-            global::G.Request11 request);
+            global::G.CreateOrganizationUsageRequest request);
         partial void ProcessCreateOrganizationUsageResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -42,9 +42,9 @@ namespace G
         /// const usage = await client.organization.retrieveUsage();<br/>
         /// console.log(usage);
         /// </remarks>
-        public async global::System.Threading.Tasks.Task<global::G.Response24> CreateOrganizationUsageAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreateOrganizationUsageResponse> CreateOrganizationUsageAsync(
 
-            global::G.Request11 request,
+            global::G.CreateOrganizationUsageRequest request,
             string xRunwayVersion = "2024-11-06",
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -137,7 +137,7 @@ namespace G
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::G.Response24.FromJson(__content, JsonSerializerOptions) ??
+                        global::G.CreateOrganizationUsageResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -168,7 +168,7 @@ namespace G
                     ).ConfigureAwait(false);
 
                     return
-                        await global::G.Response24.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::G.CreateOrganizationUsageResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -215,13 +215,13 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.Response24> CreateOrganizationUsageAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreateOrganizationUsageResponse> CreateOrganizationUsageAsync(
             string xRunwayVersion = "2024-11-06",
             global::System.DateTime? startDate = default,
             global::System.DateTime? beforeDate = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.Request11
+            var __request = new global::G.CreateOrganizationUsageRequest
             {
                 StartDate = startDate,
                 BeforeDate = beforeDate,

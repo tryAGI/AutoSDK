@@ -19,7 +19,7 @@ namespace G
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
 
-            global::G.Response24 response,
+            global::G.CreateOrganizationUsageResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
         private global::System.CommandLine.Argument<string> XRunwayVersion { get; } = new(

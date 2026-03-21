@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using AutoSDK.Extensions;
 using AutoSDK.Models;
 
@@ -8,7 +9,7 @@ public class MethodAndPathGenerator : IMethodNameGenerator
     public string TryGenerate(OperationContext operation)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
-        
+
         var prefix = operation.OperationType.Method switch
         {
             "GET" => "get",
@@ -21,8 +22,48 @@ public class MethodAndPathGenerator : IMethodNameGenerator
             "TRACE" => "trace",
             _ => throw new NotSupportedException($"HttpMethod {operation.OperationType} is not supported."),
         };
-        
-        var path = operation.OperationPath;
+
+        var path = StripCommonPrefixes(operation.OperationPath);
+
+        path = path.Replace("{", "{By{");
+
+        return $"{prefix}{path.TrimStart('/').ToPropertyName().UseWordSeparator(StringExtensions.PathSeparators)}";
+    }
+
+    /// <summary>
+    /// Derives a PascalCase type name from an HTTP method and path.
+    /// Used as a fallback when operationId is missing, to produce stable, descriptive
+    /// request/response type names (e.g., "CreateModelsSettings" instead of "Request2").
+    /// </summary>
+    public static string DeriveNameFromMethodAndPath(string httpMethod, string operationPath)
+    {
+        var prefix = httpMethod switch
+        {
+            "GET" => "Get",
+            "POST" => "Create",
+            "PUT" => "Put",
+            "DELETE" => "Delete",
+            "PATCH" => "Patch",
+            "HEAD" => "Head",
+            "OPTIONS" => "Options",
+            "TRACE" => "Trace",
+            _ => httpMethod,
+        };
+
+        var path = StripCommonPrefixes(operationPath);
+
+        // Remove path parameters for cleaner type names
+        // e.g., /models/{repo_id}/settings → /models/settings → ModelsSettings
+        path = Regex.Replace(path, @"\{[^}]+\}", "");
+        // Clean up double slashes from removed params
+        while (path.Contains("//"))
+            path = path.Replace("//", "/");
+
+        return $"{prefix}{path.TrimStart('/').ToPropertyName().UseWordSeparator(StringExtensions.PathSeparators)}";
+    }
+
+    private static string StripCommonPrefixes(string path)
+    {
         if (path.StartsWith("/api", StringComparison.OrdinalIgnoreCase))
             path = path.Substring(4);
 
@@ -31,9 +72,7 @@ public class MethodAndPathGenerator : IMethodNameGenerator
 
         if (path.StartsWith("/api", StringComparison.OrdinalIgnoreCase))
             path = path.Substring(4);
-        
-        path = path.Replace("{", "{By{");
-        
-        return $"{prefix}{path.TrimStart('/').ToPropertyName().UseWordSeparator(StringExtensions.PathSeparators)}";
+
+        return path;
     }
 }

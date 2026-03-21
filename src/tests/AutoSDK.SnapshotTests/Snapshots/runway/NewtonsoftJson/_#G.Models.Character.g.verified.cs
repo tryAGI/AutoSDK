@@ -14,9 +14,9 @@ namespace G
         /// An image of your character. In the output, the character will use the reference video performance in its original static environment.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RequestActTwoCharacterCharacterImage? Image { get; init; }
+        public global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage? Image { get; init; }
 #else
-        public global::G.RequestActTwoCharacterCharacterImage? Image { get; }
+        public global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage? Image { get; }
 #endif
 
         /// <summary>
@@ -31,9 +31,9 @@ namespace G
         /// A video of your character. In the output, the character will use the reference video performance in its original animated environment and some of the character's own movements.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RequestActTwoCharacterCharacterVideo? Video { get; init; }
+        public global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo? Video { get; init; }
 #else
-        public global::G.RequestActTwoCharacterCharacterVideo? Video { get; }
+        public global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo? Video { get; }
 #endif
 
         /// <summary>
@@ -46,17 +46,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Character(global::G.RequestActTwoCharacterCharacterImage value) => new Character((global::G.RequestActTwoCharacterCharacterImage?)value);
+        public static implicit operator Character(global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage value) => new Character((global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RequestActTwoCharacterCharacterImage?(Character @this) => @this.Image;
+        public static implicit operator global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage?(Character @this) => @this.Image;
 
         /// <summary>
         /// 
         /// </summary>
-        public Character(global::G.RequestActTwoCharacterCharacterImage? value)
+        public Character(global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage? value)
         {
             Image = value;
         }
@@ -64,17 +64,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Character(global::G.RequestActTwoCharacterCharacterVideo value) => new Character((global::G.RequestActTwoCharacterCharacterVideo?)value);
+        public static implicit operator Character(global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo value) => new Character((global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RequestActTwoCharacterCharacterVideo?(Character @this) => @this.Video;
+        public static implicit operator global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo?(Character @this) => @this.Video;
 
         /// <summary>
         /// 
         /// </summary>
-        public Character(global::G.RequestActTwoCharacterCharacterVideo? value)
+        public Character(global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo? value)
         {
             Video = value;
         }
@@ -83,8 +83,8 @@ namespace G
         /// 
         /// </summary>
         public Character(
-            global::G.RequestActTwoCharacterCharacterImage? image,
-            global::G.RequestActTwoCharacterCharacterVideo? video
+            global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage? image,
+            global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo? video
             )
         {
             Image = image;
@@ -119,8 +119,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RequestActTwoCharacterCharacterImage?, TResult>? image = null,
-            global::System.Func<global::G.RequestActTwoCharacterCharacterVideo?, TResult>? video = null,
+            global::System.Func<global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage?, TResult>? image = null,
+            global::System.Func<global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo?, TResult>? video = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RequestActTwoCharacterCharacterImage?>? image = null,
-            global::System.Action<global::G.RequestActTwoCharacterCharacterVideo?>? video = null,
+            global::System.Action<global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage?>? image = null,
+            global::System.Action<global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo?>? video = null,
             bool validate = true)
         {
             if (validate)
@@ -171,9 +171,9 @@ namespace G
             var fields = new object?[]
             {
                 Image,
-                typeof(global::G.RequestActTwoCharacterCharacterImage),
+                typeof(global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage),
                 Video,
-                typeof(global::G.RequestActTwoCharacterCharacterVideo),
+                typeof(global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(Character other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.RequestActTwoCharacterCharacterImage?>.Default.Equals(Image, other.Image) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RequestActTwoCharacterCharacterVideo?>.Default.Equals(Video, other.Video) 
+                global::System.Collections.Generic.EqualityComparer<global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage?>.Default.Equals(Image, other.Image) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo?>.Default.Equals(Video, other.Video) 
                 ;
         }
 

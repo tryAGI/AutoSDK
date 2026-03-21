@@ -14,12 +14,12 @@ namespace G
             global::System.CommandLine.ParseResult parseResult,
             string xRunwayVersion,
             string filename,
-            global::G.RequestType type,
+            global::G.CreateUploadsRequestType type,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
 
-            global::G.Response25 response,
+            global::G.CreateUploadsResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
         private global::System.CommandLine.Argument<string> XRunwayVersion { get; } = new(
@@ -34,7 +34,7 @@ namespace G
             Description = @"The filename of the file to upload. Must have a valid extension and be a supported media type (image, video, or audio).",
         };
 
-        private global::System.CommandLine.Option<global::G.RequestType> Type { get; } = new(
+        private global::System.CommandLine.Option<global::G.CreateUploadsRequestType> Type { get; } = new(
             name: "type")
         {
             Description = @"The type of upload to create",

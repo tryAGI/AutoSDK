@@ -42,9 +42,9 @@ namespace G
         ///   .waitForTaskOutput();<br/>
         /// console.log(task);
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::G.Response25> CreateUploadsAsync(
+        global::System.Threading.Tasks.Task<global::G.CreateUploadsResponse> CreateUploadsAsync(
 
-            global::G.Request12 request,
+            global::G.CreateUploadsRequest request,
             string xRunwayVersion = "2024-11-06",
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -62,10 +62,10 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.Response25> CreateUploadsAsync(
+        global::System.Threading.Tasks.Task<global::G.CreateUploadsResponse> CreateUploadsAsync(
             string filename,
             string xRunwayVersion = "2024-11-06",
-            global::G.RequestType type = default,
+            global::G.CreateUploadsRequestType type = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

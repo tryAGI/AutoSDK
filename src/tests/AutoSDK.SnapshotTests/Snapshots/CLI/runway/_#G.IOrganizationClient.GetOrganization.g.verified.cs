@@ -22,7 +22,7 @@ namespace G
         /// const details = await client.organization.retrieve();<br/>
         /// console.log(details.creditBalance);
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::G.Response23> GetOrganizationAsync(
+        global::System.Threading.Tasks.Task<global::G.GetOrganizationResponse> GetOrganizationAsync(
             string xRunwayVersion = "2024-11-06",
             global::System.Threading.CancellationToken cancellationToken = default);
     }

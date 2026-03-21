@@ -14,7 +14,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.FinetuneResponse> CreateFineTunesAsync(
 
-            global::G.Request2 request,
+            global::G.CreateFineTunesRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create job<br/>

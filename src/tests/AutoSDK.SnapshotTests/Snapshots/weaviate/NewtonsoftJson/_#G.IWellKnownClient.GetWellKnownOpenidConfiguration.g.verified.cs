@@ -11,7 +11,7 @@ namespace G
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.Response> GetWellKnownOpenidConfigurationAsync(
+        global::System.Threading.Tasks.Task<global::G.GetWellKnownOpenidConfigurationResponse> GetWellKnownOpenidConfigurationAsync(
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

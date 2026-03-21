@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareCreateRunsMultipartArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::G.Request3 request);
+            global::G.CreateRunsMultipartRequest request);
         partial void PrepareCreateRunsMultipartRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.Request3 request);
+            global::G.CreateRunsMultipartRequest request);
         partial void ProcessCreateRunsMultipartResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -38,7 +38,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.Dictionary<string, string>> CreateRunsMultipartAsync(
 
-            global::G.Request3 request,
+            global::G.CreateRunsMultipartRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -475,7 +475,7 @@ namespace G
             string? attachment_runId__filename_name = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.Request3
+            var __request = new global::G.CreateRunsMultipartRequest
             {
                 Post_runId_ = post_runId_,
                 Post_runId_name = post_runId_name,

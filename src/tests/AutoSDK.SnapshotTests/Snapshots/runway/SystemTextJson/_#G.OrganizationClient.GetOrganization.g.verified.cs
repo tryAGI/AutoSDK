@@ -39,7 +39,7 @@ namespace G
         /// const details = await client.organization.retrieve();<br/>
         /// console.log(details.creditBalance);
         /// </remarks>
-        public async global::System.Threading.Tasks.Task<global::G.Response23> GetOrganizationAsync(
+        public async global::System.Threading.Tasks.Task<global::G.GetOrganizationResponse> GetOrganizationAsync(
             string xRunwayVersion = "2024-11-06",
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -122,7 +122,7 @@ namespace G
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::G.Response23.FromJson(__content, JsonSerializerOptions) ??
+                        global::G.GetOrganizationResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -153,7 +153,7 @@ namespace G
                     ).ConfigureAwait(false);
 
                     return
-                        await global::G.Response23.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::G.GetOrganizationResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

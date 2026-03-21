@@ -29,9 +29,9 @@ namespace G
         ///   .waitForTaskOutput();<br/>
         /// console.log(task);
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::G.Response19> CreateVoiceDubbingAsync(
+        global::System.Threading.Tasks.Task<global::G.CreateVoiceDubbingResponse> CreateVoiceDubbingAsync(
 
-            global::G.Request9 request,
+            global::G.CreateVoiceDubbingRequest request,
             string xRunwayVersion = "2024-11-06",
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -43,7 +43,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.Response19> CreateVoiceDubbingAsync(
+        global::System.Threading.Tasks.Task<global::G.CreateVoiceDubbingResponse> CreateVoiceDubbingAsync(
             string xRunwayVersion = "2024-11-06",
             global::System.Threading.CancellationToken cancellationToken = default);
     }

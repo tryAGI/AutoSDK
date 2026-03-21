@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareCreateImagesGenerationsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::G.Request request);
+            global::G.CreateImagesGenerationsRequest request);
         partial void PrepareCreateImagesGenerationsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.Request request);
+            global::G.CreateImagesGenerationsRequest request);
         partial void ProcessCreateImagesGenerationsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -31,7 +31,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ImageResponse> CreateImagesGenerationsAsync(
 
-            global::G.Request request,
+            global::G.CreateImagesGenerationsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -230,7 +230,7 @@ namespace G
             string? negativePrompt = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.Request
+            var __request = new global::G.CreateImagesGenerationsRequest
             {
                 Prompt = prompt,
                 Model = model,

@@ -21,7 +21,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.Dictionary<string, string>> CreateRunsMultipartAsync(
 
-            global::G.Request3 request,
+            global::G.CreateRunsMultipartRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Ingest Runs (Multipart)<br/>

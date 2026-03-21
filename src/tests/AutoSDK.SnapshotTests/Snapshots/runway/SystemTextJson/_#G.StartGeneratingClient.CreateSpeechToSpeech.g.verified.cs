@@ -9,12 +9,12 @@ namespace G
         partial void PrepareCreateSpeechToSpeechArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string xRunwayVersion,
-            global::G.Request7 request);
+            global::G.CreateSpeechToSpeechRequest request);
         partial void PrepareCreateSpeechToSpeechRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string xRunwayVersion,
-            global::G.Request7 request);
+            global::G.CreateSpeechToSpeechRequest request);
         partial void ProcessCreateSpeechToSpeechResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -68,9 +68,9 @@ namespace G
         ///   .waitForTaskOutput();<br/>
         /// console.log(videoTask);
         /// </remarks>
-        public async global::System.Threading.Tasks.Task<global::G.Response15> CreateSpeechToSpeechAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreateSpeechToSpeechResponse> CreateSpeechToSpeechAsync(
 
-            global::G.Request7 request,
+            global::G.CreateSpeechToSpeechRequest request,
             string xRunwayVersion = "2024-11-06",
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -143,19 +143,19 @@ namespace G
             {
                 string? __content_429 = null;
                 global::System.Exception? __exception_429 = null;
-                global::G.Response16? __value_429 = null;
+                global::G.CreateSpeechToSpeechResponse2? __value_429 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_429 = global::G.Response16.FromJson(__content_429, JsonSerializerOptions);
+                        __value_429 = global::G.CreateSpeechToSpeechResponse2.FromJson(__content_429, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_429 = global::G.Response16.FromJson(__content_429, JsonSerializerOptions);
+                        __value_429 = global::G.CreateSpeechToSpeechResponse2.FromJson(__content_429, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -163,7 +163,7 @@ namespace G
                     __exception_429 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.Response16>(
+                throw new global::G.ApiException<global::G.CreateSpeechToSpeechResponse2>(
                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_429,
                     statusCode: __response.StatusCode)
@@ -199,7 +199,7 @@ namespace G
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::G.Response15.FromJson(__content, JsonSerializerOptions) ??
+                        global::G.CreateSpeechToSpeechResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -230,7 +230,7 @@ namespace G
                     ).ConfigureAwait(false);
 
                     return
-                        await global::G.Response15.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::G.CreateSpeechToSpeechResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -271,11 +271,11 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.Response15> CreateSpeechToSpeechAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreateSpeechToSpeechResponse> CreateSpeechToSpeechAsync(
             string xRunwayVersion = "2024-11-06",
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.Request7
+            var __request = new global::G.CreateSpeechToSpeechRequest
             {
             };
 

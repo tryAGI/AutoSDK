@@ -36,9 +36,9 @@ namespace G
         ///   .waitForTaskOutput();<br/>
         /// console.log(task);
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::G.Response7> CreateVideoToVideoAsync(
+        global::System.Threading.Tasks.Task<global::G.CreateVideoToVideoResponse> CreateVideoToVideoAsync(
 
-            global::G.Request3 request,
+            global::G.CreateVideoToVideoRequest request,
             string xRunwayVersion = "2024-11-06",
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -50,7 +50,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.Response7> CreateVideoToVideoAsync(
+        global::System.Threading.Tasks.Task<global::G.CreateVideoToVideoResponse> CreateVideoToVideoAsync(
             string xRunwayVersion = "2024-11-06",
             global::System.Threading.CancellationToken cancellationToken = default);
     }

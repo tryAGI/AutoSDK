@@ -14,9 +14,9 @@ namespace G
         /// An audio file containing dialogue to be processed.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RequestElevenMultilingualStsV2MediaSpeechToSpeechAudio? Audio { get; init; }
+        public global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio? Audio { get; init; }
 #else
-        public global::G.RequestElevenMultilingualStsV2MediaSpeechToSpeechAudio? Audio { get; }
+        public global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio? Audio { get; }
 #endif
 
         /// <summary>
@@ -31,9 +31,9 @@ namespace G
         /// A video file containing dialogue to be processed.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RequestElevenMultilingualStsV2MediaSpeechToSpeechVideo? Video { get; init; }
+        public global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo? Video { get; init; }
 #else
-        public global::G.RequestElevenMultilingualStsV2MediaSpeechToSpeechVideo? Video { get; }
+        public global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo? Video { get; }
 #endif
 
         /// <summary>
@@ -46,17 +46,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Media(global::G.RequestElevenMultilingualStsV2MediaSpeechToSpeechAudio value) => new Media((global::G.RequestElevenMultilingualStsV2MediaSpeechToSpeechAudio?)value);
+        public static implicit operator Media(global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio value) => new Media((global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RequestElevenMultilingualStsV2MediaSpeechToSpeechAudio?(Media @this) => @this.Audio;
+        public static implicit operator global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio?(Media @this) => @this.Audio;
 
         /// <summary>
         /// 
         /// </summary>
-        public Media(global::G.RequestElevenMultilingualStsV2MediaSpeechToSpeechAudio? value)
+        public Media(global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio? value)
         {
             Audio = value;
         }
@@ -64,17 +64,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Media(global::G.RequestElevenMultilingualStsV2MediaSpeechToSpeechVideo value) => new Media((global::G.RequestElevenMultilingualStsV2MediaSpeechToSpeechVideo?)value);
+        public static implicit operator Media(global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo value) => new Media((global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RequestElevenMultilingualStsV2MediaSpeechToSpeechVideo?(Media @this) => @this.Video;
+        public static implicit operator global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo?(Media @this) => @this.Video;
 
         /// <summary>
         /// 
         /// </summary>
-        public Media(global::G.RequestElevenMultilingualStsV2MediaSpeechToSpeechVideo? value)
+        public Media(global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo? value)
         {
             Video = value;
         }
@@ -83,8 +83,8 @@ namespace G
         /// 
         /// </summary>
         public Media(
-            global::G.RequestElevenMultilingualStsV2MediaSpeechToSpeechAudio? audio,
-            global::G.RequestElevenMultilingualStsV2MediaSpeechToSpeechVideo? video
+            global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio? audio,
+            global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo? video
             )
         {
             Audio = audio;
@@ -119,8 +119,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RequestElevenMultilingualStsV2MediaSpeechToSpeechAudio?, TResult>? audio = null,
-            global::System.Func<global::G.RequestElevenMultilingualStsV2MediaSpeechToSpeechVideo?, TResult>? video = null,
+            global::System.Func<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio?, TResult>? audio = null,
+            global::System.Func<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo?, TResult>? video = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RequestElevenMultilingualStsV2MediaSpeechToSpeechAudio?>? audio = null,
-            global::System.Action<global::G.RequestElevenMultilingualStsV2MediaSpeechToSpeechVideo?>? video = null,
+            global::System.Action<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio?>? audio = null,
+            global::System.Action<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo?>? video = null,
             bool validate = true)
         {
             if (validate)
@@ -171,9 +171,9 @@ namespace G
             var fields = new object?[]
             {
                 Audio,
-                typeof(global::G.RequestElevenMultilingualStsV2MediaSpeechToSpeechAudio),
+                typeof(global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio),
                 Video,
-                typeof(global::G.RequestElevenMultilingualStsV2MediaSpeechToSpeechVideo),
+                typeof(global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(Media other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.RequestElevenMultilingualStsV2MediaSpeechToSpeechAudio?>.Default.Equals(Audio, other.Audio) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RequestElevenMultilingualStsV2MediaSpeechToSpeechVideo?>.Default.Equals(Video, other.Video) 
+                global::System.Collections.Generic.EqualityComparer<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio?>.Default.Equals(Audio, other.Audio) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo?>.Default.Equals(Video, other.Video) 
                 ;
         }
 

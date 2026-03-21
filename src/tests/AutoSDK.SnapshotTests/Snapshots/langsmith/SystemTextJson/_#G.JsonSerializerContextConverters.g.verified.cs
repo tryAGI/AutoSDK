@@ -265,9 +265,9 @@ namespace G
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.RunStats, global::System.Collections.Generic.Dictionary<string, global::G.RunStats>>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.FeedbackIngestTokenSchema, global::System.Collections.Generic.IList<global::G.FeedbackIngestTokenSchema>>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::G.PublicExampleWithRuns>, global::System.Collections.Generic.IList<global::G.ExampleWithRunsCH>>),
-            typeof(global::G.JsonConverters.AllOfJsonConverter<string, global::G.Response3>),
-            typeof(global::G.JsonConverters.AllOfJsonConverter<string, global::G.Response6>),
-            typeof(global::G.JsonConverters.AllOfJsonConverter<string, global::G.Response10>),
+            typeof(global::G.JsonConverters.AllOfJsonConverter<string, global::G.CreateRunsResponse3>),
+            typeof(global::G.JsonConverters.AllOfJsonConverter<string, global::G.CreateRunsBatchResponse3>),
+            typeof(global::G.JsonConverters.AllOfJsonConverter<string, global::G.PatchRunsResponse3>),
             typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }

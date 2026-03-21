@@ -9,12 +9,12 @@ namespace G
         partial void PrepareCreateSoundEffectArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string xRunwayVersion,
-            global::G.Request6 request);
+            global::G.CreateSoundEffectRequest request);
         partial void PrepareCreateSoundEffectRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string xRunwayVersion,
-            global::G.Request6 request);
+            global::G.CreateSoundEffectRequest request);
         partial void ProcessCreateSoundEffectResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -49,9 +49,9 @@ namespace G
         ///   .waitForTaskOutput();<br/>
         /// console.log(task);
         /// </remarks>
-        public async global::System.Threading.Tasks.Task<global::G.Response13> CreateSoundEffectAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreateSoundEffectResponse> CreateSoundEffectAsync(
 
-            global::G.Request6 request,
+            global::G.CreateSoundEffectRequest request,
             string xRunwayVersion = "2024-11-06",
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -124,19 +124,19 @@ namespace G
             {
                 string? __content_429 = null;
                 global::System.Exception? __exception_429 = null;
-                global::G.Response14? __value_429 = null;
+                global::G.CreateSoundEffectResponse2? __value_429 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_429 = global::G.Response14.FromJson(__content_429, JsonSerializerOptions);
+                        __value_429 = global::G.CreateSoundEffectResponse2.FromJson(__content_429, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_429 = global::G.Response14.FromJson(__content_429, JsonSerializerOptions);
+                        __value_429 = global::G.CreateSoundEffectResponse2.FromJson(__content_429, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -144,7 +144,7 @@ namespace G
                     __exception_429 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.Response14>(
+                throw new global::G.ApiException<global::G.CreateSoundEffectResponse2>(
                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_429,
                     statusCode: __response.StatusCode)
@@ -180,7 +180,7 @@ namespace G
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::G.Response13.FromJson(__content, JsonSerializerOptions) ??
+                        global::G.CreateSoundEffectResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -211,7 +211,7 @@ namespace G
                     ).ConfigureAwait(false);
 
                     return
-                        await global::G.Response13.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::G.CreateSoundEffectResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -252,11 +252,11 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.Response13> CreateSoundEffectAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreateSoundEffectResponse> CreateSoundEffectAsync(
             string xRunwayVersion = "2024-11-06",
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.Request6
+            var __request = new global::G.CreateSoundEffectRequest
             {
             };
 

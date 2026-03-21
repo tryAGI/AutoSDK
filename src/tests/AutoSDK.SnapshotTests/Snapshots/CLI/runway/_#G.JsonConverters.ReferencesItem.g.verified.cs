@@ -34,15 +34,15 @@ namespace G.JsonConverters
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
 
-            global::G.RequestGen4AlephReferenceImageReference? image = default;
+            global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference? image = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestGen4AlephReferenceImageReference), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestGen4AlephReferenceImageReference> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestGen4AlephReferenceImageReference).Name}");
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference).Name}");
                         image = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
@@ -58,8 +58,8 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestGen4AlephReferenceImageReference), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestGen4AlephReferenceImageReference> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestGen4AlephReferenceImageReference).Name}");
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference).Name}");
                     image = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
@@ -88,8 +88,8 @@ namespace G.JsonConverters
 
             if (value.IsImage)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestGen4AlephReferenceImageReference), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestGen4AlephReferenceImageReference?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestGen4AlephReferenceImageReference).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image, typeInfo);
             }
         }

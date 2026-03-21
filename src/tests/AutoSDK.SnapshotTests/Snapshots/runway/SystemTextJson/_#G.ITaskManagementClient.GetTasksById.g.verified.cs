@@ -29,7 +29,7 @@ namespace G
         ///   .retrieve('17f20503-6c24-4c16-946b-35dbbce2af2f')<br/>
         ///   .waitForTaskOutput();
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::G.Response> GetTasksByIdAsync(
+        global::System.Threading.Tasks.Task<global::G.GetTasksResponse> GetTasksByIdAsync(
             global::System.Guid id,
             string xRunwayVersion = "2024-11-06",
             global::System.Threading.CancellationToken cancellationToken = default);

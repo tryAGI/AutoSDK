@@ -9,12 +9,12 @@ namespace G
         partial void PrepareCreateTextToImageArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string xRunwayVersion,
-            global::G.Request4 request);
+            global::G.CreateTextToImageRequest request);
         partial void PrepareCreateTextToImageRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string xRunwayVersion,
-            global::G.Request4 request);
+            global::G.CreateTextToImageRequest request);
         partial void ProcessCreateTextToImageResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -48,9 +48,9 @@ namespace G
         ///   .waitForTaskOutput();<br/>
         /// console.log(task);
         /// </remarks>
-        public async global::System.Threading.Tasks.Task<global::G.Response9> CreateTextToImageAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreateTextToImageResponse> CreateTextToImageAsync(
 
-            global::G.Request4 request,
+            global::G.CreateTextToImageRequest request,
             string xRunwayVersion = "2024-11-06",
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -123,19 +123,19 @@ namespace G
             {
                 string? __content_429 = null;
                 global::System.Exception? __exception_429 = null;
-                global::G.Response10? __value_429 = null;
+                global::G.CreateTextToImageResponse2? __value_429 = null;
                 try
                 {
                     if (ReadResponseAsString)
                     {
                         __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_429 = global::G.Response10.FromJson(__content_429, JsonSerializerOptions);
+                        __value_429 = global::G.CreateTextToImageResponse2.FromJson(__content_429, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_429 = global::G.Response10.FromJson(__content_429, JsonSerializerOptions);
+                        __value_429 = global::G.CreateTextToImageResponse2.FromJson(__content_429, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -143,7 +143,7 @@ namespace G
                     __exception_429 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.Response10>(
+                throw new global::G.ApiException<global::G.CreateTextToImageResponse2>(
                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_429,
                     statusCode: __response.StatusCode)
@@ -179,7 +179,7 @@ namespace G
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::G.Response9.FromJson(__content, JsonSerializerOptions) ??
+                        global::G.CreateTextToImageResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -210,7 +210,7 @@ namespace G
                     ).ConfigureAwait(false);
 
                     return
-                        await global::G.Response9.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::G.CreateTextToImageResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -251,11 +251,11 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.Response9> CreateTextToImageAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreateTextToImageResponse> CreateTextToImageAsync(
             string xRunwayVersion = "2024-11-06",
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.Request4
+            var __request = new global::G.CreateTextToImageRequest
             {
             };
 

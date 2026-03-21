@@ -23,9 +23,9 @@ namespace G
         /// const usage = await client.organization.retrieveUsage();<br/>
         /// console.log(usage);
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::G.Response24> CreateOrganizationUsageAsync(
+        global::System.Threading.Tasks.Task<global::G.CreateOrganizationUsageResponse> CreateOrganizationUsageAsync(
 
-            global::G.Request11 request,
+            global::G.CreateOrganizationUsageRequest request,
             string xRunwayVersion = "2024-11-06",
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -43,7 +43,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.Response24> CreateOrganizationUsageAsync(
+        global::System.Threading.Tasks.Task<global::G.CreateOrganizationUsageResponse> CreateOrganizationUsageAsync(
             string xRunwayVersion = "2024-11-06",
             global::System.DateTime? startDate = default,
             global::System.DateTime? beforeDate = default,

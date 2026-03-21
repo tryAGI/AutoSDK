@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.Response> GetWellKnownOpenidConfigurationAsync(
+        public async global::System.Threading.Tasks.Task<global::G.GetWellKnownOpenidConfigurationResponse> GetWellKnownOpenidConfigurationAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -174,7 +174,7 @@ namespace G
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::G.Response.FromJson(__content, JsonSerializerOptions) ??
+                        global::G.GetWellKnownOpenidConfigurationResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -205,7 +205,7 @@ namespace G
                     ).ConfigureAwait(false);
 
                     return
-                        await global::G.Response.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::G.GetWellKnownOpenidConfigurationResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

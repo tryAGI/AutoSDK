@@ -725,7 +725,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Response? Type174 { get; set; }
+        public global::G.GetWellKnownOpenidConfigurationResponse? Type174 { get; set; }
         /// <summary>
         /// 
         /// </summary>
