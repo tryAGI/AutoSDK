@@ -74,13 +74,9 @@ namespace G
         /// <summary>
         /// Connects to the WebSocket server with typed query parameters.
         /// </summary>
-        /// <param name="model">AI model used for transcription.</param>
-        /// <param name="encoding">Encoding format of the submitted audio.</param>
         /// <param name="language">BCP-47 language tag for the primary spoken language.</param>
         /// <param name="sampleRate">Sample rate of the audio stream in Hz.</param>
         public async global::System.Threading.Tasks.Task ConnectAsync(
-            global::G.ListenV1Model model,
-            global::G.ListenV1Encoding? encoding = default,
             string? language = default,
             int? sampleRate = default,
             global::System.Uri? uri = null,
@@ -89,8 +85,6 @@ namespace G
             var __pathBuilder = new global::G.PathBuilder(
                 path: uri?.ToString() ?? DefaultBaseUrl);
             __pathBuilder
-                .AddRequiredParameter("model", model.ToValueString())
-                .AddOptionalParameter("encoding", encoding?.ToValueString())
                 .AddOptionalParameter("language", language)
                 .AddOptionalParameter("sample_rate", sampleRate?.ToString())
                 ;
@@ -98,16 +92,6 @@ namespace G
 
             await _clientWebSocket.ConnectAsync(
                 new global::System.Uri(__path), cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <inheritdoc cref="global::System.Net.WebSockets.ClientWebSocket.ConnectAsync(global::System.Uri, global::System.Threading.CancellationToken)"/>
-        public async global::System.Threading.Tasks.Task ConnectAsync(
-            global::System.Uri? uri = null,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            uri ??= new global::System.Uri(DefaultBaseUrl);
-
-            await _clientWebSocket.ConnectAsync(uri, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -412,6 +412,13 @@ public static class AsyncApiData
                     continue;
                 }
 
+                // Skip object-type schemas — they don't serialize well as query string
+                // parameters. The model class is still generated for use elsewhere.
+                if (schemaContext.TypeData.Properties.Length > 0)
+                {
+                    continue;
+                }
+
                 type = schemaContext.TypeData;
                 summary = schemaContext.Schema.GetSummary();
                 description = schemaContext.Schema.Description ?? string.Empty;
@@ -869,9 +876,8 @@ public static class AsyncApiData
     }
 
     /// <summary>
-    /// Extracts inline enum schemas from channel bindings.ws.query.properties into
-    /// component schemas. This allows inline enums like {"type": "string", "enum": [...]}
-    /// to be generated as proper C# enum types.
+    /// Extracts inline complex schemas (enums, objects) from channel bindings.ws.query.properties
+    /// into component schemas so they generate proper C# types.
     /// </summary>
     private static void ExtractInlineBindingEnumSchemas(AsyncApiDocument asyncApiDoc)
     {
@@ -893,14 +899,27 @@ public static class AsyncApiData
                 // Skip properties that are already $ref
                 if (propNode["$ref"] != null) continue;
 
-                // Only extract inline enums
-                if (propNode["enum"] is not JsonArray enumArray || enumArray.Count == 0) continue;
+                var propType = propNode["type"]?.GetValue<string>();
+
+                // Extract inline enums: {"type": "string", "enum": [...]}
+                var isInlineEnum = propNode["enum"] is JsonArray { Count: > 0 };
+
+                // Extract inline objects: {"type": "object", "properties": {...}}
+                var isInlineObject = propType == "object" && propNode["properties"] != null;
+
+                if (!isInlineEnum && !isInlineObject) continue;
 
                 // Generate schema name: {ChannelName}{PascalCasedPropertyName}
                 var schemaName = channelName + propName.ToPropertyName();
 
                 // Skip if schema already exists
                 if (asyncApiDoc.Components.Schemas.ContainsKey(schemaName)) continue;
+
+                // For inline objects, recursively extract nested inline objects first
+                if (isInlineObject)
+                {
+                    ExtractNestedInlineObjects(asyncApiDoc, propNode, schemaName);
+                }
 
                 // Add as component schema
                 asyncApiDoc.Components.Schemas[schemaName] = propNode.DeepClone();

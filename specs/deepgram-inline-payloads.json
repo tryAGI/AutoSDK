@@ -44,6 +44,20 @@
                 "type": "string",
                 "description": "Encoding format of the submitted audio.",
                 "enum": ["linear16", "flac", "mulaw", "amr-nb", "amr-wb", "opus", "speex"]
+              },
+              "extra": {
+                "type": "object",
+                "description": "Extra key-value metadata to attach to the request.",
+                "properties": {
+                  "tag": {
+                    "type": "string",
+                    "description": "A label for this request."
+                  },
+                  "priority": {
+                    "type": "integer",
+                    "description": "Processing priority."
+                  }
+                }
               }
             },
             "required": ["model"]
