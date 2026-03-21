@@ -325,7 +325,7 @@ namespace {endPoint.Settings.Namespace}
         }
 
         var additionalConvert = property.Type.IsEnum
-            ? $"{(property.IsRequired ? "" : "?")}.ToValueString()"
+            ? $"{(property.Type.CSharpTypeNullability ? "?" : "")}.ToValueString()"
             : string.Empty;
 
         return property.Type.IsAnyOfLike

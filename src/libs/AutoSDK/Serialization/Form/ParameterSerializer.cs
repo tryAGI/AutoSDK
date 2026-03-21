@@ -57,7 +57,7 @@ public static class ParameterSerializer
         {
             return [parameter with
             {
-                Value = $"{parameter.ParameterName}{(parameter.IsRequired ? "" : "?")}.ToValueString()",
+                Value = $"{parameter.ParameterName}{(parameter.Type.CSharpTypeNullability ? "?" : "")}.ToValueString()",
             }];
         }
         if (parameter.Type.IsArray)
@@ -67,7 +67,7 @@ public static class ParameterSerializer
                 Value = parameter.ArgumentName,
                 Selector = SerializeQueryParameter(parameter with {
                     Name = "x",
-                    Type = parameter.Type.SubTypes[0].Unbox<TypeData>(),
+                    Type = parameter.Type.SubTypes[0].Unbox<TypeData>() with { CSharpTypeNullability = false },
                     IsRequired = true,
                 }).FirstOrDefault().Value ?? "x",
                 Delimiter = parameter.Style switch
