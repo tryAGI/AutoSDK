@@ -6,6 +6,12 @@ namespace AutoSDK.UnitTests;
 /// <summary>
 /// Independent benchmark tests — each can be run standalone via --filter for fast verification.
 /// Example: dotnet test --filter "FullyQualifiedName~BenchmarkTests.Timing_ElevenLabs"
+/// Run all: dotnet test --filter "TestCategory=Benchmark"
+///
+/// Baseline (2026-03-21, net10.0, Apple Silicon):
+///   ElevenLabs: 587ms / 397MB (11,820 schemas)
+///   OpenAI:     368ms / 170MB  (4,933 schemas)
+///   GitHub:    1497ms / 1086MB (42,052 schemas)
 /// </summary>
 [TestClass]
 public class BenchmarkTests
