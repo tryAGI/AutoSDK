@@ -627,6 +627,7 @@ public static class AsyncApiData
     /// <summary>
     /// Gets the discriminator enum value from a schema's discriminator property.
     /// For example, a "message_type" property with enum: ["session_started"] returns "session_started".
+    /// Also supports const: "session_started" (OpenAPI 3.1+ / AsyncAPI pattern).
     /// </summary>
     private static string GetDiscriminatorValue(
         AsyncApiDocument doc, string schemaName)
@@ -635,14 +636,21 @@ public static class AsyncApiData
             schema is JsonObject schemaObj &&
             schemaObj["properties"] is JsonObject props)
         {
-            // Look for any property with a single-value enum
+            // Look for any property with a single-value enum or const
             foreach (var kvp in props)
             {
-                if (kvp.Value is JsonObject propObj &&
-                    propObj["enum"] is JsonArray enumValues &&
-                    enumValues.Count == 1)
+                if (kvp.Value is JsonObject propObj)
                 {
-                    return enumValues[0]?.GetValue<string>() ?? string.Empty;
+                    if (propObj["enum"] is JsonArray enumValues &&
+                        enumValues.Count == 1)
+                    {
+                        return enumValues[0]?.GetValue<string>() ?? string.Empty;
+                    }
+
+                    if (propObj["const"] is JsonNode constNode)
+                    {
+                        return constNode.GetValue<string>();
+                    }
                 }
             }
         }
@@ -652,7 +660,7 @@ public static class AsyncApiData
 
     /// <summary>
     /// Finds the common discriminator property name across all receive schemas.
-    /// Returns the property name that exists on all schemas with single-value enums.
+    /// Returns the property name that exists on all schemas with single-value enums or const values.
     /// </summary>
     private static string FindDiscriminatorProperty(
         AsyncApiDocument doc,
@@ -668,22 +676,26 @@ public static class AsyncApiData
             {
                 foreach (var kvp in props)
                 {
-                    if (kvp.Value is JsonObject propObj &&
-                        propObj["enum"] is JsonArray enumArray &&
-                        enumArray.Count == 1)
+                    if (kvp.Value is JsonObject propObj)
                     {
-                        if (!propertyCounts.ContainsKey(kvp.Key))
-                        {
-                            propertyCounts[kvp.Key] = 0;
-                        }
+                        bool hasSingleEnum = propObj["enum"] is JsonArray enumArray && enumArray.Count == 1;
+                        bool hasConst = propObj["const"] is not null;
 
-                        propertyCounts[kvp.Key]++;
+                        if (hasSingleEnum || hasConst)
+                        {
+                            if (!propertyCounts.ContainsKey(kvp.Key))
+                            {
+                                propertyCounts[kvp.Key] = 0;
+                            }
+
+                            propertyCounts[kvp.Key]++;
+                        }
                     }
                 }
             }
         }
 
-        // Return the property that exists on all schemas with single-value enum
+        // Return the property that exists on all schemas with single-value enum or const
         foreach (var kvp in propertyCounts)
         {
             if (kvp.Value == receiveSchemas.Count)

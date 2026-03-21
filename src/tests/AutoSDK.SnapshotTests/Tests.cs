@@ -93,6 +93,8 @@ public partial class Tests
     [DataRow("xai-realtime.json", JsonSerializerType.SystemTextJson)]
     [DataRow("deepgram-multichannel.json", JsonSerializerType.NewtonsoftJson)]
     [DataRow("deepgram-multichannel.json", JsonSerializerType.SystemTextJson)]
+    [DataRow("deepgram-const-discriminator.json", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("deepgram-const-discriminator.json", JsonSerializerType.SystemTextJson)]
     public Task SdkGenerator(string fileName, JsonSerializerType jsonSerializerType)
     {
         if (fileName == "")
@@ -188,6 +190,12 @@ public partial class Tests
                     : string.Empty,
             },
             "deepgram-multichannel.json" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_JsonSerializerContext"] = jsonSerializerType is JsonSerializerType.SystemTextJson
+                    ? "G.SourceGenerationContext"
+                    : string.Empty,
+            },
+            "deepgram-const-discriminator.json" => new Dictionary<string, string>
             {
                 ["build_property.AutoSDK_JsonSerializerContext"] = jsonSerializerType is JsonSerializerType.SystemTextJson
                     ? "G.SourceGenerationContext"

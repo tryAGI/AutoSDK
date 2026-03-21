@@ -1,0 +1,342 @@
+{
+  "asyncapi": "3.0.0",
+  "info": {
+    "title": "Deepgram Const Discriminator",
+    "version": "1.0.0",
+    "description": "Test fixture: same as deepgram-multichannel but uses const instead of enum for discriminator values."
+  },
+  "servers": {
+    "production": {
+      "host": "api.deepgram.com",
+      "protocol": "wss",
+      "description": "Deepgram production WebSocket server"
+    }
+  },
+  "channels": {
+    "listenV1": {
+      "address": "/v1/listen",
+      "description": "Speech-to-text streaming channel.",
+      "messages": {
+        "audioData": {
+          "$ref": "#/components/messages/AudioData"
+        },
+        "listenConfig": {
+          "$ref": "#/components/messages/ListenConfig"
+        },
+        "transcriptResult": {
+          "$ref": "#/components/messages/TranscriptResult"
+        },
+        "listenMetadata": {
+          "$ref": "#/components/messages/ListenMetadata"
+        }
+      }
+    },
+    "speakV1": {
+      "address": "/v1/speak",
+      "description": "Text-to-speech streaming channel.",
+      "messages": {
+        "speakRequest": {
+          "$ref": "#/components/messages/SpeakRequest"
+        },
+        "audioResponse": {
+          "$ref": "#/components/messages/AudioResponse"
+        },
+        "speakMetadata": {
+          "$ref": "#/components/messages/SpeakMetadata"
+        }
+      }
+    }
+  },
+  "operations": {
+    "sendAudioData": {
+      "action": "send",
+      "channel": {
+        "$ref": "#/channels/listenV1"
+      },
+      "summary": "Send audio data for transcription.",
+      "messages": [
+        {
+          "$ref": "#/channels/listenV1/messages/audioData"
+        }
+      ]
+    },
+    "sendListenConfig": {
+      "action": "send",
+      "channel": {
+        "$ref": "#/channels/listenV1"
+      },
+      "summary": "Send listen configuration.",
+      "messages": [
+        {
+          "$ref": "#/channels/listenV1/messages/listenConfig"
+        }
+      ]
+    },
+    "receiveTranscriptResult": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/listenV1"
+      },
+      "summary": "Receive transcript result.",
+      "messages": [
+        {
+          "$ref": "#/channels/listenV1/messages/transcriptResult"
+        }
+      ]
+    },
+    "receiveListenMetadata": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/listenV1"
+      },
+      "summary": "Receive listen metadata.",
+      "messages": [
+        {
+          "$ref": "#/channels/listenV1/messages/listenMetadata"
+        }
+      ]
+    },
+    "sendSpeakRequest": {
+      "action": "send",
+      "channel": {
+        "$ref": "#/channels/speakV1"
+      },
+      "summary": "Send text-to-speech request.",
+      "messages": [
+        {
+          "$ref": "#/channels/speakV1/messages/speakRequest"
+        }
+      ]
+    },
+    "receiveAudioResponse": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/speakV1"
+      },
+      "summary": "Receive synthesized audio response.",
+      "messages": [
+        {
+          "$ref": "#/channels/speakV1/messages/audioResponse"
+        }
+      ]
+    },
+    "receiveSpeakMetadata": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/speakV1"
+      },
+      "summary": "Receive speak metadata.",
+      "messages": [
+        {
+          "$ref": "#/channels/speakV1/messages/speakMetadata"
+        }
+      ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "AudioDataPayload": {
+        "type": "object",
+        "description": "Audio data sent for transcription.",
+        "required": ["message_type", "audio_base_64"],
+        "properties": {
+          "message_type": {
+            "type": "string",
+            "const": "audio_data"
+          },
+          "audio_base_64": {
+            "type": "string",
+            "description": "Base64-encoded audio data."
+          },
+          "sample_rate": {
+            "type": "integer",
+            "description": "Audio sample rate in Hz."
+          }
+        }
+      },
+      "ListenConfigPayload": {
+        "type": "object",
+        "description": "Listen configuration.",
+        "required": ["message_type"],
+        "properties": {
+          "message_type": {
+            "type": "string",
+            "const": "listen_config"
+          },
+          "model": {
+            "type": "string",
+            "description": "The model to use for transcription."
+          },
+          "language": {
+            "type": "string",
+            "description": "Language code."
+          }
+        }
+      },
+      "TranscriptResultPayload": {
+        "type": "object",
+        "description": "Transcript result from the server.",
+        "required": ["message_type", "text", "is_final"],
+        "properties": {
+          "message_type": {
+            "type": "string",
+            "const": "transcript_result"
+          },
+          "text": {
+            "type": "string",
+            "description": "The transcript text."
+          },
+          "is_final": {
+            "type": "boolean",
+            "description": "Whether this is a final result."
+          },
+          "confidence": {
+            "type": "number",
+            "description": "Confidence score."
+          }
+        }
+      },
+      "ListenMetadataPayload": {
+        "type": "object",
+        "description": "Metadata for the listen session.",
+        "required": ["message_type", "request_id"],
+        "properties": {
+          "message_type": {
+            "type": "string",
+            "const": "listen_metadata"
+          },
+          "request_id": {
+            "type": "string",
+            "description": "Unique request identifier."
+          },
+          "model_info": {
+            "type": "string",
+            "description": "Model information."
+          }
+        }
+      },
+      "SpeakRequestPayload": {
+        "type": "object",
+        "description": "Text-to-speech request.",
+        "required": ["message_type", "text"],
+        "properties": {
+          "message_type": {
+            "type": "string",
+            "const": "speak_request"
+          },
+          "text": {
+            "type": "string",
+            "description": "Text to synthesize."
+          },
+          "voice": {
+            "type": "string",
+            "description": "Voice identifier."
+          }
+        }
+      },
+      "AudioResponsePayload": {
+        "type": "object",
+        "description": "Synthesized audio response.",
+        "required": ["message_type", "audio_base_64"],
+        "properties": {
+          "message_type": {
+            "type": "string",
+            "const": "audio_response"
+          },
+          "audio_base_64": {
+            "type": "string",
+            "description": "Base64-encoded synthesized audio."
+          },
+          "duration_ms": {
+            "type": "integer",
+            "description": "Audio duration in milliseconds."
+          }
+        }
+      },
+      "SpeakMetadataPayload": {
+        "type": "object",
+        "description": "Metadata for the speak session.",
+        "required": ["message_type", "request_id"],
+        "properties": {
+          "message_type": {
+            "type": "string",
+            "const": "speak_metadata"
+          },
+          "request_id": {
+            "type": "string",
+            "description": "Unique request identifier."
+          },
+          "model_info": {
+            "type": "string",
+            "description": "Model information."
+          }
+        }
+      }
+    },
+    "messages": {
+      "AudioData": {
+        "name": "AudioData",
+        "summary": "Audio data for transcription.",
+        "contentType": "application/json",
+        "payload": {
+          "$ref": "#/components/schemas/AudioDataPayload"
+        }
+      },
+      "ListenConfig": {
+        "name": "ListenConfig",
+        "summary": "Listen configuration.",
+        "contentType": "application/json",
+        "payload": {
+          "$ref": "#/components/schemas/ListenConfigPayload"
+        }
+      },
+      "TranscriptResult": {
+        "name": "TranscriptResult",
+        "summary": "Transcript result.",
+        "contentType": "application/json",
+        "payload": {
+          "$ref": "#/components/schemas/TranscriptResultPayload"
+        }
+      },
+      "ListenMetadata": {
+        "name": "ListenMetadata",
+        "summary": "Listen session metadata.",
+        "contentType": "application/json",
+        "payload": {
+          "$ref": "#/components/schemas/ListenMetadataPayload"
+        }
+      },
+      "SpeakRequest": {
+        "name": "SpeakRequest",
+        "summary": "Text-to-speech request.",
+        "contentType": "application/json",
+        "payload": {
+          "$ref": "#/components/schemas/SpeakRequestPayload"
+        }
+      },
+      "AudioResponse": {
+        "name": "AudioResponse",
+        "summary": "Synthesized audio response.",
+        "contentType": "application/json",
+        "payload": {
+          "$ref": "#/components/schemas/AudioResponsePayload"
+        }
+      },
+      "SpeakMetadata": {
+        "name": "SpeakMetadata",
+        "summary": "Speak session metadata.",
+        "contentType": "application/json",
+        "payload": {
+          "$ref": "#/components/schemas/SpeakMetadataPayload"
+        }
+      }
+    },
+    "securitySchemes": {
+      "apiKey": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Deepgram API key"
+      }
+    }
+  }
+}
