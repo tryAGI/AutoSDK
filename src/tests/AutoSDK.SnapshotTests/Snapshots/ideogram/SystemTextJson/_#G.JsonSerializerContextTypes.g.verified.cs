@@ -41,191 +41,191 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Type3 { get; set; }
+        public global::G.DescribeRequest? Type3 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DescribeRequest? Type4 { get; set; }
+        public byte[]? Type4 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public byte[]? Type5 { get; set; }
+        public global::G.GenerateImageRequest? Type5 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateImageRequest? Type6 { get; set; }
+        public global::G.ImageRequest? Type6 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageRequest? Type7 { get; set; }
+        public global::G.RemixImageRequest? Type7 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AspectRatio? Type8 { get; set; }
+        public global::G.InitialImageRequest? Type8 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelEnum? Type9 { get; set; }
+        public global::G.UpscaleImageRequest? Type9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MagicPromptOption? Type10 { get; set; }
+        public global::G.UpscaleInitialImageRequest? Type10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public int? Type11 { get; set; }
+        public string? Type11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StyleType? Type12 { get; set; }
+        public global::G.AspectRatio? Type12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Resolution? Type13 { get; set; }
+        public global::G.ModelEnum? Type13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ColorPaletteWithPresetNameOrMembers? Type14 { get; set; }
+        public global::G.MagicPromptOption? Type14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ColorPaletteWithPresetName? Type15 { get; set; }
+        public int? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ColorPalettePresetName? Type16 { get; set; }
+        public global::G.StyleType? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ColorPaletteWithMembers? Type17 { get; set; }
+        public global::G.Resolution? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ColorPaletteMember>? Type18 { get; set; }
+        public global::G.ColorPaletteWithPresetNameOrMembers? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ColorPaletteMember? Type19 { get; set; }
+        public global::G.GenerateImageResponse? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double? Type20 { get; set; }
+        public global::System.DateTime? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RemixImageRequest? Type21 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ImageObject>? Type21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InitialImageRequest? Type22 { get; set; }
+        public global::G.ImageObject? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpscaleImageRequest? Type23 { get; set; }
+        public bool? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpscaleInitialImageRequest? Type24 { get; set; }
+        public global::G.GenerateImageSafetyError? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateImageResponse? Type25 { get; set; }
+        public global::G.ImageSafetyError? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.DateTime? Type26 { get; set; }
+        public global::G.ManageApiSubscriptionResponse? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ImageObject>? Type27 { get; set; }
+        public global::G.MetronomeLinks? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageObject? Type28 { get; set; }
+        public global::G.RechargeSettingsResponse? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public bool? Type29 { get; set; }
+        public global::G.RechargeSettings? Type29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateImageSafetyError? Type30 { get; set; }
+        public global::G.Price? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageSafetyError? Type31 { get; set; }
+        public global::G.PostApiSubscriptionResponse? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ManageApiSubscriptionResponse? Type32 { get; set; }
+        public global::G.PostApiSubscriptionError? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MetronomeLinks? Type33 { get; set; }
+        public global::System.Collections.Generic.IList<string>? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RechargeSettingsResponse? Type34 { get; set; }
+        public global::G.PostApiSubscriptionRequest? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RechargeSettings? Type35 { get; set; }
+        public global::G.PostApiReactivateResponse? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Price? Type36 { get; set; }
+        public global::G.GetApiKeysResponse? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostApiSubscriptionResponse? Type37 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RedactedApiKey>? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostApiSubscriptionError? Type38 { get; set; }
+        public global::G.RedactedApiKey? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type39 { get; set; }
+        public global::G.PostApiKeyResponse? Type39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostApiSubscriptionRequest? Type40 { get; set; }
+        public global::G.ManageApiStripeSubscriptionResponse? Type40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostApiReactivateResponse? Type41 { get; set; }
+        public global::G.GetApiTermsResponse? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetApiKeysResponse? Type42 { get; set; }
+        public global::G.ApiTerms? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RedactedApiKey>? Type43 { get; set; }
+        public global::G.PostApiTermsRequest? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RedactedApiKey? Type44 { get; set; }
+        public global::G.ColorPaletteWithPresetName? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostApiKeyResponse? Type45 { get; set; }
+        public global::G.ColorPaletteWithMembers? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ManageApiStripeSubscriptionResponse? Type46 { get; set; }
+        public global::G.ColorPalettePresetName? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetApiTermsResponse? Type47 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ColorPaletteMember>? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ApiTerms? Type48 { get; set; }
+        public global::G.ColorPaletteMember? Type48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostApiTermsRequest? Type49 { get; set; }
+        public double? Type49 { get; set; }
 
         /// <summary>
         /// 
@@ -234,18 +234,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ColorPaletteMember>? ListType1 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ImageObject>? ListType1 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ImageObject>? ListType2 { get; set; }
+        public global::System.Collections.Generic.List<string>? ListType2 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<string>? ListType3 { get; set; }
+        public global::System.Collections.Generic.List<global::G.RedactedApiKey>? ListType3 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.RedactedApiKey>? ListType4 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ColorPaletteMember>? ListType4 { get; set; }
     }
 }

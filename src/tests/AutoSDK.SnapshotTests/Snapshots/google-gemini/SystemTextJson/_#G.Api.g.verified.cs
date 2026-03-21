@@ -47,14 +47,14 @@ namespace G
                     new global::G.JsonConverters.SafetyRatingCategoryNullableJsonConverter(),
                     new global::G.JsonConverters.SafetyRatingProbabilityJsonConverter(),
                     new global::G.JsonConverters.SafetyRatingProbabilityNullableJsonConverter(),
-                    new global::G.JsonConverters.EmbedContentRequestTaskTypeJsonConverter(),
-                    new global::G.JsonConverters.EmbedContentRequestTaskTypeNullableJsonConverter(),
                     new global::G.JsonConverters.SafetySettingCategoryJsonConverter(),
                     new global::G.JsonConverters.SafetySettingCategoryNullableJsonConverter(),
                     new global::G.JsonConverters.SafetySettingThresholdJsonConverter(),
                     new global::G.JsonConverters.SafetySettingThresholdNullableJsonConverter(),
                     new global::G.JsonConverters.PromptFeedbackBlockReasonJsonConverter(),
                     new global::G.JsonConverters.PromptFeedbackBlockReasonNullableJsonConverter(),
+                    new global::G.JsonConverters.EmbedContentRequestTaskTypeJsonConverter(),
+                    new global::G.JsonConverters.EmbedContentRequestTaskTypeNullableJsonConverter(),
                     new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };

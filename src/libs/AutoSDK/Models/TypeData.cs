@@ -108,12 +108,15 @@ public record struct TypeData(
         var isBinary = schema.IsBinary();
         var isBase64 = schema.IsBase64();
 
+        // Resolve once and reuse
+        var resolvedSchema = schema.ResolveIfRequired();
+
         // Fast path for simple primitive types — skip all builder machinery
         // Cache the result so we don't call GetCSharpType twice on fallthrough
         string? cachedType = null;
         if (!isEnum && !isAnyOf && !isOneOf && !isAllOf &&
             !isArray && !isBinary && !isBase64 &&
-            schema.ResolveIfRequired() is not { Properties.Count: > 0 })
+            resolvedSchema is not { Properties.Count: > 0 })
         {
             cachedType = GetCSharpTypeCore(context, isArray, isAnyOf, isOneOf, isAllOf);
             if (cachedType is "bool" or "int" or "long" or "short" or "byte" or "float" or "double"
@@ -151,7 +154,7 @@ public record struct TypeData(
         }
 
         var properties = ImmutableArray<string>.Empty;
-        if (schema.ResolveIfRequired() is { Properties: { Count: > 0 } props })
+        if (resolvedSchema is { Properties: { Count: > 0 } props })
         {
             var builder = ImmutableArray.CreateBuilder<string>(props.Count);
             foreach (var kvp in props)

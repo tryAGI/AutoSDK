@@ -569,11 +569,16 @@ public class SchemaContext(
             : TypeData.FromSchemaContext(this);
         if (IsReference && ResolvedReference != null && TypeData != TypeData.Default)
         {
-            TypeData = TypeData with
+            var newType = TypeData.GetCSharpType(ResolvedReference);
+            var newNullability = TypeData.GetCSharpNullability(ResolvedReference, this);
+            if (newType != TypeData.CSharpTypeRaw || newNullability != TypeData.CSharpTypeNullability)
             {
-                CSharpTypeRaw = TypeData.GetCSharpType(ResolvedReference),
-                CSharpTypeNullability = TypeData.GetCSharpNullability(ResolvedReference, this),
-            };
+                TypeData = TypeData with
+                {
+                    CSharpTypeRaw = newType,
+                    CSharpTypeNullability = newNullability,
+                };
+            }
         }
         if (IsProperty)
         {
@@ -613,10 +618,18 @@ public class SchemaContext(
 
     public bool HasAnyTag(params string[] tags)
     {
-        return
-            tags.Contains(string.Empty) && Tags.Count == 0 ||
-            Tags.Any(tags.Contains) ||
-            Parent?.HasAnyTag(tags) == true;
+        for (var i = 0; i < tags.Length; i++)
+        {
+            if (tags[i].Length == 0 && Tags.Count == 0)
+            {
+                return true;
+            }
+            if (Tags.Contains(tags[i]))
+            {
+                return true;
+            }
+        }
+        return Parent?.HasAnyTag(tags) == true;
     }
     
     public bool AnyParent(Func<SchemaContext, bool> predicate)
@@ -631,6 +644,28 @@ public class SchemaContext(
         return Parent?.AnyParent(predicate) == true;
     }
     
+    /// <summary>
+    /// Adds this schema and all its children to the target set without intermediate List allocations.
+    /// </summary>
+    public void CollectWithAllChildren(HashSet<SchemaContext> target, int level = 0, int maxDepth = 20)
+    {
+        if (level > maxDepth || !target.Add(this))
+        {
+            return;
+        }
+
+        if (IsReference)
+        {
+            ResolvedReference?.CollectWithAllChildren(target, level + 1, maxDepth);
+            return;
+        }
+
+        for (var i = 0; i < Children.Count; i++)
+        {
+            Children[i].CollectWithAllChildren(target, level + 1, maxDepth);
+        }
+    }
+
     public IReadOnlyCollection<SchemaContext> WithAllChildren(int level = 0, int maxDepth = 20, HashSet<SchemaContext>? visited = null)
     {
         // Prevent infinite recursion for circular references

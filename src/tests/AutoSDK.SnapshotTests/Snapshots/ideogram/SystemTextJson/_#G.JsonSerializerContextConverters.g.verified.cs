@@ -11,10 +11,10 @@ namespace G
     {
         private readonly global::System.Type[] _types = new global::System.Type[]
         {
-            typeof(global::G.JsonConverters.AspectRatioJsonConverter),
-            typeof(global::G.JsonConverters.AspectRatioNullableJsonConverter),
             typeof(global::G.JsonConverters.ModelEnumJsonConverter),
             typeof(global::G.JsonConverters.ModelEnumNullableJsonConverter),
+            typeof(global::G.JsonConverters.AspectRatioJsonConverter),
+            typeof(global::G.JsonConverters.AspectRatioNullableJsonConverter),
             typeof(global::G.JsonConverters.MagicPromptOptionJsonConverter),
             typeof(global::G.JsonConverters.MagicPromptOptionNullableJsonConverter),
             typeof(global::G.JsonConverters.StyleTypeJsonConverter),

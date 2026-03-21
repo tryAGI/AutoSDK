@@ -93,43 +93,43 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.AnyOf<string, int?>>? Type16 { get; set; }
+        public global::G.ModelMeta? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, int?>? Type17 { get; set; }
+        public global::G.TimeInterval? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelMeta? Type18 { get; set; }
+        public long? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TimeInterval? Type19 { get; set; }
+        public global::G.UsageItem? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public long? Type20 { get; set; }
+        public global::G.UsageMonth? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UsageItem? Type21 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.UsageItem>? Type21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UsageMonth? Type22 { get; set; }
+        public global::G.UsageOut? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.UsageItem>? Type23 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.UsageMonth>? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UsageOut? Type24 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.AnyOf<string, int?>>? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.UsageMonth>? Type25 { get; set; }
+        public global::G.AnyOf<string, int?>? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -205,455 +205,455 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Function? Type44 { get; set; }
+        public global::G.ChatCompletionContentPartAudio? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionContentPartAudio? Type45 { get; set; }
+        public global::G.InputAudio? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputAudio? Type46 { get; set; }
+        public global::G.ChatCompletionContentPartImage? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputAudioFormat? Type47 { get; set; }
+        public global::G.ImageURL? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionContentPartImage? Type48 { get; set; }
+        public global::G.ChatCompletionContentPartText? Type48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageURL? Type49 { get; set; }
+        public global::G.Function? Type49 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageURLDetail? Type50 { get; set; }
+        public global::G.ChatCompletionSystemMessage? Type50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionContentPartText? Type51 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionContentPartText>>? Type51 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionSystemMessage? Type52 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionContentPartText>? Type52 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionContentPartText>>? Type53 { get; set; }
+        public global::G.ChatCompletionToolMessage? Type53 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ChatCompletionContentPartText>? Type54 { get; set; }
+        public global::G.ChatCompletionUserMessage? Type54 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionToolMessage? Type55 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ChatCompletionContentPartText, global::G.ChatCompletionContentPartImage, global::G.ChatCompletionContentPartAudio>>>? Type55 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionUserMessage? Type56 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ChatCompletionContentPartText, global::G.ChatCompletionContentPartImage, global::G.ChatCompletionContentPartAudio>>? Type56 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ChatCompletionContentPartText, global::G.ChatCompletionContentPartImage, global::G.ChatCompletionContentPartAudio>>>? Type57 { get; set; }
+        public global::G.AnyOf<global::G.ChatCompletionContentPartText, global::G.ChatCompletionContentPartImage, global::G.ChatCompletionContentPartAudio>? Type57 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ChatCompletionContentPartText, global::G.ChatCompletionContentPartImage, global::G.ChatCompletionContentPartAudio>>? Type58 { get; set; }
+        public global::G.ChatTools? Type58 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.ChatCompletionContentPartText, global::G.ChatCompletionContentPartImage, global::G.ChatCompletionContentPartAudio>? Type59 { get; set; }
+        public global::G.FunctionDefinition? Type59 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatTools? Type60 { get; set; }
+        public global::G.CreateLoraApiRequest? Type60 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionDefinition? Type61 { get; set; }
+        public global::G.SourceModel? Type61 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateLoraApiRequest? Type62 { get; set; }
+        public global::G.DeepError? Type62 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SourceModel? Type63 { get; set; }
+        public global::G.DeployDelete? Type63 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SourceTypeEnum? Type64 { get; set; }
+        public global::G.DeployGPUAvailability? Type64 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeepError? Type65 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GPUAvailabilityInfo>? Type65 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeployDelete? Type66 { get; set; }
+        public global::G.GPUAvailabilityInfo? Type66 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeployGPUAvailability? Type67 { get; set; }
+        public global::G.DeployGPUs? Type67 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GPUAvailabilityInfo>? Type68 { get; set; }
+        public global::G.DeployInstances? Type68 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GPUAvailabilityInfo? Type69 { get; set; }
+        public global::G.DeployLLMConfig? Type69 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeployGPUs? Type70 { get; set; }
+        public global::G.HFWeights? Type70 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeployInstances? Type71 { get; set; }
+        public global::G.DeployLLMIn? Type71 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeployLLMConfig? Type72 { get; set; }
+        public global::G.ScaleSettings? Type72 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HFWeights? Type73 { get; set; }
+        public global::G.DeployLLMUpdateIn? Type73 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeployLLMIn? Type74 { get; set; }
+        public global::G.DeployModelIn? Type74 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ScaleSettings? Type75 { get; set; }
+        public global::G.ModelProvider? Type75 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeployLLMUpdateIn? Type76 { get; set; }
+        public global::G.DeployResult? Type76 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeployModelIn? Type77 { get; set; }
+        public global::G.DeployStatusOut? Type77 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelProvider? Type78 { get; set; }
+        public global::G.DeployType? Type78 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeployResult? Type79 { get; set; }
+        public global::G.DeploymentLogQueryOut? Type79 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeployStatusOut? Type80 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<byte[]>>? Type80 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeployType? Type81 { get; set; }
+        public global::G.DeploymentOut? Type81 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentLogQueryOut? Type82 { get; set; }
+        public global::G.DeploymentStatsOut? Type82 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<byte[]>>? Type83 { get; set; }
+        public global::G.DetailedDeploymentStatsOut? Type83 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentOut? Type84 { get; set; }
+        public global::G.LLMDeploymentStatsOut? Type84 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentStatsOut? Type85 { get; set; }
+        public global::G.EmbeddingsDeploymentStatsOut? Type85 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DetailedDeploymentStatsOut? Type86 { get; set; }
+        public global::G.TimeDeploymentStatsOut? Type86 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LLMDeploymentStatsOut? Type87 { get; set; }
+        public global::G.DisplayNameIn? Type87 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingsDeploymentStatsOut? Type88 { get; set; }
+        public global::G.ElevenLabsTextToSpeechIn? Type88 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TimeDeploymentStatsOut? Type89 { get; set; }
+        public global::G.TtsResponseFormat? Type89 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DisplayNameIn? Type90 { get; set; }
+        public global::G.EmailsOut? Type90 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ElevenLabsTextToSpeechIn? Type91 { get; set; }
+        public global::System.Collections.Generic.IList<string>? Type91 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TtsResponseFormat? Type92 { get; set; }
+        public global::G.FeedbackIn? Type92 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmailsOut? Type93 { get; set; }
+        public global::G.GetVoicesOut? Type93 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type94 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Voice>? Type94 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FeedbackIn? Type95 { get; set; }
+        public global::G.Voice? Type95 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetVoicesOut? Type96 { get; set; }
+        public global::G.HFModel? Type96 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Voice>? Type97 { get; set; }
+        public global::G.HFTasksE? Type97 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Voice? Type98 { get; set; }
+        public global::G.ImageURLDetail? Type98 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HFModel? Type99 { get; set; }
+        public global::G.InputAudioFormat? Type99 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HFTasksE? Type100 { get; set; }
+        public global::G.InspectScopedJWTOut? Type100 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InspectScopedJWTOut? Type101 { get; set; }
+        public global::G.LogQueryOut? Type101 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LogQueryOut? Type102 { get; set; }
+        public global::G.LoraModelUploadIn? Type102 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LoraModelUploadIn? Type103 { get; set; }
+        public global::G.Me? Type103 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Me? Type104 { get; set; }
+        public global::G.MeVercelConnection2? Type104 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MeVercelConnection2? Type105 { get; set; }
+        public global::G.MeIn? Type105 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MeIn? Type106 { get; set; }
+        public global::G.ModelDocBlock? Type106 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelDocBlock? Type107 { get; set; }
+        public global::G.ModelDocBlockKey? Type107 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelDocBlockKey? Type108 { get; set; }
+        public global::G.ModelFieldInfo? Type108 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelFieldInfo? Type109 { get; set; }
+        public global::System.Collections.Generic.IList<object>? Type109 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<object>? Type110 { get; set; }
+        public global::G.ModelInfoOut? Type110 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelInfoOut? Type111 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ModelFieldInfo>? Type111 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ModelFieldInfo>? Type112 { get; set; }
+        public global::G.AnyOf<global::G.ModelPricingTime, global::G.ModelPricingUptime, global::G.ModelPricingTokens, global::G.ModelPricingInputLength, global::G.ModelPricingInputTokens, global::G.ModelPricingInputCharacterLength, global::G.ModelPricingImageUnits>? Type112 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.ModelPricingTime, global::G.ModelPricingUptime, global::G.ModelPricingTokens, global::G.ModelPricingInputLength, global::G.ModelPricingInputTokens, global::G.ModelPricingInputCharacterLength, global::G.ModelPricingImageUnits>? Type113 { get; set; }
+        public global::G.ModelPricingTime? Type113 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelPricingTime? Type114 { get; set; }
+        public global::G.ModelPricingUptime? Type114 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelPricingUptime? Type115 { get; set; }
+        public global::G.ModelPricingTokens? Type115 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelPricingTokens? Type116 { get; set; }
+        public global::G.ModelPricingInputLength? Type116 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelPricingInputLength? Type117 { get; set; }
+        public global::G.ModelPricingInputTokens? Type117 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelPricingInputTokens? Type118 { get; set; }
+        public global::G.ModelPricingInputCharacterLength? Type118 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelPricingInputCharacterLength? Type119 { get; set; }
+        public global::G.ModelPricingImageUnits? Type119 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelPricingImageUnits? Type120 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ModelDocBlock>? Type120 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ModelDocBlock>? Type121 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SchemaVariant>? Type121 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.SchemaVariant>? Type122 { get; set; }
+        public global::G.SchemaVariant? Type122 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SchemaVariant? Type123 { get; set; }
+        public global::G.ModelMetaIn? Type123 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SchemaVariantKey? Type124 { get; set; }
+        public global::G.ModelOut? Type124 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelMetaIn? Type125 { get; set; }
+        public global::G.AnyOf<global::G.ModelPricingTime, global::G.ModelPricingTokens, global::G.ModelPricingInputLength, global::G.ModelPricingInputTokens, global::G.ModelPricingUptime, global::G.ModelPricingInputCharacterLength, global::G.ModelPricingImageUnits>? Type125 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelOut? Type126 { get; set; }
+        public global::G.ModelPublicityIn? Type126 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.ModelPricingTime, global::G.ModelPricingTokens, global::G.ModelPricingInputLength, global::G.ModelPricingInputTokens, global::G.ModelPricingUptime, global::G.ModelPricingInputCharacterLength, global::G.ModelPricingImageUnits>? Type127 { get; set; }
+        public global::G.ModelVersionOut? Type127 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelPublicityIn? Type128 { get; set; }
+        public global::G.OpenAIBatch? Type128 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelVersionOut? Type129 { get; set; }
+        public global::G.OpenAIBatchesIn? Type129 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAIBatch? Type130 { get; set; }
+        public global::G.OpenAIBatchesInEndpoint? Type130 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAIBatchesIn? Type131 { get; set; }
+        public global::G.OpenAIChatCompletionsIn? Type131 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAIBatchesInEndpoint? Type132 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ChatCompletionToolMessage, global::G.ChatCompletionAssistantMessage, global::G.ChatCompletionUserMessage, global::G.ChatCompletionSystemMessage>>? Type132 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAIChatCompletionsIn? Type133 { get; set; }
+        public global::G.AnyOf<global::G.ChatCompletionToolMessage, global::G.ChatCompletionAssistantMessage, global::G.ChatCompletionUserMessage, global::G.ChatCompletionSystemMessage>? Type133 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ChatCompletionToolMessage, global::G.ChatCompletionAssistantMessage, global::G.ChatCompletionUserMessage, global::G.ChatCompletionSystemMessage>>? Type134 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Type134 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.ChatCompletionToolMessage, global::G.ChatCompletionAssistantMessage, global::G.ChatCompletionUserMessage, global::G.ChatCompletionSystemMessage>? Type135 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChatTools>? Type135 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Type136 { get; set; }
+        public global::G.ResponseFormat? Type136 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ChatTools>? Type137 { get; set; }
+        public global::G.StreamOptions? Type137 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormat? Type138 { get; set; }
+        public global::G.OpenAIChatCompletionsInReasoningEffort2? Type138 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatType? Type139 { get; set; }
+        public global::G.OpenAICompletionsIn? Type139 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamOptions? Type140 { get; set; }
+        public global::G.OpenAIEmbeddingsIn? Type140 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAIChatCompletionsInReasoningEffort2? Type141 { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? Type141 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAICompletionsIn? Type142 { get; set; }
+        public global::G.OpenAIImageData? Type142 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAIEmbeddingsIn? Type143 { get; set; }
+        public global::G.OpenAIImagesOut? Type143 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? Type144 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OpenAIImageData>? Type144 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAIImageData? Type145 { get; set; }
+        public global::G.OpenAIModelOut? Type145 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAIImagesOut? Type146 { get; set; }
+        public global::G.OpenAIModelsOut? Type146 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OpenAIImageData>? Type147 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OpenAIModelOut>? Type147 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAIModelOut? Type148 { get; set; }
+        public global::G.OpenAITextToSpeechIn? Type148 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAIModelsOut? Type149 { get; set; }
+        public global::G.RateLimitOut? Type149 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OpenAIModelOut>? Type150 { get; set; }
+        public global::G.RateLimitRequestIn? Type150 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAITextToSpeechIn? Type151 { get; set; }
+        public global::G.ResponseFormatType? Type151 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RateLimitOut? Type152 { get; set; }
+        public global::G.SchemaOut? Type152 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RateLimitRequestIn? Type153 { get; set; }
+        public global::G.SchemaVariantKey? Type153 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SchemaOut? Type154 { get; set; }
+        public global::G.ScopedJWTIn? Type154 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ScopedJWTIn? Type155 { get; set; }
+        public global::G.ScopedJWTOut? Type155 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ScopedJWTOut? Type156 { get; set; }
+        public global::G.SourceTypeEnum? Type156 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -682,15 +682,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.AnyOf<string, int?>>? ListType1 { get; set; }
+        public global::System.Collections.Generic.List<global::G.UsageItem>? ListType1 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.UsageItem>? ListType2 { get; set; }
+        public global::System.Collections.Generic.List<global::G.UsageMonth>? ListType2 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.UsageMonth>? ListType3 { get; set; }
+        public global::System.Collections.Generic.List<global::G.AnyOf<string, int?>>? ListType3 { get; set; }
         /// <summary>
         /// 
         /// </summary>

@@ -41,10 +41,10 @@ namespace G
                 DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
                 Converters =
                 {
-                    new global::G.JsonConverters.AspectRatioJsonConverter(),
-                    new global::G.JsonConverters.AspectRatioNullableJsonConverter(),
                     new global::G.JsonConverters.ModelEnumJsonConverter(),
                     new global::G.JsonConverters.ModelEnumNullableJsonConverter(),
+                    new global::G.JsonConverters.AspectRatioJsonConverter(),
+                    new global::G.JsonConverters.AspectRatioNullableJsonConverter(),
                     new global::G.JsonConverters.MagicPromptOptionJsonConverter(),
                     new global::G.JsonConverters.MagicPromptOptionNullableJsonConverter(),
                     new global::G.JsonConverters.StyleTypeJsonConverter(),

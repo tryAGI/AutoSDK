@@ -45,31 +45,31 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public bool? Type4 { get; set; }
+        public object? Type4 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public object? Type5 { get; set; }
+        public global::System.Collections.Generic.IList<string>? Type5 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type6 { get; set; }
+        public global::System.DateTime? Type6 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.DateTime? Type7 { get; set; }
+        public double? Type7 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double? Type8 { get; set; }
+        public global::G.BaseModelCardType? Type8 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BaseModelCardType? Type9 { get; set; }
+        public global::G.DeleteModelOut? Type9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteModelOut? Type10 { get; set; }
+        public bool? Type10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -93,31 +93,31 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.AnyOf<string, int?>>? Type16 { get; set; }
+        public global::G.ModelList? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, int?>? Type17 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DataItem>? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelList? Type18 { get; set; }
+        public global::G.DataItem? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DataItem>? Type19 { get; set; }
+        public global::G.ModelListDataItemDiscriminator? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DataItem? Type20 { get; set; }
+        public global::G.ModelListDataItemDiscriminatorType? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelListDataItemDiscriminator? Type21 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.AnyOf<string, int?>>? Type21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelListDataItemDiscriminatorType? Type22 { get; set; }
+        public global::G.AnyOf<string, int?>? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -205,111 +205,111 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WandbIntegrationOutType? Type44 { get; set; }
+        public global::G.ClassifierJobOutIntegrationsVariant1ItemDiscriminator? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ClassifierJobOutIntegrationsVariant1ItemDiscriminator? Type45 { get; set; }
+        public global::G.ClassifierJobOutIntegrationsVariant1ItemDiscriminatorType? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ClassifierJobOutIntegrationsVariant1ItemDiscriminatorType? Type46 { get; set; }
+        public global::G.JobMetadataOut? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobMetadataOut? Type47 { get; set; }
+        public global::G.ClassifierJobOutJobType? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ClassifierJobOutJobType? Type48 { get; set; }
+        public global::G.ClassifierTrainingParameters? Type48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ClassifierTrainingParameters? Type49 { get; set; }
+        public global::G.CompletionJobOut? Type49 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CompletionJobOut? Type50 { get; set; }
+        public global::G.CompletionJobOutStatus? Type50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CompletionJobOutStatus? Type51 { get; set; }
+        public global::G.CompletionJobOutObject? Type51 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CompletionJobOutObject? Type52 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.IntegrationsVariant1Item2>? Type52 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.IntegrationsVariant1Item2>? Type53 { get; set; }
+        public global::G.IntegrationsVariant1Item2? Type53 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.IntegrationsVariant1Item2? Type54 { get; set; }
+        public global::G.CompletionJobOutIntegrationsVariant1ItemDiscriminator? Type54 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CompletionJobOutIntegrationsVariant1ItemDiscriminator? Type55 { get; set; }
+        public global::G.CompletionJobOutIntegrationsVariant1ItemDiscriminatorType? Type55 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CompletionJobOutIntegrationsVariant1ItemDiscriminatorType? Type56 { get; set; }
+        public global::G.CompletionJobOutJobType? Type56 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CompletionJobOutJobType? Type57 { get; set; }
+        public global::G.CompletionTrainingParameters? Type57 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CompletionTrainingParameters? Type58 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoriesItem>? Type58 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RepositoriesItem>? Type59 { get; set; }
+        public global::G.RepositoriesItem? Type59 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoriesItem? Type60 { get; set; }
+        public global::G.GithubRepositoryOut? Type60 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GithubRepositoryOut? Type61 { get; set; }
+        public global::G.CompletionJobOutRepositorieDiscriminator? Type61 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GithubRepositoryOutType? Type62 { get; set; }
+        public global::G.CompletionJobOutRepositorieDiscriminatorType? Type62 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CompletionJobOutRepositorieDiscriminator? Type63 { get; set; }
+        public global::G.GithubRepositoryOutType? Type63 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CompletionJobOutRepositorieDiscriminatorType? Type64 { get; set; }
+        public global::G.JobsOut? Type64 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobsOut? Type65 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DataItem2>? Type65 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DataItem2>? Type66 { get; set; }
+        public global::G.DataItem2? Type66 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DataItem2? Type67 { get; set; }
+        public global::G.JobsOutDataItemDiscriminator? Type67 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobsOutDataItemDiscriminator? Type68 { get; set; }
+        public global::G.JobsOutDataItemDiscriminatorJobType? Type68 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobsOutDataItemDiscriminatorJobType? Type69 { get; set; }
+        public global::G.JobsOutObject? Type69 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobsOutObject? Type70 { get; set; }
+        public global::G.WandbIntegrationOutType? Type70 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -373,39 +373,39 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WandbIntegrationType? Type86 { get; set; }
+        public global::G.JobInIntegrationsVariant1ItemDiscriminator? Type86 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobInIntegrationsVariant1ItemDiscriminator? Type87 { get; set; }
+        public global::G.JobInIntegrationsVariant1ItemDiscriminatorType? Type87 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobInIntegrationsVariant1ItemDiscriminatorType? Type88 { get; set; }
+        public global::G.AnyOf<global::G.CompletionTrainingParametersIn, global::G.ClassifierTrainingParametersIn>? Type88 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.CompletionTrainingParametersIn, global::G.ClassifierTrainingParametersIn>? Type89 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoriesVariant1Item>? Type89 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RepositoriesVariant1Item>? Type90 { get; set; }
+        public global::G.RepositoriesVariant1Item? Type90 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoriesVariant1Item? Type91 { get; set; }
+        public global::G.JobInRepositoriesVariant1ItemDiscriminator? Type91 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobInRepositoriesVariant1ItemDiscriminator? Type92 { get; set; }
+        public global::G.JobInRepositoriesVariant1ItemDiscriminatorType? Type92 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobInRepositoriesVariant1ItemDiscriminatorType? Type93 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ClassifierTargetIn>? Type93 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ClassifierTargetIn>? Type94 { get; set; }
+        public global::G.WandbIntegrationType? Type94 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -625,347 +625,347 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextChunk? Type149 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolCall>? Type149 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextChunkType? Type150 { get; set; }
+        public global::G.ToolCall? Type150 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageURLChunk? Type151 { get; set; }
+        public global::G.AssistantMessageRole? Type151 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.ImageURL, string>? Type152 { get; set; }
+        public global::G.ChatCompletionRequest? Type152 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageURL? Type153 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? Type153 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageURLChunkType? Type154 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.MessagesItem>? Type154 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DocumentURLChunk? Type155 { get; set; }
+        public global::G.MessagesItem? Type155 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DocumentURLChunkType? Type156 { get; set; }
+        public global::G.SystemMessage? Type156 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ReferenceChunk? Type157 { get; set; }
+        public global::G.UserMessage? Type157 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<int>? Type158 { get; set; }
+        public global::G.ToolMessage? Type158 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ReferenceChunkType? Type159 { get; set; }
+        public global::G.ChatCompletionRequestMessageDiscriminator? Type159 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentChunkDiscriminator? Type160 { get; set; }
+        public global::G.ChatCompletionRequestMessageDiscriminatorRole? Type160 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentChunkDiscriminatorType? Type161 { get; set; }
+        public global::G.ResponseFormat? Type161 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ToolCall>? Type162 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Tool>? Type162 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolCall? Type163 { get; set; }
+        public global::G.Tool? Type163 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolTypes? Type164 { get; set; }
+        public global::G.AnyOf<global::G.ToolChoice2, global::G.ToolChoiceEnum?>? Type164 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionCall? Type165 { get; set; }
+        public global::G.ToolChoice2? Type165 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<object, string>? Type166 { get; set; }
+        public global::G.ToolChoiceEnum? Type166 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantMessageRole? Type167 { get; set; }
+        public global::G.Prediction? Type167 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionRequest? Type168 { get; set; }
+        public global::G.ChatModerationRequest? Type168 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? Type169 { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.InputVariant1Item>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.InputVariant2ItemItem>>>? Type169 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.MessagesItem>? Type170 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.InputVariant1Item>? Type170 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesItem? Type171 { get; set; }
+        public global::G.InputVariant1Item? Type171 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SystemMessage? Type172 { get; set; }
+        public global::G.ChatModerationRequestInputVariant1ItemDiscriminator? Type172 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.TextChunk>>? Type173 { get; set; }
+        public global::G.ChatModerationRequestInputVariant1ItemDiscriminatorRole? Type173 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.TextChunk>? Type174 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.InputVariant2ItemItem>>? Type174 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SystemMessageRole? Type175 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.InputVariant2ItemItem>? Type175 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UserMessage? Type176 { get; set; }
+        public global::G.InputVariant2ItemItem? Type176 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UserMessageRole? Type177 { get; set; }
+        public global::G.ChatModerationRequestInputVariant2ItemItemDiscriminator? Type177 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolMessage? Type178 { get; set; }
+        public global::G.ChatModerationRequestInputVariant2ItemItemDiscriminatorRole? Type178 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolMessageRole? Type179 { get; set; }
+        public global::G.ClassificationRequest? Type179 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionRequestMessageDiscriminator? Type180 { get; set; }
+        public global::G.DocumentURLChunk? Type180 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionRequestMessageDiscriminatorRole? Type181 { get; set; }
+        public global::G.DocumentURLChunkType? Type181 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormat? Type182 { get; set; }
+        public global::G.EmbeddingRequest? Type182 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormats? Type183 { get; set; }
+        public global::G.FIMCompletionRequest? Type183 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JsonSchema? Type184 { get; set; }
+        public global::G.Function? Type184 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Tool>? Type185 { get; set; }
+        public global::G.FunctionCall? Type185 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Tool? Type186 { get; set; }
+        public global::G.AnyOf<object, string>? Type186 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Function? Type187 { get; set; }
+        public global::G.FunctionName? Type187 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.ToolChoice2, global::G.ToolChoiceEnum?>? Type188 { get; set; }
+        public global::G.ImageURL? Type188 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolChoice2? Type189 { get; set; }
+        public global::G.ImageURLChunk? Type189 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionName? Type190 { get; set; }
+        public global::G.AnyOf<global::G.ImageURL, string>? Type190 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolChoiceEnum? Type191 { get; set; }
+        public global::G.ImageURLChunkType? Type191 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Prediction? Type192 { get; set; }
+        public global::G.InstructRequest? Type192 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatModerationRequest? Type193 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.MessagesItem2>? Type193 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.InputVariant1Item>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.InputVariant2ItemItem>>>? Type194 { get; set; }
+        public global::G.MessagesItem2? Type194 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.InputVariant1Item>? Type195 { get; set; }
+        public global::G.InstructRequestMessageDiscriminator? Type195 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputVariant1Item? Type196 { get; set; }
+        public global::G.InstructRequestMessageDiscriminatorRole? Type196 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatModerationRequestInputVariant1ItemDiscriminator? Type197 { get; set; }
+        public global::G.JsonSchema? Type197 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatModerationRequestInputVariant1ItemDiscriminatorRole? Type198 { get; set; }
+        public global::G.OCRImageObject? Type198 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.InputVariant2ItemItem>>? Type199 { get; set; }
+        public global::G.OCRPageDimensions? Type199 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.InputVariant2ItemItem>? Type200 { get; set; }
+        public global::G.OCRPageObject? Type200 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputVariant2ItemItem? Type201 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OCRImageObject>? Type201 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatModerationRequestInputVariant2ItemItemDiscriminator? Type202 { get; set; }
+        public global::G.OCRRequest? Type202 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatModerationRequestInputVariant2ItemItemDiscriminatorRole? Type203 { get; set; }
+        public global::G.AnyOf<global::G.DocumentURLChunk, global::G.ImageURLChunk>? Type203 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ClassificationRequest? Type204 { get; set; }
+        public global::System.Collections.Generic.IList<int>? Type204 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingRequest? Type205 { get; set; }
+        public global::G.OCRResponse? Type205 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FIMCompletionRequest? Type206 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OCRPageObject>? Type206 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InstructRequest? Type207 { get; set; }
+        public global::G.OCRUsageInfo? Type207 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.MessagesItem2>? Type208 { get; set; }
+        public global::G.ReferenceChunk? Type208 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesItem2? Type209 { get; set; }
+        public global::G.ReferenceChunkType? Type209 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InstructRequestMessageDiscriminator? Type210 { get; set; }
+        public global::G.ResponseFormats? Type210 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InstructRequestMessageDiscriminatorRole? Type211 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.TextChunk>>? Type211 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OCRImageObject? Type212 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TextChunk>? Type212 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OCRPageDimensions? Type213 { get; set; }
+        public global::G.TextChunk? Type213 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OCRPageObject? Type214 { get; set; }
+        public global::G.SystemMessageRole? Type214 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OCRImageObject>? Type215 { get; set; }
+        public global::G.TextChunkType? Type215 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OCRRequest? Type216 { get; set; }
+        public global::G.ToolTypes? Type216 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.DocumentURLChunk, global::G.ImageURLChunk>? Type217 { get; set; }
+        public global::G.ToolMessageRole? Type217 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OCRResponse? Type218 { get; set; }
+        public global::G.UserMessageRole? Type218 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OCRPageObject>? Type219 { get; set; }
+        public global::G.AgentsCompletionRequest? Type219 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OCRUsageInfo? Type220 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.MessagesItem3>? Type220 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentsCompletionRequest? Type221 { get; set; }
+        public global::G.MessagesItem3? Type221 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.MessagesItem3>? Type222 { get; set; }
+        public global::G.AgentsCompletionRequestMessageDiscriminator? Type222 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesItem3? Type223 { get; set; }
+        public global::G.AgentsCompletionRequestMessageDiscriminatorRole? Type223 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentsCompletionRequestMessageDiscriminator? Type224 { get; set; }
+        public global::G.ClassificationResponse? Type224 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentsCompletionRequestMessageDiscriminatorRole? Type225 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.Dictionary<string, global::G.ClassificationTargetResult>>? Type225 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ClassificationResponse? Type226 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.ClassificationTargetResult>? Type226 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.Dictionary<string, global::G.ClassificationTargetResult>>? Type227 { get; set; }
+        public global::G.ClassificationTargetResult? Type227 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::G.ClassificationTargetResult>? Type228 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, double>? Type228 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ClassificationTargetResult? Type229 { get; set; }
+        public global::G.ModerationResponse? Type229 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, double>? Type230 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ModerationObject>? Type230 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModerationResponse? Type231 { get; set; }
+        public global::G.ModerationObject? Type231 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ModerationObject>? Type232 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, bool>? Type232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModerationObject? Type233 { get; set; }
+        public global::G.ContentChunkDiscriminator? Type233 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, bool>? Type234 { get; set; }
+        public global::G.ContentChunkDiscriminatorType? Type234 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1174,11 +1174,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.AnyOf<string, int?>>? ListType2 { get; set; }
+        public global::System.Collections.Generic.List<global::G.DataItem>? ListType2 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.DataItem>? ListType3 { get; set; }
+        public global::System.Collections.Generic.List<global::G.AnyOf<string, int?>>? ListType3 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1262,59 +1262,59 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<int>? ListType24 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ToolCall>? ListType24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ToolCall>? ListType25 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<string>>? ListType25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.List<string>>? ListType26 { get; set; }
+        public global::System.Collections.Generic.List<global::G.MessagesItem>? ListType26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.MessagesItem>? ListType27 { get; set; }
+        public global::System.Collections.Generic.List<global::G.Tool>? ListType27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.TextChunk>>? ListType28 { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.List<global::G.InputVariant1Item>, global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::G.InputVariant2ItemItem>>>? ListType28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.TextChunk>? ListType29 { get; set; }
+        public global::System.Collections.Generic.List<global::G.InputVariant1Item>? ListType29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.Tool>? ListType30 { get; set; }
+        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::G.InputVariant2ItemItem>>? ListType30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::System.Collections.Generic.List<global::G.InputVariant1Item>, global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::G.InputVariant2ItemItem>>>? ListType31 { get; set; }
+        public global::System.Collections.Generic.List<global::G.InputVariant2ItemItem>? ListType31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.InputVariant1Item>? ListType32 { get; set; }
+        public global::System.Collections.Generic.List<global::G.MessagesItem2>? ListType32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::G.InputVariant2ItemItem>>? ListType33 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OCRImageObject>? ListType33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.InputVariant2ItemItem>? ListType34 { get; set; }
+        public global::System.Collections.Generic.List<int>? ListType34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.MessagesItem2>? ListType35 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OCRPageObject>? ListType35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OCRImageObject>? ListType36 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.TextChunk>>? ListType36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OCRPageObject>? ListType37 { get; set; }
+        public global::System.Collections.Generic.List<global::G.TextChunk>? ListType37 { get; set; }
         /// <summary>
         /// 
         /// </summary>

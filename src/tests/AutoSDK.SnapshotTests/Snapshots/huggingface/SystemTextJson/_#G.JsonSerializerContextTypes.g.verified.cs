@@ -53,19 +53,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public int? Type6 { get; set; }
+        public global::G.GenerateTextRequestOptions? Type6 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double? Type7 { get; set; }
+        public int? Type7 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public object? Type8 { get; set; }
+        public double? Type8 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateTextRequestOptions? Type9 { get; set; }
+        public object? Type9 { get; set; }
         /// <summary>
         /// 
         /// </summary>

@@ -53,19 +53,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public int? Type6 { get; set; }
+        public global::G.ResponseFormat? Type6 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public float? Type7 { get; set; }
+        public bool? Type7 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public bool? Type8 { get; set; }
+        public int? Type8 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormat? Type9 { get; set; }
+        public float? Type9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -93,51 +93,51 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageRole? Type16 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Tool>? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ToolCall>? Type17 { get; set; }
+        public global::G.Tool? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolCall? Type18 { get; set; }
+        public global::G.GenerateChatCompletionResponse? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolCallFunction? Type19 { get; set; }
+        public global::G.DoneReason? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public object? Type20 { get; set; }
+        public global::G.DoneReasonEnum? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Tool>? Type21 { get; set; }
+        public global::G.MessageRole? Type21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Tool? Type22 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolCall>? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolType? Type23 { get; set; }
+        public global::G.ToolCall? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolFunction? Type24 { get; set; }
+        public global::G.ToolType? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateChatCompletionResponse? Type25 { get; set; }
+        public global::G.ToolFunction? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DoneReason? Type26 { get; set; }
+        public object? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DoneReasonEnum? Type27 { get; set; }
+        public global::G.ToolCallFunction? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -270,11 +270,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ToolCall>? ListType3 { get; set; }
+        public global::System.Collections.Generic.List<global::G.Tool>? ListType3 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.Tool>? ListType4 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ToolCall>? ListType4 { get; set; }
         /// <summary>
         /// 
         /// </summary>

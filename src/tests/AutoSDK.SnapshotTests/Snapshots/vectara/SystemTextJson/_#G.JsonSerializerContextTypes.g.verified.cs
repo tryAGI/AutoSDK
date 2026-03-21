@@ -485,19 +485,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.SearchReranker>? Type114 { get; set; }
+        public global::G.NoneReranker? Type114 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NoneReranker? Type115 { get; set; }
+        public global::G.SearchRerankerDiscriminator? Type115 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SearchRerankerDiscriminator? Type116 { get; set; }
+        public global::G.SearchRerankerDiscriminatorType? Type116 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SearchRerankerDiscriminatorType? Type117 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SearchReranker>? Type117 { get; set; }
         /// <summary>
         /// 
         /// </summary>

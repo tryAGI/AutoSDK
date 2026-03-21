@@ -37,15 +37,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Guid? Type2 { get; set; }
+        public global::G.RedactedAudioNotification? Type2 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptReadyStatus? Type3 { get; set; }
+        public global::System.Guid? Type3 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RedactedAudioNotification? Type4 { get; set; }
+        public global::G.TranscriptReadyStatus? Type4 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -217,115 +217,115 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AudioIntelligenceModelStatus? Type47 { get; set; }
+        public global::G.OneOf<global::G.RedactPiiAudioQuality?, object>? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.AutoHighlightResult>? Type48 { get; set; }
+        public global::G.OneOf<global::G.ContentSafetyLabelsResult, object>? Type48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AutoHighlightResult? Type49 { get; set; }
+        public global::G.ContentSafetyLabelsResult? Type49 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Timestamp>? Type50 { get; set; }
+        public global::G.OneOf<global::G.TopicDetectionModelResult, object>? Type50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.RedactPiiAudioQuality?, object>? Type51 { get; set; }
+        public global::G.TopicDetectionModelResult? Type51 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.ContentSafetyLabelsResult, object>? Type52 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Chapter>? Type52 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentSafetyLabelsResult? Type53 { get; set; }
+        public global::G.Chapter? Type53 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentSafetyLabelResult>? Type54 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SentimentAnalysisResult>? Type54 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentSafetyLabelResult? Type55 { get; set; }
+        public global::G.SentimentAnalysisResult? Type55 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentSafetyLabel>? Type56 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Entity>? Type56 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentSafetyLabel? Type57 { get; set; }
+        public global::G.Entity? Type57 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, double>? Type58 { get; set; }
+        public global::G.AudioIntelligenceModelStatus? Type58 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::G.SeverityScoreSummary>? Type59 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TopicDetectionResult>? Type59 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SeverityScoreSummary? Type60 { get; set; }
+        public global::G.TopicDetectionResult? Type60 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.TopicDetectionModelResult, object>? Type61 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, double>? Type61 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TopicDetectionModelResult? Type62 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentSafetyLabelResult>? Type62 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.TopicDetectionResult>? Type63 { get; set; }
+        public global::G.ContentSafetyLabelResult? Type63 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TopicDetectionResult? Type64 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.SeverityScoreSummary>? Type64 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.TopicDetectionResultLabel>? Type65 { get; set; }
+        public global::G.SeverityScoreSummary? Type65 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TopicDetectionResultLabel? Type66 { get; set; }
+        public global::G.EntityType? Type66 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Chapter>? Type67 { get; set; }
+        public global::G.Sentiment? Type67 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Chapter? Type68 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TopicDetectionResultLabel>? Type68 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.SentimentAnalysisResult>? Type69 { get; set; }
+        public global::G.TopicDetectionResultLabel? Type69 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SentimentAnalysisResult? Type70 { get; set; }
+        public global::G.ContentSafetyLabel? Type70 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Sentiment? Type71 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentSafetyLabel>? Type71 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Entity>? Type72 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.AutoHighlightResult>? Type72 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Entity? Type73 { get; set; }
+        public global::G.AutoHighlightResult? Type73 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EntityType? Type74 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Timestamp>? Type74 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -542,23 +542,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.AutoHighlightResult>? ListType8 { get; set; }
+        public global::System.Collections.Generic.List<global::G.Chapter>? ListType8 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.Timestamp>? ListType9 { get; set; }
+        public global::System.Collections.Generic.List<global::G.SentimentAnalysisResult>? ListType9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ContentSafetyLabelResult>? ListType10 { get; set; }
+        public global::System.Collections.Generic.List<global::G.Entity>? ListType10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ContentSafetyLabel>? ListType11 { get; set; }
+        public global::System.Collections.Generic.List<global::G.TopicDetectionResult>? ListType11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.TopicDetectionResult>? ListType12 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ContentSafetyLabelResult>? ListType12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -566,15 +566,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.Chapter>? ListType14 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ContentSafetyLabel>? ListType14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.SentimentAnalysisResult>? ListType15 { get; set; }
+        public global::System.Collections.Generic.List<global::G.AutoHighlightResult>? ListType15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.Entity>? ListType16 { get; set; }
+        public global::System.Collections.Generic.List<global::G.Timestamp>? ListType16 { get; set; }
         /// <summary>
         /// 
         /// </summary>

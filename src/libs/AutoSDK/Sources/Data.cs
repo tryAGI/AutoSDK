@@ -50,9 +50,12 @@ public static class Data
 
         var namingTime = Stopwatch.StartNew();
 
-        foreach (var schema in schemas.Where(x => x.IsModel))
+        for (var i = 0; i < schemas.Count; i++)
         {
-            _ = ModelNameGenerator.ComputeId(schema);
+            if (schemas[i].IsModel)
+            {
+                _ = ModelNameGenerator.ComputeId(schemas[i]);
+            }
         }
 
         ModelNameGenerator.ResolveCollisions(schemas);
@@ -64,30 +67,40 @@ public static class Data
 
         var resolveReferencesTime = Stopwatch.StartNew();
         
-        var componentSchemas = schemas
-            .Where(x => x.IsComponent)
-            .ToDictionary(x => x.ComponentId!, x => x);
-        
-        var unresolvedReferences = new HashSet<SchemaContext>();
-        foreach (var context in schemas.Where(x => x.IsReference).ToArray())
+        var componentSchemas = new Dictionary<string, SchemaContext>();
+        for (var i = 0; i < schemas.Count; i++)
         {
-            if (componentSchemas.TryGetValue(context.ReferenceId!, out var resolvedReference))
+            if (schemas[i].IsComponent)
             {
-                context.ResolvedReference = resolvedReference;
-                context.Id = context.ResolvedReference.Id;
-                context.TypeData = context.ResolvedReference.TypeData;
+                componentSchemas[schemas[i].ComponentId!] = schemas[i];
+            }
+        }
 
-                context.ResolvedReference.Links.Add(context);
+        var unresolvedReferences = new HashSet<SchemaContext>();
+        for (var i = 0; i < schemas.Count; i++)
+        {
+            if (!schemas[i].IsReference)
+            {
+                continue;
+            }
+            var refSchema = schemas[i];
+            if (componentSchemas.TryGetValue(refSchema.ReferenceId!, out var resolvedReference))
+            {
+                refSchema.ResolvedReference = resolvedReference;
+                refSchema.Id = refSchema.ResolvedReference.Id;
+                refSchema.TypeData = refSchema.ResolvedReference.TypeData;
+
+                refSchema.ResolvedReference.Links.Add(refSchema);
             }
             else if (!settings.IgnoreOpenApiErrors)
             {
-                throw new KeyNotFoundException($"Schema reference '{context.ReferenceId}' could not be resolved. " +
+                throw new KeyNotFoundException($"Schema reference '{refSchema.ReferenceId}' could not be resolved. " +
                     $"This may indicate a malformed OpenAPI specification (e.g., using #/definitions/ in an OpenAPI 3.x spec).");
             }
             else
             {
                 // Mark unresolved references for removal
-                unresolvedReferences.Add(context);
+                unresolvedReferences.Add(refSchema);
             }
         }
 
@@ -95,7 +108,15 @@ public static class Data
         if (unresolvedReferences.Count > 0)
         {
             DetachUnresolvedReferences(schemas, unresolvedReferences);
-            schemas = schemas.Where(x => !unresolvedReferences.Contains(x)).ToArray();
+            var kept = new List<SchemaContext>(schemas.Count - unresolvedReferences.Count);
+            for (var i = 0; i < schemas.Count; i++)
+            {
+                if (!unresolvedReferences.Contains(schemas[i]))
+                {
+                    kept.Add(schemas[i]);
+                }
+            }
+            schemas = kept;
         }
 
         // Detect circular references so ComputeData can skip re-traversal
@@ -160,49 +181,106 @@ public static class Data
 
         var resolvedTags = ClientNameGenerator.ResolveTags(settings, allTags);
 
-        var maxDepth = schemas.Count == 0
-            ? 20
-            : schemas.Max(x => x.Depth);
+        var maxDepth = 20;
+        for (var i = 0; i < schemas.Count; i++)
+        {
+            if (schemas[i].Depth > maxDepth)
+            {
+                maxDepth = schemas[i].Depth;
+            }
+        }
         var tagsVisited = new HashSet<SchemaContext>();
-        foreach (var context in schemas.Where(x => x.Operation != null))
+        for (var i = 0; i < schemas.Count; i++)
+        {
+            if (schemas[i].Operation != null)
+            {
+                tagsVisited.Clear();
+                schemas[i].ComputeTags(maxDepth: maxDepth, visited: tagsVisited);
+            }
+        }
+        for (var i = 0; i < schemas.Count; i++)
         {
             tagsVisited.Clear();
-            context.ComputeTags(maxDepth: maxDepth, visited: tagsVisited);
+            schemas[i].ComputeTags(maxDepth: maxDepth, visited: tagsVisited);
         }
-        foreach (var context in schemas)
-        {
-            tagsVisited.Clear();
-            context.ComputeTags(maxDepth: maxDepth, visited: tagsVisited);
-        }
-        
+
         var includedModels = new HashSet<string>(settings.IncludeModels);
         var excludedModels = new HashSet<string>(settings.ExcludeModels);
-        
-        var isFilteringRequired = settings.IncludeTags.Length > 0 ||
-                                  settings.ExcludeTags.Length > 0 ||
-                                  includedModels.Count > 0 ||
-                                  excludedModels.Count > 0 ||
-                                  !settings.GenerateModels;
-        var filteredSchemas = isFilteringRequired
-            ? schemas
-                .Where(x =>
-                    (settings.GenerateModels ||
-                     settings.GenerateSdk ||
-                     (x.Operation?.OperationId != null && includedOperationIds.Contains(x.Operation.OperationId))) &&
-                    (settings.IncludeTags.Length == 0 ||
-                     x.HasAnyTag(settings.IncludeTags.ToArray())) &&
-                    !x.HasAnyTag(settings.ExcludeTags.ToArray()) &&
-                    (!x.IsComponent && includedModels.Count == 0 ||
-                     (includedModels.Count == 0 ||
-                      includedModels.Contains(x.ComponentId!)) &&
-                    !excludedModels.Contains(x.ComponentId!)))
-                .SelectMany(x => x.WithAllChildren())
-                .Distinct()
-                .ToArray()
-            : schemas;
-        filteredSchemas = filteredSchemas
-            .Where(x => !x.HasAllOfTypeForMetadata())
-            .ToArray();
+
+        var hasTagFilters = settings.IncludeTags.Length > 0 || settings.ExcludeTags.Length > 0;
+        var hasModelFilters = includedModels.Count > 0 || excludedModels.Count > 0;
+        var allSchemasPass = (settings.GenerateModels || settings.GenerateSdk) &&
+                             !hasTagFilters && !hasModelFilters;
+
+        IReadOnlyList<SchemaContext> filteredSchemas;
+        if (allSchemasPass)
+        {
+            // Fast path: all schemas pass the predicate, no expansion needed.
+            // schemas already contains all children from TraversalTree.
+            filteredSchemas = schemas;
+        }
+        else
+        {
+            // Selective filtering with child expansion
+            var includeTagsArr = settings.IncludeTags.ToArray();
+            var excludeTagsArr = settings.ExcludeTags.ToArray();
+            var collected = new HashSet<SchemaContext>();
+            for (var i = 0; i < schemas.Count; i++)
+            {
+                var x = schemas[i];
+                if (!(settings.GenerateModels ||
+                      settings.GenerateSdk ||
+                      (x.Operation?.OperationId != null && includedOperationIds.Contains(x.Operation.OperationId))))
+                {
+                    continue;
+                }
+                if (includeTagsArr.Length > 0 && !x.HasAnyTag(includeTagsArr))
+                {
+                    continue;
+                }
+                if (excludeTagsArr.Length > 0 && x.HasAnyTag(excludeTagsArr))
+                {
+                    continue;
+                }
+                if (hasModelFilters && x.IsComponent)
+                {
+                    if (includedModels.Count > 0 && !includedModels.Contains(x.ComponentId!))
+                    {
+                        continue;
+                    }
+                    if (excludedModels.Contains(x.ComponentId!))
+                    {
+                        continue;
+                    }
+                }
+                // Add this schema and all its children without intermediate List allocations
+                x.CollectWithAllChildren(collected);
+            }
+            filteredSchemas = new List<SchemaContext>(collected);
+        }
+
+        // Remove metadata-only allOf/anyOf/oneOf wrappers (single item, no properties)
+        var filteredCount = 0;
+        for (var i = 0; i < filteredSchemas.Count; i++)
+        {
+            if (!filteredSchemas[i].HasAllOfTypeForMetadata())
+            {
+                filteredCount++;
+            }
+        }
+        if (filteredCount < filteredSchemas.Count)
+        {
+            var filtered = new SchemaContext[filteredCount];
+            var idx = 0;
+            for (var i = 0; i < filteredSchemas.Count; i++)
+            {
+                if (!filteredSchemas[i].HasAllOfTypeForMetadata())
+                {
+                    filtered[idx++] = filteredSchemas[i];
+                }
+            }
+            filteredSchemas = filtered;
+        }
         
         filteringTime.Stop();
 #if NET

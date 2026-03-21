@@ -40,16 +40,16 @@ namespace recraft
                 DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
                 Converters =
                 {
-                    new global::recraft.JsonConverters.ImageStyleJsonConverter(),
-                    new global::recraft.JsonConverters.ImageStyleNullableJsonConverter(),
-                    new global::recraft.JsonConverters.TransformModelJsonConverter(),
-                    new global::recraft.JsonConverters.TransformModelNullableJsonConverter(),
-                    new global::recraft.JsonConverters.ResponseFormatJsonConverter(),
-                    new global::recraft.JsonConverters.ResponseFormatNullableJsonConverter(),
                     new global::recraft.JsonConverters.ImageSizeJsonConverter(),
                     new global::recraft.JsonConverters.ImageSizeNullableJsonConverter(),
+                    new global::recraft.JsonConverters.ImageStyleJsonConverter(),
+                    new global::recraft.JsonConverters.ImageStyleNullableJsonConverter(),
                     new global::recraft.JsonConverters.ImageSubStyleJsonConverter(),
                     new global::recraft.JsonConverters.ImageSubStyleNullableJsonConverter(),
+                    new global::recraft.JsonConverters.ResponseFormatJsonConverter(),
+                    new global::recraft.JsonConverters.ResponseFormatNullableJsonConverter(),
+                    new global::recraft.JsonConverters.TransformModelJsonConverter(),
+                    new global::recraft.JsonConverters.TransformModelNullableJsonConverter(),
                     new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };

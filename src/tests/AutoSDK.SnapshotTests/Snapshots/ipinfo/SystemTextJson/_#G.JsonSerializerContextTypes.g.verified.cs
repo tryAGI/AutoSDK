@@ -45,59 +45,59 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public int? Type4 { get; set; }
+        public global::G.Company? Type4 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AsnResponseType? Type5 { get; set; }
+        public global::G.Carrier? Type5 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Prefix>? Type6 { get; set; }
+        public global::G.PrivacyResponse? Type6 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Prefix? Type7 { get; set; }
+        public global::G.DomainsResponse? Type7 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Prefix6>? Type8 { get; set; }
+        public int? Type8 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Prefix6? Type9 { get; set; }
+        public global::G.AsnResponseType? Type9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type10 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Prefix>? Type10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Company? Type11 { get; set; }
+        public global::G.Prefix? Type11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CompanyType? Type12 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Prefix6>? Type12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Carrier? Type13 { get; set; }
+        public global::G.Prefix6? Type13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PrivacyResponse? Type14 { get; set; }
+        public global::System.Collections.Generic.IList<string>? Type14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DomainsResponse? Type15 { get; set; }
+        public global::G.RangesResponse? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RangesResponse? Type16 { get; set; }
+        public global::G.AbuseResponse? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AbuseResponse? Type17 { get; set; }
+        public global::G.CompanyType? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>

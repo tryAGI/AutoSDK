@@ -50,11 +50,10 @@ public record struct PropertyData(
         if (context.HasAllOfTypeForMetadata() &&
             !type.SubTypes.IsEmpty)
         {
-            type = type.SubTypes[0].Unbox<TypeData>() with
-            {
-                CSharpTypeRaw = type.SubTypes[0].Unbox<TypeData>().CSharpTypeRaw,
-                CSharpTypeNullability = type.CSharpTypeNullability,
-            };
+            var subType = type.SubTypes[0].Unbox<TypeData>();
+            type = subType.CSharpTypeNullability != type.CSharpTypeNullability
+                ? subType with { CSharpTypeNullability = type.CSharpTypeNullability }
+                : subType;
         }
 
         var propertyName = context.PropertyName ?? throw new InvalidOperationException("Property name or parameter name is required.");
@@ -80,13 +79,16 @@ public record struct PropertyData(
             isRequired = false;
         }
 
+        // Only create a TypeData copy if nullability actually changes
+        var isWriteOnly = context.Schema is { WriteOnly: true };
+        var finalType = isWriteOnly && !type.CSharpTypeNullability
+            ? type with { CSharpTypeNullability = true }
+            : type;
+
         return new PropertyData(
             Id: propertyName,
             Name: CSharpPropertyNameGenerator.ComputePropertyName(context),
-            Type: type with
-            {
-                CSharpTypeNullability = type.CSharpTypeNullability || context.Schema is { WriteOnly: true },
-            },
+            Type: finalType,
             IsRequired: isRequired && context.Schema is { ReadOnly: false },
             IsReadOnly: context.Schema.ReadOnly,
             IsWriteOnly: context.Schema.WriteOnly,

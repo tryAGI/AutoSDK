@@ -40,16 +40,16 @@ namespace G
                 DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
                 Converters =
                 {
-                    new global::G.JsonConverters.ImageStyleJsonConverter(),
-                    new global::G.JsonConverters.ImageStyleNullableJsonConverter(),
-                    new global::G.JsonConverters.TransformModelJsonConverter(),
-                    new global::G.JsonConverters.TransformModelNullableJsonConverter(),
-                    new global::G.JsonConverters.ResponseFormatJsonConverter(),
-                    new global::G.JsonConverters.ResponseFormatNullableJsonConverter(),
                     new global::G.JsonConverters.ImageSizeJsonConverter(),
                     new global::G.JsonConverters.ImageSizeNullableJsonConverter(),
+                    new global::G.JsonConverters.ImageStyleJsonConverter(),
+                    new global::G.JsonConverters.ImageStyleNullableJsonConverter(),
                     new global::G.JsonConverters.ImageSubStyleJsonConverter(),
                     new global::G.JsonConverters.ImageSubStyleNullableJsonConverter(),
+                    new global::G.JsonConverters.ResponseFormatJsonConverter(),
+                    new global::G.JsonConverters.ResponseFormatNullableJsonConverter(),
+                    new global::G.JsonConverters.TransformModelJsonConverter(),
+                    new global::G.JsonConverters.TransformModelNullableJsonConverter(),
                     new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
