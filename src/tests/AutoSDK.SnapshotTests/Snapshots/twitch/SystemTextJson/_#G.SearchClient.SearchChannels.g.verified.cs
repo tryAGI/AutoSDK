@@ -64,7 +64,7 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("query", query)
-                .AddOptionalParameter("live_only", liveOnly?.ToString())
+                .AddOptionalParameter("live_only", liveOnly?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("first", first?.ToString())
                 .AddOptionalParameter("after", after) 
                 ; 

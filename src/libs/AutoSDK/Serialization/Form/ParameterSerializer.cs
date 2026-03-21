@@ -200,6 +200,13 @@ public static class ParameterSerializer
                 Value = $"{parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}.ToString(\"yyyy-MM-ddTHH:mm:ssZ\")",
             }];
         }
+        if (parameter.Type.CSharpTypeWithoutNullability == "bool")
+        {
+            return [parameter with
+            {
+                Value = $"{parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}.ToString().ToLowerInvariant()",
+            }];
+        }
         return [parameter with
         {
             Value = $"{parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}.ToString()",

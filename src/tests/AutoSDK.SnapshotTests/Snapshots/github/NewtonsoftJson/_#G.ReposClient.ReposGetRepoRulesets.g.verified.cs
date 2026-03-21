@@ -78,7 +78,7 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("page", page?.ToString())
-                .AddOptionalParameter("includes_parents", includesParents?.ToString())
+                .AddOptionalParameter("includes_parents", includesParents?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("targets", targets) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -61,7 +61,7 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("broadcaster_id", broadcasterId)
-                .AddOptionalParameter("is_vacation_enabled", isVacationEnabled?.ToString())
+                .AddOptionalParameter("is_vacation_enabled", isVacationEnabled?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("vacation_start_time", vacationStartTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("vacation_end_time", vacationEndTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("timezone", timezone) 

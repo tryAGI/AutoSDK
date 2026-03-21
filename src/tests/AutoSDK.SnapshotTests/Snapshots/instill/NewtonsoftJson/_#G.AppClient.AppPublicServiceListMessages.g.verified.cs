@@ -86,8 +86,8 @@ namespace G
                 .AddOptionalParameter("latestK", latestK?.ToString())
                 .AddOptionalParameter("pageSize", pageSize?.ToString())
                 .AddOptionalParameter("pageToken", pageToken)
-                .AddOptionalParameter("includeSystemMessages", includeSystemMessages?.ToString())
-                .AddOptionalParameter("ifAll", ifAll?.ToString())
+                .AddOptionalParameter("includeSystemMessages", includeSystemMessages?.ToString().ToLowerInvariant())
+                .AddOptionalParameter("ifAll", ifAll?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("messageUid", messageUid) 
                 ; 
             var __path = __pathBuilder.ToString();

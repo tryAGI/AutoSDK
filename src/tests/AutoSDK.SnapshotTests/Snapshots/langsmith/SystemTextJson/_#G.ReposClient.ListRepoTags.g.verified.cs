@@ -107,7 +107,7 @@ namespace G
                 .AddOptionalParameter("tenant_handle", tenantHandle)
                 .AddOptionalParameter("tenant_id", tenantId?.ToString())
                 .AddOptionalParameter("query", query)
-                .AddOptionalParameter("has_commits", hasCommits?.ToString())
+                .AddOptionalParameter("has_commits", hasCommits?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("tags", tags?.ToString())
                 .AddOptionalParameter("is_archived", isArchived?.ToString())
                 .AddOptionalParameter("is_public", isPublic?.ToString())

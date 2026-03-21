@@ -84,7 +84,7 @@ namespace G
                 .AddOptionalParameter("model", model)
                 .AddOptionalParameter("metadata", metadata?.ToString())
                 .AddOptionalParameter("created_after", createdAfter?.ToString())
-                .AddOptionalParameter("created_by_me", createdByMe?.ToString())
+                .AddOptionalParameter("created_by_me", createdByMe?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("status", status?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -75,7 +75,7 @@ namespace G
                 path: $"/v1/convai/agents/{agentId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("enable_versioning_if_not_enabled", enableVersioningIfNotEnabled?.ToString())
+                .AddOptionalParameter("enable_versioning_if_not_enabled", enableVersioningIfNotEnabled?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("branch_id", branchId) 
                 ; 
             var __path = __pathBuilder.ToString();

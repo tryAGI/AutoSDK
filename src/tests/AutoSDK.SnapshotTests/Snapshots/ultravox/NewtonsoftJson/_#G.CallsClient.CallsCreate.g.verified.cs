@@ -57,7 +57,7 @@ namespace G
                 path: "/api/calls",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("enableGreetingPrompt", enableGreetingPrompt?.ToString())
+                .AddOptionalParameter("enableGreetingPrompt", enableGreetingPrompt?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("priorCallId", priorCallId?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

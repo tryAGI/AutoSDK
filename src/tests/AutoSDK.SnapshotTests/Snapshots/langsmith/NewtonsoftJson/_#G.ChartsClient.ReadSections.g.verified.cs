@@ -86,7 +86,7 @@ namespace G
                 .AddOptionalParameter("title_contains", titleContains)
                 .AddOptionalParameter("ids", ids?.ToString())
                 .AddOptionalParameter("sort_by", sortBy)
-                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString())
+                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("tag_value_id", tagValueId?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

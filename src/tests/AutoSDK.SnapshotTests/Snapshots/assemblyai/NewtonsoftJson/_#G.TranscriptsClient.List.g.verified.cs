@@ -99,7 +99,7 @@ namespace G
                 .AddOptionalParameter("created_on", createdOn?.ToString("yyyy-MM-dd"))
                 .AddOptionalParameter("before_id", beforeId?.ToString())
                 .AddOptionalParameter("after_id", afterId?.ToString())
-                .AddOptionalParameter("throttled_only", throttledOnly?.ToString()) 
+                .AddOptionalParameter("throttled_only", throttledOnly?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

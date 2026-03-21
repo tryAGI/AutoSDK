@@ -68,7 +68,7 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("agent_id", agentId)
-                .AddOptionalParameter("include_conversation_id", includeConversationId?.ToString())
+                .AddOptionalParameter("include_conversation_id", includeConversationId?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("branch_id", branchId) 
                 ; 
             var __path = __pathBuilder.ToString();

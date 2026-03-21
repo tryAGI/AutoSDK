@@ -62,7 +62,7 @@ namespace G
                 path: $"/v1/voices/{voiceId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("with_settings", withSettings?.ToString()) 
+                .AddOptionalParameter("with_settings", withSettings?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

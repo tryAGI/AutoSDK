@@ -88,7 +88,7 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("filter", filter)
                 .AddOptionalParameter("type", type?.ToValueString())
-                .AddOptionalParameter("enabled", enabled?.ToString())
+                .AddOptionalParameter("enabled", enabled?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("page_key", pageKey) 
                 ; 

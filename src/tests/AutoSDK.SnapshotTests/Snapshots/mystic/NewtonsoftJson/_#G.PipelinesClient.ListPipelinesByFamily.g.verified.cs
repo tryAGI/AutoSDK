@@ -101,7 +101,7 @@ namespace G
                 .AddOptionalParameter("skip", skip?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("order_by", orderBy)
-                .AddOptionalParameter("public", @public?.ToString())
+                .AddOptionalParameter("public", @public?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("hardware", hardware?.ToString())
                 .AddOptionalParameter("cluster_id", clusterId)
                 .AddOptionalParameter("node_pool", nodePool)

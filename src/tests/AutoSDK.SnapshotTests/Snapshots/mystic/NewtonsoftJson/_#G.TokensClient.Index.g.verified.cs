@@ -59,7 +59,7 @@ namespace G
                 path: "/v4/tokens",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("all_team", allTeam?.ToString())
+                .AddOptionalParameter("all_team", allTeam?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("skip", skip?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 ; 

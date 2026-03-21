@@ -76,8 +76,8 @@ namespace G
                 path: "/notifications",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("all", all?.ToString())
-                .AddOptionalParameter("participating", participating?.ToString())
+                .AddOptionalParameter("all", all?.ToString().ToLowerInvariant())
+                .AddOptionalParameter("participating", participating?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("since", since?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("before", before?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("page", page?.ToString())

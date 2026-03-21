@@ -119,13 +119,13 @@ namespace G
                 path: "/api/v1/repos",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("with_latest_manifest", withLatestManifest?.ToString())
+                .AddOptionalParameter("with_latest_manifest", withLatestManifest?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("offset", offset?.ToString())
                 .AddOptionalParameter("tenant_handle", tenantHandle)
                 .AddOptionalParameter("tenant_id", tenantId?.ToString())
                 .AddOptionalParameter("query", query)
-                .AddOptionalParameter("has_commits", hasCommits?.ToString())
+                .AddOptionalParameter("has_commits", hasCommits?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("tags", tags?.ToString())
                 .AddOptionalParameter("is_archived", isArchived?.ToString())
                 .AddOptionalParameter("is_public", isPublic?.ToString())

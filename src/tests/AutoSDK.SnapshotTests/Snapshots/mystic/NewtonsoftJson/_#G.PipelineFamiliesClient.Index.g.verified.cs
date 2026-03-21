@@ -88,7 +88,7 @@ namespace G
                 .AddOptionalParameter("team_id", teamId)
                 .AddOptionalParameter("order_by", orderBy?.ToString())
                 .AddOptionalParameter("search", search)
-                .AddOptionalParameter("include_all_run", includeAllRun?.ToString())
+                .AddOptionalParameter("include_all_run", includeAllRun?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("skip", skip?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 ; 

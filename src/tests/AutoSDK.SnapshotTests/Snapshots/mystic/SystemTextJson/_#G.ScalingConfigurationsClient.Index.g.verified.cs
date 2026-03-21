@@ -64,7 +64,7 @@ namespace G
                 path: "/v4/scaling-configs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("public", @public?.ToString())
+                .AddOptionalParameter("public", @public?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("skip", skip?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("order_by", orderBy) 

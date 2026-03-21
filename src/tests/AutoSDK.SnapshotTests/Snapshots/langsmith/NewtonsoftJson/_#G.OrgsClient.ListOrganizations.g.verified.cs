@@ -45,7 +45,7 @@ namespace G
                 path: "/api/v1/orgs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("skip_create", skipCreate?.ToString()) 
+                .AddOptionalParameter("skip_create", skipCreate?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

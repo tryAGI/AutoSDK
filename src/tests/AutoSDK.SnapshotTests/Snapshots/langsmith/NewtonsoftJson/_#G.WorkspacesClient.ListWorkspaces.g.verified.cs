@@ -45,7 +45,7 @@ namespace G
                 path: "/api/v1/workspaces",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("include_deleted", includeDeleted?.ToString()) 
+                .AddOptionalParameter("include_deleted", includeDeleted?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

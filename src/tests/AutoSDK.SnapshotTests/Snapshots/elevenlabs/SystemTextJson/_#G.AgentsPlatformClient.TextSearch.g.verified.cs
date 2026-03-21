@@ -194,7 +194,7 @@ namespace G
                 .AddOptionalParameter("call_duration_max_secs", callDurationMaxSecs?.ToString())
                 .AddOptionalParameter("rating_max", ratingMax?.ToString())
                 .AddOptionalParameter("rating_min", ratingMin?.ToString())
-                .AddOptionalParameter("has_feedback_comment", hasFeedbackComment?.ToString())
+                .AddOptionalParameter("has_feedback_comment", hasFeedbackComment?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("user_id", userId)
                 .AddOptionalParameter("evaluation_params", evaluationParams?.ToString())
                 .AddOptionalParameter("data_collection_params", dataCollectionParams?.ToString())

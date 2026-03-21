@@ -81,7 +81,7 @@ namespace G
                 .AddOptionalParameter("pageSize", pageSize?.ToString())
                 .AddOptionalParameter("pageToken", pageToken)
                 .AddOptionalParameter("view", view?.ToValueString())
-                .AddOptionalParameter("showDeleted", showDeleted?.ToString())
+                .AddOptionalParameter("showDeleted", showDeleted?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("filter", filter)
                 .AddOptionalParameter("visibility", visibility?.ToValueString())
                 .AddOptionalParameter("orderBy", orderBy) 

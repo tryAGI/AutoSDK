@@ -75,7 +75,7 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("filter", filter)
-                .AddOptionalParameter("enabled", enabled?.ToString())
+                .AddOptionalParameter("enabled", enabled?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("page_key", pageKey) 
                 ; 

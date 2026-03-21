@@ -135,22 +135,22 @@ namespace G
                 path: "/api/v1/sessions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("reference_free", referenceFree?.ToString())
+                .AddOptionalParameter("reference_free", referenceFree?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("reference_dataset", referenceDataset?.ToString())
                 .AddOptionalParameter("id", id?.ToString())
                 .AddOptionalParameter("name", name)
                 .AddOptionalParameter("name_contains", nameContains)
                 .AddOptionalParameter("dataset_version", datasetVersion)
                 .AddOptionalParameter("sort_by", sortBy?.ToValueString())
-                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString())
+                .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("metadata", metadata)
                 .AddOptionalParameter("sort_by_feedback_key", sortByFeedbackKey)
                 .AddOptionalParameter("offset", offset?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
-                .AddOptionalParameter("facets", facets?.ToString())
+                .AddOptionalParameter("facets", facets?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("filter", filter)
-                .AddOptionalParameter("include_stats", includeStats?.ToString()) 
+                .AddOptionalParameter("include_stats", includeStats?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

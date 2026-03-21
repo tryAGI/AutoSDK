@@ -66,7 +66,7 @@ namespace G
                 path: $"/repos/{owner}/{repo}/branches",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("protected", @protected?.ToString())
+                .AddOptionalParameter("protected", @protected?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 

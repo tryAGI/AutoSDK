@@ -62,7 +62,7 @@ namespace G
                 path: $"/repos/{owner}/{repo}/actions/runs/{runId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("exclude_pull_requests", excludePullRequests?.ToString()) 
+                .AddOptionalParameter("exclude_pull_requests", excludePullRequests?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

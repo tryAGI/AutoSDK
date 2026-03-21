@@ -79,7 +79,7 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("pipeline_id", pipelineId)
-                .AddOptionalParameter("include_pointers", includePointers?.ToString())
+                .AddOptionalParameter("include_pointers", includePointers?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("skip", skip?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("order_by", orderBy) 

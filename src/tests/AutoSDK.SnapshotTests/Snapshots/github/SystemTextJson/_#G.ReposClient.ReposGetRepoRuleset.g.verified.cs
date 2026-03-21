@@ -62,7 +62,7 @@ namespace G
                 path: $"/repos/{owner}/{repo}/rulesets/{rulesetId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("includes_parents", includesParents?.ToString()) 
+                .AddOptionalParameter("includes_parents", includesParents?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

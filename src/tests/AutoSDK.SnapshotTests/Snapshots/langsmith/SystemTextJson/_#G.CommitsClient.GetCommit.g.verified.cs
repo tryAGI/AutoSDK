@@ -74,9 +74,9 @@ namespace G
                 path: $"/api/v1/commits/{owner}/{repo}/{commit}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("get_examples", getExamples?.ToString())
-                .AddOptionalParameter("is_view", isView?.ToString())
-                .AddOptionalParameter("include_model", includeModel?.ToString()) 
+                .AddOptionalParameter("get_examples", getExamples?.ToString().ToLowerInvariant())
+                .AddOptionalParameter("is_view", isView?.ToString().ToLowerInvariant())
+                .AddOptionalParameter("include_model", includeModel?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

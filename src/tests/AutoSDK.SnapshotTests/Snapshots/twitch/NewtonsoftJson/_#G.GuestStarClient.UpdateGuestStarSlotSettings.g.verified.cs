@@ -80,9 +80,9 @@ namespace G
                 .AddRequiredParameter("moderator_id", moderatorId)
                 .AddRequiredParameter("session_id", sessionId)
                 .AddRequiredParameter("slot_id", slotId)
-                .AddOptionalParameter("is_audio_enabled", isAudioEnabled?.ToString())
-                .AddOptionalParameter("is_video_enabled", isVideoEnabled?.ToString())
-                .AddOptionalParameter("is_live", isLive?.ToString())
+                .AddOptionalParameter("is_audio_enabled", isAudioEnabled?.ToString().ToLowerInvariant())
+                .AddOptionalParameter("is_video_enabled", isVideoEnabled?.ToString().ToLowerInvariant())
+                .AddOptionalParameter("is_live", isLive?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("volume", volume?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

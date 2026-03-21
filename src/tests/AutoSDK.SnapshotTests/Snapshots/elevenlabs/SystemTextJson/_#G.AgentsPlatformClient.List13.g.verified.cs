@@ -68,7 +68,7 @@ namespace G
                 path: $"/v1/convai/agents/{agentId}/branches",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("include_archived", includeArchived?.ToString())
+                .AddOptionalParameter("include_archived", includeArchived?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

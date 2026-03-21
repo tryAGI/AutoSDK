@@ -51,7 +51,7 @@ namespace G
                 path: "/studio/v1/custom-model",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("includeMetadata", includeMetadata?.ToString())
+                .AddOptionalParameter("includeMetadata", includeMetadata?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("request_start_time", requestStartTime?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

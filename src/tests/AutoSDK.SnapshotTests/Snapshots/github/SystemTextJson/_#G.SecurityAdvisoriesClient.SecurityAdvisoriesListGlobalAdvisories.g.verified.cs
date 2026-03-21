@@ -145,7 +145,7 @@ namespace G
                 .AddOptionalParameter("ecosystem", ecosystem?.ToValueString())
                 .AddOptionalParameter("severity", severity?.ToValueString())
                 .AddOptionalParameter("cwes", cwes?.ToString())
-                .AddOptionalParameter("is_withdrawn", isWithdrawn?.ToString())
+                .AddOptionalParameter("is_withdrawn", isWithdrawn?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("affects", affects?.ToString())
                 .AddOptionalParameter("published", published)
                 .AddOptionalParameter("updated", updated)

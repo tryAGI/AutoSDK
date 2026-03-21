@@ -45,7 +45,7 @@ namespace G
                 path: "/bits/extensions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("should_include_all", shouldIncludeAll?.ToString()) 
+                .AddOptionalParameter("should_include_all", shouldIncludeAll?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

@@ -106,8 +106,8 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("page_size", pageSize?.ToString())
                 .AddOptionalParameter("search", search)
-                .AddOptionalParameter("archived", archived?.ToString())
-                .AddOptionalParameter("show_only_owned_agents", showOnlyOwnedAgents?.ToString())
+                .AddOptionalParameter("archived", archived?.ToString().ToLowerInvariant())
+                .AddOptionalParameter("show_only_owned_agents", showOnlyOwnedAgents?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("sort_direction", sortDirection?.ToValueString())
                 .AddOptionalParameter("sort_by", sortBy?.ToString())
                 .AddOptionalParameter("cursor", cursor) 

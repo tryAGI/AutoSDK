@@ -61,7 +61,7 @@ namespace G
                 path: "/v1/convai/agents/create",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("enable_versioning", enableVersioning?.ToString()) 
+                .AddOptionalParameter("enable_versioning", enableVersioning?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

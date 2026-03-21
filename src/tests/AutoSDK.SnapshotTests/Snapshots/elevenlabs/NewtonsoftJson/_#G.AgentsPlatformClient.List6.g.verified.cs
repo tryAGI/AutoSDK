@@ -127,11 +127,11 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("page_size", pageSize?.ToString())
                 .AddOptionalParameter("search", search)
-                .AddOptionalParameter("show_only_owned_documents", showOnlyOwnedDocuments?.ToString())
+                .AddOptionalParameter("show_only_owned_documents", showOnlyOwnedDocuments?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("types", types?.ToString())
                 .AddOptionalParameter("parent_folder_id", parentFolderId)
                 .AddOptionalParameter("ancestor_folder_id", ancestorFolderId)
-                .AddOptionalParameter("folders_first", foldersFirst?.ToString())
+                .AddOptionalParameter("folders_first", foldersFirst?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("sort_direction", sortDirection?.ToValueString())
                 .AddOptionalParameter("sort_by", sortBy?.ToString())
                 .AddOptionalParameter("cursor", cursor) 

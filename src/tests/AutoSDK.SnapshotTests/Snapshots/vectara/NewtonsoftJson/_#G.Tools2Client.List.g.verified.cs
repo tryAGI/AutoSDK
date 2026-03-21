@@ -103,7 +103,7 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("filter", filter)
                 .AddOptionalParameter("type", type?.ToValueString())
-                .AddOptionalParameter("enabled", enabled?.ToString())
+                .AddOptionalParameter("enabled", enabled?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("category", category, delimiter: ",", explode: true)
                 .AddOptionalParameter("tool_server_id", toolServerId)
                 .AddOptionalParameter("limit", limit?.ToString())

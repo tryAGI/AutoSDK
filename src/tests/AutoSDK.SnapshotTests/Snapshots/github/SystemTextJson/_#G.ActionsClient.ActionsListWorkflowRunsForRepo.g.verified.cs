@@ -114,7 +114,7 @@ namespace G
                 .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("page", page?.ToString())
                 .AddOptionalParameter("created", created?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
-                .AddOptionalParameter("exclude_pull_requests", excludePullRequests?.ToString())
+                .AddOptionalParameter("exclude_pull_requests", excludePullRequests?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("check_suite_id", checkSuiteId?.ToString())
                 .AddOptionalParameter("head_sha", headSha) 
                 ; 

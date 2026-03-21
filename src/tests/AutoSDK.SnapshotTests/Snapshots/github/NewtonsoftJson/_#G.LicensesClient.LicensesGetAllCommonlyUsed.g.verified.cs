@@ -57,7 +57,7 @@ namespace G
                 path: "/licenses",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("featured", featured?.ToString())
+                .AddOptionalParameter("featured", featured?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("page", page?.ToString()) 
                 ; 

@@ -71,8 +71,8 @@ namespace G
                 path: $"/v4/pipelines/by-pointer/{pointer}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddOptionalParameter("include_pointers", includePointers?.ToString())
-                .AddOptionalParameter("include_extras", includeExtras?.ToString())
+                .AddOptionalParameter("include_pointers", includePointers?.ToString().ToLowerInvariant())
+                .AddOptionalParameter("include_extras", includeExtras?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("pipeline_id", pipelineId)
                 .AddOptionalParameter("pipeline_id_or_pointer", pipelineIdOrPointer) 
                 ; 

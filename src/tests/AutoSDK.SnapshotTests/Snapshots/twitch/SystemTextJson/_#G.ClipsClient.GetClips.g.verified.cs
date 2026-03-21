@@ -95,7 +95,7 @@ namespace G
                 .AddOptionalParameter("first", first?.ToString())
                 .AddOptionalParameter("before", before)
                 .AddOptionalParameter("after", after)
-                .AddOptionalParameter("is_featured", isFeatured?.ToString()) 
+                .AddOptionalParameter("is_featured", isFeatured?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
