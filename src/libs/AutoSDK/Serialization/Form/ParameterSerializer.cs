@@ -86,7 +86,7 @@ public static class ParameterSerializer
             var pairs = parameter.Properties
                 .Select(x => (
                     Name: x.Id.ToParameterName(),
-                    Value: $"{parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}." + SerializeQueryParameter(parameter with
+                    Value: $"{parameter.ArgumentName}{(parameter.Type.CSharpTypeNullability ? "?" : "")}." + SerializeQueryParameter(parameter with
                     {
                         Name = x.Id,
                         Type = x.Type,
@@ -126,26 +126,26 @@ public static class ParameterSerializer
         {
             return [parameter with
             {
-                Value = $"{parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}.ToString(\"yyyy-MM-dd\")",
+                Value = $"{parameter.ArgumentName}{(parameter.Type.CSharpTypeNullability ? "?" : "")}.ToString(\"yyyy-MM-dd\")",
             }];
         }
         if (parameter.Type.IsDateTime)
         {
             return [parameter with
             {
-                Value = $"{parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}.ToString(\"yyyy-MM-ddTHH:mm:ssZ\")",
+                Value = $"{parameter.ArgumentName}{(parameter.Type.CSharpTypeNullability ? "?" : "")}.ToString(\"yyyy-MM-ddTHH:mm:ssZ\")",
             }];
         }
         if (parameter.Type.CSharpTypeWithoutNullability == "bool")
         {
             return [parameter with
             {
-                Value = $"{parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}.ToString().ToLowerInvariant()",
+                Value = $"{parameter.ArgumentName}{(parameter.Type.CSharpTypeNullability ? "?" : "")}.ToString().ToLowerInvariant()",
             }];
         }
         return [parameter with
         {
-            Value = $"{parameter.ArgumentName}{(parameter.IsRequired ? "" : "?")}.ToString()",
+            Value = $"{parameter.ArgumentName}{(parameter.Type.CSharpTypeNullability ? "?" : "")}.ToString()",
         }];
     }
 }
