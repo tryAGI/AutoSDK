@@ -3,7 +3,7 @@ using AutoSDK.CLI.Commands;
 using AutoSDK.CLI.Commands.AI;
 
 var rootCommand = new RootCommand(
-    description: "CLI tool to use AutoSDK");
+    description: "CLI tool to generate .NET SDKs from OpenAPI and AsyncAPI specifications");
 rootCommand.Subcommands.Add(new GenerateCommand());
 rootCommand.Subcommands.Add(new HttpCommand());
 rootCommand.Subcommands.Add(new CliCommand());
