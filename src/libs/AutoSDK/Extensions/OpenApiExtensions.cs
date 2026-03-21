@@ -690,20 +690,35 @@ info:
         string? title,
         string? description)
     {
-        var combined = string.Join(
-            "\n",
-            new[] { propertyName, title, description }
-                .Where(static x => !string.IsNullOrWhiteSpace(x)))
-            .ToUpperInvariant();
+        return HasLargeIntegerHintInAny(propertyName) ||
+               HasLargeIntegerHintInAny(title) ||
+               HasLargeIntegerHintInAny(description);
+    }
 
-        return combined.Contains("NANOSECOND", StringComparison.Ordinal) ||
-               combined.Contains(" BYTE", StringComparison.Ordinal) ||
-               combined.Contains("BYTES", StringComparison.Ordinal) ||
-               (((combined.Contains("UNIX", StringComparison.Ordinal) ||
-                  combined.Contains("EPOCH", StringComparison.Ordinal)) &&
-                 (combined.Contains("MILLISECOND", StringComparison.Ordinal) ||
-                  combined.Contains("UNIX_MS", StringComparison.Ordinal) ||
-                  combined.Contains("UNIX MS", StringComparison.Ordinal))));
+    private static bool HasLargeIntegerHintInAny(string? text)
+    {
+        if (string.IsNullOrWhiteSpace(text))
+        {
+            return false;
+        }
+
+        if (text!.IndexOf("nanosecond", StringComparison.OrdinalIgnoreCase) >= 0 ||
+            text.IndexOf(" byte", StringComparison.OrdinalIgnoreCase) >= 0 ||
+            text.IndexOf("bytes", StringComparison.OrdinalIgnoreCase) >= 0)
+        {
+            return true;
+        }
+
+        if ((text.IndexOf("unix", StringComparison.OrdinalIgnoreCase) >= 0 ||
+             text.IndexOf("epoch", StringComparison.OrdinalIgnoreCase) >= 0) &&
+            (text.IndexOf("millisecond", StringComparison.OrdinalIgnoreCase) >= 0 ||
+             text.IndexOf("unix_ms", StringComparison.OrdinalIgnoreCase) >= 0 ||
+             text.IndexOf("unix ms", StringComparison.OrdinalIgnoreCase) >= 0))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     public static void SanitizeDiscriminators(this OpenApiDocument document)
@@ -1719,15 +1734,12 @@ info:
             return string.Empty;
         }
 
-        return normalized.ToUpperInvariant() switch
-        {
-            "ALPHA" => "Alpha",
-            "BETA" => "Beta",
-            "EXPERIMENTAL" => "Experimental",
-            "GENERALLY-AVAILABLE" => string.Empty,
-            "DEPRECATED" => string.Empty,
-            _ => normalized,
-        };
+        if (normalized.Equals("Alpha", StringComparison.OrdinalIgnoreCase)) return "Alpha";
+        if (normalized.Equals("Beta", StringComparison.OrdinalIgnoreCase)) return "Beta";
+        if (normalized.Equals("Experimental", StringComparison.OrdinalIgnoreCase)) return "Experimental";
+        if (normalized.Equals("Generally-Available", StringComparison.OrdinalIgnoreCase)) return string.Empty;
+        if (normalized.Equals("Deprecated", StringComparison.OrdinalIgnoreCase)) return string.Empty;
+        return normalized;
     }
 
     private static string NormalizeAvailability(string? availability)
@@ -1738,14 +1750,11 @@ info:
             return string.Empty;
         }
 
-        return normalized.ToUpperInvariant() switch
-        {
-            "ALPHA" => "Alpha",
-            "BETA" => "Beta",
-            "DEPRECATED" => "Deprecated",
-            "GENERALLY-AVAILABLE" => "GenerallyAvailable",
-            _ => normalized,
-        };
+        if (normalized.Equals("Alpha", StringComparison.OrdinalIgnoreCase)) return "Alpha";
+        if (normalized.Equals("Beta", StringComparison.OrdinalIgnoreCase)) return "Beta";
+        if (normalized.Equals("Deprecated", StringComparison.OrdinalIgnoreCase)) return "Deprecated";
+        if (normalized.Equals("Generally-Available", StringComparison.OrdinalIgnoreCase)) return "GenerallyAvailable";
+        return normalized;
     }
 
     private static void ApplyFernEnumItem(JsonObject itemObj, Dictionary<string, PropertyData> @enum, int index)

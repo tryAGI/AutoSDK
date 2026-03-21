@@ -54,11 +54,20 @@ public record struct MethodParameter(
         var parameterName = context.ParameterName ?? throw new InvalidOperationException("Property name or parameter name is required.");
         var type = context.TypeData;
         if (parameter.In == ParameterLocation.Query &&
-            (context.IsClass || context.ResolvedReference?.IsClass == true) &&
-            (context.ResolvedReference?.ClassData ?? context.ClassData)?.Properties.FirstOrDefault(x => x.Id == parameterName) is { } property &&
-            property != default)
+            (context.IsClass || context.ResolvedReference?.IsClass == true))
         {
-            type = property.Type;
+            var props = (context.ResolvedReference?.ClassData ?? context.ClassData)?.Properties;
+            if (props is { Length: > 0 })
+            {
+                for (var i = 0; i < props.Value.Length; i++)
+                {
+                    if (props.Value[i].Id == parameterName)
+                    {
+                        type = props.Value[i].Type;
+                        break;
+                    }
+                }
+            }
         }
         
         var name = parameterName.ToPropertyName();

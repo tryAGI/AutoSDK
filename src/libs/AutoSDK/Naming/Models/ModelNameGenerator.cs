@@ -112,8 +112,7 @@ public static class ModelNameGenerator
 
         // Special case for anyOf/oneOf/allOf with a single non-basic type
         if (context.Hint is Hint.AnyOf or Hint.OneOf or Hint.AllOf &&
-            context.Parent?.Children
-                .Count(x => x.IsEnum || x.IsClass || x is { IsAnyOf: true, IsComponent: true }) == 1 &&
+            CountNonBasicTypes(context.Parent?.Children) == 1 &&
             context.Parent?.IsComponent != true)
         {
             className = parentClassName ?? string.Empty;
@@ -121,8 +120,7 @@ public static class ModelNameGenerator
 
         // Special case for anyOf/oneOf/allOf with a single Enum type without reference
         else if (context.Hint is Hint.AnyOf or Hint.OneOf or Hint.AllOf &&
-            context.Parent?.Children
-                .Count(x => x.IsEnum && x is { IsReference: false }) == 1)
+            CountNonRefEnums(context.Parent?.Children) == 1)
         {
             className = className.Substring(0, className.Length - (helperName?.Length ?? 0)) + "Enum";
         }
@@ -186,6 +184,35 @@ public static class ModelNameGenerator
         }
     }
 
+    private static int CountNonBasicTypes(IList<SchemaContext>? children)
+    {
+        if (children == null) return 0;
+        var count = 0;
+        for (var i = 0; i < children.Count; i++)
+        {
+            var x = children[i];
+            if (x.IsEnum || x.IsClass || (x.IsAnyOf && x.IsComponent))
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    private static int CountNonRefEnums(IList<SchemaContext>? children)
+    {
+        if (children == null) return 0;
+        var count = 0;
+        for (var i = 0; i < children.Count; i++)
+        {
+            if (children[i].IsEnum && !children[i].IsReference)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+
     public static void ResolveCollisions(IReadOnlyCollection<OperationContext> contexts)
     {
         var groups = new Dictionary<(string, string), List<OperationContext>>();
@@ -195,7 +222,13 @@ public static class ModelNameGenerator
             var hasCollisions = false;
             foreach (var context in contexts)
             {
-                var key = (context.MethodName, context.Tags.FirstOrDefault() ?? string.Empty);
+                var firstTag = string.Empty;
+                foreach (var tag in context.Tags)
+                {
+                    firstTag = tag;
+                    break;
+                }
+                var key = (context.MethodName, firstTag);
                 if (!groups.TryGetValue(key, out var list))
                 {
                     list = [context];

@@ -29,7 +29,7 @@ public partial class NamingTests
             operation: operation,
             operationPath: "/me/slack_id",
             operationType: System.Net.Http.HttpMethod.Get,
-            filteredSchemas: [],
+            operationSchemas: null,
             globalSecurityRequirements: []);
         var endPoint = EndPoint.FromSchema(context);
 
@@ -61,7 +61,7 @@ public partial class NamingTests
             operation: operation,
             operationPath: "/sessions/{session_id}/insights",
             operationType: System.Net.Http.HttpMethod.Get,
-            filteredSchemas: [],
+            operationSchemas: null,
             globalSecurityRequirements: []);
         var endPoint = EndPoint.FromSchema(context);
 

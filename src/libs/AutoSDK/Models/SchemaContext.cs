@@ -151,9 +151,9 @@ public class SchemaContext(
             {
                 return [];
             }
-            
+
             if (Schema.IsBinary() &&
-                Parent?.Children.Any(x => x.PropertyName == PropertyName + "name") != true)
+                !HasSiblingPropertyWithSuffix("name"))
             {
                 return
                 [
@@ -176,6 +176,22 @@ public class SchemaContext(
 
             return [PropertyData.Value];
         }
+    }
+
+    private bool HasSiblingPropertyWithSuffix(string suffix)
+    {
+        if (Parent == null || PropertyName == null) return false;
+
+        var targetName = PropertyName + suffix;
+        var siblings = Parent.Children;
+        for (var i = 0; i < siblings.Count; i++)
+        {
+            if (siblings[i].PropertyName == targetName)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public HashSet<string> Tags { get; set; } = [];
