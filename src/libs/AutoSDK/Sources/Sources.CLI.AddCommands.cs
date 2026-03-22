@@ -34,12 +34,12 @@ namespace {methods[0].Settings.Namespace}
             this global::Microsoft.Extensions.DependencyInjection.IServiceCollection services)
         {{
             // Register individual command services as singletons
-{methods.Select(x => x.CliCommandClassName).Distinct().Select((type, i) => @$"
+{methods.Select(x => x.CliCommandClassName).Distinct().OrderBy(x => x, StringComparer.Ordinal).Select((type, i) => @$"
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 {type}>(services);").Inject()}
 
             // Register grouped command services as singletons
-{tags.Select(x => $"{x.SingularizedName}GroupCommand").Distinct().Select((type, i) => @$"
+{tags.Select(x => $"{x.SingularizedName}GroupCommand").Distinct().OrderBy(x => x, StringComparer.Ordinal).Select((type, i) => @$"
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 {type}>(services);").Inject()}
 

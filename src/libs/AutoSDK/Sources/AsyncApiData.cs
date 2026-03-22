@@ -964,7 +964,7 @@ public static class AsyncApiData
                 continue;
             }
 
-            foreach (var propName in channel.BindingsQueryProperties.Keys.ToList())
+            foreach (var propName in channel.BindingsQueryProperties.Keys.OrderBy(x => x, StringComparer.Ordinal).ToList())
             {
                 var propNode = channel.BindingsQueryProperties[propName];
                 if (propNode == null) continue;

@@ -90,7 +90,7 @@ public record struct AnyOfData(
                 if (resolvedSchema.Properties is { Count: > 0 } props)
                 {
                     var jpnBuilder = ImmutableArray.CreateBuilder<string>(props.Count);
-                    foreach (var key in props.Keys)
+                    foreach (var key in props.Keys.OrderBy(x => x, StringComparer.Ordinal))
                     {
                         jpnBuilder.Add(key);
                     }

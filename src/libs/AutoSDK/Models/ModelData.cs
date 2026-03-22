@@ -70,7 +70,7 @@ public record struct ModelData(
         if (mapping is { Count: > 0 })
         {
             var dtBuilder = ImmutableArray.CreateBuilder<(string ClassName, string Discriminator)>(mapping.Count);
-            foreach (var kvp in mapping)
+            foreach (var kvp in mapping.OrderBy(x => x.Key, StringComparer.Ordinal))
             {
                 dtBuilder.Add((ClassName: kvp.Value.Reference?.Id ?? string.Empty, Discriminator: kvp.Key));
             }
@@ -203,7 +203,7 @@ public record struct ModelData(
         if (dict.Count == 0) return [];
 
         var builder = ImmutableArray.CreateBuilder<PropertyData>(dict.Count);
-        foreach (var kvp in dict)
+        foreach (var kvp in dict.OrderBy(x => x.Key, StringComparer.Ordinal))
         {
             builder.Add(kvp.Value);
         }

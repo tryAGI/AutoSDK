@@ -182,7 +182,7 @@ info:
     {
         document = document ?? throw new ArgumentNullException(nameof(document));
 
-        foreach (var schema in document.Components?.Schemas?.Values ?? Enumerable.Empty<IOpenApiSchema>())
+        foreach (var schema in (document.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>()).OrderBy(x => x.Key, StringComparer.Ordinal).Select(x => x.Value))
         {
             SanitizeSchemaNumericConstraints(schema);
         }
@@ -192,7 +192,7 @@ info:
     {
         document = document ?? throw new ArgumentNullException(nameof(document));
 
-        foreach (var schema in document.Components?.Schemas?.Values ?? Enumerable.Empty<IOpenApiSchema>())
+        foreach (var schema in (document.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>()).OrderBy(x => x.Key, StringComparer.Ordinal).Select(x => x.Value))
         {
             InferSchemaLargeIntegerFormats(
                 schema,
@@ -516,7 +516,7 @@ info:
             }
         }
 
-        foreach (var property in concreteSchema.Properties?.Values ?? Enumerable.Empty<IOpenApiSchema>())
+        foreach (var property in (concreteSchema.Properties ?? new Dictionary<string, IOpenApiSchema>()).OrderBy(x => x.Key, StringComparer.Ordinal).Select(x => x.Value))
         {
             SanitizeSchemaNumericConstraints(property);
         }
@@ -556,7 +556,7 @@ info:
             concreteSchema.Format = "int64";
         }
 
-        foreach (var property in concreteSchema.Properties ?? Enumerable.Empty<KeyValuePair<string, IOpenApiSchema>>())
+        foreach (var property in (concreteSchema.Properties ?? new Dictionary<string, IOpenApiSchema>()).OrderBy(x => x.Key, StringComparer.Ordinal))
         {
             InferSchemaLargeIntegerFormats(
                 property.Value,
@@ -729,7 +729,7 @@ info:
             document.Components?.Schemas?.Keys ?? Enumerable.Empty<string>(),
             StringComparer.Ordinal);
 
-        foreach (var schema in document.Components?.Schemas?.Values ?? Enumerable.Empty<IOpenApiSchema>())
+        foreach (var schema in (document.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>()).OrderBy(x => x.Key, StringComparer.Ordinal).Select(x => x.Value))
         {
             SanitizeSchemaDiscriminators(schema, componentIds);
         }
@@ -768,7 +768,7 @@ info:
             }
         }
 
-        foreach (var property in concreteSchema.Properties?.Values ?? Enumerable.Empty<IOpenApiSchema>())
+        foreach (var property in (concreteSchema.Properties ?? new Dictionary<string, IOpenApiSchema>()).OrderBy(x => x.Key, StringComparer.Ordinal).Select(x => x.Value))
         {
             SanitizeSchemaDiscriminators(property, componentIds);
         }
@@ -898,7 +898,7 @@ info:
         
         var schemasToRemove = new List<KeyValuePair<string, IOpenApiSchema>>();
         var schemasToAdd = new List<KeyValuePair<string, IOpenApiSchema>>();
-        foreach (var schema in openApiDocument.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>())
+        foreach (var schema in (openApiDocument.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>()).OrderBy(x => x.Key, StringComparer.Ordinal))
         {
             // If schema is OneOf and all children have only one enum value, combine them into one schema.
             if (schema.Value.IsOneOf() &&
@@ -999,11 +999,11 @@ info:
     {
         openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
 
-        foreach (var schema in openApiDocument.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>())
+        foreach (var schema in (openApiDocument.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>()).OrderBy(x => x.Key, StringComparer.Ordinal))
         {
             var propertiesToAdd = new List<KeyValuePair<string, IOpenApiSchema>>();
             var propertiesToRemove = new List<string>();
-            foreach (var property in schema.Value.Properties ?? new Dictionary<string, IOpenApiSchema>())
+            foreach (var property in (schema.Value.Properties ?? new Dictionary<string, IOpenApiSchema>()).OrderBy(x => x.Key, StringComparer.Ordinal))
             {
                 if ((property.Value.AllOf?.Count ?? 0) == 1)
                 {
@@ -1031,7 +1031,7 @@ info:
     {
         openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
         
-        foreach (var schema in openApiDocument.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>())
+        foreach (var schema in (openApiDocument.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>()).OrderBy(x => x.Key, StringComparer.Ordinal))
         {
             ProcessSchema(schema.Value, path: $"#/components/schemas/{schema.Key}", depth: 0);
         }
@@ -1091,7 +1091,7 @@ info:
             path = $"#/components/schemas/{refId}";
         }
 
-        foreach (var property in schema.Properties ?? new Dictionary<string, IOpenApiSchema>())
+        foreach (var property in (schema.Properties ?? new Dictionary<string, IOpenApiSchema>()).OrderBy(x => x.Key, StringComparer.Ordinal))
         {
             ProcessSchema(property.Value, path: path + "/properties/" + property.Key, depth: depth + 1);
         }
@@ -1699,7 +1699,7 @@ info:
             }
             else if (fernEnumNode is JsonObject fernEnumObj)
             {
-                foreach (var kvp in fernEnumObj)
+                foreach (var kvp in fernEnumObj.OrderBy(x => x.Key, StringComparer.Ordinal))
                 {
                     if (kvp.Value is JsonObject itemObj && @enum.ContainsKey(kvp.Key))
                     {

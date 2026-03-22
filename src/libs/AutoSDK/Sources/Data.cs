@@ -412,7 +412,7 @@ public static class Data
         }
         
         var authorizations = openApiDocument.Security!
-            .SelectMany(requirement => requirement)
+            .SelectMany(requirement => requirement.OrderBy(x => x.Key.Name ?? string.Empty, StringComparer.Ordinal))
             .Select(x => Authorization.FromOpenApiSecurityScheme(x.Key, settings, globalSettings))
             .ToArray();
 

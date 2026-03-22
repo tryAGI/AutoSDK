@@ -305,7 +305,7 @@ public static partial class Sources
             return null;
         }
 
-        return string.Join(", ", contentTypes);
+        return string.Join(", ", contentTypes.OrderBy(x => x, StringComparer.Ordinal));
     }
 
     private static string GenerateJsonBody(IOpenApiSchema schema, int depth = 0, HashSet<IOpenApiSchema>? visited = null)
