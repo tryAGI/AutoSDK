@@ -354,7 +354,7 @@ public static class AsyncApiData
                 : asyncApiDoc.Info.Description?.ClearForXml() ?? string.Empty;
 
             // Build query parameters from channel bindings (ws.query)
-            var queryParams = BuildChannelQueryParameters(
+            var (signatureParams, serializedParams) = BuildChannelQueryParameters(
                 channel, componentSchemas, settings);
 
             var wsClient = new WebSocketClient(
@@ -365,7 +365,8 @@ public static class AsyncApiData
                 SendOperations: sendOps.ToImmutableArray(),
                 ReceiveOperations: receiveOps.ToImmutableArray(),
                 Authorizations: authorizations.ToImmutableArray(),
-                QueryParameters: queryParams,
+                QueryParameters: signatureParams,
+                SerializedQueryParameters: serializedParams,
                 Summary: summary,
                 Settings: settings,
                 GlobalSettings: globalSettings,
@@ -381,17 +382,18 @@ public static class AsyncApiData
         return (wsClients, wsOperations);
     }
 
-    private static ImmutableArray<MethodParameter> BuildChannelQueryParameters(
+    private static (ImmutableArray<MethodParameter> Signature, ImmutableArray<MethodParameter> Serialized) BuildChannelQueryParameters(
         AsyncApiChannel channel,
         Dictionary<string, SchemaContext> componentSchemas,
         Settings settings)
     {
         if (channel.BindingsQueryProperties.Count == 0)
         {
-            return ImmutableArray<MethodParameter>.Empty;
+            return (ImmutableArray<MethodParameter>.Empty, ImmutableArray<MethodParameter>.Empty);
         }
 
-        var result = new List<MethodParameter>();
+        var signatureResult = new List<MethodParameter>();
+        var serializedResult = new List<MethodParameter>();
 
         foreach (var kvp in channel.BindingsQueryProperties)
         {
@@ -403,6 +405,9 @@ public static class AsyncApiData
             string summary;
             string description;
 
+            ImmutableArray<PropertyData> properties = ImmutableArray<PropertyData>.Empty;
+            var style = ParameterStyle.Form;
+
             var refPath = propNode?["$ref"]?.GetValue<string>();
             if (refPath != null)
             {
@@ -412,11 +417,12 @@ public static class AsyncApiData
                     continue;
                 }
 
-                // Skip object-type schemas — they don't serialize well as query string
-                // parameters. The model class is still generated for use elsewhere.
-                if (schemaContext.TypeData.Properties.Length > 0)
+                // For object-type schemas, use deepObject serialization
+                // (produces extra[tag]=...&extra[priority]=... format)
+                if (schemaContext.IsClass)
                 {
-                    continue;
+                    style = ParameterStyle.DeepObject;
+                    properties = schemaContext.ClassData?.Properties ?? ImmutableArray<PropertyData>.Empty;
                 }
 
                 type = schemaContext.TypeData;
@@ -429,26 +435,89 @@ public static class AsyncApiData
                 var inlineType = propNode?["type"]?.GetValue<string>();
                 if (inlineType == null) continue;
 
-                var inlineFormat = propNode?["format"]?.GetValue<string>();
-                var csharpType = MapInlineSchemaType(inlineType, inlineFormat);
-                if (csharpType == null) continue;
-
-                var isValueType = csharpType is "bool" or "int" or "long" or "short"
-                    or "byte" or "float" or "double" or "decimal" or "char"
-                    or "global::System.DateTime" or "global::System.DateTimeOffset"
-                    or "global::System.Guid";
-
-                type = TypeData.Default with
+                // Handle inline arrays with primitive items
+                if (inlineType == "array" && propNode?["items"] is JsonObject inlineItems)
                 {
-                    CSharpTypeRaw = csharpType,
-                    IsValueType = isValueType,
-                    Settings = settings,
-                    Namespace = csharpType.StartsWith("global::System.", StringComparison.Ordinal)
-                        ? "System"
-                        : settings.Namespace,
-                };
-                summary = string.Empty;
-                description = propNode?["description"]?.GetValue<string>() ?? string.Empty;
+                    var itemType = inlineItems["type"]?.GetValue<string>();
+                    var itemFormat = inlineItems["format"]?.GetValue<string>();
+                    if (itemType == null) continue;
+
+                    // For $ref items, look up from componentSchemas
+                    var itemRef = inlineItems["$ref"]?.GetValue<string>();
+                    if (itemRef != null)
+                    {
+                        var itemSchemaName = itemRef.Split('/').Last();
+                        if (!componentSchemas.TryGetValue(itemSchemaName, out var itemSchemaContext))
+                        {
+                            continue;
+                        }
+
+                        var itemTypeData = itemSchemaContext.TypeData;
+                        type = TypeData.Default with
+                        {
+                            CSharpTypeRaw = $"global::System.Collections.Generic.IList<{itemTypeData.CSharpTypeWithoutNullability}>",
+                            IsArray = true,
+                            Settings = settings,
+                            Namespace = settings.Namespace,
+                            SubTypes = ImmutableArray.Create(itemTypeData.Box()).AsEquatableArray(),
+                        };
+                    }
+                    else
+                    {
+                        var itemCSharpType = MapInlineSchemaType(itemType, itemFormat);
+                        if (itemCSharpType == null) continue;
+
+                        var isItemValueType = itemCSharpType is "bool" or "int" or "long" or "short"
+                            or "byte" or "float" or "double" or "decimal" or "char"
+                            or "global::System.DateTime" or "global::System.DateTimeOffset"
+                            or "global::System.Guid";
+
+                        var itemTypeData = TypeData.Default with
+                        {
+                            CSharpTypeRaw = itemCSharpType,
+                            IsValueType = isItemValueType,
+                            Settings = settings,
+                            Namespace = itemCSharpType.StartsWith("global::System.", StringComparison.Ordinal)
+                                ? "System"
+                                : settings.Namespace,
+                        };
+
+                        type = TypeData.Default with
+                        {
+                            CSharpTypeRaw = $"global::System.Collections.Generic.IList<{itemCSharpType}>",
+                            IsArray = true,
+                            Settings = settings,
+                            Namespace = settings.Namespace,
+                            SubTypes = ImmutableArray.Create(itemTypeData.Box()).AsEquatableArray(),
+                        };
+                    }
+
+                    summary = string.Empty;
+                    description = propNode?["description"]?.GetValue<string>() ?? string.Empty;
+                }
+                else
+                {
+                    var inlineFormat = propNode?["format"]?.GetValue<string>();
+                    var csharpType = MapInlineSchemaType(inlineType, inlineFormat);
+                    if (csharpType == null) continue;
+
+                    var isValueType = csharpType is "bool" or "int" or "long" or "short"
+                        or "byte" or "float" or "double" or "decimal" or "char"
+                        or "global::System.DateTime" or "global::System.DateTimeOffset"
+                        or "global::System.Guid";
+
+                    type = TypeData.Default with
+                    {
+                        CSharpTypeRaw = csharpType,
+                        IsValueType = isValueType,
+                        Settings = settings,
+                        Namespace = csharpType.StartsWith("global::System.", StringComparison.Ordinal)
+                            ? "System"
+                            : settings.Namespace,
+                    };
+                    summary = string.Empty;
+                    description = propNode?["description"]?.GetValue<string>() ?? string.Empty;
+                }
             }
 
             var isRequired = channel.BindingsQueryRequired.Contains(paramName);
@@ -474,7 +543,7 @@ public static class AsyncApiData
                 IsRequired: isRequired,
                 IsMultiPartFormDataFilename: false,
                 Location: ParameterLocation.Query,
-                Style: ParameterStyle.Form,
+                Style: style,
                 Explode: true,
                 Settings: settings,
                 DefaultValue: null,
@@ -482,24 +551,28 @@ public static class AsyncApiData
                 Summary: summary,
                 Description: description,
                 ConverterType: type.ConverterType,
-                Properties: ImmutableArray<PropertyData>.Empty);
+                Properties: properties);
 
             // Use existing serializer to fill in Value expression
             var serialized = ParameterSerializer.SerializeQueryParameter(methodParam);
-            result.AddRange(serialized);
+            signatureResult.Add(methodParam);
+            serializedResult.AddRange(serialized);
         }
 
         // Sort: required params first, then optional
-        result.Sort((a, b) =>
+        static int SortParams(MethodParameter a, MethodParameter b)
         {
             if (a.IsRequired != b.IsRequired)
             {
                 return a.IsRequired ? -1 : 1;
             }
             return string.Compare(a.Id, b.Id, StringComparison.Ordinal);
-        });
+        }
 
-        return result.ToImmutableArray();
+        signatureResult.Sort(SortParams);
+        serializedResult.Sort(SortParams);
+
+        return (signatureResult.ToImmutableArray(), serializedResult.ToImmutableArray());
     }
 
     /// <summary>
@@ -907,13 +980,46 @@ public static class AsyncApiData
                 // Extract inline objects: {"type": "object", "properties": {...}}
                 var isInlineObject = propType == "object" && propNode["properties"] != null;
 
-                if (!isInlineEnum && !isInlineObject) continue;
+                // Extract inline arrays with complex items: {"type": "array", "items": {"type": "object"|"enum"}}
+                var isInlineArray = propType == "array" && propNode["items"] is JsonObject itemsNode &&
+                    itemsNode["$ref"] == null &&
+                    (itemsNode["enum"] is JsonArray { Count: > 0 } ||
+                     (itemsNode["type"]?.GetValue<string>() == "object" && itemsNode["properties"] != null));
+
+                if (!isInlineEnum && !isInlineObject && !isInlineArray) continue;
 
                 // Generate schema name: {ChannelName}{PascalCasedPropertyName}
                 var schemaName = channelName + propName.ToPropertyName();
 
                 // Skip if schema already exists
                 if (asyncApiDoc.Components.Schemas.ContainsKey(schemaName)) continue;
+
+                // For inline arrays, extract the items schema instead of the array itself
+                if (isInlineArray)
+                {
+                    var items = (JsonObject)propNode["items"]!;
+                    var itemsSchemaName = channelName + propName.ToPropertyName() + "Item";
+
+                    if (!asyncApiDoc.Components.Schemas.ContainsKey(itemsSchemaName))
+                    {
+                        // Recursively extract nested objects within array items
+                        if (items["type"]?.GetValue<string>() == "object" && items["properties"] != null)
+                        {
+                            ExtractNestedInlineObjects(asyncApiDoc, items, itemsSchemaName);
+                        }
+
+                        asyncApiDoc.Components.Schemas[itemsSchemaName] = items.DeepClone();
+                    }
+
+                    // Replace inline items with $ref (mutate the binding property in-place)
+                    var updatedArray = propNode.DeepClone();
+                    updatedArray!["items"] = new JsonObject
+                    {
+                        ["$ref"] = $"#/components/schemas/{itemsSchemaName}",
+                    };
+                    channel.BindingsQueryProperties[propName] = updatedArray;
+                    continue;
+                }
 
                 // For inline objects, recursively extract nested inline objects first
                 if (isInlineObject)

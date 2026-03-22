@@ -58,6 +58,21 @@
                     "description": "Processing priority."
                   }
                 }
+              },
+              "channels": {
+                "type": "array",
+                "description": "Audio channels to transcribe.",
+                "items": {
+                  "type": "integer",
+                  "description": "Zero-based channel index."
+                }
+              },
+              "keywords": {
+                "type": "array",
+                "description": "Keywords to boost in transcription.",
+                "items": {
+                  "type": "string"
+                }
               }
             },
             "required": ["model"]

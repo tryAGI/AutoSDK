@@ -14,6 +14,7 @@ public record struct WebSocketClient(
     EquatableArray<WebSocketEndPoint> ReceiveOperations,
     EquatableArray<Authorization> Authorizations,
     EquatableArray<MethodParameter> QueryParameters,
+    EquatableArray<MethodParameter> SerializedQueryParameters,
     string Summary,
     Settings Settings,
     Settings GlobalSettings,

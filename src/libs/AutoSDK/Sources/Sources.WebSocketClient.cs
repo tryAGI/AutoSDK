@@ -251,9 +251,10 @@ namespace {wsClient.Settings.Namespace}
 
     private static string GenerateConnectAsync(WebSocketClient wsClient)
     {
-        var queryParams = wsClient.QueryParameters.ToArray();
+        var signatureParams = wsClient.QueryParameters.ToArray();
+        var serializedParams = wsClient.SerializedQueryParameters.ToArray();
 
-        if (queryParams.Length == 0)
+        if (signatureParams.Length == 0)
         {
             // No query parameters — simple ConnectAsync
             return $@"
@@ -277,9 +278,9 @@ namespace {wsClient.Settings.Namespace}
         xmlDoc.AppendLine("        /// Connects to the WebSocket server with typed query parameters.");
         xmlDoc.AppendLine("        /// </summary>");
 
-        // Required parameters first, then optional
+        // Method signature uses original (unserialized) parameters
         var isFirst = true;
-        foreach (var param in queryParams)
+        foreach (var param in signatureParams)
         {
             // XML doc for this parameter — collapse to single line
             var xmlSummary = !string.IsNullOrWhiteSpace(param.Description)
@@ -316,8 +317,11 @@ namespace {wsClient.Settings.Namespace}
                 parameterSignature.Append(
                     $"            {param.Type.CSharpType} {param.ParameterName} = default");
             }
+        }
 
-            // Build PathBuilder calls
+        // PathBuilder uses serialized (expanded) parameters
+        foreach (var param in serializedParams)
+        {
             var additionalArguments = param.Type.IsArray
                 ? $", delimiter: \"{param.Delimiter}\", explode: {(param.Explode ? "true" : "false")}"
                 : string.Empty;
@@ -340,7 +344,7 @@ namespace {wsClient.Settings.Namespace}
             }
         }
 
-        var hasRequired = queryParams.Any(p => p.IsRequired);
+        var hasRequired = signatureParams.Any(p => p.IsRequired);
 
         // Only generate simple overload when there are required params,
         // otherwise it's ambiguous with the typed overload (all optional)
