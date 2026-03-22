@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text")]
-        Text,
+        [global::System.Runtime.Serialization.EnumMember(Value="audio")]
+        Audio,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="audio")]
-        Audio,
+        [global::System.Runtime.Serialization.EnumMember(Value="text")]
+        Text,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ContentPartType.Text => "text",
                 ContentPartType.Audio => "audio",
+                ContentPartType.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "text" => ContentPartType.Text,
                 "audio" => ContentPartType.Audio,
+                "text" => ContentPartType.Text,
                 _ => null,
             };
         }

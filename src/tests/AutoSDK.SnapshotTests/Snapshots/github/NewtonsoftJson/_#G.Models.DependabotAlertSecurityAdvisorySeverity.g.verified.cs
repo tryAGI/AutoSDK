@@ -14,13 +14,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="low")]
-        Low,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="medium")]
-        Medium,
+        [global::System.Runtime.Serialization.EnumMember(Value="critical")]
+        Critical,
         /// <summary>
         /// 
         /// </summary>
@@ -29,8 +24,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="critical")]
-        Critical,
+        [global::System.Runtime.Serialization.EnumMember(Value="low")]
+        Low,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="medium")]
+        Medium,
     }
 
     /// <summary>
@@ -45,10 +45,10 @@ namespace G
         {
             return value switch
             {
+                DependabotAlertSecurityAdvisorySeverity.Critical => "critical",
+                DependabotAlertSecurityAdvisorySeverity.High => "high",
                 DependabotAlertSecurityAdvisorySeverity.Low => "low",
                 DependabotAlertSecurityAdvisorySeverity.Medium => "medium",
-                DependabotAlertSecurityAdvisorySeverity.High => "high",
-                DependabotAlertSecurityAdvisorySeverity.Critical => "critical",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,10 +59,10 @@ namespace G
         {
             return value switch
             {
+                "critical" => DependabotAlertSecurityAdvisorySeverity.Critical,
+                "high" => DependabotAlertSecurityAdvisorySeverity.High,
                 "low" => DependabotAlertSecurityAdvisorySeverity.Low,
                 "medium" => DependabotAlertSecurityAdvisorySeverity.Medium,
-                "high" => DependabotAlertSecurityAdvisorySeverity.High,
-                "critical" => DependabotAlertSecurityAdvisorySeverity.Critical,
                 _ => null,
             };
         }

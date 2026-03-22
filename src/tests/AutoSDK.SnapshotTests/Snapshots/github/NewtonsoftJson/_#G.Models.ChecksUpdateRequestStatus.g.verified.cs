@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
-        Queued,
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -23,13 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
-        Completed,
+        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
+        Pending,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="waiting")]
-        Waiting,
+        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
+        Queued,
         /// <summary>
         /// 
         /// </summary>
@@ -38,8 +38,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
-        Pending,
+        [global::System.Runtime.Serialization.EnumMember(Value="waiting")]
+        Waiting,
     }
 
     /// <summary>
@@ -54,12 +54,12 @@ namespace G
         {
             return value switch
             {
-                ChecksUpdateRequestStatus.Queued => "queued",
-                ChecksUpdateRequestStatus.InProgress => "in_progress",
                 ChecksUpdateRequestStatus.Completed => "completed",
-                ChecksUpdateRequestStatus.Waiting => "waiting",
-                ChecksUpdateRequestStatus.Requested => "requested",
+                ChecksUpdateRequestStatus.InProgress => "in_progress",
                 ChecksUpdateRequestStatus.Pending => "pending",
+                ChecksUpdateRequestStatus.Queued => "queued",
+                ChecksUpdateRequestStatus.Requested => "requested",
+                ChecksUpdateRequestStatus.Waiting => "waiting",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,12 +70,12 @@ namespace G
         {
             return value switch
             {
-                "queued" => ChecksUpdateRequestStatus.Queued,
-                "in_progress" => ChecksUpdateRequestStatus.InProgress,
                 "completed" => ChecksUpdateRequestStatus.Completed,
-                "waiting" => ChecksUpdateRequestStatus.Waiting,
-                "requested" => ChecksUpdateRequestStatus.Requested,
+                "in_progress" => ChecksUpdateRequestStatus.InProgress,
                 "pending" => ChecksUpdateRequestStatus.Pending,
+                "queued" => ChecksUpdateRequestStatus.Queued,
+                "requested" => ChecksUpdateRequestStatus.Requested,
+                "waiting" => ChecksUpdateRequestStatus.Waiting,
                 _ => null,
             };
         }

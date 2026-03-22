@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        String,
+        MultiSelect,
         /// <summary>
         /// 
         /// </summary>
@@ -21,7 +21,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        MultiSelect,
+        String,
         /// <summary>
         /// 
         /// </summary>
@@ -40,9 +40,9 @@ namespace G
         {
             return value switch
             {
-                OrgsCreateOrUpdateCustomPropertyRequestValueType.String => "string",
-                OrgsCreateOrUpdateCustomPropertyRequestValueType.SingleSelect => "single_select",
                 OrgsCreateOrUpdateCustomPropertyRequestValueType.MultiSelect => "multi_select",
+                OrgsCreateOrUpdateCustomPropertyRequestValueType.SingleSelect => "single_select",
+                OrgsCreateOrUpdateCustomPropertyRequestValueType.String => "string",
                 OrgsCreateOrUpdateCustomPropertyRequestValueType.TrueFalse => "true_false",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -54,9 +54,9 @@ namespace G
         {
             return value switch
             {
-                "string" => OrgsCreateOrUpdateCustomPropertyRequestValueType.String,
-                "single_select" => OrgsCreateOrUpdateCustomPropertyRequestValueType.SingleSelect,
                 "multi_select" => OrgsCreateOrUpdateCustomPropertyRequestValueType.MultiSelect,
+                "single_select" => OrgsCreateOrUpdateCustomPropertyRequestValueType.SingleSelect,
+                "string" => OrgsCreateOrUpdateCustomPropertyRequestValueType.String,
                 "true_false" => OrgsCreateOrUpdateCustomPropertyRequestValueType.TrueFalse,
                 _ => null,
             };

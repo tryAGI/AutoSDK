@@ -14,6 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
+        Cancelled,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="completed")]
         Completed,
         /// <summary>
@@ -29,18 +34,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
-        Cancelled,
+        [global::System.Runtime.Serialization.EnumMember(Value="incomplete")]
+        Incomplete,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="queued")]
         Queued,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="incomplete")]
-        Incomplete,
     }
 
     /// <summary>
@@ -55,12 +55,12 @@ namespace G
         {
             return value switch
             {
+                ResponseVariant3Status.Cancelled => "cancelled",
                 ResponseVariant3Status.Completed => "completed",
                 ResponseVariant3Status.Failed => "failed",
                 ResponseVariant3Status.InProgress => "in_progress",
-                ResponseVariant3Status.Cancelled => "cancelled",
-                ResponseVariant3Status.Queued => "queued",
                 ResponseVariant3Status.Incomplete => "incomplete",
+                ResponseVariant3Status.Queued => "queued",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -71,12 +71,12 @@ namespace G
         {
             return value switch
             {
+                "cancelled" => ResponseVariant3Status.Cancelled,
                 "completed" => ResponseVariant3Status.Completed,
                 "failed" => ResponseVariant3Status.Failed,
                 "in_progress" => ResponseVariant3Status.InProgress,
-                "cancelled" => ResponseVariant3Status.Cancelled,
-                "queued" => ResponseVariant3Status.Queued,
                 "incomplete" => ResponseVariant3Status.Incomplete,
+                "queued" => ResponseVariant3Status.Queued,
                 _ => null,
             };
         }

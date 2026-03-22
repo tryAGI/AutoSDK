@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        TranscriptResult,
+        ListenMetadata,
         /// <summary>
         /// 
         /// </summary>
-        ListenMetadata,
+        TranscriptResult,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ListenV1ServerEventDiscriminatorMessageType.TranscriptResult => "transcript_result",
                 ListenV1ServerEventDiscriminatorMessageType.ListenMetadata => "listen_metadata",
+                ListenV1ServerEventDiscriminatorMessageType.TranscriptResult => "transcript_result",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "transcript_result" => ListenV1ServerEventDiscriminatorMessageType.TranscriptResult,
                 "listen_metadata" => ListenV1ServerEventDiscriminatorMessageType.ListenMetadata,
+                "transcript_result" => ListenV1ServerEventDiscriminatorMessageType.TranscriptResult,
                 _ => null,
             };
         }

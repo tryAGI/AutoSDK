@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Mcp,
+        Lambda,
         /// <summary>
         /// 
         /// </summary>
-        Lambda,
+        Mcp,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                UpdateToolRequestDiscriminatorType.Mcp => "mcp",
                 UpdateToolRequestDiscriminatorType.Lambda => "lambda",
+                UpdateToolRequestDiscriminatorType.Mcp => "mcp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "mcp" => UpdateToolRequestDiscriminatorType.Mcp,
                 "lambda" => UpdateToolRequestDiscriminatorType.Lambda,
+                "mcp" => UpdateToolRequestDiscriminatorType.Mcp,
                 _ => null,
             };
         }

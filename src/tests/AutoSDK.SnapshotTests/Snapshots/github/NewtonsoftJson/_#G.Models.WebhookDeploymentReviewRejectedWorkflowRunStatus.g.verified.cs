@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="requested")]
-        Requested,
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -23,13 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
-        Completed,
+        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
+        Queued,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
-        Queued,
+        [global::System.Runtime.Serialization.EnumMember(Value="requested")]
+        Requested,
         /// <summary>
         /// 
         /// </summary>
@@ -49,10 +49,10 @@ namespace G
         {
             return value switch
             {
-                WebhookDeploymentReviewRejectedWorkflowRunStatus.Requested => "requested",
-                WebhookDeploymentReviewRejectedWorkflowRunStatus.InProgress => "in_progress",
                 WebhookDeploymentReviewRejectedWorkflowRunStatus.Completed => "completed",
+                WebhookDeploymentReviewRejectedWorkflowRunStatus.InProgress => "in_progress",
                 WebhookDeploymentReviewRejectedWorkflowRunStatus.Queued => "queued",
+                WebhookDeploymentReviewRejectedWorkflowRunStatus.Requested => "requested",
                 WebhookDeploymentReviewRejectedWorkflowRunStatus.Waiting => "waiting",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -64,10 +64,10 @@ namespace G
         {
             return value switch
             {
-                "requested" => WebhookDeploymentReviewRejectedWorkflowRunStatus.Requested,
-                "in_progress" => WebhookDeploymentReviewRejectedWorkflowRunStatus.InProgress,
                 "completed" => WebhookDeploymentReviewRejectedWorkflowRunStatus.Completed,
+                "in_progress" => WebhookDeploymentReviewRejectedWorkflowRunStatus.InProgress,
                 "queued" => WebhookDeploymentReviewRejectedWorkflowRunStatus.Queued,
+                "requested" => WebhookDeploymentReviewRejectedWorkflowRunStatus.Requested,
                 "waiting" => WebhookDeploymentReviewRejectedWorkflowRunStatus.Waiting,
                 _ => null,
             };

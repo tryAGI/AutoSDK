@@ -16,6 +16,11 @@ namespace G
     public enum SubAgentSessionMode
     {
         /// <summary>
+        /// Always create a new session on each invocation
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="ephemeral")]
+        Ephemeral,
+        /// <summary>
         /// LLM decides whether to create new or resume existing session
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="llm_controlled")]
@@ -25,11 +30,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="persistent")]
         Persistent,
-        /// <summary>
-        /// Always create a new session on each invocation
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="ephemeral")]
-        Ephemeral,
     }
 
     /// <summary>
@@ -44,9 +44,9 @@ namespace G
         {
             return value switch
             {
+                SubAgentSessionMode.Ephemeral => "ephemeral",
                 SubAgentSessionMode.LlmControlled => "llm_controlled",
                 SubAgentSessionMode.Persistent => "persistent",
-                SubAgentSessionMode.Ephemeral => "ephemeral",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,9 +57,9 @@ namespace G
         {
             return value switch
             {
+                "ephemeral" => SubAgentSessionMode.Ephemeral,
                 "llm_controlled" => SubAgentSessionMode.LlmControlled,
                 "persistent" => SubAgentSessionMode.Persistent,
-                "ephemeral" => SubAgentSessionMode.Ephemeral,
                 _ => null,
             };
         }

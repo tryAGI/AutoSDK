@@ -16,7 +16,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Updated,
+        FullName,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        FullName,
+        Updated,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
             return value switch
             {
                 ReposListForUserSort.Created => "created",
-                ReposListForUserSort.Updated => "updated",
-                ReposListForUserSort.Pushed => "pushed",
                 ReposListForUserSort.FullName => "full_name",
+                ReposListForUserSort.Pushed => "pushed",
+                ReposListForUserSort.Updated => "updated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace G
             return value switch
             {
                 "created" => ReposListForUserSort.Created,
-                "updated" => ReposListForUserSort.Updated,
-                "pushed" => ReposListForUserSort.Pushed,
                 "full_name" => ReposListForUserSort.FullName,
+                "pushed" => ReposListForUserSort.Pushed,
+                "updated" => ReposListForUserSort.Updated,
                 _ => null,
             };
         }

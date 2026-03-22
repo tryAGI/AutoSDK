@@ -14,11 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Markdown,
+        Gfm,
         /// <summary>
         /// 
         /// </summary>
-        Gfm,
+        Markdown,
     }
 
     /// <summary>
@@ -33,8 +33,8 @@ namespace G
         {
             return value switch
             {
-                MarkdownRenderRequestMode.Markdown => "markdown",
                 MarkdownRenderRequestMode.Gfm => "gfm",
+                MarkdownRenderRequestMode.Markdown => "markdown",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -45,8 +45,8 @@ namespace G
         {
             return value switch
             {
-                "markdown" => MarkdownRenderRequestMode.Markdown,
                 "gfm" => MarkdownRenderRequestMode.Gfm,
+                "markdown" => MarkdownRenderRequestMode.Markdown,
                 _ => null,
             };
         }

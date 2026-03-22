@@ -11,11 +11,6 @@ namespace G
     public enum TTSModelFamily
     {
         /// <summary>
-        /// Deprecated: Use flash instead.
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="turbo")]
-        Turbo,
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="flash")]
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="multilingual")]
         Multilingual,
+        /// <summary>
+        /// Deprecated: Use flash instead.
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="turbo")]
+        Turbo,
         /// <summary>
         /// 
         /// </summary>
@@ -44,9 +44,9 @@ namespace G
         {
             return value switch
             {
-                TTSModelFamily.Turbo => "turbo",
                 TTSModelFamily.Flash => "flash",
                 TTSModelFamily.Multilingual => "multilingual",
+                TTSModelFamily.Turbo => "turbo",
                 TTSModelFamily.V3Conversational => "v3_conversational",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -58,9 +58,9 @@ namespace G
         {
             return value switch
             {
-                "turbo" => TTSModelFamily.Turbo,
                 "flash" => TTSModelFamily.Flash,
                 "multilingual" => TTSModelFamily.Multilingual,
+                "turbo" => TTSModelFamily.Turbo,
                 "v3_conversational" => TTSModelFamily.V3Conversational,
                 _ => null,
             };

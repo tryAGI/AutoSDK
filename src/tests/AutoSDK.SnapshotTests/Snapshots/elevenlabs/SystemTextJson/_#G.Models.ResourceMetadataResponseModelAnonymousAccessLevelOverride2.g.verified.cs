@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Editor,
+        Commenter,
         /// <summary>
         /// 
         /// </summary>
-        Commenter,
+        Editor,
         /// <summary>
         /// 
         /// </summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 ResourceMetadataResponseModelAnonymousAccessLevelOverride2.Admin => "admin",
-                ResourceMetadataResponseModelAnonymousAccessLevelOverride2.Editor => "editor",
                 ResourceMetadataResponseModelAnonymousAccessLevelOverride2.Commenter => "commenter",
+                ResourceMetadataResponseModelAnonymousAccessLevelOverride2.Editor => "editor",
                 ResourceMetadataResponseModelAnonymousAccessLevelOverride2.Viewer => "viewer",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -54,8 +54,8 @@ namespace G
             return value switch
             {
                 "admin" => ResourceMetadataResponseModelAnonymousAccessLevelOverride2.Admin,
-                "editor" => ResourceMetadataResponseModelAnonymousAccessLevelOverride2.Editor,
                 "commenter" => ResourceMetadataResponseModelAnonymousAccessLevelOverride2.Commenter,
+                "editor" => ResourceMetadataResponseModelAnonymousAccessLevelOverride2.Editor,
                 "viewer" => ResourceMetadataResponseModelAnonymousAccessLevelOverride2.Viewer,
                 _ => null,
             };

@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookPullRequestReviewRequestedVariant1PullRequestUserType.Bot => "Bot",
-                WebhookPullRequestReviewRequestedVariant1PullRequestUserType.User => "User",
-                WebhookPullRequestReviewRequestedVariant1PullRequestUserType.Organization => "Organization",
                 WebhookPullRequestReviewRequestedVariant1PullRequestUserType.Mannequin => "Mannequin",
+                WebhookPullRequestReviewRequestedVariant1PullRequestUserType.Organization => "Organization",
+                WebhookPullRequestReviewRequestedVariant1PullRequestUserType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestReviewRequestedVariant1PullRequestUserType.Bot,
-                "User" => WebhookPullRequestReviewRequestedVariant1PullRequestUserType.User,
-                "Organization" => WebhookPullRequestReviewRequestedVariant1PullRequestUserType.Organization,
                 "Mannequin" => WebhookPullRequestReviewRequestedVariant1PullRequestUserType.Mannequin,
+                "Organization" => WebhookPullRequestReviewRequestedVariant1PullRequestUserType.Organization,
+                "User" => WebhookPullRequestReviewRequestedVariant1PullRequestUserType.User,
                 _ => null,
             };
         }

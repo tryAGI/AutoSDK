@@ -16,8 +16,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="PR_BODY")]
-        PrBody,
+        [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
+        Blank,
         /// <summary>
         /// 
         /// </summary>
@@ -26,8 +26,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
-        Blank,
+        [global::System.Runtime.Serialization.EnumMember(Value="PR_BODY")]
+        PrBody,
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestEnqueuedPullRequestHeadRepoSquashMergeCommitMessage.PrBody => "PR_BODY",
-                WebhookPullRequestEnqueuedPullRequestHeadRepoSquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
                 WebhookPullRequestEnqueuedPullRequestHeadRepoSquashMergeCommitMessage.Blank => "BLANK",
+                WebhookPullRequestEnqueuedPullRequestHeadRepoSquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
+                WebhookPullRequestEnqueuedPullRequestHeadRepoSquashMergeCommitMessage.PrBody => "PR_BODY",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,9 +55,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => WebhookPullRequestEnqueuedPullRequestHeadRepoSquashMergeCommitMessage.PrBody,
-                "COMMIT_MESSAGES" => WebhookPullRequestEnqueuedPullRequestHeadRepoSquashMergeCommitMessage.CommitMessages,
                 "BLANK" => WebhookPullRequestEnqueuedPullRequestHeadRepoSquashMergeCommitMessage.Blank,
+                "COMMIT_MESSAGES" => WebhookPullRequestEnqueuedPullRequestHeadRepoSquashMergeCommitMessage.CommitMessages,
+                "PR_BODY" => WebhookPullRequestEnqueuedPullRequestHeadRepoSquashMergeCommitMessage.PrBody,
                 _ => null,
             };
         }

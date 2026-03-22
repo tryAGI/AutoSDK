@@ -12,7 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Nova3,
+        Base,
+        /// <summary>
+        /// 
+        /// </summary>
+        Enhanced,
         /// <summary>
         /// 
         /// </summary>
@@ -20,11 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Base,
-        /// <summary>
-        /// 
-        /// </summary>
-        Enhanced,
+        Nova3,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                ListenV1Model.Nova3 => "nova-3",
-                ListenV1Model.Nova2 => "nova-2",
                 ListenV1Model.Base => "base",
                 ListenV1Model.Enhanced => "enhanced",
+                ListenV1Model.Nova2 => "nova-2",
+                ListenV1Model.Nova3 => "nova-3",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "nova-3" => ListenV1Model.Nova3,
-                "nova-2" => ListenV1Model.Nova2,
                 "base" => ListenV1Model.Base,
                 "enhanced" => ListenV1Model.Enhanced,
+                "nova-2" => ListenV1Model.Nova2,
+                "nova-3" => ListenV1Model.Nova3,
                 _ => null,
             };
         }

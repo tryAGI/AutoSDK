@@ -12,7 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        StreamStart,
+        CitationGeneration,
+        /// <summary>
+        /// 
+        /// </summary>
+        Debug,
         /// <summary>
         /// 
         /// </summary>
@@ -24,19 +28,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        TextGeneration,
-        /// <summary>
-        /// 
-        /// </summary>
-        CitationGeneration,
-        /// <summary>
-        /// 
-        /// </summary>
-        ToolCallsGeneration,
-        /// <summary>
-        /// 
-        /// </summary>
         StreamEnd,
+        /// <summary>
+        /// 
+        /// </summary>
+        StreamStart,
+        /// <summary>
+        /// 
+        /// </summary>
+        TextGeneration,
         /// <summary>
         /// 
         /// </summary>
@@ -44,7 +44,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Debug,
+        ToolCallsGeneration,
     }
 
     /// <summary>
@@ -59,15 +59,15 @@ namespace G
         {
             return value switch
             {
-                StreamedChatResponseDiscriminatorEventType.StreamStart => "stream-start",
+                StreamedChatResponseDiscriminatorEventType.CitationGeneration => "citation-generation",
+                StreamedChatResponseDiscriminatorEventType.Debug => "debug",
                 StreamedChatResponseDiscriminatorEventType.SearchQueriesGeneration => "search-queries-generation",
                 StreamedChatResponseDiscriminatorEventType.SearchResults => "search-results",
-                StreamedChatResponseDiscriminatorEventType.TextGeneration => "text-generation",
-                StreamedChatResponseDiscriminatorEventType.CitationGeneration => "citation-generation",
-                StreamedChatResponseDiscriminatorEventType.ToolCallsGeneration => "tool-calls-generation",
                 StreamedChatResponseDiscriminatorEventType.StreamEnd => "stream-end",
+                StreamedChatResponseDiscriminatorEventType.StreamStart => "stream-start",
+                StreamedChatResponseDiscriminatorEventType.TextGeneration => "text-generation",
                 StreamedChatResponseDiscriminatorEventType.ToolCallsChunk => "tool-calls-chunk",
-                StreamedChatResponseDiscriminatorEventType.Debug => "debug",
+                StreamedChatResponseDiscriminatorEventType.ToolCallsGeneration => "tool-calls-generation",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -78,15 +78,15 @@ namespace G
         {
             return value switch
             {
-                "stream-start" => StreamedChatResponseDiscriminatorEventType.StreamStart,
+                "citation-generation" => StreamedChatResponseDiscriminatorEventType.CitationGeneration,
+                "debug" => StreamedChatResponseDiscriminatorEventType.Debug,
                 "search-queries-generation" => StreamedChatResponseDiscriminatorEventType.SearchQueriesGeneration,
                 "search-results" => StreamedChatResponseDiscriminatorEventType.SearchResults,
-                "text-generation" => StreamedChatResponseDiscriminatorEventType.TextGeneration,
-                "citation-generation" => StreamedChatResponseDiscriminatorEventType.CitationGeneration,
-                "tool-calls-generation" => StreamedChatResponseDiscriminatorEventType.ToolCallsGeneration,
                 "stream-end" => StreamedChatResponseDiscriminatorEventType.StreamEnd,
+                "stream-start" => StreamedChatResponseDiscriminatorEventType.StreamStart,
+                "text-generation" => StreamedChatResponseDiscriminatorEventType.TextGeneration,
                 "tool-calls-chunk" => StreamedChatResponseDiscriminatorEventType.ToolCallsChunk,
-                "debug" => StreamedChatResponseDiscriminatorEventType.Debug,
+                "tool-calls-generation" => StreamedChatResponseDiscriminatorEventType.ToolCallsGeneration,
                 _ => null,
             };
         }

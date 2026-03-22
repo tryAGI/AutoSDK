@@ -13,68 +13,48 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="voice")]
-        Voice,
+        [global::System.Runtime.Serialization.EnumMember(Value="assets")]
+        Assets,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="voice_collection")]
-        VoiceCollection,
+        [global::System.Runtime.Serialization.EnumMember(Value="content_generations")]
+        ContentGenerations,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pronunciation_dictionary")]
-        PronunciationDictionary,
+        [global::System.Runtime.Serialization.EnumMember(Value="content_templates")]
+        ContentTemplates,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="dubbing")]
-        Dubbing,
+        [global::System.Runtime.Serialization.EnumMember(Value="convai_agent_branches")]
+        ConvaiAgentBranches,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="project")]
-        Project,
+        [global::System.Runtime.Serialization.EnumMember(Value="convai_agent_drafts")]
+        ConvaiAgentDrafts,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="convai_agent_response_tests")]
+        ConvaiAgentResponseTests,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="convai_agent_versions")]
+        ConvaiAgentVersions,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="convai_agent_versions_deployments")]
+        ConvaiAgentVersionsDeployments,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="convai_agents")]
         ConvaiAgents,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="convai_knowledge_base_documents")]
-        ConvaiKnowledgeBaseDocuments,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="convai_tools")]
-        ConvaiTools,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="convai_settings")]
-        ConvaiSettings,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="convai_secrets")]
-        ConvaiSecrets,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="workspace_auth_connections")]
-        WorkspaceAuthConnections,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="convai_phone_numbers")]
-        ConvaiPhoneNumbers,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="convai_mcp_servers")]
-        ConvaiMcpServers,
         /// <summary>
         /// 
         /// </summary>
@@ -93,13 +73,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="convai_agent_response_tests")]
-        ConvaiAgentResponseTests,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="convai_test_suite_invocations")]
-        ConvaiTestSuiteInvocations,
+        [global::System.Runtime.Serialization.EnumMember(Value="convai_coaching_proposals")]
+        ConvaiCoachingProposals,
         /// <summary>
         /// 
         /// </summary>
@@ -113,23 +88,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="convai_whatsapp_accounts")]
-        ConvaiWhatsappAccounts,
+        [global::System.Runtime.Serialization.EnumMember(Value="convai_knowledge_base_documents")]
+        ConvaiKnowledgeBaseDocuments,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="convai_agent_versions")]
-        ConvaiAgentVersions,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="convai_agent_branches")]
-        ConvaiAgentBranches,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="convai_agent_versions_deployments")]
-        ConvaiAgentVersionsDeployments,
+        [global::System.Runtime.Serialization.EnumMember(Value="convai_mcp_servers")]
+        ConvaiMcpServers,
         /// <summary>
         /// 
         /// </summary>
@@ -138,8 +103,33 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="convai_coaching_proposals")]
-        ConvaiCoachingProposals,
+        [global::System.Runtime.Serialization.EnumMember(Value="convai_phone_numbers")]
+        ConvaiPhoneNumbers,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="convai_secrets")]
+        ConvaiSecrets,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="convai_settings")]
+        ConvaiSettings,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="convai_test_suite_invocations")]
+        ConvaiTestSuiteInvocations,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="convai_tools")]
+        ConvaiTools,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="convai_whatsapp_accounts")]
+        ConvaiWhatsappAccounts,
         /// <summary>
         /// 
         /// </summary>
@@ -153,8 +143,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="convai_agent_drafts")]
-        ConvaiAgentDrafts,
+        [global::System.Runtime.Serialization.EnumMember(Value="dubbing")]
+        Dubbing,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="project")]
+        Project,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="pronunciation_dictionary")]
+        PronunciationDictionary,
         /// <summary>
         /// 
         /// </summary>
@@ -163,23 +163,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="assets")]
-        Assets,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="content_generations")]
-        ContentGenerations,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="content_templates")]
-        ContentTemplates,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="songs")]
         Songs,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="voice")]
+        Voice,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="voice_collection")]
+        VoiceCollection,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="workspace_auth_connections")]
+        WorkspaceAuthConnections,
     }
 
     /// <summary>
@@ -194,40 +194,40 @@ namespace G
         {
             return value switch
             {
-                WorkspaceResourceType.Voice => "voice",
-                WorkspaceResourceType.VoiceCollection => "voice_collection",
-                WorkspaceResourceType.PronunciationDictionary => "pronunciation_dictionary",
-                WorkspaceResourceType.Dubbing => "dubbing",
-                WorkspaceResourceType.Project => "project",
-                WorkspaceResourceType.ConvaiAgents => "convai_agents",
-                WorkspaceResourceType.ConvaiKnowledgeBaseDocuments => "convai_knowledge_base_documents",
-                WorkspaceResourceType.ConvaiTools => "convai_tools",
-                WorkspaceResourceType.ConvaiSettings => "convai_settings",
-                WorkspaceResourceType.ConvaiSecrets => "convai_secrets",
-                WorkspaceResourceType.WorkspaceAuthConnections => "workspace_auth_connections",
-                WorkspaceResourceType.ConvaiPhoneNumbers => "convai_phone_numbers",
-                WorkspaceResourceType.ConvaiMcpServers => "convai_mcp_servers",
-                WorkspaceResourceType.ConvaiApiIntegrationConnections => "convai_api_integration_connections",
-                WorkspaceResourceType.ConvaiApiIntegrationTriggerConnections => "convai_api_integration_trigger_connections",
-                WorkspaceResourceType.ConvaiBatchCalls => "convai_batch_calls",
-                WorkspaceResourceType.ConvaiAgentResponseTests => "convai_agent_response_tests",
-                WorkspaceResourceType.ConvaiTestSuiteInvocations => "convai_test_suite_invocations",
-                WorkspaceResourceType.ConvaiCrawlJobs => "convai_crawl_jobs",
-                WorkspaceResourceType.ConvaiCrawlTasks => "convai_crawl_tasks",
-                WorkspaceResourceType.ConvaiWhatsappAccounts => "convai_whatsapp_accounts",
-                WorkspaceResourceType.ConvaiAgentVersions => "convai_agent_versions",
-                WorkspaceResourceType.ConvaiAgentBranches => "convai_agent_branches",
-                WorkspaceResourceType.ConvaiAgentVersionsDeployments => "convai_agent_versions_deployments",
-                WorkspaceResourceType.ConvaiMemoryEntries => "convai_memory_entries",
-                WorkspaceResourceType.ConvaiCoachingProposals => "convai_coaching_proposals",
-                WorkspaceResourceType.Dashboard => "dashboard",
-                WorkspaceResourceType.DashboardConfiguration => "dashboard_configuration",
-                WorkspaceResourceType.ConvaiAgentDrafts => "convai_agent_drafts",
-                WorkspaceResourceType.ResourceLocators => "resource_locators",
                 WorkspaceResourceType.Assets => "assets",
                 WorkspaceResourceType.ContentGenerations => "content_generations",
                 WorkspaceResourceType.ContentTemplates => "content_templates",
+                WorkspaceResourceType.ConvaiAgentBranches => "convai_agent_branches",
+                WorkspaceResourceType.ConvaiAgentDrafts => "convai_agent_drafts",
+                WorkspaceResourceType.ConvaiAgentResponseTests => "convai_agent_response_tests",
+                WorkspaceResourceType.ConvaiAgentVersions => "convai_agent_versions",
+                WorkspaceResourceType.ConvaiAgentVersionsDeployments => "convai_agent_versions_deployments",
+                WorkspaceResourceType.ConvaiAgents => "convai_agents",
+                WorkspaceResourceType.ConvaiApiIntegrationConnections => "convai_api_integration_connections",
+                WorkspaceResourceType.ConvaiApiIntegrationTriggerConnections => "convai_api_integration_trigger_connections",
+                WorkspaceResourceType.ConvaiBatchCalls => "convai_batch_calls",
+                WorkspaceResourceType.ConvaiCoachingProposals => "convai_coaching_proposals",
+                WorkspaceResourceType.ConvaiCrawlJobs => "convai_crawl_jobs",
+                WorkspaceResourceType.ConvaiCrawlTasks => "convai_crawl_tasks",
+                WorkspaceResourceType.ConvaiKnowledgeBaseDocuments => "convai_knowledge_base_documents",
+                WorkspaceResourceType.ConvaiMcpServers => "convai_mcp_servers",
+                WorkspaceResourceType.ConvaiMemoryEntries => "convai_memory_entries",
+                WorkspaceResourceType.ConvaiPhoneNumbers => "convai_phone_numbers",
+                WorkspaceResourceType.ConvaiSecrets => "convai_secrets",
+                WorkspaceResourceType.ConvaiSettings => "convai_settings",
+                WorkspaceResourceType.ConvaiTestSuiteInvocations => "convai_test_suite_invocations",
+                WorkspaceResourceType.ConvaiTools => "convai_tools",
+                WorkspaceResourceType.ConvaiWhatsappAccounts => "convai_whatsapp_accounts",
+                WorkspaceResourceType.Dashboard => "dashboard",
+                WorkspaceResourceType.DashboardConfiguration => "dashboard_configuration",
+                WorkspaceResourceType.Dubbing => "dubbing",
+                WorkspaceResourceType.Project => "project",
+                WorkspaceResourceType.PronunciationDictionary => "pronunciation_dictionary",
+                WorkspaceResourceType.ResourceLocators => "resource_locators",
                 WorkspaceResourceType.Songs => "songs",
+                WorkspaceResourceType.Voice => "voice",
+                WorkspaceResourceType.VoiceCollection => "voice_collection",
+                WorkspaceResourceType.WorkspaceAuthConnections => "workspace_auth_connections",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -238,40 +238,40 @@ namespace G
         {
             return value switch
             {
-                "voice" => WorkspaceResourceType.Voice,
-                "voice_collection" => WorkspaceResourceType.VoiceCollection,
-                "pronunciation_dictionary" => WorkspaceResourceType.PronunciationDictionary,
-                "dubbing" => WorkspaceResourceType.Dubbing,
-                "project" => WorkspaceResourceType.Project,
-                "convai_agents" => WorkspaceResourceType.ConvaiAgents,
-                "convai_knowledge_base_documents" => WorkspaceResourceType.ConvaiKnowledgeBaseDocuments,
-                "convai_tools" => WorkspaceResourceType.ConvaiTools,
-                "convai_settings" => WorkspaceResourceType.ConvaiSettings,
-                "convai_secrets" => WorkspaceResourceType.ConvaiSecrets,
-                "workspace_auth_connections" => WorkspaceResourceType.WorkspaceAuthConnections,
-                "convai_phone_numbers" => WorkspaceResourceType.ConvaiPhoneNumbers,
-                "convai_mcp_servers" => WorkspaceResourceType.ConvaiMcpServers,
-                "convai_api_integration_connections" => WorkspaceResourceType.ConvaiApiIntegrationConnections,
-                "convai_api_integration_trigger_connections" => WorkspaceResourceType.ConvaiApiIntegrationTriggerConnections,
-                "convai_batch_calls" => WorkspaceResourceType.ConvaiBatchCalls,
-                "convai_agent_response_tests" => WorkspaceResourceType.ConvaiAgentResponseTests,
-                "convai_test_suite_invocations" => WorkspaceResourceType.ConvaiTestSuiteInvocations,
-                "convai_crawl_jobs" => WorkspaceResourceType.ConvaiCrawlJobs,
-                "convai_crawl_tasks" => WorkspaceResourceType.ConvaiCrawlTasks,
-                "convai_whatsapp_accounts" => WorkspaceResourceType.ConvaiWhatsappAccounts,
-                "convai_agent_versions" => WorkspaceResourceType.ConvaiAgentVersions,
-                "convai_agent_branches" => WorkspaceResourceType.ConvaiAgentBranches,
-                "convai_agent_versions_deployments" => WorkspaceResourceType.ConvaiAgentVersionsDeployments,
-                "convai_memory_entries" => WorkspaceResourceType.ConvaiMemoryEntries,
-                "convai_coaching_proposals" => WorkspaceResourceType.ConvaiCoachingProposals,
-                "dashboard" => WorkspaceResourceType.Dashboard,
-                "dashboard_configuration" => WorkspaceResourceType.DashboardConfiguration,
-                "convai_agent_drafts" => WorkspaceResourceType.ConvaiAgentDrafts,
-                "resource_locators" => WorkspaceResourceType.ResourceLocators,
                 "assets" => WorkspaceResourceType.Assets,
                 "content_generations" => WorkspaceResourceType.ContentGenerations,
                 "content_templates" => WorkspaceResourceType.ContentTemplates,
+                "convai_agent_branches" => WorkspaceResourceType.ConvaiAgentBranches,
+                "convai_agent_drafts" => WorkspaceResourceType.ConvaiAgentDrafts,
+                "convai_agent_response_tests" => WorkspaceResourceType.ConvaiAgentResponseTests,
+                "convai_agent_versions" => WorkspaceResourceType.ConvaiAgentVersions,
+                "convai_agent_versions_deployments" => WorkspaceResourceType.ConvaiAgentVersionsDeployments,
+                "convai_agents" => WorkspaceResourceType.ConvaiAgents,
+                "convai_api_integration_connections" => WorkspaceResourceType.ConvaiApiIntegrationConnections,
+                "convai_api_integration_trigger_connections" => WorkspaceResourceType.ConvaiApiIntegrationTriggerConnections,
+                "convai_batch_calls" => WorkspaceResourceType.ConvaiBatchCalls,
+                "convai_coaching_proposals" => WorkspaceResourceType.ConvaiCoachingProposals,
+                "convai_crawl_jobs" => WorkspaceResourceType.ConvaiCrawlJobs,
+                "convai_crawl_tasks" => WorkspaceResourceType.ConvaiCrawlTasks,
+                "convai_knowledge_base_documents" => WorkspaceResourceType.ConvaiKnowledgeBaseDocuments,
+                "convai_mcp_servers" => WorkspaceResourceType.ConvaiMcpServers,
+                "convai_memory_entries" => WorkspaceResourceType.ConvaiMemoryEntries,
+                "convai_phone_numbers" => WorkspaceResourceType.ConvaiPhoneNumbers,
+                "convai_secrets" => WorkspaceResourceType.ConvaiSecrets,
+                "convai_settings" => WorkspaceResourceType.ConvaiSettings,
+                "convai_test_suite_invocations" => WorkspaceResourceType.ConvaiTestSuiteInvocations,
+                "convai_tools" => WorkspaceResourceType.ConvaiTools,
+                "convai_whatsapp_accounts" => WorkspaceResourceType.ConvaiWhatsappAccounts,
+                "dashboard" => WorkspaceResourceType.Dashboard,
+                "dashboard_configuration" => WorkspaceResourceType.DashboardConfiguration,
+                "dubbing" => WorkspaceResourceType.Dubbing,
+                "project" => WorkspaceResourceType.Project,
+                "pronunciation_dictionary" => WorkspaceResourceType.PronunciationDictionary,
+                "resource_locators" => WorkspaceResourceType.ResourceLocators,
                 "songs" => WorkspaceResourceType.Songs,
+                "voice" => WorkspaceResourceType.Voice,
+                "voice_collection" => WorkspaceResourceType.VoiceCollection,
+                "workspace_auth_connections" => WorkspaceResourceType.WorkspaceAuthConnections,
                 _ => null,
             };
         }

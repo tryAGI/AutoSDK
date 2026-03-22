@@ -13,18 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="rephrase")]
-        Rephrase,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="search")]
-        Search,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="rerank")]
-        Rerank,
+        [global::System.Runtime.Serialization.EnumMember(Value="fcs")]
+        Fcs,
         /// <summary>
         /// 
         /// </summary>
@@ -33,13 +23,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="fcs")]
-        Fcs,
+        [global::System.Runtime.Serialization.EnumMember(Value="rephrase")]
+        Rephrase,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="rerank")]
+        Rerank,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="rewritten_query")]
         RewrittenQuery,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="search")]
+        Search,
     }
 
     /// <summary>
@@ -54,12 +54,12 @@ namespace G
         {
             return value switch
             {
-                QueryHistorySpanDiscriminatorType.Rephrase => "rephrase",
-                QueryHistorySpanDiscriminatorType.Search => "search",
-                QueryHistorySpanDiscriminatorType.Rerank => "rerank",
-                QueryHistorySpanDiscriminatorType.Generation => "generation",
                 QueryHistorySpanDiscriminatorType.Fcs => "fcs",
+                QueryHistorySpanDiscriminatorType.Generation => "generation",
+                QueryHistorySpanDiscriminatorType.Rephrase => "rephrase",
+                QueryHistorySpanDiscriminatorType.Rerank => "rerank",
                 QueryHistorySpanDiscriminatorType.RewrittenQuery => "rewritten_query",
+                QueryHistorySpanDiscriminatorType.Search => "search",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,12 +70,12 @@ namespace G
         {
             return value switch
             {
-                "rephrase" => QueryHistorySpanDiscriminatorType.Rephrase,
-                "search" => QueryHistorySpanDiscriminatorType.Search,
-                "rerank" => QueryHistorySpanDiscriminatorType.Rerank,
-                "generation" => QueryHistorySpanDiscriminatorType.Generation,
                 "fcs" => QueryHistorySpanDiscriminatorType.Fcs,
+                "generation" => QueryHistorySpanDiscriminatorType.Generation,
+                "rephrase" => QueryHistorySpanDiscriminatorType.Rephrase,
+                "rerank" => QueryHistorySpanDiscriminatorType.Rerank,
                 "rewritten_query" => QueryHistorySpanDiscriminatorType.RewrittenQuery,
+                "search" => QueryHistorySpanDiscriminatorType.Search,
                 _ => null,
             };
         }

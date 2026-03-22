@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
-        Repositories,
+        Joined,
         /// <summary>
         /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
-        Joined,
+        Repositories,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 SearchUsersSort.Followers => "followers",
-                SearchUsersSort.Repositories => "repositories",
                 SearchUsersSort.Joined => "joined",
+                SearchUsersSort.Repositories => "repositories",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "followers" => SearchUsersSort.Followers,
-                "repositories" => SearchUsersSort.Repositories,
                 "joined" => SearchUsersSort.Joined,
+                "repositories" => SearchUsersSort.Repositories,
                 _ => null,
             };
         }

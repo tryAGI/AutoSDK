@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        High,
+        Error,
         /// <summary>
         /// 
         /// </summary>
-        Medium,
+        High,
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +28,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Warning,
+        Medium,
         /// <summary>
         /// 
         /// </summary>
@@ -36,7 +36,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Error,
+        Warning,
     }
 
     /// <summary>
@@ -52,12 +52,12 @@ namespace G
             return value switch
             {
                 CodeScanningAlertSeverity.Critical => "critical",
-                CodeScanningAlertSeverity.High => "high",
-                CodeScanningAlertSeverity.Medium => "medium",
-                CodeScanningAlertSeverity.Low => "low",
-                CodeScanningAlertSeverity.Warning => "warning",
-                CodeScanningAlertSeverity.Note => "note",
                 CodeScanningAlertSeverity.Error => "error",
+                CodeScanningAlertSeverity.High => "high",
+                CodeScanningAlertSeverity.Low => "low",
+                CodeScanningAlertSeverity.Medium => "medium",
+                CodeScanningAlertSeverity.Note => "note",
+                CodeScanningAlertSeverity.Warning => "warning",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -69,12 +69,12 @@ namespace G
             return value switch
             {
                 "critical" => CodeScanningAlertSeverity.Critical,
-                "high" => CodeScanningAlertSeverity.High,
-                "medium" => CodeScanningAlertSeverity.Medium,
-                "low" => CodeScanningAlertSeverity.Low,
-                "warning" => CodeScanningAlertSeverity.Warning,
-                "note" => CodeScanningAlertSeverity.Note,
                 "error" => CodeScanningAlertSeverity.Error,
+                "high" => CodeScanningAlertSeverity.High,
+                "low" => CodeScanningAlertSeverity.Low,
+                "medium" => CodeScanningAlertSeverity.Medium,
+                "note" => CodeScanningAlertSeverity.Note,
+                "warning" => CodeScanningAlertSeverity.Warning,
                 _ => null,
             };
         }

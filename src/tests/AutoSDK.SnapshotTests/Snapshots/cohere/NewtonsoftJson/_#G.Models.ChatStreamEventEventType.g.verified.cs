@@ -13,8 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="stream-start")]
-        StreamStart,
+        [global::System.Runtime.Serialization.EnumMember(Value="citation-generation")]
+        CitationGeneration,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="debug")]
+        Debug,
         /// <summary>
         /// 
         /// </summary>
@@ -28,23 +33,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text-generation")]
-        TextGeneration,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="citation-generation")]
-        CitationGeneration,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="stream-end")]
         StreamEnd,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="debug")]
-        Debug,
+        [global::System.Runtime.Serialization.EnumMember(Value="stream-start")]
+        StreamStart,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="text-generation")]
+        TextGeneration,
     }
 
     /// <summary>
@@ -59,13 +59,13 @@ namespace G
         {
             return value switch
             {
-                ChatStreamEventEventType.StreamStart => "stream-start",
+                ChatStreamEventEventType.CitationGeneration => "citation-generation",
+                ChatStreamEventEventType.Debug => "debug",
                 ChatStreamEventEventType.SearchQueriesGeneration => "search-queries-generation",
                 ChatStreamEventEventType.SearchResults => "search-results",
-                ChatStreamEventEventType.TextGeneration => "text-generation",
-                ChatStreamEventEventType.CitationGeneration => "citation-generation",
                 ChatStreamEventEventType.StreamEnd => "stream-end",
-                ChatStreamEventEventType.Debug => "debug",
+                ChatStreamEventEventType.StreamStart => "stream-start",
+                ChatStreamEventEventType.TextGeneration => "text-generation",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -76,13 +76,13 @@ namespace G
         {
             return value switch
             {
-                "stream-start" => ChatStreamEventEventType.StreamStart,
+                "citation-generation" => ChatStreamEventEventType.CitationGeneration,
+                "debug" => ChatStreamEventEventType.Debug,
                 "search-queries-generation" => ChatStreamEventEventType.SearchQueriesGeneration,
                 "search-results" => ChatStreamEventEventType.SearchResults,
-                "text-generation" => ChatStreamEventEventType.TextGeneration,
-                "citation-generation" => ChatStreamEventEventType.CitationGeneration,
                 "stream-end" => ChatStreamEventEventType.StreamEnd,
-                "debug" => ChatStreamEventEventType.Debug,
+                "stream-start" => ChatStreamEventEventType.StreamStart,
+                "text-generation" => ChatStreamEventEventType.TextGeneration,
                 _ => null,
             };
         }

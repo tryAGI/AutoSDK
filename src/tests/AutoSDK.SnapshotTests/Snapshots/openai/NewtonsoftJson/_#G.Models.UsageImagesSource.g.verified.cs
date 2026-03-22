@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="image.generation")]
-        ImageGeneration,
+        [global::System.Runtime.Serialization.EnumMember(Value="image.edit")]
+        ImageEdit,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="image.edit")]
-        ImageEdit,
+        [global::System.Runtime.Serialization.EnumMember(Value="image.generation")]
+        ImageGeneration,
         /// <summary>
         /// 
         /// </summary>
@@ -39,8 +39,8 @@ namespace G
         {
             return value switch
             {
-                UsageImagesSource.ImageGeneration => "image.generation",
                 UsageImagesSource.ImageEdit => "image.edit",
+                UsageImagesSource.ImageGeneration => "image.generation",
                 UsageImagesSource.ImageVariation => "image.variation",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -52,8 +52,8 @@ namespace G
         {
             return value switch
             {
-                "image.generation" => UsageImagesSource.ImageGeneration,
                 "image.edit" => UsageImagesSource.ImageEdit,
+                "image.generation" => UsageImagesSource.ImageGeneration,
                 "image.variation" => UsageImagesSource.ImageVariation,
                 _ => null,
             };

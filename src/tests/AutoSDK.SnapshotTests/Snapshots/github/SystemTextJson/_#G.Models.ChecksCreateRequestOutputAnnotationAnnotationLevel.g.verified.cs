@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Failure,
+        /// <summary>
+        /// 
+        /// </summary>
         Notice,
         /// <summary>
         /// 
         /// </summary>
         Warning,
-        /// <summary>
-        /// 
-        /// </summary>
-        Failure,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
+                ChecksCreateRequestOutputAnnotationAnnotationLevel.Failure => "failure",
                 ChecksCreateRequestOutputAnnotationAnnotationLevel.Notice => "notice",
                 ChecksCreateRequestOutputAnnotationAnnotationLevel.Warning => "warning",
-                ChecksCreateRequestOutputAnnotationAnnotationLevel.Failure => "failure",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
+                "failure" => ChecksCreateRequestOutputAnnotationAnnotationLevel.Failure,
                 "notice" => ChecksCreateRequestOutputAnnotationAnnotationLevel.Notice,
                 "warning" => ChecksCreateRequestOutputAnnotationAnnotationLevel.Warning,
-                "failure" => ChecksCreateRequestOutputAnnotationAnnotationLevel.Failure,
                 _ => null,
             };
         }

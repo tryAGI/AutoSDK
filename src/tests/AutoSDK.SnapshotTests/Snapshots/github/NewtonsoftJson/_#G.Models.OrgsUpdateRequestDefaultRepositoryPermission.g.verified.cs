@@ -14,16 +14,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="read")]
-        Read,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="write")]
-        Write,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="admin")]
         Admin,
         /// <summary>
@@ -31,6 +21,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="none")]
         None,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="read")]
+        Read,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="write")]
+        Write,
     }
 
     /// <summary>
@@ -45,10 +45,10 @@ namespace G
         {
             return value switch
             {
-                OrgsUpdateRequestDefaultRepositoryPermission.Read => "read",
-                OrgsUpdateRequestDefaultRepositoryPermission.Write => "write",
                 OrgsUpdateRequestDefaultRepositoryPermission.Admin => "admin",
                 OrgsUpdateRequestDefaultRepositoryPermission.None => "none",
+                OrgsUpdateRequestDefaultRepositoryPermission.Read => "read",
+                OrgsUpdateRequestDefaultRepositoryPermission.Write => "write",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,10 +59,10 @@ namespace G
         {
             return value switch
             {
-                "read" => OrgsUpdateRequestDefaultRepositoryPermission.Read,
-                "write" => OrgsUpdateRequestDefaultRepositoryPermission.Write,
                 "admin" => OrgsUpdateRequestDefaultRepositoryPermission.Admin,
                 "none" => OrgsUpdateRequestDefaultRepositoryPermission.None,
+                "read" => OrgsUpdateRequestDefaultRepositoryPermission.Read,
+                "write" => OrgsUpdateRequestDefaultRepositoryPermission.Write,
                 _ => null,
             };
         }

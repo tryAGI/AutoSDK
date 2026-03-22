@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        NearField,
+        FarField,
         /// <summary>
         /// 
         /// </summary>
-        FarField,
+        NearField,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                RealtimeSessionCreateRequestInputAudioNoiseReductionType.NearField => "near_field",
                 RealtimeSessionCreateRequestInputAudioNoiseReductionType.FarField => "far_field",
+                RealtimeSessionCreateRequestInputAudioNoiseReductionType.NearField => "near_field",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "near_field" => RealtimeSessionCreateRequestInputAudioNoiseReductionType.NearField,
                 "far_field" => RealtimeSessionCreateRequestInputAudioNoiseReductionType.FarField,
+                "near_field" => RealtimeSessionCreateRequestInputAudioNoiseReductionType.NearField,
                 _ => null,
             };
         }

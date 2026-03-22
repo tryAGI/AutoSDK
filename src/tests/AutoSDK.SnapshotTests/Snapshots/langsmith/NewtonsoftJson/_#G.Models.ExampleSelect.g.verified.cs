@@ -13,13 +13,33 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="id")]
-        Id,
+        [global::System.Runtime.Serialization.EnumMember(Value="attachment_urls")]
+        AttachmentUrls,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="created_at")]
         CreatedAt,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="dataset_id")]
+        DatasetId,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="id")]
+        Id,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="inputs")]
+        Inputs,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="metadata")]
+        Metadata,
         /// <summary>
         /// 
         /// </summary>
@@ -33,33 +53,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="dataset_id")]
-        DatasetId,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="source_run_id")]
-        SourceRunId,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="metadata")]
-        Metadata,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="inputs")]
-        Inputs,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="outputs")]
         Outputs,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="attachment_urls")]
-        AttachmentUrls,
+        [global::System.Runtime.Serialization.EnumMember(Value="source_run_id")]
+        SourceRunId,
     }
 
     /// <summary>
@@ -74,16 +74,16 @@ namespace G
         {
             return value switch
             {
-                ExampleSelect.Id => "id",
+                ExampleSelect.AttachmentUrls => "attachment_urls",
                 ExampleSelect.CreatedAt => "created_at",
+                ExampleSelect.DatasetId => "dataset_id",
+                ExampleSelect.Id => "id",
+                ExampleSelect.Inputs => "inputs",
+                ExampleSelect.Metadata => "metadata",
                 ExampleSelect.ModifiedAt => "modified_at",
                 ExampleSelect.Name => "name",
-                ExampleSelect.DatasetId => "dataset_id",
-                ExampleSelect.SourceRunId => "source_run_id",
-                ExampleSelect.Metadata => "metadata",
-                ExampleSelect.Inputs => "inputs",
                 ExampleSelect.Outputs => "outputs",
-                ExampleSelect.AttachmentUrls => "attachment_urls",
+                ExampleSelect.SourceRunId => "source_run_id",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -94,16 +94,16 @@ namespace G
         {
             return value switch
             {
-                "id" => ExampleSelect.Id,
+                "attachment_urls" => ExampleSelect.AttachmentUrls,
                 "created_at" => ExampleSelect.CreatedAt,
+                "dataset_id" => ExampleSelect.DatasetId,
+                "id" => ExampleSelect.Id,
+                "inputs" => ExampleSelect.Inputs,
+                "metadata" => ExampleSelect.Metadata,
                 "modified_at" => ExampleSelect.ModifiedAt,
                 "name" => ExampleSelect.Name,
-                "dataset_id" => ExampleSelect.DatasetId,
-                "source_run_id" => ExampleSelect.SourceRunId,
-                "metadata" => ExampleSelect.Metadata,
-                "inputs" => ExampleSelect.Inputs,
                 "outputs" => ExampleSelect.Outputs,
-                "attachment_urls" => ExampleSelect.AttachmentUrls,
+                "source_run_id" => ExampleSelect.SourceRunId,
                 _ => null,
             };
         }

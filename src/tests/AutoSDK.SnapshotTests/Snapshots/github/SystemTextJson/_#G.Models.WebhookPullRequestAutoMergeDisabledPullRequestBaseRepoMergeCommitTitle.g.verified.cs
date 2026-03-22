@@ -14,11 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        PrTitle,
+        MergeMessage,
         /// <summary>
         /// 
         /// </summary>
-        MergeMessage,
+        PrTitle,
     }
 
     /// <summary>
@@ -33,8 +33,8 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitTitle.PrTitle => "PR_TITLE",
                 WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitTitle.MergeMessage => "MERGE_MESSAGE",
+                WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitTitle.PrTitle => "PR_TITLE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -45,8 +45,8 @@ namespace G
         {
             return value switch
             {
-                "PR_TITLE" => WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitTitle.PrTitle,
                 "MERGE_MESSAGE" => WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitTitle.MergeMessage,
+                "PR_TITLE" => WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitTitle.PrTitle,
                 _ => null,
             };
         }

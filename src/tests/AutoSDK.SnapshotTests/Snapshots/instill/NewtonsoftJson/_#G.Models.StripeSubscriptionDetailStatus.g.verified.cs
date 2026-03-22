@@ -19,6 +19,16 @@ namespace G
     public enum StripeSubscriptionDetailStatus
     {
         /// <summary>
+        /// Active.
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="STATUS_ACTIVE")]
+        StatusActive,
+        /// <summary>
+        /// Canceled.
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="STATUS_CANCELED")]
+        StatusCanceled,
+        /// <summary>
         /// Incomplete.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_INCOMPLETE")]
@@ -29,35 +39,25 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_INCOMPLETE_EXPIRED")]
         StatusIncompleteExpired,
         /// <summary>
-        /// Trialing.
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="STATUS_TRIALING")]
-        StatusTrialing,
-        /// <summary>
-        /// Active.
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="STATUS_ACTIVE")]
-        StatusActive,
-        /// <summary>
         /// Past due.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_PAST_DUE")]
         StatusPastDue,
         /// <summary>
-        /// Canceled.
+        /// Paused.
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="STATUS_CANCELED")]
-        StatusCanceled,
+        [global::System.Runtime.Serialization.EnumMember(Value="STATUS_PAUSED")]
+        StatusPaused,
+        /// <summary>
+        /// Trialing.
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="STATUS_TRIALING")]
+        StatusTrialing,
         /// <summary>
         /// Unpaid.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STATUS_UNPAID")]
         StatusUnpaid,
-        /// <summary>
-        /// Paused.
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="STATUS_PAUSED")]
-        StatusPaused,
     }
 
     /// <summary>
@@ -72,14 +72,14 @@ namespace G
         {
             return value switch
             {
+                StripeSubscriptionDetailStatus.StatusActive => "STATUS_ACTIVE",
+                StripeSubscriptionDetailStatus.StatusCanceled => "STATUS_CANCELED",
                 StripeSubscriptionDetailStatus.StatusIncomplete => "STATUS_INCOMPLETE",
                 StripeSubscriptionDetailStatus.StatusIncompleteExpired => "STATUS_INCOMPLETE_EXPIRED",
-                StripeSubscriptionDetailStatus.StatusTrialing => "STATUS_TRIALING",
-                StripeSubscriptionDetailStatus.StatusActive => "STATUS_ACTIVE",
                 StripeSubscriptionDetailStatus.StatusPastDue => "STATUS_PAST_DUE",
-                StripeSubscriptionDetailStatus.StatusCanceled => "STATUS_CANCELED",
-                StripeSubscriptionDetailStatus.StatusUnpaid => "STATUS_UNPAID",
                 StripeSubscriptionDetailStatus.StatusPaused => "STATUS_PAUSED",
+                StripeSubscriptionDetailStatus.StatusTrialing => "STATUS_TRIALING",
+                StripeSubscriptionDetailStatus.StatusUnpaid => "STATUS_UNPAID",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -90,14 +90,14 @@ namespace G
         {
             return value switch
             {
+                "STATUS_ACTIVE" => StripeSubscriptionDetailStatus.StatusActive,
+                "STATUS_CANCELED" => StripeSubscriptionDetailStatus.StatusCanceled,
                 "STATUS_INCOMPLETE" => StripeSubscriptionDetailStatus.StatusIncomplete,
                 "STATUS_INCOMPLETE_EXPIRED" => StripeSubscriptionDetailStatus.StatusIncompleteExpired,
-                "STATUS_TRIALING" => StripeSubscriptionDetailStatus.StatusTrialing,
-                "STATUS_ACTIVE" => StripeSubscriptionDetailStatus.StatusActive,
                 "STATUS_PAST_DUE" => StripeSubscriptionDetailStatus.StatusPastDue,
-                "STATUS_CANCELED" => StripeSubscriptionDetailStatus.StatusCanceled,
-                "STATUS_UNPAID" => StripeSubscriptionDetailStatus.StatusUnpaid,
                 "STATUS_PAUSED" => StripeSubscriptionDetailStatus.StatusPaused,
+                "STATUS_TRIALING" => StripeSubscriptionDetailStatus.StatusTrialing,
+                "STATUS_UNPAID" => StripeSubscriptionDetailStatus.StatusUnpaid,
                 _ => null,
             };
         }

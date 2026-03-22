@@ -30,8 +30,8 @@ namespace G.JsonConverters
             var __score0 = 0;
             if (__jsonProps.Contains("event_type")) __score0++;
             var __score1 = 0;
-            if (__jsonProps.Contains("is_finished")) __score1++;
             if (__jsonProps.Contains("finish_reason")) __score1++;
+            if (__jsonProps.Contains("is_finished")) __score1++;
             if (__jsonProps.Contains("response")) __score1++;
             var __bestScore = 0;
             var __bestIndex = -1;

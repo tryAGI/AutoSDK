@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="video")]
-        Video,
+        [global::System.Runtime.Serialization.EnumMember(Value="image")]
+        Image,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="image")]
-        Image,
+        [global::System.Runtime.Serialization.EnumMember(Value="video")]
+        Video,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                GenerationType.Video => "video",
                 GenerationType.Image => "image",
+                GenerationType.Video => "video",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "video" => GenerationType.Video,
                 "image" => GenerationType.Image,
+                "video" => GenerationType.Video,
                 _ => null,
             };
         }

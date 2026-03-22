@@ -12,10 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        None,
-        /// <summary>
-        /// 
-        /// </summary>
         Ban,
         /// <summary>
         /// 
@@ -29,6 +25,10 @@ namespace G
         /// 
         /// </summary>
         EnterpriseCaptcha,
+        /// <summary>
+        /// 
+        /// </summary>
+        None,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                VoiceResponseModelSafetyControl2.None => "NONE",
                 VoiceResponseModelSafetyControl2.Ban => "BAN",
                 VoiceResponseModelSafetyControl2.Captcha => "CAPTCHA",
                 VoiceResponseModelSafetyControl2.EnterpriseBan => "ENTERPRISE_BAN",
                 VoiceResponseModelSafetyControl2.EnterpriseCaptcha => "ENTERPRISE_CAPTCHA",
+                VoiceResponseModelSafetyControl2.None => "NONE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "NONE" => VoiceResponseModelSafetyControl2.None,
                 "BAN" => VoiceResponseModelSafetyControl2.Ban,
                 "CAPTCHA" => VoiceResponseModelSafetyControl2.Captcha,
                 "ENTERPRISE_BAN" => VoiceResponseModelSafetyControl2.EnterpriseBan,
                 "ENTERPRISE_CAPTCHA" => VoiceResponseModelSafetyControl2.EnterpriseCaptcha,
+                "NONE" => VoiceResponseModelSafetyControl2.None,
                 _ => null,
             };
         }

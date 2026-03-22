@@ -14,11 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Url,
+        B64Json,
         /// <summary>
         /// 
         /// </summary>
-        B64Json,
+        Url,
     }
 
     /// <summary>
@@ -33,8 +33,8 @@ namespace G
         {
             return value switch
             {
-                CreateImageVariationRequestResponseFormat.Url => "url",
                 CreateImageVariationRequestResponseFormat.B64Json => "b64_json",
+                CreateImageVariationRequestResponseFormat.Url => "url",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -45,8 +45,8 @@ namespace G
         {
             return value switch
             {
-                "url" => CreateImageVariationRequestResponseFormat.Url,
                 "b64_json" => CreateImageVariationRequestResponseFormat.B64Json,
+                "url" => CreateImageVariationRequestResponseFormat.Url,
                 _ => null,
             };
         }

@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text")]
-        Text,
+        [global::System.Runtime.Serialization.EnumMember(Value="file")]
+        File,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="file")]
-        File,
+        [global::System.Runtime.Serialization.EnumMember(Value="text")]
+        Text,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 ChatSourceMedium.Audio => "audio",
-                ChatSourceMedium.Text => "text",
-                ChatSourceMedium.Image => "image",
                 ChatSourceMedium.File => "file",
+                ChatSourceMedium.Image => "image",
+                ChatSourceMedium.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "audio" => ChatSourceMedium.Audio,
-                "text" => ChatSourceMedium.Text,
-                "image" => ChatSourceMedium.Image,
                 "file" => ChatSourceMedium.File,
+                "image" => ChatSourceMedium.Image,
+                "text" => ChatSourceMedium.Text,
                 _ => null,
             };
         }

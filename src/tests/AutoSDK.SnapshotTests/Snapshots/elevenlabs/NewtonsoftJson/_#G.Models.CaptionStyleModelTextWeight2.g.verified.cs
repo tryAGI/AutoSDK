@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="normal")]
-        Normal,
+        [global::System.Runtime.Serialization.EnumMember(Value="bold")]
+        Bold,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="bold")]
-        Bold,
+        [global::System.Runtime.Serialization.EnumMember(Value="normal")]
+        Normal,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                CaptionStyleModelTextWeight2.Normal => "normal",
                 CaptionStyleModelTextWeight2.Bold => "bold",
+                CaptionStyleModelTextWeight2.Normal => "normal",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "normal" => CaptionStyleModelTextWeight2.Normal,
                 "bold" => CaptionStyleModelTextWeight2.Bold,
+                "normal" => CaptionStyleModelTextWeight2.Normal,
                 _ => null,
             };
         }

@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Enabled,
+        Disabled,
         /// <summary>
         /// 
         /// </summary>
-        Disabled,
+        Enabled,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                CopilotOrganizationDetailsCli.Enabled => "enabled",
                 CopilotOrganizationDetailsCli.Disabled => "disabled",
+                CopilotOrganizationDetailsCli.Enabled => "enabled",
                 CopilotOrganizationDetailsCli.Unconfigured => "unconfigured",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "enabled" => CopilotOrganizationDetailsCli.Enabled,
                 "disabled" => CopilotOrganizationDetailsCli.Disabled,
+                "enabled" => CopilotOrganizationDetailsCli.Enabled,
                 "unconfigured" => CopilotOrganizationDetailsCli.Unconfigured,
                 _ => null,
             };

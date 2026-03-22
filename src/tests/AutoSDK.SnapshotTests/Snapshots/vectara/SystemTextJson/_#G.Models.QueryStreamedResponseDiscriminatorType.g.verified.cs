@@ -12,7 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        SearchResults,
+        End,
+        /// <summary>
+        /// 
+        /// </summary>
+        Error,
+        /// <summary>
+        /// 
+        /// </summary>
+        FactualConsistencyScore,
         /// <summary>
         /// 
         /// </summary>
@@ -24,19 +32,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        FactualConsistencyScore,
-        /// <summary>
-        /// 
-        /// </summary>
         GenerationInfo,
         /// <summary>
         /// 
         /// </summary>
-        Error,
-        /// <summary>
-        /// 
-        /// </summary>
-        End,
+        SearchResults,
     }
 
     /// <summary>
@@ -51,13 +51,13 @@ namespace G
         {
             return value switch
             {
-                QueryStreamedResponseDiscriminatorType.SearchResults => "search_results",
+                QueryStreamedResponseDiscriminatorType.End => "end",
+                QueryStreamedResponseDiscriminatorType.Error => "error",
+                QueryStreamedResponseDiscriminatorType.FactualConsistencyScore => "factual_consistency_score",
                 QueryStreamedResponseDiscriminatorType.GenerationChunk => "generation_chunk",
                 QueryStreamedResponseDiscriminatorType.GenerationEnd => "generation_end",
-                QueryStreamedResponseDiscriminatorType.FactualConsistencyScore => "factual_consistency_score",
                 QueryStreamedResponseDiscriminatorType.GenerationInfo => "generation_info",
-                QueryStreamedResponseDiscriminatorType.Error => "error",
-                QueryStreamedResponseDiscriminatorType.End => "end",
+                QueryStreamedResponseDiscriminatorType.SearchResults => "search_results",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -68,13 +68,13 @@ namespace G
         {
             return value switch
             {
-                "search_results" => QueryStreamedResponseDiscriminatorType.SearchResults,
+                "end" => QueryStreamedResponseDiscriminatorType.End,
+                "error" => QueryStreamedResponseDiscriminatorType.Error,
+                "factual_consistency_score" => QueryStreamedResponseDiscriminatorType.FactualConsistencyScore,
                 "generation_chunk" => QueryStreamedResponseDiscriminatorType.GenerationChunk,
                 "generation_end" => QueryStreamedResponseDiscriminatorType.GenerationEnd,
-                "factual_consistency_score" => QueryStreamedResponseDiscriminatorType.FactualConsistencyScore,
                 "generation_info" => QueryStreamedResponseDiscriminatorType.GenerationInfo,
-                "error" => QueryStreamedResponseDiscriminatorType.Error,
-                "end" => QueryStreamedResponseDiscriminatorType.End,
+                "search_results" => QueryStreamedResponseDiscriminatorType.SearchResults,
                 _ => null,
             };
         }

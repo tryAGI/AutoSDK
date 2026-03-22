@@ -12,47 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        JobPending,
+        BillingLimit,
         /// <summary>
         /// 
         /// </summary>
-        JobStart,
-        /// <summary>
-        /// 
-        /// </summary>
-        JobStopped,
-        /// <summary>
-        /// 
-        /// </summary>
-        ModelDownloading,
-        /// <summary>
-        /// 
-        /// </summary>
-        ModelDownloadComplete,
-        /// <summary>
-        /// 
-        /// </summary>
-        TrainingDataDownloading,
-        /// <summary>
-        /// 
-        /// </summary>
-        TrainingDataDownloadComplete,
-        /// <summary>
-        /// 
-        /// </summary>
-        ValidationDataDownloading,
-        /// <summary>
-        /// 
-        /// </summary>
-        ValidationDataDownloadComplete,
-        /// <summary>
-        /// 
-        /// </summary>
-        WandbInit,
-        /// <summary>
-        /// 
-        /// </summary>
-        TrainingStart,
+        CancelRequested,
         /// <summary>
         /// 
         /// </summary>
@@ -60,31 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        BillingLimit,
-        /// <summary>
-        /// 
-        /// </summary>
         EpochComplete,
-        /// <summary>
-        /// 
-        /// </summary>
-        TrainingComplete,
-        /// <summary>
-        /// 
-        /// </summary>
-        ModelCompressing,
-        /// <summary>
-        /// 
-        /// </summary>
-        ModelCompressionComplete,
-        /// <summary>
-        /// 
-        /// </summary>
-        ModelUploading,
-        /// <summary>
-        /// 
-        /// </summary>
-        ModelUploadComplete,
         /// <summary>
         /// 
         /// </summary>
@@ -96,7 +36,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        CancelRequested,
+        JobPending,
         /// <summary>
         /// 
         /// </summary>
@@ -104,7 +44,67 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        JobStart,
+        /// <summary>
+        /// 
+        /// </summary>
+        JobStopped,
+        /// <summary>
+        /// 
+        /// </summary>
+        ModelCompressing,
+        /// <summary>
+        /// 
+        /// </summary>
+        ModelCompressionComplete,
+        /// <summary>
+        /// 
+        /// </summary>
+        ModelDownloadComplete,
+        /// <summary>
+        /// 
+        /// </summary>
+        ModelDownloading,
+        /// <summary>
+        /// 
+        /// </summary>
+        ModelUploadComplete,
+        /// <summary>
+        /// 
+        /// </summary>
+        ModelUploading,
+        /// <summary>
+        /// 
+        /// </summary>
         Refund,
+        /// <summary>
+        /// 
+        /// </summary>
+        TrainingComplete,
+        /// <summary>
+        /// 
+        /// </summary>
+        TrainingDataDownloadComplete,
+        /// <summary>
+        /// 
+        /// </summary>
+        TrainingDataDownloading,
+        /// <summary>
+        /// 
+        /// </summary>
+        TrainingStart,
+        /// <summary>
+        /// 
+        /// </summary>
+        ValidationDataDownloadComplete,
+        /// <summary>
+        /// 
+        /// </summary>
+        ValidationDataDownloading,
+        /// <summary>
+        /// 
+        /// </summary>
+        WandbInit,
         /// <summary>
         /// 
         /// </summary>
@@ -123,30 +123,30 @@ namespace G
         {
             return value switch
             {
-                FineTuneEventType2.JobPending => "job_pending",
-                FineTuneEventType2.JobStart => "job_start",
-                FineTuneEventType2.JobStopped => "job_stopped",
-                FineTuneEventType2.ModelDownloading => "model_downloading",
-                FineTuneEventType2.ModelDownloadComplete => "model_download_complete",
-                FineTuneEventType2.TrainingDataDownloading => "training_data_downloading",
-                FineTuneEventType2.TrainingDataDownloadComplete => "training_data_download_complete",
-                FineTuneEventType2.ValidationDataDownloading => "validation_data_downloading",
-                FineTuneEventType2.ValidationDataDownloadComplete => "validation_data_download_complete",
-                FineTuneEventType2.WandbInit => "wandb_init",
-                FineTuneEventType2.TrainingStart => "training_start",
-                FineTuneEventType2.CheckpointSave => "checkpoint_save",
                 FineTuneEventType2.BillingLimit => "billing_limit",
+                FineTuneEventType2.CancelRequested => "cancel_requested",
+                FineTuneEventType2.CheckpointSave => "checkpoint_save",
                 FineTuneEventType2.EpochComplete => "epoch_complete",
-                FineTuneEventType2.TrainingComplete => "training_complete",
-                FineTuneEventType2.ModelCompressing => "model_compressing",
-                FineTuneEventType2.ModelCompressionComplete => "model_compression_complete",
-                FineTuneEventType2.ModelUploading => "model_uploading",
-                FineTuneEventType2.ModelUploadComplete => "model_upload_complete",
                 FineTuneEventType2.JobComplete => "job_complete",
                 FineTuneEventType2.JobError => "job_error",
-                FineTuneEventType2.CancelRequested => "cancel_requested",
+                FineTuneEventType2.JobPending => "job_pending",
                 FineTuneEventType2.JobRestarted => "job_restarted",
+                FineTuneEventType2.JobStart => "job_start",
+                FineTuneEventType2.JobStopped => "job_stopped",
+                FineTuneEventType2.ModelCompressing => "model_compressing",
+                FineTuneEventType2.ModelCompressionComplete => "model_compression_complete",
+                FineTuneEventType2.ModelDownloadComplete => "model_download_complete",
+                FineTuneEventType2.ModelDownloading => "model_downloading",
+                FineTuneEventType2.ModelUploadComplete => "model_upload_complete",
+                FineTuneEventType2.ModelUploading => "model_uploading",
                 FineTuneEventType2.Refund => "refund",
+                FineTuneEventType2.TrainingComplete => "training_complete",
+                FineTuneEventType2.TrainingDataDownloadComplete => "training_data_download_complete",
+                FineTuneEventType2.TrainingDataDownloading => "training_data_downloading",
+                FineTuneEventType2.TrainingStart => "training_start",
+                FineTuneEventType2.ValidationDataDownloadComplete => "validation_data_download_complete",
+                FineTuneEventType2.ValidationDataDownloading => "validation_data_downloading",
+                FineTuneEventType2.WandbInit => "wandb_init",
                 FineTuneEventType2.Warning => "warning",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -158,30 +158,30 @@ namespace G
         {
             return value switch
             {
-                "job_pending" => FineTuneEventType2.JobPending,
-                "job_start" => FineTuneEventType2.JobStart,
-                "job_stopped" => FineTuneEventType2.JobStopped,
-                "model_downloading" => FineTuneEventType2.ModelDownloading,
-                "model_download_complete" => FineTuneEventType2.ModelDownloadComplete,
-                "training_data_downloading" => FineTuneEventType2.TrainingDataDownloading,
-                "training_data_download_complete" => FineTuneEventType2.TrainingDataDownloadComplete,
-                "validation_data_downloading" => FineTuneEventType2.ValidationDataDownloading,
-                "validation_data_download_complete" => FineTuneEventType2.ValidationDataDownloadComplete,
-                "wandb_init" => FineTuneEventType2.WandbInit,
-                "training_start" => FineTuneEventType2.TrainingStart,
-                "checkpoint_save" => FineTuneEventType2.CheckpointSave,
                 "billing_limit" => FineTuneEventType2.BillingLimit,
+                "cancel_requested" => FineTuneEventType2.CancelRequested,
+                "checkpoint_save" => FineTuneEventType2.CheckpointSave,
                 "epoch_complete" => FineTuneEventType2.EpochComplete,
-                "training_complete" => FineTuneEventType2.TrainingComplete,
-                "model_compressing" => FineTuneEventType2.ModelCompressing,
-                "model_compression_complete" => FineTuneEventType2.ModelCompressionComplete,
-                "model_uploading" => FineTuneEventType2.ModelUploading,
-                "model_upload_complete" => FineTuneEventType2.ModelUploadComplete,
                 "job_complete" => FineTuneEventType2.JobComplete,
                 "job_error" => FineTuneEventType2.JobError,
-                "cancel_requested" => FineTuneEventType2.CancelRequested,
+                "job_pending" => FineTuneEventType2.JobPending,
                 "job_restarted" => FineTuneEventType2.JobRestarted,
+                "job_start" => FineTuneEventType2.JobStart,
+                "job_stopped" => FineTuneEventType2.JobStopped,
+                "model_compressing" => FineTuneEventType2.ModelCompressing,
+                "model_compression_complete" => FineTuneEventType2.ModelCompressionComplete,
+                "model_download_complete" => FineTuneEventType2.ModelDownloadComplete,
+                "model_downloading" => FineTuneEventType2.ModelDownloading,
+                "model_upload_complete" => FineTuneEventType2.ModelUploadComplete,
+                "model_uploading" => FineTuneEventType2.ModelUploading,
                 "refund" => FineTuneEventType2.Refund,
+                "training_complete" => FineTuneEventType2.TrainingComplete,
+                "training_data_download_complete" => FineTuneEventType2.TrainingDataDownloadComplete,
+                "training_data_downloading" => FineTuneEventType2.TrainingDataDownloading,
+                "training_start" => FineTuneEventType2.TrainingStart,
+                "validation_data_download_complete" => FineTuneEventType2.ValidationDataDownloadComplete,
+                "validation_data_downloading" => FineTuneEventType2.ValidationDataDownloading,
+                "wandb_init" => FineTuneEventType2.WandbInit,
                 "warning" => FineTuneEventType2.Warning,
                 _ => null,
             };

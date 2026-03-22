@@ -13,18 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="npm")]
-        Npm,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="maven")]
-        Maven,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="rubygems")]
-        Rubygems,
+        [global::System.Runtime.Serialization.EnumMember(Value="container")]
+        Container,
         /// <summary>
         /// 
         /// </summary>
@@ -33,13 +23,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="maven")]
+        Maven,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="npm")]
+        Npm,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="nuget")]
         Nuget,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="container")]
-        Container,
+        [global::System.Runtime.Serialization.EnumMember(Value="rubygems")]
+        Rubygems,
     }
 
     /// <summary>
@@ -54,12 +54,12 @@ namespace G
         {
             return value switch
             {
-                PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.Npm => "npm",
-                PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.Maven => "maven",
-                PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.Rubygems => "rubygems",
-                PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.Docker => "docker",
-                PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.Nuget => "nuget",
                 PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.Container => "container",
+                PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.Docker => "docker",
+                PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.Maven => "maven",
+                PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.Npm => "npm",
+                PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.Nuget => "nuget",
+                PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.Rubygems => "rubygems",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,12 +70,12 @@ namespace G
         {
             return value switch
             {
-                "npm" => PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.Npm,
-                "maven" => PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.Maven,
-                "rubygems" => PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.Rubygems,
-                "docker" => PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.Docker,
-                "nuget" => PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.Nuget,
                 "container" => PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.Container,
+                "docker" => PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.Docker,
+                "maven" => PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.Maven,
+                "npm" => PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.Npm,
+                "nuget" => PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.Nuget,
+                "rubygems" => PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.Rubygems,
                 _ => null,
             };
         }

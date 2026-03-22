@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="public")]
-        Public,
+        [global::System.Runtime.Serialization.EnumMember(Value="private")]
+        Private,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="private")]
-        Private,
+        [global::System.Runtime.Serialization.EnumMember(Value="public")]
+        Public,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                OwnershipEnum.Public => "public",
                 OwnershipEnum.Private => "private",
+                OwnershipEnum.Public => "public",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "public" => OwnershipEnum.Public,
                 "private" => OwnershipEnum.Private,
+                "public" => OwnershipEnum.Public,
                 _ => null,
             };
         }

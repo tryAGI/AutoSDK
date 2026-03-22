@@ -14,8 +14,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
-        Queued,
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -24,13 +24,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
-        Completed,
+        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
+        Pending,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="waiting")]
-        Waiting,
+        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
+        Queued,
         /// <summary>
         /// 
         /// </summary>
@@ -39,8 +39,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
-        Pending,
+        [global::System.Runtime.Serialization.EnumMember(Value="waiting")]
+        Waiting,
     }
 
     /// <summary>
@@ -55,12 +55,12 @@ namespace G
         {
             return value switch
             {
-                JobStatus.Queued => "queued",
-                JobStatus.InProgress => "in_progress",
                 JobStatus.Completed => "completed",
-                JobStatus.Waiting => "waiting",
-                JobStatus.Requested => "requested",
+                JobStatus.InProgress => "in_progress",
                 JobStatus.Pending => "pending",
+                JobStatus.Queued => "queued",
+                JobStatus.Requested => "requested",
+                JobStatus.Waiting => "waiting",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -71,12 +71,12 @@ namespace G
         {
             return value switch
             {
-                "queued" => JobStatus.Queued,
-                "in_progress" => JobStatus.InProgress,
                 "completed" => JobStatus.Completed,
-                "waiting" => JobStatus.Waiting,
-                "requested" => JobStatus.Requested,
+                "in_progress" => JobStatus.InProgress,
                 "pending" => JobStatus.Pending,
+                "queued" => JobStatus.Queued,
+                "requested" => JobStatus.Requested,
+                "waiting" => JobStatus.Waiting,
                 _ => null,
             };
         }

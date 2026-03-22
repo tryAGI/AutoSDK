@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Valid,
-        /// <summary>
-        /// 
-        /// </summary>
         Invalid,
         /// <summary>
         /// 
         /// </summary>
         Pending,
+        /// <summary>
+        /// 
+        /// </summary>
+        Valid,
     }
 
     /// <summary>
@@ -36,9 +36,9 @@ namespace G
         {
             return value switch
             {
-                TestLambdaToolResponseValidationStatus.Valid => "valid",
                 TestLambdaToolResponseValidationStatus.Invalid => "invalid",
                 TestLambdaToolResponseValidationStatus.Pending => "pending",
+                TestLambdaToolResponseValidationStatus.Valid => "valid",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,9 +49,9 @@ namespace G
         {
             return value switch
             {
-                "valid" => TestLambdaToolResponseValidationStatus.Valid,
                 "invalid" => TestLambdaToolResponseValidationStatus.Invalid,
                 "pending" => TestLambdaToolResponseValidationStatus.Pending,
+                "valid" => TestLambdaToolResponseValidationStatus.Valid,
                 _ => null,
             };
         }

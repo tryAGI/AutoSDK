@@ -13,23 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="validating")]
-        Validating,
+        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
-        Failed,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
-        InProgress,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="finalizing")]
-        Finalizing,
+        [global::System.Runtime.Serialization.EnumMember(Value="cancelling")]
+        Cancelling,
         /// <summary>
         /// 
         /// </summary>
@@ -43,13 +33,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cancelling")]
-        Cancelling,
+        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
+        Failed,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
-        Cancelled,
+        [global::System.Runtime.Serialization.EnumMember(Value="finalizing")]
+        Finalizing,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
+        InProgress,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="validating")]
+        Validating,
     }
 
     /// <summary>
@@ -64,14 +64,14 @@ namespace G
         {
             return value switch
             {
-                BatchStatus.Validating => "validating",
-                BatchStatus.Failed => "failed",
-                BatchStatus.InProgress => "in_progress",
-                BatchStatus.Finalizing => "finalizing",
+                BatchStatus.Cancelled => "cancelled",
+                BatchStatus.Cancelling => "cancelling",
                 BatchStatus.Completed => "completed",
                 BatchStatus.Expired => "expired",
-                BatchStatus.Cancelling => "cancelling",
-                BatchStatus.Cancelled => "cancelled",
+                BatchStatus.Failed => "failed",
+                BatchStatus.Finalizing => "finalizing",
+                BatchStatus.InProgress => "in_progress",
+                BatchStatus.Validating => "validating",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -82,14 +82,14 @@ namespace G
         {
             return value switch
             {
-                "validating" => BatchStatus.Validating,
-                "failed" => BatchStatus.Failed,
-                "in_progress" => BatchStatus.InProgress,
-                "finalizing" => BatchStatus.Finalizing,
+                "cancelled" => BatchStatus.Cancelled,
+                "cancelling" => BatchStatus.Cancelling,
                 "completed" => BatchStatus.Completed,
                 "expired" => BatchStatus.Expired,
-                "cancelling" => BatchStatus.Cancelling,
-                "cancelled" => BatchStatus.Cancelled,
+                "failed" => BatchStatus.Failed,
+                "finalizing" => BatchStatus.Finalizing,
+                "in_progress" => BatchStatus.InProgress,
+                "validating" => BatchStatus.Validating,
                 _ => null,
             };
         }

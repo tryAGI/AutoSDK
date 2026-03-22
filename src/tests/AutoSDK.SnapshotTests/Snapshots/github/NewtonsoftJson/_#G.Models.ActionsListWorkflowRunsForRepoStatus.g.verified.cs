@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
-        Completed,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="action_required")]
         ActionRequired,
         /// <summary>
@@ -28,13 +23,38 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="failure")]
         Failure,
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
+        InProgress,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="neutral")]
         Neutral,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
+        Pending,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
+        Queued,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="requested")]
+        Requested,
         /// <summary>
         /// 
         /// </summary>
@@ -58,28 +78,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
-        InProgress,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
-        Queued,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="requested")]
-        Requested,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="waiting")]
         Waiting,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
-        Pending,
     }
 
     /// <summary>
@@ -94,20 +94,20 @@ namespace G
         {
             return value switch
             {
-                ActionsListWorkflowRunsForRepoStatus.Completed => "completed",
                 ActionsListWorkflowRunsForRepoStatus.ActionRequired => "action_required",
                 ActionsListWorkflowRunsForRepoStatus.Cancelled => "cancelled",
+                ActionsListWorkflowRunsForRepoStatus.Completed => "completed",
                 ActionsListWorkflowRunsForRepoStatus.Failure => "failure",
+                ActionsListWorkflowRunsForRepoStatus.InProgress => "in_progress",
                 ActionsListWorkflowRunsForRepoStatus.Neutral => "neutral",
+                ActionsListWorkflowRunsForRepoStatus.Pending => "pending",
+                ActionsListWorkflowRunsForRepoStatus.Queued => "queued",
+                ActionsListWorkflowRunsForRepoStatus.Requested => "requested",
                 ActionsListWorkflowRunsForRepoStatus.Skipped => "skipped",
                 ActionsListWorkflowRunsForRepoStatus.Stale => "stale",
                 ActionsListWorkflowRunsForRepoStatus.Success => "success",
                 ActionsListWorkflowRunsForRepoStatus.TimedOut => "timed_out",
-                ActionsListWorkflowRunsForRepoStatus.InProgress => "in_progress",
-                ActionsListWorkflowRunsForRepoStatus.Queued => "queued",
-                ActionsListWorkflowRunsForRepoStatus.Requested => "requested",
                 ActionsListWorkflowRunsForRepoStatus.Waiting => "waiting",
-                ActionsListWorkflowRunsForRepoStatus.Pending => "pending",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -118,20 +118,20 @@ namespace G
         {
             return value switch
             {
-                "completed" => ActionsListWorkflowRunsForRepoStatus.Completed,
                 "action_required" => ActionsListWorkflowRunsForRepoStatus.ActionRequired,
                 "cancelled" => ActionsListWorkflowRunsForRepoStatus.Cancelled,
+                "completed" => ActionsListWorkflowRunsForRepoStatus.Completed,
                 "failure" => ActionsListWorkflowRunsForRepoStatus.Failure,
+                "in_progress" => ActionsListWorkflowRunsForRepoStatus.InProgress,
                 "neutral" => ActionsListWorkflowRunsForRepoStatus.Neutral,
+                "pending" => ActionsListWorkflowRunsForRepoStatus.Pending,
+                "queued" => ActionsListWorkflowRunsForRepoStatus.Queued,
+                "requested" => ActionsListWorkflowRunsForRepoStatus.Requested,
                 "skipped" => ActionsListWorkflowRunsForRepoStatus.Skipped,
                 "stale" => ActionsListWorkflowRunsForRepoStatus.Stale,
                 "success" => ActionsListWorkflowRunsForRepoStatus.Success,
                 "timed_out" => ActionsListWorkflowRunsForRepoStatus.TimedOut,
-                "in_progress" => ActionsListWorkflowRunsForRepoStatus.InProgress,
-                "queued" => ActionsListWorkflowRunsForRepoStatus.Queued,
-                "requested" => ActionsListWorkflowRunsForRepoStatus.Requested,
                 "waiting" => ActionsListWorkflowRunsForRepoStatus.Waiting,
-                "pending" => ActionsListWorkflowRunsForRepoStatus.Pending,
                 _ => null,
             };
         }

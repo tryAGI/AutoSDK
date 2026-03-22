@@ -16,8 +16,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="PR_BODY")]
-        PrBody,
+        [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
+        Blank,
         /// <summary>
         /// 
         /// </summary>
@@ -26,8 +26,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
-        Blank,
+        [global::System.Runtime.Serialization.EnumMember(Value="PR_BODY")]
+        PrBody,
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ namespace G
         {
             return value switch
             {
-                RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.PrBody => "PR_BODY",
-                RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
                 RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.Blank => "BLANK",
+                RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
+                RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.PrBody => "PR_BODY",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,9 +55,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.PrBody,
-                "COMMIT_MESSAGES" => RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.CommitMessages,
                 "BLANK" => RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.Blank,
+                "COMMIT_MESSAGES" => RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.CommitMessages,
+                "PR_BODY" => RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.PrBody,
                 _ => null,
             };
         }

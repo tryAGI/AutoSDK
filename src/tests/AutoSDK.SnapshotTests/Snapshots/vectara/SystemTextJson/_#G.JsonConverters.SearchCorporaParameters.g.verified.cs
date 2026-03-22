@@ -30,9 +30,9 @@ namespace G.JsonConverters
             var __score0 = 0;
             if (__jsonProps.Contains("corpora")) __score0++;
             var __score1 = 0;
-            if (__jsonProps.Contains("offset")) __score1++;
-            if (__jsonProps.Contains("limit")) __score1++;
             if (__jsonProps.Contains("context_configuration")) __score1++;
+            if (__jsonProps.Contains("limit")) __score1++;
+            if (__jsonProps.Contains("offset")) __score1++;
             if (__jsonProps.Contains("reranker")) __score1++;
             var __bestScore = 0;
             var __bestIndex = -1;

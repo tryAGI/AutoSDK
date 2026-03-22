@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Malware,
+        /// <summary>
+        /// 
+        /// </summary>
         Reviewed,
         /// <summary>
         /// 
         /// </summary>
         Unreviewed,
-        /// <summary>
-        /// 
-        /// </summary>
-        Malware,
     }
 
     /// <summary>
@@ -36,9 +36,9 @@ namespace G
         {
             return value switch
             {
+                GlobalAdvisoryType.Malware => "malware",
                 GlobalAdvisoryType.Reviewed => "reviewed",
                 GlobalAdvisoryType.Unreviewed => "unreviewed",
-                GlobalAdvisoryType.Malware => "malware",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,9 +49,9 @@ namespace G
         {
             return value switch
             {
+                "malware" => GlobalAdvisoryType.Malware,
                 "reviewed" => GlobalAdvisoryType.Reviewed,
                 "unreviewed" => GlobalAdvisoryType.Unreviewed,
-                "malware" => GlobalAdvisoryType.Malware,
                 _ => null,
             };
         }

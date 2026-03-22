@@ -13,8 +13,33 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="UNKNOWN_REMOVAL_REASON")]
-        UnknownRemovalReason,
+        [global::System.Runtime.Serialization.EnumMember(Value="ALREADY_MERGED")]
+        AlreadyMerged,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="BRANCH_PROTECTIONS")]
+        BranchProtections,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="CI_FAILURE")]
+        CiFailure,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="CI_TIMEOUT")]
+        CiTimeout,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="GIT_TREE_INVALID")]
+        GitTreeInvalid,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="INVALID_MERGE_COMMIT")]
+        InvalidMergeCommit,
         /// <summary>
         /// 
         /// </summary>
@@ -33,21 +58,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="CI_FAILURE")]
-        CiFailure,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="CI_TIMEOUT")]
-        CiTimeout,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="ALREADY_MERGED")]
-        AlreadyMerged,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="QUEUE_CLEARED")]
         QueueCleared,
         /// <summary>
@@ -58,18 +68,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="BRANCH_PROTECTIONS")]
-        BranchProtections,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="GIT_TREE_INVALID")]
-        GitTreeInvalid,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="INVALID_MERGE_COMMIT")]
-        InvalidMergeCommit,
+        [global::System.Runtime.Serialization.EnumMember(Value="UNKNOWN_REMOVAL_REASON")]
+        UnknownRemovalReason,
     }
 
     /// <summary>
@@ -84,18 +84,18 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestDequeuedReason.UnknownRemovalReason => "UNKNOWN_REMOVAL_REASON",
+                WebhookPullRequestDequeuedReason.AlreadyMerged => "ALREADY_MERGED",
+                WebhookPullRequestDequeuedReason.BranchProtections => "BRANCH_PROTECTIONS",
+                WebhookPullRequestDequeuedReason.CiFailure => "CI_FAILURE",
+                WebhookPullRequestDequeuedReason.CiTimeout => "CI_TIMEOUT",
+                WebhookPullRequestDequeuedReason.GitTreeInvalid => "GIT_TREE_INVALID",
+                WebhookPullRequestDequeuedReason.InvalidMergeCommit => "INVALID_MERGE_COMMIT",
                 WebhookPullRequestDequeuedReason.Manual => "MANUAL",
                 WebhookPullRequestDequeuedReason.Merge => "MERGE",
                 WebhookPullRequestDequeuedReason.MergeConflict => "MERGE_CONFLICT",
-                WebhookPullRequestDequeuedReason.CiFailure => "CI_FAILURE",
-                WebhookPullRequestDequeuedReason.CiTimeout => "CI_TIMEOUT",
-                WebhookPullRequestDequeuedReason.AlreadyMerged => "ALREADY_MERGED",
                 WebhookPullRequestDequeuedReason.QueueCleared => "QUEUE_CLEARED",
                 WebhookPullRequestDequeuedReason.RollBack => "ROLL_BACK",
-                WebhookPullRequestDequeuedReason.BranchProtections => "BRANCH_PROTECTIONS",
-                WebhookPullRequestDequeuedReason.GitTreeInvalid => "GIT_TREE_INVALID",
-                WebhookPullRequestDequeuedReason.InvalidMergeCommit => "INVALID_MERGE_COMMIT",
+                WebhookPullRequestDequeuedReason.UnknownRemovalReason => "UNKNOWN_REMOVAL_REASON",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -106,18 +106,18 @@ namespace G
         {
             return value switch
             {
-                "UNKNOWN_REMOVAL_REASON" => WebhookPullRequestDequeuedReason.UnknownRemovalReason,
+                "ALREADY_MERGED" => WebhookPullRequestDequeuedReason.AlreadyMerged,
+                "BRANCH_PROTECTIONS" => WebhookPullRequestDequeuedReason.BranchProtections,
+                "CI_FAILURE" => WebhookPullRequestDequeuedReason.CiFailure,
+                "CI_TIMEOUT" => WebhookPullRequestDequeuedReason.CiTimeout,
+                "GIT_TREE_INVALID" => WebhookPullRequestDequeuedReason.GitTreeInvalid,
+                "INVALID_MERGE_COMMIT" => WebhookPullRequestDequeuedReason.InvalidMergeCommit,
                 "MANUAL" => WebhookPullRequestDequeuedReason.Manual,
                 "MERGE" => WebhookPullRequestDequeuedReason.Merge,
                 "MERGE_CONFLICT" => WebhookPullRequestDequeuedReason.MergeConflict,
-                "CI_FAILURE" => WebhookPullRequestDequeuedReason.CiFailure,
-                "CI_TIMEOUT" => WebhookPullRequestDequeuedReason.CiTimeout,
-                "ALREADY_MERGED" => WebhookPullRequestDequeuedReason.AlreadyMerged,
                 "QUEUE_CLEARED" => WebhookPullRequestDequeuedReason.QueueCleared,
                 "ROLL_BACK" => WebhookPullRequestDequeuedReason.RollBack,
-                "BRANCH_PROTECTIONS" => WebhookPullRequestDequeuedReason.BranchProtections,
-                "GIT_TREE_INVALID" => WebhookPullRequestDequeuedReason.GitTreeInvalid,
-                "INVALID_MERGE_COMMIT" => WebhookPullRequestDequeuedReason.InvalidMergeCommit,
+                "UNKNOWN_REMOVAL_REASON" => WebhookPullRequestDequeuedReason.UnknownRemovalReason,
                 _ => null,
             };
         }

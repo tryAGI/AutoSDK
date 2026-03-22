@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="refm1")]
-        Refm1,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="recraft20b")]
         Recraft20b,
         /// <summary>
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="recraftv3")]
         Recraftv3,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="refm1")]
+        Refm1,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                TransformModel.Refm1 => "refm1",
                 TransformModel.Recraft20b => "recraft20b",
                 TransformModel.Recraftv3 => "recraftv3",
+                TransformModel.Refm1 => "refm1",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "refm1" => TransformModel.Refm1,
                 "recraft20b" => TransformModel.Recraft20b,
                 "recraftv3" => TransformModel.Recraftv3,
+                "refm1" => TransformModel.Refm1,
                 _ => null,
             };
         }

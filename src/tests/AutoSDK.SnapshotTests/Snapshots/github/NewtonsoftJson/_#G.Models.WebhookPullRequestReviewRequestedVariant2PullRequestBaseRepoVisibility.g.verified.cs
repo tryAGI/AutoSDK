@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="public")]
-        Public,
+        [global::System.Runtime.Serialization.EnumMember(Value="internal")]
+        Internal,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="internal")]
-        Internal,
+        [global::System.Runtime.Serialization.EnumMember(Value="public")]
+        Public,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestReviewRequestedVariant2PullRequestBaseRepoVisibility.Public => "public",
-                WebhookPullRequestReviewRequestedVariant2PullRequestBaseRepoVisibility.Private => "private",
                 WebhookPullRequestReviewRequestedVariant2PullRequestBaseRepoVisibility.Internal => "internal",
+                WebhookPullRequestReviewRequestedVariant2PullRequestBaseRepoVisibility.Private => "private",
+                WebhookPullRequestReviewRequestedVariant2PullRequestBaseRepoVisibility.Public => "public",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "public" => WebhookPullRequestReviewRequestedVariant2PullRequestBaseRepoVisibility.Public,
-                "private" => WebhookPullRequestReviewRequestedVariant2PullRequestBaseRepoVisibility.Private,
                 "internal" => WebhookPullRequestReviewRequestedVariant2PullRequestBaseRepoVisibility.Internal,
+                "private" => WebhookPullRequestReviewRequestedVariant2PullRequestBaseRepoVisibility.Private,
+                "public" => WebhookPullRequestReviewRequestedVariant2PullRequestBaseRepoVisibility.Public,
                 _ => null,
             };
         }

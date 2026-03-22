@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Enabled,
+        Disabled,
         /// <summary>
         /// 
         /// </summary>
-        Disabled,
+        Enabled,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                SecurityAndAnalysisSecretScanningNonProviderPatternsStatus.Enabled => "enabled",
                 SecurityAndAnalysisSecretScanningNonProviderPatternsStatus.Disabled => "disabled",
+                SecurityAndAnalysisSecretScanningNonProviderPatternsStatus.Enabled => "enabled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "enabled" => SecurityAndAnalysisSecretScanningNonProviderPatternsStatus.Enabled,
                 "disabled" => SecurityAndAnalysisSecretScanningNonProviderPatternsStatus.Disabled,
+                "enabled" => SecurityAndAnalysisSecretScanningNonProviderPatternsStatus.Enabled,
                 _ => null,
             };
         }

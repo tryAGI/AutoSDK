@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Triage,
+        Closed,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Closed,
+        Triage,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                SecurityAdvisoriesListRepositoryAdvisoriesState.Triage => "triage",
+                SecurityAdvisoriesListRepositoryAdvisoriesState.Closed => "closed",
                 SecurityAdvisoriesListRepositoryAdvisoriesState.Draft => "draft",
                 SecurityAdvisoriesListRepositoryAdvisoriesState.Published => "published",
-                SecurityAdvisoriesListRepositoryAdvisoriesState.Closed => "closed",
+                SecurityAdvisoriesListRepositoryAdvisoriesState.Triage => "triage",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "triage" => SecurityAdvisoriesListRepositoryAdvisoriesState.Triage,
+                "closed" => SecurityAdvisoriesListRepositoryAdvisoriesState.Closed,
                 "draft" => SecurityAdvisoriesListRepositoryAdvisoriesState.Draft,
                 "published" => SecurityAdvisoriesListRepositoryAdvisoriesState.Published,
-                "closed" => SecurityAdvisoriesListRepositoryAdvisoriesState.Closed,
+                "triage" => SecurityAdvisoriesListRepositoryAdvisoriesState.Triage,
                 _ => null,
             };
         }

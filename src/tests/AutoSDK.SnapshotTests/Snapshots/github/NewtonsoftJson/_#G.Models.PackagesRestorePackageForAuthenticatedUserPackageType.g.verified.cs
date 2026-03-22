@@ -13,18 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="npm")]
-        Npm,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="maven")]
-        Maven,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="rubygems")]
-        Rubygems,
+        [global::System.Runtime.Serialization.EnumMember(Value="container")]
+        Container,
         /// <summary>
         /// 
         /// </summary>
@@ -33,13 +23,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="maven")]
+        Maven,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="npm")]
+        Npm,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="nuget")]
         Nuget,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="container")]
-        Container,
+        [global::System.Runtime.Serialization.EnumMember(Value="rubygems")]
+        Rubygems,
     }
 
     /// <summary>
@@ -54,12 +54,12 @@ namespace G
         {
             return value switch
             {
-                PackagesRestorePackageForAuthenticatedUserPackageType.Npm => "npm",
-                PackagesRestorePackageForAuthenticatedUserPackageType.Maven => "maven",
-                PackagesRestorePackageForAuthenticatedUserPackageType.Rubygems => "rubygems",
-                PackagesRestorePackageForAuthenticatedUserPackageType.Docker => "docker",
-                PackagesRestorePackageForAuthenticatedUserPackageType.Nuget => "nuget",
                 PackagesRestorePackageForAuthenticatedUserPackageType.Container => "container",
+                PackagesRestorePackageForAuthenticatedUserPackageType.Docker => "docker",
+                PackagesRestorePackageForAuthenticatedUserPackageType.Maven => "maven",
+                PackagesRestorePackageForAuthenticatedUserPackageType.Npm => "npm",
+                PackagesRestorePackageForAuthenticatedUserPackageType.Nuget => "nuget",
+                PackagesRestorePackageForAuthenticatedUserPackageType.Rubygems => "rubygems",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,12 +70,12 @@ namespace G
         {
             return value switch
             {
-                "npm" => PackagesRestorePackageForAuthenticatedUserPackageType.Npm,
-                "maven" => PackagesRestorePackageForAuthenticatedUserPackageType.Maven,
-                "rubygems" => PackagesRestorePackageForAuthenticatedUserPackageType.Rubygems,
-                "docker" => PackagesRestorePackageForAuthenticatedUserPackageType.Docker,
-                "nuget" => PackagesRestorePackageForAuthenticatedUserPackageType.Nuget,
                 "container" => PackagesRestorePackageForAuthenticatedUserPackageType.Container,
+                "docker" => PackagesRestorePackageForAuthenticatedUserPackageType.Docker,
+                "maven" => PackagesRestorePackageForAuthenticatedUserPackageType.Maven,
+                "npm" => PackagesRestorePackageForAuthenticatedUserPackageType.Npm,
+                "nuget" => PackagesRestorePackageForAuthenticatedUserPackageType.Nuget,
+                "rubygems" => PackagesRestorePackageForAuthenticatedUserPackageType.Rubygems,
                 _ => null,
             };
         }

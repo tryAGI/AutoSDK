@@ -13,11 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Hnsw,
+        Flat,
         /// <summary>
         /// 
         /// </summary>
-        Flat,
+        Hnsw,
     }
 
     /// <summary>
@@ -32,8 +32,8 @@ namespace G
         {
             return value switch
             {
-                VectorIndexType.Hnsw => "hnsw",
                 VectorIndexType.Flat => "flat",
+                VectorIndexType.Hnsw => "hnsw",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,8 +44,8 @@ namespace G
         {
             return value switch
             {
-                "hnsw" => VectorIndexType.Hnsw,
                 "flat" => VectorIndexType.Flat,
+                "hnsw" => VectorIndexType.Hnsw,
                 _ => null,
             };
         }

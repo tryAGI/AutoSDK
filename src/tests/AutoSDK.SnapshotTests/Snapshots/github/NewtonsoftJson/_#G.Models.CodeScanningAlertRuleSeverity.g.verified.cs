@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="error")]
+        Error,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="none")]
         None,
         /// <summary>
@@ -25,11 +30,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="warning")]
         Warning,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="error")]
-        Error,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
+                CodeScanningAlertRuleSeverity.Error => "error",
                 CodeScanningAlertRuleSeverity.None => "none",
                 CodeScanningAlertRuleSeverity.Note => "note",
                 CodeScanningAlertRuleSeverity.Warning => "warning",
-                CodeScanningAlertRuleSeverity.Error => "error",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
+                "error" => CodeScanningAlertRuleSeverity.Error,
                 "none" => CodeScanningAlertRuleSeverity.None,
                 "note" => CodeScanningAlertRuleSeverity.Note,
                 "warning" => CodeScanningAlertRuleSeverity.Warning,
-                "error" => CodeScanningAlertRuleSeverity.Error,
                 _ => null,
             };
         }

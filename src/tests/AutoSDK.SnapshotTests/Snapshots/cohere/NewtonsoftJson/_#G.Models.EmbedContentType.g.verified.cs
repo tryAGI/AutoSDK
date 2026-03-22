@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text")]
-        Text,
+        [global::System.Runtime.Serialization.EnumMember(Value="image_url")]
+        ImageUrl,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="image_url")]
-        ImageUrl,
+        [global::System.Runtime.Serialization.EnumMember(Value="text")]
+        Text,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                EmbedContentType.Text => "text",
                 EmbedContentType.ImageUrl => "image_url",
+                EmbedContentType.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "text" => EmbedContentType.Text,
                 "image_url" => EmbedContentType.ImageUrl,
+                "text" => EmbedContentType.Text,
                 _ => null,
             };
         }

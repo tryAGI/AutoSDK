@@ -12,11 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Ara,
+        /// <summary>
+        /// 
+        /// </summary>
         Eve,
         /// <summary>
         /// 
         /// </summary>
-        Ara,
+        Leo,
         /// <summary>
         /// 
         /// </summary>
@@ -25,10 +29,6 @@ namespace G
         /// 
         /// </summary>
         Sal,
-        /// <summary>
-        /// 
-        /// </summary>
-        Leo,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                SessionConfigVoice.Eve => "Eve",
                 SessionConfigVoice.Ara => "Ara",
+                SessionConfigVoice.Eve => "Eve",
+                SessionConfigVoice.Leo => "Leo",
                 SessionConfigVoice.Rex => "Rex",
                 SessionConfigVoice.Sal => "Sal",
-                SessionConfigVoice.Leo => "Leo",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "Eve" => SessionConfigVoice.Eve,
                 "Ara" => SessionConfigVoice.Ara,
+                "Eve" => SessionConfigVoice.Eve,
+                "Leo" => SessionConfigVoice.Leo,
                 "Rex" => SessionConfigVoice.Rex,
                 "Sal" => SessionConfigVoice.Sal,
-                "Leo" => SessionConfigVoice.Leo,
                 _ => null,
             };
         }

@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Stop,
+        Error,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Error,
+        Stop,
         /// <summary>
         /// 
         /// </summary>
@@ -43,10 +43,10 @@ namespace G
         {
             return value switch
             {
-                ChatCompletionChoiceFinishReason.Stop => "stop",
+                ChatCompletionChoiceFinishReason.Error => "error",
                 ChatCompletionChoiceFinishReason.Length => "length",
                 ChatCompletionChoiceFinishReason.ModelLength => "model_length",
-                ChatCompletionChoiceFinishReason.Error => "error",
+                ChatCompletionChoiceFinishReason.Stop => "stop",
                 ChatCompletionChoiceFinishReason.ToolCalls => "tool_calls",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "stop" => ChatCompletionChoiceFinishReason.Stop,
+                "error" => ChatCompletionChoiceFinishReason.Error,
                 "length" => ChatCompletionChoiceFinishReason.Length,
                 "model_length" => ChatCompletionChoiceFinishReason.ModelLength,
-                "error" => ChatCompletionChoiceFinishReason.Error,
+                "stop" => ChatCompletionChoiceFinishReason.Stop,
                 "tool_calls" => ChatCompletionChoiceFinishReason.ToolCalls,
                 _ => null,
             };

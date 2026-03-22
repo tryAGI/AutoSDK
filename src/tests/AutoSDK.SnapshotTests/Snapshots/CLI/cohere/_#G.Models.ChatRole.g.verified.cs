@@ -20,11 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Tool,
         /// <summary>
         /// 
         /// </summary>
-        Tool,
+        User,
     }
 
     /// <summary>
@@ -41,8 +41,8 @@ namespace G
             {
                 ChatRole.Chatbot => "CHATBOT",
                 ChatRole.System => "SYSTEM",
-                ChatRole.User => "USER",
                 ChatRole.Tool => "TOOL",
+                ChatRole.User => "USER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,8 +55,8 @@ namespace G
             {
                 "CHATBOT" => ChatRole.Chatbot,
                 "SYSTEM" => ChatRole.System,
-                "USER" => ChatRole.User,
                 "TOOL" => ChatRole.Tool,
+                "USER" => ChatRole.User,
                 _ => null,
             };
         }

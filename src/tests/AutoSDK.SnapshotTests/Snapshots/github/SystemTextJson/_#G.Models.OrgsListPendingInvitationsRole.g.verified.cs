@@ -12,19 +12,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        All,
-        /// <summary>
-        /// 
-        /// </summary>
         Admin,
         /// <summary>
         /// 
         /// </summary>
-        DirectMember,
+        All,
         /// <summary>
         /// 
         /// </summary>
         BillingManager,
+        /// <summary>
+        /// 
+        /// </summary>
+        DirectMember,
         /// <summary>
         /// 
         /// </summary>
@@ -43,10 +43,10 @@ namespace G
         {
             return value switch
             {
-                OrgsListPendingInvitationsRole.All => "all",
                 OrgsListPendingInvitationsRole.Admin => "admin",
-                OrgsListPendingInvitationsRole.DirectMember => "direct_member",
+                OrgsListPendingInvitationsRole.All => "all",
                 OrgsListPendingInvitationsRole.BillingManager => "billing_manager",
+                OrgsListPendingInvitationsRole.DirectMember => "direct_member",
                 OrgsListPendingInvitationsRole.HiringManager => "hiring_manager",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "all" => OrgsListPendingInvitationsRole.All,
                 "admin" => OrgsListPendingInvitationsRole.Admin,
-                "direct_member" => OrgsListPendingInvitationsRole.DirectMember,
+                "all" => OrgsListPendingInvitationsRole.All,
                 "billing_manager" => OrgsListPendingInvitationsRole.BillingManager,
+                "direct_member" => OrgsListPendingInvitationsRole.DirectMember,
                 "hiring_manager" => OrgsListPendingInvitationsRole.HiringManager,
                 _ => null,
             };

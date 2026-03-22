@@ -12,23 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Created,
-        /// <summary>
-        /// 
-        /// </summary>
-        Routing,
-        /// <summary>
-        /// 
-        /// </summary>
-        Queued,
-        /// <summary>
-        /// 
-        /// </summary>
-        Running,
-        /// <summary>
-        /// 
-        /// </summary>
         Completed,
+        /// <summary>
+        /// 
+        /// </summary>
+        Created,
         /// <summary>
         /// 
         /// </summary>
@@ -41,6 +29,18 @@ namespace G
         /// 
         /// </summary>
         NodePreempted,
+        /// <summary>
+        /// 
+        /// </summary>
+        Queued,
+        /// <summary>
+        /// 
+        /// </summary>
+        Routing,
+        /// <summary>
+        /// 
+        /// </summary>
+        Running,
         /// <summary>
         /// 
         /// </summary>
@@ -59,14 +59,14 @@ namespace G
         {
             return value switch
             {
-                RunState.Created => "created",
-                RunState.Routing => "routing",
-                RunState.Queued => "queued",
-                RunState.Running => "running",
                 RunState.Completed => "completed",
+                RunState.Created => "created",
                 RunState.Failed => "failed",
                 RunState.NoResourcesAvailable => "no_resources_available",
                 RunState.NodePreempted => "node_preempted",
+                RunState.Queued => "queued",
+                RunState.Routing => "routing",
+                RunState.Running => "running",
                 RunState.Unknown => "unknown",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -78,14 +78,14 @@ namespace G
         {
             return value switch
             {
-                "created" => RunState.Created,
-                "routing" => RunState.Routing,
-                "queued" => RunState.Queued,
-                "running" => RunState.Running,
                 "completed" => RunState.Completed,
+                "created" => RunState.Created,
                 "failed" => RunState.Failed,
                 "no_resources_available" => RunState.NoResourcesAvailable,
                 "node_preempted" => RunState.NodePreempted,
+                "queued" => RunState.Queued,
+                "routing" => RunState.Routing,
+                "running" => RunState.Running,
                 "unknown" => RunState.Unknown,
                 _ => null,
             };

@@ -12,11 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Start,
-        /// <summary>
-        /// 
-        /// </summary>
-        Output,
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        Output,
+        /// <summary>
+        /// 
+        /// </summary>
+        Start,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                VersionPredictionRequestWebhookEventsFilterItem.Start => "start",
-                VersionPredictionRequestWebhookEventsFilterItem.Output => "output",
-                VersionPredictionRequestWebhookEventsFilterItem.Logs => "logs",
                 VersionPredictionRequestWebhookEventsFilterItem.Completed => "completed",
+                VersionPredictionRequestWebhookEventsFilterItem.Logs => "logs",
+                VersionPredictionRequestWebhookEventsFilterItem.Output => "output",
+                VersionPredictionRequestWebhookEventsFilterItem.Start => "start",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "start" => VersionPredictionRequestWebhookEventsFilterItem.Start,
-                "output" => VersionPredictionRequestWebhookEventsFilterItem.Output,
-                "logs" => VersionPredictionRequestWebhookEventsFilterItem.Logs,
                 "completed" => VersionPredictionRequestWebhookEventsFilterItem.Completed,
+                "logs" => VersionPredictionRequestWebhookEventsFilterItem.Logs,
+                "output" => VersionPredictionRequestWebhookEventsFilterItem.Output,
+                "start" => VersionPredictionRequestWebhookEventsFilterItem.Start,
                 _ => null,
             };
         }

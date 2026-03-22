@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookPullRequestReviewRequestedVariant1PullRequestAssigneeType2.Bot => "Bot",
-                WebhookPullRequestReviewRequestedVariant1PullRequestAssigneeType2.User => "User",
-                WebhookPullRequestReviewRequestedVariant1PullRequestAssigneeType2.Organization => "Organization",
                 WebhookPullRequestReviewRequestedVariant1PullRequestAssigneeType2.Mannequin => "Mannequin",
+                WebhookPullRequestReviewRequestedVariant1PullRequestAssigneeType2.Organization => "Organization",
+                WebhookPullRequestReviewRequestedVariant1PullRequestAssigneeType2.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestReviewRequestedVariant1PullRequestAssigneeType2.Bot,
-                "User" => WebhookPullRequestReviewRequestedVariant1PullRequestAssigneeType2.User,
-                "Organization" => WebhookPullRequestReviewRequestedVariant1PullRequestAssigneeType2.Organization,
                 "Mannequin" => WebhookPullRequestReviewRequestedVariant1PullRequestAssigneeType2.Mannequin,
+                "Organization" => WebhookPullRequestReviewRequestedVariant1PullRequestAssigneeType2.Organization,
+                "User" => WebhookPullRequestReviewRequestedVariant1PullRequestAssigneeType2.User,
                 _ => null,
             };
         }

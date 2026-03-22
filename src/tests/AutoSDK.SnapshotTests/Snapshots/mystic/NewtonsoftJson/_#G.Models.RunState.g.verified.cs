@@ -13,28 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="created")]
-        Created,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="routing")]
-        Routing,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
-        Queued,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="running")]
-        Running,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="completed")]
         Completed,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="created")]
+        Created,
         /// <summary>
         /// 
         /// </summary>
@@ -50,6 +35,21 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="node_preempted")]
         NodePreempted,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
+        Queued,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="routing")]
+        Routing,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="running")]
+        Running,
         /// <summary>
         /// 
         /// </summary>
@@ -69,14 +69,14 @@ namespace G
         {
             return value switch
             {
-                RunState.Created => "created",
-                RunState.Routing => "routing",
-                RunState.Queued => "queued",
-                RunState.Running => "running",
                 RunState.Completed => "completed",
+                RunState.Created => "created",
                 RunState.Failed => "failed",
                 RunState.NoResourcesAvailable => "no_resources_available",
                 RunState.NodePreempted => "node_preempted",
+                RunState.Queued => "queued",
+                RunState.Routing => "routing",
+                RunState.Running => "running",
                 RunState.Unknown => "unknown",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -88,14 +88,14 @@ namespace G
         {
             return value switch
             {
-                "created" => RunState.Created,
-                "routing" => RunState.Routing,
-                "queued" => RunState.Queued,
-                "running" => RunState.Running,
                 "completed" => RunState.Completed,
+                "created" => RunState.Created,
                 "failed" => RunState.Failed,
                 "no_resources_available" => RunState.NoResourcesAvailable,
                 "node_preempted" => RunState.NodePreempted,
+                "queued" => RunState.Queued,
+                "routing" => RunState.Routing,
+                "running" => RunState.Running,
                 "unknown" => RunState.Unknown,
                 _ => null,
             };

@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="user")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="assistant")]
+        Assistant,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="assistant")]
-        Assistant,
+        [global::System.Runtime.Serialization.EnumMember(Value="user")]
+        User,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                RoleType.User => "user",
                 RoleType.Assistant => "assistant",
+                RoleType.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "user" => RoleType.User,
                 "assistant" => RoleType.Assistant,
+                "user" => RoleType.User,
                 _ => null,
             };
         }

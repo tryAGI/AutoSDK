@@ -18,13 +18,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="tool")]
-        Tool,
+        [global::System.Runtime.Serialization.EnumMember(Value="simulation")]
+        Simulation,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="simulation")]
-        Simulation,
+        [global::System.Runtime.Serialization.EnumMember(Value="tool")]
+        Tool,
     }
 
     /// <summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 UpdateAgentResponseTestRouteResponseDiscriminatorType.Llm => "llm",
-                UpdateAgentResponseTestRouteResponseDiscriminatorType.Tool => "tool",
                 UpdateAgentResponseTestRouteResponseDiscriminatorType.Simulation => "simulation",
+                UpdateAgentResponseTestRouteResponseDiscriminatorType.Tool => "tool",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,8 +53,8 @@ namespace G
             return value switch
             {
                 "llm" => UpdateAgentResponseTestRouteResponseDiscriminatorType.Llm,
-                "tool" => UpdateAgentResponseTestRouteResponseDiscriminatorType.Tool,
                 "simulation" => UpdateAgentResponseTestRouteResponseDiscriminatorType.Simulation,
+                "tool" => UpdateAgentResponseTestRouteResponseDiscriminatorType.Tool,
                 _ => null,
             };
         }

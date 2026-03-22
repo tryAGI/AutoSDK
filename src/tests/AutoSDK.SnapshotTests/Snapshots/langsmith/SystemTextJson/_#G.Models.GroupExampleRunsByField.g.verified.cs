@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        RunMetadata,
+        ExampleMetadata,
         /// <summary>
         /// 
         /// </summary>
-        ExampleMetadata,
+        RunMetadata,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                GroupExampleRunsByField.RunMetadata => "run_metadata",
                 GroupExampleRunsByField.ExampleMetadata => "example_metadata",
+                GroupExampleRunsByField.RunMetadata => "run_metadata",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "run_metadata" => GroupExampleRunsByField.RunMetadata,
                 "example_metadata" => GroupExampleRunsByField.ExampleMetadata,
+                "run_metadata" => GroupExampleRunsByField.RunMetadata,
                 _ => null,
             };
         }

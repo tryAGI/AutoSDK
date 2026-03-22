@@ -14,11 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        NotificationsEnabled,
+        NotificationsDisabled,
         /// <summary>
         /// 
         /// </summary>
-        NotificationsDisabled,
+        NotificationsEnabled,
     }
 
     /// <summary>
@@ -33,8 +33,8 @@ namespace G
         {
             return value switch
             {
-                TeamsUpdateInOrgRequestNotificationSetting.NotificationsEnabled => "notifications_enabled",
                 TeamsUpdateInOrgRequestNotificationSetting.NotificationsDisabled => "notifications_disabled",
+                TeamsUpdateInOrgRequestNotificationSetting.NotificationsEnabled => "notifications_enabled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -45,8 +45,8 @@ namespace G
         {
             return value switch
             {
-                "notifications_enabled" => TeamsUpdateInOrgRequestNotificationSetting.NotificationsEnabled,
                 "notifications_disabled" => TeamsUpdateInOrgRequestNotificationSetting.NotificationsDisabled,
+                "notifications_enabled" => TeamsUpdateInOrgRequestNotificationSetting.NotificationsEnabled,
                 _ => null,
             };
         }

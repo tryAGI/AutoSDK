@@ -14,13 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
-        Completed,
+        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
-        Cancelled,
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -45,8 +45,8 @@ namespace G
         {
             return value switch
             {
-                RealtimeResponseStatus.Completed => "completed",
                 RealtimeResponseStatus.Cancelled => "cancelled",
+                RealtimeResponseStatus.Completed => "completed",
                 RealtimeResponseStatus.Failed => "failed",
                 RealtimeResponseStatus.Incomplete => "incomplete",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -59,8 +59,8 @@ namespace G
         {
             return value switch
             {
-                "completed" => RealtimeResponseStatus.Completed,
                 "cancelled" => RealtimeResponseStatus.Cancelled,
+                "completed" => RealtimeResponseStatus.Completed,
                 "failed" => RealtimeResponseStatus.Failed,
                 "incomplete" => RealtimeResponseStatus.Incomplete,
                 _ => null,

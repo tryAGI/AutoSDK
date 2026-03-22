@@ -13,43 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="QUEUED")]
-        Queued,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="STARTED")]
-        Started,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="VALIDATING")]
-        Validating,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="VALIDATED")]
-        Validated,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="RUNNING")]
-        Running,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="FAILED_VALIDATION")]
-        FailedValidation,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="FAILED")]
-        Failed,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="SUCCESS")]
-        Success,
+        [global::System.Runtime.Serialization.EnumMember(Value="CANCELLATION_REQUESTED")]
+        CancellationRequested,
         /// <summary>
         /// 
         /// </summary>
@@ -58,8 +23,43 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="CANCELLATION_REQUESTED")]
-        CancellationRequested,
+        [global::System.Runtime.Serialization.EnumMember(Value="FAILED")]
+        Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="FAILED_VALIDATION")]
+        FailedValidation,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="QUEUED")]
+        Queued,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="RUNNING")]
+        Running,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="STARTED")]
+        Started,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="SUCCESS")]
+        Success,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="VALIDATED")]
+        Validated,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="VALIDATING")]
+        Validating,
     }
 
     /// <summary>
@@ -74,16 +74,16 @@ namespace G
         {
             return value switch
             {
-                CompletionDetailedJobOutStatus.Queued => "QUEUED",
-                CompletionDetailedJobOutStatus.Started => "STARTED",
-                CompletionDetailedJobOutStatus.Validating => "VALIDATING",
-                CompletionDetailedJobOutStatus.Validated => "VALIDATED",
-                CompletionDetailedJobOutStatus.Running => "RUNNING",
-                CompletionDetailedJobOutStatus.FailedValidation => "FAILED_VALIDATION",
-                CompletionDetailedJobOutStatus.Failed => "FAILED",
-                CompletionDetailedJobOutStatus.Success => "SUCCESS",
-                CompletionDetailedJobOutStatus.Cancelled => "CANCELLED",
                 CompletionDetailedJobOutStatus.CancellationRequested => "CANCELLATION_REQUESTED",
+                CompletionDetailedJobOutStatus.Cancelled => "CANCELLED",
+                CompletionDetailedJobOutStatus.Failed => "FAILED",
+                CompletionDetailedJobOutStatus.FailedValidation => "FAILED_VALIDATION",
+                CompletionDetailedJobOutStatus.Queued => "QUEUED",
+                CompletionDetailedJobOutStatus.Running => "RUNNING",
+                CompletionDetailedJobOutStatus.Started => "STARTED",
+                CompletionDetailedJobOutStatus.Success => "SUCCESS",
+                CompletionDetailedJobOutStatus.Validated => "VALIDATED",
+                CompletionDetailedJobOutStatus.Validating => "VALIDATING",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -94,16 +94,16 @@ namespace G
         {
             return value switch
             {
-                "QUEUED" => CompletionDetailedJobOutStatus.Queued,
-                "STARTED" => CompletionDetailedJobOutStatus.Started,
-                "VALIDATING" => CompletionDetailedJobOutStatus.Validating,
-                "VALIDATED" => CompletionDetailedJobOutStatus.Validated,
-                "RUNNING" => CompletionDetailedJobOutStatus.Running,
-                "FAILED_VALIDATION" => CompletionDetailedJobOutStatus.FailedValidation,
-                "FAILED" => CompletionDetailedJobOutStatus.Failed,
-                "SUCCESS" => CompletionDetailedJobOutStatus.Success,
-                "CANCELLED" => CompletionDetailedJobOutStatus.Cancelled,
                 "CANCELLATION_REQUESTED" => CompletionDetailedJobOutStatus.CancellationRequested,
+                "CANCELLED" => CompletionDetailedJobOutStatus.Cancelled,
+                "FAILED" => CompletionDetailedJobOutStatus.Failed,
+                "FAILED_VALIDATION" => CompletionDetailedJobOutStatus.FailedValidation,
+                "QUEUED" => CompletionDetailedJobOutStatus.Queued,
+                "RUNNING" => CompletionDetailedJobOutStatus.Running,
+                "STARTED" => CompletionDetailedJobOutStatus.Started,
+                "SUCCESS" => CompletionDetailedJobOutStatus.Success,
+                "VALIDATED" => CompletionDetailedJobOutStatus.Validated,
+                "VALIDATING" => CompletionDetailedJobOutStatus.Validating,
                 _ => null,
             };
         }

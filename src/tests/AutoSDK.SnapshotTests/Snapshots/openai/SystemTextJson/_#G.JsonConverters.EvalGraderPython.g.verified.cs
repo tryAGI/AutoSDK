@@ -28,10 +28,10 @@ namespace G.JsonConverters
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("type")) __score0++;
+            if (__jsonProps.Contains("image_tag")) __score0++;
             if (__jsonProps.Contains("name")) __score0++;
             if (__jsonProps.Contains("source")) __score0++;
-            if (__jsonProps.Contains("image_tag")) __score0++;
+            if (__jsonProps.Contains("type")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("pass_threshold")) __score1++;
             var __bestScore = 0;

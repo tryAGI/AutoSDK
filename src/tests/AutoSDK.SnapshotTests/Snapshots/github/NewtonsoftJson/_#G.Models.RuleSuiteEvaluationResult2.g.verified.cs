@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pass")]
-        Pass,
+        [global::System.Runtime.Serialization.EnumMember(Value="bypass")]
+        Bypass,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="bypass")]
-        Bypass,
+        [global::System.Runtime.Serialization.EnumMember(Value="pass")]
+        Pass,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                RuleSuiteEvaluationResult2.Pass => "pass",
-                RuleSuiteEvaluationResult2.Fail => "fail",
                 RuleSuiteEvaluationResult2.Bypass => "bypass",
+                RuleSuiteEvaluationResult2.Fail => "fail",
+                RuleSuiteEvaluationResult2.Pass => "pass",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "pass" => RuleSuiteEvaluationResult2.Pass,
-                "fail" => RuleSuiteEvaluationResult2.Fail,
                 "bypass" => RuleSuiteEvaluationResult2.Bypass,
+                "fail" => RuleSuiteEvaluationResult2.Fail,
+                "pass" => RuleSuiteEvaluationResult2.Pass,
                 _ => null,
             };
         }

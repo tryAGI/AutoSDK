@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Converting,
+        /// <summary>
+        /// 
+        /// </summary>
         Creating,
         /// <summary>
         /// 
         /// </summary>
         Default,
-        /// <summary>
-        /// 
-        /// </summary>
-        Converting,
         /// <summary>
         /// 
         /// </summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                ProjectResponseModelState.Converting => "converting",
                 ProjectResponseModelState.Creating => "creating",
                 ProjectResponseModelState.Default => "default",
-                ProjectResponseModelState.Converting => "converting",
                 ProjectResponseModelState.InQueue => "in_queue",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
+                "converting" => ProjectResponseModelState.Converting,
                 "creating" => ProjectResponseModelState.Creating,
                 "default" => ProjectResponseModelState.Default,
-                "converting" => ProjectResponseModelState.Converting,
                 "in_queue" => ProjectResponseModelState.InQueue,
                 _ => null,
             };

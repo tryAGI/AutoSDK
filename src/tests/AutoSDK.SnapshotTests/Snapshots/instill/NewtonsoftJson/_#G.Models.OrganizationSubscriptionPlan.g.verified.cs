@@ -14,6 +14,11 @@ namespace G
     public enum OrganizationSubscriptionPlan
     {
         /// <summary>
+        /// Enterprise plan.
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="PLAN_ENTERPRISE")]
+        PlanEnterprise,
+        /// <summary>
         /// Free plan.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PLAN_FREE")]
@@ -23,11 +28,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PLAN_TEAM")]
         PlanTeam,
-        /// <summary>
-        /// Enterprise plan.
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="PLAN_ENTERPRISE")]
-        PlanEnterprise,
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ namespace G
         {
             return value switch
             {
+                OrganizationSubscriptionPlan.PlanEnterprise => "PLAN_ENTERPRISE",
                 OrganizationSubscriptionPlan.PlanFree => "PLAN_FREE",
                 OrganizationSubscriptionPlan.PlanTeam => "PLAN_TEAM",
-                OrganizationSubscriptionPlan.PlanEnterprise => "PLAN_ENTERPRISE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,9 +55,9 @@ namespace G
         {
             return value switch
             {
+                "PLAN_ENTERPRISE" => OrganizationSubscriptionPlan.PlanEnterprise,
                 "PLAN_FREE" => OrganizationSubscriptionPlan.PlanFree,
                 "PLAN_TEAM" => OrganizationSubscriptionPlan.PlanTeam,
-                "PLAN_ENTERPRISE" => OrganizationSubscriptionPlan.PlanEnterprise,
                 _ => null,
             };
         }

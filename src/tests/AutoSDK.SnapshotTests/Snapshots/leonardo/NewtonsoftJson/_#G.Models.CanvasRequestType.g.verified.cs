@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="IMG2IMG")]
+        Img2img,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="INPAINT")]
         Inpaint,
         /// <summary>
@@ -25,11 +30,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SKETCH2IMG")]
         Sketch2img,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="IMG2IMG")]
-        Img2img,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
+                CanvasRequestType.Img2img => "IMG2IMG",
                 CanvasRequestType.Inpaint => "INPAINT",
                 CanvasRequestType.Outpaint => "OUTPAINT",
                 CanvasRequestType.Sketch2img => "SKETCH2IMG",
-                CanvasRequestType.Img2img => "IMG2IMG",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
+                "IMG2IMG" => CanvasRequestType.Img2img,
                 "INPAINT" => CanvasRequestType.Inpaint,
                 "OUTPAINT" => CanvasRequestType.Outpaint,
                 "SKETCH2IMG" => CanvasRequestType.Sketch2img,
-                "IMG2IMG" => CanvasRequestType.Img2img,
                 _ => null,
             };
         }

@@ -14,13 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="platform")]
-        Platform,
+        [global::System.Runtime.Serialization.EnumMember(Value="customer")]
+        Customer,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="customer")]
-        Customer,
+        [global::System.Runtime.Serialization.EnumMember(Value="platform")]
+        Platform,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                LLMOwnership.Platform => "platform",
                 LLMOwnership.Customer => "customer",
+                LLMOwnership.Platform => "platform",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,8 +47,8 @@ namespace G
         {
             return value switch
             {
-                "platform" => LLMOwnership.Platform,
                 "customer" => LLMOwnership.Customer,
+                "platform" => LLMOwnership.Platform,
                 _ => null,
             };
         }

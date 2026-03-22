@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="public")]
-        Public,
+        [global::System.Runtime.Serialization.EnumMember(Value="all")]
+        All,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="all")]
-        All,
+        [global::System.Runtime.Serialization.EnumMember(Value="public")]
+        Public,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                CodeSecurityDefaultConfigurationDefaultForNewRepos.Public => "public",
-                CodeSecurityDefaultConfigurationDefaultForNewRepos.PrivateAndInternal => "private_and_internal",
                 CodeSecurityDefaultConfigurationDefaultForNewRepos.All => "all",
+                CodeSecurityDefaultConfigurationDefaultForNewRepos.PrivateAndInternal => "private_and_internal",
+                CodeSecurityDefaultConfigurationDefaultForNewRepos.Public => "public",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "public" => CodeSecurityDefaultConfigurationDefaultForNewRepos.Public,
-                "private_and_internal" => CodeSecurityDefaultConfigurationDefaultForNewRepos.PrivateAndInternal,
                 "all" => CodeSecurityDefaultConfigurationDefaultForNewRepos.All,
+                "private_and_internal" => CodeSecurityDefaultConfigurationDefaultForNewRepos.PrivateAndInternal,
+                "public" => CodeSecurityDefaultConfigurationDefaultForNewRepos.Public,
                 _ => null,
             };
         }

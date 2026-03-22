@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="SUCCESS")]
-        Success,
+        [global::System.Runtime.Serialization.EnumMember(Value="FAILED")]
+        Failed,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="FAILED")]
-        Failed,
+        [global::System.Runtime.Serialization.EnumMember(Value="SUCCESS")]
+        Success,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                BatchReferenceResponseVariant2ResultStatus.Success => "SUCCESS",
-                BatchReferenceResponseVariant2ResultStatus.Pending => "PENDING",
                 BatchReferenceResponseVariant2ResultStatus.Failed => "FAILED",
+                BatchReferenceResponseVariant2ResultStatus.Pending => "PENDING",
+                BatchReferenceResponseVariant2ResultStatus.Success => "SUCCESS",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "SUCCESS" => BatchReferenceResponseVariant2ResultStatus.Success,
-                "PENDING" => BatchReferenceResponseVariant2ResultStatus.Pending,
                 "FAILED" => BatchReferenceResponseVariant2ResultStatus.Failed,
+                "PENDING" => BatchReferenceResponseVariant2ResultStatus.Pending,
+                "SUCCESS" => BatchReferenceResponseVariant2ResultStatus.Success,
                 _ => null,
             };
         }

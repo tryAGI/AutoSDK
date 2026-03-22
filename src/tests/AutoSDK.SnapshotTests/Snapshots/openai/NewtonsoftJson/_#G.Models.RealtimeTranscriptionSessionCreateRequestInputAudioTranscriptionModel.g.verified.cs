@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="gpt-4o-transcribe")]
-        Gpt4oTranscribe,
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-4o-mini-transcribe")]
+        Gpt4oMiniTranscribe,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="gpt-4o-mini-transcribe")]
-        Gpt4oMiniTranscribe,
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-4o-transcribe")]
+        Gpt4oTranscribe,
         /// <summary>
         /// 
         /// </summary>
@@ -39,8 +39,8 @@ namespace G
         {
             return value switch
             {
-                RealtimeTranscriptionSessionCreateRequestInputAudioTranscriptionModel.Gpt4oTranscribe => "gpt-4o-transcribe",
                 RealtimeTranscriptionSessionCreateRequestInputAudioTranscriptionModel.Gpt4oMiniTranscribe => "gpt-4o-mini-transcribe",
+                RealtimeTranscriptionSessionCreateRequestInputAudioTranscriptionModel.Gpt4oTranscribe => "gpt-4o-transcribe",
                 RealtimeTranscriptionSessionCreateRequestInputAudioTranscriptionModel.Whisper1 => "whisper-1",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -52,8 +52,8 @@ namespace G
         {
             return value switch
             {
-                "gpt-4o-transcribe" => RealtimeTranscriptionSessionCreateRequestInputAudioTranscriptionModel.Gpt4oTranscribe,
                 "gpt-4o-mini-transcribe" => RealtimeTranscriptionSessionCreateRequestInputAudioTranscriptionModel.Gpt4oMiniTranscribe,
+                "gpt-4o-transcribe" => RealtimeTranscriptionSessionCreateRequestInputAudioTranscriptionModel.Gpt4oTranscribe,
                 "whisper-1" => RealtimeTranscriptionSessionCreateRequestInputAudioTranscriptionModel.Whisper1,
                 _ => null,
             };

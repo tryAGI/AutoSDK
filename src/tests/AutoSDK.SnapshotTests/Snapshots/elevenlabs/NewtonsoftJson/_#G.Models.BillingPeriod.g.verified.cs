@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="monthly_period")]
-        MonthlyPeriod,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="3_month_period")]
         x3MonthPeriod,
         /// <summary>
@@ -30,6 +25,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="annual_period")]
         AnnualPeriod,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="monthly_period")]
+        MonthlyPeriod,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                BillingPeriod.MonthlyPeriod => "monthly_period",
                 BillingPeriod.x3MonthPeriod => "3_month_period",
                 BillingPeriod.x6MonthPeriod => "6_month_period",
                 BillingPeriod.AnnualPeriod => "annual_period",
+                BillingPeriod.MonthlyPeriod => "monthly_period",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "monthly_period" => BillingPeriod.MonthlyPeriod,
                 "3_month_period" => BillingPeriod.x3MonthPeriod,
                 "6_month_period" => BillingPeriod.x6MonthPeriod,
                 "annual_period" => BillingPeriod.AnnualPeriod,
+                "monthly_period" => BillingPeriod.MonthlyPeriod,
                 _ => null,
             };
         }

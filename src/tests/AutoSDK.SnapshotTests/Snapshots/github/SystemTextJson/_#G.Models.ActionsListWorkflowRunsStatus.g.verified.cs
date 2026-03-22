@@ -12,10 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Completed,
-        /// <summary>
-        /// 
-        /// </summary>
         ActionRequired,
         /// <summary>
         /// 
@@ -24,11 +20,31 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Completed,
+        /// <summary>
+        /// 
+        /// </summary>
         Failure,
         /// <summary>
         /// 
         /// </summary>
+        InProgress,
+        /// <summary>
+        /// 
+        /// </summary>
         Neutral,
+        /// <summary>
+        /// 
+        /// </summary>
+        Pending,
+        /// <summary>
+        /// 
+        /// </summary>
+        Queued,
+        /// <summary>
+        /// 
+        /// </summary>
+        Requested,
         /// <summary>
         /// 
         /// </summary>
@@ -48,23 +64,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        InProgress,
-        /// <summary>
-        /// 
-        /// </summary>
-        Queued,
-        /// <summary>
-        /// 
-        /// </summary>
-        Requested,
-        /// <summary>
-        /// 
-        /// </summary>
         Waiting,
-        /// <summary>
-        /// 
-        /// </summary>
-        Pending,
     }
 
     /// <summary>
@@ -79,20 +79,20 @@ namespace G
         {
             return value switch
             {
-                ActionsListWorkflowRunsStatus.Completed => "completed",
                 ActionsListWorkflowRunsStatus.ActionRequired => "action_required",
                 ActionsListWorkflowRunsStatus.Cancelled => "cancelled",
+                ActionsListWorkflowRunsStatus.Completed => "completed",
                 ActionsListWorkflowRunsStatus.Failure => "failure",
+                ActionsListWorkflowRunsStatus.InProgress => "in_progress",
                 ActionsListWorkflowRunsStatus.Neutral => "neutral",
+                ActionsListWorkflowRunsStatus.Pending => "pending",
+                ActionsListWorkflowRunsStatus.Queued => "queued",
+                ActionsListWorkflowRunsStatus.Requested => "requested",
                 ActionsListWorkflowRunsStatus.Skipped => "skipped",
                 ActionsListWorkflowRunsStatus.Stale => "stale",
                 ActionsListWorkflowRunsStatus.Success => "success",
                 ActionsListWorkflowRunsStatus.TimedOut => "timed_out",
-                ActionsListWorkflowRunsStatus.InProgress => "in_progress",
-                ActionsListWorkflowRunsStatus.Queued => "queued",
-                ActionsListWorkflowRunsStatus.Requested => "requested",
                 ActionsListWorkflowRunsStatus.Waiting => "waiting",
-                ActionsListWorkflowRunsStatus.Pending => "pending",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -103,20 +103,20 @@ namespace G
         {
             return value switch
             {
-                "completed" => ActionsListWorkflowRunsStatus.Completed,
                 "action_required" => ActionsListWorkflowRunsStatus.ActionRequired,
                 "cancelled" => ActionsListWorkflowRunsStatus.Cancelled,
+                "completed" => ActionsListWorkflowRunsStatus.Completed,
                 "failure" => ActionsListWorkflowRunsStatus.Failure,
+                "in_progress" => ActionsListWorkflowRunsStatus.InProgress,
                 "neutral" => ActionsListWorkflowRunsStatus.Neutral,
+                "pending" => ActionsListWorkflowRunsStatus.Pending,
+                "queued" => ActionsListWorkflowRunsStatus.Queued,
+                "requested" => ActionsListWorkflowRunsStatus.Requested,
                 "skipped" => ActionsListWorkflowRunsStatus.Skipped,
                 "stale" => ActionsListWorkflowRunsStatus.Stale,
                 "success" => ActionsListWorkflowRunsStatus.Success,
                 "timed_out" => ActionsListWorkflowRunsStatus.TimedOut,
-                "in_progress" => ActionsListWorkflowRunsStatus.InProgress,
-                "queued" => ActionsListWorkflowRunsStatus.Queued,
-                "requested" => ActionsListWorkflowRunsStatus.Requested,
                 "waiting" => ActionsListWorkflowRunsStatus.Waiting,
-                "pending" => ActionsListWorkflowRunsStatus.Pending,
                 _ => null,
             };
         }

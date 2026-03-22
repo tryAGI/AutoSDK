@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="name")]
-        Name,
+        [global::System.Runtime.Serialization.EnumMember(Value="created_at")]
+        CreatedAt,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="created_at")]
-        CreatedAt,
+        [global::System.Runtime.Serialization.EnumMember(Value="name")]
+        Name,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ToolSortBy.Name => "name",
                 ToolSortBy.CreatedAt => "created_at",
+                ToolSortBy.Name => "name",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "name" => ToolSortBy.Name,
                 "created_at" => ToolSortBy.CreatedAt,
+                "name" => ToolSortBy.Name,
                 _ => null,
             };
         }

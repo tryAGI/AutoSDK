@@ -13,18 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="1344:768")]
-        x1344_768,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="768:1344")]
-        x768_1344,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="1024:1024")]
         x1024_1024,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="1152:896")]
+        x1152_896,
         /// <summary>
         /// 
         /// </summary>
@@ -33,8 +28,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="864:1184")]
-        x864_1184,
+        [global::System.Runtime.Serialization.EnumMember(Value="1248:832")]
+        x1248_832,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="1344:768")]
+        x1344_768,
         /// <summary>
         /// 
         /// </summary>
@@ -43,23 +43,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="768:1344")]
+        x768_1344,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="832:1248")]
         x832_1248,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="1248:832")]
-        x1248_832,
+        [global::System.Runtime.Serialization.EnumMember(Value="864:1184")]
+        x864_1184,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="896:1152")]
         x896_1152,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="1152:896")]
-        x1152_896,
     }
 
     /// <summary>
@@ -74,16 +74,16 @@ namespace G
         {
             return value switch
             {
-                CreateTextToImageRequestGemini25FlashRatio.x1344_768 => "1344:768",
-                CreateTextToImageRequestGemini25FlashRatio.x768_1344 => "768:1344",
                 CreateTextToImageRequestGemini25FlashRatio.x1024_1024 => "1024:1024",
-                CreateTextToImageRequestGemini25FlashRatio.x1184_864 => "1184:864",
-                CreateTextToImageRequestGemini25FlashRatio.x864_1184 => "864:1184",
-                CreateTextToImageRequestGemini25FlashRatio.x1536_672 => "1536:672",
-                CreateTextToImageRequestGemini25FlashRatio.x832_1248 => "832:1248",
-                CreateTextToImageRequestGemini25FlashRatio.x1248_832 => "1248:832",
-                CreateTextToImageRequestGemini25FlashRatio.x896_1152 => "896:1152",
                 CreateTextToImageRequestGemini25FlashRatio.x1152_896 => "1152:896",
+                CreateTextToImageRequestGemini25FlashRatio.x1184_864 => "1184:864",
+                CreateTextToImageRequestGemini25FlashRatio.x1248_832 => "1248:832",
+                CreateTextToImageRequestGemini25FlashRatio.x1344_768 => "1344:768",
+                CreateTextToImageRequestGemini25FlashRatio.x1536_672 => "1536:672",
+                CreateTextToImageRequestGemini25FlashRatio.x768_1344 => "768:1344",
+                CreateTextToImageRequestGemini25FlashRatio.x832_1248 => "832:1248",
+                CreateTextToImageRequestGemini25FlashRatio.x864_1184 => "864:1184",
+                CreateTextToImageRequestGemini25FlashRatio.x896_1152 => "896:1152",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -94,16 +94,16 @@ namespace G
         {
             return value switch
             {
-                "1344:768" => CreateTextToImageRequestGemini25FlashRatio.x1344_768,
-                "768:1344" => CreateTextToImageRequestGemini25FlashRatio.x768_1344,
                 "1024:1024" => CreateTextToImageRequestGemini25FlashRatio.x1024_1024,
-                "1184:864" => CreateTextToImageRequestGemini25FlashRatio.x1184_864,
-                "864:1184" => CreateTextToImageRequestGemini25FlashRatio.x864_1184,
-                "1536:672" => CreateTextToImageRequestGemini25FlashRatio.x1536_672,
-                "832:1248" => CreateTextToImageRequestGemini25FlashRatio.x832_1248,
-                "1248:832" => CreateTextToImageRequestGemini25FlashRatio.x1248_832,
-                "896:1152" => CreateTextToImageRequestGemini25FlashRatio.x896_1152,
                 "1152:896" => CreateTextToImageRequestGemini25FlashRatio.x1152_896,
+                "1184:864" => CreateTextToImageRequestGemini25FlashRatio.x1184_864,
+                "1248:832" => CreateTextToImageRequestGemini25FlashRatio.x1248_832,
+                "1344:768" => CreateTextToImageRequestGemini25FlashRatio.x1344_768,
+                "1536:672" => CreateTextToImageRequestGemini25FlashRatio.x1536_672,
+                "768:1344" => CreateTextToImageRequestGemini25FlashRatio.x768_1344,
+                "832:1248" => CreateTextToImageRequestGemini25FlashRatio.x832_1248,
+                "864:1184" => CreateTextToImageRequestGemini25FlashRatio.x864_1184,
+                "896:1152" => CreateTextToImageRequestGemini25FlashRatio.x896_1152,
                 _ => null,
             };
         }

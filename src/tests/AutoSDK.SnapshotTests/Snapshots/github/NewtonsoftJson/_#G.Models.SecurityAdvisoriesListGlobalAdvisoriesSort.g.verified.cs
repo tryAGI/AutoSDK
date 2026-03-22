@@ -13,8 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="updated")]
-        Updated,
+        [global::System.Runtime.Serialization.EnumMember(Value="epss_percentage")]
+        EpssPercentage,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="epss_percentile")]
+        EpssPercentile,
         /// <summary>
         /// 
         /// </summary>
@@ -23,13 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="epss_percentage")]
-        EpssPercentage,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="epss_percentile")]
-        EpssPercentile,
+        [global::System.Runtime.Serialization.EnumMember(Value="updated")]
+        Updated,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                SecurityAdvisoriesListGlobalAdvisoriesSort.Updated => "updated",
-                SecurityAdvisoriesListGlobalAdvisoriesSort.Published => "published",
                 SecurityAdvisoriesListGlobalAdvisoriesSort.EpssPercentage => "epss_percentage",
                 SecurityAdvisoriesListGlobalAdvisoriesSort.EpssPercentile => "epss_percentile",
+                SecurityAdvisoriesListGlobalAdvisoriesSort.Published => "published",
+                SecurityAdvisoriesListGlobalAdvisoriesSort.Updated => "updated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "updated" => SecurityAdvisoriesListGlobalAdvisoriesSort.Updated,
-                "published" => SecurityAdvisoriesListGlobalAdvisoriesSort.Published,
                 "epss_percentage" => SecurityAdvisoriesListGlobalAdvisoriesSort.EpssPercentage,
                 "epss_percentile" => SecurityAdvisoriesListGlobalAdvisoriesSort.EpssPercentile,
+                "published" => SecurityAdvisoriesListGlobalAdvisoriesSort.Published,
+                "updated" => SecurityAdvisoriesListGlobalAdvisoriesSort.Updated,
                 _ => null,
             };
         }

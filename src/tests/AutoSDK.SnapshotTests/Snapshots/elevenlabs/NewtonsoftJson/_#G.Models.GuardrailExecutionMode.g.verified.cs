@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="streaming")]
-        Streaming,
+        [global::System.Runtime.Serialization.EnumMember(Value="blocking")]
+        Blocking,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="blocking")]
-        Blocking,
+        [global::System.Runtime.Serialization.EnumMember(Value="streaming")]
+        Streaming,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                GuardrailExecutionMode.Streaming => "streaming",
                 GuardrailExecutionMode.Blocking => "blocking",
+                GuardrailExecutionMode.Streaming => "streaming",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "streaming" => GuardrailExecutionMode.Streaming,
                 "blocking" => GuardrailExecutionMode.Blocking,
+                "streaming" => GuardrailExecutionMode.Streaming,
                 _ => null,
             };
         }

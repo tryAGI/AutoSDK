@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Disabled,
+        Active,
         /// <summary>
         /// 
         /// </summary>
-        Active,
+        Disabled,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                RepositoryRuleEnforcement.Disabled => "disabled",
                 RepositoryRuleEnforcement.Active => "active",
+                RepositoryRuleEnforcement.Disabled => "disabled",
                 RepositoryRuleEnforcement.Evaluate => "evaluate",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "disabled" => RepositoryRuleEnforcement.Disabled,
                 "active" => RepositoryRuleEnforcement.Active,
+                "disabled" => RepositoryRuleEnforcement.Disabled,
                 "evaluate" => RepositoryRuleEnforcement.Evaluate,
                 _ => null,
             };

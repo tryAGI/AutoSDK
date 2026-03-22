@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Subversion,
-        /// <summary>
-        /// 
-        /// </summary>
         Git,
         /// <summary>
         /// 
         /// </summary>
         Mercurial,
+        /// <summary>
+        /// 
+        /// </summary>
+        Subversion,
         /// <summary>
         /// 
         /// </summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                MigrationsStartImportRequestVcs.Subversion => "subversion",
                 MigrationsStartImportRequestVcs.Git => "git",
                 MigrationsStartImportRequestVcs.Mercurial => "mercurial",
+                MigrationsStartImportRequestVcs.Subversion => "subversion",
                 MigrationsStartImportRequestVcs.Tfvc => "tfvc",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
-                "subversion" => MigrationsStartImportRequestVcs.Subversion,
                 "git" => MigrationsStartImportRequestVcs.Git,
                 "mercurial" => MigrationsStartImportRequestVcs.Mercurial,
+                "subversion" => MigrationsStartImportRequestVcs.Subversion,
                 "tfvc" => MigrationsStartImportRequestVcs.Tfvc,
                 _ => null,
             };

@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        SourceStatusUnspecified,
-        /// <summary>
-        /// 
-        /// </summary>
         SourceStatusInitializing,
         /// <summary>
         /// 
         /// </summary>
         SourceStatusReady,
+        /// <summary>
+        /// 
+        /// </summary>
+        SourceStatusUnspecified,
         /// <summary>
         /// 
         /// </summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                UltravoxV1SourceStatsStatus.SourceStatusUnspecified => "SOURCE_STATUS_UNSPECIFIED",
                 UltravoxV1SourceStatsStatus.SourceStatusInitializing => "SOURCE_STATUS_INITIALIZING",
                 UltravoxV1SourceStatsStatus.SourceStatusReady => "SOURCE_STATUS_READY",
+                UltravoxV1SourceStatsStatus.SourceStatusUnspecified => "SOURCE_STATUS_UNSPECIFIED",
                 UltravoxV1SourceStatsStatus.SourceStatusUpdating => "SOURCE_STATUS_UPDATING",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
-                "SOURCE_STATUS_UNSPECIFIED" => UltravoxV1SourceStatsStatus.SourceStatusUnspecified,
                 "SOURCE_STATUS_INITIALIZING" => UltravoxV1SourceStatsStatus.SourceStatusInitializing,
                 "SOURCE_STATUS_READY" => UltravoxV1SourceStatsStatus.SourceStatusReady,
+                "SOURCE_STATUS_UNSPECIFIED" => UltravoxV1SourceStatsStatus.SourceStatusUnspecified,
                 "SOURCE_STATUS_UPDATING" => UltravoxV1SourceStatsStatus.SourceStatusUpdating,
                 _ => null,
             };

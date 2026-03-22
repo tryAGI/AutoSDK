@@ -13,8 +13,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="custom-oidc")]
+        CustomOidc,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="email")]
         Email,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="oidc")]
+        Oidc,
         /// <summary>
         /// 
         /// </summary>
@@ -25,16 +35,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="supabase:sso")]
         Supabase_sso,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="oidc")]
-        Oidc,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="custom-oidc")]
-        CustomOidc,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
+                AuthProvider.CustomOidc => "custom-oidc",
                 AuthProvider.Email => "email",
+                AuthProvider.Oidc => "oidc",
                 AuthProvider.Supabase_nonSso => "supabase:non-sso",
                 AuthProvider.Supabase_sso => "supabase:sso",
-                AuthProvider.Oidc => "oidc",
-                AuthProvider.CustomOidc => "custom-oidc",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
+                "custom-oidc" => AuthProvider.CustomOidc,
                 "email" => AuthProvider.Email,
+                "oidc" => AuthProvider.Oidc,
                 "supabase:non-sso" => AuthProvider.Supabase_nonSso,
                 "supabase:sso" => AuthProvider.Supabase_sso,
-                "oidc" => AuthProvider.Oidc,
-                "custom-oidc" => AuthProvider.CustomOidc,
                 _ => null,
             };
         }

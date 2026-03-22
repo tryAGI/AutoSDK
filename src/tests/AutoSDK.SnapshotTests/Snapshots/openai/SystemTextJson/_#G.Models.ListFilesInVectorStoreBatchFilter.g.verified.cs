@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        InProgress,
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Cancelled,
+        InProgress,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                ListFilesInVectorStoreBatchFilter.InProgress => "in_progress",
+                ListFilesInVectorStoreBatchFilter.Cancelled => "cancelled",
                 ListFilesInVectorStoreBatchFilter.Completed => "completed",
                 ListFilesInVectorStoreBatchFilter.Failed => "failed",
-                ListFilesInVectorStoreBatchFilter.Cancelled => "cancelled",
+                ListFilesInVectorStoreBatchFilter.InProgress => "in_progress",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "in_progress" => ListFilesInVectorStoreBatchFilter.InProgress,
+                "cancelled" => ListFilesInVectorStoreBatchFilter.Cancelled,
                 "completed" => ListFilesInVectorStoreBatchFilter.Completed,
                 "failed" => ListFilesInVectorStoreBatchFilter.Failed,
-                "cancelled" => ListFilesInVectorStoreBatchFilter.Cancelled,
+                "in_progress" => ListFilesInVectorStoreBatchFilter.InProgress,
                 _ => null,
             };
         }

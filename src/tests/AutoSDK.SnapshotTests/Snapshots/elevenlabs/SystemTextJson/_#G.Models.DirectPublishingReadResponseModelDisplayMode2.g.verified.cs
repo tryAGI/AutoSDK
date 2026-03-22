@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Text,
+        AudioOnly,
         /// <summary>
         /// 
         /// </summary>
-        AudioOnly,
+        Text,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                DirectPublishingReadResponseModelDisplayMode2.Text => "text",
                 DirectPublishingReadResponseModelDisplayMode2.AudioOnly => "audio-only",
+                DirectPublishingReadResponseModelDisplayMode2.Text => "text",
                 DirectPublishingReadResponseModelDisplayMode2.TextWithAudio => "text-with-audio",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "text" => DirectPublishingReadResponseModelDisplayMode2.Text,
                 "audio-only" => DirectPublishingReadResponseModelDisplayMode2.AudioOnly,
+                "text" => DirectPublishingReadResponseModelDisplayMode2.Text,
                 "text-with-audio" => DirectPublishingReadResponseModelDisplayMode2.TextWithAudio,
                 _ => null,
             };

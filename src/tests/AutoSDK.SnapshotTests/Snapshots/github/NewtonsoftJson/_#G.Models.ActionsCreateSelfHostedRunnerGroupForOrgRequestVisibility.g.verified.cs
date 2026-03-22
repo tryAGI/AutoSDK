@@ -14,11 +14,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="selected")]
-        Selected,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="all")]
         All,
         /// <summary>
@@ -26,6 +21,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="private")]
         Private,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="selected")]
+        Selected,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
         {
             return value switch
             {
-                ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.Selected => "selected",
                 ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.All => "all",
                 ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.Private => "private",
+                ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.Selected => "selected",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
-                "selected" => ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.Selected,
                 "all" => ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.All,
                 "private" => ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.Private,
+                "selected" => ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.Selected,
                 _ => null,
             };
         }

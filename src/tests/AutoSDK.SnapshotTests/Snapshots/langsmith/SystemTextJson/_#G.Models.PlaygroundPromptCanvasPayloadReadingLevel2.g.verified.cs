@@ -16,15 +16,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Teenager,
-        /// <summary>
-        /// 
-        /// </summary>
         College,
         /// <summary>
         /// 
         /// </summary>
         Phd,
+        /// <summary>
+        /// 
+        /// </summary>
+        Teenager,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
             return value switch
             {
                 PlaygroundPromptCanvasPayloadReadingLevel2.Child => "child",
-                PlaygroundPromptCanvasPayloadReadingLevel2.Teenager => "teenager",
                 PlaygroundPromptCanvasPayloadReadingLevel2.College => "college",
                 PlaygroundPromptCanvasPayloadReadingLevel2.Phd => "phd",
+                PlaygroundPromptCanvasPayloadReadingLevel2.Teenager => "teenager",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace G
             return value switch
             {
                 "child" => PlaygroundPromptCanvasPayloadReadingLevel2.Child,
-                "teenager" => PlaygroundPromptCanvasPayloadReadingLevel2.Teenager,
                 "college" => PlaygroundPromptCanvasPayloadReadingLevel2.College,
                 "phd" => PlaygroundPromptCanvasPayloadReadingLevel2.Phd,
+                "teenager" => PlaygroundPromptCanvasPayloadReadingLevel2.Teenager,
                 _ => null,
             };
         }

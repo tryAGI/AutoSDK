@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="left")]
-        Left,
+        [global::System.Runtime.Serialization.EnumMember(Value="center")]
+        Center,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="center")]
-        Center,
+        [global::System.Runtime.Serialization.EnumMember(Value="left")]
+        Left,
         /// <summary>
         /// 
         /// </summary>
@@ -39,8 +39,8 @@ namespace G
         {
             return value switch
             {
-                CaptionStyleHorizontalPlacementModelAlign.Left => "left",
                 CaptionStyleHorizontalPlacementModelAlign.Center => "center",
+                CaptionStyleHorizontalPlacementModelAlign.Left => "left",
                 CaptionStyleHorizontalPlacementModelAlign.Right => "right",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -52,8 +52,8 @@ namespace G
         {
             return value switch
             {
-                "left" => CaptionStyleHorizontalPlacementModelAlign.Left,
                 "center" => CaptionStyleHorizontalPlacementModelAlign.Center,
+                "left" => CaptionStyleHorizontalPlacementModelAlign.Left,
                 "right" => CaptionStyleHorizontalPlacementModelAlign.Right,
                 _ => null,
             };

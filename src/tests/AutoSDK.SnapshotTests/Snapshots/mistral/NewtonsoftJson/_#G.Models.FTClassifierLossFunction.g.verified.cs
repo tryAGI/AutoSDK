@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="single_class")]
-        SingleClass,
+        [global::System.Runtime.Serialization.EnumMember(Value="multi_class")]
+        MultiClass,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="multi_class")]
-        MultiClass,
+        [global::System.Runtime.Serialization.EnumMember(Value="single_class")]
+        SingleClass,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                FTClassifierLossFunction.SingleClass => "single_class",
                 FTClassifierLossFunction.MultiClass => "multi_class",
+                FTClassifierLossFunction.SingleClass => "single_class",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "single_class" => FTClassifierLossFunction.SingleClass,
                 "multi_class" => FTClassifierLossFunction.MultiClass,
+                "single_class" => FTClassifierLossFunction.SingleClass,
                 _ => null,
             };
         }

@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        StartsWith,
+        Contains,
         /// <summary>
         /// 
         /// </summary>
@@ -20,11 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Contains,
+        Regex,
         /// <summary>
         /// 
         /// </summary>
-        Regex,
+        StartsWith,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                RepositoryRuleCommitterEmailPatternParametersOperator.StartsWith => "starts_with",
-                RepositoryRuleCommitterEmailPatternParametersOperator.EndsWith => "ends_with",
                 RepositoryRuleCommitterEmailPatternParametersOperator.Contains => "contains",
+                RepositoryRuleCommitterEmailPatternParametersOperator.EndsWith => "ends_with",
                 RepositoryRuleCommitterEmailPatternParametersOperator.Regex => "regex",
+                RepositoryRuleCommitterEmailPatternParametersOperator.StartsWith => "starts_with",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "starts_with" => RepositoryRuleCommitterEmailPatternParametersOperator.StartsWith,
-                "ends_with" => RepositoryRuleCommitterEmailPatternParametersOperator.EndsWith,
                 "contains" => RepositoryRuleCommitterEmailPatternParametersOperator.Contains,
+                "ends_with" => RepositoryRuleCommitterEmailPatternParametersOperator.EndsWith,
                 "regex" => RepositoryRuleCommitterEmailPatternParametersOperator.Regex,
+                "starts_with" => RepositoryRuleCommitterEmailPatternParametersOperator.StartsWith,
                 _ => null,
             };
         }

@@ -21,13 +21,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="file_search")]
-        FileSearch,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="web_search_preview")]
-        WebSearchPreview,
+        [global::System.Runtime.Serialization.EnumMember(Value="code_interpreter")]
+        CodeInterpreter,
         /// <summary>
         /// 
         /// </summary>
@@ -36,8 +31,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="web_search_preview_2025_03_11")]
-        WebSearchPreview20250311,
+        [global::System.Runtime.Serialization.EnumMember(Value="file_search")]
+        FileSearch,
         /// <summary>
         /// 
         /// </summary>
@@ -46,13 +41,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="code_interpreter")]
-        CodeInterpreter,
+        [global::System.Runtime.Serialization.EnumMember(Value="mcp")]
+        Mcp,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="mcp")]
-        Mcp,
+        [global::System.Runtime.Serialization.EnumMember(Value="web_search_preview")]
+        WebSearchPreview,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="web_search_preview_2025_03_11")]
+        WebSearchPreview20250311,
     }
 
     /// <summary>
@@ -67,13 +67,13 @@ namespace G
         {
             return value switch
             {
-                ToolChoiceTypesType.FileSearch => "file_search",
-                ToolChoiceTypesType.WebSearchPreview => "web_search_preview",
-                ToolChoiceTypesType.ComputerUsePreview => "computer_use_preview",
-                ToolChoiceTypesType.WebSearchPreview20250311 => "web_search_preview_2025_03_11",
-                ToolChoiceTypesType.ImageGeneration => "image_generation",
                 ToolChoiceTypesType.CodeInterpreter => "code_interpreter",
+                ToolChoiceTypesType.ComputerUsePreview => "computer_use_preview",
+                ToolChoiceTypesType.FileSearch => "file_search",
+                ToolChoiceTypesType.ImageGeneration => "image_generation",
                 ToolChoiceTypesType.Mcp => "mcp",
+                ToolChoiceTypesType.WebSearchPreview => "web_search_preview",
+                ToolChoiceTypesType.WebSearchPreview20250311 => "web_search_preview_2025_03_11",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -84,13 +84,13 @@ namespace G
         {
             return value switch
             {
-                "file_search" => ToolChoiceTypesType.FileSearch,
-                "web_search_preview" => ToolChoiceTypesType.WebSearchPreview,
-                "computer_use_preview" => ToolChoiceTypesType.ComputerUsePreview,
-                "web_search_preview_2025_03_11" => ToolChoiceTypesType.WebSearchPreview20250311,
-                "image_generation" => ToolChoiceTypesType.ImageGeneration,
                 "code_interpreter" => ToolChoiceTypesType.CodeInterpreter,
+                "computer_use_preview" => ToolChoiceTypesType.ComputerUsePreview,
+                "file_search" => ToolChoiceTypesType.FileSearch,
+                "image_generation" => ToolChoiceTypesType.ImageGeneration,
                 "mcp" => ToolChoiceTypesType.Mcp,
+                "web_search_preview" => ToolChoiceTypesType.WebSearchPreview,
+                "web_search_preview_2025_03_11" => ToolChoiceTypesType.WebSearchPreview20250311,
                 _ => null,
             };
         }

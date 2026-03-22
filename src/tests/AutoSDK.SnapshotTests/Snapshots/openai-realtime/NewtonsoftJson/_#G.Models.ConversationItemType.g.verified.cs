@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="message")]
-        Message,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="function_call")]
         FunctionCall,
         /// <summary>
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="function_call_output")]
         FunctionCallOutput,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="message")]
+        Message,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                ConversationItemType.Message => "message",
                 ConversationItemType.FunctionCall => "function_call",
                 ConversationItemType.FunctionCallOutput => "function_call_output",
+                ConversationItemType.Message => "message",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "message" => ConversationItemType.Message,
                 "function_call" => ConversationItemType.FunctionCall,
                 "function_call_output" => ConversationItemType.FunctionCallOutput,
+                "message" => ConversationItemType.Message,
                 _ => null,
             };
         }

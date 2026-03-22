@@ -13,13 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="unknown")]
-        Unknown,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
-        Queued,
+        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
+        Failed,
         /// <summary>
         /// 
         /// </summary>
@@ -28,18 +23,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
-        Failed,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="validated")]
-        Validated,
+        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
+        Queued,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="skipped")]
         Skipped,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="unknown")]
+        Unknown,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="validated")]
+        Validated,
     }
 
     /// <summary>
@@ -54,12 +54,12 @@ namespace G
         {
             return value switch
             {
-                DatasetValidationStatus.Unknown => "unknown",
-                DatasetValidationStatus.Queued => "queued",
-                DatasetValidationStatus.Processing => "processing",
                 DatasetValidationStatus.Failed => "failed",
-                DatasetValidationStatus.Validated => "validated",
+                DatasetValidationStatus.Processing => "processing",
+                DatasetValidationStatus.Queued => "queued",
                 DatasetValidationStatus.Skipped => "skipped",
+                DatasetValidationStatus.Unknown => "unknown",
+                DatasetValidationStatus.Validated => "validated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,12 +70,12 @@ namespace G
         {
             return value switch
             {
-                "unknown" => DatasetValidationStatus.Unknown,
-                "queued" => DatasetValidationStatus.Queued,
-                "processing" => DatasetValidationStatus.Processing,
                 "failed" => DatasetValidationStatus.Failed,
-                "validated" => DatasetValidationStatus.Validated,
+                "processing" => DatasetValidationStatus.Processing,
+                "queued" => DatasetValidationStatus.Queued,
                 "skipped" => DatasetValidationStatus.Skipped,
+                "unknown" => DatasetValidationStatus.Unknown,
+                "validated" => DatasetValidationStatus.Validated,
                 _ => null,
             };
         }

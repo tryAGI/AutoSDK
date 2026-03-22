@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Name,
+        CreatedAt,
         /// <summary>
         /// 
         /// </summary>
-        CreatedAt,
+        ExampleCount,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ExampleCount,
+        Name,
         /// <summary>
         /// 
         /// </summary>
@@ -43,10 +43,10 @@ namespace G
         {
             return value switch
             {
-                SortByDatasetColumn.Name => "name",
                 SortByDatasetColumn.CreatedAt => "created_at",
-                SortByDatasetColumn.LastSessionStartTime => "last_session_start_time",
                 SortByDatasetColumn.ExampleCount => "example_count",
+                SortByDatasetColumn.LastSessionStartTime => "last_session_start_time",
+                SortByDatasetColumn.Name => "name",
                 SortByDatasetColumn.SessionCount => "session_count",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "name" => SortByDatasetColumn.Name,
                 "created_at" => SortByDatasetColumn.CreatedAt,
-                "last_session_start_time" => SortByDatasetColumn.LastSessionStartTime,
                 "example_count" => SortByDatasetColumn.ExampleCount,
+                "last_session_start_time" => SortByDatasetColumn.LastSessionStartTime,
+                "name" => SortByDatasetColumn.Name,
                 "session_count" => SortByDatasetColumn.SessionCount,
                 _ => null,
             };

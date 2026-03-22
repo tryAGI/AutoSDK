@@ -12,7 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Success,
+        ActionRequired,
+        /// <summary>
+        /// 
+        /// </summary>
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -24,19 +28,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Cancelled,
-        /// <summary>
-        /// 
-        /// </summary>
         Skipped,
         /// <summary>
         /// 
         /// </summary>
-        TimedOut,
+        Success,
         /// <summary>
         /// 
         /// </summary>
-        ActionRequired,
+        TimedOut,
     }
 
     /// <summary>
@@ -51,13 +51,13 @@ namespace G
         {
             return value switch
             {
-                CheckRunConclusion.Success => "success",
+                CheckRunConclusion.ActionRequired => "action_required",
+                CheckRunConclusion.Cancelled => "cancelled",
                 CheckRunConclusion.Failure => "failure",
                 CheckRunConclusion.Neutral => "neutral",
-                CheckRunConclusion.Cancelled => "cancelled",
                 CheckRunConclusion.Skipped => "skipped",
+                CheckRunConclusion.Success => "success",
                 CheckRunConclusion.TimedOut => "timed_out",
-                CheckRunConclusion.ActionRequired => "action_required",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -68,13 +68,13 @@ namespace G
         {
             return value switch
             {
-                "success" => CheckRunConclusion.Success,
+                "action_required" => CheckRunConclusion.ActionRequired,
+                "cancelled" => CheckRunConclusion.Cancelled,
                 "failure" => CheckRunConclusion.Failure,
                 "neutral" => CheckRunConclusion.Neutral,
-                "cancelled" => CheckRunConclusion.Cancelled,
                 "skipped" => CheckRunConclusion.Skipped,
+                "success" => CheckRunConclusion.Success,
                 "timed_out" => CheckRunConclusion.TimedOut,
-                "action_required" => CheckRunConclusion.ActionRequired,
                 _ => null,
             };
         }

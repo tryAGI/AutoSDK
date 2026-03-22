@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerUserType.Bot => "Bot",
-                WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerUserType.User => "User",
-                WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerUserType.Organization => "Organization",
                 WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerUserType.Mannequin => "Mannequin",
+                WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerUserType.Organization => "Organization",
+                WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerUserType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerUserType.Bot,
-                "User" => WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerUserType.User,
-                "Organization" => WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerUserType.Organization,
                 "Mannequin" => WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerUserType.Mannequin,
+                "Organization" => WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerUserType.Organization,
+                "User" => WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerUserType.User,
                 _ => null,
             };
         }

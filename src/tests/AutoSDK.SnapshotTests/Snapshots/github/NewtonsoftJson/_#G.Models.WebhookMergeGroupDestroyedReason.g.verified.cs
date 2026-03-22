@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="merged")]
-        Merged,
+        [global::System.Runtime.Serialization.EnumMember(Value="dequeued")]
+        Dequeued,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="dequeued")]
-        Dequeued,
+        [global::System.Runtime.Serialization.EnumMember(Value="merged")]
+        Merged,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                WebhookMergeGroupDestroyedReason.Merged => "merged",
-                WebhookMergeGroupDestroyedReason.Invalidated => "invalidated",
                 WebhookMergeGroupDestroyedReason.Dequeued => "dequeued",
+                WebhookMergeGroupDestroyedReason.Invalidated => "invalidated",
+                WebhookMergeGroupDestroyedReason.Merged => "merged",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "merged" => WebhookMergeGroupDestroyedReason.Merged,
-                "invalidated" => WebhookMergeGroupDestroyedReason.Invalidated,
                 "dequeued" => WebhookMergeGroupDestroyedReason.Dequeued,
+                "invalidated" => WebhookMergeGroupDestroyedReason.Invalidated,
+                "merged" => WebhookMergeGroupDestroyedReason.Merged,
                 _ => null,
             };
         }

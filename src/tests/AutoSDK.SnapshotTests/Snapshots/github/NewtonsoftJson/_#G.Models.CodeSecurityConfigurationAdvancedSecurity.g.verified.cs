@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="enabled")]
-        Enabled,
+        [global::System.Runtime.Serialization.EnumMember(Value="disabled")]
+        Disabled,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="disabled")]
-        Disabled,
+        [global::System.Runtime.Serialization.EnumMember(Value="enabled")]
+        Enabled,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                CodeSecurityConfigurationAdvancedSecurity.Enabled => "enabled",
                 CodeSecurityConfigurationAdvancedSecurity.Disabled => "disabled",
+                CodeSecurityConfigurationAdvancedSecurity.Enabled => "enabled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "enabled" => CodeSecurityConfigurationAdvancedSecurity.Enabled,
                 "disabled" => CodeSecurityConfigurationAdvancedSecurity.Disabled,
+                "enabled" => CodeSecurityConfigurationAdvancedSecurity.Enabled,
                 _ => null,
             };
         }

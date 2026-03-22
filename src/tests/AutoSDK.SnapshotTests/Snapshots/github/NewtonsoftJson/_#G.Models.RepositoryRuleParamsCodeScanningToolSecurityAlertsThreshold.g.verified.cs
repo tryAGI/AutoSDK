@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="none")]
-        None,
+        [global::System.Runtime.Serialization.EnumMember(Value="all")]
+        All,
         /// <summary>
         /// 
         /// </summary>
@@ -33,8 +33,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="all")]
-        All,
+        [global::System.Runtime.Serialization.EnumMember(Value="none")]
+        None,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.None => "none",
+                RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.All => "all",
                 RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.Critical => "critical",
                 RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.HighOrHigher => "high_or_higher",
                 RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.MediumOrHigher => "medium_or_higher",
-                RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.All => "all",
+                RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.None => "none",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "none" => RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.None,
+                "all" => RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.All,
                 "critical" => RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.Critical,
                 "high_or_higher" => RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.HighOrHigher,
                 "medium_or_higher" => RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.MediumOrHigher,
-                "all" => RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.All,
+                "none" => RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.None,
                 _ => null,
             };
         }

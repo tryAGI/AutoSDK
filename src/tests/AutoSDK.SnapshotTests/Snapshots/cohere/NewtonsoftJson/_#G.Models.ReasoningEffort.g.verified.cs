@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="high")]
+        High,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="low")]
         Low,
         /// <summary>
@@ -20,11 +25,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="medium")]
         Medium,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="high")]
-        High,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                ReasoningEffort.High => "high",
                 ReasoningEffort.Low => "low",
                 ReasoningEffort.Medium => "medium",
-                ReasoningEffort.High => "high",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
+                "high" => ReasoningEffort.High,
                 "low" => ReasoningEffort.Low,
                 "medium" => ReasoningEffort.Medium,
-                "high" => ReasoningEffort.High,
                 _ => null,
             };
         }

@@ -29,8 +29,8 @@ namespace G.JsonConverters
 
             var __score0 = 0;
             if (__jsonProps.Contains("custom_dimensions")) __score0++;
-            if (__jsonProps.Contains("metadata_filter")) __score0++;
             if (__jsonProps.Contains("lexical_interpolation")) __score0++;
+            if (__jsonProps.Contains("metadata_filter")) __score0++;
             if (__jsonProps.Contains("semantics")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("corpus_key")) __score1++;

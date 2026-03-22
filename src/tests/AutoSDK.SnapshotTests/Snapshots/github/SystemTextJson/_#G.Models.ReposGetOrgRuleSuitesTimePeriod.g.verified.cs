@@ -12,19 +12,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Hour,
-        /// <summary>
-        /// 
-        /// </summary>
         Day,
         /// <summary>
         /// 
         /// </summary>
-        Week,
+        Hour,
         /// <summary>
         /// 
         /// </summary>
         Month,
+        /// <summary>
+        /// 
+        /// </summary>
+        Week,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                ReposGetOrgRuleSuitesTimePeriod.Hour => "hour",
                 ReposGetOrgRuleSuitesTimePeriod.Day => "day",
-                ReposGetOrgRuleSuitesTimePeriod.Week => "week",
+                ReposGetOrgRuleSuitesTimePeriod.Hour => "hour",
                 ReposGetOrgRuleSuitesTimePeriod.Month => "month",
+                ReposGetOrgRuleSuitesTimePeriod.Week => "week",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "hour" => ReposGetOrgRuleSuitesTimePeriod.Hour,
                 "day" => ReposGetOrgRuleSuitesTimePeriod.Day,
-                "week" => ReposGetOrgRuleSuitesTimePeriod.Week,
+                "hour" => ReposGetOrgRuleSuitesTimePeriod.Hour,
                 "month" => ReposGetOrgRuleSuitesTimePeriod.Month,
+                "week" => ReposGetOrgRuleSuitesTimePeriod.Week,
                 _ => null,
             };
         }

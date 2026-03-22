@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Open,
+        Closed,
         /// <summary>
         /// 
         /// </summary>
-        Closed,
+        Open,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                WebhookIssuesClosedIssueIssue1State.Open => "open",
                 WebhookIssuesClosedIssueIssue1State.Closed => "closed",
+                WebhookIssuesClosedIssueIssue1State.Open => "open",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "open" => WebhookIssuesClosedIssueIssue1State.Open,
                 "closed" => WebhookIssuesClosedIssueIssue1State.Closed,
+                "open" => WebhookIssuesClosedIssueIssue1State.Open,
                 _ => null,
             };
         }

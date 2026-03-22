@@ -13,11 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        InProgress,
+        Completed,
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        InProgress,
         /// <summary>
         /// 
         /// </summary>
@@ -36,8 +36,8 @@ namespace G
         {
             return value switch
             {
-                FunctionToolCallOutputStatus.InProgress => "in_progress",
                 FunctionToolCallOutputStatus.Completed => "completed",
+                FunctionToolCallOutputStatus.InProgress => "in_progress",
                 FunctionToolCallOutputStatus.Incomplete => "incomplete",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -49,8 +49,8 @@ namespace G
         {
             return value switch
             {
-                "in_progress" => FunctionToolCallOutputStatus.InProgress,
                 "completed" => FunctionToolCallOutputStatus.Completed,
+                "in_progress" => FunctionToolCallOutputStatus.InProgress,
                 "incomplete" => FunctionToolCallOutputStatus.Incomplete,
                 _ => null,
             };

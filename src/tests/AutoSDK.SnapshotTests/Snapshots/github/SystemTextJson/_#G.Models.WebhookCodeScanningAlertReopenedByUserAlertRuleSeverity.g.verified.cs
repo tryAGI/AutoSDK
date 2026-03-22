@@ -12,6 +12,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Error,
+        /// <summary>
+        /// 
+        /// </summary>
         None,
         /// <summary>
         /// 
@@ -20,15 +24,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Warning,
-        /// <summary>
-        /// 
-        /// </summary>
-        Error,
-        /// <summary>
-        /// 
-        /// </summary>
         OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        /// <summary>
+        /// 
+        /// </summary>
+        Warning,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
+                WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity.Error => "error",
                 WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity.None => "none",
                 WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity.Note => "note",
-                WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity.Warning => "warning",
-                WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity.Error => "error",
                 WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
+                WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity.Warning => "warning",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
+                "error" => WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity.Error,
                 "none" => WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity.None,
                 "note" => WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity.Note,
-                "warning" => WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity.Warning,
-                "error" => WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity.Error,
                 "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+                "warning" => WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity.Warning,
                 _ => null,
             };
         }

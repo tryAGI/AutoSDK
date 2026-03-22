@@ -15,8 +15,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="short")]
-        Short,
+        [global::System.Runtime.Serialization.EnumMember(Value="long")]
+        Long,
         /// <summary>
         /// 
         /// </summary>
@@ -25,8 +25,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="long")]
-        Long,
+        [global::System.Runtime.Serialization.EnumMember(Value="short")]
+        Short,
     }
 
     /// <summary>
@@ -41,9 +41,9 @@ namespace G
         {
             return value switch
             {
-                SummarizeRequestLength.Short => "short",
-                SummarizeRequestLength.Medium => "medium",
                 SummarizeRequestLength.Long => "long",
+                SummarizeRequestLength.Medium => "medium",
+                SummarizeRequestLength.Short => "short",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace G
         {
             return value switch
             {
-                "short" => SummarizeRequestLength.Short,
-                "medium" => SummarizeRequestLength.Medium,
                 "long" => SummarizeRequestLength.Long,
+                "medium" => SummarizeRequestLength.Medium,
+                "short" => SummarizeRequestLength.Short,
                 _ => null,
             };
         }

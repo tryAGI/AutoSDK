@@ -15,13 +15,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="markdown")]
-        Markdown,
+        [global::System.Runtime.Serialization.EnumMember(Value="gfm")]
+        Gfm,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="gfm")]
-        Gfm,
+        [global::System.Runtime.Serialization.EnumMember(Value="markdown")]
+        Markdown,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
         {
             return value switch
             {
-                MarkdownRenderRequestMode.Markdown => "markdown",
                 MarkdownRenderRequestMode.Gfm => "gfm",
+                MarkdownRenderRequestMode.Markdown => "markdown",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "markdown" => MarkdownRenderRequestMode.Markdown,
                 "gfm" => MarkdownRenderRequestMode.Gfm,
+                "markdown" => MarkdownRenderRequestMode.Markdown,
                 _ => null,
             };
         }

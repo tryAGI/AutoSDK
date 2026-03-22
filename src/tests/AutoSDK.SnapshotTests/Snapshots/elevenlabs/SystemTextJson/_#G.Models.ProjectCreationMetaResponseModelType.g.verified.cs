@@ -12,19 +12,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Blank,
-        /// <summary>
-        /// 
-        /// </summary>
-        GeneratePodcast,
-        /// <summary>
-        /// 
-        /// </summary>
         AutoAssignVoices,
         /// <summary>
         /// 
         /// </summary>
+        Blank,
+        /// <summary>
+        /// 
+        /// </summary>
         DubVideo,
+        /// <summary>
+        /// 
+        /// </summary>
+        GeneratePodcast,
         /// <summary>
         /// 
         /// </summary>
@@ -43,10 +43,10 @@ namespace G
         {
             return value switch
             {
-                ProjectCreationMetaResponseModelType.Blank => "blank",
-                ProjectCreationMetaResponseModelType.GeneratePodcast => "generate_podcast",
                 ProjectCreationMetaResponseModelType.AutoAssignVoices => "auto_assign_voices",
+                ProjectCreationMetaResponseModelType.Blank => "blank",
                 ProjectCreationMetaResponseModelType.DubVideo => "dub_video",
+                ProjectCreationMetaResponseModelType.GeneratePodcast => "generate_podcast",
                 ProjectCreationMetaResponseModelType.ImportSpeech => "import_speech",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "blank" => ProjectCreationMetaResponseModelType.Blank,
-                "generate_podcast" => ProjectCreationMetaResponseModelType.GeneratePodcast,
                 "auto_assign_voices" => ProjectCreationMetaResponseModelType.AutoAssignVoices,
+                "blank" => ProjectCreationMetaResponseModelType.Blank,
                 "dub_video" => ProjectCreationMetaResponseModelType.DubVideo,
+                "generate_podcast" => ProjectCreationMetaResponseModelType.GeneratePodcast,
                 "import_speech" => ProjectCreationMetaResponseModelType.ImportSpeech,
                 _ => null,
             };

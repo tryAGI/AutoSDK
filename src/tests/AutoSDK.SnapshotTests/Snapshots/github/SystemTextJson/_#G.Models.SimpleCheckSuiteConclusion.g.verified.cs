@@ -12,7 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Success,
+        ActionRequired,
+        /// <summary>
+        /// 
+        /// </summary>
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -24,19 +28,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Cancelled,
-        /// <summary>
-        /// 
-        /// </summary>
         Skipped,
-        /// <summary>
-        /// 
-        /// </summary>
-        TimedOut,
-        /// <summary>
-        /// 
-        /// </summary>
-        ActionRequired,
         /// <summary>
         /// 
         /// </summary>
@@ -45,6 +37,14 @@ namespace G
         /// 
         /// </summary>
         StartupFailure,
+        /// <summary>
+        /// 
+        /// </summary>
+        Success,
+        /// <summary>
+        /// 
+        /// </summary>
+        TimedOut,
     }
 
     /// <summary>
@@ -59,15 +59,15 @@ namespace G
         {
             return value switch
             {
-                SimpleCheckSuiteConclusion.Success => "success",
+                SimpleCheckSuiteConclusion.ActionRequired => "action_required",
+                SimpleCheckSuiteConclusion.Cancelled => "cancelled",
                 SimpleCheckSuiteConclusion.Failure => "failure",
                 SimpleCheckSuiteConclusion.Neutral => "neutral",
-                SimpleCheckSuiteConclusion.Cancelled => "cancelled",
                 SimpleCheckSuiteConclusion.Skipped => "skipped",
-                SimpleCheckSuiteConclusion.TimedOut => "timed_out",
-                SimpleCheckSuiteConclusion.ActionRequired => "action_required",
                 SimpleCheckSuiteConclusion.Stale => "stale",
                 SimpleCheckSuiteConclusion.StartupFailure => "startup_failure",
+                SimpleCheckSuiteConclusion.Success => "success",
+                SimpleCheckSuiteConclusion.TimedOut => "timed_out",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -78,15 +78,15 @@ namespace G
         {
             return value switch
             {
-                "success" => SimpleCheckSuiteConclusion.Success,
+                "action_required" => SimpleCheckSuiteConclusion.ActionRequired,
+                "cancelled" => SimpleCheckSuiteConclusion.Cancelled,
                 "failure" => SimpleCheckSuiteConclusion.Failure,
                 "neutral" => SimpleCheckSuiteConclusion.Neutral,
-                "cancelled" => SimpleCheckSuiteConclusion.Cancelled,
                 "skipped" => SimpleCheckSuiteConclusion.Skipped,
-                "timed_out" => SimpleCheckSuiteConclusion.TimedOut,
-                "action_required" => SimpleCheckSuiteConclusion.ActionRequired,
                 "stale" => SimpleCheckSuiteConclusion.Stale,
                 "startup_failure" => SimpleCheckSuiteConclusion.StartupFailure,
+                "success" => SimpleCheckSuiteConclusion.Success,
+                "timed_out" => SimpleCheckSuiteConclusion.TimedOut,
                 _ => null,
             };
         }

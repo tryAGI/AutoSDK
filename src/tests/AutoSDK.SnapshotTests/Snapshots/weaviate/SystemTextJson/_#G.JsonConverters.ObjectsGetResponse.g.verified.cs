@@ -28,16 +28,16 @@ namespace G.JsonConverters
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("class")) __score0++;
-            if (__jsonProps.Contains("vectorWeights")) __score0++;
-            if (__jsonProps.Contains("properties")) __score0++;
-            if (__jsonProps.Contains("id")) __score0++;
-            if (__jsonProps.Contains("creationTimeUnix")) __score0++;
-            if (__jsonProps.Contains("lastUpdateTimeUnix")) __score0++;
-            if (__jsonProps.Contains("vector")) __score0++;
-            if (__jsonProps.Contains("vectors")) __score0++;
-            if (__jsonProps.Contains("tenant")) __score0++;
             if (__jsonProps.Contains("additional")) __score0++;
+            if (__jsonProps.Contains("class")) __score0++;
+            if (__jsonProps.Contains("creationTimeUnix")) __score0++;
+            if (__jsonProps.Contains("id")) __score0++;
+            if (__jsonProps.Contains("lastUpdateTimeUnix")) __score0++;
+            if (__jsonProps.Contains("properties")) __score0++;
+            if (__jsonProps.Contains("tenant")) __score0++;
+            if (__jsonProps.Contains("vector")) __score0++;
+            if (__jsonProps.Contains("vectorWeights")) __score0++;
+            if (__jsonProps.Contains("vectors")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("deprecations")) __score1++;
             var __score2 = 0;

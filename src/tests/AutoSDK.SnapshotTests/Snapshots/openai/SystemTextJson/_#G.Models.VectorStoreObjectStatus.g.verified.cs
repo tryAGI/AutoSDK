@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Completed,
+        /// <summary>
+        /// 
+        /// </summary>
         Expired,
         /// <summary>
         /// 
         /// </summary>
         InProgress,
-        /// <summary>
-        /// 
-        /// </summary>
-        Completed,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
+                VectorStoreObjectStatus.Completed => "completed",
                 VectorStoreObjectStatus.Expired => "expired",
                 VectorStoreObjectStatus.InProgress => "in_progress",
-                VectorStoreObjectStatus.Completed => "completed",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
+                "completed" => VectorStoreObjectStatus.Completed,
                 "expired" => VectorStoreObjectStatus.Expired,
                 "in_progress" => VectorStoreObjectStatus.InProgress,
-                "completed" => VectorStoreObjectStatus.Completed,
                 _ => null,
             };
         }

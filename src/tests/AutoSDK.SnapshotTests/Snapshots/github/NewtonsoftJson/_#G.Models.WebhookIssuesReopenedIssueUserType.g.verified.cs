@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookIssuesReopenedIssueUserType.Bot => "Bot",
-                WebhookIssuesReopenedIssueUserType.User => "User",
-                WebhookIssuesReopenedIssueUserType.Organization => "Organization",
                 WebhookIssuesReopenedIssueUserType.Mannequin => "Mannequin",
+                WebhookIssuesReopenedIssueUserType.Organization => "Organization",
+                WebhookIssuesReopenedIssueUserType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookIssuesReopenedIssueUserType.Bot,
-                "User" => WebhookIssuesReopenedIssueUserType.User,
-                "Organization" => WebhookIssuesReopenedIssueUserType.Organization,
                 "Mannequin" => WebhookIssuesReopenedIssueUserType.Mannequin,
+                "Organization" => WebhookIssuesReopenedIssueUserType.Organization,
+                "User" => WebhookIssuesReopenedIssueUserType.User,
                 _ => null,
             };
         }

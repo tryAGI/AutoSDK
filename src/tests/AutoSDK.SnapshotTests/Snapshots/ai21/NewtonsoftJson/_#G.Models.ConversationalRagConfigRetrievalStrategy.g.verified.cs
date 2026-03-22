@@ -13,23 +13,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="default")]
-        Default,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="segments")]
-        Segments,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="add_neighbors")]
         AddNeighbors,
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="default")]
+        Default,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="full_doc")]
         FullDoc,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="segments")]
+        Segments,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                ConversationalRagConfigRetrievalStrategy.Default => "default",
-                ConversationalRagConfigRetrievalStrategy.Segments => "segments",
                 ConversationalRagConfigRetrievalStrategy.AddNeighbors => "add_neighbors",
+                ConversationalRagConfigRetrievalStrategy.Default => "default",
                 ConversationalRagConfigRetrievalStrategy.FullDoc => "full_doc",
+                ConversationalRagConfigRetrievalStrategy.Segments => "segments",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "default" => ConversationalRagConfigRetrievalStrategy.Default,
-                "segments" => ConversationalRagConfigRetrievalStrategy.Segments,
                 "add_neighbors" => ConversationalRagConfigRetrievalStrategy.AddNeighbors,
+                "default" => ConversationalRagConfigRetrievalStrategy.Default,
                 "full_doc" => ConversationalRagConfigRetrievalStrategy.FullDoc,
+                "segments" => ConversationalRagConfigRetrievalStrategy.Segments,
                 _ => null,
             };
         }

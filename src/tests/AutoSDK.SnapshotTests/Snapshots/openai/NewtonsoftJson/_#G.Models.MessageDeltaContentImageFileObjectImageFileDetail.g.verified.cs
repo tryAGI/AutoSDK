@@ -19,13 +19,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="low")]
-        Low,
+        [global::System.Runtime.Serialization.EnumMember(Value="high")]
+        High,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="high")]
-        High,
+        [global::System.Runtime.Serialization.EnumMember(Value="low")]
+        Low,
     }
 
     /// <summary>
@@ -41,8 +41,8 @@ namespace G
             return value switch
             {
                 MessageDeltaContentImageFileObjectImageFileDetail.Auto => "auto",
-                MessageDeltaContentImageFileObjectImageFileDetail.Low => "low",
                 MessageDeltaContentImageFileObjectImageFileDetail.High => "high",
+                MessageDeltaContentImageFileObjectImageFileDetail.Low => "low",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,8 +54,8 @@ namespace G
             return value switch
             {
                 "auto" => MessageDeltaContentImageFileObjectImageFileDetail.Auto,
-                "low" => MessageDeltaContentImageFileObjectImageFileDetail.Low,
                 "high" => MessageDeltaContentImageFileObjectImageFileDetail.High,
+                "low" => MessageDeltaContentImageFileObjectImageFileDetail.Low,
                 _ => null,
             };
         }

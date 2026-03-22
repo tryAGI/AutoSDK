@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="credits")]
+        Credits,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="invoices")]
         Invoices,
         /// <summary>
@@ -20,11 +25,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="usage")]
         Usage,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="credits")]
-        Credits,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                OrganizationDashboardType.Credits => "credits",
                 OrganizationDashboardType.Invoices => "invoices",
                 OrganizationDashboardType.Usage => "usage",
-                OrganizationDashboardType.Credits => "credits",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
+                "credits" => OrganizationDashboardType.Credits,
                 "invoices" => OrganizationDashboardType.Invoices,
                 "usage" => OrganizationDashboardType.Usage,
-                "credits" => OrganizationDashboardType.Credits,
                 _ => null,
             };
         }

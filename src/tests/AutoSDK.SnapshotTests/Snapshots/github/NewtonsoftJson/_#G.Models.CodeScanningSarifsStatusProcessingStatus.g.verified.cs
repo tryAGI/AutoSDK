@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
-        Pending,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="complete")]
         Complete,
         /// <summary>
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="failed")]
         Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
+        Pending,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                CodeScanningSarifsStatusProcessingStatus.Pending => "pending",
                 CodeScanningSarifsStatusProcessingStatus.Complete => "complete",
                 CodeScanningSarifsStatusProcessingStatus.Failed => "failed",
+                CodeScanningSarifsStatusProcessingStatus.Pending => "pending",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "pending" => CodeScanningSarifsStatusProcessingStatus.Pending,
                 "complete" => CodeScanningSarifsStatusProcessingStatus.Complete,
                 "failed" => CodeScanningSarifsStatusProcessingStatus.Failed,
+                "pending" => CodeScanningSarifsStatusProcessingStatus.Pending,
                 _ => null,
             };
         }

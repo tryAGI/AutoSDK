@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        InProgress,
+        /// <summary>
+        /// 
+        /// </summary>
         None,
         /// <summary>
         /// 
         /// </summary>
         Ready,
-        /// <summary>
-        /// 
-        /// </summary>
-        InProgress,
     }
 
     /// <summary>
@@ -36,9 +36,9 @@ namespace G
         {
             return value switch
             {
+                NullableCodespaceMachinePrebuildAvailability.InProgress => "in_progress",
                 NullableCodespaceMachinePrebuildAvailability.None => "none",
                 NullableCodespaceMachinePrebuildAvailability.Ready => "ready",
-                NullableCodespaceMachinePrebuildAvailability.InProgress => "in_progress",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,9 +49,9 @@ namespace G
         {
             return value switch
             {
+                "in_progress" => NullableCodespaceMachinePrebuildAvailability.InProgress,
                 "none" => NullableCodespaceMachinePrebuildAvailability.None,
                 "ready" => NullableCodespaceMachinePrebuildAvailability.Ready,
-                "in_progress" => NullableCodespaceMachinePrebuildAvailability.InProgress,
                 _ => null,
             };
         }

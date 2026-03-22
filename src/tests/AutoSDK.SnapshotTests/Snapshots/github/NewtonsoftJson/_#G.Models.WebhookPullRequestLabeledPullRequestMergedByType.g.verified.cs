@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookPullRequestLabeledPullRequestMergedByType.Bot => "Bot",
-                WebhookPullRequestLabeledPullRequestMergedByType.User => "User",
-                WebhookPullRequestLabeledPullRequestMergedByType.Organization => "Organization",
                 WebhookPullRequestLabeledPullRequestMergedByType.Mannequin => "Mannequin",
+                WebhookPullRequestLabeledPullRequestMergedByType.Organization => "Organization",
+                WebhookPullRequestLabeledPullRequestMergedByType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestLabeledPullRequestMergedByType.Bot,
-                "User" => WebhookPullRequestLabeledPullRequestMergedByType.User,
-                "Organization" => WebhookPullRequestLabeledPullRequestMergedByType.Organization,
                 "Mannequin" => WebhookPullRequestLabeledPullRequestMergedByType.Mannequin,
+                "Organization" => WebhookPullRequestLabeledPullRequestMergedByType.Organization,
+                "User" => WebhookPullRequestLabeledPullRequestMergedByType.User,
                 _ => null,
             };
         }

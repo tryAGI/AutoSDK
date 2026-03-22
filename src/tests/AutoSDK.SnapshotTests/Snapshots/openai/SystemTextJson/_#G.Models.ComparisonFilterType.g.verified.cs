@@ -23,10 +23,6 @@ namespace G
         /// <summary>
         /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`.
         /// </summary>
-        Ne,
-        /// <summary>
-        /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`.
-        /// </summary>
         Gt,
         /// <summary>
         /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`.
@@ -40,6 +36,10 @@ namespace G
         /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`.
         /// </summary>
         Lte,
+        /// <summary>
+        /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`.
+        /// </summary>
+        Ne,
     }
 
     /// <summary>
@@ -55,11 +55,11 @@ namespace G
             return value switch
             {
                 ComparisonFilterType.Eq => "eq",
-                ComparisonFilterType.Ne => "ne",
                 ComparisonFilterType.Gt => "gt",
                 ComparisonFilterType.Gte => "gte",
                 ComparisonFilterType.Lt => "lt",
                 ComparisonFilterType.Lte => "lte",
+                ComparisonFilterType.Ne => "ne",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -71,11 +71,11 @@ namespace G
             return value switch
             {
                 "eq" => ComparisonFilterType.Eq,
-                "ne" => ComparisonFilterType.Ne,
                 "gt" => ComparisonFilterType.Gt,
                 "gte" => ComparisonFilterType.Gte,
                 "lt" => ComparisonFilterType.Lt,
                 "lte" => ComparisonFilterType.Lte,
+                "ne" => ComparisonFilterType.Ne,
                 _ => null,
             };
         }

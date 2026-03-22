@@ -12,19 +12,19 @@ namespace G
         /// <summary>
         /// system, user, or assistant.
         /// </summary>
-        System,
-        /// <summary>
-        /// system, user, or assistant.
-        /// </summary>
-        User,
-        /// <summary>
-        /// system, user, or assistant.
-        /// </summary>
         Assistant,
+        /// <summary>
+        /// system, user, or assistant.
+        /// </summary>
+        System,
         /// <summary>
         /// 
         /// </summary>
         Tool,
+        /// <summary>
+        /// system, user, or assistant.
+        /// </summary>
+        User,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                ChatCompletionRequestMessageRole.System => "system",
-                ChatCompletionRequestMessageRole.User => "user",
                 ChatCompletionRequestMessageRole.Assistant => "assistant",
+                ChatCompletionRequestMessageRole.System => "system",
                 ChatCompletionRequestMessageRole.Tool => "tool",
+                ChatCompletionRequestMessageRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "system" => ChatCompletionRequestMessageRole.System,
-                "user" => ChatCompletionRequestMessageRole.User,
                 "assistant" => ChatCompletionRequestMessageRole.Assistant,
+                "system" => ChatCompletionRequestMessageRole.System,
                 "tool" => ChatCompletionRequestMessageRole.Tool,
+                "user" => ChatCompletionRequestMessageRole.User,
                 _ => null,
             };
         }

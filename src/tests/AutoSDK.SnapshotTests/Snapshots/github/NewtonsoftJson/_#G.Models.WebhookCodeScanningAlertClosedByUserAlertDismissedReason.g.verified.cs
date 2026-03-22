@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="won't fix")]
-        WontFix,
+        [global::System.Runtime.Serialization.EnumMember(Value="openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
-        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        [global::System.Runtime.Serialization.EnumMember(Value="won't fix")]
+        WontFix,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookCodeScanningAlertClosedByUserAlertDismissedReason.FalsePositive => "false positive",
-                WebhookCodeScanningAlertClosedByUserAlertDismissedReason.WontFix => "won't fix",
-                WebhookCodeScanningAlertClosedByUserAlertDismissedReason.UsedInTests => "used in tests",
                 WebhookCodeScanningAlertClosedByUserAlertDismissedReason.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
+                WebhookCodeScanningAlertClosedByUserAlertDismissedReason.UsedInTests => "used in tests",
+                WebhookCodeScanningAlertClosedByUserAlertDismissedReason.WontFix => "won't fix",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "false positive" => WebhookCodeScanningAlertClosedByUserAlertDismissedReason.FalsePositive,
-                "won't fix" => WebhookCodeScanningAlertClosedByUserAlertDismissedReason.WontFix,
-                "used in tests" => WebhookCodeScanningAlertClosedByUserAlertDismissedReason.UsedInTests,
                 "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookCodeScanningAlertClosedByUserAlertDismissedReason.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+                "used in tests" => WebhookCodeScanningAlertClosedByUserAlertDismissedReason.UsedInTests,
+                "won't fix" => WebhookCodeScanningAlertClosedByUserAlertDismissedReason.WontFix,
                 _ => null,
             };
         }

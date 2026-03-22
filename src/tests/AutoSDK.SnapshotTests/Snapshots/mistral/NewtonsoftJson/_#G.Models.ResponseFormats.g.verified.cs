@@ -11,11 +11,6 @@ namespace G
     public enum ResponseFormats
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text")]
-        Text,
-        /// <summary>
         /// "json_object" }` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="json_object")]
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="json_schema")]
         JsonSchema,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="text")]
+        Text,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                ResponseFormats.Text => "text",
                 ResponseFormats.JsonObject => "json_object",
                 ResponseFormats.JsonSchema => "json_schema",
+                ResponseFormats.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "text" => ResponseFormats.Text,
                 "json_object" => ResponseFormats.JsonObject,
                 "json_schema" => ResponseFormats.JsonSchema,
+                "text" => ResponseFormats.Text,
                 _ => null,
             };
         }

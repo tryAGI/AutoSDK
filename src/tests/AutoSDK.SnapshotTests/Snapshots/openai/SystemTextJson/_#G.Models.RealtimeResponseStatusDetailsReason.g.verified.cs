@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        TurnDetected,
+        ClientCancelled,
         /// <summary>
         /// 
         /// </summary>
-        ClientCancelled,
+        ContentFilter,
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +28,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ContentFilter,
+        TurnDetected,
     }
 
     /// <summary>
@@ -43,10 +43,10 @@ namespace G
         {
             return value switch
             {
-                RealtimeResponseStatusDetailsReason.TurnDetected => "turn_detected",
                 RealtimeResponseStatusDetailsReason.ClientCancelled => "client_cancelled",
-                RealtimeResponseStatusDetailsReason.MaxOutputTokens => "max_output_tokens",
                 RealtimeResponseStatusDetailsReason.ContentFilter => "content_filter",
+                RealtimeResponseStatusDetailsReason.MaxOutputTokens => "max_output_tokens",
+                RealtimeResponseStatusDetailsReason.TurnDetected => "turn_detected",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,10 +57,10 @@ namespace G
         {
             return value switch
             {
-                "turn_detected" => RealtimeResponseStatusDetailsReason.TurnDetected,
                 "client_cancelled" => RealtimeResponseStatusDetailsReason.ClientCancelled,
-                "max_output_tokens" => RealtimeResponseStatusDetailsReason.MaxOutputTokens,
                 "content_filter" => RealtimeResponseStatusDetailsReason.ContentFilter,
+                "max_output_tokens" => RealtimeResponseStatusDetailsReason.MaxOutputTokens,
+                "turn_detected" => RealtimeResponseStatusDetailsReason.TurnDetected,
                 _ => null,
             };
         }

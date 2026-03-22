@@ -23,13 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
-        Queued,
+        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
+        Pending,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
-        Pending,
+        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
+        Queued,
     }
 
     /// <summary>
@@ -46,8 +46,8 @@ namespace G
             {
                 WebhookWorkflowJobQueuedWorkflowJobStepStatus.Completed => "completed",
                 WebhookWorkflowJobQueuedWorkflowJobStepStatus.InProgress => "in_progress",
-                WebhookWorkflowJobQueuedWorkflowJobStepStatus.Queued => "queued",
                 WebhookWorkflowJobQueuedWorkflowJobStepStatus.Pending => "pending",
+                WebhookWorkflowJobQueuedWorkflowJobStepStatus.Queued => "queued",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -60,8 +60,8 @@ namespace G
             {
                 "completed" => WebhookWorkflowJobQueuedWorkflowJobStepStatus.Completed,
                 "in_progress" => WebhookWorkflowJobQueuedWorkflowJobStepStatus.InProgress,
-                "queued" => WebhookWorkflowJobQueuedWorkflowJobStepStatus.Queued,
                 "pending" => WebhookWorkflowJobQueuedWorkflowJobStepStatus.Pending,
+                "queued" => WebhookWorkflowJobQueuedWorkflowJobStepStatus.Queued,
                 _ => null,
             };
         }

@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Open,
+        Closed,
         /// <summary>
         /// 
         /// </summary>
-        Closed,
+        Open,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerTeamParentPrivacy.Open => "open",
                 WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerTeamParentPrivacy.Closed => "closed",
+                WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerTeamParentPrivacy.Open => "open",
                 WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerTeamParentPrivacy.Secret => "secret",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "open" => WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerTeamParentPrivacy.Open,
                 "closed" => WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerTeamParentPrivacy.Closed,
+                "open" => WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerTeamParentPrivacy.Open,
                 "secret" => WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewerTeamParentPrivacy.Secret,
                 _ => null,
             };

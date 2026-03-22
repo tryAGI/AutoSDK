@@ -14,11 +14,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="valid")]
-        Valid,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="invalid")]
         Invalid,
         /// <summary>
@@ -26,6 +21,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="pending")]
         Pending,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="valid")]
+        Valid,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
         {
             return value switch
             {
-                TestLambdaToolResponseValidationStatus.Valid => "valid",
                 TestLambdaToolResponseValidationStatus.Invalid => "invalid",
                 TestLambdaToolResponseValidationStatus.Pending => "pending",
+                TestLambdaToolResponseValidationStatus.Valid => "valid",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
-                "valid" => TestLambdaToolResponseValidationStatus.Valid,
                 "invalid" => TestLambdaToolResponseValidationStatus.Invalid,
                 "pending" => TestLambdaToolResponseValidationStatus.Pending,
+                "valid" => TestLambdaToolResponseValidationStatus.Valid,
                 _ => null,
             };
         }

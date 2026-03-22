@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Informative,
+        Catchy,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Catchy,
+        Informative,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                SummaryModel.Informative => "informative",
-                SummaryModel.Conversational => "conversational",
                 SummaryModel.Catchy => "catchy",
+                SummaryModel.Conversational => "conversational",
+                SummaryModel.Informative => "informative",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "informative" => SummaryModel.Informative,
-                "conversational" => SummaryModel.Conversational,
                 "catchy" => SummaryModel.Catchy,
+                "conversational" => SummaryModel.Conversational,
+                "informative" => SummaryModel.Informative,
                 _ => null,
             };
         }

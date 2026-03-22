@@ -13,13 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
-        InProgress,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="succeeded")]
-        Succeeded,
+        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
-        Cancelled,
+        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
+        InProgress,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="succeeded")]
+        Succeeded,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
+                CodeScanningVariantAnalysisStatus2.Cancelled => "cancelled",
+                CodeScanningVariantAnalysisStatus2.Failed => "failed",
                 CodeScanningVariantAnalysisStatus2.InProgress => "in_progress",
                 CodeScanningVariantAnalysisStatus2.Succeeded => "succeeded",
-                CodeScanningVariantAnalysisStatus2.Failed => "failed",
-                CodeScanningVariantAnalysisStatus2.Cancelled => "cancelled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
+                "cancelled" => CodeScanningVariantAnalysisStatus2.Cancelled,
+                "failed" => CodeScanningVariantAnalysisStatus2.Failed,
                 "in_progress" => CodeScanningVariantAnalysisStatus2.InProgress,
                 "succeeded" => CodeScanningVariantAnalysisStatus2.Succeeded,
-                "failed" => CodeScanningVariantAnalysisStatus2.Failed,
-                "cancelled" => CodeScanningVariantAnalysisStatus2.Cancelled,
                 _ => null,
             };
         }

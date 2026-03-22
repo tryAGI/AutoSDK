@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="none")]
-        None,
+        [global::System.Runtime.Serialization.EnumMember(Value="auto")]
+        Auto,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="auto")]
-        Auto,
+        [global::System.Runtime.Serialization.EnumMember(Value="none")]
+        None,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ChatCompletionRequestFunctionCallEnum.None => "none",
                 ChatCompletionRequestFunctionCallEnum.Auto => "auto",
+                ChatCompletionRequestFunctionCallEnum.None => "none",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "none" => ChatCompletionRequestFunctionCallEnum.None,
                 "auto" => ChatCompletionRequestFunctionCallEnum.Auto,
+                "none" => ChatCompletionRequestFunctionCallEnum.None,
                 _ => null,
             };
         }

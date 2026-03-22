@@ -12,7 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Success,
+        ActionRequired,
+        /// <summary>
+        /// 
+        /// </summary>
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -24,15 +28,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Cancelled,
-        /// <summary>
-        /// 
-        /// </summary>
-        TimedOut,
-        /// <summary>
-        /// 
-        /// </summary>
-        ActionRequired,
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
         /// <summary>
         /// 
         /// </summary>
@@ -40,7 +36,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        Success,
+        /// <summary>
+        /// 
+        /// </summary>
+        TimedOut,
     }
 
     /// <summary>
@@ -55,14 +55,14 @@ namespace G
         {
             return value switch
             {
-                WebhookCheckSuiteRerequestedCheckSuiteConclusion.Success => "success",
+                WebhookCheckSuiteRerequestedCheckSuiteConclusion.ActionRequired => "action_required",
+                WebhookCheckSuiteRerequestedCheckSuiteConclusion.Cancelled => "cancelled",
                 WebhookCheckSuiteRerequestedCheckSuiteConclusion.Failure => "failure",
                 WebhookCheckSuiteRerequestedCheckSuiteConclusion.Neutral => "neutral",
-                WebhookCheckSuiteRerequestedCheckSuiteConclusion.Cancelled => "cancelled",
-                WebhookCheckSuiteRerequestedCheckSuiteConclusion.TimedOut => "timed_out",
-                WebhookCheckSuiteRerequestedCheckSuiteConclusion.ActionRequired => "action_required",
-                WebhookCheckSuiteRerequestedCheckSuiteConclusion.Stale => "stale",
                 WebhookCheckSuiteRerequestedCheckSuiteConclusion.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
+                WebhookCheckSuiteRerequestedCheckSuiteConclusion.Stale => "stale",
+                WebhookCheckSuiteRerequestedCheckSuiteConclusion.Success => "success",
+                WebhookCheckSuiteRerequestedCheckSuiteConclusion.TimedOut => "timed_out",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -73,14 +73,14 @@ namespace G
         {
             return value switch
             {
-                "success" => WebhookCheckSuiteRerequestedCheckSuiteConclusion.Success,
+                "action_required" => WebhookCheckSuiteRerequestedCheckSuiteConclusion.ActionRequired,
+                "cancelled" => WebhookCheckSuiteRerequestedCheckSuiteConclusion.Cancelled,
                 "failure" => WebhookCheckSuiteRerequestedCheckSuiteConclusion.Failure,
                 "neutral" => WebhookCheckSuiteRerequestedCheckSuiteConclusion.Neutral,
-                "cancelled" => WebhookCheckSuiteRerequestedCheckSuiteConclusion.Cancelled,
-                "timed_out" => WebhookCheckSuiteRerequestedCheckSuiteConclusion.TimedOut,
-                "action_required" => WebhookCheckSuiteRerequestedCheckSuiteConclusion.ActionRequired,
-                "stale" => WebhookCheckSuiteRerequestedCheckSuiteConclusion.Stale,
                 "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookCheckSuiteRerequestedCheckSuiteConclusion.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+                "stale" => WebhookCheckSuiteRerequestedCheckSuiteConclusion.Stale,
+                "success" => WebhookCheckSuiteRerequestedCheckSuiteConclusion.Success,
+                "timed_out" => WebhookCheckSuiteRerequestedCheckSuiteConclusion.TimedOut,
                 _ => null,
             };
         }

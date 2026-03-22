@@ -13,6 +13,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="back")]
+        Back,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="forward")]
+        Forward,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="left")]
         Left,
         /// <summary>
@@ -25,16 +35,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="wheel")]
         Wheel,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="back")]
-        Back,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="forward")]
-        Forward,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
+                ClickButton.Back => "back",
+                ClickButton.Forward => "forward",
                 ClickButton.Left => "left",
                 ClickButton.Right => "right",
                 ClickButton.Wheel => "wheel",
-                ClickButton.Back => "back",
-                ClickButton.Forward => "forward",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
+                "back" => ClickButton.Back,
+                "forward" => ClickButton.Forward,
                 "left" => ClickButton.Left,
                 "right" => ClickButton.Right,
                 "wheel" => ClickButton.Wheel,
-                "back" => ClickButton.Back,
-                "forward" => ClickButton.Forward,
                 _ => null,
             };
         }

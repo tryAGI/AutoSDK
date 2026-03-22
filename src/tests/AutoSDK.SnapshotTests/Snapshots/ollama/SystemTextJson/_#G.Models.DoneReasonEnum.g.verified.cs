@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Stop,
-        /// <summary>
-        /// 
-        /// </summary>
         Length,
         /// <summary>
         /// 
         /// </summary>
         Load,
+        /// <summary>
+        /// 
+        /// </summary>
+        Stop,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                DoneReasonEnum.Stop => "stop",
                 DoneReasonEnum.Length => "length",
                 DoneReasonEnum.Load => "load",
+                DoneReasonEnum.Stop => "stop",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "stop" => DoneReasonEnum.Stop,
                 "length" => DoneReasonEnum.Length,
                 "load" => DoneReasonEnum.Load,
+                "stop" => DoneReasonEnum.Stop,
                 _ => null,
             };
         }

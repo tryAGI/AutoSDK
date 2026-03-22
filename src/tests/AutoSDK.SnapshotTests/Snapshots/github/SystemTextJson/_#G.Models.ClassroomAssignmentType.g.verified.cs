@@ -13,11 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Individual,
+        Group,
         /// <summary>
         /// 
         /// </summary>
-        Group,
+        Individual,
     }
 
     /// <summary>
@@ -32,8 +32,8 @@ namespace G
         {
             return value switch
             {
-                ClassroomAssignmentType.Individual => "individual",
                 ClassroomAssignmentType.Group => "group",
+                ClassroomAssignmentType.Individual => "individual",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,8 +44,8 @@ namespace G
         {
             return value switch
             {
-                "individual" => ClassroomAssignmentType.Individual,
                 "group" => ClassroomAssignmentType.Group,
+                "individual" => ClassroomAssignmentType.Individual,
                 _ => null,
             };
         }

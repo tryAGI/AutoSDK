@@ -18,13 +18,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="tool_call")]
-        ToolCall,
+        [global::System.Runtime.Serialization.EnumMember(Value="simulation")]
+        Simulation,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="simulation")]
-        Simulation,
+        [global::System.Runtime.Serialization.EnumMember(Value="tool_call")]
+        ToolCall,
     }
 
     /// <summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 TestRunMetadataTestType.Llm => "llm",
-                TestRunMetadataTestType.ToolCall => "tool_call",
                 TestRunMetadataTestType.Simulation => "simulation",
+                TestRunMetadataTestType.ToolCall => "tool_call",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,8 +53,8 @@ namespace G
             return value switch
             {
                 "llm" => TestRunMetadataTestType.Llm,
-                "tool_call" => TestRunMetadataTestType.ToolCall,
                 "simulation" => TestRunMetadataTestType.Simulation,
+                "tool_call" => TestRunMetadataTestType.ToolCall,
                 _ => null,
             };
         }

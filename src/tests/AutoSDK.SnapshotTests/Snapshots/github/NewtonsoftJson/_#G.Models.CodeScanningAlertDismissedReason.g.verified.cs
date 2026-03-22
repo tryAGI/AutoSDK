@@ -18,13 +18,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="won't fix")]
-        WontFix,
+        [global::System.Runtime.Serialization.EnumMember(Value="used in tests")]
+        UsedInTests,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="used in tests")]
-        UsedInTests,
+        [global::System.Runtime.Serialization.EnumMember(Value="won't fix")]
+        WontFix,
     }
 
     /// <summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 CodeScanningAlertDismissedReason.FalsePositive => "false positive",
-                CodeScanningAlertDismissedReason.WontFix => "won't fix",
                 CodeScanningAlertDismissedReason.UsedInTests => "used in tests",
+                CodeScanningAlertDismissedReason.WontFix => "won't fix",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,8 +53,8 @@ namespace G
             return value switch
             {
                 "false positive" => CodeScanningAlertDismissedReason.FalsePositive,
-                "won't fix" => CodeScanningAlertDismissedReason.WontFix,
                 "used in tests" => CodeScanningAlertDismissedReason.UsedInTests,
+                "won't fix" => CodeScanningAlertDismissedReason.WontFix,
                 _ => null,
             };
         }

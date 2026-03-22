@@ -44,6 +44,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        DeployKey,
+        /// <summary>
+        /// 
+        /// </summary>
         Deployment,
         /// <summary>
         /// 
@@ -53,10 +57,6 @@ namespace G
         /// 
         /// </summary>
         DeploymentStatus,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeployKey,
         /// <summary>
         /// 
         /// </summary>
@@ -76,11 +76,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Issues,
+        IssueComment,
         /// <summary>
         /// 
         /// </summary>
-        IssueComment,
+        Issues,
         /// <summary>
         /// 
         /// </summary>
@@ -100,11 +100,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Organization,
+        OrgBlock,
         /// <summary>
         /// 
         /// </summary>
-        OrgBlock,
+        Organization,
         /// <summary>
         /// 
         /// </summary>
@@ -211,22 +211,22 @@ namespace G
                 WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.ContentReference => "content_reference",
                 WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Create => "create",
                 WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Delete => "delete",
+                WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.DeployKey => "deploy_key",
                 WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Deployment => "deployment",
                 WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.DeploymentReview => "deployment_review",
                 WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.DeploymentStatus => "deployment_status",
-                WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.DeployKey => "deploy_key",
                 WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Discussion => "discussion",
                 WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.DiscussionComment => "discussion_comment",
                 WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Fork => "fork",
                 WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Gollum => "gollum",
-                WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Issues => "issues",
                 WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.IssueComment => "issue_comment",
+                WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Issues => "issues",
                 WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Label => "label",
                 WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Member => "member",
                 WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Membership => "membership",
                 WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Milestone => "milestone",
-                WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Organization => "organization",
                 WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.OrgBlock => "org_block",
+                WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Organization => "organization",
                 WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.PageBuild => "page_build",
                 WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Project => "project",
                 WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.ProjectCard => "project_card",
@@ -266,22 +266,22 @@ namespace G
                 "content_reference" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.ContentReference,
                 "create" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Create,
                 "delete" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Delete,
+                "deploy_key" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.DeployKey,
                 "deployment" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Deployment,
                 "deployment_review" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.DeploymentReview,
                 "deployment_status" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.DeploymentStatus,
-                "deploy_key" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.DeployKey,
                 "discussion" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Discussion,
                 "discussion_comment" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.DiscussionComment,
                 "fork" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Fork,
                 "gollum" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Gollum,
-                "issues" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Issues,
                 "issue_comment" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.IssueComment,
+                "issues" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Issues,
                 "label" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Label,
                 "member" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Member,
                 "membership" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Membership,
                 "milestone" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Milestone,
-                "organization" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Organization,
                 "org_block" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.OrgBlock,
+                "organization" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Organization,
                 "page_build" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.PageBuild,
                 "project" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.Project,
                 "project_card" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppEvent.ProjectCard,

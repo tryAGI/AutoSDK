@@ -21,15 +21,15 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="CONTEXTUAL")]
         Contextual,
         /// <summary>
-        /// `command-r7b-12-2024` and newer models only support `"CONTEXTUAL"` and `"STRICT"` modes.
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="STRICT")]
-        Strict,
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NONE")]
         None,
+        /// <summary>
+        /// `command-r7b-12-2024` and newer models only support `"CONTEXTUAL"` and `"STRICT"` modes.
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="STRICT")]
+        Strict,
     }
 
     /// <summary>
@@ -45,8 +45,8 @@ namespace G
             return value switch
             {
                 ChatRequestSafetyMode.Contextual => "CONTEXTUAL",
-                ChatRequestSafetyMode.Strict => "STRICT",
                 ChatRequestSafetyMode.None => "NONE",
+                ChatRequestSafetyMode.Strict => "STRICT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,8 +58,8 @@ namespace G
             return value switch
             {
                 "CONTEXTUAL" => ChatRequestSafetyMode.Contextual,
-                "STRICT" => ChatRequestSafetyMode.Strict,
                 "NONE" => ChatRequestSafetyMode.None,
+                "STRICT" => ChatRequestSafetyMode.Strict,
                 _ => null,
             };
         }

@@ -19,16 +19,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="NORMAL")]
-        Normal,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="ROUGHNESS")]
-        Roughness,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="DISPLACEMENT")]
         Displacement,
         /// <summary>
@@ -36,6 +26,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="HDRP_MASK")]
         HdrpMask,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="NORMAL")]
+        Normal,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="ROUGHNESS")]
+        Roughness,
     }
 
     /// <summary>
@@ -51,10 +51,10 @@ namespace G
             return value switch
             {
                 ModelAssetTextureTypes.Albedo => "ALBEDO",
-                ModelAssetTextureTypes.Normal => "NORMAL",
-                ModelAssetTextureTypes.Roughness => "ROUGHNESS",
                 ModelAssetTextureTypes.Displacement => "DISPLACEMENT",
                 ModelAssetTextureTypes.HdrpMask => "HDRP_MASK",
+                ModelAssetTextureTypes.Normal => "NORMAL",
+                ModelAssetTextureTypes.Roughness => "ROUGHNESS",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -66,10 +66,10 @@ namespace G
             return value switch
             {
                 "ALBEDO" => ModelAssetTextureTypes.Albedo,
-                "NORMAL" => ModelAssetTextureTypes.Normal,
-                "ROUGHNESS" => ModelAssetTextureTypes.Roughness,
                 "DISPLACEMENT" => ModelAssetTextureTypes.Displacement,
                 "HDRP_MASK" => ModelAssetTextureTypes.HdrpMask,
+                "NORMAL" => ModelAssetTextureTypes.Normal,
+                "ROUGHNESS" => ModelAssetTextureTypes.Roughness,
                 _ => null,
             };
         }

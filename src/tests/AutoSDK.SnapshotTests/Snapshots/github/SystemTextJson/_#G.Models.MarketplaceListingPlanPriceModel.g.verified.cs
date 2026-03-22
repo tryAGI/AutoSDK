@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Free,
+        FlatRate,
         /// <summary>
         /// 
         /// </summary>
-        FlatRate,
+        Free,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                MarketplaceListingPlanPriceModel.Free => "FREE",
                 MarketplaceListingPlanPriceModel.FlatRate => "FLAT_RATE",
+                MarketplaceListingPlanPriceModel.Free => "FREE",
                 MarketplaceListingPlanPriceModel.PerUnit => "PER_UNIT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "FREE" => MarketplaceListingPlanPriceModel.Free,
                 "FLAT_RATE" => MarketplaceListingPlanPriceModel.FlatRate,
+                "FREE" => MarketplaceListingPlanPriceModel.Free,
                 "PER_UNIT" => MarketplaceListingPlanPriceModel.PerUnit,
                 _ => null,
             };

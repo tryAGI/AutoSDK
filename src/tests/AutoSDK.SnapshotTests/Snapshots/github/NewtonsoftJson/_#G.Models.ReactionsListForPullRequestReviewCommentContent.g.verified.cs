@@ -23,13 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="laugh")]
-        Laugh,
+        [global::System.Runtime.Serialization.EnumMember(Value="confused")]
+        Confused,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="confused")]
-        Confused,
+        [global::System.Runtime.Serialization.EnumMember(Value="eyes")]
+        Eyes,
         /// <summary>
         /// 
         /// </summary>
@@ -43,13 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="rocket")]
-        Rocket,
+        [global::System.Runtime.Serialization.EnumMember(Value="laugh")]
+        Laugh,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="eyes")]
-        Eyes,
+        [global::System.Runtime.Serialization.EnumMember(Value="rocket")]
+        Rocket,
     }
 
     /// <summary>
@@ -66,12 +66,12 @@ namespace G
             {
                 ReactionsListForPullRequestReviewCommentContent.Plus1 => "+1",
                 ReactionsListForPullRequestReviewCommentContent.Minus1 => "-1",
-                ReactionsListForPullRequestReviewCommentContent.Laugh => "laugh",
                 ReactionsListForPullRequestReviewCommentContent.Confused => "confused",
+                ReactionsListForPullRequestReviewCommentContent.Eyes => "eyes",
                 ReactionsListForPullRequestReviewCommentContent.Heart => "heart",
                 ReactionsListForPullRequestReviewCommentContent.Hooray => "hooray",
+                ReactionsListForPullRequestReviewCommentContent.Laugh => "laugh",
                 ReactionsListForPullRequestReviewCommentContent.Rocket => "rocket",
-                ReactionsListForPullRequestReviewCommentContent.Eyes => "eyes",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -84,12 +84,12 @@ namespace G
             {
                 "+1" => ReactionsListForPullRequestReviewCommentContent.Plus1,
                 "-1" => ReactionsListForPullRequestReviewCommentContent.Minus1,
-                "laugh" => ReactionsListForPullRequestReviewCommentContent.Laugh,
                 "confused" => ReactionsListForPullRequestReviewCommentContent.Confused,
+                "eyes" => ReactionsListForPullRequestReviewCommentContent.Eyes,
                 "heart" => ReactionsListForPullRequestReviewCommentContent.Heart,
                 "hooray" => ReactionsListForPullRequestReviewCommentContent.Hooray,
+                "laugh" => ReactionsListForPullRequestReviewCommentContent.Laugh,
                 "rocket" => ReactionsListForPullRequestReviewCommentContent.Rocket,
-                "eyes" => ReactionsListForPullRequestReviewCommentContent.Eyes,
                 _ => null,
             };
         }

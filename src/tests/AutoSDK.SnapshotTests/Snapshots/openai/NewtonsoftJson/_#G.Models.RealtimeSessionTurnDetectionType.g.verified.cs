@@ -14,13 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="server_vad")]
-        ServerVad,
+        [global::System.Runtime.Serialization.EnumMember(Value="semantic_vad")]
+        SemanticVad,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="semantic_vad")]
-        SemanticVad,
+        [global::System.Runtime.Serialization.EnumMember(Value="server_vad")]
+        ServerVad,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                RealtimeSessionTurnDetectionType.ServerVad => "server_vad",
                 RealtimeSessionTurnDetectionType.SemanticVad => "semantic_vad",
+                RealtimeSessionTurnDetectionType.ServerVad => "server_vad",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,8 +47,8 @@ namespace G
         {
             return value switch
             {
-                "server_vad" => RealtimeSessionTurnDetectionType.ServerVad,
                 "semantic_vad" => RealtimeSessionTurnDetectionType.SemanticVad,
+                "server_vad" => RealtimeSessionTurnDetectionType.ServerVad,
                 _ => null,
             };
         }

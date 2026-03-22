@@ -13,13 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="start")]
-        Start,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="output")]
-        Output,
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
-        Completed,
+        [global::System.Runtime.Serialization.EnumMember(Value="output")]
+        Output,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="start")]
+        Start,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                TrainingRequestWebhookEventsFilterItem.Start => "start",
-                TrainingRequestWebhookEventsFilterItem.Output => "output",
-                TrainingRequestWebhookEventsFilterItem.Logs => "logs",
                 TrainingRequestWebhookEventsFilterItem.Completed => "completed",
+                TrainingRequestWebhookEventsFilterItem.Logs => "logs",
+                TrainingRequestWebhookEventsFilterItem.Output => "output",
+                TrainingRequestWebhookEventsFilterItem.Start => "start",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "start" => TrainingRequestWebhookEventsFilterItem.Start,
-                "output" => TrainingRequestWebhookEventsFilterItem.Output,
-                "logs" => TrainingRequestWebhookEventsFilterItem.Logs,
                 "completed" => TrainingRequestWebhookEventsFilterItem.Completed,
+                "logs" => TrainingRequestWebhookEventsFilterItem.Logs,
+                "output" => TrainingRequestWebhookEventsFilterItem.Output,
+                "start" => TrainingRequestWebhookEventsFilterItem.Start,
                 _ => null,
             };
         }

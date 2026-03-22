@@ -16,6 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
+        Blank,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PR_BODY")]
         PrBody,
         /// <summary>
@@ -23,11 +28,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PR_TITLE")]
         PrTitle,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
-        Blank,
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ namespace G
         {
             return value switch
             {
+                ReposCreateInOrgRequestMergeCommitMessage.Blank => "BLANK",
                 ReposCreateInOrgRequestMergeCommitMessage.PrBody => "PR_BODY",
                 ReposCreateInOrgRequestMergeCommitMessage.PrTitle => "PR_TITLE",
-                ReposCreateInOrgRequestMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,9 +55,9 @@ namespace G
         {
             return value switch
             {
+                "BLANK" => ReposCreateInOrgRequestMergeCommitMessage.Blank,
                 "PR_BODY" => ReposCreateInOrgRequestMergeCommitMessage.PrBody,
                 "PR_TITLE" => ReposCreateInOrgRequestMergeCommitMessage.PrTitle,
-                "BLANK" => ReposCreateInOrgRequestMergeCommitMessage.Blank,
                 _ => null,
             };
         }

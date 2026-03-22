@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Safety,
+        Other,
         /// <summary>
         /// 
         /// </summary>
-        Other,
+        Safety,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 PromptFeedbackBlockReason.BlockReasonUnspecified => "BLOCK_REASON_UNSPECIFIED",
-                PromptFeedbackBlockReason.Safety => "SAFETY",
                 PromptFeedbackBlockReason.Other => "OTHER",
+                PromptFeedbackBlockReason.Safety => "SAFETY",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "BLOCK_REASON_UNSPECIFIED" => PromptFeedbackBlockReason.BlockReasonUnspecified,
-                "SAFETY" => PromptFeedbackBlockReason.Safety,
                 "OTHER" => PromptFeedbackBlockReason.Other,
+                "SAFETY" => PromptFeedbackBlockReason.Safety,
                 _ => null,
             };
         }

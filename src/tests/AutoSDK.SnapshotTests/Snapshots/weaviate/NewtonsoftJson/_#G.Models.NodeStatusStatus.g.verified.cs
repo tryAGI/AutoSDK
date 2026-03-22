@@ -19,13 +19,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="UNHEALTHY")]
-        Unhealthy,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="UNAVAILABLE")]
-        Unavailable,
+        [global::System.Runtime.Serialization.EnumMember(Value="INDEXING")]
+        Indexing,
         /// <summary>
         /// 
         /// </summary>
@@ -34,8 +29,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="INDEXING")]
-        Indexing,
+        [global::System.Runtime.Serialization.EnumMember(Value="UNAVAILABLE")]
+        Unavailable,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="UNHEALTHY")]
+        Unhealthy,
     }
 
     /// <summary>
@@ -51,10 +51,10 @@ namespace G
             return value switch
             {
                 NodeStatusStatus.Healthy => "HEALTHY",
-                NodeStatusStatus.Unhealthy => "UNHEALTHY",
-                NodeStatusStatus.Unavailable => "UNAVAILABLE",
-                NodeStatusStatus.Timeout => "TIMEOUT",
                 NodeStatusStatus.Indexing => "INDEXING",
+                NodeStatusStatus.Timeout => "TIMEOUT",
+                NodeStatusStatus.Unavailable => "UNAVAILABLE",
+                NodeStatusStatus.Unhealthy => "UNHEALTHY",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -66,10 +66,10 @@ namespace G
             return value switch
             {
                 "HEALTHY" => NodeStatusStatus.Healthy,
-                "UNHEALTHY" => NodeStatusStatus.Unhealthy,
-                "UNAVAILABLE" => NodeStatusStatus.Unavailable,
-                "TIMEOUT" => NodeStatusStatus.Timeout,
                 "INDEXING" => NodeStatusStatus.Indexing,
+                "TIMEOUT" => NodeStatusStatus.Timeout,
+                "UNAVAILABLE" => NodeStatusStatus.Unavailable,
+                "UNHEALTHY" => NodeStatusStatus.Unhealthy,
                 _ => null,
             };
         }

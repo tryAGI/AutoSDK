@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        Organization,
+        User,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 WebhooksRelease1AssetUploaderType.Bot => "Bot",
-                WebhooksRelease1AssetUploaderType.User => "User",
                 WebhooksRelease1AssetUploaderType.Organization => "Organization",
+                WebhooksRelease1AssetUploaderType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "Bot" => WebhooksRelease1AssetUploaderType.Bot,
-                "User" => WebhooksRelease1AssetUploaderType.User,
                 "Organization" => WebhooksRelease1AssetUploaderType.Organization,
+                "User" => WebhooksRelease1AssetUploaderType.User,
                 _ => null,
             };
         }

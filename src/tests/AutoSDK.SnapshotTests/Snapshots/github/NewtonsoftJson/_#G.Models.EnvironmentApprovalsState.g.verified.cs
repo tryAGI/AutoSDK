@@ -19,13 +19,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="rejected")]
-        Rejected,
+        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
+        Pending,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
-        Pending,
+        [global::System.Runtime.Serialization.EnumMember(Value="rejected")]
+        Rejected,
     }
 
     /// <summary>
@@ -41,8 +41,8 @@ namespace G
             return value switch
             {
                 EnvironmentApprovalsState.Approved => "approved",
-                EnvironmentApprovalsState.Rejected => "rejected",
                 EnvironmentApprovalsState.Pending => "pending",
+                EnvironmentApprovalsState.Rejected => "rejected",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,8 +54,8 @@ namespace G
             return value switch
             {
                 "approved" => EnvironmentApprovalsState.Approved,
-                "rejected" => EnvironmentApprovalsState.Rejected,
                 "pending" => EnvironmentApprovalsState.Pending,
+                "rejected" => EnvironmentApprovalsState.Rejected,
                 _ => null,
             };
         }

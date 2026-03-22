@@ -109,13 +109,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="NONE")]
-        None,
+        [global::System.Runtime.Serialization.EnumMember(Value="NEUTRAL")]
+        Neutral,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="NEUTRAL")]
-        Neutral,
+        [global::System.Runtime.Serialization.EnumMember(Value="NONE")]
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -159,13 +159,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="VIBRANT")]
-        Vibrant,
+        [global::System.Runtime.Serialization.EnumMember(Value="UNPROCESSED")]
+        Unprocessed,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="UNPROCESSED")]
-        Unprocessed,
+        [global::System.Runtime.Serialization.EnumMember(Value="VIBRANT")]
+        Vibrant,
     }
 
     /// <summary>
@@ -199,8 +199,8 @@ namespace G
                 SdGenerationStyle.Minimalistic => "MINIMALISTIC",
                 SdGenerationStyle.Monochrome => "MONOCHROME",
                 SdGenerationStyle.Moody => "MOODY",
-                SdGenerationStyle.None => "NONE",
                 SdGenerationStyle.Neutral => "NEUTRAL",
+                SdGenerationStyle.None => "NONE",
                 SdGenerationStyle.Photography => "PHOTOGRAPHY",
                 SdGenerationStyle.Portrait => "PORTRAIT",
                 SdGenerationStyle.Raytraced => "RAYTRACED",
@@ -209,8 +209,8 @@ namespace G
                 SdGenerationStyle.SketchBw => "SKETCH_BW",
                 SdGenerationStyle.SketchColor => "SKETCH_COLOR",
                 SdGenerationStyle.StockPhoto => "STOCK_PHOTO",
-                SdGenerationStyle.Vibrant => "VIBRANT",
                 SdGenerationStyle.Unprocessed => "UNPROCESSED",
+                SdGenerationStyle.Vibrant => "VIBRANT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -240,8 +240,8 @@ namespace G
                 "MINIMALISTIC" => SdGenerationStyle.Minimalistic,
                 "MONOCHROME" => SdGenerationStyle.Monochrome,
                 "MOODY" => SdGenerationStyle.Moody,
-                "NONE" => SdGenerationStyle.None,
                 "NEUTRAL" => SdGenerationStyle.Neutral,
+                "NONE" => SdGenerationStyle.None,
                 "PHOTOGRAPHY" => SdGenerationStyle.Photography,
                 "PORTRAIT" => SdGenerationStyle.Portrait,
                 "RAYTRACED" => SdGenerationStyle.Raytraced,
@@ -250,8 +250,8 @@ namespace G
                 "SKETCH_BW" => SdGenerationStyle.SketchBw,
                 "SKETCH_COLOR" => SdGenerationStyle.SketchColor,
                 "STOCK_PHOTO" => SdGenerationStyle.StockPhoto,
-                "VIBRANT" => SdGenerationStyle.Vibrant,
                 "UNPROCESSED" => SdGenerationStyle.Unprocessed,
+                "VIBRANT" => SdGenerationStyle.Vibrant,
                 _ => null,
             };
         }

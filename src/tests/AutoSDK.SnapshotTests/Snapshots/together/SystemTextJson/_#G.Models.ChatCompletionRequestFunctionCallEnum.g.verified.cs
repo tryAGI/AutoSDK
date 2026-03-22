@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        None,
+        Auto,
         /// <summary>
         /// 
         /// </summary>
-        Auto,
+        None,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ChatCompletionRequestFunctionCallEnum.None => "none",
                 ChatCompletionRequestFunctionCallEnum.Auto => "auto",
+                ChatCompletionRequestFunctionCallEnum.None => "none",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "none" => ChatCompletionRequestFunctionCallEnum.None,
                 "auto" => ChatCompletionRequestFunctionCallEnum.Auto,
+                "none" => ChatCompletionRequestFunctionCallEnum.None,
                 _ => null,
             };
         }

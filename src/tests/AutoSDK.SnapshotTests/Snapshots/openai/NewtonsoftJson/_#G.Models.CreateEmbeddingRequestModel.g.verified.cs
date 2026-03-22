@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text-embedding-ada-002")]
-        TextEmbeddingAda002,
+        [global::System.Runtime.Serialization.EnumMember(Value="text-embedding-3-large")]
+        TextEmbedding3Large,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text-embedding-3-large")]
-        TextEmbedding3Large,
+        [global::System.Runtime.Serialization.EnumMember(Value="text-embedding-ada-002")]
+        TextEmbeddingAda002,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                CreateEmbeddingRequestModel.TextEmbeddingAda002 => "text-embedding-ada-002",
-                CreateEmbeddingRequestModel.TextEmbedding3Small => "text-embedding-3-small",
                 CreateEmbeddingRequestModel.TextEmbedding3Large => "text-embedding-3-large",
+                CreateEmbeddingRequestModel.TextEmbedding3Small => "text-embedding-3-small",
+                CreateEmbeddingRequestModel.TextEmbeddingAda002 => "text-embedding-ada-002",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "text-embedding-ada-002" => CreateEmbeddingRequestModel.TextEmbeddingAda002,
-                "text-embedding-3-small" => CreateEmbeddingRequestModel.TextEmbedding3Small,
                 "text-embedding-3-large" => CreateEmbeddingRequestModel.TextEmbedding3Large,
+                "text-embedding-3-small" => CreateEmbeddingRequestModel.TextEmbedding3Small,
+                "text-embedding-ada-002" => CreateEmbeddingRequestModel.TextEmbeddingAda002,
                 _ => null,
             };
         }

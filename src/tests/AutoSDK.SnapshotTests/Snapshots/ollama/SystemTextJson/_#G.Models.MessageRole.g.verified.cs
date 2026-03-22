@@ -12,19 +12,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        System,
-        /// <summary>
-        /// 
-        /// </summary>
-        User,
-        /// <summary>
-        /// 
-        /// </summary>
         Assistant,
         /// <summary>
         /// 
         /// </summary>
+        System,
+        /// <summary>
+        /// 
+        /// </summary>
         Tool,
+        /// <summary>
+        /// 
+        /// </summary>
+        User,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                MessageRole.System => "system",
-                MessageRole.User => "user",
                 MessageRole.Assistant => "assistant",
+                MessageRole.System => "system",
                 MessageRole.Tool => "tool",
+                MessageRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "system" => MessageRole.System,
-                "user" => MessageRole.User,
                 "assistant" => MessageRole.Assistant,
+                "system" => MessageRole.System,
                 "tool" => MessageRole.Tool,
+                "user" => MessageRole.User,
                 _ => null,
             };
         }

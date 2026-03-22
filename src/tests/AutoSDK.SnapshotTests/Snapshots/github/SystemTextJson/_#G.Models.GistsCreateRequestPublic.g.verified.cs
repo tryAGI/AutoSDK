@@ -13,11 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        True,
+        False,
         /// <summary>
         /// 
         /// </summary>
-        False,
+        True,
     }
 
     /// <summary>
@@ -32,8 +32,8 @@ namespace G
         {
             return value switch
             {
-                GistsCreateRequestPublic.True => "true",
                 GistsCreateRequestPublic.False => "false",
+                GistsCreateRequestPublic.True => "true",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,8 +44,8 @@ namespace G
         {
             return value switch
             {
-                "true" => GistsCreateRequestPublic.True,
                 "false" => GistsCreateRequestPublic.False,
+                "true" => GistsCreateRequestPublic.True,
                 _ => null,
             };
         }

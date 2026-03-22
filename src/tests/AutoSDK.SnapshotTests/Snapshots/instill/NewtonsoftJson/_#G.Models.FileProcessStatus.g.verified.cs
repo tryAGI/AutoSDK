@@ -17,6 +17,31 @@ namespace G
     public enum FileProcessStatus
     {
         /// <summary>
+        /// file is chunking
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="FILE_PROCESS_STATUS_CHUNKING")]
+        Chunking,
+        /// <summary>
+        /// completed
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="FILE_PROCESS_STATUS_COMPLETED")]
+        Completed,
+        /// <summary>
+        /// file is converting
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="FILE_PROCESS_STATUS_CONVERTING")]
+        Converting,
+        /// <summary>
+        /// file is embedding
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="FILE_PROCESS_STATUS_EMBEDDING")]
+        Embedding,
+        /// <summary>
+        /// failed
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="FILE_PROCESS_STATUS_FAILED")]
+        Failed,
+        /// <summary>
         /// NOTSTARTED
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_PROCESS_STATUS_NOTSTARTED")]
@@ -26,31 +51,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FILE_PROCESS_STATUS_WAITING")]
         Waiting,
-        /// <summary>
-        /// file is converting
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="FILE_PROCESS_STATUS_CONVERTING")]
-        Converting,
-        /// <summary>
-        /// file is chunking
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="FILE_PROCESS_STATUS_CHUNKING")]
-        Chunking,
-        /// <summary>
-        /// file is embedding
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="FILE_PROCESS_STATUS_EMBEDDING")]
-        Embedding,
-        /// <summary>
-        /// completed
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="FILE_PROCESS_STATUS_COMPLETED")]
-        Completed,
-        /// <summary>
-        /// failed
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="FILE_PROCESS_STATUS_FAILED")]
-        Failed,
     }
 
     /// <summary>
@@ -65,13 +65,13 @@ namespace G
         {
             return value switch
             {
+                FileProcessStatus.Chunking => "FILE_PROCESS_STATUS_CHUNKING",
+                FileProcessStatus.Completed => "FILE_PROCESS_STATUS_COMPLETED",
+                FileProcessStatus.Converting => "FILE_PROCESS_STATUS_CONVERTING",
+                FileProcessStatus.Embedding => "FILE_PROCESS_STATUS_EMBEDDING",
+                FileProcessStatus.Failed => "FILE_PROCESS_STATUS_FAILED",
                 FileProcessStatus.Notstarted => "FILE_PROCESS_STATUS_NOTSTARTED",
                 FileProcessStatus.Waiting => "FILE_PROCESS_STATUS_WAITING",
-                FileProcessStatus.Converting => "FILE_PROCESS_STATUS_CONVERTING",
-                FileProcessStatus.Chunking => "FILE_PROCESS_STATUS_CHUNKING",
-                FileProcessStatus.Embedding => "FILE_PROCESS_STATUS_EMBEDDING",
-                FileProcessStatus.Completed => "FILE_PROCESS_STATUS_COMPLETED",
-                FileProcessStatus.Failed => "FILE_PROCESS_STATUS_FAILED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -82,13 +82,13 @@ namespace G
         {
             return value switch
             {
+                "FILE_PROCESS_STATUS_CHUNKING" => FileProcessStatus.Chunking,
+                "FILE_PROCESS_STATUS_COMPLETED" => FileProcessStatus.Completed,
+                "FILE_PROCESS_STATUS_CONVERTING" => FileProcessStatus.Converting,
+                "FILE_PROCESS_STATUS_EMBEDDING" => FileProcessStatus.Embedding,
+                "FILE_PROCESS_STATUS_FAILED" => FileProcessStatus.Failed,
                 "FILE_PROCESS_STATUS_NOTSTARTED" => FileProcessStatus.Notstarted,
                 "FILE_PROCESS_STATUS_WAITING" => FileProcessStatus.Waiting,
-                "FILE_PROCESS_STATUS_CONVERTING" => FileProcessStatus.Converting,
-                "FILE_PROCESS_STATUS_CHUNKING" => FileProcessStatus.Chunking,
-                "FILE_PROCESS_STATUS_EMBEDDING" => FileProcessStatus.Embedding,
-                "FILE_PROCESS_STATUS_COMPLETED" => FileProcessStatus.Completed,
-                "FILE_PROCESS_STATUS_FAILED" => FileProcessStatus.Failed,
                 _ => null,
             };
         }

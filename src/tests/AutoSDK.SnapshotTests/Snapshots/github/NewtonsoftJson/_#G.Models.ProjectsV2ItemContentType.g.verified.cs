@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="DraftIssue")]
+        DraftIssue,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="Issue")]
         Issue,
         /// <summary>
@@ -20,11 +25,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PullRequest")]
         PullRequest,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="DraftIssue")]
-        DraftIssue,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                ProjectsV2ItemContentType.DraftIssue => "DraftIssue",
                 ProjectsV2ItemContentType.Issue => "Issue",
                 ProjectsV2ItemContentType.PullRequest => "PullRequest",
-                ProjectsV2ItemContentType.DraftIssue => "DraftIssue",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
+                "DraftIssue" => ProjectsV2ItemContentType.DraftIssue,
                 "Issue" => ProjectsV2ItemContentType.Issue,
                 "PullRequest" => ProjectsV2ItemContentType.PullRequest,
-                "DraftIssue" => ProjectsV2ItemContentType.DraftIssue,
                 _ => null,
             };
         }

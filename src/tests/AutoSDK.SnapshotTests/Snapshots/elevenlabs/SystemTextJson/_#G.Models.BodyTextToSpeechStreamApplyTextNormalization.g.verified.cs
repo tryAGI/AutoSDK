@@ -17,11 +17,11 @@ namespace G
         /// <summary>
         /// 'auto', 'on', and 'off'. When set to 'auto', the system will automatically decide whether to apply text normalization (e.g., spelling out numbers). With 'on', text normalization will always be applied, while with 'off', it will be skipped.
         /// </summary>
-        On,
+        Off,
         /// <summary>
         /// 'auto', 'on', and 'off'. When set to 'auto', the system will automatically decide whether to apply text normalization (e.g., spelling out numbers). With 'on', text normalization will always be applied, while with 'off', it will be skipped.
         /// </summary>
-        Off,
+        On,
     }
 
     /// <summary>
@@ -37,8 +37,8 @@ namespace G
             return value switch
             {
                 BodyTextToSpeechStreamApplyTextNormalization.Auto => "auto",
-                BodyTextToSpeechStreamApplyTextNormalization.On => "on",
                 BodyTextToSpeechStreamApplyTextNormalization.Off => "off",
+                BodyTextToSpeechStreamApplyTextNormalization.On => "on",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,8 +50,8 @@ namespace G
             return value switch
             {
                 "auto" => BodyTextToSpeechStreamApplyTextNormalization.Auto,
-                "on" => BodyTextToSpeechStreamApplyTextNormalization.On,
                 "off" => BodyTextToSpeechStreamApplyTextNormalization.Off,
+                "on" => BodyTextToSpeechStreamApplyTextNormalization.On,
                 _ => null,
             };
         }

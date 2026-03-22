@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="dubbing")]
+        Dubbing,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="preprocessing")]
         Preprocessing,
         /// <summary>
@@ -20,11 +25,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="speech_import")]
         SpeechImport,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="dubbing")]
-        Dubbing,
         /// <summary>
         /// 
         /// </summary>
@@ -44,9 +44,9 @@ namespace G
         {
             return value switch
             {
+                PendingClipTaskType.Dubbing => "dubbing",
                 PendingClipTaskType.Preprocessing => "preprocessing",
                 PendingClipTaskType.SpeechImport => "speech_import",
-                PendingClipTaskType.Dubbing => "dubbing",
                 PendingClipTaskType.VideoToMusic => "video_to_music",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -58,9 +58,9 @@ namespace G
         {
             return value switch
             {
+                "dubbing" => PendingClipTaskType.Dubbing,
                 "preprocessing" => PendingClipTaskType.Preprocessing,
                 "speech_import" => PendingClipTaskType.SpeechImport,
-                "dubbing" => PendingClipTaskType.Dubbing,
                 "video_to_music" => PendingClipTaskType.VideoToMusic,
                 _ => null,
             };

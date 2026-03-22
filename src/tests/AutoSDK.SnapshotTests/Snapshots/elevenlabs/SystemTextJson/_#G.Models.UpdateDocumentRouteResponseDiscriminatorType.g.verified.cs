@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Url,
+        File,
         /// <summary>
         /// 
         /// </summary>
-        File,
+        Folder,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Folder,
+        Url,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                UpdateDocumentRouteResponseDiscriminatorType.Url => "url",
                 UpdateDocumentRouteResponseDiscriminatorType.File => "file",
-                UpdateDocumentRouteResponseDiscriminatorType.Text => "text",
                 UpdateDocumentRouteResponseDiscriminatorType.Folder => "folder",
+                UpdateDocumentRouteResponseDiscriminatorType.Text => "text",
+                UpdateDocumentRouteResponseDiscriminatorType.Url => "url",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "url" => UpdateDocumentRouteResponseDiscriminatorType.Url,
                 "file" => UpdateDocumentRouteResponseDiscriminatorType.File,
-                "text" => UpdateDocumentRouteResponseDiscriminatorType.Text,
                 "folder" => UpdateDocumentRouteResponseDiscriminatorType.Folder,
+                "text" => UpdateDocumentRouteResponseDiscriminatorType.Text,
+                "url" => UpdateDocumentRouteResponseDiscriminatorType.Url,
                 _ => null,
             };
         }

@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Reader,
+        Owner,
         /// <summary>
         /// 
         /// </summary>
-        Owner,
+        Reader,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                InviteRequestRole.Reader => "reader",
                 InviteRequestRole.Owner => "owner",
+                InviteRequestRole.Reader => "reader",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "reader" => InviteRequestRole.Reader,
                 "owner" => InviteRequestRole.Owner,
+                "reader" => InviteRequestRole.Reader,
                 _ => null,
             };
         }

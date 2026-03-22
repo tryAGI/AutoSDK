@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Team,
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        Organization,
+        Team,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                WebhookMembershipRemovedScope.Team => "team",
                 WebhookMembershipRemovedScope.Organization => "organization",
+                WebhookMembershipRemovedScope.Team => "team",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "team" => WebhookMembershipRemovedScope.Team,
                 "organization" => WebhookMembershipRemovedScope.Organization,
+                "team" => WebhookMembershipRemovedScope.Team,
                 _ => null,
             };
         }

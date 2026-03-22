@@ -18,13 +18,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="public")]
-        Public,
+        [global::System.Runtime.Serialization.EnumMember(Value="private_or_internal")]
+        PrivateOrInternal,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="private_or_internal")]
-        PrivateOrInternal,
+        [global::System.Runtime.Serialization.EnumMember(Value="public")]
+        Public,
         /// <summary>
         /// 
         /// </summary>
@@ -45,8 +45,8 @@ namespace G
             return value switch
             {
                 CodeSecurityAttachConfigurationRequestScope.All => "all",
-                CodeSecurityAttachConfigurationRequestScope.Public => "public",
                 CodeSecurityAttachConfigurationRequestScope.PrivateOrInternal => "private_or_internal",
+                CodeSecurityAttachConfigurationRequestScope.Public => "public",
                 CodeSecurityAttachConfigurationRequestScope.Selected => "selected",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -59,8 +59,8 @@ namespace G
             return value switch
             {
                 "all" => CodeSecurityAttachConfigurationRequestScope.All,
-                "public" => CodeSecurityAttachConfigurationRequestScope.Public,
                 "private_or_internal" => CodeSecurityAttachConfigurationRequestScope.PrivateOrInternal,
+                "public" => CodeSecurityAttachConfigurationRequestScope.Public,
                 "selected" => CodeSecurityAttachConfigurationRequestScope.Selected,
                 _ => null,
             };

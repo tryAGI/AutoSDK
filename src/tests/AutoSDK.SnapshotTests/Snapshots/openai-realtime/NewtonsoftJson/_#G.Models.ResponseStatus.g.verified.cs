@@ -13,23 +13,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
-        Completed,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
-        InProgress,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
         Cancelled,
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="failed")]
         Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
+        InProgress,
         /// <summary>
         /// 
         /// </summary>
@@ -49,10 +49,10 @@ namespace G
         {
             return value switch
             {
-                ResponseStatus.Completed => "completed",
-                ResponseStatus.InProgress => "in_progress",
                 ResponseStatus.Cancelled => "cancelled",
+                ResponseStatus.Completed => "completed",
                 ResponseStatus.Failed => "failed",
+                ResponseStatus.InProgress => "in_progress",
                 ResponseStatus.Incomplete => "incomplete",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -64,10 +64,10 @@ namespace G
         {
             return value switch
             {
-                "completed" => ResponseStatus.Completed,
-                "in_progress" => ResponseStatus.InProgress,
                 "cancelled" => ResponseStatus.Cancelled,
+                "completed" => ResponseStatus.Completed,
                 "failed" => ResponseStatus.Failed,
+                "in_progress" => ResponseStatus.InProgress,
                 "incomplete" => ResponseStatus.Incomplete,
                 _ => null,
             };

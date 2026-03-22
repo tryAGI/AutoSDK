@@ -16,8 +16,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="PR_BODY")]
-        PrBody,
+        [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
+        Blank,
         /// <summary>
         /// 
         /// </summary>
@@ -26,8 +26,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
-        Blank,
+        [global::System.Runtime.Serialization.EnumMember(Value="PR_BODY")]
+        PrBody,
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestSynchronizePullRequestHeadRepoSquashMergeCommitMessage.PrBody => "PR_BODY",
-                WebhookPullRequestSynchronizePullRequestHeadRepoSquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
                 WebhookPullRequestSynchronizePullRequestHeadRepoSquashMergeCommitMessage.Blank => "BLANK",
+                WebhookPullRequestSynchronizePullRequestHeadRepoSquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
+                WebhookPullRequestSynchronizePullRequestHeadRepoSquashMergeCommitMessage.PrBody => "PR_BODY",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,9 +55,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => WebhookPullRequestSynchronizePullRequestHeadRepoSquashMergeCommitMessage.PrBody,
-                "COMMIT_MESSAGES" => WebhookPullRequestSynchronizePullRequestHeadRepoSquashMergeCommitMessage.CommitMessages,
                 "BLANK" => WebhookPullRequestSynchronizePullRequestHeadRepoSquashMergeCommitMessage.Blank,
+                "COMMIT_MESSAGES" => WebhookPullRequestSynchronizePullRequestHeadRepoSquashMergeCommitMessage.CommitMessages,
+                "PR_BODY" => WebhookPullRequestSynchronizePullRequestHeadRepoSquashMergeCommitMessage.PrBody,
                 _ => null,
             };
         }

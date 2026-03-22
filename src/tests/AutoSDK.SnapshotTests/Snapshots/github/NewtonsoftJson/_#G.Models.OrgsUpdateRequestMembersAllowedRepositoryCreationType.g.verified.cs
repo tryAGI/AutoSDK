@@ -19,13 +19,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="private")]
-        Private,
+        [global::System.Runtime.Serialization.EnumMember(Value="none")]
+        None,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="none")]
-        None,
+        [global::System.Runtime.Serialization.EnumMember(Value="private")]
+        Private,
     }
 
     /// <summary>
@@ -41,8 +41,8 @@ namespace G
             return value switch
             {
                 OrgsUpdateRequestMembersAllowedRepositoryCreationType.All => "all",
-                OrgsUpdateRequestMembersAllowedRepositoryCreationType.Private => "private",
                 OrgsUpdateRequestMembersAllowedRepositoryCreationType.None => "none",
+                OrgsUpdateRequestMembersAllowedRepositoryCreationType.Private => "private",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,8 +54,8 @@ namespace G
             return value switch
             {
                 "all" => OrgsUpdateRequestMembersAllowedRepositoryCreationType.All,
-                "private" => OrgsUpdateRequestMembersAllowedRepositoryCreationType.Private,
                 "none" => OrgsUpdateRequestMembersAllowedRepositoryCreationType.None,
+                "private" => OrgsUpdateRequestMembersAllowedRepositoryCreationType.Private,
                 _ => null,
             };
         }

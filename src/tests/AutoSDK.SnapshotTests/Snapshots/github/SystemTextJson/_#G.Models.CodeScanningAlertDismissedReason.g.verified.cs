@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        WontFix,
+        UsedInTests,
         /// <summary>
         /// 
         /// </summary>
-        UsedInTests,
+        WontFix,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 CodeScanningAlertDismissedReason.FalsePositive => "false positive",
-                CodeScanningAlertDismissedReason.WontFix => "won't fix",
                 CodeScanningAlertDismissedReason.UsedInTests => "used in tests",
+                CodeScanningAlertDismissedReason.WontFix => "won't fix",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "false positive" => CodeScanningAlertDismissedReason.FalsePositive,
-                "won't fix" => CodeScanningAlertDismissedReason.WontFix,
                 "used in tests" => CodeScanningAlertDismissedReason.UsedInTests,
+                "won't fix" => CodeScanningAlertDismissedReason.WontFix,
                 _ => null,
             };
         }

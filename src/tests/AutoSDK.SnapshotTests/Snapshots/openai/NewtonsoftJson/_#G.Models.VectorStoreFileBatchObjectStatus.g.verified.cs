@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
-        InProgress,
+        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -23,13 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
-        Cancelled,
+        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
+        Failed,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
-        Failed,
+        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
+        InProgress,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                VectorStoreFileBatchObjectStatus.InProgress => "in_progress",
-                VectorStoreFileBatchObjectStatus.Completed => "completed",
                 VectorStoreFileBatchObjectStatus.Cancelled => "cancelled",
+                VectorStoreFileBatchObjectStatus.Completed => "completed",
                 VectorStoreFileBatchObjectStatus.Failed => "failed",
+                VectorStoreFileBatchObjectStatus.InProgress => "in_progress",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "in_progress" => VectorStoreFileBatchObjectStatus.InProgress,
-                "completed" => VectorStoreFileBatchObjectStatus.Completed,
                 "cancelled" => VectorStoreFileBatchObjectStatus.Cancelled,
+                "completed" => VectorStoreFileBatchObjectStatus.Completed,
                 "failed" => VectorStoreFileBatchObjectStatus.Failed,
+                "in_progress" => VectorStoreFileBatchObjectStatus.InProgress,
                 _ => null,
             };
         }

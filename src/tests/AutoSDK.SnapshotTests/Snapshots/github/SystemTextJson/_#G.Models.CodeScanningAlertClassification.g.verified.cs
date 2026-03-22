@@ -12,19 +12,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Source,
-        /// <summary>
-        /// 
-        /// </summary>
         Generated,
         /// <summary>
         /// 
         /// </summary>
-        Test,
+        Library,
         /// <summary>
         /// 
         /// </summary>
-        Library,
+        Source,
+        /// <summary>
+        /// 
+        /// </summary>
+        Test,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                CodeScanningAlertClassification.Source => "source",
                 CodeScanningAlertClassification.Generated => "generated",
-                CodeScanningAlertClassification.Test => "test",
                 CodeScanningAlertClassification.Library => "library",
+                CodeScanningAlertClassification.Source => "source",
+                CodeScanningAlertClassification.Test => "test",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "source" => CodeScanningAlertClassification.Source,
                 "generated" => CodeScanningAlertClassification.Generated,
-                "test" => CodeScanningAlertClassification.Test,
                 "library" => CodeScanningAlertClassification.Library,
+                "source" => CodeScanningAlertClassification.Source,
+                "test" => CodeScanningAlertClassification.Test,
                 _ => null,
             };
         }

@@ -15,13 +15,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="fast")]
-        Fast,
+        [global::System.Runtime.Serialization.EnumMember(Value="accurate")]
+        Accurate,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="accurate")]
-        Accurate,
+        [global::System.Runtime.Serialization.EnumMember(Value="fast")]
+        Fast,
         /// <summary>
         /// 
         /// </summary>
@@ -41,8 +41,8 @@ namespace G
         {
             return value switch
             {
-                ChatRequestCitationQuality.Fast => "fast",
                 ChatRequestCitationQuality.Accurate => "accurate",
+                ChatRequestCitationQuality.Fast => "fast",
                 ChatRequestCitationQuality.Off => "off",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -54,8 +54,8 @@ namespace G
         {
             return value switch
             {
-                "fast" => ChatRequestCitationQuality.Fast,
                 "accurate" => ChatRequestCitationQuality.Accurate,
+                "fast" => ChatRequestCitationQuality.Fast,
                 "off" => ChatRequestCitationQuality.Off,
                 _ => null,
             };

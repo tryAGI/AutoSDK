@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="unknown")]
-        Unknown,
+        [global::System.Runtime.Serialization.EnumMember(Value="development")]
+        Development,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="development")]
-        Development,
+        [global::System.Runtime.Serialization.EnumMember(Value="unknown")]
+        Unknown,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                DependencyGraphDiffItemScope.Unknown => "unknown",
-                DependencyGraphDiffItemScope.Runtime => "runtime",
                 DependencyGraphDiffItemScope.Development => "development",
+                DependencyGraphDiffItemScope.Runtime => "runtime",
+                DependencyGraphDiffItemScope.Unknown => "unknown",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "unknown" => DependencyGraphDiffItemScope.Unknown,
-                "runtime" => DependencyGraphDiffItemScope.Runtime,
                 "development" => DependencyGraphDiffItemScope.Development,
+                "runtime" => DependencyGraphDiffItemScope.Runtime,
+                "unknown" => DependencyGraphDiffItemScope.Unknown,
                 _ => null,
             };
         }

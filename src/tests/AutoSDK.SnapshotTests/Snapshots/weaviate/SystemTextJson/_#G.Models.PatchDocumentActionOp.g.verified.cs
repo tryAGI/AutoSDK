@@ -16,11 +16,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Remove,
-        /// <summary>
-        /// 
-        /// </summary>
-        Replace,
+        Copy,
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +24,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Copy,
+        Remove,
+        /// <summary>
+        /// 
+        /// </summary>
+        Replace,
         /// <summary>
         /// 
         /// </summary>
@@ -48,10 +48,10 @@ namespace G
             return value switch
             {
                 PatchDocumentActionOp.Add => "add",
+                PatchDocumentActionOp.Copy => "copy",
+                PatchDocumentActionOp.Move => "move",
                 PatchDocumentActionOp.Remove => "remove",
                 PatchDocumentActionOp.Replace => "replace",
-                PatchDocumentActionOp.Move => "move",
-                PatchDocumentActionOp.Copy => "copy",
                 PatchDocumentActionOp.Test => "test",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -64,10 +64,10 @@ namespace G
             return value switch
             {
                 "add" => PatchDocumentActionOp.Add,
+                "copy" => PatchDocumentActionOp.Copy,
+                "move" => PatchDocumentActionOp.Move,
                 "remove" => PatchDocumentActionOp.Remove,
                 "replace" => PatchDocumentActionOp.Replace,
-                "move" => PatchDocumentActionOp.Move,
-                "copy" => PatchDocumentActionOp.Copy,
                 "test" => PatchDocumentActionOp.Test,
                 _ => null,
             };

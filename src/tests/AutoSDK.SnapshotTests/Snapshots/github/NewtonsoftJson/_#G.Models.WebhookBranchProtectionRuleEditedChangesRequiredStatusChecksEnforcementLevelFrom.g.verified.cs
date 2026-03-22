@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="off")]
-        Off,
+        [global::System.Runtime.Serialization.EnumMember(Value="everyone")]
+        Everyone,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="everyone")]
-        Everyone,
+        [global::System.Runtime.Serialization.EnumMember(Value="off")]
+        Off,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom.Off => "off",
-                WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom.NonAdmins => "non_admins",
                 WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom.Everyone => "everyone",
+                WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom.NonAdmins => "non_admins",
+                WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom.Off => "off",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "off" => WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom.Off,
-                "non_admins" => WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom.NonAdmins,
                 "everyone" => WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom.Everyone,
+                "non_admins" => WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom.NonAdmins,
+                "off" => WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom.Off,
                 _ => null,
             };
         }

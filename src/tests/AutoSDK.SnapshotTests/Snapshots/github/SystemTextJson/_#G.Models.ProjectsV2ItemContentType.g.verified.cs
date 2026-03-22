@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        DraftIssue,
+        /// <summary>
+        /// 
+        /// </summary>
         Issue,
         /// <summary>
         /// 
         /// </summary>
         PullRequest,
-        /// <summary>
-        /// 
-        /// </summary>
-        DraftIssue,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
+                ProjectsV2ItemContentType.DraftIssue => "DraftIssue",
                 ProjectsV2ItemContentType.Issue => "Issue",
                 ProjectsV2ItemContentType.PullRequest => "PullRequest",
-                ProjectsV2ItemContentType.DraftIssue => "DraftIssue",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
+                "DraftIssue" => ProjectsV2ItemContentType.DraftIssue,
                 "Issue" => ProjectsV2ItemContentType.Issue,
                 "PullRequest" => ProjectsV2ItemContentType.PullRequest,
-                "DraftIssue" => ProjectsV2ItemContentType.DraftIssue,
                 _ => null,
             };
         }

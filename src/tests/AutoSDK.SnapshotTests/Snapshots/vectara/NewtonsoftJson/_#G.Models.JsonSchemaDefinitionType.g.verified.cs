@@ -13,23 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="object")]
-        Object,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="array")]
         Array,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="string")]
-        String,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="number")]
-        Number,
+        [global::System.Runtime.Serialization.EnumMember(Value="boolean")]
+        Boolean,
         /// <summary>
         /// 
         /// </summary>
@@ -38,8 +28,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="boolean")]
-        Boolean,
+        [global::System.Runtime.Serialization.EnumMember(Value="number")]
+        Number,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="object")]
+        Object,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="string")]
+        String,
     }
 
     /// <summary>
@@ -54,12 +54,12 @@ namespace G
         {
             return value switch
             {
-                JsonSchemaDefinitionType.Object => "object",
                 JsonSchemaDefinitionType.Array => "array",
-                JsonSchemaDefinitionType.String => "string",
-                JsonSchemaDefinitionType.Number => "number",
-                JsonSchemaDefinitionType.Integer => "integer",
                 JsonSchemaDefinitionType.Boolean => "boolean",
+                JsonSchemaDefinitionType.Integer => "integer",
+                JsonSchemaDefinitionType.Number => "number",
+                JsonSchemaDefinitionType.Object => "object",
+                JsonSchemaDefinitionType.String => "string",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,12 +70,12 @@ namespace G
         {
             return value switch
             {
-                "object" => JsonSchemaDefinitionType.Object,
                 "array" => JsonSchemaDefinitionType.Array,
-                "string" => JsonSchemaDefinitionType.String,
-                "number" => JsonSchemaDefinitionType.Number,
-                "integer" => JsonSchemaDefinitionType.Integer,
                 "boolean" => JsonSchemaDefinitionType.Boolean,
+                "integer" => JsonSchemaDefinitionType.Integer,
+                "number" => JsonSchemaDefinitionType.Number,
+                "object" => JsonSchemaDefinitionType.Object,
+                "string" => JsonSchemaDefinitionType.String,
                 _ => null,
             };
         }

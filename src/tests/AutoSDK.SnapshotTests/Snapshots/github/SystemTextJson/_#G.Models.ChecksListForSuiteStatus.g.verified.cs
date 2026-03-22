@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Queued,
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        Queued,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                ChecksListForSuiteStatus.Queued => "queued",
-                ChecksListForSuiteStatus.InProgress => "in_progress",
                 ChecksListForSuiteStatus.Completed => "completed",
+                ChecksListForSuiteStatus.InProgress => "in_progress",
+                ChecksListForSuiteStatus.Queued => "queued",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "queued" => ChecksListForSuiteStatus.Queued,
-                "in_progress" => ChecksListForSuiteStatus.InProgress,
                 "completed" => ChecksListForSuiteStatus.Completed,
+                "in_progress" => ChecksListForSuiteStatus.InProgress,
+                "queued" => ChecksListForSuiteStatus.Queued,
                 _ => null,
             };
         }

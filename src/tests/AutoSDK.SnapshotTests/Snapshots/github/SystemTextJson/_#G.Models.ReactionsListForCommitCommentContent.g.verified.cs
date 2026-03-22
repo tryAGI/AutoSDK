@@ -20,11 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Laugh,
+        Confused,
         /// <summary>
         /// 
         /// </summary>
-        Confused,
+        Eyes,
         /// <summary>
         /// 
         /// </summary>
@@ -36,11 +36,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Rocket,
+        Laugh,
         /// <summary>
         /// 
         /// </summary>
-        Eyes,
+        Rocket,
     }
 
     /// <summary>
@@ -57,12 +57,12 @@ namespace G
             {
                 ReactionsListForCommitCommentContent.Plus1 => "+1",
                 ReactionsListForCommitCommentContent.Minus1 => "-1",
-                ReactionsListForCommitCommentContent.Laugh => "laugh",
                 ReactionsListForCommitCommentContent.Confused => "confused",
+                ReactionsListForCommitCommentContent.Eyes => "eyes",
                 ReactionsListForCommitCommentContent.Heart => "heart",
                 ReactionsListForCommitCommentContent.Hooray => "hooray",
+                ReactionsListForCommitCommentContent.Laugh => "laugh",
                 ReactionsListForCommitCommentContent.Rocket => "rocket",
-                ReactionsListForCommitCommentContent.Eyes => "eyes",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -75,12 +75,12 @@ namespace G
             {
                 "+1" => ReactionsListForCommitCommentContent.Plus1,
                 "-1" => ReactionsListForCommitCommentContent.Minus1,
-                "laugh" => ReactionsListForCommitCommentContent.Laugh,
                 "confused" => ReactionsListForCommitCommentContent.Confused,
+                "eyes" => ReactionsListForCommitCommentContent.Eyes,
                 "heart" => ReactionsListForCommitCommentContent.Heart,
                 "hooray" => ReactionsListForCommitCommentContent.Hooray,
+                "laugh" => ReactionsListForCommitCommentContent.Laugh,
                 "rocket" => ReactionsListForCommitCommentContent.Rocket,
-                "eyes" => ReactionsListForCommitCommentContent.Eyes,
                 _ => null,
             };
         }

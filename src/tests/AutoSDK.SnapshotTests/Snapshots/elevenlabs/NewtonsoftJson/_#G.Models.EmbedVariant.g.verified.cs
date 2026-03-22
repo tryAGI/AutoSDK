@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="tiny")]
-        Tiny,
+        [global::System.Runtime.Serialization.EnumMember(Value="compact")]
+        Compact,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="compact")]
-        Compact,
+        [global::System.Runtime.Serialization.EnumMember(Value="expandable")]
+        Expandable,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="expandable")]
-        Expandable,
+        [global::System.Runtime.Serialization.EnumMember(Value="tiny")]
+        Tiny,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                EmbedVariant.Tiny => "tiny",
                 EmbedVariant.Compact => "compact",
-                EmbedVariant.Full => "full",
                 EmbedVariant.Expandable => "expandable",
+                EmbedVariant.Full => "full",
+                EmbedVariant.Tiny => "tiny",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "tiny" => EmbedVariant.Tiny,
                 "compact" => EmbedVariant.Compact,
-                "full" => EmbedVariant.Full,
                 "expandable" => EmbedVariant.Expandable,
+                "full" => EmbedVariant.Full,
+                "tiny" => EmbedVariant.Tiny,
                 _ => null,
             };
         }

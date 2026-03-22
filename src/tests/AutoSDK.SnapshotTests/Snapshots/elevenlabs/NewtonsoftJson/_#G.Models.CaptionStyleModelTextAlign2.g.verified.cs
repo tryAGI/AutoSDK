@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="start")]
-        Start,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="center")]
         Center,
         /// <summary>
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="end")]
         End,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="start")]
+        Start,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                CaptionStyleModelTextAlign2.Start => "start",
                 CaptionStyleModelTextAlign2.Center => "center",
                 CaptionStyleModelTextAlign2.End => "end",
+                CaptionStyleModelTextAlign2.Start => "start",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "start" => CaptionStyleModelTextAlign2.Start,
                 "center" => CaptionStyleModelTextAlign2.Center,
                 "end" => CaptionStyleModelTextAlign2.End,
+                "start" => CaptionStyleModelTextAlign2.Start,
                 _ => null,
             };
         }

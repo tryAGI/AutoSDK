@@ -14,6 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="character")]
+        Character,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="none")]
         None,
         /// <summary>
@@ -21,11 +26,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="word")]
         Word,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="character")]
-        Character,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
         {
             return value switch
             {
+                BodySpeechToTextV1SpeechToTextPostTimestampsGranularity.Character => "character",
                 BodySpeechToTextV1SpeechToTextPostTimestampsGranularity.None => "none",
                 BodySpeechToTextV1SpeechToTextPostTimestampsGranularity.Word => "word",
-                BodySpeechToTextV1SpeechToTextPostTimestampsGranularity.Character => "character",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
+                "character" => BodySpeechToTextV1SpeechToTextPostTimestampsGranularity.Character,
                 "none" => BodySpeechToTextV1SpeechToTextPostTimestampsGranularity.None,
                 "word" => BodySpeechToTextV1SpeechToTextPostTimestampsGranularity.Word,
-                "character" => BodySpeechToTextV1SpeechToTextPostTimestampsGranularity.Character,
                 _ => null,
             };
         }

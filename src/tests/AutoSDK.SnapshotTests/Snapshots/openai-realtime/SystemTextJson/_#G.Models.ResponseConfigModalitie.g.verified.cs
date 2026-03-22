@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Text,
+        Audio,
         /// <summary>
         /// 
         /// </summary>
-        Audio,
+        Text,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ResponseConfigModalitie.Text => "text",
                 ResponseConfigModalitie.Audio => "audio",
+                ResponseConfigModalitie.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "text" => ResponseConfigModalitie.Text,
                 "audio" => ResponseConfigModalitie.Audio,
+                "text" => ResponseConfigModalitie.Text,
                 _ => null,
             };
         }

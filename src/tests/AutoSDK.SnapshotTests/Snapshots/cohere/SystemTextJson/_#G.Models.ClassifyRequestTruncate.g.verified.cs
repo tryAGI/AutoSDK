@@ -16,15 +16,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        End,
+        /// <summary>
+        /// 
+        /// </summary>
         None,
         /// <summary>
         /// 
         /// </summary>
         Start,
-        /// <summary>
-        /// 
-        /// </summary>
-        End,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                ClassifyRequestTruncate.End => "END",
                 ClassifyRequestTruncate.None => "NONE",
                 ClassifyRequestTruncate.Start => "START",
-                ClassifyRequestTruncate.End => "END",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
+                "END" => ClassifyRequestTruncate.End,
                 "NONE" => ClassifyRequestTruncate.None,
                 "START" => ClassifyRequestTruncate.Start,
-                "END" => ClassifyRequestTruncate.End,
                 _ => null,
             };
         }

@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="public")]
-        Public,
+        [global::System.Runtime.Serialization.EnumMember(Value="internal")]
+        Internal,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="internal")]
-        Internal,
+        [global::System.Runtime.Serialization.EnumMember(Value="public")]
+        Public,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                WebhooksPullRequest5BaseRepoVisibility.Public => "public",
-                WebhooksPullRequest5BaseRepoVisibility.Private => "private",
                 WebhooksPullRequest5BaseRepoVisibility.Internal => "internal",
+                WebhooksPullRequest5BaseRepoVisibility.Private => "private",
+                WebhooksPullRequest5BaseRepoVisibility.Public => "public",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "public" => WebhooksPullRequest5BaseRepoVisibility.Public,
-                "private" => WebhooksPullRequest5BaseRepoVisibility.Private,
                 "internal" => WebhooksPullRequest5BaseRepoVisibility.Internal,
+                "private" => WebhooksPullRequest5BaseRepoVisibility.Private,
+                "public" => WebhooksPullRequest5BaseRepoVisibility.Public,
                 _ => null,
             };
         }

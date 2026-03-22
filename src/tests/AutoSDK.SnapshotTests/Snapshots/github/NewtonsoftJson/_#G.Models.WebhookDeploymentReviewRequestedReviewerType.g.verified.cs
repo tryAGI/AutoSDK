@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Team")]
+        Team,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Team")]
-        Team,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                WebhookDeploymentReviewRequestedReviewerType.User => "User",
                 WebhookDeploymentReviewRequestedReviewerType.Team => "Team",
+                WebhookDeploymentReviewRequestedReviewerType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "User" => WebhookDeploymentReviewRequestedReviewerType.User,
                 "Team" => WebhookDeploymentReviewRequestedReviewerType.Team,
+                "User" => WebhookDeploymentReviewRequestedReviewerType.User,
                 _ => null,
             };
         }

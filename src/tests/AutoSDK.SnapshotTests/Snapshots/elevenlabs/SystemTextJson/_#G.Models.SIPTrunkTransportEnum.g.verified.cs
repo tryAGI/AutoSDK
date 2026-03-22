@@ -16,15 +16,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Udp,
-        /// <summary>
-        /// 
-        /// </summary>
         Tcp,
         /// <summary>
         /// 
         /// </summary>
         Tls,
+        /// <summary>
+        /// 
+        /// </summary>
+        Udp,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
             return value switch
             {
                 SIPTrunkTransportEnum.Auto => "auto",
-                SIPTrunkTransportEnum.Udp => "udp",
                 SIPTrunkTransportEnum.Tcp => "tcp",
                 SIPTrunkTransportEnum.Tls => "tls",
+                SIPTrunkTransportEnum.Udp => "udp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace G
             return value switch
             {
                 "auto" => SIPTrunkTransportEnum.Auto,
-                "udp" => SIPTrunkTransportEnum.Udp,
                 "tcp" => SIPTrunkTransportEnum.Tcp,
                 "tls" => SIPTrunkTransportEnum.Tls,
+                "udp" => SIPTrunkTransportEnum.Udp,
                 _ => null,
             };
         }

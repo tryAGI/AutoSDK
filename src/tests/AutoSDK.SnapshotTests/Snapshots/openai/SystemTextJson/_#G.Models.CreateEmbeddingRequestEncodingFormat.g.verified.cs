@@ -14,11 +14,11 @@ namespace G
         /// <summary>
         /// //pypi.org/project/pybase64/).
         /// </summary>
-        Float,
+        Base64,
         /// <summary>
         /// //pypi.org/project/pybase64/).
         /// </summary>
-        Base64,
+        Float,
     }
 
     /// <summary>
@@ -33,8 +33,8 @@ namespace G
         {
             return value switch
             {
-                CreateEmbeddingRequestEncodingFormat.Float => "float",
                 CreateEmbeddingRequestEncodingFormat.Base64 => "base64",
+                CreateEmbeddingRequestEncodingFormat.Float => "float",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -45,8 +45,8 @@ namespace G
         {
             return value switch
             {
-                "float" => CreateEmbeddingRequestEncodingFormat.Float,
                 "base64" => CreateEmbeddingRequestEncodingFormat.Base64,
+                "float" => CreateEmbeddingRequestEncodingFormat.Float,
                 _ => null,
             };
         }

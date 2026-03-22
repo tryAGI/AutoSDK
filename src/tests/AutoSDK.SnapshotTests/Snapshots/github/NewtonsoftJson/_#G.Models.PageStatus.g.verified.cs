@@ -14,13 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="built")]
-        Built,
+        [global::System.Runtime.Serialization.EnumMember(Value="building")]
+        Building,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="building")]
-        Building,
+        [global::System.Runtime.Serialization.EnumMember(Value="built")]
+        Built,
         /// <summary>
         /// 
         /// </summary>
@@ -40,8 +40,8 @@ namespace G
         {
             return value switch
             {
-                PageStatus.Built => "built",
                 PageStatus.Building => "building",
+                PageStatus.Built => "built",
                 PageStatus.Errored => "errored",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -53,8 +53,8 @@ namespace G
         {
             return value switch
             {
-                "built" => PageStatus.Built,
                 "building" => PageStatus.Building,
+                "built" => PageStatus.Built,
                 "errored" => PageStatus.Errored,
                 _ => null,
             };

@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Developer,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Developer,
+        User,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                InputMessageRole.User => "user",
-                InputMessageRole.System => "system",
                 InputMessageRole.Developer => "developer",
+                InputMessageRole.System => "system",
+                InputMessageRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "user" => InputMessageRole.User,
-                "system" => InputMessageRole.System,
                 "developer" => InputMessageRole.Developer,
+                "system" => InputMessageRole.System,
+                "user" => InputMessageRole.User,
                 _ => null,
             };
         }

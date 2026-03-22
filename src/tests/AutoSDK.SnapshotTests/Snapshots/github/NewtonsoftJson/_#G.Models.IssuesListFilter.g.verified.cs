@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="all")]
+        All,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="assigned")]
         Assigned,
         /// <summary>
@@ -28,18 +33,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="subscribed")]
-        Subscribed,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="repos")]
         Repos,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="all")]
-        All,
+        [global::System.Runtime.Serialization.EnumMember(Value="subscribed")]
+        Subscribed,
     }
 
     /// <summary>
@@ -54,12 +54,12 @@ namespace G
         {
             return value switch
             {
+                IssuesListFilter.All => "all",
                 IssuesListFilter.Assigned => "assigned",
                 IssuesListFilter.Created => "created",
                 IssuesListFilter.Mentioned => "mentioned",
-                IssuesListFilter.Subscribed => "subscribed",
                 IssuesListFilter.Repos => "repos",
-                IssuesListFilter.All => "all",
+                IssuesListFilter.Subscribed => "subscribed",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,12 +70,12 @@ namespace G
         {
             return value switch
             {
+                "all" => IssuesListFilter.All,
                 "assigned" => IssuesListFilter.Assigned,
                 "created" => IssuesListFilter.Created,
                 "mentioned" => IssuesListFilter.Mentioned,
-                "subscribed" => IssuesListFilter.Subscribed,
                 "repos" => IssuesListFilter.Repos,
-                "all" => IssuesListFilter.All,
+                "subscribed" => IssuesListFilter.Subscribed,
                 _ => null,
             };
         }

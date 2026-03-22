@@ -12,11 +12,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Cloned,
+        /// <summary>
+        /// 
+        /// </summary>
+        Famous,
+        /// <summary>
+        /// 
+        /// </summary>
         Generated,
         /// <summary>
         /// 
         /// </summary>
-        Cloned,
+        HighQuality,
         /// <summary>
         /// 
         /// </summary>
@@ -25,14 +33,6 @@ namespace G
         /// 
         /// </summary>
         Professional,
-        /// <summary>
-        /// 
-        /// </summary>
-        Famous,
-        /// <summary>
-        /// 
-        /// </summary>
-        HighQuality,
     }
 
     /// <summary>
@@ -47,12 +47,12 @@ namespace G
         {
             return value switch
             {
-                VoiceSharingResponseModelCategory.Generated => "generated",
                 VoiceSharingResponseModelCategory.Cloned => "cloned",
+                VoiceSharingResponseModelCategory.Famous => "famous",
+                VoiceSharingResponseModelCategory.Generated => "generated",
+                VoiceSharingResponseModelCategory.HighQuality => "high_quality",
                 VoiceSharingResponseModelCategory.Premade => "premade",
                 VoiceSharingResponseModelCategory.Professional => "professional",
-                VoiceSharingResponseModelCategory.Famous => "famous",
-                VoiceSharingResponseModelCategory.HighQuality => "high_quality",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,12 +63,12 @@ namespace G
         {
             return value switch
             {
-                "generated" => VoiceSharingResponseModelCategory.Generated,
                 "cloned" => VoiceSharingResponseModelCategory.Cloned,
+                "famous" => VoiceSharingResponseModelCategory.Famous,
+                "generated" => VoiceSharingResponseModelCategory.Generated,
+                "high_quality" => VoiceSharingResponseModelCategory.HighQuality,
                 "premade" => VoiceSharingResponseModelCategory.Premade,
                 "professional" => VoiceSharingResponseModelCategory.Professional,
-                "famous" => VoiceSharingResponseModelCategory.Famous,
-                "high_quality" => VoiceSharingResponseModelCategory.HighQuality,
                 _ => null,
             };
         }

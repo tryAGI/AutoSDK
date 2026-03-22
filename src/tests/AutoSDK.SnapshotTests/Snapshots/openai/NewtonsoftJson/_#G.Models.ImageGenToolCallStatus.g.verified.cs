@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
-        InProgress,
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
-        Completed,
+        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
+        Failed,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
-        Failed,
+        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
+        InProgress,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                ImageGenToolCallStatus.InProgress => "in_progress",
                 ImageGenToolCallStatus.Completed => "completed",
-                ImageGenToolCallStatus.Generating => "generating",
                 ImageGenToolCallStatus.Failed => "failed",
+                ImageGenToolCallStatus.Generating => "generating",
+                ImageGenToolCallStatus.InProgress => "in_progress",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "in_progress" => ImageGenToolCallStatus.InProgress,
                 "completed" => ImageGenToolCallStatus.Completed,
-                "generating" => ImageGenToolCallStatus.Generating,
                 "failed" => ImageGenToolCallStatus.Failed,
+                "generating" => ImageGenToolCallStatus.Generating,
+                "in_progress" => ImageGenToolCallStatus.InProgress,
                 _ => null,
             };
         }

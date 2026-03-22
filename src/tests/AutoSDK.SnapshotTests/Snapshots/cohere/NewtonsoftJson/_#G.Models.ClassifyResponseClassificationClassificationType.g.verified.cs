@@ -14,13 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="single-label")]
-        SingleLabel,
+        [global::System.Runtime.Serialization.EnumMember(Value="multi-label")]
+        MultiLabel,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="multi-label")]
-        MultiLabel,
+        [global::System.Runtime.Serialization.EnumMember(Value="single-label")]
+        SingleLabel,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                ClassifyResponseClassificationClassificationType.SingleLabel => "single-label",
                 ClassifyResponseClassificationClassificationType.MultiLabel => "multi-label",
+                ClassifyResponseClassificationClassificationType.SingleLabel => "single-label",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,8 +47,8 @@ namespace G
         {
             return value switch
             {
-                "single-label" => ClassifyResponseClassificationClassificationType.SingleLabel,
                 "multi-label" => ClassifyResponseClassificationClassificationType.MultiLabel,
+                "single-label" => ClassifyResponseClassificationClassificationType.SingleLabel,
                 _ => null,
             };
         }

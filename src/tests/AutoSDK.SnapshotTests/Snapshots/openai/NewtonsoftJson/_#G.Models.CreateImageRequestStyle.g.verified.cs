@@ -15,13 +15,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="vivid")]
-        Vivid,
+        [global::System.Runtime.Serialization.EnumMember(Value="natural")]
+        Natural,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="natural")]
-        Natural,
+        [global::System.Runtime.Serialization.EnumMember(Value="vivid")]
+        Vivid,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
         {
             return value switch
             {
-                CreateImageRequestStyle.Vivid => "vivid",
                 CreateImageRequestStyle.Natural => "natural",
+                CreateImageRequestStyle.Vivid => "vivid",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "vivid" => CreateImageRequestStyle.Vivid,
                 "natural" => CreateImageRequestStyle.Natural,
+                "vivid" => CreateImageRequestStyle.Vivid,
                 _ => null,
             };
         }

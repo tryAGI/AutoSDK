@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="open")]
-        Open,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="dismissed")]
         Dismissed,
         /// <summary>
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="fixed")]
         Fixed,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="open")]
+        Open,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                WebhookCodeScanningAlertAppearedInBranchAlertState.Open => "open",
                 WebhookCodeScanningAlertAppearedInBranchAlertState.Dismissed => "dismissed",
                 WebhookCodeScanningAlertAppearedInBranchAlertState.Fixed => "fixed",
+                WebhookCodeScanningAlertAppearedInBranchAlertState.Open => "open",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "open" => WebhookCodeScanningAlertAppearedInBranchAlertState.Open,
                 "dismissed" => WebhookCodeScanningAlertAppearedInBranchAlertState.Dismissed,
                 "fixed" => WebhookCodeScanningAlertAppearedInBranchAlertState.Fixed,
+                "open" => WebhookCodeScanningAlertAppearedInBranchAlertState.Open,
                 _ => null,
             };
         }

@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Json,
+        /// <summary>
+        /// 
+        /// </summary>
         Srt,
         /// <summary>
         /// 
         /// </summary>
         Webvtt,
-        /// <summary>
-        /// 
-        /// </summary>
-        Json,
     }
 
     /// <summary>
@@ -36,9 +36,9 @@ namespace G
         {
             return value switch
             {
+                GetDubbedTranscriptFileFormatType.Json => "json",
                 GetDubbedTranscriptFileFormatType.Srt => "srt",
                 GetDubbedTranscriptFileFormatType.Webvtt => "webvtt",
-                GetDubbedTranscriptFileFormatType.Json => "json",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,9 +49,9 @@ namespace G
         {
             return value switch
             {
+                "json" => GetDubbedTranscriptFileFormatType.Json,
                 "srt" => GetDubbedTranscriptFileFormatType.Srt,
                 "webvtt" => GetDubbedTranscriptFileFormatType.Webvtt,
-                "json" => GetDubbedTranscriptFileFormatType.Json,
                 _ => null,
             };
         }

@@ -12,11 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        JambaInstruct,
-        /// <summary>
-        /// 
-        /// </summary>
-        JambaInstructPreview,
+        Jamba15Large,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Jamba15Large,
+        JambaInstruct,
+        /// <summary>
+        /// 
+        /// </summary>
+        JambaInstructPreview,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
+                ModelName.Jamba15Large => "jamba-1.5-large",
+                ModelName.Jamba15Mini => "jamba-1.5-mini",
                 ModelName.JambaInstruct => "jamba-instruct",
                 ModelName.JambaInstructPreview => "jamba-instruct-preview",
-                ModelName.Jamba15Mini => "jamba-1.5-mini",
-                ModelName.Jamba15Large => "jamba-1.5-large",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
+                "jamba-1.5-large" => ModelName.Jamba15Large,
+                "jamba-1.5-mini" => ModelName.Jamba15Mini,
                 "jamba-instruct" => ModelName.JambaInstruct,
                 "jamba-instruct-preview" => ModelName.JambaInstructPreview,
-                "jamba-1.5-mini" => ModelName.Jamba15Mini,
-                "jamba-1.5-large" => ModelName.Jamba15Large,
                 _ => null,
             };
         }

@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="upload")]
-        Upload,
+        [global::System.Runtime.Serialization.EnumMember(Value="mistral")]
+        Mistral,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="mistral")]
-        Mistral,
+        [global::System.Runtime.Serialization.EnumMember(Value="upload")]
+        Upload,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                Source.Upload => "upload",
-                Source.Repository => "repository",
                 Source.Mistral => "mistral",
+                Source.Repository => "repository",
+                Source.Upload => "upload",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "upload" => Source.Upload,
-                "repository" => Source.Repository,
                 "mistral" => Source.Mistral,
+                "repository" => Source.Repository,
+                "upload" => Source.Upload,
                 _ => null,
             };
         }

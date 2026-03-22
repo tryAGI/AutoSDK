@@ -14,8 +14,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="existing_users")]
-        ExistingUsers,
+        [global::System.Runtime.Serialization.EnumMember(Value="collaborators_only")]
+        CollaboratorsOnly,
         /// <summary>
         /// 
         /// </summary>
@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="collaborators_only")]
-        CollaboratorsOnly,
+        [global::System.Runtime.Serialization.EnumMember(Value="existing_users")]
+        ExistingUsers,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
         {
             return value switch
             {
-                InteractionGroup.ExistingUsers => "existing_users",
-                InteractionGroup.ContributorsOnly => "contributors_only",
                 InteractionGroup.CollaboratorsOnly => "collaborators_only",
+                InteractionGroup.ContributorsOnly => "contributors_only",
+                InteractionGroup.ExistingUsers => "existing_users",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
-                "existing_users" => InteractionGroup.ExistingUsers,
-                "contributors_only" => InteractionGroup.ContributorsOnly,
                 "collaborators_only" => InteractionGroup.CollaboratorsOnly,
+                "contributors_only" => InteractionGroup.ContributorsOnly,
+                "existing_users" => InteractionGroup.ExistingUsers,
                 _ => null,
             };
         }

@@ -16,13 +16,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="TERMINATED")]
-        Terminated,
+        [global::System.Runtime.Serialization.EnumMember(Value="ARCHIVED")]
+        Archived,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="ARCHIVED")]
-        Archived,
+        [global::System.Runtime.Serialization.EnumMember(Value="TERMINATED")]
+        Terminated,
     }
 
     /// <summary>
@@ -37,8 +37,8 @@ namespace G
         {
             return value switch
             {
-                EndPollBodyStatus.Terminated => "TERMINATED",
                 EndPollBodyStatus.Archived => "ARCHIVED",
+                EndPollBodyStatus.Terminated => "TERMINATED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
         {
             return value switch
             {
-                "TERMINATED" => EndPollBodyStatus.Terminated,
                 "ARCHIVED" => EndPollBodyStatus.Archived,
+                "TERMINATED" => EndPollBodyStatus.Terminated,
                 _ => null,
             };
         }

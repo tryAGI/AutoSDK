@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="stop")]
-        Stop,
+        [global::System.Runtime.Serialization.EnumMember(Value="eos")]
+        Eos,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="eos")]
-        Eos,
+        [global::System.Runtime.Serialization.EnumMember(Value="function_call")]
+        FunctionCall,
         /// <summary>
         /// 
         /// </summary>
@@ -28,13 +28,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="tool_calls")]
-        ToolCalls,
+        [global::System.Runtime.Serialization.EnumMember(Value="stop")]
+        Stop,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="function_call")]
-        FunctionCall,
+        [global::System.Runtime.Serialization.EnumMember(Value="tool_calls")]
+        ToolCalls,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                FinishReason.Stop => "stop",
                 FinishReason.Eos => "eos",
-                FinishReason.Length => "length",
-                FinishReason.ToolCalls => "tool_calls",
                 FinishReason.FunctionCall => "function_call",
+                FinishReason.Length => "length",
+                FinishReason.Stop => "stop",
+                FinishReason.ToolCalls => "tool_calls",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "stop" => FinishReason.Stop,
                 "eos" => FinishReason.Eos,
-                "length" => FinishReason.Length,
-                "tool_calls" => FinishReason.ToolCalls,
                 "function_call" => FinishReason.FunctionCall,
+                "length" => FinishReason.Length,
+                "stop" => FinishReason.Stop,
+                "tool_calls" => FinishReason.ToolCalls,
                 _ => null,
             };
         }

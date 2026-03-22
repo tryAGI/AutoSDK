@@ -18,13 +18,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="processing")]
-        Processing,
+        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
+        Failed,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
-        Failed,
+        [global::System.Runtime.Serialization.EnumMember(Value="processing")]
+        Processing,
     }
 
     /// <summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 RenderStatus.Complete => "complete",
-                RenderStatus.Processing => "processing",
                 RenderStatus.Failed => "failed",
+                RenderStatus.Processing => "processing",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,8 +53,8 @@ namespace G
             return value switch
             {
                 "complete" => RenderStatus.Complete,
-                "processing" => RenderStatus.Processing,
                 "failed" => RenderStatus.Failed,
+                "processing" => RenderStatus.Processing,
                 _ => null,
             };
         }

@@ -14,11 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Open,
+        Closed,
         /// <summary>
         /// 
         /// </summary>
-        Closed,
+        Converting,
         /// <summary>
         /// 
         /// </summary>
@@ -26,7 +26,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Converting,
+        Open,
         /// <summary>
         /// 
         /// </summary>
@@ -45,10 +45,10 @@ namespace G
         {
             return value switch
             {
-                DiscussionState.Open => "open",
                 DiscussionState.Closed => "closed",
-                DiscussionState.Locked => "locked",
                 DiscussionState.Converting => "converting",
+                DiscussionState.Locked => "locked",
+                DiscussionState.Open => "open",
                 DiscussionState.Transferring => "transferring",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -60,10 +60,10 @@ namespace G
         {
             return value switch
             {
-                "open" => DiscussionState.Open,
                 "closed" => DiscussionState.Closed,
-                "locked" => DiscussionState.Locked,
                 "converting" => DiscussionState.Converting,
+                "locked" => DiscussionState.Locked,
+                "open" => DiscussionState.Open,
                 "transferring" => DiscussionState.Transferring,
                 _ => null,
             };

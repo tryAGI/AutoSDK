@@ -15,13 +15,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="PR_TITLE")]
-        PrTitle,
+        [global::System.Runtime.Serialization.EnumMember(Value="MERGE_MESSAGE")]
+        MergeMessage,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="MERGE_MESSAGE")]
-        MergeMessage,
+        [global::System.Runtime.Serialization.EnumMember(Value="PR_TITLE")]
+        PrTitle,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
         {
             return value switch
             {
-                NullableRepositoryMergeCommitTitle.PrTitle => "PR_TITLE",
                 NullableRepositoryMergeCommitTitle.MergeMessage => "MERGE_MESSAGE",
+                NullableRepositoryMergeCommitTitle.PrTitle => "PR_TITLE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "PR_TITLE" => NullableRepositoryMergeCommitTitle.PrTitle,
                 "MERGE_MESSAGE" => NullableRepositoryMergeCommitTitle.MergeMessage,
+                "PR_TITLE" => NullableRepositoryMergeCommitTitle.PrTitle,
                 _ => null,
             };
         }

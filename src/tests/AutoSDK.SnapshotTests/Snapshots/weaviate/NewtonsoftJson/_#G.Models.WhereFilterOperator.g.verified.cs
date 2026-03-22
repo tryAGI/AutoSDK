@@ -19,23 +19,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Or")]
-        Or,
+        [global::System.Runtime.Serialization.EnumMember(Value="ContainsAll")]
+        ContainsAll,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="ContainsAny")]
+        ContainsAny,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="Equal")]
         Equal,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Like")]
-        Like,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="NotEqual")]
-        NotEqual,
         /// <summary>
         /// 
         /// </summary>
@@ -49,6 +44,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="IsNull")]
+        IsNull,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="LessThan")]
         LessThan,
         /// <summary>
@@ -59,23 +59,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="Like")]
+        Like,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="NotEqual")]
+        NotEqual,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="Or")]
+        Or,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="WithinGeoRange")]
         WithinGeoRange,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="IsNull")]
-        IsNull,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="ContainsAny")]
-        ContainsAny,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="ContainsAll")]
-        ContainsAll,
     }
 
     /// <summary>
@@ -91,18 +91,18 @@ namespace G
             return value switch
             {
                 WhereFilterOperator.And => "And",
-                WhereFilterOperator.Or => "Or",
+                WhereFilterOperator.ContainsAll => "ContainsAll",
+                WhereFilterOperator.ContainsAny => "ContainsAny",
                 WhereFilterOperator.Equal => "Equal",
-                WhereFilterOperator.Like => "Like",
-                WhereFilterOperator.NotEqual => "NotEqual",
                 WhereFilterOperator.GreaterThan => "GreaterThan",
                 WhereFilterOperator.GreaterThanEqual => "GreaterThanEqual",
+                WhereFilterOperator.IsNull => "IsNull",
                 WhereFilterOperator.LessThan => "LessThan",
                 WhereFilterOperator.LessThanEqual => "LessThanEqual",
+                WhereFilterOperator.Like => "Like",
+                WhereFilterOperator.NotEqual => "NotEqual",
+                WhereFilterOperator.Or => "Or",
                 WhereFilterOperator.WithinGeoRange => "WithinGeoRange",
-                WhereFilterOperator.IsNull => "IsNull",
-                WhereFilterOperator.ContainsAny => "ContainsAny",
-                WhereFilterOperator.ContainsAll => "ContainsAll",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -114,18 +114,18 @@ namespace G
             return value switch
             {
                 "And" => WhereFilterOperator.And,
-                "Or" => WhereFilterOperator.Or,
+                "ContainsAll" => WhereFilterOperator.ContainsAll,
+                "ContainsAny" => WhereFilterOperator.ContainsAny,
                 "Equal" => WhereFilterOperator.Equal,
-                "Like" => WhereFilterOperator.Like,
-                "NotEqual" => WhereFilterOperator.NotEqual,
                 "GreaterThan" => WhereFilterOperator.GreaterThan,
                 "GreaterThanEqual" => WhereFilterOperator.GreaterThanEqual,
+                "IsNull" => WhereFilterOperator.IsNull,
                 "LessThan" => WhereFilterOperator.LessThan,
                 "LessThanEqual" => WhereFilterOperator.LessThanEqual,
+                "Like" => WhereFilterOperator.Like,
+                "NotEqual" => WhereFilterOperator.NotEqual,
+                "Or" => WhereFilterOperator.Or,
                 "WithinGeoRange" => WhereFilterOperator.WithinGeoRange,
-                "IsNull" => WhereFilterOperator.IsNull,
-                "ContainsAny" => WhereFilterOperator.ContainsAny,
-                "ContainsAll" => WhereFilterOperator.ContainsAll,
                 _ => null,
             };
         }

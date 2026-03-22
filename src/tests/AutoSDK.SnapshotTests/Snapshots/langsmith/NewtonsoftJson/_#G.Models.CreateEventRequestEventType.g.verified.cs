@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="playground-view")]
-        PlaygroundView,
+        [global::System.Runtime.Serialization.EnumMember(Value="playground-run")]
+        PlaygroundRun,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="playground-run")]
-        PlaygroundRun,
+        [global::System.Runtime.Serialization.EnumMember(Value="playground-view")]
+        PlaygroundView,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                CreateEventRequestEventType.PlaygroundView => "playground-view",
                 CreateEventRequestEventType.PlaygroundRun => "playground-run",
+                CreateEventRequestEventType.PlaygroundView => "playground-view",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "playground-view" => CreateEventRequestEventType.PlaygroundView,
                 "playground-run" => CreateEventRequestEventType.PlaygroundRun,
+                "playground-view" => CreateEventRequestEventType.PlaygroundView,
                 _ => null,
             };
         }

@@ -12,6 +12,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        DeployKey,
+        /// <summary>
+        /// 
+        /// </summary>
         Integration,
         /// <summary>
         /// 
@@ -25,10 +29,6 @@ namespace G
         /// 
         /// </summary>
         Team,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeployKey,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
+                RepositoryRulesetBypassActorActorType.DeployKey => "DeployKey",
                 RepositoryRulesetBypassActorActorType.Integration => "Integration",
                 RepositoryRulesetBypassActorActorType.OrganizationAdmin => "OrganizationAdmin",
                 RepositoryRulesetBypassActorActorType.RepositoryRole => "RepositoryRole",
                 RepositoryRulesetBypassActorActorType.Team => "Team",
-                RepositoryRulesetBypassActorActorType.DeployKey => "DeployKey",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
+                "DeployKey" => RepositoryRulesetBypassActorActorType.DeployKey,
                 "Integration" => RepositoryRulesetBypassActorActorType.Integration,
                 "OrganizationAdmin" => RepositoryRulesetBypassActorActorType.OrganizationAdmin,
                 "RepositoryRole" => RepositoryRulesetBypassActorActorType.RepositoryRole,
                 "Team" => RepositoryRulesetBypassActorActorType.Team,
-                "DeployKey" => RepositoryRulesetBypassActorActorType.DeployKey,
                 _ => null,
             };
         }

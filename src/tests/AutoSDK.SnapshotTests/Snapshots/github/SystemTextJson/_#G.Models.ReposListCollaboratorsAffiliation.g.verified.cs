@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Outside,
+        All,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        All,
+        Outside,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                ReposListCollaboratorsAffiliation.Outside => "outside",
-                ReposListCollaboratorsAffiliation.Direct => "direct",
                 ReposListCollaboratorsAffiliation.All => "all",
+                ReposListCollaboratorsAffiliation.Direct => "direct",
+                ReposListCollaboratorsAffiliation.Outside => "outside",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "outside" => ReposListCollaboratorsAffiliation.Outside,
-                "direct" => ReposListCollaboratorsAffiliation.Direct,
                 "all" => ReposListCollaboratorsAffiliation.All,
+                "direct" => ReposListCollaboratorsAffiliation.Direct,
+                "outside" => ReposListCollaboratorsAffiliation.Outside,
                 _ => null,
             };
         }

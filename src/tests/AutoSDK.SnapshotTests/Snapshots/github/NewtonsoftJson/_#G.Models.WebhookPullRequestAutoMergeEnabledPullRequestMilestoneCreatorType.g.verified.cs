@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookPullRequestAutoMergeEnabledPullRequestMilestoneCreatorType.Bot => "Bot",
-                WebhookPullRequestAutoMergeEnabledPullRequestMilestoneCreatorType.User => "User",
-                WebhookPullRequestAutoMergeEnabledPullRequestMilestoneCreatorType.Organization => "Organization",
                 WebhookPullRequestAutoMergeEnabledPullRequestMilestoneCreatorType.Mannequin => "Mannequin",
+                WebhookPullRequestAutoMergeEnabledPullRequestMilestoneCreatorType.Organization => "Organization",
+                WebhookPullRequestAutoMergeEnabledPullRequestMilestoneCreatorType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestAutoMergeEnabledPullRequestMilestoneCreatorType.Bot,
-                "User" => WebhookPullRequestAutoMergeEnabledPullRequestMilestoneCreatorType.User,
-                "Organization" => WebhookPullRequestAutoMergeEnabledPullRequestMilestoneCreatorType.Organization,
                 "Mannequin" => WebhookPullRequestAutoMergeEnabledPullRequestMilestoneCreatorType.Mannequin,
+                "Organization" => WebhookPullRequestAutoMergeEnabledPullRequestMilestoneCreatorType.Organization,
+                "User" => WebhookPullRequestAutoMergeEnabledPullRequestMilestoneCreatorType.User,
                 _ => null,
             };
         }

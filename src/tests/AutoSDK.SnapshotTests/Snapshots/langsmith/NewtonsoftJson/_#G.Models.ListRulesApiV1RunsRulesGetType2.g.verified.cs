@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="session")]
-        Session,
+        [global::System.Runtime.Serialization.EnumMember(Value="dataset")]
+        Dataset,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="dataset")]
-        Dataset,
+        [global::System.Runtime.Serialization.EnumMember(Value="session")]
+        Session,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ListRulesApiV1RunsRulesGetType2.Session => "session",
                 ListRulesApiV1RunsRulesGetType2.Dataset => "dataset",
+                ListRulesApiV1RunsRulesGetType2.Session => "session",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "session" => ListRulesApiV1RunsRulesGetType2.Session,
                 "dataset" => ListRulesApiV1RunsRulesGetType2.Dataset,
+                "session" => ListRulesApiV1RunsRulesGetType2.Session,
                 _ => null,
             };
         }

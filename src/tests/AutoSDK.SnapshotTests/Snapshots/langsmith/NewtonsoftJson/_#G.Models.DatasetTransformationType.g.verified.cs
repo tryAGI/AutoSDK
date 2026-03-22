@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="remove_system_messages")]
-        RemoveSystemMessages,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="convert_to_openai_message")]
         ConvertToOpenaiMessage,
         /// <summary>
@@ -28,13 +23,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="extract_tools_from_run")]
+        ExtractToolsFromRun,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="remove_extra_fields")]
         RemoveExtraFields,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="extract_tools_from_run")]
-        ExtractToolsFromRun,
+        [global::System.Runtime.Serialization.EnumMember(Value="remove_system_messages")]
+        RemoveSystemMessages,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                DatasetTransformationType.RemoveSystemMessages => "remove_system_messages",
                 DatasetTransformationType.ConvertToOpenaiMessage => "convert_to_openai_message",
                 DatasetTransformationType.ConvertToOpenaiTool => "convert_to_openai_tool",
-                DatasetTransformationType.RemoveExtraFields => "remove_extra_fields",
                 DatasetTransformationType.ExtractToolsFromRun => "extract_tools_from_run",
+                DatasetTransformationType.RemoveExtraFields => "remove_extra_fields",
+                DatasetTransformationType.RemoveSystemMessages => "remove_system_messages",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "remove_system_messages" => DatasetTransformationType.RemoveSystemMessages,
                 "convert_to_openai_message" => DatasetTransformationType.ConvertToOpenaiMessage,
                 "convert_to_openai_tool" => DatasetTransformationType.ConvertToOpenaiTool,
-                "remove_extra_fields" => DatasetTransformationType.RemoveExtraFields,
                 "extract_tools_from_run" => DatasetTransformationType.ExtractToolsFromRun,
+                "remove_extra_fields" => DatasetTransformationType.RemoveExtraFields,
+                "remove_system_messages" => DatasetTransformationType.RemoveSystemMessages,
                 _ => null,
             };
         }

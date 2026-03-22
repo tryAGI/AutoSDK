@@ -16,8 +16,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="PR_BODY")]
-        PrBody,
+        [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
+        Blank,
         /// <summary>
         /// 
         /// </summary>
@@ -26,8 +26,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
-        Blank,
+        [global::System.Runtime.Serialization.EnumMember(Value="PR_BODY")]
+        PrBody,
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestReviewCommentDeletedPullRequestHeadRepoSquashMergeCommitMessage.PrBody => "PR_BODY",
-                WebhookPullRequestReviewCommentDeletedPullRequestHeadRepoSquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
                 WebhookPullRequestReviewCommentDeletedPullRequestHeadRepoSquashMergeCommitMessage.Blank => "BLANK",
+                WebhookPullRequestReviewCommentDeletedPullRequestHeadRepoSquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
+                WebhookPullRequestReviewCommentDeletedPullRequestHeadRepoSquashMergeCommitMessage.PrBody => "PR_BODY",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,9 +55,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => WebhookPullRequestReviewCommentDeletedPullRequestHeadRepoSquashMergeCommitMessage.PrBody,
-                "COMMIT_MESSAGES" => WebhookPullRequestReviewCommentDeletedPullRequestHeadRepoSquashMergeCommitMessage.CommitMessages,
                 "BLANK" => WebhookPullRequestReviewCommentDeletedPullRequestHeadRepoSquashMergeCommitMessage.Blank,
+                "COMMIT_MESSAGES" => WebhookPullRequestReviewCommentDeletedPullRequestHeadRepoSquashMergeCommitMessage.CommitMessages,
+                "PR_BODY" => WebhookPullRequestReviewCommentDeletedPullRequestHeadRepoSquashMergeCommitMessage.PrBody,
                 _ => null,
             };
         }

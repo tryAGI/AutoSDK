@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Normal,
+        Bold,
         /// <summary>
         /// 
         /// </summary>
-        Bold,
+        Normal,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                CaptionStyleModelTextWeight2.Normal => "normal",
                 CaptionStyleModelTextWeight2.Bold => "bold",
+                CaptionStyleModelTextWeight2.Normal => "normal",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "normal" => CaptionStyleModelTextWeight2.Normal,
                 "bold" => CaptionStyleModelTextWeight2.Bold,
+                "normal" => CaptionStyleModelTextWeight2.Normal,
                 _ => null,
             };
         }

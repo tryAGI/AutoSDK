@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="dismissed")]
-        Dismissed,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="approved")]
         Approved,
         /// <summary>
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="changes_requested")]
         ChangesRequested,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="dismissed")]
+        Dismissed,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestReviewDismissedReviewState.Dismissed => "dismissed",
                 WebhookPullRequestReviewDismissedReviewState.Approved => "approved",
                 WebhookPullRequestReviewDismissedReviewState.ChangesRequested => "changes_requested",
+                WebhookPullRequestReviewDismissedReviewState.Dismissed => "dismissed",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "dismissed" => WebhookPullRequestReviewDismissedReviewState.Dismissed,
                 "approved" => WebhookPullRequestReviewDismissedReviewState.Approved,
                 "changes_requested" => WebhookPullRequestReviewDismissedReviewState.ChangesRequested,
+                "dismissed" => WebhookPullRequestReviewDismissedReviewState.Dismissed,
                 _ => null,
             };
         }

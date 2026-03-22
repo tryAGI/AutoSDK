@@ -14,8 +14,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="DefaultCompression")]
-        DefaultCompression,
+        [global::System.Runtime.Serialization.EnumMember(Value="BestCompression")]
+        BestCompression,
         /// <summary>
         /// 
         /// </summary>
@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="BestCompression")]
-        BestCompression,
+        [global::System.Runtime.Serialization.EnumMember(Value="DefaultCompression")]
+        DefaultCompression,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
         {
             return value switch
             {
-                BackupConfigCompressionLevel.DefaultCompression => "DefaultCompression",
-                BackupConfigCompressionLevel.BestSpeed => "BestSpeed",
                 BackupConfigCompressionLevel.BestCompression => "BestCompression",
+                BackupConfigCompressionLevel.BestSpeed => "BestSpeed",
+                BackupConfigCompressionLevel.DefaultCompression => "DefaultCompression",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
-                "DefaultCompression" => BackupConfigCompressionLevel.DefaultCompression,
-                "BestSpeed" => BackupConfigCompressionLevel.BestSpeed,
                 "BestCompression" => BackupConfigCompressionLevel.BestCompression,
+                "BestSpeed" => BackupConfigCompressionLevel.BestSpeed,
+                "DefaultCompression" => BackupConfigCompressionLevel.DefaultCompression,
                 _ => null,
             };
         }

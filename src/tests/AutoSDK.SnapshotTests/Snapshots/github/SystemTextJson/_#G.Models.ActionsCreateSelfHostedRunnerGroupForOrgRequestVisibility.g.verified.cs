@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Selected,
-        /// <summary>
-        /// 
-        /// </summary>
         All,
         /// <summary>
         /// 
         /// </summary>
         Private,
+        /// <summary>
+        /// 
+        /// </summary>
+        Selected,
     }
 
     /// <summary>
@@ -36,9 +36,9 @@ namespace G
         {
             return value switch
             {
-                ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.Selected => "selected",
                 ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.All => "all",
                 ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.Private => "private",
+                ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.Selected => "selected",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,9 +49,9 @@ namespace G
         {
             return value switch
             {
-                "selected" => ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.Selected,
                 "all" => ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.All,
                 "private" => ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.Private,
+                "selected" => ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.Selected,
                 _ => null,
             };
         }

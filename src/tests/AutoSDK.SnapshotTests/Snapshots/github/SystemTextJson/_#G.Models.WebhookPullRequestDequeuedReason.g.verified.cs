@@ -12,7 +12,27 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        UnknownRemovalReason,
+        AlreadyMerged,
+        /// <summary>
+        /// 
+        /// </summary>
+        BranchProtections,
+        /// <summary>
+        /// 
+        /// </summary>
+        CiFailure,
+        /// <summary>
+        /// 
+        /// </summary>
+        CiTimeout,
+        /// <summary>
+        /// 
+        /// </summary>
+        GitTreeInvalid,
+        /// <summary>
+        /// 
+        /// </summary>
+        InvalidMergeCommit,
         /// <summary>
         /// 
         /// </summary>
@@ -28,18 +48,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        CiFailure,
-        /// <summary>
-        /// 
-        /// </summary>
-        CiTimeout,
-        /// <summary>
-        /// 
-        /// </summary>
-        AlreadyMerged,
-        /// <summary>
-        /// 
-        /// </summary>
         QueueCleared,
         /// <summary>
         /// 
@@ -48,15 +56,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        BranchProtections,
-        /// <summary>
-        /// 
-        /// </summary>
-        GitTreeInvalid,
-        /// <summary>
-        /// 
-        /// </summary>
-        InvalidMergeCommit,
+        UnknownRemovalReason,
     }
 
     /// <summary>
@@ -71,18 +71,18 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestDequeuedReason.UnknownRemovalReason => "UNKNOWN_REMOVAL_REASON",
+                WebhookPullRequestDequeuedReason.AlreadyMerged => "ALREADY_MERGED",
+                WebhookPullRequestDequeuedReason.BranchProtections => "BRANCH_PROTECTIONS",
+                WebhookPullRequestDequeuedReason.CiFailure => "CI_FAILURE",
+                WebhookPullRequestDequeuedReason.CiTimeout => "CI_TIMEOUT",
+                WebhookPullRequestDequeuedReason.GitTreeInvalid => "GIT_TREE_INVALID",
+                WebhookPullRequestDequeuedReason.InvalidMergeCommit => "INVALID_MERGE_COMMIT",
                 WebhookPullRequestDequeuedReason.Manual => "MANUAL",
                 WebhookPullRequestDequeuedReason.Merge => "MERGE",
                 WebhookPullRequestDequeuedReason.MergeConflict => "MERGE_CONFLICT",
-                WebhookPullRequestDequeuedReason.CiFailure => "CI_FAILURE",
-                WebhookPullRequestDequeuedReason.CiTimeout => "CI_TIMEOUT",
-                WebhookPullRequestDequeuedReason.AlreadyMerged => "ALREADY_MERGED",
                 WebhookPullRequestDequeuedReason.QueueCleared => "QUEUE_CLEARED",
                 WebhookPullRequestDequeuedReason.RollBack => "ROLL_BACK",
-                WebhookPullRequestDequeuedReason.BranchProtections => "BRANCH_PROTECTIONS",
-                WebhookPullRequestDequeuedReason.GitTreeInvalid => "GIT_TREE_INVALID",
-                WebhookPullRequestDequeuedReason.InvalidMergeCommit => "INVALID_MERGE_COMMIT",
+                WebhookPullRequestDequeuedReason.UnknownRemovalReason => "UNKNOWN_REMOVAL_REASON",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -93,18 +93,18 @@ namespace G
         {
             return value switch
             {
-                "UNKNOWN_REMOVAL_REASON" => WebhookPullRequestDequeuedReason.UnknownRemovalReason,
+                "ALREADY_MERGED" => WebhookPullRequestDequeuedReason.AlreadyMerged,
+                "BRANCH_PROTECTIONS" => WebhookPullRequestDequeuedReason.BranchProtections,
+                "CI_FAILURE" => WebhookPullRequestDequeuedReason.CiFailure,
+                "CI_TIMEOUT" => WebhookPullRequestDequeuedReason.CiTimeout,
+                "GIT_TREE_INVALID" => WebhookPullRequestDequeuedReason.GitTreeInvalid,
+                "INVALID_MERGE_COMMIT" => WebhookPullRequestDequeuedReason.InvalidMergeCommit,
                 "MANUAL" => WebhookPullRequestDequeuedReason.Manual,
                 "MERGE" => WebhookPullRequestDequeuedReason.Merge,
                 "MERGE_CONFLICT" => WebhookPullRequestDequeuedReason.MergeConflict,
-                "CI_FAILURE" => WebhookPullRequestDequeuedReason.CiFailure,
-                "CI_TIMEOUT" => WebhookPullRequestDequeuedReason.CiTimeout,
-                "ALREADY_MERGED" => WebhookPullRequestDequeuedReason.AlreadyMerged,
                 "QUEUE_CLEARED" => WebhookPullRequestDequeuedReason.QueueCleared,
                 "ROLL_BACK" => WebhookPullRequestDequeuedReason.RollBack,
-                "BRANCH_PROTECTIONS" => WebhookPullRequestDequeuedReason.BranchProtections,
-                "GIT_TREE_INVALID" => WebhookPullRequestDequeuedReason.GitTreeInvalid,
-                "INVALID_MERGE_COMMIT" => WebhookPullRequestDequeuedReason.InvalidMergeCommit,
+                "UNKNOWN_REMOVAL_REASON" => WebhookPullRequestDequeuedReason.UnknownRemovalReason,
                 _ => null,
             };
         }

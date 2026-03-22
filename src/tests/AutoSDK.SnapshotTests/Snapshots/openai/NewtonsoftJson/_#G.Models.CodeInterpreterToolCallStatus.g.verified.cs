@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
         InProgress,
         /// <summary>
@@ -20,11 +25,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="interpreting")]
         Interpreting,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
-        Completed,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                CodeInterpreterToolCallStatus.Completed => "completed",
                 CodeInterpreterToolCallStatus.InProgress => "in_progress",
                 CodeInterpreterToolCallStatus.Interpreting => "interpreting",
-                CodeInterpreterToolCallStatus.Completed => "completed",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
+                "completed" => CodeInterpreterToolCallStatus.Completed,
                 "in_progress" => CodeInterpreterToolCallStatus.InProgress,
                 "interpreting" => CodeInterpreterToolCallStatus.Interpreting,
-                "completed" => CodeInterpreterToolCallStatus.Completed,
                 _ => null,
             };
         }

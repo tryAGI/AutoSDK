@@ -14,10 +14,6 @@ namespace G
     public enum RewrittenQueryWarning
     {
         /// <summary>
-        /// Corpus has no filter attributes.
-        /// </summary>
-        NoFilterAttrs,
-        /// <summary>
         /// No filter found in the query to extract or the platform failed to extract it.
         /// </summary>
         ExtractedEmptyFilter,
@@ -29,6 +25,10 @@ namespace G
         /// Unexpected error occurred.
         /// </summary>
         Failure,
+        /// <summary>
+        /// Corpus has no filter attributes.
+        /// </summary>
+        NoFilterAttrs,
     }
 
     /// <summary>
@@ -43,10 +43,10 @@ namespace G
         {
             return value switch
             {
-                RewrittenQueryWarning.NoFilterAttrs => "no_filter_attrs",
                 RewrittenQueryWarning.ExtractedEmptyFilter => "extracted_empty_filter",
                 RewrittenQueryWarning.FailedToParseExtractedFilter => "failed_to_parse_extracted_filter",
                 RewrittenQueryWarning.Failure => "failure",
+                RewrittenQueryWarning.NoFilterAttrs => "no_filter_attrs",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,10 +57,10 @@ namespace G
         {
             return value switch
             {
-                "no_filter_attrs" => RewrittenQueryWarning.NoFilterAttrs,
                 "extracted_empty_filter" => RewrittenQueryWarning.ExtractedEmptyFilter,
                 "failed_to_parse_extracted_filter" => RewrittenQueryWarning.FailedToParseExtractedFilter,
                 "failure" => RewrittenQueryWarning.Failure,
+                "no_filter_attrs" => RewrittenQueryWarning.NoFilterAttrs,
                 _ => null,
             };
         }

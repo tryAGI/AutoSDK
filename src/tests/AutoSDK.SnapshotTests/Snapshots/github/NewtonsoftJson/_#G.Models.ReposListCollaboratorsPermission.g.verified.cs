@@ -13,18 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pull")]
-        Pull,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="triage")]
-        Triage,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="push")]
-        Push,
+        [global::System.Runtime.Serialization.EnumMember(Value="admin")]
+        Admin,
         /// <summary>
         /// 
         /// </summary>
@@ -33,8 +23,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="admin")]
-        Admin,
+        [global::System.Runtime.Serialization.EnumMember(Value="pull")]
+        Pull,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="push")]
+        Push,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="triage")]
+        Triage,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                ReposListCollaboratorsPermission.Pull => "pull",
-                ReposListCollaboratorsPermission.Triage => "triage",
-                ReposListCollaboratorsPermission.Push => "push",
-                ReposListCollaboratorsPermission.Maintain => "maintain",
                 ReposListCollaboratorsPermission.Admin => "admin",
+                ReposListCollaboratorsPermission.Maintain => "maintain",
+                ReposListCollaboratorsPermission.Pull => "pull",
+                ReposListCollaboratorsPermission.Push => "push",
+                ReposListCollaboratorsPermission.Triage => "triage",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "pull" => ReposListCollaboratorsPermission.Pull,
-                "triage" => ReposListCollaboratorsPermission.Triage,
-                "push" => ReposListCollaboratorsPermission.Push,
-                "maintain" => ReposListCollaboratorsPermission.Maintain,
                 "admin" => ReposListCollaboratorsPermission.Admin,
+                "maintain" => ReposListCollaboratorsPermission.Maintain,
+                "pull" => ReposListCollaboratorsPermission.Pull,
+                "push" => ReposListCollaboratorsPermission.Push,
+                "triage" => ReposListCollaboratorsPermission.Triage,
                 _ => null,
             };
         }

@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="fuzzy_match")]
-        FuzzyMatch,
+        [global::System.Runtime.Serialization.EnumMember(Value="bleu")]
+        Bleu,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="bleu")]
-        Bleu,
+        [global::System.Runtime.Serialization.EnumMember(Value="fuzzy_match")]
+        FuzzyMatch,
         /// <summary>
         /// 
         /// </summary>
@@ -74,8 +74,8 @@ namespace G
         {
             return value switch
             {
-                GraderTextSimilarityEvaluationMetric.FuzzyMatch => "fuzzy_match",
                 GraderTextSimilarityEvaluationMetric.Bleu => "bleu",
+                GraderTextSimilarityEvaluationMetric.FuzzyMatch => "fuzzy_match",
                 GraderTextSimilarityEvaluationMetric.Gleu => "gleu",
                 GraderTextSimilarityEvaluationMetric.Meteor => "meteor",
                 GraderTextSimilarityEvaluationMetric.Rouge1 => "rouge_1",
@@ -94,8 +94,8 @@ namespace G
         {
             return value switch
             {
-                "fuzzy_match" => GraderTextSimilarityEvaluationMetric.FuzzyMatch,
                 "bleu" => GraderTextSimilarityEvaluationMetric.Bleu,
+                "fuzzy_match" => GraderTextSimilarityEvaluationMetric.FuzzyMatch,
                 "gleu" => GraderTextSimilarityEvaluationMetric.Gleu,
                 "meteor" => GraderTextSimilarityEvaluationMetric.Meteor,
                 "rouge_1" => GraderTextSimilarityEvaluationMetric.Rouge1,

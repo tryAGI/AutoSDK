@@ -12,7 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Success,
+        ActionRequired,
+        /// <summary>
+        /// 
+        /// </summary>
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -24,22 +28,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Cancelled,
-        /// <summary>
-        /// 
-        /// </summary>
-        TimedOut,
-        /// <summary>
-        /// 
-        /// </summary>
-        ActionRequired,
-        /// <summary>
-        /// 
-        /// </summary>
-        Stale,
-        /// <summary>
-        /// 
-        /// </summary>
         OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
         /// <summary>
         /// 
@@ -48,7 +36,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Stale,
+        /// <summary>
+        /// 
+        /// </summary>
         StartupFailure,
+        /// <summary>
+        /// 
+        /// </summary>
+        Success,
+        /// <summary>
+        /// 
+        /// </summary>
+        TimedOut,
     }
 
     /// <summary>
@@ -63,16 +63,16 @@ namespace G
         {
             return value switch
             {
-                WebhookCheckSuiteCompletedCheckSuiteConclusion.Success => "success",
+                WebhookCheckSuiteCompletedCheckSuiteConclusion.ActionRequired => "action_required",
+                WebhookCheckSuiteCompletedCheckSuiteConclusion.Cancelled => "cancelled",
                 WebhookCheckSuiteCompletedCheckSuiteConclusion.Failure => "failure",
                 WebhookCheckSuiteCompletedCheckSuiteConclusion.Neutral => "neutral",
-                WebhookCheckSuiteCompletedCheckSuiteConclusion.Cancelled => "cancelled",
-                WebhookCheckSuiteCompletedCheckSuiteConclusion.TimedOut => "timed_out",
-                WebhookCheckSuiteCompletedCheckSuiteConclusion.ActionRequired => "action_required",
-                WebhookCheckSuiteCompletedCheckSuiteConclusion.Stale => "stale",
                 WebhookCheckSuiteCompletedCheckSuiteConclusion.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 WebhookCheckSuiteCompletedCheckSuiteConclusion.Skipped => "skipped",
+                WebhookCheckSuiteCompletedCheckSuiteConclusion.Stale => "stale",
                 WebhookCheckSuiteCompletedCheckSuiteConclusion.StartupFailure => "startup_failure",
+                WebhookCheckSuiteCompletedCheckSuiteConclusion.Success => "success",
+                WebhookCheckSuiteCompletedCheckSuiteConclusion.TimedOut => "timed_out",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -83,16 +83,16 @@ namespace G
         {
             return value switch
             {
-                "success" => WebhookCheckSuiteCompletedCheckSuiteConclusion.Success,
+                "action_required" => WebhookCheckSuiteCompletedCheckSuiteConclusion.ActionRequired,
+                "cancelled" => WebhookCheckSuiteCompletedCheckSuiteConclusion.Cancelled,
                 "failure" => WebhookCheckSuiteCompletedCheckSuiteConclusion.Failure,
                 "neutral" => WebhookCheckSuiteCompletedCheckSuiteConclusion.Neutral,
-                "cancelled" => WebhookCheckSuiteCompletedCheckSuiteConclusion.Cancelled,
-                "timed_out" => WebhookCheckSuiteCompletedCheckSuiteConclusion.TimedOut,
-                "action_required" => WebhookCheckSuiteCompletedCheckSuiteConclusion.ActionRequired,
-                "stale" => WebhookCheckSuiteCompletedCheckSuiteConclusion.Stale,
                 "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookCheckSuiteCompletedCheckSuiteConclusion.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
                 "skipped" => WebhookCheckSuiteCompletedCheckSuiteConclusion.Skipped,
+                "stale" => WebhookCheckSuiteCompletedCheckSuiteConclusion.Stale,
                 "startup_failure" => WebhookCheckSuiteCompletedCheckSuiteConclusion.StartupFailure,
+                "success" => WebhookCheckSuiteCompletedCheckSuiteConclusion.Success,
+                "timed_out" => WebhookCheckSuiteCompletedCheckSuiteConclusion.TimedOut,
                 _ => null,
             };
         }

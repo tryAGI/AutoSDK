@@ -12,15 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Npm,
-        /// <summary>
-        /// 
-        /// </summary>
-        Maven,
-        /// <summary>
-        /// 
-        /// </summary>
-        Rubygems,
+        Container,
         /// <summary>
         /// 
         /// </summary>
@@ -28,11 +20,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Maven,
+        /// <summary>
+        /// 
+        /// </summary>
+        Npm,
+        /// <summary>
+        /// 
+        /// </summary>
         Nuget,
         /// <summary>
         /// 
         /// </summary>
-        Container,
+        Rubygems,
     }
 
     /// <summary>
@@ -47,12 +47,12 @@ namespace G
         {
             return value switch
             {
-                PackagesDeletePackageForOrgPackageType.Npm => "npm",
-                PackagesDeletePackageForOrgPackageType.Maven => "maven",
-                PackagesDeletePackageForOrgPackageType.Rubygems => "rubygems",
-                PackagesDeletePackageForOrgPackageType.Docker => "docker",
-                PackagesDeletePackageForOrgPackageType.Nuget => "nuget",
                 PackagesDeletePackageForOrgPackageType.Container => "container",
+                PackagesDeletePackageForOrgPackageType.Docker => "docker",
+                PackagesDeletePackageForOrgPackageType.Maven => "maven",
+                PackagesDeletePackageForOrgPackageType.Npm => "npm",
+                PackagesDeletePackageForOrgPackageType.Nuget => "nuget",
+                PackagesDeletePackageForOrgPackageType.Rubygems => "rubygems",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,12 +63,12 @@ namespace G
         {
             return value switch
             {
-                "npm" => PackagesDeletePackageForOrgPackageType.Npm,
-                "maven" => PackagesDeletePackageForOrgPackageType.Maven,
-                "rubygems" => PackagesDeletePackageForOrgPackageType.Rubygems,
-                "docker" => PackagesDeletePackageForOrgPackageType.Docker,
-                "nuget" => PackagesDeletePackageForOrgPackageType.Nuget,
                 "container" => PackagesDeletePackageForOrgPackageType.Container,
+                "docker" => PackagesDeletePackageForOrgPackageType.Docker,
+                "maven" => PackagesDeletePackageForOrgPackageType.Maven,
+                "npm" => PackagesDeletePackageForOrgPackageType.Npm,
+                "nuget" => PackagesDeletePackageForOrgPackageType.Nuget,
+                "rubygems" => PackagesDeletePackageForOrgPackageType.Rubygems,
                 _ => null,
             };
         }

@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookPullRequestAutoMergeDisabledPullRequestUserType.Bot => "Bot",
-                WebhookPullRequestAutoMergeDisabledPullRequestUserType.User => "User",
-                WebhookPullRequestAutoMergeDisabledPullRequestUserType.Organization => "Organization",
                 WebhookPullRequestAutoMergeDisabledPullRequestUserType.Mannequin => "Mannequin",
+                WebhookPullRequestAutoMergeDisabledPullRequestUserType.Organization => "Organization",
+                WebhookPullRequestAutoMergeDisabledPullRequestUserType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestAutoMergeDisabledPullRequestUserType.Bot,
-                "User" => WebhookPullRequestAutoMergeDisabledPullRequestUserType.User,
-                "Organization" => WebhookPullRequestAutoMergeDisabledPullRequestUserType.Organization,
                 "Mannequin" => WebhookPullRequestAutoMergeDisabledPullRequestUserType.Mannequin,
+                "Organization" => WebhookPullRequestAutoMergeDisabledPullRequestUserType.Organization,
+                "User" => WebhookPullRequestAutoMergeDisabledPullRequestUserType.User,
                 _ => null,
             };
         }

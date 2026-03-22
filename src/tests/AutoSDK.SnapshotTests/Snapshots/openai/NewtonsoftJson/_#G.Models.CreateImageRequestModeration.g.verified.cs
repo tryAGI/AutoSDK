@@ -15,13 +15,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="low")]
-        Low,
+        [global::System.Runtime.Serialization.EnumMember(Value="auto")]
+        Auto,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="auto")]
-        Auto,
+        [global::System.Runtime.Serialization.EnumMember(Value="low")]
+        Low,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
         {
             return value switch
             {
-                CreateImageRequestModeration.Low => "low",
                 CreateImageRequestModeration.Auto => "auto",
+                CreateImageRequestModeration.Low => "low",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "low" => CreateImageRequestModeration.Low,
                 "auto" => CreateImageRequestModeration.Auto,
+                "low" => CreateImageRequestModeration.Low,
                 _ => null,
             };
         }

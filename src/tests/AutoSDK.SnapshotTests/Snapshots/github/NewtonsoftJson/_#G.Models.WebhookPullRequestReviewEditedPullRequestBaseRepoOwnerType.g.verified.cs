@@ -18,13 +18,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Organization")]
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Organization")]
-        Organization,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 WebhookPullRequestReviewEditedPullRequestBaseRepoOwnerType.Bot => "Bot",
-                WebhookPullRequestReviewEditedPullRequestBaseRepoOwnerType.User => "User",
                 WebhookPullRequestReviewEditedPullRequestBaseRepoOwnerType.Organization => "Organization",
+                WebhookPullRequestReviewEditedPullRequestBaseRepoOwnerType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,8 +53,8 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestReviewEditedPullRequestBaseRepoOwnerType.Bot,
-                "User" => WebhookPullRequestReviewEditedPullRequestBaseRepoOwnerType.User,
                 "Organization" => WebhookPullRequestReviewEditedPullRequestBaseRepoOwnerType.Organization,
+                "User" => WebhookPullRequestReviewEditedPullRequestBaseRepoOwnerType.User,
                 _ => null,
             };
         }

@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="open")]
-        Open,
+        [global::System.Runtime.Serialization.EnumMember(Value="closed")]
+        Closed,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="closed")]
-        Closed,
+        [global::System.Runtime.Serialization.EnumMember(Value="open")]
+        Open,
         /// <summary>
         /// 
         /// </summary>
@@ -39,8 +39,8 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestReviewSubmittedPullRequestRequestedTeamParentPrivacy.Open => "open",
                 WebhookPullRequestReviewSubmittedPullRequestRequestedTeamParentPrivacy.Closed => "closed",
+                WebhookPullRequestReviewSubmittedPullRequestRequestedTeamParentPrivacy.Open => "open",
                 WebhookPullRequestReviewSubmittedPullRequestRequestedTeamParentPrivacy.Secret => "secret",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -52,8 +52,8 @@ namespace G
         {
             return value switch
             {
-                "open" => WebhookPullRequestReviewSubmittedPullRequestRequestedTeamParentPrivacy.Open,
                 "closed" => WebhookPullRequestReviewSubmittedPullRequestRequestedTeamParentPrivacy.Closed,
+                "open" => WebhookPullRequestReviewSubmittedPullRequestRequestedTeamParentPrivacy.Open,
                 "secret" => WebhookPullRequestReviewSubmittedPullRequestRequestedTeamParentPrivacy.Secret,
                 _ => null,
             };

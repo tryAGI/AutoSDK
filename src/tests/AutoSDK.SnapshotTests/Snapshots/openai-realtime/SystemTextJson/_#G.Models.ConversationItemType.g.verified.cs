@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Message,
-        /// <summary>
-        /// 
-        /// </summary>
         FunctionCall,
         /// <summary>
         /// 
         /// </summary>
         FunctionCallOutput,
+        /// <summary>
+        /// 
+        /// </summary>
+        Message,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                ConversationItemType.Message => "message",
                 ConversationItemType.FunctionCall => "function_call",
                 ConversationItemType.FunctionCallOutput => "function_call_output",
+                ConversationItemType.Message => "message",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "message" => ConversationItemType.Message,
                 "function_call" => ConversationItemType.FunctionCall,
                 "function_call_output" => ConversationItemType.FunctionCallOutput,
+                "message" => ConversationItemType.Message,
                 _ => null,
             };
         }

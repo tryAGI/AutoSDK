@@ -13,28 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="open-mistral-7b")]
-        OpenMistral7b,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="mistral-small-latest")]
-        MistralSmallLatest,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="codestral-latest")]
         CodestralLatest,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="mistral-large-latest")]
-        MistralLargeLatest,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="open-mistral-nemo")]
-        OpenMistralNemo,
         /// <summary>
         /// 
         /// </summary>
@@ -45,6 +25,26 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ministral-8b-latest")]
         Ministral8bLatest,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="mistral-large-latest")]
+        MistralLargeLatest,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="mistral-small-latest")]
+        MistralSmallLatest,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="open-mistral-7b")]
+        OpenMistral7b,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="open-mistral-nemo")]
+        OpenMistralNemo,
     }
 
     /// <summary>
@@ -59,13 +59,13 @@ namespace G
         {
             return value switch
             {
-                FineTuneableModel.OpenMistral7b => "open-mistral-7b",
-                FineTuneableModel.MistralSmallLatest => "mistral-small-latest",
                 FineTuneableModel.CodestralLatest => "codestral-latest",
-                FineTuneableModel.MistralLargeLatest => "mistral-large-latest",
-                FineTuneableModel.OpenMistralNemo => "open-mistral-nemo",
                 FineTuneableModel.Ministral3bLatest => "ministral-3b-latest",
                 FineTuneableModel.Ministral8bLatest => "ministral-8b-latest",
+                FineTuneableModel.MistralLargeLatest => "mistral-large-latest",
+                FineTuneableModel.MistralSmallLatest => "mistral-small-latest",
+                FineTuneableModel.OpenMistral7b => "open-mistral-7b",
+                FineTuneableModel.OpenMistralNemo => "open-mistral-nemo",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -76,13 +76,13 @@ namespace G
         {
             return value switch
             {
-                "open-mistral-7b" => FineTuneableModel.OpenMistral7b,
-                "mistral-small-latest" => FineTuneableModel.MistralSmallLatest,
                 "codestral-latest" => FineTuneableModel.CodestralLatest,
-                "mistral-large-latest" => FineTuneableModel.MistralLargeLatest,
-                "open-mistral-nemo" => FineTuneableModel.OpenMistralNemo,
                 "ministral-3b-latest" => FineTuneableModel.Ministral3bLatest,
                 "ministral-8b-latest" => FineTuneableModel.Ministral8bLatest,
+                "mistral-large-latest" => FineTuneableModel.MistralLargeLatest,
+                "mistral-small-latest" => FineTuneableModel.MistralSmallLatest,
+                "open-mistral-7b" => FineTuneableModel.OpenMistral7b,
+                "open-mistral-nemo" => FineTuneableModel.OpenMistralNemo,
                 _ => null,
             };
         }

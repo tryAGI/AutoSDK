@@ -13,10 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        General,
-        /// <summary>
-        /// 
-        /// </summary>
         Buildings,
         /// <summary>
         /// 
@@ -33,15 +29,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Illustrations,
-        /// <summary>
-        /// 
-        /// </summary>
         GameItems,
         /// <summary>
         /// 
         /// </summary>
+        General,
+        /// <summary>
+        /// 
+        /// </summary>
         GraphicalElements,
+        /// <summary>
+        /// 
+        /// </summary>
+        Illustrations,
         /// <summary>
         /// 
         /// </summary>
@@ -80,14 +80,14 @@ namespace G
         {
             return value switch
             {
-                CustomModelType.General => "GENERAL",
                 CustomModelType.Buildings => "BUILDINGS",
                 CustomModelType.Characters => "CHARACTERS",
                 CustomModelType.Environments => "ENVIRONMENTS",
                 CustomModelType.Fashion => "FASHION",
-                CustomModelType.Illustrations => "ILLUSTRATIONS",
                 CustomModelType.GameItems => "GAME_ITEMS",
+                CustomModelType.General => "GENERAL",
                 CustomModelType.GraphicalElements => "GRAPHICAL_ELEMENTS",
+                CustomModelType.Illustrations => "ILLUSTRATIONS",
                 CustomModelType.Photography => "PHOTOGRAPHY",
                 CustomModelType.PixelArt => "PIXEL_ART",
                 CustomModelType.ProductDesign => "PRODUCT_DESIGN",
@@ -104,14 +104,14 @@ namespace G
         {
             return value switch
             {
-                "GENERAL" => CustomModelType.General,
                 "BUILDINGS" => CustomModelType.Buildings,
                 "CHARACTERS" => CustomModelType.Characters,
                 "ENVIRONMENTS" => CustomModelType.Environments,
                 "FASHION" => CustomModelType.Fashion,
-                "ILLUSTRATIONS" => CustomModelType.Illustrations,
                 "GAME_ITEMS" => CustomModelType.GameItems,
+                "GENERAL" => CustomModelType.General,
                 "GRAPHICAL_ELEMENTS" => CustomModelType.GraphicalElements,
+                "ILLUSTRATIONS" => CustomModelType.Illustrations,
                 "PHOTOGRAPHY" => CustomModelType.Photography,
                 "PIXEL_ART" => CustomModelType.PixelArt,
                 "PRODUCT_DESIGN" => CustomModelType.ProductDesign,

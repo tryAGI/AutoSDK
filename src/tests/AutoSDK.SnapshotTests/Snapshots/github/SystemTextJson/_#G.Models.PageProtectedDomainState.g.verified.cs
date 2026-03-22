@@ -17,11 +17,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Verified,
+        Unverified,
         /// <summary>
         /// 
         /// </summary>
-        Unverified,
+        Verified,
     }
 
     /// <summary>
@@ -37,8 +37,8 @@ namespace G
             return value switch
             {
                 PageProtectedDomainState.Pending => "pending",
-                PageProtectedDomainState.Verified => "verified",
                 PageProtectedDomainState.Unverified => "unverified",
+                PageProtectedDomainState.Verified => "verified",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,8 +50,8 @@ namespace G
             return value switch
             {
                 "pending" => PageProtectedDomainState.Pending,
-                "verified" => PageProtectedDomainState.Verified,
                 "unverified" => PageProtectedDomainState.Unverified,
+                "verified" => PageProtectedDomainState.Verified,
                 _ => null,
             };
         }

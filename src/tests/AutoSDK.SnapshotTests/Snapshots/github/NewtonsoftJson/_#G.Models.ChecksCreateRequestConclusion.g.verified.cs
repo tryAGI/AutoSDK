@@ -34,11 +34,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="success")]
-        Success,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="skipped")]
         Skipped,
         /// <summary>
@@ -46,6 +41,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="stale")]
         Stale,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="success")]
+        Success,
         /// <summary>
         /// 
         /// </summary>
@@ -69,9 +69,9 @@ namespace G
                 ChecksCreateRequestConclusion.Cancelled => "cancelled",
                 ChecksCreateRequestConclusion.Failure => "failure",
                 ChecksCreateRequestConclusion.Neutral => "neutral",
-                ChecksCreateRequestConclusion.Success => "success",
                 ChecksCreateRequestConclusion.Skipped => "skipped",
                 ChecksCreateRequestConclusion.Stale => "stale",
+                ChecksCreateRequestConclusion.Success => "success",
                 ChecksCreateRequestConclusion.TimedOut => "timed_out",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -87,9 +87,9 @@ namespace G
                 "cancelled" => ChecksCreateRequestConclusion.Cancelled,
                 "failure" => ChecksCreateRequestConclusion.Failure,
                 "neutral" => ChecksCreateRequestConclusion.Neutral,
-                "success" => ChecksCreateRequestConclusion.Success,
                 "skipped" => ChecksCreateRequestConclusion.Skipped,
                 "stale" => ChecksCreateRequestConclusion.Stale,
+                "success" => ChecksCreateRequestConclusion.Success,
                 "timed_out" => ChecksCreateRequestConclusion.TimedOut,
                 _ => null,
             };

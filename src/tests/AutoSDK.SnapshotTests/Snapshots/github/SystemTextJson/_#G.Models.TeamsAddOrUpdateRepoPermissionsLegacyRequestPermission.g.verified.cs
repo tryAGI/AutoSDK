@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Admin,
+        /// <summary>
+        /// 
+        /// </summary>
         Pull,
         /// <summary>
         /// 
         /// </summary>
         Push,
-        /// <summary>
-        /// 
-        /// </summary>
-        Admin,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
+                TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission.Admin => "admin",
                 TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission.Pull => "pull",
                 TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission.Push => "push",
-                TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission.Admin => "admin",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
+                "admin" => TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission.Admin,
                 "pull" => TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission.Pull,
                 "push" => TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission.Push,
-                "admin" => TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission.Admin,
                 _ => null,
             };
         }

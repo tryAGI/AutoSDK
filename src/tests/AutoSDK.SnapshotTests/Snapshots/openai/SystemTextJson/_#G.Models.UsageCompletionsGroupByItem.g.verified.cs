@@ -12,15 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ProjectId,
-        /// <summary>
-        /// 
-        /// </summary>
-        UserId,
-        /// <summary>
-        /// 
-        /// </summary>
         ApiKeyId,
+        /// <summary>
+        /// 
+        /// </summary>
+        Batch,
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +24,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Batch,
+        ProjectId,
+        /// <summary>
+        /// 
+        /// </summary>
+        UserId,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
+                UsageCompletionsGroupByItem.ApiKeyId => "api_key_id",
+                UsageCompletionsGroupByItem.Batch => "batch",
+                UsageCompletionsGroupByItem.Model => "model",
                 UsageCompletionsGroupByItem.ProjectId => "project_id",
                 UsageCompletionsGroupByItem.UserId => "user_id",
-                UsageCompletionsGroupByItem.ApiKeyId => "api_key_id",
-                UsageCompletionsGroupByItem.Model => "model",
-                UsageCompletionsGroupByItem.Batch => "batch",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
+                "api_key_id" => UsageCompletionsGroupByItem.ApiKeyId,
+                "batch" => UsageCompletionsGroupByItem.Batch,
+                "model" => UsageCompletionsGroupByItem.Model,
                 "project_id" => UsageCompletionsGroupByItem.ProjectId,
                 "user_id" => UsageCompletionsGroupByItem.UserId,
-                "api_key_id" => UsageCompletionsGroupByItem.ApiKeyId,
-                "model" => UsageCompletionsGroupByItem.Model,
-                "batch" => UsageCompletionsGroupByItem.Batch,
                 _ => null,
             };
         }

@@ -12,7 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ValidatingFiles,
+        Cancelled,
+        /// <summary>
+        /// 
+        /// </summary>
+        Failed,
         /// <summary>
         /// 
         /// </summary>
@@ -28,11 +32,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Failed,
-        /// <summary>
-        /// 
-        /// </summary>
-        Cancelled,
+        ValidatingFiles,
     }
 
     /// <summary>
@@ -47,12 +47,12 @@ namespace G
         {
             return value switch
             {
-                FineTuningJobStatus.ValidatingFiles => "validating_files",
+                FineTuningJobStatus.Cancelled => "cancelled",
+                FineTuningJobStatus.Failed => "failed",
                 FineTuningJobStatus.Queued => "queued",
                 FineTuningJobStatus.Running => "running",
                 FineTuningJobStatus.Succeeded => "succeeded",
-                FineTuningJobStatus.Failed => "failed",
-                FineTuningJobStatus.Cancelled => "cancelled",
+                FineTuningJobStatus.ValidatingFiles => "validating_files",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,12 +63,12 @@ namespace G
         {
             return value switch
             {
-                "validating_files" => FineTuningJobStatus.ValidatingFiles,
+                "cancelled" => FineTuningJobStatus.Cancelled,
+                "failed" => FineTuningJobStatus.Failed,
                 "queued" => FineTuningJobStatus.Queued,
                 "running" => FineTuningJobStatus.Running,
                 "succeeded" => FineTuningJobStatus.Succeeded,
-                "failed" => FineTuningJobStatus.Failed,
-                "cancelled" => FineTuningJobStatus.Cancelled,
+                "validating_files" => FineTuningJobStatus.ValidatingFiles,
                 _ => null,
             };
         }

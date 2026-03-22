@@ -28,17 +28,17 @@ namespace G.JsonConverters
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("type")) __score0++;
             if (__jsonProps.Contains("text")) __score0++;
+            if (__jsonProps.Contains("type")) __score0++;
             var __score1 = 0;
-            if (__jsonProps.Contains("type")) __score1++;
             if (__jsonProps.Contains("image_url")) __score1++;
+            if (__jsonProps.Contains("type")) __score1++;
             var __score2 = 0;
-            if (__jsonProps.Contains("type")) __score2++;
             if (__jsonProps.Contains("input_audio")) __score2++;
+            if (__jsonProps.Contains("type")) __score2++;
             var __score3 = 0;
-            if (__jsonProps.Contains("type")) __score3++;
             if (__jsonProps.Contains("file")) __score3++;
+            if (__jsonProps.Contains("type")) __score3++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }

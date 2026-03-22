@@ -15,15 +15,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Blank,
+        /// <summary>
+        /// 
+        /// </summary>
         PrBody,
         /// <summary>
         /// 
         /// </summary>
         PrTitle,
-        /// <summary>
-        /// 
-        /// </summary>
-        Blank,
     }
 
     /// <summary>
@@ -38,9 +38,9 @@ namespace G
         {
             return value switch
             {
+                ReposCreateForAuthenticatedUserRequestMergeCommitMessage.Blank => "BLANK",
                 ReposCreateForAuthenticatedUserRequestMergeCommitMessage.PrBody => "PR_BODY",
                 ReposCreateForAuthenticatedUserRequestMergeCommitMessage.PrTitle => "PR_TITLE",
-                ReposCreateForAuthenticatedUserRequestMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,9 +51,9 @@ namespace G
         {
             return value switch
             {
+                "BLANK" => ReposCreateForAuthenticatedUserRequestMergeCommitMessage.Blank,
                 "PR_BODY" => ReposCreateForAuthenticatedUserRequestMergeCommitMessage.PrBody,
                 "PR_TITLE" => ReposCreateForAuthenticatedUserRequestMergeCommitMessage.PrTitle,
-                "BLANK" => ReposCreateForAuthenticatedUserRequestMergeCommitMessage.Blank,
                 _ => null,
             };
         }

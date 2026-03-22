@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="uploaded")]
-        Uploaded,
+        [global::System.Runtime.Serialization.EnumMember(Value="error")]
+        Error,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="error")]
-        Error,
+        [global::System.Runtime.Serialization.EnumMember(Value="uploaded")]
+        Uploaded,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                OpenAIFileStatus.Uploaded => "uploaded",
-                OpenAIFileStatus.Processed => "processed",
                 OpenAIFileStatus.Error => "error",
+                OpenAIFileStatus.Processed => "processed",
+                OpenAIFileStatus.Uploaded => "uploaded",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "uploaded" => OpenAIFileStatus.Uploaded,
-                "processed" => OpenAIFileStatus.Processed,
                 "error" => OpenAIFileStatus.Error,
+                "processed" => OpenAIFileStatus.Processed,
+                "uploaded" => OpenAIFileStatus.Uploaded,
                 _ => null,
             };
         }

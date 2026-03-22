@@ -12,19 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Disabled,
-        /// <summary>
-        /// 
-        /// </summary>
         Developer,
         /// <summary>
         /// 
         /// </summary>
-        Plus,
+        Disabled,
         /// <summary>
         /// 
         /// </summary>
-        Startup,
+        Free,
         /// <summary>
         /// 
         /// </summary>
@@ -32,11 +28,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Plus,
+        /// <summary>
+        /// 
+        /// </summary>
         Premier,
         /// <summary>
         /// 
         /// </summary>
-        Free,
+        Startup,
     }
 
     /// <summary>
@@ -51,13 +51,13 @@ namespace G
         {
             return value switch
             {
-                ChangePaymentPlanReq.Disabled => "disabled",
                 ChangePaymentPlanReq.Developer => "developer",
-                ChangePaymentPlanReq.Plus => "plus",
-                ChangePaymentPlanReq.Startup => "startup",
-                ChangePaymentPlanReq.Partner => "partner",
-                ChangePaymentPlanReq.Premier => "premier",
+                ChangePaymentPlanReq.Disabled => "disabled",
                 ChangePaymentPlanReq.Free => "free",
+                ChangePaymentPlanReq.Partner => "partner",
+                ChangePaymentPlanReq.Plus => "plus",
+                ChangePaymentPlanReq.Premier => "premier",
+                ChangePaymentPlanReq.Startup => "startup",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -68,13 +68,13 @@ namespace G
         {
             return value switch
             {
-                "disabled" => ChangePaymentPlanReq.Disabled,
                 "developer" => ChangePaymentPlanReq.Developer,
-                "plus" => ChangePaymentPlanReq.Plus,
-                "startup" => ChangePaymentPlanReq.Startup,
-                "partner" => ChangePaymentPlanReq.Partner,
-                "premier" => ChangePaymentPlanReq.Premier,
+                "disabled" => ChangePaymentPlanReq.Disabled,
                 "free" => ChangePaymentPlanReq.Free,
+                "partner" => ChangePaymentPlanReq.Partner,
+                "plus" => ChangePaymentPlanReq.Plus,
+                "premier" => ChangePaymentPlanReq.Premier,
+                "startup" => ChangePaymentPlanReq.Startup,
                 _ => null,
             };
         }

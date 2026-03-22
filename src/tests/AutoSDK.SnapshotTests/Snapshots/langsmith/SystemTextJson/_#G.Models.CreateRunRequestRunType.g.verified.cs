@@ -12,19 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Tool,
-        /// <summary>
-        /// 
-        /// </summary>
         Chain,
-        /// <summary>
-        /// 
-        /// </summary>
-        Llm,
-        /// <summary>
-        /// 
-        /// </summary>
-        Retriever,
         /// <summary>
         /// 
         /// </summary>
@@ -32,11 +20,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Prompt,
+        Llm,
         /// <summary>
         /// 
         /// </summary>
         Parser,
+        /// <summary>
+        /// 
+        /// </summary>
+        Prompt,
+        /// <summary>
+        /// 
+        /// </summary>
+        Retriever,
+        /// <summary>
+        /// 
+        /// </summary>
+        Tool,
     }
 
     /// <summary>
@@ -51,13 +51,13 @@ namespace G
         {
             return value switch
             {
-                CreateRunRequestRunType.Tool => "tool",
                 CreateRunRequestRunType.Chain => "chain",
-                CreateRunRequestRunType.Llm => "llm",
-                CreateRunRequestRunType.Retriever => "retriever",
                 CreateRunRequestRunType.Embedding => "embedding",
-                CreateRunRequestRunType.Prompt => "prompt",
+                CreateRunRequestRunType.Llm => "llm",
                 CreateRunRequestRunType.Parser => "parser",
+                CreateRunRequestRunType.Prompt => "prompt",
+                CreateRunRequestRunType.Retriever => "retriever",
+                CreateRunRequestRunType.Tool => "tool",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -68,13 +68,13 @@ namespace G
         {
             return value switch
             {
-                "tool" => CreateRunRequestRunType.Tool,
                 "chain" => CreateRunRequestRunType.Chain,
-                "llm" => CreateRunRequestRunType.Llm,
-                "retriever" => CreateRunRequestRunType.Retriever,
                 "embedding" => CreateRunRequestRunType.Embedding,
-                "prompt" => CreateRunRequestRunType.Prompt,
+                "llm" => CreateRunRequestRunType.Llm,
                 "parser" => CreateRunRequestRunType.Parser,
+                "prompt" => CreateRunRequestRunType.Prompt,
+                "retriever" => CreateRunRequestRunType.Retriever,
+                "tool" => CreateRunRequestRunType.Tool,
                 _ => null,
             };
         }

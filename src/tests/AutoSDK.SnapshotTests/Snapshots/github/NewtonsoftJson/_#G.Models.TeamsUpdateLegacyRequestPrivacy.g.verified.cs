@@ -18,13 +18,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="secret")]
-        Secret,
+        [global::System.Runtime.Serialization.EnumMember(Value="closed")]
+        Closed,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="closed")]
-        Closed,
+        [global::System.Runtime.Serialization.EnumMember(Value="secret")]
+        Secret,
     }
 
     /// <summary>
@@ -39,8 +39,8 @@ namespace G
         {
             return value switch
             {
-                TeamsUpdateLegacyRequestPrivacy.Secret => "secret",
                 TeamsUpdateLegacyRequestPrivacy.Closed => "closed",
+                TeamsUpdateLegacyRequestPrivacy.Secret => "secret",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,8 +51,8 @@ namespace G
         {
             return value switch
             {
-                "secret" => TeamsUpdateLegacyRequestPrivacy.Secret,
                 "closed" => TeamsUpdateLegacyRequestPrivacy.Closed,
+                "secret" => TeamsUpdateLegacyRequestPrivacy.Secret,
                 _ => null,
             };
         }

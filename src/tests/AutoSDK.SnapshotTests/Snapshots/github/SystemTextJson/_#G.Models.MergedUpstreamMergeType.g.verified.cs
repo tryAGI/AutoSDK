@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Merge,
+        FastForward,
         /// <summary>
         /// 
         /// </summary>
-        FastForward,
+        Merge,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                MergedUpstreamMergeType.Merge => "merge",
                 MergedUpstreamMergeType.FastForward => "fast-forward",
+                MergedUpstreamMergeType.Merge => "merge",
                 MergedUpstreamMergeType.None => "none",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "merge" => MergedUpstreamMergeType.Merge,
                 "fast-forward" => MergedUpstreamMergeType.FastForward,
+                "merge" => MergedUpstreamMergeType.Merge,
                 "none" => MergedUpstreamMergeType.None,
                 _ => null,
             };

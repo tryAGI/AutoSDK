@@ -12,15 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Pull,
-        /// <summary>
-        /// 
-        /// </summary>
-        Triage,
-        /// <summary>
-        /// 
-        /// </summary>
-        Push,
+        Admin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +20,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Admin,
+        Pull,
+        /// <summary>
+        /// 
+        /// </summary>
+        Push,
+        /// <summary>
+        /// 
+        /// </summary>
+        Triage,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                ReposListCollaboratorsPermission.Pull => "pull",
-                ReposListCollaboratorsPermission.Triage => "triage",
-                ReposListCollaboratorsPermission.Push => "push",
-                ReposListCollaboratorsPermission.Maintain => "maintain",
                 ReposListCollaboratorsPermission.Admin => "admin",
+                ReposListCollaboratorsPermission.Maintain => "maintain",
+                ReposListCollaboratorsPermission.Pull => "pull",
+                ReposListCollaboratorsPermission.Push => "push",
+                ReposListCollaboratorsPermission.Triage => "triage",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "pull" => ReposListCollaboratorsPermission.Pull,
-                "triage" => ReposListCollaboratorsPermission.Triage,
-                "push" => ReposListCollaboratorsPermission.Push,
-                "maintain" => ReposListCollaboratorsPermission.Maintain,
                 "admin" => ReposListCollaboratorsPermission.Admin,
+                "maintain" => ReposListCollaboratorsPermission.Maintain,
+                "pull" => ReposListCollaboratorsPermission.Pull,
+                "push" => ReposListCollaboratorsPermission.Push,
+                "triage" => ReposListCollaboratorsPermission.Triage,
                 _ => null,
             };
         }

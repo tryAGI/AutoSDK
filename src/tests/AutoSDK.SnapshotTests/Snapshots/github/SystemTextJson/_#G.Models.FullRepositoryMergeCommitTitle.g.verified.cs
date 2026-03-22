@@ -15,11 +15,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        PrTitle,
+        MergeMessage,
         /// <summary>
         /// 
         /// </summary>
-        MergeMessage,
+        PrTitle,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                FullRepositoryMergeCommitTitle.PrTitle => "PR_TITLE",
                 FullRepositoryMergeCommitTitle.MergeMessage => "MERGE_MESSAGE",
+                FullRepositoryMergeCommitTitle.PrTitle => "PR_TITLE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "PR_TITLE" => FullRepositoryMergeCommitTitle.PrTitle,
                 "MERGE_MESSAGE" => FullRepositoryMergeCommitTitle.MergeMessage,
+                "PR_TITLE" => FullRepositoryMergeCommitTitle.PrTitle,
                 _ => null,
             };
         }

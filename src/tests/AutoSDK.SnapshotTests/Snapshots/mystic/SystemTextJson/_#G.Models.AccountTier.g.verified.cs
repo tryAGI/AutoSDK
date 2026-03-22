@@ -16,7 +16,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Starter,
+        Byoc,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Byoc,
+        Starter,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
             return value switch
             {
                 AccountTier.Basic => "BASIC",
-                AccountTier.Starter => "STARTER",
-                AccountTier.Pro => "PRO",
                 AccountTier.Byoc => "BYOC",
+                AccountTier.Pro => "PRO",
+                AccountTier.Starter => "STARTER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace G
             return value switch
             {
                 "BASIC" => AccountTier.Basic,
-                "STARTER" => AccountTier.Starter,
-                "PRO" => AccountTier.Pro,
                 "BYOC" => AccountTier.Byoc,
+                "PRO" => AccountTier.Pro,
+                "STARTER" => AccountTier.Starter,
                 _ => null,
             };
         }

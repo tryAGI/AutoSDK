@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Enabled,
+        Disabled,
         /// <summary>
         /// 
         /// </summary>
-        Disabled,
+        Enabled,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                CodeSecurityUpdateConfigurationRequestSecretScanningNonProviderPatterns.Enabled => "enabled",
                 CodeSecurityUpdateConfigurationRequestSecretScanningNonProviderPatterns.Disabled => "disabled",
+                CodeSecurityUpdateConfigurationRequestSecretScanningNonProviderPatterns.Enabled => "enabled",
                 CodeSecurityUpdateConfigurationRequestSecretScanningNonProviderPatterns.NotSet => "not_set",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "enabled" => CodeSecurityUpdateConfigurationRequestSecretScanningNonProviderPatterns.Enabled,
                 "disabled" => CodeSecurityUpdateConfigurationRequestSecretScanningNonProviderPatterns.Disabled,
+                "enabled" => CodeSecurityUpdateConfigurationRequestSecretScanningNonProviderPatterns.Enabled,
                 "not_set" => CodeSecurityUpdateConfigurationRequestSecretScanningNonProviderPatterns.NotSet,
                 _ => null,
             };

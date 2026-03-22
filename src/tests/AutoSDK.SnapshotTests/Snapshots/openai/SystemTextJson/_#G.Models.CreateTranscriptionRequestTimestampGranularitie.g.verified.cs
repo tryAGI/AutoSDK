@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Word,
+        Segment,
         /// <summary>
         /// 
         /// </summary>
-        Segment,
+        Word,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                CreateTranscriptionRequestTimestampGranularitie.Word => "word",
                 CreateTranscriptionRequestTimestampGranularitie.Segment => "segment",
+                CreateTranscriptionRequestTimestampGranularitie.Word => "word",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "word" => CreateTranscriptionRequestTimestampGranularitie.Word,
                 "segment" => CreateTranscriptionRequestTimestampGranularitie.Segment,
+                "word" => CreateTranscriptionRequestTimestampGranularitie.Word,
                 _ => null,
             };
         }

@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Left,
+        Center,
         /// <summary>
         /// 
         /// </summary>
-        Center,
+        Left,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                CaptionStyleHorizontalPlacementModelAlign.Left => "left",
                 CaptionStyleHorizontalPlacementModelAlign.Center => "center",
+                CaptionStyleHorizontalPlacementModelAlign.Left => "left",
                 CaptionStyleHorizontalPlacementModelAlign.Right => "right",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "left" => CaptionStyleHorizontalPlacementModelAlign.Left,
                 "center" => CaptionStyleHorizontalPlacementModelAlign.Center,
+                "left" => CaptionStyleHorizontalPlacementModelAlign.Left,
                 "right" => CaptionStyleHorizontalPlacementModelAlign.Right,
                 _ => null,
             };

@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="standard")]
-        Standard,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="high")]
         High,
         /// <summary>
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="highest")]
         Highest,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="standard")]
+        Standard,
         /// <summary>
         /// 
         /// </summary>
@@ -49,9 +49,9 @@ namespace G
         {
             return value switch
             {
-                ProjectExtendedResponseModelQualityPreset.Standard => "standard",
                 ProjectExtendedResponseModelQualityPreset.High => "high",
                 ProjectExtendedResponseModelQualityPreset.Highest => "highest",
+                ProjectExtendedResponseModelQualityPreset.Standard => "standard",
                 ProjectExtendedResponseModelQualityPreset.Ultra => "ultra",
                 ProjectExtendedResponseModelQualityPreset.UltraLossless => "ultra_lossless",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -64,9 +64,9 @@ namespace G
         {
             return value switch
             {
-                "standard" => ProjectExtendedResponseModelQualityPreset.Standard,
                 "high" => ProjectExtendedResponseModelQualityPreset.High,
                 "highest" => ProjectExtendedResponseModelQualityPreset.Highest,
+                "standard" => ProjectExtendedResponseModelQualityPreset.Standard,
                 "ultra" => ProjectExtendedResponseModelQualityPreset.Ultra,
                 "ultra_lossless" => ProjectExtendedResponseModelQualityPreset.UltraLossless,
                 _ => null,

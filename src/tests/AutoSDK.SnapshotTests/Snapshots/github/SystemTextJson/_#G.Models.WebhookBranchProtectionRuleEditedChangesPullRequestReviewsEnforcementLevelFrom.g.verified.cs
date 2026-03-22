@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Off,
+        Everyone,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Everyone,
+        Off,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom.Off => "off",
-                WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom.NonAdmins => "non_admins",
                 WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom.Everyone => "everyone",
+                WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom.NonAdmins => "non_admins",
+                WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom.Off => "off",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "off" => WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom.Off,
-                "non_admins" => WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom.NonAdmins,
                 "everyone" => WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom.Everyone,
+                "non_admins" => WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom.NonAdmins,
+                "off" => WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom.Off,
                 _ => null,
             };
         }

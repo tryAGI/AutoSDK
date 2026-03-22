@@ -13,11 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Query,
+        Document,
         /// <summary>
         /// 
         /// </summary>
-        Document,
+        Query,
     }
 
     /// <summary>
@@ -32,8 +32,8 @@ namespace G
         {
             return value switch
             {
-                TextEmbeddingAPIInputInputType.Query => "query",
                 TextEmbeddingAPIInputInputType.Document => "document",
+                TextEmbeddingAPIInputInputType.Query => "query",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,8 +44,8 @@ namespace G
         {
             return value switch
             {
-                "query" => TextEmbeddingAPIInputInputType.Query,
                 "document" => TextEmbeddingAPIInputInputType.Document,
+                "query" => TextEmbeddingAPIInputInputType.Query,
                 _ => null,
             };
         }

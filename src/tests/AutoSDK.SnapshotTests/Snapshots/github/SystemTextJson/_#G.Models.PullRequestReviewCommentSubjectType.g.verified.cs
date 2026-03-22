@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Line,
+        File,
         /// <summary>
         /// 
         /// </summary>
-        File,
+        Line,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                PullRequestReviewCommentSubjectType.Line => "line",
                 PullRequestReviewCommentSubjectType.File => "file",
+                PullRequestReviewCommentSubjectType.Line => "line",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "line" => PullRequestReviewCommentSubjectType.Line,
                 "file" => PullRequestReviewCommentSubjectType.File,
+                "line" => PullRequestReviewCommentSubjectType.Line,
                 _ => null,
             };
         }

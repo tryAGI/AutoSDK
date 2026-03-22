@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="article")]
+        Article,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="blank")]
         Blank,
         /// <summary>
@@ -23,23 +28,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="article")]
-        Article,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="genfm")]
         Genfm,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="video")]
-        Video,
+        [global::System.Runtime.Serialization.EnumMember(Value="screenplay")]
+        Screenplay,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="screenplay")]
-        Screenplay,
+        [global::System.Runtime.Serialization.EnumMember(Value="video")]
+        Video,
     }
 
     /// <summary>
@@ -54,12 +54,12 @@ namespace G
         {
             return value switch
             {
+                ProjectExtendedResponseModelSourceType2.Article => "article",
                 ProjectExtendedResponseModelSourceType2.Blank => "blank",
                 ProjectExtendedResponseModelSourceType2.Book => "book",
-                ProjectExtendedResponseModelSourceType2.Article => "article",
                 ProjectExtendedResponseModelSourceType2.Genfm => "genfm",
-                ProjectExtendedResponseModelSourceType2.Video => "video",
                 ProjectExtendedResponseModelSourceType2.Screenplay => "screenplay",
+                ProjectExtendedResponseModelSourceType2.Video => "video",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,12 +70,12 @@ namespace G
         {
             return value switch
             {
+                "article" => ProjectExtendedResponseModelSourceType2.Article,
                 "blank" => ProjectExtendedResponseModelSourceType2.Blank,
                 "book" => ProjectExtendedResponseModelSourceType2.Book,
-                "article" => ProjectExtendedResponseModelSourceType2.Article,
                 "genfm" => ProjectExtendedResponseModelSourceType2.Genfm,
-                "video" => ProjectExtendedResponseModelSourceType2.Video,
                 "screenplay" => ProjectExtendedResponseModelSourceType2.Screenplay,
+                "video" => ProjectExtendedResponseModelSourceType2.Video,
                 _ => null,
             };
         }

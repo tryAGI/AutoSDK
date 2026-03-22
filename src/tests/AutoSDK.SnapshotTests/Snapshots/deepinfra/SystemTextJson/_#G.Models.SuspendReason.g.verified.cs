@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        PaymentMethod,
+        Admin,
         /// <summary>
         /// 
         /// </summary>
-        OverdueInvoices,
+        BadCc,
         /// <summary>
         /// 
         /// </summary>
@@ -24,11 +24,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Admin,
+        OverdueInvoices,
         /// <summary>
         /// 
         /// </summary>
-        BadCc,
+        PaymentMethod,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                SuspendReason.PaymentMethod => "payment-method",
-                SuspendReason.OverdueInvoices => "overdue-invoices",
-                SuspendReason.LimitReached => "limit-reached",
                 SuspendReason.Admin => "admin",
                 SuspendReason.BadCc => "bad-cc",
+                SuspendReason.LimitReached => "limit-reached",
+                SuspendReason.OverdueInvoices => "overdue-invoices",
+                SuspendReason.PaymentMethod => "payment-method",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "payment-method" => SuspendReason.PaymentMethod,
-                "overdue-invoices" => SuspendReason.OverdueInvoices,
-                "limit-reached" => SuspendReason.LimitReached,
                 "admin" => SuspendReason.Admin,
                 "bad-cc" => SuspendReason.BadCc,
+                "limit-reached" => SuspendReason.LimitReached,
+                "overdue-invoices" => SuspendReason.OverdueInvoices,
+                "payment-method" => SuspendReason.PaymentMethod,
                 _ => null,
             };
         }

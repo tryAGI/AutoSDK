@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Requested,
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        Pending,
         /// <summary>
         /// 
         /// </summary>
@@ -28,11 +28,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Waiting,
+        Requested,
         /// <summary>
         /// 
         /// </summary>
-        Pending,
+        Waiting,
     }
 
     /// <summary>
@@ -47,12 +47,12 @@ namespace G
         {
             return value switch
             {
-                WebhookDeploymentReviewApprovedWorkflowRunStatus.Requested => "requested",
-                WebhookDeploymentReviewApprovedWorkflowRunStatus.InProgress => "in_progress",
                 WebhookDeploymentReviewApprovedWorkflowRunStatus.Completed => "completed",
-                WebhookDeploymentReviewApprovedWorkflowRunStatus.Queued => "queued",
-                WebhookDeploymentReviewApprovedWorkflowRunStatus.Waiting => "waiting",
+                WebhookDeploymentReviewApprovedWorkflowRunStatus.InProgress => "in_progress",
                 WebhookDeploymentReviewApprovedWorkflowRunStatus.Pending => "pending",
+                WebhookDeploymentReviewApprovedWorkflowRunStatus.Queued => "queued",
+                WebhookDeploymentReviewApprovedWorkflowRunStatus.Requested => "requested",
+                WebhookDeploymentReviewApprovedWorkflowRunStatus.Waiting => "waiting",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,12 +63,12 @@ namespace G
         {
             return value switch
             {
-                "requested" => WebhookDeploymentReviewApprovedWorkflowRunStatus.Requested,
-                "in_progress" => WebhookDeploymentReviewApprovedWorkflowRunStatus.InProgress,
                 "completed" => WebhookDeploymentReviewApprovedWorkflowRunStatus.Completed,
-                "queued" => WebhookDeploymentReviewApprovedWorkflowRunStatus.Queued,
-                "waiting" => WebhookDeploymentReviewApprovedWorkflowRunStatus.Waiting,
+                "in_progress" => WebhookDeploymentReviewApprovedWorkflowRunStatus.InProgress,
                 "pending" => WebhookDeploymentReviewApprovedWorkflowRunStatus.Pending,
+                "queued" => WebhookDeploymentReviewApprovedWorkflowRunStatus.Queued,
+                "requested" => WebhookDeploymentReviewApprovedWorkflowRunStatus.Requested,
+                "waiting" => WebhookDeploymentReviewApprovedWorkflowRunStatus.Waiting,
                 _ => null,
             };
         }

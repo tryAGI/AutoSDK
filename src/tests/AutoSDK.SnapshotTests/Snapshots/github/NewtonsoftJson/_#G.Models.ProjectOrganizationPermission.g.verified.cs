@@ -13,16 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="read")]
-        Read,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="write")]
-        Write,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="admin")]
         Admin,
         /// <summary>
@@ -30,6 +20,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="none")]
         None,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="read")]
+        Read,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="write")]
+        Write,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                ProjectOrganizationPermission.Read => "read",
-                ProjectOrganizationPermission.Write => "write",
                 ProjectOrganizationPermission.Admin => "admin",
                 ProjectOrganizationPermission.None => "none",
+                ProjectOrganizationPermission.Read => "read",
+                ProjectOrganizationPermission.Write => "write",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "read" => ProjectOrganizationPermission.Read,
-                "write" => ProjectOrganizationPermission.Write,
                 "admin" => ProjectOrganizationPermission.Admin,
                 "none" => ProjectOrganizationPermission.None,
+                "read" => ProjectOrganizationPermission.Read,
+                "write" => ProjectOrganizationPermission.Write,
                 _ => null,
             };
         }

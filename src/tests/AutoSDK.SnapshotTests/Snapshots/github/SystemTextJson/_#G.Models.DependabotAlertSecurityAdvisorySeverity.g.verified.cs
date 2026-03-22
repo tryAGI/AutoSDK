@@ -13,11 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Low,
-        /// <summary>
-        /// 
-        /// </summary>
-        Medium,
+        Critical,
         /// <summary>
         /// 
         /// </summary>
@@ -25,7 +21,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Critical,
+        Low,
+        /// <summary>
+        /// 
+        /// </summary>
+        Medium,
     }
 
     /// <summary>
@@ -40,10 +40,10 @@ namespace G
         {
             return value switch
             {
+                DependabotAlertSecurityAdvisorySeverity.Critical => "critical",
+                DependabotAlertSecurityAdvisorySeverity.High => "high",
                 DependabotAlertSecurityAdvisorySeverity.Low => "low",
                 DependabotAlertSecurityAdvisorySeverity.Medium => "medium",
-                DependabotAlertSecurityAdvisorySeverity.High => "high",
-                DependabotAlertSecurityAdvisorySeverity.Critical => "critical",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,10 +54,10 @@ namespace G
         {
             return value switch
             {
+                "critical" => DependabotAlertSecurityAdvisorySeverity.Critical,
+                "high" => DependabotAlertSecurityAdvisorySeverity.High,
                 "low" => DependabotAlertSecurityAdvisorySeverity.Low,
                 "medium" => DependabotAlertSecurityAdvisorySeverity.Medium,
-                "high" => DependabotAlertSecurityAdvisorySeverity.High,
-                "critical" => DependabotAlertSecurityAdvisorySeverity.Critical,
                 _ => null,
             };
         }

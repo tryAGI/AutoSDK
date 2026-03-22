@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Transcript,
-        /// <summary>
-        /// 
-        /// </summary>
         Audio,
         /// <summary>
         /// 
         /// </summary>
         CallInitiationFailure,
+        /// <summary>
+        /// 
+        /// </summary>
+        Transcript,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                WebhookEventType.Transcript => "transcript",
                 WebhookEventType.Audio => "audio",
                 WebhookEventType.CallInitiationFailure => "call_initiation_failure",
+                WebhookEventType.Transcript => "transcript",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "transcript" => WebhookEventType.Transcript,
                 "audio" => WebhookEventType.Audio,
                 "call_initiation_failure" => WebhookEventType.CallInitiationFailure,
+                "transcript" => WebhookEventType.Transcript,
                 _ => null,
             };
         }

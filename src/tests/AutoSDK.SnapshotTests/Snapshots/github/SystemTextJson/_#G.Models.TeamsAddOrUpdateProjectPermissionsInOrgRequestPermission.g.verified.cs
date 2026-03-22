@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Admin,
+        /// <summary>
+        /// 
+        /// </summary>
         Read,
         /// <summary>
         /// 
         /// </summary>
         Write,
-        /// <summary>
-        /// 
-        /// </summary>
-        Admin,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
+                TeamsAddOrUpdateProjectPermissionsInOrgRequestPermission.Admin => "admin",
                 TeamsAddOrUpdateProjectPermissionsInOrgRequestPermission.Read => "read",
                 TeamsAddOrUpdateProjectPermissionsInOrgRequestPermission.Write => "write",
-                TeamsAddOrUpdateProjectPermissionsInOrgRequestPermission.Admin => "admin",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
+                "admin" => TeamsAddOrUpdateProjectPermissionsInOrgRequestPermission.Admin,
                 "read" => TeamsAddOrUpdateProjectPermissionsInOrgRequestPermission.Read,
                 "write" => TeamsAddOrUpdateProjectPermissionsInOrgRequestPermission.Write,
-                "admin" => TeamsAddOrUpdateProjectPermissionsInOrgRequestPermission.Admin,
                 _ => null,
             };
         }

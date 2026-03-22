@@ -13,8 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="KLMS")]
-        Klms,
+        [global::System.Runtime.Serialization.EnumMember(Value="DDIM")]
+        Ddim,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="DPM_SOLVER")]
+        DpmSolver,
         /// <summary>
         /// 
         /// </summary>
@@ -28,23 +33,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="DDIM")]
-        Ddim,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="DPM_SOLVER")]
-        DpmSolver,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="PNDM")]
-        Pndm,
+        [global::System.Runtime.Serialization.EnumMember(Value="KLMS")]
+        Klms,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="LEONARDO")]
         Leonardo,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="PNDM")]
+        Pndm,
     }
 
     /// <summary>
@@ -59,13 +59,13 @@ namespace G
         {
             return value switch
             {
-                SdGenerationSchedulers.Klms => "KLMS",
-                SdGenerationSchedulers.EulerAncestralDiscrete => "EULER_ANCESTRAL_DISCRETE",
-                SdGenerationSchedulers.EulerDiscrete => "EULER_DISCRETE",
                 SdGenerationSchedulers.Ddim => "DDIM",
                 SdGenerationSchedulers.DpmSolver => "DPM_SOLVER",
-                SdGenerationSchedulers.Pndm => "PNDM",
+                SdGenerationSchedulers.EulerAncestralDiscrete => "EULER_ANCESTRAL_DISCRETE",
+                SdGenerationSchedulers.EulerDiscrete => "EULER_DISCRETE",
+                SdGenerationSchedulers.Klms => "KLMS",
                 SdGenerationSchedulers.Leonardo => "LEONARDO",
+                SdGenerationSchedulers.Pndm => "PNDM",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -76,13 +76,13 @@ namespace G
         {
             return value switch
             {
-                "KLMS" => SdGenerationSchedulers.Klms,
-                "EULER_ANCESTRAL_DISCRETE" => SdGenerationSchedulers.EulerAncestralDiscrete,
-                "EULER_DISCRETE" => SdGenerationSchedulers.EulerDiscrete,
                 "DDIM" => SdGenerationSchedulers.Ddim,
                 "DPM_SOLVER" => SdGenerationSchedulers.DpmSolver,
-                "PNDM" => SdGenerationSchedulers.Pndm,
+                "EULER_ANCESTRAL_DISCRETE" => SdGenerationSchedulers.EulerAncestralDiscrete,
+                "EULER_DISCRETE" => SdGenerationSchedulers.EulerDiscrete,
+                "KLMS" => SdGenerationSchedulers.Klms,
                 "LEONARDO" => SdGenerationSchedulers.Leonardo,
+                "PNDM" => SdGenerationSchedulers.Pndm,
                 _ => null,
             };
         }

@@ -14,11 +14,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="user")]
-        User,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="assistant")]
         Assistant,
         /// <summary>
@@ -26,6 +21,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="system")]
         System,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="user")]
+        User,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
         {
             return value switch
             {
-                RealtimeConversationItemRole.User => "user",
                 RealtimeConversationItemRole.Assistant => "assistant",
                 RealtimeConversationItemRole.System => "system",
+                RealtimeConversationItemRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
-                "user" => RealtimeConversationItemRole.User,
                 "assistant" => RealtimeConversationItemRole.Assistant,
                 "system" => RealtimeConversationItemRole.System,
+                "user" => RealtimeConversationItemRole.User,
                 _ => null,
             };
         }

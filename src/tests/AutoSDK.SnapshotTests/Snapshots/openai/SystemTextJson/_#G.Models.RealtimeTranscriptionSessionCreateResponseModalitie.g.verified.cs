@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Text,
+        Audio,
         /// <summary>
         /// 
         /// </summary>
-        Audio,
+        Text,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                RealtimeTranscriptionSessionCreateResponseModalitie.Text => "text",
                 RealtimeTranscriptionSessionCreateResponseModalitie.Audio => "audio",
+                RealtimeTranscriptionSessionCreateResponseModalitie.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "text" => RealtimeTranscriptionSessionCreateResponseModalitie.Text,
                 "audio" => RealtimeTranscriptionSessionCreateResponseModalitie.Audio,
+                "text" => RealtimeTranscriptionSessionCreateResponseModalitie.Text,
                 _ => null,
             };
         }

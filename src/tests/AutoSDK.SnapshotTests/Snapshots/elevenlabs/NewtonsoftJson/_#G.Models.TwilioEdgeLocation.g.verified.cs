@@ -28,6 +28,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="roaming")]
+        Roaming,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="sao-paulo")]
         SaoPaulo,
         /// <summary>
@@ -50,11 +55,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="umatilla")]
         Umatilla,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="roaming")]
-        Roaming,
     }
 
     /// <summary>
@@ -72,12 +72,12 @@ namespace G
                 TwilioEdgeLocation.Ashburn => "ashburn",
                 TwilioEdgeLocation.Dublin => "dublin",
                 TwilioEdgeLocation.Frankfurt => "frankfurt",
+                TwilioEdgeLocation.Roaming => "roaming",
                 TwilioEdgeLocation.SaoPaulo => "sao-paulo",
                 TwilioEdgeLocation.Singapore => "singapore",
                 TwilioEdgeLocation.Sydney => "sydney",
                 TwilioEdgeLocation.Tokyo => "tokyo",
                 TwilioEdgeLocation.Umatilla => "umatilla",
-                TwilioEdgeLocation.Roaming => "roaming",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -91,12 +91,12 @@ namespace G
                 "ashburn" => TwilioEdgeLocation.Ashburn,
                 "dublin" => TwilioEdgeLocation.Dublin,
                 "frankfurt" => TwilioEdgeLocation.Frankfurt,
+                "roaming" => TwilioEdgeLocation.Roaming,
                 "sao-paulo" => TwilioEdgeLocation.SaoPaulo,
                 "singapore" => TwilioEdgeLocation.Singapore,
                 "sydney" => TwilioEdgeLocation.Sydney,
                 "tokyo" => TwilioEdgeLocation.Tokyo,
                 "umatilla" => TwilioEdgeLocation.Umatilla,
-                "roaming" => TwilioEdgeLocation.Roaming,
                 _ => null,
             };
         }

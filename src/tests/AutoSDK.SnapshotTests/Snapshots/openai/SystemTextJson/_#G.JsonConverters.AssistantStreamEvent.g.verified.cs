@@ -32,11 +32,11 @@ namespace G.JsonConverters
             var __score2 = 0;
             var __score3 = 0;
             var __score4 = 0;
-            if (__jsonProps.Contains("event")) __score4++;
             if (__jsonProps.Contains("data")) __score4++;
+            if (__jsonProps.Contains("event")) __score4++;
             var __score5 = 0;
-            if (__jsonProps.Contains("event")) __score5++;
             if (__jsonProps.Contains("data")) __score5++;
+            if (__jsonProps.Contains("event")) __score5++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }

@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Mcp,
+        Lambda,
         /// <summary>
         /// 
         /// </summary>
-        Lambda,
+        Mcp,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ListToolsType.Mcp => "mcp",
                 ListToolsType.Lambda => "lambda",
+                ListToolsType.Mcp => "mcp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "mcp" => ListToolsType.Mcp,
                 "lambda" => ListToolsType.Lambda,
+                "mcp" => ListToolsType.Mcp,
                 _ => null,
             };
         }

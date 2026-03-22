@@ -24,15 +24,45 @@ namespace G
     public enum AITask
     {
         /// <summary>
+        /// Conversational Text Generation - generate text as responses to a dialog input.
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="TASK_CHAT")]
+        TaskChat,
+        /// <summary>
         /// Image Classification - classify images into predefined categories.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="TASK_CLASSIFICATION")]
         TaskClassification,
         /// <summary>
+        /// Completion Text Generation - generate text following the input prompt.
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="TASK_COMPLETION")]
+        TaskCompletion,
+        /// <summary>
+        /// Custom - custom task type for free form input/output.
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="TASK_CUSTOM")]
+        TaskCustom,
+        /// <summary>
         /// Object Detection - detect and localize multiple objects in images.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="TASK_DETECTION")]
         TaskDetection,
+        /// <summary>
+        /// Embedding - generate an embedding (a representation as coordinates) from a multimodal input.
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="TASK_EMBEDDING")]
+        TaskEmbedding,
+        /// <summary>
+        /// Image to Image - generate an image from another image.
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="TASK_IMAGE_TO_IMAGE")]
+        TaskImageToImage,
+        /// <summary>
+        /// Instance Segmentation - detect, localize and delineate multiple objects in images.
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="TASK_INSTANCE_SEGMENTATION")]
+        TaskInstanceSegmentation,
         /// <summary>
         /// Keypoint Detection - detect and localize multiple keypoints of objects in images.
         /// </summary>
@@ -44,50 +74,20 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="TASK_OCR")]
         TaskOcr,
         /// <summary>
-        /// Instance Segmentation - detect, localize and delineate multiple objects in images.
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="TASK_INSTANCE_SEGMENTATION")]
-        TaskInstanceSegmentation,
-        /// <summary>
         /// Semantic Segmentation - classify image pixels into predefined categories.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="TASK_SEMANTIC_SEGMENTATION")]
         TaskSemanticSegmentation,
-        /// <summary>
-        /// Text to Image - generate images from input text prompts.
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="TASK_TEXT_TO_IMAGE")]
-        TaskTextToImage,
-        /// <summary>
-        /// Image to Image - generate an image from another image.
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="TASK_IMAGE_TO_IMAGE")]
-        TaskImageToImage,
-        /// <summary>
-        /// Embedding - generate an embedding (a representation as coordinates) from a multimodal input.
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="TASK_EMBEDDING")]
-        TaskEmbedding,
         /// <summary>
         /// Speech Recognition - transcribe the words in an audio input.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="TASK_SPEECH_RECOGNITION")]
         TaskSpeechRecognition,
         /// <summary>
-        /// Conversational Text Generation - generate text as responses to a dialog input.
+        /// Text to Image - generate images from input text prompts.
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="TASK_CHAT")]
-        TaskChat,
-        /// <summary>
-        /// Completion Text Generation - generate text following the input prompt.
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="TASK_COMPLETION")]
-        TaskCompletion,
-        /// <summary>
-        /// Custom - custom task type for free form input/output.
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="TASK_CUSTOM")]
-        TaskCustom,
+        [global::System.Runtime.Serialization.EnumMember(Value="TASK_TEXT_TO_IMAGE")]
+        TaskTextToImage,
     }
 
     /// <summary>
@@ -102,19 +102,19 @@ namespace G
         {
             return value switch
             {
-                AITask.TaskClassification => "TASK_CLASSIFICATION",
-                AITask.TaskDetection => "TASK_DETECTION",
-                AITask.TaskKeypoint => "TASK_KEYPOINT",
-                AITask.TaskOcr => "TASK_OCR",
-                AITask.TaskInstanceSegmentation => "TASK_INSTANCE_SEGMENTATION",
-                AITask.TaskSemanticSegmentation => "TASK_SEMANTIC_SEGMENTATION",
-                AITask.TaskTextToImage => "TASK_TEXT_TO_IMAGE",
-                AITask.TaskImageToImage => "TASK_IMAGE_TO_IMAGE",
-                AITask.TaskEmbedding => "TASK_EMBEDDING",
-                AITask.TaskSpeechRecognition => "TASK_SPEECH_RECOGNITION",
                 AITask.TaskChat => "TASK_CHAT",
+                AITask.TaskClassification => "TASK_CLASSIFICATION",
                 AITask.TaskCompletion => "TASK_COMPLETION",
                 AITask.TaskCustom => "TASK_CUSTOM",
+                AITask.TaskDetection => "TASK_DETECTION",
+                AITask.TaskEmbedding => "TASK_EMBEDDING",
+                AITask.TaskImageToImage => "TASK_IMAGE_TO_IMAGE",
+                AITask.TaskInstanceSegmentation => "TASK_INSTANCE_SEGMENTATION",
+                AITask.TaskKeypoint => "TASK_KEYPOINT",
+                AITask.TaskOcr => "TASK_OCR",
+                AITask.TaskSemanticSegmentation => "TASK_SEMANTIC_SEGMENTATION",
+                AITask.TaskSpeechRecognition => "TASK_SPEECH_RECOGNITION",
+                AITask.TaskTextToImage => "TASK_TEXT_TO_IMAGE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -125,19 +125,19 @@ namespace G
         {
             return value switch
             {
-                "TASK_CLASSIFICATION" => AITask.TaskClassification,
-                "TASK_DETECTION" => AITask.TaskDetection,
-                "TASK_KEYPOINT" => AITask.TaskKeypoint,
-                "TASK_OCR" => AITask.TaskOcr,
-                "TASK_INSTANCE_SEGMENTATION" => AITask.TaskInstanceSegmentation,
-                "TASK_SEMANTIC_SEGMENTATION" => AITask.TaskSemanticSegmentation,
-                "TASK_TEXT_TO_IMAGE" => AITask.TaskTextToImage,
-                "TASK_IMAGE_TO_IMAGE" => AITask.TaskImageToImage,
-                "TASK_EMBEDDING" => AITask.TaskEmbedding,
-                "TASK_SPEECH_RECOGNITION" => AITask.TaskSpeechRecognition,
                 "TASK_CHAT" => AITask.TaskChat,
+                "TASK_CLASSIFICATION" => AITask.TaskClassification,
                 "TASK_COMPLETION" => AITask.TaskCompletion,
                 "TASK_CUSTOM" => AITask.TaskCustom,
+                "TASK_DETECTION" => AITask.TaskDetection,
+                "TASK_EMBEDDING" => AITask.TaskEmbedding,
+                "TASK_IMAGE_TO_IMAGE" => AITask.TaskImageToImage,
+                "TASK_INSTANCE_SEGMENTATION" => AITask.TaskInstanceSegmentation,
+                "TASK_KEYPOINT" => AITask.TaskKeypoint,
+                "TASK_OCR" => AITask.TaskOcr,
+                "TASK_SEMANTIC_SEGMENTATION" => AITask.TaskSemanticSegmentation,
+                "TASK_SPEECH_RECOGNITION" => AITask.TaskSpeechRecognition,
+                "TASK_TEXT_TO_IMAGE" => AITask.TaskTextToImage,
                 _ => null,
             };
         }

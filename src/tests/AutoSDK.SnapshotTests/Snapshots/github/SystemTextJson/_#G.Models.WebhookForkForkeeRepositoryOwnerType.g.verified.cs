@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        Organization,
+        User,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 WebhookForkForkeeRepositoryOwnerType.Bot => "Bot",
-                WebhookForkForkeeRepositoryOwnerType.User => "User",
                 WebhookForkForkeeRepositoryOwnerType.Organization => "Organization",
+                WebhookForkForkeeRepositoryOwnerType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookForkForkeeRepositoryOwnerType.Bot,
-                "User" => WebhookForkForkeeRepositoryOwnerType.User,
                 "Organization" => WebhookForkForkeeRepositoryOwnerType.Organization,
+                "User" => WebhookForkForkeeRepositoryOwnerType.User,
                 _ => null,
             };
         }

@@ -36,13 +36,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="purple")]
-        Purple,
+        [global::System.Runtime.Serialization.EnumMember(Value="primary (default)")]
+        PrimaryDefault,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="primary (default)")]
-        PrimaryDefault,
+        [global::System.Runtime.Serialization.EnumMember(Value="purple")]
+        Purple,
     }
 
     /// <summary>
@@ -60,8 +60,8 @@ namespace G
                 SendChatAnnouncementBodyColor.Blue => "blue",
                 SendChatAnnouncementBodyColor.Green => "green",
                 SendChatAnnouncementBodyColor.Orange => "orange",
-                SendChatAnnouncementBodyColor.Purple => "purple",
                 SendChatAnnouncementBodyColor.PrimaryDefault => "primary (default)",
+                SendChatAnnouncementBodyColor.Purple => "purple",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -75,8 +75,8 @@ namespace G
                 "blue" => SendChatAnnouncementBodyColor.Blue,
                 "green" => SendChatAnnouncementBodyColor.Green,
                 "orange" => SendChatAnnouncementBodyColor.Orange,
-                "purple" => SendChatAnnouncementBodyColor.Purple,
                 "primary (default)" => SendChatAnnouncementBodyColor.PrimaryDefault,
+                "purple" => SendChatAnnouncementBodyColor.Purple,
                 _ => null,
             };
         }

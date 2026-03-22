@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        None,
+        Auto,
         /// <summary>
         /// 
         /// </summary>
-        Auto,
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -39,8 +39,8 @@ namespace G
         {
             return value switch
             {
-                ToolChoiceOptions.None => "none",
                 ToolChoiceOptions.Auto => "auto",
+                ToolChoiceOptions.None => "none",
                 ToolChoiceOptions.Required => "required",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -52,8 +52,8 @@ namespace G
         {
             return value switch
             {
-                "none" => ToolChoiceOptions.None,
                 "auto" => ToolChoiceOptions.Auto,
+                "none" => ToolChoiceOptions.None,
                 "required" => ToolChoiceOptions.Required,
                 _ => null,
             };

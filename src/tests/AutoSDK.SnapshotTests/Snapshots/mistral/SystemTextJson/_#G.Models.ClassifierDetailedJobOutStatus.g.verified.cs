@@ -12,35 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Queued,
-        /// <summary>
-        /// 
-        /// </summary>
-        Started,
-        /// <summary>
-        /// 
-        /// </summary>
-        Validating,
-        /// <summary>
-        /// 
-        /// </summary>
-        Validated,
-        /// <summary>
-        /// 
-        /// </summary>
-        Running,
-        /// <summary>
-        /// 
-        /// </summary>
-        FailedValidation,
-        /// <summary>
-        /// 
-        /// </summary>
-        Failed,
-        /// <summary>
-        /// 
-        /// </summary>
-        Success,
+        CancellationRequested,
         /// <summary>
         /// 
         /// </summary>
@@ -48,7 +20,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        CancellationRequested,
+        Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        FailedValidation,
+        /// <summary>
+        /// 
+        /// </summary>
+        Queued,
+        /// <summary>
+        /// 
+        /// </summary>
+        Running,
+        /// <summary>
+        /// 
+        /// </summary>
+        Started,
+        /// <summary>
+        /// 
+        /// </summary>
+        Success,
+        /// <summary>
+        /// 
+        /// </summary>
+        Validated,
+        /// <summary>
+        /// 
+        /// </summary>
+        Validating,
     }
 
     /// <summary>
@@ -63,16 +63,16 @@ namespace G
         {
             return value switch
             {
-                ClassifierDetailedJobOutStatus.Queued => "QUEUED",
-                ClassifierDetailedJobOutStatus.Started => "STARTED",
-                ClassifierDetailedJobOutStatus.Validating => "VALIDATING",
-                ClassifierDetailedJobOutStatus.Validated => "VALIDATED",
-                ClassifierDetailedJobOutStatus.Running => "RUNNING",
-                ClassifierDetailedJobOutStatus.FailedValidation => "FAILED_VALIDATION",
-                ClassifierDetailedJobOutStatus.Failed => "FAILED",
-                ClassifierDetailedJobOutStatus.Success => "SUCCESS",
-                ClassifierDetailedJobOutStatus.Cancelled => "CANCELLED",
                 ClassifierDetailedJobOutStatus.CancellationRequested => "CANCELLATION_REQUESTED",
+                ClassifierDetailedJobOutStatus.Cancelled => "CANCELLED",
+                ClassifierDetailedJobOutStatus.Failed => "FAILED",
+                ClassifierDetailedJobOutStatus.FailedValidation => "FAILED_VALIDATION",
+                ClassifierDetailedJobOutStatus.Queued => "QUEUED",
+                ClassifierDetailedJobOutStatus.Running => "RUNNING",
+                ClassifierDetailedJobOutStatus.Started => "STARTED",
+                ClassifierDetailedJobOutStatus.Success => "SUCCESS",
+                ClassifierDetailedJobOutStatus.Validated => "VALIDATED",
+                ClassifierDetailedJobOutStatus.Validating => "VALIDATING",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -83,16 +83,16 @@ namespace G
         {
             return value switch
             {
-                "QUEUED" => ClassifierDetailedJobOutStatus.Queued,
-                "STARTED" => ClassifierDetailedJobOutStatus.Started,
-                "VALIDATING" => ClassifierDetailedJobOutStatus.Validating,
-                "VALIDATED" => ClassifierDetailedJobOutStatus.Validated,
-                "RUNNING" => ClassifierDetailedJobOutStatus.Running,
-                "FAILED_VALIDATION" => ClassifierDetailedJobOutStatus.FailedValidation,
-                "FAILED" => ClassifierDetailedJobOutStatus.Failed,
-                "SUCCESS" => ClassifierDetailedJobOutStatus.Success,
-                "CANCELLED" => ClassifierDetailedJobOutStatus.Cancelled,
                 "CANCELLATION_REQUESTED" => ClassifierDetailedJobOutStatus.CancellationRequested,
+                "CANCELLED" => ClassifierDetailedJobOutStatus.Cancelled,
+                "FAILED" => ClassifierDetailedJobOutStatus.Failed,
+                "FAILED_VALIDATION" => ClassifierDetailedJobOutStatus.FailedValidation,
+                "QUEUED" => ClassifierDetailedJobOutStatus.Queued,
+                "RUNNING" => ClassifierDetailedJobOutStatus.Running,
+                "STARTED" => ClassifierDetailedJobOutStatus.Started,
+                "SUCCESS" => ClassifierDetailedJobOutStatus.Success,
+                "VALIDATED" => ClassifierDetailedJobOutStatus.Validated,
+                "VALIDATING" => ClassifierDetailedJobOutStatus.Validating,
                 _ => null,
             };
         }

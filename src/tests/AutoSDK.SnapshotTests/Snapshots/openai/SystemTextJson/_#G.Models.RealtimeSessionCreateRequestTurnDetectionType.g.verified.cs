@@ -13,11 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ServerVad,
+        SemanticVad,
         /// <summary>
         /// 
         /// </summary>
-        SemanticVad,
+        ServerVad,
     }
 
     /// <summary>
@@ -32,8 +32,8 @@ namespace G
         {
             return value switch
             {
-                RealtimeSessionCreateRequestTurnDetectionType.ServerVad => "server_vad",
                 RealtimeSessionCreateRequestTurnDetectionType.SemanticVad => "semantic_vad",
+                RealtimeSessionCreateRequestTurnDetectionType.ServerVad => "server_vad",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,8 +44,8 @@ namespace G
         {
             return value switch
             {
-                "server_vad" => RealtimeSessionCreateRequestTurnDetectionType.ServerVad,
                 "semantic_vad" => RealtimeSessionCreateRequestTurnDetectionType.SemanticVad,
+                "server_vad" => RealtimeSessionCreateRequestTurnDetectionType.ServerVad,
                 _ => null,
             };
         }

@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="laugh")]
-        Laugh,
+        [global::System.Runtime.Serialization.EnumMember(Value="eyes")]
+        Eyes,
         /// <summary>
         /// 
         /// </summary>
@@ -33,13 +33,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="rocket")]
-        Rocket,
+        [global::System.Runtime.Serialization.EnumMember(Value="laugh")]
+        Laugh,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="eyes")]
-        Eyes,
+        [global::System.Runtime.Serialization.EnumMember(Value="rocket")]
+        Rocket,
     }
 
     /// <summary>
@@ -55,11 +55,11 @@ namespace G
             return value switch
             {
                 ReactionsListForReleaseContent.Plus1 => "+1",
-                ReactionsListForReleaseContent.Laugh => "laugh",
+                ReactionsListForReleaseContent.Eyes => "eyes",
                 ReactionsListForReleaseContent.Heart => "heart",
                 ReactionsListForReleaseContent.Hooray => "hooray",
+                ReactionsListForReleaseContent.Laugh => "laugh",
                 ReactionsListForReleaseContent.Rocket => "rocket",
-                ReactionsListForReleaseContent.Eyes => "eyes",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -71,11 +71,11 @@ namespace G
             return value switch
             {
                 "+1" => ReactionsListForReleaseContent.Plus1,
-                "laugh" => ReactionsListForReleaseContent.Laugh,
+                "eyes" => ReactionsListForReleaseContent.Eyes,
                 "heart" => ReactionsListForReleaseContent.Heart,
                 "hooray" => ReactionsListForReleaseContent.Hooray,
+                "laugh" => ReactionsListForReleaseContent.Laugh,
                 "rocket" => ReactionsListForReleaseContent.Rocket,
-                "eyes" => ReactionsListForReleaseContent.Eyes,
                 _ => null,
             };
         }

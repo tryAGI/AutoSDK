@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Results")]
-        Results,
+        [global::System.Runtime.Serialization.EnumMember(Value="Metadata")]
+        Metadata,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Metadata")]
-        Metadata,
+        [global::System.Runtime.Serialization.EnumMember(Value="Results")]
+        Results,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ListenV1ServerEventDiscriminatorType.Results => "Results",
                 ListenV1ServerEventDiscriminatorType.Metadata => "Metadata",
+                ListenV1ServerEventDiscriminatorType.Results => "Results",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "Results" => ListenV1ServerEventDiscriminatorType.Results,
                 "Metadata" => ListenV1ServerEventDiscriminatorType.Metadata,
+                "Results" => ListenV1ServerEventDiscriminatorType.Results,
                 _ => null,
             };
         }

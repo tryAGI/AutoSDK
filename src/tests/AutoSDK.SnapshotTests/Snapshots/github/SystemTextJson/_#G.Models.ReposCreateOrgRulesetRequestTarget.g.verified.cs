@@ -17,11 +17,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Tag,
+        Push,
         /// <summary>
         /// 
         /// </summary>
-        Push,
+        Tag,
     }
 
     /// <summary>
@@ -37,8 +37,8 @@ namespace G
             return value switch
             {
                 ReposCreateOrgRulesetRequestTarget.Branch => "branch",
-                ReposCreateOrgRulesetRequestTarget.Tag => "tag",
                 ReposCreateOrgRulesetRequestTarget.Push => "push",
+                ReposCreateOrgRulesetRequestTarget.Tag => "tag",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,8 +50,8 @@ namespace G
             return value switch
             {
                 "branch" => ReposCreateOrgRulesetRequestTarget.Branch,
-                "tag" => ReposCreateOrgRulesetRequestTarget.Tag,
                 "push" => ReposCreateOrgRulesetRequestTarget.Push,
+                "tag" => ReposCreateOrgRulesetRequestTarget.Tag,
                 _ => null,
             };
         }

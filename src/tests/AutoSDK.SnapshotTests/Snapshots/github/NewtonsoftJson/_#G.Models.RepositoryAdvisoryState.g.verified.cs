@@ -13,18 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="published")]
-        Published,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="closed")]
         Closed,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="withdrawn")]
-        Withdrawn,
         /// <summary>
         /// 
         /// </summary>
@@ -33,8 +23,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="published")]
+        Published,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="triage")]
         Triage,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="withdrawn")]
+        Withdrawn,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                RepositoryAdvisoryState.Published => "published",
                 RepositoryAdvisoryState.Closed => "closed",
-                RepositoryAdvisoryState.Withdrawn => "withdrawn",
                 RepositoryAdvisoryState.Draft => "draft",
+                RepositoryAdvisoryState.Published => "published",
                 RepositoryAdvisoryState.Triage => "triage",
+                RepositoryAdvisoryState.Withdrawn => "withdrawn",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "published" => RepositoryAdvisoryState.Published,
                 "closed" => RepositoryAdvisoryState.Closed,
-                "withdrawn" => RepositoryAdvisoryState.Withdrawn,
                 "draft" => RepositoryAdvisoryState.Draft,
+                "published" => RepositoryAdvisoryState.Published,
                 "triage" => RepositoryAdvisoryState.Triage,
+                "withdrawn" => RepositoryAdvisoryState.Withdrawn,
                 _ => null,
             };
         }

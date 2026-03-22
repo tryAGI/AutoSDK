@@ -14,11 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Member,
+        Maintainer,
         /// <summary>
         /// 
         /// </summary>
-        Maintainer,
+        Member,
     }
 
     /// <summary>
@@ -33,8 +33,8 @@ namespace G
         {
             return value switch
             {
-                TeamMembershipRole.Member => "member",
                 TeamMembershipRole.Maintainer => "maintainer",
+                TeamMembershipRole.Member => "member",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -45,8 +45,8 @@ namespace G
         {
             return value switch
             {
-                "member" => TeamMembershipRole.Member,
                 "maintainer" => TeamMembershipRole.Maintainer,
+                "member" => TeamMembershipRole.Member,
                 _ => null,
             };
         }

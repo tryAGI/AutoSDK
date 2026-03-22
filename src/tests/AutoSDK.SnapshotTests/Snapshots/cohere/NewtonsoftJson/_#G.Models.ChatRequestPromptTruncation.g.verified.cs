@@ -18,11 +18,6 @@ namespace G
     public enum ChatRequestPromptTruncation
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="OFF")]
-        Off,
-        /// <summary>
         /// Cohere Platform Only
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="AUTO")]
@@ -32,6 +27,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="AUTO_PRESERVE_ORDER")]
         AutoPreserveOrder,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="OFF")]
+        Off,
     }
 
     /// <summary>
@@ -46,9 +46,9 @@ namespace G
         {
             return value switch
             {
-                ChatRequestPromptTruncation.Off => "OFF",
                 ChatRequestPromptTruncation.Auto => "AUTO",
                 ChatRequestPromptTruncation.AutoPreserveOrder => "AUTO_PRESERVE_ORDER",
+                ChatRequestPromptTruncation.Off => "OFF",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
         {
             return value switch
             {
-                "OFF" => ChatRequestPromptTruncation.Off,
                 "AUTO" => ChatRequestPromptTruncation.Auto,
                 "AUTO_PRESERVE_ORDER" => ChatRequestPromptTruncation.AutoPreserveOrder,
+                "OFF" => ChatRequestPromptTruncation.Off,
                 _ => null,
             };
         }

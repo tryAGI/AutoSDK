@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="auto")]
-        Auto,
+        [global::System.Runtime.Serialization.EnumMember(Value="apply_english")]
+        ApplyEnglish,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="on")]
-        On,
+        [global::System.Runtime.Serialization.EnumMember(Value="auto")]
+        Auto,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="apply_english")]
-        ApplyEnglish,
+        [global::System.Runtime.Serialization.EnumMember(Value="on")]
+        On,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalization2.Auto => "auto",
-                BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalization2.On => "on",
-                BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalization2.Off => "off",
                 BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalization2.ApplyEnglish => "apply_english",
+                BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalization2.Auto => "auto",
+                BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalization2.Off => "off",
+                BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalization2.On => "on",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "auto" => BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalization2.Auto,
-                "on" => BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalization2.On,
-                "off" => BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalization2.Off,
                 "apply_english" => BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalization2.ApplyEnglish,
+                "auto" => BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalization2.Auto,
+                "off" => BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalization2.Off,
+                "on" => BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalization2.On,
                 _ => null,
             };
         }

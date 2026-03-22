@@ -20,11 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Queued,
+        Pending,
         /// <summary>
         /// 
         /// </summary>
-        Pending,
+        Queued,
         /// <summary>
         /// 
         /// </summary>
@@ -45,8 +45,8 @@ namespace G
             {
                 WebhookWorkflowJobWaitingWorkflowJobStepStatus.Completed => "completed",
                 WebhookWorkflowJobWaitingWorkflowJobStepStatus.InProgress => "in_progress",
-                WebhookWorkflowJobWaitingWorkflowJobStepStatus.Queued => "queued",
                 WebhookWorkflowJobWaitingWorkflowJobStepStatus.Pending => "pending",
+                WebhookWorkflowJobWaitingWorkflowJobStepStatus.Queued => "queued",
                 WebhookWorkflowJobWaitingWorkflowJobStepStatus.Waiting => "waiting",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -60,8 +60,8 @@ namespace G
             {
                 "completed" => WebhookWorkflowJobWaitingWorkflowJobStepStatus.Completed,
                 "in_progress" => WebhookWorkflowJobWaitingWorkflowJobStepStatus.InProgress,
-                "queued" => WebhookWorkflowJobWaitingWorkflowJobStepStatus.Queued,
                 "pending" => WebhookWorkflowJobWaitingWorkflowJobStepStatus.Pending,
+                "queued" => WebhookWorkflowJobWaitingWorkflowJobStepStatus.Queued,
                 "waiting" => WebhookWorkflowJobWaitingWorkflowJobStepStatus.Waiting,
                 _ => null,
             };

@@ -17,11 +17,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Private,
+        None,
         /// <summary>
         /// 
         /// </summary>
-        None,
+        Private,
     }
 
     /// <summary>
@@ -37,8 +37,8 @@ namespace G
             return value switch
             {
                 OrgsUpdateRequestMembersAllowedRepositoryCreationType.All => "all",
-                OrgsUpdateRequestMembersAllowedRepositoryCreationType.Private => "private",
                 OrgsUpdateRequestMembersAllowedRepositoryCreationType.None => "none",
+                OrgsUpdateRequestMembersAllowedRepositoryCreationType.Private => "private",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,8 +50,8 @@ namespace G
             return value switch
             {
                 "all" => OrgsUpdateRequestMembersAllowedRepositoryCreationType.All,
-                "private" => OrgsUpdateRequestMembersAllowedRepositoryCreationType.Private,
                 "none" => OrgsUpdateRequestMembersAllowedRepositoryCreationType.None,
+                "private" => OrgsUpdateRequestMembersAllowedRepositoryCreationType.Private,
                 _ => null,
             };
         }

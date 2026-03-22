@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        EmbeddingsFloats,
+        EmbeddingsByType,
         /// <summary>
         /// 
         /// </summary>
-        EmbeddingsByType,
+        EmbeddingsFloats,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                EmbedByTypeResponseResponseType.EmbeddingsFloats => "embeddings_floats",
                 EmbedByTypeResponseResponseType.EmbeddingsByType => "embeddings_by_type",
+                EmbedByTypeResponseResponseType.EmbeddingsFloats => "embeddings_floats",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "embeddings_floats" => EmbedByTypeResponseResponseType.EmbeddingsFloats,
                 "embeddings_by_type" => EmbedByTypeResponseResponseType.EmbeddingsByType,
+                "embeddings_floats" => EmbedByTypeResponseResponseType.EmbeddingsFloats,
                 _ => null,
             };
         }

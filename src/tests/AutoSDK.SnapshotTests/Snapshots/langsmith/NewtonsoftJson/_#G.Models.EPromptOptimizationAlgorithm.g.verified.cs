@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="promptim")]
-        Promptim,
+        [global::System.Runtime.Serialization.EnumMember(Value="demo")]
+        Demo,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="demo")]
-        Demo,
+        [global::System.Runtime.Serialization.EnumMember(Value="promptim")]
+        Promptim,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                EPromptOptimizationAlgorithm.Promptim => "promptim",
                 EPromptOptimizationAlgorithm.Demo => "demo",
+                EPromptOptimizationAlgorithm.Promptim => "promptim",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "promptim" => EPromptOptimizationAlgorithm.Promptim,
                 "demo" => EPromptOptimizationAlgorithm.Demo,
+                "promptim" => EPromptOptimizationAlgorithm.Promptim,
                 _ => null,
             };
         }

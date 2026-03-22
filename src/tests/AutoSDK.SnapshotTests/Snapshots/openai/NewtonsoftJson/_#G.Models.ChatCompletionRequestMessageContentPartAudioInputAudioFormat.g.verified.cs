@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="wav")]
-        Wav,
+        [global::System.Runtime.Serialization.EnumMember(Value="mp3")]
+        Mp3,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="mp3")]
-        Mp3,
+        [global::System.Runtime.Serialization.EnumMember(Value="wav")]
+        Wav,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ChatCompletionRequestMessageContentPartAudioInputAudioFormat.Wav => "wav",
                 ChatCompletionRequestMessageContentPartAudioInputAudioFormat.Mp3 => "mp3",
+                ChatCompletionRequestMessageContentPartAudioInputAudioFormat.Wav => "wav",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "wav" => ChatCompletionRequestMessageContentPartAudioInputAudioFormat.Wav,
                 "mp3" => ChatCompletionRequestMessageContentPartAudioInputAudioFormat.Mp3,
+                "wav" => ChatCompletionRequestMessageContentPartAudioInputAudioFormat.Wav,
                 _ => null,
             };
         }

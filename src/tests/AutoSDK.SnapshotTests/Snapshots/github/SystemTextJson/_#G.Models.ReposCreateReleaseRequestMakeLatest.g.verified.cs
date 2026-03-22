@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        True,
-        /// <summary>
-        /// 
-        /// </summary>
         False,
         /// <summary>
         /// 
         /// </summary>
         Legacy,
+        /// <summary>
+        /// 
+        /// </summary>
+        True,
     }
 
     /// <summary>
@@ -36,9 +36,9 @@ namespace G
         {
             return value switch
             {
-                ReposCreateReleaseRequestMakeLatest.True => "true",
                 ReposCreateReleaseRequestMakeLatest.False => "false",
                 ReposCreateReleaseRequestMakeLatest.Legacy => "legacy",
+                ReposCreateReleaseRequestMakeLatest.True => "true",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,9 +49,9 @@ namespace G
         {
             return value switch
             {
-                "true" => ReposCreateReleaseRequestMakeLatest.True,
                 "false" => ReposCreateReleaseRequestMakeLatest.False,
                 "legacy" => ReposCreateReleaseRequestMakeLatest.Legacy,
+                "true" => ReposCreateReleaseRequestMakeLatest.True,
                 _ => null,
             };
         }

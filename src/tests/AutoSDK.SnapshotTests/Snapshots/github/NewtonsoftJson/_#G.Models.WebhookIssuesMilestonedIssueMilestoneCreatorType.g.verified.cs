@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookIssuesMilestonedIssueMilestoneCreatorType.Bot => "Bot",
-                WebhookIssuesMilestonedIssueMilestoneCreatorType.User => "User",
-                WebhookIssuesMilestonedIssueMilestoneCreatorType.Organization => "Organization",
                 WebhookIssuesMilestonedIssueMilestoneCreatorType.Mannequin => "Mannequin",
+                WebhookIssuesMilestonedIssueMilestoneCreatorType.Organization => "Organization",
+                WebhookIssuesMilestonedIssueMilestoneCreatorType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookIssuesMilestonedIssueMilestoneCreatorType.Bot,
-                "User" => WebhookIssuesMilestonedIssueMilestoneCreatorType.User,
-                "Organization" => WebhookIssuesMilestonedIssueMilestoneCreatorType.Organization,
                 "Mannequin" => WebhookIssuesMilestonedIssueMilestoneCreatorType.Mannequin,
+                "Organization" => WebhookIssuesMilestonedIssueMilestoneCreatorType.Organization,
+                "User" => WebhookIssuesMilestonedIssueMilestoneCreatorType.User,
                 _ => null,
             };
         }

@@ -13,18 +13,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="resolved")]
-        Resolved,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="off-topic")]
         OffTopic,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="too heated")]
-        TooHeated,
+        [global::System.Runtime.Serialization.EnumMember(Value="openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="resolved")]
+        Resolved,
         /// <summary>
         /// 
         /// </summary>
@@ -33,8 +33,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
-        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        [global::System.Runtime.Serialization.EnumMember(Value="too heated")]
+        TooHeated,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                WebhookIssuesMilestonedIssueActiveLockReason.Resolved => "resolved",
                 WebhookIssuesMilestonedIssueActiveLockReason.OffTopic => "off-topic",
-                WebhookIssuesMilestonedIssueActiveLockReason.TooHeated => "too heated",
-                WebhookIssuesMilestonedIssueActiveLockReason.Spam => "spam",
                 WebhookIssuesMilestonedIssueActiveLockReason.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
+                WebhookIssuesMilestonedIssueActiveLockReason.Resolved => "resolved",
+                WebhookIssuesMilestonedIssueActiveLockReason.Spam => "spam",
+                WebhookIssuesMilestonedIssueActiveLockReason.TooHeated => "too heated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "resolved" => WebhookIssuesMilestonedIssueActiveLockReason.Resolved,
                 "off-topic" => WebhookIssuesMilestonedIssueActiveLockReason.OffTopic,
-                "too heated" => WebhookIssuesMilestonedIssueActiveLockReason.TooHeated,
-                "spam" => WebhookIssuesMilestonedIssueActiveLockReason.Spam,
                 "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookIssuesMilestonedIssueActiveLockReason.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+                "resolved" => WebhookIssuesMilestonedIssueActiveLockReason.Resolved,
+                "spam" => WebhookIssuesMilestonedIssueActiveLockReason.Spam,
+                "too heated" => WebhookIssuesMilestonedIssueActiveLockReason.TooHeated,
                 _ => null,
             };
         }

@@ -12,6 +12,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Img2img,
+        /// <summary>
+        /// 
+        /// </summary>
         Inpaint,
         /// <summary>
         /// 
@@ -21,10 +25,6 @@ namespace G
         /// 
         /// </summary>
         Sketch2img,
-        /// <summary>
-        /// 
-        /// </summary>
-        Img2img,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
+                CanvasRequestType.Img2img => "IMG2IMG",
                 CanvasRequestType.Inpaint => "INPAINT",
                 CanvasRequestType.Outpaint => "OUTPAINT",
                 CanvasRequestType.Sketch2img => "SKETCH2IMG",
-                CanvasRequestType.Img2img => "IMG2IMG",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
+                "IMG2IMG" => CanvasRequestType.Img2img,
                 "INPAINT" => CanvasRequestType.Inpaint,
                 "OUTPAINT" => CanvasRequestType.Outpaint,
                 "SKETCH2IMG" => CanvasRequestType.Sketch2img,
-                "IMG2IMG" => CanvasRequestType.Img2img,
                 _ => null,
             };
         }

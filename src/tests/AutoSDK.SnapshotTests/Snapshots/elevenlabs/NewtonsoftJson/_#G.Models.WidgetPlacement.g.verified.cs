@@ -13,18 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="top-left")]
-        TopLeft,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="top")]
-        Top,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="top-right")]
-        TopRight,
+        [global::System.Runtime.Serialization.EnumMember(Value="bottom")]
+        Bottom,
         /// <summary>
         /// 
         /// </summary>
@@ -33,13 +23,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="bottom")]
-        Bottom,
+        [global::System.Runtime.Serialization.EnumMember(Value="bottom-right")]
+        BottomRight,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="bottom-right")]
-        BottomRight,
+        [global::System.Runtime.Serialization.EnumMember(Value="top")]
+        Top,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="top-left")]
+        TopLeft,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="top-right")]
+        TopRight,
     }
 
     /// <summary>
@@ -54,12 +54,12 @@ namespace G
         {
             return value switch
             {
-                WidgetPlacement.TopLeft => "top-left",
-                WidgetPlacement.Top => "top",
-                WidgetPlacement.TopRight => "top-right",
-                WidgetPlacement.BottomLeft => "bottom-left",
                 WidgetPlacement.Bottom => "bottom",
+                WidgetPlacement.BottomLeft => "bottom-left",
                 WidgetPlacement.BottomRight => "bottom-right",
+                WidgetPlacement.Top => "top",
+                WidgetPlacement.TopLeft => "top-left",
+                WidgetPlacement.TopRight => "top-right",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,12 +70,12 @@ namespace G
         {
             return value switch
             {
-                "top-left" => WidgetPlacement.TopLeft,
-                "top" => WidgetPlacement.Top,
-                "top-right" => WidgetPlacement.TopRight,
-                "bottom-left" => WidgetPlacement.BottomLeft,
                 "bottom" => WidgetPlacement.Bottom,
+                "bottom-left" => WidgetPlacement.BottomLeft,
                 "bottom-right" => WidgetPlacement.BottomRight,
+                "top" => WidgetPlacement.Top,
+                "top-left" => WidgetPlacement.TopLeft,
+                "top-right" => WidgetPlacement.TopRight,
                 _ => null,
             };
         }

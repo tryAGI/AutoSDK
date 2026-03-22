@@ -13,11 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Enabled,
+        Disabled,
         /// <summary>
         /// 
         /// </summary>
-        Disabled,
+        Enabled,
     }
 
     /// <summary>
@@ -32,8 +32,8 @@ namespace G
         {
             return value switch
             {
-                CodeSecurityCreateConfigurationRequestAdvancedSecurity.Enabled => "enabled",
                 CodeSecurityCreateConfigurationRequestAdvancedSecurity.Disabled => "disabled",
+                CodeSecurityCreateConfigurationRequestAdvancedSecurity.Enabled => "enabled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,8 +44,8 @@ namespace G
         {
             return value switch
             {
-                "enabled" => CodeSecurityCreateConfigurationRequestAdvancedSecurity.Enabled,
                 "disabled" => CodeSecurityCreateConfigurationRequestAdvancedSecurity.Disabled,
+                "enabled" => CodeSecurityCreateConfigurationRequestAdvancedSecurity.Enabled,
                 _ => null,
             };
         }

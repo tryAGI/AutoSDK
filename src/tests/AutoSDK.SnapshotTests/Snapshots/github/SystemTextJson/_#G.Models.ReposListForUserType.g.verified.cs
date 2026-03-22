@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Owner,
+        Member,
         /// <summary>
         /// 
         /// </summary>
-        Member,
+        Owner,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 ReposListForUserType.All => "all",
-                ReposListForUserType.Owner => "owner",
                 ReposListForUserType.Member => "member",
+                ReposListForUserType.Owner => "owner",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "all" => ReposListForUserType.All,
-                "owner" => ReposListForUserType.Owner,
                 "member" => ReposListForUserType.Member,
+                "owner" => ReposListForUserType.Owner,
                 _ => null,
             };
         }

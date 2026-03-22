@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Queued,
+        InProgress,
         /// <summary>
         /// 
         /// </summary>
-        InProgress,
+        Queued,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ChecksCreateRequestVariant2Status.Queued => "queued",
                 ChecksCreateRequestVariant2Status.InProgress => "in_progress",
+                ChecksCreateRequestVariant2Status.Queued => "queued",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "queued" => ChecksCreateRequestVariant2Status.Queued,
                 "in_progress" => ChecksCreateRequestVariant2Status.InProgress,
+                "queued" => ChecksCreateRequestVariant2Status.Queued,
                 _ => null,
             };
         }

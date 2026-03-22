@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="open")]
-        Open,
+        [global::System.Runtime.Serialization.EnumMember(Value="all")]
+        All,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="all")]
-        All,
+        [global::System.Runtime.Serialization.EnumMember(Value="open")]
+        Open,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                IssuesListForAuthenticatedUserState.Open => "open",
-                IssuesListForAuthenticatedUserState.Closed => "closed",
                 IssuesListForAuthenticatedUserState.All => "all",
+                IssuesListForAuthenticatedUserState.Closed => "closed",
+                IssuesListForAuthenticatedUserState.Open => "open",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "open" => IssuesListForAuthenticatedUserState.Open,
-                "closed" => IssuesListForAuthenticatedUserState.Closed,
                 "all" => IssuesListForAuthenticatedUserState.All,
+                "closed" => IssuesListForAuthenticatedUserState.Closed,
+                "open" => IssuesListForAuthenticatedUserState.Open,
                 _ => null,
             };
         }

@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        Organization,
+        User,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 WebhookDeploymentCreatedWorkflowRunTriggeringActorType.Bot => "Bot",
-                WebhookDeploymentCreatedWorkflowRunTriggeringActorType.User => "User",
                 WebhookDeploymentCreatedWorkflowRunTriggeringActorType.Organization => "Organization",
+                WebhookDeploymentCreatedWorkflowRunTriggeringActorType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookDeploymentCreatedWorkflowRunTriggeringActorType.Bot,
-                "User" => WebhookDeploymentCreatedWorkflowRunTriggeringActorType.User,
                 "Organization" => WebhookDeploymentCreatedWorkflowRunTriggeringActorType.Organization,
+                "User" => WebhookDeploymentCreatedWorkflowRunTriggeringActorType.User,
                 _ => null,
             };
         }

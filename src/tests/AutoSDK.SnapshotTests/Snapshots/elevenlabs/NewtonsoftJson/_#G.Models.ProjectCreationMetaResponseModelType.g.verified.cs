@@ -13,23 +13,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="blank")]
-        Blank,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="generate_podcast")]
-        GeneratePodcast,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="auto_assign_voices")]
         AutoAssignVoices,
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="blank")]
+        Blank,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="dub_video")]
         DubVideo,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="generate_podcast")]
+        GeneratePodcast,
         /// <summary>
         /// 
         /// </summary>
@@ -49,10 +49,10 @@ namespace G
         {
             return value switch
             {
-                ProjectCreationMetaResponseModelType.Blank => "blank",
-                ProjectCreationMetaResponseModelType.GeneratePodcast => "generate_podcast",
                 ProjectCreationMetaResponseModelType.AutoAssignVoices => "auto_assign_voices",
+                ProjectCreationMetaResponseModelType.Blank => "blank",
                 ProjectCreationMetaResponseModelType.DubVideo => "dub_video",
+                ProjectCreationMetaResponseModelType.GeneratePodcast => "generate_podcast",
                 ProjectCreationMetaResponseModelType.ImportSpeech => "import_speech",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -64,10 +64,10 @@ namespace G
         {
             return value switch
             {
-                "blank" => ProjectCreationMetaResponseModelType.Blank,
-                "generate_podcast" => ProjectCreationMetaResponseModelType.GeneratePodcast,
                 "auto_assign_voices" => ProjectCreationMetaResponseModelType.AutoAssignVoices,
+                "blank" => ProjectCreationMetaResponseModelType.Blank,
                 "dub_video" => ProjectCreationMetaResponseModelType.DubVideo,
+                "generate_podcast" => ProjectCreationMetaResponseModelType.GeneratePodcast,
                 "import_speech" => ProjectCreationMetaResponseModelType.ImportSpeech,
                 _ => null,
             };

@@ -13,13 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="start")]
-        Start,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="output")]
-        Output,
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
-        Completed,
+        [global::System.Runtime.Serialization.EnumMember(Value="output")]
+        Output,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="start")]
+        Start,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                PredictionRequestWebhookEventsFilterItem.Start => "start",
-                PredictionRequestWebhookEventsFilterItem.Output => "output",
-                PredictionRequestWebhookEventsFilterItem.Logs => "logs",
                 PredictionRequestWebhookEventsFilterItem.Completed => "completed",
+                PredictionRequestWebhookEventsFilterItem.Logs => "logs",
+                PredictionRequestWebhookEventsFilterItem.Output => "output",
+                PredictionRequestWebhookEventsFilterItem.Start => "start",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "start" => PredictionRequestWebhookEventsFilterItem.Start,
-                "output" => PredictionRequestWebhookEventsFilterItem.Output,
-                "logs" => PredictionRequestWebhookEventsFilterItem.Logs,
                 "completed" => PredictionRequestWebhookEventsFilterItem.Completed,
+                "logs" => PredictionRequestWebhookEventsFilterItem.Logs,
+                "output" => PredictionRequestWebhookEventsFilterItem.Output,
+                "start" => PredictionRequestWebhookEventsFilterItem.Start,
                 _ => null,
             };
         }

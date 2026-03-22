@@ -14,11 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        PrTitle,
+        CommitOrPrTitle,
         /// <summary>
         /// 
         /// </summary>
-        CommitOrPrTitle,
+        PrTitle,
     }
 
     /// <summary>
@@ -33,8 +33,8 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestReviewSubmittedPullRequestHeadRepoSquashMergeCommitTitle.PrTitle => "PR_TITLE",
                 WebhookPullRequestReviewSubmittedPullRequestHeadRepoSquashMergeCommitTitle.CommitOrPrTitle => "COMMIT_OR_PR_TITLE",
+                WebhookPullRequestReviewSubmittedPullRequestHeadRepoSquashMergeCommitTitle.PrTitle => "PR_TITLE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -45,8 +45,8 @@ namespace G
         {
             return value switch
             {
-                "PR_TITLE" => WebhookPullRequestReviewSubmittedPullRequestHeadRepoSquashMergeCommitTitle.PrTitle,
                 "COMMIT_OR_PR_TITLE" => WebhookPullRequestReviewSubmittedPullRequestHeadRepoSquashMergeCommitTitle.CommitOrPrTitle,
+                "PR_TITLE" => WebhookPullRequestReviewSubmittedPullRequestHeadRepoSquashMergeCommitTitle.PrTitle,
                 _ => null,
             };
         }

@@ -18,6 +18,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
+        Failed,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="running")]
         Running,
         /// <summary>
@@ -25,11 +30,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="successful")]
         Successful,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
-        Failed,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 EPromptOptimizationJobStatus.Created => "created",
+                EPromptOptimizationJobStatus.Failed => "failed",
                 EPromptOptimizationJobStatus.Running => "running",
                 EPromptOptimizationJobStatus.Successful => "successful",
-                EPromptOptimizationJobStatus.Failed => "failed",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "created" => EPromptOptimizationJobStatus.Created,
+                "failed" => EPromptOptimizationJobStatus.Failed,
                 "running" => EPromptOptimizationJobStatus.Running,
                 "successful" => EPromptOptimizationJobStatus.Successful,
-                "failed" => EPromptOptimizationJobStatus.Failed,
                 _ => null,
             };
         }

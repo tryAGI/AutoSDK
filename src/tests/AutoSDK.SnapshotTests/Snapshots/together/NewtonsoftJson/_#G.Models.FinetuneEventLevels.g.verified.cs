@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
-        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        [global::System.Runtime.Serialization.EnumMember(Value="error")]
+        Error,
         /// <summary>
         /// 
         /// </summary>
@@ -23,13 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="warning")]
-        Warning,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="error")]
-        Error,
+        [global::System.Runtime.Serialization.EnumMember(Value="legacy_ierror")]
+        LegacyIerror,
         /// <summary>
         /// 
         /// </summary>
@@ -43,8 +38,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="legacy_ierror")]
-        LegacyIerror,
+        [global::System.Runtime.Serialization.EnumMember(Value="openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="warning")]
+        Warning,
     }
 
     /// <summary>
@@ -59,13 +59,13 @@ namespace G
         {
             return value switch
             {
-                FinetuneEventLevels.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
-                FinetuneEventLevels.Info => "info",
-                FinetuneEventLevels.Warning => "warning",
                 FinetuneEventLevels.Error => "error",
+                FinetuneEventLevels.Info => "info",
+                FinetuneEventLevels.LegacyIerror => "legacy_ierror",
                 FinetuneEventLevels.LegacyInfo => "legacy_info",
                 FinetuneEventLevels.LegacyIwarning => "legacy_iwarning",
-                FinetuneEventLevels.LegacyIerror => "legacy_ierror",
+                FinetuneEventLevels.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
+                FinetuneEventLevels.Warning => "warning",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -76,13 +76,13 @@ namespace G
         {
             return value switch
             {
-                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => FinetuneEventLevels.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
-                "info" => FinetuneEventLevels.Info,
-                "warning" => FinetuneEventLevels.Warning,
                 "error" => FinetuneEventLevels.Error,
+                "info" => FinetuneEventLevels.Info,
+                "legacy_ierror" => FinetuneEventLevels.LegacyIerror,
                 "legacy_info" => FinetuneEventLevels.LegacyInfo,
                 "legacy_iwarning" => FinetuneEventLevels.LegacyIwarning,
-                "legacy_ierror" => FinetuneEventLevels.LegacyIerror,
+                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => FinetuneEventLevels.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+                "warning" => FinetuneEventLevels.Warning,
                 _ => null,
             };
         }

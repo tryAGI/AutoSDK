@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="owner")]
-        Owner,
+        [global::System.Runtime.Serialization.EnumMember(Value="member")]
+        Member,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="member")]
-        Member,
+        [global::System.Runtime.Serialization.EnumMember(Value="owner")]
+        Owner,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ProjectServiceAccountRole.Owner => "owner",
                 ProjectServiceAccountRole.Member => "member",
+                ProjectServiceAccountRole.Owner => "owner",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "owner" => ProjectServiceAccountRole.Owner,
                 "member" => ProjectServiceAccountRole.Member,
+                "owner" => ProjectServiceAccountRole.Owner,
                 _ => null,
             };
         }

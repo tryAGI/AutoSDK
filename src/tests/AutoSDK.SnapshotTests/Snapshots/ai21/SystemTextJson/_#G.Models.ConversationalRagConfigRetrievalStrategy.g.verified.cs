@@ -12,19 +12,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Default,
-        /// <summary>
-        /// 
-        /// </summary>
-        Segments,
-        /// <summary>
-        /// 
-        /// </summary>
         AddNeighbors,
         /// <summary>
         /// 
         /// </summary>
+        Default,
+        /// <summary>
+        /// 
+        /// </summary>
         FullDoc,
+        /// <summary>
+        /// 
+        /// </summary>
+        Segments,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                ConversationalRagConfigRetrievalStrategy.Default => "default",
-                ConversationalRagConfigRetrievalStrategy.Segments => "segments",
                 ConversationalRagConfigRetrievalStrategy.AddNeighbors => "add_neighbors",
+                ConversationalRagConfigRetrievalStrategy.Default => "default",
                 ConversationalRagConfigRetrievalStrategy.FullDoc => "full_doc",
+                ConversationalRagConfigRetrievalStrategy.Segments => "segments",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "default" => ConversationalRagConfigRetrievalStrategy.Default,
-                "segments" => ConversationalRagConfigRetrievalStrategy.Segments,
                 "add_neighbors" => ConversationalRagConfigRetrievalStrategy.AddNeighbors,
+                "default" => ConversationalRagConfigRetrievalStrategy.Default,
                 "full_doc" => ConversationalRagConfigRetrievalStrategy.FullDoc,
+                "segments" => ConversationalRagConfigRetrievalStrategy.Segments,
                 _ => null,
             };
         }

@@ -18,19 +18,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        GlobalFirstParty,
-        /// <summary>
-        /// 
-        /// </summary>
-        GlobalThirdParty,
-        /// <summary>
-        /// 
-        /// </summary>
         ChannelCustom,
         /// <summary>
         /// 
         /// </summary>
         DisplayOnly,
+        /// <summary>
+        /// 
+        /// </summary>
+        GlobalFirstParty,
+        /// <summary>
+        /// 
+        /// </summary>
+        GlobalThirdParty,
         /// <summary>
         /// 
         /// </summary>
@@ -49,10 +49,10 @@ namespace G
         {
             return value switch
             {
-                CheermoteType.GlobalFirstParty => "global_first_party",
-                CheermoteType.GlobalThirdParty => "global_third_party",
                 CheermoteType.ChannelCustom => "channel_custom",
                 CheermoteType.DisplayOnly => "display_only",
+                CheermoteType.GlobalFirstParty => "global_first_party",
+                CheermoteType.GlobalThirdParty => "global_third_party",
                 CheermoteType.Sponsored => "sponsored",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -64,10 +64,10 @@ namespace G
         {
             return value switch
             {
-                "global_first_party" => CheermoteType.GlobalFirstParty,
-                "global_third_party" => CheermoteType.GlobalThirdParty,
                 "channel_custom" => CheermoteType.ChannelCustom,
                 "display_only" => CheermoteType.DisplayOnly,
+                "global_first_party" => CheermoteType.GlobalFirstParty,
+                "global_third_party" => CheermoteType.GlobalThirdParty,
                 "sponsored" => CheermoteType.Sponsored,
                 _ => null,
             };

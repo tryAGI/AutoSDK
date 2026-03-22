@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Disabled,
+        Allowed,
         /// <summary>
         /// 
         /// </summary>
-        Allowed,
+        Disabled,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                SIPMediaEncryptionEnum.Disabled => "disabled",
                 SIPMediaEncryptionEnum.Allowed => "allowed",
+                SIPMediaEncryptionEnum.Disabled => "disabled",
                 SIPMediaEncryptionEnum.Required => "required",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "disabled" => SIPMediaEncryptionEnum.Disabled,
                 "allowed" => SIPMediaEncryptionEnum.Allowed,
+                "disabled" => SIPMediaEncryptionEnum.Disabled,
                 "required" => SIPMediaEncryptionEnum.Required,
                 _ => null,
             };

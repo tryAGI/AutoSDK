@@ -13,8 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="enabled")]
-        Enabled,
+        [global::System.Runtime.Serialization.EnumMember(Value="copied")]
+        Copied,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="copied_disabled")]
+        CopiedDisabled,
         /// <summary>
         /// 
         /// </summary>
@@ -23,13 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="copied")]
-        Copied,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="copied_disabled")]
-        CopiedDisabled,
+        [global::System.Runtime.Serialization.EnumMember(Value="enabled")]
+        Enabled,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                VoiceSharingResponseModelStatus.Enabled => "enabled",
-                VoiceSharingResponseModelStatus.Disabled => "disabled",
                 VoiceSharingResponseModelStatus.Copied => "copied",
                 VoiceSharingResponseModelStatus.CopiedDisabled => "copied_disabled",
+                VoiceSharingResponseModelStatus.Disabled => "disabled",
+                VoiceSharingResponseModelStatus.Enabled => "enabled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "enabled" => VoiceSharingResponseModelStatus.Enabled,
-                "disabled" => VoiceSharingResponseModelStatus.Disabled,
                 "copied" => VoiceSharingResponseModelStatus.Copied,
                 "copied_disabled" => VoiceSharingResponseModelStatus.CopiedDisabled,
+                "disabled" => VoiceSharingResponseModelStatus.Disabled,
+                "enabled" => VoiceSharingResponseModelStatus.Enabled,
                 _ => null,
             };
         }

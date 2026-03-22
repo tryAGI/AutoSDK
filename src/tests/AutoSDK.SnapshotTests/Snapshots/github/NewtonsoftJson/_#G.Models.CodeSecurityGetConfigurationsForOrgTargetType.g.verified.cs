@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="global")]
-        Global,
+        [global::System.Runtime.Serialization.EnumMember(Value="all")]
+        All,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="all")]
-        All,
+        [global::System.Runtime.Serialization.EnumMember(Value="global")]
+        Global,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                CodeSecurityGetConfigurationsForOrgTargetType.Global => "global",
                 CodeSecurityGetConfigurationsForOrgTargetType.All => "all",
+                CodeSecurityGetConfigurationsForOrgTargetType.Global => "global",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "global" => CodeSecurityGetConfigurationsForOrgTargetType.Global,
                 "all" => CodeSecurityGetConfigurationsForOrgTargetType.All,
+                "global" => CodeSecurityGetConfigurationsForOrgTargetType.Global,
                 _ => null,
             };
         }

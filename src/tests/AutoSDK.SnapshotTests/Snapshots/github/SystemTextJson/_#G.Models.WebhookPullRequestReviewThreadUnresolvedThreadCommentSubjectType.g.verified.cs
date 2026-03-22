@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Line,
+        File,
         /// <summary>
         /// 
         /// </summary>
-        File,
+        Line,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestReviewThreadUnresolvedThreadCommentSubjectType.Line => "line",
                 WebhookPullRequestReviewThreadUnresolvedThreadCommentSubjectType.File => "file",
+                WebhookPullRequestReviewThreadUnresolvedThreadCommentSubjectType.Line => "line",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "line" => WebhookPullRequestReviewThreadUnresolvedThreadCommentSubjectType.Line,
                 "file" => WebhookPullRequestReviewThreadUnresolvedThreadCommentSubjectType.File,
+                "line" => WebhookPullRequestReviewThreadUnresolvedThreadCommentSubjectType.Line,
                 _ => null,
             };
         }

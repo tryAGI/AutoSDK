@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Pending,
-        /// <summary>
-        /// 
-        /// </summary>
         Complete,
         /// <summary>
         /// 
         /// </summary>
         Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        Pending,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                JobStatus.Pending => "PENDING",
                 JobStatus.Complete => "COMPLETE",
                 JobStatus.Failed => "FAILED",
+                JobStatus.Pending => "PENDING",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "PENDING" => JobStatus.Pending,
                 "COMPLETE" => JobStatus.Complete,
                 "FAILED" => JobStatus.Failed,
+                "PENDING" => JobStatus.Pending,
                 _ => null,
             };
         }

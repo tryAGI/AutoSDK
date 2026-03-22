@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        NotificationsEnabled,
+        NotificationsDisabled,
         /// <summary>
         /// 
         /// </summary>
-        NotificationsDisabled,
+        NotificationsEnabled,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                WebhooksTeamNotificationSetting.NotificationsEnabled => "notifications_enabled",
                 WebhooksTeamNotificationSetting.NotificationsDisabled => "notifications_disabled",
+                WebhooksTeamNotificationSetting.NotificationsEnabled => "notifications_enabled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "notifications_enabled" => WebhooksTeamNotificationSetting.NotificationsEnabled,
                 "notifications_disabled" => WebhooksTeamNotificationSetting.NotificationsDisabled,
+                "notifications_enabled" => WebhooksTeamNotificationSetting.NotificationsEnabled,
                 _ => null,
             };
         }

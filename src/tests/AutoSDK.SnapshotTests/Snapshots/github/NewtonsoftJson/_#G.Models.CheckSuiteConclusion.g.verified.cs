@@ -13,8 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="success")]
-        Success,
+        [global::System.Runtime.Serialization.EnumMember(Value="action_required")]
+        ActionRequired,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +33,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
-        Cancelled,
+        [global::System.Runtime.Serialization.EnumMember(Value="openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
         /// <summary>
         /// 
         /// </summary>
@@ -38,13 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="timed_out")]
-        TimedOut,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="action_required")]
-        ActionRequired,
+        [global::System.Runtime.Serialization.EnumMember(Value="stale")]
+        Stale,
         /// <summary>
         /// 
         /// </summary>
@@ -53,13 +53,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="stale")]
-        Stale,
+        [global::System.Runtime.Serialization.EnumMember(Value="success")]
+        Success,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
-        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        [global::System.Runtime.Serialization.EnumMember(Value="timed_out")]
+        TimedOut,
     }
 
     /// <summary>
@@ -74,16 +74,16 @@ namespace G
         {
             return value switch
             {
-                CheckSuiteConclusion.Success => "success",
+                CheckSuiteConclusion.ActionRequired => "action_required",
+                CheckSuiteConclusion.Cancelled => "cancelled",
                 CheckSuiteConclusion.Failure => "failure",
                 CheckSuiteConclusion.Neutral => "neutral",
-                CheckSuiteConclusion.Cancelled => "cancelled",
-                CheckSuiteConclusion.Skipped => "skipped",
-                CheckSuiteConclusion.TimedOut => "timed_out",
-                CheckSuiteConclusion.ActionRequired => "action_required",
-                CheckSuiteConclusion.StartupFailure => "startup_failure",
-                CheckSuiteConclusion.Stale => "stale",
                 CheckSuiteConclusion.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
+                CheckSuiteConclusion.Skipped => "skipped",
+                CheckSuiteConclusion.Stale => "stale",
+                CheckSuiteConclusion.StartupFailure => "startup_failure",
+                CheckSuiteConclusion.Success => "success",
+                CheckSuiteConclusion.TimedOut => "timed_out",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -94,16 +94,16 @@ namespace G
         {
             return value switch
             {
-                "success" => CheckSuiteConclusion.Success,
+                "action_required" => CheckSuiteConclusion.ActionRequired,
+                "cancelled" => CheckSuiteConclusion.Cancelled,
                 "failure" => CheckSuiteConclusion.Failure,
                 "neutral" => CheckSuiteConclusion.Neutral,
-                "cancelled" => CheckSuiteConclusion.Cancelled,
-                "skipped" => CheckSuiteConclusion.Skipped,
-                "timed_out" => CheckSuiteConclusion.TimedOut,
-                "action_required" => CheckSuiteConclusion.ActionRequired,
-                "startup_failure" => CheckSuiteConclusion.StartupFailure,
-                "stale" => CheckSuiteConclusion.Stale,
                 "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => CheckSuiteConclusion.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+                "skipped" => CheckSuiteConclusion.Skipped,
+                "stale" => CheckSuiteConclusion.Stale,
+                "startup_failure" => CheckSuiteConclusion.StartupFailure,
+                "success" => CheckSuiteConclusion.Success,
+                "timed_out" => CheckSuiteConclusion.TimedOut,
                 _ => null,
             };
         }

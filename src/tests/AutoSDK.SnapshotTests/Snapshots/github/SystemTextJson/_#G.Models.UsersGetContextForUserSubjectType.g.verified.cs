@@ -12,19 +12,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Organization,
-        /// <summary>
-        /// 
-        /// </summary>
-        Repository,
-        /// <summary>
-        /// 
-        /// </summary>
         Issue,
         /// <summary>
         /// 
         /// </summary>
+        Organization,
+        /// <summary>
+        /// 
+        /// </summary>
         PullRequest,
+        /// <summary>
+        /// 
+        /// </summary>
+        Repository,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                UsersGetContextForUserSubjectType.Organization => "organization",
-                UsersGetContextForUserSubjectType.Repository => "repository",
                 UsersGetContextForUserSubjectType.Issue => "issue",
+                UsersGetContextForUserSubjectType.Organization => "organization",
                 UsersGetContextForUserSubjectType.PullRequest => "pull_request",
+                UsersGetContextForUserSubjectType.Repository => "repository",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "organization" => UsersGetContextForUserSubjectType.Organization,
-                "repository" => UsersGetContextForUserSubjectType.Repository,
                 "issue" => UsersGetContextForUserSubjectType.Issue,
+                "organization" => UsersGetContextForUserSubjectType.Organization,
                 "pull_request" => UsersGetContextForUserSubjectType.PullRequest,
+                "repository" => UsersGetContextForUserSubjectType.Repository,
                 _ => null,
             };
         }

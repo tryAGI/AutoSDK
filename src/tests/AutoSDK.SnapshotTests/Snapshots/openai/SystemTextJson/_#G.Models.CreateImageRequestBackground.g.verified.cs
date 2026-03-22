@@ -19,7 +19,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Transparent,
+        Auto,
         /// <summary>
         /// 
         /// </summary>
@@ -27,7 +27,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Auto,
+        Transparent,
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ namespace G
         {
             return value switch
             {
-                CreateImageRequestBackground.Transparent => "transparent",
-                CreateImageRequestBackground.Opaque => "opaque",
                 CreateImageRequestBackground.Auto => "auto",
+                CreateImageRequestBackground.Opaque => "opaque",
+                CreateImageRequestBackground.Transparent => "transparent",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,9 +55,9 @@ namespace G
         {
             return value switch
             {
-                "transparent" => CreateImageRequestBackground.Transparent,
-                "opaque" => CreateImageRequestBackground.Opaque,
                 "auto" => CreateImageRequestBackground.Auto,
+                "opaque" => CreateImageRequestBackground.Opaque,
+                "transparent" => CreateImageRequestBackground.Transparent,
                 _ => null,
             };
         }

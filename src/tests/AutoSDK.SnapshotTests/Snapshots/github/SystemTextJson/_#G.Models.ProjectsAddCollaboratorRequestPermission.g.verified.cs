@@ -14,15 +14,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Admin,
+        /// <summary>
+        /// 
+        /// </summary>
         Read,
         /// <summary>
         /// 
         /// </summary>
         Write,
-        /// <summary>
-        /// 
-        /// </summary>
-        Admin,
     }
 
     /// <summary>
@@ -37,9 +37,9 @@ namespace G
         {
             return value switch
             {
+                ProjectsAddCollaboratorRequestPermission.Admin => "admin",
                 ProjectsAddCollaboratorRequestPermission.Read => "read",
                 ProjectsAddCollaboratorRequestPermission.Write => "write",
-                ProjectsAddCollaboratorRequestPermission.Admin => "admin",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,9 +50,9 @@ namespace G
         {
             return value switch
             {
+                "admin" => ProjectsAddCollaboratorRequestPermission.Admin,
                 "read" => ProjectsAddCollaboratorRequestPermission.Read,
                 "write" => ProjectsAddCollaboratorRequestPermission.Write,
-                "admin" => ProjectsAddCollaboratorRequestPermission.Admin,
                 _ => null,
             };
         }

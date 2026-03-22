@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Inactive,
-        /// <summary>
-        /// 
-        /// </summary>
-        OnTrack,
-        /// <summary>
-        /// 
-        /// </summary>
         AtRisk,
+        /// <summary>
+        /// 
+        /// </summary>
+        Complete,
+        /// <summary>
+        /// 
+        /// </summary>
+        Inactive,
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +28,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Complete,
+        OnTrack,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                WebhookProjectsV2StatusUpdateEditedChangesStatusFrom.Inactive => "INACTIVE",
-                WebhookProjectsV2StatusUpdateEditedChangesStatusFrom.OnTrack => "ON_TRACK",
                 WebhookProjectsV2StatusUpdateEditedChangesStatusFrom.AtRisk => "AT_RISK",
-                WebhookProjectsV2StatusUpdateEditedChangesStatusFrom.OffTrack => "OFF_TRACK",
                 WebhookProjectsV2StatusUpdateEditedChangesStatusFrom.Complete => "COMPLETE",
+                WebhookProjectsV2StatusUpdateEditedChangesStatusFrom.Inactive => "INACTIVE",
+                WebhookProjectsV2StatusUpdateEditedChangesStatusFrom.OffTrack => "OFF_TRACK",
+                WebhookProjectsV2StatusUpdateEditedChangesStatusFrom.OnTrack => "ON_TRACK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "INACTIVE" => WebhookProjectsV2StatusUpdateEditedChangesStatusFrom.Inactive,
-                "ON_TRACK" => WebhookProjectsV2StatusUpdateEditedChangesStatusFrom.OnTrack,
                 "AT_RISK" => WebhookProjectsV2StatusUpdateEditedChangesStatusFrom.AtRisk,
-                "OFF_TRACK" => WebhookProjectsV2StatusUpdateEditedChangesStatusFrom.OffTrack,
                 "COMPLETE" => WebhookProjectsV2StatusUpdateEditedChangesStatusFrom.Complete,
+                "INACTIVE" => WebhookProjectsV2StatusUpdateEditedChangesStatusFrom.Inactive,
+                "OFF_TRACK" => WebhookProjectsV2StatusUpdateEditedChangesStatusFrom.OffTrack,
+                "ON_TRACK" => WebhookProjectsV2StatusUpdateEditedChangesStatusFrom.OnTrack,
                 _ => null,
             };
         }

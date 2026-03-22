@@ -13,23 +13,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="string")]
-        String,
+        [global::System.Runtime.Serialization.EnumMember(Value="<cross_reference>")]
+        x_crossReference_,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="string[]")]
-        StringArray,
+        [global::System.Runtime.Serialization.EnumMember(Value="blob")]
+        Blob,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="object")]
-        Object,
+        [global::System.Runtime.Serialization.EnumMember(Value="date")]
+        Date,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="object[]")]
-        ObjectArray,
+        [global::System.Runtime.Serialization.EnumMember(Value="date[]")]
+        DateArray,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="geoCoordinates")]
+        GeoCoordinates,
         /// <summary>
         /// 
         /// </summary>
@@ -53,13 +58,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="date")]
-        Date,
+        [global::System.Runtime.Serialization.EnumMember(Value="object")]
+        Object,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="date[]")]
-        DateArray,
+        [global::System.Runtime.Serialization.EnumMember(Value="object[]")]
+        ObjectArray,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="phoneNumber")]
+        PhoneNumber,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="string")]
+        String,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="string[]")]
+        StringArray,
         /// <summary>
         /// 
         /// </summary>
@@ -70,26 +90,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="uuid[]")]
         UuidArray,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="geoCoordinates")]
-        GeoCoordinates,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="phoneNumber")]
-        PhoneNumber,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="blob")]
-        Blob,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="<cross_reference>")]
-        x_crossReference_,
     }
 
     /// <summary>
@@ -104,22 +104,22 @@ namespace G
         {
             return value switch
             {
-                DataTypeItem.String => "string",
-                DataTypeItem.StringArray => "string[]",
-                DataTypeItem.Object => "object",
-                DataTypeItem.ObjectArray => "object[]",
+                DataTypeItem.x_crossReference_ => "<cross_reference>",
+                DataTypeItem.Blob => "blob",
+                DataTypeItem.Date => "date",
+                DataTypeItem.DateArray => "date[]",
+                DataTypeItem.GeoCoordinates => "geoCoordinates",
                 DataTypeItem.Int => "int",
                 DataTypeItem.IntArray => "int[]",
                 DataTypeItem.Number => "number",
                 DataTypeItem.NumberArray => "number[]",
-                DataTypeItem.Date => "date",
-                DataTypeItem.DateArray => "date[]",
+                DataTypeItem.Object => "object",
+                DataTypeItem.ObjectArray => "object[]",
+                DataTypeItem.PhoneNumber => "phoneNumber",
+                DataTypeItem.String => "string",
+                DataTypeItem.StringArray => "string[]",
                 DataTypeItem.Uuid => "uuid",
                 DataTypeItem.UuidArray => "uuid[]",
-                DataTypeItem.GeoCoordinates => "geoCoordinates",
-                DataTypeItem.PhoneNumber => "phoneNumber",
-                DataTypeItem.Blob => "blob",
-                DataTypeItem.x_crossReference_ => "<cross_reference>",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -130,22 +130,22 @@ namespace G
         {
             return value switch
             {
-                "string" => DataTypeItem.String,
-                "string[]" => DataTypeItem.StringArray,
-                "object" => DataTypeItem.Object,
-                "object[]" => DataTypeItem.ObjectArray,
+                "<cross_reference>" => DataTypeItem.x_crossReference_,
+                "blob" => DataTypeItem.Blob,
+                "date" => DataTypeItem.Date,
+                "date[]" => DataTypeItem.DateArray,
+                "geoCoordinates" => DataTypeItem.GeoCoordinates,
                 "int" => DataTypeItem.Int,
                 "int[]" => DataTypeItem.IntArray,
                 "number" => DataTypeItem.Number,
                 "number[]" => DataTypeItem.NumberArray,
-                "date" => DataTypeItem.Date,
-                "date[]" => DataTypeItem.DateArray,
+                "object" => DataTypeItem.Object,
+                "object[]" => DataTypeItem.ObjectArray,
+                "phoneNumber" => DataTypeItem.PhoneNumber,
+                "string" => DataTypeItem.String,
+                "string[]" => DataTypeItem.StringArray,
                 "uuid" => DataTypeItem.Uuid,
                 "uuid[]" => DataTypeItem.UuidArray,
-                "geoCoordinates" => DataTypeItem.GeoCoordinates,
-                "phoneNumber" => DataTypeItem.PhoneNumber,
-                "blob" => DataTypeItem.Blob,
-                "<cross_reference>" => DataTypeItem.x_crossReference_,
                 _ => null,
             };
         }

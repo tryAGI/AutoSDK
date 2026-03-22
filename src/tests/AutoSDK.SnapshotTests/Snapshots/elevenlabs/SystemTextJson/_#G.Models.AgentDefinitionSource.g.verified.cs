@@ -12,19 +12,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Cli,
-        /// <summary>
-        /// 
-        /// </summary>
-        Ui,
-        /// <summary>
-        /// 
-        /// </summary>
         Api,
         /// <summary>
         /// 
         /// </summary>
+        Cli,
+        /// <summary>
+        /// 
+        /// </summary>
         Template,
+        /// <summary>
+        /// 
+        /// </summary>
+        Ui,
         /// <summary>
         /// 
         /// </summary>
@@ -43,10 +43,10 @@ namespace G
         {
             return value switch
             {
-                AgentDefinitionSource.Cli => "cli",
-                AgentDefinitionSource.Ui => "ui",
                 AgentDefinitionSource.Api => "api",
+                AgentDefinitionSource.Cli => "cli",
                 AgentDefinitionSource.Template => "template",
+                AgentDefinitionSource.Ui => "ui",
                 AgentDefinitionSource.Unknown => "unknown",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "cli" => AgentDefinitionSource.Cli,
-                "ui" => AgentDefinitionSource.Ui,
                 "api" => AgentDefinitionSource.Api,
+                "cli" => AgentDefinitionSource.Cli,
                 "template" => AgentDefinitionSource.Template,
+                "ui" => AgentDefinitionSource.Ui,
                 "unknown" => AgentDefinitionSource.Unknown,
                 _ => null,
             };

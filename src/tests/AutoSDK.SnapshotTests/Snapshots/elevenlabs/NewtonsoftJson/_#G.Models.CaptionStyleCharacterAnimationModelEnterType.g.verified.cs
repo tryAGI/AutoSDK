@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="none")]
-        None,
+        [global::System.Runtime.Serialization.EnumMember(Value="fade")]
+        Fade,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="fade")]
-        Fade,
+        [global::System.Runtime.Serialization.EnumMember(Value="none")]
+        None,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                CaptionStyleCharacterAnimationModelEnterType.None => "none",
                 CaptionStyleCharacterAnimationModelEnterType.Fade => "fade",
+                CaptionStyleCharacterAnimationModelEnterType.None => "none",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "none" => CaptionStyleCharacterAnimationModelEnterType.None,
                 "fade" => CaptionStyleCharacterAnimationModelEnterType.Fade,
+                "none" => CaptionStyleCharacterAnimationModelEnterType.None,
                 _ => null,
             };
         }

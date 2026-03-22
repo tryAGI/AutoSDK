@@ -13,23 +13,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="organization")]
-        Organization,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="repository")]
-        Repository,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="issue")]
         Issue,
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="organization")]
+        Organization,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="pull_request")]
         PullRequest,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="repository")]
+        Repository,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                UsersGetContextForUserSubjectType.Organization => "organization",
-                UsersGetContextForUserSubjectType.Repository => "repository",
                 UsersGetContextForUserSubjectType.Issue => "issue",
+                UsersGetContextForUserSubjectType.Organization => "organization",
                 UsersGetContextForUserSubjectType.PullRequest => "pull_request",
+                UsersGetContextForUserSubjectType.Repository => "repository",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "organization" => UsersGetContextForUserSubjectType.Organization,
-                "repository" => UsersGetContextForUserSubjectType.Repository,
                 "issue" => UsersGetContextForUserSubjectType.Issue,
+                "organization" => UsersGetContextForUserSubjectType.Organization,
                 "pull_request" => UsersGetContextForUserSubjectType.PullRequest,
+                "repository" => UsersGetContextForUserSubjectType.Repository,
                 _ => null,
             };
         }

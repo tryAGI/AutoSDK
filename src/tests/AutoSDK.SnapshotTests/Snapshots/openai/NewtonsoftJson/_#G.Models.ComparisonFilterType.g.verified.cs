@@ -25,11 +25,6 @@ namespace G
         /// <summary>
         /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`.
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="ne")]
-        Ne,
-        /// <summary>
-        /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`.
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="gt")]
         Gt,
         /// <summary>
@@ -47,6 +42,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="lte")]
         Lte,
+        /// <summary>
+        /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`.
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="ne")]
+        Ne,
     }
 
     /// <summary>
@@ -62,11 +62,11 @@ namespace G
             return value switch
             {
                 ComparisonFilterType.Eq => "eq",
-                ComparisonFilterType.Ne => "ne",
                 ComparisonFilterType.Gt => "gt",
                 ComparisonFilterType.Gte => "gte",
                 ComparisonFilterType.Lt => "lt",
                 ComparisonFilterType.Lte => "lte",
+                ComparisonFilterType.Ne => "ne",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -78,11 +78,11 @@ namespace G
             return value switch
             {
                 "eq" => ComparisonFilterType.Eq,
-                "ne" => ComparisonFilterType.Ne,
                 "gt" => ComparisonFilterType.Gt,
                 "gte" => ComparisonFilterType.Gte,
                 "lt" => ComparisonFilterType.Lt,
                 "lte" => ComparisonFilterType.Lte,
+                "ne" => ComparisonFilterType.Ne,
                 _ => null,
             };
         }

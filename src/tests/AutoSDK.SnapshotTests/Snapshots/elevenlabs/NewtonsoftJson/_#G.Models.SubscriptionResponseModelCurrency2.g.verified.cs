@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="usd")]
-        Usd,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="eur")]
         Eur,
         /// <summary>
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="inr")]
         Inr,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="usd")]
+        Usd,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                SubscriptionResponseModelCurrency2.Usd => "usd",
                 SubscriptionResponseModelCurrency2.Eur => "eur",
                 SubscriptionResponseModelCurrency2.Inr => "inr",
+                SubscriptionResponseModelCurrency2.Usd => "usd",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "usd" => SubscriptionResponseModelCurrency2.Usd,
                 "eur" => SubscriptionResponseModelCurrency2.Eur,
                 "inr" => SubscriptionResponseModelCurrency2.Inr,
+                "usd" => SubscriptionResponseModelCurrency2.Usd,
                 _ => null,
             };
         }

@@ -12,11 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Waiting,
-        /// <summary>
-        /// 
-        /// </summary>
-        InProgress,
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        InProgress,
+        /// <summary>
+        /// 
+        /// </summary>
+        Waiting,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                BulkEmbeddingJobStatus.Waiting => "waiting",
-                BulkEmbeddingJobStatus.InProgress => "in-progress",
-                BulkEmbeddingJobStatus.Failed => "failed",
                 BulkEmbeddingJobStatus.Completed => "completed",
+                BulkEmbeddingJobStatus.Failed => "failed",
+                BulkEmbeddingJobStatus.InProgress => "in-progress",
+                BulkEmbeddingJobStatus.Waiting => "waiting",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "waiting" => BulkEmbeddingJobStatus.Waiting,
-                "in-progress" => BulkEmbeddingJobStatus.InProgress,
-                "failed" => BulkEmbeddingJobStatus.Failed,
                 "completed" => BulkEmbeddingJobStatus.Completed,
+                "failed" => BulkEmbeddingJobStatus.Failed,
+                "in-progress" => BulkEmbeddingJobStatus.InProgress,
+                "waiting" => BulkEmbeddingJobStatus.Waiting,
                 _ => null,
             };
         }

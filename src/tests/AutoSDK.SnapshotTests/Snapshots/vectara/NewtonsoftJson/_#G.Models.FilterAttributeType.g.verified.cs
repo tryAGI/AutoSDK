@@ -14,23 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="integer")]
-        Integer,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="real_number")]
-        RealNumber,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text")]
-        Text,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="boolean")]
         Boolean,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="integer")]
+        Integer,
         /// <summary>
         /// 
         /// </summary>
@@ -46,6 +36,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="list[text]")]
         Listtext,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="real_number")]
+        RealNumber,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="text")]
+        Text,
     }
 
     /// <summary>
@@ -60,13 +60,13 @@ namespace G
         {
             return value switch
             {
-                FilterAttributeType.Integer => "integer",
-                FilterAttributeType.RealNumber => "real_number",
-                FilterAttributeType.Text => "text",
                 FilterAttributeType.Boolean => "boolean",
+                FilterAttributeType.Integer => "integer",
                 FilterAttributeType.Listinteger => "list[integer]",
                 FilterAttributeType.ListrealNumber => "list[real_number]",
                 FilterAttributeType.Listtext => "list[text]",
+                FilterAttributeType.RealNumber => "real_number",
+                FilterAttributeType.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -77,13 +77,13 @@ namespace G
         {
             return value switch
             {
-                "integer" => FilterAttributeType.Integer,
-                "real_number" => FilterAttributeType.RealNumber,
-                "text" => FilterAttributeType.Text,
                 "boolean" => FilterAttributeType.Boolean,
+                "integer" => FilterAttributeType.Integer,
                 "list[integer]" => FilterAttributeType.Listinteger,
                 "list[real_number]" => FilterAttributeType.ListrealNumber,
                 "list[text]" => FilterAttributeType.Listtext,
+                "real_number" => FilterAttributeType.RealNumber,
+                "text" => FilterAttributeType.Text,
                 _ => null,
             };
         }

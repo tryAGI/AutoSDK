@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        System,
+        ApiIntegrationMcp,
         /// <summary>
         /// 
         /// </summary>
-        Webhook,
+        ApiIntegrationWebhook,
         /// <summary>
         /// 
         /// </summary>
@@ -28,19 +28,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Workflow,
-        /// <summary>
-        /// 
-        /// </summary>
-        ApiIntegrationWebhook,
-        /// <summary>
-        /// 
-        /// </summary>
-        ApiIntegrationMcp,
-        /// <summary>
-        /// 
-        /// </summary>
         Smb,
+        /// <summary>
+        /// 
+        /// </summary>
+        System,
+        /// <summary>
+        /// 
+        /// </summary>
+        Webhook,
+        /// <summary>
+        /// 
+        /// </summary>
+        Workflow,
     }
 
     /// <summary>
@@ -55,14 +55,14 @@ namespace G
         {
             return value switch
             {
-                ToolType.System => "system",
-                ToolType.Webhook => "webhook",
+                ToolType.ApiIntegrationMcp => "api_integration_mcp",
+                ToolType.ApiIntegrationWebhook => "api_integration_webhook",
                 ToolType.Client => "client",
                 ToolType.Mcp => "mcp",
-                ToolType.Workflow => "workflow",
-                ToolType.ApiIntegrationWebhook => "api_integration_webhook",
-                ToolType.ApiIntegrationMcp => "api_integration_mcp",
                 ToolType.Smb => "smb",
+                ToolType.System => "system",
+                ToolType.Webhook => "webhook",
+                ToolType.Workflow => "workflow",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -73,14 +73,14 @@ namespace G
         {
             return value switch
             {
-                "system" => ToolType.System,
-                "webhook" => ToolType.Webhook,
+                "api_integration_mcp" => ToolType.ApiIntegrationMcp,
+                "api_integration_webhook" => ToolType.ApiIntegrationWebhook,
                 "client" => ToolType.Client,
                 "mcp" => ToolType.Mcp,
-                "workflow" => ToolType.Workflow,
-                "api_integration_webhook" => ToolType.ApiIntegrationWebhook,
-                "api_integration_mcp" => ToolType.ApiIntegrationMcp,
                 "smb" => ToolType.Smb,
+                "system" => ToolType.System,
+                "webhook" => ToolType.Webhook,
+                "workflow" => ToolType.Workflow,
                 _ => null,
             };
         }

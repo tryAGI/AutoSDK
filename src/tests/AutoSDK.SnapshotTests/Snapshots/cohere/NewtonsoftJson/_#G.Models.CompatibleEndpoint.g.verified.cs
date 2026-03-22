@@ -18,23 +18,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="embed")]
-        Embed,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="classify")]
         Classify,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="summarize")]
-        Summarize,
+        [global::System.Runtime.Serialization.EnumMember(Value="embed")]
+        Embed,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="rerank")]
-        Rerank,
+        [global::System.Runtime.Serialization.EnumMember(Value="generate")]
+        Generate,
         /// <summary>
         /// 
         /// </summary>
@@ -43,8 +38,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="generate")]
-        Generate,
+        [global::System.Runtime.Serialization.EnumMember(Value="rerank")]
+        Rerank,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="summarize")]
+        Summarize,
     }
 
     /// <summary>
@@ -60,12 +60,12 @@ namespace G
             return value switch
             {
                 CompatibleEndpoint.Chat => "chat",
-                CompatibleEndpoint.Embed => "embed",
                 CompatibleEndpoint.Classify => "classify",
-                CompatibleEndpoint.Summarize => "summarize",
-                CompatibleEndpoint.Rerank => "rerank",
-                CompatibleEndpoint.Rate => "rate",
+                CompatibleEndpoint.Embed => "embed",
                 CompatibleEndpoint.Generate => "generate",
+                CompatibleEndpoint.Rate => "rate",
+                CompatibleEndpoint.Rerank => "rerank",
+                CompatibleEndpoint.Summarize => "summarize",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -77,12 +77,12 @@ namespace G
             return value switch
             {
                 "chat" => CompatibleEndpoint.Chat,
-                "embed" => CompatibleEndpoint.Embed,
                 "classify" => CompatibleEndpoint.Classify,
-                "summarize" => CompatibleEndpoint.Summarize,
-                "rerank" => CompatibleEndpoint.Rerank,
-                "rate" => CompatibleEndpoint.Rate,
+                "embed" => CompatibleEndpoint.Embed,
                 "generate" => CompatibleEndpoint.Generate,
+                "rate" => CompatibleEndpoint.Rate,
+                "rerank" => CompatibleEndpoint.Rerank,
+                "summarize" => CompatibleEndpoint.Summarize,
                 _ => null,
             };
         }

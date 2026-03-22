@@ -12,10 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        HarmBlockThresholdUnspecified,
-        /// <summary>
-        /// 
-        /// </summary>
         BlockLowAndAbove,
         /// <summary>
         /// 
@@ -24,11 +20,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        BlockNone,
+        /// <summary>
+        /// 
+        /// </summary>
         BlockOnlyHigh,
         /// <summary>
         /// 
         /// </summary>
-        BlockNone,
+        HarmBlockThresholdUnspecified,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                SafetySettingThreshold.HarmBlockThresholdUnspecified => "HARM_BLOCK_THRESHOLD_UNSPECIFIED",
                 SafetySettingThreshold.BlockLowAndAbove => "BLOCK_LOW_AND_ABOVE",
                 SafetySettingThreshold.BlockMediumAndAbove => "BLOCK_MEDIUM_AND_ABOVE",
-                SafetySettingThreshold.BlockOnlyHigh => "BLOCK_ONLY_HIGH",
                 SafetySettingThreshold.BlockNone => "BLOCK_NONE",
+                SafetySettingThreshold.BlockOnlyHigh => "BLOCK_ONLY_HIGH",
+                SafetySettingThreshold.HarmBlockThresholdUnspecified => "HARM_BLOCK_THRESHOLD_UNSPECIFIED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "HARM_BLOCK_THRESHOLD_UNSPECIFIED" => SafetySettingThreshold.HarmBlockThresholdUnspecified,
                 "BLOCK_LOW_AND_ABOVE" => SafetySettingThreshold.BlockLowAndAbove,
                 "BLOCK_MEDIUM_AND_ABOVE" => SafetySettingThreshold.BlockMediumAndAbove,
-                "BLOCK_ONLY_HIGH" => SafetySettingThreshold.BlockOnlyHigh,
                 "BLOCK_NONE" => SafetySettingThreshold.BlockNone,
+                "BLOCK_ONLY_HIGH" => SafetySettingThreshold.BlockOnlyHigh,
+                "HARM_BLOCK_THRESHOLD_UNSPECIFIED" => SafetySettingThreshold.HarmBlockThresholdUnspecified,
                 _ => null,
             };
         }

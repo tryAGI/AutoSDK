@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="auto")]
-        Auto,
+        [global::System.Runtime.Serialization.EnumMember(Value="apply_english")]
+        ApplyEnglish,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="on")]
-        On,
+        [global::System.Runtime.Serialization.EnumMember(Value="auto")]
+        Auto,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="apply_english")]
-        ApplyEnglish,
+        [global::System.Runtime.Serialization.EnumMember(Value="on")]
+        On,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization2.Auto => "auto",
-                BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization2.On => "on",
-                BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization2.Off => "off",
                 BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization2.ApplyEnglish => "apply_english",
+                BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization2.Auto => "auto",
+                BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization2.Off => "off",
+                BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization2.On => "on",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "auto" => BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization2.Auto,
-                "on" => BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization2.On,
-                "off" => BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization2.Off,
                 "apply_english" => BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization2.ApplyEnglish,
+                "auto" => BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization2.Auto,
+                "off" => BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization2.Off,
+                "on" => BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization2.On,
                 _ => null,
             };
         }

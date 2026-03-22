@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="max_output_tokens")]
-        MaxOutputTokens,
+        [global::System.Runtime.Serialization.EnumMember(Value="content_filter")]
+        ContentFilter,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="content_filter")]
-        ContentFilter,
+        [global::System.Runtime.Serialization.EnumMember(Value="max_output_tokens")]
+        MaxOutputTokens,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ResponseVariant3IncompleteDetailsReason.MaxOutputTokens => "max_output_tokens",
                 ResponseVariant3IncompleteDetailsReason.ContentFilter => "content_filter",
+                ResponseVariant3IncompleteDetailsReason.MaxOutputTokens => "max_output_tokens",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "max_output_tokens" => ResponseVariant3IncompleteDetailsReason.MaxOutputTokens,
                 "content_filter" => ResponseVariant3IncompleteDetailsReason.ContentFilter,
+                "max_output_tokens" => ResponseVariant3IncompleteDetailsReason.MaxOutputTokens,
                 _ => null,
             };
         }

@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Resolved,
-        /// <summary>
-        /// 
-        /// </summary>
         OffTopic,
         /// <summary>
         /// 
         /// </summary>
-        TooHeated,
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        /// <summary>
+        /// 
+        /// </summary>
+        Resolved,
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +28,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        TooHeated,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                WebhooksIssue2ActiveLockReason.Resolved => "resolved",
                 WebhooksIssue2ActiveLockReason.OffTopic => "off-topic",
-                WebhooksIssue2ActiveLockReason.TooHeated => "too heated",
-                WebhooksIssue2ActiveLockReason.Spam => "spam",
                 WebhooksIssue2ActiveLockReason.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
+                WebhooksIssue2ActiveLockReason.Resolved => "resolved",
+                WebhooksIssue2ActiveLockReason.Spam => "spam",
+                WebhooksIssue2ActiveLockReason.TooHeated => "too heated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "resolved" => WebhooksIssue2ActiveLockReason.Resolved,
                 "off-topic" => WebhooksIssue2ActiveLockReason.OffTopic,
-                "too heated" => WebhooksIssue2ActiveLockReason.TooHeated,
-                "spam" => WebhooksIssue2ActiveLockReason.Spam,
                 "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhooksIssue2ActiveLockReason.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+                "resolved" => WebhooksIssue2ActiveLockReason.Resolved,
+                "spam" => WebhooksIssue2ActiveLockReason.Spam,
+                "too heated" => WebhooksIssue2ActiveLockReason.TooHeated,
                 _ => null,
             };
         }

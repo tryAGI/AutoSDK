@@ -20,8 +20,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="transparent")]
-        Transparent,
+        [global::System.Runtime.Serialization.EnumMember(Value="auto")]
+        Auto,
         /// <summary>
         /// 
         /// </summary>
@@ -30,8 +30,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="auto")]
-        Auto,
+        [global::System.Runtime.Serialization.EnumMember(Value="transparent")]
+        Transparent,
     }
 
     /// <summary>
@@ -46,9 +46,9 @@ namespace G
         {
             return value switch
             {
-                CreateImageEditRequestBackground.Transparent => "transparent",
-                CreateImageEditRequestBackground.Opaque => "opaque",
                 CreateImageEditRequestBackground.Auto => "auto",
+                CreateImageEditRequestBackground.Opaque => "opaque",
+                CreateImageEditRequestBackground.Transparent => "transparent",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
         {
             return value switch
             {
-                "transparent" => CreateImageEditRequestBackground.Transparent,
-                "opaque" => CreateImageEditRequestBackground.Opaque,
                 "auto" => CreateImageEditRequestBackground.Auto,
+                "opaque" => CreateImageEditRequestBackground.Opaque,
+                "transparent" => CreateImageEditRequestBackground.Transparent,
                 _ => null,
             };
         }

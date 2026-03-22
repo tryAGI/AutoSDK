@@ -17,13 +17,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="turn_detected")]
-        TurnDetected,
+        [global::System.Runtime.Serialization.EnumMember(Value="client_cancelled")]
+        ClientCancelled,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="client_cancelled")]
-        ClientCancelled,
+        [global::System.Runtime.Serialization.EnumMember(Value="content_filter")]
+        ContentFilter,
         /// <summary>
         /// 
         /// </summary>
@@ -32,8 +32,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="content_filter")]
-        ContentFilter,
+        [global::System.Runtime.Serialization.EnumMember(Value="turn_detected")]
+        TurnDetected,
     }
 
     /// <summary>
@@ -48,10 +48,10 @@ namespace G
         {
             return value switch
             {
-                RealtimeResponseStatusDetailsReason.TurnDetected => "turn_detected",
                 RealtimeResponseStatusDetailsReason.ClientCancelled => "client_cancelled",
-                RealtimeResponseStatusDetailsReason.MaxOutputTokens => "max_output_tokens",
                 RealtimeResponseStatusDetailsReason.ContentFilter => "content_filter",
+                RealtimeResponseStatusDetailsReason.MaxOutputTokens => "max_output_tokens",
+                RealtimeResponseStatusDetailsReason.TurnDetected => "turn_detected",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,10 +62,10 @@ namespace G
         {
             return value switch
             {
-                "turn_detected" => RealtimeResponseStatusDetailsReason.TurnDetected,
                 "client_cancelled" => RealtimeResponseStatusDetailsReason.ClientCancelled,
-                "max_output_tokens" => RealtimeResponseStatusDetailsReason.MaxOutputTokens,
                 "content_filter" => RealtimeResponseStatusDetailsReason.ContentFilter,
+                "max_output_tokens" => RealtimeResponseStatusDetailsReason.MaxOutputTokens,
+                "turn_detected" => RealtimeResponseStatusDetailsReason.TurnDetected,
                 _ => null,
             };
         }

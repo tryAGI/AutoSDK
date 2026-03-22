@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="thumbs")]
-        Thumbs,
+        [global::System.Runtime.Serialization.EnumMember(Value="rating")]
+        Rating,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="rating")]
-        Rating,
+        [global::System.Runtime.Serialization.EnumMember(Value="thumbs")]
+        Thumbs,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ConversationFeedbackType.Thumbs => "thumbs",
                 ConversationFeedbackType.Rating => "rating",
+                ConversationFeedbackType.Thumbs => "thumbs",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "thumbs" => ConversationFeedbackType.Thumbs,
                 "rating" => ConversationFeedbackType.Rating,
+                "thumbs" => ConversationFeedbackType.Thumbs,
                 _ => null,
             };
         }

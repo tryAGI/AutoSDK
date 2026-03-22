@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="article")]
+        Article,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="blank")]
         Blank,
         /// <summary>
@@ -23,23 +28,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="article")]
-        Article,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="genfm")]
         Genfm,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="video")]
-        Video,
+        [global::System.Runtime.Serialization.EnumMember(Value="screenplay")]
+        Screenplay,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="screenplay")]
-        Screenplay,
+        [global::System.Runtime.Serialization.EnumMember(Value="video")]
+        Video,
     }
 
     /// <summary>
@@ -54,12 +54,12 @@ namespace G
         {
             return value switch
             {
+                ProjectResponseModelSourceType2.Article => "article",
                 ProjectResponseModelSourceType2.Blank => "blank",
                 ProjectResponseModelSourceType2.Book => "book",
-                ProjectResponseModelSourceType2.Article => "article",
                 ProjectResponseModelSourceType2.Genfm => "genfm",
-                ProjectResponseModelSourceType2.Video => "video",
                 ProjectResponseModelSourceType2.Screenplay => "screenplay",
+                ProjectResponseModelSourceType2.Video => "video",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,12 +70,12 @@ namespace G
         {
             return value switch
             {
+                "article" => ProjectResponseModelSourceType2.Article,
                 "blank" => ProjectResponseModelSourceType2.Blank,
                 "book" => ProjectResponseModelSourceType2.Book,
-                "article" => ProjectResponseModelSourceType2.Article,
                 "genfm" => ProjectResponseModelSourceType2.Genfm,
-                "video" => ProjectResponseModelSourceType2.Video,
                 "screenplay" => ProjectResponseModelSourceType2.Screenplay,
+                "video" => ProjectResponseModelSourceType2.Video,
                 _ => null,
             };
         }

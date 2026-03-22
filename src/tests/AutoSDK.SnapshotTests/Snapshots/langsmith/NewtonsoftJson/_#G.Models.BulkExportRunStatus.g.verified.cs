@@ -33,13 +33,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="TimedOut")]
-        TimedOut,
+        [global::System.Runtime.Serialization.EnumMember(Value="Running")]
+        Running,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Running")]
-        Running,
+        [global::System.Runtime.Serialization.EnumMember(Value="TimedOut")]
+        TimedOut,
     }
 
     /// <summary>
@@ -58,8 +58,8 @@ namespace G
                 BulkExportRunStatus.Completed => "Completed",
                 BulkExportRunStatus.Created => "Created",
                 BulkExportRunStatus.Failed => "Failed",
-                BulkExportRunStatus.TimedOut => "TimedOut",
                 BulkExportRunStatus.Running => "Running",
+                BulkExportRunStatus.TimedOut => "TimedOut",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -74,8 +74,8 @@ namespace G
                 "Completed" => BulkExportRunStatus.Completed,
                 "Created" => BulkExportRunStatus.Created,
                 "Failed" => BulkExportRunStatus.Failed,
-                "TimedOut" => BulkExportRunStatus.TimedOut,
                 "Running" => BulkExportRunStatus.Running,
+                "TimedOut" => BulkExportRunStatus.TimedOut,
                 _ => null,
             };
         }

@@ -13,18 +13,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="OUTPAINT")]
-        Outpaint,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="INPAINT")]
         Inpaint,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="UPSCALE")]
-        Upscale,
+        [global::System.Runtime.Serialization.EnumMember(Value="NOBG")]
+        Nobg,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="OUTPAINT")]
+        Outpaint,
         /// <summary>
         /// 
         /// </summary>
@@ -33,8 +33,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="NOBG")]
-        Nobg,
+        [global::System.Runtime.Serialization.EnumMember(Value="UPSCALE")]
+        Upscale,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                VariationType.Outpaint => "OUTPAINT",
                 VariationType.Inpaint => "INPAINT",
-                VariationType.Upscale => "UPSCALE",
-                VariationType.Unzoom => "UNZOOM",
                 VariationType.Nobg => "NOBG",
+                VariationType.Outpaint => "OUTPAINT",
+                VariationType.Unzoom => "UNZOOM",
+                VariationType.Upscale => "UPSCALE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "OUTPAINT" => VariationType.Outpaint,
                 "INPAINT" => VariationType.Inpaint,
-                "UPSCALE" => VariationType.Upscale,
-                "UNZOOM" => VariationType.Unzoom,
                 "NOBG" => VariationType.Nobg,
+                "OUTPAINT" => VariationType.Outpaint,
+                "UNZOOM" => VariationType.Unzoom,
+                "UPSCALE" => VariationType.Upscale,
                 _ => null,
             };
         }

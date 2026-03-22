@@ -12,11 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Pass,
-        /// <summary>
-        /// 
-        /// </summary>
-        Fail,
+        All,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        All,
+        Fail,
+        /// <summary>
+        /// 
+        /// </summary>
+        Pass,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                ReposGetRepoRuleSuitesRuleSuiteResult.Pass => "pass",
-                ReposGetRepoRuleSuitesRuleSuiteResult.Fail => "fail",
-                ReposGetRepoRuleSuitesRuleSuiteResult.Bypass => "bypass",
                 ReposGetRepoRuleSuitesRuleSuiteResult.All => "all",
+                ReposGetRepoRuleSuitesRuleSuiteResult.Bypass => "bypass",
+                ReposGetRepoRuleSuitesRuleSuiteResult.Fail => "fail",
+                ReposGetRepoRuleSuitesRuleSuiteResult.Pass => "pass",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "pass" => ReposGetRepoRuleSuitesRuleSuiteResult.Pass,
-                "fail" => ReposGetRepoRuleSuitesRuleSuiteResult.Fail,
-                "bypass" => ReposGetRepoRuleSuitesRuleSuiteResult.Bypass,
                 "all" => ReposGetRepoRuleSuitesRuleSuiteResult.All,
+                "bypass" => ReposGetRepoRuleSuitesRuleSuiteResult.Bypass,
+                "fail" => ReposGetRepoRuleSuitesRuleSuiteResult.Fail,
+                "pass" => ReposGetRepoRuleSuitesRuleSuiteResult.Pass,
                 _ => null,
             };
         }

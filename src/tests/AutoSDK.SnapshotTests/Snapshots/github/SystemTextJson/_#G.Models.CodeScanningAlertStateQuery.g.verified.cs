@@ -12,10 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Open,
-        /// <summary>
-        /// 
-        /// </summary>
         Closed,
         /// <summary>
         /// 
@@ -25,6 +21,10 @@ namespace G
         /// 
         /// </summary>
         Fixed,
+        /// <summary>
+        /// 
+        /// </summary>
+        Open,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                CodeScanningAlertStateQuery.Open => "open",
                 CodeScanningAlertStateQuery.Closed => "closed",
                 CodeScanningAlertStateQuery.Dismissed => "dismissed",
                 CodeScanningAlertStateQuery.Fixed => "fixed",
+                CodeScanningAlertStateQuery.Open => "open",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "open" => CodeScanningAlertStateQuery.Open,
                 "closed" => CodeScanningAlertStateQuery.Closed,
                 "dismissed" => CodeScanningAlertStateQuery.Dismissed,
                 "fixed" => CodeScanningAlertStateQuery.Fixed,
+                "open" => CodeScanningAlertStateQuery.Open,
                 _ => null,
             };
         }

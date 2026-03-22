@@ -14,13 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="query")]
-        Query,
+        [global::System.Runtime.Serialization.EnumMember(Value="document")]
+        Document,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="document")]
-        Document,
+        [global::System.Runtime.Serialization.EnumMember(Value="query")]
+        Query,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                TextEmbeddingAPIInputInputType.Query => "query",
                 TextEmbeddingAPIInputInputType.Document => "document",
+                TextEmbeddingAPIInputInputType.Query => "query",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,8 +47,8 @@ namespace G
         {
             return value switch
             {
-                "query" => TextEmbeddingAPIInputInputType.Query,
                 "document" => TextEmbeddingAPIInputInputType.Document,
+                "query" => TextEmbeddingAPIInputInputType.Query,
                 _ => null,
             };
         }

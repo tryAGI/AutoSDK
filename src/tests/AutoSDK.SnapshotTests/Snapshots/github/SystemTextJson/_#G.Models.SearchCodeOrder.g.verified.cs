@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Desc,
+        Asc,
         /// <summary>
         /// 
         /// </summary>
-        Asc,
+        Desc,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                SearchCodeOrder.Desc => "desc",
                 SearchCodeOrder.Asc => "asc",
+                SearchCodeOrder.Desc => "desc",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "desc" => SearchCodeOrder.Desc,
                 "asc" => SearchCodeOrder.Asc,
+                "desc" => SearchCodeOrder.Desc,
                 _ => null,
             };
         }

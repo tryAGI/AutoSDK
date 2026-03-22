@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="summarized")]
-        Summarized,
+        [global::System.Runtime.Serialization.EnumMember(Value="hide")]
+        Hide,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="hide")]
-        Hide,
+        [global::System.Runtime.Serialization.EnumMember(Value="summarized")]
+        Summarized,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 ToolErrorHandlingMode.Auto => "auto",
-                ToolErrorHandlingMode.Summarized => "summarized",
-                ToolErrorHandlingMode.Passthrough => "passthrough",
                 ToolErrorHandlingMode.Hide => "hide",
+                ToolErrorHandlingMode.Passthrough => "passthrough",
+                ToolErrorHandlingMode.Summarized => "summarized",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "auto" => ToolErrorHandlingMode.Auto,
-                "summarized" => ToolErrorHandlingMode.Summarized,
-                "passthrough" => ToolErrorHandlingMode.Passthrough,
                 "hide" => ToolErrorHandlingMode.Hide,
+                "passthrough" => ToolErrorHandlingMode.Passthrough,
+                "summarized" => ToolErrorHandlingMode.Summarized,
                 _ => null,
             };
         }

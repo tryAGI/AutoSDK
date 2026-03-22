@@ -12,6 +12,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        All,
+        /// <summary>
+        /// 
+        /// </summary>
         Assigned,
         /// <summary>
         /// 
@@ -24,15 +28,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Subscribed,
-        /// <summary>
-        /// 
-        /// </summary>
         Repos,
         /// <summary>
         /// 
         /// </summary>
-        All,
+        Subscribed,
     }
 
     /// <summary>
@@ -47,12 +47,12 @@ namespace G
         {
             return value switch
             {
+                IssuesListForAuthenticatedUserFilter.All => "all",
                 IssuesListForAuthenticatedUserFilter.Assigned => "assigned",
                 IssuesListForAuthenticatedUserFilter.Created => "created",
                 IssuesListForAuthenticatedUserFilter.Mentioned => "mentioned",
-                IssuesListForAuthenticatedUserFilter.Subscribed => "subscribed",
                 IssuesListForAuthenticatedUserFilter.Repos => "repos",
-                IssuesListForAuthenticatedUserFilter.All => "all",
+                IssuesListForAuthenticatedUserFilter.Subscribed => "subscribed",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,12 +63,12 @@ namespace G
         {
             return value switch
             {
+                "all" => IssuesListForAuthenticatedUserFilter.All,
                 "assigned" => IssuesListForAuthenticatedUserFilter.Assigned,
                 "created" => IssuesListForAuthenticatedUserFilter.Created,
                 "mentioned" => IssuesListForAuthenticatedUserFilter.Mentioned,
-                "subscribed" => IssuesListForAuthenticatedUserFilter.Subscribed,
                 "repos" => IssuesListForAuthenticatedUserFilter.Repos,
-                "all" => IssuesListForAuthenticatedUserFilter.All,
+                "subscribed" => IssuesListForAuthenticatedUserFilter.Subscribed,
                 _ => null,
             };
         }

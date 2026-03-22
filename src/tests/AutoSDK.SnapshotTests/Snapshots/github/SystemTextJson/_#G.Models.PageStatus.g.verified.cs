@@ -13,11 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Built,
+        Building,
         /// <summary>
         /// 
         /// </summary>
-        Building,
+        Built,
         /// <summary>
         /// 
         /// </summary>
@@ -36,8 +36,8 @@ namespace G
         {
             return value switch
             {
-                PageStatus.Built => "built",
                 PageStatus.Building => "building",
+                PageStatus.Built => "built",
                 PageStatus.Errored => "errored",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -49,8 +49,8 @@ namespace G
         {
             return value switch
             {
-                "built" => PageStatus.Built,
                 "building" => PageStatus.Building,
+                "built" => PageStatus.Built,
                 "errored" => PageStatus.Errored,
                 _ => null,
             };

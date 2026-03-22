@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="invalid_file")]
+        InvalidFile,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="server_error")]
         ServerError,
         /// <summary>
@@ -20,11 +25,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="unsupported_file")]
         UnsupportedFile,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="invalid_file")]
-        InvalidFile,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                VectorStoreFileObjectLastErrorCode.InvalidFile => "invalid_file",
                 VectorStoreFileObjectLastErrorCode.ServerError => "server_error",
                 VectorStoreFileObjectLastErrorCode.UnsupportedFile => "unsupported_file",
-                VectorStoreFileObjectLastErrorCode.InvalidFile => "invalid_file",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
+                "invalid_file" => VectorStoreFileObjectLastErrorCode.InvalidFile,
                 "server_error" => VectorStoreFileObjectLastErrorCode.ServerError,
                 "unsupported_file" => VectorStoreFileObjectLastErrorCode.UnsupportedFile,
-                "invalid_file" => VectorStoreFileObjectLastErrorCode.InvalidFile,
                 _ => null,
             };
         }

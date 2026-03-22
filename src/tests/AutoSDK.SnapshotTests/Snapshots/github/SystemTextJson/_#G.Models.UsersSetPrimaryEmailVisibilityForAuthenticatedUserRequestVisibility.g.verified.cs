@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Public,
+        Private,
         /// <summary>
         /// 
         /// </summary>
-        Private,
+        Public,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility.Public => "public",
                 UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility.Private => "private",
+                UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility.Public => "public",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "public" => UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility.Public,
                 "private" => UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility.Private,
+                "public" => UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility.Public,
                 _ => null,
             };
         }

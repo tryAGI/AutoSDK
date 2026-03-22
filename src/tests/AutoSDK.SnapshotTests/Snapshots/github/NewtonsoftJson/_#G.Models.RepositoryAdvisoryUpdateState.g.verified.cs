@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="published")]
-        Published,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="closed")]
         Closed,
         /// <summary>
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="draft")]
         Draft,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="published")]
+        Published,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                RepositoryAdvisoryUpdateState.Published => "published",
                 RepositoryAdvisoryUpdateState.Closed => "closed",
                 RepositoryAdvisoryUpdateState.Draft => "draft",
+                RepositoryAdvisoryUpdateState.Published => "published",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "published" => RepositoryAdvisoryUpdateState.Published,
                 "closed" => RepositoryAdvisoryUpdateState.Closed,
                 "draft" => RepositoryAdvisoryUpdateState.Draft,
+                "published" => RepositoryAdvisoryUpdateState.Published,
                 _ => null,
             };
         }

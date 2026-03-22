@@ -20,11 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Subs,
+        Other,
         /// <summary>
         /// 
         /// </summary>
-        Other,
+        Subs,
     }
 
     /// <summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 HypeTrainEventEventDataLastContributionType.Bits => "BITS",
-                HypeTrainEventEventDataLastContributionType.Subs => "SUBS",
                 HypeTrainEventEventDataLastContributionType.Other => "OTHER",
+                HypeTrainEventEventDataLastContributionType.Subs => "SUBS",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,8 +53,8 @@ namespace G
             return value switch
             {
                 "BITS" => HypeTrainEventEventDataLastContributionType.Bits,
-                "SUBS" => HypeTrainEventEventDataLastContributionType.Subs,
                 "OTHER" => HypeTrainEventEventDataLastContributionType.Other,
+                "SUBS" => HypeTrainEventEventDataLastContributionType.Subs,
                 _ => null,
             };
         }

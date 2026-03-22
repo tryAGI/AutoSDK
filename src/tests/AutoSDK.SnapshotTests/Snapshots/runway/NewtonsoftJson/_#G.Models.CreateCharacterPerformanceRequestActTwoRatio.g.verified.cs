@@ -14,8 +14,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="1104:832")]
+        x1104_832,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="1280:720")]
         x1280_720,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="1584:672")]
+        x1584_672,
         /// <summary>
         /// 
         /// </summary>
@@ -24,23 +34,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="960:960")]
-        x960_960,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="1104:832")]
-        x1104_832,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="832:1104")]
         x832_1104,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="1584:672")]
-        x1584_672,
+        [global::System.Runtime.Serialization.EnumMember(Value="960:960")]
+        x960_960,
     }
 
     /// <summary>
@@ -55,12 +55,12 @@ namespace G
         {
             return value switch
             {
-                CreateCharacterPerformanceRequestActTwoRatio.x1280_720 => "1280:720",
-                CreateCharacterPerformanceRequestActTwoRatio.x720_1280 => "720:1280",
-                CreateCharacterPerformanceRequestActTwoRatio.x960_960 => "960:960",
                 CreateCharacterPerformanceRequestActTwoRatio.x1104_832 => "1104:832",
-                CreateCharacterPerformanceRequestActTwoRatio.x832_1104 => "832:1104",
+                CreateCharacterPerformanceRequestActTwoRatio.x1280_720 => "1280:720",
                 CreateCharacterPerformanceRequestActTwoRatio.x1584_672 => "1584:672",
+                CreateCharacterPerformanceRequestActTwoRatio.x720_1280 => "720:1280",
+                CreateCharacterPerformanceRequestActTwoRatio.x832_1104 => "832:1104",
+                CreateCharacterPerformanceRequestActTwoRatio.x960_960 => "960:960",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -71,12 +71,12 @@ namespace G
         {
             return value switch
             {
-                "1280:720" => CreateCharacterPerformanceRequestActTwoRatio.x1280_720,
-                "720:1280" => CreateCharacterPerformanceRequestActTwoRatio.x720_1280,
-                "960:960" => CreateCharacterPerformanceRequestActTwoRatio.x960_960,
                 "1104:832" => CreateCharacterPerformanceRequestActTwoRatio.x1104_832,
-                "832:1104" => CreateCharacterPerformanceRequestActTwoRatio.x832_1104,
+                "1280:720" => CreateCharacterPerformanceRequestActTwoRatio.x1280_720,
                 "1584:672" => CreateCharacterPerformanceRequestActTwoRatio.x1584_672,
+                "720:1280" => CreateCharacterPerformanceRequestActTwoRatio.x720_1280,
+                "832:1104" => CreateCharacterPerformanceRequestActTwoRatio.x832_1104,
+                "960:960" => CreateCharacterPerformanceRequestActTwoRatio.x960_960,
                 _ => null,
             };
         }

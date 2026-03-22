@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        UserScore,
+        ResultsSize,
         /// <summary>
         /// 
         /// </summary>
@@ -20,19 +20,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        UserRemoved,
-        /// <summary>
-        /// 
-        /// </summary>
         UserOpenedRun,
         /// <summary>
         /// 
         /// </summary>
-        UserSelectedRun,
+        UserRemoved,
         /// <summary>
         /// 
         /// </summary>
-        ResultsSize,
+        UserScore,
+        /// <summary>
+        /// 
+        /// </summary>
+        UserSelectedRun,
         /// <summary>
         /// 
         /// </summary>
@@ -51,12 +51,12 @@ namespace G
         {
             return value switch
             {
-                RunsGenerateQueryFeedbackKeys.UserScore => "user_score",
-                RunsGenerateQueryFeedbackKeys.UserEdited => "user_edited",
-                RunsGenerateQueryFeedbackKeys.UserRemoved => "user_removed",
-                RunsGenerateQueryFeedbackKeys.UserOpenedRun => "user_opened_run",
-                RunsGenerateQueryFeedbackKeys.UserSelectedRun => "user_selected_run",
                 RunsGenerateQueryFeedbackKeys.ResultsSize => "results_size",
+                RunsGenerateQueryFeedbackKeys.UserEdited => "user_edited",
+                RunsGenerateQueryFeedbackKeys.UserOpenedRun => "user_opened_run",
+                RunsGenerateQueryFeedbackKeys.UserRemoved => "user_removed",
+                RunsGenerateQueryFeedbackKeys.UserScore => "user_score",
+                RunsGenerateQueryFeedbackKeys.UserSelectedRun => "user_selected_run",
                 RunsGenerateQueryFeedbackKeys.ValidFilter => "valid_filter",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -68,12 +68,12 @@ namespace G
         {
             return value switch
             {
-                "user_score" => RunsGenerateQueryFeedbackKeys.UserScore,
-                "user_edited" => RunsGenerateQueryFeedbackKeys.UserEdited,
-                "user_removed" => RunsGenerateQueryFeedbackKeys.UserRemoved,
-                "user_opened_run" => RunsGenerateQueryFeedbackKeys.UserOpenedRun,
-                "user_selected_run" => RunsGenerateQueryFeedbackKeys.UserSelectedRun,
                 "results_size" => RunsGenerateQueryFeedbackKeys.ResultsSize,
+                "user_edited" => RunsGenerateQueryFeedbackKeys.UserEdited,
+                "user_opened_run" => RunsGenerateQueryFeedbackKeys.UserOpenedRun,
+                "user_removed" => RunsGenerateQueryFeedbackKeys.UserRemoved,
+                "user_score" => RunsGenerateQueryFeedbackKeys.UserScore,
+                "user_selected_run" => RunsGenerateQueryFeedbackKeys.UserSelectedRun,
                 "valid_filter" => RunsGenerateQueryFeedbackKeys.ValidFilter,
                 _ => null,
             };

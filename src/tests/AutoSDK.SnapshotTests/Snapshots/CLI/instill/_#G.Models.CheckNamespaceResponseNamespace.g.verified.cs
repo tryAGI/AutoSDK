@@ -18,10 +18,6 @@ namespace G
         /// </summary>
         NamespaceAvailable,
         /// <summary>
-        /// Namespace belongs to a user.
-        /// </summary>
-        NamespaceUser,
-        /// <summary>
         /// Namespace belongs to an organization.
         /// </summary>
         NamespaceOrganization,
@@ -29,6 +25,10 @@ namespace G
         /// Reserved.
         /// </summary>
         NamespaceReserved,
+        /// <summary>
+        /// Namespace belongs to a user.
+        /// </summary>
+        NamespaceUser,
     }
 
     /// <summary>
@@ -44,9 +44,9 @@ namespace G
             return value switch
             {
                 CheckNamespaceResponseNamespace.NamespaceAvailable => "NAMESPACE_AVAILABLE",
-                CheckNamespaceResponseNamespace.NamespaceUser => "NAMESPACE_USER",
                 CheckNamespaceResponseNamespace.NamespaceOrganization => "NAMESPACE_ORGANIZATION",
                 CheckNamespaceResponseNamespace.NamespaceReserved => "NAMESPACE_RESERVED",
+                CheckNamespaceResponseNamespace.NamespaceUser => "NAMESPACE_USER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,9 +58,9 @@ namespace G
             return value switch
             {
                 "NAMESPACE_AVAILABLE" => CheckNamespaceResponseNamespace.NamespaceAvailable,
-                "NAMESPACE_USER" => CheckNamespaceResponseNamespace.NamespaceUser,
                 "NAMESPACE_ORGANIZATION" => CheckNamespaceResponseNamespace.NamespaceOrganization,
                 "NAMESPACE_RESERVED" => CheckNamespaceResponseNamespace.NamespaceReserved,
+                "NAMESPACE_USER" => CheckNamespaceResponseNamespace.NamespaceUser,
                 _ => null,
             };
         }

@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Default,
+        AddNeighbors,
         /// <summary>
         /// 
         /// </summary>
-        AddNeighbors,
+        Default,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                RetrievalStrategy.Default => "default",
                 RetrievalStrategy.AddNeighbors => "add_neighbors",
+                RetrievalStrategy.Default => "default",
                 RetrievalStrategy.FullDoc => "full_doc",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "default" => RetrievalStrategy.Default,
                 "add_neighbors" => RetrievalStrategy.AddNeighbors,
+                "default" => RetrievalStrategy.Default,
                 "full_doc" => RetrievalStrategy.FullDoc,
                 _ => null,
             };

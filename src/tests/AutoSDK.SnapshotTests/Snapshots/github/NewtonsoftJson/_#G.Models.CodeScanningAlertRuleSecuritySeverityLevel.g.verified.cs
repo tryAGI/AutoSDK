@@ -13,13 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="low")]
-        Low,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="medium")]
-        Medium,
+        [global::System.Runtime.Serialization.EnumMember(Value="critical")]
+        Critical,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="critical")]
-        Critical,
+        [global::System.Runtime.Serialization.EnumMember(Value="low")]
+        Low,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="medium")]
+        Medium,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
+                CodeScanningAlertRuleSecuritySeverityLevel.Critical => "critical",
+                CodeScanningAlertRuleSecuritySeverityLevel.High => "high",
                 CodeScanningAlertRuleSecuritySeverityLevel.Low => "low",
                 CodeScanningAlertRuleSecuritySeverityLevel.Medium => "medium",
-                CodeScanningAlertRuleSecuritySeverityLevel.High => "high",
-                CodeScanningAlertRuleSecuritySeverityLevel.Critical => "critical",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
+                "critical" => CodeScanningAlertRuleSecuritySeverityLevel.Critical,
+                "high" => CodeScanningAlertRuleSecuritySeverityLevel.High,
                 "low" => CodeScanningAlertRuleSecuritySeverityLevel.Low,
                 "medium" => CodeScanningAlertRuleSecuritySeverityLevel.Medium,
-                "high" => CodeScanningAlertRuleSecuritySeverityLevel.High,
-                "critical" => CodeScanningAlertRuleSecuritySeverityLevel.Critical,
                 _ => null,
             };
         }

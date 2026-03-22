@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="off")]
-        Off,
+        [global::System.Runtime.Serialization.EnumMember(Value="everyone")]
+        Everyone,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="everyone")]
-        Everyone,
+        [global::System.Runtime.Serialization.EnumMember(Value="off")]
+        Off,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.Off => "off",
-                WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.NonAdmins => "non_admins",
                 WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.Everyone => "everyone",
+                WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.NonAdmins => "non_admins",
+                WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.Off => "off",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "off" => WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.Off,
-                "non_admins" => WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.NonAdmins,
                 "everyone" => WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.Everyone,
+                "non_admins" => WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.NonAdmins,
+                "off" => WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.Off,
                 _ => null,
             };
         }

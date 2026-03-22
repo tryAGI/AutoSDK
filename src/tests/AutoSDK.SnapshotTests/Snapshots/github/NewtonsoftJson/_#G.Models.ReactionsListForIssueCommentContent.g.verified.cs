@@ -23,13 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="laugh")]
-        Laugh,
+        [global::System.Runtime.Serialization.EnumMember(Value="confused")]
+        Confused,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="confused")]
-        Confused,
+        [global::System.Runtime.Serialization.EnumMember(Value="eyes")]
+        Eyes,
         /// <summary>
         /// 
         /// </summary>
@@ -43,13 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="rocket")]
-        Rocket,
+        [global::System.Runtime.Serialization.EnumMember(Value="laugh")]
+        Laugh,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="eyes")]
-        Eyes,
+        [global::System.Runtime.Serialization.EnumMember(Value="rocket")]
+        Rocket,
     }
 
     /// <summary>
@@ -66,12 +66,12 @@ namespace G
             {
                 ReactionsListForIssueCommentContent.Plus1 => "+1",
                 ReactionsListForIssueCommentContent.Minus1 => "-1",
-                ReactionsListForIssueCommentContent.Laugh => "laugh",
                 ReactionsListForIssueCommentContent.Confused => "confused",
+                ReactionsListForIssueCommentContent.Eyes => "eyes",
                 ReactionsListForIssueCommentContent.Heart => "heart",
                 ReactionsListForIssueCommentContent.Hooray => "hooray",
+                ReactionsListForIssueCommentContent.Laugh => "laugh",
                 ReactionsListForIssueCommentContent.Rocket => "rocket",
-                ReactionsListForIssueCommentContent.Eyes => "eyes",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -84,12 +84,12 @@ namespace G
             {
                 "+1" => ReactionsListForIssueCommentContent.Plus1,
                 "-1" => ReactionsListForIssueCommentContent.Minus1,
-                "laugh" => ReactionsListForIssueCommentContent.Laugh,
                 "confused" => ReactionsListForIssueCommentContent.Confused,
+                "eyes" => ReactionsListForIssueCommentContent.Eyes,
                 "heart" => ReactionsListForIssueCommentContent.Heart,
                 "hooray" => ReactionsListForIssueCommentContent.Hooray,
+                "laugh" => ReactionsListForIssueCommentContent.Laugh,
                 "rocket" => ReactionsListForIssueCommentContent.Rocket,
-                "eyes" => ReactionsListForIssueCommentContent.Eyes,
                 _ => null,
             };
         }

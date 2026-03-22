@@ -22,11 +22,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="agent_viewer")]
-        AgentViewer,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="agent_developer")]
         AgentDeveloper,
         /// <summary>
@@ -34,6 +29,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="agent_user")]
         AgentUser,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="agent_viewer")]
+        AgentViewer,
     }
 
     /// <summary>
@@ -49,9 +49,9 @@ namespace G
             return value switch
             {
                 AgentRoleRole.AgentAdministrator => "agent_administrator",
-                AgentRoleRole.AgentViewer => "agent_viewer",
                 AgentRoleRole.AgentDeveloper => "agent_developer",
                 AgentRoleRole.AgentUser => "agent_user",
+                AgentRoleRole.AgentViewer => "agent_viewer",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,9 +63,9 @@ namespace G
             return value switch
             {
                 "agent_administrator" => AgentRoleRole.AgentAdministrator,
-                "agent_viewer" => AgentRoleRole.AgentViewer,
                 "agent_developer" => AgentRoleRole.AgentDeveloper,
                 "agent_user" => AgentRoleRole.AgentUser,
+                "agent_viewer" => AgentRoleRole.AgentViewer,
                 _ => null,
             };
         }

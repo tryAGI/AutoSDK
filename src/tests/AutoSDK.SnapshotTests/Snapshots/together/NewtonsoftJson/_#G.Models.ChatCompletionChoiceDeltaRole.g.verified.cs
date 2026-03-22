@@ -13,16 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="system")]
-        System,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="user")]
-        User,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="assistant")]
         Assistant,
         /// <summary>
@@ -33,8 +23,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="system")]
+        System,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="tool")]
         Tool,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="user")]
+        User,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                ChatCompletionChoiceDeltaRole.System => "system",
-                ChatCompletionChoiceDeltaRole.User => "user",
                 ChatCompletionChoiceDeltaRole.Assistant => "assistant",
                 ChatCompletionChoiceDeltaRole.Function => "function",
+                ChatCompletionChoiceDeltaRole.System => "system",
                 ChatCompletionChoiceDeltaRole.Tool => "tool",
+                ChatCompletionChoiceDeltaRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "system" => ChatCompletionChoiceDeltaRole.System,
-                "user" => ChatCompletionChoiceDeltaRole.User,
                 "assistant" => ChatCompletionChoiceDeltaRole.Assistant,
                 "function" => ChatCompletionChoiceDeltaRole.Function,
+                "system" => ChatCompletionChoiceDeltaRole.System,
                 "tool" => ChatCompletionChoiceDeltaRole.Tool,
+                "user" => ChatCompletionChoiceDeltaRole.User,
                 _ => null,
             };
         }

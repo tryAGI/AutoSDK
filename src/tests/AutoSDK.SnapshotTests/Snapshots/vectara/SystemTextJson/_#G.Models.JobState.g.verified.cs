@@ -12,15 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Unknown,
-        /// <summary>
-        /// 
-        /// </summary>
-        Queued,
-        /// <summary>
-        /// 
-        /// </summary>
-        Started,
+        Aborted,
         /// <summary>
         /// 
         /// </summary>
@@ -36,7 +28,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Aborted,
+        Queued,
+        /// <summary>
+        /// 
+        /// </summary>
+        Started,
+        /// <summary>
+        /// 
+        /// </summary>
+        Unknown,
     }
 
     /// <summary>
@@ -51,13 +51,13 @@ namespace G
         {
             return value switch
             {
-                JobState.Unknown => "unknown",
-                JobState.Queued => "queued",
-                JobState.Started => "started",
+                JobState.Aborted => "aborted",
                 JobState.Completed => "completed",
                 JobState.Failed => "failed",
                 JobState.FailedWillRetry => "failed_will_retry",
-                JobState.Aborted => "aborted",
+                JobState.Queued => "queued",
+                JobState.Started => "started",
+                JobState.Unknown => "unknown",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -68,13 +68,13 @@ namespace G
         {
             return value switch
             {
-                "unknown" => JobState.Unknown,
-                "queued" => JobState.Queued,
-                "started" => JobState.Started,
+                "aborted" => JobState.Aborted,
                 "completed" => JobState.Completed,
                 "failed" => JobState.Failed,
                 "failed_will_retry" => JobState.FailedWillRetry,
-                "aborted" => JobState.Aborted,
+                "queued" => JobState.Queued,
+                "started" => JobState.Started,
+                "unknown" => JobState.Unknown,
                 _ => null,
             };
         }

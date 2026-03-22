@@ -18,13 +18,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="owner")]
-        Owner,
+        [global::System.Runtime.Serialization.EnumMember(Value="member")]
+        Member,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="member")]
-        Member,
+        [global::System.Runtime.Serialization.EnumMember(Value="owner")]
+        Owner,
     }
 
     /// <summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 ReposListForUserType.All => "all",
-                ReposListForUserType.Owner => "owner",
                 ReposListForUserType.Member => "member",
+                ReposListForUserType.Owner => "owner",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,8 +53,8 @@ namespace G
             return value switch
             {
                 "all" => ReposListForUserType.All,
-                "owner" => ReposListForUserType.Owner,
                 "member" => ReposListForUserType.Member,
+                "owner" => ReposListForUserType.Owner,
                 _ => null,
             };
         }

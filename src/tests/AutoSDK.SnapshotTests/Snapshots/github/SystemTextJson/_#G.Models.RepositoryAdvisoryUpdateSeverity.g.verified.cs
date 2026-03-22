@@ -20,11 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Medium,
+        Low,
         /// <summary>
         /// 
         /// </summary>
-        Low,
+        Medium,
     }
 
     /// <summary>
@@ -41,8 +41,8 @@ namespace G
             {
                 RepositoryAdvisoryUpdateSeverity.Critical => "critical",
                 RepositoryAdvisoryUpdateSeverity.High => "high",
-                RepositoryAdvisoryUpdateSeverity.Medium => "medium",
                 RepositoryAdvisoryUpdateSeverity.Low => "low",
+                RepositoryAdvisoryUpdateSeverity.Medium => "medium",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,8 +55,8 @@ namespace G
             {
                 "critical" => RepositoryAdvisoryUpdateSeverity.Critical,
                 "high" => RepositoryAdvisoryUpdateSeverity.High,
-                "medium" => RepositoryAdvisoryUpdateSeverity.Medium,
                 "low" => RepositoryAdvisoryUpdateSeverity.Low,
+                "medium" => RepositoryAdvisoryUpdateSeverity.Medium,
                 _ => null,
             };
         }

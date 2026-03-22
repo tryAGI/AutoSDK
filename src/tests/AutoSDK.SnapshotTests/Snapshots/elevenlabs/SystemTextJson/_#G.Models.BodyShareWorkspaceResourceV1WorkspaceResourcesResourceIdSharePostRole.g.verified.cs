@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Editor,
+        Commenter,
         /// <summary>
         /// 
         /// </summary>
-        Commenter,
+        Editor,
         /// <summary>
         /// 
         /// </summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole.Admin => "admin",
-                BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole.Editor => "editor",
                 BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole.Commenter => "commenter",
+                BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole.Editor => "editor",
                 BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole.Viewer => "viewer",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -54,8 +54,8 @@ namespace G
             return value switch
             {
                 "admin" => BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole.Admin,
-                "editor" => BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole.Editor,
                 "commenter" => BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole.Commenter,
+                "editor" => BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole.Editor,
                 "viewer" => BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole.Viewer,
                 _ => null,
             };

@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="light")]
-        Light,
+        [global::System.Runtime.Serialization.EnumMember(Value="dark")]
+        Dark,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="dark")]
-        Dark,
+        [global::System.Runtime.Serialization.EnumMember(Value="light")]
+        Light,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                WidgetConfigInputSyntaxHighlightTheme2.Light => "light",
                 WidgetConfigInputSyntaxHighlightTheme2.Dark => "dark",
+                WidgetConfigInputSyntaxHighlightTheme2.Light => "light",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "light" => WidgetConfigInputSyntaxHighlightTheme2.Light,
                 "dark" => WidgetConfigInputSyntaxHighlightTheme2.Dark,
+                "light" => WidgetConfigInputSyntaxHighlightTheme2.Light,
                 _ => null,
             };
         }

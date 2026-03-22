@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="success")]
-        Success,
+        [global::System.Runtime.Serialization.EnumMember(Value="error")]
+        Error,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="error")]
-        Error,
+        [global::System.Runtime.Serialization.EnumMember(Value="success")]
+        Success,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ToolMessageStatus.Success => "success",
                 ToolMessageStatus.Error => "error",
+                ToolMessageStatus.Success => "success",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "success" => ToolMessageStatus.Success,
                 "error" => ToolMessageStatus.Error,
+                "success" => ToolMessageStatus.Success,
                 _ => null,
             };
         }

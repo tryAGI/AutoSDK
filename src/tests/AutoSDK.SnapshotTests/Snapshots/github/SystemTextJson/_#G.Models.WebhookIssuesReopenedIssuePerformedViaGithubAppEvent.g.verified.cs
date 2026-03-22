@@ -44,6 +44,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        DeployKey,
+        /// <summary>
+        /// 
+        /// </summary>
         Deployment,
         /// <summary>
         /// 
@@ -53,10 +57,6 @@ namespace G
         /// 
         /// </summary>
         DeploymentStatus,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeployKey,
         /// <summary>
         /// 
         /// </summary>
@@ -76,11 +76,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Issues,
+        IssueComment,
         /// <summary>
         /// 
         /// </summary>
-        IssueComment,
+        Issues,
         /// <summary>
         /// 
         /// </summary>
@@ -100,11 +100,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Organization,
+        OrgBlock,
         /// <summary>
         /// 
         /// </summary>
-        OrgBlock,
+        Organization,
         /// <summary>
         /// 
         /// </summary>
@@ -140,6 +140,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        PullRequestReviewThread,
+        /// <summary>
+        /// 
+        /// </summary>
         Push,
         /// <summary>
         /// 
@@ -149,6 +153,10 @@ namespace G
         /// 
         /// </summary>
         Release,
+        /// <summary>
+        /// 
+        /// </summary>
+        Reminder,
         /// <summary>
         /// 
         /// </summary>
@@ -189,14 +197,6 @@ namespace G
         /// 
         /// </summary>
         WorkflowRun,
-        /// <summary>
-        /// 
-        /// </summary>
-        PullRequestReviewThread,
-        /// <summary>
-        /// 
-        /// </summary>
-        Reminder,
     }
 
     /// <summary>
@@ -219,22 +219,22 @@ namespace G
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.ContentReference => "content_reference",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Create => "create",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Delete => "delete",
+                WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.DeployKey => "deploy_key",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Deployment => "deployment",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.DeploymentReview => "deployment_review",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.DeploymentStatus => "deployment_status",
-                WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.DeployKey => "deploy_key",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Discussion => "discussion",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.DiscussionComment => "discussion_comment",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Fork => "fork",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Gollum => "gollum",
-                WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Issues => "issues",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.IssueComment => "issue_comment",
+                WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Issues => "issues",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Label => "label",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Member => "member",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Membership => "membership",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Milestone => "milestone",
-                WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Organization => "organization",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.OrgBlock => "org_block",
+                WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Organization => "organization",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.PageBuild => "page_build",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Project => "project",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.ProjectCard => "project_card",
@@ -243,9 +243,11 @@ namespace G
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.PullRequest => "pull_request",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.PullRequestReview => "pull_request_review",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.PullRequestReviewComment => "pull_request_review_comment",
+                WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.PullRequestReviewThread => "pull_request_review_thread",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Push => "push",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.RegistryPackage => "registry_package",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Release => "release",
+                WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Reminder => "reminder",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Repository => "repository",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.RepositoryDispatch => "repository_dispatch",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.SecretScanningAlert => "secret_scanning_alert",
@@ -256,8 +258,6 @@ namespace G
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Watch => "watch",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.WorkflowDispatch => "workflow_dispatch",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.WorkflowRun => "workflow_run",
-                WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.PullRequestReviewThread => "pull_request_review_thread",
-                WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Reminder => "reminder",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -276,22 +276,22 @@ namespace G
                 "content_reference" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.ContentReference,
                 "create" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Create,
                 "delete" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Delete,
+                "deploy_key" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.DeployKey,
                 "deployment" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Deployment,
                 "deployment_review" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.DeploymentReview,
                 "deployment_status" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.DeploymentStatus,
-                "deploy_key" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.DeployKey,
                 "discussion" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Discussion,
                 "discussion_comment" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.DiscussionComment,
                 "fork" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Fork,
                 "gollum" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Gollum,
-                "issues" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Issues,
                 "issue_comment" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.IssueComment,
+                "issues" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Issues,
                 "label" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Label,
                 "member" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Member,
                 "membership" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Membership,
                 "milestone" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Milestone,
-                "organization" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Organization,
                 "org_block" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.OrgBlock,
+                "organization" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Organization,
                 "page_build" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.PageBuild,
                 "project" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Project,
                 "project_card" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.ProjectCard,
@@ -300,9 +300,11 @@ namespace G
                 "pull_request" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.PullRequest,
                 "pull_request_review" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.PullRequestReview,
                 "pull_request_review_comment" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.PullRequestReviewComment,
+                "pull_request_review_thread" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.PullRequestReviewThread,
                 "push" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Push,
                 "registry_package" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.RegistryPackage,
                 "release" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Release,
+                "reminder" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Reminder,
                 "repository" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Repository,
                 "repository_dispatch" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.RepositoryDispatch,
                 "secret_scanning_alert" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.SecretScanningAlert,
@@ -313,8 +315,6 @@ namespace G
                 "watch" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Watch,
                 "workflow_dispatch" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.WorkflowDispatch,
                 "workflow_run" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.WorkflowRun,
-                "pull_request_review_thread" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.PullRequestReviewThread,
-                "reminder" => WebhookIssuesReopenedIssuePerformedViaGithubAppEvent.Reminder,
                 _ => null,
             };
         }

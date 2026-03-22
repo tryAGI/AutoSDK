@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="name")]
-        Name,
+        [global::System.Runtime.Serialization.EnumMember(Value="created_at")]
+        CreatedAt,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="created_at")]
-        CreatedAt,
+        [global::System.Runtime.Serialization.EnumMember(Value="example_count")]
+        ExampleCount,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="example_count")]
-        ExampleCount,
+        [global::System.Runtime.Serialization.EnumMember(Value="name")]
+        Name,
         /// <summary>
         /// 
         /// </summary>
@@ -49,10 +49,10 @@ namespace G
         {
             return value switch
             {
-                SortByDatasetColumn.Name => "name",
                 SortByDatasetColumn.CreatedAt => "created_at",
-                SortByDatasetColumn.LastSessionStartTime => "last_session_start_time",
                 SortByDatasetColumn.ExampleCount => "example_count",
+                SortByDatasetColumn.LastSessionStartTime => "last_session_start_time",
+                SortByDatasetColumn.Name => "name",
                 SortByDatasetColumn.SessionCount => "session_count",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -64,10 +64,10 @@ namespace G
         {
             return value switch
             {
-                "name" => SortByDatasetColumn.Name,
                 "created_at" => SortByDatasetColumn.CreatedAt,
-                "last_session_start_time" => SortByDatasetColumn.LastSessionStartTime,
                 "example_count" => SortByDatasetColumn.ExampleCount,
+                "last_session_start_time" => SortByDatasetColumn.LastSessionStartTime,
+                "name" => SortByDatasetColumn.Name,
                 "session_count" => SortByDatasetColumn.SessionCount,
                 _ => null,
             };

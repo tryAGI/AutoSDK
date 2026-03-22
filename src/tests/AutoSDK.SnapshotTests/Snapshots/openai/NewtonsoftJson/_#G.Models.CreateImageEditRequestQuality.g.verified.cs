@@ -15,8 +15,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="standard")]
-        Standard,
+        [global::System.Runtime.Serialization.EnumMember(Value="auto")]
+        Auto,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="high")]
+        High,
         /// <summary>
         /// 
         /// </summary>
@@ -30,13 +35,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="high")]
-        High,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="auto")]
-        Auto,
+        [global::System.Runtime.Serialization.EnumMember(Value="standard")]
+        Standard,
     }
 
     /// <summary>
@@ -51,11 +51,11 @@ namespace G
         {
             return value switch
             {
-                CreateImageEditRequestQuality.Standard => "standard",
+                CreateImageEditRequestQuality.Auto => "auto",
+                CreateImageEditRequestQuality.High => "high",
                 CreateImageEditRequestQuality.Low => "low",
                 CreateImageEditRequestQuality.Medium => "medium",
-                CreateImageEditRequestQuality.High => "high",
-                CreateImageEditRequestQuality.Auto => "auto",
+                CreateImageEditRequestQuality.Standard => "standard",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -66,11 +66,11 @@ namespace G
         {
             return value switch
             {
-                "standard" => CreateImageEditRequestQuality.Standard,
+                "auto" => CreateImageEditRequestQuality.Auto,
+                "high" => CreateImageEditRequestQuality.High,
                 "low" => CreateImageEditRequestQuality.Low,
                 "medium" => CreateImageEditRequestQuality.Medium,
-                "high" => CreateImageEditRequestQuality.High,
-                "auto" => CreateImageEditRequestQuality.Auto,
+                "standard" => CreateImageEditRequestQuality.Standard,
                 _ => null,
             };
         }

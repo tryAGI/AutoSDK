@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Blob,
+        /// <summary>
+        /// 
+        /// </summary>
         Commit,
         /// <summary>
         /// 
         /// </summary>
         Tree,
-        /// <summary>
-        /// 
-        /// </summary>
-        Blob,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
+                GitCreateTagRequestType.Blob => "blob",
                 GitCreateTagRequestType.Commit => "commit",
                 GitCreateTagRequestType.Tree => "tree",
-                GitCreateTagRequestType.Blob => "blob",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
+                "blob" => GitCreateTagRequestType.Blob,
                 "commit" => GitCreateTagRequestType.Commit,
                 "tree" => GitCreateTagRequestType.Tree,
-                "blob" => GitCreateTagRequestType.Blob,
                 _ => null,
             };
         }

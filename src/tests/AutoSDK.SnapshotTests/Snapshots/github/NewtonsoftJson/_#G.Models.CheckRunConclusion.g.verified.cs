@@ -13,8 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="success")]
-        Success,
+        [global::System.Runtime.Serialization.EnumMember(Value="action_required")]
+        ActionRequired,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -28,23 +33,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
-        Cancelled,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="skipped")]
         Skipped,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="timed_out")]
-        TimedOut,
+        [global::System.Runtime.Serialization.EnumMember(Value="success")]
+        Success,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="action_required")]
-        ActionRequired,
+        [global::System.Runtime.Serialization.EnumMember(Value="timed_out")]
+        TimedOut,
     }
 
     /// <summary>
@@ -59,13 +59,13 @@ namespace G
         {
             return value switch
             {
-                CheckRunConclusion.Success => "success",
+                CheckRunConclusion.ActionRequired => "action_required",
+                CheckRunConclusion.Cancelled => "cancelled",
                 CheckRunConclusion.Failure => "failure",
                 CheckRunConclusion.Neutral => "neutral",
-                CheckRunConclusion.Cancelled => "cancelled",
                 CheckRunConclusion.Skipped => "skipped",
+                CheckRunConclusion.Success => "success",
                 CheckRunConclusion.TimedOut => "timed_out",
-                CheckRunConclusion.ActionRequired => "action_required",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -76,13 +76,13 @@ namespace G
         {
             return value switch
             {
-                "success" => CheckRunConclusion.Success,
+                "action_required" => CheckRunConclusion.ActionRequired,
+                "cancelled" => CheckRunConclusion.Cancelled,
                 "failure" => CheckRunConclusion.Failure,
                 "neutral" => CheckRunConclusion.Neutral,
-                "cancelled" => CheckRunConclusion.Cancelled,
                 "skipped" => CheckRunConclusion.Skipped,
+                "success" => CheckRunConclusion.Success,
                 "timed_out" => CheckRunConclusion.TimedOut,
-                "action_required" => CheckRunConclusion.ActionRequired,
                 _ => null,
             };
         }

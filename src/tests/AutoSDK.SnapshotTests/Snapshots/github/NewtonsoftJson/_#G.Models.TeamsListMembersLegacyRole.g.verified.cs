@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="member")]
-        Member,
+        [global::System.Runtime.Serialization.EnumMember(Value="all")]
+        All,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="all")]
-        All,
+        [global::System.Runtime.Serialization.EnumMember(Value="member")]
+        Member,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                TeamsListMembersLegacyRole.Member => "member",
-                TeamsListMembersLegacyRole.Maintainer => "maintainer",
                 TeamsListMembersLegacyRole.All => "all",
+                TeamsListMembersLegacyRole.Maintainer => "maintainer",
+                TeamsListMembersLegacyRole.Member => "member",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "member" => TeamsListMembersLegacyRole.Member,
-                "maintainer" => TeamsListMembersLegacyRole.Maintainer,
                 "all" => TeamsListMembersLegacyRole.All,
+                "maintainer" => TeamsListMembersLegacyRole.Maintainer,
+                "member" => TeamsListMembersLegacyRole.Member,
                 _ => null,
             };
         }

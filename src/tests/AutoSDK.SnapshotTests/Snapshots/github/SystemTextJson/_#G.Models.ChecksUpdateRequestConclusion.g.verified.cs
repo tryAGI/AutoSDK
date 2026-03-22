@@ -29,15 +29,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Success,
-        /// <summary>
-        /// 
-        /// </summary>
         Skipped,
         /// <summary>
         /// ** Providing `conclusion` will automatically set the `status` parameter to `completed`. You cannot change a check run conclusion to `stale`, only GitHub can set this.
         /// </summary>
         Stale,
+        /// <summary>
+        /// 
+        /// </summary>
+        Success,
         /// <summary>
         /// 
         /// </summary>
@@ -60,9 +60,9 @@ namespace G
                 ChecksUpdateRequestConclusion.Cancelled => "cancelled",
                 ChecksUpdateRequestConclusion.Failure => "failure",
                 ChecksUpdateRequestConclusion.Neutral => "neutral",
-                ChecksUpdateRequestConclusion.Success => "success",
                 ChecksUpdateRequestConclusion.Skipped => "skipped",
                 ChecksUpdateRequestConclusion.Stale => "stale",
+                ChecksUpdateRequestConclusion.Success => "success",
                 ChecksUpdateRequestConclusion.TimedOut => "timed_out",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -78,9 +78,9 @@ namespace G
                 "cancelled" => ChecksUpdateRequestConclusion.Cancelled,
                 "failure" => ChecksUpdateRequestConclusion.Failure,
                 "neutral" => ChecksUpdateRequestConclusion.Neutral,
-                "success" => ChecksUpdateRequestConclusion.Success,
                 "skipped" => ChecksUpdateRequestConclusion.Skipped,
                 "stale" => ChecksUpdateRequestConclusion.Stale,
+                "success" => ChecksUpdateRequestConclusion.Success,
                 "timed_out" => ChecksUpdateRequestConclusion.TimedOut,
                 _ => null,
             };

@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Off,
+        Everyone,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Everyone,
+        Off,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                WebhooksRuleLinearHistoryRequirementEnforcementLevel.Off => "off",
-                WebhooksRuleLinearHistoryRequirementEnforcementLevel.NonAdmins => "non_admins",
                 WebhooksRuleLinearHistoryRequirementEnforcementLevel.Everyone => "everyone",
+                WebhooksRuleLinearHistoryRequirementEnforcementLevel.NonAdmins => "non_admins",
+                WebhooksRuleLinearHistoryRequirementEnforcementLevel.Off => "off",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "off" => WebhooksRuleLinearHistoryRequirementEnforcementLevel.Off,
-                "non_admins" => WebhooksRuleLinearHistoryRequirementEnforcementLevel.NonAdmins,
                 "everyone" => WebhooksRuleLinearHistoryRequirementEnforcementLevel.Everyone,
+                "non_admins" => WebhooksRuleLinearHistoryRequirementEnforcementLevel.NonAdmins,
+                "off" => WebhooksRuleLinearHistoryRequirementEnforcementLevel.Off,
                 _ => null,
             };
         }

@@ -12,91 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        En,
-        /// <summary>
-        /// 
-        /// </summary>
-        Hi,
-        /// <summary>
-        /// 
-        /// </summary>
-        Pt,
-        /// <summary>
-        /// 
-        /// </summary>
-        Zh,
-        /// <summary>
-        /// 
-        /// </summary>
-        Es,
-        /// <summary>
-        /// 
-        /// </summary>
-        Fr,
-        /// <summary>
-        /// 
-        /// </summary>
-        De,
-        /// <summary>
-        /// 
-        /// </summary>
-        Ja,
-        /// <summary>
-        /// 
-        /// </summary>
         Ar,
         /// <summary>
         /// 
         /// </summary>
-        Ru,
-        /// <summary>
-        /// 
-        /// </summary>
-        Ko,
-        /// <summary>
-        /// 
-        /// </summary>
-        Id,
-        /// <summary>
-        /// 
-        /// </summary>
-        It,
-        /// <summary>
-        /// 
-        /// </summary>
-        Nl,
-        /// <summary>
-        /// 
-        /// </summary>
-        Tr,
-        /// <summary>
-        /// 
-        /// </summary>
-        Pl,
-        /// <summary>
-        /// 
-        /// </summary>
-        Sv,
-        /// <summary>
-        /// 
-        /// </summary>
-        Fil,
-        /// <summary>
-        /// 
-        /// </summary>
-        Ms,
-        /// <summary>
-        /// 
-        /// </summary>
-        Ro,
-        /// <summary>
-        /// 
-        /// </summary>
-        Uk,
-        /// <summary>
-        /// 
-        /// </summary>
-        El,
+        Bg,
         /// <summary>
         /// 
         /// </summary>
@@ -108,11 +28,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        De,
+        /// <summary>
+        /// 
+        /// </summary>
+        El,
+        /// <summary>
+        /// 
+        /// </summary>
+        En,
+        /// <summary>
+        /// 
+        /// </summary>
+        Es,
+        /// <summary>
+        /// 
+        /// </summary>
         Fi,
         /// <summary>
         /// 
         /// </summary>
-        Bg,
+        Fil,
+        /// <summary>
+        /// 
+        /// </summary>
+        Fr,
+        /// <summary>
+        /// 
+        /// </summary>
+        Hi,
         /// <summary>
         /// 
         /// </summary>
@@ -120,11 +64,67 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Id,
+        /// <summary>
+        /// 
+        /// </summary>
+        It,
+        /// <summary>
+        /// 
+        /// </summary>
+        Ja,
+        /// <summary>
+        /// 
+        /// </summary>
+        Ko,
+        /// <summary>
+        /// 
+        /// </summary>
+        Ms,
+        /// <summary>
+        /// 
+        /// </summary>
+        Nl,
+        /// <summary>
+        /// 
+        /// </summary>
+        Pl,
+        /// <summary>
+        /// 
+        /// </summary>
+        Pt,
+        /// <summary>
+        /// 
+        /// </summary>
+        Ro,
+        /// <summary>
+        /// 
+        /// </summary>
+        Ru,
+        /// <summary>
+        /// 
+        /// </summary>
         Sk,
         /// <summary>
         /// 
         /// </summary>
+        Sv,
+        /// <summary>
+        /// 
+        /// </summary>
         Ta,
+        /// <summary>
+        /// 
+        /// </summary>
+        Tr,
+        /// <summary>
+        /// 
+        /// </summary>
+        Uk,
+        /// <summary>
+        /// 
+        /// </summary>
+        Zh,
     }
 
     /// <summary>
@@ -139,35 +139,35 @@ namespace G
         {
             return value switch
             {
-                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.En => "en",
-                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Hi => "hi",
-                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Pt => "pt",
-                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Zh => "zh",
-                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Es => "es",
-                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Fr => "fr",
-                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.De => "de",
-                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ja => "ja",
                 CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ar => "ar",
-                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ru => "ru",
-                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ko => "ko",
-                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Id => "id",
-                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.It => "it",
-                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Nl => "nl",
-                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Tr => "tr",
-                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Pl => "pl",
-                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Sv => "sv",
-                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Fil => "fil",
-                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ms => "ms",
-                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ro => "ro",
-                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Uk => "uk",
-                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.El => "el",
+                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Bg => "bg",
                 CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Cs => "cs",
                 CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Da => "da",
+                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.De => "de",
+                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.El => "el",
+                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.En => "en",
+                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Es => "es",
                 CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Fi => "fi",
-                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Bg => "bg",
+                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Fil => "fil",
+                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Fr => "fr",
+                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Hi => "hi",
                 CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Hr => "hr",
+                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Id => "id",
+                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.It => "it",
+                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ja => "ja",
+                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ko => "ko",
+                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ms => "ms",
+                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Nl => "nl",
+                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Pl => "pl",
+                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Pt => "pt",
+                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ro => "ro",
+                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ru => "ru",
                 CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Sk => "sk",
+                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Sv => "sv",
                 CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ta => "ta",
+                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Tr => "tr",
+                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Uk => "uk",
+                CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Zh => "zh",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -178,35 +178,35 @@ namespace G
         {
             return value switch
             {
-                "en" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.En,
-                "hi" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Hi,
-                "pt" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Pt,
-                "zh" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Zh,
-                "es" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Es,
-                "fr" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Fr,
-                "de" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.De,
-                "ja" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ja,
                 "ar" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ar,
-                "ru" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ru,
-                "ko" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ko,
-                "id" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Id,
-                "it" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.It,
-                "nl" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Nl,
-                "tr" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Tr,
-                "pl" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Pl,
-                "sv" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Sv,
-                "fil" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Fil,
-                "ms" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ms,
-                "ro" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ro,
-                "uk" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Uk,
-                "el" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.El,
+                "bg" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Bg,
                 "cs" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Cs,
                 "da" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Da,
+                "de" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.De,
+                "el" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.El,
+                "en" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.En,
+                "es" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Es,
                 "fi" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Fi,
-                "bg" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Bg,
+                "fil" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Fil,
+                "fr" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Fr,
+                "hi" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Hi,
                 "hr" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Hr,
+                "id" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Id,
+                "it" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.It,
+                "ja" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ja,
+                "ko" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ko,
+                "ms" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ms,
+                "nl" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Nl,
+                "pl" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Pl,
+                "pt" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Pt,
+                "ro" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ro,
+                "ru" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ru,
                 "sk" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Sk,
+                "sv" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Sv,
                 "ta" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Ta,
+                "tr" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Tr,
+                "uk" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Uk,
+                "zh" => CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang.Zh,
                 _ => null,
             };
         }

@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        Organization,
+        User,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 DiscussionUserType.Bot => "Bot",
-                DiscussionUserType.User => "User",
                 DiscussionUserType.Organization => "Organization",
+                DiscussionUserType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "Bot" => DiscussionUserType.Bot,
-                "User" => DiscussionUserType.User,
                 "Organization" => DiscussionUserType.Organization,
+                "User" => DiscussionUserType.User,
                 _ => null,
             };
         }

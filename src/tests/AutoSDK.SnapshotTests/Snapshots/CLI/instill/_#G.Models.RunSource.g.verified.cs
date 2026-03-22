@@ -12,13 +12,13 @@ namespace G
     public enum RunSource
     {
         /// <summary>
-        /// Run from frontend UI.
-        /// </summary>
-        Console,
-        /// <summary>
         /// Run from API or SDK.
         /// </summary>
         Api,
+        /// <summary>
+        /// Run from frontend UI.
+        /// </summary>
+        Console,
     }
 
     /// <summary>
@@ -33,8 +33,8 @@ namespace G
         {
             return value switch
             {
-                RunSource.Console => "RUN_SOURCE_CONSOLE",
                 RunSource.Api => "RUN_SOURCE_API",
+                RunSource.Console => "RUN_SOURCE_CONSOLE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -45,8 +45,8 @@ namespace G
         {
             return value switch
             {
-                "RUN_SOURCE_CONSOLE" => RunSource.Console,
                 "RUN_SOURCE_API" => RunSource.Api,
+                "RUN_SOURCE_CONSOLE" => RunSource.Console,
                 _ => null,
             };
         }

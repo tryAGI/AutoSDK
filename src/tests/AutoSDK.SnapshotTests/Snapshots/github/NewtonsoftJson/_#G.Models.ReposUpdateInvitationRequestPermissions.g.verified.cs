@@ -13,13 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="read")]
-        Read,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="write")]
-        Write,
+        [global::System.Runtime.Serialization.EnumMember(Value="admin")]
+        Admin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,13 +23,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="read")]
+        Read,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="triage")]
         Triage,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="admin")]
-        Admin,
+        [global::System.Runtime.Serialization.EnumMember(Value="write")]
+        Write,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                ReposUpdateInvitationRequestPermissions.Read => "read",
-                ReposUpdateInvitationRequestPermissions.Write => "write",
-                ReposUpdateInvitationRequestPermissions.Maintain => "maintain",
-                ReposUpdateInvitationRequestPermissions.Triage => "triage",
                 ReposUpdateInvitationRequestPermissions.Admin => "admin",
+                ReposUpdateInvitationRequestPermissions.Maintain => "maintain",
+                ReposUpdateInvitationRequestPermissions.Read => "read",
+                ReposUpdateInvitationRequestPermissions.Triage => "triage",
+                ReposUpdateInvitationRequestPermissions.Write => "write",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "read" => ReposUpdateInvitationRequestPermissions.Read,
-                "write" => ReposUpdateInvitationRequestPermissions.Write,
-                "maintain" => ReposUpdateInvitationRequestPermissions.Maintain,
-                "triage" => ReposUpdateInvitationRequestPermissions.Triage,
                 "admin" => ReposUpdateInvitationRequestPermissions.Admin,
+                "maintain" => ReposUpdateInvitationRequestPermissions.Maintain,
+                "read" => ReposUpdateInvitationRequestPermissions.Read,
+                "triage" => ReposUpdateInvitationRequestPermissions.Triage,
+                "write" => ReposUpdateInvitationRequestPermissions.Write,
                 _ => null,
             };
         }

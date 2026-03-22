@@ -20,13 +20,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="user")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="organization")]
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="organization")]
-        Organization,
+        [global::System.Runtime.Serialization.EnumMember(Value="user")]
+        User,
     }
 
     /// <summary>
@@ -42,8 +42,8 @@ namespace G
             return value switch
             {
                 ActionsWorkflowAccessToRepositoryAccessLevel.None => "none",
-                ActionsWorkflowAccessToRepositoryAccessLevel.User => "user",
                 ActionsWorkflowAccessToRepositoryAccessLevel.Organization => "organization",
+                ActionsWorkflowAccessToRepositoryAccessLevel.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,8 +55,8 @@ namespace G
             return value switch
             {
                 "none" => ActionsWorkflowAccessToRepositoryAccessLevel.None,
-                "user" => ActionsWorkflowAccessToRepositoryAccessLevel.User,
                 "organization" => ActionsWorkflowAccessToRepositoryAccessLevel.Organization,
+                "user" => ActionsWorkflowAccessToRepositoryAccessLevel.User,
                 _ => null,
             };
         }

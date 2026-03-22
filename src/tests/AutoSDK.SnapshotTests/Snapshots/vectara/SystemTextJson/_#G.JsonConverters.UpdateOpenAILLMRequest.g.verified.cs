@@ -28,14 +28,14 @@ namespace G.JsonConverters
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("model")) __score0++;
-            if (__jsonProps.Contains("uri")) __score0++;
-            if (__jsonProps.Contains("description")) __score0++;
             if (__jsonProps.Contains("auth")) __score0++;
-            if (__jsonProps.Contains("headers")) __score0++;
-            if (__jsonProps.Contains("enabled")) __score0++;
-            if (__jsonProps.Contains("test_model_parameters")) __score0++;
             if (__jsonProps.Contains("capabilities")) __score0++;
+            if (__jsonProps.Contains("description")) __score0++;
+            if (__jsonProps.Contains("enabled")) __score0++;
+            if (__jsonProps.Contains("headers")) __score0++;
+            if (__jsonProps.Contains("model")) __score0++;
+            if (__jsonProps.Contains("test_model_parameters")) __score0++;
+            if (__jsonProps.Contains("uri")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("type")) __score1++;
             var __bestScore = 0;

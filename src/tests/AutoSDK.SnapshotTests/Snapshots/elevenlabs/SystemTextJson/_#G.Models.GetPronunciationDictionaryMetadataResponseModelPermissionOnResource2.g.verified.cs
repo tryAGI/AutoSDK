@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Editor,
+        Commenter,
         /// <summary>
         /// 
         /// </summary>
-        Commenter,
+        Editor,
         /// <summary>
         /// 
         /// </summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2.Admin => "admin",
-                GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2.Editor => "editor",
                 GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2.Commenter => "commenter",
+                GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2.Editor => "editor",
                 GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2.Viewer => "viewer",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -54,8 +54,8 @@ namespace G
             return value switch
             {
                 "admin" => GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2.Admin,
-                "editor" => GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2.Editor,
                 "commenter" => GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2.Commenter,
+                "editor" => GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2.Editor,
                 "viewer" => GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2.Viewer,
                 _ => null,
             };

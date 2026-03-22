@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Squash,
+        Rebase,
         /// <summary>
         /// 
         /// </summary>
-        Rebase,
+        Squash,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 WebhookPullRequestLockedPullRequestAutoMergeMergeMethod.Merge => "merge",
-                WebhookPullRequestLockedPullRequestAutoMergeMergeMethod.Squash => "squash",
                 WebhookPullRequestLockedPullRequestAutoMergeMergeMethod.Rebase => "rebase",
+                WebhookPullRequestLockedPullRequestAutoMergeMergeMethod.Squash => "squash",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "merge" => WebhookPullRequestLockedPullRequestAutoMergeMergeMethod.Merge,
-                "squash" => WebhookPullRequestLockedPullRequestAutoMergeMergeMethod.Squash,
                 "rebase" => WebhookPullRequestLockedPullRequestAutoMergeMergeMethod.Rebase,
+                "squash" => WebhookPullRequestLockedPullRequestAutoMergeMergeMethod.Squash,
                 _ => null,
             };
         }

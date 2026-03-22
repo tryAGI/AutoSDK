@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Enabled,
+        Disabled,
         /// <summary>
         /// 
         /// </summary>
-        Disabled,
+        Enabled,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                SecurityAndAnalysisSecretScanningStatus.Enabled => "enabled",
                 SecurityAndAnalysisSecretScanningStatus.Disabled => "disabled",
+                SecurityAndAnalysisSecretScanningStatus.Enabled => "enabled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "enabled" => SecurityAndAnalysisSecretScanningStatus.Enabled,
                 "disabled" => SecurityAndAnalysisSecretScanningStatus.Disabled,
+                "enabled" => SecurityAndAnalysisSecretScanningStatus.Enabled,
                 _ => null,
             };
         }

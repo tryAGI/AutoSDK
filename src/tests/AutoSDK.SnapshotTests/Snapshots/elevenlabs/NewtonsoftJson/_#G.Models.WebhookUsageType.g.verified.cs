@@ -23,13 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Voice Library Removal Notices")]
-        VoiceLibraryRemovalNotices,
+        [global::System.Runtime.Serialization.EnumMember(Value="Speech to Text")]
+        SpeechToText,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Speech to Text")]
-        SpeechToText,
+        [global::System.Runtime.Serialization.EnumMember(Value="Voice Library Removal Notices")]
+        VoiceLibraryRemovalNotices,
     }
 
     /// <summary>
@@ -46,8 +46,8 @@ namespace G
             {
                 WebhookUsageType.ConvAIAgentSettings => "ConvAI Agent Settings",
                 WebhookUsageType.ConvAISettings => "ConvAI Settings",
-                WebhookUsageType.VoiceLibraryRemovalNotices => "Voice Library Removal Notices",
                 WebhookUsageType.SpeechToText => "Speech to Text",
+                WebhookUsageType.VoiceLibraryRemovalNotices => "Voice Library Removal Notices",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -60,8 +60,8 @@ namespace G
             {
                 "ConvAI Agent Settings" => WebhookUsageType.ConvAIAgentSettings,
                 "ConvAI Settings" => WebhookUsageType.ConvAISettings,
-                "Voice Library Removal Notices" => WebhookUsageType.VoiceLibraryRemovalNotices,
                 "Speech to Text" => WebhookUsageType.SpeechToText,
+                "Voice Library Removal Notices" => WebhookUsageType.VoiceLibraryRemovalNotices,
                 _ => null,
             };
         }

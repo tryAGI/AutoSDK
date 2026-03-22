@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Pass,
+        Bypass,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Bypass,
+        Pass,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                RuleSuiteEvaluationResult.Pass => "pass",
-                RuleSuiteEvaluationResult.Fail => "fail",
                 RuleSuiteEvaluationResult.Bypass => "bypass",
+                RuleSuiteEvaluationResult.Fail => "fail",
+                RuleSuiteEvaluationResult.Pass => "pass",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "pass" => RuleSuiteEvaluationResult.Pass,
-                "fail" => RuleSuiteEvaluationResult.Fail,
                 "bypass" => RuleSuiteEvaluationResult.Bypass,
+                "fail" => RuleSuiteEvaluationResult.Fail,
+                "pass" => RuleSuiteEvaluationResult.Pass,
                 _ => null,
             };
         }

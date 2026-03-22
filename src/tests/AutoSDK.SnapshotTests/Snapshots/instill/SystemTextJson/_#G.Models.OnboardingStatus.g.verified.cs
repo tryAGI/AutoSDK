@@ -13,13 +13,13 @@ namespace G
     public enum OnboardingStatus
     {
         /// <summary>
-        /// In progress, i.e., the user has initiated the onboarding process
-        /// </summary>
-        InProgress,
-        /// <summary>
         /// Completed.
         /// </summary>
         Completed,
+        /// <summary>
+        /// In progress, i.e., the user has initiated the onboarding process
+        /// </summary>
+        InProgress,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                OnboardingStatus.InProgress => "ONBOARDING_STATUS_IN_PROGRESS",
                 OnboardingStatus.Completed => "ONBOARDING_STATUS_COMPLETED",
+                OnboardingStatus.InProgress => "ONBOARDING_STATUS_IN_PROGRESS",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "ONBOARDING_STATUS_IN_PROGRESS" => OnboardingStatus.InProgress,
                 "ONBOARDING_STATUS_COMPLETED" => OnboardingStatus.Completed,
+                "ONBOARDING_STATUS_IN_PROGRESS" => OnboardingStatus.InProgress,
                 _ => null,
             };
         }

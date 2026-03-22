@@ -14,13 +14,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="low")]
-        Low,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="medium")]
-        Medium,
+        [global::System.Runtime.Serialization.EnumMember(Value="auto")]
+        Auto,
         /// <summary>
         /// 
         /// </summary>
@@ -29,8 +24,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="auto")]
-        Auto,
+        [global::System.Runtime.Serialization.EnumMember(Value="low")]
+        Low,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="medium")]
+        Medium,
     }
 
     /// <summary>
@@ -45,10 +45,10 @@ namespace G
         {
             return value switch
             {
+                RealtimeSessionTurnDetectionEagerness.Auto => "auto",
+                RealtimeSessionTurnDetectionEagerness.High => "high",
                 RealtimeSessionTurnDetectionEagerness.Low => "low",
                 RealtimeSessionTurnDetectionEagerness.Medium => "medium",
-                RealtimeSessionTurnDetectionEagerness.High => "high",
-                RealtimeSessionTurnDetectionEagerness.Auto => "auto",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,10 +59,10 @@ namespace G
         {
             return value switch
             {
+                "auto" => RealtimeSessionTurnDetectionEagerness.Auto,
+                "high" => RealtimeSessionTurnDetectionEagerness.High,
                 "low" => RealtimeSessionTurnDetectionEagerness.Low,
                 "medium" => RealtimeSessionTurnDetectionEagerness.Medium,
-                "high" => RealtimeSessionTurnDetectionEagerness.High,
-                "auto" => RealtimeSessionTurnDetectionEagerness.Auto,
                 _ => null,
             };
         }

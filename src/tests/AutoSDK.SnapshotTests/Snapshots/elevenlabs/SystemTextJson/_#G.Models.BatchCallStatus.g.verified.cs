@@ -12,11 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Pending,
-        /// <summary>
-        /// 
-        /// </summary>
-        InProgress,
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +24,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Cancelled,
+        InProgress,
+        /// <summary>
+        /// 
+        /// </summary>
+        Pending,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                BatchCallStatus.Pending => "pending",
-                BatchCallStatus.InProgress => "in_progress",
+                BatchCallStatus.Cancelled => "cancelled",
                 BatchCallStatus.Completed => "completed",
                 BatchCallStatus.Failed => "failed",
-                BatchCallStatus.Cancelled => "cancelled",
+                BatchCallStatus.InProgress => "in_progress",
+                BatchCallStatus.Pending => "pending",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "pending" => BatchCallStatus.Pending,
-                "in_progress" => BatchCallStatus.InProgress,
+                "cancelled" => BatchCallStatus.Cancelled,
                 "completed" => BatchCallStatus.Completed,
                 "failed" => BatchCallStatus.Failed,
-                "cancelled" => BatchCallStatus.Cancelled,
+                "in_progress" => BatchCallStatus.InProgress,
+                "pending" => BatchCallStatus.Pending,
                 _ => null,
             };
         }

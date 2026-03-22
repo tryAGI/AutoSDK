@@ -15,13 +15,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="member")]
-        Member,
+        [global::System.Runtime.Serialization.EnumMember(Value="maintainer")]
+        Maintainer,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="maintainer")]
-        Maintainer,
+        [global::System.Runtime.Serialization.EnumMember(Value="member")]
+        Member,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
         {
             return value switch
             {
-                TeamMembershipRole.Member => "member",
                 TeamMembershipRole.Maintainer => "maintainer",
+                TeamMembershipRole.Member => "member",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "member" => TeamMembershipRole.Member,
                 "maintainer" => TeamMembershipRole.Maintainer,
+                "member" => TeamMembershipRole.Member,
                 _ => null,
             };
         }

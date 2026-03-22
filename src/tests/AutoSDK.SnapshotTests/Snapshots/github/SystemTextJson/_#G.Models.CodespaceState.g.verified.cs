@@ -13,19 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Unknown,
-        /// <summary>
-        /// 
-        /// </summary>
-        Created,
-        /// <summary>
-        /// 
-        /// </summary>
-        Queued,
-        /// <summary>
-        /// 
-        /// </summary>
-        Provisioning,
+        Archived,
         /// <summary>
         /// 
         /// </summary>
@@ -37,7 +25,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Unavailable,
+        Created,
         /// <summary>
         /// 
         /// </summary>
@@ -45,23 +33,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Moved,
-        /// <summary>
-        /// 
-        /// </summary>
-        Shutdown,
-        /// <summary>
-        /// 
-        /// </summary>
-        Archived,
-        /// <summary>
-        /// 
-        /// </summary>
-        Starting,
-        /// <summary>
-        /// 
-        /// </summary>
-        ShuttingDown,
+        Exporting,
         /// <summary>
         /// 
         /// </summary>
@@ -69,15 +41,43 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Exporting,
+        Moved,
         /// <summary>
         /// 
         /// </summary>
-        Updating,
+        Provisioning,
+        /// <summary>
+        /// 
+        /// </summary>
+        Queued,
         /// <summary>
         /// 
         /// </summary>
         Rebuilding,
+        /// <summary>
+        /// 
+        /// </summary>
+        Shutdown,
+        /// <summary>
+        /// 
+        /// </summary>
+        ShuttingDown,
+        /// <summary>
+        /// 
+        /// </summary>
+        Starting,
+        /// <summary>
+        /// 
+        /// </summary>
+        Unavailable,
+        /// <summary>
+        /// 
+        /// </summary>
+        Unknown,
+        /// <summary>
+        /// 
+        /// </summary>
+        Updating,
     }
 
     /// <summary>
@@ -92,23 +92,23 @@ namespace G
         {
             return value switch
             {
-                CodespaceState.Unknown => "Unknown",
-                CodespaceState.Created => "Created",
-                CodespaceState.Queued => "Queued",
-                CodespaceState.Provisioning => "Provisioning",
+                CodespaceState.Archived => "Archived",
                 CodespaceState.Available => "Available",
                 CodespaceState.Awaiting => "Awaiting",
-                CodespaceState.Unavailable => "Unavailable",
+                CodespaceState.Created => "Created",
                 CodespaceState.Deleted => "Deleted",
-                CodespaceState.Moved => "Moved",
-                CodespaceState.Shutdown => "Shutdown",
-                CodespaceState.Archived => "Archived",
-                CodespaceState.Starting => "Starting",
-                CodespaceState.ShuttingDown => "ShuttingDown",
-                CodespaceState.Failed => "Failed",
                 CodespaceState.Exporting => "Exporting",
-                CodespaceState.Updating => "Updating",
+                CodespaceState.Failed => "Failed",
+                CodespaceState.Moved => "Moved",
+                CodespaceState.Provisioning => "Provisioning",
+                CodespaceState.Queued => "Queued",
                 CodespaceState.Rebuilding => "Rebuilding",
+                CodespaceState.Shutdown => "Shutdown",
+                CodespaceState.ShuttingDown => "ShuttingDown",
+                CodespaceState.Starting => "Starting",
+                CodespaceState.Unavailable => "Unavailable",
+                CodespaceState.Unknown => "Unknown",
+                CodespaceState.Updating => "Updating",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -119,23 +119,23 @@ namespace G
         {
             return value switch
             {
-                "Unknown" => CodespaceState.Unknown,
-                "Created" => CodespaceState.Created,
-                "Queued" => CodespaceState.Queued,
-                "Provisioning" => CodespaceState.Provisioning,
+                "Archived" => CodespaceState.Archived,
                 "Available" => CodespaceState.Available,
                 "Awaiting" => CodespaceState.Awaiting,
-                "Unavailable" => CodespaceState.Unavailable,
+                "Created" => CodespaceState.Created,
                 "Deleted" => CodespaceState.Deleted,
-                "Moved" => CodespaceState.Moved,
-                "Shutdown" => CodespaceState.Shutdown,
-                "Archived" => CodespaceState.Archived,
-                "Starting" => CodespaceState.Starting,
-                "ShuttingDown" => CodespaceState.ShuttingDown,
-                "Failed" => CodespaceState.Failed,
                 "Exporting" => CodespaceState.Exporting,
-                "Updating" => CodespaceState.Updating,
+                "Failed" => CodespaceState.Failed,
+                "Moved" => CodespaceState.Moved,
+                "Provisioning" => CodespaceState.Provisioning,
+                "Queued" => CodespaceState.Queued,
                 "Rebuilding" => CodespaceState.Rebuilding,
+                "Shutdown" => CodespaceState.Shutdown,
+                "ShuttingDown" => CodespaceState.ShuttingDown,
+                "Starting" => CodespaceState.Starting,
+                "Unavailable" => CodespaceState.Unavailable,
+                "Unknown" => CodespaceState.Unknown,
+                "Updating" => CodespaceState.Updating,
                 _ => null,
             };
         }

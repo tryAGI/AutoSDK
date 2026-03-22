@@ -12,19 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Integer,
-        /// <summary>
-        /// 
-        /// </summary>
-        String,
-        /// <summary>
-        /// 
-        /// </summary>
-        Fp,
-        /// <summary>
-        /// 
-        /// </summary>
-        Dictionary,
+        Array,
         /// <summary>
         /// 
         /// </summary>
@@ -32,15 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        None,
-        /// <summary>
-        /// 
-        /// </summary>
-        Array,
-        /// <summary>
-        /// 
-        /// </summary>
-        Pkl,
+        Dictionary,
         /// <summary>
         /// 
         /// </summary>
@@ -48,7 +28,27 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Fp,
+        /// <summary>
+        /// 
+        /// </summary>
+        Integer,
+        /// <summary>
+        /// 
+        /// </summary>
+        None,
+        /// <summary>
+        /// 
+        /// </summary>
+        Pkl,
+        /// <summary>
+        /// 
+        /// </summary>
         Stream,
+        /// <summary>
+        /// 
+        /// </summary>
+        String,
     }
 
     /// <summary>
@@ -63,16 +63,16 @@ namespace G
         {
             return value switch
             {
-                RunIOType.Integer => "integer",
-                RunIOType.String => "string",
-                RunIOType.Fp => "fp",
-                RunIOType.Dictionary => "dictionary",
-                RunIOType.Boolean => "boolean",
-                RunIOType.None => "none",
                 RunIOType.Array => "array",
-                RunIOType.Pkl => "pkl",
+                RunIOType.Boolean => "boolean",
+                RunIOType.Dictionary => "dictionary",
                 RunIOType.File => "file",
+                RunIOType.Fp => "fp",
+                RunIOType.Integer => "integer",
+                RunIOType.None => "none",
+                RunIOType.Pkl => "pkl",
                 RunIOType.Stream => "stream",
+                RunIOType.String => "string",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -83,16 +83,16 @@ namespace G
         {
             return value switch
             {
-                "integer" => RunIOType.Integer,
-                "string" => RunIOType.String,
-                "fp" => RunIOType.Fp,
-                "dictionary" => RunIOType.Dictionary,
-                "boolean" => RunIOType.Boolean,
-                "none" => RunIOType.None,
                 "array" => RunIOType.Array,
-                "pkl" => RunIOType.Pkl,
+                "boolean" => RunIOType.Boolean,
+                "dictionary" => RunIOType.Dictionary,
                 "file" => RunIOType.File,
+                "fp" => RunIOType.Fp,
+                "integer" => RunIOType.Integer,
+                "none" => RunIOType.None,
+                "pkl" => RunIOType.Pkl,
                 "stream" => RunIOType.Stream,
+                "string" => RunIOType.String,
                 _ => null,
             };
         }

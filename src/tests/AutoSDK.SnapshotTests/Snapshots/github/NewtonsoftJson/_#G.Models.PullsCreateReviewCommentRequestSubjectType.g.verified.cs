@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="line")]
-        Line,
+        [global::System.Runtime.Serialization.EnumMember(Value="file")]
+        File,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="file")]
-        File,
+        [global::System.Runtime.Serialization.EnumMember(Value="line")]
+        Line,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                PullsCreateReviewCommentRequestSubjectType.Line => "line",
                 PullsCreateReviewCommentRequestSubjectType.File => "file",
+                PullsCreateReviewCommentRequestSubjectType.Line => "line",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "line" => PullsCreateReviewCommentRequestSubjectType.Line,
                 "file" => PullsCreateReviewCommentRequestSubjectType.File,
+                "line" => PullsCreateReviewCommentRequestSubjectType.Line,
                 _ => null,
             };
         }

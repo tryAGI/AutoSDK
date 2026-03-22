@@ -13,11 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Low,
-        /// <summary>
-        /// 
-        /// </summary>
-        Medium,
+        Auto,
         /// <summary>
         /// 
         /// </summary>
@@ -25,7 +21,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Auto,
+        Low,
+        /// <summary>
+        /// 
+        /// </summary>
+        Medium,
     }
 
     /// <summary>
@@ -40,10 +40,10 @@ namespace G
         {
             return value switch
             {
+                RealtimeSessionTurnDetectionEagerness.Auto => "auto",
+                RealtimeSessionTurnDetectionEagerness.High => "high",
                 RealtimeSessionTurnDetectionEagerness.Low => "low",
                 RealtimeSessionTurnDetectionEagerness.Medium => "medium",
-                RealtimeSessionTurnDetectionEagerness.High => "high",
-                RealtimeSessionTurnDetectionEagerness.Auto => "auto",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,10 +54,10 @@ namespace G
         {
             return value switch
             {
+                "auto" => RealtimeSessionTurnDetectionEagerness.Auto,
+                "high" => RealtimeSessionTurnDetectionEagerness.High,
                 "low" => RealtimeSessionTurnDetectionEagerness.Low,
                 "medium" => RealtimeSessionTurnDetectionEagerness.Medium,
-                "high" => RealtimeSessionTurnDetectionEagerness.High,
-                "auto" => RealtimeSessionTurnDetectionEagerness.Auto,
                 _ => null,
             };
         }

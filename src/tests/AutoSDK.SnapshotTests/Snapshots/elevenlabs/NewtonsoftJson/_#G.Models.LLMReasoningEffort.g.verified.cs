@@ -13,13 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="none")]
-        None,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="minimal")]
-        Minimal,
+        [global::System.Runtime.Serialization.EnumMember(Value="high")]
+        High,
         /// <summary>
         /// 
         /// </summary>
@@ -33,8 +28,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="high")]
-        High,
+        [global::System.Runtime.Serialization.EnumMember(Value="minimal")]
+        Minimal,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="none")]
+        None,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                LLMReasoningEffort.None => "none",
-                LLMReasoningEffort.Minimal => "minimal",
+                LLMReasoningEffort.High => "high",
                 LLMReasoningEffort.Low => "low",
                 LLMReasoningEffort.Medium => "medium",
-                LLMReasoningEffort.High => "high",
+                LLMReasoningEffort.Minimal => "minimal",
+                LLMReasoningEffort.None => "none",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "none" => LLMReasoningEffort.None,
-                "minimal" => LLMReasoningEffort.Minimal,
+                "high" => LLMReasoningEffort.High,
                 "low" => LLMReasoningEffort.Low,
                 "medium" => LLMReasoningEffort.Medium,
-                "high" => LLMReasoningEffort.High,
+                "minimal" => LLMReasoningEffort.Minimal,
+                "none" => LLMReasoningEffort.None,
                 _ => null,
             };
         }

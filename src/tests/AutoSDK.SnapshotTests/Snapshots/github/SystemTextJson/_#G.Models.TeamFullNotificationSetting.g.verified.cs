@@ -13,11 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        NotificationsEnabled,
+        NotificationsDisabled,
         /// <summary>
         /// 
         /// </summary>
-        NotificationsDisabled,
+        NotificationsEnabled,
     }
 
     /// <summary>
@@ -32,8 +32,8 @@ namespace G
         {
             return value switch
             {
-                TeamFullNotificationSetting.NotificationsEnabled => "notifications_enabled",
                 TeamFullNotificationSetting.NotificationsDisabled => "notifications_disabled",
+                TeamFullNotificationSetting.NotificationsEnabled => "notifications_enabled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,8 +44,8 @@ namespace G
         {
             return value switch
             {
-                "notifications_enabled" => TeamFullNotificationSetting.NotificationsEnabled,
                 "notifications_disabled" => TeamFullNotificationSetting.NotificationsDisabled,
+                "notifications_enabled" => TeamFullNotificationSetting.NotificationsEnabled,
                 _ => null,
             };
         }

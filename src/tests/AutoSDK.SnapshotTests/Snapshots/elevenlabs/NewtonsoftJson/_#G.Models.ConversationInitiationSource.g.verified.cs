@@ -13,18 +13,33 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="unknown")]
-        Unknown,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="android_sdk")]
         AndroidSdk,
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="flutter_sdk")]
+        FlutterSdk,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="genesys")]
+        Genesys,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="js_sdk")]
+        JsSdk,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="node_js_sdk")]
         NodeJsSdk,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="python_sdk")]
+        PythonSdk,
         /// <summary>
         /// 
         /// </summary>
@@ -38,53 +53,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="js_sdk")]
-        JsSdk,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="python_sdk")]
-        PythonSdk,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="widget")]
-        Widget,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="sip_trunk")]
         SipTrunk,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="twilio")]
-        Twilio,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="genesys")]
-        Genesys,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="swift_sdk")]
-        SwiftSdk,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="whatsapp")]
-        Whatsapp,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="flutter_sdk")]
-        FlutterSdk,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="zendesk_integration")]
-        ZendeskIntegration,
         /// <summary>
         /// 
         /// </summary>
@@ -93,8 +63,38 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="swift_sdk")]
+        SwiftSdk,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="template_preview")]
         TemplatePreview,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="twilio")]
+        Twilio,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="unknown")]
+        Unknown,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="whatsapp")]
+        Whatsapp,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="widget")]
+        Widget,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="zendesk_integration")]
+        ZendeskIntegration,
     }
 
     /// <summary>
@@ -109,23 +109,23 @@ namespace G
         {
             return value switch
             {
-                ConversationInitiationSource.Unknown => "unknown",
                 ConversationInitiationSource.AndroidSdk => "android_sdk",
+                ConversationInitiationSource.FlutterSdk => "flutter_sdk",
+                ConversationInitiationSource.Genesys => "genesys",
+                ConversationInitiationSource.JsSdk => "js_sdk",
                 ConversationInitiationSource.NodeJsSdk => "node_js_sdk",
+                ConversationInitiationSource.PythonSdk => "python_sdk",
                 ConversationInitiationSource.ReactNativeSdk => "react_native_sdk",
                 ConversationInitiationSource.ReactSdk => "react_sdk",
-                ConversationInitiationSource.JsSdk => "js_sdk",
-                ConversationInitiationSource.PythonSdk => "python_sdk",
-                ConversationInitiationSource.Widget => "widget",
                 ConversationInitiationSource.SipTrunk => "sip_trunk",
-                ConversationInitiationSource.Twilio => "twilio",
-                ConversationInitiationSource.Genesys => "genesys",
-                ConversationInitiationSource.SwiftSdk => "swift_sdk",
-                ConversationInitiationSource.Whatsapp => "whatsapp",
-                ConversationInitiationSource.FlutterSdk => "flutter_sdk",
-                ConversationInitiationSource.ZendeskIntegration => "zendesk_integration",
                 ConversationInitiationSource.SlackIntegration => "slack_integration",
+                ConversationInitiationSource.SwiftSdk => "swift_sdk",
                 ConversationInitiationSource.TemplatePreview => "template_preview",
+                ConversationInitiationSource.Twilio => "twilio",
+                ConversationInitiationSource.Unknown => "unknown",
+                ConversationInitiationSource.Whatsapp => "whatsapp",
+                ConversationInitiationSource.Widget => "widget",
+                ConversationInitiationSource.ZendeskIntegration => "zendesk_integration",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -136,23 +136,23 @@ namespace G
         {
             return value switch
             {
-                "unknown" => ConversationInitiationSource.Unknown,
                 "android_sdk" => ConversationInitiationSource.AndroidSdk,
+                "flutter_sdk" => ConversationInitiationSource.FlutterSdk,
+                "genesys" => ConversationInitiationSource.Genesys,
+                "js_sdk" => ConversationInitiationSource.JsSdk,
                 "node_js_sdk" => ConversationInitiationSource.NodeJsSdk,
+                "python_sdk" => ConversationInitiationSource.PythonSdk,
                 "react_native_sdk" => ConversationInitiationSource.ReactNativeSdk,
                 "react_sdk" => ConversationInitiationSource.ReactSdk,
-                "js_sdk" => ConversationInitiationSource.JsSdk,
-                "python_sdk" => ConversationInitiationSource.PythonSdk,
-                "widget" => ConversationInitiationSource.Widget,
                 "sip_trunk" => ConversationInitiationSource.SipTrunk,
-                "twilio" => ConversationInitiationSource.Twilio,
-                "genesys" => ConversationInitiationSource.Genesys,
-                "swift_sdk" => ConversationInitiationSource.SwiftSdk,
-                "whatsapp" => ConversationInitiationSource.Whatsapp,
-                "flutter_sdk" => ConversationInitiationSource.FlutterSdk,
-                "zendesk_integration" => ConversationInitiationSource.ZendeskIntegration,
                 "slack_integration" => ConversationInitiationSource.SlackIntegration,
+                "swift_sdk" => ConversationInitiationSource.SwiftSdk,
                 "template_preview" => ConversationInitiationSource.TemplatePreview,
+                "twilio" => ConversationInitiationSource.Twilio,
+                "unknown" => ConversationInitiationSource.Unknown,
+                "whatsapp" => ConversationInitiationSource.Whatsapp,
+                "widget" => ConversationInitiationSource.Widget,
+                "zendesk_integration" => ConversationInitiationSource.ZendeskIntegration,
                 _ => null,
             };
         }

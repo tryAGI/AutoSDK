@@ -18,13 +18,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="tag")]
-        Tag,
+        [global::System.Runtime.Serialization.EnumMember(Value="push")]
+        Push,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="push")]
-        Push,
+        [global::System.Runtime.Serialization.EnumMember(Value="tag")]
+        Tag,
     }
 
     /// <summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 RepositoryRulesetTarget.Branch => "branch",
-                RepositoryRulesetTarget.Tag => "tag",
                 RepositoryRulesetTarget.Push => "push",
+                RepositoryRulesetTarget.Tag => "tag",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,8 +53,8 @@ namespace G
             return value switch
             {
                 "branch" => RepositoryRulesetTarget.Branch,
-                "tag" => RepositoryRulesetTarget.Tag,
                 "push" => RepositoryRulesetTarget.Push,
+                "tag" => RepositoryRulesetTarget.Tag,
                 _ => null,
             };
         }

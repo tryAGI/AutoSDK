@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Resolved,
-        /// <summary>
-        /// 
-        /// </summary>
         OffTopic,
         /// <summary>
         /// 
         /// </summary>
-        TooHeated,
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        /// <summary>
+        /// 
+        /// </summary>
+        Resolved,
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +28,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        TooHeated,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                WebhooksPullRequest5ActiveLockReason.Resolved => "resolved",
                 WebhooksPullRequest5ActiveLockReason.OffTopic => "off-topic",
-                WebhooksPullRequest5ActiveLockReason.TooHeated => "too heated",
-                WebhooksPullRequest5ActiveLockReason.Spam => "spam",
                 WebhooksPullRequest5ActiveLockReason.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
+                WebhooksPullRequest5ActiveLockReason.Resolved => "resolved",
+                WebhooksPullRequest5ActiveLockReason.Spam => "spam",
+                WebhooksPullRequest5ActiveLockReason.TooHeated => "too heated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "resolved" => WebhooksPullRequest5ActiveLockReason.Resolved,
                 "off-topic" => WebhooksPullRequest5ActiveLockReason.OffTopic,
-                "too heated" => WebhooksPullRequest5ActiveLockReason.TooHeated,
-                "spam" => WebhooksPullRequest5ActiveLockReason.Spam,
                 "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhooksPullRequest5ActiveLockReason.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+                "resolved" => WebhooksPullRequest5ActiveLockReason.Resolved,
+                "spam" => WebhooksPullRequest5ActiveLockReason.Spam,
+                "too heated" => WebhooksPullRequest5ActiveLockReason.TooHeated,
                 _ => null,
             };
         }

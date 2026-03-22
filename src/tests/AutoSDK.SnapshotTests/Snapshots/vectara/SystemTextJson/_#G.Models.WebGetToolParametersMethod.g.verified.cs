@@ -12,7 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Delete,
+        /// <summary>
+        /// 
+        /// </summary>
         Get,
+        /// <summary>
+        /// 
+        /// </summary>
+        Head,
         /// <summary>
         /// 
         /// </summary>
@@ -21,14 +29,6 @@ namespace G
         /// 
         /// </summary>
         Put,
-        /// <summary>
-        /// 
-        /// </summary>
-        Delete,
-        /// <summary>
-        /// 
-        /// </summary>
-        Head,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
+                WebGetToolParametersMethod.Delete => "DELETE",
                 WebGetToolParametersMethod.Get => "GET",
+                WebGetToolParametersMethod.Head => "HEAD",
                 WebGetToolParametersMethod.Post => "POST",
                 WebGetToolParametersMethod.Put => "PUT",
-                WebGetToolParametersMethod.Delete => "DELETE",
-                WebGetToolParametersMethod.Head => "HEAD",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
+                "DELETE" => WebGetToolParametersMethod.Delete,
                 "GET" => WebGetToolParametersMethod.Get,
+                "HEAD" => WebGetToolParametersMethod.Head,
                 "POST" => WebGetToolParametersMethod.Post,
                 "PUT" => WebGetToolParametersMethod.Put,
-                "DELETE" => WebGetToolParametersMethod.Delete,
-                "HEAD" => WebGetToolParametersMethod.Head,
                 _ => null,
             };
         }

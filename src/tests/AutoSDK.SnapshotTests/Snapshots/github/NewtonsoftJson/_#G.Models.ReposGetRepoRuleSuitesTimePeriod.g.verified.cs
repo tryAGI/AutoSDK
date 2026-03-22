@@ -13,23 +13,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="hour")]
-        Hour,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="day")]
         Day,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="week")]
-        Week,
+        [global::System.Runtime.Serialization.EnumMember(Value="hour")]
+        Hour,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="month")]
         Month,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="week")]
+        Week,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                ReposGetRepoRuleSuitesTimePeriod.Hour => "hour",
                 ReposGetRepoRuleSuitesTimePeriod.Day => "day",
-                ReposGetRepoRuleSuitesTimePeriod.Week => "week",
+                ReposGetRepoRuleSuitesTimePeriod.Hour => "hour",
                 ReposGetRepoRuleSuitesTimePeriod.Month => "month",
+                ReposGetRepoRuleSuitesTimePeriod.Week => "week",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "hour" => ReposGetRepoRuleSuitesTimePeriod.Hour,
                 "day" => ReposGetRepoRuleSuitesTimePeriod.Day,
-                "week" => ReposGetRepoRuleSuitesTimePeriod.Week,
+                "hour" => ReposGetRepoRuleSuitesTimePeriod.Hour,
                 "month" => ReposGetRepoRuleSuitesTimePeriod.Month,
+                "week" => ReposGetRepoRuleSuitesTimePeriod.Week,
                 _ => null,
             };
         }

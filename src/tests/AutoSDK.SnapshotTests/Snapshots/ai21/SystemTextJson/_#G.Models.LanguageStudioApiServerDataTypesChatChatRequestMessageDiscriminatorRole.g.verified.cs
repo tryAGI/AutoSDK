@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Assistant,
         /// <summary>
         /// 
         /// </summary>
-        Assistant,
+        System,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        System,
+        User,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.User => "user",
                 LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.Assistant => "assistant",
-                LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.Tool => "tool",
                 LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.System => "system",
+                LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.Tool => "tool",
+                LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "user" => LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.User,
                 "assistant" => LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.Assistant,
-                "tool" => LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.Tool,
                 "system" => LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.System,
+                "tool" => LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.Tool,
+                "user" => LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.User,
                 _ => null,
             };
         }

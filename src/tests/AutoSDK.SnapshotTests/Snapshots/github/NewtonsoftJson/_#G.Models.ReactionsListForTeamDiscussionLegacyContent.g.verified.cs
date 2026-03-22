@@ -23,13 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="laugh")]
-        Laugh,
+        [global::System.Runtime.Serialization.EnumMember(Value="confused")]
+        Confused,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="confused")]
-        Confused,
+        [global::System.Runtime.Serialization.EnumMember(Value="eyes")]
+        Eyes,
         /// <summary>
         /// 
         /// </summary>
@@ -43,13 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="rocket")]
-        Rocket,
+        [global::System.Runtime.Serialization.EnumMember(Value="laugh")]
+        Laugh,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="eyes")]
-        Eyes,
+        [global::System.Runtime.Serialization.EnumMember(Value="rocket")]
+        Rocket,
     }
 
     /// <summary>
@@ -66,12 +66,12 @@ namespace G
             {
                 ReactionsListForTeamDiscussionLegacyContent.Plus1 => "+1",
                 ReactionsListForTeamDiscussionLegacyContent.Minus1 => "-1",
-                ReactionsListForTeamDiscussionLegacyContent.Laugh => "laugh",
                 ReactionsListForTeamDiscussionLegacyContent.Confused => "confused",
+                ReactionsListForTeamDiscussionLegacyContent.Eyes => "eyes",
                 ReactionsListForTeamDiscussionLegacyContent.Heart => "heart",
                 ReactionsListForTeamDiscussionLegacyContent.Hooray => "hooray",
+                ReactionsListForTeamDiscussionLegacyContent.Laugh => "laugh",
                 ReactionsListForTeamDiscussionLegacyContent.Rocket => "rocket",
-                ReactionsListForTeamDiscussionLegacyContent.Eyes => "eyes",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -84,12 +84,12 @@ namespace G
             {
                 "+1" => ReactionsListForTeamDiscussionLegacyContent.Plus1,
                 "-1" => ReactionsListForTeamDiscussionLegacyContent.Minus1,
-                "laugh" => ReactionsListForTeamDiscussionLegacyContent.Laugh,
                 "confused" => ReactionsListForTeamDiscussionLegacyContent.Confused,
+                "eyes" => ReactionsListForTeamDiscussionLegacyContent.Eyes,
                 "heart" => ReactionsListForTeamDiscussionLegacyContent.Heart,
                 "hooray" => ReactionsListForTeamDiscussionLegacyContent.Hooray,
+                "laugh" => ReactionsListForTeamDiscussionLegacyContent.Laugh,
                 "rocket" => ReactionsListForTeamDiscussionLegacyContent.Rocket,
-                "eyes" => ReactionsListForTeamDiscussionLegacyContent.Eyes,
                 _ => null,
             };
         }

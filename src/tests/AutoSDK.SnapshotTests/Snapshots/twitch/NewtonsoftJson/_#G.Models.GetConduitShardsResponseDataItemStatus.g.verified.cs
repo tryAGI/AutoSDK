@@ -29,8 +29,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="webhook_callback_verification_pending")]
-        WebhookCallbackVerificationPending,
+        [global::System.Runtime.Serialization.EnumMember(Value="notification_failures_exceeded")]
+        NotificationFailuresExceeded,
         /// <summary>
         /// 
         /// </summary>
@@ -39,8 +39,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="notification_failures_exceeded")]
-        NotificationFailuresExceeded,
+        [global::System.Runtime.Serialization.EnumMember(Value="webhook_callback_verification_pending")]
+        WebhookCallbackVerificationPending,
         /// <summary>
         /// 
         /// </summary>
@@ -54,13 +54,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="websocket_received_inbound_traffic")]
-        WebsocketReceivedInboundTraffic,
+        [global::System.Runtime.Serialization.EnumMember(Value="websocket_internal_error")]
+        WebsocketInternalError,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="websocket_internal_error")]
-        WebsocketInternalError,
+        [global::System.Runtime.Serialization.EnumMember(Value="websocket_network_error")]
+        WebsocketNetworkError,
         /// <summary>
         /// 
         /// </summary>
@@ -69,8 +69,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="websocket_network_error")]
-        WebsocketNetworkError,
+        [global::System.Runtime.Serialization.EnumMember(Value="websocket_received_inbound_traffic")]
+        WebsocketReceivedInboundTraffic,
     }
 
     /// <summary>
@@ -86,15 +86,15 @@ namespace G
             return value switch
             {
                 GetConduitShardsResponseDataItemStatus.Enabled => "enabled",
-                GetConduitShardsResponseDataItemStatus.WebhookCallbackVerificationPending => "webhook_callback_verification_pending",
-                GetConduitShardsResponseDataItemStatus.WebhookCallbackVerificationFailed => "webhook_callback_verification_failed",
                 GetConduitShardsResponseDataItemStatus.NotificationFailuresExceeded => "notification_failures_exceeded",
+                GetConduitShardsResponseDataItemStatus.WebhookCallbackVerificationFailed => "webhook_callback_verification_failed",
+                GetConduitShardsResponseDataItemStatus.WebhookCallbackVerificationPending => "webhook_callback_verification_pending",
                 GetConduitShardsResponseDataItemStatus.WebsocketDisconnected => "websocket_disconnected",
                 GetConduitShardsResponseDataItemStatus.WebsocketFailedPingPong => "websocket_failed_ping_pong",
-                GetConduitShardsResponseDataItemStatus.WebsocketReceivedInboundTraffic => "websocket_received_inbound_traffic",
                 GetConduitShardsResponseDataItemStatus.WebsocketInternalError => "websocket_internal_error",
-                GetConduitShardsResponseDataItemStatus.WebsocketNetworkTimeout => "websocket_network_timeout",
                 GetConduitShardsResponseDataItemStatus.WebsocketNetworkError => "websocket_network_error",
+                GetConduitShardsResponseDataItemStatus.WebsocketNetworkTimeout => "websocket_network_timeout",
+                GetConduitShardsResponseDataItemStatus.WebsocketReceivedInboundTraffic => "websocket_received_inbound_traffic",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -106,15 +106,15 @@ namespace G
             return value switch
             {
                 "enabled" => GetConduitShardsResponseDataItemStatus.Enabled,
-                "webhook_callback_verification_pending" => GetConduitShardsResponseDataItemStatus.WebhookCallbackVerificationPending,
-                "webhook_callback_verification_failed" => GetConduitShardsResponseDataItemStatus.WebhookCallbackVerificationFailed,
                 "notification_failures_exceeded" => GetConduitShardsResponseDataItemStatus.NotificationFailuresExceeded,
+                "webhook_callback_verification_failed" => GetConduitShardsResponseDataItemStatus.WebhookCallbackVerificationFailed,
+                "webhook_callback_verification_pending" => GetConduitShardsResponseDataItemStatus.WebhookCallbackVerificationPending,
                 "websocket_disconnected" => GetConduitShardsResponseDataItemStatus.WebsocketDisconnected,
                 "websocket_failed_ping_pong" => GetConduitShardsResponseDataItemStatus.WebsocketFailedPingPong,
-                "websocket_received_inbound_traffic" => GetConduitShardsResponseDataItemStatus.WebsocketReceivedInboundTraffic,
                 "websocket_internal_error" => GetConduitShardsResponseDataItemStatus.WebsocketInternalError,
-                "websocket_network_timeout" => GetConduitShardsResponseDataItemStatus.WebsocketNetworkTimeout,
                 "websocket_network_error" => GetConduitShardsResponseDataItemStatus.WebsocketNetworkError,
+                "websocket_network_timeout" => GetConduitShardsResponseDataItemStatus.WebsocketNetworkTimeout,
+                "websocket_received_inbound_traffic" => GetConduitShardsResponseDataItemStatus.WebsocketReceivedInboundTraffic,
                 _ => null,
             };
         }

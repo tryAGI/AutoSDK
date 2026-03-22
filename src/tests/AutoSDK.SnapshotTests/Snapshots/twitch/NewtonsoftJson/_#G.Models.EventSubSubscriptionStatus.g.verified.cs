@@ -30,33 +30,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="enabled")]
-        Enabled,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="webhook_callback_verification_pending")]
-        WebhookCallbackVerificationPending,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="webhook_callback_verification_failed")]
-        WebhookCallbackVerificationFailed,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="notification_failures_exceeded")]
-        NotificationFailuresExceeded,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="authorization_revoked")]
         AuthorizationRevoked,
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="beta_maintenance")]
+        BetaMaintenance,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="enabled")]
+        Enabled,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="moderator_removed")]
         ModeratorRemoved,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="notification_failures_exceeded")]
+        NotificationFailuresExceeded,
         /// <summary>
         /// 
         /// </summary>
@@ -70,8 +65,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="beta_maintenance")]
-        BetaMaintenance,
+        [global::System.Runtime.Serialization.EnumMember(Value="webhook_callback_verification_failed")]
+        WebhookCallbackVerificationFailed,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="webhook_callback_verification_pending")]
+        WebhookCallbackVerificationPending,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="websocket_connection_unused")]
+        WebsocketConnectionUnused,
         /// <summary>
         /// 
         /// </summary>
@@ -85,18 +90,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="websocket_received_inbound_traffic")]
-        WebsocketReceivedInboundTraffic,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="websocket_connection_unused")]
-        WebsocketConnectionUnused,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="websocket_internal_error")]
         WebsocketInternalError,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="websocket_network_error")]
+        WebsocketNetworkError,
         /// <summary>
         /// 
         /// </summary>
@@ -105,8 +105,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="websocket_network_error")]
-        WebsocketNetworkError,
+        [global::System.Runtime.Serialization.EnumMember(Value="websocket_received_inbound_traffic")]
+        WebsocketReceivedInboundTraffic,
     }
 
     /// <summary>
@@ -121,22 +121,22 @@ namespace G
         {
             return value switch
             {
-                EventSubSubscriptionStatus.Enabled => "enabled",
-                EventSubSubscriptionStatus.WebhookCallbackVerificationPending => "webhook_callback_verification_pending",
-                EventSubSubscriptionStatus.WebhookCallbackVerificationFailed => "webhook_callback_verification_failed",
-                EventSubSubscriptionStatus.NotificationFailuresExceeded => "notification_failures_exceeded",
                 EventSubSubscriptionStatus.AuthorizationRevoked => "authorization_revoked",
+                EventSubSubscriptionStatus.BetaMaintenance => "beta_maintenance",
+                EventSubSubscriptionStatus.Enabled => "enabled",
                 EventSubSubscriptionStatus.ModeratorRemoved => "moderator_removed",
+                EventSubSubscriptionStatus.NotificationFailuresExceeded => "notification_failures_exceeded",
                 EventSubSubscriptionStatus.UserRemoved => "user_removed",
                 EventSubSubscriptionStatus.VersionRemoved => "version_removed",
-                EventSubSubscriptionStatus.BetaMaintenance => "beta_maintenance",
+                EventSubSubscriptionStatus.WebhookCallbackVerificationFailed => "webhook_callback_verification_failed",
+                EventSubSubscriptionStatus.WebhookCallbackVerificationPending => "webhook_callback_verification_pending",
+                EventSubSubscriptionStatus.WebsocketConnectionUnused => "websocket_connection_unused",
                 EventSubSubscriptionStatus.WebsocketDisconnected => "websocket_disconnected",
                 EventSubSubscriptionStatus.WebsocketFailedPingPong => "websocket_failed_ping_pong",
-                EventSubSubscriptionStatus.WebsocketReceivedInboundTraffic => "websocket_received_inbound_traffic",
-                EventSubSubscriptionStatus.WebsocketConnectionUnused => "websocket_connection_unused",
                 EventSubSubscriptionStatus.WebsocketInternalError => "websocket_internal_error",
-                EventSubSubscriptionStatus.WebsocketNetworkTimeout => "websocket_network_timeout",
                 EventSubSubscriptionStatus.WebsocketNetworkError => "websocket_network_error",
+                EventSubSubscriptionStatus.WebsocketNetworkTimeout => "websocket_network_timeout",
+                EventSubSubscriptionStatus.WebsocketReceivedInboundTraffic => "websocket_received_inbound_traffic",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -147,22 +147,22 @@ namespace G
         {
             return value switch
             {
-                "enabled" => EventSubSubscriptionStatus.Enabled,
-                "webhook_callback_verification_pending" => EventSubSubscriptionStatus.WebhookCallbackVerificationPending,
-                "webhook_callback_verification_failed" => EventSubSubscriptionStatus.WebhookCallbackVerificationFailed,
-                "notification_failures_exceeded" => EventSubSubscriptionStatus.NotificationFailuresExceeded,
                 "authorization_revoked" => EventSubSubscriptionStatus.AuthorizationRevoked,
+                "beta_maintenance" => EventSubSubscriptionStatus.BetaMaintenance,
+                "enabled" => EventSubSubscriptionStatus.Enabled,
                 "moderator_removed" => EventSubSubscriptionStatus.ModeratorRemoved,
+                "notification_failures_exceeded" => EventSubSubscriptionStatus.NotificationFailuresExceeded,
                 "user_removed" => EventSubSubscriptionStatus.UserRemoved,
                 "version_removed" => EventSubSubscriptionStatus.VersionRemoved,
-                "beta_maintenance" => EventSubSubscriptionStatus.BetaMaintenance,
+                "webhook_callback_verification_failed" => EventSubSubscriptionStatus.WebhookCallbackVerificationFailed,
+                "webhook_callback_verification_pending" => EventSubSubscriptionStatus.WebhookCallbackVerificationPending,
+                "websocket_connection_unused" => EventSubSubscriptionStatus.WebsocketConnectionUnused,
                 "websocket_disconnected" => EventSubSubscriptionStatus.WebsocketDisconnected,
                 "websocket_failed_ping_pong" => EventSubSubscriptionStatus.WebsocketFailedPingPong,
-                "websocket_received_inbound_traffic" => EventSubSubscriptionStatus.WebsocketReceivedInboundTraffic,
-                "websocket_connection_unused" => EventSubSubscriptionStatus.WebsocketConnectionUnused,
                 "websocket_internal_error" => EventSubSubscriptionStatus.WebsocketInternalError,
-                "websocket_network_timeout" => EventSubSubscriptionStatus.WebsocketNetworkTimeout,
                 "websocket_network_error" => EventSubSubscriptionStatus.WebsocketNetworkError,
+                "websocket_network_timeout" => EventSubSubscriptionStatus.WebsocketNetworkTimeout,
+                "websocket_received_inbound_traffic" => EventSubSubscriptionStatus.WebsocketReceivedInboundTraffic,
                 _ => null,
             };
         }

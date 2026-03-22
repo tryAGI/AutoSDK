@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Repository,
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        Organization,
+        Repository,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                RepositoryRuleRulesetInfoRulesetSourceType.Repository => "Repository",
                 RepositoryRuleRulesetInfoRulesetSourceType.Organization => "Organization",
+                RepositoryRuleRulesetInfoRulesetSourceType.Repository => "Repository",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "Repository" => RepositoryRuleRulesetInfoRulesetSourceType.Repository,
                 "Organization" => RepositoryRuleRulesetInfoRulesetSourceType.Organization,
+                "Repository" => RepositoryRuleRulesetInfoRulesetSourceType.Repository,
                 _ => null,
             };
         }

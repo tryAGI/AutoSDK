@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Oldest,
+        Newest,
         /// <summary>
         /// 
         /// </summary>
-        Newest,
+        Oldest,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                GetCustomRewardRedemptionSort.Oldest => "OLDEST",
                 GetCustomRewardRedemptionSort.Newest => "NEWEST",
+                GetCustomRewardRedemptionSort.Oldest => "OLDEST",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "OLDEST" => GetCustomRewardRedemptionSort.Oldest,
                 "NEWEST" => GetCustomRewardRedemptionSort.Newest,
+                "OLDEST" => GetCustomRewardRedemptionSort.Oldest,
                 _ => null,
             };
         }

@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Admin,
+        /// <summary>
+        /// 
+        /// </summary>
         Pull,
         /// <summary>
         /// 
         /// </summary>
         Push,
-        /// <summary>
-        /// 
-        /// </summary>
-        Admin,
     }
 
     /// <summary>
@@ -36,9 +36,9 @@ namespace G
         {
             return value switch
             {
+                TeamsUpdateInOrgRequestPermission.Admin => "admin",
                 TeamsUpdateInOrgRequestPermission.Pull => "pull",
                 TeamsUpdateInOrgRequestPermission.Push => "push",
-                TeamsUpdateInOrgRequestPermission.Admin => "admin",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,9 +49,9 @@ namespace G
         {
             return value switch
             {
+                "admin" => TeamsUpdateInOrgRequestPermission.Admin,
                 "pull" => TeamsUpdateInOrgRequestPermission.Pull,
                 "push" => TeamsUpdateInOrgRequestPermission.Push,
-                "admin" => TeamsUpdateInOrgRequestPermission.Admin,
                 _ => null,
             };
         }

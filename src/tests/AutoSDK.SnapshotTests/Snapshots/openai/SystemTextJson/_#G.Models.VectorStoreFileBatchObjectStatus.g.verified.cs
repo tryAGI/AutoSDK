@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        InProgress,
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -20,11 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Cancelled,
+        Failed,
         /// <summary>
         /// 
         /// </summary>
-        Failed,
+        InProgress,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                VectorStoreFileBatchObjectStatus.InProgress => "in_progress",
-                VectorStoreFileBatchObjectStatus.Completed => "completed",
                 VectorStoreFileBatchObjectStatus.Cancelled => "cancelled",
+                VectorStoreFileBatchObjectStatus.Completed => "completed",
                 VectorStoreFileBatchObjectStatus.Failed => "failed",
+                VectorStoreFileBatchObjectStatus.InProgress => "in_progress",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "in_progress" => VectorStoreFileBatchObjectStatus.InProgress,
-                "completed" => VectorStoreFileBatchObjectStatus.Completed,
                 "cancelled" => VectorStoreFileBatchObjectStatus.Cancelled,
+                "completed" => VectorStoreFileBatchObjectStatus.Completed,
                 "failed" => VectorStoreFileBatchObjectStatus.Failed,
+                "in_progress" => VectorStoreFileBatchObjectStatus.InProgress,
                 _ => null,
             };
         }

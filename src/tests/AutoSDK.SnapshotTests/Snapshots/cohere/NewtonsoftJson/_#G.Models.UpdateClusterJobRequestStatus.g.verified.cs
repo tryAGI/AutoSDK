@@ -13,13 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="unknown")]
-        Unknown,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="processing")]
-        Processing,
+        [global::System.Runtime.Serialization.EnumMember(Value="complete")]
+        Complete,
         /// <summary>
         /// 
         /// </summary>
@@ -28,13 +23,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="complete")]
-        Complete,
+        [global::System.Runtime.Serialization.EnumMember(Value="processing")]
+        Processing,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="queued")]
         Queued,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="unknown")]
+        Unknown,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                UpdateClusterJobRequestStatus.Unknown => "unknown",
-                UpdateClusterJobRequestStatus.Processing => "processing",
-                UpdateClusterJobRequestStatus.Failed => "failed",
                 UpdateClusterJobRequestStatus.Complete => "complete",
+                UpdateClusterJobRequestStatus.Failed => "failed",
+                UpdateClusterJobRequestStatus.Processing => "processing",
                 UpdateClusterJobRequestStatus.Queued => "queued",
+                UpdateClusterJobRequestStatus.Unknown => "unknown",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "unknown" => UpdateClusterJobRequestStatus.Unknown,
-                "processing" => UpdateClusterJobRequestStatus.Processing,
-                "failed" => UpdateClusterJobRequestStatus.Failed,
                 "complete" => UpdateClusterJobRequestStatus.Complete,
+                "failed" => UpdateClusterJobRequestStatus.Failed,
+                "processing" => UpdateClusterJobRequestStatus.Processing,
                 "queued" => UpdateClusterJobRequestStatus.Queued,
+                "unknown" => UpdateClusterJobRequestStatus.Unknown,
                 _ => null,
             };
         }

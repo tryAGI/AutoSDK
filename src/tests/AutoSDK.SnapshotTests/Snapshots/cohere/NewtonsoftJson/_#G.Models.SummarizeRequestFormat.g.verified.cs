@@ -15,13 +15,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="paragraph")]
-        Paragraph,
+        [global::System.Runtime.Serialization.EnumMember(Value="bullets")]
+        Bullets,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="bullets")]
-        Bullets,
+        [global::System.Runtime.Serialization.EnumMember(Value="paragraph")]
+        Paragraph,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
         {
             return value switch
             {
-                SummarizeRequestFormat.Paragraph => "paragraph",
                 SummarizeRequestFormat.Bullets => "bullets",
+                SummarizeRequestFormat.Paragraph => "paragraph",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "paragraph" => SummarizeRequestFormat.Paragraph,
                 "bullets" => SummarizeRequestFormat.Bullets,
+                "paragraph" => SummarizeRequestFormat.Paragraph,
                 _ => null,
             };
         }

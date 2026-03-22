@@ -12,23 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        DeploymentInProgress,
-        /// <summary>
-        /// 
-        /// </summary>
-        SyncingFiles,
-        /// <summary>
-        /// 
-        /// </summary>
-        FinishedFileSync,
-        /// <summary>
-        /// 
-        /// </summary>
-        UpdatingPages,
-        /// <summary>
-        /// 
-        /// </summary>
-        PurgingCdn,
+        DeploymentAttemptError,
         /// <summary>
         /// 
         /// </summary>
@@ -36,15 +20,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        DeploymentFailed,
-        /// <summary>
-        /// 
-        /// </summary>
         DeploymentContentFailed,
         /// <summary>
         /// 
         /// </summary>
-        DeploymentAttemptError,
+        DeploymentFailed,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeploymentInProgress,
         /// <summary>
         /// 
         /// </summary>
@@ -52,7 +36,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        FinishedFileSync,
+        /// <summary>
+        /// 
+        /// </summary>
+        PurgingCdn,
+        /// <summary>
+        /// 
+        /// </summary>
         Succeed,
+        /// <summary>
+        /// 
+        /// </summary>
+        SyncingFiles,
+        /// <summary>
+        /// 
+        /// </summary>
+        UpdatingPages,
     }
 
     /// <summary>
@@ -67,17 +67,17 @@ namespace G
         {
             return value switch
             {
-                PagesDeploymentStatusStatus.DeploymentInProgress => "deployment_in_progress",
-                PagesDeploymentStatusStatus.SyncingFiles => "syncing_files",
-                PagesDeploymentStatusStatus.FinishedFileSync => "finished_file_sync",
-                PagesDeploymentStatusStatus.UpdatingPages => "updating_pages",
-                PagesDeploymentStatusStatus.PurgingCdn => "purging_cdn",
-                PagesDeploymentStatusStatus.DeploymentCancelled => "deployment_cancelled",
-                PagesDeploymentStatusStatus.DeploymentFailed => "deployment_failed",
-                PagesDeploymentStatusStatus.DeploymentContentFailed => "deployment_content_failed",
                 PagesDeploymentStatusStatus.DeploymentAttemptError => "deployment_attempt_error",
+                PagesDeploymentStatusStatus.DeploymentCancelled => "deployment_cancelled",
+                PagesDeploymentStatusStatus.DeploymentContentFailed => "deployment_content_failed",
+                PagesDeploymentStatusStatus.DeploymentFailed => "deployment_failed",
+                PagesDeploymentStatusStatus.DeploymentInProgress => "deployment_in_progress",
                 PagesDeploymentStatusStatus.DeploymentLost => "deployment_lost",
+                PagesDeploymentStatusStatus.FinishedFileSync => "finished_file_sync",
+                PagesDeploymentStatusStatus.PurgingCdn => "purging_cdn",
                 PagesDeploymentStatusStatus.Succeed => "succeed",
+                PagesDeploymentStatusStatus.SyncingFiles => "syncing_files",
+                PagesDeploymentStatusStatus.UpdatingPages => "updating_pages",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -88,17 +88,17 @@ namespace G
         {
             return value switch
             {
-                "deployment_in_progress" => PagesDeploymentStatusStatus.DeploymentInProgress,
-                "syncing_files" => PagesDeploymentStatusStatus.SyncingFiles,
-                "finished_file_sync" => PagesDeploymentStatusStatus.FinishedFileSync,
-                "updating_pages" => PagesDeploymentStatusStatus.UpdatingPages,
-                "purging_cdn" => PagesDeploymentStatusStatus.PurgingCdn,
-                "deployment_cancelled" => PagesDeploymentStatusStatus.DeploymentCancelled,
-                "deployment_failed" => PagesDeploymentStatusStatus.DeploymentFailed,
-                "deployment_content_failed" => PagesDeploymentStatusStatus.DeploymentContentFailed,
                 "deployment_attempt_error" => PagesDeploymentStatusStatus.DeploymentAttemptError,
+                "deployment_cancelled" => PagesDeploymentStatusStatus.DeploymentCancelled,
+                "deployment_content_failed" => PagesDeploymentStatusStatus.DeploymentContentFailed,
+                "deployment_failed" => PagesDeploymentStatusStatus.DeploymentFailed,
+                "deployment_in_progress" => PagesDeploymentStatusStatus.DeploymentInProgress,
                 "deployment_lost" => PagesDeploymentStatusStatus.DeploymentLost,
+                "finished_file_sync" => PagesDeploymentStatusStatus.FinishedFileSync,
+                "purging_cdn" => PagesDeploymentStatusStatus.PurgingCdn,
                 "succeed" => PagesDeploymentStatusStatus.Succeed,
+                "syncing_files" => PagesDeploymentStatusStatus.SyncingFiles,
+                "updating_pages" => PagesDeploymentStatusStatus.UpdatingPages,
                 _ => null,
             };
         }

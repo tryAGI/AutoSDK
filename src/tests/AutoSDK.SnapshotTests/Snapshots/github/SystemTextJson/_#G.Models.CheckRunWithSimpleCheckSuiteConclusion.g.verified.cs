@@ -12,23 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Waiting,
+        ActionRequired,
         /// <summary>
         /// 
         /// </summary>
-        Pending,
-        /// <summary>
-        /// 
-        /// </summary>
-        StartupFailure,
-        /// <summary>
-        /// 
-        /// </summary>
-        Stale,
-        /// <summary>
-        /// 
-        /// </summary>
-        Success,
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -40,7 +28,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Cancelled,
+        Pending,
         /// <summary>
         /// 
         /// </summary>
@@ -48,11 +36,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Stale,
+        /// <summary>
+        /// 
+        /// </summary>
+        StartupFailure,
+        /// <summary>
+        /// 
+        /// </summary>
+        Success,
+        /// <summary>
+        /// 
+        /// </summary>
         TimedOut,
         /// <summary>
         /// 
         /// </summary>
-        ActionRequired,
+        Waiting,
     }
 
     /// <summary>
@@ -67,17 +67,17 @@ namespace G
         {
             return value switch
             {
-                CheckRunWithSimpleCheckSuiteConclusion.Waiting => "waiting",
-                CheckRunWithSimpleCheckSuiteConclusion.Pending => "pending",
-                CheckRunWithSimpleCheckSuiteConclusion.StartupFailure => "startup_failure",
-                CheckRunWithSimpleCheckSuiteConclusion.Stale => "stale",
-                CheckRunWithSimpleCheckSuiteConclusion.Success => "success",
+                CheckRunWithSimpleCheckSuiteConclusion.ActionRequired => "action_required",
+                CheckRunWithSimpleCheckSuiteConclusion.Cancelled => "cancelled",
                 CheckRunWithSimpleCheckSuiteConclusion.Failure => "failure",
                 CheckRunWithSimpleCheckSuiteConclusion.Neutral => "neutral",
-                CheckRunWithSimpleCheckSuiteConclusion.Cancelled => "cancelled",
+                CheckRunWithSimpleCheckSuiteConclusion.Pending => "pending",
                 CheckRunWithSimpleCheckSuiteConclusion.Skipped => "skipped",
+                CheckRunWithSimpleCheckSuiteConclusion.Stale => "stale",
+                CheckRunWithSimpleCheckSuiteConclusion.StartupFailure => "startup_failure",
+                CheckRunWithSimpleCheckSuiteConclusion.Success => "success",
                 CheckRunWithSimpleCheckSuiteConclusion.TimedOut => "timed_out",
-                CheckRunWithSimpleCheckSuiteConclusion.ActionRequired => "action_required",
+                CheckRunWithSimpleCheckSuiteConclusion.Waiting => "waiting",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -88,17 +88,17 @@ namespace G
         {
             return value switch
             {
-                "waiting" => CheckRunWithSimpleCheckSuiteConclusion.Waiting,
-                "pending" => CheckRunWithSimpleCheckSuiteConclusion.Pending,
-                "startup_failure" => CheckRunWithSimpleCheckSuiteConclusion.StartupFailure,
-                "stale" => CheckRunWithSimpleCheckSuiteConclusion.Stale,
-                "success" => CheckRunWithSimpleCheckSuiteConclusion.Success,
+                "action_required" => CheckRunWithSimpleCheckSuiteConclusion.ActionRequired,
+                "cancelled" => CheckRunWithSimpleCheckSuiteConclusion.Cancelled,
                 "failure" => CheckRunWithSimpleCheckSuiteConclusion.Failure,
                 "neutral" => CheckRunWithSimpleCheckSuiteConclusion.Neutral,
-                "cancelled" => CheckRunWithSimpleCheckSuiteConclusion.Cancelled,
+                "pending" => CheckRunWithSimpleCheckSuiteConclusion.Pending,
                 "skipped" => CheckRunWithSimpleCheckSuiteConclusion.Skipped,
+                "stale" => CheckRunWithSimpleCheckSuiteConclusion.Stale,
+                "startup_failure" => CheckRunWithSimpleCheckSuiteConclusion.StartupFailure,
+                "success" => CheckRunWithSimpleCheckSuiteConclusion.Success,
                 "timed_out" => CheckRunWithSimpleCheckSuiteConclusion.TimedOut,
-                "action_required" => CheckRunWithSimpleCheckSuiteConclusion.ActionRequired,
+                "waiting" => CheckRunWithSimpleCheckSuiteConclusion.Waiting,
                 _ => null,
             };
         }

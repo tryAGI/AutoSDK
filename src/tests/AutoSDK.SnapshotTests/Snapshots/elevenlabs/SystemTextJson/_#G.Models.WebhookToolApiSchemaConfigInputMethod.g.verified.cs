@@ -13,7 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Delete,
+        /// <summary>
+        /// 
+        /// </summary>
         Get,
+        /// <summary>
+        /// 
+        /// </summary>
+        Patch,
         /// <summary>
         /// 
         /// </summary>
@@ -22,14 +30,6 @@ namespace G
         /// 
         /// </summary>
         Put,
-        /// <summary>
-        /// 
-        /// </summary>
-        Patch,
-        /// <summary>
-        /// 
-        /// </summary>
-        Delete,
     }
 
     /// <summary>
@@ -44,11 +44,11 @@ namespace G
         {
             return value switch
             {
+                WebhookToolApiSchemaConfigInputMethod.Delete => "DELETE",
                 WebhookToolApiSchemaConfigInputMethod.Get => "GET",
+                WebhookToolApiSchemaConfigInputMethod.Patch => "PATCH",
                 WebhookToolApiSchemaConfigInputMethod.Post => "POST",
                 WebhookToolApiSchemaConfigInputMethod.Put => "PUT",
-                WebhookToolApiSchemaConfigInputMethod.Patch => "PATCH",
-                WebhookToolApiSchemaConfigInputMethod.Delete => "DELETE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,11 +59,11 @@ namespace G
         {
             return value switch
             {
+                "DELETE" => WebhookToolApiSchemaConfigInputMethod.Delete,
                 "GET" => WebhookToolApiSchemaConfigInputMethod.Get,
+                "PATCH" => WebhookToolApiSchemaConfigInputMethod.Patch,
                 "POST" => WebhookToolApiSchemaConfigInputMethod.Post,
                 "PUT" => WebhookToolApiSchemaConfigInputMethod.Put,
-                "PATCH" => WebhookToolApiSchemaConfigInputMethod.Patch,
-                "DELETE" => WebhookToolApiSchemaConfigInputMethod.Delete,
                 _ => null,
             };
         }

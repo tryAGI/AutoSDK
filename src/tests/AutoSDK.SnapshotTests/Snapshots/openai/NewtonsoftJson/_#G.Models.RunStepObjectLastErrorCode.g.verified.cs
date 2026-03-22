@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="server_error")]
-        ServerError,
+        [global::System.Runtime.Serialization.EnumMember(Value="rate_limit_exceeded")]
+        RateLimitExceeded,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="rate_limit_exceeded")]
-        RateLimitExceeded,
+        [global::System.Runtime.Serialization.EnumMember(Value="server_error")]
+        ServerError,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                RunStepObjectLastErrorCode.ServerError => "server_error",
                 RunStepObjectLastErrorCode.RateLimitExceeded => "rate_limit_exceeded",
+                RunStepObjectLastErrorCode.ServerError => "server_error",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "server_error" => RunStepObjectLastErrorCode.ServerError,
                 "rate_limit_exceeded" => RunStepObjectLastErrorCode.RateLimitExceeded,
+                "server_error" => RunStepObjectLastErrorCode.ServerError,
                 _ => null,
             };
         }

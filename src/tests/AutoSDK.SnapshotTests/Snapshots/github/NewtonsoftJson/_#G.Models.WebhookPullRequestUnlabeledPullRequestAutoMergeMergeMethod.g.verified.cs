@@ -18,13 +18,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="squash")]
-        Squash,
+        [global::System.Runtime.Serialization.EnumMember(Value="rebase")]
+        Rebase,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="rebase")]
-        Rebase,
+        [global::System.Runtime.Serialization.EnumMember(Value="squash")]
+        Squash,
     }
 
     /// <summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 WebhookPullRequestUnlabeledPullRequestAutoMergeMergeMethod.Merge => "merge",
-                WebhookPullRequestUnlabeledPullRequestAutoMergeMergeMethod.Squash => "squash",
                 WebhookPullRequestUnlabeledPullRequestAutoMergeMergeMethod.Rebase => "rebase",
+                WebhookPullRequestUnlabeledPullRequestAutoMergeMergeMethod.Squash => "squash",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,8 +53,8 @@ namespace G
             return value switch
             {
                 "merge" => WebhookPullRequestUnlabeledPullRequestAutoMergeMergeMethod.Merge,
-                "squash" => WebhookPullRequestUnlabeledPullRequestAutoMergeMergeMethod.Squash,
                 "rebase" => WebhookPullRequestUnlabeledPullRequestAutoMergeMergeMethod.Rebase,
+                "squash" => WebhookPullRequestUnlabeledPullRequestAutoMergeMergeMethod.Squash,
                 _ => null,
             };
         }

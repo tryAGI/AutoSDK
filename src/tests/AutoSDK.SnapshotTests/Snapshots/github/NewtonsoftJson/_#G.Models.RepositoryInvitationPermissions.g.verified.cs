@@ -14,18 +14,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="read")]
-        Read,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="write")]
-        Write,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="admin")]
         Admin,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="maintain")]
+        Maintain,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="read")]
+        Read,
         /// <summary>
         /// 
         /// </summary>
@@ -34,8 +34,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="maintain")]
-        Maintain,
+        [global::System.Runtime.Serialization.EnumMember(Value="write")]
+        Write,
     }
 
     /// <summary>
@@ -50,11 +50,11 @@ namespace G
         {
             return value switch
             {
-                RepositoryInvitationPermissions.Read => "read",
-                RepositoryInvitationPermissions.Write => "write",
                 RepositoryInvitationPermissions.Admin => "admin",
-                RepositoryInvitationPermissions.Triage => "triage",
                 RepositoryInvitationPermissions.Maintain => "maintain",
+                RepositoryInvitationPermissions.Read => "read",
+                RepositoryInvitationPermissions.Triage => "triage",
+                RepositoryInvitationPermissions.Write => "write",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -65,11 +65,11 @@ namespace G
         {
             return value switch
             {
-                "read" => RepositoryInvitationPermissions.Read,
-                "write" => RepositoryInvitationPermissions.Write,
                 "admin" => RepositoryInvitationPermissions.Admin,
-                "triage" => RepositoryInvitationPermissions.Triage,
                 "maintain" => RepositoryInvitationPermissions.Maintain,
+                "read" => RepositoryInvitationPermissions.Read,
+                "triage" => RepositoryInvitationPermissions.Triage,
+                "write" => RepositoryInvitationPermissions.Write,
                 _ => null,
             };
         }

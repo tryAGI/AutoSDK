@@ -43,13 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="onyx")]
-        Onyx,
+        [global::System.Runtime.Serialization.EnumMember(Value="nova")]
+        Nova,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="nova")]
-        Nova,
+        [global::System.Runtime.Serialization.EnumMember(Value="onyx")]
+        Onyx,
         /// <summary>
         /// 
         /// </summary>
@@ -85,8 +85,8 @@ namespace G
                 VoiceIdsSharedEnum.Coral => "coral",
                 VoiceIdsSharedEnum.Echo => "echo",
                 VoiceIdsSharedEnum.Fable => "fable",
-                VoiceIdsSharedEnum.Onyx => "onyx",
                 VoiceIdsSharedEnum.Nova => "nova",
+                VoiceIdsSharedEnum.Onyx => "onyx",
                 VoiceIdsSharedEnum.Sage => "sage",
                 VoiceIdsSharedEnum.Shimmer => "shimmer",
                 VoiceIdsSharedEnum.Verse => "verse",
@@ -106,8 +106,8 @@ namespace G
                 "coral" => VoiceIdsSharedEnum.Coral,
                 "echo" => VoiceIdsSharedEnum.Echo,
                 "fable" => VoiceIdsSharedEnum.Fable,
-                "onyx" => VoiceIdsSharedEnum.Onyx,
                 "nova" => VoiceIdsSharedEnum.Nova,
+                "onyx" => VoiceIdsSharedEnum.Onyx,
                 "sage" => VoiceIdsSharedEnum.Sage,
                 "shimmer" => VoiceIdsSharedEnum.Shimmer,
                 "verse" => VoiceIdsSharedEnum.Verse,

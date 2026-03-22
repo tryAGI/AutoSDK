@@ -14,13 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pcm_s16le_16")]
-        PcmS16le16,
+        [global::System.Runtime.Serialization.EnumMember(Value="other")]
+        Other,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="other")]
-        Other,
+        [global::System.Runtime.Serialization.EnumMember(Value="pcm_s16le_16")]
+        PcmS16le16,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                BodySpeechToTextV1SpeechToTextPostFileFormat.PcmS16le16 => "pcm_s16le_16",
                 BodySpeechToTextV1SpeechToTextPostFileFormat.Other => "other",
+                BodySpeechToTextV1SpeechToTextPostFileFormat.PcmS16le16 => "pcm_s16le_16",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,8 +47,8 @@ namespace G
         {
             return value switch
             {
-                "pcm_s16le_16" => BodySpeechToTextV1SpeechToTextPostFileFormat.PcmS16le16,
                 "other" => BodySpeechToTextV1SpeechToTextPostFileFormat.Other,
+                "pcm_s16le_16" => BodySpeechToTextV1SpeechToTextPostFileFormat.PcmS16le16,
                 _ => null,
             };
         }

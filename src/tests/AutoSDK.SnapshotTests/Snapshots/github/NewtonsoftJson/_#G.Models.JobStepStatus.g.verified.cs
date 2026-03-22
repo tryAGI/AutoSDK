@@ -14,8 +14,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
-        Queued,
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
-        Completed,
+        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
+        Queued,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
         {
             return value switch
             {
-                JobStepStatus.Queued => "queued",
-                JobStepStatus.InProgress => "in_progress",
                 JobStepStatus.Completed => "completed",
+                JobStepStatus.InProgress => "in_progress",
+                JobStepStatus.Queued => "queued",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
-                "queued" => JobStepStatus.Queued,
-                "in_progress" => JobStepStatus.InProgress,
                 "completed" => JobStepStatus.Completed,
+                "in_progress" => JobStepStatus.InProgress,
+                "queued" => JobStepStatus.Queued,
                 _ => null,
             };
         }

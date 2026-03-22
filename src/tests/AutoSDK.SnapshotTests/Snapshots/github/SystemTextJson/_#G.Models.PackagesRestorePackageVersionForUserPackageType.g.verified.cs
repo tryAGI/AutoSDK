@@ -12,15 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Npm,
-        /// <summary>
-        /// 
-        /// </summary>
-        Maven,
-        /// <summary>
-        /// 
-        /// </summary>
-        Rubygems,
+        Container,
         /// <summary>
         /// 
         /// </summary>
@@ -28,11 +20,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Maven,
+        /// <summary>
+        /// 
+        /// </summary>
+        Npm,
+        /// <summary>
+        /// 
+        /// </summary>
         Nuget,
         /// <summary>
         /// 
         /// </summary>
-        Container,
+        Rubygems,
     }
 
     /// <summary>
@@ -47,12 +47,12 @@ namespace G
         {
             return value switch
             {
-                PackagesRestorePackageVersionForUserPackageType.Npm => "npm",
-                PackagesRestorePackageVersionForUserPackageType.Maven => "maven",
-                PackagesRestorePackageVersionForUserPackageType.Rubygems => "rubygems",
-                PackagesRestorePackageVersionForUserPackageType.Docker => "docker",
-                PackagesRestorePackageVersionForUserPackageType.Nuget => "nuget",
                 PackagesRestorePackageVersionForUserPackageType.Container => "container",
+                PackagesRestorePackageVersionForUserPackageType.Docker => "docker",
+                PackagesRestorePackageVersionForUserPackageType.Maven => "maven",
+                PackagesRestorePackageVersionForUserPackageType.Npm => "npm",
+                PackagesRestorePackageVersionForUserPackageType.Nuget => "nuget",
+                PackagesRestorePackageVersionForUserPackageType.Rubygems => "rubygems",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,12 +63,12 @@ namespace G
         {
             return value switch
             {
-                "npm" => PackagesRestorePackageVersionForUserPackageType.Npm,
-                "maven" => PackagesRestorePackageVersionForUserPackageType.Maven,
-                "rubygems" => PackagesRestorePackageVersionForUserPackageType.Rubygems,
-                "docker" => PackagesRestorePackageVersionForUserPackageType.Docker,
-                "nuget" => PackagesRestorePackageVersionForUserPackageType.Nuget,
                 "container" => PackagesRestorePackageVersionForUserPackageType.Container,
+                "docker" => PackagesRestorePackageVersionForUserPackageType.Docker,
+                "maven" => PackagesRestorePackageVersionForUserPackageType.Maven,
+                "npm" => PackagesRestorePackageVersionForUserPackageType.Npm,
+                "nuget" => PackagesRestorePackageVersionForUserPackageType.Nuget,
+                "rubygems" => PackagesRestorePackageVersionForUserPackageType.Rubygems,
                 _ => null,
             };
         }

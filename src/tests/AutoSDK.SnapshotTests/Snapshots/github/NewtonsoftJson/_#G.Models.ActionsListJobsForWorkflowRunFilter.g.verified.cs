@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="latest")]
-        Latest,
+        [global::System.Runtime.Serialization.EnumMember(Value="all")]
+        All,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="all")]
-        All,
+        [global::System.Runtime.Serialization.EnumMember(Value="latest")]
+        Latest,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ActionsListJobsForWorkflowRunFilter.Latest => "latest",
                 ActionsListJobsForWorkflowRunFilter.All => "all",
+                ActionsListJobsForWorkflowRunFilter.Latest => "latest",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "latest" => ActionsListJobsForWorkflowRunFilter.Latest,
                 "all" => ActionsListJobsForWorkflowRunFilter.All,
+                "latest" => ActionsListJobsForWorkflowRunFilter.Latest,
                 _ => null,
             };
         }

@@ -14,16 +14,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="subversion")]
-        Subversion,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="tfvc")]
-        Tfvc,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="git")]
         Git,
         /// <summary>
@@ -31,6 +21,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="mercurial")]
         Mercurial,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="subversion")]
+        Subversion,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="tfvc")]
+        Tfvc,
     }
 
     /// <summary>
@@ -45,10 +45,10 @@ namespace G
         {
             return value switch
             {
-                MigrationsUpdateImportRequestVcs.Subversion => "subversion",
-                MigrationsUpdateImportRequestVcs.Tfvc => "tfvc",
                 MigrationsUpdateImportRequestVcs.Git => "git",
                 MigrationsUpdateImportRequestVcs.Mercurial => "mercurial",
+                MigrationsUpdateImportRequestVcs.Subversion => "subversion",
+                MigrationsUpdateImportRequestVcs.Tfvc => "tfvc",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,10 +59,10 @@ namespace G
         {
             return value switch
             {
-                "subversion" => MigrationsUpdateImportRequestVcs.Subversion,
-                "tfvc" => MigrationsUpdateImportRequestVcs.Tfvc,
                 "git" => MigrationsUpdateImportRequestVcs.Git,
                 "mercurial" => MigrationsUpdateImportRequestVcs.Mercurial,
+                "subversion" => MigrationsUpdateImportRequestVcs.Subversion,
+                "tfvc" => MigrationsUpdateImportRequestVcs.Tfvc,
                 _ => null,
             };
         }

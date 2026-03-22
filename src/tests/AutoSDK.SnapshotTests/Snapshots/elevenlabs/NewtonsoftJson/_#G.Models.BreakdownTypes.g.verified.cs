@@ -13,8 +13,73 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="all_api_keys")]
+        AllApiKeys,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="api_keys")]
+        ApiKeys,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="groups")]
+        Groups,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="has_api_key")]
+        HasApiKey,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="model")]
+        Model,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="none")]
         None,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="product_type")]
+        ProductType,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="region")]
+        Region,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="reporting_workspace_id")]
+        ReportingWorkspaceId,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="request_queue")]
+        RequestQueue,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="request_source")]
+        RequestSource,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="resource")]
+        Resource,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="subresource_id")]
+        SubresourceId,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="user")]
+        User,
         /// <summary>
         /// 
         /// </summary>
@@ -25,71 +90,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="voice_multiplier")]
         VoiceMultiplier,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="user")]
-        User,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="groups")]
-        Groups,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="api_keys")]
-        ApiKeys,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="all_api_keys")]
-        AllApiKeys,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="product_type")]
-        ProductType,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="model")]
-        Model,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="resource")]
-        Resource,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="request_queue")]
-        RequestQueue,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="region")]
-        Region,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="subresource_id")]
-        SubresourceId,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="reporting_workspace_id")]
-        ReportingWorkspaceId,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="has_api_key")]
-        HasApiKey,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="request_source")]
-        RequestSource,
     }
 
     /// <summary>
@@ -104,22 +104,22 @@ namespace G
         {
             return value switch
             {
+                BreakdownTypes.AllApiKeys => "all_api_keys",
+                BreakdownTypes.ApiKeys => "api_keys",
+                BreakdownTypes.Groups => "groups",
+                BreakdownTypes.HasApiKey => "has_api_key",
+                BreakdownTypes.Model => "model",
                 BreakdownTypes.None => "none",
+                BreakdownTypes.ProductType => "product_type",
+                BreakdownTypes.Region => "region",
+                BreakdownTypes.ReportingWorkspaceId => "reporting_workspace_id",
+                BreakdownTypes.RequestQueue => "request_queue",
+                BreakdownTypes.RequestSource => "request_source",
+                BreakdownTypes.Resource => "resource",
+                BreakdownTypes.SubresourceId => "subresource_id",
+                BreakdownTypes.User => "user",
                 BreakdownTypes.Voice => "voice",
                 BreakdownTypes.VoiceMultiplier => "voice_multiplier",
-                BreakdownTypes.User => "user",
-                BreakdownTypes.Groups => "groups",
-                BreakdownTypes.ApiKeys => "api_keys",
-                BreakdownTypes.AllApiKeys => "all_api_keys",
-                BreakdownTypes.ProductType => "product_type",
-                BreakdownTypes.Model => "model",
-                BreakdownTypes.Resource => "resource",
-                BreakdownTypes.RequestQueue => "request_queue",
-                BreakdownTypes.Region => "region",
-                BreakdownTypes.SubresourceId => "subresource_id",
-                BreakdownTypes.ReportingWorkspaceId => "reporting_workspace_id",
-                BreakdownTypes.HasApiKey => "has_api_key",
-                BreakdownTypes.RequestSource => "request_source",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -130,22 +130,22 @@ namespace G
         {
             return value switch
             {
+                "all_api_keys" => BreakdownTypes.AllApiKeys,
+                "api_keys" => BreakdownTypes.ApiKeys,
+                "groups" => BreakdownTypes.Groups,
+                "has_api_key" => BreakdownTypes.HasApiKey,
+                "model" => BreakdownTypes.Model,
                 "none" => BreakdownTypes.None,
+                "product_type" => BreakdownTypes.ProductType,
+                "region" => BreakdownTypes.Region,
+                "reporting_workspace_id" => BreakdownTypes.ReportingWorkspaceId,
+                "request_queue" => BreakdownTypes.RequestQueue,
+                "request_source" => BreakdownTypes.RequestSource,
+                "resource" => BreakdownTypes.Resource,
+                "subresource_id" => BreakdownTypes.SubresourceId,
+                "user" => BreakdownTypes.User,
                 "voice" => BreakdownTypes.Voice,
                 "voice_multiplier" => BreakdownTypes.VoiceMultiplier,
-                "user" => BreakdownTypes.User,
-                "groups" => BreakdownTypes.Groups,
-                "api_keys" => BreakdownTypes.ApiKeys,
-                "all_api_keys" => BreakdownTypes.AllApiKeys,
-                "product_type" => BreakdownTypes.ProductType,
-                "model" => BreakdownTypes.Model,
-                "resource" => BreakdownTypes.Resource,
-                "request_queue" => BreakdownTypes.RequestQueue,
-                "region" => BreakdownTypes.Region,
-                "subresource_id" => BreakdownTypes.SubresourceId,
-                "reporting_workspace_id" => BreakdownTypes.ReportingWorkspaceId,
-                "has_api_key" => BreakdownTypes.HasApiKey,
-                "request_source" => BreakdownTypes.RequestSource,
                 _ => null,
             };
         }

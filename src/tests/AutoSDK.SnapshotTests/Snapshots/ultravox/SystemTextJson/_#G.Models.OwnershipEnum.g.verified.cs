@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Public,
+        Private,
         /// <summary>
         /// 
         /// </summary>
-        Private,
+        Public,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                OwnershipEnum.Public => "public",
                 OwnershipEnum.Private => "private",
+                OwnershipEnum.Public => "public",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "public" => OwnershipEnum.Public,
                 "private" => OwnershipEnum.Private,
+                "public" => OwnershipEnum.Public,
                 _ => null,
             };
         }

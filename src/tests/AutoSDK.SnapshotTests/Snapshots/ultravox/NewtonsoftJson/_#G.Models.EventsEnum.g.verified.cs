@@ -15,8 +15,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="call.started")]
-        CallStarted,
+        [global::System.Runtime.Serialization.EnumMember(Value="call.ended")]
+        CallEnded,
         /// <summary>
         /// 
         /// </summary>
@@ -25,8 +25,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="call.ended")]
-        CallEnded,
+        [global::System.Runtime.Serialization.EnumMember(Value="call.started")]
+        CallStarted,
     }
 
     /// <summary>
@@ -41,9 +41,9 @@ namespace G
         {
             return value switch
             {
-                EventsEnum.CallStarted => "call.started",
-                EventsEnum.CallJoined => "call.joined",
                 EventsEnum.CallEnded => "call.ended",
+                EventsEnum.CallJoined => "call.joined",
+                EventsEnum.CallStarted => "call.started",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace G
         {
             return value switch
             {
-                "call.started" => EventsEnum.CallStarted,
-                "call.joined" => EventsEnum.CallJoined,
                 "call.ended" => EventsEnum.CallEnded,
+                "call.joined" => EventsEnum.CallJoined,
+                "call.started" => EventsEnum.CallStarted,
                 _ => null,
             };
         }

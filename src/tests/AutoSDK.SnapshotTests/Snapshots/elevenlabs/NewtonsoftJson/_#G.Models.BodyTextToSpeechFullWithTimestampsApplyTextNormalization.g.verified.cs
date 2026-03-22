@@ -19,13 +19,13 @@ namespace G
         /// <summary>
         /// 'auto', 'on', and 'off'. When set to 'auto', the system will automatically decide whether to apply text normalization (e.g., spelling out numbers). With 'on', text normalization will always be applied, while with 'off', it will be skipped.
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="on")]
-        On,
+        [global::System.Runtime.Serialization.EnumMember(Value="off")]
+        Off,
         /// <summary>
         /// 'auto', 'on', and 'off'. When set to 'auto', the system will automatically decide whether to apply text normalization (e.g., spelling out numbers). With 'on', text normalization will always be applied, while with 'off', it will be skipped.
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="off")]
-        Off,
+        [global::System.Runtime.Serialization.EnumMember(Value="on")]
+        On,
     }
 
     /// <summary>
@@ -41,8 +41,8 @@ namespace G
             return value switch
             {
                 BodyTextToSpeechFullWithTimestampsApplyTextNormalization.Auto => "auto",
-                BodyTextToSpeechFullWithTimestampsApplyTextNormalization.On => "on",
                 BodyTextToSpeechFullWithTimestampsApplyTextNormalization.Off => "off",
+                BodyTextToSpeechFullWithTimestampsApplyTextNormalization.On => "on",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,8 +54,8 @@ namespace G
             return value switch
             {
                 "auto" => BodyTextToSpeechFullWithTimestampsApplyTextNormalization.Auto,
-                "on" => BodyTextToSpeechFullWithTimestampsApplyTextNormalization.On,
                 "off" => BodyTextToSpeechFullWithTimestampsApplyTextNormalization.Off,
+                "on" => BodyTextToSpeechFullWithTimestampsApplyTextNormalization.On,
                 _ => null,
             };
         }

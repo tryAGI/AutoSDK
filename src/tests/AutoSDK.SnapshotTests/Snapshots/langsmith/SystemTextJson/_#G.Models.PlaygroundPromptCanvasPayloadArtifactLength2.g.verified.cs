@@ -12,7 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Shortest,
+        Long,
+        /// <summary>
+        /// 
+        /// </summary>
+        Longest,
         /// <summary>
         /// 
         /// </summary>
@@ -20,11 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Long,
-        /// <summary>
-        /// 
-        /// </summary>
-        Longest,
+        Shortest,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                PlaygroundPromptCanvasPayloadArtifactLength2.Shortest => "shortest",
-                PlaygroundPromptCanvasPayloadArtifactLength2.Short => "short",
                 PlaygroundPromptCanvasPayloadArtifactLength2.Long => "long",
                 PlaygroundPromptCanvasPayloadArtifactLength2.Longest => "longest",
+                PlaygroundPromptCanvasPayloadArtifactLength2.Short => "short",
+                PlaygroundPromptCanvasPayloadArtifactLength2.Shortest => "shortest",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "shortest" => PlaygroundPromptCanvasPayloadArtifactLength2.Shortest,
-                "short" => PlaygroundPromptCanvasPayloadArtifactLength2.Short,
                 "long" => PlaygroundPromptCanvasPayloadArtifactLength2.Long,
                 "longest" => PlaygroundPromptCanvasPayloadArtifactLength2.Longest,
+                "short" => PlaygroundPromptCanvasPayloadArtifactLength2.Short,
+                "shortest" => PlaygroundPromptCanvasPayloadArtifactLength2.Shortest,
                 _ => null,
             };
         }

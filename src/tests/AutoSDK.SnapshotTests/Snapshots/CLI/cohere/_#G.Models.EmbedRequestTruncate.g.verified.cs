@@ -16,15 +16,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        End,
+        /// <summary>
+        /// 
+        /// </summary>
         None,
         /// <summary>
         /// 
         /// </summary>
         Start,
-        /// <summary>
-        /// 
-        /// </summary>
-        End,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                EmbedRequestTruncate.End => "END",
                 EmbedRequestTruncate.None => "NONE",
                 EmbedRequestTruncate.Start => "START",
-                EmbedRequestTruncate.End => "END",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
+                "END" => EmbedRequestTruncate.End,
                 "NONE" => EmbedRequestTruncate.None,
                 "START" => EmbedRequestTruncate.Start,
-                "END" => EmbedRequestTruncate.End,
                 _ => null,
             };
         }

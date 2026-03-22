@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="1m")]
-        x1m,
+        [global::System.Runtime.Serialization.EnumMember(Value="1d")]
+        x1d,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="1d")]
-        x1d,
+        [global::System.Runtime.Serialization.EnumMember(Value="1m")]
+        x1m,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                UsageVectorStoresBucketWidth.x1m => "1m",
-                UsageVectorStoresBucketWidth.x1h => "1h",
                 UsageVectorStoresBucketWidth.x1d => "1d",
+                UsageVectorStoresBucketWidth.x1h => "1h",
+                UsageVectorStoresBucketWidth.x1m => "1m",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "1m" => UsageVectorStoresBucketWidth.x1m,
-                "1h" => UsageVectorStoresBucketWidth.x1h,
                 "1d" => UsageVectorStoresBucketWidth.x1d,
+                "1h" => UsageVectorStoresBucketWidth.x1h,
+                "1m" => UsageVectorStoresBucketWidth.x1m,
                 _ => null,
             };
         }

@@ -16,7 +16,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Mannequin,
+        User,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
             return value switch
             {
                 WebhookPullRequestReviewCommentDeletedPullRequestUserType.Bot => "Bot",
-                WebhookPullRequestReviewCommentDeletedPullRequestUserType.User => "User",
-                WebhookPullRequestReviewCommentDeletedPullRequestUserType.Organization => "Organization",
                 WebhookPullRequestReviewCommentDeletedPullRequestUserType.Mannequin => "Mannequin",
+                WebhookPullRequestReviewCommentDeletedPullRequestUserType.Organization => "Organization",
+                WebhookPullRequestReviewCommentDeletedPullRequestUserType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestReviewCommentDeletedPullRequestUserType.Bot,
-                "User" => WebhookPullRequestReviewCommentDeletedPullRequestUserType.User,
-                "Organization" => WebhookPullRequestReviewCommentDeletedPullRequestUserType.Organization,
                 "Mannequin" => WebhookPullRequestReviewCommentDeletedPullRequestUserType.Mannequin,
+                "Organization" => WebhookPullRequestReviewCommentDeletedPullRequestUserType.Organization,
+                "User" => WebhookPullRequestReviewCommentDeletedPullRequestUserType.User,
                 _ => null,
             };
         }

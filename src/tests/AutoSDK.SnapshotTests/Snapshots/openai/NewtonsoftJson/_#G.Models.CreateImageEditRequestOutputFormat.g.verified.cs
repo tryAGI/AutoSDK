@@ -17,13 +17,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="png")]
-        Png,
+        [global::System.Runtime.Serialization.EnumMember(Value="jpeg")]
+        Jpeg,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="jpeg")]
-        Jpeg,
+        [global::System.Runtime.Serialization.EnumMember(Value="png")]
+        Png,
         /// <summary>
         /// 
         /// </summary>
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                CreateImageEditRequestOutputFormat.Png => "png",
                 CreateImageEditRequestOutputFormat.Jpeg => "jpeg",
+                CreateImageEditRequestOutputFormat.Png => "png",
                 CreateImageEditRequestOutputFormat.Webp => "webp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -56,8 +56,8 @@ namespace G
         {
             return value switch
             {
-                "png" => CreateImageEditRequestOutputFormat.Png,
                 "jpeg" => CreateImageEditRequestOutputFormat.Jpeg,
+                "png" => CreateImageEditRequestOutputFormat.Png,
                 "webp" => CreateImageEditRequestOutputFormat.Webp,
                 _ => null,
             };

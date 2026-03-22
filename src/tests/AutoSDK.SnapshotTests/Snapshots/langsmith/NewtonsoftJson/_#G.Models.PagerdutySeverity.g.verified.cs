@@ -18,11 +18,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="warning")]
-        Warning,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="error")]
         Error,
         /// <summary>
@@ -30,6 +25,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="info")]
         Info,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="warning")]
+        Warning,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 PagerdutySeverity.Critical => "critical",
-                PagerdutySeverity.Warning => "warning",
                 PagerdutySeverity.Error => "error",
                 PagerdutySeverity.Info => "info",
+                PagerdutySeverity.Warning => "warning",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "critical" => PagerdutySeverity.Critical,
-                "warning" => PagerdutySeverity.Warning,
                 "error" => PagerdutySeverity.Error,
                 "info" => PagerdutySeverity.Info,
+                "warning" => PagerdutySeverity.Warning,
                 _ => null,
             };
         }

@@ -13,23 +13,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="name")]
-        Name,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="created_at")]
         CreatedAt,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="updated_at")]
-        UpdatedAt,
+        [global::System.Runtime.Serialization.EnumMember(Value="name")]
+        Name,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="size")]
         Size,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="updated_at")]
+        UpdatedAt,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                KnowledgeBaseSortBy.Name => "name",
                 KnowledgeBaseSortBy.CreatedAt => "created_at",
-                KnowledgeBaseSortBy.UpdatedAt => "updated_at",
+                KnowledgeBaseSortBy.Name => "name",
                 KnowledgeBaseSortBy.Size => "size",
+                KnowledgeBaseSortBy.UpdatedAt => "updated_at",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "name" => KnowledgeBaseSortBy.Name,
                 "created_at" => KnowledgeBaseSortBy.CreatedAt,
-                "updated_at" => KnowledgeBaseSortBy.UpdatedAt,
+                "name" => KnowledgeBaseSortBy.Name,
                 "size" => KnowledgeBaseSortBy.Size,
+                "updated_at" => KnowledgeBaseSortBy.UpdatedAt,
                 _ => null,
             };
         }

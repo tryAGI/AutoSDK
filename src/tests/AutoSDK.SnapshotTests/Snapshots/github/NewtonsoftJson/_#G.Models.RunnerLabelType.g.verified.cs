@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="read-only")]
-        ReadOnly,
+        [global::System.Runtime.Serialization.EnumMember(Value="custom")]
+        Custom,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="custom")]
-        Custom,
+        [global::System.Runtime.Serialization.EnumMember(Value="read-only")]
+        ReadOnly,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                RunnerLabelType.ReadOnly => "read-only",
                 RunnerLabelType.Custom => "custom",
+                RunnerLabelType.ReadOnly => "read-only",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "read-only" => RunnerLabelType.ReadOnly,
                 "custom" => RunnerLabelType.Custom,
+                "read-only" => RunnerLabelType.ReadOnly,
                 _ => null,
             };
         }

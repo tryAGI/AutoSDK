@@ -12,6 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Back,
+        /// <summary>
+        /// 
+        /// </summary>
+        Forward,
+        /// <summary>
+        /// 
+        /// </summary>
         Left,
         /// <summary>
         /// 
@@ -21,14 +29,6 @@ namespace G
         /// 
         /// </summary>
         Wheel,
-        /// <summary>
-        /// 
-        /// </summary>
-        Back,
-        /// <summary>
-        /// 
-        /// </summary>
-        Forward,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
+                ClickButton.Back => "back",
+                ClickButton.Forward => "forward",
                 ClickButton.Left => "left",
                 ClickButton.Right => "right",
                 ClickButton.Wheel => "wheel",
-                ClickButton.Back => "back",
-                ClickButton.Forward => "forward",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
+                "back" => ClickButton.Back,
+                "forward" => ClickButton.Forward,
                 "left" => ClickButton.Left,
                 "right" => ClickButton.Right,
                 "wheel" => ClickButton.Wheel,
-                "back" => ClickButton.Back,
-                "forward" => ClickButton.Forward,
                 _ => null,
             };
         }

@@ -16,7 +16,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Url,
+        Folder,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Folder,
+        Url,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
             return value switch
             {
                 KnowledgeBaseDocumentType.File => "file",
-                KnowledgeBaseDocumentType.Url => "url",
-                KnowledgeBaseDocumentType.Text => "text",
                 KnowledgeBaseDocumentType.Folder => "folder",
+                KnowledgeBaseDocumentType.Text => "text",
+                KnowledgeBaseDocumentType.Url => "url",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace G
             return value switch
             {
                 "file" => KnowledgeBaseDocumentType.File,
-                "url" => KnowledgeBaseDocumentType.Url,
-                "text" => KnowledgeBaseDocumentType.Text,
                 "folder" => KnowledgeBaseDocumentType.Folder,
+                "text" => KnowledgeBaseDocumentType.Text,
+                "url" => KnowledgeBaseDocumentType.Url,
                 _ => null,
             };
         }

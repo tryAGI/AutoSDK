@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="mcp")]
-        Mcp,
+        [global::System.Runtime.Serialization.EnumMember(Value="lambda")]
+        Lambda,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="lambda")]
-        Lambda,
+        [global::System.Runtime.Serialization.EnumMember(Value="mcp")]
+        Mcp,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ListToolsType.Mcp => "mcp",
                 ListToolsType.Lambda => "lambda",
+                ListToolsType.Mcp => "mcp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "mcp" => ListToolsType.Mcp,
                 "lambda" => ListToolsType.Lambda,
+                "mcp" => ListToolsType.Mcp,
                 _ => null,
             };
         }

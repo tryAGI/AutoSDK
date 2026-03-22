@@ -13,11 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Enabled,
+        Disabled,
         /// <summary>
         /// 
         /// </summary>
-        Disabled,
+        Enabled,
         /// <summary>
         /// 
         /// </summary>
@@ -36,8 +36,8 @@ namespace G
         {
             return value switch
             {
-                CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction.Enabled => "enabled",
                 CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction.Disabled => "disabled",
+                CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction.Enabled => "enabled",
                 CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction.NotSet => "not_set",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -49,8 +49,8 @@ namespace G
         {
             return value switch
             {
-                "enabled" => CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction.Enabled,
                 "disabled" => CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction.Disabled,
+                "enabled" => CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction.Enabled,
                 "not_set" => CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction.NotSet,
                 _ => null,
             };

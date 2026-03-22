@@ -28,12 +28,12 @@ namespace G.JsonConverters
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("type")) __score0++;
-            if (__jsonProps.Contains("name")) __score0++;
-            if (__jsonProps.Contains("model")) __score0++;
-            if (__jsonProps.Contains("sampling_params")) __score0++;
             if (__jsonProps.Contains("input")) __score0++;
+            if (__jsonProps.Contains("model")) __score0++;
+            if (__jsonProps.Contains("name")) __score0++;
             if (__jsonProps.Contains("range")) __score0++;
+            if (__jsonProps.Contains("sampling_params")) __score0++;
+            if (__jsonProps.Contains("type")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("pass_threshold")) __score1++;
             var __bestScore = 0;

@@ -16,7 +16,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        x9_16,
+        x1_1,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        x1_1,
+        x9_16,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
             return value switch
             {
                 ProjectExtendedResponseModelAspectRatio2.x16_9 => "16:9",
-                ProjectExtendedResponseModelAspectRatio2.x9_16 => "9:16",
-                ProjectExtendedResponseModelAspectRatio2.x4_5 => "4:5",
                 ProjectExtendedResponseModelAspectRatio2.x1_1 => "1:1",
+                ProjectExtendedResponseModelAspectRatio2.x4_5 => "4:5",
+                ProjectExtendedResponseModelAspectRatio2.x9_16 => "9:16",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace G
             return value switch
             {
                 "16:9" => ProjectExtendedResponseModelAspectRatio2.x16_9,
-                "9:16" => ProjectExtendedResponseModelAspectRatio2.x9_16,
-                "4:5" => ProjectExtendedResponseModelAspectRatio2.x4_5,
                 "1:1" => ProjectExtendedResponseModelAspectRatio2.x1_1,
+                "4:5" => ProjectExtendedResponseModelAspectRatio2.x4_5,
+                "9:16" => ProjectExtendedResponseModelAspectRatio2.x9_16,
                 _ => null,
             };
         }

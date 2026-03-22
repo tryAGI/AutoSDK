@@ -24,10 +24,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Removed,
-        /// <summary>
-        /// 
-        /// </summary>
         Enforced,
         /// <summary>
         /// 
@@ -36,11 +32,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Updating,
+        Removed,
         /// <summary>
         /// 
         /// </summary>
         RemovedByEnterprise,
+        /// <summary>
+        /// 
+        /// </summary>
+        Updating,
     }
 
     /// <summary>
@@ -58,11 +58,11 @@ namespace G
                 CodeSecurityConfigurationForRepositoryStatus.Attached => "attached",
                 CodeSecurityConfigurationForRepositoryStatus.Attaching => "attaching",
                 CodeSecurityConfigurationForRepositoryStatus.Detached => "detached",
-                CodeSecurityConfigurationForRepositoryStatus.Removed => "removed",
                 CodeSecurityConfigurationForRepositoryStatus.Enforced => "enforced",
                 CodeSecurityConfigurationForRepositoryStatus.Failed => "failed",
-                CodeSecurityConfigurationForRepositoryStatus.Updating => "updating",
+                CodeSecurityConfigurationForRepositoryStatus.Removed => "removed",
                 CodeSecurityConfigurationForRepositoryStatus.RemovedByEnterprise => "removed_by_enterprise",
+                CodeSecurityConfigurationForRepositoryStatus.Updating => "updating",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -76,11 +76,11 @@ namespace G
                 "attached" => CodeSecurityConfigurationForRepositoryStatus.Attached,
                 "attaching" => CodeSecurityConfigurationForRepositoryStatus.Attaching,
                 "detached" => CodeSecurityConfigurationForRepositoryStatus.Detached,
-                "removed" => CodeSecurityConfigurationForRepositoryStatus.Removed,
                 "enforced" => CodeSecurityConfigurationForRepositoryStatus.Enforced,
                 "failed" => CodeSecurityConfigurationForRepositoryStatus.Failed,
-                "updating" => CodeSecurityConfigurationForRepositoryStatus.Updating,
+                "removed" => CodeSecurityConfigurationForRepositoryStatus.Removed,
                 "removed_by_enterprise" => CodeSecurityConfigurationForRepositoryStatus.RemovedByEnterprise,
+                "updating" => CodeSecurityConfigurationForRepositoryStatus.Updating,
                 _ => null,
             };
         }

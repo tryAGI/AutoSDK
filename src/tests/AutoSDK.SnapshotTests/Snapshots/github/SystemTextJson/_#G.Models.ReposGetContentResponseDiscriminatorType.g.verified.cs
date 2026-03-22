@@ -20,11 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Symlink,
+        Submodule,
         /// <summary>
         /// 
         /// </summary>
-        Submodule,
+        Symlink,
     }
 
     /// <summary>
@@ -41,8 +41,8 @@ namespace G
             {
                 ReposGetContentResponseDiscriminatorType.Array => "array",
                 ReposGetContentResponseDiscriminatorType.File => "file",
-                ReposGetContentResponseDiscriminatorType.Symlink => "symlink",
                 ReposGetContentResponseDiscriminatorType.Submodule => "submodule",
+                ReposGetContentResponseDiscriminatorType.Symlink => "symlink",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,8 +55,8 @@ namespace G
             {
                 "array" => ReposGetContentResponseDiscriminatorType.Array,
                 "file" => ReposGetContentResponseDiscriminatorType.File,
-                "symlink" => ReposGetContentResponseDiscriminatorType.Symlink,
                 "submodule" => ReposGetContentResponseDiscriminatorType.Submodule,
+                "symlink" => ReposGetContentResponseDiscriminatorType.Symlink,
                 _ => null,
             };
         }

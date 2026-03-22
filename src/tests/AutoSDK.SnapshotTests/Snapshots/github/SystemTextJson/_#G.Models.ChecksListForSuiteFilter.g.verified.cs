@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Latest,
+        All,
         /// <summary>
         /// 
         /// </summary>
-        All,
+        Latest,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ChecksListForSuiteFilter.Latest => "latest",
                 ChecksListForSuiteFilter.All => "all",
+                ChecksListForSuiteFilter.Latest => "latest",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "latest" => ChecksListForSuiteFilter.Latest,
                 "all" => ChecksListForSuiteFilter.All,
+                "latest" => ChecksListForSuiteFilter.Latest,
                 _ => null,
             };
         }

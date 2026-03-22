@@ -15,6 +15,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="admin")]
+        Admin,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="read")]
         Read,
         /// <summary>
@@ -22,11 +27,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="write")]
         Write,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="admin")]
-        Admin,
     }
 
     /// <summary>
@@ -41,9 +41,9 @@ namespace G
         {
             return value switch
             {
+                ProjectsAddCollaboratorRequestPermission.Admin => "admin",
                 ProjectsAddCollaboratorRequestPermission.Read => "read",
                 ProjectsAddCollaboratorRequestPermission.Write => "write",
-                ProjectsAddCollaboratorRequestPermission.Admin => "admin",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace G
         {
             return value switch
             {
+                "admin" => ProjectsAddCollaboratorRequestPermission.Admin,
                 "read" => ProjectsAddCollaboratorRequestPermission.Read,
                 "write" => ProjectsAddCollaboratorRequestPermission.Write,
-                "admin" => ProjectsAddCollaboratorRequestPermission.Admin,
                 _ => null,
             };
         }

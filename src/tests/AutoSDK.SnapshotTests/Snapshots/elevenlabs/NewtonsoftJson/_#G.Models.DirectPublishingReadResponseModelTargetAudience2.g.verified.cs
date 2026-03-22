@@ -13,16 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="children")]
-        Children,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="young adult")]
-        YoungAdult,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="adult")]
         Adult,
         /// <summary>
@@ -30,6 +20,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="all ages")]
         AllAges,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="children")]
+        Children,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="young adult")]
+        YoungAdult,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                DirectPublishingReadResponseModelTargetAudience2.Children => "children",
-                DirectPublishingReadResponseModelTargetAudience2.YoungAdult => "young adult",
                 DirectPublishingReadResponseModelTargetAudience2.Adult => "adult",
                 DirectPublishingReadResponseModelTargetAudience2.AllAges => "all ages",
+                DirectPublishingReadResponseModelTargetAudience2.Children => "children",
+                DirectPublishingReadResponseModelTargetAudience2.YoungAdult => "young adult",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "children" => DirectPublishingReadResponseModelTargetAudience2.Children,
-                "young adult" => DirectPublishingReadResponseModelTargetAudience2.YoungAdult,
                 "adult" => DirectPublishingReadResponseModelTargetAudience2.Adult,
                 "all ages" => DirectPublishingReadResponseModelTargetAudience2.AllAges,
+                "children" => DirectPublishingReadResponseModelTargetAudience2.Children,
+                "young adult" => DirectPublishingReadResponseModelTargetAudience2.YoungAdult,
                 _ => null,
             };
         }

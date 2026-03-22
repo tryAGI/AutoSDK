@@ -18,11 +18,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        Organization,
+        User,
     }
 
     /// <summary>
@@ -38,8 +38,8 @@ namespace G
             return value switch
             {
                 ActionsWorkflowAccessToRepositoryAccessLevel.None => "none",
-                ActionsWorkflowAccessToRepositoryAccessLevel.User => "user",
                 ActionsWorkflowAccessToRepositoryAccessLevel.Organization => "organization",
+                ActionsWorkflowAccessToRepositoryAccessLevel.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,8 +51,8 @@ namespace G
             return value switch
             {
                 "none" => ActionsWorkflowAccessToRepositoryAccessLevel.None,
-                "user" => ActionsWorkflowAccessToRepositoryAccessLevel.User,
                 "organization" => ActionsWorkflowAccessToRepositoryAccessLevel.Organization,
+                "user" => ActionsWorkflowAccessToRepositoryAccessLevel.User,
                 _ => null,
             };
         }

@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Enabled,
+        Disabled,
         /// <summary>
         /// 
         /// </summary>
-        Disabled,
+        Enabled,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                CodeSecurityConfigurationDependabotSecurityUpdates.Enabled => "enabled",
                 CodeSecurityConfigurationDependabotSecurityUpdates.Disabled => "disabled",
+                CodeSecurityConfigurationDependabotSecurityUpdates.Enabled => "enabled",
                 CodeSecurityConfigurationDependabotSecurityUpdates.NotSet => "not_set",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "enabled" => CodeSecurityConfigurationDependabotSecurityUpdates.Enabled,
                 "disabled" => CodeSecurityConfigurationDependabotSecurityUpdates.Disabled,
+                "enabled" => CodeSecurityConfigurationDependabotSecurityUpdates.Enabled,
                 "not_set" => CodeSecurityConfigurationDependabotSecurityUpdates.NotSet,
                 _ => null,
             };

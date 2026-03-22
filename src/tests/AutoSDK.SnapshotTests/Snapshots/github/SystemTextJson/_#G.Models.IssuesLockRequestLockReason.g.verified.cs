@@ -20,15 +20,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        TooHeated,
-        /// <summary>
-        /// 
-        /// </summary>
         Resolved,
         /// <summary>
         /// 
         /// </summary>
         Spam,
+        /// <summary>
+        /// 
+        /// </summary>
+        TooHeated,
     }
 
     /// <summary>
@@ -44,9 +44,9 @@ namespace G
             return value switch
             {
                 IssuesLockRequestLockReason.OffTopic => "off-topic",
-                IssuesLockRequestLockReason.TooHeated => "too heated",
                 IssuesLockRequestLockReason.Resolved => "resolved",
                 IssuesLockRequestLockReason.Spam => "spam",
+                IssuesLockRequestLockReason.TooHeated => "too heated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,9 +58,9 @@ namespace G
             return value switch
             {
                 "off-topic" => IssuesLockRequestLockReason.OffTopic,
-                "too heated" => IssuesLockRequestLockReason.TooHeated,
                 "resolved" => IssuesLockRequestLockReason.Resolved,
                 "spam" => IssuesLockRequestLockReason.Spam,
+                "too heated" => IssuesLockRequestLockReason.TooHeated,
                 _ => null,
             };
         }

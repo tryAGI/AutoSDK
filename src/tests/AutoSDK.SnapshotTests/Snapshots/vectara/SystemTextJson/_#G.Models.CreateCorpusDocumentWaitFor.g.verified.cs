@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// Waits until the document is fully indexed and immediately searchable. Use this when you need to query the document immediately after indexing.
         /// </summary>
-        Searchable,
+        Indexed,
         /// <summary>
         /// Waits until the document is fully indexed and immediately searchable. Use this when you need to query the document immediately after indexing.
         /// </summary>
-        Indexed,
+        Searchable,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                CreateCorpusDocumentWaitFor.Searchable => "searchable",
                 CreateCorpusDocumentWaitFor.Indexed => "indexed",
+                CreateCorpusDocumentWaitFor.Searchable => "searchable",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "searchable" => CreateCorpusDocumentWaitFor.Searchable,
                 "indexed" => CreateCorpusDocumentWaitFor.Indexed,
+                "searchable" => CreateCorpusDocumentWaitFor.Searchable,
                 _ => null,
             };
         }

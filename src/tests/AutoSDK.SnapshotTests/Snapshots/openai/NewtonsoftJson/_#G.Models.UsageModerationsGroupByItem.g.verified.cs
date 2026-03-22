@@ -13,16 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="project_id")]
-        ProjectId,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="user_id")]
-        UserId,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="api_key_id")]
         ApiKeyId,
         /// <summary>
@@ -30,6 +20,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="model")]
         Model,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="project_id")]
+        ProjectId,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="user_id")]
+        UserId,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                UsageModerationsGroupByItem.ProjectId => "project_id",
-                UsageModerationsGroupByItem.UserId => "user_id",
                 UsageModerationsGroupByItem.ApiKeyId => "api_key_id",
                 UsageModerationsGroupByItem.Model => "model",
+                UsageModerationsGroupByItem.ProjectId => "project_id",
+                UsageModerationsGroupByItem.UserId => "user_id",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "project_id" => UsageModerationsGroupByItem.ProjectId,
-                "user_id" => UsageModerationsGroupByItem.UserId,
                 "api_key_id" => UsageModerationsGroupByItem.ApiKeyId,
                 "model" => UsageModerationsGroupByItem.Model,
+                "project_id" => UsageModerationsGroupByItem.ProjectId,
+                "user_id" => UsageModerationsGroupByItem.UserId,
                 _ => null,
             };
         }

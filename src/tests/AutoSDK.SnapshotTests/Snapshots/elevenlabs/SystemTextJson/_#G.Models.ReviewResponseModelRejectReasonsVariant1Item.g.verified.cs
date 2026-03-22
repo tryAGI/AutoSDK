@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        LacksStructure,
+        ContentPolicy,
         /// <summary>
         /// 
         /// </summary>
@@ -20,23 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        NotLiteraryWork,
-        /// <summary>
-        /// 
-        /// </summary>
-        LanguageNotSupported,
-        /// <summary>
-        /// 
-        /// </summary>
-        TooShort,
-        /// <summary>
-        /// 
-        /// </summary>
         Duplicate,
-        /// <summary>
-        /// 
-        /// </summary>
-        Promotional,
         /// <summary>
         /// 
         /// </summary>
@@ -44,11 +28,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        LowQuality,
+        LacksStructure,
         /// <summary>
         /// 
         /// </summary>
-        MetadataIncomplete,
+        LanguageNotSupported,
+        /// <summary>
+        /// 
+        /// </summary>
+        LegalViolation,
+        /// <summary>
+        /// 
+        /// </summary>
+        LowQuality,
         /// <summary>
         /// 
         /// </summary>
@@ -56,7 +48,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Typos,
+        MetadataIncomplete,
+        /// <summary>
+        /// 
+        /// </summary>
+        NotLiteraryWork,
+        /// <summary>
+        /// 
+        /// </summary>
+        Other,
+        /// <summary>
+        /// 
+        /// </summary>
+        Promotional,
+        /// <summary>
+        /// 
+        /// </summary>
+        PublicDomain,
         /// <summary>
         /// 
         /// </summary>
@@ -68,19 +76,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        LegalViolation,
+        TooShort,
         /// <summary>
         /// 
         /// </summary>
-        ContentPolicy,
-        /// <summary>
-        /// 
-        /// </summary>
-        PublicDomain,
-        /// <summary>
-        /// 
-        /// </summary>
-        Other,
+        Typos,
     }
 
     /// <summary>
@@ -95,24 +95,24 @@ namespace G
         {
             return value switch
             {
-                ReviewResponseModelRejectReasonsVariant1Item.LacksStructure => "lacks_structure",
+                ReviewResponseModelRejectReasonsVariant1Item.ContentPolicy => "content_policy",
                 ReviewResponseModelRejectReasonsVariant1Item.DoesntOpen => "doesnt_open",
-                ReviewResponseModelRejectReasonsVariant1Item.NotLiteraryWork => "not_literary_work",
-                ReviewResponseModelRejectReasonsVariant1Item.LanguageNotSupported => "language_not_supported",
-                ReviewResponseModelRejectReasonsVariant1Item.TooShort => "too_short",
                 ReviewResponseModelRejectReasonsVariant1Item.Duplicate => "duplicate",
-                ReviewResponseModelRejectReasonsVariant1Item.Promotional => "promotional",
                 ReviewResponseModelRejectReasonsVariant1Item.FormattingIssues => "formatting_issues",
+                ReviewResponseModelRejectReasonsVariant1Item.LacksStructure => "lacks_structure",
+                ReviewResponseModelRejectReasonsVariant1Item.LanguageNotSupported => "language_not_supported",
+                ReviewResponseModelRejectReasonsVariant1Item.LegalViolation => "legal_violation",
                 ReviewResponseModelRejectReasonsVariant1Item.LowQuality => "low_quality",
-                ReviewResponseModelRejectReasonsVariant1Item.MetadataIncomplete => "metadata_incomplete",
                 ReviewResponseModelRejectReasonsVariant1Item.MetadataInaccurate => "metadata_inaccurate",
-                ReviewResponseModelRejectReasonsVariant1Item.Typos => "typos",
+                ReviewResponseModelRejectReasonsVariant1Item.MetadataIncomplete => "metadata_incomplete",
+                ReviewResponseModelRejectReasonsVariant1Item.NotLiteraryWork => "not_literary_work",
+                ReviewResponseModelRejectReasonsVariant1Item.Other => "other",
+                ReviewResponseModelRejectReasonsVariant1Item.Promotional => "promotional",
+                ReviewResponseModelRejectReasonsVariant1Item.PublicDomain => "public_domain",
                 ReviewResponseModelRejectReasonsVariant1Item.ReviewError => "review_error",
                 ReviewResponseModelRejectReasonsVariant1Item.Spam => "spam",
-                ReviewResponseModelRejectReasonsVariant1Item.LegalViolation => "legal_violation",
-                ReviewResponseModelRejectReasonsVariant1Item.ContentPolicy => "content_policy",
-                ReviewResponseModelRejectReasonsVariant1Item.PublicDomain => "public_domain",
-                ReviewResponseModelRejectReasonsVariant1Item.Other => "other",
+                ReviewResponseModelRejectReasonsVariant1Item.TooShort => "too_short",
+                ReviewResponseModelRejectReasonsVariant1Item.Typos => "typos",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -123,24 +123,24 @@ namespace G
         {
             return value switch
             {
-                "lacks_structure" => ReviewResponseModelRejectReasonsVariant1Item.LacksStructure,
+                "content_policy" => ReviewResponseModelRejectReasonsVariant1Item.ContentPolicy,
                 "doesnt_open" => ReviewResponseModelRejectReasonsVariant1Item.DoesntOpen,
-                "not_literary_work" => ReviewResponseModelRejectReasonsVariant1Item.NotLiteraryWork,
-                "language_not_supported" => ReviewResponseModelRejectReasonsVariant1Item.LanguageNotSupported,
-                "too_short" => ReviewResponseModelRejectReasonsVariant1Item.TooShort,
                 "duplicate" => ReviewResponseModelRejectReasonsVariant1Item.Duplicate,
-                "promotional" => ReviewResponseModelRejectReasonsVariant1Item.Promotional,
                 "formatting_issues" => ReviewResponseModelRejectReasonsVariant1Item.FormattingIssues,
+                "lacks_structure" => ReviewResponseModelRejectReasonsVariant1Item.LacksStructure,
+                "language_not_supported" => ReviewResponseModelRejectReasonsVariant1Item.LanguageNotSupported,
+                "legal_violation" => ReviewResponseModelRejectReasonsVariant1Item.LegalViolation,
                 "low_quality" => ReviewResponseModelRejectReasonsVariant1Item.LowQuality,
-                "metadata_incomplete" => ReviewResponseModelRejectReasonsVariant1Item.MetadataIncomplete,
                 "metadata_inaccurate" => ReviewResponseModelRejectReasonsVariant1Item.MetadataInaccurate,
-                "typos" => ReviewResponseModelRejectReasonsVariant1Item.Typos,
+                "metadata_incomplete" => ReviewResponseModelRejectReasonsVariant1Item.MetadataIncomplete,
+                "not_literary_work" => ReviewResponseModelRejectReasonsVariant1Item.NotLiteraryWork,
+                "other" => ReviewResponseModelRejectReasonsVariant1Item.Other,
+                "promotional" => ReviewResponseModelRejectReasonsVariant1Item.Promotional,
+                "public_domain" => ReviewResponseModelRejectReasonsVariant1Item.PublicDomain,
                 "review_error" => ReviewResponseModelRejectReasonsVariant1Item.ReviewError,
                 "spam" => ReviewResponseModelRejectReasonsVariant1Item.Spam,
-                "legal_violation" => ReviewResponseModelRejectReasonsVariant1Item.LegalViolation,
-                "content_policy" => ReviewResponseModelRejectReasonsVariant1Item.ContentPolicy,
-                "public_domain" => ReviewResponseModelRejectReasonsVariant1Item.PublicDomain,
-                "other" => ReviewResponseModelRejectReasonsVariant1Item.Other,
+                "too_short" => ReviewResponseModelRejectReasonsVariant1Item.TooShort,
+                "typos" => ReviewResponseModelRejectReasonsVariant1Item.Typos,
                 _ => null,
             };
         }

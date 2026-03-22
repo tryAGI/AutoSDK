@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Gpt4oMiniTts,
+        /// <summary>
+        /// 
+        /// </summary>
         Tts1,
         /// <summary>
         /// 
         /// </summary>
         Tts1Hd,
-        /// <summary>
-        /// 
-        /// </summary>
-        Gpt4oMiniTts,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
+                CreateSpeechRequestModel.Gpt4oMiniTts => "gpt-4o-mini-tts",
                 CreateSpeechRequestModel.Tts1 => "tts-1",
                 CreateSpeechRequestModel.Tts1Hd => "tts-1-hd",
-                CreateSpeechRequestModel.Gpt4oMiniTts => "gpt-4o-mini-tts",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
+                "gpt-4o-mini-tts" => CreateSpeechRequestModel.Gpt4oMiniTts,
                 "tts-1" => CreateSpeechRequestModel.Tts1,
                 "tts-1-hd" => CreateSpeechRequestModel.Tts1Hd,
-                "gpt-4o-mini-tts" => CreateSpeechRequestModel.Gpt4oMiniTts,
                 _ => null,
             };
         }

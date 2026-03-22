@@ -13,11 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Enabled,
+        Disabled,
         /// <summary>
         /// 
         /// </summary>
-        Disabled,
+        Enabled,
         /// <summary>
         /// 
         /// </summary>
@@ -36,8 +36,8 @@ namespace G
         {
             return value switch
             {
-                CodeSecurityCreateConfigurationRequestDependencyGraph.Enabled => "enabled",
                 CodeSecurityCreateConfigurationRequestDependencyGraph.Disabled => "disabled",
+                CodeSecurityCreateConfigurationRequestDependencyGraph.Enabled => "enabled",
                 CodeSecurityCreateConfigurationRequestDependencyGraph.NotSet => "not_set",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -49,8 +49,8 @@ namespace G
         {
             return value switch
             {
-                "enabled" => CodeSecurityCreateConfigurationRequestDependencyGraph.Enabled,
                 "disabled" => CodeSecurityCreateConfigurationRequestDependencyGraph.Disabled,
+                "enabled" => CodeSecurityCreateConfigurationRequestDependencyGraph.Enabled,
                 "not_set" => CodeSecurityCreateConfigurationRequestDependencyGraph.NotSet,
                 _ => null,
             };

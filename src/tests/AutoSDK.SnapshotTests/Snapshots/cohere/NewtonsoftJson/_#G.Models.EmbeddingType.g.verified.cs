@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="binary")]
+        Binary,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="float")]
         Float,
         /// <summary>
@@ -23,18 +28,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="uint8")]
-        Uint8,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="binary")]
-        Binary,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ubinary")]
         Ubinary,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="uint8")]
+        Uint8,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
+                EmbeddingType.Binary => "binary",
                 EmbeddingType.Float => "float",
                 EmbeddingType.Int8 => "int8",
-                EmbeddingType.Uint8 => "uint8",
-                EmbeddingType.Binary => "binary",
                 EmbeddingType.Ubinary => "ubinary",
+                EmbeddingType.Uint8 => "uint8",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
+                "binary" => EmbeddingType.Binary,
                 "float" => EmbeddingType.Float,
                 "int8" => EmbeddingType.Int8,
-                "uint8" => EmbeddingType.Uint8,
-                "binary" => EmbeddingType.Binary,
                 "ubinary" => EmbeddingType.Ubinary,
+                "uint8" => EmbeddingType.Uint8,
                 _ => null,
             };
         }

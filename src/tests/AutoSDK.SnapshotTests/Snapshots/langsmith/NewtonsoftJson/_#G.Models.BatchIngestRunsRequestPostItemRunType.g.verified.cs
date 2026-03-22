@@ -13,23 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="tool")]
-        Tool,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="chain")]
         Chain,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="llm")]
-        Llm,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="retriever")]
-        Retriever,
         /// <summary>
         /// 
         /// </summary>
@@ -38,13 +23,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="prompt")]
-        Prompt,
+        [global::System.Runtime.Serialization.EnumMember(Value="llm")]
+        Llm,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="parser")]
         Parser,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="prompt")]
+        Prompt,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="retriever")]
+        Retriever,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="tool")]
+        Tool,
     }
 
     /// <summary>
@@ -59,13 +59,13 @@ namespace G
         {
             return value switch
             {
-                BatchIngestRunsRequestPostItemRunType.Tool => "tool",
                 BatchIngestRunsRequestPostItemRunType.Chain => "chain",
-                BatchIngestRunsRequestPostItemRunType.Llm => "llm",
-                BatchIngestRunsRequestPostItemRunType.Retriever => "retriever",
                 BatchIngestRunsRequestPostItemRunType.Embedding => "embedding",
-                BatchIngestRunsRequestPostItemRunType.Prompt => "prompt",
+                BatchIngestRunsRequestPostItemRunType.Llm => "llm",
                 BatchIngestRunsRequestPostItemRunType.Parser => "parser",
+                BatchIngestRunsRequestPostItemRunType.Prompt => "prompt",
+                BatchIngestRunsRequestPostItemRunType.Retriever => "retriever",
+                BatchIngestRunsRequestPostItemRunType.Tool => "tool",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -76,13 +76,13 @@ namespace G
         {
             return value switch
             {
-                "tool" => BatchIngestRunsRequestPostItemRunType.Tool,
                 "chain" => BatchIngestRunsRequestPostItemRunType.Chain,
-                "llm" => BatchIngestRunsRequestPostItemRunType.Llm,
-                "retriever" => BatchIngestRunsRequestPostItemRunType.Retriever,
                 "embedding" => BatchIngestRunsRequestPostItemRunType.Embedding,
-                "prompt" => BatchIngestRunsRequestPostItemRunType.Prompt,
+                "llm" => BatchIngestRunsRequestPostItemRunType.Llm,
                 "parser" => BatchIngestRunsRequestPostItemRunType.Parser,
+                "prompt" => BatchIngestRunsRequestPostItemRunType.Prompt,
+                "retriever" => BatchIngestRunsRequestPostItemRunType.Retriever,
+                "tool" => BatchIngestRunsRequestPostItemRunType.Tool,
                 _ => null,
             };
         }

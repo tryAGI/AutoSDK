@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Free,
+        FlatRate,
         /// <summary>
         /// 
         /// </summary>
-        FlatRate,
+        Free,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                WebhooksPreviousMarketplacePurchasePlanPriceModel.Free => "FREE",
                 WebhooksPreviousMarketplacePurchasePlanPriceModel.FlatRate => "FLAT_RATE",
+                WebhooksPreviousMarketplacePurchasePlanPriceModel.Free => "FREE",
                 WebhooksPreviousMarketplacePurchasePlanPriceModel.PerUnit => "PER_UNIT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "FREE" => WebhooksPreviousMarketplacePurchasePlanPriceModel.Free,
                 "FLAT_RATE" => WebhooksPreviousMarketplacePurchasePlanPriceModel.FlatRate,
+                "FREE" => WebhooksPreviousMarketplacePurchasePlanPriceModel.Free,
                 "PER_UNIT" => WebhooksPreviousMarketplacePurchasePlanPriceModel.PerUnit,
                 _ => null,
             };

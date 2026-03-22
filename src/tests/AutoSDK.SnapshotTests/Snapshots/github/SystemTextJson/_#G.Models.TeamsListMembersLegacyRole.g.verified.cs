@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Member,
+        All,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        All,
+        Member,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                TeamsListMembersLegacyRole.Member => "member",
-                TeamsListMembersLegacyRole.Maintainer => "maintainer",
                 TeamsListMembersLegacyRole.All => "all",
+                TeamsListMembersLegacyRole.Maintainer => "maintainer",
+                TeamsListMembersLegacyRole.Member => "member",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "member" => TeamsListMembersLegacyRole.Member,
-                "maintainer" => TeamsListMembersLegacyRole.Maintainer,
                 "all" => TeamsListMembersLegacyRole.All,
+                "maintainer" => TeamsListMembersLegacyRole.Maintainer,
+                "member" => TeamsListMembersLegacyRole.Member,
                 _ => null,
             };
         }

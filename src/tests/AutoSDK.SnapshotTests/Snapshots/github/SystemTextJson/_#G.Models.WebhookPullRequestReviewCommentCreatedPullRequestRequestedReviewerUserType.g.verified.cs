@@ -16,7 +16,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Mannequin,
+        User,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
             return value switch
             {
                 WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerUserType.Bot => "Bot",
-                WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerUserType.User => "User",
-                WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerUserType.Organization => "Organization",
                 WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerUserType.Mannequin => "Mannequin",
+                WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerUserType.Organization => "Organization",
+                WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerUserType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerUserType.Bot,
-                "User" => WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerUserType.User,
-                "Organization" => WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerUserType.Organization,
                 "Mannequin" => WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerUserType.Mannequin,
+                "Organization" => WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerUserType.Organization,
+                "User" => WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewerUserType.User,
                 _ => null,
             };
         }

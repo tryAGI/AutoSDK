@@ -28,24 +28,24 @@ namespace G.JsonConverters
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("id")) __score0++;
-            if (__jsonProps.Contains("name")) __score0++;
-            if (__jsonProps.Contains("title")) __score0++;
+            if (__jsonProps.Contains("category")) __score0++;
+            if (__jsonProps.Contains("created_at")) __score0++;
             if (__jsonProps.Contains("description")) __score0++;
             if (__jsonProps.Contains("description_template")) __score0++;
             if (__jsonProps.Contains("enabled")) __score0++;
-            if (__jsonProps.Contains("created_at")) __score0++;
-            if (__jsonProps.Contains("updated_at")) __score0++;
+            if (__jsonProps.Contains("id")) __score0++;
             if (__jsonProps.Contains("input_schema")) __score0++;
-            if (__jsonProps.Contains("category")) __score0++;
             if (__jsonProps.Contains("lineage")) __score0++;
-            if (__jsonProps.Contains("version")) __score0++;
-            if (__jsonProps.Contains("tool_groups")) __score0++;
+            if (__jsonProps.Contains("name")) __score0++;
             if (__jsonProps.Contains("permissions")) __score0++;
+            if (__jsonProps.Contains("title")) __score0++;
+            if (__jsonProps.Contains("tool_groups")) __score0++;
+            if (__jsonProps.Contains("updated_at")) __score0++;
+            if (__jsonProps.Contains("version")) __score0++;
             var __score1 = 0;
-            if (__jsonProps.Contains("type")) __score1++;
-            if (__jsonProps.Contains("server_id")) __score1++;
             if (__jsonProps.Contains("annotations")) __score1++;
+            if (__jsonProps.Contains("server_id")) __score1++;
+            if (__jsonProps.Contains("type")) __score1++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }

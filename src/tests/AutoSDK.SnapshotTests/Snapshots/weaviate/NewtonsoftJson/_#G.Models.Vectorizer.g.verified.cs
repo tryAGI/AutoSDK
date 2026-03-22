@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="none")]
-        None,
+        [global::System.Runtime.Serialization.EnumMember(Value="<vectorizer_module_name>")]
+        x_vectorizerModuleName_,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="<vectorizer_module_name>")]
-        x_vectorizerModuleName_,
+        [global::System.Runtime.Serialization.EnumMember(Value="none")]
+        None,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                Vectorizer.None => "none",
                 Vectorizer.x_vectorizerModuleName_ => "<vectorizer_module_name>",
+                Vectorizer.None => "none",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "none" => Vectorizer.None,
                 "<vectorizer_module_name>" => Vectorizer.x_vectorizerModuleName_,
+                "none" => Vectorizer.None,
                 _ => null,
             };
         }

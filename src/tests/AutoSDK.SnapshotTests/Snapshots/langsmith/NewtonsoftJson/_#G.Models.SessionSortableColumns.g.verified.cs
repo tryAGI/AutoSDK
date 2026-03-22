@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="name")]
-        Name,
+        [global::System.Runtime.Serialization.EnumMember(Value="error_rate")]
+        ErrorRate,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="start_time")]
-        StartTime,
+        [global::System.Runtime.Serialization.EnumMember(Value="feedback")]
+        Feedback,
         /// <summary>
         /// 
         /// </summary>
@@ -38,13 +38,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="error_rate")]
-        ErrorRate,
+        [global::System.Runtime.Serialization.EnumMember(Value="name")]
+        Name,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="feedback")]
-        Feedback,
+        [global::System.Runtime.Serialization.EnumMember(Value="start_time")]
+        StartTime,
     }
 
     /// <summary>
@@ -59,13 +59,13 @@ namespace G
         {
             return value switch
             {
-                SessionSortableColumns.Name => "name",
-                SessionSortableColumns.StartTime => "start_time",
+                SessionSortableColumns.ErrorRate => "error_rate",
+                SessionSortableColumns.Feedback => "feedback",
                 SessionSortableColumns.LastRunStartTime => "last_run_start_time",
                 SessionSortableColumns.LatencyP50 => "latency_p50",
                 SessionSortableColumns.LatencyP99 => "latency_p99",
-                SessionSortableColumns.ErrorRate => "error_rate",
-                SessionSortableColumns.Feedback => "feedback",
+                SessionSortableColumns.Name => "name",
+                SessionSortableColumns.StartTime => "start_time",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -76,13 +76,13 @@ namespace G
         {
             return value switch
             {
-                "name" => SessionSortableColumns.Name,
-                "start_time" => SessionSortableColumns.StartTime,
+                "error_rate" => SessionSortableColumns.ErrorRate,
+                "feedback" => SessionSortableColumns.Feedback,
                 "last_run_start_time" => SessionSortableColumns.LastRunStartTime,
                 "latency_p50" => SessionSortableColumns.LatencyP50,
                 "latency_p99" => SessionSortableColumns.LatencyP99,
-                "error_rate" => SessionSortableColumns.ErrorRate,
-                "feedback" => SessionSortableColumns.Feedback,
+                "name" => SessionSortableColumns.Name,
+                "start_time" => SessionSortableColumns.StartTime,
                 _ => null,
             };
         }

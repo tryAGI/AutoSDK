@@ -15,7 +15,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        PrBody,
+        Blank,
         /// <summary>
         /// 
         /// </summary>
@@ -23,7 +23,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Blank,
+        PrBody,
     }
 
     /// <summary>
@@ -38,9 +38,9 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestEnqueuedPullRequestBaseRepoSquashMergeCommitMessage.PrBody => "PR_BODY",
-                WebhookPullRequestEnqueuedPullRequestBaseRepoSquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
                 WebhookPullRequestEnqueuedPullRequestBaseRepoSquashMergeCommitMessage.Blank => "BLANK",
+                WebhookPullRequestEnqueuedPullRequestBaseRepoSquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
+                WebhookPullRequestEnqueuedPullRequestBaseRepoSquashMergeCommitMessage.PrBody => "PR_BODY",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,9 +51,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => WebhookPullRequestEnqueuedPullRequestBaseRepoSquashMergeCommitMessage.PrBody,
-                "COMMIT_MESSAGES" => WebhookPullRequestEnqueuedPullRequestBaseRepoSquashMergeCommitMessage.CommitMessages,
                 "BLANK" => WebhookPullRequestEnqueuedPullRequestBaseRepoSquashMergeCommitMessage.Blank,
+                "COMMIT_MESSAGES" => WebhookPullRequestEnqueuedPullRequestBaseRepoSquashMergeCommitMessage.CommitMessages,
+                "PR_BODY" => WebhookPullRequestEnqueuedPullRequestBaseRepoSquashMergeCommitMessage.PrBody,
                 _ => null,
             };
         }

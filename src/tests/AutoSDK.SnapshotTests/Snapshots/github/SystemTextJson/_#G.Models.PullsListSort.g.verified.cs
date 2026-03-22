@@ -16,7 +16,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Updated,
+        LongRunning,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        LongRunning,
+        Updated,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
             return value switch
             {
                 PullsListSort.Created => "created",
-                PullsListSort.Updated => "updated",
-                PullsListSort.Popularity => "popularity",
                 PullsListSort.LongRunning => "long-running",
+                PullsListSort.Popularity => "popularity",
+                PullsListSort.Updated => "updated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace G
             return value switch
             {
                 "created" => PullsListSort.Created,
-                "updated" => PullsListSort.Updated,
-                "popularity" => PullsListSort.Popularity,
                 "long-running" => PullsListSort.LongRunning,
+                "popularity" => PullsListSort.Popularity,
+                "updated" => PullsListSort.Updated,
                 _ => null,
             };
         }

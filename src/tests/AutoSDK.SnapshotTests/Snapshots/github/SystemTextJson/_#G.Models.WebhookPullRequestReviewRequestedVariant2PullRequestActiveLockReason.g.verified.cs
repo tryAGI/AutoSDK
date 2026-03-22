@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Resolved,
-        /// <summary>
-        /// 
-        /// </summary>
         OffTopic,
         /// <summary>
         /// 
         /// </summary>
-        TooHeated,
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        /// <summary>
+        /// 
+        /// </summary>
+        Resolved,
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +28,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        TooHeated,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestReviewRequestedVariant2PullRequestActiveLockReason.Resolved => "resolved",
                 WebhookPullRequestReviewRequestedVariant2PullRequestActiveLockReason.OffTopic => "off-topic",
-                WebhookPullRequestReviewRequestedVariant2PullRequestActiveLockReason.TooHeated => "too heated",
-                WebhookPullRequestReviewRequestedVariant2PullRequestActiveLockReason.Spam => "spam",
                 WebhookPullRequestReviewRequestedVariant2PullRequestActiveLockReason.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
+                WebhookPullRequestReviewRequestedVariant2PullRequestActiveLockReason.Resolved => "resolved",
+                WebhookPullRequestReviewRequestedVariant2PullRequestActiveLockReason.Spam => "spam",
+                WebhookPullRequestReviewRequestedVariant2PullRequestActiveLockReason.TooHeated => "too heated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "resolved" => WebhookPullRequestReviewRequestedVariant2PullRequestActiveLockReason.Resolved,
                 "off-topic" => WebhookPullRequestReviewRequestedVariant2PullRequestActiveLockReason.OffTopic,
-                "too heated" => WebhookPullRequestReviewRequestedVariant2PullRequestActiveLockReason.TooHeated,
-                "spam" => WebhookPullRequestReviewRequestedVariant2PullRequestActiveLockReason.Spam,
                 "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookPullRequestReviewRequestedVariant2PullRequestActiveLockReason.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+                "resolved" => WebhookPullRequestReviewRequestedVariant2PullRequestActiveLockReason.Resolved,
+                "spam" => WebhookPullRequestReviewRequestedVariant2PullRequestActiveLockReason.Spam,
+                "too heated" => WebhookPullRequestReviewRequestedVariant2PullRequestActiveLockReason.TooHeated,
                 _ => null,
             };
         }

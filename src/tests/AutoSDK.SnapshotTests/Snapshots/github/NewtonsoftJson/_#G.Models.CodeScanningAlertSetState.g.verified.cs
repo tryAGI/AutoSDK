@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="open")]
-        Open,
+        [global::System.Runtime.Serialization.EnumMember(Value="dismissed")]
+        Dismissed,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="dismissed")]
-        Dismissed,
+        [global::System.Runtime.Serialization.EnumMember(Value="open")]
+        Open,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                CodeScanningAlertSetState.Open => "open",
                 CodeScanningAlertSetState.Dismissed => "dismissed",
+                CodeScanningAlertSetState.Open => "open",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "open" => CodeScanningAlertSetState.Open,
                 "dismissed" => CodeScanningAlertSetState.Dismissed,
+                "open" => CodeScanningAlertSetState.Open,
                 _ => null,
             };
         }

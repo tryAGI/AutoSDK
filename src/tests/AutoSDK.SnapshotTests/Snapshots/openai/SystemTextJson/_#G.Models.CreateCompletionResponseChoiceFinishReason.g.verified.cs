@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Stop,
+        ContentFilter,
         /// <summary>
         /// 
         /// </summary>
@@ -22,7 +22,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ContentFilter,
+        Stop,
     }
 
     /// <summary>
@@ -37,9 +37,9 @@ namespace G
         {
             return value switch
             {
-                CreateCompletionResponseChoiceFinishReason.Stop => "stop",
-                CreateCompletionResponseChoiceFinishReason.Length => "length",
                 CreateCompletionResponseChoiceFinishReason.ContentFilter => "content_filter",
+                CreateCompletionResponseChoiceFinishReason.Length => "length",
+                CreateCompletionResponseChoiceFinishReason.Stop => "stop",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,9 +50,9 @@ namespace G
         {
             return value switch
             {
-                "stop" => CreateCompletionResponseChoiceFinishReason.Stop,
-                "length" => CreateCompletionResponseChoiceFinishReason.Length,
                 "content_filter" => CreateCompletionResponseChoiceFinishReason.ContentFilter,
+                "length" => CreateCompletionResponseChoiceFinishReason.Length,
+                "stop" => CreateCompletionResponseChoiceFinishReason.Stop,
                 _ => null,
             };
         }

@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Public,
+        Internal,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Internal,
+        Public,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestAutoMergeEnabledPullRequestBaseRepoVisibility.Public => "public",
-                WebhookPullRequestAutoMergeEnabledPullRequestBaseRepoVisibility.Private => "private",
                 WebhookPullRequestAutoMergeEnabledPullRequestBaseRepoVisibility.Internal => "internal",
+                WebhookPullRequestAutoMergeEnabledPullRequestBaseRepoVisibility.Private => "private",
+                WebhookPullRequestAutoMergeEnabledPullRequestBaseRepoVisibility.Public => "public",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "public" => WebhookPullRequestAutoMergeEnabledPullRequestBaseRepoVisibility.Public,
-                "private" => WebhookPullRequestAutoMergeEnabledPullRequestBaseRepoVisibility.Private,
                 "internal" => WebhookPullRequestAutoMergeEnabledPullRequestBaseRepoVisibility.Internal,
+                "private" => WebhookPullRequestAutoMergeEnabledPullRequestBaseRepoVisibility.Private,
+                "public" => WebhookPullRequestAutoMergeEnabledPullRequestBaseRepoVisibility.Public,
                 _ => null,
             };
         }

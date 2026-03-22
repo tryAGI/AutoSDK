@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="url")]
-        Url,
+        [global::System.Runtime.Serialization.EnumMember(Value="file")]
+        File,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="file")]
-        File,
+        [global::System.Runtime.Serialization.EnumMember(Value="folder")]
+        Folder,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="folder")]
-        Folder,
+        [global::System.Runtime.Serialization.EnumMember(Value="url")]
+        Url,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                UpdateDocumentRouteResponseDiscriminatorType.Url => "url",
                 UpdateDocumentRouteResponseDiscriminatorType.File => "file",
-                UpdateDocumentRouteResponseDiscriminatorType.Text => "text",
                 UpdateDocumentRouteResponseDiscriminatorType.Folder => "folder",
+                UpdateDocumentRouteResponseDiscriminatorType.Text => "text",
+                UpdateDocumentRouteResponseDiscriminatorType.Url => "url",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "url" => UpdateDocumentRouteResponseDiscriminatorType.Url,
                 "file" => UpdateDocumentRouteResponseDiscriminatorType.File,
-                "text" => UpdateDocumentRouteResponseDiscriminatorType.Text,
                 "folder" => UpdateDocumentRouteResponseDiscriminatorType.Folder,
+                "text" => UpdateDocumentRouteResponseDiscriminatorType.Text,
+                "url" => UpdateDocumentRouteResponseDiscriminatorType.Url,
                 _ => null,
             };
         }

@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Queued,
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -21,11 +21,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        Pending,
         /// <summary>
         /// 
         /// </summary>
-        Waiting,
+        Queued,
         /// <summary>
         /// 
         /// </summary>
@@ -33,7 +33,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Pending,
+        Waiting,
     }
 
     /// <summary>
@@ -48,12 +48,12 @@ namespace G
         {
             return value switch
             {
-                CheckSuiteStatus.Queued => "queued",
-                CheckSuiteStatus.InProgress => "in_progress",
                 CheckSuiteStatus.Completed => "completed",
-                CheckSuiteStatus.Waiting => "waiting",
-                CheckSuiteStatus.Requested => "requested",
+                CheckSuiteStatus.InProgress => "in_progress",
                 CheckSuiteStatus.Pending => "pending",
+                CheckSuiteStatus.Queued => "queued",
+                CheckSuiteStatus.Requested => "requested",
+                CheckSuiteStatus.Waiting => "waiting",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,12 +64,12 @@ namespace G
         {
             return value switch
             {
-                "queued" => CheckSuiteStatus.Queued,
-                "in_progress" => CheckSuiteStatus.InProgress,
                 "completed" => CheckSuiteStatus.Completed,
-                "waiting" => CheckSuiteStatus.Waiting,
-                "requested" => CheckSuiteStatus.Requested,
+                "in_progress" => CheckSuiteStatus.InProgress,
                 "pending" => CheckSuiteStatus.Pending,
+                "queued" => CheckSuiteStatus.Queued,
+                "requested" => CheckSuiteStatus.Requested,
+                "waiting" => CheckSuiteStatus.Waiting,
                 _ => null,
             };
         }

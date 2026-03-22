@@ -14,8 +14,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="string")]
-        String,
+        [global::System.Runtime.Serialization.EnumMember(Value="multi_select")]
+        MultiSelect,
         /// <summary>
         /// 
         /// </summary>
@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="multi_select")]
-        MultiSelect,
+        [global::System.Runtime.Serialization.EnumMember(Value="string")]
+        String,
         /// <summary>
         /// 
         /// </summary>
@@ -45,9 +45,9 @@ namespace G
         {
             return value switch
             {
-                CustomPropertyValueType.String => "string",
-                CustomPropertyValueType.SingleSelect => "single_select",
                 CustomPropertyValueType.MultiSelect => "multi_select",
+                CustomPropertyValueType.SingleSelect => "single_select",
+                CustomPropertyValueType.String => "string",
                 CustomPropertyValueType.TrueFalse => "true_false",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -59,9 +59,9 @@ namespace G
         {
             return value switch
             {
-                "string" => CustomPropertyValueType.String,
-                "single_select" => CustomPropertyValueType.SingleSelect,
                 "multi_select" => CustomPropertyValueType.MultiSelect,
+                "single_select" => CustomPropertyValueType.SingleSelect,
+                "string" => CustomPropertyValueType.String,
                 "true_false" => CustomPropertyValueType.TrueFalse,
                 _ => null,
             };

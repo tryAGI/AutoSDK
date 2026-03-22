@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="twilio")]
-        Twilio,
+        [global::System.Runtime.Serialization.EnumMember(Value="sip_trunk")]
+        SipTrunk,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="sip_trunk")]
-        SipTrunk,
+        [global::System.Runtime.Serialization.EnumMember(Value="twilio")]
+        Twilio,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ListPhoneNumbersRouteResponseItemDiscriminatorProvider.Twilio => "twilio",
                 ListPhoneNumbersRouteResponseItemDiscriminatorProvider.SipTrunk => "sip_trunk",
+                ListPhoneNumbersRouteResponseItemDiscriminatorProvider.Twilio => "twilio",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "twilio" => ListPhoneNumbersRouteResponseItemDiscriminatorProvider.Twilio,
                 "sip_trunk" => ListPhoneNumbersRouteResponseItemDiscriminatorProvider.SipTrunk,
+                "twilio" => ListPhoneNumbersRouteResponseItemDiscriminatorProvider.Twilio,
                 _ => null,
             };
         }

@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookIssueCommentCreatedIssueIssue1AssigneeType2.Bot => "Bot",
-                WebhookIssueCommentCreatedIssueIssue1AssigneeType2.User => "User",
-                WebhookIssueCommentCreatedIssueIssue1AssigneeType2.Organization => "Organization",
                 WebhookIssueCommentCreatedIssueIssue1AssigneeType2.Mannequin => "Mannequin",
+                WebhookIssueCommentCreatedIssueIssue1AssigneeType2.Organization => "Organization",
+                WebhookIssueCommentCreatedIssueIssue1AssigneeType2.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookIssueCommentCreatedIssueIssue1AssigneeType2.Bot,
-                "User" => WebhookIssueCommentCreatedIssueIssue1AssigneeType2.User,
-                "Organization" => WebhookIssueCommentCreatedIssueIssue1AssigneeType2.Organization,
                 "Mannequin" => WebhookIssueCommentCreatedIssueIssue1AssigneeType2.Mannequin,
+                "Organization" => WebhookIssueCommentCreatedIssueIssue1AssigneeType2.Organization,
+                "User" => WebhookIssueCommentCreatedIssueIssue1AssigneeType2.User,
                 _ => null,
             };
         }

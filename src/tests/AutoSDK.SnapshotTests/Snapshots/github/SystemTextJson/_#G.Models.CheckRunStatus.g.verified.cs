@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Queued,
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -21,11 +21,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        Pending,
         /// <summary>
         /// 
         /// </summary>
-        Waiting,
+        Queued,
         /// <summary>
         /// 
         /// </summary>
@@ -33,7 +33,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Pending,
+        Waiting,
     }
 
     /// <summary>
@@ -48,12 +48,12 @@ namespace G
         {
             return value switch
             {
-                CheckRunStatus.Queued => "queued",
-                CheckRunStatus.InProgress => "in_progress",
                 CheckRunStatus.Completed => "completed",
-                CheckRunStatus.Waiting => "waiting",
-                CheckRunStatus.Requested => "requested",
+                CheckRunStatus.InProgress => "in_progress",
                 CheckRunStatus.Pending => "pending",
+                CheckRunStatus.Queued => "queued",
+                CheckRunStatus.Requested => "requested",
+                CheckRunStatus.Waiting => "waiting",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,12 +64,12 @@ namespace G
         {
             return value switch
             {
-                "queued" => CheckRunStatus.Queued,
-                "in_progress" => CheckRunStatus.InProgress,
                 "completed" => CheckRunStatus.Completed,
-                "waiting" => CheckRunStatus.Waiting,
-                "requested" => CheckRunStatus.Requested,
+                "in_progress" => CheckRunStatus.InProgress,
                 "pending" => CheckRunStatus.Pending,
+                "queued" => CheckRunStatus.Queued,
+                "requested" => CheckRunStatus.Requested,
+                "waiting" => CheckRunStatus.Waiting,
                 _ => null,
             };
         }

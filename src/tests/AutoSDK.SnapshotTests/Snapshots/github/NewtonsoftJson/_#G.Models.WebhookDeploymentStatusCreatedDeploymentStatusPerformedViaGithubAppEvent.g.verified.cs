@@ -53,6 +53,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="deploy_key")]
+        DeployKey,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="deployment")]
         Deployment,
         /// <summary>
@@ -65,11 +70,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="deployment_status")]
         DeploymentStatus,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="deploy_key")]
-        DeployKey,
         /// <summary>
         /// 
         /// </summary>
@@ -93,13 +93,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="issues")]
-        Issues,
+        [global::System.Runtime.Serialization.EnumMember(Value="issue_comment")]
+        IssueComment,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="issue_comment")]
-        IssueComment,
+        [global::System.Runtime.Serialization.EnumMember(Value="issues")]
+        Issues,
         /// <summary>
         /// 
         /// </summary>
@@ -118,18 +118,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="merge_group")]
+        MergeGroup,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="merge_queue_entry")]
+        MergeQueueEntry,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="milestone")]
         Milestone,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="organization")]
-        Organization,
+        [global::System.Runtime.Serialization.EnumMember(Value="org_block")]
+        OrgBlock,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="org_block")]
-        OrgBlock,
+        [global::System.Runtime.Serialization.EnumMember(Value="organization")]
+        Organization,
         /// <summary>
         /// 
         /// </summary>
@@ -173,6 +183,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="pull_request_review_thread")]
+        PullRequestReviewThread,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="push")]
         Push,
         /// <summary>
@@ -200,6 +215,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="secret_scanning_alert")]
         SecretScanningAlert,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="secret_scanning_alert_location")]
+        SecretScanningAlertLocation,
         /// <summary>
         /// 
         /// </summary>
@@ -233,33 +253,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="workflow_run")]
-        WorkflowRun,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pull_request_review_thread")]
-        PullRequestReviewThread,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="merge_queue_entry")]
-        MergeQueueEntry,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="workflow_job")]
         WorkflowJob,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="merge_group")]
-        MergeGroup,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="secret_scanning_alert_location")]
-        SecretScanningAlertLocation,
+        [global::System.Runtime.Serialization.EnumMember(Value="workflow_run")]
+        WorkflowRun,
     }
 
     /// <summary>
@@ -282,22 +282,24 @@ namespace G
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.ContentReference => "content_reference",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Create => "create",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Delete => "delete",
+                WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.DeployKey => "deploy_key",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Deployment => "deployment",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.DeploymentReview => "deployment_review",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.DeploymentStatus => "deployment_status",
-                WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.DeployKey => "deploy_key",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Discussion => "discussion",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.DiscussionComment => "discussion_comment",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Fork => "fork",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Gollum => "gollum",
-                WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Issues => "issues",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.IssueComment => "issue_comment",
+                WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Issues => "issues",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Label => "label",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Member => "member",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Membership => "membership",
+                WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.MergeGroup => "merge_group",
+                WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.MergeQueueEntry => "merge_queue_entry",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Milestone => "milestone",
-                WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Organization => "organization",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.OrgBlock => "org_block",
+                WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Organization => "organization",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.PageBuild => "page_build",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Project => "project",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.ProjectCard => "project_card",
@@ -306,24 +308,22 @@ namespace G
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.PullRequest => "pull_request",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.PullRequestReview => "pull_request_review",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.PullRequestReviewComment => "pull_request_review_comment",
+                WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.PullRequestReviewThread => "pull_request_review_thread",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Push => "push",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.RegistryPackage => "registry_package",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Release => "release",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Repository => "repository",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.RepositoryDispatch => "repository_dispatch",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.SecretScanningAlert => "secret_scanning_alert",
+                WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.SecretScanningAlertLocation => "secret_scanning_alert_location",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Star => "star",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Status => "status",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Team => "team",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.TeamAdd => "team_add",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Watch => "watch",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.WorkflowDispatch => "workflow_dispatch",
-                WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.WorkflowRun => "workflow_run",
-                WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.PullRequestReviewThread => "pull_request_review_thread",
-                WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.MergeQueueEntry => "merge_queue_entry",
                 WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.WorkflowJob => "workflow_job",
-                WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.MergeGroup => "merge_group",
-                WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.SecretScanningAlertLocation => "secret_scanning_alert_location",
+                WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.WorkflowRun => "workflow_run",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -342,22 +342,24 @@ namespace G
                 "content_reference" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.ContentReference,
                 "create" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Create,
                 "delete" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Delete,
+                "deploy_key" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.DeployKey,
                 "deployment" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Deployment,
                 "deployment_review" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.DeploymentReview,
                 "deployment_status" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.DeploymentStatus,
-                "deploy_key" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.DeployKey,
                 "discussion" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Discussion,
                 "discussion_comment" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.DiscussionComment,
                 "fork" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Fork,
                 "gollum" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Gollum,
-                "issues" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Issues,
                 "issue_comment" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.IssueComment,
+                "issues" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Issues,
                 "label" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Label,
                 "member" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Member,
                 "membership" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Membership,
+                "merge_group" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.MergeGroup,
+                "merge_queue_entry" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.MergeQueueEntry,
                 "milestone" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Milestone,
-                "organization" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Organization,
                 "org_block" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.OrgBlock,
+                "organization" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Organization,
                 "page_build" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.PageBuild,
                 "project" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Project,
                 "project_card" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.ProjectCard,
@@ -366,24 +368,22 @@ namespace G
                 "pull_request" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.PullRequest,
                 "pull_request_review" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.PullRequestReview,
                 "pull_request_review_comment" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.PullRequestReviewComment,
+                "pull_request_review_thread" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.PullRequestReviewThread,
                 "push" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Push,
                 "registry_package" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.RegistryPackage,
                 "release" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Release,
                 "repository" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Repository,
                 "repository_dispatch" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.RepositoryDispatch,
                 "secret_scanning_alert" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.SecretScanningAlert,
+                "secret_scanning_alert_location" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.SecretScanningAlertLocation,
                 "star" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Star,
                 "status" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Status,
                 "team" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Team,
                 "team_add" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.TeamAdd,
                 "watch" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.Watch,
                 "workflow_dispatch" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.WorkflowDispatch,
-                "workflow_run" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.WorkflowRun,
-                "pull_request_review_thread" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.PullRequestReviewThread,
-                "merge_queue_entry" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.MergeQueueEntry,
                 "workflow_job" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.WorkflowJob,
-                "merge_group" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.MergeGroup,
-                "secret_scanning_alert_location" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.SecretScanningAlertLocation,
+                "workflow_run" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEvent.WorkflowRun,
                 _ => null,
             };
         }

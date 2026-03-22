@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        None,
-        /// <summary>
-        /// 
-        /// </summary>
         During,
         /// <summary>
         /// 
         /// </summary>
         End,
+        /// <summary>
+        /// 
+        /// </summary>
+        None,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                WidgetFeedbackMode.None => "none",
                 WidgetFeedbackMode.During => "during",
                 WidgetFeedbackMode.End => "end",
+                WidgetFeedbackMode.None => "none",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "none" => WidgetFeedbackMode.None,
                 "during" => WidgetFeedbackMode.During,
                 "end" => WidgetFeedbackMode.End,
+                "none" => WidgetFeedbackMode.None,
                 _ => null,
             };
         }

@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        InProgress,
+        Completed,
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        InProgress,
         /// <summary>
         /// 
         /// </summary>
@@ -39,8 +39,8 @@ namespace G
         {
             return value switch
             {
-                WebhookWorkflowJobInProgressWorkflowJobVariant2StepStatus.InProgress => "in_progress",
                 WebhookWorkflowJobInProgressWorkflowJobVariant2StepStatus.Completed => "completed",
+                WebhookWorkflowJobInProgressWorkflowJobVariant2StepStatus.InProgress => "in_progress",
                 WebhookWorkflowJobInProgressWorkflowJobVariant2StepStatus.Pending => "pending",
                 WebhookWorkflowJobInProgressWorkflowJobVariant2StepStatus.Queued => "queued",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -53,8 +53,8 @@ namespace G
         {
             return value switch
             {
-                "in_progress" => WebhookWorkflowJobInProgressWorkflowJobVariant2StepStatus.InProgress,
                 "completed" => WebhookWorkflowJobInProgressWorkflowJobVariant2StepStatus.Completed,
+                "in_progress" => WebhookWorkflowJobInProgressWorkflowJobVariant2StepStatus.InProgress,
                 "pending" => WebhookWorkflowJobInProgressWorkflowJobVariant2StepStatus.Pending,
                 "queued" => WebhookWorkflowJobInProgressWorkflowJobVariant2StepStatus.Queued,
                 _ => null,

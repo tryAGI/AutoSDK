@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="POSE")]
-        Pose,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CANNY")]
         Canny,
         /// <summary>
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="DEPTH")]
         Depth,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="POSE")]
+        Pose,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                ControlnetType.Pose => "POSE",
                 ControlnetType.Canny => "CANNY",
                 ControlnetType.Depth => "DEPTH",
+                ControlnetType.Pose => "POSE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "POSE" => ControlnetType.Pose,
                 "CANNY" => ControlnetType.Canny,
                 "DEPTH" => ControlnetType.Depth,
+                "POSE" => ControlnetType.Pose,
                 _ => null,
             };
         }

@@ -16,15 +16,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Removed,
-        /// <summary>
-        /// 
-        /// </summary>
-        Modified,
-        /// <summary>
-        /// 
-        /// </summary>
-        Renamed,
+        Changed,
         /// <summary>
         /// 
         /// </summary>
@@ -32,7 +24,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Changed,
+        Modified,
+        /// <summary>
+        /// 
+        /// </summary>
+        Removed,
+        /// <summary>
+        /// 
+        /// </summary>
+        Renamed,
         /// <summary>
         /// 
         /// </summary>
@@ -52,11 +52,11 @@ namespace G
             return value switch
             {
                 DiffEntryStatus.Added => "added",
-                DiffEntryStatus.Removed => "removed",
-                DiffEntryStatus.Modified => "modified",
-                DiffEntryStatus.Renamed => "renamed",
-                DiffEntryStatus.Copied => "copied",
                 DiffEntryStatus.Changed => "changed",
+                DiffEntryStatus.Copied => "copied",
+                DiffEntryStatus.Modified => "modified",
+                DiffEntryStatus.Removed => "removed",
+                DiffEntryStatus.Renamed => "renamed",
                 DiffEntryStatus.Unchanged => "unchanged",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -69,11 +69,11 @@ namespace G
             return value switch
             {
                 "added" => DiffEntryStatus.Added,
-                "removed" => DiffEntryStatus.Removed,
-                "modified" => DiffEntryStatus.Modified,
-                "renamed" => DiffEntryStatus.Renamed,
-                "copied" => DiffEntryStatus.Copied,
                 "changed" => DiffEntryStatus.Changed,
+                "copied" => DiffEntryStatus.Copied,
+                "modified" => DiffEntryStatus.Modified,
+                "removed" => DiffEntryStatus.Removed,
+                "renamed" => DiffEntryStatus.Renamed,
                 "unchanged" => DiffEntryStatus.Unchanged,
                 _ => null,
             };

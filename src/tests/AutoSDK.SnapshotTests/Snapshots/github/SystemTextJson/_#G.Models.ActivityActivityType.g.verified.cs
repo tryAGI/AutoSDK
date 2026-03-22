@@ -13,11 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Push,
-        /// <summary>
-        /// 
-        /// </summary>
-        ForcePush,
+        BranchCreation,
         /// <summary>
         /// 
         /// </summary>
@@ -25,7 +21,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        BranchCreation,
+        ForcePush,
+        /// <summary>
+        /// 
+        /// </summary>
+        MergeQueueMerge,
         /// <summary>
         /// 
         /// </summary>
@@ -33,7 +33,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        MergeQueueMerge,
+        Push,
     }
 
     /// <summary>
@@ -48,12 +48,12 @@ namespace G
         {
             return value switch
             {
-                ActivityActivityType.Push => "push",
-                ActivityActivityType.ForcePush => "force_push",
-                ActivityActivityType.BranchDeletion => "branch_deletion",
                 ActivityActivityType.BranchCreation => "branch_creation",
-                ActivityActivityType.PrMerge => "pr_merge",
+                ActivityActivityType.BranchDeletion => "branch_deletion",
+                ActivityActivityType.ForcePush => "force_push",
                 ActivityActivityType.MergeQueueMerge => "merge_queue_merge",
+                ActivityActivityType.PrMerge => "pr_merge",
+                ActivityActivityType.Push => "push",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,12 +64,12 @@ namespace G
         {
             return value switch
             {
-                "push" => ActivityActivityType.Push,
-                "force_push" => ActivityActivityType.ForcePush,
-                "branch_deletion" => ActivityActivityType.BranchDeletion,
                 "branch_creation" => ActivityActivityType.BranchCreation,
-                "pr_merge" => ActivityActivityType.PrMerge,
+                "branch_deletion" => ActivityActivityType.BranchDeletion,
+                "force_push" => ActivityActivityType.ForcePush,
                 "merge_queue_merge" => ActivityActivityType.MergeQueueMerge,
+                "pr_merge" => ActivityActivityType.PrMerge,
+                "push" => ActivityActivityType.Push,
                 _ => null,
             };
         }

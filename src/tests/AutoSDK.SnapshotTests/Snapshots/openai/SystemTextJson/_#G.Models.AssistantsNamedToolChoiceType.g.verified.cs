@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Function,
-        /// <summary>
-        /// 
-        /// </summary>
         CodeInterpreter,
         /// <summary>
         /// 
         /// </summary>
         FileSearch,
+        /// <summary>
+        /// 
+        /// </summary>
+        Function,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                AssistantsNamedToolChoiceType.Function => "function",
                 AssistantsNamedToolChoiceType.CodeInterpreter => "code_interpreter",
                 AssistantsNamedToolChoiceType.FileSearch => "file_search",
+                AssistantsNamedToolChoiceType.Function => "function",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "function" => AssistantsNamedToolChoiceType.Function,
                 "code_interpreter" => AssistantsNamedToolChoiceType.CodeInterpreter,
                 "file_search" => AssistantsNamedToolChoiceType.FileSearch,
+                "function" => AssistantsNamedToolChoiceType.Function,
                 _ => null,
             };
         }

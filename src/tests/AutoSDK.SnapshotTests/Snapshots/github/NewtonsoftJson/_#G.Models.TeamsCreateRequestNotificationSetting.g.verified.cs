@@ -14,15 +14,15 @@ namespace G
     public enum TeamsCreateRequestNotificationSetting
     {
         /// <summary>
-        /// `notifications_enabled`
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="notifications_enabled")]
-        NotificationsEnabled,
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="notifications_disabled")]
         NotificationsDisabled,
+        /// <summary>
+        /// `notifications_enabled`
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="notifications_enabled")]
+        NotificationsEnabled,
     }
 
     /// <summary>
@@ -37,8 +37,8 @@ namespace G
         {
             return value switch
             {
-                TeamsCreateRequestNotificationSetting.NotificationsEnabled => "notifications_enabled",
                 TeamsCreateRequestNotificationSetting.NotificationsDisabled => "notifications_disabled",
+                TeamsCreateRequestNotificationSetting.NotificationsEnabled => "notifications_enabled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
         {
             return value switch
             {
-                "notifications_enabled" => TeamsCreateRequestNotificationSetting.NotificationsEnabled,
                 "notifications_disabled" => TeamsCreateRequestNotificationSetting.NotificationsDisabled,
+                "notifications_enabled" => TeamsCreateRequestNotificationSetting.NotificationsEnabled,
                 _ => null,
             };
         }

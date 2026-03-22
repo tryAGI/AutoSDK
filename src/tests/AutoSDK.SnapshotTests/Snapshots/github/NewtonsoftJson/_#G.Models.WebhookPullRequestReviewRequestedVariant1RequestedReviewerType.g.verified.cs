@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookPullRequestReviewRequestedVariant1RequestedReviewerType.Bot => "Bot",
-                WebhookPullRequestReviewRequestedVariant1RequestedReviewerType.User => "User",
-                WebhookPullRequestReviewRequestedVariant1RequestedReviewerType.Organization => "Organization",
                 WebhookPullRequestReviewRequestedVariant1RequestedReviewerType.Mannequin => "Mannequin",
+                WebhookPullRequestReviewRequestedVariant1RequestedReviewerType.Organization => "Organization",
+                WebhookPullRequestReviewRequestedVariant1RequestedReviewerType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestReviewRequestedVariant1RequestedReviewerType.Bot,
-                "User" => WebhookPullRequestReviewRequestedVariant1RequestedReviewerType.User,
-                "Organization" => WebhookPullRequestReviewRequestedVariant1RequestedReviewerType.Organization,
                 "Mannequin" => WebhookPullRequestReviewRequestedVariant1RequestedReviewerType.Mannequin,
+                "Organization" => WebhookPullRequestReviewRequestedVariant1RequestedReviewerType.Organization,
+                "User" => WebhookPullRequestReviewRequestedVariant1RequestedReviewerType.User,
                 _ => null,
             };
         }

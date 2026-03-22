@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pass")]
-        Pass,
+        [global::System.Runtime.Serialization.EnumMember(Value="fail")]
+        Fail,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="fail")]
-        Fail,
+        [global::System.Runtime.Serialization.EnumMember(Value="pass")]
+        Pass,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                RuleSuiteRuleEvaluationResult.Pass => "pass",
                 RuleSuiteRuleEvaluationResult.Fail => "fail",
+                RuleSuiteRuleEvaluationResult.Pass => "pass",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "pass" => RuleSuiteRuleEvaluationResult.Pass,
                 "fail" => RuleSuiteRuleEvaluationResult.Fail,
+                "pass" => RuleSuiteRuleEvaluationResult.Pass,
                 _ => null,
             };
         }

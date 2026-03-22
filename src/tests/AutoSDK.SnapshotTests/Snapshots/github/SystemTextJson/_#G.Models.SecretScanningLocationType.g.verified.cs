@@ -17,11 +17,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        WikiCommit,
+        DiscussionBody,
         /// <summary>
         /// 
         /// </summary>
-        IssueTitle,
+        DiscussionComment,
+        /// <summary>
+        /// 
+        /// </summary>
+        DiscussionTitle,
         /// <summary>
         /// 
         /// </summary>
@@ -33,19 +37,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        DiscussionTitle,
-        /// <summary>
-        /// 
-        /// </summary>
-        DiscussionBody,
-        /// <summary>
-        /// 
-        /// </summary>
-        DiscussionComment,
-        /// <summary>
-        /// 
-        /// </summary>
-        PullRequestTitle,
+        IssueTitle,
         /// <summary>
         /// 
         /// </summary>
@@ -62,6 +54,14 @@ namespace G
         /// 
         /// </summary>
         PullRequestReviewComment,
+        /// <summary>
+        /// 
+        /// </summary>
+        PullRequestTitle,
+        /// <summary>
+        /// 
+        /// </summary>
+        WikiCommit,
     }
 
     /// <summary>
@@ -77,18 +77,18 @@ namespace G
             return value switch
             {
                 SecretScanningLocationType.Commit => "commit",
-                SecretScanningLocationType.WikiCommit => "wiki_commit",
-                SecretScanningLocationType.IssueTitle => "issue_title",
-                SecretScanningLocationType.IssueBody => "issue_body",
-                SecretScanningLocationType.IssueComment => "issue_comment",
-                SecretScanningLocationType.DiscussionTitle => "discussion_title",
                 SecretScanningLocationType.DiscussionBody => "discussion_body",
                 SecretScanningLocationType.DiscussionComment => "discussion_comment",
-                SecretScanningLocationType.PullRequestTitle => "pull_request_title",
+                SecretScanningLocationType.DiscussionTitle => "discussion_title",
+                SecretScanningLocationType.IssueBody => "issue_body",
+                SecretScanningLocationType.IssueComment => "issue_comment",
+                SecretScanningLocationType.IssueTitle => "issue_title",
                 SecretScanningLocationType.PullRequestBody => "pull_request_body",
                 SecretScanningLocationType.PullRequestComment => "pull_request_comment",
                 SecretScanningLocationType.PullRequestReview => "pull_request_review",
                 SecretScanningLocationType.PullRequestReviewComment => "pull_request_review_comment",
+                SecretScanningLocationType.PullRequestTitle => "pull_request_title",
+                SecretScanningLocationType.WikiCommit => "wiki_commit",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -100,18 +100,18 @@ namespace G
             return value switch
             {
                 "commit" => SecretScanningLocationType.Commit,
-                "wiki_commit" => SecretScanningLocationType.WikiCommit,
-                "issue_title" => SecretScanningLocationType.IssueTitle,
-                "issue_body" => SecretScanningLocationType.IssueBody,
-                "issue_comment" => SecretScanningLocationType.IssueComment,
-                "discussion_title" => SecretScanningLocationType.DiscussionTitle,
                 "discussion_body" => SecretScanningLocationType.DiscussionBody,
                 "discussion_comment" => SecretScanningLocationType.DiscussionComment,
-                "pull_request_title" => SecretScanningLocationType.PullRequestTitle,
+                "discussion_title" => SecretScanningLocationType.DiscussionTitle,
+                "issue_body" => SecretScanningLocationType.IssueBody,
+                "issue_comment" => SecretScanningLocationType.IssueComment,
+                "issue_title" => SecretScanningLocationType.IssueTitle,
                 "pull_request_body" => SecretScanningLocationType.PullRequestBody,
                 "pull_request_comment" => SecretScanningLocationType.PullRequestComment,
                 "pull_request_review" => SecretScanningLocationType.PullRequestReview,
                 "pull_request_review_comment" => SecretScanningLocationType.PullRequestReviewComment,
+                "pull_request_title" => SecretScanningLocationType.PullRequestTitle,
+                "wiki_commit" => SecretScanningLocationType.WikiCommit,
                 _ => null,
             };
         }

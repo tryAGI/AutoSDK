@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="all")]
-        All,
+        [global::System.Runtime.Serialization.EnumMember(Value="admin")]
+        Admin,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="admin")]
-        Admin,
+        [global::System.Runtime.Serialization.EnumMember(Value="all")]
+        All,
         /// <summary>
         /// 
         /// </summary>
@@ -39,8 +39,8 @@ namespace G
         {
             return value switch
             {
-                OrgsListMembersRole.All => "all",
                 OrgsListMembersRole.Admin => "admin",
+                OrgsListMembersRole.All => "all",
                 OrgsListMembersRole.Member => "member",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -52,8 +52,8 @@ namespace G
         {
             return value switch
             {
-                "all" => OrgsListMembersRole.All,
                 "admin" => OrgsListMembersRole.Admin,
+                "all" => OrgsListMembersRole.All,
                 "member" => OrgsListMembersRole.Member,
                 _ => null,
             };

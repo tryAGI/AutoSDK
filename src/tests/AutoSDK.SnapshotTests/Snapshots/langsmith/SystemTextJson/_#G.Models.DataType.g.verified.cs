@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Chat,
+        /// <summary>
+        /// 
+        /// </summary>
         Kv,
         /// <summary>
         /// 
         /// </summary>
         Llm,
-        /// <summary>
-        /// 
-        /// </summary>
-        Chat,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
+                DataType.Chat => "chat",
                 DataType.Kv => "kv",
                 DataType.Llm => "llm",
-                DataType.Chat => "chat",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
+                "chat" => DataType.Chat,
                 "kv" => DataType.Kv,
                 "llm" => DataType.Llm,
-                "chat" => DataType.Chat,
                 _ => null,
             };
         }

@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="pushing manifest")]
+        PushingManifest,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="retrieving manifest")]
         RetrievingManifest,
         /// <summary>
@@ -20,11 +25,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="starting upload")]
         StartingUpload,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pushing manifest")]
-        PushingManifest,
         /// <summary>
         /// 
         /// </summary>
@@ -44,9 +44,9 @@ namespace G
         {
             return value switch
             {
+                PushModelResponseStatus.PushingManifest => "pushing manifest",
                 PushModelResponseStatus.RetrievingManifest => "retrieving manifest",
                 PushModelResponseStatus.StartingUpload => "starting upload",
-                PushModelResponseStatus.PushingManifest => "pushing manifest",
                 PushModelResponseStatus.Success => "success",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -58,9 +58,9 @@ namespace G
         {
             return value switch
             {
+                "pushing manifest" => PushModelResponseStatus.PushingManifest,
                 "retrieving manifest" => PushModelResponseStatus.RetrievingManifest,
                 "starting upload" => PushModelResponseStatus.StartingUpload,
-                "pushing manifest" => PushModelResponseStatus.PushingManifest,
                 "success" => PushModelResponseStatus.Success,
                 _ => null,
             };

@@ -13,11 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Public,
+        Private,
         /// <summary>
         /// 
         /// </summary>
-        Private,
+        Public,
     }
 
     /// <summary>
@@ -32,8 +32,8 @@ namespace G
         {
             return value switch
             {
-                TrainingAPIInputVisibility.Public => "public",
                 TrainingAPIInputVisibility.Private => "private",
+                TrainingAPIInputVisibility.Public => "public",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,8 +44,8 @@ namespace G
         {
             return value switch
             {
-                "public" => TrainingAPIInputVisibility.Public,
                 "private" => TrainingAPIInputVisibility.Private,
+                "public" => TrainingAPIInputVisibility.Public,
                 _ => null,
             };
         }

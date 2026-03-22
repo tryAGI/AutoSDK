@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="none")]
-        None,
+        [global::System.Runtime.Serialization.EnumMember(Value="gzip")]
+        Gzip,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="gzip")]
-        Gzip,
+        [global::System.Runtime.Serialization.EnumMember(Value="none")]
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -39,8 +39,8 @@ namespace G
         {
             return value switch
             {
-                BulkExportCompression.None => "none",
                 BulkExportCompression.Gzip => "gzip",
+                BulkExportCompression.None => "none",
                 BulkExportCompression.Snappy => "snappy",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -52,8 +52,8 @@ namespace G
         {
             return value switch
             {
-                "none" => BulkExportCompression.None,
                 "gzip" => BulkExportCompression.Gzip,
+                "none" => BulkExportCompression.None,
                 "snappy" => BulkExportCompression.Snappy,
                 _ => null,
             };

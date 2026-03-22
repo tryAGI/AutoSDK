@@ -14,23 +14,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Unknown")]
-        Unknown,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Created")]
-        Created,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Queued")]
-        Queued,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Provisioning")]
-        Provisioning,
+        [global::System.Runtime.Serialization.EnumMember(Value="Archived")]
+        Archived,
         /// <summary>
         /// 
         /// </summary>
@@ -44,8 +29,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Unavailable")]
-        Unavailable,
+        [global::System.Runtime.Serialization.EnumMember(Value="Created")]
+        Created,
         /// <summary>
         /// 
         /// </summary>
@@ -54,28 +39,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Moved")]
-        Moved,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Shutdown")]
-        Shutdown,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Archived")]
-        Archived,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Starting")]
-        Starting,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="ShuttingDown")]
-        ShuttingDown,
+        [global::System.Runtime.Serialization.EnumMember(Value="Exporting")]
+        Exporting,
         /// <summary>
         /// 
         /// </summary>
@@ -84,18 +49,53 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Exporting")]
-        Exporting,
+        [global::System.Runtime.Serialization.EnumMember(Value="Moved")]
+        Moved,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Updating")]
-        Updating,
+        [global::System.Runtime.Serialization.EnumMember(Value="Provisioning")]
+        Provisioning,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="Queued")]
+        Queued,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="Rebuilding")]
         Rebuilding,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="Shutdown")]
+        Shutdown,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="ShuttingDown")]
+        ShuttingDown,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="Starting")]
+        Starting,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="Unavailable")]
+        Unavailable,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="Unknown")]
+        Unknown,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="Updating")]
+        Updating,
     }
 
     /// <summary>
@@ -110,23 +110,23 @@ namespace G
         {
             return value switch
             {
-                CodespaceWithFullRepositoryState.Unknown => "Unknown",
-                CodespaceWithFullRepositoryState.Created => "Created",
-                CodespaceWithFullRepositoryState.Queued => "Queued",
-                CodespaceWithFullRepositoryState.Provisioning => "Provisioning",
+                CodespaceWithFullRepositoryState.Archived => "Archived",
                 CodespaceWithFullRepositoryState.Available => "Available",
                 CodespaceWithFullRepositoryState.Awaiting => "Awaiting",
-                CodespaceWithFullRepositoryState.Unavailable => "Unavailable",
+                CodespaceWithFullRepositoryState.Created => "Created",
                 CodespaceWithFullRepositoryState.Deleted => "Deleted",
-                CodespaceWithFullRepositoryState.Moved => "Moved",
-                CodespaceWithFullRepositoryState.Shutdown => "Shutdown",
-                CodespaceWithFullRepositoryState.Archived => "Archived",
-                CodespaceWithFullRepositoryState.Starting => "Starting",
-                CodespaceWithFullRepositoryState.ShuttingDown => "ShuttingDown",
-                CodespaceWithFullRepositoryState.Failed => "Failed",
                 CodespaceWithFullRepositoryState.Exporting => "Exporting",
-                CodespaceWithFullRepositoryState.Updating => "Updating",
+                CodespaceWithFullRepositoryState.Failed => "Failed",
+                CodespaceWithFullRepositoryState.Moved => "Moved",
+                CodespaceWithFullRepositoryState.Provisioning => "Provisioning",
+                CodespaceWithFullRepositoryState.Queued => "Queued",
                 CodespaceWithFullRepositoryState.Rebuilding => "Rebuilding",
+                CodespaceWithFullRepositoryState.Shutdown => "Shutdown",
+                CodespaceWithFullRepositoryState.ShuttingDown => "ShuttingDown",
+                CodespaceWithFullRepositoryState.Starting => "Starting",
+                CodespaceWithFullRepositoryState.Unavailable => "Unavailable",
+                CodespaceWithFullRepositoryState.Unknown => "Unknown",
+                CodespaceWithFullRepositoryState.Updating => "Updating",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -137,23 +137,23 @@ namespace G
         {
             return value switch
             {
-                "Unknown" => CodespaceWithFullRepositoryState.Unknown,
-                "Created" => CodespaceWithFullRepositoryState.Created,
-                "Queued" => CodespaceWithFullRepositoryState.Queued,
-                "Provisioning" => CodespaceWithFullRepositoryState.Provisioning,
+                "Archived" => CodespaceWithFullRepositoryState.Archived,
                 "Available" => CodespaceWithFullRepositoryState.Available,
                 "Awaiting" => CodespaceWithFullRepositoryState.Awaiting,
-                "Unavailable" => CodespaceWithFullRepositoryState.Unavailable,
+                "Created" => CodespaceWithFullRepositoryState.Created,
                 "Deleted" => CodespaceWithFullRepositoryState.Deleted,
-                "Moved" => CodespaceWithFullRepositoryState.Moved,
-                "Shutdown" => CodespaceWithFullRepositoryState.Shutdown,
-                "Archived" => CodespaceWithFullRepositoryState.Archived,
-                "Starting" => CodespaceWithFullRepositoryState.Starting,
-                "ShuttingDown" => CodespaceWithFullRepositoryState.ShuttingDown,
-                "Failed" => CodespaceWithFullRepositoryState.Failed,
                 "Exporting" => CodespaceWithFullRepositoryState.Exporting,
-                "Updating" => CodespaceWithFullRepositoryState.Updating,
+                "Failed" => CodespaceWithFullRepositoryState.Failed,
+                "Moved" => CodespaceWithFullRepositoryState.Moved,
+                "Provisioning" => CodespaceWithFullRepositoryState.Provisioning,
+                "Queued" => CodespaceWithFullRepositoryState.Queued,
                 "Rebuilding" => CodespaceWithFullRepositoryState.Rebuilding,
+                "Shutdown" => CodespaceWithFullRepositoryState.Shutdown,
+                "ShuttingDown" => CodespaceWithFullRepositoryState.ShuttingDown,
+                "Starting" => CodespaceWithFullRepositoryState.Starting,
+                "Unavailable" => CodespaceWithFullRepositoryState.Unavailable,
+                "Unknown" => CodespaceWithFullRepositoryState.Unknown,
+                "Updating" => CodespaceWithFullRepositoryState.Updating,
                 _ => null,
             };
         }

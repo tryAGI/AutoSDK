@@ -13,13 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pass")]
-        Pass,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="fail")]
-        Fail,
+        [global::System.Runtime.Serialization.EnumMember(Value="all")]
+        All,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="all")]
-        All,
+        [global::System.Runtime.Serialization.EnumMember(Value="fail")]
+        Fail,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="pass")]
+        Pass,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                ReposGetOrgRuleSuitesRuleSuiteResult.Pass => "pass",
-                ReposGetOrgRuleSuitesRuleSuiteResult.Fail => "fail",
-                ReposGetOrgRuleSuitesRuleSuiteResult.Bypass => "bypass",
                 ReposGetOrgRuleSuitesRuleSuiteResult.All => "all",
+                ReposGetOrgRuleSuitesRuleSuiteResult.Bypass => "bypass",
+                ReposGetOrgRuleSuitesRuleSuiteResult.Fail => "fail",
+                ReposGetOrgRuleSuitesRuleSuiteResult.Pass => "pass",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "pass" => ReposGetOrgRuleSuitesRuleSuiteResult.Pass,
-                "fail" => ReposGetOrgRuleSuitesRuleSuiteResult.Fail,
-                "bypass" => ReposGetOrgRuleSuitesRuleSuiteResult.Bypass,
                 "all" => ReposGetOrgRuleSuitesRuleSuiteResult.All,
+                "bypass" => ReposGetOrgRuleSuitesRuleSuiteResult.Bypass,
+                "fail" => ReposGetOrgRuleSuitesRuleSuiteResult.Fail,
+                "pass" => ReposGetOrgRuleSuitesRuleSuiteResult.Pass,
                 _ => null,
             };
         }

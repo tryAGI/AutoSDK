@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="premade")]
-        Premade,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="cloned")]
         Cloned,
         /// <summary>
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="generated")]
         Generated,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="premade")]
+        Premade,
         /// <summary>
         /// 
         /// </summary>
@@ -44,9 +44,9 @@ namespace G
         {
             return value switch
             {
-                SpeechHistoryItemResponseModelVoiceCategory2.Premade => "premade",
                 SpeechHistoryItemResponseModelVoiceCategory2.Cloned => "cloned",
                 SpeechHistoryItemResponseModelVoiceCategory2.Generated => "generated",
+                SpeechHistoryItemResponseModelVoiceCategory2.Premade => "premade",
                 SpeechHistoryItemResponseModelVoiceCategory2.Professional => "professional",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -58,9 +58,9 @@ namespace G
         {
             return value switch
             {
-                "premade" => SpeechHistoryItemResponseModelVoiceCategory2.Premade,
                 "cloned" => SpeechHistoryItemResponseModelVoiceCategory2.Cloned,
                 "generated" => SpeechHistoryItemResponseModelVoiceCategory2.Generated,
+                "premade" => SpeechHistoryItemResponseModelVoiceCategory2.Premade,
                 "professional" => SpeechHistoryItemResponseModelVoiceCategory2.Professional,
                 _ => null,
             };

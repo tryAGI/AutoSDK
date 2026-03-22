@@ -18,18 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="error")]
-        Error,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="none")]
-        None,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="detecting")]
-        Detecting,
+        [global::System.Runtime.Serialization.EnumMember(Value="auth_failed")]
+        AuthFailed,
         /// <summary>
         /// 
         /// </summary>
@@ -38,43 +28,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="auth_failed")]
-        AuthFailed,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="importing")]
-        Importing,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="mapping")]
-        Mapping,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="waiting_to_push")]
-        WaitingToPush,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pushing")]
-        Pushing,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="complete")]
         Complete,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="setup")]
-        Setup,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="unknown")]
-        Unknown,
+        [global::System.Runtime.Serialization.EnumMember(Value="detecting")]
+        Detecting,
         /// <summary>
         /// 
         /// </summary>
@@ -90,6 +50,46 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="detection_needs_auth")]
         DetectionNeedsAuth,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="error")]
+        Error,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="importing")]
+        Importing,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="mapping")]
+        Mapping,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="none")]
+        None,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="pushing")]
+        Pushing,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="setup")]
+        Setup,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="unknown")]
+        Unknown,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="waiting_to_push")]
+        WaitingToPush,
     }
 
     /// <summary>
@@ -105,21 +105,21 @@ namespace G
             return value switch
             {
                 ImportStatus.Auth => "auth",
-                ImportStatus.Error => "error",
-                ImportStatus.None => "none",
-                ImportStatus.Detecting => "detecting",
-                ImportStatus.Choose => "choose",
                 ImportStatus.AuthFailed => "auth_failed",
-                ImportStatus.Importing => "importing",
-                ImportStatus.Mapping => "mapping",
-                ImportStatus.WaitingToPush => "waiting_to_push",
-                ImportStatus.Pushing => "pushing",
+                ImportStatus.Choose => "choose",
                 ImportStatus.Complete => "complete",
-                ImportStatus.Setup => "setup",
-                ImportStatus.Unknown => "unknown",
+                ImportStatus.Detecting => "detecting",
                 ImportStatus.DetectionFoundMultiple => "detection_found_multiple",
                 ImportStatus.DetectionFoundNothing => "detection_found_nothing",
                 ImportStatus.DetectionNeedsAuth => "detection_needs_auth",
+                ImportStatus.Error => "error",
+                ImportStatus.Importing => "importing",
+                ImportStatus.Mapping => "mapping",
+                ImportStatus.None => "none",
+                ImportStatus.Pushing => "pushing",
+                ImportStatus.Setup => "setup",
+                ImportStatus.Unknown => "unknown",
+                ImportStatus.WaitingToPush => "waiting_to_push",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -131,21 +131,21 @@ namespace G
             return value switch
             {
                 "auth" => ImportStatus.Auth,
-                "error" => ImportStatus.Error,
-                "none" => ImportStatus.None,
-                "detecting" => ImportStatus.Detecting,
-                "choose" => ImportStatus.Choose,
                 "auth_failed" => ImportStatus.AuthFailed,
-                "importing" => ImportStatus.Importing,
-                "mapping" => ImportStatus.Mapping,
-                "waiting_to_push" => ImportStatus.WaitingToPush,
-                "pushing" => ImportStatus.Pushing,
+                "choose" => ImportStatus.Choose,
                 "complete" => ImportStatus.Complete,
-                "setup" => ImportStatus.Setup,
-                "unknown" => ImportStatus.Unknown,
+                "detecting" => ImportStatus.Detecting,
                 "detection_found_multiple" => ImportStatus.DetectionFoundMultiple,
                 "detection_found_nothing" => ImportStatus.DetectionFoundNothing,
                 "detection_needs_auth" => ImportStatus.DetectionNeedsAuth,
+                "error" => ImportStatus.Error,
+                "importing" => ImportStatus.Importing,
+                "mapping" => ImportStatus.Mapping,
+                "none" => ImportStatus.None,
+                "pushing" => ImportStatus.Pushing,
+                "setup" => ImportStatus.Setup,
+                "unknown" => ImportStatus.Unknown,
+                "waiting_to_push" => ImportStatus.WaitingToPush,
                 _ => null,
             };
         }

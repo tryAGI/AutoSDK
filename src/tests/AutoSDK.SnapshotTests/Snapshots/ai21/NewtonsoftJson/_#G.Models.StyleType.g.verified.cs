@@ -13,13 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="long")]
-        Long,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="short")]
-        Short,
+        [global::System.Runtime.Serialization.EnumMember(Value="casual")]
+        Casual,
         /// <summary>
         /// 
         /// </summary>
@@ -28,13 +23,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="casual")]
-        Casual,
+        [global::System.Runtime.Serialization.EnumMember(Value="general")]
+        General,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="general")]
-        General,
+        [global::System.Runtime.Serialization.EnumMember(Value="long")]
+        Long,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="short")]
+        Short,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
+                StyleType.Casual => "casual",
+                StyleType.Formal => "formal",
+                StyleType.General => "general",
                 StyleType.Long => "long",
                 StyleType.Short => "short",
-                StyleType.Formal => "formal",
-                StyleType.Casual => "casual",
-                StyleType.General => "general",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
+                "casual" => StyleType.Casual,
+                "formal" => StyleType.Formal,
+                "general" => StyleType.General,
                 "long" => StyleType.Long,
                 "short" => StyleType.Short,
-                "formal" => StyleType.Formal,
-                "casual" => StyleType.Casual,
-                "general" => StyleType.General,
                 _ => null,
             };
         }

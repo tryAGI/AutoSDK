@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Failed,
+        /// <summary>
+        /// 
+        /// </summary>
         InProgress,
         /// <summary>
         /// 
         /// </summary>
         PartiallyCompleted,
-        /// <summary>
-        /// 
-        /// </summary>
-        Failed,
         /// <summary>
         /// 
         /// </summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                ConnectorsWorkflowStatus.Failed => "FAILED",
                 ConnectorsWorkflowStatus.InProgress => "IN_PROGRESS",
                 ConnectorsWorkflowStatus.PartiallyCompleted => "PARTIALLY_COMPLETED",
-                ConnectorsWorkflowStatus.Failed => "FAILED",
                 ConnectorsWorkflowStatus.Succeeded => "SUCCEEDED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
+                "FAILED" => ConnectorsWorkflowStatus.Failed,
                 "IN_PROGRESS" => ConnectorsWorkflowStatus.InProgress,
                 "PARTIALLY_COMPLETED" => ConnectorsWorkflowStatus.PartiallyCompleted,
-                "FAILED" => ConnectorsWorkflowStatus.Failed,
                 "SUCCEEDED" => ConnectorsWorkflowStatus.Succeeded,
                 _ => null,
             };

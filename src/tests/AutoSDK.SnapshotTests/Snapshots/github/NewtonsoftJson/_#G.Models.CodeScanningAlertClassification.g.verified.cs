@@ -13,23 +13,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="source")]
-        Source,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="generated")]
         Generated,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="test")]
-        Test,
+        [global::System.Runtime.Serialization.EnumMember(Value="library")]
+        Library,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="library")]
-        Library,
+        [global::System.Runtime.Serialization.EnumMember(Value="source")]
+        Source,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="test")]
+        Test,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                CodeScanningAlertClassification.Source => "source",
                 CodeScanningAlertClassification.Generated => "generated",
-                CodeScanningAlertClassification.Test => "test",
                 CodeScanningAlertClassification.Library => "library",
+                CodeScanningAlertClassification.Source => "source",
+                CodeScanningAlertClassification.Test => "test",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "source" => CodeScanningAlertClassification.Source,
                 "generated" => CodeScanningAlertClassification.Generated,
-                "test" => CodeScanningAlertClassification.Test,
                 "library" => CodeScanningAlertClassification.Library,
+                "source" => CodeScanningAlertClassification.Source,
+                "test" => CodeScanningAlertClassification.Test,
                 _ => null,
             };
         }

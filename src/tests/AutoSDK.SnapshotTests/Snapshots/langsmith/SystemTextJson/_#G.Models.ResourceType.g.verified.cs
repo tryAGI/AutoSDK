@@ -12,15 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Prompt,
+        Dashboard,
         /// <summary>
         /// 
         /// </summary>
-        Project,
-        /// <summary>
-        /// 
-        /// </summary>
-        Queue,
+        Dataset,
         /// <summary>
         /// 
         /// </summary>
@@ -32,11 +28,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Dataset,
+        Project,
         /// <summary>
         /// 
         /// </summary>
-        Dashboard,
+        Prompt,
+        /// <summary>
+        /// 
+        /// </summary>
+        Queue,
     }
 
     /// <summary>
@@ -51,13 +51,13 @@ namespace G
         {
             return value switch
             {
-                ResourceType.Prompt => "prompt",
-                ResourceType.Project => "project",
-                ResourceType.Queue => "queue",
+                ResourceType.Dashboard => "dashboard",
+                ResourceType.Dataset => "dataset",
                 ResourceType.Deployment => "deployment",
                 ResourceType.Experiment => "experiment",
-                ResourceType.Dataset => "dataset",
-                ResourceType.Dashboard => "dashboard",
+                ResourceType.Project => "project",
+                ResourceType.Prompt => "prompt",
+                ResourceType.Queue => "queue",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -68,13 +68,13 @@ namespace G
         {
             return value switch
             {
-                "prompt" => ResourceType.Prompt,
-                "project" => ResourceType.Project,
-                "queue" => ResourceType.Queue,
+                "dashboard" => ResourceType.Dashboard,
+                "dataset" => ResourceType.Dataset,
                 "deployment" => ResourceType.Deployment,
                 "experiment" => ResourceType.Experiment,
-                "dataset" => ResourceType.Dataset,
-                "dashboard" => ResourceType.Dashboard,
+                "project" => ResourceType.Project,
+                "prompt" => ResourceType.Prompt,
+                "queue" => ResourceType.Queue,
                 _ => null,
             };
         }

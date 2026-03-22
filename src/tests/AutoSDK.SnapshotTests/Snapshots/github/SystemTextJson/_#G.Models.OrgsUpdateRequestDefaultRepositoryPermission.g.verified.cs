@@ -13,19 +13,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Read,
-        /// <summary>
-        /// 
-        /// </summary>
-        Write,
-        /// <summary>
-        /// 
-        /// </summary>
         Admin,
         /// <summary>
         /// 
         /// </summary>
         None,
+        /// <summary>
+        /// 
+        /// </summary>
+        Read,
+        /// <summary>
+        /// 
+        /// </summary>
+        Write,
     }
 
     /// <summary>
@@ -40,10 +40,10 @@ namespace G
         {
             return value switch
             {
-                OrgsUpdateRequestDefaultRepositoryPermission.Read => "read",
-                OrgsUpdateRequestDefaultRepositoryPermission.Write => "write",
                 OrgsUpdateRequestDefaultRepositoryPermission.Admin => "admin",
                 OrgsUpdateRequestDefaultRepositoryPermission.None => "none",
+                OrgsUpdateRequestDefaultRepositoryPermission.Read => "read",
+                OrgsUpdateRequestDefaultRepositoryPermission.Write => "write",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,10 +54,10 @@ namespace G
         {
             return value switch
             {
-                "read" => OrgsUpdateRequestDefaultRepositoryPermission.Read,
-                "write" => OrgsUpdateRequestDefaultRepositoryPermission.Write,
                 "admin" => OrgsUpdateRequestDefaultRepositoryPermission.Admin,
                 "none" => OrgsUpdateRequestDefaultRepositoryPermission.None,
+                "read" => OrgsUpdateRequestDefaultRepositoryPermission.Read,
+                "write" => OrgsUpdateRequestDefaultRepositoryPermission.Write,
                 _ => null,
             };
         }

@@ -12,23 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Rubygems,
-        /// <summary>
-        /// 
-        /// </summary>
-        Npm,
-        /// <summary>
-        /// 
-        /// </summary>
-        Pip,
-        /// <summary>
-        /// 
-        /// </summary>
-        Maven,
-        /// <summary>
-        /// 
-        /// </summary>
-        Nuget,
+        Actions,
         /// <summary>
         /// 
         /// </summary>
@@ -36,19 +20,31 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Go,
-        /// <summary>
-        /// 
-        /// </summary>
-        Rust,
-        /// <summary>
-        /// 
-        /// </summary>
         Erlang,
         /// <summary>
         /// 
         /// </summary>
-        Actions,
+        Go,
+        /// <summary>
+        /// 
+        /// </summary>
+        Maven,
+        /// <summary>
+        /// 
+        /// </summary>
+        Npm,
+        /// <summary>
+        /// 
+        /// </summary>
+        Nuget,
+        /// <summary>
+        /// 
+        /// </summary>
+        Other,
+        /// <summary>
+        /// 
+        /// </summary>
+        Pip,
         /// <summary>
         /// 
         /// </summary>
@@ -56,7 +52,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Other,
+        Rubygems,
+        /// <summary>
+        /// 
+        /// </summary>
+        Rust,
         /// <summary>
         /// 
         /// </summary>
@@ -75,18 +75,18 @@ namespace G
         {
             return value switch
             {
-                SecurityAdvisoryEcosystems.Rubygems => "rubygems",
-                SecurityAdvisoryEcosystems.Npm => "npm",
-                SecurityAdvisoryEcosystems.Pip => "pip",
-                SecurityAdvisoryEcosystems.Maven => "maven",
-                SecurityAdvisoryEcosystems.Nuget => "nuget",
-                SecurityAdvisoryEcosystems.Composer => "composer",
-                SecurityAdvisoryEcosystems.Go => "go",
-                SecurityAdvisoryEcosystems.Rust => "rust",
-                SecurityAdvisoryEcosystems.Erlang => "erlang",
                 SecurityAdvisoryEcosystems.Actions => "actions",
-                SecurityAdvisoryEcosystems.Pub => "pub",
+                SecurityAdvisoryEcosystems.Composer => "composer",
+                SecurityAdvisoryEcosystems.Erlang => "erlang",
+                SecurityAdvisoryEcosystems.Go => "go",
+                SecurityAdvisoryEcosystems.Maven => "maven",
+                SecurityAdvisoryEcosystems.Npm => "npm",
+                SecurityAdvisoryEcosystems.Nuget => "nuget",
                 SecurityAdvisoryEcosystems.Other => "other",
+                SecurityAdvisoryEcosystems.Pip => "pip",
+                SecurityAdvisoryEcosystems.Pub => "pub",
+                SecurityAdvisoryEcosystems.Rubygems => "rubygems",
+                SecurityAdvisoryEcosystems.Rust => "rust",
                 SecurityAdvisoryEcosystems.Swift => "swift",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -98,18 +98,18 @@ namespace G
         {
             return value switch
             {
-                "rubygems" => SecurityAdvisoryEcosystems.Rubygems,
-                "npm" => SecurityAdvisoryEcosystems.Npm,
-                "pip" => SecurityAdvisoryEcosystems.Pip,
-                "maven" => SecurityAdvisoryEcosystems.Maven,
-                "nuget" => SecurityAdvisoryEcosystems.Nuget,
-                "composer" => SecurityAdvisoryEcosystems.Composer,
-                "go" => SecurityAdvisoryEcosystems.Go,
-                "rust" => SecurityAdvisoryEcosystems.Rust,
-                "erlang" => SecurityAdvisoryEcosystems.Erlang,
                 "actions" => SecurityAdvisoryEcosystems.Actions,
-                "pub" => SecurityAdvisoryEcosystems.Pub,
+                "composer" => SecurityAdvisoryEcosystems.Composer,
+                "erlang" => SecurityAdvisoryEcosystems.Erlang,
+                "go" => SecurityAdvisoryEcosystems.Go,
+                "maven" => SecurityAdvisoryEcosystems.Maven,
+                "npm" => SecurityAdvisoryEcosystems.Npm,
+                "nuget" => SecurityAdvisoryEcosystems.Nuget,
                 "other" => SecurityAdvisoryEcosystems.Other,
+                "pip" => SecurityAdvisoryEcosystems.Pip,
+                "pub" => SecurityAdvisoryEcosystems.Pub,
+                "rubygems" => SecurityAdvisoryEcosystems.Rubygems,
+                "rust" => SecurityAdvisoryEcosystems.Rust,
                 "swift" => SecurityAdvisoryEcosystems.Swift,
                 _ => null,
             };

@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="9:16")]
-        x9_16,
+        [global::System.Runtime.Serialization.EnumMember(Value="1:1")]
+        x1_1,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="1:1")]
-        x1_1,
+        [global::System.Runtime.Serialization.EnumMember(Value="9:16")]
+        x9_16,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 ProjectResponseModelAspectRatio2.x16_9 => "16:9",
-                ProjectResponseModelAspectRatio2.x9_16 => "9:16",
-                ProjectResponseModelAspectRatio2.x4_5 => "4:5",
                 ProjectResponseModelAspectRatio2.x1_1 => "1:1",
+                ProjectResponseModelAspectRatio2.x4_5 => "4:5",
+                ProjectResponseModelAspectRatio2.x9_16 => "9:16",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "16:9" => ProjectResponseModelAspectRatio2.x16_9,
-                "9:16" => ProjectResponseModelAspectRatio2.x9_16,
-                "4:5" => ProjectResponseModelAspectRatio2.x4_5,
                 "1:1" => ProjectResponseModelAspectRatio2.x1_1,
+                "4:5" => ProjectResponseModelAspectRatio2.x4_5,
+                "9:16" => ProjectResponseModelAspectRatio2.x9_16,
                 _ => null,
             };
         }

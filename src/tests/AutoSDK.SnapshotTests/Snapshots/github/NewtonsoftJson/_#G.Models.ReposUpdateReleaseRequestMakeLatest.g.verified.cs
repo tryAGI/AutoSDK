@@ -14,11 +14,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="true")]
-        True,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="false")]
         False,
         /// <summary>
@@ -26,6 +21,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="legacy")]
         Legacy,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="true")]
+        True,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
         {
             return value switch
             {
-                ReposUpdateReleaseRequestMakeLatest.True => "true",
                 ReposUpdateReleaseRequestMakeLatest.False => "false",
                 ReposUpdateReleaseRequestMakeLatest.Legacy => "legacy",
+                ReposUpdateReleaseRequestMakeLatest.True => "true",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
-                "true" => ReposUpdateReleaseRequestMakeLatest.True,
                 "false" => ReposUpdateReleaseRequestMakeLatest.False,
                 "legacy" => ReposUpdateReleaseRequestMakeLatest.Legacy,
+                "true" => ReposUpdateReleaseRequestMakeLatest.True,
                 _ => null,
             };
         }

@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="default")]
-        Default,
+        [global::System.Runtime.Serialization.EnumMember(Value="converting")]
+        Converting,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="converting")]
-        Converting,
+        [global::System.Runtime.Serialization.EnumMember(Value="default")]
+        Default,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ChapterResponseModelState.Default => "default",
                 ChapterResponseModelState.Converting => "converting",
+                ChapterResponseModelState.Default => "default",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "default" => ChapterResponseModelState.Default,
                 "converting" => ChapterResponseModelState.Converting,
+                "default" => ChapterResponseModelState.Default,
                 _ => null,
             };
         }

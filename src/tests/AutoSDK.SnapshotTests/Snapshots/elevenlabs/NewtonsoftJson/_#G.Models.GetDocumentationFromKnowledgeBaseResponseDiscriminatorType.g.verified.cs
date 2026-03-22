@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="url")]
-        Url,
+        [global::System.Runtime.Serialization.EnumMember(Value="file")]
+        File,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="file")]
-        File,
+        [global::System.Runtime.Serialization.EnumMember(Value="folder")]
+        Folder,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="folder")]
-        Folder,
+        [global::System.Runtime.Serialization.EnumMember(Value="url")]
+        Url,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                GetDocumentationFromKnowledgeBaseResponseDiscriminatorType.Url => "url",
                 GetDocumentationFromKnowledgeBaseResponseDiscriminatorType.File => "file",
-                GetDocumentationFromKnowledgeBaseResponseDiscriminatorType.Text => "text",
                 GetDocumentationFromKnowledgeBaseResponseDiscriminatorType.Folder => "folder",
+                GetDocumentationFromKnowledgeBaseResponseDiscriminatorType.Text => "text",
+                GetDocumentationFromKnowledgeBaseResponseDiscriminatorType.Url => "url",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "url" => GetDocumentationFromKnowledgeBaseResponseDiscriminatorType.Url,
                 "file" => GetDocumentationFromKnowledgeBaseResponseDiscriminatorType.File,
-                "text" => GetDocumentationFromKnowledgeBaseResponseDiscriminatorType.Text,
                 "folder" => GetDocumentationFromKnowledgeBaseResponseDiscriminatorType.Folder,
+                "text" => GetDocumentationFromKnowledgeBaseResponseDiscriminatorType.Text,
+                "url" => GetDocumentationFromKnowledgeBaseResponseDiscriminatorType.Url,
                 _ => null,
             };
         }

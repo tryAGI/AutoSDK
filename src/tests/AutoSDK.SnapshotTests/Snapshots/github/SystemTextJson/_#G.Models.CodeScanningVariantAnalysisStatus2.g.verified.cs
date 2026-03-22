@@ -12,11 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        InProgress,
-        /// <summary>
-        /// 
-        /// </summary>
-        Succeeded,
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Cancelled,
+        InProgress,
+        /// <summary>
+        /// 
+        /// </summary>
+        Succeeded,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
+                CodeScanningVariantAnalysisStatus2.Cancelled => "cancelled",
+                CodeScanningVariantAnalysisStatus2.Failed => "failed",
                 CodeScanningVariantAnalysisStatus2.InProgress => "in_progress",
                 CodeScanningVariantAnalysisStatus2.Succeeded => "succeeded",
-                CodeScanningVariantAnalysisStatus2.Failed => "failed",
-                CodeScanningVariantAnalysisStatus2.Cancelled => "cancelled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
+                "cancelled" => CodeScanningVariantAnalysisStatus2.Cancelled,
+                "failed" => CodeScanningVariantAnalysisStatus2.Failed,
                 "in_progress" => CodeScanningVariantAnalysisStatus2.InProgress,
                 "succeeded" => CodeScanningVariantAnalysisStatus2.Succeeded,
-                "failed" => CodeScanningVariantAnalysisStatus2.Failed,
-                "cancelled" => CodeScanningVariantAnalysisStatus2.Cancelled,
                 _ => null,
             };
         }

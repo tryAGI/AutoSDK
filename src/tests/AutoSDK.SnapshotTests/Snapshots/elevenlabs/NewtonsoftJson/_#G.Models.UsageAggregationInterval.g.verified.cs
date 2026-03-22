@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="hour")]
-        Hour,
+        [global::System.Runtime.Serialization.EnumMember(Value="cumulative")]
+        Cumulative,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="week")]
-        Week,
+        [global::System.Runtime.Serialization.EnumMember(Value="hour")]
+        Hour,
         /// <summary>
         /// 
         /// </summary>
@@ -33,8 +33,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cumulative")]
-        Cumulative,
+        [global::System.Runtime.Serialization.EnumMember(Value="week")]
+        Week,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                UsageAggregationInterval.Hour => "hour",
-                UsageAggregationInterval.Day => "day",
-                UsageAggregationInterval.Week => "week",
-                UsageAggregationInterval.Month => "month",
                 UsageAggregationInterval.Cumulative => "cumulative",
+                UsageAggregationInterval.Day => "day",
+                UsageAggregationInterval.Hour => "hour",
+                UsageAggregationInterval.Month => "month",
+                UsageAggregationInterval.Week => "week",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "hour" => UsageAggregationInterval.Hour,
-                "day" => UsageAggregationInterval.Day,
-                "week" => UsageAggregationInterval.Week,
-                "month" => UsageAggregationInterval.Month,
                 "cumulative" => UsageAggregationInterval.Cumulative,
+                "day" => UsageAggregationInterval.Day,
+                "hour" => UsageAggregationInterval.Hour,
+                "month" => UsageAggregationInterval.Month,
+                "week" => UsageAggregationInterval.Week,
                 _ => null,
             };
         }

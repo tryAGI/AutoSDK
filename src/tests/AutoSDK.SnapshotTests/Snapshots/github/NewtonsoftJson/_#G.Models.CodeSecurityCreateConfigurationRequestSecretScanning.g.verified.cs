@@ -14,13 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="enabled")]
-        Enabled,
+        [global::System.Runtime.Serialization.EnumMember(Value="disabled")]
+        Disabled,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="disabled")]
-        Disabled,
+        [global::System.Runtime.Serialization.EnumMember(Value="enabled")]
+        Enabled,
         /// <summary>
         /// 
         /// </summary>
@@ -40,8 +40,8 @@ namespace G
         {
             return value switch
             {
-                CodeSecurityCreateConfigurationRequestSecretScanning.Enabled => "enabled",
                 CodeSecurityCreateConfigurationRequestSecretScanning.Disabled => "disabled",
+                CodeSecurityCreateConfigurationRequestSecretScanning.Enabled => "enabled",
                 CodeSecurityCreateConfigurationRequestSecretScanning.NotSet => "not_set",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -53,8 +53,8 @@ namespace G
         {
             return value switch
             {
-                "enabled" => CodeSecurityCreateConfigurationRequestSecretScanning.Enabled,
                 "disabled" => CodeSecurityCreateConfigurationRequestSecretScanning.Disabled,
+                "enabled" => CodeSecurityCreateConfigurationRequestSecretScanning.Enabled,
                 "not_set" => CodeSecurityCreateConfigurationRequestSecretScanning.NotSet,
                 _ => null,
             };

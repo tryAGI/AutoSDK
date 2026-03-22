@@ -14,8 +14,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="ANIME")]
+        Anime,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="AUTO")]
         Auto,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="DESIGN")]
+        Design,
         /// <summary>
         /// 
         /// </summary>
@@ -29,18 +39,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="DESIGN")]
-        Design,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="RENDER_3D")]
         Render3d,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="ANIME")]
-        Anime,
     }
 
     /// <summary>
@@ -55,12 +55,12 @@ namespace G
         {
             return value switch
             {
+                StyleType.Anime => "ANIME",
                 StyleType.Auto => "AUTO",
+                StyleType.Design => "DESIGN",
                 StyleType.General => "GENERAL",
                 StyleType.Realistic => "REALISTIC",
-                StyleType.Design => "DESIGN",
                 StyleType.Render3d => "RENDER_3D",
-                StyleType.Anime => "ANIME",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -71,12 +71,12 @@ namespace G
         {
             return value switch
             {
+                "ANIME" => StyleType.Anime,
                 "AUTO" => StyleType.Auto,
+                "DESIGN" => StyleType.Design,
                 "GENERAL" => StyleType.General,
                 "REALISTIC" => StyleType.Realistic,
-                "DESIGN" => StyleType.Design,
                 "RENDER_3D" => StyleType.Render3d,
-                "ANIME" => StyleType.Anime,
                 _ => null,
             };
         }

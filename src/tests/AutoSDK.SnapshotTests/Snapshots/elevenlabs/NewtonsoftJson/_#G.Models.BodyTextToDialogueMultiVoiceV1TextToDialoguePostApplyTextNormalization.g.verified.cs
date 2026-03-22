@@ -19,13 +19,13 @@ namespace G
         /// <summary>
         /// 'auto', 'on', and 'off'. When set to 'auto', the system will automatically decide whether to apply text normalization (e.g., spelling out numbers). With 'on', text normalization will always be applied, while with 'off', it will be skipped.
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="on")]
-        On,
+        [global::System.Runtime.Serialization.EnumMember(Value="off")]
+        Off,
         /// <summary>
         /// 'auto', 'on', and 'off'. When set to 'auto', the system will automatically decide whether to apply text normalization (e.g., spelling out numbers). With 'on', text normalization will always be applied, while with 'off', it will be skipped.
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="off")]
-        Off,
+        [global::System.Runtime.Serialization.EnumMember(Value="on")]
+        On,
     }
 
     /// <summary>
@@ -41,8 +41,8 @@ namespace G
             return value switch
             {
                 BodyTextToDialogueMultiVoiceV1TextToDialoguePostApplyTextNormalization.Auto => "auto",
-                BodyTextToDialogueMultiVoiceV1TextToDialoguePostApplyTextNormalization.On => "on",
                 BodyTextToDialogueMultiVoiceV1TextToDialoguePostApplyTextNormalization.Off => "off",
+                BodyTextToDialogueMultiVoiceV1TextToDialoguePostApplyTextNormalization.On => "on",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,8 +54,8 @@ namespace G
             return value switch
             {
                 "auto" => BodyTextToDialogueMultiVoiceV1TextToDialoguePostApplyTextNormalization.Auto,
-                "on" => BodyTextToDialogueMultiVoiceV1TextToDialoguePostApplyTextNormalization.On,
                 "off" => BodyTextToDialogueMultiVoiceV1TextToDialoguePostApplyTextNormalization.Off,
+                "on" => BodyTextToDialogueMultiVoiceV1TextToDialoguePostApplyTextNormalization.On,
                 _ => null,
             };
         }

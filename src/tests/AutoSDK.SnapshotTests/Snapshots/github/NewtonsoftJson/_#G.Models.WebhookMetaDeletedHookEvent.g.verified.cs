@@ -53,6 +53,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="deploy_key")]
+        DeployKey,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="deployment")]
         Deployment,
         /// <summary>
@@ -60,11 +65,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="deployment_status")]
         DeploymentStatus,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="deploy_key")]
-        DeployKey,
         /// <summary>
         /// 
         /// </summary>
@@ -88,13 +88,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="issues")]
-        Issues,
+        [global::System.Runtime.Serialization.EnumMember(Value="issue_comment")]
+        IssueComment,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="issue_comment")]
-        IssueComment,
+        [global::System.Runtime.Serialization.EnumMember(Value="issues")]
+        Issues,
         /// <summary>
         /// 
         /// </summary>
@@ -123,13 +123,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="organization")]
-        Organization,
+        [global::System.Runtime.Serialization.EnumMember(Value="org_block")]
+        OrgBlock,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="org_block")]
-        OrgBlock,
+        [global::System.Runtime.Serialization.EnumMember(Value="organization")]
+        Organization,
         /// <summary>
         /// 
         /// </summary>
@@ -155,6 +155,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="project_column")]
         ProjectColumn,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="projects_v2_item")]
+        ProjectsV2Item,
         /// <summary>
         /// 
         /// </summary>
@@ -200,6 +205,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="repository")]
         Repository,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="repository_dispatch")]
+        RepositoryDispatch,
         /// <summary>
         /// 
         /// </summary>
@@ -260,16 +270,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="workflow_run")]
         WorkflowRun,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="repository_dispatch")]
-        RepositoryDispatch,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="projects_v2_item")]
-        ProjectsV2Item,
     }
 
     /// <summary>
@@ -292,27 +292,28 @@ namespace G
                 WebhookMetaDeletedHookEvent.CommitComment => "commit_comment",
                 WebhookMetaDeletedHookEvent.Create => "create",
                 WebhookMetaDeletedHookEvent.Delete => "delete",
+                WebhookMetaDeletedHookEvent.DeployKey => "deploy_key",
                 WebhookMetaDeletedHookEvent.Deployment => "deployment",
                 WebhookMetaDeletedHookEvent.DeploymentStatus => "deployment_status",
-                WebhookMetaDeletedHookEvent.DeployKey => "deploy_key",
                 WebhookMetaDeletedHookEvent.Discussion => "discussion",
                 WebhookMetaDeletedHookEvent.DiscussionComment => "discussion_comment",
                 WebhookMetaDeletedHookEvent.Fork => "fork",
                 WebhookMetaDeletedHookEvent.Gollum => "gollum",
-                WebhookMetaDeletedHookEvent.Issues => "issues",
                 WebhookMetaDeletedHookEvent.IssueComment => "issue_comment",
+                WebhookMetaDeletedHookEvent.Issues => "issues",
                 WebhookMetaDeletedHookEvent.Label => "label",
                 WebhookMetaDeletedHookEvent.Member => "member",
                 WebhookMetaDeletedHookEvent.Membership => "membership",
                 WebhookMetaDeletedHookEvent.Meta => "meta",
                 WebhookMetaDeletedHookEvent.Milestone => "milestone",
-                WebhookMetaDeletedHookEvent.Organization => "organization",
                 WebhookMetaDeletedHookEvent.OrgBlock => "org_block",
+                WebhookMetaDeletedHookEvent.Organization => "organization",
                 WebhookMetaDeletedHookEvent.Package => "package",
                 WebhookMetaDeletedHookEvent.PageBuild => "page_build",
                 WebhookMetaDeletedHookEvent.Project => "project",
                 WebhookMetaDeletedHookEvent.ProjectCard => "project_card",
                 WebhookMetaDeletedHookEvent.ProjectColumn => "project_column",
+                WebhookMetaDeletedHookEvent.ProjectsV2Item => "projects_v2_item",
                 WebhookMetaDeletedHookEvent.Public => "public",
                 WebhookMetaDeletedHookEvent.PullRequest => "pull_request",
                 WebhookMetaDeletedHookEvent.PullRequestReview => "pull_request_review",
@@ -322,6 +323,7 @@ namespace G
                 WebhookMetaDeletedHookEvent.RegistryPackage => "registry_package",
                 WebhookMetaDeletedHookEvent.Release => "release",
                 WebhookMetaDeletedHookEvent.Repository => "repository",
+                WebhookMetaDeletedHookEvent.RepositoryDispatch => "repository_dispatch",
                 WebhookMetaDeletedHookEvent.RepositoryImport => "repository_import",
                 WebhookMetaDeletedHookEvent.RepositoryVulnerabilityAlert => "repository_vulnerability_alert",
                 WebhookMetaDeletedHookEvent.SecretScanningAlert => "secret_scanning_alert",
@@ -334,8 +336,6 @@ namespace G
                 WebhookMetaDeletedHookEvent.Watch => "watch",
                 WebhookMetaDeletedHookEvent.WorkflowJob => "workflow_job",
                 WebhookMetaDeletedHookEvent.WorkflowRun => "workflow_run",
-                WebhookMetaDeletedHookEvent.RepositoryDispatch => "repository_dispatch",
-                WebhookMetaDeletedHookEvent.ProjectsV2Item => "projects_v2_item",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -354,27 +354,28 @@ namespace G
                 "commit_comment" => WebhookMetaDeletedHookEvent.CommitComment,
                 "create" => WebhookMetaDeletedHookEvent.Create,
                 "delete" => WebhookMetaDeletedHookEvent.Delete,
+                "deploy_key" => WebhookMetaDeletedHookEvent.DeployKey,
                 "deployment" => WebhookMetaDeletedHookEvent.Deployment,
                 "deployment_status" => WebhookMetaDeletedHookEvent.DeploymentStatus,
-                "deploy_key" => WebhookMetaDeletedHookEvent.DeployKey,
                 "discussion" => WebhookMetaDeletedHookEvent.Discussion,
                 "discussion_comment" => WebhookMetaDeletedHookEvent.DiscussionComment,
                 "fork" => WebhookMetaDeletedHookEvent.Fork,
                 "gollum" => WebhookMetaDeletedHookEvent.Gollum,
-                "issues" => WebhookMetaDeletedHookEvent.Issues,
                 "issue_comment" => WebhookMetaDeletedHookEvent.IssueComment,
+                "issues" => WebhookMetaDeletedHookEvent.Issues,
                 "label" => WebhookMetaDeletedHookEvent.Label,
                 "member" => WebhookMetaDeletedHookEvent.Member,
                 "membership" => WebhookMetaDeletedHookEvent.Membership,
                 "meta" => WebhookMetaDeletedHookEvent.Meta,
                 "milestone" => WebhookMetaDeletedHookEvent.Milestone,
-                "organization" => WebhookMetaDeletedHookEvent.Organization,
                 "org_block" => WebhookMetaDeletedHookEvent.OrgBlock,
+                "organization" => WebhookMetaDeletedHookEvent.Organization,
                 "package" => WebhookMetaDeletedHookEvent.Package,
                 "page_build" => WebhookMetaDeletedHookEvent.PageBuild,
                 "project" => WebhookMetaDeletedHookEvent.Project,
                 "project_card" => WebhookMetaDeletedHookEvent.ProjectCard,
                 "project_column" => WebhookMetaDeletedHookEvent.ProjectColumn,
+                "projects_v2_item" => WebhookMetaDeletedHookEvent.ProjectsV2Item,
                 "public" => WebhookMetaDeletedHookEvent.Public,
                 "pull_request" => WebhookMetaDeletedHookEvent.PullRequest,
                 "pull_request_review" => WebhookMetaDeletedHookEvent.PullRequestReview,
@@ -384,6 +385,7 @@ namespace G
                 "registry_package" => WebhookMetaDeletedHookEvent.RegistryPackage,
                 "release" => WebhookMetaDeletedHookEvent.Release,
                 "repository" => WebhookMetaDeletedHookEvent.Repository,
+                "repository_dispatch" => WebhookMetaDeletedHookEvent.RepositoryDispatch,
                 "repository_import" => WebhookMetaDeletedHookEvent.RepositoryImport,
                 "repository_vulnerability_alert" => WebhookMetaDeletedHookEvent.RepositoryVulnerabilityAlert,
                 "secret_scanning_alert" => WebhookMetaDeletedHookEvent.SecretScanningAlert,
@@ -396,8 +398,6 @@ namespace G
                 "watch" => WebhookMetaDeletedHookEvent.Watch,
                 "workflow_job" => WebhookMetaDeletedHookEvent.WorkflowJob,
                 "workflow_run" => WebhookMetaDeletedHookEvent.WorkflowRun,
-                "repository_dispatch" => WebhookMetaDeletedHookEvent.RepositoryDispatch,
-                "projects_v2_item" => WebhookMetaDeletedHookEvent.ProjectsV2Item,
                 _ => null,
             };
         }

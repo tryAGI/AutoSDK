@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookPullRequestAutoMergeEnabledPullRequestUserType.Bot => "Bot",
-                WebhookPullRequestAutoMergeEnabledPullRequestUserType.User => "User",
-                WebhookPullRequestAutoMergeEnabledPullRequestUserType.Organization => "Organization",
                 WebhookPullRequestAutoMergeEnabledPullRequestUserType.Mannequin => "Mannequin",
+                WebhookPullRequestAutoMergeEnabledPullRequestUserType.Organization => "Organization",
+                WebhookPullRequestAutoMergeEnabledPullRequestUserType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestAutoMergeEnabledPullRequestUserType.Bot,
-                "User" => WebhookPullRequestAutoMergeEnabledPullRequestUserType.User,
-                "Organization" => WebhookPullRequestAutoMergeEnabledPullRequestUserType.Organization,
                 "Mannequin" => WebhookPullRequestAutoMergeEnabledPullRequestUserType.Mannequin,
+                "Organization" => WebhookPullRequestAutoMergeEnabledPullRequestUserType.Organization,
+                "User" => WebhookPullRequestAutoMergeEnabledPullRequestUserType.User,
                 _ => null,
             };
         }

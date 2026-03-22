@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Success,
+        Failed,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Failed,
+        Success,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                BatchReferenceResponseVariant2ResultStatus.Success => "SUCCESS",
-                BatchReferenceResponseVariant2ResultStatus.Pending => "PENDING",
                 BatchReferenceResponseVariant2ResultStatus.Failed => "FAILED",
+                BatchReferenceResponseVariant2ResultStatus.Pending => "PENDING",
+                BatchReferenceResponseVariant2ResultStatus.Success => "SUCCESS",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "SUCCESS" => BatchReferenceResponseVariant2ResultStatus.Success,
-                "PENDING" => BatchReferenceResponseVariant2ResultStatus.Pending,
                 "FAILED" => BatchReferenceResponseVariant2ResultStatus.Failed,
+                "PENDING" => BatchReferenceResponseVariant2ResultStatus.Pending,
+                "SUCCESS" => BatchReferenceResponseVariant2ResultStatus.Success,
                 _ => null,
             };
         }

@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        None,
+        All,
         /// <summary>
         /// 
         /// </summary>
-        All,
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                OrganizationProgrammaticAccessGrantRequestRepositorySelection.None => "none",
                 OrganizationProgrammaticAccessGrantRequestRepositorySelection.All => "all",
+                OrganizationProgrammaticAccessGrantRequestRepositorySelection.None => "none",
                 OrganizationProgrammaticAccessGrantRequestRepositorySelection.Subset => "subset",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "none" => OrganizationProgrammaticAccessGrantRequestRepositorySelection.None,
                 "all" => OrganizationProgrammaticAccessGrantRequestRepositorySelection.All,
+                "none" => OrganizationProgrammaticAccessGrantRequestRepositorySelection.None,
                 "subset" => OrganizationProgrammaticAccessGrantRequestRepositorySelection.Subset,
                 _ => null,
             };

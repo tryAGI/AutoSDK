@@ -12,19 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        PullingManifest,
-        /// <summary>
-        /// 
-        /// </summary>
         DownloadingDigestname,
         /// <summary>
         /// 
         /// </summary>
-        VerifyingSha256Digest,
-        /// <summary>
-        /// 
-        /// </summary>
-        WritingManifest,
+        PullingManifest,
         /// <summary>
         /// 
         /// </summary>
@@ -33,6 +25,14 @@ namespace G
         /// 
         /// </summary>
         Success,
+        /// <summary>
+        /// 
+        /// </summary>
+        VerifyingSha256Digest,
+        /// <summary>
+        /// 
+        /// </summary>
+        WritingManifest,
     }
 
     /// <summary>
@@ -47,12 +47,12 @@ namespace G
         {
             return value switch
             {
-                PullModelStatusEnum.PullingManifest => "pulling manifest",
                 PullModelStatusEnum.DownloadingDigestname => "downloading digestname",
-                PullModelStatusEnum.VerifyingSha256Digest => "verifying sha256 digest",
-                PullModelStatusEnum.WritingManifest => "writing manifest",
+                PullModelStatusEnum.PullingManifest => "pulling manifest",
                 PullModelStatusEnum.RemovingAnyUnusedLayers => "removing any unused layers",
                 PullModelStatusEnum.Success => "success",
+                PullModelStatusEnum.VerifyingSha256Digest => "verifying sha256 digest",
+                PullModelStatusEnum.WritingManifest => "writing manifest",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,12 +63,12 @@ namespace G
         {
             return value switch
             {
-                "pulling manifest" => PullModelStatusEnum.PullingManifest,
                 "downloading digestname" => PullModelStatusEnum.DownloadingDigestname,
-                "verifying sha256 digest" => PullModelStatusEnum.VerifyingSha256Digest,
-                "writing manifest" => PullModelStatusEnum.WritingManifest,
+                "pulling manifest" => PullModelStatusEnum.PullingManifest,
                 "removing any unused layers" => PullModelStatusEnum.RemovingAnyUnusedLayers,
                 "success" => PullModelStatusEnum.Success,
+                "verifying sha256 digest" => PullModelStatusEnum.VerifyingSha256Digest,
+                "writing manifest" => PullModelStatusEnum.WritingManifest,
                 _ => null,
             };
         }

@@ -13,13 +13,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="trialing")]
-        Trialing,
+        [global::System.Runtime.Serialization.EnumMember(Value="active")]
+        Active,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="active")]
-        Active,
+        [global::System.Runtime.Serialization.EnumMember(Value="free")]
+        Free,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="free_disabled")]
+        FreeDisabled,
         /// <summary>
         /// 
         /// </summary>
@@ -33,13 +38,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="free")]
-        Free,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="free_disabled")]
-        FreeDisabled,
+        [global::System.Runtime.Serialization.EnumMember(Value="trialing")]
+        Trialing,
     }
 
     /// <summary>
@@ -54,12 +54,12 @@ namespace G
         {
             return value switch
             {
-                SubscriptionStatusType.Trialing => "trialing",
                 SubscriptionStatusType.Active => "active",
-                SubscriptionStatusType.Incomplete => "incomplete",
-                SubscriptionStatusType.PastDue => "past_due",
                 SubscriptionStatusType.Free => "free",
                 SubscriptionStatusType.FreeDisabled => "free_disabled",
+                SubscriptionStatusType.Incomplete => "incomplete",
+                SubscriptionStatusType.PastDue => "past_due",
+                SubscriptionStatusType.Trialing => "trialing",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,12 +70,12 @@ namespace G
         {
             return value switch
             {
-                "trialing" => SubscriptionStatusType.Trialing,
                 "active" => SubscriptionStatusType.Active,
-                "incomplete" => SubscriptionStatusType.Incomplete,
-                "past_due" => SubscriptionStatusType.PastDue,
                 "free" => SubscriptionStatusType.Free,
                 "free_disabled" => SubscriptionStatusType.FreeDisabled,
+                "incomplete" => SubscriptionStatusType.Incomplete,
+                "past_due" => SubscriptionStatusType.PastDue,
+                "trialing" => SubscriptionStatusType.Trialing,
                 _ => null,
             };
         }

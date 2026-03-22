@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        SignedUrl,
+        ShareableLink,
         /// <summary>
         /// 
         /// </summary>
-        ShareableLink,
+        SignedUrl,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ConversationTokenPurpose.SignedUrl => "signed_url",
                 ConversationTokenPurpose.ShareableLink => "shareable_link",
+                ConversationTokenPurpose.SignedUrl => "signed_url",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "signed_url" => ConversationTokenPurpose.SignedUrl,
                 "shareable_link" => ConversationTokenPurpose.ShareableLink,
+                "signed_url" => ConversationTokenPurpose.SignedUrl,
                 _ => null,
             };
         }

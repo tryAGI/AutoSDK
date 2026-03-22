@@ -12,19 +12,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        NotStarted,
-        /// <summary>
-        /// 
-        /// </summary>
-        Pending,
-        /// <summary>
-        /// 
-        /// </summary>
         Completed,
         /// <summary>
         /// 
         /// </summary>
         Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        NotStarted,
+        /// <summary>
+        /// 
+        /// </summary>
+        Pending,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                SpeakerSeparationResponseModelStatus.NotStarted => "not_started",
-                SpeakerSeparationResponseModelStatus.Pending => "pending",
                 SpeakerSeparationResponseModelStatus.Completed => "completed",
                 SpeakerSeparationResponseModelStatus.Failed => "failed",
+                SpeakerSeparationResponseModelStatus.NotStarted => "not_started",
+                SpeakerSeparationResponseModelStatus.Pending => "pending",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "not_started" => SpeakerSeparationResponseModelStatus.NotStarted,
-                "pending" => SpeakerSeparationResponseModelStatus.Pending,
                 "completed" => SpeakerSeparationResponseModelStatus.Completed,
                 "failed" => SpeakerSeparationResponseModelStatus.Failed,
+                "not_started" => SpeakerSeparationResponseModelStatus.NotStarted,
+                "pending" => SpeakerSeparationResponseModelStatus.Pending,
                 _ => null,
             };
         }

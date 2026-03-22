@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="public")]
-        Public,
+        [global::System.Runtime.Serialization.EnumMember(Value="internal")]
+        Internal,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="internal")]
-        Internal,
+        [global::System.Runtime.Serialization.EnumMember(Value="public")]
+        Public,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoVisibility.Public => "public",
-                WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoVisibility.Private => "private",
                 WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoVisibility.Internal => "internal",
+                WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoVisibility.Private => "private",
+                WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoVisibility.Public => "public",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "public" => WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoVisibility.Public,
-                "private" => WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoVisibility.Private,
                 "internal" => WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoVisibility.Internal,
+                "private" => WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoVisibility.Private,
+                "public" => WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoVisibility.Public,
                 _ => null,
             };
         }

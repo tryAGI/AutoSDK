@@ -16,15 +16,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Error,
-        /// <summary>
-        /// 
-        /// </summary>
-        None,
-        /// <summary>
-        /// 
-        /// </summary>
-        Detecting,
+        AuthFailed,
         /// <summary>
         /// 
         /// </summary>
@@ -32,35 +24,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        AuthFailed,
-        /// <summary>
-        /// 
-        /// </summary>
-        Importing,
-        /// <summary>
-        /// 
-        /// </summary>
-        Mapping,
-        /// <summary>
-        /// 
-        /// </summary>
-        WaitingToPush,
-        /// <summary>
-        /// 
-        /// </summary>
-        Pushing,
-        /// <summary>
-        /// 
-        /// </summary>
         Complete,
         /// <summary>
         /// 
         /// </summary>
-        Setup,
-        /// <summary>
-        /// 
-        /// </summary>
-        Unknown,
+        Detecting,
         /// <summary>
         /// 
         /// </summary>
@@ -73,6 +41,38 @@ namespace G
         /// 
         /// </summary>
         DetectionNeedsAuth,
+        /// <summary>
+        /// 
+        /// </summary>
+        Error,
+        /// <summary>
+        /// 
+        /// </summary>
+        Importing,
+        /// <summary>
+        /// 
+        /// </summary>
+        Mapping,
+        /// <summary>
+        /// 
+        /// </summary>
+        None,
+        /// <summary>
+        /// 
+        /// </summary>
+        Pushing,
+        /// <summary>
+        /// 
+        /// </summary>
+        Setup,
+        /// <summary>
+        /// 
+        /// </summary>
+        Unknown,
+        /// <summary>
+        /// 
+        /// </summary>
+        WaitingToPush,
     }
 
     /// <summary>
@@ -88,21 +88,21 @@ namespace G
             return value switch
             {
                 ImportStatus.Auth => "auth",
-                ImportStatus.Error => "error",
-                ImportStatus.None => "none",
-                ImportStatus.Detecting => "detecting",
-                ImportStatus.Choose => "choose",
                 ImportStatus.AuthFailed => "auth_failed",
-                ImportStatus.Importing => "importing",
-                ImportStatus.Mapping => "mapping",
-                ImportStatus.WaitingToPush => "waiting_to_push",
-                ImportStatus.Pushing => "pushing",
+                ImportStatus.Choose => "choose",
                 ImportStatus.Complete => "complete",
-                ImportStatus.Setup => "setup",
-                ImportStatus.Unknown => "unknown",
+                ImportStatus.Detecting => "detecting",
                 ImportStatus.DetectionFoundMultiple => "detection_found_multiple",
                 ImportStatus.DetectionFoundNothing => "detection_found_nothing",
                 ImportStatus.DetectionNeedsAuth => "detection_needs_auth",
+                ImportStatus.Error => "error",
+                ImportStatus.Importing => "importing",
+                ImportStatus.Mapping => "mapping",
+                ImportStatus.None => "none",
+                ImportStatus.Pushing => "pushing",
+                ImportStatus.Setup => "setup",
+                ImportStatus.Unknown => "unknown",
+                ImportStatus.WaitingToPush => "waiting_to_push",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -114,21 +114,21 @@ namespace G
             return value switch
             {
                 "auth" => ImportStatus.Auth,
-                "error" => ImportStatus.Error,
-                "none" => ImportStatus.None,
-                "detecting" => ImportStatus.Detecting,
-                "choose" => ImportStatus.Choose,
                 "auth_failed" => ImportStatus.AuthFailed,
-                "importing" => ImportStatus.Importing,
-                "mapping" => ImportStatus.Mapping,
-                "waiting_to_push" => ImportStatus.WaitingToPush,
-                "pushing" => ImportStatus.Pushing,
+                "choose" => ImportStatus.Choose,
                 "complete" => ImportStatus.Complete,
-                "setup" => ImportStatus.Setup,
-                "unknown" => ImportStatus.Unknown,
+                "detecting" => ImportStatus.Detecting,
                 "detection_found_multiple" => ImportStatus.DetectionFoundMultiple,
                 "detection_found_nothing" => ImportStatus.DetectionFoundNothing,
                 "detection_needs_auth" => ImportStatus.DetectionNeedsAuth,
+                "error" => ImportStatus.Error,
+                "importing" => ImportStatus.Importing,
+                "mapping" => ImportStatus.Mapping,
+                "none" => ImportStatus.None,
+                "pushing" => ImportStatus.Pushing,
+                "setup" => ImportStatus.Setup,
+                "unknown" => ImportStatus.Unknown,
+                "waiting_to_push" => ImportStatus.WaitingToPush,
                 _ => null,
             };
         }

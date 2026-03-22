@@ -12,7 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Success,
+        ActionRequired,
+        /// <summary>
+        /// 
+        /// </summary>
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -24,15 +28,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Cancelled,
-        /// <summary>
-        /// 
-        /// </summary>
-        TimedOut,
-        /// <summary>
-        /// 
-        /// </summary>
-        ActionRequired,
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
         /// <summary>
         /// 
         /// </summary>
@@ -40,11 +36,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        StartupFailure,
         /// <summary>
         /// 
         /// </summary>
-        StartupFailure,
+        Success,
+        /// <summary>
+        /// 
+        /// </summary>
+        TimedOut,
     }
 
     /// <summary>
@@ -59,15 +59,15 @@ namespace G
         {
             return value switch
             {
-                WebhookDeploymentStatusCreatedWorkflowRunConclusion.Success => "success",
+                WebhookDeploymentStatusCreatedWorkflowRunConclusion.ActionRequired => "action_required",
+                WebhookDeploymentStatusCreatedWorkflowRunConclusion.Cancelled => "cancelled",
                 WebhookDeploymentStatusCreatedWorkflowRunConclusion.Failure => "failure",
                 WebhookDeploymentStatusCreatedWorkflowRunConclusion.Neutral => "neutral",
-                WebhookDeploymentStatusCreatedWorkflowRunConclusion.Cancelled => "cancelled",
-                WebhookDeploymentStatusCreatedWorkflowRunConclusion.TimedOut => "timed_out",
-                WebhookDeploymentStatusCreatedWorkflowRunConclusion.ActionRequired => "action_required",
-                WebhookDeploymentStatusCreatedWorkflowRunConclusion.Stale => "stale",
                 WebhookDeploymentStatusCreatedWorkflowRunConclusion.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
+                WebhookDeploymentStatusCreatedWorkflowRunConclusion.Stale => "stale",
                 WebhookDeploymentStatusCreatedWorkflowRunConclusion.StartupFailure => "startup_failure",
+                WebhookDeploymentStatusCreatedWorkflowRunConclusion.Success => "success",
+                WebhookDeploymentStatusCreatedWorkflowRunConclusion.TimedOut => "timed_out",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -78,15 +78,15 @@ namespace G
         {
             return value switch
             {
-                "success" => WebhookDeploymentStatusCreatedWorkflowRunConclusion.Success,
+                "action_required" => WebhookDeploymentStatusCreatedWorkflowRunConclusion.ActionRequired,
+                "cancelled" => WebhookDeploymentStatusCreatedWorkflowRunConclusion.Cancelled,
                 "failure" => WebhookDeploymentStatusCreatedWorkflowRunConclusion.Failure,
                 "neutral" => WebhookDeploymentStatusCreatedWorkflowRunConclusion.Neutral,
-                "cancelled" => WebhookDeploymentStatusCreatedWorkflowRunConclusion.Cancelled,
-                "timed_out" => WebhookDeploymentStatusCreatedWorkflowRunConclusion.TimedOut,
-                "action_required" => WebhookDeploymentStatusCreatedWorkflowRunConclusion.ActionRequired,
-                "stale" => WebhookDeploymentStatusCreatedWorkflowRunConclusion.Stale,
                 "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookDeploymentStatusCreatedWorkflowRunConclusion.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+                "stale" => WebhookDeploymentStatusCreatedWorkflowRunConclusion.Stale,
                 "startup_failure" => WebhookDeploymentStatusCreatedWorkflowRunConclusion.StartupFailure,
+                "success" => WebhookDeploymentStatusCreatedWorkflowRunConclusion.Success,
+                "timed_out" => WebhookDeploymentStatusCreatedWorkflowRunConclusion.TimedOut,
                 _ => null,
             };
         }

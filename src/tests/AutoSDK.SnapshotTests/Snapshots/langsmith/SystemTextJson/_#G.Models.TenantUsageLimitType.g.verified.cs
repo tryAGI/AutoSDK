@@ -12,15 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        PayloadSize,
-        /// <summary>
-        /// 
-        /// </summary>
         EventsIngestedPerHour,
-        /// <summary>
-        /// 
-        /// </summary>
-        TotalUniqueTraces,
         /// <summary>
         /// 
         /// </summary>
@@ -28,11 +20,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        UserDefinedMonthlyTraces,
+        PayloadSize,
+        /// <summary>
+        /// 
+        /// </summary>
+        TotalUniqueTraces,
         /// <summary>
         /// 
         /// </summary>
         UserDefinedMonthlyLonglivedTraces,
+        /// <summary>
+        /// 
+        /// </summary>
+        UserDefinedMonthlyTraces,
         /// <summary>
         /// 
         /// </summary>
@@ -51,12 +51,12 @@ namespace G
         {
             return value switch
             {
-                TenantUsageLimitType.PayloadSize => "payload_size",
                 TenantUsageLimitType.EventsIngestedPerHour => "events_ingested_per_hour",
-                TenantUsageLimitType.TotalUniqueTraces => "total_unique_traces",
                 TenantUsageLimitType.EventsIngestedPerMinute => "events_ingested_per_minute",
-                TenantUsageLimitType.UserDefinedMonthlyTraces => "user_defined_monthly_traces",
+                TenantUsageLimitType.PayloadSize => "payload_size",
+                TenantUsageLimitType.TotalUniqueTraces => "total_unique_traces",
                 TenantUsageLimitType.UserDefinedMonthlyLonglivedTraces => "user_defined_monthly_longlived_traces",
+                TenantUsageLimitType.UserDefinedMonthlyTraces => "user_defined_monthly_traces",
                 TenantUsageLimitType.UserDefinedUnknown => "user_defined_unknown",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -68,12 +68,12 @@ namespace G
         {
             return value switch
             {
-                "payload_size" => TenantUsageLimitType.PayloadSize,
                 "events_ingested_per_hour" => TenantUsageLimitType.EventsIngestedPerHour,
-                "total_unique_traces" => TenantUsageLimitType.TotalUniqueTraces,
                 "events_ingested_per_minute" => TenantUsageLimitType.EventsIngestedPerMinute,
-                "user_defined_monthly_traces" => TenantUsageLimitType.UserDefinedMonthlyTraces,
+                "payload_size" => TenantUsageLimitType.PayloadSize,
+                "total_unique_traces" => TenantUsageLimitType.TotalUniqueTraces,
                 "user_defined_monthly_longlived_traces" => TenantUsageLimitType.UserDefinedMonthlyLonglivedTraces,
+                "user_defined_monthly_traces" => TenantUsageLimitType.UserDefinedMonthlyTraces,
                 "user_defined_unknown" => TenantUsageLimitType.UserDefinedUnknown,
                 _ => null,
             };

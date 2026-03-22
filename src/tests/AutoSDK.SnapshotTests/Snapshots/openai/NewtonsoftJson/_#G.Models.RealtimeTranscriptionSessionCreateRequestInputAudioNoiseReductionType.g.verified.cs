@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="near_field")]
-        NearField,
+        [global::System.Runtime.Serialization.EnumMember(Value="far_field")]
+        FarField,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="far_field")]
-        FarField,
+        [global::System.Runtime.Serialization.EnumMember(Value="near_field")]
+        NearField,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionType.NearField => "near_field",
                 RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionType.FarField => "far_field",
+                RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionType.NearField => "near_field",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "near_field" => RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionType.NearField,
                 "far_field" => RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionType.FarField,
+                "near_field" => RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReductionType.NearField,
                 _ => null,
             };
         }

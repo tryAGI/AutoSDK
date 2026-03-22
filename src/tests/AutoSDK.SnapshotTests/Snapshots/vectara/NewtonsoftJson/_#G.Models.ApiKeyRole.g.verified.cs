@@ -14,6 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="personal")]
+        Personal,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="serving")]
         Serving,
         /// <summary>
@@ -21,11 +26,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="serving_and_indexing")]
         ServingAndIndexing,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="personal")]
-        Personal,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
         {
             return value switch
             {
+                ApiKeyRole.Personal => "personal",
                 ApiKeyRole.Serving => "serving",
                 ApiKeyRole.ServingAndIndexing => "serving_and_indexing",
-                ApiKeyRole.Personal => "personal",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
+                "personal" => ApiKeyRole.Personal,
                 "serving" => ApiKeyRole.Serving,
                 "serving_and_indexing" => ApiKeyRole.ServingAndIndexing,
-                "personal" => ApiKeyRole.Personal,
                 _ => null,
             };
         }

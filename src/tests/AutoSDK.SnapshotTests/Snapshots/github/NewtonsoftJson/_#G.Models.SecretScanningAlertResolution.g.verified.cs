@@ -18,11 +18,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="wont_fix")]
-        WontFix,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="revoked")]
         Revoked,
         /// <summary>
@@ -30,6 +25,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="used_in_tests")]
         UsedInTests,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="wont_fix")]
+        WontFix,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 SecretScanningAlertResolution.FalsePositive => "false_positive",
-                SecretScanningAlertResolution.WontFix => "wont_fix",
                 SecretScanningAlertResolution.Revoked => "revoked",
                 SecretScanningAlertResolution.UsedInTests => "used_in_tests",
+                SecretScanningAlertResolution.WontFix => "wont_fix",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "false_positive" => SecretScanningAlertResolution.FalsePositive,
-                "wont_fix" => SecretScanningAlertResolution.WontFix,
                 "revoked" => SecretScanningAlertResolution.Revoked,
                 "used_in_tests" => SecretScanningAlertResolution.UsedInTests,
+                "wont_fix" => SecretScanningAlertResolution.WontFix,
                 _ => null,
             };
         }

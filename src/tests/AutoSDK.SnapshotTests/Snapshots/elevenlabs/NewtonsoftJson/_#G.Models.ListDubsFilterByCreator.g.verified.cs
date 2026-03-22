@@ -14,8 +14,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="personal")]
-        Personal,
+        [global::System.Runtime.Serialization.EnumMember(Value="all")]
+        All,
         /// <summary>
         /// 
         /// </summary>
@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="all")]
-        All,
+        [global::System.Runtime.Serialization.EnumMember(Value="personal")]
+        Personal,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
         {
             return value switch
             {
-                ListDubsFilterByCreator.Personal => "personal",
-                ListDubsFilterByCreator.Others => "others",
                 ListDubsFilterByCreator.All => "all",
+                ListDubsFilterByCreator.Others => "others",
+                ListDubsFilterByCreator.Personal => "personal",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
-                "personal" => ListDubsFilterByCreator.Personal,
-                "others" => ListDubsFilterByCreator.Others,
                 "all" => ListDubsFilterByCreator.All,
+                "others" => ListDubsFilterByCreator.Others,
+                "personal" => ListDubsFilterByCreator.Personal,
                 _ => null,
             };
         }

@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Supervised,
-        /// <summary>
-        /// 
-        /// </summary>
         Dpo,
         /// <summary>
         /// 
         /// </summary>
         Reinforcement,
+        /// <summary>
+        /// 
+        /// </summary>
+        Supervised,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                FineTuneMethodType.Supervised => "supervised",
                 FineTuneMethodType.Dpo => "dpo",
                 FineTuneMethodType.Reinforcement => "reinforcement",
+                FineTuneMethodType.Supervised => "supervised",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "supervised" => FineTuneMethodType.Supervised,
                 "dpo" => FineTuneMethodType.Dpo,
                 "reinforcement" => FineTuneMethodType.Reinforcement,
+                "supervised" => FineTuneMethodType.Supervised,
                 _ => null,
             };
         }

@@ -16,7 +16,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Mannequin,
+        User,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
             return value switch
             {
                 WebhookIssuesClosedIssueIssue1AssigneeType2.Bot => "Bot",
-                WebhookIssuesClosedIssueIssue1AssigneeType2.User => "User",
-                WebhookIssuesClosedIssueIssue1AssigneeType2.Organization => "Organization",
                 WebhookIssuesClosedIssueIssue1AssigneeType2.Mannequin => "Mannequin",
+                WebhookIssuesClosedIssueIssue1AssigneeType2.Organization => "Organization",
+                WebhookIssuesClosedIssueIssue1AssigneeType2.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookIssuesClosedIssueIssue1AssigneeType2.Bot,
-                "User" => WebhookIssuesClosedIssueIssue1AssigneeType2.User,
-                "Organization" => WebhookIssuesClosedIssueIssue1AssigneeType2.Organization,
                 "Mannequin" => WebhookIssuesClosedIssueIssue1AssigneeType2.Mannequin,
+                "Organization" => WebhookIssuesClosedIssueIssue1AssigneeType2.Organization,
+                "User" => WebhookIssuesClosedIssueIssue1AssigneeType2.User,
                 _ => null,
             };
         }

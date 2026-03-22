@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="disabled")]
-        Disabled,
+        [global::System.Runtime.Serialization.EnumMember(Value="allowed")]
+        Allowed,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="allowed")]
-        Allowed,
+        [global::System.Runtime.Serialization.EnumMember(Value="disabled")]
+        Disabled,
         /// <summary>
         /// 
         /// </summary>
@@ -39,8 +39,8 @@ namespace G
         {
             return value switch
             {
-                SIPMediaEncryptionEnum.Disabled => "disabled",
                 SIPMediaEncryptionEnum.Allowed => "allowed",
+                SIPMediaEncryptionEnum.Disabled => "disabled",
                 SIPMediaEncryptionEnum.Required => "required",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -52,8 +52,8 @@ namespace G
         {
             return value switch
             {
-                "disabled" => SIPMediaEncryptionEnum.Disabled,
                 "allowed" => SIPMediaEncryptionEnum.Allowed,
+                "disabled" => SIPMediaEncryptionEnum.Disabled,
                 "required" => SIPMediaEncryptionEnum.Required,
                 _ => null,
             };

@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="dubbing")]
-        Dubbing,
+        [global::System.Runtime.Serialization.EnumMember(Value="dubbed")]
+        Dubbed,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="dubbed")]
-        Dubbed,
+        [global::System.Runtime.Serialization.EnumMember(Value="dubbing")]
+        Dubbing,
         /// <summary>
         /// 
         /// </summary>
@@ -39,8 +39,8 @@ namespace G
         {
             return value switch
             {
-                ListDubsDubbingStatus.Dubbing => "dubbing",
                 ListDubsDubbingStatus.Dubbed => "dubbed",
+                ListDubsDubbingStatus.Dubbing => "dubbing",
                 ListDubsDubbingStatus.Failed => "failed",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -52,8 +52,8 @@ namespace G
         {
             return value switch
             {
-                "dubbing" => ListDubsDubbingStatus.Dubbing,
                 "dubbed" => ListDubsDubbingStatus.Dubbed,
+                "dubbing" => ListDubsDubbingStatus.Dubbing,
                 "failed" => ListDubsDubbingStatus.Failed,
                 _ => null,
             };

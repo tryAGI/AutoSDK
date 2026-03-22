@@ -15,7 +15,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Pcm16,
+        G711Alaw,
         /// <summary>
         /// 
         /// </summary>
@@ -23,7 +23,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        G711Alaw,
+        Pcm16,
     }
 
     /// <summary>
@@ -38,9 +38,9 @@ namespace G
         {
             return value switch
             {
-                RealtimeSessionCreateRequestInputAudioFormat.Pcm16 => "pcm16",
-                RealtimeSessionCreateRequestInputAudioFormat.G711Ulaw => "g711_ulaw",
                 RealtimeSessionCreateRequestInputAudioFormat.G711Alaw => "g711_alaw",
+                RealtimeSessionCreateRequestInputAudioFormat.G711Ulaw => "g711_ulaw",
+                RealtimeSessionCreateRequestInputAudioFormat.Pcm16 => "pcm16",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,9 +51,9 @@ namespace G
         {
             return value switch
             {
-                "pcm16" => RealtimeSessionCreateRequestInputAudioFormat.Pcm16,
-                "g711_ulaw" => RealtimeSessionCreateRequestInputAudioFormat.G711Ulaw,
                 "g711_alaw" => RealtimeSessionCreateRequestInputAudioFormat.G711Alaw,
+                "g711_ulaw" => RealtimeSessionCreateRequestInputAudioFormat.G711Ulaw,
+                "pcm16" => RealtimeSessionCreateRequestInputAudioFormat.Pcm16,
                 _ => null,
             };
         }

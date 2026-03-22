@@ -16,6 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
+        Blank,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PR_BODY")]
         PrBody,
         /// <summary>
@@ -23,11 +28,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PR_TITLE")]
         PrTitle,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
-        Blank,
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ namespace G
         {
             return value switch
             {
+                WebhooksPullRequest5HeadRepoMergeCommitMessage.Blank => "BLANK",
                 WebhooksPullRequest5HeadRepoMergeCommitMessage.PrBody => "PR_BODY",
                 WebhooksPullRequest5HeadRepoMergeCommitMessage.PrTitle => "PR_TITLE",
-                WebhooksPullRequest5HeadRepoMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,9 +55,9 @@ namespace G
         {
             return value switch
             {
+                "BLANK" => WebhooksPullRequest5HeadRepoMergeCommitMessage.Blank,
                 "PR_BODY" => WebhooksPullRequest5HeadRepoMergeCommitMessage.PrBody,
                 "PR_TITLE" => WebhooksPullRequest5HeadRepoMergeCommitMessage.PrTitle,
-                "BLANK" => WebhooksPullRequest5HeadRepoMergeCommitMessage.Blank,
                 _ => null,
             };
         }

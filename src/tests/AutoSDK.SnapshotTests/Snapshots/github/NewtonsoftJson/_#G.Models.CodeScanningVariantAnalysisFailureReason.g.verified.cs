@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="no_repos_queried")]
-        NoReposQueried,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="actions_workflow_run_failed")]
         ActionsWorkflowRunFailed,
         /// <summary>
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="internal_error")]
         InternalError,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="no_repos_queried")]
+        NoReposQueried,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                CodeScanningVariantAnalysisFailureReason.NoReposQueried => "no_repos_queried",
                 CodeScanningVariantAnalysisFailureReason.ActionsWorkflowRunFailed => "actions_workflow_run_failed",
                 CodeScanningVariantAnalysisFailureReason.InternalError => "internal_error",
+                CodeScanningVariantAnalysisFailureReason.NoReposQueried => "no_repos_queried",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "no_repos_queried" => CodeScanningVariantAnalysisFailureReason.NoReposQueried,
                 "actions_workflow_run_failed" => CodeScanningVariantAnalysisFailureReason.ActionsWorkflowRunFailed,
                 "internal_error" => CodeScanningVariantAnalysisFailureReason.InternalError,
+                "no_repos_queried" => CodeScanningVariantAnalysisFailureReason.NoReposQueried,
                 _ => null,
             };
         }

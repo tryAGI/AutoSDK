@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Assistant,
         /// <summary>
         /// 
         /// </summary>
-        Assistant,
+        User,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                MessageDeltaObjectDeltaRole.User => "user",
                 MessageDeltaObjectDeltaRole.Assistant => "assistant",
+                MessageDeltaObjectDeltaRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "user" => MessageDeltaObjectDeltaRole.User,
                 "assistant" => MessageDeltaObjectDeltaRole.Assistant,
+                "user" => MessageDeltaObjectDeltaRole.User,
                 _ => null,
             };
         }

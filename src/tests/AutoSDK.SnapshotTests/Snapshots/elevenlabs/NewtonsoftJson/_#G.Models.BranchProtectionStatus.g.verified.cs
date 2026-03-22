@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="writer_perms_required")]
-        WriterPermsRequired,
+        [global::System.Runtime.Serialization.EnumMember(Value="admin_perms_required")]
+        AdminPermsRequired,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="admin_perms_required")]
-        AdminPermsRequired,
+        [global::System.Runtime.Serialization.EnumMember(Value="writer_perms_required")]
+        WriterPermsRequired,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                BranchProtectionStatus.WriterPermsRequired => "writer_perms_required",
                 BranchProtectionStatus.AdminPermsRequired => "admin_perms_required",
+                BranchProtectionStatus.WriterPermsRequired => "writer_perms_required",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "writer_perms_required" => BranchProtectionStatus.WriterPermsRequired,
                 "admin_perms_required" => BranchProtectionStatus.AdminPermsRequired,
+                "writer_perms_required" => BranchProtectionStatus.WriterPermsRequired,
                 _ => null,
             };
         }

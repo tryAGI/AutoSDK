@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completion")]
-        Completion,
+        [global::System.Runtime.Serialization.EnumMember(Value="classifier")]
+        Classifier,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="classifier")]
-        Classifier,
+        [global::System.Runtime.Serialization.EnumMember(Value="completion")]
+        Completion,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                FineTuneableModelType.Completion => "completion",
                 FineTuneableModelType.Classifier => "classifier",
+                FineTuneableModelType.Completion => "completion",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "completion" => FineTuneableModelType.Completion,
                 "classifier" => FineTuneableModelType.Classifier,
+                "completion" => FineTuneableModelType.Completion,
                 _ => null,
             };
         }

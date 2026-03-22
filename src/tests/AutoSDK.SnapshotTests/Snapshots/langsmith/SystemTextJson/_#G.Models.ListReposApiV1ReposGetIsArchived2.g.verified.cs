@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        True,
-        /// <summary>
-        /// 
-        /// </summary>
         Allow,
         /// <summary>
         /// 
         /// </summary>
         False,
+        /// <summary>
+        /// 
+        /// </summary>
+        True,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                ListReposApiV1ReposGetIsArchived2.True => "true",
                 ListReposApiV1ReposGetIsArchived2.Allow => "allow",
                 ListReposApiV1ReposGetIsArchived2.False => "false",
+                ListReposApiV1ReposGetIsArchived2.True => "true",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "true" => ListReposApiV1ReposGetIsArchived2.True,
                 "allow" => ListReposApiV1ReposGetIsArchived2.Allow,
                 "false" => ListReposApiV1ReposGetIsArchived2.False,
+                "true" => ListReposApiV1ReposGetIsArchived2.True,
                 _ => null,
             };
         }

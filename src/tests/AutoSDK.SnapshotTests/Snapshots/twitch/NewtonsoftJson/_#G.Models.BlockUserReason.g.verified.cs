@@ -18,13 +18,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="spam")]
-        Spam,
+        [global::System.Runtime.Serialization.EnumMember(Value="other")]
+        Other,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="other")]
-        Other,
+        [global::System.Runtime.Serialization.EnumMember(Value="spam")]
+        Spam,
     }
 
     /// <summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 BlockUserReason.Harassment => "harassment",
-                BlockUserReason.Spam => "spam",
                 BlockUserReason.Other => "other",
+                BlockUserReason.Spam => "spam",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,8 +53,8 @@ namespace G
             return value switch
             {
                 "harassment" => BlockUserReason.Harassment,
-                "spam" => BlockUserReason.Spam,
                 "other" => BlockUserReason.Other,
+                "spam" => BlockUserReason.Spam,
                 _ => null,
             };
         }

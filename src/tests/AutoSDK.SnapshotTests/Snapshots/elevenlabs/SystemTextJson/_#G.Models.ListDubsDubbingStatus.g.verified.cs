@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Dubbing,
+        Dubbed,
         /// <summary>
         /// 
         /// </summary>
-        Dubbed,
+        Dubbing,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                ListDubsDubbingStatus.Dubbing => "dubbing",
                 ListDubsDubbingStatus.Dubbed => "dubbed",
+                ListDubsDubbingStatus.Dubbing => "dubbing",
                 ListDubsDubbingStatus.Failed => "failed",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "dubbing" => ListDubsDubbingStatus.Dubbing,
                 "dubbed" => ListDubsDubbingStatus.Dubbed,
+                "dubbing" => ListDubsDubbingStatus.Dubbing,
                 "failed" => ListDubsDubbingStatus.Failed,
                 _ => null,
             };

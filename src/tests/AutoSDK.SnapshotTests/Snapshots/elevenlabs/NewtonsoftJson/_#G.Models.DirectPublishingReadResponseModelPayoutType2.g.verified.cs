@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="none")]
-        None,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="engagement_based")]
         EngagementBased,
         /// <summary>
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="fixed_payout")]
         FixedPayout,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="none")]
+        None,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                DirectPublishingReadResponseModelPayoutType2.None => "none",
                 DirectPublishingReadResponseModelPayoutType2.EngagementBased => "engagement_based",
                 DirectPublishingReadResponseModelPayoutType2.FixedPayout => "fixed_payout",
+                DirectPublishingReadResponseModelPayoutType2.None => "none",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "none" => DirectPublishingReadResponseModelPayoutType2.None,
                 "engagement_based" => DirectPublishingReadResponseModelPayoutType2.EngagementBased,
                 "fixed_payout" => DirectPublishingReadResponseModelPayoutType2.FixedPayout,
+                "none" => DirectPublishingReadResponseModelPayoutType2.None,
                 _ => null,
             };
         }

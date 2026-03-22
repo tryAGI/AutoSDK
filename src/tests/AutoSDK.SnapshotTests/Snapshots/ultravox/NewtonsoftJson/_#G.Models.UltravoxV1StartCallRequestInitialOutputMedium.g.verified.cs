@@ -14,6 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="MESSAGE_MEDIUM_TEXT")]
+        MessageMediumText,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MESSAGE_MEDIUM_UNSPECIFIED")]
         MessageMediumUnspecified,
         /// <summary>
@@ -21,11 +26,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MESSAGE_MEDIUM_VOICE")]
         MessageMediumVoice,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="MESSAGE_MEDIUM_TEXT")]
-        MessageMediumText,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
         {
             return value switch
             {
+                UltravoxV1StartCallRequestInitialOutputMedium.MessageMediumText => "MESSAGE_MEDIUM_TEXT",
                 UltravoxV1StartCallRequestInitialOutputMedium.MessageMediumUnspecified => "MESSAGE_MEDIUM_UNSPECIFIED",
                 UltravoxV1StartCallRequestInitialOutputMedium.MessageMediumVoice => "MESSAGE_MEDIUM_VOICE",
-                UltravoxV1StartCallRequestInitialOutputMedium.MessageMediumText => "MESSAGE_MEDIUM_TEXT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
+                "MESSAGE_MEDIUM_TEXT" => UltravoxV1StartCallRequestInitialOutputMedium.MessageMediumText,
                 "MESSAGE_MEDIUM_UNSPECIFIED" => UltravoxV1StartCallRequestInitialOutputMedium.MessageMediumUnspecified,
                 "MESSAGE_MEDIUM_VOICE" => UltravoxV1StartCallRequestInitialOutputMedium.MessageMediumVoice,
-                "MESSAGE_MEDIUM_TEXT" => UltravoxV1StartCallRequestInitialOutputMedium.MessageMediumText,
                 _ => null,
             };
         }

@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Personal,
+        /// <summary>
+        /// 
+        /// </summary>
         Serving,
         /// <summary>
         /// 
         /// </summary>
         ServingAndIndexing,
-        /// <summary>
-        /// 
-        /// </summary>
-        Personal,
     }
 
     /// <summary>
@@ -36,9 +36,9 @@ namespace G
         {
             return value switch
             {
+                ApiKeyRole.Personal => "personal",
                 ApiKeyRole.Serving => "serving",
                 ApiKeyRole.ServingAndIndexing => "serving_and_indexing",
-                ApiKeyRole.Personal => "personal",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,9 +49,9 @@ namespace G
         {
             return value switch
             {
+                "personal" => ApiKeyRole.Personal,
                 "serving" => ApiKeyRole.Serving,
                 "serving_and_indexing" => ApiKeyRole.ServingAndIndexing,
-                "personal" => ApiKeyRole.Personal,
                 _ => null,
             };
         }

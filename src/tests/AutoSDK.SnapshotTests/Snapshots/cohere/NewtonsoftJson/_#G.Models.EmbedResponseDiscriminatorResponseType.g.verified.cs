@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="embeddings_floats")]
-        EmbeddingsFloats,
+        [global::System.Runtime.Serialization.EnumMember(Value="embeddings_by_type")]
+        EmbeddingsByType,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="embeddings_by_type")]
-        EmbeddingsByType,
+        [global::System.Runtime.Serialization.EnumMember(Value="embeddings_floats")]
+        EmbeddingsFloats,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                EmbedResponseDiscriminatorResponseType.EmbeddingsFloats => "embeddings_floats",
                 EmbedResponseDiscriminatorResponseType.EmbeddingsByType => "embeddings_by_type",
+                EmbedResponseDiscriminatorResponseType.EmbeddingsFloats => "embeddings_floats",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "embeddings_floats" => EmbedResponseDiscriminatorResponseType.EmbeddingsFloats,
                 "embeddings_by_type" => EmbedResponseDiscriminatorResponseType.EmbeddingsByType,
+                "embeddings_floats" => EmbedResponseDiscriminatorResponseType.EmbeddingsFloats,
                 _ => null,
             };
         }

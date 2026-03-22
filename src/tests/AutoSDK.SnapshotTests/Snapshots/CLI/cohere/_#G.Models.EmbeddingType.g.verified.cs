@@ -12,6 +12,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Binary,
+        /// <summary>
+        /// 
+        /// </summary>
         Float,
         /// <summary>
         /// 
@@ -20,15 +24,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Uint8,
-        /// <summary>
-        /// 
-        /// </summary>
-        Binary,
-        /// <summary>
-        /// 
-        /// </summary>
         Ubinary,
+        /// <summary>
+        /// 
+        /// </summary>
+        Uint8,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
+                EmbeddingType.Binary => "binary",
                 EmbeddingType.Float => "float",
                 EmbeddingType.Int8 => "int8",
-                EmbeddingType.Uint8 => "uint8",
-                EmbeddingType.Binary => "binary",
                 EmbeddingType.Ubinary => "ubinary",
+                EmbeddingType.Uint8 => "uint8",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
+                "binary" => EmbeddingType.Binary,
                 "float" => EmbeddingType.Float,
                 "int8" => EmbeddingType.Int8,
-                "uint8" => EmbeddingType.Uint8,
-                "binary" => EmbeddingType.Binary,
                 "ubinary" => EmbeddingType.Ubinary,
+                "uint8" => EmbeddingType.Uint8,
                 _ => null,
             };
         }

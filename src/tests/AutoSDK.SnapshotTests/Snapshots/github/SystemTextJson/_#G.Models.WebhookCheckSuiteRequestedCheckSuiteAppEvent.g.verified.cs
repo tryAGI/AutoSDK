@@ -44,6 +44,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        DeployKey,
+        /// <summary>
+        /// 
+        /// </summary>
         Deployment,
         /// <summary>
         /// 
@@ -53,10 +57,6 @@ namespace G
         /// 
         /// </summary>
         DeploymentStatus,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeployKey,
         /// <summary>
         /// 
         /// </summary>
@@ -76,11 +76,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Issues,
+        IssueComment,
         /// <summary>
         /// 
         /// </summary>
-        IssueComment,
+        Issues,
         /// <summary>
         /// 
         /// </summary>
@@ -96,15 +96,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        MergeGroup,
+        /// <summary>
+        /// 
+        /// </summary>
+        MergeQueueEntry,
+        /// <summary>
+        /// 
+        /// </summary>
         Milestone,
         /// <summary>
         /// 
         /// </summary>
-        Organization,
+        OrgBlock,
         /// <summary>
         /// 
         /// </summary>
-        OrgBlock,
+        Organization,
         /// <summary>
         /// 
         /// </summary>
@@ -124,6 +132,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        ProjectsV2Item,
+        /// <summary>
+        /// 
+        /// </summary>
         Public,
         /// <summary>
         /// 
@@ -137,6 +149,10 @@ namespace G
         /// 
         /// </summary>
         PullRequestReviewComment,
+        /// <summary>
+        /// 
+        /// </summary>
+        PullRequestReviewThread,
         /// <summary>
         /// 
         /// </summary>
@@ -160,7 +176,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        RepositoryImport,
+        /// <summary>
+        /// 
+        /// </summary>
         SecretScanningAlert,
+        /// <summary>
+        /// 
+        /// </summary>
+        SecretScanningAlertLocation,
+        /// <summary>
+        /// 
+        /// </summary>
+        SecurityAndAnalysis,
         /// <summary>
         /// 
         /// </summary>
@@ -188,39 +216,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        WorkflowRun,
-        /// <summary>
-        /// 
-        /// </summary>
-        PullRequestReviewThread,
-        /// <summary>
-        /// 
-        /// </summary>
         WorkflowJob,
         /// <summary>
         /// 
         /// </summary>
-        MergeQueueEntry,
-        /// <summary>
-        /// 
-        /// </summary>
-        SecurityAndAnalysis,
-        /// <summary>
-        /// 
-        /// </summary>
-        SecretScanningAlertLocation,
-        /// <summary>
-        /// 
-        /// </summary>
-        ProjectsV2Item,
-        /// <summary>
-        /// 
-        /// </summary>
-        MergeGroup,
-        /// <summary>
-        /// 
-        /// </summary>
-        RepositoryImport,
+        WorkflowRun,
     }
 
     /// <summary>
@@ -243,51 +243,51 @@ namespace G
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.ContentReference => "content_reference",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.Create => "create",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.Delete => "delete",
+                WebhookCheckSuiteRequestedCheckSuiteAppEvent.DeployKey => "deploy_key",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.Deployment => "deployment",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.DeploymentReview => "deployment_review",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.DeploymentStatus => "deployment_status",
-                WebhookCheckSuiteRequestedCheckSuiteAppEvent.DeployKey => "deploy_key",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.Discussion => "discussion",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.DiscussionComment => "discussion_comment",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.Fork => "fork",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.Gollum => "gollum",
-                WebhookCheckSuiteRequestedCheckSuiteAppEvent.Issues => "issues",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.IssueComment => "issue_comment",
+                WebhookCheckSuiteRequestedCheckSuiteAppEvent.Issues => "issues",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.Label => "label",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.Member => "member",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.Membership => "membership",
+                WebhookCheckSuiteRequestedCheckSuiteAppEvent.MergeGroup => "merge_group",
+                WebhookCheckSuiteRequestedCheckSuiteAppEvent.MergeQueueEntry => "merge_queue_entry",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.Milestone => "milestone",
-                WebhookCheckSuiteRequestedCheckSuiteAppEvent.Organization => "organization",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.OrgBlock => "org_block",
+                WebhookCheckSuiteRequestedCheckSuiteAppEvent.Organization => "organization",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.PageBuild => "page_build",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.Project => "project",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.ProjectCard => "project_card",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.ProjectColumn => "project_column",
+                WebhookCheckSuiteRequestedCheckSuiteAppEvent.ProjectsV2Item => "projects_v2_item",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.Public => "public",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.PullRequest => "pull_request",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.PullRequestReview => "pull_request_review",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.PullRequestReviewComment => "pull_request_review_comment",
+                WebhookCheckSuiteRequestedCheckSuiteAppEvent.PullRequestReviewThread => "pull_request_review_thread",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.Push => "push",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.RegistryPackage => "registry_package",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.Release => "release",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.Repository => "repository",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.RepositoryDispatch => "repository_dispatch",
+                WebhookCheckSuiteRequestedCheckSuiteAppEvent.RepositoryImport => "repository_import",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.SecretScanningAlert => "secret_scanning_alert",
+                WebhookCheckSuiteRequestedCheckSuiteAppEvent.SecretScanningAlertLocation => "secret_scanning_alert_location",
+                WebhookCheckSuiteRequestedCheckSuiteAppEvent.SecurityAndAnalysis => "security_and_analysis",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.Star => "star",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.Status => "status",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.Team => "team",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.TeamAdd => "team_add",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.Watch => "watch",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.WorkflowDispatch => "workflow_dispatch",
-                WebhookCheckSuiteRequestedCheckSuiteAppEvent.WorkflowRun => "workflow_run",
-                WebhookCheckSuiteRequestedCheckSuiteAppEvent.PullRequestReviewThread => "pull_request_review_thread",
                 WebhookCheckSuiteRequestedCheckSuiteAppEvent.WorkflowJob => "workflow_job",
-                WebhookCheckSuiteRequestedCheckSuiteAppEvent.MergeQueueEntry => "merge_queue_entry",
-                WebhookCheckSuiteRequestedCheckSuiteAppEvent.SecurityAndAnalysis => "security_and_analysis",
-                WebhookCheckSuiteRequestedCheckSuiteAppEvent.SecretScanningAlertLocation => "secret_scanning_alert_location",
-                WebhookCheckSuiteRequestedCheckSuiteAppEvent.ProjectsV2Item => "projects_v2_item",
-                WebhookCheckSuiteRequestedCheckSuiteAppEvent.MergeGroup => "merge_group",
-                WebhookCheckSuiteRequestedCheckSuiteAppEvent.RepositoryImport => "repository_import",
+                WebhookCheckSuiteRequestedCheckSuiteAppEvent.WorkflowRun => "workflow_run",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -306,51 +306,51 @@ namespace G
                 "content_reference" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.ContentReference,
                 "create" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.Create,
                 "delete" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.Delete,
+                "deploy_key" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.DeployKey,
                 "deployment" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.Deployment,
                 "deployment_review" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.DeploymentReview,
                 "deployment_status" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.DeploymentStatus,
-                "deploy_key" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.DeployKey,
                 "discussion" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.Discussion,
                 "discussion_comment" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.DiscussionComment,
                 "fork" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.Fork,
                 "gollum" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.Gollum,
-                "issues" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.Issues,
                 "issue_comment" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.IssueComment,
+                "issues" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.Issues,
                 "label" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.Label,
                 "member" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.Member,
                 "membership" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.Membership,
+                "merge_group" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.MergeGroup,
+                "merge_queue_entry" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.MergeQueueEntry,
                 "milestone" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.Milestone,
-                "organization" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.Organization,
                 "org_block" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.OrgBlock,
+                "organization" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.Organization,
                 "page_build" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.PageBuild,
                 "project" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.Project,
                 "project_card" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.ProjectCard,
                 "project_column" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.ProjectColumn,
+                "projects_v2_item" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.ProjectsV2Item,
                 "public" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.Public,
                 "pull_request" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.PullRequest,
                 "pull_request_review" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.PullRequestReview,
                 "pull_request_review_comment" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.PullRequestReviewComment,
+                "pull_request_review_thread" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.PullRequestReviewThread,
                 "push" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.Push,
                 "registry_package" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.RegistryPackage,
                 "release" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.Release,
                 "repository" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.Repository,
                 "repository_dispatch" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.RepositoryDispatch,
+                "repository_import" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.RepositoryImport,
                 "secret_scanning_alert" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.SecretScanningAlert,
+                "secret_scanning_alert_location" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.SecretScanningAlertLocation,
+                "security_and_analysis" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.SecurityAndAnalysis,
                 "star" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.Star,
                 "status" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.Status,
                 "team" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.Team,
                 "team_add" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.TeamAdd,
                 "watch" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.Watch,
                 "workflow_dispatch" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.WorkflowDispatch,
-                "workflow_run" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.WorkflowRun,
-                "pull_request_review_thread" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.PullRequestReviewThread,
                 "workflow_job" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.WorkflowJob,
-                "merge_queue_entry" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.MergeQueueEntry,
-                "security_and_analysis" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.SecurityAndAnalysis,
-                "secret_scanning_alert_location" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.SecretScanningAlertLocation,
-                "projects_v2_item" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.ProjectsV2Item,
-                "merge_group" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.MergeGroup,
-                "repository_import" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.RepositoryImport,
+                "workflow_run" => WebhookCheckSuiteRequestedCheckSuiteAppEvent.WorkflowRun,
                 _ => null,
             };
         }

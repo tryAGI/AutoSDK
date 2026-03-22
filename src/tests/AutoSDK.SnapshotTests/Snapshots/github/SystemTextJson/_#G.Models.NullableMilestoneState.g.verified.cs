@@ -14,11 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Open,
+        Closed,
         /// <summary>
         /// 
         /// </summary>
-        Closed,
+        Open,
     }
 
     /// <summary>
@@ -33,8 +33,8 @@ namespace G
         {
             return value switch
             {
-                NullableMilestoneState.Open => "open",
                 NullableMilestoneState.Closed => "closed",
+                NullableMilestoneState.Open => "open",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -45,8 +45,8 @@ namespace G
         {
             return value switch
             {
-                "open" => NullableMilestoneState.Open,
                 "closed" => NullableMilestoneState.Closed,
+                "open" => NullableMilestoneState.Open,
                 _ => null,
             };
         }

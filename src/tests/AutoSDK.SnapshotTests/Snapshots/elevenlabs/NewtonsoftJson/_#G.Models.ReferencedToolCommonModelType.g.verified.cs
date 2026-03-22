@@ -13,6 +13,21 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="api_integration_webhook")]
+        ApiIntegrationWebhook,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="client")]
+        Client,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="mcp")]
+        Mcp,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="system")]
         System,
         /// <summary>
@@ -23,23 +38,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="client")]
-        Client,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="workflow")]
         Workflow,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="api_integration_webhook")]
-        ApiIntegrationWebhook,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="mcp")]
-        Mcp,
     }
 
     /// <summary>
@@ -54,12 +54,12 @@ namespace G
         {
             return value switch
             {
+                ReferencedToolCommonModelType.ApiIntegrationWebhook => "api_integration_webhook",
+                ReferencedToolCommonModelType.Client => "client",
+                ReferencedToolCommonModelType.Mcp => "mcp",
                 ReferencedToolCommonModelType.System => "system",
                 ReferencedToolCommonModelType.Webhook => "webhook",
-                ReferencedToolCommonModelType.Client => "client",
                 ReferencedToolCommonModelType.Workflow => "workflow",
-                ReferencedToolCommonModelType.ApiIntegrationWebhook => "api_integration_webhook",
-                ReferencedToolCommonModelType.Mcp => "mcp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,12 +70,12 @@ namespace G
         {
             return value switch
             {
+                "api_integration_webhook" => ReferencedToolCommonModelType.ApiIntegrationWebhook,
+                "client" => ReferencedToolCommonModelType.Client,
+                "mcp" => ReferencedToolCommonModelType.Mcp,
                 "system" => ReferencedToolCommonModelType.System,
                 "webhook" => ReferencedToolCommonModelType.Webhook,
-                "client" => ReferencedToolCommonModelType.Client,
                 "workflow" => ReferencedToolCommonModelType.Workflow,
-                "api_integration_webhook" => ReferencedToolCommonModelType.ApiIntegrationWebhook,
-                "mcp" => ReferencedToolCommonModelType.Mcp,
                 _ => null,
             };
         }

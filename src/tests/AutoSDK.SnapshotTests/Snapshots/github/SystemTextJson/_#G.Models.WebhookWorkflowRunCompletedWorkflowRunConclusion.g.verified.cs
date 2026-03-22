@@ -36,15 +36,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        StartupFailure,
+        /// <summary>
+        /// 
+        /// </summary>
         Success,
         /// <summary>
         /// 
         /// </summary>
         TimedOut,
-        /// <summary>
-        /// 
-        /// </summary>
-        StartupFailure,
     }
 
     /// <summary>
@@ -65,9 +65,9 @@ namespace G
                 WebhookWorkflowRunCompletedWorkflowRunConclusion.Neutral => "neutral",
                 WebhookWorkflowRunCompletedWorkflowRunConclusion.Skipped => "skipped",
                 WebhookWorkflowRunCompletedWorkflowRunConclusion.Stale => "stale",
+                WebhookWorkflowRunCompletedWorkflowRunConclusion.StartupFailure => "startup_failure",
                 WebhookWorkflowRunCompletedWorkflowRunConclusion.Success => "success",
                 WebhookWorkflowRunCompletedWorkflowRunConclusion.TimedOut => "timed_out",
-                WebhookWorkflowRunCompletedWorkflowRunConclusion.StartupFailure => "startup_failure",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -84,9 +84,9 @@ namespace G
                 "neutral" => WebhookWorkflowRunCompletedWorkflowRunConclusion.Neutral,
                 "skipped" => WebhookWorkflowRunCompletedWorkflowRunConclusion.Skipped,
                 "stale" => WebhookWorkflowRunCompletedWorkflowRunConclusion.Stale,
+                "startup_failure" => WebhookWorkflowRunCompletedWorkflowRunConclusion.StartupFailure,
                 "success" => WebhookWorkflowRunCompletedWorkflowRunConclusion.Success,
                 "timed_out" => WebhookWorkflowRunCompletedWorkflowRunConclusion.TimedOut,
-                "startup_failure" => WebhookWorkflowRunCompletedWorkflowRunConclusion.StartupFailure,
                 _ => null,
             };
         }

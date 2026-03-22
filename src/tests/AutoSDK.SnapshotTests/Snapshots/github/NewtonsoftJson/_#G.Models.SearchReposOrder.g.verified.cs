@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="desc")]
-        Desc,
+        [global::System.Runtime.Serialization.EnumMember(Value="asc")]
+        Asc,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="asc")]
-        Asc,
+        [global::System.Runtime.Serialization.EnumMember(Value="desc")]
+        Desc,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                SearchReposOrder.Desc => "desc",
                 SearchReposOrder.Asc => "asc",
+                SearchReposOrder.Desc => "desc",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "desc" => SearchReposOrder.Desc,
                 "asc" => SearchReposOrder.Asc,
+                "desc" => SearchReposOrder.Desc,
                 _ => null,
             };
         }

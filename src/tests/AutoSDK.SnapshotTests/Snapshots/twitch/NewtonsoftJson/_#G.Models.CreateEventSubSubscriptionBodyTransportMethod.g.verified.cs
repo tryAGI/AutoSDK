@@ -17,6 +17,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="conduit")]
+        Conduit,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="webhook")]
         Webhook,
         /// <summary>
@@ -24,11 +29,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="websocket")]
         Websocket,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="conduit")]
-        Conduit,
     }
 
     /// <summary>
@@ -43,9 +43,9 @@ namespace G
         {
             return value switch
             {
+                CreateEventSubSubscriptionBodyTransportMethod.Conduit => "conduit",
                 CreateEventSubSubscriptionBodyTransportMethod.Webhook => "webhook",
                 CreateEventSubSubscriptionBodyTransportMethod.Websocket => "websocket",
-                CreateEventSubSubscriptionBodyTransportMethod.Conduit => "conduit",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,9 +56,9 @@ namespace G
         {
             return value switch
             {
+                "conduit" => CreateEventSubSubscriptionBodyTransportMethod.Conduit,
                 "webhook" => CreateEventSubSubscriptionBodyTransportMethod.Webhook,
                 "websocket" => CreateEventSubSubscriptionBodyTransportMethod.Websocket,
-                "conduit" => CreateEventSubSubscriptionBodyTransportMethod.Conduit,
                 _ => null,
             };
         }

@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Editor,
+        Commenter,
         /// <summary>
         /// 
         /// </summary>
-        Commenter,
+        Editor,
         /// <summary>
         /// 
         /// </summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 ProjectExtendedResponseModelAccessLevel.Admin => "admin",
-                ProjectExtendedResponseModelAccessLevel.Editor => "editor",
                 ProjectExtendedResponseModelAccessLevel.Commenter => "commenter",
+                ProjectExtendedResponseModelAccessLevel.Editor => "editor",
                 ProjectExtendedResponseModelAccessLevel.Viewer => "viewer",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -54,8 +54,8 @@ namespace G
             return value switch
             {
                 "admin" => ProjectExtendedResponseModelAccessLevel.Admin,
-                "editor" => ProjectExtendedResponseModelAccessLevel.Editor,
                 "commenter" => ProjectExtendedResponseModelAccessLevel.Commenter,
+                "editor" => ProjectExtendedResponseModelAccessLevel.Editor,
                 "viewer" => ProjectExtendedResponseModelAccessLevel.Viewer,
                 _ => null,
             };

@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="user")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="agent")]
+        Agent,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="agent")]
-        Agent,
+        [global::System.Runtime.Serialization.EnumMember(Value="user")]
+        User,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ConversationHistoryTranscriptCommonModelOutputRole.User => "user",
                 ConversationHistoryTranscriptCommonModelOutputRole.Agent => "agent",
+                ConversationHistoryTranscriptCommonModelOutputRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "user" => ConversationHistoryTranscriptCommonModelOutputRole.User,
                 "agent" => ConversationHistoryTranscriptCommonModelOutputRole.Agent,
+                "user" => ConversationHistoryTranscriptCommonModelOutputRole.User,
                 _ => null,
             };
         }

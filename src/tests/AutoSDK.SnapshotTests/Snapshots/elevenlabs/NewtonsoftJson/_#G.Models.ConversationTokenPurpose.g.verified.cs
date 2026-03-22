@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="signed_url")]
-        SignedUrl,
+        [global::System.Runtime.Serialization.EnumMember(Value="shareable_link")]
+        ShareableLink,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="shareable_link")]
-        ShareableLink,
+        [global::System.Runtime.Serialization.EnumMember(Value="signed_url")]
+        SignedUrl,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ConversationTokenPurpose.SignedUrl => "signed_url",
                 ConversationTokenPurpose.ShareableLink => "shareable_link",
+                ConversationTokenPurpose.SignedUrl => "signed_url",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "signed_url" => ConversationTokenPurpose.SignedUrl,
                 "shareable_link" => ConversationTokenPurpose.ShareableLink,
+                "signed_url" => ConversationTokenPurpose.SignedUrl,
                 _ => null,
             };
         }

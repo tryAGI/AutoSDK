@@ -12,11 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Unknown,
-        /// <summary>
-        /// 
-        /// </summary>
-        Processing,
+        Complete,
         /// <summary>
         /// 
         /// </summary>
@@ -24,11 +20,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Complete,
+        Processing,
         /// <summary>
         /// 
         /// </summary>
         Queued,
+        /// <summary>
+        /// 
+        /// </summary>
+        Unknown,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                GetClusterJobResponseStatus.Unknown => "unknown",
-                GetClusterJobResponseStatus.Processing => "processing",
-                GetClusterJobResponseStatus.Failed => "failed",
                 GetClusterJobResponseStatus.Complete => "complete",
+                GetClusterJobResponseStatus.Failed => "failed",
+                GetClusterJobResponseStatus.Processing => "processing",
                 GetClusterJobResponseStatus.Queued => "queued",
+                GetClusterJobResponseStatus.Unknown => "unknown",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "unknown" => GetClusterJobResponseStatus.Unknown,
-                "processing" => GetClusterJobResponseStatus.Processing,
-                "failed" => GetClusterJobResponseStatus.Failed,
                 "complete" => GetClusterJobResponseStatus.Complete,
+                "failed" => GetClusterJobResponseStatus.Failed,
+                "processing" => GetClusterJobResponseStatus.Processing,
                 "queued" => GetClusterJobResponseStatus.Queued,
+                "unknown" => GetClusterJobResponseStatus.Unknown,
                 _ => null,
             };
         }

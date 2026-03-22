@@ -12,18 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        V15,
-        /// <summary>
-        /// 
-        /// </summary>
-        V2,
-        /// <summary>
-        /// 
-        /// </summary>
-        V3,
-        /// <summary>
-        /// 
-        /// </summary>
         Sdxl08,
         /// <summary>
         /// 
@@ -37,6 +25,18 @@ namespace G
         /// 
         /// </summary>
         SdxlLightning,
+        /// <summary>
+        /// 
+        /// </summary>
+        V15,
+        /// <summary>
+        /// 
+        /// </summary>
+        V2,
+        /// <summary>
+        /// 
+        /// </summary>
+        V3,
     }
 
     /// <summary>
@@ -51,13 +51,13 @@ namespace G
         {
             return value switch
             {
-                SdVersions.V15 => "v1_5",
-                SdVersions.V2 => "v2",
-                SdVersions.V3 => "v3",
                 SdVersions.Sdxl08 => "SDXL_0_8",
                 SdVersions.Sdxl09 => "SDXL_0_9",
                 SdVersions.Sdxl10 => "SDXL_1_0",
                 SdVersions.SdxlLightning => "SDXL_LIGHTNING",
+                SdVersions.V15 => "v1_5",
+                SdVersions.V2 => "v2",
+                SdVersions.V3 => "v3",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -68,13 +68,13 @@ namespace G
         {
             return value switch
             {
-                "v1_5" => SdVersions.V15,
-                "v2" => SdVersions.V2,
-                "v3" => SdVersions.V3,
                 "SDXL_0_8" => SdVersions.Sdxl08,
                 "SDXL_0_9" => SdVersions.Sdxl09,
                 "SDXL_1_0" => SdVersions.Sdxl10,
                 "SDXL_LIGHTNING" => SdVersions.SdxlLightning,
+                "v1_5" => SdVersions.V15,
+                "v2" => SdVersions.V2,
+                "v3" => SdVersions.V3,
                 _ => null,
             };
         }

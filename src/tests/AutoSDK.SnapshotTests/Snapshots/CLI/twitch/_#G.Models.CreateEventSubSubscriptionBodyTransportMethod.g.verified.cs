@@ -16,15 +16,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Conduit,
+        /// <summary>
+        /// 
+        /// </summary>
         Webhook,
         /// <summary>
         /// 
         /// </summary>
         Websocket,
-        /// <summary>
-        /// 
-        /// </summary>
-        Conduit,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                CreateEventSubSubscriptionBodyTransportMethod.Conduit => "conduit",
                 CreateEventSubSubscriptionBodyTransportMethod.Webhook => "webhook",
                 CreateEventSubSubscriptionBodyTransportMethod.Websocket => "websocket",
-                CreateEventSubSubscriptionBodyTransportMethod.Conduit => "conduit",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
+                "conduit" => CreateEventSubSubscriptionBodyTransportMethod.Conduit,
                 "webhook" => CreateEventSubSubscriptionBodyTransportMethod.Webhook,
                 "websocket" => CreateEventSubSubscriptionBodyTransportMethod.Websocket,
-                "conduit" => CreateEventSubSubscriptionBodyTransportMethod.Conduit,
                 _ => null,
             };
         }

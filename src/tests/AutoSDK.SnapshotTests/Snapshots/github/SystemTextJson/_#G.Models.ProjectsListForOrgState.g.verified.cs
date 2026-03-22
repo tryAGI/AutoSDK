@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Open,
+        All,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        All,
+        Open,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                ProjectsListForOrgState.Open => "open",
-                ProjectsListForOrgState.Closed => "closed",
                 ProjectsListForOrgState.All => "all",
+                ProjectsListForOrgState.Closed => "closed",
+                ProjectsListForOrgState.Open => "open",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "open" => ProjectsListForOrgState.Open,
-                "closed" => ProjectsListForOrgState.Closed,
                 "all" => ProjectsListForOrgState.All,
+                "closed" => ProjectsListForOrgState.Closed,
+                "open" => ProjectsListForOrgState.Open,
                 _ => null,
             };
         }

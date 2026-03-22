@@ -13,18 +13,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="INACTIVE")]
-        Inactive,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="ON_TRACK")]
-        OnTrack,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="AT_RISK")]
         AtRisk,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="COMPLETE")]
+        Complete,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="INACTIVE")]
+        Inactive,
         /// <summary>
         /// 
         /// </summary>
@@ -33,8 +33,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="COMPLETE")]
-        Complete,
+        [global::System.Runtime.Serialization.EnumMember(Value="ON_TRACK")]
+        OnTrack,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                ProjectsV2StatusUpdateStatus.Inactive => "INACTIVE",
-                ProjectsV2StatusUpdateStatus.OnTrack => "ON_TRACK",
                 ProjectsV2StatusUpdateStatus.AtRisk => "AT_RISK",
-                ProjectsV2StatusUpdateStatus.OffTrack => "OFF_TRACK",
                 ProjectsV2StatusUpdateStatus.Complete => "COMPLETE",
+                ProjectsV2StatusUpdateStatus.Inactive => "INACTIVE",
+                ProjectsV2StatusUpdateStatus.OffTrack => "OFF_TRACK",
+                ProjectsV2StatusUpdateStatus.OnTrack => "ON_TRACK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "INACTIVE" => ProjectsV2StatusUpdateStatus.Inactive,
-                "ON_TRACK" => ProjectsV2StatusUpdateStatus.OnTrack,
                 "AT_RISK" => ProjectsV2StatusUpdateStatus.AtRisk,
-                "OFF_TRACK" => ProjectsV2StatusUpdateStatus.OffTrack,
                 "COMPLETE" => ProjectsV2StatusUpdateStatus.Complete,
+                "INACTIVE" => ProjectsV2StatusUpdateStatus.Inactive,
+                "OFF_TRACK" => ProjectsV2StatusUpdateStatus.OffTrack,
+                "ON_TRACK" => ProjectsV2StatusUpdateStatus.OnTrack,
                 _ => null,
             };
         }

@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="open")]
-        Open,
+        [global::System.Runtime.Serialization.EnumMember(Value="closed")]
+        Closed,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="closed")]
-        Closed,
+        [global::System.Runtime.Serialization.EnumMember(Value="open")]
+        Open,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestReviewEditedPullRequestMilestoneState.Open => "open",
                 WebhookPullRequestReviewEditedPullRequestMilestoneState.Closed => "closed",
+                WebhookPullRequestReviewEditedPullRequestMilestoneState.Open => "open",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "open" => WebhookPullRequestReviewEditedPullRequestMilestoneState.Open,
                 "closed" => WebhookPullRequestReviewEditedPullRequestMilestoneState.Closed,
+                "open" => WebhookPullRequestReviewEditedPullRequestMilestoneState.Open,
                 _ => null,
             };
         }

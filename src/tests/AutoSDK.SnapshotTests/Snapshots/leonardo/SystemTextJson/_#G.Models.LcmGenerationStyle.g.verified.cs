@@ -40,15 +40,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        None,
+        /// <summary>
+        /// 
+        /// </summary>
         Photography,
         /// <summary>
         /// 
         /// </summary>
-        Render3d,
+        Raytraced,
         /// <summary>
         /// 
         /// </summary>
-        Raytraced,
+        Render3d,
         /// <summary>
         /// 
         /// </summary>
@@ -61,10 +65,6 @@ namespace G
         /// 
         /// </summary>
         Vibrant,
-        /// <summary>
-        /// 
-        /// </summary>
-        None,
     }
 
     /// <summary>
@@ -86,13 +86,13 @@ namespace G
                 LcmGenerationStyle.Environment => "ENVIRONMENT",
                 LcmGenerationStyle.FantasyArt => "FANTASY_ART",
                 LcmGenerationStyle.Illustration => "ILLUSTRATION",
+                LcmGenerationStyle.None => "NONE",
                 LcmGenerationStyle.Photography => "PHOTOGRAPHY",
-                LcmGenerationStyle.Render3d => "RENDER_3D",
                 LcmGenerationStyle.Raytraced => "RAYTRACED",
+                LcmGenerationStyle.Render3d => "RENDER_3D",
                 LcmGenerationStyle.SketchBw => "SKETCH_BW",
                 LcmGenerationStyle.SketchColor => "SKETCH_COLOR",
                 LcmGenerationStyle.Vibrant => "VIBRANT",
-                LcmGenerationStyle.None => "NONE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -110,13 +110,13 @@ namespace G
                 "ENVIRONMENT" => LcmGenerationStyle.Environment,
                 "FANTASY_ART" => LcmGenerationStyle.FantasyArt,
                 "ILLUSTRATION" => LcmGenerationStyle.Illustration,
+                "NONE" => LcmGenerationStyle.None,
                 "PHOTOGRAPHY" => LcmGenerationStyle.Photography,
-                "RENDER_3D" => LcmGenerationStyle.Render3d,
                 "RAYTRACED" => LcmGenerationStyle.Raytraced,
+                "RENDER_3D" => LcmGenerationStyle.Render3d,
                 "SKETCH_BW" => LcmGenerationStyle.SketchBw,
                 "SKETCH_COLOR" => LcmGenerationStyle.SketchColor,
                 "VIBRANT" => LcmGenerationStyle.Vibrant,
-                "NONE" => LcmGenerationStyle.None,
                 _ => null,
             };
         }

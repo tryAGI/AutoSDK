@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        InputText,
+        Audio,
         /// <summary>
         /// 
         /// </summary>
@@ -20,11 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Text,
+        InputText,
         /// <summary>
         /// 
         /// </summary>
-        Audio,
+        Text,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                ConversationItemContentPartType.InputText => "input_text",
-                ConversationItemContentPartType.InputAudio => "input_audio",
-                ConversationItemContentPartType.Text => "text",
                 ConversationItemContentPartType.Audio => "audio",
+                ConversationItemContentPartType.InputAudio => "input_audio",
+                ConversationItemContentPartType.InputText => "input_text",
+                ConversationItemContentPartType.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "input_text" => ConversationItemContentPartType.InputText,
-                "input_audio" => ConversationItemContentPartType.InputAudio,
-                "text" => ConversationItemContentPartType.Text,
                 "audio" => ConversationItemContentPartType.Audio,
+                "input_audio" => ConversationItemContentPartType.InputAudio,
+                "input_text" => ConversationItemContentPartType.InputText,
+                "text" => ConversationItemContentPartType.Text,
                 _ => null,
             };
         }

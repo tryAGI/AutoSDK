@@ -14,20 +14,20 @@ namespace G
     public enum ChunkType
     {
         /// <summary>
-        /// text
+        /// audio
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="CHUNK_TYPE_TEXT")]
-        Text,
+        [global::System.Runtime.Serialization.EnumMember(Value="CHUNK_TYPE_AUDIO")]
+        Audio,
         /// <summary>
         /// image
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CHUNK_TYPE_IMAGE")]
         Image,
         /// <summary>
-        /// audio
+        /// text
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="CHUNK_TYPE_AUDIO")]
-        Audio,
+        [global::System.Runtime.Serialization.EnumMember(Value="CHUNK_TYPE_TEXT")]
+        Text,
         /// <summary>
         /// video
         /// </summary>
@@ -47,9 +47,9 @@ namespace G
         {
             return value switch
             {
-                ChunkType.Text => "CHUNK_TYPE_TEXT",
-                ChunkType.Image => "CHUNK_TYPE_IMAGE",
                 ChunkType.Audio => "CHUNK_TYPE_AUDIO",
+                ChunkType.Image => "CHUNK_TYPE_IMAGE",
+                ChunkType.Text => "CHUNK_TYPE_TEXT",
                 ChunkType.Video => "CHUNK_TYPE_VIDEO",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -61,9 +61,9 @@ namespace G
         {
             return value switch
             {
-                "CHUNK_TYPE_TEXT" => ChunkType.Text,
-                "CHUNK_TYPE_IMAGE" => ChunkType.Image,
                 "CHUNK_TYPE_AUDIO" => ChunkType.Audio,
+                "CHUNK_TYPE_IMAGE" => ChunkType.Image,
+                "CHUNK_TYPE_TEXT" => ChunkType.Text,
                 "CHUNK_TYPE_VIDEO" => ChunkType.Video,
                 _ => null,
             };

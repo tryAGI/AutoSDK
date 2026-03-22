@@ -18,23 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="unjoined")]
-        Unjoined,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="hangup")]
-        Hangup,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="agent_hangup")]
         AgentHangup,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="timeout")]
-        Timeout,
         /// <summary>
         /// 
         /// </summary>
@@ -43,8 +28,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="hangup")]
+        Hangup,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="system_error")]
         SystemError,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="timeout")]
+        Timeout,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="unjoined")]
+        Unjoined,
     }
 
     /// <summary>
@@ -59,12 +59,12 @@ namespace G
         {
             return value switch
             {
-                EndReasonEnum.Unjoined => "unjoined",
-                EndReasonEnum.Hangup => "hangup",
                 EndReasonEnum.AgentHangup => "agent_hangup",
-                EndReasonEnum.Timeout => "timeout",
                 EndReasonEnum.ConnectionError => "connection_error",
+                EndReasonEnum.Hangup => "hangup",
                 EndReasonEnum.SystemError => "system_error",
+                EndReasonEnum.Timeout => "timeout",
+                EndReasonEnum.Unjoined => "unjoined",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -75,12 +75,12 @@ namespace G
         {
             return value switch
             {
-                "unjoined" => EndReasonEnum.Unjoined,
-                "hangup" => EndReasonEnum.Hangup,
                 "agent_hangup" => EndReasonEnum.AgentHangup,
-                "timeout" => EndReasonEnum.Timeout,
                 "connection_error" => EndReasonEnum.ConnectionError,
+                "hangup" => EndReasonEnum.Hangup,
                 "system_error" => EndReasonEnum.SystemError,
+                "timeout" => EndReasonEnum.Timeout,
+                "unjoined" => EndReasonEnum.Unjoined,
                 _ => null,
             };
         }

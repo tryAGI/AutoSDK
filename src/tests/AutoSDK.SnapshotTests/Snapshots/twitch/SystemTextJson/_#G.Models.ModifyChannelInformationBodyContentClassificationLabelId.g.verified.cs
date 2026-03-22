@@ -22,19 +22,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        SexualThemes,
-        /// <summary>
-        /// 
-        /// </summary>
-        ViolentGraphic,
-        /// <summary>
-        /// 
-        /// </summary>
         Gambling,
         /// <summary>
         /// 
         /// </summary>
         ProfanityVulgarity,
+        /// <summary>
+        /// 
+        /// </summary>
+        SexualThemes,
+        /// <summary>
+        /// 
+        /// </summary>
+        ViolentGraphic,
     }
 
     /// <summary>
@@ -50,10 +50,10 @@ namespace G
             return value switch
             {
                 ModifyChannelInformationBodyContentClassificationLabelId.DrugsIntoxication => "DrugsIntoxication",
-                ModifyChannelInformationBodyContentClassificationLabelId.SexualThemes => "SexualThemes",
-                ModifyChannelInformationBodyContentClassificationLabelId.ViolentGraphic => "ViolentGraphic",
                 ModifyChannelInformationBodyContentClassificationLabelId.Gambling => "Gambling",
                 ModifyChannelInformationBodyContentClassificationLabelId.ProfanityVulgarity => "ProfanityVulgarity",
+                ModifyChannelInformationBodyContentClassificationLabelId.SexualThemes => "SexualThemes",
+                ModifyChannelInformationBodyContentClassificationLabelId.ViolentGraphic => "ViolentGraphic",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -65,10 +65,10 @@ namespace G
             return value switch
             {
                 "DrugsIntoxication" => ModifyChannelInformationBodyContentClassificationLabelId.DrugsIntoxication,
-                "SexualThemes" => ModifyChannelInformationBodyContentClassificationLabelId.SexualThemes,
-                "ViolentGraphic" => ModifyChannelInformationBodyContentClassificationLabelId.ViolentGraphic,
                 "Gambling" => ModifyChannelInformationBodyContentClassificationLabelId.Gambling,
                 "ProfanityVulgarity" => ModifyChannelInformationBodyContentClassificationLabelId.ProfanityVulgarity,
+                "SexualThemes" => ModifyChannelInformationBodyContentClassificationLabelId.SexualThemes,
+                "ViolentGraphic" => ModifyChannelInformationBodyContentClassificationLabelId.ViolentGraphic,
                 _ => null,
             };
         }

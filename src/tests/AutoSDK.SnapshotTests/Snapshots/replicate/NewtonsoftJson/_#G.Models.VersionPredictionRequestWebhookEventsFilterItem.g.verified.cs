@@ -13,13 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="start")]
-        Start,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="output")]
-        Output,
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
-        Completed,
+        [global::System.Runtime.Serialization.EnumMember(Value="output")]
+        Output,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="start")]
+        Start,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                VersionPredictionRequestWebhookEventsFilterItem.Start => "start",
-                VersionPredictionRequestWebhookEventsFilterItem.Output => "output",
-                VersionPredictionRequestWebhookEventsFilterItem.Logs => "logs",
                 VersionPredictionRequestWebhookEventsFilterItem.Completed => "completed",
+                VersionPredictionRequestWebhookEventsFilterItem.Logs => "logs",
+                VersionPredictionRequestWebhookEventsFilterItem.Output => "output",
+                VersionPredictionRequestWebhookEventsFilterItem.Start => "start",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "start" => VersionPredictionRequestWebhookEventsFilterItem.Start,
-                "output" => VersionPredictionRequestWebhookEventsFilterItem.Output,
-                "logs" => VersionPredictionRequestWebhookEventsFilterItem.Logs,
                 "completed" => VersionPredictionRequestWebhookEventsFilterItem.Completed,
+                "logs" => VersionPredictionRequestWebhookEventsFilterItem.Logs,
+                "output" => VersionPredictionRequestWebhookEventsFilterItem.Output,
+                "start" => VersionPredictionRequestWebhookEventsFilterItem.Start,
                 _ => null,
             };
         }

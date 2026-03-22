@@ -13,11 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        TwoStemsV1,
+        SixStemsV1,
         /// <summary>
         /// 
         /// </summary>
-        SixStemsV1,
+        TwoStemsV1,
     }
 
     /// <summary>
@@ -32,8 +32,8 @@ namespace G
         {
             return value switch
             {
-                BodyStemSeparationV1MusicStemSeparationPostStemVariationId.TwoStemsV1 => "two_stems_v1",
                 BodyStemSeparationV1MusicStemSeparationPostStemVariationId.SixStemsV1 => "six_stems_v1",
+                BodyStemSeparationV1MusicStemSeparationPostStemVariationId.TwoStemsV1 => "two_stems_v1",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,8 +44,8 @@ namespace G
         {
             return value switch
             {
-                "two_stems_v1" => BodyStemSeparationV1MusicStemSeparationPostStemVariationId.TwoStemsV1,
                 "six_stems_v1" => BodyStemSeparationV1MusicStemSeparationPostStemVariationId.SixStemsV1,
+                "two_stems_v1" => BodyStemSeparationV1MusicStemSeparationPostStemVariationId.TwoStemsV1,
                 _ => null,
             };
         }

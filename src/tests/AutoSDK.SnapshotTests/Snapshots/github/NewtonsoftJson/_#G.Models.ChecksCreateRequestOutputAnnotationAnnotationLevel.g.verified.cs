@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="failure")]
+        Failure,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="notice")]
         Notice,
         /// <summary>
@@ -20,11 +25,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="warning")]
         Warning,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="failure")]
-        Failure,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                ChecksCreateRequestOutputAnnotationAnnotationLevel.Failure => "failure",
                 ChecksCreateRequestOutputAnnotationAnnotationLevel.Notice => "notice",
                 ChecksCreateRequestOutputAnnotationAnnotationLevel.Warning => "warning",
-                ChecksCreateRequestOutputAnnotationAnnotationLevel.Failure => "failure",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
+                "failure" => ChecksCreateRequestOutputAnnotationAnnotationLevel.Failure,
                 "notice" => ChecksCreateRequestOutputAnnotationAnnotationLevel.Notice,
                 "warning" => ChecksCreateRequestOutputAnnotationAnnotationLevel.Warning,
-                "failure" => ChecksCreateRequestOutputAnnotationAnnotationLevel.Failure,
                 _ => null,
             };
         }

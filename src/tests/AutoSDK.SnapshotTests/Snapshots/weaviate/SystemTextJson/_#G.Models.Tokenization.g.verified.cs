@@ -13,23 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Word,
-        /// <summary>
-        /// 
-        /// </summary>
-        Lowercase,
-        /// <summary>
-        /// 
-        /// </summary>
-        Whitespace,
-        /// <summary>
-        /// 
-        /// </summary>
         Field,
-        /// <summary>
-        /// 
-        /// </summary>
-        Trigram,
         /// <summary>
         /// 
         /// </summary>
@@ -38,6 +22,22 @@ namespace G
         /// 
         /// </summary>
         KagomeKr,
+        /// <summary>
+        /// 
+        /// </summary>
+        Lowercase,
+        /// <summary>
+        /// 
+        /// </summary>
+        Trigram,
+        /// <summary>
+        /// 
+        /// </summary>
+        Whitespace,
+        /// <summary>
+        /// 
+        /// </summary>
+        Word,
     }
 
     /// <summary>
@@ -52,13 +52,13 @@ namespace G
         {
             return value switch
             {
-                Tokenization.Word => "word",
-                Tokenization.Lowercase => "lowercase",
-                Tokenization.Whitespace => "whitespace",
                 Tokenization.Field => "field",
-                Tokenization.Trigram => "trigram",
                 Tokenization.Gse => "gse",
                 Tokenization.KagomeKr => "kagome_kr",
+                Tokenization.Lowercase => "lowercase",
+                Tokenization.Trigram => "trigram",
+                Tokenization.Whitespace => "whitespace",
+                Tokenization.Word => "word",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -69,13 +69,13 @@ namespace G
         {
             return value switch
             {
-                "word" => Tokenization.Word,
-                "lowercase" => Tokenization.Lowercase,
-                "whitespace" => Tokenization.Whitespace,
                 "field" => Tokenization.Field,
-                "trigram" => Tokenization.Trigram,
                 "gse" => Tokenization.Gse,
                 "kagome_kr" => Tokenization.KagomeKr,
+                "lowercase" => Tokenization.Lowercase,
+                "trigram" => Tokenization.Trigram,
+                "whitespace" => Tokenization.Whitespace,
+                "word" => Tokenization.Word,
                 _ => null,
             };
         }

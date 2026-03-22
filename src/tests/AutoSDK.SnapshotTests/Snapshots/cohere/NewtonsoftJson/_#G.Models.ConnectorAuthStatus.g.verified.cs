@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="valid")]
-        Valid,
+        [global::System.Runtime.Serialization.EnumMember(Value="expired")]
+        Expired,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="expired")]
-        Expired,
+        [global::System.Runtime.Serialization.EnumMember(Value="valid")]
+        Valid,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ConnectorAuthStatus.Valid => "valid",
                 ConnectorAuthStatus.Expired => "expired",
+                ConnectorAuthStatus.Valid => "valid",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "valid" => ConnectorAuthStatus.Valid,
                 "expired" => ConnectorAuthStatus.Expired,
+                "valid" => ConnectorAuthStatus.Valid,
                 _ => null,
             };
         }

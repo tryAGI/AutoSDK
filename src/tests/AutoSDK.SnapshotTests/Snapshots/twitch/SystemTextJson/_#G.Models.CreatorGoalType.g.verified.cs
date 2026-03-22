@@ -22,19 +22,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Subscription,
-        /// <summary>
-        /// 
-        /// </summary>
-        SubscriptionCount,
-        /// <summary>
-        /// 
-        /// </summary>
         NewSubscription,
         /// <summary>
         /// 
         /// </summary>
         NewSubscriptionCount,
+        /// <summary>
+        /// 
+        /// </summary>
+        Subscription,
+        /// <summary>
+        /// 
+        /// </summary>
+        SubscriptionCount,
     }
 
     /// <summary>
@@ -50,10 +50,10 @@ namespace G
             return value switch
             {
                 CreatorGoalType.Follower => "follower",
-                CreatorGoalType.Subscription => "subscription",
-                CreatorGoalType.SubscriptionCount => "subscription_count",
                 CreatorGoalType.NewSubscription => "new_subscription",
                 CreatorGoalType.NewSubscriptionCount => "new_subscription_count",
+                CreatorGoalType.Subscription => "subscription",
+                CreatorGoalType.SubscriptionCount => "subscription_count",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -65,10 +65,10 @@ namespace G
             return value switch
             {
                 "follower" => CreatorGoalType.Follower,
-                "subscription" => CreatorGoalType.Subscription,
-                "subscription_count" => CreatorGoalType.SubscriptionCount,
                 "new_subscription" => CreatorGoalType.NewSubscription,
                 "new_subscription_count" => CreatorGoalType.NewSubscriptionCount,
+                "subscription" => CreatorGoalType.Subscription,
+                "subscription_count" => CreatorGoalType.SubscriptionCount,
                 _ => null,
             };
         }

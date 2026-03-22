@@ -31,18 +31,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="500")]
-        x500,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="1000")]
         x1000,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="5000")]
-        x5000,
         /// <summary>
         /// 
         /// </summary>
@@ -53,6 +43,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="100000")]
         x100000,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="500")]
+        x500,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="5000")]
+        x5000,
     }
 
     /// <summary>
@@ -69,11 +69,11 @@ namespace G
             {
                 CheermoteTierId.x1 => "1",
                 CheermoteTierId.x100 => "100",
-                CheermoteTierId.x500 => "500",
                 CheermoteTierId.x1000 => "1000",
-                CheermoteTierId.x5000 => "5000",
                 CheermoteTierId.x10000 => "10000",
                 CheermoteTierId.x100000 => "100000",
+                CheermoteTierId.x500 => "500",
+                CheermoteTierId.x5000 => "5000",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -86,11 +86,11 @@ namespace G
             {
                 "1" => CheermoteTierId.x1,
                 "100" => CheermoteTierId.x100,
-                "500" => CheermoteTierId.x500,
                 "1000" => CheermoteTierId.x1000,
-                "5000" => CheermoteTierId.x5000,
                 "10000" => CheermoteTierId.x10000,
                 "100000" => CheermoteTierId.x100000,
+                "500" => CheermoteTierId.x500,
+                "5000" => CheermoteTierId.x5000,
                 _ => null,
             };
         }

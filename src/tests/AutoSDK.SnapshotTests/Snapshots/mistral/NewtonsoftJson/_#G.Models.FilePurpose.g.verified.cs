@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="fine-tune")]
-        FineTune,
+        [global::System.Runtime.Serialization.EnumMember(Value="batch")]
+        Batch,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="batch")]
-        Batch,
+        [global::System.Runtime.Serialization.EnumMember(Value="fine-tune")]
+        FineTune,
         /// <summary>
         /// 
         /// </summary>
@@ -39,8 +39,8 @@ namespace G
         {
             return value switch
             {
-                FilePurpose.FineTune => "fine-tune",
                 FilePurpose.Batch => "batch",
+                FilePurpose.FineTune => "fine-tune",
                 FilePurpose.Ocr => "ocr",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -52,8 +52,8 @@ namespace G
         {
             return value switch
             {
-                "fine-tune" => FilePurpose.FineTune,
                 "batch" => FilePurpose.Batch,
+                "fine-tune" => FilePurpose.FineTune,
                 "ocr" => FilePurpose.Ocr,
                 _ => null,
             };

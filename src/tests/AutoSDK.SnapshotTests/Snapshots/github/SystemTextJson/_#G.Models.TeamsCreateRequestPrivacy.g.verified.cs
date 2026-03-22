@@ -17,13 +17,13 @@ namespace G
     public enum TeamsCreateRequestPrivacy
     {
         /// <summary>
-        /// `secret`
-        /// </summary>
-        Secret,
-        /// <summary>
         /// `closed`
         /// </summary>
         Closed,
+        /// <summary>
+        /// `secret`
+        /// </summary>
+        Secret,
     }
 
     /// <summary>
@@ -38,8 +38,8 @@ namespace G
         {
             return value switch
             {
-                TeamsCreateRequestPrivacy.Secret => "secret",
                 TeamsCreateRequestPrivacy.Closed => "closed",
+                TeamsCreateRequestPrivacy.Secret => "secret",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,8 +50,8 @@ namespace G
         {
             return value switch
             {
-                "secret" => TeamsCreateRequestPrivacy.Secret,
                 "closed" => TeamsCreateRequestPrivacy.Closed,
+                "secret" => TeamsCreateRequestPrivacy.Secret,
                 _ => null,
             };
         }

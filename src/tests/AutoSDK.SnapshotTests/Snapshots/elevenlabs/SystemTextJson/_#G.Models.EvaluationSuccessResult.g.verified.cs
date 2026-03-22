@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Success,
+        Failure,
         /// <summary>
         /// 
         /// </summary>
-        Failure,
+        Success,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                EvaluationSuccessResult.Success => "success",
                 EvaluationSuccessResult.Failure => "failure",
+                EvaluationSuccessResult.Success => "success",
                 EvaluationSuccessResult.Unknown => "unknown",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "success" => EvaluationSuccessResult.Success,
                 "failure" => EvaluationSuccessResult.Failure,
+                "success" => EvaluationSuccessResult.Success,
                 "unknown" => EvaluationSuccessResult.Unknown,
                 _ => null,
             };

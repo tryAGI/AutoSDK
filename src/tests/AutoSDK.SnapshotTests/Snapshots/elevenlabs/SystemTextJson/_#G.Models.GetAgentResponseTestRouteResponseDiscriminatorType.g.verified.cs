@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Tool,
+        Simulation,
         /// <summary>
         /// 
         /// </summary>
-        Simulation,
+        Tool,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 GetAgentResponseTestRouteResponseDiscriminatorType.Llm => "llm",
-                GetAgentResponseTestRouteResponseDiscriminatorType.Tool => "tool",
                 GetAgentResponseTestRouteResponseDiscriminatorType.Simulation => "simulation",
+                GetAgentResponseTestRouteResponseDiscriminatorType.Tool => "tool",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "llm" => GetAgentResponseTestRouteResponseDiscriminatorType.Llm,
-                "tool" => GetAgentResponseTestRouteResponseDiscriminatorType.Tool,
                 "simulation" => GetAgentResponseTestRouteResponseDiscriminatorType.Simulation,
+                "tool" => GetAgentResponseTestRouteResponseDiscriminatorType.Tool,
                 _ => null,
             };
         }

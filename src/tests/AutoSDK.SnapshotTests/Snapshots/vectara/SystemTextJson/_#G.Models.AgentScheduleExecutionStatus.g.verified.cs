@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Success,
+        Error,
         /// <summary>
         /// 
         /// </summary>
-        Error,
+        Success,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                AgentScheduleExecutionStatus.Success => "success",
                 AgentScheduleExecutionStatus.Error => "error",
+                AgentScheduleExecutionStatus.Success => "success",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "success" => AgentScheduleExecutionStatus.Success,
                 "error" => AgentScheduleExecutionStatus.Error,
+                "success" => AgentScheduleExecutionStatus.Success,
                 _ => null,
             };
         }

@@ -13,8 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="session_started")]
-        SessionStarted,
+        [global::System.Runtime.Serialization.EnumMember(Value="committed_transcript")]
+        CommittedTranscript,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="error")]
+        Error,
         /// <summary>
         /// 
         /// </summary>
@@ -23,13 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="committed_transcript")]
-        CommittedTranscript,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="error")]
-        Error,
+        [global::System.Runtime.Serialization.EnumMember(Value="session_started")]
+        SessionStarted,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                ServerEventDiscriminatorMessageType.SessionStarted => "session_started",
-                ServerEventDiscriminatorMessageType.PartialTranscript => "partial_transcript",
                 ServerEventDiscriminatorMessageType.CommittedTranscript => "committed_transcript",
                 ServerEventDiscriminatorMessageType.Error => "error",
+                ServerEventDiscriminatorMessageType.PartialTranscript => "partial_transcript",
+                ServerEventDiscriminatorMessageType.SessionStarted => "session_started",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "session_started" => ServerEventDiscriminatorMessageType.SessionStarted,
-                "partial_transcript" => ServerEventDiscriminatorMessageType.PartialTranscript,
                 "committed_transcript" => ServerEventDiscriminatorMessageType.CommittedTranscript,
                 "error" => ServerEventDiscriminatorMessageType.Error,
+                "partial_transcript" => ServerEventDiscriminatorMessageType.PartialTranscript,
+                "session_started" => ServerEventDiscriminatorMessageType.SessionStarted,
                 _ => null,
             };
         }

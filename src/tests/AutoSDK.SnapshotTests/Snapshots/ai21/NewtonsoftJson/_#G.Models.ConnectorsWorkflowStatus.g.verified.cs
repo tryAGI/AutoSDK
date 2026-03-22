@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="FAILED")]
+        Failed,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="IN_PROGRESS")]
         InProgress,
         /// <summary>
@@ -20,11 +25,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PARTIALLY_COMPLETED")]
         PartiallyCompleted,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="FAILED")]
-        Failed,
         /// <summary>
         /// 
         /// </summary>
@@ -44,9 +44,9 @@ namespace G
         {
             return value switch
             {
+                ConnectorsWorkflowStatus.Failed => "FAILED",
                 ConnectorsWorkflowStatus.InProgress => "IN_PROGRESS",
                 ConnectorsWorkflowStatus.PartiallyCompleted => "PARTIALLY_COMPLETED",
-                ConnectorsWorkflowStatus.Failed => "FAILED",
                 ConnectorsWorkflowStatus.Succeeded => "SUCCEEDED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -58,9 +58,9 @@ namespace G
         {
             return value switch
             {
+                "FAILED" => ConnectorsWorkflowStatus.Failed,
                 "IN_PROGRESS" => ConnectorsWorkflowStatus.InProgress,
                 "PARTIALLY_COMPLETED" => ConnectorsWorkflowStatus.PartiallyCompleted,
-                "FAILED" => ConnectorsWorkflowStatus.Failed,
                 "SUCCEEDED" => ConnectorsWorkflowStatus.Succeeded,
                 _ => null,
             };

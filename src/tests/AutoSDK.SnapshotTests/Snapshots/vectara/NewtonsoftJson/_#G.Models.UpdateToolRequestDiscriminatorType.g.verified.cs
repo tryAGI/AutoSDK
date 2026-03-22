@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="mcp")]
-        Mcp,
+        [global::System.Runtime.Serialization.EnumMember(Value="lambda")]
+        Lambda,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="lambda")]
-        Lambda,
+        [global::System.Runtime.Serialization.EnumMember(Value="mcp")]
+        Mcp,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                UpdateToolRequestDiscriminatorType.Mcp => "mcp",
                 UpdateToolRequestDiscriminatorType.Lambda => "lambda",
+                UpdateToolRequestDiscriminatorType.Mcp => "mcp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "mcp" => UpdateToolRequestDiscriminatorType.Mcp,
                 "lambda" => UpdateToolRequestDiscriminatorType.Lambda,
+                "mcp" => UpdateToolRequestDiscriminatorType.Mcp,
                 _ => null,
             };
         }

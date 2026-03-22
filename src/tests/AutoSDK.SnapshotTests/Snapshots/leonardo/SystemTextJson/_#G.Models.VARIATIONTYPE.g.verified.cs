@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Outpaint,
-        /// <summary>
-        /// 
-        /// </summary>
         Inpaint,
         /// <summary>
         /// 
         /// </summary>
-        Upscale,
+        Nobg,
+        /// <summary>
+        /// 
+        /// </summary>
+        Outpaint,
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +28,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Nobg,
+        Upscale,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                VariationType.Outpaint => "OUTPAINT",
                 VariationType.Inpaint => "INPAINT",
-                VariationType.Upscale => "UPSCALE",
-                VariationType.Unzoom => "UNZOOM",
                 VariationType.Nobg => "NOBG",
+                VariationType.Outpaint => "OUTPAINT",
+                VariationType.Unzoom => "UNZOOM",
+                VariationType.Upscale => "UPSCALE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "OUTPAINT" => VariationType.Outpaint,
                 "INPAINT" => VariationType.Inpaint,
-                "UPSCALE" => VariationType.Upscale,
-                "UNZOOM" => VariationType.Unzoom,
                 "NOBG" => VariationType.Nobg,
+                "OUTPAINT" => VariationType.Outpaint,
+                "UNZOOM" => VariationType.Unzoom,
+                "UPSCALE" => VariationType.Upscale,
                 _ => null,
             };
         }

@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="transcript")]
-        Transcript,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="audio")]
         Audio,
         /// <summary>
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="call_initiation_failure")]
         CallInitiationFailure,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="transcript")]
+        Transcript,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                WebhookEventType.Transcript => "transcript",
                 WebhookEventType.Audio => "audio",
                 WebhookEventType.CallInitiationFailure => "call_initiation_failure",
+                WebhookEventType.Transcript => "transcript",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "transcript" => WebhookEventType.Transcript,
                 "audio" => WebhookEventType.Audio,
                 "call_initiation_failure" => WebhookEventType.CallInitiationFailure,
+                "transcript" => WebhookEventType.Transcript,
                 _ => null,
             };
         }

@@ -16,19 +16,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Uploaded,
-        /// <summary>
-        /// 
-        /// </summary>
-        UploadFailed,
-        /// <summary>
-        /// 
-        /// </summary>
         Processed,
         /// <summary>
         /// 
         /// </summary>
         ProcessingFailed,
+        /// <summary>
+        /// 
+        /// </summary>
+        Uploaded,
+        /// <summary>
+        /// 
+        /// </summary>
+        UploadFailed,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
             return value switch
             {
                 FileStatus.DbRecordCreated => "DB_RECORD_CREATED",
-                FileStatus.Uploaded => "UPLOADED",
-                FileStatus.UploadFailed => "UPLOAD_FAILED",
                 FileStatus.Processed => "PROCESSED",
                 FileStatus.ProcessingFailed => "PROCESSING_FAILED",
+                FileStatus.Uploaded => "UPLOADED",
+                FileStatus.UploadFailed => "UPLOAD_FAILED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,10 +59,10 @@ namespace G
             return value switch
             {
                 "DB_RECORD_CREATED" => FileStatus.DbRecordCreated,
-                "UPLOADED" => FileStatus.Uploaded,
-                "UPLOAD_FAILED" => FileStatus.UploadFailed,
                 "PROCESSED" => FileStatus.Processed,
                 "PROCESSING_FAILED" => FileStatus.ProcessingFailed,
+                "UPLOADED" => FileStatus.Uploaded,
+                "UPLOAD_FAILED" => FileStatus.UploadFailed,
                 _ => null,
             };
         }

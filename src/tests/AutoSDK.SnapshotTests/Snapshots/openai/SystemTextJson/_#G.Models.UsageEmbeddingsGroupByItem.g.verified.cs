@@ -12,19 +12,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ProjectId,
-        /// <summary>
-        /// 
-        /// </summary>
-        UserId,
-        /// <summary>
-        /// 
-        /// </summary>
         ApiKeyId,
         /// <summary>
         /// 
         /// </summary>
         Model,
+        /// <summary>
+        /// 
+        /// </summary>
+        ProjectId,
+        /// <summary>
+        /// 
+        /// </summary>
+        UserId,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                UsageEmbeddingsGroupByItem.ProjectId => "project_id",
-                UsageEmbeddingsGroupByItem.UserId => "user_id",
                 UsageEmbeddingsGroupByItem.ApiKeyId => "api_key_id",
                 UsageEmbeddingsGroupByItem.Model => "model",
+                UsageEmbeddingsGroupByItem.ProjectId => "project_id",
+                UsageEmbeddingsGroupByItem.UserId => "user_id",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "project_id" => UsageEmbeddingsGroupByItem.ProjectId,
-                "user_id" => UsageEmbeddingsGroupByItem.UserId,
                 "api_key_id" => UsageEmbeddingsGroupByItem.ApiKeyId,
                 "model" => UsageEmbeddingsGroupByItem.Model,
+                "project_id" => UsageEmbeddingsGroupByItem.ProjectId,
+                "user_id" => UsageEmbeddingsGroupByItem.UserId,
                 _ => null,
             };
         }

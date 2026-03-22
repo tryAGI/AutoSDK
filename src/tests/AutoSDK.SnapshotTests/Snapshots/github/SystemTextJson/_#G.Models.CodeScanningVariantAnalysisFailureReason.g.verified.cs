@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        NoReposQueried,
-        /// <summary>
-        /// 
-        /// </summary>
         ActionsWorkflowRunFailed,
         /// <summary>
         /// 
         /// </summary>
         InternalError,
+        /// <summary>
+        /// 
+        /// </summary>
+        NoReposQueried,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                CodeScanningVariantAnalysisFailureReason.NoReposQueried => "no_repos_queried",
                 CodeScanningVariantAnalysisFailureReason.ActionsWorkflowRunFailed => "actions_workflow_run_failed",
                 CodeScanningVariantAnalysisFailureReason.InternalError => "internal_error",
+                CodeScanningVariantAnalysisFailureReason.NoReposQueried => "no_repos_queried",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "no_repos_queried" => CodeScanningVariantAnalysisFailureReason.NoReposQueried,
                 "actions_workflow_run_failed" => CodeScanningVariantAnalysisFailureReason.ActionsWorkflowRunFailed,
                 "internal_error" => CodeScanningVariantAnalysisFailureReason.InternalError,
+                "no_repos_queried" => CodeScanningVariantAnalysisFailureReason.NoReposQueried,
                 _ => null,
             };
         }

@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="requested")]
-        Requested,
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
-        Completed,
+        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
+        Pending,
         /// <summary>
         /// 
         /// </summary>
@@ -33,8 +33,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
-        Pending,
+        [global::System.Runtime.Serialization.EnumMember(Value="requested")]
+        Requested,
         /// <summary>
         /// 
         /// </summary>
@@ -54,11 +54,11 @@ namespace G
         {
             return value switch
             {
-                WebhookWorkflowRunCompletedWorkflowRunStatus.Requested => "requested",
-                WebhookWorkflowRunCompletedWorkflowRunStatus.InProgress => "in_progress",
                 WebhookWorkflowRunCompletedWorkflowRunStatus.Completed => "completed",
-                WebhookWorkflowRunCompletedWorkflowRunStatus.Queued => "queued",
+                WebhookWorkflowRunCompletedWorkflowRunStatus.InProgress => "in_progress",
                 WebhookWorkflowRunCompletedWorkflowRunStatus.Pending => "pending",
+                WebhookWorkflowRunCompletedWorkflowRunStatus.Queued => "queued",
+                WebhookWorkflowRunCompletedWorkflowRunStatus.Requested => "requested",
                 WebhookWorkflowRunCompletedWorkflowRunStatus.Waiting => "waiting",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -70,11 +70,11 @@ namespace G
         {
             return value switch
             {
-                "requested" => WebhookWorkflowRunCompletedWorkflowRunStatus.Requested,
-                "in_progress" => WebhookWorkflowRunCompletedWorkflowRunStatus.InProgress,
                 "completed" => WebhookWorkflowRunCompletedWorkflowRunStatus.Completed,
-                "queued" => WebhookWorkflowRunCompletedWorkflowRunStatus.Queued,
+                "in_progress" => WebhookWorkflowRunCompletedWorkflowRunStatus.InProgress,
                 "pending" => WebhookWorkflowRunCompletedWorkflowRunStatus.Pending,
+                "queued" => WebhookWorkflowRunCompletedWorkflowRunStatus.Queued,
+                "requested" => WebhookWorkflowRunCompletedWorkflowRunStatus.Requested,
                 "waiting" => WebhookWorkflowRunCompletedWorkflowRunStatus.Waiting,
                 _ => null,
             };

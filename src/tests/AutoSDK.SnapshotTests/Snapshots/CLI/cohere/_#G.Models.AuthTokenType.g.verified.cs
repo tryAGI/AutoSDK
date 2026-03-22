@@ -13,11 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Bearer,
+        Basic,
         /// <summary>
         /// 
         /// </summary>
-        Basic,
+        Bearer,
         /// <summary>
         /// 
         /// </summary>
@@ -36,8 +36,8 @@ namespace G
         {
             return value switch
             {
-                AuthTokenType.Bearer => "bearer",
                 AuthTokenType.Basic => "basic",
+                AuthTokenType.Bearer => "bearer",
                 AuthTokenType.Noscheme => "noscheme",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -49,8 +49,8 @@ namespace G
         {
             return value switch
             {
-                "bearer" => AuthTokenType.Bearer,
                 "basic" => AuthTokenType.Basic,
+                "bearer" => AuthTokenType.Bearer,
                 "noscheme" => AuthTokenType.Noscheme,
                 _ => null,
             };

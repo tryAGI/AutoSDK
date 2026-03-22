@@ -19,8 +19,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="three_days")]
-        ThreeDays,
+        [global::System.Runtime.Serialization.EnumMember(Value="one_month")]
+        OneMonth,
         /// <summary>
         /// 
         /// </summary>
@@ -29,13 +29,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="one_month")]
-        OneMonth,
+        [global::System.Runtime.Serialization.EnumMember(Value="six_months")]
+        SixMonths,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="six_months")]
-        SixMonths,
+        [global::System.Runtime.Serialization.EnumMember(Value="three_days")]
+        ThreeDays,
     }
 
     /// <summary>
@@ -51,10 +51,10 @@ namespace G
             return value switch
             {
                 InteractionExpiry.OneDay => "one_day",
-                InteractionExpiry.ThreeDays => "three_days",
-                InteractionExpiry.OneWeek => "one_week",
                 InteractionExpiry.OneMonth => "one_month",
+                InteractionExpiry.OneWeek => "one_week",
                 InteractionExpiry.SixMonths => "six_months",
+                InteractionExpiry.ThreeDays => "three_days",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -66,10 +66,10 @@ namespace G
             return value switch
             {
                 "one_day" => InteractionExpiry.OneDay,
-                "three_days" => InteractionExpiry.ThreeDays,
-                "one_week" => InteractionExpiry.OneWeek,
                 "one_month" => InteractionExpiry.OneMonth,
+                "one_week" => InteractionExpiry.OneWeek,
                 "six_months" => InteractionExpiry.SixMonths,
+                "three_days" => InteractionExpiry.ThreeDays,
                 _ => null,
             };
         }

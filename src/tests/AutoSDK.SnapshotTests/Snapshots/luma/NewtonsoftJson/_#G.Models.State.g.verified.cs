@@ -14,8 +14,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
-        Queued,
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -24,13 +24,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
-        Completed,
+        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
+        Failed,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
-        Failed,
+        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
+        Queued,
     }
 
     /// <summary>
@@ -45,10 +45,10 @@ namespace G
         {
             return value switch
             {
-                State.Queued => "queued",
-                State.Dreaming => "dreaming",
                 State.Completed => "completed",
+                State.Dreaming => "dreaming",
                 State.Failed => "failed",
+                State.Queued => "queued",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,10 +59,10 @@ namespace G
         {
             return value switch
             {
-                "queued" => State.Queued,
-                "dreaming" => State.Dreaming,
                 "completed" => State.Completed,
+                "dreaming" => State.Dreaming,
                 "failed" => State.Failed,
+                "queued" => State.Queued,
                 _ => null,
             };
         }

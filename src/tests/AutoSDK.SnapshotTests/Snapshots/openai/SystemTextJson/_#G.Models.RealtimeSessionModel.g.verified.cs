@@ -12,6 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Gpt4oMiniRealtimePreview,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt4oMiniRealtimePreview20241217,
+        /// <summary>
+        /// 
+        /// </summary>
         Gpt4oRealtimePreview,
         /// <summary>
         /// 
@@ -25,14 +33,6 @@ namespace G
         /// 
         /// </summary>
         Gpt4oRealtimePreview20250603,
-        /// <summary>
-        /// 
-        /// </summary>
-        Gpt4oMiniRealtimePreview,
-        /// <summary>
-        /// 
-        /// </summary>
-        Gpt4oMiniRealtimePreview20241217,
     }
 
     /// <summary>
@@ -47,12 +47,12 @@ namespace G
         {
             return value switch
             {
+                RealtimeSessionModel.Gpt4oMiniRealtimePreview => "gpt-4o-mini-realtime-preview",
+                RealtimeSessionModel.Gpt4oMiniRealtimePreview20241217 => "gpt-4o-mini-realtime-preview-2024-12-17",
                 RealtimeSessionModel.Gpt4oRealtimePreview => "gpt-4o-realtime-preview",
                 RealtimeSessionModel.Gpt4oRealtimePreview20241001 => "gpt-4o-realtime-preview-2024-10-01",
                 RealtimeSessionModel.Gpt4oRealtimePreview20241217 => "gpt-4o-realtime-preview-2024-12-17",
                 RealtimeSessionModel.Gpt4oRealtimePreview20250603 => "gpt-4o-realtime-preview-2025-06-03",
-                RealtimeSessionModel.Gpt4oMiniRealtimePreview => "gpt-4o-mini-realtime-preview",
-                RealtimeSessionModel.Gpt4oMiniRealtimePreview20241217 => "gpt-4o-mini-realtime-preview-2024-12-17",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,12 +63,12 @@ namespace G
         {
             return value switch
             {
+                "gpt-4o-mini-realtime-preview" => RealtimeSessionModel.Gpt4oMiniRealtimePreview,
+                "gpt-4o-mini-realtime-preview-2024-12-17" => RealtimeSessionModel.Gpt4oMiniRealtimePreview20241217,
                 "gpt-4o-realtime-preview" => RealtimeSessionModel.Gpt4oRealtimePreview,
                 "gpt-4o-realtime-preview-2024-10-01" => RealtimeSessionModel.Gpt4oRealtimePreview20241001,
                 "gpt-4o-realtime-preview-2024-12-17" => RealtimeSessionModel.Gpt4oRealtimePreview20241217,
                 "gpt-4o-realtime-preview-2025-06-03" => RealtimeSessionModel.Gpt4oRealtimePreview20250603,
-                "gpt-4o-mini-realtime-preview" => RealtimeSessionModel.Gpt4oMiniRealtimePreview,
-                "gpt-4o-mini-realtime-preview-2024-12-17" => RealtimeSessionModel.Gpt4oMiniRealtimePreview20241217,
                 _ => null,
             };
         }

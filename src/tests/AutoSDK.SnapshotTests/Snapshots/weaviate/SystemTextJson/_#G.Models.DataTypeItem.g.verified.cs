@@ -12,19 +12,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        String,
+        x_crossReference_,
         /// <summary>
         /// 
         /// </summary>
-        StringArray,
+        Blob,
         /// <summary>
         /// 
         /// </summary>
-        Object,
+        Date,
         /// <summary>
         /// 
         /// </summary>
-        ObjectArray,
+        DateArray,
+        /// <summary>
+        /// 
+        /// </summary>
+        GeoCoordinates,
         /// <summary>
         /// 
         /// </summary>
@@ -44,11 +48,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Date,
+        Object,
         /// <summary>
         /// 
         /// </summary>
-        DateArray,
+        ObjectArray,
+        /// <summary>
+        /// 
+        /// </summary>
+        PhoneNumber,
+        /// <summary>
+        /// 
+        /// </summary>
+        String,
+        /// <summary>
+        /// 
+        /// </summary>
+        StringArray,
         /// <summary>
         /// 
         /// </summary>
@@ -57,22 +73,6 @@ namespace G
         /// 
         /// </summary>
         UuidArray,
-        /// <summary>
-        /// 
-        /// </summary>
-        GeoCoordinates,
-        /// <summary>
-        /// 
-        /// </summary>
-        PhoneNumber,
-        /// <summary>
-        /// 
-        /// </summary>
-        Blob,
-        /// <summary>
-        /// 
-        /// </summary>
-        x_crossReference_,
     }
 
     /// <summary>
@@ -87,22 +87,22 @@ namespace G
         {
             return value switch
             {
-                DataTypeItem.String => "string",
-                DataTypeItem.StringArray => "string[]",
-                DataTypeItem.Object => "object",
-                DataTypeItem.ObjectArray => "object[]",
+                DataTypeItem.x_crossReference_ => "<cross_reference>",
+                DataTypeItem.Blob => "blob",
+                DataTypeItem.Date => "date",
+                DataTypeItem.DateArray => "date[]",
+                DataTypeItem.GeoCoordinates => "geoCoordinates",
                 DataTypeItem.Int => "int",
                 DataTypeItem.IntArray => "int[]",
                 DataTypeItem.Number => "number",
                 DataTypeItem.NumberArray => "number[]",
-                DataTypeItem.Date => "date",
-                DataTypeItem.DateArray => "date[]",
+                DataTypeItem.Object => "object",
+                DataTypeItem.ObjectArray => "object[]",
+                DataTypeItem.PhoneNumber => "phoneNumber",
+                DataTypeItem.String => "string",
+                DataTypeItem.StringArray => "string[]",
                 DataTypeItem.Uuid => "uuid",
                 DataTypeItem.UuidArray => "uuid[]",
-                DataTypeItem.GeoCoordinates => "geoCoordinates",
-                DataTypeItem.PhoneNumber => "phoneNumber",
-                DataTypeItem.Blob => "blob",
-                DataTypeItem.x_crossReference_ => "<cross_reference>",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -113,22 +113,22 @@ namespace G
         {
             return value switch
             {
-                "string" => DataTypeItem.String,
-                "string[]" => DataTypeItem.StringArray,
-                "object" => DataTypeItem.Object,
-                "object[]" => DataTypeItem.ObjectArray,
+                "<cross_reference>" => DataTypeItem.x_crossReference_,
+                "blob" => DataTypeItem.Blob,
+                "date" => DataTypeItem.Date,
+                "date[]" => DataTypeItem.DateArray,
+                "geoCoordinates" => DataTypeItem.GeoCoordinates,
                 "int" => DataTypeItem.Int,
                 "int[]" => DataTypeItem.IntArray,
                 "number" => DataTypeItem.Number,
                 "number[]" => DataTypeItem.NumberArray,
-                "date" => DataTypeItem.Date,
-                "date[]" => DataTypeItem.DateArray,
+                "object" => DataTypeItem.Object,
+                "object[]" => DataTypeItem.ObjectArray,
+                "phoneNumber" => DataTypeItem.PhoneNumber,
+                "string" => DataTypeItem.String,
+                "string[]" => DataTypeItem.StringArray,
                 "uuid" => DataTypeItem.Uuid,
                 "uuid[]" => DataTypeItem.UuidArray,
-                "geoCoordinates" => DataTypeItem.GeoCoordinates,
-                "phoneNumber" => DataTypeItem.PhoneNumber,
-                "blob" => DataTypeItem.Blob,
-                "<cross_reference>" => DataTypeItem.x_crossReference_,
                 _ => null,
             };
         }

@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="success")]
-        Success,
+        [global::System.Runtime.Serialization.EnumMember(Value="failure")]
+        Failure,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="failure")]
-        Failure,
+        [global::System.Runtime.Serialization.EnumMember(Value="success")]
+        Success,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                GetAgentKnowledgeBaseSummariesRouteResponseDiscriminatorStatus.Success => "success",
                 GetAgentKnowledgeBaseSummariesRouteResponseDiscriminatorStatus.Failure => "failure",
+                GetAgentKnowledgeBaseSummariesRouteResponseDiscriminatorStatus.Success => "success",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "success" => GetAgentKnowledgeBaseSummariesRouteResponseDiscriminatorStatus.Success,
                 "failure" => GetAgentKnowledgeBaseSummariesRouteResponseDiscriminatorStatus.Failure,
+                "success" => GetAgentKnowledgeBaseSummariesRouteResponseDiscriminatorStatus.Success,
                 _ => null,
             };
         }

@@ -12,10 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Completed,
-        /// <summary>
-        /// 
-        /// </summary>
         ActionRequired,
         /// <summary>
         /// 
@@ -24,11 +20,31 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Completed,
+        /// <summary>
+        /// 
+        /// </summary>
         Failure,
         /// <summary>
         /// 
         /// </summary>
+        InProgress,
+        /// <summary>
+        /// 
+        /// </summary>
         Neutral,
+        /// <summary>
+        /// 
+        /// </summary>
+        Pending,
+        /// <summary>
+        /// 
+        /// </summary>
+        Queued,
+        /// <summary>
+        /// 
+        /// </summary>
+        Requested,
         /// <summary>
         /// 
         /// </summary>
@@ -48,23 +64,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        InProgress,
-        /// <summary>
-        /// 
-        /// </summary>
-        Queued,
-        /// <summary>
-        /// 
-        /// </summary>
-        Requested,
-        /// <summary>
-        /// 
-        /// </summary>
         Waiting,
-        /// <summary>
-        /// 
-        /// </summary>
-        Pending,
     }
 
     /// <summary>
@@ -79,20 +79,20 @@ namespace G
         {
             return value switch
             {
-                ActionsListWorkflowRunsForRepoStatus.Completed => "completed",
                 ActionsListWorkflowRunsForRepoStatus.ActionRequired => "action_required",
                 ActionsListWorkflowRunsForRepoStatus.Cancelled => "cancelled",
+                ActionsListWorkflowRunsForRepoStatus.Completed => "completed",
                 ActionsListWorkflowRunsForRepoStatus.Failure => "failure",
+                ActionsListWorkflowRunsForRepoStatus.InProgress => "in_progress",
                 ActionsListWorkflowRunsForRepoStatus.Neutral => "neutral",
+                ActionsListWorkflowRunsForRepoStatus.Pending => "pending",
+                ActionsListWorkflowRunsForRepoStatus.Queued => "queued",
+                ActionsListWorkflowRunsForRepoStatus.Requested => "requested",
                 ActionsListWorkflowRunsForRepoStatus.Skipped => "skipped",
                 ActionsListWorkflowRunsForRepoStatus.Stale => "stale",
                 ActionsListWorkflowRunsForRepoStatus.Success => "success",
                 ActionsListWorkflowRunsForRepoStatus.TimedOut => "timed_out",
-                ActionsListWorkflowRunsForRepoStatus.InProgress => "in_progress",
-                ActionsListWorkflowRunsForRepoStatus.Queued => "queued",
-                ActionsListWorkflowRunsForRepoStatus.Requested => "requested",
                 ActionsListWorkflowRunsForRepoStatus.Waiting => "waiting",
-                ActionsListWorkflowRunsForRepoStatus.Pending => "pending",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -103,20 +103,20 @@ namespace G
         {
             return value switch
             {
-                "completed" => ActionsListWorkflowRunsForRepoStatus.Completed,
                 "action_required" => ActionsListWorkflowRunsForRepoStatus.ActionRequired,
                 "cancelled" => ActionsListWorkflowRunsForRepoStatus.Cancelled,
+                "completed" => ActionsListWorkflowRunsForRepoStatus.Completed,
                 "failure" => ActionsListWorkflowRunsForRepoStatus.Failure,
+                "in_progress" => ActionsListWorkflowRunsForRepoStatus.InProgress,
                 "neutral" => ActionsListWorkflowRunsForRepoStatus.Neutral,
+                "pending" => ActionsListWorkflowRunsForRepoStatus.Pending,
+                "queued" => ActionsListWorkflowRunsForRepoStatus.Queued,
+                "requested" => ActionsListWorkflowRunsForRepoStatus.Requested,
                 "skipped" => ActionsListWorkflowRunsForRepoStatus.Skipped,
                 "stale" => ActionsListWorkflowRunsForRepoStatus.Stale,
                 "success" => ActionsListWorkflowRunsForRepoStatus.Success,
                 "timed_out" => ActionsListWorkflowRunsForRepoStatus.TimedOut,
-                "in_progress" => ActionsListWorkflowRunsForRepoStatus.InProgress,
-                "queued" => ActionsListWorkflowRunsForRepoStatus.Queued,
-                "requested" => ActionsListWorkflowRunsForRepoStatus.Requested,
                 "waiting" => ActionsListWorkflowRunsForRepoStatus.Waiting,
-                "pending" => ActionsListWorkflowRunsForRepoStatus.Pending,
                 _ => null,
             };
         }

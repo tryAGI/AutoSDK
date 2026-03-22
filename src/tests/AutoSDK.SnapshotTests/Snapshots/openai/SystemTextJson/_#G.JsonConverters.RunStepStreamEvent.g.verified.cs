@@ -28,26 +28,26 @@ namespace G.JsonConverters
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("event")) __score0++;
             if (__jsonProps.Contains("data")) __score0++;
+            if (__jsonProps.Contains("event")) __score0++;
             var __score1 = 0;
-            if (__jsonProps.Contains("event")) __score1++;
             if (__jsonProps.Contains("data")) __score1++;
+            if (__jsonProps.Contains("event")) __score1++;
             var __score2 = 0;
-            if (__jsonProps.Contains("event")) __score2++;
             if (__jsonProps.Contains("data")) __score2++;
+            if (__jsonProps.Contains("event")) __score2++;
             var __score3 = 0;
-            if (__jsonProps.Contains("event")) __score3++;
             if (__jsonProps.Contains("data")) __score3++;
+            if (__jsonProps.Contains("event")) __score3++;
             var __score4 = 0;
-            if (__jsonProps.Contains("event")) __score4++;
             if (__jsonProps.Contains("data")) __score4++;
+            if (__jsonProps.Contains("event")) __score4++;
             var __score5 = 0;
-            if (__jsonProps.Contains("event")) __score5++;
             if (__jsonProps.Contains("data")) __score5++;
+            if (__jsonProps.Contains("event")) __score5++;
             var __score6 = 0;
-            if (__jsonProps.Contains("event")) __score6++;
             if (__jsonProps.Contains("data")) __score6++;
+            if (__jsonProps.Contains("event")) __score6++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }

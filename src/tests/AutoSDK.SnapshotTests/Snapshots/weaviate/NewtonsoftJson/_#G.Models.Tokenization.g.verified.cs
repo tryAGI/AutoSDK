@@ -14,28 +14,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="word")]
-        Word,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="lowercase")]
-        Lowercase,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="whitespace")]
-        Whitespace,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="field")]
         Field,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="trigram")]
-        Trigram,
         /// <summary>
         /// 
         /// </summary>
@@ -46,6 +26,26 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="kagome_kr")]
         KagomeKr,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="lowercase")]
+        Lowercase,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="trigram")]
+        Trigram,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="whitespace")]
+        Whitespace,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="word")]
+        Word,
     }
 
     /// <summary>
@@ -60,13 +60,13 @@ namespace G
         {
             return value switch
             {
-                Tokenization.Word => "word",
-                Tokenization.Lowercase => "lowercase",
-                Tokenization.Whitespace => "whitespace",
                 Tokenization.Field => "field",
-                Tokenization.Trigram => "trigram",
                 Tokenization.Gse => "gse",
                 Tokenization.KagomeKr => "kagome_kr",
+                Tokenization.Lowercase => "lowercase",
+                Tokenization.Trigram => "trigram",
+                Tokenization.Whitespace => "whitespace",
+                Tokenization.Word => "word",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -77,13 +77,13 @@ namespace G
         {
             return value switch
             {
-                "word" => Tokenization.Word,
-                "lowercase" => Tokenization.Lowercase,
-                "whitespace" => Tokenization.Whitespace,
                 "field" => Tokenization.Field,
-                "trigram" => Tokenization.Trigram,
                 "gse" => Tokenization.Gse,
                 "kagome_kr" => Tokenization.KagomeKr,
+                "lowercase" => Tokenization.Lowercase,
+                "trigram" => Tokenization.Trigram,
+                "whitespace" => Tokenization.Whitespace,
+                "word" => Tokenization.Word,
                 _ => null,
             };
         }

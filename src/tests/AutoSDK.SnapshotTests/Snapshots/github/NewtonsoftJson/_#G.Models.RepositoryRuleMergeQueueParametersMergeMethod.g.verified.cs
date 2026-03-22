@@ -18,13 +18,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="SQUASH")]
-        Squash,
+        [global::System.Runtime.Serialization.EnumMember(Value="REBASE")]
+        Rebase,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="REBASE")]
-        Rebase,
+        [global::System.Runtime.Serialization.EnumMember(Value="SQUASH")]
+        Squash,
     }
 
     /// <summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 RepositoryRuleMergeQueueParametersMergeMethod.Merge => "MERGE",
-                RepositoryRuleMergeQueueParametersMergeMethod.Squash => "SQUASH",
                 RepositoryRuleMergeQueueParametersMergeMethod.Rebase => "REBASE",
+                RepositoryRuleMergeQueueParametersMergeMethod.Squash => "SQUASH",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,8 +53,8 @@ namespace G
             return value switch
             {
                 "MERGE" => RepositoryRuleMergeQueueParametersMergeMethod.Merge,
-                "SQUASH" => RepositoryRuleMergeQueueParametersMergeMethod.Squash,
                 "REBASE" => RepositoryRuleMergeQueueParametersMergeMethod.Rebase,
+                "SQUASH" => RepositoryRuleMergeQueueParametersMergeMethod.Squash,
                 _ => null,
             };
         }

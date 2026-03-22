@@ -18,13 +18,13 @@ namespace G
         /// <summary>
         /// `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. By leaving this blank, you set the review action state to `PENDING`, which means you will need to [submit the pull request review](https://docs.github.com/rest/pulls/reviews#submit-a-review-for-a-pull-request) when you are ready.
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="REQUEST_CHANGES")]
-        RequestChanges,
+        [global::System.Runtime.Serialization.EnumMember(Value="COMMENT")]
+        Comment,
         /// <summary>
         /// `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. By leaving this blank, you set the review action state to `PENDING`, which means you will need to [submit the pull request review](https://docs.github.com/rest/pulls/reviews#submit-a-review-for-a-pull-request) when you are ready.
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="COMMENT")]
-        Comment,
+        [global::System.Runtime.Serialization.EnumMember(Value="REQUEST_CHANGES")]
+        RequestChanges,
     }
 
     /// <summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 PullsCreateReviewRequestEvent.Approve => "APPROVE",
-                PullsCreateReviewRequestEvent.RequestChanges => "REQUEST_CHANGES",
                 PullsCreateReviewRequestEvent.Comment => "COMMENT",
+                PullsCreateReviewRequestEvent.RequestChanges => "REQUEST_CHANGES",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,8 +53,8 @@ namespace G
             return value switch
             {
                 "APPROVE" => PullsCreateReviewRequestEvent.Approve,
-                "REQUEST_CHANGES" => PullsCreateReviewRequestEvent.RequestChanges,
                 "COMMENT" => PullsCreateReviewRequestEvent.Comment,
+                "REQUEST_CHANGES" => PullsCreateReviewRequestEvent.RequestChanges,
                 _ => null,
             };
         }

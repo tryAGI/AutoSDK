@@ -18,13 +18,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="updated")]
-        Updated,
+        [global::System.Runtime.Serialization.EnumMember(Value="created_at")]
+        CreatedAt,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="created_at")]
-        CreatedAt,
+        [global::System.Runtime.Serialization.EnumMember(Value="updated")]
+        Updated,
     }
 
     /// <summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 PullsListReviewCommentsForRepoSort.Created => "created",
-                PullsListReviewCommentsForRepoSort.Updated => "updated",
                 PullsListReviewCommentsForRepoSort.CreatedAt => "created_at",
+                PullsListReviewCommentsForRepoSort.Updated => "updated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,8 +53,8 @@ namespace G
             return value switch
             {
                 "created" => PullsListReviewCommentsForRepoSort.Created,
-                "updated" => PullsListReviewCommentsForRepoSort.Updated,
                 "created_at" => PullsListReviewCommentsForRepoSort.CreatedAt,
+                "updated" => PullsListReviewCommentsForRepoSort.Updated,
                 _ => null,
             };
         }

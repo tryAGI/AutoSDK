@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="blob")]
+        Blob,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="commit")]
         Commit,
         /// <summary>
@@ -20,11 +25,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="tree")]
         Tree,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="blob")]
-        Blob,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                GitCreateTagRequestType.Blob => "blob",
                 GitCreateTagRequestType.Commit => "commit",
                 GitCreateTagRequestType.Tree => "tree",
-                GitCreateTagRequestType.Blob => "blob",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
+                "blob" => GitCreateTagRequestType.Blob,
                 "commit" => GitCreateTagRequestType.Commit,
                 "tree" => GitCreateTagRequestType.Tree,
-                "blob" => GitCreateTagRequestType.Blob,
                 _ => null,
             };
         }

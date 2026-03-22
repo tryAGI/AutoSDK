@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="error")]
+        Error,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="info")]
         Info,
         /// <summary>
@@ -20,11 +25,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="warn")]
         Warn,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="error")]
-        Error,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                FineTuningJobEventLevel.Error => "error",
                 FineTuningJobEventLevel.Info => "info",
                 FineTuningJobEventLevel.Warn => "warn",
-                FineTuningJobEventLevel.Error => "error",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
+                "error" => FineTuningJobEventLevel.Error,
                 "info" => FineTuningJobEventLevel.Info,
                 "warn" => FineTuningJobEventLevel.Warn,
-                "error" => FineTuningJobEventLevel.Error,
                 _ => null,
             };
         }

@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
-        Queued,
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
-        Completed,
+        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
+        Queued,
         /// <summary>
         /// 
         /// </summary>
@@ -44,9 +44,9 @@ namespace G
         {
             return value switch
             {
-                WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Status.Queued => "queued",
-                WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Status.InProgress => "in_progress",
                 WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Status.Completed => "completed",
+                WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Status.InProgress => "in_progress",
+                WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Status.Queued => "queued",
                 WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Status.Waiting => "waiting",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -58,9 +58,9 @@ namespace G
         {
             return value switch
             {
-                "queued" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Status.Queued,
-                "in_progress" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Status.InProgress,
                 "completed" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Status.Completed,
+                "in_progress" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Status.InProgress,
+                "queued" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Status.Queued,
                 "waiting" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Status.Waiting,
                 _ => null,
             };

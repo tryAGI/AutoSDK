@@ -14,6 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="invalid")]
+        Invalid,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="pending")]
         Pending,
         /// <summary>
@@ -21,11 +26,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="valid")]
         Valid,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="invalid")]
-        Invalid,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
         {
             return value switch
             {
+                FunctionDefinitionValidationStatus.Invalid => "invalid",
                 FunctionDefinitionValidationStatus.Pending => "pending",
                 FunctionDefinitionValidationStatus.Valid => "valid",
-                FunctionDefinitionValidationStatus.Invalid => "invalid",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
+                "invalid" => FunctionDefinitionValidationStatus.Invalid,
                 "pending" => FunctionDefinitionValidationStatus.Pending,
                 "valid" => FunctionDefinitionValidationStatus.Valid,
-                "invalid" => FunctionDefinitionValidationStatus.Invalid,
                 _ => null,
             };
         }

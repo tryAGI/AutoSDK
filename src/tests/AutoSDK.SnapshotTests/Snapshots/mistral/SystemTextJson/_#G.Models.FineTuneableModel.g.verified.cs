@@ -12,23 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        OpenMistral7b,
-        /// <summary>
-        /// 
-        /// </summary>
-        MistralSmallLatest,
-        /// <summary>
-        /// 
-        /// </summary>
         CodestralLatest,
-        /// <summary>
-        /// 
-        /// </summary>
-        MistralLargeLatest,
-        /// <summary>
-        /// 
-        /// </summary>
-        OpenMistralNemo,
         /// <summary>
         /// 
         /// </summary>
@@ -37,6 +21,22 @@ namespace G
         /// 
         /// </summary>
         Ministral8bLatest,
+        /// <summary>
+        /// 
+        /// </summary>
+        MistralLargeLatest,
+        /// <summary>
+        /// 
+        /// </summary>
+        MistralSmallLatest,
+        /// <summary>
+        /// 
+        /// </summary>
+        OpenMistral7b,
+        /// <summary>
+        /// 
+        /// </summary>
+        OpenMistralNemo,
     }
 
     /// <summary>
@@ -51,13 +51,13 @@ namespace G
         {
             return value switch
             {
-                FineTuneableModel.OpenMistral7b => "open-mistral-7b",
-                FineTuneableModel.MistralSmallLatest => "mistral-small-latest",
                 FineTuneableModel.CodestralLatest => "codestral-latest",
-                FineTuneableModel.MistralLargeLatest => "mistral-large-latest",
-                FineTuneableModel.OpenMistralNemo => "open-mistral-nemo",
                 FineTuneableModel.Ministral3bLatest => "ministral-3b-latest",
                 FineTuneableModel.Ministral8bLatest => "ministral-8b-latest",
+                FineTuneableModel.MistralLargeLatest => "mistral-large-latest",
+                FineTuneableModel.MistralSmallLatest => "mistral-small-latest",
+                FineTuneableModel.OpenMistral7b => "open-mistral-7b",
+                FineTuneableModel.OpenMistralNemo => "open-mistral-nemo",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -68,13 +68,13 @@ namespace G
         {
             return value switch
             {
-                "open-mistral-7b" => FineTuneableModel.OpenMistral7b,
-                "mistral-small-latest" => FineTuneableModel.MistralSmallLatest,
                 "codestral-latest" => FineTuneableModel.CodestralLatest,
-                "mistral-large-latest" => FineTuneableModel.MistralLargeLatest,
-                "open-mistral-nemo" => FineTuneableModel.OpenMistralNemo,
                 "ministral-3b-latest" => FineTuneableModel.Ministral3bLatest,
                 "ministral-8b-latest" => FineTuneableModel.Ministral8bLatest,
+                "mistral-large-latest" => FineTuneableModel.MistralLargeLatest,
+                "mistral-small-latest" => FineTuneableModel.MistralSmallLatest,
+                "open-mistral-7b" => FineTuneableModel.OpenMistral7b,
+                "open-mistral-nemo" => FineTuneableModel.OpenMistralNemo,
                 _ => null,
             };
         }

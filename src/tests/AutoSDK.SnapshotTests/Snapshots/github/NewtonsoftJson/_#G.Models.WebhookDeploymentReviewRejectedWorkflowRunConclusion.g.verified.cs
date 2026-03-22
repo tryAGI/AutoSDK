@@ -13,8 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="success")]
-        Success,
+        [global::System.Runtime.Serialization.EnumMember(Value="action_required")]
+        ActionRequired,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -28,18 +33,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
-        Cancelled,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="timed_out")]
-        TimedOut,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="action_required")]
-        ActionRequired,
+        [global::System.Runtime.Serialization.EnumMember(Value="openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
         /// <summary>
         /// 
         /// </summary>
@@ -48,8 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
-        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        [global::System.Runtime.Serialization.EnumMember(Value="success")]
+        Success,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="timed_out")]
+        TimedOut,
     }
 
     /// <summary>
@@ -64,14 +64,14 @@ namespace G
         {
             return value switch
             {
-                WebhookDeploymentReviewRejectedWorkflowRunConclusion.Success => "success",
+                WebhookDeploymentReviewRejectedWorkflowRunConclusion.ActionRequired => "action_required",
+                WebhookDeploymentReviewRejectedWorkflowRunConclusion.Cancelled => "cancelled",
                 WebhookDeploymentReviewRejectedWorkflowRunConclusion.Failure => "failure",
                 WebhookDeploymentReviewRejectedWorkflowRunConclusion.Neutral => "neutral",
-                WebhookDeploymentReviewRejectedWorkflowRunConclusion.Cancelled => "cancelled",
-                WebhookDeploymentReviewRejectedWorkflowRunConclusion.TimedOut => "timed_out",
-                WebhookDeploymentReviewRejectedWorkflowRunConclusion.ActionRequired => "action_required",
-                WebhookDeploymentReviewRejectedWorkflowRunConclusion.Stale => "stale",
                 WebhookDeploymentReviewRejectedWorkflowRunConclusion.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
+                WebhookDeploymentReviewRejectedWorkflowRunConclusion.Stale => "stale",
+                WebhookDeploymentReviewRejectedWorkflowRunConclusion.Success => "success",
+                WebhookDeploymentReviewRejectedWorkflowRunConclusion.TimedOut => "timed_out",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -82,14 +82,14 @@ namespace G
         {
             return value switch
             {
-                "success" => WebhookDeploymentReviewRejectedWorkflowRunConclusion.Success,
+                "action_required" => WebhookDeploymentReviewRejectedWorkflowRunConclusion.ActionRequired,
+                "cancelled" => WebhookDeploymentReviewRejectedWorkflowRunConclusion.Cancelled,
                 "failure" => WebhookDeploymentReviewRejectedWorkflowRunConclusion.Failure,
                 "neutral" => WebhookDeploymentReviewRejectedWorkflowRunConclusion.Neutral,
-                "cancelled" => WebhookDeploymentReviewRejectedWorkflowRunConclusion.Cancelled,
-                "timed_out" => WebhookDeploymentReviewRejectedWorkflowRunConclusion.TimedOut,
-                "action_required" => WebhookDeploymentReviewRejectedWorkflowRunConclusion.ActionRequired,
-                "stale" => WebhookDeploymentReviewRejectedWorkflowRunConclusion.Stale,
                 "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookDeploymentReviewRejectedWorkflowRunConclusion.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+                "stale" => WebhookDeploymentReviewRejectedWorkflowRunConclusion.Stale,
+                "success" => WebhookDeploymentReviewRejectedWorkflowRunConclusion.Success,
+                "timed_out" => WebhookDeploymentReviewRejectedWorkflowRunConclusion.TimedOut,
                 _ => null,
             };
         }

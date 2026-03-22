@@ -16,30 +16,30 @@ namespace G
     public enum TextEmbeddingInputTask
     {
         /// <summary>
-        /// Specifies the given text is a query in a search or retrieval setting.
+        /// Specifies that the embedding is used for classification.
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="retrieval.query")]
-        RetrievalQuery,
+        [global::System.Runtime.Serialization.EnumMember(Value="classification")]
+        Classification,
         /// <summary>
         /// Specifies the given text is a document in a search or retrieval setting.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="retrieval.passage")]
         RetrievalPassage,
         /// <summary>
-        /// Specifies the given text is used for Semantic Textual Similarity.
+        /// Specifies the given text is a query in a search or retrieval setting.
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text-matching")]
-        TextMatching,
-        /// <summary>
-        /// Specifies that the embedding is used for classification.
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="classification")]
-        Classification,
+        [global::System.Runtime.Serialization.EnumMember(Value="retrieval.query")]
+        RetrievalQuery,
         /// <summary>
         /// Specifies that the embedding is used for clustering.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="separation")]
         Separation,
+        /// <summary>
+        /// Specifies the given text is used for Semantic Textual Similarity.
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="text-matching")]
+        TextMatching,
     }
 
     /// <summary>
@@ -54,11 +54,11 @@ namespace G
         {
             return value switch
             {
-                TextEmbeddingInputTask.RetrievalQuery => "retrieval.query",
-                TextEmbeddingInputTask.RetrievalPassage => "retrieval.passage",
-                TextEmbeddingInputTask.TextMatching => "text-matching",
                 TextEmbeddingInputTask.Classification => "classification",
+                TextEmbeddingInputTask.RetrievalPassage => "retrieval.passage",
+                TextEmbeddingInputTask.RetrievalQuery => "retrieval.query",
                 TextEmbeddingInputTask.Separation => "separation",
+                TextEmbeddingInputTask.TextMatching => "text-matching",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -69,11 +69,11 @@ namespace G
         {
             return value switch
             {
-                "retrieval.query" => TextEmbeddingInputTask.RetrievalQuery,
-                "retrieval.passage" => TextEmbeddingInputTask.RetrievalPassage,
-                "text-matching" => TextEmbeddingInputTask.TextMatching,
                 "classification" => TextEmbeddingInputTask.Classification,
+                "retrieval.passage" => TextEmbeddingInputTask.RetrievalPassage,
+                "retrieval.query" => TextEmbeddingInputTask.RetrievalQuery,
                 "separation" => TextEmbeddingInputTask.Separation,
+                "text-matching" => TextEmbeddingInputTask.TextMatching,
                 _ => null,
             };
         }

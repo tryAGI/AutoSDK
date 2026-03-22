@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Updated,
+        CreatedAt,
         /// <summary>
         /// 
         /// </summary>
-        CreatedAt,
+        Updated,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 PullsListReviewCommentsForRepoSort.Created => "created",
-                PullsListReviewCommentsForRepoSort.Updated => "updated",
                 PullsListReviewCommentsForRepoSort.CreatedAt => "created_at",
+                PullsListReviewCommentsForRepoSort.Updated => "updated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "created" => PullsListReviewCommentsForRepoSort.Created,
-                "updated" => PullsListReviewCommentsForRepoSort.Updated,
                 "created_at" => PullsListReviewCommentsForRepoSort.CreatedAt,
+                "updated" => PullsListReviewCommentsForRepoSort.Updated,
                 _ => null,
             };
         }

@@ -16,7 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Public,
+        Forks,
+        /// <summary>
+        /// 
+        /// </summary>
+        Member,
         /// <summary>
         /// 
         /// </summary>
@@ -24,15 +28,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Forks,
+        Public,
         /// <summary>
         /// 
         /// </summary>
         Sources,
-        /// <summary>
-        /// 
-        /// </summary>
-        Member,
     }
 
     /// <summary>
@@ -48,11 +48,11 @@ namespace G
             return value switch
             {
                 ReposListForOrgType.All => "all",
-                ReposListForOrgType.Public => "public",
-                ReposListForOrgType.Private => "private",
                 ReposListForOrgType.Forks => "forks",
-                ReposListForOrgType.Sources => "sources",
                 ReposListForOrgType.Member => "member",
+                ReposListForOrgType.Private => "private",
+                ReposListForOrgType.Public => "public",
+                ReposListForOrgType.Sources => "sources",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
             return value switch
             {
                 "all" => ReposListForOrgType.All,
-                "public" => ReposListForOrgType.Public,
-                "private" => ReposListForOrgType.Private,
                 "forks" => ReposListForOrgType.Forks,
-                "sources" => ReposListForOrgType.Sources,
                 "member" => ReposListForOrgType.Member,
+                "private" => ReposListForOrgType.Private,
+                "public" => ReposListForOrgType.Public,
+                "sources" => ReposListForOrgType.Sources,
                 _ => null,
             };
         }

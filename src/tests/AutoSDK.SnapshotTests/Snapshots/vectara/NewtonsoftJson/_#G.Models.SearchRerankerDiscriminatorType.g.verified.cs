@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="customer_reranker")]
-        CustomerReranker,
+        [global::System.Runtime.Serialization.EnumMember(Value="chain")]
+        Chain,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="userfn")]
-        Userfn,
+        [global::System.Runtime.Serialization.EnumMember(Value="customer_reranker")]
+        CustomerReranker,
         /// <summary>
         /// 
         /// </summary>
@@ -28,13 +28,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="chain")]
-        Chain,
+        [global::System.Runtime.Serialization.EnumMember(Value="none")]
+        None,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="none")]
-        None,
+        [global::System.Runtime.Serialization.EnumMember(Value="userfn")]
+        Userfn,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                SearchRerankerDiscriminatorType.CustomerReranker => "customer_reranker",
-                SearchRerankerDiscriminatorType.Userfn => "userfn",
-                SearchRerankerDiscriminatorType.Mmr => "mmr",
                 SearchRerankerDiscriminatorType.Chain => "chain",
+                SearchRerankerDiscriminatorType.CustomerReranker => "customer_reranker",
+                SearchRerankerDiscriminatorType.Mmr => "mmr",
                 SearchRerankerDiscriminatorType.None => "none",
+                SearchRerankerDiscriminatorType.Userfn => "userfn",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "customer_reranker" => SearchRerankerDiscriminatorType.CustomerReranker,
-                "userfn" => SearchRerankerDiscriminatorType.Userfn,
-                "mmr" => SearchRerankerDiscriminatorType.Mmr,
                 "chain" => SearchRerankerDiscriminatorType.Chain,
+                "customer_reranker" => SearchRerankerDiscriminatorType.CustomerReranker,
+                "mmr" => SearchRerankerDiscriminatorType.Mmr,
                 "none" => SearchRerankerDiscriminatorType.None,
+                "userfn" => SearchRerankerDiscriminatorType.Userfn,
                 _ => null,
             };
         }

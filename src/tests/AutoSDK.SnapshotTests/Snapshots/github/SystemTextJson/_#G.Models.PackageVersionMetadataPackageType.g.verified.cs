@@ -12,15 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Npm,
-        /// <summary>
-        /// 
-        /// </summary>
-        Maven,
-        /// <summary>
-        /// 
-        /// </summary>
-        Rubygems,
+        Container,
         /// <summary>
         /// 
         /// </summary>
@@ -28,11 +20,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Maven,
+        /// <summary>
+        /// 
+        /// </summary>
+        Npm,
+        /// <summary>
+        /// 
+        /// </summary>
         Nuget,
         /// <summary>
         /// 
         /// </summary>
-        Container,
+        Rubygems,
     }
 
     /// <summary>
@@ -47,12 +47,12 @@ namespace G
         {
             return value switch
             {
-                PackageVersionMetadataPackageType.Npm => "npm",
-                PackageVersionMetadataPackageType.Maven => "maven",
-                PackageVersionMetadataPackageType.Rubygems => "rubygems",
-                PackageVersionMetadataPackageType.Docker => "docker",
-                PackageVersionMetadataPackageType.Nuget => "nuget",
                 PackageVersionMetadataPackageType.Container => "container",
+                PackageVersionMetadataPackageType.Docker => "docker",
+                PackageVersionMetadataPackageType.Maven => "maven",
+                PackageVersionMetadataPackageType.Npm => "npm",
+                PackageVersionMetadataPackageType.Nuget => "nuget",
+                PackageVersionMetadataPackageType.Rubygems => "rubygems",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,12 +63,12 @@ namespace G
         {
             return value switch
             {
-                "npm" => PackageVersionMetadataPackageType.Npm,
-                "maven" => PackageVersionMetadataPackageType.Maven,
-                "rubygems" => PackageVersionMetadataPackageType.Rubygems,
-                "docker" => PackageVersionMetadataPackageType.Docker,
-                "nuget" => PackageVersionMetadataPackageType.Nuget,
                 "container" => PackageVersionMetadataPackageType.Container,
+                "docker" => PackageVersionMetadataPackageType.Docker,
+                "maven" => PackageVersionMetadataPackageType.Maven,
+                "npm" => PackageVersionMetadataPackageType.Npm,
+                "nuget" => PackageVersionMetadataPackageType.Nuget,
+                "rubygems" => PackageVersionMetadataPackageType.Rubygems,
                 _ => null,
             };
         }

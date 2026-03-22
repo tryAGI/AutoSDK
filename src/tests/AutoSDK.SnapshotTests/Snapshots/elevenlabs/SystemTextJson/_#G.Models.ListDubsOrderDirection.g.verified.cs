@@ -13,11 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Descending,
+        Ascending,
         /// <summary>
         /// 
         /// </summary>
-        Ascending,
+        Descending,
     }
 
     /// <summary>
@@ -32,8 +32,8 @@ namespace G
         {
             return value switch
             {
-                ListDubsOrderDirection.Descending => "DESCENDING",
                 ListDubsOrderDirection.Ascending => "ASCENDING",
+                ListDubsOrderDirection.Descending => "DESCENDING",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,8 +44,8 @@ namespace G
         {
             return value switch
             {
-                "DESCENDING" => ListDubsOrderDirection.Descending,
                 "ASCENDING" => ListDubsOrderDirection.Ascending,
+                "DESCENDING" => ListDubsOrderDirection.Descending,
                 _ => null,
             };
         }

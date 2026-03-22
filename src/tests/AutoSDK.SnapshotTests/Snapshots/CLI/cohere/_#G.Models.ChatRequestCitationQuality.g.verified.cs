@@ -14,11 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Fast,
+        Accurate,
         /// <summary>
         /// 
         /// </summary>
-        Accurate,
+        Fast,
         /// <summary>
         /// 
         /// </summary>
@@ -37,8 +37,8 @@ namespace G
         {
             return value switch
             {
-                ChatRequestCitationQuality.Fast => "fast",
                 ChatRequestCitationQuality.Accurate => "accurate",
+                ChatRequestCitationQuality.Fast => "fast",
                 ChatRequestCitationQuality.Off => "off",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -50,8 +50,8 @@ namespace G
         {
             return value switch
             {
-                "fast" => ChatRequestCitationQuality.Fast,
                 "accurate" => ChatRequestCitationQuality.Accurate,
+                "fast" => ChatRequestCitationQuality.Fast,
                 "off" => ChatRequestCitationQuality.Off,
                 _ => null,
             };

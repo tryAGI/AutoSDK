@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pcm16")]
-        Pcm16,
+        [global::System.Runtime.Serialization.EnumMember(Value="g711_alaw")]
+        G711Alaw,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="g711_alaw")]
-        G711Alaw,
+        [global::System.Runtime.Serialization.EnumMember(Value="pcm16")]
+        Pcm16,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                AudioFormat.Pcm16 => "pcm16",
-                AudioFormat.G711Ulaw => "g711_ulaw",
                 AudioFormat.G711Alaw => "g711_alaw",
+                AudioFormat.G711Ulaw => "g711_ulaw",
+                AudioFormat.Pcm16 => "pcm16",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "pcm16" => AudioFormat.Pcm16,
-                "g711_ulaw" => AudioFormat.G711Ulaw,
                 "g711_alaw" => AudioFormat.G711Alaw,
+                "g711_ulaw" => AudioFormat.G711Ulaw,
+                "pcm16" => AudioFormat.Pcm16,
                 _ => null,
             };
         }

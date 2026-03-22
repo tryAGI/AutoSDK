@@ -29,27 +29,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Enabled,
-        /// <summary>
-        /// 
-        /// </summary>
-        WebhookCallbackVerificationPending,
-        /// <summary>
-        /// 
-        /// </summary>
-        WebhookCallbackVerificationFailed,
-        /// <summary>
-        /// 
-        /// </summary>
-        NotificationFailuresExceeded,
-        /// <summary>
-        /// 
-        /// </summary>
         AuthorizationRevoked,
         /// <summary>
         /// 
         /// </summary>
+        BetaMaintenance,
+        /// <summary>
+        /// 
+        /// </summary>
+        Enabled,
+        /// <summary>
+        /// 
+        /// </summary>
         ModeratorRemoved,
+        /// <summary>
+        /// 
+        /// </summary>
+        NotificationFailuresExceeded,
         /// <summary>
         /// 
         /// </summary>
@@ -61,7 +57,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        BetaMaintenance,
+        WebhookCallbackVerificationFailed,
+        /// <summary>
+        /// 
+        /// </summary>
+        WebhookCallbackVerificationPending,
+        /// <summary>
+        /// 
+        /// </summary>
+        WebsocketConnectionUnused,
         /// <summary>
         /// 
         /// </summary>
@@ -73,15 +77,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        WebsocketReceivedInboundTraffic,
-        /// <summary>
-        /// 
-        /// </summary>
-        WebsocketConnectionUnused,
-        /// <summary>
-        /// 
-        /// </summary>
         WebsocketInternalError,
+        /// <summary>
+        /// 
+        /// </summary>
+        WebsocketNetworkError,
         /// <summary>
         /// 
         /// </summary>
@@ -89,7 +89,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        WebsocketNetworkError,
+        WebsocketReceivedInboundTraffic,
     }
 
     /// <summary>
@@ -104,22 +104,22 @@ namespace G
         {
             return value switch
             {
-                EventSubSubscriptionStatus.Enabled => "enabled",
-                EventSubSubscriptionStatus.WebhookCallbackVerificationPending => "webhook_callback_verification_pending",
-                EventSubSubscriptionStatus.WebhookCallbackVerificationFailed => "webhook_callback_verification_failed",
-                EventSubSubscriptionStatus.NotificationFailuresExceeded => "notification_failures_exceeded",
                 EventSubSubscriptionStatus.AuthorizationRevoked => "authorization_revoked",
+                EventSubSubscriptionStatus.BetaMaintenance => "beta_maintenance",
+                EventSubSubscriptionStatus.Enabled => "enabled",
                 EventSubSubscriptionStatus.ModeratorRemoved => "moderator_removed",
+                EventSubSubscriptionStatus.NotificationFailuresExceeded => "notification_failures_exceeded",
                 EventSubSubscriptionStatus.UserRemoved => "user_removed",
                 EventSubSubscriptionStatus.VersionRemoved => "version_removed",
-                EventSubSubscriptionStatus.BetaMaintenance => "beta_maintenance",
+                EventSubSubscriptionStatus.WebhookCallbackVerificationFailed => "webhook_callback_verification_failed",
+                EventSubSubscriptionStatus.WebhookCallbackVerificationPending => "webhook_callback_verification_pending",
+                EventSubSubscriptionStatus.WebsocketConnectionUnused => "websocket_connection_unused",
                 EventSubSubscriptionStatus.WebsocketDisconnected => "websocket_disconnected",
                 EventSubSubscriptionStatus.WebsocketFailedPingPong => "websocket_failed_ping_pong",
-                EventSubSubscriptionStatus.WebsocketReceivedInboundTraffic => "websocket_received_inbound_traffic",
-                EventSubSubscriptionStatus.WebsocketConnectionUnused => "websocket_connection_unused",
                 EventSubSubscriptionStatus.WebsocketInternalError => "websocket_internal_error",
-                EventSubSubscriptionStatus.WebsocketNetworkTimeout => "websocket_network_timeout",
                 EventSubSubscriptionStatus.WebsocketNetworkError => "websocket_network_error",
+                EventSubSubscriptionStatus.WebsocketNetworkTimeout => "websocket_network_timeout",
+                EventSubSubscriptionStatus.WebsocketReceivedInboundTraffic => "websocket_received_inbound_traffic",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -130,22 +130,22 @@ namespace G
         {
             return value switch
             {
-                "enabled" => EventSubSubscriptionStatus.Enabled,
-                "webhook_callback_verification_pending" => EventSubSubscriptionStatus.WebhookCallbackVerificationPending,
-                "webhook_callback_verification_failed" => EventSubSubscriptionStatus.WebhookCallbackVerificationFailed,
-                "notification_failures_exceeded" => EventSubSubscriptionStatus.NotificationFailuresExceeded,
                 "authorization_revoked" => EventSubSubscriptionStatus.AuthorizationRevoked,
+                "beta_maintenance" => EventSubSubscriptionStatus.BetaMaintenance,
+                "enabled" => EventSubSubscriptionStatus.Enabled,
                 "moderator_removed" => EventSubSubscriptionStatus.ModeratorRemoved,
+                "notification_failures_exceeded" => EventSubSubscriptionStatus.NotificationFailuresExceeded,
                 "user_removed" => EventSubSubscriptionStatus.UserRemoved,
                 "version_removed" => EventSubSubscriptionStatus.VersionRemoved,
-                "beta_maintenance" => EventSubSubscriptionStatus.BetaMaintenance,
+                "webhook_callback_verification_failed" => EventSubSubscriptionStatus.WebhookCallbackVerificationFailed,
+                "webhook_callback_verification_pending" => EventSubSubscriptionStatus.WebhookCallbackVerificationPending,
+                "websocket_connection_unused" => EventSubSubscriptionStatus.WebsocketConnectionUnused,
                 "websocket_disconnected" => EventSubSubscriptionStatus.WebsocketDisconnected,
                 "websocket_failed_ping_pong" => EventSubSubscriptionStatus.WebsocketFailedPingPong,
-                "websocket_received_inbound_traffic" => EventSubSubscriptionStatus.WebsocketReceivedInboundTraffic,
-                "websocket_connection_unused" => EventSubSubscriptionStatus.WebsocketConnectionUnused,
                 "websocket_internal_error" => EventSubSubscriptionStatus.WebsocketInternalError,
-                "websocket_network_timeout" => EventSubSubscriptionStatus.WebsocketNetworkTimeout,
                 "websocket_network_error" => EventSubSubscriptionStatus.WebsocketNetworkError,
+                "websocket_network_timeout" => EventSubSubscriptionStatus.WebsocketNetworkTimeout,
+                "websocket_received_inbound_traffic" => EventSubSubscriptionStatus.WebsocketReceivedInboundTraffic,
                 _ => null,
             };
         }

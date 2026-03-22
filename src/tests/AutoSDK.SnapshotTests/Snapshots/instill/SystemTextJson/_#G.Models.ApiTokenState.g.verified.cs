@@ -13,10 +13,6 @@ namespace G
     public enum ApiTokenState
     {
         /// <summary>
-        /// Inactive.
-        /// </summary>
-        StateInactive,
-        /// <summary>
         /// Active.
         /// </summary>
         StateActive,
@@ -24,6 +20,10 @@ namespace G
         /// Expired.
         /// </summary>
         StateExpired,
+        /// <summary>
+        /// Inactive.
+        /// </summary>
+        StateInactive,
     }
 
     /// <summary>
@@ -38,9 +38,9 @@ namespace G
         {
             return value switch
             {
-                ApiTokenState.StateInactive => "STATE_INACTIVE",
                 ApiTokenState.StateActive => "STATE_ACTIVE",
                 ApiTokenState.StateExpired => "STATE_EXPIRED",
+                ApiTokenState.StateInactive => "STATE_INACTIVE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,9 +51,9 @@ namespace G
         {
             return value switch
             {
-                "STATE_INACTIVE" => ApiTokenState.StateInactive,
                 "STATE_ACTIVE" => ApiTokenState.StateActive,
                 "STATE_EXPIRED" => ApiTokenState.StateExpired,
+                "STATE_INACTIVE" => ApiTokenState.StateInactive,
                 _ => null,
             };
         }

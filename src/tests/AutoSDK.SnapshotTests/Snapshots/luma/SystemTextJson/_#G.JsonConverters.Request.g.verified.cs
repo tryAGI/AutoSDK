@@ -28,22 +28,22 @@ namespace G.JsonConverters
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("generation_type")) __score0++;
-            if (__jsonProps.Contains("prompt")) __score0++;
             if (__jsonProps.Contains("aspect_ratio")) __score0++;
-            if (__jsonProps.Contains("loop")) __score0++;
-            if (__jsonProps.Contains("keyframes")) __score0++;
             if (__jsonProps.Contains("callback_url")) __score0++;
+            if (__jsonProps.Contains("generation_type")) __score0++;
+            if (__jsonProps.Contains("keyframes")) __score0++;
+            if (__jsonProps.Contains("loop")) __score0++;
+            if (__jsonProps.Contains("prompt")) __score0++;
             var __score1 = 0;
-            if (__jsonProps.Contains("generation_type")) __score1++;
-            if (__jsonProps.Contains("model")) __score1++;
-            if (__jsonProps.Contains("prompt")) __score1++;
             if (__jsonProps.Contains("aspect_ratio")) __score1++;
             if (__jsonProps.Contains("callback_url")) __score1++;
-            if (__jsonProps.Contains("image_ref")) __score1++;
-            if (__jsonProps.Contains("style_ref")) __score1++;
             if (__jsonProps.Contains("character_ref")) __score1++;
+            if (__jsonProps.Contains("generation_type")) __score1++;
+            if (__jsonProps.Contains("image_ref")) __score1++;
+            if (__jsonProps.Contains("model")) __score1++;
             if (__jsonProps.Contains("modify_image_ref")) __score1++;
+            if (__jsonProps.Contains("prompt")) __score1++;
+            if (__jsonProps.Contains("style_ref")) __score1++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }

@@ -18,13 +18,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="evaluate")]
-        Evaluate,
+        [global::System.Runtime.Serialization.EnumMember(Value="deleted ruleset")]
+        DeletedRuleset,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="deleted ruleset")]
-        DeletedRuleset,
+        [global::System.Runtime.Serialization.EnumMember(Value="evaluate")]
+        Evaluate,
     }
 
     /// <summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 RuleSuiteRuleEvaluationEnforcement.Active => "active",
-                RuleSuiteRuleEvaluationEnforcement.Evaluate => "evaluate",
                 RuleSuiteRuleEvaluationEnforcement.DeletedRuleset => "deleted ruleset",
+                RuleSuiteRuleEvaluationEnforcement.Evaluate => "evaluate",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,8 +53,8 @@ namespace G
             return value switch
             {
                 "active" => RuleSuiteRuleEvaluationEnforcement.Active,
-                "evaluate" => RuleSuiteRuleEvaluationEnforcement.Evaluate,
                 "deleted ruleset" => RuleSuiteRuleEvaluationEnforcement.DeletedRuleset,
+                "evaluate" => RuleSuiteRuleEvaluationEnforcement.Evaluate,
                 _ => null,
             };
         }

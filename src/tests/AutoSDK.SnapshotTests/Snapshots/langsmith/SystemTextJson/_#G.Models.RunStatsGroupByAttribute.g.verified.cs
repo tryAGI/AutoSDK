@@ -12,6 +12,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Metadata,
+        /// <summary>
+        /// 
+        /// </summary>
         Name,
         /// <summary>
         /// 
@@ -21,10 +25,6 @@ namespace G
         /// 
         /// </summary>
         Tag,
-        /// <summary>
-        /// 
-        /// </summary>
-        Metadata,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
+                RunStatsGroupByAttribute.Metadata => "metadata",
                 RunStatsGroupByAttribute.Name => "name",
                 RunStatsGroupByAttribute.RunType => "run_type",
                 RunStatsGroupByAttribute.Tag => "tag",
-                RunStatsGroupByAttribute.Metadata => "metadata",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
+                "metadata" => RunStatsGroupByAttribute.Metadata,
                 "name" => RunStatsGroupByAttribute.Name,
                 "run_type" => RunStatsGroupByAttribute.RunType,
                 "tag" => RunStatsGroupByAttribute.Tag,
-                "metadata" => RunStatsGroupByAttribute.Metadata,
                 _ => null,
             };
         }

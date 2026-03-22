@@ -18,11 +18,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="udp")]
-        Udp,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="tcp")]
         Tcp,
         /// <summary>
@@ -30,6 +25,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="tls")]
         Tls,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="udp")]
+        Udp,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 SIPTrunkTransportEnum.Auto => "auto",
-                SIPTrunkTransportEnum.Udp => "udp",
                 SIPTrunkTransportEnum.Tcp => "tcp",
                 SIPTrunkTransportEnum.Tls => "tls",
+                SIPTrunkTransportEnum.Udp => "udp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "auto" => SIPTrunkTransportEnum.Auto,
-                "udp" => SIPTrunkTransportEnum.Udp,
                 "tcp" => SIPTrunkTransportEnum.Tcp,
                 "tls" => SIPTrunkTransportEnum.Tls,
+                "udp" => SIPTrunkTransportEnum.Udp,
                 _ => null,
             };
         }

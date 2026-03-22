@@ -23,13 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="laugh")]
-        Laugh,
+        [global::System.Runtime.Serialization.EnumMember(Value="confused")]
+        Confused,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="confused")]
-        Confused,
+        [global::System.Runtime.Serialization.EnumMember(Value="eyes")]
+        Eyes,
         /// <summary>
         /// 
         /// </summary>
@@ -43,13 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="rocket")]
-        Rocket,
+        [global::System.Runtime.Serialization.EnumMember(Value="laugh")]
+        Laugh,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="eyes")]
-        Eyes,
+        [global::System.Runtime.Serialization.EnumMember(Value="rocket")]
+        Rocket,
     }
 
     /// <summary>
@@ -66,12 +66,12 @@ namespace G
             {
                 ReactionsListForTeamDiscussionCommentInOrgContent.Plus1 => "+1",
                 ReactionsListForTeamDiscussionCommentInOrgContent.Minus1 => "-1",
-                ReactionsListForTeamDiscussionCommentInOrgContent.Laugh => "laugh",
                 ReactionsListForTeamDiscussionCommentInOrgContent.Confused => "confused",
+                ReactionsListForTeamDiscussionCommentInOrgContent.Eyes => "eyes",
                 ReactionsListForTeamDiscussionCommentInOrgContent.Heart => "heart",
                 ReactionsListForTeamDiscussionCommentInOrgContent.Hooray => "hooray",
+                ReactionsListForTeamDiscussionCommentInOrgContent.Laugh => "laugh",
                 ReactionsListForTeamDiscussionCommentInOrgContent.Rocket => "rocket",
-                ReactionsListForTeamDiscussionCommentInOrgContent.Eyes => "eyes",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -84,12 +84,12 @@ namespace G
             {
                 "+1" => ReactionsListForTeamDiscussionCommentInOrgContent.Plus1,
                 "-1" => ReactionsListForTeamDiscussionCommentInOrgContent.Minus1,
-                "laugh" => ReactionsListForTeamDiscussionCommentInOrgContent.Laugh,
                 "confused" => ReactionsListForTeamDiscussionCommentInOrgContent.Confused,
+                "eyes" => ReactionsListForTeamDiscussionCommentInOrgContent.Eyes,
                 "heart" => ReactionsListForTeamDiscussionCommentInOrgContent.Heart,
                 "hooray" => ReactionsListForTeamDiscussionCommentInOrgContent.Hooray,
+                "laugh" => ReactionsListForTeamDiscussionCommentInOrgContent.Laugh,
                 "rocket" => ReactionsListForTeamDiscussionCommentInOrgContent.Rocket,
-                "eyes" => ReactionsListForTeamDiscussionCommentInOrgContent.Eyes,
                 _ => null,
             };
         }

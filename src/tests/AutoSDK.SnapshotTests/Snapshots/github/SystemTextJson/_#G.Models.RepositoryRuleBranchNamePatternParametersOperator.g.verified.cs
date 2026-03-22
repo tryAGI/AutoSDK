@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        StartsWith,
+        Contains,
         /// <summary>
         /// 
         /// </summary>
@@ -20,11 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Contains,
+        Regex,
         /// <summary>
         /// 
         /// </summary>
-        Regex,
+        StartsWith,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                RepositoryRuleBranchNamePatternParametersOperator.StartsWith => "starts_with",
-                RepositoryRuleBranchNamePatternParametersOperator.EndsWith => "ends_with",
                 RepositoryRuleBranchNamePatternParametersOperator.Contains => "contains",
+                RepositoryRuleBranchNamePatternParametersOperator.EndsWith => "ends_with",
                 RepositoryRuleBranchNamePatternParametersOperator.Regex => "regex",
+                RepositoryRuleBranchNamePatternParametersOperator.StartsWith => "starts_with",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "starts_with" => RepositoryRuleBranchNamePatternParametersOperator.StartsWith,
-                "ends_with" => RepositoryRuleBranchNamePatternParametersOperator.EndsWith,
                 "contains" => RepositoryRuleBranchNamePatternParametersOperator.Contains,
+                "ends_with" => RepositoryRuleBranchNamePatternParametersOperator.EndsWith,
                 "regex" => RepositoryRuleBranchNamePatternParametersOperator.Regex,
+                "starts_with" => RepositoryRuleBranchNamePatternParametersOperator.StartsWith,
                 _ => null,
             };
         }

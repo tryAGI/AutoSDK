@@ -23,6 +23,16 @@ namespace G
     public enum Includable
     {
         /// <summary>
+        /// Includes the outputs of python code execution
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="code_interpreter_call.outputs")]
+        CodeInterpreterCallOutputs,
+        /// <summary>
+        /// Include image urls from the computer call output.
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="computer_call_output.output.image_url")]
+        ComputerCallOutputOutputImageUrl,
+        /// <summary>
         /// Include the search results of
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="file_search_call.results")]
@@ -33,20 +43,10 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="message.input_image.image_url")]
         MessageInputImageImageUrl,
         /// <summary>
-        /// Include image urls from the computer call output.
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="computer_call_output.output.image_url")]
-        ComputerCallOutputOutputImageUrl,
-        /// <summary>
         /// Includes an encrypted version of reasoning
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="reasoning.encrypted_content")]
         ReasoningEncryptedContent,
-        /// <summary>
-        /// Includes the outputs of python code execution
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="code_interpreter_call.outputs")]
-        CodeInterpreterCallOutputs,
     }
 
     /// <summary>
@@ -61,11 +61,11 @@ namespace G
         {
             return value switch
             {
+                Includable.CodeInterpreterCallOutputs => "code_interpreter_call.outputs",
+                Includable.ComputerCallOutputOutputImageUrl => "computer_call_output.output.image_url",
                 Includable.FileSearchCallResults => "file_search_call.results",
                 Includable.MessageInputImageImageUrl => "message.input_image.image_url",
-                Includable.ComputerCallOutputOutputImageUrl => "computer_call_output.output.image_url",
                 Includable.ReasoningEncryptedContent => "reasoning.encrypted_content",
-                Includable.CodeInterpreterCallOutputs => "code_interpreter_call.outputs",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -76,11 +76,11 @@ namespace G
         {
             return value switch
             {
+                "code_interpreter_call.outputs" => Includable.CodeInterpreterCallOutputs,
+                "computer_call_output.output.image_url" => Includable.ComputerCallOutputOutputImageUrl,
                 "file_search_call.results" => Includable.FileSearchCallResults,
                 "message.input_image.image_url" => Includable.MessageInputImageImageUrl,
-                "computer_call_output.output.image_url" => Includable.ComputerCallOutputOutputImageUrl,
                 "reasoning.encrypted_content" => Includable.ReasoningEncryptedContent,
-                "code_interpreter_call.outputs" => Includable.CodeInterpreterCallOutputs,
                 _ => null,
             };
         }

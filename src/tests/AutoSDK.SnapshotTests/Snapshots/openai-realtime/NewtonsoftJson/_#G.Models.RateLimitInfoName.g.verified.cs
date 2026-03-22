@@ -13,16 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="requests")]
-        Requests,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="tokens")]
-        Tokens,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="input_tokens")]
         InputTokens,
         /// <summary>
@@ -30,6 +20,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="output_tokens")]
         OutputTokens,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="requests")]
+        Requests,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="tokens")]
+        Tokens,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                RateLimitInfoName.Requests => "requests",
-                RateLimitInfoName.Tokens => "tokens",
                 RateLimitInfoName.InputTokens => "input_tokens",
                 RateLimitInfoName.OutputTokens => "output_tokens",
+                RateLimitInfoName.Requests => "requests",
+                RateLimitInfoName.Tokens => "tokens",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "requests" => RateLimitInfoName.Requests,
-                "tokens" => RateLimitInfoName.Tokens,
                 "input_tokens" => RateLimitInfoName.InputTokens,
                 "output_tokens" => RateLimitInfoName.OutputTokens,
+                "requests" => RateLimitInfoName.Requests,
+                "tokens" => RateLimitInfoName.Tokens,
                 _ => null,
             };
         }

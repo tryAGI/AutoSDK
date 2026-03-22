@@ -12,19 +12,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        InProgress,
-        /// <summary>
-        /// 
-        /// </summary>
-        Searching,
-        /// <summary>
-        /// 
-        /// </summary>
         Completed,
         /// <summary>
         /// 
         /// </summary>
         Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        InProgress,
+        /// <summary>
+        /// 
+        /// </summary>
+        Searching,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                WebSearchToolCallStatus.InProgress => "in_progress",
-                WebSearchToolCallStatus.Searching => "searching",
                 WebSearchToolCallStatus.Completed => "completed",
                 WebSearchToolCallStatus.Failed => "failed",
+                WebSearchToolCallStatus.InProgress => "in_progress",
+                WebSearchToolCallStatus.Searching => "searching",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "in_progress" => WebSearchToolCallStatus.InProgress,
-                "searching" => WebSearchToolCallStatus.Searching,
                 "completed" => WebSearchToolCallStatus.Completed,
                 "failed" => WebSearchToolCallStatus.Failed,
+                "in_progress" => WebSearchToolCallStatus.InProgress,
+                "searching" => WebSearchToolCallStatus.Searching,
                 _ => null,
             };
         }

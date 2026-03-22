@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Queued,
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -21,11 +21,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        Pending,
         /// <summary>
         /// 
         /// </summary>
-        Pending,
+        Queued,
     }
 
     /// <summary>
@@ -40,10 +40,10 @@ namespace G
         {
             return value switch
             {
-                CheckRunWithSimpleCheckSuiteStatus.Queued => "queued",
-                CheckRunWithSimpleCheckSuiteStatus.InProgress => "in_progress",
                 CheckRunWithSimpleCheckSuiteStatus.Completed => "completed",
+                CheckRunWithSimpleCheckSuiteStatus.InProgress => "in_progress",
                 CheckRunWithSimpleCheckSuiteStatus.Pending => "pending",
+                CheckRunWithSimpleCheckSuiteStatus.Queued => "queued",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,10 +54,10 @@ namespace G
         {
             return value switch
             {
-                "queued" => CheckRunWithSimpleCheckSuiteStatus.Queued,
-                "in_progress" => CheckRunWithSimpleCheckSuiteStatus.InProgress,
                 "completed" => CheckRunWithSimpleCheckSuiteStatus.Completed,
+                "in_progress" => CheckRunWithSimpleCheckSuiteStatus.InProgress,
                 "pending" => CheckRunWithSimpleCheckSuiteStatus.Pending,
+                "queued" => CheckRunWithSimpleCheckSuiteStatus.Queued,
                 _ => null,
             };
         }

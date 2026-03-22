@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Updated,
+        Published,
         /// <summary>
         /// 
         /// </summary>
-        Published,
+        Updated,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 SecurityAdvisoriesListOrgRepositoryAdvisoriesSort.Created => "created",
-                SecurityAdvisoriesListOrgRepositoryAdvisoriesSort.Updated => "updated",
                 SecurityAdvisoriesListOrgRepositoryAdvisoriesSort.Published => "published",
+                SecurityAdvisoriesListOrgRepositoryAdvisoriesSort.Updated => "updated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "created" => SecurityAdvisoriesListOrgRepositoryAdvisoriesSort.Created,
-                "updated" => SecurityAdvisoriesListOrgRepositoryAdvisoriesSort.Updated,
                 "published" => SecurityAdvisoriesListOrgRepositoryAdvisoriesSort.Published,
+                "updated" => SecurityAdvisoriesListOrgRepositoryAdvisoriesSort.Updated,
                 _ => null,
             };
         }

@@ -19,8 +19,6 @@ namespace G
         {
             // Register individual command services as singletons
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                GatewayHealthGetCommand>(services);
-            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 BulkEmbeddingsDownloadResultV1BulkEmbeddingsJobIdDownloadResultPostCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 BulkEmbeddingsRetrieveJobV1BulkEmbeddingsJobIdGetCommand>(services);
@@ -32,6 +30,8 @@ namespace G
                 ClassificationTrainV1TrainPostCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 EmbeddingsCreateEmbeddingV1EmbeddingsPostCommand>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
+                GatewayHealthGetCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 MultiVectorCreateMultiVectorV1MultiEmbeddingsPostCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<

@@ -13,13 +13,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="cloned")]
+        Cloned,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="famous")]
+        Famous,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="generated")]
         Generated,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cloned")]
-        Cloned,
+        [global::System.Runtime.Serialization.EnumMember(Value="high_quality")]
+        HighQuality,
         /// <summary>
         /// 
         /// </summary>
@@ -30,16 +40,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="professional")]
         Professional,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="famous")]
-        Famous,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="high_quality")]
-        HighQuality,
     }
 
     /// <summary>
@@ -54,12 +54,12 @@ namespace G
         {
             return value switch
             {
-                LibraryVoiceResponseModelCategory.Generated => "generated",
                 LibraryVoiceResponseModelCategory.Cloned => "cloned",
+                LibraryVoiceResponseModelCategory.Famous => "famous",
+                LibraryVoiceResponseModelCategory.Generated => "generated",
+                LibraryVoiceResponseModelCategory.HighQuality => "high_quality",
                 LibraryVoiceResponseModelCategory.Premade => "premade",
                 LibraryVoiceResponseModelCategory.Professional => "professional",
-                LibraryVoiceResponseModelCategory.Famous => "famous",
-                LibraryVoiceResponseModelCategory.HighQuality => "high_quality",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,12 +70,12 @@ namespace G
         {
             return value switch
             {
-                "generated" => LibraryVoiceResponseModelCategory.Generated,
                 "cloned" => LibraryVoiceResponseModelCategory.Cloned,
+                "famous" => LibraryVoiceResponseModelCategory.Famous,
+                "generated" => LibraryVoiceResponseModelCategory.Generated,
+                "high_quality" => LibraryVoiceResponseModelCategory.HighQuality,
                 "premade" => LibraryVoiceResponseModelCategory.Premade,
                 "professional" => LibraryVoiceResponseModelCategory.Professional,
-                "famous" => LibraryVoiceResponseModelCategory.Famous,
-                "high_quality" => LibraryVoiceResponseModelCategory.HighQuality,
                 _ => null,
             };
         }

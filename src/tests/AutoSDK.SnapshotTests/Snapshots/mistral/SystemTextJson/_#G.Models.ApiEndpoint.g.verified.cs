@@ -16,6 +16,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        V1ChatModerations,
+        /// <summary>
+        /// 
+        /// </summary>
         V1Embeddings,
         /// <summary>
         /// 
@@ -25,10 +29,6 @@ namespace G
         /// 
         /// </summary>
         V1Moderations,
-        /// <summary>
-        /// 
-        /// </summary>
-        V1ChatModerations,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
             return value switch
             {
                 ApiEndpoint.V1ChatCompletions => "/v1/chat/completions",
+                ApiEndpoint.V1ChatModerations => "/v1/chat/moderations",
                 ApiEndpoint.V1Embeddings => "/v1/embeddings",
                 ApiEndpoint.V1FimCompletions => "/v1/fim/completions",
                 ApiEndpoint.V1Moderations => "/v1/moderations",
-                ApiEndpoint.V1ChatModerations => "/v1/chat/moderations",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,10 +59,10 @@ namespace G
             return value switch
             {
                 "/v1/chat/completions" => ApiEndpoint.V1ChatCompletions,
+                "/v1/chat/moderations" => ApiEndpoint.V1ChatModerations,
                 "/v1/embeddings" => ApiEndpoint.V1Embeddings,
                 "/v1/fim/completions" => ApiEndpoint.V1FimCompletions,
                 "/v1/moderations" => ApiEndpoint.V1Moderations,
-                "/v1/chat/moderations" => ApiEndpoint.V1ChatModerations,
                 _ => null,
             };
         }

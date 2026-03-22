@@ -20,11 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        FileSearch,
-        /// <summary>
-        /// 
-        /// </summary>
-        WebSearchPreview,
+        CodeInterpreter,
         /// <summary>
         /// 
         /// </summary>
@@ -32,7 +28,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        WebSearchPreview20250311,
+        FileSearch,
         /// <summary>
         /// 
         /// </summary>
@@ -40,11 +36,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        CodeInterpreter,
+        Mcp,
         /// <summary>
         /// 
         /// </summary>
-        Mcp,
+        WebSearchPreview,
+        /// <summary>
+        /// 
+        /// </summary>
+        WebSearchPreview20250311,
     }
 
     /// <summary>
@@ -59,13 +59,13 @@ namespace G
         {
             return value switch
             {
-                ToolChoiceTypesType.FileSearch => "file_search",
-                ToolChoiceTypesType.WebSearchPreview => "web_search_preview",
-                ToolChoiceTypesType.ComputerUsePreview => "computer_use_preview",
-                ToolChoiceTypesType.WebSearchPreview20250311 => "web_search_preview_2025_03_11",
-                ToolChoiceTypesType.ImageGeneration => "image_generation",
                 ToolChoiceTypesType.CodeInterpreter => "code_interpreter",
+                ToolChoiceTypesType.ComputerUsePreview => "computer_use_preview",
+                ToolChoiceTypesType.FileSearch => "file_search",
+                ToolChoiceTypesType.ImageGeneration => "image_generation",
                 ToolChoiceTypesType.Mcp => "mcp",
+                ToolChoiceTypesType.WebSearchPreview => "web_search_preview",
+                ToolChoiceTypesType.WebSearchPreview20250311 => "web_search_preview_2025_03_11",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -76,13 +76,13 @@ namespace G
         {
             return value switch
             {
-                "file_search" => ToolChoiceTypesType.FileSearch,
-                "web_search_preview" => ToolChoiceTypesType.WebSearchPreview,
-                "computer_use_preview" => ToolChoiceTypesType.ComputerUsePreview,
-                "web_search_preview_2025_03_11" => ToolChoiceTypesType.WebSearchPreview20250311,
-                "image_generation" => ToolChoiceTypesType.ImageGeneration,
                 "code_interpreter" => ToolChoiceTypesType.CodeInterpreter,
+                "computer_use_preview" => ToolChoiceTypesType.ComputerUsePreview,
+                "file_search" => ToolChoiceTypesType.FileSearch,
+                "image_generation" => ToolChoiceTypesType.ImageGeneration,
                 "mcp" => ToolChoiceTypesType.Mcp,
+                "web_search_preview" => ToolChoiceTypesType.WebSearchPreview,
+                "web_search_preview_2025_03_11" => ToolChoiceTypesType.WebSearchPreview20250311,
                 _ => null,
             };
         }

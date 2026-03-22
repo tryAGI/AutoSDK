@@ -28,24 +28,24 @@ namespace G.JsonConverters
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("promptText")) __score0++;
-            if (__jsonProps.Contains("seed")) __score0++;
-            if (__jsonProps.Contains("ratio")) __score0++;
-            if (__jsonProps.Contains("referenceImages")) __score0++;
             if (__jsonProps.Contains("contentModeration")) __score0++;
             if (__jsonProps.Contains("model")) __score0++;
+            if (__jsonProps.Contains("promptText")) __score0++;
+            if (__jsonProps.Contains("ratio")) __score0++;
+            if (__jsonProps.Contains("referenceImages")) __score0++;
+            if (__jsonProps.Contains("seed")) __score0++;
             var __score1 = 0;
-            if (__jsonProps.Contains("promptText")) __score1++;
-            if (__jsonProps.Contains("seed")) __score1++;
-            if (__jsonProps.Contains("ratio")) __score1++;
-            if (__jsonProps.Contains("referenceImages")) __score1++;
             if (__jsonProps.Contains("contentModeration")) __score1++;
             if (__jsonProps.Contains("model")) __score1++;
+            if (__jsonProps.Contains("promptText")) __score1++;
+            if (__jsonProps.Contains("ratio")) __score1++;
+            if (__jsonProps.Contains("referenceImages")) __score1++;
+            if (__jsonProps.Contains("seed")) __score1++;
             var __score2 = 0;
+            if (__jsonProps.Contains("model")) __score2++;
             if (__jsonProps.Contains("promptText")) __score2++;
             if (__jsonProps.Contains("ratio")) __score2++;
             if (__jsonProps.Contains("referenceImages")) __score2++;
-            if (__jsonProps.Contains("model")) __score2++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }

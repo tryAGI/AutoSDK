@@ -16,6 +16,14 @@ namespace G
         /// <summary>
         /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
+        Created,
+        /// <summary>
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
+        /// </summary>
+        Interactions,
+        /// <summary>
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
+        /// </summary>
         Reactions,
         /// <summary>
         /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
@@ -28,15 +36,11 @@ namespace G
         /// <summary>
         /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
-        ReactionsSmile,
-        /// <summary>
-        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
-        /// </summary>
-        ReactionsThinkingFace,
-        /// <summary>
-        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
-        /// </summary>
         ReactionsHeart,
+        /// <summary>
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
+        /// </summary>
+        ReactionsSmile,
         /// <summary>
         /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
@@ -44,11 +48,7 @@ namespace G
         /// <summary>
         /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
-        Interactions,
-        /// <summary>
-        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
-        /// </summary>
-        Created,
+        ReactionsThinkingFace,
         /// <summary>
         /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
@@ -68,15 +68,15 @@ namespace G
             return value switch
             {
                 SearchIssuesAndPullRequestsSort.Comments => "comments",
+                SearchIssuesAndPullRequestsSort.Created => "created",
+                SearchIssuesAndPullRequestsSort.Interactions => "interactions",
                 SearchIssuesAndPullRequestsSort.Reactions => "reactions",
                 SearchIssuesAndPullRequestsSort.ReactionsPlus1 => "reactions-+1",
                 SearchIssuesAndPullRequestsSort.Reactions1 => "reactions--1",
-                SearchIssuesAndPullRequestsSort.ReactionsSmile => "reactions-smile",
-                SearchIssuesAndPullRequestsSort.ReactionsThinkingFace => "reactions-thinking_face",
                 SearchIssuesAndPullRequestsSort.ReactionsHeart => "reactions-heart",
+                SearchIssuesAndPullRequestsSort.ReactionsSmile => "reactions-smile",
                 SearchIssuesAndPullRequestsSort.ReactionsTada => "reactions-tada",
-                SearchIssuesAndPullRequestsSort.Interactions => "interactions",
-                SearchIssuesAndPullRequestsSort.Created => "created",
+                SearchIssuesAndPullRequestsSort.ReactionsThinkingFace => "reactions-thinking_face",
                 SearchIssuesAndPullRequestsSort.Updated => "updated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -89,15 +89,15 @@ namespace G
             return value switch
             {
                 "comments" => SearchIssuesAndPullRequestsSort.Comments,
+                "created" => SearchIssuesAndPullRequestsSort.Created,
+                "interactions" => SearchIssuesAndPullRequestsSort.Interactions,
                 "reactions" => SearchIssuesAndPullRequestsSort.Reactions,
                 "reactions-+1" => SearchIssuesAndPullRequestsSort.ReactionsPlus1,
                 "reactions--1" => SearchIssuesAndPullRequestsSort.Reactions1,
-                "reactions-smile" => SearchIssuesAndPullRequestsSort.ReactionsSmile,
-                "reactions-thinking_face" => SearchIssuesAndPullRequestsSort.ReactionsThinkingFace,
                 "reactions-heart" => SearchIssuesAndPullRequestsSort.ReactionsHeart,
+                "reactions-smile" => SearchIssuesAndPullRequestsSort.ReactionsSmile,
                 "reactions-tada" => SearchIssuesAndPullRequestsSort.ReactionsTada,
-                "interactions" => SearchIssuesAndPullRequestsSort.Interactions,
-                "created" => SearchIssuesAndPullRequestsSort.Created,
+                "reactions-thinking_face" => SearchIssuesAndPullRequestsSort.ReactionsThinkingFace,
                 "updated" => SearchIssuesAndPullRequestsSort.Updated,
                 _ => null,
             };

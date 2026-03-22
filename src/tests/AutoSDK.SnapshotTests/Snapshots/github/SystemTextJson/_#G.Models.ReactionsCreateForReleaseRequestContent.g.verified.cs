@@ -16,7 +16,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Laugh,
+        Eyes,
         /// <summary>
         /// 
         /// </summary>
@@ -28,11 +28,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Rocket,
+        Laugh,
         /// <summary>
         /// 
         /// </summary>
-        Eyes,
+        Rocket,
     }
 
     /// <summary>
@@ -48,11 +48,11 @@ namespace G
             return value switch
             {
                 ReactionsCreateForReleaseRequestContent.Plus1 => "+1",
-                ReactionsCreateForReleaseRequestContent.Laugh => "laugh",
+                ReactionsCreateForReleaseRequestContent.Eyes => "eyes",
                 ReactionsCreateForReleaseRequestContent.Heart => "heart",
                 ReactionsCreateForReleaseRequestContent.Hooray => "hooray",
+                ReactionsCreateForReleaseRequestContent.Laugh => "laugh",
                 ReactionsCreateForReleaseRequestContent.Rocket => "rocket",
-                ReactionsCreateForReleaseRequestContent.Eyes => "eyes",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
             return value switch
             {
                 "+1" => ReactionsCreateForReleaseRequestContent.Plus1,
-                "laugh" => ReactionsCreateForReleaseRequestContent.Laugh,
+                "eyes" => ReactionsCreateForReleaseRequestContent.Eyes,
                 "heart" => ReactionsCreateForReleaseRequestContent.Heart,
                 "hooray" => ReactionsCreateForReleaseRequestContent.Hooray,
+                "laugh" => ReactionsCreateForReleaseRequestContent.Laugh,
                 "rocket" => ReactionsCreateForReleaseRequestContent.Rocket,
-                "eyes" => ReactionsCreateForReleaseRequestContent.Eyes,
                 _ => null,
             };
         }

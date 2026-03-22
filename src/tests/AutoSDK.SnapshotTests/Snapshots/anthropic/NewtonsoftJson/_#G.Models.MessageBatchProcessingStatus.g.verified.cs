@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
-        InProgress,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="canceling")]
         Canceling,
         /// <summary>
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ended")]
         Ended,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
+        InProgress,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                MessageBatchProcessingStatus.InProgress => "in_progress",
                 MessageBatchProcessingStatus.Canceling => "canceling",
                 MessageBatchProcessingStatus.Ended => "ended",
+                MessageBatchProcessingStatus.InProgress => "in_progress",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "in_progress" => MessageBatchProcessingStatus.InProgress,
                 "canceling" => MessageBatchProcessingStatus.Canceling,
                 "ended" => MessageBatchProcessingStatus.Ended,
+                "in_progress" => MessageBatchProcessingStatus.InProgress,
                 _ => null,
             };
         }

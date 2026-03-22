@@ -16,15 +16,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        WontFix,
-        /// <summary>
-        /// 
-        /// </summary>
         Revoked,
         /// <summary>
         /// 
         /// </summary>
         UsedInTests,
+        /// <summary>
+        /// 
+        /// </summary>
+        WontFix,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
             return value switch
             {
                 SecretScanningAlertResolution.FalsePositive => "false_positive",
-                SecretScanningAlertResolution.WontFix => "wont_fix",
                 SecretScanningAlertResolution.Revoked => "revoked",
                 SecretScanningAlertResolution.UsedInTests => "used_in_tests",
+                SecretScanningAlertResolution.WontFix => "wont_fix",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace G
             return value switch
             {
                 "false_positive" => SecretScanningAlertResolution.FalsePositive,
-                "wont_fix" => SecretScanningAlertResolution.WontFix,
                 "revoked" => SecretScanningAlertResolution.Revoked,
                 "used_in_tests" => SecretScanningAlertResolution.UsedInTests,
+                "wont_fix" => SecretScanningAlertResolution.WontFix,
                 _ => null,
             };
         }

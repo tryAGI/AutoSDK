@@ -19,15 +19,15 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="exceeded_max_input_length_fcs")]
         ExceededMaxInputLengthFcs,
         /// <summary>
-        /// Intelligent query rewriting failed due to an internal error
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="intelligent_query_rewriting_failed")]
-        IntelligentQueryRewritingFailed,
-        /// <summary>
         /// The summary language is not supported by the Factual Consistency Score model
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="fcs_language_not_supported")]
         FcsLanguageNotSupported,
+        /// <summary>
+        /// Intelligent query rewriting failed due to an internal error
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="intelligent_query_rewriting_failed")]
+        IntelligentQueryRewritingFailed,
     }
 
     /// <summary>
@@ -43,8 +43,8 @@ namespace G
             return value switch
             {
                 QueryWarning.ExceededMaxInputLengthFcs => "exceeded_max_input_length_fcs",
-                QueryWarning.IntelligentQueryRewritingFailed => "intelligent_query_rewriting_failed",
                 QueryWarning.FcsLanguageNotSupported => "fcs_language_not_supported",
+                QueryWarning.IntelligentQueryRewritingFailed => "intelligent_query_rewriting_failed",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,8 +56,8 @@ namespace G
             return value switch
             {
                 "exceeded_max_input_length_fcs" => QueryWarning.ExceededMaxInputLengthFcs,
-                "intelligent_query_rewriting_failed" => QueryWarning.IntelligentQueryRewritingFailed,
                 "fcs_language_not_supported" => QueryWarning.FcsLanguageNotSupported,
+                "intelligent_query_rewriting_failed" => QueryWarning.IntelligentQueryRewritingFailed,
                 _ => null,
             };
         }

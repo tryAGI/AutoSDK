@@ -16,7 +16,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Mannequin,
+        User,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
             return value switch
             {
                 WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerUserType.Bot => "Bot",
-                WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerUserType.User => "User",
-                WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerUserType.Organization => "Organization",
                 WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerUserType.Mannequin => "Mannequin",
+                WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerUserType.Organization => "Organization",
+                WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerUserType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerUserType.Bot,
-                "User" => WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerUserType.User,
-                "Organization" => WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerUserType.Organization,
                 "Mannequin" => WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerUserType.Mannequin,
+                "Organization" => WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerUserType.Organization,
+                "User" => WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerUserType.User,
                 _ => null,
             };
         }

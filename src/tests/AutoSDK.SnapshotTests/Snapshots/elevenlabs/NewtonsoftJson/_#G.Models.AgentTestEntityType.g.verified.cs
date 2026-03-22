@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="test")]
-        Test,
+        [global::System.Runtime.Serialization.EnumMember(Value="folder")]
+        Folder,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="folder")]
-        Folder,
+        [global::System.Runtime.Serialization.EnumMember(Value="test")]
+        Test,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                AgentTestEntityType.Test => "test",
                 AgentTestEntityType.Folder => "folder",
+                AgentTestEntityType.Test => "test",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "test" => AgentTestEntityType.Test,
                 "folder" => AgentTestEntityType.Folder,
+                "test" => AgentTestEntityType.Test,
                 _ => null,
             };
         }

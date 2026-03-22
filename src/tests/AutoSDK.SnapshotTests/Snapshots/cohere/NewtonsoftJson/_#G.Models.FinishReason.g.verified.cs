@@ -18,18 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="STOP_SEQUENCE")]
-        StopSequence,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ERROR")]
         Error,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="ERROR_TOXIC")]
-        ErrorToxic,
         /// <summary>
         /// 
         /// </summary>
@@ -38,13 +28,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="USER_CANCEL")]
-        UserCancel,
+        [global::System.Runtime.Serialization.EnumMember(Value="ERROR_TOXIC")]
+        ErrorToxic,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MAX_TOKENS")]
         MaxTokens,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="STOP_SEQUENCE")]
+        StopSequence,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="USER_CANCEL")]
+        UserCancel,
     }
 
     /// <summary>
@@ -60,12 +60,12 @@ namespace G
             return value switch
             {
                 FinishReason.Complete => "COMPLETE",
-                FinishReason.StopSequence => "STOP_SEQUENCE",
                 FinishReason.Error => "ERROR",
-                FinishReason.ErrorToxic => "ERROR_TOXIC",
                 FinishReason.ErrorLimit => "ERROR_LIMIT",
-                FinishReason.UserCancel => "USER_CANCEL",
+                FinishReason.ErrorToxic => "ERROR_TOXIC",
                 FinishReason.MaxTokens => "MAX_TOKENS",
+                FinishReason.StopSequence => "STOP_SEQUENCE",
+                FinishReason.UserCancel => "USER_CANCEL",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -77,12 +77,12 @@ namespace G
             return value switch
             {
                 "COMPLETE" => FinishReason.Complete,
-                "STOP_SEQUENCE" => FinishReason.StopSequence,
                 "ERROR" => FinishReason.Error,
-                "ERROR_TOXIC" => FinishReason.ErrorToxic,
                 "ERROR_LIMIT" => FinishReason.ErrorLimit,
-                "USER_CANCEL" => FinishReason.UserCancel,
+                "ERROR_TOXIC" => FinishReason.ErrorToxic,
                 "MAX_TOKENS" => FinishReason.MaxTokens,
+                "STOP_SEQUENCE" => FinishReason.StopSequence,
+                "USER_CANCEL" => FinishReason.UserCancel,
                 _ => null,
             };
         }

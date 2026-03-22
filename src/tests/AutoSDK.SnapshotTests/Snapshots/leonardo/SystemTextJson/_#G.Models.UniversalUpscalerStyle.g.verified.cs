@@ -13,7 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        General,
+        x2dArt_Illustration,
+        /// <summary>
+        /// 
+        /// </summary>
+        CgArt_GameAssets,
         /// <summary>
         /// 
         /// </summary>
@@ -21,11 +25,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        x2dArt_Illustration,
-        /// <summary>
-        /// 
-        /// </summary>
-        CgArt_GameAssets,
+        General,
     }
 
     /// <summary>
@@ -40,10 +40,10 @@ namespace G
         {
             return value switch
             {
-                UniversalUpscalerStyle.General => "GENERAL",
-                UniversalUpscalerStyle.Cinematic => "CINEMATIC",
                 UniversalUpscalerStyle.x2dArt_Illustration => "2D ART & ILLUSTRATION",
                 UniversalUpscalerStyle.CgArt_GameAssets => "CG ART & GAME ASSETS",
+                UniversalUpscalerStyle.Cinematic => "CINEMATIC",
+                UniversalUpscalerStyle.General => "GENERAL",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,10 +54,10 @@ namespace G
         {
             return value switch
             {
-                "GENERAL" => UniversalUpscalerStyle.General,
-                "CINEMATIC" => UniversalUpscalerStyle.Cinematic,
                 "2D ART & ILLUSTRATION" => UniversalUpscalerStyle.x2dArt_Illustration,
                 "CG ART & GAME ASSETS" => UniversalUpscalerStyle.CgArt_GameAssets,
+                "CINEMATIC" => UniversalUpscalerStyle.Cinematic,
+                "GENERAL" => UniversalUpscalerStyle.General,
                 _ => null,
             };
         }

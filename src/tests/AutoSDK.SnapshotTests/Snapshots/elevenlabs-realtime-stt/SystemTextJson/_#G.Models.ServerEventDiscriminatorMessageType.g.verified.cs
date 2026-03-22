@@ -12,7 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        SessionStarted,
+        CommittedTranscript,
+        /// <summary>
+        /// 
+        /// </summary>
+        Error,
         /// <summary>
         /// 
         /// </summary>
@@ -20,11 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        CommittedTranscript,
-        /// <summary>
-        /// 
-        /// </summary>
-        Error,
+        SessionStarted,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                ServerEventDiscriminatorMessageType.SessionStarted => "session_started",
-                ServerEventDiscriminatorMessageType.PartialTranscript => "partial_transcript",
                 ServerEventDiscriminatorMessageType.CommittedTranscript => "committed_transcript",
                 ServerEventDiscriminatorMessageType.Error => "error",
+                ServerEventDiscriminatorMessageType.PartialTranscript => "partial_transcript",
+                ServerEventDiscriminatorMessageType.SessionStarted => "session_started",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "session_started" => ServerEventDiscriminatorMessageType.SessionStarted,
-                "partial_transcript" => ServerEventDiscriminatorMessageType.PartialTranscript,
                 "committed_transcript" => ServerEventDiscriminatorMessageType.CommittedTranscript,
                 "error" => ServerEventDiscriminatorMessageType.Error,
+                "partial_transcript" => ServerEventDiscriminatorMessageType.PartialTranscript,
+                "session_started" => ServerEventDiscriminatorMessageType.SessionStarted,
                 _ => null,
             };
         }

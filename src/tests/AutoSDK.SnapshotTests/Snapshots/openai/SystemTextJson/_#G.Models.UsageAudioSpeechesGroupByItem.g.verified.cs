@@ -12,19 +12,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ProjectId,
-        /// <summary>
-        /// 
-        /// </summary>
-        UserId,
-        /// <summary>
-        /// 
-        /// </summary>
         ApiKeyId,
         /// <summary>
         /// 
         /// </summary>
         Model,
+        /// <summary>
+        /// 
+        /// </summary>
+        ProjectId,
+        /// <summary>
+        /// 
+        /// </summary>
+        UserId,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                UsageAudioSpeechesGroupByItem.ProjectId => "project_id",
-                UsageAudioSpeechesGroupByItem.UserId => "user_id",
                 UsageAudioSpeechesGroupByItem.ApiKeyId => "api_key_id",
                 UsageAudioSpeechesGroupByItem.Model => "model",
+                UsageAudioSpeechesGroupByItem.ProjectId => "project_id",
+                UsageAudioSpeechesGroupByItem.UserId => "user_id",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "project_id" => UsageAudioSpeechesGroupByItem.ProjectId,
-                "user_id" => UsageAudioSpeechesGroupByItem.UserId,
                 "api_key_id" => UsageAudioSpeechesGroupByItem.ApiKeyId,
                 "model" => UsageAudioSpeechesGroupByItem.Model,
+                "project_id" => UsageAudioSpeechesGroupByItem.ProjectId,
+                "user_id" => UsageAudioSpeechesGroupByItem.UserId,
                 _ => null,
             };
         }

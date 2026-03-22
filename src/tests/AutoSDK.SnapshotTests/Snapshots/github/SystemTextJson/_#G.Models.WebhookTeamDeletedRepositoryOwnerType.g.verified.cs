@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        Organization,
+        User,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 WebhookTeamDeletedRepositoryOwnerType.Bot => "Bot",
-                WebhookTeamDeletedRepositoryOwnerType.User => "User",
                 WebhookTeamDeletedRepositoryOwnerType.Organization => "Organization",
+                WebhookTeamDeletedRepositoryOwnerType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookTeamDeletedRepositoryOwnerType.Bot,
-                "User" => WebhookTeamDeletedRepositoryOwnerType.User,
                 "Organization" => WebhookTeamDeletedRepositoryOwnerType.Organization,
+                "User" => WebhookTeamDeletedRepositoryOwnerType.User,
                 _ => null,
             };
         }

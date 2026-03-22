@@ -12,7 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Cancelled,
+        /// <summary>
+        /// 
+        /// </summary>
         Failure,
+        /// <summary>
+        /// 
+        /// </summary>
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
         /// <summary>
         /// 
         /// </summary>
@@ -21,14 +29,6 @@ namespace G
         /// 
         /// </summary>
         Success,
-        /// <summary>
-        /// 
-        /// </summary>
-        Cancelled,
-        /// <summary>
-        /// 
-        /// </summary>
-        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
+                WebhookWorkflowJobWaitingWorkflowJobStepConclusion.Cancelled => "cancelled",
                 WebhookWorkflowJobWaitingWorkflowJobStepConclusion.Failure => "failure",
+                WebhookWorkflowJobWaitingWorkflowJobStepConclusion.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 WebhookWorkflowJobWaitingWorkflowJobStepConclusion.Skipped => "skipped",
                 WebhookWorkflowJobWaitingWorkflowJobStepConclusion.Success => "success",
-                WebhookWorkflowJobWaitingWorkflowJobStepConclusion.Cancelled => "cancelled",
-                WebhookWorkflowJobWaitingWorkflowJobStepConclusion.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
+                "cancelled" => WebhookWorkflowJobWaitingWorkflowJobStepConclusion.Cancelled,
                 "failure" => WebhookWorkflowJobWaitingWorkflowJobStepConclusion.Failure,
+                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookWorkflowJobWaitingWorkflowJobStepConclusion.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
                 "skipped" => WebhookWorkflowJobWaitingWorkflowJobStepConclusion.Skipped,
                 "success" => WebhookWorkflowJobWaitingWorkflowJobStepConclusion.Success,
-                "cancelled" => WebhookWorkflowJobWaitingWorkflowJobStepConclusion.Cancelled,
-                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookWorkflowJobWaitingWorkflowJobStepConclusion.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
                 _ => null,
             };
         }

@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="isp")]
-        Isp,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="business")]
         Business,
         /// <summary>
@@ -35,6 +30,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="inactive")]
         Inactive,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="isp")]
+        Isp,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                AsnResponseType.Isp => "isp",
                 AsnResponseType.Business => "business",
                 AsnResponseType.Education => "education",
                 AsnResponseType.Hosting => "hosting",
                 AsnResponseType.Inactive => "inactive",
+                AsnResponseType.Isp => "isp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "isp" => AsnResponseType.Isp,
                 "business" => AsnResponseType.Business,
                 "education" => AsnResponseType.Education,
                 "hosting" => AsnResponseType.Hosting,
                 "inactive" => AsnResponseType.Inactive,
+                "isp" => AsnResponseType.Isp,
                 _ => null,
             };
         }

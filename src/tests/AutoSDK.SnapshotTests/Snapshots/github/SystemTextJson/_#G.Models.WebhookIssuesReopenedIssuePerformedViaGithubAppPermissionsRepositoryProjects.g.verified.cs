@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Admin,
+        /// <summary>
+        /// 
+        /// </summary>
         Read,
         /// <summary>
         /// 
         /// </summary>
         Write,
-        /// <summary>
-        /// 
-        /// </summary>
-        Admin,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
+                WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsRepositoryProjects.Admin => "admin",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsRepositoryProjects.Read => "read",
                 WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsRepositoryProjects.Write => "write",
-                WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsRepositoryProjects.Admin => "admin",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
+                "admin" => WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsRepositoryProjects.Admin,
                 "read" => WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsRepositoryProjects.Read,
                 "write" => WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsRepositoryProjects.Write,
-                "admin" => WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsRepositoryProjects.Admin,
                 _ => null,
             };
         }

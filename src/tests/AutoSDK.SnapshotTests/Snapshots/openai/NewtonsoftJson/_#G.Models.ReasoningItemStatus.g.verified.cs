@@ -14,13 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
-        InProgress,
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
-        Completed,
+        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
+        InProgress,
         /// <summary>
         /// 
         /// </summary>
@@ -40,8 +40,8 @@ namespace G
         {
             return value switch
             {
-                ReasoningItemStatus.InProgress => "in_progress",
                 ReasoningItemStatus.Completed => "completed",
+                ReasoningItemStatus.InProgress => "in_progress",
                 ReasoningItemStatus.Incomplete => "incomplete",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -53,8 +53,8 @@ namespace G
         {
             return value switch
             {
-                "in_progress" => ReasoningItemStatus.InProgress,
                 "completed" => ReasoningItemStatus.Completed,
+                "in_progress" => ReasoningItemStatus.InProgress,
                 "incomplete" => ReasoningItemStatus.Incomplete,
                 _ => null,
             };

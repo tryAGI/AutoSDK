@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        InProgress,
-        /// <summary>
-        /// 
-        /// </summary>
-        Searching,
-        /// <summary>
-        /// 
-        /// </summary>
         Completed,
+        /// <summary>
+        /// 
+        /// </summary>
+        Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        InProgress,
         /// <summary>
         /// 
         /// </summary>
@@ -29,7 +29,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Failed,
+        Searching,
     }
 
     /// <summary>
@@ -44,11 +44,11 @@ namespace G
         {
             return value switch
             {
-                FileSearchToolCallStatus.InProgress => "in_progress",
-                FileSearchToolCallStatus.Searching => "searching",
                 FileSearchToolCallStatus.Completed => "completed",
-                FileSearchToolCallStatus.Incomplete => "incomplete",
                 FileSearchToolCallStatus.Failed => "failed",
+                FileSearchToolCallStatus.InProgress => "in_progress",
+                FileSearchToolCallStatus.Incomplete => "incomplete",
+                FileSearchToolCallStatus.Searching => "searching",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,11 +59,11 @@ namespace G
         {
             return value switch
             {
-                "in_progress" => FileSearchToolCallStatus.InProgress,
-                "searching" => FileSearchToolCallStatus.Searching,
                 "completed" => FileSearchToolCallStatus.Completed,
-                "incomplete" => FileSearchToolCallStatus.Incomplete,
                 "failed" => FileSearchToolCallStatus.Failed,
+                "in_progress" => FileSearchToolCallStatus.InProgress,
+                "incomplete" => FileSearchToolCallStatus.Incomplete,
+                "searching" => FileSearchToolCallStatus.Searching,
                 _ => null,
             };
         }

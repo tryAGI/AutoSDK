@@ -12,11 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Never,
-        /// <summary>
-        /// 
-        /// </summary>
-        Mobile,
+        Always,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Always,
+        Mobile,
+        /// <summary>
+        /// 
+        /// </summary>
+        Never,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                WidgetExpandable.Never => "never",
-                WidgetExpandable.Mobile => "mobile",
-                WidgetExpandable.Desktop => "desktop",
                 WidgetExpandable.Always => "always",
+                WidgetExpandable.Desktop => "desktop",
+                WidgetExpandable.Mobile => "mobile",
+                WidgetExpandable.Never => "never",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "never" => WidgetExpandable.Never,
-                "mobile" => WidgetExpandable.Mobile,
-                "desktop" => WidgetExpandable.Desktop,
                 "always" => WidgetExpandable.Always,
+                "desktop" => WidgetExpandable.Desktop,
+                "mobile" => WidgetExpandable.Mobile,
+                "never" => WidgetExpandable.Never,
                 _ => null,
             };
         }

@@ -12,7 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Success,
+        ActionRequired,
+        /// <summary>
+        /// 
+        /// </summary>
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -24,19 +28,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Cancelled,
-        /// <summary>
-        /// 
-        /// </summary>
-        TimedOut,
-        /// <summary>
-        /// 
-        /// </summary>
-        ActionRequired,
-        /// <summary>
-        /// 
-        /// </summary>
-        Stale,
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
         /// <summary>
         /// 
         /// </summary>
@@ -44,7 +36,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        Stale,
+        /// <summary>
+        /// 
+        /// </summary>
+        Success,
+        /// <summary>
+        /// 
+        /// </summary>
+        TimedOut,
     }
 
     /// <summary>
@@ -59,15 +59,15 @@ namespace G
         {
             return value switch
             {
-                WebhookDeploymentStatusCreatedCheckRunConclusion.Success => "success",
+                WebhookDeploymentStatusCreatedCheckRunConclusion.ActionRequired => "action_required",
+                WebhookDeploymentStatusCreatedCheckRunConclusion.Cancelled => "cancelled",
                 WebhookDeploymentStatusCreatedCheckRunConclusion.Failure => "failure",
                 WebhookDeploymentStatusCreatedCheckRunConclusion.Neutral => "neutral",
-                WebhookDeploymentStatusCreatedCheckRunConclusion.Cancelled => "cancelled",
-                WebhookDeploymentStatusCreatedCheckRunConclusion.TimedOut => "timed_out",
-                WebhookDeploymentStatusCreatedCheckRunConclusion.ActionRequired => "action_required",
-                WebhookDeploymentStatusCreatedCheckRunConclusion.Stale => "stale",
-                WebhookDeploymentStatusCreatedCheckRunConclusion.Skipped => "skipped",
                 WebhookDeploymentStatusCreatedCheckRunConclusion.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
+                WebhookDeploymentStatusCreatedCheckRunConclusion.Skipped => "skipped",
+                WebhookDeploymentStatusCreatedCheckRunConclusion.Stale => "stale",
+                WebhookDeploymentStatusCreatedCheckRunConclusion.Success => "success",
+                WebhookDeploymentStatusCreatedCheckRunConclusion.TimedOut => "timed_out",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -78,15 +78,15 @@ namespace G
         {
             return value switch
             {
-                "success" => WebhookDeploymentStatusCreatedCheckRunConclusion.Success,
+                "action_required" => WebhookDeploymentStatusCreatedCheckRunConclusion.ActionRequired,
+                "cancelled" => WebhookDeploymentStatusCreatedCheckRunConclusion.Cancelled,
                 "failure" => WebhookDeploymentStatusCreatedCheckRunConclusion.Failure,
                 "neutral" => WebhookDeploymentStatusCreatedCheckRunConclusion.Neutral,
-                "cancelled" => WebhookDeploymentStatusCreatedCheckRunConclusion.Cancelled,
-                "timed_out" => WebhookDeploymentStatusCreatedCheckRunConclusion.TimedOut,
-                "action_required" => WebhookDeploymentStatusCreatedCheckRunConclusion.ActionRequired,
-                "stale" => WebhookDeploymentStatusCreatedCheckRunConclusion.Stale,
-                "skipped" => WebhookDeploymentStatusCreatedCheckRunConclusion.Skipped,
                 "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookDeploymentStatusCreatedCheckRunConclusion.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+                "skipped" => WebhookDeploymentStatusCreatedCheckRunConclusion.Skipped,
+                "stale" => WebhookDeploymentStatusCreatedCheckRunConclusion.Stale,
+                "success" => WebhookDeploymentStatusCreatedCheckRunConclusion.Success,
+                "timed_out" => WebhookDeploymentStatusCreatedCheckRunConclusion.TimedOut,
                 _ => null,
             };
         }

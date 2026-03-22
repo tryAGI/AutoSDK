@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Off,
+        Everyone,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Everyone,
+        Off,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.Off => "off",
-                WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.NonAdmins => "non_admins",
                 WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.Everyone => "everyone",
+                WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.NonAdmins => "non_admins",
+                WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.Off => "off",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "off" => WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.Off,
-                "non_admins" => WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.NonAdmins,
                 "everyone" => WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.Everyone,
+                "non_admins" => WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.NonAdmins,
+                "off" => WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.Off,
                 _ => null,
             };
         }

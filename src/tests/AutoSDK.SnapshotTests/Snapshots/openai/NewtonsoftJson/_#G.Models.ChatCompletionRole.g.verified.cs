@@ -13,8 +13,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="assistant")]
+        Assistant,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="developer")]
         Developer,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="function")]
+        Function,
         /// <summary>
         /// 
         /// </summary>
@@ -23,23 +33,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="user")]
-        User,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="assistant")]
-        Assistant,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="tool")]
         Tool,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="function")]
-        Function,
+        [global::System.Runtime.Serialization.EnumMember(Value="user")]
+        User,
     }
 
     /// <summary>
@@ -54,12 +54,12 @@ namespace G
         {
             return value switch
             {
-                ChatCompletionRole.Developer => "developer",
-                ChatCompletionRole.System => "system",
-                ChatCompletionRole.User => "user",
                 ChatCompletionRole.Assistant => "assistant",
-                ChatCompletionRole.Tool => "tool",
+                ChatCompletionRole.Developer => "developer",
                 ChatCompletionRole.Function => "function",
+                ChatCompletionRole.System => "system",
+                ChatCompletionRole.Tool => "tool",
+                ChatCompletionRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,12 +70,12 @@ namespace G
         {
             return value switch
             {
-                "developer" => ChatCompletionRole.Developer,
-                "system" => ChatCompletionRole.System,
-                "user" => ChatCompletionRole.User,
                 "assistant" => ChatCompletionRole.Assistant,
-                "tool" => ChatCompletionRole.Tool,
+                "developer" => ChatCompletionRole.Developer,
                 "function" => ChatCompletionRole.Function,
+                "system" => ChatCompletionRole.System,
+                "tool" => ChatCompletionRole.Tool,
+                "user" => ChatCompletionRole.User,
                 _ => null,
             };
         }

@@ -13,18 +13,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="1104:832")]
+        x1104_832,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="1280:720")]
         x1280_720,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="720:1280")]
-        x720_1280,
+        [global::System.Runtime.Serialization.EnumMember(Value="1584:672")]
+        x1584_672,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="1104:832")]
-        x1104_832,
+        [global::System.Runtime.Serialization.EnumMember(Value="720:1280")]
+        x720_1280,
         /// <summary>
         /// 
         /// </summary>
@@ -35,11 +40,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="960:960")]
         x960_960,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="1584:672")]
-        x1584_672,
     }
 
     /// <summary>
@@ -54,12 +54,12 @@ namespace G
         {
             return value switch
             {
-                CreateImageToVideoRequestGen4TurboRatio.x1280_720 => "1280:720",
-                CreateImageToVideoRequestGen4TurboRatio.x720_1280 => "720:1280",
                 CreateImageToVideoRequestGen4TurboRatio.x1104_832 => "1104:832",
+                CreateImageToVideoRequestGen4TurboRatio.x1280_720 => "1280:720",
+                CreateImageToVideoRequestGen4TurboRatio.x1584_672 => "1584:672",
+                CreateImageToVideoRequestGen4TurboRatio.x720_1280 => "720:1280",
                 CreateImageToVideoRequestGen4TurboRatio.x832_1104 => "832:1104",
                 CreateImageToVideoRequestGen4TurboRatio.x960_960 => "960:960",
-                CreateImageToVideoRequestGen4TurboRatio.x1584_672 => "1584:672",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,12 +70,12 @@ namespace G
         {
             return value switch
             {
-                "1280:720" => CreateImageToVideoRequestGen4TurboRatio.x1280_720,
-                "720:1280" => CreateImageToVideoRequestGen4TurboRatio.x720_1280,
                 "1104:832" => CreateImageToVideoRequestGen4TurboRatio.x1104_832,
+                "1280:720" => CreateImageToVideoRequestGen4TurboRatio.x1280_720,
+                "1584:672" => CreateImageToVideoRequestGen4TurboRatio.x1584_672,
+                "720:1280" => CreateImageToVideoRequestGen4TurboRatio.x720_1280,
                 "832:1104" => CreateImageToVideoRequestGen4TurboRatio.x832_1104,
                 "960:960" => CreateImageToVideoRequestGen4TurboRatio.x960_960,
-                "1584:672" => CreateImageToVideoRequestGen4TurboRatio.x1584_672,
                 _ => null,
             };
         }

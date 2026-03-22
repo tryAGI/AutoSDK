@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="server_vad")]
-        ServerVad,
+        [global::System.Runtime.Serialization.EnumMember(Value="none")]
+        None,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="none")]
-        None,
+        [global::System.Runtime.Serialization.EnumMember(Value="server_vad")]
+        ServerVad,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                SessionTurnDetectionType.ServerVad => "server_vad",
                 SessionTurnDetectionType.None => "none",
+                SessionTurnDetectionType.ServerVad => "server_vad",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "server_vad" => SessionTurnDetectionType.ServerVad,
                 "none" => SessionTurnDetectionType.None,
+                "server_vad" => SessionTurnDetectionType.ServerVad,
                 _ => null,
             };
         }

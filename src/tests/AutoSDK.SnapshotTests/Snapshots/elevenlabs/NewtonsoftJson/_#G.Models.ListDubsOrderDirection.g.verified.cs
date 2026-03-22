@@ -14,13 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="DESCENDING")]
-        Descending,
+        [global::System.Runtime.Serialization.EnumMember(Value="ASCENDING")]
+        Ascending,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="ASCENDING")]
-        Ascending,
+        [global::System.Runtime.Serialization.EnumMember(Value="DESCENDING")]
+        Descending,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                ListDubsOrderDirection.Descending => "DESCENDING",
                 ListDubsOrderDirection.Ascending => "ASCENDING",
+                ListDubsOrderDirection.Descending => "DESCENDING",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,8 +47,8 @@ namespace G
         {
             return value switch
             {
-                "DESCENDING" => ListDubsOrderDirection.Descending,
                 "ASCENDING" => ListDubsOrderDirection.Ascending,
+                "DESCENDING" => ListDubsOrderDirection.Descending,
                 _ => null,
             };
         }

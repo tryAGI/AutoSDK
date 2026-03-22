@@ -18,13 +18,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="public")]
-        Public,
+        [global::System.Runtime.Serialization.EnumMember(Value="private")]
+        Private,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="private")]
-        Private,
+        [global::System.Runtime.Serialization.EnumMember(Value="public")]
+        Public,
     }
 
     /// <summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 ReposListForAuthenticatedUserVisibility.All => "all",
-                ReposListForAuthenticatedUserVisibility.Public => "public",
                 ReposListForAuthenticatedUserVisibility.Private => "private",
+                ReposListForAuthenticatedUserVisibility.Public => "public",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,8 +53,8 @@ namespace G
             return value switch
             {
                 "all" => ReposListForAuthenticatedUserVisibility.All,
-                "public" => ReposListForAuthenticatedUserVisibility.Public,
                 "private" => ReposListForAuthenticatedUserVisibility.Private,
+                "public" => ReposListForAuthenticatedUserVisibility.Public,
                 _ => null,
             };
         }

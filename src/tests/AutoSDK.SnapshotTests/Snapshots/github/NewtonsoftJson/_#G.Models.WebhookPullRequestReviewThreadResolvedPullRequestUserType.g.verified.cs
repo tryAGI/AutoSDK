@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookPullRequestReviewThreadResolvedPullRequestUserType.Bot => "Bot",
-                WebhookPullRequestReviewThreadResolvedPullRequestUserType.User => "User",
-                WebhookPullRequestReviewThreadResolvedPullRequestUserType.Organization => "Organization",
                 WebhookPullRequestReviewThreadResolvedPullRequestUserType.Mannequin => "Mannequin",
+                WebhookPullRequestReviewThreadResolvedPullRequestUserType.Organization => "Organization",
+                WebhookPullRequestReviewThreadResolvedPullRequestUserType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestReviewThreadResolvedPullRequestUserType.Bot,
-                "User" => WebhookPullRequestReviewThreadResolvedPullRequestUserType.User,
-                "Organization" => WebhookPullRequestReviewThreadResolvedPullRequestUserType.Organization,
                 "Mannequin" => WebhookPullRequestReviewThreadResolvedPullRequestUserType.Mannequin,
+                "Organization" => WebhookPullRequestReviewThreadResolvedPullRequestUserType.Organization,
+                "User" => WebhookPullRequestReviewThreadResolvedPullRequestUserType.User,
                 _ => null,
             };
         }

@@ -12,10 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        P,
-        /// <summary>
-        /// 
-        /// </summary>
         H1,
         /// <summary>
         /// 
@@ -25,6 +21,10 @@ namespace G
         /// 
         /// </summary>
         H3,
+        /// <summary>
+        /// 
+        /// </summary>
+        P,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                ChapterContentBlockInputModelSubType2.P => "p",
                 ChapterContentBlockInputModelSubType2.H1 => "h1",
                 ChapterContentBlockInputModelSubType2.H2 => "h2",
                 ChapterContentBlockInputModelSubType2.H3 => "h3",
+                ChapterContentBlockInputModelSubType2.P => "p",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "p" => ChapterContentBlockInputModelSubType2.P,
                 "h1" => ChapterContentBlockInputModelSubType2.H1,
                 "h2" => ChapterContentBlockInputModelSubType2.H2,
                 "h3" => ChapterContentBlockInputModelSubType2.H3,
+                "p" => ChapterContentBlockInputModelSubType2.P,
                 _ => null,
             };
         }

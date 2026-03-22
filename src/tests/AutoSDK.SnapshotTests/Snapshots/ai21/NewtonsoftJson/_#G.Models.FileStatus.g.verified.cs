@@ -18,16 +18,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="UPLOADED")]
-        Uploaded,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="UPLOAD_FAILED")]
-        UploadFailed,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PROCESSED")]
         Processed,
         /// <summary>
@@ -35,6 +25,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PROCESSING_FAILED")]
         ProcessingFailed,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="UPLOADED")]
+        Uploaded,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="UPLOAD_FAILED")]
+        UploadFailed,
     }
 
     /// <summary>
@@ -50,10 +50,10 @@ namespace G
             return value switch
             {
                 FileStatus.DbRecordCreated => "DB_RECORD_CREATED",
-                FileStatus.Uploaded => "UPLOADED",
-                FileStatus.UploadFailed => "UPLOAD_FAILED",
                 FileStatus.Processed => "PROCESSED",
                 FileStatus.ProcessingFailed => "PROCESSING_FAILED",
+                FileStatus.Uploaded => "UPLOADED",
+                FileStatus.UploadFailed => "UPLOAD_FAILED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -65,10 +65,10 @@ namespace G
             return value switch
             {
                 "DB_RECORD_CREATED" => FileStatus.DbRecordCreated,
-                "UPLOADED" => FileStatus.Uploaded,
-                "UPLOAD_FAILED" => FileStatus.UploadFailed,
                 "PROCESSED" => FileStatus.Processed,
                 "PROCESSING_FAILED" => FileStatus.ProcessingFailed,
+                "UPLOADED" => FileStatus.Uploaded,
+                "UPLOAD_FAILED" => FileStatus.UploadFailed,
                 _ => null,
             };
         }

@@ -21,25 +21,25 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="COMPONENT_TYPE_AI")]
         Ai,
         /// <summary>
-        /// Connect with a remote data source.
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="COMPONENT_TYPE_DATA")]
-        Data,
-        /// <summary>
-        /// Manipulate data.
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="COMPONENT_TYPE_OPERATOR")]
-        Operator,
-        /// <summary>
         /// Connect with an external application.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COMPONENT_TYPE_APPLICATION")]
         Application,
         /// <summary>
+        /// Connect with a remote data source.
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="COMPONENT_TYPE_DATA")]
+        Data,
+        /// <summary>
         /// Generic.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="COMPONENT_TYPE_GENERIC")]
         Generic,
+        /// <summary>
+        /// Manipulate data.
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="COMPONENT_TYPE_OPERATOR")]
+        Operator,
     }
 
     /// <summary>
@@ -55,10 +55,10 @@ namespace G
             return value switch
             {
                 ComponentType.Ai => "COMPONENT_TYPE_AI",
-                ComponentType.Data => "COMPONENT_TYPE_DATA",
-                ComponentType.Operator => "COMPONENT_TYPE_OPERATOR",
                 ComponentType.Application => "COMPONENT_TYPE_APPLICATION",
+                ComponentType.Data => "COMPONENT_TYPE_DATA",
                 ComponentType.Generic => "COMPONENT_TYPE_GENERIC",
+                ComponentType.Operator => "COMPONENT_TYPE_OPERATOR",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,10 +70,10 @@ namespace G
             return value switch
             {
                 "COMPONENT_TYPE_AI" => ComponentType.Ai,
-                "COMPONENT_TYPE_DATA" => ComponentType.Data,
-                "COMPONENT_TYPE_OPERATOR" => ComponentType.Operator,
                 "COMPONENT_TYPE_APPLICATION" => ComponentType.Application,
+                "COMPONENT_TYPE_DATA" => ComponentType.Data,
                 "COMPONENT_TYPE_GENERIC" => ComponentType.Generic,
+                "COMPONENT_TYPE_OPERATOR" => ComponentType.Operator,
                 _ => null,
             };
         }

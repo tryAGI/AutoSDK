@@ -12,31 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ConversationInitiationMetadata,
-        /// <summary>
-        /// 
-        /// </summary>
-        AsrInitiationMetadata,
-        /// <summary>
-        /// 
-        /// </summary>
-        Ping,
-        /// <summary>
-        /// 
-        /// </summary>
-        Audio,
-        /// <summary>
-        /// 
-        /// </summary>
-        Interruption,
-        /// <summary>
-        /// 
-        /// </summary>
-        UserTranscript,
-        /// <summary>
-        /// 
-        /// </summary>
-        TentativeUserTranscript,
+        AgentChatResponsePart,
         /// <summary>
         /// 
         /// </summary>
@@ -48,15 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ClientToolCall,
-        /// <summary>
-        /// 
-        /// </summary>
-        McpToolCall,
-        /// <summary>
-        /// 
-        /// </summary>
-        McpConnectionStatus,
+        AgentResponseMetadata,
         /// <summary>
         /// 
         /// </summary>
@@ -68,15 +36,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        AgentResponseMetadata,
+        AsrInitiationMetadata,
         /// <summary>
         /// 
         /// </summary>
-        VadScore,
-        /// <summary>
-        /// 
-        /// </summary>
-        AgentChatResponsePart,
+        Audio,
         /// <summary>
         /// 
         /// </summary>
@@ -84,7 +48,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        ClientToolCall,
+        /// <summary>
+        /// 
+        /// </summary>
+        ConversationInitiationMetadata,
+        /// <summary>
+        /// 
+        /// </summary>
         GuardrailTriggered,
+        /// <summary>
+        /// 
+        /// </summary>
+        InternalTentativeAgentResponse,
         /// <summary>
         /// 
         /// </summary>
@@ -92,7 +68,31 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        InternalTentativeAgentResponse,
+        Interruption,
+        /// <summary>
+        /// 
+        /// </summary>
+        McpConnectionStatus,
+        /// <summary>
+        /// 
+        /// </summary>
+        McpToolCall,
+        /// <summary>
+        /// 
+        /// </summary>
+        Ping,
+        /// <summary>
+        /// 
+        /// </summary>
+        TentativeUserTranscript,
+        /// <summary>
+        /// 
+        /// </summary>
+        UserTranscript,
+        /// <summary>
+        /// 
+        /// </summary>
+        VadScore,
     }
 
     /// <summary>
@@ -107,27 +107,27 @@ namespace G
         {
             return value switch
             {
-                ClientEvent.ConversationInitiationMetadata => "conversation_initiation_metadata",
-                ClientEvent.AsrInitiationMetadata => "asr_initiation_metadata",
-                ClientEvent.Ping => "ping",
-                ClientEvent.Audio => "audio",
-                ClientEvent.Interruption => "interruption",
-                ClientEvent.UserTranscript => "user_transcript",
-                ClientEvent.TentativeUserTranscript => "tentative_user_transcript",
+                ClientEvent.AgentChatResponsePart => "agent_chat_response_part",
                 ClientEvent.AgentResponse => "agent_response",
                 ClientEvent.AgentResponseCorrection => "agent_response_correction",
-                ClientEvent.ClientToolCall => "client_tool_call",
-                ClientEvent.McpToolCall => "mcp_tool_call",
-                ClientEvent.McpConnectionStatus => "mcp_connection_status",
+                ClientEvent.AgentResponseMetadata => "agent_response_metadata",
                 ClientEvent.AgentToolRequest => "agent_tool_request",
                 ClientEvent.AgentToolResponse => "agent_tool_response",
-                ClientEvent.AgentResponseMetadata => "agent_response_metadata",
-                ClientEvent.VadScore => "vad_score",
-                ClientEvent.AgentChatResponsePart => "agent_chat_response_part",
+                ClientEvent.AsrInitiationMetadata => "asr_initiation_metadata",
+                ClientEvent.Audio => "audio",
                 ClientEvent.ClientError => "client_error",
+                ClientEvent.ClientToolCall => "client_tool_call",
+                ClientEvent.ConversationInitiationMetadata => "conversation_initiation_metadata",
                 ClientEvent.GuardrailTriggered => "guardrail_triggered",
-                ClientEvent.InternalTurnProbability => "internal_turn_probability",
                 ClientEvent.InternalTentativeAgentResponse => "internal_tentative_agent_response",
+                ClientEvent.InternalTurnProbability => "internal_turn_probability",
+                ClientEvent.Interruption => "interruption",
+                ClientEvent.McpConnectionStatus => "mcp_connection_status",
+                ClientEvent.McpToolCall => "mcp_tool_call",
+                ClientEvent.Ping => "ping",
+                ClientEvent.TentativeUserTranscript => "tentative_user_transcript",
+                ClientEvent.UserTranscript => "user_transcript",
+                ClientEvent.VadScore => "vad_score",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -138,27 +138,27 @@ namespace G
         {
             return value switch
             {
-                "conversation_initiation_metadata" => ClientEvent.ConversationInitiationMetadata,
-                "asr_initiation_metadata" => ClientEvent.AsrInitiationMetadata,
-                "ping" => ClientEvent.Ping,
-                "audio" => ClientEvent.Audio,
-                "interruption" => ClientEvent.Interruption,
-                "user_transcript" => ClientEvent.UserTranscript,
-                "tentative_user_transcript" => ClientEvent.TentativeUserTranscript,
+                "agent_chat_response_part" => ClientEvent.AgentChatResponsePart,
                 "agent_response" => ClientEvent.AgentResponse,
                 "agent_response_correction" => ClientEvent.AgentResponseCorrection,
-                "client_tool_call" => ClientEvent.ClientToolCall,
-                "mcp_tool_call" => ClientEvent.McpToolCall,
-                "mcp_connection_status" => ClientEvent.McpConnectionStatus,
+                "agent_response_metadata" => ClientEvent.AgentResponseMetadata,
                 "agent_tool_request" => ClientEvent.AgentToolRequest,
                 "agent_tool_response" => ClientEvent.AgentToolResponse,
-                "agent_response_metadata" => ClientEvent.AgentResponseMetadata,
-                "vad_score" => ClientEvent.VadScore,
-                "agent_chat_response_part" => ClientEvent.AgentChatResponsePart,
+                "asr_initiation_metadata" => ClientEvent.AsrInitiationMetadata,
+                "audio" => ClientEvent.Audio,
                 "client_error" => ClientEvent.ClientError,
+                "client_tool_call" => ClientEvent.ClientToolCall,
+                "conversation_initiation_metadata" => ClientEvent.ConversationInitiationMetadata,
                 "guardrail_triggered" => ClientEvent.GuardrailTriggered,
-                "internal_turn_probability" => ClientEvent.InternalTurnProbability,
                 "internal_tentative_agent_response" => ClientEvent.InternalTentativeAgentResponse,
+                "internal_turn_probability" => ClientEvent.InternalTurnProbability,
+                "interruption" => ClientEvent.Interruption,
+                "mcp_connection_status" => ClientEvent.McpConnectionStatus,
+                "mcp_tool_call" => ClientEvent.McpToolCall,
+                "ping" => ClientEvent.Ping,
+                "tentative_user_transcript" => ClientEvent.TentativeUserTranscript,
+                "user_transcript" => ClientEvent.UserTranscript,
+                "vad_score" => ClientEvent.VadScore,
                 _ => null,
             };
         }

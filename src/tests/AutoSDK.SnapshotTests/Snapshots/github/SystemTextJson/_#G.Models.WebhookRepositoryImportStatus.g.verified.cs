@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Success,
-        /// <summary>
-        /// 
-        /// </summary>
         Cancelled,
         /// <summary>
         /// 
         /// </summary>
         Failure,
+        /// <summary>
+        /// 
+        /// </summary>
+        Success,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                WebhookRepositoryImportStatus.Success => "success",
                 WebhookRepositoryImportStatus.Cancelled => "cancelled",
                 WebhookRepositoryImportStatus.Failure => "failure",
+                WebhookRepositoryImportStatus.Success => "success",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "success" => WebhookRepositoryImportStatus.Success,
                 "cancelled" => WebhookRepositoryImportStatus.Cancelled,
                 "failure" => WebhookRepositoryImportStatus.Failure,
+                "success" => WebhookRepositoryImportStatus.Success,
                 _ => null,
             };
         }

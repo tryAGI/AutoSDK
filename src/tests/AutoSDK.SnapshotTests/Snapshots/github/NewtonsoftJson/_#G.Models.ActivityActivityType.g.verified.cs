@@ -14,13 +14,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="push")]
-        Push,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="force_push")]
-        ForcePush,
+        [global::System.Runtime.Serialization.EnumMember(Value="branch_creation")]
+        BranchCreation,
         /// <summary>
         /// 
         /// </summary>
@@ -29,8 +24,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="branch_creation")]
-        BranchCreation,
+        [global::System.Runtime.Serialization.EnumMember(Value="force_push")]
+        ForcePush,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="merge_queue_merge")]
+        MergeQueueMerge,
         /// <summary>
         /// 
         /// </summary>
@@ -39,8 +39,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="merge_queue_merge")]
-        MergeQueueMerge,
+        [global::System.Runtime.Serialization.EnumMember(Value="push")]
+        Push,
     }
 
     /// <summary>
@@ -55,12 +55,12 @@ namespace G
         {
             return value switch
             {
-                ActivityActivityType.Push => "push",
-                ActivityActivityType.ForcePush => "force_push",
-                ActivityActivityType.BranchDeletion => "branch_deletion",
                 ActivityActivityType.BranchCreation => "branch_creation",
-                ActivityActivityType.PrMerge => "pr_merge",
+                ActivityActivityType.BranchDeletion => "branch_deletion",
+                ActivityActivityType.ForcePush => "force_push",
                 ActivityActivityType.MergeQueueMerge => "merge_queue_merge",
+                ActivityActivityType.PrMerge => "pr_merge",
+                ActivityActivityType.Push => "push",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -71,12 +71,12 @@ namespace G
         {
             return value switch
             {
-                "push" => ActivityActivityType.Push,
-                "force_push" => ActivityActivityType.ForcePush,
-                "branch_deletion" => ActivityActivityType.BranchDeletion,
                 "branch_creation" => ActivityActivityType.BranchCreation,
-                "pr_merge" => ActivityActivityType.PrMerge,
+                "branch_deletion" => ActivityActivityType.BranchDeletion,
+                "force_push" => ActivityActivityType.ForcePush,
                 "merge_queue_merge" => ActivityActivityType.MergeQueueMerge,
+                "pr_merge" => ActivityActivityType.PrMerge,
+                "push" => ActivityActivityType.Push,
                 _ => null,
             };
         }

@@ -13,6 +13,16 @@ namespace G
     public enum ImageGenToolQuality
     {
         /// <summary>
+        /// `auto`.
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="auto")]
+        Auto,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="high")]
+        High,
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="low")]
@@ -22,16 +32,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="medium")]
         Medium,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="high")]
-        High,
-        /// <summary>
-        /// `auto`.
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="auto")]
-        Auto,
     }
 
     /// <summary>
@@ -46,10 +46,10 @@ namespace G
         {
             return value switch
             {
+                ImageGenToolQuality.Auto => "auto",
+                ImageGenToolQuality.High => "high",
                 ImageGenToolQuality.Low => "low",
                 ImageGenToolQuality.Medium => "medium",
-                ImageGenToolQuality.High => "high",
-                ImageGenToolQuality.Auto => "auto",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -60,10 +60,10 @@ namespace G
         {
             return value switch
             {
+                "auto" => ImageGenToolQuality.Auto,
+                "high" => ImageGenToolQuality.High,
                 "low" => ImageGenToolQuality.Low,
                 "medium" => ImageGenToolQuality.Medium,
-                "high" => ImageGenToolQuality.High,
-                "auto" => ImageGenToolQuality.Auto,
                 _ => null,
             };
         }

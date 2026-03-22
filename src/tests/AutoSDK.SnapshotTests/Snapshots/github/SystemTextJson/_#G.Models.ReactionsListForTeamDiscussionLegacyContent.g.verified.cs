@@ -20,11 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Laugh,
+        Confused,
         /// <summary>
         /// 
         /// </summary>
-        Confused,
+        Eyes,
         /// <summary>
         /// 
         /// </summary>
@@ -36,11 +36,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Rocket,
+        Laugh,
         /// <summary>
         /// 
         /// </summary>
-        Eyes,
+        Rocket,
     }
 
     /// <summary>
@@ -57,12 +57,12 @@ namespace G
             {
                 ReactionsListForTeamDiscussionLegacyContent.Plus1 => "+1",
                 ReactionsListForTeamDiscussionLegacyContent.Minus1 => "-1",
-                ReactionsListForTeamDiscussionLegacyContent.Laugh => "laugh",
                 ReactionsListForTeamDiscussionLegacyContent.Confused => "confused",
+                ReactionsListForTeamDiscussionLegacyContent.Eyes => "eyes",
                 ReactionsListForTeamDiscussionLegacyContent.Heart => "heart",
                 ReactionsListForTeamDiscussionLegacyContent.Hooray => "hooray",
+                ReactionsListForTeamDiscussionLegacyContent.Laugh => "laugh",
                 ReactionsListForTeamDiscussionLegacyContent.Rocket => "rocket",
-                ReactionsListForTeamDiscussionLegacyContent.Eyes => "eyes",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -75,12 +75,12 @@ namespace G
             {
                 "+1" => ReactionsListForTeamDiscussionLegacyContent.Plus1,
                 "-1" => ReactionsListForTeamDiscussionLegacyContent.Minus1,
-                "laugh" => ReactionsListForTeamDiscussionLegacyContent.Laugh,
                 "confused" => ReactionsListForTeamDiscussionLegacyContent.Confused,
+                "eyes" => ReactionsListForTeamDiscussionLegacyContent.Eyes,
                 "heart" => ReactionsListForTeamDiscussionLegacyContent.Heart,
                 "hooray" => ReactionsListForTeamDiscussionLegacyContent.Hooray,
+                "laugh" => ReactionsListForTeamDiscussionLegacyContent.Laugh,
                 "rocket" => ReactionsListForTeamDiscussionLegacyContent.Rocket,
-                "eyes" => ReactionsListForTeamDiscussionLegacyContent.Eyes,
                 _ => null,
             };
         }

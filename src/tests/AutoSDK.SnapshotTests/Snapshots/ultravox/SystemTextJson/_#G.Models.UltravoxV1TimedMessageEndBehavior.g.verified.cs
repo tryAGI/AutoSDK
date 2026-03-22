@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        EndBehaviorUnspecified,
-        /// <summary>
-        /// 
-        /// </summary>
         EndBehaviorHangUpSoft,
         /// <summary>
         /// 
         /// </summary>
         EndBehaviorHangUpStrict,
+        /// <summary>
+        /// 
+        /// </summary>
+        EndBehaviorUnspecified,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                UltravoxV1TimedMessageEndBehavior.EndBehaviorUnspecified => "END_BEHAVIOR_UNSPECIFIED",
                 UltravoxV1TimedMessageEndBehavior.EndBehaviorHangUpSoft => "END_BEHAVIOR_HANG_UP_SOFT",
                 UltravoxV1TimedMessageEndBehavior.EndBehaviorHangUpStrict => "END_BEHAVIOR_HANG_UP_STRICT",
+                UltravoxV1TimedMessageEndBehavior.EndBehaviorUnspecified => "END_BEHAVIOR_UNSPECIFIED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "END_BEHAVIOR_UNSPECIFIED" => UltravoxV1TimedMessageEndBehavior.EndBehaviorUnspecified,
                 "END_BEHAVIOR_HANG_UP_SOFT" => UltravoxV1TimedMessageEndBehavior.EndBehaviorHangUpSoft,
                 "END_BEHAVIOR_HANG_UP_STRICT" => UltravoxV1TimedMessageEndBehavior.EndBehaviorHangUpStrict,
+                "END_BEHAVIOR_UNSPECIFIED" => UltravoxV1TimedMessageEndBehavior.EndBehaviorUnspecified,
                 _ => null,
             };
         }

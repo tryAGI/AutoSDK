@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        High,
+        /// <summary>
+        /// 
+        /// </summary>
         Low,
         /// <summary>
         /// 
         /// </summary>
         Medium,
-        /// <summary>
-        /// 
-        /// </summary>
-        High,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
+                ReasoningEffort.High => "high",
                 ReasoningEffort.Low => "low",
                 ReasoningEffort.Medium => "medium",
-                ReasoningEffort.High => "high",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
+                "high" => ReasoningEffort.High,
                 "low" => ReasoningEffort.Low,
                 "medium" => ReasoningEffort.Medium,
-                "high" => ReasoningEffort.High,
                 _ => null,
             };
         }

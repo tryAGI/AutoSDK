@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Editor,
+        Commenter,
         /// <summary>
         /// 
         /// </summary>
-        Commenter,
+        Editor,
         /// <summary>
         /// 
         /// </summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 ResourceAccessInfoRole.Admin => "admin",
-                ResourceAccessInfoRole.Editor => "editor",
                 ResourceAccessInfoRole.Commenter => "commenter",
+                ResourceAccessInfoRole.Editor => "editor",
                 ResourceAccessInfoRole.Viewer => "viewer",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -54,8 +54,8 @@ namespace G
             return value switch
             {
                 "admin" => ResourceAccessInfoRole.Admin,
-                "editor" => ResourceAccessInfoRole.Editor,
                 "commenter" => ResourceAccessInfoRole.Commenter,
+                "editor" => ResourceAccessInfoRole.Editor,
                 "viewer" => ResourceAccessInfoRole.Viewer,
                 _ => null,
             };

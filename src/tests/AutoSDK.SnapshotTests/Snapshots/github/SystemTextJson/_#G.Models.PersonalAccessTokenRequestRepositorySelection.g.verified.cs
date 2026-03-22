@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        None,
+        All,
         /// <summary>
         /// 
         /// </summary>
-        All,
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                PersonalAccessTokenRequestRepositorySelection.None => "none",
                 PersonalAccessTokenRequestRepositorySelection.All => "all",
+                PersonalAccessTokenRequestRepositorySelection.None => "none",
                 PersonalAccessTokenRequestRepositorySelection.Subset => "subset",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "none" => PersonalAccessTokenRequestRepositorySelection.None,
                 "all" => PersonalAccessTokenRequestRepositorySelection.All,
+                "none" => PersonalAccessTokenRequestRepositorySelection.None,
                 "subset" => PersonalAccessTokenRequestRepositorySelection.Subset,
                 _ => null,
             };

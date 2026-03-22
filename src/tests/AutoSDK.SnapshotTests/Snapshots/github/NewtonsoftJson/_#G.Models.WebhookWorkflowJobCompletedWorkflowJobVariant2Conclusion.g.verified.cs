@@ -13,18 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="success")]
-        Success,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="failure")]
-        Failure,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="skipped")]
-        Skipped,
+        [global::System.Runtime.Serialization.EnumMember(Value="action_required")]
+        ActionRequired,
         /// <summary>
         /// 
         /// </summary>
@@ -33,13 +23,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="action_required")]
-        ActionRequired,
+        [global::System.Runtime.Serialization.EnumMember(Value="failure")]
+        Failure,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="neutral")]
         Neutral,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="skipped")]
+        Skipped,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="success")]
+        Success,
         /// <summary>
         /// 
         /// </summary>
@@ -59,12 +59,12 @@ namespace G
         {
             return value switch
             {
-                WebhookWorkflowJobCompletedWorkflowJobVariant2Conclusion.Success => "success",
-                WebhookWorkflowJobCompletedWorkflowJobVariant2Conclusion.Failure => "failure",
-                WebhookWorkflowJobCompletedWorkflowJobVariant2Conclusion.Skipped => "skipped",
-                WebhookWorkflowJobCompletedWorkflowJobVariant2Conclusion.Cancelled => "cancelled",
                 WebhookWorkflowJobCompletedWorkflowJobVariant2Conclusion.ActionRequired => "action_required",
+                WebhookWorkflowJobCompletedWorkflowJobVariant2Conclusion.Cancelled => "cancelled",
+                WebhookWorkflowJobCompletedWorkflowJobVariant2Conclusion.Failure => "failure",
                 WebhookWorkflowJobCompletedWorkflowJobVariant2Conclusion.Neutral => "neutral",
+                WebhookWorkflowJobCompletedWorkflowJobVariant2Conclusion.Skipped => "skipped",
+                WebhookWorkflowJobCompletedWorkflowJobVariant2Conclusion.Success => "success",
                 WebhookWorkflowJobCompletedWorkflowJobVariant2Conclusion.TimedOut => "timed_out",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -76,12 +76,12 @@ namespace G
         {
             return value switch
             {
-                "success" => WebhookWorkflowJobCompletedWorkflowJobVariant2Conclusion.Success,
-                "failure" => WebhookWorkflowJobCompletedWorkflowJobVariant2Conclusion.Failure,
-                "skipped" => WebhookWorkflowJobCompletedWorkflowJobVariant2Conclusion.Skipped,
-                "cancelled" => WebhookWorkflowJobCompletedWorkflowJobVariant2Conclusion.Cancelled,
                 "action_required" => WebhookWorkflowJobCompletedWorkflowJobVariant2Conclusion.ActionRequired,
+                "cancelled" => WebhookWorkflowJobCompletedWorkflowJobVariant2Conclusion.Cancelled,
+                "failure" => WebhookWorkflowJobCompletedWorkflowJobVariant2Conclusion.Failure,
                 "neutral" => WebhookWorkflowJobCompletedWorkflowJobVariant2Conclusion.Neutral,
+                "skipped" => WebhookWorkflowJobCompletedWorkflowJobVariant2Conclusion.Skipped,
+                "success" => WebhookWorkflowJobCompletedWorkflowJobVariant2Conclusion.Success,
                 "timed_out" => WebhookWorkflowJobCompletedWorkflowJobVariant2Conclusion.TimedOut,
                 _ => null,
             };

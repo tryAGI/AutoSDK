@@ -20,11 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Laugh,
+        Confused,
         /// <summary>
         /// 
         /// </summary>
-        Confused,
+        Eyes,
         /// <summary>
         /// 
         /// </summary>
@@ -36,11 +36,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Rocket,
+        Laugh,
         /// <summary>
         /// 
         /// </summary>
-        Eyes,
+        Rocket,
     }
 
     /// <summary>
@@ -57,12 +57,12 @@ namespace G
             {
                 ReactionsListForIssueCommentContent.Plus1 => "+1",
                 ReactionsListForIssueCommentContent.Minus1 => "-1",
-                ReactionsListForIssueCommentContent.Laugh => "laugh",
                 ReactionsListForIssueCommentContent.Confused => "confused",
+                ReactionsListForIssueCommentContent.Eyes => "eyes",
                 ReactionsListForIssueCommentContent.Heart => "heart",
                 ReactionsListForIssueCommentContent.Hooray => "hooray",
+                ReactionsListForIssueCommentContent.Laugh => "laugh",
                 ReactionsListForIssueCommentContent.Rocket => "rocket",
-                ReactionsListForIssueCommentContent.Eyes => "eyes",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -75,12 +75,12 @@ namespace G
             {
                 "+1" => ReactionsListForIssueCommentContent.Plus1,
                 "-1" => ReactionsListForIssueCommentContent.Minus1,
-                "laugh" => ReactionsListForIssueCommentContent.Laugh,
                 "confused" => ReactionsListForIssueCommentContent.Confused,
+                "eyes" => ReactionsListForIssueCommentContent.Eyes,
                 "heart" => ReactionsListForIssueCommentContent.Heart,
                 "hooray" => ReactionsListForIssueCommentContent.Hooray,
+                "laugh" => ReactionsListForIssueCommentContent.Laugh,
                 "rocket" => ReactionsListForIssueCommentContent.Rocket,
-                "eyes" => ReactionsListForIssueCommentContent.Eyes,
                 _ => null,
             };
         }

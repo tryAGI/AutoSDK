@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="ne")]
-        Ne,
+        [global::System.Runtime.Serialization.EnumMember(Value="ilike")]
+        Ilike,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="ilike")]
-        Ilike,
+        [global::System.Runtime.Serialization.EnumMember(Value="ne")]
+        Ne,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 GraderStringCheckOperation.Eq => "eq",
-                GraderStringCheckOperation.Ne => "ne",
-                GraderStringCheckOperation.Like => "like",
                 GraderStringCheckOperation.Ilike => "ilike",
+                GraderStringCheckOperation.Like => "like",
+                GraderStringCheckOperation.Ne => "ne",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "eq" => GraderStringCheckOperation.Eq,
-                "ne" => GraderStringCheckOperation.Ne,
-                "like" => GraderStringCheckOperation.Like,
                 "ilike" => GraderStringCheckOperation.Ilike,
+                "like" => GraderStringCheckOperation.Like,
+                "ne" => GraderStringCheckOperation.Ne,
                 _ => null,
             };
         }

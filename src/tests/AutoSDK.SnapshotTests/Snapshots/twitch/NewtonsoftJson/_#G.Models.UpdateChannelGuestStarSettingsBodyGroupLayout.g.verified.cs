@@ -16,20 +16,20 @@ namespace G
     public enum UpdateChannelGuestStarSettingsBodyGroupLayout
     {
         /// <summary>
-        /// All live guests are tiled within the browser source with the same size.
+        /// All live guests are arranged in a horizontal bar within the browser source
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="TILED_LAYOUT")]
-        TiledLayout,
+        [global::System.Runtime.Serialization.EnumMember(Value="HORIZONTAL_LAYOUT")]
+        HorizontalLayout,
         /// <summary>
         /// All live guests are tiled within the browser source with the same size. If there is an active screen share, it is sized larger than the other guests.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="SCREENSHARE_LAYOUT")]
         ScreenshareLayout,
         /// <summary>
-        /// All live guests are arranged in a horizontal bar within the browser source
+        /// All live guests are tiled within the browser source with the same size.
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="HORIZONTAL_LAYOUT")]
-        HorizontalLayout,
+        [global::System.Runtime.Serialization.EnumMember(Value="TILED_LAYOUT")]
+        TiledLayout,
         /// <summary>
         /// All live guests are arranged in a vertical bar within the browser source
         /// </summary>
@@ -49,9 +49,9 @@ namespace G
         {
             return value switch
             {
-                UpdateChannelGuestStarSettingsBodyGroupLayout.TiledLayout => "TILED_LAYOUT",
-                UpdateChannelGuestStarSettingsBodyGroupLayout.ScreenshareLayout => "SCREENSHARE_LAYOUT",
                 UpdateChannelGuestStarSettingsBodyGroupLayout.HorizontalLayout => "HORIZONTAL_LAYOUT",
+                UpdateChannelGuestStarSettingsBodyGroupLayout.ScreenshareLayout => "SCREENSHARE_LAYOUT",
+                UpdateChannelGuestStarSettingsBodyGroupLayout.TiledLayout => "TILED_LAYOUT",
                 UpdateChannelGuestStarSettingsBodyGroupLayout.VerticalLayout => "VERTICAL_LAYOUT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -63,9 +63,9 @@ namespace G
         {
             return value switch
             {
-                "TILED_LAYOUT" => UpdateChannelGuestStarSettingsBodyGroupLayout.TiledLayout,
-                "SCREENSHARE_LAYOUT" => UpdateChannelGuestStarSettingsBodyGroupLayout.ScreenshareLayout,
                 "HORIZONTAL_LAYOUT" => UpdateChannelGuestStarSettingsBodyGroupLayout.HorizontalLayout,
+                "SCREENSHARE_LAYOUT" => UpdateChannelGuestStarSettingsBodyGroupLayout.ScreenshareLayout,
+                "TILED_LAYOUT" => UpdateChannelGuestStarSettingsBodyGroupLayout.TiledLayout,
                 "VERTICAL_LAYOUT" => UpdateChannelGuestStarSettingsBodyGroupLayout.VerticalLayout,
                 _ => null,
             };

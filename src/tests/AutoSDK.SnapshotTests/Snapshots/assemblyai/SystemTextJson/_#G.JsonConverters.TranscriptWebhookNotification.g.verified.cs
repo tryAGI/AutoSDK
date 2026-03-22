@@ -28,8 +28,8 @@ namespace G.JsonConverters
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("transcript_id")) __score0++;
             if (__jsonProps.Contains("status")) __score0++;
+            if (__jsonProps.Contains("transcript_id")) __score0++;
             var __score1 = 0;
             var __bestScore = 0;
             var __bestIndex = -1;

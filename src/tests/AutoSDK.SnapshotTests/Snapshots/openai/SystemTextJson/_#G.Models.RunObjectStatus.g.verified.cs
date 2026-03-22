@@ -12,15 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Queued,
-        /// <summary>
-        /// 
-        /// </summary>
-        InProgress,
-        /// <summary>
-        /// 
-        /// </summary>
-        RequiresAction,
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Cancelled,
+        Completed,
+        /// <summary>
+        /// 
+        /// </summary>
+        Expired,
         /// <summary>
         /// 
         /// </summary>
@@ -36,7 +32,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        InProgress,
         /// <summary>
         /// 
         /// </summary>
@@ -44,7 +40,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Expired,
+        Queued,
+        /// <summary>
+        /// 
+        /// </summary>
+        RequiresAction,
     }
 
     /// <summary>
@@ -59,15 +59,15 @@ namespace G
         {
             return value switch
             {
-                RunObjectStatus.Queued => "queued",
-                RunObjectStatus.InProgress => "in_progress",
-                RunObjectStatus.RequiresAction => "requires_action",
-                RunObjectStatus.Cancelling => "cancelling",
                 RunObjectStatus.Cancelled => "cancelled",
-                RunObjectStatus.Failed => "failed",
+                RunObjectStatus.Cancelling => "cancelling",
                 RunObjectStatus.Completed => "completed",
-                RunObjectStatus.Incomplete => "incomplete",
                 RunObjectStatus.Expired => "expired",
+                RunObjectStatus.Failed => "failed",
+                RunObjectStatus.InProgress => "in_progress",
+                RunObjectStatus.Incomplete => "incomplete",
+                RunObjectStatus.Queued => "queued",
+                RunObjectStatus.RequiresAction => "requires_action",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -78,15 +78,15 @@ namespace G
         {
             return value switch
             {
-                "queued" => RunObjectStatus.Queued,
-                "in_progress" => RunObjectStatus.InProgress,
-                "requires_action" => RunObjectStatus.RequiresAction,
-                "cancelling" => RunObjectStatus.Cancelling,
                 "cancelled" => RunObjectStatus.Cancelled,
-                "failed" => RunObjectStatus.Failed,
+                "cancelling" => RunObjectStatus.Cancelling,
                 "completed" => RunObjectStatus.Completed,
-                "incomplete" => RunObjectStatus.Incomplete,
                 "expired" => RunObjectStatus.Expired,
+                "failed" => RunObjectStatus.Failed,
+                "in_progress" => RunObjectStatus.InProgress,
+                "incomplete" => RunObjectStatus.Incomplete,
+                "queued" => RunObjectStatus.Queued,
+                "requires_action" => RunObjectStatus.RequiresAction,
                 _ => null,
             };
         }

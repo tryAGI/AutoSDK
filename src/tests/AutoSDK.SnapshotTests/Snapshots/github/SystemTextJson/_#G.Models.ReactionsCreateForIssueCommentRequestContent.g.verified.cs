@@ -20,11 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Laugh,
+        Confused,
         /// <summary>
         /// 
         /// </summary>
-        Confused,
+        Eyes,
         /// <summary>
         /// 
         /// </summary>
@@ -36,11 +36,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Rocket,
+        Laugh,
         /// <summary>
         /// 
         /// </summary>
-        Eyes,
+        Rocket,
     }
 
     /// <summary>
@@ -57,12 +57,12 @@ namespace G
             {
                 ReactionsCreateForIssueCommentRequestContent.Plus1 => "+1",
                 ReactionsCreateForIssueCommentRequestContent.Minus1 => "-1",
-                ReactionsCreateForIssueCommentRequestContent.Laugh => "laugh",
                 ReactionsCreateForIssueCommentRequestContent.Confused => "confused",
+                ReactionsCreateForIssueCommentRequestContent.Eyes => "eyes",
                 ReactionsCreateForIssueCommentRequestContent.Heart => "heart",
                 ReactionsCreateForIssueCommentRequestContent.Hooray => "hooray",
+                ReactionsCreateForIssueCommentRequestContent.Laugh => "laugh",
                 ReactionsCreateForIssueCommentRequestContent.Rocket => "rocket",
-                ReactionsCreateForIssueCommentRequestContent.Eyes => "eyes",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -75,12 +75,12 @@ namespace G
             {
                 "+1" => ReactionsCreateForIssueCommentRequestContent.Plus1,
                 "-1" => ReactionsCreateForIssueCommentRequestContent.Minus1,
-                "laugh" => ReactionsCreateForIssueCommentRequestContent.Laugh,
                 "confused" => ReactionsCreateForIssueCommentRequestContent.Confused,
+                "eyes" => ReactionsCreateForIssueCommentRequestContent.Eyes,
                 "heart" => ReactionsCreateForIssueCommentRequestContent.Heart,
                 "hooray" => ReactionsCreateForIssueCommentRequestContent.Hooray,
+                "laugh" => ReactionsCreateForIssueCommentRequestContent.Laugh,
                 "rocket" => ReactionsCreateForIssueCommentRequestContent.Rocket,
-                "eyes" => ReactionsCreateForIssueCommentRequestContent.Eyes,
                 _ => null,
             };
         }

@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Light,
+        Dark,
         /// <summary>
         /// 
         /// </summary>
-        Dark,
+        Light,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                WidgetConfigResponseModelSyntaxHighlightTheme2.Light => "light",
                 WidgetConfigResponseModelSyntaxHighlightTheme2.Dark => "dark",
+                WidgetConfigResponseModelSyntaxHighlightTheme2.Light => "light",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "light" => WidgetConfigResponseModelSyntaxHighlightTheme2.Light,
                 "dark" => WidgetConfigResponseModelSyntaxHighlightTheme2.Dark,
+                "light" => WidgetConfigResponseModelSyntaxHighlightTheme2.Light,
                 _ => null,
             };
         }

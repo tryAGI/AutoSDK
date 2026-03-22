@@ -12,31 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        HarmCategoryUnspecified,
+        HarmCategoryDangerous,
+        /// <summary>
+        /// 
+        /// </summary>
+        HarmCategoryDangerousContent,
         /// <summary>
         /// 
         /// </summary>
         HarmCategoryDerogatory,
-        /// <summary>
-        /// 
-        /// </summary>
-        HarmCategoryToxicity,
-        /// <summary>
-        /// 
-        /// </summary>
-        HarmCategoryViolence,
-        /// <summary>
-        /// 
-        /// </summary>
-        HarmCategorySexual,
-        /// <summary>
-        /// 
-        /// </summary>
-        HarmCategoryMedical,
-        /// <summary>
-        /// 
-        /// </summary>
-        HarmCategoryDangerous,
         /// <summary>
         /// 
         /// </summary>
@@ -48,11 +32,27 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        HarmCategoryMedical,
+        /// <summary>
+        /// 
+        /// </summary>
+        HarmCategorySexual,
+        /// <summary>
+        /// 
+        /// </summary>
         HarmCategorySexuallyExplicit,
         /// <summary>
         /// 
         /// </summary>
-        HarmCategoryDangerousContent,
+        HarmCategoryToxicity,
+        /// <summary>
+        /// 
+        /// </summary>
+        HarmCategoryUnspecified,
+        /// <summary>
+        /// 
+        /// </summary>
+        HarmCategoryViolence,
     }
 
     /// <summary>
@@ -67,17 +67,17 @@ namespace G
         {
             return value switch
             {
-                SafetyRatingCategory.HarmCategoryUnspecified => "HARM_CATEGORY_UNSPECIFIED",
-                SafetyRatingCategory.HarmCategoryDerogatory => "HARM_CATEGORY_DEROGATORY",
-                SafetyRatingCategory.HarmCategoryToxicity => "HARM_CATEGORY_TOXICITY",
-                SafetyRatingCategory.HarmCategoryViolence => "HARM_CATEGORY_VIOLENCE",
-                SafetyRatingCategory.HarmCategorySexual => "HARM_CATEGORY_SEXUAL",
-                SafetyRatingCategory.HarmCategoryMedical => "HARM_CATEGORY_MEDICAL",
                 SafetyRatingCategory.HarmCategoryDangerous => "HARM_CATEGORY_DANGEROUS",
+                SafetyRatingCategory.HarmCategoryDangerousContent => "HARM_CATEGORY_DANGEROUS_CONTENT",
+                SafetyRatingCategory.HarmCategoryDerogatory => "HARM_CATEGORY_DEROGATORY",
                 SafetyRatingCategory.HarmCategoryHarassment => "HARM_CATEGORY_HARASSMENT",
                 SafetyRatingCategory.HarmCategoryHateSpeech => "HARM_CATEGORY_HATE_SPEECH",
+                SafetyRatingCategory.HarmCategoryMedical => "HARM_CATEGORY_MEDICAL",
+                SafetyRatingCategory.HarmCategorySexual => "HARM_CATEGORY_SEXUAL",
                 SafetyRatingCategory.HarmCategorySexuallyExplicit => "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-                SafetyRatingCategory.HarmCategoryDangerousContent => "HARM_CATEGORY_DANGEROUS_CONTENT",
+                SafetyRatingCategory.HarmCategoryToxicity => "HARM_CATEGORY_TOXICITY",
+                SafetyRatingCategory.HarmCategoryUnspecified => "HARM_CATEGORY_UNSPECIFIED",
+                SafetyRatingCategory.HarmCategoryViolence => "HARM_CATEGORY_VIOLENCE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -88,17 +88,17 @@ namespace G
         {
             return value switch
             {
-                "HARM_CATEGORY_UNSPECIFIED" => SafetyRatingCategory.HarmCategoryUnspecified,
-                "HARM_CATEGORY_DEROGATORY" => SafetyRatingCategory.HarmCategoryDerogatory,
-                "HARM_CATEGORY_TOXICITY" => SafetyRatingCategory.HarmCategoryToxicity,
-                "HARM_CATEGORY_VIOLENCE" => SafetyRatingCategory.HarmCategoryViolence,
-                "HARM_CATEGORY_SEXUAL" => SafetyRatingCategory.HarmCategorySexual,
-                "HARM_CATEGORY_MEDICAL" => SafetyRatingCategory.HarmCategoryMedical,
                 "HARM_CATEGORY_DANGEROUS" => SafetyRatingCategory.HarmCategoryDangerous,
+                "HARM_CATEGORY_DANGEROUS_CONTENT" => SafetyRatingCategory.HarmCategoryDangerousContent,
+                "HARM_CATEGORY_DEROGATORY" => SafetyRatingCategory.HarmCategoryDerogatory,
                 "HARM_CATEGORY_HARASSMENT" => SafetyRatingCategory.HarmCategoryHarassment,
                 "HARM_CATEGORY_HATE_SPEECH" => SafetyRatingCategory.HarmCategoryHateSpeech,
+                "HARM_CATEGORY_MEDICAL" => SafetyRatingCategory.HarmCategoryMedical,
+                "HARM_CATEGORY_SEXUAL" => SafetyRatingCategory.HarmCategorySexual,
                 "HARM_CATEGORY_SEXUALLY_EXPLICIT" => SafetyRatingCategory.HarmCategorySexuallyExplicit,
-                "HARM_CATEGORY_DANGEROUS_CONTENT" => SafetyRatingCategory.HarmCategoryDangerousContent,
+                "HARM_CATEGORY_TOXICITY" => SafetyRatingCategory.HarmCategoryToxicity,
+                "HARM_CATEGORY_UNSPECIFIED" => SafetyRatingCategory.HarmCategoryUnspecified,
+                "HARM_CATEGORY_VIOLENCE" => SafetyRatingCategory.HarmCategoryViolence,
                 _ => null,
             };
         }

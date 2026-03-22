@@ -12,10 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        MonthlyPeriod,
-        /// <summary>
-        /// 
-        /// </summary>
         x3MonthPeriod,
         /// <summary>
         /// 
@@ -25,6 +21,10 @@ namespace G
         /// 
         /// </summary>
         AnnualPeriod,
+        /// <summary>
+        /// 
+        /// </summary>
+        MonthlyPeriod,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                BillingPeriod.MonthlyPeriod => "monthly_period",
                 BillingPeriod.x3MonthPeriod => "3_month_period",
                 BillingPeriod.x6MonthPeriod => "6_month_period",
                 BillingPeriod.AnnualPeriod => "annual_period",
+                BillingPeriod.MonthlyPeriod => "monthly_period",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "monthly_period" => BillingPeriod.MonthlyPeriod,
                 "3_month_period" => BillingPeriod.x3MonthPeriod,
                 "6_month_period" => BillingPeriod.x6MonthPeriod,
                 "annual_period" => BillingPeriod.AnnualPeriod,
+                "monthly_period" => BillingPeriod.MonthlyPeriod,
                 _ => null,
             };
         }

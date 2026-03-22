@@ -14,11 +14,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="running")]
-        Running,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="completed")]
         Completed,
         /// <summary>
@@ -26,6 +21,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="failed")]
         Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="running")]
+        Running,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
         {
             return value switch
             {
-                ClassificationStatus.Running => "running",
                 ClassificationStatus.Completed => "completed",
                 ClassificationStatus.Failed => "failed",
+                ClassificationStatus.Running => "running",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
-                "running" => ClassificationStatus.Running,
                 "completed" => ClassificationStatus.Completed,
                 "failed" => ClassificationStatus.Failed,
+                "running" => ClassificationStatus.Running,
                 _ => null,
             };
         }

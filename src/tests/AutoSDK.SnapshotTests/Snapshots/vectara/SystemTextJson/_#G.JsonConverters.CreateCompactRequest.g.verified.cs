@@ -30,9 +30,9 @@ namespace G.JsonConverters
             var __score0 = 0;
             if (__jsonProps.Contains("stream_response")) __score0++;
             var __score1 = 0;
-            if (__jsonProps.Contains("type")) __score1++;
             if (__jsonProps.Contains("compact_up_to_event_id")) __score1++;
             if (__jsonProps.Contains("compaction_message")) __score1++;
+            if (__jsonProps.Contains("type")) __score1++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }

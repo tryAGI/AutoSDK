@@ -12,10 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        RemoveSystemMessages,
-        /// <summary>
-        /// 
-        /// </summary>
         ConvertToOpenaiMessage,
         /// <summary>
         /// 
@@ -24,11 +20,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        ExtractToolsFromRun,
+        /// <summary>
+        /// 
+        /// </summary>
         RemoveExtraFields,
         /// <summary>
         /// 
         /// </summary>
-        ExtractToolsFromRun,
+        RemoveSystemMessages,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                DatasetTransformationType.RemoveSystemMessages => "remove_system_messages",
                 DatasetTransformationType.ConvertToOpenaiMessage => "convert_to_openai_message",
                 DatasetTransformationType.ConvertToOpenaiTool => "convert_to_openai_tool",
-                DatasetTransformationType.RemoveExtraFields => "remove_extra_fields",
                 DatasetTransformationType.ExtractToolsFromRun => "extract_tools_from_run",
+                DatasetTransformationType.RemoveExtraFields => "remove_extra_fields",
+                DatasetTransformationType.RemoveSystemMessages => "remove_system_messages",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "remove_system_messages" => DatasetTransformationType.RemoveSystemMessages,
                 "convert_to_openai_message" => DatasetTransformationType.ConvertToOpenaiMessage,
                 "convert_to_openai_tool" => DatasetTransformationType.ConvertToOpenaiTool,
-                "remove_extra_fields" => DatasetTransformationType.RemoveExtraFields,
                 "extract_tools_from_run" => DatasetTransformationType.ExtractToolsFromRun,
+                "remove_extra_fields" => DatasetTransformationType.RemoveExtraFields,
+                "remove_system_messages" => DatasetTransformationType.RemoveSystemMessages,
                 _ => null,
             };
         }

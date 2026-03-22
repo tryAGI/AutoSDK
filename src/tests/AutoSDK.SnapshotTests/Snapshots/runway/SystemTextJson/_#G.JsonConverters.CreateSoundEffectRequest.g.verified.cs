@@ -28,10 +28,10 @@ namespace G.JsonConverters
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("promptText")) __score0++;
             if (__jsonProps.Contains("duration")) __score0++;
             if (__jsonProps.Contains("loop")) __score0++;
             if (__jsonProps.Contains("model")) __score0++;
+            if (__jsonProps.Contains("promptText")) __score0++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }

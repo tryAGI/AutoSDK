@@ -14,23 +14,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Unknown")]
-        Unknown,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Created")]
-        Created,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Queued")]
-        Queued,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Provisioning")]
-        Provisioning,
+        [global::System.Runtime.Serialization.EnumMember(Value="Archived")]
+        Archived,
         /// <summary>
         /// 
         /// </summary>
@@ -44,8 +29,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Unavailable")]
-        Unavailable,
+        [global::System.Runtime.Serialization.EnumMember(Value="Created")]
+        Created,
         /// <summary>
         /// 
         /// </summary>
@@ -54,28 +39,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Moved")]
-        Moved,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Shutdown")]
-        Shutdown,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Archived")]
-        Archived,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Starting")]
-        Starting,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="ShuttingDown")]
-        ShuttingDown,
+        [global::System.Runtime.Serialization.EnumMember(Value="Exporting")]
+        Exporting,
         /// <summary>
         /// 
         /// </summary>
@@ -84,18 +49,53 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Exporting")]
-        Exporting,
+        [global::System.Runtime.Serialization.EnumMember(Value="Moved")]
+        Moved,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Updating")]
-        Updating,
+        [global::System.Runtime.Serialization.EnumMember(Value="Provisioning")]
+        Provisioning,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="Queued")]
+        Queued,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="Rebuilding")]
         Rebuilding,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="Shutdown")]
+        Shutdown,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="ShuttingDown")]
+        ShuttingDown,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="Starting")]
+        Starting,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="Unavailable")]
+        Unavailable,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="Unknown")]
+        Unknown,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="Updating")]
+        Updating,
     }
 
     /// <summary>
@@ -110,23 +110,23 @@ namespace G
         {
             return value switch
             {
-                CodespaceState.Unknown => "Unknown",
-                CodespaceState.Created => "Created",
-                CodespaceState.Queued => "Queued",
-                CodespaceState.Provisioning => "Provisioning",
+                CodespaceState.Archived => "Archived",
                 CodespaceState.Available => "Available",
                 CodespaceState.Awaiting => "Awaiting",
-                CodespaceState.Unavailable => "Unavailable",
+                CodespaceState.Created => "Created",
                 CodespaceState.Deleted => "Deleted",
-                CodespaceState.Moved => "Moved",
-                CodespaceState.Shutdown => "Shutdown",
-                CodespaceState.Archived => "Archived",
-                CodespaceState.Starting => "Starting",
-                CodespaceState.ShuttingDown => "ShuttingDown",
-                CodespaceState.Failed => "Failed",
                 CodespaceState.Exporting => "Exporting",
-                CodespaceState.Updating => "Updating",
+                CodespaceState.Failed => "Failed",
+                CodespaceState.Moved => "Moved",
+                CodespaceState.Provisioning => "Provisioning",
+                CodespaceState.Queued => "Queued",
                 CodespaceState.Rebuilding => "Rebuilding",
+                CodespaceState.Shutdown => "Shutdown",
+                CodespaceState.ShuttingDown => "ShuttingDown",
+                CodespaceState.Starting => "Starting",
+                CodespaceState.Unavailable => "Unavailable",
+                CodespaceState.Unknown => "Unknown",
+                CodespaceState.Updating => "Updating",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -137,23 +137,23 @@ namespace G
         {
             return value switch
             {
-                "Unknown" => CodespaceState.Unknown,
-                "Created" => CodespaceState.Created,
-                "Queued" => CodespaceState.Queued,
-                "Provisioning" => CodespaceState.Provisioning,
+                "Archived" => CodespaceState.Archived,
                 "Available" => CodespaceState.Available,
                 "Awaiting" => CodespaceState.Awaiting,
-                "Unavailable" => CodespaceState.Unavailable,
+                "Created" => CodespaceState.Created,
                 "Deleted" => CodespaceState.Deleted,
-                "Moved" => CodespaceState.Moved,
-                "Shutdown" => CodespaceState.Shutdown,
-                "Archived" => CodespaceState.Archived,
-                "Starting" => CodespaceState.Starting,
-                "ShuttingDown" => CodespaceState.ShuttingDown,
-                "Failed" => CodespaceState.Failed,
                 "Exporting" => CodespaceState.Exporting,
-                "Updating" => CodespaceState.Updating,
+                "Failed" => CodespaceState.Failed,
+                "Moved" => CodespaceState.Moved,
+                "Provisioning" => CodespaceState.Provisioning,
+                "Queued" => CodespaceState.Queued,
                 "Rebuilding" => CodespaceState.Rebuilding,
+                "Shutdown" => CodespaceState.Shutdown,
+                "ShuttingDown" => CodespaceState.ShuttingDown,
+                "Starting" => CodespaceState.Starting,
+                "Unavailable" => CodespaceState.Unavailable,
+                "Unknown" => CodespaceState.Unknown,
+                "Updating" => CodespaceState.Updating,
                 _ => null,
             };
         }

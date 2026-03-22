@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Gpt4oTranscribe,
+        Gpt4oMiniTranscribe,
         /// <summary>
         /// 
         /// </summary>
-        Gpt4oMiniTranscribe,
+        Gpt4oTranscribe,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                RealtimeTranscriptionSessionCreateResponseInputAudioTranscriptionModel.Gpt4oTranscribe => "gpt-4o-transcribe",
                 RealtimeTranscriptionSessionCreateResponseInputAudioTranscriptionModel.Gpt4oMiniTranscribe => "gpt-4o-mini-transcribe",
+                RealtimeTranscriptionSessionCreateResponseInputAudioTranscriptionModel.Gpt4oTranscribe => "gpt-4o-transcribe",
                 RealtimeTranscriptionSessionCreateResponseInputAudioTranscriptionModel.Whisper1 => "whisper-1",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "gpt-4o-transcribe" => RealtimeTranscriptionSessionCreateResponseInputAudioTranscriptionModel.Gpt4oTranscribe,
                 "gpt-4o-mini-transcribe" => RealtimeTranscriptionSessionCreateResponseInputAudioTranscriptionModel.Gpt4oMiniTranscribe,
+                "gpt-4o-transcribe" => RealtimeTranscriptionSessionCreateResponseInputAudioTranscriptionModel.Gpt4oTranscribe,
                 "whisper-1" => RealtimeTranscriptionSessionCreateResponseInputAudioTranscriptionModel.Whisper1,
                 _ => null,
             };

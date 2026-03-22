@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Queued,
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -21,7 +21,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        Queued,
     }
 
     /// <summary>
@@ -36,9 +36,9 @@ namespace G
         {
             return value switch
             {
-                JobStepStatus.Queued => "queued",
-                JobStepStatus.InProgress => "in_progress",
                 JobStepStatus.Completed => "completed",
+                JobStepStatus.InProgress => "in_progress",
+                JobStepStatus.Queued => "queued",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,9 +49,9 @@ namespace G
         {
             return value switch
             {
-                "queued" => JobStepStatus.Queued,
-                "in_progress" => JobStepStatus.InProgress,
                 "completed" => JobStepStatus.Completed,
+                "in_progress" => JobStepStatus.InProgress,
+                "queued" => JobStepStatus.Queued,
                 _ => null,
             };
         }

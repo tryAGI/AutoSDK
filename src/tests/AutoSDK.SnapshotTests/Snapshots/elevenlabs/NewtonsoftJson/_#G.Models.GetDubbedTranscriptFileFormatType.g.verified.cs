@@ -14,6 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="json")]
+        Json,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="srt")]
         Srt,
         /// <summary>
@@ -21,11 +26,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="webvtt")]
         Webvtt,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="json")]
-        Json,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
         {
             return value switch
             {
+                GetDubbedTranscriptFileFormatType.Json => "json",
                 GetDubbedTranscriptFileFormatType.Srt => "srt",
                 GetDubbedTranscriptFileFormatType.Webvtt => "webvtt",
-                GetDubbedTranscriptFileFormatType.Json => "json",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
+                "json" => GetDubbedTranscriptFileFormatType.Json,
                 "srt" => GetDubbedTranscriptFileFormatType.Srt,
                 "webvtt" => GetDubbedTranscriptFileFormatType.Webvtt,
-                "json" => GetDubbedTranscriptFileFormatType.Json,
                 _ => null,
             };
         }

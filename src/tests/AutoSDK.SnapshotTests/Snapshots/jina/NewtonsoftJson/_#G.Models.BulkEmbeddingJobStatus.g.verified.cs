@@ -13,13 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="waiting")]
-        Waiting,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="in-progress")]
-        InProgress,
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
-        Completed,
+        [global::System.Runtime.Serialization.EnumMember(Value="in-progress")]
+        InProgress,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="waiting")]
+        Waiting,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                BulkEmbeddingJobStatus.Waiting => "waiting",
-                BulkEmbeddingJobStatus.InProgress => "in-progress",
-                BulkEmbeddingJobStatus.Failed => "failed",
                 BulkEmbeddingJobStatus.Completed => "completed",
+                BulkEmbeddingJobStatus.Failed => "failed",
+                BulkEmbeddingJobStatus.InProgress => "in-progress",
+                BulkEmbeddingJobStatus.Waiting => "waiting",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "waiting" => BulkEmbeddingJobStatus.Waiting,
-                "in-progress" => BulkEmbeddingJobStatus.InProgress,
-                "failed" => BulkEmbeddingJobStatus.Failed,
                 "completed" => BulkEmbeddingJobStatus.Completed,
+                "failed" => BulkEmbeddingJobStatus.Failed,
+                "in-progress" => BulkEmbeddingJobStatus.InProgress,
+                "waiting" => BulkEmbeddingJobStatus.Waiting,
                 _ => null,
             };
         }

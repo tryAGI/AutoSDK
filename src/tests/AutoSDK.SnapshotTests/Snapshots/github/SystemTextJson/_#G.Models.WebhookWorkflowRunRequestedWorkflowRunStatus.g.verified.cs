@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Requested,
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        Pending,
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +28,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Pending,
+        Requested,
         /// <summary>
         /// 
         /// </summary>
@@ -47,11 +47,11 @@ namespace G
         {
             return value switch
             {
-                WebhookWorkflowRunRequestedWorkflowRunStatus.Requested => "requested",
-                WebhookWorkflowRunRequestedWorkflowRunStatus.InProgress => "in_progress",
                 WebhookWorkflowRunRequestedWorkflowRunStatus.Completed => "completed",
-                WebhookWorkflowRunRequestedWorkflowRunStatus.Queued => "queued",
+                WebhookWorkflowRunRequestedWorkflowRunStatus.InProgress => "in_progress",
                 WebhookWorkflowRunRequestedWorkflowRunStatus.Pending => "pending",
+                WebhookWorkflowRunRequestedWorkflowRunStatus.Queued => "queued",
+                WebhookWorkflowRunRequestedWorkflowRunStatus.Requested => "requested",
                 WebhookWorkflowRunRequestedWorkflowRunStatus.Waiting => "waiting",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -63,11 +63,11 @@ namespace G
         {
             return value switch
             {
-                "requested" => WebhookWorkflowRunRequestedWorkflowRunStatus.Requested,
-                "in_progress" => WebhookWorkflowRunRequestedWorkflowRunStatus.InProgress,
                 "completed" => WebhookWorkflowRunRequestedWorkflowRunStatus.Completed,
-                "queued" => WebhookWorkflowRunRequestedWorkflowRunStatus.Queued,
+                "in_progress" => WebhookWorkflowRunRequestedWorkflowRunStatus.InProgress,
                 "pending" => WebhookWorkflowRunRequestedWorkflowRunStatus.Pending,
+                "queued" => WebhookWorkflowRunRequestedWorkflowRunStatus.Queued,
+                "requested" => WebhookWorkflowRunRequestedWorkflowRunStatus.Requested,
                 "waiting" => WebhookWorkflowRunRequestedWorkflowRunStatus.Waiting,
                 _ => null,
             };

@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// The same functionality can be achieved in `/v1/chat` using the `force_single_step` parameter. If `force_single_step=true`, this is equivalent to specifying `REQUIRED`. While if `force_single_step=true` and `tool_results` are passed, this is equivalent to specifying `NONE`.
         /// </summary>
-        Required,
+        None,
         /// <summary>
         /// The same functionality can be achieved in `/v1/chat` using the `force_single_step` parameter. If `force_single_step=true`, this is equivalent to specifying `REQUIRED`. While if `force_single_step=true` and `tool_results` are passed, this is equivalent to specifying `NONE`.
         /// </summary>
-        None,
+        Required,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                Chatv2RequestToolChoice.Required => "REQUIRED",
                 Chatv2RequestToolChoice.None => "NONE",
+                Chatv2RequestToolChoice.Required => "REQUIRED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,8 +47,8 @@ namespace G
         {
             return value switch
             {
-                "REQUIRED" => Chatv2RequestToolChoice.Required,
                 "NONE" => Chatv2RequestToolChoice.None,
+                "REQUIRED" => Chatv2RequestToolChoice.Required,
                 _ => null,
             };
         }

@@ -53,6 +53,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="deploy_key")]
+        DeployKey,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="deployment")]
         Deployment,
         /// <summary>
@@ -65,11 +70,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="deployment_status")]
         DeploymentStatus,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="deploy_key")]
-        DeployKey,
         /// <summary>
         /// 
         /// </summary>
@@ -93,13 +93,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="issues")]
-        Issues,
+        [global::System.Runtime.Serialization.EnumMember(Value="issue_comment")]
+        IssueComment,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="issue_comment")]
-        IssueComment,
+        [global::System.Runtime.Serialization.EnumMember(Value="issues")]
+        Issues,
         /// <summary>
         /// 
         /// </summary>
@@ -123,13 +123,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="organization")]
-        Organization,
+        [global::System.Runtime.Serialization.EnumMember(Value="org_block")]
+        OrgBlock,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="org_block")]
-        OrgBlock,
+        [global::System.Runtime.Serialization.EnumMember(Value="organization")]
+        Organization,
         /// <summary>
         /// 
         /// </summary>
@@ -257,22 +257,22 @@ namespace G
                 WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.ContentReference => "content_reference",
                 WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Create => "create",
                 WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Delete => "delete",
+                WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.DeployKey => "deploy_key",
                 WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Deployment => "deployment",
                 WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.DeploymentReview => "deployment_review",
                 WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.DeploymentStatus => "deployment_status",
-                WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.DeployKey => "deploy_key",
                 WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Discussion => "discussion",
                 WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.DiscussionComment => "discussion_comment",
                 WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Fork => "fork",
                 WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Gollum => "gollum",
-                WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Issues => "issues",
                 WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.IssueComment => "issue_comment",
+                WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Issues => "issues",
                 WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Label => "label",
                 WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Member => "member",
                 WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Membership => "membership",
                 WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Milestone => "milestone",
-                WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Organization => "organization",
                 WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.OrgBlock => "org_block",
+                WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Organization => "organization",
                 WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.PageBuild => "page_build",
                 WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Project => "project",
                 WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.ProjectCard => "project_card",
@@ -312,22 +312,22 @@ namespace G
                 "content_reference" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.ContentReference,
                 "create" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Create,
                 "delete" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Delete,
+                "deploy_key" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.DeployKey,
                 "deployment" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Deployment,
                 "deployment_review" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.DeploymentReview,
                 "deployment_status" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.DeploymentStatus,
-                "deploy_key" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.DeployKey,
                 "discussion" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Discussion,
                 "discussion_comment" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.DiscussionComment,
                 "fork" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Fork,
                 "gollum" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Gollum,
-                "issues" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Issues,
                 "issue_comment" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.IssueComment,
+                "issues" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Issues,
                 "label" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Label,
                 "member" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Member,
                 "membership" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Membership,
                 "milestone" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Milestone,
-                "organization" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Organization,
                 "org_block" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.OrgBlock,
+                "organization" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Organization,
                 "page_build" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.PageBuild,
                 "project" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.Project,
                 "project_card" => WebhookIssuesDemilestonedIssuePerformedViaGithubAppEvent.ProjectCard,

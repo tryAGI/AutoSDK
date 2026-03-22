@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="informative")]
-        Informative,
+        [global::System.Runtime.Serialization.EnumMember(Value="catchy")]
+        Catchy,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="catchy")]
-        Catchy,
+        [global::System.Runtime.Serialization.EnumMember(Value="informative")]
+        Informative,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                SummaryModel.Informative => "informative",
-                SummaryModel.Conversational => "conversational",
                 SummaryModel.Catchy => "catchy",
+                SummaryModel.Conversational => "conversational",
+                SummaryModel.Informative => "informative",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "informative" => SummaryModel.Informative,
-                "conversational" => SummaryModel.Conversational,
                 "catchy" => SummaryModel.Catchy,
+                "conversational" => SummaryModel.Conversational,
+                "informative" => SummaryModel.Informative,
                 _ => null,
             };
         }

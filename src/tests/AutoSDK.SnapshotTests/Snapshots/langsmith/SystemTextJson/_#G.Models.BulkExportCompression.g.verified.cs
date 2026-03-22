@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        None,
+        Gzip,
         /// <summary>
         /// 
         /// </summary>
-        Gzip,
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                BulkExportCompression.None => "none",
                 BulkExportCompression.Gzip => "gzip",
+                BulkExportCompression.None => "none",
                 BulkExportCompression.Snappy => "snappy",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "none" => BulkExportCompression.None,
                 "gzip" => BulkExportCompression.Gzip,
+                "none" => BulkExportCompression.None,
                 "snappy" => BulkExportCompression.Snappy,
                 _ => null,
             };

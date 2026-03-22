@@ -13,13 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="never")]
-        Never,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="mobile")]
-        Mobile,
+        [global::System.Runtime.Serialization.EnumMember(Value="always")]
+        Always,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="always")]
-        Always,
+        [global::System.Runtime.Serialization.EnumMember(Value="mobile")]
+        Mobile,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="never")]
+        Never,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                WidgetExpandable.Never => "never",
-                WidgetExpandable.Mobile => "mobile",
-                WidgetExpandable.Desktop => "desktop",
                 WidgetExpandable.Always => "always",
+                WidgetExpandable.Desktop => "desktop",
+                WidgetExpandable.Mobile => "mobile",
+                WidgetExpandable.Never => "never",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "never" => WidgetExpandable.Never,
-                "mobile" => WidgetExpandable.Mobile,
-                "desktop" => WidgetExpandable.Desktop,
                 "always" => WidgetExpandable.Always,
+                "desktop" => WidgetExpandable.Desktop,
+                "mobile" => WidgetExpandable.Mobile,
+                "never" => WidgetExpandable.Never,
                 _ => null,
             };
         }

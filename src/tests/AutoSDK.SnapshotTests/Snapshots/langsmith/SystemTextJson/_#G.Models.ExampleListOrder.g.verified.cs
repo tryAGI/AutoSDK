@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Recent,
+        Random,
         /// <summary>
         /// 
         /// </summary>
-        Random,
+        Recent,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                ExampleListOrder.Recent => "recent",
                 ExampleListOrder.Random => "random",
+                ExampleListOrder.Recent => "recent",
                 ExampleListOrder.RecentlyCreated => "recently_created",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "recent" => ExampleListOrder.Recent,
                 "random" => ExampleListOrder.Random,
+                "recent" => ExampleListOrder.Recent,
                 "recently_created" => ExampleListOrder.RecentlyCreated,
                 _ => null,
             };

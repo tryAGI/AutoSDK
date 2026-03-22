@@ -12,15 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        GenerationChunk,
-        /// <summary>
-        /// 
-        /// </summary>
-        GenerationInfo,
-        /// <summary>
-        /// 
-        /// </summary>
-        GenerationEnd,
+        End,
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +20,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        End,
+        GenerationChunk,
+        /// <summary>
+        /// 
+        /// </summary>
+        GenerationEnd,
+        /// <summary>
+        /// 
+        /// </summary>
+        GenerationInfo,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                SummarizeDocumentStreamedResponseDiscriminatorType.GenerationChunk => "generation_chunk",
-                SummarizeDocumentStreamedResponseDiscriminatorType.GenerationInfo => "generation_info",
-                SummarizeDocumentStreamedResponseDiscriminatorType.GenerationEnd => "generation_end",
-                SummarizeDocumentStreamedResponseDiscriminatorType.Error => "error",
                 SummarizeDocumentStreamedResponseDiscriminatorType.End => "end",
+                SummarizeDocumentStreamedResponseDiscriminatorType.Error => "error",
+                SummarizeDocumentStreamedResponseDiscriminatorType.GenerationChunk => "generation_chunk",
+                SummarizeDocumentStreamedResponseDiscriminatorType.GenerationEnd => "generation_end",
+                SummarizeDocumentStreamedResponseDiscriminatorType.GenerationInfo => "generation_info",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "generation_chunk" => SummarizeDocumentStreamedResponseDiscriminatorType.GenerationChunk,
-                "generation_info" => SummarizeDocumentStreamedResponseDiscriminatorType.GenerationInfo,
-                "generation_end" => SummarizeDocumentStreamedResponseDiscriminatorType.GenerationEnd,
-                "error" => SummarizeDocumentStreamedResponseDiscriminatorType.Error,
                 "end" => SummarizeDocumentStreamedResponseDiscriminatorType.End,
+                "error" => SummarizeDocumentStreamedResponseDiscriminatorType.Error,
+                "generation_chunk" => SummarizeDocumentStreamedResponseDiscriminatorType.GenerationChunk,
+                "generation_end" => SummarizeDocumentStreamedResponseDiscriminatorType.GenerationEnd,
+                "generation_info" => SummarizeDocumentStreamedResponseDiscriminatorType.GenerationInfo,
                 _ => null,
             };
         }

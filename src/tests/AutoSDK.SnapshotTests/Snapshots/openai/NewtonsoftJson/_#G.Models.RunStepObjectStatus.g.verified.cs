@@ -13,18 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
-        InProgress,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
         Cancelled,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
-        Failed,
         /// <summary>
         /// 
         /// </summary>
@@ -35,6 +25,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="expired")]
         Expired,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
+        Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
+        InProgress,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                RunStepObjectStatus.InProgress => "in_progress",
                 RunStepObjectStatus.Cancelled => "cancelled",
-                RunStepObjectStatus.Failed => "failed",
                 RunStepObjectStatus.Completed => "completed",
                 RunStepObjectStatus.Expired => "expired",
+                RunStepObjectStatus.Failed => "failed",
+                RunStepObjectStatus.InProgress => "in_progress",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "in_progress" => RunStepObjectStatus.InProgress,
                 "cancelled" => RunStepObjectStatus.Cancelled,
-                "failed" => RunStepObjectStatus.Failed,
                 "completed" => RunStepObjectStatus.Completed,
                 "expired" => RunStepObjectStatus.Expired,
+                "failed" => RunStepObjectStatus.Failed,
+                "in_progress" => RunStepObjectStatus.InProgress,
                 _ => null,
             };
         }

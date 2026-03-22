@@ -15,25 +15,25 @@ namespace G
     public enum TextEmbeddingInputTask
     {
         /// <summary>
-        /// Specifies the given text is a query in a search or retrieval setting.
+        /// Specifies that the embedding is used for classification.
         /// </summary>
-        RetrievalQuery,
+        Classification,
         /// <summary>
         /// Specifies the given text is a document in a search or retrieval setting.
         /// </summary>
         RetrievalPassage,
         /// <summary>
-        /// Specifies the given text is used for Semantic Textual Similarity.
+        /// Specifies the given text is a query in a search or retrieval setting.
         /// </summary>
-        TextMatching,
-        /// <summary>
-        /// Specifies that the embedding is used for classification.
-        /// </summary>
-        Classification,
+        RetrievalQuery,
         /// <summary>
         /// Specifies that the embedding is used for clustering.
         /// </summary>
         Separation,
+        /// <summary>
+        /// Specifies the given text is used for Semantic Textual Similarity.
+        /// </summary>
+        TextMatching,
     }
 
     /// <summary>
@@ -48,11 +48,11 @@ namespace G
         {
             return value switch
             {
-                TextEmbeddingInputTask.RetrievalQuery => "retrieval.query",
-                TextEmbeddingInputTask.RetrievalPassage => "retrieval.passage",
-                TextEmbeddingInputTask.TextMatching => "text-matching",
                 TextEmbeddingInputTask.Classification => "classification",
+                TextEmbeddingInputTask.RetrievalPassage => "retrieval.passage",
+                TextEmbeddingInputTask.RetrievalQuery => "retrieval.query",
                 TextEmbeddingInputTask.Separation => "separation",
+                TextEmbeddingInputTask.TextMatching => "text-matching",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,11 +63,11 @@ namespace G
         {
             return value switch
             {
-                "retrieval.query" => TextEmbeddingInputTask.RetrievalQuery,
-                "retrieval.passage" => TextEmbeddingInputTask.RetrievalPassage,
-                "text-matching" => TextEmbeddingInputTask.TextMatching,
                 "classification" => TextEmbeddingInputTask.Classification,
+                "retrieval.passage" => TextEmbeddingInputTask.RetrievalPassage,
+                "retrieval.query" => TextEmbeddingInputTask.RetrievalQuery,
                 "separation" => TextEmbeddingInputTask.Separation,
+                "text-matching" => TextEmbeddingInputTask.TextMatching,
                 _ => null,
             };
         }

@@ -18,11 +18,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="model")]
-        Model,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="app")]
         App,
         /// <summary>
@@ -30,6 +25,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="auto_eval")]
         AutoEval,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="model")]
+        Model,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 SourceType.Api => "api",
-                SourceType.Model => "model",
                 SourceType.App => "app",
                 SourceType.AutoEval => "auto_eval",
+                SourceType.Model => "model",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "api" => SourceType.Api,
-                "model" => SourceType.Model,
                 "app" => SourceType.App,
                 "auto_eval" => SourceType.AutoEval,
+                "model" => SourceType.Model,
                 _ => null,
             };
         }

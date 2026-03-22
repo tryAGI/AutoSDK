@@ -19,18 +19,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="STOP")]
-        Stop,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MAX_TOKENS")]
         MaxTokens,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="SAFETY")]
-        Safety,
+        [global::System.Runtime.Serialization.EnumMember(Value="OTHER")]
+        Other,
         /// <summary>
         /// 
         /// </summary>
@@ -39,8 +34,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="OTHER")]
-        Other,
+        [global::System.Runtime.Serialization.EnumMember(Value="SAFETY")]
+        Safety,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="STOP")]
+        Stop,
     }
 
     /// <summary>
@@ -56,11 +56,11 @@ namespace G
             return value switch
             {
                 CandidateFinishReason.FinishReasonUnspecified => "FINISH_REASON_UNSPECIFIED",
-                CandidateFinishReason.Stop => "STOP",
                 CandidateFinishReason.MaxTokens => "MAX_TOKENS",
-                CandidateFinishReason.Safety => "SAFETY",
-                CandidateFinishReason.Recitation => "RECITATION",
                 CandidateFinishReason.Other => "OTHER",
+                CandidateFinishReason.Recitation => "RECITATION",
+                CandidateFinishReason.Safety => "SAFETY",
+                CandidateFinishReason.Stop => "STOP",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -72,11 +72,11 @@ namespace G
             return value switch
             {
                 "FINISH_REASON_UNSPECIFIED" => CandidateFinishReason.FinishReasonUnspecified,
-                "STOP" => CandidateFinishReason.Stop,
                 "MAX_TOKENS" => CandidateFinishReason.MaxTokens,
-                "SAFETY" => CandidateFinishReason.Safety,
-                "RECITATION" => CandidateFinishReason.Recitation,
                 "OTHER" => CandidateFinishReason.Other,
+                "RECITATION" => CandidateFinishReason.Recitation,
+                "SAFETY" => CandidateFinishReason.Safety,
+                "STOP" => CandidateFinishReason.Stop,
                 _ => null,
             };
         }

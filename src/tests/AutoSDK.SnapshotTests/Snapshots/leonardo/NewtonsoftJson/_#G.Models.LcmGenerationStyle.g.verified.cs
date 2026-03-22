@@ -48,18 +48,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="NONE")]
+        None,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PHOTOGRAPHY")]
         Photography,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="RENDER_3D")]
-        Render3d,
+        [global::System.Runtime.Serialization.EnumMember(Value="RAYTRACED")]
+        Raytraced,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="RAYTRACED")]
-        Raytraced,
+        [global::System.Runtime.Serialization.EnumMember(Value="RENDER_3D")]
+        Render3d,
         /// <summary>
         /// 
         /// </summary>
@@ -75,11 +80,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VIBRANT")]
         Vibrant,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="NONE")]
-        None,
     }
 
     /// <summary>
@@ -101,13 +101,13 @@ namespace G
                 LcmGenerationStyle.Environment => "ENVIRONMENT",
                 LcmGenerationStyle.FantasyArt => "FANTASY_ART",
                 LcmGenerationStyle.Illustration => "ILLUSTRATION",
+                LcmGenerationStyle.None => "NONE",
                 LcmGenerationStyle.Photography => "PHOTOGRAPHY",
-                LcmGenerationStyle.Render3d => "RENDER_3D",
                 LcmGenerationStyle.Raytraced => "RAYTRACED",
+                LcmGenerationStyle.Render3d => "RENDER_3D",
                 LcmGenerationStyle.SketchBw => "SKETCH_BW",
                 LcmGenerationStyle.SketchColor => "SKETCH_COLOR",
                 LcmGenerationStyle.Vibrant => "VIBRANT",
-                LcmGenerationStyle.None => "NONE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -125,13 +125,13 @@ namespace G
                 "ENVIRONMENT" => LcmGenerationStyle.Environment,
                 "FANTASY_ART" => LcmGenerationStyle.FantasyArt,
                 "ILLUSTRATION" => LcmGenerationStyle.Illustration,
+                "NONE" => LcmGenerationStyle.None,
                 "PHOTOGRAPHY" => LcmGenerationStyle.Photography,
-                "RENDER_3D" => LcmGenerationStyle.Render3d,
                 "RAYTRACED" => LcmGenerationStyle.Raytraced,
+                "RENDER_3D" => LcmGenerationStyle.Render3d,
                 "SKETCH_BW" => LcmGenerationStyle.SketchBw,
                 "SKETCH_COLOR" => LcmGenerationStyle.SketchColor,
                 "VIBRANT" => LcmGenerationStyle.Vibrant,
-                "NONE" => LcmGenerationStyle.None,
                 _ => null,
             };
         }

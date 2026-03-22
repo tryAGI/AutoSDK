@@ -12,10 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
-        /// <summary>
-        /// 
-        /// </summary>
         Assistant,
         /// <summary>
         /// 
@@ -25,6 +21,10 @@ namespace G
         /// 
         /// </summary>
         Tool,
+        /// <summary>
+        /// 
+        /// </summary>
+        User,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                ChatMessageV2DiscriminatorRole.User => "user",
                 ChatMessageV2DiscriminatorRole.Assistant => "assistant",
                 ChatMessageV2DiscriminatorRole.System => "system",
                 ChatMessageV2DiscriminatorRole.Tool => "tool",
+                ChatMessageV2DiscriminatorRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "user" => ChatMessageV2DiscriminatorRole.User,
                 "assistant" => ChatMessageV2DiscriminatorRole.Assistant,
                 "system" => ChatMessageV2DiscriminatorRole.System,
                 "tool" => ChatMessageV2DiscriminatorRole.Tool,
+                "user" => ChatMessageV2DiscriminatorRole.User,
                 _ => null,
             };
         }

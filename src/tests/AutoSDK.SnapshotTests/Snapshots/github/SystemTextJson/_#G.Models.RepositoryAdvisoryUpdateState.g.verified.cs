@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Published,
-        /// <summary>
-        /// 
-        /// </summary>
         Closed,
         /// <summary>
         /// 
         /// </summary>
         Draft,
+        /// <summary>
+        /// 
+        /// </summary>
+        Published,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                RepositoryAdvisoryUpdateState.Published => "published",
                 RepositoryAdvisoryUpdateState.Closed => "closed",
                 RepositoryAdvisoryUpdateState.Draft => "draft",
+                RepositoryAdvisoryUpdateState.Published => "published",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "published" => RepositoryAdvisoryUpdateState.Published,
                 "closed" => RepositoryAdvisoryUpdateState.Closed,
                 "draft" => RepositoryAdvisoryUpdateState.Draft,
+                "published" => RepositoryAdvisoryUpdateState.Published,
                 _ => null,
             };
         }

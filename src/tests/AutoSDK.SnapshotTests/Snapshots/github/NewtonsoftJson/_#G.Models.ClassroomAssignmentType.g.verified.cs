@@ -14,13 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="individual")]
-        Individual,
+        [global::System.Runtime.Serialization.EnumMember(Value="group")]
+        Group,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="group")]
-        Group,
+        [global::System.Runtime.Serialization.EnumMember(Value="individual")]
+        Individual,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                ClassroomAssignmentType.Individual => "individual",
                 ClassroomAssignmentType.Group => "group",
+                ClassroomAssignmentType.Individual => "individual",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,8 +47,8 @@ namespace G
         {
             return value switch
             {
-                "individual" => ClassroomAssignmentType.Individual,
                 "group" => ClassroomAssignmentType.Group,
+                "individual" => ClassroomAssignmentType.Individual,
                 _ => null,
             };
         }

@@ -13,28 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="waiting")]
-        Waiting,
+        [global::System.Runtime.Serialization.EnumMember(Value="action_required")]
+        ActionRequired,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
-        Pending,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="startup_failure")]
-        StartupFailure,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="stale")]
-        Stale,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="success")]
-        Success,
+        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -48,8 +33,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
-        Cancelled,
+        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
+        Pending,
         /// <summary>
         /// 
         /// </summary>
@@ -58,13 +43,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="stale")]
+        Stale,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="startup_failure")]
+        StartupFailure,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="success")]
+        Success,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="timed_out")]
         TimedOut,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="action_required")]
-        ActionRequired,
+        [global::System.Runtime.Serialization.EnumMember(Value="waiting")]
+        Waiting,
     }
 
     /// <summary>
@@ -79,17 +79,17 @@ namespace G
         {
             return value switch
             {
-                CheckRunWithSimpleCheckSuiteConclusion.Waiting => "waiting",
-                CheckRunWithSimpleCheckSuiteConclusion.Pending => "pending",
-                CheckRunWithSimpleCheckSuiteConclusion.StartupFailure => "startup_failure",
-                CheckRunWithSimpleCheckSuiteConclusion.Stale => "stale",
-                CheckRunWithSimpleCheckSuiteConclusion.Success => "success",
+                CheckRunWithSimpleCheckSuiteConclusion.ActionRequired => "action_required",
+                CheckRunWithSimpleCheckSuiteConclusion.Cancelled => "cancelled",
                 CheckRunWithSimpleCheckSuiteConclusion.Failure => "failure",
                 CheckRunWithSimpleCheckSuiteConclusion.Neutral => "neutral",
-                CheckRunWithSimpleCheckSuiteConclusion.Cancelled => "cancelled",
+                CheckRunWithSimpleCheckSuiteConclusion.Pending => "pending",
                 CheckRunWithSimpleCheckSuiteConclusion.Skipped => "skipped",
+                CheckRunWithSimpleCheckSuiteConclusion.Stale => "stale",
+                CheckRunWithSimpleCheckSuiteConclusion.StartupFailure => "startup_failure",
+                CheckRunWithSimpleCheckSuiteConclusion.Success => "success",
                 CheckRunWithSimpleCheckSuiteConclusion.TimedOut => "timed_out",
-                CheckRunWithSimpleCheckSuiteConclusion.ActionRequired => "action_required",
+                CheckRunWithSimpleCheckSuiteConclusion.Waiting => "waiting",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -100,17 +100,17 @@ namespace G
         {
             return value switch
             {
-                "waiting" => CheckRunWithSimpleCheckSuiteConclusion.Waiting,
-                "pending" => CheckRunWithSimpleCheckSuiteConclusion.Pending,
-                "startup_failure" => CheckRunWithSimpleCheckSuiteConclusion.StartupFailure,
-                "stale" => CheckRunWithSimpleCheckSuiteConclusion.Stale,
-                "success" => CheckRunWithSimpleCheckSuiteConclusion.Success,
+                "action_required" => CheckRunWithSimpleCheckSuiteConclusion.ActionRequired,
+                "cancelled" => CheckRunWithSimpleCheckSuiteConclusion.Cancelled,
                 "failure" => CheckRunWithSimpleCheckSuiteConclusion.Failure,
                 "neutral" => CheckRunWithSimpleCheckSuiteConclusion.Neutral,
-                "cancelled" => CheckRunWithSimpleCheckSuiteConclusion.Cancelled,
+                "pending" => CheckRunWithSimpleCheckSuiteConclusion.Pending,
                 "skipped" => CheckRunWithSimpleCheckSuiteConclusion.Skipped,
+                "stale" => CheckRunWithSimpleCheckSuiteConclusion.Stale,
+                "startup_failure" => CheckRunWithSimpleCheckSuiteConclusion.StartupFailure,
+                "success" => CheckRunWithSimpleCheckSuiteConclusion.Success,
                 "timed_out" => CheckRunWithSimpleCheckSuiteConclusion.TimedOut,
-                "action_required" => CheckRunWithSimpleCheckSuiteConclusion.ActionRequired,
+                "waiting" => CheckRunWithSimpleCheckSuiteConclusion.Waiting,
                 _ => null,
             };
         }

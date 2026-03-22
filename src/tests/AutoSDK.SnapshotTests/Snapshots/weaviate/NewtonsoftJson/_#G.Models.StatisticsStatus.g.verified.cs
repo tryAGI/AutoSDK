@@ -19,8 +19,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="UNHEALTHY")]
-        Unhealthy,
+        [global::System.Runtime.Serialization.EnumMember(Value="TIMEOUT")]
+        Timeout,
         /// <summary>
         /// 
         /// </summary>
@@ -29,8 +29,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="TIMEOUT")]
-        Timeout,
+        [global::System.Runtime.Serialization.EnumMember(Value="UNHEALTHY")]
+        Unhealthy,
     }
 
     /// <summary>
@@ -46,9 +46,9 @@ namespace G
             return value switch
             {
                 StatisticsStatus.Healthy => "HEALTHY",
-                StatisticsStatus.Unhealthy => "UNHEALTHY",
-                StatisticsStatus.Unavailable => "UNAVAILABLE",
                 StatisticsStatus.Timeout => "TIMEOUT",
+                StatisticsStatus.Unavailable => "UNAVAILABLE",
+                StatisticsStatus.Unhealthy => "UNHEALTHY",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -60,9 +60,9 @@ namespace G
             return value switch
             {
                 "HEALTHY" => StatisticsStatus.Healthy,
-                "UNHEALTHY" => StatisticsStatus.Unhealthy,
-                "UNAVAILABLE" => StatisticsStatus.Unavailable,
                 "TIMEOUT" => StatisticsStatus.Timeout,
+                "UNAVAILABLE" => StatisticsStatus.Unavailable,
+                "UNHEALTHY" => StatisticsStatus.Unhealthy,
                 _ => null,
             };
         }

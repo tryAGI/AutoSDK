@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="user")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="assistant")]
+        Assistant,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="assistant")]
-        Assistant,
+        [global::System.Runtime.Serialization.EnumMember(Value="system")]
+        System,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="system")]
-        System,
+        [global::System.Runtime.Serialization.EnumMember(Value="user")]
+        User,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.User => "user",
                 LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.Assistant => "assistant",
-                LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.Tool => "tool",
                 LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.System => "system",
+                LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.Tool => "tool",
+                LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "user" => LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.User,
                 "assistant" => LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.Assistant,
-                "tool" => LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.Tool,
                 "system" => LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.System,
+                "tool" => LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.Tool,
+                "user" => LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole.User,
                 _ => null,
             };
         }

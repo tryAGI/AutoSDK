@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text")]
-        Text,
+        [global::System.Runtime.Serialization.EnumMember(Value="audio")]
+        Audio,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="audio")]
-        Audio,
+        [global::System.Runtime.Serialization.EnumMember(Value="text")]
+        Text,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                RealtimeTranscriptionSessionCreateRequestModalitie.Text => "text",
                 RealtimeTranscriptionSessionCreateRequestModalitie.Audio => "audio",
+                RealtimeTranscriptionSessionCreateRequestModalitie.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "text" => RealtimeTranscriptionSessionCreateRequestModalitie.Text,
                 "audio" => RealtimeTranscriptionSessionCreateRequestModalitie.Audio,
+                "text" => RealtimeTranscriptionSessionCreateRequestModalitie.Text,
                 _ => null,
             };
         }

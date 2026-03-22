@@ -12,11 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Low,
-        /// <summary>
-        /// 
-        /// </summary>
-        Medium,
+        Critical,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Critical,
+        Low,
+        /// <summary>
+        /// 
+        /// </summary>
+        Medium,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
+                CodeScanningAlertRuleSummarySecuritySeverityLevel.Critical => "critical",
+                CodeScanningAlertRuleSummarySecuritySeverityLevel.High => "high",
                 CodeScanningAlertRuleSummarySecuritySeverityLevel.Low => "low",
                 CodeScanningAlertRuleSummarySecuritySeverityLevel.Medium => "medium",
-                CodeScanningAlertRuleSummarySecuritySeverityLevel.High => "high",
-                CodeScanningAlertRuleSummarySecuritySeverityLevel.Critical => "critical",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
+                "critical" => CodeScanningAlertRuleSummarySecuritySeverityLevel.Critical,
+                "high" => CodeScanningAlertRuleSummarySecuritySeverityLevel.High,
                 "low" => CodeScanningAlertRuleSummarySecuritySeverityLevel.Low,
                 "medium" => CodeScanningAlertRuleSummarySecuritySeverityLevel.Medium,
-                "high" => CodeScanningAlertRuleSummarySecuritySeverityLevel.High,
-                "critical" => CodeScanningAlertRuleSummarySecuritySeverityLevel.Critical,
                 _ => null,
             };
         }

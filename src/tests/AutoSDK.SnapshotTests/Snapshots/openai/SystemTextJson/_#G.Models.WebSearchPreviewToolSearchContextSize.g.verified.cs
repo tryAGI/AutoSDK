@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        High,
+        /// <summary>
+        /// 
+        /// </summary>
         Low,
         /// <summary>
         /// 
         /// </summary>
         Medium,
-        /// <summary>
-        /// 
-        /// </summary>
-        High,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
+                WebSearchPreviewToolSearchContextSize.High => "high",
                 WebSearchPreviewToolSearchContextSize.Low => "low",
                 WebSearchPreviewToolSearchContextSize.Medium => "medium",
-                WebSearchPreviewToolSearchContextSize.High => "high",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
+                "high" => WebSearchPreviewToolSearchContextSize.High,
                 "low" => WebSearchPreviewToolSearchContextSize.Low,
                 "medium" => WebSearchPreviewToolSearchContextSize.Medium,
-                "high" => WebSearchPreviewToolSearchContextSize.High,
                 _ => null,
             };
         }

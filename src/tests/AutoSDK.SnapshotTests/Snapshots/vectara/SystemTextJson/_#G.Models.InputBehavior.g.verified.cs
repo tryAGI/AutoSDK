@@ -14,13 +14,13 @@ namespace G
     public enum InputBehavior
     {
         /// <summary>
-        /// Insert the message as soon as possible on the next iteration of the agent loop.
-        /// </summary>
-        Steer,
-        /// <summary>
         /// Insert the message after the current agent loop finishes, as a follow-up turn.
         /// </summary>
         FollowUp,
+        /// <summary>
+        /// Insert the message as soon as possible on the next iteration of the agent loop.
+        /// </summary>
+        Steer,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                InputBehavior.Steer => "steer",
                 InputBehavior.FollowUp => "follow_up",
+                InputBehavior.Steer => "steer",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,8 +47,8 @@ namespace G
         {
             return value switch
             {
-                "steer" => InputBehavior.Steer,
                 "follow_up" => InputBehavior.FollowUp,
+                "steer" => InputBehavior.Steer,
                 _ => null,
             };
         }

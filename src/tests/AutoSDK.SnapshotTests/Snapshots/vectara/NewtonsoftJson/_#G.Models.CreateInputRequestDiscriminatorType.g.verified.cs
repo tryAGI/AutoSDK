@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="compact")]
+        Compact,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="input_message")]
         InputMessage,
         /// <summary>
@@ -20,11 +25,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="interrupt")]
         Interrupt,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="compact")]
-        Compact,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                CreateInputRequestDiscriminatorType.Compact => "compact",
                 CreateInputRequestDiscriminatorType.InputMessage => "input_message",
                 CreateInputRequestDiscriminatorType.Interrupt => "interrupt",
-                CreateInputRequestDiscriminatorType.Compact => "compact",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
+                "compact" => CreateInputRequestDiscriminatorType.Compact,
                 "input_message" => CreateInputRequestDiscriminatorType.InputMessage,
                 "interrupt" => CreateInputRequestDiscriminatorType.Interrupt,
-                "compact" => CreateInputRequestDiscriminatorType.Compact,
                 _ => null,
             };
         }

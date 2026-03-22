@@ -12,14 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ProjectId,
-        /// <summary>
-        /// 
-        /// </summary>
-        UserId,
-        /// <summary>
-        /// 
-        /// </summary>
         ApiKeyId,
         /// <summary>
         /// 
@@ -28,11 +20,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        ProjectId,
+        /// <summary>
+        /// 
+        /// </summary>
         Size,
         /// <summary>
         /// 
         /// </summary>
         Source,
+        /// <summary>
+        /// 
+        /// </summary>
+        UserId,
     }
 
     /// <summary>
@@ -47,12 +47,12 @@ namespace G
         {
             return value switch
             {
-                UsageImagesGroupByItem.ProjectId => "project_id",
-                UsageImagesGroupByItem.UserId => "user_id",
                 UsageImagesGroupByItem.ApiKeyId => "api_key_id",
                 UsageImagesGroupByItem.Model => "model",
+                UsageImagesGroupByItem.ProjectId => "project_id",
                 UsageImagesGroupByItem.Size => "size",
                 UsageImagesGroupByItem.Source => "source",
+                UsageImagesGroupByItem.UserId => "user_id",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,12 +63,12 @@ namespace G
         {
             return value switch
             {
-                "project_id" => UsageImagesGroupByItem.ProjectId,
-                "user_id" => UsageImagesGroupByItem.UserId,
                 "api_key_id" => UsageImagesGroupByItem.ApiKeyId,
                 "model" => UsageImagesGroupByItem.Model,
+                "project_id" => UsageImagesGroupByItem.ProjectId,
                 "size" => UsageImagesGroupByItem.Size,
                 "source" => UsageImagesGroupByItem.Source,
+                "user_id" => UsageImagesGroupByItem.UserId,
                 _ => null,
             };
         }

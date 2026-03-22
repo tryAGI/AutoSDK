@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="premade")]
-        Premade,
+        [global::System.Runtime.Serialization.EnumMember(Value="cloned")]
+        Cloned,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cloned")]
-        Cloned,
+        [global::System.Runtime.Serialization.EnumMember(Value="famous")]
+        Famous,
         /// <summary>
         /// 
         /// </summary>
@@ -28,13 +28,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="professional")]
-        Professional,
+        [global::System.Runtime.Serialization.EnumMember(Value="premade")]
+        Premade,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="famous")]
-        Famous,
+        [global::System.Runtime.Serialization.EnumMember(Value="professional")]
+        Professional,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                VoiceCategory.Premade => "premade",
                 VoiceCategory.Cloned => "cloned",
-                VoiceCategory.Generated => "generated",
-                VoiceCategory.Professional => "professional",
                 VoiceCategory.Famous => "famous",
+                VoiceCategory.Generated => "generated",
+                VoiceCategory.Premade => "premade",
+                VoiceCategory.Professional => "professional",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "premade" => VoiceCategory.Premade,
                 "cloned" => VoiceCategory.Cloned,
-                "generated" => VoiceCategory.Generated,
-                "professional" => VoiceCategory.Professional,
                 "famous" => VoiceCategory.Famous,
+                "generated" => VoiceCategory.Generated,
+                "premade" => VoiceCategory.Premade,
+                "professional" => VoiceCategory.Professional,
                 _ => null,
             };
         }

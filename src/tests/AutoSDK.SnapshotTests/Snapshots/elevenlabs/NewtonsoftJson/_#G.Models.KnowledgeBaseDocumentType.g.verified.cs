@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="url")]
-        Url,
+        [global::System.Runtime.Serialization.EnumMember(Value="folder")]
+        Folder,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="folder")]
-        Folder,
+        [global::System.Runtime.Serialization.EnumMember(Value="url")]
+        Url,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 KnowledgeBaseDocumentType.File => "file",
-                KnowledgeBaseDocumentType.Url => "url",
-                KnowledgeBaseDocumentType.Text => "text",
                 KnowledgeBaseDocumentType.Folder => "folder",
+                KnowledgeBaseDocumentType.Text => "text",
+                KnowledgeBaseDocumentType.Url => "url",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "file" => KnowledgeBaseDocumentType.File,
-                "url" => KnowledgeBaseDocumentType.Url,
-                "text" => KnowledgeBaseDocumentType.Text,
                 "folder" => KnowledgeBaseDocumentType.Folder,
+                "text" => KnowledgeBaseDocumentType.Text,
+                "url" => KnowledgeBaseDocumentType.Url,
                 _ => null,
             };
         }

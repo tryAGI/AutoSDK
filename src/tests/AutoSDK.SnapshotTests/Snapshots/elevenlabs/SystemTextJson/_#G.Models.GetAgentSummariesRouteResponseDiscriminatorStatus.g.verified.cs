@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Success,
+        Failure,
         /// <summary>
         /// 
         /// </summary>
-        Failure,
+        Success,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                GetAgentSummariesRouteResponseDiscriminatorStatus.Success => "success",
                 GetAgentSummariesRouteResponseDiscriminatorStatus.Failure => "failure",
+                GetAgentSummariesRouteResponseDiscriminatorStatus.Success => "success",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "success" => GetAgentSummariesRouteResponseDiscriminatorStatus.Success,
                 "failure" => GetAgentSummariesRouteResponseDiscriminatorStatus.Failure,
+                "success" => GetAgentSummariesRouteResponseDiscriminatorStatus.Success,
                 _ => null,
             };
         }

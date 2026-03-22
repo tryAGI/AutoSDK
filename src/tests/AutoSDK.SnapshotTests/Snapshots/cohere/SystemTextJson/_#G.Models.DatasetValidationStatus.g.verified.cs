@@ -12,11 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Unknown,
-        /// <summary>
-        /// 
-        /// </summary>
-        Queued,
+        Failed,
         /// <summary>
         /// 
         /// </summary>
@@ -24,15 +20,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Failed,
-        /// <summary>
-        /// 
-        /// </summary>
-        Validated,
+        Queued,
         /// <summary>
         /// 
         /// </summary>
         Skipped,
+        /// <summary>
+        /// 
+        /// </summary>
+        Unknown,
+        /// <summary>
+        /// 
+        /// </summary>
+        Validated,
     }
 
     /// <summary>
@@ -47,12 +47,12 @@ namespace G
         {
             return value switch
             {
-                DatasetValidationStatus.Unknown => "unknown",
-                DatasetValidationStatus.Queued => "queued",
-                DatasetValidationStatus.Processing => "processing",
                 DatasetValidationStatus.Failed => "failed",
-                DatasetValidationStatus.Validated => "validated",
+                DatasetValidationStatus.Processing => "processing",
+                DatasetValidationStatus.Queued => "queued",
                 DatasetValidationStatus.Skipped => "skipped",
+                DatasetValidationStatus.Unknown => "unknown",
+                DatasetValidationStatus.Validated => "validated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,12 +63,12 @@ namespace G
         {
             return value switch
             {
-                "unknown" => DatasetValidationStatus.Unknown,
-                "queued" => DatasetValidationStatus.Queued,
-                "processing" => DatasetValidationStatus.Processing,
                 "failed" => DatasetValidationStatus.Failed,
-                "validated" => DatasetValidationStatus.Validated,
+                "processing" => DatasetValidationStatus.Processing,
+                "queued" => DatasetValidationStatus.Queued,
                 "skipped" => DatasetValidationStatus.Skipped,
+                "unknown" => DatasetValidationStatus.Unknown,
+                "validated" => DatasetValidationStatus.Validated,
                 _ => null,
             };
         }

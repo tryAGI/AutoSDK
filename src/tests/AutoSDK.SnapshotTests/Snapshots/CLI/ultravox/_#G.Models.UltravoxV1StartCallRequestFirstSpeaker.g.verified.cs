@@ -14,11 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        FirstSpeakerUnspecified,
+        FirstSpeakerAgent,
         /// <summary>
         /// 
         /// </summary>
-        FirstSpeakerAgent,
+        FirstSpeakerUnspecified,
         /// <summary>
         /// 
         /// </summary>
@@ -37,8 +37,8 @@ namespace G
         {
             return value switch
             {
-                UltravoxV1StartCallRequestFirstSpeaker.FirstSpeakerUnspecified => "FIRST_SPEAKER_UNSPECIFIED",
                 UltravoxV1StartCallRequestFirstSpeaker.FirstSpeakerAgent => "FIRST_SPEAKER_AGENT",
+                UltravoxV1StartCallRequestFirstSpeaker.FirstSpeakerUnspecified => "FIRST_SPEAKER_UNSPECIFIED",
                 UltravoxV1StartCallRequestFirstSpeaker.FirstSpeakerUser => "FIRST_SPEAKER_USER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -50,8 +50,8 @@ namespace G
         {
             return value switch
             {
-                "FIRST_SPEAKER_UNSPECIFIED" => UltravoxV1StartCallRequestFirstSpeaker.FirstSpeakerUnspecified,
                 "FIRST_SPEAKER_AGENT" => UltravoxV1StartCallRequestFirstSpeaker.FirstSpeakerAgent,
+                "FIRST_SPEAKER_UNSPECIFIED" => UltravoxV1StartCallRequestFirstSpeaker.FirstSpeakerUnspecified,
                 "FIRST_SPEAKER_USER" => UltravoxV1StartCallRequestFirstSpeaker.FirstSpeakerUser,
                 _ => null,
             };

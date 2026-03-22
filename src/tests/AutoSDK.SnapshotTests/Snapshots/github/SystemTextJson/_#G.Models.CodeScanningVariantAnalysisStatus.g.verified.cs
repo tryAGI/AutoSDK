@@ -12,15 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Pending,
-        /// <summary>
-        /// 
-        /// </summary>
-        InProgress,
-        /// <summary>
-        /// 
-        /// </summary>
-        Succeeded,
+        Canceled,
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +20,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Canceled,
+        InProgress,
+        /// <summary>
+        /// 
+        /// </summary>
+        Pending,
+        /// <summary>
+        /// 
+        /// </summary>
+        Succeeded,
         /// <summary>
         /// 
         /// </summary>
@@ -47,11 +47,11 @@ namespace G
         {
             return value switch
             {
-                CodeScanningVariantAnalysisStatus.Pending => "pending",
-                CodeScanningVariantAnalysisStatus.InProgress => "in_progress",
-                CodeScanningVariantAnalysisStatus.Succeeded => "succeeded",
-                CodeScanningVariantAnalysisStatus.Failed => "failed",
                 CodeScanningVariantAnalysisStatus.Canceled => "canceled",
+                CodeScanningVariantAnalysisStatus.Failed => "failed",
+                CodeScanningVariantAnalysisStatus.InProgress => "in_progress",
+                CodeScanningVariantAnalysisStatus.Pending => "pending",
+                CodeScanningVariantAnalysisStatus.Succeeded => "succeeded",
                 CodeScanningVariantAnalysisStatus.TimedOut => "timed_out",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -63,11 +63,11 @@ namespace G
         {
             return value switch
             {
-                "pending" => CodeScanningVariantAnalysisStatus.Pending,
-                "in_progress" => CodeScanningVariantAnalysisStatus.InProgress,
-                "succeeded" => CodeScanningVariantAnalysisStatus.Succeeded,
-                "failed" => CodeScanningVariantAnalysisStatus.Failed,
                 "canceled" => CodeScanningVariantAnalysisStatus.Canceled,
+                "failed" => CodeScanningVariantAnalysisStatus.Failed,
+                "in_progress" => CodeScanningVariantAnalysisStatus.InProgress,
+                "pending" => CodeScanningVariantAnalysisStatus.Pending,
+                "succeeded" => CodeScanningVariantAnalysisStatus.Succeeded,
                 "timed_out" => CodeScanningVariantAnalysisStatus.TimedOut,
                 _ => null,
             };

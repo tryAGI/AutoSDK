@@ -18,13 +18,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Organization")]
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Organization")]
-        Organization,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 WebhookDeploymentCreatedWorkflowRunTriggeringActorType.Bot => "Bot",
-                WebhookDeploymentCreatedWorkflowRunTriggeringActorType.User => "User",
                 WebhookDeploymentCreatedWorkflowRunTriggeringActorType.Organization => "Organization",
+                WebhookDeploymentCreatedWorkflowRunTriggeringActorType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,8 +53,8 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookDeploymentCreatedWorkflowRunTriggeringActorType.Bot,
-                "User" => WebhookDeploymentCreatedWorkflowRunTriggeringActorType.User,
                 "Organization" => WebhookDeploymentCreatedWorkflowRunTriggeringActorType.Organization,
+                "User" => WebhookDeploymentCreatedWorkflowRunTriggeringActorType.User,
                 _ => null,
             };
         }

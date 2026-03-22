@@ -12,11 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Start,
-        /// <summary>
-        /// 
-        /// </summary>
-        Output,
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        Output,
+        /// <summary>
+        /// 
+        /// </summary>
+        Start,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                TrainingRequestWebhookEventsFilterItem.Start => "start",
-                TrainingRequestWebhookEventsFilterItem.Output => "output",
-                TrainingRequestWebhookEventsFilterItem.Logs => "logs",
                 TrainingRequestWebhookEventsFilterItem.Completed => "completed",
+                TrainingRequestWebhookEventsFilterItem.Logs => "logs",
+                TrainingRequestWebhookEventsFilterItem.Output => "output",
+                TrainingRequestWebhookEventsFilterItem.Start => "start",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "start" => TrainingRequestWebhookEventsFilterItem.Start,
-                "output" => TrainingRequestWebhookEventsFilterItem.Output,
-                "logs" => TrainingRequestWebhookEventsFilterItem.Logs,
                 "completed" => TrainingRequestWebhookEventsFilterItem.Completed,
+                "logs" => TrainingRequestWebhookEventsFilterItem.Logs,
+                "output" => TrainingRequestWebhookEventsFilterItem.Output,
+                "start" => TrainingRequestWebhookEventsFilterItem.Start,
                 _ => null,
             };
         }

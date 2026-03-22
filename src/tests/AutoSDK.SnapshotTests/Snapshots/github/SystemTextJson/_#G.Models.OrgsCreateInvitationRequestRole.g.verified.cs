@@ -21,11 +21,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        DirectMember,
+        BillingManager,
         /// <summary>
         /// 
         /// </summary>
-        BillingManager,
+        DirectMember,
         /// <summary>
         /// 
         /// </summary>
@@ -45,8 +45,8 @@ namespace G
             return value switch
             {
                 OrgsCreateInvitationRequestRole.Admin => "admin",
-                OrgsCreateInvitationRequestRole.DirectMember => "direct_member",
                 OrgsCreateInvitationRequestRole.BillingManager => "billing_manager",
+                OrgsCreateInvitationRequestRole.DirectMember => "direct_member",
                 OrgsCreateInvitationRequestRole.Reinstate => "reinstate",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -59,8 +59,8 @@ namespace G
             return value switch
             {
                 "admin" => OrgsCreateInvitationRequestRole.Admin,
-                "direct_member" => OrgsCreateInvitationRequestRole.DirectMember,
                 "billing_manager" => OrgsCreateInvitationRequestRole.BillingManager,
+                "direct_member" => OrgsCreateInvitationRequestRole.DirectMember,
                 "reinstate" => OrgsCreateInvitationRequestRole.Reinstate,
                 _ => null,
             };

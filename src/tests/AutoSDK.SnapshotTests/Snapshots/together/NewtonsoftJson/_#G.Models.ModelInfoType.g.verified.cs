@@ -18,13 +18,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="language")]
-        Language,
+        [global::System.Runtime.Serialization.EnumMember(Value="code")]
+        Code,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="code")]
-        Code,
+        [global::System.Runtime.Serialization.EnumMember(Value="embedding")]
+        Embedding,
         /// <summary>
         /// 
         /// </summary>
@@ -33,8 +33,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="embedding")]
-        Embedding,
+        [global::System.Runtime.Serialization.EnumMember(Value="language")]
+        Language,
         /// <summary>
         /// 
         /// </summary>
@@ -60,10 +60,10 @@ namespace G
             return value switch
             {
                 ModelInfoType.Chat => "chat",
-                ModelInfoType.Language => "language",
                 ModelInfoType.Code => "code",
-                ModelInfoType.Image => "image",
                 ModelInfoType.Embedding => "embedding",
+                ModelInfoType.Image => "image",
+                ModelInfoType.Language => "language",
                 ModelInfoType.Moderation => "moderation",
                 ModelInfoType.Rerank => "rerank",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -77,10 +77,10 @@ namespace G
             return value switch
             {
                 "chat" => ModelInfoType.Chat,
-                "language" => ModelInfoType.Language,
                 "code" => ModelInfoType.Code,
-                "image" => ModelInfoType.Image,
                 "embedding" => ModelInfoType.Embedding,
+                "image" => ModelInfoType.Image,
+                "language" => ModelInfoType.Language,
                 "moderation" => ModelInfoType.Moderation,
                 "rerank" => ModelInfoType.Rerank,
                 _ => null,

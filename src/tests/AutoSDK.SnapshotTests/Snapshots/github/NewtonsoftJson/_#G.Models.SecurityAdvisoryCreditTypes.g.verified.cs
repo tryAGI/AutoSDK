@@ -18,18 +18,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="coordinator")]
+        Coordinator,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="finder")]
         Finder,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="reporter")]
-        Reporter,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="coordinator")]
-        Coordinator,
+        [global::System.Runtime.Serialization.EnumMember(Value="other")]
+        Other,
         /// <summary>
         /// 
         /// </summary>
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="tool")]
-        Tool,
+        [global::System.Runtime.Serialization.EnumMember(Value="reporter")]
+        Reporter,
         /// <summary>
         /// 
         /// </summary>
@@ -58,8 +58,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="other")]
-        Other,
+        [global::System.Runtime.Serialization.EnumMember(Value="tool")]
+        Tool,
     }
 
     /// <summary>
@@ -75,15 +75,15 @@ namespace G
             return value switch
             {
                 SecurityAdvisoryCreditTypes.Analyst => "analyst",
-                SecurityAdvisoryCreditTypes.Finder => "finder",
-                SecurityAdvisoryCreditTypes.Reporter => "reporter",
                 SecurityAdvisoryCreditTypes.Coordinator => "coordinator",
+                SecurityAdvisoryCreditTypes.Finder => "finder",
+                SecurityAdvisoryCreditTypes.Other => "other",
                 SecurityAdvisoryCreditTypes.RemediationDeveloper => "remediation_developer",
                 SecurityAdvisoryCreditTypes.RemediationReviewer => "remediation_reviewer",
                 SecurityAdvisoryCreditTypes.RemediationVerifier => "remediation_verifier",
-                SecurityAdvisoryCreditTypes.Tool => "tool",
+                SecurityAdvisoryCreditTypes.Reporter => "reporter",
                 SecurityAdvisoryCreditTypes.Sponsor => "sponsor",
-                SecurityAdvisoryCreditTypes.Other => "other",
+                SecurityAdvisoryCreditTypes.Tool => "tool",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -95,15 +95,15 @@ namespace G
             return value switch
             {
                 "analyst" => SecurityAdvisoryCreditTypes.Analyst,
-                "finder" => SecurityAdvisoryCreditTypes.Finder,
-                "reporter" => SecurityAdvisoryCreditTypes.Reporter,
                 "coordinator" => SecurityAdvisoryCreditTypes.Coordinator,
+                "finder" => SecurityAdvisoryCreditTypes.Finder,
+                "other" => SecurityAdvisoryCreditTypes.Other,
                 "remediation_developer" => SecurityAdvisoryCreditTypes.RemediationDeveloper,
                 "remediation_reviewer" => SecurityAdvisoryCreditTypes.RemediationReviewer,
                 "remediation_verifier" => SecurityAdvisoryCreditTypes.RemediationVerifier,
-                "tool" => SecurityAdvisoryCreditTypes.Tool,
+                "reporter" => SecurityAdvisoryCreditTypes.Reporter,
                 "sponsor" => SecurityAdvisoryCreditTypes.Sponsor,
-                "other" => SecurityAdvisoryCreditTypes.Other,
+                "tool" => SecurityAdvisoryCreditTypes.Tool,
                 _ => null,
             };
         }

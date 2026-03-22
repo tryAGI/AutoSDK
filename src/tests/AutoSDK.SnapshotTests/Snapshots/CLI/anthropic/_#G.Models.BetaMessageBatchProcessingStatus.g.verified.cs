@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        InProgress,
-        /// <summary>
-        /// 
-        /// </summary>
         Canceling,
         /// <summary>
         /// 
         /// </summary>
         Ended,
+        /// <summary>
+        /// 
+        /// </summary>
+        InProgress,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                BetaMessageBatchProcessingStatus.InProgress => "in_progress",
                 BetaMessageBatchProcessingStatus.Canceling => "canceling",
                 BetaMessageBatchProcessingStatus.Ended => "ended",
+                BetaMessageBatchProcessingStatus.InProgress => "in_progress",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "in_progress" => BetaMessageBatchProcessingStatus.InProgress,
                 "canceling" => BetaMessageBatchProcessingStatus.Canceling,
                 "ended" => BetaMessageBatchProcessingStatus.Ended,
+                "in_progress" => BetaMessageBatchProcessingStatus.InProgress,
                 _ => null,
             };
         }

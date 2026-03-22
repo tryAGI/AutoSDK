@@ -28,11 +28,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        TimedOut,
+        Running,
         /// <summary>
         /// 
         /// </summary>
-        Running,
+        TimedOut,
     }
 
     /// <summary>
@@ -51,8 +51,8 @@ namespace G
                 BulkExportStatus.Completed => "Completed",
                 BulkExportStatus.Created => "Created",
                 BulkExportStatus.Failed => "Failed",
-                BulkExportStatus.TimedOut => "TimedOut",
                 BulkExportStatus.Running => "Running",
+                BulkExportStatus.TimedOut => "TimedOut",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -67,8 +67,8 @@ namespace G
                 "Completed" => BulkExportStatus.Completed,
                 "Created" => BulkExportStatus.Created,
                 "Failed" => BulkExportStatus.Failed,
-                "TimedOut" => BulkExportStatus.TimedOut,
                 "Running" => BulkExportStatus.Running,
+                "TimedOut" => BulkExportStatus.TimedOut,
                 _ => null,
             };
         }

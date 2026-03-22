@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="success")]
-        Success,
+        [global::System.Runtime.Serialization.EnumMember(Value="failure")]
+        Failure,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="failure")]
-        Failure,
+        [global::System.Runtime.Serialization.EnumMember(Value="success")]
+        Success,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                GetOrCreateRagIndexesResponseDiscriminatorStatus.Success => "success",
                 GetOrCreateRagIndexesResponseDiscriminatorStatus.Failure => "failure",
+                GetOrCreateRagIndexesResponseDiscriminatorStatus.Success => "success",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "success" => GetOrCreateRagIndexesResponseDiscriminatorStatus.Success,
                 "failure" => GetOrCreateRagIndexesResponseDiscriminatorStatus.Failure,
+                "success" => GetOrCreateRagIndexesResponseDiscriminatorStatus.Success,
                 _ => null,
             };
         }

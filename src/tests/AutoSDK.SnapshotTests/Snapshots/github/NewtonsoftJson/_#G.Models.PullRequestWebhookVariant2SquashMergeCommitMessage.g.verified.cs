@@ -16,8 +16,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="PR_BODY")]
-        PrBody,
+        [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
+        Blank,
         /// <summary>
         /// 
         /// </summary>
@@ -26,8 +26,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
-        Blank,
+        [global::System.Runtime.Serialization.EnumMember(Value="PR_BODY")]
+        PrBody,
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ namespace G
         {
             return value switch
             {
-                PullRequestWebhookVariant2SquashMergeCommitMessage.PrBody => "PR_BODY",
-                PullRequestWebhookVariant2SquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
                 PullRequestWebhookVariant2SquashMergeCommitMessage.Blank => "BLANK",
+                PullRequestWebhookVariant2SquashMergeCommitMessage.CommitMessages => "COMMIT_MESSAGES",
+                PullRequestWebhookVariant2SquashMergeCommitMessage.PrBody => "PR_BODY",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,9 +55,9 @@ namespace G
         {
             return value switch
             {
-                "PR_BODY" => PullRequestWebhookVariant2SquashMergeCommitMessage.PrBody,
-                "COMMIT_MESSAGES" => PullRequestWebhookVariant2SquashMergeCommitMessage.CommitMessages,
                 "BLANK" => PullRequestWebhookVariant2SquashMergeCommitMessage.Blank,
+                "COMMIT_MESSAGES" => PullRequestWebhookVariant2SquashMergeCommitMessage.CommitMessages,
+                "PR_BODY" => PullRequestWebhookVariant2SquashMergeCommitMessage.PrBody,
                 _ => null,
             };
         }

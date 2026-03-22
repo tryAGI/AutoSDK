@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Read,
+        Collection,
         /// <summary>
         /// 
         /// </summary>
-        Collection,
+        Read,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                SampleConfigDBModelParentType2.Read => "read",
                 SampleConfigDBModelParentType2.Collection => "collection",
+                SampleConfigDBModelParentType2.Read => "read",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "read" => SampleConfigDBModelParentType2.Read,
                 "collection" => SampleConfigDBModelParentType2.Collection,
+                "read" => SampleConfigDBModelParentType2.Read,
                 _ => null,
             };
         }

@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Tag,
+        Branch,
         /// <summary>
         /// 
         /// </summary>
-        Branch,
+        Tag,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                WebhookDeleteRefType.Tag => "tag",
                 WebhookDeleteRefType.Branch => "branch",
+                WebhookDeleteRefType.Tag => "tag",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "tag" => WebhookDeleteRefType.Tag,
                 "branch" => WebhookDeleteRefType.Branch,
+                "tag" => WebhookDeleteRefType.Tag,
                 _ => null,
             };
         }

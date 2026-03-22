@@ -17,11 +17,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Rejected,
+        Pending,
         /// <summary>
         /// 
         /// </summary>
-        Pending,
+        Rejected,
     }
 
     /// <summary>
@@ -37,8 +37,8 @@ namespace G
             return value switch
             {
                 EnvironmentApprovalsState.Approved => "approved",
-                EnvironmentApprovalsState.Rejected => "rejected",
                 EnvironmentApprovalsState.Pending => "pending",
+                EnvironmentApprovalsState.Rejected => "rejected",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,8 +50,8 @@ namespace G
             return value switch
             {
                 "approved" => EnvironmentApprovalsState.Approved,
-                "rejected" => EnvironmentApprovalsState.Rejected,
                 "pending" => EnvironmentApprovalsState.Pending,
+                "rejected" => EnvironmentApprovalsState.Rejected,
                 _ => null,
             };
         }

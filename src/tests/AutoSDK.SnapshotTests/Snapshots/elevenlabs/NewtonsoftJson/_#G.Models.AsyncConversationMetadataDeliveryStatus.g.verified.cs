@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
+        Failed,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="pending")]
         Pending,
         /// <summary>
@@ -20,11 +25,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="success")]
         Success,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
-        Failed,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                AsyncConversationMetadataDeliveryStatus.Failed => "failed",
                 AsyncConversationMetadataDeliveryStatus.Pending => "pending",
                 AsyncConversationMetadataDeliveryStatus.Success => "success",
-                AsyncConversationMetadataDeliveryStatus.Failed => "failed",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
+                "failed" => AsyncConversationMetadataDeliveryStatus.Failed,
                 "pending" => AsyncConversationMetadataDeliveryStatus.Pending,
                 "success" => AsyncConversationMetadataDeliveryStatus.Success,
-                "failed" => AsyncConversationMetadataDeliveryStatus.Failed,
                 _ => null,
             };
         }

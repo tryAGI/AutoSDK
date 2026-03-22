@@ -32,11 +32,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Purple,
+        PrimaryDefault,
         /// <summary>
         /// 
         /// </summary>
-        PrimaryDefault,
+        Purple,
     }
 
     /// <summary>
@@ -54,8 +54,8 @@ namespace G
                 SendChatAnnouncementBodyColor.Blue => "blue",
                 SendChatAnnouncementBodyColor.Green => "green",
                 SendChatAnnouncementBodyColor.Orange => "orange",
-                SendChatAnnouncementBodyColor.Purple => "purple",
                 SendChatAnnouncementBodyColor.PrimaryDefault => "primary (default)",
+                SendChatAnnouncementBodyColor.Purple => "purple",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -69,8 +69,8 @@ namespace G
                 "blue" => SendChatAnnouncementBodyColor.Blue,
                 "green" => SendChatAnnouncementBodyColor.Green,
                 "orange" => SendChatAnnouncementBodyColor.Orange,
-                "purple" => SendChatAnnouncementBodyColor.Purple,
                 "primary (default)" => SendChatAnnouncementBodyColor.PrimaryDefault,
+                "purple" => SendChatAnnouncementBodyColor.Purple,
                 _ => null,
             };
         }

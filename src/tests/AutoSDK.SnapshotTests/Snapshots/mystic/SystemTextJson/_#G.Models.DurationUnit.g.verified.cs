@@ -12,11 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Seconds,
-        /// <summary>
-        /// 
-        /// </summary>
-        Minutes,
+        Days,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Days,
+        Minutes,
+        /// <summary>
+        /// 
+        /// </summary>
+        Seconds,
         /// <summary>
         /// 
         /// </summary>
@@ -43,10 +43,10 @@ namespace G
         {
             return value switch
             {
-                DurationUnit.Seconds => "seconds",
-                DurationUnit.Minutes => "minutes",
-                DurationUnit.Hours => "hours",
                 DurationUnit.Days => "days",
+                DurationUnit.Hours => "hours",
+                DurationUnit.Minutes => "minutes",
+                DurationUnit.Seconds => "seconds",
                 DurationUnit.Weeks => "weeks",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "seconds" => DurationUnit.Seconds,
-                "minutes" => DurationUnit.Minutes,
-                "hours" => DurationUnit.Hours,
                 "days" => DurationUnit.Days,
+                "hours" => DurationUnit.Hours,
+                "minutes" => DurationUnit.Minutes,
+                "seconds" => DurationUnit.Seconds,
                 "weeks" => DurationUnit.Weeks,
                 _ => null,
             };

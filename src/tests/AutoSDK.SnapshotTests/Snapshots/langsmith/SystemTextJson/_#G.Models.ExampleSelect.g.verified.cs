@@ -12,11 +12,27 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Id,
+        AttachmentUrls,
         /// <summary>
         /// 
         /// </summary>
         CreatedAt,
+        /// <summary>
+        /// 
+        /// </summary>
+        DatasetId,
+        /// <summary>
+        /// 
+        /// </summary>
+        Id,
+        /// <summary>
+        /// 
+        /// </summary>
+        Inputs,
+        /// <summary>
+        /// 
+        /// </summary>
+        Metadata,
         /// <summary>
         /// 
         /// </summary>
@@ -28,27 +44,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        DatasetId,
-        /// <summary>
-        /// 
-        /// </summary>
-        SourceRunId,
-        /// <summary>
-        /// 
-        /// </summary>
-        Metadata,
-        /// <summary>
-        /// 
-        /// </summary>
-        Inputs,
-        /// <summary>
-        /// 
-        /// </summary>
         Outputs,
         /// <summary>
         /// 
         /// </summary>
-        AttachmentUrls,
+        SourceRunId,
     }
 
     /// <summary>
@@ -63,16 +63,16 @@ namespace G
         {
             return value switch
             {
-                ExampleSelect.Id => "id",
+                ExampleSelect.AttachmentUrls => "attachment_urls",
                 ExampleSelect.CreatedAt => "created_at",
+                ExampleSelect.DatasetId => "dataset_id",
+                ExampleSelect.Id => "id",
+                ExampleSelect.Inputs => "inputs",
+                ExampleSelect.Metadata => "metadata",
                 ExampleSelect.ModifiedAt => "modified_at",
                 ExampleSelect.Name => "name",
-                ExampleSelect.DatasetId => "dataset_id",
-                ExampleSelect.SourceRunId => "source_run_id",
-                ExampleSelect.Metadata => "metadata",
-                ExampleSelect.Inputs => "inputs",
                 ExampleSelect.Outputs => "outputs",
-                ExampleSelect.AttachmentUrls => "attachment_urls",
+                ExampleSelect.SourceRunId => "source_run_id",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -83,16 +83,16 @@ namespace G
         {
             return value switch
             {
-                "id" => ExampleSelect.Id,
+                "attachment_urls" => ExampleSelect.AttachmentUrls,
                 "created_at" => ExampleSelect.CreatedAt,
+                "dataset_id" => ExampleSelect.DatasetId,
+                "id" => ExampleSelect.Id,
+                "inputs" => ExampleSelect.Inputs,
+                "metadata" => ExampleSelect.Metadata,
                 "modified_at" => ExampleSelect.ModifiedAt,
                 "name" => ExampleSelect.Name,
-                "dataset_id" => ExampleSelect.DatasetId,
-                "source_run_id" => ExampleSelect.SourceRunId,
-                "metadata" => ExampleSelect.Metadata,
-                "inputs" => ExampleSelect.Inputs,
                 "outputs" => ExampleSelect.Outputs,
-                "attachment_urls" => ExampleSelect.AttachmentUrls,
+                "source_run_id" => ExampleSelect.SourceRunId,
                 _ => null,
             };
         }

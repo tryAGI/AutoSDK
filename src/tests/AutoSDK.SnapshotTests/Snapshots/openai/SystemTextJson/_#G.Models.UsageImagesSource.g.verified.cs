@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ImageGeneration,
+        ImageEdit,
         /// <summary>
         /// 
         /// </summary>
-        ImageEdit,
+        ImageGeneration,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                UsageImagesSource.ImageGeneration => "image.generation",
                 UsageImagesSource.ImageEdit => "image.edit",
+                UsageImagesSource.ImageGeneration => "image.generation",
                 UsageImagesSource.ImageVariation => "image.variation",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "image.generation" => UsageImagesSource.ImageGeneration,
                 "image.edit" => UsageImagesSource.ImageEdit,
+                "image.generation" => UsageImagesSource.ImageGeneration,
                 "image.variation" => UsageImagesSource.ImageVariation,
                 _ => null,
             };

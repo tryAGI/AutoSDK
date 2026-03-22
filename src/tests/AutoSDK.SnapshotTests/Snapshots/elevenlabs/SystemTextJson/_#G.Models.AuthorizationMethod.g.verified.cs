@@ -12,23 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Invalid,
-        /// <summary>
-        /// 
-        /// </summary>
-        Public,
-        /// <summary>
-        /// 
-        /// </summary>
         AuthorizationHeader,
         /// <summary>
         /// 
         /// </summary>
-        SignedUrl,
+        GenesysApiKey,
         /// <summary>
         /// 
         /// </summary>
-        ShareableLink,
+        Invalid,
         /// <summary>
         /// 
         /// </summary>
@@ -40,7 +32,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        GenesysApiKey,
+        Public,
+        /// <summary>
+        /// 
+        /// </summary>
+        ShareableLink,
+        /// <summary>
+        /// 
+        /// </summary>
+        SignedUrl,
         /// <summary>
         /// 
         /// </summary>
@@ -59,14 +59,14 @@ namespace G
         {
             return value switch
             {
-                AuthorizationMethod.Invalid => "invalid",
-                AuthorizationMethod.Public => "public",
                 AuthorizationMethod.AuthorizationHeader => "authorization_header",
-                AuthorizationMethod.SignedUrl => "signed_url",
-                AuthorizationMethod.ShareableLink => "shareable_link",
+                AuthorizationMethod.GenesysApiKey => "genesys_api_key",
+                AuthorizationMethod.Invalid => "invalid",
                 AuthorizationMethod.LivekitToken => "livekit_token",
                 AuthorizationMethod.LivekitTokenWebsite => "livekit_token_website",
-                AuthorizationMethod.GenesysApiKey => "genesys_api_key",
+                AuthorizationMethod.Public => "public",
+                AuthorizationMethod.ShareableLink => "shareable_link",
+                AuthorizationMethod.SignedUrl => "signed_url",
                 AuthorizationMethod.Whatsapp => "whatsapp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -78,14 +78,14 @@ namespace G
         {
             return value switch
             {
-                "invalid" => AuthorizationMethod.Invalid,
-                "public" => AuthorizationMethod.Public,
                 "authorization_header" => AuthorizationMethod.AuthorizationHeader,
-                "signed_url" => AuthorizationMethod.SignedUrl,
-                "shareable_link" => AuthorizationMethod.ShareableLink,
+                "genesys_api_key" => AuthorizationMethod.GenesysApiKey,
+                "invalid" => AuthorizationMethod.Invalid,
                 "livekit_token" => AuthorizationMethod.LivekitToken,
                 "livekit_token_website" => AuthorizationMethod.LivekitTokenWebsite,
-                "genesys_api_key" => AuthorizationMethod.GenesysApiKey,
+                "public" => AuthorizationMethod.Public,
+                "shareable_link" => AuthorizationMethod.ShareableLink,
+                "signed_url" => AuthorizationMethod.SignedUrl,
                 "whatsapp" => AuthorizationMethod.Whatsapp,
                 _ => null,
             };

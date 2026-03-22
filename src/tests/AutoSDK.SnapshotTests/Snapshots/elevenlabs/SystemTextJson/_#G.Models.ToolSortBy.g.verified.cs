@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Name,
+        CreatedAt,
         /// <summary>
         /// 
         /// </summary>
-        CreatedAt,
+        Name,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ToolSortBy.Name => "name",
                 ToolSortBy.CreatedAt => "created_at",
+                ToolSortBy.Name => "name",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "name" => ToolSortBy.Name,
                 "created_at" => ToolSortBy.CreatedAt,
+                "name" => ToolSortBy.Name,
                 _ => null,
             };
         }

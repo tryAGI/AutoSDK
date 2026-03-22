@@ -16,7 +16,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Negligible,
+        High,
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +28,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        High,
+        Negligible,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
             return value switch
             {
                 SafetyRatingProbability.HarmProbabilityUnspecified => "HARM_PROBABILITY_UNSPECIFIED",
-                SafetyRatingProbability.Negligible => "NEGLIGIBLE",
+                SafetyRatingProbability.High => "HIGH",
                 SafetyRatingProbability.Low => "LOW",
                 SafetyRatingProbability.Medium => "MEDIUM",
-                SafetyRatingProbability.High => "HIGH",
+                SafetyRatingProbability.Negligible => "NEGLIGIBLE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,10 +59,10 @@ namespace G
             return value switch
             {
                 "HARM_PROBABILITY_UNSPECIFIED" => SafetyRatingProbability.HarmProbabilityUnspecified,
-                "NEGLIGIBLE" => SafetyRatingProbability.Negligible,
+                "HIGH" => SafetyRatingProbability.High,
                 "LOW" => SafetyRatingProbability.Low,
                 "MEDIUM" => SafetyRatingProbability.Medium,
-                "HIGH" => SafetyRatingProbability.High,
+                "NEGLIGIBLE" => SafetyRatingProbability.Negligible,
                 _ => null,
             };
         }

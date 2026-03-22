@@ -14,16 +14,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="mp3")]
-        Mp3,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="opus")]
-        Opus,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="aac")]
         Aac,
         /// <summary>
@@ -34,13 +24,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="wav")]
-        Wav,
+        [global::System.Runtime.Serialization.EnumMember(Value="mp3")]
+        Mp3,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="opus")]
+        Opus,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="pcm")]
         Pcm,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="wav")]
+        Wav,
     }
 
     /// <summary>
@@ -55,12 +55,12 @@ namespace G
         {
             return value switch
             {
-                CreateSpeechRequestResponseFormat.Mp3 => "mp3",
-                CreateSpeechRequestResponseFormat.Opus => "opus",
                 CreateSpeechRequestResponseFormat.Aac => "aac",
                 CreateSpeechRequestResponseFormat.Flac => "flac",
-                CreateSpeechRequestResponseFormat.Wav => "wav",
+                CreateSpeechRequestResponseFormat.Mp3 => "mp3",
+                CreateSpeechRequestResponseFormat.Opus => "opus",
                 CreateSpeechRequestResponseFormat.Pcm => "pcm",
+                CreateSpeechRequestResponseFormat.Wav => "wav",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -71,12 +71,12 @@ namespace G
         {
             return value switch
             {
-                "mp3" => CreateSpeechRequestResponseFormat.Mp3,
-                "opus" => CreateSpeechRequestResponseFormat.Opus,
                 "aac" => CreateSpeechRequestResponseFormat.Aac,
                 "flac" => CreateSpeechRequestResponseFormat.Flac,
-                "wav" => CreateSpeechRequestResponseFormat.Wav,
+                "mp3" => CreateSpeechRequestResponseFormat.Mp3,
+                "opus" => CreateSpeechRequestResponseFormat.Opus,
                 "pcm" => CreateSpeechRequestResponseFormat.Pcm,
+                "wav" => CreateSpeechRequestResponseFormat.Wav,
                 _ => null,
             };
         }

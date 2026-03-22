@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Unknown,
+        Development,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Development,
+        Unknown,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                DependencyGraphDiffItemScope.Unknown => "unknown",
-                DependencyGraphDiffItemScope.Runtime => "runtime",
                 DependencyGraphDiffItemScope.Development => "development",
+                DependencyGraphDiffItemScope.Runtime => "runtime",
+                DependencyGraphDiffItemScope.Unknown => "unknown",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "unknown" => DependencyGraphDiffItemScope.Unknown,
-                "runtime" => DependencyGraphDiffItemScope.Runtime,
                 "development" => DependencyGraphDiffItemScope.Development,
+                "runtime" => DependencyGraphDiffItemScope.Runtime,
+                "unknown" => DependencyGraphDiffItemScope.Unknown,
                 _ => null,
             };
         }

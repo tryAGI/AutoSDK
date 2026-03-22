@@ -18,11 +18,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="string")]
-        String,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="integer")]
         Integer,
         /// <summary>
@@ -30,6 +25,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="number")]
         Number,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="string")]
+        String,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 LiteralJsonSchemaPropertyType.Boolean => "boolean",
-                LiteralJsonSchemaPropertyType.String => "string",
                 LiteralJsonSchemaPropertyType.Integer => "integer",
                 LiteralJsonSchemaPropertyType.Number => "number",
+                LiteralJsonSchemaPropertyType.String => "string",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "boolean" => LiteralJsonSchemaPropertyType.Boolean,
-                "string" => LiteralJsonSchemaPropertyType.String,
                 "integer" => LiteralJsonSchemaPropertyType.Integer,
                 "number" => LiteralJsonSchemaPropertyType.Number,
+                "string" => LiteralJsonSchemaPropertyType.String,
                 _ => null,
             };
         }

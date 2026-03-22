@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerUserType.Bot => "Bot",
-                WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerUserType.User => "User",
-                WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerUserType.Organization => "Organization",
                 WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerUserType.Mannequin => "Mannequin",
+                WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerUserType.Organization => "Organization",
+                WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerUserType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerUserType.Bot,
-                "User" => WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerUserType.User,
-                "Organization" => WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerUserType.Organization,
                 "Mannequin" => WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerUserType.Mannequin,
+                "Organization" => WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerUserType.Organization,
+                "User" => WebhookPullRequestReviewSubmittedPullRequestRequestedReviewerUserType.User,
                 _ => null,
             };
         }

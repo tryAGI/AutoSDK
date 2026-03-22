@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Public,
+        Internal,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Internal,
+        Public,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                PackagesListPackagesForOrganizationVisibility.Public => "public",
-                PackagesListPackagesForOrganizationVisibility.Private => "private",
                 PackagesListPackagesForOrganizationVisibility.Internal => "internal",
+                PackagesListPackagesForOrganizationVisibility.Private => "private",
+                PackagesListPackagesForOrganizationVisibility.Public => "public",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "public" => PackagesListPackagesForOrganizationVisibility.Public,
-                "private" => PackagesListPackagesForOrganizationVisibility.Private,
                 "internal" => PackagesListPackagesForOrganizationVisibility.Internal,
+                "private" => PackagesListPackagesForOrganizationVisibility.Private,
+                "public" => PackagesListPackagesForOrganizationVisibility.Public,
                 _ => null,
             };
         }

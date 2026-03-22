@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Team,
         /// <summary>
         /// 
         /// </summary>
-        Team,
+        User,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                WebhookDeploymentReviewRequestedReviewerType.User => "User",
                 WebhookDeploymentReviewRequestedReviewerType.Team => "Team",
+                WebhookDeploymentReviewRequestedReviewerType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "User" => WebhookDeploymentReviewRequestedReviewerType.User,
                 "Team" => WebhookDeploymentReviewRequestedReviewerType.Team,
+                "User" => WebhookDeploymentReviewRequestedReviewerType.User,
                 _ => null,
             };
         }

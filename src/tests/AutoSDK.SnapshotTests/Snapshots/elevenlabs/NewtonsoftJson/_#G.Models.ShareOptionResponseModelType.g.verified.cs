@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// user, group, or service account (under 'key').
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="user")]
-        User,
-        /// <summary>
-        /// user, group, or service account (under 'key').
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="group")]
         Group,
         /// <summary>
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="key")]
         Key,
+        /// <summary>
+        /// user, group, or service account (under 'key').
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="user")]
+        User,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                ShareOptionResponseModelType.User => "user",
                 ShareOptionResponseModelType.Group => "group",
                 ShareOptionResponseModelType.Key => "key",
+                ShareOptionResponseModelType.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "user" => ShareOptionResponseModelType.User,
                 "group" => ShareOptionResponseModelType.Group,
                 "key" => ShareOptionResponseModelType.Key,
+                "user" => ShareOptionResponseModelType.User,
                 _ => null,
             };
         }

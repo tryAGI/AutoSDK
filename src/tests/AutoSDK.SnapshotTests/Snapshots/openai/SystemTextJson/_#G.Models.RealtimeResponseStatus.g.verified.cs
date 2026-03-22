@@ -13,11 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
-        Cancelled,
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -40,8 +40,8 @@ namespace G
         {
             return value switch
             {
-                RealtimeResponseStatus.Completed => "completed",
                 RealtimeResponseStatus.Cancelled => "cancelled",
+                RealtimeResponseStatus.Completed => "completed",
                 RealtimeResponseStatus.Failed => "failed",
                 RealtimeResponseStatus.Incomplete => "incomplete",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -54,8 +54,8 @@ namespace G
         {
             return value switch
             {
-                "completed" => RealtimeResponseStatus.Completed,
                 "cancelled" => RealtimeResponseStatus.Cancelled,
+                "completed" => RealtimeResponseStatus.Completed,
                 "failed" => RealtimeResponseStatus.Failed,
                 "incomplete" => RealtimeResponseStatus.Incomplete,
                 _ => null,

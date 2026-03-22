@@ -12,15 +12,15 @@ namespace recraft
         /// <summary>
         /// 
         /// </summary>
-        Refm1,
-        /// <summary>
-        /// 
-        /// </summary>
         Recraft20b,
         /// <summary>
         /// 
         /// </summary>
         Recraftv3,
+        /// <summary>
+        /// 
+        /// </summary>
+        Refm1,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace recraft
         {
             return value switch
             {
-                TransformModel.Refm1 => "refm1",
                 TransformModel.Recraft20b => "recraft20b",
                 TransformModel.Recraftv3 => "recraftv3",
+                TransformModel.Refm1 => "refm1",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace recraft
         {
             return value switch
             {
-                "refm1" => TransformModel.Refm1,
                 "recraft20b" => TransformModel.Recraft20b,
                 "recraftv3" => TransformModel.Recraftv3,
+                "refm1" => TransformModel.Refm1,
                 _ => null,
             };
         }

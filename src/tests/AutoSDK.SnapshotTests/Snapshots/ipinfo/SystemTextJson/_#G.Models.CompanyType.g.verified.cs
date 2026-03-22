@@ -12,10 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Isp,
-        /// <summary>
-        /// 
-        /// </summary>
         Business,
         /// <summary>
         /// 
@@ -25,6 +21,10 @@ namespace G
         /// 
         /// </summary>
         Hosting,
+        /// <summary>
+        /// 
+        /// </summary>
+        Isp,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                CompanyType.Isp => "isp",
                 CompanyType.Business => "business",
                 CompanyType.Education => "education",
                 CompanyType.Hosting => "hosting",
+                CompanyType.Isp => "isp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "isp" => CompanyType.Isp,
                 "business" => CompanyType.Business,
                 "education" => CompanyType.Education,
                 "hosting" => CompanyType.Hosting,
+                "isp" => CompanyType.Isp,
                 _ => null,
             };
         }

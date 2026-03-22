@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        Organization,
+        User,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType.Bot => "Bot",
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType.User => "User",
                 WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType.Organization => "Organization",
+                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType.Bot,
-                "User" => WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType.User,
                 "Organization" => WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType.Organization,
+                "User" => WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType.User,
                 _ => null,
             };
         }

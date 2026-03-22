@@ -16,7 +16,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Mannequin,
+        User,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
             return value switch
             {
                 WebhookIssuesClosedIssueIssue1UserType.Bot => "Bot",
-                WebhookIssuesClosedIssueIssue1UserType.User => "User",
-                WebhookIssuesClosedIssueIssue1UserType.Organization => "Organization",
                 WebhookIssuesClosedIssueIssue1UserType.Mannequin => "Mannequin",
+                WebhookIssuesClosedIssueIssue1UserType.Organization => "Organization",
+                WebhookIssuesClosedIssueIssue1UserType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookIssuesClosedIssueIssue1UserType.Bot,
-                "User" => WebhookIssuesClosedIssueIssue1UserType.User,
-                "Organization" => WebhookIssuesClosedIssueIssue1UserType.Organization,
                 "Mannequin" => WebhookIssuesClosedIssueIssue1UserType.Mannequin,
+                "Organization" => WebhookIssuesClosedIssueIssue1UserType.Organization,
+                "User" => WebhookIssuesClosedIssueIssue1UserType.User,
                 _ => null,
             };
         }

@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Diverged,
-        /// <summary>
-        /// 
-        /// </summary>
         Ahead,
         /// <summary>
         /// 
         /// </summary>
         Behind,
+        /// <summary>
+        /// 
+        /// </summary>
+        Diverged,
         /// <summary>
         /// 
         /// </summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                CommitComparisonStatus.Diverged => "diverged",
                 CommitComparisonStatus.Ahead => "ahead",
                 CommitComparisonStatus.Behind => "behind",
+                CommitComparisonStatus.Diverged => "diverged",
                 CommitComparisonStatus.Identical => "identical",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
-                "diverged" => CommitComparisonStatus.Diverged,
                 "ahead" => CommitComparisonStatus.Ahead,
                 "behind" => CommitComparisonStatus.Behind,
+                "diverged" => CommitComparisonStatus.Diverged,
                 "identical" => CommitComparisonStatus.Identical,
                 _ => null,
             };

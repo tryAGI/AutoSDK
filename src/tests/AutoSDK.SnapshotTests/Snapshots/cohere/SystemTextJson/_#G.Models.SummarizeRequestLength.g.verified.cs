@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Short,
+        Long,
         /// <summary>
         /// 
         /// </summary>
@@ -22,7 +22,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Long,
+        Short,
     }
 
     /// <summary>
@@ -37,9 +37,9 @@ namespace G
         {
             return value switch
             {
-                SummarizeRequestLength.Short => "short",
-                SummarizeRequestLength.Medium => "medium",
                 SummarizeRequestLength.Long => "long",
+                SummarizeRequestLength.Medium => "medium",
+                SummarizeRequestLength.Short => "short",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,9 +50,9 @@ namespace G
         {
             return value switch
             {
-                "short" => SummarizeRequestLength.Short,
-                "medium" => SummarizeRequestLength.Medium,
                 "long" => SummarizeRequestLength.Long,
+                "medium" => SummarizeRequestLength.Medium,
+                "short" => SummarizeRequestLength.Short,
                 _ => null,
             };
         }

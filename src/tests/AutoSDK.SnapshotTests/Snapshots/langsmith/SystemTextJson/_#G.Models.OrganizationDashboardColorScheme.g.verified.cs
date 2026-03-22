@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Light,
+        Dark,
         /// <summary>
         /// 
         /// </summary>
-        Dark,
+        Light,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                OrganizationDashboardColorScheme.Light => "light",
                 OrganizationDashboardColorScheme.Dark => "dark",
+                OrganizationDashboardColorScheme.Light => "light",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "light" => OrganizationDashboardColorScheme.Light,
                 "dark" => OrganizationDashboardColorScheme.Dark,
+                "light" => OrganizationDashboardColorScheme.Light,
                 _ => null,
             };
         }

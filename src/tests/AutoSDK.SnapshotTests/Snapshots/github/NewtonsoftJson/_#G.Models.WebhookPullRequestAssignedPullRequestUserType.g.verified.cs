@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookPullRequestAssignedPullRequestUserType.Bot => "Bot",
-                WebhookPullRequestAssignedPullRequestUserType.User => "User",
-                WebhookPullRequestAssignedPullRequestUserType.Organization => "Organization",
                 WebhookPullRequestAssignedPullRequestUserType.Mannequin => "Mannequin",
+                WebhookPullRequestAssignedPullRequestUserType.Organization => "Organization",
+                WebhookPullRequestAssignedPullRequestUserType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestAssignedPullRequestUserType.Bot,
-                "User" => WebhookPullRequestAssignedPullRequestUserType.User,
-                "Organization" => WebhookPullRequestAssignedPullRequestUserType.Organization,
                 "Mannequin" => WebhookPullRequestAssignedPullRequestUserType.Mannequin,
+                "Organization" => WebhookPullRequestAssignedPullRequestUserType.Organization,
+                "User" => WebhookPullRequestAssignedPullRequestUserType.User,
                 _ => null,
             };
         }

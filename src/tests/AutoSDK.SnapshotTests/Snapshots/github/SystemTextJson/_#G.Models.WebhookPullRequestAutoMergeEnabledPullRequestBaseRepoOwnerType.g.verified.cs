@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        Organization,
+        User,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 WebhookPullRequestAutoMergeEnabledPullRequestBaseRepoOwnerType.Bot => "Bot",
-                WebhookPullRequestAutoMergeEnabledPullRequestBaseRepoOwnerType.User => "User",
                 WebhookPullRequestAutoMergeEnabledPullRequestBaseRepoOwnerType.Organization => "Organization",
+                WebhookPullRequestAutoMergeEnabledPullRequestBaseRepoOwnerType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestAutoMergeEnabledPullRequestBaseRepoOwnerType.Bot,
-                "User" => WebhookPullRequestAutoMergeEnabledPullRequestBaseRepoOwnerType.User,
                 "Organization" => WebhookPullRequestAutoMergeEnabledPullRequestBaseRepoOwnerType.Organization,
+                "User" => WebhookPullRequestAutoMergeEnabledPullRequestBaseRepoOwnerType.User,
                 _ => null,
             };
         }

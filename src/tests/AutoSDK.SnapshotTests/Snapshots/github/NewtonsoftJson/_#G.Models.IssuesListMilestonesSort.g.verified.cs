@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="due_on")]
-        DueOn,
+        [global::System.Runtime.Serialization.EnumMember(Value="completeness")]
+        Completeness,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completeness")]
-        Completeness,
+        [global::System.Runtime.Serialization.EnumMember(Value="due_on")]
+        DueOn,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                IssuesListMilestonesSort.DueOn => "due_on",
                 IssuesListMilestonesSort.Completeness => "completeness",
+                IssuesListMilestonesSort.DueOn => "due_on",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "due_on" => IssuesListMilestonesSort.DueOn,
                 "completeness" => IssuesListMilestonesSort.Completeness,
+                "due_on" => IssuesListMilestonesSort.DueOn,
                 _ => null,
             };
         }

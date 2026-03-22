@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="DeployKey")]
+        DeployKey,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="Integration")]
         Integration,
         /// <summary>
@@ -30,11 +35,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="Team")]
         Team,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="DeployKey")]
-        DeployKey,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
+                RepositoryRulesetBypassActorActorType.DeployKey => "DeployKey",
                 RepositoryRulesetBypassActorActorType.Integration => "Integration",
                 RepositoryRulesetBypassActorActorType.OrganizationAdmin => "OrganizationAdmin",
                 RepositoryRulesetBypassActorActorType.RepositoryRole => "RepositoryRole",
                 RepositoryRulesetBypassActorActorType.Team => "Team",
-                RepositoryRulesetBypassActorActorType.DeployKey => "DeployKey",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
+                "DeployKey" => RepositoryRulesetBypassActorActorType.DeployKey,
                 "Integration" => RepositoryRulesetBypassActorActorType.Integration,
                 "OrganizationAdmin" => RepositoryRulesetBypassActorActorType.OrganizationAdmin,
                 "RepositoryRole" => RepositoryRulesetBypassActorActorType.RepositoryRole,
                 "Team" => RepositoryRulesetBypassActorActorType.Team,
-                "DeployKey" => RepositoryRulesetBypassActorActorType.DeployKey,
                 _ => null,
             };
         }

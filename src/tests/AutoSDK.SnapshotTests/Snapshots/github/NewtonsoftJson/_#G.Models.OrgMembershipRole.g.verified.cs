@@ -19,13 +19,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="member")]
-        Member,
+        [global::System.Runtime.Serialization.EnumMember(Value="billing_manager")]
+        BillingManager,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="billing_manager")]
-        BillingManager,
+        [global::System.Runtime.Serialization.EnumMember(Value="member")]
+        Member,
     }
 
     /// <summary>
@@ -41,8 +41,8 @@ namespace G
             return value switch
             {
                 OrgMembershipRole.Admin => "admin",
-                OrgMembershipRole.Member => "member",
                 OrgMembershipRole.BillingManager => "billing_manager",
+                OrgMembershipRole.Member => "member",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,8 +54,8 @@ namespace G
             return value switch
             {
                 "admin" => OrgMembershipRole.Admin,
-                "member" => OrgMembershipRole.Member,
                 "billing_manager" => OrgMembershipRole.BillingManager,
+                "member" => OrgMembershipRole.Member,
                 _ => null,
             };
         }

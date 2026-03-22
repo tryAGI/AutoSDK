@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Continuous,
+        Categorical,
         /// <summary>
         /// 
         /// </summary>
-        Categorical,
+        Continuous,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                FeedbackType.Continuous => "continuous",
                 FeedbackType.Categorical => "categorical",
+                FeedbackType.Continuous => "continuous",
                 FeedbackType.Freeform => "freeform",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "continuous" => FeedbackType.Continuous,
                 "categorical" => FeedbackType.Categorical,
+                "continuous" => FeedbackType.Continuous,
                 "freeform" => FeedbackType.Freeform,
                 _ => null,
             };

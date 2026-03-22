@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Results,
+        Metadata,
         /// <summary>
         /// 
         /// </summary>
-        Metadata,
+        Results,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ListenV1ServerEventDiscriminatorType.Results => "Results",
                 ListenV1ServerEventDiscriminatorType.Metadata => "Metadata",
+                ListenV1ServerEventDiscriminatorType.Results => "Results",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "Results" => ListenV1ServerEventDiscriminatorType.Results,
                 "Metadata" => ListenV1ServerEventDiscriminatorType.Metadata,
+                "Results" => ListenV1ServerEventDiscriminatorType.Results,
                 _ => null,
             };
         }

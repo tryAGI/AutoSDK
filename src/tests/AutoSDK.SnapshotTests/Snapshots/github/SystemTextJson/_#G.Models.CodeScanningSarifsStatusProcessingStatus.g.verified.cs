@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Pending,
-        /// <summary>
-        /// 
-        /// </summary>
         Complete,
         /// <summary>
         /// 
         /// </summary>
         Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        Pending,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                CodeScanningSarifsStatusProcessingStatus.Pending => "pending",
                 CodeScanningSarifsStatusProcessingStatus.Complete => "complete",
                 CodeScanningSarifsStatusProcessingStatus.Failed => "failed",
+                CodeScanningSarifsStatusProcessingStatus.Pending => "pending",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "pending" => CodeScanningSarifsStatusProcessingStatus.Pending,
                 "complete" => CodeScanningSarifsStatusProcessingStatus.Complete,
                 "failed" => CodeScanningSarifsStatusProcessingStatus.Failed,
+                "pending" => CodeScanningSarifsStatusProcessingStatus.Pending,
                 _ => null,
             };
         }

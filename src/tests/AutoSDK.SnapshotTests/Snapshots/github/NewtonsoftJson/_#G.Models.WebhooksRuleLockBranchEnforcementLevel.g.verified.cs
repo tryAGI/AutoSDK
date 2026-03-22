@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="off")]
-        Off,
+        [global::System.Runtime.Serialization.EnumMember(Value="everyone")]
+        Everyone,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="everyone")]
-        Everyone,
+        [global::System.Runtime.Serialization.EnumMember(Value="off")]
+        Off,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                WebhooksRuleLockBranchEnforcementLevel.Off => "off",
-                WebhooksRuleLockBranchEnforcementLevel.NonAdmins => "non_admins",
                 WebhooksRuleLockBranchEnforcementLevel.Everyone => "everyone",
+                WebhooksRuleLockBranchEnforcementLevel.NonAdmins => "non_admins",
+                WebhooksRuleLockBranchEnforcementLevel.Off => "off",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "off" => WebhooksRuleLockBranchEnforcementLevel.Off,
-                "non_admins" => WebhooksRuleLockBranchEnforcementLevel.NonAdmins,
                 "everyone" => WebhooksRuleLockBranchEnforcementLevel.Everyone,
+                "non_admins" => WebhooksRuleLockBranchEnforcementLevel.NonAdmins,
+                "off" => WebhooksRuleLockBranchEnforcementLevel.Off,
                 _ => null,
             };
         }

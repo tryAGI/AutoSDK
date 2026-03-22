@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="stop")]
-        Stop,
+        [global::System.Runtime.Serialization.EnumMember(Value="error")]
+        Error,
         /// <summary>
         /// 
         /// </summary>
@@ -23,18 +23,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="error")]
-        Error,
+        [global::System.Runtime.Serialization.EnumMember(Value="openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="stop")]
+        Stop,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="tool_calls")]
         ToolCalls,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
-        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                CompletionResponseStreamChoiceFinishReason.Stop => "stop",
-                CompletionResponseStreamChoiceFinishReason.Length => "length",
                 CompletionResponseStreamChoiceFinishReason.Error => "error",
-                CompletionResponseStreamChoiceFinishReason.ToolCalls => "tool_calls",
+                CompletionResponseStreamChoiceFinishReason.Length => "length",
                 CompletionResponseStreamChoiceFinishReason.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
+                CompletionResponseStreamChoiceFinishReason.Stop => "stop",
+                CompletionResponseStreamChoiceFinishReason.ToolCalls => "tool_calls",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "stop" => CompletionResponseStreamChoiceFinishReason.Stop,
-                "length" => CompletionResponseStreamChoiceFinishReason.Length,
                 "error" => CompletionResponseStreamChoiceFinishReason.Error,
-                "tool_calls" => CompletionResponseStreamChoiceFinishReason.ToolCalls,
+                "length" => CompletionResponseStreamChoiceFinishReason.Length,
                 "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => CompletionResponseStreamChoiceFinishReason.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+                "stop" => CompletionResponseStreamChoiceFinishReason.Stop,
+                "tool_calls" => CompletionResponseStreamChoiceFinishReason.ToolCalls,
                 _ => null,
             };
         }

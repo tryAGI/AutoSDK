@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        PushingManifest,
+        /// <summary>
+        /// 
+        /// </summary>
         RetrievingManifest,
         /// <summary>
         /// 
         /// </summary>
         StartingUpload,
-        /// <summary>
-        /// 
-        /// </summary>
-        PushingManifest,
         /// <summary>
         /// 
         /// </summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                PushModelResponseStatus.PushingManifest => "pushing manifest",
                 PushModelResponseStatus.RetrievingManifest => "retrieving manifest",
                 PushModelResponseStatus.StartingUpload => "starting upload",
-                PushModelResponseStatus.PushingManifest => "pushing manifest",
                 PushModelResponseStatus.Success => "success",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
+                "pushing manifest" => PushModelResponseStatus.PushingManifest,
                 "retrieving manifest" => PushModelResponseStatus.RetrievingManifest,
                 "starting upload" => PushModelResponseStatus.StartingUpload,
-                "pushing manifest" => PushModelResponseStatus.PushingManifest,
                 "success" => PushModelResponseStatus.Success,
                 _ => null,
             };

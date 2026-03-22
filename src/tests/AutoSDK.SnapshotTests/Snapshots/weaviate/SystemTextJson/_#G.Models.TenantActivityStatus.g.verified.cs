@@ -16,6 +16,22 @@ namespace G
         /// <summary>
         /// `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
         /// </summary>
+        Cold,
+        /// <summary>
+        /// `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
+        /// </summary>
+        Freezing,
+        /// <summary>
+        /// `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
+        /// </summary>
+        Frozen,
+        /// <summary>
+        /// `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
+        /// </summary>
+        Hot,
+        /// <summary>
+        /// `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
+        /// </summary>
         Inactive,
         /// <summary>
         /// `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
@@ -29,22 +45,6 @@ namespace G
         /// `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
         /// </summary>
         Onloading,
-        /// <summary>
-        /// `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
-        /// </summary>
-        Hot,
-        /// <summary>
-        /// `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
-        /// </summary>
-        Cold,
-        /// <summary>
-        /// `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
-        /// </summary>
-        Frozen,
-        /// <summary>
-        /// `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
-        /// </summary>
-        Freezing,
         /// <summary>
         /// `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
         /// </summary>
@@ -64,14 +64,14 @@ namespace G
             return value switch
             {
                 TenantActivityStatus.Active => "ACTIVE",
+                TenantActivityStatus.Cold => "COLD",
+                TenantActivityStatus.Freezing => "FREEZING",
+                TenantActivityStatus.Frozen => "FROZEN",
+                TenantActivityStatus.Hot => "HOT",
                 TenantActivityStatus.Inactive => "INACTIVE",
                 TenantActivityStatus.Offloaded => "OFFLOADED",
                 TenantActivityStatus.Offloading => "OFFLOADING",
                 TenantActivityStatus.Onloading => "ONLOADING",
-                TenantActivityStatus.Hot => "HOT",
-                TenantActivityStatus.Cold => "COLD",
-                TenantActivityStatus.Frozen => "FROZEN",
-                TenantActivityStatus.Freezing => "FREEZING",
                 TenantActivityStatus.Unfreezing => "UNFREEZING",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -84,14 +84,14 @@ namespace G
             return value switch
             {
                 "ACTIVE" => TenantActivityStatus.Active,
+                "COLD" => TenantActivityStatus.Cold,
+                "FREEZING" => TenantActivityStatus.Freezing,
+                "FROZEN" => TenantActivityStatus.Frozen,
+                "HOT" => TenantActivityStatus.Hot,
                 "INACTIVE" => TenantActivityStatus.Inactive,
                 "OFFLOADED" => TenantActivityStatus.Offloaded,
                 "OFFLOADING" => TenantActivityStatus.Offloading,
                 "ONLOADING" => TenantActivityStatus.Onloading,
-                "HOT" => TenantActivityStatus.Hot,
-                "COLD" => TenantActivityStatus.Cold,
-                "FROZEN" => TenantActivityStatus.Frozen,
-                "FREEZING" => TenantActivityStatus.Freezing,
                 "UNFREEZING" => TenantActivityStatus.Unfreezing,
                 _ => null,
             };

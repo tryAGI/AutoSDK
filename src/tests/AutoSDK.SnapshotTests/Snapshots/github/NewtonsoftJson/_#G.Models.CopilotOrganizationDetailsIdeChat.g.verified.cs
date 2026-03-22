@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="enabled")]
-        Enabled,
+        [global::System.Runtime.Serialization.EnumMember(Value="disabled")]
+        Disabled,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="disabled")]
-        Disabled,
+        [global::System.Runtime.Serialization.EnumMember(Value="enabled")]
+        Enabled,
         /// <summary>
         /// 
         /// </summary>
@@ -39,8 +39,8 @@ namespace G
         {
             return value switch
             {
-                CopilotOrganizationDetailsIdeChat.Enabled => "enabled",
                 CopilotOrganizationDetailsIdeChat.Disabled => "disabled",
+                CopilotOrganizationDetailsIdeChat.Enabled => "enabled",
                 CopilotOrganizationDetailsIdeChat.Unconfigured => "unconfigured",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -52,8 +52,8 @@ namespace G
         {
             return value switch
             {
-                "enabled" => CopilotOrganizationDetailsIdeChat.Enabled,
                 "disabled" => CopilotOrganizationDetailsIdeChat.Disabled,
+                "enabled" => CopilotOrganizationDetailsIdeChat.Enabled,
                 "unconfigured" => CopilotOrganizationDetailsIdeChat.Unconfigured,
                 _ => null,
             };

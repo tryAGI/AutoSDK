@@ -13,18 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="prompt")]
-        Prompt,
+        [global::System.Runtime.Serialization.EnumMember(Value="dashboard")]
+        Dashboard,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="project")]
-        Project,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="queue")]
-        Queue,
+        [global::System.Runtime.Serialization.EnumMember(Value="dataset")]
+        Dataset,
         /// <summary>
         /// 
         /// </summary>
@@ -38,13 +33,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="dataset")]
-        Dataset,
+        [global::System.Runtime.Serialization.EnumMember(Value="project")]
+        Project,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="dashboard")]
-        Dashboard,
+        [global::System.Runtime.Serialization.EnumMember(Value="prompt")]
+        Prompt,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="queue")]
+        Queue,
     }
 
     /// <summary>
@@ -59,13 +59,13 @@ namespace G
         {
             return value switch
             {
-                ResourceType.Prompt => "prompt",
-                ResourceType.Project => "project",
-                ResourceType.Queue => "queue",
+                ResourceType.Dashboard => "dashboard",
+                ResourceType.Dataset => "dataset",
                 ResourceType.Deployment => "deployment",
                 ResourceType.Experiment => "experiment",
-                ResourceType.Dataset => "dataset",
-                ResourceType.Dashboard => "dashboard",
+                ResourceType.Project => "project",
+                ResourceType.Prompt => "prompt",
+                ResourceType.Queue => "queue",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -76,13 +76,13 @@ namespace G
         {
             return value switch
             {
-                "prompt" => ResourceType.Prompt,
-                "project" => ResourceType.Project,
-                "queue" => ResourceType.Queue,
+                "dashboard" => ResourceType.Dashboard,
+                "dataset" => ResourceType.Dataset,
                 "deployment" => ResourceType.Deployment,
                 "experiment" => ResourceType.Experiment,
-                "dataset" => ResourceType.Dataset,
-                "dashboard" => ResourceType.Dashboard,
+                "project" => ResourceType.Project,
+                "prompt" => ResourceType.Prompt,
+                "queue" => ResourceType.Queue,
                 _ => null,
             };
         }

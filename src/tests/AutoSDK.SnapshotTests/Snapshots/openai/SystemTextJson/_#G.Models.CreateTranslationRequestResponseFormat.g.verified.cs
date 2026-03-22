@@ -17,11 +17,11 @@ namespace G
         /// <summary>
         /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
         /// </summary>
-        Text,
+        Srt,
         /// <summary>
         /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
         /// </summary>
-        Srt,
+        Text,
         /// <summary>
         /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
         /// </summary>
@@ -45,8 +45,8 @@ namespace G
             return value switch
             {
                 CreateTranslationRequestResponseFormat.Json => "json",
-                CreateTranslationRequestResponseFormat.Text => "text",
                 CreateTranslationRequestResponseFormat.Srt => "srt",
+                CreateTranslationRequestResponseFormat.Text => "text",
                 CreateTranslationRequestResponseFormat.VerboseJson => "verbose_json",
                 CreateTranslationRequestResponseFormat.Vtt => "vtt",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -60,8 +60,8 @@ namespace G
             return value switch
             {
                 "json" => CreateTranslationRequestResponseFormat.Json,
-                "text" => CreateTranslationRequestResponseFormat.Text,
                 "srt" => CreateTranslationRequestResponseFormat.Srt,
+                "text" => CreateTranslationRequestResponseFormat.Text,
                 "verbose_json" => CreateTranslationRequestResponseFormat.VerboseJson,
                 "vtt" => CreateTranslationRequestResponseFormat.Vtt,
                 _ => null,

@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        EnableAll,
+        DisableAll,
         /// <summary>
         /// 
         /// </summary>
-        DisableAll,
+        EnableAll,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement.EnableAll => "enable_all",
                 OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement.DisableAll => "disable_all",
+                OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement.EnableAll => "enable_all",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "enable_all" => OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement.EnableAll,
                 "disable_all" => OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement.DisableAll,
+                "enable_all" => OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement.EnableAll,
                 _ => null,
             };
         }

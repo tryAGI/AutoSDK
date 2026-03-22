@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Reference,
+        Inline,
         /// <summary>
         /// 
         /// </summary>
-        Inline,
+        Reference,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                AgentStepInstructionDiscriminatorType.Reference => "reference",
                 AgentStepInstructionDiscriminatorType.Inline => "inline",
+                AgentStepInstructionDiscriminatorType.Reference => "reference",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "reference" => AgentStepInstructionDiscriminatorType.Reference,
                 "inline" => AgentStepInstructionDiscriminatorType.Inline,
+                "reference" => AgentStepInstructionDiscriminatorType.Reference,
                 _ => null,
             };
         }

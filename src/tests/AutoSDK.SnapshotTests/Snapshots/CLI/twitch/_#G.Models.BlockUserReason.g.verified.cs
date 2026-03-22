@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Spam,
+        Other,
         /// <summary>
         /// 
         /// </summary>
-        Other,
+        Spam,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 BlockUserReason.Harassment => "harassment",
-                BlockUserReason.Spam => "spam",
                 BlockUserReason.Other => "other",
+                BlockUserReason.Spam => "spam",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "harassment" => BlockUserReason.Harassment,
-                "spam" => BlockUserReason.Spam,
                 "other" => BlockUserReason.Other,
+                "spam" => BlockUserReason.Spam,
                 _ => null,
             };
         }

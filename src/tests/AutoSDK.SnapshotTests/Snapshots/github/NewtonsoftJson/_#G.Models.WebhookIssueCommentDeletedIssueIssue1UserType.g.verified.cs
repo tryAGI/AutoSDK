@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookIssueCommentDeletedIssueIssue1UserType.Bot => "Bot",
-                WebhookIssueCommentDeletedIssueIssue1UserType.User => "User",
-                WebhookIssueCommentDeletedIssueIssue1UserType.Organization => "Organization",
                 WebhookIssueCommentDeletedIssueIssue1UserType.Mannequin => "Mannequin",
+                WebhookIssueCommentDeletedIssueIssue1UserType.Organization => "Organization",
+                WebhookIssueCommentDeletedIssueIssue1UserType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookIssueCommentDeletedIssueIssue1UserType.Bot,
-                "User" => WebhookIssueCommentDeletedIssueIssue1UserType.User,
-                "Organization" => WebhookIssueCommentDeletedIssueIssue1UserType.Organization,
                 "Mannequin" => WebhookIssueCommentDeletedIssueIssue1UserType.Mannequin,
+                "Organization" => WebhookIssueCommentDeletedIssueIssue1UserType.Organization,
+                "User" => WebhookIssueCommentDeletedIssueIssue1UserType.User,
                 _ => null,
             };
         }

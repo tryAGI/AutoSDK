@@ -12,15 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ImageGeneration,
-        /// <summary>
-        /// 
-        /// </summary>
         FantasyAvatarGeneration,
         /// <summary>
         /// 
         /// </summary>
-        MotionGeneration,
+        ImageGeneration,
         /// <summary>
         /// 
         /// </summary>
@@ -29,6 +25,10 @@ namespace G
         /// 
         /// </summary>
         ModelTraining,
+        /// <summary>
+        /// 
+        /// </summary>
+        MotionGeneration,
         /// <summary>
         /// 
         /// </summary>
@@ -51,11 +51,11 @@ namespace G
         {
             return value switch
             {
-                PricingCalculatorServices.ImageGeneration => "IMAGE_GENERATION",
                 PricingCalculatorServices.FantasyAvatarGeneration => "FANTASY_AVATAR_GENERATION",
-                PricingCalculatorServices.MotionGeneration => "MOTION_GENERATION",
+                PricingCalculatorServices.ImageGeneration => "IMAGE_GENERATION",
                 PricingCalculatorServices.LcmGeneration => "LCM_GENERATION",
                 PricingCalculatorServices.ModelTraining => "MODEL_TRAINING",
+                PricingCalculatorServices.MotionGeneration => "MOTION_GENERATION",
                 PricingCalculatorServices.TextureGeneration => "TEXTURE_GENERATION",
                 PricingCalculatorServices.UniversalUpscaler => "UNIVERSAL_UPSCALER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -68,11 +68,11 @@ namespace G
         {
             return value switch
             {
-                "IMAGE_GENERATION" => PricingCalculatorServices.ImageGeneration,
                 "FANTASY_AVATAR_GENERATION" => PricingCalculatorServices.FantasyAvatarGeneration,
-                "MOTION_GENERATION" => PricingCalculatorServices.MotionGeneration,
+                "IMAGE_GENERATION" => PricingCalculatorServices.ImageGeneration,
                 "LCM_GENERATION" => PricingCalculatorServices.LcmGeneration,
                 "MODEL_TRAINING" => PricingCalculatorServices.ModelTraining,
+                "MOTION_GENERATION" => PricingCalculatorServices.MotionGeneration,
                 "TEXTURE_GENERATION" => PricingCalculatorServices.TextureGeneration,
                 "UNIVERSAL_UPSCALER" => PricingCalculatorServices.UniversalUpscaler,
                 _ => null,

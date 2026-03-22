@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="segments")]
-        Segments,
+        [global::System.Runtime.Serialization.EnumMember(Value="fullDocument")]
+        FullDocument,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="fullDocument")]
-        FullDocument,
+        [global::System.Runtime.Serialization.EnumMember(Value="segments")]
+        Segments,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                SummaryMethod.Segments => "segments",
-                SummaryMethod.Guided => "guided",
                 SummaryMethod.FullDocument => "fullDocument",
+                SummaryMethod.Guided => "guided",
+                SummaryMethod.Segments => "segments",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "segments" => SummaryMethod.Segments,
-                "guided" => SummaryMethod.Guided,
                 "fullDocument" => SummaryMethod.FullDocument,
+                "guided" => SummaryMethod.Guided,
+                "segments" => SummaryMethod.Segments,
                 _ => null,
             };
         }

@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="comments")]
+        Comments,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="created")]
         Created,
         /// <summary>
@@ -20,11 +25,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="updated")]
         Updated,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="comments")]
-        Comments,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                IssuesListSort.Comments => "comments",
                 IssuesListSort.Created => "created",
                 IssuesListSort.Updated => "updated",
-                IssuesListSort.Comments => "comments",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
+                "comments" => IssuesListSort.Comments,
                 "created" => IssuesListSort.Created,
                 "updated" => IssuesListSort.Updated,
-                "comments" => IssuesListSort.Comments,
                 _ => null,
             };
         }

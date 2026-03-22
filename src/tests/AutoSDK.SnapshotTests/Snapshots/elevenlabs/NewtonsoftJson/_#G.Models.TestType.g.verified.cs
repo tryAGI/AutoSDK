@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="llm")]
-        Llm,
+        [global::System.Runtime.Serialization.EnumMember(Value="folder")]
+        Folder,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="tool")]
-        Tool,
+        [global::System.Runtime.Serialization.EnumMember(Value="llm")]
+        Llm,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="folder")]
-        Folder,
+        [global::System.Runtime.Serialization.EnumMember(Value="tool")]
+        Tool,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                TestType.Llm => "llm",
-                TestType.Tool => "tool",
-                TestType.Simulation => "simulation",
                 TestType.Folder => "folder",
+                TestType.Llm => "llm",
+                TestType.Simulation => "simulation",
+                TestType.Tool => "tool",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "llm" => TestType.Llm,
-                "tool" => TestType.Tool,
-                "simulation" => TestType.Simulation,
                 "folder" => TestType.Folder,
+                "llm" => TestType.Llm,
+                "simulation" => TestType.Simulation,
+                "tool" => TestType.Tool,
                 _ => null,
             };
         }

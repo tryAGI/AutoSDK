@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Requested,
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +28,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        Requested,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                WebhookCheckSuiteRequestedCheckSuiteStatus.Requested => "requested",
-                WebhookCheckSuiteRequestedCheckSuiteStatus.InProgress => "in_progress",
                 WebhookCheckSuiteRequestedCheckSuiteStatus.Completed => "completed",
-                WebhookCheckSuiteRequestedCheckSuiteStatus.Queued => "queued",
+                WebhookCheckSuiteRequestedCheckSuiteStatus.InProgress => "in_progress",
                 WebhookCheckSuiteRequestedCheckSuiteStatus.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
+                WebhookCheckSuiteRequestedCheckSuiteStatus.Queued => "queued",
+                WebhookCheckSuiteRequestedCheckSuiteStatus.Requested => "requested",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "requested" => WebhookCheckSuiteRequestedCheckSuiteStatus.Requested,
-                "in_progress" => WebhookCheckSuiteRequestedCheckSuiteStatus.InProgress,
                 "completed" => WebhookCheckSuiteRequestedCheckSuiteStatus.Completed,
-                "queued" => WebhookCheckSuiteRequestedCheckSuiteStatus.Queued,
+                "in_progress" => WebhookCheckSuiteRequestedCheckSuiteStatus.InProgress,
                 "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookCheckSuiteRequestedCheckSuiteStatus.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+                "queued" => WebhookCheckSuiteRequestedCheckSuiteStatus.Queued,
+                "requested" => WebhookCheckSuiteRequestedCheckSuiteStatus.Requested,
                 _ => null,
             };
         }

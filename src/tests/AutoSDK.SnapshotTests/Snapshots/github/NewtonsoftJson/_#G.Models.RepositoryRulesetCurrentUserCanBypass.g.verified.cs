@@ -19,13 +19,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pull_requests_only")]
-        PullRequestsOnly,
+        [global::System.Runtime.Serialization.EnumMember(Value="never")]
+        Never,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="never")]
-        Never,
+        [global::System.Runtime.Serialization.EnumMember(Value="pull_requests_only")]
+        PullRequestsOnly,
     }
 
     /// <summary>
@@ -41,8 +41,8 @@ namespace G
             return value switch
             {
                 RepositoryRulesetCurrentUserCanBypass.Always => "always",
-                RepositoryRulesetCurrentUserCanBypass.PullRequestsOnly => "pull_requests_only",
                 RepositoryRulesetCurrentUserCanBypass.Never => "never",
+                RepositoryRulesetCurrentUserCanBypass.PullRequestsOnly => "pull_requests_only",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,8 +54,8 @@ namespace G
             return value switch
             {
                 "always" => RepositoryRulesetCurrentUserCanBypass.Always,
-                "pull_requests_only" => RepositoryRulesetCurrentUserCanBypass.PullRequestsOnly,
                 "never" => RepositoryRulesetCurrentUserCanBypass.Never,
+                "pull_requests_only" => RepositoryRulesetCurrentUserCanBypass.PullRequestsOnly,
                 _ => null,
             };
         }

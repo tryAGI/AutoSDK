@@ -12,7 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Updated,
+        EpssPercentage,
+        /// <summary>
+        /// 
+        /// </summary>
+        EpssPercentile,
         /// <summary>
         /// 
         /// </summary>
@@ -20,11 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        EpssPercentage,
-        /// <summary>
-        /// 
-        /// </summary>
-        EpssPercentile,
+        Updated,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                SecurityAdvisoriesListGlobalAdvisoriesSort.Updated => "updated",
-                SecurityAdvisoriesListGlobalAdvisoriesSort.Published => "published",
                 SecurityAdvisoriesListGlobalAdvisoriesSort.EpssPercentage => "epss_percentage",
                 SecurityAdvisoriesListGlobalAdvisoriesSort.EpssPercentile => "epss_percentile",
+                SecurityAdvisoriesListGlobalAdvisoriesSort.Published => "published",
+                SecurityAdvisoriesListGlobalAdvisoriesSort.Updated => "updated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "updated" => SecurityAdvisoriesListGlobalAdvisoriesSort.Updated,
-                "published" => SecurityAdvisoriesListGlobalAdvisoriesSort.Published,
                 "epss_percentage" => SecurityAdvisoriesListGlobalAdvisoriesSort.EpssPercentage,
                 "epss_percentile" => SecurityAdvisoriesListGlobalAdvisoriesSort.EpssPercentile,
+                "published" => SecurityAdvisoriesListGlobalAdvisoriesSort.Published,
+                "updated" => SecurityAdvisoriesListGlobalAdvisoriesSort.Updated,
                 _ => null,
             };
         }

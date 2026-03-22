@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="CORPUS_STATUS_UNSPECIFIED")]
-        CorpusStatusUnspecified,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CORPUS_STATUS_EMPTY")]
         CorpusStatusEmpty,
         /// <summary>
@@ -30,6 +25,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="CORPUS_STATUS_READY")]
         CorpusStatusReady,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="CORPUS_STATUS_UNSPECIFIED")]
+        CorpusStatusUnspecified,
         /// <summary>
         /// 
         /// </summary>
@@ -49,10 +49,10 @@ namespace G
         {
             return value switch
             {
-                UltravoxV1CorpusStatsStatus.CorpusStatusUnspecified => "CORPUS_STATUS_UNSPECIFIED",
                 UltravoxV1CorpusStatsStatus.CorpusStatusEmpty => "CORPUS_STATUS_EMPTY",
                 UltravoxV1CorpusStatsStatus.CorpusStatusInitializing => "CORPUS_STATUS_INITIALIZING",
                 UltravoxV1CorpusStatsStatus.CorpusStatusReady => "CORPUS_STATUS_READY",
+                UltravoxV1CorpusStatsStatus.CorpusStatusUnspecified => "CORPUS_STATUS_UNSPECIFIED",
                 UltravoxV1CorpusStatsStatus.CorpusStatusUpdating => "CORPUS_STATUS_UPDATING",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -64,10 +64,10 @@ namespace G
         {
             return value switch
             {
-                "CORPUS_STATUS_UNSPECIFIED" => UltravoxV1CorpusStatsStatus.CorpusStatusUnspecified,
                 "CORPUS_STATUS_EMPTY" => UltravoxV1CorpusStatsStatus.CorpusStatusEmpty,
                 "CORPUS_STATUS_INITIALIZING" => UltravoxV1CorpusStatsStatus.CorpusStatusInitializing,
                 "CORPUS_STATUS_READY" => UltravoxV1CorpusStatsStatus.CorpusStatusReady,
+                "CORPUS_STATUS_UNSPECIFIED" => UltravoxV1CorpusStatsStatus.CorpusStatusUnspecified,
                 "CORPUS_STATUS_UPDATING" => UltravoxV1CorpusStatsStatus.CorpusStatusUpdating,
                 _ => null,
             };

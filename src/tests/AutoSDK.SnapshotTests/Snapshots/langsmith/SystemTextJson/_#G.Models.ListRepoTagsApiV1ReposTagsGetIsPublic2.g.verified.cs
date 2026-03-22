@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        True,
+        False,
         /// <summary>
         /// 
         /// </summary>
-        False,
+        True,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ListRepoTagsApiV1ReposTagsGetIsPublic2.True => "true",
                 ListRepoTagsApiV1ReposTagsGetIsPublic2.False => "false",
+                ListRepoTagsApiV1ReposTagsGetIsPublic2.True => "true",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "true" => ListRepoTagsApiV1ReposTagsGetIsPublic2.True,
                 "false" => ListRepoTagsApiV1ReposTagsGetIsPublic2.False,
+                "true" => ListRepoTagsApiV1ReposTagsGetIsPublic2.True,
                 _ => null,
             };
         }

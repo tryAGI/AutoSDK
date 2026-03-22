@@ -17,11 +17,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        IncludeOutputs,
+        IncludeAll,
         /// <summary>
         /// 
         /// </summary>
-        IncludeAll,
+        IncludeOutputs,
     }
 
     /// <summary>
@@ -37,8 +37,8 @@ namespace G
             return value switch
             {
                 CompactionConfigToolEventPolicy.Exclude => "exclude",
-                CompactionConfigToolEventPolicy.IncludeOutputs => "include_outputs",
                 CompactionConfigToolEventPolicy.IncludeAll => "include_all",
+                CompactionConfigToolEventPolicy.IncludeOutputs => "include_outputs",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,8 +50,8 @@ namespace G
             return value switch
             {
                 "exclude" => CompactionConfigToolEventPolicy.Exclude,
-                "include_outputs" => CompactionConfigToolEventPolicy.IncludeOutputs,
                 "include_all" => CompactionConfigToolEventPolicy.IncludeAll,
+                "include_outputs" => CompactionConfigToolEventPolicy.IncludeOutputs,
                 _ => null,
             };
         }

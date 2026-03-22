@@ -20,11 +20,6 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="NAMESPACE_AVAILABLE")]
         NamespaceAvailable,
         /// <summary>
-        /// Namespace belongs to a user.
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="NAMESPACE_USER")]
-        NamespaceUser,
-        /// <summary>
         /// Namespace belongs to an organization.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NAMESPACE_ORGANIZATION")]
@@ -34,6 +29,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="NAMESPACE_RESERVED")]
         NamespaceReserved,
+        /// <summary>
+        /// Namespace belongs to a user.
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="NAMESPACE_USER")]
+        NamespaceUser,
     }
 
     /// <summary>
@@ -49,9 +49,9 @@ namespace G
             return value switch
             {
                 CheckNamespaceAdminResponseNamespace.NamespaceAvailable => "NAMESPACE_AVAILABLE",
-                CheckNamespaceAdminResponseNamespace.NamespaceUser => "NAMESPACE_USER",
                 CheckNamespaceAdminResponseNamespace.NamespaceOrganization => "NAMESPACE_ORGANIZATION",
                 CheckNamespaceAdminResponseNamespace.NamespaceReserved => "NAMESPACE_RESERVED",
+                CheckNamespaceAdminResponseNamespace.NamespaceUser => "NAMESPACE_USER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,9 +63,9 @@ namespace G
             return value switch
             {
                 "NAMESPACE_AVAILABLE" => CheckNamespaceAdminResponseNamespace.NamespaceAvailable,
-                "NAMESPACE_USER" => CheckNamespaceAdminResponseNamespace.NamespaceUser,
                 "NAMESPACE_ORGANIZATION" => CheckNamespaceAdminResponseNamespace.NamespaceOrganization,
                 "NAMESPACE_RESERVED" => CheckNamespaceAdminResponseNamespace.NamespaceReserved,
+                "NAMESPACE_USER" => CheckNamespaceAdminResponseNamespace.NamespaceUser,
                 _ => null,
             };
         }

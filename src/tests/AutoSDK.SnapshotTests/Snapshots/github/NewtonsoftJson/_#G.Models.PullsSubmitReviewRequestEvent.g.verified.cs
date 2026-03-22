@@ -18,13 +18,13 @@ namespace G
         /// <summary>
         /// `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. When you leave this blank, the API returns _HTTP 422 (Unrecognizable entity)_ and sets the review action state to `PENDING`, which means you will need to re-submit the pull request review using a review action.
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="REQUEST_CHANGES")]
-        RequestChanges,
+        [global::System.Runtime.Serialization.EnumMember(Value="COMMENT")]
+        Comment,
         /// <summary>
         /// `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. When you leave this blank, the API returns _HTTP 422 (Unrecognizable entity)_ and sets the review action state to `PENDING`, which means you will need to re-submit the pull request review using a review action.
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="COMMENT")]
-        Comment,
+        [global::System.Runtime.Serialization.EnumMember(Value="REQUEST_CHANGES")]
+        RequestChanges,
     }
 
     /// <summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 PullsSubmitReviewRequestEvent.Approve => "APPROVE",
-                PullsSubmitReviewRequestEvent.RequestChanges => "REQUEST_CHANGES",
                 PullsSubmitReviewRequestEvent.Comment => "COMMENT",
+                PullsSubmitReviewRequestEvent.RequestChanges => "REQUEST_CHANGES",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,8 +53,8 @@ namespace G
             return value switch
             {
                 "APPROVE" => PullsSubmitReviewRequestEvent.Approve,
-                "REQUEST_CHANGES" => PullsSubmitReviewRequestEvent.RequestChanges,
                 "COMMENT" => PullsSubmitReviewRequestEvent.Comment,
+                "REQUEST_CHANGES" => PullsSubmitReviewRequestEvent.RequestChanges,
                 _ => null,
             };
         }

@@ -20,11 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Laugh,
+        Confused,
         /// <summary>
         /// 
         /// </summary>
-        Confused,
+        Eyes,
         /// <summary>
         /// 
         /// </summary>
@@ -36,11 +36,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Rocket,
+        Laugh,
         /// <summary>
         /// 
         /// </summary>
-        Eyes,
+        Rocket,
     }
 
     /// <summary>
@@ -57,12 +57,12 @@ namespace G
             {
                 ReactionsListForPullRequestReviewCommentContent.Plus1 => "+1",
                 ReactionsListForPullRequestReviewCommentContent.Minus1 => "-1",
-                ReactionsListForPullRequestReviewCommentContent.Laugh => "laugh",
                 ReactionsListForPullRequestReviewCommentContent.Confused => "confused",
+                ReactionsListForPullRequestReviewCommentContent.Eyes => "eyes",
                 ReactionsListForPullRequestReviewCommentContent.Heart => "heart",
                 ReactionsListForPullRequestReviewCommentContent.Hooray => "hooray",
+                ReactionsListForPullRequestReviewCommentContent.Laugh => "laugh",
                 ReactionsListForPullRequestReviewCommentContent.Rocket => "rocket",
-                ReactionsListForPullRequestReviewCommentContent.Eyes => "eyes",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -75,12 +75,12 @@ namespace G
             {
                 "+1" => ReactionsListForPullRequestReviewCommentContent.Plus1,
                 "-1" => ReactionsListForPullRequestReviewCommentContent.Minus1,
-                "laugh" => ReactionsListForPullRequestReviewCommentContent.Laugh,
                 "confused" => ReactionsListForPullRequestReviewCommentContent.Confused,
+                "eyes" => ReactionsListForPullRequestReviewCommentContent.Eyes,
                 "heart" => ReactionsListForPullRequestReviewCommentContent.Heart,
                 "hooray" => ReactionsListForPullRequestReviewCommentContent.Hooray,
+                "laugh" => ReactionsListForPullRequestReviewCommentContent.Laugh,
                 "rocket" => ReactionsListForPullRequestReviewCommentContent.Rocket,
-                "eyes" => ReactionsListForPullRequestReviewCommentContent.Eyes,
                 _ => null,
             };
         }

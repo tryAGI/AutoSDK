@@ -13,13 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
-        Pending,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="success")]
-        Success,
+        [global::System.Runtime.Serialization.EnumMember(Value="error")]
+        Error,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="error")]
-        Error,
+        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
+        Pending,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="success")]
+        Success,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
+                WebhookStatusState.Error => "error",
+                WebhookStatusState.Failure => "failure",
                 WebhookStatusState.Pending => "pending",
                 WebhookStatusState.Success => "success",
-                WebhookStatusState.Failure => "failure",
-                WebhookStatusState.Error => "error",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
+                "error" => WebhookStatusState.Error,
+                "failure" => WebhookStatusState.Failure,
                 "pending" => WebhookStatusState.Pending,
                 "success" => WebhookStatusState.Success,
-                "failure" => WebhookStatusState.Failure,
-                "error" => WebhookStatusState.Error,
                 _ => null,
             };
         }

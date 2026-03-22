@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="video")]
-        Video,
+        [global::System.Runtime.Serialization.EnumMember(Value="external_audio")]
+        ExternalAudio,
         /// <summary>
         /// 
         /// </summary>
@@ -23,13 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="external_audio")]
-        ExternalAudio,
+        [global::System.Runtime.Serialization.EnumMember(Value="tts_node")]
+        TtsNode,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="tts_node")]
-        TtsNode,
+        [global::System.Runtime.Serialization.EnumMember(Value="video")]
+        Video,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                StudioClipReferenceClipType.Video => "video",
-                StudioClipReferenceClipType.Image => "image",
                 StudioClipReferenceClipType.ExternalAudio => "external_audio",
+                StudioClipReferenceClipType.Image => "image",
                 StudioClipReferenceClipType.TtsNode => "tts_node",
+                StudioClipReferenceClipType.Video => "video",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "video" => StudioClipReferenceClipType.Video,
-                "image" => StudioClipReferenceClipType.Image,
                 "external_audio" => StudioClipReferenceClipType.ExternalAudio,
+                "image" => StudioClipReferenceClipType.Image,
                 "tts_node" => StudioClipReferenceClipType.TtsNode,
+                "video" => StudioClipReferenceClipType.Video,
                 _ => null,
             };
         }

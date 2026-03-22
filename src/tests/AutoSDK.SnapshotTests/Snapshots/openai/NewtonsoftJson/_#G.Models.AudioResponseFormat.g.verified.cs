@@ -19,13 +19,13 @@ namespace G
         /// <summary>
         /// `json`, `text`, `srt`, `verbose_json`, or `vtt`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`.
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text")]
-        Text,
+        [global::System.Runtime.Serialization.EnumMember(Value="srt")]
+        Srt,
         /// <summary>
         /// `json`, `text`, `srt`, `verbose_json`, or `vtt`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`.
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="srt")]
-        Srt,
+        [global::System.Runtime.Serialization.EnumMember(Value="text")]
+        Text,
         /// <summary>
         /// `json`, `text`, `srt`, `verbose_json`, or `vtt`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`.
         /// </summary>
@@ -51,8 +51,8 @@ namespace G
             return value switch
             {
                 AudioResponseFormat.Json => "json",
-                AudioResponseFormat.Text => "text",
                 AudioResponseFormat.Srt => "srt",
+                AudioResponseFormat.Text => "text",
                 AudioResponseFormat.VerboseJson => "verbose_json",
                 AudioResponseFormat.Vtt => "vtt",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -66,8 +66,8 @@ namespace G
             return value switch
             {
                 "json" => AudioResponseFormat.Json,
-                "text" => AudioResponseFormat.Text,
                 "srt" => AudioResponseFormat.Srt,
+                "text" => AudioResponseFormat.Text,
                 "verbose_json" => AudioResponseFormat.VerboseJson,
                 "vtt" => AudioResponseFormat.Vtt,
                 _ => null,

@@ -19,13 +19,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="include_outputs")]
-        IncludeOutputs,
+        [global::System.Runtime.Serialization.EnumMember(Value="include_all")]
+        IncludeAll,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="include_all")]
-        IncludeAll,
+        [global::System.Runtime.Serialization.EnumMember(Value="include_outputs")]
+        IncludeOutputs,
     }
 
     /// <summary>
@@ -41,8 +41,8 @@ namespace G
             return value switch
             {
                 CompactionConfigToolEventPolicy.Exclude => "exclude",
-                CompactionConfigToolEventPolicy.IncludeOutputs => "include_outputs",
                 CompactionConfigToolEventPolicy.IncludeAll => "include_all",
+                CompactionConfigToolEventPolicy.IncludeOutputs => "include_outputs",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,8 +54,8 @@ namespace G
             return value switch
             {
                 "exclude" => CompactionConfigToolEventPolicy.Exclude,
-                "include_outputs" => CompactionConfigToolEventPolicy.IncludeOutputs,
                 "include_all" => CompactionConfigToolEventPolicy.IncludeAll,
+                "include_outputs" => CompactionConfigToolEventPolicy.IncludeOutputs,
                 _ => null,
             };
         }

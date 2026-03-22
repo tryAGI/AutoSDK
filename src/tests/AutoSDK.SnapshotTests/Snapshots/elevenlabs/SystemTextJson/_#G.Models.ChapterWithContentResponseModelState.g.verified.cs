@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Default,
+        Converting,
         /// <summary>
         /// 
         /// </summary>
-        Converting,
+        Default,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ChapterWithContentResponseModelState.Default => "default",
                 ChapterWithContentResponseModelState.Converting => "converting",
+                ChapterWithContentResponseModelState.Default => "default",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "default" => ChapterWithContentResponseModelState.Default,
                 "converting" => ChapterWithContentResponseModelState.Converting,
+                "default" => ChapterWithContentResponseModelState.Default,
                 _ => null,
             };
         }

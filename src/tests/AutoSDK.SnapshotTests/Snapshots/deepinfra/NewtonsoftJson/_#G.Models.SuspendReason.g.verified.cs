@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="payment-method")]
-        PaymentMethod,
+        [global::System.Runtime.Serialization.EnumMember(Value="admin")]
+        Admin,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="overdue-invoices")]
-        OverdueInvoices,
+        [global::System.Runtime.Serialization.EnumMember(Value="bad-cc")]
+        BadCc,
         /// <summary>
         /// 
         /// </summary>
@@ -28,13 +28,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="admin")]
-        Admin,
+        [global::System.Runtime.Serialization.EnumMember(Value="overdue-invoices")]
+        OverdueInvoices,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="bad-cc")]
-        BadCc,
+        [global::System.Runtime.Serialization.EnumMember(Value="payment-method")]
+        PaymentMethod,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                SuspendReason.PaymentMethod => "payment-method",
-                SuspendReason.OverdueInvoices => "overdue-invoices",
-                SuspendReason.LimitReached => "limit-reached",
                 SuspendReason.Admin => "admin",
                 SuspendReason.BadCc => "bad-cc",
+                SuspendReason.LimitReached => "limit-reached",
+                SuspendReason.OverdueInvoices => "overdue-invoices",
+                SuspendReason.PaymentMethod => "payment-method",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "payment-method" => SuspendReason.PaymentMethod,
-                "overdue-invoices" => SuspendReason.OverdueInvoices,
-                "limit-reached" => SuspendReason.LimitReached,
                 "admin" => SuspendReason.Admin,
                 "bad-cc" => SuspendReason.BadCc,
+                "limit-reached" => SuspendReason.LimitReached,
+                "overdue-invoices" => SuspendReason.OverdueInvoices,
+                "payment-method" => SuspendReason.PaymentMethod,
                 _ => null,
             };
         }

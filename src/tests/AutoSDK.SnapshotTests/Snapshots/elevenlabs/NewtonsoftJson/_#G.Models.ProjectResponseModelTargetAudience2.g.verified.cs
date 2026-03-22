@@ -13,16 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="children")]
-        Children,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="young adult")]
-        YoungAdult,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="adult")]
         Adult,
         /// <summary>
@@ -30,6 +20,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="all ages")]
         AllAges,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="children")]
+        Children,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="young adult")]
+        YoungAdult,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                ProjectResponseModelTargetAudience2.Children => "children",
-                ProjectResponseModelTargetAudience2.YoungAdult => "young adult",
                 ProjectResponseModelTargetAudience2.Adult => "adult",
                 ProjectResponseModelTargetAudience2.AllAges => "all ages",
+                ProjectResponseModelTargetAudience2.Children => "children",
+                ProjectResponseModelTargetAudience2.YoungAdult => "young adult",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "children" => ProjectResponseModelTargetAudience2.Children,
-                "young adult" => ProjectResponseModelTargetAudience2.YoungAdult,
                 "adult" => ProjectResponseModelTargetAudience2.Adult,
                 "all ages" => ProjectResponseModelTargetAudience2.AllAges,
+                "children" => ProjectResponseModelTargetAudience2.Children,
+                "young adult" => ProjectResponseModelTargetAudience2.YoungAdult,
                 _ => null,
             };
         }

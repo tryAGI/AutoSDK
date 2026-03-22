@@ -12,19 +12,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        InProgress,
-        /// <summary>
-        /// 
-        /// </summary>
         Completed,
         /// <summary>
         /// 
         /// </summary>
-        Queued,
+        InProgress,
         /// <summary>
         /// 
         /// </summary>
         Pending,
+        /// <summary>
+        /// 
+        /// </summary>
+        Queued,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1StepStatus.InProgress => "in_progress",
                 WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1StepStatus.Completed => "completed",
-                WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1StepStatus.Queued => "queued",
+                WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1StepStatus.InProgress => "in_progress",
                 WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1StepStatus.Pending => "pending",
+                WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1StepStatus.Queued => "queued",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "in_progress" => WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1StepStatus.InProgress,
                 "completed" => WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1StepStatus.Completed,
-                "queued" => WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1StepStatus.Queued,
+                "in_progress" => WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1StepStatus.InProgress,
                 "pending" => WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1StepStatus.Pending,
+                "queued" => WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1StepStatus.Queued,
                 _ => null,
             };
         }

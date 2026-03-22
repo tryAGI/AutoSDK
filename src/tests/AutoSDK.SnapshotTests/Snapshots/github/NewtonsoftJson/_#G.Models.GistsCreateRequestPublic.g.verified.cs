@@ -14,13 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="true")]
-        True,
+        [global::System.Runtime.Serialization.EnumMember(Value="false")]
+        False,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="false")]
-        False,
+        [global::System.Runtime.Serialization.EnumMember(Value="true")]
+        True,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                GistsCreateRequestPublic.True => "true",
                 GistsCreateRequestPublic.False => "false",
+                GistsCreateRequestPublic.True => "true",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,8 +47,8 @@ namespace G
         {
             return value switch
             {
-                "true" => GistsCreateRequestPublic.True,
                 "false" => GistsCreateRequestPublic.False,
+                "true" => GistsCreateRequestPublic.True,
                 _ => null,
             };
         }

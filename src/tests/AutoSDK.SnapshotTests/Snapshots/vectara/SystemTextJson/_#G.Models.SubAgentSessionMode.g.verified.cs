@@ -15,6 +15,10 @@ namespace G
     public enum SubAgentSessionMode
     {
         /// <summary>
+        /// Always create a new session on each invocation
+        /// </summary>
+        Ephemeral,
+        /// <summary>
         /// LLM decides whether to create new or resume existing session
         /// </summary>
         LlmControlled,
@@ -22,10 +26,6 @@ namespace G
         /// Always reuse the same session (created on first invocation)
         /// </summary>
         Persistent,
-        /// <summary>
-        /// Always create a new session on each invocation
-        /// </summary>
-        Ephemeral,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
         {
             return value switch
             {
+                SubAgentSessionMode.Ephemeral => "ephemeral",
                 SubAgentSessionMode.LlmControlled => "llm_controlled",
                 SubAgentSessionMode.Persistent => "persistent",
-                SubAgentSessionMode.Ephemeral => "ephemeral",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
+                "ephemeral" => SubAgentSessionMode.Ephemeral,
                 "llm_controlled" => SubAgentSessionMode.LlmControlled,
                 "persistent" => SubAgentSessionMode.Persistent,
-                "ephemeral" => SubAgentSessionMode.Ephemeral,
                 _ => null,
             };
         }

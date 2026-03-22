@@ -28,12 +28,12 @@ namespace G.JsonConverters
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("name")) __score0++;
             if (__jsonProps.Contains("description")) __score0++;
-            if (__jsonProps.Contains("template_type")) __score0++;
-            if (__jsonProps.Contains("template")) __score0++;
-            if (__jsonProps.Contains("metadata")) __score0++;
             if (__jsonProps.Contains("enabled")) __score0++;
+            if (__jsonProps.Contains("metadata")) __score0++;
+            if (__jsonProps.Contains("name")) __score0++;
+            if (__jsonProps.Contains("template")) __score0++;
+            if (__jsonProps.Contains("template_type")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("type")) __score1++;
             var __bestScore = 0;

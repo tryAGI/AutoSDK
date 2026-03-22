@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="diverged")]
-        Diverged,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ahead")]
         Ahead,
         /// <summary>
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="behind")]
         Behind,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="diverged")]
+        Diverged,
         /// <summary>
         /// 
         /// </summary>
@@ -44,9 +44,9 @@ namespace G
         {
             return value switch
             {
-                CommitComparisonStatus.Diverged => "diverged",
                 CommitComparisonStatus.Ahead => "ahead",
                 CommitComparisonStatus.Behind => "behind",
+                CommitComparisonStatus.Diverged => "diverged",
                 CommitComparisonStatus.Identical => "identical",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -58,9 +58,9 @@ namespace G
         {
             return value switch
             {
-                "diverged" => CommitComparisonStatus.Diverged,
                 "ahead" => CommitComparisonStatus.Ahead,
                 "behind" => CommitComparisonStatus.Behind,
+                "diverged" => CommitComparisonStatus.Diverged,
                 "identical" => CommitComparisonStatus.Identical,
                 _ => null,
             };

@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Owner,
+        Member,
         /// <summary>
         /// 
         /// </summary>
-        Member,
+        Owner,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ProjectServiceAccountRole.Owner => "owner",
                 ProjectServiceAccountRole.Member => "member",
+                ProjectServiceAccountRole.Owner => "owner",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "owner" => ProjectServiceAccountRole.Owner,
                 "member" => ProjectServiceAccountRole.Member,
+                "owner" => ProjectServiceAccountRole.Owner,
                 _ => null,
             };
         }

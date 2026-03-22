@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="reviewed")]
-        Reviewed,
+        [global::System.Runtime.Serialization.EnumMember(Value="malware")]
+        Malware,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="malware")]
-        Malware,
+        [global::System.Runtime.Serialization.EnumMember(Value="reviewed")]
+        Reviewed,
         /// <summary>
         /// 
         /// </summary>
@@ -39,8 +39,8 @@ namespace G
         {
             return value switch
             {
-                SecurityAdvisoriesListGlobalAdvisoriesType.Reviewed => "reviewed",
                 SecurityAdvisoriesListGlobalAdvisoriesType.Malware => "malware",
+                SecurityAdvisoriesListGlobalAdvisoriesType.Reviewed => "reviewed",
                 SecurityAdvisoriesListGlobalAdvisoriesType.Unreviewed => "unreviewed",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -52,8 +52,8 @@ namespace G
         {
             return value switch
             {
-                "reviewed" => SecurityAdvisoriesListGlobalAdvisoriesType.Reviewed,
                 "malware" => SecurityAdvisoriesListGlobalAdvisoriesType.Malware,
+                "reviewed" => SecurityAdvisoriesListGlobalAdvisoriesType.Reviewed,
                 "unreviewed" => SecurityAdvisoriesListGlobalAdvisoriesType.Unreviewed,
                 _ => null,
             };

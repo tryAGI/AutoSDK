@@ -20,15 +20,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Resolved,
-        /// <summary>
-        /// 
-        /// </summary>
         Canceled,
         /// <summary>
         /// 
         /// </summary>
         Locked,
+        /// <summary>
+        /// 
+        /// </summary>
+        Resolved,
     }
 
     /// <summary>
@@ -43,9 +43,9 @@ namespace G
         {
             return value switch
             {
-                EndPredictionBodyStatus.Resolved => "RESOLVED",
                 EndPredictionBodyStatus.Canceled => "CANCELED",
                 EndPredictionBodyStatus.Locked => "LOCKED",
+                EndPredictionBodyStatus.Resolved => "RESOLVED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,9 +56,9 @@ namespace G
         {
             return value switch
             {
-                "RESOLVED" => EndPredictionBodyStatus.Resolved,
                 "CANCELED" => EndPredictionBodyStatus.Canceled,
                 "LOCKED" => EndPredictionBodyStatus.Locked,
+                "RESOLVED" => EndPredictionBodyStatus.Resolved,
                 _ => null,
             };
         }

@@ -17,11 +17,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Reopened,
+        NotPlanned,
         /// <summary>
         /// 
         /// </summary>
-        NotPlanned,
+        Reopened,
     }
 
     /// <summary>
@@ -37,8 +37,8 @@ namespace G
             return value switch
             {
                 IssueStateReason.Completed => "completed",
-                IssueStateReason.Reopened => "reopened",
                 IssueStateReason.NotPlanned => "not_planned",
+                IssueStateReason.Reopened => "reopened",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,8 +50,8 @@ namespace G
             return value switch
             {
                 "completed" => IssueStateReason.Completed,
-                "reopened" => IssueStateReason.Reopened,
                 "not_planned" => IssueStateReason.NotPlanned,
+                "reopened" => IssueStateReason.Reopened,
                 _ => null,
             };
         }

@@ -17,11 +17,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Unhealthy,
-        /// <summary>
-        /// 
-        /// </summary>
-        Unavailable,
+        Indexing,
         /// <summary>
         /// 
         /// </summary>
@@ -29,7 +25,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Indexing,
+        Unavailable,
+        /// <summary>
+        /// 
+        /// </summary>
+        Unhealthy,
     }
 
     /// <summary>
@@ -45,10 +45,10 @@ namespace G
             return value switch
             {
                 NodeStatusStatus.Healthy => "HEALTHY",
-                NodeStatusStatus.Unhealthy => "UNHEALTHY",
-                NodeStatusStatus.Unavailable => "UNAVAILABLE",
-                NodeStatusStatus.Timeout => "TIMEOUT",
                 NodeStatusStatus.Indexing => "INDEXING",
+                NodeStatusStatus.Timeout => "TIMEOUT",
+                NodeStatusStatus.Unavailable => "UNAVAILABLE",
+                NodeStatusStatus.Unhealthy => "UNHEALTHY",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -60,10 +60,10 @@ namespace G
             return value switch
             {
                 "HEALTHY" => NodeStatusStatus.Healthy,
-                "UNHEALTHY" => NodeStatusStatus.Unhealthy,
-                "UNAVAILABLE" => NodeStatusStatus.Unavailable,
-                "TIMEOUT" => NodeStatusStatus.Timeout,
                 "INDEXING" => NodeStatusStatus.Indexing,
+                "TIMEOUT" => NodeStatusStatus.Timeout,
+                "UNAVAILABLE" => NodeStatusStatus.Unavailable,
+                "UNHEALTHY" => NodeStatusStatus.Unhealthy,
                 _ => null,
             };
         }

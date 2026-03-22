@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="not_requested")]
-        NotRequested,
+        [global::System.Runtime.Serialization.EnumMember(Value="allowed")]
+        Allowed,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
-        Pending,
+        [global::System.Runtime.Serialization.EnumMember(Value="allowed_with_changes")]
+        AllowedWithChanges,
         /// <summary>
         /// 
         /// </summary>
@@ -28,13 +28,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="allowed")]
-        Allowed,
+        [global::System.Runtime.Serialization.EnumMember(Value="not_requested")]
+        NotRequested,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="allowed_with_changes")]
-        AllowedWithChanges,
+        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
+        Pending,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                VoiceSharingResponseModelReviewStatus.NotRequested => "not_requested",
-                VoiceSharingResponseModelReviewStatus.Pending => "pending",
-                VoiceSharingResponseModelReviewStatus.Declined => "declined",
                 VoiceSharingResponseModelReviewStatus.Allowed => "allowed",
                 VoiceSharingResponseModelReviewStatus.AllowedWithChanges => "allowed_with_changes",
+                VoiceSharingResponseModelReviewStatus.Declined => "declined",
+                VoiceSharingResponseModelReviewStatus.NotRequested => "not_requested",
+                VoiceSharingResponseModelReviewStatus.Pending => "pending",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "not_requested" => VoiceSharingResponseModelReviewStatus.NotRequested,
-                "pending" => VoiceSharingResponseModelReviewStatus.Pending,
-                "declined" => VoiceSharingResponseModelReviewStatus.Declined,
                 "allowed" => VoiceSharingResponseModelReviewStatus.Allowed,
                 "allowed_with_changes" => VoiceSharingResponseModelReviewStatus.AllowedWithChanges,
+                "declined" => VoiceSharingResponseModelReviewStatus.Declined,
+                "not_requested" => VoiceSharingResponseModelReviewStatus.NotRequested,
+                "pending" => VoiceSharingResponseModelReviewStatus.Pending,
                 _ => null,
             };
         }

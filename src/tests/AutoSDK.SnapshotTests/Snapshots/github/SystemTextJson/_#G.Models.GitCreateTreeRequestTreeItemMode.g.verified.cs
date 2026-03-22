@@ -12,6 +12,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        x040000,
+        /// <summary>
+        /// 
+        /// </summary>
         x100644,
         /// <summary>
         /// 
@@ -20,15 +24,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        x040000,
+        x120000,
         /// <summary>
         /// 
         /// </summary>
         x160000,
-        /// <summary>
-        /// 
-        /// </summary>
-        x120000,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
+                GitCreateTreeRequestTreeItemMode.x040000 => "040000",
                 GitCreateTreeRequestTreeItemMode.x100644 => "100644",
                 GitCreateTreeRequestTreeItemMode.x100755 => "100755",
-                GitCreateTreeRequestTreeItemMode.x040000 => "040000",
-                GitCreateTreeRequestTreeItemMode.x160000 => "160000",
                 GitCreateTreeRequestTreeItemMode.x120000 => "120000",
+                GitCreateTreeRequestTreeItemMode.x160000 => "160000",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
+                "040000" => GitCreateTreeRequestTreeItemMode.x040000,
                 "100644" => GitCreateTreeRequestTreeItemMode.x100644,
                 "100755" => GitCreateTreeRequestTreeItemMode.x100755,
-                "040000" => GitCreateTreeRequestTreeItemMode.x040000,
-                "160000" => GitCreateTreeRequestTreeItemMode.x160000,
                 "120000" => GitCreateTreeRequestTreeItemMode.x120000,
+                "160000" => GitCreateTreeRequestTreeItemMode.x160000,
                 _ => null,
             };
         }

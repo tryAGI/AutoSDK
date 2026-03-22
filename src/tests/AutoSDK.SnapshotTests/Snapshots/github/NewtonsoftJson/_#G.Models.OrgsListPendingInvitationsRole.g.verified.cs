@@ -13,23 +13,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="all")]
-        All,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="admin")]
         Admin,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="direct_member")]
-        DirectMember,
+        [global::System.Runtime.Serialization.EnumMember(Value="all")]
+        All,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="billing_manager")]
         BillingManager,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="direct_member")]
+        DirectMember,
         /// <summary>
         /// 
         /// </summary>
@@ -49,10 +49,10 @@ namespace G
         {
             return value switch
             {
-                OrgsListPendingInvitationsRole.All => "all",
                 OrgsListPendingInvitationsRole.Admin => "admin",
-                OrgsListPendingInvitationsRole.DirectMember => "direct_member",
+                OrgsListPendingInvitationsRole.All => "all",
                 OrgsListPendingInvitationsRole.BillingManager => "billing_manager",
+                OrgsListPendingInvitationsRole.DirectMember => "direct_member",
                 OrgsListPendingInvitationsRole.HiringManager => "hiring_manager",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -64,10 +64,10 @@ namespace G
         {
             return value switch
             {
-                "all" => OrgsListPendingInvitationsRole.All,
                 "admin" => OrgsListPendingInvitationsRole.Admin,
-                "direct_member" => OrgsListPendingInvitationsRole.DirectMember,
+                "all" => OrgsListPendingInvitationsRole.All,
                 "billing_manager" => OrgsListPendingInvitationsRole.BillingManager,
+                "direct_member" => OrgsListPendingInvitationsRole.DirectMember,
                 "hiring_manager" => OrgsListPendingInvitationsRole.HiringManager,
                 _ => null,
             };

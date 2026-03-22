@@ -10,25 +10,25 @@ namespace G
     public enum GetBitsLeaderboardPeriod
     {
         /// <summary>
+        /// 
+        /// </summary>
+        All,
+        /// <summary>
         /// 00:00 on the day specified in _started\_at_ and runs through 00:00:00 of the next day.
         /// </summary>
         Day,
-        /// <summary>
-        /// 00:00 on the Monday of the week specified in _started\_at_ and runs through 00:00:00 of the next Monday.
-        /// </summary>
-        Week,
         /// <summary>
         /// 00:00 on the first day of the month specified in _started\_at_ and runs through 00:00:00 of the first day of the next month.
         /// </summary>
         Month,
         /// <summary>
+        /// 00:00 on the Monday of the week specified in _started\_at_ and runs through 00:00:00 of the next Monday.
+        /// </summary>
+        Week,
+        /// <summary>
         /// 00:00 on the first day of the year specified in _started\_at_ and runs through 00:00:00 of the first day of the next year.
         /// </summary>
         Year,
-        /// <summary>
-        /// 
-        /// </summary>
-        All,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                GetBitsLeaderboardPeriod.Day => "day",
-                GetBitsLeaderboardPeriod.Week => "week",
-                GetBitsLeaderboardPeriod.Month => "month",
-                GetBitsLeaderboardPeriod.Year => "year",
                 GetBitsLeaderboardPeriod.All => "all",
+                GetBitsLeaderboardPeriod.Day => "day",
+                GetBitsLeaderboardPeriod.Month => "month",
+                GetBitsLeaderboardPeriod.Week => "week",
+                GetBitsLeaderboardPeriod.Year => "year",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "day" => GetBitsLeaderboardPeriod.Day,
-                "week" => GetBitsLeaderboardPeriod.Week,
-                "month" => GetBitsLeaderboardPeriod.Month,
-                "year" => GetBitsLeaderboardPeriod.Year,
                 "all" => GetBitsLeaderboardPeriod.All,
+                "day" => GetBitsLeaderboardPeriod.Day,
+                "month" => GetBitsLeaderboardPeriod.Month,
+                "week" => GetBitsLeaderboardPeriod.Week,
+                "year" => GetBitsLeaderboardPeriod.Year,
                 _ => null,
             };
         }

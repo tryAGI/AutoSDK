@@ -12,7 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        DependencyGraph,
+        AdvancedSecurity,
+        /// <summary>
+        /// 
+        /// </summary>
+        CodeScanningDefaultSetup,
         /// <summary>
         /// 
         /// </summary>
@@ -24,11 +28,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        AdvancedSecurity,
-        /// <summary>
-        /// 
-        /// </summary>
-        CodeScanningDefaultSetup,
+        DependencyGraph,
         /// <summary>
         /// 
         /// </summary>
@@ -51,11 +51,11 @@ namespace G
         {
             return value switch
             {
-                OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.DependencyGraph => "dependency_graph",
-                OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.DependabotAlerts => "dependabot_alerts",
-                OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.DependabotSecurityUpdates => "dependabot_security_updates",
                 OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.AdvancedSecurity => "advanced_security",
                 OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.CodeScanningDefaultSetup => "code_scanning_default_setup",
+                OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.DependabotAlerts => "dependabot_alerts",
+                OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.DependabotSecurityUpdates => "dependabot_security_updates",
+                OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.DependencyGraph => "dependency_graph",
                 OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.SecretScanning => "secret_scanning",
                 OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.SecretScanningPushProtection => "secret_scanning_push_protection",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -68,11 +68,11 @@ namespace G
         {
             return value switch
             {
-                "dependency_graph" => OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.DependencyGraph,
-                "dependabot_alerts" => OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.DependabotAlerts,
-                "dependabot_security_updates" => OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.DependabotSecurityUpdates,
                 "advanced_security" => OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.AdvancedSecurity,
                 "code_scanning_default_setup" => OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.CodeScanningDefaultSetup,
+                "dependabot_alerts" => OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.DependabotAlerts,
+                "dependabot_security_updates" => OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.DependabotSecurityUpdates,
+                "dependency_graph" => OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.DependencyGraph,
                 "secret_scanning" => OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.SecretScanning,
                 "secret_scanning_push_protection" => OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.SecretScanningPushProtection,
                 _ => null,

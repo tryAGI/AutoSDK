@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
-        /// <summary>
-        /// 
-        /// </summary>
         Assistant,
         /// <summary>
         /// 
         /// </summary>
         System,
+        /// <summary>
+        /// 
+        /// </summary>
+        User,
     }
 
     /// <summary>
@@ -36,9 +36,9 @@ namespace G
         {
             return value switch
             {
-                RealtimeConversationItemWithReferenceRole.User => "user",
                 RealtimeConversationItemWithReferenceRole.Assistant => "assistant",
                 RealtimeConversationItemWithReferenceRole.System => "system",
+                RealtimeConversationItemWithReferenceRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,9 +49,9 @@ namespace G
         {
             return value switch
             {
-                "user" => RealtimeConversationItemWithReferenceRole.User,
                 "assistant" => RealtimeConversationItemWithReferenceRole.Assistant,
                 "system" => RealtimeConversationItemWithReferenceRole.System,
+                "user" => RealtimeConversationItemWithReferenceRole.User,
                 _ => null,
             };
         }

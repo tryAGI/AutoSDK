@@ -23,13 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="laugh")]
-        Laugh,
+        [global::System.Runtime.Serialization.EnumMember(Value="confused")]
+        Confused,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="confused")]
-        Confused,
+        [global::System.Runtime.Serialization.EnumMember(Value="eyes")]
+        Eyes,
         /// <summary>
         /// 
         /// </summary>
@@ -43,13 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="rocket")]
-        Rocket,
+        [global::System.Runtime.Serialization.EnumMember(Value="laugh")]
+        Laugh,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="eyes")]
-        Eyes,
+        [global::System.Runtime.Serialization.EnumMember(Value="rocket")]
+        Rocket,
     }
 
     /// <summary>
@@ -66,12 +66,12 @@ namespace G
             {
                 ReactionsListForCommitCommentContent.Plus1 => "+1",
                 ReactionsListForCommitCommentContent.Minus1 => "-1",
-                ReactionsListForCommitCommentContent.Laugh => "laugh",
                 ReactionsListForCommitCommentContent.Confused => "confused",
+                ReactionsListForCommitCommentContent.Eyes => "eyes",
                 ReactionsListForCommitCommentContent.Heart => "heart",
                 ReactionsListForCommitCommentContent.Hooray => "hooray",
+                ReactionsListForCommitCommentContent.Laugh => "laugh",
                 ReactionsListForCommitCommentContent.Rocket => "rocket",
-                ReactionsListForCommitCommentContent.Eyes => "eyes",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -84,12 +84,12 @@ namespace G
             {
                 "+1" => ReactionsListForCommitCommentContent.Plus1,
                 "-1" => ReactionsListForCommitCommentContent.Minus1,
-                "laugh" => ReactionsListForCommitCommentContent.Laugh,
                 "confused" => ReactionsListForCommitCommentContent.Confused,
+                "eyes" => ReactionsListForCommitCommentContent.Eyes,
                 "heart" => ReactionsListForCommitCommentContent.Heart,
                 "hooray" => ReactionsListForCommitCommentContent.Hooray,
+                "laugh" => ReactionsListForCommitCommentContent.Laugh,
                 "rocket" => ReactionsListForCommitCommentContent.Rocket,
-                "eyes" => ReactionsListForCommitCommentContent.Eyes,
                 _ => null,
             };
         }

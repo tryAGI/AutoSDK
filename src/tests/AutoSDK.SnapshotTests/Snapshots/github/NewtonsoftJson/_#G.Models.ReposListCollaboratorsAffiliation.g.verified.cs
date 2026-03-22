@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="outside")]
-        Outside,
+        [global::System.Runtime.Serialization.EnumMember(Value="all")]
+        All,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="all")]
-        All,
+        [global::System.Runtime.Serialization.EnumMember(Value="outside")]
+        Outside,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                ReposListCollaboratorsAffiliation.Outside => "outside",
-                ReposListCollaboratorsAffiliation.Direct => "direct",
                 ReposListCollaboratorsAffiliation.All => "all",
+                ReposListCollaboratorsAffiliation.Direct => "direct",
+                ReposListCollaboratorsAffiliation.Outside => "outside",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "outside" => ReposListCollaboratorsAffiliation.Outside,
-                "direct" => ReposListCollaboratorsAffiliation.Direct,
                 "all" => ReposListCollaboratorsAffiliation.All,
+                "direct" => ReposListCollaboratorsAffiliation.Direct,
+                "outside" => ReposListCollaboratorsAffiliation.Outside,
                 _ => null,
             };
         }

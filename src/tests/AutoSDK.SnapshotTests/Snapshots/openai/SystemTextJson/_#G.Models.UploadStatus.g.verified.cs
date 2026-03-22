@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Pending,
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -20,11 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Cancelled,
+        Expired,
         /// <summary>
         /// 
         /// </summary>
-        Expired,
+        Pending,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                UploadStatus.Pending => "pending",
-                UploadStatus.Completed => "completed",
                 UploadStatus.Cancelled => "cancelled",
+                UploadStatus.Completed => "completed",
                 UploadStatus.Expired => "expired",
+                UploadStatus.Pending => "pending",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "pending" => UploadStatus.Pending,
-                "completed" => UploadStatus.Completed,
                 "cancelled" => UploadStatus.Cancelled,
+                "completed" => UploadStatus.Completed,
                 "expired" => UploadStatus.Expired,
+                "pending" => UploadStatus.Pending,
                 _ => null,
             };
         }

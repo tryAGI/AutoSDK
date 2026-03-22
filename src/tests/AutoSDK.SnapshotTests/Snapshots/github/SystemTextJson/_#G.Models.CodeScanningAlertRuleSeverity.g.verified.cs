@@ -12,6 +12,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Error,
+        /// <summary>
+        /// 
+        /// </summary>
         None,
         /// <summary>
         /// 
@@ -21,10 +25,6 @@ namespace G
         /// 
         /// </summary>
         Warning,
-        /// <summary>
-        /// 
-        /// </summary>
-        Error,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
+                CodeScanningAlertRuleSeverity.Error => "error",
                 CodeScanningAlertRuleSeverity.None => "none",
                 CodeScanningAlertRuleSeverity.Note => "note",
                 CodeScanningAlertRuleSeverity.Warning => "warning",
-                CodeScanningAlertRuleSeverity.Error => "error",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
+                "error" => CodeScanningAlertRuleSeverity.Error,
                 "none" => CodeScanningAlertRuleSeverity.None,
                 "note" => CodeScanningAlertRuleSeverity.Note,
                 "warning" => CodeScanningAlertRuleSeverity.Warning,
-                "error" => CodeScanningAlertRuleSeverity.Error,
                 _ => null,
             };
         }

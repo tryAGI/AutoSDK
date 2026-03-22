@@ -14,13 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="two_stems_v1")]
-        TwoStemsV1,
+        [global::System.Runtime.Serialization.EnumMember(Value="six_stems_v1")]
+        SixStemsV1,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="six_stems_v1")]
-        SixStemsV1,
+        [global::System.Runtime.Serialization.EnumMember(Value="two_stems_v1")]
+        TwoStemsV1,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                BodyStemSeparationV1MusicStemSeparationPostStemVariationId.TwoStemsV1 => "two_stems_v1",
                 BodyStemSeparationV1MusicStemSeparationPostStemVariationId.SixStemsV1 => "six_stems_v1",
+                BodyStemSeparationV1MusicStemSeparationPostStemVariationId.TwoStemsV1 => "two_stems_v1",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,8 +47,8 @@ namespace G
         {
             return value switch
             {
-                "two_stems_v1" => BodyStemSeparationV1MusicStemSeparationPostStemVariationId.TwoStemsV1,
                 "six_stems_v1" => BodyStemSeparationV1MusicStemSeparationPostStemVariationId.SixStemsV1,
+                "two_stems_v1" => BodyStemSeparationV1MusicStemSeparationPostStemVariationId.TwoStemsV1,
                 _ => null,
             };
         }

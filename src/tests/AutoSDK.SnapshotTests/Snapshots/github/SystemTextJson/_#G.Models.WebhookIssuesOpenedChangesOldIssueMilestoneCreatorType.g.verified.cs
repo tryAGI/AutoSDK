@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        Organization,
+        User,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 WebhookIssuesOpenedChangesOldIssueMilestoneCreatorType.Bot => "Bot",
-                WebhookIssuesOpenedChangesOldIssueMilestoneCreatorType.User => "User",
                 WebhookIssuesOpenedChangesOldIssueMilestoneCreatorType.Organization => "Organization",
+                WebhookIssuesOpenedChangesOldIssueMilestoneCreatorType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookIssuesOpenedChangesOldIssueMilestoneCreatorType.Bot,
-                "User" => WebhookIssuesOpenedChangesOldIssueMilestoneCreatorType.User,
                 "Organization" => WebhookIssuesOpenedChangesOldIssueMilestoneCreatorType.Organization,
+                "User" => WebhookIssuesOpenedChangesOldIssueMilestoneCreatorType.User,
                 _ => null,
             };
         }

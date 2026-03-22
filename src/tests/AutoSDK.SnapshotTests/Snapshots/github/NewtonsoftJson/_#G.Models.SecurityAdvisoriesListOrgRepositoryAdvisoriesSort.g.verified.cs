@@ -18,13 +18,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="updated")]
-        Updated,
+        [global::System.Runtime.Serialization.EnumMember(Value="published")]
+        Published,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="published")]
-        Published,
+        [global::System.Runtime.Serialization.EnumMember(Value="updated")]
+        Updated,
     }
 
     /// <summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 SecurityAdvisoriesListOrgRepositoryAdvisoriesSort.Created => "created",
-                SecurityAdvisoriesListOrgRepositoryAdvisoriesSort.Updated => "updated",
                 SecurityAdvisoriesListOrgRepositoryAdvisoriesSort.Published => "published",
+                SecurityAdvisoriesListOrgRepositoryAdvisoriesSort.Updated => "updated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,8 +53,8 @@ namespace G
             return value switch
             {
                 "created" => SecurityAdvisoriesListOrgRepositoryAdvisoriesSort.Created,
-                "updated" => SecurityAdvisoriesListOrgRepositoryAdvisoriesSort.Updated,
                 "published" => SecurityAdvisoriesListOrgRepositoryAdvisoriesSort.Published,
+                "updated" => SecurityAdvisoriesListOrgRepositoryAdvisoriesSort.Updated,
                 _ => null,
             };
         }

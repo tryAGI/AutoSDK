@@ -17,11 +17,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Low,
+        High,
         /// <summary>
         /// 
         /// </summary>
-        High,
+        Low,
     }
 
     /// <summary>
@@ -37,8 +37,8 @@ namespace G
             return value switch
             {
                 MessageContentImageFileObjectImageFileDetail.Auto => "auto",
-                MessageContentImageFileObjectImageFileDetail.Low => "low",
                 MessageContentImageFileObjectImageFileDetail.High => "high",
+                MessageContentImageFileObjectImageFileDetail.Low => "low",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,8 +50,8 @@ namespace G
             return value switch
             {
                 "auto" => MessageContentImageFileObjectImageFileDetail.Auto,
-                "low" => MessageContentImageFileObjectImageFileDetail.Low,
                 "high" => MessageContentImageFileObjectImageFileDetail.High,
+                "low" => MessageContentImageFileObjectImageFileDetail.Low,
                 _ => null,
             };
         }

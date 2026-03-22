@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        PcmS16le16,
+        Other,
         /// <summary>
         /// 
         /// </summary>
-        Other,
+        PcmS16le16,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat2.PcmS16le16 => "pcm_s16le_16",
                 BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat2.Other => "other",
+                BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat2.PcmS16le16 => "pcm_s16le_16",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "pcm_s16le_16" => BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat2.PcmS16le16,
                 "other" => BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat2.Other,
+                "pcm_s16le_16" => BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat2.PcmS16le16,
                 _ => null,
             };
         }

@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        x1m,
+        x1d,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        x1d,
+        x1m,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                UsageCompletionsBucketWidth.x1m => "1m",
-                UsageCompletionsBucketWidth.x1h => "1h",
                 UsageCompletionsBucketWidth.x1d => "1d",
+                UsageCompletionsBucketWidth.x1h => "1h",
+                UsageCompletionsBucketWidth.x1m => "1m",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "1m" => UsageCompletionsBucketWidth.x1m,
-                "1h" => UsageCompletionsBucketWidth.x1h,
                 "1d" => UsageCompletionsBucketWidth.x1d,
+                "1h" => UsageCompletionsBucketWidth.x1h,
+                "1m" => UsageCompletionsBucketWidth.x1m,
                 _ => null,
             };
         }

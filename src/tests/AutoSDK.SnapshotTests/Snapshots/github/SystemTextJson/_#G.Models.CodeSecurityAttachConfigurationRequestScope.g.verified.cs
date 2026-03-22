@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Public,
+        PrivateOrInternal,
         /// <summary>
         /// 
         /// </summary>
-        PrivateOrInternal,
+        Public,
         /// <summary>
         /// 
         /// </summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 CodeSecurityAttachConfigurationRequestScope.All => "all",
-                CodeSecurityAttachConfigurationRequestScope.Public => "public",
                 CodeSecurityAttachConfigurationRequestScope.PrivateOrInternal => "private_or_internal",
+                CodeSecurityAttachConfigurationRequestScope.Public => "public",
                 CodeSecurityAttachConfigurationRequestScope.Selected => "selected",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -54,8 +54,8 @@ namespace G
             return value switch
             {
                 "all" => CodeSecurityAttachConfigurationRequestScope.All,
-                "public" => CodeSecurityAttachConfigurationRequestScope.Public,
                 "private_or_internal" => CodeSecurityAttachConfigurationRequestScope.PrivateOrInternal,
+                "public" => CodeSecurityAttachConfigurationRequestScope.Public,
                 "selected" => CodeSecurityAttachConfigurationRequestScope.Selected,
                 _ => null,
             };

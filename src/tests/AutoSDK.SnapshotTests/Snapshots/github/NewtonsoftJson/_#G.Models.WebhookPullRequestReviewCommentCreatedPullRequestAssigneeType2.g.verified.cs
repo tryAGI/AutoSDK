@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType2.Bot => "Bot",
-                WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType2.User => "User",
-                WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType2.Organization => "Organization",
                 WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType2.Mannequin => "Mannequin",
+                WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType2.Organization => "Organization",
+                WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType2.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType2.Bot,
-                "User" => WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType2.User,
-                "Organization" => WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType2.Organization,
                 "Mannequin" => WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType2.Mannequin,
+                "Organization" => WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType2.Organization,
+                "User" => WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType2.User,
                 _ => null,
             };
         }

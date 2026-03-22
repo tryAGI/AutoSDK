@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Webhook,
+        Mcp,
         /// <summary>
         /// 
         /// </summary>
-        Mcp,
+        Webhook,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 ConversationHistoryTranscriptOtherToolsResultCommonModelType2.Client => "client",
-                ConversationHistoryTranscriptOtherToolsResultCommonModelType2.Webhook => "webhook",
                 ConversationHistoryTranscriptOtherToolsResultCommonModelType2.Mcp => "mcp",
+                ConversationHistoryTranscriptOtherToolsResultCommonModelType2.Webhook => "webhook",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "client" => ConversationHistoryTranscriptOtherToolsResultCommonModelType2.Client,
-                "webhook" => ConversationHistoryTranscriptOtherToolsResultCommonModelType2.Webhook,
                 "mcp" => ConversationHistoryTranscriptOtherToolsResultCommonModelType2.Mcp,
+                "webhook" => ConversationHistoryTranscriptOtherToolsResultCommonModelType2.Webhook,
                 _ => null,
             };
         }

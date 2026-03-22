@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType.Bot => "Bot",
-                WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType.User => "User",
-                WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType.Organization => "Organization",
                 WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType.Mannequin => "Mannequin",
+                WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType.Organization => "Organization",
+                WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType.Bot,
-                "User" => WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType.User,
-                "Organization" => WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType.Organization,
                 "Mannequin" => WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType.Mannequin,
+                "Organization" => WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType.Organization,
+                "User" => WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType.User,
                 _ => null,
             };
         }

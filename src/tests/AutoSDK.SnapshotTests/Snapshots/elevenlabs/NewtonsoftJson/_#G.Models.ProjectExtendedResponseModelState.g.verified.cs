@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="converting")]
+        Converting,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="creating")]
         Creating,
         /// <summary>
@@ -20,11 +25,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="default")]
         Default,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="converting")]
-        Converting,
         /// <summary>
         /// 
         /// </summary>
@@ -44,9 +44,9 @@ namespace G
         {
             return value switch
             {
+                ProjectExtendedResponseModelState.Converting => "converting",
                 ProjectExtendedResponseModelState.Creating => "creating",
                 ProjectExtendedResponseModelState.Default => "default",
-                ProjectExtendedResponseModelState.Converting => "converting",
                 ProjectExtendedResponseModelState.InQueue => "in_queue",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -58,9 +58,9 @@ namespace G
         {
             return value switch
             {
+                "converting" => ProjectExtendedResponseModelState.Converting,
                 "creating" => ProjectExtendedResponseModelState.Creating,
                 "default" => ProjectExtendedResponseModelState.Default,
-                "converting" => ProjectExtendedResponseModelState.Converting,
                 "in_queue" => ProjectExtendedResponseModelState.InQueue,
                 _ => null,
             };

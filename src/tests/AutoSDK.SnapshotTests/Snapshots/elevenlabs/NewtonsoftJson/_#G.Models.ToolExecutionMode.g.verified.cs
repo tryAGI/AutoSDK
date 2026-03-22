@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="async")]
+        Async,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="immediate")]
         Immediate,
         /// <summary>
@@ -20,11 +25,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="post_tool_speech")]
         PostToolSpeech,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="async")]
-        Async,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                ToolExecutionMode.Async => "async",
                 ToolExecutionMode.Immediate => "immediate",
                 ToolExecutionMode.PostToolSpeech => "post_tool_speech",
-                ToolExecutionMode.Async => "async",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
+                "async" => ToolExecutionMode.Async,
                 "immediate" => ToolExecutionMode.Immediate,
                 "post_tool_speech" => ToolExecutionMode.PostToolSpeech,
-                "async" => ToolExecutionMode.Async,
                 _ => null,
             };
         }

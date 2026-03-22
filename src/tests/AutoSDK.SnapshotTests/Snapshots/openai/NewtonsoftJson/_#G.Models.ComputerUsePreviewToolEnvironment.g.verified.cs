@@ -13,13 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="windows")]
-        Windows,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="mac")]
-        Mac,
+        [global::System.Runtime.Serialization.EnumMember(Value="browser")]
+        Browser,
         /// <summary>
         /// 
         /// </summary>
@@ -28,13 +23,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="mac")]
+        Mac,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ubuntu")]
         Ubuntu,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="browser")]
-        Browser,
+        [global::System.Runtime.Serialization.EnumMember(Value="windows")]
+        Windows,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                ComputerUsePreviewToolEnvironment.Windows => "windows",
-                ComputerUsePreviewToolEnvironment.Mac => "mac",
-                ComputerUsePreviewToolEnvironment.Linux => "linux",
-                ComputerUsePreviewToolEnvironment.Ubuntu => "ubuntu",
                 ComputerUsePreviewToolEnvironment.Browser => "browser",
+                ComputerUsePreviewToolEnvironment.Linux => "linux",
+                ComputerUsePreviewToolEnvironment.Mac => "mac",
+                ComputerUsePreviewToolEnvironment.Ubuntu => "ubuntu",
+                ComputerUsePreviewToolEnvironment.Windows => "windows",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "windows" => ComputerUsePreviewToolEnvironment.Windows,
-                "mac" => ComputerUsePreviewToolEnvironment.Mac,
-                "linux" => ComputerUsePreviewToolEnvironment.Linux,
-                "ubuntu" => ComputerUsePreviewToolEnvironment.Ubuntu,
                 "browser" => ComputerUsePreviewToolEnvironment.Browser,
+                "linux" => ComputerUsePreviewToolEnvironment.Linux,
+                "mac" => ComputerUsePreviewToolEnvironment.Mac,
+                "ubuntu" => ComputerUsePreviewToolEnvironment.Ubuntu,
+                "windows" => ComputerUsePreviewToolEnvironment.Windows,
                 _ => null,
             };
         }

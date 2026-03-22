@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Llm,
+        Folder,
         /// <summary>
         /// 
         /// </summary>
-        Tool,
+        Llm,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Folder,
+        Tool,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                TestType.Llm => "llm",
-                TestType.Tool => "tool",
-                TestType.Simulation => "simulation",
                 TestType.Folder => "folder",
+                TestType.Llm => "llm",
+                TestType.Simulation => "simulation",
+                TestType.Tool => "tool",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "llm" => TestType.Llm,
-                "tool" => TestType.Tool,
-                "simulation" => TestType.Simulation,
                 "folder" => TestType.Folder,
+                "llm" => TestType.Llm,
+                "simulation" => TestType.Simulation,
+                "tool" => TestType.Tool,
                 _ => null,
             };
         }

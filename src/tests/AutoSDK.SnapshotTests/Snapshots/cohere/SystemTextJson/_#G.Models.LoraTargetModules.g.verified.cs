@@ -15,14 +15,6 @@ namespace G
     public enum LoraTargetModules
     {
         /// <summary>
-        /// Unspecified LoRA target modules.
-        /// </summary>
-        Unspecified,
-        /// <summary>
-        /// LoRA adapts the query and value matrices in transformer attention layers.
-        /// </summary>
-        Qv,
-        /// <summary>
         /// LoRA adapts query, key, value, and output matrices in attention layers.
         /// </summary>
         Qkvo,
@@ -30,6 +22,14 @@ namespace G
         /// LoRA adapts attention projection matrices and feed-forward networks (FFN).
         /// </summary>
         QkvoFfn,
+        /// <summary>
+        /// LoRA adapts the query and value matrices in transformer attention layers.
+        /// </summary>
+        Qv,
+        /// <summary>
+        /// Unspecified LoRA target modules.
+        /// </summary>
+        Unspecified,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                LoraTargetModules.Unspecified => "LORA_TARGET_MODULES_UNSPECIFIED",
-                LoraTargetModules.Qv => "LORA_TARGET_MODULES_QV",
                 LoraTargetModules.Qkvo => "LORA_TARGET_MODULES_QKVO",
                 LoraTargetModules.QkvoFfn => "LORA_TARGET_MODULES_QKVO_FFN",
+                LoraTargetModules.Qv => "LORA_TARGET_MODULES_QV",
+                LoraTargetModules.Unspecified => "LORA_TARGET_MODULES_UNSPECIFIED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "LORA_TARGET_MODULES_UNSPECIFIED" => LoraTargetModules.Unspecified,
-                "LORA_TARGET_MODULES_QV" => LoraTargetModules.Qv,
                 "LORA_TARGET_MODULES_QKVO" => LoraTargetModules.Qkvo,
                 "LORA_TARGET_MODULES_QKVO_FFN" => LoraTargetModules.QkvoFfn,
+                "LORA_TARGET_MODULES_QV" => LoraTargetModules.Qv,
+                "LORA_TARGET_MODULES_UNSPECIFIED" => LoraTargetModules.Unspecified,
                 _ => null,
             };
         }

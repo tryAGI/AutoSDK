@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Line,
+        Bar,
         /// <summary>
         /// 
         /// </summary>
-        Bar,
+        Line,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                CustomChartType.Line => "line",
                 CustomChartType.Bar => "bar",
+                CustomChartType.Line => "line",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "line" => CustomChartType.Line,
                 "bar" => CustomChartType.Bar,
+                "line" => CustomChartType.Line,
                 _ => null,
             };
         }

@@ -14,11 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Fast,
+        Accurate,
         /// <summary>
         /// 
         /// </summary>
-        Accurate,
+        Fast,
         /// <summary>
         /// 
         /// </summary>
@@ -37,8 +37,8 @@ namespace G
         {
             return value switch
             {
-                CitationOptionsMode.Fast => "FAST",
                 CitationOptionsMode.Accurate => "ACCURATE",
+                CitationOptionsMode.Fast => "FAST",
                 CitationOptionsMode.Off => "OFF",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -50,8 +50,8 @@ namespace G
         {
             return value switch
             {
-                "FAST" => CitationOptionsMode.Fast,
                 "ACCURATE" => CitationOptionsMode.Accurate,
+                "FAST" => CitationOptionsMode.Fast,
                 "OFF" => CitationOptionsMode.Off,
                 _ => null,
             };

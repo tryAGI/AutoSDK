@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Inactive,
-        /// <summary>
-        /// 
-        /// </summary>
-        OnTrack,
-        /// <summary>
-        /// 
-        /// </summary>
         AtRisk,
+        /// <summary>
+        /// 
+        /// </summary>
+        Complete,
+        /// <summary>
+        /// 
+        /// </summary>
+        Inactive,
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +28,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Complete,
+        OnTrack,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                WebhookProjectsV2StatusUpdateEditedChangesStatusTo.Inactive => "INACTIVE",
-                WebhookProjectsV2StatusUpdateEditedChangesStatusTo.OnTrack => "ON_TRACK",
                 WebhookProjectsV2StatusUpdateEditedChangesStatusTo.AtRisk => "AT_RISK",
-                WebhookProjectsV2StatusUpdateEditedChangesStatusTo.OffTrack => "OFF_TRACK",
                 WebhookProjectsV2StatusUpdateEditedChangesStatusTo.Complete => "COMPLETE",
+                WebhookProjectsV2StatusUpdateEditedChangesStatusTo.Inactive => "INACTIVE",
+                WebhookProjectsV2StatusUpdateEditedChangesStatusTo.OffTrack => "OFF_TRACK",
+                WebhookProjectsV2StatusUpdateEditedChangesStatusTo.OnTrack => "ON_TRACK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "INACTIVE" => WebhookProjectsV2StatusUpdateEditedChangesStatusTo.Inactive,
-                "ON_TRACK" => WebhookProjectsV2StatusUpdateEditedChangesStatusTo.OnTrack,
                 "AT_RISK" => WebhookProjectsV2StatusUpdateEditedChangesStatusTo.AtRisk,
-                "OFF_TRACK" => WebhookProjectsV2StatusUpdateEditedChangesStatusTo.OffTrack,
                 "COMPLETE" => WebhookProjectsV2StatusUpdateEditedChangesStatusTo.Complete,
+                "INACTIVE" => WebhookProjectsV2StatusUpdateEditedChangesStatusTo.Inactive,
+                "OFF_TRACK" => WebhookProjectsV2StatusUpdateEditedChangesStatusTo.OffTrack,
+                "ON_TRACK" => WebhookProjectsV2StatusUpdateEditedChangesStatusTo.OnTrack,
                 _ => null,
             };
         }

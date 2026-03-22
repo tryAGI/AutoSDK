@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="TTS")]
-        Tts,
+        [global::System.Runtime.Serialization.EnumMember(Value="STS")]
+        Sts,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="STS")]
-        Sts,
+        [global::System.Runtime.Serialization.EnumMember(Value="TTS")]
+        Tts,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                GetSpeechHistorySource2.Tts => "TTS",
                 GetSpeechHistorySource2.Sts => "STS",
+                GetSpeechHistorySource2.Tts => "TTS",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "TTS" => GetSpeechHistorySource2.Tts,
                 "STS" => GetSpeechHistorySource2.Sts,
+                "TTS" => GetSpeechHistorySource2.Tts,
                 _ => null,
             };
         }

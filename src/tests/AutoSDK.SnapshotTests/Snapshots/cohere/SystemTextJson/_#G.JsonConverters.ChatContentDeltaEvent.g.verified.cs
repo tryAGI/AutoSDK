@@ -30,8 +30,8 @@ namespace G.JsonConverters
             var __score0 = 0;
             if (__jsonProps.Contains("type")) __score0++;
             var __score1 = 0;
-            if (__jsonProps.Contains("index")) __score1++;
             if (__jsonProps.Contains("delta")) __score1++;
+            if (__jsonProps.Contains("index")) __score1++;
             if (__jsonProps.Contains("logprobs")) __score1++;
             var __bestScore = 0;
             var __bestIndex = -1;

@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ReadOnly,
+        Custom,
         /// <summary>
         /// 
         /// </summary>
-        Custom,
+        ReadOnly,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                RunnerLabelType.ReadOnly => "read-only",
                 RunnerLabelType.Custom => "custom",
+                RunnerLabelType.ReadOnly => "read-only",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "read-only" => RunnerLabelType.ReadOnly,
                 "custom" => RunnerLabelType.Custom,
+                "read-only" => RunnerLabelType.ReadOnly,
                 _ => null,
             };
         }

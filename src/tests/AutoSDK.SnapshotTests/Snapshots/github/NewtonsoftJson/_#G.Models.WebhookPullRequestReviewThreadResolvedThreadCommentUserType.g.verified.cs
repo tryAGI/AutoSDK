@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookPullRequestReviewThreadResolvedThreadCommentUserType.Bot => "Bot",
-                WebhookPullRequestReviewThreadResolvedThreadCommentUserType.User => "User",
-                WebhookPullRequestReviewThreadResolvedThreadCommentUserType.Organization => "Organization",
                 WebhookPullRequestReviewThreadResolvedThreadCommentUserType.Mannequin => "Mannequin",
+                WebhookPullRequestReviewThreadResolvedThreadCommentUserType.Organization => "Organization",
+                WebhookPullRequestReviewThreadResolvedThreadCommentUserType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestReviewThreadResolvedThreadCommentUserType.Bot,
-                "User" => WebhookPullRequestReviewThreadResolvedThreadCommentUserType.User,
-                "Organization" => WebhookPullRequestReviewThreadResolvedThreadCommentUserType.Organization,
                 "Mannequin" => WebhookPullRequestReviewThreadResolvedThreadCommentUserType.Mannequin,
+                "Organization" => WebhookPullRequestReviewThreadResolvedThreadCommentUserType.Organization,
+                "User" => WebhookPullRequestReviewThreadResolvedThreadCommentUserType.User,
                 _ => null,
             };
         }

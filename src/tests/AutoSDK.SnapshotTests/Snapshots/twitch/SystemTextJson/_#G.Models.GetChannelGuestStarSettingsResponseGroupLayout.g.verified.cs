@@ -13,13 +13,13 @@ namespace G
     public enum GetChannelGuestStarSettingsResponseGroupLayout
     {
         /// <summary>
-        /// All live guests are tiled within the browser source with the same size.
-        /// </summary>
-        TiledLayout,
-        /// <summary>
         /// All live guests are tiled within the browser source with the same size. If there is an active screen share, it is sized larger than the other guests.
         /// </summary>
         ScreenshareLayout,
+        /// <summary>
+        /// All live guests are tiled within the browser source with the same size.
+        /// </summary>
+        TiledLayout,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                GetChannelGuestStarSettingsResponseGroupLayout.TiledLayout => "TILED_LAYOUT",
                 GetChannelGuestStarSettingsResponseGroupLayout.ScreenshareLayout => "SCREENSHARE_LAYOUT",
+                GetChannelGuestStarSettingsResponseGroupLayout.TiledLayout => "TILED_LAYOUT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "TILED_LAYOUT" => GetChannelGuestStarSettingsResponseGroupLayout.TiledLayout,
                 "SCREENSHARE_LAYOUT" => GetChannelGuestStarSettingsResponseGroupLayout.ScreenshareLayout,
+                "TILED_LAYOUT" => GetChannelGuestStarSettingsResponseGroupLayout.TiledLayout,
                 _ => null,
             };
         }

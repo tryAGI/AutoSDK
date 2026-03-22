@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType.Bot => "Bot",
-                WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType.User => "User",
-                WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType.Organization => "Organization",
                 WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType.Mannequin => "Mannequin",
+                WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType.Organization => "Organization",
+                WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType.Bot,
-                "User" => WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType.User,
-                "Organization" => WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType.Organization,
                 "Mannequin" => WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType.Mannequin,
+                "Organization" => WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType.Organization,
+                "User" => WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType.User,
                 _ => null,
             };
         }

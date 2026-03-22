@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="webhook")]
-        Webhook,
+        [global::System.Runtime.Serialization.EnumMember(Value="api_integration_webhook")]
+        ApiIntegrationWebhook,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="api_integration_webhook")]
-        ApiIntegrationWebhook,
+        [global::System.Runtime.Serialization.EnumMember(Value="webhook")]
+        Webhook,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                ToolTypeFilter.Webhook => "webhook",
-                ToolTypeFilter.Client => "client",
                 ToolTypeFilter.ApiIntegrationWebhook => "api_integration_webhook",
+                ToolTypeFilter.Client => "client",
+                ToolTypeFilter.Webhook => "webhook",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "webhook" => ToolTypeFilter.Webhook,
-                "client" => ToolTypeFilter.Client,
                 "api_integration_webhook" => ToolTypeFilter.ApiIntegrationWebhook,
+                "client" => ToolTypeFilter.Client,
+                "webhook" => ToolTypeFilter.Webhook,
                 _ => null,
             };
         }

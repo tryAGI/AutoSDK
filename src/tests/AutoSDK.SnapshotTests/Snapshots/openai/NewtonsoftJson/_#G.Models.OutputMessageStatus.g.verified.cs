@@ -14,13 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
-        InProgress,
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
-        Completed,
+        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
+        InProgress,
         /// <summary>
         /// 
         /// </summary>
@@ -40,8 +40,8 @@ namespace G
         {
             return value switch
             {
-                OutputMessageStatus.InProgress => "in_progress",
                 OutputMessageStatus.Completed => "completed",
+                OutputMessageStatus.InProgress => "in_progress",
                 OutputMessageStatus.Incomplete => "incomplete",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -53,8 +53,8 @@ namespace G
         {
             return value switch
             {
-                "in_progress" => OutputMessageStatus.InProgress,
                 "completed" => OutputMessageStatus.Completed,
+                "in_progress" => OutputMessageStatus.InProgress,
                 "incomplete" => OutputMessageStatus.Incomplete,
                 _ => null,
             };

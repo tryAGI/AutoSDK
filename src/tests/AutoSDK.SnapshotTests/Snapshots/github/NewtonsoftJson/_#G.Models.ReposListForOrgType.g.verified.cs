@@ -18,8 +18,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="public")]
-        Public,
+        [global::System.Runtime.Serialization.EnumMember(Value="forks")]
+        Forks,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="member")]
+        Member,
         /// <summary>
         /// 
         /// </summary>
@@ -28,18 +33,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="forks")]
-        Forks,
+        [global::System.Runtime.Serialization.EnumMember(Value="public")]
+        Public,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="sources")]
         Sources,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="member")]
-        Member,
     }
 
     /// <summary>
@@ -55,11 +55,11 @@ namespace G
             return value switch
             {
                 ReposListForOrgType.All => "all",
-                ReposListForOrgType.Public => "public",
-                ReposListForOrgType.Private => "private",
                 ReposListForOrgType.Forks => "forks",
-                ReposListForOrgType.Sources => "sources",
                 ReposListForOrgType.Member => "member",
+                ReposListForOrgType.Private => "private",
+                ReposListForOrgType.Public => "public",
+                ReposListForOrgType.Sources => "sources",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -71,11 +71,11 @@ namespace G
             return value switch
             {
                 "all" => ReposListForOrgType.All,
-                "public" => ReposListForOrgType.Public,
-                "private" => ReposListForOrgType.Private,
                 "forks" => ReposListForOrgType.Forks,
-                "sources" => ReposListForOrgType.Sources,
                 "member" => ReposListForOrgType.Member,
+                "private" => ReposListForOrgType.Private,
+                "public" => ReposListForOrgType.Public,
+                "sources" => ReposListForOrgType.Sources,
                 _ => null,
             };
         }

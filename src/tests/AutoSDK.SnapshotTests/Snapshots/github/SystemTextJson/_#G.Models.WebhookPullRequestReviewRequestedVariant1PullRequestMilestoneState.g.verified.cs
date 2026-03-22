@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Open,
+        Closed,
         /// <summary>
         /// 
         /// </summary>
-        Closed,
+        Open,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestReviewRequestedVariant1PullRequestMilestoneState.Open => "open",
                 WebhookPullRequestReviewRequestedVariant1PullRequestMilestoneState.Closed => "closed",
+                WebhookPullRequestReviewRequestedVariant1PullRequestMilestoneState.Open => "open",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "open" => WebhookPullRequestReviewRequestedVariant1PullRequestMilestoneState.Open,
                 "closed" => WebhookPullRequestReviewRequestedVariant1PullRequestMilestoneState.Closed,
+                "open" => WebhookPullRequestReviewRequestedVariant1PullRequestMilestoneState.Open,
                 _ => null,
             };
         }

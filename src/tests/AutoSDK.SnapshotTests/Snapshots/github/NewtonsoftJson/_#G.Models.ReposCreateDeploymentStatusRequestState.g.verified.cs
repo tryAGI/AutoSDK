@@ -23,23 +23,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="inactive")]
-        Inactive,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
         InProgress,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
-        Queued,
+        [global::System.Runtime.Serialization.EnumMember(Value="inactive")]
+        Inactive,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="pending")]
         Pending,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
+        Queued,
         /// <summary>
         /// 
         /// </summary>
@@ -61,10 +61,10 @@ namespace G
             {
                 ReposCreateDeploymentStatusRequestState.Error => "error",
                 ReposCreateDeploymentStatusRequestState.Failure => "failure",
-                ReposCreateDeploymentStatusRequestState.Inactive => "inactive",
                 ReposCreateDeploymentStatusRequestState.InProgress => "in_progress",
-                ReposCreateDeploymentStatusRequestState.Queued => "queued",
+                ReposCreateDeploymentStatusRequestState.Inactive => "inactive",
                 ReposCreateDeploymentStatusRequestState.Pending => "pending",
+                ReposCreateDeploymentStatusRequestState.Queued => "queued",
                 ReposCreateDeploymentStatusRequestState.Success => "success",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -78,10 +78,10 @@ namespace G
             {
                 "error" => ReposCreateDeploymentStatusRequestState.Error,
                 "failure" => ReposCreateDeploymentStatusRequestState.Failure,
-                "inactive" => ReposCreateDeploymentStatusRequestState.Inactive,
                 "in_progress" => ReposCreateDeploymentStatusRequestState.InProgress,
-                "queued" => ReposCreateDeploymentStatusRequestState.Queued,
+                "inactive" => ReposCreateDeploymentStatusRequestState.Inactive,
                 "pending" => ReposCreateDeploymentStatusRequestState.Pending,
+                "queued" => ReposCreateDeploymentStatusRequestState.Queued,
                 "success" => ReposCreateDeploymentStatusRequestState.Success,
                 _ => null,
             };

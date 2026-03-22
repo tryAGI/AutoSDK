@@ -13,8 +13,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="DELETE")]
+        Delete,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="GET")]
         Get,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="HEAD")]
+        Head,
         /// <summary>
         /// 
         /// </summary>
@@ -25,16 +35,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PUT")]
         Put,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="DELETE")]
-        Delete,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="HEAD")]
-        Head,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
+                WebGetToolParametersMethod.Delete => "DELETE",
                 WebGetToolParametersMethod.Get => "GET",
+                WebGetToolParametersMethod.Head => "HEAD",
                 WebGetToolParametersMethod.Post => "POST",
                 WebGetToolParametersMethod.Put => "PUT",
-                WebGetToolParametersMethod.Delete => "DELETE",
-                WebGetToolParametersMethod.Head => "HEAD",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
+                "DELETE" => WebGetToolParametersMethod.Delete,
                 "GET" => WebGetToolParametersMethod.Get,
+                "HEAD" => WebGetToolParametersMethod.Head,
                 "POST" => WebGetToolParametersMethod.Post,
                 "PUT" => WebGetToolParametersMethod.Put,
-                "DELETE" => WebGetToolParametersMethod.Delete,
-                "HEAD" => WebGetToolParametersMethod.Head,
                 _ => null,
             };
         }

@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        InputError,
+        CudaError,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        CudaError,
+        InputError,
         /// <summary>
         /// 
         /// </summary>
@@ -32,11 +32,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        StartupError,
+        PipelineLoading,
         /// <summary>
         /// 
         /// </summary>
-        PipelineLoading,
+        StartupError,
         /// <summary>
         /// 
         /// </summary>
@@ -59,13 +59,13 @@ namespace G
         {
             return value switch
             {
-                ContainerRunErrorType.InputError => "input_error",
-                ContainerRunErrorType.CudaOom => "cuda_oom",
                 ContainerRunErrorType.CudaError => "cuda_error",
+                ContainerRunErrorType.CudaOom => "cuda_oom",
+                ContainerRunErrorType.InputError => "input_error",
                 ContainerRunErrorType.Oom => "oom",
                 ContainerRunErrorType.PipelineError => "pipeline_error",
-                ContainerRunErrorType.StartupError => "startup_error",
                 ContainerRunErrorType.PipelineLoading => "pipeline_loading",
+                ContainerRunErrorType.StartupError => "startup_error",
                 ContainerRunErrorType.Timeout => "timeout",
                 ContainerRunErrorType.Unknown => "unknown",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -78,13 +78,13 @@ namespace G
         {
             return value switch
             {
-                "input_error" => ContainerRunErrorType.InputError,
-                "cuda_oom" => ContainerRunErrorType.CudaOom,
                 "cuda_error" => ContainerRunErrorType.CudaError,
+                "cuda_oom" => ContainerRunErrorType.CudaOom,
+                "input_error" => ContainerRunErrorType.InputError,
                 "oom" => ContainerRunErrorType.Oom,
                 "pipeline_error" => ContainerRunErrorType.PipelineError,
-                "startup_error" => ContainerRunErrorType.StartupError,
                 "pipeline_loading" => ContainerRunErrorType.PipelineLoading,
+                "startup_error" => ContainerRunErrorType.StartupError,
                 "timeout" => ContainerRunErrorType.Timeout,
                 "unknown" => ContainerRunErrorType.Unknown,
                 _ => null,

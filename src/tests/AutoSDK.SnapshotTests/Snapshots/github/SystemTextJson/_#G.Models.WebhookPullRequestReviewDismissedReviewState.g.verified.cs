@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Dismissed,
-        /// <summary>
-        /// 
-        /// </summary>
         Approved,
         /// <summary>
         /// 
         /// </summary>
         ChangesRequested,
+        /// <summary>
+        /// 
+        /// </summary>
+        Dismissed,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestReviewDismissedReviewState.Dismissed => "dismissed",
                 WebhookPullRequestReviewDismissedReviewState.Approved => "approved",
                 WebhookPullRequestReviewDismissedReviewState.ChangesRequested => "changes_requested",
+                WebhookPullRequestReviewDismissedReviewState.Dismissed => "dismissed",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "dismissed" => WebhookPullRequestReviewDismissedReviewState.Dismissed,
                 "approved" => WebhookPullRequestReviewDismissedReviewState.Approved,
                 "changes_requested" => WebhookPullRequestReviewDismissedReviewState.ChangesRequested,
+                "dismissed" => WebhookPullRequestReviewDismissedReviewState.Dismissed,
                 _ => null,
             };
         }

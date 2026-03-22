@@ -28,11 +28,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="removed")]
-        Removed,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="enforced")]
         Enforced,
         /// <summary>
@@ -43,13 +38,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="updating")]
-        Updating,
+        [global::System.Runtime.Serialization.EnumMember(Value="removed")]
+        Removed,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="removed_by_enterprise")]
         RemovedByEnterprise,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="updating")]
+        Updating,
     }
 
     /// <summary>
@@ -67,11 +67,11 @@ namespace G
                 CodeSecurityConfigurationRepositoriesStatus.Attached => "attached",
                 CodeSecurityConfigurationRepositoriesStatus.Attaching => "attaching",
                 CodeSecurityConfigurationRepositoriesStatus.Detached => "detached",
-                CodeSecurityConfigurationRepositoriesStatus.Removed => "removed",
                 CodeSecurityConfigurationRepositoriesStatus.Enforced => "enforced",
                 CodeSecurityConfigurationRepositoriesStatus.Failed => "failed",
-                CodeSecurityConfigurationRepositoriesStatus.Updating => "updating",
+                CodeSecurityConfigurationRepositoriesStatus.Removed => "removed",
                 CodeSecurityConfigurationRepositoriesStatus.RemovedByEnterprise => "removed_by_enterprise",
+                CodeSecurityConfigurationRepositoriesStatus.Updating => "updating",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -85,11 +85,11 @@ namespace G
                 "attached" => CodeSecurityConfigurationRepositoriesStatus.Attached,
                 "attaching" => CodeSecurityConfigurationRepositoriesStatus.Attaching,
                 "detached" => CodeSecurityConfigurationRepositoriesStatus.Detached,
-                "removed" => CodeSecurityConfigurationRepositoriesStatus.Removed,
                 "enforced" => CodeSecurityConfigurationRepositoriesStatus.Enforced,
                 "failed" => CodeSecurityConfigurationRepositoriesStatus.Failed,
-                "updating" => CodeSecurityConfigurationRepositoriesStatus.Updating,
+                "removed" => CodeSecurityConfigurationRepositoriesStatus.Removed,
                 "removed_by_enterprise" => CodeSecurityConfigurationRepositoriesStatus.RemovedByEnterprise,
+                "updating" => CodeSecurityConfigurationRepositoriesStatus.Updating,
                 _ => null,
             };
         }

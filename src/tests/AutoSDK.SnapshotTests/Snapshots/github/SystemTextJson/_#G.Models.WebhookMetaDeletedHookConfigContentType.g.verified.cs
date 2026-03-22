@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Json,
+        Form,
         /// <summary>
         /// 
         /// </summary>
-        Form,
+        Json,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                WebhookMetaDeletedHookConfigContentType.Json => "json",
                 WebhookMetaDeletedHookConfigContentType.Form => "form",
+                WebhookMetaDeletedHookConfigContentType.Json => "json",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "json" => WebhookMetaDeletedHookConfigContentType.Json,
                 "form" => WebhookMetaDeletedHookConfigContentType.Form,
+                "json" => WebhookMetaDeletedHookConfigContentType.Json,
                 _ => null,
             };
         }

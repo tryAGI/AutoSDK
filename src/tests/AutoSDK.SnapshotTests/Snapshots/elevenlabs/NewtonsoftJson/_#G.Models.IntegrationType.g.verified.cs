@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="mcp_server")]
-        McpServer,
+        [global::System.Runtime.Serialization.EnumMember(Value="mcp_integration")]
+        McpIntegration,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="mcp_integration")]
-        McpIntegration,
+        [global::System.Runtime.Serialization.EnumMember(Value="mcp_server")]
+        McpServer,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                IntegrationType.McpServer => "mcp_server",
                 IntegrationType.McpIntegration => "mcp_integration",
+                IntegrationType.McpServer => "mcp_server",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "mcp_server" => IntegrationType.McpServer,
                 "mcp_integration" => IntegrationType.McpIntegration,
+                "mcp_server" => IntegrationType.McpServer,
                 _ => null,
             };
         }

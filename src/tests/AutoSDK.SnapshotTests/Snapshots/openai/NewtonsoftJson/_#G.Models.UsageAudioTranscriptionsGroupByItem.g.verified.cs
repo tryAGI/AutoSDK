@@ -13,16 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="project_id")]
-        ProjectId,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="user_id")]
-        UserId,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="api_key_id")]
         ApiKeyId,
         /// <summary>
@@ -30,6 +20,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="model")]
         Model,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="project_id")]
+        ProjectId,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="user_id")]
+        UserId,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                UsageAudioTranscriptionsGroupByItem.ProjectId => "project_id",
-                UsageAudioTranscriptionsGroupByItem.UserId => "user_id",
                 UsageAudioTranscriptionsGroupByItem.ApiKeyId => "api_key_id",
                 UsageAudioTranscriptionsGroupByItem.Model => "model",
+                UsageAudioTranscriptionsGroupByItem.ProjectId => "project_id",
+                UsageAudioTranscriptionsGroupByItem.UserId => "user_id",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "project_id" => UsageAudioTranscriptionsGroupByItem.ProjectId,
-                "user_id" => UsageAudioTranscriptionsGroupByItem.UserId,
                 "api_key_id" => UsageAudioTranscriptionsGroupByItem.ApiKeyId,
                 "model" => UsageAudioTranscriptionsGroupByItem.Model,
+                "project_id" => UsageAudioTranscriptionsGroupByItem.ProjectId,
+                "user_id" => UsageAudioTranscriptionsGroupByItem.UserId,
                 _ => null,
             };
         }

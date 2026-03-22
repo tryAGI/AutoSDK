@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="float")]
-        Float,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="base64")]
         Base64,
         /// <summary>
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="binary")]
         Binary,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="float")]
+        Float,
         /// <summary>
         /// 
         /// </summary>
@@ -44,9 +44,9 @@ namespace G
         {
             return value switch
             {
-                TextEmbeddingInputEmbeddingTypeItem.Float => "float",
                 TextEmbeddingInputEmbeddingTypeItem.Base64 => "base64",
                 TextEmbeddingInputEmbeddingTypeItem.Binary => "binary",
+                TextEmbeddingInputEmbeddingTypeItem.Float => "float",
                 TextEmbeddingInputEmbeddingTypeItem.Ubinary => "ubinary",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -58,9 +58,9 @@ namespace G
         {
             return value switch
             {
-                "float" => TextEmbeddingInputEmbeddingTypeItem.Float,
                 "base64" => TextEmbeddingInputEmbeddingTypeItem.Base64,
                 "binary" => TextEmbeddingInputEmbeddingTypeItem.Binary,
+                "float" => TextEmbeddingInputEmbeddingTypeItem.Float,
                 "ubinary" => TextEmbeddingInputEmbeddingTypeItem.Ubinary,
                 _ => null,
             };

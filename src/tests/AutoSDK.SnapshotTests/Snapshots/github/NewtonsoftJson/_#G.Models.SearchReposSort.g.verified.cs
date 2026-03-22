@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="stars")]
-        Stars,
-        /// <summary>
-        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="forks")]
         Forks,
         /// <summary>
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="help-wanted-issues")]
         HelpWantedIssues,
+        /// <summary>
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="stars")]
+        Stars,
         /// <summary>
         /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
@@ -44,9 +44,9 @@ namespace G
         {
             return value switch
             {
-                SearchReposSort.Stars => "stars",
                 SearchReposSort.Forks => "forks",
                 SearchReposSort.HelpWantedIssues => "help-wanted-issues",
+                SearchReposSort.Stars => "stars",
                 SearchReposSort.Updated => "updated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -58,9 +58,9 @@ namespace G
         {
             return value switch
             {
-                "stars" => SearchReposSort.Stars,
                 "forks" => SearchReposSort.Forks,
                 "help-wanted-issues" => SearchReposSort.HelpWantedIssues,
+                "stars" => SearchReposSort.Stars,
                 "updated" => SearchReposSort.Updated,
                 _ => null,
             };

@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Uploaded,
+        Open,
         /// <summary>
         /// 
         /// </summary>
-        Open,
+        Uploaded,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ReleaseAssetState.Uploaded => "uploaded",
                 ReleaseAssetState.Open => "open",
+                ReleaseAssetState.Uploaded => "uploaded",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "uploaded" => ReleaseAssetState.Uploaded,
                 "open" => ReleaseAssetState.Open,
+                "uploaded" => ReleaseAssetState.Uploaded,
                 _ => null,
             };
         }

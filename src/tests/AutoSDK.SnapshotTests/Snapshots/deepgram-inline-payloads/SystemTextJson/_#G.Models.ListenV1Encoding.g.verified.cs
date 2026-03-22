@@ -12,7 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Linear16,
+        AmrNb,
+        /// <summary>
+        /// 
+        /// </summary>
+        AmrWb,
         /// <summary>
         /// 
         /// </summary>
@@ -20,15 +24,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Linear16,
+        /// <summary>
+        /// 
+        /// </summary>
         Mulaw,
-        /// <summary>
-        /// 
-        /// </summary>
-        AmrNb,
-        /// <summary>
-        /// 
-        /// </summary>
-        AmrWb,
         /// <summary>
         /// 
         /// </summary>
@@ -51,11 +51,11 @@ namespace G
         {
             return value switch
             {
-                ListenV1Encoding.Linear16 => "linear16",
-                ListenV1Encoding.Flac => "flac",
-                ListenV1Encoding.Mulaw => "mulaw",
                 ListenV1Encoding.AmrNb => "amr-nb",
                 ListenV1Encoding.AmrWb => "amr-wb",
+                ListenV1Encoding.Flac => "flac",
+                ListenV1Encoding.Linear16 => "linear16",
+                ListenV1Encoding.Mulaw => "mulaw",
                 ListenV1Encoding.Opus => "opus",
                 ListenV1Encoding.Speex => "speex",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -68,11 +68,11 @@ namespace G
         {
             return value switch
             {
-                "linear16" => ListenV1Encoding.Linear16,
-                "flac" => ListenV1Encoding.Flac,
-                "mulaw" => ListenV1Encoding.Mulaw,
                 "amr-nb" => ListenV1Encoding.AmrNb,
                 "amr-wb" => ListenV1Encoding.AmrWb,
+                "flac" => ListenV1Encoding.Flac,
+                "linear16" => ListenV1Encoding.Linear16,
+                "mulaw" => ListenV1Encoding.Mulaw,
                 "opus" => ListenV1Encoding.Opus,
                 "speex" => ListenV1Encoding.Speex,
                 _ => null,

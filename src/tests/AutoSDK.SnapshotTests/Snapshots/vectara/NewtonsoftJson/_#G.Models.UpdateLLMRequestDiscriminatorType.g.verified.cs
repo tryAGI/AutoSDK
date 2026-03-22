@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="anthropic")]
+        Anthropic,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="openai-compatible")]
         OpenaiCompatible,
         /// <summary>
@@ -25,11 +30,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="vertex-ai")]
         VertexAi,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="anthropic")]
-        Anthropic,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
+                UpdateLLMRequestDiscriminatorType.Anthropic => "anthropic",
                 UpdateLLMRequestDiscriminatorType.OpenaiCompatible => "openai-compatible",
                 UpdateLLMRequestDiscriminatorType.OpenaiResponses => "openai-responses",
                 UpdateLLMRequestDiscriminatorType.VertexAi => "vertex-ai",
-                UpdateLLMRequestDiscriminatorType.Anthropic => "anthropic",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
+                "anthropic" => UpdateLLMRequestDiscriminatorType.Anthropic,
                 "openai-compatible" => UpdateLLMRequestDiscriminatorType.OpenaiCompatible,
                 "openai-responses" => UpdateLLMRequestDiscriminatorType.OpenaiResponses,
                 "vertex-ai" => UpdateLLMRequestDiscriminatorType.VertexAi,
-                "anthropic" => UpdateLLMRequestDiscriminatorType.Anthropic,
                 _ => null,
             };
         }

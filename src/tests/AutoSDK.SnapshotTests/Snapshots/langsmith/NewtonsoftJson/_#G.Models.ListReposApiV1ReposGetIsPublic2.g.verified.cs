@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="true")]
-        True,
+        [global::System.Runtime.Serialization.EnumMember(Value="false")]
+        False,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="false")]
-        False,
+        [global::System.Runtime.Serialization.EnumMember(Value="true")]
+        True,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ListReposApiV1ReposGetIsPublic2.True => "true",
                 ListReposApiV1ReposGetIsPublic2.False => "false",
+                ListReposApiV1ReposGetIsPublic2.True => "true",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "true" => ListReposApiV1ReposGetIsPublic2.True,
                 "false" => ListReposApiV1ReposGetIsPublic2.False,
+                "true" => ListReposApiV1ReposGetIsPublic2.True,
                 _ => null,
             };
         }

@@ -13,23 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
-        Pending,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="dispatched")]
-        Dispatched,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="initiated")]
-        Initiated,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
-        InProgress,
+        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -38,13 +23,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="dispatched")]
+        Dispatched,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="failed")]
         Failed,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
-        Cancelled,
+        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
+        InProgress,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="initiated")]
+        Initiated,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
+        Pending,
         /// <summary>
         /// 
         /// </summary>
@@ -64,13 +64,13 @@ namespace G
         {
             return value switch
             {
-                BatchCallRecipientStatus.Pending => "pending",
-                BatchCallRecipientStatus.Dispatched => "dispatched",
-                BatchCallRecipientStatus.Initiated => "initiated",
-                BatchCallRecipientStatus.InProgress => "in_progress",
-                BatchCallRecipientStatus.Completed => "completed",
-                BatchCallRecipientStatus.Failed => "failed",
                 BatchCallRecipientStatus.Cancelled => "cancelled",
+                BatchCallRecipientStatus.Completed => "completed",
+                BatchCallRecipientStatus.Dispatched => "dispatched",
+                BatchCallRecipientStatus.Failed => "failed",
+                BatchCallRecipientStatus.InProgress => "in_progress",
+                BatchCallRecipientStatus.Initiated => "initiated",
+                BatchCallRecipientStatus.Pending => "pending",
                 BatchCallRecipientStatus.Voicemail => "voicemail",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -82,13 +82,13 @@ namespace G
         {
             return value switch
             {
-                "pending" => BatchCallRecipientStatus.Pending,
-                "dispatched" => BatchCallRecipientStatus.Dispatched,
-                "initiated" => BatchCallRecipientStatus.Initiated,
-                "in_progress" => BatchCallRecipientStatus.InProgress,
-                "completed" => BatchCallRecipientStatus.Completed,
-                "failed" => BatchCallRecipientStatus.Failed,
                 "cancelled" => BatchCallRecipientStatus.Cancelled,
+                "completed" => BatchCallRecipientStatus.Completed,
+                "dispatched" => BatchCallRecipientStatus.Dispatched,
+                "failed" => BatchCallRecipientStatus.Failed,
+                "in_progress" => BatchCallRecipientStatus.InProgress,
+                "initiated" => BatchCallRecipientStatus.Initiated,
+                "pending" => BatchCallRecipientStatus.Pending,
                 "voicemail" => BatchCallRecipientStatus.Voicemail,
                 _ => null,
             };

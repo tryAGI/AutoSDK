@@ -12,11 +12,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Owner,
+        Administrator,
         /// <summary>
         /// 
         /// </summary>
-        Administrator,
+        AgentAdministrator,
+        /// <summary>
+        /// 
+        /// </summary>
+        AgentDeveloper,
+        /// <summary>
+        /// 
+        /// </summary>
+        AgentUser,
+        /// <summary>
+        /// 
+        /// </summary>
+        AgentViewer,
         /// <summary>
         /// 
         /// </summary>
@@ -32,19 +44,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        AgentAdministrator,
-        /// <summary>
-        /// 
-        /// </summary>
-        AgentViewer,
-        /// <summary>
-        /// 
-        /// </summary>
-        AgentDeveloper,
-        /// <summary>
-        /// 
-        /// </summary>
-        AgentUser,
+        Owner,
         /// <summary>
         /// 
         /// </summary>
@@ -67,15 +67,15 @@ namespace G
         {
             return value switch
             {
-                ApiRole.Owner => "owner",
                 ApiRole.Administrator => "administrator",
+                ApiRole.AgentAdministrator => "agent_administrator",
+                ApiRole.AgentDeveloper => "agent_developer",
+                ApiRole.AgentUser => "agent_user",
+                ApiRole.AgentViewer => "agent_viewer",
                 ApiRole.BillingAdministrator => "billing_administrator",
                 ApiRole.CorpusAdministrator => "corpus_administrator",
                 ApiRole.CorpusDeveloper => "corpus_developer",
-                ApiRole.AgentAdministrator => "agent_administrator",
-                ApiRole.AgentViewer => "agent_viewer",
-                ApiRole.AgentDeveloper => "agent_developer",
-                ApiRole.AgentUser => "agent_user",
+                ApiRole.Owner => "owner",
                 ApiRole.PipelineAdministrator => "pipeline_administrator",
                 ApiRole.PipelineViewer => "pipeline_viewer",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -88,15 +88,15 @@ namespace G
         {
             return value switch
             {
-                "owner" => ApiRole.Owner,
                 "administrator" => ApiRole.Administrator,
+                "agent_administrator" => ApiRole.AgentAdministrator,
+                "agent_developer" => ApiRole.AgentDeveloper,
+                "agent_user" => ApiRole.AgentUser,
+                "agent_viewer" => ApiRole.AgentViewer,
                 "billing_administrator" => ApiRole.BillingAdministrator,
                 "corpus_administrator" => ApiRole.CorpusAdministrator,
                 "corpus_developer" => ApiRole.CorpusDeveloper,
-                "agent_administrator" => ApiRole.AgentAdministrator,
-                "agent_viewer" => ApiRole.AgentViewer,
-                "agent_developer" => ApiRole.AgentDeveloper,
-                "agent_user" => ApiRole.AgentUser,
+                "owner" => ApiRole.Owner,
                 "pipeline_administrator" => ApiRole.PipelineAdministrator,
                 "pipeline_viewer" => ApiRole.PipelineViewer,
                 _ => null,

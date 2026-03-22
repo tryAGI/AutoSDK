@@ -23,21 +23,21 @@ namespace G
     public enum FileType
     {
         /// <summary>
-        /// text
+        /// CSV
         /// </summary>
-        Text,
+        Csv,
         /// <summary>
-        /// PDF
+        /// DOCX
         /// </summary>
-        Pdf,
+        Doc,
         /// <summary>
-        /// MARKDOWN
+        /// DOCX
         /// </summary>
-        Markdown,
+        Docx,
         /// <summary>
-        /// PNG(not supported yet)
+        /// HTML
         /// </summary>
-        Png,
+        Html,
         /// <summary>
         /// JPEG(not supported yet)
         /// </summary>
@@ -47,17 +47,17 @@ namespace G
         /// </summary>
         Jpg,
         /// <summary>
-        /// HTML
+        /// MARKDOWN
         /// </summary>
-        Html,
+        Markdown,
         /// <summary>
-        /// DOCX
+        /// PDF
         /// </summary>
-        Docx,
+        Pdf,
         /// <summary>
-        /// DOCX
+        /// PNG(not supported yet)
         /// </summary>
-        Doc,
+        Png,
         /// <summary>
         /// PPT
         /// </summary>
@@ -67,6 +67,10 @@ namespace G
         /// </summary>
         Pptx,
         /// <summary>
+        /// text
+        /// </summary>
+        Text,
+        /// <summary>
         /// XLS
         /// </summary>
         Xls,
@@ -74,10 +78,6 @@ namespace G
         /// XLSX
         /// </summary>
         Xlsx,
-        /// <summary>
-        /// CSV
-        /// </summary>
-        Csv,
     }
 
     /// <summary>
@@ -92,20 +92,20 @@ namespace G
         {
             return value switch
             {
-                FileType.Text => "FILE_TYPE_TEXT",
-                FileType.Pdf => "FILE_TYPE_PDF",
-                FileType.Markdown => "FILE_TYPE_MARKDOWN",
-                FileType.Png => "FILE_TYPE_PNG",
+                FileType.Csv => "FILE_TYPE_CSV",
+                FileType.Doc => "FILE_TYPE_DOC",
+                FileType.Docx => "FILE_TYPE_DOCX",
+                FileType.Html => "FILE_TYPE_HTML",
                 FileType.Jpeg => "FILE_TYPE_JPEG",
                 FileType.Jpg => "FILE_TYPE_JPG",
-                FileType.Html => "FILE_TYPE_HTML",
-                FileType.Docx => "FILE_TYPE_DOCX",
-                FileType.Doc => "FILE_TYPE_DOC",
+                FileType.Markdown => "FILE_TYPE_MARKDOWN",
+                FileType.Pdf => "FILE_TYPE_PDF",
+                FileType.Png => "FILE_TYPE_PNG",
                 FileType.Ppt => "FILE_TYPE_PPT",
                 FileType.Pptx => "FILE_TYPE_PPTX",
+                FileType.Text => "FILE_TYPE_TEXT",
                 FileType.Xls => "FILE_TYPE_XLS",
                 FileType.Xlsx => "FILE_TYPE_XLSX",
-                FileType.Csv => "FILE_TYPE_CSV",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -116,20 +116,20 @@ namespace G
         {
             return value switch
             {
-                "FILE_TYPE_TEXT" => FileType.Text,
-                "FILE_TYPE_PDF" => FileType.Pdf,
-                "FILE_TYPE_MARKDOWN" => FileType.Markdown,
-                "FILE_TYPE_PNG" => FileType.Png,
+                "FILE_TYPE_CSV" => FileType.Csv,
+                "FILE_TYPE_DOC" => FileType.Doc,
+                "FILE_TYPE_DOCX" => FileType.Docx,
+                "FILE_TYPE_HTML" => FileType.Html,
                 "FILE_TYPE_JPEG" => FileType.Jpeg,
                 "FILE_TYPE_JPG" => FileType.Jpg,
-                "FILE_TYPE_HTML" => FileType.Html,
-                "FILE_TYPE_DOCX" => FileType.Docx,
-                "FILE_TYPE_DOC" => FileType.Doc,
+                "FILE_TYPE_MARKDOWN" => FileType.Markdown,
+                "FILE_TYPE_PDF" => FileType.Pdf,
+                "FILE_TYPE_PNG" => FileType.Png,
                 "FILE_TYPE_PPT" => FileType.Ppt,
                 "FILE_TYPE_PPTX" => FileType.Pptx,
+                "FILE_TYPE_TEXT" => FileType.Text,
                 "FILE_TYPE_XLS" => FileType.Xls,
                 "FILE_TYPE_XLSX" => FileType.Xlsx,
-                "FILE_TYPE_CSV" => FileType.Csv,
                 _ => null,
             };
         }

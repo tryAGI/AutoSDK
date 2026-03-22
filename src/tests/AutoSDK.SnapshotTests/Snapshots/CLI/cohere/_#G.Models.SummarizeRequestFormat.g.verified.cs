@@ -14,11 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Paragraph,
+        Bullets,
         /// <summary>
         /// 
         /// </summary>
-        Bullets,
+        Paragraph,
     }
 
     /// <summary>
@@ -33,8 +33,8 @@ namespace G
         {
             return value switch
             {
-                SummarizeRequestFormat.Paragraph => "paragraph",
                 SummarizeRequestFormat.Bullets => "bullets",
+                SummarizeRequestFormat.Paragraph => "paragraph",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -45,8 +45,8 @@ namespace G
         {
             return value switch
             {
-                "paragraph" => SummarizeRequestFormat.Paragraph,
                 "bullets" => SummarizeRequestFormat.Bullets,
+                "paragraph" => SummarizeRequestFormat.Paragraph,
                 _ => null,
             };
         }

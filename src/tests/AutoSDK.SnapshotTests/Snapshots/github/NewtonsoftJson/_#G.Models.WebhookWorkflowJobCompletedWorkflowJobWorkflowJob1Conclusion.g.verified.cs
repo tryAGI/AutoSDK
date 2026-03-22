@@ -13,13 +13,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="success")]
-        Success,
+        [global::System.Runtime.Serialization.EnumMember(Value="action_required")]
+        ActionRequired,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="failure")]
         Failure,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="neutral")]
+        Neutral,
         /// <summary>
         /// 
         /// </summary>
@@ -33,18 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
-        Cancelled,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="action_required")]
-        ActionRequired,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="neutral")]
-        Neutral,
+        [global::System.Runtime.Serialization.EnumMember(Value="success")]
+        Success,
         /// <summary>
         /// 
         /// </summary>
@@ -64,13 +64,13 @@ namespace G
         {
             return value switch
             {
-                WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Success => "success",
+                WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.ActionRequired => "action_required",
+                WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Cancelled => "cancelled",
                 WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Failure => "failure",
+                WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Neutral => "neutral",
                 WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Skipped => "skipped",
-                WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Cancelled => "cancelled",
-                WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.ActionRequired => "action_required",
-                WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Neutral => "neutral",
+                WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Success => "success",
                 WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.TimedOut => "timed_out",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -82,13 +82,13 @@ namespace G
         {
             return value switch
             {
-                "success" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Success,
+                "action_required" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.ActionRequired,
+                "cancelled" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Cancelled,
                 "failure" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Failure,
+                "neutral" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Neutral,
                 "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
                 "skipped" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Skipped,
-                "cancelled" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Cancelled,
-                "action_required" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.ActionRequired,
-                "neutral" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Neutral,
+                "success" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.Success,
                 "timed_out" => WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion.TimedOut,
                 _ => null,
             };

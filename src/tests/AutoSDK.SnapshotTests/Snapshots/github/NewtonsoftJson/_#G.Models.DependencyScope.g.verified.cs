@@ -14,13 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="runtime")]
-        Runtime,
+        [global::System.Runtime.Serialization.EnumMember(Value="development")]
+        Development,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="development")]
-        Development,
+        [global::System.Runtime.Serialization.EnumMember(Value="runtime")]
+        Runtime,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                DependencyScope.Runtime => "runtime",
                 DependencyScope.Development => "development",
+                DependencyScope.Runtime => "runtime",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,8 +47,8 @@ namespace G
         {
             return value switch
             {
-                "runtime" => DependencyScope.Runtime,
                 "development" => DependencyScope.Development,
+                "runtime" => DependencyScope.Runtime,
                 _ => null,
             };
         }

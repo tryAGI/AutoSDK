@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Assistant,
         /// <summary>
         /// 
         /// </summary>
-        Assistant,
+        User,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                InputMessageRole.User => "user",
                 InputMessageRole.Assistant => "assistant",
+                InputMessageRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "user" => InputMessageRole.User,
                 "assistant" => InputMessageRole.Assistant,
+                "user" => InputMessageRole.User,
                 _ => null,
             };
         }

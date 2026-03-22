@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Tree,
+        Commit,
         /// <summary>
         /// 
         /// </summary>
-        Commit,
+        Tree,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 GitCreateTreeRequestTreeItemType.Blob => "blob",
-                GitCreateTreeRequestTreeItemType.Tree => "tree",
                 GitCreateTreeRequestTreeItemType.Commit => "commit",
+                GitCreateTreeRequestTreeItemType.Tree => "tree",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "blob" => GitCreateTreeRequestTreeItemType.Blob,
-                "tree" => GitCreateTreeRequestTreeItemType.Tree,
                 "commit" => GitCreateTreeRequestTreeItemType.Commit,
+                "tree" => GitCreateTreeRequestTreeItemType.Tree,
                 _ => null,
             };
         }

@@ -14,18 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="FAILED")]
+        Failed,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="STARTED")]
         Started,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="TRANSFERRING")]
-        Transferring,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="TRANSFERRED")]
-        Transferred,
         /// <summary>
         /// 
         /// </summary>
@@ -34,8 +29,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="FAILED")]
-        Failed,
+        [global::System.Runtime.Serialization.EnumMember(Value="TRANSFERRED")]
+        Transferred,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="TRANSFERRING")]
+        Transferring,
     }
 
     /// <summary>
@@ -50,11 +50,11 @@ namespace G
         {
             return value switch
             {
-                BackupRestoreStatusResponseStatus.Started => "STARTED",
-                BackupRestoreStatusResponseStatus.Transferring => "TRANSFERRING",
-                BackupRestoreStatusResponseStatus.Transferred => "TRANSFERRED",
-                BackupRestoreStatusResponseStatus.Success => "SUCCESS",
                 BackupRestoreStatusResponseStatus.Failed => "FAILED",
+                BackupRestoreStatusResponseStatus.Started => "STARTED",
+                BackupRestoreStatusResponseStatus.Success => "SUCCESS",
+                BackupRestoreStatusResponseStatus.Transferred => "TRANSFERRED",
+                BackupRestoreStatusResponseStatus.Transferring => "TRANSFERRING",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -65,11 +65,11 @@ namespace G
         {
             return value switch
             {
-                "STARTED" => BackupRestoreStatusResponseStatus.Started,
-                "TRANSFERRING" => BackupRestoreStatusResponseStatus.Transferring,
-                "TRANSFERRED" => BackupRestoreStatusResponseStatus.Transferred,
-                "SUCCESS" => BackupRestoreStatusResponseStatus.Success,
                 "FAILED" => BackupRestoreStatusResponseStatus.Failed,
+                "STARTED" => BackupRestoreStatusResponseStatus.Started,
+                "SUCCESS" => BackupRestoreStatusResponseStatus.Success,
+                "TRANSFERRED" => BackupRestoreStatusResponseStatus.Transferred,
+                "TRANSFERRING" => BackupRestoreStatusResponseStatus.Transferring,
                 _ => null,
             };
         }

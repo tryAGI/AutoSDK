@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        DynamicVectara,
+        ArtifactGrep,
         /// <summary>
         /// 
         /// </summary>
-        Mcp,
+        ArtifactRead,
         /// <summary>
         /// 
         /// </summary>
@@ -24,15 +24,27 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        WebSearch,
+        DocumentConversion,
         /// <summary>
         /// 
         /// </summary>
-        WebGet,
+        DynamicVectara,
+        /// <summary>
+        /// 
+        /// </summary>
+        GetDocumentText,
+        /// <summary>
+        /// 
+        /// </summary>
+        ImageRead,
         /// <summary>
         /// 
         /// </summary>
         Lambda,
+        /// <summary>
+        /// 
+        /// </summary>
+        Mcp,
         /// <summary>
         /// 
         /// </summary>
@@ -44,23 +56,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ArtifactRead,
+        WebGet,
         /// <summary>
         /// 
         /// </summary>
-        ArtifactGrep,
-        /// <summary>
-        /// 
-        /// </summary>
-        ImageRead,
-        /// <summary>
-        /// 
-        /// </summary>
-        DocumentConversion,
-        /// <summary>
-        /// 
-        /// </summary>
-        GetDocumentText,
+        WebSearch,
     }
 
     /// <summary>
@@ -75,19 +75,19 @@ namespace G
         {
             return value switch
             {
-                AgentToolConfigurationDiscriminatorType.DynamicVectara => "dynamic_vectara",
-                AgentToolConfigurationDiscriminatorType.Mcp => "mcp",
+                AgentToolConfigurationDiscriminatorType.ArtifactGrep => "artifact_grep",
+                AgentToolConfigurationDiscriminatorType.ArtifactRead => "artifact_read",
                 AgentToolConfigurationDiscriminatorType.CorporaSearch => "corpora_search",
-                AgentToolConfigurationDiscriminatorType.WebSearch => "web_search",
-                AgentToolConfigurationDiscriminatorType.WebGet => "web_get",
+                AgentToolConfigurationDiscriminatorType.DocumentConversion => "document_conversion",
+                AgentToolConfigurationDiscriminatorType.DynamicVectara => "dynamic_vectara",
+                AgentToolConfigurationDiscriminatorType.GetDocumentText => "get_document_text",
+                AgentToolConfigurationDiscriminatorType.ImageRead => "image_read",
                 AgentToolConfigurationDiscriminatorType.Lambda => "lambda",
+                AgentToolConfigurationDiscriminatorType.Mcp => "mcp",
                 AgentToolConfigurationDiscriminatorType.StructuredIndexing => "structured_indexing",
                 AgentToolConfigurationDiscriminatorType.SubAgent => "sub_agent",
-                AgentToolConfigurationDiscriminatorType.ArtifactRead => "artifact_read",
-                AgentToolConfigurationDiscriminatorType.ArtifactGrep => "artifact_grep",
-                AgentToolConfigurationDiscriminatorType.ImageRead => "image_read",
-                AgentToolConfigurationDiscriminatorType.DocumentConversion => "document_conversion",
-                AgentToolConfigurationDiscriminatorType.GetDocumentText => "get_document_text",
+                AgentToolConfigurationDiscriminatorType.WebGet => "web_get",
+                AgentToolConfigurationDiscriminatorType.WebSearch => "web_search",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -98,19 +98,19 @@ namespace G
         {
             return value switch
             {
-                "dynamic_vectara" => AgentToolConfigurationDiscriminatorType.DynamicVectara,
-                "mcp" => AgentToolConfigurationDiscriminatorType.Mcp,
+                "artifact_grep" => AgentToolConfigurationDiscriminatorType.ArtifactGrep,
+                "artifact_read" => AgentToolConfigurationDiscriminatorType.ArtifactRead,
                 "corpora_search" => AgentToolConfigurationDiscriminatorType.CorporaSearch,
-                "web_search" => AgentToolConfigurationDiscriminatorType.WebSearch,
-                "web_get" => AgentToolConfigurationDiscriminatorType.WebGet,
+                "document_conversion" => AgentToolConfigurationDiscriminatorType.DocumentConversion,
+                "dynamic_vectara" => AgentToolConfigurationDiscriminatorType.DynamicVectara,
+                "get_document_text" => AgentToolConfigurationDiscriminatorType.GetDocumentText,
+                "image_read" => AgentToolConfigurationDiscriminatorType.ImageRead,
                 "lambda" => AgentToolConfigurationDiscriminatorType.Lambda,
+                "mcp" => AgentToolConfigurationDiscriminatorType.Mcp,
                 "structured_indexing" => AgentToolConfigurationDiscriminatorType.StructuredIndexing,
                 "sub_agent" => AgentToolConfigurationDiscriminatorType.SubAgent,
-                "artifact_read" => AgentToolConfigurationDiscriminatorType.ArtifactRead,
-                "artifact_grep" => AgentToolConfigurationDiscriminatorType.ArtifactGrep,
-                "image_read" => AgentToolConfigurationDiscriminatorType.ImageRead,
-                "document_conversion" => AgentToolConfigurationDiscriminatorType.DocumentConversion,
-                "get_document_text" => AgentToolConfigurationDiscriminatorType.GetDocumentText,
+                "web_get" => AgentToolConfigurationDiscriminatorType.WebGet,
+                "web_search" => AgentToolConfigurationDiscriminatorType.WebSearch,
                 _ => null,
             };
         }

@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookPullRequestReviewDismissedPullRequestAssigneeType.Bot => "Bot",
-                WebhookPullRequestReviewDismissedPullRequestAssigneeType.User => "User",
-                WebhookPullRequestReviewDismissedPullRequestAssigneeType.Organization => "Organization",
                 WebhookPullRequestReviewDismissedPullRequestAssigneeType.Mannequin => "Mannequin",
+                WebhookPullRequestReviewDismissedPullRequestAssigneeType.Organization => "Organization",
+                WebhookPullRequestReviewDismissedPullRequestAssigneeType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestReviewDismissedPullRequestAssigneeType.Bot,
-                "User" => WebhookPullRequestReviewDismissedPullRequestAssigneeType.User,
-                "Organization" => WebhookPullRequestReviewDismissedPullRequestAssigneeType.Organization,
                 "Mannequin" => WebhookPullRequestReviewDismissedPullRequestAssigneeType.Mannequin,
+                "Organization" => WebhookPullRequestReviewDismissedPullRequestAssigneeType.Organization,
+                "User" => WebhookPullRequestReviewDismissedPullRequestAssigneeType.User,
                 _ => null,
             };
         }

@@ -12,43 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Fantasy,
-        /// <summary>
-        /// 
-        /// </summary>
-        Romance,
-        /// <summary>
-        /// 
-        /// </summary>
-        ScienceFiction,
-        /// <summary>
-        /// 
-        /// </summary>
-        MysteryAndThriller,
-        /// <summary>
-        /// 
-        /// </summary>
         ActionAndAdventure,
         /// <summary>
         /// 
         /// </summary>
-        Dystopia,
-        /// <summary>
-        /// 
-        /// </summary>
-        BusinessAndEconomics,
-        /// <summary>
-        /// 
-        /// </summary>
-        Technology,
-        /// <summary>
-        /// 
-        /// </summary>
-        DetectiveAndCrime,
-        /// <summary>
-        /// 
-        /// </summary>
-        Horror,
+        AdultRomance,
         /// <summary>
         /// 
         /// </summary>
@@ -56,15 +24,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        EducationAndLearning,
-        /// <summary>
-        /// 
-        /// </summary>
-        History,
+        BusinessAndEconomics,
         /// <summary>
         /// 
         /// </summary>
         ChildrensLiterature,
+        /// <summary>
+        /// 
+        /// </summary>
+        DetectiveAndCrime,
+        /// <summary>
+        /// 
+        /// </summary>
+        Dystopia,
+        /// <summary>
+        /// 
+        /// </summary>
+        EducationAndLearning,
         /// <summary>
         /// 
         /// </summary>
@@ -73,6 +49,10 @@ namespace G
         /// 
         /// </summary>
         FanFiction,
+        /// <summary>
+        /// 
+        /// </summary>
+        Fantasy,
         /// <summary>
         /// 
         /// </summary>
@@ -88,11 +68,27 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        History,
+        /// <summary>
+        /// 
+        /// </summary>
+        Horror,
+        /// <summary>
+        /// 
+        /// </summary>
         Humor,
         /// <summary>
         /// 
         /// </summary>
         LiteraryClassics,
+        /// <summary>
+        /// 
+        /// </summary>
+        MysteryAndThriller,
+        /// <summary>
+        /// 
+        /// </summary>
+        Other,
         /// <summary>
         /// 
         /// </summary>
@@ -112,6 +108,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Romance,
+        /// <summary>
+        /// 
+        /// </summary>
+        ScienceFiction,
+        /// <summary>
+        /// 
+        /// </summary>
         ScienceAndNature,
         /// <summary>
         /// 
@@ -124,19 +128,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Technology,
+        /// <summary>
+        /// 
+        /// </summary>
         Travel,
         /// <summary>
         /// 
         /// </summary>
         TrueCrime,
-        /// <summary>
-        /// 
-        /// </summary>
-        Other,
-        /// <summary>
-        /// 
-        /// </summary>
-        AdultRomance,
     }
 
     /// <summary>
@@ -151,38 +151,38 @@ namespace G
         {
             return value switch
             {
-                DirectPublishingReadResponseModelGenreVariant1Item.Fantasy => "Fantasy",
-                DirectPublishingReadResponseModelGenreVariant1Item.Romance => "Romance",
-                DirectPublishingReadResponseModelGenreVariant1Item.ScienceFiction => "Science Fiction",
-                DirectPublishingReadResponseModelGenreVariant1Item.MysteryAndThriller => "Mystery and Thriller",
                 DirectPublishingReadResponseModelGenreVariant1Item.ActionAndAdventure => "Action and Adventure",
-                DirectPublishingReadResponseModelGenreVariant1Item.Dystopia => "Dystopia",
-                DirectPublishingReadResponseModelGenreVariant1Item.BusinessAndEconomics => "Business and Economics",
-                DirectPublishingReadResponseModelGenreVariant1Item.Technology => "Technology",
-                DirectPublishingReadResponseModelGenreVariant1Item.DetectiveAndCrime => "Detective and Crime",
-                DirectPublishingReadResponseModelGenreVariant1Item.Horror => "Horror",
+                DirectPublishingReadResponseModelGenreVariant1Item.AdultRomance => "Adult Romance",
                 DirectPublishingReadResponseModelGenreVariant1Item.BiographyAndMemoir => "Biography and Memoir",
-                DirectPublishingReadResponseModelGenreVariant1Item.EducationAndLearning => "Education and Learning",
-                DirectPublishingReadResponseModelGenreVariant1Item.History => "History",
+                DirectPublishingReadResponseModelGenreVariant1Item.BusinessAndEconomics => "Business and Economics",
                 DirectPublishingReadResponseModelGenreVariant1Item.ChildrensLiterature => "Children's Literature",
+                DirectPublishingReadResponseModelGenreVariant1Item.DetectiveAndCrime => "Detective and Crime",
+                DirectPublishingReadResponseModelGenreVariant1Item.Dystopia => "Dystopia",
+                DirectPublishingReadResponseModelGenreVariant1Item.EducationAndLearning => "Education and Learning",
                 DirectPublishingReadResponseModelGenreVariant1Item.FairyTalesAndFolklore => "Fairy Tales and Folklore",
                 DirectPublishingReadResponseModelGenreVariant1Item.FanFiction => "Fan Fiction",
+                DirectPublishingReadResponseModelGenreVariant1Item.Fantasy => "Fantasy",
                 DirectPublishingReadResponseModelGenreVariant1Item.GeneralFiction => "General Fiction",
                 DirectPublishingReadResponseModelGenreVariant1Item.HealthAndWellness => "Health and Wellness",
                 DirectPublishingReadResponseModelGenreVariant1Item.HistoricalFiction => "Historical Fiction",
+                DirectPublishingReadResponseModelGenreVariant1Item.History => "History",
+                DirectPublishingReadResponseModelGenreVariant1Item.Horror => "Horror",
                 DirectPublishingReadResponseModelGenreVariant1Item.Humor => "Humor",
                 DirectPublishingReadResponseModelGenreVariant1Item.LiteraryClassics => "Literary Classics",
+                DirectPublishingReadResponseModelGenreVariant1Item.MysteryAndThriller => "Mystery and Thriller",
+                DirectPublishingReadResponseModelGenreVariant1Item.Other => "Other",
                 DirectPublishingReadResponseModelGenreVariant1Item.Philosophy => "Philosophy",
                 DirectPublishingReadResponseModelGenreVariant1Item.Poetry => "Poetry",
                 DirectPublishingReadResponseModelGenreVariant1Item.PoliticsAndGovernment => "Politics and Government",
                 DirectPublishingReadResponseModelGenreVariant1Item.Psychology => "Psychology",
+                DirectPublishingReadResponseModelGenreVariant1Item.Romance => "Romance",
+                DirectPublishingReadResponseModelGenreVariant1Item.ScienceFiction => "Science Fiction",
                 DirectPublishingReadResponseModelGenreVariant1Item.ScienceAndNature => "Science and Nature",
                 DirectPublishingReadResponseModelGenreVariant1Item.SelfHelp => "Self-Help",
                 DirectPublishingReadResponseModelGenreVariant1Item.SpiritualityAndReligion => "Spirituality and Religion",
+                DirectPublishingReadResponseModelGenreVariant1Item.Technology => "Technology",
                 DirectPublishingReadResponseModelGenreVariant1Item.Travel => "Travel",
                 DirectPublishingReadResponseModelGenreVariant1Item.TrueCrime => "True Crime",
-                DirectPublishingReadResponseModelGenreVariant1Item.Other => "Other",
-                DirectPublishingReadResponseModelGenreVariant1Item.AdultRomance => "Adult Romance",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -193,38 +193,38 @@ namespace G
         {
             return value switch
             {
-                "Fantasy" => DirectPublishingReadResponseModelGenreVariant1Item.Fantasy,
-                "Romance" => DirectPublishingReadResponseModelGenreVariant1Item.Romance,
-                "Science Fiction" => DirectPublishingReadResponseModelGenreVariant1Item.ScienceFiction,
-                "Mystery and Thriller" => DirectPublishingReadResponseModelGenreVariant1Item.MysteryAndThriller,
                 "Action and Adventure" => DirectPublishingReadResponseModelGenreVariant1Item.ActionAndAdventure,
-                "Dystopia" => DirectPublishingReadResponseModelGenreVariant1Item.Dystopia,
-                "Business and Economics" => DirectPublishingReadResponseModelGenreVariant1Item.BusinessAndEconomics,
-                "Technology" => DirectPublishingReadResponseModelGenreVariant1Item.Technology,
-                "Detective and Crime" => DirectPublishingReadResponseModelGenreVariant1Item.DetectiveAndCrime,
-                "Horror" => DirectPublishingReadResponseModelGenreVariant1Item.Horror,
+                "Adult Romance" => DirectPublishingReadResponseModelGenreVariant1Item.AdultRomance,
                 "Biography and Memoir" => DirectPublishingReadResponseModelGenreVariant1Item.BiographyAndMemoir,
-                "Education and Learning" => DirectPublishingReadResponseModelGenreVariant1Item.EducationAndLearning,
-                "History" => DirectPublishingReadResponseModelGenreVariant1Item.History,
+                "Business and Economics" => DirectPublishingReadResponseModelGenreVariant1Item.BusinessAndEconomics,
                 "Children's Literature" => DirectPublishingReadResponseModelGenreVariant1Item.ChildrensLiterature,
+                "Detective and Crime" => DirectPublishingReadResponseModelGenreVariant1Item.DetectiveAndCrime,
+                "Dystopia" => DirectPublishingReadResponseModelGenreVariant1Item.Dystopia,
+                "Education and Learning" => DirectPublishingReadResponseModelGenreVariant1Item.EducationAndLearning,
                 "Fairy Tales and Folklore" => DirectPublishingReadResponseModelGenreVariant1Item.FairyTalesAndFolklore,
                 "Fan Fiction" => DirectPublishingReadResponseModelGenreVariant1Item.FanFiction,
+                "Fantasy" => DirectPublishingReadResponseModelGenreVariant1Item.Fantasy,
                 "General Fiction" => DirectPublishingReadResponseModelGenreVariant1Item.GeneralFiction,
                 "Health and Wellness" => DirectPublishingReadResponseModelGenreVariant1Item.HealthAndWellness,
                 "Historical Fiction" => DirectPublishingReadResponseModelGenreVariant1Item.HistoricalFiction,
+                "History" => DirectPublishingReadResponseModelGenreVariant1Item.History,
+                "Horror" => DirectPublishingReadResponseModelGenreVariant1Item.Horror,
                 "Humor" => DirectPublishingReadResponseModelGenreVariant1Item.Humor,
                 "Literary Classics" => DirectPublishingReadResponseModelGenreVariant1Item.LiteraryClassics,
+                "Mystery and Thriller" => DirectPublishingReadResponseModelGenreVariant1Item.MysteryAndThriller,
+                "Other" => DirectPublishingReadResponseModelGenreVariant1Item.Other,
                 "Philosophy" => DirectPublishingReadResponseModelGenreVariant1Item.Philosophy,
                 "Poetry" => DirectPublishingReadResponseModelGenreVariant1Item.Poetry,
                 "Politics and Government" => DirectPublishingReadResponseModelGenreVariant1Item.PoliticsAndGovernment,
                 "Psychology" => DirectPublishingReadResponseModelGenreVariant1Item.Psychology,
+                "Romance" => DirectPublishingReadResponseModelGenreVariant1Item.Romance,
+                "Science Fiction" => DirectPublishingReadResponseModelGenreVariant1Item.ScienceFiction,
                 "Science and Nature" => DirectPublishingReadResponseModelGenreVariant1Item.ScienceAndNature,
                 "Self-Help" => DirectPublishingReadResponseModelGenreVariant1Item.SelfHelp,
                 "Spirituality and Religion" => DirectPublishingReadResponseModelGenreVariant1Item.SpiritualityAndReligion,
+                "Technology" => DirectPublishingReadResponseModelGenreVariant1Item.Technology,
                 "Travel" => DirectPublishingReadResponseModelGenreVariant1Item.Travel,
                 "True Crime" => DirectPublishingReadResponseModelGenreVariant1Item.TrueCrime,
-                "Other" => DirectPublishingReadResponseModelGenreVariant1Item.Other,
-                "Adult Romance" => DirectPublishingReadResponseModelGenreVariant1Item.AdultRomance,
                 _ => null,
             };
         }

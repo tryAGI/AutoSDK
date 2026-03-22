@@ -12,19 +12,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Disabled,
-        /// <summary>
-        /// 
-        /// </summary>
-        SelectedMembers,
-        /// <summary>
-        /// 
-        /// </summary>
         AllMembers,
         /// <summary>
         /// 
         /// </summary>
         AllMembersAndOutsideCollaborators,
+        /// <summary>
+        /// 
+        /// </summary>
+        Disabled,
+        /// <summary>
+        /// 
+        /// </summary>
+        SelectedMembers,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                CodespacesSetCodespacesAccessRequestVisibility.Disabled => "disabled",
-                CodespacesSetCodespacesAccessRequestVisibility.SelectedMembers => "selected_members",
                 CodespacesSetCodespacesAccessRequestVisibility.AllMembers => "all_members",
                 CodespacesSetCodespacesAccessRequestVisibility.AllMembersAndOutsideCollaborators => "all_members_and_outside_collaborators",
+                CodespacesSetCodespacesAccessRequestVisibility.Disabled => "disabled",
+                CodespacesSetCodespacesAccessRequestVisibility.SelectedMembers => "selected_members",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "disabled" => CodespacesSetCodespacesAccessRequestVisibility.Disabled,
-                "selected_members" => CodespacesSetCodespacesAccessRequestVisibility.SelectedMembers,
                 "all_members" => CodespacesSetCodespacesAccessRequestVisibility.AllMembers,
                 "all_members_and_outside_collaborators" => CodespacesSetCodespacesAccessRequestVisibility.AllMembersAndOutsideCollaborators,
+                "disabled" => CodespacesSetCodespacesAccessRequestVisibility.Disabled,
+                "selected_members" => CodespacesSetCodespacesAccessRequestVisibility.SelectedMembers,
                 _ => null,
             };
         }

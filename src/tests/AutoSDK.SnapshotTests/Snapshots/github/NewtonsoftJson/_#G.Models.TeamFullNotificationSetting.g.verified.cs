@@ -14,13 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="notifications_enabled")]
-        NotificationsEnabled,
+        [global::System.Runtime.Serialization.EnumMember(Value="notifications_disabled")]
+        NotificationsDisabled,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="notifications_disabled")]
-        NotificationsDisabled,
+        [global::System.Runtime.Serialization.EnumMember(Value="notifications_enabled")]
+        NotificationsEnabled,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                TeamFullNotificationSetting.NotificationsEnabled => "notifications_enabled",
                 TeamFullNotificationSetting.NotificationsDisabled => "notifications_disabled",
+                TeamFullNotificationSetting.NotificationsEnabled => "notifications_enabled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,8 +47,8 @@ namespace G
         {
             return value switch
             {
-                "notifications_enabled" => TeamFullNotificationSetting.NotificationsEnabled,
                 "notifications_disabled" => TeamFullNotificationSetting.NotificationsDisabled,
+                "notifications_enabled" => TeamFullNotificationSetting.NotificationsEnabled,
                 _ => null,
             };
         }

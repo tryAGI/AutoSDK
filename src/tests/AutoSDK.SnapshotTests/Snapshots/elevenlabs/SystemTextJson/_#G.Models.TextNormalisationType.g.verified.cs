@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        SystemPrompt,
+        Elevenlabs,
         /// <summary>
         /// 
         /// </summary>
-        Elevenlabs,
+        SystemPrompt,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                TextNormalisationType.SystemPrompt => "system_prompt",
                 TextNormalisationType.Elevenlabs => "elevenlabs",
+                TextNormalisationType.SystemPrompt => "system_prompt",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "system_prompt" => TextNormalisationType.SystemPrompt,
                 "elevenlabs" => TextNormalisationType.Elevenlabs,
+                "system_prompt" => TextNormalisationType.SystemPrompt,
                 _ => null,
             };
         }

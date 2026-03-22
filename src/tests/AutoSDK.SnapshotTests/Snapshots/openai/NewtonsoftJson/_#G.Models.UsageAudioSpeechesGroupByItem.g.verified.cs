@@ -13,16 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="project_id")]
-        ProjectId,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="user_id")]
-        UserId,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="api_key_id")]
         ApiKeyId,
         /// <summary>
@@ -30,6 +20,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="model")]
         Model,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="project_id")]
+        ProjectId,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="user_id")]
+        UserId,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                UsageAudioSpeechesGroupByItem.ProjectId => "project_id",
-                UsageAudioSpeechesGroupByItem.UserId => "user_id",
                 UsageAudioSpeechesGroupByItem.ApiKeyId => "api_key_id",
                 UsageAudioSpeechesGroupByItem.Model => "model",
+                UsageAudioSpeechesGroupByItem.ProjectId => "project_id",
+                UsageAudioSpeechesGroupByItem.UserId => "user_id",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "project_id" => UsageAudioSpeechesGroupByItem.ProjectId,
-                "user_id" => UsageAudioSpeechesGroupByItem.UserId,
                 "api_key_id" => UsageAudioSpeechesGroupByItem.ApiKeyId,
                 "model" => UsageAudioSpeechesGroupByItem.Model,
+                "project_id" => UsageAudioSpeechesGroupByItem.ProjectId,
+                "user_id" => UsageAudioSpeechesGroupByItem.UserId,
                 _ => null,
             };
         }

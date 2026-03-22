@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="admin")]
+        Admin,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="read")]
         Read,
         /// <summary>
@@ -20,11 +25,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="write")]
         Write,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="admin")]
-        Admin,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsOrganizationProjects.Admin => "admin",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsOrganizationProjects.Read => "read",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsOrganizationProjects.Write => "write",
-                WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsOrganizationProjects.Admin => "admin",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
+                "admin" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsOrganizationProjects.Admin,
                 "read" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsOrganizationProjects.Read,
                 "write" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsOrganizationProjects.Write,
-                "admin" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppPermissionsOrganizationProjects.Admin,
                 _ => null,
             };
         }

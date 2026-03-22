@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="requested")]
-        Requested,
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
-        Completed,
+        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
+        Pending,
         /// <summary>
         /// 
         /// </summary>
@@ -33,13 +33,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="waiting")]
-        Waiting,
+        [global::System.Runtime.Serialization.EnumMember(Value="requested")]
+        Requested,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
-        Pending,
+        [global::System.Runtime.Serialization.EnumMember(Value="waiting")]
+        Waiting,
     }
 
     /// <summary>
@@ -54,12 +54,12 @@ namespace G
         {
             return value switch
             {
-                WebhookDeploymentReviewApprovedWorkflowRunStatus.Requested => "requested",
-                WebhookDeploymentReviewApprovedWorkflowRunStatus.InProgress => "in_progress",
                 WebhookDeploymentReviewApprovedWorkflowRunStatus.Completed => "completed",
-                WebhookDeploymentReviewApprovedWorkflowRunStatus.Queued => "queued",
-                WebhookDeploymentReviewApprovedWorkflowRunStatus.Waiting => "waiting",
+                WebhookDeploymentReviewApprovedWorkflowRunStatus.InProgress => "in_progress",
                 WebhookDeploymentReviewApprovedWorkflowRunStatus.Pending => "pending",
+                WebhookDeploymentReviewApprovedWorkflowRunStatus.Queued => "queued",
+                WebhookDeploymentReviewApprovedWorkflowRunStatus.Requested => "requested",
+                WebhookDeploymentReviewApprovedWorkflowRunStatus.Waiting => "waiting",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,12 +70,12 @@ namespace G
         {
             return value switch
             {
-                "requested" => WebhookDeploymentReviewApprovedWorkflowRunStatus.Requested,
-                "in_progress" => WebhookDeploymentReviewApprovedWorkflowRunStatus.InProgress,
                 "completed" => WebhookDeploymentReviewApprovedWorkflowRunStatus.Completed,
-                "queued" => WebhookDeploymentReviewApprovedWorkflowRunStatus.Queued,
-                "waiting" => WebhookDeploymentReviewApprovedWorkflowRunStatus.Waiting,
+                "in_progress" => WebhookDeploymentReviewApprovedWorkflowRunStatus.InProgress,
                 "pending" => WebhookDeploymentReviewApprovedWorkflowRunStatus.Pending,
+                "queued" => WebhookDeploymentReviewApprovedWorkflowRunStatus.Queued,
+                "requested" => WebhookDeploymentReviewApprovedWorkflowRunStatus.Requested,
+                "waiting" => WebhookDeploymentReviewApprovedWorkflowRunStatus.Waiting,
                 _ => null,
             };
         }

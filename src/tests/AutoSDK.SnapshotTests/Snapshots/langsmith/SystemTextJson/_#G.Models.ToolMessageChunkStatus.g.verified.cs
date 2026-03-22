@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Success,
+        Error,
         /// <summary>
         /// 
         /// </summary>
-        Error,
+        Success,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ToolMessageChunkStatus.Success => "success",
                 ToolMessageChunkStatus.Error => "error",
+                ToolMessageChunkStatus.Success => "success",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "success" => ToolMessageChunkStatus.Success,
                 "error" => ToolMessageChunkStatus.Error,
+                "success" => ToolMessageChunkStatus.Success,
                 _ => null,
             };
         }

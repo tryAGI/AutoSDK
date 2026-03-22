@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="monthly_traces")]
-        MonthlyTraces,
+        [global::System.Runtime.Serialization.EnumMember(Value="monthly_longlived_traces")]
+        MonthlyLonglivedTraces,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="monthly_longlived_traces")]
-        MonthlyLonglivedTraces,
+        [global::System.Runtime.Serialization.EnumMember(Value="monthly_traces")]
+        MonthlyTraces,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                UsageLimitType.MonthlyTraces => "monthly_traces",
                 UsageLimitType.MonthlyLonglivedTraces => "monthly_longlived_traces",
+                UsageLimitType.MonthlyTraces => "monthly_traces",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "monthly_traces" => UsageLimitType.MonthlyTraces,
                 "monthly_longlived_traces" => UsageLimitType.MonthlyLonglivedTraces,
+                "monthly_traces" => UsageLimitType.MonthlyTraces,
                 _ => null,
             };
         }

@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="updated")]
-        Updated,
+        [global::System.Runtime.Serialization.EnumMember(Value="long-running")]
+        LongRunning,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="long-running")]
-        LongRunning,
+        [global::System.Runtime.Serialization.EnumMember(Value="updated")]
+        Updated,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 PullsListSort.Created => "created",
-                PullsListSort.Updated => "updated",
-                PullsListSort.Popularity => "popularity",
                 PullsListSort.LongRunning => "long-running",
+                PullsListSort.Popularity => "popularity",
+                PullsListSort.Updated => "updated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "created" => PullsListSort.Created,
-                "updated" => PullsListSort.Updated,
-                "popularity" => PullsListSort.Popularity,
                 "long-running" => PullsListSort.LongRunning,
+                "popularity" => PullsListSort.Popularity,
+                "updated" => PullsListSort.Updated,
                 _ => null,
             };
         }

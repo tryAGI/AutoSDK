@@ -44,6 +44,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        DeployKey,
+        /// <summary>
+        /// 
+        /// </summary>
         Deployment,
         /// <summary>
         /// 
@@ -53,10 +57,6 @@ namespace G
         /// 
         /// </summary>
         DeploymentStatus,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeployKey,
         /// <summary>
         /// 
         /// </summary>
@@ -76,11 +76,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Issues,
+        IssueComment,
         /// <summary>
         /// 
         /// </summary>
-        IssueComment,
+        Issues,
         /// <summary>
         /// 
         /// </summary>
@@ -100,11 +100,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Organization,
+        OrgBlock,
         /// <summary>
         /// 
         /// </summary>
-        OrgBlock,
+        Organization,
         /// <summary>
         /// 
         /// </summary>
@@ -211,22 +211,22 @@ namespace G
                 WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.ContentReference => "content_reference",
                 WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Create => "create",
                 WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Delete => "delete",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.DeployKey => "deploy_key",
                 WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Deployment => "deployment",
                 WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.DeploymentReview => "deployment_review",
                 WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.DeploymentStatus => "deployment_status",
-                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.DeployKey => "deploy_key",
                 WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Discussion => "discussion",
                 WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.DiscussionComment => "discussion_comment",
                 WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Fork => "fork",
                 WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Gollum => "gollum",
-                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Issues => "issues",
                 WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.IssueComment => "issue_comment",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Issues => "issues",
                 WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Label => "label",
                 WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Member => "member",
                 WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Membership => "membership",
                 WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Milestone => "milestone",
-                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Organization => "organization",
                 WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.OrgBlock => "org_block",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Organization => "organization",
                 WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.PageBuild => "page_build",
                 WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Project => "project",
                 WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.ProjectCard => "project_card",
@@ -266,22 +266,22 @@ namespace G
                 "content_reference" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.ContentReference,
                 "create" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Create,
                 "delete" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Delete,
+                "deploy_key" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.DeployKey,
                 "deployment" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Deployment,
                 "deployment_review" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.DeploymentReview,
                 "deployment_status" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.DeploymentStatus,
-                "deploy_key" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.DeployKey,
                 "discussion" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Discussion,
                 "discussion_comment" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.DiscussionComment,
                 "fork" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Fork,
                 "gollum" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Gollum,
-                "issues" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Issues,
                 "issue_comment" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.IssueComment,
+                "issues" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Issues,
                 "label" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Label,
                 "member" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Member,
                 "membership" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Membership,
                 "milestone" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Milestone,
-                "organization" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Organization,
                 "org_block" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.OrgBlock,
+                "organization" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Organization,
                 "page_build" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.PageBuild,
                 "project" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.Project,
                 "project_card" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvent.ProjectCard,

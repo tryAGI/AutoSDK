@@ -23,15 +23,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Archived,
+        /// <summary>
+        /// 
+        /// </summary>
         Completed,
         /// <summary>
         /// 
         /// </summary>
-        Terminated,
-        /// <summary>
-        /// 
-        /// </summary>
-        Archived,
+        Invalid,
         /// <summary>
         /// 
         /// </summary>
@@ -39,7 +39,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Invalid,
+        Terminated,
     }
 
     /// <summary>
@@ -55,11 +55,11 @@ namespace G
             return value switch
             {
                 PollStatus.Active => "ACTIVE",
-                PollStatus.Completed => "COMPLETED",
-                PollStatus.Terminated => "TERMINATED",
                 PollStatus.Archived => "ARCHIVED",
-                PollStatus.Moderated => "MODERATED",
+                PollStatus.Completed => "COMPLETED",
                 PollStatus.Invalid => "INVALID",
+                PollStatus.Moderated => "MODERATED",
+                PollStatus.Terminated => "TERMINATED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -71,11 +71,11 @@ namespace G
             return value switch
             {
                 "ACTIVE" => PollStatus.Active,
-                "COMPLETED" => PollStatus.Completed,
-                "TERMINATED" => PollStatus.Terminated,
                 "ARCHIVED" => PollStatus.Archived,
-                "MODERATED" => PollStatus.Moderated,
+                "COMPLETED" => PollStatus.Completed,
                 "INVALID" => PollStatus.Invalid,
+                "MODERATED" => PollStatus.Moderated,
+                "TERMINATED" => PollStatus.Terminated,
                 _ => null,
             };
         }

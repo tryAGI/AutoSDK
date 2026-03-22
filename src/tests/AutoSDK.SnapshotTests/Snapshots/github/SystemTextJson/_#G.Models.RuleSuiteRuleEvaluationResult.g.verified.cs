@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Pass,
+        Fail,
         /// <summary>
         /// 
         /// </summary>
-        Fail,
+        Pass,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                RuleSuiteRuleEvaluationResult.Pass => "pass",
                 RuleSuiteRuleEvaluationResult.Fail => "fail",
+                RuleSuiteRuleEvaluationResult.Pass => "pass",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "pass" => RuleSuiteRuleEvaluationResult.Pass,
                 "fail" => RuleSuiteRuleEvaluationResult.Fail,
+                "pass" => RuleSuiteRuleEvaluationResult.Pass,
                 _ => null,
             };
         }

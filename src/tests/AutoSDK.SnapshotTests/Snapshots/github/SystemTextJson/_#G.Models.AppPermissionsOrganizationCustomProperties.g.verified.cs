@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Admin,
+        /// <summary>
+        /// 
+        /// </summary>
         Read,
         /// <summary>
         /// 
         /// </summary>
         Write,
-        /// <summary>
-        /// 
-        /// </summary>
-        Admin,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
+                AppPermissionsOrganizationCustomProperties.Admin => "admin",
                 AppPermissionsOrganizationCustomProperties.Read => "read",
                 AppPermissionsOrganizationCustomProperties.Write => "write",
-                AppPermissionsOrganizationCustomProperties.Admin => "admin",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
+                "admin" => AppPermissionsOrganizationCustomProperties.Admin,
                 "read" => AppPermissionsOrganizationCustomProperties.Read,
                 "write" => AppPermissionsOrganizationCustomProperties.Write,
-                "admin" => AppPermissionsOrganizationCustomProperties.Admin,
                 _ => null,
             };
         }

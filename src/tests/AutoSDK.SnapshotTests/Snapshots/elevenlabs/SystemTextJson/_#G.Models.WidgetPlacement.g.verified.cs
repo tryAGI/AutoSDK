@@ -12,15 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        TopLeft,
-        /// <summary>
-        /// 
-        /// </summary>
-        Top,
-        /// <summary>
-        /// 
-        /// </summary>
-        TopRight,
+        Bottom,
         /// <summary>
         /// 
         /// </summary>
@@ -28,11 +20,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Bottom,
+        BottomRight,
         /// <summary>
         /// 
         /// </summary>
-        BottomRight,
+        Top,
+        /// <summary>
+        /// 
+        /// </summary>
+        TopLeft,
+        /// <summary>
+        /// 
+        /// </summary>
+        TopRight,
     }
 
     /// <summary>
@@ -47,12 +47,12 @@ namespace G
         {
             return value switch
             {
-                WidgetPlacement.TopLeft => "top-left",
-                WidgetPlacement.Top => "top",
-                WidgetPlacement.TopRight => "top-right",
-                WidgetPlacement.BottomLeft => "bottom-left",
                 WidgetPlacement.Bottom => "bottom",
+                WidgetPlacement.BottomLeft => "bottom-left",
                 WidgetPlacement.BottomRight => "bottom-right",
+                WidgetPlacement.Top => "top",
+                WidgetPlacement.TopLeft => "top-left",
+                WidgetPlacement.TopRight => "top-right",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,12 +63,12 @@ namespace G
         {
             return value switch
             {
-                "top-left" => WidgetPlacement.TopLeft,
-                "top" => WidgetPlacement.Top,
-                "top-right" => WidgetPlacement.TopRight,
-                "bottom-left" => WidgetPlacement.BottomLeft,
                 "bottom" => WidgetPlacement.Bottom,
+                "bottom-left" => WidgetPlacement.BottomLeft,
                 "bottom-right" => WidgetPlacement.BottomRight,
+                "top" => WidgetPlacement.Top,
+                "top-left" => WidgetPlacement.TopLeft,
+                "top-right" => WidgetPlacement.TopRight,
                 _ => null,
             };
         }

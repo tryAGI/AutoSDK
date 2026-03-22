@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="off")]
-        Off,
+        [global::System.Runtime.Serialization.EnumMember(Value="everyone")]
+        Everyone,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="everyone")]
-        Everyone,
+        [global::System.Runtime.Serialization.EnumMember(Value="off")]
+        Off,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom.Off => "off",
-                WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom.NonAdmins => "non_admins",
                 WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom.Everyone => "everyone",
+                WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom.NonAdmins => "non_admins",
+                WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom.Off => "off",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "off" => WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom.Off,
-                "non_admins" => WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom.NonAdmins,
                 "everyone" => WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom.Everyone,
+                "non_admins" => WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom.NonAdmins,
+                "off" => WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom.Off,
                 _ => null,
             };
         }

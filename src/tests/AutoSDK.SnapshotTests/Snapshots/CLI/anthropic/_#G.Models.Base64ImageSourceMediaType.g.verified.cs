@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        ImageGif,
+        /// <summary>
+        /// 
+        /// </summary>
         ImageJpeg,
         /// <summary>
         /// 
         /// </summary>
         ImagePng,
-        /// <summary>
-        /// 
-        /// </summary>
-        ImageGif,
         /// <summary>
         /// 
         /// </summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                Base64ImageSourceMediaType.ImageGif => "image/gif",
                 Base64ImageSourceMediaType.ImageJpeg => "image/jpeg",
                 Base64ImageSourceMediaType.ImagePng => "image/png",
-                Base64ImageSourceMediaType.ImageGif => "image/gif",
                 Base64ImageSourceMediaType.ImageWebp => "image/webp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
+                "image/gif" => Base64ImageSourceMediaType.ImageGif,
                 "image/jpeg" => Base64ImageSourceMediaType.ImageJpeg,
                 "image/png" => Base64ImageSourceMediaType.ImagePng,
-                "image/gif" => Base64ImageSourceMediaType.ImageGif,
                 "image/webp" => Base64ImageSourceMediaType.ImageWebp,
                 _ => null,
             };

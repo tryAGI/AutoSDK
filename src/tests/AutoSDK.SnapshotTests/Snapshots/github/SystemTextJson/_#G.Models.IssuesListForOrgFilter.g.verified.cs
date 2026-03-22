@@ -12,6 +12,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        All,
+        /// <summary>
+        /// 
+        /// </summary>
         Assigned,
         /// <summary>
         /// 
@@ -24,15 +28,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Subscribed,
-        /// <summary>
-        /// 
-        /// </summary>
         Repos,
         /// <summary>
         /// 
         /// </summary>
-        All,
+        Subscribed,
     }
 
     /// <summary>
@@ -47,12 +47,12 @@ namespace G
         {
             return value switch
             {
+                IssuesListForOrgFilter.All => "all",
                 IssuesListForOrgFilter.Assigned => "assigned",
                 IssuesListForOrgFilter.Created => "created",
                 IssuesListForOrgFilter.Mentioned => "mentioned",
-                IssuesListForOrgFilter.Subscribed => "subscribed",
                 IssuesListForOrgFilter.Repos => "repos",
-                IssuesListForOrgFilter.All => "all",
+                IssuesListForOrgFilter.Subscribed => "subscribed",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,12 +63,12 @@ namespace G
         {
             return value switch
             {
+                "all" => IssuesListForOrgFilter.All,
                 "assigned" => IssuesListForOrgFilter.Assigned,
                 "created" => IssuesListForOrgFilter.Created,
                 "mentioned" => IssuesListForOrgFilter.Mentioned,
-                "subscribed" => IssuesListForOrgFilter.Subscribed,
                 "repos" => IssuesListForOrgFilter.Repos,
-                "all" => IssuesListForOrgFilter.All,
+                "subscribed" => IssuesListForOrgFilter.Subscribed,
                 _ => null,
             };
         }

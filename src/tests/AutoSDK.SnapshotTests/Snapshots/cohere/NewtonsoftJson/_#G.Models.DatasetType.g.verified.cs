@@ -13,6 +13,21 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="chat-finetune-input")]
+        ChatFinetuneInput,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="cluster-outliers")]
+        ClusterOutliers,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="cluster-result")]
+        ClusterResult,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="embed-input")]
         EmbedInput,
         /// <summary>
@@ -23,13 +38,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cluster-result")]
-        ClusterResult,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cluster-outliers")]
-        ClusterOutliers,
+        [global::System.Runtime.Serialization.EnumMember(Value="multi-label-classification-finetune-input")]
+        MultiLabelClassificationFinetuneInput,
         /// <summary>
         /// 
         /// </summary>
@@ -40,16 +50,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="single-label-classification-finetune-input")]
         SingleLabelClassificationFinetuneInput,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="chat-finetune-input")]
-        ChatFinetuneInput,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="multi-label-classification-finetune-input")]
-        MultiLabelClassificationFinetuneInput,
     }
 
     /// <summary>
@@ -64,14 +64,14 @@ namespace G
         {
             return value switch
             {
+                DatasetType.ChatFinetuneInput => "chat-finetune-input",
+                DatasetType.ClusterOutliers => "cluster-outliers",
+                DatasetType.ClusterResult => "cluster-result",
                 DatasetType.EmbedInput => "embed-input",
                 DatasetType.EmbedResult => "embed-result",
-                DatasetType.ClusterResult => "cluster-result",
-                DatasetType.ClusterOutliers => "cluster-outliers",
+                DatasetType.MultiLabelClassificationFinetuneInput => "multi-label-classification-finetune-input",
                 DatasetType.RerankerFinetuneInput => "reranker-finetune-input",
                 DatasetType.SingleLabelClassificationFinetuneInput => "single-label-classification-finetune-input",
-                DatasetType.ChatFinetuneInput => "chat-finetune-input",
-                DatasetType.MultiLabelClassificationFinetuneInput => "multi-label-classification-finetune-input",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -82,14 +82,14 @@ namespace G
         {
             return value switch
             {
+                "chat-finetune-input" => DatasetType.ChatFinetuneInput,
+                "cluster-outliers" => DatasetType.ClusterOutliers,
+                "cluster-result" => DatasetType.ClusterResult,
                 "embed-input" => DatasetType.EmbedInput,
                 "embed-result" => DatasetType.EmbedResult,
-                "cluster-result" => DatasetType.ClusterResult,
-                "cluster-outliers" => DatasetType.ClusterOutliers,
+                "multi-label-classification-finetune-input" => DatasetType.MultiLabelClassificationFinetuneInput,
                 "reranker-finetune-input" => DatasetType.RerankerFinetuneInput,
                 "single-label-classification-finetune-input" => DatasetType.SingleLabelClassificationFinetuneInput,
-                "chat-finetune-input" => DatasetType.ChatFinetuneInput,
-                "multi-label-classification-finetune-input" => DatasetType.MultiLabelClassificationFinetuneInput,
                 _ => null,
             };
         }

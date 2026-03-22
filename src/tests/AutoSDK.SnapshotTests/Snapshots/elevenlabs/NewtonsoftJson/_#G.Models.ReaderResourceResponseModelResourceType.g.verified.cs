@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="read")]
-        Read,
+        [global::System.Runtime.Serialization.EnumMember(Value="collection")]
+        Collection,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="collection")]
-        Collection,
+        [global::System.Runtime.Serialization.EnumMember(Value="read")]
+        Read,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ReaderResourceResponseModelResourceType.Read => "read",
                 ReaderResourceResponseModelResourceType.Collection => "collection",
+                ReaderResourceResponseModelResourceType.Read => "read",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "read" => ReaderResourceResponseModelResourceType.Read,
                 "collection" => ReaderResourceResponseModelResourceType.Collection,
+                "read" => ReaderResourceResponseModelResourceType.Read,
                 _ => null,
             };
         }

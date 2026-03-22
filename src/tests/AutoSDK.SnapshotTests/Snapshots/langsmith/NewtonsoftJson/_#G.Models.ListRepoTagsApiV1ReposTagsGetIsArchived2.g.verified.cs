@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="true")]
-        True,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="allow")]
         Allow,
         /// <summary>
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="false")]
         False,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="true")]
+        True,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                ListRepoTagsApiV1ReposTagsGetIsArchived2.True => "true",
                 ListRepoTagsApiV1ReposTagsGetIsArchived2.Allow => "allow",
                 ListRepoTagsApiV1ReposTagsGetIsArchived2.False => "false",
+                ListRepoTagsApiV1ReposTagsGetIsArchived2.True => "true",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "true" => ListRepoTagsApiV1ReposTagsGetIsArchived2.True,
                 "allow" => ListRepoTagsApiV1ReposTagsGetIsArchived2.Allow,
                 "false" => ListRepoTagsApiV1ReposTagsGetIsArchived2.False,
+                "true" => ListRepoTagsApiV1ReposTagsGetIsArchived2.True,
                 _ => null,
             };
         }

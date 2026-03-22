@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="run_metadata")]
-        RunMetadata,
+        [global::System.Runtime.Serialization.EnumMember(Value="example_metadata")]
+        ExampleMetadata,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="example_metadata")]
-        ExampleMetadata,
+        [global::System.Runtime.Serialization.EnumMember(Value="run_metadata")]
+        RunMetadata,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                GroupExampleRunsByField.RunMetadata => "run_metadata",
                 GroupExampleRunsByField.ExampleMetadata => "example_metadata",
+                GroupExampleRunsByField.RunMetadata => "run_metadata",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "run_metadata" => GroupExampleRunsByField.RunMetadata,
                 "example_metadata" => GroupExampleRunsByField.ExampleMetadata,
+                "run_metadata" => GroupExampleRunsByField.RunMetadata,
                 _ => null,
             };
         }

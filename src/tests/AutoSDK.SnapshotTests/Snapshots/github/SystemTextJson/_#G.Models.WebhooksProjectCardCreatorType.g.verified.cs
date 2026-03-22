@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        Organization,
+        User,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 WebhooksProjectCardCreatorType.Bot => "Bot",
-                WebhooksProjectCardCreatorType.User => "User",
                 WebhooksProjectCardCreatorType.Organization => "Organization",
+                WebhooksProjectCardCreatorType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "Bot" => WebhooksProjectCardCreatorType.Bot,
-                "User" => WebhooksProjectCardCreatorType.User,
                 "Organization" => WebhooksProjectCardCreatorType.Organization,
+                "User" => WebhooksProjectCardCreatorType.User,
                 _ => null,
             };
         }

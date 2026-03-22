@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        None,
+        Auto,
         /// <summary>
         /// 
         /// </summary>
-        Auto,
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                AssistantsApiToolChoiceOptionEnum.None => "none",
                 AssistantsApiToolChoiceOptionEnum.Auto => "auto",
+                AssistantsApiToolChoiceOptionEnum.None => "none",
                 AssistantsApiToolChoiceOptionEnum.Required => "required",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "none" => AssistantsApiToolChoiceOptionEnum.None,
                 "auto" => AssistantsApiToolChoiceOptionEnum.Auto,
+                "none" => AssistantsApiToolChoiceOptionEnum.None,
                 "required" => AssistantsApiToolChoiceOptionEnum.Required,
                 _ => null,
             };

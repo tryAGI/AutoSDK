@@ -14,8 +14,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="DELETE")]
+        Delete,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="GET")]
         Get,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="PATCH")]
+        Patch,
         /// <summary>
         /// 
         /// </summary>
@@ -26,16 +36,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="PUT")]
         Put,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="PATCH")]
-        Patch,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="DELETE")]
-        Delete,
     }
 
     /// <summary>
@@ -50,11 +50,11 @@ namespace G
         {
             return value switch
             {
+                WebhookToolApiSchemaConfigOutputMethod.Delete => "DELETE",
                 WebhookToolApiSchemaConfigOutputMethod.Get => "GET",
+                WebhookToolApiSchemaConfigOutputMethod.Patch => "PATCH",
                 WebhookToolApiSchemaConfigOutputMethod.Post => "POST",
                 WebhookToolApiSchemaConfigOutputMethod.Put => "PUT",
-                WebhookToolApiSchemaConfigOutputMethod.Patch => "PATCH",
-                WebhookToolApiSchemaConfigOutputMethod.Delete => "DELETE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -65,11 +65,11 @@ namespace G
         {
             return value switch
             {
+                "DELETE" => WebhookToolApiSchemaConfigOutputMethod.Delete,
                 "GET" => WebhookToolApiSchemaConfigOutputMethod.Get,
+                "PATCH" => WebhookToolApiSchemaConfigOutputMethod.Patch,
                 "POST" => WebhookToolApiSchemaConfigOutputMethod.Post,
                 "PUT" => WebhookToolApiSchemaConfigOutputMethod.Put,
-                "PATCH" => WebhookToolApiSchemaConfigOutputMethod.Patch,
-                "DELETE" => WebhookToolApiSchemaConfigOutputMethod.Delete,
                 _ => null,
             };
         }

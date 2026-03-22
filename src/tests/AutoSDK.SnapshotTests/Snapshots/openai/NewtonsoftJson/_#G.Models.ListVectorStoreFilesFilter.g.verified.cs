@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
-        InProgress,
+        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
-        Cancelled,
+        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
+        InProgress,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                ListVectorStoreFilesFilter.InProgress => "in_progress",
+                ListVectorStoreFilesFilter.Cancelled => "cancelled",
                 ListVectorStoreFilesFilter.Completed => "completed",
                 ListVectorStoreFilesFilter.Failed => "failed",
-                ListVectorStoreFilesFilter.Cancelled => "cancelled",
+                ListVectorStoreFilesFilter.InProgress => "in_progress",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "in_progress" => ListVectorStoreFilesFilter.InProgress,
+                "cancelled" => ListVectorStoreFilesFilter.Cancelled,
                 "completed" => ListVectorStoreFilesFilter.Completed,
                 "failed" => ListVectorStoreFilesFilter.Failed,
-                "cancelled" => ListVectorStoreFilesFilter.Cancelled,
+                "in_progress" => ListVectorStoreFilesFilter.InProgress,
                 _ => null,
             };
         }

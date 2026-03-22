@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Processing,
+        Failed,
         /// <summary>
         /// 
         /// </summary>
-        Failed,
+        Processing,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 RenderStatus.Complete => "complete",
-                RenderStatus.Processing => "processing",
                 RenderStatus.Failed => "failed",
+                RenderStatus.Processing => "processing",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "complete" => RenderStatus.Complete,
-                "processing" => RenderStatus.Processing,
                 "failed" => RenderStatus.Failed,
+                "processing" => RenderStatus.Processing,
                 _ => null,
             };
         }

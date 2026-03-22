@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Png,
+        Jpeg,
         /// <summary>
         /// 
         /// </summary>
-        Jpeg,
+        Png,
         /// <summary>
         /// 
         /// </summary>
@@ -39,8 +39,8 @@ namespace G
         {
             return value switch
             {
-                CreateImageEditRequestOutputFormat.Png => "png",
                 CreateImageEditRequestOutputFormat.Jpeg => "jpeg",
+                CreateImageEditRequestOutputFormat.Png => "png",
                 CreateImageEditRequestOutputFormat.Webp => "webp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -52,8 +52,8 @@ namespace G
         {
             return value switch
             {
-                "png" => CreateImageEditRequestOutputFormat.Png,
                 "jpeg" => CreateImageEditRequestOutputFormat.Jpeg,
+                "png" => CreateImageEditRequestOutputFormat.Png,
                 "webp" => CreateImageEditRequestOutputFormat.Webp,
                 _ => null,
             };

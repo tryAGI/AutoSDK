@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="success")]
-        Success,
+        [global::System.Runtime.Serialization.EnumMember(Value="error")]
+        Error,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="error")]
-        Error,
+        [global::System.Runtime.Serialization.EnumMember(Value="success")]
+        Success,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                TestToolResponseDiscriminatorType.Success => "success",
                 TestToolResponseDiscriminatorType.Error => "error",
+                TestToolResponseDiscriminatorType.Success => "success",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "success" => TestToolResponseDiscriminatorType.Success,
                 "error" => TestToolResponseDiscriminatorType.Error,
+                "success" => TestToolResponseDiscriminatorType.Success,
                 _ => null,
             };
         }

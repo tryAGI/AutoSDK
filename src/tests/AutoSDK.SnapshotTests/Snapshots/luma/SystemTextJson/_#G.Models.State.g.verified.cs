@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Queued,
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -21,11 +21,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        Failed,
         /// <summary>
         /// 
         /// </summary>
-        Failed,
+        Queued,
     }
 
     /// <summary>
@@ -40,10 +40,10 @@ namespace G
         {
             return value switch
             {
-                State.Queued => "queued",
-                State.Dreaming => "dreaming",
                 State.Completed => "completed",
+                State.Dreaming => "dreaming",
                 State.Failed => "failed",
+                State.Queued => "queued",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,10 +54,10 @@ namespace G
         {
             return value switch
             {
-                "queued" => State.Queued,
-                "dreaming" => State.Dreaming,
                 "completed" => State.Completed,
+                "dreaming" => State.Dreaming,
                 "failed" => State.Failed,
+                "queued" => State.Queued,
                 _ => null,
             };
         }

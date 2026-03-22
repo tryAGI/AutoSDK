@@ -13,23 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pulling manifest")]
-        PullingManifest,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="downloading digestname")]
         DownloadingDigestname,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="verifying sha256 digest")]
-        VerifyingSha256Digest,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="writing manifest")]
-        WritingManifest,
+        [global::System.Runtime.Serialization.EnumMember(Value="pulling manifest")]
+        PullingManifest,
         /// <summary>
         /// 
         /// </summary>
@@ -40,6 +30,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="success")]
         Success,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="verifying sha256 digest")]
+        VerifyingSha256Digest,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="writing manifest")]
+        WritingManifest,
     }
 
     /// <summary>
@@ -54,12 +54,12 @@ namespace G
         {
             return value switch
             {
-                PullModelStatusEnum.PullingManifest => "pulling manifest",
                 PullModelStatusEnum.DownloadingDigestname => "downloading digestname",
-                PullModelStatusEnum.VerifyingSha256Digest => "verifying sha256 digest",
-                PullModelStatusEnum.WritingManifest => "writing manifest",
+                PullModelStatusEnum.PullingManifest => "pulling manifest",
                 PullModelStatusEnum.RemovingAnyUnusedLayers => "removing any unused layers",
                 PullModelStatusEnum.Success => "success",
+                PullModelStatusEnum.VerifyingSha256Digest => "verifying sha256 digest",
+                PullModelStatusEnum.WritingManifest => "writing manifest",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,12 +70,12 @@ namespace G
         {
             return value switch
             {
-                "pulling manifest" => PullModelStatusEnum.PullingManifest,
                 "downloading digestname" => PullModelStatusEnum.DownloadingDigestname,
-                "verifying sha256 digest" => PullModelStatusEnum.VerifyingSha256Digest,
-                "writing manifest" => PullModelStatusEnum.WritingManifest,
+                "pulling manifest" => PullModelStatusEnum.PullingManifest,
                 "removing any unused layers" => PullModelStatusEnum.RemovingAnyUnusedLayers,
                 "success" => PullModelStatusEnum.Success,
+                "verifying sha256 digest" => PullModelStatusEnum.VerifyingSha256Digest,
+                "writing manifest" => PullModelStatusEnum.WritingManifest,
                 _ => null,
             };
         }

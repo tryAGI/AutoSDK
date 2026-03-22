@@ -13,23 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="no_plan")]
-        NoPlan,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="developer")]
         Developer,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="plus")]
-        Plus,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="enterprise")]
-        Enterprise,
         /// <summary>
         /// 
         /// </summary>
@@ -38,13 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="plus_legacy")]
-        PlusLegacy,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="free")]
-        Free,
+        [global::System.Runtime.Serialization.EnumMember(Value="enterprise")]
+        Enterprise,
         /// <summary>
         /// 
         /// </summary>
@@ -53,8 +33,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="startup")]
-        Startup,
+        [global::System.Runtime.Serialization.EnumMember(Value="free")]
+        Free,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="no_plan")]
+        NoPlan,
         /// <summary>
         /// 
         /// </summary>
@@ -63,8 +48,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="plus")]
+        Plus,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="plus_legacy")]
+        PlusLegacy,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="premier")]
         Premier,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="startup")]
+        Startup,
     }
 
     /// <summary>
@@ -79,17 +79,17 @@ namespace G
         {
             return value switch
             {
-                PaymentPlanTier.NoPlan => "no_plan",
                 PaymentPlanTier.Developer => "developer",
-                PaymentPlanTier.Plus => "plus",
-                PaymentPlanTier.Enterprise => "enterprise",
                 PaymentPlanTier.DeveloperLegacy => "developer_legacy",
-                PaymentPlanTier.PlusLegacy => "plus_legacy",
-                PaymentPlanTier.Free => "free",
+                PaymentPlanTier.Enterprise => "enterprise",
                 PaymentPlanTier.EnterpriseLegacy => "enterprise_legacy",
-                PaymentPlanTier.Startup => "startup",
+                PaymentPlanTier.Free => "free",
+                PaymentPlanTier.NoPlan => "no_plan",
                 PaymentPlanTier.Partner => "partner",
+                PaymentPlanTier.Plus => "plus",
+                PaymentPlanTier.PlusLegacy => "plus_legacy",
                 PaymentPlanTier.Premier => "premier",
+                PaymentPlanTier.Startup => "startup",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -100,17 +100,17 @@ namespace G
         {
             return value switch
             {
-                "no_plan" => PaymentPlanTier.NoPlan,
                 "developer" => PaymentPlanTier.Developer,
-                "plus" => PaymentPlanTier.Plus,
-                "enterprise" => PaymentPlanTier.Enterprise,
                 "developer_legacy" => PaymentPlanTier.DeveloperLegacy,
-                "plus_legacy" => PaymentPlanTier.PlusLegacy,
-                "free" => PaymentPlanTier.Free,
+                "enterprise" => PaymentPlanTier.Enterprise,
                 "enterprise_legacy" => PaymentPlanTier.EnterpriseLegacy,
-                "startup" => PaymentPlanTier.Startup,
+                "free" => PaymentPlanTier.Free,
+                "no_plan" => PaymentPlanTier.NoPlan,
                 "partner" => PaymentPlanTier.Partner,
+                "plus" => PaymentPlanTier.Plus,
+                "plus_legacy" => PaymentPlanTier.PlusLegacy,
                 "premier" => PaymentPlanTier.Premier,
+                "startup" => PaymentPlanTier.Startup,
                 _ => null,
             };
         }

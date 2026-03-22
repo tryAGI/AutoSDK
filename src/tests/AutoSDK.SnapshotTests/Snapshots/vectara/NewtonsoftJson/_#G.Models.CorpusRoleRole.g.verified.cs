@@ -13,23 +13,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="owner")]
-        Owner,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="administrator")]
         Administrator,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="viewer")]
-        Viewer,
+        [global::System.Runtime.Serialization.EnumMember(Value="editor")]
+        Editor,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="editor")]
-        Editor,
+        [global::System.Runtime.Serialization.EnumMember(Value="owner")]
+        Owner,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="viewer")]
+        Viewer,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                CorpusRoleRole.Owner => "owner",
                 CorpusRoleRole.Administrator => "administrator",
-                CorpusRoleRole.Viewer => "viewer",
                 CorpusRoleRole.Editor => "editor",
+                CorpusRoleRole.Owner => "owner",
+                CorpusRoleRole.Viewer => "viewer",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "owner" => CorpusRoleRole.Owner,
                 "administrator" => CorpusRoleRole.Administrator,
-                "viewer" => CorpusRoleRole.Viewer,
                 "editor" => CorpusRoleRole.Editor,
+                "owner" => CorpusRoleRole.Owner,
+                "viewer" => CorpusRoleRole.Viewer,
                 _ => null,
             };
         }

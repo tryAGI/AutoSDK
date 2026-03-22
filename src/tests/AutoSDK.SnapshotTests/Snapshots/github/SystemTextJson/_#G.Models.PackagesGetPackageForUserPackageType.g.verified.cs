@@ -12,15 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Npm,
-        /// <summary>
-        /// 
-        /// </summary>
-        Maven,
-        /// <summary>
-        /// 
-        /// </summary>
-        Rubygems,
+        Container,
         /// <summary>
         /// 
         /// </summary>
@@ -28,11 +20,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Maven,
+        /// <summary>
+        /// 
+        /// </summary>
+        Npm,
+        /// <summary>
+        /// 
+        /// </summary>
         Nuget,
         /// <summary>
         /// 
         /// </summary>
-        Container,
+        Rubygems,
     }
 
     /// <summary>
@@ -47,12 +47,12 @@ namespace G
         {
             return value switch
             {
-                PackagesGetPackageForUserPackageType.Npm => "npm",
-                PackagesGetPackageForUserPackageType.Maven => "maven",
-                PackagesGetPackageForUserPackageType.Rubygems => "rubygems",
-                PackagesGetPackageForUserPackageType.Docker => "docker",
-                PackagesGetPackageForUserPackageType.Nuget => "nuget",
                 PackagesGetPackageForUserPackageType.Container => "container",
+                PackagesGetPackageForUserPackageType.Docker => "docker",
+                PackagesGetPackageForUserPackageType.Maven => "maven",
+                PackagesGetPackageForUserPackageType.Npm => "npm",
+                PackagesGetPackageForUserPackageType.Nuget => "nuget",
+                PackagesGetPackageForUserPackageType.Rubygems => "rubygems",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,12 +63,12 @@ namespace G
         {
             return value switch
             {
-                "npm" => PackagesGetPackageForUserPackageType.Npm,
-                "maven" => PackagesGetPackageForUserPackageType.Maven,
-                "rubygems" => PackagesGetPackageForUserPackageType.Rubygems,
-                "docker" => PackagesGetPackageForUserPackageType.Docker,
-                "nuget" => PackagesGetPackageForUserPackageType.Nuget,
                 "container" => PackagesGetPackageForUserPackageType.Container,
+                "docker" => PackagesGetPackageForUserPackageType.Docker,
+                "maven" => PackagesGetPackageForUserPackageType.Maven,
+                "npm" => PackagesGetPackageForUserPackageType.Npm,
+                "nuget" => PackagesGetPackageForUserPackageType.Nuget,
+                "rubygems" => PackagesGetPackageForUserPackageType.Rubygems,
                 _ => null,
             };
         }

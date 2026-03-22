@@ -13,18 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="IMAGE_GENERATION")]
-        ImageGeneration,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="FANTASY_AVATAR_GENERATION")]
         FantasyAvatarGeneration,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="MOTION_GENERATION")]
-        MotionGeneration,
+        [global::System.Runtime.Serialization.EnumMember(Value="IMAGE_GENERATION")]
+        ImageGeneration,
         /// <summary>
         /// 
         /// </summary>
@@ -35,6 +30,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="MODEL_TRAINING")]
         ModelTraining,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="MOTION_GENERATION")]
+        MotionGeneration,
         /// <summary>
         /// 
         /// </summary>
@@ -59,11 +59,11 @@ namespace G
         {
             return value switch
             {
-                PricingCalculatorServices.ImageGeneration => "IMAGE_GENERATION",
                 PricingCalculatorServices.FantasyAvatarGeneration => "FANTASY_AVATAR_GENERATION",
-                PricingCalculatorServices.MotionGeneration => "MOTION_GENERATION",
+                PricingCalculatorServices.ImageGeneration => "IMAGE_GENERATION",
                 PricingCalculatorServices.LcmGeneration => "LCM_GENERATION",
                 PricingCalculatorServices.ModelTraining => "MODEL_TRAINING",
+                PricingCalculatorServices.MotionGeneration => "MOTION_GENERATION",
                 PricingCalculatorServices.TextureGeneration => "TEXTURE_GENERATION",
                 PricingCalculatorServices.UniversalUpscaler => "UNIVERSAL_UPSCALER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -76,11 +76,11 @@ namespace G
         {
             return value switch
             {
-                "IMAGE_GENERATION" => PricingCalculatorServices.ImageGeneration,
                 "FANTASY_AVATAR_GENERATION" => PricingCalculatorServices.FantasyAvatarGeneration,
-                "MOTION_GENERATION" => PricingCalculatorServices.MotionGeneration,
+                "IMAGE_GENERATION" => PricingCalculatorServices.ImageGeneration,
                 "LCM_GENERATION" => PricingCalculatorServices.LcmGeneration,
                 "MODEL_TRAINING" => PricingCalculatorServices.ModelTraining,
+                "MOTION_GENERATION" => PricingCalculatorServices.MotionGeneration,
                 "TEXTURE_GENERATION" => PricingCalculatorServices.TextureGeneration,
                 "UNIVERSAL_UPSCALER" => PricingCalculatorServices.UniversalUpscaler,
                 _ => null,

@@ -12,15 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Npm,
-        /// <summary>
-        /// 
-        /// </summary>
-        Maven,
-        /// <summary>
-        /// 
-        /// </summary>
-        Rubygems,
+        Container,
         /// <summary>
         /// 
         /// </summary>
@@ -28,11 +20,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Maven,
+        /// <summary>
+        /// 
+        /// </summary>
+        Npm,
+        /// <summary>
+        /// 
+        /// </summary>
         Nuget,
         /// <summary>
         /// 
         /// </summary>
-        Container,
+        Rubygems,
     }
 
     /// <summary>
@@ -47,12 +47,12 @@ namespace G
         {
             return value switch
             {
-                PackagesGetPackageVersionForOrganizationPackageType.Npm => "npm",
-                PackagesGetPackageVersionForOrganizationPackageType.Maven => "maven",
-                PackagesGetPackageVersionForOrganizationPackageType.Rubygems => "rubygems",
-                PackagesGetPackageVersionForOrganizationPackageType.Docker => "docker",
-                PackagesGetPackageVersionForOrganizationPackageType.Nuget => "nuget",
                 PackagesGetPackageVersionForOrganizationPackageType.Container => "container",
+                PackagesGetPackageVersionForOrganizationPackageType.Docker => "docker",
+                PackagesGetPackageVersionForOrganizationPackageType.Maven => "maven",
+                PackagesGetPackageVersionForOrganizationPackageType.Npm => "npm",
+                PackagesGetPackageVersionForOrganizationPackageType.Nuget => "nuget",
+                PackagesGetPackageVersionForOrganizationPackageType.Rubygems => "rubygems",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,12 +63,12 @@ namespace G
         {
             return value switch
             {
-                "npm" => PackagesGetPackageVersionForOrganizationPackageType.Npm,
-                "maven" => PackagesGetPackageVersionForOrganizationPackageType.Maven,
-                "rubygems" => PackagesGetPackageVersionForOrganizationPackageType.Rubygems,
-                "docker" => PackagesGetPackageVersionForOrganizationPackageType.Docker,
-                "nuget" => PackagesGetPackageVersionForOrganizationPackageType.Nuget,
                 "container" => PackagesGetPackageVersionForOrganizationPackageType.Container,
+                "docker" => PackagesGetPackageVersionForOrganizationPackageType.Docker,
+                "maven" => PackagesGetPackageVersionForOrganizationPackageType.Maven,
+                "npm" => PackagesGetPackageVersionForOrganizationPackageType.Npm,
+                "nuget" => PackagesGetPackageVersionForOrganizationPackageType.Nuget,
+                "rubygems" => PackagesGetPackageVersionForOrganizationPackageType.Rubygems,
                 _ => null,
             };
         }

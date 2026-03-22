@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Agent,
         /// <summary>
         /// 
         /// </summary>
-        Agent,
+        User,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ConversationHistoryTranscriptCommonModelOutputRole.User => "user",
                 ConversationHistoryTranscriptCommonModelOutputRole.Agent => "agent",
+                ConversationHistoryTranscriptCommonModelOutputRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "user" => ConversationHistoryTranscriptCommonModelOutputRole.User,
                 "agent" => ConversationHistoryTranscriptCommonModelOutputRole.Agent,
+                "user" => ConversationHistoryTranscriptCommonModelOutputRole.User,
                 _ => null,
             };
         }

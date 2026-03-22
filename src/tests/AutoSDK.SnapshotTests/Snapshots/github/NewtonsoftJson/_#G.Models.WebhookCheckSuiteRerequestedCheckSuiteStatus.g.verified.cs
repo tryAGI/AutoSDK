@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="requested")]
-        Requested,
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
-        Completed,
+        [global::System.Runtime.Serialization.EnumMember(Value="openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
         /// <summary>
         /// 
         /// </summary>
@@ -33,8 +33,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
-        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        [global::System.Runtime.Serialization.EnumMember(Value="requested")]
+        Requested,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                WebhookCheckSuiteRerequestedCheckSuiteStatus.Requested => "requested",
-                WebhookCheckSuiteRerequestedCheckSuiteStatus.InProgress => "in_progress",
                 WebhookCheckSuiteRerequestedCheckSuiteStatus.Completed => "completed",
-                WebhookCheckSuiteRerequestedCheckSuiteStatus.Queued => "queued",
+                WebhookCheckSuiteRerequestedCheckSuiteStatus.InProgress => "in_progress",
                 WebhookCheckSuiteRerequestedCheckSuiteStatus.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
+                WebhookCheckSuiteRerequestedCheckSuiteStatus.Queued => "queued",
+                WebhookCheckSuiteRerequestedCheckSuiteStatus.Requested => "requested",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "requested" => WebhookCheckSuiteRerequestedCheckSuiteStatus.Requested,
-                "in_progress" => WebhookCheckSuiteRerequestedCheckSuiteStatus.InProgress,
                 "completed" => WebhookCheckSuiteRerequestedCheckSuiteStatus.Completed,
-                "queued" => WebhookCheckSuiteRerequestedCheckSuiteStatus.Queued,
+                "in_progress" => WebhookCheckSuiteRerequestedCheckSuiteStatus.InProgress,
                 "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookCheckSuiteRerequestedCheckSuiteStatus.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+                "queued" => WebhookCheckSuiteRerequestedCheckSuiteStatus.Queued,
+                "requested" => WebhookCheckSuiteRerequestedCheckSuiteStatus.Requested,
                 _ => null,
             };
         }

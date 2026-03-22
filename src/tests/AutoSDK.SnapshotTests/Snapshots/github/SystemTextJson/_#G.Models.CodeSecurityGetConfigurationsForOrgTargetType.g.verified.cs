@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Global,
+        All,
         /// <summary>
         /// 
         /// </summary>
-        All,
+        Global,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                CodeSecurityGetConfigurationsForOrgTargetType.Global => "global",
                 CodeSecurityGetConfigurationsForOrgTargetType.All => "all",
+                CodeSecurityGetConfigurationsForOrgTargetType.Global => "global",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "global" => CodeSecurityGetConfigurationsForOrgTargetType.Global,
                 "all" => CodeSecurityGetConfigurationsForOrgTargetType.All,
+                "global" => CodeSecurityGetConfigurationsForOrgTargetType.Global,
                 _ => null,
             };
         }

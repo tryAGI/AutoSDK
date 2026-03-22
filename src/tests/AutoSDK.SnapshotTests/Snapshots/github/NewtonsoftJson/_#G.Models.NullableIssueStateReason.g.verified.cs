@@ -19,13 +19,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="reopened")]
-        Reopened,
+        [global::System.Runtime.Serialization.EnumMember(Value="not_planned")]
+        NotPlanned,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="not_planned")]
-        NotPlanned,
+        [global::System.Runtime.Serialization.EnumMember(Value="reopened")]
+        Reopened,
     }
 
     /// <summary>
@@ -41,8 +41,8 @@ namespace G
             return value switch
             {
                 NullableIssueStateReason.Completed => "completed",
-                NullableIssueStateReason.Reopened => "reopened",
                 NullableIssueStateReason.NotPlanned => "not_planned",
+                NullableIssueStateReason.Reopened => "reopened",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,8 +54,8 @@ namespace G
             return value switch
             {
                 "completed" => NullableIssueStateReason.Completed,
-                "reopened" => NullableIssueStateReason.Reopened,
                 "not_planned" => NullableIssueStateReason.NotPlanned,
+                "reopened" => NullableIssueStateReason.Reopened,
                 _ => null,
             };
         }

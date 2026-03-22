@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ApiKeyUpdated,
+        ApiKeyDeleted,
         /// <summary>
         /// 
         /// </summary>
-        ApiKeyDeleted,
+        ApiKeyUpdated,
         /// <summary>
         /// 
         /// </summary>
@@ -32,10 +32,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        InviteSent,
-        /// <summary>
-        /// 
-        /// </summary>
         InviteAccepted,
         /// <summary>
         /// 
@@ -44,7 +40,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        LoginSucceeded,
+        InviteSent,
         /// <summary>
         /// 
         /// </summary>
@@ -52,7 +48,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        LogoutSucceeded,
+        LoginSucceeded,
         /// <summary>
         /// 
         /// </summary>
@@ -60,7 +56,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        LogoutSucceeded,
+        /// <summary>
+        /// 
+        /// </summary>
         OrganizationUpdated,
+        /// <summary>
+        /// 
+        /// </summary>
+        ProjectArchived,
         /// <summary>
         /// 
         /// </summary>
@@ -72,19 +76,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ProjectArchived,
-        /// <summary>
-        /// 
-        /// </summary>
-        ServiceAccountCreated,
-        /// <summary>
-        /// 
-        /// </summary>
-        ServiceAccountUpdated,
-        /// <summary>
-        /// 
-        /// </summary>
-        ServiceAccountDeleted,
+        RateLimitDeleted,
         /// <summary>
         /// 
         /// </summary>
@@ -92,7 +84,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        RateLimitDeleted,
+        ServiceAccountCreated,
+        /// <summary>
+        /// 
+        /// </summary>
+        ServiceAccountDeleted,
+        /// <summary>
+        /// 
+        /// </summary>
+        ServiceAccountUpdated,
         /// <summary>
         /// 
         /// </summary>
@@ -100,11 +100,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        UserUpdated,
+        UserDeleted,
         /// <summary>
         /// 
         /// </summary>
-        UserDeleted,
+        UserUpdated,
     }
 
     /// <summary>
@@ -120,29 +120,29 @@ namespace G
             return value switch
             {
                 AuditLogEventType.ApiKeyCreated => "api_key.created",
-                AuditLogEventType.ApiKeyUpdated => "api_key.updated",
                 AuditLogEventType.ApiKeyDeleted => "api_key.deleted",
+                AuditLogEventType.ApiKeyUpdated => "api_key.updated",
                 AuditLogEventType.CheckpointPermissionCreated => "checkpoint_permission.created",
                 AuditLogEventType.CheckpointPermissionDeleted => "checkpoint_permission.deleted",
-                AuditLogEventType.InviteSent => "invite.sent",
                 AuditLogEventType.InviteAccepted => "invite.accepted",
                 AuditLogEventType.InviteDeleted => "invite.deleted",
-                AuditLogEventType.LoginSucceeded => "login.succeeded",
+                AuditLogEventType.InviteSent => "invite.sent",
                 AuditLogEventType.LoginFailed => "login.failed",
-                AuditLogEventType.LogoutSucceeded => "logout.succeeded",
+                AuditLogEventType.LoginSucceeded => "login.succeeded",
                 AuditLogEventType.LogoutFailed => "logout.failed",
+                AuditLogEventType.LogoutSucceeded => "logout.succeeded",
                 AuditLogEventType.OrganizationUpdated => "organization.updated",
+                AuditLogEventType.ProjectArchived => "project.archived",
                 AuditLogEventType.ProjectCreated => "project.created",
                 AuditLogEventType.ProjectUpdated => "project.updated",
-                AuditLogEventType.ProjectArchived => "project.archived",
-                AuditLogEventType.ServiceAccountCreated => "service_account.created",
-                AuditLogEventType.ServiceAccountUpdated => "service_account.updated",
-                AuditLogEventType.ServiceAccountDeleted => "service_account.deleted",
-                AuditLogEventType.RateLimitUpdated => "rate_limit.updated",
                 AuditLogEventType.RateLimitDeleted => "rate_limit.deleted",
+                AuditLogEventType.RateLimitUpdated => "rate_limit.updated",
+                AuditLogEventType.ServiceAccountCreated => "service_account.created",
+                AuditLogEventType.ServiceAccountDeleted => "service_account.deleted",
+                AuditLogEventType.ServiceAccountUpdated => "service_account.updated",
                 AuditLogEventType.UserAdded => "user.added",
-                AuditLogEventType.UserUpdated => "user.updated",
                 AuditLogEventType.UserDeleted => "user.deleted",
+                AuditLogEventType.UserUpdated => "user.updated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -154,29 +154,29 @@ namespace G
             return value switch
             {
                 "api_key.created" => AuditLogEventType.ApiKeyCreated,
-                "api_key.updated" => AuditLogEventType.ApiKeyUpdated,
                 "api_key.deleted" => AuditLogEventType.ApiKeyDeleted,
+                "api_key.updated" => AuditLogEventType.ApiKeyUpdated,
                 "checkpoint_permission.created" => AuditLogEventType.CheckpointPermissionCreated,
                 "checkpoint_permission.deleted" => AuditLogEventType.CheckpointPermissionDeleted,
-                "invite.sent" => AuditLogEventType.InviteSent,
                 "invite.accepted" => AuditLogEventType.InviteAccepted,
                 "invite.deleted" => AuditLogEventType.InviteDeleted,
-                "login.succeeded" => AuditLogEventType.LoginSucceeded,
+                "invite.sent" => AuditLogEventType.InviteSent,
                 "login.failed" => AuditLogEventType.LoginFailed,
-                "logout.succeeded" => AuditLogEventType.LogoutSucceeded,
+                "login.succeeded" => AuditLogEventType.LoginSucceeded,
                 "logout.failed" => AuditLogEventType.LogoutFailed,
+                "logout.succeeded" => AuditLogEventType.LogoutSucceeded,
                 "organization.updated" => AuditLogEventType.OrganizationUpdated,
+                "project.archived" => AuditLogEventType.ProjectArchived,
                 "project.created" => AuditLogEventType.ProjectCreated,
                 "project.updated" => AuditLogEventType.ProjectUpdated,
-                "project.archived" => AuditLogEventType.ProjectArchived,
-                "service_account.created" => AuditLogEventType.ServiceAccountCreated,
-                "service_account.updated" => AuditLogEventType.ServiceAccountUpdated,
-                "service_account.deleted" => AuditLogEventType.ServiceAccountDeleted,
-                "rate_limit.updated" => AuditLogEventType.RateLimitUpdated,
                 "rate_limit.deleted" => AuditLogEventType.RateLimitDeleted,
+                "rate_limit.updated" => AuditLogEventType.RateLimitUpdated,
+                "service_account.created" => AuditLogEventType.ServiceAccountCreated,
+                "service_account.deleted" => AuditLogEventType.ServiceAccountDeleted,
+                "service_account.updated" => AuditLogEventType.ServiceAccountUpdated,
                 "user.added" => AuditLogEventType.UserAdded,
-                "user.updated" => AuditLogEventType.UserUpdated,
                 "user.deleted" => AuditLogEventType.UserDeleted,
+                "user.updated" => AuditLogEventType.UserUpdated,
                 _ => null,
             };
         }

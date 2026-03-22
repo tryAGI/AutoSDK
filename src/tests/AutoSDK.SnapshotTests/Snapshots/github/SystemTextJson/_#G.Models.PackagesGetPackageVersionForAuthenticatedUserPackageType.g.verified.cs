@@ -12,15 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Npm,
-        /// <summary>
-        /// 
-        /// </summary>
-        Maven,
-        /// <summary>
-        /// 
-        /// </summary>
-        Rubygems,
+        Container,
         /// <summary>
         /// 
         /// </summary>
@@ -28,11 +20,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Maven,
+        /// <summary>
+        /// 
+        /// </summary>
+        Npm,
+        /// <summary>
+        /// 
+        /// </summary>
         Nuget,
         /// <summary>
         /// 
         /// </summary>
-        Container,
+        Rubygems,
     }
 
     /// <summary>
@@ -47,12 +47,12 @@ namespace G
         {
             return value switch
             {
-                PackagesGetPackageVersionForAuthenticatedUserPackageType.Npm => "npm",
-                PackagesGetPackageVersionForAuthenticatedUserPackageType.Maven => "maven",
-                PackagesGetPackageVersionForAuthenticatedUserPackageType.Rubygems => "rubygems",
-                PackagesGetPackageVersionForAuthenticatedUserPackageType.Docker => "docker",
-                PackagesGetPackageVersionForAuthenticatedUserPackageType.Nuget => "nuget",
                 PackagesGetPackageVersionForAuthenticatedUserPackageType.Container => "container",
+                PackagesGetPackageVersionForAuthenticatedUserPackageType.Docker => "docker",
+                PackagesGetPackageVersionForAuthenticatedUserPackageType.Maven => "maven",
+                PackagesGetPackageVersionForAuthenticatedUserPackageType.Npm => "npm",
+                PackagesGetPackageVersionForAuthenticatedUserPackageType.Nuget => "nuget",
+                PackagesGetPackageVersionForAuthenticatedUserPackageType.Rubygems => "rubygems",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,12 +63,12 @@ namespace G
         {
             return value switch
             {
-                "npm" => PackagesGetPackageVersionForAuthenticatedUserPackageType.Npm,
-                "maven" => PackagesGetPackageVersionForAuthenticatedUserPackageType.Maven,
-                "rubygems" => PackagesGetPackageVersionForAuthenticatedUserPackageType.Rubygems,
-                "docker" => PackagesGetPackageVersionForAuthenticatedUserPackageType.Docker,
-                "nuget" => PackagesGetPackageVersionForAuthenticatedUserPackageType.Nuget,
                 "container" => PackagesGetPackageVersionForAuthenticatedUserPackageType.Container,
+                "docker" => PackagesGetPackageVersionForAuthenticatedUserPackageType.Docker,
+                "maven" => PackagesGetPackageVersionForAuthenticatedUserPackageType.Maven,
+                "npm" => PackagesGetPackageVersionForAuthenticatedUserPackageType.Npm,
+                "nuget" => PackagesGetPackageVersionForAuthenticatedUserPackageType.Nuget,
+                "rubygems" => PackagesGetPackageVersionForAuthenticatedUserPackageType.Rubygems,
                 _ => null,
             };
         }

@@ -18,11 +18,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="standard")]
-        Standard,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="high")]
         High,
         /// <summary>
@@ -30,6 +25,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="highest")]
         Highest,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="standard")]
+        Standard,
         /// <summary>
         /// 
         /// </summary>
@@ -54,9 +54,9 @@ namespace G
         {
             return value switch
             {
-                BodyCreatePodcastV1StudioPodcastsPostQualityPreset.Standard => "standard",
                 BodyCreatePodcastV1StudioPodcastsPostQualityPreset.High => "high",
                 BodyCreatePodcastV1StudioPodcastsPostQualityPreset.Highest => "highest",
+                BodyCreatePodcastV1StudioPodcastsPostQualityPreset.Standard => "standard",
                 BodyCreatePodcastV1StudioPodcastsPostQualityPreset.Ultra => "ultra",
                 BodyCreatePodcastV1StudioPodcastsPostQualityPreset.UltraLossless => "ultra_lossless",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -69,9 +69,9 @@ namespace G
         {
             return value switch
             {
-                "standard" => BodyCreatePodcastV1StudioPodcastsPostQualityPreset.Standard,
                 "high" => BodyCreatePodcastV1StudioPodcastsPostQualityPreset.High,
                 "highest" => BodyCreatePodcastV1StudioPodcastsPostQualityPreset.Highest,
+                "standard" => BodyCreatePodcastV1StudioPodcastsPostQualityPreset.Standard,
                 "ultra" => BodyCreatePodcastV1StudioPodcastsPostQualityPreset.Ultra,
                 "ultra_lossless" => BodyCreatePodcastV1StudioPodcastsPostQualityPreset.UltraLossless,
                 _ => null,

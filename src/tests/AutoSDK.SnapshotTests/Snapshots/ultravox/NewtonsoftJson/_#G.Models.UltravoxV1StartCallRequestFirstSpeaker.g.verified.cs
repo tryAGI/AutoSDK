@@ -15,13 +15,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="FIRST_SPEAKER_UNSPECIFIED")]
-        FirstSpeakerUnspecified,
+        [global::System.Runtime.Serialization.EnumMember(Value="FIRST_SPEAKER_AGENT")]
+        FirstSpeakerAgent,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="FIRST_SPEAKER_AGENT")]
-        FirstSpeakerAgent,
+        [global::System.Runtime.Serialization.EnumMember(Value="FIRST_SPEAKER_UNSPECIFIED")]
+        FirstSpeakerUnspecified,
         /// <summary>
         /// 
         /// </summary>
@@ -41,8 +41,8 @@ namespace G
         {
             return value switch
             {
-                UltravoxV1StartCallRequestFirstSpeaker.FirstSpeakerUnspecified => "FIRST_SPEAKER_UNSPECIFIED",
                 UltravoxV1StartCallRequestFirstSpeaker.FirstSpeakerAgent => "FIRST_SPEAKER_AGENT",
+                UltravoxV1StartCallRequestFirstSpeaker.FirstSpeakerUnspecified => "FIRST_SPEAKER_UNSPECIFIED",
                 UltravoxV1StartCallRequestFirstSpeaker.FirstSpeakerUser => "FIRST_SPEAKER_USER",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -54,8 +54,8 @@ namespace G
         {
             return value switch
             {
-                "FIRST_SPEAKER_UNSPECIFIED" => UltravoxV1StartCallRequestFirstSpeaker.FirstSpeakerUnspecified,
                 "FIRST_SPEAKER_AGENT" => UltravoxV1StartCallRequestFirstSpeaker.FirstSpeakerAgent,
+                "FIRST_SPEAKER_UNSPECIFIED" => UltravoxV1StartCallRequestFirstSpeaker.FirstSpeakerUnspecified,
                 "FIRST_SPEAKER_USER" => UltravoxV1StartCallRequestFirstSpeaker.FirstSpeakerUser,
                 _ => null,
             };

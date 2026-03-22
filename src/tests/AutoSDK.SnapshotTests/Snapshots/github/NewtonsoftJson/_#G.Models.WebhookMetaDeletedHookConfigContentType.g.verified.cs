@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="json")]
-        Json,
+        [global::System.Runtime.Serialization.EnumMember(Value="form")]
+        Form,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="form")]
-        Form,
+        [global::System.Runtime.Serialization.EnumMember(Value="json")]
+        Json,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                WebhookMetaDeletedHookConfigContentType.Json => "json",
                 WebhookMetaDeletedHookConfigContentType.Form => "form",
+                WebhookMetaDeletedHookConfigContentType.Json => "json",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "json" => WebhookMetaDeletedHookConfigContentType.Json,
                 "form" => WebhookMetaDeletedHookConfigContentType.Form,
+                "json" => WebhookMetaDeletedHookConfigContentType.Json,
                 _ => null,
             };
         }

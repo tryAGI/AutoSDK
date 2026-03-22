@@ -16,7 +16,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Laugh,
+        Eyes,
         /// <summary>
         /// 
         /// </summary>
@@ -28,11 +28,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Rocket,
+        Laugh,
         /// <summary>
         /// 
         /// </summary>
-        Eyes,
+        Rocket,
     }
 
     /// <summary>
@@ -48,11 +48,11 @@ namespace G
             return value switch
             {
                 ReactionsListForReleaseContent.Plus1 => "+1",
-                ReactionsListForReleaseContent.Laugh => "laugh",
+                ReactionsListForReleaseContent.Eyes => "eyes",
                 ReactionsListForReleaseContent.Heart => "heart",
                 ReactionsListForReleaseContent.Hooray => "hooray",
+                ReactionsListForReleaseContent.Laugh => "laugh",
                 ReactionsListForReleaseContent.Rocket => "rocket",
-                ReactionsListForReleaseContent.Eyes => "eyes",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
             return value switch
             {
                 "+1" => ReactionsListForReleaseContent.Plus1,
-                "laugh" => ReactionsListForReleaseContent.Laugh,
+                "eyes" => ReactionsListForReleaseContent.Eyes,
                 "heart" => ReactionsListForReleaseContent.Heart,
                 "hooray" => ReactionsListForReleaseContent.Hooray,
+                "laugh" => ReactionsListForReleaseContent.Laugh,
                 "rocket" => ReactionsListForReleaseContent.Rocket,
-                "eyes" => ReactionsListForReleaseContent.Eyes,
                 _ => null,
             };
         }

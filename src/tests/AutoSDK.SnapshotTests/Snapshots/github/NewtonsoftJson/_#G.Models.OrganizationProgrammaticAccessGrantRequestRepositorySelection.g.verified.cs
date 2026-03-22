@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="none")]
-        None,
+        [global::System.Runtime.Serialization.EnumMember(Value="all")]
+        All,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="all")]
-        All,
+        [global::System.Runtime.Serialization.EnumMember(Value="none")]
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -39,8 +39,8 @@ namespace G
         {
             return value switch
             {
-                OrganizationProgrammaticAccessGrantRequestRepositorySelection.None => "none",
                 OrganizationProgrammaticAccessGrantRequestRepositorySelection.All => "all",
+                OrganizationProgrammaticAccessGrantRequestRepositorySelection.None => "none",
                 OrganizationProgrammaticAccessGrantRequestRepositorySelection.Subset => "subset",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -52,8 +52,8 @@ namespace G
         {
             return value switch
             {
-                "none" => OrganizationProgrammaticAccessGrantRequestRepositorySelection.None,
                 "all" => OrganizationProgrammaticAccessGrantRequestRepositorySelection.All,
+                "none" => OrganizationProgrammaticAccessGrantRequestRepositorySelection.None,
                 "subset" => OrganizationProgrammaticAccessGrantRequestRepositorySelection.Subset,
                 _ => null,
             };

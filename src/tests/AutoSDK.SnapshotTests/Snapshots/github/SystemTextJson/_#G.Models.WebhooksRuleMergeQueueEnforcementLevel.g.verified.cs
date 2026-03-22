@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Off,
+        Everyone,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Everyone,
+        Off,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                WebhooksRuleMergeQueueEnforcementLevel.Off => "off",
-                WebhooksRuleMergeQueueEnforcementLevel.NonAdmins => "non_admins",
                 WebhooksRuleMergeQueueEnforcementLevel.Everyone => "everyone",
+                WebhooksRuleMergeQueueEnforcementLevel.NonAdmins => "non_admins",
+                WebhooksRuleMergeQueueEnforcementLevel.Off => "off",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "off" => WebhooksRuleMergeQueueEnforcementLevel.Off,
-                "non_admins" => WebhooksRuleMergeQueueEnforcementLevel.NonAdmins,
                 "everyone" => WebhooksRuleMergeQueueEnforcementLevel.Everyone,
+                "non_admins" => WebhooksRuleMergeQueueEnforcementLevel.NonAdmins,
+                "off" => WebhooksRuleMergeQueueEnforcementLevel.Off,
                 _ => null,
             };
         }

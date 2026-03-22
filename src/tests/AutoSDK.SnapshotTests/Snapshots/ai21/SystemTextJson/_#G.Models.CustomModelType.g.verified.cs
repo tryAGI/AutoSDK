@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        J2Large,
-        /// <summary>
-        /// 
-        /// </summary>
         J2Grande,
         /// <summary>
         /// 
         /// </summary>
         J2Jumbo,
+        /// <summary>
+        /// 
+        /// </summary>
+        J2Large,
         /// <summary>
         /// 
         /// </summary>
@@ -47,9 +47,9 @@ namespace G
         {
             return value switch
             {
-                CustomModelType.J2Large => "j2-large",
                 CustomModelType.J2Grande => "j2-grande",
                 CustomModelType.J2Jumbo => "j2-jumbo",
+                CustomModelType.J2Large => "j2-large",
                 CustomModelType.J2Light => "j2-light",
                 CustomModelType.J2Mid => "j2-mid",
                 CustomModelType.J2Ultra => "j2-ultra",
@@ -63,9 +63,9 @@ namespace G
         {
             return value switch
             {
-                "j2-large" => CustomModelType.J2Large,
                 "j2-grande" => CustomModelType.J2Grande,
                 "j2-jumbo" => CustomModelType.J2Jumbo,
+                "j2-large" => CustomModelType.J2Large,
                 "j2-light" => CustomModelType.J2Light,
                 "j2-mid" => CustomModelType.J2Mid,
                 "j2-ultra" => CustomModelType.J2Ultra,

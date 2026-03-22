@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="all")]
+        All,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="direct")]
         Direct,
         /// <summary>
@@ -20,11 +25,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="transitive")]
         Transitive,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="all")]
-        All,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                KnowledgeBaseDependentType.All => "all",
                 KnowledgeBaseDependentType.Direct => "direct",
                 KnowledgeBaseDependentType.Transitive => "transitive",
-                KnowledgeBaseDependentType.All => "all",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
+                "all" => KnowledgeBaseDependentType.All,
                 "direct" => KnowledgeBaseDependentType.Direct,
                 "transitive" => KnowledgeBaseDependentType.Transitive,
-                "all" => KnowledgeBaseDependentType.All,
                 _ => null,
             };
         }

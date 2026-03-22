@@ -21,6 +21,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        InProgress,
+        /// <summary>
+        /// 
+        /// </summary>
         Inactive,
         /// <summary>
         /// 
@@ -29,15 +33,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Success,
-        /// <summary>
-        /// 
-        /// </summary>
         Queued,
         /// <summary>
         /// 
         /// </summary>
-        InProgress,
+        Success,
     }
 
     /// <summary>
@@ -54,11 +54,11 @@ namespace G
             {
                 DeploymentStatusState.Error => "error",
                 DeploymentStatusState.Failure => "failure",
+                DeploymentStatusState.InProgress => "in_progress",
                 DeploymentStatusState.Inactive => "inactive",
                 DeploymentStatusState.Pending => "pending",
-                DeploymentStatusState.Success => "success",
                 DeploymentStatusState.Queued => "queued",
-                DeploymentStatusState.InProgress => "in_progress",
+                DeploymentStatusState.Success => "success",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -71,11 +71,11 @@ namespace G
             {
                 "error" => DeploymentStatusState.Error,
                 "failure" => DeploymentStatusState.Failure,
+                "in_progress" => DeploymentStatusState.InProgress,
                 "inactive" => DeploymentStatusState.Inactive,
                 "pending" => DeploymentStatusState.Pending,
-                "success" => DeploymentStatusState.Success,
                 "queued" => DeploymentStatusState.Queued,
-                "in_progress" => DeploymentStatusState.InProgress,
+                "success" => DeploymentStatusState.Success,
                 _ => null,
             };
         }

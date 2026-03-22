@@ -13,8 +13,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="High")]
+        High,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="Low")]
         Low,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="Max")]
+        Max,
         /// <summary>
         /// 
         /// </summary>
@@ -23,18 +33,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="High")]
-        High,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="Ultra")]
         Ultra,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Max")]
-        Max,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                ControlnetInputStrengthType.Low => "Low",
-                ControlnetInputStrengthType.Mid => "Mid",
                 ControlnetInputStrengthType.High => "High",
-                ControlnetInputStrengthType.Ultra => "Ultra",
+                ControlnetInputStrengthType.Low => "Low",
                 ControlnetInputStrengthType.Max => "Max",
+                ControlnetInputStrengthType.Mid => "Mid",
+                ControlnetInputStrengthType.Ultra => "Ultra",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "Low" => ControlnetInputStrengthType.Low,
-                "Mid" => ControlnetInputStrengthType.Mid,
                 "High" => ControlnetInputStrengthType.High,
-                "Ultra" => ControlnetInputStrengthType.Ultra,
+                "Low" => ControlnetInputStrengthType.Low,
                 "Max" => ControlnetInputStrengthType.Max,
+                "Mid" => ControlnetInputStrengthType.Mid,
+                "Ultra" => ControlnetInputStrengthType.Ultra,
                 _ => null,
             };
         }

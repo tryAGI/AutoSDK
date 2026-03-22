@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookPullRequestReviewDismissedPullRequestAssigneeType2.Bot => "Bot",
-                WebhookPullRequestReviewDismissedPullRequestAssigneeType2.User => "User",
-                WebhookPullRequestReviewDismissedPullRequestAssigneeType2.Organization => "Organization",
                 WebhookPullRequestReviewDismissedPullRequestAssigneeType2.Mannequin => "Mannequin",
+                WebhookPullRequestReviewDismissedPullRequestAssigneeType2.Organization => "Organization",
+                WebhookPullRequestReviewDismissedPullRequestAssigneeType2.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestReviewDismissedPullRequestAssigneeType2.Bot,
-                "User" => WebhookPullRequestReviewDismissedPullRequestAssigneeType2.User,
-                "Organization" => WebhookPullRequestReviewDismissedPullRequestAssigneeType2.Organization,
                 "Mannequin" => WebhookPullRequestReviewDismissedPullRequestAssigneeType2.Mannequin,
+                "Organization" => WebhookPullRequestReviewDismissedPullRequestAssigneeType2.Organization,
+                "User" => WebhookPullRequestReviewDismissedPullRequestAssigneeType2.User,
                 _ => null,
             };
         }

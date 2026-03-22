@@ -24,13 +24,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="laugh")]
-        Laugh,
+        [global::System.Runtime.Serialization.EnumMember(Value="confused")]
+        Confused,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="confused")]
-        Confused,
+        [global::System.Runtime.Serialization.EnumMember(Value="eyes")]
+        Eyes,
         /// <summary>
         /// 
         /// </summary>
@@ -44,13 +44,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="rocket")]
-        Rocket,
+        [global::System.Runtime.Serialization.EnumMember(Value="laugh")]
+        Laugh,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="eyes")]
-        Eyes,
+        [global::System.Runtime.Serialization.EnumMember(Value="rocket")]
+        Rocket,
     }
 
     /// <summary>
@@ -67,12 +67,12 @@ namespace G
             {
                 ReactionContent.Plus1 => "+1",
                 ReactionContent.Minus1 => "-1",
-                ReactionContent.Laugh => "laugh",
                 ReactionContent.Confused => "confused",
+                ReactionContent.Eyes => "eyes",
                 ReactionContent.Heart => "heart",
                 ReactionContent.Hooray => "hooray",
+                ReactionContent.Laugh => "laugh",
                 ReactionContent.Rocket => "rocket",
-                ReactionContent.Eyes => "eyes",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -85,12 +85,12 @@ namespace G
             {
                 "+1" => ReactionContent.Plus1,
                 "-1" => ReactionContent.Minus1,
-                "laugh" => ReactionContent.Laugh,
                 "confused" => ReactionContent.Confused,
+                "eyes" => ReactionContent.Eyes,
                 "heart" => ReactionContent.Heart,
                 "hooray" => ReactionContent.Hooray,
+                "laugh" => ReactionContent.Laugh,
                 "rocket" => ReactionContent.Rocket,
-                "eyes" => ReactionContent.Eyes,
                 _ => null,
             };
         }

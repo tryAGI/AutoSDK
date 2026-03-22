@@ -13,17 +13,17 @@ namespace G
     public enum ChunkType
     {
         /// <summary>
-        /// text
+        /// audio
         /// </summary>
-        Text,
+        Audio,
         /// <summary>
         /// image
         /// </summary>
         Image,
         /// <summary>
-        /// audio
+        /// text
         /// </summary>
-        Audio,
+        Text,
         /// <summary>
         /// video
         /// </summary>
@@ -42,9 +42,9 @@ namespace G
         {
             return value switch
             {
-                ChunkType.Text => "CHUNK_TYPE_TEXT",
-                ChunkType.Image => "CHUNK_TYPE_IMAGE",
                 ChunkType.Audio => "CHUNK_TYPE_AUDIO",
+                ChunkType.Image => "CHUNK_TYPE_IMAGE",
+                ChunkType.Text => "CHUNK_TYPE_TEXT",
                 ChunkType.Video => "CHUNK_TYPE_VIDEO",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -56,9 +56,9 @@ namespace G
         {
             return value switch
             {
-                "CHUNK_TYPE_TEXT" => ChunkType.Text,
-                "CHUNK_TYPE_IMAGE" => ChunkType.Image,
                 "CHUNK_TYPE_AUDIO" => ChunkType.Audio,
+                "CHUNK_TYPE_IMAGE" => ChunkType.Image,
+                "CHUNK_TYPE_TEXT" => ChunkType.Text,
                 "CHUNK_TYPE_VIDEO" => ChunkType.Video,
                 _ => null,
             };

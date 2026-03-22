@@ -18,13 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="remove")]
-        Remove,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="replace")]
-        Replace,
+        [global::System.Runtime.Serialization.EnumMember(Value="copy")]
+        Copy,
         /// <summary>
         /// 
         /// </summary>
@@ -33,8 +28,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="copy")]
-        Copy,
+        [global::System.Runtime.Serialization.EnumMember(Value="remove")]
+        Remove,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="replace")]
+        Replace,
         /// <summary>
         /// 
         /// </summary>
@@ -55,10 +55,10 @@ namespace G
             return value switch
             {
                 PatchDocumentObjectOp.Add => "add",
+                PatchDocumentObjectOp.Copy => "copy",
+                PatchDocumentObjectOp.Move => "move",
                 PatchDocumentObjectOp.Remove => "remove",
                 PatchDocumentObjectOp.Replace => "replace",
-                PatchDocumentObjectOp.Move => "move",
-                PatchDocumentObjectOp.Copy => "copy",
                 PatchDocumentObjectOp.Test => "test",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -71,10 +71,10 @@ namespace G
             return value switch
             {
                 "add" => PatchDocumentObjectOp.Add,
+                "copy" => PatchDocumentObjectOp.Copy,
+                "move" => PatchDocumentObjectOp.Move,
                 "remove" => PatchDocumentObjectOp.Remove,
                 "replace" => PatchDocumentObjectOp.Replace,
-                "move" => PatchDocumentObjectOp.Move,
-                "copy" => PatchDocumentObjectOp.Copy,
                 "test" => PatchDocumentObjectOp.Test,
                 _ => null,
             };

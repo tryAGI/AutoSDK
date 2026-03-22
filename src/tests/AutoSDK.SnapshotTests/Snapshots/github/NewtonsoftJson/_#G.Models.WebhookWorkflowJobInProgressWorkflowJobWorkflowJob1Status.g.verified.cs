@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
-        Queued,
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
-        Completed,
+        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
+        Queued,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1Status.Queued => "queued",
-                WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1Status.InProgress => "in_progress",
                 WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1Status.Completed => "completed",
+                WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1Status.InProgress => "in_progress",
+                WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1Status.Queued => "queued",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "queued" => WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1Status.Queued,
-                "in_progress" => WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1Status.InProgress,
                 "completed" => WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1Status.Completed,
+                "in_progress" => WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1Status.InProgress,
+                "queued" => WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1Status.Queued,
                 _ => null,
             };
         }

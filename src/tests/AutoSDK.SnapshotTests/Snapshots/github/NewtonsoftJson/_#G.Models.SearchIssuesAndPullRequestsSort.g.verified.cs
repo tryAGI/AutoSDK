@@ -18,6 +18,16 @@ namespace G
         /// <summary>
         /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="created")]
+        Created,
+        /// <summary>
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="interactions")]
+        Interactions,
+        /// <summary>
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="reactions")]
         Reactions,
         /// <summary>
@@ -33,18 +43,13 @@ namespace G
         /// <summary>
         /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="reactions-smile")]
-        ReactionsSmile,
-        /// <summary>
-        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="reactions-thinking_face")]
-        ReactionsThinkingFace,
-        /// <summary>
-        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="reactions-heart")]
         ReactionsHeart,
+        /// <summary>
+        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="reactions-smile")]
+        ReactionsSmile,
         /// <summary>
         /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
@@ -53,13 +58,8 @@ namespace G
         /// <summary>
         /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="interactions")]
-        Interactions,
-        /// <summary>
-        /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="created")]
-        Created,
+        [global::System.Runtime.Serialization.EnumMember(Value="reactions-thinking_face")]
+        ReactionsThinkingFace,
         /// <summary>
         /// [best match](https://docs.github.com/rest/search/search#ranking-search-results)
         /// </summary>
@@ -80,15 +80,15 @@ namespace G
             return value switch
             {
                 SearchIssuesAndPullRequestsSort.Comments => "comments",
+                SearchIssuesAndPullRequestsSort.Created => "created",
+                SearchIssuesAndPullRequestsSort.Interactions => "interactions",
                 SearchIssuesAndPullRequestsSort.Reactions => "reactions",
                 SearchIssuesAndPullRequestsSort.ReactionsPlus1 => "reactions-+1",
                 SearchIssuesAndPullRequestsSort.Reactions1 => "reactions--1",
-                SearchIssuesAndPullRequestsSort.ReactionsSmile => "reactions-smile",
-                SearchIssuesAndPullRequestsSort.ReactionsThinkingFace => "reactions-thinking_face",
                 SearchIssuesAndPullRequestsSort.ReactionsHeart => "reactions-heart",
+                SearchIssuesAndPullRequestsSort.ReactionsSmile => "reactions-smile",
                 SearchIssuesAndPullRequestsSort.ReactionsTada => "reactions-tada",
-                SearchIssuesAndPullRequestsSort.Interactions => "interactions",
-                SearchIssuesAndPullRequestsSort.Created => "created",
+                SearchIssuesAndPullRequestsSort.ReactionsThinkingFace => "reactions-thinking_face",
                 SearchIssuesAndPullRequestsSort.Updated => "updated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -101,15 +101,15 @@ namespace G
             return value switch
             {
                 "comments" => SearchIssuesAndPullRequestsSort.Comments,
+                "created" => SearchIssuesAndPullRequestsSort.Created,
+                "interactions" => SearchIssuesAndPullRequestsSort.Interactions,
                 "reactions" => SearchIssuesAndPullRequestsSort.Reactions,
                 "reactions-+1" => SearchIssuesAndPullRequestsSort.ReactionsPlus1,
                 "reactions--1" => SearchIssuesAndPullRequestsSort.Reactions1,
-                "reactions-smile" => SearchIssuesAndPullRequestsSort.ReactionsSmile,
-                "reactions-thinking_face" => SearchIssuesAndPullRequestsSort.ReactionsThinkingFace,
                 "reactions-heart" => SearchIssuesAndPullRequestsSort.ReactionsHeart,
+                "reactions-smile" => SearchIssuesAndPullRequestsSort.ReactionsSmile,
                 "reactions-tada" => SearchIssuesAndPullRequestsSort.ReactionsTada,
-                "interactions" => SearchIssuesAndPullRequestsSort.Interactions,
-                "created" => SearchIssuesAndPullRequestsSort.Created,
+                "reactions-thinking_face" => SearchIssuesAndPullRequestsSort.ReactionsThinkingFace,
                 "updated" => SearchIssuesAndPullRequestsSort.Updated,
                 _ => null,
             };

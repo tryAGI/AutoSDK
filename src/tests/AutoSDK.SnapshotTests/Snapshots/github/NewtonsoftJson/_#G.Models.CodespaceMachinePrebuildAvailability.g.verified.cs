@@ -14,6 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
+        InProgress,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="none")]
         None,
         /// <summary>
@@ -21,11 +26,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ready")]
         Ready,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
-        InProgress,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
         {
             return value switch
             {
+                CodespaceMachinePrebuildAvailability.InProgress => "in_progress",
                 CodespaceMachinePrebuildAvailability.None => "none",
                 CodespaceMachinePrebuildAvailability.Ready => "ready",
-                CodespaceMachinePrebuildAvailability.InProgress => "in_progress",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
+                "in_progress" => CodespaceMachinePrebuildAvailability.InProgress,
                 "none" => CodespaceMachinePrebuildAvailability.None,
                 "ready" => CodespaceMachinePrebuildAvailability.Ready,
-                "in_progress" => CodespaceMachinePrebuildAvailability.InProgress,
                 _ => null,
             };
         }

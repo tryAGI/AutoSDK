@@ -15,13 +15,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="url")]
-        Url,
+        [global::System.Runtime.Serialization.EnumMember(Value="b64_json")]
+        B64Json,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="b64_json")]
-        B64Json,
+        [global::System.Runtime.Serialization.EnumMember(Value="url")]
+        Url,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
         {
             return value switch
             {
-                CreateImageVariationRequestResponseFormat.Url => "url",
                 CreateImageVariationRequestResponseFormat.B64Json => "b64_json",
+                CreateImageVariationRequestResponseFormat.Url => "url",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "url" => CreateImageVariationRequestResponseFormat.Url,
                 "b64_json" => CreateImageVariationRequestResponseFormat.B64Json,
+                "url" => CreateImageVariationRequestResponseFormat.Url,
                 _ => null,
             };
         }

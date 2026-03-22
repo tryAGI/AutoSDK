@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        None,
+        All,
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +28,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        All,
+        None,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.None => "none",
+                RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.All => "all",
                 RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.Critical => "critical",
                 RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.HighOrHigher => "high_or_higher",
                 RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.MediumOrHigher => "medium_or_higher",
-                RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.All => "all",
+                RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.None => "none",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "none" => RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.None,
+                "all" => RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.All,
                 "critical" => RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.Critical,
                 "high_or_higher" => RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.HighOrHigher,
                 "medium_or_higher" => RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.MediumOrHigher,
-                "all" => RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.All,
+                "none" => RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.None,
                 _ => null,
             };
         }

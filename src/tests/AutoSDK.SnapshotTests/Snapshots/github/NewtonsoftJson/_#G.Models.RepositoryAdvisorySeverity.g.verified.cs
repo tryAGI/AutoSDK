@@ -23,13 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="medium")]
-        Medium,
+        [global::System.Runtime.Serialization.EnumMember(Value="low")]
+        Low,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="low")]
-        Low,
+        [global::System.Runtime.Serialization.EnumMember(Value="medium")]
+        Medium,
     }
 
     /// <summary>
@@ -46,8 +46,8 @@ namespace G
             {
                 RepositoryAdvisorySeverity.Critical => "critical",
                 RepositoryAdvisorySeverity.High => "high",
-                RepositoryAdvisorySeverity.Medium => "medium",
                 RepositoryAdvisorySeverity.Low => "low",
+                RepositoryAdvisorySeverity.Medium => "medium",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -60,8 +60,8 @@ namespace G
             {
                 "critical" => RepositoryAdvisorySeverity.Critical,
                 "high" => RepositoryAdvisorySeverity.High,
-                "medium" => RepositoryAdvisorySeverity.Medium,
                 "low" => RepositoryAdvisorySeverity.Low,
+                "medium" => RepositoryAdvisorySeverity.Medium,
                 _ => null,
             };
         }

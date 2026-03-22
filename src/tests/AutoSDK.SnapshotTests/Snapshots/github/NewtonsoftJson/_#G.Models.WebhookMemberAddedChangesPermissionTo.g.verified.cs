@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="write")]
-        Write,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="admin")]
         Admin,
         /// <summary>
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="read")]
         Read,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="write")]
+        Write,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                WebhookMemberAddedChangesPermissionTo.Write => "write",
                 WebhookMemberAddedChangesPermissionTo.Admin => "admin",
                 WebhookMemberAddedChangesPermissionTo.Read => "read",
+                WebhookMemberAddedChangesPermissionTo.Write => "write",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "write" => WebhookMemberAddedChangesPermissionTo.Write,
                 "admin" => WebhookMemberAddedChangesPermissionTo.Admin,
                 "read" => WebhookMemberAddedChangesPermissionTo.Read,
+                "write" => WebhookMemberAddedChangesPermissionTo.Write,
                 _ => null,
             };
         }

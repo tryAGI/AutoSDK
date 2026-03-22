@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="error")]
+        Error,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="none")]
         None,
         /// <summary>
@@ -23,18 +28,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="warning")]
-        Warning,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="error")]
-        Error,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
         OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="warning")]
+        Warning,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
+                WebhookCodeScanningAlertCreatedAlertRuleSeverity.Error => "error",
                 WebhookCodeScanningAlertCreatedAlertRuleSeverity.None => "none",
                 WebhookCodeScanningAlertCreatedAlertRuleSeverity.Note => "note",
-                WebhookCodeScanningAlertCreatedAlertRuleSeverity.Warning => "warning",
-                WebhookCodeScanningAlertCreatedAlertRuleSeverity.Error => "error",
                 WebhookCodeScanningAlertCreatedAlertRuleSeverity.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
+                WebhookCodeScanningAlertCreatedAlertRuleSeverity.Warning => "warning",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
+                "error" => WebhookCodeScanningAlertCreatedAlertRuleSeverity.Error,
                 "none" => WebhookCodeScanningAlertCreatedAlertRuleSeverity.None,
                 "note" => WebhookCodeScanningAlertCreatedAlertRuleSeverity.Note,
-                "warning" => WebhookCodeScanningAlertCreatedAlertRuleSeverity.Warning,
-                "error" => WebhookCodeScanningAlertCreatedAlertRuleSeverity.Error,
                 "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookCodeScanningAlertCreatedAlertRuleSeverity.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+                "warning" => WebhookCodeScanningAlertCreatedAlertRuleSeverity.Warning,
                 _ => null,
             };
         }

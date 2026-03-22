@@ -20,11 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Laugh,
+        Confused,
         /// <summary>
         /// 
         /// </summary>
-        Confused,
+        Eyes,
         /// <summary>
         /// 
         /// </summary>
@@ -36,11 +36,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Rocket,
+        Laugh,
         /// <summary>
         /// 
         /// </summary>
-        Eyes,
+        Rocket,
     }
 
     /// <summary>
@@ -57,12 +57,12 @@ namespace G
             {
                 ReactionsListForIssueContent.Plus1 => "+1",
                 ReactionsListForIssueContent.Minus1 => "-1",
-                ReactionsListForIssueContent.Laugh => "laugh",
                 ReactionsListForIssueContent.Confused => "confused",
+                ReactionsListForIssueContent.Eyes => "eyes",
                 ReactionsListForIssueContent.Heart => "heart",
                 ReactionsListForIssueContent.Hooray => "hooray",
+                ReactionsListForIssueContent.Laugh => "laugh",
                 ReactionsListForIssueContent.Rocket => "rocket",
-                ReactionsListForIssueContent.Eyes => "eyes",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -75,12 +75,12 @@ namespace G
             {
                 "+1" => ReactionsListForIssueContent.Plus1,
                 "-1" => ReactionsListForIssueContent.Minus1,
-                "laugh" => ReactionsListForIssueContent.Laugh,
                 "confused" => ReactionsListForIssueContent.Confused,
+                "eyes" => ReactionsListForIssueContent.Eyes,
                 "heart" => ReactionsListForIssueContent.Heart,
                 "hooray" => ReactionsListForIssueContent.Hooray,
+                "laugh" => ReactionsListForIssueContent.Laugh,
                 "rocket" => ReactionsListForIssueContent.Rocket,
-                "eyes" => ReactionsListForIssueContent.Eyes,
                 _ => null,
             };
         }

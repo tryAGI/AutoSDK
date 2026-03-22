@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// user, group, or service account (under 'key').
         /// </summary>
-        User,
-        /// <summary>
-        /// user, group, or service account (under 'key').
-        /// </summary>
         Group,
         /// <summary>
         /// user, group, or service account (under 'key').
         /// </summary>
         Key,
+        /// <summary>
+        /// user, group, or service account (under 'key').
+        /// </summary>
+        User,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                ShareOptionResponseModelType.User => "user",
                 ShareOptionResponseModelType.Group => "group",
                 ShareOptionResponseModelType.Key => "key",
+                ShareOptionResponseModelType.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "user" => ShareOptionResponseModelType.User,
                 "group" => ShareOptionResponseModelType.Group,
                 "key" => ShareOptionResponseModelType.Key,
+                "user" => ShareOptionResponseModelType.User,
                 _ => null,
             };
         }

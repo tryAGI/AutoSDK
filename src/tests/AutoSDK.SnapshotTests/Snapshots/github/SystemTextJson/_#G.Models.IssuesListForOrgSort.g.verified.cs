@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Comments,
+        /// <summary>
+        /// 
+        /// </summary>
         Created,
         /// <summary>
         /// 
         /// </summary>
         Updated,
-        /// <summary>
-        /// 
-        /// </summary>
-        Comments,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
+                IssuesListForOrgSort.Comments => "comments",
                 IssuesListForOrgSort.Created => "created",
                 IssuesListForOrgSort.Updated => "updated",
-                IssuesListForOrgSort.Comments => "comments",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
+                "comments" => IssuesListForOrgSort.Comments,
                 "created" => IssuesListForOrgSort.Created,
                 "updated" => IssuesListForOrgSort.Updated,
-                "comments" => IssuesListForOrgSort.Comments,
                 _ => null,
             };
         }

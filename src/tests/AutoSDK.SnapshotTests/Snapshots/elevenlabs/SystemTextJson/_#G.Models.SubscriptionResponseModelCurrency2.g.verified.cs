@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Usd,
-        /// <summary>
-        /// 
-        /// </summary>
         Eur,
         /// <summary>
         /// 
         /// </summary>
         Inr,
+        /// <summary>
+        /// 
+        /// </summary>
+        Usd,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                SubscriptionResponseModelCurrency2.Usd => "usd",
                 SubscriptionResponseModelCurrency2.Eur => "eur",
                 SubscriptionResponseModelCurrency2.Inr => "inr",
+                SubscriptionResponseModelCurrency2.Usd => "usd",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "usd" => SubscriptionResponseModelCurrency2.Usd,
                 "eur" => SubscriptionResponseModelCurrency2.Eur,
                 "inr" => SubscriptionResponseModelCurrency2.Inr,
+                "usd" => SubscriptionResponseModelCurrency2.Usd,
                 _ => null,
             };
         }

@@ -13,13 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="seconds")]
-        Seconds,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="minutes")]
-        Minutes,
+        [global::System.Runtime.Serialization.EnumMember(Value="days")]
+        Days,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="days")]
-        Days,
+        [global::System.Runtime.Serialization.EnumMember(Value="minutes")]
+        Minutes,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="seconds")]
+        Seconds,
         /// <summary>
         /// 
         /// </summary>
@@ -49,10 +49,10 @@ namespace G
         {
             return value switch
             {
-                DurationUnit.Seconds => "seconds",
-                DurationUnit.Minutes => "minutes",
-                DurationUnit.Hours => "hours",
                 DurationUnit.Days => "days",
+                DurationUnit.Hours => "hours",
+                DurationUnit.Minutes => "minutes",
+                DurationUnit.Seconds => "seconds",
                 DurationUnit.Weeks => "weeks",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -64,10 +64,10 @@ namespace G
         {
             return value switch
             {
-                "seconds" => DurationUnit.Seconds,
-                "minutes" => DurationUnit.Minutes,
-                "hours" => DurationUnit.Hours,
                 "days" => DurationUnit.Days,
+                "hours" => DurationUnit.Hours,
+                "minutes" => DurationUnit.Minutes,
+                "seconds" => DurationUnit.Seconds,
                 "weeks" => DurationUnit.Weeks,
                 _ => null,
             };

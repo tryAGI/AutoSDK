@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="SUCCESS")]
-        Success,
+        [global::System.Runtime.Serialization.EnumMember(Value="FAILED")]
+        Failed,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="FAILED")]
-        Failed,
+        [global::System.Runtime.Serialization.EnumMember(Value="SUCCESS")]
+        Success,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                ObjectsGetResponseVariant3ResultStatus.Success => "SUCCESS",
-                ObjectsGetResponseVariant3ResultStatus.Pending => "PENDING",
                 ObjectsGetResponseVariant3ResultStatus.Failed => "FAILED",
+                ObjectsGetResponseVariant3ResultStatus.Pending => "PENDING",
+                ObjectsGetResponseVariant3ResultStatus.Success => "SUCCESS",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "SUCCESS" => ObjectsGetResponseVariant3ResultStatus.Success,
-                "PENDING" => ObjectsGetResponseVariant3ResultStatus.Pending,
                 "FAILED" => ObjectsGetResponseVariant3ResultStatus.Failed,
+                "PENDING" => ObjectsGetResponseVariant3ResultStatus.Pending,
+                "SUCCESS" => ObjectsGetResponseVariant3ResultStatus.Success,
                 _ => null,
             };
         }

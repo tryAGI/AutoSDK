@@ -12,19 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Tool,
-        /// <summary>
-        /// 
-        /// </summary>
         Chain,
-        /// <summary>
-        /// 
-        /// </summary>
-        Llm,
-        /// <summary>
-        /// 
-        /// </summary>
-        Retriever,
         /// <summary>
         /// 
         /// </summary>
@@ -32,11 +20,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Prompt,
+        Llm,
         /// <summary>
         /// 
         /// </summary>
         Parser,
+        /// <summary>
+        /// 
+        /// </summary>
+        Prompt,
+        /// <summary>
+        /// 
+        /// </summary>
+        Retriever,
+        /// <summary>
+        /// 
+        /// </summary>
+        Tool,
     }
 
     /// <summary>
@@ -51,13 +51,13 @@ namespace G
         {
             return value switch
             {
-                RunTypeEnum.Tool => "tool",
                 RunTypeEnum.Chain => "chain",
-                RunTypeEnum.Llm => "llm",
-                RunTypeEnum.Retriever => "retriever",
                 RunTypeEnum.Embedding => "embedding",
-                RunTypeEnum.Prompt => "prompt",
+                RunTypeEnum.Llm => "llm",
                 RunTypeEnum.Parser => "parser",
+                RunTypeEnum.Prompt => "prompt",
+                RunTypeEnum.Retriever => "retriever",
+                RunTypeEnum.Tool => "tool",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -68,13 +68,13 @@ namespace G
         {
             return value switch
             {
-                "tool" => RunTypeEnum.Tool,
                 "chain" => RunTypeEnum.Chain,
-                "llm" => RunTypeEnum.Llm,
-                "retriever" => RunTypeEnum.Retriever,
                 "embedding" => RunTypeEnum.Embedding,
-                "prompt" => RunTypeEnum.Prompt,
+                "llm" => RunTypeEnum.Llm,
                 "parser" => RunTypeEnum.Parser,
+                "prompt" => RunTypeEnum.Prompt,
+                "retriever" => RunTypeEnum.Retriever,
+                "tool" => RunTypeEnum.Tool,
                 _ => null,
             };
         }

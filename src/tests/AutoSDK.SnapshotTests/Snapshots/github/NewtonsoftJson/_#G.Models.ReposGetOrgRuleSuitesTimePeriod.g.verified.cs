@@ -13,23 +13,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="hour")]
-        Hour,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="day")]
         Day,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="week")]
-        Week,
+        [global::System.Runtime.Serialization.EnumMember(Value="hour")]
+        Hour,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="month")]
         Month,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="week")]
+        Week,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                ReposGetOrgRuleSuitesTimePeriod.Hour => "hour",
                 ReposGetOrgRuleSuitesTimePeriod.Day => "day",
-                ReposGetOrgRuleSuitesTimePeriod.Week => "week",
+                ReposGetOrgRuleSuitesTimePeriod.Hour => "hour",
                 ReposGetOrgRuleSuitesTimePeriod.Month => "month",
+                ReposGetOrgRuleSuitesTimePeriod.Week => "week",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "hour" => ReposGetOrgRuleSuitesTimePeriod.Hour,
                 "day" => ReposGetOrgRuleSuitesTimePeriod.Day,
-                "week" => ReposGetOrgRuleSuitesTimePeriod.Week,
+                "hour" => ReposGetOrgRuleSuitesTimePeriod.Hour,
                 "month" => ReposGetOrgRuleSuitesTimePeriod.Month,
+                "week" => ReposGetOrgRuleSuitesTimePeriod.Week,
                 _ => null,
             };
         }

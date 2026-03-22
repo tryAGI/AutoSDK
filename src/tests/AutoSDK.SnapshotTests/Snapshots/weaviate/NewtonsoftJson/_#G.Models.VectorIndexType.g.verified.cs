@@ -14,13 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="hnsw")]
-        Hnsw,
+        [global::System.Runtime.Serialization.EnumMember(Value="flat")]
+        Flat,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="flat")]
-        Flat,
+        [global::System.Runtime.Serialization.EnumMember(Value="hnsw")]
+        Hnsw,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                VectorIndexType.Hnsw => "hnsw",
                 VectorIndexType.Flat => "flat",
+                VectorIndexType.Hnsw => "hnsw",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,8 +47,8 @@ namespace G
         {
             return value switch
             {
-                "hnsw" => VectorIndexType.Hnsw,
                 "flat" => VectorIndexType.Flat,
+                "hnsw" => VectorIndexType.Hnsw,
                 _ => null,
             };
         }

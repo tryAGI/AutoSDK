@@ -33,13 +33,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="javascript-typescript")]
-        JavascriptTypescript,
+        [global::System.Runtime.Serialization.EnumMember(Value="javascript")]
+        Javascript,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="javascript")]
-        Javascript,
+        [global::System.Runtime.Serialization.EnumMember(Value="javascript-typescript")]
+        JavascriptTypescript,
         /// <summary>
         /// 
         /// </summary>
@@ -53,13 +53,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="typescript")]
-        Typescript,
+        [global::System.Runtime.Serialization.EnumMember(Value="swift")]
+        Swift,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="swift")]
-        Swift,
+        [global::System.Runtime.Serialization.EnumMember(Value="typescript")]
+        Typescript,
     }
 
     /// <summary>
@@ -78,12 +78,12 @@ namespace G
                 CodeScanningDefaultSetupLanguage.Csharp => "csharp",
                 CodeScanningDefaultSetupLanguage.Go => "go",
                 CodeScanningDefaultSetupLanguage.JavaKotlin => "java-kotlin",
-                CodeScanningDefaultSetupLanguage.JavascriptTypescript => "javascript-typescript",
                 CodeScanningDefaultSetupLanguage.Javascript => "javascript",
+                CodeScanningDefaultSetupLanguage.JavascriptTypescript => "javascript-typescript",
                 CodeScanningDefaultSetupLanguage.Python => "python",
                 CodeScanningDefaultSetupLanguage.Ruby => "ruby",
-                CodeScanningDefaultSetupLanguage.Typescript => "typescript",
                 CodeScanningDefaultSetupLanguage.Swift => "swift",
+                CodeScanningDefaultSetupLanguage.Typescript => "typescript",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -98,12 +98,12 @@ namespace G
                 "csharp" => CodeScanningDefaultSetupLanguage.Csharp,
                 "go" => CodeScanningDefaultSetupLanguage.Go,
                 "java-kotlin" => CodeScanningDefaultSetupLanguage.JavaKotlin,
-                "javascript-typescript" => CodeScanningDefaultSetupLanguage.JavascriptTypescript,
                 "javascript" => CodeScanningDefaultSetupLanguage.Javascript,
+                "javascript-typescript" => CodeScanningDefaultSetupLanguage.JavascriptTypescript,
                 "python" => CodeScanningDefaultSetupLanguage.Python,
                 "ruby" => CodeScanningDefaultSetupLanguage.Ruby,
-                "typescript" => CodeScanningDefaultSetupLanguage.Typescript,
                 "swift" => CodeScanningDefaultSetupLanguage.Swift,
+                "typescript" => CodeScanningDefaultSetupLanguage.Typescript,
                 _ => null,
             };
         }

@@ -12,11 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Unknown,
-        /// <summary>
-        /// 
-        /// </summary>
-        Processing,
+        Complete,
         /// <summary>
         /// 
         /// </summary>
@@ -24,11 +20,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Complete,
+        Processing,
         /// <summary>
         /// 
         /// </summary>
         Queued,
+        /// <summary>
+        /// 
+        /// </summary>
+        Unknown,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                UpdateClusterJobRequestStatus.Unknown => "unknown",
-                UpdateClusterJobRequestStatus.Processing => "processing",
-                UpdateClusterJobRequestStatus.Failed => "failed",
                 UpdateClusterJobRequestStatus.Complete => "complete",
+                UpdateClusterJobRequestStatus.Failed => "failed",
+                UpdateClusterJobRequestStatus.Processing => "processing",
                 UpdateClusterJobRequestStatus.Queued => "queued",
+                UpdateClusterJobRequestStatus.Unknown => "unknown",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "unknown" => UpdateClusterJobRequestStatus.Unknown,
-                "processing" => UpdateClusterJobRequestStatus.Processing,
-                "failed" => UpdateClusterJobRequestStatus.Failed,
                 "complete" => UpdateClusterJobRequestStatus.Complete,
+                "failed" => UpdateClusterJobRequestStatus.Failed,
+                "processing" => UpdateClusterJobRequestStatus.Processing,
                 "queued" => UpdateClusterJobRequestStatus.Queued,
+                "unknown" => UpdateClusterJobRequestStatus.Unknown,
                 _ => null,
             };
         }

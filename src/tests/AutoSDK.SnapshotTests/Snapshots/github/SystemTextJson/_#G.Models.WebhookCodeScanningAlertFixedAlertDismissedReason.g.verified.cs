@@ -16,7 +16,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        WontFix,
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        WontFix,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
             return value switch
             {
                 WebhookCodeScanningAlertFixedAlertDismissedReason.FalsePositive => "false positive",
-                WebhookCodeScanningAlertFixedAlertDismissedReason.WontFix => "won't fix",
-                WebhookCodeScanningAlertFixedAlertDismissedReason.UsedInTests => "used in tests",
                 WebhookCodeScanningAlertFixedAlertDismissedReason.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
+                WebhookCodeScanningAlertFixedAlertDismissedReason.UsedInTests => "used in tests",
+                WebhookCodeScanningAlertFixedAlertDismissedReason.WontFix => "won't fix",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace G
             return value switch
             {
                 "false positive" => WebhookCodeScanningAlertFixedAlertDismissedReason.FalsePositive,
-                "won't fix" => WebhookCodeScanningAlertFixedAlertDismissedReason.WontFix,
-                "used in tests" => WebhookCodeScanningAlertFixedAlertDismissedReason.UsedInTests,
                 "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => WebhookCodeScanningAlertFixedAlertDismissedReason.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+                "used in tests" => WebhookCodeScanningAlertFixedAlertDismissedReason.UsedInTests,
+                "won't fix" => WebhookCodeScanningAlertFixedAlertDismissedReason.WontFix,
                 _ => null,
             };
         }

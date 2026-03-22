@@ -12,11 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Windows,
-        /// <summary>
-        /// 
-        /// </summary>
-        Mac,
+        Browser,
         /// <summary>
         /// 
         /// </summary>
@@ -24,11 +20,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Mac,
+        /// <summary>
+        /// 
+        /// </summary>
         Ubuntu,
         /// <summary>
         /// 
         /// </summary>
-        Browser,
+        Windows,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                ComputerUsePreviewToolEnvironment.Windows => "windows",
-                ComputerUsePreviewToolEnvironment.Mac => "mac",
-                ComputerUsePreviewToolEnvironment.Linux => "linux",
-                ComputerUsePreviewToolEnvironment.Ubuntu => "ubuntu",
                 ComputerUsePreviewToolEnvironment.Browser => "browser",
+                ComputerUsePreviewToolEnvironment.Linux => "linux",
+                ComputerUsePreviewToolEnvironment.Mac => "mac",
+                ComputerUsePreviewToolEnvironment.Ubuntu => "ubuntu",
+                ComputerUsePreviewToolEnvironment.Windows => "windows",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "windows" => ComputerUsePreviewToolEnvironment.Windows,
-                "mac" => ComputerUsePreviewToolEnvironment.Mac,
-                "linux" => ComputerUsePreviewToolEnvironment.Linux,
-                "ubuntu" => ComputerUsePreviewToolEnvironment.Ubuntu,
                 "browser" => ComputerUsePreviewToolEnvironment.Browser,
+                "linux" => ComputerUsePreviewToolEnvironment.Linux,
+                "mac" => ComputerUsePreviewToolEnvironment.Mac,
+                "ubuntu" => ComputerUsePreviewToolEnvironment.Ubuntu,
+                "windows" => ComputerUsePreviewToolEnvironment.Windows,
                 _ => null,
             };
         }

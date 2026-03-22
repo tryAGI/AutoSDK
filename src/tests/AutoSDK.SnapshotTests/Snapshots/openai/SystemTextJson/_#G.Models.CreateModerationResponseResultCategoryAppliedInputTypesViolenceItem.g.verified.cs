@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Text,
+        Image,
         /// <summary>
         /// 
         /// </summary>
-        Image,
+        Text,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                CreateModerationResponseResultCategoryAppliedInputTypesViolenceItem.Text => "text",
                 CreateModerationResponseResultCategoryAppliedInputTypesViolenceItem.Image => "image",
+                CreateModerationResponseResultCategoryAppliedInputTypesViolenceItem.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "text" => CreateModerationResponseResultCategoryAppliedInputTypesViolenceItem.Text,
                 "image" => CreateModerationResponseResultCategoryAppliedInputTypesViolenceItem.Image,
+                "text" => CreateModerationResponseResultCategoryAppliedInputTypesViolenceItem.Text,
                 _ => null,
             };
         }

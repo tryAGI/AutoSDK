@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="huggingface")]
-        Huggingface,
+        [global::System.Runtime.Serialization.EnumMember(Value="cnt")]
+        Cnt,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cnt")]
-        Cnt,
+        [global::System.Runtime.Serialization.EnumMember(Value="huggingface")]
+        Huggingface,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                ModelProvider.Huggingface => "huggingface",
-                ModelProvider.Deepinfra => "deepinfra",
                 ModelProvider.Cnt => "cnt",
+                ModelProvider.Deepinfra => "deepinfra",
+                ModelProvider.Huggingface => "huggingface",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "huggingface" => ModelProvider.Huggingface,
-                "deepinfra" => ModelProvider.Deepinfra,
                 "cnt" => ModelProvider.Cnt,
+                "deepinfra" => ModelProvider.Deepinfra,
+                "huggingface" => ModelProvider.Huggingface,
                 _ => null,
             };
         }

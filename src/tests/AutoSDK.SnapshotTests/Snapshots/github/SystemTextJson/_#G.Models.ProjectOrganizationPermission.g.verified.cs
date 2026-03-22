@@ -12,19 +12,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Read,
-        /// <summary>
-        /// 
-        /// </summary>
-        Write,
-        /// <summary>
-        /// 
-        /// </summary>
         Admin,
         /// <summary>
         /// 
         /// </summary>
         None,
+        /// <summary>
+        /// 
+        /// </summary>
+        Read,
+        /// <summary>
+        /// 
+        /// </summary>
+        Write,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                ProjectOrganizationPermission.Read => "read",
-                ProjectOrganizationPermission.Write => "write",
                 ProjectOrganizationPermission.Admin => "admin",
                 ProjectOrganizationPermission.None => "none",
+                ProjectOrganizationPermission.Read => "read",
+                ProjectOrganizationPermission.Write => "write",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "read" => ProjectOrganizationPermission.Read,
-                "write" => ProjectOrganizationPermission.Write,
                 "admin" => ProjectOrganizationPermission.Admin,
                 "none" => ProjectOrganizationPermission.None,
+                "read" => ProjectOrganizationPermission.Read,
+                "write" => ProjectOrganizationPermission.Write,
                 _ => null,
             };
         }

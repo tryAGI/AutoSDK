@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="system_prompt")]
-        SystemPrompt,
+        [global::System.Runtime.Serialization.EnumMember(Value="elevenlabs")]
+        Elevenlabs,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="elevenlabs")]
-        Elevenlabs,
+        [global::System.Runtime.Serialization.EnumMember(Value="system_prompt")]
+        SystemPrompt,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                TextNormalisationType.SystemPrompt => "system_prompt",
                 TextNormalisationType.Elevenlabs => "elevenlabs",
+                TextNormalisationType.SystemPrompt => "system_prompt",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "system_prompt" => TextNormalisationType.SystemPrompt,
                 "elevenlabs" => TextNormalisationType.Elevenlabs,
+                "system_prompt" => TextNormalisationType.SystemPrompt,
                 _ => null,
             };
         }

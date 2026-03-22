@@ -20,11 +20,11 @@ namespace G
         /// <summary>
         /// - `assistants`: Used in the Assistants API - `batch`: Used in the Batch API - `fine-tune`: Used for fine-tuning - `vision`: Images used for vision fine-tuning - `user_data`: Flexible file type for any purpose - `evals`: Used for eval data sets
         /// </summary>
-        FineTune,
+        Evals,
         /// <summary>
         /// - `assistants`: Used in the Assistants API - `batch`: Used in the Batch API - `fine-tune`: Used for fine-tuning - `vision`: Images used for vision fine-tuning - `user_data`: Flexible file type for any purpose - `evals`: Used for eval data sets
         /// </summary>
-        Vision,
+        FineTune,
         /// <summary>
         /// - `assistants`: Used in the Assistants API - `batch`: Used in the Batch API - `fine-tune`: Used for fine-tuning - `vision`: Images used for vision fine-tuning - `user_data`: Flexible file type for any purpose - `evals`: Used for eval data sets
         /// </summary>
@@ -32,7 +32,7 @@ namespace G
         /// <summary>
         /// - `assistants`: Used in the Assistants API - `batch`: Used in the Batch API - `fine-tune`: Used for fine-tuning - `vision`: Images used for vision fine-tuning - `user_data`: Flexible file type for any purpose - `evals`: Used for eval data sets
         /// </summary>
-        Evals,
+        Vision,
     }
 
     /// <summary>
@@ -49,10 +49,10 @@ namespace G
             {
                 CreateFileRequestPurpose.Assistants => "assistants",
                 CreateFileRequestPurpose.Batch => "batch",
-                CreateFileRequestPurpose.FineTune => "fine-tune",
-                CreateFileRequestPurpose.Vision => "vision",
-                CreateFileRequestPurpose.UserData => "user_data",
                 CreateFileRequestPurpose.Evals => "evals",
+                CreateFileRequestPurpose.FineTune => "fine-tune",
+                CreateFileRequestPurpose.UserData => "user_data",
+                CreateFileRequestPurpose.Vision => "vision",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -65,10 +65,10 @@ namespace G
             {
                 "assistants" => CreateFileRequestPurpose.Assistants,
                 "batch" => CreateFileRequestPurpose.Batch,
-                "fine-tune" => CreateFileRequestPurpose.FineTune,
-                "vision" => CreateFileRequestPurpose.Vision,
-                "user_data" => CreateFileRequestPurpose.UserData,
                 "evals" => CreateFileRequestPurpose.Evals,
+                "fine-tune" => CreateFileRequestPurpose.FineTune,
+                "user_data" => CreateFileRequestPurpose.UserData,
+                "vision" => CreateFileRequestPurpose.Vision,
                 _ => null,
             };
         }

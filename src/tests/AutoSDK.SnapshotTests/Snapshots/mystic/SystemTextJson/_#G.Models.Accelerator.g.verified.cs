@@ -12,31 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        NvidiaT4,
-        /// <summary>
-        /// 
-        /// </summary>
-        NvidiaA100,
-        /// <summary>
-        /// 
-        /// </summary>
-        NvidiaA10080gb,
-        /// <summary>
-        /// 
-        /// </summary>
-        NvidiaH100,
-        /// <summary>
-        /// 
-        /// </summary>
-        NvidiaL4,
-        /// <summary>
-        /// 
-        /// </summary>
         Cpu,
         /// <summary>
         /// 
         /// </summary>
-        NvidiaA1005gb,
+        NvidiaA10,
+        /// <summary>
+        /// 
+        /// </summary>
+        NvidiaA100,
         /// <summary>
         /// 
         /// </summary>
@@ -45,6 +29,14 @@ namespace G
         /// 
         /// </summary>
         NvidiaA10020gb,
+        /// <summary>
+        /// 
+        /// </summary>
+        NvidiaA1005gb,
+        /// <summary>
+        /// 
+        /// </summary>
+        NvidiaA10080gb,
         /// <summary>
         /// 
         /// </summary>
@@ -60,11 +52,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        NvidiaA10,
+        NvidiaA1012gb,
         /// <summary>
         /// 
         /// </summary>
-        NvidiaA1012gb,
+        NvidiaA104gb,
         /// <summary>
         /// 
         /// </summary>
@@ -72,7 +64,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        NvidiaA104gb,
+        NvidiaH100,
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +81,14 @@ namespace G
         /// 
         /// </summary>
         NvidiaH10080gb,
+        /// <summary>
+        /// 
+        /// </summary>
+        NvidiaL4,
+        /// <summary>
+        /// 
+        /// </summary>
+        NvidiaT4,
     }
 
     /// <summary>
@@ -103,26 +103,26 @@ namespace G
         {
             return value switch
             {
-                Accelerator.NvidiaT4 => "nvidia_t4",
-                Accelerator.NvidiaA100 => "nvidia_a100",
-                Accelerator.NvidiaA10080gb => "nvidia_a100_80gb",
-                Accelerator.NvidiaH100 => "nvidia_h100",
-                Accelerator.NvidiaL4 => "nvidia_l4",
                 Accelerator.Cpu => "cpu",
-                Accelerator.NvidiaA1005gb => "nvidia_a100_5gb",
+                Accelerator.NvidiaA10 => "nvidia_a10",
+                Accelerator.NvidiaA100 => "nvidia_a100",
                 Accelerator.NvidiaA10010gb => "nvidia_a100_10gb",
                 Accelerator.NvidiaA10020gb => "nvidia_a100_20gb",
+                Accelerator.NvidiaA1005gb => "nvidia_a100_5gb",
+                Accelerator.NvidiaA10080gb => "nvidia_a100_80gb",
                 Accelerator.NvidiaA10080gb10gb => "nvidia_a100_80gb_10gb",
                 Accelerator.NvidiaA10080gb20gb => "nvidia_a100_80gb_20gb",
                 Accelerator.NvidiaA10080gb40gb => "nvidia_a100_80gb_40gb",
-                Accelerator.NvidiaA10 => "nvidia_a10",
                 Accelerator.NvidiaA1012gb => "nvidia_a10_12gb",
-                Accelerator.NvidiaA108gb => "nvidia_a10_8gb",
                 Accelerator.NvidiaA104gb => "nvidia_a10_4gb",
+                Accelerator.NvidiaA108gb => "nvidia_a10_8gb",
+                Accelerator.NvidiaH100 => "nvidia_h100",
                 Accelerator.NvidiaH10010gb => "nvidia_h100_10gb",
                 Accelerator.NvidiaH10020gb => "nvidia_h100_20gb",
                 Accelerator.NvidiaH10040gb => "nvidia_h100_40gb",
                 Accelerator.NvidiaH10080gb => "nvidia_h100_80gb",
+                Accelerator.NvidiaL4 => "nvidia_l4",
+                Accelerator.NvidiaT4 => "nvidia_t4",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -133,26 +133,26 @@ namespace G
         {
             return value switch
             {
-                "nvidia_t4" => Accelerator.NvidiaT4,
-                "nvidia_a100" => Accelerator.NvidiaA100,
-                "nvidia_a100_80gb" => Accelerator.NvidiaA10080gb,
-                "nvidia_h100" => Accelerator.NvidiaH100,
-                "nvidia_l4" => Accelerator.NvidiaL4,
                 "cpu" => Accelerator.Cpu,
-                "nvidia_a100_5gb" => Accelerator.NvidiaA1005gb,
+                "nvidia_a10" => Accelerator.NvidiaA10,
+                "nvidia_a100" => Accelerator.NvidiaA100,
                 "nvidia_a100_10gb" => Accelerator.NvidiaA10010gb,
                 "nvidia_a100_20gb" => Accelerator.NvidiaA10020gb,
+                "nvidia_a100_5gb" => Accelerator.NvidiaA1005gb,
+                "nvidia_a100_80gb" => Accelerator.NvidiaA10080gb,
                 "nvidia_a100_80gb_10gb" => Accelerator.NvidiaA10080gb10gb,
                 "nvidia_a100_80gb_20gb" => Accelerator.NvidiaA10080gb20gb,
                 "nvidia_a100_80gb_40gb" => Accelerator.NvidiaA10080gb40gb,
-                "nvidia_a10" => Accelerator.NvidiaA10,
                 "nvidia_a10_12gb" => Accelerator.NvidiaA1012gb,
-                "nvidia_a10_8gb" => Accelerator.NvidiaA108gb,
                 "nvidia_a10_4gb" => Accelerator.NvidiaA104gb,
+                "nvidia_a10_8gb" => Accelerator.NvidiaA108gb,
+                "nvidia_h100" => Accelerator.NvidiaH100,
                 "nvidia_h100_10gb" => Accelerator.NvidiaH10010gb,
                 "nvidia_h100_20gb" => Accelerator.NvidiaH10020gb,
                 "nvidia_h100_40gb" => Accelerator.NvidiaH10040gb,
                 "nvidia_h100_80gb" => Accelerator.NvidiaH10080gb,
+                "nvidia_l4" => Accelerator.NvidiaL4,
+                "nvidia_t4" => Accelerator.NvidiaT4,
                 _ => null,
             };
         }

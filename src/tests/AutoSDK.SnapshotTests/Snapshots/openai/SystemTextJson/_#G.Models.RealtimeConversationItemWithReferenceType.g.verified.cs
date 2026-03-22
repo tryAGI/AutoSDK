@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Message,
-        /// <summary>
-        /// 
-        /// </summary>
         FunctionCall,
         /// <summary>
         /// 
         /// </summary>
         FunctionCallOutput,
+        /// <summary>
+        /// 
+        /// </summary>
+        Message,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                RealtimeConversationItemWithReferenceType.Message => "message",
                 RealtimeConversationItemWithReferenceType.FunctionCall => "function_call",
                 RealtimeConversationItemWithReferenceType.FunctionCallOutput => "function_call_output",
+                RealtimeConversationItemWithReferenceType.Message => "message",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "message" => RealtimeConversationItemWithReferenceType.Message,
                 "function_call" => RealtimeConversationItemWithReferenceType.FunctionCall,
                 "function_call_output" => RealtimeConversationItemWithReferenceType.FunctionCallOutput,
+                "message" => RealtimeConversationItemWithReferenceType.Message,
                 _ => null,
             };
         }

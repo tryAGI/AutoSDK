@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="server_error")]
-        ServerError,
+        [global::System.Runtime.Serialization.EnumMember(Value="invalid_prompt")]
+        InvalidPrompt,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="invalid_prompt")]
-        InvalidPrompt,
+        [global::System.Runtime.Serialization.EnumMember(Value="server_error")]
+        ServerError,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                RunObjectLastErrorCode.ServerError => "server_error",
-                RunObjectLastErrorCode.RateLimitExceeded => "rate_limit_exceeded",
                 RunObjectLastErrorCode.InvalidPrompt => "invalid_prompt",
+                RunObjectLastErrorCode.RateLimitExceeded => "rate_limit_exceeded",
+                RunObjectLastErrorCode.ServerError => "server_error",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "server_error" => RunObjectLastErrorCode.ServerError,
-                "rate_limit_exceeded" => RunObjectLastErrorCode.RateLimitExceeded,
                 "invalid_prompt" => RunObjectLastErrorCode.InvalidPrompt,
+                "rate_limit_exceeded" => RunObjectLastErrorCode.RateLimitExceeded,
+                "server_error" => RunObjectLastErrorCode.ServerError,
                 _ => null,
             };
         }

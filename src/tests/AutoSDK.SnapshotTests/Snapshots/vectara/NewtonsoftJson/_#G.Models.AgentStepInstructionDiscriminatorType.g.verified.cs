@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="reference")]
-        Reference,
+        [global::System.Runtime.Serialization.EnumMember(Value="inline")]
+        Inline,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="inline")]
-        Inline,
+        [global::System.Runtime.Serialization.EnumMember(Value="reference")]
+        Reference,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                AgentStepInstructionDiscriminatorType.Reference => "reference",
                 AgentStepInstructionDiscriminatorType.Inline => "inline",
+                AgentStepInstructionDiscriminatorType.Reference => "reference",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "reference" => AgentStepInstructionDiscriminatorType.Reference,
                 "inline" => AgentStepInstructionDiscriminatorType.Inline,
+                "reference" => AgentStepInstructionDiscriminatorType.Reference,
                 _ => null,
             };
         }

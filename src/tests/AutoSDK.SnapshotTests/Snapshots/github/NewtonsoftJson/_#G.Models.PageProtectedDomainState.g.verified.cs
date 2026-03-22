@@ -19,13 +19,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="verified")]
-        Verified,
+        [global::System.Runtime.Serialization.EnumMember(Value="unverified")]
+        Unverified,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="unverified")]
-        Unverified,
+        [global::System.Runtime.Serialization.EnumMember(Value="verified")]
+        Verified,
     }
 
     /// <summary>
@@ -41,8 +41,8 @@ namespace G
             return value switch
             {
                 PageProtectedDomainState.Pending => "pending",
-                PageProtectedDomainState.Verified => "verified",
                 PageProtectedDomainState.Unverified => "unverified",
+                PageProtectedDomainState.Verified => "verified",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,8 +54,8 @@ namespace G
             return value switch
             {
                 "pending" => PageProtectedDomainState.Pending,
-                "verified" => PageProtectedDomainState.Verified,
                 "unverified" => PageProtectedDomainState.Unverified,
+                "verified" => PageProtectedDomainState.Verified,
                 _ => null,
             };
         }

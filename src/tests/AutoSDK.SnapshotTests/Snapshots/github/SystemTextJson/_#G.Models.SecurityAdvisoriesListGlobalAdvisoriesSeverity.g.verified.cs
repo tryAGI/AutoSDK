@@ -12,7 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Unknown,
+        Critical,
+        /// <summary>
+        /// 
+        /// </summary>
+        High,
         /// <summary>
         /// 
         /// </summary>
@@ -24,11 +28,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        High,
-        /// <summary>
-        /// 
-        /// </summary>
-        Critical,
+        Unknown,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                SecurityAdvisoriesListGlobalAdvisoriesSeverity.Unknown => "unknown",
+                SecurityAdvisoriesListGlobalAdvisoriesSeverity.Critical => "critical",
+                SecurityAdvisoriesListGlobalAdvisoriesSeverity.High => "high",
                 SecurityAdvisoriesListGlobalAdvisoriesSeverity.Low => "low",
                 SecurityAdvisoriesListGlobalAdvisoriesSeverity.Medium => "medium",
-                SecurityAdvisoriesListGlobalAdvisoriesSeverity.High => "high",
-                SecurityAdvisoriesListGlobalAdvisoriesSeverity.Critical => "critical",
+                SecurityAdvisoriesListGlobalAdvisoriesSeverity.Unknown => "unknown",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "unknown" => SecurityAdvisoriesListGlobalAdvisoriesSeverity.Unknown,
+                "critical" => SecurityAdvisoriesListGlobalAdvisoriesSeverity.Critical,
+                "high" => SecurityAdvisoriesListGlobalAdvisoriesSeverity.High,
                 "low" => SecurityAdvisoriesListGlobalAdvisoriesSeverity.Low,
                 "medium" => SecurityAdvisoriesListGlobalAdvisoriesSeverity.Medium,
-                "high" => SecurityAdvisoriesListGlobalAdvisoriesSeverity.High,
-                "critical" => SecurityAdvisoriesListGlobalAdvisoriesSeverity.Critical,
+                "unknown" => SecurityAdvisoriesListGlobalAdvisoriesSeverity.Unknown,
                 _ => null,
             };
         }

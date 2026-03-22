@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="reader")]
-        Reader,
+        [global::System.Runtime.Serialization.EnumMember(Value="owner")]
+        Owner,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="owner")]
-        Owner,
+        [global::System.Runtime.Serialization.EnumMember(Value="reader")]
+        Reader,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                InviteRequestRole.Reader => "reader",
                 InviteRequestRole.Owner => "owner",
+                InviteRequestRole.Reader => "reader",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "reader" => InviteRequestRole.Reader,
                 "owner" => InviteRequestRole.Owner,
+                "reader" => InviteRequestRole.Reader,
                 _ => null,
             };
         }

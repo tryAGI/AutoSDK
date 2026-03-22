@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="any")]
+        Any,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="auto")]
         Auto,
         /// <summary>
@@ -20,11 +25,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="none")]
         None,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="any")]
-        Any,
         /// <summary>
         /// 
         /// </summary>
@@ -44,9 +44,9 @@ namespace G
         {
             return value switch
             {
+                ToolChoiceEnum.Any => "any",
                 ToolChoiceEnum.Auto => "auto",
                 ToolChoiceEnum.None => "none",
-                ToolChoiceEnum.Any => "any",
                 ToolChoiceEnum.Required => "required",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -58,9 +58,9 @@ namespace G
         {
             return value switch
             {
+                "any" => ToolChoiceEnum.Any,
                 "auto" => ToolChoiceEnum.Auto,
                 "none" => ToolChoiceEnum.None,
-                "any" => ToolChoiceEnum.Any,
                 "required" => ToolChoiceEnum.Required,
                 _ => null,
             };

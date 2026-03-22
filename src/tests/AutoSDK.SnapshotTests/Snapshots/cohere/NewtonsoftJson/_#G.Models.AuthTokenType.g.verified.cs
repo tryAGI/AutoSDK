@@ -14,13 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="bearer")]
-        Bearer,
+        [global::System.Runtime.Serialization.EnumMember(Value="basic")]
+        Basic,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="basic")]
-        Basic,
+        [global::System.Runtime.Serialization.EnumMember(Value="bearer")]
+        Bearer,
         /// <summary>
         /// 
         /// </summary>
@@ -40,8 +40,8 @@ namespace G
         {
             return value switch
             {
-                AuthTokenType.Bearer => "bearer",
                 AuthTokenType.Basic => "basic",
+                AuthTokenType.Bearer => "bearer",
                 AuthTokenType.Noscheme => "noscheme",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -53,8 +53,8 @@ namespace G
         {
             return value switch
             {
-                "bearer" => AuthTokenType.Bearer,
                 "basic" => AuthTokenType.Basic,
+                "bearer" => AuthTokenType.Bearer,
                 "noscheme" => AuthTokenType.Noscheme,
                 _ => null,
             };

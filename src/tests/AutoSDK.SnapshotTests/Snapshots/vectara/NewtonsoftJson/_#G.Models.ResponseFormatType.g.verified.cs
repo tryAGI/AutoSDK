@@ -14,13 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="json_schema")]
-        JsonSchema,
+        [global::System.Runtime.Serialization.EnumMember(Value="json_object")]
+        JsonObject,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="json_object")]
-        JsonObject,
+        [global::System.Runtime.Serialization.EnumMember(Value="json_schema")]
+        JsonSchema,
         /// <summary>
         /// 
         /// </summary>
@@ -40,8 +40,8 @@ namespace G
         {
             return value switch
             {
-                ResponseFormatType.JsonSchema => "json_schema",
                 ResponseFormatType.JsonObject => "json_object",
+                ResponseFormatType.JsonSchema => "json_schema",
                 ResponseFormatType.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -53,8 +53,8 @@ namespace G
         {
             return value switch
             {
-                "json_schema" => ResponseFormatType.JsonSchema,
                 "json_object" => ResponseFormatType.JsonObject,
+                "json_schema" => ResponseFormatType.JsonSchema,
                 "text" => ResponseFormatType.Text,
                 _ => null,
             };

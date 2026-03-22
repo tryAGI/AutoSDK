@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
-        InProgress,
+        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -23,13 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
-        Cancelled,
+        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
+        Failed,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
-        Failed,
+        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
+        InProgress,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                VectorStoreFileObjectStatus.InProgress => "in_progress",
-                VectorStoreFileObjectStatus.Completed => "completed",
                 VectorStoreFileObjectStatus.Cancelled => "cancelled",
+                VectorStoreFileObjectStatus.Completed => "completed",
                 VectorStoreFileObjectStatus.Failed => "failed",
+                VectorStoreFileObjectStatus.InProgress => "in_progress",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "in_progress" => VectorStoreFileObjectStatus.InProgress,
-                "completed" => VectorStoreFileObjectStatus.Completed,
                 "cancelled" => VectorStoreFileObjectStatus.Cancelled,
+                "completed" => VectorStoreFileObjectStatus.Completed,
                 "failed" => VectorStoreFileObjectStatus.Failed,
+                "in_progress" => VectorStoreFileObjectStatus.InProgress,
                 _ => null,
             };
         }

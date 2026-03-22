@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="metadata")]
+        Metadata,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="name")]
         Name,
         /// <summary>
@@ -25,11 +30,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="tag")]
         Tag,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="metadata")]
-        Metadata,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
+                RunStatsGroupBySeriesResponseAttribute.Metadata => "metadata",
                 RunStatsGroupBySeriesResponseAttribute.Name => "name",
                 RunStatsGroupBySeriesResponseAttribute.RunType => "run_type",
                 RunStatsGroupBySeriesResponseAttribute.Tag => "tag",
-                RunStatsGroupBySeriesResponseAttribute.Metadata => "metadata",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
+                "metadata" => RunStatsGroupBySeriesResponseAttribute.Metadata,
                 "name" => RunStatsGroupBySeriesResponseAttribute.Name,
                 "run_type" => RunStatsGroupBySeriesResponseAttribute.RunType,
                 "tag" => RunStatsGroupBySeriesResponseAttribute.Tag,
-                "metadata" => RunStatsGroupBySeriesResponseAttribute.Metadata,
                 _ => null,
             };
         }

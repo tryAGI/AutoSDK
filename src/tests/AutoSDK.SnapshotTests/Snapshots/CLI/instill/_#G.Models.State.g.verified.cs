@@ -20,33 +20,33 @@ namespace G
     public enum State
     {
         /// <summary>
-        /// Offline is the state when the model instance number is 0.
-        /// </summary>
-        Offline,
-        /// <summary>
         /// Active is the state when a model is processing requests.
         /// </summary>
         Active,
-        /// <summary>
-        /// Idle is the state when a model is alive but not processing requests.
-        /// </summary>
-        Idle,
         /// <summary>
         /// Error is the state when the model is undeployable.
         /// </summary>
         Error,
         /// <summary>
-        /// Starting is the state when the system is provisioning the necessary
+        /// Idle is the state when a model is alive but not processing requests.
         /// </summary>
-        Starting,
+        Idle,
+        /// <summary>
+        /// Offline is the state when the model instance number is 0.
+        /// </summary>
+        Offline,
+        /// <summary>
+        /// Scaling is the transition state when the system is releasing compute resource for this model instance.
+        /// </summary>
+        ScalingDown,
         /// <summary>
         /// Scaling Up is the transition state when the system is provisioning compute resource for this model instance.
         /// </summary>
         ScalingUp,
         /// <summary>
-        /// Scaling is the transition state when the system is releasing compute resource for this model instance.
+        /// Starting is the state when the system is provisioning the necessary
         /// </summary>
-        ScalingDown,
+        Starting,
     }
 
     /// <summary>
@@ -61,13 +61,13 @@ namespace G
         {
             return value switch
             {
-                State.Offline => "STATE_OFFLINE",
                 State.Active => "STATE_ACTIVE",
-                State.Idle => "STATE_IDLE",
                 State.Error => "STATE_ERROR",
-                State.Starting => "STATE_STARTING",
-                State.ScalingUp => "STATE_SCALING_UP",
+                State.Idle => "STATE_IDLE",
+                State.Offline => "STATE_OFFLINE",
                 State.ScalingDown => "STATE_SCALING_DOWN",
+                State.ScalingUp => "STATE_SCALING_UP",
+                State.Starting => "STATE_STARTING",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -78,13 +78,13 @@ namespace G
         {
             return value switch
             {
-                "STATE_OFFLINE" => State.Offline,
                 "STATE_ACTIVE" => State.Active,
-                "STATE_IDLE" => State.Idle,
                 "STATE_ERROR" => State.Error,
-                "STATE_STARTING" => State.Starting,
-                "STATE_SCALING_UP" => State.ScalingUp,
+                "STATE_IDLE" => State.Idle,
+                "STATE_OFFLINE" => State.Offline,
                 "STATE_SCALING_DOWN" => State.ScalingDown,
+                "STATE_SCALING_UP" => State.ScalingUp,
+                "STATE_STARTING" => State.Starting,
                 _ => null,
             };
         }

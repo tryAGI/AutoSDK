@@ -12,10 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Typing,
-        /// <summary>
-        /// 
-        /// </summary>
         Elevator1,
         /// <summary>
         /// 
@@ -29,6 +25,10 @@ namespace G
         /// 
         /// </summary>
         Elevator4,
+        /// <summary>
+        /// 
+        /// </summary>
+        Typing,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                ToolCallSoundType.Typing => "typing",
                 ToolCallSoundType.Elevator1 => "elevator1",
                 ToolCallSoundType.Elevator2 => "elevator2",
                 ToolCallSoundType.Elevator3 => "elevator3",
                 ToolCallSoundType.Elevator4 => "elevator4",
+                ToolCallSoundType.Typing => "typing",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "typing" => ToolCallSoundType.Typing,
                 "elevator1" => ToolCallSoundType.Elevator1,
                 "elevator2" => ToolCallSoundType.Elevator2,
                 "elevator3" => ToolCallSoundType.Elevator3,
                 "elevator4" => ToolCallSoundType.Elevator4,
+                "typing" => ToolCallSoundType.Typing,
                 _ => null,
             };
         }

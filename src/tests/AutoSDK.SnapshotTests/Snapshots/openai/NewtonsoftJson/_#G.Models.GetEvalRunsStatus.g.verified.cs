@@ -13,13 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
-        Queued,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
-        InProgress,
+        [global::System.Runtime.Serialization.EnumMember(Value="canceled")]
+        Canceled,
         /// <summary>
         /// 
         /// </summary>
@@ -28,13 +23,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="canceled")]
-        Canceled,
+        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
+        Failed,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
-        Failed,
+        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
+        InProgress,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
+        Queued,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                GetEvalRunsStatus.Queued => "queued",
-                GetEvalRunsStatus.InProgress => "in_progress",
-                GetEvalRunsStatus.Completed => "completed",
                 GetEvalRunsStatus.Canceled => "canceled",
+                GetEvalRunsStatus.Completed => "completed",
                 GetEvalRunsStatus.Failed => "failed",
+                GetEvalRunsStatus.InProgress => "in_progress",
+                GetEvalRunsStatus.Queued => "queued",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "queued" => GetEvalRunsStatus.Queued,
-                "in_progress" => GetEvalRunsStatus.InProgress,
-                "completed" => GetEvalRunsStatus.Completed,
                 "canceled" => GetEvalRunsStatus.Canceled,
+                "completed" => GetEvalRunsStatus.Completed,
                 "failed" => GetEvalRunsStatus.Failed,
+                "in_progress" => GetEvalRunsStatus.InProgress,
+                "queued" => GetEvalRunsStatus.Queued,
                 _ => null,
             };
         }

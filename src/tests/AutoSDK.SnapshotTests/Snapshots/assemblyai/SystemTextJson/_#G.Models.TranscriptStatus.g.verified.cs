@@ -10,14 +10,6 @@ namespace G
     public enum TranscriptStatus
     {
         /// <summary>
-        /// The audio file is in the queue to be processed by the API.
-        /// </summary>
-        Queued,
-        /// <summary>
-        /// The audio file is being processed by the API.
-        /// </summary>
-        Processing,
-        /// <summary>
         /// The transcript job has been completed successfully.
         /// </summary>
         Completed,
@@ -25,6 +17,14 @@ namespace G
         /// An error occurred while processing the audio file.
         /// </summary>
         Error,
+        /// <summary>
+        /// The audio file is being processed by the API.
+        /// </summary>
+        Processing,
+        /// <summary>
+        /// The audio file is in the queue to be processed by the API.
+        /// </summary>
+        Queued,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                TranscriptStatus.Queued => "queued",
-                TranscriptStatus.Processing => "processing",
                 TranscriptStatus.Completed => "completed",
                 TranscriptStatus.Error => "error",
+                TranscriptStatus.Processing => "processing",
+                TranscriptStatus.Queued => "queued",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "queued" => TranscriptStatus.Queued,
-                "processing" => TranscriptStatus.Processing,
                 "completed" => TranscriptStatus.Completed,
                 "error" => TranscriptStatus.Error,
+                "processing" => TranscriptStatus.Processing,
+                "queued" => TranscriptStatus.Queued,
                 _ => null,
             };
         }

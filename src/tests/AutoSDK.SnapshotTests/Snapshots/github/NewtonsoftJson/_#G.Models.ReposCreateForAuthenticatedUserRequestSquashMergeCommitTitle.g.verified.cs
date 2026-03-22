@@ -16,13 +16,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="PR_TITLE")]
-        PrTitle,
+        [global::System.Runtime.Serialization.EnumMember(Value="COMMIT_OR_PR_TITLE")]
+        CommitOrPrTitle,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="COMMIT_OR_PR_TITLE")]
-        CommitOrPrTitle,
+        [global::System.Runtime.Serialization.EnumMember(Value="PR_TITLE")]
+        PrTitle,
     }
 
     /// <summary>
@@ -37,8 +37,8 @@ namespace G
         {
             return value switch
             {
-                ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle.PrTitle => "PR_TITLE",
                 ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle.CommitOrPrTitle => "COMMIT_OR_PR_TITLE",
+                ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle.PrTitle => "PR_TITLE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
         {
             return value switch
             {
-                "PR_TITLE" => ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle.PrTitle,
                 "COMMIT_OR_PR_TITLE" => ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle.CommitOrPrTitle,
+                "PR_TITLE" => ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle.PrTitle,
                 _ => null,
             };
         }

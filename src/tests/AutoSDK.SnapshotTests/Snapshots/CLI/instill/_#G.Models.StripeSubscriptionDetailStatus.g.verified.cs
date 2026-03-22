@@ -18,6 +18,14 @@ namespace G
     public enum StripeSubscriptionDetailStatus
     {
         /// <summary>
+        /// Active.
+        /// </summary>
+        StatusActive,
+        /// <summary>
+        /// Canceled.
+        /// </summary>
+        StatusCanceled,
+        /// <summary>
         /// Incomplete.
         /// </summary>
         StatusIncomplete,
@@ -26,29 +34,21 @@ namespace G
         /// </summary>
         StatusIncompleteExpired,
         /// <summary>
-        /// Trialing.
-        /// </summary>
-        StatusTrialing,
-        /// <summary>
-        /// Active.
-        /// </summary>
-        StatusActive,
-        /// <summary>
         /// Past due.
         /// </summary>
         StatusPastDue,
         /// <summary>
-        /// Canceled.
+        /// Paused.
         /// </summary>
-        StatusCanceled,
+        StatusPaused,
+        /// <summary>
+        /// Trialing.
+        /// </summary>
+        StatusTrialing,
         /// <summary>
         /// Unpaid.
         /// </summary>
         StatusUnpaid,
-        /// <summary>
-        /// Paused.
-        /// </summary>
-        StatusPaused,
     }
 
     /// <summary>
@@ -63,14 +63,14 @@ namespace G
         {
             return value switch
             {
+                StripeSubscriptionDetailStatus.StatusActive => "STATUS_ACTIVE",
+                StripeSubscriptionDetailStatus.StatusCanceled => "STATUS_CANCELED",
                 StripeSubscriptionDetailStatus.StatusIncomplete => "STATUS_INCOMPLETE",
                 StripeSubscriptionDetailStatus.StatusIncompleteExpired => "STATUS_INCOMPLETE_EXPIRED",
-                StripeSubscriptionDetailStatus.StatusTrialing => "STATUS_TRIALING",
-                StripeSubscriptionDetailStatus.StatusActive => "STATUS_ACTIVE",
                 StripeSubscriptionDetailStatus.StatusPastDue => "STATUS_PAST_DUE",
-                StripeSubscriptionDetailStatus.StatusCanceled => "STATUS_CANCELED",
-                StripeSubscriptionDetailStatus.StatusUnpaid => "STATUS_UNPAID",
                 StripeSubscriptionDetailStatus.StatusPaused => "STATUS_PAUSED",
+                StripeSubscriptionDetailStatus.StatusTrialing => "STATUS_TRIALING",
+                StripeSubscriptionDetailStatus.StatusUnpaid => "STATUS_UNPAID",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -81,14 +81,14 @@ namespace G
         {
             return value switch
             {
+                "STATUS_ACTIVE" => StripeSubscriptionDetailStatus.StatusActive,
+                "STATUS_CANCELED" => StripeSubscriptionDetailStatus.StatusCanceled,
                 "STATUS_INCOMPLETE" => StripeSubscriptionDetailStatus.StatusIncomplete,
                 "STATUS_INCOMPLETE_EXPIRED" => StripeSubscriptionDetailStatus.StatusIncompleteExpired,
-                "STATUS_TRIALING" => StripeSubscriptionDetailStatus.StatusTrialing,
-                "STATUS_ACTIVE" => StripeSubscriptionDetailStatus.StatusActive,
                 "STATUS_PAST_DUE" => StripeSubscriptionDetailStatus.StatusPastDue,
-                "STATUS_CANCELED" => StripeSubscriptionDetailStatus.StatusCanceled,
-                "STATUS_UNPAID" => StripeSubscriptionDetailStatus.StatusUnpaid,
                 "STATUS_PAUSED" => StripeSubscriptionDetailStatus.StatusPaused,
+                "STATUS_TRIALING" => StripeSubscriptionDetailStatus.StatusTrialing,
+                "STATUS_UNPAID" => StripeSubscriptionDetailStatus.StatusUnpaid,
                 _ => null,
             };
         }

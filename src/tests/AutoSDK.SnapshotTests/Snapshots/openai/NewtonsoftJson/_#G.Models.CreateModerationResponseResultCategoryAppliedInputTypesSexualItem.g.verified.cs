@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text")]
-        Text,
+        [global::System.Runtime.Serialization.EnumMember(Value="image")]
+        Image,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="image")]
-        Image,
+        [global::System.Runtime.Serialization.EnumMember(Value="text")]
+        Text,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                CreateModerationResponseResultCategoryAppliedInputTypesSexualItem.Text => "text",
                 CreateModerationResponseResultCategoryAppliedInputTypesSexualItem.Image => "image",
+                CreateModerationResponseResultCategoryAppliedInputTypesSexualItem.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "text" => CreateModerationResponseResultCategoryAppliedInputTypesSexualItem.Text,
                 "image" => CreateModerationResponseResultCategoryAppliedInputTypesSexualItem.Image,
+                "text" => CreateModerationResponseResultCategoryAppliedInputTypesSexualItem.Text,
                 _ => null,
             };
         }

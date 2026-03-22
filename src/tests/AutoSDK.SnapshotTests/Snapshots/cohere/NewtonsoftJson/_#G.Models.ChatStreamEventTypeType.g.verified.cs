@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="message-start")]
-        MessageStart,
+        [global::System.Runtime.Serialization.EnumMember(Value="citation-end")]
+        CitationEnd,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="content-start")]
-        ContentStart,
+        [global::System.Runtime.Serialization.EnumMember(Value="citation-start")]
+        CitationStart,
         /// <summary>
         /// 
         /// </summary>
@@ -33,8 +33,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="tool-call-start")]
-        ToolCallStart,
+        [global::System.Runtime.Serialization.EnumMember(Value="content-start")]
+        ContentStart,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="message-end")]
+        MessageEnd,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="message-start")]
+        MessageStart,
         /// <summary>
         /// 
         /// </summary>
@@ -48,23 +58,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="tool-call-start")]
+        ToolCallStart,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="tool-plan-delta")]
         ToolPlanDelta,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="citation-start")]
-        CitationStart,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="citation-end")]
-        CitationEnd,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="message-end")]
-        MessageEnd,
     }
 
     /// <summary>
@@ -79,17 +79,17 @@ namespace G
         {
             return value switch
             {
-                ChatStreamEventTypeType.MessageStart => "message-start",
-                ChatStreamEventTypeType.ContentStart => "content-start",
+                ChatStreamEventTypeType.CitationEnd => "citation-end",
+                ChatStreamEventTypeType.CitationStart => "citation-start",
                 ChatStreamEventTypeType.ContentDelta => "content-delta",
                 ChatStreamEventTypeType.ContentEnd => "content-end",
-                ChatStreamEventTypeType.ToolCallStart => "tool-call-start",
+                ChatStreamEventTypeType.ContentStart => "content-start",
+                ChatStreamEventTypeType.MessageEnd => "message-end",
+                ChatStreamEventTypeType.MessageStart => "message-start",
                 ChatStreamEventTypeType.ToolCallDelta => "tool-call-delta",
                 ChatStreamEventTypeType.ToolCallEnd => "tool-call-end",
+                ChatStreamEventTypeType.ToolCallStart => "tool-call-start",
                 ChatStreamEventTypeType.ToolPlanDelta => "tool-plan-delta",
-                ChatStreamEventTypeType.CitationStart => "citation-start",
-                ChatStreamEventTypeType.CitationEnd => "citation-end",
-                ChatStreamEventTypeType.MessageEnd => "message-end",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -100,17 +100,17 @@ namespace G
         {
             return value switch
             {
-                "message-start" => ChatStreamEventTypeType.MessageStart,
-                "content-start" => ChatStreamEventTypeType.ContentStart,
+                "citation-end" => ChatStreamEventTypeType.CitationEnd,
+                "citation-start" => ChatStreamEventTypeType.CitationStart,
                 "content-delta" => ChatStreamEventTypeType.ContentDelta,
                 "content-end" => ChatStreamEventTypeType.ContentEnd,
-                "tool-call-start" => ChatStreamEventTypeType.ToolCallStart,
+                "content-start" => ChatStreamEventTypeType.ContentStart,
+                "message-end" => ChatStreamEventTypeType.MessageEnd,
+                "message-start" => ChatStreamEventTypeType.MessageStart,
                 "tool-call-delta" => ChatStreamEventTypeType.ToolCallDelta,
                 "tool-call-end" => ChatStreamEventTypeType.ToolCallEnd,
+                "tool-call-start" => ChatStreamEventTypeType.ToolCallStart,
                 "tool-plan-delta" => ChatStreamEventTypeType.ToolPlanDelta,
-                "citation-start" => ChatStreamEventTypeType.CitationStart,
-                "citation-end" => ChatStreamEventTypeType.CitationEnd,
-                "message-end" => ChatStreamEventTypeType.MessageEnd,
                 _ => null,
             };
         }

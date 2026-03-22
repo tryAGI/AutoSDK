@@ -17,16 +17,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="none")]
-        None,
-        /// <summary>
-        /// \[1\], \[2\], etc.
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="numeric")]
-        Numeric,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="html")]
         Html,
         /// <summary>
@@ -34,6 +24,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="markdown")]
         Markdown,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="none")]
+        None,
+        /// <summary>
+        /// \[1\], \[2\], etc.
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="numeric")]
+        Numeric,
     }
 
     /// <summary>
@@ -48,10 +48,10 @@ namespace G
         {
             return value switch
             {
-                CitationParametersStyle.None => "none",
-                CitationParametersStyle.Numeric => "numeric",
                 CitationParametersStyle.Html => "html",
                 CitationParametersStyle.Markdown => "markdown",
+                CitationParametersStyle.None => "none",
+                CitationParametersStyle.Numeric => "numeric",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,10 +62,10 @@ namespace G
         {
             return value switch
             {
-                "none" => CitationParametersStyle.None,
-                "numeric" => CitationParametersStyle.Numeric,
                 "html" => CitationParametersStyle.Html,
                 "markdown" => CitationParametersStyle.Markdown,
+                "none" => CitationParametersStyle.None,
+                "numeric" => CitationParametersStyle.Numeric,
                 _ => null,
             };
         }

@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Us1,
+        Au1,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Au1,
+        Us1,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                TwilioRegionId.Us1 => "us1",
-                TwilioRegionId.Ie1 => "ie1",
                 TwilioRegionId.Au1 => "au1",
+                TwilioRegionId.Ie1 => "ie1",
+                TwilioRegionId.Us1 => "us1",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "us1" => TwilioRegionId.Us1,
-                "ie1" => TwilioRegionId.Ie1,
                 "au1" => TwilioRegionId.Au1,
+                "ie1" => TwilioRegionId.Ie1,
+                "us1" => TwilioRegionId.Us1,
                 _ => null,
             };
         }

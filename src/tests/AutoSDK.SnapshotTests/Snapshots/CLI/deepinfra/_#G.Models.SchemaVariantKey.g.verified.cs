@@ -12,11 +12,27 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        AiSdk,
+        /// <summary>
+        /// 
+        /// </summary>
+        CreateVoice,
+        /// <summary>
+        /// 
+        /// </summary>
         Default,
         /// <summary>
         /// 
         /// </summary>
-        OpenaiCompletions,
+        DeleteVoice,
+        /// <summary>
+        /// 
+        /// </summary>
+        ElevenlabsTts,
+        /// <summary>
+        /// 
+        /// </summary>
+        ListVoices,
         /// <summary>
         /// 
         /// </summary>
@@ -24,15 +40,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        OpenaiCompletions,
+        /// <summary>
+        /// 
+        /// </summary>
         OpenaiEmbeddings,
-        /// <summary>
-        /// 
-        /// </summary>
-        OpenaiSpeechToText,
-        /// <summary>
-        /// 
-        /// </summary>
-        OpenaiTts,
         /// <summary>
         /// 
         /// </summary>
@@ -44,11 +56,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ElevenlabsTts,
+        OpenaiSpeechToText,
         /// <summary>
         /// 
         /// </summary>
-        CreateVoice,
+        OpenaiTts,
         /// <summary>
         /// 
         /// </summary>
@@ -57,18 +69,6 @@ namespace G
         /// 
         /// </summary>
         UpdateVoice,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeleteVoice,
-        /// <summary>
-        /// 
-        /// </summary>
-        ListVoices,
-        /// <summary>
-        /// 
-        /// </summary>
-        AiSdk,
     }
 
     /// <summary>
@@ -83,21 +83,21 @@ namespace G
         {
             return value switch
             {
+                SchemaVariantKey.AiSdk => "ai-sdk",
+                SchemaVariantKey.CreateVoice => "create-voice",
                 SchemaVariantKey.Default => "default",
-                SchemaVariantKey.OpenaiCompletions => "openai-completions",
+                SchemaVariantKey.DeleteVoice => "delete-voice",
+                SchemaVariantKey.ElevenlabsTts => "elevenlabs-tts",
+                SchemaVariantKey.ListVoices => "list-voices",
                 SchemaVariantKey.OpenaiChatCompletions => "openai-chat-completions",
+                SchemaVariantKey.OpenaiCompletions => "openai-completions",
                 SchemaVariantKey.OpenaiEmbeddings => "openai-embeddings",
-                SchemaVariantKey.OpenaiSpeechToText => "openai-speech-to-text",
-                SchemaVariantKey.OpenaiTts => "openai-tts",
                 SchemaVariantKey.OpenaiImages => "openai-images",
                 SchemaVariantKey.OpenaiImagesVariations => "openai-images-variations",
-                SchemaVariantKey.ElevenlabsTts => "elevenlabs-tts",
-                SchemaVariantKey.CreateVoice => "create-voice",
+                SchemaVariantKey.OpenaiSpeechToText => "openai-speech-to-text",
+                SchemaVariantKey.OpenaiTts => "openai-tts",
                 SchemaVariantKey.ReadVoice => "read-voice",
                 SchemaVariantKey.UpdateVoice => "update-voice",
-                SchemaVariantKey.DeleteVoice => "delete-voice",
-                SchemaVariantKey.ListVoices => "list-voices",
-                SchemaVariantKey.AiSdk => "ai-sdk",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -108,21 +108,21 @@ namespace G
         {
             return value switch
             {
+                "ai-sdk" => SchemaVariantKey.AiSdk,
+                "create-voice" => SchemaVariantKey.CreateVoice,
                 "default" => SchemaVariantKey.Default,
-                "openai-completions" => SchemaVariantKey.OpenaiCompletions,
+                "delete-voice" => SchemaVariantKey.DeleteVoice,
+                "elevenlabs-tts" => SchemaVariantKey.ElevenlabsTts,
+                "list-voices" => SchemaVariantKey.ListVoices,
                 "openai-chat-completions" => SchemaVariantKey.OpenaiChatCompletions,
+                "openai-completions" => SchemaVariantKey.OpenaiCompletions,
                 "openai-embeddings" => SchemaVariantKey.OpenaiEmbeddings,
-                "openai-speech-to-text" => SchemaVariantKey.OpenaiSpeechToText,
-                "openai-tts" => SchemaVariantKey.OpenaiTts,
                 "openai-images" => SchemaVariantKey.OpenaiImages,
                 "openai-images-variations" => SchemaVariantKey.OpenaiImagesVariations,
-                "elevenlabs-tts" => SchemaVariantKey.ElevenlabsTts,
-                "create-voice" => SchemaVariantKey.CreateVoice,
+                "openai-speech-to-text" => SchemaVariantKey.OpenaiSpeechToText,
+                "openai-tts" => SchemaVariantKey.OpenaiTts,
                 "read-voice" => SchemaVariantKey.ReadVoice,
                 "update-voice" => SchemaVariantKey.UpdateVoice,
-                "delete-voice" => SchemaVariantKey.DeleteVoice,
-                "list-voices" => SchemaVariantKey.ListVoices,
-                "ai-sdk" => SchemaVariantKey.AiSdk,
                 _ => null,
             };
         }

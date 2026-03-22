@@ -13,23 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="mp4")]
-        Mp4,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="aac")]
         Aac,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="mp3")]
-        Mp3,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="wav")]
-        Wav,
         /// <summary>
         /// 
         /// </summary>
@@ -38,13 +23,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="clips_zip")]
+        ClipsZip,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="mp3")]
+        Mp3,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="mp4")]
+        Mp4,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="tracks_zip")]
         TracksZip,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="clips_zip")]
-        ClipsZip,
+        [global::System.Runtime.Serialization.EnumMember(Value="wav")]
+        Wav,
     }
 
     /// <summary>
@@ -59,13 +59,13 @@ namespace G
         {
             return value switch
             {
-                RenderType2.Mp4 => "mp4",
                 RenderType2.Aac => "aac",
-                RenderType2.Mp3 => "mp3",
-                RenderType2.Wav => "wav",
                 RenderType2.Aaf => "aaf",
-                RenderType2.TracksZip => "tracks_zip",
                 RenderType2.ClipsZip => "clips_zip",
+                RenderType2.Mp3 => "mp3",
+                RenderType2.Mp4 => "mp4",
+                RenderType2.TracksZip => "tracks_zip",
+                RenderType2.Wav => "wav",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -76,13 +76,13 @@ namespace G
         {
             return value switch
             {
-                "mp4" => RenderType2.Mp4,
                 "aac" => RenderType2.Aac,
-                "mp3" => RenderType2.Mp3,
-                "wav" => RenderType2.Wav,
                 "aaf" => RenderType2.Aaf,
-                "tracks_zip" => RenderType2.TracksZip,
                 "clips_zip" => RenderType2.ClipsZip,
+                "mp3" => RenderType2.Mp3,
+                "mp4" => RenderType2.Mp4,
+                "tracks_zip" => RenderType2.TracksZip,
+                "wav" => RenderType2.Wav,
                 _ => null,
             };
         }

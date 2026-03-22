@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="dubbing_e2e_v1")]
+        DubbingE2eV1,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="dubbing_v2")]
         DubbingV2,
         /// <summary>
@@ -20,11 +25,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="dubbing_v3")]
         DubbingV3,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="dubbing_e2e_v1")]
-        DubbingE2eV1,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                DubbingModel.DubbingE2eV1 => "dubbing_e2e_v1",
                 DubbingModel.DubbingV2 => "dubbing_v2",
                 DubbingModel.DubbingV3 => "dubbing_v3",
-                DubbingModel.DubbingE2eV1 => "dubbing_e2e_v1",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
+                "dubbing_e2e_v1" => DubbingModel.DubbingE2eV1,
                 "dubbing_v2" => DubbingModel.DubbingV2,
                 "dubbing_v3" => DubbingModel.DubbingV3,
-                "dubbing_e2e_v1" => DubbingModel.DubbingE2eV1,
                 _ => null,
             };
         }

@@ -12,11 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Read,
-        /// <summary>
-        /// 
-        /// </summary>
-        Write,
+        Admin,
         /// <summary>
         /// 
         /// </summary>
@@ -24,11 +20,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Read,
+        /// <summary>
+        /// 
+        /// </summary>
         Triage,
         /// <summary>
         /// 
         /// </summary>
-        Admin,
+        Write,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                ReposUpdateInvitationRequestPermissions.Read => "read",
-                ReposUpdateInvitationRequestPermissions.Write => "write",
-                ReposUpdateInvitationRequestPermissions.Maintain => "maintain",
-                ReposUpdateInvitationRequestPermissions.Triage => "triage",
                 ReposUpdateInvitationRequestPermissions.Admin => "admin",
+                ReposUpdateInvitationRequestPermissions.Maintain => "maintain",
+                ReposUpdateInvitationRequestPermissions.Read => "read",
+                ReposUpdateInvitationRequestPermissions.Triage => "triage",
+                ReposUpdateInvitationRequestPermissions.Write => "write",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "read" => ReposUpdateInvitationRequestPermissions.Read,
-                "write" => ReposUpdateInvitationRequestPermissions.Write,
-                "maintain" => ReposUpdateInvitationRequestPermissions.Maintain,
-                "triage" => ReposUpdateInvitationRequestPermissions.Triage,
                 "admin" => ReposUpdateInvitationRequestPermissions.Admin,
+                "maintain" => ReposUpdateInvitationRequestPermissions.Maintain,
+                "read" => ReposUpdateInvitationRequestPermissions.Read,
+                "triage" => ReposUpdateInvitationRequestPermissions.Triage,
+                "write" => ReposUpdateInvitationRequestPermissions.Write,
                 _ => null,
             };
         }

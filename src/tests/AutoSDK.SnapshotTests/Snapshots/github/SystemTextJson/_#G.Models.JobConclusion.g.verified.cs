@@ -13,7 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Success,
+        ActionRequired,
+        /// <summary>
+        /// 
+        /// </summary>
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -25,19 +29,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Cancelled,
-        /// <summary>
-        /// 
-        /// </summary>
         Skipped,
         /// <summary>
         /// 
         /// </summary>
-        TimedOut,
+        Success,
         /// <summary>
         /// 
         /// </summary>
-        ActionRequired,
+        TimedOut,
     }
 
     /// <summary>
@@ -52,13 +52,13 @@ namespace G
         {
             return value switch
             {
-                JobConclusion.Success => "success",
+                JobConclusion.ActionRequired => "action_required",
+                JobConclusion.Cancelled => "cancelled",
                 JobConclusion.Failure => "failure",
                 JobConclusion.Neutral => "neutral",
-                JobConclusion.Cancelled => "cancelled",
                 JobConclusion.Skipped => "skipped",
+                JobConclusion.Success => "success",
                 JobConclusion.TimedOut => "timed_out",
-                JobConclusion.ActionRequired => "action_required",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -69,13 +69,13 @@ namespace G
         {
             return value switch
             {
-                "success" => JobConclusion.Success,
+                "action_required" => JobConclusion.ActionRequired,
+                "cancelled" => JobConclusion.Cancelled,
                 "failure" => JobConclusion.Failure,
                 "neutral" => JobConclusion.Neutral,
-                "cancelled" => JobConclusion.Cancelled,
                 "skipped" => JobConclusion.Skipped,
+                "success" => JobConclusion.Success,
                 "timed_out" => JobConclusion.TimedOut,
-                "action_required" => JobConclusion.ActionRequired,
                 _ => null,
             };
         }

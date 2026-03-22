@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Thumbs,
+        Rating,
         /// <summary>
         /// 
         /// </summary>
-        Rating,
+        Thumbs,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ConversationFeedbackType.Thumbs => "thumbs",
                 ConversationFeedbackType.Rating => "rating",
+                ConversationFeedbackType.Thumbs => "thumbs",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "thumbs" => ConversationFeedbackType.Thumbs,
                 "rating" => ConversationFeedbackType.Rating,
+                "thumbs" => ConversationFeedbackType.Thumbs,
                 _ => null,
             };
         }

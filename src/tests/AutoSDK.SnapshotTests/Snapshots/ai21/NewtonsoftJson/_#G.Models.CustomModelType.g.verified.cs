@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="j2-large")]
-        J2Large,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="j2-grande")]
         J2Grande,
         /// <summary>
@@ -25,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="j2-jumbo")]
         J2Jumbo,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="j2-large")]
+        J2Large,
         /// <summary>
         /// 
         /// </summary>
@@ -54,9 +54,9 @@ namespace G
         {
             return value switch
             {
-                CustomModelType.J2Large => "j2-large",
                 CustomModelType.J2Grande => "j2-grande",
                 CustomModelType.J2Jumbo => "j2-jumbo",
+                CustomModelType.J2Large => "j2-large",
                 CustomModelType.J2Light => "j2-light",
                 CustomModelType.J2Mid => "j2-mid",
                 CustomModelType.J2Ultra => "j2-ultra",
@@ -70,9 +70,9 @@ namespace G
         {
             return value switch
             {
-                "j2-large" => CustomModelType.J2Large,
                 "j2-grande" => CustomModelType.J2Grande,
                 "j2-jumbo" => CustomModelType.J2Jumbo,
+                "j2-large" => CustomModelType.J2Large,
                 "j2-light" => CustomModelType.J2Light,
                 "j2-mid" => CustomModelType.J2Mid,
                 "j2-ultra" => CustomModelType.J2Ultra,

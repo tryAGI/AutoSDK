@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        New,
+        CannotIndexFolder,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Processing,
+        DocumentTooSmall,
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +28,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Succeeded,
+        New,
+        /// <summary>
+        /// 
+        /// </summary>
+        Processing,
         /// <summary>
         /// 
         /// </summary>
@@ -36,11 +40,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        DocumentTooSmall,
-        /// <summary>
-        /// 
-        /// </summary>
-        CannotIndexFolder,
+        Succeeded,
     }
 
     /// <summary>
@@ -55,14 +55,14 @@ namespace G
         {
             return value switch
             {
-                RAGIndexStatus.New => "new",
-                RAGIndexStatus.Created => "created",
-                RAGIndexStatus.Processing => "processing",
-                RAGIndexStatus.Failed => "failed",
-                RAGIndexStatus.Succeeded => "succeeded",
-                RAGIndexStatus.RagLimitExceeded => "rag_limit_exceeded",
-                RAGIndexStatus.DocumentTooSmall => "document_too_small",
                 RAGIndexStatus.CannotIndexFolder => "cannot_index_folder",
+                RAGIndexStatus.Created => "created",
+                RAGIndexStatus.DocumentTooSmall => "document_too_small",
+                RAGIndexStatus.Failed => "failed",
+                RAGIndexStatus.New => "new",
+                RAGIndexStatus.Processing => "processing",
+                RAGIndexStatus.RagLimitExceeded => "rag_limit_exceeded",
+                RAGIndexStatus.Succeeded => "succeeded",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -73,14 +73,14 @@ namespace G
         {
             return value switch
             {
-                "new" => RAGIndexStatus.New,
-                "created" => RAGIndexStatus.Created,
-                "processing" => RAGIndexStatus.Processing,
-                "failed" => RAGIndexStatus.Failed,
-                "succeeded" => RAGIndexStatus.Succeeded,
-                "rag_limit_exceeded" => RAGIndexStatus.RagLimitExceeded,
-                "document_too_small" => RAGIndexStatus.DocumentTooSmall,
                 "cannot_index_folder" => RAGIndexStatus.CannotIndexFolder,
+                "created" => RAGIndexStatus.Created,
+                "document_too_small" => RAGIndexStatus.DocumentTooSmall,
+                "failed" => RAGIndexStatus.Failed,
+                "new" => RAGIndexStatus.New,
+                "processing" => RAGIndexStatus.Processing,
+                "rag_limit_exceeded" => RAGIndexStatus.RagLimitExceeded,
+                "succeeded" => RAGIndexStatus.Succeeded,
                 _ => null,
             };
         }

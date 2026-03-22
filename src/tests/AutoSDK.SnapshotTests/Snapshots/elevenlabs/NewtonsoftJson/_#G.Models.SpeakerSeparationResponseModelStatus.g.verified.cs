@@ -13,16 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="not_started")]
-        NotStarted,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
-        Pending,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="completed")]
         Completed,
         /// <summary>
@@ -30,6 +20,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="failed")]
         Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="not_started")]
+        NotStarted,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
+        Pending,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                SpeakerSeparationResponseModelStatus.NotStarted => "not_started",
-                SpeakerSeparationResponseModelStatus.Pending => "pending",
                 SpeakerSeparationResponseModelStatus.Completed => "completed",
                 SpeakerSeparationResponseModelStatus.Failed => "failed",
+                SpeakerSeparationResponseModelStatus.NotStarted => "not_started",
+                SpeakerSeparationResponseModelStatus.Pending => "pending",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "not_started" => SpeakerSeparationResponseModelStatus.NotStarted,
-                "pending" => SpeakerSeparationResponseModelStatus.Pending,
                 "completed" => SpeakerSeparationResponseModelStatus.Completed,
                 "failed" => SpeakerSeparationResponseModelStatus.Failed,
+                "not_started" => SpeakerSeparationResponseModelStatus.NotStarted,
+                "pending" => SpeakerSeparationResponseModelStatus.Pending,
                 _ => null,
             };
         }

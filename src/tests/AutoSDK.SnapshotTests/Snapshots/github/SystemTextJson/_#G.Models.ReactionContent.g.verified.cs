@@ -21,11 +21,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Laugh,
+        Confused,
         /// <summary>
         /// 
         /// </summary>
-        Confused,
+        Eyes,
         /// <summary>
         /// 
         /// </summary>
@@ -37,11 +37,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Rocket,
+        Laugh,
         /// <summary>
         /// 
         /// </summary>
-        Eyes,
+        Rocket,
     }
 
     /// <summary>
@@ -58,12 +58,12 @@ namespace G
             {
                 ReactionContent.Plus1 => "+1",
                 ReactionContent.Minus1 => "-1",
-                ReactionContent.Laugh => "laugh",
                 ReactionContent.Confused => "confused",
+                ReactionContent.Eyes => "eyes",
                 ReactionContent.Heart => "heart",
                 ReactionContent.Hooray => "hooray",
+                ReactionContent.Laugh => "laugh",
                 ReactionContent.Rocket => "rocket",
-                ReactionContent.Eyes => "eyes",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -76,12 +76,12 @@ namespace G
             {
                 "+1" => ReactionContent.Plus1,
                 "-1" => ReactionContent.Minus1,
-                "laugh" => ReactionContent.Laugh,
                 "confused" => ReactionContent.Confused,
+                "eyes" => ReactionContent.Eyes,
                 "heart" => ReactionContent.Heart,
                 "hooray" => ReactionContent.Hooray,
+                "laugh" => ReactionContent.Laugh,
                 "rocket" => ReactionContent.Rocket,
-                "eyes" => ReactionContent.Eyes,
                 _ => null,
             };
         }

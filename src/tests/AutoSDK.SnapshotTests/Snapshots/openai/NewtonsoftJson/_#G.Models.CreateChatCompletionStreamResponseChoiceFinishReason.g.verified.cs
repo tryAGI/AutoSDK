@@ -16,8 +16,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="stop")]
-        Stop,
+        [global::System.Runtime.Serialization.EnumMember(Value="content_filter")]
+        ContentFilter,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="function_call")]
+        FunctionCall,
         /// <summary>
         /// 
         /// </summary>
@@ -26,18 +31,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="stop")]
+        Stop,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="tool_calls")]
         ToolCalls,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="content_filter")]
-        ContentFilter,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="function_call")]
-        FunctionCall,
     }
 
     /// <summary>
@@ -52,11 +52,11 @@ namespace G
         {
             return value switch
             {
-                CreateChatCompletionStreamResponseChoiceFinishReason.Stop => "stop",
-                CreateChatCompletionStreamResponseChoiceFinishReason.Length => "length",
-                CreateChatCompletionStreamResponseChoiceFinishReason.ToolCalls => "tool_calls",
                 CreateChatCompletionStreamResponseChoiceFinishReason.ContentFilter => "content_filter",
                 CreateChatCompletionStreamResponseChoiceFinishReason.FunctionCall => "function_call",
+                CreateChatCompletionStreamResponseChoiceFinishReason.Length => "length",
+                CreateChatCompletionStreamResponseChoiceFinishReason.Stop => "stop",
+                CreateChatCompletionStreamResponseChoiceFinishReason.ToolCalls => "tool_calls",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -67,11 +67,11 @@ namespace G
         {
             return value switch
             {
-                "stop" => CreateChatCompletionStreamResponseChoiceFinishReason.Stop,
-                "length" => CreateChatCompletionStreamResponseChoiceFinishReason.Length,
-                "tool_calls" => CreateChatCompletionStreamResponseChoiceFinishReason.ToolCalls,
                 "content_filter" => CreateChatCompletionStreamResponseChoiceFinishReason.ContentFilter,
                 "function_call" => CreateChatCompletionStreamResponseChoiceFinishReason.FunctionCall,
+                "length" => CreateChatCompletionStreamResponseChoiceFinishReason.Length,
+                "stop" => CreateChatCompletionStreamResponseChoiceFinishReason.Stop,
+                "tool_calls" => CreateChatCompletionStreamResponseChoiceFinishReason.ToolCalls,
                 _ => null,
             };
         }

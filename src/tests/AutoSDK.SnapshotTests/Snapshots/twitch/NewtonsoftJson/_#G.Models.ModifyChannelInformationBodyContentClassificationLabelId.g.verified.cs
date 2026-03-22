@@ -24,16 +24,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="SexualThemes")]
-        SexualThemes,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="ViolentGraphic")]
-        ViolentGraphic,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="Gambling")]
         Gambling,
         /// <summary>
@@ -41,6 +31,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ProfanityVulgarity")]
         ProfanityVulgarity,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="SexualThemes")]
+        SexualThemes,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="ViolentGraphic")]
+        ViolentGraphic,
     }
 
     /// <summary>
@@ -56,10 +56,10 @@ namespace G
             return value switch
             {
                 ModifyChannelInformationBodyContentClassificationLabelId.DrugsIntoxication => "DrugsIntoxication",
-                ModifyChannelInformationBodyContentClassificationLabelId.SexualThemes => "SexualThemes",
-                ModifyChannelInformationBodyContentClassificationLabelId.ViolentGraphic => "ViolentGraphic",
                 ModifyChannelInformationBodyContentClassificationLabelId.Gambling => "Gambling",
                 ModifyChannelInformationBodyContentClassificationLabelId.ProfanityVulgarity => "ProfanityVulgarity",
+                ModifyChannelInformationBodyContentClassificationLabelId.SexualThemes => "SexualThemes",
+                ModifyChannelInformationBodyContentClassificationLabelId.ViolentGraphic => "ViolentGraphic",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -71,10 +71,10 @@ namespace G
             return value switch
             {
                 "DrugsIntoxication" => ModifyChannelInformationBodyContentClassificationLabelId.DrugsIntoxication,
-                "SexualThemes" => ModifyChannelInformationBodyContentClassificationLabelId.SexualThemes,
-                "ViolentGraphic" => ModifyChannelInformationBodyContentClassificationLabelId.ViolentGraphic,
                 "Gambling" => ModifyChannelInformationBodyContentClassificationLabelId.Gambling,
                 "ProfanityVulgarity" => ModifyChannelInformationBodyContentClassificationLabelId.ProfanityVulgarity,
+                "SexualThemes" => ModifyChannelInformationBodyContentClassificationLabelId.SexualThemes,
+                "ViolentGraphic" => ModifyChannelInformationBodyContentClassificationLabelId.ViolentGraphic,
                 _ => null,
             };
         }

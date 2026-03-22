@@ -13,11 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Team,
         /// <summary>
         /// 
         /// </summary>
-        Team,
+        User,
     }
 
     /// <summary>
@@ -32,8 +32,8 @@ namespace G
         {
             return value switch
             {
-                DeploymentReviewerType.User => "User",
                 DeploymentReviewerType.Team => "Team",
+                DeploymentReviewerType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,8 +44,8 @@ namespace G
         {
             return value switch
             {
-                "User" => DeploymentReviewerType.User,
                 "Team" => DeploymentReviewerType.Team,
+                "User" => DeploymentReviewerType.User,
                 _ => null,
             };
         }

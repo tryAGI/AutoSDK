@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="uploaded")]
-        Uploaded,
+        [global::System.Runtime.Serialization.EnumMember(Value="open")]
+        Open,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="open")]
-        Open,
+        [global::System.Runtime.Serialization.EnumMember(Value="uploaded")]
+        Uploaded,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ReleaseAssetState.Uploaded => "uploaded",
                 ReleaseAssetState.Open => "open",
+                ReleaseAssetState.Uploaded => "uploaded",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "uploaded" => ReleaseAssetState.Uploaded,
                 "open" => ReleaseAssetState.Open,
+                "uploaded" => ReleaseAssetState.Uploaded,
                 _ => null,
             };
         }

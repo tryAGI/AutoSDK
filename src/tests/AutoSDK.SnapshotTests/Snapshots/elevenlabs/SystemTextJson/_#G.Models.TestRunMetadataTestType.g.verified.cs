@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ToolCall,
+        Simulation,
         /// <summary>
         /// 
         /// </summary>
-        Simulation,
+        ToolCall,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 TestRunMetadataTestType.Llm => "llm",
-                TestRunMetadataTestType.ToolCall => "tool_call",
                 TestRunMetadataTestType.Simulation => "simulation",
+                TestRunMetadataTestType.ToolCall => "tool_call",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "llm" => TestRunMetadataTestType.Llm,
-                "tool_call" => TestRunMetadataTestType.ToolCall,
                 "simulation" => TestRunMetadataTestType.Simulation,
+                "tool_call" => TestRunMetadataTestType.ToolCall,
                 _ => null,
             };
         }

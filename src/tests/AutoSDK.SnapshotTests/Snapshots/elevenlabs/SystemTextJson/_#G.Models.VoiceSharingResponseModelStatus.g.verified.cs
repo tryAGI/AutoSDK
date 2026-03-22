@@ -12,7 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Enabled,
+        Copied,
+        /// <summary>
+        /// 
+        /// </summary>
+        CopiedDisabled,
         /// <summary>
         /// 
         /// </summary>
@@ -20,11 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Copied,
-        /// <summary>
-        /// 
-        /// </summary>
-        CopiedDisabled,
+        Enabled,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                VoiceSharingResponseModelStatus.Enabled => "enabled",
-                VoiceSharingResponseModelStatus.Disabled => "disabled",
                 VoiceSharingResponseModelStatus.Copied => "copied",
                 VoiceSharingResponseModelStatus.CopiedDisabled => "copied_disabled",
+                VoiceSharingResponseModelStatus.Disabled => "disabled",
+                VoiceSharingResponseModelStatus.Enabled => "enabled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "enabled" => VoiceSharingResponseModelStatus.Enabled,
-                "disabled" => VoiceSharingResponseModelStatus.Disabled,
                 "copied" => VoiceSharingResponseModelStatus.Copied,
                 "copied_disabled" => VoiceSharingResponseModelStatus.CopiedDisabled,
+                "disabled" => VoiceSharingResponseModelStatus.Disabled,
+                "enabled" => VoiceSharingResponseModelStatus.Enabled,
                 _ => null,
             };
         }

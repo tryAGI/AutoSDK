@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Personal,
+        All,
         /// <summary>
         /// 
         /// </summary>
@@ -21,7 +21,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        All,
+        Personal,
     }
 
     /// <summary>
@@ -36,9 +36,9 @@ namespace G
         {
             return value switch
             {
-                ListDubsFilterByCreator.Personal => "personal",
-                ListDubsFilterByCreator.Others => "others",
                 ListDubsFilterByCreator.All => "all",
+                ListDubsFilterByCreator.Others => "others",
+                ListDubsFilterByCreator.Personal => "personal",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,9 +49,9 @@ namespace G
         {
             return value switch
             {
-                "personal" => ListDubsFilterByCreator.Personal,
-                "others" => ListDubsFilterByCreator.Others,
                 "all" => ListDubsFilterByCreator.All,
+                "others" => ListDubsFilterByCreator.Others,
+                "personal" => ListDubsFilterByCreator.Personal,
                 _ => null,
             };
         }

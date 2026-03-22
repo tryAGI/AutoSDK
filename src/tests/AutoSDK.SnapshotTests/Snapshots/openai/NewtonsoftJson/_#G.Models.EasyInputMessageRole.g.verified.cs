@@ -14,13 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="user")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="assistant")]
+        Assistant,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="assistant")]
-        Assistant,
+        [global::System.Runtime.Serialization.EnumMember(Value="developer")]
+        Developer,
         /// <summary>
         /// 
         /// </summary>
@@ -29,8 +29,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="developer")]
-        Developer,
+        [global::System.Runtime.Serialization.EnumMember(Value="user")]
+        User,
     }
 
     /// <summary>
@@ -45,10 +45,10 @@ namespace G
         {
             return value switch
             {
-                EasyInputMessageRole.User => "user",
                 EasyInputMessageRole.Assistant => "assistant",
-                EasyInputMessageRole.System => "system",
                 EasyInputMessageRole.Developer => "developer",
+                EasyInputMessageRole.System => "system",
+                EasyInputMessageRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,10 +59,10 @@ namespace G
         {
             return value switch
             {
-                "user" => EasyInputMessageRole.User,
                 "assistant" => EasyInputMessageRole.Assistant,
-                "system" => EasyInputMessageRole.System,
                 "developer" => EasyInputMessageRole.Developer,
+                "system" => EasyInputMessageRole.System,
+                "user" => EasyInputMessageRole.User,
                 _ => null,
             };
         }

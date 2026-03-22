@@ -18,11 +18,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="week")]
-        Week,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="month")]
         Month,
         /// <summary>
@@ -30,6 +25,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="quarter")]
         Quarter,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="week")]
+        Week,
         /// <summary>
         /// 
         /// </summary>
@@ -50,9 +50,9 @@ namespace G
             return value switch
             {
                 ReposListActivitiesTimePeriod.Day => "day",
-                ReposListActivitiesTimePeriod.Week => "week",
                 ReposListActivitiesTimePeriod.Month => "month",
                 ReposListActivitiesTimePeriod.Quarter => "quarter",
+                ReposListActivitiesTimePeriod.Week => "week",
                 ReposListActivitiesTimePeriod.Year => "year",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -65,9 +65,9 @@ namespace G
             return value switch
             {
                 "day" => ReposListActivitiesTimePeriod.Day,
-                "week" => ReposListActivitiesTimePeriod.Week,
                 "month" => ReposListActivitiesTimePeriod.Month,
                 "quarter" => ReposListActivitiesTimePeriod.Quarter,
+                "week" => ReposListActivitiesTimePeriod.Week,
                 "year" => ReposListActivitiesTimePeriod.Year,
                 _ => null,
             };

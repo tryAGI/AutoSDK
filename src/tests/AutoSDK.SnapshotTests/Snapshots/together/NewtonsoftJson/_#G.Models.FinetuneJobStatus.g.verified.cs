@@ -13,6 +13,31 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="cancel_requested")]
+        CancelRequested,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
+        Cancelled,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="compressing")]
+        Compressing,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="error")]
+        Error,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="pending")]
         Pending,
         /// <summary>
@@ -28,33 +53,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="compressing")]
-        Compressing,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="uploading")]
         Uploading,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cancel_requested")]
-        CancelRequested,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
-        Cancelled,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="error")]
-        Error,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
-        Completed,
     }
 
     /// <summary>
@@ -69,15 +69,15 @@ namespace G
         {
             return value switch
             {
+                FinetuneJobStatus.CancelRequested => "cancel_requested",
+                FinetuneJobStatus.Cancelled => "cancelled",
+                FinetuneJobStatus.Completed => "completed",
+                FinetuneJobStatus.Compressing => "compressing",
+                FinetuneJobStatus.Error => "error",
                 FinetuneJobStatus.Pending => "pending",
                 FinetuneJobStatus.Queued => "queued",
                 FinetuneJobStatus.Running => "running",
-                FinetuneJobStatus.Compressing => "compressing",
                 FinetuneJobStatus.Uploading => "uploading",
-                FinetuneJobStatus.CancelRequested => "cancel_requested",
-                FinetuneJobStatus.Cancelled => "cancelled",
-                FinetuneJobStatus.Error => "error",
-                FinetuneJobStatus.Completed => "completed",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -88,15 +88,15 @@ namespace G
         {
             return value switch
             {
+                "cancel_requested" => FinetuneJobStatus.CancelRequested,
+                "cancelled" => FinetuneJobStatus.Cancelled,
+                "completed" => FinetuneJobStatus.Completed,
+                "compressing" => FinetuneJobStatus.Compressing,
+                "error" => FinetuneJobStatus.Error,
                 "pending" => FinetuneJobStatus.Pending,
                 "queued" => FinetuneJobStatus.Queued,
                 "running" => FinetuneJobStatus.Running,
-                "compressing" => FinetuneJobStatus.Compressing,
                 "uploading" => FinetuneJobStatus.Uploading,
-                "cancel_requested" => FinetuneJobStatus.CancelRequested,
-                "cancelled" => FinetuneJobStatus.Cancelled,
-                "error" => FinetuneJobStatus.Error,
-                "completed" => FinetuneJobStatus.Completed,
                 _ => null,
             };
         }

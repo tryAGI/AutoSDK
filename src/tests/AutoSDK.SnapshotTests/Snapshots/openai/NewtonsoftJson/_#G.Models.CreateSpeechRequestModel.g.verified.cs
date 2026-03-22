@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-4o-mini-tts")]
+        Gpt4oMiniTts,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="tts-1")]
         Tts1,
         /// <summary>
@@ -20,11 +25,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="tts-1-hd")]
         Tts1Hd,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="gpt-4o-mini-tts")]
-        Gpt4oMiniTts,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                CreateSpeechRequestModel.Gpt4oMiniTts => "gpt-4o-mini-tts",
                 CreateSpeechRequestModel.Tts1 => "tts-1",
                 CreateSpeechRequestModel.Tts1Hd => "tts-1-hd",
-                CreateSpeechRequestModel.Gpt4oMiniTts => "gpt-4o-mini-tts",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
+                "gpt-4o-mini-tts" => CreateSpeechRequestModel.Gpt4oMiniTts,
                 "tts-1" => CreateSpeechRequestModel.Tts1,
                 "tts-1-hd" => CreateSpeechRequestModel.Tts1Hd,
-                "gpt-4o-mini-tts" => CreateSpeechRequestModel.Gpt4oMiniTts,
                 _ => null,
             };
         }

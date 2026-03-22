@@ -12,23 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        x1280_720,
-        /// <summary>
-        /// 
-        /// </summary>
-        x720_1280,
-        /// <summary>
-        /// 
-        /// </summary>
         x1104_832,
         /// <summary>
         /// 
         /// </summary>
-        x960_960,
-        /// <summary>
-        /// 
-        /// </summary>
-        x832_1104,
+        x1280_720,
         /// <summary>
         /// 
         /// </summary>
@@ -36,11 +24,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        x640_480,
+        /// <summary>
+        /// 
+        /// </summary>
+        x720_1280,
+        /// <summary>
+        /// 
+        /// </summary>
+        x832_1104,
+        /// <summary>
+        /// 
+        /// </summary>
         x848_480,
         /// <summary>
         /// 
         /// </summary>
-        x640_480,
+        x960_960,
     }
 
     /// <summary>
@@ -55,14 +55,14 @@ namespace G
         {
             return value switch
             {
-                CreateVideoToVideoRequestGen4AlephRatio.x1280_720 => "1280:720",
-                CreateVideoToVideoRequestGen4AlephRatio.x720_1280 => "720:1280",
                 CreateVideoToVideoRequestGen4AlephRatio.x1104_832 => "1104:832",
-                CreateVideoToVideoRequestGen4AlephRatio.x960_960 => "960:960",
-                CreateVideoToVideoRequestGen4AlephRatio.x832_1104 => "832:1104",
+                CreateVideoToVideoRequestGen4AlephRatio.x1280_720 => "1280:720",
                 CreateVideoToVideoRequestGen4AlephRatio.x1584_672 => "1584:672",
-                CreateVideoToVideoRequestGen4AlephRatio.x848_480 => "848:480",
                 CreateVideoToVideoRequestGen4AlephRatio.x640_480 => "640:480",
+                CreateVideoToVideoRequestGen4AlephRatio.x720_1280 => "720:1280",
+                CreateVideoToVideoRequestGen4AlephRatio.x832_1104 => "832:1104",
+                CreateVideoToVideoRequestGen4AlephRatio.x848_480 => "848:480",
+                CreateVideoToVideoRequestGen4AlephRatio.x960_960 => "960:960",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -73,14 +73,14 @@ namespace G
         {
             return value switch
             {
-                "1280:720" => CreateVideoToVideoRequestGen4AlephRatio.x1280_720,
-                "720:1280" => CreateVideoToVideoRequestGen4AlephRatio.x720_1280,
                 "1104:832" => CreateVideoToVideoRequestGen4AlephRatio.x1104_832,
-                "960:960" => CreateVideoToVideoRequestGen4AlephRatio.x960_960,
-                "832:1104" => CreateVideoToVideoRequestGen4AlephRatio.x832_1104,
+                "1280:720" => CreateVideoToVideoRequestGen4AlephRatio.x1280_720,
                 "1584:672" => CreateVideoToVideoRequestGen4AlephRatio.x1584_672,
-                "848:480" => CreateVideoToVideoRequestGen4AlephRatio.x848_480,
                 "640:480" => CreateVideoToVideoRequestGen4AlephRatio.x640_480,
+                "720:1280" => CreateVideoToVideoRequestGen4AlephRatio.x720_1280,
+                "832:1104" => CreateVideoToVideoRequestGen4AlephRatio.x832_1104,
+                "848:480" => CreateVideoToVideoRequestGen4AlephRatio.x848_480,
+                "960:960" => CreateVideoToVideoRequestGen4AlephRatio.x960_960,
                 _ => null,
             };
         }

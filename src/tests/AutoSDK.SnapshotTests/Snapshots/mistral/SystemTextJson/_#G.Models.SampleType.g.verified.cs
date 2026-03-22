@@ -12,11 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Pretrain,
-        /// <summary>
-        /// 
-        /// </summary>
-        Instruct,
+        BatchError,
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +24,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        BatchError,
+        Instruct,
+        /// <summary>
+        /// 
+        /// </summary>
+        Pretrain,
     }
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace G
         {
             return value switch
             {
-                SampleType.Pretrain => "pretrain",
-                SampleType.Instruct => "instruct",
+                SampleType.BatchError => "batch_error",
                 SampleType.BatchRequest => "batch_request",
                 SampleType.BatchResult => "batch_result",
-                SampleType.BatchError => "batch_error",
+                SampleType.Instruct => "instruct",
+                SampleType.Pretrain => "pretrain",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,11 +58,11 @@ namespace G
         {
             return value switch
             {
-                "pretrain" => SampleType.Pretrain,
-                "instruct" => SampleType.Instruct,
+                "batch_error" => SampleType.BatchError,
                 "batch_request" => SampleType.BatchRequest,
                 "batch_result" => SampleType.BatchResult,
-                "batch_error" => SampleType.BatchError,
+                "instruct" => SampleType.Instruct,
+                "pretrain" => SampleType.Pretrain,
                 _ => null,
             };
         }

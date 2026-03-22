@@ -23,13 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="laugh")]
-        Laugh,
+        [global::System.Runtime.Serialization.EnumMember(Value="confused")]
+        Confused,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="confused")]
-        Confused,
+        [global::System.Runtime.Serialization.EnumMember(Value="eyes")]
+        Eyes,
         /// <summary>
         /// 
         /// </summary>
@@ -43,13 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="rocket")]
-        Rocket,
+        [global::System.Runtime.Serialization.EnumMember(Value="laugh")]
+        Laugh,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="eyes")]
-        Eyes,
+        [global::System.Runtime.Serialization.EnumMember(Value="rocket")]
+        Rocket,
     }
 
     /// <summary>
@@ -66,12 +66,12 @@ namespace G
             {
                 ReactionsListForIssueContent.Plus1 => "+1",
                 ReactionsListForIssueContent.Minus1 => "-1",
-                ReactionsListForIssueContent.Laugh => "laugh",
                 ReactionsListForIssueContent.Confused => "confused",
+                ReactionsListForIssueContent.Eyes => "eyes",
                 ReactionsListForIssueContent.Heart => "heart",
                 ReactionsListForIssueContent.Hooray => "hooray",
+                ReactionsListForIssueContent.Laugh => "laugh",
                 ReactionsListForIssueContent.Rocket => "rocket",
-                ReactionsListForIssueContent.Eyes => "eyes",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -84,12 +84,12 @@ namespace G
             {
                 "+1" => ReactionsListForIssueContent.Plus1,
                 "-1" => ReactionsListForIssueContent.Minus1,
-                "laugh" => ReactionsListForIssueContent.Laugh,
                 "confused" => ReactionsListForIssueContent.Confused,
+                "eyes" => ReactionsListForIssueContent.Eyes,
                 "heart" => ReactionsListForIssueContent.Heart,
                 "hooray" => ReactionsListForIssueContent.Hooray,
+                "laugh" => ReactionsListForIssueContent.Laugh,
                 "rocket" => ReactionsListForIssueContent.Rocket,
-                "eyes" => ReactionsListForIssueContent.Eyes,
                 _ => null,
             };
         }

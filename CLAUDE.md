@@ -26,6 +26,11 @@ dotnet test src/tests/AutoSDK.SnapshotTests/AutoSDK.SnapshotTests.csproj
 dotnet test --filter "FullyQualifiedName~DataTests"
 dotnet test --filter "FullyQualifiedName~NamingTests"
 dotnet test --filter "FullyQualifiedName~JsonTests"
+
+# Auto-verify all snapshots (accepts all changes as new baselines)
+# Use after changes that cause expected widespread snapshot churn
+# (e.g., ordering fixes, formatting changes, template adjustments)
+AUTOSDK_AUTO_VERIFY=true dotnet test src/tests/AutoSDK.SnapshotTests/
 ```
 
 ## CLI Tool Development

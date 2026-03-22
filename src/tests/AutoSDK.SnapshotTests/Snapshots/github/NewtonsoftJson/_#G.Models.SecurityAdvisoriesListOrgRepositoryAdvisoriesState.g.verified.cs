@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="triage")]
-        Triage,
+        [global::System.Runtime.Serialization.EnumMember(Value="closed")]
+        Closed,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="closed")]
-        Closed,
+        [global::System.Runtime.Serialization.EnumMember(Value="triage")]
+        Triage,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                SecurityAdvisoriesListOrgRepositoryAdvisoriesState.Triage => "triage",
+                SecurityAdvisoriesListOrgRepositoryAdvisoriesState.Closed => "closed",
                 SecurityAdvisoriesListOrgRepositoryAdvisoriesState.Draft => "draft",
                 SecurityAdvisoriesListOrgRepositoryAdvisoriesState.Published => "published",
-                SecurityAdvisoriesListOrgRepositoryAdvisoriesState.Closed => "closed",
+                SecurityAdvisoriesListOrgRepositoryAdvisoriesState.Triage => "triage",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "triage" => SecurityAdvisoriesListOrgRepositoryAdvisoriesState.Triage,
+                "closed" => SecurityAdvisoriesListOrgRepositoryAdvisoriesState.Closed,
                 "draft" => SecurityAdvisoriesListOrgRepositoryAdvisoriesState.Draft,
                 "published" => SecurityAdvisoriesListOrgRepositoryAdvisoriesState.Published,
-                "closed" => SecurityAdvisoriesListOrgRepositoryAdvisoriesState.Closed,
+                "triage" => SecurityAdvisoriesListOrgRepositoryAdvisoriesState.Triage,
                 _ => null,
             };
         }

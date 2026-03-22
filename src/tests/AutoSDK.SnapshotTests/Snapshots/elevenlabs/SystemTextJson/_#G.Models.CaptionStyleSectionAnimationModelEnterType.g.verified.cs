@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        None,
+        Fade,
         /// <summary>
         /// 
         /// </summary>
-        Fade,
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                CaptionStyleSectionAnimationModelEnterType.None => "none",
                 CaptionStyleSectionAnimationModelEnterType.Fade => "fade",
+                CaptionStyleSectionAnimationModelEnterType.None => "none",
                 CaptionStyleSectionAnimationModelEnterType.Scale => "scale",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "none" => CaptionStyleSectionAnimationModelEnterType.None,
                 "fade" => CaptionStyleSectionAnimationModelEnterType.Fade,
+                "none" => CaptionStyleSectionAnimationModelEnterType.None,
                 "scale" => CaptionStyleSectionAnimationModelEnterType.Scale,
                 _ => null,
             };

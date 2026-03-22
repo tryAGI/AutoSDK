@@ -18,13 +18,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="squash")]
-        Squash,
+        [global::System.Runtime.Serialization.EnumMember(Value="rebase")]
+        Rebase,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="rebase")]
-        Rebase,
+        [global::System.Runtime.Serialization.EnumMember(Value="squash")]
+        Squash,
     }
 
     /// <summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeMergeMethod.Merge => "merge",
-                WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeMergeMethod.Squash => "squash",
                 WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeMergeMethod.Rebase => "rebase",
+                WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeMergeMethod.Squash => "squash",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,8 +53,8 @@ namespace G
             return value switch
             {
                 "merge" => WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeMergeMethod.Merge,
-                "squash" => WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeMergeMethod.Squash,
                 "rebase" => WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeMergeMethod.Rebase,
+                "squash" => WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeMergeMethod.Squash,
                 _ => null,
             };
         }

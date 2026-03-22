@@ -14,13 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="768:1280")]
-        x768_1280,
+        [global::System.Runtime.Serialization.EnumMember(Value="1280:768")]
+        x1280_768,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="1280:768")]
-        x1280_768,
+        [global::System.Runtime.Serialization.EnumMember(Value="768:1280")]
+        x768_1280,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                CreateImageToVideoRequestGen3aTurboRatio.x768_1280 => "768:1280",
                 CreateImageToVideoRequestGen3aTurboRatio.x1280_768 => "1280:768",
+                CreateImageToVideoRequestGen3aTurboRatio.x768_1280 => "768:1280",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,8 +47,8 @@ namespace G
         {
             return value switch
             {
-                "768:1280" => CreateImageToVideoRequestGen3aTurboRatio.x768_1280,
                 "1280:768" => CreateImageToVideoRequestGen3aTurboRatio.x1280_768,
+                "768:1280" => CreateImageToVideoRequestGen3aTurboRatio.x768_1280,
                 _ => null,
             };
         }

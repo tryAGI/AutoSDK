@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookPullRequestUnassignedPullRequestAssigneeType.Bot => "Bot",
-                WebhookPullRequestUnassignedPullRequestAssigneeType.User => "User",
-                WebhookPullRequestUnassignedPullRequestAssigneeType.Organization => "Organization",
                 WebhookPullRequestUnassignedPullRequestAssigneeType.Mannequin => "Mannequin",
+                WebhookPullRequestUnassignedPullRequestAssigneeType.Organization => "Organization",
+                WebhookPullRequestUnassignedPullRequestAssigneeType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestUnassignedPullRequestAssigneeType.Bot,
-                "User" => WebhookPullRequestUnassignedPullRequestAssigneeType.User,
-                "Organization" => WebhookPullRequestUnassignedPullRequestAssigneeType.Organization,
                 "Mannequin" => WebhookPullRequestUnassignedPullRequestAssigneeType.Mannequin,
+                "Organization" => WebhookPullRequestUnassignedPullRequestAssigneeType.Organization,
+                "User" => WebhookPullRequestUnassignedPullRequestAssigneeType.User,
                 _ => null,
             };
         }

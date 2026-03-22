@@ -16,7 +16,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Ne,
+        Ilike,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Ilike,
+        Ne,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
             return value switch
             {
                 GraderStringCheckOperation.Eq => "eq",
-                GraderStringCheckOperation.Ne => "ne",
-                GraderStringCheckOperation.Like => "like",
                 GraderStringCheckOperation.Ilike => "ilike",
+                GraderStringCheckOperation.Like => "like",
+                GraderStringCheckOperation.Ne => "ne",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace G
             return value switch
             {
                 "eq" => GraderStringCheckOperation.Eq,
-                "ne" => GraderStringCheckOperation.Ne,
-                "like" => GraderStringCheckOperation.Like,
                 "ilike" => GraderStringCheckOperation.Ilike,
+                "like" => GraderStringCheckOperation.Like,
+                "ne" => GraderStringCheckOperation.Ne,
                 _ => null,
             };
         }

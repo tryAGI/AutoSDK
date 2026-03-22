@@ -22,13 +22,13 @@ namespace G
         /// </summary>
         Beta,
         /// <summary>
-        /// Generally available.
-        /// </summary>
-        GenerallyAvailable,
-        /// <summary>
         /// Custom.
         /// </summary>
         Custom,
+        /// <summary>
+        /// Generally available.
+        /// </summary>
+        GenerallyAvailable,
     }
 
     /// <summary>
@@ -45,8 +45,8 @@ namespace G
             {
                 ReleaseStage.Alpha => "RELEASE_STAGE_ALPHA",
                 ReleaseStage.Beta => "RELEASE_STAGE_BETA",
-                ReleaseStage.GenerallyAvailable => "RELEASE_STAGE_GENERALLY_AVAILABLE",
                 ReleaseStage.Custom => "RELEASE_STAGE_CUSTOM",
+                ReleaseStage.GenerallyAvailable => "RELEASE_STAGE_GENERALLY_AVAILABLE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,8 +59,8 @@ namespace G
             {
                 "RELEASE_STAGE_ALPHA" => ReleaseStage.Alpha,
                 "RELEASE_STAGE_BETA" => ReleaseStage.Beta,
-                "RELEASE_STAGE_GENERALLY_AVAILABLE" => ReleaseStage.GenerallyAvailable,
                 "RELEASE_STAGE_CUSTOM" => ReleaseStage.Custom,
+                "RELEASE_STAGE_GENERALLY_AVAILABLE" => ReleaseStage.GenerallyAvailable,
                 _ => null,
             };
         }

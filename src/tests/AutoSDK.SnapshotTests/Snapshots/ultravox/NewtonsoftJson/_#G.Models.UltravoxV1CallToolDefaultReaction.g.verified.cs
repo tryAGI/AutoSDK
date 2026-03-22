@@ -15,8 +15,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="AGENT_REACTION_UNSPECIFIED")]
-        AgentReactionUnspecified,
+        [global::System.Runtime.Serialization.EnumMember(Value="AGENT_REACTION_LISTENS")]
+        AgentReactionListens,
         /// <summary>
         /// 
         /// </summary>
@@ -25,13 +25,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="AGENT_REACTION_LISTENS")]
-        AgentReactionListens,
+        [global::System.Runtime.Serialization.EnumMember(Value="AGENT_REACTION_SPEAKS_ONCE")]
+        AgentReactionSpeaksOnce,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="AGENT_REACTION_SPEAKS_ONCE")]
-        AgentReactionSpeaksOnce,
+        [global::System.Runtime.Serialization.EnumMember(Value="AGENT_REACTION_UNSPECIFIED")]
+        AgentReactionUnspecified,
     }
 
     /// <summary>
@@ -46,10 +46,10 @@ namespace G
         {
             return value switch
             {
-                UltravoxV1CallToolDefaultReaction.AgentReactionUnspecified => "AGENT_REACTION_UNSPECIFIED",
-                UltravoxV1CallToolDefaultReaction.AgentReactionSpeaks => "AGENT_REACTION_SPEAKS",
                 UltravoxV1CallToolDefaultReaction.AgentReactionListens => "AGENT_REACTION_LISTENS",
+                UltravoxV1CallToolDefaultReaction.AgentReactionSpeaks => "AGENT_REACTION_SPEAKS",
                 UltravoxV1CallToolDefaultReaction.AgentReactionSpeaksOnce => "AGENT_REACTION_SPEAKS_ONCE",
+                UltravoxV1CallToolDefaultReaction.AgentReactionUnspecified => "AGENT_REACTION_UNSPECIFIED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -60,10 +60,10 @@ namespace G
         {
             return value switch
             {
-                "AGENT_REACTION_UNSPECIFIED" => UltravoxV1CallToolDefaultReaction.AgentReactionUnspecified,
-                "AGENT_REACTION_SPEAKS" => UltravoxV1CallToolDefaultReaction.AgentReactionSpeaks,
                 "AGENT_REACTION_LISTENS" => UltravoxV1CallToolDefaultReaction.AgentReactionListens,
+                "AGENT_REACTION_SPEAKS" => UltravoxV1CallToolDefaultReaction.AgentReactionSpeaks,
                 "AGENT_REACTION_SPEAKS_ONCE" => UltravoxV1CallToolDefaultReaction.AgentReactionSpeaksOnce,
+                "AGENT_REACTION_UNSPECIFIED" => UltravoxV1CallToolDefaultReaction.AgentReactionUnspecified,
                 _ => null,
             };
         }

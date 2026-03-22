@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="new")]
-        New,
+        [global::System.Runtime.Serialization.EnumMember(Value="approved")]
+        Approved,
         /// <summary>
         /// 
         /// </summary>
@@ -28,33 +28,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="authorized")]
-        Authorized,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="authorization_revoked")]
         AuthorizationRevoked,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="issued")]
-        Issued,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="uploaded")]
-        Uploaded,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="approved")]
-        Approved,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="errored")]
-        Errored,
+        [global::System.Runtime.Serialization.EnumMember(Value="authorized")]
+        Authorized,
         /// <summary>
         /// 
         /// </summary>
@@ -70,6 +50,26 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="dns_changed")]
         DnsChanged,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="errored")]
+        Errored,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="issued")]
+        Issued,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="new")]
+        New,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="uploaded")]
+        Uploaded,
     }
 
     /// <summary>
@@ -84,18 +84,18 @@ namespace G
         {
             return value switch
             {
-                PagesHttpsCertificateState.New => "new",
+                PagesHttpsCertificateState.Approved => "approved",
                 PagesHttpsCertificateState.AuthorizationCreated => "authorization_created",
                 PagesHttpsCertificateState.AuthorizationPending => "authorization_pending",
-                PagesHttpsCertificateState.Authorized => "authorized",
                 PagesHttpsCertificateState.AuthorizationRevoked => "authorization_revoked",
-                PagesHttpsCertificateState.Issued => "issued",
-                PagesHttpsCertificateState.Uploaded => "uploaded",
-                PagesHttpsCertificateState.Approved => "approved",
-                PagesHttpsCertificateState.Errored => "errored",
+                PagesHttpsCertificateState.Authorized => "authorized",
                 PagesHttpsCertificateState.BadAuthz => "bad_authz",
                 PagesHttpsCertificateState.DestroyPending => "destroy_pending",
                 PagesHttpsCertificateState.DnsChanged => "dns_changed",
+                PagesHttpsCertificateState.Errored => "errored",
+                PagesHttpsCertificateState.Issued => "issued",
+                PagesHttpsCertificateState.New => "new",
+                PagesHttpsCertificateState.Uploaded => "uploaded",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -106,18 +106,18 @@ namespace G
         {
             return value switch
             {
-                "new" => PagesHttpsCertificateState.New,
+                "approved" => PagesHttpsCertificateState.Approved,
                 "authorization_created" => PagesHttpsCertificateState.AuthorizationCreated,
                 "authorization_pending" => PagesHttpsCertificateState.AuthorizationPending,
-                "authorized" => PagesHttpsCertificateState.Authorized,
                 "authorization_revoked" => PagesHttpsCertificateState.AuthorizationRevoked,
-                "issued" => PagesHttpsCertificateState.Issued,
-                "uploaded" => PagesHttpsCertificateState.Uploaded,
-                "approved" => PagesHttpsCertificateState.Approved,
-                "errored" => PagesHttpsCertificateState.Errored,
+                "authorized" => PagesHttpsCertificateState.Authorized,
                 "bad_authz" => PagesHttpsCertificateState.BadAuthz,
                 "destroy_pending" => PagesHttpsCertificateState.DestroyPending,
                 "dns_changed" => PagesHttpsCertificateState.DnsChanged,
+                "errored" => PagesHttpsCertificateState.Errored,
+                "issued" => PagesHttpsCertificateState.Issued,
+                "new" => PagesHttpsCertificateState.New,
+                "uploaded" => PagesHttpsCertificateState.Uploaded,
                 _ => null,
             };
         }

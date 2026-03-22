@@ -16,6 +16,26 @@ namespace G
     public enum FileProcessStatus
     {
         /// <summary>
+        /// file is chunking
+        /// </summary>
+        Chunking,
+        /// <summary>
+        /// completed
+        /// </summary>
+        Completed,
+        /// <summary>
+        /// file is converting
+        /// </summary>
+        Converting,
+        /// <summary>
+        /// file is embedding
+        /// </summary>
+        Embedding,
+        /// <summary>
+        /// failed
+        /// </summary>
+        Failed,
+        /// <summary>
         /// NOTSTARTED
         /// </summary>
         Notstarted,
@@ -23,26 +43,6 @@ namespace G
         /// file is waiting for embedding process
         /// </summary>
         Waiting,
-        /// <summary>
-        /// file is converting
-        /// </summary>
-        Converting,
-        /// <summary>
-        /// file is chunking
-        /// </summary>
-        Chunking,
-        /// <summary>
-        /// file is embedding
-        /// </summary>
-        Embedding,
-        /// <summary>
-        /// completed
-        /// </summary>
-        Completed,
-        /// <summary>
-        /// failed
-        /// </summary>
-        Failed,
     }
 
     /// <summary>
@@ -57,13 +57,13 @@ namespace G
         {
             return value switch
             {
+                FileProcessStatus.Chunking => "FILE_PROCESS_STATUS_CHUNKING",
+                FileProcessStatus.Completed => "FILE_PROCESS_STATUS_COMPLETED",
+                FileProcessStatus.Converting => "FILE_PROCESS_STATUS_CONVERTING",
+                FileProcessStatus.Embedding => "FILE_PROCESS_STATUS_EMBEDDING",
+                FileProcessStatus.Failed => "FILE_PROCESS_STATUS_FAILED",
                 FileProcessStatus.Notstarted => "FILE_PROCESS_STATUS_NOTSTARTED",
                 FileProcessStatus.Waiting => "FILE_PROCESS_STATUS_WAITING",
-                FileProcessStatus.Converting => "FILE_PROCESS_STATUS_CONVERTING",
-                FileProcessStatus.Chunking => "FILE_PROCESS_STATUS_CHUNKING",
-                FileProcessStatus.Embedding => "FILE_PROCESS_STATUS_EMBEDDING",
-                FileProcessStatus.Completed => "FILE_PROCESS_STATUS_COMPLETED",
-                FileProcessStatus.Failed => "FILE_PROCESS_STATUS_FAILED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -74,13 +74,13 @@ namespace G
         {
             return value switch
             {
+                "FILE_PROCESS_STATUS_CHUNKING" => FileProcessStatus.Chunking,
+                "FILE_PROCESS_STATUS_COMPLETED" => FileProcessStatus.Completed,
+                "FILE_PROCESS_STATUS_CONVERTING" => FileProcessStatus.Converting,
+                "FILE_PROCESS_STATUS_EMBEDDING" => FileProcessStatus.Embedding,
+                "FILE_PROCESS_STATUS_FAILED" => FileProcessStatus.Failed,
                 "FILE_PROCESS_STATUS_NOTSTARTED" => FileProcessStatus.Notstarted,
                 "FILE_PROCESS_STATUS_WAITING" => FileProcessStatus.Waiting,
-                "FILE_PROCESS_STATUS_CONVERTING" => FileProcessStatus.Converting,
-                "FILE_PROCESS_STATUS_CHUNKING" => FileProcessStatus.Chunking,
-                "FILE_PROCESS_STATUS_EMBEDDING" => FileProcessStatus.Embedding,
-                "FILE_PROCESS_STATUS_COMPLETED" => FileProcessStatus.Completed,
-                "FILE_PROCESS_STATUS_FAILED" => FileProcessStatus.Failed,
                 _ => null,
             };
         }

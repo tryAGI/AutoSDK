@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
-        Queued,
+        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -23,18 +23,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="completed")]
-        Completed,
+        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
+        Pending,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
+        Queued,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="waiting")]
         Waiting,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
-        Pending,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                WebhookDeploymentStatusCreatedCheckRunStatus.Queued => "queued",
-                WebhookDeploymentStatusCreatedCheckRunStatus.InProgress => "in_progress",
                 WebhookDeploymentStatusCreatedCheckRunStatus.Completed => "completed",
-                WebhookDeploymentStatusCreatedCheckRunStatus.Waiting => "waiting",
+                WebhookDeploymentStatusCreatedCheckRunStatus.InProgress => "in_progress",
                 WebhookDeploymentStatusCreatedCheckRunStatus.Pending => "pending",
+                WebhookDeploymentStatusCreatedCheckRunStatus.Queued => "queued",
+                WebhookDeploymentStatusCreatedCheckRunStatus.Waiting => "waiting",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "queued" => WebhookDeploymentStatusCreatedCheckRunStatus.Queued,
-                "in_progress" => WebhookDeploymentStatusCreatedCheckRunStatus.InProgress,
                 "completed" => WebhookDeploymentStatusCreatedCheckRunStatus.Completed,
-                "waiting" => WebhookDeploymentStatusCreatedCheckRunStatus.Waiting,
+                "in_progress" => WebhookDeploymentStatusCreatedCheckRunStatus.InProgress,
                 "pending" => WebhookDeploymentStatusCreatedCheckRunStatus.Pending,
+                "queued" => WebhookDeploymentStatusCreatedCheckRunStatus.Queued,
+                "waiting" => WebhookDeploymentStatusCreatedCheckRunStatus.Waiting,
                 _ => null,
             };
         }

@@ -53,6 +53,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="deploy_key")]
+        DeployKey,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="deployment")]
         Deployment,
         /// <summary>
@@ -65,11 +70,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="deployment_status")]
         DeploymentStatus,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="deploy_key")]
-        DeployKey,
         /// <summary>
         /// 
         /// </summary>
@@ -93,13 +93,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="issues")]
-        Issues,
+        [global::System.Runtime.Serialization.EnumMember(Value="issue_comment")]
+        IssueComment,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="issue_comment")]
-        IssueComment,
+        [global::System.Runtime.Serialization.EnumMember(Value="issues")]
+        Issues,
         /// <summary>
         /// 
         /// </summary>
@@ -123,13 +123,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="organization")]
-        Organization,
+        [global::System.Runtime.Serialization.EnumMember(Value="org_block")]
+        OrgBlock,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="org_block")]
-        OrgBlock,
+        [global::System.Runtime.Serialization.EnumMember(Value="organization")]
+        Organization,
         /// <summary>
         /// 
         /// </summary>
@@ -188,6 +188,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="reminder")]
+        Reminder,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="repository")]
         Repository,
         /// <summary>
@@ -235,11 +240,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="workflow_run")]
         WorkflowRun,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="reminder")]
-        Reminder,
     }
 
     /// <summary>
@@ -262,22 +262,22 @@ namespace G
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.ContentReference => "content_reference",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Create => "create",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Delete => "delete",
+                WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.DeployKey => "deploy_key",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Deployment => "deployment",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.DeploymentReview => "deployment_review",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.DeploymentStatus => "deployment_status",
-                WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.DeployKey => "deploy_key",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Discussion => "discussion",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.DiscussionComment => "discussion_comment",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Fork => "fork",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Gollum => "gollum",
-                WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Issues => "issues",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.IssueComment => "issue_comment",
+                WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Issues => "issues",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Label => "label",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Member => "member",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Membership => "membership",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Milestone => "milestone",
-                WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Organization => "organization",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.OrgBlock => "org_block",
+                WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Organization => "organization",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.PageBuild => "page_build",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Project => "project",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.ProjectCard => "project_card",
@@ -289,6 +289,7 @@ namespace G
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Push => "push",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.RegistryPackage => "registry_package",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Release => "release",
+                WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Reminder => "reminder",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Repository => "repository",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.RepositoryDispatch => "repository_dispatch",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.SecretScanningAlert => "secret_scanning_alert",
@@ -299,7 +300,6 @@ namespace G
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Watch => "watch",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.WorkflowDispatch => "workflow_dispatch",
                 WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.WorkflowRun => "workflow_run",
-                WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Reminder => "reminder",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -318,22 +318,22 @@ namespace G
                 "content_reference" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.ContentReference,
                 "create" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Create,
                 "delete" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Delete,
+                "deploy_key" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.DeployKey,
                 "deployment" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Deployment,
                 "deployment_review" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.DeploymentReview,
                 "deployment_status" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.DeploymentStatus,
-                "deploy_key" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.DeployKey,
                 "discussion" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Discussion,
                 "discussion_comment" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.DiscussionComment,
                 "fork" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Fork,
                 "gollum" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Gollum,
-                "issues" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Issues,
                 "issue_comment" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.IssueComment,
+                "issues" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Issues,
                 "label" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Label,
                 "member" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Member,
                 "membership" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Membership,
                 "milestone" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Milestone,
-                "organization" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Organization,
                 "org_block" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.OrgBlock,
+                "organization" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Organization,
                 "page_build" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.PageBuild,
                 "project" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Project,
                 "project_card" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.ProjectCard,
@@ -345,6 +345,7 @@ namespace G
                 "push" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Push,
                 "registry_package" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.RegistryPackage,
                 "release" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Release,
+                "reminder" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Reminder,
                 "repository" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Repository,
                 "repository_dispatch" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.RepositoryDispatch,
                 "secret_scanning_alert" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.SecretScanningAlert,
@@ -355,7 +356,6 @@ namespace G
                 "watch" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Watch,
                 "workflow_dispatch" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.WorkflowDispatch,
                 "workflow_run" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.WorkflowRun,
-                "reminder" => WebhookIssuesDeletedIssuePerformedViaGithubAppEvent.Reminder,
                 _ => null,
             };
         }

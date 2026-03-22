@@ -17,30 +17,30 @@ namespace G
     public enum BaseType
     {
         /// <summary>
-        /// Unspecified model.
+        /// Chat model.
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="BASE_TYPE_UNSPECIFIED")]
-        Unspecified,
-        /// <summary>
-        /// Deprecated: Generative model.
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="BASE_TYPE_GENERATIVE")]
-        Generative,
+        [global::System.Runtime.Serialization.EnumMember(Value="BASE_TYPE_CHAT")]
+        Chat,
         /// <summary>
         /// Classification model.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BASE_TYPE_CLASSIFICATION")]
         Classification,
         /// <summary>
+        /// Deprecated: Generative model.
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="BASE_TYPE_GENERATIVE")]
+        Generative,
+        /// <summary>
         /// Rerank model.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="BASE_TYPE_RERANK")]
         Rerank,
         /// <summary>
-        /// Chat model.
+        /// Unspecified model.
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="BASE_TYPE_CHAT")]
-        Chat,
+        [global::System.Runtime.Serialization.EnumMember(Value="BASE_TYPE_UNSPECIFIED")]
+        Unspecified,
     }
 
     /// <summary>
@@ -55,11 +55,11 @@ namespace G
         {
             return value switch
             {
-                BaseType.Unspecified => "BASE_TYPE_UNSPECIFIED",
-                BaseType.Generative => "BASE_TYPE_GENERATIVE",
-                BaseType.Classification => "BASE_TYPE_CLASSIFICATION",
-                BaseType.Rerank => "BASE_TYPE_RERANK",
                 BaseType.Chat => "BASE_TYPE_CHAT",
+                BaseType.Classification => "BASE_TYPE_CLASSIFICATION",
+                BaseType.Generative => "BASE_TYPE_GENERATIVE",
+                BaseType.Rerank => "BASE_TYPE_RERANK",
+                BaseType.Unspecified => "BASE_TYPE_UNSPECIFIED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,11 +70,11 @@ namespace G
         {
             return value switch
             {
-                "BASE_TYPE_UNSPECIFIED" => BaseType.Unspecified,
-                "BASE_TYPE_GENERATIVE" => BaseType.Generative,
-                "BASE_TYPE_CLASSIFICATION" => BaseType.Classification,
-                "BASE_TYPE_RERANK" => BaseType.Rerank,
                 "BASE_TYPE_CHAT" => BaseType.Chat,
+                "BASE_TYPE_CLASSIFICATION" => BaseType.Classification,
+                "BASE_TYPE_GENERATIVE" => BaseType.Generative,
+                "BASE_TYPE_RERANK" => BaseType.Rerank,
+                "BASE_TYPE_UNSPECIFIED" => BaseType.Unspecified,
                 _ => null,
             };
         }

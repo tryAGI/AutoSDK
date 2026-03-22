@@ -20,19 +20,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ErrorLimit,
-        /// <summary>
-        /// 
-        /// </summary>
-        MaxTokens,
-        /// <summary>
-        /// 
-        /// </summary>
         Error,
         /// <summary>
         /// 
         /// </summary>
+        ErrorLimit,
+        /// <summary>
+        /// 
+        /// </summary>
         ErrorToxic,
+        /// <summary>
+        /// 
+        /// </summary>
+        MaxTokens,
     }
 
     /// <summary>
@@ -48,10 +48,10 @@ namespace G
             return value switch
             {
                 ChatStreamEndEventY8gq2xFinishReason.Complete => "COMPLETE",
-                ChatStreamEndEventY8gq2xFinishReason.ErrorLimit => "ERROR_LIMIT",
-                ChatStreamEndEventY8gq2xFinishReason.MaxTokens => "MAX_TOKENS",
                 ChatStreamEndEventY8gq2xFinishReason.Error => "ERROR",
+                ChatStreamEndEventY8gq2xFinishReason.ErrorLimit => "ERROR_LIMIT",
                 ChatStreamEndEventY8gq2xFinishReason.ErrorToxic => "ERROR_TOXIC",
+                ChatStreamEndEventY8gq2xFinishReason.MaxTokens => "MAX_TOKENS",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,10 +63,10 @@ namespace G
             return value switch
             {
                 "COMPLETE" => ChatStreamEndEventY8gq2xFinishReason.Complete,
-                "ERROR_LIMIT" => ChatStreamEndEventY8gq2xFinishReason.ErrorLimit,
-                "MAX_TOKENS" => ChatStreamEndEventY8gq2xFinishReason.MaxTokens,
                 "ERROR" => ChatStreamEndEventY8gq2xFinishReason.Error,
+                "ERROR_LIMIT" => ChatStreamEndEventY8gq2xFinishReason.ErrorLimit,
                 "ERROR_TOXIC" => ChatStreamEndEventY8gq2xFinishReason.ErrorToxic,
+                "MAX_TOKENS" => ChatStreamEndEventY8gq2xFinishReason.MaxTokens,
                 _ => null,
             };
         }

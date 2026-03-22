@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="p")]
-        P,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="h1")]
         H1,
         /// <summary>
@@ -30,6 +25,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="h3")]
         H3,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="p")]
+        P,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                ChapterContentBlockInputModelSubType2.P => "p",
                 ChapterContentBlockInputModelSubType2.H1 => "h1",
                 ChapterContentBlockInputModelSubType2.H2 => "h2",
                 ChapterContentBlockInputModelSubType2.H3 => "h3",
+                ChapterContentBlockInputModelSubType2.P => "p",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "p" => ChapterContentBlockInputModelSubType2.P,
                 "h1" => ChapterContentBlockInputModelSubType2.H1,
                 "h2" => ChapterContentBlockInputModelSubType2.H2,
                 "h3" => ChapterContentBlockInputModelSubType2.H3,
+                "p" => ChapterContentBlockInputModelSubType2.P,
                 _ => null,
             };
         }

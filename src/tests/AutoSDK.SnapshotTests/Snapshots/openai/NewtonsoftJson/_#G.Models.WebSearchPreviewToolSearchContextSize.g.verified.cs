@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="high")]
+        High,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="low")]
         Low,
         /// <summary>
@@ -20,11 +25,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="medium")]
         Medium,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="high")]
-        High,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
+                WebSearchPreviewToolSearchContextSize.High => "high",
                 WebSearchPreviewToolSearchContextSize.Low => "low",
                 WebSearchPreviewToolSearchContextSize.Medium => "medium",
-                WebSearchPreviewToolSearchContextSize.High => "high",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
+                "high" => WebSearchPreviewToolSearchContextSize.High,
                 "low" => WebSearchPreviewToolSearchContextSize.Low,
                 "medium" => WebSearchPreviewToolSearchContextSize.Medium,
-                "high" => WebSearchPreviewToolSearchContextSize.High,
                 _ => null,
             };
         }

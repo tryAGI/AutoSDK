@@ -44,6 +44,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        DeployKey,
+        /// <summary>
+        /// 
+        /// </summary>
         Deployment,
         /// <summary>
         /// 
@@ -53,10 +57,6 @@ namespace G
         /// 
         /// </summary>
         DeploymentStatus,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeployKey,
         /// <summary>
         /// 
         /// </summary>
@@ -76,11 +76,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Issues,
+        IssueComment,
         /// <summary>
         /// 
         /// </summary>
-        IssueComment,
+        Issues,
         /// <summary>
         /// 
         /// </summary>
@@ -100,11 +100,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Organization,
+        OrgBlock,
         /// <summary>
         /// 
         /// </summary>
-        OrgBlock,
+        Organization,
         /// <summary>
         /// 
         /// </summary>
@@ -140,6 +140,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        PullRequestReviewThread,
+        /// <summary>
+        /// 
+        /// </summary>
         Push,
         /// <summary>
         /// 
@@ -152,6 +156,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Reminder,
+        /// <summary>
+        /// 
+        /// </summary>
         Repository,
         /// <summary>
         /// 
@@ -161,6 +169,10 @@ namespace G
         /// 
         /// </summary>
         SecretScanningAlert,
+        /// <summary>
+        /// 
+        /// </summary>
+        SecurityAndAnalysis,
         /// <summary>
         /// 
         /// </summary>
@@ -189,18 +201,6 @@ namespace G
         /// 
         /// </summary>
         WorkflowRun,
-        /// <summary>
-        /// 
-        /// </summary>
-        SecurityAndAnalysis,
-        /// <summary>
-        /// 
-        /// </summary>
-        Reminder,
-        /// <summary>
-        /// 
-        /// </summary>
-        PullRequestReviewThread,
     }
 
     /// <summary>
@@ -223,22 +223,22 @@ namespace G
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.ContentReference => "content_reference",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Create => "create",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Delete => "delete",
+                WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.DeployKey => "deploy_key",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Deployment => "deployment",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.DeploymentReview => "deployment_review",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.DeploymentStatus => "deployment_status",
-                WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.DeployKey => "deploy_key",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Discussion => "discussion",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.DiscussionComment => "discussion_comment",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Fork => "fork",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Gollum => "gollum",
-                WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Issues => "issues",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.IssueComment => "issue_comment",
+                WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Issues => "issues",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Label => "label",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Member => "member",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Membership => "membership",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Milestone => "milestone",
-                WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Organization => "organization",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.OrgBlock => "org_block",
+                WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Organization => "organization",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.PageBuild => "page_build",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Project => "project",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.ProjectCard => "project_card",
@@ -247,12 +247,15 @@ namespace G
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.PullRequest => "pull_request",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.PullRequestReview => "pull_request_review",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.PullRequestReviewComment => "pull_request_review_comment",
+                WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.PullRequestReviewThread => "pull_request_review_thread",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Push => "push",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.RegistryPackage => "registry_package",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Release => "release",
+                WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Reminder => "reminder",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Repository => "repository",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.RepositoryDispatch => "repository_dispatch",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.SecretScanningAlert => "secret_scanning_alert",
+                WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.SecurityAndAnalysis => "security_and_analysis",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Star => "star",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Status => "status",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Team => "team",
@@ -260,9 +263,6 @@ namespace G
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Watch => "watch",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.WorkflowDispatch => "workflow_dispatch",
                 WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.WorkflowRun => "workflow_run",
-                WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.SecurityAndAnalysis => "security_and_analysis",
-                WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Reminder => "reminder",
-                WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.PullRequestReviewThread => "pull_request_review_thread",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -281,22 +281,22 @@ namespace G
                 "content_reference" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.ContentReference,
                 "create" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Create,
                 "delete" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Delete,
+                "deploy_key" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.DeployKey,
                 "deployment" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Deployment,
                 "deployment_review" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.DeploymentReview,
                 "deployment_status" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.DeploymentStatus,
-                "deploy_key" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.DeployKey,
                 "discussion" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Discussion,
                 "discussion_comment" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.DiscussionComment,
                 "fork" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Fork,
                 "gollum" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Gollum,
-                "issues" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Issues,
                 "issue_comment" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.IssueComment,
+                "issues" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Issues,
                 "label" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Label,
                 "member" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Member,
                 "membership" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Membership,
                 "milestone" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Milestone,
-                "organization" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Organization,
                 "org_block" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.OrgBlock,
+                "organization" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Organization,
                 "page_build" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.PageBuild,
                 "project" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Project,
                 "project_card" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.ProjectCard,
@@ -305,12 +305,15 @@ namespace G
                 "pull_request" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.PullRequest,
                 "pull_request_review" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.PullRequestReview,
                 "pull_request_review_comment" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.PullRequestReviewComment,
+                "pull_request_review_thread" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.PullRequestReviewThread,
                 "push" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Push,
                 "registry_package" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.RegistryPackage,
                 "release" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Release,
+                "reminder" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Reminder,
                 "repository" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Repository,
                 "repository_dispatch" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.RepositoryDispatch,
                 "secret_scanning_alert" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.SecretScanningAlert,
+                "security_and_analysis" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.SecurityAndAnalysis,
                 "star" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Star,
                 "status" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Status,
                 "team" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Team,
@@ -318,9 +321,6 @@ namespace G
                 "watch" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Watch,
                 "workflow_dispatch" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.WorkflowDispatch,
                 "workflow_run" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.WorkflowRun,
-                "security_and_analysis" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.SecurityAndAnalysis,
-                "reminder" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.Reminder,
-                "pull_request_review_thread" => WebhookIssuesClosedIssueIssue1PerformedViaGithubAppEvent.PullRequestReviewThread,
                 _ => null,
             };
         }

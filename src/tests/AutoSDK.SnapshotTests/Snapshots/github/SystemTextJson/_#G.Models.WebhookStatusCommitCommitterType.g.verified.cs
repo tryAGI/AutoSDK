@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        Organization,
+        User,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 WebhookStatusCommitCommitterType.Bot => "Bot",
-                WebhookStatusCommitCommitterType.User => "User",
                 WebhookStatusCommitCommitterType.Organization => "Organization",
+                WebhookStatusCommitCommitterType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookStatusCommitCommitterType.Bot,
-                "User" => WebhookStatusCommitCommitterType.User,
                 "Organization" => WebhookStatusCommitCommitterType.Organization,
+                "User" => WebhookStatusCommitCommitterType.User,
                 _ => null,
             };
         }

@@ -12,35 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Queued,
-        /// <summary>
-        /// 
-        /// </summary>
-        Started,
-        /// <summary>
-        /// 
-        /// </summary>
-        Validating,
-        /// <summary>
-        /// 
-        /// </summary>
-        Validated,
-        /// <summary>
-        /// 
-        /// </summary>
-        Running,
-        /// <summary>
-        /// 
-        /// </summary>
-        FailedValidation,
-        /// <summary>
-        /// 
-        /// </summary>
-        Failed,
-        /// <summary>
-        /// 
-        /// </summary>
-        Success,
+        CancellationRequested,
         /// <summary>
         /// 
         /// </summary>
@@ -48,7 +20,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        CancellationRequested,
+        Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        FailedValidation,
+        /// <summary>
+        /// 
+        /// </summary>
+        Queued,
+        /// <summary>
+        /// 
+        /// </summary>
+        Running,
+        /// <summary>
+        /// 
+        /// </summary>
+        Started,
+        /// <summary>
+        /// 
+        /// </summary>
+        Success,
+        /// <summary>
+        /// 
+        /// </summary>
+        Validated,
+        /// <summary>
+        /// 
+        /// </summary>
+        Validating,
     }
 
     /// <summary>
@@ -63,16 +63,16 @@ namespace G
         {
             return value switch
             {
-                CompletionDetailedJobOutStatus.Queued => "QUEUED",
-                CompletionDetailedJobOutStatus.Started => "STARTED",
-                CompletionDetailedJobOutStatus.Validating => "VALIDATING",
-                CompletionDetailedJobOutStatus.Validated => "VALIDATED",
-                CompletionDetailedJobOutStatus.Running => "RUNNING",
-                CompletionDetailedJobOutStatus.FailedValidation => "FAILED_VALIDATION",
-                CompletionDetailedJobOutStatus.Failed => "FAILED",
-                CompletionDetailedJobOutStatus.Success => "SUCCESS",
-                CompletionDetailedJobOutStatus.Cancelled => "CANCELLED",
                 CompletionDetailedJobOutStatus.CancellationRequested => "CANCELLATION_REQUESTED",
+                CompletionDetailedJobOutStatus.Cancelled => "CANCELLED",
+                CompletionDetailedJobOutStatus.Failed => "FAILED",
+                CompletionDetailedJobOutStatus.FailedValidation => "FAILED_VALIDATION",
+                CompletionDetailedJobOutStatus.Queued => "QUEUED",
+                CompletionDetailedJobOutStatus.Running => "RUNNING",
+                CompletionDetailedJobOutStatus.Started => "STARTED",
+                CompletionDetailedJobOutStatus.Success => "SUCCESS",
+                CompletionDetailedJobOutStatus.Validated => "VALIDATED",
+                CompletionDetailedJobOutStatus.Validating => "VALIDATING",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -83,16 +83,16 @@ namespace G
         {
             return value switch
             {
-                "QUEUED" => CompletionDetailedJobOutStatus.Queued,
-                "STARTED" => CompletionDetailedJobOutStatus.Started,
-                "VALIDATING" => CompletionDetailedJobOutStatus.Validating,
-                "VALIDATED" => CompletionDetailedJobOutStatus.Validated,
-                "RUNNING" => CompletionDetailedJobOutStatus.Running,
-                "FAILED_VALIDATION" => CompletionDetailedJobOutStatus.FailedValidation,
-                "FAILED" => CompletionDetailedJobOutStatus.Failed,
-                "SUCCESS" => CompletionDetailedJobOutStatus.Success,
-                "CANCELLED" => CompletionDetailedJobOutStatus.Cancelled,
                 "CANCELLATION_REQUESTED" => CompletionDetailedJobOutStatus.CancellationRequested,
+                "CANCELLED" => CompletionDetailedJobOutStatus.Cancelled,
+                "FAILED" => CompletionDetailedJobOutStatus.Failed,
+                "FAILED_VALIDATION" => CompletionDetailedJobOutStatus.FailedValidation,
+                "QUEUED" => CompletionDetailedJobOutStatus.Queued,
+                "RUNNING" => CompletionDetailedJobOutStatus.Running,
+                "STARTED" => CompletionDetailedJobOutStatus.Started,
+                "SUCCESS" => CompletionDetailedJobOutStatus.Success,
+                "VALIDATED" => CompletionDetailedJobOutStatus.Validated,
+                "VALIDATING" => CompletionDetailedJobOutStatus.Validating,
                 _ => null,
             };
         }

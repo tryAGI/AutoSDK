@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="updated")]
-        Updated,
+        [global::System.Runtime.Serialization.EnumMember(Value="full_name")]
+        FullName,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="full_name")]
-        FullName,
+        [global::System.Runtime.Serialization.EnumMember(Value="updated")]
+        Updated,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 ReposListForAuthenticatedUserSort.Created => "created",
-                ReposListForAuthenticatedUserSort.Updated => "updated",
-                ReposListForAuthenticatedUserSort.Pushed => "pushed",
                 ReposListForAuthenticatedUserSort.FullName => "full_name",
+                ReposListForAuthenticatedUserSort.Pushed => "pushed",
+                ReposListForAuthenticatedUserSort.Updated => "updated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "created" => ReposListForAuthenticatedUserSort.Created,
-                "updated" => ReposListForAuthenticatedUserSort.Updated,
-                "pushed" => ReposListForAuthenticatedUserSort.Pushed,
                 "full_name" => ReposListForAuthenticatedUserSort.FullName,
+                "pushed" => ReposListForAuthenticatedUserSort.Pushed,
+                "updated" => ReposListForAuthenticatedUserSort.Updated,
                 _ => null,
             };
         }

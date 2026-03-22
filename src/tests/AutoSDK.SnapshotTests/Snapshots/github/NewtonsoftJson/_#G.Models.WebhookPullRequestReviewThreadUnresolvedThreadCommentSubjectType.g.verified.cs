@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="line")]
-        Line,
+        [global::System.Runtime.Serialization.EnumMember(Value="file")]
+        File,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="file")]
-        File,
+        [global::System.Runtime.Serialization.EnumMember(Value="line")]
+        Line,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                WebhookPullRequestReviewThreadUnresolvedThreadCommentSubjectType.Line => "line",
                 WebhookPullRequestReviewThreadUnresolvedThreadCommentSubjectType.File => "file",
+                WebhookPullRequestReviewThreadUnresolvedThreadCommentSubjectType.Line => "line",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "line" => WebhookPullRequestReviewThreadUnresolvedThreadCommentSubjectType.Line,
                 "file" => WebhookPullRequestReviewThreadUnresolvedThreadCommentSubjectType.File,
+                "line" => WebhookPullRequestReviewThreadUnresolvedThreadCommentSubjectType.Line,
                 _ => null,
             };
         }

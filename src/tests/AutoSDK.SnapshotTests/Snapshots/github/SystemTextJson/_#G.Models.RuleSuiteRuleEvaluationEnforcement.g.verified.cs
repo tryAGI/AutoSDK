@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Evaluate,
+        DeletedRuleset,
         /// <summary>
         /// 
         /// </summary>
-        DeletedRuleset,
+        Evaluate,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 RuleSuiteRuleEvaluationEnforcement.Active => "active",
-                RuleSuiteRuleEvaluationEnforcement.Evaluate => "evaluate",
                 RuleSuiteRuleEvaluationEnforcement.DeletedRuleset => "deleted ruleset",
+                RuleSuiteRuleEvaluationEnforcement.Evaluate => "evaluate",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "active" => RuleSuiteRuleEvaluationEnforcement.Active,
-                "evaluate" => RuleSuiteRuleEvaluationEnforcement.Evaluate,
                 "deleted ruleset" => RuleSuiteRuleEvaluationEnforcement.DeletedRuleset,
+                "evaluate" => RuleSuiteRuleEvaluationEnforcement.Evaluate,
                 _ => null,
             };
         }

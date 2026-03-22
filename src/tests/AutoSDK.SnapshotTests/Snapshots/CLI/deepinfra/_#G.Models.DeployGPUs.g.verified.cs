@@ -16,15 +16,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        B200180gb,
+        /// <summary>
+        /// 
+        /// </summary>
         H10080gb,
         /// <summary>
         /// 
         /// </summary>
         H200141gb,
-        /// <summary>
-        /// 
-        /// </summary>
-        B200180gb,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace G
             return value switch
             {
                 DeployGPUs.A10080gb => "A100-80GB",
+                DeployGPUs.B200180gb => "B200-180GB",
                 DeployGPUs.H10080gb => "H100-80GB",
                 DeployGPUs.H200141gb => "H200-141GB",
-                DeployGPUs.B200180gb => "B200-180GB",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace G
             return value switch
             {
                 "A100-80GB" => DeployGPUs.A10080gb,
+                "B200-180GB" => DeployGPUs.B200180gb,
                 "H100-80GB" => DeployGPUs.H10080gb,
                 "H200-141GB" => DeployGPUs.H200141gb,
-                "B200-180GB" => DeployGPUs.B200180gb,
                 _ => null,
             };
         }

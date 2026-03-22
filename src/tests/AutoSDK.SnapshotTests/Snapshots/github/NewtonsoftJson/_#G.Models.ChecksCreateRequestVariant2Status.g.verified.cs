@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
-        Queued,
+        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
+        InProgress,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
-        InProgress,
+        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
+        Queued,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ChecksCreateRequestVariant2Status.Queued => "queued",
                 ChecksCreateRequestVariant2Status.InProgress => "in_progress",
+                ChecksCreateRequestVariant2Status.Queued => "queued",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "queued" => ChecksCreateRequestVariant2Status.Queued,
                 "in_progress" => ChecksCreateRequestVariant2Status.InProgress,
+                "queued" => ChecksCreateRequestVariant2Status.Queued,
                 _ => null,
             };
         }

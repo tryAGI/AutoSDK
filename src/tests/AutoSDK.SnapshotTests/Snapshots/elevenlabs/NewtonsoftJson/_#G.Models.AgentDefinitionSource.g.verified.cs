@@ -13,23 +13,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cli")]
-        Cli,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="ui")]
-        Ui,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="api")]
         Api,
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="cli")]
+        Cli,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="template")]
         Template,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="ui")]
+        Ui,
         /// <summary>
         /// 
         /// </summary>
@@ -49,10 +49,10 @@ namespace G
         {
             return value switch
             {
-                AgentDefinitionSource.Cli => "cli",
-                AgentDefinitionSource.Ui => "ui",
                 AgentDefinitionSource.Api => "api",
+                AgentDefinitionSource.Cli => "cli",
                 AgentDefinitionSource.Template => "template",
+                AgentDefinitionSource.Ui => "ui",
                 AgentDefinitionSource.Unknown => "unknown",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -64,10 +64,10 @@ namespace G
         {
             return value switch
             {
-                "cli" => AgentDefinitionSource.Cli,
-                "ui" => AgentDefinitionSource.Ui,
                 "api" => AgentDefinitionSource.Api,
+                "cli" => AgentDefinitionSource.Cli,
                 "template" => AgentDefinitionSource.Template,
+                "ui" => AgentDefinitionSource.Ui,
                 "unknown" => AgentDefinitionSource.Unknown,
                 _ => null,
             };

@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Upload,
+        Mistral,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Mistral,
+        Upload,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                Source.Upload => "upload",
-                Source.Repository => "repository",
                 Source.Mistral => "mistral",
+                Source.Repository => "repository",
+                Source.Upload => "upload",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "upload" => Source.Upload,
-                "repository" => Source.Repository,
                 "mistral" => Source.Mistral,
+                "repository" => Source.Repository,
+                "upload" => Source.Upload,
                 _ => null,
             };
         }

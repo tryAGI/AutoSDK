@@ -20,25 +20,25 @@ namespace G
         /// </summary>
         Create,
         /// <summary>
-        /// Update catalog.
+        /// Upload catalog file.
         /// </summary>
-        Update,
+        CreateFile,
         /// <summary>
         /// Delete catalog.
         /// </summary>
         Delete,
         /// <summary>
-        /// Upload catalog file.
+        /// Delete catalog file.
         /// </summary>
-        CreateFile,
+        DeleteFile,
         /// <summary>
         /// Process catalog file.
         /// </summary>
         ProcessFile,
         /// <summary>
-        /// Delete catalog file.
+        /// Update catalog.
         /// </summary>
-        DeleteFile,
+        Update,
     }
 
     /// <summary>
@@ -54,11 +54,11 @@ namespace G
             return value switch
             {
                 CatalogRunAction.Create => "CATALOG_RUN_ACTION_CREATE",
-                CatalogRunAction.Update => "CATALOG_RUN_ACTION_UPDATE",
-                CatalogRunAction.Delete => "CATALOG_RUN_ACTION_DELETE",
                 CatalogRunAction.CreateFile => "CATALOG_RUN_ACTION_CREATE_FILE",
-                CatalogRunAction.ProcessFile => "CATALOG_RUN_ACTION_PROCESS_FILE",
+                CatalogRunAction.Delete => "CATALOG_RUN_ACTION_DELETE",
                 CatalogRunAction.DeleteFile => "CATALOG_RUN_ACTION_DELETE_FILE",
+                CatalogRunAction.ProcessFile => "CATALOG_RUN_ACTION_PROCESS_FILE",
+                CatalogRunAction.Update => "CATALOG_RUN_ACTION_UPDATE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,11 +70,11 @@ namespace G
             return value switch
             {
                 "CATALOG_RUN_ACTION_CREATE" => CatalogRunAction.Create,
-                "CATALOG_RUN_ACTION_UPDATE" => CatalogRunAction.Update,
-                "CATALOG_RUN_ACTION_DELETE" => CatalogRunAction.Delete,
                 "CATALOG_RUN_ACTION_CREATE_FILE" => CatalogRunAction.CreateFile,
-                "CATALOG_RUN_ACTION_PROCESS_FILE" => CatalogRunAction.ProcessFile,
+                "CATALOG_RUN_ACTION_DELETE" => CatalogRunAction.Delete,
                 "CATALOG_RUN_ACTION_DELETE_FILE" => CatalogRunAction.DeleteFile,
+                "CATALOG_RUN_ACTION_PROCESS_FILE" => CatalogRunAction.ProcessFile,
+                "CATALOG_RUN_ACTION_UPDATE" => CatalogRunAction.Update,
                 _ => null,
             };
         }

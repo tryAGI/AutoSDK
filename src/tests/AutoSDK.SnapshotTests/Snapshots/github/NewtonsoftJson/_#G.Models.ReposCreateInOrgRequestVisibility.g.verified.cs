@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="public")]
-        Public,
+        [global::System.Runtime.Serialization.EnumMember(Value="private")]
+        Private,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="private")]
-        Private,
+        [global::System.Runtime.Serialization.EnumMember(Value="public")]
+        Public,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                ReposCreateInOrgRequestVisibility.Public => "public",
                 ReposCreateInOrgRequestVisibility.Private => "private",
+                ReposCreateInOrgRequestVisibility.Public => "public",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "public" => ReposCreateInOrgRequestVisibility.Public,
                 "private" => ReposCreateInOrgRequestVisibility.Private,
+                "public" => ReposCreateInOrgRequestVisibility.Public,
                 _ => null,
             };
         }

@@ -12,11 +12,39 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        ActTwo,
+        /// <summary>
+        /// 
+        /// </summary>
+        ElevenMultilingualStsV2,
+        /// <summary>
+        /// 
+        /// </summary>
+        ElevenMultilingualV2,
+        /// <summary>
+        /// 
+        /// </summary>
+        ElevenTextToSoundV2,
+        /// <summary>
+        /// 
+        /// </summary>
+        ElevenVoiceDubbing,
+        /// <summary>
+        /// 
+        /// </summary>
+        ElevenVoiceIsolation,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gemini25Flash,
+        /// <summary>
+        /// 
+        /// </summary>
         Gen3aTurbo,
         /// <summary>
         /// 
         /// </summary>
-        Gen4Turbo,
+        Gen4Aleph,
         /// <summary>
         /// 
         /// </summary>
@@ -28,11 +56,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ActTwo,
-        /// <summary>
-        /// 
-        /// </summary>
-        Gen4Aleph,
+        Gen4Turbo,
         /// <summary>
         /// 
         /// </summary>
@@ -45,30 +69,6 @@ namespace G
         /// 
         /// </summary>
         Veo31Fast,
-        /// <summary>
-        /// 
-        /// </summary>
-        Gemini25Flash,
-        /// <summary>
-        /// 
-        /// </summary>
-        ElevenMultilingualV2,
-        /// <summary>
-        /// 
-        /// </summary>
-        ElevenTextToSoundV2,
-        /// <summary>
-        /// 
-        /// </summary>
-        ElevenVoiceIsolation,
-        /// <summary>
-        /// 
-        /// </summary>
-        ElevenVoiceDubbing,
-        /// <summary>
-        /// 
-        /// </summary>
-        ElevenMultilingualStsV2,
     }
 
     /// <summary>
@@ -83,21 +83,21 @@ namespace G
         {
             return value switch
             {
+                CreateOrganizationUsageResponseResultUsedCreditModel.ActTwo => "act_two",
+                CreateOrganizationUsageResponseResultUsedCreditModel.ElevenMultilingualStsV2 => "eleven_multilingual_sts_v2",
+                CreateOrganizationUsageResponseResultUsedCreditModel.ElevenMultilingualV2 => "eleven_multilingual_v2",
+                CreateOrganizationUsageResponseResultUsedCreditModel.ElevenTextToSoundV2 => "eleven_text_to_sound_v2",
+                CreateOrganizationUsageResponseResultUsedCreditModel.ElevenVoiceDubbing => "eleven_voice_dubbing",
+                CreateOrganizationUsageResponseResultUsedCreditModel.ElevenVoiceIsolation => "eleven_voice_isolation",
+                CreateOrganizationUsageResponseResultUsedCreditModel.Gemini25Flash => "gemini_2.5_flash",
                 CreateOrganizationUsageResponseResultUsedCreditModel.Gen3aTurbo => "gen3a_turbo",
-                CreateOrganizationUsageResponseResultUsedCreditModel.Gen4Turbo => "gen4_turbo",
+                CreateOrganizationUsageResponseResultUsedCreditModel.Gen4Aleph => "gen4_aleph",
                 CreateOrganizationUsageResponseResultUsedCreditModel.Gen4Image => "gen4_image",
                 CreateOrganizationUsageResponseResultUsedCreditModel.Gen4ImageTurbo => "gen4_image_turbo",
-                CreateOrganizationUsageResponseResultUsedCreditModel.ActTwo => "act_two",
-                CreateOrganizationUsageResponseResultUsedCreditModel.Gen4Aleph => "gen4_aleph",
+                CreateOrganizationUsageResponseResultUsedCreditModel.Gen4Turbo => "gen4_turbo",
                 CreateOrganizationUsageResponseResultUsedCreditModel.Veo3 => "veo3",
                 CreateOrganizationUsageResponseResultUsedCreditModel.Veo31 => "veo3.1",
                 CreateOrganizationUsageResponseResultUsedCreditModel.Veo31Fast => "veo3.1_fast",
-                CreateOrganizationUsageResponseResultUsedCreditModel.Gemini25Flash => "gemini_2.5_flash",
-                CreateOrganizationUsageResponseResultUsedCreditModel.ElevenMultilingualV2 => "eleven_multilingual_v2",
-                CreateOrganizationUsageResponseResultUsedCreditModel.ElevenTextToSoundV2 => "eleven_text_to_sound_v2",
-                CreateOrganizationUsageResponseResultUsedCreditModel.ElevenVoiceIsolation => "eleven_voice_isolation",
-                CreateOrganizationUsageResponseResultUsedCreditModel.ElevenVoiceDubbing => "eleven_voice_dubbing",
-                CreateOrganizationUsageResponseResultUsedCreditModel.ElevenMultilingualStsV2 => "eleven_multilingual_sts_v2",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -108,21 +108,21 @@ namespace G
         {
             return value switch
             {
+                "act_two" => CreateOrganizationUsageResponseResultUsedCreditModel.ActTwo,
+                "eleven_multilingual_sts_v2" => CreateOrganizationUsageResponseResultUsedCreditModel.ElevenMultilingualStsV2,
+                "eleven_multilingual_v2" => CreateOrganizationUsageResponseResultUsedCreditModel.ElevenMultilingualV2,
+                "eleven_text_to_sound_v2" => CreateOrganizationUsageResponseResultUsedCreditModel.ElevenTextToSoundV2,
+                "eleven_voice_dubbing" => CreateOrganizationUsageResponseResultUsedCreditModel.ElevenVoiceDubbing,
+                "eleven_voice_isolation" => CreateOrganizationUsageResponseResultUsedCreditModel.ElevenVoiceIsolation,
+                "gemini_2.5_flash" => CreateOrganizationUsageResponseResultUsedCreditModel.Gemini25Flash,
                 "gen3a_turbo" => CreateOrganizationUsageResponseResultUsedCreditModel.Gen3aTurbo,
-                "gen4_turbo" => CreateOrganizationUsageResponseResultUsedCreditModel.Gen4Turbo,
+                "gen4_aleph" => CreateOrganizationUsageResponseResultUsedCreditModel.Gen4Aleph,
                 "gen4_image" => CreateOrganizationUsageResponseResultUsedCreditModel.Gen4Image,
                 "gen4_image_turbo" => CreateOrganizationUsageResponseResultUsedCreditModel.Gen4ImageTurbo,
-                "act_two" => CreateOrganizationUsageResponseResultUsedCreditModel.ActTwo,
-                "gen4_aleph" => CreateOrganizationUsageResponseResultUsedCreditModel.Gen4Aleph,
+                "gen4_turbo" => CreateOrganizationUsageResponseResultUsedCreditModel.Gen4Turbo,
                 "veo3" => CreateOrganizationUsageResponseResultUsedCreditModel.Veo3,
                 "veo3.1" => CreateOrganizationUsageResponseResultUsedCreditModel.Veo31,
                 "veo3.1_fast" => CreateOrganizationUsageResponseResultUsedCreditModel.Veo31Fast,
-                "gemini_2.5_flash" => CreateOrganizationUsageResponseResultUsedCreditModel.Gemini25Flash,
-                "eleven_multilingual_v2" => CreateOrganizationUsageResponseResultUsedCreditModel.ElevenMultilingualV2,
-                "eleven_text_to_sound_v2" => CreateOrganizationUsageResponseResultUsedCreditModel.ElevenTextToSoundV2,
-                "eleven_voice_isolation" => CreateOrganizationUsageResponseResultUsedCreditModel.ElevenVoiceIsolation,
-                "eleven_voice_dubbing" => CreateOrganizationUsageResponseResultUsedCreditModel.ElevenVoiceDubbing,
-                "eleven_multilingual_sts_v2" => CreateOrganizationUsageResponseResultUsedCreditModel.ElevenMultilingualStsV2,
                 _ => null,
             };
         }

@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text")]
-        Text,
+        [global::System.Runtime.Serialization.EnumMember(Value="skill")]
+        Skill,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="skill")]
-        Skill,
+        [global::System.Runtime.Serialization.EnumMember(Value="text")]
+        Text,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                AgentInputDiscriminatorType.Text => "text",
                 AgentInputDiscriminatorType.Skill => "skill",
+                AgentInputDiscriminatorType.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "text" => AgentInputDiscriminatorType.Text,
                 "skill" => AgentInputDiscriminatorType.Skill,
+                "text" => AgentInputDiscriminatorType.Text,
                 _ => null,
             };
         }

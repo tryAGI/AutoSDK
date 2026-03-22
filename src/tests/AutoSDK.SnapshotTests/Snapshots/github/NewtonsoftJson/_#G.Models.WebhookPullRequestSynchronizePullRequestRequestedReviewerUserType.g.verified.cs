@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookPullRequestSynchronizePullRequestRequestedReviewerUserType.Bot => "Bot",
-                WebhookPullRequestSynchronizePullRequestRequestedReviewerUserType.User => "User",
-                WebhookPullRequestSynchronizePullRequestRequestedReviewerUserType.Organization => "Organization",
                 WebhookPullRequestSynchronizePullRequestRequestedReviewerUserType.Mannequin => "Mannequin",
+                WebhookPullRequestSynchronizePullRequestRequestedReviewerUserType.Organization => "Organization",
+                WebhookPullRequestSynchronizePullRequestRequestedReviewerUserType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestSynchronizePullRequestRequestedReviewerUserType.Bot,
-                "User" => WebhookPullRequestSynchronizePullRequestRequestedReviewerUserType.User,
-                "Organization" => WebhookPullRequestSynchronizePullRequestRequestedReviewerUserType.Organization,
                 "Mannequin" => WebhookPullRequestSynchronizePullRequestRequestedReviewerUserType.Mannequin,
+                "Organization" => WebhookPullRequestSynchronizePullRequestRequestedReviewerUserType.Organization,
+                "User" => WebhookPullRequestSynchronizePullRequestRequestedReviewerUserType.User,
                 _ => null,
             };
         }

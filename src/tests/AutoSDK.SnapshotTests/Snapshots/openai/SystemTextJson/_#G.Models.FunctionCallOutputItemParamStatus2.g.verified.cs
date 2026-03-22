@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        InProgress,
+        Completed,
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        InProgress,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                FunctionCallOutputItemParamStatus2.InProgress => "in_progress",
                 FunctionCallOutputItemParamStatus2.Completed => "completed",
+                FunctionCallOutputItemParamStatus2.InProgress => "in_progress",
                 FunctionCallOutputItemParamStatus2.Incomplete => "incomplete",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace G
         {
             return value switch
             {
-                "in_progress" => FunctionCallOutputItemParamStatus2.InProgress,
                 "completed" => FunctionCallOutputItemParamStatus2.Completed,
+                "in_progress" => FunctionCallOutputItemParamStatus2.InProgress,
                 "incomplete" => FunctionCallOutputItemParamStatus2.Incomplete,
                 _ => null,
             };

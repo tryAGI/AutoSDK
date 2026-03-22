@@ -89,11 +89,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        None,
+        Neutral,
         /// <summary>
         /// 
         /// </summary>
-        Neutral,
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -129,11 +129,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Vibrant,
+        Unprocessed,
         /// <summary>
         /// 
         /// </summary>
-        Unprocessed,
+        Vibrant,
     }
 
     /// <summary>
@@ -167,8 +167,8 @@ namespace G
                 SdGenerationStyle.Minimalistic => "MINIMALISTIC",
                 SdGenerationStyle.Monochrome => "MONOCHROME",
                 SdGenerationStyle.Moody => "MOODY",
-                SdGenerationStyle.None => "NONE",
                 SdGenerationStyle.Neutral => "NEUTRAL",
+                SdGenerationStyle.None => "NONE",
                 SdGenerationStyle.Photography => "PHOTOGRAPHY",
                 SdGenerationStyle.Portrait => "PORTRAIT",
                 SdGenerationStyle.Raytraced => "RAYTRACED",
@@ -177,8 +177,8 @@ namespace G
                 SdGenerationStyle.SketchBw => "SKETCH_BW",
                 SdGenerationStyle.SketchColor => "SKETCH_COLOR",
                 SdGenerationStyle.StockPhoto => "STOCK_PHOTO",
-                SdGenerationStyle.Vibrant => "VIBRANT",
                 SdGenerationStyle.Unprocessed => "UNPROCESSED",
+                SdGenerationStyle.Vibrant => "VIBRANT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -208,8 +208,8 @@ namespace G
                 "MINIMALISTIC" => SdGenerationStyle.Minimalistic,
                 "MONOCHROME" => SdGenerationStyle.Monochrome,
                 "MOODY" => SdGenerationStyle.Moody,
-                "NONE" => SdGenerationStyle.None,
                 "NEUTRAL" => SdGenerationStyle.Neutral,
+                "NONE" => SdGenerationStyle.None,
                 "PHOTOGRAPHY" => SdGenerationStyle.Photography,
                 "PORTRAIT" => SdGenerationStyle.Portrait,
                 "RAYTRACED" => SdGenerationStyle.Raytraced,
@@ -218,8 +218,8 @@ namespace G
                 "SKETCH_BW" => SdGenerationStyle.SketchBw,
                 "SKETCH_COLOR" => SdGenerationStyle.SketchColor,
                 "STOCK_PHOTO" => SdGenerationStyle.StockPhoto,
-                "VIBRANT" => SdGenerationStyle.Vibrant,
                 "UNPROCESSED" => SdGenerationStyle.Unprocessed,
+                "VIBRANT" => SdGenerationStyle.Vibrant,
                 _ => null,
             };
         }

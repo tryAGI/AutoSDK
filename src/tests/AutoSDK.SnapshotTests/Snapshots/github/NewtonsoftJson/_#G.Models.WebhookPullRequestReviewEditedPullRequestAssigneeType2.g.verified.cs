@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
+        Mannequin,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Mannequin")]
-        Mannequin,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 WebhookPullRequestReviewEditedPullRequestAssigneeType2.Bot => "Bot",
-                WebhookPullRequestReviewEditedPullRequestAssigneeType2.User => "User",
-                WebhookPullRequestReviewEditedPullRequestAssigneeType2.Organization => "Organization",
                 WebhookPullRequestReviewEditedPullRequestAssigneeType2.Mannequin => "Mannequin",
+                WebhookPullRequestReviewEditedPullRequestAssigneeType2.Organization => "Organization",
+                WebhookPullRequestReviewEditedPullRequestAssigneeType2.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestReviewEditedPullRequestAssigneeType2.Bot,
-                "User" => WebhookPullRequestReviewEditedPullRequestAssigneeType2.User,
-                "Organization" => WebhookPullRequestReviewEditedPullRequestAssigneeType2.Organization,
                 "Mannequin" => WebhookPullRequestReviewEditedPullRequestAssigneeType2.Mannequin,
+                "Organization" => WebhookPullRequestReviewEditedPullRequestAssigneeType2.Organization,
+                "User" => WebhookPullRequestReviewEditedPullRequestAssigneeType2.User,
                 _ => null,
             };
         }

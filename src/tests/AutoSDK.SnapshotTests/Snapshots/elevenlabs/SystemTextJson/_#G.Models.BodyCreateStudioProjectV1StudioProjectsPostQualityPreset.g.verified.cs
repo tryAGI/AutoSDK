@@ -17,11 +17,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Standard,
+        High,
         /// <summary>
         /// 
         /// </summary>
-        High,
+        Standard,
         /// <summary>
         /// 
         /// </summary>
@@ -44,8 +44,8 @@ namespace G
         {
             return value switch
             {
-                BodyCreateStudioProjectV1StudioProjectsPostQualityPreset.Standard => "standard",
                 BodyCreateStudioProjectV1StudioProjectsPostQualityPreset.High => "high",
+                BodyCreateStudioProjectV1StudioProjectsPostQualityPreset.Standard => "standard",
                 BodyCreateStudioProjectV1StudioProjectsPostQualityPreset.Ultra => "ultra",
                 BodyCreateStudioProjectV1StudioProjectsPostQualityPreset.UltraLossless => "ultra_lossless",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -58,8 +58,8 @@ namespace G
         {
             return value switch
             {
-                "standard" => BodyCreateStudioProjectV1StudioProjectsPostQualityPreset.Standard,
                 "high" => BodyCreateStudioProjectV1StudioProjectsPostQualityPreset.High,
+                "standard" => BodyCreateStudioProjectV1StudioProjectsPostQualityPreset.Standard,
                 "ultra" => BodyCreateStudioProjectV1StudioProjectsPostQualityPreset.Ultra,
                 "ultra_lossless" => BodyCreateStudioProjectV1StudioProjectsPostQualityPreset.UltraLossless,
                 _ => null,

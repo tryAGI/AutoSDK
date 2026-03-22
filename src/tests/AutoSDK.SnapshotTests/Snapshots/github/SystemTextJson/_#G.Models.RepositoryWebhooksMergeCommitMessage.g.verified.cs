@@ -15,15 +15,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Blank,
+        /// <summary>
+        /// 
+        /// </summary>
         PrBody,
         /// <summary>
         /// 
         /// </summary>
         PrTitle,
-        /// <summary>
-        /// 
-        /// </summary>
-        Blank,
     }
 
     /// <summary>
@@ -38,9 +38,9 @@ namespace G
         {
             return value switch
             {
+                RepositoryWebhooksMergeCommitMessage.Blank => "BLANK",
                 RepositoryWebhooksMergeCommitMessage.PrBody => "PR_BODY",
                 RepositoryWebhooksMergeCommitMessage.PrTitle => "PR_TITLE",
-                RepositoryWebhooksMergeCommitMessage.Blank => "BLANK",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,9 +51,9 @@ namespace G
         {
             return value switch
             {
+                "BLANK" => RepositoryWebhooksMergeCommitMessage.Blank,
                 "PR_BODY" => RepositoryWebhooksMergeCommitMessage.PrBody,
                 "PR_TITLE" => RepositoryWebhooksMergeCommitMessage.PrTitle,
-                "BLANK" => RepositoryWebhooksMergeCommitMessage.Blank,
                 _ => null,
             };
         }

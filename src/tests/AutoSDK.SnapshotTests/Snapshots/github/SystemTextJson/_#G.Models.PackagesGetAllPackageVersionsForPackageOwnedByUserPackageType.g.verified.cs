@@ -12,15 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Npm,
-        /// <summary>
-        /// 
-        /// </summary>
-        Maven,
-        /// <summary>
-        /// 
-        /// </summary>
-        Rubygems,
+        Container,
         /// <summary>
         /// 
         /// </summary>
@@ -28,11 +20,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Maven,
+        /// <summary>
+        /// 
+        /// </summary>
+        Npm,
+        /// <summary>
+        /// 
+        /// </summary>
         Nuget,
         /// <summary>
         /// 
         /// </summary>
-        Container,
+        Rubygems,
     }
 
     /// <summary>
@@ -47,12 +47,12 @@ namespace G
         {
             return value switch
             {
-                PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.Npm => "npm",
-                PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.Maven => "maven",
-                PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.Rubygems => "rubygems",
-                PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.Docker => "docker",
-                PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.Nuget => "nuget",
                 PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.Container => "container",
+                PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.Docker => "docker",
+                PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.Maven => "maven",
+                PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.Npm => "npm",
+                PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.Nuget => "nuget",
+                PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.Rubygems => "rubygems",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,12 +63,12 @@ namespace G
         {
             return value switch
             {
-                "npm" => PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.Npm,
-                "maven" => PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.Maven,
-                "rubygems" => PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.Rubygems,
-                "docker" => PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.Docker,
-                "nuget" => PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.Nuget,
                 "container" => PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.Container,
+                "docker" => PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.Docker,
+                "maven" => PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.Maven,
+                "npm" => PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.Npm,
+                "nuget" => PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.Nuget,
+                "rubygems" => PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.Rubygems,
                 _ => null,
             };
         }

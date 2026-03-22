@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        WriterPermsRequired,
+        AdminPermsRequired,
         /// <summary>
         /// 
         /// </summary>
-        AdminPermsRequired,
+        WriterPermsRequired,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                BranchProtectionStatus.WriterPermsRequired => "writer_perms_required",
                 BranchProtectionStatus.AdminPermsRequired => "admin_perms_required",
+                BranchProtectionStatus.WriterPermsRequired => "writer_perms_required",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "writer_perms_required" => BranchProtectionStatus.WriterPermsRequired,
                 "admin_perms_required" => BranchProtectionStatus.AdminPermsRequired,
+                "writer_perms_required" => BranchProtectionStatus.WriterPermsRequired,
                 _ => null,
             };
         }

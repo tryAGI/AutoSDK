@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Resolved,
+        Duplicate,
         /// <summary>
         /// 
         /// </summary>
@@ -21,11 +21,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Duplicate,
+        Reopened,
         /// <summary>
         /// 
         /// </summary>
-        Reopened,
+        Resolved,
     }
 
     /// <summary>
@@ -40,10 +40,10 @@ namespace G
         {
             return value switch
             {
-                DiscussionStateReason.Resolved => "resolved",
-                DiscussionStateReason.Outdated => "outdated",
                 DiscussionStateReason.Duplicate => "duplicate",
+                DiscussionStateReason.Outdated => "outdated",
                 DiscussionStateReason.Reopened => "reopened",
+                DiscussionStateReason.Resolved => "resolved",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,10 +54,10 @@ namespace G
         {
             return value switch
             {
-                "resolved" => DiscussionStateReason.Resolved,
-                "outdated" => DiscussionStateReason.Outdated,
                 "duplicate" => DiscussionStateReason.Duplicate,
+                "outdated" => DiscussionStateReason.Outdated,
                 "reopened" => DiscussionStateReason.Reopened,
+                "resolved" => DiscussionStateReason.Resolved,
                 _ => null,
             };
         }

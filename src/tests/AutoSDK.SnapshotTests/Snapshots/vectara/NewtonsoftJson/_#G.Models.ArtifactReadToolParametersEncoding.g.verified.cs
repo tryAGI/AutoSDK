@@ -14,13 +14,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="raw")]
-        Raw,
+        [global::System.Runtime.Serialization.EnumMember(Value="base64")]
+        Base64,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="base64")]
-        Base64,
+        [global::System.Runtime.Serialization.EnumMember(Value="raw")]
+        Raw,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                ArtifactReadToolParametersEncoding.Raw => "raw",
                 ArtifactReadToolParametersEncoding.Base64 => "base64",
+                ArtifactReadToolParametersEncoding.Raw => "raw",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,8 +47,8 @@ namespace G
         {
             return value switch
             {
-                "raw" => ArtifactReadToolParametersEncoding.Raw,
                 "base64" => ArtifactReadToolParametersEncoding.Base64,
+                "raw" => ArtifactReadToolParametersEncoding.Raw,
                 _ => null,
             };
         }

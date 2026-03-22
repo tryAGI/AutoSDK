@@ -13,8 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="none")]
-        None,
+        [global::System.Runtime.Serialization.EnumMember(Value="bounce")]
+        Bounce,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="drop")]
+        Drop,
         /// <summary>
         /// 
         /// </summary>
@@ -33,13 +38,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="zoom_in")]
-        ZoomIn,
+        [global::System.Runtime.Serialization.EnumMember(Value="none")]
+        None,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="drop")]
-        Drop,
+        [global::System.Runtime.Serialization.EnumMember(Value="pop")]
+        Pop,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="slide_bounce")]
+        SlideBounce,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="slide_down")]
+        SlideDown,
         /// <summary>
         /// 
         /// </summary>
@@ -58,28 +73,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="slide_down")]
-        SlideDown,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pop")]
-        Pop,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="bounce")]
-        Bounce,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="spin")]
         Spin,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="slide_bounce")]
-        SlideBounce,
+        [global::System.Runtime.Serialization.EnumMember(Value="zoom_in")]
+        ZoomIn,
     }
 
     /// <summary>
@@ -94,20 +94,20 @@ namespace G
         {
             return value switch
             {
-                ClipAnimationExitEffect.None => "none",
+                ClipAnimationExitEffect.Bounce => "bounce",
+                ClipAnimationExitEffect.Drop => "drop",
                 ClipAnimationExitEffect.Fade => "fade",
                 ClipAnimationExitEffect.Float => "float",
                 ClipAnimationExitEffect.GentleFloat => "gentle_float",
-                ClipAnimationExitEffect.ZoomIn => "zoom_in",
-                ClipAnimationExitEffect.Drop => "drop",
+                ClipAnimationExitEffect.None => "none",
+                ClipAnimationExitEffect.Pop => "pop",
+                ClipAnimationExitEffect.SlideBounce => "slide_bounce",
+                ClipAnimationExitEffect.SlideDown => "slide_down",
                 ClipAnimationExitEffect.SlideLeft => "slide_left",
                 ClipAnimationExitEffect.SlideRight => "slide_right",
                 ClipAnimationExitEffect.SlideUp => "slide_up",
-                ClipAnimationExitEffect.SlideDown => "slide_down",
-                ClipAnimationExitEffect.Pop => "pop",
-                ClipAnimationExitEffect.Bounce => "bounce",
                 ClipAnimationExitEffect.Spin => "spin",
-                ClipAnimationExitEffect.SlideBounce => "slide_bounce",
+                ClipAnimationExitEffect.ZoomIn => "zoom_in",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -118,20 +118,20 @@ namespace G
         {
             return value switch
             {
-                "none" => ClipAnimationExitEffect.None,
+                "bounce" => ClipAnimationExitEffect.Bounce,
+                "drop" => ClipAnimationExitEffect.Drop,
                 "fade" => ClipAnimationExitEffect.Fade,
                 "float" => ClipAnimationExitEffect.Float,
                 "gentle_float" => ClipAnimationExitEffect.GentleFloat,
-                "zoom_in" => ClipAnimationExitEffect.ZoomIn,
-                "drop" => ClipAnimationExitEffect.Drop,
+                "none" => ClipAnimationExitEffect.None,
+                "pop" => ClipAnimationExitEffect.Pop,
+                "slide_bounce" => ClipAnimationExitEffect.SlideBounce,
+                "slide_down" => ClipAnimationExitEffect.SlideDown,
                 "slide_left" => ClipAnimationExitEffect.SlideLeft,
                 "slide_right" => ClipAnimationExitEffect.SlideRight,
                 "slide_up" => ClipAnimationExitEffect.SlideUp,
-                "slide_down" => ClipAnimationExitEffect.SlideDown,
-                "pop" => ClipAnimationExitEffect.Pop,
-                "bounce" => ClipAnimationExitEffect.Bounce,
                 "spin" => ClipAnimationExitEffect.Spin,
-                "slide_bounce" => ClipAnimationExitEffect.SlideBounce,
+                "zoom_in" => ClipAnimationExitEffect.ZoomIn,
                 _ => null,
             };
         }

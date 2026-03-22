@@ -28,8 +28,8 @@ namespace G.JsonConverters
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("type")) __score0++;
             if (__jsonProps.Contains("button")) __score0++;
+            if (__jsonProps.Contains("type")) __score0++;
             if (__jsonProps.Contains("x")) __score0++;
             if (__jsonProps.Contains("y")) __score0++;
             var __score1 = 0;
@@ -37,11 +37,11 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("x")) __score1++;
             if (__jsonProps.Contains("y")) __score1++;
             var __score2 = 0;
-            if (__jsonProps.Contains("type")) __score2++;
             if (__jsonProps.Contains("path")) __score2++;
+            if (__jsonProps.Contains("type")) __score2++;
             var __score3 = 0;
-            if (__jsonProps.Contains("type")) __score3++;
             if (__jsonProps.Contains("keys")) __score3++;
+            if (__jsonProps.Contains("type")) __score3++;
             var __score4 = 0;
             if (__jsonProps.Contains("type")) __score4++;
             if (__jsonProps.Contains("x")) __score4++;
@@ -49,14 +49,14 @@ namespace G.JsonConverters
             var __score5 = 0;
             if (__jsonProps.Contains("type")) __score5++;
             var __score6 = 0;
+            if (__jsonProps.Contains("scroll_x")) __score6++;
+            if (__jsonProps.Contains("scroll_y")) __score6++;
             if (__jsonProps.Contains("type")) __score6++;
             if (__jsonProps.Contains("x")) __score6++;
             if (__jsonProps.Contains("y")) __score6++;
-            if (__jsonProps.Contains("scroll_x")) __score6++;
-            if (__jsonProps.Contains("scroll_y")) __score6++;
             var __score7 = 0;
-            if (__jsonProps.Contains("type")) __score7++;
             if (__jsonProps.Contains("text")) __score7++;
+            if (__jsonProps.Contains("type")) __score7++;
             var __score8 = 0;
             if (__jsonProps.Contains("type")) __score8++;
             var __bestScore = 0;

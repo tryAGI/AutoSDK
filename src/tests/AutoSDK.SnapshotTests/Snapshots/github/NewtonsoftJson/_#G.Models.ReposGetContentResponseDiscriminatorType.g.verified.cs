@@ -23,13 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="symlink")]
-        Symlink,
+        [global::System.Runtime.Serialization.EnumMember(Value="submodule")]
+        Submodule,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="submodule")]
-        Submodule,
+        [global::System.Runtime.Serialization.EnumMember(Value="symlink")]
+        Symlink,
     }
 
     /// <summary>
@@ -46,8 +46,8 @@ namespace G
             {
                 ReposGetContentResponseDiscriminatorType.Array => "array",
                 ReposGetContentResponseDiscriminatorType.File => "file",
-                ReposGetContentResponseDiscriminatorType.Symlink => "symlink",
                 ReposGetContentResponseDiscriminatorType.Submodule => "submodule",
+                ReposGetContentResponseDiscriminatorType.Symlink => "symlink",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -60,8 +60,8 @@ namespace G
             {
                 "array" => ReposGetContentResponseDiscriminatorType.Array,
                 "file" => ReposGetContentResponseDiscriminatorType.File,
-                "symlink" => ReposGetContentResponseDiscriminatorType.Symlink,
                 "submodule" => ReposGetContentResponseDiscriminatorType.Submodule,
+                "symlink" => ReposGetContentResponseDiscriminatorType.Symlink,
                 _ => null,
             };
         }

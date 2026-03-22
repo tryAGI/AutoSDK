@@ -13,13 +13,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="Ara")]
+        Ara,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="Eve")]
         Eve,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Ara")]
-        Ara,
+        [global::System.Runtime.Serialization.EnumMember(Value="Leo")]
+        Leo,
         /// <summary>
         /// 
         /// </summary>
@@ -30,11 +35,6 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="Sal")]
         Sal,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Leo")]
-        Leo,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                SessionConfigVoice.Eve => "Eve",
                 SessionConfigVoice.Ara => "Ara",
+                SessionConfigVoice.Eve => "Eve",
+                SessionConfigVoice.Leo => "Leo",
                 SessionConfigVoice.Rex => "Rex",
                 SessionConfigVoice.Sal => "Sal",
-                SessionConfigVoice.Leo => "Leo",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "Eve" => SessionConfigVoice.Eve,
                 "Ara" => SessionConfigVoice.Ara,
+                "Eve" => SessionConfigVoice.Eve,
+                "Leo" => SessionConfigVoice.Leo,
                 "Rex" => SessionConfigVoice.Rex,
                 "Sal" => SessionConfigVoice.Sal,
-                "Leo" => SessionConfigVoice.Leo,
                 _ => null,
             };
         }

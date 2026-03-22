@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
-        Pending,
+        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -23,13 +23,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
-        Cancelled,
+        [global::System.Runtime.Serialization.EnumMember(Value="expired")]
+        Expired,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="expired")]
-        Expired,
+        [global::System.Runtime.Serialization.EnumMember(Value="pending")]
+        Pending,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                UploadStatus.Pending => "pending",
-                UploadStatus.Completed => "completed",
                 UploadStatus.Cancelled => "cancelled",
+                UploadStatus.Completed => "completed",
                 UploadStatus.Expired => "expired",
+                UploadStatus.Pending => "pending",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "pending" => UploadStatus.Pending,
-                "completed" => UploadStatus.Completed,
                 "cancelled" => UploadStatus.Cancelled,
+                "completed" => UploadStatus.Completed,
                 "expired" => UploadStatus.Expired,
+                "pending" => UploadStatus.Pending,
                 _ => null,
             };
         }

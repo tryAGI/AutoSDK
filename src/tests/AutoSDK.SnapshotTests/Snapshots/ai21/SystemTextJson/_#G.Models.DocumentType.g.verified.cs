@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Url,
+        Text,
         /// <summary>
         /// 
         /// </summary>
-        Text,
+        Url,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                DocumentType.Url => "URL",
                 DocumentType.Text => "TEXT",
+                DocumentType.Url => "URL",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "URL" => DocumentType.Url,
                 "TEXT" => DocumentType.Text,
+                "URL" => DocumentType.Url,
                 _ => null,
             };
         }

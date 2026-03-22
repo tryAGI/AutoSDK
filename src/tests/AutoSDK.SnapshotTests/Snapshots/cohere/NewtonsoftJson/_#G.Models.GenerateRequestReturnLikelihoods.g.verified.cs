@@ -14,15 +14,15 @@ namespace G
     public enum GenerateRequestReturnLikelihoods
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="GENERATION")]
-        Generation,
-        /// <summary>
         /// `ALL` is deprecated, and will be removed in a future release.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ALL")]
         All,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="GENERATION")]
+        Generation,
         /// <summary>
         /// 
         /// </summary>
@@ -42,8 +42,8 @@ namespace G
         {
             return value switch
             {
-                GenerateRequestReturnLikelihoods.Generation => "GENERATION",
                 GenerateRequestReturnLikelihoods.All => "ALL",
+                GenerateRequestReturnLikelihoods.Generation => "GENERATION",
                 GenerateRequestReturnLikelihoods.None => "NONE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -55,8 +55,8 @@ namespace G
         {
             return value switch
             {
-                "GENERATION" => GenerateRequestReturnLikelihoods.Generation,
                 "ALL" => GenerateRequestReturnLikelihoods.All,
+                "GENERATION" => GenerateRequestReturnLikelihoods.Generation,
                 "NONE" => GenerateRequestReturnLikelihoods.None,
                 _ => null,
             };

@@ -13,13 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Repository")]
-        Repository,
+        [global::System.Runtime.Serialization.EnumMember(Value="Organization")]
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Organization")]
-        Organization,
+        [global::System.Runtime.Serialization.EnumMember(Value="Repository")]
+        Repository,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace G
         {
             return value switch
             {
-                RepositoryRuleRulesetInfoRulesetSourceType.Repository => "Repository",
                 RepositoryRuleRulesetInfoRulesetSourceType.Organization => "Organization",
+                RepositoryRuleRulesetInfoRulesetSourceType.Repository => "Repository",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace G
         {
             return value switch
             {
-                "Repository" => RepositoryRuleRulesetInfoRulesetSourceType.Repository,
                 "Organization" => RepositoryRuleRulesetInfoRulesetSourceType.Organization,
+                "Repository" => RepositoryRuleRulesetInfoRulesetSourceType.Repository,
                 _ => null,
             };
         }

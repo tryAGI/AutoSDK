@@ -18,13 +18,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="User")]
-        User,
+        [global::System.Runtime.Serialization.EnumMember(Value="Organization")]
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="Organization")]
-        Organization,
+        [global::System.Runtime.Serialization.EnumMember(Value="User")]
+        User,
     }
 
     /// <summary>
@@ -40,8 +40,8 @@ namespace G
             return value switch
             {
                 WebhookIssuesDeletedIssueAssigneeType2.Bot => "Bot",
-                WebhookIssuesDeletedIssueAssigneeType2.User => "User",
                 WebhookIssuesDeletedIssueAssigneeType2.Organization => "Organization",
+                WebhookIssuesDeletedIssueAssigneeType2.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,8 +53,8 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookIssuesDeletedIssueAssigneeType2.Bot,
-                "User" => WebhookIssuesDeletedIssueAssigneeType2.User,
                 "Organization" => WebhookIssuesDeletedIssueAssigneeType2.Organization,
+                "User" => WebhookIssuesDeletedIssueAssigneeType2.User,
                 _ => null,
             };
         }

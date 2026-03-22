@@ -16,16 +16,6 @@ namespace G
     public enum EmbedInputType
     {
         /// <summary>
-        /// Used for embeddings stored in a vector database for search use-cases.
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="search_document")]
-        SearchDocument,
-        /// <summary>
-        /// Used for embeddings of search queries run against a vector DB to find relevant documents.
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="search_query")]
-        SearchQuery,
-        /// <summary>
         /// Used for embeddings passed through a text classifier.
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="classification")]
@@ -40,6 +30,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="image")]
         Image,
+        /// <summary>
+        /// Used for embeddings stored in a vector database for search use-cases.
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="search_document")]
+        SearchDocument,
+        /// <summary>
+        /// Used for embeddings of search queries run against a vector DB to find relevant documents.
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="search_query")]
+        SearchQuery,
     }
 
     /// <summary>
@@ -54,11 +54,11 @@ namespace G
         {
             return value switch
             {
-                EmbedInputType.SearchDocument => "search_document",
-                EmbedInputType.SearchQuery => "search_query",
                 EmbedInputType.Classification => "classification",
                 EmbedInputType.Clustering => "clustering",
                 EmbedInputType.Image => "image",
+                EmbedInputType.SearchDocument => "search_document",
+                EmbedInputType.SearchQuery => "search_query",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -69,11 +69,11 @@ namespace G
         {
             return value switch
             {
-                "search_document" => EmbedInputType.SearchDocument,
-                "search_query" => EmbedInputType.SearchQuery,
                 "classification" => EmbedInputType.Classification,
                 "clustering" => EmbedInputType.Clustering,
                 "image" => EmbedInputType.Image,
+                "search_document" => EmbedInputType.SearchDocument,
+                "search_query" => EmbedInputType.SearchQuery,
                 _ => null,
             };
         }

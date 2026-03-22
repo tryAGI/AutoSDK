@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Twilio,
+        SipTrunk,
         /// <summary>
         /// 
         /// </summary>
-        SipTrunk,
+        Twilio,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                UpdatePhoneNumberRouteResponseDiscriminatorProvider.Twilio => "twilio",
                 UpdatePhoneNumberRouteResponseDiscriminatorProvider.SipTrunk => "sip_trunk",
+                UpdatePhoneNumberRouteResponseDiscriminatorProvider.Twilio => "twilio",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "twilio" => UpdatePhoneNumberRouteResponseDiscriminatorProvider.Twilio,
                 "sip_trunk" => UpdatePhoneNumberRouteResponseDiscriminatorProvider.SipTrunk,
+                "twilio" => UpdatePhoneNumberRouteResponseDiscriminatorProvider.Twilio,
                 _ => null,
             };
         }

@@ -29,8 +29,8 @@ namespace G.JsonConverters
 
             var __score0 = 0;
             if (__jsonProps.Contains("from")) __score0++;
-            if (__jsonProps.Contains("to")) __score0++;
             if (__jsonProps.Contains("tenant")) __score0++;
+            if (__jsonProps.Contains("to")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("result")) __score1++;
             var __bestScore = 0;

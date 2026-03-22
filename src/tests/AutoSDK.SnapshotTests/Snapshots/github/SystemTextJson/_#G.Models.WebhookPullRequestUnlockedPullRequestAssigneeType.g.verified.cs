@@ -16,11 +16,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        Organization,
+        User,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace G
             return value switch
             {
                 WebhookPullRequestUnlockedPullRequestAssigneeType.Bot => "Bot",
-                WebhookPullRequestUnlockedPullRequestAssigneeType.User => "User",
                 WebhookPullRequestUnlockedPullRequestAssigneeType.Organization => "Organization",
+                WebhookPullRequestUnlockedPullRequestAssigneeType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace G
             return value switch
             {
                 "Bot" => WebhookPullRequestUnlockedPullRequestAssigneeType.Bot,
-                "User" => WebhookPullRequestUnlockedPullRequestAssigneeType.User,
                 "Organization" => WebhookPullRequestUnlockedPullRequestAssigneeType.Organization,
+                "User" => WebhookPullRequestUnlockedPullRequestAssigneeType.User,
                 _ => null,
             };
         }

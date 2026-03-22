@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Auto,
+        Always,
         /// <summary>
         /// 
         /// </summary>
-        Always,
+        Auto,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ToolCallSoundBehavior.Auto => "auto",
                 ToolCallSoundBehavior.Always => "always",
+                ToolCallSoundBehavior.Auto => "auto",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "auto" => ToolCallSoundBehavior.Auto,
                 "always" => ToolCallSoundBehavior.Always,
+                "auto" => ToolCallSoundBehavior.Auto,
                 _ => null,
             };
         }

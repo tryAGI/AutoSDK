@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Open,
-        /// <summary>
-        /// 
-        /// </summary>
         Dismissed,
         /// <summary>
         /// 
         /// </summary>
         Fixed,
+        /// <summary>
+        /// 
+        /// </summary>
+        Open,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace G
         {
             return value switch
             {
-                WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceState.Open => "open",
                 WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceState.Dismissed => "dismissed",
                 WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceState.Fixed => "fixed",
+                WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceState.Open => "open",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                "open" => WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceState.Open,
                 "dismissed" => WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceState.Dismissed,
                 "fixed" => WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceState.Fixed,
+                "open" => WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceState.Open,
                 _ => null,
             };
         }

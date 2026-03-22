@@ -12,11 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Pending,
-        /// <summary>
-        /// 
-        /// </summary>
-        Success,
+        Error,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Error,
+        Pending,
+        /// <summary>
+        /// 
+        /// </summary>
+        Success,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
+                WebhookStatusState.Error => "error",
+                WebhookStatusState.Failure => "failure",
                 WebhookStatusState.Pending => "pending",
                 WebhookStatusState.Success => "success",
-                WebhookStatusState.Failure => "failure",
-                WebhookStatusState.Error => "error",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
+                "error" => WebhookStatusState.Error,
+                "failure" => WebhookStatusState.Failure,
                 "pending" => WebhookStatusState.Pending,
                 "success" => WebhookStatusState.Success,
-                "failure" => WebhookStatusState.Failure,
-                "error" => WebhookStatusState.Error,
                 _ => null,
             };
         }

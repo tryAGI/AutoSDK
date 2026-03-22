@@ -16,15 +16,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Coordinator,
+        /// <summary>
+        /// 
+        /// </summary>
         Finder,
         /// <summary>
         /// 
         /// </summary>
-        Reporter,
-        /// <summary>
-        /// 
-        /// </summary>
-        Coordinator,
+        Other,
         /// <summary>
         /// 
         /// </summary>
@@ -40,7 +40,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Tool,
+        Reporter,
         /// <summary>
         /// 
         /// </summary>
@@ -48,7 +48,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Other,
+        Tool,
     }
 
     /// <summary>
@@ -64,15 +64,15 @@ namespace G
             return value switch
             {
                 SecurityAdvisoryCreditTypes.Analyst => "analyst",
-                SecurityAdvisoryCreditTypes.Finder => "finder",
-                SecurityAdvisoryCreditTypes.Reporter => "reporter",
                 SecurityAdvisoryCreditTypes.Coordinator => "coordinator",
+                SecurityAdvisoryCreditTypes.Finder => "finder",
+                SecurityAdvisoryCreditTypes.Other => "other",
                 SecurityAdvisoryCreditTypes.RemediationDeveloper => "remediation_developer",
                 SecurityAdvisoryCreditTypes.RemediationReviewer => "remediation_reviewer",
                 SecurityAdvisoryCreditTypes.RemediationVerifier => "remediation_verifier",
-                SecurityAdvisoryCreditTypes.Tool => "tool",
+                SecurityAdvisoryCreditTypes.Reporter => "reporter",
                 SecurityAdvisoryCreditTypes.Sponsor => "sponsor",
-                SecurityAdvisoryCreditTypes.Other => "other",
+                SecurityAdvisoryCreditTypes.Tool => "tool",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -84,15 +84,15 @@ namespace G
             return value switch
             {
                 "analyst" => SecurityAdvisoryCreditTypes.Analyst,
-                "finder" => SecurityAdvisoryCreditTypes.Finder,
-                "reporter" => SecurityAdvisoryCreditTypes.Reporter,
                 "coordinator" => SecurityAdvisoryCreditTypes.Coordinator,
+                "finder" => SecurityAdvisoryCreditTypes.Finder,
+                "other" => SecurityAdvisoryCreditTypes.Other,
                 "remediation_developer" => SecurityAdvisoryCreditTypes.RemediationDeveloper,
                 "remediation_reviewer" => SecurityAdvisoryCreditTypes.RemediationReviewer,
                 "remediation_verifier" => SecurityAdvisoryCreditTypes.RemediationVerifier,
-                "tool" => SecurityAdvisoryCreditTypes.Tool,
+                "reporter" => SecurityAdvisoryCreditTypes.Reporter,
                 "sponsor" => SecurityAdvisoryCreditTypes.Sponsor,
-                "other" => SecurityAdvisoryCreditTypes.Other,
+                "tool" => SecurityAdvisoryCreditTypes.Tool,
                 _ => null,
             };
         }

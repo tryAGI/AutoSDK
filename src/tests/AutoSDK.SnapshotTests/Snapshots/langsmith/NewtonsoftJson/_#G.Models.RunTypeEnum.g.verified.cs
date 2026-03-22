@@ -13,23 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="tool")]
-        Tool,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="chain")]
         Chain,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="llm")]
-        Llm,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="retriever")]
-        Retriever,
         /// <summary>
         /// 
         /// </summary>
@@ -38,13 +23,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="prompt")]
-        Prompt,
+        [global::System.Runtime.Serialization.EnumMember(Value="llm")]
+        Llm,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="parser")]
         Parser,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="prompt")]
+        Prompt,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="retriever")]
+        Retriever,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="tool")]
+        Tool,
     }
 
     /// <summary>
@@ -59,13 +59,13 @@ namespace G
         {
             return value switch
             {
-                RunTypeEnum.Tool => "tool",
                 RunTypeEnum.Chain => "chain",
-                RunTypeEnum.Llm => "llm",
-                RunTypeEnum.Retriever => "retriever",
                 RunTypeEnum.Embedding => "embedding",
-                RunTypeEnum.Prompt => "prompt",
+                RunTypeEnum.Llm => "llm",
                 RunTypeEnum.Parser => "parser",
+                RunTypeEnum.Prompt => "prompt",
+                RunTypeEnum.Retriever => "retriever",
+                RunTypeEnum.Tool => "tool",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -76,13 +76,13 @@ namespace G
         {
             return value switch
             {
-                "tool" => RunTypeEnum.Tool,
                 "chain" => RunTypeEnum.Chain,
-                "llm" => RunTypeEnum.Llm,
-                "retriever" => RunTypeEnum.Retriever,
                 "embedding" => RunTypeEnum.Embedding,
-                "prompt" => RunTypeEnum.Prompt,
+                "llm" => RunTypeEnum.Llm,
                 "parser" => RunTypeEnum.Parser,
+                "prompt" => RunTypeEnum.Prompt,
+                "retriever" => RunTypeEnum.Retriever,
+                "tool" => RunTypeEnum.Tool,
                 _ => null,
             };
         }

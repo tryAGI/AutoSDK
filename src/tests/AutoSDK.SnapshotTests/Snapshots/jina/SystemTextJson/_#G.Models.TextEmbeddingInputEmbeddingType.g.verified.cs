@@ -12,15 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Float,
-        /// <summary>
-        /// 
-        /// </summary>
         Base64,
         /// <summary>
         /// 
         /// </summary>
         Binary,
+        /// <summary>
+        /// 
+        /// </summary>
+        Float,
         /// <summary>
         /// 
         /// </summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                TextEmbeddingInputEmbeddingType.Float => "float",
                 TextEmbeddingInputEmbeddingType.Base64 => "base64",
                 TextEmbeddingInputEmbeddingType.Binary => "binary",
+                TextEmbeddingInputEmbeddingType.Float => "float",
                 TextEmbeddingInputEmbeddingType.Ubinary => "ubinary",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -53,9 +53,9 @@ namespace G
         {
             return value switch
             {
-                "float" => TextEmbeddingInputEmbeddingType.Float,
                 "base64" => TextEmbeddingInputEmbeddingType.Base64,
                 "binary" => TextEmbeddingInputEmbeddingType.Binary,
+                "float" => TextEmbeddingInputEmbeddingType.Float,
                 "ubinary" => TextEmbeddingInputEmbeddingType.Ubinary,
                 _ => null,
             };

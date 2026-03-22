@@ -18,11 +18,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="teenager")]
-        Teenager,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="college")]
         College,
         /// <summary>
@@ -30,6 +25,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="phd")]
         Phd,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="teenager")]
+        Teenager,
     }
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace G
             return value switch
             {
                 PlaygroundPromptCanvasPayloadReadingLevel2.Child => "child",
-                PlaygroundPromptCanvasPayloadReadingLevel2.Teenager => "teenager",
                 PlaygroundPromptCanvasPayloadReadingLevel2.College => "college",
                 PlaygroundPromptCanvasPayloadReadingLevel2.Phd => "phd",
+                PlaygroundPromptCanvasPayloadReadingLevel2.Teenager => "teenager",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace G
             return value switch
             {
                 "child" => PlaygroundPromptCanvasPayloadReadingLevel2.Child,
-                "teenager" => PlaygroundPromptCanvasPayloadReadingLevel2.Teenager,
                 "college" => PlaygroundPromptCanvasPayloadReadingLevel2.College,
                 "phd" => PlaygroundPromptCanvasPayloadReadingLevel2.Phd,
+                "teenager" => PlaygroundPromptCanvasPayloadReadingLevel2.Teenager,
                 _ => null,
             };
         }

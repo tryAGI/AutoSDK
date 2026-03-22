@@ -13,11 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Runtime,
+        Development,
         /// <summary>
         /// 
         /// </summary>
-        Development,
+        Runtime,
     }
 
     /// <summary>
@@ -32,8 +32,8 @@ namespace G
         {
             return value switch
             {
-                DependencyScope.Runtime => "runtime",
                 DependencyScope.Development => "development",
+                DependencyScope.Runtime => "runtime",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,8 +44,8 @@ namespace G
         {
             return value switch
             {
-                "runtime" => DependencyScope.Runtime,
                 "development" => DependencyScope.Development,
+                "runtime" => DependencyScope.Runtime,
                 _ => null,
             };
         }

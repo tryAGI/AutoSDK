@@ -18,58 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="image-classification")]
-        ImageClassification,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="question-answering")]
-        QuestionAnswering,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="token-classification")]
-        TokenClassification,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text-to-image")]
-        TextToImage,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="fill-mask")]
-        FillMask,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="zero-shot-image-classification")]
-        ZeroShotImageClassification,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text2text-generation")]
-        Text2textGeneration,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text-generation")]
-        TextGeneration,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text-classification")]
-        TextClassification,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="object-detection")]
-        ObjectDetection,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="embeddings")]
-        Embeddings,
+        [global::System.Runtime.Serialization.EnumMember(Value="custom")]
+        Custom,
         /// <summary>
         /// 
         /// </summary>
@@ -78,8 +28,43 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="custom")]
-        Custom,
+        [global::System.Runtime.Serialization.EnumMember(Value="embeddings")]
+        Embeddings,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="fill-mask")]
+        FillMask,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="image-classification")]
+        ImageClassification,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="object-detection")]
+        ObjectDetection,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="question-answering")]
+        QuestionAnswering,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="text-classification")]
+        TextClassification,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="text-generation")]
+        TextGeneration,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="text-to-image")]
+        TextToImage,
         /// <summary>
         /// 
         /// </summary>
@@ -90,6 +75,21 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="text-to-video")]
         TextToVideo,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="text2text-generation")]
+        Text2textGeneration,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="token-classification")]
+        TokenClassification,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="zero-shot-image-classification")]
+        ZeroShotImageClassification,
     }
 
     /// <summary>
@@ -105,21 +105,21 @@ namespace G
             return value switch
             {
                 HFTasksE.AutomaticSpeechRecognition => "automatic-speech-recognition",
-                HFTasksE.ImageClassification => "image-classification",
-                HFTasksE.QuestionAnswering => "question-answering",
-                HFTasksE.TokenClassification => "token-classification",
-                HFTasksE.TextToImage => "text-to-image",
-                HFTasksE.FillMask => "fill-mask",
-                HFTasksE.ZeroShotImageClassification => "zero-shot-image-classification",
-                HFTasksE.Text2textGeneration => "text2text-generation",
-                HFTasksE.TextGeneration => "text-generation",
-                HFTasksE.TextClassification => "text-classification",
-                HFTasksE.ObjectDetection => "object-detection",
-                HFTasksE.Embeddings => "embeddings",
-                HFTasksE.Dreambooth => "dreambooth",
                 HFTasksE.Custom => "custom",
+                HFTasksE.Dreambooth => "dreambooth",
+                HFTasksE.Embeddings => "embeddings",
+                HFTasksE.FillMask => "fill-mask",
+                HFTasksE.ImageClassification => "image-classification",
+                HFTasksE.ObjectDetection => "object-detection",
+                HFTasksE.QuestionAnswering => "question-answering",
+                HFTasksE.TextClassification => "text-classification",
+                HFTasksE.TextGeneration => "text-generation",
+                HFTasksE.TextToImage => "text-to-image",
                 HFTasksE.TextToSpeech => "text-to-speech",
                 HFTasksE.TextToVideo => "text-to-video",
+                HFTasksE.Text2textGeneration => "text2text-generation",
+                HFTasksE.TokenClassification => "token-classification",
+                HFTasksE.ZeroShotImageClassification => "zero-shot-image-classification",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -131,21 +131,21 @@ namespace G
             return value switch
             {
                 "automatic-speech-recognition" => HFTasksE.AutomaticSpeechRecognition,
-                "image-classification" => HFTasksE.ImageClassification,
-                "question-answering" => HFTasksE.QuestionAnswering,
-                "token-classification" => HFTasksE.TokenClassification,
-                "text-to-image" => HFTasksE.TextToImage,
-                "fill-mask" => HFTasksE.FillMask,
-                "zero-shot-image-classification" => HFTasksE.ZeroShotImageClassification,
-                "text2text-generation" => HFTasksE.Text2textGeneration,
-                "text-generation" => HFTasksE.TextGeneration,
-                "text-classification" => HFTasksE.TextClassification,
-                "object-detection" => HFTasksE.ObjectDetection,
-                "embeddings" => HFTasksE.Embeddings,
-                "dreambooth" => HFTasksE.Dreambooth,
                 "custom" => HFTasksE.Custom,
+                "dreambooth" => HFTasksE.Dreambooth,
+                "embeddings" => HFTasksE.Embeddings,
+                "fill-mask" => HFTasksE.FillMask,
+                "image-classification" => HFTasksE.ImageClassification,
+                "object-detection" => HFTasksE.ObjectDetection,
+                "question-answering" => HFTasksE.QuestionAnswering,
+                "text-classification" => HFTasksE.TextClassification,
+                "text-generation" => HFTasksE.TextGeneration,
+                "text-to-image" => HFTasksE.TextToImage,
                 "text-to-speech" => HFTasksE.TextToSpeech,
                 "text-to-video" => HFTasksE.TextToVideo,
+                "text2text-generation" => HFTasksE.Text2textGeneration,
+                "token-classification" => HFTasksE.TokenClassification,
+                "zero-shot-image-classification" => HFTasksE.ZeroShotImageClassification,
                 _ => null,
             };
         }

@@ -44,6 +44,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        DeployKey,
+        /// <summary>
+        /// 
+        /// </summary>
         Deployment,
         /// <summary>
         /// 
@@ -53,10 +57,6 @@ namespace G
         /// 
         /// </summary>
         DeploymentStatus,
-        /// <summary>
-        /// 
-        /// </summary>
-        DeployKey,
         /// <summary>
         /// 
         /// </summary>
@@ -76,11 +76,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Issues,
+        IssueComment,
         /// <summary>
         /// 
         /// </summary>
-        IssueComment,
+        Issues,
         /// <summary>
         /// 
         /// </summary>
@@ -100,11 +100,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Organization,
+        OrgBlock,
         /// <summary>
         /// 
         /// </summary>
-        OrgBlock,
+        Organization,
         /// <summary>
         /// 
         /// </summary>
@@ -211,22 +211,22 @@ namespace G
                 WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.ContentReference => "content_reference",
                 WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Create => "create",
                 WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Delete => "delete",
+                WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.DeployKey => "deploy_key",
                 WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Deployment => "deployment",
                 WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.DeploymentReview => "deployment_review",
                 WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.DeploymentStatus => "deployment_status",
-                WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.DeployKey => "deploy_key",
                 WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Discussion => "discussion",
                 WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.DiscussionComment => "discussion_comment",
                 WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Fork => "fork",
                 WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Gollum => "gollum",
-                WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Issues => "issues",
                 WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.IssueComment => "issue_comment",
+                WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Issues => "issues",
                 WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Label => "label",
                 WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Member => "member",
                 WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Membership => "membership",
                 WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Milestone => "milestone",
-                WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Organization => "organization",
                 WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.OrgBlock => "org_block",
+                WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Organization => "organization",
                 WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.PageBuild => "page_build",
                 WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Project => "project",
                 WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.ProjectCard => "project_card",
@@ -266,22 +266,22 @@ namespace G
                 "content_reference" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.ContentReference,
                 "create" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Create,
                 "delete" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Delete,
+                "deploy_key" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.DeployKey,
                 "deployment" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Deployment,
                 "deployment_review" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.DeploymentReview,
                 "deployment_status" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.DeploymentStatus,
-                "deploy_key" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.DeployKey,
                 "discussion" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Discussion,
                 "discussion_comment" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.DiscussionComment,
                 "fork" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Fork,
                 "gollum" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Gollum,
-                "issues" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Issues,
                 "issue_comment" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.IssueComment,
+                "issues" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Issues,
                 "label" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Label,
                 "member" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Member,
                 "membership" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Membership,
                 "milestone" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Milestone,
-                "organization" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Organization,
                 "org_block" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.OrgBlock,
+                "organization" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Organization,
                 "page_build" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.PageBuild,
                 "project" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.Project,
                 "project_card" => WebhookIssuesTransferredChangesNewIssuePerformedViaGithubAppEvent.ProjectCard,

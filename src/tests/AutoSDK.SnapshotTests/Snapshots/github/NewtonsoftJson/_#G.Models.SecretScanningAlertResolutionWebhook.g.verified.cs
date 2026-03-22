@@ -18,8 +18,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="wont_fix")]
-        WontFix,
+        [global::System.Runtime.Serialization.EnumMember(Value="pattern_deleted")]
+        PatternDeleted,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="pattern_edited")]
+        PatternEdited,
         /// <summary>
         /// 
         /// </summary>
@@ -33,13 +38,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pattern_deleted")]
-        PatternDeleted,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pattern_edited")]
-        PatternEdited,
+        [global::System.Runtime.Serialization.EnumMember(Value="wont_fix")]
+        WontFix,
     }
 
     /// <summary>
@@ -55,11 +55,11 @@ namespace G
             return value switch
             {
                 SecretScanningAlertResolutionWebhook.FalsePositive => "false_positive",
-                SecretScanningAlertResolutionWebhook.WontFix => "wont_fix",
-                SecretScanningAlertResolutionWebhook.Revoked => "revoked",
-                SecretScanningAlertResolutionWebhook.UsedInTests => "used_in_tests",
                 SecretScanningAlertResolutionWebhook.PatternDeleted => "pattern_deleted",
                 SecretScanningAlertResolutionWebhook.PatternEdited => "pattern_edited",
+                SecretScanningAlertResolutionWebhook.Revoked => "revoked",
+                SecretScanningAlertResolutionWebhook.UsedInTests => "used_in_tests",
+                SecretScanningAlertResolutionWebhook.WontFix => "wont_fix",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -71,11 +71,11 @@ namespace G
             return value switch
             {
                 "false_positive" => SecretScanningAlertResolutionWebhook.FalsePositive,
-                "wont_fix" => SecretScanningAlertResolutionWebhook.WontFix,
-                "revoked" => SecretScanningAlertResolutionWebhook.Revoked,
-                "used_in_tests" => SecretScanningAlertResolutionWebhook.UsedInTests,
                 "pattern_deleted" => SecretScanningAlertResolutionWebhook.PatternDeleted,
                 "pattern_edited" => SecretScanningAlertResolutionWebhook.PatternEdited,
+                "revoked" => SecretScanningAlertResolutionWebhook.Revoked,
+                "used_in_tests" => SecretScanningAlertResolutionWebhook.UsedInTests,
+                "wont_fix" => SecretScanningAlertResolutionWebhook.WontFix,
                 _ => null,
             };
         }

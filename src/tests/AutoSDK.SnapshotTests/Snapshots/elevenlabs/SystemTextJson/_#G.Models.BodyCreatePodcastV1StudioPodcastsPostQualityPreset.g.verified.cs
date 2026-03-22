@@ -17,15 +17,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Standard,
-        /// <summary>
-        /// 
-        /// </summary>
         High,
         /// <summary>
         /// 
         /// </summary>
         Highest,
+        /// <summary>
+        /// 
+        /// </summary>
+        Standard,
         /// <summary>
         /// 
         /// </summary>
@@ -48,9 +48,9 @@ namespace G
         {
             return value switch
             {
-                BodyCreatePodcastV1StudioPodcastsPostQualityPreset.Standard => "standard",
                 BodyCreatePodcastV1StudioPodcastsPostQualityPreset.High => "high",
                 BodyCreatePodcastV1StudioPodcastsPostQualityPreset.Highest => "highest",
+                BodyCreatePodcastV1StudioPodcastsPostQualityPreset.Standard => "standard",
                 BodyCreatePodcastV1StudioPodcastsPostQualityPreset.Ultra => "ultra",
                 BodyCreatePodcastV1StudioPodcastsPostQualityPreset.UltraLossless => "ultra_lossless",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -63,9 +63,9 @@ namespace G
         {
             return value switch
             {
-                "standard" => BodyCreatePodcastV1StudioPodcastsPostQualityPreset.Standard,
                 "high" => BodyCreatePodcastV1StudioPodcastsPostQualityPreset.High,
                 "highest" => BodyCreatePodcastV1StudioPodcastsPostQualityPreset.Highest,
+                "standard" => BodyCreatePodcastV1StudioPodcastsPostQualityPreset.Standard,
                 "ultra" => BodyCreatePodcastV1StudioPodcastsPostQualityPreset.Ultra,
                 "ultra_lossless" => BodyCreatePodcastV1StudioPodcastsPostQualityPreset.UltraLossless,
                 _ => null,

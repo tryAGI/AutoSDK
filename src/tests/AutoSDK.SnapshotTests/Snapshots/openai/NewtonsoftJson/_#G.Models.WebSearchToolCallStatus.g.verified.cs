@@ -13,16 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
-        InProgress,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="searching")]
-        Searching,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="completed")]
         Completed,
         /// <summary>
@@ -30,6 +20,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="failed")]
         Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="in_progress")]
+        InProgress,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="searching")]
+        Searching,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                WebSearchToolCallStatus.InProgress => "in_progress",
-                WebSearchToolCallStatus.Searching => "searching",
                 WebSearchToolCallStatus.Completed => "completed",
                 WebSearchToolCallStatus.Failed => "failed",
+                WebSearchToolCallStatus.InProgress => "in_progress",
+                WebSearchToolCallStatus.Searching => "searching",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "in_progress" => WebSearchToolCallStatus.InProgress,
-                "searching" => WebSearchToolCallStatus.Searching,
                 "completed" => WebSearchToolCallStatus.Completed,
                 "failed" => WebSearchToolCallStatus.Failed,
+                "in_progress" => WebSearchToolCallStatus.InProgress,
+                "searching" => WebSearchToolCallStatus.Searching,
                 _ => null,
             };
         }

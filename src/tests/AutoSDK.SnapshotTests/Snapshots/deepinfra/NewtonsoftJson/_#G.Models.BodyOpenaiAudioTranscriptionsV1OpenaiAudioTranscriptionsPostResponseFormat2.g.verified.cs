@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="verbose_json")]
-        VerboseJson,
+        [global::System.Runtime.Serialization.EnumMember(Value="srt")]
+        Srt,
         /// <summary>
         /// 
         /// </summary>
@@ -28,8 +28,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="srt")]
-        Srt,
+        [global::System.Runtime.Serialization.EnumMember(Value="verbose_json")]
+        VerboseJson,
         /// <summary>
         /// 
         /// </summary>
@@ -50,9 +50,9 @@ namespace G
             return value switch
             {
                 BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2.Json => "json",
-                BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2.VerboseJson => "verbose_json",
-                BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2.Text => "text",
                 BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2.Srt => "srt",
+                BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2.Text => "text",
+                BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2.VerboseJson => "verbose_json",
                 BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2.Vtt => "vtt",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -65,9 +65,9 @@ namespace G
             return value switch
             {
                 "json" => BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2.Json,
-                "verbose_json" => BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2.VerboseJson,
-                "text" => BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2.Text,
                 "srt" => BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2.Srt,
+                "text" => BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2.Text,
+                "verbose_json" => BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2.VerboseJson,
                 "vtt" => BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2.Vtt,
                 _ => null,
             };

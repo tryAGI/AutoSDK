@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="POSITIVE")]
-        Positive,
+        [global::System.Runtime.Serialization.EnumMember(Value="NEGATIVE")]
+        Negative,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="NEGATIVE")]
-        Negative,
+        [global::System.Runtime.Serialization.EnumMember(Value="POSITIVE")]
+        Positive,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                Sentiment.Positive => "POSITIVE",
-                Sentiment.Neutral => "NEUTRAL",
                 Sentiment.Negative => "NEGATIVE",
+                Sentiment.Neutral => "NEUTRAL",
+                Sentiment.Positive => "POSITIVE",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "POSITIVE" => Sentiment.Positive,
-                "NEUTRAL" => Sentiment.Neutral,
                 "NEGATIVE" => Sentiment.Negative,
+                "NEUTRAL" => Sentiment.Neutral,
+                "POSITIVE" => Sentiment.Positive,
                 _ => null,
             };
         }

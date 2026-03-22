@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="patient")]
-        Patient,
+        [global::System.Runtime.Serialization.EnumMember(Value="eager")]
+        Eager,
         /// <summary>
         /// 
         /// </summary>
@@ -23,8 +23,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="eager")]
-        Eager,
+        [global::System.Runtime.Serialization.EnumMember(Value="patient")]
+        Patient,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace G
         {
             return value switch
             {
-                TurnEagerness.Patient => "patient",
-                TurnEagerness.Normal => "normal",
                 TurnEagerness.Eager => "eager",
+                TurnEagerness.Normal => "normal",
+                TurnEagerness.Patient => "patient",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,9 +52,9 @@ namespace G
         {
             return value switch
             {
-                "patient" => TurnEagerness.Patient,
-                "normal" => TurnEagerness.Normal,
                 "eager" => TurnEagerness.Eager,
+                "normal" => TurnEagerness.Normal,
+                "patient" => TurnEagerness.Patient,
                 _ => null,
             };
         }

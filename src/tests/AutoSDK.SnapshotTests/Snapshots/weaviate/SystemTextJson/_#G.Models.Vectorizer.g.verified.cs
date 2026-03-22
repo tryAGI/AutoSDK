@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        None,
+        x_vectorizerModuleName_,
         /// <summary>
         /// 
         /// </summary>
-        x_vectorizerModuleName_,
+        None,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                Vectorizer.None => "none",
                 Vectorizer.x_vectorizerModuleName_ => "<vectorizer_module_name>",
+                Vectorizer.None => "none",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "none" => Vectorizer.None,
                 "<vectorizer_module_name>" => Vectorizer.x_vectorizerModuleName_,
+                "none" => Vectorizer.None,
                 _ => null,
             };
         }

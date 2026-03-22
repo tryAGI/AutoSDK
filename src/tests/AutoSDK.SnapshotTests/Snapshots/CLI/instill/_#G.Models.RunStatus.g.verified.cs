@@ -14,10 +14,6 @@ namespace G
     public enum RunStatus
     {
         /// <summary>
-        /// Run in progress.
-        /// </summary>
-        Processing,
-        /// <summary>
         /// Run succeeded.
         /// </summary>
         Completed,
@@ -25,6 +21,10 @@ namespace G
         /// Run failed.
         /// </summary>
         Failed,
+        /// <summary>
+        /// Run in progress.
+        /// </summary>
+        Processing,
         /// <summary>
         /// Run is waiting to be executed.
         /// </summary>
@@ -43,9 +43,9 @@ namespace G
         {
             return value switch
             {
-                RunStatus.Processing => "RUN_STATUS_PROCESSING",
                 RunStatus.Completed => "RUN_STATUS_COMPLETED",
                 RunStatus.Failed => "RUN_STATUS_FAILED",
+                RunStatus.Processing => "RUN_STATUS_PROCESSING",
                 RunStatus.Queued => "RUN_STATUS_QUEUED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -57,9 +57,9 @@ namespace G
         {
             return value switch
             {
-                "RUN_STATUS_PROCESSING" => RunStatus.Processing,
                 "RUN_STATUS_COMPLETED" => RunStatus.Completed,
                 "RUN_STATUS_FAILED" => RunStatus.Failed,
+                "RUN_STATUS_PROCESSING" => RunStatus.Processing,
                 "RUN_STATUS_QUEUED" => RunStatus.Queued,
                 _ => null,
             };

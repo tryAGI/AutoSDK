@@ -13,18 +13,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="not_loaded")]
-        NotLoaded,
+        [global::System.Runtime.Serialization.EnumMember(Value="container_failed")]
+        ContainerFailed,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="loading")]
-        Loading,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="loaded")]
-        Loaded,
+        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
+        Failed,
         /// <summary>
         /// 
         /// </summary>
@@ -33,18 +28,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="loaded")]
+        Loaded,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="loading")]
+        Loading,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="not_loaded")]
+        NotLoaded,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="startup_failed")]
         StartupFailed,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="container_failed")]
-        ContainerFailed,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
-        Failed,
     }
 
     /// <summary>
@@ -59,13 +59,13 @@ namespace G
         {
             return value switch
             {
-                PipelineState.NotLoaded => "not_loaded",
-                PipelineState.Loading => "loading",
-                PipelineState.Loaded => "loaded",
-                PipelineState.LoadFailed => "load_failed",
-                PipelineState.StartupFailed => "startup_failed",
                 PipelineState.ContainerFailed => "container_failed",
                 PipelineState.Failed => "failed",
+                PipelineState.LoadFailed => "load_failed",
+                PipelineState.Loaded => "loaded",
+                PipelineState.Loading => "loading",
+                PipelineState.NotLoaded => "not_loaded",
+                PipelineState.StartupFailed => "startup_failed",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -76,13 +76,13 @@ namespace G
         {
             return value switch
             {
-                "not_loaded" => PipelineState.NotLoaded,
-                "loading" => PipelineState.Loading,
-                "loaded" => PipelineState.Loaded,
-                "load_failed" => PipelineState.LoadFailed,
-                "startup_failed" => PipelineState.StartupFailed,
                 "container_failed" => PipelineState.ContainerFailed,
                 "failed" => PipelineState.Failed,
+                "load_failed" => PipelineState.LoadFailed,
+                "loaded" => PipelineState.Loaded,
+                "loading" => PipelineState.Loading,
+                "not_loaded" => PipelineState.NotLoaded,
+                "startup_failed" => PipelineState.StartupFailed,
                 _ => null,
             };
         }

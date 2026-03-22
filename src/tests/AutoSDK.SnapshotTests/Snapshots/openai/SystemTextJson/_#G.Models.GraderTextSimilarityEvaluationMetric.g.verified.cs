@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        FuzzyMatch,
+        Bleu,
         /// <summary>
         /// 
         /// </summary>
-        Bleu,
+        FuzzyMatch,
         /// <summary>
         /// 
         /// </summary>
@@ -63,8 +63,8 @@ namespace G
         {
             return value switch
             {
-                GraderTextSimilarityEvaluationMetric.FuzzyMatch => "fuzzy_match",
                 GraderTextSimilarityEvaluationMetric.Bleu => "bleu",
+                GraderTextSimilarityEvaluationMetric.FuzzyMatch => "fuzzy_match",
                 GraderTextSimilarityEvaluationMetric.Gleu => "gleu",
                 GraderTextSimilarityEvaluationMetric.Meteor => "meteor",
                 GraderTextSimilarityEvaluationMetric.Rouge1 => "rouge_1",
@@ -83,8 +83,8 @@ namespace G
         {
             return value switch
             {
-                "fuzzy_match" => GraderTextSimilarityEvaluationMetric.FuzzyMatch,
                 "bleu" => GraderTextSimilarityEvaluationMetric.Bleu,
+                "fuzzy_match" => GraderTextSimilarityEvaluationMetric.FuzzyMatch,
                 "gleu" => GraderTextSimilarityEvaluationMetric.Gleu,
                 "meteor" => GraderTextSimilarityEvaluationMetric.Meteor,
                 "rouge_1" => GraderTextSimilarityEvaluationMetric.Rouge1,

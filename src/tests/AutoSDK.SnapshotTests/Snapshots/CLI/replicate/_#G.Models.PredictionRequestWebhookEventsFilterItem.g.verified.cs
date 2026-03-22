@@ -12,11 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Start,
-        /// <summary>
-        /// 
-        /// </summary>
-        Output,
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +20,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        Output,
+        /// <summary>
+        /// 
+        /// </summary>
+        Start,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                PredictionRequestWebhookEventsFilterItem.Start => "start",
-                PredictionRequestWebhookEventsFilterItem.Output => "output",
-                PredictionRequestWebhookEventsFilterItem.Logs => "logs",
                 PredictionRequestWebhookEventsFilterItem.Completed => "completed",
+                PredictionRequestWebhookEventsFilterItem.Logs => "logs",
+                PredictionRequestWebhookEventsFilterItem.Output => "output",
+                PredictionRequestWebhookEventsFilterItem.Start => "start",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "start" => PredictionRequestWebhookEventsFilterItem.Start,
-                "output" => PredictionRequestWebhookEventsFilterItem.Output,
-                "logs" => PredictionRequestWebhookEventsFilterItem.Logs,
                 "completed" => PredictionRequestWebhookEventsFilterItem.Completed,
+                "logs" => PredictionRequestWebhookEventsFilterItem.Logs,
+                "output" => PredictionRequestWebhookEventsFilterItem.Output,
+                "start" => PredictionRequestWebhookEventsFilterItem.Start,
                 _ => null,
             };
         }

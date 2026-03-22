@@ -28,11 +28,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        JavascriptTypescript,
+        Javascript,
         /// <summary>
         /// 
         /// </summary>
-        Javascript,
+        JavascriptTypescript,
         /// <summary>
         /// 
         /// </summary>
@@ -44,11 +44,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Typescript,
+        Swift,
         /// <summary>
         /// 
         /// </summary>
-        Swift,
+        Typescript,
     }
 
     /// <summary>
@@ -67,12 +67,12 @@ namespace G
                 CodeScanningDefaultSetupLanguage.Csharp => "csharp",
                 CodeScanningDefaultSetupLanguage.Go => "go",
                 CodeScanningDefaultSetupLanguage.JavaKotlin => "java-kotlin",
-                CodeScanningDefaultSetupLanguage.JavascriptTypescript => "javascript-typescript",
                 CodeScanningDefaultSetupLanguage.Javascript => "javascript",
+                CodeScanningDefaultSetupLanguage.JavascriptTypescript => "javascript-typescript",
                 CodeScanningDefaultSetupLanguage.Python => "python",
                 CodeScanningDefaultSetupLanguage.Ruby => "ruby",
-                CodeScanningDefaultSetupLanguage.Typescript => "typescript",
                 CodeScanningDefaultSetupLanguage.Swift => "swift",
+                CodeScanningDefaultSetupLanguage.Typescript => "typescript",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -87,12 +87,12 @@ namespace G
                 "csharp" => CodeScanningDefaultSetupLanguage.Csharp,
                 "go" => CodeScanningDefaultSetupLanguage.Go,
                 "java-kotlin" => CodeScanningDefaultSetupLanguage.JavaKotlin,
-                "javascript-typescript" => CodeScanningDefaultSetupLanguage.JavascriptTypescript,
                 "javascript" => CodeScanningDefaultSetupLanguage.Javascript,
+                "javascript-typescript" => CodeScanningDefaultSetupLanguage.JavascriptTypescript,
                 "python" => CodeScanningDefaultSetupLanguage.Python,
                 "ruby" => CodeScanningDefaultSetupLanguage.Ruby,
-                "typescript" => CodeScanningDefaultSetupLanguage.Typescript,
                 "swift" => CodeScanningDefaultSetupLanguage.Swift,
+                "typescript" => CodeScanningDefaultSetupLanguage.Typescript,
                 _ => null,
             };
         }

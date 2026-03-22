@@ -13,11 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Assistant,
         /// <summary>
         /// 
         /// </summary>
-        Assistant,
+        Developer,
         /// <summary>
         /// 
         /// </summary>
@@ -25,7 +25,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Developer,
+        User,
     }
 
     /// <summary>
@@ -40,10 +40,10 @@ namespace G
         {
             return value switch
             {
-                EasyInputMessageRole.User => "user",
                 EasyInputMessageRole.Assistant => "assistant",
-                EasyInputMessageRole.System => "system",
                 EasyInputMessageRole.Developer => "developer",
+                EasyInputMessageRole.System => "system",
+                EasyInputMessageRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,10 +54,10 @@ namespace G
         {
             return value switch
             {
-                "user" => EasyInputMessageRole.User,
                 "assistant" => EasyInputMessageRole.Assistant,
-                "system" => EasyInputMessageRole.System,
                 "developer" => EasyInputMessageRole.Developer,
+                "system" => EasyInputMessageRole.System,
+                "user" => EasyInputMessageRole.User,
                 _ => null,
             };
         }
