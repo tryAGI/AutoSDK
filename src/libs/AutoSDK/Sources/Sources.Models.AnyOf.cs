@@ -21,7 +21,9 @@ public static partial class Sources
             "AnyOf" => string.Join(" || ", anyOfData.Properties.Select(x => $"Is{x.Name}")),
             "OneOf" => string.Join(" || ", anyOfData.Properties.Select((x, xi) =>
                 string.Join(" && ", anyOfData.Properties.Select((y, yi) => $"{(yi == xi ? "" : "!")}Is{y.Name}")))),
-            "AllOf" => string.Join(" && ", anyOfData.Properties.Select(x => $"Is{x.Name}")),
+            "AllOf" => anyOfData.IsNamed
+                ? string.Join(" && ", anyOfData.Properties.Select(x => $"Is{x.Name}"))
+                : string.Join(" && ", anyOfData.Properties.Select(x => $"(!RequiresValue<{x.Type.CSharpTypeWithoutNullability}>() || Is{x.Name})")),
             _ => throw new NotImplementedException(),
         };
         var constructorWithAllValues =
@@ -58,6 +60,49 @@ public static partial class Sources
             anyOfData.DiscriminatorPropertyName == "Object"
                 ? "Object1"
                 : "Object";
+        var allOfRequirementHelper = anyOfData.SubType == "AllOf" && !anyOfData.IsNamed
+            ? @"
+
+        private static bool RequiresValue<TValue>() => RequirementCache<TValue>.Value;
+
+        private static bool DetermineRequiresValue(global::System.Type type)
+        {
+            if (global::System.Nullable.GetUnderlyingType(type) != null)
+            {
+                return false;
+            }
+
+            if (type.IsValueType ||
+                type == typeof(string) ||
+                type.IsArray)
+            {
+                return true;
+            }
+
+            foreach (var property in type.GetProperties(global::System.Reflection.BindingFlags.Instance | global::System.Reflection.BindingFlags.Public))
+            {
+                foreach (var attributeData in property.CustomAttributes)
+                {
+                    var attributeTypeName = attributeData.AttributeType.FullName;
+                    if (attributeTypeName == ""System.Text.Json.Serialization.JsonRequiredAttribute"" ||
+                        attributeTypeName == ""Newtonsoft.Json.JsonRequiredAttribute"" ||
+                        attributeTypeName == ""System.Runtime.CompilerServices.RequiredMemberAttribute"")
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        private static class RequirementCache<TValue>
+        {
+            public static readonly bool Value = DetermineRequiresValue(typeof(TValue));
+        }
+
+"
+            : "\n";
         
         return $@"{(anyOfData.IsNamed ? @"#pragma warning disable CS0618 // Type or member is obsolete
 " : "")}
@@ -123,8 +168,7 @@ namespace {anyOfData.Namespace}
 {anyOfData.Properties.Select(x => $@" 
             {x.Name}{(x.Type.IsEnum ? "?.ToValueString()" : x.Type.CSharpTypeWithoutNullability == "bool" ? "?.ToString().ToLowerInvariant()" : "?.ToString()")} ??
 ").Inject().TrimEnd('?', '\n')}
-            ;
-
+            ;{allOfRequirementHelper}
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public bool Validate()
         {{

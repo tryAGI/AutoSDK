@@ -106,12 +106,51 @@ namespace G
             Value2?.ToString() 
             ;
 
+        private static bool RequiresValue<TValue>() => RequirementCache<TValue>.Value;
+
+        private static bool DetermineRequiresValue(global::System.Type type)
+        {
+            if (global::System.Nullable.GetUnderlyingType(type) != null)
+            {
+                return false;
+            }
+
+            if (type.IsValueType ||
+                type == typeof(string) ||
+                type.IsArray)
+            {
+                return true;
+            }
+
+            foreach (var property in type.GetProperties(global::System.Reflection.BindingFlags.Instance | global::System.Reflection.BindingFlags.Public))
+            {
+                foreach (var attributeData in property.CustomAttributes)
+                {
+                    var attributeTypeName = attributeData.AttributeType.FullName;
+                    if (attributeTypeName == "System.Text.Json.Serialization.JsonRequiredAttribute" ||
+                        attributeTypeName == "Newtonsoft.Json.JsonRequiredAttribute" ||
+                        attributeTypeName == "System.Runtime.CompilerServices.RequiredMemberAttribute")
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        private static class RequirementCache<TValue>
+        {
+            public static readonly bool Value = DetermineRequiresValue(typeof(TValue));
+        }
+
+
         /// <summary>
         /// 
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return (!RequiresValue<T1>() || IsValue1) && (!RequiresValue<T2>() || IsValue2);
         }
 
         /// <summary>

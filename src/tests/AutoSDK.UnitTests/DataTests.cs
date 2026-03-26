@@ -564,6 +564,60 @@ public partial class DataTests
     }
 
     [TestMethod]
+    public void AllOf_WithOptionalComponent_DoesNotRequireEveryValue()
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateModels = true,
+        };
+        const string yaml = """
+                            openapi: 3.1.0
+                            info:
+                              title: Test
+                              version: 1.0.0
+                            paths:
+                              /scrape:
+                                post:
+                                  operationId: scrape
+                                  requestBody:
+                                    required: true
+                                    content:
+                                      application/json:
+                                        schema:
+                                          allOf:
+                                            - type: object
+                                              required:
+                                                - url
+                                              properties:
+                                                url:
+                                                  type: string
+                                            - $ref: '#/components/schemas/ScrapeOptions'
+                                  responses:
+                                    '200':
+                                      description: ok
+                            components:
+                              schemas:
+                                ScrapeOptions:
+                                  type: object
+                                  properties:
+                                    formats:
+                                      type: array
+                                      items:
+                                        type: string
+                                    onlyMainContent:
+                                      type: boolean
+                            """;
+
+        var data = Data.Prepare(((yaml, settings), GlobalSettings: settings));
+        var allOf = data.AnyOfs.Single(x => x.SubType == "AllOf" && !x.IsNamed && x.Count == 2);
+        var generatedAllOf = Sources.GenerateAnyOf(allOf);
+
+        generatedAllOf.Should().Contain("private static bool RequiresValue<TValue>() => RequirementCache<TValue>.Value;");
+        generatedAllOf.Should().Contain("return (!RequiresValue<T1>() || IsValue1) && (!RequiresValue<T2>() || IsValue2);");
+        generatedAllOf.Should().NotContain("return IsValue1 && IsValue2;");
+    }
+
+    [TestMethod]
     [DataRow("ai21.json")]
     [DataRow("anthropic.yaml")]
     [DataRow("assemblyai.yaml")]
