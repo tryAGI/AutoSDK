@@ -36,7 +36,7 @@ namespace G
             Description = @"",
         };
 
-        private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.TreeNode>?> Children { get; } = new(
+        private new global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.TreeNode>?> Children { get; } = new(
             name: "children")
         {
             Description = @"",

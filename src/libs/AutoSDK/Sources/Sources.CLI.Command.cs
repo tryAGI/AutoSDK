@@ -28,7 +28,20 @@ public static partial class Sources
              endPoint.RequestType.CSharpTypeWithoutNullability is "string");
 
         var newModifierIfRequired = (MethodParameter parameter) =>
-            parameter.Name.ToPropertyName() is "Name" or "Description" or "Action"
+            parameter.Name.ToPropertyName() is
+                "Name" or
+                "Description" or
+                "Action" or
+                "Children" or
+                "Arguments" or
+                "Options" or
+                "Subcommands" or
+                "Validators" or
+                "Aliases" or
+                "TreatUnmatchedTokensAsErrors" or
+                "FirstParent" or
+                "Hidden" or
+                "Parents"
                 ? "new "
                 : "";
 

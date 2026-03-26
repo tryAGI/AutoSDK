@@ -47,9 +47,7 @@ namespace G
                 if (result.MessageType == global::System.Net.WebSockets.WebSocketMessageType.Text)
                 {
                     string json = global::System.Text.Encoding.UTF8.GetString(buffer, 0, result.Count);
-                    var @event = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ServerEvent>(json, JsonSerializerOptions) ??
-                                 throw new global::System.InvalidOperationException(
-                                     $"Response deserialization failed for \"{json}\" ");
+                    var @event = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ServerEvent>(json, JsonSerializerOptions);
 
                     yield return @event;
                 }

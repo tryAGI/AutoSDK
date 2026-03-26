@@ -16,6 +16,7 @@ public partial class Tests : VerifyBase
         string callerName,
         Dictionary<string, string>? globalOptions = null,
         Dictionary<string, Dictionary<string, string>>? additionalTextOptions = null,
+        IEnumerable<string>? supportSources = null,
         CancellationToken cancellationToken = default,
         params IIncrementalGenerator[] additionalGenerators)
         where T : IIncrementalGenerator, new()
@@ -59,6 +60,10 @@ public partial class Tests : VerifyBase
         {
             SyntaxFactory.ParseSyntaxTree("[assembly: System.CLSCompliantAttribute(true)]"),
         };
+        if (supportSources is not null)
+        {
+            trees.AddRange(supportSources.Select(x => SyntaxFactory.ParseSyntaxTree(x)));
+        }
         if (jsonSerializerType is JsonSerializerType.SystemTextJson)
         {
             foreach (var additionalText in additionalTexts)
@@ -71,32 +76,11 @@ public partial class Tests : VerifyBase
                 var @namespace = options.TryGetValue("build_metadata.AdditionalFiles.AutoSDK_Namespace", out var namespaceValue)
                     ? namespaceValue
                     : "G";
-                trees.Add(SyntaxFactory.ParseSyntaxTree($@"#nullable enable
-
-namespace {@namespace}
-{{
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::{@namespace}.JsonSerializerContextTypes))]
-    public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
-    {{
-        public static global::{@namespace}.SourceGenerationContext Default {{ get; }} = new global::{@namespace}.SourceGenerationContext(new global::System.Text.Json.JsonSerializerOptions());
-        
-        /// <summary>
-        /// The source-generated options associated with this context.
-        /// </summary>
-        protected override global::System.Text.Json.JsonSerializerOptions? GeneratedSerializerOptions {{ get; }}
-        
-        /// <inheritdoc/>
-        public SourceGenerationContext(global::System.Text.Json.JsonSerializerOptions options) : base(options)
-        {{
-        }}
-
-        public override global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(global::System.Type type)
-        {{
-            return null;
-        }}
-    }}
-}}
-"));
+                var contextInfo = GetJsonSerializerContextInfo(@namespace, globalOptions);
+                trees.Add(CreateJsonSerializerContextTree(
+                    contextNamespace: contextInfo.ContextNamespace,
+                    contextClassName: contextInfo.ContextClassName,
+                    typesNamespace: contextInfo.TypesNamespace));
             }
         }
 
@@ -132,10 +116,9 @@ namespace {@namespace}
             .ToImmutableArray();
 
         await Task.WhenAll(
-            Verify(diagnostics.NormalizeLocations())
-                .UseDirectory($"Snapshots/{callerName}/{jsonSerializerType:G}")
-                //.AutoVerify()
-                .UseTextForParameters("Diagnostics"),
+            VerifyNoDiagnosticsAsync(
+                diagnostics: diagnostics,
+                directory: $"Snapshots/{callerName}/{jsonSerializerType:G}"),
             Verify(driver)
                 .UseDirectory($"Snapshots/{callerName}/{jsonSerializerType:G}")
                 .UseFileName("_")
@@ -148,6 +131,7 @@ namespace {@namespace}
         string callerName,
         Dictionary<string, string>? globalOptions = null,
         Dictionary<string, Dictionary<string, string>>? additionalTextOptions = null,
+        IEnumerable<string>? supportSources = null,
         CancellationToken cancellationToken = default,
         params IIncrementalGenerator[] additionalGenerators)
         where T : IIncrementalGenerator, new()
@@ -171,6 +155,10 @@ namespace {@namespace}
         {
             SyntaxFactory.ParseSyntaxTree("[assembly: System.CLSCompliantAttribute(true)]"),
         };
+        if (supportSources is not null)
+        {
+            trees.AddRange(supportSources.Select(x => SyntaxFactory.ParseSyntaxTree(x)));
+        }
 
         additionalTextOptions ??= new Dictionary<string, Dictionary<string, string>>();
         foreach (var additionalText in additionalTexts)
@@ -204,14 +192,87 @@ namespace {@namespace}
             .ToImmutableArray();
 
         await Task.WhenAll(
-            Verify(diagnostics.NormalizeLocations())
-                .UseDirectory($"Snapshots/CLI/{callerName}")
-                //.AutoVerify()
-                .UseTextForParameters("Diagnostics"),
+            VerifyNoDiagnosticsAsync(
+                diagnostics: diagnostics,
+                directory: $"Snapshots/CLI/{callerName}"),
             Verify(driver)
                 .UseDirectory($"Snapshots/CLI/{callerName}")
                 .UseFileName("_")
                 .AutoVerify()
                 );
+    }
+
+    private Task VerifyNoDiagnosticsAsync(
+        ImmutableArray<Diagnostic> diagnostics,
+        string directory)
+    {
+        diagnostics.Should().BeEmpty(
+            "generated code must compile without diagnostics. Found:{0}{1}",
+            Environment.NewLine,
+            string.Join(
+                Environment.NewLine + Environment.NewLine,
+                diagnostics.NormalizeLocations().Select(x => x.ToString())));
+
+        return Verify("[]")
+            .UseDirectory(directory)
+            .UseTextForParameters("Diagnostics");
+    }
+
+    private static (string ContextNamespace, string ContextClassName, string TypesNamespace) GetJsonSerializerContextInfo(
+        string defaultNamespace,
+        IReadOnlyDictionary<string, string> globalOptions)
+    {
+        globalOptions.TryGetValue("build_property.AutoSDK_TypesNamespace", out var typesNamespace);
+        typesNamespace = string.IsNullOrWhiteSpace(typesNamespace) ? defaultNamespace : typesNamespace;
+
+        globalOptions.TryGetValue("build_property.AutoSDK_JsonSerializerContext", out var jsonSerializerContext);
+        if (string.IsNullOrWhiteSpace(jsonSerializerContext))
+        {
+            return (defaultNamespace, "SourceGenerationContext", typesNamespace);
+        }
+
+        var lastDotIndex = jsonSerializerContext.LastIndexOf('.');
+        return lastDotIndex > 0
+            ? (
+                ContextNamespace: jsonSerializerContext[..lastDotIndex],
+                ContextClassName: jsonSerializerContext[(lastDotIndex + 1)..],
+                TypesNamespace: typesNamespace)
+            : (
+                ContextNamespace: defaultNamespace,
+                ContextClassName: jsonSerializerContext,
+                TypesNamespace: typesNamespace);
+    }
+
+    private static SyntaxTree CreateJsonSerializerContextTree(
+        string contextNamespace,
+        string contextClassName,
+        string typesNamespace)
+    {
+        return SyntaxFactory.ParseSyntaxTree($@"#nullable enable
+
+namespace {contextNamespace}
+{{
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::{typesNamespace}.JsonSerializerContextTypes))]
+    public sealed partial class {contextClassName} : global::System.Text.Json.Serialization.JsonSerializerContext
+    {{
+        public static global::{contextNamespace}.{contextClassName} Default {{ get; }} = new global::{contextNamespace}.{contextClassName}(new global::System.Text.Json.JsonSerializerOptions());
+        
+        /// <summary>
+        /// The source-generated options associated with this context.
+        /// </summary>
+        protected override global::System.Text.Json.JsonSerializerOptions? GeneratedSerializerOptions {{ get; }}
+        
+        /// <inheritdoc/>
+        public {contextClassName}(global::System.Text.Json.JsonSerializerOptions options) : base(options)
+        {{
+        }}
+
+        public override global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(global::System.Type type)
+        {{
+            return null;
+        }}
+    }}
+}}
+");
     }
 }

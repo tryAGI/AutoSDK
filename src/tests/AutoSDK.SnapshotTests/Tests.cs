@@ -215,12 +215,37 @@ public partial class Tests
             },
             _ => new Dictionary<string, string>(),
         };
+        var supportSources = fileName switch
+        {
+            "elevenlabs-realtime-stt-xref.json" => new[]
+            {
+                """
+                #nullable enable
+
+                namespace ExternalTypes
+                {
+                    public sealed partial class InputAudioChunkPayload
+                    {
+                    }
+
+                    public readonly partial struct ServerEvent
+                    {
+                    }
+
+                    public sealed partial class JsonSerializerContextTypes
+                    {
+                    }
+                }
+                """
+            },
+            _ => [],
+        };
 
         return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
             new CustomAdditionalText(
                 path: resource.FileName,
                 text: resource.AsString())
-        ], Path.GetFileNameWithoutExtension(fileName), globalOptions, additionalGenerators: [new CliGenerator()]);
+        ], Path.GetFileNameWithoutExtension(fileName), globalOptions, supportSources: supportSources, additionalGenerators: [new CliGenerator()]);
     }
     
     [TestMethod]
@@ -364,5 +389,37 @@ public partial class Tests
                     ["build_metadata.AdditionalFiles.AutoSDK_Namespace"] = Path.GetFileNameWithoutExtension(x.FileName),
                     ["build_metadata.AdditionalFiles.AutoSDK_ClassName"] = Path.GetFileNameWithoutExtension(x.FileName) + "Client",
                 }));
+    }
+
+    [TestMethod]
+    public void DiagnosticsSnapshotsShouldStayEmpty()
+    {
+        var snapshotsDirectory = Path.GetFullPath(Path.Combine(
+            AppContext.BaseDirectory,
+            "..",
+            "..",
+            "..",
+            "..",
+            "..",
+            "..",
+            "src",
+            "tests",
+            "AutoSDK.SnapshotTests",
+            "Snapshots"));
+        var diagnosticsFiles = Directory.GetFiles(
+            snapshotsDirectory,
+            "Tests.*Diagnostics.verified.txt",
+            SearchOption.AllDirectories);
+
+        diagnosticsFiles.Should().NotBeEmpty();
+
+        foreach (var diagnosticsFile in diagnosticsFiles)
+        {
+            File.ReadAllText(diagnosticsFile)
+                .TrimStart('\uFEFF')
+                .Trim()
+                .Should()
+                .Be("[]", $"diagnostics snapshots must stay empty: {diagnosticsFile}");
+        }
     }
 }
