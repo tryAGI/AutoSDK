@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/libs/">
     <Project Path="src/libs/AutoSDK.CLI/AutoSDK.CLI.csproj" />
+    <Project Path="src/libs/AutoSDK.CSharp/AutoSDK.CSharp.csproj" />
     <Project Path="src/libs/AutoSDK.Docs/AutoSDK.Docs.csproj" />
     <Project Path="src/libs/AutoSDK.SourceGenerators/AutoSDK.SourceGenerators.csproj" />
     <Project Path="src/libs/AutoSDK/AutoSDK.csproj" />

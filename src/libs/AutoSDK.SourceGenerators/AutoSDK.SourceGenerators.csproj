@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <Compile Include="..\AutoSDK\**\*.cs" Exclude="..\AutoSDK\bin\**\*.*;..\AutoSDK\obj\**\*.*" />
+    <Compile Include="..\AutoSDK.CSharp\**\*.cs" Exclude="..\AutoSDK.CSharp\bin\**\*.*;..\AutoSDK.CSharp\obj\**\*.*" />
   </ItemGroup>
   
   <ItemGroup>
