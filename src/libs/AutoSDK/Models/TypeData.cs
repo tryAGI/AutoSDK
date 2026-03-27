@@ -38,6 +38,8 @@ public record struct TypeData(
     bool IsReferenceable,
     string ConverterType)
 {
+    public int DependencyHash { get; set; }
+
     public static TypeData Default => new(
         CSharpTypeRaw: string.Empty,
         CSharpTypeNullability: false,
@@ -72,5 +74,8 @@ public record struct TypeData(
         CSharpTypeWithNullabilityForNonValueTypes: "?",
         CSharpType: string.Empty,
         IsReferenceable: false,
-        ConverterType: string.Empty);
+        ConverterType: string.Empty)
+    {
+        DependencyHash = 0,
+    };
 }

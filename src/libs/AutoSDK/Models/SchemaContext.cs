@@ -793,12 +793,12 @@ public class SchemaContext(
         var h = 0;
         if (ResolvedReference != null)
         {
-            h = ResolvedReference.TypeData.GetHashCode();
+            h = ResolvedReference.TypeData.DependencyHash;
         }
         for (var i = 0; i < Children.Count; i++)
         {
             // Rotate left by 5 and XOR to mix bits
-            h = ((h << 5) | (int)((uint)h >> 27)) ^ Children[i].TypeData.GetHashCode();
+            h = ((h << 5) | (int)((uint)h >> 27)) ^ Children[i].TypeData.DependencyHash;
         }
         return h;
     }

@@ -20,6 +20,10 @@ public static class CSharpTypeDataExtensions
         var csharpTypeWithNullabilityForNonValueTypes = type.IsValueType
             ? csharpTypeWithoutNullability
             : csharpTypeWithNullability;
+        var csharpType = type.CSharpTypeNullability
+            ? csharpTypeWithNullability
+            : csharpTypeWithoutNullability;
+        var converterType = GetConverterType(type, shortCSharpTypeWithoutNullability, isAnyOfLike);
 
         return type with
         {
@@ -30,15 +34,14 @@ public static class CSharpTypeDataExtensions
             IsAnyOfLike = isAnyOfLike,
             CSharpTypeWithNullabilityForValueTypes = csharpTypeWithNullabilityForValueTypes,
             CSharpTypeWithNullabilityForNonValueTypes = csharpTypeWithNullabilityForNonValueTypes,
-            CSharpType = type.CSharpTypeNullability
-                ? csharpTypeWithNullability
-                : csharpTypeWithoutNullability,
+            CSharpType = csharpType,
             IsReferenceable =
                 type.IsValueType ||
                 csharpTypeWithoutNullability is "string" ||
                 isAnyOfLike ||
                 type.IsEnum,
-            ConverterType = GetConverterType(type, shortCSharpTypeWithoutNullability, isAnyOfLike),
+            ConverterType = converterType,
+            DependencyHash = GetDependencyHash(type, isAnyOfLike, converterType),
         };
     }
 
@@ -76,6 +79,62 @@ public static class CSharpTypeDataExtensions
     {
         return string.Join(
             ", ",
-            type.SubTypes.Select(x => x.Unbox<TypeData>().WithCSharpComputedValues().CSharpTypeWithNullabilityForValueTypes));
+            type.SubTypes.Select(x =>
+            {
+                var subType = x.Unbox<TypeData>();
+                return string.IsNullOrEmpty(subType.CSharpTypeWithNullabilityForValueTypes)
+                    ? subType.WithCSharpComputedValues().CSharpTypeWithNullabilityForValueTypes
+                    : subType.CSharpTypeWithNullabilityForValueTypes;
+            }));
+    }
+
+    private static int GetDependencyHash(TypeData type, bool isAnyOfLike, string converterType)
+    {
+        HashCode hashCode = default;
+        AddOrdinal(ref hashCode, type.CSharpTypeRaw);
+        hashCode.Add(type.CSharpTypeNullability);
+        hashCode.Add(type.IsBaseClass);
+        hashCode.Add(type.IsDerivedClass);
+        hashCode.Add(type.IsArray);
+        hashCode.Add(type.IsNullable);
+        hashCode.Add(type.IsEnum);
+        hashCode.Add(type.IsBase64);
+        hashCode.Add(type.IsDate);
+        hashCode.Add(type.IsDateTime);
+        hashCode.Add(type.IsBinary);
+        hashCode.Add(type.IsValueType);
+        hashCode.Add(type.IsUnixTimestamp);
+        hashCode.Add(type.AnyOfCount);
+        hashCode.Add(type.OneOfCount);
+        hashCode.Add(type.AllOfCount);
+        hashCode.Add(type.IsComponent);
+        hashCode.Add(type.HasDiscriminator);
+        AddOrdinal(ref hashCode, type.Namespace);
+        AddOrdinal(ref hashCode, type.GeneratedNamespace);
+        hashCode.Add(type.IsDeprecated);
+        hashCode.Add(isAnyOfLike);
+        AddOrdinal(ref hashCode, converterType);
+
+        foreach (var property in type.Properties)
+        {
+            AddOrdinal(ref hashCode, property);
+        }
+
+        foreach (var enumValue in type.EnumValues)
+        {
+            AddOrdinal(ref hashCode, enumValue);
+        }
+
+        foreach (var subType in type.SubTypes)
+        {
+            hashCode.Add(subType.Unbox<TypeData>().DependencyHash);
+        }
+
+        return hashCode.ToHashCode();
+    }
+
+    private static void AddOrdinal(ref HashCode hashCode, string? value)
+    {
+        hashCode.Add(value is null ? 0 : StringComparer.Ordinal.GetHashCode(value));
     }
 }
