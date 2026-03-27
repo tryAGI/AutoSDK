@@ -17,6 +17,24 @@ public class CliTests
         await GenerateAsync("weaviate.yaml", targetFramework: "net10.0");
     }
 
+    [TestMethod]
+    public async Task Generate_CohereSdk()
+    {
+        await GenerateAsync("cohere.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_MistralSdk()
+    {
+        await GenerateAsync("mistral.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_DeepgramMultichannelSdk()
+    {
+        await GenerateAsync("deepgram-multichannel.json", targetFramework: "net10.0");
+    }
+
     private static async Task GenerateAsync(
         string spec,
         string targetFramework = "net8.0",
