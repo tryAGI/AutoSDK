@@ -5,8 +5,6 @@ using System.Text.RegularExpressions;
 using AutoSDK.Helpers;
 using Microsoft.OpenApi;
 using AutoSDK.Models;
-using AutoSDK.Naming.Properties;
-using AutoSDK.Serialization.Form;
 using Microsoft.OpenApi.Reader;
 using Microsoft.OpenApi.YamlReader;
 
@@ -17,6 +15,14 @@ public static class OpenApiExtensions
     public static OpenApiDocument GetOpenApiDocument(
         this string yamlOrJson,
         Settings settings,
+        CancellationToken cancellationToken = default)
+    {
+        return yamlOrJson.GetOpenApiDocument(settings.ToCoreSettings(), cancellationToken);
+    }
+
+    public static OpenApiDocument GetOpenApiDocument(
+        this string yamlOrJson,
+        CoreSettings settings,
         CancellationToken cancellationToken = default)
     {
         yamlOrJson = yamlOrJson ?? throw new ArgumentNullException(nameof(yamlOrJson));
@@ -205,6 +211,13 @@ info:
     public static void ApplyOpenApiOverrides(
         this OpenApiDocument document,
         Settings settings)
+    {
+        document.ApplyOpenApiOverrides(settings.ToCoreSettings());
+    }
+
+    public static void ApplyOpenApiOverrides(
+        this OpenApiDocument document,
+        CoreSettings settings)
     {
         document = document ?? throw new ArgumentNullException(nameof(document));
 
@@ -816,6 +829,13 @@ info:
         this OpenApiDocument openApiDocument,
         Settings settings)
     {
+        openApiDocument.InjectBaseUrl(settings.ToCoreSettings());
+    }
+
+    public static void InjectBaseUrl(
+        this OpenApiDocument openApiDocument,
+        CoreSettings settings)
+    {
         openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
 
         if (!Uri.TryCreate(settings.BaseUrl, UriKind.Absolute, out _))
@@ -833,6 +853,13 @@ info:
     public static void InjectSecuritySchemes(
         this OpenApiDocument openApiDocument,
         Settings settings)
+    {
+        openApiDocument.InjectSecuritySchemes(settings.ToCoreSettings());
+    }
+
+    public static void InjectSecuritySchemes(
+        this OpenApiDocument openApiDocument,
+        CoreSettings settings)
     {
         openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
 
@@ -1183,32 +1210,6 @@ info:
     }
 
     /// <summary>
-    /// https://swagger.io/docs/specification/describing-parameters/
-    /// https://swagger.io/docs/specification/serialization/
-    /// </summary>
-    /// <param name="path"></param>
-    /// <param name="parameters"></param>
-    /// <returns></returns>
-    /// <exception cref="ArgumentNullException"></exception>
-    public static string PreparePath(
-        this string path,
-        IList<MethodParameter> parameters)
-    {
-        path = path ?? throw new ArgumentNullException(nameof(path));
-        parameters = parameters ?? throw new ArgumentNullException(nameof(parameters));
-        
-        path = ParameterSerializer.SerializePathParameters(parameters, path);
-        
-        path = $"\"{path}\"";
-        if (parameters.Any(x => x.Location is ParameterLocation.Path))
-        {
-            path = $"${path}";
-        }
-        
-        return path;
-    }
-    
-    /// <summary>
     /// OpenAPI doesn't allow metadata for references so sometimes allOf with single item is used to add metadata.
     /// </summary>
     /// <param name="context"></param>
@@ -1240,133 +1241,6 @@ info:
                schema.AllOf?.Count == 1 ||
                schema.OneOf?.Count == 1) &&
                (schema.Properties?.Count ?? 0) == 0;
-    }
-    
-    public static string? GetDefaultValue(this SchemaContext context)
-    {
-        context = context ?? throw new ArgumentNullException(nameof(context));
-        
-        if (context.TypeData.CSharpType == "object?" ||
-            context.Schema.Default is JsonArray or JsonObject ||
-            context.TypeData.CSharpTypeNullability)
-        {
-            return string.Empty;
-        }
-
-        // Replace to extensions?
-        // if (context.CombinedEnumOriginalSchema != null)
-        // {
-        //     return context.TypeData.Value.CSharpTypeWithoutNullability + "." + context.CombinedEnumOriginalSchema.Value.Value.Enum.First().ToEnumValue(context.Settings).Name;
-        // }
-        // Treat primitive const values as compile-time defaults.
-        if (context.Schema.IsConst() && context.Schema.Default == null &&
-            !context.TypeData.IsEnum &&
-            !(context.Schema.Enum?.Any() ?? false))
-        {
-            return GetConstLiteral(context);
-        }
-
-        var defaultString = context.Schema.Default?.GetString();
-        if ((context.Schema.Enum?.Any() ?? false) && context.Schema.Default is JsonValue && !string.IsNullOrWhiteSpace(defaultString))
-        {
-            var @enum = context.ComputeEnum();
-            if (!@enum.TryGetValue(context.Schema.Default.GetString() ?? string.Empty, out var result))
-            {
-                return string.Empty;
-            }
-
-            return context.TypeData.CSharpTypeWithoutNullability + "." + result.Name;
-        }
-        if ((context.Schema.AnyOf?.Any(x => x.Enum?.Any() ?? false) ?? false) && context.Schema.Default != null)
-        {
-            var enumChildContext = context.Children
-                .Where(x => x.Hint is Hint.AnyOf)
-                .First(x => x.Schema.Enum?.Any() ?? false);
-            var @enum = enumChildContext.ComputeEnum();
-            var value = @enum.TryGetValue(context.Schema.Default.GetString() ?? string.Empty, out var result) ? result.Name : "";
-
-            if (string.IsNullOrWhiteSpace(value))
-            {
-                if (context.Children
-                    .Where(x => x.Hint is Hint.AnyOf)
-                    .Any(x => x.Schema.Type == JsonSchemaType.String))
-                {
-                    value = context.Schema.Default.GetString();
-                    if (!string.IsNullOrWhiteSpace(value))
-                    {
-                        return $"\"{value}\"";
-                    }
-                }
-
-                return null;
-            }
-
-            return enumChildContext.TypeData.CSharpTypeWithoutNullability + "." + value;
-        }
-        if ((context.Schema.OneOf?.Any(x => x.Enum?.Any() ?? false) ?? false) && context.Schema.Default != null)
-        {
-            var enumChildContext = context.Children
-                .Where(x => x.Hint is Hint.OneOf)
-                .First(x => x.Schema.Enum?.Any() ?? false);
-            var @enum = enumChildContext.ComputeEnum();
-            if (!@enum.TryGetValue(context.Schema.Default.GetString() ?? string.Empty, out var result))
-            {
-                return string.Empty;
-            }
-
-            return enumChildContext.TypeData.CSharpTypeWithoutNullability + "." + result.Name;
-        }
-        if ((context.Schema.AllOf?.Any(x => x.Enum?.Any() ?? false) ?? false) && context.Schema.Default != null)
-        {
-            var enumChildContext = context.Children
-                .Where(x => x.Hint is Hint.AllOf)
-                .First(x => x.Schema.Enum?.Any() ?? false);
-            var @enum = enumChildContext.ComputeEnum();
-            if (!@enum.TryGetValue(context.Schema.Default.GetString() ?? string.Empty, out var result))
-            {
-                return string.Empty;
-            }
-
-            return enumChildContext.TypeData.CSharpTypeWithoutNullability + "." + result.Name;
-        }
-        var defaultStringValue = context.Schema.Default?.GetString();
-        if (context.Schema.Default is JsonValue && !string.IsNullOrWhiteSpace(defaultStringValue))
-        {
-            if (context.Schema.Type != JsonSchemaType.String &&
-                (context.Schema.AnyOf ?? []).All(x => x.Type != JsonSchemaType.String) &&
-                (context.Schema.AllOf ?? []).All(x => x.Type != JsonSchemaType.String) &&
-                (context.Schema.OneOf ?? []).All(x => x.Type != JsonSchemaType.String))
-            {
-                return null;
-            }
-
-            return $"\"{defaultStringValue}\"";
-        }
-        
-        return context.Schema.Default?.GetString();
-    }
-
-    private static string? GetConstLiteral(SchemaContext context)
-    {
-        var constValue = context.Schema.Const;
-        if (constValue == null)
-        {
-            return null;
-        }
-
-        return context.TypeData.CSharpTypeWithoutNullability switch
-        {
-            "string" => $"\"{constValue.ClearForCSharp()}\"",
-            "bool" when bool.TryParse(constValue, out var value) => value ? "true" : "false",
-            "byte" when byte.TryParse(constValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) => value.ToString(CultureInfo.InvariantCulture),
-            "short" when short.TryParse(constValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) => value.ToString(CultureInfo.InvariantCulture),
-            "int" when int.TryParse(constValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) => value.ToString(CultureInfo.InvariantCulture),
-            "long" when long.TryParse(constValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) => value.ToString(CultureInfo.InvariantCulture) + "L",
-            "float" when float.TryParse(constValue, NumberStyles.Float, CultureInfo.InvariantCulture, out var value) => value.ToString(CultureInfo.InvariantCulture) + "F",
-            "double" when double.TryParse(constValue, NumberStyles.Float, CultureInfo.InvariantCulture, out var value) => value.ToString("R", CultureInfo.InvariantCulture),
-            "decimal" when decimal.TryParse(constValue, NumberStyles.Float, CultureInfo.InvariantCulture, out var value) => value.ToString(CultureInfo.InvariantCulture) + "M",
-            _ => null,
-        };
     }
     
     public static string GetSummary(this IOpenApiSchema schema)
@@ -1633,89 +1507,6 @@ info:
         return text;
     }
     
-    public static Dictionary<string, PropertyData> ComputeEnum(
-        this SchemaContext context)
-    {
-        context = context ?? throw new ArgumentNullException(nameof(context));
-        
-        var @enum = (context.Schema.Enum ?? []).ComputeEnum(
-            enumName: context.Id,
-            description: context.Parameter?.Description ?? context.Schema.Description ?? string.Empty,
-            context.Settings);
-
-        if ((context.Schema.Extensions?.TryGetValue("x-enum-descriptions", out var descriptions) ?? false) &&
-            TryGetExtensionJsonNode(descriptions) is JsonArray descriptionsArray)
-        {
-            var i = 0;
-            foreach (var description in descriptionsArray)
-            {
-                if (description is JsonValue descValue && descValue.TryGetValue<string>(out var descString))
-                {
-                    @enum[@enum.Keys.ElementAt(i)] = @enum[@enum.Keys.ElementAt(i)] with
-                    {
-                        Summary = ClearForXml(descString),
-                    };
-                }
-                i++;
-            }
-        }
-
-        // x-enum-varnames: parallel string array providing PascalCase C# names for enum values
-        if ((context.Schema.Extensions?.TryGetValue("x-enum-varnames", out var varnames) ?? false) &&
-            TryGetExtensionJsonNode(varnames) is JsonArray varnamesArray)
-        {
-            var i = 0;
-            foreach (var varname in varnamesArray)
-            {
-                if (i < @enum.Count &&
-                    varname is JsonValue varValue && varValue.TryGetValue<string>(out var varString) &&
-                    !string.IsNullOrWhiteSpace(varString))
-                {
-                    @enum[@enum.Keys.ElementAt(i)] = @enum[@enum.Keys.ElementAt(i)] with
-                    {
-                        Name = varString.ToPropertyName(),
-                    };
-                }
-                i++;
-            }
-        }
-
-        // x-fern-enum: object-map format with { value: { description, name/casing } } for enum overrides
-        if ((context.Schema.Extensions?.TryGetValue("x-fern-enum", out var fernEnum) ?? false) &&
-            TryGetExtensionJsonNode(fernEnum) is { } fernEnumNode)
-        {
-            // x-fern-enum can be either an array of objects or an object map keyed by enum value
-            if (fernEnumNode is JsonArray fernEnumArray)
-            {
-                var i = 0;
-                foreach (var item in fernEnumArray)
-                {
-                    if (i < @enum.Count && item is JsonObject itemObj)
-                    {
-                        ApplyFernEnumItem(itemObj, @enum, i);
-                    }
-                    i++;
-                }
-            }
-            else if (fernEnumNode is JsonObject fernEnumObj)
-            {
-                foreach (var kvp in fernEnumObj.OrderBy(x => x.Key, StringComparer.Ordinal))
-                {
-                    if (kvp.Value is JsonObject itemObj && @enum.ContainsKey(kvp.Key))
-                    {
-                        var index = @enum.Keys.ToList().IndexOf(kvp.Key);
-                        if (index >= 0)
-                        {
-                            ApplyFernEnumItem(itemObj, @enum, index);
-                        }
-                    }
-                }
-            }
-        }
-
-        return @enum;
-    }
-
     private static readonly (string Prefix, string Stage)[] ExperimentalStagePrefixes =
     [
         ("[Alpha]", "Alpha"),
@@ -1755,43 +1546,6 @@ info:
         if (normalized.Equals("Deprecated", StringComparison.OrdinalIgnoreCase)) return "Deprecated";
         if (normalized.Equals("Generally-Available", StringComparison.OrdinalIgnoreCase)) return "GenerallyAvailable";
         return normalized;
-    }
-
-    private static void ApplyFernEnumItem(JsonObject itemObj, Dictionary<string, PropertyData> @enum, int index)
-    {
-        var current = @enum[@enum.Keys.ElementAt(index)];
-
-        // Extract name from "name" field or "casing.pascal" field
-        string? nameOverride = null;
-        if (itemObj.TryGetPropertyValue("name", out var nameNode) &&
-            nameNode is JsonValue nameValue && nameValue.TryGetValue<string>(out var nameStr) &&
-            !string.IsNullOrWhiteSpace(nameStr))
-        {
-            nameOverride = nameStr.ToPropertyName();
-        }
-        else if (itemObj.TryGetPropertyValue("casing", out var casingNode) &&
-                 casingNode is JsonObject casingObj &&
-                 casingObj.TryGetPropertyValue("pascal", out var pascalNode) &&
-                 pascalNode is JsonValue pascalValue && pascalValue.TryGetValue<string>(out var pascalStr) &&
-                 !string.IsNullOrWhiteSpace(pascalStr))
-        {
-            nameOverride = pascalStr;
-        }
-
-        // Extract description
-        string? descOverride = null;
-        if (itemObj.TryGetPropertyValue("description", out var descNode) &&
-            descNode is JsonValue descValue && descValue.TryGetValue<string>(out var descStr) &&
-            !string.IsNullOrWhiteSpace(descStr))
-        {
-            descOverride = ClearForXml(descStr);
-        }
-
-        @enum[@enum.Keys.ElementAt(index)] = current with
-        {
-            Name = nameOverride ?? current.Name,
-            Summary = descOverride ?? current.Summary,
-        };
     }
 
     private static bool TryGetAvailability(IDictionary<string, IOpenApiExtension>? extensions, out string availability)
@@ -1926,120 +1680,6 @@ info:
         return TryGetExtensionBoolean(extensions, name);
     }
 
-    public static Dictionary<string, PropertyData> ComputeEnum(
-        this IList<JsonNode> @enum,
-        string enumName,
-        string description,
-        Settings settings)
-    {
-        var values = new Dictionary<string, PropertyData>();
-        for (var i = 0; i < @enum.Count; i++)
-        {
-            var value = ((JsonNode?)@enum[i]).ToEnumValue(
-                description: description,
-                settings);
-            if (!string.IsNullOrWhiteSpace(value.Name) && !values.ContainsKey(value.Id))
-            {
-                values[value.Id] = value;
-            }
-        }
-
-        // Check if all names contain the enum name (case-insensitive)
-        var allContainEnumName = values.Count > 0;
-        if (allContainEnumName)
-        {
-            foreach (var kvp in values)
-            {
-                if (kvp.Value.Name.IndexOf(enumName, StringComparison.OrdinalIgnoreCase) < 0)
-                {
-                    allContainEnumName = false;
-                    break;
-                }
-            }
-        }
-
-        if (allContainEnumName)
-        {
-            // Rebuild in-place by collecting keys first to avoid mutation during iteration
-            var keys = new List<string>(values.Keys);
-            foreach (var key in keys)
-            {
-                var v = values[key];
-                values[key] = v with
-                {
-                    Name = v.Name.Remove(
-                        v.Name.IndexOf(enumName, StringComparison.OrdinalIgnoreCase),
-                        enumName.Length).ToEnumValue(
-                        description: description,
-                        settings).Name,
-                };
-            }
-        }
-
-        return values;
-    }
-
-    public static PropertyData ToEnumValue(
-        this JsonNode? any,
-        string description,
-        Settings settings)
-    {
-        var id = any.GetString() ?? string.Empty;
-
-        return id.ToEnumValue(description, settings);
-    }
-    
-    public static PropertyData ToEnumValue(
-        this string id,
-        string description,
-        Settings settings)
-    {
-        var name = id
-            .ReplacePlusAndMinusOnStart()
-            .ToPropertyName()
-            .UseWordSeparator(StringExtensions.EnumSeparators)
-            .Replace("+", "Plus")
-            .Replace("*", "Any")
-            .Replace("[]", "Array")
-            .Replace("'", string.Empty)
-            .Replace(".", string.Empty)
-            .Replace("[", string.Empty)
-            .Replace("]", string.Empty);
-        if (name.Length > 0 &&
-            char.IsDigit(name[0]))
-        {
-            name = (string.IsNullOrWhiteSpace(settings.ClsCompliantEnumPrefix)
-                ? "_"
-                : settings.ClsCompliantEnumPrefix) + name;
-        }
-
-        return PropertyData.Default with
-        {
-            Id = id,
-            Name = CSharpPropertyNameGenerator.SanitizeName(name, settings.ClsCompliantEnumPrefix),
-            Summary = ClearForXml(ExtractEnumSummaryFromDescription(id, description)),
-        };
-    }
-
-    public static string ExtractEnumSummaryFromDescription(string id, string description)
-    {
-        if (string.IsNullOrWhiteSpace(description))
-        {
-            return string.Empty;
-        }
-        
-        var lines = description.Split(["\n"], StringSplitOptions.RemoveEmptyEntries);
-        var line = lines.FirstOrDefault(line => line.Contains(id) && line.Contains(":"));
-        
-        if (line == null)
-            return string.Empty;
-
-        var index = line.IndexOf(':');
-        return index >= 0
-            ? line.Substring(index + 1).Trim()
-            : line.Trim();
-    }
-    
     public static string[] FindAllOperationIdsForTag(
         this OpenApiDocument openApiDocument,
         string tag)

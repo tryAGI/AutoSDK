@@ -193,7 +193,7 @@ namespace {endPoint.Settings.Namespace}
                 {x.ParameterName}: {(x.Type.IsReferenceable ? "ref " : "")}{x.ParameterName}").Inject(emptyValue: "")}{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @",
                 request: request")});
 
-{(endPoint.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson ? endPoint.Parameters
+{(endPoint.Settings.UsesNewtonsoftJson() ? endPoint.Parameters
     .Where(x => x is { Location: not null, Type.IsEnum: true, Type.IsAnyOfLike: false, Type.EnumValues.Length: > 0 })
     .Select(x => $@"
             var {x.ArgumentName} = {x.ParameterName} switch

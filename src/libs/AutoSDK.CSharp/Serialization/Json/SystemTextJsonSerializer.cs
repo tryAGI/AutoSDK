@@ -95,7 +95,7 @@ public class SystemTextJsonSerializer : IJsonSerializer
 
     public string GenerateSerializeCall(TypeData type, string jsonSerializerContext)
     {
-        if (type.CSharpType.StartsWith($"global::{type.Settings.Namespace}", StringComparison.Ordinal))
+        if (type.CSharpType.StartsWith($"global::{type.GeneratedNamespace}", StringComparison.Ordinal))
         {
             return string.IsNullOrWhiteSpace(jsonSerializerContext)
                 ? "request.ToJson(JsonSerializerOptions)"
@@ -110,7 +110,7 @@ public class SystemTextJsonSerializer : IJsonSerializer
     public string GenerateDeserializeCall(string variableName, TypeData type, string jsonSerializerContext)
     {
         var typeToDeserializeIfRequired = (type.IsDerivedClass || type.IsBaseClass) && !type.IsAnyOfLike ? $"<{type.CSharpTypeWithoutNullability}>" : "";
-        if (type.CSharpType.StartsWith($"global::{type.Settings.Namespace}", StringComparison.Ordinal))
+        if (type.CSharpType.StartsWith($"global::{type.GeneratedNamespace}", StringComparison.Ordinal))
         {
             return string.IsNullOrWhiteSpace(jsonSerializerContext)
                 ? $"{type.CSharpTypeWithoutNullability}.FromJson{typeToDeserializeIfRequired}({variableName}, JsonSerializerOptions)"
@@ -125,7 +125,7 @@ public class SystemTextJsonSerializer : IJsonSerializer
     public string GenerateDeserializeFromStreamCall(string variableName, TypeData type, string jsonSerializerContext)
     {
         var typeToDeserializeIfRequired = (type.IsDerivedClass || type.IsBaseClass) && !type.IsAnyOfLike ? $"<{type.CSharpTypeWithoutNullability}>" : "";
-        if (type.CSharpType.StartsWith($"global::{type.Settings.Namespace}", StringComparison.Ordinal))
+        if (type.CSharpType.StartsWith($"global::{type.GeneratedNamespace}", StringComparison.Ordinal))
         {
             return string.IsNullOrWhiteSpace(jsonSerializerContext)
                 ? $"await {type.CSharpTypeWithoutNullability}.FromJsonStreamAsync{typeToDeserializeIfRequired}({variableName}, JsonSerializerOptions).ConfigureAwait(false)"

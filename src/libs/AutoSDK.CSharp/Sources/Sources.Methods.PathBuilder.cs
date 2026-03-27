@@ -6,7 +6,7 @@ namespace AutoSDK.Generation;
 public static partial class Sources
 {
     public static string GeneratePathBuilder(
-        Settings settings,
+        CSharpSettings settings,
         CancellationToken cancellationToken = default)
     {
         return $@"#nullable enable

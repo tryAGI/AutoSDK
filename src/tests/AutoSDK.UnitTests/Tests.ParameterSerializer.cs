@@ -1,5 +1,7 @@
 using AutoSDK.Models;
+using AutoSDK.Naming.Parameters;
 using AutoSDK.Serialization.Form;
+using AutoSDK.TypeMapping;
 using Microsoft.OpenApi;
 
 namespace AutoSDK.UnitTests;
@@ -7,14 +9,14 @@ namespace AutoSDK.UnitTests;
 public partial class Tests
 {
     private static MethodParameter CreateQueryParameter(TypeData type, bool isRequired = false, string name = "param") =>
-        MethodParameter.Default with
+        (MethodParameter.Default with
         {
             Id = name,
             Name = name,
-            Type = type,
+            Type = type.WithCSharpComputedValues(),
             IsRequired = isRequired,
             Location = ParameterLocation.Query,
-        };
+        }).WithCSharpParameterNames().WithCSharpComputedValues();
 
     [TestMethod]
     public void ParameterSerializer_BoolOptional_UsesLowerInvariant()

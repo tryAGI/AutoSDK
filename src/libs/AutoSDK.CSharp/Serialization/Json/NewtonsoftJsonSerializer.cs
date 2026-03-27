@@ -39,7 +39,7 @@ public class NewtonsoftJsonSerializer : IJsonSerializer
 
     public string GenerateSerializeCall(TypeData type, string jsonSerializerContext)
     {
-        if (type.CSharpType.StartsWith($"global::{type.Settings.Namespace}", StringComparison.Ordinal))
+        if (type.CSharpType.StartsWith($"global::{type.GeneratedNamespace}", StringComparison.Ordinal))
         {
             return "request.ToJson(JsonSerializerOptions)";
         }
@@ -49,7 +49,7 @@ public class NewtonsoftJsonSerializer : IJsonSerializer
     
     public string GenerateDeserializeCall(string variableName, TypeData type, string jsonSerializerContext)
     {
-        if (type.CSharpType.StartsWith($"global::{type.Settings.Namespace}", StringComparison.Ordinal))
+        if (type.CSharpType.StartsWith($"global::{type.GeneratedNamespace}", StringComparison.Ordinal))
         {
             return $"{type.CSharpTypeWithoutNullability}.FromJson({variableName}, JsonSerializerOptions)";
         }
@@ -59,7 +59,7 @@ public class NewtonsoftJsonSerializer : IJsonSerializer
 
     public string GenerateDeserializeFromStreamCall(string variableName, TypeData type, string jsonSerializerContext)
     {
-        if (type.CSharpType.StartsWith($"global::{type.Settings.Namespace}", StringComparison.Ordinal))
+        if (type.CSharpType.StartsWith($"global::{type.GeneratedNamespace}", StringComparison.Ordinal))
         {
             return $"await {type.CSharpTypeWithoutNullability}.FromJsonStreamAsync({variableName}, JsonSerializerOptions).ConfigureAwait(false)";
         }

@@ -19,7 +19,7 @@ public static partial class Sources
     public static string GenerateWebSocketClient(
         WebSocketClient wsClient)
     {
-        var hasOptions = string.IsNullOrWhiteSpace(wsClient.Settings.JsonSerializerContext);
+        var hasOptions = !wsClient.Settings.HasJsonSerializerContext();
 
         return $@"
 #nullable enable

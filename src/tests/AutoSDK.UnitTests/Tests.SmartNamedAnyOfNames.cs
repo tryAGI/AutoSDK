@@ -1,5 +1,6 @@
 ﻿using AutoSDK.Models;
 using AutoSDK.Naming.AnyOfs;
+using AutoSDK.TypeMapping;
 
 namespace AutoSDK.UnitTests;
 
@@ -10,10 +11,10 @@ public partial class Tests
     public void SmartNamedAnyOfNames_Valid()
     {
         SmartNamedAnyOfNames.ComputeSmartName(
-            typeData: TypeData.Default with
+            typeData: (TypeData.Default with
             {
                 CSharpTypeRaw = "ChatCompletionRequestMessageContentPartText",
-            },
+            }).WithCSharpComputedValues(),
             className: "ChatCompletionRequestMessageContentPart").Should().Be("Text");
     }
     

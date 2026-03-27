@@ -16,6 +16,21 @@ public record struct OAuthFlow(
         OpenApiOAuthFlow flow,
         Settings settings)
     {
+        return FromOpenApiSecurityScheme(type, flow, settings.ToCoreSettings());
+    }
+
+    public static OAuthFlow FromOpenApiSecurityScheme(
+        string type,
+        OpenApiOAuthFlow flow,
+        CoreSettings settings)
+    {
+        return FromOpenApiSecurityScheme(type, flow);
+    }
+
+    public static OAuthFlow FromOpenApiSecurityScheme(
+        string type,
+        OpenApiOAuthFlow flow)
+    {
         type = type ?? throw new ArgumentNullException(nameof(type));
         flow = flow ?? throw new ArgumentNullException(nameof(flow));
 

@@ -1,6 +1,4 @@
 using AutoSDK.Models;
-using AutoSDK.Serialization.Json;
-
 namespace AutoSDK.Generation;
 
 public static partial class Sources
@@ -9,7 +7,7 @@ public static partial class Sources
         ModelData model,
         CancellationToken cancellationToken = default)
     {
-        if (model.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        if (model.Settings.UsesNewtonsoftJson())
         {
             return string.Empty;
         }
@@ -74,7 +72,7 @@ namespace {model.Namespace}.JsonConverters
         ModelData model,
         CancellationToken cancellationToken = default)
     {
-        if (model.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        if (model.Settings.UsesNewtonsoftJson())
         {
             return string.Empty;
         }

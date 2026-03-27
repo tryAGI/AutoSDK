@@ -1,7 +1,5 @@
 using AutoSDK.Extensions;
 using AutoSDK.Models;
-using AutoSDK.Serialization.Json;
-
 namespace AutoSDK.Generation;
 
 public static partial class Sources
@@ -9,8 +7,7 @@ public static partial class Sources
     public static string GenerateJsonSerializerContextConverters(
         Client client)
     {
-        if (!client.Settings.GenerateJsonSerializerContextTypes ||
-            client.Settings.JsonSerializerType != JsonSerializerType.SystemTextJson)
+        if (!client.Settings.ShouldGenerateJsonSerializerContextTypes())
         {
             return string.Empty;
         }

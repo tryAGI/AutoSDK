@@ -1,6 +1,3 @@
-using Microsoft.OpenApi;
-using AutoSDK.Extensions;
-
 namespace AutoSDK.Models;
 
 public record struct EndPointResponse(
@@ -27,73 +24,4 @@ public record struct EndPointResponse(
         MimeType: string.Empty,
         ContentType: ContentType.String,
         Type: TypeData.Default);
-    
-    public static EndPointResponse FromResponse(KeyValuePair<string, IOpenApiResponse> responseWithStatusCode, OperationContext operation, string? preferredMimeType = null)
-    {
-        operation = operation ?? throw new ArgumentNullException(nameof(operation));
-
-        var responses = responseWithStatusCode.Value?.Content?
-            .Select(x => (
-                StatusCode: responseWithStatusCode.Key,
-                Response: responseWithStatusCode.Value,
-                MimeType: x.Key,
-                MediaType: x.Value))
-            .ToArray() ?? [];
-        if (responses.Length == 0)
-        {
-            return Default with
-            {
-                StatusCode = responseWithStatusCode.Key,
-            };
-        }
-
-        // When a preferred MIME type is specified, filter to that content type
-        if (preferredMimeType != null)
-        {
-            var filtered = responses.Where(x => x.MimeType.Contains(preferredMimeType)).ToArray();
-            if (filtered.Length > 0)
-            {
-                responses = filtered;
-            }
-        }
-
-        var response = responses.First();
-        var responseContext = operation.Schemas.FirstOrDefault(x =>
-            x.Hint == Hint.Response &&
-            x.ResponseStatusCode == response.StatusCode &&
-            (x.ContentType == null || x.ContentType == response.MimeType));
-        var isBinaryResponse = response.MimeType.IsBinaryResponseMimeType() ||
-                               responseContext?.TypeData.CSharpTypeWithoutNullability == "byte[]" ||
-                               responseContext?.TypeData.IsBinary == true;
-        var contentType = isBinaryResponse
-            ? ContentType.ByteArray
-            : ContentType.String;
-        TypeData? responseType = contentType switch
-        {
-            ContentType.ByteArray => TypeData.Default with
-            {
-                CSharpTypeRaw = "byte[]",
-                IsBinary = true,
-            },
-            _ => responseContext?.TypeData,
-        };
-        if (responseType?.CSharpTypeWithoutNullability == "object")
-        {
-            contentType = ContentType.String;
-            responseType = TypeData.Default with
-            {
-                CSharpTypeRaw = "string",
-                IsNullable = true,
-            };
-        }
-
-        var endPoint = new EndPointResponse(
-            StatusCode: responseWithStatusCode.Key,
-            Description: response.Response.Description ?? string.Empty,
-            MimeType: response.MimeType,
-            ContentType: contentType,
-            Type: responseType ?? TypeData.Default);
-        
-        return endPoint;
-    }
 }

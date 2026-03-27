@@ -8,6 +8,8 @@ namespace AutoSDK.Models;
 public record struct WebSocketClient(
     string Id,
     string ClassName,
+    string FileNameWithoutExtension,
+    string InterfaceFileNameWithoutExtension,
     string BaseUrl,
     string Protocol,
     EquatableArray<WebSocketEndPoint> SendOperations,
@@ -20,10 +22,6 @@ public record struct WebSocketClient(
     Settings GlobalSettings,
     ImmutableArray<string> Converters)
 {
-    public string FileNameWithoutExtension => $"{Settings.Namespace}.{ClassName}";
-
-    public string InterfaceFileNameWithoutExtension => $"{Settings.Namespace}.I{ClassName}";
-
     /// <summary>
     /// The base event type for all received events (the first receive message type if only one,
     /// or a discriminated union type if multiple).

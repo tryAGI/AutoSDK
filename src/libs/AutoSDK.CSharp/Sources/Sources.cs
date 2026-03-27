@@ -1,6 +1,5 @@
 ﻿using AutoSDK.Extensions;
 using AutoSDK.Models;
-using AutoSDK.Serialization.Json;
 using Microsoft.OpenApi;
 
 namespace AutoSDK.Generation;
@@ -178,7 +177,7 @@ public static partial class Sources
         AnyOfData data,
         CancellationToken cancellationToken = default)
     {
-        if (data.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        if (data.Settings.UsesNewtonsoftJson())
         {
             return FileWithName.Empty;
         }
@@ -197,7 +196,7 @@ public static partial class Sources
         CancellationToken cancellationToken = default)
     {
         if (data.Style != ModelStyle.Enumeration ||
-            data.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+            data.Settings.UsesNewtonsoftJson())
         {
             return FileWithName.Empty;
         }
@@ -212,7 +211,7 @@ public static partial class Sources
         CancellationToken cancellationToken = default)
     {
         if (data.Style != ModelStyle.Enumeration ||
-            data.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+            data.Settings.UsesNewtonsoftJson())
         {
             return FileWithName.Empty;
         }
@@ -239,7 +238,7 @@ public static partial class Sources
     // }
     
     public static FileWithName UnixTimestampJsonConverter(
-        Settings settings,
+        CSharpSettings settings,
         CancellationToken cancellationToken = default)
     {
         return new FileWithName(
@@ -251,15 +250,13 @@ public static partial class Sources
         EquatableArray<TypeData> types,
         CancellationToken cancellationToken = default)
     {
-        if (types.IsEmpty ||
-            !types[0].Settings.GenerateJsonSerializerContextTypes ||
-            types[0].Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        if (types.IsEmpty)
         {
             return FileWithName.Empty;
         }
         
         return new FileWithName(
-            Name: $"{types[0].Settings.Namespace}.JsonSerializerContextTypes.g.cs",
+            Name: $"{types[0].Namespace}.JsonSerializerContextTypes.g.cs",
             Text: GenerateJsonSerializerContextTypes(types, cancellationToken: cancellationToken));
     }
     
@@ -269,8 +266,7 @@ public static partial class Sources
         CancellationToken cancellationToken = default)
     {
         if (!client.Settings.FromCli ||
-            !client.Settings.GenerateJsonSerializerContextTypes ||
-            client.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+            !client.Settings.ShouldGenerateJsonSerializerContextTypes())
         {
             return FileWithName.Empty;
         }
@@ -284,8 +280,7 @@ public static partial class Sources
         Client client,
         CancellationToken cancellationToken = default)
     {
-        if (!client.Settings.GenerateJsonSerializerContextTypes ||
-            client.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        if (!client.Settings.ShouldGenerateJsonSerializerContextTypes())
         {
             return FileWithName.Empty;
         }
@@ -366,7 +361,7 @@ public static partial class Sources
     }
     
     public static FileWithName Polyfills(
-        Settings settings,
+        CSharpSettings settings,
         CancellationToken cancellationToken = default)
     {
         return new FileWithName(
@@ -375,7 +370,7 @@ public static partial class Sources
     }
     
     public static FileWithName Exceptions(
-        Settings settings,
+        CSharpSettings settings,
         CancellationToken cancellationToken = default)
     {
         return new FileWithName(
@@ -384,7 +379,7 @@ public static partial class Sources
     }
     
     public static FileWithName PathBuilder(
-        Settings settings,
+        CSharpSettings settings,
         CancellationToken cancellationToken = default)
     {
         return new FileWithName(
@@ -393,7 +388,7 @@ public static partial class Sources
     }
 
     public static FileWithName ResponseStream(
-        Settings settings,
+        CSharpSettings settings,
         CancellationToken cancellationToken = default)
     {
         return new FileWithName(

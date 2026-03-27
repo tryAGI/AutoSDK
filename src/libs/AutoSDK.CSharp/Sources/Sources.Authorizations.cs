@@ -46,7 +46,7 @@ namespace {authorization.Settings.Namespace}
             response.EnsureSuccessStatusCode();
 
             var json = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-            var dictionary = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.Dictionary<string, string>>(json{(!string.IsNullOrWhiteSpace(authorization.Settings.JsonSerializerContext)
+            var dictionary = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.Dictionary<string, string>>(json{(authorization.Settings.HasJsonSerializerContext()
                             ? $", global::{authorization.Settings.JsonSerializerContext}.Default.DictionaryStringString"
                             : string.Empty)}) ??
                              throw new global::System.InvalidOperationException(""Deserialization failed."");
