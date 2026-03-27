@@ -14,17 +14,23 @@ public static partial class Sources
             return string.Empty;
         }
 
-        var distinctTypes = types
-            .Select(x => x.CSharpTypeWithNullability)
-            .Distinct()
-            .ToArray();
+        var distinctTypes = new List<string>(types.Length);
+        var distinctTypesSet = new HashSet<string>();
+        for (var i = 0; i < types.Length; i++)
+        {
+            var type = types[i].CSharpTypeWithNullability;
+            if (distinctTypesSet.Add(type))
+            {
+                distinctTypes.Add(type);
+            }
+        }
 
         var concreteListTypes = GetConcreteListTypes(distinctTypes);
         var summary4 = string.Empty.ToXmlDocumentationSummary(level: 4);
         var summary8 = string.Empty.ToXmlDocumentationSummary(level: 8);
         var builder = new StringBuilder(
             256 +
-            (distinctTypes.Length + concreteListTypes.Length + 3) * 192);
+            (distinctTypes.Count + concreteListTypes.Length + 3) * 192);
 
         builder.AppendLine();
         builder.AppendLine("#nullable enable");
@@ -42,10 +48,10 @@ public static partial class Sources
         builder.AppendLine();
         AppendProperty(builder, summary8, "global::System.Text.Json.JsonElement?", "JsonElement");
 
-        if (distinctTypes.Length > 0)
+        if (distinctTypes.Count > 0)
         {
             builder.AppendLine();
-            for (var i = 0; i < distinctTypes.Length; i++)
+            for (var i = 0; i < distinctTypes.Count; i++)
             {
                 AppendProperty(builder, summary8, distinctTypes[i], $"Type{i}");
             }
