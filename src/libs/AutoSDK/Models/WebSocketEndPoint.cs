@@ -1,5 +1,3 @@
-using AutoSDK.Extensions;
-
 namespace AutoSDK.Models;
 
 /// <summary>
@@ -8,6 +6,8 @@ namespace AutoSDK.Models;
 public record struct WebSocketEndPoint(
     string Id,
     string ClassName,
+    string MethodName,
+    string FileNameWithoutExtension,
     string ChannelAddress,
     WebSocketDirection Direction,
     TypeData MessageType,
@@ -16,10 +16,4 @@ public record struct WebSocketEndPoint(
     Settings Settings,
     Settings GlobalSettings)
 {
-    public string MethodName => Direction == WebSocketDirection.Send
-        ? $"Send{Id.ToPropertyName()}Async"
-        : $"Receive{Id.ToPropertyName()}Async";
-
-    public string FileNameWithoutExtension =>
-        $"{Settings.Namespace}.{ClassName}.{Id.ToPropertyName()}";
 }

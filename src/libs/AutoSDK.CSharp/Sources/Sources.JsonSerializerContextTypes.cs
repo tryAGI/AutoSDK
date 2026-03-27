@@ -1,7 +1,5 @@
 using AutoSDK.Extensions;
 using AutoSDK.Models;
-using AutoSDK.Serialization.Json;
-
 namespace AutoSDK.Generation;
 
 public static partial class Sources
@@ -10,9 +8,7 @@ public static partial class Sources
         EquatableArray<TypeData> types,
         CancellationToken cancellationToken = default)
     {
-        if (types.IsEmpty ||
-            !types[0].Settings.GenerateJsonSerializerContextTypes ||
-            types[0].Settings.JsonSerializerType != JsonSerializerType.SystemTextJson)
+        if (types.IsEmpty)
         {
             return string.Empty;
         }

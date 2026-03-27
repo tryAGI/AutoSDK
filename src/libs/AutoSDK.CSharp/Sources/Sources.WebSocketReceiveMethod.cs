@@ -26,7 +26,7 @@ public static partial class Sources
             return string.Empty;
         }
 
-        var hasOptions = string.IsNullOrWhiteSpace(wsClient.Settings.JsonSerializerContext);
+        var hasOptions = !wsClient.Settings.HasJsonSerializerContext();
         var isValueType = wsClient.IsReceiveEventValueType || receiveEventType.IsValueType;
 
         string deserializeAndYield;

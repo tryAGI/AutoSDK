@@ -5,7 +5,7 @@ namespace AutoSDK.Generation;
 
 public static partial class Sources
 {
-    public static string GenerateExceptions(Settings settings)
+    public static string GenerateExceptions(CSharpSettings settings)
     {
         if (!settings.GenerateExceptions)
         {

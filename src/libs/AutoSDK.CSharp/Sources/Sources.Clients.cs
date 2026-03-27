@@ -10,7 +10,7 @@ public static partial class Sources
         Client client)
     {
         var serializer = client.Settings.JsonSerializerType.GetSerializer();
-        var hasOptions = string.IsNullOrWhiteSpace(client.Settings.JsonSerializerContext);
+        var hasOptions = !client.Settings.HasJsonSerializerContext();
         
         return $@"
 #nullable enable
@@ -114,7 +114,7 @@ namespace {client.Settings.Namespace}
         Client client)
     {
         var serializer = client.Settings.JsonSerializerType.GetSerializer();
-        var hasOptions = string.IsNullOrWhiteSpace(client.Settings.JsonSerializerContext);
+        var hasOptions = !client.Settings.HasJsonSerializerContext();
         
         return $@"
 #nullable enable

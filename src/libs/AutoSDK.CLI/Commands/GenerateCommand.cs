@@ -2,6 +2,7 @@ using System.Collections.Immutable;
 using System.CommandLine;
 using AutoSDK.Extensions;
 using AutoSDK.Generation;
+using AutoSDK.Helpers;
 using AutoSDK.Models;
 using AutoSDK.Naming.Methods;
 
@@ -168,6 +169,13 @@ internal sealed class GenerateCommand : Command
         Description = "Generate model classes, enums, and JSON converters. Set to false when referencing types from an existing namespace via --types-namespace.",
     };
 
+    private Option<string> Language { get; } = new(
+        name: "--language")
+    {
+        DefaultValueFactory = _ => "csharp",
+        Description = "Generation backend. Currently supported: csharp.",
+    };
+
     public GenerateCommand() : base(name: "generate", description: "Generates client sdk using an OpenAPI or AsyncAPI spec.")
     {
         Arguments.Add(Input);
@@ -191,6 +199,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(JsonSerializerContextName);
         Options.Add(TypesNamespace);
         Options.Add(GenerateModels);
+        Options.Add(Language);
 
         SetAction(HandleAsync);
     }
@@ -200,6 +209,7 @@ internal sealed class GenerateCommand : Command
         string input = parseResult.GetRequiredValue(Input);
         string output = parseResult.GetRequiredValue(Output);
         bool singleFile = parseResult.GetRequiredValue(SingleFile);
+        string language = parseResult.GetRequiredValue(Language);
         
         var namespaceValue = parseResult.GetRequiredValue(Namespace);
         var contextName = parseResult.GetRequiredValue(JsonSerializerContextName);
@@ -268,104 +278,23 @@ internal sealed class GenerateCommand : Command
             };
         }
 
-        var data = Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
-        var files = settings.GenerateCli
-            ? data.Methods
-                .SelectMany(x => new []
-                {
-                    Sources.Command(x),
-                }).Concat(data.Methods.GroupBy(x => x.Tag)
-                    .SelectMany(x => new []
-                    {
-                        Sources.GroupCommand(x.Key, x.ToImmutableArray()),
-                    }))
-                .Concat([Sources.MainCommand(data.Tags)])
-                .Concat([Sources.AddCommands(data.Methods, data.Tags)])
-                .Where(x => !x.IsEmpty)
-                .ToArray()
-            : generateModels
-            ? data.Enums
-                .SelectMany(x => new []
-                {
-                    Sources.Enum(x),
-                    Sources.EnumJsonConverter(x),
-                    Sources.EnumNullableJsonConverter(x),
-                })
-                .Concat(data.Classes
-                    .SelectMany(x => new []
-                    {
-                        Sources.Class(x),
-                        Sources.ClassJsonExtensions(x),
-                        Sources.ClassValidation(x),
-                    }))
-                .Concat(data.Methods
-                    .SelectMany(x => new []
-                    {
-                        Sources.Method(x),
-                        Sources.MethodInterface(x),
-                    }))
-                .Concat(data.Clients
-                    .SelectMany(x => new []
-                    {
-                        Sources.Client(x),
-                        Sources.ClientInterface(x),
-                    }))
-                .Concat(data.Authorizations
-                    .SelectMany(x => new []
-                    {
-                        Sources.Authorization(x),
-                        Sources.AuthorizationInterface(x),
-                    }))
-                .Concat([Sources.MainAuthorizationConstructor(data.Authorizations)])
-                .Concat(data.AnyOfs
-                    .SelectMany(x => new []
-                    {
-                        Sources.AnyOf(x),
-                        Sources.AnyOfJsonExtensions(x),
-                        Sources.AnyOfJsonConverter(x),
-                        //Sources.AnyOfJsonConverterFactory(x),
-                        Sources.AnyOfValidation(x),
-                    }))
-                .Concat([Sources.JsonSerializerContext(data.Converters, data.Types)])
-                .Concat([Sources.JsonSerializerContextTypes(data.Types)])
-                .Concat([Sources.Polyfills(settings)])
-                .Concat([Sources.Exceptions(settings)])
-                .Concat([Sources.PathBuilder(settings)])
-                .Concat(data.Methods.Any(static x => x.RawStream)
-                    ? [Sources.ResponseStream(data.Converters.Settings)]
-                    : [])
-                .Concat([Sources.UnixTimestampJsonConverter(settings)])
-                // WebSocket client generation (from AsyncAPI specs)
-                .Concat(data.WebSocketClients
-                    .SelectMany(x => new []
-                    {
-                        Sources.WebSocketClient(x),
-                        Sources.WebSocketReceiveMethod(x),
-                    }))
-                // PathBuilder for WebSocket namespaces with query parameters
-                .Concat(data.WebSocketClients
-                    .Where(x => x.QueryParameters.Length > 0 &&
-                                x.Settings.Namespace != settings.Namespace)
-                    .Select(x => x.Settings)
-                    .Distinct()
-                    .Select(s => Sources.PathBuilder(s)))
-                .Concat(data.WebSocketOperations
-                    .Where(x => x.Direction == AutoSDK.Models.WebSocketDirection.Send)
-                    .Select(x => Sources.WebSocketSendMethod(x)))
-                .Where(x => !x.IsEmpty)
-                .ToArray()
-            // When generate-models is false, only output WebSocket client files
-            : data.WebSocketClients
-                .SelectMany(x => new []
-                {
-                    Sources.WebSocketClient(x),
-                    Sources.WebSocketReceiveMethod(x),
-                })
-                .Concat(data.WebSocketOperations
-                    .Where(x => x.Direction == AutoSDK.Models.WebSocketDirection.Send)
-                    .Select(x => Sources.WebSocketSendMethod(x)))
-                .Where(x => !x.IsEmpty)
-                .ToArray();
+        if (!string.Equals(language, "csharp", StringComparison.OrdinalIgnoreCase))
+        {
+            throw new NotSupportedException($"Unsupported language '{language}'. Currently only 'csharp' is supported.");
+        }
+
+        var coreResult = CorePipeline.Prepare(
+            ((yaml, settings), GlobalSettings: settings),
+            static (document, currentSettings) => document.GetSchemas((CSharpSettings)currentSettings),
+            CSharpPipeline.ApplyModelNaming,
+            static text => text.ToClassName(),
+            static text => text.ToPropertyName());
+        var plugin = CSharpLanguagePlugin.Instance;
+        var data = plugin.Enrich(coreResult);
+        var files = plugin
+            .GenerateFiles(data)
+            .Where(x => !x.IsEmpty)
+            .ToArray();
         
         Directory.CreateDirectory(output);
         

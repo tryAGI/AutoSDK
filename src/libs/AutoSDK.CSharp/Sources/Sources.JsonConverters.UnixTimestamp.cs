@@ -1,15 +1,13 @@
 using AutoSDK.Models;
-using AutoSDK.Serialization.Json;
-
 namespace AutoSDK.Generation;
 
 public static partial class Sources
 {
     public static string GenerateUnixTimestampJsonConverter(
-        Settings settings,
+        CSharpSettings settings,
         CancellationToken cancellationToken = default)
     {
-        if (settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        if (settings.UsesNewtonsoftJson())
         {
             return $@"#nullable enable
 

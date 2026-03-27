@@ -7,7 +7,7 @@ public partial class Tests
     [TestMethod]
     public void ExtractEnumSummary_Valid()
     {
-        OpenApiExtensions.ExtractEnumSummaryFromDescription(
+        OpenApiEnumExtensions.ExtractEnumSummaryFromDescription(
             id: "VIEW_BASIC",
             description: @"View allows clients to specify the desired resource view in the response.
 

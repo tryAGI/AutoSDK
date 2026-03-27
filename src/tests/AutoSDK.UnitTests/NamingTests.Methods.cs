@@ -1,7 +1,10 @@
 using AutoSDK.Models;
+using AutoSDK.Enrichment;
+using AutoSDK.Generation;
 using AutoSDK.Naming.Methods;
 using AutoSDK.Extensions;
 using AutoSDK.Helpers;
+using AutoSDK.TypeMapping;
 using Microsoft.OpenApi;
 
 namespace AutoSDK.UnitTests;
@@ -23,7 +26,7 @@ public partial class NamingTests
             Summary = "Get the authenticated user's Slack ID",
         };
 
-        var context = OperationContext.FromOperation(
+        var context = CSharpOperationContextFactory.CreateOperationContext(
             settings: settings,
             globalSettings: settings,
             operation: operation,
@@ -31,7 +34,7 @@ public partial class NamingTests
             operationType: System.Net.Http.HttpMethod.Get,
             operationSchemas: null,
             globalSecurityRequirements: []);
-        var endPoint = EndPoint.FromSchema(context);
+        var endPoint = CSharpEndPointFactory.CreateEndPoint(context);
 
         context.MethodName.Should().Be("GetTheAuthenticatedUsersSlackId");
         endPoint.NotAsyncMethodName.Should().Be("GetTheAuthenticatedUsersSlackId");
@@ -55,7 +58,7 @@ public partial class NamingTests
             Summary = "[Beta] Get Insights Jobs",
         };
 
-        var context = OperationContext.FromOperation(
+        var context = CSharpOperationContextFactory.CreateOperationContext(
             settings: settings,
             globalSettings: settings,
             operation: operation,
@@ -63,7 +66,7 @@ public partial class NamingTests
             operationType: System.Net.Http.HttpMethod.Get,
             operationSchemas: null,
             globalSecurityRequirements: []);
-        var endPoint = EndPoint.FromSchema(context);
+        var endPoint = CSharpEndPointFactory.CreateEndPoint(context);
 
         context.MethodName.Should().Be("GetInsightsJobs");
         endPoint.NotAsyncMethodName.Should().Be("GetInsightsJobs");
@@ -99,7 +102,7 @@ public partial class NamingTests
         var document = yaml.GetOpenApiDocument(settings);
         var schemas = document.GetSchemas(settings);
         var context = document.GetOperations(settings, globalSettings: settings, filteredSchemas: schemas).Single();
-        var endPoint = EndPoint.FromSchema(context);
+        var endPoint = CSharpEndPointFactory.CreateEndPoint(context);
 
         context.MethodName.Should().Be("GetInsightsJobs");
         endPoint.MethodName.Should().Be("GetInsightsJobsAsync");
@@ -134,7 +137,7 @@ public partial class NamingTests
         var document = yaml.GetOpenApiDocument(settings);
         var schemas = document.GetSchemas(settings);
         var context = document.GetOperations(settings, globalSettings: settings, filteredSchemas: schemas).Single();
-        var endPoint = EndPoint.FromSchema(context);
+        var endPoint = CSharpEndPointFactory.CreateEndPoint(context);
 
         context.Operation.IsDeprecated().Should().BeTrue();
         endPoint.IsDeprecated.Should().BeTrue();
@@ -161,13 +164,22 @@ public partial class NamingTests
                                   """);
         foreach (var model in models)
         {
-            model.ComputeData();
+            model.ComputeData(
+                CSharpModelDataFactory.CreateModelData,
+                CSharpTypeMapper.CreateTypeData,
+                static type => type.WithCSharpComputedValues(),
+                CSharpTypeMapper.GetCSharpType,
+                CSharpTypeMapper.GetCSharpNullability,
+                CSharpSchemaDataFactory.CreatePropertyData,
+                CSharpSchemaDataFactory.CreateMethodParameter,
+                CSharpSchemaDataFactory.CreateAnyOfData);
         }
 
-        var modelData = ModelData.FromSchemaContext(models.Should().ContainSingle().Subject);
-        var property = modelData.Properties.Should().ContainSingle().Subject;
+        var modelData = models.Should().ContainSingle().Subject.ClassData;
+        modelData.Should().NotBeNull();
+        var property = modelData!.Value.Properties.Should().ContainSingle().Subject;
 
-        modelData.IsDeprecated.Should().BeTrue();
+        modelData.Value.IsDeprecated.Should().BeTrue();
         property.IsDeprecated.Should().BeTrue();
         property.Type.IsDeprecated.Should().BeTrue();
     }

@@ -1,13 +1,11 @@
 using System.Text.Json.Nodes;
 using AutoSDK.Extensions;
-using AutoSDK.Naming.Models;
-using AutoSDK.Naming.Properties;
 using Microsoft.OpenApi;
 
 namespace AutoSDK.Models;
 
 public class SchemaContext(
-    Settings settings,
+    SchemaContextSettings settings,
     IOpenApiSchema schema,
     string id,
     string type)
@@ -15,7 +13,7 @@ public class SchemaContext(
     public SchemaContext? Parent { get; set; }
     public IList<SchemaContext> Children { get; set; } = Array.Empty<SchemaContext>();
 
-    public Settings Settings { get; set; } = settings;
+    public SchemaContextSettings Settings { get; set; } = settings;
     public IOpenApiSchema Schema { get; set; } = schema;
     public string Id { get; set; } = id;
     public string Type { get; set; } = type;
@@ -82,13 +80,16 @@ public class SchemaContext(
         IsDerivedClass;// || ResolvedReference?.IsClass == true;
     private ModelData? _classData;
     private bool _classDataComputed;
+    public Func<SchemaContext, ModelData>? ModelDataFactory { get; set; }
     public ModelData? ClassData
     {
         get
         {
             if (!_classDataComputed)
             {
-                _classData = IsClass ? ModelData.FromSchemaContext(this) : null;
+                _classData = IsClass
+                    ? ModelDataFactory?.Invoke(this) ?? throw new InvalidOperationException("ModelDataFactory is not initialized.")
+                    : null;
                 _classDataComputed = true;
             }
             return _classData;
@@ -104,7 +105,9 @@ public class SchemaContext(
         {
             if (!_enumDataComputed)
             {
-                _enumData = IsEnum ? ModelData.FromSchemaContext(this) : null;
+                _enumData = IsEnum
+                    ? ModelDataFactory?.Invoke(this) ?? throw new InvalidOperationException("ModelDataFactory is not initialized.")
+                    : null;
                 _enumDataComputed = true;
             }
             return _enumData;
@@ -116,7 +119,7 @@ public class SchemaContext(
     /// Cached unsanitized class name from ComputeClassName (before SanitizeName).
     /// Used to avoid recursive recomputation of parent class names.
     /// </summary>
-    internal string? CachedComputedClassName { get; set; }
+    public string? CachedComputedClassName { get; set; }
 
     public AnyOfData? AnyOfData { get; set; }
     public string? VariantName { get; set; }
@@ -174,14 +177,26 @@ public class SchemaContext(
                     {
                         Id = PropertyData.Value.Id + "name",
                         Name = PropertyData.Value.Name + "name",
+                        ParameterName = PropertyData.Value.ParameterName + "name",
                         IsMultiPartFormDataFilename = true,
                         Type = TypeData.Default with
                         {
                             CSharpTypeRaw = "string",
                             CSharpTypeNullability = !PropertyData.Value.IsRequired,
-                            Settings = Settings,
+                            Namespace = Settings.Namespace,
+                            GeneratedNamespace = Settings.Namespace,
+                            CSharpTypeWithoutNullability = "string",
+                            CSharpTypeWithNullability = "string?",
+                            ShortCSharpTypeWithoutNullability = "string",
+                            ShortCSharpTypeWithNullability = "string?",
+                            IsAnyOfLike = false,
+                            CSharpTypeWithNullabilityForValueTypes = "string",
+                            CSharpTypeWithNullabilityForNonValueTypes = "string?",
+                            CSharpType = !PropertyData.Value.IsRequired ? "string?" : "string",
+                            IsReferenceable = true,
+                            ConverterType = string.Empty,
                         },
-                        Settings = Settings,
+                        Settings = Settings.ToEmitterSettings(),
                     }
                 ];
             }
@@ -297,6 +312,49 @@ public class SchemaContext(
     public static IReadOnlyList<SchemaContext> FromSchema(
         IOpenApiSchema schema,
         Settings settings,
+        Func<ReferenceNameContext, string> referenceIdFactory,
+        Func<SchemaNameContext, string> schemaIdFactory,
+        SchemaContext? parent = null,
+        string? componentId = null,
+        string? propertyName = null,
+        string? operationPath = null,
+        System.Net.Http.HttpMethod? operationType = null,
+        OpenApiOperation? operation = null,
+        string? contentType = null,
+        IOpenApiMediaType? mediaType = null,
+        IOpenApiParameter? parameter = null,
+        string? responseStatusCode = null,
+        IOpenApiResponse? response = null,
+        Hint? hint = null,
+        int? index = null,
+        int depth = 0)
+    {
+        return FromSchema(
+            schema,
+            settings.ToSchemaContextSettings(),
+            referenceIdFactory,
+            schemaIdFactory,
+            parent,
+            componentId,
+            propertyName,
+            operationPath,
+            operationType,
+            operation,
+            contentType,
+            mediaType,
+            parameter,
+            responseStatusCode,
+            response,
+            hint,
+            index,
+            depth);
+    }
+
+    public static IReadOnlyList<SchemaContext> FromSchema(
+        IOpenApiSchema schema,
+        SchemaContextSettings settings,
+        Func<ReferenceNameContext, string> referenceIdFactory,
+        Func<SchemaNameContext, string> schemaIdFactory,
         SchemaContext? parent = null,
         string? componentId = null,
         string? propertyName = null,
@@ -314,7 +372,7 @@ public class SchemaContext(
     {
         var result = new List<SchemaContext>();
         FromSchemaCore(
-            result, schema, settings, parent, componentId, propertyName,
+            result, schema, settings, referenceIdFactory, schemaIdFactory, parent, componentId, propertyName,
             operationPath, operationType, operation, contentType, mediaType,
             parameter, responseStatusCode, response, hint, index, depth);
         return result;
@@ -323,7 +381,9 @@ public class SchemaContext(
     internal static void FromSchemaCore(
         List<SchemaContext> result,
         IOpenApiSchema schema,
-        Settings settings,
+        SchemaContextSettings settings,
+        Func<ReferenceNameContext, string> referenceIdFactory,
+        Func<SchemaNameContext, string> schemaIdFactory,
         SchemaContext? parent,
         string? componentId,
         string? propertyName,
@@ -345,10 +405,14 @@ public class SchemaContext(
         if (referenceId != null &&
             componentId != referenceId)
         {
+            var namingSettings = settings.ToSchemaNamingSettings();
             result.Add(new SchemaContext(
                 settings,
                 schema,
-                id: referenceId.ToCSharpName(settings, parent),
+                id: referenceIdFactory(new ReferenceNameContext(
+                    namingSettings,
+                    parent,
+                    referenceId)),
                 type: "ref")
             {
                 Parent = parent,
@@ -370,10 +434,22 @@ public class SchemaContext(
             return;
         }
 
+        var schemaNamingSettings = settings.ToSchemaNamingSettings();
         var context = new SchemaContext(
             settings,
             schema,
-            id: ModelNameGenerator.ComputeId(settings, parent, hint, operation, parameter, propertyName, componentId, index, title: schema.Title, operationPath: operationPath, operationType: operationType),
+            id: schemaIdFactory(new SchemaNameContext(
+                schemaNamingSettings,
+                parent,
+                hint,
+                operation,
+                parameter,
+                propertyName,
+                componentId,
+                index,
+                schema.Title,
+                operationPath,
+                operationType)),
             type: ComputeType(schema, isComponent: componentId != null))
         {
             Parent = parent,
@@ -399,7 +475,7 @@ public class SchemaContext(
         if (schema.Items != null)
         {
             FromSchemaCore(
-                result, schema.Items, settings, context, componentId: null,
+                result, schema.Items, settings, referenceIdFactory, schemaIdFactory, context, componentId: null,
                 propertyName: null, operationPath: null, operationType: null,
                 operation: null, contentType: null, mediaType: null,
                 parameter: null, responseStatusCode: null, response: null,
@@ -408,7 +484,7 @@ public class SchemaContext(
         if (schema.AdditionalProperties != null)
         {
             FromSchemaCore(
-                result, schema.AdditionalProperties, settings, context, componentId: null,
+                result, schema.AdditionalProperties, settings, referenceIdFactory, schemaIdFactory, context, componentId: null,
                 propertyName: null, operationPath: null, operationType: null,
                 operation: null, contentType: null, mediaType: null,
                 parameter: null, responseStatusCode: null, response: null,
@@ -424,7 +500,7 @@ public class SchemaContext(
                 if (property.Value != null)
                 {
                     FromSchemaCore(
-                        result, property.Value, settings, context, componentId: null,
+                        result, property.Value, settings, referenceIdFactory, schemaIdFactory, context, componentId: null,
                         propertyName: property.Key, operationPath: null, operationType: null,
                         operation: null, contentType: null, mediaType: null,
                         parameter: null, responseStatusCode: null, response: null,
@@ -439,7 +515,7 @@ public class SchemaContext(
             foreach (var item in schema.AnyOf)
             {
                 FromSchemaCore(
-                    result, item, settings, context, componentId: null,
+                    result, item, settings, referenceIdFactory, schemaIdFactory, context, componentId: null,
                     propertyName: null, operationPath: null, operationType: null,
                     operation: null, contentType: null, mediaType: null,
                     parameter: null, responseStatusCode: null, response: null,
@@ -452,7 +528,7 @@ public class SchemaContext(
             foreach (var item in schema.OneOf)
             {
                 FromSchemaCore(
-                    result, item, settings, context, componentId: null,
+                    result, item, settings, referenceIdFactory, schemaIdFactory, context, componentId: null,
                     propertyName: null, operationPath: null, operationType: null,
                     operation: null, contentType: null, mediaType: null,
                     parameter: null, responseStatusCode: null, response: null,
@@ -465,7 +541,7 @@ public class SchemaContext(
             foreach (var item in schema.AllOf)
             {
                 FromSchemaCore(
-                    result, item, settings, context, componentId: null,
+                    result, item, settings, referenceIdFactory, schemaIdFactory, context, componentId: null,
                     propertyName: null, operationPath: null, operationType: null,
                     operation: null, contentType: null, mediaType: null,
                     parameter: null, responseStatusCode: null, response: null,
@@ -493,7 +569,7 @@ public class SchemaContext(
                 }
             };
             FromSchemaCore(
-                result, discriminatorSchema, settings, context,
+                result, discriminatorSchema, settings, referenceIdFactory, schemaIdFactory, context,
                 componentId: null, propertyName: null, operationPath: null,
                 operationType: null, operation: null, contentType: null,
                 mediaType: null, parameter: null, responseStatusCode: null,
@@ -526,8 +602,29 @@ public class SchemaContext(
         }
     }
     
-    public bool ComputeData(int level = 0, int maxDepth = 20, HashSet<SchemaContext>? visited = null)
+    public bool ComputeData(
+        Func<SchemaContext, ModelData> modelDataFactory,
+        Func<SchemaContext, TypeData> typeDataFactory,
+        Func<TypeData, TypeData> typeDataNormalizer,
+        Func<SchemaContext, string> typeRawFactory,
+        Func<SchemaContext, SchemaContext?, bool> typeNullabilityFactory,
+        Func<SchemaContext, PropertyData> propertyDataFactory,
+        Func<SchemaContext, MethodParameter> parameterDataFactory,
+        Func<SchemaContext, AnyOfData> anyOfDataFactory,
+        int level = 0,
+        int maxDepth = 20,
+        HashSet<SchemaContext>? visited = null)
     {
+        modelDataFactory = modelDataFactory ?? throw new ArgumentNullException(nameof(modelDataFactory));
+        typeDataFactory = typeDataFactory ?? throw new ArgumentNullException(nameof(typeDataFactory));
+        typeDataNormalizer = typeDataNormalizer ?? throw new ArgumentNullException(nameof(typeDataNormalizer));
+        typeRawFactory = typeRawFactory ?? throw new ArgumentNullException(nameof(typeRawFactory));
+        typeNullabilityFactory = typeNullabilityFactory ?? throw new ArgumentNullException(nameof(typeNullabilityFactory));
+        propertyDataFactory = propertyDataFactory ?? throw new ArgumentNullException(nameof(propertyDataFactory));
+        parameterDataFactory = parameterDataFactory ?? throw new ArgumentNullException(nameof(parameterDataFactory));
+        anyOfDataFactory = anyOfDataFactory ?? throw new ArgumentNullException(nameof(anyOfDataFactory));
+        ModelDataFactory = modelDataFactory;
+
         // Skip if already fully computed (memoization across all callers)
         if (_dataComputed)
         {
@@ -549,17 +646,46 @@ public class SchemaContext(
         var fullyComputed = true;
         if (ResolvedReference != null)
         {
-            fullyComputed &= ResolvedReference.ComputeData(level + 1, maxDepth: maxDepth, visited: visited);
+            fullyComputed &= ResolvedReference.ComputeData(
+                modelDataFactory,
+                typeDataFactory,
+                typeDataNormalizer,
+                typeRawFactory,
+                typeNullabilityFactory,
+                propertyDataFactory,
+                parameterDataFactory,
+                anyOfDataFactory,
+                level + 1,
+                maxDepth: maxDepth,
+                visited: visited);
         }
         foreach (var child in Children)
         {
-            fullyComputed &= child.ComputeData(level + 1, maxDepth: maxDepth, visited: visited);
+            fullyComputed &= child.ComputeData(
+                modelDataFactory,
+                typeDataFactory,
+                typeDataNormalizer,
+                typeRawFactory,
+                typeNullabilityFactory,
+                propertyDataFactory,
+                parameterDataFactory,
+                anyOfDataFactory,
+                level + 1,
+                maxDepth: maxDepth,
+                visited: visited);
         }
 
         // Only memoize if no subtree was cut short by depth/cycle limits
         _dataComputed = fullyComputed;
 
-        ComputeNodeData();
+        ComputeNodeData(
+            typeDataFactory,
+            typeDataNormalizer,
+            typeRawFactory,
+            typeNullabilityFactory,
+            propertyDataFactory,
+            parameterDataFactory,
+            anyOfDataFactory);
 
         return fullyComputed;
     }
@@ -568,18 +694,50 @@ public class SchemaContext(
     /// Second pass for circular reference schemas: recompute data now that all
     /// TypeData is set from the first pass, then force-memoize.
     /// </summary>
-    public void RecomputeDataIfNeeded()
+    public void RecomputeDataIfNeeded(
+        Func<SchemaContext, ModelData> modelDataFactory,
+        Func<SchemaContext, TypeData> typeDataFactory,
+        Func<TypeData, TypeData> typeDataNormalizer,
+        Func<SchemaContext, string> typeRawFactory,
+        Func<SchemaContext, SchemaContext?, bool> typeNullabilityFactory,
+        Func<SchemaContext, PropertyData> propertyDataFactory,
+        Func<SchemaContext, MethodParameter> parameterDataFactory,
+        Func<SchemaContext, AnyOfData> anyOfDataFactory)
     {
+        modelDataFactory = modelDataFactory ?? throw new ArgumentNullException(nameof(modelDataFactory));
+        typeDataFactory = typeDataFactory ?? throw new ArgumentNullException(nameof(typeDataFactory));
+        typeDataNormalizer = typeDataNormalizer ?? throw new ArgumentNullException(nameof(typeDataNormalizer));
+        typeRawFactory = typeRawFactory ?? throw new ArgumentNullException(nameof(typeRawFactory));
+        typeNullabilityFactory = typeNullabilityFactory ?? throw new ArgumentNullException(nameof(typeNullabilityFactory));
+        propertyDataFactory = propertyDataFactory ?? throw new ArgumentNullException(nameof(propertyDataFactory));
+        parameterDataFactory = parameterDataFactory ?? throw new ArgumentNullException(nameof(parameterDataFactory));
+        anyOfDataFactory = anyOfDataFactory ?? throw new ArgumentNullException(nameof(anyOfDataFactory));
+        ModelDataFactory = modelDataFactory;
+
         if (_dataComputed)
         {
             return;
         }
 
-        ComputeNodeData();
+        ComputeNodeData(
+            typeDataFactory,
+            typeDataNormalizer,
+            typeRawFactory,
+            typeNullabilityFactory,
+            propertyDataFactory,
+            parameterDataFactory,
+            anyOfDataFactory);
         _dataComputed = true;
     }
 
-    private void ComputeNodeData()
+    private void ComputeNodeData(
+        Func<SchemaContext, TypeData> typeDataFactory,
+        Func<TypeData, TypeData> typeDataNormalizer,
+        Func<SchemaContext, string> typeRawFactory,
+        Func<SchemaContext, SchemaContext?, bool> typeNullabilityFactory,
+        Func<SchemaContext, PropertyData> propertyDataFactory,
+        Func<SchemaContext, MethodParameter> parameterDataFactory,
+        Func<SchemaContext, AnyOfData> anyOfDataFactory)
     {
         // Skip recomputation if inputs (children/reference TypeData) haven't changed.
         // This avoids re-creating ImmutableArrays and record copies for cyclic schemas
@@ -594,11 +752,11 @@ public class SchemaContext(
         TypeData = IsReference
             ? ResolvedReference?.TypeData ??
               throw new InvalidOperationException("Resolved reference must have type data.")
-            : TypeData.FromSchemaContext(this);
+            : typeDataFactory(this);
         if (IsReference && ResolvedReference != null && TypeData != TypeData.Default)
         {
-            var newType = TypeData.GetCSharpType(ResolvedReference);
-            var newNullability = TypeData.GetCSharpNullability(ResolvedReference, this);
+            var newType = typeRawFactory(ResolvedReference);
+            var newNullability = typeNullabilityFactory(ResolvedReference, this);
             if (newType != TypeData.CSharpTypeRaw || newNullability != TypeData.CSharpTypeNullability)
             {
                 TypeData = TypeData with
@@ -606,19 +764,20 @@ public class SchemaContext(
                     CSharpTypeRaw = newType,
                     CSharpTypeNullability = newNullability,
                 };
+                TypeData = typeDataNormalizer(TypeData);
             }
         }
         if (IsProperty)
         {
-            PropertyData = Models.PropertyData.FromSchemaContext(this);
+            PropertyData = propertyDataFactory(this);
         }
         if (Hint is Models.Hint.Parameter)
         {
-            ParameterData = MethodParameter.FromSchemaContext(this);
+            ParameterData = parameterDataFactory(this);
         }
         if (IsAnyOfLikeStructure && TypeData.IsAnyOfLike)
         {
-            AnyOfData = global::AutoSDK.Models.AnyOfData.FromSchemaContext(this);
+            AnyOfData = anyOfDataFactory(this);
         }
     }
 

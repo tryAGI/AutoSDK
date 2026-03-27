@@ -1,0 +1,126 @@
+using AutoSDK.Extensions;
+using AutoSDK.Models;
+
+namespace AutoSDK.Naming.Properties;
+
+public static class CSharpPropertyNameGenerator
+{
+    private static readonly char[] PropertySeparators =
+        ['_', '+', '-', '.', '/', '(', '[', ']', ')'];
+
+    public static string ComputePropertyName(
+        SchemaContext context)
+    {
+        context = context ?? throw new ArgumentNullException(nameof(context));
+        var propertyName = context.PropertyName ?? throw new InvalidOperationException("Property name or parameter name is required.");
+
+        var name = propertyName.ToPropertyName();
+
+        name = HandleWordSeparators(name);
+
+        if (context.Parent != null)
+        {
+            name = name.FixPropertyName(context.Parent.Id);
+        }
+
+        name = SanitizeName(name, context.Settings.ClsCompliantEnumPrefix, true);
+
+        return name;
+    }
+
+    public static string SanitizeName(string? name, string clsCompliantEnumPrefix, bool skipHandlingWordSeparators = false)
+    {
+        static bool InvalidFirstChar(char ch)
+            => ch is not ('_' or >= 'A' and <= 'Z' or >= 'a' and <= 'z');
+
+        static bool InvalidSubsequentChar(char ch)
+            => ch is not (
+                '_'
+                or >= 'A' and <= 'Z'
+                or >= 'a' and <= 'z'
+                or >= '0' and <= '9'
+                );
+
+        if (name is null || name.Length == 0)
+        {
+            return "";
+        }
+
+        if (!skipHandlingWordSeparators)
+        {
+            name = HandleWordSeparators(name);
+        }
+
+        if (name.Length == 0)
+        {
+            return string.IsNullOrWhiteSpace(clsCompliantEnumPrefix)
+                ? "_"
+                : clsCompliantEnumPrefix;
+        }
+
+        if (InvalidFirstChar(name[0]))
+        {
+            name = (string.IsNullOrWhiteSpace(clsCompliantEnumPrefix)
+                ? "_"
+                : clsCompliantEnumPrefix) + name;
+        }
+
+        var needsSanitize = false;
+        for (var i = 1; i < name.Length; i++)
+        {
+            if (InvalidSubsequentChar(name[i]))
+            {
+                needsSanitize = true;
+                break;
+            }
+        }
+        if (!needsSanitize)
+        {
+            return name;
+        }
+
+        Span<char> buf = stackalloc char[name.Length];
+        name.AsSpan().CopyTo(buf);
+
+        for (var i = 1; i < buf.Length; i++)
+        {
+            if (InvalidSubsequentChar(buf[i]))
+            {
+                buf[i] = '_';
+            }
+        }
+
+        return buf.ToString();
+    }
+
+    public static string HandleWordSeparators(string name)
+    {
+        return name
+            .ReplacePlusAndMinusOnStart()
+            .UseWordSeparator(PropertySeparators);
+    }
+
+    public static string ToCSharpName(this string text, SchemaNamingSettings settings, SchemaContext? parent)
+    {
+        var name = text.ToPropertyName();
+
+        name = HandleWordSeparators(name);
+
+        if (parent != null)
+        {
+            name = name.FixPropertyName(parent.Id);
+        }
+
+        return SanitizeName(name, settings.ClsCompliantEnumPrefix, true);
+    }
+
+    public static string ToCSharpName(this string text, CSharpSettings settings, SchemaContext? parent)
+    {
+        return text.ToCSharpName(settings.ToSchemaNamingSettings(), parent);
+    }
+
+    public static string ToCSharpName(this string text, SchemaContextSettings settings, SchemaContext? parent)
+    {
+        return text.ToCSharpName(settings.ToSchemaNamingSettings(), parent);
+    }
+}

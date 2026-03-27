@@ -92,7 +92,7 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         ModelData modelData,
         CancellationToken cancellationToken = default)
     {
-        var jsonSerializer = modelData.Settings.JsonSerializerType.GetSerializer();
+        var jsonSerializer = modelData.Settings.GetSerializer();
         var isRequiredKeywordSupported = IsSupported(modelData.Settings.UseRequiredKeyword, modelData.Settings.TargetFramework);
         var requiredKeyword = isRequiredKeywordSupported
             ? " required"
@@ -107,7 +107,7 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         return $@" 
     {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
     {(modelData.IsDeprecated ? $"[global::System.Obsolete(\"{(!string.IsNullOrWhiteSpace(modelData.DeprecationMessage) ? modelData.DeprecationMessage.ClearForCSharp() : "This model marked as deprecated.")}\")]" : TrimmedLine)}
-    {(modelData.Settings.JsonSerializerType == JsonSerializerType.SystemTextJson && modelData.IsBaseClass ? @$" 
+    {(modelData.Settings.UsesSystemTextJson() && modelData.IsBaseClass ? @$" 
     [global::System.Text.Json.Serialization.JsonPolymorphic(
         TypeDiscriminatorPropertyName = ""{modelData.DiscriminatorPropertyName}"",
         IgnoreUnrecognizedTypeDiscriminators = true,

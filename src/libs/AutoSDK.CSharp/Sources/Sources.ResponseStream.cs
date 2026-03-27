@@ -5,7 +5,7 @@ namespace AutoSDK.Generation;
 
 public static partial class Sources
 {
-    public static string GenerateResponseStream(Settings settings)
+    public static string GenerateResponseStream(CSharpSettings settings)
     {
         return $@"
 #nullable enable

@@ -1,5 +1,6 @@
 using System.CommandLine;
 using AutoSDK.Extensions;
+using AutoSDK.Generation;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
 

@@ -1,7 +1,5 @@
 using AutoSDK.Extensions;
 using AutoSDK.Models;
-using AutoSDK.Serialization.Json;
-
 namespace AutoSDK.Generation;
 
 public static partial class Sources
@@ -47,7 +45,7 @@ public static partial class Sources
     public static string GenerateModelFromToJsonMethods(
         string @namespace,
         string className,
-        Settings settings,
+        EmitterSettings settings,
         bool isValueType,
         string baseClassName,
         bool isBaseClass,
@@ -58,7 +56,7 @@ public static partial class Sources
             ? "readonly partial struct"
             : $"{(isBaseClass ? "" : "sealed ")}partial class";
         
-        return settings.JsonSerializerType == JsonSerializerType.SystemTextJson
+        return settings.UsesSystemTextJson()
             ? @$"#nullable enable
 
 namespace {@namespace}

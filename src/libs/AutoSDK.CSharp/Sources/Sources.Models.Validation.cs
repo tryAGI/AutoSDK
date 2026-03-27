@@ -37,7 +37,7 @@ public static partial class Sources
     public static string GenerateModelValidationMethods(
         string @namespace,
         string className,
-        Settings settings,
+        EmitterSettings settings,
         bool isValueType,
         CancellationToken cancellationToken = default)
     {

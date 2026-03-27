@@ -1,3 +1,5 @@
+using AutoSDK.Models;
+
 namespace AutoSDK.Serialization.Json;
 
 public static class JsonSerializationTypeExtensions
@@ -11,5 +13,12 @@ public static class JsonSerializationTypeExtensions
             JsonSerializerType.NewtonsoftJson => NewtonsoftJsonSerializer.Instance,
             _ => throw new NotSupportedException($"Serializer type {type} is not supported.")
         };
+    }
+
+    public static IJsonSerializer GetSerializer(this EmitterSettings settings)
+    {
+        return settings.UsesNewtonsoftJson()
+            ? NewtonsoftJsonSerializer.Instance
+            : SystemTextJsonSerializer.Instance;
     }
 }

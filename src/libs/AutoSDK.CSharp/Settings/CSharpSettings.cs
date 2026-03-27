@@ -1,0 +1,209 @@
+using System.Collections.Immutable;
+using AutoSDK.Naming.Methods;
+using AutoSDK.Serialization.Json;
+using CoreJsonSerializerType = AutoSDK.Serialization.Json.JsonSerializerType;
+using CoreMethodNamingConvention = AutoSDK.Naming.Methods.MethodNamingConvention;
+
+namespace AutoSDK.Models;
+
+public record struct CSharpSettings(
+    string TargetFramework,
+    string Namespace,
+    string ClassName,
+    string ClsCompliantEnumPrefix,
+    NamingConvention NamingConvention,
+    CSharpJsonSerializerType JsonSerializerType,
+    SdkFeatureUsage UseRequiredKeyword,
+    SdkFeatureUsage UseExperimentalAttributes,
+    SdkFeatureUsage UseSetsRequiredMembersAttributes,
+    bool GenerateConstructors,
+    bool GroupByTags,
+    bool GenerateMethods,
+    CSharpMethodNamingConvention MethodNamingConvention,
+    CSharpMethodNamingConvention MethodNamingConventionFallback,
+    bool GenerateMethodsAsHttpClientExtensions,
+    bool GenerateMethodsUsingSystemNetHttpJson,
+    ImmutableArray<string> IncludeOperationIds,
+    ImmutableArray<string> ExcludeOperationIds,
+    ImmutableArray<string> IncludeTags,
+    ImmutableArray<string> ExcludeTags,
+    bool ExcludeDeprecatedOperations,
+    bool UseExtensionNaming,
+    string JsonSerializerContext,
+    bool GenerateJsonSerializerContextTypes,
+    bool ComputeDiscriminators,
+    bool AddMissingPathParameters,
+    bool GenerateModels,
+    bool GenerateModelValidationMethods,
+    bool ValidateAnyOfs,
+    ModelStyle ModelStyle,
+    ImmutableArray<string> IncludeModels,
+    ImmutableArray<string> ExcludeModels,
+    bool IgnoreOpenApiErrors,
+    bool IgnoreOpenApiWarnings,
+    bool GeneratePolyfills,
+    bool GenerateExceptions,
+    bool GenerateSdk,
+    bool FromCli,
+    bool GenerateCli,
+    ImmutableArray<string> SecuritySchemes,
+    string BaseUrl,
+    ImmutableArray<string> OpenApiOverrides,
+    bool GenerateWebSocketClient,
+    string WebSocketClientClassName,
+    string TypesNamespace)
+{
+    public static CSharpSettings Default => FromSettings(Settings.Default);
+
+    public static CSharpSettings FromSettings(Settings settings)
+    {
+        return new CSharpSettings(
+            TargetFramework: settings.TargetFramework,
+            Namespace: settings.Namespace,
+            ClassName: settings.ClassName,
+            ClsCompliantEnumPrefix: settings.ClsCompliantEnumPrefix,
+            NamingConvention: settings.NamingConvention,
+            JsonSerializerType: settings.JsonSerializerType switch
+            {
+                CoreJsonSerializerType.SystemTextJson => CSharpJsonSerializerType.SystemTextJson,
+                CoreJsonSerializerType.NewtonsoftJson => CSharpJsonSerializerType.NewtonsoftJson,
+                _ => throw new ArgumentOutOfRangeException(nameof(settings), settings.JsonSerializerType, null),
+            },
+            UseRequiredKeyword: settings.UseRequiredKeyword,
+            UseExperimentalAttributes: settings.UseExperimentalAttributes,
+            UseSetsRequiredMembersAttributes: settings.UseSetsRequiredMembersAttributes,
+            GenerateConstructors: settings.GenerateConstructors,
+            GroupByTags: settings.GroupByTags,
+            GenerateMethods: settings.GenerateMethods,
+            MethodNamingConvention: settings.MethodNamingConvention switch
+            {
+                CoreMethodNamingConvention.OperationId => CSharpMethodNamingConvention.OperationId,
+                CoreMethodNamingConvention.MethodAndPath => CSharpMethodNamingConvention.MethodAndPath,
+                CoreMethodNamingConvention.Summary => CSharpMethodNamingConvention.Summary,
+                CoreMethodNamingConvention.OperationIdWithDots => CSharpMethodNamingConvention.OperationIdWithDots,
+                CoreMethodNamingConvention.OperationIdSplit => CSharpMethodNamingConvention.OperationIdSplit,
+                _ => throw new ArgumentOutOfRangeException(nameof(settings), settings.MethodNamingConvention, null),
+            },
+            MethodNamingConventionFallback: settings.MethodNamingConventionFallback switch
+            {
+                CoreMethodNamingConvention.OperationId => CSharpMethodNamingConvention.OperationId,
+                CoreMethodNamingConvention.MethodAndPath => CSharpMethodNamingConvention.MethodAndPath,
+                CoreMethodNamingConvention.Summary => CSharpMethodNamingConvention.Summary,
+                CoreMethodNamingConvention.OperationIdWithDots => CSharpMethodNamingConvention.OperationIdWithDots,
+                CoreMethodNamingConvention.OperationIdSplit => CSharpMethodNamingConvention.OperationIdSplit,
+                _ => throw new ArgumentOutOfRangeException(nameof(settings), settings.MethodNamingConventionFallback, null),
+            },
+            GenerateMethodsAsHttpClientExtensions: settings.GenerateMethodsAsHttpClientExtensions,
+            GenerateMethodsUsingSystemNetHttpJson: settings.GenerateMethodsUsingSystemNetHttpJson,
+            IncludeOperationIds: settings.IncludeOperationIds,
+            ExcludeOperationIds: settings.ExcludeOperationIds,
+            IncludeTags: settings.IncludeTags,
+            ExcludeTags: settings.ExcludeTags,
+            ExcludeDeprecatedOperations: settings.ExcludeDeprecatedOperations,
+            UseExtensionNaming: settings.UseExtensionNaming,
+            JsonSerializerContext: settings.JsonSerializerContext,
+            GenerateJsonSerializerContextTypes: settings.GenerateJsonSerializerContextTypes,
+            ComputeDiscriminators: settings.ComputeDiscriminators,
+            AddMissingPathParameters: settings.AddMissingPathParameters,
+            GenerateModels: settings.GenerateModels,
+            GenerateModelValidationMethods: settings.GenerateModelValidationMethods,
+            ValidateAnyOfs: settings.ValidateAnyOfs,
+            ModelStyle: settings.ModelStyle,
+            IncludeModels: settings.IncludeModels,
+            ExcludeModels: settings.ExcludeModels,
+            IgnoreOpenApiErrors: settings.IgnoreOpenApiErrors,
+            IgnoreOpenApiWarnings: settings.IgnoreOpenApiWarnings,
+            GeneratePolyfills: settings.GeneratePolyfills,
+            GenerateExceptions: settings.GenerateExceptions,
+            GenerateSdk: settings.GenerateSdk,
+            FromCli: settings.FromCli,
+            GenerateCli: settings.GenerateCli,
+            SecuritySchemes: settings.SecuritySchemes,
+            BaseUrl: settings.BaseUrl,
+            OpenApiOverrides: settings.OpenApiOverrides,
+            GenerateWebSocketClient: settings.GenerateWebSocketClient,
+            WebSocketClientClassName: settings.WebSocketClientClassName,
+            TypesNamespace: settings.TypesNamespace);
+    }
+
+    public Settings ToSettings()
+    {
+        return new Settings(
+            TargetFramework: TargetFramework,
+            Namespace: Namespace,
+            ClassName: ClassName,
+            ClsCompliantEnumPrefix: ClsCompliantEnumPrefix,
+            NamingConvention: NamingConvention,
+            JsonSerializerType: JsonSerializerType switch
+            {
+                CSharpJsonSerializerType.SystemTextJson => CoreJsonSerializerType.SystemTextJson,
+                CSharpJsonSerializerType.NewtonsoftJson => CoreJsonSerializerType.NewtonsoftJson,
+                _ => throw new ArgumentOutOfRangeException(nameof(JsonSerializerType), JsonSerializerType, null),
+            },
+            UseRequiredKeyword: UseRequiredKeyword,
+            UseExperimentalAttributes: UseExperimentalAttributes,
+            UseSetsRequiredMembersAttributes: UseSetsRequiredMembersAttributes,
+            GenerateConstructors: GenerateConstructors,
+            GroupByTags: GroupByTags,
+            GenerateMethods: GenerateMethods,
+            MethodNamingConvention: MethodNamingConvention switch
+            {
+                CSharpMethodNamingConvention.OperationId => CoreMethodNamingConvention.OperationId,
+                CSharpMethodNamingConvention.MethodAndPath => CoreMethodNamingConvention.MethodAndPath,
+                CSharpMethodNamingConvention.Summary => CoreMethodNamingConvention.Summary,
+                CSharpMethodNamingConvention.OperationIdWithDots => CoreMethodNamingConvention.OperationIdWithDots,
+                CSharpMethodNamingConvention.OperationIdSplit => CoreMethodNamingConvention.OperationIdSplit,
+                _ => throw new ArgumentOutOfRangeException(nameof(MethodNamingConvention), MethodNamingConvention, null),
+            },
+            MethodNamingConventionFallback: MethodNamingConventionFallback switch
+            {
+                CSharpMethodNamingConvention.OperationId => CoreMethodNamingConvention.OperationId,
+                CSharpMethodNamingConvention.MethodAndPath => CoreMethodNamingConvention.MethodAndPath,
+                CSharpMethodNamingConvention.Summary => CoreMethodNamingConvention.Summary,
+                CSharpMethodNamingConvention.OperationIdWithDots => CoreMethodNamingConvention.OperationIdWithDots,
+                CSharpMethodNamingConvention.OperationIdSplit => CoreMethodNamingConvention.OperationIdSplit,
+                _ => throw new ArgumentOutOfRangeException(nameof(MethodNamingConventionFallback), MethodNamingConventionFallback, null),
+            },
+            GenerateMethodsAsHttpClientExtensions: GenerateMethodsAsHttpClientExtensions,
+            GenerateMethodsUsingSystemNetHttpJson: GenerateMethodsUsingSystemNetHttpJson,
+            IncludeOperationIds: IncludeOperationIds,
+            ExcludeOperationIds: ExcludeOperationIds,
+            IncludeTags: IncludeTags,
+            ExcludeTags: ExcludeTags,
+            ExcludeDeprecatedOperations: ExcludeDeprecatedOperations,
+            UseExtensionNaming: UseExtensionNaming,
+            JsonSerializerContext: JsonSerializerContext,
+            GenerateJsonSerializerContextTypes: GenerateJsonSerializerContextTypes,
+            ComputeDiscriminators: ComputeDiscriminators,
+            AddMissingPathParameters: AddMissingPathParameters,
+            GenerateModels: GenerateModels,
+            GenerateModelValidationMethods: GenerateModelValidationMethods,
+            ValidateAnyOfs: ValidateAnyOfs,
+            ModelStyle: ModelStyle,
+            IncludeModels: IncludeModels,
+            ExcludeModels: ExcludeModels,
+            IgnoreOpenApiErrors: IgnoreOpenApiErrors,
+            IgnoreOpenApiWarnings: IgnoreOpenApiWarnings,
+            GeneratePolyfills: GeneratePolyfills,
+            GenerateExceptions: GenerateExceptions,
+            GenerateSdk: GenerateSdk,
+            FromCli: FromCli,
+            GenerateCli: GenerateCli,
+            SecuritySchemes: SecuritySchemes,
+            BaseUrl: BaseUrl,
+            OpenApiOverrides: OpenApiOverrides,
+            GenerateWebSocketClient: GenerateWebSocketClient,
+            WebSocketClientClassName: WebSocketClientClassName,
+            TypesNamespace: TypesNamespace);
+    }
+
+    public static implicit operator CSharpSettings(Settings settings)
+    {
+        return FromSettings(settings);
+    }
+
+    public static implicit operator Settings(CSharpSettings settings)
+    {
+        return settings.ToSettings();
+    }
+}

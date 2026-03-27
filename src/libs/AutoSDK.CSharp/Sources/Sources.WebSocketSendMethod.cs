@@ -17,7 +17,7 @@ public static partial class Sources
     public static string GenerateWebSocketSendMethod(
         WebSocketEndPoint endPoint)
     {
-        var hasOptions = string.IsNullOrWhiteSpace(endPoint.Settings.JsonSerializerContext);
+        var hasOptions = !endPoint.Settings.HasJsonSerializerContext();
         var messageTypeName = endPoint.MessageType.CSharpType;
 
         if (string.IsNullOrWhiteSpace(messageTypeName))

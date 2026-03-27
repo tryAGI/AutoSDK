@@ -1,0 +1,36 @@
+namespace AutoSDK.Models;
+
+public record struct SchemaContextSettings(
+    string Namespace,
+    string ClsCompliantEnumPrefix,
+    NamingConvention NamingConvention,
+    string TargetFramework,
+    string JsonSerializerContext,
+    SdkFeatureUsage UseRequiredKeyword,
+    SdkFeatureUsage UseExperimentalAttributes,
+    SdkFeatureUsage UseSetsRequiredMembersAttributes,
+    bool GenerateModelValidationMethods,
+    bool ValidateAnyOfs,
+    bool GenerateJsonSerializerContextTypes,
+    bool UseNewtonsoftJson,
+    bool UseSystemTextJson,
+    bool UseExtensionNaming,
+    ModelStyle ModelStyle)
+{
+    public static SchemaContextSettings Default => new(
+        Namespace: string.Empty,
+        ClsCompliantEnumPrefix: string.Empty,
+        NamingConvention: default,
+        TargetFramework: string.Empty,
+        JsonSerializerContext: string.Empty,
+        UseRequiredKeyword: default,
+        UseExperimentalAttributes: default,
+        UseSetsRequiredMembersAttributes: default,
+        GenerateModelValidationMethods: false,
+        ValidateAnyOfs: false,
+        GenerateJsonSerializerContextTypes: false,
+        UseNewtonsoftJson: false,
+        UseSystemTextJson: true,
+        UseExtensionNaming: true,
+        ModelStyle: default);
+}

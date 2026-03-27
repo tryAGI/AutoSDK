@@ -1,7 +1,5 @@
 using AutoSDK.Extensions;
 using AutoSDK.Models;
-using AutoSDK.Serialization.Json;
-
 namespace AutoSDK.Generation;
 
 public static partial class Sources
@@ -11,7 +9,7 @@ public static partial class Sources
         CancellationToken cancellationToken = default)
     {
         // Only Newtonsoft.Json supports EnumMemberAttribute
-        if (modelData.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        if (modelData.Settings.UsesNewtonsoftJson())
         {
             return $@" 
     {modelData.Summary.ToXmlDocumentationSummary(level: 4)}

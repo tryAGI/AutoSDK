@@ -5,7 +5,7 @@ namespace AutoSDK.Generation;
 
 public static partial class Sources
 {
-    public static string GeneratePolyfills(Settings settings)
+    public static string GeneratePolyfills(CSharpSettings settings)
     {
         if (!settings.GeneratePolyfills)
         {

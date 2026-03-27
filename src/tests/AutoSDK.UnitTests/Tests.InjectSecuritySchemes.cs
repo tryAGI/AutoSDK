@@ -1,5 +1,6 @@
 using System.Collections.Immutable;
 using AutoSDK.Extensions;
+using AutoSDK.Generation;
 using AutoSDK.Models;
 using Microsoft.OpenApi;
 
@@ -88,7 +89,7 @@ paths:
         var document = yaml.GetOpenApiDocument(settings);
         var authorizations = document.Security!
             .SelectMany(r => r)
-            .Select(x => Authorization.FromOpenApiSecurityScheme(
+            .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(
                 x.Key, settings, settings))
             .ToArray();
 

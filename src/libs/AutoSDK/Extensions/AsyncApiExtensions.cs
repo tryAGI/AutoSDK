@@ -22,6 +22,21 @@ public static class AsyncApiExtensions
         Settings settings,
         CancellationToken cancellationToken = default)
     {
+        return yamlOrJson.GetAsyncApiDocument(settings.ToCoreSettings(), cancellationToken);
+    }
+
+    public static AsyncApiDocument GetAsyncApiDocument(
+        this string yamlOrJson,
+        CoreSettings settings,
+        CancellationToken cancellationToken = default)
+    {
+        return yamlOrJson.GetAsyncApiDocument(cancellationToken);
+    }
+
+    public static AsyncApiDocument GetAsyncApiDocument(
+        this string yamlOrJson,
+        CancellationToken cancellationToken = default)
+    {
         yamlOrJson = yamlOrJson ?? throw new ArgumentNullException(nameof(yamlOrJson));
 
         // Parse to JsonNode - handle both YAML and JSON
@@ -111,6 +126,21 @@ public static class AsyncApiExtensions
     public static OpenApiDocument BridgeSchemasToOpenApi(
         this AsyncApiDocument asyncApiDocument,
         Settings settings,
+        CancellationToken cancellationToken = default)
+    {
+        return asyncApiDocument.BridgeSchemasToOpenApi(settings.ToCoreSettings(), cancellationToken);
+    }
+
+    public static OpenApiDocument BridgeSchemasToOpenApi(
+        this AsyncApiDocument asyncApiDocument,
+        CoreSettings settings,
+        CancellationToken cancellationToken = default)
+    {
+        return asyncApiDocument.BridgeSchemasToOpenApi(cancellationToken);
+    }
+
+    public static OpenApiDocument BridgeSchemasToOpenApi(
+        this AsyncApiDocument asyncApiDocument,
         CancellationToken cancellationToken = default)
     {
         asyncApiDocument = asyncApiDocument ?? throw new ArgumentNullException(nameof(asyncApiDocument));

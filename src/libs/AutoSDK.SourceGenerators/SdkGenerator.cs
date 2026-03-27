@@ -1,8 +1,6 @@
 ﻿using AutoSDK.Generation;
 using AutoSDK.Models;
 using Microsoft.CodeAnalysis;
-using Data = AutoSDK.Generation.Data;
-
 namespace AutoSDK.SourceGenerators;
 
 [Generator]
@@ -53,7 +51,7 @@ public class SdkGenerator : IIncrementalGenerator
                 GetContent(pair.Left, cancellationToken),
                 pair.Right.GetSettings(prefix: "AutoSDK", additionalText: pair.Left)))
             .Combine(settings)
-            .SelectAndReportExceptions(Data.Prepare, context, Id);
+            .SelectAndReportExceptions(CSharpPipeline.PrepareAndEnrich, context, Id);
         
         data
             .SelectAndReportExceptions((x, c) => x.Methods.Any(y => y.RawStream)

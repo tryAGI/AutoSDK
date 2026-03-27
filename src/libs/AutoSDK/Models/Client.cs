@@ -5,6 +5,8 @@ namespace AutoSDK.Models;
 public record struct Client(
     string Id,
     string ClassName,
+    string FileNameWithoutExtension,
+    string InterfaceFileNameWithoutExtension,
     string BaseUrl,
     ImmutableArray<PropertyData> Clients,
     string Summary,
@@ -12,9 +14,4 @@ public record struct Client(
     Settings Settings,
     Settings GlobalSettings,
     ImmutableArray<string> Converters
-)
-{
-    public string FileNameWithoutExtension => $"{Settings.Namespace}.{ClassName}";
-    
-    public string InterfaceFileNameWithoutExtension => $"{Settings.Namespace}.I{ClassName}";
-}
+);
