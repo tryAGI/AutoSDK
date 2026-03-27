@@ -1,5 +1,6 @@
 using AutoSDK.Extensions;
 using AutoSDK.Models;
+using System.Text;
 namespace AutoSDK.Generation;
 
 public static partial class Sources
@@ -20,28 +21,40 @@ public static partial class Sources
             ? client.Settings.JsonSerializerContext.Substring(client.Settings.JsonSerializerContext.LastIndexOf('.') + 1)
             : "SourceGenerationContext";
 
-        return $@"
-#nullable enable
+        var summary4 = string.Empty.ToXmlDocumentationSummary(level: 4);
+        var builder = new StringBuilder(256 + client.Converters.Length * 48 + types.Length * 72);
 
-#pragma warning disable CS0618 // Type or member is obsolete
-#pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant
+        builder.AppendLine();
+        builder.AppendLine("#nullable enable");
+        builder.AppendLine();
+        builder.AppendLine("#pragma warning disable CS0618 // Type or member is obsolete");
+        builder.AppendLine("#pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant");
+        builder.AppendLine();
+        builder.Append("namespace ").Append(client.Settings.Namespace).AppendLine();
+        builder.AppendLine("{");
+        builder.Append("    ").Append(summary4).AppendLine();
+        builder.AppendLine("    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(");
+        builder.AppendLine("        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,");
+        builder.AppendLine("        Converters = new global::System.Type[]");
+        builder.AppendLine("        {");
 
-namespace {client.Settings.Namespace}
-{{
-    {string.Empty.ToXmlDocumentationSummary(level: 4)}
-    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
-        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-        Converters = new global::System.Type[]
-        {{
-{client.Converters.Select(x => $@"
-            typeof({x}),
-").Inject()}
-        }})]
-{(types.IsEmpty ? TrimmedLine : GenerateJsonSerializableAttributes(client, types))}
-    public sealed partial class {contextClassName} : global::System.Text.Json.Serialization.JsonSerializerContext
-    {{
-    }}
-}}".RemoveBlankLinesWhereOnlyWhitespaces();
+        for (var i = 0; i < client.Converters.Length; i++)
+        {
+            builder.Append("            typeof(").Append(client.Converters[i]).AppendLine("),");
+        }
+
+        builder.AppendLine("        })]");
+
+        if (!types.IsEmpty)
+        {
+            builder.AppendLine(GenerateJsonSerializableAttributes(client, types));
+        }
+
+        builder.Append("    public sealed partial class ").Append(contextClassName).AppendLine(" : global::System.Text.Json.Serialization.JsonSerializerContext");
+        builder.AppendLine("    {");
+        builder.AppendLine("    }");
+        builder.Append('}');
+        return builder.ToString();
     }
 
     private static string GenerateJsonSerializableAttributes(
@@ -54,23 +67,35 @@ namespace {client.Settings.Namespace}
             .ToArray();
 
         var concreteListTypes = GetConcreteListTypes(distinctTypes);
+        var builder = new StringBuilder(64 + (distinctTypes.Length + concreteListTypes.Length + 1) * 88);
 
-        var attributes = new List<string>
-        {
-            $"    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::{client.Settings.Namespace}.JsonSerializerContextTypes))]",
-        };
+        builder
+            .Append("    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::")
+            .Append(client.Settings.Namespace)
+            .AppendLine(".JsonSerializerContextTypes))]");
 
         foreach (var type in distinctTypes)
         {
-            attributes.Add($"    [global::System.Text.Json.Serialization.JsonSerializable(typeof({type}))]");
+            builder
+                .Append("    [global::System.Text.Json.Serialization.JsonSerializable(typeof(")
+                .Append(type)
+                .AppendLine("))]");
         }
 
         foreach (var type in concreteListTypes)
         {
-            attributes.Add($"    [global::System.Text.Json.Serialization.JsonSerializable(typeof({type}))]");
+            builder
+                .Append("    [global::System.Text.Json.Serialization.JsonSerializable(typeof(")
+                .Append(type)
+                .AppendLine("))]");
         }
 
-        return string.Join("\n", attributes);
+        if (builder.Length > 0)
+        {
+            builder.Length--;
+        }
+
+        return builder.ToString();
     }
 
     /// <summary>

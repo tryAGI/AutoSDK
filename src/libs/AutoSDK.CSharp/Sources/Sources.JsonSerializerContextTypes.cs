@@ -1,5 +1,6 @@
 using AutoSDK.Extensions;
 using AutoSDK.Models;
+using System.Text;
 namespace AutoSDK.Generation;
 
 public static partial class Sources
@@ -12,41 +13,66 @@ public static partial class Sources
         {
             return string.Empty;
         }
-        
+
         var distinctTypes = types
             .Select(x => x.CSharpTypeWithNullability)
             .Distinct()
             .ToArray();
 
         var concreteListTypes = GetConcreteListTypes(distinctTypes);
+        var summary4 = string.Empty.ToXmlDocumentationSummary(level: 4);
+        var summary8 = string.Empty.ToXmlDocumentationSummary(level: 8);
+        var builder = new StringBuilder(
+            256 +
+            (distinctTypes.Length + concreteListTypes.Length + 3) * 192);
 
-        return $@"
-#nullable enable
+        builder.AppendLine();
+        builder.AppendLine("#nullable enable");
+        builder.AppendLine();
+        builder.AppendLine("#pragma warning disable CS0618 // Type or member is obsolete");
+        builder.AppendLine();
+        builder.Append("namespace ").Append(types[0].Namespace).AppendLine();
+        builder.AppendLine("{");
+        builder.Append("    ").Append(summary4).AppendLine();
+        builder.AppendLine("    public sealed partial class JsonSerializerContextTypes");
+        builder.AppendLine("    {");
+        AppendProperty(builder, summary8, "global::System.Collections.Generic.Dictionary<string, string>?", "StringStringDictionary");
+        builder.AppendLine();
+        AppendProperty(builder, summary8, "global::System.Collections.Generic.Dictionary<string, object>?", "StringObjectDictionary");
+        builder.AppendLine();
+        AppendProperty(builder, summary8, "global::System.Text.Json.JsonElement?", "JsonElement");
 
-#pragma warning disable CS0618 // Type or member is obsolete
+        if (distinctTypes.Length > 0)
+        {
+            builder.AppendLine();
+            for (var i = 0; i < distinctTypes.Length; i++)
+            {
+                AppendProperty(builder, summary8, distinctTypes[i], $"Type{i}");
+            }
+        }
 
-namespace {types[0].Namespace}
-{{
-    {string.Empty.ToXmlDocumentationSummary(level: 4)}
-    public sealed partial class JsonSerializerContextTypes
-    {{
-        {string.Empty.ToXmlDocumentationSummary(level: 8)}
-        public global::System.Collections.Generic.Dictionary<string, string>? StringStringDictionary {{ get; set; }}
+        if (concreteListTypes.Length > 0)
+        {
+            builder.AppendLine();
+            for (var i = 0; i < concreteListTypes.Length; i++)
+            {
+                AppendProperty(builder, summary8, concreteListTypes[i], $"ListType{i}");
+            }
+        }
 
-        {string.Empty.ToXmlDocumentationSummary(level: 8)}
-        public global::System.Collections.Generic.Dictionary<string, object>? StringObjectDictionary {{ get; set; }}
+        if (concreteListTypes.Length == 0)
+        {
+            builder.AppendLine();
+        }
 
-        {string.Empty.ToXmlDocumentationSummary(level: 8)}
-        public global::System.Text.Json.JsonElement? JsonElement {{ get; set; }}
+        builder.AppendLine("    }");
+        builder.Append('}');
+        return builder.ToString();
 
-{distinctTypes.Select((type, i) => @$"
-        {string.Empty.ToXmlDocumentationSummary(level: 8)}
-        public {type} Type{i} {{ get; set; }}").Inject()}
-
-{concreteListTypes.Select((type, i) => @$"
-        {string.Empty.ToXmlDocumentationSummary(level: 8)}
-        public {type} ListType{i} {{ get; set; }}").Inject()}
-    }}
-}}".RemoveBlankLinesWhereOnlyWhitespaces();
+        static void AppendProperty(StringBuilder builder, string summary, string type, string propertyName)
+        {
+            builder.Append("        ").Append(summary).AppendLine();
+            builder.Append("        public ").Append(type).Append(' ').Append(propertyName).AppendLine(" { get; set; }");
+        }
     }
 }
