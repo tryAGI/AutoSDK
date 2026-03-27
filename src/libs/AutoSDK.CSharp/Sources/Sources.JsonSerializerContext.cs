@@ -54,24 +54,205 @@ namespace {client.Settings.Namespace}
             .ToArray();
 
         var concreteListTypes = GetConcreteListTypes(distinctTypes);
-
-        var attributes = new List<string>
+        var serializableTypes = new[]
         {
-            $"    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::{client.Settings.Namespace}.JsonSerializerContextTypes))]",
-        };
-
-        foreach (var type in distinctTypes)
-        {
-            attributes.Add($"    [global::System.Text.Json.Serialization.JsonSerializable(typeof({type}))]");
+            $"global::{client.Settings.Namespace}.JsonSerializerContextTypes",
         }
+            .Concat(distinctTypes)
+            .Concat(concreteListTypes)
+            .ToArray();
+        var explicitTypeInfoPropertyNames = BuildExplicitTypeInfoPropertyNames(serializableTypes);
 
-        foreach (var type in concreteListTypes)
+        var attributes = new List<string>(serializableTypes.Length);
+
+        foreach (var type in serializableTypes)
         {
-            attributes.Add($"    [global::System.Text.Json.Serialization.JsonSerializable(typeof({type}))]");
+            explicitTypeInfoPropertyNames.TryGetValue(type, out var typeInfoPropertyName);
+            attributes.Add(GenerateJsonSerializableAttribute(
+                type,
+                typeInfoPropertyName));
         }
 
         return string.Join("\n", attributes);
     }
+
+    private static string GenerateJsonSerializableAttribute(
+        string type,
+        string? typeInfoPropertyName)
+    {
+        return typeInfoPropertyName is null
+            ? $"    [global::System.Text.Json.Serialization.JsonSerializable(typeof({type}))]"
+            : $"    [global::System.Text.Json.Serialization.JsonSerializable(typeof({type}), TypeInfoPropertyName = \"{typeInfoPropertyName}\")]";
+    }
+
+    private static Dictionary<string, string> BuildExplicitTypeInfoPropertyNames(
+        string[] types)
+    {
+        var explicitNames = new Dictionary<string, string>(StringComparer.Ordinal);
+        var usedNames = new HashSet<string>(StringComparer.Ordinal);
+
+        foreach (var group in types.GroupBy(GetImplicitTypeInfoPropertyName).Where(group => group.Count() > 1))
+        {
+            var defaultType = group.FirstOrDefault(ShouldKeepDefaultTypeInfoPropertyName) ?? group.First();
+
+            foreach (var type in group)
+            {
+                if (type == defaultType)
+                {
+                    continue;
+                }
+
+                var baseName = $"{GetImplicitTypeInfoPropertyName(type)}_{SanitizeTypeInfoPropertyName(type)}";
+                var name = baseName;
+                var suffix = 2;
+
+                while (!usedNames.Add(name))
+                {
+                    name = $"{baseName}_{suffix++}";
+                }
+
+                explicitNames[type] = name;
+            }
+        }
+
+        return explicitNames;
+    }
+
+    private static string GetImplicitTypeInfoPropertyName(string type)
+    {
+        if (type.StartsWith("global::", StringComparison.Ordinal))
+        {
+            type = type.Substring("global::".Length);
+        }
+
+        if (CSharpAliasTypeInfoPropertyNames.TryGetValue(type, out var aliasName))
+        {
+            return aliasName;
+        }
+
+        if (type.EndsWith("[]", StringComparison.Ordinal))
+        {
+            return $"{GetImplicitTypeInfoPropertyName(type.Substring(0, type.Length - 2))}Array";
+        }
+
+        if (type.EndsWith("?", StringComparison.Ordinal))
+        {
+            return GetImplicitTypeInfoPropertyName(type.Substring(0, type.Length - 1));
+        }
+
+        var genericStart = type.IndexOf('<');
+        if (genericStart >= 0 && type.EndsWith(">", StringComparison.Ordinal))
+        {
+            var typeName = GetSimpleTypeName(type.Substring(0, genericStart));
+            var genericArguments = type.Substring(genericStart + 1, type.Length - genericStart - 2);
+            return typeName + string.Concat(SplitGenericArguments(genericArguments).Select(GetImplicitTypeInfoPropertyName));
+        }
+
+        return GetSimpleTypeName(type);
+    }
+
+    private static IEnumerable<string> SplitGenericArguments(string genericArguments)
+    {
+        var start = 0;
+        var depth = 0;
+
+        for (var index = 0; index < genericArguments.Length; index++)
+        {
+            switch (genericArguments[index])
+            {
+                case '<':
+                    depth++;
+                    break;
+                case '>':
+                    depth--;
+                    break;
+                case ',' when depth == 0:
+                    yield return genericArguments.Substring(start, index - start).Trim();
+                    start = index + 1;
+                    break;
+            }
+        }
+
+        yield return genericArguments.Substring(start).Trim();
+    }
+
+    private static string GetSimpleTypeName(string type)
+    {
+        var start = Math.Max(type.LastIndexOf('.'), type.LastIndexOf(':')) + 1;
+        var simpleName = type.Substring(start);
+        var arity = simpleName.IndexOf('`');
+        return arity >= 0 ? simpleName.Substring(0, arity) : simpleName;
+    }
+
+    private static string SanitizeTypeInfoPropertyName(string type)
+    {
+        if (type.StartsWith("global::", StringComparison.Ordinal))
+        {
+            type = type.Substring("global::".Length);
+        }
+
+        var buffer = new char[type.Length];
+        var count = 0;
+        var lastWasUnderscore = false;
+
+        foreach (var character in type)
+        {
+            if (char.IsLetterOrDigit(character))
+            {
+                buffer[count++] = character;
+                lastWasUnderscore = false;
+                continue;
+            }
+
+            if (lastWasUnderscore)
+            {
+                continue;
+            }
+
+            buffer[count++] = '_';
+            lastWasUnderscore = true;
+        }
+
+        var sanitized = new string(buffer, 0, count).Trim('_');
+        if (sanitized.Length == 0)
+        {
+            sanitized = "Type";
+        }
+
+        return char.IsDigit(sanitized[0]) ? $"_{sanitized}" : sanitized;
+    }
+
+    private static bool ShouldKeepDefaultTypeInfoPropertyName(string type)
+    {
+        if (type.StartsWith("global::", StringComparison.Ordinal))
+        {
+            return type.StartsWith("global::System.", StringComparison.Ordinal);
+        }
+
+        return CSharpAliasTypeInfoPropertyNames.ContainsKey(type);
+    }
+
+    private static readonly Dictionary<string, string> CSharpAliasTypeInfoPropertyNames = new(StringComparer.Ordinal)
+    {
+        ["bool"] = "Boolean",
+        ["byte"] = "Byte",
+        ["char"] = "Char",
+        ["decimal"] = "Decimal",
+        ["double"] = "Double",
+        ["float"] = "Single",
+        ["int"] = "Int32",
+        ["long"] = "Int64",
+        ["nint"] = "IntPtr",
+        ["nuint"] = "UIntPtr",
+        ["object"] = "Object",
+        ["sbyte"] = "SByte",
+        ["short"] = "Int16",
+        ["string"] = "String",
+        ["uint"] = "UInt32",
+        ["ulong"] = "UInt64",
+        ["ushort"] = "UInt16",
+        ["void"] = "Void",
+    };
 
     /// <summary>
     /// Returns concrete List&lt;T&gt; counterparts for IList&lt;T&gt; types,

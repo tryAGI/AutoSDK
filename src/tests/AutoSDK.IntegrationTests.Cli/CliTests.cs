@@ -8,10 +8,19 @@ public class CliTests
     [TestMethod]
     public async Task Generate_ElevenLabsStreamingSdk()
     {
-        await GenerateAsync("elevenlabs.json");
+        await GenerateAsync("elevenlabs.json", expectResponseStream: true);
     }
 
-    private static async Task GenerateAsync(string spec)
+    [TestMethod]
+    public async Task Generate_WeaviateSdk()
+    {
+        await GenerateAsync("weaviate.yaml", targetFramework: "net10.0");
+    }
+
+    private static async Task GenerateAsync(
+        string spec,
+        string targetFramework = "net8.0",
+        bool expectResponseStream = false)
     {
         var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
         try
@@ -28,7 +37,7 @@ public class CliTests
                 "--project", "src/libs/AutoSDK.CLI",
                 "generate", spec.StartsWith("http") ? spec : $"specs/{spec}",
                 "--namespace", "Oag",
-                "--targetFramework", "net8.0",
+                "--targetFramework", targetFramework,
                 "--output", tempDirectory);
             Console.WriteLine(generateResult.StandardOutput);
             Console.WriteLine(generateResult.StandardError);
@@ -37,14 +46,18 @@ public class CliTests
             Directory.EnumerateFiles(tempDirectory, "*", SearchOption.AllDirectories)
                 .Should()
                 .NotBeEmpty();
-            Directory.EnumerateFiles(tempDirectory, "*.ResponseStream.g.cs", SearchOption.AllDirectories)
-                .Should()
-                .ContainSingle();
 
-            await File.WriteAllTextAsync(Path.Combine(tempDirectory, "Oag.csproj"), @"<Project Sdk=""Microsoft.NET.Sdk"">
+            if (expectResponseStream)
+            {
+                Directory.EnumerateFiles(tempDirectory, "*.ResponseStream.g.cs", SearchOption.AllDirectories)
+                    .Should()
+                    .ContainSingle();
+            }
+
+            await File.WriteAllTextAsync(Path.Combine(tempDirectory, "Oag.csproj"), $@"<Project Sdk=""Microsoft.NET.Sdk"">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>{targetFramework}</TargetFramework>
     <LangVersion>preview</LangVersion>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
