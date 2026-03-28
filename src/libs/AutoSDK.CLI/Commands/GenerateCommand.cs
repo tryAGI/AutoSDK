@@ -162,6 +162,36 @@ internal sealed class GenerateCommand : Command
         Description = "Namespace to use for type references instead of the main namespace. Used for cross-namespace schema referencing where models live in a different namespace.",
     };
 
+    private Option<string> NamespaceDelimiter { get; } = new(
+        name: "--namespace-delimiter")
+    {
+        DefaultValueFactory = _ => string.Empty,
+        Description = "Optional single-character delimiter for splitting component schema ids into namespaces (for example '.' turns PetStore.Pet into namespace PetStore and class Pet).",
+    };
+
+    private Option<string[]> IncludeModels { get; } = new(
+        name: "--include-models")
+    {
+        DefaultValueFactory = _ => Array.Empty<string>(),
+        Description = "Only include these component model ids. Repeatable or pass multiple values.",
+        AllowMultipleArgumentsPerToken = true,
+    };
+
+    private Option<string[]> ExcludeModels { get; } = new(
+        name: "--exclude-models")
+    {
+        DefaultValueFactory = _ => Array.Empty<string>(),
+        Description = "Exclude these component model ids. Repeatable or pass multiple values.",
+        AllowMultipleArgumentsPerToken = true,
+    };
+
+    private Option<ExcludedModelNamespaceMode> ExcludedModelNamespaceMode { get; } = new(
+        name: "--excluded-model-namespace-mode")
+    {
+        DefaultValueFactory = _ => AutoSDK.Models.ExcludedModelNamespaceMode.External,
+        Description = "How filtered-out dotted models are referenced when --namespace-delimiter is enabled: External or SdkRoot.",
+    };
+
     private Option<bool> GenerateModels { get; } = new(
         name: "--generate-models")
     {
@@ -198,6 +228,10 @@ internal sealed class GenerateCommand : Command
         Options.Add(WebSocketClientClassName);
         Options.Add(JsonSerializerContextName);
         Options.Add(TypesNamespace);
+        Options.Add(NamespaceDelimiter);
+        Options.Add(IncludeModels);
+        Options.Add(ExcludeModels);
+        Options.Add(ExcludedModelNamespaceMode);
         Options.Add(GenerateModels);
         Options.Add(Language);
 
@@ -219,6 +253,12 @@ internal sealed class GenerateCommand : Command
 
         var generateModels = parseResult.GetRequiredValue(GenerateModels);
         var typesNamespaceValue = parseResult.GetRequiredValue(TypesNamespace);
+        var namespaceDelimiterValue = parseResult.GetRequiredValue(NamespaceDelimiter);
+
+        if (!string.IsNullOrEmpty(namespaceDelimiterValue) && namespaceDelimiterValue.Length != 1)
+        {
+            throw new ArgumentException("--namespace-delimiter must be empty or a single character.");
+        }
 
         if (!generateModels && string.IsNullOrWhiteSpace(typesNamespaceValue))
         {
@@ -236,6 +276,10 @@ internal sealed class GenerateCommand : Command
             JsonSerializerContext = $"{namespaceValue}.{contextClassName}",
             GenerateJsonSerializerContextTypes = true,
             GenerateModels = generateModels,
+            IncludeModels = parseResult.GetRequiredValue(IncludeModels).ToImmutableArray(),
+            ExcludeModels = parseResult.GetRequiredValue(ExcludeModels).ToImmutableArray(),
+            NamespaceDelimiter = namespaceDelimiterValue,
+            ExcludedModelNamespaceMode = parseResult.GetRequiredValue(ExcludedModelNamespaceMode),
             ComputeDiscriminators = parseResult.GetRequiredValue(ComputeDiscriminators),
             GenerateModelValidationMethods = parseResult.GetRequiredValue(GenerateModelValidationMethods),
             IgnoreOpenApiErrors = parseResult.GetRequiredValue(IgnoreOpenApiErrors),

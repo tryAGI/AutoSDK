@@ -192,7 +192,7 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         IgnoreUnrecognizedTypeDiscriminators = true,
         UnknownDerivedTypeHandling = global::System.Text.Json.Serialization.JsonUnknownDerivedTypeHandling.FallBackToBaseType)]
 {modelData.DerivedTypes.Select(x => $@"
-    [global::System.Text.Json.Serialization.JsonDerivedType(typeof({modelData.Namespace}.{x.ClassName}), typeDiscriminator: ""{x.Discriminator}"")]").Inject()}" : TrimmedLine)}
+    [global::System.Text.Json.Serialization.JsonDerivedType(typeof({x.GlobalClassName}), typeDiscriminator: ""{x.Discriminator}"")]").Inject()}" : TrimmedLine)}
     public{(modelData.IsBaseClass ? "" : " sealed")} partial class {modelData.ClassName}{(!string.IsNullOrWhiteSpace(modelData.BaseClass) ? $" : {modelData.BaseClass}" : "")}
     {{
 {properties.Select(property => @$"

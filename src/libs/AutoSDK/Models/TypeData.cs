@@ -40,6 +40,8 @@ public record struct TypeData(
 {
     public int DependencyHash { get; set; }
 
+    public bool UsesGeneratedJsonHelpers { get; set; }
+
     public static TypeData Default => new(
         CSharpTypeRaw: string.Empty,
         CSharpTypeNullability: false,
@@ -77,5 +79,6 @@ public record struct TypeData(
         ConverterType: string.Empty)
     {
         DependencyHash = 0,
+        UsesGeneratedJsonHelpers = false,
     };
 }

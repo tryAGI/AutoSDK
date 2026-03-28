@@ -28,7 +28,7 @@ public static class ModelNameGenerator
         }
         if (componentId != null)
         {
-            return componentId.ToCSharpName(settings, parent);
+            return CSharpNamespacedTypeNameResolver.GetComponentClassName(componentId, settings);
         }
 
         var helper = hint switch
@@ -152,7 +152,7 @@ public static class ModelNameGenerator
 
         if (context.ComponentId != null)
         {
-            className = context.ComponentId.ToCSharpName(context.Settings, context.Parent).ToClassName();
+            className = CSharpNamespacedTypeNameResolver.GetComponentClassName(context.ComponentId, context.Settings.ToSchemaNamingSettings());
             context.CachedComputedClassName = className;
             return className;
         }
@@ -213,10 +213,11 @@ public static class ModelNameGenerator
                 {
                     continue;
                 }
-                if (!groups.TryGetValue(context.Id, out var list))
+                var groupKey = $"{context.GetGeneratedNamespace()}|{context.Id}";
+                if (!groups.TryGetValue(groupKey, out var list))
                 {
                     list = [context];
-                    groups[context.Id] = list;
+                    groups[groupKey] = list;
                 }
                 else
                 {

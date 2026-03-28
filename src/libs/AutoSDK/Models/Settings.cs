@@ -39,6 +39,8 @@ public record struct Settings(
     ModelStyle ModelStyle,
     ImmutableArray<string> IncludeModels,
     ImmutableArray<string> ExcludeModels,
+    string NamespaceDelimiter,
+    ExcludedModelNamespaceMode ExcludedModelNamespaceMode,
     
     bool IgnoreOpenApiErrors,
     bool IgnoreOpenApiWarnings,
@@ -92,6 +94,8 @@ public record struct Settings(
         ModelStyle: default,
         IncludeModels: ImmutableArray<string>.Empty,
         ExcludeModels: ImmutableArray<string>.Empty,
+        NamespaceDelimiter: string.Empty,
+        ExcludedModelNamespaceMode: ExcludedModelNamespaceMode.External,
         IgnoreOpenApiErrors: true,
         IgnoreOpenApiWarnings: true,
         GeneratePolyfills: true,

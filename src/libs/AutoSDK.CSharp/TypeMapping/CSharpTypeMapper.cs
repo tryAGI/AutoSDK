@@ -3,6 +3,7 @@ using System.Text.Json.Nodes;
 using AutoSDK.Extensions;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
+using AutoSDK.Naming.Models;
 using Microsoft.OpenApi;
 
 namespace AutoSDK.TypeMapping;
@@ -15,6 +16,11 @@ public static class CSharpTypeMapper
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
 
+        if (context.IsReference && context.ResolvedReference != null)
+        {
+            return CreateReferenceTypeData(context);
+        }
+
         var schema = context.Schema;
         var isEnum = schema.IsEnum();
         var isAnyOf = schema.IsAnyOf();
@@ -23,6 +29,7 @@ public static class CSharpTypeMapper
         var isArray = schema.IsArray();
         var isBinary = schema.IsBinary();
         var isBase64 = schema.IsBase64();
+        var generatedNamespace = context.GetGeneratedNamespace();
 
         var resolvedSchema = schema.ResolveIfRequired();
 
@@ -60,8 +67,8 @@ public static class CSharpTypeMapper
                     SubTypes: ImmutableArray<Box>.Empty,
                     Namespace: cachedType.StartsWith("global::System.", StringComparison.Ordinal)
                         ? "System"
-                        : context.Settings.Namespace,
-                    GeneratedNamespace: context.Settings.Namespace,
+                        : generatedNamespace,
+                    GeneratedNamespace: generatedNamespace,
                     IsDeprecated: schema.IsDeprecated(),
                     CSharpTypeWithoutNullability: string.Empty,
                     CSharpTypeWithNullability: "?",
@@ -156,8 +163,9 @@ public static class CSharpTypeMapper
         var type = cachedType ?? GetCSharpTypeCore(context, isArray, isAnyOf, isOneOf, isAllOf);
         var isNullable = schema.IsNullable() || schema.IsNullableAnyOf();
         var collapsed = (isAnyOf || isOneOf || isAllOf) && IsCollapsedAnyOfLike(context);
+        var usesGeneratedJsonHelpers = type.StartsWith($"global::{generatedNamespace}.", StringComparison.Ordinal);
 
-        return new TypeData(
+        return (new TypeData(
             CSharpTypeRaw: type,
             CSharpTypeNullability: GetCSharpNullability(context),
             IsBaseClass: context.IsBaseClass,
@@ -187,8 +195,8 @@ public static class CSharpTypeMapper
             SubTypes: boxedSubTypes,
             Namespace: type.StartsWith("global::System.", StringComparison.Ordinal)
                 ? "System"
-                : context.Settings.Namespace,
-            GeneratedNamespace: context.Settings.Namespace,
+                : generatedNamespace,
+            GeneratedNamespace: generatedNamespace,
             IsDeprecated: schema.IsDeprecated(),
             CSharpTypeWithoutNullability: string.Empty,
             CSharpTypeWithNullability: "?",
@@ -200,7 +208,56 @@ public static class CSharpTypeMapper
             CSharpType: string.Empty,
             IsReferenceable: false,
             ConverterType: string.Empty)
+        {
+            UsesGeneratedJsonHelpers = usesGeneratedJsonHelpers,
+        })
             .WithCSharpComputedValues();
+    }
+
+    private static TypeData CreateReferenceTypeData(SchemaContext context)
+    {
+        var resolvedReference = context.ResolvedReference
+            ?? throw new InvalidOperationException("Resolved reference is required.");
+        var resolvedType = resolvedReference.TypeData != TypeData.Default
+            ? resolvedReference.TypeData
+            : CreateTypeData(resolvedReference);
+        var nullability = GetCSharpNullability(resolvedReference, context);
+
+        if (!resolvedReference.IsFilteredOutModel ||
+            !CSharpNamespacedTypeNameResolver.TryResolve(
+                context.ReferenceId ?? resolvedReference.ComponentId ?? string.Empty,
+                context.Settings,
+                out var namespaced))
+        {
+            return (resolvedType with
+            {
+                CSharpTypeNullability = nullability,
+            }).WithCSharpComputedValues();
+        }
+
+        var namespaceValue = context.Settings.ExcludedModelNamespaceMode switch
+        {
+            ExcludedModelNamespaceMode.SdkRoot => namespaced!.GeneratedNamespace,
+            _ => namespaced!.NamespaceSuffix,
+        };
+
+        return (resolvedType with
+        {
+            CSharpTypeRaw = $"global::{namespaced.GetQualifiedName(context.Settings.ExcludedModelNamespaceMode)}",
+            CSharpTypeNullability = nullability,
+            IsComponent = false,
+            IsEnum = false,
+            AnyOfCount = 0,
+            OneOfCount = 0,
+            AllOfCount = 0,
+            HasDiscriminator = false,
+            Properties = ImmutableArray<string>.Empty,
+            EnumValues = ImmutableArray<string>.Empty,
+            SubTypes = ImmutableArray<Box>.Empty,
+            Namespace = namespaceValue,
+            GeneratedNamespace = namespaceValue,
+            UsesGeneratedJsonHelpers = false,
+        }).WithCSharpComputedValues();
     }
 
     public static bool IsValueType(SchemaContext context)
@@ -304,6 +361,7 @@ public static class CSharpTypeMapper
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
         var resolvedSchema = context.Schema.ResolveIfRequired();
+        var generatedNamespace = context.GetGeneratedNamespace();
 
         return (context.Schema.Type.ToTypeString(), context.Schema.Format) switch
         {
@@ -313,8 +371,8 @@ public static class CSharpTypeMapper
                 $"{FindChildType(context.Children, Hint.ArrayItem)}".AsArray(),
             ("array", _) => "byte[]",
 
-            (_, _) when context.IsNamedAnyOfLike => $"global::{context.Settings.Namespace}.{context.Id}",
-            (_, _) when context.IsDerivedClass => $"global::{context.Settings.Namespace}.{context.Id}",
+            (_, _) when context.IsNamedAnyOfLike => $"global::{generatedNamespace}.{context.Id}",
+            (_, _) when context.IsDerivedClass => $"global::{generatedNamespace}.{context.Id}",
 
             (_, _) when context.Schema.IsNullableAnyOf() =>
                 FindNonNullAnyOfChildType(context.Children) ?? "object",
@@ -323,21 +381,21 @@ public static class CSharpTypeMapper
             (_, _) when isOneOf && !context.IsNamedAnyOfLike && GetDistinctChildTypes(context, Hint.OneOf) is { Length: 1 } distinctOneOf => distinctOneOf[0],
             (_, _) when isAllOf && !context.IsNamedAnyOfLike && GetDistinctChildTypes(context, Hint.AllOf) is { Length: 1 } distinctAllOf => distinctAllOf[0],
 
-            (_, _) when isAnyOf => $"global::{context.Settings.Namespace}.AnyOf<{JoinChildTypes(context, Hint.AnyOf)}>",
-            (_, _) when isOneOf => $"global::{context.Settings.Namespace}.OneOf<{JoinChildTypes(context, Hint.OneOf)}>",
-            (_, _) when isAllOf => $"global::{context.Settings.Namespace}.AllOf<{JoinChildTypes(context, Hint.AllOf)}>",
+            (_, _) when isAnyOf => $"global::{generatedNamespace}.AnyOf<{JoinChildTypes(context, Hint.AnyOf)}>",
+            (_, _) when isOneOf => $"global::{generatedNamespace}.OneOf<{JoinChildTypes(context, Hint.OneOf)}>",
+            (_, _) when isAllOf => $"global::{generatedNamespace}.AllOf<{JoinChildTypes(context, Hint.AllOf)}>",
 
             ("object", _) or (null, _) when
                 context.Schema.IsSchemaReference() &&
                 ((context.Schema.ResolveIfRequired().Properties?.Count ?? 0) > 0 ||
                  !context.Schema.ResolveIfRequired().AdditionalPropertiesAllowed) =>
-                $"global::{context.Settings.Namespace}.{context.Id}",
+                $"global::{generatedNamespace}.{context.Id}",
 
             ("object", _) or (null, "object") when
                 !context.Schema.IsSchemaReference() &&
                 ((context.Schema.Properties?.Count ?? 0) > 0 ||
                  !context.Schema.AdditionalPropertiesAllowed) =>
-                $"global::{context.Settings.Namespace}.{context.Id}",
+                $"global::{generatedNamespace}.{context.Id}",
 
             ("object", _) when context.Schema.AdditionalProperties?.Type is not null =>
                 $"global::System.Collections.Generic.Dictionary<string, {FindChildCSharpType(context.Children, Hint.AdditionalProperties)}>",
@@ -347,10 +405,10 @@ public static class CSharpTypeMapper
                 (resolvedSchema.Properties?.Count ?? 0) == 0 &&
                 resolvedSchema.AdditionalPropertiesAllowed &&
                 resolvedSchema.AdditionalProperties?.Type is null =>
-                $"global::{context.Settings.Namespace}.{context.Id}",
+                $"global::{generatedNamespace}.{context.Id}",
 
             ("string", _) when (context.Schema.Enum?.Count ?? 0) > 0 =>
-                $"global::{context.Settings.Namespace}.{context.Id}",
+                $"global::{generatedNamespace}.{context.Id}",
 
             (null, "boolean") => "bool",
             (null, "float") => "float",
@@ -384,7 +442,7 @@ public static class CSharpTypeMapper
             ("object", _) => "object",
 
             (null, null) when HasDeclaredClassProperties(context) || context.IsEnum =>
-                $"global::{context.Settings.Namespace}.{context.Id}",
+                $"global::{generatedNamespace}.{context.Id}",
             (null, null) when context.Schema.IsConst() => "string",
             (null, null) => "object",
             ("null", _) => "object",

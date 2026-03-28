@@ -139,6 +139,10 @@ public static class Data
         // Detect circular references so ComputeData can skip re-traversal
         // of cyclic subtrees during the first pass.
         DetectCycles(schemas);
+        for (var i = 0; i < schemas.Count; i++)
+        {
+            schemas[i].ComponentSchemas = componentSchemas;
+        }
 
         resolveReferencesTime.Stop();
 #if NET
@@ -299,10 +303,12 @@ public static class Data
                 {
                     if (includedModels.Count > 0 && !includedModels.Contains(x.ComponentId!))
                     {
+                        x.IsFilteredOutModel = true;
                         continue;
                     }
                     if (excludedModels.Contains(x.ComponentId!))
                     {
+                        x.IsFilteredOutModel = true;
                         continue;
                     }
                 }
@@ -474,8 +480,8 @@ public static class Data
             if (x.Style == ModelStyle.Enumeration &&
                 !x.Settings.UsesNewtonsoftJson())
             {
-                convertersBuilder.Add($"global::{settings.Namespace}.JsonConverters.{x.ClassName}JsonConverter");
-                convertersBuilder.Add($"global::{settings.Namespace}.JsonConverters.{x.ClassName}NullableJsonConverter");
+                convertersBuilder.Add($"global::{x.Namespace}.JsonConverters.{x.ClassName}JsonConverter");
+                convertersBuilder.Add($"global::{x.Namespace}.JsonConverters.{x.ClassName}NullableJsonConverter");
             }
         }
         // Named AnyOf converters
@@ -484,7 +490,7 @@ public static class Data
             if (x.Settings.UsesSystemTextJson() &&
                 !string.IsNullOrWhiteSpace(x.Name))
             {
-                convertersBuilder.Add($"global::{settings.Namespace}.JsonConverters.{x.Name}JsonConverter");
+                convertersBuilder.Add($"global::{x.Namespace}.JsonConverters.{x.Name}JsonConverter");
             }
         }
         // Generic AnyOf converters
@@ -498,7 +504,7 @@ public static class Data
                 var sb = s_converterBuilder ??= new System.Text.StringBuilder();
                 sb.Clear();
                 sb.Append("global::");
-                sb.Append(settings.Namespace);
+                sb.Append(x.AnyOfData?.Namespace);
                 sb.Append(".JsonConverters.");
                 sb.Append(x.AnyOfData?.SubType);
                 sb.Append("JsonConverter<");
@@ -822,8 +828,8 @@ public static class Data
             if (value.Style == ModelStyle.Enumeration &&
                 !value.Settings.UsesNewtonsoftJson())
             {
-                convertersBuilder.Add($"global::{settings.Namespace}.JsonConverters.{value.ClassName}JsonConverter");
-                convertersBuilder.Add($"global::{settings.Namespace}.JsonConverters.{value.ClassName}NullableJsonConverter");
+                convertersBuilder.Add($"global::{value.Namespace}.JsonConverters.{value.ClassName}JsonConverter");
+                convertersBuilder.Add($"global::{value.Namespace}.JsonConverters.{value.ClassName}NullableJsonConverter");
             }
         }
 
@@ -832,7 +838,7 @@ public static class Data
             if (value.Settings.UsesSystemTextJson() &&
                 !string.IsNullOrWhiteSpace(value.Name))
             {
-                convertersBuilder.Add($"global::{settings.Namespace}.JsonConverters.{value.Name}JsonConverter");
+                convertersBuilder.Add($"global::{value.Namespace}.JsonConverters.{value.Name}JsonConverter");
             }
         }
 
@@ -846,7 +852,7 @@ public static class Data
                 var sb = s_converterBuilder ??= new System.Text.StringBuilder();
                 sb.Clear();
                 sb.Append("global::");
-                sb.Append(settings.Namespace);
+                sb.Append(schema.AnyOfData?.Namespace);
                 sb.Append(".JsonConverters.");
                 sb.Append(schema.AnyOfData?.SubType);
                 sb.Append("JsonConverter<");

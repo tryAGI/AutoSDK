@@ -67,6 +67,11 @@ public static class OptionsExtensions
                             []).ToImmutableArray(),
             ExcludeModels: (options.GetGlobalOption(nameof(Settings.ExcludeModels), prefix)?.Split(';') ??
                             []).ToImmutableArray(),
+            NamespaceDelimiter: options.GetGlobalOption(nameof(Settings.NamespaceDelimiter), prefix) ?? string.Empty,
+            ExcludedModelNamespaceMode: options.GetEnumGlobalOption(
+                nameof(Settings.ExcludedModelNamespaceMode),
+                prefix,
+                defaultValue: Settings.Default.ExcludedModelNamespaceMode),
             
             GeneratePolyfills: options.GetBoolGlobalOption(nameof(Settings.GeneratePolyfills), prefix, defaultValue: Settings.Default.GeneratePolyfills),
             GenerateExceptions: options.GetBoolGlobalOption(nameof(Settings.GenerateExceptions), prefix, defaultValue: Settings.Default.GenerateExceptions),
