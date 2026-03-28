@@ -20,7 +20,35 @@ public class CliTests
     [TestMethod]
     public async Task Generate_CohereSdk()
     {
-        await GenerateAsync("cohere.yaml", targetFramework: "net10.0");
+        await GenerateAsync(
+            "cohere.yaml",
+            targetFramework: "net10.0",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedFiles = Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories).ToArray();
+                var chatInterface = await ReadRequiredGeneratedFileAsync(generatedFiles, "Oag.ICohereClient.Chat.g.cs");
+                var chatStreamInterface = await ReadRequiredGeneratedFileAsync(generatedFiles, "Oag.ICohereClient.ChatAsStream.g.cs");
+                var chatStreamClient = await ReadRequiredGeneratedFileAsync(generatedFiles, "Oag.CohereClient.ChatAsStream.g.cs");
+                var v2Interface = await ReadRequiredGeneratedFileAsync(generatedFiles, "Oag.IV2Client.Chat2.g.cs");
+                var v2StreamInterface = await ReadRequiredGeneratedFileAsync(generatedFiles, "Oag.IV2Client.Chat2AsStream.g.cs");
+                var v2StreamClient = await ReadRequiredGeneratedFileAsync(generatedFiles, "Oag.V2Client.Chat2AsStream.g.cs");
+
+                chatInterface.Should().Contain("Task<global::Oag.NonStreamedChatResponse> ChatAsync(");
+                chatInterface.Should().NotContain("OneOf<global::Oag.NonStreamedChatResponse, global::Oag.StreamedChatResponse");
+                chatStreamInterface.Should().Contain("IAsyncEnumerable<global::Oag.StreamedChatResponse> ChatAsStreamAsync(");
+                chatStreamInterface.Should().NotContain("OneOf<global::Oag.NonStreamedChatResponse, global::Oag.StreamedChatResponse");
+
+                chatStreamClient.Should().Contain("yield return __streamedResponse;");
+                chatStreamClient.Should().Contain("ReadLineAsync()");
+
+                v2Interface.Should().Contain("Task<global::Oag.ChatResponse> Chat2Async(");
+                v2Interface.Should().NotContain("OneOf<global::Oag.ChatResponse, global::Oag.StreamedChatResponseV2");
+                v2StreamInterface.Should().Contain("IAsyncEnumerable<global::Oag.StreamedChatResponseV2> Chat2AsStreamAsync(");
+                v2StreamInterface.Should().NotContain("OneOf<global::Oag.ChatResponse, global::Oag.StreamedChatResponseV2");
+
+                v2StreamClient.Should().Contain("SseParser");
+                v2StreamClient.Should().Contain("yield return __streamedResponse;");
+            });
     }
 
     [TestMethod]
@@ -585,6 +613,14 @@ components:
         {
             TryDeleteDirectory(tempDirectory);
         }
+    }
+
+    private static async Task<string> ReadRequiredGeneratedFileAsync(
+        IEnumerable<string> generatedFiles,
+        string fileNameSuffix)
+    {
+        var path = generatedFiles.Single(path => string.Equals(Path.GetFileName(path), fileNameSuffix, StringComparison.Ordinal));
+        return await File.ReadAllTextAsync(path);
     }
 
     private static async Task GenerateFromContentAsync(

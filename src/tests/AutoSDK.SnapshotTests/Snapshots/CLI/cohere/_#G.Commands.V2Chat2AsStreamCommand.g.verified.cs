@@ -1,10 +1,10 @@
-﻿//HintName: G.Commands.V2Chat2Command.g.cs
+﻿//HintName: G.Commands.V2Chat2AsStreamCommand.g.cs
 
 #nullable enable
 
 namespace G
 {
-    internal sealed partial class V2Chat2Command : global::System.CommandLine.Command
+    internal sealed partial class V2Chat2AsStreamCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
         private readonly global::System.IServiceProvider _serviceProvider;
@@ -36,7 +36,7 @@ namespace G
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
 
-            global::G.ChatResponse? response,
+            global::System.Collections.Generic.IAsyncEnumerable<global::G.StreamedChatResponseV2> response,
             global::System.Threading.CancellationToken cancellationToken);
 
         private global::System.CommandLine.Argument<string> Model { get; } = new(
@@ -202,7 +202,7 @@ If tool_choice isn't specified, then the model is free to choose whether to use 
         };
 
 
-        public V2Chat2Command(
+        public V2Chat2AsStreamCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
             name: "chat2",
@@ -289,7 +289,7 @@ Follow the [Migration Guide](https://docs.cohere.com/v2/docs/migrating-v1-to-v2)
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.V2.Chat2Async(
+            var response = _client.V2.Chat2AsStreamAsync(
                 xClientName: xClientName,
                 model: model,
                 messages: messages,

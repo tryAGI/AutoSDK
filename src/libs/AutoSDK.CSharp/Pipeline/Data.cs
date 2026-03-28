@@ -1016,6 +1016,7 @@ public static class Data
 
     private static IEnumerable<EndPoint> CreateEndPoints(OperationContext operation)
     {
+        var fernStreaming = FernStreamingMetadata.TryCreate(operation);
         var responseContentTypes = (operation.Operation.Responses ?? new Dictionary<string, IOpenApiResponse>())
             .SelectMany(response => (response.Value?.Content ?? new Dictionary<string, IOpenApiMediaType>())
                 .Where(_ => response.Key.StartsWith("2", StringComparison.OrdinalIgnoreCase))
@@ -1032,12 +1033,47 @@ public static class Data
 
         var endPoints = new List<EndPoint>();
 
+        if (fernStreaming?.HasRequestStreamCondition == true)
+        {
+            endPoints.Add(CSharpEndPointFactory.CreateEndPoint(
+                operation,
+                preferredMimeType: "application/json",
+                forcedRequestStreamValue: false,
+                successResponseOverride: fernStreaming.RegularResponseOverride));
+            endPoints.Add(CSharpEndPointFactory.CreateEndPoint(
+                operation,
+                preferredMimeType: GetPreferredStreamMimeType(responseContentTypes, fernStreaming.StreamFormat),
+                methodNameSuffix: GetStreamMethodSuffix(
+                    hasRegularJsonVariant: true,
+                    hasAnotherStreamingVariant: false,
+                    streamFormat: fernStreaming.StreamFormat),
+                forcedRequestStreamValue: true,
+                successResponseOverride: fernStreaming.StreamResponseOverride,
+                streamFormatOverride: fernStreaming.StreamFormat,
+                streamTerminator: fernStreaming.Terminator));
+            return endPoints;
+        }
+
+        if (fernStreaming != null &&
+            !hasSse &&
+            !hasNdjson)
+        {
+            endPoints.Add(CSharpEndPointFactory.CreateEndPoint(
+                operation,
+                preferredMimeType: GetPreferredStreamMimeType(responseContentTypes, fernStreaming.StreamFormat),
+                successResponseOverride: fernStreaming.StreamResponseOverride ?? fernStreaming.RegularResponseOverride,
+                streamFormatOverride: fernStreaming.StreamFormat,
+                streamTerminator: fernStreaming.Terminator));
+            return endPoints;
+        }
+
         if (hasJson)
         {
             endPoints.Add(CSharpEndPointFactory.CreateEndPoint(
                 operation,
                 preferredMimeType: "application/json",
-                forcedRequestStreamValue: hasNdjson || hasSse ? false : null));
+                forcedRequestStreamValue: hasNdjson || hasSse ? false : null,
+                successResponseOverride: fernStreaming?.RegularResponseOverride));
         }
 
         if (hasSse)
@@ -1049,7 +1085,12 @@ public static class Data
                     hasRegularJsonVariant: hasJson,
                     hasAnotherStreamingVariant: hasNdjson,
                     streamFormat: StreamFormat.ServerSentEvents),
-                forcedRequestStreamValue: hasJson ? true : null));
+                forcedRequestStreamValue: hasJson ? true : null,
+                successResponseOverride: fernStreaming?.StreamResponseOverride,
+                streamFormatOverride: fernStreaming?.StreamFormat == StreamFormat.ServerSentEvents
+                    ? fernStreaming.StreamFormat
+                    : null,
+                streamTerminator: fernStreaming?.Terminator));
         }
 
         if (hasNdjson)
@@ -1061,7 +1102,12 @@ public static class Data
                     hasRegularJsonVariant: hasJson,
                     hasAnotherStreamingVariant: hasSse,
                     streamFormat: StreamFormat.Ndjson),
-                forcedRequestStreamValue: hasJson ? true : null));
+                forcedRequestStreamValue: hasJson ? true : null,
+                successResponseOverride: fernStreaming?.StreamResponseOverride,
+                streamFormatOverride: fernStreaming?.StreamFormat == StreamFormat.Ndjson
+                    ? fernStreaming.StreamFormat
+                    : null,
+                streamTerminator: fernStreaming?.Terminator));
         }
 
         if (endPoints.Count == 0)
@@ -1070,6 +1116,30 @@ public static class Data
         }
 
         return endPoints;
+    }
+
+    private static string? GetPreferredStreamMimeType(
+        IReadOnlyCollection<string> responseContentTypes,
+        StreamFormat streamFormat)
+    {
+        if (streamFormat == StreamFormat.ServerSentEvents &&
+            responseContentTypes.Any(static x => x.Contains("text/event-stream", StringComparison.OrdinalIgnoreCase)))
+        {
+            return "text/event-stream";
+        }
+
+        if (streamFormat == StreamFormat.Ndjson &&
+            responseContentTypes.Any(static x => x.Contains("application/x-ndjson", StringComparison.OrdinalIgnoreCase)))
+        {
+            return "application/x-ndjson";
+        }
+
+        if (responseContentTypes.Any(static x => x.Contains("application/json", StringComparison.OrdinalIgnoreCase)))
+        {
+            return "application/json";
+        }
+
+        return null;
     }
 
     private static string? GetStreamMethodSuffix(

@@ -33,6 +33,7 @@ public record struct EndPoint(
     string ExperimentalStage,
     TypeData RequestType,
     bool? ForcedRequestStreamValue,
+    string StreamTerminator,
     string Remarks
 )
 {

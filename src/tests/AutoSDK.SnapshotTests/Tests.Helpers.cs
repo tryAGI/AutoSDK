@@ -148,7 +148,8 @@ public partial class Tests : VerifyBase
 
         var referenceAssemblies = LatestReferenceAssemblies.Net80.AddPackages([
             new PackageIdentity("System.CommandLine", "2.0.0-beta5.25306.1"),
-            new PackageIdentity("Microsoft.Extensions.DependencyInjection", "9.0.6")
+            new PackageIdentity("Microsoft.Extensions.DependencyInjection", "9.0.6"),
+            new PackageIdentity("System.Net.ServerSentEvents", "9.0.0")
         ]);
         var references = await referenceAssemblies.ResolveAsync(null, cancellationToken);
         var trees = new List<SyntaxTree>

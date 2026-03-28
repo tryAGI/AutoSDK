@@ -475,10 +475,12 @@ namespace {endPoint.Settings.Namespace}
                 .Create(__stream).EnumerateAsync(cancellationToken))
             {{
                 var __content = __sseEvent.Data;
-                if (__content == ""[DONE]"")
+{(!string.IsNullOrEmpty(endPoint.StreamTerminator)
+    ? $@"                if (__content == ""{endPoint.StreamTerminator.Replace("\"", "\\\"")}"")
                 {{
                     yield break;
-                }}
+                }}"
+    : TrimmedLine)}
 
                 var __streamedResponse = {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
                                        throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(

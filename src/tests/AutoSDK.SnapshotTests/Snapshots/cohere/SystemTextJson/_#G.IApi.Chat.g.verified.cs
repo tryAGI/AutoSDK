@@ -15,7 +15,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.OneOf<global::G.NonStreamedChatResponse, global::G.StreamedChatResponse?>> ChatAsync(
+        global::System.Threading.Tasks.Task<global::G.NonStreamedChatResponse> ChatAsync(
 
             global::G.ChatRequest request,
             string? xClientName = default,
@@ -35,12 +35,6 @@ namespace G
         /// <param name="model">
         /// The name of a compatible [Cohere model](https://docs.cohere.com/docs/models) or the ID of a [fine-tuned](https://docs.cohere.com/docs/chat-fine-tuning) model.<br/>
         /// Compatible Deployments: Cohere Platform, Private Deployments
-        /// </param>
-        /// <param name="stream">
-        /// Defaults to `false`.<br/>
-        /// When `true`, the response will be a JSON stream of events. The final event will contain the complete response, and will have an `event_type` of `"stream-end"`.<br/>
-        /// Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.<br/>
-        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </param>
         /// <param name="preamble">
         /// When specified, the default Cohere preamble will be replaced with the provided one. Preambles are a part of the prompt used to adjust the model's overall behavior and conversation style, and use the `SYSTEM` role.<br/>
@@ -202,7 +196,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.OneOf<global::G.NonStreamedChatResponse, global::G.StreamedChatResponse?>> ChatAsync(
+        global::System.Threading.Tasks.Task<global::G.NonStreamedChatResponse> ChatAsync(
             string message,
             int maxTokens,
             int maxInputTokens,
@@ -214,7 +208,6 @@ namespace G
             string? xClientName = default,
             global::G.ChatAccepts? accepts = default,
             string? model = default,
-            bool? stream = default,
             string? preamble = default,
             global::System.Collections.Generic.IList<global::G.Message>? chatHistory = default,
             string? conversationId = default,

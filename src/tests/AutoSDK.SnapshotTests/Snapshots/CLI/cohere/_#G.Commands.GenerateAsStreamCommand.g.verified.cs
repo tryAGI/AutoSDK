@@ -1,10 +1,10 @@
-﻿//HintName: G.Commands.GenerateCommand.g.cs
+﻿//HintName: G.Commands.GenerateAsStreamCommand.g.cs
 
 #nullable enable
 
 namespace G
 {
-    internal sealed partial class GenerateCommand : global::System.CommandLine.Command
+    internal sealed partial class GenerateAsStreamCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
         private readonly global::System.IServiceProvider _serviceProvider;
@@ -33,7 +33,7 @@ namespace G
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
 
-            global::G.Generation? response,
+            global::System.Collections.Generic.IAsyncEnumerable<global::G.GenerateStreamedResponse> response,
             global::System.Threading.CancellationToken cancellationToken);
 
         private global::System.CommandLine.Argument<string> Prompt { get; } = new(
@@ -167,7 +167,7 @@ WARNING: `ALL` is deprecated, and will be removed in a future release.",
         };
 
 
-        public GenerateCommand(
+        public GenerateAsStreamCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
             name: "generate",
@@ -246,7 +246,7 @@ Generates realistic text conditioned on a given input.")
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.GenerateAsync(
+            var response = _client.GenerateAsStreamAsync(
                 xClientName: xClientName,
                 prompt: prompt,
                 model: model,

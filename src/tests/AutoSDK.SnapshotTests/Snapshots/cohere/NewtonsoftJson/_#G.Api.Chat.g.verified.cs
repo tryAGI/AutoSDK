@@ -36,7 +36,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.OneOf<global::G.NonStreamedChatResponse, global::G.StreamedChatResponse?>> ChatAsync(
+        public async global::System.Threading.Tasks.Task<global::G.NonStreamedChatResponse> ChatAsync(
 
             global::G.ChatRequest request,
             string? xClientName = default,
@@ -45,6 +45,35 @@ namespace G
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+
+            request = new global::G.ChatRequest
+            {
+                Message = request.Message,
+                Model = request.Model,
+                Stream = false,
+                Preamble = request.Preamble,
+                ChatHistory = request.ChatHistory,
+                ConversationId = request.ConversationId,
+                PromptTruncation = request.PromptTruncation,
+                Connectors = request.Connectors,
+                SearchQueriesOnly = request.SearchQueriesOnly,
+                Documents = request.Documents,
+                CitationQuality = request.CitationQuality,
+                Temperature = request.Temperature,
+                MaxTokens = request.MaxTokens,
+                MaxInputTokens = request.MaxInputTokens,
+                K = request.K,
+                P = request.P,
+                Seed = request.Seed,
+                StopSequences = request.StopSequences,
+                FrequencyPenalty = request.FrequencyPenalty,
+                PresencePenalty = request.PresencePenalty,
+                Tools = request.Tools,
+                ToolResults = request.ToolResults,
+                ForceSingleStep = request.ForceSingleStep,
+                ResponseFormat = request.ResponseFormat,
+                SafetyMode = request.SafetyMode,
+            };
             PrepareArguments(
                 client: HttpClient);
             PrepareChatArguments(
@@ -602,7 +631,7 @@ namespace G
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::G.OneOf<global::G.NonStreamedChatResponse, global::G.StreamedChatResponse?>.FromJson(__content, JsonSerializerOptions) ??
+                        global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.NonStreamedChatResponse?>(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -633,7 +662,7 @@ namespace G
                     ).ConfigureAwait(false);
 
                     return
-                        await global::G.OneOf<global::G.NonStreamedChatResponse, global::G.StreamedChatResponse?>.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<global::G.NonStreamedChatResponse?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__content))) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -679,12 +708,6 @@ namespace G
         /// <param name="model">
         /// The name of a compatible [Cohere model](https://docs.cohere.com/docs/models) or the ID of a [fine-tuned](https://docs.cohere.com/docs/chat-fine-tuning) model.<br/>
         /// Compatible Deployments: Cohere Platform, Private Deployments
-        /// </param>
-        /// <param name="stream">
-        /// Defaults to `false`.<br/>
-        /// When `true`, the response will be a JSON stream of events. The final event will contain the complete response, and will have an `event_type` of `"stream-end"`.<br/>
-        /// Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.<br/>
-        /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </param>
         /// <param name="preamble">
         /// When specified, the default Cohere preamble will be replaced with the provided one. Preambles are a part of the prompt used to adjust the model's overall behavior and conversation style, and use the `SYSTEM` role.<br/>
@@ -846,7 +869,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.OneOf<global::G.NonStreamedChatResponse, global::G.StreamedChatResponse?>> ChatAsync(
+        public async global::System.Threading.Tasks.Task<global::G.NonStreamedChatResponse> ChatAsync(
             string message,
             int maxTokens,
             int maxInputTokens,
@@ -858,7 +881,6 @@ namespace G
             string? xClientName = default,
             global::G.ChatAccepts? accepts = default,
             string? model = default,
-            bool? stream = default,
             string? preamble = default,
             global::System.Collections.Generic.IList<global::G.Message>? chatHistory = default,
             string? conversationId = default,
@@ -880,7 +902,7 @@ namespace G
             {
                 Message = message,
                 Model = model,
-                Stream = stream,
+                Stream = false,
                 Preamble = preamble,
                 ChatHistory = chatHistory,
                 ConversationId = conversationId,

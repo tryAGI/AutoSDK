@@ -14,7 +14,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.OneOf<global::G.ChatResponse, global::G.StreamedChatResponseV2?>> Chat2Async(
+        global::System.Threading.Tasks.Task<global::G.ChatResponse> Chat2Async(
 
             global::G.Chatv2Request request,
             string? xClientName = default,
@@ -25,11 +25,6 @@ namespace G
         /// Follow the [Migration Guide](https://docs.cohere.com/v2/docs/migrating-v1-to-v2) for instructions on moving from API v1 to API v2.
         /// </summary>
         /// <param name="xClientName"></param>
-        /// <param name="stream">
-        /// Defaults to `false`.<br/>
-        /// When `true`, the response will be a SSE stream of events.<br/>
-        /// Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.
-        /// </param>
         /// <param name="model">
         /// The name of a compatible [Cohere model](https://docs.cohere.com/v2/docs/models) or the ID of a [fine-tuned](https://docs.cohere.com/v2/docs/chat-fine-tuning) model.
         /// </param>
@@ -117,11 +112,10 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.OneOf<global::G.ChatResponse, global::G.StreamedChatResponseV2?>> Chat2Async(
+        global::System.Threading.Tasks.Task<global::G.ChatResponse> Chat2Async(
             string model,
             global::System.Collections.Generic.IList<global::G.ChatMessageV2> messages,
             string? xClientName = default,
-            bool? stream = default,
             global::G.ReasoningEffort? reasoningEffort = default,
             global::System.Collections.Generic.IList<global::G.ToolV2>? tools = default,
             bool? strictTools = default,

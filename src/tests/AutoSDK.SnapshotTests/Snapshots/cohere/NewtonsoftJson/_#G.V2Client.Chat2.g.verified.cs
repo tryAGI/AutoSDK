@@ -33,7 +33,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.OneOf<global::G.ChatResponse, global::G.StreamedChatResponseV2?>> Chat2Async(
+        public async global::System.Threading.Tasks.Task<global::G.ChatResponse> Chat2Async(
 
             global::G.Chatv2Request request,
             string? xClientName = default,
@@ -41,6 +41,30 @@ namespace G
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+
+            request = new global::G.Chatv2Request
+            {
+                Stream = false,
+                Model = request.Model,
+                Messages = request.Messages,
+                ReasoningEffort = request.ReasoningEffort,
+                Tools = request.Tools,
+                StrictTools = request.StrictTools,
+                Documents = request.Documents,
+                CitationOptions = request.CitationOptions,
+                ResponseFormat = request.ResponseFormat,
+                SafetyMode = request.SafetyMode,
+                MaxTokens = request.MaxTokens,
+                StopSequences = request.StopSequences,
+                Temperature = request.Temperature,
+                Seed = request.Seed,
+                FrequencyPenalty = request.FrequencyPenalty,
+                PresencePenalty = request.PresencePenalty,
+                K = request.K,
+                P = request.P,
+                Logprobs = request.Logprobs,
+                ToolChoice = request.ToolChoice,
+            };
             PrepareArguments(
                 client: HttpClient);
             PrepareChat2Arguments(
@@ -587,7 +611,7 @@ namespace G
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::G.OneOf<global::G.ChatResponse, global::G.StreamedChatResponseV2?>.FromJson(__content, JsonSerializerOptions) ??
+                        global::G.ChatResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -618,7 +642,7 @@ namespace G
                     ).ConfigureAwait(false);
 
                     return
-                        await global::G.OneOf<global::G.ChatResponse, global::G.StreamedChatResponseV2?>.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::G.ChatResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -656,11 +680,6 @@ namespace G
         /// Follow the [Migration Guide](https://docs.cohere.com/v2/docs/migrating-v1-to-v2) for instructions on moving from API v1 to API v2.
         /// </summary>
         /// <param name="xClientName"></param>
-        /// <param name="stream">
-        /// Defaults to `false`.<br/>
-        /// When `true`, the response will be a SSE stream of events.<br/>
-        /// Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.
-        /// </param>
         /// <param name="model">
         /// The name of a compatible [Cohere model](https://docs.cohere.com/v2/docs/models) or the ID of a [fine-tuned](https://docs.cohere.com/v2/docs/chat-fine-tuning) model.
         /// </param>
@@ -748,11 +767,10 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.OneOf<global::G.ChatResponse, global::G.StreamedChatResponseV2?>> Chat2Async(
+        public async global::System.Threading.Tasks.Task<global::G.ChatResponse> Chat2Async(
             string model,
             global::System.Collections.Generic.IList<global::G.ChatMessageV2> messages,
             string? xClientName = default,
-            bool? stream = default,
             global::G.ReasoningEffort? reasoningEffort = default,
             global::System.Collections.Generic.IList<global::G.ToolV2>? tools = default,
             bool? strictTools = default,
@@ -774,7 +792,7 @@ namespace G
         {
             var __request = new global::G.Chatv2Request
             {
-                Stream = stream,
+                Stream = false,
                 Model = model,
                 Messages = messages,
                 ReasoningEffort = reasoningEffort,

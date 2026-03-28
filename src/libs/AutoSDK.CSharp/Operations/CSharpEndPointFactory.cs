@@ -18,7 +18,10 @@ public static class CSharpEndPointFactory
         OperationContext operation,
         string? preferredMimeType = null,
         string? methodNameSuffix = null,
-        bool? forcedRequestStreamValue = null)
+        bool? forcedRequestStreamValue = null,
+        EndPointResponse? successResponseOverride = null,
+        StreamFormat? streamFormatOverride = null,
+        string? streamTerminator = null)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
 
@@ -119,32 +122,14 @@ public static class CSharpEndPointFactory
                 : responses.Any(x => x.MimeType.Contains("text/event-stream"))
                     ? StreamFormat.ServerSentEvents
                     : StreamFormat.None;
-
-        if (streamFormat == StreamFormat.None &&
-            HasBooleanFernStreamingExtension(operation.Operation))
+        if (successResponseOverride is EndPointResponse responseOverride)
         {
-            var isJsonStream =
-                successResponse.MimeType.Contains("application/json", StringComparison.OrdinalIgnoreCase) ||
-                successResponse.MimeType.Contains("+json", StringComparison.OrdinalIgnoreCase);
+            successResponse = responseOverride;
+        }
 
-            if (isJsonStream)
-            {
-                streamFormat = StreamFormat.Ndjson;
-            }
-            else
-            {
-                streamFormat = StreamFormat.Binary;
-                successResponse = successResponse with
-                {
-                    ContentType = ContentType.Stream,
-                    Type = (TypeData.Default with
-                    {
-                        CSharpTypeRaw = "global::System.IO.Stream",
-                        Namespace = "System",
-                        GeneratedNamespace = operation.Settings.Namespace,
-                    }).WithCSharpComputedValues(),
-                };
-            }
+        if (streamFormatOverride is StreamFormat streamFormatValue)
+        {
+            streamFormat = streamFormatValue;
         }
 
         var endPointId = string.IsNullOrWhiteSpace(methodNameSuffix)
@@ -193,6 +178,9 @@ public static class CSharpEndPointFactory
             ExperimentalStage: operation.Operation.GetExperimentalStage(),
             RequestType: requestType ?? TypeData.Default,
             ForcedRequestStreamValue: forcedRequestStreamValue,
+            StreamTerminator: streamFormat == StreamFormat.ServerSentEvents
+                ? streamTerminator ?? "[DONE]"
+                : string.Empty,
             Remarks: GetCodeSamplesRemarks(operation.Operation));
     }
 
@@ -279,23 +267,5 @@ public static class CSharpEndPointFactory
         }
 
         return false;
-    }
-
-    private static bool HasBooleanFernStreamingExtension(OpenApiOperation operation)
-    {
-        if (!(operation.Extensions ?? new Dictionary<string, IOpenApiExtension>())
-            .TryGetValue("x-fern-streaming", out var extension))
-        {
-            return false;
-        }
-
-        var jsonNode = OpenApiExtensions.TryGetExtensionJsonNode(extension);
-        if (jsonNode is JsonValue jsonValue &&
-            jsonValue.TryGetValue<bool>(out var isStreaming))
-        {
-            return isStreaming;
-        }
-
-        return bool.TryParse(jsonNode?.ToString() ?? extension.ToString(), out var parsed) && parsed;
     }
 }

@@ -1,4 +1,4 @@
-﻿//HintName: G.IV2Client.Chat2.g.cs
+﻿//HintName: G.IV2Client.Chat2AsStream.g.cs
 #nullable enable
 
 namespace G
@@ -14,7 +14,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.ChatResponse> Chat2Async(
+        global::System.Collections.Generic.IAsyncEnumerable<global::G.StreamedChatResponseV2> Chat2AsStreamAsync(
 
             global::G.Chatv2Request request,
             string? xClientName = default,
@@ -112,7 +112,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.ChatResponse> Chat2Async(
+        global::System.Collections.Generic.IAsyncEnumerable<global::G.StreamedChatResponseV2> Chat2AsStreamAsync(
             string model,
             global::System.Collections.Generic.IList<global::G.ChatMessageV2> messages,
             string? xClientName = default,

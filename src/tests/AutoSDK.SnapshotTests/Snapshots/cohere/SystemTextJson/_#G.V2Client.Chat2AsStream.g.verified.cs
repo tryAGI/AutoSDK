@@ -1,10 +1,24 @@
-﻿//HintName: G.IV2Client.Chat2.g.cs
+﻿//HintName: G.V2Client.Chat2AsStream.g.cs
+
 #nullable enable
 
 namespace G
 {
-    public partial interface IV2Client
+    public partial class V2Client
     {
+        partial void PrepareChat2AsStreamArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string? xClientName,
+            global::G.Chatv2Request request);
+        partial void PrepareChat2AsStreamRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string? xClientName,
+            global::G.Chatv2Request request);
+        partial void ProcessChat2AsStreamResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         /// <summary>
         /// Chat V2 API<br/>
         /// Generates a text response to a user message and streams it down, token by token. To learn how to use the Chat API with streaming follow our [Text Generation guides](https://docs.cohere.com/v2/docs/chat-api).<br/>
@@ -14,11 +28,168 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.ChatResponse> Chat2Async(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.StreamedChatResponseV2> Chat2AsStreamAsync(
 
             global::G.Chatv2Request request,
             string? xClientName = default,
-            global::System.Threading.CancellationToken cancellationToken = default);
+            [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
+
+            request = new global::G.Chatv2Request
+            {
+                Stream = true,
+                Model = request.Model,
+                Messages = request.Messages,
+                ReasoningEffort = request.ReasoningEffort,
+                Tools = request.Tools,
+                StrictTools = request.StrictTools,
+                Documents = request.Documents,
+                CitationOptions = request.CitationOptions,
+                ResponseFormat = request.ResponseFormat,
+                SafetyMode = request.SafetyMode,
+                MaxTokens = request.MaxTokens,
+                StopSequences = request.StopSequences,
+                Temperature = request.Temperature,
+                Seed = request.Seed,
+                FrequencyPenalty = request.FrequencyPenalty,
+                PresencePenalty = request.PresencePenalty,
+                K = request.K,
+                P = request.P,
+                Logprobs = request.Logprobs,
+                ToolChoice = request.ToolChoice,
+            };
+            PrepareArguments(
+                client: HttpClient);
+            PrepareChat2AsStreamArguments(
+                httpClient: HttpClient,
+                xClientName: ref xClientName,
+                request: request);
+
+            var __pathBuilder = new global::G.PathBuilder(
+                path: "/v2/chat",
+                baseUri: HttpClient.BaseAddress); 
+            var __path = __pathBuilder.ToString();
+            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                method: global::System.Net.Http.HttpMethod.Post,
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+#if NET6_0_OR_GREATER
+            __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+            __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
+
+            foreach (var __authorization in Authorizations)
+            {
+                if (__authorization.Type == "Http" ||
+                    __authorization.Type == "OAuth2")
+                {
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
+                }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Header")
+                {
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                }
+            }
+
+            if (xClientName != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("X-Client-Name", xClientName.ToString());
+            }
+
+            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
+                encoding: global::System.Text.Encoding.UTF8,
+                mediaType: "application/json");
+            __httpRequest.Content = __httpRequestContent;
+
+            PrepareRequest(
+                client: HttpClient,
+                request: __httpRequest);
+            PrepareChat2AsStreamRequest(
+                httpClient: HttpClient,
+                httpRequestMessage: __httpRequest,
+                xClientName: xClientName,
+                request: request);
+
+            using var __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseHeadersRead,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: HttpClient,
+                response: __response);
+            ProcessChat2AsStreamResponse(
+                httpClient: HttpClient,
+                httpResponseMessage: __response);
+
+            try
+            {
+                __response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException __ex)
+            {
+                string? __content = null;
+                try
+                {
+                    __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+                }
+                catch (global::System.Exception)
+                {
+                }
+
+                throw new global::G.ApiException(
+                    message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __ex,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+
+            using var __stream = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                cancellationToken
+#endif
+            ).ConfigureAwait(false);
+
+            await foreach (var __sseEvent in global::System.Net.ServerSentEvents.SseParser
+                .Create(__stream).EnumerateAsync(cancellationToken))
+            {
+                var __content = __sseEvent.Data;
+                if (__content == "[DONE]")
+                {
+                    yield break;
+                }
+
+                var __streamedResponse = global::G.StreamedChatResponseV2.FromJson(__content, JsonSerializerOptions) ??
+                                       throw new global::G.ApiException(
+                                           message: $"Response deserialization failed for \"{__content}\" ",
+                                           statusCode: __response.StatusCode)
+                                       {
+                                           ResponseBody = __content,
+                                           ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                               __response.Headers,
+                                               h => h.Key,
+                                               h => h.Value),
+                                       };
+
+                yield return __streamedResponse;
+            }
+        }
         /// <summary>
         /// Chat V2 API<br/>
         /// Generates a text response to a user message and streams it down, token by token. To learn how to use the Chat API with streaming follow our [Text Generation guides](https://docs.cohere.com/v2/docs/chat-api).<br/>
@@ -112,7 +283,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.ChatResponse> Chat2Async(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.StreamedChatResponseV2> Chat2AsStreamAsync(
             string model,
             global::System.Collections.Generic.IList<global::G.ChatMessageV2> messages,
             string? xClientName = default,
@@ -133,6 +304,41 @@ namespace G
             float? p = default,
             bool? logprobs = default,
             global::G.Chatv2RequestToolChoice? toolChoice = default,
-            global::System.Threading.CancellationToken cancellationToken = default);
+            [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __request = new global::G.Chatv2Request
+            {
+                Stream = true,
+                Model = model,
+                Messages = messages,
+                ReasoningEffort = reasoningEffort,
+                Tools = tools,
+                StrictTools = strictTools,
+                Documents = documents,
+                CitationOptions = citationOptions,
+                ResponseFormat = responseFormat,
+                SafetyMode = safetyMode,
+                MaxTokens = maxTokens,
+                StopSequences = stopSequences,
+                Temperature = temperature,
+                Seed = seed,
+                FrequencyPenalty = frequencyPenalty,
+                PresencePenalty = presencePenalty,
+                K = k,
+                P = p,
+                Logprobs = logprobs,
+                ToolChoice = toolChoice,
+            };
+
+            var __enumerable = Chat2AsStreamAsync(
+                xClientName: xClientName,
+                request: __request,
+                cancellationToken: cancellationToken);
+
+            await foreach (var __response in __enumerable)
+            {
+                yield return __response;
+            }
+        }
     }
 }

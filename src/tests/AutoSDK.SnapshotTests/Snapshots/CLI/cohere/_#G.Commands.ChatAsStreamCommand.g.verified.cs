@@ -1,10 +1,10 @@
-﻿//HintName: G.Commands.ChatCommand.g.cs
+﻿//HintName: G.Commands.ChatAsStreamCommand.g.cs
 
 #nullable enable
 
 namespace G
 {
-    internal sealed partial class ChatCommand : global::System.CommandLine.Command
+    internal sealed partial class ChatAsStreamCommand : global::System.CommandLine.Command
     {
         private readonly G.IApi _client;
         private readonly global::System.IServiceProvider _serviceProvider;
@@ -42,7 +42,7 @@ namespace G
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
 
-            global::G.NonStreamedChatResponse response,
+            global::System.Collections.Generic.IAsyncEnumerable<global::G.StreamedChatResponse> response,
             global::System.Threading.CancellationToken cancellationToken);
 
         private global::System.CommandLine.Argument<string> Message { get; } = new(
@@ -339,7 +339,7 @@ Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private D
         };
 
 
-        public ChatCommand(
+        public ChatAsStreamCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
             name: "chat",
@@ -443,7 +443,7 @@ To learn how to use the Chat API and RAG follow our [Text Generation guides](htt
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            var response = await _client.ChatAsync(
+            var response = _client.ChatAsStreamAsync(
                 xClientName: xClientName,
                 accepts: accepts,
                 message: message,

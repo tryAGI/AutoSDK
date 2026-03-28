@@ -18,6 +18,13 @@ public static partial class Sources
 
         var clientType = $"{endPoint.GlobalSettings.Namespace}.I{endPoint.GlobalSettings.ClassName}";
         var canReturn = endPoint.SuccessResponse.Type != TypeData.Default;
+        var responseType = !canReturn
+            ? null
+            : endPoint.RawStream
+                ? "global::System.IO.Stream"
+                : endPoint.EnumerableStream
+                    ? $"global::System.Collections.Generic.IAsyncEnumerable<{endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability}>"
+                    : endPoint.SuccessResponse.Type.CSharpType;
 
         var hasDirectRequestBody =
             !string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) &&
@@ -26,6 +33,15 @@ public static partial class Sources
              endPoint.RequestType.IsBase64 ||
              endPoint.RequestType.IsBinary ||
              endPoint.RequestType.CSharpTypeWithoutNullability is "string");
+        var cliParameters = endPoint.Parameters
+            .Where(x => !(endPoint.ForcedRequestStreamValue is not null && IsRequestStreamParameter(x)))
+            .ToArray();
+        var requiredCliParameters = cliParameters
+            .Where(x => x.IsRequired)
+            .ToArray();
+        var optionalCliParameters = cliParameters
+            .Where(x => !x.IsRequired)
+            .ToArray();
 
         var newModifierIfRequired = (MethodParameter parameter) =>
             parameter.Name.ToPropertyName() is
@@ -58,18 +74,18 @@ namespace {endPoint.Settings.Namespace}
         partial void Initialize();
         partial void Validate(
             global::System.CommandLine.ParseResult parseResult,
-{endPoint.Parameters.Select((x, i) => @$"
+{cliParameters.Select((x, i) => @$"
             {x.Type.CSharpType} {x.ParameterName},").Inject()}
 {(hasDirectRequestBody ? $@"
             {endPoint.RequestType.CSharpType} request," : TrimmedLine)}
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
-{(canReturn ? $@"
-            {endPoint.SuccessResponse.Type.CSharpType} response," : TrimmedLine)}
+{(responseType is not null ? $@"
+            {responseType} response," : TrimmedLine)}
             global::System.Threading.CancellationToken cancellationToken);
 
-{endPoint.Parameters.Where(x => x.IsRequired).Select((x, i) => @$"
+{requiredCliParameters.Select((x, i) => @$"
         private {newModifierIfRequired(x)}global::System.CommandLine.Argument<{x.Type.CSharpType}> {x.Name.ToPropertyName()} {{ get; }} = new(
             name: ""{x.ParameterName}"")
         {{
@@ -77,7 +93,7 @@ namespace {endPoint.Settings.Namespace}
         }};
 ").Inject()}
 
-{endPoint.Parameters.Where(x => !x.IsRequired).Select((x, i) => @$"
+{optionalCliParameters.Select((x, i) => @$"
         private {newModifierIfRequired(x)}global::System.CommandLine.Option<{x.Type.CSharpType}> {x.Name.ToPropertyName()} {{ get; }} = new(
             name: ""{x.ParameterName}"")
         {{
@@ -102,9 +118,9 @@ namespace {endPoint.Settings.Namespace}
             _client = client;
             _serviceProvider = serviceProvider;
 
-{endPoint.Parameters.Where(x => x.IsRequired).Select((x, i) => @$"
+{requiredCliParameters.Select((x, i) => @$"
             Arguments.Add({x.Name.ToPropertyName()});").Inject()}
-{endPoint.Parameters.Where(x => !x.IsRequired).Select((x, i) => @$"
+{optionalCliParameters.Select((x, i) => @$"
             Options.Add({x.Name.ToPropertyName()});").Inject()}
 {(hasDirectRequestBody ? @"
             Arguments.Add(RequestBody);" : TrimmedLine)}
@@ -118,7 +134,7 @@ namespace {endPoint.Settings.Namespace}
             global::System.CommandLine.ParseResult parseResult,
             global::System.Threading.CancellationToken cancellationToken = default)
         {{
-{endPoint.Parameters.Select((x, i) => @$"
+{cliParameters.Select((x, i) => @$"
             var {x.ParameterName} = parseResult.GetRequiredValue({x.Name.ToPropertyName()});").Inject()}
 {(hasDirectRequestBody ? $@"
             var __requestBodyJson = parseResult.GetRequiredValue(RequestBody);
@@ -127,7 +143,7 @@ namespace {endPoint.Settings.Namespace}
 
             Validate(
                 parseResult: parseResult,
-{endPoint.Parameters.Select((x, i) => @$"
+{cliParameters.Select((x, i) => @$"
                 {x.ParameterName}: {x.ParameterName},").Inject()}
 {(hasDirectRequestBody ? @"
                 request: request," : TrimmedLine)}
@@ -135,11 +151,13 @@ namespace {endPoint.Settings.Namespace}
 
             // ReSharper disable once RedundantAssignment
             {(!canReturn
-                ? string.Empty
-                : "var response = ")}await _client.{(!string.IsNullOrWhiteSpace(endPoint.Tag.SafeName)
+                ? "await "
+                : endPoint.EnumerableStream
+                    ? "var response = "
+                    : "var response = await ")}_client.{(!string.IsNullOrWhiteSpace(endPoint.Tag.SafeName)
                     ? $"{endPoint.Tag.SafeName}."
                     : "")}{endPoint.MethodName}(
-{endPoint.Parameters.Select((x, i) => @$"
+{cliParameters.Select((x, i) => @$"
                 {x.ParameterName}: {x.ParameterName},").Inject()}
 {(hasDirectRequestBody ? @"
                 request: request," : TrimmedLine)}
@@ -147,7 +165,7 @@ namespace {endPoint.Settings.Namespace}
 
             Complete(
                 parseResult: parseResult,
-{(canReturn ? @"
+{(responseType is not null ? @"
                 response: response," : TrimmedLine)}
                 cancellationToken: cancellationToken);
         }}

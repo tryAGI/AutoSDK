@@ -1043,6 +1043,36 @@ public partial class DataTests
             resourceName: Path.GetFileNameWithoutExtension(resourceName));
     }
 
+    [TestMethod]
+    [DataRow(true)]
+    [DataRow(false)]
+    public void PrepareCohereFernStreamingSpec_SplitsChatEndpoints(bool useLegacyPrepare)
+    {
+        var settings = DefaultSettings with
+        {
+            IgnoreOpenApiErrors = true,
+        };
+        var yaml = new H.Resource("cohere.yaml").AsString();
+        var data = useLegacyPrepare
+            ? Data.Prepare(((yaml, settings), GlobalSettings: settings))
+            : CSharpPipeline.PrepareAndEnrich(((yaml, settings), GlobalSettings: settings));
+
+        data.Methods.Count(x => string.Equals(x.Path, "\"/v1/chat\"", StringComparison.Ordinal)).Should().Be(2);
+        data.Methods.Count(x => string.Equals(x.Path, "\"/v2/chat\"", StringComparison.Ordinal)).Should().Be(2);
+
+        data.Methods
+            .Where(x => string.Equals(x.Path, "\"/v1/chat\"", StringComparison.Ordinal))
+            .Select(x => x.ForcedRequestStreamValue)
+            .Should()
+            .BeEquivalentTo([false, true]);
+
+        data.Methods
+            .Where(x => string.Equals(x.Path, "\"/v2/chat\"", StringComparison.Ordinal))
+            .Select(x => x.ForcedRequestStreamValue)
+            .Should()
+            .BeEquivalentTo([false, true]);
+    }
+
     private static AutoSDK.Models.Data PreparePetstoreWithExclusions(bool useLegacyPrepare, string yaml, AutoSDK.Models.Settings settings)
     {
         return PrepareOpenApi(useLegacyPrepare, yaml, settings);

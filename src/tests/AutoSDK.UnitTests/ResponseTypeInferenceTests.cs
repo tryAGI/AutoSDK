@@ -83,7 +83,6 @@ paths:
         var settings = DefaultSettings with
         {
             IgnoreOpenApiErrors = true,
-            MethodNamingConvention = MethodNamingConvention.MethodAndPath,
         };
         var data = AutoSDK.Generation.Data.Prepare(((new H.Resource("elevenlabs.json").AsString(), settings), GlobalSettings: settings));
         var expectedPaths = new[]
@@ -113,7 +112,6 @@ paths:
         var settings = DefaultSettings with
         {
             IgnoreOpenApiErrors = true,
-            MethodNamingConvention = MethodNamingConvention.MethodAndPath,
         };
         var data = AutoSDK.Generation.Data.Prepare(((new H.Resource("elevenlabs.json").AsString(), settings), GlobalSettings: settings));
         var expectedPaths = new[]
@@ -177,6 +175,104 @@ paths:
             generatedCode.Should().Contain("yield return __streamedResponse;");
             generatedCode.Should().NotContain("Task<byte[]>");
         }
+    }
+
+    [TestMethod]
+    public void RealCohereFernStreamingMetadata_SplitsChatIntoRegularAndNdjsonStreamMethods()
+    {
+        var settings = DefaultSettings with
+        {
+            IgnoreOpenApiErrors = true,
+        };
+        var data = LoadDataFromResource("cohere.yaml", settings);
+        var chatEndPoints = data.Methods
+            .Where(x => string.Equals(x.Path, "\"/v1/chat\"", StringComparison.Ordinal))
+            .ToArray();
+
+        chatEndPoints.Should().HaveCount(2);
+        chatEndPoints.Select(x => x.ForcedRequestStreamValue).Should().BeEquivalentTo([false, true]);
+
+        var regularEndPoint = chatEndPoints.Single(x => x.ForcedRequestStreamValue == false);
+        var streamEndPoint = chatEndPoints.Single(x => x.ForcedRequestStreamValue == true);
+        regularEndPoint.SuccessResponse.Type.CSharpTypeWithoutNullability.Should().Be("global::G.NonStreamedChatResponse");
+        streamEndPoint.SuccessResponse.Type.CSharpTypeWithoutNullability.Should().Be("global::G.StreamedChatResponse");
+
+        regularEndPoint.StreamFormat.Should().Be(StreamFormat.None);
+        var regularCode = Sources.GenerateEndPoint(regularEndPoint);
+        regularCode.Should().Contain("Task<global::G.NonStreamedChatResponse> ChatAsync(");
+        regularCode.Should().NotContain("Task<global::G.OneOf<");
+
+        streamEndPoint.StreamFormat.Should().Be(StreamFormat.Ndjson);
+        var streamCode = Sources.GenerateEndPoint(streamEndPoint);
+        streamCode.Should().Contain("IAsyncEnumerable<global::G.StreamedChatResponse> ChatAsStreamAsync(");
+        streamCode.Should().Contain("ReadLineAsync()");
+        streamCode.Should().NotContain("Task<global::G.OneOf<");
+    }
+
+    [TestMethod]
+    public void RealCohereFernStreamingMetadata_SplitsChatV2IntoRegularAndSseStreamMethods()
+    {
+        var settings = DefaultSettings with
+        {
+            IgnoreOpenApiErrors = true,
+        };
+        var data = LoadDataFromResource("cohere.yaml", settings);
+        var chatEndPoints = data.Methods
+            .Where(x => string.Equals(x.Path, "\"/v2/chat\"", StringComparison.Ordinal))
+            .ToArray();
+
+        chatEndPoints.Should().HaveCount(2);
+        chatEndPoints.Select(x => x.ForcedRequestStreamValue).Should().BeEquivalentTo([false, true]);
+
+        var regularEndPoint = chatEndPoints.Single(x => x.ForcedRequestStreamValue == false);
+        var streamEndPoint = chatEndPoints.Single(x => x.ForcedRequestStreamValue == true);
+        regularEndPoint.SuccessResponse.Type.CSharpTypeWithoutNullability.Should().Be("global::G.ChatResponse");
+        streamEndPoint.SuccessResponse.Type.CSharpTypeWithoutNullability.Should().Be("global::G.StreamedChatResponseV2");
+
+        regularEndPoint.StreamFormat.Should().Be(StreamFormat.None);
+        var regularCode = Sources.GenerateEndPoint(regularEndPoint);
+        regularCode.Should().Contain("Task<global::G.ChatResponse> Chat2Async(");
+        regularCode.Should().NotContain("Task<global::G.OneOf<");
+
+        streamEndPoint.StreamFormat.Should().Be(StreamFormat.ServerSentEvents);
+        var streamCode = Sources.GenerateEndPoint(streamEndPoint);
+        streamCode.Should().Contain("IAsyncEnumerable<global::G.StreamedChatResponseV2> Chat2AsStreamAsync(");
+        streamCode.Should().Contain("SseParser");
+        streamCode.Should().NotContain("Task<global::G.OneOf<");
+    }
+
+    [TestMethod]
+    public void FernStreamingMetadata_WithCustomSseTerminator_UsesConfiguredTerminator()
+    {
+        var settings = DefaultSettings;
+        var data = AutoSDK.Generation.Data.Prepare(((@"openapi: 3.0.1
+info:
+  title: Test
+  version: 1.0.0
+paths:
+  /events:
+    post:
+      operationId: streamEvents
+      x-fern-streaming:
+        format: sse
+        terminator: ""[COMPLETE]""
+      responses:
+        '200':
+          description: OK
+          content:
+            text/event-stream:
+              schema:
+                type: object
+                properties:
+                  delta:
+                    type: string
+", settings), GlobalSettings: settings));
+        var streamEndPoint = data.Methods.Single();
+
+        streamEndPoint.StreamFormat.Should().Be(StreamFormat.ServerSentEvents);
+        var generatedCode = Sources.GenerateEndPoint(streamEndPoint);
+
+        generatedCode.Should().Contain("__content == \"[COMPLETE]\"");
     }
 
     [TestMethod]
@@ -348,5 +444,10 @@ paths:
         var operations = data.Methods;
 
         return operations.Single();
+    }
+
+    private static AutoSDK.Models.Data LoadDataFromResource(string resourceName, Settings settings)
+    {
+        return AutoSDK.Generation.Data.Prepare(((new H.Resource(resourceName).AsString(), settings), GlobalSettings: settings));
     }
 }

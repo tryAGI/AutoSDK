@@ -119,7 +119,7 @@ public class SystemTextJsonSerializer : IJsonSerializer
 
         return string.IsNullOrWhiteSpace(jsonSerializerContext)
             ? $"global::System.Text.Json.JsonSerializer.Deserialize<{type.CSharpTypeWithNullability}>({variableName}, JsonSerializerOptions)"
-            : $"global::System.Text.Json.JsonSerializer.Deserialize({variableName}, typeof({type.CSharpTypeWithNullabilityForValueTypes}), JsonSerializerContext) as {type.CSharpTypeWithNullabilityForValueTypes}";
+            : $"({type.CSharpTypeWithNullability})global::System.Text.Json.JsonSerializer.Deserialize({variableName}, typeof({type.CSharpTypeWithNullabilityForValueTypes}), JsonSerializerContext)";
     }
 
     public string GenerateDeserializeFromStreamCall(string variableName, TypeData type, string jsonSerializerContext)
@@ -134,6 +134,6 @@ public class SystemTextJsonSerializer : IJsonSerializer
 
         return string.IsNullOrWhiteSpace(jsonSerializerContext)
             ? $"await global::System.Text.Json.JsonSerializer.DeserializeAsync<{type.CSharpTypeWithNullability}>({variableName}, JsonSerializerOptions).ConfigureAwait(false)"
-            : $"await global::System.Text.Json.JsonSerializer.DeserializeAsync({variableName}, typeof({type.CSharpTypeWithNullabilityForValueTypes}), JsonSerializerContext).ConfigureAwait(false) as {type.CSharpTypeWithNullabilityForValueTypes}";
+            : $"({type.CSharpTypeWithNullability})await global::System.Text.Json.JsonSerializer.DeserializeAsync({variableName}, typeof({type.CSharpTypeWithNullabilityForValueTypes}), JsonSerializerContext).ConfigureAwait(false)";
     }
 }

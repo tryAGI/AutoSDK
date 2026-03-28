@@ -1,4 +1,4 @@
-﻿//HintName: G.IApi.Generate.g.cs
+﻿//HintName: G.IApi.GenerateAsStream.g.cs
 #nullable enable
 
 namespace G
@@ -16,7 +16,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.Generation> GenerateAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::G.GenerateStreamedResponse> GenerateAsStreamAsync(
 
             global::G.GenerateRequest request,
             string? xClientName = default,
@@ -115,7 +115,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.Generation> GenerateAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::G.GenerateStreamedResponse> GenerateAsStreamAsync(
             string prompt,
             string model,
             int numGenerations,

@@ -43,6 +43,27 @@ namespace G
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+
+            request = new global::G.GenerateRequest
+            {
+                Prompt = request.Prompt,
+                Model = request.Model,
+                NumGenerations = request.NumGenerations,
+                Stream = false,
+                MaxTokens = request.MaxTokens,
+                Truncate = request.Truncate,
+                Temperature = request.Temperature,
+                Seed = request.Seed,
+                Preset = request.Preset,
+                EndSequences = request.EndSequences,
+                StopSequences = request.StopSequences,
+                K = request.K,
+                P = request.P,
+                FrequencyPenalty = request.FrequencyPenalty,
+                PresencePenalty = request.PresencePenalty,
+                ReturnLikelihoods = request.ReturnLikelihoods,
+                RawPrompting = request.RawPrompting,
+            };
             PrepareArguments(
                 client: HttpClient);
             PrepareGenerateArguments(
@@ -675,14 +696,6 @@ namespace G
         /// The maximum number of generations that will be returned. Defaults to `1`, min value of `1`, max value of `5`.<br/>
         /// Included only in requests
         /// </param>
-        /// <param name="stream">
-        /// When `true`, the response will be a JSON stream of events. Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.<br/>
-        /// The final event will contain the complete response, and will contain an `is_finished` field set to `true`. The event will also contain a `finish_reason`, which can be one of the following:<br/>
-        /// - `COMPLETE` - the model sent back a finished reply<br/>
-        /// - `MAX_TOKENS` - the reply was cut off because the model reached the maximum number of tokens for its context length<br/>
-        /// - `ERROR` - something went wrong when generating the reply<br/>
-        /// - `ERROR_TOXIC` - the model generated a reply that was deemed toxic
-        /// </param>
         /// <param name="maxTokens">
         /// The maximum number of tokens the model will generate as part of the response. Note: Setting a low value may result in incomplete generations.<br/>
         /// This parameter is off by default, and if it's not specified, the model will continue generating until it emits an EOS completion token. See [BPE Tokens](/bpe-tokens-wiki) for more details.<br/>
@@ -769,7 +782,6 @@ namespace G
             double frequencyPenalty,
             double presencePenalty,
             string? xClientName = default,
-            bool? stream = default,
             int? seed = default,
             global::G.GenerateRequestReturnLikelihoods? returnLikelihoods = default,
             bool? rawPrompting = default,
@@ -780,7 +792,7 @@ namespace G
                 Prompt = prompt,
                 Model = model,
                 NumGenerations = numGenerations,
-                Stream = stream,
+                Stream = false,
                 MaxTokens = maxTokens,
                 Truncate = truncate,
                 Temperature = temperature,
