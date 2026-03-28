@@ -338,6 +338,142 @@ components:
             });
     }
 
+    [TestMethod]
+    public async Task Generate_WithNamespaceDelimiter_GeneratesNestedModelNamespaces()
+    {
+        const string spec = """
+openapi: 3.0.1
+info:
+  title: NamespaceDelimiter
+  version: 1.0.0
+paths:
+  /pets/{id}:
+    get:
+      operationId: getPet
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PetStore.Pet'
+components:
+  schemas:
+    PetStore.Kind:
+      type: string
+      enum:
+        - cat
+        - dog
+    PetStore.Pet:
+      type: object
+      properties:
+        id:
+          type: string
+        kind:
+          $ref: '#/components/schemas/PetStore.Kind'
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "namespace-delimiter.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "G",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var petFile = Path.Combine(outputDirectory, "G.PetStore.Models.Pet.g.cs");
+                var kindFile = Path.Combine(outputDirectory, "G.PetStore.Models.Kind.g.cs");
+
+                File.Exists(petFile).Should().BeTrue();
+                File.Exists(kindFile).Should().BeTrue();
+
+                var petContent = await File.ReadAllTextAsync(petFile);
+                petContent.Should().Contain("namespace G.PetStore");
+                petContent.Should().Contain("public sealed partial class Pet");
+
+                Directory.EnumerateFiles(outputDirectory, "*", SearchOption.AllDirectories)
+                    .Select(Path.GetFileName)
+                    .Should()
+                    .OnlyHaveUniqueItems();
+            },
+            additionalArguments: ["--namespace-delimiter", "."]);
+    }
+
+    [TestMethod]
+    public async Task Generate_WithNamespaceDelimiterAndExcludedDottedModel_UsesExternalType()
+    {
+        const string spec = """
+openapi: 3.0.1
+info:
+  title: NamespaceDelimiterExternal
+  version: 1.0.0
+paths:
+  /pets/{id}:
+    get:
+      operationId: getPet
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PetStore.Pet'
+components:
+  schemas:
+    PetStore.Pet:
+      type: object
+      properties:
+        id:
+          type: string
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "namespace-delimiter-external.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "G",
+            clientClassName: "TestClient",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var modelFile = Path.Combine(outputDirectory, "G.PetStore.Models.Pet.g.cs");
+
+                File.Exists(modelFile).Should().BeFalse();
+                var generatedContents = await Task.WhenAll(
+                    Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
+                        .Select(path => File.ReadAllTextAsync(path)));
+                string.Join("\n\n", generatedContents).Should().Contain("global::PetStore.Pet");
+
+                await File.WriteAllTextAsync(
+                    Path.Combine(outputDirectory, "ExternalPet.cs"),
+                    """
+                    namespace PetStore;
+
+                    /// <summary>
+                    /// External Pet type supplied by the consuming project.
+                    /// </summary>
+                    public sealed partial class Pet
+                    {
+                    }
+                    """);
+            },
+            additionalArguments:
+            [
+                "--namespace-delimiter", ".",
+                "--exclude-models", "PetStore.Pet",
+            ]);
+    }
+
     private static async Task GenerateAsync(
         string spec,
         string targetFramework = "net8.0",

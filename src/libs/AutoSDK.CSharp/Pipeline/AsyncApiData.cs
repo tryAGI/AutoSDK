@@ -1389,21 +1389,21 @@ public static class AsyncApiData
                 !x.Settings.UsesNewtonsoftJson())
             .SelectMany(x => new[]
             {
-                $"global::{settings.Namespace}.JsonConverters.{x.ClassName}JsonConverter",
-                $"global::{settings.Namespace}.JsonConverters.{x.ClassName}NullableJsonConverter"
+                $"global::{x.Namespace}.JsonConverters.{x.ClassName}JsonConverter",
+                $"global::{x.Namespace}.JsonConverters.{x.ClassName}NullableJsonConverter"
             })
             .Concat(anyOfDatas
                 .Where(x =>
                     x.Settings.UsesSystemTextJson() &&
                     !string.IsNullOrWhiteSpace(x.Name))
-                .Select(x => $"global::{settings.Namespace}.JsonConverters.{x.Name}JsonConverter"))
+                .Select(x => $"global::{x.Namespace}.JsonConverters.{x.Name}JsonConverter"))
             .Concat(filteredSchemas
                 .Where(x =>
                     x.Settings.UsesSystemTextJson() &&
                     x.AnyOfData.HasValue &&
                     string.IsNullOrWhiteSpace(x.AnyOfData.Value.Name))
                 .Select(x =>
-                    $"global::{settings.Namespace}.JsonConverters.{x.AnyOfData?.SubType}JsonConverter<{string.Join(", ", x.Children
+                    $"global::{x.AnyOfData?.Namespace}.JsonConverters.{x.AnyOfData?.SubType}JsonConverter<{string.Join(", ", x.Children
                         .Where(y => y.Hint == (x.IsAnyOf ? Hint.AnyOf : x.IsOneOf ? Hint.OneOf : Hint.AllOf))
                         .Select(y => y.TypeData.CSharpTypeWithNullabilityForValueTypes))}>"))
             .ToImmutableArray();

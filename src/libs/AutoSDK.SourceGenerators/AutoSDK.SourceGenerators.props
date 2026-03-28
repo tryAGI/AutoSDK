@@ -78,6 +78,10 @@
     <CompilerVisibleProperty Include="AutoSDK_IncludeModels"/>
     <!-- List of ids separated by ;. Default: Empty -->
     <CompilerVisibleProperty Include="AutoSDK_ExcludeModels"/>
+    <!-- Single namespace delimiter for dotted/raw component ids. Empty disables the feature. Default: Empty -->
+    <CompilerVisibleProperty Include="AutoSDK_NamespaceDelimiter"/>
+    <!-- External/SdkRoot. Controls how filtered-out dotted models are referenced. Default: External -->
+    <CompilerVisibleProperty Include="AutoSDK_ExcludedModelNamespaceMode"/>
 
     <!-- true/false. Default: true -->
     <CompilerVisibleProperty Include="AutoSDK_IgnoreOpenApiErrors"/>

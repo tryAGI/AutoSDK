@@ -7,7 +7,7 @@ public static class CSharpSchemaNamingFactory
 {
     public static string CreateReferenceId(ReferenceNameContext context)
     {
-        return context.ReferenceId.ToCSharpName(context.Settings, context.Parent);
+        return CSharpNamespacedTypeNameResolver.GetComponentClassName(context.ReferenceId, context.Settings);
     }
 
     public static string CreateSchemaId(SchemaNameContext context)

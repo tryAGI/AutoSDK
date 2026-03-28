@@ -22,7 +22,7 @@ public record struct ModelData(
     bool IsDerivedClass,
     ImmutableArray<string> InheritedPropertyNames,
     string DiscriminatorPropertyName,
-    EquatableArray<(string ClassName, string Discriminator)> DerivedTypes,
+    EquatableArray<(string GlobalClassName, string Discriminator)> DerivedTypes,
     string ClassName,
     string GlobalClassName,
     string ExternalClassName,

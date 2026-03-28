@@ -15,7 +15,9 @@ public record struct SchemaContextSettings(
     bool UseNewtonsoftJson,
     bool UseSystemTextJson,
     bool UseExtensionNaming,
-    ModelStyle ModelStyle)
+    ModelStyle ModelStyle,
+    string NamespaceDelimiter,
+    ExcludedModelNamespaceMode ExcludedModelNamespaceMode)
 {
     public static SchemaContextSettings Default => new(
         Namespace: string.Empty,
@@ -32,5 +34,7 @@ public record struct SchemaContextSettings(
         UseNewtonsoftJson: false,
         UseSystemTextJson: true,
         UseExtensionNaming: true,
-        ModelStyle: default);
+        ModelStyle: default,
+        NamespaceDelimiter: string.Empty,
+        ExcludedModelNamespaceMode: ExcludedModelNamespaceMode.External);
 }

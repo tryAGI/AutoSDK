@@ -136,7 +136,8 @@ public static class CSharpSettingsExtensions
     {
         return new SchemaNamingSettings(
             clsCompliantEnumPrefix: settings.ClsCompliantEnumPrefix,
-            useExtensionNaming: settings.UseExtensionNaming);
+            useExtensionNaming: settings.UseExtensionNaming,
+            namespaceDelimiter: settings.NamespaceDelimiter);
     }
 
     public static SchemaContextSettings ToSchemaContextSettings(this CSharpSettings settings)
@@ -156,7 +157,9 @@ public static class CSharpSettingsExtensions
             UseNewtonsoftJson: settings.UsesNewtonsoftJson(),
             UseSystemTextJson: settings.UsesSystemTextJson(),
             UseExtensionNaming: settings.UseExtensionNaming,
-            ModelStyle: settings.ModelStyle);
+            ModelStyle: settings.ModelStyle,
+            NamespaceDelimiter: settings.NamespaceDelimiter,
+            ExcludedModelNamespaceMode: settings.ExcludedModelNamespaceMode);
     }
 
     public static EnumNamingSettings ToEnumNamingSettings(this CSharpSettings settings)

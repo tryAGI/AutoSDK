@@ -2,6 +2,7 @@ using System.Collections.Immutable;
 using AutoSDK.Extensions;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
+using AutoSDK.Naming.Models;
 using AutoSDK.Naming.Parameters;
 
 namespace AutoSDK.Enrichment;
@@ -50,13 +51,28 @@ public static class CSharpModelDataFactory
         }
 
         var mapping = context.Schema.Discriminator?.Mapping;
-        EquatableArray<(string ClassName, string Discriminator)> derivedTypes = default;
+        EquatableArray<(string GlobalClassName, string Discriminator)> derivedTypes = default;
         if (mapping is { Count: > 0 })
         {
-            var builder = ImmutableArray.CreateBuilder<(string ClassName, string Discriminator)>(mapping.Count);
+            var builder = ImmutableArray.CreateBuilder<(string GlobalClassName, string Discriminator)>(mapping.Count);
             foreach (var kvp in mapping.OrderBy(x => x.Key, StringComparer.Ordinal))
             {
-                builder.Add((ClassName: kvp.Value.Reference?.Id ?? string.Empty, Discriminator: kvp.Key));
+                var referenceId = kvp.Value.Reference?.Id ?? string.Empty;
+                var globalClassName = referenceId;
+                if (context.ComponentSchemas?.TryGetValue(referenceId, out var derivedContext) == true)
+                {
+                    globalClassName = derivedContext.GetGlobalClassName();
+                }
+                else if (CSharpNamespacedTypeNameResolver.TryResolve(referenceId, context.Settings, out var resolved))
+                {
+                    globalClassName = $"global::{resolved!.GeneratedQualifiedName}";
+                }
+                else if (!string.IsNullOrWhiteSpace(referenceId))
+                {
+                    globalClassName = $"global::{context.Settings.Namespace}.{CSharpNamespacedTypeNameResolver.GetComponentClassName(referenceId, context.Settings.ToSchemaNamingSettings())}";
+                }
+
+                builder.Add((GlobalClassName: globalClassName, Discriminator: kvp.Key));
             }
 
             derivedTypes = builder.MoveToImmutable().AsEquatableArray();
@@ -65,6 +81,7 @@ public static class CSharpModelDataFactory
         var hasDeprecatedBaseClass = context.IsDerivedClass &&
                                      context.BaseClassContext.Schema.IsDeprecated();
         var inheritedPropertyNames = GetInheritedPropertyNames(context);
+        var modelNamespace = context.GetGeneratedNamespace();
 
         var className = context.Id;
         var externalClassName = context.Settings.NamingConvention switch
@@ -80,7 +97,7 @@ public static class CSharpModelDataFactory
             SchemaContext: context,
             Id: context.Id,
             Parents: boxedParents,
-            Namespace: context.Settings.Namespace,
+            Namespace: modelNamespace,
             Settings: context.Settings.ToEmitterSettings(),
             Style: context.Schema.IsEnum() ? ModelStyle.Enumeration : context.Settings.ModelStyle,
             Properties: GetVisibleProperties(context),
@@ -92,7 +109,7 @@ public static class CSharpModelDataFactory
             IsDeprecated: context.Schema.IsDeprecated(),
             DeprecationMessage: context.Schema.GetDeprecationMessage(),
             BaseClass: context.IsDerivedClass
-                ? context.BaseClassContext.Id
+                ? context.BaseClassContext.GetGlobalClassName()
                 : string.Empty,
             HasDeprecatedBaseClass: hasDeprecatedBaseClass,
             IsBaseClass: context.IsBaseClass,
@@ -101,9 +118,9 @@ public static class CSharpModelDataFactory
             DiscriminatorPropertyName: context.Schema.Discriminator?.PropertyName ?? string.Empty,
             DerivedTypes: derivedTypes,
             ClassName: className,
-            GlobalClassName: $"global::{context.Settings.Namespace}.{className}",
+            GlobalClassName: $"global::{modelNamespace}.{className}",
             ExternalClassName: externalClassName,
-            FileNameWithoutExtension: $"{context.Settings.Namespace}.Models.{externalClassName}");
+            FileNameWithoutExtension: $"{modelNamespace}.Models.{externalClassName}");
     }
 
     private static ImmutableArray<string> GetInheritedPropertyNames(SchemaContext context)

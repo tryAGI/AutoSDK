@@ -92,6 +92,14 @@ public static class CorePipeline
         ResolveReferences(schemas, settings.IgnoreOpenApiErrors);
         DetectCycles(schemas);
 
+        var componentSchemas = schemas
+            .Where(x => x.ComponentId is not null)
+            .ToDictionary(x => x.ComponentId!, x => x, StringComparer.Ordinal);
+        for (var i = 0; i < schemas.Count; i++)
+        {
+            schemas[i].ComponentSchemas = componentSchemas;
+        }
+
         resolveReferencesTime.Stop();
 #if NET
         var allocAfterResolve = GC.GetTotalAllocatedBytes(precise: true);
@@ -258,11 +266,13 @@ public static class CorePipeline
                 {
                     if (includedModels.Count > 0 && !includedModels.Contains(schema.ComponentId!))
                     {
+                        schema.IsFilteredOutModel = true;
                         continue;
                     }
 
                     if (excludedModels.Contains(schema.ComponentId!))
                     {
+                        schema.IsFilteredOutModel = true;
                         continue;
                     }
                 }
@@ -324,7 +334,7 @@ public static class CorePipeline
             IncludedTags: includedTags,
             IncludedOperationIds: includedOperationIds.ToImmutableArray(),
             ExcludedOperationIds: excludedOperationIds.ToImmutableArray(),
-            ComponentSchemas: new Dictionary<string, SchemaContext>(StringComparer.Ordinal),
+            ComponentSchemas: componentSchemas,
             SyntheticEventSchemaNames: new Dictionary<string, string>(StringComparer.Ordinal),
             SkipModels: false,
             Times: new Times(

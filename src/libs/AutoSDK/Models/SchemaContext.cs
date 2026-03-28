@@ -46,6 +46,8 @@ public class SchemaContext(
     
     public string? ComponentId { get; set; }
     public bool IsComponent => ComponentId != null || ResolvedReference?.IsComponent == true;
+    public bool IsFilteredOutModel { get; set; }
+    public IReadOnlyDictionary<string, SchemaContext>? ComponentSchemas { get; set; }
     
     public string? OperationPath { get; set; }
     public System.Net.Http.HttpMethod? OperationType { get; set; }
@@ -752,24 +754,7 @@ public class SchemaContext(
         }
         _lastInputsHash = inputsHash;
 
-        TypeData = IsReference
-            ? ResolvedReference?.TypeData ??
-              throw new InvalidOperationException("Resolved reference must have type data.")
-            : typeDataFactory(this);
-        if (IsReference && ResolvedReference != null && TypeData != TypeData.Default)
-        {
-            var newType = typeRawFactory(ResolvedReference);
-            var newNullability = typeNullabilityFactory(ResolvedReference, this);
-            if (newType != TypeData.CSharpTypeRaw || newNullability != TypeData.CSharpTypeNullability)
-            {
-                TypeData = TypeData with
-                {
-                    CSharpTypeRaw = newType,
-                    CSharpTypeNullability = newNullability,
-                };
-                TypeData = typeDataNormalizer(TypeData);
-            }
-        }
+        TypeData = typeDataFactory(this);
         if (IsProperty)
         {
             PropertyData = propertyDataFactory(this);

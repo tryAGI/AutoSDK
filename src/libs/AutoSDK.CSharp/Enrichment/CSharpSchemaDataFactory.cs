@@ -3,6 +3,7 @@ using AutoSDK.Extensions;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
 using AutoSDK.Naming.AnyOfs;
+using AutoSDK.Naming.Models;
 using AutoSDK.Naming.Parameters;
 using AutoSDK.Naming.Properties;
 using AutoSDK.Serialization.Json;
@@ -245,7 +246,7 @@ public static class CSharpSchemaDataFactory
                     Type = (TypeData.Default with
                     {
                         CSharpTypeRaw = $"T{i}",
-                        GeneratedNamespace = context.Settings.Namespace,
+                        GeneratedNamespace = context.GetGeneratedNamespace(),
                     }).WithCSharpComputedValues(),
                 }).WithCSharpParameterName());
             }
@@ -268,7 +269,7 @@ public static class CSharpSchemaDataFactory
             DiscriminatorType: discriminatorType,
             DiscriminatorPropertyName: discriminatorPropertyName,
             IsTrimming: context.Settings.UsesSystemTextJsonContext(),
-            Namespace: context.Settings.Namespace,
+            Namespace: context.GetGeneratedNamespace(),
             Name: context.IsNamedAnyOfLike
                 ? context.Id
                 : string.Empty,

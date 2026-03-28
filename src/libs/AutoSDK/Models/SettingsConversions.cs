@@ -45,14 +45,16 @@ public static class SettingsConversions
     {
         return new SchemaNamingSettings(
             clsCompliantEnumPrefix: settings.ClsCompliantEnumPrefix,
-            useExtensionNaming: settings.UseExtensionNaming);
+            useExtensionNaming: settings.UseExtensionNaming,
+            namespaceDelimiter: settings.NamespaceDelimiter);
     }
 
     public static SchemaNamingSettings ToSchemaNamingSettings(this SchemaContextSettings settings)
     {
         return new SchemaNamingSettings(
             clsCompliantEnumPrefix: settings.ClsCompliantEnumPrefix,
-            useExtensionNaming: settings.UseExtensionNaming);
+            useExtensionNaming: settings.UseExtensionNaming,
+            namespaceDelimiter: settings.NamespaceDelimiter);
     }
 
     public static SchemaContextSettings ToSchemaContextSettings(this Settings settings)
@@ -72,7 +74,9 @@ public static class SettingsConversions
             UseNewtonsoftJson: settings.JsonSerializerType == Serialization.Json.JsonSerializerType.NewtonsoftJson,
             UseSystemTextJson: settings.JsonSerializerType == Serialization.Json.JsonSerializerType.SystemTextJson,
             UseExtensionNaming: settings.UseExtensionNaming,
-            ModelStyle: settings.ModelStyle);
+            ModelStyle: settings.ModelStyle,
+            NamespaceDelimiter: settings.NamespaceDelimiter,
+            ExcludedModelNamespaceMode: settings.ExcludedModelNamespaceMode);
     }
 
     public static EmitterSettings ToEmitterSettings(this SchemaContextSettings settings)

@@ -1,6 +1,9 @@
 ﻿using AutoSDK.Generation;
 using AutoSDK.Naming.Methods;
+using AutoSDK.Naming.Models;
 using AutoSDK.Serialization.Json;
+using ExcludedModelNamespaceMode = AutoSDK.Models.ExcludedModelNamespaceMode;
+using SchemaNamingSettings = AutoSDK.Models.SchemaNamingSettings;
 
 namespace AutoSDK.UnitTests;
 
@@ -239,7 +242,7 @@ public partial class DataTests
         var action = () => string.Join("\n\n", data.Classes.Select(x => Sources.GenerateModel(x)));
 
         action.Should().NotThrow();
-        action().Should().Contain("public sealed partial class Cat : Animal");
+        action().Should().Contain("public sealed partial class Cat : global::G.Animal");
     }
 
     [TestMethod]
@@ -287,6 +290,180 @@ public partial class DataTests
         data.Methods.First(x => x.MethodName == "GetPetsByPetIdAsync")
             .SuccessResponse.Type.CSharpTypeWithNullabilityForValueTypes
             .Should().Be("global::TestNamespace.PetStorePet");
+    }
+
+    [TestMethod]
+    [DataRow("PetStore.Pet", "Pet", "PetStore", "G.PetStore", "PetStore.Pet")]
+    [DataRow("System.Text.Json.Nodes.JsonObject", "JsonObject", "System.Text.Json.Nodes", "G.System.Text.Json.Nodes", "System.Text.Json.Nodes.JsonObject")]
+    [DataRow("PetStore..Pet", "Pet", "PetStore", "G.PetStore", "PetStore.Pet")]
+    public void NamespaceDelimiter_TryResolve_ParsesExpectedSegments(
+        string rawId,
+        string expectedClassName,
+        string expectedNamespaceSuffix,
+        string expectedGeneratedNamespace,
+        string expectedExternalQualifiedName)
+    {
+        var resolved = CSharpNamespacedTypeNameResolver.TryResolve(
+            rawId,
+            new SchemaNamingSettings(string.Empty, useExtensionNaming: true, namespaceDelimiter: "."),
+            rootNamespace: "G",
+            out var value);
+
+        resolved.Should().BeTrue();
+        value.Should().NotBeNull();
+        value!.ClassName.Should().Be(expectedClassName);
+        value.NamespaceSuffix.Should().Be(expectedNamespaceSuffix);
+        value.GeneratedNamespace.Should().Be(expectedGeneratedNamespace);
+        value.GeneratedQualifiedName.Should().Be($"{expectedGeneratedNamespace}.{expectedClassName}");
+        value.ExternalQualifiedName.Should().Be(expectedExternalQualifiedName);
+    }
+
+    [TestMethod]
+    [DataRow(true)]
+    [DataRow(false)]
+    public void NamespaceDelimiter_GeneratesNestedNamespaceForDottedComponentId(bool useLegacyPrepare)
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateSdk = true,
+            GenerateModels = true,
+            NamespaceDelimiter = ".",
+        };
+        var yaml = new H.Resource("petstore.yaml").AsString()
+            .Replace("#/components/schemas/Pet\"", "#/components/schemas/PetStore.Pet\"")
+            .Replace("\n    Pet:\n", "\n    PetStore.Pet:\n");
+
+        var data = PrepareOpenApi(useLegacyPrepare, yaml, settings);
+        var pet = data.Classes.Single(x => x.GlobalClassName == "global::TestNamespace.PetStore.Pet");
+
+        pet.ClassName.Should().Be("Pet");
+        pet.Namespace.Should().Be("TestNamespace.PetStore");
+        pet.FileNameWithoutExtension.Should().Be("TestNamespace.PetStore.Models.Pet");
+        Sources.GenerateModel(pet).Should().Contain("namespace TestNamespace.PetStore");
+        data.Methods.First(x => x.MethodName == "GetPetsByPetIdAsync")
+            .SuccessResponse.Type.CSharpTypeWithNullabilityForValueTypes
+            .Should().Be("global::TestNamespace.PetStore.Pet");
+    }
+
+    [TestMethod]
+    [DataRow(true)]
+    [DataRow(false)]
+    public void ExcludeModels_RemovesReferencedComponentModels_WithNamespaceDelimiter_ExternalMode(bool useLegacyPrepare)
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateSdk = true,
+            GenerateModels = true,
+            ExcludeModels = ["PetStore.Pet"],
+            NamespaceDelimiter = ".",
+        };
+        var yaml = new H.Resource("petstore.yaml").AsString()
+            .Replace("#/components/schemas/Pet\"", "#/components/schemas/PetStore.Pet\"")
+            .Replace("\n    Pet:\n", "\n    PetStore.Pet:\n");
+
+        var data = PrepareOpenApi(useLegacyPrepare, yaml, settings);
+
+        data.Classes.Select(x => x.GlobalClassName).Should().NotContain("global::TestNamespace.PetStore.Pet");
+        data.Methods.First(x => x.MethodName == "GetPetsByPetIdAsync")
+            .SuccessResponse.Type.CSharpTypeWithNullabilityForValueTypes
+            .Should().Be("global::PetStore.Pet");
+    }
+
+    [TestMethod]
+    [DataRow(true)]
+    [DataRow(false)]
+    public void ExcludeModels_RemovesReferencedComponentModels_WithNamespaceDelimiter_SdkRootMode(bool useLegacyPrepare)
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateSdk = true,
+            GenerateModels = true,
+            ExcludeModels = ["PetStore.Pet"],
+            NamespaceDelimiter = ".",
+            ExcludedModelNamespaceMode = ExcludedModelNamespaceMode.SdkRoot,
+        };
+        var yaml = new H.Resource("petstore.yaml").AsString()
+            .Replace("#/components/schemas/Pet\"", "#/components/schemas/PetStore.Pet\"")
+            .Replace("\n    Pet:\n", "\n    PetStore.Pet:\n");
+
+        var data = PrepareOpenApi(useLegacyPrepare, yaml, settings);
+
+        data.Classes.Select(x => x.GlobalClassName).Should().NotContain("global::TestNamespace.PetStore.Pet");
+        data.Methods.First(x => x.MethodName == "GetPetsByPetIdAsync")
+            .SuccessResponse.Type.CSharpTypeWithNullabilityForValueTypes
+            .Should().Be("global::TestNamespace.PetStore.Pet");
+    }
+
+    [TestMethod]
+    [DataRow(true)]
+    [DataRow(false)]
+    public void NamespaceDelimiter_ResolvesCollisionsPerQualifiedNamespace(bool useLegacyPrepare)
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateSdk = true,
+            GenerateModels = true,
+            NamespaceDelimiter = ".",
+        };
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: NamespaceCollision
+                              version: 1.0.0
+                            paths:
+                              /foo-user:
+                                get:
+                                  operationId: getFooUser
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            $ref: '#/components/schemas/Foo.User'
+                              /bar-user:
+                                get:
+                                  operationId: getBarUser
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            $ref: '#/components/schemas/Bar.User'
+                            components:
+                              schemas:
+                                Foo.User:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                Bar.User:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                            """;
+
+        var data = PrepareOpenApi(useLegacyPrepare, yaml, settings);
+        var users = data.Classes
+            .Where(x => x.ClassName == "User")
+            .OrderBy(x => x.Namespace, StringComparer.Ordinal)
+            .ToArray();
+
+        users.Should().HaveCount(2);
+        users.Select(x => x.Namespace).Should().Equal("TestNamespace.Bar", "TestNamespace.Foo");
+        users.Select(x => x.GlobalClassName).Should().Equal("global::TestNamespace.Bar.User", "global::TestNamespace.Foo.User");
+        data.Methods.First(x => x.MethodName == "GetBarUserAsync")
+            .SuccessResponse.Type.CSharpTypeWithNullabilityForValueTypes
+            .Should().Be("global::TestNamespace.Bar.User");
+        data.Methods.First(x => x.MethodName == "GetFooUserAsync")
+            .SuccessResponse.Type.CSharpTypeWithNullabilityForValueTypes
+            .Should().Be("global::TestNamespace.Foo.User");
     }
 
     [TestMethod]
@@ -821,6 +998,11 @@ public partial class DataTests
 
     private static AutoSDK.Models.Data PreparePetstoreWithExclusions(bool useLegacyPrepare, string yaml, AutoSDK.Models.Settings settings)
     {
+        return PrepareOpenApi(useLegacyPrepare, yaml, settings);
+    }
+
+    private static AutoSDK.Models.Data PrepareOpenApi(bool useLegacyPrepare, string yaml, AutoSDK.Models.Settings settings)
+    {
         settings = settings with
         {
             Namespace = "TestNamespace",
@@ -835,5 +1017,4 @@ public partial class DataTests
             ? Data.Prepare(((yaml, settings), GlobalSettings: settings))
             : CSharpPipeline.PrepareAndEnrich(((yaml, settings), GlobalSettings: settings));
     }
-
 }
