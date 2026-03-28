@@ -246,6 +246,53 @@ public partial class DataTests
     }
 
     [TestMethod]
+    public void ObjectMemberPropertyNames_AreRenamedInsteadOfUsingNewModifier()
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateModels = true,
+            GenerateSdk = true,
+        };
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: ObjectMemberProperties
+                              version: 1.0.0
+                            paths: {}
+                            components:
+                              schemas:
+                                CollisionModel:
+                                  type: object
+                                  properties:
+                                    equals:
+                                      type: boolean
+                                    toString:
+                                      type: string
+                                    getHashCode:
+                                      type: integer
+                                    getType:
+                                      type: string
+                            """;
+
+        var data = Data.Prepare(((yaml, settings), GlobalSettings: settings));
+        var model = data.Classes.Single(x => x.ClassName == "CollisionModel");
+        var generated = Sources.GenerateModel(model);
+
+        model.Properties.Select(x => x.Name).Should().Contain("EqualsValue");
+        model.Properties.Select(x => x.Name).Should().Contain("ToStringValue");
+        model.Properties.Select(x => x.Name).Should().Contain("GetHashCodeValue");
+        model.Properties.Select(x => x.Name).Should().Contain("GetTypeValue");
+        generated.Should().Contain("public bool? EqualsValue");
+        generated.Should().Contain("public string? ToStringValue");
+        generated.Should().Contain("public int? GetHashCodeValue");
+        generated.Should().Contain("public string? GetTypeValue");
+        generated.Should().NotContain("public new bool? Equals");
+        generated.Should().NotContain("public new string? ToString");
+        generated.Should().NotContain("public new int? GetHashCode");
+        generated.Should().NotContain("public new string? GetType");
+    }
+
+    [TestMethod]
     [DataRow(true)]
     [DataRow(false)]
     public void ExcludeModels_RemovesReferencedComponentModels(bool useLegacyPrepare)

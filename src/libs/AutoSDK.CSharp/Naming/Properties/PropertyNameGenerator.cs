@@ -8,6 +8,14 @@ public static class CSharpPropertyNameGenerator
     private static readonly char[] PropertySeparators =
         ['_', '+', '-', '.', '/', '(', '[', ']', ')'];
 
+    private static readonly Dictionary<string, string> ObjectMemberCollisionNames = new(StringComparer.Ordinal)
+    {
+        ["Equals"] = "EqualsValue",
+        ["ToString"] = "ToStringValue",
+        ["GetHashCode"] = "GetHashCodeValue",
+        ["GetType"] = "GetTypeValue",
+    };
+
     public static string ComputePropertyName(
         SchemaContext context)
     {
@@ -24,6 +32,7 @@ public static class CSharpPropertyNameGenerator
         }
 
         name = SanitizeName(name, context.Settings.ClsCompliantEnumPrefix, true);
+        name = AvoidObjectMemberNameCollision(name);
 
         return name;
     }
@@ -122,5 +131,12 @@ public static class CSharpPropertyNameGenerator
     public static string ToCSharpName(this string text, SchemaContextSettings settings, SchemaContext? parent)
     {
         return text.ToCSharpName(settings.ToSchemaNamingSettings(), parent);
+    }
+
+    public static string AvoidObjectMemberNameCollision(string name)
+    {
+        return ObjectMemberCollisionNames.TryGetValue(name, out var replacement)
+            ? replacement
+            : name;
     }
 }

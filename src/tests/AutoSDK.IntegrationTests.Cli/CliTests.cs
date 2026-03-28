@@ -203,7 +203,16 @@ components:
         await GenerateFromContentAsync(
             fileName: "warning-regressions.yaml",
             specContent: spec,
-            targetFramework: "net10.0");
+            targetFramework: "net10.0",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedContents = await Task.WhenAll(
+                    Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
+                        .Select(path => File.ReadAllTextAsync(path)));
+                var content = string.Join("\n\n", generatedContents);
+                content.Should().Contain("public string? EqualsValue");
+                content.Should().NotContain("public new string? Equals");
+            });
     }
 
     [TestMethod]

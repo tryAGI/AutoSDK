@@ -7,14 +7,6 @@ namespace AutoSDK.Generation;
 
 public static partial class Sources
 {
-    private static readonly HashSet<string> ObjectMemberNames = new(StringComparer.Ordinal)
-    {
-        "Equals",
-        "GetHashCode",
-        "GetType",
-        "ToString",
-    };
-
     public static string GenerateModel(
         ModelData modelData,
         CancellationToken cancellationToken = default)
@@ -146,11 +138,6 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
 
     private static bool RequiresNewModifier(ModelData modelData, PropertyData property)
     {
-        if (ObjectMemberNames.Contains(property.Name))
-        {
-            return true;
-        }
-
         if (!modelData.IsDerivedClass)
         {
             return false;
