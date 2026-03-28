@@ -10,6 +10,21 @@ public static class OpenApiEnumExtensions
 {
     private static readonly char[] EnumSeparators =
         ['_', '-', ' ', '.'];
+    private static readonly Dictionary<string, string> SymbolicEnumNames =
+        new Dictionary<string, string>(StringComparer.Ordinal)
+        {
+            ["="] = "Eq",
+            ["=="] = "Eq",
+            ["!="] = "Neq",
+            [">"] = "Gt",
+            [">="] = "Gte",
+            ["<"] = "Lt",
+            ["<="] = "Lte",
+            ["+"] = "Plus",
+            ["-"] = "Minus",
+            ["*"] = "Multiply",
+            ["/"] = "Divide",
+        };
 
     public static string? GetDefaultValue(this SchemaContext context)
     {
@@ -286,17 +301,20 @@ public static class OpenApiEnumExtensions
         string description,
         EnumNamingSettings settings)
     {
-        var name = id
-            .ReplacePlusAndMinusOnStart()
-            .ToPropertyName()
-            .UseWordSeparator(EnumSeparators)
-            .Replace("+", "Plus")
-            .Replace("*", "Any")
-            .Replace("[]", "Array")
-            .Replace("'", string.Empty)
-            .Replace(".", string.Empty)
-            .Replace("[", string.Empty)
-            .Replace("]", string.Empty);
+        var name = SymbolicEnumNames.TryGetValue(id, out var symbolicName)
+            ? symbolicName
+            : id
+                .ReplacePlusAndMinusOnStart()
+                .ToPropertyName()
+                .UseWordSeparator(EnumSeparators)
+                .Replace("+", "Plus")
+                .Replace("*", "Any")
+                .Replace("[]", "Array")
+                .Replace("/", "Divide")
+                .Replace("'", string.Empty)
+                .Replace(".", string.Empty)
+                .Replace("[", string.Empty)
+                .Replace("]", string.Empty);
         if (name.Length > 0 &&
             char.IsDigit(name[0]))
         {

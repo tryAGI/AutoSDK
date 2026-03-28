@@ -204,6 +204,58 @@ public class ExtensionParsingTests
     }
 
     [TestMethod]
+    public void SymbolicEnumValues_UseReadableEnumMemberNames()
+    {
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: Test
+                              version: 1.0.0
+                            paths: {}
+                            components:
+                              schemas:
+                                TraceFilterOperator:
+                                  type: string
+                                  enum:
+                                    - "="
+                                    - "!="
+                                    - ">"
+                                    - ">="
+                                    - "<"
+                                    - "<="
+                                    - "+"
+                                    - "-"
+                                    - "*"
+                                    - "/"
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateModels = true,
+            GenerateSdk = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        var enumType = data.Enums.FirstOrDefault(e => e.ClassName == "TraceFilterOperator");
+        enumType.Should().NotBe(default);
+        (string Id, string Name)[] expected =
+        [
+            ("=", "Eq"),
+            ("!=", "Neq"),
+            (">", "Gt"),
+            (">=", "Gte"),
+            ("<", "Lt"),
+            ("<=", "Lte"),
+            ("+", "Plus"),
+            ("-", "Minus"),
+            ("*", "Multiply"),
+            ("/", "Divide"),
+        ];
+
+        enumType.EnumValues.Select(v => (v.Id, v.Name)).Should().BeEquivalentTo(expected);
+    }
+
+    [TestMethod]
     public void XStainlessDeprecationMessage_UsedForOperations()
     {
         const string yaml = """

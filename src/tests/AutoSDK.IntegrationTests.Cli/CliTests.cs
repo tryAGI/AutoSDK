@@ -344,6 +344,73 @@ components:
     }
 
     [TestMethod]
+    public async Task Generate_WithSymbolicEnumValues_UsesReadableNamesAndBuilds()
+    {
+        const string spec = """
+openapi: 3.0.1
+info:
+  title: SymbolicEnum
+  version: 1.0.0
+paths:
+  /operator:
+    get:
+      operationId: getOperator
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperatorWrapper'
+components:
+  schemas:
+    TraceFilterOperator:
+      type: string
+      enum:
+        - "="
+        - "!="
+        - ">"
+        - ">="
+        - "<"
+        - "<="
+        - "+"
+        - "-"
+        - "*"
+        - "/"
+    OperatorWrapper:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/TraceFilterOperator'
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "symbolic-enum.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedContents = await Task.WhenAll(
+                    Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
+                        .Select(path => File.ReadAllTextAsync(path)));
+                var content = string.Join("\n\n", generatedContents);
+
+                content.Should().Contain("public enum TraceFilterOperator");
+                content.Should().Contain("Eq,");
+                content.Should().Contain("Neq,");
+                content.Should().Contain("Gte,");
+                content.Should().Contain("Multiply,");
+                content.Should().Contain("Divide,");
+
+                content.Should().Contain("\"=\" => TraceFilterOperator.Eq");
+                content.Should().Contain("\"!=\" => TraceFilterOperator.Neq");
+                content.Should().Contain("\">=\" => TraceFilterOperator.Gte");
+                content.Should().Contain("\"*\" => TraceFilterOperator.Multiply");
+                content.Should().Contain("\"/\" => TraceFilterOperator.Divide");
+            });
+    }
+
+    [TestMethod]
     public async Task Generate_DoesNotEmitDoubleDotGeneratedFileNames()
     {
         const string spec = """
