@@ -65,9 +65,12 @@ namespace {client.Settings.Namespace}
         // Value types with nullable variants in JsonSerializerContextTypes will be
         // implicitly discovered by STJ through the nullable property (T? → Nullable<T> → T).
         // This causes SYSLIB1031 when the same type is also explicitly registered.
+        // Only value types cause this — reference type nullability (string?, byte[]?) doesn't
+        // create Nullable<T> wrappers and thus doesn't trigger implicit discovery.
         var implicitlyDiscoveredTypes = new HashSet<string>(
             types
-                .Where(x => x.CSharpTypeWithNullability != x.CSharpTypeWithoutNullability &&
+                .Where(x => x.IsValueType &&
+                            x.CSharpTypeWithNullability != x.CSharpTypeWithoutNullability &&
                             x.CSharpTypeWithNullability.EndsWith("?", StringComparison.Ordinal))
                 .Select(x => x.CSharpTypeWithoutNullability)
                 .Distinct(),
@@ -153,6 +156,41 @@ namespace {client.Settings.Namespace}
             }
 
             var implicitName = GetImplicitTypeInfoPropertyName(type);
+            var baseName = $"{implicitName}2";
+            var name = baseName;
+            var suffix = 3;
+
+            while (!usedNames.Add(name))
+            {
+                name = $"{implicitName}{suffix++}";
+            }
+
+            explicitNames[type] = name;
+        }
+
+        // Phase 3: Handle collisions between explicit types and STJ's implicit nullable naming.
+        // When STJ discovers Nullable<T> from JsonSerializerContextTypes, it names the TypeInfo
+        // "Nullable{TypeName}". If another explicit type has that same implicit name, it collides.
+        // Example: LLMModel? → STJ names it "NullableLLMModel", colliding with schema type NullableLLMModel.
+        var implicitNullableNames = new HashSet<string>(
+            implicitlyDiscoveredTypes
+                .Where(type => !ShouldKeepDefaultTypeInfoPropertyName(type))
+                .Select(type => $"Nullable{GetImplicitTypeInfoPropertyName(type)}"),
+            StringComparer.Ordinal);
+
+        foreach (var type in types)
+        {
+            if (explicitNames.ContainsKey(type))
+            {
+                continue;
+            }
+
+            var implicitName = GetImplicitTypeInfoPropertyName(type);
+            if (!implicitNullableNames.Contains(implicitName))
+            {
+                continue;
+            }
+
             var baseName = $"{implicitName}2";
             var name = baseName;
             var suffix = 3;
@@ -274,6 +312,16 @@ namespace {client.Settings.Namespace}
 
     private static bool ShouldKeepDefaultTypeInfoPropertyName(string type)
     {
+        if (type.EndsWith("[]", StringComparison.Ordinal))
+        {
+            return ShouldKeepDefaultTypeInfoPropertyName(type.Substring(0, type.Length - 2));
+        }
+
+        if (type.EndsWith("?", StringComparison.Ordinal))
+        {
+            return ShouldKeepDefaultTypeInfoPropertyName(type.Substring(0, type.Length - 1));
+        }
+
         if (type.StartsWith("global::", StringComparison.Ordinal))
         {
             return type.StartsWith("global::System.", StringComparison.Ordinal);

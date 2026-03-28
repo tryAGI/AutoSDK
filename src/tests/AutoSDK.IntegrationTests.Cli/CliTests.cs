@@ -36,6 +36,12 @@ public class CliTests
     }
 
     [TestMethod]
+    public async Task Generate_LangsmithSdk()
+    {
+        await GenerateAsync("langsmith.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
     public async Task Generate_WithInjectedApiKeyHeaderSecurityScheme_UsesFriendlyConstructorFileName()
     {
         await GenerateAsync(
