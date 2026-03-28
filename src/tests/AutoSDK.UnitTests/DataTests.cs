@@ -243,6 +243,53 @@ public partial class DataTests
     }
 
     [TestMethod]
+    [DataRow(true)]
+    [DataRow(false)]
+    public void ExcludeModels_RemovesReferencedComponentModels(bool useLegacyPrepare)
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateSdk = true,
+            GenerateModels = true,
+            ExcludeModels = ["Pet"],
+        };
+
+        var data = PreparePetstoreWithExclusions(useLegacyPrepare, new H.Resource("petstore.yaml").AsString(), settings);
+
+        data.Classes.Select(x => x.ClassName).Should().NotContain("Pet");
+        data.Classes.Select(x => x.ClassName).Should().Contain("Error");
+        data.Methods.First(x => x.MethodName == "GetPetsByPetIdAsync")
+            .SuccessResponse.Type.CSharpTypeWithNullabilityForValueTypes
+            .Should().Be("global::TestNamespace.Pet");
+    }
+
+    [TestMethod]
+    [DataRow(true)]
+    [DataRow(false)]
+    public void ExcludeModels_RemovesReferencedComponentModels_WithDotsInComponentId(bool useLegacyPrepare)
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateSdk = true,
+            GenerateModels = true,
+            ExcludeModels = ["PetStore.Pet"],
+        };
+        var yaml = new H.Resource("petstore.yaml").AsString()
+            .Replace("#/components/schemas/Pet\"", "#/components/schemas/PetStore.Pet\"")
+            .Replace("\n    Pet:\n", "\n    PetStore.Pet:\n");
+
+        var data = PreparePetstoreWithExclusions(useLegacyPrepare, yaml, settings);
+
+        data.Classes.Select(x => x.ClassName).Should().NotContain("PetStorePet");
+        data.Classes.Select(x => x.ClassName).Should().Contain("Error");
+        data.Methods.First(x => x.MethodName == "GetPetsByPetIdAsync")
+            .SuccessResponse.Type.CSharpTypeWithNullabilityForValueTypes
+            .Should().Be("global::TestNamespace.PetStorePet");
+    }
+
+    [TestMethod]
     public void DiscriminatorOnlyOneOfWrapper_DoesNotExposeHiddenDiscriminatorToConvenienceOverload()
     {
         var settings = DefaultSettings with
@@ -770,6 +817,23 @@ public partial class DataTests
         return VerifyAsync(
             data: Data.Prepare(((new H.Resource(resourceName).AsString(), settings), GlobalSettings: settings)),
             resourceName: Path.GetFileNameWithoutExtension(resourceName));
+    }
+
+    private static AutoSDK.Models.Data PreparePetstoreWithExclusions(bool useLegacyPrepare, string yaml, AutoSDK.Models.Settings settings)
+    {
+        settings = settings with
+        {
+            Namespace = "TestNamespace",
+            ClassName = "TestClient",
+            IgnoreOpenApiErrors = true,
+            IgnoreOpenApiWarnings = true,
+            MethodNamingConvention = MethodNamingConvention.OperationIdWithDots,
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+        };
+
+        return useLegacyPrepare
+            ? Data.Prepare(((yaml, settings), GlobalSettings: settings))
+            : CSharpPipeline.PrepareAndEnrich(((yaml, settings), GlobalSettings: settings));
     }
 
 }

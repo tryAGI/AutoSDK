@@ -839,7 +839,11 @@ public class SchemaContext(
     /// <summary>
     /// Adds this schema and all its children to the target set without intermediate List allocations.
     /// </summary>
-    public void CollectWithAllChildren(HashSet<SchemaContext> target, int level = 0, int maxDepth = 20)
+    public void CollectWithAllChildren(
+        HashSet<SchemaContext> target,
+        Predicate<SchemaContext>? shouldExpandReference = null,
+        int level = 0,
+        int maxDepth = 20)
     {
         target = target ?? throw new ArgumentNullException(nameof(target));
 
@@ -850,13 +854,17 @@ public class SchemaContext(
 
         if (IsReference)
         {
-            ResolvedReference?.CollectWithAllChildren(target, level + 1, maxDepth);
+            if (ResolvedReference is { } resolvedReference &&
+                (shouldExpandReference == null || shouldExpandReference(resolvedReference)))
+            {
+                resolvedReference.CollectWithAllChildren(target, shouldExpandReference, level + 1, maxDepth);
+            }
             return;
         }
 
         for (var i = 0; i < Children.Count; i++)
         {
-            Children[i].CollectWithAllChildren(target, level + 1, maxDepth);
+            Children[i].CollectWithAllChildren(target, shouldExpandReference, level + 1, maxDepth);
         }
     }
 

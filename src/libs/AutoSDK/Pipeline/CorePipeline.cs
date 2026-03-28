@@ -219,6 +219,20 @@ public static class CorePipeline
             var includeTagsArr = settings.IncludeTags.ToArray();
             var excludeTagsArr = settings.ExcludeTags.ToArray();
             var collected = new HashSet<SchemaContext>();
+            bool CanExpandReference(SchemaContext resolvedReference)
+            {
+                if (!(hasModelFilters && resolvedReference.IsComponent))
+                {
+                    return true;
+                }
+
+                if (includedModels.Count > 0 && !includedModels.Contains(resolvedReference.ComponentId!))
+                {
+                    return false;
+                }
+
+                return !excludedModels.Contains(resolvedReference.ComponentId!);
+            }
             for (var i = 0; i < schemas.Count; i++)
             {
                 var schema = schemas[i];
@@ -253,7 +267,9 @@ public static class CorePipeline
                     }
                 }
 
-                schema.CollectWithAllChildren(collected);
+                schema.CollectWithAllChildren(
+                    collected,
+                    hasModelFilters ? CanExpandReference : null);
             }
 
             filteredSchemas = new List<SchemaContext>(collected);

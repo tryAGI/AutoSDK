@@ -264,6 +264,20 @@ public static class Data
             var includeTagsArr = settings.IncludeTags.ToArray();
             var excludeTagsArr = settings.ExcludeTags.ToArray();
             var collected = new HashSet<SchemaContext>();
+            bool CanExpandReference(SchemaContext resolvedReference)
+            {
+                if (!(hasModelFilters && resolvedReference.IsComponent))
+                {
+                    return true;
+                }
+
+                if (includedModels.Count > 0 && !includedModels.Contains(resolvedReference.ComponentId!))
+                {
+                    return false;
+                }
+
+                return !excludedModels.Contains(resolvedReference.ComponentId!);
+            }
             for (var i = 0; i < schemas.Count; i++)
             {
                 var x = schemas[i];
@@ -293,7 +307,9 @@ public static class Data
                     }
                 }
                 // Add this schema and all its children without intermediate List allocations
-                x.CollectWithAllChildren(collected);
+                x.CollectWithAllChildren(
+                    collected,
+                    hasModelFilters ? CanExpandReference : null);
             }
             filteredSchemas = new List<SchemaContext>(collected);
         }
