@@ -61,7 +61,7 @@ namespace G
         ///  for client tools.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("client")]
-        public object? Client { get; set; }
+        public global::G.UltravoxV1ClientCallToolDetails? Client { get; set; }
 
         /// <summary>
         /// Indicates the default for how the agent should proceed after the tool is invoked.<br/>
@@ -134,7 +134,7 @@ namespace G
             string? timeout,
             bool? precomputable,
             global::G.UltravoxV1HttpCallToolDetails? http,
-            object? client,
+            global::G.UltravoxV1ClientCallToolDetails? client,
             global::G.UltravoxV1CallToolDefaultReaction? defaultReaction,
             global::G.UltravoxV1StaticToolResponse? staticResponse)
         {

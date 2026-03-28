@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.CompletionResponse.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G

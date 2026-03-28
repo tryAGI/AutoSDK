@@ -13,7 +13,7 @@ namespace G
         /// <param name="organizationId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<string> DeleteUserMembershipAsync(
+        global::System.Threading.Tasks.Task<global::G.DeleteUserMembershipResponse> DeleteUserMembershipAsync(
             string userId,
             string organizationId,
             global::System.Threading.CancellationToken cancellationToken = default);

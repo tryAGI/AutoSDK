@@ -17,7 +17,7 @@ namespace G
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
 
-            string response,
+            global::G.DeleteOrganizationResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
         private global::System.CommandLine.Argument<string> OrganizationId { get; } = new(

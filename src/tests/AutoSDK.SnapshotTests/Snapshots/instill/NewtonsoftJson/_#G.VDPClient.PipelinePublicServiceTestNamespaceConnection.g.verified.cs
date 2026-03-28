@@ -37,7 +37,7 @@ namespace G
         /// <param name="connectionId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> PipelinePublicServiceTestNamespaceConnectionAsync(
+        public async global::System.Threading.Tasks.Task<global::G.TestNamespaceConnectionResponse> PipelinePublicServiceTestNamespaceConnectionAsync(
             string namespaceId,
             string connectionId,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -195,7 +195,9 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return __content;
+                    return
+                        global::G.TestNamespaceConnectionResponse.FromJson(__content, JsonSerializerOptions) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -218,13 +220,15 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    var __content = await __response.Content.ReadAsStringAsync(
+                    using var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
                         cancellationToken
 #endif
                     ).ConfigureAwait(false);
 
-                    return __content;
+                    return
+                        await global::G.TestNamespaceConnectionResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
                 {

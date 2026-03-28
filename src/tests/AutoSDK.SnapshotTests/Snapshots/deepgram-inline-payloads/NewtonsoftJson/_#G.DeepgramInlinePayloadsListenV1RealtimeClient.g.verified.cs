@@ -50,7 +50,7 @@ namespace G
         {
             apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
 
-            _clientWebSocket.Options.SetRequestHeader("Authorization", $"Bearer {apiKey}");
+            _clientWebSocket.Options.SetRequestHeader("Authorization", $"bearer {apiKey}");
         }
 
         /// <summary>
@@ -81,6 +81,8 @@ namespace G
         /// <param name="keywords">Keywords to boost in transcription.</param>
         /// <param name="language">BCP-47 language tag for the primary spoken language.</param>
         /// <param name="sampleRate">Sample rate of the audio stream in Hz.</param>
+        /// <param name="uri">Optional WebSocket endpoint override.</param>
+        /// <param name="cancellationToken">A cancellation token.</param>
         public async global::System.Threading.Tasks.Task ConnectAsync(
             global::G.ListenV1Model model,
             global::System.Collections.Generic.IList<int>? channels = default,

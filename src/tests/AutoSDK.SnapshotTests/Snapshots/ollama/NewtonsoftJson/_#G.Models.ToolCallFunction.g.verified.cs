@@ -19,7 +19,7 @@ namespace G
         /// The arguments to pass to the function.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("arguments", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Arguments { get; set; } = default!;
+        public global::G.ToolCallFunctionArgs Arguments { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +38,7 @@ namespace G
         /// </param>
         public ToolCallFunction(
             string name,
-            object arguments)
+            global::G.ToolCallFunctionArgs arguments)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));

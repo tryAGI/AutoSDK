@@ -17,7 +17,7 @@ namespace G
         ///  This is the default.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webRtc")]
-        public object? WebRtc { get; set; }
+        public global::G.UltravoxV1CallMediumWebRtcMedium? WebRtc { get; set; }
 
         /// <summary>
         /// The call will use Twilio's "Media Streams" protocol.<br/>
@@ -27,7 +27,7 @@ namespace G
         ///  This works for both inbound and outbound calls.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("twilio")]
-        public object? Twilio { get; set; }
+        public global::G.UltravoxV1CallMediumTwilioMedium? Twilio { get; set; }
 
         /// <summary>
         /// The call will use a plain websocket connection. This is unlikely to yield an acceptable user<br/>
@@ -46,7 +46,7 @@ namespace G
         ///  This works for both inbound and outbound calls.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("telnyx")]
-        public object? Telnyx { get; set; }
+        public global::G.UltravoxV1CallMediumTelnyxMedium? Telnyx { get; set; }
 
         /// <summary>
         /// The call will use Plivo's AudioStreams protocol.<br/>
@@ -56,7 +56,7 @@ namespace G
         ///  This works for both inbound and outbound calls.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("plivo")]
-        public object? Plivo { get; set; }
+        public global::G.UltravoxV1CallMediumPlivoMedium? Plivo { get; set; }
 
         /// <summary>
         /// The call will use Exotel's "Voicebot" protocol.<br/>
@@ -64,7 +64,7 @@ namespace G
         ///  for your Voicebot (either directly or more likely dynamically from your own server).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("exotel")]
-        public object? Exotel { get; set; }
+        public global::G.UltravoxV1CallMediumExotelMedium? Exotel { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -115,12 +115,12 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UltravoxV1CallMedium(
-            object? webRtc,
-            object? twilio,
+            global::G.UltravoxV1CallMediumWebRtcMedium? webRtc,
+            global::G.UltravoxV1CallMediumTwilioMedium? twilio,
             global::G.UltravoxV1CallMediumWebSocketMedium? serverWebSocket,
-            object? telnyx,
-            object? plivo,
-            object? exotel)
+            global::G.UltravoxV1CallMediumTelnyxMedium? telnyx,
+            global::G.UltravoxV1CallMediumPlivoMedium? plivo,
+            global::G.UltravoxV1CallMediumExotelMedium? exotel)
         {
             this.WebRtc = webRtc;
             this.Twilio = twilio;

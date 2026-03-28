@@ -59,6 +59,240 @@ public class CliTests
             additionalArguments: ["--security-scheme", "ApiKey:Header:api-key"]);
     }
 
+    [TestMethod]
+    public async Task Generate_WithInjectedCustomHttpAuthorizationScheme_UsesCustomSchemeName()
+    {
+        const string spec = """
+openapi: 3.0.1
+info:
+  title: Test
+  version: 1.0.0
+paths:
+  /test:
+    get:
+      operationId: getTest
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+components:
+  schemas:
+    Result:
+      type: object
+      properties:
+        ok:
+          type: boolean
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "custom-http-auth.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "Deepgram",
+            clientClassName: "DeepgramClient",
+            expectedGeneratedFile: "Deepgram.DeepgramClient.Constructors.Token.g.cs",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var authFile = Path.Combine(outputDirectory, "Deepgram.DeepgramClient.Authorizations.Token.g.cs");
+                File.Exists(authFile).Should().BeTrue();
+                var content = await File.ReadAllTextAsync(authFile);
+                content.Should().Contain("Name = \"Token\"");
+                content.Should().Contain("Value = apiKey");
+            },
+            additionalArguments: ["--security-scheme", "Http:Header:Token"]);
+    }
+
+    [TestMethod]
+    public async Task Generate_WithDuplicateQueryParameterNames_Builds()
+    {
+        const string spec = """
+openapi: 3.0.1
+info:
+  title: DuplicateParams
+  version: 1.0.0
+paths:
+  /session:
+    get:
+      operationId: getSession
+      parameters:
+        - in: query
+          name: name
+          schema:
+            type: string
+          description: Session name.
+        - in: query
+          name: name
+          schema:
+            type: string
+          description: Customer name.
+      responses:
+        '200':
+          description: OK
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "duplicate-query-params.yaml",
+            specContent: spec,
+            targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_WithWarningRegressionModels_Builds()
+    {
+        const string spec = """
+openapi: 3.0.1
+info:
+  title: WarningRegression
+  version: 1.0.0
+paths:
+  /thing:
+    get:
+      operationId: getThing
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsesDeprecatedThing'
+    post:
+      operationId: createThing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DerivedThing'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    DeprecatedThing:
+      type: object
+      deprecated: true
+      properties:
+        id:
+          type: string
+    UsesDeprecatedThing:
+      type: object
+      properties:
+        item:
+          $ref: '#/components/schemas/DeprecatedThing'
+    BaseThing:
+      type: object
+      properties:
+        createdAt:
+          type: string
+    DerivedThing:
+      allOf:
+        - $ref: '#/components/schemas/BaseThing'
+        - type: object
+          properties:
+            createdAt:
+              type: string
+            equals:
+              type: string
+            name:
+              type: string
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "warning-regressions.yaml",
+            specContent: spec,
+            targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_WithCaseInsensitiveEnumCollisions_Builds()
+    {
+        const string spec = """
+openapi: 3.0.1
+info:
+  title: EnumCollision
+  version: 1.0.0
+paths:
+  /kind:
+    get:
+      operationId: getKind
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KindWrapper'
+components:
+  schemas:
+    Kind:
+      type: string
+      enum:
+        - same
+        - Same
+    KindWrapper:
+      type: object
+      properties:
+        kind:
+          $ref: '#/components/schemas/Kind'
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "enum-collision.yaml",
+            specContent: spec,
+            targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_FreeFormObjectSchemas_UseGeneratedWrapperTypes()
+    {
+        const string spec = """
+openapi: 3.0.1
+info:
+  title: FreeForm
+  version: 1.0.0
+paths:
+  /points:
+    post:
+      operationId: createPoint
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PointStruct'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    Payload:
+      type: object
+      additionalProperties: true
+    PointStruct:
+      type: object
+      properties:
+        payload:
+          $ref: '#/components/schemas/Payload'
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "free-form-object.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "FreeForm",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var pointStructFile = Path.Combine(outputDirectory, "FreeForm.Models.PointStruct.g.cs");
+                File.Exists(pointStructFile).Should().BeTrue();
+                var content = await File.ReadAllTextAsync(pointStructFile);
+                content.Should().Contain("public global::FreeForm.Payload? Payload");
+                content.Should().NotContain("public object? Payload");
+            });
+    }
+
     private static async Task GenerateAsync(
         string spec,
         string targetFramework = "net8.0",
@@ -66,6 +300,7 @@ public class CliTests
         string namespaceValue = "Oag",
         string clientClassName = "",
         string? expectedGeneratedFile = null,
+        Func<string, Task>? assertGeneratedOutput = null,
         params string[] additionalArguments)
     {
         var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
@@ -75,13 +310,18 @@ public class CliTests
 
             var currentDirectory = Directory.GetCurrentDirectory();
             var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
+            var inputPath = spec.StartsWith("http", StringComparison.OrdinalIgnoreCase)
+                ? spec
+                : Path.IsPathRooted(spec)
+                    ? spec
+                    : $"specs/{spec}";
             var generateArguments = new List<string>
             {
                 "run",
                 "--disable-build-servers",
                 "--no-launch-profile",
                 "--project", "src/libs/AutoSDK.CLI",
-                "generate", spec.StartsWith("http") ? spec : $"specs/{spec}",
+                "generate", inputPath,
                 "--namespace", namespaceValue,
                 "--targetFramework", targetFramework,
                 "--output", tempDirectory,
@@ -118,6 +358,11 @@ public class CliTests
                     .BeTrue();
             }
 
+            if (assertGeneratedOutput != null)
+            {
+                await assertGeneratedOutput(tempDirectory);
+            }
+
             await File.WriteAllTextAsync(Path.Combine(tempDirectory, "Oag.csproj"), $@"<Project Sdk=""Microsoft.NET.Sdk"">
 
   <PropertyGroup>
@@ -149,6 +394,42 @@ public class CliTests
         finally
         {
             TryDeleteDirectory(tempDirectory);
+        }
+    }
+
+    private static async Task GenerateFromContentAsync(
+        string fileName,
+        string specContent,
+        string targetFramework = "net8.0",
+        bool expectResponseStream = false,
+        string namespaceValue = "Oag",
+        string clientClassName = "",
+        string? expectedGeneratedFile = null,
+        Func<string, Task>? assertGeneratedOutput = null,
+        params string[] additionalArguments)
+    {
+        var tempSpecDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        Directory.CreateDirectory(tempSpecDirectory);
+
+        var specPath = Path.Combine(tempSpecDirectory, fileName);
+
+        try
+        {
+            await File.WriteAllTextAsync(specPath, specContent);
+
+            await GenerateAsync(
+                spec: specPath,
+                targetFramework: targetFramework,
+                expectResponseStream: expectResponseStream,
+                namespaceValue: namespaceValue,
+                clientClassName: clientClassName,
+                expectedGeneratedFile: expectedGeneratedFile,
+                assertGeneratedOutput: assertGeneratedOutput,
+                additionalArguments: additionalArguments);
+        }
+        finally
+        {
+            TryDeleteDirectory(tempSpecDirectory);
         }
     }
 

@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.VectorStoreFileObject.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -67,7 +65,7 @@ namespace G
         /// length of 512 characters, booleans, or numbers.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("attributes")]
-        public object? Attributes { get; set; }
+        public global::G.VectorStoreFileAttributes? Attributes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -118,7 +116,7 @@ namespace G
             global::G.VectorStoreFileObjectObject @object,
             global::G.VectorStoreFileObjectLastError? lastError,
             global::G.OneOf<global::G.StaticChunkingStrategyResponseParam, global::G.OtherChunkingStrategyResponseParam>? chunkingStrategy,
-            object? attributes)
+            global::G.VectorStoreFileAttributes? attributes)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.UsageBytes = usageBytes;

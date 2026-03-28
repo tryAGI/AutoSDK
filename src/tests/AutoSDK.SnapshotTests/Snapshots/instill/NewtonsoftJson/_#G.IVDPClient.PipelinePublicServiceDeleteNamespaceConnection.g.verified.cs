@@ -13,7 +13,7 @@ namespace G
         /// <param name="connectionId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<string> PipelinePublicServiceDeleteNamespaceConnectionAsync(
+        global::System.Threading.Tasks.Task<global::G.DeleteNamespaceConnectionResponse> PipelinePublicServiceDeleteNamespaceConnectionAsync(
             string namespaceId,
             string connectionId,
             global::System.Threading.CancellationToken cancellationToken = default);

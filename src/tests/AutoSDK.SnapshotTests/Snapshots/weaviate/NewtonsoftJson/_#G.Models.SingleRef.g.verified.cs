@@ -19,7 +19,7 @@ namespace G
         /// Names and values of an individual property. A returned response may also contain additional metadata, such as from classification or feature projection.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("schema")]
-        public object? Schema { get; set; }
+        public global::G.PropertySchema? Schema { get; set; }
 
         /// <summary>
         /// If using a direct reference, specify the URI to point to the cross-ref here. Should be in the form of weaviate://localhost/&lt;uuid&gt; for the example of a local cross-ref to an object
@@ -65,7 +65,7 @@ namespace G
         /// </param>
         public SingleRef(
             string? @class,
-            object? schema,
+            global::G.PropertySchema? schema,
             string? beacon,
             string? href,
             global::G.ReferenceMetaClassification? classification)

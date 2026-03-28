@@ -50,7 +50,7 @@ namespace G
         {
             apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
 
-            _clientWebSocket.Options.SetRequestHeader("Authorization", $"Bearer {apiKey}");
+            _clientWebSocket.Options.SetRequestHeader("Authorization", $"bearer {apiKey}");
         }
 
         /// <summary>

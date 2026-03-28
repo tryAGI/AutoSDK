@@ -38,7 +38,7 @@ namespace G
         /// length of 512 characters, booleans, or numbers.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attributes")]
-        public object? Attributes { get; set; }
+        public global::G.VectorStoreFileAttributes? Attributes { get; set; }
 
         /// <summary>
         /// Content chunks from the file.
@@ -83,7 +83,7 @@ namespace G
             string filename,
             double score,
             global::System.Collections.Generic.IList<global::G.VectorStoreSearchResultContentObject> content,
-            object? attributes)
+            global::G.VectorStoreFileAttributes? attributes)
         {
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));

@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string namespaceId,
             ref string pipelineId,
-            object request);
+            global::G.ValidateNamespacePipelineBody request);
         partial void PreparePipelinePublicServiceValidateNamespacePipelineRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string namespaceId,
             string pipelineId,
-            object request);
+            global::G.ValidateNamespacePipelineBody request);
         partial void ProcessPipelinePublicServiceValidateNamespacePipelineResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,7 +41,7 @@ namespace G
             string namespaceId,
             string pipelineId,
 
-            object request,
+            global::G.ValidateNamespacePipelineBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -81,7 +81,7 @@ namespace G
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            var __httpRequestContentBody = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, JsonSerializerOptions);
+            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -286,7 +286,7 @@ namespace G
             string pipelineId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new object
+            var __request = new global::G.ValidateNamespacePipelineBody
             {
             };
 

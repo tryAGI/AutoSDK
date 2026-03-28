@@ -426,8 +426,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Object> ObjectsCreateAsync(
             global::G.ObjectsCreateConsistencyLevel? consistencyLevel = default,
             string? @class = default,
-            object? vectorWeights = default,
-            object? properties = default,
+            global::G.VectorWeights? vectorWeights = default,
+            global::G.PropertySchema? properties = default,
             global::System.Guid? id = default,
             long? creationTimeUnix = default,
             long? lastUpdateTimeUnix = default,

@@ -35,7 +35,7 @@ namespace G
         /// length of 512 characters, booleans, or numbers.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("attributes")]
-        public object? Attributes { get; set; }
+        public global::G.VectorStoreFileAttributes? Attributes { get; set; }
 
         /// <summary>
         /// The relevance score of the file - a value between 0 and 1.
@@ -75,7 +75,7 @@ namespace G
             string? fileId,
             string? text,
             string? filename,
-            object? attributes,
+            global::G.VectorStoreFileAttributes? attributes,
             float? score)
         {
             this.FileId = fileId;

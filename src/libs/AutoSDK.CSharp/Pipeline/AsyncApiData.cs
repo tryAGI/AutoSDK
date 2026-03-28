@@ -896,6 +896,8 @@ public static class AsyncApiData
                 ("Bearer", new[] { "apiKey" }, ParameterLocation.Header, SecuritySchemeType.Http),
             ("http", "BASIC", _) =>
                 ("Basic", new[] { "username", "password" }, ParameterLocation.Header, SecuritySchemeType.Http),
+            ("http", _, _) =>
+                (scheme.Scheme?.ToPropertyName() ?? "Http", new[] { "apiKey" }, ParameterLocation.Header, SecuritySchemeType.Http),
             ("httpApiKey" or "apikey", _, "header") =>
                 ("ApiKeyInHeader", new[] { "apiKey" }, ParameterLocation.Header, SecuritySchemeType.ApiKey),
             ("httpApiKey" or "apikey", _, "query") =>

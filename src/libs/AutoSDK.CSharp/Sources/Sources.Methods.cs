@@ -8,6 +8,33 @@ namespace AutoSDK.Generation;
 
 public static partial class Sources
 {
+    private static bool RequiresDeprecatedTypeWarningSuppression(EndPoint endPoint)
+    {
+        if (TypeUsesDeprecatedMembers(endPoint.RequestType) ||
+            TypeUsesDeprecatedMembers(endPoint.SuccessResponse.Type))
+        {
+            return true;
+        }
+
+        for (var i = 0; i < endPoint.Parameters.Length; i++)
+        {
+            if (TypeUsesDeprecatedMembers(endPoint.Parameters[i].Type))
+            {
+                return true;
+            }
+        }
+
+        for (var i = 0; i < endPoint.ErrorResponses.Length; i++)
+        {
+            if (TypeUsesDeprecatedMembers(endPoint.ErrorResponses[i].Type))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public static string GenerateEndPoint(
         EndPoint endPoint,
         CancellationToken cancellationToken = default)
@@ -27,7 +54,8 @@ public static partial class Sources
         return $@"
 #nullable enable{(
     endPoint.Parameters.Any(x => x is { IsDeprecated: true, Location: not null }) ||
-    endPoint.IsMultipartFormData && endPoint.Parameters.Any(x => x.IsDeprecated) ? @"
+    endPoint.IsMultipartFormData && endPoint.Parameters.Any(x => x.IsDeprecated) ||
+    RequiresDeprecatedTypeWarningSuppression(endPoint) ? @"
 
 #pragma warning disable CS0618 // Type or member is obsolete" : "")}
 
@@ -72,7 +100,9 @@ namespace {endPoint.Settings.Namespace}
             return string.Empty;
         }
 
-        return $@"#nullable enable
+        return $@"#nullable enable{(RequiresDeprecatedTypeWarningSuppression(endPoint) ? @"
+
+#pragma warning disable CS0618 // Type or member is obsolete" : "")}
 
 namespace {endPoint.Settings.Namespace}
 {{

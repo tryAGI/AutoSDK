@@ -133,7 +133,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object? Type26 { get; set; }
+        public global::G.ToolFunctionParams? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -141,119 +141,123 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateEmbeddingRequest? Type28 { get; set; }
+        public global::G.ToolCallFunctionArgs? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateEmbeddingResponse? Type29 { get; set; }
+        public global::G.GenerateEmbeddingRequest? Type29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<double>? Type30 { get; set; }
+        public global::G.GenerateEmbeddingResponse? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double? Type31 { get; set; }
+        public global::System.Collections.Generic.IList<double>? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateModelRequest? Type32 { get; set; }
+        public double? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateModelResponse? Type33 { get; set; }
+        public global::G.CreateModelRequest? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateModelStatus? Type34 { get; set; }
+        public global::G.CreateModelResponse? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateModelStatusEnum? Type35 { get; set; }
+        public global::G.CreateModelStatus? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelsResponse? Type36 { get; set; }
+        public global::G.CreateModelStatusEnum? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Model>? Type37 { get; set; }
+        public global::G.ModelsResponse? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Model? Type38 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Model>? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelDetails? Type39 { get; set; }
+        public global::G.Model? Type39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelInformation? Type40 { get; set; }
+        public global::G.ModelDetails? Type40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProcessResponse? Type41 { get; set; }
+        public global::G.ModelInformation? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ProcessModel>? Type42 { get; set; }
+        public global::G.ProcessResponse? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProcessModel? Type43 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ProcessModel>? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelInfoRequest? Type44 { get; set; }
+        public global::G.ProcessModel? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelInfo? Type45 { get; set; }
+        public global::G.ModelInfoRequest? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CopyModelRequest? Type46 { get; set; }
+        public global::G.ModelInfo? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteModelRequest? Type47 { get; set; }
+        public global::G.CopyModelRequest? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PullModelRequest? Type48 { get; set; }
+        public global::G.DeleteModelRequest? Type48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PullModelResponse? Type49 { get; set; }
+        public global::G.PullModelRequest? Type49 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PullModelStatus? Type50 { get; set; }
+        public global::G.PullModelResponse? Type50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PullModelStatusEnum? Type51 { get; set; }
+        public global::G.PullModelStatus? Type51 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PushModelRequest? Type52 { get; set; }
+        public global::G.PullModelStatusEnum? Type52 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PushModelResponse? Type53 { get; set; }
+        public global::G.PushModelRequest? Type53 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::G.PushModelResponseStatus?>? Type54 { get; set; }
+        public global::G.PushModelResponse? Type54 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PushModelResponseStatus? Type55 { get; set; }
+        public global::G.AnyOf<string, global::G.PushModelResponseStatus?>? Type55 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public byte[]? Type56 { get; set; }
+        public global::G.PushModelResponseStatus? Type56 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[]? Type57 { get; set; }
 
         /// <summary>
         /// 

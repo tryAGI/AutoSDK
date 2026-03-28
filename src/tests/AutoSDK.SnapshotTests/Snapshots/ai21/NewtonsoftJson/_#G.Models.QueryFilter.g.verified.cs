@@ -14,9 +14,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? ComparisonOperator { get; init; }
+        public global::G.ComparisonOperator? ComparisonOperator { get; init; }
 #else
-        public object? ComparisonOperator { get; }
+        public global::G.ComparisonOperator? ComparisonOperator { get; }
 #endif
 
         /// <summary>
@@ -48,9 +48,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.Dictionary<string, object>? Value3 { get; init; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>? Value3 { get; init; }
 #else
-        public global::System.Collections.Generic.Dictionary<string, object>? Value3 { get; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>? Value3 { get; }
 #endif
 
         /// <summary>
@@ -60,6 +60,24 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
 #endif
         public bool IsValue3 => Value3 != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator QueryFilter(global::G.ComparisonOperator value) => new QueryFilter((global::G.ComparisonOperator?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ComparisonOperator?(QueryFilter @this) => @this.ComparisonOperator;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public QueryFilter(global::G.ComparisonOperator? value)
+        {
+            ComparisonOperator = value;
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -81,17 +99,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator QueryFilter(global::System.Collections.Generic.Dictionary<string, object> value) => new QueryFilter((global::System.Collections.Generic.Dictionary<string, object>?)value);
+        public static implicit operator QueryFilter(global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator> value) => new QueryFilter((global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::System.Collections.Generic.Dictionary<string, object>?(QueryFilter @this) => @this.Value3;
+        public static implicit operator global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>?(QueryFilter @this) => @this.Value3;
 
         /// <summary>
         /// 
         /// </summary>
-        public QueryFilter(global::System.Collections.Generic.Dictionary<string, object>? value)
+        public QueryFilter(global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>? value)
         {
             Value3 = value;
         }
@@ -100,9 +118,9 @@ namespace G
         /// 
         /// </summary>
         public QueryFilter(
-            object? comparisonOperator,
+            global::G.ComparisonOperator? comparisonOperator,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>? logicalOperator,
-            global::System.Collections.Generic.Dictionary<string, object>? value3
+            global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>? value3
             )
         {
             ComparisonOperator = comparisonOperator;
@@ -140,9 +158,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<object?, TResult>? comparisonOperator = null,
+            global::System.Func<global::G.ComparisonOperator?, TResult>? comparisonOperator = null,
             global::System.Func<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>?, TResult>? logicalOperator = null,
-            global::System.Func<global::System.Collections.Generic.Dictionary<string, object>?, TResult>? value3 = null,
+            global::System.Func<global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>?, TResult>? value3 = null,
             bool validate = true)
         {
             if (validate)
@@ -170,9 +188,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<object?>? comparisonOperator = null,
+            global::System.Action<global::G.ComparisonOperator?>? comparisonOperator = null,
             global::System.Action<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>?>? logicalOperator = null,
-            global::System.Action<global::System.Collections.Generic.Dictionary<string, object>?>? value3 = null,
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>?>? value3 = null,
             bool validate = true)
         {
             if (validate)
@@ -202,11 +220,11 @@ namespace G
             var fields = new object?[]
             {
                 ComparisonOperator,
-                typeof(object),
+                typeof(global::G.ComparisonOperator),
                 LogicalOperator,
                 typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>),
                 Value3,
-                typeof(global::System.Collections.Generic.Dictionary<string, object>),
+                typeof(global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -223,9 +241,9 @@ namespace G
         public bool Equals(QueryFilter other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(ComparisonOperator, other.ComparisonOperator) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ComparisonOperator?>.Default.Equals(ComparisonOperator, other.ComparisonOperator) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>?>.Default.Equals(LogicalOperator, other.LogicalOperator) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.Dictionary<string, object>?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>?>.Default.Equals(Value3, other.Value3) 
                 ;
         }
 

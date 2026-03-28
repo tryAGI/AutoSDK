@@ -38,7 +38,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schema")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Schema { get; set; }
+        public required global::G.ResponseFormatJsonSchemaSchema Schema { get; set; }
 
         /// <summary>
         /// Whether to enable strict schema adherence when generating the output.<br/>
@@ -88,7 +88,7 @@ namespace G
 #endif
         public TextResponseFormatJsonSchema(
             string name,
-            object schema,
+            global::G.ResponseFormatJsonSchemaSchema schema,
             global::G.TextResponseFormatJsonSchemaType type,
             string? description,
             bool? strict)

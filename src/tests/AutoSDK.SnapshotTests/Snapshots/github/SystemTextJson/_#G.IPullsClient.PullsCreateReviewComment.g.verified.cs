@@ -1,6 +1,8 @@
 ﻿//HintName: G.IPullsClient.PullsCreateReviewComment.g.cs
 #nullable enable
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 namespace G
 {
     public partial interface IPullsClient

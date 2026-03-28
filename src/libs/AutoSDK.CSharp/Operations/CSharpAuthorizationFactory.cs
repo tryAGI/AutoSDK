@@ -18,6 +18,7 @@ public static class CSharpAuthorizationFactory
         {
             (SecuritySchemeType.Http, "BEARER", _) => "Bearer",
             (SecuritySchemeType.Http, "BASIC", _) => "Basic",
+            (SecuritySchemeType.Http, _, _) => scheme.Scheme?.ToPropertyName() ?? "Http",
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Header) => "ApiKeyInHeader",
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Query) => "ApiKeyInQuery",
             (SecuritySchemeType.OAuth2, _, _) => "OAuth2",
@@ -27,6 +28,7 @@ public static class CSharpAuthorizationFactory
         {
             (SecuritySchemeType.Http, "BEARER", _) => ["apiKey"],
             (SecuritySchemeType.Http, "BASIC", _) => ["username", "password"],
+            (SecuritySchemeType.Http, _, _) => ["apiKey"],
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Header) => ["apiKey"],
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Query) => ["apiKey"],
             _ => [],
@@ -37,7 +39,7 @@ public static class CSharpAuthorizationFactory
             type: scheme.Type,
             parameterLocation: (scheme.Type, scheme.Scheme?.ToUpperInvariant()) switch
             {
-                (SecuritySchemeType.Http, "BEARER") => ParameterLocation.Header,
+                (SecuritySchemeType.Http, _) => ParameterLocation.Header,
                 (SecuritySchemeType.OAuth2, _) => ParameterLocation.Header,
                 _ => scheme.In,
             },

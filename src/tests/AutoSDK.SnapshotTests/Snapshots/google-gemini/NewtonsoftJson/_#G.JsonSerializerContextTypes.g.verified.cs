@@ -213,31 +213,39 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Part>? Type46 { get; set; }
+        public global::G.Empty? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbedContentResponse? Type47 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Part>? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CountTokensResponse? Type48 { get; set; }
+        public global::G.CancelOperationRequest? Type48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateContentResponse? Type49 { get; set; }
+        public global::G.EmbedContentResponse? Type49 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Candidate>? Type50 { get; set; }
+        public global::G.CountTokensResponse? Type50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateContentRequest? Type51 { get; set; }
+        public global::G.GenerateContentResponse? Type51 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.SafetySetting>? Type52 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Candidate>? Type52 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GenerateContentRequest? Type53 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.SafetySetting>? Type54 { get; set; }
 
         /// <summary>
         /// 

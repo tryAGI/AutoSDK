@@ -7,12 +7,24 @@ namespace AutoSDK.Generation;
 
 public static partial class Sources
 {
+    private static readonly HashSet<string> ObjectMemberNames = new(StringComparer.Ordinal)
+    {
+        "Equals",
+        "GetHashCode",
+        "GetType",
+        "ToString",
+    };
+
     public static string GenerateModel(
         ModelData modelData,
         CancellationToken cancellationToken = default)
     {
+        var suppressObsoleteWarnings =
+            HasDeprecatedTypeReferences(modelData) ||
+            HasDeprecatedBaseClass(modelData);
+
         return $@"
-{(modelData.Properties.Any(x => x.Type.CSharpType.Contains("AnyOf<") || x.Type.CSharpType.Contains("OneOf<") || x.Type.CSharpType.Contains("AllOf<")) ? @"#pragma warning disable CS0618 // Type or member is obsolete
+{(suppressObsoleteWarnings ? @"#pragma warning disable CS0618 // Type or member is obsolete
 " : TrimmedLine)}
 #nullable enable
 
@@ -83,9 +95,91 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
             return " = default!;";
         }
 
+        if (!property.Type.IsValueType &&
+            !property.Type.CSharpTypeNullability &&
+            string.IsNullOrWhiteSpace(property.DefaultValue) &&
+            !(property.IsRequired && isRequiredKeywordSupported))
+        {
+            return " = default!;";
+        }
+
         return property.Type.CSharpTypeNullability || string.IsNullOrWhiteSpace(property.DefaultValue)
             ? string.Empty
             : $" = {property.DefaultValue};";
+    }
+
+    private static bool HasDeprecatedTypeReferences(ModelData modelData)
+    {
+        for (var i = 0; i < modelData.Properties.Length; i++)
+        {
+            if (TypeUsesDeprecatedMembers(modelData.Properties[i].Type))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private static bool TypeUsesDeprecatedMembers(TypeData type)
+    {
+        if (type.IsDeprecated)
+        {
+            return true;
+        }
+
+        for (var i = 0; i < type.SubTypes.Length; i++)
+        {
+            if (TypeUsesDeprecatedMembers(type.SubTypes[i].Unbox<TypeData>()))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private static bool HasDeprecatedBaseClass(ModelData modelData)
+    {
+        if (!modelData.IsDerivedClass)
+        {
+            return false;
+        }
+
+        return modelData.SchemaContext.BaseClassContext.Schema.IsDeprecated();
+    }
+
+    private static bool RequiresNewModifier(ModelData modelData, PropertyData property)
+    {
+        if (ObjectMemberNames.Contains(property.Name))
+        {
+            return true;
+        }
+
+        if (!modelData.IsDerivedClass)
+        {
+            return false;
+        }
+
+        var current = modelData.SchemaContext;
+        while (current.IsDerivedClass)
+        {
+            var baseContext = current.BaseClassContext;
+            if (baseContext.ClassData is { } baseClassData)
+            {
+                for (var i = 0; i < baseClassData.Properties.Length; i++)
+                {
+                    if (string.Equals(baseClassData.Properties[i].Name, property.Name, StringComparison.Ordinal))
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            current = baseContext;
+        }
+
+        return false;
     }
 
     public static string GenerateClassModel(
@@ -124,7 +218,7 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         {jsonSerializer.GenerateConverterAttribute(property.ConverterType)}
         {(property.IsRequired ? jsonSerializer.GenerateRequiredAttribute() : string.Empty)}
         {(modelData.IsDeprecated || (property.Type is { IsDeprecated: true, IsAnyOfLike: false } && !property.IsRequired) ? $"[global::System.Obsolete(\"{(!string.IsNullOrWhiteSpace(modelData.DeprecationMessage) ? modelData.DeprecationMessage.ClearForCSharp() : "This property marked as deprecated.")}\")]" : TrimmedLine)}
-        public{(property.IsRequired ? requiredKeyword : "")} {property.Type.CSharpType} {property.Name} {{ get; set; }}{GetDefaultValue(property, isRequiredKeywordSupported)}
+        public{(RequiresNewModifier(modelData, property) ? " new" : string.Empty)}{(property.IsRequired ? requiredKeyword : "")} {property.Type.CSharpType} {property.Name} {{ get; set; }}{GetDefaultValue(property, isRequiredKeywordSupported)}
 ").Inject()}
 
 {(!modelData.IsDerivedClass ? $@" 

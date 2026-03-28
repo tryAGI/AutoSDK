@@ -29,7 +29,7 @@ namespace G
         /// Learn how to build JSON schemas [here](https://json-schema.org/).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schema")]
-        public object? Schema { get; set; }
+        public global::G.ResponseFormatJsonSchemaSchema? Schema { get; set; }
 
         /// <summary>
         /// Whether to enable strict schema adherence when generating the output.<br/>
@@ -77,7 +77,7 @@ namespace G
         public ResponseFormatJsonSchemaJsonSchema(
             string name,
             string? description,
-            object? schema,
+            global::G.ResponseFormatJsonSchemaSchema? schema,
             bool? strict)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

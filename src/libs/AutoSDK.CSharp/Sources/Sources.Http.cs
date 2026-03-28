@@ -251,6 +251,7 @@ public static partial class Sources
         {
             (SecuritySchemeType.Http, "BEARER", _) => "Authorization: Bearer {{token}}",
             (SecuritySchemeType.Http, "BASIC", _) => "Authorization: Basic {{credentials}}",
+            (SecuritySchemeType.Http, _, _) => $"Authorization: {scheme.Scheme} {{api_key}}",
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Header) =>
                 scheme.Name + ": {{api_key}}",
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Query) => null, // handled in query string
@@ -488,6 +489,13 @@ public static partial class Sources
                     if (added.Add("credentials"))
                     {
                         env["credentials"] = "";
+                    }
+
+                    break;
+                case SecuritySchemeType.Http:
+                    if (added.Add("api_key"))
+                    {
+                        env["api_key"] = "";
                     }
 
                     break;

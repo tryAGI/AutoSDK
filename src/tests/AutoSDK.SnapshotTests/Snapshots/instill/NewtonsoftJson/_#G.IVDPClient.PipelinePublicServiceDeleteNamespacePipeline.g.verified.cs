@@ -15,7 +15,7 @@ namespace G
         /// <param name="pipelineId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<string> PipelinePublicServiceDeleteNamespacePipelineAsync(
+        global::System.Threading.Tasks.Task<global::G.DeleteNamespacePipelineResponse> PipelinePublicServiceDeleteNamespacePipelineAsync(
             string namespaceId,
             string pipelineId,
             global::System.Threading.CancellationToken cancellationToken = default);

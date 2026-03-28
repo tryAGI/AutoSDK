@@ -13,7 +13,7 @@ namespace G
         /// <param name="appId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<string> AppPublicServiceDeleteAppAsync(
+        global::System.Threading.Tasks.Task<global::G.DeleteAppResponse> AppPublicServiceDeleteAppAsync(
             string namespaceId,
             string appId,
             global::System.Threading.CancellationToken cancellationToken = default);

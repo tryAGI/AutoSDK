@@ -23,7 +23,7 @@ namespace G
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
 
-            string response,
+            global::G.CloneNamespacePipelineReleaseResponse response,
             global::System.Threading.CancellationToken cancellationToken);
 
         private global::System.CommandLine.Argument<string> NamespaceId { get; } = new(

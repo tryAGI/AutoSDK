@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.BodyEditVoiceV1VoicesVoiceIdEditPost.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G

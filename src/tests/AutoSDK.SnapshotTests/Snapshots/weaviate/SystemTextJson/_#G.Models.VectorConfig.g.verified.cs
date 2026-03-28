@@ -28,7 +28,7 @@ namespace G
         /// Vector index type specific settings. See the [vector index configuration page](https://weaviate.io/developers/weaviate/config-refs/schema/vector-index) for more details
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vectorIndexConfig")]
-        public object? VectorIndexConfig { get; set; }
+        public global::G.VectorIndexConfig? VectorIndexConfig { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,7 +55,7 @@ namespace G
         public VectorConfig(
             global::G.Vectorizer? vectorizer,
             global::G.VectorIndexType? vectorIndexType,
-            object? vectorIndexConfig)
+            global::G.VectorIndexConfig? vectorIndexConfig)
         {
             this.Vectorizer = vectorizer;
             this.VectorIndexType = vectorIndexType;

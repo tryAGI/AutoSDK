@@ -19,13 +19,13 @@ namespace G
         /// Allow custom overrides of vector weights as math expressions in word-based vectorization models. E.g. "pancake": "7" will set the weight for the word pancake to 7 in the vectorization, whereas "w * 3" would triple the originally calculated word.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vectorWeights")]
-        public object? VectorWeights { get; set; }
+        public global::G.VectorWeights? VectorWeights { get; set; }
 
         /// <summary>
         /// Names and values of an individual property. A returned response may also contain additional metadata, such as from classification or feature projection.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("properties")]
-        public object? Properties { get; set; }
+        public global::G.PropertySchema? Properties { get; set; }
 
         /// <summary>
         /// ID of the object.
@@ -110,8 +110,8 @@ namespace G
         /// </param>
         public Object(
             string? @class,
-            object? vectorWeights,
-            object? properties,
+            global::G.VectorWeights? vectorWeights,
+            global::G.PropertySchema? properties,
             global::System.Guid? id,
             long? creationTimeUnix,
             long? lastUpdateTimeUnix,

@@ -35,7 +35,7 @@ namespace G
         /// Learn how to build JSON schemas [here](https://json-schema.org/).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("schema", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Schema { get; set; } = default!;
+        public global::G.ResponseFormatJsonSchemaSchema Schema { get; set; } = default!;
 
         /// <summary>
         /// Whether to enable strict schema adherence when generating the output.<br/>
@@ -82,7 +82,7 @@ namespace G
         /// </param>
         public TextResponseFormatJsonSchema(
             string name,
-            object schema,
+            global::G.ResponseFormatJsonSchemaSchema schema,
             global::G.TextResponseFormatJsonSchemaType type,
             string? description,
             bool? strict)

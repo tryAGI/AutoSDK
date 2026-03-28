@@ -29,7 +29,7 @@ namespace G
         /// length of 512 characters, booleans, or numbers.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("attributes")]
-        public object? Attributes { get; set; }
+        public global::G.VectorStoreFileAttributes? Attributes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -56,7 +56,7 @@ namespace G
         public CreateVectorStoreFileBatchRequest(
             global::System.Collections.Generic.IList<string> fileIds,
             global::G.ChunkingStrategyRequestParam? chunkingStrategy,
-            object? attributes)
+            global::G.VectorStoreFileAttributes? attributes)
         {
             this.FileIds = fileIds ?? throw new global::System.ArgumentNullException(nameof(fileIds));
             this.ChunkingStrategy = chunkingStrategy;

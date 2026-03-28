@@ -14,7 +14,7 @@ namespace G
         /// <param name="modelId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<string> ModelPublicServiceDeleteNamespaceModelAsync(
+        global::System.Threading.Tasks.Task<global::G.DeleteNamespaceModelResponse> ModelPublicServiceDeleteNamespaceModelAsync(
             string namespaceId,
             string modelId,
             global::System.Threading.CancellationToken cancellationToken = default);

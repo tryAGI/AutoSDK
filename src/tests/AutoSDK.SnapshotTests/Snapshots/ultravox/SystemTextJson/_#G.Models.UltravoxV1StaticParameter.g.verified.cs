@@ -27,7 +27,7 @@ namespace G
         /// The value of the parameter.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        public object? Value { get; set; }
+        public global::G.GoogleProtobufValue? Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,7 +53,7 @@ namespace G
         public UltravoxV1StaticParameter(
             string? name,
             global::G.UltravoxV1StaticParameterLocation? location,
-            object? value)
+            global::G.GoogleProtobufValue? value)
         {
             this.Name = name;
             this.Location = location;

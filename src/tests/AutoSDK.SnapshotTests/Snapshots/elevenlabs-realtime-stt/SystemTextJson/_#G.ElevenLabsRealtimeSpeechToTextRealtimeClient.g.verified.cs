@@ -41,6 +41,34 @@ namespace G
         }
 
 
+        /// <summary>
+        /// Authorize using Bearer authentication.
+        /// </summary>
+        /// <param name="apiKey"></param>
+        public void AuthorizeUsingBearer(
+            string apiKey)
+        {
+            apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
+
+            _clientWebSocket.Options.SetRequestHeader("Authorization", $"Bearer {apiKey}");
+        }
+
+        /// <summary>
+        /// Creates a new instance with Bearer token authentication.
+        /// </summary>
+        /// <param name="apiKey"></param>
+        /// <param name="clientWebSocket"></param>
+        public ElevenLabsRealtimeSpeechToTextRealtimeClient(
+            string apiKey,
+            global::System.Net.WebSockets.ClientWebSocket? clientWebSocket = null) : this(clientWebSocket)
+        {
+            Authorizing(_clientWebSocket, ref apiKey);
+
+            AuthorizeUsingBearer(apiKey);
+
+            Authorized(_clientWebSocket);
+        }
+
 
 
         /// <inheritdoc cref="global::System.Net.WebSockets.ClientWebSocket.ConnectAsync(global::System.Uri, global::System.Threading.CancellationToken)"/>

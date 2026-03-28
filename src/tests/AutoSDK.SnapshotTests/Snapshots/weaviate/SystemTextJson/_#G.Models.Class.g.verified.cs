@@ -34,7 +34,7 @@ namespace G
         /// Vector index type specific settings. See the [vector index configuration page](https://weaviate.io/developers/weaviate/config-refs/schema/vector-index) for more details
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vectorIndexConfig")]
-        public object? VectorIndexConfig { get; set; }
+        public global::G.VectorIndexConfig? VectorIndexConfig { get; set; }
 
         /// <summary>
         /// Specify how the index should be sharded and distributed in the cluster
@@ -138,7 +138,7 @@ namespace G
             string class1,
             global::G.ClassVectorConfig? vectorConfig,
             global::G.VectorIndexType? vectorIndexType,
-            object? vectorIndexConfig,
+            global::G.VectorIndexConfig? vectorIndexConfig,
             global::G.ShardingConfig? shardingConfig,
             global::G.ReplicationConfig? replicationConfig,
             global::G.InvertedIndexConfig? invertedIndexConfig,

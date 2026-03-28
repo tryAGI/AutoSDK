@@ -25,7 +25,7 @@ namespace G
         /// The parameters the functions accepts, described as a JSON Schema object.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parameters", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Parameters { get; set; } = default!;
+        public global::G.ToolFunctionParams Parameters { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,7 +48,7 @@ namespace G
         public ToolFunction(
             string name,
             string description,
-            object parameters)
+            global::G.ToolFunctionParams parameters)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));

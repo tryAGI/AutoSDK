@@ -186,7 +186,7 @@ public static class OpenApiEnumExtensions
             }
         }
 
-        return @enum;
+        return EnsureUniqueEnumMemberNamesCaseInsensitive(@enum);
     }
 
     public static Dictionary<string, PropertyData> ComputeEnum(
@@ -249,7 +249,7 @@ public static class OpenApiEnumExtensions
             }
         }
 
-        return values;
+        return EnsureUniqueEnumMemberNamesCaseInsensitive(values);
     }
 
     public static PropertyData ToEnumValue(
@@ -364,6 +364,48 @@ public static class OpenApiEnumExtensions
             Name = nameOverride ?? current.Name,
             Summary = descriptionOverride ?? current.Summary,
         };
+    }
+
+    private static Dictionary<string, PropertyData> EnsureUniqueEnumMemberNamesCaseInsensitive(
+        Dictionary<string, PropertyData> values)
+    {
+        if (values.Count <= 1)
+        {
+            return values;
+        }
+
+        var usedNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        var suffixes = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+        var result = new Dictionary<string, PropertyData>(values.Count, StringComparer.Ordinal);
+
+        foreach (var kvp in values)
+        {
+            var property = kvp.Value;
+            if (usedNames.Add(property.Name))
+            {
+                result[kvp.Key] = property;
+                continue;
+            }
+
+            suffixes.TryGetValue(property.Name, out var suffix);
+            suffix = Math.Max(suffix, 1);
+
+            string candidateName;
+            do
+            {
+                suffix++;
+                candidateName = $"{property.Name}{suffix}";
+            }
+            while (!usedNames.Add(candidateName));
+
+            suffixes[property.Name] = suffix;
+            result[kvp.Key] = (property with
+            {
+                Name = candidateName,
+            }).WithCSharpParameterName();
+        }
+
+        return result;
     }
 
     private static string? GetConstLiteral(SchemaContext context)

@@ -28,7 +28,7 @@ namespace G
         /// Response input types like images or files.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("variables")]
-        public object? Variables { get; set; }
+        public global::G.ResponsePromptVariables? Variables { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,7 +53,7 @@ namespace G
         public Prompt2(
             string id,
             string? version,
-            object? variables)
+            global::G.ResponsePromptVariables? variables)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Version = version;

@@ -303,6 +303,7 @@ public static class CSharpTypeMapper
         bool isAllOf)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
+        var resolvedSchema = context.Schema.ResolveIfRequired();
 
         return (context.Schema.Type.ToTypeString(), context.Schema.Format) switch
         {
@@ -340,6 +341,13 @@ public static class CSharpTypeMapper
 
             ("object", _) when context.Schema.AdditionalProperties?.Type is not null =>
                 $"global::System.Collections.Generic.Dictionary<string, {FindChildCSharpType(context.Children, Hint.AdditionalProperties)}>",
+
+            ("object", _) or (null, _) when
+                (context.IsComponent || context.Schema.IsSchemaReference()) &&
+                (resolvedSchema.Properties?.Count ?? 0) == 0 &&
+                resolvedSchema.AdditionalPropertiesAllowed &&
+                resolvedSchema.AdditionalProperties?.Type is null =>
+                $"global::{context.Settings.Namespace}.{context.Id}",
 
             ("string", _) when (context.Schema.Enum?.Count ?? 0) > 0 =>
                 $"global::{context.Settings.Namespace}.{context.Id}",

@@ -53,7 +53,7 @@ namespace G
             string propertyName,
             string? tenant = default,
             string? @class = default,
-            object? schema = default,
+            global::G.PropertySchema? schema = default,
             string? beacon = default,
             string? href = default,
             global::G.ReferenceMetaClassification? classification = default,

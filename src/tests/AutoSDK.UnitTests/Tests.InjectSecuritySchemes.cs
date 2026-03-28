@@ -104,6 +104,47 @@ paths:
     }
 
     [TestMethod]
+    public void InjectSecuritySchemes_HttpCustomScheme_ProducesCorrectAuthorization()
+    {
+        var yaml = @"openapi: 3.0.1
+info:
+  title: Test
+  version: 1.0.0
+paths:
+  /test:
+    get:
+      operationId: getTest
+      responses:
+        '200':
+          description: OK
+";
+        var settings = Settings.Default with
+        {
+            Namespace = "Deepgram",
+            ClassName = "DeepgramClient",
+            SecuritySchemes = new[] { "Http:Header:Token" }.ToImmutableArray(),
+        };
+
+        var document = yaml.GetOpenApiDocument(settings);
+        var auth = document.Security!
+            .SelectMany(r => r)
+            .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(
+                x.Key, settings, settings))
+            .Single();
+
+        auth.Type.Should().Be(SecuritySchemeType.Http);
+        auth.In.Should().Be(ParameterLocation.Header);
+        auth.Scheme.Should().Be("Token");
+        auth.FriendlyName.Should().Be("Token");
+        auth.Parameters.Should().ContainSingle().Which.Should().Be("apiKey");
+
+        var source = Sources.Authorization(auth);
+        source.Name.Should().Be("Deepgram.DeepgramClient.Authorizations.Token.g.cs");
+        source.Text.Should().Contain("Name = \"Token\"");
+        source.Text.Should().Contain("Value = apiKey");
+    }
+
+    [TestMethod]
     public void InjectSecuritySchemes_ApiKeyHeader_MainAuthorizationConstructor_UsesFriendlyNameInFileName()
     {
         // Arrange

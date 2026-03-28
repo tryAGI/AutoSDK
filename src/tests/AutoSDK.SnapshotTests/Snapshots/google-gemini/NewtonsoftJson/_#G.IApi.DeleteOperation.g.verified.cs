@@ -11,7 +11,7 @@ namespace G
         /// <param name="operationId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<string> DeleteOperationAsync(
+        global::System.Threading.Tasks.Task<global::G.Empty> DeleteOperationAsync(
             string operationId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

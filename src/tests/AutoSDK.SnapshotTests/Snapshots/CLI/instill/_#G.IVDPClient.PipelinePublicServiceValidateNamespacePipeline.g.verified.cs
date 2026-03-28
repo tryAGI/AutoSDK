@@ -20,7 +20,7 @@ namespace G
             string namespaceId,
             string pipelineId,
 
-            object request,
+            global::G.ValidateNamespacePipelineBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Validate a pipeline<br/>

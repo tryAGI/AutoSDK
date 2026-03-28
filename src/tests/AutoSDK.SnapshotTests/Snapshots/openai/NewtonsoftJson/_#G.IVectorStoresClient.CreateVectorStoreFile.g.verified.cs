@@ -44,7 +44,7 @@ namespace G
             string vectorStoreId,
             string fileId,
             global::G.ChunkingStrategyRequestParam? chunkingStrategy = default,
-            object? attributes = default,
+            global::G.VectorStoreFileAttributes? attributes = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

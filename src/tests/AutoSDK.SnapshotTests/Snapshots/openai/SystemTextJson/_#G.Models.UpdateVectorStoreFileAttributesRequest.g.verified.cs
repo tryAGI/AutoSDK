@@ -17,7 +17,7 @@ namespace G
         /// length of 512 characters, booleans, or numbers.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attributes")]
-        public object? Attributes { get; set; }
+        public global::G.VectorStoreFileAttributes? Attributes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,7 +39,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UpdateVectorStoreFileAttributesRequest(
-            object? attributes)
+            global::G.VectorStoreFileAttributes? attributes)
         {
             this.Attributes = attributes;
         }

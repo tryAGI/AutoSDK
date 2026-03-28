@@ -39,29 +39,6 @@ public static class CSharpEndPointFactory
             .Select(x => x.ParameterData!.Value)
             .ToList();
 
-        var duplicateParameters = parameters
-            .GroupBy(x => x.Name)
-            .Where(x => x.Count() > 1)
-            .Select(x => x.Key)
-            .ToArray();
-        foreach (var duplicateParameter in duplicateParameters)
-        {
-            var index = 1;
-            for (var i = 0; i < parameters.Count; i++)
-            {
-                if (parameters[i].Name == duplicateParameter)
-                {
-                    parameters[i] = parameters[i] with
-                    {
-                        Name = $"{parameters[i].Name}{index++}",
-                    };
-                }
-            }
-        }
-
-        var preparedPath = operation.OperationPath.PreparePath(parameters);
-        var queryParameters = ParameterSerializer.SerializeQueryParameters(parameters);
-
         var requestMediaTypes =
             operation.Operation.RequestBody?.Content ??
             new Dictionary<string, IOpenApiMediaType>();
@@ -122,6 +99,11 @@ public static class CSharpEndPointFactory
                 Description = requestProperty.Description,
             }).WithCSharpParameterNames().WithCSharpComputedValues());
         }
+
+        DeduplicateMethodParameterNames(parameters);
+
+        var preparedPath = operation.OperationPath.PreparePath(parameters);
+        var queryParameters = ParameterSerializer.SerializeQueryParameters(parameters);
 
         var successResponse = responses.Any(x => x.Is2XX && !string.IsNullOrWhiteSpace(x.Type.CSharpTypeRaw))
             ? responses.First(x => x.Is2XX && !string.IsNullOrWhiteSpace(x.Type.CSharpTypeRaw))
@@ -212,6 +194,38 @@ public static class CSharpEndPointFactory
             RequestType: requestType ?? TypeData.Default,
             ForcedRequestStreamValue: forcedRequestStreamValue,
             Remarks: GetCodeSamplesRemarks(operation.Operation));
+    }
+
+    private static void DeduplicateMethodParameterNames(List<MethodParameter> parameters)
+    {
+        var usedParameterNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        var suffixes = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+
+        for (var i = 0; i < parameters.Count; i++)
+        {
+            var parameter = parameters[i];
+            if (usedParameterNames.Add(parameter.ParameterName))
+            {
+                continue;
+            }
+
+            suffixes.TryGetValue(parameter.Name, out var suffix);
+            suffix = Math.Max(suffix, 1);
+
+            MethodParameter updated;
+            do
+            {
+                suffix++;
+                updated = (parameter with
+                {
+                    Name = $"{parameter.Name}{suffix}",
+                }).WithCSharpParameterNames().WithCSharpComputedValues();
+            }
+            while (!usedParameterNames.Add(updated.ParameterName));
+
+            suffixes[parameter.Name] = suffix;
+            parameters[i] = updated;
+        }
     }
 
     private static string GetCodeSamplesRemarks(OpenApiOperation operation)

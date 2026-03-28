@@ -159,23 +159,30 @@ namespace {wsClient.Settings.Namespace}
         foreach (var auth in wsClient.Authorizations)
         {
             if (auth.Type == SecuritySchemeType.Http &&
-                string.Equals(auth.Scheme, "bearer", StringComparison.OrdinalIgnoreCase))
+                !string.Equals(auth.Scheme, "basic", StringComparison.OrdinalIgnoreCase))
             {
+                var friendlyName = string.IsNullOrWhiteSpace(auth.FriendlyName)
+                    ? auth.Scheme.ToPropertyName()
+                    : auth.FriendlyName;
+                var schemeName = string.IsNullOrWhiteSpace(auth.Scheme)
+                    ? "Bearer"
+                    : auth.Scheme;
+
                 result.AppendLine($@"
         /// <summary>
-        /// Authorize using bearer authentication.
+        /// Authorize using {schemeName} authentication.
         /// </summary>
         /// <param name=""apiKey""></param>
-        public void AuthorizeUsingBearer(
+        public void AuthorizeUsing{friendlyName}(
             string apiKey)
         {{
             apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
 
-            _clientWebSocket.Options.SetRequestHeader(""Authorization"", $""Bearer {{apiKey}}"");
+            _clientWebSocket.Options.SetRequestHeader(""Authorization"", $""{schemeName} {{apiKey}}"");
         }}
 
         /// <summary>
-        /// Creates a new instance with bearer token authentication.
+        /// Creates a new instance with {schemeName} token authentication.
         /// </summary>
         /// <param name=""apiKey""></param>
         /// <param name=""clientWebSocket""></param>
@@ -185,7 +192,7 @@ namespace {wsClient.Settings.Namespace}
         {{
             Authorizing(_clientWebSocket, ref apiKey);
 
-            AuthorizeUsingBearer(apiKey);
+            AuthorizeUsing{friendlyName}(apiKey);
 
             Authorized(_clientWebSocket);
         }}");
@@ -318,6 +325,9 @@ namespace {wsClient.Settings.Namespace}
                     $"            {param.Type.CSharpType} {param.ParameterName} = default");
             }
         }
+
+        xmlDoc.AppendLine("        /// <param name=\"uri\">Optional WebSocket endpoint override.</param>");
+        xmlDoc.AppendLine("        /// <param name=\"cancellationToken\">A cancellation token.</param>");
 
         // PathBuilder uses serialized (expanded) parameters
         foreach (var param in serializedParams)

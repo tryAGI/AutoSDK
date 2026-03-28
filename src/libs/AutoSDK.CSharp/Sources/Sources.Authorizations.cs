@@ -93,6 +93,7 @@ namespace {authorization.Settings.Namespace}
                 {
                     (SecuritySchemeType.Http, "BEARER", _) => "Bearer",
                     (SecuritySchemeType.Http, "BASIC", _) => "Basic",
+                    (SecuritySchemeType.Http, _, _) => authorization.Scheme,
                     (SecuritySchemeType.ApiKey, _, _) => authorization.Name,
                     _ => string.Empty,
                 }}"",
@@ -101,6 +102,7 @@ namespace {authorization.Settings.Namespace}
                     (SecuritySchemeType.Http, "BEARER", _) => "apiKey",
                     (SecuritySchemeType.Http, "BASIC", _) => @"global::System.Convert.ToBase64String(
                     global::System.Text.Encoding.UTF8.GetBytes($""{username}:{password}""))",
+                    (SecuritySchemeType.Http, _, _) => "apiKey",
                     (SecuritySchemeType.ApiKey, _, _) => "apiKey",
                     _ => "\"\"",
                 }},
@@ -159,6 +161,7 @@ namespace {authorization.Settings.Namespace}
         {
             (SecuritySchemeType.Http, "BEARER", _) => "Authorize using bearer authentication.",
             (SecuritySchemeType.Http, "BASIC", _) => "Authorize using basic authentication.",
+            (SecuritySchemeType.Http, _, _) => $"Authorize using {authorization.Scheme} authentication.",
             (SecuritySchemeType.ApiKey, _, _) => "Authorize using ApiKey authentication.",
             _ => string.Empty,
         }}

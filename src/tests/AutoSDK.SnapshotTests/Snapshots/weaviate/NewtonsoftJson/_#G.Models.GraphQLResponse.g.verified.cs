@@ -13,7 +13,7 @@ namespace G
         /// GraphQL data object.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data")]
-        public global::System.Collections.Generic.Dictionary<string, object>? Data { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.JsonObject>? Data { get; set; }
 
         /// <summary>
         /// Array with errors.
@@ -37,7 +37,7 @@ namespace G
         /// Array with errors.
         /// </param>
         public GraphQLResponse(
-            global::System.Collections.Generic.Dictionary<string, object>? data,
+            global::System.Collections.Generic.Dictionary<string, global::G.JsonObject>? data,
             global::System.Collections.Generic.IList<global::G.GraphQLError>? errors)
         {
             this.Data = data;
