@@ -173,6 +173,76 @@ public partial class DataTests
     }
 
     [TestMethod]
+    public void ExcludeDeprecatedOperations_DiscriminatorDerivedModels_GenerateWithoutSchemaContext()
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateSdk = true,
+            GenerateModels = true,
+            ExcludeDeprecatedOperations = true,
+        };
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: DerivedInheritanceRegression
+                              version: 1.0.0
+                            paths:
+                              /animals:
+                                get:
+                                  deprecated: true
+                                  operationId: listAnimals
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            $ref: '#/components/schemas/Cat'
+                              /cats:
+                                post:
+                                  operationId: createCat
+                                  requestBody:
+                                    required: true
+                                    content:
+                                      application/json:
+                                        schema:
+                                          $ref: '#/components/schemas/Cat'
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            $ref: '#/components/schemas/Cat'
+                            components:
+                              schemas:
+                                Animal:
+                                  type: object
+                                  discriminator:
+                                    propertyName: kind
+                                    mapping:
+                                      cat: '#/components/schemas/Cat'
+                                  properties:
+                                    kind:
+                                      type: string
+                                Cat:
+                                  allOf:
+                                    - $ref: '#/components/schemas/Animal'
+                                    - type: object
+                                      properties:
+                                        name:
+                                          type: string
+                            """;
+
+        var data = Data.Prepare(((yaml, settings), GlobalSettings: settings));
+        var action = () => string.Join("\n\n", data.Classes.Select(x => Sources.GenerateModel(x)));
+
+        action.Should().NotThrow();
+        action().Should().Contain("public sealed partial class Cat : Animal");
+    }
+
+    [TestMethod]
     public void DiscriminatorOnlyOneOfWrapper_DoesNotExposeHiddenDiscriminatorToConvenienceOverload()
     {
         var settings = DefaultSettings with

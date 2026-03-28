@@ -62,6 +62,10 @@ public static class CSharpModelDataFactory
             derivedTypes = builder.MoveToImmutable().AsEquatableArray();
         }
 
+        var hasDeprecatedBaseClass = context.IsDerivedClass &&
+                                     context.BaseClassContext.Schema.IsDeprecated();
+        var inheritedPropertyNames = GetInheritedPropertyNames(context);
+
         var className = context.Id;
         var externalClassName = context.Settings.NamingConvention switch
         {
@@ -90,14 +94,50 @@ public static class CSharpModelDataFactory
             BaseClass: context.IsDerivedClass
                 ? context.BaseClassContext.Id
                 : string.Empty,
+            HasDeprecatedBaseClass: hasDeprecatedBaseClass,
             IsBaseClass: context.IsBaseClass,
             IsDerivedClass: context.IsDerivedClass,
+            InheritedPropertyNames: inheritedPropertyNames,
             DiscriminatorPropertyName: context.Schema.Discriminator?.PropertyName ?? string.Empty,
             DerivedTypes: derivedTypes,
             ClassName: className,
             GlobalClassName: $"global::{context.Settings.Namespace}.{className}",
             ExternalClassName: externalClassName,
             FileNameWithoutExtension: $"{context.Settings.Namespace}.Models.{externalClassName}");
+    }
+
+    private static ImmutableArray<string> GetInheritedPropertyNames(SchemaContext context)
+    {
+        if (!context.IsDerivedClass)
+        {
+            return [];
+        }
+
+        var builder = ImmutableArray.CreateBuilder<string>();
+        var seenNames = new HashSet<string>(StringComparer.Ordinal);
+        var current = context;
+
+        while (current.IsDerivedClass)
+        {
+            var baseClassData = current.BaseClassContext.ClassData;
+            if (baseClassData is not { } modelData)
+            {
+                break;
+            }
+
+            for (var i = 0; i < modelData.Properties.Length; i++)
+            {
+                var propertyName = modelData.Properties[i].Name;
+                if (seenNames.Add(propertyName))
+                {
+                    builder.Add(propertyName);
+                }
+            }
+
+            current = current.BaseClassContext;
+        }
+
+        return builder.ToImmutable();
     }
 
     private static ImmutableArray<PropertyData> GetVisibleProperties(SchemaContext context)

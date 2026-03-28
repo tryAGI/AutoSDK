@@ -141,12 +141,7 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
 
     private static bool HasDeprecatedBaseClass(ModelData modelData)
     {
-        if (!modelData.IsDerivedClass)
-        {
-            return false;
-        }
-
-        return modelData.SchemaContext.BaseClassContext.Schema.IsDeprecated();
+        return modelData.IsDerivedClass && modelData.HasDeprecatedBaseClass;
     }
 
     private static bool RequiresNewModifier(ModelData modelData, PropertyData property)
@@ -161,22 +156,12 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
             return false;
         }
 
-        var current = modelData.SchemaContext;
-        while (current.IsDerivedClass)
+        for (var i = 0; i < modelData.InheritedPropertyNames.Length; i++)
         {
-            var baseContext = current.BaseClassContext;
-            if (baseContext.ClassData is { } baseClassData)
+            if (string.Equals(modelData.InheritedPropertyNames[i], property.Name, StringComparison.Ordinal))
             {
-                for (var i = 0; i < baseClassData.Properties.Length; i++)
-                {
-                    if (string.Equals(baseClassData.Properties[i].Name, property.Name, StringComparison.Ordinal))
-                    {
-                        return true;
-                    }
-                }
+                return true;
             }
-
-            current = baseContext;
         }
 
         return false;
