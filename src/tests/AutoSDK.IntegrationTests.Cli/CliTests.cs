@@ -244,6 +244,67 @@ components:
     }
 
     [TestMethod]
+    public async Task Generate_WithRequiredNullableAnyOfRequestProperty_Builds()
+    {
+        const string spec = """
+openapi: 3.1.0
+info:
+  title: portkey-repro
+  version: 1.0.0
+paths:
+  /prompts/{promptId}/completions:
+    post:
+      operationId: createPromptCompletion
+      parameters:
+        - in: path
+          name: promptId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePromptCompletionRequest'
+      responses:
+        '200':
+          description: ok
+components:
+  schemas:
+    CreatePromptCompletionRequest:
+      type: object
+      required:
+        - variables
+      properties:
+        variables:
+          anyOf:
+            - type: object
+              additionalProperties: {}
+            - type: 'null'
+        stream:
+          type: boolean
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "required-nullable-anyof.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedContents = await Task.WhenAll(
+                    Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
+                        .Select(path => File.ReadAllTextAsync(path)));
+                var content = string.Join("\n\n", generatedContents);
+
+                content.Should().Contain("public object? Variables { get; set; }");
+                content.Should().NotContain("public required object? Variables { get; set; }");
+                content.Should().Contain("object? variables");
+                content.Should().Contain("Variables = variables,");
+            });
+    }
+
+    [TestMethod]
     public async Task Generate_WithCaseInsensitiveEnumCollisions_Builds()
     {
         const string spec = """
