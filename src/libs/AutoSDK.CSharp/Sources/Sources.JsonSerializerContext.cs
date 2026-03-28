@@ -61,7 +61,20 @@ namespace {client.Settings.Namespace}
             .Concat(distinctTypes)
             .Concat(concreteListTypes)
             .ToArray();
-        var explicitTypeInfoPropertyNames = BuildExplicitTypeInfoPropertyNames(serializableTypes);
+
+        // Value types with nullable variants in JsonSerializerContextTypes will be
+        // implicitly discovered by STJ through the nullable property (T? → Nullable<T> → T).
+        // This causes SYSLIB1031 when the same type is also explicitly registered.
+        var implicitlyDiscoveredTypes = new HashSet<string>(
+            types
+                .Where(x => x.CSharpTypeWithNullability != x.CSharpTypeWithoutNullability &&
+                            x.CSharpTypeWithNullability.EndsWith("?", StringComparison.Ordinal))
+                .Select(x => x.CSharpTypeWithoutNullability)
+                .Distinct(),
+            StringComparer.Ordinal);
+
+        var explicitTypeInfoPropertyNames = BuildExplicitTypeInfoPropertyNames(
+            serializableTypes, implicitlyDiscoveredTypes);
 
         var attributes = new List<string>(serializableTypes.Length);
 
@@ -86,11 +99,13 @@ namespace {client.Settings.Namespace}
     }
 
     private static Dictionary<string, string> BuildExplicitTypeInfoPropertyNames(
-        string[] types)
+        string[] types,
+        HashSet<string> implicitlyDiscoveredTypes)
     {
         var explicitNames = new Dictionary<string, string>(StringComparer.Ordinal);
         var usedNames = new HashSet<string>(StringComparer.Ordinal);
 
+        // Phase 1: Handle collisions among explicitly registered types
         foreach (var group in types.GroupBy(GetImplicitTypeInfoPropertyName).Where(group => group.Count() > 1))
         {
             var defaultType = group.FirstOrDefault(ShouldKeepDefaultTypeInfoPropertyName) ?? group.First();
@@ -113,6 +128,35 @@ namespace {client.Settings.Namespace}
 
                 explicitNames[type] = name;
             }
+        }
+
+        // Phase 2: Handle collisions between explicit attributes and implicit STJ discovery.
+        // Value types with nullable variants in JsonSerializerContextTypes cause STJ to
+        // discover the inner non-nullable type implicitly. If the same type is also
+        // explicitly registered via [JsonSerializable], SYSLIB1031 fires.
+        foreach (var type in types)
+        {
+            if (explicitNames.ContainsKey(type))
+            {
+                continue;
+            }
+
+            if (!implicitlyDiscoveredTypes.Contains(type))
+            {
+                continue;
+            }
+
+            var implicitName = GetImplicitTypeInfoPropertyName(type);
+            var baseName = $"{implicitName}2";
+            var name = baseName;
+            var suffix = 3;
+
+            while (!usedNames.Add(name))
+            {
+                name = $"{implicitName}{suffix++}";
+            }
+
+            explicitNames[type] = name;
         }
 
         return explicitNames;
