@@ -481,7 +481,11 @@ public static class Data
                 var hint = x.IsAnyOf ? Hint.AnyOf : x.IsOneOf ? Hint.OneOf : Hint.AllOf;
                 var sb = s_converterBuilder ??= new System.Text.StringBuilder();
                 sb.Clear();
-                sb.Append($"global::{settings.Namespace}.JsonConverters.{x.AnyOfData?.SubType}JsonConverter<");
+                sb.Append("global::");
+                sb.Append(settings.Namespace);
+                sb.Append(".JsonConverters.");
+                sb.Append(x.AnyOfData?.SubType);
+                sb.Append("JsonConverter<");
                 var first = true;
                 foreach (var y in x.Children)
                 {
@@ -825,7 +829,11 @@ public static class Data
                 var hint = schema.IsAnyOf ? Hint.AnyOf : schema.IsOneOf ? Hint.OneOf : Hint.AllOf;
                 var sb = s_converterBuilder ??= new System.Text.StringBuilder();
                 sb.Clear();
-                sb.Append($"global::{settings.Namespace}.JsonConverters.{schema.AnyOfData?.SubType}JsonConverter<");
+                sb.Append("global::");
+                sb.Append(settings.Namespace);
+                sb.Append(".JsonConverters.");
+                sb.Append(schema.AnyOfData?.SubType);
+                sb.Append("JsonConverter<");
                 var first = true;
                 foreach (var child in schema.Children)
                 {

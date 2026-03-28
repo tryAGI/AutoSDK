@@ -211,7 +211,7 @@ components:
         };
 
         var document = yaml.GetOpenApiDocument(settings);
-        var operation = document.Paths.Single().Value.Operations.Single().Value;
+        var operation = document.Paths.Single().Value!.Operations!.Single().Value;
         var authorizations = operation.Security!
             .SelectMany(x => x)
             .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(

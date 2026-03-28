@@ -832,8 +832,7 @@ public static class AsyncApiData
         }
 
         // Check if the payload is a $ref to a component schema
-        var payloadRef = message.Payload["$ref"]?.GetValue<string>();
-        if (!string.IsNullOrEmpty(payloadRef))
+        if (message.Payload["$ref"]?.GetValue<string>() is { Length: > 0 } payloadRef)
         {
             // Extract schema name from "#/components/schemas/SchemaName"
             var schemaName = payloadRef.Split('/').LastOrDefault() ?? string.Empty;
@@ -1041,8 +1040,7 @@ public static class AsyncApiData
             return string.Empty;
         }
 
-        var payloadRef = message.Payload["$ref"]?.GetValue<string>();
-        if (!string.IsNullOrEmpty(payloadRef))
+        if (message.Payload["$ref"]?.GetValue<string>() is { Length: > 0 } payloadRef)
         {
             var lastSlash = payloadRef.LastIndexOf('/');
             return lastSlash >= 0 ? payloadRef.Substring(lastSlash + 1) : payloadRef;
@@ -1110,12 +1108,12 @@ public static class AsyncApiData
 
                         if (hasSingleEnum || hasConst)
                         {
-                            if (!propertyCounts.ContainsKey(kvp.Key))
+                            if (!propertyCounts.TryGetValue(kvp.Key, out var count))
                             {
-                                propertyCounts[kvp.Key] = 0;
+                                count = 0;
                             }
 
-                            propertyCounts[kvp.Key]++;
+                            propertyCounts[kvp.Key] = count + 1;
                         }
                     }
                 }

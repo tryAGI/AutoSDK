@@ -207,6 +207,9 @@ public static class OpenApiEnumExtensions
         string description,
         EnumNamingSettings settings)
     {
+        @enum = @enum ?? throw new ArgumentNullException(nameof(@enum));
+        enumName = enumName ?? throw new ArgumentNullException(nameof(enumName));
+
         var values = new Dictionary<string, PropertyData>();
         for (var i = 0; i < @enum.Count; i++)
         {

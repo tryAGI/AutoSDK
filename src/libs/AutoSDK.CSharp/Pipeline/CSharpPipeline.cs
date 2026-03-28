@@ -35,6 +35,8 @@ public static class CSharpPipeline
 
     public static void ApplyModelNaming(IReadOnlyList<SchemaContext> schemas)
     {
+        schemas = schemas ?? throw new ArgumentNullException(nameof(schemas));
+
         for (var i = 0; i < schemas.Count; i++)
         {
             if (schemas[i].IsModel)
@@ -86,95 +88,95 @@ public static class CSharpPipeline
             ? data.Methods
                 .SelectMany(x => new[]
                 {
-                    Sources.Command(x),
+                    Sources.Command(x, cancellationToken),
                 })
                 .Concat(data.Methods
                     .GroupBy(x => x.Tag)
                     .SelectMany(x => new[]
                     {
-                        Sources.GroupCommand(x.Key, x.ToImmutableArray()),
+                        Sources.GroupCommand(x.Key, x.ToImmutableArray(), cancellationToken),
                     }))
-                .Concat([Sources.MainCommand(data.Tags)])
-                .Concat([Sources.AddCommands(data.Methods, data.Tags)])
+                .Concat([Sources.MainCommand(data.Tags, cancellationToken)])
+                .Concat([Sources.AddCommands(data.Methods, data.Tags, cancellationToken)])
                 .Where(x => !x.IsEmpty)
                 .ToArray()
             : settings.GenerateModels
                 ? data.Enums
                     .SelectMany(x => new[]
                     {
-                        Sources.Enum(x),
-                        Sources.EnumJsonConverter(x),
-                        Sources.EnumNullableJsonConverter(x),
+                        Sources.Enum(x, cancellationToken),
+                        Sources.EnumJsonConverter(x, cancellationToken),
+                        Sources.EnumNullableJsonConverter(x, cancellationToken),
                     })
                     .Concat(data.Classes
                         .SelectMany(x => new[]
                         {
-                            Sources.Class(x),
-                            Sources.ClassJsonExtensions(x),
-                            Sources.ClassValidation(x),
+                            Sources.Class(x, cancellationToken),
+                            Sources.ClassJsonExtensions(x, cancellationToken),
+                            Sources.ClassValidation(x, cancellationToken),
                         }))
                     .Concat(data.Methods
                         .SelectMany(x => new[]
                         {
-                            Sources.Method(x),
-                            Sources.MethodInterface(x),
+                            Sources.Method(x, cancellationToken),
+                            Sources.MethodInterface(x, cancellationToken),
                         }))
                     .Concat(data.Clients
                         .SelectMany(x => new[]
                         {
-                            Sources.Client(x),
-                            Sources.ClientInterface(x),
+                            Sources.Client(x, cancellationToken),
+                            Sources.ClientInterface(x, cancellationToken),
                         }))
                     .Concat(data.Authorizations
                         .SelectMany(x => new[]
                         {
-                            Sources.Authorization(x),
-                            Sources.AuthorizationInterface(x),
+                            Sources.Authorization(x, cancellationToken),
+                            Sources.AuthorizationInterface(x, cancellationToken),
                         }))
-                    .Concat([Sources.MainAuthorizationConstructor(data.Authorizations)])
+                    .Concat([Sources.MainAuthorizationConstructor(data.Authorizations, cancellationToken)])
                     .Concat(data.AnyOfs
                         .SelectMany(x => new[]
                         {
-                            Sources.AnyOf(x),
-                            Sources.AnyOfJsonExtensions(x),
-                            Sources.AnyOfJsonConverter(x),
-                            Sources.AnyOfValidation(x),
+                            Sources.AnyOf(x, cancellationToken),
+                            Sources.AnyOfJsonExtensions(x, cancellationToken),
+                            Sources.AnyOfJsonConverter(x, cancellationToken),
+                            Sources.AnyOfValidation(x, cancellationToken),
                         }))
-                    .Concat([Sources.JsonSerializerContext(data.Converters, data.Types)])
-                    .Concat([Sources.JsonSerializerContextTypes(data.Types)])
-                    .Concat([Sources.Polyfills(settings)])
-                    .Concat([Sources.Exceptions(settings)])
-                    .Concat([Sources.PathBuilder(settings)])
+                    .Concat([Sources.JsonSerializerContext(data.Converters, data.Types, cancellationToken)])
+                    .Concat([Sources.JsonSerializerContextTypes(data.Types, cancellationToken)])
+                    .Concat([Sources.Polyfills(settings, cancellationToken)])
+                    .Concat([Sources.Exceptions(settings, cancellationToken)])
+                    .Concat([Sources.PathBuilder(settings, cancellationToken)])
                     .Concat(data.Methods.Any(static x => x.RawStream)
-                        ? [Sources.ResponseStream(data.Converters.Settings)]
+                        ? [Sources.ResponseStream(data.Converters.Settings, cancellationToken)]
                         : [])
-                    .Concat([Sources.UnixTimestampJsonConverter(settings)])
+                    .Concat([Sources.UnixTimestampJsonConverter(settings, cancellationToken)])
                     .Concat(data.WebSocketClients
                         .SelectMany(x => new[]
                         {
-                            Sources.WebSocketClient(x),
-                            Sources.WebSocketReceiveMethod(x),
+                            Sources.WebSocketClient(x, cancellationToken),
+                            Sources.WebSocketReceiveMethod(x, cancellationToken),
                         }))
                     .Concat(data.WebSocketClients
                         .Where(x => x.QueryParameters.Length > 0 &&
                                     x.Settings.Namespace != settings.Namespace)
                         .Select(x => x.Settings)
                         .Distinct()
-                        .Select(x => Sources.PathBuilder(x)))
+                        .Select(x => Sources.PathBuilder(x, cancellationToken)))
                     .Concat(data.WebSocketOperations
                         .Where(x => x.Direction == AutoSDK.Models.WebSocketDirection.Send)
-                        .Select(x => Sources.WebSocketSendMethod(x)))
+                        .Select(x => Sources.WebSocketSendMethod(x, cancellationToken)))
                     .Where(x => !x.IsEmpty)
                     .ToArray()
                 : data.WebSocketClients
                     .SelectMany(x => new[]
                     {
-                        Sources.WebSocketClient(x),
-                        Sources.WebSocketReceiveMethod(x),
+                        Sources.WebSocketClient(x, cancellationToken),
+                        Sources.WebSocketReceiveMethod(x, cancellationToken),
                     })
                     .Concat(data.WebSocketOperations
                         .Where(x => x.Direction == AutoSDK.Models.WebSocketDirection.Send)
-                        .Select(x => Sources.WebSocketSendMethod(x)))
+                        .Select(x => Sources.WebSocketSendMethod(x, cancellationToken)))
                     .Where(x => !x.IsEmpty)
                     .ToArray();
     }

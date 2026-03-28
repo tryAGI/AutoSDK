@@ -242,40 +242,16 @@ public static class CSharpEndPointFactory
             return string.Empty;
         }
 
-        JsonObject? bestSample = null;
-        foreach (var item in samplesArray)
-        {
-            if (item is not JsonObject sample)
-            {
-                continue;
-            }
-
-            var lang = string.Empty;
-            if (sample.TryGetPropertyValue("lang", out var langNode) &&
-                langNode is JsonValue langValue &&
-                langValue.TryGetValue<string>(out var langStr))
-            {
-                lang = langStr;
-            }
-
-            if (string.Equals(lang, "csharp", StringComparison.OrdinalIgnoreCase) ||
-                string.Equals(lang, "c#", StringComparison.OrdinalIgnoreCase))
-            {
-                bestSample = sample;
-                break;
-            }
-
-            if (bestSample == null ||
-                string.Equals(lang, "curl", StringComparison.OrdinalIgnoreCase))
-            {
-                bestSample = sample;
-            }
-        }
-
-        if (bestSample == null)
+        var objectSamples = samplesArray.OfType<JsonObject>().ToArray();
+        if (objectSamples.Length == 0)
         {
             return string.Empty;
         }
+
+        JsonObject bestSample =
+            objectSamples.FirstOrDefault(static sample => HasSampleLang(sample, "csharp") || HasSampleLang(sample, "c#")) ??
+            objectSamples.FirstOrDefault(static sample => HasSampleLang(sample, "curl")) ??
+            objectSamples[0];
 
         var source = string.Empty;
         if (bestSample.TryGetPropertyValue("source", out var sourceNode) &&
@@ -291,6 +267,18 @@ public static class CSharpEndPointFactory
         }
 
         return source.ClearForXml();
+    }
+
+    private static bool HasSampleLang(JsonObject sample, string expectedLang)
+    {
+        if (sample.TryGetPropertyValue("lang", out var langNode) &&
+            langNode is JsonValue langValue &&
+            langValue.TryGetValue<string>(out var langStr))
+        {
+            return string.Equals(langStr, expectedLang, StringComparison.OrdinalIgnoreCase);
+        }
+
+        return false;
     }
 
     private static bool HasBooleanFernStreamingExtension(OpenApiOperation operation)

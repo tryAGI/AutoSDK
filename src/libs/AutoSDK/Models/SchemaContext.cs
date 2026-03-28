@@ -808,6 +808,8 @@ public class SchemaContext(
 
     public bool HasAnyTag(params string[] tags)
     {
+        tags = tags ?? throw new ArgumentNullException(nameof(tags));
+
         for (var i = 0; i < tags.Length; i++)
         {
             if (tags[i].Length == 0 && Tags.Count == 0)
@@ -839,6 +841,8 @@ public class SchemaContext(
     /// </summary>
     public void CollectWithAllChildren(HashSet<SchemaContext> target, int level = 0, int maxDepth = 20)
     {
+        target = target ?? throw new ArgumentNullException(nameof(target));
+
         if (level > maxDepth || !target.Add(this))
         {
             return;

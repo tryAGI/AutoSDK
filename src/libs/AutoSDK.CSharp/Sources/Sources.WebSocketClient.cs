@@ -168,7 +168,7 @@ namespace {wsClient.Settings.Namespace}
                     ? "Bearer"
                     : auth.Scheme;
 
-                result.AppendLine($@"
+                var authorizationBlock = $@"
         /// <summary>
         /// Authorize using {schemeName} authentication.
         /// </summary>
@@ -195,12 +195,13 @@ namespace {wsClient.Settings.Namespace}
             AuthorizeUsing{friendlyName}(apiKey);
 
             Authorized(_clientWebSocket);
-        }}");
+        }}";
+                result.AppendLine(authorizationBlock);
             }
             else if (auth.Type == SecuritySchemeType.ApiKey &&
                      auth.In == ParameterLocation.Header)
             {
-                result.AppendLine($@"
+                var authorizationBlock = $@"
         /// <summary>
         /// Authorize using API key in header.
         /// </summary>
@@ -227,12 +228,13 @@ namespace {wsClient.Settings.Namespace}
             AuthorizeUsingApiKeyInHeader(apiKey);
 
             Authorized(_clientWebSocket);
-        }}");
+        }}";
+                result.AppendLine(authorizationBlock);
             }
             else if (auth.Type == SecuritySchemeType.ApiKey &&
                      auth.In == ParameterLocation.Query)
             {
-                result.AppendLine($@"
+                var authorizationBlock = $@"
         /// <summary>
         /// Authorize using API key in query parameter.
         /// The key will be appended to the URL during ConnectAsync.
@@ -249,7 +251,8 @@ namespace {wsClient.Settings.Namespace}
         }}
 
         private string? _queryApiKey;
-        private string? _queryApiKeyName;");
+        private string? _queryApiKeyName;";
+                result.AppendLine(authorizationBlock);
             }
         }
 
@@ -304,7 +307,8 @@ namespace {wsClient.Settings.Namespace}
                     .Replace("\r", " ")
                     .Replace("\n", " ")
                     .Trim();
-                xmlDoc.AppendLine($"        /// <param name=\"{param.ParameterName}\">{xmlSummary}</param>");
+                var xmlParamDoc = $"        /// <param name=\"{param.ParameterName}\">{xmlSummary}</param>";
+                xmlDoc.AppendLine(xmlParamDoc);
             }
 
             // Parameter signature
@@ -316,13 +320,15 @@ namespace {wsClient.Settings.Namespace}
 
             if (param.IsRequired)
             {
-                parameterSignature.Append(
-                    $"            {param.Type.CSharpTypeWithoutNullability} {param.ParameterName}");
+                var parameterDeclaration =
+                    $"            {param.Type.CSharpTypeWithoutNullability} {param.ParameterName}";
+                parameterSignature.Append(parameterDeclaration);
             }
             else
             {
-                parameterSignature.Append(
-                    $"            {param.Type.CSharpType} {param.ParameterName} = default");
+                var parameterDeclaration =
+                    $"            {param.Type.CSharpType} {param.ParameterName} = default";
+                parameterSignature.Append(parameterDeclaration);
             }
         }
 
@@ -344,13 +350,15 @@ namespace {wsClient.Settings.Namespace}
             {
                 // For non-nullable required params, replace ?. with . since the type is non-nullable
                 var value = param.Value.Replace("?.", ".");
-                pathBuilderCalls.AppendLine(
-                    $"                .AddRequiredParameter(\"{param.Id}\", {value}{additionalArguments})");
+                var pathBuilderCall =
+                    $"                .AddRequiredParameter(\"{param.Id}\", {value}{additionalArguments})";
+                pathBuilderCalls.AppendLine(pathBuilderCall);
             }
             else
             {
-                pathBuilderCalls.AppendLine(
-                    $"                .AddOptionalParameter(\"{param.Id}\", {param.Value}{additionalArguments})");
+                var pathBuilderCall =
+                    $"                .AddOptionalParameter(\"{param.Id}\", {param.Value}{additionalArguments})";
+                pathBuilderCalls.AppendLine(pathBuilderCall);
             }
         }
 

@@ -29,7 +29,6 @@
     <PackageReference Include="Microsoft.OpenApi" Version="3.5.0" />
     <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.28" />
     <PackageReference Include="SharpYaml" Version="3.5.0" />
-    <PackageReference Include="System.Collections.Immutable" Version="10.0.5" />
   </ItemGroup>
 
 </Project>

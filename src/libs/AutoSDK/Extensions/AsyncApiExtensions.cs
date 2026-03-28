@@ -286,7 +286,7 @@ public static class AsyncApiExtensions
     /// Simple YAML to JSON converter for well-formed AsyncAPI documents.
     /// Handles indentation-based structure, strings, numbers, booleans, and arrays.
     /// </summary>
-    private static JsonNode SimpleYamlToJson(string yaml)
+    private static JsonObject SimpleYamlToJson(string yaml)
     {
         var lines = yaml.Split('\n')
             .Select(l => l.TrimEnd('\r'))
@@ -473,7 +473,7 @@ public static class AsyncApiExtensions
         return i;
     }
 
-    private static JsonNode ParseYamlScalar(string value)
+    private static JsonValue ParseYamlScalar(string value)
     {
         // Remove quotes
         if ((value.StartsWith("'", StringComparison.Ordinal) && value.EndsWith("'", StringComparison.Ordinal)) ||

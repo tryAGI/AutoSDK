@@ -1,3 +1,4 @@
+using System.Globalization;
 using AutoSDK.Extensions;
 using AutoSDK.Models;
 using AutoSDK.Naming.Methods;
@@ -52,7 +53,7 @@ public static class ModelNameGenerator
                         : null),
                 "_", parameter?.Name),
             Hint.AnyOf or Hint.OneOf or Hint.AllOf when !string.IsNullOrWhiteSpace(title) => title!.ToClassName(),
-            Hint.AnyOf or Hint.OneOf or Hint.AllOf => index != null ? string.Concat("Variant", (index + 1).ToString()) : "Variant",
+            Hint.AnyOf or Hint.OneOf or Hint.AllOf => index != null ? string.Concat("Variant", (index.Value + 1).ToString(CultureInfo.InvariantCulture)) : "Variant",
             Hint.Discriminator => "Discriminator",
             _ => null,
         };
@@ -121,7 +122,7 @@ public static class ModelNameGenerator
                         : null),
                 "_", context.Parameter?.Name),
             Hint.AnyOf or Hint.OneOf or Hint.AllOf when !string.IsNullOrWhiteSpace(context.Schema.Title) => context.Schema.Title!.ToClassName(),
-            Hint.AnyOf or Hint.OneOf or Hint.AllOf => context.Index != null ? string.Concat("Variant", (context.Index + 1).ToString()) : "Variant",
+            Hint.AnyOf or Hint.OneOf or Hint.AllOf => context.Index != null ? string.Concat("Variant", (context.Index.Value + 1).ToString(CultureInfo.InvariantCulture)) : "Variant",
             Hint.Discriminator => "Discriminator",
             _ when context.PropertyName != null => context.PropertyName,
             _ => null,
@@ -267,6 +268,8 @@ public static class ModelNameGenerator
 
     public static void ResolveCollisions(IReadOnlyCollection<OperationContext> contexts)
     {
+        contexts = contexts ?? throw new ArgumentNullException(nameof(contexts));
+
         var groups = new Dictionary<(string, string), List<OperationContext>>();
         while (true)
         {
