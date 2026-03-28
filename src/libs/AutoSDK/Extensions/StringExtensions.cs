@@ -33,7 +33,13 @@ public static class StringExtensions
     /// <exception cref="ArgumentException"></exception>
     public static string ToPropertyName(this string input)
     {
-        if (input is null) throw new ArgumentNullException(nameof(input));
+#pragma warning disable CA1510
+        if (input is null)
+        {
+            throw new ArgumentNullException(nameof(input));
+        }
+#pragma warning restore CA1510
+
         if (input.Length == 0) return string.Empty;
 
         var upper = char.ToUpperInvariant(input[0]);
@@ -280,6 +286,7 @@ public static class StringExtensions
         params char[] separator)
     {
         propertyName = propertyName ?? throw new ArgumentNullException(nameof(propertyName));
+        separator = separator ?? throw new ArgumentNullException(nameof(separator));
 
         // Check if any separator char exists in the string (avoids LINQ/delegate allocation)
         var hasSeparator = false;
@@ -353,7 +360,6 @@ public static class StringExtensions
         return new string(chars);
 #endif
     }
-    
     private readonly static string[] NewLine = { "\n" };
     
     public static string AddIndent(

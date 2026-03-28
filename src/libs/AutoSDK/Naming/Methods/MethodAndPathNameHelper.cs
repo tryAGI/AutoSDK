@@ -36,6 +36,7 @@ public static class MethodAndPathNameHelper
 
     public static string StripCommonPrefixes(string path)
     {
+        path = path ?? throw new ArgumentNullException(nameof(path));
         path = path.TrimEnd('/');
 
         if (path.StartsWith("/api", StringComparison.OrdinalIgnoreCase))

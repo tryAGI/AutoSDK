@@ -20,6 +20,11 @@ public static class CorePipeline
         Func<string, string> toPropertyName,
         CancellationToken cancellationToken = default)
     {
+        getSchemas = getSchemas ?? throw new ArgumentNullException(nameof(getSchemas));
+        applyNaming = applyNaming ?? throw new ArgumentNullException(nameof(applyNaming));
+        toClassName = toClassName ?? throw new ArgumentNullException(nameof(toClassName));
+        toPropertyName = toPropertyName ?? throw new ArgumentNullException(nameof(toPropertyName));
+
         var ((text, settings), globalSettings) = tuple;
 
         return SpecFormatDetector.DetectFormat(text) switch

@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AutoSDK.Models.AsyncApi;
 
@@ -35,6 +36,7 @@ public sealed class AsyncApiServer
     /// <summary>
     /// Constructs the full WebSocket URL.
     /// </summary>
+    [SuppressMessage("Design", "CA1055:Uri return values should not be strings", Justification = "Generated sources consume this helper as a plain URL string.")]
     public string GetUrl()
     {
         var host = Host.TrimEnd('/');
@@ -46,6 +48,7 @@ public sealed class AsyncApiServer
     /// Returns protocol + host without pathname, for multi-channel mode
     /// where each channel's address provides the path.
     /// </summary>
+    [SuppressMessage("Design", "CA1055:Uri return values should not be strings", Justification = "Generated sources consume this helper as a plain URL string.")]
     public string GetHostUrl()
     {
         var host = Host.TrimEnd('/');

@@ -370,6 +370,9 @@ public class SchemaContext(
         int? index = null,
         int depth = 0)
     {
+        referenceIdFactory = referenceIdFactory ?? throw new ArgumentNullException(nameof(referenceIdFactory));
+        schemaIdFactory = schemaIdFactory ?? throw new ArgumentNullException(nameof(schemaIdFactory));
+
         var result = new List<SchemaContext>();
         FromSchemaCore(
             result, schema, settings, referenceIdFactory, schemaIdFactory, parent, componentId, propertyName,

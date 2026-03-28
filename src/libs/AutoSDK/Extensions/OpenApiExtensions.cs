@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Text.Json.Nodes;
 using System.Text.RegularExpressions;
@@ -708,6 +709,7 @@ info:
                HasLargeIntegerHintInAny(description);
     }
 
+    [SuppressMessage("Usage", "CA2249:Consider using 'string.Contains' instead of 'string.IndexOf'", Justification = "StringComparison overloads must remain compatible with older target frameworks.")]
     private static bool HasLargeIntegerHintInAny(string? text)
     {
         if (string.IsNullOrWhiteSpace(text))
