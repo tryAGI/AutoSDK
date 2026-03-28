@@ -49,10 +49,10 @@ namespace G
         /// Initializes a new instance of the <see cref="RepoExampleResponse" /> class.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="sessionId"></param>
         /// <param name="startTime"></param>
         /// <param name="inputs"></param>
         /// <param name="outputs"></param>
-        /// <param name="sessionId"></param>
         public RepoExampleResponse(
             global::System.Guid id,
             global::System.Guid sessionId,
@@ -61,10 +61,10 @@ namespace G
             object? outputs)
         {
             this.Id = id;
-            this.SessionId = sessionId;
             this.StartTime = startTime;
             this.Inputs = inputs;
             this.Outputs = outputs;
+            this.SessionId = sessionId;
         }
 
         /// <summary>

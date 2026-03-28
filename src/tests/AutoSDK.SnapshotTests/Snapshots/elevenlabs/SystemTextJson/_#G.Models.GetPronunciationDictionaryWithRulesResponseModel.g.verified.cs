@@ -98,23 +98,23 @@ namespace G
         /// <param name="name">
         /// The name of the pronunciation dictionary.
         /// </param>
-        /// <param name="permissionOnResource">
-        /// The permission on the resource of the pronunciation dictionary.
-        /// </param>
         /// <param name="createdBy">
         /// The user ID of the creator of the pronunciation dictionary.
         /// </param>
         /// <param name="creationTimeUnix">
         /// The creation time of the pronunciation dictionary in Unix timestamp.
         /// </param>
+        /// <param name="rules">
+        /// The rules in the latest version of the pronunciation dictionary.
+        /// </param>
+        /// <param name="permissionOnResource">
+        /// The permission on the resource of the pronunciation dictionary.
+        /// </param>
         /// <param name="archivedTimeUnix">
         /// The archive time of the pronunciation dictionary in Unix timestamp.
         /// </param>
         /// <param name="description">
         /// The description of the pronunciation dictionary.
-        /// </param>
-        /// <param name="rules">
-        /// The rules in the latest version of the pronunciation dictionary.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -135,12 +135,12 @@ namespace G
             this.LatestVersionId = latestVersionId ?? throw new global::System.ArgumentNullException(nameof(latestVersionId));
             this.LatestVersionRulesNum = latestVersionRulesNum;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.PermissionOnResource = permissionOnResource;
             this.CreatedBy = createdBy ?? throw new global::System.ArgumentNullException(nameof(createdBy));
             this.CreationTimeUnix = creationTimeUnix;
-            this.Rules = rules ?? throw new global::System.ArgumentNullException(nameof(rules));
-            this.PermissionOnResource = permissionOnResource;
             this.ArchivedTimeUnix = archivedTimeUnix;
             this.Description = description;
+            this.Rules = rules ?? throw new global::System.ArgumentNullException(nameof(rules));
         }
 
         /// <summary>

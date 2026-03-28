@@ -90,9 +90,6 @@ namespace G
         /// <param name="moderatorId">
         /// The moderator’s ID.
         /// </param>
-        /// <param name="overallLevel">
-        /// The default AutoMod level for the broadcaster. This field is **null** if the broadcaster has set one or more of the individual settings.
-        /// </param>
         /// <param name="disability">
         /// The Automod level for discrimination against disability.
         /// </param>
@@ -117,6 +114,9 @@ namespace G
         /// <param name="sexBasedTerms">
         /// The Automod level for sexual content.
         /// </param>
+        /// <param name="overallLevel">
+        /// The default AutoMod level for the broadcaster. This field is **null** if the broadcaster has set one or more of the individual settings.
+        /// </param>
         public AutoModSettings(
             string broadcasterId,
             string moderatorId,
@@ -132,6 +132,7 @@ namespace G
         {
             this.BroadcasterId = broadcasterId ?? throw new global::System.ArgumentNullException(nameof(broadcasterId));
             this.ModeratorId = moderatorId ?? throw new global::System.ArgumentNullException(nameof(moderatorId));
+            this.OverallLevel = overallLevel;
             this.Disability = disability;
             this.Aggression = aggression;
             this.SexualitySexOrGender = sexualitySexOrGender;
@@ -140,7 +141,6 @@ namespace G
             this.Swearing = swearing;
             this.RaceEthnicityOrReligion = raceEthnicityOrReligion;
             this.SexBasedTerms = sexBasedTerms;
-            this.OverallLevel = overallLevel;
         }
 
         /// <summary>

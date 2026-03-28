@@ -351,6 +351,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WidgetConfigResponseModel" /> class.
         /// </summary>
+        /// <param name="language"></param>
         /// <param name="variant">
         /// The variant of the widget<br/>
         /// Default Value: full
@@ -508,7 +509,6 @@ namespace G
         /// <param name="styles">
         /// Styles for the widget
         /// </param>
-        /// <param name="language"></param>
         /// <param name="supportedLanguageOverrides"></param>
         /// <param name="languagePresets">
         /// Language presets for the widget
@@ -578,7 +578,6 @@ namespace G
             string? firstMessage,
             bool? useRtc)
         {
-            this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
             this.Variant = variant;
             this.Placement = placement;
             this.Expandable = expandable;
@@ -623,6 +622,7 @@ namespace G
             this.SyntaxHighlightTheme = syntaxHighlightTheme;
             this.TextContents = textContents;
             this.Styles = styles;
+            this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
             this.SupportedLanguageOverrides = supportedLanguageOverrides;
             this.LanguagePresets = languagePresets;
             this.TextOnly = textOnly;

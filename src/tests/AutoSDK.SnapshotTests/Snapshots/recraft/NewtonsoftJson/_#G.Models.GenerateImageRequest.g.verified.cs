@@ -78,10 +78,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateImageRequest" /> class.
         /// </summary>
+        /// <param name="prompt"></param>
         /// <param name="controls"></param>
         /// <param name="model"></param>
         /// <param name="n"></param>
-        /// <param name="prompt"></param>
         /// <param name="randomSeed"></param>
         /// <param name="responseFormat"></param>
         /// <param name="size"></param>
@@ -100,10 +100,10 @@ namespace G
             global::System.Guid? styleId,
             global::G.ImageSubStyle? substyle)
         {
-            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Controls = controls;
             this.Model = model;
             this.N = n;
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.RandomSeed = randomSeed;
             this.ResponseFormat = responseFormat;
             this.Size = size;

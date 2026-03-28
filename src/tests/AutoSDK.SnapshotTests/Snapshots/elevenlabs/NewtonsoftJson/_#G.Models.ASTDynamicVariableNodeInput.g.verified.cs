@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ASTDynamicVariableNodeInput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: dynamic_variable
-        /// </param>
         /// <param name="name">
         /// The name of the dynamic variable.
+        /// </param>
+        /// <param name="type">
+        /// Default Value: dynamic_variable
         /// </param>
         public ASTDynamicVariableNodeInput(
             string name,
             string? type)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
         }
 
         /// <summary>

@@ -30,14 +30,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TextContent" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="text"></param>
+        /// <param name="type"></param>
         public TextContent(
             string text,
             global::G.TextContentType type)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

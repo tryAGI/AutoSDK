@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AssistantToolsFunction" /> class.
         /// </summary>
+        /// <param name="function"></param>
         /// <param name="type">
         /// The type of tool being defined: `function`
         /// </param>
-        /// <param name="function"></param>
         public AssistantToolsFunction(
             global::G.FunctionObject function,
             global::G.AssistantToolsFunctionType type)
         {
-            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
             this.Type = type;
+            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
         }
 
         /// <summary>

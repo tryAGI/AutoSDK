@@ -74,9 +74,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BulkExportDestination" /> class.
         /// </summary>
-        /// <param name="destinationType">
-        /// Default Value: s3
-        /// </param>
         /// <param name="displayName"></param>
         /// <param name="config"></param>
         /// <param name="id"></param>
@@ -84,6 +81,9 @@ namespace G
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="credentialsKeys"></param>
+        /// <param name="destinationType">
+        /// Default Value: s3
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -97,6 +97,7 @@ namespace G
             global::System.Collections.Generic.IList<string> credentialsKeys,
             global::G.BulkExportDestinationType? destinationType)
         {
+            this.DestinationType = destinationType;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
             this.Id = id;
@@ -104,7 +105,6 @@ namespace G
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.CredentialsKeys = credentialsKeys ?? throw new global::System.ArgumentNullException(nameof(credentialsKeys));
-            this.DestinationType = destinationType;
         }
 
         /// <summary>

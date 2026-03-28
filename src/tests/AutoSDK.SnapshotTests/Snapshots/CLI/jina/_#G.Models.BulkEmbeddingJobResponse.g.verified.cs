@@ -96,14 +96,17 @@ namespace G
         /// <param name="modelName">
         /// The name of the model to use
         /// </param>
-        /// <param name="modelPackageArn">
-        /// The model package ARN
-        /// </param>
         /// <param name="status">
         /// The status of the job
         /// </param>
         /// <param name="fileName">
         /// The name of the input file
+        /// </param>
+        /// <param name="id">
+        /// The ID of the job
+        /// </param>
+        /// <param name="modelPackageArn">
+        /// The model package ARN
         /// </param>
         /// <param name="userEmail">
         /// The email of the user who created the job
@@ -116,9 +119,6 @@ namespace G
         /// </param>
         /// <param name="error">
         /// The error message of the job
-        /// </param>
-        /// <param name="id">
-        /// The ID of the job
         /// </param>
         /// <param name="usedTokenCount">
         /// The number of tokens used for the job
@@ -141,14 +141,14 @@ namespace G
         {
             this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
             this.ModelName = modelName ?? throw new global::System.ArgumentNullException(nameof(modelName));
+            this.ModelPackageArn = modelPackageArn;
             this.Status = status;
             this.FileName = fileName ?? throw new global::System.ArgumentNullException(nameof(fileName));
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.ModelPackageArn = modelPackageArn;
             this.UserEmail = userEmail;
             this.CreatedAt = createdAt;
             this.CompletedAt = completedAt;
             this.Error = error;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.UsedTokenCount = usedTokenCount;
         }
 

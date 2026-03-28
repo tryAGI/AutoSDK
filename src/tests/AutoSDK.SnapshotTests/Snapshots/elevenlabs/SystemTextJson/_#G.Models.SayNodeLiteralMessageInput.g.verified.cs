@@ -31,11 +31,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="SayNodeLiteralMessageInput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: literal
-        /// </param>
         /// <param name="text">
         /// Literal text message to be spoken by the agent.
+        /// </param>
+        /// <param name="type">
+        /// Default Value: literal
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace G
             string text,
             string? type)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

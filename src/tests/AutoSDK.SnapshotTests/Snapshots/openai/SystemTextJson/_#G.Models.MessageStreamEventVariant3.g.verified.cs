@@ -32,10 +32,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageStreamEventVariant3" /> class.
         /// </summary>
-        /// <param name="event"></param>
         /// <param name="data">
         /// Represents a message delta i.e. any changed fields on a message during streaming.
         /// </param>
+        /// <param name="event"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -43,8 +43,8 @@ namespace G
             global::G.MessageDeltaObject data,
             global::G.MessageStreamEventVariant3Event @event)
         {
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Event = @event;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
         }
 
         /// <summary>

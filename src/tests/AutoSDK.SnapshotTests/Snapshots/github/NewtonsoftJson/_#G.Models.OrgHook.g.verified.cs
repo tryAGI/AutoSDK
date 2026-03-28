@@ -102,9 +102,6 @@ namespace G
         /// <param name="pingUrl">
         /// Example: https://api.github.com/orgs/octocat/hooks/1/pings
         /// </param>
-        /// <param name="deliveriesUrl">
-        /// Example: https://api.github.com/orgs/octocat/hooks/1/deliveries
-        /// </param>
         /// <param name="name">
         /// Example: web
         /// </param>
@@ -122,6 +119,9 @@ namespace G
         /// Example: 2011-09-06T17:26:27Z
         /// </param>
         /// <param name="type"></param>
+        /// <param name="deliveriesUrl">
+        /// Example: https://api.github.com/orgs/octocat/hooks/1/deliveries
+        /// </param>
         public OrgHook(
             int id,
             string url,
@@ -138,6 +138,7 @@ namespace G
             this.Id = id;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.PingUrl = pingUrl ?? throw new global::System.ArgumentNullException(nameof(pingUrl));
+            this.DeliveriesUrl = deliveriesUrl;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Events = events ?? throw new global::System.ArgumentNullException(nameof(events));
             this.Active = active;
@@ -145,7 +146,6 @@ namespace G
             this.UpdatedAt = updatedAt;
             this.CreatedAt = createdAt;
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
-            this.DeliveriesUrl = deliveriesUrl;
         }
 
         /// <summary>

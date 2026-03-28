@@ -108,10 +108,8 @@ namespace G
         /// Initializes a new instance of the <see cref="WebhookRepositoryTransferredChangesOwnerFromOrganization" /> class.
         /// </summary>
         /// <param name="avatarUrl"></param>
-        /// <param name="description"></param>
         /// <param name="eventsUrl"></param>
         /// <param name="hooksUrl"></param>
-        /// <param name="htmlUrl"></param>
         /// <param name="id"></param>
         /// <param name="issuesUrl"></param>
         /// <param name="login"></param>
@@ -120,6 +118,8 @@ namespace G
         /// <param name="publicMembersUrl"></param>
         /// <param name="reposUrl"></param>
         /// <param name="url"></param>
+        /// <param name="description"></param>
+        /// <param name="htmlUrl"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -139,8 +139,10 @@ namespace G
             string? htmlUrl)
         {
             this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
+            this.Description = description;
             this.EventsUrl = eventsUrl ?? throw new global::System.ArgumentNullException(nameof(eventsUrl));
             this.HooksUrl = hooksUrl ?? throw new global::System.ArgumentNullException(nameof(hooksUrl));
+            this.HtmlUrl = htmlUrl;
             this.Id = id;
             this.IssuesUrl = issuesUrl ?? throw new global::System.ArgumentNullException(nameof(issuesUrl));
             this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
@@ -149,8 +151,6 @@ namespace G
             this.PublicMembersUrl = publicMembersUrl ?? throw new global::System.ArgumentNullException(nameof(publicMembersUrl));
             this.ReposUrl = reposUrl ?? throw new global::System.ArgumentNullException(nameof(reposUrl));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Description = description;
-            this.HtmlUrl = htmlUrl;
         }
 
         /// <summary>

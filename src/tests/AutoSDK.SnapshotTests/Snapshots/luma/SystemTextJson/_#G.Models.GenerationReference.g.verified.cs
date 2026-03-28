@@ -34,11 +34,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerationReference" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: generation
-        /// </param>
         /// <param name="id">
         /// The ID of the generation
+        /// </param>
+        /// <param name="type">
+        /// Default Value: generation
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -47,8 +47,8 @@ namespace G
             global::System.Guid id,
             global::G.GenerationReferenceType type = global::G.GenerationReferenceType.Generation)
         {
-            this.Id = id;
             this.Type = type;
+            this.Id = id;
         }
 
         /// <summary>

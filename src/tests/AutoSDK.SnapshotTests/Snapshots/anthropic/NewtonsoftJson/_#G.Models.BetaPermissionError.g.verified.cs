@@ -32,18 +32,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaPermissionError" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: permission_error
-        /// </param>
         /// <param name="message">
         /// Default Value: Permission denied
+        /// </param>
+        /// <param name="type">
+        /// Default Value: permission_error
         /// </param>
         public BetaPermissionError(
             string message,
             global::G.BetaPermissionErrorType type = global::G.BetaPermissionErrorType.PermissionError)
         {
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Type = type;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
         }
 
         /// <summary>

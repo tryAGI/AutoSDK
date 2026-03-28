@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageContentRefusalObject" /> class.
         /// </summary>
+        /// <param name="refusal"></param>
         /// <param name="type">
         /// Always `refusal`.
         /// </param>
-        /// <param name="refusal"></param>
         public MessageContentRefusalObject(
             string refusal,
             global::G.MessageContentRefusalObjectType type)
         {
-            this.Refusal = refusal ?? throw new global::System.ArgumentNullException(nameof(refusal));
             this.Type = type;
+            this.Refusal = refusal ?? throw new global::System.ArgumentNullException(nameof(refusal));
         }
 
         /// <summary>

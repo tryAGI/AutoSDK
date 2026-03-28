@@ -72,14 +72,14 @@ namespace G
         /// <param name="title">
         /// The broadcast segment’s title.
         /// </param>
-        /// <param name="canceledUntil">
-        /// Indicates whether the broadcaster canceled this segment of a recurring broadcast. If the broadcaster canceled this segment, this field is set to the same value that’s in the `end_time` field; otherwise, it’s set to **null**.
-        /// </param>
         /// <param name="category">
         /// The type of content that the broadcaster plans to stream or **null** if not specified.
         /// </param>
         /// <param name="isRecurring">
         /// A Boolean value that determines whether the broadcast is part of a recurring series that streams at the same time each week or is a one-time broadcast. Is **true** if the broadcast is part of a recurring series.
+        /// </param>
+        /// <param name="canceledUntil">
+        /// Indicates whether the broadcaster canceled this segment of a recurring broadcast. If the broadcaster canceled this segment, this field is set to the same value that’s in the `end_time` field; otherwise, it’s set to **null**.
         /// </param>
         public ChannelStreamScheduleSegment(
             string id,
@@ -94,9 +94,9 @@ namespace G
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.CanceledUntil = canceledUntil;
             this.Category = category ?? throw new global::System.ArgumentNullException(nameof(category));
             this.IsRecurring = isRecurring;
-            this.CanceledUntil = canceledUntil;
         }
 
         /// <summary>

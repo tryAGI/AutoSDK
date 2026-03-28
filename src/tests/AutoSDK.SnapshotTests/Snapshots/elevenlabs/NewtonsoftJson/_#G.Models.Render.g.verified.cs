@@ -56,10 +56,10 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="version"></param>
+        /// <param name="status"></param>
         /// <param name="language"></param>
         /// <param name="type"></param>
         /// <param name="mediaRef"></param>
-        /// <param name="status"></param>
         public Render(
             string id,
             int version,
@@ -70,10 +70,10 @@ namespace G
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Version = version;
-            this.Status = status;
             this.Language = language;
             this.Type = type;
             this.MediaRef = mediaRef;
+            this.Status = status;
         }
 
         /// <summary>

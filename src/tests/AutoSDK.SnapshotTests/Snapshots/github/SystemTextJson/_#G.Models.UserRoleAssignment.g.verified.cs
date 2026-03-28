@@ -179,8 +179,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UserRoleAssignment" /> class.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="email"></param>
         /// <param name="login">
         /// Example: octocat
         /// </param>
@@ -192,9 +190,6 @@ namespace G
         /// </param>
         /// <param name="avatarUrl">
         /// Example: https://github.com/images/error/octocat_happy.gif
-        /// </param>
-        /// <param name="gravatarId">
-        /// Example: 41d064eb2195891e12d0413f63227ea7
         /// </param>
         /// <param name="url">
         /// Example: https://api.github.com/users/octocat
@@ -233,6 +228,11 @@ namespace G
         /// Example: User
         /// </param>
         /// <param name="siteAdmin"></param>
+        /// <param name="name"></param>
+        /// <param name="email"></param>
+        /// <param name="gravatarId">
+        /// Example: 41d064eb2195891e12d0413f63227ea7
+        /// </param>
         /// <param name="starredAt">
         /// Example: "2020-07-09T00:17:55Z"
         /// </param>
@@ -262,10 +262,13 @@ namespace G
             string? gravatarId,
             string? starredAt)
         {
+            this.Name = name;
+            this.Email = email;
             this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
+            this.GravatarId = gravatarId;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.FollowersUrl = followersUrl ?? throw new global::System.ArgumentNullException(nameof(followersUrl));
@@ -279,9 +282,6 @@ namespace G
             this.ReceivedEventsUrl = receivedEventsUrl ?? throw new global::System.ArgumentNullException(nameof(receivedEventsUrl));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.SiteAdmin = siteAdmin;
-            this.Name = name;
-            this.Email = email;
-            this.GravatarId = gravatarId;
             this.StarredAt = starredAt;
         }
 

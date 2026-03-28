@@ -38,10 +38,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TransferToNumberToolConfigInput" /> class.
         /// </summary>
+        /// <param name="transfers"></param>
         /// <param name="systemToolType">
         /// Default Value: transfer_to_number
         /// </param>
-        /// <param name="transfers"></param>
         /// <param name="enableClientMessage">
         /// Whether to play a message to the client while they wait for transfer. Defaults to true for backward compatibility.<br/>
         /// Default Value: true
@@ -54,8 +54,8 @@ namespace G
             string? systemToolType,
             bool? enableClientMessage)
         {
-            this.Transfers = transfers ?? throw new global::System.ArgumentNullException(nameof(transfers));
             this.SystemToolType = systemToolType;
+            this.Transfers = transfers ?? throw new global::System.ArgumentNullException(nameof(transfers));
             this.EnableClientMessage = enableClientMessage;
         }
 

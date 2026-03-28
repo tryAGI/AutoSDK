@@ -51,6 +51,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeClientEventConversationItemCreate" /> class.
         /// </summary>
+        /// <param name="item">
+        /// The item to add to the conversation.
+        /// </param>
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
@@ -64,19 +67,16 @@ namespace G
         /// If set to an existing ID, it allows an item to be inserted mid-conversation. If the<br/>
         /// ID cannot be found, an error will be returned and the item will not be added.
         /// </param>
-        /// <param name="item">
-        /// The item to add to the conversation.
-        /// </param>
         public RealtimeClientEventConversationItemCreate(
             global::G.RealtimeConversationItem item,
             string? eventId,
             global::G.RealtimeClientEventConversationItemCreateType type,
             string? previousItemId)
         {
-            this.Item = item ?? throw new global::System.ArgumentNullException(nameof(item));
             this.EventId = eventId;
             this.Type = type;
             this.PreviousItemId = previousItemId;
+            this.Item = item ?? throw new global::System.ArgumentNullException(nameof(item));
         }
 
         /// <summary>

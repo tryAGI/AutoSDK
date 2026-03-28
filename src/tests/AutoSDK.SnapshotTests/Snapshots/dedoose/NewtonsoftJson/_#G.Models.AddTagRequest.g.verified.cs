@@ -76,11 +76,11 @@ namespace G
         /// <param name="title"></param>
         /// <param name="description"></param>
         /// <param name="isWeighted"></param>
+        /// <param name="color"></param>
         /// <param name="weightMin"></param>
         /// <param name="weightMax"></param>
         /// <param name="weightDefault"></param>
         /// <param name="allowDecimalWeights"></param>
-        /// <param name="color"></param>
         public AddTagRequest(
             global::System.Guid projectId,
             string title,
@@ -96,11 +96,11 @@ namespace G
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.IsWeighted = isWeighted;
-            this.Color = color;
             this.WeightMin = weightMin;
             this.WeightMax = weightMax;
             this.WeightDefault = weightDefault;
             this.AllowDecimalWeights = allowDecimalWeights;
+            this.Color = color;
         }
 
         /// <summary>

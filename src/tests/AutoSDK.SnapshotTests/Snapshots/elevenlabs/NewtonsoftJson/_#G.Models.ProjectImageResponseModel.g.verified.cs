@@ -136,29 +136,29 @@ namespace G
         /// <param name="filename"></param>
         /// <param name="signedUrl"></param>
         /// <param name="thumbnailSignedUrl"></param>
-        /// <param name="type">
-        /// Default Value: image
-        /// </param>
-        /// <param name="source">
-        /// Default Value: upload
-        /// </param>
         /// <param name="fileSizeBytes"></param>
         /// <param name="width"></param>
         /// <param name="height"></param>
-        /// <param name="trackId">
-        /// Default Value: v0
-        /// </param>
         /// <param name="offsetMs"></param>
         /// <param name="durationMs"></param>
         /// <param name="order"></param>
         /// <param name="canvasPlacement">
         /// Defines asset positioning and transformation on canvas.
         /// </param>
+        /// <param name="createdAtMs"></param>
+        /// <param name="updatedAtMs"></param>
+        /// <param name="type">
+        /// Default Value: image
+        /// </param>
+        /// <param name="source">
+        /// Default Value: upload
+        /// </param>
+        /// <param name="trackId">
+        /// Default Value: v0
+        /// </param>
         /// <param name="animation">
         /// Default Value: {"enter_effect":"none","enter_duration_ms":0,"exit_effect":"none","exit_duration_ms":0}
         /// </param>
-        /// <param name="createdAtMs"></param>
-        /// <param name="updatedAtMs"></param>
         /// <param name="currentSnapshotId"></param>
         /// <param name="sourceAssetId"></param>
         public ProjectImageResponseModel(
@@ -186,19 +186,19 @@ namespace G
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.SignedUrl = signedUrl ?? throw new global::System.ArgumentNullException(nameof(signedUrl));
             this.ThumbnailSignedUrl = thumbnailSignedUrl ?? throw new global::System.ArgumentNullException(nameof(thumbnailSignedUrl));
+            this.Type = type;
+            this.Source = source;
             this.FileSizeBytes = fileSizeBytes;
             this.Width = width;
             this.Height = height;
+            this.TrackId = trackId;
             this.OffsetMs = offsetMs;
             this.DurationMs = durationMs;
             this.Order = order ?? throw new global::System.ArgumentNullException(nameof(order));
             this.CanvasPlacement = canvasPlacement ?? throw new global::System.ArgumentNullException(nameof(canvasPlacement));
+            this.Animation = animation;
             this.CreatedAtMs = createdAtMs;
             this.UpdatedAtMs = updatedAtMs;
-            this.Type = type;
-            this.Source = source;
-            this.TrackId = trackId;
-            this.Animation = animation;
             this.CurrentSnapshotId = currentSnapshotId;
             this.SourceAssetId = sourceAssetId;
         }

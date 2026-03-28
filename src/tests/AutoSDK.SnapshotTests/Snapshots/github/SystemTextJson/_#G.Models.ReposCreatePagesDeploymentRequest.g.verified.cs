@@ -53,6 +53,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ReposCreatePagesDeploymentRequest" /> class.
         /// </summary>
+        /// <param name="pagesBuildVersion">
+        /// A unique string that represents the version of the build for this deployment.<br/>
+        /// Default Value: GITHUB_SHA
+        /// </param>
+        /// <param name="oidcToken">
+        /// The OIDC token issued by GitHub Actions certifying the origin of the deployment.
+        /// </param>
         /// <param name="artifactId">
         /// The ID of an artifact that contains the .zip or .tar of static assets to deploy. The artifact belongs to the repository. Either `artifact_id` or `artifact_url` are required.
         /// </param>
@@ -62,13 +69,6 @@ namespace G
         /// <param name="environment">
         /// The target environment for this GitHub Pages deployment.<br/>
         /// Default Value: github-pages
-        /// </param>
-        /// <param name="pagesBuildVersion">
-        /// A unique string that represents the version of the build for this deployment.<br/>
-        /// Default Value: GITHUB_SHA
-        /// </param>
-        /// <param name="oidcToken">
-        /// The OIDC token issued by GitHub Actions certifying the origin of the deployment.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -80,11 +80,11 @@ namespace G
             string? artifactUrl,
             string? environment)
         {
-            this.PagesBuildVersion = pagesBuildVersion ?? throw new global::System.ArgumentNullException(nameof(pagesBuildVersion));
-            this.OidcToken = oidcToken ?? throw new global::System.ArgumentNullException(nameof(oidcToken));
             this.ArtifactId = artifactId;
             this.ArtifactUrl = artifactUrl;
             this.Environment = environment;
+            this.PagesBuildVersion = pagesBuildVersion ?? throw new global::System.ArgumentNullException(nameof(pagesBuildVersion));
+            this.OidcToken = oidcToken ?? throw new global::System.ArgumentNullException(nameof(oidcToken));
         }
 
         /// <summary>

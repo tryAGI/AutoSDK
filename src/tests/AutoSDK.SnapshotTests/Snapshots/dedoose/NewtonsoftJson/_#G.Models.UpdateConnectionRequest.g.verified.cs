@@ -36,16 +36,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateConnectionRequest" /> class.
         /// </summary>
-        /// <param name="userId"></param>
         /// <param name="connectionKey"></param>
+        /// <param name="userId"></param>
         /// <param name="projectId"></param>
         public UpdateConnectionRequest(
             global::System.Guid connectionKey,
             global::System.Guid? userId,
             global::System.Guid? projectId)
         {
-            this.ConnectionKey = connectionKey;
             this.UserId = userId;
+            this.ConnectionKey = connectionKey;
             this.ProjectId = projectId;
         }
 

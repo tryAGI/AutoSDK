@@ -36,19 +36,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelPricingTokens" /> class.
         /// </summary>
+        /// <param name="centsPerInputToken"></param>
+        /// <param name="centsPerOutputToken"></param>
         /// <param name="type">
         /// Default Value: tokens
         /// </param>
-        /// <param name="centsPerInputToken"></param>
-        /// <param name="centsPerOutputToken"></param>
         public ModelPricingTokens(
             double centsPerInputToken,
             double centsPerOutputToken,
             string? type)
         {
+            this.Type = type;
             this.CentsPerInputToken = centsPerInputToken;
             this.CentsPerOutputToken = centsPerOutputToken;
-            this.Type = type;
         }
 
         /// <summary>

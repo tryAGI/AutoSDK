@@ -31,16 +31,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="LLMParameterEvaluationStrategy" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="description">
         /// A description of the evaluation strategy to use for the test.
         /// </param>
+        /// <param name="type"></param>
         public LLMParameterEvaluationStrategy(
             string description,
             string type = "llm")
         {
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Type = type;
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
         }
 
         /// <summary>

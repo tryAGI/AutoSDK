@@ -35,12 +35,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEvalJsonlRunDataSource" /> class.
         /// </summary>
+        /// <param name="source">
+        /// Determines what populates the `item` namespace in the data source.
+        /// </param>
         /// <param name="type">
         /// The type of data source. Always `jsonl`.<br/>
         /// Default Value: jsonl
-        /// </param>
-        /// <param name="source">
-        /// Determines what populates the `item` namespace in the data source.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -49,8 +49,8 @@ namespace G
             global::G.OneOf<global::G.EvalJsonlFileContentSource, global::G.EvalJsonlFileIdSource> source,
             global::G.CreateEvalJsonlRunDataSourceType type = global::G.CreateEvalJsonlRunDataSourceType.Jsonl)
         {
-            this.Source = source;
             this.Type = type;
+            this.Source = source;
         }
 
         /// <summary>

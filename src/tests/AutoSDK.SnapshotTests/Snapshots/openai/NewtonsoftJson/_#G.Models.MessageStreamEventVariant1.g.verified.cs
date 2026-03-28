@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageStreamEventVariant1" /> class.
         /// </summary>
-        /// <param name="event"></param>
         /// <param name="data">
         /// Represents a message within a [thread](/docs/api-reference/threads).
         /// </param>
+        /// <param name="event"></param>
         public MessageStreamEventVariant1(
             global::G.MessageObject data,
             global::G.MessageStreamEventVariant1Event @event)
         {
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Event = @event;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
         }
 
         /// <summary>

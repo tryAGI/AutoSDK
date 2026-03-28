@@ -37,9 +37,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="InputAudio" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the input item. Always `input_audio`.
-        /// </param>
         /// <param name="data">
         /// Base64-encoded audio data.
         /// </param>
@@ -47,14 +44,17 @@ namespace G
         /// The format of the audio data. Currently supported formats are `mp3` and<br/>
         /// `wav`.
         /// </param>
+        /// <param name="type">
+        /// The type of the input item. Always `input_audio`.
+        /// </param>
         public InputAudio(
             string data,
             global::G.InputAudioFormat format,
             global::G.InputAudioType type)
         {
+            this.Type = type;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Format = format;
-            this.Type = type;
         }
 
         /// <summary>

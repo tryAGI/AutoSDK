@@ -69,12 +69,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Conversation" /> class.
         /// </summary>
-        /// <param name="uid">
-        /// Included only in responses
-        /// </param>
         /// <param name="namespaceId"></param>
         /// <param name="appId"></param>
         /// <param name="id"></param>
+        /// <param name="uid">
+        /// Included only in responses
+        /// </param>
         /// <param name="lastUsedCatalogUid"></param>
         /// <param name="lastUsedTopK"></param>
         /// <param name="createTime">
@@ -96,10 +96,10 @@ namespace G
             global::System.DateTime? createTime,
             global::System.DateTime? updateTime)
         {
+            this.Uid = uid;
             this.NamespaceId = namespaceId ?? throw new global::System.ArgumentNullException(nameof(namespaceId));
             this.AppId = appId ?? throw new global::System.ArgumentNullException(nameof(appId));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Uid = uid;
             this.LastUsedCatalogUid = lastUsedCatalogUid;
             this.LastUsedTopK = lastUsedTopK;
             this.CreateTime = createTime;

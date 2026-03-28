@@ -108,11 +108,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Catalog" /> class.
         /// </summary>
-        /// <param name="catalogUid">
-        /// The catalog uid.
-        /// </param>
         /// <param name="catalogId">
         /// The catalog id.
+        /// </param>
+        /// <param name="catalogUid">
+        /// The catalog uid.
         /// </param>
         /// <param name="name">
         /// The catalog name.
@@ -168,8 +168,8 @@ namespace G
             long? totalTokens,
             string? usedStorage)
         {
-            this.CatalogId = catalogId ?? throw new global::System.ArgumentNullException(nameof(catalogId));
             this.CatalogUid = catalogUid;
+            this.CatalogId = catalogId ?? throw new global::System.ArgumentNullException(nameof(catalogId));
             this.Name = name;
             this.Description = description;
             this.CreateTime = createTime;

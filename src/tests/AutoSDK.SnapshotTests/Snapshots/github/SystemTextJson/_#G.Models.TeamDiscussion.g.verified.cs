@@ -162,9 +162,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TeamDiscussion" /> class.
         /// </summary>
-        /// <param name="author">
-        /// A GitHub user.
-        /// </param>
         /// <param name="body">
         /// The main text of the discussion.<br/>
         /// Example: Please suggest improvements to our workflow in comments.
@@ -185,7 +182,6 @@ namespace G
         /// <param name="createdAt">
         /// Example: 2018-01-25T18:56:31Z
         /// </param>
-        /// <param name="lastEditedAt"></param>
         /// <param name="htmlUrl">
         /// Example: https://github.com/orgs/github/teams/justice-league/discussions/1
         /// </param>
@@ -217,6 +213,10 @@ namespace G
         /// <param name="url">
         /// Example: https://api.github.com/organizations/1/team/2343027/discussions/1
         /// </param>
+        /// <param name="author">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="lastEditedAt"></param>
         /// <param name="reactions"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -241,12 +241,14 @@ namespace G
             global::System.DateTime? lastEditedAt,
             global::G.ReactionRollup? reactions)
         {
+            this.Author = author;
             this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
             this.BodyHtml = bodyHtml ?? throw new global::System.ArgumentNullException(nameof(bodyHtml));
             this.BodyVersion = bodyVersion ?? throw new global::System.ArgumentNullException(nameof(bodyVersion));
             this.CommentsCount = commentsCount;
             this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
             this.CreatedAt = createdAt;
+            this.LastEditedAt = lastEditedAt;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Number = number;
@@ -256,8 +258,6 @@ namespace G
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Author = author;
-            this.LastEditedAt = lastEditedAt;
             this.Reactions = reactions;
         }
 

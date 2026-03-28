@@ -31,19 +31,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MaxCharsChunkingStrategy" /> class.
         /// </summary>
+        /// <param name="maxCharsPerChunk">
+        /// Specifies the maximum number of characters per chunk. The platform adds sentences to a chunk until the total number of characters exceeds the limit. If a single sentence exceeds the limit, it splits the sentence across chunks. Note: This is the only case where the chunk may not contain a complete sentence.
+        /// </param>
         /// <param name="type">
         /// When setting the type to max_chars_chunking_strategy, you can control the size of chunks (docparts).<br/>
         /// Default Value: max_chars_chunking_strategy
-        /// </param>
-        /// <param name="maxCharsPerChunk">
-        /// Specifies the maximum number of characters per chunk. The platform adds sentences to a chunk until the total number of characters exceeds the limit. If a single sentence exceeds the limit, it splits the sentence across chunks. Note: This is the only case where the chunk may not contain a complete sentence.
         /// </param>
         public MaxCharsChunkingStrategy(
             int maxCharsPerChunk,
             string? type)
         {
-            this.MaxCharsPerChunk = maxCharsPerChunk;
             this.Type = type;
+            this.MaxCharsPerChunk = maxCharsPerChunk;
         }
 
         /// <summary>

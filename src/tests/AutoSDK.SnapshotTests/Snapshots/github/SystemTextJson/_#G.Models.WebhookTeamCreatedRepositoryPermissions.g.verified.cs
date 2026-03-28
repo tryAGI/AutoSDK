@@ -52,9 +52,9 @@ namespace G
         /// Initializes a new instance of the <see cref="WebhookTeamCreatedRepositoryPermissions" /> class.
         /// </summary>
         /// <param name="admin"></param>
-        /// <param name="maintain"></param>
         /// <param name="pull"></param>
         /// <param name="push"></param>
+        /// <param name="maintain"></param>
         /// <param name="triage"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -67,9 +67,9 @@ namespace G
             bool? triage)
         {
             this.Admin = admin;
+            this.Maintain = maintain;
             this.Pull = pull;
             this.Push = push;
-            this.Maintain = maintain;
             this.Triage = triage;
         }
 

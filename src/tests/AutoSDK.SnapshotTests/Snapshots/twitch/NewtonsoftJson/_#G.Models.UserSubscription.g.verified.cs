@@ -79,15 +79,6 @@ namespace G
         /// <param name="broadcasterName">
         /// The broadcaster’s display name.
         /// </param>
-        /// <param name="gifterId">
-        /// The ID of the user that gifted the subscription. The object includes this field only if `is_gift` is **true**.
-        /// </param>
-        /// <param name="gifterLogin">
-        /// The gifter’s login name. The object includes this field only if `is_gift` is **true**.
-        /// </param>
-        /// <param name="gifterName">
-        /// The gifter’s display name. The object includes this field only if `is_gift` is **true**.
-        /// </param>
         /// <param name="isGift">
         /// A Boolean value that determines whether the subscription is a gift subscription. Is **true** if the subscription was gifted.
         /// </param>
@@ -97,6 +88,15 @@ namespace G
         /// * 1000 — Tier 1<br/>
         /// * 2000 — Tier 2<br/>
         /// * 3000 — Tier 3
+        /// </param>
+        /// <param name="gifterId">
+        /// The ID of the user that gifted the subscription. The object includes this field only if `is_gift` is **true**.
+        /// </param>
+        /// <param name="gifterLogin">
+        /// The gifter’s login name. The object includes this field only if `is_gift` is **true**.
+        /// </param>
+        /// <param name="gifterName">
+        /// The gifter’s display name. The object includes this field only if `is_gift` is **true**.
         /// </param>
         public UserSubscription(
             string broadcasterId,
@@ -111,11 +111,11 @@ namespace G
             this.BroadcasterId = broadcasterId ?? throw new global::System.ArgumentNullException(nameof(broadcasterId));
             this.BroadcasterLogin = broadcasterLogin ?? throw new global::System.ArgumentNullException(nameof(broadcasterLogin));
             this.BroadcasterName = broadcasterName ?? throw new global::System.ArgumentNullException(nameof(broadcasterName));
-            this.IsGift = isGift;
-            this.Tier = tier;
             this.GifterId = gifterId;
             this.GifterLogin = gifterLogin;
             this.GifterName = gifterName;
+            this.IsGift = isGift;
+            this.Tier = tier;
         }
 
         /// <summary>

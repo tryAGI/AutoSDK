@@ -33,19 +33,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PodcastConversationMode" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of podcast to create.
-        /// </param>
         /// <param name="conversation">
         /// The voice settings for the conversation.<br/>
         /// Example: {"guest_voice_id":"aw1NgEzBg83R7vgmiJt7","host_voice_id":"aw1NgEzBg83R7vgmiJt6"}
+        /// </param>
+        /// <param name="type">
+        /// The type of podcast to create.
         /// </param>
         public PodcastConversationMode(
             global::G.PodcastConversationModeData conversation,
             string type = "conversation")
         {
-            this.Conversation = conversation ?? throw new global::System.ArgumentNullException(nameof(conversation));
             this.Type = type;
+            this.Conversation = conversation ?? throw new global::System.ArgumentNullException(nameof(conversation));
         }
 
         /// <summary>

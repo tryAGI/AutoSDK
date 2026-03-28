@@ -88,7 +88,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookSubIssuesSubIssueAdded" /> class.
         /// </summary>
-        /// <param name="action"></param>
         /// <param name="subIssueId">
         /// The ID of the sub-issue.
         /// </param>
@@ -104,6 +103,7 @@ namespace G
         /// <param name="parentIssue">
         /// Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
         /// </param>
+        /// <param name="action"></param>
         /// <param name="installation">
         /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>
         /// for and sent to a GitHub App. For more information,<br/>
@@ -135,12 +135,12 @@ namespace G
             global::G.RepositoryWebhooks? repository,
             global::G.SimpleUser? sender)
         {
+            this.Action = action;
             this.SubIssueId = subIssueId;
             this.SubIssue = subIssue ?? throw new global::System.ArgumentNullException(nameof(subIssue));
             this.SubIssueRepo = subIssueRepo ?? throw new global::System.ArgumentNullException(nameof(subIssueRepo));
             this.ParentIssueId = parentIssueId;
             this.ParentIssue = parentIssue ?? throw new global::System.ArgumentNullException(nameof(parentIssue));
-            this.Action = action;
             this.Installation = installation;
             this.Organization = organization;
             this.Repository = repository;

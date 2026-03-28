@@ -58,15 +58,15 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `conversation.item.created`.
-        /// </param>
         /// <param name="previousItemId">
         /// The ID of the preceding item in the Conversation context, allows the <br/>
         /// client to understand the order of the conversation.
         /// </param>
         /// <param name="item">
         /// The item to add to the conversation.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `conversation.item.created`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -78,9 +78,9 @@ namespace G
             global::G.RealtimeServerEventConversationItemCreatedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
+            this.Type = type;
             this.PreviousItemId = previousItemId ?? throw new global::System.ArgumentNullException(nameof(previousItemId));
             this.Item = item ?? throw new global::System.ArgumentNullException(nameof(item));
-            this.Type = type;
         }
 
         /// <summary>

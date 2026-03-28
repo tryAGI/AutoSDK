@@ -192,9 +192,6 @@ namespace G
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `thread.run`.
-        /// </param>
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) for when the run was created.
         /// </param>
@@ -206,6 +203,31 @@ namespace G
         /// </param>
         /// <param name="status">
         /// The status of the run, which can be either `queued`, `in_progress`, `requires_action`, `cancelling`, `cancelled`, `failed`, `completed`, `incomplete`, or `expired`.
+        /// </param>
+        /// <param name="model">
+        /// The model that the [assistant](/docs/api-reference/assistants) used for this run.
+        /// </param>
+        /// <param name="instructions">
+        /// The instructions that the [assistant](/docs/api-reference/assistants) used for this run.
+        /// </param>
+        /// <param name="tools">
+        /// The list of tools that the [assistant](/docs/api-reference/assistants) used for this run.<br/>
+        /// Default Value: []
+        /// </param>
+        /// <param name="truncationStrategy"></param>
+        /// <param name="toolChoice"></param>
+        /// <param name="parallelToolCalls">
+        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="responseFormat">
+        /// Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models#gpt-4o), [GPT-4 Turbo](/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
+        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
+        /// Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.<br/>
+        /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `thread.run`.
         /// </param>
         /// <param name="requiredAction">
         /// Details on the action required to continue the run. Will be `null` if no action is required.
@@ -231,16 +253,6 @@ namespace G
         /// <param name="incompleteDetails">
         /// Details on why the run is incomplete. Will be `null` if the run is not incomplete.
         /// </param>
-        /// <param name="model">
-        /// The model that the [assistant](/docs/api-reference/assistants) used for this run.
-        /// </param>
-        /// <param name="instructions">
-        /// The instructions that the [assistant](/docs/api-reference/assistants) used for this run.
-        /// </param>
-        /// <param name="tools">
-        /// The list of tools that the [assistant](/docs/api-reference/assistants) used for this run.<br/>
-        /// Default Value: []
-        /// </param>
         /// <param name="metadata">
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
         /// useful for storing additional information about the object in a structured<br/>
@@ -262,18 +274,6 @@ namespace G
         /// </param>
         /// <param name="maxCompletionTokens">
         /// The maximum number of completion tokens specified to have been used over the course of the run.
-        /// </param>
-        /// <param name="truncationStrategy"></param>
-        /// <param name="toolChoice"></param>
-        /// <param name="parallelToolCalls">
-        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.<br/>
-        /// Default Value: true
-        /// </param>
-        /// <param name="responseFormat">
-        /// Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models#gpt-4o), [GPT-4 Turbo](/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
-        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
-        /// Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.<br/>
-        /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </param>
         public RunObject(
             string id,
@@ -305,18 +305,11 @@ namespace G
             int? maxCompletionTokens)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.CreatedAt = createdAt;
             this.ThreadId = threadId ?? throw new global::System.ArgumentNullException(nameof(threadId));
             this.AssistantId = assistantId ?? throw new global::System.ArgumentNullException(nameof(assistantId));
             this.Status = status;
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.Instructions = instructions ?? throw new global::System.ArgumentNullException(nameof(instructions));
-            this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
-            this.TruncationStrategy = truncationStrategy;
-            this.ToolChoice = toolChoice;
-            this.ParallelToolCalls = parallelToolCalls;
-            this.ResponseFormat = responseFormat;
-            this.Object = @object;
             this.RequiredAction = requiredAction;
             this.LastError = lastError;
             this.ExpiresAt = expiresAt;
@@ -325,12 +318,19 @@ namespace G
             this.FailedAt = failedAt;
             this.CompletedAt = completedAt;
             this.IncompleteDetails = incompleteDetails;
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Instructions = instructions ?? throw new global::System.ArgumentNullException(nameof(instructions));
+            this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
             this.Metadata = metadata;
             this.Usage = usage;
             this.Temperature = temperature;
             this.TopP = topP;
             this.MaxPromptTokens = maxPromptTokens;
             this.MaxCompletionTokens = maxCompletionTokens;
+            this.TruncationStrategy = truncationStrategy;
+            this.ToolChoice = toolChoice;
+            this.ParallelToolCalls = parallelToolCalls;
+            this.ResponseFormat = responseFormat;
         }
 
         /// <summary>

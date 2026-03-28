@@ -43,11 +43,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookCheckSuiteRequestedCheckSuiteHeadCommitCommitter" /> class.
         /// </summary>
-        /// <param name="date"></param>
-        /// <param name="email"></param>
         /// <param name="name">
         /// The git author's name.
         /// </param>
+        /// <param name="date"></param>
+        /// <param name="email"></param>
         /// <param name="username"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -58,9 +58,9 @@ namespace G
             string? email,
             string? username)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Date = date;
             this.Email = email;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Username = username;
         }
 

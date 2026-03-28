@@ -51,16 +51,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Voice" /> class.
         /// </summary>
-        /// <param name="voiceId">
-        /// Included only in responses
-        /// </param>
-        /// <param name="name">
-        /// Included only in responses
-        /// </param>
         /// <param name="description">
         /// Included only in responses
         /// </param>
         /// <param name="previewUrl">
+        /// Included only in responses
+        /// </param>
+        /// <param name="voiceId">
+        /// Included only in responses
+        /// </param>
+        /// <param name="name">
         /// Included only in responses
         /// </param>
         /// <param name="ownership">

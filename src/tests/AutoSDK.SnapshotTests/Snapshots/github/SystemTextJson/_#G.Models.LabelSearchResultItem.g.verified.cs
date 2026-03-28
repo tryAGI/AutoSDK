@@ -85,8 +85,8 @@ namespace G
         /// <param name="name"></param>
         /// <param name="color"></param>
         /// <param name="default"></param>
-        /// <param name="description"></param>
         /// <param name="score"></param>
+        /// <param name="description"></param>
         /// <param name="textMatches"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -108,8 +108,8 @@ namespace G
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Color = color ?? throw new global::System.ArgumentNullException(nameof(color));
             this.Default = @default;
-            this.Score = score;
             this.Description = description;
+            this.Score = score;
             this.TextMatches = textMatches;
         }
 

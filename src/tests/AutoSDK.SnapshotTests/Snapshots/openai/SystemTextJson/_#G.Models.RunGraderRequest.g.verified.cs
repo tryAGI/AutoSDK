@@ -46,15 +46,15 @@ namespace G
         /// <param name="grader">
         /// The grader used for the fine-tuning job.
         /// </param>
-        /// <param name="item">
-        /// The dataset item provided to the grader. This will be used to populate <br/>
-        /// the `item` namespace. See [the guide](/docs/guides/graders) for more details. 
-        /// </param>
         /// <param name="modelSample">
         /// The model sample to be evaluated. This value will be used to populate <br/>
         /// the `sample` namespace. See [the guide](/docs/guides/graders) for more details.<br/>
         /// The `output_json` variable will be populated if the model sample is a <br/>
         /// valid JSON string.
+        /// </param>
+        /// <param name="item">
+        /// The dataset item provided to the grader. This will be used to populate <br/>
+        /// the `item` namespace. See [the guide](/docs/guides/graders) for more details. 
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -65,8 +65,8 @@ namespace G
             object? item)
         {
             this.Grader = grader;
-            this.ModelSample = modelSample ?? throw new global::System.ArgumentNullException(nameof(modelSample));
             this.Item = item;
+            this.ModelSample = modelSample ?? throw new global::System.ArgumentNullException(nameof(modelSample));
         }
 
         /// <summary>

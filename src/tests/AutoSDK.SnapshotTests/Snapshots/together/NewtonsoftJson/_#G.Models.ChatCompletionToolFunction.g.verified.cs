@@ -36,16 +36,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionToolFunction" /> class.
         /// </summary>
-        /// <param name="description"></param>
         /// <param name="name"></param>
+        /// <param name="description"></param>
         /// <param name="parameters"></param>
         public ChatCompletionToolFunction(
             string name,
             string? description,
             object? parameters)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Parameters = parameters;
         }
 

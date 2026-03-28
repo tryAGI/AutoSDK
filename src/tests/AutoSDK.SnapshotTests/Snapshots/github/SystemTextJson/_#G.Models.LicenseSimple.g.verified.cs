@@ -68,14 +68,14 @@ namespace G
         /// <param name="name">
         /// Example: MIT License
         /// </param>
+        /// <param name="nodeId">
+        /// Example: MDc6TGljZW5zZW1pdA==
+        /// </param>
         /// <param name="url">
         /// Example: https://api.github.com/licenses/mit
         /// </param>
         /// <param name="spdxId">
         /// Example: MIT
-        /// </param>
-        /// <param name="nodeId">
-        /// Example: MDc6TGljZW5zZW1pdA==
         /// </param>
         /// <param name="htmlUrl"></param>
 #if NET7_0_OR_GREATER
@@ -91,9 +91,9 @@ namespace G
         {
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Url = url;
             this.SpdxId = spdxId;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.HtmlUrl = htmlUrl;
         }
 

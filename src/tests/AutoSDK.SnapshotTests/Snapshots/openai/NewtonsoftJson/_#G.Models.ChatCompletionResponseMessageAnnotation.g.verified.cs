@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionResponseMessageAnnotation" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the URL citation. Always `url_citation`.
-        /// </param>
         /// <param name="urlCitation">
         /// A URL citation when using web search.
+        /// </param>
+        /// <param name="type">
+        /// The type of the URL citation. Always `url_citation`.
         /// </param>
         public ChatCompletionResponseMessageAnnotation(
             global::G.ChatCompletionResponseMessageAnnotationUrlCitation urlCitation,
             global::G.ChatCompletionResponseMessageAnnotationType type)
         {
-            this.UrlCitation = urlCitation ?? throw new global::System.ArgumentNullException(nameof(urlCitation));
             this.Type = type;
+            this.UrlCitation = urlCitation ?? throw new global::System.ArgumentNullException(nameof(urlCitation));
         }
 
         /// <summary>

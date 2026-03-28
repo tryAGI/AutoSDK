@@ -97,16 +97,16 @@ namespace G
         /// Initializes a new instance of the <see cref="WebhookOrganizationMemberInvitedInvitation" /> class.
         /// </summary>
         /// <param name="createdAt"></param>
-        /// <param name="email"></param>
-        /// <param name="failedAt"></param>
-        /// <param name="failedReason"></param>
         /// <param name="id"></param>
         /// <param name="invitationTeamsUrl"></param>
-        /// <param name="inviter"></param>
-        /// <param name="login"></param>
         /// <param name="nodeId"></param>
         /// <param name="role"></param>
         /// <param name="teamCount"></param>
+        /// <param name="email"></param>
+        /// <param name="failedAt"></param>
+        /// <param name="failedReason"></param>
+        /// <param name="inviter"></param>
+        /// <param name="login"></param>
         /// <param name="invitationSource"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -126,16 +126,16 @@ namespace G
             string? invitationSource)
         {
             this.CreatedAt = createdAt;
-            this.Id = id;
-            this.InvitationTeamsUrl = invitationTeamsUrl ?? throw new global::System.ArgumentNullException(nameof(invitationTeamsUrl));
-            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.Role = role ?? throw new global::System.ArgumentNullException(nameof(role));
-            this.TeamCount = teamCount;
             this.Email = email;
             this.FailedAt = failedAt;
             this.FailedReason = failedReason;
+            this.Id = id;
+            this.InvitationTeamsUrl = invitationTeamsUrl ?? throw new global::System.ArgumentNullException(nameof(invitationTeamsUrl));
             this.Inviter = inviter;
             this.Login = login;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Role = role ?? throw new global::System.ArgumentNullException(nameof(role));
+            this.TeamCount = teamCount;
             this.InvitationSource = invitationSource;
         }
 

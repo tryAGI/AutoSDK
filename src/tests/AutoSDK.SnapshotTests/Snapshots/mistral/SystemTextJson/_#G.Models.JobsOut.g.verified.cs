@@ -38,13 +38,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="JobsOut" /> class.
         /// </summary>
+        /// <param name="total"></param>
         /// <param name="data">
         /// Default Value: []
         /// </param>
         /// <param name="object">
         /// Default Value: list
         /// </param>
-        /// <param name="total"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -53,9 +53,9 @@ namespace G
             global::System.Collections.Generic.IList<global::G.DataItem2>? data,
             global::G.JobsOutObject? @object)
         {
-            this.Total = total;
             this.Data = data;
             this.Object = @object;
+            this.Total = total;
         }
 
         /// <summary>

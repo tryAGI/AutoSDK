@@ -30,14 +30,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaURLPDFSource" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="url"></param>
+        /// <param name="type"></param>
         public BetaURLPDFSource(
             string url,
             global::G.BetaURLPDFSourceType type)
         {
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Type = type;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 
         /// <summary>

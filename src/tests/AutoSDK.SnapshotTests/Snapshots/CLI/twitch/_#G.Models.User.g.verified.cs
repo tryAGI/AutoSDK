@@ -147,13 +147,13 @@ namespace G
         ///   <br/>
         /// **NOTE**: This field has been deprecated (see [Get Users API endpoint – "view\_count" deprecation](https://discuss.dev.twitch.tv/t/get-users-api-endpoint-view-count-deprecation/37777)). Any data in this field is not valid and should not be used.
         /// </param>
+        /// <param name="createdAt">
+        /// The UTC date and time that the user's account was created. The timestamp is in RFC3339 format.
+        /// </param>
         /// <param name="email">
         /// The user's verified email address. The object includes this field only if the user access token includes the **user:read:email** scope.  <br/>
         ///   <br/>
         /// If the request contains more than one user, only the user associated with the access token that provided consent will include an email address — the email address for all other users will be empty.
-        /// </param>
-        /// <param name="createdAt">
-        /// The UTC date and time that the user's account was created. The timestamp is in RFC3339 format.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -180,8 +180,8 @@ namespace G
             this.ProfileImageUrl = profileImageUrl ?? throw new global::System.ArgumentNullException(nameof(profileImageUrl));
             this.OfflineImageUrl = offlineImageUrl ?? throw new global::System.ArgumentNullException(nameof(offlineImageUrl));
             this.ViewCount = viewCount;
-            this.CreatedAt = createdAt;
             this.Email = email;
+            this.CreatedAt = createdAt;
         }
 
         /// <summary>

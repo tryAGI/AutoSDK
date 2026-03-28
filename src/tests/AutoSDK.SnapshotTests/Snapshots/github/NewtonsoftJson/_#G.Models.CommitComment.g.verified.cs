@@ -109,18 +109,18 @@ namespace G
         /// <param name="id"></param>
         /// <param name="nodeId"></param>
         /// <param name="body"></param>
-        /// <param name="path"></param>
-        /// <param name="position"></param>
-        /// <param name="line"></param>
         /// <param name="commitId"></param>
-        /// <param name="user">
-        /// A GitHub user.
-        /// </param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="authorAssociation">
         /// How the author is associated with the repository.<br/>
         /// Example: OWNER
+        /// </param>
+        /// <param name="path"></param>
+        /// <param name="position"></param>
+        /// <param name="line"></param>
+        /// <param name="user">
+        /// A GitHub user.
         /// </param>
         /// <param name="reactions"></param>
         public CommitComment(
@@ -144,14 +144,14 @@ namespace G
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
-            this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
-            this.AuthorAssociation = authorAssociation;
             this.Path = path;
             this.Position = position;
             this.Line = line;
+            this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
             this.User = user;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.AuthorAssociation = authorAssociation;
             this.Reactions = reactions;
         }
 

@@ -32,18 +32,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RateLimitError" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: rate_limit_error
-        /// </param>
         /// <param name="message">
         /// Default Value: Rate limited
+        /// </param>
+        /// <param name="type">
+        /// Default Value: rate_limit_error
         /// </param>
         public RateLimitError(
             string message,
             global::G.RateLimitErrorType type = global::G.RateLimitErrorType.RateLimitError)
         {
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Type = type;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
         }
 
         /// <summary>

@@ -115,6 +115,8 @@ namespace G
         /// Initializes a new instance of the <see cref="ExampleWithRunsGroup" /> class.
         /// </summary>
         /// <param name="filter"></param>
+        /// <param name="groupKey"></param>
+        /// <param name="examples"></param>
         /// <param name="count"></param>
         /// <param name="totalTokens"></param>
         /// <param name="totalCost"></param>
@@ -123,8 +125,6 @@ namespace G
         /// <param name="latencyP50"></param>
         /// <param name="latencyP99"></param>
         /// <param name="feedbackStats"></param>
-        /// <param name="groupKey"></param>
-        /// <param name="examples"></param>
         /// <param name="promptTokens"></param>
         /// <param name="completionTokens"></param>
         /// <param name="promptCost"></param>
@@ -149,8 +149,6 @@ namespace G
             double? errorRate)
         {
             this.Filter = filter ?? throw new global::System.ArgumentNullException(nameof(filter));
-            this.GroupKey = groupKey ?? throw new global::System.ArgumentNullException(nameof(groupKey));
-            this.Examples = examples;
             this.Count = count;
             this.TotalTokens = totalTokens;
             this.TotalCost = totalCost;
@@ -159,6 +157,8 @@ namespace G
             this.LatencyP50 = latencyP50;
             this.LatencyP99 = latencyP99;
             this.FeedbackStats = feedbackStats;
+            this.GroupKey = groupKey ?? throw new global::System.ArgumentNullException(nameof(groupKey));
+            this.Examples = examples;
             this.PromptTokens = promptTokens;
             this.CompletionTokens = completionTokens;
             this.PromptCost = promptCost;

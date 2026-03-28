@@ -119,9 +119,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TeamDiscussionComment" /> class.
         /// </summary>
-        /// <param name="author">
-        /// A GitHub user.
-        /// </param>
         /// <param name="body">
         /// The main text of the comment.<br/>
         /// Example: I agree with this suggestion.
@@ -136,7 +133,6 @@ namespace G
         /// <param name="createdAt">
         /// Example: 2018-01-15T23:53:58Z
         /// </param>
-        /// <param name="lastEditedAt"></param>
         /// <param name="discussionUrl">
         /// Example: https://api.github.com/organizations/1/team/2403582/discussions/1
         /// </param>
@@ -156,6 +152,10 @@ namespace G
         /// <param name="url">
         /// Example: https://api.github.com/organizations/1/team/2403582/discussions/1/comments/1
         /// </param>
+        /// <param name="author">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="lastEditedAt"></param>
         /// <param name="reactions"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -175,18 +175,18 @@ namespace G
             global::System.DateTime? lastEditedAt,
             global::G.ReactionRollup? reactions)
         {
+            this.Author = author;
             this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
             this.BodyHtml = bodyHtml ?? throw new global::System.ArgumentNullException(nameof(bodyHtml));
             this.BodyVersion = bodyVersion ?? throw new global::System.ArgumentNullException(nameof(bodyVersion));
             this.CreatedAt = createdAt;
+            this.LastEditedAt = lastEditedAt;
             this.DiscussionUrl = discussionUrl ?? throw new global::System.ArgumentNullException(nameof(discussionUrl));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Number = number;
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Author = author;
-            this.LastEditedAt = lastEditedAt;
             this.Reactions = reactions;
         }
 

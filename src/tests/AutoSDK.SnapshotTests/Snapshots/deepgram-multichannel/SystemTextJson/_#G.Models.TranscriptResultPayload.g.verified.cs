@@ -45,13 +45,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscriptResultPayload" /> class.
         /// </summary>
-        /// <param name="messageType"></param>
         /// <param name="text">
         /// The transcript text.
         /// </param>
         /// <param name="isFinal">
         /// Whether this is a final result.
         /// </param>
+        /// <param name="messageType"></param>
         /// <param name="confidence">
         /// Confidence score.
         /// </param>
@@ -64,9 +64,9 @@ namespace G
             global::G.TranscriptResultPayloadMessageType messageType,
             double? confidence)
         {
+            this.MessageType = messageType;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.IsFinal = isFinal;
-            this.MessageType = messageType;
             this.Confidence = confidence;
         }
 

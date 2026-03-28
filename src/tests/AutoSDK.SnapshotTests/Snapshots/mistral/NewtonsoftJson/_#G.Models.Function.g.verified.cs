@@ -43,11 +43,11 @@ namespace G
         /// Initializes a new instance of the <see cref="Function" /> class.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="parameters"></param>
         /// <param name="description"></param>
         /// <param name="strict">
         /// Default Value: false
         /// </param>
-        /// <param name="parameters"></param>
         public Function(
             string name,
             object parameters,
@@ -55,9 +55,9 @@ namespace G
             bool? strict)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
             this.Description = description;
             this.Strict = strict;
+            this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
         }
 
         /// <summary>

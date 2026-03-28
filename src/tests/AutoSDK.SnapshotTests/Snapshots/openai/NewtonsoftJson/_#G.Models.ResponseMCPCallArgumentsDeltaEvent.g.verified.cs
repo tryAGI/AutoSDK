@@ -48,9 +48,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseMCPCallArgumentsDeltaEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always 'response.mcp_call.arguments_delta'.
-        /// </param>
         /// <param name="outputIndex">
         /// The index of the output item in the response's output array.
         /// </param>
@@ -63,6 +60,9 @@ namespace G
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always 'response.mcp_call.arguments_delta'.
+        /// </param>
         public ResponseMCPCallArgumentsDeltaEvent(
             int outputIndex,
             string itemId,
@@ -70,11 +70,11 @@ namespace G
             int sequenceNumber,
             global::G.ResponseMCPCallArgumentsDeltaEventType type)
         {
+            this.Type = type;
             this.OutputIndex = outputIndex;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.SequenceNumber = sequenceNumber;
-            this.Type = type;
         }
 
         /// <summary>

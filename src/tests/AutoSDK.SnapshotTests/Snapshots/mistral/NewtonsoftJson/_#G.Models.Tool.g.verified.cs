@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Tool" /> class.
         /// </summary>
+        /// <param name="function"></param>
         /// <param name="type">
         /// Default Value: function
         /// </param>
-        /// <param name="function"></param>
         public Tool(
             global::G.Function function,
             global::G.ToolTypes? type)
         {
-            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
             this.Type = type;
+            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
         }
 
         /// <summary>

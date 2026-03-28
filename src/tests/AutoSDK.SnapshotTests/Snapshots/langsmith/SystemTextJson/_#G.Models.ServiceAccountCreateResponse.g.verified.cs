@@ -71,8 +71,8 @@ namespace G
         /// <param name="updatedAt"></param>
         /// <param name="name"></param>
         /// <param name="organizationId"></param>
-        /// <param name="defaultWorkspaceId"></param>
         /// <param name="organizationIdentityId"></param>
+        /// <param name="defaultWorkspaceId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -90,8 +90,8 @@ namespace G
             this.UpdatedAt = updatedAt;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.OrganizationId = organizationId;
-            this.OrganizationIdentityId = organizationIdentityId;
             this.DefaultWorkspaceId = defaultWorkspaceId;
+            this.OrganizationIdentityId = organizationIdentityId;
         }
 
         /// <summary>

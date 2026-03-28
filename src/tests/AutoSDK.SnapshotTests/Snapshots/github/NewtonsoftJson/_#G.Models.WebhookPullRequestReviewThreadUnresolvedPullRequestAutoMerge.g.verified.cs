@@ -42,26 +42,26 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPullRequestReviewThreadUnresolvedPullRequestAutoMerge" /> class.
         /// </summary>
-        /// <param name="commitMessage">
-        /// Commit message for the merge commit.
-        /// </param>
         /// <param name="commitTitle">
         /// Title for the merge commit message.
         /// </param>
-        /// <param name="enabledBy"></param>
         /// <param name="mergeMethod">
         /// The merge method to use.
         /// </param>
+        /// <param name="commitMessage">
+        /// Commit message for the merge commit.
+        /// </param>
+        /// <param name="enabledBy"></param>
         public WebhookPullRequestReviewThreadUnresolvedPullRequestAutoMerge(
             string commitTitle,
             global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestAutoMergeMergeMethod mergeMethod,
             string? commitMessage,
             global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestAutoMergeEnabledBy? enabledBy)
         {
-            this.CommitTitle = commitTitle ?? throw new global::System.ArgumentNullException(nameof(commitTitle));
-            this.MergeMethod = mergeMethod;
             this.CommitMessage = commitMessage;
+            this.CommitTitle = commitTitle ?? throw new global::System.ArgumentNullException(nameof(commitTitle));
             this.EnabledBy = enabledBy;
+            this.MergeMethod = mergeMethod;
         }
 
         /// <summary>

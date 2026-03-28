@@ -104,13 +104,13 @@ namespace G
         /// <param name="userName">
         /// The user’s display name.
         /// </param>
+        /// <param name="productData">
+        /// Contains details about the digital product.
+        /// </param>
         /// <param name="productType">
         /// The type of transaction. Possible values are:  <br/>
         ///   <br/>
         /// * BITS\_IN\_EXTENSION
-        /// </param>
-        /// <param name="productData">
-        /// Contains details about the digital product.
         /// </param>
         public ExtensionTransaction(
             string id,
@@ -132,8 +132,8 @@ namespace G
             this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
             this.UserLogin = userLogin ?? throw new global::System.ArgumentNullException(nameof(userLogin));
             this.UserName = userName ?? throw new global::System.ArgumentNullException(nameof(userName));
-            this.ProductData = productData ?? throw new global::System.ArgumentNullException(nameof(productData));
             this.ProductType = productType;
+            this.ProductData = productData ?? throw new global::System.ArgumentNullException(nameof(productData));
         }
 
         /// <summary>

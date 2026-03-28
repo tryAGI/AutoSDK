@@ -45,15 +45,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DynamicVariableAssignment" /> class.
         /// </summary>
-        /// <param name="source">
-        /// The source to extract the value from. Currently only 'response' is supported.<br/>
-        /// Default Value: response
-        /// </param>
         /// <param name="dynamicVariable">
         /// The name of the dynamic variable to assign the extracted value to
         /// </param>
         /// <param name="valuePath">
         /// Dot notation path to extract the value from the source (e.g., 'user.name' or 'data.0.id')
+        /// </param>
+        /// <param name="source">
+        /// The source to extract the value from. Currently only 'response' is supported.<br/>
+        /// Default Value: response
         /// </param>
         /// <param name="sanitize">
         /// If true, this assignment's value will be removed from the tool response before sending to the LLM and transcript, but still processed for variable assignment.<br/>
@@ -65,9 +65,9 @@ namespace G
             string? source,
             bool? sanitize)
         {
+            this.Source = source;
             this.DynamicVariable = dynamicVariable ?? throw new global::System.ArgumentNullException(nameof(dynamicVariable));
             this.ValuePath = valuePath ?? throw new global::System.ArgumentNullException(nameof(valuePath));
-            this.Source = source;
             this.Sanitize = sanitize;
         }
 

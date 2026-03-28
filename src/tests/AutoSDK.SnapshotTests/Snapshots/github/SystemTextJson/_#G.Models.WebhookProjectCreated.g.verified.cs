@@ -69,6 +69,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookProjectCreated" /> class.
         /// </summary>
+        /// <param name="project"></param>
+        /// <param name="sender">
+        /// A GitHub user.
+        /// </param>
         /// <param name="action"></param>
         /// <param name="enterprise">
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
@@ -84,13 +88,9 @@ namespace G
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
         /// organization, or when the event occurs from activity in a repository owned by an organization.
         /// </param>
-        /// <param name="project"></param>
         /// <param name="repository">
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
         /// when the event occurs from activity in a repository.
-        /// </param>
-        /// <param name="sender">
-        /// A GitHub user.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -104,13 +104,13 @@ namespace G
             global::G.OrganizationSimpleWebhooks? organization,
             global::G.RepositoryWebhooks? repository)
         {
-            this.Project = project ?? throw new global::System.ArgumentNullException(nameof(project));
-            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Action = action;
             this.Enterprise = enterprise;
             this.Installation = installation;
             this.Organization = organization;
+            this.Project = project ?? throw new global::System.ArgumentNullException(nameof(project));
             this.Repository = repository;
+            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
         }
 
         /// <summary>

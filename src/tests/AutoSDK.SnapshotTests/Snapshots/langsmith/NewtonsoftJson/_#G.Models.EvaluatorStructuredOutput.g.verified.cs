@@ -54,12 +54,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EvaluatorStructuredOutput" /> class.
         /// </summary>
+        /// <param name="model"></param>
         /// <param name="hubRef"></param>
         /// <param name="prompt"></param>
         /// <param name="templateFormat"></param>
         /// <param name="schema"></param>
         /// <param name="variableMapping"></param>
-        /// <param name="model"></param>
         public EvaluatorStructuredOutput(
             object model,
             string? hubRef,
@@ -68,12 +68,12 @@ namespace G
             object? schema,
             global::System.Collections.Generic.Dictionary<string, string>? variableMapping)
         {
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.HubRef = hubRef;
             this.Prompt = prompt;
             this.TemplateFormat = templateFormat;
             this.Schema = schema;
             this.VariableMapping = variableMapping;
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
         }
 
         /// <summary>

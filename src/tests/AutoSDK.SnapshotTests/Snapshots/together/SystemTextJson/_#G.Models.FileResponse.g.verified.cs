@@ -101,14 +101,14 @@ namespace G
         /// <param name="bytes">
         /// Example: 2664
         /// </param>
-        /// <param name="purpose">
-        /// Example: fine-tune
-        /// </param>
         /// <param name="processed"></param>
         /// <param name="fileType">
         /// Example: jsonl
         /// </param>
         /// <param name="lineCount"></param>
+        /// <param name="purpose">
+        /// Example: fine-tune
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -128,10 +128,10 @@ namespace G
             this.CreatedAt = createdAt;
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.Bytes = bytes;
+            this.Purpose = purpose;
             this.Processed = processed;
             this.FileType = fileType;
             this.LineCount = lineCount;
-            this.Purpose = purpose;
         }
 
         /// <summary>

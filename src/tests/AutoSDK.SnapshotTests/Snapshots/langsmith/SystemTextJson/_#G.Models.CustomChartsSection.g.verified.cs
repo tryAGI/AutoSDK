@@ -65,11 +65,11 @@ namespace G
         /// Initializes a new instance of the <see cref="CustomChartsSection" /> class.
         /// </summary>
         /// <param name="title"></param>
+        /// <param name="id"></param>
+        /// <param name="charts"></param>
         /// <param name="description"></param>
         /// <param name="index"></param>
-        /// <param name="id"></param>
         /// <param name="sessionId"></param>
-        /// <param name="charts"></param>
         /// <param name="subSections"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -84,11 +84,11 @@ namespace G
             global::System.Collections.Generic.IList<global::G.SingleCustomChartSubSectionResponse>? subSections)
         {
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Id = id;
-            this.Charts = charts ?? throw new global::System.ArgumentNullException(nameof(charts));
             this.Description = description;
             this.Index = index;
+            this.Id = id;
             this.SessionId = sessionId;
+            this.Charts = charts ?? throw new global::System.ArgumentNullException(nameof(charts));
             this.SubSections = subSections;
         }
 

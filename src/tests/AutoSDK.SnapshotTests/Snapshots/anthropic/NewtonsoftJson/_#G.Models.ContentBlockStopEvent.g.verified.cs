@@ -31,16 +31,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentBlockStopEvent" /> class.
         /// </summary>
+        /// <param name="index"></param>
         /// <param name="type">
         /// Default Value: content_block_stop
         /// </param>
-        /// <param name="index"></param>
         public ContentBlockStopEvent(
             int index,
             global::G.ContentBlockStopEventType type = global::G.ContentBlockStopEventType.ContentBlockStop)
         {
-            this.Index = index;
             this.Type = type;
+            this.Index = index;
         }
 
         /// <summary>

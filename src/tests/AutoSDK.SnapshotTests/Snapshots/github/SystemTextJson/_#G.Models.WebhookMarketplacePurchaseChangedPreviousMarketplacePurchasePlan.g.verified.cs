@@ -88,8 +88,8 @@ namespace G
         /// <param name="monthlyPriceInCents"></param>
         /// <param name="name"></param>
         /// <param name="priceModel"></param>
-        /// <param name="unitName"></param>
         /// <param name="yearlyPriceInCents"></param>
+        /// <param name="unitName"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -111,8 +111,8 @@ namespace G
             this.MonthlyPriceInCents = monthlyPriceInCents;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.PriceModel = priceModel;
-            this.YearlyPriceInCents = yearlyPriceInCents;
             this.UnitName = unitName;
+            this.YearlyPriceInCents = yearlyPriceInCents;
         }
 
         /// <summary>

@@ -66,6 +66,9 @@ namespace G
         /// <param name="publicCodeSuggestions">
         /// The organization policy for allowing or disallowing Copilot to make suggestions that match public code.
         /// </param>
+        /// <param name="seatManagementSetting">
+        /// The mode of assigning new seats.
+        /// </param>
         /// <param name="ideChat">
         /// The organization policy for allowing or disallowing organization members to use Copilot Chat within their editor.
         /// </param>
@@ -74,9 +77,6 @@ namespace G
         /// </param>
         /// <param name="cli">
         /// The organization policy for allowing or disallowing organization members to use Copilot within their CLI.
-        /// </param>
-        /// <param name="seatManagementSetting">
-        /// The mode of assigning new seats.
         /// </param>
         /// <param name="planType">
         /// The Copilot plan of the organization, or the parent enterprise, when applicable.
@@ -92,10 +92,10 @@ namespace G
         {
             this.SeatBreakdown = seatBreakdown ?? throw new global::System.ArgumentNullException(nameof(seatBreakdown));
             this.PublicCodeSuggestions = publicCodeSuggestions;
-            this.SeatManagementSetting = seatManagementSetting;
             this.IdeChat = ideChat;
             this.PlatformChat = platformChat;
             this.Cli = cli;
+            this.SeatManagementSetting = seatManagementSetting;
             this.PlanType = planType;
         }
 

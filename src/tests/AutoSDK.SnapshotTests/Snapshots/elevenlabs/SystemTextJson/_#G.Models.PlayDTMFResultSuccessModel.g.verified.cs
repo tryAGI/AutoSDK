@@ -43,13 +43,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PlayDTMFResultSuccessModel" /> class.
         /// </summary>
+        /// <param name="dtmfTones"></param>
         /// <param name="resultType">
         /// Default Value: play_dtmf_success
         /// </param>
         /// <param name="status">
         /// Default Value: success
         /// </param>
-        /// <param name="dtmfTones"></param>
         /// <param name="reason"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -60,9 +60,9 @@ namespace G
             string? status,
             string? reason)
         {
-            this.DtmfTones = dtmfTones ?? throw new global::System.ArgumentNullException(nameof(dtmfTones));
             this.ResultType = resultType;
             this.Status = status;
+            this.DtmfTones = dtmfTones ?? throw new global::System.ArgumentNullException(nameof(dtmfTones));
             this.Reason = reason;
         }
 

@@ -30,14 +30,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DatasetVersion" /> class.
         /// </summary>
-        /// <param name="tags"></param>
         /// <param name="asOf"></param>
+        /// <param name="tags"></param>
         public DatasetVersion(
             global::System.DateTime asOf,
             global::System.Collections.Generic.IList<string>? tags)
         {
-            this.AsOf = asOf;
             this.Tags = tags;
+            this.AsOf = asOf;
         }
 
         /// <summary>

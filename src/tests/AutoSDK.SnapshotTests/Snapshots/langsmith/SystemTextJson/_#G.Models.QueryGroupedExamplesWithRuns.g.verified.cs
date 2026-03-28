@@ -65,6 +65,8 @@ namespace G
         /// Initializes a new instance of the <see cref="QueryGroupedExamplesWithRuns" /> class.
         /// </summary>
         /// <param name="sessionIds"></param>
+        /// <param name="groupBy"></param>
+        /// <param name="metadataKey"></param>
         /// <param name="offset">
         /// Default Value: 0
         /// </param>
@@ -74,8 +76,6 @@ namespace G
         /// <param name="preview">
         /// Default Value: false
         /// </param>
-        /// <param name="groupBy"></param>
-        /// <param name="metadataKey"></param>
         /// <param name="perGroupLimit">
         /// Default Value: 5
         /// </param>
@@ -92,11 +92,11 @@ namespace G
             int? perGroupLimit)
         {
             this.SessionIds = sessionIds ?? throw new global::System.ArgumentNullException(nameof(sessionIds));
-            this.GroupBy = groupBy;
-            this.MetadataKey = metadataKey ?? throw new global::System.ArgumentNullException(nameof(metadataKey));
             this.Offset = offset;
             this.Limit = limit;
             this.Preview = preview;
+            this.GroupBy = groupBy;
+            this.MetadataKey = metadataKey ?? throw new global::System.ArgumentNullException(nameof(metadataKey));
             this.PerGroupLimit = perGroupLimit;
         }
 

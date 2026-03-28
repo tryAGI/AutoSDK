@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelPricingInputLength" /> class.
         /// </summary>
+        /// <param name="centsPerInputSec"></param>
         /// <param name="type">
         /// Default Value: input_length
         /// </param>
-        /// <param name="centsPerInputSec"></param>
         public ModelPricingInputLength(
             double centsPerInputSec,
             string? type)
         {
-            this.CentsPerInputSec = centsPerInputSec;
             this.Type = type;
+            this.CentsPerInputSec = centsPerInputSec;
         }
 
         /// <summary>

@@ -36,17 +36,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaRequestThinkingBlock" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="thinking"></param>
         /// <param name="signature"></param>
+        /// <param name="type"></param>
         public BetaRequestThinkingBlock(
             string thinking,
             string signature,
             global::G.BetaRequestThinkingBlockType type)
         {
+            this.Type = type;
             this.Thinking = thinking ?? throw new global::System.ArgumentNullException(nameof(thinking));
             this.Signature = signature ?? throw new global::System.ArgumentNullException(nameof(signature));
-            this.Type = type;
         }
 
         /// <summary>

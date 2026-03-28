@@ -53,9 +53,9 @@ namespace G
         /// </summary>
         /// <param name="runId"></param>
         /// <param name="queueId"></param>
+        /// <param name="id"></param>
         /// <param name="lastReviewedTime"></param>
         /// <param name="addedAt"></param>
-        /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -68,9 +68,9 @@ namespace G
         {
             this.RunId = runId;
             this.QueueId = queueId;
-            this.Id = id;
             this.LastReviewedTime = lastReviewedTime;
             this.AddedAt = addedAt;
+            this.Id = id;
         }
 
         /// <summary>

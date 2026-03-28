@@ -33,10 +33,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaResponseRedactedThinkingBlock" /> class.
         /// </summary>
+        /// <param name="data"></param>
         /// <param name="type">
         /// Default Value: redacted_thinking
         /// </param>
-        /// <param name="data"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -44,8 +44,8 @@ namespace G
             string data,
             global::G.BetaResponseRedactedThinkingBlockType type = global::G.BetaResponseRedactedThinkingBlockType.RedactedThinking)
         {
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Type = type;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
         }
 
         /// <summary>

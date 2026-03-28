@@ -41,11 +41,11 @@ namespace G
         /// <param name="pronunciationDictionaries">
         /// A list of pronunciation dictionaries and their metadata.
         /// </param>
-        /// <param name="nextCursor">
-        /// The next cursor to use for pagination.
-        /// </param>
         /// <param name="hasMore">
         /// Whether there are more pronunciation dictionaries to fetch.
+        /// </param>
+        /// <param name="nextCursor">
+        /// The next cursor to use for pagination.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -56,8 +56,8 @@ namespace G
             string? nextCursor)
         {
             this.PronunciationDictionaries = pronunciationDictionaries ?? throw new global::System.ArgumentNullException(nameof(pronunciationDictionaries));
-            this.HasMore = hasMore;
             this.NextCursor = nextCursor;
+            this.HasMore = hasMore;
         }
 
         /// <summary>

@@ -180,6 +180,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookIssueCommentDeletedIssueVariant2" /> class.
         /// </summary>
+        /// <param name="labels"></param>
+        /// <param name="locked"></param>
+        /// <param name="state">
+        /// State of the issue; either 'open' or 'closed'
+        /// </param>
         /// <param name="activeLockReason"></param>
         /// <param name="assignee"></param>
         /// <param name="assignees"></param>
@@ -192,18 +197,13 @@ namespace G
         /// <param name="eventsUrl"></param>
         /// <param name="htmlUrl"></param>
         /// <param name="id"></param>
-        /// <param name="labels"></param>
         /// <param name="labelsUrl"></param>
-        /// <param name="locked"></param>
         /// <param name="milestone"></param>
         /// <param name="nodeId"></param>
         /// <param name="number"></param>
         /// <param name="performedViaGithubApp"></param>
         /// <param name="reactions"></param>
         /// <param name="repositoryUrl"></param>
-        /// <param name="state">
-        /// State of the issue; either 'open' or 'closed'
-        /// </param>
         /// <param name="timelineUrl"></param>
         /// <param name="title"></param>
         /// <param name="updatedAt"></param>
@@ -238,9 +238,6 @@ namespace G
             string? url,
             global::G.WebhookIssueCommentDeletedIssueVariant2User? user)
         {
-            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
-            this.Locked = locked;
-            this.State = state;
             this.ActiveLockReason = activeLockReason;
             this.Assignee = assignee;
             this.Assignees = assignees;
@@ -253,13 +250,16 @@ namespace G
             this.EventsUrl = eventsUrl;
             this.HtmlUrl = htmlUrl;
             this.Id = id;
+            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
             this.LabelsUrl = labelsUrl;
+            this.Locked = locked;
             this.Milestone = milestone;
             this.NodeId = nodeId;
             this.Number = number;
             this.PerformedViaGithubApp = performedViaGithubApp;
             this.Reactions = reactions;
             this.RepositoryUrl = repositoryUrl;
+            this.State = state;
             this.TimelineUrl = timelineUrl;
             this.Title = title;
             this.UpdatedAt = updatedAt;

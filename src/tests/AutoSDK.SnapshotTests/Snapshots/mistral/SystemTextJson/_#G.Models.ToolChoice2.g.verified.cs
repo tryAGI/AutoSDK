@@ -32,11 +32,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolChoice2" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: function
-        /// </param>
         /// <param name="function">
         /// this restriction of `Function` is used to select a specific function to call
+        /// </param>
+        /// <param name="type">
+        /// Default Value: function
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -45,8 +45,8 @@ namespace G
             global::G.FunctionName function,
             global::G.ToolTypes? type)
         {
-            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
             this.Type = type;
+            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
         }
 
         /// <summary>

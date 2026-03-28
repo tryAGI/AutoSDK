@@ -15,12 +15,12 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="application/json")]
-        ApplicationJson,
+        ApplicationDividejson,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="application/x-www-form-urlencoded")]
-        ApplicationXWwwFormUrlencoded,
+        ApplicationDividexWwwFormUrlencoded,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace G
         {
             return value switch
             {
-                WebhookToolApiSchemaConfigInputContentType.ApplicationJson => "application/json",
-                WebhookToolApiSchemaConfigInputContentType.ApplicationXWwwFormUrlencoded => "application/x-www-form-urlencoded",
+                WebhookToolApiSchemaConfigInputContentType.ApplicationDividejson => "application/json",
+                WebhookToolApiSchemaConfigInputContentType.ApplicationDividexWwwFormUrlencoded => "application/x-www-form-urlencoded",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,8 +47,8 @@ namespace G
         {
             return value switch
             {
-                "application/json" => WebhookToolApiSchemaConfigInputContentType.ApplicationJson,
-                "application/x-www-form-urlencoded" => WebhookToolApiSchemaConfigInputContentType.ApplicationXWwwFormUrlencoded,
+                "application/json" => WebhookToolApiSchemaConfigInputContentType.ApplicationDividejson,
+                "application/x-www-form-urlencoded" => WebhookToolApiSchemaConfigInputContentType.ApplicationDividexWwwFormUrlencoded,
                 _ => null,
             };
         }

@@ -60,11 +60,11 @@ namespace G
         /// Initializes a new instance of the <see cref="TagValue" /> class.
         /// </summary>
         /// <param name="value"></param>
-        /// <param name="description"></param>
         /// <param name="id"></param>
         /// <param name="tagKeyId"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="description"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -77,11 +77,11 @@ namespace G
             string? description)
         {
             this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+            this.Description = description;
             this.Id = id;
             this.TagKeyId = tagKeyId;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.Description = description;
         }
 
         /// <summary>

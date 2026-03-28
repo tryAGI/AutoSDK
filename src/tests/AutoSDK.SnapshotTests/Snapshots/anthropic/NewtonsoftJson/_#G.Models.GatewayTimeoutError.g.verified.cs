@@ -32,18 +32,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GatewayTimeoutError" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: timeout_error
-        /// </param>
         /// <param name="message">
         /// Default Value: Request timeout
+        /// </param>
+        /// <param name="type">
+        /// Default Value: timeout_error
         /// </param>
         public GatewayTimeoutError(
             string message,
             global::G.GatewayTimeoutErrorType type = global::G.GatewayTimeoutErrorType.TimeoutError)
         {
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Type = type;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
         }
 
         /// <summary>

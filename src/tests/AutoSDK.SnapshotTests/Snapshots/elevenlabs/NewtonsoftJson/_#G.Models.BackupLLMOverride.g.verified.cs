@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BackupLLMOverride" /> class.
         /// </summary>
+        /// <param name="order"></param>
         /// <param name="preference">
         /// Default Value: override
         /// </param>
-        /// <param name="order"></param>
         public BackupLLMOverride(
             global::System.Collections.Generic.IList<global::G.Llm> order,
             string? preference)
         {
-            this.Order = order ?? throw new global::System.ArgumentNullException(nameof(order));
             this.Preference = preference;
+            this.Order = order ?? throw new global::System.ArgumentNullException(nameof(order));
         }
 
         /// <summary>

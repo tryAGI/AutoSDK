@@ -114,12 +114,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPullRequestReviewCommentDeletedPullRequestMilestone" /> class.
         /// </summary>
-        /// <param name="closedAt"></param>
         /// <param name="closedIssues"></param>
         /// <param name="createdAt"></param>
-        /// <param name="creator"></param>
-        /// <param name="description"></param>
-        /// <param name="dueOn"></param>
         /// <param name="htmlUrl"></param>
         /// <param name="id"></param>
         /// <param name="labelsUrl"></param>
@@ -136,6 +132,10 @@ namespace G
         /// </param>
         /// <param name="updatedAt"></param>
         /// <param name="url"></param>
+        /// <param name="closedAt"></param>
+        /// <param name="creator"></param>
+        /// <param name="description"></param>
+        /// <param name="dueOn"></param>
         public WebhookPullRequestReviewCommentDeletedPullRequestMilestone(
             int closedIssues,
             global::System.DateTime createdAt,
@@ -154,8 +154,12 @@ namespace G
             string? description,
             global::System.DateTime? dueOn)
         {
+            this.ClosedAt = closedAt;
             this.ClosedIssues = closedIssues;
             this.CreatedAt = createdAt;
+            this.Creator = creator;
+            this.Description = description;
+            this.DueOn = dueOn;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.LabelsUrl = labelsUrl ?? throw new global::System.ArgumentNullException(nameof(labelsUrl));
@@ -166,10 +170,6 @@ namespace G
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.ClosedAt = closedAt;
-            this.Creator = creator;
-            this.Description = description;
-            this.DueOn = dueOn;
         }
 
         /// <summary>

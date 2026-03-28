@@ -66,11 +66,11 @@ namespace G
         /// Initializes a new instance of the <see cref="AppSchemasTenant" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="organizationId"></param>
         /// <param name="createdAt"></param>
         /// <param name="displayName"></param>
         /// <param name="isPersonal"></param>
         /// <param name="isDeleted"></param>
+        /// <param name="organizationId"></param>
         /// <param name="tenantHandle"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -85,11 +85,11 @@ namespace G
             string? tenantHandle)
         {
             this.Id = id;
+            this.OrganizationId = organizationId;
             this.CreatedAt = createdAt;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.IsPersonal = isPersonal;
             this.IsDeleted = isDeleted;
-            this.OrganizationId = organizationId;
             this.TenantHandle = tenantHandle;
         }
 

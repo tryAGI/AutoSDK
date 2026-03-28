@@ -143,13 +143,9 @@ namespace G
         /// Initializes a new instance of the <see cref="Batch" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="object">
-        /// The object type, which is always `batch`.
-        /// </param>
         /// <param name="endpoint">
         /// The OpenAI API endpoint used by the batch.
         /// </param>
-        /// <param name="errors"></param>
         /// <param name="inputFileId">
         /// The ID of the input file for the batch.
         /// </param>
@@ -159,14 +155,18 @@ namespace G
         /// <param name="status">
         /// The current status of the batch.
         /// </param>
+        /// <param name="createdAt">
+        /// The Unix timestamp (in seconds) for when the batch was created.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `batch`.
+        /// </param>
+        /// <param name="errors"></param>
         /// <param name="outputFileId">
         /// The ID of the file containing the outputs of successfully executed requests.
         /// </param>
         /// <param name="errorFileId">
         /// The ID of the file containing the outputs of requests with errors.
-        /// </param>
-        /// <param name="createdAt">
-        /// The Unix timestamp (in seconds) for when the batch was created.
         /// </param>
         /// <param name="inProgressAt">
         /// The Unix timestamp (in seconds) for when the batch started processing.
@@ -225,15 +225,15 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.Endpoint = endpoint ?? throw new global::System.ArgumentNullException(nameof(endpoint));
+            this.Errors = errors;
             this.InputFileId = inputFileId ?? throw new global::System.ArgumentNullException(nameof(inputFileId));
             this.CompletionWindow = completionWindow ?? throw new global::System.ArgumentNullException(nameof(completionWindow));
             this.Status = status;
-            this.CreatedAt = createdAt;
-            this.Object = @object;
-            this.Errors = errors;
             this.OutputFileId = outputFileId;
             this.ErrorFileId = errorFileId;
+            this.CreatedAt = createdAt;
             this.InProgressAt = inProgressAt;
             this.ExpiresAt = expiresAt;
             this.FinalizingAt = finalizingAt;

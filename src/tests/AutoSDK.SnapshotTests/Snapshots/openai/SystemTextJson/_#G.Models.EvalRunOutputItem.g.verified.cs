@@ -91,10 +91,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EvalRunOutputItem" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The type of the object. Always "eval.run.output_item".<br/>
-        /// Default Value: eval.run.output_item
-        /// </param>
         /// <param name="id">
         /// Unique identifier for the evaluation run output item.
         /// </param>
@@ -122,6 +118,10 @@ namespace G
         /// <param name="sample">
         /// A sample containing the input and output of the evaluation run.
         /// </param>
+        /// <param name="object">
+        /// The type of the object. Always "eval.run.output_item".<br/>
+        /// Default Value: eval.run.output_item
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -137,6 +137,7 @@ namespace G
             global::G.EvalRunOutputItemSample sample,
             global::G.EvalRunOutputItemObject @object = global::G.EvalRunOutputItemObject.EvalRunOutputItem)
         {
+            this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.RunId = runId ?? throw new global::System.ArgumentNullException(nameof(runId));
             this.EvalId = evalId ?? throw new global::System.ArgumentNullException(nameof(evalId));
@@ -146,7 +147,6 @@ namespace G
             this.DatasourceItem = datasourceItem ?? throw new global::System.ArgumentNullException(nameof(datasourceItem));
             this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
             this.Sample = sample ?? throw new global::System.ArgumentNullException(nameof(sample));
-            this.Object = @object;
         }
 
         /// <summary>

@@ -37,14 +37,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkflowLLMConditionModelInput" /> class.
         /// </summary>
+        /// <param name="condition">
+        /// Condition to evaluate
+        /// </param>
         /// <param name="label">
         /// Optional human-readable label for the condition used throughout the UI.
         /// </param>
         /// <param name="type">
         /// Default Value: llm
-        /// </param>
-        /// <param name="condition">
-        /// Condition to evaluate
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -54,9 +54,9 @@ namespace G
             string? label,
             string? type)
         {
-            this.Condition = condition ?? throw new global::System.ArgumentNullException(nameof(condition));
             this.Label = label;
             this.Type = type;
+            this.Condition = condition ?? throw new global::System.ArgumentNullException(nameof(condition));
         }
 
         /// <summary>

@@ -53,9 +53,6 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `input_audio_buffer.speech_stopped`.
-        /// </param>
         /// <param name="audioEndMs">
         /// Milliseconds since the session started when speech stopped. This will <br/>
         /// correspond to the end of audio sent to the model, and thus includes the <br/>
@@ -63,6 +60,9 @@ namespace G
         /// </param>
         /// <param name="itemId">
         /// The ID of the user message item that will be created.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `input_audio_buffer.speech_stopped`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -74,9 +74,9 @@ namespace G
             global::G.RealtimeServerEventInputAudioBufferSpeechStoppedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
+            this.Type = type;
             this.AudioEndMs = audioEndMs;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
-            this.Type = type;
         }
 
         /// <summary>

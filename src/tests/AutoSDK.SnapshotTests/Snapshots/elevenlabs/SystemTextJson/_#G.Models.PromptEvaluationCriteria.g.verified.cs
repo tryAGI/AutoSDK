@@ -58,12 +58,12 @@ namespace G
         /// The unique identifier for the evaluation criteria
         /// </param>
         /// <param name="name"></param>
+        /// <param name="conversationGoalPrompt">
+        /// The prompt that the agent should use to evaluate the conversation
+        /// </param>
         /// <param name="type">
         /// The type of evaluation criteria<br/>
         /// Default Value: prompt
-        /// </param>
-        /// <param name="conversationGoalPrompt">
-        /// The prompt that the agent should use to evaluate the conversation
         /// </param>
         /// <param name="useKnowledgeBase">
         /// When evaluating the prompt, should the agent's knowledge base be used.<br/>
@@ -81,8 +81,8 @@ namespace G
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.ConversationGoalPrompt = conversationGoalPrompt ?? throw new global::System.ArgumentNullException(nameof(conversationGoalPrompt));
             this.Type = type;
+            this.ConversationGoalPrompt = conversationGoalPrompt ?? throw new global::System.ArgumentNullException(nameof(conversationGoalPrompt));
             this.UseKnowledgeBase = useKnowledgeBase;
         }
 

@@ -48,9 +48,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseFunctionCallArgumentsDeltaEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.function_call_arguments.delta`.
-        /// </param>
         /// <param name="itemId">
         /// The ID of the output item that the function-call arguments delta is added to.
         /// </param>
@@ -63,6 +60,9 @@ namespace G
         /// <param name="delta">
         /// The function-call arguments delta that is added.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.function_call_arguments.delta`.
+        /// </param>
         public ResponseFunctionCallArgumentsDeltaEvent(
             string itemId,
             int outputIndex,
@@ -70,11 +70,11 @@ namespace G
             string delta,
             global::G.ResponseFunctionCallArgumentsDeltaEventType type)
         {
+            this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.SequenceNumber = sequenceNumber;
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
-            this.Type = type;
         }
 
         /// <summary>

@@ -139,9 +139,12 @@ namespace G
         /// Initializes a new instance of the <see cref="BatchIngestRunsRequestPostItem" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="inputs"></param>
         /// <param name="runType"></param>
         /// <param name="startTime"></param>
+        /// <param name="traceId"></param>
+        /// <param name="dottedOrder"></param>
+        /// <param name="id"></param>
+        /// <param name="inputs"></param>
         /// <param name="endTime"></param>
         /// <param name="extra"></param>
         /// <param name="error"></param>
@@ -150,9 +153,6 @@ namespace G
         /// <param name="parentRunId"></param>
         /// <param name="events"></param>
         /// <param name="tags"></param>
-        /// <param name="traceId"></param>
-        /// <param name="dottedOrder"></param>
-        /// <param name="id"></param>
         /// <param name="sessionId"></param>
         /// <param name="sessionName"></param>
         /// <param name="referenceExampleId"></param>
@@ -181,12 +181,9 @@ namespace G
             object? outputAttachments)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Inputs = inputs;
             this.RunType = runType;
             this.StartTime = startTime;
-            this.TraceId = traceId;
-            this.DottedOrder = dottedOrder ?? throw new global::System.ArgumentNullException(nameof(dottedOrder));
-            this.Id = id;
-            this.Inputs = inputs;
             this.EndTime = endTime;
             this.Extra = extra;
             this.Error = error;
@@ -195,6 +192,9 @@ namespace G
             this.ParentRunId = parentRunId;
             this.Events = events;
             this.Tags = tags;
+            this.TraceId = traceId;
+            this.DottedOrder = dottedOrder ?? throw new global::System.ArgumentNullException(nameof(dottedOrder));
+            this.Id = id;
             this.SessionId = sessionId;
             this.SessionName = sessionName;
             this.ReferenceExampleId = referenceExampleId;

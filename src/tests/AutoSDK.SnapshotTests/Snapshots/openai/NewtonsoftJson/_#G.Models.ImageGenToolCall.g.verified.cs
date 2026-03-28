@@ -42,14 +42,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageGenToolCall" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the image generation call. Always `image_generation_call`.
-        /// </param>
         /// <param name="id">
         /// The unique ID of the image generation call.
         /// </param>
         /// <param name="status">
         /// The status of the image generation call.
+        /// </param>
+        /// <param name="type">
+        /// The type of the image generation call. Always `image_generation_call`.
         /// </param>
         /// <param name="result">
         /// The generated image encoded in base64.
@@ -60,9 +60,9 @@ namespace G
             global::G.ImageGenToolCallType type,
             string? result)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Status = status;
-            this.Type = type;
             this.Result = result;
         }
 

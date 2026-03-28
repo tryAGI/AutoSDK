@@ -149,13 +149,6 @@ namespace G
         /// <param name="gameName">
         /// The ID of the category or game being played.
         /// </param>
-        /// <param name="type">
-        /// The type of stream. Possible values are:  <br/>
-        ///   <br/>
-        /// * live<br/>
-        ///   <br/>
-        /// If an error occurs, this field is set to an empty string.
-        /// </param>
         /// <param name="title">
         /// The stream’s title. Is an empty string if not set.
         /// </param>
@@ -181,6 +174,13 @@ namespace G
         /// </param>
         /// <param name="isMature">
         /// A Boolean value that indicates whether the stream is meant for mature audiences.
+        /// </param>
+        /// <param name="type">
+        /// The type of stream. Possible values are:  <br/>
+        ///   <br/>
+        /// * live<br/>
+        ///   <br/>
+        /// If an error occurs, this field is set to an empty string.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -208,6 +208,7 @@ namespace G
             this.UserName = userName ?? throw new global::System.ArgumentNullException(nameof(userName));
             this.GameId = gameId ?? throw new global::System.ArgumentNullException(nameof(gameId));
             this.GameName = gameName ?? throw new global::System.ArgumentNullException(nameof(gameName));
+            this.Type = type;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.ViewerCount = viewerCount;
             this.StartedAt = startedAt;
@@ -216,7 +217,6 @@ namespace G
             this.TagIds = tagIds ?? throw new global::System.ArgumentNullException(nameof(tagIds));
             this.Tags = tags ?? throw new global::System.ArgumentNullException(nameof(tags));
             this.IsMature = isMature;
-            this.Type = type;
         }
 
         /// <summary>

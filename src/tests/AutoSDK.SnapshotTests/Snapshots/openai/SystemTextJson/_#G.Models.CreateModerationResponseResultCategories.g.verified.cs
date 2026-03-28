@@ -119,12 +119,6 @@ namespace G
         /// <param name="harassmentThreatening">
         /// Harassment content that also includes violence or serious harm towards any target.
         /// </param>
-        /// <param name="illicit">
-        /// Content that includes instructions or advice that facilitate the planning or execution of wrongdoing, or that gives advice or instruction on how to commit illicit acts. For example, "how to shoplift" would fit this category.
-        /// </param>
-        /// <param name="illicitViolent">
-        /// Content that includes instructions or advice that facilitate the planning or execution of wrongdoing that also includes violence, or that gives advice or instruction on the procurement of any weapon.
-        /// </param>
         /// <param name="selfHarm">
         /// Content that promotes, encourages, or depicts acts of self-harm, such as suicide, cutting, and eating disorders.
         /// </param>
@@ -145,6 +139,12 @@ namespace G
         /// </param>
         /// <param name="violenceGraphic">
         /// Content that depicts death, violence, or physical injury in graphic detail.
+        /// </param>
+        /// <param name="illicit">
+        /// Content that includes instructions or advice that facilitate the planning or execution of wrongdoing, or that gives advice or instruction on how to commit illicit acts. For example, "how to shoplift" would fit this category.
+        /// </param>
+        /// <param name="illicitViolent">
+        /// Content that includes instructions or advice that facilitate the planning or execution of wrongdoing that also includes violence, or that gives advice or instruction on the procurement of any weapon.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -168,6 +168,8 @@ namespace G
             this.HateThreatening = hateThreatening;
             this.Harassment = harassment;
             this.HarassmentThreatening = harassmentThreatening;
+            this.Illicit = illicit;
+            this.IllicitViolent = illicitViolent;
             this.SelfHarm = selfHarm;
             this.SelfHarmIntent = selfHarmIntent;
             this.SelfHarmInstructions = selfHarmInstructions;
@@ -175,8 +177,6 @@ namespace G
             this.SexualMinors = sexualMinors;
             this.Violence = violence;
             this.ViolenceGraphic = violenceGraphic;
-            this.Illicit = illicit;
-            this.IllicitViolent = illicitViolent;
         }
 
         /// <summary>

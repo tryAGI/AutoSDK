@@ -111,6 +111,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AuthenticatedUser" /> class.
         /// </summary>
+        /// <param name="id">
+        /// Resource ID (used in `name` as the last segment). This conforms to<br/>
+        /// RFC-1034, which restricts to letters, numbers, and hyphen, with the first<br/>
+        /// character a letter, the last a letter or a number, and a 63 character<br/>
+        /// maximum.<br/>
+        /// Note that the ID can be updated.
+        /// </param>
+        /// <param name="email">
+        /// Email.
+        /// </param>
+        /// <param name="newsletterSubscription">
+        /// This defines whether the user is subscribed to Instill AI's newsletter.
+        /// </param>
         /// <param name="name">
         /// The name of the user, defined by its ID.<br/>
         /// - Format: `users/{user.id}`.<br/>
@@ -120,13 +133,6 @@ namespace G
         /// User UUID. This field is optionally set by users on creation (it will be<br/>
         /// server-generated if unspecified).
         /// </param>
-        /// <param name="id">
-        /// Resource ID (used in `name` as the last segment). This conforms to<br/>
-        /// RFC-1034, which restricts to letters, numbers, and hyphen, with the first<br/>
-        /// character a letter, the last a letter or a number, and a 63 character<br/>
-        /// maximum.<br/>
-        /// Note that the ID can be updated.
-        /// </param>
         /// <param name="createTime">
         /// Creation time.<br/>
         /// Included only in responses
@@ -134,9 +140,6 @@ namespace G
         /// <param name="updateTime">
         /// Update time.<br/>
         /// Included only in responses
-        /// </param>
-        /// <param name="email">
-        /// Email.
         /// </param>
         /// <param name="customerId">
         /// Stripe customer ID. This field is used in Instill Cloud.<br/>
@@ -152,9 +155,6 @@ namespace G
         /// - `data-scientist`<br/>
         /// - `analytics-engineer`<br/>
         /// - `hobbyist`
-        /// </param>
-        /// <param name="newsletterSubscription">
-        /// This defines whether the user is subscribed to Instill AI's newsletter.
         /// </param>
         /// <param name="cookieToken">
         /// Console cookie token.
@@ -180,15 +180,15 @@ namespace G
             global::G.OnboardingStatus? onboardingStatus,
             global::G.UserProfile? profile)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
-            this.NewsletterSubscription = newsletterSubscription;
             this.Name = name;
             this.Uid = uid;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreateTime = createTime;
             this.UpdateTime = updateTime;
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.CustomerId = customerId;
             this.Role = role;
+            this.NewsletterSubscription = newsletterSubscription;
             this.CookieToken = cookieToken;
             this.OnboardingStatus = onboardingStatus;
             this.Profile = profile;

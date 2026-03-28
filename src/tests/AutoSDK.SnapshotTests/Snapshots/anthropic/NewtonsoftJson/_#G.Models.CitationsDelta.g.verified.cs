@@ -31,16 +31,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CitationsDelta" /> class.
         /// </summary>
+        /// <param name="citation"></param>
         /// <param name="type">
         /// Default Value: citations_delta
         /// </param>
-        /// <param name="citation"></param>
         public CitationsDelta(
             global::G.Citation2 citation,
             global::G.CitationsDeltaType type = global::G.CitationsDeltaType.CitationsDelta)
         {
-            this.Citation = citation;
             this.Type = type;
+            this.Citation = citation;
         }
 
         /// <summary>

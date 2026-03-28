@@ -48,11 +48,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CheckRunOutput" /> class.
         /// </summary>
+        /// <param name="annotationsCount"></param>
+        /// <param name="annotationsUrl"></param>
         /// <param name="title"></param>
         /// <param name="summary"></param>
         /// <param name="text"></param>
-        /// <param name="annotationsCount"></param>
-        /// <param name="annotationsUrl"></param>
         public CheckRunOutput(
             int annotationsCount,
             string annotationsUrl,
@@ -60,11 +60,11 @@ namespace G
             string? summary,
             string? text)
         {
-            this.AnnotationsCount = annotationsCount;
-            this.AnnotationsUrl = annotationsUrl ?? throw new global::System.ArgumentNullException(nameof(annotationsUrl));
             this.Title = title;
             this.Summary = summary;
             this.Text = text;
+            this.AnnotationsCount = annotationsCount;
+            this.AnnotationsUrl = annotationsUrl ?? throw new global::System.ArgumentNullException(nameof(annotationsUrl));
         }
 
         /// <summary>

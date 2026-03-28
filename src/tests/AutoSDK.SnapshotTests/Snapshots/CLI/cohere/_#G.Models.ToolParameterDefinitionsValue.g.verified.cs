@@ -38,11 +38,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolParameterDefinitionsValue" /> class.
         /// </summary>
-        /// <param name="description">
-        /// The description of the parameter.
-        /// </param>
         /// <param name="type">
         /// The type of the parameter. Must be a valid Python type.
+        /// </param>
+        /// <param name="description">
+        /// The description of the parameter.
         /// </param>
         /// <param name="required">
         /// Denotes whether the parameter is always present (required) or not. Defaults to not required.<br/>
@@ -56,8 +56,8 @@ namespace G
             string? description,
             bool? required)
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Description = description;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Required = required;
         }
 

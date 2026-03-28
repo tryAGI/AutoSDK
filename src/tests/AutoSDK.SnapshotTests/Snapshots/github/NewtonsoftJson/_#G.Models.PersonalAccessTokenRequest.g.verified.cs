@@ -108,17 +108,17 @@ namespace G
         /// <param name="repositorySelection">
         /// Type of repository selection requested.
         /// </param>
-        /// <param name="repositoryCount">
-        /// The number of repositories the token is requesting access to. This field is only populated when `repository_selection` is `subset`.
-        /// </param>
-        /// <param name="repositories">
-        /// An array of repository objects the token is requesting access to. This field is only populated when `repository_selection` is `subset`.
-        /// </param>
         /// <param name="createdAt">
         /// Date and time when the request for access was created.
         /// </param>
         /// <param name="tokenExpired">
         /// Whether the associated fine-grained personal access token has expired.
+        /// </param>
+        /// <param name="repositoryCount">
+        /// The number of repositories the token is requesting access to. This field is only populated when `repository_selection` is `subset`.
+        /// </param>
+        /// <param name="repositories">
+        /// An array of repository objects the token is requesting access to. This field is only populated when `repository_selection` is `subset`.
         /// </param>
         /// <param name="tokenExpiresAt">
         /// Date and time when the associated fine-grained personal access token expires.
@@ -146,10 +146,10 @@ namespace G
             this.PermissionsUpgraded = permissionsUpgraded ?? throw new global::System.ArgumentNullException(nameof(permissionsUpgraded));
             this.PermissionsResult = permissionsResult ?? throw new global::System.ArgumentNullException(nameof(permissionsResult));
             this.RepositorySelection = repositorySelection;
-            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
-            this.TokenExpired = tokenExpired;
             this.RepositoryCount = repositoryCount;
             this.Repositories = repositories;
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.TokenExpired = tokenExpired;
             this.TokenExpiresAt = tokenExpiresAt;
             this.TokenLastUsedAt = tokenLastUsedAt;
         }

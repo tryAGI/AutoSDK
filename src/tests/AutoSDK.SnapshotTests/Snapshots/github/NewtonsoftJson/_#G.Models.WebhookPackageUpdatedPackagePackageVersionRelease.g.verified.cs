@@ -84,7 +84,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPackageUpdatedPackagePackageVersionRelease" /> class.
         /// </summary>
-        /// <param name="author"></param>
         /// <param name="createdAt"></param>
         /// <param name="draft"></param>
         /// <param name="htmlUrl"></param>
@@ -95,6 +94,7 @@ namespace G
         /// <param name="tagName"></param>
         /// <param name="targetCommitish"></param>
         /// <param name="url"></param>
+        /// <param name="author"></param>
         public WebhookPackageUpdatedPackagePackageVersionRelease(
             string createdAt,
             bool draft,
@@ -108,6 +108,7 @@ namespace G
             string url,
             global::G.WebhookPackageUpdatedPackagePackageVersionReleaseAuthor? author)
         {
+            this.Author = author;
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.Draft = draft;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
@@ -118,7 +119,6 @@ namespace G
             this.TagName = tagName ?? throw new global::System.ArgumentNullException(nameof(tagName));
             this.TargetCommitish = targetCommitish ?? throw new global::System.ArgumentNullException(nameof(targetCommitish));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Author = author;
         }
 
         /// <summary>

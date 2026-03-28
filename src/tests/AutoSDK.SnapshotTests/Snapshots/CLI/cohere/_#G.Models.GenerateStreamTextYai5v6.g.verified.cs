@@ -41,10 +41,10 @@ namespace G
         /// <param name="text">
         /// A segment of text of the generation.
         /// </param>
+        /// <param name="isFinished"></param>
         /// <param name="index">
         /// Refers to the nth generation. Only present when `num_generations` is greater than zero, and only when text responses are being streamed.
         /// </param>
-        /// <param name="isFinished"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -54,8 +54,8 @@ namespace G
             int? index)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
-            this.IsFinished = isFinished;
             this.Index = index;
+            this.IsFinished = isFinished;
         }
 
         /// <summary>

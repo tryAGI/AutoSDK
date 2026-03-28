@@ -36,21 +36,21 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchJobsOut" /> class.
         /// </summary>
+        /// <param name="total"></param>
         /// <param name="data">
         /// Default Value: []
         /// </param>
         /// <param name="object">
         /// Default Value: list
         /// </param>
-        /// <param name="total"></param>
         public BatchJobsOut(
             int total,
             global::System.Collections.Generic.IList<global::G.BatchJobOut>? data,
             global::G.BatchJobsOutObject? @object)
         {
-            this.Total = total;
             this.Data = data;
             this.Object = @object;
+            this.Total = total;
         }
 
         /// <summary>

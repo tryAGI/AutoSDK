@@ -168,8 +168,6 @@ namespace G
         /// <param name="htmlUrl"></param>
         /// <param name="assetsUrl"></param>
         /// <param name="uploadUrl"></param>
-        /// <param name="tarballUrl"></param>
-        /// <param name="zipballUrl"></param>
         /// <param name="id"></param>
         /// <param name="nodeId"></param>
         /// <param name="tagName">
@@ -180,8 +178,6 @@ namespace G
         /// Specifies the commitish value that determines where the Git tag is created from.<br/>
         /// Example: master
         /// </param>
-        /// <param name="name"></param>
-        /// <param name="body"></param>
         /// <param name="draft">
         /// true to create a draft (unpublished) release, false to create a published one.<br/>
         /// Example: false
@@ -191,11 +187,15 @@ namespace G
         /// Example: false
         /// </param>
         /// <param name="createdAt"></param>
-        /// <param name="publishedAt"></param>
         /// <param name="author">
         /// A GitHub user.
         /// </param>
         /// <param name="assets"></param>
+        /// <param name="tarballUrl"></param>
+        /// <param name="zipballUrl"></param>
+        /// <param name="name"></param>
+        /// <param name="body"></param>
+        /// <param name="publishedAt"></param>
         /// <param name="bodyHtml"></param>
         /// <param name="bodyText"></param>
         /// <param name="mentionsCount"></param>
@@ -232,20 +232,20 @@ namespace G
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.AssetsUrl = assetsUrl ?? throw new global::System.ArgumentNullException(nameof(assetsUrl));
             this.UploadUrl = uploadUrl ?? throw new global::System.ArgumentNullException(nameof(uploadUrl));
+            this.TarballUrl = tarballUrl;
+            this.ZipballUrl = zipballUrl;
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.TagName = tagName ?? throw new global::System.ArgumentNullException(nameof(tagName));
             this.TargetCommitish = targetCommitish ?? throw new global::System.ArgumentNullException(nameof(targetCommitish));
+            this.Name = name;
+            this.Body = body;
             this.Draft = draft;
             this.Prerelease = prerelease;
             this.CreatedAt = createdAt;
+            this.PublishedAt = publishedAt;
             this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
             this.Assets = assets ?? throw new global::System.ArgumentNullException(nameof(assets));
-            this.TarballUrl = tarballUrl;
-            this.ZipballUrl = zipballUrl;
-            this.Name = name;
-            this.Body = body;
-            this.PublishedAt = publishedAt;
             this.BodyHtml = bodyHtml;
             this.BodyText = bodyText;
             this.MentionsCount = mentionsCount;

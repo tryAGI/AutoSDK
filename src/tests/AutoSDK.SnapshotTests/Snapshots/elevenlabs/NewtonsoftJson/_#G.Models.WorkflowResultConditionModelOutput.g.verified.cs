@@ -37,23 +37,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkflowResultConditionModelOutput" /> class.
         /// </summary>
+        /// <param name="successful">
+        /// Whether all tools in the previously executed tool node were executed successfully.
+        /// </param>
         /// <param name="label">
         /// Optional human-readable label for the condition used throughout the UI.
         /// </param>
         /// <param name="type">
         /// Default Value: result
         /// </param>
-        /// <param name="successful">
-        /// Whether all tools in the previously executed tool node were executed successfully.
-        /// </param>
         public WorkflowResultConditionModelOutput(
             bool successful,
             string? label,
             string type = "result")
         {
-            this.Successful = successful;
             this.Label = label;
             this.Type = type;
+            this.Successful = successful;
         }
 
         /// <summary>

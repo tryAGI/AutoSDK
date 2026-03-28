@@ -145,10 +145,6 @@ namespace G
         /// Name of the project<br/>
         /// Example: Week One Sprint
         /// </param>
-        /// <param name="body">
-        /// Body of the project<br/>
-        /// Example: This project represents the sprint of the first week in January
-        /// </param>
         /// <param name="number">
         /// Example: 1
         /// </param>
@@ -156,14 +152,18 @@ namespace G
         /// State of the project; either 'open' or 'closed'<br/>
         /// Example: open
         /// </param>
-        /// <param name="creator">
-        /// A GitHub user.
-        /// </param>
         /// <param name="createdAt">
         /// Example: 2011-04-10T20:09:31Z
         /// </param>
         /// <param name="updatedAt">
         /// Example: 2014-03-03T18:58:10Z
+        /// </param>
+        /// <param name="body">
+        /// Body of the project<br/>
+        /// Example: This project represents the sprint of the first week in January
+        /// </param>
+        /// <param name="creator">
+        /// A GitHub user.
         /// </param>
         /// <param name="organizationPermission">
         /// The baseline permission that all organization members have on this project. Only present if owner is an organization.
@@ -195,12 +195,12 @@ namespace G
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Body = body;
             this.Number = number;
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
+            this.Creator = creator;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.Body = body;
-            this.Creator = creator;
             this.OrganizationPermission = organizationPermission;
             this.Private = @private;
         }

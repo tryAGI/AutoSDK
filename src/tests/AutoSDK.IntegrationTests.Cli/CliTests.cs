@@ -639,6 +639,80 @@ components:
             ]);
     }
 
+    [TestMethod]
+    public async Task Generate_WithDerivedAllOfInheritedPropertyCollision_Builds()
+    {
+        const string spec = """
+openapi: 3.0.1
+info:
+  title: opik-mini
+  version: 1.0.0
+paths: {}
+components:
+  schemas:
+    Feedback:
+      required:
+        - name
+        - type
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          minLength: 1
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+          readOnly: true
+        type:
+          type: string
+          enum:
+            - boolean
+      discriminator:
+        propertyName: type
+        mapping:
+          boolean: '#/components/schemas/BooleanFeedbackDefinition'
+    BooleanFeedbackDefinition:
+      required:
+        - details
+        - name
+        - type
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/Feedback'
+        - type: object
+          properties:
+            details:
+              $ref: '#/components/schemas/BooleanFeedbackDetail'
+            created_at:
+              type: string
+              format: date-time
+              readOnly: true
+    BooleanFeedbackDetail:
+      type: object
+      properties:
+        trueLabel:
+          type: string
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "derived-allof-inheritance.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var modelFile = Path.Combine(outputDirectory, "Oag.Models.BooleanFeedbackDefinition.g.cs");
+                var content = await File.ReadAllTextAsync(modelFile);
+
+                content.Should().Contain("public new global::System.DateTime? CreatedAt");
+                content.Should().Contain("string name");
+                content.Should().Contain("base.Name = name");
+            });
+    }
+
     private static async Task GenerateAsync(
         string spec,
         string targetFramework = "net8.0",

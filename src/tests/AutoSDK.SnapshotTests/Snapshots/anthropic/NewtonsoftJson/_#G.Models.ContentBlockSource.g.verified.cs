@@ -30,14 +30,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentBlockSource" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="content"></param>
+        /// <param name="type"></param>
         public ContentBlockSource(
             global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentContentBlockSourceContentItem>> content,
             global::G.ContentBlockSourceType type)
         {
-            this.Content = content;
             this.Type = type;
+            this.Content = content;
         }
 
         /// <summary>

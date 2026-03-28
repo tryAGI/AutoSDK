@@ -145,12 +145,27 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MCPToolConfigOutput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: mcp
-        /// </param>
         /// <param name="name"></param>
         /// <param name="description">
         /// Description of when the tool should be used and what it does.
+        /// </param>
+        /// <param name="integrationType">
+        /// The type of MCP tool
+        /// </param>
+        /// <param name="mcpToolName">
+        /// The name of the MCP tool to call
+        /// </param>
+        /// <param name="mcpToolDescription">
+        /// The description of the MCP tool to call
+        /// </param>
+        /// <param name="mcpServerId">
+        /// The id of the MCP server to call
+        /// </param>
+        /// <param name="mcpServerName">
+        /// The name of the MCP server to call
+        /// </param>
+        /// <param name="type">
+        /// Default Value: mcp
         /// </param>
         /// <param name="responseTimeoutSecs">
         /// The maximum time in seconds to wait for the tool call to complete.<br/>
@@ -178,27 +193,12 @@ namespace G
         /// Controls how tool errors are processed before being shared with the agent. 'auto' determines handling based on tool type (summarized for native integrations, hide for others), 'summarized' sends an LLM-generated summary, 'passthrough' sends the raw error, 'hide' does not share the error with the agent.<br/>
         /// Default Value: auto
         /// </param>
-        /// <param name="integrationType">
-        /// The type of MCP tool
-        /// </param>
         /// <param name="parameters">
         /// Schema for any parameters the LLM needs to provide to the MCP tool.
         /// </param>
         /// <param name="approvalPolicy">
         /// The approval policy for the MCP tool<br/>
         /// Default Value: require_approval_all
-        /// </param>
-        /// <param name="mcpToolName">
-        /// The name of the MCP tool to call
-        /// </param>
-        /// <param name="mcpToolDescription">
-        /// The description of the MCP tool to call
-        /// </param>
-        /// <param name="mcpServerId">
-        /// The id of the MCP server to call
-        /// </param>
-        /// <param name="mcpServerName">
-        /// The name of the MCP server to call
         /// </param>
         /// <param name="mcpInputSchema">
         /// Original inputSchema dict for consistent hashing
@@ -232,14 +232,9 @@ namespace G
             global::G.ToolExecutionMode? executionMode,
             object? inputOverrides)
         {
+            this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.IntegrationType = integrationType;
-            this.McpToolName = mcpToolName ?? throw new global::System.ArgumentNullException(nameof(mcpToolName));
-            this.McpToolDescription = mcpToolDescription ?? throw new global::System.ArgumentNullException(nameof(mcpToolDescription));
-            this.McpServerId = mcpServerId ?? throw new global::System.ArgumentNullException(nameof(mcpServerId));
-            this.McpServerName = mcpServerName ?? throw new global::System.ArgumentNullException(nameof(mcpServerName));
-            this.Type = type;
             this.ResponseTimeoutSecs = responseTimeoutSecs;
             this.DisableInterruptions = disableInterruptions;
             this.ForcePreToolSpeech = forcePreToolSpeech;
@@ -247,8 +242,13 @@ namespace G
             this.ToolCallSound = toolCallSound;
             this.ToolCallSoundBehavior = toolCallSoundBehavior;
             this.ToolErrorHandlingMode = toolErrorHandlingMode;
+            this.IntegrationType = integrationType;
             this.Parameters = parameters;
             this.ApprovalPolicy = approvalPolicy;
+            this.McpToolName = mcpToolName ?? throw new global::System.ArgumentNullException(nameof(mcpToolName));
+            this.McpToolDescription = mcpToolDescription ?? throw new global::System.ArgumentNullException(nameof(mcpToolDescription));
+            this.McpServerId = mcpServerId ?? throw new global::System.ArgumentNullException(nameof(mcpServerId));
+            this.McpServerName = mcpServerName ?? throw new global::System.ArgumentNullException(nameof(mcpServerName));
             this.McpInputSchema = mcpInputSchema;
             this.ExecutionMode = executionMode;
             this.InputOverrides = inputOverrides;

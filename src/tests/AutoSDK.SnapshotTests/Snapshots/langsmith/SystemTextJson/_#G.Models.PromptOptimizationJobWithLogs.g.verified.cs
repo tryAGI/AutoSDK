@@ -96,10 +96,10 @@ namespace G
         /// <param name="tenantId"></param>
         /// <param name="algorithm"></param>
         /// <param name="config"></param>
-        /// <param name="results"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="logs"></param>
+        /// <param name="results"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -121,10 +121,10 @@ namespace G
             this.TenantId = tenantId;
             this.Algorithm = algorithm;
             this.Config = config;
+            this.Results = results;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.Logs = logs ?? throw new global::System.ArgumentNullException(nameof(logs));
-            this.Results = results;
         }
 
         /// <summary>

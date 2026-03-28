@@ -36,17 +36,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Base64ImageSource" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="mediaType"></param>
         /// <param name="data"></param>
+        /// <param name="type"></param>
         public Base64ImageSource(
             global::G.Base64ImageSourceMediaType mediaType,
             byte[] data,
             global::G.Base64ImageSourceType type)
         {
+            this.Type = type;
             this.MediaType = mediaType;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.Type = type;
         }
 
         /// <summary>

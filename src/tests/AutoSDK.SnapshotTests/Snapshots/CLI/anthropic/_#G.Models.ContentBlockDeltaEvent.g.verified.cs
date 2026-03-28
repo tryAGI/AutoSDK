@@ -41,11 +41,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentBlockDeltaEvent" /> class.
         /// </summary>
+        /// <param name="index"></param>
+        /// <param name="delta"></param>
         /// <param name="type">
         /// Default Value: content_block_delta
         /// </param>
-        /// <param name="index"></param>
-        /// <param name="delta"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -54,9 +54,9 @@ namespace G
             global::G.Delta2 delta,
             global::G.ContentBlockDeltaEventType type = global::G.ContentBlockDeltaEventType.ContentBlockDelta)
         {
+            this.Type = type;
             this.Index = index;
             this.Delta = delta;
-            this.Type = type;
         }
 
         /// <summary>

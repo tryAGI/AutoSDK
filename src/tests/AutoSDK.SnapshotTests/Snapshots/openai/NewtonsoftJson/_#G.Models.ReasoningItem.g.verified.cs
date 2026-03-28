@@ -53,18 +53,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ReasoningItem" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the object. Always `reasoning`.
-        /// </param>
         /// <param name="id">
         /// The unique identifier of the reasoning content.
+        /// </param>
+        /// <param name="summary">
+        /// Reasoning text contents.
+        /// </param>
+        /// <param name="type">
+        /// The type of the object. Always `reasoning`.
         /// </param>
         /// <param name="encryptedContent">
         /// The encrypted content of the reasoning item - populated when a response is<br/>
         /// generated with `reasoning.encrypted_content` in the `include` parameter.
-        /// </param>
-        /// <param name="summary">
-        /// Reasoning text contents.
         /// </param>
         /// <param name="status">
         /// The status of the item. One of `in_progress`, `completed`, or<br/>
@@ -77,10 +77,10 @@ namespace G
             string? encryptedContent,
             global::G.ReasoningItemStatus? status)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
             this.Type = type;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.EncryptedContent = encryptedContent;
+            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
             this.Status = status;
         }
 

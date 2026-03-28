@@ -111,17 +111,8 @@ namespace G
         ///   <br/>
         /// See the `follower_mode_duration` field for how long users must follow the broadcaster before being able to participate in the chat room.
         /// </param>
-        /// <param name="followerModeDuration">
-        /// The length of time, in minutes, that users must follow the broadcaster before being able to participate in the chat room. Is **null** if `follower_mode` is **false**.
-        /// </param>
-        /// <param name="moderatorId">
-        /// The moderator’s ID. The response includes this field only if the request specifies a user access token that includes the **moderator:read:chat\_settings** scope.
-        /// </param>
         /// <param name="nonModeratorChatDelay">
         /// A Boolean value that determines whether the broadcaster adds a short delay before chat messages appear in the chat room. This gives chat moderators and bots a chance to remove them before viewers can see the message. See the `non_moderator_chat_delay_duration` field for the length of the delay. Is **true** if the broadcaster applies a delay; otherwise, **false**.
-        /// </param>
-        /// <param name="nonModeratorChatDelayDuration">
-        /// The amount of time, in seconds, that messages are delayed before appearing in chat. Is **null** if `non_moderator_chat_delay` is **false**.
         /// </param>
         /// <param name="slowMode">
         /// A Boolean value that determines whether the broadcaster limits how often users in the chat room are allowed to send messages.  <br/>
@@ -129,11 +120,6 @@ namespace G
         /// Is **true** if the broadcaster applies a delay; otherwise, **false**.  <br/>
         ///   <br/>
         /// See the `slow_mode_wait_time` field for the delay.
-        /// </param>
-        /// <param name="slowModeWaitTime">
-        /// The amount of time, in seconds, that users must wait between sending messages.  <br/>
-        ///   <br/>
-        /// Is **null** if slow\_mode is **false**.
         /// </param>
         /// <param name="subscriberMode">
         /// A Boolean value that determines whether only users that subscribe to the broadcaster’s channel may talk in the chat room.  <br/>
@@ -144,6 +130,20 @@ namespace G
         /// A Boolean value that determines whether the broadcaster requires users to post only unique messages in the chat room.  <br/>
         ///   <br/>
         /// Is **true** if the broadcaster requires unique messages only; otherwise, **false**.
+        /// </param>
+        /// <param name="followerModeDuration">
+        /// The length of time, in minutes, that users must follow the broadcaster before being able to participate in the chat room. Is **null** if `follower_mode` is **false**.
+        /// </param>
+        /// <param name="moderatorId">
+        /// The moderator’s ID. The response includes this field only if the request specifies a user access token that includes the **moderator:read:chat\_settings** scope.
+        /// </param>
+        /// <param name="nonModeratorChatDelayDuration">
+        /// The amount of time, in seconds, that messages are delayed before appearing in chat. Is **null** if `non_moderator_chat_delay` is **false**.
+        /// </param>
+        /// <param name="slowModeWaitTime">
+        /// The amount of time, in seconds, that users must wait between sending messages.  <br/>
+        ///   <br/>
+        /// Is **null** if slow\_mode is **false**.
         /// </param>
         public ChatSettingsUpdated(
             string broadcasterId,
@@ -161,14 +161,14 @@ namespace G
             this.BroadcasterId = broadcasterId ?? throw new global::System.ArgumentNullException(nameof(broadcasterId));
             this.EmoteMode = emoteMode;
             this.FollowerMode = followerMode;
-            this.NonModeratorChatDelay = nonModeratorChatDelay;
-            this.SlowMode = slowMode;
-            this.SubscriberMode = subscriberMode;
-            this.UniqueChatMode = uniqueChatMode;
             this.FollowerModeDuration = followerModeDuration;
             this.ModeratorId = moderatorId;
+            this.NonModeratorChatDelay = nonModeratorChatDelay;
             this.NonModeratorChatDelayDuration = nonModeratorChatDelayDuration;
+            this.SlowMode = slowMode;
             this.SlowModeWaitTime = slowModeWaitTime;
+            this.SubscriberMode = subscriberMode;
+            this.UniqueChatMode = uniqueChatMode;
         }
 
         /// <summary>

@@ -51,9 +51,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaRequestToolResultBlock" /> class.
         /// </summary>
+        /// <param name="toolUseId"></param>
         /// <param name="cacheControl"></param>
         /// <param name="type"></param>
-        /// <param name="toolUseId"></param>
         /// <param name="isError"></param>
         /// <param name="content"></param>
 #if NET7_0_OR_GREATER
@@ -66,9 +66,9 @@ namespace G
             bool? isError,
             global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>>? content)
         {
-            this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
             this.CacheControl = cacheControl;
             this.Type = type;
+            this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
             this.IsError = isError;
             this.Content = content;
         }

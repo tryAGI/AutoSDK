@@ -151,20 +151,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CheckRunWithSimpleCheckSuite" /> class.
         /// </summary>
-        /// <param name="app">
-        /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-        /// </param>
         /// <param name="checkSuite">
         /// A suite of checks performed on the code of a given code change
-        /// </param>
-        /// <param name="completedAt">
-        /// Example: 2018-05-04T01:14:52Z
-        /// </param>
-        /// <param name="conclusion">
-        /// Example: neutral
-        /// </param>
-        /// <param name="deployment">
-        /// A deployment created as the result of an Actions check run from a workflow that references an environment
         /// </param>
         /// <param name="detailsUrl">
         /// Example: https://example.com
@@ -202,6 +190,18 @@ namespace G
         /// <param name="url">
         /// Example: https://api.github.com/repos/github/hello-world/check-runs/4
         /// </param>
+        /// <param name="app">
+        /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+        /// </param>
+        /// <param name="completedAt">
+        /// Example: 2018-05-04T01:14:52Z
+        /// </param>
+        /// <param name="conclusion">
+        /// Example: neutral
+        /// </param>
+        /// <param name="deployment">
+        /// A deployment created as the result of an Actions check run from a workflow that references an environment
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -224,7 +224,11 @@ namespace G
             global::G.CheckRunWithSimpleCheckSuiteConclusion? conclusion,
             global::G.DeploymentSimple? deployment)
         {
+            this.App = app;
             this.CheckSuite = checkSuite ?? throw new global::System.ArgumentNullException(nameof(checkSuite));
+            this.CompletedAt = completedAt;
+            this.Conclusion = conclusion;
+            this.Deployment = deployment;
             this.DetailsUrl = detailsUrl ?? throw new global::System.ArgumentNullException(nameof(detailsUrl));
             this.ExternalId = externalId ?? throw new global::System.ArgumentNullException(nameof(externalId));
             this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
@@ -237,10 +241,6 @@ namespace G
             this.StartedAt = startedAt;
             this.Status = status;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.App = app;
-            this.CompletedAt = completedAt;
-            this.Conclusion = conclusion;
-            this.Deployment = deployment;
         }
 
         /// <summary>

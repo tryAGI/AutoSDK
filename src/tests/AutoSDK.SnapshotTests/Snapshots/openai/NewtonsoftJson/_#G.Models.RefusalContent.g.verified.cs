@@ -32,19 +32,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RefusalContent" /> class.
         /// </summary>
+        /// <param name="refusal">
+        /// The refusal explanationfrom the model.
+        /// </param>
         /// <param name="type">
         /// The type of the refusal. Always `refusal`.<br/>
         /// Default Value: refusal
-        /// </param>
-        /// <param name="refusal">
-        /// The refusal explanationfrom the model.
         /// </param>
         public RefusalContent(
             string refusal,
             global::G.RefusalContentType type = global::G.RefusalContentType.Refusal)
         {
-            this.Refusal = refusal ?? throw new global::System.ArgumentNullException(nameof(refusal));
             this.Type = type;
+            this.Refusal = refusal ?? throw new global::System.ArgumentNullException(nameof(refusal));
         }
 
         /// <summary>

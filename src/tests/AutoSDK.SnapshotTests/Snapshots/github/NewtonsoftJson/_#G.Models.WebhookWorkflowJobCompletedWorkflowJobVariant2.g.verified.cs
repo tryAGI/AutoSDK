@@ -156,9 +156,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookWorkflowJobCompletedWorkflowJobVariant2" /> class.
         /// </summary>
+        /// <param name="conclusion"></param>
         /// <param name="checkRunUrl"></param>
         /// <param name="completedAt"></param>
-        /// <param name="conclusion"></param>
         /// <param name="createdAt">
         /// The time that the job created.
         /// </param>
@@ -210,9 +210,9 @@ namespace G
             global::System.Collections.Generic.IList<object>? steps,
             string? url)
         {
-            this.Conclusion = conclusion;
             this.CheckRunUrl = checkRunUrl;
             this.CompletedAt = completedAt;
+            this.Conclusion = conclusion;
             this.CreatedAt = createdAt;
             this.HeadSha = headSha;
             this.HtmlUrl = htmlUrl;

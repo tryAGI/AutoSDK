@@ -73,12 +73,19 @@ namespace G
         /// <param name="build">
         /// The [List GitHub Pages builds](https://docs.github.com/rest/pages/pages#list-github-pages-builds) itself.
         /// </param>
+        /// <param name="id"></param>
+        /// <param name="repository">
+        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
+        /// when the event occurs from activity in a repository.
+        /// </param>
+        /// <param name="sender">
+        /// A GitHub user.
+        /// </param>
         /// <param name="enterprise">
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
         /// on an enterprise account or an organization that's part of an enterprise account. For more information,<br/>
         /// see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
         /// </param>
-        /// <param name="id"></param>
         /// <param name="installation">
         /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>
         /// for and sent to a GitHub App. For more information,<br/>
@@ -87,13 +94,6 @@ namespace G
         /// <param name="organization">
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
         /// organization, or when the event occurs from activity in a repository owned by an organization.
-        /// </param>
-        /// <param name="repository">
-        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
-        /// when the event occurs from activity in a repository.
-        /// </param>
-        /// <param name="sender">
-        /// A GitHub user.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -108,12 +108,12 @@ namespace G
             global::G.OrganizationSimpleWebhooks? organization)
         {
             this.Build = build ?? throw new global::System.ArgumentNullException(nameof(build));
-            this.Id = id;
-            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
-            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Enterprise = enterprise;
+            this.Id = id;
             this.Installation = installation;
             this.Organization = organization;
+            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
+            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
         }
 
         /// <summary>

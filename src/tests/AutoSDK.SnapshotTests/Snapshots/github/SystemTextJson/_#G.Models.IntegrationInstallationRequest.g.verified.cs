@@ -61,15 +61,15 @@ namespace G
         /// Unique identifier of the request installation.<br/>
         /// Example: 42
         /// </param>
-        /// <param name="nodeId">
-        /// Example: MDExOkludGVncmF0aW9uMQ==
-        /// </param>
         /// <param name="account"></param>
         /// <param name="requester">
         /// A GitHub user.
         /// </param>
         /// <param name="createdAt">
         /// Example: 2022-07-08T16:18:44-04:00
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDExOkludGVncmF0aW9uMQ==
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -82,10 +82,10 @@ namespace G
             string? nodeId)
         {
             this.Id = id;
+            this.NodeId = nodeId;
             this.Account = account;
             this.Requester = requester ?? throw new global::System.ArgumentNullException(nameof(requester));
             this.CreatedAt = createdAt;
-            this.NodeId = nodeId;
         }
 
         /// <summary>

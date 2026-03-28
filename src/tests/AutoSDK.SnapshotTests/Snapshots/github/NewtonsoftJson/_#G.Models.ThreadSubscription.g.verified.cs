@@ -69,12 +69,12 @@ namespace G
         /// Example: true
         /// </param>
         /// <param name="ignored"></param>
+        /// <param name="url">
+        /// Example: https://api.github.com/notifications/threads/1/subscription
+        /// </param>
         /// <param name="reason"></param>
         /// <param name="createdAt">
         /// Example: 2012-10-06T21:34:12Z
-        /// </param>
-        /// <param name="url">
-        /// Example: https://api.github.com/notifications/threads/1/subscription
         /// </param>
         /// <param name="threadUrl">
         /// Example: https://api.github.com/notifications/threads/1
@@ -93,9 +93,9 @@ namespace G
         {
             this.Subscribed = subscribed;
             this.Ignored = ignored;
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Reason = reason;
             this.CreatedAt = createdAt;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.ThreadUrl = threadUrl;
             this.RepositoryUrl = repositoryUrl;
         }

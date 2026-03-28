@@ -42,15 +42,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEvalLogsDataSourceConfig" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of data source. Always `logs`.<br/>
-        /// Default Value: logs
-        /// </param>
         /// <param name="metadata">
         /// Metadata filters for the logs data source.<br/>
         /// Example: {<br/>
         ///   "use_case": "customer_support_agent"<br/>
         /// }
+        /// </param>
+        /// <param name="type">
+        /// The type of data source. Always `logs`.<br/>
+        /// Default Value: logs
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

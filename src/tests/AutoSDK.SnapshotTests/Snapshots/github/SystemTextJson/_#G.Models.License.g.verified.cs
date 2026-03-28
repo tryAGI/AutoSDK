@@ -161,12 +161,6 @@ namespace G
         /// <param name="name">
         /// Example: MIT License
         /// </param>
-        /// <param name="spdxId">
-        /// Example: MIT
-        /// </param>
-        /// <param name="url">
-        /// Example: https://api.github.com/licenses/mit
-        /// </param>
         /// <param name="nodeId">
         /// Example: MDc6TGljZW5zZW1pdA==
         /// </param>
@@ -211,6 +205,12 @@ namespace G
         /// <param name="featured">
         /// Example: true
         /// </param>
+        /// <param name="spdxId">
+        /// Example: MIT
+        /// </param>
+        /// <param name="url">
+        /// Example: https://api.github.com/licenses/mit
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -231,6 +231,8 @@ namespace G
         {
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.SpdxId = spdxId;
+            this.Url = url;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
@@ -240,8 +242,6 @@ namespace G
             this.Limitations = limitations ?? throw new global::System.ArgumentNullException(nameof(limitations));
             this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
             this.Featured = featured;
-            this.SpdxId = spdxId;
-            this.Url = url;
         }
 
         /// <summary>

@@ -608,7 +608,6 @@ namespace G
         /// <param name="contentsUrl"></param>
         /// <param name="contributorsUrl"></param>
         /// <param name="deploymentsUrl"></param>
-        /// <param name="description"></param>
         /// <param name="downloadsUrl"></param>
         /// <param name="eventsUrl"></param>
         /// <param name="fork"></param>
@@ -620,7 +619,6 @@ namespace G
         /// <param name="hooksUrl"></param>
         /// <param name="htmlUrl"></param>
         /// <param name="id"></param>
-        /// <param name="isTemplate"></param>
         /// <param name="nodeId"></param>
         /// <param name="issueCommentUrl"></param>
         /// <param name="issueEventsUrl"></param>
@@ -655,17 +653,28 @@ namespace G
         /// <param name="hasWiki"></param>
         /// <param name="hasPages"></param>
         /// <param name="hasDiscussions"></param>
+        /// <param name="archived"></param>
+        /// <param name="disabled"></param>
+        /// <param name="openIssues"></param>
+        /// <param name="openIssuesCount"></param>
+        /// <param name="pushedAt"></param>
+        /// <param name="size"></param>
+        /// <param name="sshUrl"></param>
+        /// <param name="stargazersCount"></param>
+        /// <param name="svnUrl"></param>
+        /// <param name="watchers"></param>
+        /// <param name="watchersCount"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="description"></param>
+        /// <param name="isTemplate"></param>
         /// <param name="homepage"></param>
         /// <param name="language"></param>
         /// <param name="masterBranch"></param>
-        /// <param name="archived"></param>
-        /// <param name="disabled"></param>
         /// <param name="visibility">
         /// The repository visibility: public, private, or internal.
         /// </param>
         /// <param name="mirrorUrl"></param>
-        /// <param name="openIssues"></param>
-        /// <param name="openIssuesCount"></param>
         /// <param name="permissions"></param>
         /// <param name="tempCloneToken"></param>
         /// <param name="allowMergeCommit"></param>
@@ -674,16 +683,7 @@ namespace G
         /// <param name="license">
         /// License Simple
         /// </param>
-        /// <param name="pushedAt"></param>
-        /// <param name="size"></param>
-        /// <param name="sshUrl"></param>
-        /// <param name="stargazersCount"></param>
-        /// <param name="svnUrl"></param>
         /// <param name="topics"></param>
-        /// <param name="watchers"></param>
-        /// <param name="watchersCount"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
         /// <param name="allowForking"></param>
         /// <param name="webCommitSignoffRequired"></param>
 #if NET7_0_OR_GREATER
@@ -787,6 +787,7 @@ namespace G
             this.ContentsUrl = contentsUrl ?? throw new global::System.ArgumentNullException(nameof(contentsUrl));
             this.ContributorsUrl = contributorsUrl ?? throw new global::System.ArgumentNullException(nameof(contributorsUrl));
             this.DeploymentsUrl = deploymentsUrl ?? throw new global::System.ArgumentNullException(nameof(deploymentsUrl));
+            this.Description = description;
             this.DownloadsUrl = downloadsUrl ?? throw new global::System.ArgumentNullException(nameof(downloadsUrl));
             this.EventsUrl = eventsUrl ?? throw new global::System.ArgumentNullException(nameof(eventsUrl));
             this.Fork = fork;
@@ -798,6 +799,7 @@ namespace G
             this.HooksUrl = hooksUrl ?? throw new global::System.ArgumentNullException(nameof(hooksUrl));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
+            this.IsTemplate = isTemplate;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.IssueCommentUrl = issueCommentUrl ?? throw new global::System.ArgumentNullException(nameof(issueCommentUrl));
             this.IssueEventsUrl = issueEventsUrl ?? throw new global::System.ArgumentNullException(nameof(issueEventsUrl));
@@ -832,33 +834,31 @@ namespace G
             this.HasWiki = hasWiki;
             this.HasPages = hasPages;
             this.HasDiscussions = hasDiscussions;
-            this.Archived = archived;
-            this.Disabled = disabled;
-            this.OpenIssues = openIssues;
-            this.OpenIssuesCount = openIssuesCount;
-            this.PushedAt = pushedAt;
-            this.Size = size;
-            this.SshUrl = sshUrl ?? throw new global::System.ArgumentNullException(nameof(sshUrl));
-            this.StargazersCount = stargazersCount;
-            this.SvnUrl = svnUrl ?? throw new global::System.ArgumentNullException(nameof(svnUrl));
-            this.Watchers = watchers;
-            this.WatchersCount = watchersCount;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
-            this.Description = description;
-            this.IsTemplate = isTemplate;
             this.Homepage = homepage;
             this.Language = language;
             this.MasterBranch = masterBranch;
+            this.Archived = archived;
+            this.Disabled = disabled;
             this.Visibility = visibility;
             this.MirrorUrl = mirrorUrl;
+            this.OpenIssues = openIssues;
+            this.OpenIssuesCount = openIssuesCount;
             this.Permissions = permissions;
             this.TempCloneToken = tempCloneToken;
             this.AllowMergeCommit = allowMergeCommit;
             this.AllowSquashMerge = allowSquashMerge;
             this.AllowRebaseMerge = allowRebaseMerge;
             this.License = license;
+            this.PushedAt = pushedAt;
+            this.Size = size;
+            this.SshUrl = sshUrl ?? throw new global::System.ArgumentNullException(nameof(sshUrl));
+            this.StargazersCount = stargazersCount;
+            this.SvnUrl = svnUrl ?? throw new global::System.ArgumentNullException(nameof(svnUrl));
             this.Topics = topics;
+            this.Watchers = watchers;
+            this.WatchersCount = watchersCount;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.AllowForking = allowForking;
             this.WebCommitSignoffRequired = webCommitSignoffRequired;
         }

@@ -66,20 +66,20 @@ namespace G
         /// <param name="name">
         /// The name of the role.
         /// </param>
-        /// <param name="description">
-        /// A short description about who this role is for or what permissions it grants.
-        /// </param>
         /// <param name="permissions">
         /// A list of permissions included in this role.
-        /// </param>
-        /// <param name="organization">
-        /// A GitHub user.
         /// </param>
         /// <param name="createdAt">
         /// The date and time the role was created.
         /// </param>
         /// <param name="updatedAt">
         /// The date and time the role was last updated.
+        /// </param>
+        /// <param name="description">
+        /// A short description about who this role is for or what permissions it grants.
+        /// </param>
+        /// <param name="organization">
+        /// A GitHub user.
         /// </param>
         public OrganizationRole(
             long id,
@@ -92,11 +92,11 @@ namespace G
         {
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description;
             this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
+            this.Organization = organization;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.Description = description;
-            this.Organization = organization;
         }
 
         /// <summary>

@@ -54,9 +54,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseContentPartDoneEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.content_part.done`.
-        /// </param>
         /// <param name="itemId">
         /// The ID of the output item that the content part was added to.
         /// </param>
@@ -70,6 +67,9 @@ namespace G
         /// The sequence number of this event.
         /// </param>
         /// <param name="part"></param>
+        /// <param name="type">
+        /// The type of the event. Always `response.content_part.done`.
+        /// </param>
         public ResponseContentPartDoneEvent(
             string itemId,
             int outputIndex,
@@ -78,12 +78,12 @@ namespace G
             global::G.OutputContent part,
             global::G.ResponseContentPartDoneEventType type)
         {
+            this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.ContentIndex = contentIndex;
             this.SequenceNumber = sequenceNumber;
             this.Part = part;
-            this.Type = type;
         }
 
         /// <summary>

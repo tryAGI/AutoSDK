@@ -39,14 +39,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ErrorPayload" /> class.
         /// </summary>
-        /// <param name="messageType">
-        /// Must be 'error'.
-        /// </param>
         /// <param name="errorType">
         /// Type of error.
         /// </param>
         /// <param name="error">
         /// Error message.
+        /// </param>
+        /// <param name="messageType">
+        /// Must be 'error'.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -56,9 +56,9 @@ namespace G
             string error,
             global::G.ErrorPayloadMessageType messageType)
         {
+            this.MessageType = messageType;
             this.ErrorType = errorType ?? throw new global::System.ArgumentNullException(nameof(errorType));
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
-            this.MessageType = messageType;
         }
 
         /// <summary>

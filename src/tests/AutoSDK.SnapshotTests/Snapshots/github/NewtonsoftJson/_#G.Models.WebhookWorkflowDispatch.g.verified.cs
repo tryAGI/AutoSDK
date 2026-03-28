@@ -72,6 +72,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookWorkflowDispatch" /> class.
         /// </summary>
+        /// <param name="ref"></param>
+        /// <param name="repository">
+        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
+        /// when the event occurs from activity in a repository.
+        /// </param>
+        /// <param name="sender">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="workflow"></param>
         /// <param name="enterprise">
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
         /// on an enterprise account or an organization that's part of an enterprise account. For more information,<br/>
@@ -87,15 +96,6 @@ namespace G
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
         /// organization, or when the event occurs from activity in a repository owned by an organization.
         /// </param>
-        /// <param name="ref"></param>
-        /// <param name="repository">
-        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
-        /// when the event occurs from activity in a repository.
-        /// </param>
-        /// <param name="sender">
-        /// A GitHub user.
-        /// </param>
-        /// <param name="workflow"></param>
         public WebhookWorkflowDispatch(
             string @ref,
             global::G.RepositoryWebhooks repository,
@@ -106,14 +106,14 @@ namespace G
             global::G.SimpleInstallation? installation,
             global::G.OrganizationSimpleWebhooks? organization)
         {
-            this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
-            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
-            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
-            this.Workflow = workflow ?? throw new global::System.ArgumentNullException(nameof(workflow));
             this.Enterprise = enterprise;
             this.Inputs = inputs;
             this.Installation = installation;
             this.Organization = organization;
+            this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
+            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
+            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
+            this.Workflow = workflow ?? throw new global::System.ArgumentNullException(nameof(workflow));
         }
 
         /// <summary>

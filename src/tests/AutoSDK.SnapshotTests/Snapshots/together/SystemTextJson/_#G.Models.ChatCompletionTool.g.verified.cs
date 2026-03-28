@@ -32,8 +32,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionTool" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="function"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -41,8 +41,8 @@ namespace G
             global::G.ChatCompletionToolFunction function,
             global::G.ChatCompletionToolType type)
         {
-            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
             this.Type = type;
+            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
         }
 
         /// <summary>

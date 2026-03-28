@@ -69,18 +69,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ProtectedBranchPullRequestReview" /> class.
         /// </summary>
+        /// <param name="dismissStaleReviews">
+        /// Example: true
+        /// </param>
+        /// <param name="requireCodeOwnerReviews">
+        /// Example: true
+        /// </param>
         /// <param name="url">
         /// Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/dismissal_restrictions
         /// </param>
         /// <param name="dismissalRestrictions"></param>
         /// <param name="bypassPullRequestAllowances">
         /// Allow specific users, teams, or apps to bypass pull request requirements.
-        /// </param>
-        /// <param name="dismissStaleReviews">
-        /// Example: true
-        /// </param>
-        /// <param name="requireCodeOwnerReviews">
-        /// Example: true
         /// </param>
         /// <param name="requiredApprovingReviewCount">
         /// Example: 2
@@ -102,11 +102,11 @@ namespace G
             int? requiredApprovingReviewCount,
             bool? requireLastPushApproval)
         {
-            this.DismissStaleReviews = dismissStaleReviews;
-            this.RequireCodeOwnerReviews = requireCodeOwnerReviews;
             this.Url = url;
             this.DismissalRestrictions = dismissalRestrictions;
             this.BypassPullRequestAllowances = bypassPullRequestAllowances;
+            this.DismissStaleReviews = dismissStaleReviews;
+            this.RequireCodeOwnerReviews = requireCodeOwnerReviews;
             this.RequiredApprovingReviewCount = requiredApprovingReviewCount;
             this.RequireLastPushApproval = requireLastPushApproval;
         }

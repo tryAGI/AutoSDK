@@ -55,6 +55,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UserMembership" /> class.
         /// </summary>
+        /// <param name="state">
+        /// State of the membership.
+        /// </param>
         /// <param name="name">
         /// The resource name of the membership, which allows its access by user and<br/>
         /// organization ID.<br/>
@@ -64,9 +67,6 @@ namespace G
         /// <param name="role">
         /// Role of the user in the organization.<br/>
         /// Included only in responses
-        /// </param>
-        /// <param name="state">
-        /// State of the membership.
         /// </param>
         /// <param name="user">
         /// User information.<br/>
@@ -83,9 +83,9 @@ namespace G
             global::G.User? user,
             global::G.Organization? organization)
         {
-            this.State = state;
             this.Name = name;
             this.Role = role;
+            this.State = state;
             this.User = user;
             this.Organization = organization;
         }

@@ -58,11 +58,11 @@ namespace G
         /// Initializes a new instance of the <see cref="CompletionChunk" /> class.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="model"></param>
+        /// <param name="choices"></param>
         /// <param name="object"></param>
         /// <param name="created"></param>
-        /// <param name="model"></param>
         /// <param name="usage"></param>
-        /// <param name="choices"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -75,11 +75,11 @@ namespace G
             global::G.UsageInfo? usage)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
             this.Object = @object;
             this.Created = created;
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Usage = usage;
+            this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
         }
 
         /// <summary>

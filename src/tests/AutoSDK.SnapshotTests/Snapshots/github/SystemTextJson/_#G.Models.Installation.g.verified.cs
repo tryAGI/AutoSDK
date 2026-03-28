@@ -171,7 +171,6 @@ namespace G
         /// The ID of the installation.<br/>
         /// Example: 1
         /// </param>
-        /// <param name="account"></param>
         /// <param name="repositorySelection">
         /// Describe whether all repositories have been selected or there's a selection involved
         /// </param>
@@ -200,6 +199,10 @@ namespace G
         /// <param name="events"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="appSlug">
+        /// Example: github-actions
+        /// </param>
+        /// <param name="account"></param>
         /// <param name="singleFileName">
         /// Example: config.yaml
         /// </param>
@@ -208,9 +211,6 @@ namespace G
         /// </param>
         /// <param name="singleFilePaths">
         /// Example: [config.yml, .github/issue_TEMPLATE.md]
-        /// </param>
-        /// <param name="appSlug">
-        /// Example: github-actions
         /// </param>
         /// <param name="suspendedBy">
         /// A GitHub user.
@@ -245,6 +245,7 @@ namespace G
             string? contactEmail)
         {
             this.Id = id;
+            this.Account = account;
             this.RepositorySelection = repositorySelection;
             this.AccessTokensUrl = accessTokensUrl ?? throw new global::System.ArgumentNullException(nameof(accessTokensUrl));
             this.RepositoriesUrl = repositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(repositoriesUrl));
@@ -256,11 +257,10 @@ namespace G
             this.Events = events ?? throw new global::System.ArgumentNullException(nameof(events));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.AppSlug = appSlug ?? throw new global::System.ArgumentNullException(nameof(appSlug));
-            this.Account = account;
             this.SingleFileName = singleFileName;
             this.HasMultipleSingleFiles = hasMultipleSingleFiles;
             this.SingleFilePaths = singleFilePaths;
+            this.AppSlug = appSlug ?? throw new global::System.ArgumentNullException(nameof(appSlug));
             this.SuspendedBy = suspendedBy;
             this.SuspendedAt = suspendedAt;
             this.ContactEmail = contactEmail;

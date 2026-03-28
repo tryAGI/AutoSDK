@@ -37,10 +37,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="V2RerankResponse" /> class.
         /// </summary>
-        /// <param name="id"></param>
         /// <param name="results">
         /// An ordered list of ranked documents
         /// </param>
+        /// <param name="id"></param>
         /// <param name="meta"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -50,8 +50,8 @@ namespace G
             string? id,
             global::G.ApiMeta? meta)
         {
-            this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
             this.Id = id;
+            this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
             this.Meta = meta;
         }
 

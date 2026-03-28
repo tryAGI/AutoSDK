@@ -116,17 +116,17 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="url"></param>
+        /// <param name="token"></param>
+        /// <param name="app"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="createdAt"></param>
         /// <param name="scopes">
         /// A list of scopes that this authorization is in.
         /// </param>
-        /// <param name="token"></param>
         /// <param name="tokenLastEight"></param>
         /// <param name="hashedToken"></param>
-        /// <param name="app"></param>
         /// <param name="note"></param>
         /// <param name="noteUrl"></param>
-        /// <param name="updatedAt"></param>
-        /// <param name="createdAt"></param>
         /// <param name="fingerprint"></param>
         /// <param name="user">
         /// A GitHub user.
@@ -155,15 +155,15 @@ namespace G
         {
             this.Id = id;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
-            this.App = app ?? throw new global::System.ArgumentNullException(nameof(app));
-            this.UpdatedAt = updatedAt;
-            this.CreatedAt = createdAt;
             this.Scopes = scopes;
+            this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
             this.TokenLastEight = tokenLastEight;
             this.HashedToken = hashedToken;
+            this.App = app ?? throw new global::System.ArgumentNullException(nameof(app));
             this.Note = note;
             this.NoteUrl = noteUrl;
+            this.UpdatedAt = updatedAt;
+            this.CreatedAt = createdAt;
             this.Fingerprint = fingerprint;
             this.User = user;
             this.Installation = installation;

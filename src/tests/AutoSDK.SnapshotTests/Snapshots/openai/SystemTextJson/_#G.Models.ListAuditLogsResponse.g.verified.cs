@@ -55,7 +55,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ListAuditLogsResponse" /> class.
         /// </summary>
-        /// <param name="object"></param>
         /// <param name="data"></param>
         /// <param name="firstId">
         /// Example: audit_log-defb456h8dks
@@ -64,6 +63,7 @@ namespace G
         /// Example: audit_log-hnbkd8s93s
         /// </param>
         /// <param name="hasMore"></param>
+        /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -74,11 +74,11 @@ namespace G
             bool hasMore,
             global::G.ListAuditLogsResponseObject @object)
         {
+            this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
             this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
             this.HasMore = hasMore;
-            this.Object = @object;
         }
 
         /// <summary>

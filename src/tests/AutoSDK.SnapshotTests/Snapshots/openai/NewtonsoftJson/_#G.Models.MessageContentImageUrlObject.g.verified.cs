@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageContentImageUrlObject" /> class.
         /// </summary>
+        /// <param name="imageUrl"></param>
         /// <param name="type">
         /// The type of the content part.
         /// </param>
-        /// <param name="imageUrl"></param>
         public MessageContentImageUrlObject(
             global::G.MessageContentImageUrlObjectImageUrl imageUrl,
             global::G.MessageContentImageUrlObjectType type)
         {
-            this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
             this.Type = type;
+            this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
         }
 
         /// <summary>

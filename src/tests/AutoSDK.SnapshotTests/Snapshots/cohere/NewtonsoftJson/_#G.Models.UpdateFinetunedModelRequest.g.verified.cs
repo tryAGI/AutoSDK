@@ -83,6 +83,9 @@ namespace G
         /// <param name="name">
         /// FinetunedModel name (e.g. `foobar`).
         /// </param>
+        /// <param name="settings">
+        /// FinetunedModel settings such as dataset, hyperparameters...
+        /// </param>
         /// <param name="creatorId">
         /// User ID of the creator.<br/>
         /// Included only in responses
@@ -90,9 +93,6 @@ namespace G
         /// <param name="organizationId">
         /// Organization ID.<br/>
         /// Included only in responses
-        /// </param>
-        /// <param name="settings">
-        /// FinetunedModel settings such as dataset, hyperparameters...
         /// </param>
         /// <param name="status">
         /// Current stage in the life-cycle of the fine-tuned model.<br/>
@@ -127,9 +127,9 @@ namespace G
             global::System.DateTime? lastUsed)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
             this.CreatorId = creatorId;
             this.OrganizationId = organizationId;
+            this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
             this.Status = status;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;

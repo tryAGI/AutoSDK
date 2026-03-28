@@ -49,11 +49,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaModelInfo" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Object type.<br/>
-        /// For Models, this is always `"model"`.<br/>
-        /// Default Value: model
-        /// </param>
         /// <param name="id">
         /// Unique model identifier.
         /// </param>
@@ -62,6 +57,11 @@ namespace G
         /// </param>
         /// <param name="createdAt">
         /// RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
+        /// </param>
+        /// <param name="type">
+        /// Object type.<br/>
+        /// For Models, this is always `"model"`.<br/>
+        /// Default Value: model
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -72,10 +72,10 @@ namespace G
             global::System.DateTime createdAt,
             global::G.BetaModelInfoType type = global::G.BetaModelInfoType.Model)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.CreatedAt = createdAt;
-            this.Type = type;
         }
 
         /// <summary>

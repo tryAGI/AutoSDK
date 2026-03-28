@@ -240,9 +240,6 @@ namespace G
         /// <param name="status">
         /// The status of the voice sharing.
         /// </param>
-        /// <param name="historyItemSampleId">
-        /// The sample ID of the history item.
-        /// </param>
         /// <param name="dateUnix">
         /// The date of the voice sharing in Unix time.
         /// </param>
@@ -264,17 +261,8 @@ namespace G
         /// <param name="liveModerationEnabled">
         /// Whether live moderation is enabled.
         /// </param>
-        /// <param name="rate">
-        /// The rate of the voice sharing.
-        /// </param>
-        /// <param name="fiatRate">
-        /// The rate of the voice sharing in USD per 1000 credits.
-        /// </param>
         /// <param name="noticePeriod">
         /// The notice period of the voice sharing.
-        /// </param>
-        /// <param name="disableAtUnix">
-        /// The date of the voice sharing in Unix time.
         /// </param>
         /// <param name="voiceMixingAllowed">
         /// Whether voice mixing is allowed.
@@ -285,15 +273,6 @@ namespace G
         /// <param name="category">
         /// The category of the voice.
         /// </param>
-        /// <param name="readerAppEnabled">
-        /// Whether the reader app is enabled.
-        /// </param>
-        /// <param name="imageUrl">
-        /// The image URL of the voice.
-        /// </param>
-        /// <param name="banReason">
-        /// The ban reason of the voice.
-        /// </param>
         /// <param name="likedByCount">
         /// The number of likes on the voice.
         /// </param>
@@ -303,20 +282,41 @@ namespace G
         /// <param name="name">
         /// The name of the voice.
         /// </param>
-        /// <param name="description">
-        /// The description of the voice.
-        /// </param>
         /// <param name="labels">
         /// The labels of the voice.
         /// </param>
         /// <param name="reviewStatus">
         /// The review status of the voice.
         /// </param>
-        /// <param name="reviewMessage">
-        /// The review message of the voice.
-        /// </param>
         /// <param name="enabledInLibrary">
         /// Whether the voice is enabled in the library.
+        /// </param>
+        /// <param name="historyItemSampleId">
+        /// The sample ID of the history item.
+        /// </param>
+        /// <param name="rate">
+        /// The rate of the voice sharing.
+        /// </param>
+        /// <param name="fiatRate">
+        /// The rate of the voice sharing in USD per 1000 credits.
+        /// </param>
+        /// <param name="disableAtUnix">
+        /// The date of the voice sharing in Unix time.
+        /// </param>
+        /// <param name="readerAppEnabled">
+        /// Whether the reader app is enabled.
+        /// </param>
+        /// <param name="imageUrl">
+        /// The image URL of the voice.
+        /// </param>
+        /// <param name="banReason">
+        /// The ban reason of the voice.
+        /// </param>
+        /// <param name="description">
+        /// The description of the voice.
+        /// </param>
+        /// <param name="reviewMessage">
+        /// The review message of the voice.
         /// </param>
         /// <param name="instagramUsername">
         /// The Instagram username of the voice.
@@ -375,6 +375,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ReaderResourceResponseModel>? readerRestrictedOn)
         {
             this.Status = status;
+            this.HistoryItemSampleId = historyItemSampleId;
             this.DateUnix = dateUnix;
             this.WhitelistedEmails = whitelistedEmails ?? throw new global::System.ArgumentNullException(nameof(whitelistedEmails));
             this.PublicOwnerId = publicOwnerId ?? throw new global::System.ArgumentNullException(nameof(publicOwnerId));
@@ -382,25 +383,24 @@ namespace G
             this.FinancialRewardsEnabled = financialRewardsEnabled;
             this.FreeUsersAllowed = freeUsersAllowed;
             this.LiveModerationEnabled = liveModerationEnabled;
+            this.Rate = rate;
+            this.FiatRate = fiatRate;
             this.NoticePeriod = noticePeriod;
+            this.DisableAtUnix = disableAtUnix;
             this.VoiceMixingAllowed = voiceMixingAllowed;
             this.Featured = featured;
             this.Category = category;
-            this.LikedByCount = likedByCount;
-            this.ClonedByCount = clonedByCount;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
-            this.ReviewStatus = reviewStatus;
-            this.EnabledInLibrary = enabledInLibrary;
-            this.HistoryItemSampleId = historyItemSampleId;
-            this.Rate = rate;
-            this.FiatRate = fiatRate;
-            this.DisableAtUnix = disableAtUnix;
             this.ReaderAppEnabled = readerAppEnabled;
             this.ImageUrl = imageUrl;
             this.BanReason = banReason;
+            this.LikedByCount = likedByCount;
+            this.ClonedByCount = clonedByCount;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
+            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
+            this.ReviewStatus = reviewStatus;
             this.ReviewMessage = reviewMessage;
+            this.EnabledInLibrary = enabledInLibrary;
             this.InstagramUsername = instagramUsername;
             this.TwitterUsername = twitterUsername;
             this.YoutubeUsername = youtubeUsername;

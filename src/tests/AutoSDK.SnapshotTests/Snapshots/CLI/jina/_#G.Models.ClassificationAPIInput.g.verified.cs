@@ -55,6 +55,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassificationAPIInput" /> class.
         /// </summary>
+        /// <param name="input">
+        /// List of text and images or a single text and image for classification
+        /// </param>
         /// <param name="model">
         /// The identifier of the model.<br/>
         /// Available models and corresponding param size and dimension:<br/>
@@ -71,9 +74,6 @@ namespace G
         /// The identifier of the classifier. If not provided, a new classifier will be created.<br/>
         /// You can provide only either `model` or `classifier_id`
         /// </param>
-        /// <param name="input">
-        /// List of text and images or a single text and image for classification
-        /// </param>
         /// <param name="labels">
         /// List of labels used for classification
         /// </param>
@@ -86,9 +86,9 @@ namespace G
             string? classifierId,
             global::System.Collections.Generic.IList<string>? labels)
         {
-            this.Input = input;
             this.Model = model;
             this.ClassifierId = classifierId;
+            this.Input = input;
             this.Labels = labels;
         }
 

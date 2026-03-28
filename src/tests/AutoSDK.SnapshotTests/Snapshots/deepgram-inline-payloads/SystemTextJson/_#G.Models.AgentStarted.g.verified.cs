@@ -38,13 +38,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AgentStarted" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="agentId">
         /// The agent identifier.
         /// </param>
         /// <param name="sessionId">
         /// The session identifier.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -53,8 +53,8 @@ namespace G
             string? sessionId,
             string type = "AgentStarted")
         {
-            this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.Type = type;
+            this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.SessionId = sessionId;
         }
 

@@ -72,17 +72,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookMetaDeleted" /> class.
         /// </summary>
-        /// <param name="action"></param>
-        /// <param name="enterprise">
-        /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
-        /// on an enterprise account or an organization that's part of an enterprise account. For more information,<br/>
-        /// see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
-        /// </param>
         /// <param name="hook">
         /// The modified webhook. This will contain different keys based on the type of webhook it is: repository, organization, business, app, or GitHub Marketplace.
         /// </param>
         /// <param name="hookId">
         /// The id of the modified webhook.
+        /// </param>
+        /// <param name="action"></param>
+        /// <param name="enterprise">
+        /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
+        /// on an enterprise account or an organization that's part of an enterprise account. For more information,<br/>
+        /// see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
         /// </param>
         /// <param name="installation">
         /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>
@@ -110,10 +110,10 @@ namespace G
             global::G.NullableRepositoryWebhooks? repository,
             global::G.SimpleUser? sender)
         {
-            this.Hook = hook ?? throw new global::System.ArgumentNullException(nameof(hook));
-            this.HookId = hookId;
             this.Action = action;
             this.Enterprise = enterprise;
+            this.Hook = hook ?? throw new global::System.ArgumentNullException(nameof(hook));
+            this.HookId = hookId;
             this.Installation = installation;
             this.Organization = organization;
             this.Repository = repository;

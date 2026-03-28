@@ -157,8 +157,6 @@ namespace G
         /// Initializes a new instance of the <see cref="WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1" /> class.
         /// </summary>
         /// <param name="checkRunUrl"></param>
-        /// <param name="completedAt"></param>
-        /// <param name="conclusion"></param>
         /// <param name="createdAt">
         /// The time that the job created.
         /// </param>
@@ -173,6 +171,14 @@ namespace G
         /// <param name="runAttempt"></param>
         /// <param name="runId"></param>
         /// <param name="runUrl"></param>
+        /// <param name="startedAt"></param>
+        /// <param name="status">
+        /// The current status of the job. Can be `queued`, `in_progress`, or `completed`.
+        /// </param>
+        /// <param name="steps"></param>
+        /// <param name="url"></param>
+        /// <param name="completedAt"></param>
+        /// <param name="conclusion"></param>
         /// <param name="runnerGroupId">
         /// The ID of the runner group that is running this job. This will be `null` as long as `workflow_job[status]` is `queued`.
         /// </param>
@@ -185,18 +191,12 @@ namespace G
         /// <param name="runnerName">
         /// The name of the runner that is running this job. This will be `null` as long as `workflow_job[status]` is `queued`.
         /// </param>
-        /// <param name="startedAt"></param>
-        /// <param name="status">
-        /// The current status of the job. Can be `queued`, `in_progress`, or `completed`.
-        /// </param>
         /// <param name="headBranch">
         /// The name of the current branch.
         /// </param>
         /// <param name="workflowName">
         /// The name of the workflow.
         /// </param>
-        /// <param name="steps"></param>
-        /// <param name="url"></param>
         public WebhookWorkflowJobInProgressWorkflowJobWorkflowJob1(
             string checkRunUrl,
             string createdAt,
@@ -223,6 +223,8 @@ namespace G
             string? workflowName)
         {
             this.CheckRunUrl = checkRunUrl ?? throw new global::System.ArgumentNullException(nameof(checkRunUrl));
+            this.CompletedAt = completedAt;
+            this.Conclusion = conclusion;
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
@@ -233,18 +235,16 @@ namespace G
             this.RunAttempt = runAttempt;
             this.RunId = runId;
             this.RunUrl = runUrl ?? throw new global::System.ArgumentNullException(nameof(runUrl));
-            this.StartedAt = startedAt ?? throw new global::System.ArgumentNullException(nameof(startedAt));
-            this.Status = status;
-            this.Steps = steps ?? throw new global::System.ArgumentNullException(nameof(steps));
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.CompletedAt = completedAt;
-            this.Conclusion = conclusion;
             this.RunnerGroupId = runnerGroupId;
             this.RunnerGroupName = runnerGroupName;
             this.RunnerId = runnerId;
             this.RunnerName = runnerName;
+            this.StartedAt = startedAt ?? throw new global::System.ArgumentNullException(nameof(startedAt));
+            this.Status = status;
             this.HeadBranch = headBranch;
             this.WorkflowName = workflowName;
+            this.Steps = steps ?? throw new global::System.ArgumentNullException(nameof(steps));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 
         /// <summary>

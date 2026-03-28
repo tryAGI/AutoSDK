@@ -46,18 +46,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CallTool" /> class.
         /// </summary>
-        /// <param name="callToolId">
-        /// Included only in responses
+        /// <param name="definition">
+        /// A tool as used for a particular call (omitting auth details).
         /// </param>
         /// <param name="toolId">
+        /// Included only in responses
+        /// </param>
+        /// <param name="callToolId">
         /// Included only in responses
         /// </param>
         /// <param name="name">
         /// The possibly overridden name of the tool.<br/>
         /// Included only in responses
-        /// </param>
-        /// <param name="definition">
-        /// A tool as used for a particular call (omitting auth details).
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -68,10 +68,10 @@ namespace G
             global::System.Guid callToolId = default!,
             string name = default!)
         {
-            this.Definition = definition ?? throw new global::System.ArgumentNullException(nameof(definition));
             this.CallToolId = callToolId;
             this.ToolId = toolId;
             this.Name = name;
+            this.Definition = definition ?? throw new global::System.ArgumentNullException(nameof(definition));
         }
 
         /// <summary>

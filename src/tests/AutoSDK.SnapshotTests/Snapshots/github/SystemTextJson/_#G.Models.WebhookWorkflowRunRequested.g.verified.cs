@@ -76,6 +76,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookWorkflowRunRequested" /> class.
         /// </summary>
+        /// <param name="repository">
+        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
+        /// when the event occurs from activity in a repository.
+        /// </param>
+        /// <param name="sender">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="workflowRun"></param>
         /// <param name="action"></param>
         /// <param name="enterprise">
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
@@ -91,15 +99,7 @@ namespace G
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
         /// organization, or when the event occurs from activity in a repository owned by an organization.
         /// </param>
-        /// <param name="repository">
-        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
-        /// when the event occurs from activity in a repository.
-        /// </param>
-        /// <param name="sender">
-        /// A GitHub user.
-        /// </param>
         /// <param name="workflow"></param>
-        /// <param name="workflowRun"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -113,14 +113,14 @@ namespace G
             global::G.OrganizationSimpleWebhooks? organization,
             global::G.WebhooksWorkflow? workflow)
         {
-            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
-            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
-            this.WorkflowRun = workflowRun ?? throw new global::System.ArgumentNullException(nameof(workflowRun));
             this.Action = action;
             this.Enterprise = enterprise;
             this.Installation = installation;
             this.Organization = organization;
+            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
+            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Workflow = workflow;
+            this.WorkflowRun = workflowRun ?? throw new global::System.ArgumentNullException(nameof(workflowRun));
         }
 
         /// <summary>

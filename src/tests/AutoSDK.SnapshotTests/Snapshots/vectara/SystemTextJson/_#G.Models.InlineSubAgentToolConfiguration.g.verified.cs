@@ -57,6 +57,9 @@ namespace G
         /// The type of tool configuration, which is always 'sub_agent' for inline sub-agent tool configurations.<br/>
         /// Default Value: sub_agent
         /// </param>
+        /// <param name="subAgentConfiguration">
+        /// User-configurable settings for the sub-agent tool. These parameters are never exposed to the agent.
+        /// </param>
         /// <param name="descriptionTemplate">
         /// Velocity template for generating dynamic tool descriptions. When set, this template is rendered at runtime to produce the tool description.<br/>
         /// Available Velocity variables:<br/>
@@ -70,9 +73,6 @@ namespace G
         /// <param name="argumentOverride">
         /// Configurable parameters for the sub-agent tool. If not overridden, they will be required by the LLM to fill in.
         /// </param>
-        /// <param name="subAgentConfiguration">
-        /// User-configurable settings for the sub-agent tool. These parameters are never exposed to the agent.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -83,9 +83,9 @@ namespace G
             global::G.SubAgentToolParameters? argumentOverride)
         {
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
-            this.SubAgentConfiguration = subAgentConfiguration ?? throw new global::System.ArgumentNullException(nameof(subAgentConfiguration));
             this.DescriptionTemplate = descriptionTemplate;
             this.ArgumentOverride = argumentOverride;
+            this.SubAgentConfiguration = subAgentConfiguration ?? throw new global::System.ArgumentNullException(nameof(subAgentConfiguration));
         }
 
         /// <summary>

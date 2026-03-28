@@ -42,14 +42,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomGuardrailConfig" /> class.
         /// </summary>
-        /// <param name="isEnabled">
-        /// Default Value: false
-        /// </param>
         /// <param name="name">
         /// User-facing name for this guardrail
         /// </param>
         /// <param name="prompt">
         /// Instruction describing what to block, e.g. 'don't talk about politics'
+        /// </param>
+        /// <param name="isEnabled">
+        /// Default Value: false
         /// </param>
         /// <param name="executionMode">
         /// Default Value: streaming
@@ -60,9 +60,9 @@ namespace G
             bool? isEnabled,
             global::G.GuardrailExecutionMode? executionMode)
         {
+            this.IsEnabled = isEnabled;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
-            this.IsEnabled = isEnabled;
             this.ExecutionMode = executionMode;
         }
 

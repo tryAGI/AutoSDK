@@ -31,11 +31,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UsersCreateGpgKeyForAuthenticatedUserRequest" /> class.
         /// </summary>
-        /// <param name="name">
-        /// A descriptive name for the new key.
-        /// </param>
         /// <param name="armoredPublicKey">
         /// A GPG key in ASCII-armored format.
+        /// </param>
+        /// <param name="name">
+        /// A descriptive name for the new key.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace G
             string armoredPublicKey,
             string? name)
         {
-            this.ArmoredPublicKey = armoredPublicKey ?? throw new global::System.ArgumentNullException(nameof(armoredPublicKey));
             this.Name = name;
+            this.ArmoredPublicKey = armoredPublicKey ?? throw new global::System.ArgumentNullException(nameof(armoredPublicKey));
         }
 
         /// <summary>

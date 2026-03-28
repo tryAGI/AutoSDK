@@ -102,17 +102,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AppSchemasRunGetDetailed" /> class.
         /// </summary>
-        /// <param name="inputs"></param>
-        /// <param name="outputs"></param>
-        /// <param name="error">
-        /// Base model for schemas.
-        /// </param>
         /// <param name="id"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="pipelineId"></param>
         /// <param name="state">
         /// An enumeration.
+        /// </param>
+        /// <param name="inputs"></param>
+        /// <param name="outputs"></param>
+        /// <param name="error">
+        /// Base model for schemas.
         /// </param>
         /// <param name="queuePosition"></param>
         /// <param name="computeTimeMs"></param>
@@ -137,14 +137,14 @@ namespace G
             global::System.DateTime? endedAt,
             global::System.Collections.Generic.IList<global::G.Accelerator>? accelerators)
         {
+            this.Inputs = inputs;
+            this.Outputs = outputs;
+            this.Error = error;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.PipelineId = pipelineId ?? throw new global::System.ArgumentNullException(nameof(pipelineId));
             this.State = state;
-            this.Inputs = inputs;
-            this.Outputs = outputs;
-            this.Error = error;
             this.QueuePosition = queuePosition;
             this.ComputeTimeMs = computeTimeMs;
             this.StartedAt = startedAt;

@@ -80,6 +80,15 @@ namespace G
         /// <param name="amountDueCents">
         /// The amount due in cents.
         /// </param>
+        /// <param name="discounts">
+        /// The discounts applied to the invoice.
+        /// </param>
+        /// <param name="nextPaymentAttemptUnix">
+        /// The Unix timestamp of the next payment attempt. -1 when there is no next payment attempt.
+        /// </param>
+        /// <param name="paymentIntentStatusses">
+        /// The statuses of this invoice's payment intents. Empty list when there are no payment intents.
+        /// </param>
         /// <param name="subtotalCents">
         /// The subtotal amount in cents before tax (exclusive of tax and discounts).
         /// </param>
@@ -92,17 +101,8 @@ namespace G
         /// <param name="discountAmountOff">
         /// Deprecated. Use [discounts] instead. The discount applied to the invoice. E.g. [20.0f] for 20 cents off.
         /// </param>
-        /// <param name="discounts">
-        /// The discounts applied to the invoice.
-        /// </param>
-        /// <param name="nextPaymentAttemptUnix">
-        /// The Unix timestamp of the next payment attempt. -1 when there is no next payment attempt.
-        /// </param>
         /// <param name="paymentIntentStatus">
         /// Deprecated. Use [payment_intent_statusses] instead. The status of this invoice's first payment intent. None when there is no payment intent.
-        /// </param>
-        /// <param name="paymentIntentStatusses">
-        /// The statuses of this invoice's payment intents. Empty list when there are no payment intents.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -119,14 +119,14 @@ namespace G
             global::G.InvoiceResponseModelPaymentIntentStatus2? paymentIntentStatus)
         {
             this.AmountDueCents = amountDueCents;
-            this.Discounts = discounts ?? throw new global::System.ArgumentNullException(nameof(discounts));
-            this.NextPaymentAttemptUnix = nextPaymentAttemptUnix;
-            this.PaymentIntentStatusses = paymentIntentStatusses ?? throw new global::System.ArgumentNullException(nameof(paymentIntentStatusses));
             this.SubtotalCents = subtotalCents;
             this.TaxCents = taxCents;
             this.DiscountPercentOff = discountPercentOff;
             this.DiscountAmountOff = discountAmountOff;
+            this.Discounts = discounts ?? throw new global::System.ArgumentNullException(nameof(discounts));
+            this.NextPaymentAttemptUnix = nextPaymentAttemptUnix;
             this.PaymentIntentStatus = paymentIntentStatus;
+            this.PaymentIntentStatusses = paymentIntentStatusses ?? throw new global::System.ArgumentNullException(nameof(paymentIntentStatusses));
         }
 
         /// <summary>

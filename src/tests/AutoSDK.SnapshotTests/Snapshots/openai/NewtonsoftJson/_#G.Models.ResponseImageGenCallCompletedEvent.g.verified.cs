@@ -42,9 +42,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseImageGenCallCompletedEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always 'response.image_generation_call.completed'.
-        /// </param>
         /// <param name="outputIndex">
         /// The index of the output item in the response's output array.
         /// </param>
@@ -54,16 +51,19 @@ namespace G
         /// <param name="itemId">
         /// The unique identifier of the image generation item being processed.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always 'response.image_generation_call.completed'.
+        /// </param>
         public ResponseImageGenCallCompletedEvent(
             int outputIndex,
             int sequenceNumber,
             string itemId,
             global::G.ResponseImageGenCallCompletedEventType type)
         {
+            this.Type = type;
             this.OutputIndex = outputIndex;
             this.SequenceNumber = sequenceNumber;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
-            this.Type = type;
         }
 
         /// <summary>

@@ -95,17 +95,9 @@ namespace G
         /// <param name="createdAt">
         /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ.`
         /// </param>
-        /// <param name="dismissedAt">
-        /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-        /// </param>
-        /// <param name="dismissedBy"></param>
-        /// <param name="dismissedReason">
-        /// The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
-        /// </param>
         /// <param name="htmlUrl">
         /// The GitHub URL of the alert resource.
         /// </param>
-        /// <param name="mostRecentInstance"></param>
         /// <param name="number">
         /// The code scanning alert number.
         /// </param>
@@ -115,6 +107,14 @@ namespace G
         /// </param>
         /// <param name="tool"></param>
         /// <param name="url"></param>
+        /// <param name="dismissedAt">
+        /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// </param>
+        /// <param name="dismissedBy"></param>
+        /// <param name="dismissedReason">
+        /// The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
+        /// </param>
+        /// <param name="mostRecentInstance"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -132,16 +132,16 @@ namespace G
             global::G.WebhookCodeScanningAlertReopenedAlertMostRecentInstance? mostRecentInstance)
         {
             this.CreatedAt = createdAt;
+            this.DismissedAt = dismissedAt;
+            this.DismissedBy = dismissedBy;
+            this.DismissedReason = dismissedReason;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.MostRecentInstance = mostRecentInstance;
             this.Number = number;
             this.Rule = rule ?? throw new global::System.ArgumentNullException(nameof(rule));
             this.State = state;
             this.Tool = tool ?? throw new global::System.ArgumentNullException(nameof(tool));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.DismissedAt = dismissedAt;
-            this.DismissedBy = dismissedBy;
-            this.DismissedReason = dismissedReason;
-            this.MostRecentInstance = mostRecentInstance;
         }
 
         /// <summary>

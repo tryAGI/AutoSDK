@@ -94,12 +94,8 @@ namespace G
         /// Initializes a new instance of the <see cref="OrganizationInvitation" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="login"></param>
-        /// <param name="email"></param>
         /// <param name="role"></param>
         /// <param name="createdAt"></param>
-        /// <param name="failedAt"></param>
-        /// <param name="failedReason"></param>
         /// <param name="inviter">
         /// A GitHub user.
         /// </param>
@@ -110,6 +106,10 @@ namespace G
         /// <param name="invitationTeamsUrl">
         /// Example: "https://api.github.com/organizations/16/invitations/1/teams"
         /// </param>
+        /// <param name="login"></param>
+        /// <param name="email"></param>
+        /// <param name="failedAt"></param>
+        /// <param name="failedReason"></param>
         /// <param name="invitationSource">
         /// Example: "member"
         /// </param>
@@ -128,16 +128,16 @@ namespace G
             string? invitationSource)
         {
             this.Id = id;
+            this.Login = login;
+            this.Email = email;
             this.Role = role ?? throw new global::System.ArgumentNullException(nameof(role));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.FailedAt = failedAt;
+            this.FailedReason = failedReason;
             this.Inviter = inviter ?? throw new global::System.ArgumentNullException(nameof(inviter));
             this.TeamCount = teamCount;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.InvitationTeamsUrl = invitationTeamsUrl ?? throw new global::System.ArgumentNullException(nameof(invitationTeamsUrl));
-            this.Login = login;
-            this.Email = email;
-            this.FailedAt = failedAt;
-            this.FailedReason = failedReason;
             this.InvitationSource = invitationSource;
         }
 

@@ -121,6 +121,8 @@ namespace G
         /// Initializes a new instance of the <see cref="OrgPendingIdentity" /> class.
         /// </summary>
         /// <param name="email"></param>
+        /// <param name="id"></param>
+        /// <param name="createdAt"></param>
         /// <param name="readOnly">
         /// Default Value: false
         /// </param>
@@ -132,11 +134,9 @@ namespace G
         /// <param name="accessScope">
         /// Default Value: workspace
         /// </param>
-        /// <param name="id"></param>
         /// <param name="userId"></param>
         /// <param name="tenantId"></param>
         /// <param name="organizationId"></param>
-        /// <param name="createdAt"></param>
         /// <param name="roleName"></param>
         /// <param name="orgRoleId"></param>
         /// <param name="orgRoleName"></param>
@@ -163,8 +163,6 @@ namespace G
             global::System.Collections.Generic.IList<global::System.Guid>? tenantIds)
         {
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
-            this.Id = id;
-            this.CreatedAt = createdAt;
             this.ReadOnly = readOnly;
             this.RoleId = roleId;
             this.WorkspaceIds = workspaceIds;
@@ -172,9 +170,11 @@ namespace G
             this.Password = password;
             this.FullName = fullName;
             this.AccessScope = accessScope;
+            this.Id = id;
             this.UserId = userId;
             this.TenantId = tenantId;
             this.OrganizationId = organizationId;
+            this.CreatedAt = createdAt;
             this.RoleName = roleName;
             this.OrgRoleId = orgRoleId;
             this.OrgRoleName = orgRoleName;

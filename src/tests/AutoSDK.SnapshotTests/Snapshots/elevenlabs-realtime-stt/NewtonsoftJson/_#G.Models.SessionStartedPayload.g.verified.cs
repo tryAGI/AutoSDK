@@ -36,11 +36,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="SessionStartedPayload" /> class.
         /// </summary>
-        /// <param name="messageType">
-        /// Must be 'session_started'.
-        /// </param>
         /// <param name="sessionId">
         /// Unique session identifier.
+        /// </param>
+        /// <param name="messageType">
+        /// Must be 'session_started'.
         /// </param>
         /// <param name="config">
         /// Session configuration returned by the server.
@@ -50,8 +50,8 @@ namespace G
             global::G.SessionStartedPayloadMessageType messageType,
             global::G.SessionConfig? config)
         {
-            this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));
             this.MessageType = messageType;
+            this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));
             this.Config = config;
         }
 

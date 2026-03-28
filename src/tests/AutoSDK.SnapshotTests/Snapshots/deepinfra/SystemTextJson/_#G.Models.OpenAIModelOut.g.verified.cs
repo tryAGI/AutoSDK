@@ -59,12 +59,12 @@ namespace G
         /// Initializes a new instance of the <see cref="OpenAIModelOut" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="object">
-        /// Default Value: model
-        /// </param>
         /// <param name="created"></param>
         /// <param name="ownedBy"></param>
         /// <param name="root"></param>
+        /// <param name="object">
+        /// Default Value: model
+        /// </param>
         /// <param name="parent"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -78,10 +78,10 @@ namespace G
             object? parent)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.Created = created;
             this.OwnedBy = ownedBy ?? throw new global::System.ArgumentNullException(nameof(ownedBy));
             this.Root = root ?? throw new global::System.ArgumentNullException(nameof(root));
-            this.Object = @object;
             this.Parent = parent;
         }
 

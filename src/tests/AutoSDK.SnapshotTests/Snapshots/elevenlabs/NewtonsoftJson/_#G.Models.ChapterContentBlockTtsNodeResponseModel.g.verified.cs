@@ -37,17 +37,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChapterContentBlockTtsNodeResponseModel" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="voiceId"></param>
         /// <param name="text"></param>
+        /// <param name="type"></param>
         public ChapterContentBlockTtsNodeResponseModel(
             string voiceId,
             string text,
             string type = "tts_node")
         {
+            this.Type = type;
             this.VoiceId = voiceId ?? throw new global::System.ArgumentNullException(nameof(voiceId));
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
-            this.Type = type;
         }
 
         /// <summary>

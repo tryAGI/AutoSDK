@@ -48,14 +48,14 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `input_audio_buffer.committed`.
-        /// </param>
         /// <param name="previousItemId">
         /// The ID of the preceding item after which the new item will be inserted.
         /// </param>
         /// <param name="itemId">
         /// The ID of the user message item that will be created.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `input_audio_buffer.committed`.
         /// </param>
         public RealtimeServerEventInputAudioBufferCommitted(
             string eventId,
@@ -64,9 +64,9 @@ namespace G
             global::G.RealtimeServerEventInputAudioBufferCommittedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
+            this.Type = type;
             this.PreviousItemId = previousItemId ?? throw new global::System.ArgumentNullException(nameof(previousItemId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
-            this.Type = type;
         }
 
         /// <summary>

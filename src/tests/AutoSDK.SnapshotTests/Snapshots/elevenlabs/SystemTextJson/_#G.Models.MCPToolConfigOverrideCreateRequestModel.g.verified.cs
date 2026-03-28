@@ -67,6 +67,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MCPToolConfigOverrideCreateRequestModel" /> class.
         /// </summary>
+        /// <param name="toolName">
+        /// The name of the MCP tool
+        /// </param>
         /// <param name="forcePreToolSpeech">
         /// If set, overrides the server's force_pre_tool_speech setting for this tool
         /// </param>
@@ -88,9 +91,6 @@ namespace G
         /// <param name="inputOverrides">
         /// Mapping of json path to input override configuration
         /// </param>
-        /// <param name="toolName">
-        /// The name of the MCP tool
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -104,7 +104,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.DynamicVariableAssignment>? assignments,
             object? inputOverrides)
         {
-            this.ToolName = toolName ?? throw new global::System.ArgumentNullException(nameof(toolName));
             this.ForcePreToolSpeech = forcePreToolSpeech;
             this.DisableInterruptions = disableInterruptions;
             this.ToolCallSound = toolCallSound;
@@ -112,6 +111,7 @@ namespace G
             this.ExecutionMode = executionMode;
             this.Assignments = assignments;
             this.InputOverrides = inputOverrides;
+            this.ToolName = toolName ?? throw new global::System.ArgumentNullException(nameof(toolName));
         }
 
         /// <summary>

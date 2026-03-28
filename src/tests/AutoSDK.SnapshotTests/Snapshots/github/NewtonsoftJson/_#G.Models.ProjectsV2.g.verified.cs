@@ -115,11 +115,7 @@ namespace G
         /// A GitHub user.
         /// </param>
         /// <param name="title"></param>
-        /// <param name="description"></param>
         /// <param name="public"></param>
-        /// <param name="closedAt">
-        /// Example: 2022-04-28T12:00:00Z
-        /// </param>
         /// <param name="createdAt">
         /// Example: 2022-04-28T12:00:00Z
         /// </param>
@@ -127,6 +123,10 @@ namespace G
         /// Example: 2022-04-28T12:00:00Z
         /// </param>
         /// <param name="number"></param>
+        /// <param name="description"></param>
+        /// <param name="closedAt">
+        /// Example: 2022-04-28T12:00:00Z
+        /// </param>
         /// <param name="shortDescription"></param>
         /// <param name="deletedAt">
         /// Example: 2022-04-28T12:00:00Z
@@ -155,12 +155,12 @@ namespace G
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Description = description;
             this.Public = @public;
+            this.ClosedAt = closedAt;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.Number = number;
-            this.Description = description;
-            this.ClosedAt = closedAt;
             this.ShortDescription = shortDescription;
             this.DeletedAt = deletedAt;
             this.DeletedBy = deletedBy;

@@ -50,15 +50,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateImageToVideoRequestVeo3" /> class.
         /// </summary>
+        /// <param name="promptImage"></param>
+        /// <param name="ratio">
+        /// The resolution of the output video.
+        /// </param>
         /// <param name="promptText">
         /// A non-empty string up to 1000 characters (measured in UTF-16 code units). This should describe in detail what should appear in the output.
         /// </param>
-        /// <param name="promptImage"></param>
         /// <param name="duration">
         /// The number of seconds of duration for the output video.
-        /// </param>
-        /// <param name="ratio">
-        /// The resolution of the output video.
         /// </param>
         /// <param name="model"></param>
         public CreateImageToVideoRequestVeo3(
@@ -68,10 +68,10 @@ namespace G
             double duration = 8,
             string model = "veo3")
         {
-            this.PromptImage = promptImage;
-            this.Ratio = ratio;
             this.PromptText = promptText;
+            this.PromptImage = promptImage;
             this.Duration = duration;
+            this.Ratio = ratio;
             this.Model = model;
         }
 

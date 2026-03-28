@@ -66,10 +66,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookDependabotAlertCreated" /> class.
         /// </summary>
-        /// <param name="action"></param>
         /// <param name="alert">
         /// A Dependabot alert.
         /// </param>
+        /// <param name="repository">
+        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
+        /// when the event occurs from activity in a repository.
+        /// </param>
+        /// <param name="sender">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="action"></param>
         /// <param name="installation">
         /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>
         /// for and sent to a GitHub App. For more information,<br/>
@@ -84,13 +91,6 @@ namespace G
         /// on an enterprise account or an organization that's part of an enterprise account. For more information,<br/>
         /// see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
         /// </param>
-        /// <param name="repository">
-        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
-        /// when the event occurs from activity in a repository.
-        /// </param>
-        /// <param name="sender">
-        /// A GitHub user.
-        /// </param>
         public WebhookDependabotAlertCreated(
             global::G.DependabotAlert alert,
             global::G.RepositoryWebhooks repository,
@@ -100,13 +100,13 @@ namespace G
             global::G.OrganizationSimpleWebhooks? organization,
             global::G.EnterpriseWebhooks? enterprise)
         {
-            this.Alert = alert ?? throw new global::System.ArgumentNullException(nameof(alert));
-            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
-            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Action = action;
+            this.Alert = alert ?? throw new global::System.ArgumentNullException(nameof(alert));
             this.Installation = installation;
             this.Organization = organization;
             this.Enterprise = enterprise;
+            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
+            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
         }
 
         /// <summary>

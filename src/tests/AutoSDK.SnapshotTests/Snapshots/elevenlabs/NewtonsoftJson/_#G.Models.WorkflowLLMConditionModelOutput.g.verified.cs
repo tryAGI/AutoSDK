@@ -37,23 +37,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkflowLLMConditionModelOutput" /> class.
         /// </summary>
+        /// <param name="condition">
+        /// Condition to evaluate
+        /// </param>
         /// <param name="label">
         /// Optional human-readable label for the condition used throughout the UI.
         /// </param>
         /// <param name="type">
         /// Default Value: llm
         /// </param>
-        /// <param name="condition">
-        /// Condition to evaluate
-        /// </param>
         public WorkflowLLMConditionModelOutput(
             string condition,
             string? label,
             string type = "llm")
         {
-            this.Condition = condition ?? throw new global::System.ArgumentNullException(nameof(condition));
             this.Label = label;
             this.Type = type;
+            this.Condition = condition ?? throw new global::System.ArgumentNullException(nameof(condition));
         }
 
         /// <summary>

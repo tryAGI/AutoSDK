@@ -42,6 +42,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPullRequestReviewRequestedVariant1PullRequestAutoMerge" /> class.
         /// </summary>
+        /// <param name="mergeMethod">
+        /// The merge method to use.
+        /// </param>
         /// <param name="commitMessage">
         /// Commit message for the merge commit.
         /// </param>
@@ -49,19 +52,16 @@ namespace G
         /// Title for the merge commit message.
         /// </param>
         /// <param name="enabledBy"></param>
-        /// <param name="mergeMethod">
-        /// The merge method to use.
-        /// </param>
         public WebhookPullRequestReviewRequestedVariant1PullRequestAutoMerge(
             global::G.WebhookPullRequestReviewRequestedVariant1PullRequestAutoMergeMergeMethod mergeMethod,
             string? commitMessage,
             string? commitTitle,
             global::G.WebhookPullRequestReviewRequestedVariant1PullRequestAutoMergeEnabledBy? enabledBy)
         {
-            this.MergeMethod = mergeMethod;
             this.CommitMessage = commitMessage;
             this.CommitTitle = commitTitle;
             this.EnabledBy = enabledBy;
+            this.MergeMethod = mergeMethod;
         }
 
         /// <summary>

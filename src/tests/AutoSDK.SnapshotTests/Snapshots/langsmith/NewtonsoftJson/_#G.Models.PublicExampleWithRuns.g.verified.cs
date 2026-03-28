@@ -84,17 +84,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PublicExampleWithRuns" /> class.
         /// </summary>
-        /// <param name="outputs"></param>
         /// <param name="datasetId"></param>
-        /// <param name="sourceRunId"></param>
-        /// <param name="metadata"></param>
         /// <param name="inputs"></param>
-        /// <param name="createdAt"></param>
         /// <param name="id"></param>
         /// <param name="name"></param>
+        /// <param name="runs"></param>
+        /// <param name="outputs"></param>
+        /// <param name="sourceRunId"></param>
+        /// <param name="metadata"></param>
+        /// <param name="createdAt"></param>
         /// <param name="modifiedAt"></param>
         /// <param name="attachmentUrls"></param>
-        /// <param name="runs"></param>
         public PublicExampleWithRuns(
             global::System.Guid datasetId,
             object inputs,
@@ -108,17 +108,17 @@ namespace G
             global::System.DateTime? modifiedAt,
             object? attachmentUrls)
         {
-            this.DatasetId = datasetId;
-            this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
-            this.Id = id;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Runs = runs ?? throw new global::System.ArgumentNullException(nameof(runs));
             this.Outputs = outputs;
+            this.DatasetId = datasetId;
             this.SourceRunId = sourceRunId;
             this.Metadata = metadata;
+            this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
             this.CreatedAt = createdAt;
+            this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ModifiedAt = modifiedAt;
             this.AttachmentUrls = attachmentUrls;
+            this.Runs = runs ?? throw new global::System.ArgumentNullException(nameof(runs));
         }
 
         /// <summary>

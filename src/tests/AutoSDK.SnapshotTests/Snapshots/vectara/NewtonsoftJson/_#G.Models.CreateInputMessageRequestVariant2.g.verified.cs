@@ -50,12 +50,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateInputMessageRequestVariant2" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: input_message
-        /// </param>
         /// <param name="messages">
         /// List of inputs that make up this event.<br/>
         /// Example: [{"type":"text","content":"I need help with my widget installation"}]
+        /// </param>
+        /// <param name="type">
+        /// Default Value: input_message
         /// </param>
         /// <param name="since">
         /// Event ID to return all events created after queueing the new input. When provided and the session is currently running, the response will include all events created after this event ID, and the new input will be processed according to the behavior field. Use the special value "start" to receive all events from the beginning of the session, including the input message itself.<br/>
@@ -74,8 +74,8 @@ namespace G
             string? since,
             global::G.InputBehavior? behavior)
         {
-            this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.Type = type;
+            this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.Since = since;
             this.Behavior = behavior;
         }

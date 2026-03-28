@@ -36,23 +36,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ASTGreaterThanOperatorNodeInput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: gt_operator
-        /// </param>
         /// <param name="left">
         /// Left operand of the binary operator.
         /// </param>
         /// <param name="right">
         /// Right operand of the binary operator.
         /// </param>
+        /// <param name="type">
+        /// Default Value: gt_operator
+        /// </param>
         public ASTGreaterThanOperatorNodeInput(
             global::G.Left3 left,
             global::G.Right3 right,
             string? type)
         {
+            this.Type = type;
             this.Left = left;
             this.Right = right;
-            this.Type = type;
         }
 
         /// <summary>

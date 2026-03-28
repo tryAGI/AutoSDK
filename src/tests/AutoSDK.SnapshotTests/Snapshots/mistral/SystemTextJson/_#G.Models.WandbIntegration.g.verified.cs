@@ -51,17 +51,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WandbIntegration" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: wandb
-        /// </param>
         /// <param name="project">
         /// The name of the project that the new run will be created under.
         /// </param>
-        /// <param name="name">
-        /// A display name to set for the run. If not set, will use the job ID as the name.
-        /// </param>
         /// <param name="apiKey">
         /// The WandB API key to use for authentication.
+        /// </param>
+        /// <param name="type">
+        /// Default Value: wandb
+        /// </param>
+        /// <param name="name">
+        /// A display name to set for the run. If not set, will use the job ID as the name.
         /// </param>
         /// <param name="runName"></param>
 #if NET7_0_OR_GREATER
@@ -74,10 +74,10 @@ namespace G
             string? name,
             string? runName)
         {
-            this.Project = project ?? throw new global::System.ArgumentNullException(nameof(project));
-            this.ApiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
             this.Type = type;
+            this.Project = project ?? throw new global::System.ArgumentNullException(nameof(project));
             this.Name = name;
+            this.ApiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
             this.RunName = runName;
         }
 

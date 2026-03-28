@@ -36,23 +36,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseAudioTranscriptDeltaEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.audio.transcript.delta`.
-        /// </param>
         /// <param name="delta">
         /// The partial transcript of the audio response.
         /// </param>
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.audio.transcript.delta`.
+        /// </param>
         public ResponseAudioTranscriptDeltaEvent(
             string delta,
             int sequenceNumber,
             global::G.ResponseAudioTranscriptDeltaEventType type)
         {
+            this.Type = type;
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.SequenceNumber = sequenceNumber;
-            this.Type = type;
         }
 
         /// <summary>

@@ -34,10 +34,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaErrorResponse" /> class.
         /// </summary>
+        /// <param name="error"></param>
         /// <param name="type">
         /// Default Value: error
         /// </param>
-        /// <param name="error"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -45,8 +45,8 @@ namespace G
             global::G.Error error,
             global::G.BetaErrorResponseType type = global::G.BetaErrorResponseType.Error)
         {
-            this.Error = error;
             this.Type = type;
+            this.Error = error;
         }
 
         /// <summary>

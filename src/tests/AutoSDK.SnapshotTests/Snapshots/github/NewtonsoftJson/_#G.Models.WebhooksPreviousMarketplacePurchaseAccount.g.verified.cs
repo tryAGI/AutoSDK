@@ -51,8 +51,8 @@ namespace G
         /// <param name="id"></param>
         /// <param name="login"></param>
         /// <param name="nodeId"></param>
-        /// <param name="organizationBillingEmail"></param>
         /// <param name="type"></param>
+        /// <param name="organizationBillingEmail"></param>
         public WebhooksPreviousMarketplacePurchaseAccount(
             int id,
             string login,
@@ -63,8 +63,8 @@ namespace G
             this.Id = id;
             this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.OrganizationBillingEmail = organizationBillingEmail;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

@@ -67,10 +67,10 @@ namespace G
         /// for all responses in the stream.
         /// </param>
         /// <param name="choices"></param>
-        /// <param name="searchQueries"></param>
         /// <param name="contextRetrieved"></param>
         /// <param name="answerInContext"></param>
         /// <param name="sources"></param>
+        /// <param name="searchQueries"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -84,10 +84,10 @@ namespace G
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
+            this.SearchQueries = searchQueries;
             this.ContextRetrieved = contextRetrieved;
             this.AnswerInContext = answerInContext;
             this.Sources = sources ?? throw new global::System.ArgumentNullException(nameof(sources));
-            this.SearchQueries = searchQueries;
         }
 
         /// <summary>

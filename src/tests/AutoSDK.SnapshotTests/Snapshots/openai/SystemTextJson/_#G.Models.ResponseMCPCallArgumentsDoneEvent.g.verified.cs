@@ -53,9 +53,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseMCPCallArgumentsDoneEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always 'response.mcp_call.arguments_done'.
-        /// </param>
         /// <param name="outputIndex">
         /// The index of the output item in the response's output array.
         /// </param>
@@ -68,6 +65,9 @@ namespace G
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always 'response.mcp_call.arguments_done'.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -78,11 +78,11 @@ namespace G
             int sequenceNumber,
             global::G.ResponseMCPCallArgumentsDoneEventType type)
         {
+            this.Type = type;
             this.OutputIndex = outputIndex;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.SequenceNumber = sequenceNumber;
-            this.Type = type;
         }
 
         /// <summary>

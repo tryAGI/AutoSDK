@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatTools" /> class.
         /// </summary>
+        /// <param name="function"></param>
         /// <param name="type">
         /// Default Value: function
         /// </param>
-        /// <param name="function"></param>
         public ChatTools(
             global::G.FunctionDefinition function,
             string? type)
         {
-            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
             this.Type = type;
+            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
         }
 
         /// <summary>

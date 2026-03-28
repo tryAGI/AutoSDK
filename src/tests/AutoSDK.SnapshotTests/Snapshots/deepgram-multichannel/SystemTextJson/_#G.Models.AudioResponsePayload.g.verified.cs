@@ -38,10 +38,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AudioResponsePayload" /> class.
         /// </summary>
-        /// <param name="messageType"></param>
         /// <param name="audioBase64">
         /// Base64-encoded synthesized audio.
         /// </param>
+        /// <param name="messageType"></param>
         /// <param name="durationMs">
         /// Audio duration in milliseconds.
         /// </param>
@@ -53,8 +53,8 @@ namespace G
             global::G.AudioResponsePayloadMessageType messageType,
             int? durationMs)
         {
-            this.AudioBase64 = audioBase64 ?? throw new global::System.ArgumentNullException(nameof(audioBase64));
             this.MessageType = messageType;
+            this.AudioBase64 = audioBase64 ?? throw new global::System.ArgumentNullException(nameof(audioBase64));
             this.DurationMs = durationMs;
         }
 

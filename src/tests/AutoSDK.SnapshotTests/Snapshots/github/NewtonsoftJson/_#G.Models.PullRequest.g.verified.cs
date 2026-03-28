@@ -401,37 +401,13 @@ namespace G
         /// <param name="user">
         /// A GitHub user.
         /// </param>
-        /// <param name="body">
-        /// Example: Please pull these awesome changes
-        /// </param>
         /// <param name="labels"></param>
-        /// <param name="milestone">
-        /// A collection of related issues and pull requests.
-        /// </param>
-        /// <param name="activeLockReason">
-        /// Example: too heated
-        /// </param>
         /// <param name="createdAt">
         /// Example: 2011-01-26T19:01:12Z
         /// </param>
         /// <param name="updatedAt">
         /// Example: 2011-01-26T19:01:12Z
         /// </param>
-        /// <param name="closedAt">
-        /// Example: 2011-01-26T19:01:12Z
-        /// </param>
-        /// <param name="mergedAt">
-        /// Example: 2011-01-26T19:01:12Z
-        /// </param>
-        /// <param name="mergeCommitSha">
-        /// Example: e5bd3914e2e596debea16f433f57875b5b90bcd6
-        /// </param>
-        /// <param name="assignee">
-        /// A GitHub user.
-        /// </param>
-        /// <param name="assignees"></param>
-        /// <param name="requestedReviewers"></param>
-        /// <param name="requestedTeams"></param>
         /// <param name="head"></param>
         /// <param name="base"></param>
         /// <param name="links"></param>
@@ -439,25 +415,9 @@ namespace G
         /// How the author is associated with the repository.<br/>
         /// Example: OWNER
         /// </param>
-        /// <param name="autoMerge">
-        /// The status of auto merging a pull request.
-        /// </param>
-        /// <param name="draft">
-        /// Indicates whether or not the pull request is a draft.<br/>
-        /// Example: false
-        /// </param>
         /// <param name="merged"></param>
-        /// <param name="mergeable">
-        /// Example: true
-        /// </param>
-        /// <param name="rebaseable">
-        /// Example: true
-        /// </param>
         /// <param name="mergeableState">
         /// Example: clean
-        /// </param>
-        /// <param name="mergedBy">
-        /// A GitHub user.
         /// </param>
         /// <param name="comments">
         /// Example: 10
@@ -480,6 +440,46 @@ namespace G
         /// </param>
         /// <param name="changedFiles">
         /// Example: 5
+        /// </param>
+        /// <param name="body">
+        /// Example: Please pull these awesome changes
+        /// </param>
+        /// <param name="milestone">
+        /// A collection of related issues and pull requests.
+        /// </param>
+        /// <param name="activeLockReason">
+        /// Example: too heated
+        /// </param>
+        /// <param name="closedAt">
+        /// Example: 2011-01-26T19:01:12Z
+        /// </param>
+        /// <param name="mergedAt">
+        /// Example: 2011-01-26T19:01:12Z
+        /// </param>
+        /// <param name="mergeCommitSha">
+        /// Example: e5bd3914e2e596debea16f433f57875b5b90bcd6
+        /// </param>
+        /// <param name="assignee">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="assignees"></param>
+        /// <param name="requestedReviewers"></param>
+        /// <param name="requestedTeams"></param>
+        /// <param name="autoMerge">
+        /// The status of auto merging a pull request.
+        /// </param>
+        /// <param name="draft">
+        /// Indicates whether or not the pull request is a draft.<br/>
+        /// Example: false
+        /// </param>
+        /// <param name="mergeable">
+        /// Example: true
+        /// </param>
+        /// <param name="rebaseable">
+        /// Example: true
+        /// </param>
+        /// <param name="mergedBy">
+        /// A GitHub user.
         /// </param>
         public PullRequest(
             string url,
@@ -548,25 +548,12 @@ namespace G
             this.Locked = locked;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
-            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
-            this.Head = head ?? throw new global::System.ArgumentNullException(nameof(head));
-            this.Base = @base ?? throw new global::System.ArgumentNullException(nameof(@base));
-            this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
-            this.AuthorAssociation = authorAssociation;
-            this.Merged = merged;
-            this.MergeableState = mergeableState ?? throw new global::System.ArgumentNullException(nameof(mergeableState));
-            this.Comments = comments;
-            this.ReviewComments = reviewComments;
-            this.MaintainerCanModify = maintainerCanModify;
-            this.Commits = commits;
-            this.Additions = additions;
-            this.Deletions = deletions;
-            this.ChangedFiles = changedFiles;
             this.Body = body;
+            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
             this.Milestone = milestone;
             this.ActiveLockReason = activeLockReason;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.ClosedAt = closedAt;
             this.MergedAt = mergedAt;
             this.MergeCommitSha = mergeCommitSha;
@@ -574,11 +561,24 @@ namespace G
             this.Assignees = assignees;
             this.RequestedReviewers = requestedReviewers;
             this.RequestedTeams = requestedTeams;
+            this.Head = head ?? throw new global::System.ArgumentNullException(nameof(head));
+            this.Base = @base ?? throw new global::System.ArgumentNullException(nameof(@base));
+            this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
+            this.AuthorAssociation = authorAssociation;
             this.AutoMerge = autoMerge;
             this.Draft = draft;
+            this.Merged = merged;
             this.Mergeable = mergeable;
             this.Rebaseable = rebaseable;
+            this.MergeableState = mergeableState ?? throw new global::System.ArgumentNullException(nameof(mergeableState));
             this.MergedBy = mergedBy;
+            this.Comments = comments;
+            this.ReviewComments = reviewComments;
+            this.MaintainerCanModify = maintainerCanModify;
+            this.Commits = commits;
+            this.Additions = additions;
+            this.Deletions = deletions;
+            this.ChangedFiles = changedFiles;
         }
 
         /// <summary>

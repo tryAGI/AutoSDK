@@ -70,7 +70,6 @@ namespace G
         /// <param name="includeTimestamps">
         /// Default Value: true
         /// </param>
-        /// <param name="format"></param>
         /// <param name="segmentOnSilenceLongerThanS">
         /// Default Value: 0.8F
         /// </param>
@@ -80,6 +79,7 @@ namespace G
         /// <param name="maxSegmentChars">
         /// Default Value: 84
         /// </param>
+        /// <param name="format"></param>
         public SrtExportOptions(
             int? maxCharactersPerLine,
             bool? includeSpeakers,

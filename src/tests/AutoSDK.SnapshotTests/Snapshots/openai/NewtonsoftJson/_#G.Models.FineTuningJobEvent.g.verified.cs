@@ -60,9 +60,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FineTuningJobEvent" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The object type, which is always "fine_tuning.job.event".
-        /// </param>
         /// <param name="id">
         /// The object identifier.
         /// </param>
@@ -74,6 +71,9 @@ namespace G
         /// </param>
         /// <param name="message">
         /// The message of the event.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always "fine_tuning.job.event".
         /// </param>
         /// <param name="type">
         /// The type of event.
@@ -90,11 +90,11 @@ namespace G
             global::G.FineTuningJobEventType? type,
             object? data)
         {
+            this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
             this.Level = level;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.Object = @object;
             this.Type = type;
             this.Data = data;
         }

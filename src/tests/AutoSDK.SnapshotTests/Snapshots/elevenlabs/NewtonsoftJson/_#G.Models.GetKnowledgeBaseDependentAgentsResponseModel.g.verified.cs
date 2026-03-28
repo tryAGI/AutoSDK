@@ -43,9 +43,9 @@ namespace G
         /// Initializes a new instance of the <see cref="GetKnowledgeBaseDependentAgentsResponseModel" /> class.
         /// </summary>
         /// <param name="agents"></param>
+        /// <param name="hasMore"></param>
         /// <param name="branches"></param>
         /// <param name="nextCursor"></param>
-        /// <param name="hasMore"></param>
         public GetKnowledgeBaseDependentAgentsResponseModel(
             global::System.Collections.Generic.IList<global::G.AgentsItem2> agents,
             bool hasMore,
@@ -53,9 +53,9 @@ namespace G
             string? nextCursor)
         {
             this.Agents = agents ?? throw new global::System.ArgumentNullException(nameof(agents));
-            this.HasMore = hasMore;
             this.Branches = branches;
             this.NextCursor = nextCursor;
+            this.HasMore = hasMore;
         }
 
         /// <summary>

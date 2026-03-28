@@ -52,10 +52,10 @@ namespace G
         /// Initializes a new instance of the <see cref="NullableCollaboratorPermissions" /> class.
         /// </summary>
         /// <param name="pull"></param>
-        /// <param name="triage"></param>
         /// <param name="push"></param>
-        /// <param name="maintain"></param>
         /// <param name="admin"></param>
+        /// <param name="triage"></param>
+        /// <param name="maintain"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -67,10 +67,10 @@ namespace G
             bool? maintain)
         {
             this.Pull = pull;
-            this.Push = push;
-            this.Admin = admin;
             this.Triage = triage;
+            this.Push = push;
             this.Maintain = maintain;
+            this.Admin = admin;
         }
 
         /// <summary>

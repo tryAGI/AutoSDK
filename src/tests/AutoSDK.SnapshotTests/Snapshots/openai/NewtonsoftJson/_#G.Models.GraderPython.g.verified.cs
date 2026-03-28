@@ -42,14 +42,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GraderPython" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The object type, which is always `python`.
-        /// </param>
         /// <param name="name">
         /// The name of the grader.
         /// </param>
         /// <param name="source">
         /// The source code of the python script.
+        /// </param>
+        /// <param name="type">
+        /// The object type, which is always `python`.
         /// </param>
         /// <param name="imageTag">
         /// The image tag to use for the python script.
@@ -60,9 +60,9 @@ namespace G
             global::G.GraderPythonType type,
             string? imageTag)
         {
+            this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
-            this.Type = type;
             this.ImageTag = imageTag;
         }
 

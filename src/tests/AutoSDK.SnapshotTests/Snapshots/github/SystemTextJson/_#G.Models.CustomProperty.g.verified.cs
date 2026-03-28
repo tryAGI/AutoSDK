@@ -79,12 +79,12 @@ namespace G
         /// <param name="propertyName">
         /// The name of the property
         /// </param>
-        /// <param name="url">
-        /// The URL that can be used to fetch, update, or delete info about this property via the API.
-        /// </param>
         /// <param name="valueType">
         /// The type of the value for the property<br/>
         /// Example: single_select
+        /// </param>
+        /// <param name="url">
+        /// The URL that can be used to fetch, update, or delete info about this property via the API.
         /// </param>
         /// <param name="required">
         /// Whether the property is required.
@@ -117,8 +117,8 @@ namespace G
             global::G.CustomPropertyValuesEditableBy? valuesEditableBy)
         {
             this.PropertyName = propertyName ?? throw new global::System.ArgumentNullException(nameof(propertyName));
-            this.ValueType = valueType;
             this.Url = url;
+            this.ValueType = valueType;
             this.Required = required;
             this.DefaultValue = defaultValue;
             this.Description = description;

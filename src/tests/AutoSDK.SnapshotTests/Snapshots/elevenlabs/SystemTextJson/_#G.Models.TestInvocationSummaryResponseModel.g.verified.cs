@@ -88,12 +88,6 @@ namespace G
         /// <param name="id">
         /// The ID of the test invocation
         /// </param>
-        /// <param name="agentId">
-        /// The ID of the agent this test invocation belongs to
-        /// </param>
-        /// <param name="branchId">
-        /// The ID of the branch this test invocation was run on
-        /// </param>
         /// <param name="createdAtUnixSecs">
         /// Creation time of the test invocation in unix seconds
         /// </param>
@@ -111,6 +105,12 @@ namespace G
         /// </param>
         /// <param name="title">
         /// Title of the test invocation - either the single test name or count of tests
+        /// </param>
+        /// <param name="agentId">
+        /// The ID of the agent this test invocation belongs to
+        /// </param>
+        /// <param name="branchId">
+        /// The ID of the branch this test invocation was run on
         /// </param>
         /// <param name="accessInfo">
         /// The access information of the test invocation
@@ -131,14 +131,14 @@ namespace G
             global::G.ResourceAccessInfo? accessInfo)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.AgentId = agentId;
+            this.BranchId = branchId;
             this.CreatedAtUnixSecs = createdAtUnixSecs;
             this.TestRunCount = testRunCount;
             this.PassedCount = passedCount;
             this.FailedCount = failedCount;
             this.PendingCount = pendingCount;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.AgentId = agentId;
-            this.BranchId = branchId;
             this.AccessInfo = accessInfo;
         }
 

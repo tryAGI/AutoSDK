@@ -37,16 +37,16 @@ namespace G
         /// Initializes a new instance of the <see cref="GetKnowledgeBaseListResponseModel" /> class.
         /// </summary>
         /// <param name="documents"></param>
-        /// <param name="nextCursor"></param>
         /// <param name="hasMore"></param>
+        /// <param name="nextCursor"></param>
         public GetKnowledgeBaseListResponseModel(
             global::System.Collections.Generic.IList<global::G.DocumentsItem> documents,
             bool hasMore,
             string? nextCursor)
         {
             this.Documents = documents ?? throw new global::System.ArgumentNullException(nameof(documents));
-            this.HasMore = hasMore;
             this.NextCursor = nextCursor;
+            this.HasMore = hasMore;
         }
 
         /// <summary>

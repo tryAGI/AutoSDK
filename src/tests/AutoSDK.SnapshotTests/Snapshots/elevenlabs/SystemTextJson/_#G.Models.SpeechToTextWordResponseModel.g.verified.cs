@@ -68,20 +68,20 @@ namespace G
         /// <param name="text">
         /// The word or sound that was transcribed.
         /// </param>
+        /// <param name="type">
+        /// The type of the word or sound. 'audio_event' is used for non-word sounds like laughter or footsteps.
+        /// </param>
+        /// <param name="logprob">
+        /// The log of the probability with which this word was predicted. Logprobs are in range [-infinity, 0], higher logprobs indicate a higher confidence the model has in its predictions.
+        /// </param>
         /// <param name="start">
         /// The start time of the word or sound in seconds.
         /// </param>
         /// <param name="end">
         /// The end time of the word or sound in seconds.
         /// </param>
-        /// <param name="type">
-        /// The type of the word or sound. 'audio_event' is used for non-word sounds like laughter or footsteps.
-        /// </param>
         /// <param name="speakerId">
         /// Unique identifier for the speaker of this word.
-        /// </param>
-        /// <param name="logprob">
-        /// The log of the probability with which this word was predicted. Logprobs are in range [-infinity, 0], higher logprobs indicate a higher confidence the model has in its predictions.
         /// </param>
         /// <param name="characters">
         /// The characters that make up the word and their timing information.
@@ -99,11 +99,11 @@ namespace G
             global::System.Collections.Generic.IList<global::G.SpeechToTextCharacterResponseModel>? characters)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
-            this.Type = type;
-            this.Logprob = logprob;
             this.Start = start;
             this.End = end;
+            this.Type = type;
             this.SpeakerId = speakerId;
+            this.Logprob = logprob;
             this.Characters = characters;
         }
 

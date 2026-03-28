@@ -84,11 +84,11 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="displayName"></param>
+        /// <param name="isPersonal"></param>
+        /// <param name="disabled"></param>
         /// <param name="createdAt"></param>
         /// <param name="createdByUserId"></param>
         /// <param name="modifiedAt"></param>
-        /// <param name="isPersonal"></param>
-        /// <param name="disabled"></param>
         /// <param name="ssoLoginSlug"></param>
         /// <param name="ssoOnly">
         /// Default Value: false
@@ -113,11 +113,11 @@ namespace G
         {
             this.Id = id;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
-            this.IsPersonal = isPersonal;
-            this.Disabled = disabled;
             this.CreatedAt = createdAt;
             this.CreatedByUserId = createdByUserId;
             this.ModifiedAt = modifiedAt;
+            this.IsPersonal = isPersonal;
+            this.Disabled = disabled;
             this.SsoLoginSlug = ssoLoginSlug;
             this.SsoOnly = ssoOnly;
             this.PublicSharingDisabled = publicSharingDisabled;

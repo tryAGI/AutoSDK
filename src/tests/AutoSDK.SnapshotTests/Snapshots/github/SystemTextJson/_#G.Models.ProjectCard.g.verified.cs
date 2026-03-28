@@ -125,17 +125,23 @@ namespace G
         /// <param name="nodeId">
         /// Example: MDExOlByb2plY3RDYXJkMTQ3OA==
         /// </param>
-        /// <param name="note">
-        /// Example: Add payload for delete Project column
-        /// </param>
-        /// <param name="creator">
-        /// A GitHub user.
-        /// </param>
         /// <param name="createdAt">
         /// Example: 2016-09-05T14:21:06Z
         /// </param>
         /// <param name="updatedAt">
         /// Example: 2016-09-05T14:20:22Z
+        /// </param>
+        /// <param name="columnUrl">
+        /// Example: https://api.github.com/projects/columns/367
+        /// </param>
+        /// <param name="projectUrl">
+        /// Example: https://api.github.com/projects/120
+        /// </param>
+        /// <param name="note">
+        /// Example: Add payload for delete Project column
+        /// </param>
+        /// <param name="creator">
+        /// A GitHub user.
         /// </param>
         /// <param name="archived">
         /// Whether or not the card is archived<br/>
@@ -143,14 +149,8 @@ namespace G
         /// </param>
         /// <param name="columnName"></param>
         /// <param name="projectId"></param>
-        /// <param name="columnUrl">
-        /// Example: https://api.github.com/projects/columns/367
-        /// </param>
         /// <param name="contentUrl">
         /// Example: https://api.github.com/repos/api-playground/projects-test/issues/3
-        /// </param>
-        /// <param name="projectUrl">
-        /// Example: https://api.github.com/projects/120
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -173,16 +173,16 @@ namespace G
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
-            this.ColumnUrl = columnUrl ?? throw new global::System.ArgumentNullException(nameof(columnUrl));
-            this.ProjectUrl = projectUrl ?? throw new global::System.ArgumentNullException(nameof(projectUrl));
             this.Note = note;
             this.Creator = creator;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.Archived = archived;
             this.ColumnName = columnName;
             this.ProjectId = projectId;
+            this.ColumnUrl = columnUrl ?? throw new global::System.ArgumentNullException(nameof(columnUrl));
             this.ContentUrl = contentUrl;
+            this.ProjectUrl = projectUrl ?? throw new global::System.ArgumentNullException(nameof(projectUrl));
         }
 
         /// <summary>

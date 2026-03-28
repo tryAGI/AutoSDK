@@ -78,12 +78,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerationSourceContext" /> class.
         /// </summary>
+        /// <param name="generationId"></param>
+        /// <param name="modelId"></param>
         /// <param name="sourceType">
         /// Default Value: generation
         /// </param>
-        /// <param name="generationId"></param>
         /// <param name="prompt"></param>
-        /// <param name="modelId"></param>
         /// <param name="modelProvider"></param>
         /// <param name="generationSessionId"></param>
         /// <param name="sessionIterationId"></param>
@@ -104,10 +104,10 @@ namespace G
             object? modelParameters,
             global::G.ReferenceVideo? extendVideo)
         {
-            this.GenerationId = generationId ?? throw new global::System.ArgumentNullException(nameof(generationId));
-            this.ModelId = modelId ?? throw new global::System.ArgumentNullException(nameof(modelId));
             this.SourceType = sourceType;
+            this.GenerationId = generationId ?? throw new global::System.ArgumentNullException(nameof(generationId));
             this.Prompt = prompt;
+            this.ModelId = modelId ?? throw new global::System.ArgumentNullException(nameof(modelId));
             this.ModelProvider = modelProvider;
             this.GenerationSessionId = generationSessionId;
             this.SessionIterationId = sessionIterationId;

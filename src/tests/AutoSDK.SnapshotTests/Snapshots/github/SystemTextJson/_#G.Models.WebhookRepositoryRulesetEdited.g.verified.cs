@@ -75,6 +75,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookRepositoryRulesetEdited" /> class.
         /// </summary>
+        /// <param name="repositoryRuleset">
+        /// A set of rules to apply when specified conditions are met.
+        /// </param>
+        /// <param name="sender">
+        /// A GitHub user.
+        /// </param>
         /// <param name="action"></param>
         /// <param name="enterprise">
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
@@ -94,13 +100,7 @@ namespace G
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
         /// when the event occurs from activity in a repository.
         /// </param>
-        /// <param name="repositoryRuleset">
-        /// A set of rules to apply when specified conditions are met.
-        /// </param>
         /// <param name="changes"></param>
-        /// <param name="sender">
-        /// A GitHub user.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -114,14 +114,14 @@ namespace G
             global::G.RepositoryWebhooks? repository,
             global::G.WebhookRepositoryRulesetEditedChanges? changes)
         {
-            this.RepositoryRuleset = repositoryRuleset ?? throw new global::System.ArgumentNullException(nameof(repositoryRuleset));
-            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Action = action;
             this.Enterprise = enterprise;
             this.Installation = installation;
             this.Organization = organization;
             this.Repository = repository;
+            this.RepositoryRuleset = repositoryRuleset ?? throw new global::System.ArgumentNullException(nameof(repositoryRuleset));
             this.Changes = changes;
+            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
         }
 
         /// <summary>

@@ -43,12 +43,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateSpeechToSpeechRequestElevenMultilingualStsV2" /> class.
         /// </summary>
-        /// <param name="removeBackgroundNoise">
-        /// Whether to remove background noise from the generated speech.
-        /// </param>
         /// <param name="media"></param>
         /// <param name="voice">
         /// The voice to use for the generated speech.
+        /// </param>
+        /// <param name="removeBackgroundNoise">
+        /// Whether to remove background noise from the generated speech.
         /// </param>
         /// <param name="model"></param>
         public CreateSpeechToSpeechRequestElevenMultilingualStsV2(
@@ -57,9 +57,9 @@ namespace G
             bool? removeBackgroundNoise,
             string model = "eleven_multilingual_sts_v2")
         {
+            this.RemoveBackgroundNoise = removeBackgroundNoise;
             this.Media = media;
             this.Voice = voice ?? throw new global::System.ArgumentNullException(nameof(voice));
-            this.RemoveBackgroundNoise = removeBackgroundNoise;
             this.Model = model;
         }
 

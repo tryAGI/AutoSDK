@@ -72,16 +72,16 @@ namespace G
         /// Initializes a new instance of the <see cref="Event" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="type"></param>
         /// <param name="actor">
         /// Actor
         /// </param>
         /// <param name="repo"></param>
+        /// <param name="payload"></param>
+        /// <param name="public"></param>
+        /// <param name="type"></param>
         /// <param name="org">
         /// Actor
         /// </param>
-        /// <param name="payload"></param>
-        /// <param name="public"></param>
         /// <param name="createdAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -97,12 +97,12 @@ namespace G
             global::System.DateTime? createdAt)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Type = type;
             this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
             this.Repo = repo ?? throw new global::System.ArgumentNullException(nameof(repo));
+            this.Org = org;
             this.Payload = payload ?? throw new global::System.ArgumentNullException(nameof(payload));
             this.Public = @public;
-            this.Type = type;
-            this.Org = org;
             this.CreatedAt = createdAt;
         }
 

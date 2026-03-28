@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateChatCompletionRequestVariant2WebSearchOptionsUserLocation" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of location approximation. Always `approximate`.
-        /// </param>
         /// <param name="approximate">
         /// Approximate location parameters for the search.
+        /// </param>
+        /// <param name="type">
+        /// The type of location approximation. Always `approximate`.
         /// </param>
         public CreateChatCompletionRequestVariant2WebSearchOptionsUserLocation(
             global::G.WebSearchLocation approximate,
             global::G.CreateChatCompletionRequestVariant2WebSearchOptionsUserLocationType type)
         {
-            this.Approximate = approximate ?? throw new global::System.ArgumentNullException(nameof(approximate));
             this.Type = type;
+            this.Approximate = approximate ?? throw new global::System.ArgumentNullException(nameof(approximate));
         }
 
         /// <summary>

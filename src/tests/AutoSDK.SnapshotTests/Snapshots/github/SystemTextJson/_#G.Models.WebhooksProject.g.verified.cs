@@ -108,12 +108,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhooksProject" /> class.
         /// </summary>
-        /// <param name="body">
-        /// Body of the project
-        /// </param>
         /// <param name="columnsUrl"></param>
         /// <param name="createdAt"></param>
-        /// <param name="creator"></param>
         /// <param name="htmlUrl"></param>
         /// <param name="id"></param>
         /// <param name="name">
@@ -127,6 +123,10 @@ namespace G
         /// </param>
         /// <param name="updatedAt"></param>
         /// <param name="url"></param>
+        /// <param name="body">
+        /// Body of the project
+        /// </param>
+        /// <param name="creator"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -145,8 +145,10 @@ namespace G
             string? body,
             global::G.WebhooksProjectCreator? creator)
         {
+            this.Body = body;
             this.ColumnsUrl = columnsUrl ?? throw new global::System.ArgumentNullException(nameof(columnsUrl));
             this.CreatedAt = createdAt;
+            this.Creator = creator;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -156,8 +158,6 @@ namespace G
             this.State = state;
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Body = body;
-            this.Creator = creator;
         }
 
         /// <summary>

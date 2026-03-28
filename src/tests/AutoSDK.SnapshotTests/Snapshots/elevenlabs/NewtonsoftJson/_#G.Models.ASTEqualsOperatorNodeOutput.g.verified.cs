@@ -37,23 +37,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ASTEqualsOperatorNodeOutput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: eq_operator
-        /// </param>
         /// <param name="left">
         /// Left operand of the binary operator.
         /// </param>
         /// <param name="right">
         /// Right operand of the binary operator.
         /// </param>
+        /// <param name="type">
+        /// Default Value: eq_operator
+        /// </param>
         public ASTEqualsOperatorNodeOutput(
             global::G.Left2 left,
             global::G.Right2 right,
             string type = "eq_operator")
         {
+            this.Type = type;
             this.Left = left;
             this.Right = right;
-            this.Type = type;
         }
 
         /// <summary>

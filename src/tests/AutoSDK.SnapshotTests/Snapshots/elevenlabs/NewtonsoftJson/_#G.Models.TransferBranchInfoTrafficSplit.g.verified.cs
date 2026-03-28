@@ -37,17 +37,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TransferBranchInfoTrafficSplit" /> class.
         /// </summary>
-        /// <param name="branchReason"></param>
         /// <param name="branchId"></param>
         /// <param name="trafficPercentage"></param>
+        /// <param name="branchReason"></param>
         public TransferBranchInfoTrafficSplit(
             string branchId,
             double trafficPercentage,
             string branchReason = "traffic_split")
         {
+            this.BranchReason = branchReason;
             this.BranchId = branchId ?? throw new global::System.ArgumentNullException(nameof(branchId));
             this.TrafficPercentage = trafficPercentage;
-            this.BranchReason = branchReason;
         }
 
         /// <summary>

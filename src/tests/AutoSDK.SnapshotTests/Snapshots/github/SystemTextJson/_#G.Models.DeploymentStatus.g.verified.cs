@@ -151,16 +151,9 @@ namespace G
         /// The state of the status.<br/>
         /// Example: success
         /// </param>
-        /// <param name="creator">
-        /// A GitHub user.
-        /// </param>
         /// <param name="description">
         /// A short description of the status.<br/>
         /// Example: Deployment finished successfully.
-        /// </param>
-        /// <param name="environment">
-        /// The environment of the deployment that the status is for.<br/>
-        /// Example: production
         /// </param>
         /// <param name="targetUrl">
         /// Deprecated: the URL to associate with this status.<br/>
@@ -177,6 +170,13 @@ namespace G
         /// </param>
         /// <param name="repositoryUrl">
         /// Example: https://api.github.com/repos/octocat/example
+        /// </param>
+        /// <param name="creator">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="environment">
+        /// The environment of the deployment that the status is for.<br/>
+        /// Example: production
         /// </param>
         /// <param name="environmentUrl">
         /// The URL for accessing your environment.<br/>
@@ -213,14 +213,14 @@ namespace G
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.State = state;
+            this.Creator = creator;
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Environment = environment;
             this.TargetUrl = targetUrl ?? throw new global::System.ArgumentNullException(nameof(targetUrl));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.DeploymentUrl = deploymentUrl ?? throw new global::System.ArgumentNullException(nameof(deploymentUrl));
             this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
-            this.Creator = creator;
-            this.Environment = environment;
             this.EnvironmentUrl = environmentUrl;
             this.LogUrl = logUrl;
             this.PerformedViaGithubApp = performedViaGithubApp;

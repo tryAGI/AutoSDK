@@ -50,15 +50,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Webhook" /> class.
         /// </summary>
+        /// <param name="url"></param>
+        /// <param name="events"></param>
+        /// <param name="secrets"></param>
         /// <param name="webhookId">
         /// Included only in responses
         /// </param>
         /// <param name="created">
         /// Included only in responses
         /// </param>
-        /// <param name="url"></param>
-        /// <param name="secrets"></param>
-        /// <param name="events"></param>
         public Webhook(
             string url,
             global::System.Collections.Generic.IList<global::G.EventsEnum> events,
@@ -66,11 +66,11 @@ namespace G
             global::System.Guid webhookId = default!,
             global::System.DateTime created = default!)
         {
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Events = events ?? throw new global::System.ArgumentNullException(nameof(events));
             this.WebhookId = webhookId;
             this.Created = created;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Secrets = secrets;
+            this.Events = events ?? throw new global::System.ArgumentNullException(nameof(events));
         }
 
         /// <summary>

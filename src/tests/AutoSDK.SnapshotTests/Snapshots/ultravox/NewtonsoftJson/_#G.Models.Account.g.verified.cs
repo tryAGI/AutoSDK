@@ -78,6 +78,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Account" /> class.
         /// </summary>
+        /// <param name="hasActiveSubscription">
+        /// Whether the account has an active subscription.
+        /// </param>
         /// <param name="name">
         /// Included only in responses
         /// </param>
@@ -91,9 +94,6 @@ namespace G
         /// <param name="freeTimeRemaining">
         /// How much free call time this account has remaining. (This could increase if an existing call ends without using its maximum duration or an unjoined call times out.)<br/>
         /// Included only in responses
-        /// </param>
-        /// <param name="hasActiveSubscription">
-        /// Whether the account has an active subscription.
         /// </param>
         /// <param name="activeCalls">
         /// The number of active calls for this account.<br/>
@@ -117,11 +117,11 @@ namespace G
             int allowedConcurrentCalls = default!,
             int allowedVoices = default!)
         {
-            this.HasActiveSubscription = hasActiveSubscription;
             this.Name = name;
             this.BillingUrl = billingUrl;
             this.FreeTimeUsed = freeTimeUsed;
             this.FreeTimeRemaining = freeTimeRemaining;
+            this.HasActiveSubscription = hasActiveSubscription;
             this.ActiveCalls = activeCalls;
             this.AllowedConcurrentCalls = allowedConcurrentCalls;
             this.AllowedVoices = allowedVoices;

@@ -107,17 +107,17 @@ namespace G
         /// <param name="nodeId"></param>
         /// <param name="name"></param>
         /// <param name="slug"></param>
-        /// <param name="description"></param>
-        /// <param name="privacy"></param>
-        /// <param name="notificationSetting"></param>
         /// <param name="permission"></param>
-        /// <param name="permissions"></param>
         /// <param name="url"></param>
         /// <param name="htmlUrl">
         /// Example: https://github.com/orgs/rails/teams/core
         /// </param>
         /// <param name="membersUrl"></param>
         /// <param name="repositoriesUrl"></param>
+        /// <param name="description"></param>
+        /// <param name="privacy"></param>
+        /// <param name="notificationSetting"></param>
+        /// <param name="permissions"></param>
         /// <param name="parent">
         /// Groups of organization members that gives permissions on specified repositories.
         /// </param>
@@ -141,15 +141,15 @@ namespace G
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
+            this.Description = description;
+            this.Privacy = privacy;
+            this.NotificationSetting = notificationSetting;
             this.Permission = permission ?? throw new global::System.ArgumentNullException(nameof(permission));
+            this.Permissions = permissions;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.MembersUrl = membersUrl ?? throw new global::System.ArgumentNullException(nameof(membersUrl));
             this.RepositoriesUrl = repositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(repositoriesUrl));
-            this.Description = description;
-            this.Privacy = privacy;
-            this.NotificationSetting = notificationSetting;
-            this.Permissions = permissions;
             this.Parent = parent;
         }
 

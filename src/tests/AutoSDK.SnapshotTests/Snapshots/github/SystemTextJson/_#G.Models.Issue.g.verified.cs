@@ -276,13 +276,25 @@ namespace G
         /// State of the issue; either 'open' or 'closed'<br/>
         /// Example: open
         /// </param>
-        /// <param name="stateReason">
-        /// The reason for the current state<br/>
-        /// Example: not_planned
-        /// </param>
         /// <param name="title">
         /// Title of the issue<br/>
         /// Example: Widget creation fails in Safari on OS X 10.8
+        /// </param>
+        /// <param name="labels">
+        /// Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository<br/>
+        /// Example: [bug, registration]
+        /// </param>
+        /// <param name="locked"></param>
+        /// <param name="comments"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="authorAssociation">
+        /// How the author is associated with the repository.<br/>
+        /// Example: OWNER
+        /// </param>
+        /// <param name="stateReason">
+        /// The reason for the current state<br/>
+        /// Example: not_planned
         /// </param>
         /// <param name="body">
         /// Contents of the issue<br/>
@@ -291,10 +303,6 @@ namespace G
         /// <param name="user">
         /// A GitHub user.
         /// </param>
-        /// <param name="labels">
-        /// Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository<br/>
-        /// Example: [bug, registration]
-        /// </param>
         /// <param name="assignee">
         /// A GitHub user.
         /// </param>
@@ -302,13 +310,9 @@ namespace G
         /// <param name="milestone">
         /// A collection of related issues and pull requests.
         /// </param>
-        /// <param name="locked"></param>
         /// <param name="activeLockReason"></param>
-        /// <param name="comments"></param>
         /// <param name="pullRequest"></param>
         /// <param name="closedAt"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
         /// <param name="draft"></param>
         /// <param name="closedBy">
         /// A GitHub user.
@@ -321,10 +325,6 @@ namespace G
         /// </param>
         /// <param name="performedViaGithubApp">
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-        /// </param>
-        /// <param name="authorAssociation">
-        /// How the author is associated with the repository.<br/>
-        /// Example: OWNER
         /// </param>
         /// <param name="reactions"></param>
 #if NET7_0_OR_GREATER
@@ -376,22 +376,21 @@ namespace G
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Number = number;
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
-            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
-            this.Locked = locked;
-            this.Comments = comments;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
-            this.AuthorAssociation = authorAssociation;
             this.StateReason = stateReason;
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Body = body;
             this.User = user;
+            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
             this.Assignee = assignee;
             this.Assignees = assignees;
             this.Milestone = milestone;
+            this.Locked = locked;
             this.ActiveLockReason = activeLockReason;
+            this.Comments = comments;
             this.PullRequest = pullRequest;
             this.ClosedAt = closedAt;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.Draft = draft;
             this.ClosedBy = closedBy;
             this.BodyHtml = bodyHtml;
@@ -399,6 +398,7 @@ namespace G
             this.TimelineUrl = timelineUrl;
             this.Repository = repository;
             this.PerformedViaGithubApp = performedViaGithubApp;
+            this.AuthorAssociation = authorAssociation;
             this.Reactions = reactions;
         }
 

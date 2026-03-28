@@ -64,6 +64,10 @@ namespace G
         /// The unique identifier of the image within the document, used to reference it in related content.<br/>
         /// Example: chart_1
         /// </param>
+        /// <param name="mimeType">
+        /// The MIME type of the image, indicating the format of the binary data (e.g., image/jpeg for JPEG images).<br/>
+        /// Example: image/jpeg
+        /// </param>
         /// <param name="title">
         /// A short, human-readable title for the image, often displayed above or alongside it.<br/>
         /// Example: Quarterly Sales Performance
@@ -76,10 +80,6 @@ namespace G
         /// A longer, detailed description of the image for accessibility or additional context.<br/>
         /// Example: A bar chart showing quarterly sales growth, with Q4 outperforming all previous quarters by 15%
         /// </param>
-        /// <param name="mimeType">
-        /// The MIME type of the image, indicating the format of the binary data (e.g., image/jpeg for JPEG images).<br/>
-        /// Example: image/jpeg
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -91,10 +91,10 @@ namespace G
             string? description)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.MimeType = mimeType ?? throw new global::System.ArgumentNullException(nameof(mimeType));
             this.Title = title;
             this.Caption = caption;
             this.Description = description;
+            this.MimeType = mimeType ?? throw new global::System.ArgumentNullException(nameof(mimeType));
         }
 
         /// <summary>

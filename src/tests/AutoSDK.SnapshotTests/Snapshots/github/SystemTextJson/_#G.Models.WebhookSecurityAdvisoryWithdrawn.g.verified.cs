@@ -68,6 +68,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookSecurityAdvisoryWithdrawn" /> class.
         /// </summary>
+        /// <param name="securityAdvisory">
+        /// The details of the security advisory, including summary, description, and severity.
+        /// </param>
         /// <param name="action"></param>
         /// <param name="enterprise">
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
@@ -87,9 +90,6 @@ namespace G
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
         /// when the event occurs from activity in a repository.
         /// </param>
-        /// <param name="securityAdvisory">
-        /// The details of the security advisory, including summary, description, and severity.
-        /// </param>
         /// <param name="sender">
         /// A GitHub user.
         /// </param>
@@ -105,12 +105,12 @@ namespace G
             global::G.RepositoryWebhooks? repository,
             global::G.SimpleUser? sender)
         {
-            this.SecurityAdvisory = securityAdvisory ?? throw new global::System.ArgumentNullException(nameof(securityAdvisory));
             this.Action = action;
             this.Enterprise = enterprise;
             this.Installation = installation;
             this.Organization = organization;
             this.Repository = repository;
+            this.SecurityAdvisory = securityAdvisory ?? throw new global::System.ArgumentNullException(nameof(securityAdvisory));
             this.Sender = sender;
         }
 

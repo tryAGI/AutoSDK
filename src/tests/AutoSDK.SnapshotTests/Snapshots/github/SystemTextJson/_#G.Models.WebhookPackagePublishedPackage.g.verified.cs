@@ -96,15 +96,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPackagePublishedPackage" /> class.
         /// </summary>
-        /// <param name="createdAt"></param>
-        /// <param name="description"></param>
         /// <param name="ecosystem"></param>
         /// <param name="htmlUrl"></param>
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="namespace"></param>
-        /// <param name="owner"></param>
         /// <param name="packageType"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="description"></param>
+        /// <param name="owner"></param>
         /// <param name="packageVersion"></param>
         /// <param name="registry"></param>
         /// <param name="updatedAt"></param>
@@ -125,15 +125,15 @@ namespace G
             global::G.WebhookPackagePublishedPackageRegistry? registry,
             string? updatedAt)
         {
+            this.CreatedAt = createdAt;
+            this.Description = description;
             this.Ecosystem = ecosystem ?? throw new global::System.ArgumentNullException(nameof(ecosystem));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Namespace = @namespace ?? throw new global::System.ArgumentNullException(nameof(@namespace));
-            this.PackageType = packageType ?? throw new global::System.ArgumentNullException(nameof(packageType));
-            this.CreatedAt = createdAt;
-            this.Description = description;
             this.Owner = owner;
+            this.PackageType = packageType ?? throw new global::System.ArgumentNullException(nameof(packageType));
             this.PackageVersion = packageVersion;
             this.Registry = registry;
             this.UpdatedAt = updatedAt;

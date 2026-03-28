@@ -42,9 +42,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestTextBlock" /> class.
         /// </summary>
+        /// <param name="text"></param>
         /// <param name="cacheControl"></param>
         /// <param name="citations"></param>
-        /// <param name="text"></param>
         /// <param name="type"></param>
         public RequestTextBlock(
             string text,
@@ -52,9 +52,9 @@ namespace G
             global::System.Collections.Generic.IList<global::G.CitationsVariant1Item3>? citations,
             global::G.RequestTextBlockType type)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.CacheControl = cacheControl;
             this.Citations = citations;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
         }
 

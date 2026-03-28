@@ -55,10 +55,10 @@ namespace G
         /// Initializes a new instance of the <see cref="TagKeyWithValuesAndTaggings" /> class.
         /// </summary>
         /// <param name="key"></param>
-        /// <param name="description"></param>
         /// <param name="id"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="description"></param>
         /// <param name="values"></param>
         public TagKeyWithValuesAndTaggings(
             string key,
@@ -69,10 +69,10 @@ namespace G
             global::System.Collections.Generic.IList<global::G.TagValueWithTaggings>? values)
         {
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
+            this.Description = description;
             this.Id = id;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.Description = description;
             this.Values = values;
         }
 

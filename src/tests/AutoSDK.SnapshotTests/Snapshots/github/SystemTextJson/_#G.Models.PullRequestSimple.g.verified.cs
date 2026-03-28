@@ -333,24 +333,31 @@ namespace G
         /// <param name="title">
         /// Example: new-feature
         /// </param>
+        /// <param name="labels"></param>
+        /// <param name="createdAt">
+        /// Example: 2011-01-26T19:01:12Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2011-01-26T19:01:12Z
+        /// </param>
+        /// <param name="head"></param>
+        /// <param name="base"></param>
+        /// <param name="links"></param>
+        /// <param name="authorAssociation">
+        /// How the author is associated with the repository.<br/>
+        /// Example: OWNER
+        /// </param>
         /// <param name="user">
         /// A GitHub user.
         /// </param>
         /// <param name="body">
         /// Example: Please pull these awesome changes
         /// </param>
-        /// <param name="labels"></param>
         /// <param name="milestone">
         /// A collection of related issues and pull requests.
         /// </param>
         /// <param name="activeLockReason">
         /// Example: too heated
-        /// </param>
-        /// <param name="createdAt">
-        /// Example: 2011-01-26T19:01:12Z
-        /// </param>
-        /// <param name="updatedAt">
-        /// Example: 2011-01-26T19:01:12Z
         /// </param>
         /// <param name="closedAt">
         /// Example: 2011-01-26T19:01:12Z
@@ -367,13 +374,6 @@ namespace G
         /// <param name="assignees"></param>
         /// <param name="requestedReviewers"></param>
         /// <param name="requestedTeams"></param>
-        /// <param name="head"></param>
-        /// <param name="base"></param>
-        /// <param name="links"></param>
-        /// <param name="authorAssociation">
-        /// How the author is associated with the repository.<br/>
-        /// Example: OWNER
-        /// </param>
         /// <param name="autoMerge">
         /// The status of auto merging a pull request.
         /// </param>
@@ -438,17 +438,13 @@ namespace G
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
             this.Locked = locked;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
-            this.Head = head ?? throw new global::System.ArgumentNullException(nameof(head));
-            this.Base = @base ?? throw new global::System.ArgumentNullException(nameof(@base));
-            this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
-            this.AuthorAssociation = authorAssociation;
             this.User = user;
             this.Body = body;
+            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
             this.Milestone = milestone;
             this.ActiveLockReason = activeLockReason;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.ClosedAt = closedAt;
             this.MergedAt = mergedAt;
             this.MergeCommitSha = mergeCommitSha;
@@ -456,6 +452,10 @@ namespace G
             this.Assignees = assignees;
             this.RequestedReviewers = requestedReviewers;
             this.RequestedTeams = requestedTeams;
+            this.Head = head ?? throw new global::System.ArgumentNullException(nameof(head));
+            this.Base = @base ?? throw new global::System.ArgumentNullException(nameof(@base));
+            this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
+            this.AuthorAssociation = authorAssociation;
             this.AutoMerge = autoMerge;
             this.Draft = draft;
         }

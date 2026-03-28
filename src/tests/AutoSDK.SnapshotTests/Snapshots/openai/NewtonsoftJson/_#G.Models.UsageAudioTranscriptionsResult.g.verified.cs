@@ -60,13 +60,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageAudioTranscriptionsResult" /> class.
         /// </summary>
-        /// <param name="object"></param>
         /// <param name="seconds">
         /// The number of seconds processed.
         /// </param>
         /// <param name="numModelRequests">
         /// The count of requests made to the model.
         /// </param>
+        /// <param name="object"></param>
         /// <param name="projectId">
         /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
         /// </param>
@@ -88,9 +88,9 @@ namespace G
             string? apiKeyId,
             string? model)
         {
+            this.Object = @object;
             this.Seconds = seconds;
             this.NumModelRequests = numModelRequests;
-            this.Object = @object;
             this.ProjectId = projectId;
             this.UserId = userId;
             this.ApiKeyId = apiKeyId;

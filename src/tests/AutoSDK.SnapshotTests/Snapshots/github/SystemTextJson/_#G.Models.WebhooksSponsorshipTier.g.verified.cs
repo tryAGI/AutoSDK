@@ -81,13 +81,13 @@ namespace G
         /// </summary>
         /// <param name="createdAt"></param>
         /// <param name="description"></param>
-        /// <param name="isCustomAmmount"></param>
-        /// <param name="isCustomAmount"></param>
         /// <param name="isOneTime"></param>
         /// <param name="monthlyPriceInCents"></param>
         /// <param name="monthlyPriceInDollars"></param>
         /// <param name="name"></param>
         /// <param name="nodeId"></param>
+        /// <param name="isCustomAmmount"></param>
+        /// <param name="isCustomAmount"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -104,13 +104,13 @@ namespace G
         {
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.IsCustomAmmount = isCustomAmmount;
+            this.IsCustomAmount = isCustomAmount;
             this.IsOneTime = isOneTime;
             this.MonthlyPriceInCents = monthlyPriceInCents;
             this.MonthlyPriceInDollars = monthlyPriceInDollars;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.IsCustomAmmount = isCustomAmmount;
-            this.IsCustomAmount = isCustomAmount;
         }
 
         /// <summary>

@@ -97,14 +97,14 @@ namespace G
         /// A GitHub user.
         /// </param>
         /// <param name="event"></param>
-        /// <param name="commitId"></param>
-        /// <param name="commitUrl"></param>
         /// <param name="createdAt"></param>
-        /// <param name="performedViaGithubApp">
-        /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-        /// </param>
         /// <param name="reviewRequester">
         /// A GitHub user.
+        /// </param>
+        /// <param name="commitId"></param>
+        /// <param name="commitUrl"></param>
+        /// <param name="performedViaGithubApp">
+        /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
         /// </param>
         /// <param name="requestedTeam">
         /// Groups of organization members that gives permissions on specified repositories.
@@ -131,11 +131,11 @@ namespace G
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
             this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));
-            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
-            this.ReviewRequester = reviewRequester ?? throw new global::System.ArgumentNullException(nameof(reviewRequester));
             this.CommitId = commitId;
             this.CommitUrl = commitUrl;
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.PerformedViaGithubApp = performedViaGithubApp;
+            this.ReviewRequester = reviewRequester ?? throw new global::System.ArgumentNullException(nameof(reviewRequester));
             this.RequestedTeam = requestedTeam;
             this.RequestedReviewer = requestedReviewer;
         }

@@ -41,14 +41,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeClientEventConversationItemRetrieve" /> class.
         /// </summary>
+        /// <param name="itemId">
+        /// The ID of the item to retrieve.
+        /// </param>
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
         /// <param name="type">
         /// The event type, must be `conversation.item.retrieve`.
-        /// </param>
-        /// <param name="itemId">
-        /// The ID of the item to retrieve.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -58,9 +58,9 @@ namespace G
             string? eventId,
             global::G.RealtimeClientEventConversationItemRetrieveType type)
         {
-            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.EventId = eventId;
             this.Type = type;
+            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
         }
 
         /// <summary>

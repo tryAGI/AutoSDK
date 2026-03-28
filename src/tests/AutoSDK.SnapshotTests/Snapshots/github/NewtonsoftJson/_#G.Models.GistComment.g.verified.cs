@@ -88,9 +88,6 @@ namespace G
         /// The comment text.<br/>
         /// Example: Body of the attachment
         /// </param>
-        /// <param name="user">
-        /// A GitHub user.
-        /// </param>
         /// <param name="createdAt">
         /// Example: 2011-04-18T23:23:56Z
         /// </param>
@@ -100,6 +97,9 @@ namespace G
         /// <param name="authorAssociation">
         /// How the author is associated with the repository.<br/>
         /// Example: OWNER
+        /// </param>
+        /// <param name="user">
+        /// A GitHub user.
         /// </param>
         public GistComment(
             int id,
@@ -115,10 +115,10 @@ namespace G
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
+            this.User = user;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.AuthorAssociation = authorAssociation;
-            this.User = user;
         }
 
         /// <summary>

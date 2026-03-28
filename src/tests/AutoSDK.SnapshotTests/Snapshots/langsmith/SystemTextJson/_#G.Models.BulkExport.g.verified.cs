@@ -106,17 +106,17 @@ namespace G
         /// <param name="sessionId"></param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
+        /// <param name="id"></param>
+        /// <param name="tenantId"></param>
+        /// <param name="status"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
         /// <param name="format">
         /// Default Value: Parquet
         /// </param>
         /// <param name="compression">
         /// Default Value: gzip
         /// </param>
-        /// <param name="id"></param>
-        /// <param name="tenantId"></param>
-        /// <param name="status"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
         /// <param name="finishedAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -139,13 +139,13 @@ namespace G
             this.SessionId = sessionId;
             this.StartTime = startTime;
             this.EndTime = endTime;
+            this.Format = format;
+            this.Compression = compression;
             this.Id = id;
             this.TenantId = tenantId;
             this.Status = status;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.Format = format;
-            this.Compression = compression;
             this.FinishedAt = finishedAt;
         }
 

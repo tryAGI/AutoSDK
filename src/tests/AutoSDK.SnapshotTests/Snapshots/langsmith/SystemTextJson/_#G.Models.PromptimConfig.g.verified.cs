@@ -81,12 +81,12 @@ namespace G
         /// <param name="messageIndex"></param>
         /// <param name="taskDescription"></param>
         /// <param name="datasetName"></param>
-        /// <param name="trainSplit"></param>
-        /// <param name="devSplit"></param>
-        /// <param name="testSplit"></param>
         /// <param name="evaluators"></param>
         /// <param name="numEpochs"></param>
         /// <param name="autoCommit"></param>
+        /// <param name="trainSplit"></param>
+        /// <param name="devSplit"></param>
+        /// <param name="testSplit"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -104,12 +104,12 @@ namespace G
             this.MessageIndex = messageIndex;
             this.TaskDescription = taskDescription ?? throw new global::System.ArgumentNullException(nameof(taskDescription));
             this.DatasetName = datasetName ?? throw new global::System.ArgumentNullException(nameof(datasetName));
-            this.Evaluators = evaluators ?? throw new global::System.ArgumentNullException(nameof(evaluators));
-            this.NumEpochs = numEpochs;
-            this.AutoCommit = autoCommit;
             this.TrainSplit = trainSplit;
             this.DevSplit = devSplit;
             this.TestSplit = testSplit;
+            this.Evaluators = evaluators ?? throw new global::System.ArgumentNullException(nameof(evaluators));
+            this.NumEpochs = numEpochs;
+            this.AutoCommit = autoCommit;
         }
 
         /// <summary>

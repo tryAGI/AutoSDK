@@ -72,6 +72,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AppV1alphaMessage" /> class.
         /// </summary>
+        /// <param name="content"></param>
+        /// <param name="role"></param>
         /// <param name="uid">
         /// Included only in responses
         /// </param>
@@ -81,8 +83,6 @@ namespace G
         /// <param name="conversationUid">
         /// Included only in responses
         /// </param>
-        /// <param name="content"></param>
-        /// <param name="role"></param>
         /// <param name="type"></param>
         /// <param name="createTime">
         /// Included only in responses
@@ -104,11 +104,11 @@ namespace G
             global::System.DateTime? updateTime,
             string? msgSenderUid)
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.Role = role ?? throw new global::System.ArgumentNullException(nameof(role));
             this.Uid = uid;
             this.AppUid = appUid;
             this.ConversationUid = conversationUid;
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Role = role ?? throw new global::System.ArgumentNullException(nameof(role));
             this.Type = type;
             this.CreateTime = createTime;
             this.UpdateTime = updateTime;

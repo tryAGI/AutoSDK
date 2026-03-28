@@ -88,10 +88,6 @@ namespace G
         /// The name of the label.<br/>
         /// Example: bug
         /// </param>
-        /// <param name="description">
-        /// Optional description of the label, such as its purpose.<br/>
-        /// Example: Something isn't working
-        /// </param>
         /// <param name="color">
         /// 6-character hex code, without the leading #, identifying the color<br/>
         /// Example: FFFFFF
@@ -99,6 +95,10 @@ namespace G
         /// <param name="default">
         /// Whether this label comes by default in a new repository.<br/>
         /// Example: true
+        /// </param>
+        /// <param name="description">
+        /// Optional description of the label, such as its purpose.<br/>
+        /// Example: Something isn't working
         /// </param>
         public Label(
             long id,
@@ -113,9 +113,9 @@ namespace G
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description;
             this.Color = color ?? throw new global::System.ArgumentNullException(nameof(color));
             this.Default = @default;
-            this.Description = description;
         }
 
         /// <summary>

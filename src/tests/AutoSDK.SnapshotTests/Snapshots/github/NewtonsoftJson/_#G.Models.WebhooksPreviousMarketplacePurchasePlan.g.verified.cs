@@ -79,8 +79,8 @@ namespace G
         /// <param name="monthlyPriceInCents"></param>
         /// <param name="name"></param>
         /// <param name="priceModel"></param>
-        /// <param name="unitName"></param>
         /// <param name="yearlyPriceInCents"></param>
+        /// <param name="unitName"></param>
         public WebhooksPreviousMarketplacePurchasePlan(
             global::System.Collections.Generic.IList<string> bullets,
             string description,
@@ -99,8 +99,8 @@ namespace G
             this.MonthlyPriceInCents = monthlyPriceInCents;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.PriceModel = priceModel;
-            this.YearlyPriceInCents = yearlyPriceInCents;
             this.UnitName = unitName;
+            this.YearlyPriceInCents = yearlyPriceInCents;
         }
 
         /// <summary>

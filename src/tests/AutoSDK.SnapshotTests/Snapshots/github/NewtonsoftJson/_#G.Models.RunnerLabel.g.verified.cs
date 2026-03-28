@@ -36,11 +36,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RunnerLabel" /> class.
         /// </summary>
-        /// <param name="id">
-        /// Unique identifier of the label.
-        /// </param>
         /// <param name="name">
         /// Name of the label.
+        /// </param>
+        /// <param name="id">
+        /// Unique identifier of the label.
         /// </param>
         /// <param name="type">
         /// The type of label. Read-only labels are applied automatically when the runner is configured.
@@ -50,8 +50,8 @@ namespace G
             int? id,
             global::G.RunnerLabelType? type)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
         }
 

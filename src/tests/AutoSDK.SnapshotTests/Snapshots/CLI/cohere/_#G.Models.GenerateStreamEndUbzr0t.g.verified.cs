@@ -40,8 +40,8 @@ namespace G
         /// Initializes a new instance of the <see cref="GenerateStreamEndUbzr0t" /> class.
         /// </summary>
         /// <param name="isFinished"></param>
-        /// <param name="finishReason"></param>
         /// <param name="response"></param>
+        /// <param name="finishReason"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -51,8 +51,8 @@ namespace G
             global::G.FinishReason? finishReason)
         {
             this.IsFinished = isFinished;
-            this.Response = response ?? throw new global::System.ArgumentNullException(nameof(response));
             this.FinishReason = finishReason;
+            this.Response = response ?? throw new global::System.ArgumentNullException(nameof(response));
         }
 
         /// <summary>

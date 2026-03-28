@@ -53,10 +53,10 @@ namespace G
         /// </summary>
         /// <param name="label"></param>
         /// <param name="ref"></param>
+        /// <param name="sha"></param>
         /// <param name="repo">
         /// A git repository
         /// </param>
-        /// <param name="sha"></param>
         /// <param name="user"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -70,8 +70,8 @@ namespace G
         {
             this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
             this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
-            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
             this.Repo = repo;
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
             this.User = user;
         }
 

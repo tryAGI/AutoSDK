@@ -108,7 +108,6 @@ namespace G
         /// Initializes a new instance of the <see cref="WebhooksSecurityAdvisory" /> class.
         /// </summary>
         /// <param name="cvss"></param>
-        /// <param name="cvssSeverities"></param>
         /// <param name="cwes"></param>
         /// <param name="description"></param>
         /// <param name="ghsaId"></param>
@@ -119,6 +118,7 @@ namespace G
         /// <param name="summary"></param>
         /// <param name="updatedAt"></param>
         /// <param name="vulnerabilities"></param>
+        /// <param name="cvssSeverities"></param>
         /// <param name="withdrawnAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -139,6 +139,7 @@ namespace G
             string? withdrawnAt)
         {
             this.Cvss = cvss ?? throw new global::System.ArgumentNullException(nameof(cvss));
+            this.CvssSeverities = cvssSeverities;
             this.Cwes = cwes ?? throw new global::System.ArgumentNullException(nameof(cwes));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.GhsaId = ghsaId ?? throw new global::System.ArgumentNullException(nameof(ghsaId));
@@ -149,7 +150,6 @@ namespace G
             this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
             this.Vulnerabilities = vulnerabilities ?? throw new global::System.ArgumentNullException(nameof(vulnerabilities));
-            this.CvssSeverities = cvssSeverities;
             this.WithdrawnAt = withdrawnAt;
         }
 

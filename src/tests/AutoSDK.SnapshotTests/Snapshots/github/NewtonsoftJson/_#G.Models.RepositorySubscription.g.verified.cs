@@ -66,7 +66,6 @@ namespace G
         /// <param name="ignored">
         /// Determines if all notifications should be blocked from this repository.
         /// </param>
-        /// <param name="reason"></param>
         /// <param name="createdAt">
         /// Example: 2012-10-06T21:34:12Z
         /// </param>
@@ -76,6 +75,7 @@ namespace G
         /// <param name="repositoryUrl">
         /// Example: https://api.github.com/repos/octocat/example
         /// </param>
+        /// <param name="reason"></param>
         public RepositorySubscription(
             bool subscribed,
             bool ignored,
@@ -86,10 +86,10 @@ namespace G
         {
             this.Subscribed = subscribed;
             this.Ignored = ignored;
+            this.Reason = reason;
             this.CreatedAt = createdAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
-            this.Reason = reason;
         }
 
         /// <summary>

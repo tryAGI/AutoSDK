@@ -82,18 +82,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookInstallationRepositoriesAdded" /> class.
         /// </summary>
-        /// <param name="action"></param>
-        /// <param name="enterprise">
-        /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
-        /// on an enterprise account or an organization that's part of an enterprise account. For more information,<br/>
-        /// see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
-        /// </param>
         /// <param name="installation">
         /// Installation
-        /// </param>
-        /// <param name="organization">
-        /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
-        /// organization, or when the event occurs from activity in a repository owned by an organization.
         /// </param>
         /// <param name="repositoriesAdded">
         /// An array of repository objects, which were added to the installation.
@@ -101,17 +91,27 @@ namespace G
         /// <param name="repositoriesRemoved">
         /// An array of repository objects, which were removed from the installation.
         /// </param>
+        /// <param name="repositorySelection">
+        /// Describe whether all repositories have been selected or there's a selection involved
+        /// </param>
+        /// <param name="sender">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="action"></param>
+        /// <param name="enterprise">
+        /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
+        /// on an enterprise account or an organization that's part of an enterprise account. For more information,<br/>
+        /// see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
+        /// </param>
+        /// <param name="organization">
+        /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
+        /// organization, or when the event occurs from activity in a repository owned by an organization.
+        /// </param>
         /// <param name="repository">
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
         /// when the event occurs from activity in a repository.
         /// </param>
-        /// <param name="repositorySelection">
-        /// Describe whether all repositories have been selected or there's a selection involved
-        /// </param>
         /// <param name="requester"></param>
-        /// <param name="sender">
-        /// A GitHub user.
-        /// </param>
         public WebhookInstallationRepositoriesAdded(
             global::G.Installation installation,
             global::System.Collections.Generic.IList<global::G.WebhooksRepositoriesAddedItem> repositoriesAdded,
@@ -124,16 +124,16 @@ namespace G
             global::G.RepositoryWebhooks? repository,
             global::G.WebhooksUser? requester)
         {
-            this.Installation = installation ?? throw new global::System.ArgumentNullException(nameof(installation));
-            this.RepositoriesAdded = repositoriesAdded ?? throw new global::System.ArgumentNullException(nameof(repositoriesAdded));
-            this.RepositoriesRemoved = repositoriesRemoved ?? throw new global::System.ArgumentNullException(nameof(repositoriesRemoved));
-            this.RepositorySelection = repositorySelection;
-            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Action = action;
             this.Enterprise = enterprise;
+            this.Installation = installation ?? throw new global::System.ArgumentNullException(nameof(installation));
             this.Organization = organization;
+            this.RepositoriesAdded = repositoriesAdded ?? throw new global::System.ArgumentNullException(nameof(repositoriesAdded));
+            this.RepositoriesRemoved = repositoriesRemoved ?? throw new global::System.ArgumentNullException(nameof(repositoriesRemoved));
             this.Repository = repository;
+            this.RepositorySelection = repositorySelection;
             this.Requester = requester;
+            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
         }
 
         /// <summary>

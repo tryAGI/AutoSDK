@@ -32,10 +32,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookGithubAppAuthorizationRevoked" /> class.
         /// </summary>
-        /// <param name="action"></param>
         /// <param name="sender">
         /// A GitHub user.
         /// </param>
+        /// <param name="action"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -43,8 +43,8 @@ namespace G
             global::G.SimpleUser sender,
             global::G.WebhookGithubAppAuthorizationRevokedAction action)
         {
-            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Action = action;
+            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
         }
 
         /// <summary>

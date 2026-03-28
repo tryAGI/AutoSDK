@@ -51,13 +51,13 @@ namespace G
         /// Initializes a new instance of the <see cref="ListCertificatesResponse" /> class.
         /// </summary>
         /// <param name="data"></param>
+        /// <param name="hasMore"></param>
         /// <param name="firstId">
         /// Example: cert_abc
         /// </param>
         /// <param name="lastId">
         /// Example: cert_abc
         /// </param>
-        /// <param name="hasMore"></param>
         /// <param name="object"></param>
         public ListCertificatesResponse(
             global::System.Collections.Generic.IList<global::G.Certificate> data,
@@ -67,9 +67,9 @@ namespace G
             global::G.ListCertificatesResponseObject @object)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.HasMore = hasMore;
             this.FirstId = firstId;
             this.LastId = lastId;
+            this.HasMore = hasMore;
             this.Object = @object;
         }
 

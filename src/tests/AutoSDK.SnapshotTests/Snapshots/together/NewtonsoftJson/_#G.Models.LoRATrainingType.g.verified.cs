@@ -48,9 +48,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="LoRATrainingType" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="loraR"></param>
         /// <param name="loraAlpha"></param>
+        /// <param name="type"></param>
         /// <param name="loraDropout">
         /// Default Value: 0.0
         /// </param>
@@ -64,9 +64,9 @@ namespace G
             float? loraDropout,
             string? loraTrainableModules)
         {
+            this.Type = type;
             this.LoraR = loraR;
             this.LoraAlpha = loraAlpha;
-            this.Type = type;
             this.LoraDropout = loraDropout;
             this.LoraTrainableModules = loraTrainableModules;
         }

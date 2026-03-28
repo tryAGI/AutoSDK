@@ -66,12 +66,12 @@ namespace G
         /// The data type of this filter attribute, which determines the aggregation behavior. Numeric types (integer, real_number, and their list variants) include statistical aggregations, while text and boolean types provide value distributions.<br/>
         /// Example: text
         /// </param>
+        /// <param name="values">
+        /// Array of the most frequently occurring distinct values for this field, ordered by occurrence count (descending). Limited by the max_values query parameter. For list-type attributes, each array element is counted independently.
+        /// </param>
         /// <param name="description">
         /// Human-readable description of what this field represents, as defined in the corpus filter attribute schema. May be empty if no description was provided during corpus creation.<br/>
         /// Example: The category of the document (e.g., contract, invoice, report).
-        /// </param>
-        /// <param name="values">
-        /// Array of the most frequently occurring distinct values for this field, ordered by occurrence count (descending). Limited by the max_values query parameter. For list-type attributes, each array element is counted independently.
         /// </param>
         /// <param name="stats">
         /// Statistical aggregations for numeric filter attributes (integer, real_number, and their list variants). Provides summary statistics across all values in the corpus.
@@ -88,8 +88,8 @@ namespace G
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
-            this.Values = values ?? throw new global::System.ArgumentNullException(nameof(values));
             this.Description = description;
+            this.Values = values ?? throw new global::System.ArgumentNullException(nameof(values));
             this.Stats = stats;
         }
 

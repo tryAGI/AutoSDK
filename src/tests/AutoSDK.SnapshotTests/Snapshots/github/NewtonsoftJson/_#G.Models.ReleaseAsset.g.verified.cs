@@ -106,7 +106,6 @@ namespace G
         /// The file name of the asset.<br/>
         /// Example: Team Environment
         /// </param>
-        /// <param name="label"></param>
         /// <param name="state">
         /// State of the release asset.
         /// </param>
@@ -115,6 +114,7 @@ namespace G
         /// <param name="downloadCount"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="label"></param>
         /// <param name="uploader">
         /// A GitHub user.
         /// </param>
@@ -138,13 +138,13 @@ namespace G
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Label = label;
             this.State = state;
             this.ContentType = contentType ?? throw new global::System.ArgumentNullException(nameof(contentType));
             this.Size = size;
             this.DownloadCount = downloadCount;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.Label = label;
             this.Uploader = uploader;
         }
 

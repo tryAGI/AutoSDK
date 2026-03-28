@@ -123,14 +123,6 @@ namespace G
         /// The human-readable name of an instruction.<br/>
         /// Example: Customer Support Initial Instruction
         /// </param>
-        /// <param name="description">
-        /// A detailed description of what this instruction does.
-        /// </param>
-        /// <param name="templateType">
-        /// The templating engine used for instructions.<br/>
-        /// Default Value: velocity<br/>
-        /// Example: velocity
-        /// </param>
         /// <param name="template">
         /// The instruction template content using the specified template engine.<br/>
         /// Available Velocity variables:<br/>
@@ -148,18 +140,26 @@ namespace G
         /// The version identifier for this instruction. This is automatically incremented when the instruction is updated.<br/>
         /// Example: 1
         /// </param>
-        /// <param name="metadata">
-        /// Arbitrary metadata associated with the instruction.
-        /// </param>
         /// <param name="enabled">
         /// Whether the instruction is currently enabled and available for use.<br/>
         /// Default Value: true
+        /// </param>
+        /// <param name="description">
+        /// A detailed description of what this instruction does.
+        /// </param>
+        /// <param name="metadata">
+        /// Arbitrary metadata associated with the instruction.
         /// </param>
         /// <param name="createdAt">
         /// Timestamp when the instruction was created.
         /// </param>
         /// <param name="updatedAt">
         /// Timestamp when the instruction was last updated.
+        /// </param>
+        /// <param name="templateType">
+        /// The templating engine used for instructions.<br/>
+        /// Default Value: velocity<br/>
+        /// Example: velocity
         /// </param>
         public InitialInstruction(
             string id,
@@ -177,12 +177,12 @@ namespace G
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Template = template ?? throw new global::System.ArgumentNullException(nameof(template));
-            this.Version = version;
-            this.Enabled = enabled;
             this.Description = description;
             this.TemplateType = templateType;
+            this.Template = template ?? throw new global::System.ArgumentNullException(nameof(template));
+            this.Version = version;
             this.Metadata = metadata;
+            this.Enabled = enabled;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
         }

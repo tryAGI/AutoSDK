@@ -277,11 +277,11 @@ namespace G
         /// <param name="currentUserRepositoriesUrl"></param>
         /// <param name="starredUrl"></param>
         /// <param name="starredGistsUrl"></param>
-        /// <param name="topicSearchUrl"></param>
         /// <param name="userUrl"></param>
         /// <param name="userOrganizationsUrl"></param>
         /// <param name="userRepositoriesUrl"></param>
         /// <param name="userSearchUrl"></param>
+        /// <param name="topicSearchUrl"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -346,11 +346,11 @@ namespace G
             this.CurrentUserRepositoriesUrl = currentUserRepositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(currentUserRepositoriesUrl));
             this.StarredUrl = starredUrl ?? throw new global::System.ArgumentNullException(nameof(starredUrl));
             this.StarredGistsUrl = starredGistsUrl ?? throw new global::System.ArgumentNullException(nameof(starredGistsUrl));
+            this.TopicSearchUrl = topicSearchUrl;
             this.UserUrl = userUrl ?? throw new global::System.ArgumentNullException(nameof(userUrl));
             this.UserOrganizationsUrl = userOrganizationsUrl ?? throw new global::System.ArgumentNullException(nameof(userOrganizationsUrl));
             this.UserRepositoriesUrl = userRepositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(userRepositoriesUrl));
             this.UserSearchUrl = userSearchUrl ?? throw new global::System.ArgumentNullException(nameof(userSearchUrl));
-            this.TopicSearchUrl = topicSearchUrl;
         }
 
         /// <summary>

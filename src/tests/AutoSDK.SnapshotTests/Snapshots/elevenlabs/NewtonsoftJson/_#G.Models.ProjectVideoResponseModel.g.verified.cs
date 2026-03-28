@@ -261,35 +261,35 @@ namespace G
         /// </summary>
         /// <param name="videoId"></param>
         /// <param name="filename"></param>
-        /// <param name="signedUrl"></param>
-        /// <param name="signedPreviewUrl"></param>
         /// <param name="offsetMs"></param>
         /// <param name="durationMs"></param>
         /// <param name="volumeGainDb"></param>
         /// <param name="muted"></param>
-        /// <param name="fadeInMs">
-        /// Default Value: 0
-        /// </param>
-        /// <param name="fadeOutMs">
-        /// Default Value: 0
-        /// </param>
         /// <param name="width"></param>
         /// <param name="height"></param>
         /// <param name="codec"></param>
         /// <param name="order"></param>
         /// <param name="createdAtMs"></param>
         /// <param name="updatedAtMs"></param>
-        /// <param name="error"></param>
         /// <param name="thumbnailIntervalSeconds"></param>
         /// <param name="thumbnailSize"></param>
         /// <param name="thumbnailSheets"></param>
         /// <param name="startTimeMs"></param>
         /// <param name="endTimeMs"></param>
+        /// <param name="pendingBlockIds"></param>
+        /// <param name="pendingExternalAudioIds"></param>
+        /// <param name="signedUrl"></param>
+        /// <param name="signedPreviewUrl"></param>
+        /// <param name="fadeInMs">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="fadeOutMs">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="error"></param>
         /// <param name="assetPreviewSignedUrl"></param>
         /// <param name="sourceVideoId"></param>
         /// <param name="sourceAssetId"></param>
-        /// <param name="pendingBlockIds"></param>
-        /// <param name="pendingExternalAudioIds"></param>
         /// <param name="speechImported">
         /// Default Value: false
         /// </param>
@@ -315,10 +315,10 @@ namespace G
         /// <param name="trackId">
         /// Default Value: v0
         /// </param>
-        /// <param name="previewJobProgress">
+        /// <param name="importSpeechProgress">
         /// Included only in responses
         /// </param>
-        /// <param name="importSpeechProgress">
+        /// <param name="previewJobProgress">
         /// Included only in responses
         /// </param>
         public ProjectVideoResponseModel(
@@ -365,31 +365,31 @@ namespace G
         {
             this.VideoId = videoId ?? throw new global::System.ArgumentNullException(nameof(videoId));
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
+            this.SignedUrl = signedUrl;
+            this.SignedPreviewUrl = signedPreviewUrl;
             this.OffsetMs = offsetMs;
             this.DurationMs = durationMs;
             this.VolumeGainDb = volumeGainDb;
             this.Muted = muted;
+            this.FadeInMs = fadeInMs;
+            this.FadeOutMs = fadeOutMs;
             this.Width = width;
             this.Height = height;
             this.Codec = codec ?? throw new global::System.ArgumentNullException(nameof(codec));
             this.Order = order ?? throw new global::System.ArgumentNullException(nameof(order));
             this.CreatedAtMs = createdAtMs;
             this.UpdatedAtMs = updatedAtMs;
+            this.Error = error;
             this.ThumbnailIntervalSeconds = thumbnailIntervalSeconds;
             this.ThumbnailSize = thumbnailSize ?? throw new global::System.ArgumentNullException(nameof(thumbnailSize));
             this.ThumbnailSheets = thumbnailSheets ?? throw new global::System.ArgumentNullException(nameof(thumbnailSheets));
             this.StartTimeMs = startTimeMs;
             this.EndTimeMs = endTimeMs;
-            this.PendingBlockIds = pendingBlockIds ?? throw new global::System.ArgumentNullException(nameof(pendingBlockIds));
-            this.PendingExternalAudioIds = pendingExternalAudioIds ?? throw new global::System.ArgumentNullException(nameof(pendingExternalAudioIds));
-            this.SignedUrl = signedUrl;
-            this.SignedPreviewUrl = signedPreviewUrl;
-            this.FadeInMs = fadeInMs;
-            this.FadeOutMs = fadeOutMs;
-            this.Error = error;
             this.AssetPreviewSignedUrl = assetPreviewSignedUrl;
             this.SourceVideoId = sourceVideoId;
             this.SourceAssetId = sourceAssetId;
+            this.PendingBlockIds = pendingBlockIds ?? throw new global::System.ArgumentNullException(nameof(pendingBlockIds));
+            this.PendingExternalAudioIds = pendingExternalAudioIds ?? throw new global::System.ArgumentNullException(nameof(pendingExternalAudioIds));
             this.SpeechImported = speechImported;
             this.PendingTask = pendingTask;
             this.AudioTrackReady = audioTrackReady;

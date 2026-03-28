@@ -81,11 +81,11 @@ namespace G
         /// <param name="reason"></param>
         /// <param name="unread"></param>
         /// <param name="updatedAt"></param>
-        /// <param name="lastReadAt"></param>
         /// <param name="url"></param>
         /// <param name="subscriptionUrl">
         /// Example: https://api.github.com/notifications/threads/2/subscription
         /// </param>
+        /// <param name="lastReadAt"></param>
         public Thread(
             string id,
             global::G.MinimalRepository repository,
@@ -103,9 +103,9 @@ namespace G
             this.Reason = reason ?? throw new global::System.ArgumentNullException(nameof(reason));
             this.Unread = unread;
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
+            this.LastReadAt = lastReadAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.SubscriptionUrl = subscriptionUrl ?? throw new global::System.ArgumentNullException(nameof(subscriptionUrl));
-            this.LastReadAt = lastReadAt;
         }
 
         /// <summary>

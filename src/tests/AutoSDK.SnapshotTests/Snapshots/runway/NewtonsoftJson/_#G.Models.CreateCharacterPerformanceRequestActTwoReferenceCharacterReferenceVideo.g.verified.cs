@@ -33,17 +33,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateCharacterPerformanceRequestActTwoReferenceCharacterReferenceVideo" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="uri">
         /// A video of a person performing in the manner that you would like your character to perform. The video must be between 3 and 30 seconds in duration. See [our docs](/assets/inputs#videos) on video inputs for more information.<br/>
         /// Example: https://example.com/reference-performance.mp4
         /// </param>
+        /// <param name="type"></param>
         public CreateCharacterPerformanceRequestActTwoReferenceCharacterReferenceVideo(
             string uri,
             string type = "video")
         {
-            this.Uri = uri;
             this.Type = type;
+            this.Uri = uri;
         }
 
         /// <summary>

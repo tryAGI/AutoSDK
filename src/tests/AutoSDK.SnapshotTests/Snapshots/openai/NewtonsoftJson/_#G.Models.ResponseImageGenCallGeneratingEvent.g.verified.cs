@@ -42,9 +42,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseImageGenCallGeneratingEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always 'response.image_generation_call.generating'.
-        /// </param>
         /// <param name="outputIndex">
         /// The index of the output item in the response's output array.
         /// </param>
@@ -54,16 +51,19 @@ namespace G
         /// <param name="sequenceNumber">
         /// The sequence number of the image generation item being processed.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always 'response.image_generation_call.generating'.
+        /// </param>
         public ResponseImageGenCallGeneratingEvent(
             int outputIndex,
             string itemId,
             int sequenceNumber,
             global::G.ResponseImageGenCallGeneratingEventType type)
         {
+            this.Type = type;
             this.OutputIndex = outputIndex;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.SequenceNumber = sequenceNumber;
-            this.Type = type;
         }
 
         /// <summary>

@@ -59,6 +59,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageExampleDoc" /> class.
         /// </summary>
+        /// <param name="label">
+        /// The label of the image
+        /// </param>
         /// <param name="id">
         /// The ID of the BaseDoc. This is useful for indexing in vector stores. If not set by user, it will automatically be assigned a random value<br/>
         /// Example: e10b550cf99e2e072e22420af5c6eb47
@@ -75,9 +78,6 @@ namespace G
         /// <param name="image">
         /// Image representation that can hold URL of an image or a base64 representation
         /// </param>
-        /// <param name="label">
-        /// The label of the image
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -89,12 +89,12 @@ namespace G
             string? bytesname,
             global::G.AnyOf<string, byte[]>? image)
         {
-            this.Label = label;
             this.Id = id;
             this.Url = url;
             this.Bytes = bytes;
             this.Bytesname = bytesname;
             this.Image = image;
+            this.Label = label;
         }
 
         /// <summary>

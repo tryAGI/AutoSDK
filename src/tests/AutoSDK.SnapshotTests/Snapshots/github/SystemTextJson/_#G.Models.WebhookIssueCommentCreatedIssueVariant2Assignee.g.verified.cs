@@ -147,6 +147,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookIssueCommentCreatedIssueVariant2Assignee" /> class.
         /// </summary>
+        /// <param name="id"></param>
+        /// <param name="login"></param>
         /// <param name="avatarUrl"></param>
         /// <param name="deleted"></param>
         /// <param name="email"></param>
@@ -156,8 +158,6 @@ namespace G
         /// <param name="gistsUrl"></param>
         /// <param name="gravatarId"></param>
         /// <param name="htmlUrl"></param>
-        /// <param name="id"></param>
-        /// <param name="login"></param>
         /// <param name="name"></param>
         /// <param name="nodeId"></param>
         /// <param name="organizationsUrl"></param>
@@ -194,8 +194,6 @@ namespace G
             global::G.WebhookIssueCommentCreatedIssueVariant2AssigneeType? type,
             string? url)
         {
-            this.Id = id;
-            this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
             this.AvatarUrl = avatarUrl;
             this.Deleted = deleted;
             this.Email = email;
@@ -205,6 +203,8 @@ namespace G
             this.GistsUrl = gistsUrl;
             this.GravatarId = gravatarId;
             this.HtmlUrl = htmlUrl;
+            this.Id = id;
+            this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
             this.Name = name;
             this.NodeId = nodeId;
             this.OrganizationsUrl = organizationsUrl;

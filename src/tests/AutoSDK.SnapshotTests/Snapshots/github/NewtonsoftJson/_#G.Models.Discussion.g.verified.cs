@@ -160,10 +160,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Discussion" /> class.
         /// </summary>
-        /// <param name="activeLockReason"></param>
-        /// <param name="answerChosenAt"></param>
-        /// <param name="answerChosenBy"></param>
-        /// <param name="answerHtmlUrl"></param>
         /// <param name="authorAssociation">
         /// How the author is associated with the repository.
         /// </param>
@@ -176,20 +172,24 @@ namespace G
         /// <param name="locked"></param>
         /// <param name="nodeId"></param>
         /// <param name="number"></param>
-        /// <param name="reactions"></param>
         /// <param name="repositoryUrl"></param>
         /// <param name="state">
         /// The current state of the discussion.<br/>
         /// `converting` means that the discussion is being converted from an issue.<br/>
         /// `transferring` means that the discussion is being transferred from another repository.
         /// </param>
+        /// <param name="title"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="activeLockReason"></param>
+        /// <param name="answerChosenAt"></param>
+        /// <param name="answerChosenBy"></param>
+        /// <param name="answerHtmlUrl"></param>
+        /// <param name="reactions"></param>
         /// <param name="stateReason">
         /// The reason for the current state<br/>
         /// Example: resolved
         /// </param>
         /// <param name="timelineUrl"></param>
-        /// <param name="title"></param>
-        /// <param name="updatedAt"></param>
         /// <param name="user"></param>
         /// <param name="labels"></param>
         public Discussion(
@@ -217,6 +217,10 @@ namespace G
             global::G.DiscussionUser? user,
             global::System.Collections.Generic.IList<global::G.Label>? labels)
         {
+            this.ActiveLockReason = activeLockReason;
+            this.AnswerChosenAt = answerChosenAt;
+            this.AnswerChosenBy = answerChosenBy;
+            this.AnswerHtmlUrl = answerHtmlUrl;
             this.AuthorAssociation = authorAssociation;
             this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
             this.Category = category ?? throw new global::System.ArgumentNullException(nameof(category));
@@ -227,17 +231,13 @@ namespace G
             this.Locked = locked;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Number = number;
+            this.Reactions = reactions;
             this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
             this.State = state;
-            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.UpdatedAt = updatedAt;
-            this.ActiveLockReason = activeLockReason;
-            this.AnswerChosenAt = answerChosenAt;
-            this.AnswerChosenBy = answerChosenBy;
-            this.AnswerHtmlUrl = answerHtmlUrl;
-            this.Reactions = reactions;
             this.StateReason = stateReason;
             this.TimelineUrl = timelineUrl;
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.UpdatedAt = updatedAt;
             this.User = user;
             this.Labels = labels;
         }

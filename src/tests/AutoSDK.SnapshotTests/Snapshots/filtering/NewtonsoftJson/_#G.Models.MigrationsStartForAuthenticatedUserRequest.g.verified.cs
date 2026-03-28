@@ -89,6 +89,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MigrationsStartForAuthenticatedUserRequest" /> class.
         /// </summary>
+        /// <param name="repositories"></param>
         /// <param name="lockRepositories">
         /// Lock the repositories being migrated at the start of the migration<br/>
         /// Example: true
@@ -122,7 +123,6 @@ namespace G
         /// Exclude attributes from the API response to improve performance<br/>
         /// Example: [repositories]
         /// </param>
-        /// <param name="repositories"></param>
         public MigrationsStartForAuthenticatedUserRequest(
             global::System.Collections.Generic.IList<string> repositories,
             bool? lockRepositories,
@@ -134,7 +134,6 @@ namespace G
             bool? orgMetadataOnly,
             global::System.Collections.Generic.IList<global::G.MigrationsStartForAuthenticatedUserRequestExcludeItem>? exclude)
         {
-            this.Repositories = repositories ?? throw new global::System.ArgumentNullException(nameof(repositories));
             this.LockRepositories = lockRepositories;
             this.ExcludeMetadata = excludeMetadata;
             this.ExcludeGitData = excludeGitData;
@@ -143,6 +142,7 @@ namespace G
             this.ExcludeOwnerProjects = excludeOwnerProjects;
             this.OrgMetadataOnly = orgMetadataOnly;
             this.Exclude = exclude;
+            this.Repositories = repositories ?? throw new global::System.ArgumentNullException(nameof(repositories));
         }
 
         /// <summary>

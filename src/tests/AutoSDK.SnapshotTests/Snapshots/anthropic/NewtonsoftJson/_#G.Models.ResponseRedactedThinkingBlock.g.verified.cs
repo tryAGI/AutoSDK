@@ -31,16 +31,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseRedactedThinkingBlock" /> class.
         /// </summary>
+        /// <param name="data"></param>
         /// <param name="type">
         /// Default Value: redacted_thinking
         /// </param>
-        /// <param name="data"></param>
         public ResponseRedactedThinkingBlock(
             string data,
             global::G.ResponseRedactedThinkingBlockType type = global::G.ResponseRedactedThinkingBlockType.RedactedThinking)
         {
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Type = type;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
         }
 
         /// <summary>

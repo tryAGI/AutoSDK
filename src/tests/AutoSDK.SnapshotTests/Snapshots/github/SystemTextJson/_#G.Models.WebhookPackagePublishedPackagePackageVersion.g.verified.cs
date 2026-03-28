@@ -196,34 +196,34 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPackagePublishedPackagePackageVersion" /> class.
         /// </summary>
+        /// <param name="description"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="id"></param>
+        /// <param name="installationCommand"></param>
+        /// <param name="metadata"></param>
+        /// <param name="name"></param>
+        /// <param name="packageFiles"></param>
+        /// <param name="summary"></param>
+        /// <param name="version"></param>
         /// <param name="author"></param>
         /// <param name="body"></param>
         /// <param name="bodyHtml"></param>
         /// <param name="containerMetadata"></param>
         /// <param name="createdAt"></param>
-        /// <param name="description"></param>
         /// <param name="dockerMetadata"></param>
         /// <param name="draft"></param>
-        /// <param name="htmlUrl"></param>
-        /// <param name="id"></param>
-        /// <param name="installationCommand"></param>
         /// <param name="manifest"></param>
-        /// <param name="metadata"></param>
-        /// <param name="name"></param>
         /// <param name="npmMetadata"></param>
         /// <param name="nugetMetadata"></param>
-        /// <param name="packageFiles"></param>
         /// <param name="packageUrl"></param>
         /// <param name="prerelease"></param>
         /// <param name="release"></param>
         /// <param name="rubygemsMetadata"></param>
         /// <param name="sourceUrl"></param>
-        /// <param name="summary"></param>
         /// <param name="tagName"></param>
         /// <param name="targetCommitish"></param>
         /// <param name="targetOid"></param>
         /// <param name="updatedAt"></param>
-        /// <param name="version"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -257,34 +257,34 @@ namespace G
             string? targetOid,
             string? updatedAt)
         {
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.Id = id;
-            this.InstallationCommand = installationCommand ?? throw new global::System.ArgumentNullException(nameof(installationCommand));
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.PackageFiles = packageFiles ?? throw new global::System.ArgumentNullException(nameof(packageFiles));
-            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
-            this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
             this.Author = author;
             this.Body = body;
             this.BodyHtml = bodyHtml;
             this.ContainerMetadata = containerMetadata;
             this.CreatedAt = createdAt;
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.DockerMetadata = dockerMetadata;
             this.Draft = draft;
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Id = id;
+            this.InstallationCommand = installationCommand ?? throw new global::System.ArgumentNullException(nameof(installationCommand));
             this.Manifest = manifest;
+            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.NpmMetadata = npmMetadata;
             this.NugetMetadata = nugetMetadata;
+            this.PackageFiles = packageFiles ?? throw new global::System.ArgumentNullException(nameof(packageFiles));
             this.PackageUrl = packageUrl;
             this.Prerelease = prerelease;
             this.Release = release;
             this.RubygemsMetadata = rubygemsMetadata;
             this.SourceUrl = sourceUrl;
+            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
             this.TagName = tagName;
             this.TargetCommitish = targetCommitish;
             this.TargetOid = targetOid;
             this.UpdatedAt = updatedAt;
+            this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
         }
 
         /// <summary>

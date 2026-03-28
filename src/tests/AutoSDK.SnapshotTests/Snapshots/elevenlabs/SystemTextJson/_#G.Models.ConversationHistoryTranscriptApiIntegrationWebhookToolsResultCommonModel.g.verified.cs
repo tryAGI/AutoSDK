@@ -110,6 +110,9 @@ namespace G
         /// <param name="resultValue"></param>
         /// <param name="isError"></param>
         /// <param name="toolHasBeenCalled"></param>
+        /// <param name="integrationId"></param>
+        /// <param name="credentialId"></param>
+        /// <param name="integrationConnectionId"></param>
         /// <param name="toolLatencySecs">
         /// Default Value: 0
         /// </param>
@@ -117,9 +120,6 @@ namespace G
         /// <param name="rawErrorMessage"></param>
         /// <param name="dynamicVariableUpdates"></param>
         /// <param name="type"></param>
-        /// <param name="integrationId"></param>
-        /// <param name="credentialId"></param>
-        /// <param name="integrationConnectionId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -143,14 +143,14 @@ namespace G
             this.ResultValue = resultValue ?? throw new global::System.ArgumentNullException(nameof(resultValue));
             this.IsError = isError;
             this.ToolHasBeenCalled = toolHasBeenCalled;
-            this.IntegrationId = integrationId ?? throw new global::System.ArgumentNullException(nameof(integrationId));
-            this.CredentialId = credentialId ?? throw new global::System.ArgumentNullException(nameof(credentialId));
-            this.IntegrationConnectionId = integrationConnectionId ?? throw new global::System.ArgumentNullException(nameof(integrationConnectionId));
             this.ToolLatencySecs = toolLatencySecs;
             this.ErrorType = errorType;
             this.RawErrorMessage = rawErrorMessage;
             this.DynamicVariableUpdates = dynamicVariableUpdates;
             this.Type = type;
+            this.IntegrationId = integrationId ?? throw new global::System.ArgumentNullException(nameof(integrationId));
+            this.CredentialId = credentialId ?? throw new global::System.ArgumentNullException(nameof(credentialId));
+            this.IntegrationConnectionId = integrationConnectionId ?? throw new global::System.ArgumentNullException(nameof(integrationConnectionId));
         }
 
         /// <summary>

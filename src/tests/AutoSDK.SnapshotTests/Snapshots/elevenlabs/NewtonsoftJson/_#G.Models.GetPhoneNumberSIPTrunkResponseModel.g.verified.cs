@@ -101,6 +101,9 @@ namespace G
         /// <param name="phoneNumberId">
         /// The ID of the phone number
         /// </param>
+        /// <param name="livekitStack">
+        /// Type of Livekit stack used for this number.
+        /// </param>
         /// <param name="assignedAgent">
         /// The agent that is assigned to the phone number
         /// </param>
@@ -113,9 +116,6 @@ namespace G
         /// </param>
         /// <param name="inboundTrunk">
         /// Configuration of the Inbound SIP trunk - if configured.
-        /// </param>
-        /// <param name="livekitStack">
-        /// Type of Livekit stack used for this number.
         /// </param>
         public GetPhoneNumberSIPTrunkResponseModel(
             string phoneNumber,
@@ -130,11 +130,11 @@ namespace G
             this.PhoneNumber = phoneNumber ?? throw new global::System.ArgumentNullException(nameof(phoneNumber));
             this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
             this.PhoneNumberId = phoneNumberId ?? throw new global::System.ArgumentNullException(nameof(phoneNumberId));
-            this.LivekitStack = livekitStack;
             this.AssignedAgent = assignedAgent;
             this.Provider = provider;
             this.OutboundTrunk = outboundTrunk;
             this.InboundTrunk = inboundTrunk;
+            this.LivekitStack = livekitStack;
         }
 
         /// <summary>

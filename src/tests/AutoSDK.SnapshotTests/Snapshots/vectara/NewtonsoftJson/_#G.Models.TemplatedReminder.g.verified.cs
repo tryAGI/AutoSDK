@@ -67,11 +67,6 @@ namespace G
         /// Default Value: templated<br/>
         /// Example: templated
         /// </param>
-        /// <param name="templateType">
-        /// The templating engine used for instructions.<br/>
-        /// Default Value: velocity<br/>
-        /// Example: velocity
-        /// </param>
         /// <param name="template">
         /// The instruction template content using the specified template engine.<br/>
         /// Available Velocity variables:<br/>
@@ -89,6 +84,11 @@ namespace G
         /// Event types that trigger this reminder to be appended to the corresponding message.<br/>
         /// Example: [tool_output]
         /// </param>
+        /// <param name="templateType">
+        /// The templating engine used for instructions.<br/>
+        /// Default Value: velocity<br/>
+        /// Example: velocity
+        /// </param>
         public TemplatedReminder(
             string type,
             string template,
@@ -96,9 +96,9 @@ namespace G
             global::G.TemplateType? templateType)
         {
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.TemplateType = templateType;
             this.Template = template ?? throw new global::System.ArgumentNullException(nameof(template));
             this.Hooks = hooks ?? throw new global::System.ArgumentNullException(nameof(hooks));
-            this.TemplateType = templateType;
         }
 
         /// <summary>

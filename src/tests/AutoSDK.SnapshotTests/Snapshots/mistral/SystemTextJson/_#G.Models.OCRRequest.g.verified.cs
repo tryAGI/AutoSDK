@@ -62,11 +62,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="OCRRequest" /> class.
         /// </summary>
-        /// <param name="model"></param>
-        /// <param name="id"></param>
         /// <param name="document">
         /// Document to run OCR on
         /// </param>
+        /// <param name="model"></param>
+        /// <param name="id"></param>
         /// <param name="pages">
         /// Specific pages user wants to process in various formats: single number, range, or list of both. Starts from 0
         /// </param>
@@ -91,9 +91,9 @@ namespace G
             int? imageLimit,
             int? imageMinSize)
         {
-            this.Document = document;
             this.Model = model;
             this.Id = id;
+            this.Document = document;
             this.Pages = pages;
             this.IncludeImageBase64 = includeImageBase64;
             this.ImageLimit = imageLimit;

@@ -55,11 +55,11 @@ namespace G
         /// Initializes a new instance of the <see cref="DynamicVariableUpdateCommonModel" /> class.
         /// </summary>
         /// <param name="variableName"></param>
-        /// <param name="oldValue"></param>
         /// <param name="newValue"></param>
         /// <param name="updatedAt"></param>
         /// <param name="toolName"></param>
         /// <param name="toolRequestId"></param>
+        /// <param name="oldValue"></param>
         public DynamicVariableUpdateCommonModel(
             string variableName,
             string newValue,
@@ -69,11 +69,11 @@ namespace G
             string? oldValue)
         {
             this.VariableName = variableName ?? throw new global::System.ArgumentNullException(nameof(variableName));
+            this.OldValue = oldValue;
             this.NewValue = newValue ?? throw new global::System.ArgumentNullException(nameof(newValue));
             this.UpdatedAt = updatedAt;
             this.ToolName = toolName ?? throw new global::System.ArgumentNullException(nameof(toolName));
             this.ToolRequestId = toolRequestId ?? throw new global::System.ArgumentNullException(nameof(toolRequestId));
-            this.OldValue = oldValue;
         }
 
         /// <summary>

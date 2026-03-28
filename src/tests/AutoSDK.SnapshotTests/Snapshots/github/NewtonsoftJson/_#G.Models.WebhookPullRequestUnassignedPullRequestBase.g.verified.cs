@@ -48,12 +48,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPullRequestUnassignedPullRequestBase" /> class.
         /// </summary>
-        /// <param name="label"></param>
         /// <param name="ref"></param>
         /// <param name="repo">
         /// A git repository
         /// </param>
         /// <param name="sha"></param>
+        /// <param name="label"></param>
         /// <param name="user"></param>
         public WebhookPullRequestUnassignedPullRequestBase(
             string @ref,
@@ -62,10 +62,10 @@ namespace G
             string? label,
             global::G.WebhookPullRequestUnassignedPullRequestBaseUser? user)
         {
+            this.Label = label;
             this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
             this.Repo = repo ?? throw new global::System.ArgumentNullException(nameof(repo));
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
-            this.Label = label;
             this.User = user;
         }
 

@@ -63,10 +63,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EvalStoredCompletionsSource" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of source. Always `stored_completions`.<br/>
-        /// Default Value: stored_completions
-        /// </param>
         /// <param name="metadata">
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
         /// useful for storing additional information about the object in a structured<br/>
@@ -85,6 +81,10 @@ namespace G
         /// </param>
         /// <param name="limit">
         /// An optional maximum number of items to return.
+        /// </param>
+        /// <param name="type">
+        /// The type of source. Always `stored_completions`.<br/>
+        /// Default Value: stored_completions
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

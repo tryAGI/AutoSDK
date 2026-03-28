@@ -82,15 +82,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateCharacterPerformanceRequestActTwo" /> class.
         /// </summary>
-        /// <param name="seed">
-        /// If unspecified, a random number is chosen. Varying the seed integer is a way to get different results for the same other request parameters. Using the same seed integer for an identical request will produce similar results.
-        /// </param>
         /// <param name="character">
         /// The character to control. You can either provide a video or an image. A visually recognizable face must be visible and stay within the frame.
         /// </param>
         /// <param name="reference">
         /// The reference video containing the performance to apply to the character.<br/>
         /// Example: {"type":"video","uri":"https://example.com/reference-performance.mp4"}
+        /// </param>
+        /// <param name="seed">
+        /// If unspecified, a random number is chosen. Varying the seed integer is a way to get different results for the same other request parameters. Using the same seed integer for an identical request will produce similar results.
         /// </param>
         /// <param name="bodyControl">
         /// A boolean indicating whether to enable body control. When enabled, non-facial movements and gestures will be applied to the character in addition to facial expressions.<br/>
@@ -123,9 +123,9 @@ namespace G
             global::G.CreateCharacterPerformanceRequestActTwoContentModeration? contentModeration,
             string model = "act_two")
         {
+            this.Seed = seed;
             this.Character = character;
             this.Reference = reference ?? throw new global::System.ArgumentNullException(nameof(reference));
-            this.Seed = seed;
             this.BodyControl = bodyControl;
             this.ExpressionIntensity = expressionIntensity;
             this.Ratio = ratio;

@@ -55,14 +55,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaResponseContentBlockLocationCitation" /> class.
         /// </summary>
+        /// <param name="citedText"></param>
+        /// <param name="documentIndex"></param>
+        /// <param name="startBlockIndex"></param>
+        /// <param name="endBlockIndex"></param>
+        /// <param name="documentTitle"></param>
         /// <param name="type">
         /// Default Value: content_block_location
         /// </param>
-        /// <param name="citedText"></param>
-        /// <param name="documentIndex"></param>
-        /// <param name="documentTitle"></param>
-        /// <param name="startBlockIndex"></param>
-        /// <param name="endBlockIndex"></param>
         public BetaResponseContentBlockLocationCitation(
             string citedText,
             int documentIndex,
@@ -71,12 +71,12 @@ namespace G
             string? documentTitle,
             global::G.BetaResponseContentBlockLocationCitationType type = global::G.BetaResponseContentBlockLocationCitationType.ContentBlockLocation)
         {
+            this.Type = type;
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.DocumentIndex = documentIndex;
+            this.DocumentTitle = documentTitle;
             this.StartBlockIndex = startBlockIndex;
             this.EndBlockIndex = endBlockIndex;
-            this.Type = type;
-            this.DocumentTitle = documentTitle;
         }
 
         /// <summary>

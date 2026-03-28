@@ -38,10 +38,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ListenV1Metadata" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="requestId">
         /// Unique request identifier.
         /// </param>
+        /// <param name="type"></param>
         /// <param name="duration">
         /// Audio duration in seconds.
         /// </param>
@@ -53,8 +53,8 @@ namespace G
             global::G.ListenV1MetadataType type,
             double? duration)
         {
-            this.RequestId = requestId;
             this.Type = type;
+            this.RequestId = requestId;
             this.Duration = duration;
         }
 

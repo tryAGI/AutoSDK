@@ -200,23 +200,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Model" /> class.
         /// </summary>
-        /// <param name="name">
-        /// The resource name of the model, which allows its access by owner and ID.<br/>
-        /// - Format: `users/{user.id}/models/{model.id}`.<br/>
-        /// Included only in responses
-        /// </param>
-        /// <param name="uid">
-        /// Model UUID.<br/>
-        /// Included only in responses
-        /// </param>
         /// <param name="id">
         /// Model resource ID (used in `name` as the last segment). This conforms to<br/>
         /// RFC-1034, which restricts to letters, numbers, and hyphen, with the first<br/>
         /// character a letter, the last a letter or a number, and a 63 character<br/>
         /// maximum.
-        /// </param>
-        /// <param name="description">
-        /// Model description.
         /// </param>
         /// <param name="modelDefinition">
         /// The model definition that has been used to import the model.
@@ -231,6 +219,24 @@ namespace G
         /// </param>
         /// <param name="visibility">
         /// Model visibility.
+        /// </param>
+        /// <param name="region">
+        /// Region of choice for the particular provider to host the model.
+        /// </param>
+        /// <param name="hardware">
+        /// Hardware of choice to serve the model.
+        /// </param>
+        /// <param name="name">
+        /// The resource name of the model, which allows its access by owner and ID.<br/>
+        /// - Format: `users/{user.id}/models/{model.id}`.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="uid">
+        /// Model UUID.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="description">
+        /// Model description.
         /// </param>
         /// <param name="createTime">
         /// Model creation time.<br/>
@@ -251,12 +257,6 @@ namespace G
         /// <param name="owner">
         /// Model owner.<br/>
         /// Included only in responses
-        /// </param>
-        /// <param name="region">
-        /// Region of choice for the particular provider to host the model.
-        /// </param>
-        /// <param name="hardware">
-        /// Hardware of choice to serve the model.
         /// </param>
         /// <param name="readme">
         /// README holds the model documentation.
@@ -326,21 +326,21 @@ namespace G
             global::System.Collections.Generic.IList<string>? versions,
             global::G.ModelStats? stats)
         {
+            this.Name = name;
+            this.Uid = uid;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Description = description;
             this.ModelDefinition = modelDefinition ?? throw new global::System.ArgumentNullException(nameof(modelDefinition));
             this.Configuration = configuration ?? throw new global::System.ArgumentNullException(nameof(configuration));
             this.Task = task;
             this.Visibility = visibility;
-            this.Region = region ?? throw new global::System.ArgumentNullException(nameof(region));
-            this.Hardware = hardware ?? throw new global::System.ArgumentNullException(nameof(hardware));
-            this.Name = name;
-            this.Uid = uid;
-            this.Description = description;
             this.CreateTime = createTime;
             this.UpdateTime = updateTime;
             this.DeleteTime = deleteTime;
             this.OwnerName = ownerName;
             this.Owner = owner;
+            this.Region = region ?? throw new global::System.ArgumentNullException(nameof(region));
+            this.Hardware = hardware ?? throw new global::System.ArgumentNullException(nameof(hardware));
             this.Readme = readme;
             this.SourceUrl = sourceUrl;
             this.DocumentationUrl = documentationUrl;

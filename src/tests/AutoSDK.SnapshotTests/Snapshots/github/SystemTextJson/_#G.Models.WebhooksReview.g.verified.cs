@@ -97,9 +97,6 @@ namespace G
         /// <param name="authorAssociation">
         /// How the author is associated with the repository.
         /// </param>
-        /// <param name="body">
-        /// The text of the review.
-        /// </param>
         /// <param name="commitId">
         /// A commit SHA for the review.
         /// </param>
@@ -110,6 +107,9 @@ namespace G
         /// <param name="nodeId"></param>
         /// <param name="pullRequestUrl"></param>
         /// <param name="state"></param>
+        /// <param name="body">
+        /// The text of the review.
+        /// </param>
         /// <param name="submittedAt"></param>
         /// <param name="user"></param>
 #if NET7_0_OR_GREATER
@@ -130,13 +130,13 @@ namespace G
         {
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
             this.AuthorAssociation = authorAssociation;
+            this.Body = body;
             this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.PullRequestUrl = pullRequestUrl ?? throw new global::System.ArgumentNullException(nameof(pullRequestUrl));
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
-            this.Body = body;
             this.SubmittedAt = submittedAt;
             this.User = user;
         }

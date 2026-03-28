@@ -63,6 +63,12 @@ namespace G
         /// <param name="stringToReplace">
         /// The string to replace. Must be a non-empty string.
         /// </param>
+        /// <param name="phoneme">
+        /// The phoneme rule.
+        /// </param>
+        /// <param name="alphabet">
+        /// The alphabet to use with the phoneme rule.
+        /// </param>
         /// <param name="caseSensitive">
         /// Whether the rule should match case-sensitively.<br/>
         /// Default Value: true
@@ -73,12 +79,6 @@ namespace G
         /// </param>
         /// <param name="type">
         /// The type of the rule.
-        /// </param>
-        /// <param name="phoneme">
-        /// The phoneme rule.
-        /// </param>
-        /// <param name="alphabet">
-        /// The alphabet to use with the phoneme rule.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -92,11 +92,11 @@ namespace G
             string type = "phoneme")
         {
             this.StringToReplace = stringToReplace ?? throw new global::System.ArgumentNullException(nameof(stringToReplace));
-            this.Phoneme = phoneme ?? throw new global::System.ArgumentNullException(nameof(phoneme));
-            this.Alphabet = alphabet ?? throw new global::System.ArgumentNullException(nameof(alphabet));
             this.CaseSensitive = caseSensitive;
             this.WordBoundaries = wordBoundaries;
             this.Type = type;
+            this.Phoneme = phoneme ?? throw new global::System.ArgumentNullException(nameof(phoneme));
+            this.Alphabet = alphabet ?? throw new global::System.ArgumentNullException(nameof(alphabet));
         }
 
         /// <summary>

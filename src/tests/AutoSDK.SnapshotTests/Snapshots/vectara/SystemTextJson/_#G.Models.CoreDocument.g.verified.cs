@@ -72,6 +72,9 @@ namespace G
         /// When the type of the indexed document is `core` the rest of the object is expected to follow this schema. This schema allows precise specification of document chunks that get directly translated to retrieve search results.<br/>
         /// Default Value: core
         /// </param>
+        /// <param name="documentParts">
+        /// Parts of the document that make up the document.
+        /// </param>
         /// <param name="metadata">
         /// Arbitrary object of document level metadata. Properties of this object can be used by document filters if defined as a corpus filter attribute.<br/>
         /// Example: {"title":"Customer Billing Information","lang":"eng"}
@@ -81,9 +84,6 @@ namespace G
         /// </param>
         /// <param name="images">
         /// The images that this document contains.
-        /// </param>
-        /// <param name="documentParts">
-        /// Parts of the document that make up the document.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -98,10 +98,10 @@ namespace G
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
-            this.DocumentParts = documentParts ?? throw new global::System.ArgumentNullException(nameof(documentParts));
             this.Metadata = metadata;
             this.Tables = tables;
             this.Images = images;
+            this.DocumentParts = documentParts ?? throw new global::System.ArgumentNullException(nameof(documentParts));
         }
 
         /// <summary>

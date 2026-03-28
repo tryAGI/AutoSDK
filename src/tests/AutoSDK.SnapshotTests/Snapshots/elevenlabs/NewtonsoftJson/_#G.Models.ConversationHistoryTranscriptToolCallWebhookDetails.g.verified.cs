@@ -60,11 +60,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationHistoryTranscriptToolCallWebhookDetails" /> class.
         /// </summary>
+        /// <param name="method"></param>
+        /// <param name="url"></param>
         /// <param name="type">
         /// Default Value: webhook
         /// </param>
-        /// <param name="method"></param>
-        /// <param name="url"></param>
         /// <param name="headers"></param>
         /// <param name="pathParams"></param>
         /// <param name="queryParams"></param>
@@ -78,9 +78,9 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, string>? queryParams,
             string? body)
         {
+            this.Type = type;
             this.Method = method ?? throw new global::System.ArgumentNullException(nameof(method));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Type = type;
             this.Headers = headers;
             this.PathParams = pathParams;
             this.QueryParams = queryParams;

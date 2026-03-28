@@ -222,35 +222,17 @@ namespace G
         /// <param name="id">
         /// The ID of the pull request review comment.
         /// </param>
-        /// <param name="inReplyToId">
-        /// The comment ID to reply to.
-        /// </param>
-        /// <param name="line">
-        /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
-        /// </param>
         /// <param name="nodeId">
         /// The node ID of the pull request review comment.
         /// </param>
         /// <param name="originalCommitId">
         /// The SHA of the original commit to which the comment applies.
         /// </param>
-        /// <param name="originalLine">
-        /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
-        /// </param>
         /// <param name="originalPosition">
         /// The index of the original line in the diff to which the comment applies.
         /// </param>
-        /// <param name="originalStartLine">
-        /// The first line of the range for a multi-line comment.
-        /// </param>
         /// <param name="path">
         /// The relative path of the file to which the comment applies.
-        /// </param>
-        /// <param name="position">
-        /// The line index in the diff to which the comment applies.
-        /// </param>
-        /// <param name="pullRequestReviewId">
-        /// The ID of the pull request review to which the comment belongs.
         /// </param>
         /// <param name="pullRequestUrl">
         /// URL for the pull request that the review comment belongs to.
@@ -258,6 +240,28 @@ namespace G
         /// <param name="reactions"></param>
         /// <param name="side">
         /// The side of the first line of the range for a multi-line comment.
+        /// </param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url">
+        /// URL for the pull request review comment
+        /// </param>
+        /// <param name="inReplyToId">
+        /// The comment ID to reply to.
+        /// </param>
+        /// <param name="line">
+        /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
+        /// </param>
+        /// <param name="originalLine">
+        /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
+        /// </param>
+        /// <param name="originalStartLine">
+        /// The first line of the range for a multi-line comment.
+        /// </param>
+        /// <param name="position">
+        /// The line index in the diff to which the comment applies.
+        /// </param>
+        /// <param name="pullRequestReviewId">
+        /// The ID of the pull request review to which the comment belongs.
         /// </param>
         /// <param name="startLine">
         /// The first line of the range for a multi-line comment.
@@ -268,10 +272,6 @@ namespace G
         /// </param>
         /// <param name="subjectType">
         /// The level at which the comment is targeted, can be a diff line or a file.
-        /// </param>
-        /// <param name="updatedAt"></param>
-        /// <param name="url">
-        /// URL for the pull request review comment
         /// </param>
         /// <param name="user"></param>
 #if NET7_0_OR_GREATER
@@ -314,24 +314,24 @@ namespace G
             this.DiffHunk = diffHunk ?? throw new global::System.ArgumentNullException(nameof(diffHunk));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
+            this.InReplyToId = inReplyToId;
+            this.Line = line;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.OriginalCommitId = originalCommitId ?? throw new global::System.ArgumentNullException(nameof(originalCommitId));
+            this.OriginalLine = originalLine;
             this.OriginalPosition = originalPosition;
+            this.OriginalStartLine = originalStartLine;
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
+            this.Position = position;
+            this.PullRequestReviewId = pullRequestReviewId;
             this.PullRequestUrl = pullRequestUrl ?? throw new global::System.ArgumentNullException(nameof(pullRequestUrl));
             this.Reactions = reactions ?? throw new global::System.ArgumentNullException(nameof(reactions));
             this.Side = side;
-            this.UpdatedAt = updatedAt;
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.InReplyToId = inReplyToId;
-            this.Line = line;
-            this.OriginalLine = originalLine;
-            this.OriginalStartLine = originalStartLine;
-            this.Position = position;
-            this.PullRequestReviewId = pullRequestReviewId;
             this.StartLine = startLine;
             this.StartSide = startSide;
             this.SubjectType = subjectType;
+            this.UpdatedAt = updatedAt;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.User = user;
         }
 

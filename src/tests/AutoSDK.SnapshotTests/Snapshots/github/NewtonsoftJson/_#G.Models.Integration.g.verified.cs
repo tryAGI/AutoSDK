@@ -146,25 +146,12 @@ namespace G
         /// Unique identifier of the GitHub app<br/>
         /// Example: 37
         /// </param>
-        /// <param name="slug">
-        /// The slug name of the GitHub app<br/>
-        /// Example: probot-owners
-        /// </param>
         /// <param name="nodeId">
         /// Example: MDExOkludGVncmF0aW9uMQ==
-        /// </param>
-        /// <param name="clientId">
-        /// Example: "Iv1.25b5d1e65ffc4022"
-        /// </param>
-        /// <param name="owner">
-        /// A GitHub user.
         /// </param>
         /// <param name="name">
         /// The name of the GitHub app<br/>
         /// Example: Probot Owners
-        /// </param>
-        /// <param name="description">
-        /// Example: The description of the app.
         /// </param>
         /// <param name="externalUrl">
         /// Example: https://example.com
@@ -185,6 +172,19 @@ namespace G
         /// <param name="events">
         /// The list of events for the GitHub app<br/>
         /// Example: [label, deployment]
+        /// </param>
+        /// <param name="slug">
+        /// The slug name of the GitHub app<br/>
+        /// Example: probot-owners
+        /// </param>
+        /// <param name="clientId">
+        /// Example: "Iv1.25b5d1e65ffc4022"
+        /// </param>
+        /// <param name="owner">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="description">
+        /// Example: The description of the app.
         /// </param>
         /// <param name="installationsCount">
         /// The number of installations associated with the GitHub app<br/>
@@ -219,18 +219,18 @@ namespace G
             string? pem)
         {
             this.Id = id;
+            this.Slug = slug;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.ClientId = clientId;
+            this.Owner = owner;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description;
             this.ExternalUrl = externalUrl ?? throw new global::System.ArgumentNullException(nameof(externalUrl));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
             this.Events = events ?? throw new global::System.ArgumentNullException(nameof(events));
-            this.Slug = slug;
-            this.ClientId = clientId;
-            this.Owner = owner;
-            this.Description = description;
             this.InstallationsCount = installationsCount;
             this.ClientSecret = clientSecret;
             this.WebhookSecret = webhookSecret;

@@ -101,7 +101,6 @@ namespace G
         /// Initializes a new instance of the <see cref="WebhookRegistryPackageUpdatedRegistryPackage" /> class.
         /// </summary>
         /// <param name="createdAt"></param>
-        /// <param name="description"></param>
         /// <param name="ecosystem"></param>
         /// <param name="htmlUrl"></param>
         /// <param name="id"></param>
@@ -110,8 +109,9 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="packageType"></param>
         /// <param name="packageVersion"></param>
-        /// <param name="registry"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="description"></param>
+        /// <param name="registry"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -130,6 +130,7 @@ namespace G
             object? registry)
         {
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.Description = description;
             this.Ecosystem = ecosystem ?? throw new global::System.ArgumentNullException(nameof(ecosystem));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
@@ -138,9 +139,8 @@ namespace G
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.PackageType = packageType ?? throw new global::System.ArgumentNullException(nameof(packageType));
             this.PackageVersion = packageVersion ?? throw new global::System.ArgumentNullException(nameof(packageVersion));
-            this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
-            this.Description = description;
             this.Registry = registry;
+            this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
         }
 
         /// <summary>

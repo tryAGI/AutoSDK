@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WhatsAppTemplateImageParam" /> class.
         /// </summary>
+        /// <param name="image"></param>
         /// <param name="type">
         /// Default Value: image
         /// </param>
-        /// <param name="image"></param>
         public WhatsAppTemplateImageParam(
             global::G.WhatsAppTemplateImageParamDetails image,
             string? type)
         {
-            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.Type = type;
+            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
         }
 
         /// <summary>

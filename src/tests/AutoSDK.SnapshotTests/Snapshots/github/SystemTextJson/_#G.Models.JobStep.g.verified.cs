@@ -73,16 +73,16 @@ namespace G
         /// The phase of the lifecycle that the job is currently in.<br/>
         /// Example: queued
         /// </param>
-        /// <param name="conclusion">
-        /// The outcome of the job.<br/>
-        /// Example: success
-        /// </param>
         /// <param name="name">
         /// The name of the job.<br/>
         /// Example: test-coverage
         /// </param>
         /// <param name="number">
         /// Example: 1
+        /// </param>
+        /// <param name="conclusion">
+        /// The outcome of the job.<br/>
+        /// Example: success
         /// </param>
         /// <param name="startedAt">
         /// The time that the step started, in ISO 8601 format.<br/>
@@ -104,9 +104,9 @@ namespace G
             global::System.DateTime? completedAt)
         {
             this.Status = status;
+            this.Conclusion = conclusion;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Number = number;
-            this.Conclusion = conclusion;
             this.StartedAt = startedAt;
             this.CompletedAt = completedAt;
         }

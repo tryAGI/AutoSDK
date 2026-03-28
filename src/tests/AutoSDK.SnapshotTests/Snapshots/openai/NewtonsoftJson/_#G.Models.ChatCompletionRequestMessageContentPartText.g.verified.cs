@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionRequestMessageContentPartText" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the content part.
-        /// </param>
         /// <param name="text">
         /// The text content.
+        /// </param>
+        /// <param name="type">
+        /// The type of the content part.
         /// </param>
         public ChatCompletionRequestMessageContentPartText(
             string text,
             global::G.ChatCompletionRequestMessageContentPartTextType type)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

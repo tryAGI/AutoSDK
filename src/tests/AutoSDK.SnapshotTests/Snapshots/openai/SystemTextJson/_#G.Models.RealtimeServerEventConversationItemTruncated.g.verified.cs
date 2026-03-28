@@ -60,9 +60,6 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `conversation.item.truncated`.
-        /// </param>
         /// <param name="itemId">
         /// The ID of the assistant message item that was truncated.
         /// </param>
@@ -71,6 +68,9 @@ namespace G
         /// </param>
         /// <param name="audioEndMs">
         /// The duration up to which the audio was truncated, in milliseconds.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `conversation.item.truncated`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -83,10 +83,10 @@ namespace G
             global::G.RealtimeServerEventConversationItemTruncatedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
+            this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.ContentIndex = contentIndex;
             this.AudioEndMs = audioEndMs;
-            this.Type = type;
         }
 
         /// <summary>

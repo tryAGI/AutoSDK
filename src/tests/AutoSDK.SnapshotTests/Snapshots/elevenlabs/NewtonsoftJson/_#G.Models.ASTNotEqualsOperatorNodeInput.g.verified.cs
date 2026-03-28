@@ -36,23 +36,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ASTNotEqualsOperatorNodeInput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: neq_operator
-        /// </param>
         /// <param name="left">
         /// Left operand of the binary operator.
         /// </param>
         /// <param name="right">
         /// Right operand of the binary operator.
         /// </param>
+        /// <param name="type">
+        /// Default Value: neq_operator
+        /// </param>
         public ASTNotEqualsOperatorNodeInput(
             global::G.Left11 left,
             global::G.Right11 right,
             string? type)
         {
+            this.Type = type;
             this.Left = left;
             this.Right = right;
-            this.Type = type;
         }
 
         /// <summary>

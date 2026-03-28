@@ -114,11 +114,18 @@ namespace G
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `assistant`.
-        /// </param>
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) for when the assistant was created.
+        /// </param>
+        /// <param name="model">
+        /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
+        /// </param>
+        /// <param name="tools">
+        /// A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.<br/>
+        /// Default Value: []
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `assistant`.
         /// </param>
         /// <param name="name">
         /// The name of the assistant. The maximum length is 256 characters.
@@ -126,15 +133,8 @@ namespace G
         /// <param name="description">
         /// The description of the assistant. The maximum length is 512 characters.
         /// </param>
-        /// <param name="model">
-        /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
-        /// </param>
         /// <param name="instructions">
         /// The system instructions that the assistant uses. The maximum length is 256,000 characters.
-        /// </param>
-        /// <param name="tools">
-        /// A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.<br/>
-        /// Default Value: []
         /// </param>
         /// <param name="toolResources">
         /// A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
@@ -179,13 +179,13 @@ namespace G
             global::G.AssistantsApiResponseFormatOption? responseFormat)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.CreatedAt = createdAt;
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
             this.Object = @object;
+            this.CreatedAt = createdAt;
             this.Name = name;
             this.Description = description;
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Instructions = instructions;
+            this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
             this.ToolResources = toolResources;
             this.Metadata = metadata;
             this.Temperature = temperature;

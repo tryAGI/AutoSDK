@@ -31,16 +31,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="SucceededResult" /> class.
         /// </summary>
+        /// <param name="message"></param>
         /// <param name="type">
         /// Default Value: succeeded
         /// </param>
-        /// <param name="message"></param>
         public SucceededResult(
             global::G.Message message,
             global::G.SucceededResultType type = global::G.SucceededResultType.Succeeded)
         {
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Type = type;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
         }
 
         /// <summary>

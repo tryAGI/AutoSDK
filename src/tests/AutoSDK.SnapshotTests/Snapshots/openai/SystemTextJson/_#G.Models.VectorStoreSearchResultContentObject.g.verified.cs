@@ -32,11 +32,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="VectorStoreSearchResultContentObject" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of content.
-        /// </param>
         /// <param name="text">
         /// The text content returned from search.
+        /// </param>
+        /// <param name="type">
+        /// The type of content.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -45,8 +45,8 @@ namespace G
             string text,
             global::G.VectorStoreSearchResultContentObjectType type)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

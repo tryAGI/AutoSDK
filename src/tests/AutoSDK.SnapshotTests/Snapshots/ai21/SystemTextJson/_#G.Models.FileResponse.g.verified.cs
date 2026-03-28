@@ -116,35 +116,11 @@ namespace G
         /// The name of the file. This is the local file name from when the file was<br/>
         /// uploaded. It cannot be modified.
         /// </param>
-        /// <param name="path">
-        /// An arbitrary file-path-like string to indicate the content of a file. This has<br/>
-        /// nothing to do with the location of the file in storage or on disk, and is only<br/>
-        /// another label that you can assign to the file in path-like format to help you<br/>
-        /// organize the contents of the file or filter queries against your files. Example<br/>
-        /// paths might be `pets/fish` or `pets/dogs`. Then, when searching your library,<br/>
-        /// you can filter files by the full path or path prefix. So to search only files<br/>
-        /// in the "dog folder", filter by the path `/pets/dogs`. To search all files in<br/>
-        /// the "pet folder", filter your search by the path `pets/` when searching by path.<br/>
-        /// There isn't a restriction on whether a path must start or end with a / mark, but<br/>
-        /// be consistent in your usage, and all matches are prefix matching, not substring<br/>
-        /// matching. So filtering by `dog/` matches `dog/` and `dog/setter` but not `pets/dog/`.
-        /// </param>
         /// <param name="fileType">
         /// The file type. See the file upload method to learn what file types are supported.
         /// </param>
         /// <param name="sizeBytes">
         /// The size of the file, in bytes.
-        /// </param>
-        /// <param name="labels">
-        /// Any string labels you have associated with the file. You can apply arbitrary<br/>
-        /// string labels to your files and limit queries to files with one or more labels.<br/>
-        /// Similar to paths, but labels do not prefix match. Labels are case-sensitive.<br/>
-        /// There can be a maximum of 20 unique labels per account.
-        /// </param>
-        /// <param name="publicUrl">
-        /// The public URL of the file, if any. This URL is not validated by<br/>
-        /// AI21 or used in any way. It is strictly a piece of metadata that you can<br/>
-        /// optionally attach to a file.
         /// </param>
         /// <param name="createdBy">
         /// An internal identifier of the user who uploaded the file.
@@ -158,6 +134,30 @@ namespace G
         /// <param name="status">
         /// File status. One of the following values: "DB_RECORD_CREATED",<br/>
         /// "UPLOADED", "UPLOAD_FAILED", "PROCESSED", "PROCESSING_FAILED"
+        /// </param>
+        /// <param name="path">
+        /// An arbitrary file-path-like string to indicate the content of a file. This has<br/>
+        /// nothing to do with the location of the file in storage or on disk, and is only<br/>
+        /// another label that you can assign to the file in path-like format to help you<br/>
+        /// organize the contents of the file or filter queries against your files. Example<br/>
+        /// paths might be `pets/fish` or `pets/dogs`. Then, when searching your library,<br/>
+        /// you can filter files by the full path or path prefix. So to search only files<br/>
+        /// in the "dog folder", filter by the path `/pets/dogs`. To search all files in<br/>
+        /// the "pet folder", filter your search by the path `pets/` when searching by path.<br/>
+        /// There isn't a restriction on whether a path must start or end with a / mark, but<br/>
+        /// be consistent in your usage, and all matches are prefix matching, not substring<br/>
+        /// matching. So filtering by `dog/` matches `dog/` and `dog/setter` but not `pets/dog/`.
+        /// </param>
+        /// <param name="labels">
+        /// Any string labels you have associated with the file. You can apply arbitrary<br/>
+        /// string labels to your files and limit queries to files with one or more labels.<br/>
+        /// Similar to paths, but labels do not prefix match. Labels are case-sensitive.<br/>
+        /// There can be a maximum of 20 unique labels per account.
+        /// </param>
+        /// <param name="publicUrl">
+        /// The public URL of the file, if any. This URL is not validated by<br/>
+        /// AI21 or used in any way. It is strictly a piece of metadata that you can<br/>
+        /// optionally attach to a file.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -177,15 +177,15 @@ namespace G
         {
             this.FileId = fileId;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Path = path;
             this.FileType = fileType ?? throw new global::System.ArgumentNullException(nameof(fileType));
             this.SizeBytes = sizeBytes;
+            this.Labels = labels;
+            this.PublicUrl = publicUrl;
             this.CreatedBy = createdBy;
             this.CreationDate = creationDate;
             this.LastUpdated = lastUpdated;
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
-            this.Path = path;
-            this.Labels = labels;
-            this.PublicUrl = publicUrl;
         }
 
         /// <summary>

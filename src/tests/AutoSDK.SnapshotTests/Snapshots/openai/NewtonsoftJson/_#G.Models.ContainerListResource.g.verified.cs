@@ -48,9 +48,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerListResource" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The type of object returned, must be 'list'.
-        /// </param>
         /// <param name="data">
         /// A list of containers.
         /// </param>
@@ -63,6 +60,9 @@ namespace G
         /// <param name="hasMore">
         /// Whether there are more containers available.
         /// </param>
+        /// <param name="object">
+        /// The type of object returned, must be 'list'.
+        /// </param>
         public ContainerListResource(
             global::System.Collections.Generic.IList<global::G.ContainerResource> data,
             string firstId,
@@ -70,11 +70,11 @@ namespace G
             bool hasMore,
             global::G.ContainerListResourceObject @object)
         {
+            this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
             this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
             this.HasMore = hasMore;
-            this.Object = @object;
         }
 
         /// <summary>

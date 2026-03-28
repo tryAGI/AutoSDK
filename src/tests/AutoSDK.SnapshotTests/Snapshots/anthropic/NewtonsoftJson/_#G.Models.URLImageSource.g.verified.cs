@@ -30,14 +30,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="URLImageSource" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="url"></param>
+        /// <param name="type"></param>
         public URLImageSource(
             string url,
             global::G.URLImageSourceType type)
         {
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Type = type;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 
         /// <summary>

@@ -74,10 +74,6 @@ namespace G
         /// The id of the runner.<br/>
         /// Example: 5
         /// </param>
-        /// <param name="runnerGroupId">
-        /// The id of the runner group.<br/>
-        /// Example: 1
-        /// </param>
         /// <param name="name">
         /// The name of the runner.<br/>
         /// Example: iMac
@@ -92,6 +88,10 @@ namespace G
         /// </param>
         /// <param name="busy"></param>
         /// <param name="labels"></param>
+        /// <param name="runnerGroupId">
+        /// The id of the runner group.<br/>
+        /// Example: 1
+        /// </param>
         public Runner(
             int id,
             string name,
@@ -102,12 +102,12 @@ namespace G
             int? runnerGroupId)
         {
             this.Id = id;
+            this.RunnerGroupId = runnerGroupId;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Os = os ?? throw new global::System.ArgumentNullException(nameof(os));
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.Busy = busy;
             this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
-            this.RunnerGroupId = runnerGroupId;
         }
 
         /// <summary>

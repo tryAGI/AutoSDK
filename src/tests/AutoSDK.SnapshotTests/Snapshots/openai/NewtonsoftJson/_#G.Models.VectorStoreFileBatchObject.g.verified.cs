@@ -57,9 +57,6 @@ namespace G
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `vector_store.file_batch`.
-        /// </param>
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) for when the vector store files batch was created.
         /// </param>
@@ -70,6 +67,9 @@ namespace G
         /// The status of the vector store files batch, which can be either `in_progress`, `completed`, `cancelled` or `failed`.
         /// </param>
         /// <param name="fileCounts"></param>
+        /// <param name="object">
+        /// The object type, which is always `vector_store.file_batch`.
+        /// </param>
         public VectorStoreFileBatchObject(
             string id,
             global::System.DateTimeOffset createdAt,
@@ -79,11 +79,11 @@ namespace G
             global::G.VectorStoreFileBatchObjectObject @object)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.CreatedAt = createdAt;
             this.VectorStoreId = vectorStoreId ?? throw new global::System.ArgumentNullException(nameof(vectorStoreId));
             this.Status = status;
             this.FileCounts = fileCounts ?? throw new global::System.ArgumentNullException(nameof(fileCounts));
-            this.Object = @object;
         }
 
         /// <summary>

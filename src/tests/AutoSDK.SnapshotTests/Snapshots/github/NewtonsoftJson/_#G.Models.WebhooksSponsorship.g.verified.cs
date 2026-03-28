@@ -61,14 +61,14 @@ namespace G
         /// Initializes a new instance of the <see cref="WebhooksSponsorship" /> class.
         /// </summary>
         /// <param name="createdAt"></param>
-        /// <param name="maintainer"></param>
         /// <param name="nodeId"></param>
         /// <param name="privacyLevel"></param>
-        /// <param name="sponsor"></param>
-        /// <param name="sponsorable"></param>
         /// <param name="tier">
         /// The `tier_changed` and `pending_tier_change` will include the original tier before the change or pending change. For more information, see the pending tier change payload.
         /// </param>
+        /// <param name="maintainer"></param>
+        /// <param name="sponsor"></param>
+        /// <param name="sponsorable"></param>
         public WebhooksSponsorship(
             string createdAt,
             string nodeId,
@@ -79,12 +79,12 @@ namespace G
             global::G.WebhooksSponsorshipSponsorable? sponsorable)
         {
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.Maintainer = maintainer;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.PrivacyLevel = privacyLevel ?? throw new global::System.ArgumentNullException(nameof(privacyLevel));
-            this.Tier = tier ?? throw new global::System.ArgumentNullException(nameof(tier));
-            this.Maintainer = maintainer;
             this.Sponsor = sponsor;
             this.Sponsorable = sponsorable;
+            this.Tier = tier ?? throw new global::System.ArgumentNullException(nameof(tier));
         }
 
         /// <summary>

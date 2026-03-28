@@ -42,11 +42,11 @@ namespace G
         /// <param name="id">
         /// The identifier of the message, which can be referenced in API endpoints.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `thread.message.delta`.
-        /// </param>
         /// <param name="delta">
         /// The delta containing the fields that have changed on the Message.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `thread.message.delta`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -57,8 +57,8 @@ namespace G
             global::G.MessageDeltaObjectObject @object)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.Object = @object;
+            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
         }
 
         /// <summary>

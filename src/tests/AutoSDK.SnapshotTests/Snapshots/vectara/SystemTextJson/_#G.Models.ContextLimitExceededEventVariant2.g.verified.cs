@@ -56,6 +56,10 @@ namespace G
         /// The type of event.<br/>
         /// Default Value: context_limit_exceeded
         /// </param>
+        /// <param name="message">
+        /// Human-readable error message<br/>
+        /// Example: Context limit exceeded: 140658 tokens used, 128000 limit
+        /// </param>
         /// <param name="contextLimit">
         /// The maximum number of tokens allowed by the model<br/>
         /// Example: 128000
@@ -63,10 +67,6 @@ namespace G
         /// <param name="actualTokens">
         /// The actual number of tokens in the request<br/>
         /// Example: 140658
-        /// </param>
-        /// <param name="message">
-        /// Human-readable error message<br/>
-        /// Example: Context limit exceeded: 140658 tokens used, 128000 limit
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -78,9 +78,9 @@ namespace G
             long? actualTokens)
         {
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.ContextLimit = contextLimit;
             this.ActualTokens = actualTokens;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
         }
 
         /// <summary>

@@ -55,12 +55,12 @@ namespace G
         /// Initializes a new instance of the <see cref="FunctionMessageChunk" /> class.
         /// </summary>
         /// <param name="content"></param>
+        /// <param name="name"></param>
         /// <param name="additionalKwargs"></param>
         /// <param name="responseMetadata"></param>
         /// <param name="type">
         /// Default Value: FunctionMessageChunk
         /// </param>
-        /// <param name="name"></param>
         /// <param name="id"></param>
         public FunctionMessageChunk(
             global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.AnyOf<string, object>>> content,
@@ -71,10 +71,10 @@ namespace G
             string? id)
         {
             this.Content = content;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.AdditionalKwargs = additionalKwargs;
             this.ResponseMetadata = responseMetadata;
             this.Type = type;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Id = id;
         }
 

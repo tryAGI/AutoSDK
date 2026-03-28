@@ -72,6 +72,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Checklist" /> class.
         /// </summary>
+        /// <param name="stripeBalance">
+        /// Negative value indicates funds ready-to-spend. Positive value indicates money owed
+        /// </param>
         /// <param name="email">
         /// Default Value: false
         /// </param>
@@ -90,9 +93,6 @@ namespace G
         /// <param name="lastChecked">
         /// Default Value: 0
         /// </param>
-        /// <param name="stripeBalance">
-        /// Negative value indicates funds ready-to-spend. Positive value indicates money owed
-        /// </param>
         /// <param name="limit"></param>
         /// <param name="suspendReason"></param>
         public Checklist(
@@ -106,13 +106,13 @@ namespace G
             double? limit,
             global::G.SuspendReason? suspendReason)
         {
-            this.StripeBalance = stripeBalance;
             this.Email = email;
             this.BillingAddress = billingAddress;
             this.PaymentMethod = paymentMethod;
             this.Suspended = suspended;
             this.OverdueInvoices = overdueInvoices;
             this.LastChecked = lastChecked;
+            this.StripeBalance = stripeBalance;
             this.Limit = limit;
             this.SuspendReason = suspendReason;
         }

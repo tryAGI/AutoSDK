@@ -75,6 +75,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GetSimulationTestResponseModel" /> class.
         /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
         /// <param name="fromConversationMetadata">
         /// Metadata of a conversation this test was created from (if applicable).
         /// </param>
@@ -95,8 +97,6 @@ namespace G
         /// Maximum number of conversation turns for simulation tests.<br/>
         /// Default Value: 5
         /// </param>
-        /// <param name="id"></param>
-        /// <param name="name"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -111,8 +111,6 @@ namespace G
             string? simulationScenario,
             int? simulationMaxTurns)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.FromConversationMetadata = fromConversationMetadata;
             this.DynamicVariables = dynamicVariables;
             this.ChatHistory = chatHistory;
@@ -120,6 +118,8 @@ namespace G
             this.SuccessCondition = successCondition;
             this.SimulationScenario = simulationScenario;
             this.SimulationMaxTurns = simulationMaxTurns;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
         }
 
         /// <summary>

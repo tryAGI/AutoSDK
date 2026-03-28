@@ -41,11 +41,11 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `session.created`.
-        /// </param>
         /// <param name="session">
         /// Realtime session object configuration.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `session.created`.
         /// </param>
         public RealtimeServerEventSessionCreated(
             string eventId,
@@ -53,8 +53,8 @@ namespace G
             global::G.RealtimeServerEventSessionCreatedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Session = session ?? throw new global::System.ArgumentNullException(nameof(session));
             this.Type = type;
+            this.Session = session ?? throw new global::System.ArgumentNullException(nameof(session));
         }
 
         /// <summary>

@@ -30,14 +30,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="IdentityPatch" /> class.
         /// </summary>
-        /// <param name="readOnly"></param>
         /// <param name="roleId"></param>
+        /// <param name="readOnly"></param>
         public IdentityPatch(
             global::System.Guid roleId,
             bool? readOnly)
         {
-            this.RoleId = roleId;
             this.ReadOnly = readOnly;
+            this.RoleId = roleId;
         }
 
         /// <summary>

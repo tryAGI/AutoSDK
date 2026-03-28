@@ -72,9 +72,6 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `response.audio_transcript.done`.
-        /// </param>
         /// <param name="responseId">
         /// The ID of the response.
         /// </param>
@@ -90,6 +87,9 @@ namespace G
         /// <param name="transcript">
         /// The final transcript of the audio.
         /// </param>
+        /// <param name="type">
+        /// The event type, must be `response.audio_transcript.done`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -103,12 +103,12 @@ namespace G
             global::G.RealtimeServerEventResponseAudioTranscriptDoneType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
+            this.Type = type;
             this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.ContentIndex = contentIndex;
             this.Transcript = transcript ?? throw new global::System.ArgumentNullException(nameof(transcript));
-            this.Type = type;
         }
 
         /// <summary>

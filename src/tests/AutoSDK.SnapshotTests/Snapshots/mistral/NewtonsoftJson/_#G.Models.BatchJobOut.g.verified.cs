@@ -121,15 +121,9 @@ namespace G
         /// Initializes a new instance of the <see cref="BatchJobOut" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="object">
-        /// Default Value: batch
-        /// </param>
         /// <param name="inputFiles"></param>
-        /// <param name="metadata"></param>
         /// <param name="endpoint"></param>
         /// <param name="model"></param>
-        /// <param name="outputFile"></param>
-        /// <param name="errorFile"></param>
         /// <param name="errors"></param>
         /// <param name="status"></param>
         /// <param name="createdAt"></param>
@@ -137,6 +131,12 @@ namespace G
         /// <param name="completedRequests"></param>
         /// <param name="succeededRequests"></param>
         /// <param name="failedRequests"></param>
+        /// <param name="object">
+        /// Default Value: batch
+        /// </param>
+        /// <param name="metadata"></param>
+        /// <param name="outputFile"></param>
+        /// <param name="errorFile"></param>
         /// <param name="startedAt"></param>
         /// <param name="completedAt"></param>
         public BatchJobOut(
@@ -159,9 +159,13 @@ namespace G
             int? completedAt)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.InputFiles = inputFiles ?? throw new global::System.ArgumentNullException(nameof(inputFiles));
+            this.Metadata = metadata;
             this.Endpoint = endpoint ?? throw new global::System.ArgumentNullException(nameof(endpoint));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.OutputFile = outputFile;
+            this.ErrorFile = errorFile;
             this.Errors = errors ?? throw new global::System.ArgumentNullException(nameof(errors));
             this.Status = status;
             this.CreatedAt = createdAt;
@@ -169,10 +173,6 @@ namespace G
             this.CompletedRequests = completedRequests;
             this.SucceededRequests = succeededRequests;
             this.FailedRequests = failedRequests;
-            this.Object = @object;
-            this.Metadata = metadata;
-            this.OutputFile = outputFile;
-            this.ErrorFile = errorFile;
             this.StartedAt = startedAt;
             this.CompletedAt = completedAt;
         }

@@ -42,8 +42,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="User" /> class.
         /// </summary>
-        /// <param name="email"></param>
         /// <param name="id"></param>
+        /// <param name="email"></param>
         /// <param name="name"></param>
         /// <param name="registrationTime"></param>
         public User(
@@ -52,8 +52,8 @@ namespace G
             string? name,
             global::System.DateTime? registrationTime)
         {
-            this.Id = id;
             this.Email = email;
+            this.Id = id;
             this.Name = name;
             this.RegistrationTime = registrationTime;
         }

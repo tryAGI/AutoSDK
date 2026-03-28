@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolCall" /> class.
         /// </summary>
+        /// <param name="function"></param>
         /// <param name="id">
         /// Default Value: null
         /// </param>
         /// <param name="type">
         /// Default Value: function
         /// </param>
-        /// <param name="function"></param>
         /// <param name="index">
         /// Default Value: 0
         /// </param>
@@ -58,9 +58,9 @@ namespace G
             global::G.ToolTypes? type,
             int? index)
         {
-            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
             this.Id = id;
             this.Type = type;
+            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
             this.Index = index;
         }
 

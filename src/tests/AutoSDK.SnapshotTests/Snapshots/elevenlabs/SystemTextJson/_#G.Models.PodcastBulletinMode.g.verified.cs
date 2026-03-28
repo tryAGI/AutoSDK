@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PodcastBulletinMode" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of podcast to create.
-        /// </param>
         /// <param name="bulletin">
         /// The voice settings for the bulletin.<br/>
         /// Example: {"host_voice_id":"aw1NgEzBg83R7vgmiJt6"}
+        /// </param>
+        /// <param name="type">
+        /// The type of podcast to create.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -48,8 +48,8 @@ namespace G
             global::G.PodcastBulletinModeData bulletin,
             string type = "bulletin")
         {
-            this.Bulletin = bulletin ?? throw new global::System.ArgumentNullException(nameof(bulletin));
             this.Type = type;
+            this.Bulletin = bulletin ?? throw new global::System.ArgumentNullException(nameof(bulletin));
         }
 
         /// <summary>

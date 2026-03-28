@@ -66,10 +66,10 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="settings"></param>
-        /// <param name="options"></param>
-        /// <param name="name"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="options"></param>
+        /// <param name="name"></param>
         /// <param name="description"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -85,10 +85,10 @@ namespace G
         {
             this.Id = id;
             this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.Options = options;
             this.Name = name;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.Description = description;
         }
 

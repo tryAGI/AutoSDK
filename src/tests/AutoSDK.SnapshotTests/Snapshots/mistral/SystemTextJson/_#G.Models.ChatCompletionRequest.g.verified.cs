@@ -133,6 +133,9 @@ namespace G
         /// <param name="model">
         /// ID of the model to use. You can use the [List Available Models](/api/#tag/models/operation/list_models_v1_models_get) API to see all of your available models, or see our [Model overview](/models) for model descriptions.
         /// </param>
+        /// <param name="messages">
+        /// The prompt(s) to generate completions for, encoded as a list of dict with role and content.
+        /// </param>
         /// <param name="temperature">
         /// What sampling temperature to use, we recommend between 0.0 and 0.7. Higher values like 0.7 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or `top_p` but not both. The default value varies depending on the model you are targeting. Call the `/models` endpoint to retrieve the appropriate value.
         /// </param>
@@ -152,9 +155,6 @@ namespace G
         /// </param>
         /// <param name="randomSeed">
         /// The seed to use for random sampling. If set, different calls will generate deterministic results.
-        /// </param>
-        /// <param name="messages">
-        /// The prompt(s) to generate completions for, encoded as a list of dict with role and content.
         /// </param>
         /// <param name="responseFormat"></param>
         /// <param name="tools"></param>
@@ -206,13 +206,13 @@ namespace G
             bool? safePrompt)
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.Temperature = temperature;
             this.TopP = topP;
             this.MaxTokens = maxTokens;
             this.Stream = stream;
             this.Stop = stop;
             this.RandomSeed = randomSeed;
+            this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.ResponseFormat = responseFormat;
             this.Tools = tools;
             this.ToolChoice = toolChoice;

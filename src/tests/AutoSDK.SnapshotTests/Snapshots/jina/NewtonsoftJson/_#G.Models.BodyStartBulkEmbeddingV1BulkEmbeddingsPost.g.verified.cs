@@ -44,8 +44,8 @@ namespace G
         /// </summary>
         /// <param name="file"></param>
         /// <param name="filename"></param>
-        /// <param name="email"></param>
         /// <param name="model"></param>
+        /// <param name="email"></param>
         public BodyStartBulkEmbeddingV1BulkEmbeddingsPost(
             byte[] file,
             string filename,
@@ -54,8 +54,8 @@ namespace G
         {
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Email = email;
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
         }
 
         /// <summary>

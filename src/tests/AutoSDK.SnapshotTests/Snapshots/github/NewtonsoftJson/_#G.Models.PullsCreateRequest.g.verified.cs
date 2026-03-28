@@ -70,18 +70,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PullsCreateRequest" /> class.
         /// </summary>
-        /// <param name="title">
-        /// The title of the new pull request. Required unless `issue` is specified.
-        /// </param>
         /// <param name="head">
         /// The name of the branch where your changes are implemented. For cross-repository pull requests in the same network, namespace `head` with a user like this: `username:branch`.
+        /// </param>
+        /// <param name="base">
+        /// The name of the branch you want the changes pulled into. This should be an existing branch on the current repository. You cannot submit a pull request to one repository that requests a merge to a base of another repository.
+        /// </param>
+        /// <param name="title">
+        /// The title of the new pull request. Required unless `issue` is specified.
         /// </param>
         /// <param name="headRepo">
         /// The name of the repository where the changes in the pull request were made. This field is required for cross-repository pull requests if both repositories are owned by the same organization.<br/>
         /// Example: octo-org/octo-repo
-        /// </param>
-        /// <param name="base">
-        /// The name of the branch you want the changes pulled into. This should be an existing branch on the current repository. You cannot submit a pull request to one repository that requests a merge to a base of another repository.
         /// </param>
         /// <param name="body">
         /// The contents of the pull request.
@@ -106,10 +106,10 @@ namespace G
             bool? draft,
             long? issue)
         {
-            this.Head = head ?? throw new global::System.ArgumentNullException(nameof(head));
-            this.Base = @base ?? throw new global::System.ArgumentNullException(nameof(@base));
             this.Title = title;
+            this.Head = head ?? throw new global::System.ArgumentNullException(nameof(head));
             this.HeadRepo = headRepo;
+            this.Base = @base ?? throw new global::System.ArgumentNullException(nameof(@base));
             this.Body = body;
             this.MaintainerCanModify = maintainerCanModify;
             this.Draft = draft;

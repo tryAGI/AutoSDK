@@ -51,10 +51,10 @@ namespace G
         /// <param name="modelType">
         /// An enumeration.
         /// </param>
-        /// <param name="learningRate"></param>
-        /// <param name="numEpochs"></param>
         /// <param name="datasetId"></param>
         /// <param name="modelName"></param>
+        /// <param name="learningRate"></param>
+        /// <param name="numEpochs"></param>
         public CustomModelInput(
             global::G.CustomModelType modelType,
             string datasetId,
@@ -63,10 +63,10 @@ namespace G
             int? numEpochs)
         {
             this.ModelType = modelType;
-            this.DatasetId = datasetId ?? throw new global::System.ArgumentNullException(nameof(datasetId));
-            this.ModelName = modelName ?? throw new global::System.ArgumentNullException(nameof(modelName));
             this.LearningRate = learningRate;
             this.NumEpochs = numEpochs;
+            this.DatasetId = datasetId ?? throw new global::System.ArgumentNullException(nameof(datasetId));
+            this.ModelName = modelName ?? throw new global::System.ArgumentNullException(nameof(modelName));
         }
 
         /// <summary>

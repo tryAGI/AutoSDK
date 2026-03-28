@@ -92,11 +92,11 @@ namespace G
         /// <param name="trainingFile">
         /// File-ID of a training file uploaded to the Together API
         /// </param>
-        /// <param name="validationFile">
-        /// File-ID of a validation file uploaded to the Together API
-        /// </param>
         /// <param name="model">
         /// Name of the base model to run fine-tune job on
+        /// </param>
+        /// <param name="validationFile">
+        /// File-ID of a validation file uploaded to the Together API
         /// </param>
         /// <param name="nEpochs">
         /// Number of epochs for fine-tuning<br/>
@@ -139,8 +139,8 @@ namespace G
             global::G.OneOf<global::G.FullTrainingType, global::G.LoRATrainingType>? trainingType)
         {
             this.TrainingFile = trainingFile ?? throw new global::System.ArgumentNullException(nameof(trainingFile));
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.ValidationFile = validationFile;
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.NEpochs = nEpochs;
             this.NCheckpoints = nCheckpoints;
             this.NEvals = nEvals;

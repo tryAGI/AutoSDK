@@ -138,6 +138,30 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DependabotAlertWithRepository" /> class.
         /// </summary>
+        /// <param name="repository">
+        /// A GitHub repository.
+        /// </param>
+        /// <param name="dismissedAt">
+        /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="dismissedBy">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="dismissedReason">
+        /// The reason that the alert was dismissed.
+        /// </param>
+        /// <param name="dismissedComment">
+        /// An optional comment associated with the alert's dismissal.
+        /// </param>
+        /// <param name="fixedAt">
+        /// The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="autoDismissedAt">
+        /// The time that the alert was auto-dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
+        /// </param>
         /// <param name="number">
         /// The security alert number.<br/>
         /// Included only in responses
@@ -174,30 +198,6 @@ namespace G
         /// The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
         /// Included only in responses
         /// </param>
-        /// <param name="dismissedAt">
-        /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
-        /// Included only in responses
-        /// </param>
-        /// <param name="dismissedBy">
-        /// A GitHub user.
-        /// </param>
-        /// <param name="dismissedReason">
-        /// The reason that the alert was dismissed.
-        /// </param>
-        /// <param name="dismissedComment">
-        /// An optional comment associated with the alert's dismissal.
-        /// </param>
-        /// <param name="fixedAt">
-        /// The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
-        /// Included only in responses
-        /// </param>
-        /// <param name="autoDismissedAt">
-        /// The time that the alert was auto-dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
-        /// Included only in responses
-        /// </param>
-        /// <param name="repository">
-        /// A GitHub repository.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -219,7 +219,6 @@ namespace G
             global::System.DateTime createdAt = default!,
             global::System.DateTime updatedAt = default!)
         {
-            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.Number = number;
             this.State = state;
             this.Dependency = dependency;
@@ -235,6 +234,7 @@ namespace G
             this.DismissedComment = dismissedComment;
             this.FixedAt = fixedAt;
             this.AutoDismissedAt = autoDismissedAt;
+            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
         }
 
         /// <summary>

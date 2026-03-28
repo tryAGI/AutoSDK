@@ -102,6 +102,7 @@ namespace G
         /// <param name="userUrl">
         /// Example: https://github.com/{user}
         /// </param>
+        /// <param name="links"></param>
         /// <param name="currentUserPublicUrl">
         /// Example: https://github.com/octocat
         /// </param>
@@ -128,7 +129,6 @@ namespace G
         /// A feed of discussions for a given repository and category.<br/>
         /// Example: https://github.com/{user}/{repo}/discussions/categories/{category}
         /// </param>
-        /// <param name="links"></param>
         public Feed(
             string timelineUrl,
             string userUrl,
@@ -144,7 +144,6 @@ namespace G
         {
             this.TimelineUrl = timelineUrl ?? throw new global::System.ArgumentNullException(nameof(timelineUrl));
             this.UserUrl = userUrl ?? throw new global::System.ArgumentNullException(nameof(userUrl));
-            this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
             this.CurrentUserPublicUrl = currentUserPublicUrl;
             this.CurrentUserUrl = currentUserUrl;
             this.CurrentUserActorUrl = currentUserActorUrl;
@@ -153,6 +152,7 @@ namespace G
             this.SecurityAdvisoriesUrl = securityAdvisoriesUrl;
             this.RepositoryDiscussionsUrl = repositoryDiscussionsUrl;
             this.RepositoryDiscussionsCategoryUrl = repositoryDiscussionsCategoryUrl;
+            this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
         }
 
         /// <summary>

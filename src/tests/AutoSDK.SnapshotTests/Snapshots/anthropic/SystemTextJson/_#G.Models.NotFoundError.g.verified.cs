@@ -34,11 +34,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="NotFoundError" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: not_found_error
-        /// </param>
         /// <param name="message">
         /// Default Value: Not found
+        /// </param>
+        /// <param name="type">
+        /// Default Value: not_found_error
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -47,8 +47,8 @@ namespace G
             string message,
             global::G.NotFoundErrorType type = global::G.NotFoundErrorType.NotFoundError)
         {
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Type = type;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
         }
 
         /// <summary>

@@ -65,8 +65,8 @@ namespace G
         /// <param name="updatedAt"></param>
         /// <param name="name"></param>
         /// <param name="organizationId"></param>
-        /// <param name="defaultWorkspaceId"></param>
         /// <param name="organizationIdentityId"></param>
+        /// <param name="defaultWorkspaceId"></param>
         public ServiceAccountCreateResponse(
             global::System.Guid id,
             global::System.DateTime createdAt,
@@ -81,8 +81,8 @@ namespace G
             this.UpdatedAt = updatedAt;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.OrganizationId = organizationId;
-            this.OrganizationIdentityId = organizationIdentityId;
             this.DefaultWorkspaceId = defaultWorkspaceId;
+            this.OrganizationIdentityId = organizationIdentityId;
         }
 
         /// <summary>

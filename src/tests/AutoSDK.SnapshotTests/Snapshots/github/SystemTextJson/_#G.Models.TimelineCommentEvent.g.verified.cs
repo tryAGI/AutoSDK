@@ -149,12 +149,6 @@ namespace G
         /// URL for the issue comment<br/>
         /// Example: https://api.github.com/repositories/42/issues/comments/1
         /// </param>
-        /// <param name="body">
-        /// Contents of the issue comment<br/>
-        /// Example: What version of Safari were you using when you observed this bug?
-        /// </param>
-        /// <param name="bodyText"></param>
-        /// <param name="bodyHtml"></param>
         /// <param name="htmlUrl"></param>
         /// <param name="user">
         /// A GitHub user.
@@ -170,6 +164,12 @@ namespace G
         /// How the author is associated with the repository.<br/>
         /// Example: OWNER
         /// </param>
+        /// <param name="body">
+        /// Contents of the issue comment<br/>
+        /// Example: What version of Safari were you using when you observed this bug?
+        /// </param>
+        /// <param name="bodyText"></param>
+        /// <param name="bodyHtml"></param>
         /// <param name="performedViaGithubApp">
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
         /// </param>
@@ -200,15 +200,15 @@ namespace G
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Body = body;
+            this.BodyText = bodyText;
+            this.BodyHtml = bodyHtml;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.IssueUrl = issueUrl ?? throw new global::System.ArgumentNullException(nameof(issueUrl));
             this.AuthorAssociation = authorAssociation;
-            this.Body = body;
-            this.BodyText = bodyText;
-            this.BodyHtml = bodyHtml;
             this.PerformedViaGithubApp = performedViaGithubApp;
             this.Reactions = reactions;
         }

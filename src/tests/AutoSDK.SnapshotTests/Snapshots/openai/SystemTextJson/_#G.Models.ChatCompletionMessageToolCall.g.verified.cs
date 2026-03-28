@@ -42,11 +42,11 @@ namespace G
         /// <param name="id">
         /// The ID of the tool call.
         /// </param>
-        /// <param name="type">
-        /// The type of the tool. Currently, only `function` is supported.
-        /// </param>
         /// <param name="function">
         /// The function that the model called.
+        /// </param>
+        /// <param name="type">
+        /// The type of the tool. Currently, only `function` is supported.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -57,8 +57,8 @@ namespace G
             global::G.ChatCompletionMessageToolCallType type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
             this.Type = type;
+            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
         }
 
         /// <summary>

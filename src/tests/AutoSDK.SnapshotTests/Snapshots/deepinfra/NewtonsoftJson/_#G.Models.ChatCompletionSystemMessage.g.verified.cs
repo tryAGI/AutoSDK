@@ -37,12 +37,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionSystemMessage" /> class.
         /// </summary>
+        /// <param name="content">
+        /// the message content
+        /// </param>
         /// <param name="role">
         /// the role of the author of this message<br/>
         /// Default Value: system
-        /// </param>
-        /// <param name="content">
-        /// the message content
         /// </param>
         /// <param name="name"></param>
         public ChatCompletionSystemMessage(
@@ -50,8 +50,8 @@ namespace G
             string? role,
             string? name)
         {
-            this.Content = content;
             this.Role = role;
+            this.Content = content;
             this.Name = name;
         }
 

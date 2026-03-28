@@ -39,8 +39,8 @@ namespace G
         /// Initializes a new instance of the <see cref="AppsListInstallationReposForAuthenticatedUserResponse" /> class.
         /// </summary>
         /// <param name="totalCount"></param>
-        /// <param name="repositorySelection"></param>
         /// <param name="repositories"></param>
+        /// <param name="repositorySelection"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -50,8 +50,8 @@ namespace G
             string? repositorySelection)
         {
             this.TotalCount = totalCount;
-            this.Repositories = repositories ?? throw new global::System.ArgumentNullException(nameof(repositories));
             this.RepositorySelection = repositorySelection;
+            this.Repositories = repositories ?? throw new global::System.ArgumentNullException(nameof(repositories));
         }
 
         /// <summary>

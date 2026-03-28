@@ -56,9 +56,9 @@ namespace G
         /// </summary>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
-        /// <param name="text"></param>
         /// <param name="subtitles"></param>
         /// <param name="audioStale"></param>
+        /// <param name="text"></param>
         /// <param name="mediaRef"></param>
         public DubbedSegment(
             double startTime,
@@ -70,9 +70,9 @@ namespace G
         {
             this.StartTime = startTime;
             this.EndTime = endTime;
+            this.Text = text;
             this.Subtitles = subtitles ?? throw new global::System.ArgumentNullException(nameof(subtitles));
             this.AudioStale = audioStale;
-            this.Text = text;
             this.MediaRef = mediaRef;
         }
 

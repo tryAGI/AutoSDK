@@ -61,12 +61,12 @@ namespace G
         /// <param name="version">
         /// Example: 57a7f021a713b1c5a6a199b54cc514735d2d462f
         /// </param>
-        /// <param name="user">
-        /// A GitHub user.
-        /// </param>
         /// <param name="changeStatus"></param>
         /// <param name="committedAt">
         /// Example: 2010-04-14T02:15:15Z
+        /// </param>
+        /// <param name="user">
+        /// A GitHub user.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -80,9 +80,9 @@ namespace G
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
+            this.User = user;
             this.ChangeStatus = changeStatus ?? throw new global::System.ArgumentNullException(nameof(changeStatus));
             this.CommittedAt = committedAt;
-            this.User = user;
         }
 
         /// <summary>

@@ -325,9 +325,6 @@ namespace G
         /// <param name="avatarUrl">
         /// Example: https://github.com/images/error/octocat_happy.gif
         /// </param>
-        /// <param name="gravatarId">
-        /// Example: 41d064eb2195891e12d0413f63227ea7
-        /// </param>
         /// <param name="url">
         /// Example: https://api.github.com/users/octocat
         /// </param>
@@ -365,31 +362,6 @@ namespace G
         /// Example: User
         /// </param>
         /// <param name="siteAdmin"></param>
-        /// <param name="name">
-        /// Example: monalisa octocat
-        /// </param>
-        /// <param name="company">
-        /// Example: GitHub
-        /// </param>
-        /// <param name="blog">
-        /// Example: https://github.com/blog
-        /// </param>
-        /// <param name="location">
-        /// Example: San Francisco
-        /// </param>
-        /// <param name="email">
-        /// Example: octocat@github.com
-        /// </param>
-        /// <param name="notificationEmail">
-        /// Example: octocat@github.com
-        /// </param>
-        /// <param name="hireable"></param>
-        /// <param name="bio">
-        /// Example: There once was...
-        /// </param>
-        /// <param name="twitterUsername">
-        /// Example: monalisa
-        /// </param>
         /// <param name="publicRepos">
         /// Example: 2
         /// </param>
@@ -425,6 +397,34 @@ namespace G
         /// </param>
         /// <param name="twoFactorAuthentication">
         /// Example: true
+        /// </param>
+        /// <param name="gravatarId">
+        /// Example: 41d064eb2195891e12d0413f63227ea7
+        /// </param>
+        /// <param name="name">
+        /// Example: monalisa octocat
+        /// </param>
+        /// <param name="company">
+        /// Example: GitHub
+        /// </param>
+        /// <param name="blog">
+        /// Example: https://github.com/blog
+        /// </param>
+        /// <param name="location">
+        /// Example: San Francisco
+        /// </param>
+        /// <param name="email">
+        /// Example: octocat@github.com
+        /// </param>
+        /// <param name="notificationEmail">
+        /// Example: octocat@github.com
+        /// </param>
+        /// <param name="hireable"></param>
+        /// <param name="bio">
+        /// Example: There once was...
+        /// </param>
+        /// <param name="twitterUsername">
+        /// Example: monalisa
         /// </param>
         /// <param name="plan"></param>
         /// <param name="suspendedAt"></param>
@@ -479,6 +479,7 @@ namespace G
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
+            this.GravatarId = gravatarId;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.FollowersUrl = followersUrl ?? throw new global::System.ArgumentNullException(nameof(followersUrl));
@@ -492,6 +493,15 @@ namespace G
             this.ReceivedEventsUrl = receivedEventsUrl ?? throw new global::System.ArgumentNullException(nameof(receivedEventsUrl));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.SiteAdmin = siteAdmin;
+            this.Name = name;
+            this.Company = company;
+            this.Blog = blog;
+            this.Location = location;
+            this.Email = email;
+            this.NotificationEmail = notificationEmail;
+            this.Hireable = hireable;
+            this.Bio = bio;
+            this.TwitterUsername = twitterUsername;
             this.PublicRepos = publicRepos;
             this.PublicGists = publicGists;
             this.Followers = followers;
@@ -504,16 +514,6 @@ namespace G
             this.DiskUsage = diskUsage;
             this.Collaborators = collaborators;
             this.TwoFactorAuthentication = twoFactorAuthentication;
-            this.GravatarId = gravatarId;
-            this.Name = name;
-            this.Company = company;
-            this.Blog = blog;
-            this.Location = location;
-            this.Email = email;
-            this.NotificationEmail = notificationEmail;
-            this.Hireable = hireable;
-            this.Bio = bio;
-            this.TwitterUsername = twitterUsername;
             this.Plan = plan;
             this.SuspendedAt = suspendedAt;
             this.BusinessPlus = businessPlus;

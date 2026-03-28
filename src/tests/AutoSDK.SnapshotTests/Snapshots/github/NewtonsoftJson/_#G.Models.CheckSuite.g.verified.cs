@@ -149,12 +149,20 @@ namespace G
         /// <param name="nodeId">
         /// Example: MDEwOkNoZWNrU3VpdGU1
         /// </param>
-        /// <param name="headBranch">
-        /// Example: master
-        /// </param>
         /// <param name="headSha">
         /// The SHA of the head commit that is being checked.<br/>
         /// Example: 009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d
+        /// </param>
+        /// <param name="repository">
+        /// Minimal Repository
+        /// </param>
+        /// <param name="headCommit">
+        /// A commit.
+        /// </param>
+        /// <param name="latestCheckRunsCount"></param>
+        /// <param name="checkRunsUrl"></param>
+        /// <param name="headBranch">
+        /// Example: master
         /// </param>
         /// <param name="status">
         /// The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.<br/>
@@ -176,16 +184,8 @@ namespace G
         /// <param name="app">
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
         /// </param>
-        /// <param name="repository">
-        /// Minimal Repository
-        /// </param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
-        /// <param name="headCommit">
-        /// A commit.
-        /// </param>
-        /// <param name="latestCheckRunsCount"></param>
-        /// <param name="checkRunsUrl"></param>
         /// <param name="rerequestable"></param>
         /// <param name="runsRerequestable"></param>
         public CheckSuite(
@@ -211,12 +211,8 @@ namespace G
         {
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
-            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
-            this.HeadCommit = headCommit ?? throw new global::System.ArgumentNullException(nameof(headCommit));
-            this.LatestCheckRunsCount = latestCheckRunsCount;
-            this.CheckRunsUrl = checkRunsUrl ?? throw new global::System.ArgumentNullException(nameof(checkRunsUrl));
             this.HeadBranch = headBranch;
+            this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
             this.Status = status;
             this.Conclusion = conclusion;
             this.Url = url;
@@ -224,8 +220,12 @@ namespace G
             this.After = after;
             this.PullRequests = pullRequests;
             this.App = app;
+            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.HeadCommit = headCommit ?? throw new global::System.ArgumentNullException(nameof(headCommit));
+            this.LatestCheckRunsCount = latestCheckRunsCount;
+            this.CheckRunsUrl = checkRunsUrl ?? throw new global::System.ArgumentNullException(nameof(checkRunsUrl));
             this.Rerequestable = rerequestable;
             this.RunsRerequestable = runsRerequestable;
         }

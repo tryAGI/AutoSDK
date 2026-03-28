@@ -31,19 +31,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CodeInterpreterTool" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the code interpreter tool. Always `code_interpreter`.
-        /// </param>
         /// <param name="container">
         /// The code interpreter container. Can be a container ID or an object that<br/>
         /// specifies uploaded file IDs to make available to your code.
+        /// </param>
+        /// <param name="type">
+        /// The type of the code interpreter tool. Always `code_interpreter`.
         /// </param>
         public CodeInterpreterTool(
             global::G.Container container,
             global::G.CodeInterpreterToolType type)
         {
-            this.Container = container;
             this.Type = type;
+            this.Container = container;
         }
 
         /// <summary>

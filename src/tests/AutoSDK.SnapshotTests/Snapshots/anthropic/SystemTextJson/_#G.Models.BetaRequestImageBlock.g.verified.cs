@@ -39,9 +39,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaRequestImageBlock" /> class.
         /// </summary>
+        /// <param name="source"></param>
         /// <param name="cacheControl"></param>
         /// <param name="type"></param>
-        /// <param name="source"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -50,9 +50,9 @@ namespace G
             global::G.CacheControlVariant17? cacheControl,
             global::G.BetaRequestImageBlockType type)
         {
-            this.Source = source;
             this.CacheControl = cacheControl;
             this.Type = type;
+            this.Source = source;
         }
 
         /// <summary>

@@ -226,7 +226,6 @@ namespace G
         /// <param name="id"></param>
         /// <param name="nodeId"></param>
         /// <param name="avatarUrl"></param>
-        /// <param name="gravatarId"></param>
         /// <param name="url"></param>
         /// <param name="htmlUrl"></param>
         /// <param name="followersUrl"></param>
@@ -240,6 +239,8 @@ namespace G
         /// <param name="gistsUrl"></param>
         /// <param name="starredUrl"></param>
         /// <param name="eventsUrl"></param>
+        /// <param name="siteAdmin"></param>
+        /// <param name="gravatarId"></param>
         /// <param name="publicRepos"></param>
         /// <param name="publicGists"></param>
         /// <param name="followers"></param>
@@ -250,7 +251,6 @@ namespace G
         /// <param name="bio"></param>
         /// <param name="email"></param>
         /// <param name="location"></param>
-        /// <param name="siteAdmin"></param>
         /// <param name="hireable"></param>
         /// <param name="textMatches"></param>
         /// <param name="blog"></param>
@@ -296,6 +296,7 @@ namespace G
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
+            this.GravatarId = gravatarId;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.FollowersUrl = followersUrl ?? throw new global::System.ArgumentNullException(nameof(followersUrl));
@@ -309,8 +310,6 @@ namespace G
             this.GistsUrl = gistsUrl ?? throw new global::System.ArgumentNullException(nameof(gistsUrl));
             this.StarredUrl = starredUrl ?? throw new global::System.ArgumentNullException(nameof(starredUrl));
             this.EventsUrl = eventsUrl ?? throw new global::System.ArgumentNullException(nameof(eventsUrl));
-            this.SiteAdmin = siteAdmin;
-            this.GravatarId = gravatarId;
             this.PublicRepos = publicRepos;
             this.PublicGists = publicGists;
             this.Followers = followers;
@@ -321,6 +320,7 @@ namespace G
             this.Bio = bio;
             this.Email = email;
             this.Location = location;
+            this.SiteAdmin = siteAdmin;
             this.Hireable = hireable;
             this.TextMatches = textMatches;
             this.Blog = blog;

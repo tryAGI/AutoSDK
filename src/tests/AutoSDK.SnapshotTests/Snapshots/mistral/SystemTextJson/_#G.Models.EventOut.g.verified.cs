@@ -42,10 +42,10 @@ namespace G
         /// <param name="name">
         /// The name of the event.
         /// </param>
-        /// <param name="data"></param>
         /// <param name="createdAt">
         /// The UNIX timestamp (in seconds) of the event.
         /// </param>
+        /// <param name="data"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -55,8 +55,8 @@ namespace G
             object? data)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.CreatedAt = createdAt;
             this.Data = data;
+            this.CreatedAt = createdAt;
         }
 
         /// <summary>

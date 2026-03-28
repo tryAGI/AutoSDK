@@ -122,11 +122,11 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="organizationId"></param>
-        /// <param name="tenantId"></param>
         /// <param name="createdAt"></param>
         /// <param name="userId"></param>
         /// <param name="lsUserId"></param>
         /// <param name="readOnly"></param>
+        /// <param name="tenantId"></param>
         /// <param name="roleId"></param>
         /// <param name="roleName"></param>
         /// <param name="accessScope">
@@ -164,11 +164,11 @@ namespace G
         {
             this.Id = id;
             this.OrganizationId = organizationId;
+            this.TenantId = tenantId;
             this.CreatedAt = createdAt;
             this.UserId = userId;
             this.LsUserId = lsUserId;
             this.ReadOnly = readOnly;
-            this.TenantId = tenantId;
             this.RoleId = roleId;
             this.RoleName = roleName;
             this.AccessScope = accessScope;

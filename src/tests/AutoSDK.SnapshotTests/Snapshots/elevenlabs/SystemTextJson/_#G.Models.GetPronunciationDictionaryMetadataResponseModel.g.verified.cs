@@ -91,14 +91,14 @@ namespace G
         /// <param name="name">
         /// The name of the pronunciation dictionary.
         /// </param>
-        /// <param name="permissionOnResource">
-        /// The permission on the resource of the pronunciation dictionary.
-        /// </param>
         /// <param name="createdBy">
         /// The user ID of the creator of the pronunciation dictionary.
         /// </param>
         /// <param name="creationTimeUnix">
         /// The creation time of the pronunciation dictionary in Unix timestamp.
+        /// </param>
+        /// <param name="permissionOnResource">
+        /// The permission on the resource of the pronunciation dictionary.
         /// </param>
         /// <param name="archivedTimeUnix">
         /// The archive time of the pronunciation dictionary in Unix timestamp.
@@ -124,9 +124,9 @@ namespace G
             this.LatestVersionId = latestVersionId ?? throw new global::System.ArgumentNullException(nameof(latestVersionId));
             this.LatestVersionRulesNum = latestVersionRulesNum;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.PermissionOnResource = permissionOnResource;
             this.CreatedBy = createdBy ?? throw new global::System.ArgumentNullException(nameof(createdBy));
             this.CreationTimeUnix = creationTimeUnix;
-            this.PermissionOnResource = permissionOnResource;
             this.ArchivedTimeUnix = archivedTimeUnix;
             this.Description = description;
         }

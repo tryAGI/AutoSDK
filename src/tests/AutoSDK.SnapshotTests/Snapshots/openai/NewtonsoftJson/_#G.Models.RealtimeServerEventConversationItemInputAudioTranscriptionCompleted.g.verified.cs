@@ -66,10 +66,6 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be<br/>
-        /// `conversation.item.input_audio_transcription.completed`.
-        /// </param>
         /// <param name="itemId">
         /// The ID of the user message item containing the audio.
         /// </param>
@@ -78,6 +74,10 @@ namespace G
         /// </param>
         /// <param name="transcript">
         /// The transcribed text.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be<br/>
+        /// `conversation.item.input_audio_transcription.completed`.
         /// </param>
         /// <param name="logprobs">
         /// The log probabilities of the transcription.
@@ -91,10 +91,10 @@ namespace G
             global::System.Collections.Generic.IList<global::G.LogProbProperties>? logprobs)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
+            this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.ContentIndex = contentIndex;
             this.Transcript = transcript ?? throw new global::System.ArgumentNullException(nameof(transcript));
-            this.Type = type;
             this.Logprobs = logprobs;
         }
 

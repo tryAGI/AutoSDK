@@ -125,9 +125,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="File" /> class.
         /// </summary>
-        /// <param name="fileUid">
-        /// Included only in responses
-        /// </param>
         /// <param name="name"></param>
         /// <param name="type"></param>
         /// <param name="processStatus">
@@ -168,6 +165,9 @@ namespace G
         /// Included only in responses
         /// </param>
         /// <param name="externalMetadata"></param>
+        /// <param name="fileUid">
+        /// Included only in responses
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -190,9 +190,9 @@ namespace G
             object? externalMetadata,
             string fileUid = default!)
         {
+            this.FileUid = fileUid;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
-            this.FileUid = fileUid;
             this.ProcessStatus = processStatus;
             this.ProcessOutcome = processOutcome;
             this.Retrievable = retrievable;

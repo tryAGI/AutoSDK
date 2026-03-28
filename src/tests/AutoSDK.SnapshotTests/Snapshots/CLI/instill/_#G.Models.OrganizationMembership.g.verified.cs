@@ -57,14 +57,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="OrganizationMembership" /> class.
         /// </summary>
+        /// <param name="role">
+        /// Role of the user in the organization.
+        /// </param>
         /// <param name="name">
         /// The resource name of the membership, which allows its access by<br/>
         /// organization and user ID.<br/>
         /// - Format: `organizations/{organization.id}/memberships/{user.id}`.<br/>
         /// Included only in responses
-        /// </param>
-        /// <param name="role">
-        /// Role of the user in the organization.
         /// </param>
         /// <param name="state">
         /// State of the membership.<br/>
@@ -88,8 +88,8 @@ namespace G
             global::G.User? user,
             global::G.Organization? organization)
         {
-            this.Role = role ?? throw new global::System.ArgumentNullException(nameof(role));
             this.Name = name;
+            this.Role = role ?? throw new global::System.ArgumentNullException(nameof(role));
             this.State = state;
             this.User = user;
             this.Organization = organization;

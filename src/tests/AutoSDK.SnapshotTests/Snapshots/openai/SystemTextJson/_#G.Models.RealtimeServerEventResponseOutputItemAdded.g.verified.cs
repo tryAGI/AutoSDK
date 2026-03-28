@@ -56,9 +56,6 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `response.output_item.added`.
-        /// </param>
         /// <param name="responseId">
         /// The ID of the Response to which the item belongs.
         /// </param>
@@ -67,6 +64,9 @@ namespace G
         /// </param>
         /// <param name="item">
         /// The item to add to the conversation.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `response.output_item.added`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -79,10 +79,10 @@ namespace G
             global::G.RealtimeServerEventResponseOutputItemAddedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
+            this.Type = type;
             this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
             this.OutputIndex = outputIndex;
             this.Item = item ?? throw new global::System.ArgumentNullException(nameof(item));
-            this.Type = type;
         }
 
         /// <summary>

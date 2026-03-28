@@ -192,6 +192,8 @@ namespace G
         /// <param name="trackId"></param>
         /// <param name="createdAtMs"></param>
         /// <param name="updatedAtMs"></param>
+        /// <param name="pendingBlockIds"></param>
+        /// <param name="pendingExternalAudioIds"></param>
         /// <param name="volumeGainDb">
         /// Default Value: 0F
         /// </param>
@@ -206,8 +208,6 @@ namespace G
         /// </param>
         /// <param name="sourceExternalAudioId"></param>
         /// <param name="sourceAssetId"></param>
-        /// <param name="pendingBlockIds"></param>
-        /// <param name="pendingExternalAudioIds"></param>
         /// <param name="speechImported">
         /// Default Value: false
         /// </param>
@@ -261,14 +261,14 @@ namespace G
             this.TrackId = trackId ?? throw new global::System.ArgumentNullException(nameof(trackId));
             this.CreatedAtMs = createdAtMs;
             this.UpdatedAtMs = updatedAtMs;
-            this.PendingBlockIds = pendingBlockIds ?? throw new global::System.ArgumentNullException(nameof(pendingBlockIds));
-            this.PendingExternalAudioIds = pendingExternalAudioIds ?? throw new global::System.ArgumentNullException(nameof(pendingExternalAudioIds));
             this.VolumeGainDb = volumeGainDb;
             this.Muted = muted;
             this.FadeInMs = fadeInMs;
             this.FadeOutMs = fadeOutMs;
             this.SourceExternalAudioId = sourceExternalAudioId;
             this.SourceAssetId = sourceAssetId;
+            this.PendingBlockIds = pendingBlockIds ?? throw new global::System.ArgumentNullException(nameof(pendingBlockIds));
+            this.PendingExternalAudioIds = pendingExternalAudioIds ?? throw new global::System.ArgumentNullException(nameof(pendingExternalAudioIds));
             this.SpeechImported = speechImported;
             this.PendingTask = pendingTask;
             this.CurrentSnapshotId = currentSnapshotId;

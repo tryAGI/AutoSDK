@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ASTOrOperatorNodeInput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: or_operator
-        /// </param>
         /// <param name="children">
         /// Child nodes of the logical operator.
+        /// </param>
+        /// <param name="type">
+        /// Default Value: or_operator
         /// </param>
         public ASTOrOperatorNodeInput(
             global::System.Collections.Generic.IList<global::G.ChildrenItem3> children,
             string? type)
         {
-            this.Children = children ?? throw new global::System.ArgumentNullException(nameof(children));
             this.Type = type;
+            this.Children = children ?? throw new global::System.ArgumentNullException(nameof(children));
         }
 
         /// <summary>

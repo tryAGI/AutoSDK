@@ -37,8 +37,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionToolFunction" /> class.
         /// </summary>
-        /// <param name="description"></param>
         /// <param name="name"></param>
+        /// <param name="description"></param>
         /// <param name="parameters"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -48,8 +48,8 @@ namespace G
             string? description,
             object? parameters)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Parameters = parameters;
         }
 

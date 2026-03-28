@@ -52,13 +52,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelPricingImageUnits" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: image_units
-        /// </param>
         /// <param name="centsPerImageUnit"></param>
         /// <param name="defaultWidth"></param>
         /// <param name="defaultHeight"></param>
         /// <param name="defaultIterations"></param>
+        /// <param name="type">
+        /// Default Value: image_units
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -69,11 +69,11 @@ namespace G
             int defaultIterations,
             string? type)
         {
+            this.Type = type;
             this.CentsPerImageUnit = centsPerImageUnit;
             this.DefaultWidth = defaultWidth;
             this.DefaultHeight = defaultHeight;
             this.DefaultIterations = defaultIterations;
-            this.Type = type;
         }
 
         /// <summary>

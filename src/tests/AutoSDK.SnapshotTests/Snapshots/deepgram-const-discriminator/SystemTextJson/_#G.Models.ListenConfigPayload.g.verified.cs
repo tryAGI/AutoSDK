@@ -37,13 +37,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ListenConfigPayload" /> class.
         /// </summary>
-        /// <param name="messageType"></param>
         /// <param name="model">
         /// The model to use for transcription.
         /// </param>
         /// <param name="language">
         /// Language code.
         /// </param>
+        /// <param name="messageType"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

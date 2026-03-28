@@ -406,10 +406,6 @@ namespace G
         /// The URL to view the repository on GitHub.com.<br/>
         /// Example: https://github.com/octocat/Hello-World
         /// </param>
-        /// <param name="description">
-        /// The repository description.<br/>
-        /// Example: This your first repo!
-        /// </param>
         /// <param name="fork">
         /// Whether the repository is a fork.
         /// </param>
@@ -561,6 +557,10 @@ namespace G
         /// The API URL to list the hooks on the repository.<br/>
         /// Example: https://api.github.com/repos/octocat/Hello-World/hooks
         /// </param>
+        /// <param name="description">
+        /// The repository description.<br/>
+        /// Example: This your first repo!
+        /// </param>
         public SimpleRepository(
             long id,
             string nodeId,
@@ -616,6 +616,7 @@ namespace G
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.Private = @private;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Description = description;
             this.Fork = fork;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.ArchiveUrl = archiveUrl ?? throw new global::System.ArgumentNullException(nameof(archiveUrl));
@@ -654,7 +655,6 @@ namespace G
             this.TeamsUrl = teamsUrl ?? throw new global::System.ArgumentNullException(nameof(teamsUrl));
             this.TreesUrl = treesUrl ?? throw new global::System.ArgumentNullException(nameof(treesUrl));
             this.HooksUrl = hooksUrl ?? throw new global::System.ArgumentNullException(nameof(hooksUrl));
-            this.Description = description;
         }
 
         /// <summary>

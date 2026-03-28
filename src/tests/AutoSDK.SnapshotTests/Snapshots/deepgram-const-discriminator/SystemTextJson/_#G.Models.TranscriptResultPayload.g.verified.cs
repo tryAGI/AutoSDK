@@ -45,7 +45,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscriptResultPayload" /> class.
         /// </summary>
-        /// <param name="messageType"></param>
         /// <param name="text">
         /// The transcript text.
         /// </param>
@@ -55,6 +54,7 @@ namespace G
         /// <param name="confidence">
         /// Confidence score.
         /// </param>
+        /// <param name="messageType"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -64,9 +64,9 @@ namespace G
             double? confidence,
             string messageType = "transcript_result")
         {
+            this.MessageType = messageType;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.IsFinal = isFinal;
-            this.MessageType = messageType;
             this.Confidence = confidence;
         }
 

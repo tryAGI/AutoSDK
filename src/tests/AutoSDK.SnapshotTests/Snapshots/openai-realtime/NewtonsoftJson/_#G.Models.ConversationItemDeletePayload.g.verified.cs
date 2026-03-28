@@ -36,23 +36,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationItemDeletePayload" /> class.
         /// </summary>
+        /// <param name="itemId">
+        /// The ID of the item to delete.
+        /// </param>
         /// <param name="eventId">
         /// Optional client-generated ID.
         /// </param>
         /// <param name="type">
         /// The event type.
         /// </param>
-        /// <param name="itemId">
-        /// The ID of the item to delete.
-        /// </param>
         public ConversationItemDeletePayload(
             string itemId,
             string? eventId,
             global::G.ConversationItemDeletePayloadType type)
         {
-            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.EventId = eventId;
             this.Type = type;
+            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
         }
 
         /// <summary>

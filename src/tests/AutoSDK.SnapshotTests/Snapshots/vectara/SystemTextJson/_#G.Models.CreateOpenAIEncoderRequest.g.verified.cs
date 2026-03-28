@@ -74,10 +74,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateOpenAIEncoderRequest" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Must be "openai-compatible" for OpenAI and OpenAI-compatible APIs<br/>
-        /// Default Value: openai-compatible
-        /// </param>
         /// <param name="name">
         /// A unique name for the encoder<br/>
         /// Example: openai-text-encoder
@@ -86,9 +82,6 @@ namespace G
         /// A description of what this encoder does<br/>
         /// Example: description
         /// </param>
-        /// <param name="outputDimensions">
-        /// The number of dimensions in the output embedding vector. If provided and the model supports truncation, the response will be truncated to this number of dimensions.
-        /// </param>
         /// <param name="uri">
         /// The URI endpoint for the embedding API (can be OpenAI or any compatible embedding API endpoint)<br/>
         /// Example: https://api.openai.com/v1/embeddings
@@ -96,6 +89,13 @@ namespace G
         /// <param name="model">
         /// The model name to use for embeddings<br/>
         /// Example: text-embedding-ada-002
+        /// </param>
+        /// <param name="type">
+        /// Must be "openai-compatible" for OpenAI and OpenAI-compatible APIs<br/>
+        /// Default Value: openai-compatible
+        /// </param>
+        /// <param name="outputDimensions">
+        /// The number of dimensions in the output embedding vector. If provided and the model supports truncation, the response will be truncated to this number of dimensions.
         /// </param>
         /// <param name="auth">
         /// Authentication configuration for an LLM
@@ -112,12 +112,12 @@ namespace G
             int? outputDimensions,
             global::G.RemoteAuth? auth)
         {
+            this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.OutputDimensions = outputDimensions;
             this.Uri = uri ?? throw new global::System.ArgumentNullException(nameof(uri));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.Type = type;
-            this.OutputDimensions = outputDimensions;
             this.Auth = auth;
         }
 

@@ -53,9 +53,9 @@ namespace G
         /// </summary>
         /// <param name="key"></param>
         /// <param name="name"></param>
+        /// <param name="nodeId"></param>
         /// <param name="url"></param>
         /// <param name="spdxId"></param>
-        /// <param name="nodeId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -68,9 +68,9 @@ namespace G
         {
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Url = url;
             this.SpdxId = spdxId;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
         }
 
         /// <summary>

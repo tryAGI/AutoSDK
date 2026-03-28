@@ -33,10 +33,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateTextToSpeechRequestElevenMultilingualV2VoiceRunwayPresetVoice" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="presetId">
         /// The preset voice ID to use for the generated speech.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -44,8 +44,8 @@ namespace G
             global::G.CreateTextToSpeechRequestElevenMultilingualV2VoiceRunwayPresetVoicePresetId presetId,
             string type = "runway-preset")
         {
-            this.PresetId = presetId;
             this.Type = type;
+            this.PresetId = presetId;
         }
 
         /// <summary>

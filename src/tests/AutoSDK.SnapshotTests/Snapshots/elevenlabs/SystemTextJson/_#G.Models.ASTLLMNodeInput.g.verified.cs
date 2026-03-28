@@ -31,11 +31,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ASTLLMNodeInput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: llm
-        /// </param>
         /// <param name="prompt">
         /// The prompt to evaluate to a boolean value.
+        /// </param>
+        /// <param name="type">
+        /// Default Value: llm
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace G
             string prompt,
             string? type)
         {
-            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Type = type;
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
         }
 
         /// <summary>

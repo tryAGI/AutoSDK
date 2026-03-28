@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="OpenAIImagesOut" /> class.
         /// </summary>
-        /// <param name="created">
-        /// Unix timestamp of when the images were created
-        /// </param>
         /// <param name="data">
         /// List of generated images
+        /// </param>
+        /// <param name="created">
+        /// Unix timestamp of when the images were created
         /// </param>
         public OpenAIImagesOut(
             global::System.Collections.Generic.IList<global::G.OpenAIImageData> data,
             global::System.DateTimeOffset? created)
         {
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Created = created;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
         }
 
         /// <summary>

@@ -31,16 +31,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateSpeechToSpeechRequestElevenMultilingualStsV2VoiceRunwayPresetVoice" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="presetId">
         /// The preset voice ID to use for the generated speech.
         /// </param>
+        /// <param name="type"></param>
         public CreateSpeechToSpeechRequestElevenMultilingualStsV2VoiceRunwayPresetVoice(
             global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2VoiceRunwayPresetVoicePresetId presetId,
             string type = "runway-preset")
         {
-            this.PresetId = presetId;
             this.Type = type;
+            this.PresetId = presetId;
         }
 
         /// <summary>

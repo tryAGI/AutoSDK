@@ -32,10 +32,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RAGIndexBatchSuccessfulResponseModel" /> class.
         /// </summary>
+        /// <param name="data"></param>
         /// <param name="status">
         /// Default Value: success
         /// </param>
-        /// <param name="data"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -43,8 +43,8 @@ namespace G
             global::G.RAGDocumentIndexResponseModel data,
             string status = "success")
         {
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Status = status;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
         }
 
         /// <summary>

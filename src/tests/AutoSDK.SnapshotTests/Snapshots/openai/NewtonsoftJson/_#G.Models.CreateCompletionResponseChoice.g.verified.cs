@@ -50,8 +50,8 @@ namespace G
         /// or `content_filter` if content was omitted due to a flag from our content filters.
         /// </param>
         /// <param name="index"></param>
-        /// <param name="logprobs"></param>
         /// <param name="text"></param>
+        /// <param name="logprobs"></param>
         public CreateCompletionResponseChoice(
             global::G.CreateCompletionResponseChoiceFinishReason finishReason,
             int index,
@@ -60,8 +60,8 @@ namespace G
         {
             this.FinishReason = finishReason;
             this.Index = index;
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Logprobs = logprobs;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

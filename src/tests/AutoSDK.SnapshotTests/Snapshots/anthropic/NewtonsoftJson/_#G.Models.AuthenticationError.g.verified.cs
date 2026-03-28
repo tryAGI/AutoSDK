@@ -32,18 +32,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AuthenticationError" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: authentication_error
-        /// </param>
         /// <param name="message">
         /// Default Value: Authentication error
+        /// </param>
+        /// <param name="type">
+        /// Default Value: authentication_error
         /// </param>
         public AuthenticationError(
             string message,
             global::G.AuthenticationErrorType type = global::G.AuthenticationErrorType.AuthenticationError)
         {
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Type = type;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
         }
 
         /// <summary>

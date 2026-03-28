@@ -60,10 +60,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEvalCustomDataSourceConfig" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of data source. Always `custom`.<br/>
-        /// Default Value: custom
-        /// </param>
         /// <param name="itemSchema">
         /// The json schema for each row in the data source.<br/>
         /// Example: {<br/>
@@ -79,13 +75,17 @@ namespace G
         /// Whether the eval should expect you to populate the sample namespace (ie, by generating responses off of your data source)<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="type">
+        /// The type of data source. Always `custom`.<br/>
+        /// Default Value: custom
+        /// </param>
         public CreateEvalCustomDataSourceConfig(
             object itemSchema,
             bool? includeSampleSchema,
             global::G.CreateEvalCustomDataSourceConfigType type = global::G.CreateEvalCustomDataSourceConfigType.Custom)
         {
-            this.ItemSchema = itemSchema ?? throw new global::System.ArgumentNullException(nameof(itemSchema));
             this.Type = type;
+            this.ItemSchema = itemSchema ?? throw new global::System.ArgumentNullException(nameof(itemSchema));
             this.IncludeSampleSchema = includeSampleSchema;
         }
 

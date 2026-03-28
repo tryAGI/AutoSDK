@@ -46,14 +46,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DomainsResponse" /> class.
         /// </summary>
+        /// <param name="total">
+        /// Example: 17939
+        /// </param>
         /// <param name="ip">
         /// Example: 1.1.1.1
         /// </param>
         /// <param name="page">
         /// Example: 1
-        /// </param>
-        /// <param name="total">
-        /// Example: 17939
         /// </param>
         /// <param name="domains"></param>
 #if NET7_0_OR_GREATER
@@ -65,9 +65,9 @@ namespace G
             int? page,
             global::System.Collections.Generic.IList<string>? domains)
         {
-            this.Total = total;
             this.Ip = ip;
             this.Page = page;
+            this.Total = total;
             this.Domains = domains;
         }
 

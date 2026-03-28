@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseMCPCallFailedEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always 'response.mcp_call.failed'.
-        /// </param>
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always 'response.mcp_call.failed'.
         /// </param>
         public ResponseMCPCallFailedEvent(
             int sequenceNumber,
             global::G.ResponseMCPCallFailedEventType type)
         {
-            this.SequenceNumber = sequenceNumber;
             this.Type = type;
+            this.SequenceNumber = sequenceNumber;
         }
 
         /// <summary>

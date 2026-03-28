@@ -12,19 +12,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        V1ChatCompletions,
+        Dividev1DividechatDividecompletions,
         /// <summary>
         /// 
         /// </summary>
-        V1Completions,
+        Dividev1Dividecompletions,
         /// <summary>
         /// 
         /// </summary>
-        V1Embeddings,
+        Dividev1Divideembeddings,
         /// <summary>
         /// 
         /// </summary>
-        V1Responses,
+        Dividev1Divideresponses,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace G
         {
             return value switch
             {
-                CreateBatchRequestEndpoint.V1ChatCompletions => "/v1/chat/completions",
-                CreateBatchRequestEndpoint.V1Completions => "/v1/completions",
-                CreateBatchRequestEndpoint.V1Embeddings => "/v1/embeddings",
-                CreateBatchRequestEndpoint.V1Responses => "/v1/responses",
+                CreateBatchRequestEndpoint.Dividev1DividechatDividecompletions => "/v1/chat/completions",
+                CreateBatchRequestEndpoint.Dividev1Dividecompletions => "/v1/completions",
+                CreateBatchRequestEndpoint.Dividev1Divideembeddings => "/v1/embeddings",
+                CreateBatchRequestEndpoint.Dividev1Divideresponses => "/v1/responses",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace G
         {
             return value switch
             {
-                "/v1/chat/completions" => CreateBatchRequestEndpoint.V1ChatCompletions,
-                "/v1/completions" => CreateBatchRequestEndpoint.V1Completions,
-                "/v1/embeddings" => CreateBatchRequestEndpoint.V1Embeddings,
-                "/v1/responses" => CreateBatchRequestEndpoint.V1Responses,
+                "/v1/chat/completions" => CreateBatchRequestEndpoint.Dividev1DividechatDividecompletions,
+                "/v1/completions" => CreateBatchRequestEndpoint.Dividev1Dividecompletions,
+                "/v1/embeddings" => CreateBatchRequestEndpoint.Dividev1Divideembeddings,
+                "/v1/responses" => CreateBatchRequestEndpoint.Dividev1Divideresponses,
                 _ => null,
             };
         }

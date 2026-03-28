@@ -39,14 +39,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookHMACSettings" /> class.
         /// </summary>
-        /// <param name="authType">
-        /// The authentication type for this webhook
-        /// </param>
         /// <param name="name">
         /// The display name for this webhook
         /// </param>
         /// <param name="webhookUrl">
         /// The HTTPS callback URL that will be called when this webhook is triggered
+        /// </param>
+        /// <param name="authType">
+        /// The authentication type for this webhook
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -56,9 +56,9 @@ namespace G
             string webhookUrl,
             string authType = "hmac")
         {
+            this.AuthType = authType;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.WebhookUrl = webhookUrl ?? throw new global::System.ArgumentNullException(nameof(webhookUrl));
-            this.AuthType = authType;
         }
 
         /// <summary>

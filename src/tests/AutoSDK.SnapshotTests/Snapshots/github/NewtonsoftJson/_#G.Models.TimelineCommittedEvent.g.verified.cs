@@ -88,7 +88,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TimelineCommittedEvent" /> class.
         /// </summary>
-        /// <param name="event"></param>
         /// <param name="sha">
         /// SHA for the commit<br/>
         /// Example: 7638417db6d59f3c431d3e1f261cc637155684cd
@@ -109,6 +108,7 @@ namespace G
         /// <param name="parents"></param>
         /// <param name="verification"></param>
         /// <param name="htmlUrl"></param>
+        /// <param name="event"></param>
         public TimelineCommittedEvent(
             string sha,
             string nodeId,
@@ -122,6 +122,7 @@ namespace G
             string htmlUrl,
             string? @event)
         {
+            this.Event = @event;
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
@@ -132,7 +133,6 @@ namespace G
             this.Parents = parents ?? throw new global::System.ArgumentNullException(nameof(parents));
             this.Verification = verification ?? throw new global::System.ArgumentNullException(nameof(verification));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.Event = @event;
         }
 
         /// <summary>

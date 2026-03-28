@@ -12,11 +12,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        x,
+        Divide,
         /// <summary>
         /// 
         /// </summary>
-        Docs,
+        Dividedocs,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace G
         {
             return value switch
             {
-                ReposUpdateInformationAboutPagesSiteRequestSourceEnumPath.x => "/",
-                ReposUpdateInformationAboutPagesSiteRequestSourceEnumPath.Docs => "/docs",
+                ReposUpdateInformationAboutPagesSiteRequestSourceEnumPath.Divide => "/",
+                ReposUpdateInformationAboutPagesSiteRequestSourceEnumPath.Dividedocs => "/docs",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace G
         {
             return value switch
             {
-                "/" => ReposUpdateInformationAboutPagesSiteRequestSourceEnumPath.x,
-                "/docs" => ReposUpdateInformationAboutPagesSiteRequestSourceEnumPath.Docs,
+                "/" => ReposUpdateInformationAboutPagesSiteRequestSourceEnumPath.Divide,
+                "/docs" => ReposUpdateInformationAboutPagesSiteRequestSourceEnumPath.Dividedocs,
                 _ => null,
             };
         }

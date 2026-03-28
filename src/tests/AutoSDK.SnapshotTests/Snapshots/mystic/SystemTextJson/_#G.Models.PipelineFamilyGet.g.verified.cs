@@ -60,9 +60,9 @@ namespace G
         /// </summary>
         /// <param name="name"></param>
         /// <param name="runCount"></param>
-        /// <param name="description"></param>
         /// <param name="latestAt"></param>
         /// <param name="pipelineId"></param>
+        /// <param name="description"></param>
         /// <param name="imageUrl"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -77,9 +77,9 @@ namespace G
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.RunCount = runCount;
+            this.Description = description;
             this.LatestAt = latestAt;
             this.PipelineId = pipelineId ?? throw new global::System.ArgumentNullException(nameof(pipelineId));
-            this.Description = description;
             this.ImageUrl = imageUrl;
         }
 

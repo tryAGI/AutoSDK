@@ -32,11 +32,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CommittedTranscriptPayload" /> class.
         /// </summary>
-        /// <param name="messageType">
-        /// Must be 'committed_transcript'.
-        /// </param>
         /// <param name="text">
         /// The committed transcript text.
+        /// </param>
+        /// <param name="messageType">
+        /// Must be 'committed_transcript'.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -45,8 +45,8 @@ namespace G
             string text,
             global::G.CommittedTranscriptPayloadMessageType messageType)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.MessageType = messageType;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

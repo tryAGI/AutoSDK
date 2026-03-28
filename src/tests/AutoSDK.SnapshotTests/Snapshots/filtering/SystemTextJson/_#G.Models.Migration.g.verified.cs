@@ -151,9 +151,6 @@ namespace G
         /// <param name="id">
         /// Example: 79
         /// </param>
-        /// <param name="owner">
-        /// A GitHub user.
-        /// </param>
         /// <param name="guid">
         /// Example: 0b989ba4-242f-11e5-81e1-c7b6966d2516
         /// </param>
@@ -182,6 +179,9 @@ namespace G
         /// Example: 2015-07-06T15:33:38-07:00
         /// </param>
         /// <param name="nodeId"></param>
+        /// <param name="owner">
+        /// A GitHub user.
+        /// </param>
         /// <param name="archiveUrl"></param>
         /// <param name="exclude">
         /// Exclude related items from being returned in the response in order to improve performance of the request. The array can include any of: `"repositories"`.
@@ -210,6 +210,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? exclude)
         {
             this.Id = id;
+            this.Owner = owner;
             this.Guid = guid ?? throw new global::System.ArgumentNullException(nameof(guid));
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
             this.LockRepositories = lockRepositories;
@@ -224,7 +225,6 @@ namespace G
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.Owner = owner;
             this.ArchiveUrl = archiveUrl;
             this.Exclude = exclude;
         }

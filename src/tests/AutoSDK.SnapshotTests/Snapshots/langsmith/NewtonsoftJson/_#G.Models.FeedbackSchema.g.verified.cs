@@ -102,9 +102,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FeedbackSchema" /> class.
         /// </summary>
+        /// <param name="key"></param>
+        /// <param name="id"></param>
         /// <param name="createdAt"></param>
         /// <param name="modifiedAt"></param>
-        /// <param name="key"></param>
         /// <param name="score"></param>
         /// <param name="value"></param>
         /// <param name="comment"></param>
@@ -113,7 +114,6 @@ namespace G
         /// <param name="comparativeExperimentId"></param>
         /// <param name="runId"></param>
         /// <param name="sessionId"></param>
-        /// <param name="id"></param>
         /// <param name="feedbackSource"></param>
         /// <param name="extra"></param>
         public FeedbackSchema(
@@ -132,10 +132,9 @@ namespace G
             global::G.FeedbackSource3? feedbackSource,
             object? extra)
         {
-            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
-            this.Id = id;
             this.CreatedAt = createdAt;
             this.ModifiedAt = modifiedAt;
+            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Score = score;
             this.Value = value;
             this.Comment = comment;
@@ -144,6 +143,7 @@ namespace G
             this.ComparativeExperimentId = comparativeExperimentId;
             this.RunId = runId;
             this.SessionId = sessionId;
+            this.Id = id;
             this.FeedbackSource = feedbackSource;
             this.Extra = extra;
         }

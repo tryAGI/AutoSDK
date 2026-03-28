@@ -162,12 +162,6 @@ namespace G
         /// The title of the milestone.<br/>
         /// Example: v1.0
         /// </param>
-        /// <param name="description">
-        /// Example: Tracking milestone for version 1.0
-        /// </param>
-        /// <param name="creator">
-        /// A GitHub user.
-        /// </param>
         /// <param name="openIssues">
         /// Example: 4
         /// </param>
@@ -179,6 +173,12 @@ namespace G
         /// </param>
         /// <param name="updatedAt">
         /// Example: 2014-03-03T18:58:10Z
+        /// </param>
+        /// <param name="description">
+        /// Example: Tracking milestone for version 1.0
+        /// </param>
+        /// <param name="creator">
+        /// A GitHub user.
         /// </param>
         /// <param name="closedAt">
         /// Example: 2013-02-12T13:22:01Z
@@ -212,12 +212,12 @@ namespace G
             this.Number = number;
             this.State = state;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Description = description;
+            this.Creator = creator;
             this.OpenIssues = openIssues;
             this.ClosedIssues = closedIssues;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.Description = description;
-            this.Creator = creator;
             this.ClosedAt = closedAt;
             this.DueOn = dueOn;
         }

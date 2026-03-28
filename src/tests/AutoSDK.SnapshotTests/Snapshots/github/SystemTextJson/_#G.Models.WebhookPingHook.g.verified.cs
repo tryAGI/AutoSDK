@@ -113,26 +113,26 @@ namespace G
         /// <param name="active">
         /// Determines whether the hook is actually triggered for the events it subscribes to.
         /// </param>
-        /// <param name="appId">
-        /// Only included for GitHub Apps. When you register a new GitHub App, GitHub sends a ping event to the webhook URL you specified during registration. The GitHub App ID sent in this field is required for authenticating an app.
-        /// </param>
         /// <param name="config"></param>
         /// <param name="createdAt"></param>
-        /// <param name="deliveriesUrl"></param>
         /// <param name="events">
         /// Determines what events the hook is triggered for. Default: ['push'].
         /// </param>
         /// <param name="id">
         /// Unique identifier of the webhook.
         /// </param>
+        /// <param name="type"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="appId">
+        /// Only included for GitHub Apps. When you register a new GitHub App, GitHub sends a ping event to the webhook URL you specified during registration. The GitHub App ID sent in this field is required for authenticating an app.
+        /// </param>
+        /// <param name="deliveriesUrl"></param>
         /// <param name="lastResponse"></param>
         /// <param name="name">
         /// The type of webhook. The only valid value is 'web'.
         /// </param>
         /// <param name="pingUrl"></param>
         /// <param name="testUrl"></param>
-        /// <param name="type"></param>
-        /// <param name="updatedAt"></param>
         /// <param name="url"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -154,18 +154,18 @@ namespace G
             string? url)
         {
             this.Active = active;
+            this.AppId = appId;
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
             this.CreatedAt = createdAt;
+            this.DeliveriesUrl = deliveriesUrl;
             this.Events = events ?? throw new global::System.ArgumentNullException(nameof(events));
             this.Id = id;
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
-            this.UpdatedAt = updatedAt;
-            this.AppId = appId;
-            this.DeliveriesUrl = deliveriesUrl;
             this.LastResponse = lastResponse;
             this.Name = name;
             this.PingUrl = pingUrl;
             this.TestUrl = testUrl;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.UpdatedAt = updatedAt;
             this.Url = url;
         }
 

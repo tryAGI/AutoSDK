@@ -84,9 +84,9 @@ namespace G
         /// <param name="pronunciationDictionaryId"></param>
         /// <param name="dictionaryName"></param>
         /// <param name="versionName"></param>
-        /// <param name="permissionOnResource"></param>
         /// <param name="createdBy"></param>
         /// <param name="creationTimeUnix"></param>
+        /// <param name="permissionOnResource"></param>
         /// <param name="archivedTimeUnix"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -107,9 +107,9 @@ namespace G
             this.PronunciationDictionaryId = pronunciationDictionaryId ?? throw new global::System.ArgumentNullException(nameof(pronunciationDictionaryId));
             this.DictionaryName = dictionaryName ?? throw new global::System.ArgumentNullException(nameof(dictionaryName));
             this.VersionName = versionName ?? throw new global::System.ArgumentNullException(nameof(versionName));
+            this.PermissionOnResource = permissionOnResource;
             this.CreatedBy = createdBy ?? throw new global::System.ArgumentNullException(nameof(createdBy));
             this.CreationTimeUnix = creationTimeUnix;
-            this.PermissionOnResource = permissionOnResource;
             this.ArchivedTimeUnix = archivedTimeUnix;
         }
 

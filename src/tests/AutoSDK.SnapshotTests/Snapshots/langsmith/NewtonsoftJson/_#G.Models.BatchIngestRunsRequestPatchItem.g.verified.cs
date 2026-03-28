@@ -98,8 +98,9 @@ namespace G
         /// </summary>
         /// <param name="traceId"></param>
         /// <param name="dottedOrder"></param>
-        /// <param name="parentRunId"></param>
         /// <param name="endTime"></param>
+        /// <param name="id"></param>
+        /// <param name="parentRunId"></param>
         /// <param name="error"></param>
         /// <param name="inputs"></param>
         /// <param name="outputs"></param>
@@ -108,7 +109,6 @@ namespace G
         /// <param name="extra"></param>
         /// <param name="inputAttachments"></param>
         /// <param name="outputAttachments"></param>
-        /// <param name="id"></param>
         public BatchIngestRunsRequestPatchItem(
             global::System.Guid traceId,
             string dottedOrder,
@@ -126,9 +126,8 @@ namespace G
         {
             this.TraceId = traceId;
             this.DottedOrder = dottedOrder ?? throw new global::System.ArgumentNullException(nameof(dottedOrder));
-            this.EndTime = endTime;
-            this.Id = id;
             this.ParentRunId = parentRunId;
+            this.EndTime = endTime;
             this.Error = error;
             this.Inputs = inputs;
             this.Outputs = outputs;
@@ -137,6 +136,7 @@ namespace G
             this.Extra = extra;
             this.InputAttachments = inputAttachments;
             this.OutputAttachments = outputAttachments;
+            this.Id = id;
         }
 
         /// <summary>

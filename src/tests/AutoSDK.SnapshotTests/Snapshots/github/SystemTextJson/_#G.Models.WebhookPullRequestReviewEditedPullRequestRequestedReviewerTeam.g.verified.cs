@@ -107,10 +107,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPullRequestReviewEditedPullRequestRequestedReviewerTeam" /> class.
         /// </summary>
-        /// <param name="deleted"></param>
-        /// <param name="description">
-        /// Description of the team
-        /// </param>
         /// <param name="htmlUrl"></param>
         /// <param name="id">
         /// Unique identifier of the team
@@ -120,7 +116,6 @@ namespace G
         /// Name of the team
         /// </param>
         /// <param name="nodeId"></param>
-        /// <param name="parent"></param>
         /// <param name="permission">
         /// Permission that the team will have for its repositories
         /// </param>
@@ -130,6 +125,11 @@ namespace G
         /// <param name="url">
         /// URL for the team
         /// </param>
+        /// <param name="deleted"></param>
+        /// <param name="description">
+        /// Description of the team
+        /// </param>
+        /// <param name="parent"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -148,19 +148,19 @@ namespace G
             string? description,
             global::G.WebhookPullRequestReviewEditedPullRequestRequestedReviewerTeamParent? parent)
         {
+            this.Deleted = deleted;
+            this.Description = description;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.MembersUrl = membersUrl ?? throw new global::System.ArgumentNullException(nameof(membersUrl));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Parent = parent;
             this.Permission = permission ?? throw new global::System.ArgumentNullException(nameof(permission));
             this.Privacy = privacy;
             this.RepositoriesUrl = repositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(repositoriesUrl));
             this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Deleted = deleted;
-            this.Description = description;
-            this.Parent = parent;
         }
 
         /// <summary>

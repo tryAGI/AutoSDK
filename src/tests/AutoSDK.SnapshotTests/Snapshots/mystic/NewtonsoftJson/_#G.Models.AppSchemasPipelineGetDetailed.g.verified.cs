@@ -139,20 +139,20 @@ namespace G
         /// Initializes a new instance of the <see cref="AppSchemasPipelineGetDetailed" /> class.
         /// </summary>
         /// <param name="public"></param>
+        /// <param name="name"></param>
+        /// <param name="image"></param>
+        /// <param name="inputVariables"></param>
+        /// <param name="outputVariables"></param>
+        /// <param name="id"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
         /// <param name="description"></param>
         /// <param name="websiteUrl"></param>
         /// <param name="repositoryUrl"></param>
         /// <param name="paperUrl"></param>
         /// <param name="licenseUrl"></param>
         /// <param name="imageUrl"></param>
-        /// <param name="name"></param>
-        /// <param name="image"></param>
-        /// <param name="inputVariables"></param>
-        /// <param name="outputVariables"></param>
         /// <param name="extras"></param>
-        /// <param name="id"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
         /// <param name="accelerators"></param>
         /// <param name="cluster">
         /// A lean representation of a cluster when returned from an API call
@@ -185,20 +185,20 @@ namespace G
             global::System.Collections.Generic.IList<string>? pointers)
         {
             this.Public = @public;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
-            this.InputVariables = inputVariables ?? throw new global::System.ArgumentNullException(nameof(inputVariables));
-            this.OutputVariables = outputVariables ?? throw new global::System.ArgumentNullException(nameof(outputVariables));
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.Description = description;
             this.WebsiteUrl = websiteUrl;
             this.RepositoryUrl = repositoryUrl;
             this.PaperUrl = paperUrl;
             this.LicenseUrl = licenseUrl;
             this.ImageUrl = imageUrl;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
+            this.InputVariables = inputVariables ?? throw new global::System.ArgumentNullException(nameof(inputVariables));
+            this.OutputVariables = outputVariables ?? throw new global::System.ArgumentNullException(nameof(outputVariables));
             this.Extras = extras;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.Accelerators = accelerators;
             this.Cluster = cluster;
             this.ScalingConfig = scalingConfig;

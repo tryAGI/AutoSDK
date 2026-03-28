@@ -70,6 +70,10 @@ namespace G
         /// Indicates whether this is a document or document part metadata filter.<br/>
         /// Example: document
         /// </param>
+        /// <param name="type">
+        /// The value type of the filter.<br/>
+        /// Example: text
+        /// </param>
         /// <param name="description">
         /// Description of the filter. May be omitted.<br/>
         /// Example: The title of the document.
@@ -77,10 +81,6 @@ namespace G
         /// <param name="indexed">
         /// Indicates whether an index should be created for the filter. Creating an index will improve query latency when using the filter.<br/>
         /// Default Value: true
-        /// </param>
-        /// <param name="type">
-        /// The value type of the filter.<br/>
-        /// Example: text
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -94,9 +94,9 @@ namespace G
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Level = level;
-            this.Type = type;
             this.Description = description;
             this.Indexed = indexed;
+            this.Type = type;
         }
 
         /// <summary>

@@ -76,13 +76,13 @@ namespace G
         /// <param name="url"></param>
         /// <param name="status"></param>
         /// <param name="error"></param>
-        /// <param name="pusher">
-        /// A GitHub user.
-        /// </param>
         /// <param name="commit"></param>
         /// <param name="duration"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="pusher">
+        /// A GitHub user.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -99,11 +99,11 @@ namespace G
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
+            this.Pusher = pusher;
             this.Commit = commit ?? throw new global::System.ArgumentNullException(nameof(commit));
             this.Duration = duration;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.Pusher = pusher;
         }
 
         /// <summary>

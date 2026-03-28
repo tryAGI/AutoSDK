@@ -74,22 +74,22 @@ namespace G
         /// <param name="billingCycle">
         /// Example: monthly
         /// </param>
+        /// <param name="onFreeTrial">
+        /// Example: true
+        /// </param>
+        /// <param name="account"></param>
+        /// <param name="plan">
+        /// Marketplace Listing Plan
+        /// </param>
         /// <param name="nextBillingDate">
         /// Example: 2017-11-11T00:00:00Z
         /// </param>
         /// <param name="unitCount"></param>
-        /// <param name="onFreeTrial">
-        /// Example: true
-        /// </param>
         /// <param name="freeTrialEndsOn">
         /// Example: 2017-11-11T00:00:00Z
         /// </param>
         /// <param name="updatedAt">
         /// Example: 2017-11-02T01:12:12Z
-        /// </param>
-        /// <param name="account"></param>
-        /// <param name="plan">
-        /// Marketplace Listing Plan
         /// </param>
         public UserMarketplacePurchase(
             string billingCycle,
@@ -102,13 +102,13 @@ namespace G
             global::System.DateTime? updatedAt)
         {
             this.BillingCycle = billingCycle ?? throw new global::System.ArgumentNullException(nameof(billingCycle));
-            this.OnFreeTrial = onFreeTrial;
-            this.Account = account ?? throw new global::System.ArgumentNullException(nameof(account));
-            this.Plan = plan ?? throw new global::System.ArgumentNullException(nameof(plan));
             this.NextBillingDate = nextBillingDate;
             this.UnitCount = unitCount;
+            this.OnFreeTrial = onFreeTrial;
             this.FreeTrialEndsOn = freeTrialEndsOn;
             this.UpdatedAt = updatedAt;
+            this.Account = account ?? throw new global::System.ArgumentNullException(nameof(account));
+            this.Plan = plan ?? throw new global::System.ArgumentNullException(nameof(plan));
         }
 
         /// <summary>

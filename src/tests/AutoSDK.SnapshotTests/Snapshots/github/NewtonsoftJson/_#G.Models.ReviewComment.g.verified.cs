@@ -217,9 +217,6 @@ namespace G
         /// <param name="url">
         /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/comments/1
         /// </param>
-        /// <param name="pullRequestReviewId">
-        /// Example: 42
-        /// </param>
         /// <param name="id">
         /// Example: 10
         /// </param>
@@ -232,9 +229,6 @@ namespace G
         /// <param name="path">
         /// Example: file1.txt
         /// </param>
-        /// <param name="position">
-        /// Example: 1
-        /// </param>
         /// <param name="originalPosition">
         /// Example: 4
         /// </param>
@@ -243,12 +237,6 @@ namespace G
         /// </param>
         /// <param name="originalCommitId">
         /// Example: 9c48853fa3dc5c1c3d6f1f1cd1f2743e72652840
-        /// </param>
-        /// <param name="inReplyToId">
-        /// Example: 8
-        /// </param>
-        /// <param name="user">
-        /// A GitHub user.
         /// </param>
         /// <param name="body">
         /// Example: Great stuff
@@ -270,6 +258,18 @@ namespace G
         /// Example: OWNER
         /// </param>
         /// <param name="links"></param>
+        /// <param name="pullRequestReviewId">
+        /// Example: 42
+        /// </param>
+        /// <param name="position">
+        /// Example: 1
+        /// </param>
+        /// <param name="inReplyToId">
+        /// Example: 8
+        /// </param>
+        /// <param name="user">
+        /// A GitHub user.
+        /// </param>
         /// <param name="bodyText"></param>
         /// <param name="bodyHtml"></param>
         /// <param name="reactions"></param>
@@ -328,13 +328,17 @@ namespace G
             int? originalStartLine)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.PullRequestReviewId = pullRequestReviewId;
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.DiffHunk = diffHunk ?? throw new global::System.ArgumentNullException(nameof(diffHunk));
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
+            this.Position = position;
             this.OriginalPosition = originalPosition;
             this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
             this.OriginalCommitId = originalCommitId ?? throw new global::System.ArgumentNullException(nameof(originalCommitId));
+            this.InReplyToId = inReplyToId;
+            this.User = user;
             this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
@@ -342,10 +346,6 @@ namespace G
             this.PullRequestUrl = pullRequestUrl ?? throw new global::System.ArgumentNullException(nameof(pullRequestUrl));
             this.AuthorAssociation = authorAssociation;
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
-            this.PullRequestReviewId = pullRequestReviewId;
-            this.Position = position;
-            this.InReplyToId = inReplyToId;
-            this.User = user;
             this.BodyText = bodyText;
             this.BodyHtml = bodyHtml;
             this.Reactions = reactions;

@@ -31,8 +31,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateSyntheticExamplesBody" /> class.
         /// </summary>
-        /// <param name="exampleIds"></param>
         /// <param name="numExamples"></param>
+        /// <param name="exampleIds"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -40,8 +40,8 @@ namespace G
             int numExamples,
             global::System.Collections.Generic.IList<global::System.Guid>? exampleIds)
         {
-            this.NumExamples = numExamples;
             this.ExampleIds = exampleIds;
+            this.NumExamples = numExamples;
         }
 
         /// <summary>

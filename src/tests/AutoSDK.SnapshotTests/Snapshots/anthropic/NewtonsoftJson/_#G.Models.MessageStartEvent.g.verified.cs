@@ -31,16 +31,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageStartEvent" /> class.
         /// </summary>
+        /// <param name="message"></param>
         /// <param name="type">
         /// Default Value: message_start
         /// </param>
-        /// <param name="message"></param>
         public MessageStartEvent(
             global::G.Message message,
             global::G.MessageStartEventType type = global::G.MessageStartEventType.MessageStart)
         {
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Type = type;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
         }
 
         /// <summary>

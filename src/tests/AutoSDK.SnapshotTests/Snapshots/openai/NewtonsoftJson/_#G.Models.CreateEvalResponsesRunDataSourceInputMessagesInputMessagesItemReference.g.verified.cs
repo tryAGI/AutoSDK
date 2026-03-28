@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEvalResponsesRunDataSourceInputMessagesInputMessagesItemReference" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of input messages. Always `item_reference`.
-        /// </param>
         /// <param name="itemReference">
         /// A reference to a variable in the `item` namespace. Ie, "item.name"
+        /// </param>
+        /// <param name="type">
+        /// The type of input messages. Always `item_reference`.
         /// </param>
         public CreateEvalResponsesRunDataSourceInputMessagesInputMessagesItemReference(
             string itemReference,
             global::G.CreateEvalResponsesRunDataSourceInputMessagesInputMessagesItemReferenceType type)
         {
-            this.ItemReference = itemReference ?? throw new global::System.ArgumentNullException(nameof(itemReference));
             this.Type = type;
+            this.ItemReference = itemReference ?? throw new global::System.ArgumentNullException(nameof(itemReference));
         }
 
         /// <summary>

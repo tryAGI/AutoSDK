@@ -167,25 +167,25 @@ namespace G
         /// <param name="bodyHtml"></param>
         /// <param name="createdAt"></param>
         /// <param name="description"></param>
-        /// <param name="dockerMetadata"></param>
-        /// <param name="draft"></param>
         /// <param name="htmlUrl"></param>
         /// <param name="id"></param>
         /// <param name="installationCommand"></param>
-        /// <param name="manifest"></param>
         /// <param name="metadata"></param>
         /// <param name="name"></param>
         /// <param name="packageFiles"></param>
         /// <param name="packageUrl"></param>
-        /// <param name="prerelease"></param>
-        /// <param name="release"></param>
-        /// <param name="rubygemsMetadata"></param>
         /// <param name="summary"></param>
-        /// <param name="tagName"></param>
         /// <param name="targetCommitish"></param>
         /// <param name="targetOid"></param>
         /// <param name="updatedAt"></param>
         /// <param name="version"></param>
+        /// <param name="dockerMetadata"></param>
+        /// <param name="draft"></param>
+        /// <param name="manifest"></param>
+        /// <param name="prerelease"></param>
+        /// <param name="release"></param>
+        /// <param name="rubygemsMetadata"></param>
+        /// <param name="tagName"></param>
         public WebhookRegistryPackageUpdatedRegistryPackagePackageVersion(
             global::G.WebhookRegistryPackageUpdatedRegistryPackagePackageVersionAuthor author,
             string body,
@@ -217,25 +217,25 @@ namespace G
             this.BodyHtml = bodyHtml ?? throw new global::System.ArgumentNullException(nameof(bodyHtml));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.DockerMetadata = dockerMetadata;
+            this.Draft = draft;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.InstallationCommand = installationCommand ?? throw new global::System.ArgumentNullException(nameof(installationCommand));
+            this.Manifest = manifest;
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.PackageFiles = packageFiles ?? throw new global::System.ArgumentNullException(nameof(packageFiles));
             this.PackageUrl = packageUrl ?? throw new global::System.ArgumentNullException(nameof(packageUrl));
+            this.Prerelease = prerelease;
+            this.Release = release;
+            this.RubygemsMetadata = rubygemsMetadata;
             this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
+            this.TagName = tagName;
             this.TargetCommitish = targetCommitish ?? throw new global::System.ArgumentNullException(nameof(targetCommitish));
             this.TargetOid = targetOid ?? throw new global::System.ArgumentNullException(nameof(targetOid));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
             this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
-            this.DockerMetadata = dockerMetadata;
-            this.Draft = draft;
-            this.Manifest = manifest;
-            this.Prerelease = prerelease;
-            this.Release = release;
-            this.RubygemsMetadata = rubygemsMetadata;
-            this.TagName = tagName;
         }
 
         /// <summary>

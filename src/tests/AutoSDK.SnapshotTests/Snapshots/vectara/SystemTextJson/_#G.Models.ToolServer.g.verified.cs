@@ -109,29 +109,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolServer" /> class.
         /// </summary>
-        /// <param name="id">
-        /// Unique identifier for a tool server.<br/>
-        /// Example: tsr_rag_search
-        /// </param>
         /// <param name="name">
         /// The human-readable name of a tool server.<br/>
         /// Example: RAG Search Server
         /// </param>
-        /// <param name="type">
-        /// The type of tool server.<br/>
-        /// Example: mcp
-        /// </param>
-        /// <param name="description">
-        /// A detailed description of what this tool server does.<br/>
-        /// Example: Provides RAG search capabilities for documents.
-        /// </param>
         /// <param name="uri">
         /// The URI of the server.<br/>
         /// Example: https://api.example.com/sse/
-        /// </param>
-        /// <param name="headers">
-        /// Optional HTTP headers to include when connecting to the server.<br/>
-        /// Example: {"Content-Type":"application/json"}
         /// </param>
         /// <param name="transport">
         /// Transport protocol for MCP server connections. Both use Server-Sent Events (SSE).<br/>
@@ -142,6 +126,22 @@ namespace G
         /// <param name="enabled">
         /// Whether the tool server is currently enabled and available for use.<br/>
         /// Default Value: true
+        /// </param>
+        /// <param name="id">
+        /// Unique identifier for a tool server.<br/>
+        /// Example: tsr_rag_search
+        /// </param>
+        /// <param name="type">
+        /// The type of tool server.<br/>
+        /// Example: mcp
+        /// </param>
+        /// <param name="description">
+        /// A detailed description of what this tool server does.<br/>
+        /// Example: Provides RAG search capabilities for documents.
+        /// </param>
+        /// <param name="headers">
+        /// Optional HTTP headers to include when connecting to the server.<br/>
+        /// Example: {"Content-Type":"application/json"}
         /// </param>
         /// <param name="metadata">
         /// Arbitrary metadata associated with the tool server.<br/>
@@ -169,14 +169,14 @@ namespace G
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Uri = uri ?? throw new global::System.ArgumentNullException(nameof(uri));
-            this.Transport = transport;
-            this.Enabled = enabled;
             this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
             this.Description = description;
+            this.Uri = uri ?? throw new global::System.ArgumentNullException(nameof(uri));
             this.Headers = headers;
+            this.Transport = transport;
+            this.Enabled = enabled;
             this.Metadata = metadata;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;

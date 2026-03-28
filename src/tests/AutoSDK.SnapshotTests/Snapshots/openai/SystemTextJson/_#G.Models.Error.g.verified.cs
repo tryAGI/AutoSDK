@@ -44,10 +44,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Error" /> class.
         /// </summary>
-        /// <param name="code"></param>
         /// <param name="message"></param>
-        /// <param name="param"></param>
         /// <param name="type"></param>
+        /// <param name="code"></param>
+        /// <param name="param"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -57,10 +57,10 @@ namespace G
             string? code,
             string? param)
         {
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Code = code;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Param = param;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

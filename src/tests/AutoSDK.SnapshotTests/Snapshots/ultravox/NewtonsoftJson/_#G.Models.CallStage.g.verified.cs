@@ -112,14 +112,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CallStage" /> class.
         /// </summary>
-        /// <param name="callId">
-        /// Included only in responses
-        /// </param>
-        /// <param name="callStageId">
-        /// Included only in responses
-        /// </param>
-        /// <param name="created">
-        /// Included only in responses
+        /// <param name="initialState">
+        /// The initial state of the call stage which is readable/writable by tools.
         /// </param>
         /// <param name="inactivityMessages">
         /// Messages spoken by the agent when the user is inactive for the specified duration. Durations are cumulative, so a message m &gt; 1 with duration 30s will be spoken 30 seconds after message m-1.
@@ -131,9 +125,6 @@ namespace G
         /// Default Value: fixie-ai/ultravox
         /// </param>
         /// <param name="systemPrompt"></param>
-        /// <param name="temperature">
-        /// Included only in responses
-        /// </param>
         /// <param name="timeExceededMessage"></param>
         /// <param name="voice"></param>
         /// <param name="externalVoice">
@@ -142,16 +133,25 @@ namespace G
         ///  responsible for your own TTS-related errors.<br/>
         ///  Exactly one field must be set.
         /// </param>
-        /// <param name="errorCount">
-        /// The number of errors in this call stage.<br/>
-        /// Included only in responses
-        /// </param>
         /// <param name="experimentalSettings">
         /// Experimental settings for this call stage.<br/>
         /// Included only in responses
         /// </param>
-        /// <param name="initialState">
-        /// The initial state of the call stage which is readable/writable by tools.
+        /// <param name="callId">
+        /// Included only in responses
+        /// </param>
+        /// <param name="callStageId">
+        /// Included only in responses
+        /// </param>
+        /// <param name="created">
+        /// Included only in responses
+        /// </param>
+        /// <param name="temperature">
+        /// Included only in responses
+        /// </param>
+        /// <param name="errorCount">
+        /// The number of errors in this call stage.<br/>
+        /// Included only in responses
         /// </param>
         public CallStage(
             object initialState,
@@ -169,7 +169,6 @@ namespace G
             double temperature = default!,
             int errorCount = default!)
         {
-            this.InitialState = initialState ?? throw new global::System.ArgumentNullException(nameof(initialState));
             this.CallId = callId;
             this.CallStageId = callStageId;
             this.Created = created;
@@ -183,6 +182,7 @@ namespace G
             this.ExternalVoice = externalVoice;
             this.ErrorCount = errorCount;
             this.ExperimentalSettings = experimentalSettings;
+            this.InitialState = initialState ?? throw new global::System.ArgumentNullException(nameof(initialState));
         }
 
         /// <summary>

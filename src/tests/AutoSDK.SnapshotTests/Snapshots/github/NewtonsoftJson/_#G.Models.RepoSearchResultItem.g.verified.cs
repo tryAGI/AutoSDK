@@ -557,25 +557,18 @@ namespace G
         /// <param name="nodeId"></param>
         /// <param name="name"></param>
         /// <param name="fullName"></param>
-        /// <param name="owner">
-        /// A GitHub user.
-        /// </param>
         /// <param name="private"></param>
         /// <param name="htmlUrl"></param>
-        /// <param name="description"></param>
         /// <param name="fork"></param>
         /// <param name="url"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="pushedAt"></param>
-        /// <param name="homepage"></param>
         /// <param name="size"></param>
         /// <param name="stargazersCount"></param>
         /// <param name="watchersCount"></param>
-        /// <param name="language"></param>
         /// <param name="forksCount"></param>
         /// <param name="openIssuesCount"></param>
-        /// <param name="masterBranch"></param>
         /// <param name="defaultBranch"></param>
         /// <param name="score"></param>
         /// <param name="forksUrl"></param>
@@ -621,18 +614,25 @@ namespace G
         /// <param name="forks"></param>
         /// <param name="openIssues"></param>
         /// <param name="watchers"></param>
-        /// <param name="topics"></param>
-        /// <param name="mirrorUrl"></param>
         /// <param name="hasIssues"></param>
         /// <param name="hasProjects"></param>
         /// <param name="hasPages"></param>
         /// <param name="hasWiki"></param>
         /// <param name="hasDownloads"></param>
-        /// <param name="hasDiscussions"></param>
         /// <param name="archived"></param>
         /// <param name="disabled">
         /// Returns whether or not this repository disabled.
         /// </param>
+        /// <param name="owner">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="description"></param>
+        /// <param name="homepage"></param>
+        /// <param name="language"></param>
+        /// <param name="masterBranch"></param>
+        /// <param name="topics"></param>
+        /// <param name="mirrorUrl"></param>
+        /// <param name="hasDiscussions"></param>
         /// <param name="visibility">
         /// The repository visibility: public, private, or internal.
         /// </param>
@@ -747,18 +747,23 @@ namespace G
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.FullName = fullName ?? throw new global::System.ArgumentNullException(nameof(fullName));
+            this.Owner = owner;
             this.Private = @private;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Description = description;
             this.Fork = fork;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.PushedAt = pushedAt;
+            this.Homepage = homepage;
             this.Size = size;
             this.StargazersCount = stargazersCount;
             this.WatchersCount = watchersCount;
+            this.Language = language;
             this.ForksCount = forksCount;
             this.OpenIssuesCount = openIssuesCount;
+            this.MasterBranch = masterBranch;
             this.DefaultBranch = defaultBranch ?? throw new global::System.ArgumentNullException(nameof(defaultBranch));
             this.Score = score;
             this.ForksUrl = forksUrl ?? throw new global::System.ArgumentNullException(nameof(forksUrl));
@@ -804,21 +809,16 @@ namespace G
             this.Forks = forks;
             this.OpenIssues = openIssues;
             this.Watchers = watchers;
+            this.Topics = topics;
+            this.MirrorUrl = mirrorUrl;
             this.HasIssues = hasIssues;
             this.HasProjects = hasProjects;
             this.HasPages = hasPages;
             this.HasWiki = hasWiki;
             this.HasDownloads = hasDownloads;
+            this.HasDiscussions = hasDiscussions;
             this.Archived = archived;
             this.Disabled = disabled;
-            this.Owner = owner;
-            this.Description = description;
-            this.Homepage = homepage;
-            this.Language = language;
-            this.MasterBranch = masterBranch;
-            this.Topics = topics;
-            this.MirrorUrl = mirrorUrl;
-            this.HasDiscussions = hasDiscussions;
             this.Visibility = visibility;
             this.License = license;
             this.Permissions = permissions;

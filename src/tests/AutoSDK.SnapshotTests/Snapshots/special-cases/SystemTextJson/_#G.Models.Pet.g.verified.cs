@@ -59,6 +59,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Pet" /> class.
         /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
         /// <param name="x4">
         /// Example: 1234
         /// </param>
@@ -68,8 +70,6 @@ namespace G
         /// <param name="x16_9">
         /// Example: true
         /// </param>
-        /// <param name="id"></param>
-        /// <param name="name"></param>
         /// <param name="tag"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -82,11 +82,11 @@ namespace G
             bool? x16_9,
             string? tag)
         {
-            this.Id = id;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.x4 = x4;
             this.x15 = x15;
             this.x16_9 = x16_9;
+            this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Tag = tag;
         }
 

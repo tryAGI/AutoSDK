@@ -128,12 +128,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DependabotAlertSecurityAdvisory" /> class.
         /// </summary>
-        /// <param name="ghsaId">
-        /// The unique GitHub Security Advisory ID assigned to the advisory.<br/>
-        /// Included only in responses
-        /// </param>
         /// <param name="cveId">
         /// The unique CVE ID assigned to the advisory.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="cvssSeverities"></param>
+        /// <param name="withdrawnAt">
+        /// The time that the advisory was withdrawn in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="ghsaId">
+        /// The unique GitHub Security Advisory ID assigned to the advisory.<br/>
         /// Included only in responses
         /// </param>
         /// <param name="summary">
@@ -156,7 +161,6 @@ namespace G
         /// Details for the advisory pertaining to the Common Vulnerability Scoring System.<br/>
         /// Included only in responses
         /// </param>
-        /// <param name="cvssSeverities"></param>
         /// <param name="cwes">
         /// Details for the advisory pertaining to Common Weakness Enumeration.<br/>
         /// Included only in responses
@@ -175,10 +179,6 @@ namespace G
         /// </param>
         /// <param name="updatedAt">
         /// The time that the advisory was last modified in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
-        /// Included only in responses
-        /// </param>
-        /// <param name="withdrawnAt">
-        /// The time that the advisory was withdrawn in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
         /// Included only in responses
         /// </param>
 #if NET7_0_OR_GREATER

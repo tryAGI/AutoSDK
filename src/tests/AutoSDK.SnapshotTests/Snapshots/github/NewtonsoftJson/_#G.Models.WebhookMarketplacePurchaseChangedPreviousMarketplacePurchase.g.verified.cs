@@ -62,11 +62,11 @@ namespace G
         /// </summary>
         /// <param name="account"></param>
         /// <param name="billingCycle"></param>
+        /// <param name="plan"></param>
+        /// <param name="unitCount"></param>
         /// <param name="freeTrialEndsOn"></param>
         /// <param name="nextBillingDate"></param>
         /// <param name="onFreeTrial"></param>
-        /// <param name="plan"></param>
-        /// <param name="unitCount"></param>
         public WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase(
             global::G.WebhookMarketplacePurchaseChangedPreviousMarketplacePurchaseAccount account,
             string billingCycle,
@@ -78,11 +78,11 @@ namespace G
         {
             this.Account = account ?? throw new global::System.ArgumentNullException(nameof(account));
             this.BillingCycle = billingCycle ?? throw new global::System.ArgumentNullException(nameof(billingCycle));
-            this.Plan = plan ?? throw new global::System.ArgumentNullException(nameof(plan));
-            this.UnitCount = unitCount;
             this.FreeTrialEndsOn = freeTrialEndsOn;
             this.NextBillingDate = nextBillingDate;
             this.OnFreeTrial = onFreeTrial;
+            this.Plan = plan ?? throw new global::System.ArgumentNullException(nameof(plan));
+            this.UnitCount = unitCount;
         }
 
         /// <summary>

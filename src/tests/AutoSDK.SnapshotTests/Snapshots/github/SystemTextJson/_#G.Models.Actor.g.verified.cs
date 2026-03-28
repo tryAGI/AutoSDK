@@ -60,10 +60,10 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="login"></param>
-        /// <param name="displayLogin"></param>
-        /// <param name="gravatarId"></param>
         /// <param name="url"></param>
         /// <param name="avatarUrl"></param>
+        /// <param name="displayLogin"></param>
+        /// <param name="gravatarId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -77,10 +77,10 @@ namespace G
         {
             this.Id = id;
             this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
             this.DisplayLogin = displayLogin;
             this.GravatarId = gravatarId;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
         }
 
         /// <summary>

@@ -72,6 +72,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPullRequestReviewThreadUnresolved" /> class.
         /// </summary>
+        /// <param name="pullRequest"></param>
+        /// <param name="repository">
+        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
+        /// when the event occurs from activity in a repository.
+        /// </param>
+        /// <param name="thread"></param>
         /// <param name="action"></param>
         /// <param name="enterprise">
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
@@ -87,15 +93,9 @@ namespace G
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
         /// organization, or when the event occurs from activity in a repository owned by an organization.
         /// </param>
-        /// <param name="pullRequest"></param>
-        /// <param name="repository">
-        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
-        /// when the event occurs from activity in a repository.
-        /// </param>
         /// <param name="sender">
         /// A GitHub user.
         /// </param>
-        /// <param name="thread"></param>
         public WebhookPullRequestReviewThreadUnresolved(
             global::G.WebhookPullRequestReviewThreadUnresolvedPullRequest pullRequest,
             global::G.RepositoryWebhooks repository,
@@ -106,14 +106,14 @@ namespace G
             global::G.OrganizationSimpleWebhooks? organization,
             global::G.SimpleUser? sender)
         {
-            this.PullRequest = pullRequest ?? throw new global::System.ArgumentNullException(nameof(pullRequest));
-            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
-            this.Thread = thread ?? throw new global::System.ArgumentNullException(nameof(thread));
             this.Action = action;
             this.Enterprise = enterprise;
             this.Installation = installation;
             this.Organization = organization;
+            this.PullRequest = pullRequest ?? throw new global::System.ArgumentNullException(nameof(pullRequest));
+            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.Sender = sender;
+            this.Thread = thread ?? throw new global::System.ArgumentNullException(nameof(thread));
         }
 
         /// <summary>

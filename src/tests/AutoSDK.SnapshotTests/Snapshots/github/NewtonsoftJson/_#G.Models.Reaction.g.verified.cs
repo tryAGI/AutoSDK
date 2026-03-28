@@ -59,15 +59,15 @@ namespace G
         /// <param name="nodeId">
         /// Example: MDg6UmVhY3Rpb24x
         /// </param>
-        /// <param name="user">
-        /// A GitHub user.
-        /// </param>
         /// <param name="content">
         /// The reaction to use<br/>
         /// Example: heart
         /// </param>
         /// <param name="createdAt">
         /// Example: 2016-05-20T20:09:31Z
+        /// </param>
+        /// <param name="user">
+        /// A GitHub user.
         /// </param>
         public Reaction(
             int id,
@@ -78,9 +78,9 @@ namespace G
         {
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.User = user;
             this.Content = content;
             this.CreatedAt = createdAt;
-            this.User = user;
         }
 
         /// <summary>

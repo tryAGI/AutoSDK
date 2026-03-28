@@ -57,9 +57,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaRequestDocumentBlock" /> class.
         /// </summary>
+        /// <param name="source"></param>
         /// <param name="cacheControl"></param>
         /// <param name="type"></param>
-        /// <param name="source"></param>
         /// <param name="title"></param>
         /// <param name="context"></param>
         /// <param name="citations"></param>
@@ -74,9 +74,9 @@ namespace G
             string? context,
             global::G.BetaRequestCitationsConfig? citations)
         {
-            this.Source = source;
             this.CacheControl = cacheControl;
             this.Type = type;
+            this.Source = source;
             this.Title = title;
             this.Context = context;
             this.Citations = citations;

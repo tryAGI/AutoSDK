@@ -39,11 +39,11 @@ namespace G
         /// <param name="id">
         /// The ID of the tool call object.
         /// </param>
-        /// <param name="type">
-        /// The type of tool call. This is always going to be `file_search` for this type of tool call.
-        /// </param>
         /// <param name="fileSearch">
         /// For now, this is always going to be an empty object.
+        /// </param>
+        /// <param name="type">
+        /// The type of tool call. This is always going to be `file_search` for this type of tool call.
         /// </param>
         public RunStepDetailsToolCallsFileSearchObject(
             string id,
@@ -51,8 +51,8 @@ namespace G
             global::G.RunStepDetailsToolCallsFileSearchObjectType type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.FileSearch = fileSearch ?? throw new global::System.ArgumentNullException(nameof(fileSearch));
             this.Type = type;
+            this.FileSearch = fileSearch ?? throw new global::System.ArgumentNullException(nameof(fileSearch));
         }
 
         /// <summary>

@@ -168,20 +168,20 @@ namespace G
         /// <param name="url">
         /// Example: https://api.github.com/repos/octocat/Hello-World/issues/events/1
         /// </param>
-        /// <param name="actor">
-        /// A GitHub user.
-        /// </param>
         /// <param name="event">
         /// Example: closed
+        /// </param>
+        /// <param name="createdAt">
+        /// Example: 2011-04-14T16:00:49Z
+        /// </param>
+        /// <param name="actor">
+        /// A GitHub user.
         /// </param>
         /// <param name="commitId">
         /// Example: 6dcb09b5b57875f334f61aebed695e2e4193db5e
         /// </param>
         /// <param name="commitUrl">
         /// Example: https://api.github.com/repos/octocat/Hello-World/commits/6dcb09b5b57875f334f61aebed695e2e4193db5e
-        /// </param>
-        /// <param name="createdAt">
-        /// Example: 2011-04-14T16:00:49Z
         /// </param>
         /// <param name="issue">
         /// Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
@@ -249,11 +249,11 @@ namespace G
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));
-            this.CreatedAt = createdAt;
             this.Actor = actor;
+            this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));
             this.CommitId = commitId;
             this.CommitUrl = commitUrl;
+            this.CreatedAt = createdAt;
             this.Issue = issue;
             this.Label = label;
             this.Assignee = assignee;

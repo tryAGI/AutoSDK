@@ -121,26 +121,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Connection" /> class.
         /// </summary>
-        /// <param name="uid">
-        /// UUID-formatted unique identifier.<br/>
-        /// Included only in responses
-        /// </param>
         /// <param name="id">
         /// ID.
-        /// </param>
-        /// <param name="namespaceId">
-        /// ID of the namespace owning the connection.<br/>
-        /// Included only in responses
         /// </param>
         /// <param name="integrationId">
         /// Integration ID. It determines for which type of components can reference<br/>
         /// this connection.
-        /// </param>
-        /// <param name="integrationTitle">
-        /// Integration title. This helps the console display the results grouped by<br/>
-        /// integration ID without needing an extra call to fetch title by integration<br/>
-        /// ID.<br/>
-        /// Included only in responses
         /// </param>
         /// <param name="method">
         /// Connection method. It references the setup schema provided by the<br/>
@@ -149,6 +135,20 @@ namespace G
         /// <param name="setup">
         /// Connection details. This field is required on creation, optional on view.<br/>
         /// When viewing the connection details, the setup values will be redacted.
+        /// </param>
+        /// <param name="uid">
+        /// UUID-formatted unique identifier.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="namespaceId">
+        /// ID of the namespace owning the connection.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="integrationTitle">
+        /// Integration title. This helps the console display the results grouped by<br/>
+        /// integration ID without needing an extra call to fetch title by integration<br/>
+        /// ID.<br/>
+        /// Included only in responses
         /// </param>
         /// <param name="scopes">
         /// A list of scopes that identify the resources that the connection will be<br/>
@@ -195,13 +195,13 @@ namespace G
             global::System.DateTime? createTime,
             global::System.DateTime? updateTime)
         {
+            this.Uid = uid;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.NamespaceId = namespaceId;
             this.IntegrationId = integrationId ?? throw new global::System.ArgumentNullException(nameof(integrationId));
+            this.IntegrationTitle = integrationTitle;
             this.Method = method;
             this.Setup = setup ?? throw new global::System.ArgumentNullException(nameof(setup));
-            this.Uid = uid;
-            this.NamespaceId = namespaceId;
-            this.IntegrationTitle = integrationTitle;
             this.Scopes = scopes;
             this.Identity = identity;
             this.OAuthAccessDetails = oAuthAccessDetails;

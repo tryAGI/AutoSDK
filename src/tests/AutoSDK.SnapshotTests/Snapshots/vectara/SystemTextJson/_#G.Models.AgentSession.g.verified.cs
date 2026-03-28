@@ -122,6 +122,15 @@ namespace G
         /// Human-readable name for the session.<br/>
         /// Example: Customer Support Session
         /// </param>
+        /// <param name="enabled">
+        /// Whether the session is currently active and can accept new messages.<br/>
+        /// Default Value: true<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="createdAt">
+        /// Timestamp when the session was created.<br/>
+        /// Example: 2024-01-15T10:30:00Z
+        /// </param>
         /// <param name="description">
         /// Optional description of the session purpose or context.<br/>
         /// Example: Helping customer troubleshoot widget installation issues
@@ -135,19 +144,10 @@ namespace G
         /// If null, the session starts at the agent's first_step.<br/>
         /// Example: billing
         /// </param>
-        /// <param name="enabled">
-        /// Whether the session is currently active and can accept new messages.<br/>
-        /// Default Value: true<br/>
-        /// Example: true
-        /// </param>
         /// <param name="ttiMinutes">
         /// Time-to-idle in minutes for the session. If no events occur in the session for this duration, the session will be automatically deleted. If not specified, the session will not expire.<br/>
         /// Default Value: 0<br/>
         /// Example: 60
-        /// </param>
-        /// <param name="createdAt">
-        /// Timestamp when the session was created.<br/>
-        /// Example: 2024-01-15T10:30:00Z
         /// </param>
         /// <param name="sessionContextUsage">
         /// Token usage statistics for a session.
@@ -174,12 +174,12 @@ namespace G
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.AgentKey = agentKey ?? throw new global::System.ArgumentNullException(nameof(agentKey));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Enabled = enabled;
-            this.CreatedAt = createdAt;
             this.Description = description;
             this.Metadata = metadata;
             this.CurrentStepName = currentStepName;
+            this.Enabled = enabled;
             this.TtiMinutes = ttiMinutes;
+            this.CreatedAt = createdAt;
             this.SessionContextUsage = sessionContextUsage;
             this.EffectiveCompaction = effectiveCompaction;
         }

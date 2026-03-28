@@ -31,18 +31,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ASTDynamicVariableNodeOutput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: dynamic_variable
-        /// </param>
         /// <param name="name">
         /// The name of the dynamic variable.
+        /// </param>
+        /// <param name="type">
+        /// Default Value: dynamic_variable
         /// </param>
         public ASTDynamicVariableNodeOutput(
             string name,
             string type = "dynamic_variable")
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
         }
 
         /// <summary>

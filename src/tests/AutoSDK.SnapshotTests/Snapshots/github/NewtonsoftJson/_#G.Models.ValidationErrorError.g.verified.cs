@@ -54,10 +54,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ValidationErrorError" /> class.
         /// </summary>
+        /// <param name="code"></param>
         /// <param name="resource"></param>
         /// <param name="field"></param>
         /// <param name="message"></param>
-        /// <param name="code"></param>
         /// <param name="index"></param>
         /// <param name="value"></param>
         public ValidationErrorError(
@@ -68,10 +68,10 @@ namespace G
             int? index,
             global::G.OneOf<string, int?, global::System.Collections.Generic.IList<string>>? value)
         {
-            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
             this.Resource = resource;
             this.Field = field;
             this.Message = message;
+            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
             this.Index = index;
             this.Value = value;
         }

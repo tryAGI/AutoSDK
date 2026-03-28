@@ -55,13 +55,13 @@ namespace G
         /// <param name="createdAt">
         /// The timestamp that the task was submitted at.
         /// </param>
-        /// <param name="status"></param>
         /// <param name="failure">
         /// A human-friendly reason for the failure. We do not recommend returning this to users directly without adding context.
         /// </param>
         /// <param name="failureCode">
         /// A machine-readable error code for the failure. See https://docs.dev.runwayml.com/errors/task-failures/ for more information.
         /// </param>
+        /// <param name="status"></param>
         public GetTasksResponseVariant5(
             global::System.Guid id,
             global::System.DateTime createdAt,
@@ -71,8 +71,8 @@ namespace G
         {
             this.Id = id;
             this.CreatedAt = createdAt;
-            this.Failure = failure ?? throw new global::System.ArgumentNullException(nameof(failure));
             this.Status = status;
+            this.Failure = failure ?? throw new global::System.ArgumentNullException(nameof(failure));
             this.FailureCode = failureCode;
         }
 

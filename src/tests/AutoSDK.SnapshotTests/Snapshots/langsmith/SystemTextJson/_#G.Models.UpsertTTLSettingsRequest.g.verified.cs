@@ -38,8 +38,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UpsertTTLSettingsRequest" /> class.
         /// </summary>
-        /// <param name="tenantId"></param>
         /// <param name="defaultTraceTier"></param>
+        /// <param name="tenantId"></param>
         /// <param name="applyToAllProjects">
         /// Default Value: false
         /// </param>
@@ -51,8 +51,8 @@ namespace G
             global::System.Guid? tenantId,
             bool? applyToAllProjects)
         {
-            this.DefaultTraceTier = defaultTraceTier;
             this.TenantId = tenantId;
+            this.DefaultTraceTier = defaultTraceTier;
             this.ApplyToAllProjects = applyToAllProjects;
         }
 

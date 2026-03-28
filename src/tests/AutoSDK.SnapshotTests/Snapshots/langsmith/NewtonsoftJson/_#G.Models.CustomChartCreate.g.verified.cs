@@ -67,12 +67,12 @@ namespace G
         /// Initializes a new instance of the <see cref="CustomChartCreate" /> class.
         /// </summary>
         /// <param name="title"></param>
-        /// <param name="description"></param>
-        /// <param name="index"></param>
         /// <param name="chartType">
         /// Enum for custom chart types.
         /// </param>
         /// <param name="series"></param>
+        /// <param name="description"></param>
+        /// <param name="index"></param>
         /// <param name="sectionId"></param>
         /// <param name="metadata"></param>
         /// <param name="commonFilters"></param>
@@ -87,10 +87,10 @@ namespace G
             global::G.CustomChartSeriesFilters2? commonFilters)
         {
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.ChartType = chartType;
-            this.Series = series ?? throw new global::System.ArgumentNullException(nameof(series));
             this.Description = description;
             this.Index = index;
+            this.ChartType = chartType;
+            this.Series = series ?? throw new global::System.ArgumentNullException(nameof(series));
             this.SectionId = sectionId;
             this.Metadata = metadata;
             this.CommonFilters = commonFilters;

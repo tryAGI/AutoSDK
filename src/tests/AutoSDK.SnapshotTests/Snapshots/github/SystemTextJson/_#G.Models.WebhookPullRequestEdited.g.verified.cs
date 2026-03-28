@@ -84,10 +84,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPullRequestEdited" /> class.
         /// </summary>
-        /// <param name="action"></param>
         /// <param name="changes">
         /// The changes to the comment if the action was `edited`.
         /// </param>
+        /// <param name="number">
+        /// The pull request number.
+        /// </param>
+        /// <param name="pullRequest"></param>
+        /// <param name="repository">
+        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
+        /// when the event occurs from activity in a repository.
+        /// </param>
+        /// <param name="action"></param>
         /// <param name="enterprise">
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
         /// on an enterprise account or an organization that's part of an enterprise account. For more information,<br/>
@@ -98,17 +106,9 @@ namespace G
         /// for and sent to a GitHub App. For more information,<br/>
         /// see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
         /// </param>
-        /// <param name="number">
-        /// The pull request number.
-        /// </param>
         /// <param name="organization">
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
         /// organization, or when the event occurs from activity in a repository owned by an organization.
-        /// </param>
-        /// <param name="pullRequest"></param>
-        /// <param name="repository">
-        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
-        /// when the event occurs from activity in a repository.
         /// </param>
         /// <param name="sender">
         /// A GitHub user.
@@ -127,14 +127,14 @@ namespace G
             global::G.OrganizationSimpleWebhooks? organization,
             global::G.SimpleUser? sender)
         {
-            this.Changes = changes ?? throw new global::System.ArgumentNullException(nameof(changes));
-            this.Number = number;
-            this.PullRequest = pullRequest;
-            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.Action = action;
+            this.Changes = changes ?? throw new global::System.ArgumentNullException(nameof(changes));
             this.Enterprise = enterprise;
             this.Installation = installation;
+            this.Number = number;
             this.Organization = organization;
+            this.PullRequest = pullRequest;
+            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.Sender = sender;
         }
 

@@ -134,9 +134,6 @@ namespace G
         /// <param name="isNewUser">
         /// Whether the user is new. This field is deprecated and will be removed in the future. Use 'created_at' instead.
         /// </param>
-        /// <param name="xiApiKey">
-        /// The API key of the user.
-        /// </param>
         /// <param name="canUseDelayedPaymentMethods">
         /// This field is deprecated and will be removed in a future major version. Instead use subscription.trust_on_invoice_creation.
         /// </param>
@@ -145,6 +142,15 @@ namespace G
         /// </param>
         /// <param name="isOnboardingChecklistCompleted">
         /// Whether the user's onboarding checklist is completed.
+        /// </param>
+        /// <param name="createdAt">
+        /// The unix timestamp of the user's creation. 0 if the user was created before the unix timestamp was added.
+        /// </param>
+        /// <param name="seatType">
+        /// The seat type of the user.
+        /// </param>
+        /// <param name="xiApiKey">
+        /// The API key of the user.
         /// </param>
         /// <param name="showComplianceTerms">
         /// Whether to show compliance terms (ToS, Privacy Policy, biometric consent) during onboarding. Set for users signing up from the marketing site.<br/>
@@ -165,12 +171,6 @@ namespace G
         /// </param>
         /// <param name="partnerstackPartnerDefaultLink">
         /// The Partnerstack partner default link of the user.
-        /// </param>
-        /// <param name="createdAt">
-        /// The unix timestamp of the user's creation. 0 if the user was created before the unix timestamp was added.
-        /// </param>
-        /// <param name="seatType">
-        /// The seat type of the user.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -195,18 +195,18 @@ namespace G
             this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
             this.Subscription = subscription ?? throw new global::System.ArgumentNullException(nameof(subscription));
             this.IsNewUser = isNewUser;
+            this.XiApiKey = xiApiKey;
             this.CanUseDelayedPaymentMethods = canUseDelayedPaymentMethods;
             this.IsOnboardingCompleted = isOnboardingCompleted;
             this.IsOnboardingChecklistCompleted = isOnboardingChecklistCompleted;
-            this.CreatedAt = createdAt;
-            this.SeatType = seatType;
-            this.XiApiKey = xiApiKey;
             this.ShowComplianceTerms = showComplianceTerms;
             this.FirstName = firstName;
             this.IsApiKeyHashed = isApiKeyHashed;
             this.XiApiKeyPreview = xiApiKeyPreview;
             this.ReferralLinkCode = referralLinkCode;
             this.PartnerstackPartnerDefaultLink = partnerstackPartnerDefaultLink;
+            this.CreatedAt = createdAt;
+            this.SeatType = seatType;
         }
 
         /// <summary>

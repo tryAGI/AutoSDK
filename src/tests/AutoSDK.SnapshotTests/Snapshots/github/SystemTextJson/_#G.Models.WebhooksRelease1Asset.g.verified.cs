@@ -112,18 +112,18 @@ namespace G
         /// <param name="createdAt"></param>
         /// <param name="downloadCount"></param>
         /// <param name="id"></param>
-        /// <param name="label"></param>
         /// <param name="name">
         /// The file name of the asset.
         /// </param>
         /// <param name="nodeId"></param>
         /// <param name="size"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url"></param>
+        /// <param name="label"></param>
         /// <param name="state">
         /// State of the release asset.
         /// </param>
-        /// <param name="updatedAt"></param>
         /// <param name="uploader"></param>
-        /// <param name="url"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -147,14 +147,14 @@ namespace G
             this.CreatedAt = createdAt;
             this.DownloadCount = downloadCount;
             this.Id = id;
+            this.Label = label;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Size = size;
-            this.UpdatedAt = updatedAt;
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Label = label;
             this.State = state;
+            this.UpdatedAt = updatedAt;
             this.Uploader = uploader;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 
         /// <summary>

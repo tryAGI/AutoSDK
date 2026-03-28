@@ -37,16 +37,16 @@ namespace G
         /// Initializes a new instance of the <see cref="MeVercelConnection2" /> class.
         /// </summary>
         /// <param name="userId"></param>
-        /// <param name="teamId"></param>
         /// <param name="installationId"></param>
+        /// <param name="teamId"></param>
         public MeVercelConnection2(
             string userId,
             string installationId,
             string? teamId)
         {
             this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
-            this.InstallationId = installationId ?? throw new global::System.ArgumentNullException(nameof(installationId));
             this.TeamId = teamId;
+            this.InstallationId = installationId ?? throw new global::System.ArgumentNullException(nameof(installationId));
         }
 
         /// <summary>

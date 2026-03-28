@@ -50,11 +50,11 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="name"></param>
+        /// <param name="createdAtUnixSecs"></param>
+        /// <param name="accessLevel"></param>
         /// <param name="type">
         /// Default Value: available
         /// </param>
-        /// <param name="createdAtUnixSecs"></param>
-        /// <param name="accessLevel"></param>
         public DependentAvailableToolIdentifier(
             string id,
             string name,
@@ -64,9 +64,9 @@ namespace G
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Type = type;
             this.CreatedAtUnixSecs = createdAtUnixSecs;
             this.AccessLevel = accessLevel;
-            this.Type = type;
         }
 
         /// <summary>

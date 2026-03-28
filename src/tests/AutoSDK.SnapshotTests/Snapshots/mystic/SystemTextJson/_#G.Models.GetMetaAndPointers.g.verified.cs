@@ -95,15 +95,15 @@ namespace G
         /// Initializes a new instance of the <see cref="GetMetaAndPointers" /> class.
         /// </summary>
         /// <param name="public"></param>
+        /// <param name="pointers"></param>
+        /// <param name="id"></param>
+        /// <param name="createdAt"></param>
         /// <param name="description"></param>
         /// <param name="websiteUrl"></param>
         /// <param name="repositoryUrl"></param>
         /// <param name="paperUrl"></param>
         /// <param name="licenseUrl"></param>
         /// <param name="imageUrl"></param>
-        /// <param name="pointers"></param>
-        /// <param name="id"></param>
-        /// <param name="createdAt"></param>
         /// <param name="cluster">
         /// A lean representation of a cluster when returned from an API call
         /// </param>
@@ -126,15 +126,15 @@ namespace G
             global::System.Collections.Generic.IList<global::G.Accelerator>? accelerators)
         {
             this.Public = @public;
-            this.Pointers = pointers ?? throw new global::System.ArgumentNullException(nameof(pointers));
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.CreatedAt = createdAt;
             this.Description = description;
             this.WebsiteUrl = websiteUrl;
             this.RepositoryUrl = repositoryUrl;
             this.PaperUrl = paperUrl;
             this.LicenseUrl = licenseUrl;
             this.ImageUrl = imageUrl;
+            this.Pointers = pointers ?? throw new global::System.ArgumentNullException(nameof(pointers));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
             this.Cluster = cluster;
             this.Accelerators = accelerators;
         }

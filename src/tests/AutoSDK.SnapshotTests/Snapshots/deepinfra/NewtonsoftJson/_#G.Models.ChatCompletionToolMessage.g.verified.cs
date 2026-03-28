@@ -37,22 +37,22 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionToolMessage" /> class.
         /// </summary>
-        /// <param name="role">
-        /// the role of the author of this message<br/>
-        /// Default Value: tool
-        /// </param>
         /// <param name="content">
         /// the message content
         /// </param>
         /// <param name="toolCallId"></param>
+        /// <param name="role">
+        /// the role of the author of this message<br/>
+        /// Default Value: tool
+        /// </param>
         public ChatCompletionToolMessage(
             string content,
             string toolCallId,
             string? role)
         {
+            this.Role = role;
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
-            this.Role = role;
         }
 
         /// <summary>

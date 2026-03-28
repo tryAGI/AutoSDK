@@ -40,14 +40,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ContributorActivity" /> class.
         /// </summary>
-        /// <param name="author">
-        /// A GitHub user.
-        /// </param>
         /// <param name="total">
         /// Example: 135
         /// </param>
         /// <param name="weeks">
         /// Example: [{"w":"1367712000","a":6898,"d":77,"c":10}]
+        /// </param>
+        /// <param name="author">
+        /// A GitHub user.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -57,9 +57,9 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ContributorActivityWeek> weeks,
             global::G.NullableSimpleUser? author)
         {
+            this.Author = author;
             this.Total = total;
             this.Weeks = weeks ?? throw new global::System.ArgumentNullException(nameof(weeks));
-            this.Author = author;
         }
 
         /// <summary>

@@ -45,10 +45,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookStatusCommitCommitVerification" /> class.
         /// </summary>
-        /// <param name="payload"></param>
         /// <param name="reason"></param>
-        /// <param name="signature"></param>
         /// <param name="verified"></param>
+        /// <param name="payload"></param>
+        /// <param name="signature"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -58,10 +58,10 @@ namespace G
             string? payload,
             string? signature)
         {
-            this.Reason = reason;
-            this.Verified = verified;
             this.Payload = payload;
+            this.Reason = reason;
             this.Signature = signature;
+            this.Verified = verified;
         }
 
         /// <summary>

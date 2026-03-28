@@ -36,17 +36,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestImageBlock" /> class.
         /// </summary>
+        /// <param name="source"></param>
         /// <param name="cacheControl"></param>
         /// <param name="type"></param>
-        /// <param name="source"></param>
         public RequestImageBlock(
             global::G.Source4 source,
             global::G.CacheControlVariant115? cacheControl,
             global::G.RequestImageBlockType type)
         {
-            this.Source = source;
             this.CacheControl = cacheControl;
             this.Type = type;
+            this.Source = source;
         }
 
         /// <summary>

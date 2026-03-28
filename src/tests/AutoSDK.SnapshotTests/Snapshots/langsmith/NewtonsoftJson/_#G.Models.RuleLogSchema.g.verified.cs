@@ -98,11 +98,11 @@ namespace G
         /// </summary>
         /// <param name="ruleId"></param>
         /// <param name="runId"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
         /// <param name="runName"></param>
         /// <param name="runType"></param>
         /// <param name="runSessionId"></param>
-        /// <param name="startTime"></param>
-        /// <param name="endTime"></param>
         /// <param name="applicationTime"></param>
         /// <param name="addToAnnotationQueue"></param>
         /// <param name="addToDataset"></param>
@@ -126,11 +126,11 @@ namespace G
         {
             this.RuleId = ruleId;
             this.RunId = runId;
-            this.StartTime = startTime;
-            this.EndTime = endTime;
             this.RunName = runName;
             this.RunType = runType;
             this.RunSessionId = runSessionId;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
             this.ApplicationTime = applicationTime;
             this.AddToAnnotationQueue = addToAnnotationQueue;
             this.AddToDataset = addToDataset;

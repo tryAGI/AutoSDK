@@ -50,9 +50,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEvalResponsesRunDataSource" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of run data source. Always `responses`.<br/>
-        /// Default Value: responses
+        /// <param name="source">
+        /// Determines what populates the `item` namespace in this run's data source.
         /// </param>
         /// <param name="inputMessages">
         /// Used when sampling from a model. Dictates the structure of the messages passed into the model. Can either be a reference to a prebuilt trajectory (ie, `item.input_trajectory`), or a template with variable references to the `item` namespace.
@@ -61,8 +60,9 @@ namespace G
         /// <param name="model">
         /// The name of the model to use for generating completions (e.g. "o3-mini").
         /// </param>
-        /// <param name="source">
-        /// Determines what populates the `item` namespace in this run's data source.
+        /// <param name="type">
+        /// The type of run data source. Always `responses`.<br/>
+        /// Default Value: responses
         /// </param>
         public CreateEvalResponsesRunDataSource(
             global::G.OneOf<global::G.EvalJsonlFileContentSource, global::G.EvalJsonlFileIdSource, global::G.EvalResponsesSource> source,
@@ -71,11 +71,11 @@ namespace G
             string? model,
             global::G.CreateEvalResponsesRunDataSourceType type = global::G.CreateEvalResponsesRunDataSourceType.Responses)
         {
-            this.Source = source;
             this.Type = type;
             this.InputMessages = inputMessages;
             this.SamplingParams = samplingParams;
             this.Model = model;
+            this.Source = source;
         }
 
         /// <summary>

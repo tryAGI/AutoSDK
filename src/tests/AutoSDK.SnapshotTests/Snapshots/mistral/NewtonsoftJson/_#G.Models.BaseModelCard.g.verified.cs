@@ -91,6 +91,7 @@ namespace G
         /// Initializes a new instance of the <see cref="BaseModelCard" /> class.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="capabilities"></param>
         /// <param name="object">
         /// Default Value: model
         /// </param>
@@ -98,7 +99,6 @@ namespace G
         /// <param name="ownedBy">
         /// Default Value: mistralai
         /// </param>
-        /// <param name="capabilities"></param>
         /// <param name="name"></param>
         /// <param name="description"></param>
         /// <param name="maxContextLength">
@@ -127,10 +127,10 @@ namespace G
             global::G.BaseModelCardType? type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Capabilities = capabilities ?? throw new global::System.ArgumentNullException(nameof(capabilities));
             this.Object = @object;
             this.Created = created;
             this.OwnedBy = ownedBy;
+            this.Capabilities = capabilities ?? throw new global::System.ArgumentNullException(nameof(capabilities));
             this.Name = name;
             this.Description = description;
             this.MaxContextLength = maxContextLength;

@@ -68,9 +68,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RerankRequest" /> class.
         /// </summary>
-        /// <param name="model">
-        /// The identifier of the model to use, eg `rerank-v3.5`.
-        /// </param>
         /// <param name="query">
         /// The search query
         /// </param>
@@ -79,6 +76,9 @@ namespace G
         /// If a document is provided the text fields is required and all other fields will be preserved in the response.<br/>
         /// The total max chunks (length of documents * max_chunks_per_doc) must be less than 10000.<br/>
         /// We recommend a maximum of 1,000 documents for optimal endpoint performance.
+        /// </param>
+        /// <param name="model">
+        /// The identifier of the model to use, eg `rerank-v3.5`.
         /// </param>
         /// <param name="topN">
         /// The number of most relevant documents or indices to return, defaults to the length of the documents
@@ -107,9 +107,9 @@ namespace G
             bool? returnDocuments,
             int? maxChunksPerDoc)
         {
+            this.Model = model;
             this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
             this.Documents = documents ?? throw new global::System.ArgumentNullException(nameof(documents));
-            this.Model = model;
             this.TopN = topN;
             this.RankFields = rankFields;
             this.ReturnDocuments = returnDocuments;

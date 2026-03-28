@@ -52,6 +52,7 @@ namespace G
         /// Initializes a new instance of the <see cref="PronunciationDictionaryAliasRuleResponseModel" /> class.
         /// </summary>
         /// <param name="stringToReplace"></param>
+        /// <param name="alias"></param>
         /// <param name="caseSensitive">
         /// Whether the rule matches case-sensitively.<br/>
         /// Default Value: true
@@ -61,7 +62,6 @@ namespace G
         /// Default Value: true
         /// </param>
         /// <param name="type"></param>
-        /// <param name="alias"></param>
         public PronunciationDictionaryAliasRuleResponseModel(
             string stringToReplace,
             string alias,
@@ -70,10 +70,10 @@ namespace G
             string type = "alias")
         {
             this.StringToReplace = stringToReplace ?? throw new global::System.ArgumentNullException(nameof(stringToReplace));
-            this.Alias = alias ?? throw new global::System.ArgumentNullException(nameof(alias));
             this.CaseSensitive = caseSensitive;
             this.WordBoundaries = wordBoundaries;
             this.Type = type;
+            this.Alias = alias ?? throw new global::System.ArgumentNullException(nameof(alias));
         }
 
         /// <summary>

@@ -610,9 +610,6 @@ namespace G
         /// <param name="htmlUrl">
         /// Example: https://github.com/octocat/Hello-World
         /// </param>
-        /// <param name="description">
-        /// Example: This your first repo!
-        /// </param>
         /// <param name="fork"></param>
         /// <param name="url">
         /// Example: https://api.github.com/repos/octocat/Hello-World
@@ -668,7 +665,6 @@ namespace G
         /// <param name="gitTagsUrl">
         /// Example: http://api.github.com/repos/octocat/Hello-World/git/tags{/sha}
         /// </param>
-        /// <param name="gitUrl"></param>
         /// <param name="issueCommentUrl">
         /// Example: http://api.github.com/repos/octocat/Hello-World/issues/comments{/number}
         /// </param>
@@ -702,7 +698,6 @@ namespace G
         /// <param name="releasesUrl">
         /// Example: http://api.github.com/repos/octocat/Hello-World/releases{/id}
         /// </param>
-        /// <param name="sshUrl"></param>
         /// <param name="stargazersUrl">
         /// Example: http://api.github.com/repos/octocat/Hello-World/stargazers
         /// </param>
@@ -724,11 +719,16 @@ namespace G
         /// <param name="treesUrl">
         /// Example: http://api.github.com/repos/octocat/Hello-World/git/trees{/sha}
         /// </param>
-        /// <param name="cloneUrl"></param>
-        /// <param name="mirrorUrl"></param>
         /// <param name="hooksUrl">
         /// Example: http://api.github.com/repos/octocat/Hello-World/hooks
         /// </param>
+        /// <param name="description">
+        /// Example: This your first repo!
+        /// </param>
+        /// <param name="gitUrl"></param>
+        /// <param name="sshUrl"></param>
+        /// <param name="cloneUrl"></param>
+        /// <param name="mirrorUrl"></param>
         /// <param name="svnUrl"></param>
         /// <param name="homepage"></param>
         /// <param name="language"></param>
@@ -882,6 +882,7 @@ namespace G
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.Private = @private;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Description = description;
             this.Fork = fork;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.ArchiveUrl = archiveUrl ?? throw new global::System.ArgumentNullException(nameof(archiveUrl));
@@ -901,6 +902,7 @@ namespace G
             this.GitCommitsUrl = gitCommitsUrl ?? throw new global::System.ArgumentNullException(nameof(gitCommitsUrl));
             this.GitRefsUrl = gitRefsUrl ?? throw new global::System.ArgumentNullException(nameof(gitRefsUrl));
             this.GitTagsUrl = gitTagsUrl ?? throw new global::System.ArgumentNullException(nameof(gitTagsUrl));
+            this.GitUrl = gitUrl;
             this.IssueCommentUrl = issueCommentUrl ?? throw new global::System.ArgumentNullException(nameof(issueCommentUrl));
             this.IssueEventsUrl = issueEventsUrl ?? throw new global::System.ArgumentNullException(nameof(issueEventsUrl));
             this.IssuesUrl = issuesUrl ?? throw new global::System.ArgumentNullException(nameof(issuesUrl));
@@ -912,6 +914,7 @@ namespace G
             this.NotificationsUrl = notificationsUrl ?? throw new global::System.ArgumentNullException(nameof(notificationsUrl));
             this.PullsUrl = pullsUrl ?? throw new global::System.ArgumentNullException(nameof(pullsUrl));
             this.ReleasesUrl = releasesUrl ?? throw new global::System.ArgumentNullException(nameof(releasesUrl));
+            this.SshUrl = sshUrl;
             this.StargazersUrl = stargazersUrl ?? throw new global::System.ArgumentNullException(nameof(stargazersUrl));
             this.StatusesUrl = statusesUrl ?? throw new global::System.ArgumentNullException(nameof(statusesUrl));
             this.SubscribersUrl = subscribersUrl ?? throw new global::System.ArgumentNullException(nameof(subscribersUrl));
@@ -919,12 +922,9 @@ namespace G
             this.TagsUrl = tagsUrl ?? throw new global::System.ArgumentNullException(nameof(tagsUrl));
             this.TeamsUrl = teamsUrl ?? throw new global::System.ArgumentNullException(nameof(teamsUrl));
             this.TreesUrl = treesUrl ?? throw new global::System.ArgumentNullException(nameof(treesUrl));
-            this.HooksUrl = hooksUrl ?? throw new global::System.ArgumentNullException(nameof(hooksUrl));
-            this.Description = description;
-            this.GitUrl = gitUrl;
-            this.SshUrl = sshUrl;
             this.CloneUrl = cloneUrl;
             this.MirrorUrl = mirrorUrl;
+            this.HooksUrl = hooksUrl ?? throw new global::System.ArgumentNullException(nameof(hooksUrl));
             this.SvnUrl = svnUrl;
             this.Homepage = homepage;
             this.Language = language;

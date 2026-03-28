@@ -143,15 +143,8 @@ namespace G
         /// <param name="environment">
         /// Identifies the variable values associated with the environment in which this analysis was performed.
         /// </param>
-        /// <param name="category">
-        /// Identifies the configuration under which the analysis was executed. Used to distinguish between multiple analyses for the same tool and commit, but performed on different languages or different parts of the code.
-        /// </param>
         /// <param name="error">
         /// Example: error reading field xyz
-        /// </param>
-        /// <param name="createdAt">
-        /// The time that the analysis was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
-        /// Included only in responses
         /// </param>
         /// <param name="resultsCount">
         /// The total number of results in the analysis.
@@ -162,10 +155,6 @@ namespace G
         /// <param name="id">
         /// Unique identifier for this analysis.
         /// </param>
-        /// <param name="url">
-        /// The REST API URL of the analysis resource.<br/>
-        /// Included only in responses
-        /// </param>
         /// <param name="sarifId">
         /// An identifier for the upload.<br/>
         /// Example: 6c81cd8e-b078-4ac3-a3be-1dad7dbd0b53
@@ -175,6 +164,17 @@ namespace G
         /// <param name="warning">
         /// Warning generated when processing the analysis<br/>
         /// Example: 123 results were ignored
+        /// </param>
+        /// <param name="category">
+        /// Identifies the configuration under which the analysis was executed. Used to distinguish between multiple analyses for the same tool and commit, but performed on different languages or different parts of the code.
+        /// </param>
+        /// <param name="createdAt">
+        /// The time that the analysis was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="url">
+        /// The REST API URL of the analysis resource.<br/>
+        /// Included only in responses
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -200,17 +200,17 @@ namespace G
             this.CommitSha = commitSha ?? throw new global::System.ArgumentNullException(nameof(commitSha));
             this.AnalysisKey = analysisKey ?? throw new global::System.ArgumentNullException(nameof(analysisKey));
             this.Environment = environment ?? throw new global::System.ArgumentNullException(nameof(environment));
+            this.Category = category;
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
+            this.CreatedAt = createdAt;
             this.ResultsCount = resultsCount;
             this.RulesCount = rulesCount;
             this.Id = id;
+            this.Url = url;
             this.SarifId = sarifId ?? throw new global::System.ArgumentNullException(nameof(sarifId));
             this.Tool = tool ?? throw new global::System.ArgumentNullException(nameof(tool));
             this.Deletable = deletable;
             this.Warning = warning ?? throw new global::System.ArgumentNullException(nameof(warning));
-            this.Category = category;
-            this.CreatedAt = createdAt;
-            this.Url = url;
         }
 
         /// <summary>

@@ -42,16 +42,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Move" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Specifies the event type. For a move action, this property is <br/>
-        /// always set to `move`.<br/>
-        /// Default Value: move
-        /// </param>
         /// <param name="x">
         /// The x-coordinate to move to.
         /// </param>
         /// <param name="y">
         /// The y-coordinate to move to.
+        /// </param>
+        /// <param name="type">
+        /// Specifies the event type. For a move action, this property is <br/>
+        /// always set to `move`.<br/>
+        /// Default Value: move
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -61,9 +61,9 @@ namespace G
             int y,
             global::G.MoveType type = global::G.MoveType.Move)
         {
+            this.Type = type;
             this.X = x;
             this.Y = y;
-            this.Type = type;
         }
 
         /// <summary>

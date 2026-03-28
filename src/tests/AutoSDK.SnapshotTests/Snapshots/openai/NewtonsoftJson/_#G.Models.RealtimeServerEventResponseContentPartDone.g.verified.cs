@@ -64,9 +64,6 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `response.content_part.done`.
-        /// </param>
         /// <param name="responseId">
         /// The ID of the response.
         /// </param>
@@ -82,6 +79,9 @@ namespace G
         /// <param name="part">
         /// The content part that is done.
         /// </param>
+        /// <param name="type">
+        /// The event type, must be `response.content_part.done`.
+        /// </param>
         public RealtimeServerEventResponseContentPartDone(
             string eventId,
             string responseId,
@@ -92,12 +92,12 @@ namespace G
             global::G.RealtimeServerEventResponseContentPartDoneType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
+            this.Type = type;
             this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.ContentIndex = contentIndex;
             this.Part = part ?? throw new global::System.ArgumentNullException(nameof(part));
-            this.Type = type;
         }
 
         /// <summary>

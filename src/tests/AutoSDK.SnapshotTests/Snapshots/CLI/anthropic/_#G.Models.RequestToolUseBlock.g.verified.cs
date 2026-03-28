@@ -52,11 +52,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestToolUseBlock" /> class.
         /// </summary>
-        /// <param name="cacheControl"></param>
-        /// <param name="type"></param>
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="input"></param>
+        /// <param name="cacheControl"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -67,11 +67,11 @@ namespace G
             global::G.CacheControlVariant118? cacheControl,
             global::G.RequestToolUseBlockType type)
         {
+            this.CacheControl = cacheControl;
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
-            this.CacheControl = cacheControl;
-            this.Type = type;
         }
 
         /// <summary>

@@ -90,9 +90,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhooksTeam1Parent" /> class.
         /// </summary>
-        /// <param name="description">
-        /// Description of the team
-        /// </param>
         /// <param name="htmlUrl"></param>
         /// <param name="id">
         /// Unique identifier of the team
@@ -114,6 +111,9 @@ namespace G
         /// <param name="url">
         /// URL for the team
         /// </param>
+        /// <param name="description">
+        /// Description of the team
+        /// </param>
         public WebhooksTeam1Parent(
             string htmlUrl,
             int id,
@@ -128,6 +128,7 @@ namespace G
             string url,
             string? description)
         {
+            this.Description = description;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.MembersUrl = membersUrl ?? throw new global::System.ArgumentNullException(nameof(membersUrl));
@@ -139,7 +140,6 @@ namespace G
             this.RepositoriesUrl = repositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(repositoriesUrl));
             this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Description = description;
         }
 
         /// <summary>

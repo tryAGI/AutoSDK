@@ -49,10 +49,10 @@ namespace G
         /// Initializes a new instance of the <see cref="SingleCustomChartSubSectionResponse" /> class.
         /// </summary>
         /// <param name="title"></param>
-        /// <param name="description"></param>
         /// <param name="index"></param>
         /// <param name="id"></param>
         /// <param name="charts"></param>
+        /// <param name="description"></param>
         public SingleCustomChartSubSectionResponse(
             string title,
             int index,
@@ -61,10 +61,10 @@ namespace G
             string? description)
         {
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Description = description;
             this.Index = index;
             this.Id = id;
             this.Charts = charts ?? throw new global::System.ArgumentNullException(nameof(charts));
-            this.Description = description;
         }
 
         /// <summary>

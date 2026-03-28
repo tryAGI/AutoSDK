@@ -78,8 +78,8 @@ namespace G
         /// <param name="name"></param>
         /// <param name="color"></param>
         /// <param name="default"></param>
-        /// <param name="description"></param>
         /// <param name="score"></param>
+        /// <param name="description"></param>
         /// <param name="textMatches"></param>
         public LabelSearchResultItem(
             int id,
@@ -98,8 +98,8 @@ namespace G
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Color = color ?? throw new global::System.ArgumentNullException(nameof(color));
             this.Default = @default;
-            this.Score = score;
             this.Description = description;
+            this.Score = score;
             this.TextMatches = textMatches;
         }
 

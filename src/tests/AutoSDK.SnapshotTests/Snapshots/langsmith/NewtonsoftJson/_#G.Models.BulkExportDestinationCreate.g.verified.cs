@@ -42,22 +42,22 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BulkExportDestinationCreate" /> class.
         /// </summary>
-        /// <param name="destinationType">
-        /// Default Value: s3
-        /// </param>
         /// <param name="displayName"></param>
         /// <param name="config"></param>
         /// <param name="credentials"></param>
+        /// <param name="destinationType">
+        /// Default Value: s3
+        /// </param>
         public BulkExportDestinationCreate(
             string displayName,
             global::G.BulkExportDestinationS3Config config,
             global::G.BulkExportDestinationS3Credentials credentials,
             global::G.BulkExportDestinationType? destinationType)
         {
+            this.DestinationType = destinationType;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
             this.Credentials = credentials ?? throw new global::System.ArgumentNullException(nameof(credentials));
-            this.DestinationType = destinationType;
         }
 
         /// <summary>

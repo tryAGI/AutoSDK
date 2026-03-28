@@ -89,9 +89,6 @@ namespace G
         /// <param name="additionalToolIds">
         /// IDs of additional tools that the subagent has access to. These will be used in addition to the main agent's tools.
         /// </param>
-        /// <param name="type">
-        /// Default Value: override_agent
-        /// </param>
         /// <param name="position">
         /// Position of the node in the workflow.
         /// </param>
@@ -100,6 +97,9 @@ namespace G
         /// </param>
         /// <param name="label">
         /// Human-readable label for the node used throughout the UI.
+        /// </param>
+        /// <param name="type">
+        /// Default Value: override_agent
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -118,10 +118,10 @@ namespace G
             this.AdditionalPrompt = additionalPrompt ?? throw new global::System.ArgumentNullException(nameof(additionalPrompt));
             this.AdditionalKnowledgeBase = additionalKnowledgeBase ?? throw new global::System.ArgumentNullException(nameof(additionalKnowledgeBase));
             this.AdditionalToolIds = additionalToolIds ?? throw new global::System.ArgumentNullException(nameof(additionalToolIds));
+            this.Type = type;
             this.Position = position ?? throw new global::System.ArgumentNullException(nameof(position));
             this.EdgeOrder = edgeOrder ?? throw new global::System.ArgumentNullException(nameof(edgeOrder));
             this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
-            this.Type = type;
         }
 
         /// <summary>

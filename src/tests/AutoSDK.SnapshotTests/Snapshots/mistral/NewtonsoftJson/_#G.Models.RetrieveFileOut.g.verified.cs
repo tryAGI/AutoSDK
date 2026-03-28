@@ -97,9 +97,9 @@ namespace G
         /// The intended purpose of the uploaded file. Only accepts fine-tuning (`fine-tune`) for now.
         /// </param>
         /// <param name="sampleType"></param>
-        /// <param name="numLines"></param>
         /// <param name="source"></param>
         /// <param name="deleted"></param>
+        /// <param name="numLines"></param>
         public RetrieveFileOut(
             global::System.Guid id,
             string @object,
@@ -119,9 +119,9 @@ namespace G
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.Purpose = purpose;
             this.SampleType = sampleType;
+            this.NumLines = numLines;
             this.Source = source;
             this.Deleted = deleted;
-            this.NumLines = numLines;
         }
 
         /// <summary>

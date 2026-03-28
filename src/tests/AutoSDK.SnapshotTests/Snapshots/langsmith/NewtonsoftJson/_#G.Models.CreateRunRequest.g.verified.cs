@@ -139,8 +139,8 @@ namespace G
         /// Initializes a new instance of the <see cref="CreateRunRequest" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="inputs"></param>
         /// <param name="runType"></param>
+        /// <param name="inputs"></param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="extra"></param>
@@ -181,8 +181,8 @@ namespace G
             object? outputAttachments)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.RunType = runType;
             this.Inputs = inputs;
+            this.RunType = runType;
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.Extra = extra;

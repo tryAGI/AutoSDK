@@ -94,24 +94,24 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageCompletionsResult" /> class.
         /// </summary>
-        /// <param name="object"></param>
         /// <param name="inputTokens">
         /// The aggregated number of text input tokens used, including cached tokens. For customers subscribe to scale tier, this includes scale tier tokens.
         /// </param>
-        /// <param name="inputCachedTokens">
-        /// The aggregated number of text input tokens that has been cached from previous requests. For customers subscribe to scale tier, this includes scale tier tokens.
-        /// </param>
         /// <param name="outputTokens">
         /// The aggregated number of text output tokens used. For customers subscribe to scale tier, this includes scale tier tokens.
+        /// </param>
+        /// <param name="numModelRequests">
+        /// The count of requests made to the model.
+        /// </param>
+        /// <param name="object"></param>
+        /// <param name="inputCachedTokens">
+        /// The aggregated number of text input tokens that has been cached from previous requests. For customers subscribe to scale tier, this includes scale tier tokens.
         /// </param>
         /// <param name="inputAudioTokens">
         /// The aggregated number of audio input tokens used, including cached tokens.
         /// </param>
         /// <param name="outputAudioTokens">
         /// The aggregated number of audio output tokens used.
-        /// </param>
-        /// <param name="numModelRequests">
-        /// The count of requests made to the model.
         /// </param>
         /// <param name="projectId">
         /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
@@ -145,13 +145,13 @@ namespace G
             string? model,
             bool? batch)
         {
-            this.InputTokens = inputTokens;
-            this.OutputTokens = outputTokens;
-            this.NumModelRequests = numModelRequests;
             this.Object = @object;
+            this.InputTokens = inputTokens;
             this.InputCachedTokens = inputCachedTokens;
+            this.OutputTokens = outputTokens;
             this.InputAudioTokens = inputAudioTokens;
             this.OutputAudioTokens = outputAudioTokens;
+            this.NumModelRequests = numModelRequests;
             this.ProjectId = projectId;
             this.UserId = userId;
             this.ApiKeyId = apiKeyId;

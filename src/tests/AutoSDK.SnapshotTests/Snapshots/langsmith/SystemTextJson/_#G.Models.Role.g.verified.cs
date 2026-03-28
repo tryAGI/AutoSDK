@@ -69,8 +69,8 @@ namespace G
         /// <param name="name"></param>
         /// <param name="displayName"></param>
         /// <param name="description"></param>
-        /// <param name="organizationId"></param>
         /// <param name="permissions"></param>
+        /// <param name="organizationId"></param>
         /// <param name="accessScope"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -88,8 +88,8 @@ namespace G
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
             this.OrganizationId = organizationId;
+            this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
             this.AccessScope = accessScope;
         }
 

@@ -49,10 +49,10 @@ namespace G
         /// <param name="createdAt">
         /// The timestamp that the task was submitted at.
         /// </param>
-        /// <param name="status"></param>
         /// <param name="output">
         /// An array of URLs that return the output of the task. These URLs will expire within 24-48 hours; fetch the task again to get fresh URLs. It is expected that you download the assets at these URLs and store them in your own storage system.
         /// </param>
+        /// <param name="status"></param>
         public GetTasksResponseVariant6(
             global::System.Guid id,
             global::System.DateTime createdAt,
@@ -61,8 +61,8 @@ namespace G
         {
             this.Id = id;
             this.CreatedAt = createdAt;
-            this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
             this.Status = status;
+            this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
         }
 
         /// <summary>

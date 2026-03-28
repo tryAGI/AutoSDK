@@ -75,6 +75,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookSponsorshipPendingCancellation" /> class.
         /// </summary>
+        /// <param name="sender">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="sponsorship"></param>
         /// <param name="action"></param>
         /// <param name="effectiveDate">
         /// The `pending_cancellation` and `pending_tier_change` event types will include the date the cancellation or tier change will take effect.
@@ -97,10 +101,6 @@ namespace G
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
         /// when the event occurs from activity in a repository.
         /// </param>
-        /// <param name="sender">
-        /// A GitHub user.
-        /// </param>
-        /// <param name="sponsorship"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -114,14 +114,14 @@ namespace G
             global::G.OrganizationSimpleWebhooks? organization,
             global::G.RepositoryWebhooks? repository)
         {
-            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
-            this.Sponsorship = sponsorship ?? throw new global::System.ArgumentNullException(nameof(sponsorship));
             this.Action = action;
             this.EffectiveDate = effectiveDate;
             this.Enterprise = enterprise;
             this.Installation = installation;
             this.Organization = organization;
             this.Repository = repository;
+            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
+            this.Sponsorship = sponsorship ?? throw new global::System.ArgumentNullException(nameof(sponsorship));
         }
 
         /// <summary>

@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepDetailsToolCallsCodeOutputImageObject" /> class.
         /// </summary>
+        /// <param name="image"></param>
         /// <param name="type">
         /// Always `image`.
         /// </param>
-        /// <param name="image"></param>
         public RunStepDetailsToolCallsCodeOutputImageObject(
             global::G.RunStepDetailsToolCallsCodeOutputImageObjectImage image,
             global::G.RunStepDetailsToolCallsCodeOutputImageObjectType type)
         {
-            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.Type = type;
+            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
         }
 
         /// <summary>

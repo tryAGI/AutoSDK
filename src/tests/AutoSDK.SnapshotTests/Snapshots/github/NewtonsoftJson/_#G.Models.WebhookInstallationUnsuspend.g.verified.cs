@@ -70,14 +70,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookInstallationUnsuspend" /> class.
         /// </summary>
+        /// <param name="installation">
+        /// Installation
+        /// </param>
+        /// <param name="sender">
+        /// A GitHub user.
+        /// </param>
         /// <param name="action"></param>
         /// <param name="enterprise">
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
         /// on an enterprise account or an organization that's part of an enterprise account. For more information,<br/>
         /// see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
-        /// </param>
-        /// <param name="installation">
-        /// Installation
         /// </param>
         /// <param name="organization">
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
@@ -91,9 +94,6 @@ namespace G
         /// when the event occurs from activity in a repository.
         /// </param>
         /// <param name="requester"></param>
-        /// <param name="sender">
-        /// A GitHub user.
-        /// </param>
         public WebhookInstallationUnsuspend(
             global::G.Installation installation,
             global::G.SimpleUser sender,
@@ -104,14 +104,14 @@ namespace G
             global::G.RepositoryWebhooks? repository,
             object? requester)
         {
-            this.Installation = installation ?? throw new global::System.ArgumentNullException(nameof(installation));
-            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Action = action;
             this.Enterprise = enterprise;
+            this.Installation = installation ?? throw new global::System.ArgumentNullException(nameof(installation));
             this.Organization = organization;
             this.Repositories = repositories;
             this.Repository = repository;
             this.Requester = requester;
+            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
         }
 
         /// <summary>

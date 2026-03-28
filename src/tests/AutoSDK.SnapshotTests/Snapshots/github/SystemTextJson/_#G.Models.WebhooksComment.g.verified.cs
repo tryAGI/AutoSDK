@@ -118,10 +118,10 @@ namespace G
         /// <param name="htmlUrl"></param>
         /// <param name="id"></param>
         /// <param name="nodeId"></param>
-        /// <param name="parentId"></param>
         /// <param name="reactions"></param>
         /// <param name="repositoryUrl"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="parentId"></param>
         /// <param name="user"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -149,10 +149,10 @@ namespace G
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.ParentId = parentId;
             this.Reactions = reactions ?? throw new global::System.ArgumentNullException(nameof(reactions));
             this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
-            this.ParentId = parentId;
             this.User = user;
         }
 

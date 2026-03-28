@@ -32,18 +32,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaAPIError" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: api_error
-        /// </param>
         /// <param name="message">
         /// Default Value: Internal server error
+        /// </param>
+        /// <param name="type">
+        /// Default Value: api_error
         /// </param>
         public BetaAPIError(
             string message,
             global::G.BetaAPIErrorType type = global::G.BetaAPIErrorType.ApiError)
         {
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Type = type;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
         }
 
         /// <summary>

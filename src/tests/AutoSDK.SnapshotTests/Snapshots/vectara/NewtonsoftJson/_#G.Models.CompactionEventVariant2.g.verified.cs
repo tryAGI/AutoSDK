@@ -71,12 +71,12 @@ namespace G
         /// Number of events that were hidden by compaction.<br/>
         /// Example: 47
         /// </param>
-        /// <param name="summaryText">
-        /// The plain text summary produced by compaction.
-        /// </param>
         /// <param name="summaryKey">
         /// The key of the summary created by compaction.<br/>
         /// Example: sum_abc123
+        /// </param>
+        /// <param name="summaryText">
+        /// The plain text summary produced by compaction.
         /// </param>
         public CompactionEventVariant2(
             string type,
@@ -88,8 +88,8 @@ namespace G
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.TurnsCompacted = turnsCompacted;
             this.EventsCompacted = eventsCompacted;
-            this.SummaryKey = summaryKey ?? throw new global::System.ArgumentNullException(nameof(summaryKey));
             this.SummaryText = summaryText;
+            this.SummaryKey = summaryKey ?? throw new global::System.ArgumentNullException(nameof(summaryKey));
         }
 
         /// <summary>

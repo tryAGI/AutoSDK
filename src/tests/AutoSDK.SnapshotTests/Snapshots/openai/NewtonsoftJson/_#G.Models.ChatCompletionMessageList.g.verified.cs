@@ -50,10 +50,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionMessageList" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The type of this object. It is always set to "list".<br/>
-        /// Default Value: list
-        /// </param>
         /// <param name="data">
         /// An array of chat completion message objects.
         /// </param>
@@ -66,6 +62,10 @@ namespace G
         /// <param name="hasMore">
         /// Indicates whether there are more chat messages available.
         /// </param>
+        /// <param name="object">
+        /// The type of this object. It is always set to "list".<br/>
+        /// Default Value: list
+        /// </param>
         public ChatCompletionMessageList(
             global::System.Collections.Generic.IList<global::G.AllOf<global::G.ChatCompletionResponseMessage, global::G.ChatCompletionMessageListDataItem>> data,
             string firstId,
@@ -73,11 +73,11 @@ namespace G
             bool hasMore,
             global::G.ChatCompletionMessageListObject @object = global::G.ChatCompletionMessageListObject.List)
         {
+            this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
             this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
             this.HasMore = hasMore;
-            this.Object = @object;
         }
 
         /// <summary>

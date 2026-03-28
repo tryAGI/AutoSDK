@@ -70,11 +70,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookCommitCommentCreated" /> class.
         /// </summary>
-        /// <param name="action">
-        /// The action performed. Can be `created`.
-        /// </param>
         /// <param name="comment">
         /// The [commit comment](${externalDocsUpapp/api/description/components/schemas/webhooks/issue-comment-created.yamlrl}/rest/commits/comments#get-a-commit-comment) resource.
+        /// </param>
+        /// <param name="repository">
+        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
+        /// when the event occurs from activity in a repository.
+        /// </param>
+        /// <param name="sender">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="action">
+        /// The action performed. Can be `created`.
         /// </param>
         /// <param name="enterprise">
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
@@ -90,13 +97,6 @@ namespace G
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
         /// organization, or when the event occurs from activity in a repository owned by an organization.
         /// </param>
-        /// <param name="repository">
-        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
-        /// when the event occurs from activity in a repository.
-        /// </param>
-        /// <param name="sender">
-        /// A GitHub user.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -109,13 +109,13 @@ namespace G
             global::G.SimpleInstallation? installation,
             global::G.OrganizationSimpleWebhooks? organization)
         {
-            this.Comment = comment ?? throw new global::System.ArgumentNullException(nameof(comment));
-            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
-            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Action = action;
+            this.Comment = comment ?? throw new global::System.ArgumentNullException(nameof(comment));
             this.Enterprise = enterprise;
             this.Installation = installation;
             this.Organization = organization;
+            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
+            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
         }
 
         /// <summary>

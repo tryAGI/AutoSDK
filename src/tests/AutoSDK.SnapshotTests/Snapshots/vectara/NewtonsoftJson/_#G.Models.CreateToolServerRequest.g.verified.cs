@@ -89,6 +89,16 @@ namespace G
         /// The human-readable name of a tool server.<br/>
         /// Example: RAG Search Server
         /// </param>
+        /// <param name="uri">
+        /// The URI of the tool server.<br/>
+        /// Example: https://api.example.com/rag_search
+        /// </param>
+        /// <param name="transport">
+        /// Transport protocol for MCP server connections. Both use Server-Sent Events (SSE).<br/>
+        /// - `sse`: Legacy format (https://modelcontextprotocol.io/specification/2024-11-05/basic/transports)<br/>
+        /// - `streamable-http`: New format (https://modelcontextprotocol.io/specification/2025-03-26/basic/transports)<br/>
+        /// Example: sse
+        /// </param>
         /// <param name="type">
         /// The type of tool server.<br/>
         /// Example: mcp
@@ -97,18 +107,8 @@ namespace G
         /// A detailed description of what this tool server does.<br/>
         /// Example: Provides RAG search capabilities for documents.
         /// </param>
-        /// <param name="uri">
-        /// The URI of the tool server.<br/>
-        /// Example: https://api.example.com/rag_search
-        /// </param>
         /// <param name="headers">
         /// Optional HTTP headers to include when connecting to the server.
-        /// </param>
-        /// <param name="transport">
-        /// Transport protocol for MCP server connections. Both use Server-Sent Events (SSE).<br/>
-        /// - `sse`: Legacy format (https://modelcontextprotocol.io/specification/2024-11-05/basic/transports)<br/>
-        /// - `streamable-http`: New format (https://modelcontextprotocol.io/specification/2025-03-26/basic/transports)<br/>
-        /// Example: sse
         /// </param>
         /// <param name="auth">
         /// Authentication configuration for an LLM
@@ -132,11 +132,11 @@ namespace G
             object? metadata)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Uri = uri ?? throw new global::System.ArgumentNullException(nameof(uri));
-            this.Transport = transport;
             this.Type = type;
             this.Description = description;
+            this.Uri = uri ?? throw new global::System.ArgumentNullException(nameof(uri));
             this.Headers = headers;
+            this.Transport = transport;
             this.Auth = auth;
             this.Enabled = enabled;
             this.Metadata = metadata;

@@ -68,6 +68,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookProjectDeleted" /> class.
         /// </summary>
+        /// <param name="project"></param>
         /// <param name="action"></param>
         /// <param name="enterprise">
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
@@ -83,7 +84,6 @@ namespace G
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
         /// organization, or when the event occurs from activity in a repository owned by an organization.
         /// </param>
-        /// <param name="project"></param>
         /// <param name="repository">
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
         /// when the event occurs from activity in a repository.
@@ -103,11 +103,11 @@ namespace G
             global::G.NullableRepositoryWebhooks? repository,
             global::G.SimpleUser? sender)
         {
-            this.Project = project ?? throw new global::System.ArgumentNullException(nameof(project));
             this.Action = action;
             this.Enterprise = enterprise;
             this.Installation = installation;
             this.Organization = organization;
+            this.Project = project ?? throw new global::System.ArgumentNullException(nameof(project));
             this.Repository = repository;
             this.Sender = sender;
         }

@@ -38,11 +38,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="OrgsReviewPatGrantRequestsInBulkRequest" /> class.
         /// </summary>
-        /// <param name="patRequestIds">
-        /// Unique identifiers of the requests for access via fine-grained personal access token. Must be formed of between 1 and 100 `pat_request_id` values.
-        /// </param>
         /// <param name="action">
         /// Action to apply to the requests.
+        /// </param>
+        /// <param name="patRequestIds">
+        /// Unique identifiers of the requests for access via fine-grained personal access token. Must be formed of between 1 and 100 `pat_request_id` values.
         /// </param>
         /// <param name="reason">
         /// Reason for approving or denying the requests. Max 1024 characters.
@@ -55,8 +55,8 @@ namespace G
             global::System.Collections.Generic.IList<int>? patRequestIds,
             string? reason)
         {
-            this.Action = action;
             this.PatRequestIds = patRequestIds;
+            this.Action = action;
             this.Reason = reason;
         }
 

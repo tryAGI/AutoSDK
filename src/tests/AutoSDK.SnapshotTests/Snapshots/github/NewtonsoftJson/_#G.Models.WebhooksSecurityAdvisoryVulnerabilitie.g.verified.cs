@@ -42,20 +42,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhooksSecurityAdvisoryVulnerabilitie" /> class.
         /// </summary>
-        /// <param name="firstPatchedVersion"></param>
         /// <param name="package"></param>
         /// <param name="severity"></param>
         /// <param name="vulnerableVersionRange"></param>
+        /// <param name="firstPatchedVersion"></param>
         public WebhooksSecurityAdvisoryVulnerabilitie(
             global::G.WebhooksSecurityAdvisoryVulnerabilitiePackage package,
             string severity,
             string vulnerableVersionRange,
             global::G.WebhooksSecurityAdvisoryVulnerabilitieFirstPatchedVersion? firstPatchedVersion)
         {
+            this.FirstPatchedVersion = firstPatchedVersion;
             this.Package = package ?? throw new global::System.ArgumentNullException(nameof(package));
             this.Severity = severity ?? throw new global::System.ArgumentNullException(nameof(severity));
             this.VulnerableVersionRange = vulnerableVersionRange ?? throw new global::System.ArgumentNullException(nameof(vulnerableVersionRange));
-            this.FirstPatchedVersion = firstPatchedVersion;
         }
 
         /// <summary>

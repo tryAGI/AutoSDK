@@ -81,9 +81,6 @@ namespace G
         /// <param name="id">
         /// Unique identifier of the request for access via fine-grained personal access token. The `pat_request_id` used to review PAT requests.
         /// </param>
-        /// <param name="reason">
-        /// Reason for requesting access.
-        /// </param>
         /// <param name="owner">
         /// A GitHub user.
         /// </param>
@@ -101,6 +98,9 @@ namespace G
         /// </param>
         /// <param name="tokenExpired">
         /// Whether the associated fine-grained personal access token has expired.
+        /// </param>
+        /// <param name="reason">
+        /// Reason for requesting access.
         /// </param>
         /// <param name="tokenExpiresAt">
         /// Date and time when the associated fine-grained personal access token expires.
@@ -121,13 +121,13 @@ namespace G
             string? tokenLastUsedAt)
         {
             this.Id = id;
+            this.Reason = reason;
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.RepositorySelection = repositorySelection;
             this.RepositoriesUrl = repositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(repositoriesUrl));
             this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.TokenExpired = tokenExpired;
-            this.Reason = reason;
             this.TokenExpiresAt = tokenExpiresAt;
             this.TokenLastUsedAt = tokenLastUsedAt;
         }

@@ -240,18 +240,6 @@ namespace G
         /// <param name="category">
         /// The category of the voice.
         /// </param>
-        /// <param name="language">
-        /// The language of the voice.
-        /// </param>
-        /// <param name="locale">
-        /// The locale of the voice.
-        /// </param>
-        /// <param name="description">
-        /// The description of the voice.
-        /// </param>
-        /// <param name="previewUrl">
-        /// The preview URL of the voice.
-        /// </param>
         /// <param name="usageCharacterCount1y">
         /// The usage character count of the voice in the last year.
         /// </param>
@@ -264,12 +252,6 @@ namespace G
         /// <param name="clonedByCount">
         /// The number of times the voice has been cloned.
         /// </param>
-        /// <param name="rate">
-        /// The rate multiplier of the voice.
-        /// </param>
-        /// <param name="fiatRate">
-        /// The rate of the voice in USD per 1000 credits. null if default
-        /// </param>
         /// <param name="freeUsersAllowed">
         /// Whether free users are allowed to use the voice.
         /// </param>
@@ -278,6 +260,24 @@ namespace G
         /// </param>
         /// <param name="featured">
         /// Whether the voice is featured.
+        /// </param>
+        /// <param name="language">
+        /// The language of the voice.
+        /// </param>
+        /// <param name="locale">
+        /// The locale of the voice.
+        /// </param>
+        /// <param name="description">
+        /// The description of the voice.
+        /// </param>
+        /// <param name="previewUrl">
+        /// The preview URL of the voice.
+        /// </param>
+        /// <param name="rate">
+        /// The rate multiplier of the voice.
+        /// </param>
+        /// <param name="fiatRate">
+        /// The rate of the voice in USD per 1000 credits. null if default
         /// </param>
         /// <param name="verifiedLanguages">
         /// The verified languages of the voice.
@@ -350,19 +350,19 @@ namespace G
             this.Descriptive = descriptive ?? throw new global::System.ArgumentNullException(nameof(descriptive));
             this.UseCase = useCase ?? throw new global::System.ArgumentNullException(nameof(useCase));
             this.Category = category;
-            this.UsageCharacterCount1y = usageCharacterCount1y;
-            this.UsageCharacterCount7d = usageCharacterCount7d;
-            this.PlayApiUsageCharacterCount1y = playApiUsageCharacterCount1y;
-            this.ClonedByCount = clonedByCount;
-            this.FreeUsersAllowed = freeUsersAllowed;
-            this.LiveModerationEnabled = liveModerationEnabled;
-            this.Featured = featured;
             this.Language = language;
             this.Locale = locale;
             this.Description = description;
             this.PreviewUrl = previewUrl;
+            this.UsageCharacterCount1y = usageCharacterCount1y;
+            this.UsageCharacterCount7d = usageCharacterCount7d;
+            this.PlayApiUsageCharacterCount1y = playApiUsageCharacterCount1y;
+            this.ClonedByCount = clonedByCount;
             this.Rate = rate;
             this.FiatRate = fiatRate;
+            this.FreeUsersAllowed = freeUsersAllowed;
+            this.LiveModerationEnabled = liveModerationEnabled;
+            this.Featured = featured;
             this.VerifiedLanguages = verifiedLanguages;
             this.NoticePeriod = noticePeriod;
             this.InstagramUsername = instagramUsername;

@@ -57,13 +57,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookProjectsV2StatusUpdateEdited" /> class.
         /// </summary>
-        /// <param name="action"></param>
-        /// <param name="changes"></param>
-        /// <param name="installation">
-        /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>
-        /// for and sent to a GitHub App. For more information,<br/>
-        /// see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
-        /// </param>
         /// <param name="organization">
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
         /// organization, or when the event occurs from activity in a repository owned by an organization.
@@ -74,6 +67,13 @@ namespace G
         /// <param name="sender">
         /// A GitHub user.
         /// </param>
+        /// <param name="action"></param>
+        /// <param name="changes"></param>
+        /// <param name="installation">
+        /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>
+        /// for and sent to a GitHub App. For more information,<br/>
+        /// see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
+        /// </param>
         public WebhookProjectsV2StatusUpdateEdited(
             global::G.OrganizationSimpleWebhooks organization,
             global::G.ProjectsV2StatusUpdate projectsV2StatusUpdate,
@@ -82,12 +82,12 @@ namespace G
             global::G.WebhookProjectsV2StatusUpdateEditedChanges? changes,
             global::G.SimpleInstallation? installation)
         {
-            this.Organization = organization ?? throw new global::System.ArgumentNullException(nameof(organization));
-            this.ProjectsV2StatusUpdate = projectsV2StatusUpdate ?? throw new global::System.ArgumentNullException(nameof(projectsV2StatusUpdate));
-            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Action = action;
             this.Changes = changes;
             this.Installation = installation;
+            this.Organization = organization ?? throw new global::System.ArgumentNullException(nameof(organization));
+            this.ProjectsV2StatusUpdate = projectsV2StatusUpdate ?? throw new global::System.ArgumentNullException(nameof(projectsV2StatusUpdate));
+            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
         }
 
         /// <summary>

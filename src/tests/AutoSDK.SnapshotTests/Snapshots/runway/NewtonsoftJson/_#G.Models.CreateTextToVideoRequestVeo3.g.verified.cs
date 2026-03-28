@@ -47,11 +47,11 @@ namespace G
         /// <param name="promptText">
         /// A non-empty string up to 1000 characters (measured in UTF-16 code units). This should describe in detail what should appear in the output.
         /// </param>
-        /// <param name="duration">
-        /// The number of seconds of duration for the output video.
-        /// </param>
         /// <param name="ratio">
         /// The resolution of the output video.
+        /// </param>
+        /// <param name="duration">
+        /// The number of seconds of duration for the output video.
         /// </param>
         /// <param name="model"></param>
         public CreateTextToVideoRequestVeo3(
@@ -61,8 +61,8 @@ namespace G
             string model = "veo3")
         {
             this.PromptText = promptText ?? throw new global::System.ArgumentNullException(nameof(promptText));
-            this.Ratio = ratio;
             this.Duration = duration;
+            this.Ratio = ratio;
             this.Model = model;
         }
 

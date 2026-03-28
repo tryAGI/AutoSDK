@@ -33,10 +33,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="InputJsonContentBlockDelta" /> class.
         /// </summary>
+        /// <param name="partialJson"></param>
         /// <param name="type">
         /// Default Value: input_json_delta
         /// </param>
-        /// <param name="partialJson"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -44,8 +44,8 @@ namespace G
             string partialJson,
             global::G.InputJsonContentBlockDeltaType type = global::G.InputJsonContentBlockDeltaType.InputJsonDelta)
         {
-            this.PartialJson = partialJson ?? throw new global::System.ArgumentNullException(nameof(partialJson));
             this.Type = type;
+            this.PartialJson = partialJson ?? throw new global::System.ArgumentNullException(nameof(partialJson));
         }
 
         /// <summary>

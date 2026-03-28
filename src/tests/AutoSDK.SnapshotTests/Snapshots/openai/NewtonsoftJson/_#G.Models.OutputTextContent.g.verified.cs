@@ -44,10 +44,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputTextContent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the output text. Always `output_text`.<br/>
-        /// Default Value: output_text
-        /// </param>
         /// <param name="text">
         /// The text output from the model.
         /// </param>
@@ -55,15 +51,19 @@ namespace G
         /// The annotations of the text output.
         /// </param>
         /// <param name="logprobs"></param>
+        /// <param name="type">
+        /// The type of the output text. Always `output_text`.<br/>
+        /// Default Value: output_text
+        /// </param>
         public OutputTextContent(
             string text,
             global::System.Collections.Generic.IList<global::G.Annotation> annotations,
             global::System.Collections.Generic.IList<global::G.LogProb>? logprobs,
             global::G.OutputTextContentType type = global::G.OutputTextContentType.OutputText)
         {
+            this.Type = type;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Annotations = annotations ?? throw new global::System.ArgumentNullException(nameof(annotations));
-            this.Type = type;
             this.Logprobs = logprobs;
         }
 

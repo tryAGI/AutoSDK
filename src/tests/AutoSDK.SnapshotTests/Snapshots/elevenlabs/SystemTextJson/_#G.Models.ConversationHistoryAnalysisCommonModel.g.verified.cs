@@ -63,12 +63,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationHistoryAnalysisCommonModel" /> class.
         /// </summary>
+        /// <param name="callSuccessful"></param>
+        /// <param name="transcriptSummary"></param>
         /// <param name="evaluationCriteriaResults"></param>
         /// <param name="dataCollectionResults"></param>
         /// <param name="evaluationCriteriaResultsList"></param>
         /// <param name="dataCollectionResultsList"></param>
-        /// <param name="callSuccessful"></param>
-        /// <param name="transcriptSummary"></param>
         /// <param name="callSummaryTitle"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -82,12 +82,12 @@ namespace G
             global::System.Collections.Generic.IList<global::G.DataCollectionResultCommonModel>? dataCollectionResultsList,
             string? callSummaryTitle)
         {
-            this.CallSuccessful = callSuccessful;
-            this.TranscriptSummary = transcriptSummary ?? throw new global::System.ArgumentNullException(nameof(transcriptSummary));
             this.EvaluationCriteriaResults = evaluationCriteriaResults;
             this.DataCollectionResults = dataCollectionResults;
             this.EvaluationCriteriaResultsList = evaluationCriteriaResultsList;
             this.DataCollectionResultsList = dataCollectionResultsList;
+            this.CallSuccessful = callSuccessful;
+            this.TranscriptSummary = transcriptSummary ?? throw new global::System.ArgumentNullException(nameof(transcriptSummary));
             this.CallSummaryTitle = callSummaryTitle;
         }
 

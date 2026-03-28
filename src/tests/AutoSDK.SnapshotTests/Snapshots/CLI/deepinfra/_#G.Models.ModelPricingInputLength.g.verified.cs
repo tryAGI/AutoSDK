@@ -31,10 +31,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelPricingInputLength" /> class.
         /// </summary>
+        /// <param name="centsPerInputSec"></param>
         /// <param name="type">
         /// Default Value: input_length
         /// </param>
-        /// <param name="centsPerInputSec"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -42,8 +42,8 @@ namespace G
             double centsPerInputSec,
             string? type)
         {
-            this.CentsPerInputSec = centsPerInputSec;
             this.Type = type;
+            this.CentsPerInputSec = centsPerInputSec;
         }
 
         /// <summary>

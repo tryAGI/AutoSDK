@@ -32,11 +32,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="OrgsUpdatePatAccessesRequest" /> class.
         /// </summary>
-        /// <param name="action">
-        /// Action to apply to the fine-grained personal access token.
-        /// </param>
         /// <param name="patIds">
         /// The IDs of the fine-grained personal access tokens.
+        /// </param>
+        /// <param name="action">
+        /// Action to apply to the fine-grained personal access token.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -45,8 +45,8 @@ namespace G
             global::System.Collections.Generic.IList<int> patIds,
             global::G.OrgsUpdatePatAccessesRequestAction action)
         {
-            this.PatIds = patIds ?? throw new global::System.ArgumentNullException(nameof(patIds));
             this.Action = action;
+            this.PatIds = patIds ?? throw new global::System.ArgumentNullException(nameof(patIds));
         }
 
         /// <summary>

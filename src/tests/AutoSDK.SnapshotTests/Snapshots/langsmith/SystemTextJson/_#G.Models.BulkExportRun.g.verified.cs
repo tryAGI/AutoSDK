@@ -83,12 +83,12 @@ namespace G
         /// <param name="metadata"></param>
         /// <param name="id"></param>
         /// <param name="status"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
         /// <param name="retryNumber">
         /// Default Value: 0
         /// </param>
         /// <param name="errors"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
         /// <param name="finishedAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -108,10 +108,10 @@ namespace G
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.Id = id;
             this.Status = status;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.RetryNumber = retryNumber;
             this.Errors = errors;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.FinishedAt = finishedAt;
         }
 

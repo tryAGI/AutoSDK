@@ -33,8 +33,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaContentBlockSource" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="content"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -42,8 +42,8 @@ namespace G
             global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentBetaContentBlockSourceContentItem>> content,
             global::G.BetaContentBlockSourceType type)
         {
-            this.Content = content;
             this.Type = type;
+            this.Content = content;
         }
 
         /// <summary>

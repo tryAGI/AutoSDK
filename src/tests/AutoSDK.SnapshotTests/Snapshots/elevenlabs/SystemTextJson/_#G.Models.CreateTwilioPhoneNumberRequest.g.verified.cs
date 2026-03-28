@@ -82,14 +82,14 @@ namespace G
         /// <param name="label">
         /// Label for the phone number
         /// </param>
-        /// <param name="provider">
-        /// Default Value: twilio
-        /// </param>
         /// <param name="sid">
         /// Twilio Account SID
         /// </param>
         /// <param name="token">
         /// Twilio Auth Token
+        /// </param>
+        /// <param name="provider">
+        /// Default Value: twilio
         /// </param>
         /// <param name="regionConfig">
         /// Twilio Additional Region Configuration
@@ -107,9 +107,9 @@ namespace G
         {
             this.PhoneNumber = phoneNumber ?? throw new global::System.ArgumentNullException(nameof(phoneNumber));
             this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
+            this.Provider = provider;
             this.Sid = sid ?? throw new global::System.ArgumentNullException(nameof(sid));
             this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
-            this.Provider = provider;
             this.RegionConfig = regionConfig;
         }
 

@@ -72,9 +72,6 @@ namespace G
         /// <param name="customSipHeaders">
         /// Custom SIP headers to include when transferring the call. Each header can be either a static value or a dynamic variable reference.
         /// </param>
-        /// <param name="type">
-        /// Default Value: phone_number
-        /// </param>
         /// <param name="position">
         /// Position of the node in the workflow.
         /// </param>
@@ -87,6 +84,9 @@ namespace G
         /// </param>
         /// <param name="postDialDigits">
         /// DTMF digits to send after call connects (e.g., 'ww1234' for extension). Can be either a static value or a dynamic variable reference. Use 'w' for 0.5s pause.
+        /// </param>
+        /// <param name="type">
+        /// Default Value: phone_number
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -101,11 +101,11 @@ namespace G
             string type = "phone_number")
         {
             this.CustomSipHeaders = customSipHeaders ?? throw new global::System.ArgumentNullException(nameof(customSipHeaders));
+            this.Type = type;
             this.Position = position ?? throw new global::System.ArgumentNullException(nameof(position));
             this.EdgeOrder = edgeOrder ?? throw new global::System.ArgumentNullException(nameof(edgeOrder));
             this.TransferDestination = transferDestination;
             this.TransferType = transferType;
-            this.Type = type;
             this.PostDialDigits = postDialDigits;
         }
 

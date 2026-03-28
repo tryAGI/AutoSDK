@@ -219,14 +219,6 @@ namespace G
         /// Whether feedback pull request will be created when a student accepts the assignment.<br/>
         /// Example: true
         /// </param>
-        /// <param name="maxTeams">
-        /// The maximum allowable teams for the assignment.<br/>
-        /// Example: 0
-        /// </param>
-        /// <param name="maxMembers">
-        /// The maximum allowable members per team.<br/>
-        /// Example: 0
-        /// </param>
         /// <param name="editor">
         /// The selected editor for the assignment.<br/>
         /// Example: codespaces
@@ -247,15 +239,23 @@ namespace G
         /// The programming language used in the assignment.<br/>
         /// Example: elixir
         /// </param>
-        /// <param name="deadline">
-        /// The time at which the assignment is due.<br/>
-        /// Example: 2011-01-26T19:06:43Z
-        /// </param>
         /// <param name="starterCodeRepository">
         /// A GitHub repository view for Classroom
         /// </param>
         /// <param name="classroom">
         /// A GitHub Classroom classroom
+        /// </param>
+        /// <param name="maxTeams">
+        /// The maximum allowable teams for the assignment.<br/>
+        /// Example: 0
+        /// </param>
+        /// <param name="maxMembers">
+        /// The maximum allowable members per team.<br/>
+        /// Example: 0
+        /// </param>
+        /// <param name="deadline">
+        /// The time at which the assignment is due.<br/>
+        /// Example: 2011-01-26T19:06:43Z
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -290,16 +290,16 @@ namespace G
             this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
             this.StudentsAreRepoAdmins = studentsAreRepoAdmins;
             this.FeedbackPullRequestsEnabled = feedbackPullRequestsEnabled;
+            this.MaxTeams = maxTeams;
+            this.MaxMembers = maxMembers;
             this.Editor = editor ?? throw new global::System.ArgumentNullException(nameof(editor));
             this.Accepted = accepted;
             this.Submitted = submitted;
             this.Passing = passing;
             this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
+            this.Deadline = deadline;
             this.StarterCodeRepository = starterCodeRepository ?? throw new global::System.ArgumentNullException(nameof(starterCodeRepository));
             this.Classroom = classroom ?? throw new global::System.ArgumentNullException(nameof(classroom));
-            this.MaxTeams = maxTeams;
-            this.MaxMembers = maxMembers;
-            this.Deadline = deadline;
         }
 
         /// <summary>

@@ -47,11 +47,11 @@ namespace G
         /// <param name="path">
         /// The path to the workflow file
         /// </param>
-        /// <param name="ref">
-        /// The ref (branch or tag) of the workflow file to use
-        /// </param>
         /// <param name="repositoryId">
         /// The ID of the repository where the workflow is defined
+        /// </param>
+        /// <param name="ref">
+        /// The ref (branch or tag) of the workflow file to use
         /// </param>
         /// <param name="sha">
         /// The commit SHA of the workflow file to use
@@ -66,8 +66,8 @@ namespace G
             string? sha)
         {
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
-            this.RepositoryId = repositoryId;
             this.Ref = @ref;
+            this.RepositoryId = repositoryId;
             this.Sha = sha;
         }
 

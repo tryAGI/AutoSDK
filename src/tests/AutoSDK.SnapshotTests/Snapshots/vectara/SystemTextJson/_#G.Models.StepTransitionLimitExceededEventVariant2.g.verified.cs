@@ -48,13 +48,13 @@ namespace G
         /// The type of event.<br/>
         /// Default Value: step_transition_limit_exceeded
         /// </param>
-        /// <param name="transitionLimit">
-        /// The maximum number of step transitions allowed<br/>
-        /// Example: 10
-        /// </param>
         /// <param name="message">
         /// Human-readable error message<br/>
         /// Example: Agent exceeded maximum step transitions (10). Possible infinite loop between steps.
+        /// </param>
+        /// <param name="transitionLimit">
+        /// The maximum number of step transitions allowed<br/>
+        /// Example: 10
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -65,8 +65,8 @@ namespace G
             int? transitionLimit)
         {
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.TransitionLimit = transitionLimit;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
         }
 
         /// <summary>

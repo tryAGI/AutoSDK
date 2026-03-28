@@ -99,9 +99,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DeploymentOut" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: legacy
-        /// </param>
         /// <param name="deployId">
         /// Deploy Id
         /// </param>
@@ -125,6 +122,9 @@ namespace G
         /// </param>
         /// <param name="updatedAt">
         /// Updated at
+        /// </param>
+        /// <param name="type">
+        /// Default Value: legacy
         /// </param>
         /// <param name="instances">
         /// Details about number of instances running right now
@@ -152,6 +152,7 @@ namespace G
             global::G.DeployLLMConfig? config,
             global::G.ScaleSettings? settings)
         {
+            this.Type = type;
             this.DeployId = deployId ?? throw new global::System.ArgumentNullException(nameof(deployId));
             this.ModelName = modelName ?? throw new global::System.ArgumentNullException(nameof(modelName));
             this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
@@ -160,7 +161,6 @@ namespace G
             this.FailReason = failReason ?? throw new global::System.ArgumentNullException(nameof(failReason));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
-            this.Type = type;
             this.Instances = instances;
             this.Config = config;
             this.Settings = settings;

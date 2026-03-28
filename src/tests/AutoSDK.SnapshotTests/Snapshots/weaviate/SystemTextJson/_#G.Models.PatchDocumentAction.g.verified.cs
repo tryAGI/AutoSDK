@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PatchDocumentAction" /> class.
         /// </summary>
-        /// <param name="from">
-        /// A string containing a JSON Pointer value.
-        /// </param>
         /// <param name="op">
         /// The operation to be performed.
         /// </param>
         /// <param name="path">
         /// A JSON-Pointer.
+        /// </param>
+        /// <param name="from">
+        /// A string containing a JSON Pointer value.
         /// </param>
         /// <param name="value">
         /// The value to be used within the operations.
@@ -74,9 +74,9 @@ namespace G
             object? value,
             global::G.Object? merge)
         {
+            this.From = from;
             this.Op = op;
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
-            this.From = from;
             this.Value = value;
             this.Merge = merge;
         }

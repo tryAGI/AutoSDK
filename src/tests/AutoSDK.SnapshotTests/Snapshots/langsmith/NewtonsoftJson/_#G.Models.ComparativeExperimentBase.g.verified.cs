@@ -67,12 +67,12 @@ namespace G
         /// Initializes a new instance of the <see cref="ComparativeExperimentBase" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="name"></param>
-        /// <param name="description"></param>
         /// <param name="tenantId"></param>
         /// <param name="createdAt"></param>
         /// <param name="modifiedAt"></param>
         /// <param name="referenceDatasetId"></param>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
         /// <param name="extra"></param>
         public ComparativeExperimentBase(
             global::System.Guid id,
@@ -85,12 +85,12 @@ namespace G
             object? extra)
         {
             this.Id = id;
+            this.Name = name;
+            this.Description = description;
             this.TenantId = tenantId;
             this.CreatedAt = createdAt;
             this.ModifiedAt = modifiedAt;
             this.ReferenceDatasetId = referenceDatasetId;
-            this.Name = name;
-            this.Description = description;
             this.Extra = extra;
         }
 

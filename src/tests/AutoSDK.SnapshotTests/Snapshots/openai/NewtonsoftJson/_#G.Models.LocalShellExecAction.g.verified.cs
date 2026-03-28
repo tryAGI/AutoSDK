@@ -54,20 +54,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="LocalShellExecAction" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the local shell action. Always `exec`.
-        /// </param>
         /// <param name="command">
         /// The command to run.
+        /// </param>
+        /// <param name="env">
+        /// Environment variables to set for the command.
+        /// </param>
+        /// <param name="type">
+        /// The type of the local shell action. Always `exec`.
         /// </param>
         /// <param name="timeoutMs">
         /// Optional timeout in milliseconds for the command.
         /// </param>
         /// <param name="workingDirectory">
         /// Optional working directory to run the command in.
-        /// </param>
-        /// <param name="env">
-        /// Environment variables to set for the command.
         /// </param>
         /// <param name="user">
         /// Optional user to run the command as.
@@ -80,11 +80,11 @@ namespace G
             string? workingDirectory,
             string? user)
         {
-            this.Command = command ?? throw new global::System.ArgumentNullException(nameof(command));
-            this.Env = env ?? throw new global::System.ArgumentNullException(nameof(env));
             this.Type = type;
+            this.Command = command ?? throw new global::System.ArgumentNullException(nameof(command));
             this.TimeoutMs = timeoutMs;
             this.WorkingDirectory = workingDirectory;
+            this.Env = env ?? throw new global::System.ArgumentNullException(nameof(env));
             this.User = user;
         }
 

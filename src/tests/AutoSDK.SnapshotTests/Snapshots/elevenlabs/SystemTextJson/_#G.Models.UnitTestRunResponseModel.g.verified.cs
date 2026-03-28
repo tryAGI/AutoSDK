@@ -103,14 +103,14 @@ namespace G
         /// Initializes a new instance of the <see cref="UnitTestRunResponseModel" /> class.
         /// </summary>
         /// <param name="testRunId"></param>
-        /// <param name="testInfo"></param>
         /// <param name="testInvocationId"></param>
         /// <param name="agentId"></param>
+        /// <param name="status"></param>
+        /// <param name="testId"></param>
+        /// <param name="testInfo"></param>
         /// <param name="branchId"></param>
         /// <param name="workflowNodeId"></param>
-        /// <param name="status"></param>
         /// <param name="agentResponses"></param>
-        /// <param name="testId"></param>
         /// <param name="testName">
         /// Default Value: Unknown Test
         /// </param>
@@ -136,14 +136,14 @@ namespace G
             global::G.TestRunMetadata? metadata)
         {
             this.TestRunId = testRunId ?? throw new global::System.ArgumentNullException(nameof(testRunId));
+            this.TestInfo = testInfo;
             this.TestInvocationId = testInvocationId ?? throw new global::System.ArgumentNullException(nameof(testInvocationId));
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
-            this.Status = status;
-            this.TestId = testId ?? throw new global::System.ArgumentNullException(nameof(testId));
-            this.TestInfo = testInfo;
             this.BranchId = branchId;
             this.WorkflowNodeId = workflowNodeId;
+            this.Status = status;
             this.AgentResponses = agentResponses;
+            this.TestId = testId ?? throw new global::System.ArgumentNullException(nameof(testId));
             this.TestName = testName;
             this.ConditionResult = conditionResult;
             this.LastUpdatedAtUnix = lastUpdatedAtUnix;

@@ -80,6 +80,10 @@ namespace G
         /// Name to reference the LLM. This will be used in other endpoints (like query) when using this LLM. If this name conflicts with a global LLM (a LLM that is preconfigured with the Vectara platform), then it will override that LLM for all usages.<br/>
         /// Example: Claude 3.7 Sonnet
         /// </param>
+        /// <param name="uri">
+        /// The URI endpoint for the API (can be OpenAI or any compatible API endpoint)<br/>
+        /// Example: https://api.anthropic.com/v1/chat/completions
+        /// </param>
         /// <param name="description">
         /// Description of the LLM.<br/>
         /// Example: The Anthropic Claude 3.7 Sonnet model
@@ -87,10 +91,6 @@ namespace G
         /// <param name="model">
         /// The model name to use with the API (e.g. gpt-4, claude-2, etc). This is used in the API request to the remote LLM provider.<br/>
         /// Example: claude-3-7-sonnet-20250219
-        /// </param>
-        /// <param name="uri">
-        /// The URI endpoint for the API (can be OpenAI or any compatible API endpoint)<br/>
-        /// Example: https://api.anthropic.com/v1/chat/completions
         /// </param>
         /// <param name="auth">
         /// Authentication configuration for an LLM
@@ -116,9 +116,9 @@ namespace G
             global::G.LLMCapabilities? capabilities)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Uri = uri ?? throw new global::System.ArgumentNullException(nameof(uri));
             this.Description = description;
             this.Model = model;
+            this.Uri = uri ?? throw new global::System.ArgumentNullException(nameof(uri));
             this.Auth = auth;
             this.Headers = headers;
             this.TestModelParameters = testModelParameters;

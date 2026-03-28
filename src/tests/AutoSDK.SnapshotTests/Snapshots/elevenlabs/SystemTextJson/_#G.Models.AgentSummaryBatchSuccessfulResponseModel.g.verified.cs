@@ -33,11 +33,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AgentSummaryBatchSuccessfulResponseModel" /> class.
         /// </summary>
-        /// <param name="status">
-        /// Default Value: success
-        /// </param>
         /// <param name="data">
         /// Example: {"access_info":{"creator_email":"john@example.com","creator_name":"John Doe","is_creator":true,"role":"admin"},"agent_id":"J3Pbu5gP6NNKBscdCdwB","archived":false,"created_at_unix_secs":1716153600,"last_call_time_unix_secs":1716240000,"name":"My Agent","tags":["Customer Support","Technical Help","Eleven"]}
+        /// </param>
+        /// <param name="status">
+        /// Default Value: success
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -46,8 +46,8 @@ namespace G
             global::G.AgentSummaryResponseModel data,
             string status = "success")
         {
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Status = status;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
         }
 
         /// <summary>

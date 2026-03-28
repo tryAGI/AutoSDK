@@ -50,12 +50,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPullRequestReviewSubmittedPullRequestHead" /> class.
         /// </summary>
-        /// <param name="label"></param>
         /// <param name="ref"></param>
+        /// <param name="sha"></param>
+        /// <param name="label"></param>
         /// <param name="repo">
         /// A git repository
         /// </param>
-        /// <param name="sha"></param>
         /// <param name="user"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -67,10 +67,10 @@ namespace G
             global::G.WebhookPullRequestReviewSubmittedPullRequestHeadRepo? repo,
             global::G.WebhookPullRequestReviewSubmittedPullRequestHeadUser? user)
         {
-            this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
-            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
             this.Label = label;
+            this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
             this.Repo = repo;
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
             this.User = user;
         }
 

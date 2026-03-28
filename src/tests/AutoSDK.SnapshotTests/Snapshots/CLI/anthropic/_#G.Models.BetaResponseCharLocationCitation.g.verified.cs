@@ -60,14 +60,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaResponseCharLocationCitation" /> class.
         /// </summary>
+        /// <param name="citedText"></param>
+        /// <param name="documentIndex"></param>
+        /// <param name="startCharIndex"></param>
+        /// <param name="endCharIndex"></param>
+        /// <param name="documentTitle"></param>
         /// <param name="type">
         /// Default Value: char_location
         /// </param>
-        /// <param name="citedText"></param>
-        /// <param name="documentIndex"></param>
-        /// <param name="documentTitle"></param>
-        /// <param name="startCharIndex"></param>
-        /// <param name="endCharIndex"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -79,12 +79,12 @@ namespace G
             string? documentTitle,
             global::G.BetaResponseCharLocationCitationType type = global::G.BetaResponseCharLocationCitationType.CharLocation)
         {
+            this.Type = type;
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.DocumentIndex = documentIndex;
+            this.DocumentTitle = documentTitle;
             this.StartCharIndex = startCharIndex;
             this.EndCharIndex = endCharIndex;
-            this.Type = type;
-            this.DocumentTitle = documentTitle;
         }
 
         /// <summary>

@@ -37,19 +37,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaContentBlockDeltaEvent" /> class.
         /// </summary>
+        /// <param name="index"></param>
+        /// <param name="delta"></param>
         /// <param name="type">
         /// Default Value: content_block_delta
         /// </param>
-        /// <param name="index"></param>
-        /// <param name="delta"></param>
         public BetaContentBlockDeltaEvent(
             int index,
             global::G.Delta delta,
             global::G.BetaContentBlockDeltaEventType type = global::G.BetaContentBlockDeltaEventType.ContentBlockDelta)
         {
+            this.Type = type;
             this.Index = index;
             this.Delta = delta;
-            this.Type = type;
         }
 
         /// <summary>

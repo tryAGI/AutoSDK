@@ -31,10 +31,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ListResponseAgentBranchSummary" /> class.
         /// </summary>
+        /// <param name="results"></param>
         /// <param name="meta">
         /// Default Value: {}
         /// </param>
-        /// <param name="results"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -42,8 +42,8 @@ namespace G
             global::System.Collections.Generic.IList<global::G.AgentBranchSummary> results,
             global::G.ListResponseMeta? meta)
         {
-            this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
             this.Meta = meta;
+            this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
         }
 
         /// <summary>

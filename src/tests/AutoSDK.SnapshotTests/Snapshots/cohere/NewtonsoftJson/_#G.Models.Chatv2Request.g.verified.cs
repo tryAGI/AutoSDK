@@ -168,17 +168,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Chatv2Request" /> class.
         /// </summary>
-        /// <param name="stream">
-        /// Defaults to `false`.<br/>
-        /// When `true`, the response will be a SSE stream of events.<br/>
-        /// Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.
-        /// </param>
         /// <param name="model">
         /// The name of a compatible [Cohere model](https://docs.cohere.com/v2/docs/models) or the ID of a [fine-tuned](https://docs.cohere.com/v2/docs/chat-fine-tuning) model.
         /// </param>
         /// <param name="messages">
         /// A list of chat messages in chronological order, representing a conversation between the user and the model.<br/>
         /// Messages can be from `User`, `Assistant`, `Tool` and `System` roles. Learn more about messages and roles in [the Chat API guide](https://docs.cohere.com/v2/docs/chat-api).
+        /// </param>
+        /// <param name="stream">
+        /// Defaults to `false`.<br/>
+        /// When `true`, the response will be a SSE stream of events.<br/>
+        /// Streaming is beneficial for user interfaces that render the contents of the response piece by piece, as it gets generated.
         /// </param>
         /// <param name="reasoningEffort">
         /// The reasoning effort level of the model. This affects the model's performance and the time it takes to generate a response.
@@ -280,9 +280,9 @@ namespace G
             bool? logprobs,
             global::G.Chatv2RequestToolChoice? toolChoice)
         {
+            this.Stream = stream;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
-            this.Stream = stream;
             this.ReasoningEffort = reasoningEffort;
             this.Tools = tools;
             this.StrictTools = strictTools;

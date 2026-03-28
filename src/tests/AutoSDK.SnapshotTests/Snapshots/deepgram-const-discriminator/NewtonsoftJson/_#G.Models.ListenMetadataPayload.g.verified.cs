@@ -37,20 +37,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ListenMetadataPayload" /> class.
         /// </summary>
-        /// <param name="messageType"></param>
         /// <param name="requestId">
         /// Unique request identifier.
         /// </param>
         /// <param name="modelInfo">
         /// Model information.
         /// </param>
+        /// <param name="messageType"></param>
         public ListenMetadataPayload(
             string requestId,
             string? modelInfo,
             string messageType = "listen_metadata")
         {
-            this.RequestId = requestId ?? throw new global::System.ArgumentNullException(nameof(requestId));
             this.MessageType = messageType;
+            this.RequestId = requestId ?? throw new global::System.ArgumentNullException(nameof(requestId));
             this.ModelInfo = modelInfo;
         }
 

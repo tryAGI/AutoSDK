@@ -66,6 +66,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateToolCallUnitTestRequest" /> class.
         /// </summary>
+        /// <param name="name"></param>
         /// <param name="fromConversationMetadata">
         /// Metadata of a conversation this test was created from (if applicable).
         /// </param>
@@ -82,7 +83,6 @@ namespace G
         /// <param name="checkAnyToolMatches">
         /// If set to True this test will pass if any tool call returned by the LLM matches the criteria. Otherwise it will fail if more than one tool is returned by the agent.
         /// </param>
-        /// <param name="name"></param>
         /// <param name="parentFolderId">
         /// The ID of the parent folder. If not provided, the test will be moved to the root level.
         /// </param>
@@ -96,13 +96,13 @@ namespace G
             bool? checkAnyToolMatches,
             string? parentFolderId)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.FromConversationMetadata = fromConversationMetadata;
             this.DynamicVariables = dynamicVariables;
             this.ChatHistory = chatHistory;
             this.Type = type;
             this.ToolCallParameters = toolCallParameters;
             this.CheckAnyToolMatches = checkAnyToolMatches;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ParentFolderId = parentFolderId;
         }
 

@@ -126,11 +126,13 @@ namespace G
         /// <param name="id">
         /// The ID of the commit comment.
         /// </param>
-        /// <param name="line">
-        /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
-        /// </param>
         /// <param name="nodeId">
         /// The node ID of the commit comment.
+        /// </param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url"></param>
+        /// <param name="line">
+        /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
         /// </param>
         /// <param name="path">
         /// The relative path of the file to which the comment applies.
@@ -139,8 +141,6 @@ namespace G
         /// The line index in the diff to which the comment applies.
         /// </param>
         /// <param name="reactions"></param>
-        /// <param name="updatedAt"></param>
-        /// <param name="url"></param>
         /// <param name="user"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -167,13 +167,13 @@ namespace G
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
-            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Line = line;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Path = path;
             this.Position = position;
             this.Reactions = reactions;
+            this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.User = user;
         }
 

@@ -78,18 +78,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FilterView" /> class.
         /// </summary>
+        /// <param name="displayName"></param>
+        /// <param name="id"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
         /// <param name="filterString"></param>
         /// <param name="traceFilterString"></param>
         /// <param name="treeFilterString"></param>
-        /// <param name="displayName"></param>
         /// <param name="description"></param>
         /// <param name="type">
         /// Default Value: runs
         /// </param>
-        /// <param name="id"></param>
         /// <param name="sessionId"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
         public FilterView(
             string displayName,
             global::System.Guid id,
@@ -102,16 +102,16 @@ namespace G
             global::G.FilterViewType? type,
             global::System.Guid? sessionId)
         {
-            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
-            this.Id = id;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.FilterString = filterString;
             this.TraceFilterString = traceFilterString;
             this.TreeFilterString = treeFilterString;
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Description = description;
             this.Type = type;
+            this.Id = id;
             this.SessionId = sessionId;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
         }
 
         /// <summary>

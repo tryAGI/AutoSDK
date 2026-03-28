@@ -32,10 +32,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionRequestMessageContentPartImage" /> class.
         /// </summary>
+        /// <param name="imageUrl"></param>
         /// <param name="type">
         /// The type of the content part.
         /// </param>
-        /// <param name="imageUrl"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -43,8 +43,8 @@ namespace G
             global::G.ChatCompletionRequestMessageContentPartImageImageUrl imageUrl,
             global::G.ChatCompletionRequestMessageContentPartImageType type)
         {
-            this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
             this.Type = type;
+            this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
         }
 
         /// <summary>

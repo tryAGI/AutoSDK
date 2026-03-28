@@ -152,6 +152,58 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CountMessageTokensParams" /> class.
         /// </summary>
+        /// <param name="messages">
+        /// Input messages.<br/>
+        /// Our models are trained to operate on alternating `user` and `assistant` conversational turns. When creating a new `Message`, you specify the prior conversational turns with the `messages` parameter, and the model then generates the next `Message` in the conversation. Consecutive `user` or `assistant` turns in your request will be combined into a single turn.<br/>
+        /// Each input message must be an object with a `role` and `content`. You can specify a single `user`-role message, or you can include multiple `user` and `assistant` messages.<br/>
+        /// If the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response.<br/>
+        /// Example with a single `user` message:<br/>
+        /// ```json<br/>
+        /// [{"role": "user", "content": "Hello, Claude"}]<br/>
+        /// ```<br/>
+        /// Example with multiple conversational turns:<br/>
+        /// ```json<br/>
+        /// [<br/>
+        ///   {"role": "user", "content": "Hello there."},<br/>
+        ///   {"role": "assistant", "content": "Hi, I'm Claude. How can I help you?"},<br/>
+        ///   {"role": "user", "content": "Can you explain LLMs in plain English?"},<br/>
+        /// ]<br/>
+        /// ```<br/>
+        /// Example with a partially-filled response from Claude:<br/>
+        /// ```json<br/>
+        /// [<br/>
+        ///   {"role": "user", "content": "What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun"},<br/>
+        ///   {"role": "assistant", "content": "The best answer is ("},<br/>
+        /// ]<br/>
+        /// ```<br/>
+        /// Each input message `content` may be either a single `string` or an array of content blocks, where each block has a specific `type`. Using a `string` for `content` is shorthand for an array of one content block of type `"text"`. The following input messages are equivalent:<br/>
+        /// ```json<br/>
+        /// {"role": "user", "content": "Hello, Claude"}<br/>
+        /// ```<br/>
+        /// ```json<br/>
+        /// {"role": "user", "content": [{"type": "text", "text": "Hello, Claude"}]}<br/>
+        /// ```<br/>
+        /// Starting with Claude 3 models, you can also send image content blocks:<br/>
+        /// ```json<br/>
+        /// {"role": "user", "content": [<br/>
+        ///   {<br/>
+        ///     "type": "image",<br/>
+        ///     "source": {<br/>
+        ///       "type": "base64",<br/>
+        ///       "media_type": "image/jpeg",<br/>
+        ///       "data": "/9j/4AAQSkZJRg...",<br/>
+        ///     }<br/>
+        ///   },<br/>
+        ///   {"type": "text", "text": "What is in this image?"}<br/>
+        /// ]}<br/>
+        /// ```<br/>
+        /// We currently support the `base64` source type for images, and the `image/jpeg`, `image/png`, `image/gif`, and `image/webp` media types.<br/>
+        /// See [examples](https://docs.anthropic.com/en/api/messages-examples#vision) for more input examples.<br/>
+        /// Note that if you want to include a [system prompt](https://docs.anthropic.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
+        /// </param>
+        /// <param name="model">
+        /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+        /// </param>
         /// <param name="toolChoice">
         /// How the model should use the provided tools. The model can use a specific tool, any available tool, or decide by itself.
         /// </param>
@@ -205,55 +257,6 @@ namespace G
         /// Tools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.<br/>
         /// See our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details.
         /// </param>
-        /// <param name="messages">
-        /// Input messages.<br/>
-        /// Our models are trained to operate on alternating `user` and `assistant` conversational turns. When creating a new `Message`, you specify the prior conversational turns with the `messages` parameter, and the model then generates the next `Message` in the conversation. Consecutive `user` or `assistant` turns in your request will be combined into a single turn.<br/>
-        /// Each input message must be an object with a `role` and `content`. You can specify a single `user`-role message, or you can include multiple `user` and `assistant` messages.<br/>
-        /// If the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response.<br/>
-        /// Example with a single `user` message:<br/>
-        /// ```json<br/>
-        /// [{"role": "user", "content": "Hello, Claude"}]<br/>
-        /// ```<br/>
-        /// Example with multiple conversational turns:<br/>
-        /// ```json<br/>
-        /// [<br/>
-        ///   {"role": "user", "content": "Hello there."},<br/>
-        ///   {"role": "assistant", "content": "Hi, I'm Claude. How can I help you?"},<br/>
-        ///   {"role": "user", "content": "Can you explain LLMs in plain English?"},<br/>
-        /// ]<br/>
-        /// ```<br/>
-        /// Example with a partially-filled response from Claude:<br/>
-        /// ```json<br/>
-        /// [<br/>
-        ///   {"role": "user", "content": "What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun"},<br/>
-        ///   {"role": "assistant", "content": "The best answer is ("},<br/>
-        /// ]<br/>
-        /// ```<br/>
-        /// Each input message `content` may be either a single `string` or an array of content blocks, where each block has a specific `type`. Using a `string` for `content` is shorthand for an array of one content block of type `"text"`. The following input messages are equivalent:<br/>
-        /// ```json<br/>
-        /// {"role": "user", "content": "Hello, Claude"}<br/>
-        /// ```<br/>
-        /// ```json<br/>
-        /// {"role": "user", "content": [{"type": "text", "text": "Hello, Claude"}]}<br/>
-        /// ```<br/>
-        /// Starting with Claude 3 models, you can also send image content blocks:<br/>
-        /// ```json<br/>
-        /// {"role": "user", "content": [<br/>
-        ///   {<br/>
-        ///     "type": "image",<br/>
-        ///     "source": {<br/>
-        ///       "type": "base64",<br/>
-        ///       "media_type": "image/jpeg",<br/>
-        ///       "data": "/9j/4AAQSkZJRg...",<br/>
-        ///     }<br/>
-        ///   },<br/>
-        ///   {"type": "text", "text": "What is in this image?"}<br/>
-        /// ]}<br/>
-        /// ```<br/>
-        /// We currently support the `base64` source type for images, and the `image/jpeg`, `image/png`, `image/gif`, and `image/webp` media types.<br/>
-        /// See [examples](https://docs.anthropic.com/en/api/messages-examples#vision) for more input examples.<br/>
-        /// Note that if you want to include a [system prompt](https://docs.anthropic.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
-        /// </param>
         /// <param name="system">
         /// System prompt.<br/>
         /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.anthropic.com/en/docs/system-prompts).
@@ -263,9 +266,6 @@ namespace G
         /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
         /// See [extended thinking](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking) for details.
         /// </param>
-        /// <param name="model">
-        /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
-        /// </param>
         public CountMessageTokensParams(
             global::System.Collections.Generic.IList<global::G.InputMessage> messages,
             global::G.Model model,
@@ -274,12 +274,12 @@ namespace G
             global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.RequestTextBlock>>? system,
             global::G.ThinkingConfigParam? thinking)
         {
-            this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
-            this.Model = model;
             this.ToolChoice = toolChoice;
             this.Tools = tools;
+            this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.System = system;
             this.Thinking = thinking;
+            this.Model = model;
         }
 
         /// <summary>

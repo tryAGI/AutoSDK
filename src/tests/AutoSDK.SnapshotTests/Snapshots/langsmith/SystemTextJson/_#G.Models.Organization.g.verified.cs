@@ -119,17 +119,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Organization" /> class.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="displayName"></param>
         /// <param name="config">
         /// Organization level configuration. May include any field that exists in tenant config and additional fields.
         /// </param>
         /// <param name="connectedToStripe"></param>
         /// <param name="connectedToMetronome"></param>
         /// <param name="isPersonal"></param>
+        /// <param name="hasCancelled"></param>
+        /// <param name="id"></param>
+        /// <param name="displayName"></param>
         /// <param name="tier"></param>
         /// <param name="paymentMethod"></param>
-        /// <param name="hasCancelled"></param>
         /// <param name="endOfBillingPeriod"></param>
         /// <param name="currentPlan"></param>
         /// <param name="upcomingPlan"></param>
@@ -164,15 +164,15 @@ namespace G
             bool? marketplacePayoutsEnabled,
             global::G.Wallet? wallet)
         {
+            this.Id = id;
+            this.DisplayName = displayName;
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
             this.ConnectedToStripe = connectedToStripe;
             this.ConnectedToMetronome = connectedToMetronome;
             this.IsPersonal = isPersonal;
-            this.HasCancelled = hasCancelled;
-            this.Id = id;
-            this.DisplayName = displayName;
             this.Tier = tier;
             this.PaymentMethod = paymentMethod;
+            this.HasCancelled = hasCancelled;
             this.EndOfBillingPeriod = endOfBillingPeriod;
             this.CurrentPlan = currentPlan;
             this.UpcomingPlan = upcomingPlan;

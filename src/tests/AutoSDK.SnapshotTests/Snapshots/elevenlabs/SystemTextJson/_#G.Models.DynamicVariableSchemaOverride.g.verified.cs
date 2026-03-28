@@ -31,11 +31,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DynamicVariableSchemaOverride" /> class.
         /// </summary>
-        /// <param name="source">
-        /// Default Value: dynamic_variable
-        /// </param>
         /// <param name="dynamicVariable">
         /// The name of the dynamic variable to use
+        /// </param>
+        /// <param name="source">
+        /// Default Value: dynamic_variable
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace G
             string dynamicVariable,
             string? source)
         {
-            this.DynamicVariable = dynamicVariable ?? throw new global::System.ArgumentNullException(nameof(dynamicVariable));
             this.Source = source;
+            this.DynamicVariable = dynamicVariable ?? throw new global::System.ArgumentNullException(nameof(dynamicVariable));
         }
 
         /// <summary>

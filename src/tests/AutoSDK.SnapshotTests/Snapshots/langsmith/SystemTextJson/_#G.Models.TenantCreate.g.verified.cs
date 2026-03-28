@@ -49,9 +49,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TenantCreate" /> class.
         /// </summary>
+        /// <param name="displayName"></param>
         /// <param name="id"></param>
         /// <param name="organizationId"></param>
-        /// <param name="displayName"></param>
         /// <param name="tenantHandle"></param>
         /// <param name="isPersonal">
         /// Default Value: false
@@ -66,9 +66,9 @@ namespace G
             string? tenantHandle,
             bool? isPersonal)
         {
-            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Id = id;
             this.OrganizationId = organizationId;
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.TenantHandle = tenantHandle;
             this.IsPersonal = isPersonal;
         }

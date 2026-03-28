@@ -44,11 +44,11 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `conversation.item.deleted`.
-        /// </param>
         /// <param name="itemId">
         /// The ID of the item that was deleted.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `conversation.item.deleted`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -59,8 +59,8 @@ namespace G
             global::G.RealtimeServerEventConversationItemDeletedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.Type = type;
+            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
         }
 
         /// <summary>

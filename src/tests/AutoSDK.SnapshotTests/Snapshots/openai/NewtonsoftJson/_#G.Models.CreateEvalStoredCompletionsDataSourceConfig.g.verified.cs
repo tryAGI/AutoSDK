@@ -43,15 +43,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEvalStoredCompletionsDataSourceConfig" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of data source. Always `stored_completions`.<br/>
-        /// Default Value: stored_completions
-        /// </param>
         /// <param name="metadata">
         /// Metadata filters for the stored completions data source.<br/>
         /// Example: {<br/>
         ///   "use_case": "customer_support_agent"<br/>
         /// }
+        /// </param>
+        /// <param name="type">
+        /// The type of data source. Always `stored_completions`.<br/>
+        /// Default Value: stored_completions
         /// </param>
         public CreateEvalStoredCompletionsDataSourceConfig(
             object? metadata,

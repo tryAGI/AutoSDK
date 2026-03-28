@@ -39,11 +39,11 @@ namespace G
         /// <param name="data">
         /// The list of broadcasters that the user follows. The list is in descending order by `followed_at` (with the most recently followed broadcaster first). The list is empty if the user doesn’t follow anyone.
         /// </param>
-        /// <param name="pagination">
-        /// Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read more](https://dev.twitch.tv/docs/api/guide#pagination).
-        /// </param>
         /// <param name="total">
         /// The total number of broadcasters that the user follows. As someone pages through the list, the number may change as the user follows or unfollows broadcasters.
+        /// </param>
+        /// <param name="pagination">
+        /// Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read more](https://dev.twitch.tv/docs/api/guide#pagination).
         /// </param>
         public GetFollowedChannelsResponse(
             global::System.Collections.Generic.IList<global::G.GetFollowedChannelsResponseDataItem> data,
@@ -51,8 +51,8 @@ namespace G
             global::G.GetFollowedChannelsResponsePagination? pagination)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.Total = total;
             this.Pagination = pagination;
+            this.Total = total;
         }
 
         /// <summary>

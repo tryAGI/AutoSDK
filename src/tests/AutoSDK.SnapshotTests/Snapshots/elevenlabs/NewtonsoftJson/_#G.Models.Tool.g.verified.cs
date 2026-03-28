@@ -61,9 +61,9 @@ namespace G
         /// Initializes a new instance of the <see cref="Tool" /> class.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="inputSchema"></param>
         /// <param name="title"></param>
         /// <param name="description"></param>
-        /// <param name="inputSchema"></param>
         /// <param name="outputSchema"></param>
         /// <param name="annotations"></param>
         /// <param name="meta"></param>
@@ -77,9 +77,9 @@ namespace G
             object? meta)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));
             this.Title = title;
             this.Description = description;
+            this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));
             this.OutputSchema = outputSchema;
             this.Annotations = annotations;
             this.Meta = meta;

@@ -84,17 +84,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="SimpleCommitStatus" /> class.
         /// </summary>
-        /// <param name="description"></param>
         /// <param name="id"></param>
         /// <param name="nodeId"></param>
         /// <param name="state"></param>
         /// <param name="context"></param>
-        /// <param name="targetUrl"></param>
-        /// <param name="required"></param>
-        /// <param name="avatarUrl"></param>
         /// <param name="url"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="description"></param>
+        /// <param name="targetUrl"></param>
+        /// <param name="required"></param>
+        /// <param name="avatarUrl"></param>
         public SimpleCommitStatus(
             int id,
             string nodeId,
@@ -108,17 +108,17 @@ namespace G
             bool? required,
             string? avatarUrl)
         {
+            this.Description = description;
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
             this.Context = context ?? throw new global::System.ArgumentNullException(nameof(context));
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
-            this.Description = description;
             this.TargetUrl = targetUrl;
             this.Required = required;
             this.AvatarUrl = avatarUrl;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
         }
 
         /// <summary>

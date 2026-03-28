@@ -91,6 +91,9 @@ namespace G
         /// Initializes a new instance of the <see cref="AnnotationQueueSchemaWithSize" /> class.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="id"></param>
+        /// <param name="tenantId"></param>
+        /// <param name="totalRuns"></param>
         /// <param name="description"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
@@ -104,10 +107,7 @@ namespace G
         /// <param name="reservationMinutes">
         /// Default Value: 1
         /// </param>
-        /// <param name="id"></param>
-        /// <param name="tenantId"></param>
         /// <param name="sourceRuleId"></param>
-        /// <param name="totalRuns"></param>
         public AnnotationQueueSchemaWithSize(
             string name,
             global::System.Guid id,
@@ -123,9 +123,6 @@ namespace G
             global::System.Guid? sourceRuleId)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Id = id;
-            this.TenantId = tenantId;
-            this.TotalRuns = totalRuns;
             this.Description = description;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
@@ -133,7 +130,10 @@ namespace G
             this.NumReviewersPerItem = numReviewersPerItem;
             this.EnableReservations = enableReservations;
             this.ReservationMinutes = reservationMinutes;
+            this.Id = id;
+            this.TenantId = tenantId;
             this.SourceRuleId = sourceRuleId;
+            this.TotalRuns = totalRuns;
         }
 
         /// <summary>

@@ -39,10 +39,10 @@ namespace G
         /// Initializes a new instance of the <see cref="DashboardCriteriaChartModel" /> class.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="criteriaId"></param>
         /// <param name="type">
         /// Default Value: criteria
         /// </param>
-        /// <param name="criteriaId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -52,8 +52,8 @@ namespace G
             string? type)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.CriteriaId = criteriaId ?? throw new global::System.ArgumentNullException(nameof(criteriaId));
             this.Type = type;
+            this.CriteriaId = criteriaId ?? throw new global::System.ArgumentNullException(nameof(criteriaId));
         }
 
         /// <summary>

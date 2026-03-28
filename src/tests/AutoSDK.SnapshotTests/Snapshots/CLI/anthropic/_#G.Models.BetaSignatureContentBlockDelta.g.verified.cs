@@ -33,10 +33,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaSignatureContentBlockDelta" /> class.
         /// </summary>
+        /// <param name="signature"></param>
         /// <param name="type">
         /// Default Value: signature_delta
         /// </param>
-        /// <param name="signature"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -44,8 +44,8 @@ namespace G
             string signature,
             global::G.BetaSignatureContentBlockDeltaType type = global::G.BetaSignatureContentBlockDeltaType.SignatureDelta)
         {
-            this.Signature = signature ?? throw new global::System.ArgumentNullException(nameof(signature));
             this.Type = type;
+            this.Signature = signature ?? throw new global::System.ArgumentNullException(nameof(signature));
         }
 
         /// <summary>

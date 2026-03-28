@@ -32,8 +32,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TransferBranchInfoDefaultingToMain" /> class.
         /// </summary>
-        /// <param name="branchReason"></param>
         /// <param name="branchId"></param>
+        /// <param name="branchReason"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -41,8 +41,8 @@ namespace G
             string branchId,
             string branchReason = "defaulting_to_main")
         {
-            this.BranchId = branchId ?? throw new global::System.ArgumentNullException(nameof(branchId));
             this.BranchReason = branchReason;
+            this.BranchId = branchId ?? throw new global::System.ArgumentNullException(nameof(branchId));
         }
 
         /// <summary>

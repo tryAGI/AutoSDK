@@ -64,7 +64,6 @@ namespace G
         /// 6-character hex code, without the leading #, identifying the color
         /// </param>
         /// <param name="default"></param>
-        /// <param name="description"></param>
         /// <param name="id"></param>
         /// <param name="name">
         /// The name of the label.
@@ -73,6 +72,7 @@ namespace G
         /// <param name="url">
         /// URL for the label
         /// </param>
+        /// <param name="description"></param>
         public WebhookIssuesReopenedIssueLabel(
             string color,
             bool @default,
@@ -84,11 +84,11 @@ namespace G
         {
             this.Color = color ?? throw new global::System.ArgumentNullException(nameof(color));
             this.Default = @default;
+            this.Description = description;
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Description = description;
         }
 
         /// <summary>

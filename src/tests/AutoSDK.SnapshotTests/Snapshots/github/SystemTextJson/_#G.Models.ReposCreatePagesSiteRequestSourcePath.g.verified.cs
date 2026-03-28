@@ -13,11 +13,11 @@ namespace G
         /// <summary>
         /// `/`
         /// </summary>
-        x,
+        Divide,
         /// <summary>
         /// `/`
         /// </summary>
-        Docs,
+        Dividedocs,
     }
 
     /// <summary>
@@ -32,8 +32,8 @@ namespace G
         {
             return value switch
             {
-                ReposCreatePagesSiteRequestSourcePath.x => "/",
-                ReposCreatePagesSiteRequestSourcePath.Docs => "/docs",
+                ReposCreatePagesSiteRequestSourcePath.Divide => "/",
+                ReposCreatePagesSiteRequestSourcePath.Dividedocs => "/docs",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,8 +44,8 @@ namespace G
         {
             return value switch
             {
-                "/" => ReposCreatePagesSiteRequestSourcePath.x,
-                "/docs" => ReposCreatePagesSiteRequestSourcePath.Docs,
+                "/" => ReposCreatePagesSiteRequestSourcePath.Divide,
+                "/docs" => ReposCreatePagesSiteRequestSourcePath.Dividedocs,
                 _ => null,
             };
         }

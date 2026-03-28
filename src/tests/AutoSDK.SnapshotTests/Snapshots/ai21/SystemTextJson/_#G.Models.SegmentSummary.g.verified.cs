@@ -58,12 +58,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="SegmentSummary" /> class.
         /// </summary>
-        /// <param name="summary"></param>
         /// <param name="segmentText"></param>
-        /// <param name="segmentHtml"></param>
         /// <param name="segmentType"></param>
         /// <param name="hasSummary"></param>
         /// <param name="highlights"></param>
+        /// <param name="summary"></param>
+        /// <param name="segmentHtml"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -75,12 +75,12 @@ namespace G
             string? summary,
             string? segmentHtml)
         {
+            this.Summary = summary;
             this.SegmentText = segmentText ?? throw new global::System.ArgumentNullException(nameof(segmentText));
+            this.SegmentHtml = segmentHtml;
             this.SegmentType = segmentType ?? throw new global::System.ArgumentNullException(nameof(segmentType));
             this.HasSummary = hasSummary;
             this.Highlights = highlights ?? throw new global::System.ArgumentNullException(nameof(highlights));
-            this.Summary = summary;
-            this.SegmentHtml = segmentHtml;
         }
 
         /// <summary>

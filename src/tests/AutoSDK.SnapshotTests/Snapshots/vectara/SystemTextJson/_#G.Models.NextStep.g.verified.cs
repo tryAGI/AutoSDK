@@ -70,6 +70,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="NextStep" /> class.
         /// </summary>
+        /// <param name="stepName">
+        /// Name of the step to transition to.<br/>
+        /// Must reference a step defined in the agent's steps list.<br/>
+        /// Example: sales_handler
+        /// </param>
         /// <param name="condition">
         /// UserFn expression evaluating to boolean.<br/>
         /// Uses the `get()` function with JSONPath to access the step transition context.<br/>
@@ -108,11 +113,6 @@ namespace G
         /// - `$.output.&lt;field&gt;` — LLM structured output fields (when output_parser is `structured`)<br/>
         /// Example: get('$.output.intent') == 'sales'
         /// </param>
-        /// <param name="stepName">
-        /// Name of the step to transition to.<br/>
-        /// Must reference a step defined in the agent's steps list.<br/>
-        /// Example: sales_handler
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -120,8 +120,8 @@ namespace G
             string stepName,
             string? condition)
         {
-            this.StepName = stepName ?? throw new global::System.ArgumentNullException(nameof(stepName));
             this.Condition = condition;
+            this.StepName = stepName ?? throw new global::System.ArgumentNullException(nameof(stepName));
         }
 
         /// <summary>

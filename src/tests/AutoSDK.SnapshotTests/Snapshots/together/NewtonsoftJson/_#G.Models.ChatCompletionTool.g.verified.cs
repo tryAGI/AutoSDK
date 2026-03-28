@@ -30,14 +30,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionTool" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="function"></param>
+        /// <param name="type"></param>
         public ChatCompletionTool(
             global::G.ChatCompletionToolFunction function,
             global::G.ChatCompletionToolType type)
         {
-            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
             this.Type = type;
+            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
         }
 
         /// <summary>

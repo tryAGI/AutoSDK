@@ -131,7 +131,6 @@ namespace G
         /// <param name="followersUrl"></param>
         /// <param name="followingUrl"></param>
         /// <param name="gistsUrl"></param>
-        /// <param name="gravatarId"></param>
         /// <param name="htmlUrl"></param>
         /// <param name="id"></param>
         /// <param name="nodeId"></param>
@@ -144,6 +143,7 @@ namespace G
         /// <param name="subscriptionsUrl"></param>
         /// <param name="type"></param>
         /// <param name="url"></param>
+        /// <param name="gravatarId"></param>
         public PullRequestBaseRepoOwner(
             string avatarUrl,
             string eventsUrl,
@@ -169,6 +169,7 @@ namespace G
             this.FollowersUrl = followersUrl ?? throw new global::System.ArgumentNullException(nameof(followersUrl));
             this.FollowingUrl = followingUrl ?? throw new global::System.ArgumentNullException(nameof(followingUrl));
             this.GistsUrl = gistsUrl ?? throw new global::System.ArgumentNullException(nameof(gistsUrl));
+            this.GravatarId = gravatarId;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
@@ -181,7 +182,6 @@ namespace G
             this.SubscriptionsUrl = subscriptionsUrl ?? throw new global::System.ArgumentNullException(nameof(subscriptionsUrl));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.GravatarId = gravatarId;
         }
 
         /// <summary>

@@ -92,15 +92,15 @@ namespace G
         /// Initializes a new instance of the <see cref="Status" /> class.
         /// </summary>
         /// <param name="url"></param>
-        /// <param name="avatarUrl"></param>
         /// <param name="id"></param>
         /// <param name="nodeId"></param>
         /// <param name="state"></param>
-        /// <param name="description"></param>
-        /// <param name="targetUrl"></param>
         /// <param name="context"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="avatarUrl"></param>
+        /// <param name="description"></param>
+        /// <param name="targetUrl"></param>
         /// <param name="creator">
         /// A GitHub user.
         /// </param>
@@ -121,15 +121,15 @@ namespace G
             global::G.NullableSimpleUser? creator)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.AvatarUrl = avatarUrl;
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
+            this.Description = description;
+            this.TargetUrl = targetUrl;
             this.Context = context ?? throw new global::System.ArgumentNullException(nameof(context));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
-            this.AvatarUrl = avatarUrl;
-            this.Description = description;
-            this.TargetUrl = targetUrl;
             this.Creator = creator;
         }
 

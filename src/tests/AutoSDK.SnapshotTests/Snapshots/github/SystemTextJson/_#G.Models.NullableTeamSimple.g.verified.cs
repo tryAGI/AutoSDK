@@ -144,21 +144,9 @@ namespace G
         /// Name of the team<br/>
         /// Example: Justice League
         /// </param>
-        /// <param name="description">
-        /// Description of the team<br/>
-        /// Example: A great team.
-        /// </param>
         /// <param name="permission">
         /// Permission that the team will have for its repositories<br/>
         /// Example: admin
-        /// </param>
-        /// <param name="privacy">
-        /// The level of privacy this team should have<br/>
-        /// Example: closed
-        /// </param>
-        /// <param name="notificationSetting">
-        /// The notification setting the team has set<br/>
-        /// Example: notifications_enabled
         /// </param>
         /// <param name="htmlUrl">
         /// Example: https://github.com/orgs/rails/teams/core
@@ -168,6 +156,18 @@ namespace G
         /// </param>
         /// <param name="slug">
         /// Example: justice-league
+        /// </param>
+        /// <param name="description">
+        /// Description of the team<br/>
+        /// Example: A great team.
+        /// </param>
+        /// <param name="privacy">
+        /// The level of privacy this team should have<br/>
+        /// Example: closed
+        /// </param>
+        /// <param name="notificationSetting">
+        /// The notification setting the team has set<br/>
+        /// Example: notifications_enabled
         /// </param>
         /// <param name="ldapDn">
         /// Distinguished Name (DN) that team maps to within LDAP environment<br/>
@@ -196,13 +196,13 @@ namespace G
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.MembersUrl = membersUrl ?? throw new global::System.ArgumentNullException(nameof(membersUrl));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description;
             this.Permission = permission ?? throw new global::System.ArgumentNullException(nameof(permission));
+            this.Privacy = privacy;
+            this.NotificationSetting = notificationSetting;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.RepositoriesUrl = repositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(repositoriesUrl));
             this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
-            this.Description = description;
-            this.Privacy = privacy;
-            this.NotificationSetting = notificationSetting;
             this.LdapDn = ldapDn;
         }
 

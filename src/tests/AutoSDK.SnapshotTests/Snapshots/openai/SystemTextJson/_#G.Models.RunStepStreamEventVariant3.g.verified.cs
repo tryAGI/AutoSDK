@@ -32,10 +32,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepStreamEventVariant3" /> class.
         /// </summary>
-        /// <param name="event"></param>
         /// <param name="data">
         /// Represents a run step delta i.e. any changed fields on a run step during streaming.
         /// </param>
+        /// <param name="event"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -43,8 +43,8 @@ namespace G
             global::G.RunStepDeltaObject data,
             global::G.RunStepStreamEventVariant3Event @event)
         {
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Event = @event;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
         }
 
         /// <summary>

@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseReasoningSummaryPartDoneEventPart" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the summary part. Always `summary_text`.
-        /// </param>
         /// <param name="text">
         /// The text of the summary part.
+        /// </param>
+        /// <param name="type">
+        /// The type of the summary part. Always `summary_text`.
         /// </param>
         public ResponseReasoningSummaryPartDoneEventPart(
             string text,
             global::G.ResponseReasoningSummaryPartDoneEventPartType type)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

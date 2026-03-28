@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStreamEventVariant4" /> class.
         /// </summary>
-        /// <param name="event"></param>
         /// <param name="data">
         /// Represents an execution run on a [thread](/docs/api-reference/threads).
         /// </param>
+        /// <param name="event"></param>
         public RunStreamEventVariant4(
             global::G.RunObject data,
             global::G.RunStreamEventVariant4Event @event)
         {
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Event = @event;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
         }
 
         /// <summary>

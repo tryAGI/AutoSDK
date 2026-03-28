@@ -134,7 +134,6 @@ namespace G
         /// <param name="id"></param>
         /// <param name="nodeId"></param>
         /// <param name="name"></param>
-        /// <param name="body"></param>
         /// <param name="number"></param>
         /// <param name="state"></param>
         /// <param name="creator">
@@ -142,13 +141,14 @@ namespace G
         /// </param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="permissions"></param>
+        /// <param name="body"></param>
         /// <param name="organizationPermission">
         /// The organization permission for this project. Only present when owner is an organization.
         /// </param>
         /// <param name="private">
         /// Whether the project is private or not. Only present when owner is an organization.
         /// </param>
-        /// <param name="permissions"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -177,15 +177,15 @@ namespace G
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Body = body;
             this.Number = number;
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
             this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
-            this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
-            this.Body = body;
             this.OrganizationPermission = organizationPermission;
             this.Private = @private;
+            this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
         }
 
         /// <summary>

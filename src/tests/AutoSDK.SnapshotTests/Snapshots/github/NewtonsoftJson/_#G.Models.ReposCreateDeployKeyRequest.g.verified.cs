@@ -38,11 +38,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ReposCreateDeployKeyRequest" /> class.
         /// </summary>
-        /// <param name="title">
-        /// A name for the key.
-        /// </param>
         /// <param name="key">
         /// The contents of the key.
+        /// </param>
+        /// <param name="title">
+        /// A name for the key.
         /// </param>
         /// <param name="readOnly">
         /// If `true`, the key will only be able to read repository contents. Otherwise, the key will be able to read and write.  <br/>
@@ -54,8 +54,8 @@ namespace G
             string? title,
             bool? readOnly)
         {
-            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Title = title;
+            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.ReadOnly = readOnly;
         }
 

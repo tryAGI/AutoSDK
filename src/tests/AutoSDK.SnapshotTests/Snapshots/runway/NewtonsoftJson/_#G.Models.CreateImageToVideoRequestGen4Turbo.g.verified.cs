@@ -61,15 +61,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateImageToVideoRequestGen4Turbo" /> class.
         /// </summary>
+        /// <param name="promptImage"></param>
+        /// <param name="ratio">
+        /// The resolution of the output video.
+        /// </param>
         /// <param name="promptText">
         /// A non-empty string up to 1000 characters (measured in UTF-16 code units). This should describe in detail what should appear in the output.
         /// </param>
-        /// <param name="promptImage"></param>
         /// <param name="seed">
         /// If unspecified, a random number is chosen. Varying the seed integer is a way to get different results for the same other request parameters. Using the same seed integer for an identical request will produce similar results.
-        /// </param>
-        /// <param name="ratio">
-        /// The resolution of the output video.
         /// </param>
         /// <param name="duration">
         /// The number of seconds of duration for the output video.
@@ -87,10 +87,10 @@ namespace G
             global::G.CreateImageToVideoRequestGen4TurboContentModeration? contentModeration,
             string model = "gen4_turbo")
         {
-            this.PromptImage = promptImage;
-            this.Ratio = ratio;
             this.PromptText = promptText;
+            this.PromptImage = promptImage;
             this.Seed = seed;
+            this.Ratio = ratio;
             this.Duration = duration;
             this.ContentModeration = contentModeration;
             this.Model = model;

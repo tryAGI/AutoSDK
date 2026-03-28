@@ -66,10 +66,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EvalCustomDataSourceConfig" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of data source. Always `custom`.<br/>
-        /// Default Value: custom
-        /// </param>
         /// <param name="schema">
         /// The json schema for the run data source items.<br/>
         /// Learn how to build JSON schemas [here](https://json-schema.org/).<br/>
@@ -87,6 +83,10 @@ namespace G
         ///   "required": ["item"]<br/>
         /// }
         /// </param>
+        /// <param name="type">
+        /// The type of data source. Always `custom`.<br/>
+        /// Default Value: custom
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -94,8 +94,8 @@ namespace G
             object schema,
             global::G.EvalCustomDataSourceConfigType type = global::G.EvalCustomDataSourceConfigType.Custom)
         {
-            this.Schema = schema ?? throw new global::System.ArgumentNullException(nameof(schema));
             this.Type = type;
+            this.Schema = schema ?? throw new global::System.ArgumentNullException(nameof(schema));
         }
 
         /// <summary>

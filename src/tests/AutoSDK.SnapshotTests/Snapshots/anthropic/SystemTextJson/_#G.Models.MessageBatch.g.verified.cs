@@ -96,11 +96,6 @@ namespace G
         /// Unique object identifier.<br/>
         /// The format and length of IDs may change over time.
         /// </param>
-        /// <param name="type">
-        /// Object type.<br/>
-        /// For Message Batches, this is always `"message_batch"`.<br/>
-        /// Default Value: message_batch
-        /// </param>
         /// <param name="processingStatus">
         /// Processing status of the Message Batch.
         /// </param>
@@ -108,15 +103,15 @@ namespace G
         /// Tallies requests within the Message Batch, categorized by their status.<br/>
         /// Requests start as `processing` and move to one of the other statuses only once processing of the entire batch ends. The sum of all values always matches the total number of requests in the batch.
         /// </param>
-        /// <param name="endedAt">
-        /// RFC 3339 datetime string representing the time at which processing for the Message Batch ended. Specified only once processing ends.<br/>
-        /// Processing ends when every request in a Message Batch has either succeeded, errored, canceled, or expired.
-        /// </param>
         /// <param name="createdAt">
         /// RFC 3339 datetime string representing the time at which the Message Batch was created.
         /// </param>
         /// <param name="expiresAt">
         /// RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
+        /// </param>
+        /// <param name="endedAt">
+        /// RFC 3339 datetime string representing the time at which processing for the Message Batch ended. Specified only once processing ends.<br/>
+        /// Processing ends when every request in a Message Batch has either succeeded, errored, canceled, or expired.
         /// </param>
         /// <param name="archivedAt">
         /// RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
@@ -127,6 +122,11 @@ namespace G
         /// <param name="resultsUrl">
         /// URL to a `.jsonl` file containing the results of the Message Batch requests. Specified only once processing ends.<br/>
         /// Results in the file are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.
+        /// </param>
+        /// <param name="type">
+        /// Object type.<br/>
+        /// For Message Batches, this is always `"message_batch"`.<br/>
+        /// Default Value: message_batch
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -144,12 +144,12 @@ namespace G
             global::G.MessageBatchType type = global::G.MessageBatchType.MessageBatch)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Type = type;
             this.ProcessingStatus = processingStatus;
             this.RequestCounts = requestCounts ?? throw new global::System.ArgumentNullException(nameof(requestCounts));
+            this.EndedAt = endedAt;
             this.CreatedAt = createdAt;
             this.ExpiresAt = expiresAt;
-            this.Type = type;
-            this.EndedAt = endedAt;
             this.ArchivedAt = archivedAt;
             this.CancelInitiatedAt = cancelInitiatedAt;
             this.ResultsUrl = resultsUrl;

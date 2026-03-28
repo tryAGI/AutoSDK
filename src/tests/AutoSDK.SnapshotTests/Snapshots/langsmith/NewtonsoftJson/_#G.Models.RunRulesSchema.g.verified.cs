@@ -200,6 +200,11 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="tenantId"></param>
+        /// <param name="displayName"></param>
+        /// <param name="samplingRate"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="evaluatorVersion"></param>
         /// <param name="isEnabled">
         /// Default Value: true
         /// </param>
@@ -207,8 +212,6 @@ namespace G
         /// <param name="sessionName"></param>
         /// <param name="datasetId"></param>
         /// <param name="datasetName"></param>
-        /// <param name="displayName"></param>
-        /// <param name="samplingRate"></param>
         /// <param name="filter"></param>
         /// <param name="traceFilter"></param>
         /// <param name="treeFilter"></param>
@@ -231,13 +234,10 @@ namespace G
         /// <param name="extendOnly">
         /// Default Value: false
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
         /// <param name="backfillFrom"></param>
         /// <param name="transient">
         /// Default Value: false
         /// </param>
-        /// <param name="evaluatorVersion"></param>
         public RunRulesSchema(
             global::System.Guid id,
             global::System.Guid tenantId,
@@ -272,16 +272,13 @@ namespace G
         {
             this.Id = id;
             this.TenantId = tenantId;
-            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
-            this.SamplingRate = samplingRate;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
-            this.EvaluatorVersion = evaluatorVersion;
             this.IsEnabled = isEnabled;
             this.SessionId = sessionId;
             this.SessionName = sessionName;
             this.DatasetId = datasetId;
             this.DatasetName = datasetName;
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
+            this.SamplingRate = samplingRate;
             this.Filter = filter;
             this.TraceFilter = traceFilter;
             this.TreeFilter = treeFilter;
@@ -298,8 +295,11 @@ namespace G
             this.Alerts = alerts;
             this.Webhooks = webhooks;
             this.ExtendOnly = extendOnly;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.BackfillFrom = backfillFrom;
             this.Transient = transient;
+            this.EvaluatorVersion = evaluatorVersion;
         }
 
         /// <summary>

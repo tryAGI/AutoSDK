@@ -50,13 +50,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseFormatJsonSchemaJsonSchema" /> class.
         /// </summary>
-        /// <param name="description">
-        /// A description of what the response format is for, used by the model to<br/>
-        /// determine how to respond in the format.
-        /// </param>
         /// <param name="name">
         /// The name of the response format. Must be a-z, A-Z, 0-9, or contain<br/>
         /// underscores and dashes, with a maximum length of 64.
+        /// </param>
+        /// <param name="description">
+        /// A description of what the response format is for, used by the model to<br/>
+        /// determine how to respond in the format.
         /// </param>
         /// <param name="schema">
         /// The schema for the response format, described as a JSON Schema object.<br/>
@@ -76,8 +76,8 @@ namespace G
             global::G.ResponseFormatJsonSchemaSchema? schema,
             bool? strict)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Schema = schema;
             this.Strict = strict;
         }

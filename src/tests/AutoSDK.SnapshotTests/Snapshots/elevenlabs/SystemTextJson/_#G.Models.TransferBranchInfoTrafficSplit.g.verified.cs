@@ -39,9 +39,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TransferBranchInfoTrafficSplit" /> class.
         /// </summary>
-        /// <param name="branchReason"></param>
         /// <param name="branchId"></param>
         /// <param name="trafficPercentage"></param>
+        /// <param name="branchReason"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -50,9 +50,9 @@ namespace G
             double trafficPercentage,
             string branchReason = "traffic_split")
         {
+            this.BranchReason = branchReason;
             this.BranchId = branchId ?? throw new global::System.ArgumentNullException(nameof(branchId));
             this.TrafficPercentage = trafficPercentage;
-            this.BranchReason = branchReason;
         }
 
         /// <summary>

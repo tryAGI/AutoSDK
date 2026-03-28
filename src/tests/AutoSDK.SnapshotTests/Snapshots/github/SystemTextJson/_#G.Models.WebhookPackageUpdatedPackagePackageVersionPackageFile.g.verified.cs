@@ -97,13 +97,13 @@ namespace G
         /// <param name="createdAt"></param>
         /// <param name="downloadUrl"></param>
         /// <param name="id"></param>
-        /// <param name="md5"></param>
         /// <param name="name"></param>
-        /// <param name="sha1"></param>
         /// <param name="sha256"></param>
         /// <param name="size"></param>
         /// <param name="state"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="md5"></param>
+        /// <param name="sha1"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -124,13 +124,13 @@ namespace G
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.DownloadUrl = downloadUrl ?? throw new global::System.ArgumentNullException(nameof(downloadUrl));
             this.Id = id;
+            this.Md5 = md5;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Sha1 = sha1;
             this.Sha256 = sha256 ?? throw new global::System.ArgumentNullException(nameof(sha256));
             this.Size = size;
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
-            this.Md5 = md5;
-            this.Sha1 = sha1;
         }
 
         /// <summary>

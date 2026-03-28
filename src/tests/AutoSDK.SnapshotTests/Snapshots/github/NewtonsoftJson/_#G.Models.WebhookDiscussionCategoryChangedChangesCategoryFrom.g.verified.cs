@@ -84,10 +84,10 @@ namespace G
         /// <param name="id"></param>
         /// <param name="isAnswerable"></param>
         /// <param name="name"></param>
-        /// <param name="nodeId"></param>
         /// <param name="repositoryId"></param>
         /// <param name="slug"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="nodeId"></param>
         public WebhookDiscussionCategoryChangedChangesCategoryFrom(
             global::System.DateTime createdAt,
             string description,
@@ -106,10 +106,10 @@ namespace G
             this.Id = id;
             this.IsAnswerable = isAnswerable;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.NodeId = nodeId;
             this.RepositoryId = repositoryId;
             this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
-            this.NodeId = nodeId;
         }
 
         /// <summary>

@@ -51,20 +51,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseErrorEvent" /> class.
         /// </summary>
+        /// <param name="message">
+        /// The error message.
+        /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
         /// <param name="type">
         /// The type of the event. Always `error`.
         /// </param>
         /// <param name="code">
         /// The error code.
         /// </param>
-        /// <param name="message">
-        /// The error message.
-        /// </param>
         /// <param name="param">
         /// The error parameter.
-        /// </param>
-        /// <param name="sequenceNumber">
-        /// The sequence number of this event.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -76,11 +76,11 @@ namespace G
             string? code,
             string? param)
         {
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.SequenceNumber = sequenceNumber;
             this.Type = type;
             this.Code = code;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Param = param;
+            this.SequenceNumber = sequenceNumber;
         }
 
         /// <summary>

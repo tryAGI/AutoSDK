@@ -31,8 +31,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FileCommit" /> class.
         /// </summary>
-        /// <param name="content"></param>
         /// <param name="commit"></param>
+        /// <param name="content"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -40,8 +40,8 @@ namespace G
             global::G.FileCommitCommit commit,
             global::G.FileCommitContent? content)
         {
-            this.Commit = commit ?? throw new global::System.ArgumentNullException(nameof(commit));
             this.Content = content;
+            this.Commit = commit ?? throw new global::System.ArgumentNullException(nameof(commit));
         }
 
         /// <summary>

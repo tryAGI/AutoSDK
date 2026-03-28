@@ -77,6 +77,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Organization" /> class.
         /// </summary>
+        /// <param name="profile">
+        /// Profile.
+        /// </param>
         /// <param name="name">
         /// The name of the organization, defined by its ID.<br/>
         /// - Format: `organization/{organization.id}`.<br/>
@@ -105,9 +108,6 @@ namespace G
         /// The user that owns the organization.<br/>
         /// Included only in responses
         /// </param>
-        /// <param name="profile">
-        /// Profile.
-        /// </param>
         /// <param name="permission">
         /// Included only in responses
         /// </param>
@@ -121,13 +121,13 @@ namespace G
             global::G.User? owner,
             global::G.MgmtV1betaPermission? permission)
         {
-            this.Profile = profile ?? throw new global::System.ArgumentNullException(nameof(profile));
             this.Name = name;
             this.Uid = uid;
             this.Id = id;
             this.CreateTime = createTime;
             this.UpdateTime = updateTime;
             this.Owner = owner;
+            this.Profile = profile ?? throw new global::System.ArgumentNullException(nameof(profile));
             this.Permission = permission;
         }
 

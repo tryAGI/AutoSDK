@@ -128,9 +128,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiIntegrationWebhookToolConfigOutput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: api_integration_webhook
-        /// </param>
         /// <param name="name"></param>
         /// <param name="description">
         /// Description of when the tool should be used and what it does.
@@ -149,9 +146,6 @@ namespace G
         /// </param>
         /// <param name="assignments">
         /// Configuration for extracting values from tool responses and assigning them to dynamic variables
-        /// </param>
-        /// <param name="toolCallSound">
-        /// Predefined tool call sound type to play during tool execution. If not specified, no tool call sound will be played.
         /// </param>
         /// <param name="toolCallSoundBehavior">
         /// Determines when the tool call sound should play. 'auto' only plays when there's pre-tool speech, 'always' plays for every tool call.<br/>
@@ -175,8 +169,14 @@ namespace G
         /// </param>
         /// <param name="apiIntegrationId"></param>
         /// <param name="apiIntegrationConnectionId"></param>
+        /// <param name="toolCallSound">
+        /// Predefined tool call sound type to play during tool execution. If not specified, no tool call sound will be played.
+        /// </param>
         /// <param name="apiSchemaOverrides">
         /// User overrides applied on top of the base api_schema
+        /// </param>
+        /// <param name="type">
+        /// Default Value: api_integration_webhook
         /// </param>
         public ApiIntegrationWebhookToolConfigOutput(
             string name,
@@ -196,12 +196,14 @@ namespace G
             global::G.ApiIntegrationWebhookOverridesOutput? apiSchemaOverrides,
             string type = "api_integration_webhook")
         {
+            this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.ResponseTimeoutSecs = responseTimeoutSecs;
             this.DisableInterruptions = disableInterruptions;
             this.ForcePreToolSpeech = forcePreToolSpeech;
             this.Assignments = assignments ?? throw new global::System.ArgumentNullException(nameof(assignments));
+            this.ToolCallSound = toolCallSound;
             this.ToolCallSoundBehavior = toolCallSoundBehavior;
             this.ToolErrorHandlingMode = toolErrorHandlingMode;
             this.DynamicVariables = dynamicVariables ?? throw new global::System.ArgumentNullException(nameof(dynamicVariables));
@@ -209,8 +211,6 @@ namespace G
             this.ToolVersion = toolVersion ?? throw new global::System.ArgumentNullException(nameof(toolVersion));
             this.ApiIntegrationId = apiIntegrationId ?? throw new global::System.ArgumentNullException(nameof(apiIntegrationId));
             this.ApiIntegrationConnectionId = apiIntegrationConnectionId ?? throw new global::System.ArgumentNullException(nameof(apiIntegrationConnectionId));
-            this.Type = type;
-            this.ToolCallSound = toolCallSound;
             this.ApiSchemaOverrides = apiSchemaOverrides;
         }
 

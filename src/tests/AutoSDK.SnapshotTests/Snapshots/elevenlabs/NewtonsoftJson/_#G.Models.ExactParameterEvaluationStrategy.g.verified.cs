@@ -31,16 +31,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ExactParameterEvaluationStrategy" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="expectedValue">
         /// The exact string value that the parameter must match.
         /// </param>
+        /// <param name="type"></param>
         public ExactParameterEvaluationStrategy(
             string expectedValue,
             string type = "exact")
         {
-            this.ExpectedValue = expectedValue ?? throw new global::System.ArgumentNullException(nameof(expectedValue));
             this.Type = type;
+            this.ExpectedValue = expectedValue ?? throw new global::System.ArgumentNullException(nameof(expectedValue));
         }
 
         /// <summary>

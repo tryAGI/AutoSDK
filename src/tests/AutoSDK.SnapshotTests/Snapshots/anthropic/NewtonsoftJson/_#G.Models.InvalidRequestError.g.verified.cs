@@ -32,18 +32,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="InvalidRequestError" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: invalid_request_error
-        /// </param>
         /// <param name="message">
         /// Default Value: Invalid request
+        /// </param>
+        /// <param name="type">
+        /// Default Value: invalid_request_error
         /// </param>
         public InvalidRequestError(
             string message,
             global::G.InvalidRequestErrorType type = global::G.InvalidRequestErrorType.InvalidRequestError)
         {
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Type = type;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
         }
 
         /// <summary>

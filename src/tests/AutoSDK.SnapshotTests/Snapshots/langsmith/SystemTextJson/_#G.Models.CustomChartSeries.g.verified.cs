@@ -66,13 +66,13 @@ namespace G
         /// Initializes a new instance of the <see cref="CustomChartSeries" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="filters"></param>
         /// <param name="metric">
         /// Metrics you can chart. Feedback metrics are not available for organization-scoped charts.
         /// </param>
+        /// <param name="id"></param>
+        /// <param name="filters"></param>
         /// <param name="feedbackKey"></param>
         /// <param name="workspaceId"></param>
-        /// <param name="id"></param>
         /// <param name="groupBy"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -87,11 +87,11 @@ namespace G
             global::G.RunStatsGroupBySeriesResponse? groupBy)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Metric = metric;
-            this.Id = id;
             this.Filters = filters;
+            this.Metric = metric;
             this.FeedbackKey = feedbackKey;
             this.WorkspaceId = workspaceId;
+            this.Id = id;
             this.GroupBy = groupBy;
         }
 

@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TransferToAgentToolConfig" /> class.
         /// </summary>
+        /// <param name="transfers"></param>
         /// <param name="systemToolType">
         /// Default Value: transfer_to_agent
         /// </param>
-        /// <param name="transfers"></param>
         public TransferToAgentToolConfig(
             global::System.Collections.Generic.IList<global::G.AgentTransfer> transfers,
             string? systemToolType)
         {
-            this.Transfers = transfers ?? throw new global::System.ArgumentNullException(nameof(transfers));
             this.SystemToolType = systemToolType;
+            this.Transfers = transfers ?? throw new global::System.ArgumentNullException(nameof(transfers));
         }
 
         /// <summary>

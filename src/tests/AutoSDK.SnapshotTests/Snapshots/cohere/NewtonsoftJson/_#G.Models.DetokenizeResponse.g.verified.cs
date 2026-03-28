@@ -32,11 +32,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DetokenizeResponse" /> class.
         /// </summary>
+        /// <param name="meta"></param>
         /// <param name="text">
         /// A string representing the list of tokens.<br/>
         /// Included only in responses
         /// </param>
-        /// <param name="meta"></param>
         public DetokenizeResponse(
             global::G.ApiMeta? meta,
             string text = default!)

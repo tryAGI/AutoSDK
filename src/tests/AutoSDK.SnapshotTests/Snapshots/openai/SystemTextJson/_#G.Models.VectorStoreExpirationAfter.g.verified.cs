@@ -32,11 +32,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="VectorStoreExpirationAfter" /> class.
         /// </summary>
-        /// <param name="anchor">
-        /// Anchor timestamp after which the expiration policy applies. Supported anchors: `last_active_at`.
-        /// </param>
         /// <param name="days">
         /// The number of days after the anchor time that the vector store will expire.
+        /// </param>
+        /// <param name="anchor">
+        /// Anchor timestamp after which the expiration policy applies. Supported anchors: `last_active_at`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -45,8 +45,8 @@ namespace G
             int days,
             global::G.VectorStoreExpirationAfterAnchor anchor)
         {
-            this.Days = days;
             this.Anchor = anchor;
+            this.Days = days;
         }
 
         /// <summary>

@@ -56,10 +56,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FilterViewCreate" /> class.
         /// </summary>
+        /// <param name="displayName"></param>
         /// <param name="filterString"></param>
         /// <param name="traceFilterString"></param>
         /// <param name="treeFilterString"></param>
-        /// <param name="displayName"></param>
         /// <param name="description"></param>
         /// <param name="type">
         /// Default Value: runs
@@ -75,10 +75,10 @@ namespace G
             string? description,
             global::G.FilterViewType? type)
         {
-            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.FilterString = filterString;
             this.TraceFilterString = traceFilterString;
             this.TreeFilterString = treeFilterString;
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Description = description;
             this.Type = type;
         }

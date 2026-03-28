@@ -53,15 +53,15 @@ namespace G
         /// <param name="id">
         /// The unique ID of the file search tool call.
         /// </param>
-        /// <param name="type">
-        /// The type of the file search tool call. Always `file_search_call`.
-        /// </param>
         /// <param name="status">
         /// The status of the file search tool call. One of `in_progress`, <br/>
         /// `searching`, `incomplete` or `failed`,
         /// </param>
         /// <param name="queries">
         /// The queries used to search for files.
+        /// </param>
+        /// <param name="type">
+        /// The type of the file search tool call. Always `file_search_call`.
         /// </param>
         /// <param name="results">
         /// The results of the file search tool call.
@@ -74,9 +74,9 @@ namespace G
             global::System.Collections.Generic.IList<global::G.FileSearchToolCallResult>? results)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Type = type;
             this.Status = status;
             this.Queries = queries ?? throw new global::System.ArgumentNullException(nameof(queries));
-            this.Type = type;
             this.Results = results;
         }
 

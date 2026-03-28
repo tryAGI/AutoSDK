@@ -50,8 +50,8 @@ namespace G
         /// </summary>
         /// <param name="admin"></param>
         /// <param name="pull"></param>
-        /// <param name="triage"></param>
         /// <param name="push"></param>
+        /// <param name="triage"></param>
         /// <param name="maintain"></param>
         public RepositoryPermissions(
             bool admin,
@@ -62,8 +62,8 @@ namespace G
         {
             this.Admin = admin;
             this.Pull = pull;
-            this.Push = push;
             this.Triage = triage;
+            this.Push = push;
             this.Maintain = maintain;
         }
 

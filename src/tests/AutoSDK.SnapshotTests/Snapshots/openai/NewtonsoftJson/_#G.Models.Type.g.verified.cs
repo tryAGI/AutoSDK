@@ -33,20 +33,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Type" /> class.
         /// </summary>
+        /// <param name="text">
+        /// The text to type.
+        /// </param>
         /// <param name="type1">
         /// Specifies the event type. For a type action, this property is <br/>
         /// always set to `type`.<br/>
         /// Default Value: type
         /// </param>
-        /// <param name="text">
-        /// The text to type.
-        /// </param>
         public Type(
             string text,
             global::G.TypeType1 type1 = global::G.TypeType1.Type)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type1 = type1;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

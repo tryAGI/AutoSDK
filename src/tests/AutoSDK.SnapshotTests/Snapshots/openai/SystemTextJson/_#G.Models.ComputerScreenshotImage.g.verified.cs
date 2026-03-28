@@ -40,16 +40,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ComputerScreenshotImage" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Specifies the event type. For a computer screenshot, this property is <br/>
-        /// always set to `computer_screenshot`.<br/>
-        /// Default Value: computer_screenshot
-        /// </param>
         /// <param name="imageUrl">
         /// The URL of the screenshot image.
         /// </param>
         /// <param name="fileId">
         /// The identifier of an uploaded file that contains the screenshot.
+        /// </param>
+        /// <param name="type">
+        /// Specifies the event type. For a computer screenshot, this property is <br/>
+        /// always set to `computer_screenshot`.<br/>
+        /// Default Value: computer_screenshot
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

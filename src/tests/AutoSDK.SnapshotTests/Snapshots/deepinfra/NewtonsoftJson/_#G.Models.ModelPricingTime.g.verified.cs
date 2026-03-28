@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelPricingTime" /> class.
         /// </summary>
+        /// <param name="centsPerSec"></param>
         /// <param name="type">
         /// Default Value: time
         /// </param>
-        /// <param name="centsPerSec"></param>
         public ModelPricingTime(
             double centsPerSec,
             string? type)
         {
-            this.CentsPerSec = centsPerSec;
             this.Type = type;
+            this.CentsPerSec = centsPerSec;
         }
 
         /// <summary>

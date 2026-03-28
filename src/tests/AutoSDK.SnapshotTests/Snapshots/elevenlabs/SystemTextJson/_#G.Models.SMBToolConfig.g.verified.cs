@@ -102,11 +102,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="SMBToolConfig" /> class.
         /// </summary>
+        /// <param name="name"></param>
+        /// <param name="params"></param>
         /// <param name="type">
         /// Tool type identifier<br/>
         /// Default Value: smb
         /// </param>
-        /// <param name="name"></param>
         /// <param name="description">
         /// Description of when the tool should be used and what it does.
         /// </param>
@@ -140,7 +141,6 @@ namespace G
         /// Whether this tool is enabled for the agent<br/>
         /// Default Value: true
         /// </param>
-        /// <param name="params"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -158,9 +158,8 @@ namespace G
             global::G.ToolErrorHandlingMode? toolErrorHandlingMode,
             bool? enabled)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Params = @params;
             this.Type = type;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
             this.ResponseTimeoutSecs = responseTimeoutSecs;
             this.DisableInterruptions = disableInterruptions;
@@ -170,6 +169,7 @@ namespace G
             this.ToolCallSoundBehavior = toolCallSoundBehavior;
             this.ToolErrorHandlingMode = toolErrorHandlingMode;
             this.Enabled = enabled;
+            this.Params = @params;
         }
 
         /// <summary>

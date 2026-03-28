@@ -259,16 +259,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookWorkflowRunCompletedWorkflowRun" /> class.
         /// </summary>
-        /// <param name="actor"></param>
         /// <param name="artifactsUrl"></param>
         /// <param name="cancelUrl"></param>
         /// <param name="checkSuiteId"></param>
         /// <param name="checkSuiteNodeId"></param>
         /// <param name="checkSuiteUrl"></param>
-        /// <param name="conclusion"></param>
         /// <param name="createdAt"></param>
         /// <param name="event"></param>
-        /// <param name="headBranch"></param>
         /// <param name="headCommit"></param>
         /// <param name="headRepository"></param>
         /// <param name="headSha"></param>
@@ -276,23 +273,26 @@ namespace G
         /// <param name="id"></param>
         /// <param name="jobsUrl"></param>
         /// <param name="logsUrl"></param>
-        /// <param name="name"></param>
         /// <param name="nodeId"></param>
         /// <param name="path"></param>
-        /// <param name="previousAttemptUrl"></param>
         /// <param name="pullRequests"></param>
-        /// <param name="referencedWorkflows"></param>
         /// <param name="repository"></param>
         /// <param name="rerunUrl"></param>
         /// <param name="runAttempt"></param>
         /// <param name="runNumber"></param>
         /// <param name="runStartedAt"></param>
         /// <param name="status"></param>
-        /// <param name="triggeringActor"></param>
         /// <param name="updatedAt"></param>
         /// <param name="url"></param>
         /// <param name="workflowId"></param>
         /// <param name="workflowUrl"></param>
+        /// <param name="actor"></param>
+        /// <param name="conclusion"></param>
+        /// <param name="headBranch"></param>
+        /// <param name="name"></param>
+        /// <param name="previousAttemptUrl"></param>
+        /// <param name="referencedWorkflows"></param>
+        /// <param name="triggeringActor"></param>
         /// <param name="displayTitle">
         /// The event-specific title associated with the run or the run-name if set, or the value of `run-name` if it is set in the workflow.<br/>
         /// Example: Simple Workflow
@@ -337,13 +337,16 @@ namespace G
             global::G.WebhookWorkflowRunCompletedWorkflowRunTriggeringActor? triggeringActor,
             string? displayTitle)
         {
+            this.Actor = actor;
             this.ArtifactsUrl = artifactsUrl ?? throw new global::System.ArgumentNullException(nameof(artifactsUrl));
             this.CancelUrl = cancelUrl ?? throw new global::System.ArgumentNullException(nameof(cancelUrl));
             this.CheckSuiteId = checkSuiteId;
             this.CheckSuiteNodeId = checkSuiteNodeId ?? throw new global::System.ArgumentNullException(nameof(checkSuiteNodeId));
             this.CheckSuiteUrl = checkSuiteUrl ?? throw new global::System.ArgumentNullException(nameof(checkSuiteUrl));
+            this.Conclusion = conclusion;
             this.CreatedAt = createdAt;
             this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));
+            this.HeadBranch = headBranch;
             this.HeadCommit = headCommit ?? throw new global::System.ArgumentNullException(nameof(headCommit));
             this.HeadRepository = headRepository ?? throw new global::System.ArgumentNullException(nameof(headRepository));
             this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
@@ -351,26 +354,23 @@ namespace G
             this.Id = id;
             this.JobsUrl = jobsUrl ?? throw new global::System.ArgumentNullException(nameof(jobsUrl));
             this.LogsUrl = logsUrl ?? throw new global::System.ArgumentNullException(nameof(logsUrl));
+            this.Name = name;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
+            this.PreviousAttemptUrl = previousAttemptUrl;
             this.PullRequests = pullRequests ?? throw new global::System.ArgumentNullException(nameof(pullRequests));
+            this.ReferencedWorkflows = referencedWorkflows;
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.RerunUrl = rerunUrl ?? throw new global::System.ArgumentNullException(nameof(rerunUrl));
             this.RunAttempt = runAttempt;
             this.RunNumber = runNumber;
             this.RunStartedAt = runStartedAt;
             this.Status = status;
+            this.TriggeringActor = triggeringActor;
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.WorkflowId = workflowId;
             this.WorkflowUrl = workflowUrl ?? throw new global::System.ArgumentNullException(nameof(workflowUrl));
-            this.Actor = actor;
-            this.Conclusion = conclusion;
-            this.HeadBranch = headBranch;
-            this.Name = name;
-            this.PreviousAttemptUrl = previousAttemptUrl;
-            this.ReferencedWorkflows = referencedWorkflows;
-            this.TriggeringActor = triggeringActor;
             this.DisplayTitle = displayTitle;
         }
 

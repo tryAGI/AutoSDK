@@ -46,9 +46,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseMCPCallInProgressEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always 'response.mcp_call.in_progress'.
-        /// </param>
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
@@ -57,6 +54,9 @@ namespace G
         /// </param>
         /// <param name="itemId">
         /// The unique identifier of the MCP tool call item being processed.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always 'response.mcp_call.in_progress'.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -67,10 +67,10 @@ namespace G
             string itemId,
             global::G.ResponseMCPCallInProgressEventType type)
         {
+            this.Type = type;
             this.SequenceNumber = sequenceNumber;
             this.OutputIndex = outputIndex;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
-            this.Type = type;
         }
 
         /// <summary>

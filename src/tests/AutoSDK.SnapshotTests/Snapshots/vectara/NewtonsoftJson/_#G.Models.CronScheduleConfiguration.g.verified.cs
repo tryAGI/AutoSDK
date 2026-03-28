@@ -55,10 +55,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CronScheduleConfiguration" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of schedule.<br/>
-        /// Example: cron
-        /// </param>
         /// <param name="cronExpression">
         /// Cron expression specifying when the schedule should execute.<br/>
         /// Uses standard 5-field cron format:<br/>
@@ -84,12 +80,16 @@ namespace G
         /// Tool for testing: https://crontab.guru/<br/>
         /// Example: 0 9 * * *
         /// </param>
+        /// <param name="type">
+        /// The type of schedule.<br/>
+        /// Example: cron
+        /// </param>
         public CronScheduleConfiguration(
             string cronExpression,
             global::G.CronScheduleConfigurationType type)
         {
-            this.CronExpression = cronExpression ?? throw new global::System.ArgumentNullException(nameof(cronExpression));
             this.Type = type;
+            this.CronExpression = cronExpression ?? throw new global::System.ArgumentNullException(nameof(cronExpression));
         }
 
         /// <summary>

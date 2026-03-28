@@ -138,9 +138,6 @@ namespace G
         /// <param name="id">
         /// The identifier of the run step, which can be referenced in API endpoints.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `thread.run.step`.
-        /// </param>
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) for when the run step was created.
         /// </param>
@@ -161,6 +158,9 @@ namespace G
         /// </param>
         /// <param name="stepDetails">
         /// The details of the run step.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `thread.run.step`.
         /// </param>
         /// <param name="lastError">
         /// The last error associated with this run step. Will be `null` if there are no errors.
@@ -209,6 +209,7 @@ namespace G
             global::G.RunStepCompletionUsage? usage)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.CreatedAt = createdAt;
             this.AssistantId = assistantId ?? throw new global::System.ArgumentNullException(nameof(assistantId));
             this.ThreadId = threadId ?? throw new global::System.ArgumentNullException(nameof(threadId));
@@ -216,7 +217,6 @@ namespace G
             this.Type = type;
             this.Status = status;
             this.StepDetails = stepDetails;
-            this.Object = @object;
             this.LastError = lastError;
             this.ExpiredAt = expiredAt;
             this.CancelledAt = cancelledAt;

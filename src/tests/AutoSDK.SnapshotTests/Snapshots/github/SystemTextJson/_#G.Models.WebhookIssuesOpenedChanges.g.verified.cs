@@ -31,11 +31,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookIssuesOpenedChanges" /> class.
         /// </summary>
-        /// <param name="oldIssue">
-        /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
-        /// </param>
         /// <param name="oldRepository">
         /// A git repository
+        /// </param>
+        /// <param name="oldIssue">
+        /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace G
             global::G.WebhookIssuesOpenedChangesOldRepository oldRepository,
             global::G.WebhookIssuesOpenedChangesOldIssue? oldIssue)
         {
-            this.OldRepository = oldRepository ?? throw new global::System.ArgumentNullException(nameof(oldRepository));
             this.OldIssue = oldIssue;
+            this.OldRepository = oldRepository ?? throw new global::System.ArgumentNullException(nameof(oldRepository));
         }
 
         /// <summary>

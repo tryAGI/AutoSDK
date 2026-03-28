@@ -48,9 +48,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="InputAudioChunkPayload" /> class.
         /// </summary>
-        /// <param name="messageType">
-        /// Must be 'input_audio_chunk'.
-        /// </param>
         /// <param name="audioBase64">
         /// Base64-encoded audio data.
         /// </param>
@@ -59,6 +56,9 @@ namespace G
         /// </param>
         /// <param name="sampleRate">
         /// Audio sample rate in Hz.
+        /// </param>
+        /// <param name="messageType">
+        /// Must be 'input_audio_chunk'.
         /// </param>
         /// <param name="previousText">
         /// Optional previous text context.
@@ -70,10 +70,10 @@ namespace G
             global::G.InputAudioChunkPayloadMessageType messageType,
             string? previousText)
         {
+            this.MessageType = messageType;
             this.AudioBase64 = audioBase64 ?? throw new global::System.ArgumentNullException(nameof(audioBase64));
             this.Commit = commit;
             this.SampleRate = sampleRate;
-            this.MessageType = messageType;
             this.PreviousText = previousText;
         }
 

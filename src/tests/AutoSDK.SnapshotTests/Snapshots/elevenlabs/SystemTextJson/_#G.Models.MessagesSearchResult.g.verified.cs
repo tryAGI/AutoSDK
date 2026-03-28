@@ -70,11 +70,11 @@ namespace G
         /// </summary>
         /// <param name="conversationId"></param>
         /// <param name="agentId"></param>
-        /// <param name="agentName"></param>
         /// <param name="transcriptIndex"></param>
         /// <param name="chunkText"></param>
         /// <param name="score"></param>
         /// <param name="conversationStartTimeUnixSecs"></param>
+        /// <param name="agentName"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -89,11 +89,11 @@ namespace G
         {
             this.ConversationId = conversationId ?? throw new global::System.ArgumentNullException(nameof(conversationId));
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
+            this.AgentName = agentName;
             this.TranscriptIndex = transcriptIndex;
             this.ChunkText = chunkText ?? throw new global::System.ArgumentNullException(nameof(chunkText));
             this.Score = score;
             this.ConversationStartTimeUnixSecs = conversationStartTimeUnixSecs;
-            this.AgentName = agentName;
         }
 
         /// <summary>

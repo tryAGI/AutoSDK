@@ -79,15 +79,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookStatusCommit" /> class.
         /// </summary>
-        /// <param name="author"></param>
         /// <param name="commentsUrl"></param>
         /// <param name="commit"></param>
-        /// <param name="committer"></param>
         /// <param name="htmlUrl"></param>
         /// <param name="nodeId"></param>
         /// <param name="parents"></param>
         /// <param name="sha"></param>
         /// <param name="url"></param>
+        /// <param name="author"></param>
+        /// <param name="committer"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -102,15 +102,15 @@ namespace G
             global::G.WebhookStatusCommitAuthor? author,
             global::G.WebhookStatusCommitCommitter? committer)
         {
+            this.Author = author;
             this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
             this.Commit = commit ?? throw new global::System.ArgumentNullException(nameof(commit));
+            this.Committer = committer;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Parents = parents ?? throw new global::System.ArgumentNullException(nameof(parents));
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Author = author;
-            this.Committer = committer;
         }
 
         /// <summary>

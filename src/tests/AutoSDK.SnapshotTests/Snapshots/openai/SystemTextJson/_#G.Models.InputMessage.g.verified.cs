@@ -51,19 +51,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="InputMessage" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the message input. Always set to `message`.
-        /// </param>
         /// <param name="role">
         /// The role of the message input. One of `user`, `system`, or `developer`.
-        /// </param>
-        /// <param name="status">
-        /// The status of item. One of `in_progress`, `completed`, or<br/>
-        /// `incomplete`. Populated when items are returned via API.
         /// </param>
         /// <param name="content">
         /// A list of one or many input items to the model, containing different content <br/>
         /// types.
+        /// </param>
+        /// <param name="type">
+        /// The type of the message input. Always set to `message`.
+        /// </param>
+        /// <param name="status">
+        /// The status of item. One of `in_progress`, `completed`, or<br/>
+        /// `incomplete`. Populated when items are returned via API.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -74,10 +74,10 @@ namespace G
             global::G.InputMessageType? type,
             global::G.InputMessageStatus? status)
         {
-            this.Role = role;
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Type = type;
+            this.Role = role;
             this.Status = status;
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
         }
 
         /// <summary>

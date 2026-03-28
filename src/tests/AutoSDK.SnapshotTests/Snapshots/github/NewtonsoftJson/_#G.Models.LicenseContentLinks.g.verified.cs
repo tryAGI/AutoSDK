@@ -36,17 +36,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="LicenseContentLinks" /> class.
         /// </summary>
+        /// <param name="self"></param>
         /// <param name="git"></param>
         /// <param name="html"></param>
-        /// <param name="self"></param>
         public LicenseContentLinks(
             string self,
             string? git,
             string? html)
         {
-            this.Self = self ?? throw new global::System.ArgumentNullException(nameof(self));
             this.Git = git;
             this.Html = html;
+            this.Self = self ?? throw new global::System.ArgumentNullException(nameof(self));
         }
 
         /// <summary>

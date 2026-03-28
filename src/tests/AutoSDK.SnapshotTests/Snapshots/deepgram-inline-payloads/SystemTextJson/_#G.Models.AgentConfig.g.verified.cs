@@ -38,13 +38,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AgentConfig" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="model">
         /// The model to use.
         /// </param>
         /// <param name="instructions">
         /// Agent instructions.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -53,8 +53,8 @@ namespace G
             string? instructions,
             string type = "AgentConfig")
         {
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Type = type;
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Instructions = instructions;
         }
 

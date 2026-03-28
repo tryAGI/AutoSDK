@@ -36,17 +36,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PlainTextSource" /> class.
         /// </summary>
+        /// <param name="data"></param>
         /// <param name="type"></param>
         /// <param name="mediaType"></param>
-        /// <param name="data"></param>
         public PlainTextSource(
             string data,
             global::G.PlainTextSourceType type,
             global::G.PlainTextSourceMediaType mediaType)
         {
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Type = type;
             this.MediaType = mediaType;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
         }
 
         /// <summary>

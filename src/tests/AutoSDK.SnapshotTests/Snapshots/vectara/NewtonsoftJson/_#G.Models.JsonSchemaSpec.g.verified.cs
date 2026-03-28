@@ -48,11 +48,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="JsonSchemaSpec" /> class.
         /// </summary>
-        /// <param name="description">
-        /// A description of what the response format is for, used by the model to determine how to respond in the format.
-        /// </param>
         /// <param name="name">
         /// A unique name identifier for this schema.
+        /// </param>
+        /// <param name="schema">
+        /// A JSON Schema definition for specifying data structure. Supports recursive schemas for nested objects.
+        /// </param>
+        /// <param name="description">
+        /// A description of what the response format is for, used by the model to determine how to respond in the format.
         /// </param>
         /// <param name="strict">
         /// When true, enforces strict schema adherence. The model will always follow the exact schema structure.<br/>
@@ -63,19 +66,16 @@ namespace G
         /// - Unsupported keywords: minLength, maxLength, pattern, minimum, maximum, minItems, maxItems<br/>
         /// - Root schema cannot use `anyOf` type
         /// </param>
-        /// <param name="schema">
-        /// A JSON Schema definition for specifying data structure. Supports recursive schemas for nested objects.
-        /// </param>
         public JsonSchemaSpec(
             string name,
             global::G.JsonSchemaDefinition schema,
             string? description,
             bool? strict)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Schema = schema ?? throw new global::System.ArgumentNullException(nameof(schema));
             this.Description = description;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Strict = strict;
+            this.Schema = schema ?? throw new global::System.ArgumentNullException(nameof(schema));
         }
 
         /// <summary>

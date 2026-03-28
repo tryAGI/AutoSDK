@@ -56,10 +56,10 @@ namespace G
         /// </summary>
         /// <param name="logType"></param>
         /// <param name="message"></param>
-        /// <param name="data"></param>
         /// <param name="id"></param>
         /// <param name="jobId"></param>
         /// <param name="createdAt"></param>
+        /// <param name="data"></param>
         public PromptOptimizationJobLog(
             global::G.EPromptOptimizationJobLogType logType,
             string message,
@@ -70,10 +70,10 @@ namespace G
         {
             this.LogType = logType;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Data = data;
             this.Id = id;
             this.JobId = jobId;
             this.CreatedAt = createdAt;
-            this.Data = data;
         }
 
         /// <summary>

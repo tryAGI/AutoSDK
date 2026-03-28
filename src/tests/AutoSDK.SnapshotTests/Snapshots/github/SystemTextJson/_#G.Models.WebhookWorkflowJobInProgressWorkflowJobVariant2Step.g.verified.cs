@@ -58,12 +58,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookWorkflowJobInProgressWorkflowJobVariant2Step" /> class.
         /// </summary>
-        /// <param name="completedAt"></param>
-        /// <param name="conclusion"></param>
         /// <param name="name"></param>
         /// <param name="number"></param>
-        /// <param name="startedAt"></param>
         /// <param name="status"></param>
+        /// <param name="completedAt"></param>
+        /// <param name="conclusion"></param>
+        /// <param name="startedAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -75,12 +75,12 @@ namespace G
             string? conclusion,
             string? startedAt)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Number = number;
-            this.Status = status;
             this.CompletedAt = completedAt;
             this.Conclusion = conclusion;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Number = number;
             this.StartedAt = startedAt;
+            this.Status = status;
         }
 
         /// <summary>

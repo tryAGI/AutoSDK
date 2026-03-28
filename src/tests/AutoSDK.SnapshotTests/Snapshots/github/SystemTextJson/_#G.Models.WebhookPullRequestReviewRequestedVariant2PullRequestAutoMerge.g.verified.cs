@@ -44,6 +44,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPullRequestReviewRequestedVariant2PullRequestAutoMerge" /> class.
         /// </summary>
+        /// <param name="mergeMethod">
+        /// The merge method to use.
+        /// </param>
         /// <param name="commitMessage">
         /// Commit message for the merge commit.
         /// </param>
@@ -51,9 +54,6 @@ namespace G
         /// Title for the merge commit message.
         /// </param>
         /// <param name="enabledBy"></param>
-        /// <param name="mergeMethod">
-        /// The merge method to use.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -63,10 +63,10 @@ namespace G
             string? commitTitle,
             global::G.WebhookPullRequestReviewRequestedVariant2PullRequestAutoMergeEnabledBy? enabledBy)
         {
-            this.MergeMethod = mergeMethod;
             this.CommitMessage = commitMessage;
             this.CommitTitle = commitTitle;
             this.EnabledBy = enabledBy;
+            this.MergeMethod = mergeMethod;
         }
 
         /// <summary>

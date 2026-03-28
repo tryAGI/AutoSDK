@@ -38,12 +38,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="SessionUpdatePayload" /> class.
         /// </summary>
+        /// <param name="session">
+        /// Configuration for an xAI Realtime session.
+        /// </param>
         /// <param name="type"></param>
         /// <param name="eventId">
         /// Optional event ID.
-        /// </param>
-        /// <param name="session">
-        /// Configuration for an xAI Realtime session.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -53,9 +53,9 @@ namespace G
             global::G.SessionUpdatePayloadType type,
             string? eventId)
         {
-            this.Session = session ?? throw new global::System.ArgumentNullException(nameof(session));
             this.Type = type;
             this.EventId = eventId;
+            this.Session = session ?? throw new global::System.ArgumentNullException(nameof(session));
         }
 
         /// <summary>

@@ -60,9 +60,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectApiKey" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The object type, which is always `organization.project.api_key`
-        /// </param>
         /// <param name="redactedValue">
         /// The redacted value of the API key
         /// </param>
@@ -79,6 +76,9 @@ namespace G
         /// The identifier, which can be referenced in API endpoints
         /// </param>
         /// <param name="owner"></param>
+        /// <param name="object">
+        /// The object type, which is always `organization.project.api_key`
+        /// </param>
         public ProjectApiKey(
             string redactedValue,
             string name,
@@ -88,13 +88,13 @@ namespace G
             global::G.ProjectApiKeyOwner owner,
             global::G.ProjectApiKeyObject @object)
         {
+            this.Object = @object;
             this.RedactedValue = redactedValue ?? throw new global::System.ArgumentNullException(nameof(redactedValue));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CreatedAt = createdAt;
             this.LastUsedAt = lastUsedAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
-            this.Object = @object;
         }
 
         /// <summary>

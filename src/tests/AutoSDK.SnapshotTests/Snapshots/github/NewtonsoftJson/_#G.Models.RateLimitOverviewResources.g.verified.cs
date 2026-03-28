@@ -79,8 +79,8 @@ namespace G
         /// Initializes a new instance of the <see cref="RateLimitOverviewResources" /> class.
         /// </summary>
         /// <param name="core"></param>
-        /// <param name="graphql"></param>
         /// <param name="search"></param>
+        /// <param name="graphql"></param>
         /// <param name="codeSearch"></param>
         /// <param name="sourceImport"></param>
         /// <param name="integrationManifest"></param>
@@ -101,8 +101,8 @@ namespace G
             global::G.RateLimit? dependencySnapshots)
         {
             this.Core = core ?? throw new global::System.ArgumentNullException(nameof(core));
-            this.Search = search ?? throw new global::System.ArgumentNullException(nameof(search));
             this.Graphql = graphql;
+            this.Search = search ?? throw new global::System.ArgumentNullException(nameof(search));
             this.CodeSearch = codeSearch;
             this.SourceImport = sourceImport;
             this.IntegrationManifest = integrationManifest;

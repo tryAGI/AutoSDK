@@ -30,14 +30,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestRedactedThinkingBlock" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="data"></param>
+        /// <param name="type"></param>
         public RequestRedactedThinkingBlock(
             string data,
             global::G.RequestRedactedThinkingBlockType type)
         {
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Type = type;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
         }
 
         /// <summary>

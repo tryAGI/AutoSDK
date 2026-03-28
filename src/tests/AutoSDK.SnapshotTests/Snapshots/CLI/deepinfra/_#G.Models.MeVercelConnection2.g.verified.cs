@@ -39,8 +39,8 @@ namespace G
         /// Initializes a new instance of the <see cref="MeVercelConnection2" /> class.
         /// </summary>
         /// <param name="userId"></param>
-        /// <param name="teamId"></param>
         /// <param name="installationId"></param>
+        /// <param name="teamId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -50,8 +50,8 @@ namespace G
             string? teamId)
         {
             this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
-            this.InstallationId = installationId ?? throw new global::System.ArgumentNullException(nameof(installationId));
             this.TeamId = teamId;
+            this.InstallationId = installationId ?? throw new global::System.ArgumentNullException(nameof(installationId));
         }
 
         /// <summary>

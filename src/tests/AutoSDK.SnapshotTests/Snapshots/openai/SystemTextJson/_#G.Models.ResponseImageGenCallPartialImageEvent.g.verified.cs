@@ -60,9 +60,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseImageGenCallPartialImageEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always 'response.image_generation_call.partial_image'.
-        /// </param>
         /// <param name="outputIndex">
         /// The index of the output item in the response's output array.
         /// </param>
@@ -78,6 +75,9 @@ namespace G
         /// <param name="partialImageB64">
         /// Base64-encoded partial image data, suitable for rendering as an image.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always 'response.image_generation_call.partial_image'.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -89,12 +89,12 @@ namespace G
             string partialImageB64,
             global::G.ResponseImageGenCallPartialImageEventType type)
         {
+            this.Type = type;
             this.OutputIndex = outputIndex;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.SequenceNumber = sequenceNumber;
             this.PartialImageIndex = partialImageIndex;
             this.PartialImageB64 = partialImageB64 ?? throw new global::System.ArgumentNullException(nameof(partialImageB64));
-            this.Type = type;
         }
 
         /// <summary>

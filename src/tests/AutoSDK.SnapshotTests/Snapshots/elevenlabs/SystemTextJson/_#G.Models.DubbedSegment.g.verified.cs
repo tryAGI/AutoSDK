@@ -60,9 +60,9 @@ namespace G
         /// </summary>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
-        /// <param name="text"></param>
         /// <param name="subtitles"></param>
         /// <param name="audioStale"></param>
+        /// <param name="text"></param>
         /// <param name="mediaRef"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -77,9 +77,9 @@ namespace G
         {
             this.StartTime = startTime;
             this.EndTime = endTime;
+            this.Text = text;
             this.Subtitles = subtitles ?? throw new global::System.ArgumentNullException(nameof(subtitles));
             this.AudioStale = audioStale;
-            this.Text = text;
             this.MediaRef = mediaRef;
         }
 

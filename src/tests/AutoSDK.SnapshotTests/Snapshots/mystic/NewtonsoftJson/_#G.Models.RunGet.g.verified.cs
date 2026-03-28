@@ -82,10 +82,10 @@ namespace G
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="pipelineId"></param>
-        /// <param name="pointers"></param>
         /// <param name="state">
         /// An enumeration.
         /// </param>
+        /// <param name="pointers"></param>
         /// <param name="computeTimeMs"></param>
         /// <param name="startedAt"></param>
         /// <param name="endedAt"></param>
@@ -106,8 +106,8 @@ namespace G
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.PipelineId = pipelineId ?? throw new global::System.ArgumentNullException(nameof(pipelineId));
-            this.State = state;
             this.Pointers = pointers;
+            this.State = state;
             this.ComputeTimeMs = computeTimeMs;
             this.StartedAt = startedAt;
             this.EndedAt = endedAt;

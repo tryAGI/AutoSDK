@@ -137,6 +137,21 @@ namespace G
         /// <param name="historyItemId">
         /// The ID of the history item.
         /// </param>
+        /// <param name="dateUnix">
+        /// Unix timestamp of when the item was created.
+        /// </param>
+        /// <param name="characterCountChangeFrom">
+        /// The character count change from.
+        /// </param>
+        /// <param name="characterCountChangeTo">
+        /// The character count change to.
+        /// </param>
+        /// <param name="contentType">
+        /// The content type of the generated item.
+        /// </param>
+        /// <param name="state">
+        /// The state of the history item.
+        /// </param>
         /// <param name="requestId">
         /// The ID of the request.
         /// </param>
@@ -154,21 +169,6 @@ namespace G
         /// </param>
         /// <param name="text">
         /// The text used to generate the audio item.
-        /// </param>
-        /// <param name="dateUnix">
-        /// Unix timestamp of when the item was created.
-        /// </param>
-        /// <param name="characterCountChangeFrom">
-        /// The character count change from.
-        /// </param>
-        /// <param name="characterCountChangeTo">
-        /// The character count change to.
-        /// </param>
-        /// <param name="contentType">
-        /// The content type of the generated item.
-        /// </param>
-        /// <param name="state">
-        /// The state of the history item.
         /// </param>
         /// <param name="settings">
         /// The settings of the history item.
@@ -212,17 +212,17 @@ namespace G
             global::System.Collections.Generic.IList<global::G.DialogueInputResponseModel>? dialogue)
         {
             this.HistoryItemId = historyItemId ?? throw new global::System.ArgumentNullException(nameof(historyItemId));
-            this.DateUnix = dateUnix;
-            this.CharacterCountChangeFrom = characterCountChangeFrom;
-            this.CharacterCountChangeTo = characterCountChangeTo;
-            this.ContentType = contentType ?? throw new global::System.ArgumentNullException(nameof(contentType));
-            this.State = state;
             this.RequestId = requestId;
             this.VoiceId = voiceId;
             this.ModelId = modelId;
             this.VoiceName = voiceName;
             this.VoiceCategory = voiceCategory;
             this.Text = text;
+            this.DateUnix = dateUnix;
+            this.CharacterCountChangeFrom = characterCountChangeFrom;
+            this.CharacterCountChangeTo = characterCountChangeTo;
+            this.ContentType = contentType ?? throw new global::System.ArgumentNullException(nameof(contentType));
+            this.State = state;
             this.Settings = settings;
             this.Feedback = feedback;
             this.ShareLinkId = shareLinkId;

@@ -93,6 +93,9 @@ namespace G
         ///   - `codestral-latest`<br/>
         /// Default Value: codestral-2405
         /// </param>
+        /// <param name="prompt">
+        /// The text/code to complete.
+        /// </param>
         /// <param name="temperature">
         /// What sampling temperature to use, we recommend between 0.0 and 0.7. Higher values like 0.7 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or `top_p` but not both. The default value varies depending on the model you are targeting. Call the `/models` endpoint to retrieve the appropriate value.
         /// </param>
@@ -112,9 +115,6 @@ namespace G
         /// </param>
         /// <param name="randomSeed">
         /// The seed to use for random sampling. If set, different calls will generate deterministic results.
-        /// </param>
-        /// <param name="prompt">
-        /// The text/code to complete.
         /// </param>
         /// <param name="suffix">
         /// Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.
@@ -138,13 +138,13 @@ namespace G
             int? minTokens)
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Temperature = temperature;
             this.TopP = topP;
             this.MaxTokens = maxTokens;
             this.Stream = stream;
             this.Stop = stop;
             this.RandomSeed = randomSeed;
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Suffix = suffix;
             this.MinTokens = minTokens;
         }

@@ -150,12 +150,12 @@ namespace G
         /// <param name="public"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
-        /// <param name="description"></param>
         /// <param name="comments"></param>
+        /// <param name="commentsUrl"></param>
+        /// <param name="description"></param>
         /// <param name="user">
         /// A GitHub user.
         /// </param>
-        /// <param name="commentsUrl"></param>
         /// <param name="owner">
         /// A GitHub user.
         /// </param>
@@ -196,10 +196,10 @@ namespace G
             this.Public = @public;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.Comments = comments;
-            this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
             this.Description = description;
+            this.Comments = comments;
             this.User = user;
+            this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
             this.Owner = owner;
             this.Truncated = truncated;
             this.Forks = forks;

@@ -199,23 +199,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RepositoryAdvisory" /> class.
         /// </summary>
-        /// <param name="ghsaId">
-        /// The GitHub Security Advisory ID.<br/>
-        /// Included only in responses
+        /// <param name="summary">
+        /// A short summary of the advisory.
+        /// </param>
+        /// <param name="state">
+        /// The state of the advisory.
         /// </param>
         /// <param name="cveId">
         /// The Common Vulnerabilities and Exposures (CVE) ID.
-        /// </param>
-        /// <param name="url">
-        /// The API URL for the advisory.<br/>
-        /// Included only in responses
-        /// </param>
-        /// <param name="htmlUrl">
-        /// The URL for the advisory.<br/>
-        /// Included only in responses
-        /// </param>
-        /// <param name="summary">
-        /// A short summary of the advisory.
         /// </param>
         /// <param name="description">
         /// A detailed description of what the advisory entails.
@@ -230,12 +221,6 @@ namespace G
         /// <param name="publisher">
         /// The publisher of the advisory.<br/>
         /// Included only in responses
-        /// </param>
-        /// <param name="identifiers">
-        /// Included only in responses
-        /// </param>
-        /// <param name="state">
-        /// The state of the advisory.
         /// </param>
         /// <param name="createdAt">
         /// The date and time of when the advisory was created, in ISO 8601 format.<br/>
@@ -283,6 +268,21 @@ namespace G
         /// A temporary private fork of the advisory's repository for collaborating on a fix.<br/>
         /// Included only in responses
         /// </param>
+        /// <param name="ghsaId">
+        /// The GitHub Security Advisory ID.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="url">
+        /// The API URL for the advisory.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="htmlUrl">
+        /// The URL for the advisory.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="identifiers">
+        /// Included only in responses
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -315,17 +315,17 @@ namespace G
             string htmlUrl = default!,
             global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryIdentifier> identifiers = default!)
         {
-            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
-            this.State = state;
             this.GhsaId = ghsaId;
             this.CveId = cveId;
             this.Url = url;
             this.HtmlUrl = htmlUrl;
+            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
             this.Description = description;
             this.Severity = severity;
             this.Author = author;
             this.Publisher = publisher;
             this.Identifiers = identifiers;
+            this.State = state;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.PublishedAt = publishedAt;

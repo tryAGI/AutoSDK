@@ -59,14 +59,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPersonalAccessTokenRequestCreated" /> class.
         /// </summary>
-        /// <param name="action"></param>
         /// <param name="personalAccessTokenRequest">
         /// Details of a Personal Access Token Request.
-        /// </param>
-        /// <param name="enterprise">
-        /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
-        /// on an enterprise account or an organization that's part of an enterprise account. For more information,<br/>
-        /// see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
         /// </param>
         /// <param name="organization">
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
@@ -74,6 +68,12 @@ namespace G
         /// </param>
         /// <param name="sender">
         /// A GitHub user.
+        /// </param>
+        /// <param name="action"></param>
+        /// <param name="enterprise">
+        /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
+        /// on an enterprise account or an organization that's part of an enterprise account. For more information,<br/>
+        /// see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
         /// </param>
         /// <param name="installation">
         /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>
@@ -88,11 +88,11 @@ namespace G
             global::G.EnterpriseWebhooks? enterprise,
             global::G.SimpleInstallation? installation)
         {
+            this.Action = action;
             this.PersonalAccessTokenRequest = personalAccessTokenRequest ?? throw new global::System.ArgumentNullException(nameof(personalAccessTokenRequest));
+            this.Enterprise = enterprise;
             this.Organization = organization ?? throw new global::System.ArgumentNullException(nameof(organization));
             this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
-            this.Action = action;
-            this.Enterprise = enterprise;
             this.Installation = installation;
         }
 

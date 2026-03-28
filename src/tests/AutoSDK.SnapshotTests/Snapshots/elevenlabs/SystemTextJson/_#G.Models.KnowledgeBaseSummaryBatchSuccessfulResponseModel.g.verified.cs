@@ -33,10 +33,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="KnowledgeBaseSummaryBatchSuccessfulResponseModel" /> class.
         /// </summary>
+        /// <param name="data"></param>
         /// <param name="status">
         /// Default Value: success
         /// </param>
-        /// <param name="data"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -44,8 +44,8 @@ namespace G
             global::G.Data data,
             string status = "success")
         {
-            this.Data = data;
             this.Status = status;
+            this.Data = data;
         }
 
         /// <summary>

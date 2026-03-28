@@ -58,16 +58,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GithubRepositoryOut" /> class.
         /// </summary>
+        /// <param name="name"></param>
+        /// <param name="owner"></param>
+        /// <param name="commitId"></param>
         /// <param name="type">
         /// Default Value: github
         /// </param>
-        /// <param name="name"></param>
-        /// <param name="owner"></param>
         /// <param name="ref"></param>
         /// <param name="weight">
         /// Default Value: 1
         /// </param>
-        /// <param name="commitId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -79,12 +79,12 @@ namespace G
             string? @ref,
             double? weight)
         {
+            this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
-            this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
-            this.Type = type;
             this.Ref = @ref;
             this.Weight = weight;
+            this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
         }
 
         /// <summary>

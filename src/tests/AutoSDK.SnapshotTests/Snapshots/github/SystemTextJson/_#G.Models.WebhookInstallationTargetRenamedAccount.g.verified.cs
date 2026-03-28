@@ -238,8 +238,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookInstallationTargetRenamedAccount" /> class.
         /// </summary>
-        /// <param name="archivedAt"></param>
         /// <param name="avatarUrl"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="id"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="archivedAt"></param>
         /// <param name="createdAt"></param>
         /// <param name="description"></param>
         /// <param name="eventsUrl"></param>
@@ -252,14 +255,11 @@ namespace G
         /// <param name="hasOrganizationProjects"></param>
         /// <param name="hasRepositoryProjects"></param>
         /// <param name="hooksUrl"></param>
-        /// <param name="htmlUrl"></param>
-        /// <param name="id"></param>
         /// <param name="isVerified"></param>
         /// <param name="issuesUrl"></param>
         /// <param name="login"></param>
         /// <param name="membersUrl"></param>
         /// <param name="name"></param>
-        /// <param name="nodeId"></param>
         /// <param name="organizationsUrl"></param>
         /// <param name="publicGists"></param>
         /// <param name="publicMembersUrl"></param>
@@ -315,11 +315,8 @@ namespace G
             string? url,
             object? websiteUrl)
         {
-            this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
-            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.Id = id;
-            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.ArchivedAt = archivedAt;
+            this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
             this.CreatedAt = createdAt;
             this.Description = description;
             this.EventsUrl = eventsUrl;
@@ -332,11 +329,14 @@ namespace G
             this.HasOrganizationProjects = hasOrganizationProjects;
             this.HasRepositoryProjects = hasRepositoryProjects;
             this.HooksUrl = hooksUrl;
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Id = id;
             this.IsVerified = isVerified;
             this.IssuesUrl = issuesUrl;
             this.Login = login;
             this.MembersUrl = membersUrl;
             this.Name = name;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.OrganizationsUrl = organizationsUrl;
             this.PublicGists = publicGists;
             this.PublicMembersUrl = publicMembersUrl;

@@ -51,11 +51,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ReposCreateUsingTemplateRequest" /> class.
         /// </summary>
-        /// <param name="owner">
-        /// The organization or person who will own the new repository. To create a new repository in an organization, the authenticated user must be a member of the specified organization.
-        /// </param>
         /// <param name="name">
         /// The name of the new repository.
+        /// </param>
+        /// <param name="owner">
+        /// The organization or person who will own the new repository. To create a new repository in an organization, the authenticated user must be a member of the specified organization.
         /// </param>
         /// <param name="description">
         /// A short description of the new repository.
@@ -78,8 +78,8 @@ namespace G
             bool? includeAllBranches,
             bool? @private)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Owner = owner;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
             this.IncludeAllBranches = includeAllBranches;
             this.Private = @private;

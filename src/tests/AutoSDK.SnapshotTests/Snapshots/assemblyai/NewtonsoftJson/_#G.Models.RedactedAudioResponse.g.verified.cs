@@ -31,18 +31,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RedactedAudioResponse" /> class.
         /// </summary>
-        /// <param name="status">
-        /// The status of the redacted audio
-        /// </param>
         /// <param name="redactedAudioUrl">
         /// The URL of the redacted audio file
+        /// </param>
+        /// <param name="status">
+        /// The status of the redacted audio
         /// </param>
         public RedactedAudioResponse(
             string redactedAudioUrl,
             global::G.RedactedAudioStatus status)
         {
-            this.RedactedAudioUrl = redactedAudioUrl ?? throw new global::System.ArgumentNullException(nameof(redactedAudioUrl));
             this.Status = status;
+            this.RedactedAudioUrl = redactedAudioUrl ?? throw new global::System.ArgumentNullException(nameof(redactedAudioUrl));
         }
 
         /// <summary>

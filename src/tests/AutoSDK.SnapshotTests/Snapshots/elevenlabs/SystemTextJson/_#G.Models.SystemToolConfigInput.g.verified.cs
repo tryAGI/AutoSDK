@@ -95,11 +95,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="SystemToolConfigInput" /> class.
         /// </summary>
+        /// <param name="name"></param>
+        /// <param name="params"></param>
         /// <param name="type">
         /// The type of tool<br/>
         /// Default Value: system
         /// </param>
-        /// <param name="name"></param>
         /// <param name="description">
         /// Description of when the tool should be used and what it does. Leave empty to use the default description that's optimized for the specific tool type.
         /// </param>
@@ -129,7 +130,6 @@ namespace G
         /// Controls how tool errors are processed before being shared with the agent. 'auto' determines handling based on tool type (summarized for native integrations, hide for others), 'summarized' sends an LLM-generated summary, 'passthrough' sends the raw error, 'hide' does not share the error with the agent.<br/>
         /// Default Value: auto
         /// </param>
-        /// <param name="params"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -146,9 +146,8 @@ namespace G
             global::G.ToolCallSoundBehavior? toolCallSoundBehavior,
             global::G.ToolErrorHandlingMode? toolErrorHandlingMode)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Params = @params;
             this.Type = type;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
             this.ResponseTimeoutSecs = responseTimeoutSecs;
             this.DisableInterruptions = disableInterruptions;
@@ -157,6 +156,7 @@ namespace G
             this.ToolCallSound = toolCallSound;
             this.ToolCallSoundBehavior = toolCallSoundBehavior;
             this.ToolErrorHandlingMode = toolErrorHandlingMode;
+            this.Params = @params;
         }
 
         /// <summary>

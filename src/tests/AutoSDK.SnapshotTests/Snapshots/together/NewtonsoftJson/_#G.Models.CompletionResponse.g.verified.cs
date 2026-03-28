@@ -62,10 +62,10 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="choices"></param>
-        /// <param name="prompt"></param>
-        /// <param name="usage"></param>
         /// <param name="created"></param>
         /// <param name="model"></param>
+        /// <param name="prompt"></param>
+        /// <param name="usage"></param>
         /// <param name="object"></param>
         public CompletionResponse(
             string id,
@@ -78,10 +78,10 @@ namespace G
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
-            this.Created = created;
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Prompt = prompt;
             this.Usage = usage;
+            this.Created = created;
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Object = @object;
         }
 

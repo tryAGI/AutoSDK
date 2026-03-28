@@ -115,6 +115,7 @@ namespace G
         /// Initializes a new instance of the <see cref="ConversationHistoryTranscriptResponseModel" /> class.
         /// </summary>
         /// <param name="role"></param>
+        /// <param name="timeInCallSecs"></param>
         /// <param name="agentMetadata"></param>
         /// <param name="message"></param>
         /// <param name="multivoiceMessage"></param>
@@ -122,7 +123,6 @@ namespace G
         /// <param name="toolResults"></param>
         /// <param name="feedback"></param>
         /// <param name="llmOverride"></param>
-        /// <param name="timeInCallSecs"></param>
         /// <param name="conversationTurnMetrics"></param>
         /// <param name="ragRetrievalInfo"></param>
         /// <param name="llmUsage"></param>
@@ -151,7 +151,6 @@ namespace G
             global::G.ConversationHistoryTranscriptFileInputResponseModel? fileInput)
         {
             this.Role = role;
-            this.TimeInCallSecs = timeInCallSecs;
             this.AgentMetadata = agentMetadata;
             this.Message = message;
             this.MultivoiceMessage = multivoiceMessage;
@@ -159,6 +158,7 @@ namespace G
             this.ToolResults = toolResults;
             this.Feedback = feedback;
             this.LlmOverride = llmOverride;
+            this.TimeInCallSecs = timeInCallSecs;
             this.ConversationTurnMetrics = conversationTurnMetrics;
             this.RagRetrievalInfo = ragRetrievalInfo;
             this.LlmUsage = llmUsage;

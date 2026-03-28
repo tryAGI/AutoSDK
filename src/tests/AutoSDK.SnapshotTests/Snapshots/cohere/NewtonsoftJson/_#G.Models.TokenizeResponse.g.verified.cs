@@ -38,19 +38,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TokenizeResponse" /> class.
         /// </summary>
+        /// <param name="tokenStrings"></param>
+        /// <param name="meta"></param>
         /// <param name="tokens">
         /// An array of tokens, where each token is an integer.<br/>
         /// Included only in responses
         /// </param>
-        /// <param name="tokenStrings"></param>
-        /// <param name="meta"></param>
         public TokenizeResponse(
             global::System.Collections.Generic.IList<string> tokenStrings,
             global::G.ApiMeta? meta,
             global::System.Collections.Generic.IList<int> tokens = default!)
         {
-            this.TokenStrings = tokenStrings ?? throw new global::System.ArgumentNullException(nameof(tokenStrings));
             this.Tokens = tokens;
+            this.TokenStrings = tokenStrings ?? throw new global::System.ArgumentNullException(nameof(tokenStrings));
             this.Meta = meta;
         }
 

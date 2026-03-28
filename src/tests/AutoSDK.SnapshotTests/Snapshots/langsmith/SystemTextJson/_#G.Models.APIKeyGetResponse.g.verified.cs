@@ -57,10 +57,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="APIKeyGetResponse" /> class.
         /// </summary>
-        /// <param name="createdAt"></param>
         /// <param name="id"></param>
         /// <param name="shortKey"></param>
         /// <param name="description"></param>
+        /// <param name="createdAt"></param>
         /// <param name="readOnly">
         /// Default Value: false
         /// </param>
@@ -76,10 +76,10 @@ namespace G
             bool? readOnly,
             global::System.DateTime? lastUsedAt)
         {
+            this.CreatedAt = createdAt;
             this.Id = id;
             this.ShortKey = shortKey ?? throw new global::System.ArgumentNullException(nameof(shortKey));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.CreatedAt = createdAt;
             this.ReadOnly = readOnly;
             this.LastUsedAt = lastUsedAt;
         }

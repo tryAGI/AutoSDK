@@ -51,11 +51,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Scroll" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Specifies the event type. For a scroll action, this property is <br/>
-        /// always set to `scroll`.<br/>
-        /// Default Value: scroll
-        /// </param>
         /// <param name="x">
         /// The x-coordinate where the scroll occurred.
         /// </param>
@@ -68,6 +63,11 @@ namespace G
         /// <param name="scrollY">
         /// The vertical scroll distance.
         /// </param>
+        /// <param name="type">
+        /// Specifies the event type. For a scroll action, this property is <br/>
+        /// always set to `scroll`.<br/>
+        /// Default Value: scroll
+        /// </param>
         public Scroll(
             int x,
             int y,
@@ -75,11 +75,11 @@ namespace G
             int scrollY,
             global::G.ScrollType type = global::G.ScrollType.Scroll)
         {
+            this.Type = type;
             this.X = x;
             this.Y = y;
             this.ScrollX = scrollX;
             this.ScrollY = scrollY;
-            this.Type = type;
         }
 
         /// <summary>

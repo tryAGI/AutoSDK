@@ -37,18 +37,18 @@ namespace G
         /// Initializes a new instance of the <see cref="WorkflowToolMaxIterationsExceededStepModel" /> class.
         /// </summary>
         /// <param name="stepLatencySecs"></param>
+        /// <param name="maxIterations"></param>
         /// <param name="type">
         /// Default Value: max_iterations_exceeded
         /// </param>
-        /// <param name="maxIterations"></param>
         public WorkflowToolMaxIterationsExceededStepModel(
             double stepLatencySecs,
             int maxIterations,
             string? type)
         {
             this.StepLatencySecs = stepLatencySecs;
-            this.MaxIterations = maxIterations;
             this.Type = type;
+            this.MaxIterations = maxIterations;
         }
 
         /// <summary>

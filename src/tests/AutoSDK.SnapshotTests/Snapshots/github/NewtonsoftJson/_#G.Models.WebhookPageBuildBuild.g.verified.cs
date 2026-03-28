@@ -66,14 +66,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPageBuildBuild" /> class.
         /// </summary>
-        /// <param name="commit"></param>
         /// <param name="createdAt"></param>
         /// <param name="duration"></param>
         /// <param name="error"></param>
-        /// <param name="pusher"></param>
         /// <param name="status"></param>
         /// <param name="updatedAt"></param>
         /// <param name="url"></param>
+        /// <param name="commit"></param>
+        /// <param name="pusher"></param>
         public WebhookPageBuildBuild(
             string createdAt,
             int duration,
@@ -84,14 +84,14 @@ namespace G
             string? commit,
             global::G.WebhookPageBuildBuildPusher? pusher)
         {
+            this.Commit = commit;
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.Duration = duration;
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
+            this.Pusher = pusher;
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Commit = commit;
-            this.Pusher = pusher;
         }
 
         /// <summary>

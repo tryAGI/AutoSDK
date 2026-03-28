@@ -45,11 +45,11 @@ namespace G
         /// <param name="name">
         /// The name of the tool.
         /// </param>
-        /// <param name="description">
-        /// The description of the tool.
-        /// </param>
         /// <param name="inputSchema">
         /// The JSON schema describing the tool's input.
+        /// </param>
+        /// <param name="description">
+        /// The description of the tool.
         /// </param>
         /// <param name="annotations">
         /// Additional annotations about the tool.
@@ -61,8 +61,8 @@ namespace G
             object? annotations)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));
             this.Description = description;
+            this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));
             this.Annotations = annotations;
         }
 

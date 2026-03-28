@@ -72,14 +72,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationHistoryTranscriptToolCallMCPDetails" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: mcp
-        /// </param>
         /// <param name="mcpServerId"></param>
         /// <param name="mcpServerName"></param>
         /// <param name="integrationType"></param>
-        /// <param name="parameters"></param>
         /// <param name="approvalPolicy"></param>
+        /// <param name="type">
+        /// Default Value: mcp
+        /// </param>
+        /// <param name="parameters"></param>
         /// <param name="requiresApproval">
         /// Default Value: false
         /// </param>
@@ -96,12 +96,12 @@ namespace G
             string? mcpToolName,
             string? mcpToolDescription)
         {
+            this.Type = type;
             this.McpServerId = mcpServerId ?? throw new global::System.ArgumentNullException(nameof(mcpServerId));
             this.McpServerName = mcpServerName ?? throw new global::System.ArgumentNullException(nameof(mcpServerName));
             this.IntegrationType = integrationType ?? throw new global::System.ArgumentNullException(nameof(integrationType));
-            this.ApprovalPolicy = approvalPolicy ?? throw new global::System.ArgumentNullException(nameof(approvalPolicy));
-            this.Type = type;
             this.Parameters = parameters;
+            this.ApprovalPolicy = approvalPolicy ?? throw new global::System.ArgumentNullException(nameof(approvalPolicy));
             this.RequiresApproval = requiresApproval;
             this.McpToolName = mcpToolName;
             this.McpToolDescription = mcpToolDescription;

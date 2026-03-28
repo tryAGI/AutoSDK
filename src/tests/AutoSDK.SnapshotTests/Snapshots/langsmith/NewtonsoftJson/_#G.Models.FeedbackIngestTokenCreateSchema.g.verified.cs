@@ -48,10 +48,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FeedbackIngestTokenCreateSchema" /> class.
         /// </summary>
-        /// <param name="expiresIn"></param>
-        /// <param name="expiresAt"></param>
         /// <param name="runId"></param>
         /// <param name="feedbackKey"></param>
+        /// <param name="expiresIn"></param>
+        /// <param name="expiresAt"></param>
         /// <param name="feedbackConfig"></param>
         public FeedbackIngestTokenCreateSchema(
             global::System.Guid runId,
@@ -60,10 +60,10 @@ namespace G
             global::System.DateTime? expiresAt,
             global::G.FeedbackConfig? feedbackConfig)
         {
-            this.RunId = runId;
-            this.FeedbackKey = feedbackKey ?? throw new global::System.ArgumentNullException(nameof(feedbackKey));
             this.ExpiresIn = expiresIn;
             this.ExpiresAt = expiresAt;
+            this.RunId = runId;
+            this.FeedbackKey = feedbackKey ?? throw new global::System.ArgumentNullException(nameof(feedbackKey));
             this.FeedbackConfig = feedbackConfig;
         }
 

@@ -72,14 +72,6 @@ namespace G
         /// Default Value: lambda<br/>
         /// Example: lambda
         /// </param>
-        /// <param name="language">
-        /// The programming language of the lambda function. Currently only Python 3.12 is supported.<br/>
-        /// Default Value: python<br/>
-        /// Example: python
-        /// </param>
-        /// <param name="outputSchema">
-        /// The schema that defines the expected output structure from the function.
-        /// </param>
         /// <param name="functionDefinition">
         /// Definition of a function to be executed as a tool in a sandboxed environment.<br/>
         /// **Python Environment:**<br/>
@@ -100,6 +92,14 @@ namespace G
         /// - Parameter descriptions are extracted and included in the input schema<br/>
         /// - This gives agents better context about how to use each parameter
         /// </param>
+        /// <param name="outputSchema">
+        /// The schema that defines the expected output structure from the function.
+        /// </param>
+        /// <param name="language">
+        /// The programming language of the lambda function. Currently only Python 3.12 is supported.<br/>
+        /// Default Value: python<br/>
+        /// Example: python
+        /// </param>
         public LambdaToolVariant2(
             string type,
             global::G.FunctionDefinition functionDefinition,
@@ -107,9 +107,9 @@ namespace G
             global::G.LambdaToolVariant2Language language = global::G.LambdaToolVariant2Language.Python)
         {
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
-            this.FunctionDefinition = functionDefinition ?? throw new global::System.ArgumentNullException(nameof(functionDefinition));
             this.Language = language;
             this.OutputSchema = outputSchema;
+            this.FunctionDefinition = functionDefinition ?? throw new global::System.ArgumentNullException(nameof(functionDefinition));
         }
 
         /// <summary>

@@ -337,26 +337,14 @@ namespace G
         /// Initializes a new instance of the <see cref="WebhookPullRequestEnqueuedPullRequest" /> class.
         /// </summary>
         /// <param name="links"></param>
-        /// <param name="activeLockReason"></param>
-        /// <param name="additions"></param>
-        /// <param name="assignee"></param>
         /// <param name="assignees"></param>
         /// <param name="authorAssociation">
         /// How the author is associated with the repository.
         /// </param>
-        /// <param name="autoMerge">
-        /// The status of auto merging a pull request.
-        /// </param>
         /// <param name="base"></param>
-        /// <param name="body"></param>
-        /// <param name="changedFiles"></param>
-        /// <param name="closedAt"></param>
-        /// <param name="comments"></param>
         /// <param name="commentsUrl"></param>
-        /// <param name="commits"></param>
         /// <param name="commitsUrl"></param>
         /// <param name="createdAt"></param>
-        /// <param name="deletions"></param>
         /// <param name="diffUrl"></param>
         /// <param name="draft">
         /// Indicates whether or not the pull request is a draft.
@@ -367,6 +355,36 @@ namespace G
         /// <param name="issueUrl"></param>
         /// <param name="labels"></param>
         /// <param name="locked"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="number">
+        /// Number uniquely identifying the pull request within its repository.
+        /// </param>
+        /// <param name="patchUrl"></param>
+        /// <param name="requestedReviewers"></param>
+        /// <param name="requestedTeams"></param>
+        /// <param name="reviewCommentUrl"></param>
+        /// <param name="reviewCommentsUrl"></param>
+        /// <param name="state">
+        /// State of this Pull Request. Either `open` or `closed`.
+        /// </param>
+        /// <param name="statusesUrl"></param>
+        /// <param name="title">
+        /// The title of the pull request.
+        /// </param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url"></param>
+        /// <param name="activeLockReason"></param>
+        /// <param name="additions"></param>
+        /// <param name="assignee"></param>
+        /// <param name="autoMerge">
+        /// The status of auto merging a pull request.
+        /// </param>
+        /// <param name="body"></param>
+        /// <param name="changedFiles"></param>
+        /// <param name="closedAt"></param>
+        /// <param name="comments"></param>
+        /// <param name="commits"></param>
+        /// <param name="deletions"></param>
         /// <param name="maintainerCanModify">
         /// Indicates whether maintainers can modify the pull request.
         /// </param>
@@ -379,26 +397,8 @@ namespace G
         /// <param name="milestone">
         /// A collection of related issues and pull requests.
         /// </param>
-        /// <param name="nodeId"></param>
-        /// <param name="number">
-        /// Number uniquely identifying the pull request within its repository.
-        /// </param>
-        /// <param name="patchUrl"></param>
         /// <param name="rebaseable"></param>
-        /// <param name="requestedReviewers"></param>
-        /// <param name="requestedTeams"></param>
-        /// <param name="reviewCommentUrl"></param>
         /// <param name="reviewComments"></param>
-        /// <param name="reviewCommentsUrl"></param>
-        /// <param name="state">
-        /// State of this Pull Request. Either `open` or `closed`.
-        /// </param>
-        /// <param name="statusesUrl"></param>
-        /// <param name="title">
-        /// The title of the pull request.
-        /// </param>
-        /// <param name="updatedAt"></param>
-        /// <param name="url"></param>
         /// <param name="user"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -454,12 +454,22 @@ namespace G
             global::G.WebhookPullRequestEnqueuedPullRequestUser? user)
         {
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
+            this.ActiveLockReason = activeLockReason;
+            this.Additions = additions;
+            this.Assignee = assignee;
             this.Assignees = assignees ?? throw new global::System.ArgumentNullException(nameof(assignees));
             this.AuthorAssociation = authorAssociation;
+            this.AutoMerge = autoMerge;
             this.Base = @base ?? throw new global::System.ArgumentNullException(nameof(@base));
+            this.Body = body;
+            this.ChangedFiles = changedFiles;
+            this.ClosedAt = closedAt;
+            this.Comments = comments;
             this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
+            this.Commits = commits;
             this.CommitsUrl = commitsUrl ?? throw new global::System.ArgumentNullException(nameof(commitsUrl));
             this.CreatedAt = createdAt;
+            this.Deletions = deletions;
             this.DiffUrl = diffUrl ?? throw new global::System.ArgumentNullException(nameof(diffUrl));
             this.Draft = draft;
             this.Head = head ?? throw new global::System.ArgumentNullException(nameof(head));
@@ -468,28 +478,6 @@ namespace G
             this.IssueUrl = issueUrl ?? throw new global::System.ArgumentNullException(nameof(issueUrl));
             this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
             this.Locked = locked;
-            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.Number = number;
-            this.PatchUrl = patchUrl ?? throw new global::System.ArgumentNullException(nameof(patchUrl));
-            this.RequestedReviewers = requestedReviewers ?? throw new global::System.ArgumentNullException(nameof(requestedReviewers));
-            this.RequestedTeams = requestedTeams ?? throw new global::System.ArgumentNullException(nameof(requestedTeams));
-            this.ReviewCommentUrl = reviewCommentUrl ?? throw new global::System.ArgumentNullException(nameof(reviewCommentUrl));
-            this.ReviewCommentsUrl = reviewCommentsUrl ?? throw new global::System.ArgumentNullException(nameof(reviewCommentsUrl));
-            this.State = state;
-            this.StatusesUrl = statusesUrl ?? throw new global::System.ArgumentNullException(nameof(statusesUrl));
-            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.UpdatedAt = updatedAt;
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.ActiveLockReason = activeLockReason;
-            this.Additions = additions;
-            this.Assignee = assignee;
-            this.AutoMerge = autoMerge;
-            this.Body = body;
-            this.ChangedFiles = changedFiles;
-            this.ClosedAt = closedAt;
-            this.Comments = comments;
-            this.Commits = commits;
-            this.Deletions = deletions;
             this.MaintainerCanModify = maintainerCanModify;
             this.MergeCommitSha = mergeCommitSha;
             this.Mergeable = mergeable;
@@ -498,8 +486,20 @@ namespace G
             this.MergedAt = mergedAt;
             this.MergedBy = mergedBy;
             this.Milestone = milestone;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Number = number;
+            this.PatchUrl = patchUrl ?? throw new global::System.ArgumentNullException(nameof(patchUrl));
             this.Rebaseable = rebaseable;
+            this.RequestedReviewers = requestedReviewers ?? throw new global::System.ArgumentNullException(nameof(requestedReviewers));
+            this.RequestedTeams = requestedTeams ?? throw new global::System.ArgumentNullException(nameof(requestedTeams));
+            this.ReviewCommentUrl = reviewCommentUrl ?? throw new global::System.ArgumentNullException(nameof(reviewCommentUrl));
             this.ReviewComments = reviewComments;
+            this.ReviewCommentsUrl = reviewCommentsUrl ?? throw new global::System.ArgumentNullException(nameof(reviewCommentsUrl));
+            this.State = state;
+            this.StatusesUrl = statusesUrl ?? throw new global::System.ArgumentNullException(nameof(statusesUrl));
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.UpdatedAt = updatedAt;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.User = user;
         }
 

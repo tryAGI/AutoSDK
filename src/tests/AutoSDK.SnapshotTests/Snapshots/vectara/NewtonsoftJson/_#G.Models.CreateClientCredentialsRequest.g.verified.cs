@@ -59,12 +59,12 @@ namespace G
         /// <param name="name">
         /// Name of the client credentials.
         /// </param>
-        /// <param name="description">
-        /// Description of the client credentials.
-        /// </param>
         /// <param name="type">
         /// This will always be the value `client_credentials`.<br/>
         /// Default Value: client_credentials
+        /// </param>
+        /// <param name="description">
+        /// Description of the client credentials.
         /// </param>
         /// <param name="apiRoles">
         /// API roles that the client credentials will have.
@@ -84,8 +84,8 @@ namespace G
             global::System.Collections.Generic.IList<global::G.AgentRole>? agentRoles)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Description = description;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.ApiRoles = apiRoles;
             this.CorpusRoles = corpusRoles;
             this.AgentRoles = agentRoles;

@@ -45,24 +45,24 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeClientEventInputAudioBufferAppend" /> class.
         /// </summary>
+        /// <param name="audio">
+        /// Base64-encoded audio bytes. This must be in the format specified by the <br/>
+        /// `input_audio_format` field in the session configuration.
+        /// </param>
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
         /// <param name="type">
         /// The event type, must be `input_audio_buffer.append`.
         /// </param>
-        /// <param name="audio">
-        /// Base64-encoded audio bytes. This must be in the format specified by the <br/>
-        /// `input_audio_format` field in the session configuration.
-        /// </param>
         public RealtimeClientEventInputAudioBufferAppend(
             string audio,
             string? eventId,
             global::G.RealtimeClientEventInputAudioBufferAppendType type)
         {
-            this.Audio = audio ?? throw new global::System.ArgumentNullException(nameof(audio));
             this.EventId = eventId;
             this.Type = type;
+            this.Audio = audio ?? throw new global::System.ArgumentNullException(nameof(audio));
         }
 
         /// <summary>

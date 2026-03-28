@@ -90,11 +90,11 @@ namespace G
         /// Initializes a new instance of the <see cref="TenantForUser" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="organizationId"></param>
         /// <param name="createdAt"></param>
         /// <param name="displayName"></param>
         /// <param name="isPersonal"></param>
         /// <param name="isDeleted"></param>
+        /// <param name="organizationId"></param>
         /// <param name="tenantHandle"></param>
         /// <param name="readOnly">
         /// Default Value: false
@@ -119,11 +119,11 @@ namespace G
             global::System.Collections.Generic.IList<string>? permissions)
         {
             this.Id = id;
+            this.OrganizationId = organizationId;
             this.CreatedAt = createdAt;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.IsPersonal = isPersonal;
             this.IsDeleted = isDeleted;
-            this.OrganizationId = organizationId;
             this.TenantHandle = tenantHandle;
             this.ReadOnly = readOnly;
             this.RoleId = roleId;

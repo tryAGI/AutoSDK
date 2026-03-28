@@ -39,8 +39,8 @@ namespace G
         /// Initializes a new instance of the <see cref="GetTestsPageResponseModel" /> class.
         /// </summary>
         /// <param name="tests"></param>
-        /// <param name="nextCursor"></param>
         /// <param name="hasMore"></param>
+        /// <param name="nextCursor"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -50,8 +50,8 @@ namespace G
             string? nextCursor)
         {
             this.Tests = tests ?? throw new global::System.ArgumentNullException(nameof(tests));
-            this.HasMore = hasMore;
             this.NextCursor = nextCursor;
+            this.HasMore = hasMore;
         }
 
         /// <summary>

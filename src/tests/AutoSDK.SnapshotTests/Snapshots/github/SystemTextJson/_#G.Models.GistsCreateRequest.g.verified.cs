@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GistsCreateRequest" /> class.
         /// </summary>
-        /// <param name="description">
-        /// Description of the gist<br/>
-        /// Example: Example Ruby script
-        /// </param>
         /// <param name="files">
         /// Names and content for the files that make up the gist<br/>
         /// Example: {"hello.rb":{"content":"puts \u0022Hello, World!\u0022"}}
+        /// </param>
+        /// <param name="description">
+        /// Description of the gist<br/>
+        /// Example: Example Ruby script
         /// </param>
         /// <param name="public"></param>
 #if NET7_0_OR_GREATER
@@ -59,8 +59,8 @@ namespace G
             string? description,
             global::G.OneOf<bool?, global::G.GistsCreateRequestPublic?>? @public)
         {
-            this.Files = files ?? throw new global::System.ArgumentNullException(nameof(files));
             this.Description = description;
+            this.Files = files ?? throw new global::System.ArgumentNullException(nameof(files));
             this.Public = @public;
         }
 

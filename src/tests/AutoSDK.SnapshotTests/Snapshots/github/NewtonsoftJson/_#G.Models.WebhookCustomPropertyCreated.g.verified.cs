@@ -59,10 +59,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookCustomPropertyCreated" /> class.
         /// </summary>
-        /// <param name="action"></param>
         /// <param name="definition">
         /// Custom property defined on an organization
         /// </param>
+        /// <param name="action"></param>
         /// <param name="enterprise">
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
         /// on an enterprise account or an organization that's part of an enterprise account. For more information,<br/>
@@ -88,8 +88,8 @@ namespace G
             global::G.OrganizationSimpleWebhooks? organization,
             global::G.SimpleUser? sender)
         {
-            this.Definition = definition ?? throw new global::System.ArgumentNullException(nameof(definition));
             this.Action = action;
+            this.Definition = definition ?? throw new global::System.ArgumentNullException(nameof(definition));
             this.Enterprise = enterprise;
             this.Installation = installation;
             this.Organization = organization;

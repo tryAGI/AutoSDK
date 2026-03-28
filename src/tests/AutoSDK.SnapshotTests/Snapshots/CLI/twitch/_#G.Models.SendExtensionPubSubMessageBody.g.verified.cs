@@ -63,11 +63,11 @@ namespace G
         /// <param name="broadcasterId">
         /// The ID of the broadcaster to send the message to. Don’t include this field if `is_global_broadcast` is set to **true**.
         /// </param>
-        /// <param name="isGlobalBroadcast">
-        /// A Boolean value that determines whether the message should be sent to all channels where your extension is active. Set to **true** if the message should be sent to all channels. The default is **false**.
-        /// </param>
         /// <param name="message">
         /// The message to send. The message can be a plain-text string or a string-encoded JSON object. The message is limited to a maximum of 5 KB.
+        /// </param>
+        /// <param name="isGlobalBroadcast">
+        /// A Boolean value that determines whether the message should be sent to all channels where your extension is active. Set to **true** if the message should be sent to all channels. The default is **false**.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -80,8 +80,8 @@ namespace G
         {
             this.Target = target ?? throw new global::System.ArgumentNullException(nameof(target));
             this.BroadcasterId = broadcasterId ?? throw new global::System.ArgumentNullException(nameof(broadcasterId));
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.IsGlobalBroadcast = isGlobalBroadcast;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
         }
 
         /// <summary>

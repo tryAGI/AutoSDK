@@ -198,42 +198,21 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookIssuesDeletedIssue" /> class.
         /// </summary>
-        /// <param name="activeLockReason"></param>
-        /// <param name="assignee"></param>
         /// <param name="assignees"></param>
         /// <param name="authorAssociation">
         /// How the author is associated with the repository.
         /// </param>
-        /// <param name="body">
-        /// Contents of the issue
-        /// </param>
-        /// <param name="closedAt"></param>
         /// <param name="comments"></param>
         /// <param name="commentsUrl"></param>
         /// <param name="createdAt"></param>
-        /// <param name="draft"></param>
         /// <param name="eventsUrl"></param>
         /// <param name="htmlUrl"></param>
         /// <param name="id"></param>
-        /// <param name="labels"></param>
         /// <param name="labelsUrl"></param>
-        /// <param name="locked"></param>
-        /// <param name="milestone">
-        /// A collection of related issues and pull requests.
-        /// </param>
         /// <param name="nodeId"></param>
         /// <param name="number"></param>
-        /// <param name="performedViaGithubApp">
-        /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-        /// </param>
-        /// <param name="pullRequest"></param>
         /// <param name="reactions"></param>
         /// <param name="repositoryUrl"></param>
-        /// <param name="state">
-        /// State of the issue; either 'open' or 'closed'
-        /// </param>
-        /// <param name="stateReason"></param>
-        /// <param name="timelineUrl"></param>
         /// <param name="title">
         /// Title of the issue
         /// </param>
@@ -241,6 +220,27 @@ namespace G
         /// <param name="url">
         /// URL for the issue
         /// </param>
+        /// <param name="activeLockReason"></param>
+        /// <param name="assignee"></param>
+        /// <param name="body">
+        /// Contents of the issue
+        /// </param>
+        /// <param name="closedAt"></param>
+        /// <param name="draft"></param>
+        /// <param name="labels"></param>
+        /// <param name="locked"></param>
+        /// <param name="milestone">
+        /// A collection of related issues and pull requests.
+        /// </param>
+        /// <param name="performedViaGithubApp">
+        /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+        /// </param>
+        /// <param name="pullRequest"></param>
+        /// <param name="state">
+        /// State of the issue; either 'open' or 'closed'
+        /// </param>
+        /// <param name="stateReason"></param>
+        /// <param name="timelineUrl"></param>
         /// <param name="user"></param>
         public WebhookIssuesDeletedIssue(
             global::System.Collections.Generic.IList<global::G.WebhookIssuesDeletedIssueAssignee2> assignees,
@@ -274,35 +274,35 @@ namespace G
             string? timelineUrl,
             global::G.WebhookIssuesDeletedIssueUser? user)
         {
+            this.ActiveLockReason = activeLockReason;
+            this.Assignee = assignee;
             this.Assignees = assignees ?? throw new global::System.ArgumentNullException(nameof(assignees));
             this.AuthorAssociation = authorAssociation;
+            this.Body = body;
+            this.ClosedAt = closedAt;
             this.Comments = comments;
             this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
             this.CreatedAt = createdAt;
+            this.Draft = draft;
             this.EventsUrl = eventsUrl ?? throw new global::System.ArgumentNullException(nameof(eventsUrl));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
-            this.LabelsUrl = labelsUrl ?? throw new global::System.ArgumentNullException(nameof(labelsUrl));
-            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.Number = number;
-            this.Reactions = reactions ?? throw new global::System.ArgumentNullException(nameof(reactions));
-            this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
-            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.UpdatedAt = updatedAt;
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.ActiveLockReason = activeLockReason;
-            this.Assignee = assignee;
-            this.Body = body;
-            this.ClosedAt = closedAt;
-            this.Draft = draft;
             this.Labels = labels;
+            this.LabelsUrl = labelsUrl ?? throw new global::System.ArgumentNullException(nameof(labelsUrl));
             this.Locked = locked;
             this.Milestone = milestone;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Number = number;
             this.PerformedViaGithubApp = performedViaGithubApp;
             this.PullRequest = pullRequest;
+            this.Reactions = reactions ?? throw new global::System.ArgumentNullException(nameof(reactions));
+            this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
             this.State = state;
             this.StateReason = stateReason;
             this.TimelineUrl = timelineUrl;
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.UpdatedAt = updatedAt;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.User = user;
         }
 

@@ -78,6 +78,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookCodeScanningAlertReopened" /> class.
         /// </summary>
+        /// <param name="repository">
+        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
+        /// when the event occurs from activity in a repository.
+        /// </param>
+        /// <param name="sender">
+        /// A GitHub user.
+        /// </param>
         /// <param name="action"></param>
         /// <param name="alert">
         /// The code scanning alert involved in the event.
@@ -102,13 +109,6 @@ namespace G
         /// <param name="ref">
         /// The Git reference of the code scanning alert. When the action is `reopened_by_user` or `closed_by_user`, the event was triggered by the `sender` and this value will be empty.
         /// </param>
-        /// <param name="repository">
-        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
-        /// when the event occurs from activity in a repository.
-        /// </param>
-        /// <param name="sender">
-        /// A GitHub user.
-        /// </param>
         public WebhookCodeScanningAlertReopened(
             global::G.RepositoryWebhooks repository,
             global::G.SimpleUser sender,
@@ -120,8 +120,6 @@ namespace G
             global::G.OrganizationSimpleWebhooks? organization,
             string? @ref)
         {
-            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
-            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Action = action;
             this.Alert = alert;
             this.CommitOid = commitOid;
@@ -129,6 +127,8 @@ namespace G
             this.Installation = installation;
             this.Organization = organization;
             this.Ref = @ref;
+            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
+            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
         }
 
         /// <summary>

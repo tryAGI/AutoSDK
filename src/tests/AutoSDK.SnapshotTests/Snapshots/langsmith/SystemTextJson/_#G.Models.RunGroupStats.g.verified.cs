@@ -171,6 +171,7 @@ namespace G
         /// Initializes a new instance of the <see cref="RunGroupStats" /> class.
         /// </summary>
         /// <param name="runCount"></param>
+        /// <param name="groupCount"></param>
         /// <param name="latencyP50"></param>
         /// <param name="latencyP99"></param>
         /// <param name="firstTokenP50"></param>
@@ -194,7 +195,6 @@ namespace G
         /// <param name="completionCost"></param>
         /// <param name="costP50"></param>
         /// <param name="costP99"></param>
-        /// <param name="groupCount"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -226,7 +226,6 @@ namespace G
             string? costP99)
         {
             this.RunCount = runCount;
-            this.GroupCount = groupCount;
             this.LatencyP50 = latencyP50;
             this.LatencyP99 = latencyP99;
             this.FirstTokenP50 = firstTokenP50;
@@ -250,6 +249,7 @@ namespace G
             this.CompletionCost = completionCost;
             this.CostP50 = costP50;
             this.CostP99 = costP99;
+            this.GroupCount = groupCount;
         }
 
         /// <summary>

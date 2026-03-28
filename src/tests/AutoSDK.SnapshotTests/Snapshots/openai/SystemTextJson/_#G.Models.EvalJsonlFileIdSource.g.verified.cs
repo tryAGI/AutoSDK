@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EvalJsonlFileIdSource" /> class.
         /// </summary>
+        /// <param name="id">
+        /// The identifier of the file.
+        /// </param>
         /// <param name="type">
         /// The type of jsonl source. Always `file_id`.<br/>
         /// Default Value: file_id
-        /// </param>
-        /// <param name="id">
-        /// The identifier of the file.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -48,8 +48,8 @@ namespace G
             string id,
             global::G.EvalJsonlFileIdSourceType type = global::G.EvalJsonlFileIdSourceType.FileId)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
         }
 
         /// <summary>

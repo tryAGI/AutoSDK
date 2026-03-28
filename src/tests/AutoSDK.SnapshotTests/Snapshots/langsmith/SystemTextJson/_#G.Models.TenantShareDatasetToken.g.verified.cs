@@ -52,11 +52,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TenantShareDatasetToken" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="shareToken"></param>
         /// <param name="createdAt"></param>
         /// <param name="datasetId"></param>
         /// <param name="datasetName"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -67,10 +67,10 @@ namespace G
             string? datasetName,
             string type = "dataset")
         {
+            this.Type = type;
             this.ShareToken = shareToken ?? throw new global::System.ArgumentNullException(nameof(shareToken));
             this.CreatedAt = createdAt;
             this.DatasetId = datasetId;
-            this.Type = type;
             this.DatasetName = datasetName;
         }
 

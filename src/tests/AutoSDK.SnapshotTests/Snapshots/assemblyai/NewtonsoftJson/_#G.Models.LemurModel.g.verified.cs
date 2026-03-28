@@ -14,7 +14,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="anthropic/claude-2")]
-        AnthropicClaude2,
+        AnthropicDivideclaude2,
         /// <summary>
         /// Claude 2.1 is a legacy model similar to Claude 2.0. The key difference is that it minimizes model hallucination and system prompts, has a larger context window, and performs better in citations.
         /// </summary>
@@ -74,7 +74,7 @@ namespace G
         {
             return value switch
             {
-                LemurModel.AnthropicClaude2 => "anthropic/claude-2",
+                LemurModel.AnthropicDivideclaude2 => "anthropic/claude-2",
                 LemurModel.AnthropicClaude2_1 => "anthropic/claude-2-1",
                 LemurModel.AnthropicClaude3_5_Sonnet => "anthropic/claude-3-5-sonnet",
                 LemurModel.AnthropicClaude3_Haiku => "anthropic/claude-3-haiku",
@@ -94,7 +94,7 @@ namespace G
         {
             return value switch
             {
-                "anthropic/claude-2" => LemurModel.AnthropicClaude2,
+                "anthropic/claude-2" => LemurModel.AnthropicDivideclaude2,
                 "anthropic/claude-2-1" => LemurModel.AnthropicClaude2_1,
                 "anthropic/claude-3-5-sonnet" => LemurModel.AnthropicClaude3_5_Sonnet,
                 "anthropic/claude-3-haiku" => LemurModel.AnthropicClaude3_Haiku,

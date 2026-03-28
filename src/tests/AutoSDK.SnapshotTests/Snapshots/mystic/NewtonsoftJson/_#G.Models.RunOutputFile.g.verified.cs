@@ -44,8 +44,8 @@ namespace G
         /// </summary>
         /// <param name="name"></param>
         /// <param name="path"></param>
-        /// <param name="url"></param>
         /// <param name="size"></param>
+        /// <param name="url"></param>
         public RunOutputFile(
             string name,
             string path,
@@ -54,8 +54,8 @@ namespace G
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
-            this.Size = size;
             this.Url = url;
+            this.Size = size;
         }
 
         /// <summary>

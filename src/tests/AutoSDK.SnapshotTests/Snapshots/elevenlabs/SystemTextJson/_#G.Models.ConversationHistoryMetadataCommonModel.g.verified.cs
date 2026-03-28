@@ -182,8 +182,8 @@ namespace G
         /// Initializes a new instance of the <see cref="ConversationHistoryMetadataCommonModel" /> class.
         /// </summary>
         /// <param name="startTimeUnixSecs"></param>
-        /// <param name="acceptedTimeUnixSecs"></param>
         /// <param name="callDurationSecs"></param>
+        /// <param name="acceptedTimeUnixSecs"></param>
         /// <param name="cost"></param>
         /// <param name="deletionSettings"></param>
         /// <param name="feedback"></param>
@@ -250,8 +250,8 @@ namespace G
             global::G.AgentDefinitionSource? agentLastUpdatedFrom)
         {
             this.StartTimeUnixSecs = startTimeUnixSecs;
-            this.CallDurationSecs = callDurationSecs;
             this.AcceptedTimeUnixSecs = acceptedTimeUnixSecs;
+            this.CallDurationSecs = callDurationSecs;
             this.Cost = cost;
             this.DeletionSettings = deletionSettings;
             this.Feedback = feedback;

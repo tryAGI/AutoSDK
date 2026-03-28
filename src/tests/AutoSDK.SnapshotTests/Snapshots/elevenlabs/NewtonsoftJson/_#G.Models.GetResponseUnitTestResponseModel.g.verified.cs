@@ -72,6 +72,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GetResponseUnitTestResponseModel" /> class.
         /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
         /// <param name="fromConversationMetadata">
         /// Metadata of a conversation this test was created from (if applicable).
         /// </param>
@@ -91,8 +93,6 @@ namespace G
         /// <param name="failureExamples">
         /// Non-empty list of example responses that should be considered failures
         /// </param>
-        /// <param name="id"></param>
-        /// <param name="name"></param>
         public GetResponseUnitTestResponseModel(
             string id,
             string name,
@@ -104,8 +104,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.AgentSuccessfulResponseExample>? successExamples,
             global::System.Collections.Generic.IList<global::G.AgentFailureResponseExample>? failureExamples)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.FromConversationMetadata = fromConversationMetadata;
             this.DynamicVariables = dynamicVariables;
             this.ChatHistory = chatHistory;
@@ -113,6 +111,8 @@ namespace G
             this.SuccessCondition = successCondition;
             this.SuccessExamples = successExamples;
             this.FailureExamples = failureExamples;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
         }
 
         /// <summary>

@@ -75,6 +75,9 @@ namespace G
         /// <param name="assignee">
         /// A GitHub user.
         /// </param>
+        /// <param name="createdAt">
+        /// Timestamp of when the assignee was last granted access to GitHub Copilot, in ISO 8601 format.
+        /// </param>
         /// <param name="organization">
         /// A GitHub organization.
         /// </param>
@@ -89,9 +92,6 @@ namespace G
         /// </param>
         /// <param name="lastActivityEditor">
         /// Last editor that was used by the user for a GitHub Copilot completion.
-        /// </param>
-        /// <param name="createdAt">
-        /// Timestamp of when the assignee was last granted access to GitHub Copilot, in ISO 8601 format.
         /// </param>
         /// <param name="updatedAt">
         /// Timestamp of when the assignee's GitHub Copilot access was last updated, in ISO 8601 format.
@@ -111,12 +111,12 @@ namespace G
             global::G.CopilotSeatDetailsPlanType? planType)
         {
             this.Assignee = assignee ?? throw new global::System.ArgumentNullException(nameof(assignee));
-            this.CreatedAt = createdAt;
             this.Organization = organization;
             this.AssigningTeam = assigningTeam;
             this.PendingCancellationDate = pendingCancellationDate;
             this.LastActivityAt = lastActivityAt;
             this.LastActivityEditor = lastActivityEditor;
+            this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.PlanType = planType;
         }

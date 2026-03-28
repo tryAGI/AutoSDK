@@ -47,9 +47,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EvalStoredCompletionsDataSourceConfig" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of data source. Always `stored_completions`.<br/>
-        /// Default Value: stored_completions
+        /// <param name="schema">
+        /// The json schema for the run data source items.<br/>
+        /// Learn how to build JSON schemas [here](https://json-schema.org/).
         /// </param>
         /// <param name="metadata">
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -58,18 +58,18 @@ namespace G
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
         /// </param>
-        /// <param name="schema">
-        /// The json schema for the run data source items.<br/>
-        /// Learn how to build JSON schemas [here](https://json-schema.org/).
+        /// <param name="type">
+        /// The type of data source. Always `stored_completions`.<br/>
+        /// Default Value: stored_completions
         /// </param>
         public EvalStoredCompletionsDataSourceConfig(
             object schema,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::G.EvalStoredCompletionsDataSourceConfigType type = global::G.EvalStoredCompletionsDataSourceConfigType.StoredCompletions)
         {
-            this.Schema = schema ?? throw new global::System.ArgumentNullException(nameof(schema));
             this.Type = type;
             this.Metadata = metadata;
+            this.Schema = schema ?? throw new global::System.ArgumentNullException(nameof(schema));
         }
 
         /// <summary>

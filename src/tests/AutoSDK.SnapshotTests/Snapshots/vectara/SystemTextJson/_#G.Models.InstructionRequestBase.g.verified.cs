@@ -85,15 +85,6 @@ namespace G
         /// The human-readable name of an instruction.<br/>
         /// Example: Customer Support Initial Instruction
         /// </param>
-        /// <param name="description">
-        /// A detailed description of what this instruction does.<br/>
-        /// Example: Provides initial context and guidelines for customer support interactions
-        /// </param>
-        /// <param name="templateType">
-        /// The templating engine used for instructions.<br/>
-        /// Default Value: velocity<br/>
-        /// Example: velocity
-        /// </param>
         /// <param name="template">
         /// The instruction template content using the specified template engine.<br/>
         /// Available Velocity variables:<br/>
@@ -106,6 +97,15 @@ namespace G
         /// - `$tools` - List of tool maps, each with `name` and `description` fields<br/>
         /// Example: `You are a helpful customer support agent. Agent: $agent.name. Today is $currentDate. Available tools: #foreach($tool in $tools)${tool.name}#if($foreach.hasNext), #end#end`<br/>
         /// Example: You are an expert customer support agent for $agent.name. Available tools: #foreach($tool in $tools)${tool.name}#if($foreach.hasNext), #end#end
+        /// </param>
+        /// <param name="description">
+        /// A detailed description of what this instruction does.<br/>
+        /// Example: Provides initial context and guidelines for customer support interactions
+        /// </param>
+        /// <param name="templateType">
+        /// The templating engine used for instructions.<br/>
+        /// Default Value: velocity<br/>
+        /// Example: velocity
         /// </param>
         /// <param name="metadata">
         /// Arbitrary metadata associated with the instruction.<br/>
@@ -129,9 +129,9 @@ namespace G
             bool? enabled)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Template = template ?? throw new global::System.ArgumentNullException(nameof(template));
             this.Description = description;
             this.TemplateType = templateType;
+            this.Template = template ?? throw new global::System.ArgumentNullException(nameof(template));
             this.Metadata = metadata;
             this.Enabled = enabled;
         }

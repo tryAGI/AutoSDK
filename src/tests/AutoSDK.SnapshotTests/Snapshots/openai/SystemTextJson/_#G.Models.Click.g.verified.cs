@@ -50,11 +50,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Click" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Specifies the event type. For a click action, this property is <br/>
-        /// always set to `click`.<br/>
-        /// Default Value: click
-        /// </param>
         /// <param name="button">
         /// Indicates which mouse button was pressed during the click. One of `left`, `right`, `wheel`, `back`, or `forward`.
         /// </param>
@@ -63,6 +58,11 @@ namespace G
         /// </param>
         /// <param name="y">
         /// The y-coordinate where the click occurred.
+        /// </param>
+        /// <param name="type">
+        /// Specifies the event type. For a click action, this property is <br/>
+        /// always set to `click`.<br/>
+        /// Default Value: click
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -73,10 +73,10 @@ namespace G
             int y,
             global::G.ClickType type = global::G.ClickType.Click)
         {
+            this.Type = type;
             this.Button = button;
             this.X = x;
             this.Y = y;
-            this.Type = type;
         }
 
         /// <summary>

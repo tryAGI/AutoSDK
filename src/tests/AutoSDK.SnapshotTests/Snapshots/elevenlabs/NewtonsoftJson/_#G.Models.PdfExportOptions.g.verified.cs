@@ -61,10 +61,10 @@ namespace G
         /// <param name="includeTimestamps">
         /// Default Value: true
         /// </param>
-        /// <param name="format"></param>
         /// <param name="segmentOnSilenceLongerThanS"></param>
         /// <param name="maxSegmentDurationS"></param>
         /// <param name="maxSegmentChars"></param>
+        /// <param name="format"></param>
         public PdfExportOptions(
             bool? includeSpeakers,
             bool? includeTimestamps,

@@ -53,12 +53,12 @@ namespace G
         /// Initializes a new instance of the <see cref="TimelineCrossReferencedEvent" /> class.
         /// </summary>
         /// <param name="event"></param>
-        /// <param name="actor">
-        /// A GitHub user.
-        /// </param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="source"></param>
+        /// <param name="actor">
+        /// A GitHub user.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -70,10 +70,10 @@ namespace G
             global::G.SimpleUser? actor)
         {
             this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));
+            this.Actor = actor;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
-            this.Actor = actor;
         }
 
         /// <summary>

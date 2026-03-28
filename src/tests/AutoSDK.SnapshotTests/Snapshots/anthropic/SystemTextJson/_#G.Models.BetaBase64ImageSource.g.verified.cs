@@ -40,9 +40,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaBase64ImageSource" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="mediaType"></param>
         /// <param name="data"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -51,9 +51,9 @@ namespace G
             byte[] data,
             global::G.BetaBase64ImageSourceType type)
         {
+            this.Type = type;
             this.MediaType = mediaType;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.Type = type;
         }
 
         /// <summary>

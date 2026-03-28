@@ -42,9 +42,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PlaygroundSettingsCreateRequest" /> class.
         /// </summary>
+        /// <param name="settings"></param>
         /// <param name="name"></param>
         /// <param name="description"></param>
-        /// <param name="settings"></param>
         /// <param name="options"></param>
         public PlaygroundSettingsCreateRequest(
             object settings,
@@ -52,9 +52,9 @@ namespace G
             string? description,
             global::G.PlaygroundSavedOptions? options)
         {
-            this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
             this.Name = name;
             this.Description = description;
+            this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
             this.Options = options;
         }
 

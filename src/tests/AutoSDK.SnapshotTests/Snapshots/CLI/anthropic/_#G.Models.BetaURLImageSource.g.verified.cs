@@ -32,8 +32,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaURLImageSource" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="url"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -41,8 +41,8 @@ namespace G
             string url,
             global::G.BetaURLImageSourceType type)
         {
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Type = type;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 
         /// <summary>

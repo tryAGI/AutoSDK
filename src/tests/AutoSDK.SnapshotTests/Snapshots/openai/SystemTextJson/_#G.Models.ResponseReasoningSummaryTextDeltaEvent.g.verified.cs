@@ -60,9 +60,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseReasoningSummaryTextDeltaEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.reasoning_summary_text.delta`.
-        /// </param>
         /// <param name="itemId">
         /// The ID of the item this summary text delta is associated with.
         /// </param>
@@ -78,6 +75,9 @@ namespace G
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.reasoning_summary_text.delta`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -89,12 +89,12 @@ namespace G
             int sequenceNumber,
             global::G.ResponseReasoningSummaryTextDeltaEventType type)
         {
+            this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.SummaryIndex = summaryIndex;
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.SequenceNumber = sequenceNumber;
-            this.Type = type;
         }
 
         /// <summary>

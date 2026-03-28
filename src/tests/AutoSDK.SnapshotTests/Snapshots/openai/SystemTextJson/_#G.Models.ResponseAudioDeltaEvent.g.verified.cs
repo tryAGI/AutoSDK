@@ -39,14 +39,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseAudioDeltaEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.audio.delta`.
-        /// </param>
         /// <param name="sequenceNumber">
         /// A sequence number for this chunk of the stream response.
         /// </param>
         /// <param name="delta">
         /// A chunk of Base64 encoded response audio bytes.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.audio.delta`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -56,9 +56,9 @@ namespace G
             string delta,
             global::G.ResponseAudioDeltaEventType type)
         {
+            this.Type = type;
             this.SequenceNumber = sequenceNumber;
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
-            this.Type = type;
         }
 
         /// <summary>

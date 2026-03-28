@@ -50,10 +50,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GraderTextSimilarity" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of grader.<br/>
-        /// Default Value: text_similarity
-        /// </param>
         /// <param name="name">
         /// The name of the grader.
         /// </param>
@@ -66,6 +62,10 @@ namespace G
         /// <param name="evaluationMetric">
         /// The evaluation metric to use. One of `fuzzy_match`, `bleu`, `gleu`, `meteor`, `rouge_1`, `rouge_2`, `rouge_3`, `rouge_4`, `rouge_5`, or `rouge_l`.
         /// </param>
+        /// <param name="type">
+        /// The type of grader.<br/>
+        /// Default Value: text_similarity
+        /// </param>
         public GraderTextSimilarity(
             string name,
             string input,
@@ -73,11 +73,11 @@ namespace G
             global::G.GraderTextSimilarityEvaluationMetric evaluationMetric,
             global::G.GraderTextSimilarityType type = global::G.GraderTextSimilarityType.TextSimilarity)
         {
+            this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Reference = reference ?? throw new global::System.ArgumentNullException(nameof(reference));
             this.EvaluationMetric = evaluationMetric;
-            this.Type = type;
         }
 
         /// <summary>

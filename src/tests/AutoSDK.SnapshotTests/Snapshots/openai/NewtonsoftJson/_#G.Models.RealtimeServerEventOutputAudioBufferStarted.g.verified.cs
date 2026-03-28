@@ -42,11 +42,11 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `output_audio_buffer.started`.
-        /// </param>
         /// <param name="responseId">
         /// The unique ID of the response that produced the audio.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `output_audio_buffer.started`.
         /// </param>
         public RealtimeServerEventOutputAudioBufferStarted(
             string eventId,
@@ -54,8 +54,8 @@ namespace G
             global::G.RealtimeServerEventOutputAudioBufferStartedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
             this.Type = type;
+            this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
         }
 
         /// <summary>

@@ -39,11 +39,11 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `conversation.item.retrieved`.
-        /// </param>
         /// <param name="item">
         /// The item to add to the conversation.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `conversation.item.retrieved`.
         /// </param>
         public RealtimeServerEventConversationItemRetrieved(
             string eventId,
@@ -51,8 +51,8 @@ namespace G
             global::G.RealtimeServerEventConversationItemRetrievedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Item = item ?? throw new global::System.ArgumentNullException(nameof(item));
             this.Type = type;
+            this.Item = item ?? throw new global::System.ArgumentNullException(nameof(item));
         }
 
         /// <summary>

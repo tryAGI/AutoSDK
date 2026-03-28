@@ -37,16 +37,16 @@ namespace G
         /// Initializes a new instance of the <see cref="ToolsResponseModel" /> class.
         /// </summary>
         /// <param name="tools"></param>
-        /// <param name="nextCursor"></param>
         /// <param name="hasMore"></param>
+        /// <param name="nextCursor"></param>
         public ToolsResponseModel(
             global::System.Collections.Generic.IList<global::G.ToolResponseModel> tools,
             bool hasMore,
             string? nextCursor)
         {
             this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
-            this.HasMore = hasMore;
             this.NextCursor = nextCursor;
+            this.HasMore = hasMore;
         }
 
         /// <summary>

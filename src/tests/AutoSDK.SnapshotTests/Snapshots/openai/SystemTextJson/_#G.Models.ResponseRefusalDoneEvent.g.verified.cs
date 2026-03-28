@@ -60,9 +60,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseRefusalDoneEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.refusal.done`.
-        /// </param>
         /// <param name="itemId">
         /// The ID of the output item that the refusal text is finalized.
         /// </param>
@@ -78,6 +75,9 @@ namespace G
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.refusal.done`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -89,12 +89,12 @@ namespace G
             int sequenceNumber,
             global::G.ResponseRefusalDoneEventType type)
         {
+            this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.ContentIndex = contentIndex;
             this.Refusal = refusal ?? throw new global::System.ArgumentNullException(nameof(refusal));
             this.SequenceNumber = sequenceNumber;
-            this.Type = type;
         }
 
         /// <summary>

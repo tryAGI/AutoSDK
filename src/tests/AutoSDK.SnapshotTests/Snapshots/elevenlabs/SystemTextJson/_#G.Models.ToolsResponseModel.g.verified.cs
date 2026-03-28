@@ -39,8 +39,8 @@ namespace G
         /// Initializes a new instance of the <see cref="ToolsResponseModel" /> class.
         /// </summary>
         /// <param name="tools"></param>
-        /// <param name="nextCursor"></param>
         /// <param name="hasMore"></param>
+        /// <param name="nextCursor"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -50,8 +50,8 @@ namespace G
             string? nextCursor)
         {
             this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
-            this.HasMore = hasMore;
             this.NextCursor = nextCursor;
+            this.HasMore = hasMore;
         }
 
         /// <summary>

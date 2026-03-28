@@ -37,19 +37,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaContentBlockStartEvent" /> class.
         /// </summary>
+        /// <param name="index"></param>
+        /// <param name="contentBlock"></param>
         /// <param name="type">
         /// Default Value: content_block_start
         /// </param>
-        /// <param name="index"></param>
-        /// <param name="contentBlock"></param>
         public BetaContentBlockStartEvent(
             int index,
             global::G.ContentBlock contentBlock,
             global::G.BetaContentBlockStartEventType type = global::G.BetaContentBlockStartEventType.ContentBlockStart)
         {
+            this.Type = type;
             this.Index = index;
             this.ContentBlock = contentBlock;
-            this.Type = type;
         }
 
         /// <summary>

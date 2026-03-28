@@ -53,14 +53,14 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="config"></param>
+        /// <param name="metadata">
+        /// The metadata of the MCP Server
+        /// </param>
         /// <param name="accessInfo">
         /// The access information of the MCP Server
         /// </param>
         /// <param name="dependentAgents">
         /// List of agents that depend on this MCP Server.
-        /// </param>
-        /// <param name="metadata">
-        /// The metadata of the MCP Server
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -74,9 +74,9 @@ namespace G
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.AccessInfo = accessInfo;
             this.DependentAgents = dependentAgents;
+            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
         }
 
         /// <summary>

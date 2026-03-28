@@ -31,14 +31,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionContentPartText" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="text"></param>
+        /// <param name="type"></param>
         public ChatCompletionContentPartText(
             string text,
             string type = "text")
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

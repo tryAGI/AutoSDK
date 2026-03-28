@@ -488,30 +488,6 @@ namespace G
         /// <param name="avatarUrl">
         /// Example: https://github.com/images/error/octocat_happy.gif
         /// </param>
-        /// <param name="description">
-        /// Example: A great organization
-        /// </param>
-        /// <param name="name">
-        /// Example: github
-        /// </param>
-        /// <param name="company">
-        /// Example: GitHub
-        /// </param>
-        /// <param name="blog">
-        /// Example: https://github.com/blog
-        /// </param>
-        /// <param name="location">
-        /// Example: San Francisco
-        /// </param>
-        /// <param name="email">
-        /// Example: octocat@github.com
-        /// </param>
-        /// <param name="twitterUsername">
-        /// Example: github
-        /// </param>
-        /// <param name="isVerified">
-        /// Example: true
-        /// </param>
         /// <param name="hasOrganizationProjects">
         /// Example: true
         /// </param>
@@ -535,6 +511,34 @@ namespace G
         /// </param>
         /// <param name="type">
         /// Example: Organization
+        /// </param>
+        /// <param name="createdAt">
+        /// Example: 2008-01-14T04:33:35Z
+        /// </param>
+        /// <param name="updatedAt"></param>
+        /// <param name="description">
+        /// Example: A great organization
+        /// </param>
+        /// <param name="name">
+        /// Example: github
+        /// </param>
+        /// <param name="company">
+        /// Example: GitHub
+        /// </param>
+        /// <param name="blog">
+        /// Example: https://github.com/blog
+        /// </param>
+        /// <param name="location">
+        /// Example: San Francisco
+        /// </param>
+        /// <param name="email">
+        /// Example: octocat@github.com
+        /// </param>
+        /// <param name="twitterUsername">
+        /// Example: github
+        /// </param>
+        /// <param name="isVerified">
+        /// Example: true
         /// </param>
         /// <param name="totalPrivateRepos">
         /// Example: 100
@@ -594,10 +598,6 @@ namespace G
         /// An optional URL string to display to contributors who are blocked from pushing a secret.<br/>
         /// Example: https://github.com/test-org/test-repo/blob/main/README.md
         /// </param>
-        /// <param name="createdAt">
-        /// Example: 2008-01-14T04:33:35Z
-        /// </param>
-        /// <param name="updatedAt"></param>
         /// <param name="archivedAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -665,16 +665,6 @@ namespace G
             this.MembersUrl = membersUrl ?? throw new global::System.ArgumentNullException(nameof(membersUrl));
             this.PublicMembersUrl = publicMembersUrl ?? throw new global::System.ArgumentNullException(nameof(publicMembersUrl));
             this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
-            this.HasOrganizationProjects = hasOrganizationProjects;
-            this.HasRepositoryProjects = hasRepositoryProjects;
-            this.PublicRepos = publicRepos;
-            this.PublicGists = publicGists;
-            this.Followers = followers;
-            this.Following = following;
-            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.Description = description;
             this.Name = name;
             this.Company = company;
@@ -683,6 +673,14 @@ namespace G
             this.Email = email;
             this.TwitterUsername = twitterUsername;
             this.IsVerified = isVerified;
+            this.HasOrganizationProjects = hasOrganizationProjects;
+            this.HasRepositoryProjects = hasRepositoryProjects;
+            this.PublicRepos = publicRepos;
+            this.PublicGists = publicGists;
+            this.Followers = followers;
+            this.Following = following;
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.TotalPrivateRepos = totalPrivateRepos;
             this.OwnedPrivateRepos = ownedPrivateRepos;
             this.PrivateGists = privateGists;
@@ -703,6 +701,8 @@ namespace G
             this.WebCommitSignoffRequired = webCommitSignoffRequired;
             this.SecretScanningPushProtectionCustomLinkEnabled = secretScanningPushProtectionCustomLinkEnabled;
             this.SecretScanningPushProtectionCustomLink = secretScanningPushProtectionCustomLink;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.ArchivedAt = archivedAt;
         }
 

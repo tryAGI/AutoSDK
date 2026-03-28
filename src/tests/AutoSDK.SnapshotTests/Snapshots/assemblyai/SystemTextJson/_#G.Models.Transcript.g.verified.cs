@@ -416,14 +416,6 @@ namespace G
         /// <param name="status">
         /// The status of your transcript. Possible values are queued, processing, completed, or error.
         /// </param>
-        /// <param name="languageCode">
-        /// The language of your audio file.<br/>
-        /// Possible values are found in [Supported Languages](https://www.assemblyai.com/docs/concepts/supported-languages).<br/>
-        /// The default value is 'en_us'.
-        /// </param>
-        /// <param name="languageDetection">
-        /// Whether [Automatic language detection](https://www.assemblyai.com/docs/models/speech-recognition#automatic-language-detection) is enabled, either true or false
-        /// </param>
         /// <param name="languageConfidenceThreshold">
         /// The confidence threshold for the automatically detected language.<br/>
         /// An error will be returned if the language confidence is below this threshold.
@@ -433,6 +425,32 @@ namespace G
         /// </param>
         /// <param name="speechModel">
         /// The speech model used for the transcription. When `null`, the default model is used.
+        /// </param>
+        /// <param name="webhookAuth">
+        /// Whether webhook authentication details were provided
+        /// </param>
+        /// <param name="autoHighlights">
+        /// Whether Key Phrases is enabled, either true or false
+        /// </param>
+        /// <param name="redactPii">
+        /// Whether [PII Redaction](https://www.assemblyai.com/docs/models/pii-redaction) is enabled, either true or false
+        /// </param>
+        /// <param name="summarization">
+        /// Whether [Summarization](https://www.assemblyai.com/docs/models/summarization) is enabled, either true or false
+        /// </param>
+        /// <param name="languageModel">
+        /// The language model that was used for the transcript
+        /// </param>
+        /// <param name="acousticModel">
+        /// The acoustic model that was used for the transcript
+        /// </param>
+        /// <param name="languageCode">
+        /// The language of your audio file.<br/>
+        /// Possible values are found in [Supported Languages](https://www.assemblyai.com/docs/concepts/supported-languages).<br/>
+        /// The default value is 'en_us'.
+        /// </param>
+        /// <param name="languageDetection">
+        /// Whether [Automatic language detection](https://www.assemblyai.com/docs/models/speech-recognition#automatic-language-detection) is enabled, either true or false
         /// </param>
         /// <param name="text">
         /// The textual transcript of your media file
@@ -471,14 +489,8 @@ namespace G
         /// <param name="webhookStatusCode">
         /// The status code we received from your server when delivering the transcript completed or failed webhook request, if a webhook URL was provided
         /// </param>
-        /// <param name="webhookAuth">
-        /// Whether webhook authentication details were provided
-        /// </param>
         /// <param name="webhookAuthHeaderName">
         /// The header name to be sent with the transcript completed or failed webhook requests
-        /// </param>
-        /// <param name="autoHighlights">
-        /// Whether Key Phrases is enabled, either true or false
         /// </param>
         /// <param name="autoHighlightsResult">
         /// An array of results for the Key Phrases model, if it is enabled.<br/>
@@ -498,9 +510,6 @@ namespace G
         /// </param>
         /// <param name="filterProfanity">
         /// Whether [Profanity Filtering](https://www.assemblyai.com/docs/models/speech-recognition#profanity-filtering) is enabled, either true or false
-        /// </param>
-        /// <param name="redactPii">
-        /// Whether [PII Redaction](https://www.assemblyai.com/docs/models/pii-redaction) is enabled, either true or false
         /// </param>
         /// <param name="redactPiiAudio">
         /// Whether a redacted version of the audio file was generated,<br/>
@@ -546,9 +555,6 @@ namespace G
         /// <param name="chapters">
         /// An array of temporally sequential chapters for the audio file
         /// </param>
-        /// <param name="summarization">
-        /// Whether [Summarization](https://www.assemblyai.com/docs/models/summarization) is enabled, either true or false
-        /// </param>
         /// <param name="summaryType">
         /// The type of summary generated, if [Summarization](https://www.assemblyai.com/docs/models/summarization) is enabled
         /// </param>
@@ -588,12 +594,6 @@ namespace G
         /// </param>
         /// <param name="error">
         /// Error message of why the transcript failed
-        /// </param>
-        /// <param name="languageModel">
-        /// The language model that was used for the transcript
-        /// </param>
-        /// <param name="acousticModel">
-        /// The acoustic model that was used for the transcript
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -660,17 +660,11 @@ namespace G
             this.Id = id;
             this.AudioUrl = audioUrl ?? throw new global::System.ArgumentNullException(nameof(audioUrl));
             this.Status = status;
+            this.LanguageCode = languageCode;
+            this.LanguageDetection = languageDetection;
             this.LanguageConfidenceThreshold = languageConfidenceThreshold;
             this.LanguageConfidence = languageConfidence;
             this.SpeechModel = speechModel;
-            this.WebhookAuth = webhookAuth;
-            this.AutoHighlights = autoHighlights;
-            this.RedactPii = redactPii;
-            this.Summarization = summarization;
-            this.LanguageModel = languageModel ?? throw new global::System.ArgumentNullException(nameof(languageModel));
-            this.AcousticModel = acousticModel ?? throw new global::System.ArgumentNullException(nameof(acousticModel));
-            this.LanguageCode = languageCode;
-            this.LanguageDetection = languageDetection;
             this.Text = text;
             this.Words = words;
             this.Utterances = utterances;
@@ -682,13 +676,16 @@ namespace G
             this.DualChannel = dualChannel;
             this.WebhookUrl = webhookUrl;
             this.WebhookStatusCode = webhookStatusCode;
+            this.WebhookAuth = webhookAuth;
             this.WebhookAuthHeaderName = webhookAuthHeaderName;
+            this.AutoHighlights = autoHighlights;
             this.AutoHighlightsResult = autoHighlightsResult;
             this.AudioStartFrom = audioStartFrom;
             this.AudioEndAt = audioEndAt;
             this.WordBoost = wordBoost;
             this.BoostParam = boostParam;
             this.FilterProfanity = filterProfanity;
+            this.RedactPii = redactPii;
             this.RedactPiiAudio = redactPiiAudio;
             this.RedactPiiAudioQuality = redactPiiAudioQuality;
             this.RedactPiiPolicies = redactPiiPolicies;
@@ -702,6 +699,7 @@ namespace G
             this.CustomSpelling = customSpelling;
             this.AutoChapters = autoChapters;
             this.Chapters = chapters;
+            this.Summarization = summarization;
             this.SummaryType = summaryType;
             this.SummaryModel = summaryModel;
             this.Summary = summary;
@@ -714,6 +712,8 @@ namespace G
             this.SpeechThreshold = speechThreshold;
             this.Throttled = throttled;
             this.Error = error;
+            this.LanguageModel = languageModel ?? throw new global::System.ArgumentNullException(nameof(languageModel));
+            this.AcousticModel = acousticModel ?? throw new global::System.ArgumentNullException(nameof(acousticModel));
         }
 
         /// <summary>

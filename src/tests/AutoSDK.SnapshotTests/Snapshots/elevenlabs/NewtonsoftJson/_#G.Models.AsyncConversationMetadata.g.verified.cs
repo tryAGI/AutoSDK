@@ -62,9 +62,9 @@ namespace G
         /// </summary>
         /// <param name="deliveryStatus"></param>
         /// <param name="deliveryTimestamp"></param>
-        /// <param name="deliveryError"></param>
         /// <param name="externalSystem"></param>
         /// <param name="externalId"></param>
+        /// <param name="deliveryError"></param>
         /// <param name="retryCount">
         /// Default Value: 0
         /// </param>
@@ -80,9 +80,9 @@ namespace G
         {
             this.DeliveryStatus = deliveryStatus;
             this.DeliveryTimestamp = deliveryTimestamp;
+            this.DeliveryError = deliveryError;
             this.ExternalSystem = externalSystem ?? throw new global::System.ArgumentNullException(nameof(externalSystem));
             this.ExternalId = externalId ?? throw new global::System.ArgumentNullException(nameof(externalId));
-            this.DeliveryError = deliveryError;
             this.RetryCount = retryCount;
             this.LastRetryTimestamp = lastRetryTimestamp;
         }

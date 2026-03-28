@@ -31,16 +31,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ErrorResponse" /> class.
         /// </summary>
+        /// <param name="error"></param>
         /// <param name="type">
         /// Default Value: error
         /// </param>
-        /// <param name="error"></param>
         public ErrorResponse(
             global::G.Error2 error,
             global::G.ErrorResponseType type = global::G.ErrorResponseType.Error)
         {
-            this.Error = error;
             this.Type = type;
+            this.Error = error;
         }
 
         /// <summary>

@@ -41,11 +41,11 @@ namespace G
         /// <param name="data">
         /// The list of users that are connected to the broadcaster’s chat room. The list is empty if no users are connected to the chat room.
         /// </param>
-        /// <param name="pagination">
-        /// Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)
-        /// </param>
         /// <param name="total">
         /// The total number of users that are connected to the broadcaster’s chat room. As you page through the list, the number of users may change as users join and leave the chat room.
+        /// </param>
+        /// <param name="pagination">
+        /// Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -56,8 +56,8 @@ namespace G
             global::G.GetChattersResponsePagination? pagination)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.Total = total;
             this.Pagination = pagination;
+            this.Total = total;
         }
 
         /// <summary>

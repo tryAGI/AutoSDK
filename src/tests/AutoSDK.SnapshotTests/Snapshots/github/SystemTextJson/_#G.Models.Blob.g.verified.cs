@@ -69,8 +69,8 @@ namespace G
         /// <param name="encoding"></param>
         /// <param name="url"></param>
         /// <param name="sha"></param>
-        /// <param name="size"></param>
         /// <param name="nodeId"></param>
+        /// <param name="size"></param>
         /// <param name="highlightedContent"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -88,8 +88,8 @@ namespace G
             this.Encoding = encoding ?? throw new global::System.ArgumentNullException(nameof(encoding));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
-            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Size = size;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.HighlightedContent = highlightedContent;
         }
 

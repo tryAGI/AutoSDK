@@ -77,20 +77,20 @@ namespace G
         /// <param name="workflowRunId">
         /// Temporal run ID grouping all retry attempts of the same trigger.
         /// </param>
-        /// <param name="sessionKey">
-        /// Session created by this attempt. Null if the attempt failed before session creation.
-        /// </param>
         /// <param name="attempt">
         /// 1-based attempt number within the workflow run.
         /// </param>
         /// <param name="status">
         /// Outcome of this attempt.
         /// </param>
-        /// <param name="errorMessage">
-        /// Error message if the attempt failed.
-        /// </param>
         /// <param name="executedAt">
         /// Timestamp when this attempt ran.
+        /// </param>
+        /// <param name="sessionKey">
+        /// Session created by this attempt. Null if the attempt failed before session creation.
+        /// </param>
+        /// <param name="errorMessage">
+        /// Error message if the attempt failed.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -106,11 +106,11 @@ namespace G
         {
             this.ScheduleKey = scheduleKey ?? throw new global::System.ArgumentNullException(nameof(scheduleKey));
             this.WorkflowRunId = workflowRunId ?? throw new global::System.ArgumentNullException(nameof(workflowRunId));
+            this.SessionKey = sessionKey;
             this.Attempt = attempt;
             this.Status = status;
-            this.ExecutedAt = executedAt;
-            this.SessionKey = sessionKey;
             this.ErrorMessage = errorMessage;
+            this.ExecutedAt = executedAt;
         }
 
         /// <summary>

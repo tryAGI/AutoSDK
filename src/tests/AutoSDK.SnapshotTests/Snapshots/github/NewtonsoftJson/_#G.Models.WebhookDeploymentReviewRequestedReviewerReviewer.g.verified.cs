@@ -144,6 +144,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookDeploymentReviewRequestedReviewerReviewer" /> class.
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="avatarUrl"></param>
         /// <param name="deleted"></param>
         /// <param name="email"></param>
@@ -153,7 +154,6 @@ namespace G
         /// <param name="gistsUrl"></param>
         /// <param name="gravatarId"></param>
         /// <param name="htmlUrl"></param>
-        /// <param name="id"></param>
         /// <param name="login"></param>
         /// <param name="name"></param>
         /// <param name="nodeId"></param>
@@ -188,7 +188,6 @@ namespace G
             global::G.WebhookDeploymentReviewRequestedReviewerReviewerType? type,
             string? url)
         {
-            this.Id = id;
             this.AvatarUrl = avatarUrl;
             this.Deleted = deleted;
             this.Email = email;
@@ -198,6 +197,7 @@ namespace G
             this.GistsUrl = gistsUrl;
             this.GravatarId = gravatarId;
             this.HtmlUrl = htmlUrl;
+            this.Id = id;
             this.Login = login;
             this.Name = name;
             this.NodeId = nodeId;

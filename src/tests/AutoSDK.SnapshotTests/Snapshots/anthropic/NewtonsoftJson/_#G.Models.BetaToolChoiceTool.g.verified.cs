@@ -37,10 +37,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaToolChoiceTool" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="name">
         /// The name of the tool to use.
         /// </param>
+        /// <param name="type"></param>
         /// <param name="disableParallelToolUse">
         /// Whether to disable parallel tool use.<br/>
         /// Defaults to `false`. If set to `true`, the model will output exactly one tool use.
@@ -50,8 +50,8 @@ namespace G
             global::G.BetaToolChoiceToolType type,
             bool? disableParallelToolUse)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.DisableParallelToolUse = disableParallelToolUse;
         }
 

@@ -45,10 +45,10 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="model"></param>
+        /// <param name="data"></param>
         /// <param name="object">
         /// Example: list
         /// </param>
-        /// <param name="data"></param>
         public ImageResponse(
             string id,
             string model,
@@ -57,8 +57,8 @@ namespace G
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Object = @object;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
         }
 
         /// <summary>

@@ -667,26 +667,13 @@ namespace G
         /// <param name="fullName">
         /// Example: octocat/Hello-World
         /// </param>
-        /// <param name="license">
-        /// License Simple
-        /// </param>
         /// <param name="forks"></param>
-        /// <param name="permissions"></param>
-        /// <param name="roleName">
-        /// Example: admin
-        /// </param>
-        /// <param name="owner">
-        /// A GitHub user.
-        /// </param>
         /// <param name="private">
         /// Whether the repository is private or public.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="htmlUrl">
         /// Example: https://github.com/octocat/Hello-World
-        /// </param>
-        /// <param name="description">
-        /// Example: This your first repo!
         /// </param>
         /// <param name="fork"></param>
         /// <param name="url">
@@ -806,19 +793,12 @@ namespace G
         /// <param name="cloneUrl">
         /// Example: https://github.com/octocat/Hello-World.git
         /// </param>
-        /// <param name="mirrorUrl">
-        /// Example: git:git.example.com/octocat/Hello-World
-        /// </param>
         /// <param name="hooksUrl">
         /// Example: http://api.github.com/repos/octocat/Hello-World/hooks
         /// </param>
         /// <param name="svnUrl">
         /// Example: https://svn.github.com/octocat/Hello-World
         /// </param>
-        /// <param name="homepage">
-        /// Example: https://github.com
-        /// </param>
-        /// <param name="language"></param>
         /// <param name="forksCount">
         /// Example: 9
         /// </param>
@@ -838,12 +818,6 @@ namespace G
         /// <param name="openIssuesCount">
         /// Example: 0
         /// </param>
-        /// <param name="isTemplate">
-        /// Whether this repository acts as a template that can be used to generate new repositories.<br/>
-        /// Default Value: false<br/>
-        /// Example: true
-        /// </param>
-        /// <param name="topics"></param>
         /// <param name="hasIssues">
         /// Whether issues are enabled.<br/>
         /// Default Value: true<br/>
@@ -872,6 +846,34 @@ namespace G
         /// <param name="disabled">
         /// Returns whether or not this repository disabled.
         /// </param>
+        /// <param name="openIssues"></param>
+        /// <param name="watchers"></param>
+        /// <param name="license">
+        /// License Simple
+        /// </param>
+        /// <param name="permissions"></param>
+        /// <param name="roleName">
+        /// Example: admin
+        /// </param>
+        /// <param name="owner">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="description">
+        /// Example: This your first repo!
+        /// </param>
+        /// <param name="mirrorUrl">
+        /// Example: git:git.example.com/octocat/Hello-World
+        /// </param>
+        /// <param name="homepage">
+        /// Example: https://github.com
+        /// </param>
+        /// <param name="language"></param>
+        /// <param name="isTemplate">
+        /// Whether this repository acts as a template that can be used to generate new repositories.<br/>
+        /// Default Value: false<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="topics"></param>
         /// <param name="visibility">
         /// The repository visibility: public, private, or internal.<br/>
         /// Default Value: public
@@ -923,8 +925,6 @@ namespace G
         /// </param>
         /// <param name="subscribersCount"></param>
         /// <param name="networkCount"></param>
-        /// <param name="openIssues"></param>
-        /// <param name="watchers"></param>
         /// <param name="masterBranch"></param>
         public TeamRepository(
             int id,
@@ -1021,9 +1021,14 @@ namespace G
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.FullName = fullName ?? throw new global::System.ArgumentNullException(nameof(fullName));
+            this.License = license;
             this.Forks = forks;
+            this.Permissions = permissions;
+            this.RoleName = roleName;
+            this.Owner = owner;
             this.Private = @private;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Description = description;
             this.Fork = fork;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.ArchiveUrl = archiveUrl ?? throw new global::System.ArgumentNullException(nameof(archiveUrl));
@@ -1064,14 +1069,19 @@ namespace G
             this.TeamsUrl = teamsUrl ?? throw new global::System.ArgumentNullException(nameof(teamsUrl));
             this.TreesUrl = treesUrl ?? throw new global::System.ArgumentNullException(nameof(treesUrl));
             this.CloneUrl = cloneUrl ?? throw new global::System.ArgumentNullException(nameof(cloneUrl));
+            this.MirrorUrl = mirrorUrl;
             this.HooksUrl = hooksUrl ?? throw new global::System.ArgumentNullException(nameof(hooksUrl));
             this.SvnUrl = svnUrl ?? throw new global::System.ArgumentNullException(nameof(svnUrl));
+            this.Homepage = homepage;
+            this.Language = language;
             this.ForksCount = forksCount;
             this.StargazersCount = stargazersCount;
             this.WatchersCount = watchersCount;
             this.Size = size;
             this.DefaultBranch = defaultBranch ?? throw new global::System.ArgumentNullException(nameof(defaultBranch));
             this.OpenIssuesCount = openIssuesCount;
+            this.IsTemplate = isTemplate;
+            this.Topics = topics;
             this.HasIssues = hasIssues;
             this.HasProjects = hasProjects;
             this.HasWiki = hasWiki;
@@ -1079,18 +1089,6 @@ namespace G
             this.HasDownloads = hasDownloads;
             this.Archived = archived;
             this.Disabled = disabled;
-            this.OpenIssues = openIssues;
-            this.Watchers = watchers;
-            this.License = license;
-            this.Permissions = permissions;
-            this.RoleName = roleName;
-            this.Owner = owner;
-            this.Description = description;
-            this.MirrorUrl = mirrorUrl;
-            this.Homepage = homepage;
-            this.Language = language;
-            this.IsTemplate = isTemplate;
-            this.Topics = topics;
             this.Visibility = visibility;
             this.PushedAt = pushedAt;
             this.CreatedAt = createdAt;
@@ -1105,6 +1103,8 @@ namespace G
             this.WebCommitSignoffRequired = webCommitSignoffRequired;
             this.SubscribersCount = subscribersCount;
             this.NetworkCount = networkCount;
+            this.OpenIssues = openIssues;
+            this.Watchers = watchers;
             this.MasterBranch = masterBranch;
         }
 

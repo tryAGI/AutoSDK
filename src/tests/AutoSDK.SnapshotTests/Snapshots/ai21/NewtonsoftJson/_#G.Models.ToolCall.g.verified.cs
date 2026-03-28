@@ -43,18 +43,18 @@ namespace G
         /// get different IDs. However, for a streaming response, the ID will be the same<br/>
         /// for all responses in the stream.
         /// </param>
+        /// <param name="function"></param>
         /// <param name="type">
         /// Default Value: function
         /// </param>
-        /// <param name="function"></param>
         public ToolCall(
             string id,
             global::G.ToolFunction function,
             global::G.ToolCallType? type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
             this.Type = type;
+            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
         }
 
         /// <summary>

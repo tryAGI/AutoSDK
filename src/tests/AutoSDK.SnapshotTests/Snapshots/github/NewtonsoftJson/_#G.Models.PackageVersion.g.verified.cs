@@ -109,6 +109,12 @@ namespace G
         /// <param name="packageHtmlUrl">
         /// Example: https://github.com/orgs/github/packages/container/package/super-linter
         /// </param>
+        /// <param name="createdAt">
+        /// Example: 2011-04-10T20:09:31Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2014-03-03T18:58:10Z
+        /// </param>
         /// <param name="htmlUrl">
         /// Example: https://github.com/orgs/github/packages/container/super-linter/786068
         /// </param>
@@ -116,12 +122,6 @@ namespace G
         /// Example: MIT
         /// </param>
         /// <param name="description"></param>
-        /// <param name="createdAt">
-        /// Example: 2011-04-10T20:09:31Z
-        /// </param>
-        /// <param name="updatedAt">
-        /// Example: 2014-03-03T18:58:10Z
-        /// </param>
         /// <param name="deletedAt">
         /// Example: 2014-03-03T18:58:10Z
         /// </param>
@@ -143,11 +143,11 @@ namespace G
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.PackageHtmlUrl = packageHtmlUrl ?? throw new global::System.ArgumentNullException(nameof(packageHtmlUrl));
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.HtmlUrl = htmlUrl;
             this.License = license;
             this.Description = description;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.DeletedAt = deletedAt;
             this.Metadata = metadata;
         }

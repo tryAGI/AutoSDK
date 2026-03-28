@@ -48,9 +48,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseItemList" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The type of object returned, must be `list`.
-        /// </param>
         /// <param name="data">
         /// A list of items used to generate this response.
         /// </param>
@@ -63,6 +60,9 @@ namespace G
         /// <param name="lastId">
         /// The ID of the last item in the list.
         /// </param>
+        /// <param name="object">
+        /// The type of object returned, must be `list`.
+        /// </param>
         public ResponseItemList(
             global::System.Collections.Generic.IList<global::G.ItemResource> data,
             bool hasMore,
@@ -70,11 +70,11 @@ namespace G
             string lastId,
             global::G.ResponseItemListObject @object)
         {
+            this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.HasMore = hasMore;
             this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
             this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
-            this.Object = @object;
         }
 
         /// <summary>

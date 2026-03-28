@@ -87,13 +87,13 @@ namespace G
         /// - you don't want to upload and host the file somewhere<br/>
         /// - you don't need to use the file again (Replicate will not store it)
         /// </param>
+        /// <param name="version">
+        /// The ID of the model version that you want to run.
+        /// </param>
         /// <param name="stream">
         /// **This field is deprecated.**<br/>
         /// Request a URL to receive streaming output using [server-sent events (SSE)](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events).<br/>
         /// This field is no longer needed as the returned prediction will always have a `stream` entry in its `url` property if the model supports streaming.
-        /// </param>
-        /// <param name="version">
-        /// The ID of the model version that you want to run.
         /// </param>
         /// <param name="webhook">
         /// An HTTPS URL for receiving a webhook when the prediction has new output. The webhook will be a POST request where the request body is the same as the response body of the [get prediction](#predictions.get) operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting.
@@ -125,8 +125,8 @@ namespace G
             global::System.Collections.Generic.IList<global::G.VersionPredictionRequestWebhookEventsFilterItem>? webhookEventsFilter)
         {
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
-            this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
             this.Stream = stream;
+            this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
             this.Webhook = webhook;
             this.WebhookEventsFilter = webhookEventsFilter;
         }

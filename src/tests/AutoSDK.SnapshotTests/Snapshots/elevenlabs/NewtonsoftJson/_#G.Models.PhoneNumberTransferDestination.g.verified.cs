@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PhoneNumberTransferDestination" /> class.
         /// </summary>
+        /// <param name="phoneNumber"></param>
         /// <param name="type">
         /// Default Value: phone
         /// </param>
-        /// <param name="phoneNumber"></param>
         public PhoneNumberTransferDestination(
             string phoneNumber,
             string? type)
         {
-            this.PhoneNumber = phoneNumber ?? throw new global::System.ArgumentNullException(nameof(phoneNumber));
             this.Type = type;
+            this.PhoneNumber = phoneNumber ?? throw new global::System.ArgumentNullException(nameof(phoneNumber));
         }
 
         /// <summary>

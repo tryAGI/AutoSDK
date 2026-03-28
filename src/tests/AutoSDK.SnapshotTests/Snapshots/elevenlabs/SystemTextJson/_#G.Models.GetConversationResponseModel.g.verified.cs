@@ -118,24 +118,24 @@ namespace G
         /// Initializes a new instance of the <see cref="GetConversationResponseModel" /> class.
         /// </summary>
         /// <param name="agentId"></param>
-        /// <param name="agentName"></param>
         /// <param name="status"></param>
-        /// <param name="userId"></param>
-        /// <param name="branchId"></param>
-        /// <param name="versionId">
-        /// The ID of the agent version used for this conversation
-        /// </param>
         /// <param name="metadata"></param>
-        /// <param name="analysis"></param>
-        /// <param name="conversationInitiationClientData"></param>
-        /// <param name="environment">
-        /// Default Value: production
-        /// </param>
         /// <param name="conversationId"></param>
         /// <param name="hasAudio"></param>
         /// <param name="hasUserAudio"></param>
         /// <param name="hasResponseAudio"></param>
         /// <param name="transcript"></param>
+        /// <param name="agentName"></param>
+        /// <param name="userId"></param>
+        /// <param name="branchId"></param>
+        /// <param name="versionId">
+        /// The ID of the agent version used for this conversation
+        /// </param>
+        /// <param name="analysis"></param>
+        /// <param name="conversationInitiationClientData"></param>
+        /// <param name="environment">
+        /// Default Value: production
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -157,20 +157,20 @@ namespace G
             string? environment)
         {
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
+            this.AgentName = agentName;
             this.Status = status;
+            this.UserId = userId;
+            this.BranchId = branchId;
+            this.VersionId = versionId;
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
+            this.Analysis = analysis;
+            this.ConversationInitiationClientData = conversationInitiationClientData;
+            this.Environment = environment;
             this.ConversationId = conversationId ?? throw new global::System.ArgumentNullException(nameof(conversationId));
             this.HasAudio = hasAudio;
             this.HasUserAudio = hasUserAudio;
             this.HasResponseAudio = hasResponseAudio;
             this.Transcript = transcript ?? throw new global::System.ArgumentNullException(nameof(transcript));
-            this.AgentName = agentName;
-            this.UserId = userId;
-            this.BranchId = branchId;
-            this.VersionId = versionId;
-            this.Analysis = analysis;
-            this.ConversationInitiationClientData = conversationInitiationClientData;
-            this.Environment = environment;
         }
 
         /// <summary>

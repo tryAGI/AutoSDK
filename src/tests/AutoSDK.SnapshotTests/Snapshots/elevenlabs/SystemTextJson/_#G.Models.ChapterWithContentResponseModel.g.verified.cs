@@ -102,17 +102,18 @@ namespace G
         /// <param name="name">
         /// The name of the chapter.
         /// </param>
-        /// <param name="lastConversionDateUnix">
-        /// The last conversion date of the chapter.
-        /// </param>
-        /// <param name="conversionProgress">
-        /// The conversion progress of the chapter.
-        /// </param>
         /// <param name="canBeDownloaded">
         /// Whether the chapter can be downloaded.
         /// </param>
         /// <param name="state">
         /// The state of the chapter.
+        /// </param>
+        /// <param name="content"></param>
+        /// <param name="lastConversionDateUnix">
+        /// The last conversion date of the chapter.
+        /// </param>
+        /// <param name="conversionProgress">
+        /// The conversion progress of the chapter.
         /// </param>
         /// <param name="hasVideo">
         /// Whether the chapter has a video.
@@ -129,7 +130,6 @@ namespace G
         /// <param name="lastConversionError">
         /// The last conversion error of the chapter.
         /// </param>
-        /// <param name="content"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -149,16 +149,16 @@ namespace G
         {
             this.ChapterId = chapterId ?? throw new global::System.ArgumentNullException(nameof(chapterId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.CanBeDownloaded = canBeDownloaded;
-            this.State = state;
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.LastConversionDateUnix = lastConversionDateUnix;
             this.ConversionProgress = conversionProgress;
+            this.CanBeDownloaded = canBeDownloaded;
+            this.State = state;
             this.HasVideo = hasVideo;
             this.HasVisualContent = hasVisualContent;
             this.VoiceIds = voiceIds;
             this.Statistics = statistics;
             this.LastConversionError = lastConversionError;
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
         }
 
         /// <summary>

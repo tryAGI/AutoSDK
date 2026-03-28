@@ -40,13 +40,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolMessageV2" /> class.
         /// </summary>
-        /// <param name="role"></param>
         /// <param name="toolCallId">
         /// The id of the associated tool call that has provided the given content
         /// </param>
         /// <param name="content">
         /// Outputs from a tool. The content should formatted as a JSON object string, or a list of tool content blocks
         /// </param>
+        /// <param name="role"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -55,9 +55,9 @@ namespace G
             global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ToolContent>> content,
             global::G.ToolMessageV2Role role)
         {
+            this.Role = role;
             this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
             this.Content = content;
-            this.Role = role;
         }
 
         /// <summary>

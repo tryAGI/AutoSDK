@@ -260,13 +260,21 @@ namespace G
         /// <param name="number"></param>
         /// <param name="title"></param>
         /// <param name="locked"></param>
+        /// <param name="labels"></param>
+        /// <param name="state"></param>
+        /// <param name="comments"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="score"></param>
+        /// <param name="authorAssociation">
+        /// How the author is associated with the repository.<br/>
+        /// Example: OWNER
+        /// </param>
         /// <param name="activeLockReason"></param>
         /// <param name="assignees"></param>
         /// <param name="user">
         /// A GitHub user.
         /// </param>
-        /// <param name="labels"></param>
-        /// <param name="state"></param>
         /// <param name="stateReason"></param>
         /// <param name="assignee">
         /// A GitHub user.
@@ -274,18 +282,10 @@ namespace G
         /// <param name="milestone">
         /// A collection of related issues and pull requests.
         /// </param>
-        /// <param name="comments"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
         /// <param name="closedAt"></param>
         /// <param name="textMatches"></param>
         /// <param name="pullRequest"></param>
         /// <param name="body"></param>
-        /// <param name="score"></param>
-        /// <param name="authorAssociation">
-        /// How the author is associated with the repository.<br/>
-        /// Example: OWNER
-        /// </param>
         /// <param name="draft"></param>
         /// <param name="repository">
         /// A repository on GitHub.
@@ -348,23 +348,23 @@ namespace G
             this.Number = number;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Locked = locked;
-            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
-            this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
-            this.Comments = comments;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
-            this.Score = score;
-            this.AuthorAssociation = authorAssociation;
             this.ActiveLockReason = activeLockReason;
             this.Assignees = assignees;
             this.User = user;
+            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
+            this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
             this.StateReason = stateReason;
             this.Assignee = assignee;
             this.Milestone = milestone;
+            this.Comments = comments;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.ClosedAt = closedAt;
             this.TextMatches = textMatches;
             this.PullRequest = pullRequest;
             this.Body = body;
+            this.Score = score;
+            this.AuthorAssociation = authorAssociation;
             this.Draft = draft;
             this.Repository = repository;
             this.BodyHtml = bodyHtml;

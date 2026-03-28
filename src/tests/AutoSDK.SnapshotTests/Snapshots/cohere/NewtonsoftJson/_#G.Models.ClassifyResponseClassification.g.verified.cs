@@ -82,11 +82,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyResponseClassification" /> class.
         /// </summary>
-        /// <param name="id">
-        /// Included only in responses
-        /// </param>
         /// <param name="input">
         /// The input text that was classified<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="id">
         /// Included only in responses
         /// </param>
         /// <param name="predictions">

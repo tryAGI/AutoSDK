@@ -44,15 +44,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Agent" /> class.
         /// </summary>
+        /// <param name="name"></param>
+        /// <param name="callTemplate">
+        /// A CallTemplate that can be used to create Ultravox calls with shared properties.
+        /// </param>
         /// <param name="agentId">
         /// Included only in responses
         /// </param>
-        /// <param name="name"></param>
         /// <param name="created">
         /// Included only in responses
-        /// </param>
-        /// <param name="callTemplate">
-        /// A CallTemplate that can be used to create Ultravox calls with shared properties.
         /// </param>
         public Agent(
             string name,
@@ -60,8 +60,8 @@ namespace G
             global::System.Guid agentId = default!,
             global::System.DateTime created = default!)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.AgentId = agentId;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Created = created;
             this.CallTemplate = callTemplate;
         }

@@ -39,8 +39,8 @@ namespace G
         /// Initializes a new instance of the <see cref="WebhookDeploymentReviewApprovedWorkflowRunReferencedWorkflow" /> class.
         /// </summary>
         /// <param name="path"></param>
-        /// <param name="ref"></param>
         /// <param name="sha"></param>
+        /// <param name="ref"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -50,8 +50,8 @@ namespace G
             string? @ref)
         {
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
-            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
             this.Ref = @ref;
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
         }
 
         /// <summary>

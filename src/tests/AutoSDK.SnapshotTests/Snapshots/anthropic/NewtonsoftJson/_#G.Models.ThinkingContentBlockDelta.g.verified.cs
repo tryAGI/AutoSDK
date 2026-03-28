@@ -31,16 +31,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ThinkingContentBlockDelta" /> class.
         /// </summary>
+        /// <param name="thinking"></param>
         /// <param name="type">
         /// Default Value: thinking_delta
         /// </param>
-        /// <param name="thinking"></param>
         public ThinkingContentBlockDelta(
             string thinking,
             global::G.ThinkingContentBlockDeltaType type = global::G.ThinkingContentBlockDeltaType.ThinkingDelta)
         {
-            this.Thinking = thinking ?? throw new global::System.ArgumentNullException(nameof(thinking));
             this.Type = type;
+            this.Thinking = thinking ?? throw new global::System.ArgumentNullException(nameof(thinking));
         }
 
         /// <summary>

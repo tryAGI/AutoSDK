@@ -147,21 +147,29 @@ namespace G
         /// <param name="nodeId">
         /// Example: MDg6Q2hlY2tSdW40
         /// </param>
-        /// <param name="externalId">
-        /// Example: 42
-        /// </param>
         /// <param name="url">
         /// Example: https://api.github.com/repos/github/hello-world/check-runs/4
+        /// </param>
+        /// <param name="status">
+        /// The phase of the lifecycle that the check is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check runs.<br/>
+        /// Example: queued
+        /// </param>
+        /// <param name="output"></param>
+        /// <param name="name">
+        /// The name of the check.<br/>
+        /// Example: test-coverage
+        /// </param>
+        /// <param name="pullRequests">
+        /// Pull requests that are open with a `head_sha` or `head_branch` that matches the check. The returned pull requests do not necessarily indicate pull requests that triggered the check.
+        /// </param>
+        /// <param name="externalId">
+        /// Example: 42
         /// </param>
         /// <param name="htmlUrl">
         /// Example: https://github.com/github/hello-world/runs/4
         /// </param>
         /// <param name="detailsUrl">
         /// Example: https://example.com
-        /// </param>
-        /// <param name="status">
-        /// The phase of the lifecycle that the check is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check runs.<br/>
-        /// Example: queued
         /// </param>
         /// <param name="conclusion">
         /// Example: neutral
@@ -172,17 +180,9 @@ namespace G
         /// <param name="completedAt">
         /// Example: 2018-05-04T01:14:52Z
         /// </param>
-        /// <param name="output"></param>
-        /// <param name="name">
-        /// The name of the check.<br/>
-        /// Example: test-coverage
-        /// </param>
         /// <param name="checkSuite"></param>
         /// <param name="app">
         /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-        /// </param>
-        /// <param name="pullRequests">
-        /// Pull requests that are open with a `head_sha` or `head_branch` that matches the check. The returned pull requests do not necessarily indicate pull requests that triggered the check.
         /// </param>
         /// <param name="deployment">
         /// A deployment created as the result of an Actions check run from a workflow that references an environment
@@ -209,19 +209,19 @@ namespace G
             this.Id = id;
             this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Status = status;
-            this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.PullRequests = pullRequests ?? throw new global::System.ArgumentNullException(nameof(pullRequests));
             this.ExternalId = externalId;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.HtmlUrl = htmlUrl;
             this.DetailsUrl = detailsUrl;
+            this.Status = status;
             this.Conclusion = conclusion;
             this.StartedAt = startedAt;
             this.CompletedAt = completedAt;
+            this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CheckSuite = checkSuite;
             this.App = app;
+            this.PullRequests = pullRequests ?? throw new global::System.ArgumentNullException(nameof(pullRequests));
             this.Deployment = deployment;
         }
 

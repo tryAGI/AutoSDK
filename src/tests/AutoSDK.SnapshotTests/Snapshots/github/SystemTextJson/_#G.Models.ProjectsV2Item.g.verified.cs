@@ -82,20 +82,20 @@ namespace G
         /// Initializes a new instance of the <see cref="ProjectsV2Item" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="nodeId"></param>
-        /// <param name="projectNodeId"></param>
         /// <param name="contentNodeId"></param>
         /// <param name="contentType">
         /// The type of content tracked in a project item
-        /// </param>
-        /// <param name="creator">
-        /// A GitHub user.
         /// </param>
         /// <param name="createdAt">
         /// Example: 2022-04-28T12:00:00Z
         /// </param>
         /// <param name="updatedAt">
         /// Example: 2022-04-28T12:00:00Z
+        /// </param>
+        /// <param name="nodeId"></param>
+        /// <param name="projectNodeId"></param>
+        /// <param name="creator">
+        /// A GitHub user.
         /// </param>
         /// <param name="archivedAt">
         /// Example: 2022-04-28T12:00:00Z
@@ -115,13 +115,13 @@ namespace G
             global::System.DateTime? archivedAt)
         {
             this.Id = id;
-            this.ContentNodeId = contentNodeId ?? throw new global::System.ArgumentNullException(nameof(contentNodeId));
-            this.ContentType = contentType;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.NodeId = nodeId;
             this.ProjectNodeId = projectNodeId;
+            this.ContentNodeId = contentNodeId ?? throw new global::System.ArgumentNullException(nameof(contentNodeId));
+            this.ContentType = contentType;
             this.Creator = creator;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.ArchivedAt = archivedAt;
         }
 

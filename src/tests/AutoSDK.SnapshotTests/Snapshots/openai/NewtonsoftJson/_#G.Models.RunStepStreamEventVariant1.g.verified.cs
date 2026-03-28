@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepStreamEventVariant1" /> class.
         /// </summary>
-        /// <param name="event"></param>
         /// <param name="data">
         /// Represents a step in execution of a run.
         /// </param>
+        /// <param name="event"></param>
         public RunStepStreamEventVariant1(
             global::G.RunStepObject data,
             global::G.RunStepStreamEventVariant1Event @event)
         {
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Event = @event;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
         }
 
         /// <summary>

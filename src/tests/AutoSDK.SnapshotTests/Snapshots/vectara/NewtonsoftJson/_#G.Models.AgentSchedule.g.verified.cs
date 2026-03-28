@@ -123,10 +123,6 @@ namespace G
         /// The human-readable name of an agent schedule.<br/>
         /// Example: Daily Summary Report
         /// </param>
-        /// <param name="description">
-        /// A detailed description of the schedule's purpose.<br/>
-        /// Example: Generates a daily summary report of customer support activities
-        /// </param>
         /// <param name="message">
         /// The input message to send to the agent on each scheduled execution.<br/>
         /// Example: [{"type":"text","content":"Generate a summary of today\u0027s activities"}]
@@ -138,6 +134,15 @@ namespace G
         /// Whether the schedule is currently active and executing.<br/>
         /// Default Value: true<br/>
         /// Example: true
+        /// </param>
+        /// <param name="createdAt">
+        /// Timestamp when the schedule was created. Note: This is a placeholder value as Temporal<br/>
+        /// does not store creation timestamps. Use for API compatibility only.<br/>
+        /// Example: 1970-01-01T00:00:00Z
+        /// </param>
+        /// <param name="description">
+        /// A detailed description of the schedule's purpose.<br/>
+        /// Example: Generates a daily summary report of customer support activities
         /// </param>
         /// <param name="sessionMetadata">
         /// Arbitrary metadata to include in each session created by this schedule.<br/>
@@ -153,11 +158,6 @@ namespace G
         /// Timestamp of the most recent execution. Tracked by Temporal and updated automatically<br/>
         /// after each execution. Null if the schedule has never executed.<br/>
         /// Example: 2024-01-15T10:30:00Z
-        /// </param>
-        /// <param name="createdAt">
-        /// Timestamp when the schedule was created. Note: This is a placeholder value as Temporal<br/>
-        /// does not store creation timestamps. Use for API compatibility only.<br/>
-        /// Example: 1970-01-01T00:00:00Z
         /// </param>
         public AgentSchedule(
             string key,
@@ -175,14 +175,14 @@ namespace G
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.AgentKey = agentKey ?? throw new global::System.ArgumentNullException(nameof(agentKey));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Schedule = schedule;
             this.Enabled = enabled;
-            this.CreatedAt = createdAt;
-            this.Description = description;
             this.SessionMetadata = sessionMetadata;
             this.MaxExecutionsToKeep = maxExecutionsToKeep;
             this.LastExecutionAt = lastExecutionAt;
+            this.CreatedAt = createdAt;
         }
 
         /// <summary>

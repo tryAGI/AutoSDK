@@ -43,22 +43,22 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaResponseToolUseBlock" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: tool_use
-        /// </param>
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="input"></param>
+        /// <param name="type">
+        /// Default Value: tool_use
+        /// </param>
         public BetaResponseToolUseBlock(
             string id,
             string name,
             object input,
             global::G.BetaResponseToolUseBlockType type = global::G.BetaResponseToolUseBlockType.ToolUse)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
-            this.Type = type;
         }
 
         /// <summary>

@@ -62,13 +62,13 @@ namespace G
         /// Initializes a new instance of the <see cref="ChatCompletionChunk" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="object"></param>
         /// <param name="created"></param>
-        /// <param name="systemFingerprint"></param>
         /// <param name="model">
         /// Example: mistralai/Mixtral-8x7B-Instruct-v0.1
         /// </param>
         /// <param name="choices"></param>
+        /// <param name="object"></param>
+        /// <param name="systemFingerprint"></param>
         /// <param name="usage"></param>
         public ChatCompletionChunk(
             string id,
@@ -80,11 +80,11 @@ namespace G
             global::G.AllOf<global::G.UsageData, object>? usage)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.Created = created;
+            this.SystemFingerprint = systemFingerprint;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
-            this.Object = @object;
-            this.SystemFingerprint = systemFingerprint;
             this.Usage = usage;
         }
 

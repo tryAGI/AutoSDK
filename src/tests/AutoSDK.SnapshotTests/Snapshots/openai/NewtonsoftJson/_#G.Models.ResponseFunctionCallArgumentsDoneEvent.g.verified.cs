@@ -48,7 +48,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseFunctionCallArgumentsDoneEvent" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="itemId">
         /// The ID of the item.
         /// </param>
@@ -61,6 +60,7 @@ namespace G
         /// <param name="arguments">
         /// The function-call arguments.
         /// </param>
+        /// <param name="type"></param>
         public ResponseFunctionCallArgumentsDoneEvent(
             string itemId,
             int outputIndex,
@@ -68,11 +68,11 @@ namespace G
             string arguments,
             global::G.ResponseFunctionCallArgumentsDoneEventType type)
         {
+            this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.SequenceNumber = sequenceNumber;
             this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
-            this.Type = type;
         }
 
         /// <summary>

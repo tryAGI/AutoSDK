@@ -192,7 +192,6 @@ namespace G
         /// <param name="authorizedActorNames"></param>
         /// <param name="authorizedActorsOnly"></param>
         /// <param name="authorizedDismissalActorsOnly"></param>
-        /// <param name="createProtected"></param>
         /// <param name="createdAt"></param>
         /// <param name="dismissStaleReviewsOnPush"></param>
         /// <param name="id"></param>
@@ -201,17 +200,11 @@ namespace G
         /// <param name="lockBranchEnforcementLevel">
         /// The enforcement level of the branch lock setting. `off` means the branch is not locked, `non_admins` means the branch is read-only for non_admins, and `everyone` means the branch is read-only for everyone.
         /// </param>
-        /// <param name="lockAllowsForkSync">
-        /// Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow users to pull changes from upstream when the branch is locked. This setting is only applicable for forks.
-        /// </param>
         /// <param name="mergeQueueEnforcementLevel"></param>
         /// <param name="name"></param>
         /// <param name="pullRequestReviewsEnforcementLevel"></param>
         /// <param name="repositoryId"></param>
         /// <param name="requireCodeOwnerReview"></param>
-        /// <param name="requireLastPushApproval">
-        /// Whether the most recent push must be approved by someone other than the person who pushed it
-        /// </param>
         /// <param name="requiredApprovingReviewCount"></param>
         /// <param name="requiredConversationResolutionLevel"></param>
         /// <param name="requiredDeploymentsEnforcementLevel"></param>
@@ -220,6 +213,13 @@ namespace G
         /// <param name="signatureRequirementEnforcementLevel"></param>
         /// <param name="strictRequiredStatusChecksPolicy"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="createProtected"></param>
+        /// <param name="lockAllowsForkSync">
+        /// Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow users to pull changes from upstream when the branch is locked. This setting is only applicable for forks.
+        /// </param>
+        /// <param name="requireLastPushApproval">
+        /// Whether the most recent push must be approved by someone other than the person who pushed it
+        /// </param>
         public WebhooksRule(
             bool adminEnforced,
             global::G.WebhooksRuleAllowDeletionsEnforcementLevel allowDeletionsEnforcementLevel,
@@ -256,17 +256,20 @@ namespace G
             this.AuthorizedActorNames = authorizedActorNames ?? throw new global::System.ArgumentNullException(nameof(authorizedActorNames));
             this.AuthorizedActorsOnly = authorizedActorsOnly;
             this.AuthorizedDismissalActorsOnly = authorizedDismissalActorsOnly;
+            this.CreateProtected = createProtected;
             this.CreatedAt = createdAt;
             this.DismissStaleReviewsOnPush = dismissStaleReviewsOnPush;
             this.Id = id;
             this.IgnoreApprovalsFromContributors = ignoreApprovalsFromContributors;
             this.LinearHistoryRequirementEnforcementLevel = linearHistoryRequirementEnforcementLevel;
             this.LockBranchEnforcementLevel = lockBranchEnforcementLevel;
+            this.LockAllowsForkSync = lockAllowsForkSync;
             this.MergeQueueEnforcementLevel = mergeQueueEnforcementLevel;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.PullRequestReviewsEnforcementLevel = pullRequestReviewsEnforcementLevel;
             this.RepositoryId = repositoryId;
             this.RequireCodeOwnerReview = requireCodeOwnerReview;
+            this.RequireLastPushApproval = requireLastPushApproval;
             this.RequiredApprovingReviewCount = requiredApprovingReviewCount;
             this.RequiredConversationResolutionLevel = requiredConversationResolutionLevel;
             this.RequiredDeploymentsEnforcementLevel = requiredDeploymentsEnforcementLevel;
@@ -275,9 +278,6 @@ namespace G
             this.SignatureRequirementEnforcementLevel = signatureRequirementEnforcementLevel;
             this.StrictRequiredStatusChecksPolicy = strictRequiredStatusChecksPolicy;
             this.UpdatedAt = updatedAt;
-            this.CreateProtected = createProtected;
-            this.LockAllowsForkSync = lockAllowsForkSync;
-            this.RequireLastPushApproval = requireLastPushApproval;
         }
 
         /// <summary>

@@ -114,13 +114,13 @@ namespace G
         /// </param>
         /// <param name="issueUrl"></param>
         /// <param name="nodeId"></param>
-        /// <param name="performedViaGithubApp">
-        /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-        /// </param>
         /// <param name="reactions"></param>
         /// <param name="updatedAt"></param>
         /// <param name="url">
         /// URL for the issue comment
+        /// </param>
+        /// <param name="performedViaGithubApp">
+        /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
         /// </param>
         /// <param name="user"></param>
 #if NET7_0_OR_GREATER
@@ -147,10 +147,10 @@ namespace G
             this.Id = id;
             this.IssueUrl = issueUrl ?? throw new global::System.ArgumentNullException(nameof(issueUrl));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.PerformedViaGithubApp = performedViaGithubApp;
             this.Reactions = reactions ?? throw new global::System.ArgumentNullException(nameof(reactions));
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.PerformedViaGithubApp = performedViaGithubApp;
             this.User = user;
         }
 

@@ -121,16 +121,16 @@ namespace G
         /// Initializes a new instance of the <see cref="TopicSearchResultItem" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="displayName"></param>
-        /// <param name="shortDescription"></param>
-        /// <param name="description"></param>
-        /// <param name="createdBy"></param>
-        /// <param name="released"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="featured"></param>
         /// <param name="curated"></param>
         /// <param name="score"></param>
+        /// <param name="displayName"></param>
+        /// <param name="shortDescription"></param>
+        /// <param name="description"></param>
+        /// <param name="createdBy"></param>
+        /// <param name="released"></param>
         /// <param name="repositoryCount"></param>
         /// <param name="logoUrl"></param>
         /// <param name="textMatches"></param>
@@ -158,16 +158,16 @@ namespace G
             global::System.Collections.Generic.IList<global::G.TopicSearchResultItemAliase>? aliases)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
-            this.Featured = featured;
-            this.Curated = curated;
-            this.Score = score;
             this.DisplayName = displayName;
             this.ShortDescription = shortDescription;
             this.Description = description;
             this.CreatedBy = createdBy;
             this.Released = released;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.Featured = featured;
+            this.Curated = curated;
+            this.Score = score;
             this.RepositoryCount = repositoryCount;
             this.LogoUrl = logoUrl;
             this.TextMatches = textMatches;

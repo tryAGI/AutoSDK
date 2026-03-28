@@ -142,6 +142,8 @@ namespace G
         /// <param name="createdAt"></param>
         /// <param name="modifiedAt"></param>
         /// <param name="trainingFiles"></param>
+        /// <param name="hyperparameters"></param>
+        /// <param name="classifierTargets"></param>
         /// <param name="validationFiles">
         /// Default Value: []
         /// </param>
@@ -156,7 +158,6 @@ namespace G
         /// <param name="jobType">
         /// Default Value: classifier
         /// </param>
-        /// <param name="hyperparameters"></param>
         /// <param name="events">
         /// Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.<br/>
         /// Default Value: []
@@ -164,7 +165,6 @@ namespace G
         /// <param name="checkpoints">
         /// Default Value: []
         /// </param>
-        /// <param name="classifierTargets"></param>
         public ClassifierDetailedJobOut(
             global::System.Guid id,
             bool autoStart,
@@ -193,8 +193,6 @@ namespace G
             this.CreatedAt = createdAt;
             this.ModifiedAt = modifiedAt;
             this.TrainingFiles = trainingFiles ?? throw new global::System.ArgumentNullException(nameof(trainingFiles));
-            this.Hyperparameters = hyperparameters ?? throw new global::System.ArgumentNullException(nameof(hyperparameters));
-            this.ClassifierTargets = classifierTargets ?? throw new global::System.ArgumentNullException(nameof(classifierTargets));
             this.ValidationFiles = validationFiles;
             this.Object = @object;
             this.FineTunedModel = fineTunedModel;
@@ -203,8 +201,10 @@ namespace G
             this.TrainedTokens = trainedTokens;
             this.Metadata = metadata;
             this.JobType = jobType;
+            this.Hyperparameters = hyperparameters ?? throw new global::System.ArgumentNullException(nameof(hyperparameters));
             this.Events = events;
             this.Checkpoints = checkpoints;
+            this.ClassifierTargets = classifierTargets ?? throw new global::System.ArgumentNullException(nameof(classifierTargets));
         }
 
         /// <summary>

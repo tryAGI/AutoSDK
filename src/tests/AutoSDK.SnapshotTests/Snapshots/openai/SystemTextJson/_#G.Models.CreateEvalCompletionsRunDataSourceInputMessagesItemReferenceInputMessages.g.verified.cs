@@ -32,11 +32,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEvalCompletionsRunDataSourceInputMessagesItemReferenceInputMessages" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of input messages. Always `item_reference`.
-        /// </param>
         /// <param name="itemReference">
         /// A reference to a variable in the `item` namespace. Ie, "item.input_trajectory"
+        /// </param>
+        /// <param name="type">
+        /// The type of input messages. Always `item_reference`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -45,8 +45,8 @@ namespace G
             string itemReference,
             global::G.CreateEvalCompletionsRunDataSourceInputMessagesItemReferenceInputMessagesType type)
         {
-            this.ItemReference = itemReference ?? throw new global::System.ArgumentNullException(nameof(itemReference));
             this.Type = type;
+            this.ItemReference = itemReference ?? throw new global::System.ArgumentNullException(nameof(itemReference));
         }
 
         /// <summary>

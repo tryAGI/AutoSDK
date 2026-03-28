@@ -32,10 +32,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepDetailsMessageCreationObject" /> class.
         /// </summary>
+        /// <param name="messageCreation"></param>
         /// <param name="type">
         /// Always `message_creation`.
         /// </param>
-        /// <param name="messageCreation"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -43,8 +43,8 @@ namespace G
             global::G.RunStepDetailsMessageCreationObjectMessageCreation messageCreation,
             global::G.RunStepDetailsMessageCreationObjectType type)
         {
-            this.MessageCreation = messageCreation ?? throw new global::System.ArgumentNullException(nameof(messageCreation));
             this.Type = type;
+            this.MessageCreation = messageCreation ?? throw new global::System.ArgumentNullException(nameof(messageCreation));
         }
 
         /// <summary>

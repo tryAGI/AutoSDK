@@ -92,17 +92,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentSymlink" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="target"></param>
         /// <param name="size"></param>
         /// <param name="name"></param>
         /// <param name="path"></param>
         /// <param name="sha"></param>
         /// <param name="url"></param>
+        /// <param name="links"></param>
+        /// <param name="type"></param>
         /// <param name="gitUrl"></param>
         /// <param name="htmlUrl"></param>
         /// <param name="downloadUrl"></param>
-        /// <param name="links"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -119,17 +119,17 @@ namespace G
             string? htmlUrl,
             string? downloadUrl)
         {
+            this.Type = type;
             this.Target = target ?? throw new global::System.ArgumentNullException(nameof(target));
             this.Size = size;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
-            this.Type = type;
             this.GitUrl = gitUrl;
             this.HtmlUrl = htmlUrl;
             this.DownloadUrl = downloadUrl;
+            this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
         }
 
         /// <summary>

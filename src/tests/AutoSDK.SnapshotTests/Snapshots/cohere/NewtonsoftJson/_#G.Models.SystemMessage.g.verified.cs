@@ -30,14 +30,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="SystemMessage" /> class.
         /// </summary>
-        /// <param name="role"></param>
         /// <param name="content"></param>
+        /// <param name="role"></param>
         public SystemMessage(
             global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>> content,
             global::G.SystemMessageRole role)
         {
-            this.Content = content;
             this.Role = role;
+            this.Content = content;
         }
 
         /// <summary>

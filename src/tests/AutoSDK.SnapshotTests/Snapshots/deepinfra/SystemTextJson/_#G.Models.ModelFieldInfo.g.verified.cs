@@ -87,8 +87,8 @@ namespace G
         /// Initializes a new instance of the <see cref="ModelFieldInfo" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="parent"></param>
         /// <param name="ftype"></param>
+        /// <param name="parent"></param>
         /// <param name="description"></param>
         /// <param name="allowed"></param>
         /// <param name="default"></param>
@@ -116,8 +116,8 @@ namespace G
             double? exclusiveMaximum)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Ftype = ftype ?? throw new global::System.ArgumentNullException(nameof(ftype));
             this.Parent = parent;
+            this.Ftype = ftype ?? throw new global::System.ArgumentNullException(nameof(ftype));
             this.Description = description;
             this.Allowed = allowed;
             this.Default = @default;

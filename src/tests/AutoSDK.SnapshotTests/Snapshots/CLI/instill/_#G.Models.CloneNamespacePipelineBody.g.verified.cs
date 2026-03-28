@@ -45,17 +45,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CloneNamespacePipelineBody" /> class.
         /// </summary>
-        /// <param name="description">
-        /// Pipeline description.
-        /// </param>
-        /// <param name="sharing">
-        /// Pipeline sharing information.
-        /// </param>
         /// <param name="targetNamespaceId">
         /// Target Namespace ID.
         /// </param>
         /// <param name="targetPipelineId">
         /// Target Pipeline ID.
+        /// </param>
+        /// <param name="description">
+        /// Pipeline description.
+        /// </param>
+        /// <param name="sharing">
+        /// Pipeline sharing information.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -66,10 +66,10 @@ namespace G
             string? description,
             global::G.Sharing? sharing)
         {
-            this.TargetNamespaceId = targetNamespaceId ?? throw new global::System.ArgumentNullException(nameof(targetNamespaceId));
-            this.TargetPipelineId = targetPipelineId ?? throw new global::System.ArgumentNullException(nameof(targetPipelineId));
             this.Description = description;
             this.Sharing = sharing;
+            this.TargetNamespaceId = targetNamespaceId ?? throw new global::System.ArgumentNullException(nameof(targetNamespaceId));
+            this.TargetPipelineId = targetPipelineId ?? throw new global::System.ArgumentNullException(nameof(targetPipelineId));
         }
 
         /// <summary>

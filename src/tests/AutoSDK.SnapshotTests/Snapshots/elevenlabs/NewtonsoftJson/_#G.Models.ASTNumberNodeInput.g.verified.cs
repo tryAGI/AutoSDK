@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ASTNumberNodeInput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: number_literal
-        /// </param>
         /// <param name="value">
         /// Value of this literal.
+        /// </param>
+        /// <param name="type">
+        /// Default Value: number_literal
         /// </param>
         public ASTNumberNodeInput(
             double value,
             string? type)
         {
-            this.Value = value;
             this.Type = type;
+            this.Value = value;
         }
 
         /// <summary>

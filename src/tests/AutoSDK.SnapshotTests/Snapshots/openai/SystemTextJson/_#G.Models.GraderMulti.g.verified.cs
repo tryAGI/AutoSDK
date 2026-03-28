@@ -49,16 +49,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GraderMulti" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The object type, which is always `multi`.<br/>
-        /// Default Value: multi
-        /// </param>
         /// <param name="name">
         /// The name of the grader.
         /// </param>
         /// <param name="graders"></param>
         /// <param name="calculateOutput">
         /// A formula to calculate the output based on grader results.
+        /// </param>
+        /// <param name="type">
+        /// The object type, which is always `multi`.<br/>
+        /// Default Value: multi
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -69,10 +69,10 @@ namespace G
             string calculateOutput,
             global::G.GraderMultiType type = global::G.GraderMultiType.Multi)
         {
+            this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Graders = graders;
             this.CalculateOutput = calculateOutput ?? throw new global::System.ArgumentNullException(nameof(calculateOutput));
-            this.Type = type;
         }
 
         /// <summary>

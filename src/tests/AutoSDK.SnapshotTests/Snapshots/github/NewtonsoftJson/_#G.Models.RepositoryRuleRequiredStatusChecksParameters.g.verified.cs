@@ -36,23 +36,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RepositoryRuleRequiredStatusChecksParameters" /> class.
         /// </summary>
-        /// <param name="doNotEnforceOnCreate">
-        /// Allow repositories and branches to be created if a check would otherwise prohibit it.
-        /// </param>
         /// <param name="requiredStatusChecks">
         /// Status checks that are required.
         /// </param>
         /// <param name="strictRequiredStatusChecksPolicy">
         /// Whether pull requests targeting a matching branch must be tested with the latest code. This setting will not take effect unless at least one status check is enabled.
         /// </param>
+        /// <param name="doNotEnforceOnCreate">
+        /// Allow repositories and branches to be created if a check would otherwise prohibit it.
+        /// </param>
         public RepositoryRuleRequiredStatusChecksParameters(
             global::System.Collections.Generic.IList<global::G.RepositoryRuleParamsStatusCheckConfiguration> requiredStatusChecks,
             bool strictRequiredStatusChecksPolicy,
             bool? doNotEnforceOnCreate)
         {
+            this.DoNotEnforceOnCreate = doNotEnforceOnCreate;
             this.RequiredStatusChecks = requiredStatusChecks ?? throw new global::System.ArgumentNullException(nameof(requiredStatusChecks));
             this.StrictRequiredStatusChecksPolicy = strictRequiredStatusChecksPolicy;
-            this.DoNotEnforceOnCreate = doNotEnforceOnCreate;
         }
 
         /// <summary>

@@ -33,11 +33,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FileSearchRankingOptions" /> class.
         /// </summary>
-        /// <param name="ranker">
-        /// The ranker to use for the file search. If not specified will use the `auto` ranker.
-        /// </param>
         /// <param name="scoreThreshold">
         /// The score threshold for the file search. All values must be a floating point number between 0 and 1.
+        /// </param>
+        /// <param name="ranker">
+        /// The ranker to use for the file search. If not specified will use the `auto` ranker.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -46,8 +46,8 @@ namespace G
             double scoreThreshold,
             global::G.FileSearchRanker? ranker)
         {
-            this.ScoreThreshold = scoreThreshold;
             this.Ranker = ranker;
+            this.ScoreThreshold = scoreThreshold;
         }
 
         /// <summary>

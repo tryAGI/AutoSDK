@@ -36,10 +36,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AudioDataPayload" /> class.
         /// </summary>
-        /// <param name="messageType"></param>
         /// <param name="audioBase64">
         /// Base64-encoded audio data.
         /// </param>
+        /// <param name="messageType"></param>
         /// <param name="sampleRate">
         /// Audio sample rate in Hz.
         /// </param>
@@ -48,8 +48,8 @@ namespace G
             global::G.AudioDataPayloadMessageType messageType,
             int? sampleRate)
         {
-            this.AudioBase64 = audioBase64 ?? throw new global::System.ArgumentNullException(nameof(audioBase64));
             this.MessageType = messageType;
+            this.AudioBase64 = audioBase64 ?? throw new global::System.ArgumentNullException(nameof(audioBase64));
             this.SampleRate = sampleRate;
         }
 

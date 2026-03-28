@@ -42,11 +42,11 @@ namespace G
         /// <param name="id">
         /// The ID of the tool call.
         /// </param>
-        /// <param name="type">
-        /// The type of tool call. This is always going to be `code_interpreter` for this type of tool call.
-        /// </param>
         /// <param name="codeInterpreter">
         /// The Code Interpreter tool call definition.
+        /// </param>
+        /// <param name="type">
+        /// The type of tool call. This is always going to be `code_interpreter` for this type of tool call.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -57,8 +57,8 @@ namespace G
             global::G.RunStepDetailsToolCallsCodeObjectType type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.CodeInterpreter = codeInterpreter ?? throw new global::System.ArgumentNullException(nameof(codeInterpreter));
             this.Type = type;
+            this.CodeInterpreter = codeInterpreter ?? throw new global::System.ArgumentNullException(nameof(codeInterpreter));
         }
 
         /// <summary>

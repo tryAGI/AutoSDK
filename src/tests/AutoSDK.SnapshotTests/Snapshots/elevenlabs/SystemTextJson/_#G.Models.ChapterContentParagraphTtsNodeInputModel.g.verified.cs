@@ -39,9 +39,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChapterContentParagraphTtsNodeInputModel" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="text"></param>
         /// <param name="voiceId"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -50,9 +50,9 @@ namespace G
             string voiceId,
             string type = "tts_node")
         {
+            this.Type = type;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.VoiceId = voiceId ?? throw new global::System.ArgumentNullException(nameof(voiceId));
-            this.Type = type;
         }
 
         /// <summary>

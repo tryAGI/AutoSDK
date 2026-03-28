@@ -37,20 +37,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AgentConfig" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="model">
         /// The model to use.
         /// </param>
         /// <param name="instructions">
         /// Agent instructions.
         /// </param>
+        /// <param name="type"></param>
         public AgentConfig(
             string model,
             string? instructions,
             string type = "AgentConfig")
         {
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Type = type;
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Instructions = instructions;
         }
 

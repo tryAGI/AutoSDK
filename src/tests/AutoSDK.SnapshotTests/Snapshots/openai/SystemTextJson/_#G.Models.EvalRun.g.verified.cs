@@ -123,10 +123,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EvalRun" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The type of the object. Always "eval.run".<br/>
-        /// Default Value: eval.run
-        /// </param>
         /// <param name="id">
         /// Unique identifier for the evaluation run.
         /// </param>
@@ -160,6 +156,9 @@ namespace G
         /// <param name="dataSource">
         /// Information about the run's data source.
         /// </param>
+        /// <param name="error">
+        /// An object representing an error response from the Eval API.
+        /// </param>
         /// <param name="metadata">
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
         /// useful for storing additional information about the object in a structured<br/>
@@ -167,8 +166,9 @@ namespace G
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
         /// </param>
-        /// <param name="error">
-        /// An object representing an error response from the Eval API.
+        /// <param name="object">
+        /// The type of the object. Always "eval.run".<br/>
+        /// Default Value: eval.run
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -189,6 +189,7 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::G.EvalRunObject @object = global::G.EvalRunObject.EvalRun)
         {
+            this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.EvalId = evalId ?? throw new global::System.ArgumentNullException(nameof(evalId));
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
@@ -200,9 +201,8 @@ namespace G
             this.PerModelUsage = perModelUsage ?? throw new global::System.ArgumentNullException(nameof(perModelUsage));
             this.PerTestingCriteriaResults = perTestingCriteriaResults ?? throw new global::System.ArgumentNullException(nameof(perTestingCriteriaResults));
             this.DataSource = dataSource;
-            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
-            this.Object = @object;
             this.Metadata = metadata;
+            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
         }
 
         /// <summary>

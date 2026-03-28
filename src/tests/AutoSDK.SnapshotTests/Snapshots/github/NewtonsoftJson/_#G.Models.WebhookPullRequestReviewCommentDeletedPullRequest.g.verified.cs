@@ -235,34 +235,21 @@ namespace G
         /// Initializes a new instance of the <see cref="WebhookPullRequestReviewCommentDeletedPullRequest" /> class.
         /// </summary>
         /// <param name="links"></param>
-        /// <param name="activeLockReason"></param>
-        /// <param name="assignee"></param>
         /// <param name="assignees"></param>
         /// <param name="authorAssociation">
         /// How the author is associated with the repository.
         /// </param>
-        /// <param name="autoMerge">
-        /// The status of auto merging a pull request.
-        /// </param>
         /// <param name="base"></param>
-        /// <param name="body"></param>
-        /// <param name="closedAt"></param>
         /// <param name="commentsUrl"></param>
         /// <param name="commitsUrl"></param>
         /// <param name="createdAt"></param>
         /// <param name="diffUrl"></param>
-        /// <param name="draft"></param>
         /// <param name="head"></param>
         /// <param name="htmlUrl"></param>
         /// <param name="id"></param>
         /// <param name="issueUrl"></param>
         /// <param name="labels"></param>
         /// <param name="locked"></param>
-        /// <param name="mergeCommitSha"></param>
-        /// <param name="mergedAt"></param>
-        /// <param name="milestone">
-        /// A collection of related issues and pull requests.
-        /// </param>
         /// <param name="nodeId"></param>
         /// <param name="number"></param>
         /// <param name="patchUrl"></param>
@@ -275,6 +262,19 @@ namespace G
         /// <param name="title"></param>
         /// <param name="updatedAt"></param>
         /// <param name="url"></param>
+        /// <param name="activeLockReason"></param>
+        /// <param name="assignee"></param>
+        /// <param name="autoMerge">
+        /// The status of auto merging a pull request.
+        /// </param>
+        /// <param name="body"></param>
+        /// <param name="closedAt"></param>
+        /// <param name="draft"></param>
+        /// <param name="mergeCommitSha"></param>
+        /// <param name="mergedAt"></param>
+        /// <param name="milestone">
+        /// A collection of related issues and pull requests.
+        /// </param>
         /// <param name="user"></param>
         public WebhookPullRequestReviewCommentDeletedPullRequest(
             global::G.WebhookPullRequestReviewCommentDeletedPullRequestLinks links,
@@ -315,19 +315,28 @@ namespace G
             global::G.WebhookPullRequestReviewCommentDeletedPullRequestUser? user)
         {
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
+            this.ActiveLockReason = activeLockReason;
+            this.Assignee = assignee;
             this.Assignees = assignees ?? throw new global::System.ArgumentNullException(nameof(assignees));
             this.AuthorAssociation = authorAssociation;
+            this.AutoMerge = autoMerge;
             this.Base = @base ?? throw new global::System.ArgumentNullException(nameof(@base));
+            this.Body = body;
+            this.ClosedAt = closedAt;
             this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
             this.CommitsUrl = commitsUrl ?? throw new global::System.ArgumentNullException(nameof(commitsUrl));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.DiffUrl = diffUrl ?? throw new global::System.ArgumentNullException(nameof(diffUrl));
+            this.Draft = draft;
             this.Head = head ?? throw new global::System.ArgumentNullException(nameof(head));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.IssueUrl = issueUrl ?? throw new global::System.ArgumentNullException(nameof(issueUrl));
             this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
             this.Locked = locked;
+            this.MergeCommitSha = mergeCommitSha;
+            this.MergedAt = mergedAt;
+            this.Milestone = milestone;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Number = number;
             this.PatchUrl = patchUrl ?? throw new global::System.ArgumentNullException(nameof(patchUrl));
@@ -340,15 +349,6 @@ namespace G
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.ActiveLockReason = activeLockReason;
-            this.Assignee = assignee;
-            this.AutoMerge = autoMerge;
-            this.Body = body;
-            this.ClosedAt = closedAt;
-            this.Draft = draft;
-            this.MergeCommitSha = mergeCommitSha;
-            this.MergedAt = mergedAt;
-            this.Milestone = milestone;
             this.User = user;
         }
 

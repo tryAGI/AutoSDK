@@ -80,7 +80,13 @@ public static class CSharpModelDataFactory
 
         var hasDeprecatedBaseClass = context.IsDerivedClass &&
                                      context.BaseClassContext.Schema.IsDeprecated();
-        var inheritedPropertyNames = GetInheritedPropertyNames(context);
+        var inheritedProperties = GetInheritedProperties(context);
+        var inheritedPropertyNames = inheritedProperties
+            .Select(static x => x.Name)
+            .ToImmutableArray();
+        var inheritedRequiredProperties = inheritedProperties
+            .Where(static x => x.IsRequired)
+            .ToImmutableArray();
         var modelNamespace = context.GetGeneratedNamespace();
 
         var className = context.Id;
@@ -115,6 +121,7 @@ public static class CSharpModelDataFactory
             IsBaseClass: context.IsBaseClass,
             IsDerivedClass: context.IsDerivedClass,
             InheritedPropertyNames: inheritedPropertyNames,
+            InheritedRequiredProperties: inheritedRequiredProperties,
             DiscriminatorPropertyName: context.Schema.Discriminator?.PropertyName ?? string.Empty,
             DerivedTypes: derivedTypes,
             ClassName: className,
@@ -123,35 +130,42 @@ public static class CSharpModelDataFactory
             FileNameWithoutExtension: $"{modelNamespace}.Models.{externalClassName}");
     }
 
-    private static ImmutableArray<string> GetInheritedPropertyNames(SchemaContext context)
+    private static ImmutableArray<PropertyData> GetInheritedProperties(SchemaContext context)
     {
         if (!context.IsDerivedClass)
         {
             return [];
         }
 
-        var builder = ImmutableArray.CreateBuilder<string>();
+        var builder = ImmutableArray.CreateBuilder<PropertyData>();
         var seenNames = new HashSet<string>(StringComparer.Ordinal);
         var current = context;
 
         while (current.IsDerivedClass)
         {
-            var baseClassData = current.BaseClassContext.ClassData;
-            if (baseClassData is not { } modelData)
+            var baseContext = current.BaseClassContext;
+            if (baseContext.ReferenceId is string baseReferenceId &&
+                !string.IsNullOrWhiteSpace(baseReferenceId) &&
+                current.ComponentSchemas?.TryGetValue(baseReferenceId, out var componentBaseContext) == true)
             {
-                break;
+                baseContext = componentBaseContext;
+            }
+            else
+            {
+                baseContext = baseContext.ResolvedReference ?? baseContext;
             }
 
-            for (var i = 0; i < modelData.Properties.Length; i++)
+            var baseProperties = GetVisibleProperties(baseContext);
+            for (var i = 0; i < baseProperties.Length; i++)
             {
-                var propertyName = modelData.Properties[i].Name;
-                if (seenNames.Add(propertyName))
+                var property = baseProperties[i];
+                if (seenNames.Add(property.Name))
                 {
-                    builder.Add(propertyName);
+                    builder.Add(property);
                 }
             }
 
-            current = current.BaseClassContext;
+            current = baseContext;
         }
 
         return builder.ToImmutable();

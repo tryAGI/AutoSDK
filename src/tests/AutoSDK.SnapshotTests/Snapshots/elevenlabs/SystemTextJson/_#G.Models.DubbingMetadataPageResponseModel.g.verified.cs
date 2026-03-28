@@ -39,8 +39,8 @@ namespace G
         /// Initializes a new instance of the <see cref="DubbingMetadataPageResponseModel" /> class.
         /// </summary>
         /// <param name="dubs"></param>
-        /// <param name="nextCursor"></param>
         /// <param name="hasMore"></param>
+        /// <param name="nextCursor"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -50,8 +50,8 @@ namespace G
             string? nextCursor)
         {
             this.Dubs = dubs ?? throw new global::System.ArgumentNullException(nameof(dubs));
-            this.HasMore = hasMore;
             this.NextCursor = nextCursor;
+            this.HasMore = hasMore;
         }
 
         /// <summary>

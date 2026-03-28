@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Any,
+        Multiply,
         /// <summary>
         /// 
         /// </summary>
@@ -231,7 +231,7 @@ namespace G
         {
             return value switch
             {
-                WebhookMetaDeletedHookEvent.Any => "*",
+                WebhookMetaDeletedHookEvent.Multiply => "*",
                 WebhookMetaDeletedHookEvent.BranchProtectionRule => "branch_protection_rule",
                 WebhookMetaDeletedHookEvent.CheckRun => "check_run",
                 WebhookMetaDeletedHookEvent.CheckSuite => "check_suite",
@@ -293,7 +293,7 @@ namespace G
         {
             return value switch
             {
-                "*" => WebhookMetaDeletedHookEvent.Any,
+                "*" => WebhookMetaDeletedHookEvent.Multiply,
                 "branch_protection_rule" => WebhookMetaDeletedHookEvent.BranchProtectionRule,
                 "check_run" => WebhookMetaDeletedHookEvent.CheckRun,
                 "check_suite" => WebhookMetaDeletedHookEvent.CheckSuite,

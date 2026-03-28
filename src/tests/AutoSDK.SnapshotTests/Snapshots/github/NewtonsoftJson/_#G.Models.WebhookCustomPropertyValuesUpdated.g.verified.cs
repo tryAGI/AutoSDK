@@ -72,6 +72,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookCustomPropertyValuesUpdated" /> class.
         /// </summary>
+        /// <param name="repository">
+        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
+        /// when the event occurs from activity in a repository.
+        /// </param>
+        /// <param name="organization">
+        /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
+        /// organization, or when the event occurs from activity in a repository owned by an organization.
+        /// </param>
+        /// <param name="newPropertyValues">
+        /// The new custom property values for the repository.
+        /// </param>
+        /// <param name="oldPropertyValues">
+        /// The old custom property values for the repository.
+        /// </param>
         /// <param name="action"></param>
         /// <param name="enterprise">
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
@@ -83,22 +97,8 @@ namespace G
         /// for and sent to a GitHub App. For more information,<br/>
         /// see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
         /// </param>
-        /// <param name="repository">
-        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
-        /// when the event occurs from activity in a repository.
-        /// </param>
-        /// <param name="organization">
-        /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
-        /// organization, or when the event occurs from activity in a repository owned by an organization.
-        /// </param>
         /// <param name="sender">
         /// A GitHub user.
-        /// </param>
-        /// <param name="newPropertyValues">
-        /// The new custom property values for the repository.
-        /// </param>
-        /// <param name="oldPropertyValues">
-        /// The old custom property values for the repository.
         /// </param>
         public WebhookCustomPropertyValuesUpdated(
             global::G.RepositoryWebhooks repository,
@@ -110,14 +110,14 @@ namespace G
             global::G.SimpleInstallation? installation,
             global::G.SimpleUser? sender)
         {
-            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
-            this.Organization = organization ?? throw new global::System.ArgumentNullException(nameof(organization));
-            this.NewPropertyValues = newPropertyValues ?? throw new global::System.ArgumentNullException(nameof(newPropertyValues));
-            this.OldPropertyValues = oldPropertyValues ?? throw new global::System.ArgumentNullException(nameof(oldPropertyValues));
             this.Action = action;
             this.Enterprise = enterprise;
             this.Installation = installation;
+            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
+            this.Organization = organization ?? throw new global::System.ArgumentNullException(nameof(organization));
             this.Sender = sender;
+            this.NewPropertyValues = newPropertyValues ?? throw new global::System.ArgumentNullException(nameof(newPropertyValues));
+            this.OldPropertyValues = oldPropertyValues ?? throw new global::System.ArgumentNullException(nameof(oldPropertyValues));
         }
 
         /// <summary>

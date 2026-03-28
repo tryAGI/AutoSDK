@@ -31,10 +31,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatToolCallsGenerationEventNykiww" /> class.
         /// </summary>
+        /// <param name="toolCalls"></param>
         /// <param name="text">
         /// The text generated related to the tool calls generated
         /// </param>
-        /// <param name="toolCalls"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -42,8 +42,8 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ToolCall> toolCalls,
             string? text)
         {
-            this.ToolCalls = toolCalls ?? throw new global::System.ArgumentNullException(nameof(toolCalls));
             this.Text = text;
+            this.ToolCalls = toolCalls ?? throw new global::System.ArgumentNullException(nameof(toolCalls));
         }
 
         /// <summary>

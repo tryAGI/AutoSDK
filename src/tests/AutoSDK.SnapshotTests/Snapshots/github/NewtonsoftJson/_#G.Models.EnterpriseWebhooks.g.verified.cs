@@ -90,14 +90,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EnterpriseWebhooks" /> class.
         /// </summary>
-        /// <param name="description">
-        /// A short description of the enterprise.
-        /// </param>
         /// <param name="htmlUrl">
         /// Example: https://github.com/enterprises/octo-business
-        /// </param>
-        /// <param name="websiteUrl">
-        /// The enterprise's website URL.
         /// </param>
         /// <param name="id">
         /// Unique identifier of the enterprise<br/>
@@ -114,13 +108,19 @@ namespace G
         /// The slug url identifier for the enterprise.<br/>
         /// Example: octo-business
         /// </param>
+        /// <param name="avatarUrl"></param>
+        /// <param name="description">
+        /// A short description of the enterprise.
+        /// </param>
+        /// <param name="websiteUrl">
+        /// The enterprise's website URL.
+        /// </param>
         /// <param name="createdAt">
         /// Example: 2019-01-26T19:01:12Z
         /// </param>
         /// <param name="updatedAt">
         /// Example: 2019-01-26T19:14:43Z
         /// </param>
-        /// <param name="avatarUrl"></param>
         public EnterpriseWebhooks(
             string htmlUrl,
             int id,
@@ -133,16 +133,16 @@ namespace G
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt)
         {
+            this.Description = description;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.WebsiteUrl = websiteUrl;
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
-            this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
-            this.Description = description;
-            this.WebsiteUrl = websiteUrl;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
         }
 
         /// <summary>

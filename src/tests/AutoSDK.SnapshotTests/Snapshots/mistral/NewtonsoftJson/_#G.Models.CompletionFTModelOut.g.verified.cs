@@ -97,23 +97,23 @@ namespace G
         /// Initializes a new instance of the <see cref="CompletionFTModelOut" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="object">
-        /// Default Value: model
-        /// </param>
         /// <param name="created"></param>
         /// <param name="ownedBy"></param>
         /// <param name="root"></param>
         /// <param name="archived"></param>
+        /// <param name="capabilities"></param>
+        /// <param name="job"></param>
+        /// <param name="object">
+        /// Default Value: model
+        /// </param>
         /// <param name="name"></param>
         /// <param name="description"></param>
-        /// <param name="capabilities"></param>
         /// <param name="maxContextLength">
         /// Default Value: 32768
         /// </param>
         /// <param name="aliases">
         /// Default Value: []
         /// </param>
-        /// <param name="job"></param>
         /// <param name="modelType">
         /// Default Value: completion
         /// </param>
@@ -133,17 +133,17 @@ namespace G
             global::G.CompletionFTModelOutModelType? modelType)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.Created = created;
             this.OwnedBy = ownedBy ?? throw new global::System.ArgumentNullException(nameof(ownedBy));
             this.Root = root ?? throw new global::System.ArgumentNullException(nameof(root));
             this.Archived = archived;
-            this.Capabilities = capabilities ?? throw new global::System.ArgumentNullException(nameof(capabilities));
-            this.Job = job;
-            this.Object = @object;
             this.Name = name;
             this.Description = description;
+            this.Capabilities = capabilities ?? throw new global::System.ArgumentNullException(nameof(capabilities));
             this.MaxContextLength = maxContextLength;
             this.Aliases = aliases;
+            this.Job = job;
             this.ModelType = modelType;
         }
 

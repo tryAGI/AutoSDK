@@ -133,14 +133,6 @@ namespace G
         /// Custom metadata associated with the artifact<br/>
         /// Example: {"original_filename":"report.pdf","source":"user_upload"}
         /// </param>
-        /// <param name="description">
-        /// Optional description of the artifact<br/>
-        /// Example: Q4 financial report
-        /// </param>
-        /// <param name="ttlDays">
-        /// Time-to-live in days before the artifact is automatically deleted<br/>
-        /// Example: 30
-        /// </param>
         /// <param name="createdAt">
         /// Timestamp when the artifact was created<br/>
         /// Example: 2024-01-15T10:35:00Z
@@ -148,6 +140,14 @@ namespace G
         /// <param name="updatedAt">
         /// Timestamp when the artifact was last updated<br/>
         /// Example: 2024-01-15T10:35:00Z
+        /// </param>
+        /// <param name="description">
+        /// Optional description of the artifact<br/>
+        /// Example: Q4 financial report
+        /// </param>
+        /// <param name="ttlDays">
+        /// Time-to-live in days before the artifact is automatically deleted<br/>
+        /// Example: 30
         /// </param>
         /// <param name="data">
         /// Base64-encoded file content (only included in single artifact fetch, not in list responses)<br/>
@@ -172,10 +172,10 @@ namespace G
             this.SizeBytes = sizeBytes;
             this.ChecksumSha256 = checksumSha256 ?? throw new global::System.ArgumentNullException(nameof(checksumSha256));
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.Description = description;
             this.TtlDays = ttlDays;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.Data = data;
         }
 

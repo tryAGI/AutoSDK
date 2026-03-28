@@ -72,7 +72,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhooksProjectColumn" /> class.
         /// </summary>
-        /// <param name="afterId"></param>
         /// <param name="cardsUrl"></param>
         /// <param name="createdAt"></param>
         /// <param name="id">
@@ -85,6 +84,7 @@ namespace G
         /// <param name="projectUrl"></param>
         /// <param name="updatedAt"></param>
         /// <param name="url"></param>
+        /// <param name="afterId"></param>
         public WebhooksProjectColumn(
             string cardsUrl,
             global::System.DateTime createdAt,
@@ -96,6 +96,7 @@ namespace G
             string url,
             int? afterId)
         {
+            this.AfterId = afterId;
             this.CardsUrl = cardsUrl ?? throw new global::System.ArgumentNullException(nameof(cardsUrl));
             this.CreatedAt = createdAt;
             this.Id = id;
@@ -104,7 +105,6 @@ namespace G
             this.ProjectUrl = projectUrl ?? throw new global::System.ArgumentNullException(nameof(projectUrl));
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.AfterId = afterId;
         }
 
         /// <summary>

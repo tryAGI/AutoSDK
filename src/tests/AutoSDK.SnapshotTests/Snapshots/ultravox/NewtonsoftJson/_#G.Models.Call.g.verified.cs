@@ -230,14 +230,21 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Call" /> class.
         /// </summary>
-        /// <param name="callId">
-        /// Included only in responses
+        /// <param name="firstSpeakerSettings">
+        /// Settings for the initial message to get the call started.
         /// </param>
+        /// <param name="experimentalSettings">
+        /// Experimental settings for the call.
+        /// </param>
+        /// <param name="metadata">
+        /// Optional metadata key-value pairs to associate with the call. All values must be strings.
+        /// </param>
+        /// <param name="initialState">
+        /// The initial state of the call which is readable/writable by tools.
+        /// </param>
+        /// <param name="requestContext"></param>
         /// <param name="clientVersion">
         /// The version of the client that joined this call.<br/>
-        /// Included only in responses
-        /// </param>
-        /// <param name="created">
         /// Included only in responses
         /// </param>
         /// <param name="joined">
@@ -256,15 +263,8 @@ namespace G
         /// * `system_error` - System error<br/>
         /// Included only in responses
         /// </param>
-        /// <param name="firstSpeakerSettings">
-        /// Settings for the initial message to get the call started.
-        /// </param>
         /// <param name="inactivityMessages">
         /// Messages spoken by the agent when the user is inactive for the specified duration. Durations are cumulative, so a message m &gt; 1 with duration 30s will be spoken 30 seconds after message m-1.
-        /// </param>
-        /// <param name="initialOutputMedium">
-        /// The medium used initially by the agent. May later be changed by the client.<br/>
-        /// Included only in responses
         /// </param>
         /// <param name="joinTimeout">
         /// Default Value: 30s
@@ -297,11 +297,6 @@ namespace G
         ///  responsible for your own TTS-related errors.<br/>
         ///  Exactly one field must be set.
         /// </param>
-        /// <param name="errorCount">
-        /// The number of errors in this call.<br/>
-        /// Default Value: 0<br/>
-        /// Included only in responses
-        /// </param>
         /// <param name="vadSettings">
         /// VAD settings for the call.
         /// </param>
@@ -313,16 +308,21 @@ namespace G
         /// A summary of the call.<br/>
         /// Included only in responses
         /// </param>
-        /// <param name="experimentalSettings">
-        /// Experimental settings for the call.
+        /// <param name="callId">
+        /// Included only in responses
         /// </param>
-        /// <param name="metadata">
-        /// Optional metadata key-value pairs to associate with the call. All values must be strings.
+        /// <param name="created">
+        /// Included only in responses
         /// </param>
-        /// <param name="initialState">
-        /// The initial state of the call which is readable/writable by tools.
+        /// <param name="initialOutputMedium">
+        /// The medium used initially by the agent. May later be changed by the client.<br/>
+        /// Included only in responses
         /// </param>
-        /// <param name="requestContext"></param>
+        /// <param name="errorCount">
+        /// The number of errors in this call.<br/>
+        /// Default Value: 0<br/>
+        /// Included only in responses
+        /// </param>
         public Call(
             global::G.UltravoxV1FirstSpeakerSettings firstSpeakerSettings,
             object experimentalSettings,
@@ -354,17 +354,13 @@ namespace G
             global::G.InitialOutputMediumEnum initialOutputMedium = default!,
             int errorCount = default!)
         {
-            this.FirstSpeakerSettings = firstSpeakerSettings ?? throw new global::System.ArgumentNullException(nameof(firstSpeakerSettings));
-            this.ExperimentalSettings = experimentalSettings ?? throw new global::System.ArgumentNullException(nameof(experimentalSettings));
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
-            this.InitialState = initialState ?? throw new global::System.ArgumentNullException(nameof(initialState));
-            this.RequestContext = requestContext ?? throw new global::System.ArgumentNullException(nameof(requestContext));
             this.CallId = callId;
             this.ClientVersion = clientVersion;
             this.Created = created;
             this.Joined = joined;
             this.Ended = ended;
             this.EndReason = endReason;
+            this.FirstSpeakerSettings = firstSpeakerSettings ?? throw new global::System.ArgumentNullException(nameof(firstSpeakerSettings));
             this.InactivityMessages = inactivityMessages;
             this.InitialOutputMedium = initialOutputMedium;
             this.JoinTimeout = joinTimeout;
@@ -383,6 +379,10 @@ namespace G
             this.VadSettings = vadSettings;
             this.ShortSummary = shortSummary;
             this.Summary = summary;
+            this.ExperimentalSettings = experimentalSettings ?? throw new global::System.ArgumentNullException(nameof(experimentalSettings));
+            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
+            this.InitialState = initialState ?? throw new global::System.ArgumentNullException(nameof(initialState));
+            this.RequestContext = requestContext ?? throw new global::System.ArgumentNullException(nameof(requestContext));
         }
 
         /// <summary>

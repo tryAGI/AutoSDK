@@ -42,9 +42,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseFileSearchCallInProgressEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.file_search_call.in_progress`.
-        /// </param>
         /// <param name="outputIndex">
         /// The index of the output item that the file search call is initiated.
         /// </param>
@@ -54,16 +51,19 @@ namespace G
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.file_search_call.in_progress`.
+        /// </param>
         public ResponseFileSearchCallInProgressEvent(
             int outputIndex,
             string itemId,
             int sequenceNumber,
             global::G.ResponseFileSearchCallInProgressEventType type)
         {
+            this.Type = type;
             this.OutputIndex = outputIndex;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.SequenceNumber = sequenceNumber;
-            this.Type = type;
         }
 
         /// <summary>

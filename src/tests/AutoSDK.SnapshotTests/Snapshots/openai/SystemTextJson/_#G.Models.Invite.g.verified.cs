@@ -84,9 +84,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Invite" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The object type, which is always `organization.invite`
-        /// </param>
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints
         /// </param>
@@ -104,6 +101,9 @@ namespace G
         /// </param>
         /// <param name="expiresAt">
         /// The Unix timestamp (in seconds) of when the invite expires.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `organization.invite`
         /// </param>
         /// <param name="acceptedAt">
         /// The Unix timestamp (in seconds) of when the invite was accepted.
@@ -125,13 +125,13 @@ namespace G
             global::System.DateTimeOffset? acceptedAt,
             global::System.Collections.Generic.IList<global::G.InviteProject>? projects)
         {
+            this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.Role = role;
             this.Status = status;
             this.InvitedAt = invitedAt;
             this.ExpiresAt = expiresAt;
-            this.Object = @object;
             this.AcceptedAt = acceptedAt;
             this.Projects = projects;
         }

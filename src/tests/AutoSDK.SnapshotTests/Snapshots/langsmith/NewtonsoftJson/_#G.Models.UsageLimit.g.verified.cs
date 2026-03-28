@@ -58,10 +58,10 @@ namespace G
         /// Type of usage limit.
         /// </param>
         /// <param name="limitValue"></param>
-        /// <param name="id"></param>
         /// <param name="tenantId"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="id"></param>
         public UsageLimit(
             global::G.UsageLimitType limitType,
             int limitValue,
@@ -72,10 +72,10 @@ namespace G
         {
             this.LimitType = limitType;
             this.LimitValue = limitValue;
+            this.Id = id;
             this.TenantId = tenantId;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.Id = id;
         }
 
         /// <summary>

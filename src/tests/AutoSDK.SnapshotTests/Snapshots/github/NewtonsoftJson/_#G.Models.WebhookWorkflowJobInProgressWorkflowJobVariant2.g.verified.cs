@@ -156,6 +156,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookWorkflowJobInProgressWorkflowJobVariant2" /> class.
         /// </summary>
+        /// <param name="status"></param>
+        /// <param name="steps"></param>
         /// <param name="checkRunUrl"></param>
         /// <param name="completedAt"></param>
         /// <param name="conclusion"></param>
@@ -176,14 +178,12 @@ namespace G
         /// <param name="runnerId"></param>
         /// <param name="runnerName"></param>
         /// <param name="startedAt"></param>
-        /// <param name="status"></param>
         /// <param name="headBranch">
         /// The name of the current branch.
         /// </param>
         /// <param name="workflowName">
         /// The name of the workflow.
         /// </param>
-        /// <param name="steps"></param>
         /// <param name="url"></param>
         public WebhookWorkflowJobInProgressWorkflowJobVariant2(
             global::G.WebhookWorkflowJobInProgressWorkflowJobVariant2Status status,
@@ -210,8 +210,6 @@ namespace G
             string? workflowName,
             string? url)
         {
-            this.Status = status;
-            this.Steps = steps ?? throw new global::System.ArgumentNullException(nameof(steps));
             this.CheckRunUrl = checkRunUrl;
             this.CompletedAt = completedAt;
             this.Conclusion = conclusion;
@@ -230,8 +228,10 @@ namespace G
             this.RunnerId = runnerId;
             this.RunnerName = runnerName;
             this.StartedAt = startedAt;
+            this.Status = status;
             this.HeadBranch = headBranch;
             this.WorkflowName = workflowName;
+            this.Steps = steps ?? throw new global::System.ArgumentNullException(nameof(steps));
             this.Url = url;
         }
 

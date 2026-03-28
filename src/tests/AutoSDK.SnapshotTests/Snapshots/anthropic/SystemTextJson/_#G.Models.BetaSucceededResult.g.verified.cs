@@ -33,10 +33,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaSucceededResult" /> class.
         /// </summary>
+        /// <param name="message"></param>
         /// <param name="type">
         /// Default Value: succeeded
         /// </param>
-        /// <param name="message"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -44,8 +44,8 @@ namespace G
             global::G.BetaMessage message,
             global::G.BetaSucceededResultType type = global::G.BetaSucceededResultType.Succeeded)
         {
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Type = type;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
         }
 
         /// <summary>

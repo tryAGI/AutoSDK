@@ -70,10 +70,10 @@ namespace G
         /// <param name="type"></param>
         /// <param name="id"></param>
         /// <param name="login"></param>
+        /// <param name="marketplacePurchase1"></param>
         /// <param name="organizationBillingEmail"></param>
         /// <param name="email"></param>
         /// <param name="marketplacePendingChange"></param>
-        /// <param name="marketplacePurchase1"></param>
         public MarketplacePurchase(
             string url,
             string type,
@@ -88,10 +88,10 @@ namespace G
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Id = id;
             this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
-            this.MarketplacePurchase1 = marketplacePurchase1 ?? throw new global::System.ArgumentNullException(nameof(marketplacePurchase1));
             this.OrganizationBillingEmail = organizationBillingEmail;
             this.Email = email;
             this.MarketplacePendingChange = marketplacePendingChange;
+            this.MarketplacePurchase1 = marketplacePurchase1 ?? throw new global::System.ArgumentNullException(nameof(marketplacePurchase1));
         }
 
         /// <summary>

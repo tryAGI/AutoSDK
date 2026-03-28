@@ -82,8 +82,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookMarketplacePurchasePurchased" /> class.
         /// </summary>
-        /// <param name="action"></param>
         /// <param name="effectiveDate"></param>
+        /// <param name="marketplacePurchase"></param>
+        /// <param name="sender">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="action"></param>
         /// <param name="enterprise">
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
         /// on an enterprise account or an organization that's part of an enterprise account. For more information,<br/>
@@ -94,7 +98,6 @@ namespace G
         /// for and sent to a GitHub App. For more information,<br/>
         /// see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
         /// </param>
-        /// <param name="marketplacePurchase"></param>
         /// <param name="organization">
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
         /// organization, or when the event occurs from activity in a repository owned by an organization.
@@ -103,9 +106,6 @@ namespace G
         /// <param name="repository">
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
         /// when the event occurs from activity in a repository.
-        /// </param>
-        /// <param name="sender">
-        /// A GitHub user.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -121,15 +121,15 @@ namespace G
             global::G.WebhooksPreviousMarketplacePurchase? previousMarketplacePurchase,
             global::G.RepositoryWebhooks? repository)
         {
-            this.EffectiveDate = effectiveDate ?? throw new global::System.ArgumentNullException(nameof(effectiveDate));
-            this.MarketplacePurchase = marketplacePurchase ?? throw new global::System.ArgumentNullException(nameof(marketplacePurchase));
-            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
             this.Action = action;
+            this.EffectiveDate = effectiveDate ?? throw new global::System.ArgumentNullException(nameof(effectiveDate));
             this.Enterprise = enterprise;
             this.Installation = installation;
+            this.MarketplacePurchase = marketplacePurchase ?? throw new global::System.ArgumentNullException(nameof(marketplacePurchase));
             this.Organization = organization;
             this.PreviousMarketplacePurchase = previousMarketplacePurchase;
             this.Repository = repository;
+            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
         }
 
         /// <summary>

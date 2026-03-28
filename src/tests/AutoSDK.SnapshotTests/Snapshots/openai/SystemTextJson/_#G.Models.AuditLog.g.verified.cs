@@ -225,11 +225,11 @@ namespace G
         /// <param name="effectiveAt">
         /// The Unix timestamp (in seconds) of the event.
         /// </param>
-        /// <param name="project">
-        /// The project that the action was scoped to. Absent for actions not scoped to projects.
-        /// </param>
         /// <param name="actor">
         /// The actor who performed the audit logged action.
+        /// </param>
+        /// <param name="project">
+        /// The project that the action was scoped to. Absent for actions not scoped to projects.
         /// </param>
         /// <param name="apiKeyCreated">
         /// The details for events with this `type`.
@@ -352,8 +352,8 @@ namespace G
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;
             this.EffectiveAt = effectiveAt;
-            this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
             this.Project = project;
+            this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
             this.ApiKeyCreated = apiKeyCreated;
             this.ApiKeyUpdated = apiKeyUpdated;
             this.ApiKeyDeleted = apiKeyDeleted;

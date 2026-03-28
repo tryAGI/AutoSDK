@@ -81,6 +81,7 @@ namespace G
         /// <param name="accessInfo">
         /// Example: {"creator_email":"john.doe@example.com","creator_name":"John Doe","is_creator":true,"role":"admin"}
         /// </param>
+        /// <param name="childrenCount"></param>
         /// <param name="folderParentId">
         /// The ID of the parent folder, or null if the document is at the root level.
         /// </param>
@@ -88,7 +89,6 @@ namespace G
         /// The folder path segments leading to this entity, from root to parent folder.
         /// </param>
         /// <param name="type"></param>
-        /// <param name="childrenCount"></param>
         public GetKnowledgeBaseFolderResponseModel(
             string id,
             string name,
@@ -105,10 +105,10 @@ namespace G
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.SupportedUsages = supportedUsages ?? throw new global::System.ArgumentNullException(nameof(supportedUsages));
             this.AccessInfo = accessInfo ?? throw new global::System.ArgumentNullException(nameof(accessInfo));
-            this.ChildrenCount = childrenCount;
             this.FolderParentId = folderParentId;
             this.FolderPath = folderPath;
             this.Type = type;
+            this.ChildrenCount = childrenCount;
         }
 
         /// <summary>

@@ -54,9 +54,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseReasoningSummaryTextDoneEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.reasoning_summary_text.done`.
-        /// </param>
         /// <param name="itemId">
         /// The ID of the item this summary text is associated with.
         /// </param>
@@ -72,6 +69,9 @@ namespace G
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.reasoning_summary_text.done`.
+        /// </param>
         public ResponseReasoningSummaryTextDoneEvent(
             string itemId,
             int outputIndex,
@@ -80,12 +80,12 @@ namespace G
             int sequenceNumber,
             global::G.ResponseReasoningSummaryTextDoneEventType type)
         {
+            this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.SummaryIndex = summaryIndex;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.SequenceNumber = sequenceNumber;
-            this.Type = type;
         }
 
         /// <summary>

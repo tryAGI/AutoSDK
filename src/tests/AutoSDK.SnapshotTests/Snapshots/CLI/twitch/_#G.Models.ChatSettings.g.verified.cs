@@ -121,6 +121,23 @@ namespace G
         ///   <br/>
         /// See the `follower_mode_duration` field for how long users must follow the broadcaster before being able to participate in the chat room.
         /// </param>
+        /// <param name="slowMode">
+        /// A Boolean value that determines whether the broadcaster limits how often users in the chat room are allowed to send messages.  <br/>
+        ///   <br/>
+        /// Is **true** if the broadcaster applies a delay; otherwise, **false**.  <br/>
+        ///   <br/>
+        /// See the `slow_mode_wait_time` field for the delay.
+        /// </param>
+        /// <param name="subscriberMode">
+        /// A Boolean value that determines whether only users that subscribe to the broadcaster’s channel may talk in the chat room.  <br/>
+        ///   <br/>
+        /// Is **true** if the broadcaster restricts the chat room to subscribers only; otherwise, **false**.
+        /// </param>
+        /// <param name="uniqueChatMode">
+        /// A Boolean value that determines whether the broadcaster requires users to post only unique messages in the chat room.  <br/>
+        ///   <br/>
+        /// Is **true** if the broadcaster requires unique messages only; otherwise, **false**.
+        /// </param>
         /// <param name="followerModeDuration">
         /// The length of time, in minutes, that users must follow the broadcaster before being able to participate in the chat room. Is **null** if `follower_mode` is **false**.
         /// </param>
@@ -137,27 +154,10 @@ namespace G
         ///   <br/>
         /// The response includes this field only if the request specifies a user access token that includes the **moderator:read:chat\_settings** scope and the user in the _moderator\_id_ query parameter is one of the broadcaster’s moderators.
         /// </param>
-        /// <param name="slowMode">
-        /// A Boolean value that determines whether the broadcaster limits how often users in the chat room are allowed to send messages.  <br/>
-        ///   <br/>
-        /// Is **true** if the broadcaster applies a delay; otherwise, **false**.  <br/>
-        ///   <br/>
-        /// See the `slow_mode_wait_time` field for the delay.
-        /// </param>
         /// <param name="slowModeWaitTime">
         /// The amount of time, in seconds, that users must wait between sending messages.  <br/>
         ///   <br/>
         /// Is **null** if slow\_mode is **false**.
-        /// </param>
-        /// <param name="subscriberMode">
-        /// A Boolean value that determines whether only users that subscribe to the broadcaster’s channel may talk in the chat room.  <br/>
-        ///   <br/>
-        /// Is **true** if the broadcaster restricts the chat room to subscribers only; otherwise, **false**.
-        /// </param>
-        /// <param name="uniqueChatMode">
-        /// A Boolean value that determines whether the broadcaster requires users to post only unique messages in the chat room.  <br/>
-        ///   <br/>
-        /// Is **true** if the broadcaster requires unique messages only; otherwise, **false**.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -178,14 +178,14 @@ namespace G
             this.BroadcasterId = broadcasterId ?? throw new global::System.ArgumentNullException(nameof(broadcasterId));
             this.EmoteMode = emoteMode;
             this.FollowerMode = followerMode;
-            this.SlowMode = slowMode;
-            this.SubscriberMode = subscriberMode;
-            this.UniqueChatMode = uniqueChatMode;
             this.FollowerModeDuration = followerModeDuration;
             this.ModeratorId = moderatorId;
             this.NonModeratorChatDelay = nonModeratorChatDelay;
             this.NonModeratorChatDelayDuration = nonModeratorChatDelayDuration;
+            this.SlowMode = slowMode;
             this.SlowModeWaitTime = slowModeWaitTime;
+            this.SubscriberMode = subscriberMode;
+            this.UniqueChatMode = uniqueChatMode;
         }
 
         /// <summary>

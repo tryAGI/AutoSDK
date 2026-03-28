@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TransferToAgentToolResultErrorModel" /> class.
         /// </summary>
+        /// <param name="fromAgent"></param>
+        /// <param name="error"></param>
         /// <param name="resultType">
         /// Default Value: transfer_to_agent_error
         /// </param>
         /// <param name="status">
         /// Default Value: error
         /// </param>
-        /// <param name="fromAgent"></param>
-        /// <param name="error"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -61,10 +61,10 @@ namespace G
             string? resultType,
             string? status)
         {
-            this.FromAgent = fromAgent ?? throw new global::System.ArgumentNullException(nameof(fromAgent));
-            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
             this.ResultType = resultType;
             this.Status = status;
+            this.FromAgent = fromAgent ?? throw new global::System.ArgumentNullException(nameof(fromAgent));
+            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
         }
 
         /// <summary>

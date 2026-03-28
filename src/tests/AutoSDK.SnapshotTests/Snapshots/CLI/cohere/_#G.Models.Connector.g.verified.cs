@@ -108,24 +108,24 @@ namespace G
         /// The unique identifier of the connector (used in both `/connectors` &amp; `/chat` endpoints).<br/>
         /// This is automatically created from the name of the connector upon registration.
         /// </param>
-        /// <param name="organizationId">
-        /// The organization to which this connector belongs. This is automatically set to<br/>
-        /// the organization of the user who created the connector.
-        /// </param>
         /// <param name="name">
         /// A human-readable name for the connector.
-        /// </param>
-        /// <param name="description">
-        /// A description of the connector.
-        /// </param>
-        /// <param name="url">
-        /// The URL of the connector that will be used to search for documents.
         /// </param>
         /// <param name="createdAt">
         /// The UTC time at which the connector was created.
         /// </param>
         /// <param name="updatedAt">
         /// The UTC time at which the connector was last updated.
+        /// </param>
+        /// <param name="organizationId">
+        /// The organization to which this connector belongs. This is automatically set to<br/>
+        /// the organization of the user who created the connector.
+        /// </param>
+        /// <param name="description">
+        /// A description of the connector.
+        /// </param>
+        /// <param name="url">
+        /// The URL of the connector that will be used to search for documents.
         /// </param>
         /// <param name="excludes">
         /// A list of fields to exclude from the prompt (fields remain in the document).
@@ -164,12 +164,12 @@ namespace G
             bool? continueOnFailure)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.OrganizationId = organizationId;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
             this.Url = url;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.Excludes = excludes;
             this.AuthType = authType;
             this.Oauth = oauth;

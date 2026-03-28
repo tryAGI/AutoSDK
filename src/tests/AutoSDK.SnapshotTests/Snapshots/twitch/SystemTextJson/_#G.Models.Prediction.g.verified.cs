@@ -120,9 +120,6 @@ namespace G
         /// <param name="title">
         /// The question that the prediction asks. For example, _Will I finish this entire pizza?_
         /// </param>
-        /// <param name="winningOutcomeId">
-        /// The ID of the winning outcome. Is **null** unless `status` is RESOLVED.
-        /// </param>
         /// <param name="outcomes">
         /// The list of possible outcomes for the prediction.
         /// </param>
@@ -139,6 +136,9 @@ namespace G
         /// </param>
         /// <param name="createdAt">
         /// The UTC date and time of when the Prediction began.
+        /// </param>
+        /// <param name="winningOutcomeId">
+        /// The ID of the winning outcome. Is **null** unless `status` is RESOLVED.
         /// </param>
         /// <param name="endedAt">
         /// The UTC date and time of when the Prediction ended. If `status` is ACTIVE, this is set to **null**.
@@ -168,11 +168,11 @@ namespace G
             this.BroadcasterName = broadcasterName ?? throw new global::System.ArgumentNullException(nameof(broadcasterName));
             this.BroadcasterLogin = broadcasterLogin ?? throw new global::System.ArgumentNullException(nameof(broadcasterLogin));
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.WinningOutcomeId = winningOutcomeId;
             this.Outcomes = outcomes ?? throw new global::System.ArgumentNullException(nameof(outcomes));
             this.PredictionWindow = predictionWindow;
             this.Status = status;
             this.CreatedAt = createdAt;
-            this.WinningOutcomeId = winningOutcomeId;
             this.EndedAt = endedAt;
             this.LockedAt = lockedAt;
         }

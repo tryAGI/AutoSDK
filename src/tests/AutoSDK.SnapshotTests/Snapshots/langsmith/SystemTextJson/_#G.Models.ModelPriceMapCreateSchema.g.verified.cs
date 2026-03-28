@@ -67,13 +67,13 @@ namespace G
         /// Initializes a new instance of the <see cref="ModelPriceMapCreateSchema" /> class.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="matchPattern"></param>
+        /// <param name="promptCost"></param>
+        /// <param name="completionCost"></param>
         /// <param name="startTime"></param>
         /// <param name="matchPath">
         /// Default Value: [model, model_name, model_id, model_path, endpoint_name]
         /// </param>
-        /// <param name="matchPattern"></param>
-        /// <param name="promptCost"></param>
-        /// <param name="completionCost"></param>
         /// <param name="provider"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -88,11 +88,11 @@ namespace G
             string? provider)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.StartTime = startTime;
+            this.MatchPath = matchPath;
             this.MatchPattern = matchPattern ?? throw new global::System.ArgumentNullException(nameof(matchPattern));
             this.PromptCost = promptCost;
             this.CompletionCost = completionCost;
-            this.StartTime = startTime;
-            this.MatchPath = matchPath;
             this.Provider = provider;
         }
 

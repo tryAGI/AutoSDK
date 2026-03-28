@@ -126,29 +126,29 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateAgentRequest" /> class.
         /// </summary>
-        /// <param name="key">
-        /// A unique key that identifies an agent.<br/>
-        /// Example: customer_support
-        /// </param>
         /// <param name="name">
         /// The human-readable name of an agent.<br/>
         /// Example: Customer Support Agent
-        /// </param>
-        /// <param name="description">
-        /// A detailed description of the agent's purpose and capabilities.<br/>
-        /// Example: An AI agent specialized in handling customer support inquiries using company documentation and support tools.
         /// </param>
         /// <param name="toolConfigurations">
         /// A map of tool configurations available to the agent. The key is the name of the tool configuration and the value is the AgentToolConfiguration.<br/>
         /// Example: {"customer_search":{"type":"corpora_search","argument_override":{"query":"customer support documentation"}}}
         /// </param>
+        /// <param name="model">
+        /// Configuration for the model used in this step, including the model name and arbitrary parameters.
+        /// </param>
+        /// <param name="key">
+        /// A unique key that identifies an agent.<br/>
+        /// Example: customer_support
+        /// </param>
+        /// <param name="description">
+        /// A detailed description of the agent's purpose and capabilities.<br/>
+        /// Example: An AI agent specialized in handling customer support inquiries using company documentation and support tools.
+        /// </param>
         /// <param name="skills">
         /// A map of skills available to the agent, keyed by skill name.<br/>
         /// Skills provide specialized instructions that can be invoked during agent execution.<br/>
         /// Example: {"code_review":{"description":"Reviews code for best practices.","content":"When reviewing code..."}}
-        /// </param>
-        /// <param name="model">
-        /// Configuration for the model used in this step, including the model name and arbitrary parameters.
         /// </param>
         /// <param name="firstStep">
         /// The entry point step for an agent, with a unique name.<br/>
@@ -200,12 +200,12 @@ namespace G
             global::G.CompactionConfig? compaction,
             global::G.ToolOutputOffloadingConfiguration? toolOutputOffloading)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.ToolConfigurations = toolConfigurations ?? throw new global::System.ArgumentNullException(nameof(toolConfigurations));
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Key = key;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
+            this.ToolConfigurations = toolConfigurations ?? throw new global::System.ArgumentNullException(nameof(toolConfigurations));
             this.Skills = skills;
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.FirstStep = firstStep;
             this.FirstStepName = firstStepName;
             this.Steps = steps;

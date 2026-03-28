@@ -60,13 +60,13 @@ namespace G
         /// Initializes a new instance of the <see cref="WorkflowToolNestedToolsStepModelInput" /> class.
         /// </summary>
         /// <param name="stepLatencySecs"></param>
-        /// <param name="type">
-        /// Default Value: nested_tools
-        /// </param>
         /// <param name="nodeId"></param>
         /// <param name="requests"></param>
         /// <param name="results"></param>
         /// <param name="isSuccessful"></param>
+        /// <param name="type">
+        /// Default Value: nested_tools
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -79,11 +79,11 @@ namespace G
             string? type)
         {
             this.StepLatencySecs = stepLatencySecs;
+            this.Type = type;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Requests = requests ?? throw new global::System.ArgumentNullException(nameof(requests));
             this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
             this.IsSuccessful = isSuccessful;
-            this.Type = type;
         }
 
         /// <summary>

@@ -34,21 +34,21 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="KeyPress" /> class.
         /// </summary>
+        /// <param name="keys">
+        /// The combination of keys the model is requesting to be pressed. This is an<br/>
+        /// array of strings, each representing a key.
+        /// </param>
         /// <param name="type">
         /// Specifies the event type. For a keypress action, this property is <br/>
         /// always set to `keypress`.<br/>
         /// Default Value: keypress
         /// </param>
-        /// <param name="keys">
-        /// The combination of keys the model is requesting to be pressed. This is an<br/>
-        /// array of strings, each representing a key.
-        /// </param>
         public KeyPress(
             global::System.Collections.Generic.IList<string> keys,
             global::G.KeyPressType type = global::G.KeyPressType.Keypress)
         {
-            this.Keys = keys ?? throw new global::System.ArgumentNullException(nameof(keys));
             this.Type = type;
+            this.Keys = keys ?? throw new global::System.ArgumentNullException(nameof(keys));
         }
 
         /// <summary>

@@ -31,18 +31,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ASTLLMNodeOutput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: llm
-        /// </param>
         /// <param name="prompt">
         /// The prompt to evaluate to a boolean value.
+        /// </param>
+        /// <param name="type">
+        /// Default Value: llm
         /// </param>
         public ASTLLMNodeOutput(
             string prompt,
             string type = "llm")
         {
-            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Type = type;
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
         }
 
         /// <summary>

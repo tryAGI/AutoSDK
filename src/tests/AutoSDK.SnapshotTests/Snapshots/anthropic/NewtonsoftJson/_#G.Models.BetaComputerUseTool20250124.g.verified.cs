@@ -55,17 +55,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaComputerUseTool20250124" /> class.
         /// </summary>
-        /// <param name="cacheControl"></param>
-        /// <param name="type"></param>
-        /// <param name="name">
-        /// Name of the tool.<br/>
-        /// This is how the tool will be called by the model and in tool_use blocks.
-        /// </param>
         /// <param name="displayHeightPx">
         /// The height of the display in pixels.
         /// </param>
         /// <param name="displayWidthPx">
         /// The width of the display in pixels.
+        /// </param>
+        /// <param name="cacheControl"></param>
+        /// <param name="type"></param>
+        /// <param name="name">
+        /// Name of the tool.<br/>
+        /// This is how the tool will be called by the model and in tool_use blocks.
         /// </param>
         /// <param name="displayNumber">
         /// The X11 display number (e.g. 0, 1) for the display.
@@ -78,11 +78,11 @@ namespace G
             global::G.BetaComputerUseTool20250124Name name,
             int? displayNumber)
         {
-            this.DisplayHeightPx = displayHeightPx;
-            this.DisplayWidthPx = displayWidthPx;
             this.CacheControl = cacheControl;
             this.Type = type;
             this.Name = name;
+            this.DisplayHeightPx = displayHeightPx;
+            this.DisplayWidthPx = displayWidthPx;
             this.DisplayNumber = displayNumber;
         }
 

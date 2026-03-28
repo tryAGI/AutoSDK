@@ -183,13 +183,13 @@ namespace G
         /// <param name="duration">
         /// The length of the clip, in seconds. Precision is 0.1.
         /// </param>
+        /// <param name="isFeatured">
+        /// A Boolean value that indicates if the clip is featured or not.
+        /// </param>
         /// <param name="vodOffset">
         /// The zero-based offset, in seconds, to where the clip starts in the video (VOD). Is **null** if the video is not available or hasn’t been created yet from the live stream (see `video_id`).  <br/>
         ///   <br/>
         /// Note that there’s a delay between when a clip is created during a broadcast and when the offset is set. During the delay period, `vod_offset` is **null**. The delay is indeterminant but is typically minutes long.
-        /// </param>
-        /// <param name="isFeatured">
-        /// A Boolean value that indicates if the clip is featured or not.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -228,8 +228,8 @@ namespace G
             this.CreatedAt = createdAt;
             this.ThumbnailUrl = thumbnailUrl ?? throw new global::System.ArgumentNullException(nameof(thumbnailUrl));
             this.Duration = duration;
-            this.IsFeatured = isFeatured;
             this.VodOffset = vodOffset;
+            this.IsFeatured = isFeatured;
         }
 
         /// <summary>

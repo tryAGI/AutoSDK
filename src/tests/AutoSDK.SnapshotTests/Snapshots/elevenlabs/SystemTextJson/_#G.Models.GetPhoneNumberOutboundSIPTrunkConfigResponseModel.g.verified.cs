@@ -76,11 +76,11 @@ namespace G
         /// <param name="mediaEncryption">
         /// Whether or not to encrypt media (data layer).
         /// </param>
-        /// <param name="headers">
-        /// SIP headers for INVITE request
-        /// </param>
         /// <param name="hasAuthCredentials">
         /// Whether authentication credentials are configured
+        /// </param>
+        /// <param name="headers">
+        /// SIP headers for INVITE request
         /// </param>
         /// <param name="username">
         /// SIP trunk username (if available)
@@ -104,8 +104,8 @@ namespace G
             this.Address = address ?? throw new global::System.ArgumentNullException(nameof(address));
             this.Transport = transport;
             this.MediaEncryption = mediaEncryption;
-            this.HasAuthCredentials = hasAuthCredentials;
             this.Headers = headers;
+            this.HasAuthCredentials = hasAuthCredentials;
             this.Username = username;
             this.HasOutboundTrunk = hasOutboundTrunk;
         }

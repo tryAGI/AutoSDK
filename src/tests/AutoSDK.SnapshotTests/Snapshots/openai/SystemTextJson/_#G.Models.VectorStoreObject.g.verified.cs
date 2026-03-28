@@ -102,9 +102,6 @@ namespace G
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `vector_store`.
-        /// </param>
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) for when the vector store was created.
         /// </param>
@@ -117,6 +114,9 @@ namespace G
         /// <param name="fileCounts"></param>
         /// <param name="status">
         /// The status of the vector store, which can be either `expired`, `in_progress`, or `completed`. A status of `completed` indicates that the vector store is ready for use.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `vector_store`.
         /// </param>
         /// <param name="expiresAfter">
         /// The expiration policy for a vector store.
@@ -151,12 +151,12 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.CreatedAt = createdAt;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.UsageBytes = usageBytes;
             this.FileCounts = fileCounts ?? throw new global::System.ArgumentNullException(nameof(fileCounts));
             this.Status = status;
-            this.Object = @object;
             this.ExpiresAfter = expiresAfter;
             this.ExpiresAt = expiresAt;
             this.LastActiveAt = lastActiveAt;

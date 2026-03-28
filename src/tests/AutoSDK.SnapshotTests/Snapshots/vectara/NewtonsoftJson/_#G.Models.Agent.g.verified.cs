@@ -147,19 +147,9 @@ namespace G
         /// The human-readable name of an agent.<br/>
         /// Example: Customer Support Agent
         /// </param>
-        /// <param name="description">
-        /// A detailed description of the agent's purpose and capabilities.<br/>
-        /// Example: An AI agent specialized in handling customer support inquiries using company documentation and support tools.
-        /// </param>
         /// <param name="toolConfigurations">
         /// A map of tool configurations available to the agent. The key is the name of the tool configuration and the value is an agent tool configuration.<br/>
         /// Example: {"customer_search":{"type":"corpora_search","argument_override":{"query":"customer support documentation"}}}
-        /// </param>
-        /// <param name="skills">
-        /// A map of skills available to the agent, keyed by skill name.<br/>
-        /// Skills provide specialized instructions that can be invoked during agent execution.<br/>
-        /// The skill list (name + description) is shown in the system message; content is loaded on invocation.<br/>
-        /// Example: {"code_review":{"description":"Reviews code for best practices and security issues.","content":"When reviewing code, focus on..."}}
         /// </param>
         /// <param name="model">
         /// Configuration for the model used in this step, including the model name and arbitrary parameters.
@@ -167,6 +157,21 @@ namespace G
         /// <param name="firstStep">
         /// The entry point step for an agent, with a unique name.<br/>
         /// See AgentStep for full step documentation.
+        /// </param>
+        /// <param name="enabled">
+        /// Whether the agent is currently enabled and available for use.<br/>
+        /// Default Value: true<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="description">
+        /// A detailed description of the agent's purpose and capabilities.<br/>
+        /// Example: An AI agent specialized in handling customer support inquiries using company documentation and support tools.
+        /// </param>
+        /// <param name="skills">
+        /// A map of skills available to the agent, keyed by skill name.<br/>
+        /// Skills provide specialized instructions that can be invoked during agent execution.<br/>
+        /// The skill list (name + description) is shown in the system message; content is loaded on invocation.<br/>
+        /// Example: {"code_review":{"description":"Reviews code for best practices and security issues.","content":"When reviewing code, focus on..."}}
         /// </param>
         /// <param name="firstStepName">
         /// The name of the first step. Matches first_step.name.<br/>
@@ -180,11 +185,6 @@ namespace G
         /// <param name="metadata">
         /// Arbitrary metadata associated with the agent for customization and configuration.<br/>
         /// Example: {"department":"customer_service","version":"1.2.0","owner":"support-team"}
-        /// </param>
-        /// <param name="enabled">
-        /// Whether the agent is currently enabled and available for use.<br/>
-        /// Default Value: true<br/>
-        /// Example: true
         /// </param>
         /// <param name="compaction">
         /// Configuration for automatic context compaction.
@@ -223,15 +223,15 @@ namespace G
         {
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description;
             this.ToolConfigurations = toolConfigurations ?? throw new global::System.ArgumentNullException(nameof(toolConfigurations));
+            this.Skills = skills;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.FirstStep = firstStep ?? throw new global::System.ArgumentNullException(nameof(firstStep));
-            this.Enabled = enabled;
-            this.Description = description;
-            this.Skills = skills;
             this.FirstStepName = firstStepName;
             this.Steps = steps;
             this.Metadata = metadata;
+            this.Enabled = enabled;
             this.Compaction = compaction;
             this.ToolOutputOffloading = toolOutputOffloading;
             this.CreatedAt = createdAt;

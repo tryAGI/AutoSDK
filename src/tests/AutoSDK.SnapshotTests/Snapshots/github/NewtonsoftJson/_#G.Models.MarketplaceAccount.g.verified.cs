@@ -63,8 +63,8 @@ namespace G
         /// <param name="url"></param>
         /// <param name="id"></param>
         /// <param name="type"></param>
-        /// <param name="nodeId"></param>
         /// <param name="login"></param>
+        /// <param name="nodeId"></param>
         /// <param name="email"></param>
         /// <param name="organizationBillingEmail"></param>
         public MarketplaceAccount(
@@ -79,8 +79,8 @@ namespace G
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Id = id;
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
-            this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
             this.NodeId = nodeId;
+            this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
             this.Email = email;
             this.OrganizationBillingEmail = organizationBillingEmail;
         }

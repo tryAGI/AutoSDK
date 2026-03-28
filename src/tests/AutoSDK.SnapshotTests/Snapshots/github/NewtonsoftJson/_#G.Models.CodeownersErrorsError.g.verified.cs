@@ -88,17 +88,9 @@ namespace G
         /// The column number where this errors occurs.<br/>
         /// Example: 3
         /// </param>
-        /// <param name="source">
-        /// The contents of the line where the error occurs.<br/>
-        /// Example: * user
-        /// </param>
         /// <param name="kind">
         /// The type of error.<br/>
         /// Example: Invalid owner
-        /// </param>
-        /// <param name="suggestion">
-        /// Suggested action to fix the error. This will usually be `null`, but is provided for some common errors.<br/>
-        /// Example: The pattern `/` will never match anything, did you mean `*` instead?
         /// </param>
         /// <param name="message">
         /// A human-readable description of the error, combining information from multiple fields, laid out for display in a monospaced typeface (for example, a command-line setting).<br/>
@@ -109,6 +101,14 @@ namespace G
         /// <param name="path">
         /// The path of the file where the error occured.<br/>
         /// Example: .github/CODEOWNERS
+        /// </param>
+        /// <param name="source">
+        /// The contents of the line where the error occurs.<br/>
+        /// Example: * user
+        /// </param>
+        /// <param name="suggestion">
+        /// Suggested action to fix the error. This will usually be `null`, but is provided for some common errors.<br/>
+        /// Example: The pattern `/` will never match anything, did you mean `*` instead?
         /// </param>
         public CodeownersErrorsError(
             int line,
@@ -121,11 +121,11 @@ namespace G
         {
             this.Line = line;
             this.Column = column;
+            this.Source = source;
             this.Kind = kind ?? throw new global::System.ArgumentNullException(nameof(kind));
+            this.Suggestion = suggestion;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
-            this.Source = source;
-            this.Suggestion = suggestion;
         }
 
         /// <summary>

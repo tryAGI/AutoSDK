@@ -44,8 +44,8 @@ namespace G
         /// </summary>
         /// <param name="contentType"></param>
         /// <param name="insecureSsl"></param>
-        /// <param name="secret"></param>
         /// <param name="url"></param>
+        /// <param name="secret"></param>
         public WebhookMetaDeletedHookConfig(
             global::G.WebhookMetaDeletedHookConfigContentType contentType,
             string insecureSsl,
@@ -54,8 +54,8 @@ namespace G
         {
             this.ContentType = contentType;
             this.InsecureSsl = insecureSsl ?? throw new global::System.ArgumentNullException(nameof(insecureSsl));
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Secret = secret;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 
         /// <summary>

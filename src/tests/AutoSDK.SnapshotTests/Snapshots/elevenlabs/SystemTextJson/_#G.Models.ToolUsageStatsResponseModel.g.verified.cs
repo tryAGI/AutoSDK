@@ -32,11 +32,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolUsageStatsResponseModel" /> class.
         /// </summary>
+        /// <param name="avgLatencySecs"></param>
         /// <param name="totalCalls">
         /// The total number of calls to the tool<br/>
         /// Default Value: 0
         /// </param>
-        /// <param name="avgLatencySecs"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -44,8 +44,8 @@ namespace G
             double avgLatencySecs,
             int? totalCalls)
         {
-            this.AvgLatencySecs = avgLatencySecs;
             this.TotalCalls = totalCalls;
+            this.AvgLatencySecs = avgLatencySecs;
         }
 
         /// <summary>

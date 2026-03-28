@@ -616,26 +616,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPullRequestAutoMergeDisabledPullRequestHeadRepo" /> class.
         /// </summary>
-        /// <param name="allowAutoMerge">
-        /// Whether to allow auto-merge for pull requests.<br/>
-        /// Default Value: false
-        /// </param>
-        /// <param name="allowForking">
-        /// Whether to allow private forks
-        /// </param>
-        /// <param name="allowMergeCommit">
-        /// Whether to allow merge commits for pull requests.<br/>
-        /// Default Value: true
-        /// </param>
-        /// <param name="allowRebaseMerge">
-        /// Whether to allow rebase merges for pull requests.<br/>
-        /// Default Value: true
-        /// </param>
-        /// <param name="allowSquashMerge">
-        /// Whether to allow squash merges for pull requests.<br/>
-        /// Default Value: true
-        /// </param>
-        /// <param name="allowUpdateBranch"></param>
         /// <param name="archiveUrl"></param>
         /// <param name="archived">
         /// Whether the repository is archived.<br/>
@@ -655,15 +635,7 @@ namespace G
         /// <param name="defaultBranch">
         /// The default branch of the repository.
         /// </param>
-        /// <param name="deleteBranchOnMerge">
-        /// Whether to delete head branches when pull requests are merged<br/>
-        /// Default Value: false
-        /// </param>
         /// <param name="deploymentsUrl"></param>
-        /// <param name="description"></param>
-        /// <param name="disabled">
-        /// Returns whether or not this repository is disabled.
-        /// </param>
         /// <param name="downloadsUrl"></param>
         /// <param name="eventsUrl"></param>
         /// <param name="fork"></param>
@@ -696,20 +668,79 @@ namespace G
         /// Whether discussions are enabled.<br/>
         /// Default Value: false
         /// </param>
-        /// <param name="homepage"></param>
         /// <param name="hooksUrl"></param>
         /// <param name="htmlUrl"></param>
         /// <param name="id">
         /// Unique identifier of the repository
         /// </param>
-        /// <param name="isTemplate"></param>
         /// <param name="issueCommentUrl"></param>
         /// <param name="issueEventsUrl"></param>
         /// <param name="issuesUrl"></param>
         /// <param name="keysUrl"></param>
         /// <param name="labelsUrl"></param>
-        /// <param name="language"></param>
         /// <param name="languagesUrl"></param>
+        /// <param name="mergesUrl"></param>
+        /// <param name="milestonesUrl"></param>
+        /// <param name="name">
+        /// The name of the repository.
+        /// </param>
+        /// <param name="nodeId"></param>
+        /// <param name="notificationsUrl"></param>
+        /// <param name="openIssues"></param>
+        /// <param name="openIssuesCount"></param>
+        /// <param name="private">
+        /// Whether the repository is private or public.
+        /// </param>
+        /// <param name="pullsUrl"></param>
+        /// <param name="releasesUrl"></param>
+        /// <param name="size"></param>
+        /// <param name="sshUrl"></param>
+        /// <param name="stargazersCount"></param>
+        /// <param name="stargazersUrl"></param>
+        /// <param name="statusesUrl"></param>
+        /// <param name="subscribersUrl"></param>
+        /// <param name="subscriptionUrl"></param>
+        /// <param name="svnUrl"></param>
+        /// <param name="tagsUrl"></param>
+        /// <param name="teamsUrl"></param>
+        /// <param name="topics"></param>
+        /// <param name="treesUrl"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url"></param>
+        /// <param name="visibility"></param>
+        /// <param name="watchers"></param>
+        /// <param name="watchersCount"></param>
+        /// <param name="allowAutoMerge">
+        /// Whether to allow auto-merge for pull requests.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="allowForking">
+        /// Whether to allow private forks
+        /// </param>
+        /// <param name="allowMergeCommit">
+        /// Whether to allow merge commits for pull requests.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="allowRebaseMerge">
+        /// Whether to allow rebase merges for pull requests.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="allowSquashMerge">
+        /// Whether to allow squash merges for pull requests.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="allowUpdateBranch"></param>
+        /// <param name="deleteBranchOnMerge">
+        /// Whether to delete head branches when pull requests are merged<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="description"></param>
+        /// <param name="disabled">
+        /// Returns whether or not this repository is disabled.
+        /// </param>
+        /// <param name="homepage"></param>
+        /// <param name="isTemplate"></param>
+        /// <param name="language"></param>
         /// <param name="license"></param>
         /// <param name="masterBranch"></param>
         /// <param name="mergeCommitMessage">
@@ -723,28 +754,13 @@ namespace G
         /// - `PR_TITLE` - default to the pull request's title.<br/>
         /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
         /// </param>
-        /// <param name="mergesUrl"></param>
-        /// <param name="milestonesUrl"></param>
         /// <param name="mirrorUrl"></param>
-        /// <param name="name">
-        /// The name of the repository.
-        /// </param>
-        /// <param name="nodeId"></param>
-        /// <param name="notificationsUrl"></param>
-        /// <param name="openIssues"></param>
-        /// <param name="openIssuesCount"></param>
         /// <param name="organization"></param>
         /// <param name="owner"></param>
         /// <param name="permissions"></param>
-        /// <param name="private">
-        /// Whether the repository is private or public.
-        /// </param>
         /// <param name="public"></param>
-        /// <param name="pullsUrl"></param>
         /// <param name="pushedAt"></param>
-        /// <param name="releasesUrl"></param>
         /// <param name="roleName"></param>
-        /// <param name="size"></param>
         /// <param name="squashMergeCommitMessage">
         /// The default value for a squash merge commit message:<br/>
         /// - `PR_BODY` - default to the pull request's body.<br/>
@@ -756,27 +772,11 @@ namespace G
         /// - `PR_TITLE` - default to the pull request's title.<br/>
         /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
         /// </param>
-        /// <param name="sshUrl"></param>
         /// <param name="stargazers"></param>
-        /// <param name="stargazersCount"></param>
-        /// <param name="stargazersUrl"></param>
-        /// <param name="statusesUrl"></param>
-        /// <param name="subscribersUrl"></param>
-        /// <param name="subscriptionUrl"></param>
-        /// <param name="svnUrl"></param>
-        /// <param name="tagsUrl"></param>
-        /// <param name="teamsUrl"></param>
-        /// <param name="topics"></param>
-        /// <param name="treesUrl"></param>
-        /// <param name="updatedAt"></param>
-        /// <param name="url"></param>
         /// <param name="useSquashPrTitleAsDefault">
         /// Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.<br/>
         /// Default Value: false
         /// </param>
-        /// <param name="visibility"></param>
-        /// <param name="watchers"></param>
-        /// <param name="watchersCount"></param>
         /// <param name="webCommitSignoffRequired">
         /// Whether to require contributors to sign off on web-based commits
         /// </param>
@@ -878,6 +878,12 @@ namespace G
             bool? useSquashPrTitleAsDefault,
             bool? webCommitSignoffRequired)
         {
+            this.AllowAutoMerge = allowAutoMerge;
+            this.AllowForking = allowForking;
+            this.AllowMergeCommit = allowMergeCommit;
+            this.AllowRebaseMerge = allowRebaseMerge;
+            this.AllowSquashMerge = allowSquashMerge;
+            this.AllowUpdateBranch = allowUpdateBranch;
             this.ArchiveUrl = archiveUrl ?? throw new global::System.ArgumentNullException(nameof(archiveUrl));
             this.Archived = archived;
             this.AssigneesUrl = assigneesUrl ?? throw new global::System.ArgumentNullException(nameof(assigneesUrl));
@@ -892,7 +898,10 @@ namespace G
             this.ContributorsUrl = contributorsUrl ?? throw new global::System.ArgumentNullException(nameof(contributorsUrl));
             this.CreatedAt = createdAt;
             this.DefaultBranch = defaultBranch ?? throw new global::System.ArgumentNullException(nameof(defaultBranch));
+            this.DeleteBranchOnMerge = deleteBranchOnMerge;
             this.DeploymentsUrl = deploymentsUrl ?? throw new global::System.ArgumentNullException(nameof(deploymentsUrl));
+            this.Description = description;
+            this.Disabled = disabled;
             this.DownloadsUrl = downloadsUrl ?? throw new global::System.ArgumentNullException(nameof(downloadsUrl));
             this.EventsUrl = eventsUrl ?? throw new global::System.ArgumentNullException(nameof(eventsUrl));
             this.Fork = fork;
@@ -910,27 +919,44 @@ namespace G
             this.HasProjects = hasProjects;
             this.HasWiki = hasWiki;
             this.HasDiscussions = hasDiscussions;
+            this.Homepage = homepage;
             this.HooksUrl = hooksUrl ?? throw new global::System.ArgumentNullException(nameof(hooksUrl));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
+            this.IsTemplate = isTemplate;
             this.IssueCommentUrl = issueCommentUrl ?? throw new global::System.ArgumentNullException(nameof(issueCommentUrl));
             this.IssueEventsUrl = issueEventsUrl ?? throw new global::System.ArgumentNullException(nameof(issueEventsUrl));
             this.IssuesUrl = issuesUrl ?? throw new global::System.ArgumentNullException(nameof(issuesUrl));
             this.KeysUrl = keysUrl ?? throw new global::System.ArgumentNullException(nameof(keysUrl));
             this.LabelsUrl = labelsUrl ?? throw new global::System.ArgumentNullException(nameof(labelsUrl));
+            this.Language = language;
             this.LanguagesUrl = languagesUrl ?? throw new global::System.ArgumentNullException(nameof(languagesUrl));
+            this.License = license;
+            this.MasterBranch = masterBranch;
+            this.MergeCommitMessage = mergeCommitMessage;
+            this.MergeCommitTitle = mergeCommitTitle;
             this.MergesUrl = mergesUrl ?? throw new global::System.ArgumentNullException(nameof(mergesUrl));
             this.MilestonesUrl = milestonesUrl ?? throw new global::System.ArgumentNullException(nameof(milestonesUrl));
+            this.MirrorUrl = mirrorUrl;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.NotificationsUrl = notificationsUrl ?? throw new global::System.ArgumentNullException(nameof(notificationsUrl));
             this.OpenIssues = openIssues;
             this.OpenIssuesCount = openIssuesCount;
+            this.Organization = organization;
+            this.Owner = owner;
+            this.Permissions = permissions;
             this.Private = @private;
+            this.Public = @public;
             this.PullsUrl = pullsUrl ?? throw new global::System.ArgumentNullException(nameof(pullsUrl));
+            this.PushedAt = pushedAt;
             this.ReleasesUrl = releasesUrl ?? throw new global::System.ArgumentNullException(nameof(releasesUrl));
+            this.RoleName = roleName;
             this.Size = size;
+            this.SquashMergeCommitMessage = squashMergeCommitMessage;
+            this.SquashMergeCommitTitle = squashMergeCommitTitle;
             this.SshUrl = sshUrl ?? throw new global::System.ArgumentNullException(nameof(sshUrl));
+            this.Stargazers = stargazers;
             this.StargazersCount = stargazersCount;
             this.StargazersUrl = stargazersUrl ?? throw new global::System.ArgumentNullException(nameof(stargazersUrl));
             this.StatusesUrl = statusesUrl ?? throw new global::System.ArgumentNullException(nameof(statusesUrl));
@@ -943,36 +969,10 @@ namespace G
             this.TreesUrl = treesUrl ?? throw new global::System.ArgumentNullException(nameof(treesUrl));
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.UseSquashPrTitleAsDefault = useSquashPrTitleAsDefault;
             this.Visibility = visibility;
             this.Watchers = watchers;
             this.WatchersCount = watchersCount;
-            this.AllowAutoMerge = allowAutoMerge;
-            this.AllowForking = allowForking;
-            this.AllowMergeCommit = allowMergeCommit;
-            this.AllowRebaseMerge = allowRebaseMerge;
-            this.AllowSquashMerge = allowSquashMerge;
-            this.AllowUpdateBranch = allowUpdateBranch;
-            this.DeleteBranchOnMerge = deleteBranchOnMerge;
-            this.Description = description;
-            this.Disabled = disabled;
-            this.Homepage = homepage;
-            this.IsTemplate = isTemplate;
-            this.Language = language;
-            this.License = license;
-            this.MasterBranch = masterBranch;
-            this.MergeCommitMessage = mergeCommitMessage;
-            this.MergeCommitTitle = mergeCommitTitle;
-            this.MirrorUrl = mirrorUrl;
-            this.Organization = organization;
-            this.Owner = owner;
-            this.Permissions = permissions;
-            this.Public = @public;
-            this.PushedAt = pushedAt;
-            this.RoleName = roleName;
-            this.SquashMergeCommitMessage = squashMergeCommitMessage;
-            this.SquashMergeCommitTitle = squashMergeCommitTitle;
-            this.Stargazers = stargazers;
-            this.UseSquashPrTitleAsDefault = useSquashPrTitleAsDefault;
             this.WebCommitSignoffRequired = webCommitSignoffRequired;
         }
 

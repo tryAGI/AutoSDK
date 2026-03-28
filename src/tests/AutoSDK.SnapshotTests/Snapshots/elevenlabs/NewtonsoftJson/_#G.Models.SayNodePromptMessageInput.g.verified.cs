@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="SayNodePromptMessageInput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: prompt
-        /// </param>
         /// <param name="prompt">
         /// LLM prompt describing what message should be generated.
+        /// </param>
+        /// <param name="type">
+        /// Default Value: prompt
         /// </param>
         public SayNodePromptMessageInput(
             string prompt,
             string? type)
         {
-            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Type = type;
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
         }
 
         /// <summary>

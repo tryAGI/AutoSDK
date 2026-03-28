@@ -117,6 +117,12 @@ namespace G
         /// <param name="name">
         /// Example: Sprint Personal Communications Systems
         /// </param>
+        /// <param name="domain">
+        /// Example: sprint.net
+        /// </param>
+        /// <param name="type">
+        /// Example: isp
+        /// </param>
         /// <param name="country">
         /// Example: US
         /// </param>
@@ -126,17 +132,11 @@ namespace G
         /// <param name="registry">
         /// Example: arin
         /// </param>
-        /// <param name="domain">
-        /// Example: sprint.net
-        /// </param>
         /// <param name="numIps">
         /// Example: 71224576
         /// </param>
         /// <param name="route">
         /// Example: 66.87.125.0/24
-        /// </param>
-        /// <param name="type">
-        /// Example: isp
         /// </param>
         /// <param name="prefixes"></param>
         /// <param name="prefixes6"></param>
@@ -161,13 +161,13 @@ namespace G
         {
             this.Asn = asn ?? throw new global::System.ArgumentNullException(nameof(asn));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Domain = domain ?? throw new global::System.ArgumentNullException(nameof(domain));
-            this.Type = type;
             this.Country = country;
             this.Allocated = allocated;
             this.Registry = registry;
+            this.Domain = domain ?? throw new global::System.ArgumentNullException(nameof(domain));
             this.NumIps = numIps;
             this.Route = route;
+            this.Type = type;
             this.Prefixes = prefixes;
             this.Prefixes6 = prefixes6;
             this.Peers = peers;

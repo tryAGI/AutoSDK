@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionRequestMessageContentPartFile" /> class.
         /// </summary>
+        /// <param name="file"></param>
         /// <param name="type">
         /// The type of the content part. Always `file`.
         /// </param>
-        /// <param name="file"></param>
         public ChatCompletionRequestMessageContentPartFile(
             global::G.ChatCompletionRequestMessageContentPartFileFile file,
             global::G.ChatCompletionRequestMessageContentPartFileType type)
         {
-            this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
             this.Type = type;
+            this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
         }
 
         /// <summary>

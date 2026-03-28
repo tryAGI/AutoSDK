@@ -54,9 +54,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseContentPartAddedEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.content_part.added`.
-        /// </param>
         /// <param name="itemId">
         /// The ID of the output item that the content part was added to.
         /// </param>
@@ -70,6 +67,9 @@ namespace G
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.content_part.added`.
+        /// </param>
         public ResponseContentPartAddedEvent(
             string itemId,
             int outputIndex,
@@ -78,12 +78,12 @@ namespace G
             int sequenceNumber,
             global::G.ResponseContentPartAddedEventType type)
         {
+            this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.ContentIndex = contentIndex;
             this.Part = part;
             this.SequenceNumber = sequenceNumber;
-            this.Type = type;
         }
 
         /// <summary>

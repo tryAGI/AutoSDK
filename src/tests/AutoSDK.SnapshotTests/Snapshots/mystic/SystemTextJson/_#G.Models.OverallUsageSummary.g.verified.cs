@@ -71,12 +71,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="OverallUsageSummary" /> class.
         /// </summary>
-        /// <param name="pipelineId"></param>
         /// <param name="start"></param>
         /// <param name="end"></param>
         /// <param name="runCount"></param>
         /// <param name="failedRunCount"></param>
         /// <param name="totalComputeTimeMs"></param>
+        /// <param name="pipelineId"></param>
         /// <param name="successfulRunCountChange"></param>
         /// <param name="failedRunCountChange"></param>
 #if NET7_0_OR_GREATER
@@ -92,12 +92,12 @@ namespace G
             double? successfulRunCountChange,
             double? failedRunCountChange)
         {
+            this.PipelineId = pipelineId;
             this.Start = start;
             this.End = end;
             this.RunCount = runCount;
             this.FailedRunCount = failedRunCount;
             this.TotalComputeTimeMs = totalComputeTimeMs;
-            this.PipelineId = pipelineId;
             this.SuccessfulRunCountChange = successfulRunCountChange;
             this.FailedRunCountChange = failedRunCountChange;
         }

@@ -220,10 +220,6 @@ namespace G
         /// <param name="runUrl">
         /// Example: https://api.github.com/repos/github/hello-world/actions/runs/5
         /// </param>
-        /// <param name="runAttempt">
-        /// Attempt number of the associated workflow run, 1 for first attempt and higher if the workflow was re-run.<br/>
-        /// Example: 1
-        /// </param>
         /// <param name="nodeId">
         /// Example: MDg6Q2hlY2tSdW40
         /// </param>
@@ -234,16 +230,9 @@ namespace G
         /// <param name="url">
         /// Example: https://api.github.com/repos/github/hello-world/actions/jobs/21
         /// </param>
-        /// <param name="htmlUrl">
-        /// Example: https://github.com/github/hello-world/runs/4
-        /// </param>
         /// <param name="status">
         /// The phase of the lifecycle that the job is currently in.<br/>
         /// Example: queued
-        /// </param>
-        /// <param name="conclusion">
-        /// The outcome of the job.<br/>
-        /// Example: success
         /// </param>
         /// <param name="createdAt">
         /// The time that the job created, in ISO 8601 format.<br/>
@@ -253,16 +242,9 @@ namespace G
         /// The time that the job started, in ISO 8601 format.<br/>
         /// Example: 2019-08-08T08:00:00-07:00
         /// </param>
-        /// <param name="completedAt">
-        /// The time that the job finished, in ISO 8601 format.<br/>
-        /// Example: 2019-08-08T08:00:00-07:00
-        /// </param>
         /// <param name="name">
         /// The name of the job.<br/>
         /// Example: test-coverage
-        /// </param>
-        /// <param name="steps">
-        /// Steps in this job.
         /// </param>
         /// <param name="checkRunUrl">
         /// Example: https://api.github.com/repos/github/hello-world/check-runs/4
@@ -270,6 +252,24 @@ namespace G
         /// <param name="labels">
         /// Labels for the workflow job. Specified by the "runs_on" attribute in the action's workflow file.<br/>
         /// Example: [self-hosted, foo, bar]
+        /// </param>
+        /// <param name="runAttempt">
+        /// Attempt number of the associated workflow run, 1 for first attempt and higher if the workflow was re-run.<br/>
+        /// Example: 1
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/github/hello-world/runs/4
+        /// </param>
+        /// <param name="conclusion">
+        /// The outcome of the job.<br/>
+        /// Example: success
+        /// </param>
+        /// <param name="completedAt">
+        /// The time that the job finished, in ISO 8601 format.<br/>
+        /// Example: 2019-08-08T08:00:00-07:00
+        /// </param>
+        /// <param name="steps">
+        /// Steps in this job.
         /// </param>
         /// <param name="runnerId">
         /// The ID of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)<br/>
@@ -326,20 +326,20 @@ namespace G
             this.Id = id;
             this.RunId = runId;
             this.RunUrl = runUrl ?? throw new global::System.ArgumentNullException(nameof(runUrl));
+            this.RunAttempt = runAttempt;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.HtmlUrl = htmlUrl;
             this.Status = status;
+            this.Conclusion = conclusion;
             this.CreatedAt = createdAt;
             this.StartedAt = startedAt;
+            this.CompletedAt = completedAt;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Steps = steps;
             this.CheckRunUrl = checkRunUrl ?? throw new global::System.ArgumentNullException(nameof(checkRunUrl));
             this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
-            this.RunAttempt = runAttempt;
-            this.HtmlUrl = htmlUrl;
-            this.Conclusion = conclusion;
-            this.CompletedAt = completedAt;
-            this.Steps = steps;
             this.RunnerId = runnerId;
             this.RunnerName = runnerName;
             this.RunnerGroupId = runnerGroupId;

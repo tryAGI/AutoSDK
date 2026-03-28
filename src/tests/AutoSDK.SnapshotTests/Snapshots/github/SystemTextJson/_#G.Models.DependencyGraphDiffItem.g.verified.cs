@@ -107,6 +107,10 @@ namespace G
         /// <param name="version">
         /// Example: 1.0.0
         /// </param>
+        /// <param name="vulnerabilities"></param>
+        /// <param name="scope">
+        /// Where the dependency is utilized. `development` means that the dependency is only utilized in the development environment. `runtime` means that the dependency is utilized at runtime and in the development environment.
+        /// </param>
         /// <param name="packageUrl">
         /// Example: pkg:/npm/%40actions/core@1.1.0
         /// </param>
@@ -115,10 +119,6 @@ namespace G
         /// </param>
         /// <param name="sourceRepositoryUrl">
         /// Example: https://github.com/github/actions
-        /// </param>
-        /// <param name="vulnerabilities"></param>
-        /// <param name="scope">
-        /// Where the dependency is utilized. `development` means that the dependency is only utilized in the development environment. `runtime` means that the dependency is utilized at runtime and in the development environment.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -140,11 +140,11 @@ namespace G
             this.Ecosystem = ecosystem ?? throw new global::System.ArgumentNullException(nameof(ecosystem));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
-            this.Vulnerabilities = vulnerabilities ?? throw new global::System.ArgumentNullException(nameof(vulnerabilities));
-            this.Scope = scope;
             this.PackageUrl = packageUrl;
             this.License = license;
             this.SourceRepositoryUrl = sourceRepositoryUrl;
+            this.Vulnerabilities = vulnerabilities ?? throw new global::System.ArgumentNullException(nameof(vulnerabilities));
+            this.Scope = scope;
         }
 
         /// <summary>

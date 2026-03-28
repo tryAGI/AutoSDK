@@ -49,10 +49,10 @@ namespace G
         /// Initializes a new instance of the <see cref="PullRequestHeadRepoPermissions" /> class.
         /// </summary>
         /// <param name="admin"></param>
-        /// <param name="maintain"></param>
         /// <param name="push"></param>
-        /// <param name="triage"></param>
         /// <param name="pull"></param>
+        /// <param name="maintain"></param>
+        /// <param name="triage"></param>
         public PullRequestHeadRepoPermissions(
             bool admin,
             bool push,
@@ -61,10 +61,10 @@ namespace G
             bool? triage)
         {
             this.Admin = admin;
-            this.Push = push;
-            this.Pull = pull;
             this.Maintain = maintain;
+            this.Push = push;
             this.Triage = triage;
+            this.Pull = pull;
         }
 
         /// <summary>

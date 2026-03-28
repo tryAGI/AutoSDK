@@ -97,15 +97,15 @@ namespace G
         /// <param name="syncToOrganizations">
         /// Example: disabled | all
         /// </param>
-        /// <param name="groupId">
-        /// Example: 1
-        /// </param>
         /// <param name="htmlUrl">
         /// Example: https://github.com/enterprises/dc/teams/justice-league
         /// </param>
         /// <param name="membersUrl"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="groupId">
+        /// Example: 1
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -126,11 +126,11 @@ namespace G
             this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.SyncToOrganizations = syncToOrganizations ?? throw new global::System.ArgumentNullException(nameof(syncToOrganizations));
+            this.GroupId = groupId;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.MembersUrl = membersUrl ?? throw new global::System.ArgumentNullException(nameof(membersUrl));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.GroupId = groupId;
         }
 
         /// <summary>

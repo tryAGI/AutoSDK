@@ -87,6 +87,7 @@ namespace G
         /// <param name="model">
         /// The name of the model to fine-tune.
         /// </param>
+        /// <param name="hyperparameters"></param>
         /// <param name="trainingFiles">
         /// Default Value: []
         /// </param>
@@ -106,7 +107,6 @@ namespace G
         /// Default Value: 0
         /// </param>
         /// <param name="jobType"></param>
-        /// <param name="hyperparameters"></param>
         /// <param name="repositories"></param>
         /// <param name="classifierTargets"></param>
         public JobIn(
@@ -123,7 +123,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ClassifierTargetIn>? classifierTargets)
         {
             this.Model = model;
-            this.Hyperparameters = hyperparameters;
             this.TrainingFiles = trainingFiles;
             this.ValidationFiles = validationFiles;
             this.Suffix = suffix;
@@ -131,6 +130,7 @@ namespace G
             this.AutoStart = autoStart;
             this.InvalidSampleSkipPercentage = invalidSampleSkipPercentage;
             this.JobType = jobType;
+            this.Hyperparameters = hyperparameters;
             this.Repositories = repositories;
             this.ClassifierTargets = classifierTargets;
         }

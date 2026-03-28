@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DependabotAlertSecurityAdvisoryCvss" /> class.
         /// </summary>
-        /// <param name="score">
-        /// The overall CVSS score of the advisory.<br/>
-        /// Included only in responses
-        /// </param>
         /// <param name="vectorString">
         /// The full CVSS vector string for the advisory.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="score">
+        /// The overall CVSS score of the advisory.<br/>
         /// Included only in responses
         /// </param>
         public DependabotAlertSecurityAdvisoryCvss(

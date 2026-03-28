@@ -99,23 +99,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookCheckSuiteCompletedCheckSuiteApp" /> class.
         /// </summary>
+        /// <param name="htmlUrl"></param>
+        /// <param name="name">
+        /// The name of the GitHub app
+        /// </param>
+        /// <param name="nodeId"></param>
         /// <param name="createdAt"></param>
         /// <param name="description"></param>
         /// <param name="events">
         /// The list of events for the GitHub app
         /// </param>
         /// <param name="externalUrl"></param>
-        /// <param name="htmlUrl"></param>
         /// <param name="id">
         /// Unique identifier of the GitHub app
         /// </param>
         /// <param name="clientId">
         /// The client ID of the GitHub app
         /// </param>
-        /// <param name="name">
-        /// The name of the GitHub app
-        /// </param>
-        /// <param name="nodeId"></param>
         /// <param name="owner"></param>
         /// <param name="permissions">
         /// The set of permissions for the GitHub app
@@ -142,15 +142,15 @@ namespace G
             string? slug,
             global::System.DateTime? updatedAt)
         {
-            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.CreatedAt = createdAt;
             this.Description = description;
             this.Events = events;
             this.ExternalUrl = externalUrl;
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
             this.ClientId = clientId;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Owner = owner;
             this.Permissions = permissions;
             this.Slug = slug;

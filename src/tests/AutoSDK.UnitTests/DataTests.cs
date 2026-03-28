@@ -1134,6 +1134,76 @@ public partial class DataTests
             .BeEquivalentTo([false, true]);
     }
 
+    [TestMethod]
+    [DataRow(true)]
+    [DataRow(false)]
+    public void PrepareDerivedAllOfWithInheritedPropertyCollision_UsesNewAndInitializesBaseRequiredMembers(bool useLegacyPrepare)
+    {
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: opik-mini
+                              version: 1.0.0
+                            paths: {}
+                            components:
+                              schemas:
+                                Feedback:
+                                  required:
+                                    - name
+                                    - type
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                      format: uuid
+                                      readOnly: true
+                                    name:
+                                      minLength: 1
+                                      type: string
+                                    createdAt:
+                                      type: string
+                                      format: date-time
+                                      readOnly: true
+                                    type:
+                                      type: string
+                                      enum:
+                                        - boolean
+                                  discriminator:
+                                    propertyName: type
+                                    mapping:
+                                      boolean: '#/components/schemas/BooleanFeedbackDefinition'
+                                BooleanFeedbackDefinition:
+                                  required:
+                                    - details
+                                    - name
+                                    - type
+                                  type: object
+                                  allOf:
+                                    - $ref: '#/components/schemas/Feedback'
+                                    - type: object
+                                      properties:
+                                        details:
+                                          $ref: '#/components/schemas/BooleanFeedbackDetail'
+                                        created_at:
+                                          type: string
+                                          format: date-time
+                                          readOnly: true
+                                BooleanFeedbackDetail:
+                                  type: object
+                                  properties:
+                                    trueLabel:
+                                      type: string
+                            """;
+
+        var data = PrepareOpenApi(useLegacyPrepare, yaml, DefaultSettings);
+        var model = data.Classes.Single(x => x.ClassName == "BooleanFeedbackDefinition");
+        var generated = Sources.GenerateClassModel(model);
+
+        generated.Should().Contain("public new global::System.DateTime? CreatedAt");
+        generated.Should().Contain("string name");
+        generated.Should().Contain("base.Name = name");
+    }
+
     private static AutoSDK.Models.Data PreparePetstoreWithExclusions(bool useLegacyPrepare, string yaml, AutoSDK.Models.Settings settings)
     {
         return PrepareOpenApi(useLegacyPrepare, yaml, settings);

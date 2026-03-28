@@ -52,18 +52,18 @@ namespace G
         /// <param name="id">
         /// The unique ID of the output message.
         /// </param>
-        /// <param name="type">
-        /// The type of the output message. Always `message`.
-        /// </param>
-        /// <param name="role">
-        /// The role of the output message. Always `assistant`.
-        /// </param>
         /// <param name="content">
         /// The content of the output message.
         /// </param>
         /// <param name="status">
         /// The status of the message input. One of `in_progress`, `completed`, or<br/>
         /// `incomplete`. Populated when input items are returned via API.
+        /// </param>
+        /// <param name="type">
+        /// The type of the output message. Always `message`.
+        /// </param>
+        /// <param name="role">
+        /// The role of the output message. Always `assistant`.
         /// </param>
         public OutputMessage(
             string id,
@@ -73,10 +73,10 @@ namespace G
             global::G.OutputMessageRole role)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.Status = status;
             this.Type = type;
             this.Role = role;
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Status = status;
         }
 
         /// <summary>

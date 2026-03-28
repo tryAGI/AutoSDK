@@ -82,6 +82,8 @@ namespace G
         /// Initializes a new instance of the <see cref="DatasetSchemaForUpdate" /> class.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="id"></param>
+        /// <param name="tenantId"></param>
         /// <param name="description"></param>
         /// <param name="createdAt"></param>
         /// <param name="inputsSchemaDefinition"></param>
@@ -93,8 +95,6 @@ namespace G
         /// <param name="dataType">
         /// Default Value: kv
         /// </param>
-        /// <param name="id"></param>
-        /// <param name="tenantId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -111,8 +111,6 @@ namespace G
             global::G.DataType? dataType)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Id = id;
-            this.TenantId = tenantId;
             this.Description = description;
             this.CreatedAt = createdAt;
             this.InputsSchemaDefinition = inputsSchemaDefinition;
@@ -120,6 +118,8 @@ namespace G
             this.ExternallyManaged = externallyManaged;
             this.Transformations = transformations;
             this.DataType = dataType;
+            this.Id = id;
+            this.TenantId = tenantId;
         }
 
         /// <summary>

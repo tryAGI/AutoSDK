@@ -100,6 +100,7 @@ namespace G
         /// <param name="endLine">
         /// Example: 2
         /// </param>
+        /// <param name="blobHref"></param>
         /// <param name="startColumn">
         /// Example: 5
         /// </param>
@@ -118,7 +119,6 @@ namespace G
         /// <param name="rawDetails">
         /// Example: Do you mean 'bananas' or 'banana'?
         /// </param>
-        /// <param name="blobHref"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -137,13 +137,13 @@ namespace G
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.StartLine = startLine;
             this.EndLine = endLine;
-            this.BlobHref = blobHref ?? throw new global::System.ArgumentNullException(nameof(blobHref));
             this.StartColumn = startColumn;
             this.EndColumn = endColumn;
             this.AnnotationLevel = annotationLevel;
             this.Title = title;
             this.Message = message;
             this.RawDetails = rawDetails;
+            this.BlobHref = blobHref ?? throw new global::System.ArgumentNullException(nameof(blobHref));
         }
 
         /// <summary>

@@ -125,10 +125,6 @@ namespace G
         /// <param name="user">
         /// A GitHub user.
         /// </param>
-        /// <param name="body">
-        /// The text of the review.<br/>
-        /// Example: This looks great.
-        /// </param>
         /// <param name="state">
         /// Example: CHANGES_REQUESTED
         /// </param>
@@ -139,17 +135,21 @@ namespace G
         /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/12
         /// </param>
         /// <param name="links"></param>
-        /// <param name="submittedAt"></param>
         /// <param name="commitId">
         /// A commit SHA for the review.<br/>
         /// Example: 54bb654c9e6025347f57900a4a5c2313a96b8035
         /// </param>
-        /// <param name="bodyHtml"></param>
-        /// <param name="bodyText"></param>
         /// <param name="authorAssociation">
         /// How the author is associated with the repository.<br/>
         /// Example: OWNER
         /// </param>
+        /// <param name="body">
+        /// The text of the review.<br/>
+        /// Example: This looks great.
+        /// </param>
+        /// <param name="submittedAt"></param>
+        /// <param name="bodyHtml"></param>
+        /// <param name="bodyText"></param>
         public TimelineReviewedEvent(
             string @event,
             int id,
@@ -170,16 +170,16 @@ namespace G
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.Body = body;
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.PullRequestUrl = pullRequestUrl ?? throw new global::System.ArgumentNullException(nameof(pullRequestUrl));
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
-            this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
-            this.AuthorAssociation = authorAssociation;
-            this.Body = body;
             this.SubmittedAt = submittedAt;
+            this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
             this.BodyHtml = bodyHtml;
             this.BodyText = bodyText;
+            this.AuthorAssociation = authorAssociation;
         }
 
         /// <summary>

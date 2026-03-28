@@ -206,24 +206,24 @@ namespace G
         /// <param name="tags"></param>
         /// <param name="reportedType"></param>
         /// <param name="version"></param>
-        /// <param name="description"></param>
         /// <param name="featured"></param>
-        /// <param name="owner">
-        /// Default Value: false
-        /// </param>
         /// <param name="public"></param>
         /// <param name="curlInv"></param>
         /// <param name="cmdlineInv"></param>
         /// <param name="txtDocs"></param>
         /// <param name="outExample"></param>
         /// <param name="outDocs"></param>
+        /// <param name="pricing"></param>
+        /// <param name="schemas"></param>
+        /// <param name="description"></param>
+        /// <param name="owner">
+        /// Default Value: false
+        /// </param>
         /// <param name="maskToken"></param>
         /// <param name="inSchema"></param>
         /// <param name="outSchema"></param>
         /// <param name="inFields"></param>
-        /// <param name="pricing"></param>
         /// <param name="docBlocks"></param>
-        /// <param name="schemas"></param>
         /// <param name="meta">
         /// Default Value: {}
         /// </param>
@@ -271,22 +271,22 @@ namespace G
             this.Tags = tags ?? throw new global::System.ArgumentNullException(nameof(tags));
             this.ReportedType = reportedType ?? throw new global::System.ArgumentNullException(nameof(reportedType));
             this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
+            this.Description = description;
             this.Featured = featured;
+            this.Owner = owner;
             this.Public = @public;
             this.CurlInv = curlInv ?? throw new global::System.ArgumentNullException(nameof(curlInv));
             this.CmdlineInv = cmdlineInv ?? throw new global::System.ArgumentNullException(nameof(cmdlineInv));
             this.TxtDocs = txtDocs ?? throw new global::System.ArgumentNullException(nameof(txtDocs));
             this.OutExample = outExample ?? throw new global::System.ArgumentNullException(nameof(outExample));
             this.OutDocs = outDocs ?? throw new global::System.ArgumentNullException(nameof(outDocs));
-            this.Pricing = pricing;
-            this.Schemas = schemas ?? throw new global::System.ArgumentNullException(nameof(schemas));
-            this.Description = description;
-            this.Owner = owner;
             this.MaskToken = maskToken;
             this.InSchema = inSchema;
             this.OutSchema = outSchema;
             this.InFields = inFields;
+            this.Pricing = pricing;
             this.DocBlocks = docBlocks;
+            this.Schemas = schemas ?? throw new global::System.ArgumentNullException(nameof(schemas));
             this.Meta = meta;
             this.MaxTokens = maxTokens;
             this.ReplacedBy = replacedBy;

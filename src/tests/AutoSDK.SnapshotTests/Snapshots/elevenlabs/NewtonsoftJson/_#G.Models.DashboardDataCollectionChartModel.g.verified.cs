@@ -37,18 +37,18 @@ namespace G
         /// Initializes a new instance of the <see cref="DashboardDataCollectionChartModel" /> class.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="dataCollectionId"></param>
         /// <param name="type">
         /// Default Value: data_collection
         /// </param>
-        /// <param name="dataCollectionId"></param>
         public DashboardDataCollectionChartModel(
             string name,
             string dataCollectionId,
             string? type)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.DataCollectionId = dataCollectionId ?? throw new global::System.ArgumentNullException(nameof(dataCollectionId));
             this.Type = type;
+            this.DataCollectionId = dataCollectionId ?? throw new global::System.ArgumentNullException(nameof(dataCollectionId));
         }
 
         /// <summary>

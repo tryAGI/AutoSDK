@@ -52,11 +52,11 @@ namespace G
         /// <param name="model">
         /// The name of the model used to generate the embedding.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always "list".
-        /// </param>
         /// <param name="usage">
         /// The usage information for the request.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always "list".
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -69,8 +69,8 @@ namespace G
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
             this.Object = @object;
+            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
         }
 
         /// <summary>

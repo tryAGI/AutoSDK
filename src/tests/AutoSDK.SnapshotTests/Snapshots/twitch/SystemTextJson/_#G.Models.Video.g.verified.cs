@@ -143,9 +143,6 @@ namespace G
         /// <param name="id">
         /// An ID that identifies the video.
         /// </param>
-        /// <param name="streamId">
-        /// The ID of the stream that the video originated from if the video's type is "archive;" otherwise, **null**.
-        /// </param>
         /// <param name="userId">
         /// The ID of the broadcaster that owns the video.
         /// </param>
@@ -192,6 +189,9 @@ namespace G
         /// <param name="duration">
         /// The video's length in ISO 8601 duration format. For example, 3m21s represents 3 minutes, 21 seconds.
         /// </param>
+        /// <param name="streamId">
+        /// The ID of the stream that the video originated from if the video's type is "archive;" otherwise, **null**.
+        /// </param>
         /// <param name="mutedSegments">
         /// The segments that Twitch Audio Recognition muted; otherwise, **null**.
         /// </param>
@@ -218,6 +218,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.VideoMutedSegment>? mutedSegments)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.StreamId = streamId;
             this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
             this.UserLogin = userLogin ?? throw new global::System.ArgumentNullException(nameof(userLogin));
             this.UserName = userName ?? throw new global::System.ArgumentNullException(nameof(userName));
@@ -232,7 +233,6 @@ namespace G
             this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
             this.Type = type;
             this.Duration = duration ?? throw new global::System.ArgumentNullException(nameof(duration));
-            this.StreamId = streamId;
             this.MutedSegments = mutedSegments;
         }
 

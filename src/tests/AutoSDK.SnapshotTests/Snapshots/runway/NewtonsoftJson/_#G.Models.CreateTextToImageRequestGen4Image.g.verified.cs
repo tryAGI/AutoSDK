@@ -58,11 +58,11 @@ namespace G
         /// <param name="promptText">
         /// A non-empty string up to 1000 characters (measured in UTF-16 code units). This should describe in detail what should appear in the output.
         /// </param>
-        /// <param name="seed">
-        /// If unspecified, a random number is chosen. Varying the seed integer is a way to get different results for the same other request parameters. Using the same seed integer for an identical request will produce similar results.
-        /// </param>
         /// <param name="ratio">
         /// The resolution of the output image.
+        /// </param>
+        /// <param name="seed">
+        /// If unspecified, a random number is chosen. Varying the seed integer is a way to get different results for the same other request parameters. Using the same seed integer for an identical request will produce similar results.
         /// </param>
         /// <param name="referenceImages">
         /// An array of up to three images to be used as references for the generated image output.
@@ -80,8 +80,8 @@ namespace G
             string model = "gen4_image")
         {
             this.PromptText = promptText ?? throw new global::System.ArgumentNullException(nameof(promptText));
-            this.Ratio = ratio;
             this.Seed = seed;
+            this.Ratio = ratio;
             this.ReferenceImages = referenceImages;
             this.ContentModeration = contentModeration;
             this.Model = model;

@@ -59,17 +59,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="APIKey" /> class.
         /// </summary>
-        /// <param name="prefix">
-        /// Included only in responses
-        /// </param>
-        /// <param name="created">
-        /// Included only in responses
-        /// </param>
         /// <param name="creator">
-        /// Included only in responses
-        /// </param>
-        /// <param name="name">
-        /// A free-form name for the API key. Need not be unique. 50 characters max.<br/>
         /// Included only in responses
         /// </param>
         /// <param name="expiryDate">
@@ -78,6 +68,16 @@ namespace G
         /// </param>
         /// <param name="revoked">
         /// If the API key is revoked, clients cannot use it anymore. (This cannot be undone.)
+        /// </param>
+        /// <param name="prefix">
+        /// Included only in responses
+        /// </param>
+        /// <param name="created">
+        /// Included only in responses
+        /// </param>
+        /// <param name="name">
+        /// A free-form name for the API key. Need not be unique. 50 characters max.<br/>
+        /// Included only in responses
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

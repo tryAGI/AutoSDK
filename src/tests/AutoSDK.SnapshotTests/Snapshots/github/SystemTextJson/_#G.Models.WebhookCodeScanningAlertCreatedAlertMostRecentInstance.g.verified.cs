@@ -80,22 +80,22 @@ namespace G
         /// <param name="analysisKey">
         /// Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name.
         /// </param>
-        /// <param name="category">
-        /// Identifies the configuration under which the analysis was executed.
-        /// </param>
-        /// <param name="classifications"></param>
-        /// <param name="commitSha"></param>
         /// <param name="environment">
         /// Identifies the variable values associated with the environment in which the analysis that generated this alert instance was performed, such as the language that was analyzed.
         /// </param>
-        /// <param name="location"></param>
-        /// <param name="message"></param>
         /// <param name="ref">
         /// The full Git reference, formatted as `refs/heads/&lt;branch name&gt;`.
         /// </param>
         /// <param name="state">
         /// State of a code scanning alert.
         /// </param>
+        /// <param name="category">
+        /// Identifies the configuration under which the analysis was executed.
+        /// </param>
+        /// <param name="classifications"></param>
+        /// <param name="commitSha"></param>
+        /// <param name="location"></param>
+        /// <param name="message"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -111,14 +111,14 @@ namespace G
             global::G.WebhookCodeScanningAlertCreatedAlertMostRecentInstanceMessage? message)
         {
             this.AnalysisKey = analysisKey ?? throw new global::System.ArgumentNullException(nameof(analysisKey));
-            this.Environment = environment ?? throw new global::System.ArgumentNullException(nameof(environment));
-            this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
-            this.State = state;
             this.Category = category;
             this.Classifications = classifications;
             this.CommitSha = commitSha;
+            this.Environment = environment ?? throw new global::System.ArgumentNullException(nameof(environment));
             this.Location = location;
             this.Message = message;
+            this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
+            this.State = state;
         }
 
         /// <summary>

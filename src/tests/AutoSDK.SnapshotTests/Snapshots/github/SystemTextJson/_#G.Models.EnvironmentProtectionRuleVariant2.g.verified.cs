@@ -62,12 +62,12 @@ namespace G
         /// <param name="nodeId">
         /// Example: MDQ6R2F0ZTM3NTU=
         /// </param>
+        /// <param name="type">
+        /// Example: required_reviewers
+        /// </param>
         /// <param name="preventSelfReview">
         /// Whether deployments to this environment can be approved by the user who created the deployment.<br/>
         /// Example: false
-        /// </param>
-        /// <param name="type">
-        /// Example: required_reviewers
         /// </param>
         /// <param name="reviewers">
         /// The people or teams that may approve jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
@@ -84,8 +84,8 @@ namespace G
         {
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.PreventSelfReview = preventSelfReview;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Reviewers = reviewers;
         }
 

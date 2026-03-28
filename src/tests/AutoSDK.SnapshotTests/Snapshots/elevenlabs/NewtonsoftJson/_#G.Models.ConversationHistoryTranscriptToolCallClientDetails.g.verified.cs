@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationHistoryTranscriptToolCallClientDetails" /> class.
         /// </summary>
+        /// <param name="parameters"></param>
         /// <param name="type">
         /// Default Value: client
         /// </param>
-        /// <param name="parameters"></param>
         public ConversationHistoryTranscriptToolCallClientDetails(
             string parameters,
             string? type)
         {
-            this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
             this.Type = type;
+            this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
         }
 
         /// <summary>

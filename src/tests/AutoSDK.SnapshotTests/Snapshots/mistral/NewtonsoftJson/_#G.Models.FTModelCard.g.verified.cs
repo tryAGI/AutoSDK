@@ -109,6 +109,9 @@ namespace G
         /// Initializes a new instance of the <see cref="FTModelCard" /> class.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="capabilities"></param>
+        /// <param name="job"></param>
+        /// <param name="root"></param>
         /// <param name="object">
         /// Default Value: model
         /// </param>
@@ -116,7 +119,6 @@ namespace G
         /// <param name="ownedBy">
         /// Default Value: mistralai
         /// </param>
-        /// <param name="capabilities"></param>
         /// <param name="name"></param>
         /// <param name="description"></param>
         /// <param name="maxContextLength">
@@ -130,8 +132,6 @@ namespace G
         /// <param name="type">
         /// Default Value: fine-tuned
         /// </param>
-        /// <param name="job"></param>
-        /// <param name="root"></param>
         /// <param name="archived">
         /// Default Value: false
         /// </param>
@@ -153,12 +153,10 @@ namespace G
             bool? archived)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Capabilities = capabilities ?? throw new global::System.ArgumentNullException(nameof(capabilities));
-            this.Job = job ?? throw new global::System.ArgumentNullException(nameof(job));
-            this.Root = root ?? throw new global::System.ArgumentNullException(nameof(root));
             this.Object = @object;
             this.Created = created;
             this.OwnedBy = ownedBy;
+            this.Capabilities = capabilities ?? throw new global::System.ArgumentNullException(nameof(capabilities));
             this.Name = name;
             this.Description = description;
             this.MaxContextLength = maxContextLength;
@@ -166,6 +164,8 @@ namespace G
             this.Deprecation = deprecation;
             this.DefaultModelTemperature = defaultModelTemperature;
             this.Type = type;
+            this.Job = job ?? throw new global::System.ArgumentNullException(nameof(job));
+            this.Root = root ?? throw new global::System.ArgumentNullException(nameof(root));
             this.Archived = archived;
         }
 

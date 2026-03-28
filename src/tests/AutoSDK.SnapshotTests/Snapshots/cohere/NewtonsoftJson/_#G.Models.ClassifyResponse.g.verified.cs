@@ -38,13 +38,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyResponse" /> class.
         /// </summary>
+        /// <param name="meta"></param>
         /// <param name="id">
         /// Included only in responses
         /// </param>
         /// <param name="classifications">
         /// Included only in responses
         /// </param>
-        /// <param name="meta"></param>
         public ClassifyResponse(
             global::G.ApiMeta? meta,
             string id = default!,

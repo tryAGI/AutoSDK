@@ -56,19 +56,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbedFloatsResponse" /> class.
         /// </summary>
-        /// <param name="responseType"></param>
         /// <param name="id"></param>
-        /// <param name="embeddings">
-        /// An array of embeddings, where each embedding is an array of floats. The length of the `embeddings` array will be the same as the length of the original `texts` array.<br/>
-        /// Included only in responses
-        /// </param>
         /// <param name="texts">
         /// The text entries for which embeddings were returned.
         /// </param>
+        /// <param name="responseType"></param>
         /// <param name="images">
         /// The image entries for which embeddings were returned.
         /// </param>
         /// <param name="meta"></param>
+        /// <param name="embeddings">
+        /// An array of embeddings, where each embedding is an array of floats. The length of the `embeddings` array will be the same as the length of the original `texts` array.<br/>
+        /// Included only in responses
+        /// </param>
         public EmbedFloatsResponse(
             string id,
             global::System.Collections.Generic.IList<string> texts,
@@ -77,10 +77,10 @@ namespace G
             global::G.ApiMeta? meta,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>> embeddings = default!)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Texts = texts ?? throw new global::System.ArgumentNullException(nameof(texts));
             this.ResponseType = responseType;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Embeddings = embeddings;
+            this.Texts = texts ?? throw new global::System.ArgumentNullException(nameof(texts));
             this.Images = images;
             this.Meta = meta;
         }

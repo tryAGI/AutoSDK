@@ -81,17 +81,17 @@ namespace G
         /// <param name="endLine">
         /// The end line of the annotation.
         /// </param>
-        /// <param name="startColumn">
-        /// The start column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values. Column numbers start at 1.
-        /// </param>
-        /// <param name="endColumn">
-        /// The end column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values.
-        /// </param>
         /// <param name="annotationLevel">
         /// The level of the annotation.
         /// </param>
         /// <param name="message">
         /// A short description of the feedback for these lines of code. The maximum size is 64 KB.
+        /// </param>
+        /// <param name="startColumn">
+        /// The start column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values. Column numbers start at 1.
+        /// </param>
+        /// <param name="endColumn">
+        /// The end column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values.
         /// </param>
         /// <param name="title">
         /// The title that represents the annotation. The maximum size is 255 characters.
@@ -113,10 +113,10 @@ namespace G
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.StartLine = startLine;
             this.EndLine = endLine;
-            this.AnnotationLevel = annotationLevel;
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.StartColumn = startColumn;
             this.EndColumn = endColumn;
+            this.AnnotationLevel = annotationLevel;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Title = title;
             this.RawDetails = rawDetails;
         }

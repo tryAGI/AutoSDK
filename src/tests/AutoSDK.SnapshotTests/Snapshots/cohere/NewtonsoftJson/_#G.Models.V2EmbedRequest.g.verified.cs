@@ -93,6 +93,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="V2EmbedRequest" /> class.
         /// </summary>
+        /// <param name="inputType">
+        /// Specifies the type of input passed to the model. Required for embedding models v3 and higher.<br/>
+        /// - `"search_document"`: Used for embeddings stored in a vector database for search use-cases.<br/>
+        /// - `"search_query"`: Used for embeddings of search queries run against a vector DB to find relevant documents.<br/>
+        /// - `"classification"`: Used for embeddings passed through a text classifier.<br/>
+        /// - `"clustering"`: Used for the embeddings run through a clustering algorithm.<br/>
+        /// - `"image"`: Used for embeddings with image input.
+        /// </param>
         /// <param name="texts">
         /// An array of strings for the model to embed. Maximum number of texts per call is `96`.<br/>
         /// Included only in requests
@@ -105,14 +113,6 @@ namespace G
         /// <param name="model">
         /// ID of one of the available [Embedding models](https://docs.cohere.com/docs/cohere-embed).<br/>
         /// Included only in requests
-        /// </param>
-        /// <param name="inputType">
-        /// Specifies the type of input passed to the model. Required for embedding models v3 and higher.<br/>
-        /// - `"search_document"`: Used for embeddings stored in a vector database for search use-cases.<br/>
-        /// - `"search_query"`: Used for embeddings of search queries run against a vector DB to find relevant documents.<br/>
-        /// - `"classification"`: Used for embeddings passed through a text classifier.<br/>
-        /// - `"clustering"`: Used for the embeddings run through a clustering algorithm.<br/>
-        /// - `"image"`: Used for embeddings with image input.
         /// </param>
         /// <param name="inputs">
         /// An array of inputs for the model to embed. Maximum number of inputs per call is `96`. An input can contain a mix of text and image components.
@@ -152,10 +152,10 @@ namespace G
             global::System.Collections.Generic.IList<global::G.EmbeddingType>? embeddingTypes,
             global::G.V2EmbedRequestTruncate? truncate)
         {
-            this.InputType = inputType;
             this.Texts = texts;
             this.Images = images;
             this.Model = model;
+            this.InputType = inputType;
             this.Inputs = inputs;
             this.MaxTokens = maxTokens;
             this.OutputDimension = outputDimension;

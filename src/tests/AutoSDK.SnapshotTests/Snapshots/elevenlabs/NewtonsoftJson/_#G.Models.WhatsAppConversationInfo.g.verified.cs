@@ -42,11 +42,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WhatsAppConversationInfo" /> class.
         /// </summary>
+        /// <param name="whatsappUserId"></param>
         /// <param name="direction">
         /// Default Value: unknown
         /// </param>
         /// <param name="whatsappPhoneNumberId"></param>
-        /// <param name="whatsappUserId"></param>
         /// <param name="awaitingFirstUserMessage"></param>
         public WhatsAppConversationInfo(
             string whatsappUserId,
@@ -54,9 +54,9 @@ namespace G
             string? whatsappPhoneNumberId,
             bool? awaitingFirstUserMessage)
         {
-            this.WhatsappUserId = whatsappUserId ?? throw new global::System.ArgumentNullException(nameof(whatsappUserId));
             this.Direction = direction;
             this.WhatsappPhoneNumberId = whatsappPhoneNumberId;
+            this.WhatsappUserId = whatsappUserId ?? throw new global::System.ArgumentNullException(nameof(whatsappUserId));
             this.AwaitingFirstUserMessage = awaitingFirstUserMessage;
         }
 

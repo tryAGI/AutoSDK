@@ -34,11 +34,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="uri">
         /// A HTTPS URL, Runway or data URI containing an encoded audio. See [our docs](/assets/inputs#audio) on audio inputs for more information.<br/>
         /// Example: https://example.com/audio.mp3
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -46,8 +46,8 @@ namespace G
             string uri,
             string type = "audio")
         {
-            this.Uri = uri;
             this.Type = type;
+            this.Uri = uri;
         }
 
         /// <summary>

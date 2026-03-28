@@ -46,11 +46,11 @@ namespace G
         /// Initializes a new instance of the <see cref="WorkflowToolEdgeStepModel" /> class.
         /// </summary>
         /// <param name="stepLatencySecs"></param>
+        /// <param name="edgeId"></param>
+        /// <param name="targetNodeId"></param>
         /// <param name="type">
         /// Default Value: edge
         /// </param>
-        /// <param name="edgeId"></param>
-        /// <param name="targetNodeId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -61,9 +61,9 @@ namespace G
             string? type)
         {
             this.StepLatencySecs = stepLatencySecs;
+            this.Type = type;
             this.EdgeId = edgeId ?? throw new global::System.ArgumentNullException(nameof(edgeId));
             this.TargetNodeId = targetNodeId ?? throw new global::System.ArgumentNullException(nameof(targetNodeId));
-            this.Type = type;
         }
 
         /// <summary>

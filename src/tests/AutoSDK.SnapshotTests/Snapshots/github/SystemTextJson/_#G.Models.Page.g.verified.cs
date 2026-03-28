@@ -119,6 +119,15 @@ namespace G
         /// The API address for accessing this Page resource.<br/>
         /// Example: https://api.github.com/repos/github/hello-world/pages
         /// </param>
+        /// <param name="custom404">
+        /// Whether the Page has a custom 404 page.<br/>
+        /// Default Value: false<br/>
+        /// Example: false
+        /// </param>
+        /// <param name="public">
+        /// Whether the GitHub Pages site is publicly visible. If set to `true`, the site is accessible to anyone on the internet. If set to `false`, the site will only be accessible to users who have at least `read` access to the repository that published the site.<br/>
+        /// Example: true
+        /// </param>
         /// <param name="status">
         /// The status of the most recent build of the Page.<br/>
         /// Example: built
@@ -134,11 +143,6 @@ namespace G
         /// <param name="pendingDomainUnverifiedAt">
         /// The timestamp when a pending domain becomes unverified.
         /// </param>
-        /// <param name="custom404">
-        /// Whether the Page has a custom 404 page.<br/>
-        /// Default Value: false<br/>
-        /// Example: false
-        /// </param>
         /// <param name="htmlUrl">
         /// The web address the Page can be accessed from.<br/>
         /// Example: https://example.com
@@ -148,10 +152,6 @@ namespace G
         /// Example: legacy
         /// </param>
         /// <param name="source"></param>
-        /// <param name="public">
-        /// Whether the GitHub Pages site is publicly visible. If set to `true`, the site is accessible to anyone on the internet. If set to `false`, the site will only be accessible to users who have at least `read` access to the repository that published the site.<br/>
-        /// Example: true
-        /// </param>
         /// <param name="httpsCertificate"></param>
         /// <param name="httpsEnforced">
         /// Whether https is enabled on the domain<br/>
@@ -175,15 +175,15 @@ namespace G
             bool? httpsEnforced)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Custom404 = custom404;
-            this.Public = @public;
             this.Status = status;
             this.Cname = cname;
             this.ProtectedDomainState = protectedDomainState;
             this.PendingDomainUnverifiedAt = pendingDomainUnverifiedAt;
+            this.Custom404 = custom404;
             this.HtmlUrl = htmlUrl;
             this.BuildType = buildType;
             this.Source = source;
+            this.Public = @public;
             this.HttpsCertificate = httpsCertificate;
             this.HttpsEnforced = httpsEnforced;
         }

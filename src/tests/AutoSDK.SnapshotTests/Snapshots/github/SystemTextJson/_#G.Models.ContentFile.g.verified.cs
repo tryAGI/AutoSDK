@@ -113,7 +113,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentFile" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="encoding"></param>
         /// <param name="size"></param>
         /// <param name="name"></param>
@@ -121,10 +120,11 @@ namespace G
         /// <param name="content"></param>
         /// <param name="sha"></param>
         /// <param name="url"></param>
+        /// <param name="links"></param>
+        /// <param name="type"></param>
         /// <param name="gitUrl"></param>
         /// <param name="htmlUrl"></param>
         /// <param name="downloadUrl"></param>
-        /// <param name="links"></param>
         /// <param name="target">
         /// Example: "actual/actual.md"
         /// </param>
@@ -150,6 +150,7 @@ namespace G
             string? target,
             string? submoduleGitUrl)
         {
+            this.Type = type;
             this.Encoding = encoding ?? throw new global::System.ArgumentNullException(nameof(encoding));
             this.Size = size;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -157,11 +158,10 @@ namespace G
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
-            this.Type = type;
             this.GitUrl = gitUrl;
             this.HtmlUrl = htmlUrl;
             this.DownloadUrl = downloadUrl;
+            this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
             this.Target = target;
             this.SubmoduleGitUrl = submoduleGitUrl;
         }

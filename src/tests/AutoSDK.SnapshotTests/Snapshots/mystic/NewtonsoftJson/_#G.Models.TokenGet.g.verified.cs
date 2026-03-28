@@ -83,10 +83,10 @@ namespace G
         /// <param name="updatedAt"></param>
         /// <param name="value"></param>
         /// <param name="name"></param>
-        /// <param name="expiresAt"></param>
-        /// <param name="lastUsed"></param>
         /// <param name="isActive"></param>
         /// <param name="isEnabled"></param>
+        /// <param name="expiresAt"></param>
+        /// <param name="lastUsed"></param>
         /// <param name="teamId"></param>
         public TokenGet(
             string id,
@@ -105,10 +105,10 @@ namespace G
             this.UpdatedAt = updatedAt;
             this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.IsActive = isActive;
-            this.IsEnabled = isEnabled;
             this.ExpiresAt = expiresAt;
             this.LastUsed = lastUsed;
+            this.IsActive = isActive;
+            this.IsEnabled = isEnabled;
             this.TeamId = teamId;
         }
 

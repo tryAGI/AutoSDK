@@ -59,7 +59,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ListenV1Results" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="channelIndex">
         /// The index of the channel.
         /// </param>
@@ -69,11 +68,12 @@ namespace G
         /// <param name="start">
         /// Start time of audio segment in seconds.
         /// </param>
-        /// <param name="isFinal">
-        /// Whether this is a final result.
-        /// </param>
         /// <param name="channel">
         /// Channel alternatives.
+        /// </param>
+        /// <param name="type"></param>
+        /// <param name="isFinal">
+        /// Whether this is a final result.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -86,12 +86,12 @@ namespace G
             global::G.ListenV1ResultsType type,
             bool? isFinal)
         {
+            this.Type = type;
             this.ChannelIndex = channelIndex ?? throw new global::System.ArgumentNullException(nameof(channelIndex));
             this.Duration = duration;
             this.Start = start;
-            this.Channel = channel ?? throw new global::System.ArgumentNullException(nameof(channel));
-            this.Type = type;
             this.IsFinal = isFinal;
+            this.Channel = channel ?? throw new global::System.ArgumentNullException(nameof(channel));
         }
 
         /// <summary>

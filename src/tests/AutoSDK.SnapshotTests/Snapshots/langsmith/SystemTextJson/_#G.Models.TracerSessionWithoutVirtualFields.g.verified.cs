@@ -86,6 +86,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TracerSessionWithoutVirtualFields" /> class.
         /// </summary>
+        /// <param name="id"></param>
+        /// <param name="tenantId"></param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="extra"></param>
@@ -94,8 +96,6 @@ namespace G
         /// <param name="defaultDatasetId"></param>
         /// <param name="referenceDatasetId"></param>
         /// <param name="traceTier"></param>
-        /// <param name="id"></param>
-        /// <param name="tenantId"></param>
         /// <param name="lastRunStartTimeLive"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -113,8 +113,6 @@ namespace G
             global::G.TraceTier? traceTier,
             global::System.DateTime? lastRunStartTimeLive)
         {
-            this.Id = id;
-            this.TenantId = tenantId;
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.Extra = extra;
@@ -123,6 +121,8 @@ namespace G
             this.DefaultDatasetId = defaultDatasetId;
             this.ReferenceDatasetId = referenceDatasetId;
             this.TraceTier = traceTier;
+            this.Id = id;
+            this.TenantId = tenantId;
             this.LastRunStartTimeLive = lastRunStartTimeLive;
         }
 

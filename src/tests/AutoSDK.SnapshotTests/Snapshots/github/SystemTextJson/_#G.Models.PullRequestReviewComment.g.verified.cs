@@ -259,10 +259,6 @@ namespace G
         /// URL for the pull request review comment<br/>
         /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/comments/1
         /// </param>
-        /// <param name="pullRequestReviewId">
-        /// The ID of the pull request review to which the comment belongs.<br/>
-        /// Example: 42
-        /// </param>
         /// <param name="id">
         /// The ID of the pull request review comment.<br/>
         /// Example: 1
@@ -279,14 +275,6 @@ namespace G
         /// The relative path of the file to which the comment applies.<br/>
         /// Example: config/database.yaml
         /// </param>
-        /// <param name="position">
-        /// The line index in the diff to which the comment applies. This field is deprecated; use `line` instead.<br/>
-        /// Example: 1
-        /// </param>
-        /// <param name="originalPosition">
-        /// The index of the original line in the diff to which the comment applies. This field is deprecated; use `original_line` instead.<br/>
-        /// Example: 4
-        /// </param>
         /// <param name="commitId">
         /// The SHA of the commit to which the comment applies.<br/>
         /// Example: 6dcb09b5b57875f334f61aebed695e2e4193db5e
@@ -294,10 +282,6 @@ namespace G
         /// <param name="originalCommitId">
         /// The SHA of the original commit to which the comment applies.<br/>
         /// Example: 9c48853fa3dc5c1c3d6f1f1cd1f2743e72652840
-        /// </param>
-        /// <param name="inReplyToId">
-        /// The comment ID to reply to.<br/>
-        /// Example: 8
         /// </param>
         /// <param name="user">
         /// A GitHub user.
@@ -325,6 +309,22 @@ namespace G
         /// Example: OWNER
         /// </param>
         /// <param name="links"></param>
+        /// <param name="pullRequestReviewId">
+        /// The ID of the pull request review to which the comment belongs.<br/>
+        /// Example: 42
+        /// </param>
+        /// <param name="position">
+        /// The line index in the diff to which the comment applies. This field is deprecated; use `line` instead.<br/>
+        /// Example: 1
+        /// </param>
+        /// <param name="originalPosition">
+        /// The index of the original line in the diff to which the comment applies. This field is deprecated; use `original_line` instead.<br/>
+        /// Example: 4
+        /// </param>
+        /// <param name="inReplyToId">
+        /// The comment ID to reply to.<br/>
+        /// Example: 8
+        /// </param>
         /// <param name="startLine">
         /// The first line of the range for a multi-line comment.<br/>
         /// Example: 2
@@ -394,12 +394,16 @@ namespace G
             string? bodyText)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.PullRequestReviewId = pullRequestReviewId;
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.DiffHunk = diffHunk ?? throw new global::System.ArgumentNullException(nameof(diffHunk));
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
+            this.Position = position;
+            this.OriginalPosition = originalPosition;
             this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
             this.OriginalCommitId = originalCommitId ?? throw new global::System.ArgumentNullException(nameof(originalCommitId));
+            this.InReplyToId = inReplyToId;
             this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
             this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
             this.CreatedAt = createdAt;
@@ -408,10 +412,6 @@ namespace G
             this.PullRequestUrl = pullRequestUrl ?? throw new global::System.ArgumentNullException(nameof(pullRequestUrl));
             this.AuthorAssociation = authorAssociation;
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
-            this.PullRequestReviewId = pullRequestReviewId;
-            this.Position = position;
-            this.OriginalPosition = originalPosition;
-            this.InReplyToId = inReplyToId;
             this.StartLine = startLine;
             this.OriginalStartLine = originalStartLine;
             this.StartSide = startSide;

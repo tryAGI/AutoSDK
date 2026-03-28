@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UploadCertificateRequest" /> class.
         /// </summary>
-        /// <param name="name">
-        /// An optional name for the certificate
-        /// </param>
         /// <param name="content">
         /// The certificate content in PEM format
+        /// </param>
+        /// <param name="name">
+        /// An optional name for the certificate
         /// </param>
         public UploadCertificateRequest(
             string content,
             string? name)
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Name = name;
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
         }
 
         /// <summary>

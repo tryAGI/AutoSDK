@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateStreamError49d5xw" /> class.
         /// </summary>
-        /// <param name="index">
-        /// Refers to the nth generation. Only present when `num_generations` is greater than zero.
-        /// </param>
         /// <param name="isFinished"></param>
         /// <param name="finishReason"></param>
         /// <param name="err">
         /// Error message
+        /// </param>
+        /// <param name="index">
+        /// Refers to the nth generation. Only present when `num_generations` is greater than zero.
         /// </param>
         public GenerateStreamError49d5xw(
             bool isFinished,
@@ -56,10 +56,10 @@ namespace G
             string err,
             int? index)
         {
+            this.Index = index;
             this.IsFinished = isFinished;
             this.FinishReason = finishReason;
             this.Err = err ?? throw new global::System.ArgumentNullException(nameof(err));
-            this.Index = index;
         }
 
         /// <summary>

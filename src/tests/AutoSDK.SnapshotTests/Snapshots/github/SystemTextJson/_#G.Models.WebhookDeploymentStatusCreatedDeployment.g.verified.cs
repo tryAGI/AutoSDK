@@ -140,25 +140,25 @@ namespace G
         /// Initializes a new instance of the <see cref="WebhookDeploymentStatusCreatedDeployment" /> class.
         /// </summary>
         /// <param name="createdAt"></param>
-        /// <param name="creator"></param>
-        /// <param name="description"></param>
         /// <param name="environment"></param>
         /// <param name="id"></param>
         /// <param name="nodeId"></param>
         /// <param name="originalEnvironment"></param>
-        /// <param name="payload"></param>
-        /// <param name="performedViaGithubApp">
-        /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-        /// </param>
-        /// <param name="productionEnvironment"></param>
         /// <param name="ref"></param>
         /// <param name="repositoryUrl"></param>
         /// <param name="sha"></param>
         /// <param name="statusesUrl"></param>
         /// <param name="task"></param>
-        /// <param name="transientEnvironment"></param>
         /// <param name="updatedAt"></param>
         /// <param name="url"></param>
+        /// <param name="creator"></param>
+        /// <param name="description"></param>
+        /// <param name="payload"></param>
+        /// <param name="performedViaGithubApp">
+        /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+        /// </param>
+        /// <param name="productionEnvironment"></param>
+        /// <param name="transientEnvironment"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -183,23 +183,23 @@ namespace G
             bool? transientEnvironment)
         {
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.Creator = creator;
+            this.Description = description;
             this.Environment = environment ?? throw new global::System.ArgumentNullException(nameof(environment));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.OriginalEnvironment = originalEnvironment ?? throw new global::System.ArgumentNullException(nameof(originalEnvironment));
+            this.Payload = payload;
+            this.PerformedViaGithubApp = performedViaGithubApp;
+            this.ProductionEnvironment = productionEnvironment;
             this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
             this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
             this.StatusesUrl = statusesUrl ?? throw new global::System.ArgumentNullException(nameof(statusesUrl));
             this.Task = task ?? throw new global::System.ArgumentNullException(nameof(task));
+            this.TransientEnvironment = transientEnvironment;
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Creator = creator;
-            this.Description = description;
-            this.Payload = payload;
-            this.PerformedViaGithubApp = performedViaGithubApp;
-            this.ProductionEnvironment = productionEnvironment;
-            this.TransientEnvironment = transientEnvironment;
         }
 
         /// <summary>

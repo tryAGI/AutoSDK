@@ -46,10 +46,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="IntervalScheduleConfiguration" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of schedule.<br/>
-        /// Example: interval
-        /// </param>
         /// <param name="interval">
         /// ISO-8601 duration string specifying the interval between executions.<br/>
         /// Minimum interval is 1 minute (PT1M).<br/>
@@ -66,12 +62,16 @@ namespace G
         /// Reference: https://en.wikipedia.org/wiki/ISO_8601#Durations<br/>
         /// Example: PT24H
         /// </param>
+        /// <param name="type">
+        /// The type of schedule.<br/>
+        /// Example: interval
+        /// </param>
         public IntervalScheduleConfiguration(
             string interval,
             global::G.IntervalScheduleConfigurationType type)
         {
-            this.Interval = interval ?? throw new global::System.ArgumentNullException(nameof(interval));
             this.Type = type;
+            this.Interval = interval ?? throw new global::System.ArgumentNullException(nameof(interval));
         }
 
         /// <summary>

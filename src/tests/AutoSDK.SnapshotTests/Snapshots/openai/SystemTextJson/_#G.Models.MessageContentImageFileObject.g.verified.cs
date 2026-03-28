@@ -32,10 +32,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageContentImageFileObject" /> class.
         /// </summary>
+        /// <param name="imageFile"></param>
         /// <param name="type">
         /// Always `image_file`.
         /// </param>
-        /// <param name="imageFile"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -43,8 +43,8 @@ namespace G
             global::G.MessageContentImageFileObjectImageFile imageFile,
             global::G.MessageContentImageFileObjectType type)
         {
-            this.ImageFile = imageFile ?? throw new global::System.ArgumentNullException(nameof(imageFile));
             this.Type = type;
+            this.ImageFile = imageFile ?? throw new global::System.ArgumentNullException(nameof(imageFile));
         }
 
         /// <summary>

@@ -47,8 +47,8 @@ namespace G
         /// </summary>
         /// <param name="name"></param>
         /// <param name="path"></param>
-        /// <param name="url"></param>
         /// <param name="size"></param>
+        /// <param name="url"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -60,8 +60,8 @@ namespace G
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
-            this.Size = size;
             this.Url = url;
+            this.Size = size;
         }
 
         /// <summary>

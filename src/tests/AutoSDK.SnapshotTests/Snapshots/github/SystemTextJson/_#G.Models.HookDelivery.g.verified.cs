@@ -176,6 +176,8 @@ namespace G
         /// The event that triggered the delivery.<br/>
         /// Example: issues
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="response"></param>
         /// <param name="action">
         /// The type of activity for the event that triggered the delivery.<br/>
         /// Example: opened
@@ -196,8 +198,6 @@ namespace G
         /// The URL target of the delivery.<br/>
         /// Example: https://www.example.com
         /// </param>
-        /// <param name="request"></param>
-        /// <param name="response"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -226,13 +226,13 @@ namespace G
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.StatusCode = statusCode;
             this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));
-            this.Request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-            this.Response = response ?? throw new global::System.ArgumentNullException(nameof(response));
             this.Action = action;
             this.InstallationId = installationId;
             this.RepositoryId = repositoryId;
             this.ThrottledAt = throttledAt;
             this.Url = url;
+            this.Request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+            this.Response = response ?? throw new global::System.ArgumentNullException(nameof(response));
         }
 
         /// <summary>

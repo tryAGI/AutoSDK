@@ -39,12 +39,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DeployModelIn" /> class.
         /// </summary>
+        /// <param name="modelName">
+        /// model name in specified provider
+        /// </param>
         /// <param name="provider">
         /// namespace for the model name<br/>
         /// Default Value: cnt
-        /// </param>
-        /// <param name="modelName">
-        /// model name in specified provider
         /// </param>
         /// <param name="version">
         /// A specific revision, if left empty uses the last one
@@ -57,8 +57,8 @@ namespace G
             global::G.ModelProvider? provider,
             string? version)
         {
-            this.ModelName = modelName ?? throw new global::System.ArgumentNullException(nameof(modelName));
             this.Provider = provider;
+            this.ModelName = modelName ?? throw new global::System.ArgumentNullException(nameof(modelName));
             this.Version = version;
         }
 

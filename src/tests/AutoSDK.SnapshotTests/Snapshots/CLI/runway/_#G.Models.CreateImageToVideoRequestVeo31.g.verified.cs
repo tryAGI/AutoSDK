@@ -60,14 +60,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateImageToVideoRequestVeo31" /> class.
         /// </summary>
-        /// <param name="promptText">
-        /// A non-empty string up to 1000 characters (measured in UTF-16 code units). This should describe in detail what should appear in the output.
-        /// </param>
         /// <param name="promptImage">
         /// You may specify an image to use as the first frame of the output video, or an array with a first frame and optionally a last frame. This model does not support generating with only a last frame.
         /// </param>
         /// <param name="ratio">
         /// The resolution of the output video.
+        /// </param>
+        /// <param name="promptText">
+        /// A non-empty string up to 1000 characters (measured in UTF-16 code units). This should describe in detail what should appear in the output.
         /// </param>
         /// <param name="audio">
         /// Whether to generate audio for the video. Audio inclusion affects pricing.<br/>
@@ -88,9 +88,9 @@ namespace G
             double? duration,
             string model = "veo3.1")
         {
+            this.PromptText = promptText;
             this.PromptImage = promptImage;
             this.Ratio = ratio;
-            this.PromptText = promptText;
             this.Audio = audio;
             this.Duration = duration;
             this.Model = model;

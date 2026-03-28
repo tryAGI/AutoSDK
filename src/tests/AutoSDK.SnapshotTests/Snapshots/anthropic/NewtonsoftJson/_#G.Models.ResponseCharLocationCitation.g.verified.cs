@@ -55,14 +55,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseCharLocationCitation" /> class.
         /// </summary>
+        /// <param name="citedText"></param>
+        /// <param name="documentIndex"></param>
+        /// <param name="startCharIndex"></param>
+        /// <param name="endCharIndex"></param>
+        /// <param name="documentTitle"></param>
         /// <param name="type">
         /// Default Value: char_location
         /// </param>
-        /// <param name="citedText"></param>
-        /// <param name="documentIndex"></param>
-        /// <param name="documentTitle"></param>
-        /// <param name="startCharIndex"></param>
-        /// <param name="endCharIndex"></param>
         public ResponseCharLocationCitation(
             string citedText,
             int documentIndex,
@@ -71,12 +71,12 @@ namespace G
             string? documentTitle,
             global::G.ResponseCharLocationCitationType type = global::G.ResponseCharLocationCitationType.CharLocation)
         {
+            this.Type = type;
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.DocumentIndex = documentIndex;
+            this.DocumentTitle = documentTitle;
             this.StartCharIndex = startCharIndex;
             this.EndCharIndex = endCharIndex;
-            this.Type = type;
-            this.DocumentTitle = documentTitle;
         }
 
         /// <summary>

@@ -164,17 +164,23 @@ namespace G
         /// <param name="name">
         /// The name of the voice.
         /// </param>
-        /// <param name="samples">
-        /// List of samples associated with the voice.
-        /// </param>
         /// <param name="category">
         /// The category of the voice.
         /// </param>
-        /// <param name="fineTuning">
-        /// Fine-tuning information for the voice.
-        /// </param>
         /// <param name="labels">
         /// Labels associated with the voice.
+        /// </param>
+        /// <param name="availableForTiers">
+        /// The tiers the voice is available for.
+        /// </param>
+        /// <param name="highQualityBaseModelIds">
+        /// The base model IDs for high-quality voices.
+        /// </param>
+        /// <param name="samples">
+        /// List of samples associated with the voice.
+        /// </param>
+        /// <param name="fineTuning">
+        /// Fine-tuning information for the voice.
         /// </param>
         /// <param name="description">
         /// The description of the voice.
@@ -182,17 +188,11 @@ namespace G
         /// <param name="previewUrl">
         /// The preview URL of the voice.
         /// </param>
-        /// <param name="availableForTiers">
-        /// The tiers the voice is available for.
-        /// </param>
         /// <param name="settings">
         /// The settings of the voice.
         /// </param>
         /// <param name="sharing">
         /// The sharing information of the voice.
-        /// </param>
-        /// <param name="highQualityBaseModelIds">
-        /// The base model IDs for high-quality voices.
         /// </param>
         /// <param name="verifiedLanguages">
         /// The verified languages of the voice.
@@ -256,16 +256,16 @@ namespace G
         {
             this.VoiceId = voiceId ?? throw new global::System.ArgumentNullException(nameof(voiceId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Category = category;
-            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
-            this.AvailableForTiers = availableForTiers ?? throw new global::System.ArgumentNullException(nameof(availableForTiers));
-            this.HighQualityBaseModelIds = highQualityBaseModelIds ?? throw new global::System.ArgumentNullException(nameof(highQualityBaseModelIds));
             this.Samples = samples;
+            this.Category = category;
             this.FineTuning = fineTuning;
+            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
             this.Description = description;
             this.PreviewUrl = previewUrl;
+            this.AvailableForTiers = availableForTiers ?? throw new global::System.ArgumentNullException(nameof(availableForTiers));
             this.Settings = settings;
             this.Sharing = sharing;
+            this.HighQualityBaseModelIds = highQualityBaseModelIds ?? throw new global::System.ArgumentNullException(nameof(highQualityBaseModelIds));
             this.VerifiedLanguages = verifiedLanguages;
             this.CollectionIds = collectionIds;
             this.SafetyControl = safetyControl;

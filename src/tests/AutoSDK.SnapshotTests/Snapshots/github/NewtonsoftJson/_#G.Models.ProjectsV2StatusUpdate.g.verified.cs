@@ -86,15 +86,15 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="nodeId"></param>
-        /// <param name="projectNodeId"></param>
-        /// <param name="creator">
-        /// A GitHub user.
-        /// </param>
         /// <param name="createdAt">
         /// Example: 2022-04-28T12:00:00Z
         /// </param>
         /// <param name="updatedAt">
         /// Example: 2022-04-28T12:00:00Z
+        /// </param>
+        /// <param name="projectNodeId"></param>
+        /// <param name="creator">
+        /// A GitHub user.
         /// </param>
         /// <param name="status"></param>
         /// <param name="startDate">
@@ -121,10 +121,10 @@ namespace G
         {
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.ProjectNodeId = projectNodeId;
             this.Creator = creator;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.Status = status;
             this.StartDate = startDate;
             this.TargetDate = targetDate;

@@ -84,10 +84,10 @@ namespace G
         /// <param name="pointers"></param>
         /// <param name="runCount"></param>
         /// <param name="failedRunCount"></param>
-        /// <param name="lastRunAt"></param>
-        /// <param name="lastFailedAt"></param>
         /// <param name="avgComputeTimeMs"></param>
         /// <param name="totalComputeTimeMs"></param>
+        /// <param name="lastRunAt"></param>
+        /// <param name="lastFailedAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -107,10 +107,10 @@ namespace G
             this.Pointers = pointers ?? throw new global::System.ArgumentNullException(nameof(pointers));
             this.RunCount = runCount;
             this.FailedRunCount = failedRunCount;
-            this.AvgComputeTimeMs = avgComputeTimeMs;
-            this.TotalComputeTimeMs = totalComputeTimeMs;
             this.LastRunAt = lastRunAt;
             this.LastFailedAt = lastFailedAt;
+            this.AvgComputeTimeMs = avgComputeTimeMs;
+            this.TotalComputeTimeMs = totalComputeTimeMs;
         }
 
         /// <summary>

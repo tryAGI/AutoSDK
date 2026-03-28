@@ -32,11 +32,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConstantSchemaOverride" /> class.
         /// </summary>
-        /// <param name="source">
-        /// Default Value: constant
-        /// </param>
         /// <param name="constantValue">
         /// The constant value to use
+        /// </param>
+        /// <param name="source">
+        /// Default Value: constant
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -45,8 +45,8 @@ namespace G
             global::G.AnyOf<string, int?, double?, bool?> constantValue,
             string? source)
         {
-            this.ConstantValue = constantValue;
             this.Source = source;
+            this.ConstantValue = constantValue;
         }
 
         /// <summary>

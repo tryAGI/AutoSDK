@@ -70,10 +70,10 @@ namespace G
         /// <param name="includeTimestamps">
         /// Default Value: true
         /// </param>
-        /// <param name="format"></param>
         /// <param name="segmentOnSilenceLongerThanS"></param>
         /// <param name="maxSegmentDurationS"></param>
         /// <param name="maxSegmentChars"></param>
+        /// <param name="format"></param>
         public TxtExportOptions(
             int? maxCharactersPerLine,
             bool? includeSpeakers,

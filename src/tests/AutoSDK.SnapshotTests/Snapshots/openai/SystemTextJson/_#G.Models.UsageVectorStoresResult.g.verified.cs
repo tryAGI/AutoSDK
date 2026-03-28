@@ -38,10 +38,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageVectorStoresResult" /> class.
         /// </summary>
-        /// <param name="object"></param>
         /// <param name="usageBytes">
         /// The vector stores usage in bytes.
         /// </param>
+        /// <param name="object"></param>
         /// <param name="projectId">
         /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
         /// </param>
@@ -53,8 +53,8 @@ namespace G
             global::G.UsageVectorStoresResultObject @object,
             string? projectId)
         {
-            this.UsageBytes = usageBytes;
             this.Object = @object;
+            this.UsageBytes = usageBytes;
             this.ProjectId = projectId;
         }
 

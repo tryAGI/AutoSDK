@@ -61,10 +61,10 @@ namespace G
         /// <param name="includeTimestamps">
         /// Default Value: true
         /// </param>
-        /// <param name="format"></param>
         /// <param name="segmentOnSilenceLongerThanS"></param>
         /// <param name="maxSegmentDurationS"></param>
         /// <param name="maxSegmentChars"></param>
+        /// <param name="format"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

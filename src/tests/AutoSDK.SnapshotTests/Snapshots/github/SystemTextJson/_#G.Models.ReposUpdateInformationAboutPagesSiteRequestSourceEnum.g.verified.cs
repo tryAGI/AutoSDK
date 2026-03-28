@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        MasterDocs,
+        MasterDividedocs,
     }
 
     /// <summary>
@@ -37,7 +37,7 @@ namespace G
             {
                 ReposUpdateInformationAboutPagesSiteRequestSourceEnum.GhPages => "gh-pages",
                 ReposUpdateInformationAboutPagesSiteRequestSourceEnum.Master => "master",
-                ReposUpdateInformationAboutPagesSiteRequestSourceEnum.MasterDocs => "master /docs",
+                ReposUpdateInformationAboutPagesSiteRequestSourceEnum.MasterDividedocs => "master /docs",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,7 +50,7 @@ namespace G
             {
                 "gh-pages" => ReposUpdateInformationAboutPagesSiteRequestSourceEnum.GhPages,
                 "master" => ReposUpdateInformationAboutPagesSiteRequestSourceEnum.Master,
-                "master /docs" => ReposUpdateInformationAboutPagesSiteRequestSourceEnum.MasterDocs,
+                "master /docs" => ReposUpdateInformationAboutPagesSiteRequestSourceEnum.MasterDividedocs,
                 _ => null,
             };
         }

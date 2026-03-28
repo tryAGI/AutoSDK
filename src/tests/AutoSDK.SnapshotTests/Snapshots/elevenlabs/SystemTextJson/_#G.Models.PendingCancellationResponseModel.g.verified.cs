@@ -31,11 +31,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PendingCancellationResponseModel" /> class.
         /// </summary>
-        /// <param name="kind">
-        /// Default Value: cancellation
-        /// </param>
         /// <param name="timestampSeconds">
         /// The timestamp of the cancellation.
+        /// </param>
+        /// <param name="kind">
+        /// Default Value: cancellation
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace G
             int timestampSeconds,
             string? kind)
         {
-            this.TimestampSeconds = timestampSeconds;
             this.Kind = kind;
+            this.TimestampSeconds = timestampSeconds;
         }
 
         /// <summary>

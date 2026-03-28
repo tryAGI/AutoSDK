@@ -42,6 +42,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEvalRunRequest" /> class.
         /// </summary>
+        /// <param name="dataSource">
+        /// Details about the run's data source.
+        /// </param>
         /// <param name="name">
         /// The name of the run.
         /// </param>
@@ -52,9 +55,6 @@ namespace G
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
         /// </param>
-        /// <param name="dataSource">
-        /// Details about the run's data source.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -63,9 +63,9 @@ namespace G
             string? name,
             global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
-            this.DataSource = dataSource;
             this.Name = name;
             this.Metadata = metadata;
+            this.DataSource = dataSource;
         }
 
         /// <summary>

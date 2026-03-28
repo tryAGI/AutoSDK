@@ -78,15 +78,15 @@ namespace G
         /// <param name="name">
         /// The name of the project snapshot.
         /// </param>
+        /// <param name="characterAlignments"></param>
+        /// <param name="audioDurationSecs">
+        /// The total duration of the audio in seconds.
+        /// </param>
         /// <param name="audioUpload">
         /// (Deprecated)
         /// </param>
         /// <param name="zipUpload">
         /// (Deprecated)
-        /// </param>
-        /// <param name="characterAlignments"></param>
-        /// <param name="audioDurationSecs">
-        /// The total duration of the audio in seconds.
         /// </param>
         public ProjectSnapshotExtendedResponseModel(
             string projectSnapshotId,
@@ -102,10 +102,10 @@ namespace G
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
             this.CreatedAtUnix = createdAtUnix;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.CharacterAlignments = characterAlignments ?? throw new global::System.ArgumentNullException(nameof(characterAlignments));
-            this.AudioDurationSecs = audioDurationSecs;
             this.AudioUpload = audioUpload;
             this.ZipUpload = zipUpload;
+            this.CharacterAlignments = characterAlignments ?? throw new global::System.ArgumentNullException(nameof(characterAlignments));
+            this.AudioDurationSecs = audioDurationSecs;
         }
 
         /// <summary>

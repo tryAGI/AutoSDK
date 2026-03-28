@@ -42,10 +42,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RunRulesPagerdutyAlertSchema" /> class.
         /// </summary>
+        /// <param name="routingKey"></param>
         /// <param name="type">
         /// Default Value: pagerduty
         /// </param>
-        /// <param name="routingKey"></param>
         /// <param name="summary"></param>
         /// <param name="severity">
         /// Default Value: warning
@@ -56,8 +56,8 @@ namespace G
             string? summary,
             global::G.PagerdutySeverity? severity)
         {
-            this.RoutingKey = routingKey ?? throw new global::System.ArgumentNullException(nameof(routingKey));
             this.Type = type;
+            this.RoutingKey = routingKey ?? throw new global::System.ArgumentNullException(nameof(routingKey));
             this.Summary = summary;
             this.Severity = severity;
         }

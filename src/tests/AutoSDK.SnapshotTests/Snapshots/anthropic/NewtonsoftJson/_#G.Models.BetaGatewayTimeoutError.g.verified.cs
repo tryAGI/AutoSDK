@@ -32,18 +32,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaGatewayTimeoutError" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: timeout_error
-        /// </param>
         /// <param name="message">
         /// Default Value: Request timeout
+        /// </param>
+        /// <param name="type">
+        /// Default Value: timeout_error
         /// </param>
         public BetaGatewayTimeoutError(
             string message,
             global::G.BetaGatewayTimeoutErrorType type = global::G.BetaGatewayTimeoutErrorType.TimeoutError)
         {
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Type = type;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
         }
 
         /// <summary>

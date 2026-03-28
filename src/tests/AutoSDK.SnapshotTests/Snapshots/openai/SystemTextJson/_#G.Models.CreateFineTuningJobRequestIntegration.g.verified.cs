@@ -34,13 +34,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFineTuningJobRequestIntegration" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of integration to enable. Currently, only "wandb" (Weights and Biases) is supported.
-        /// </param>
         /// <param name="wandb">
         /// The settings for your integration with Weights and Biases. This payload specifies the project that<br/>
         /// metrics will be sent to. Optionally, you can set an explicit display name for your run, add tags<br/>
         /// to your run, and set a default entity (team, username, etc) to be associated with your run.
+        /// </param>
+        /// <param name="type">
+        /// The type of integration to enable. Currently, only "wandb" (Weights and Biases) is supported.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -49,8 +49,8 @@ namespace G
             global::G.CreateFineTuningJobRequestIntegrationWandb wandb,
             global::G.CreateFineTuningJobRequestIntegrationType type)
         {
-            this.Wandb = wandb ?? throw new global::System.ArgumentNullException(nameof(wandb));
             this.Type = type;
+            this.Wandb = wandb ?? throw new global::System.ArgumentNullException(nameof(wandb));
         }
 
         /// <summary>

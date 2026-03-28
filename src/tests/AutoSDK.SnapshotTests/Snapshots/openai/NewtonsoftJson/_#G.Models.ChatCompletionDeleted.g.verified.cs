@@ -36,23 +36,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionDeleted" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The type of object being deleted.
-        /// </param>
         /// <param name="id">
         /// The ID of the chat completion that was deleted.
         /// </param>
         /// <param name="deleted">
         /// Whether the chat completion was deleted.
         /// </param>
+        /// <param name="object">
+        /// The type of object being deleted.
+        /// </param>
         public ChatCompletionDeleted(
             string id,
             bool deleted,
             global::G.ChatCompletionDeletedObject @object)
         {
+            this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Deleted = deleted;
-            this.Object = @object;
         }
 
         /// <summary>

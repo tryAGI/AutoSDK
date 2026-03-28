@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteCertificateResponse" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The object type, must be `certificate.deleted`.
-        /// </param>
         /// <param name="id">
         /// The ID of the certificate that was deleted.
+        /// </param>
+        /// <param name="object">
+        /// The object type, must be `certificate.deleted`.
         /// </param>
         public DeleteCertificateResponse(
             string id,
             global::G.DeleteCertificateResponseObject @object)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
         }
 
         /// <summary>

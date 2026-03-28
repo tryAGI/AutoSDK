@@ -49,10 +49,10 @@ namespace G
         /// Initializes a new instance of the <see cref="GetTestSuiteInvocationResponseModel" /> class.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="testRuns"></param>
         /// <param name="agentId"></param>
         /// <param name="branchId"></param>
         /// <param name="createdAt"></param>
-        /// <param name="testRuns"></param>
         public GetTestSuiteInvocationResponseModel(
             string id,
             global::System.Collections.Generic.IList<global::G.UnitTestRunResponseModel> testRuns,
@@ -61,10 +61,10 @@ namespace G
             int? createdAt)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.TestRuns = testRuns ?? throw new global::System.ArgumentNullException(nameof(testRuns));
             this.AgentId = agentId;
             this.BranchId = branchId;
             this.CreatedAt = createdAt;
+            this.TestRuns = testRuns ?? throw new global::System.ArgumentNullException(nameof(testRuns));
         }
 
         /// <summary>

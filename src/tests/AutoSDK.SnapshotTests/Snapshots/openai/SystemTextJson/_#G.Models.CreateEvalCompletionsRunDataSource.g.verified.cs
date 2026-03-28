@@ -54,9 +54,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEvalCompletionsRunDataSource" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of run data source. Always `completions`.<br/>
-        /// Default Value: completions
+        /// <param name="source">
+        /// Determines what populates the `item` namespace in this run's data source.
         /// </param>
         /// <param name="inputMessages">
         /// Used when sampling from a model. Dictates the structure of the messages passed into the model. Can either be a reference to a prebuilt trajectory (ie, `item.input_trajectory`), or a template with variable references to the `item` namespace.
@@ -65,8 +64,9 @@ namespace G
         /// <param name="model">
         /// The name of the model to use for generating completions (e.g. "o3-mini").
         /// </param>
-        /// <param name="source">
-        /// Determines what populates the `item` namespace in this run's data source.
+        /// <param name="type">
+        /// The type of run data source. Always `completions`.<br/>
+        /// Default Value: completions
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -78,11 +78,11 @@ namespace G
             string? model,
             global::G.CreateEvalCompletionsRunDataSourceType type = global::G.CreateEvalCompletionsRunDataSourceType.Completions)
         {
-            this.Source = source;
             this.Type = type;
             this.InputMessages = inputMessages;
             this.SamplingParams = samplingParams;
             this.Model = model;
+            this.Source = source;
         }
 
         /// <summary>

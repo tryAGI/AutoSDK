@@ -32,18 +32,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="APIError" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: api_error
-        /// </param>
         /// <param name="message">
         /// Default Value: Internal server error
+        /// </param>
+        /// <param name="type">
+        /// Default Value: api_error
         /// </param>
         public APIError(
             string message,
             global::G.APIErrorType type = global::G.APIErrorType.ApiError)
         {
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Type = type;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
         }
 
         /// <summary>

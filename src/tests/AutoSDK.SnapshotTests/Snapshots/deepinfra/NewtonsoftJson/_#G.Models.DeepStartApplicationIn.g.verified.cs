@@ -78,13 +78,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DeepStartApplicationIn" /> class.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="uid"></param>
         /// <param name="company"></param>
         /// <param name="ceo"></param>
         /// <param name="funding"></param>
         /// <param name="foundedOn"></param>
         /// <param name="website"></param>
+        /// <param name="id"></param>
+        /// <param name="uid"></param>
         /// <param name="createdAt"></param>
         /// <param name="status">
         /// Default Value: pending
@@ -102,13 +102,13 @@ namespace G
             string? status,
             string? deal)
         {
+            this.Id = id;
+            this.Uid = uid;
             this.Company = company ?? throw new global::System.ArgumentNullException(nameof(company));
             this.Ceo = ceo ?? throw new global::System.ArgumentNullException(nameof(ceo));
             this.Funding = funding ?? throw new global::System.ArgumentNullException(nameof(funding));
             this.FoundedOn = foundedOn ?? throw new global::System.ArgumentNullException(nameof(foundedOn));
             this.Website = website ?? throw new global::System.ArgumentNullException(nameof(website));
-            this.Id = id;
-            this.Uid = uid;
             this.CreatedAt = createdAt;
             this.Status = status;
             this.Deal = deal;

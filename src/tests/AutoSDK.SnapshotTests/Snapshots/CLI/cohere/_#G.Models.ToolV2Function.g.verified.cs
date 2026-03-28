@@ -41,11 +41,11 @@ namespace G
         /// <param name="name">
         /// The name of the function.
         /// </param>
-        /// <param name="description">
-        /// The description of the function.
-        /// </param>
         /// <param name="parameters">
         /// The parameters of the function as a JSON schema.
+        /// </param>
+        /// <param name="description">
+        /// The description of the function.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -56,8 +56,8 @@ namespace G
             string? description)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
             this.Description = description;
+            this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
         }
 
         /// <summary>

@@ -54,9 +54,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseReasoningSummaryPartDoneEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.reasoning_summary_part.done`.
-        /// </param>
         /// <param name="itemId">
         /// The ID of the item this summary part is associated with.
         /// </param>
@@ -72,6 +69,9 @@ namespace G
         /// <param name="part">
         /// The completed summary part.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.reasoning_summary_part.done`.
+        /// </param>
         public ResponseReasoningSummaryPartDoneEvent(
             string itemId,
             int outputIndex,
@@ -80,12 +80,12 @@ namespace G
             global::G.ResponseReasoningSummaryPartDoneEventPart part,
             global::G.ResponseReasoningSummaryPartDoneEventType type)
         {
+            this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.SummaryIndex = summaryIndex;
             this.SequenceNumber = sequenceNumber;
             this.Part = part ?? throw new global::System.ArgumentNullException(nameof(part));
-            this.Type = type;
         }
 
         /// <summary>

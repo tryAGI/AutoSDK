@@ -56,9 +56,9 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="choices"></param>
-        /// <param name="usage"></param>
         /// <param name="created"></param>
         /// <param name="model"></param>
+        /// <param name="usage"></param>
         /// <param name="object"></param>
         public ChatCompletionResponse(
             string id,
@@ -70,9 +70,9 @@ namespace G
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
+            this.Usage = usage;
             this.Created = created;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.Usage = usage;
             this.Object = @object;
         }
 

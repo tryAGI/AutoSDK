@@ -78,6 +78,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookMembershipRemoved" /> class.
         /// </summary>
+        /// <param name="organization">
+        /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
+        /// organization, or when the event occurs from activity in a repository owned by an organization.
+        /// </param>
+        /// <param name="scope">
+        /// The scope of the membership. Currently, can only be `team`.
+        /// </param>
+        /// <param name="team">
+        /// Groups of organization members that gives permissions on specified repositories.
+        /// </param>
         /// <param name="action"></param>
         /// <param name="enterprise">
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
@@ -90,21 +100,11 @@ namespace G
         /// see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
         /// </param>
         /// <param name="member"></param>
-        /// <param name="organization">
-        /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
-        /// organization, or when the event occurs from activity in a repository owned by an organization.
-        /// </param>
         /// <param name="repository">
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
         /// when the event occurs from activity in a repository.
         /// </param>
-        /// <param name="scope">
-        /// The scope of the membership. Currently, can only be `team`.
-        /// </param>
         /// <param name="sender"></param>
-        /// <param name="team">
-        /// Groups of organization members that gives permissions on specified repositories.
-        /// </param>
         public WebhookMembershipRemoved(
             global::G.OrganizationSimpleWebhooks organization,
             global::G.WebhookMembershipRemovedScope scope,
@@ -116,15 +116,15 @@ namespace G
             global::G.RepositoryWebhooks? repository,
             global::G.WebhookMembershipRemovedSender? sender)
         {
-            this.Organization = organization ?? throw new global::System.ArgumentNullException(nameof(organization));
-            this.Scope = scope;
-            this.Team = team ?? throw new global::System.ArgumentNullException(nameof(team));
             this.Action = action;
             this.Enterprise = enterprise;
             this.Installation = installation;
             this.Member = member;
+            this.Organization = organization ?? throw new global::System.ArgumentNullException(nameof(organization));
             this.Repository = repository;
+            this.Scope = scope;
             this.Sender = sender;
+            this.Team = team ?? throw new global::System.ArgumentNullException(nameof(team));
         }
 
         /// <summary>

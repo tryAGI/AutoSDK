@@ -83,12 +83,12 @@ namespace G
         /// Initializes a new instance of the <see cref="ProviderUserSlim" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="provider"></param>
         /// <param name="lsUserId"></param>
-        /// <param name="samlProviderId"></param>
-        /// <param name="providerUserId"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="provider"></param>
+        /// <param name="samlProviderId"></param>
+        /// <param name="providerUserId"></param>
         /// <param name="email"></param>
         /// <param name="fullName"></param>
         /// <param name="emailConfirmedAt"></param>
@@ -108,12 +108,12 @@ namespace G
             global::System.DateTime? emailConfirmedAt)
         {
             this.Id = id;
-            this.LsUserId = lsUserId;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.Provider = provider;
+            this.LsUserId = lsUserId;
             this.SamlProviderId = samlProviderId;
             this.ProviderUserId = providerUserId;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
             this.Email = email;
             this.FullName = fullName;
             this.EmailConfirmedAt = emailConfirmedAt;

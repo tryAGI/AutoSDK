@@ -54,10 +54,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ProtectedBranchRequiredStatusCheck" /> class.
         /// </summary>
-        /// <param name="url"></param>
-        /// <param name="enforcementLevel"></param>
         /// <param name="contexts"></param>
         /// <param name="checks"></param>
+        /// <param name="url"></param>
+        /// <param name="enforcementLevel"></param>
         /// <param name="contextsUrl"></param>
         /// <param name="strict"></param>
         public ProtectedBranchRequiredStatusCheck(
@@ -68,10 +68,10 @@ namespace G
             string? contextsUrl,
             bool? strict)
         {
-            this.Contexts = contexts ?? throw new global::System.ArgumentNullException(nameof(contexts));
-            this.Checks = checks ?? throw new global::System.ArgumentNullException(nameof(checks));
             this.Url = url;
             this.EnforcementLevel = enforcementLevel;
+            this.Contexts = contexts ?? throw new global::System.ArgumentNullException(nameof(contexts));
+            this.Checks = checks ?? throw new global::System.ArgumentNullException(nameof(checks));
             this.ContextsUrl = contextsUrl;
             this.Strict = strict;
         }

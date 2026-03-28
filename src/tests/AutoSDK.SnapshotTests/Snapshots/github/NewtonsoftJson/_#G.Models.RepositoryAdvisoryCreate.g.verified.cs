@@ -79,11 +79,11 @@ namespace G
         /// <param name="description">
         /// A detailed description of what the advisory impacts.
         /// </param>
-        /// <param name="cveId">
-        /// The Common Vulnerabilities and Exposures (CVE) ID.
-        /// </param>
         /// <param name="vulnerabilities">
         /// A product affected by the vulnerability detailed in a repository security advisory.
+        /// </param>
+        /// <param name="cveId">
+        /// The Common Vulnerabilities and Exposures (CVE) ID.
         /// </param>
         /// <param name="cweIds">
         /// A list of Common Weakness Enumeration (CWE) IDs.
@@ -114,8 +114,8 @@ namespace G
         {
             this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.Vulnerabilities = vulnerabilities ?? throw new global::System.ArgumentNullException(nameof(vulnerabilities));
             this.CveId = cveId;
+            this.Vulnerabilities = vulnerabilities ?? throw new global::System.ArgumentNullException(nameof(vulnerabilities));
             this.CweIds = cweIds;
             this.Credits = credits;
             this.Severity = severity;

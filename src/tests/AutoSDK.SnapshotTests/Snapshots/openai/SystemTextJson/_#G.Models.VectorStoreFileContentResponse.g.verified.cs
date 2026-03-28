@@ -45,14 +45,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="VectorStoreFileContentResponse" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The object type, which is always `vector_store.file_content.page`
-        /// </param>
         /// <param name="data">
         /// Parsed content of the file.
         /// </param>
         /// <param name="hasMore">
         /// Indicates if there are more content pages to fetch.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `vector_store.file_content.page`
         /// </param>
         /// <param name="nextPage">
         /// The token for the next page, if any.
@@ -66,9 +66,9 @@ namespace G
             global::G.VectorStoreFileContentResponseObject @object,
             string? nextPage)
         {
+            this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.HasMore = hasMore;
-            this.Object = @object;
             this.NextPage = nextPage;
         }
 

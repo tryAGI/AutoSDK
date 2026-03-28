@@ -69,6 +69,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="StructuredDocumentSection" /> class.
         /// </summary>
+        /// <param name="text">
+        /// The text of the section.<br/>
+        /// Example: This section summarizes the billing details for Acme Corp for Q1 2025.
+        /// </param>
         /// <param name="id">
         /// The section ID. This gets converted to a metadata field automatically.<br/>
         /// Example: 10
@@ -76,10 +80,6 @@ namespace G
         /// <param name="title">
         /// The section title.<br/>
         /// Example: Billing Summary
-        /// </param>
-        /// <param name="text">
-        /// The text of the section.<br/>
-        /// Example: This section summarizes the billing details for Acme Corp for Q1 2025.
         /// </param>
         /// <param name="metadata">
         /// Arbitrary object that becomes document part level metadata on any document part created by this section. Properties of this object can be used by document part level filters if defined as a corpus filter attribute.<br/>
@@ -103,9 +103,9 @@ namespace G
             global::System.Collections.Generic.IList<global::G.Image>? images,
             global::System.Collections.Generic.IList<global::G.StructuredDocumentSection>? sections)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Id = id;
             this.Title = title;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Metadata = metadata;
             this.Tables = tables;
             this.Images = images;

@@ -55,9 +55,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEvalLabelModelGrader" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The object type, which is always `label_model`.
-        /// </param>
         /// <param name="name">
         /// The name of the grader.
         /// </param>
@@ -73,6 +70,9 @@ namespace G
         /// <param name="passingLabels">
         /// The labels that indicate a passing result. Must be a subset of labels.
         /// </param>
+        /// <param name="type">
+        /// The object type, which is always `label_model`.
+        /// </param>
         public CreateEvalLabelModelGrader(
             string name,
             string model,
@@ -81,12 +81,12 @@ namespace G
             global::System.Collections.Generic.IList<string> passingLabels,
             global::G.CreateEvalLabelModelGraderType type)
         {
+            this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
             this.PassingLabels = passingLabels ?? throw new global::System.ArgumentNullException(nameof(passingLabels));
-            this.Type = type;
         }
 
         /// <summary>

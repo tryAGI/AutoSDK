@@ -38,14 +38,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationItemDeletePayload" /> class.
         /// </summary>
+        /// <param name="itemId">
+        /// The ID of the item to delete.
+        /// </param>
         /// <param name="eventId">
         /// Optional client-generated ID.
         /// </param>
         /// <param name="type">
         /// The event type.
-        /// </param>
-        /// <param name="itemId">
-        /// The ID of the item to delete.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -55,9 +55,9 @@ namespace G
             string? eventId,
             global::G.ConversationItemDeletePayloadType type)
         {
-            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.EventId = eventId;
             this.Type = type;
+            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
         }
 
         /// <summary>

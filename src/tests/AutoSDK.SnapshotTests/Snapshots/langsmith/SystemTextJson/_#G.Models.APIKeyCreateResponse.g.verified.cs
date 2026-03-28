@@ -64,15 +64,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="APIKeyCreateResponse" /> class.
         /// </summary>
-        /// <param name="createdAt"></param>
         /// <param name="id"></param>
         /// <param name="shortKey"></param>
         /// <param name="description"></param>
+        /// <param name="key"></param>
+        /// <param name="createdAt"></param>
         /// <param name="readOnly">
         /// Default Value: false
         /// </param>
         /// <param name="lastUsedAt"></param>
-        /// <param name="key"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -85,13 +85,13 @@ namespace G
             bool? readOnly,
             global::System.DateTime? lastUsedAt)
         {
+            this.CreatedAt = createdAt;
             this.Id = id;
             this.ShortKey = shortKey ?? throw new global::System.ArgumentNullException(nameof(shortKey));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
-            this.CreatedAt = createdAt;
             this.ReadOnly = readOnly;
             this.LastUsedAt = lastUsedAt;
+            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
         }
 
         /// <summary>

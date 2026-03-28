@@ -121,32 +121,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CodeScanningAlert" /> class.
         /// </summary>
-        /// <param name="number">
-        /// The security alert number.<br/>
-        /// Included only in responses
+        /// <param name="state">
+        /// State of a code scanning alert.
         /// </param>
-        /// <param name="createdAt">
-        /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
-        /// Included only in responses
-        /// </param>
+        /// <param name="rule"></param>
+        /// <param name="tool"></param>
+        /// <param name="mostRecentInstance"></param>
         /// <param name="updatedAt">
         /// The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
         /// Included only in responses
-        /// </param>
-        /// <param name="url">
-        /// The REST API URL of the alert resource.<br/>
-        /// Included only in responses
-        /// </param>
-        /// <param name="htmlUrl">
-        /// The GitHub URL of the alert resource.<br/>
-        /// Included only in responses
-        /// </param>
-        /// <param name="instancesUrl">
-        /// The REST API URL for fetching the list of instances for an alert.<br/>
-        /// Included only in responses
-        /// </param>
-        /// <param name="state">
-        /// State of a code scanning alert.
         /// </param>
         /// <param name="fixedAt">
         /// The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
@@ -165,9 +148,26 @@ namespace G
         /// <param name="dismissedComment">
         /// The dismissal comment associated with the dismissal of the alert.
         /// </param>
-        /// <param name="rule"></param>
-        /// <param name="tool"></param>
-        /// <param name="mostRecentInstance"></param>
+        /// <param name="number">
+        /// The security alert number.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="createdAt">
+        /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="url">
+        /// The REST API URL of the alert resource.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="htmlUrl">
+        /// The GitHub URL of the alert resource.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="instancesUrl">
+        /// The REST API URL for fetching the list of instances for an alert.<br/>
+        /// Included only in responses
+        /// </param>
         public CodeScanningAlert(
             global::G.CodeScanningAlertState state,
             global::G.CodeScanningAlertRule rule,
@@ -185,21 +185,21 @@ namespace G
             string htmlUrl = default!,
             string instancesUrl = default!)
         {
-            this.State = state;
-            this.Rule = rule ?? throw new global::System.ArgumentNullException(nameof(rule));
-            this.Tool = tool ?? throw new global::System.ArgumentNullException(nameof(tool));
-            this.MostRecentInstance = mostRecentInstance ?? throw new global::System.ArgumentNullException(nameof(mostRecentInstance));
             this.Number = number;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.Url = url;
             this.HtmlUrl = htmlUrl;
             this.InstancesUrl = instancesUrl;
+            this.State = state;
             this.FixedAt = fixedAt;
             this.DismissedBy = dismissedBy;
             this.DismissedAt = dismissedAt;
             this.DismissedReason = dismissedReason;
             this.DismissedComment = dismissedComment;
+            this.Rule = rule ?? throw new global::System.ArgumentNullException(nameof(rule));
+            this.Tool = tool ?? throw new global::System.ArgumentNullException(nameof(tool));
+            this.MostRecentInstance = mostRecentInstance ?? throw new global::System.ArgumentNullException(nameof(mostRecentInstance));
         }
 
         /// <summary>

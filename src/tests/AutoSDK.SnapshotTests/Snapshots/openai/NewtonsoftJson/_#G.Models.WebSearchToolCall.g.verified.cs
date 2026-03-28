@@ -40,11 +40,11 @@ namespace G
         /// <param name="id">
         /// The unique ID of the web search tool call.
         /// </param>
-        /// <param name="type">
-        /// The type of the web search tool call. Always `web_search_call`.
-        /// </param>
         /// <param name="status">
         /// The status of the web search tool call.
+        /// </param>
+        /// <param name="type">
+        /// The type of the web search tool call. Always `web_search_call`.
         /// </param>
         public WebSearchToolCall(
             string id,
@@ -52,8 +52,8 @@ namespace G
             global::G.WebSearchToolCallType type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Status = status;
             this.Type = type;
+            this.Status = status;
         }
 
         /// <summary>

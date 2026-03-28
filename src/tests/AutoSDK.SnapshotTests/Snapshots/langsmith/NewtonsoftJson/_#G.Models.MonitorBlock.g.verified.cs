@@ -69,9 +69,9 @@ namespace G
         /// <param name="title"></param>
         /// <param name="section"></param>
         /// <param name="columns"></param>
-        /// <param name="subtitle"></param>
         /// <param name="rows"></param>
         /// <param name="chartSpec"></param>
+        /// <param name="subtitle"></param>
         /// <param name="clickTarget"></param>
         /// <param name="toggleableMarks"></param>
         public MonitorBlock(
@@ -87,9 +87,9 @@ namespace G
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Section = section ?? throw new global::System.ArgumentNullException(nameof(section));
             this.Columns = columns ?? throw new global::System.ArgumentNullException(nameof(columns));
+            this.Subtitle = subtitle;
             this.Rows = rows ?? throw new global::System.ArgumentNullException(nameof(rows));
             this.ChartSpec = chartSpec ?? throw new global::System.ArgumentNullException(nameof(chartSpec));
-            this.Subtitle = subtitle;
             this.ClickTarget = clickTarget;
             this.ToggleableMarks = toggleableMarks;
         }

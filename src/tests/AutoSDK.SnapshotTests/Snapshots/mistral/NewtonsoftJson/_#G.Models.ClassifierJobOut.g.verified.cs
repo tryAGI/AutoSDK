@@ -136,6 +136,7 @@ namespace G
         /// <param name="trainingFiles">
         /// A list containing the IDs of uploaded files that contain training data.
         /// </param>
+        /// <param name="hyperparameters"></param>
         /// <param name="validationFiles">
         /// A list containing the IDs of uploaded files that contain validation data.<br/>
         /// Default Value: []
@@ -161,7 +162,6 @@ namespace G
         /// The type of job (`FT` for fine-tuning).<br/>
         /// Default Value: classifier
         /// </param>
-        /// <param name="hyperparameters"></param>
         public ClassifierJobOut(
             global::System.Guid id,
             bool autoStart,
@@ -187,7 +187,6 @@ namespace G
             this.CreatedAt = createdAt;
             this.ModifiedAt = modifiedAt;
             this.TrainingFiles = trainingFiles ?? throw new global::System.ArgumentNullException(nameof(trainingFiles));
-            this.Hyperparameters = hyperparameters ?? throw new global::System.ArgumentNullException(nameof(hyperparameters));
             this.ValidationFiles = validationFiles;
             this.Object = @object;
             this.FineTunedModel = fineTunedModel;
@@ -196,6 +195,7 @@ namespace G
             this.TrainedTokens = trainedTokens;
             this.Metadata = metadata;
             this.JobType = jobType;
+            this.Hyperparameters = hyperparameters ?? throw new global::System.ArgumentNullException(nameof(hyperparameters));
         }
 
         /// <summary>

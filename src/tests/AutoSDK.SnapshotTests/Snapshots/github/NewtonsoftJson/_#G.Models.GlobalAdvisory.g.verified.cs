@@ -175,38 +175,22 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GlobalAdvisory" /> class.
         /// </summary>
-        /// <param name="ghsaId">
-        /// The GitHub Security Advisory ID.<br/>
-        /// Included only in responses
+        /// <param name="summary">
+        /// A short summary of the advisory.
+        /// </param>
+        /// <param name="severity">
+        /// The severity of the advisory.
         /// </param>
         /// <param name="cveId">
         /// The Common Vulnerabilities and Exposures (CVE) ID.<br/>
-        /// Included only in responses
-        /// </param>
-        /// <param name="url">
-        /// The API URL for the advisory.<br/>
-        /// Included only in responses
-        /// </param>
-        /// <param name="htmlUrl">
-        /// The URL for the advisory.<br/>
         /// Included only in responses
         /// </param>
         /// <param name="repositoryAdvisoryUrl">
         /// The API URL for the repository advisory.<br/>
         /// Included only in responses
         /// </param>
-        /// <param name="summary">
-        /// A short summary of the advisory.
-        /// </param>
         /// <param name="description">
         /// A detailed description of what the advisory entails.
-        /// </param>
-        /// <param name="type">
-        /// The type of advisory.<br/>
-        /// Included only in responses
-        /// </param>
-        /// <param name="severity">
-        /// The severity of the advisory.
         /// </param>
         /// <param name="sourceCodeLocation">
         /// The URL of the advisory's source code.
@@ -215,14 +199,6 @@ namespace G
         /// Included only in responses
         /// </param>
         /// <param name="references"></param>
-        /// <param name="publishedAt">
-        /// The date and time of when the advisory was published, in ISO 8601 format.<br/>
-        /// Included only in responses
-        /// </param>
-        /// <param name="updatedAt">
-        /// The date and time of when the advisory was last updated, in ISO 8601 format.<br/>
-        /// Included only in responses
-        /// </param>
         /// <param name="githubReviewedAt">
         /// The date and time of when the advisory was reviewed by GitHub, in ISO 8601 format.<br/>
         /// Included only in responses
@@ -245,6 +221,30 @@ namespace G
         /// <param name="epss"></param>
         /// <param name="credits">
         /// The users who contributed to the advisory.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="ghsaId">
+        /// The GitHub Security Advisory ID.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="url">
+        /// The API URL for the advisory.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="htmlUrl">
+        /// The URL for the advisory.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="type">
+        /// The type of advisory.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="publishedAt">
+        /// The date and time of when the advisory was published, in ISO 8601 format.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="updatedAt">
+        /// The date and time of when the advisory was last updated, in ISO 8601 format.<br/>
         /// Included only in responses
         /// </param>
         public GlobalAdvisory(
@@ -272,15 +272,15 @@ namespace G
             global::System.DateTime publishedAt = default!,
             global::System.DateTime updatedAt = default!)
         {
-            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
-            this.Severity = severity;
             this.GhsaId = ghsaId;
             this.CveId = cveId;
             this.Url = url;
             this.HtmlUrl = htmlUrl;
             this.RepositoryAdvisoryUrl = repositoryAdvisoryUrl;
+            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
             this.Description = description;
             this.Type = type;
+            this.Severity = severity;
             this.SourceCodeLocation = sourceCodeLocation;
             this.Identifiers = identifiers;
             this.References = references;

@@ -48,11 +48,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectListResponse" /> class.
         /// </summary>
-        /// <param name="object"></param>
         /// <param name="data"></param>
         /// <param name="firstId"></param>
         /// <param name="lastId"></param>
         /// <param name="hasMore"></param>
+        /// <param name="object"></param>
         public ProjectListResponse(
             global::System.Collections.Generic.IList<global::G.Project> data,
             string firstId,
@@ -60,11 +60,11 @@ namespace G
             bool hasMore,
             global::G.ProjectListResponseObject @object)
         {
+            this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
             this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
             this.HasMore = hasMore;
-            this.Object = @object;
         }
 
         /// <summary>

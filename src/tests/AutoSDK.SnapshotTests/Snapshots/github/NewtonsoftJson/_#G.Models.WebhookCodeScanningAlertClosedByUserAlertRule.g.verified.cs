@@ -69,13 +69,13 @@ namespace G
         /// <param name="description">
         /// A short description of the rule used to detect the alert.
         /// </param>
+        /// <param name="id">
+        /// A unique identifier for the rule used to detect the alert.
+        /// </param>
         /// <param name="fullDescription"></param>
         /// <param name="help"></param>
         /// <param name="helpUri">
         /// A link to the documentation for the rule used to detect the alert.
-        /// </param>
-        /// <param name="id">
-        /// A unique identifier for the rule used to detect the alert.
         /// </param>
         /// <param name="name"></param>
         /// <param name="severity">
@@ -93,10 +93,10 @@ namespace G
             global::System.Collections.Generic.IList<string>? tags)
         {
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.FullDescription = fullDescription;
             this.Help = help;
             this.HelpUri = helpUri;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name;
             this.Severity = severity;
             this.Tags = tags;

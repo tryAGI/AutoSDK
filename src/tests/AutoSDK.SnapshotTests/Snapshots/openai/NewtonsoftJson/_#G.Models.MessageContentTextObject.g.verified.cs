@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageContentTextObject" /> class.
         /// </summary>
+        /// <param name="text"></param>
         /// <param name="type">
         /// Always `text`.
         /// </param>
-        /// <param name="text"></param>
         public MessageContentTextObject(
             global::G.MessageContentTextObjectText text,
             global::G.MessageContentTextObjectType type)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

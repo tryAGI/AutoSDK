@@ -132,10 +132,6 @@ namespace G
         /// <param name="id">
         /// Example: 3
         /// </param>
-        /// <param name="name">
-        /// Example: Octocat's GPG Key
-        /// </param>
-        /// <param name="primaryKeyId"></param>
         /// <param name="keyId">
         /// Example: 3262EFF25BA0D270
         /// </param>
@@ -159,10 +155,14 @@ namespace G
         /// <param name="createdAt">
         /// Example: 2016-03-24T11:31:04-06:00
         /// </param>
-        /// <param name="expiresAt"></param>
         /// <param name="revoked">
         /// Example: true
         /// </param>
+        /// <param name="name">
+        /// Example: Octocat's GPG Key
+        /// </param>
+        /// <param name="primaryKeyId"></param>
+        /// <param name="expiresAt"></param>
         /// <param name="rawKey"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -185,6 +185,8 @@ namespace G
             string? rawKey)
         {
             this.Id = id;
+            this.Name = name;
+            this.PrimaryKeyId = primaryKeyId;
             this.KeyId = keyId ?? throw new global::System.ArgumentNullException(nameof(keyId));
             this.PublicKey = publicKey ?? throw new global::System.ArgumentNullException(nameof(publicKey));
             this.Emails = emails ?? throw new global::System.ArgumentNullException(nameof(emails));
@@ -194,10 +196,8 @@ namespace G
             this.CanEncryptStorage = canEncryptStorage;
             this.CanCertify = canCertify;
             this.CreatedAt = createdAt;
-            this.Revoked = revoked;
-            this.Name = name;
-            this.PrimaryKeyId = primaryKeyId;
             this.ExpiresAt = expiresAt;
+            this.Revoked = revoked;
             this.RawKey = rawKey;
         }
 

@@ -54,16 +54,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GithubRepositoryIn" /> class.
         /// </summary>
+        /// <param name="name"></param>
+        /// <param name="owner"></param>
+        /// <param name="token"></param>
         /// <param name="type">
         /// Default Value: github
         /// </param>
-        /// <param name="name"></param>
-        /// <param name="owner"></param>
         /// <param name="ref"></param>
         /// <param name="weight">
         /// Default Value: 1
         /// </param>
-        /// <param name="token"></param>
         public GithubRepositoryIn(
             string name,
             string owner,
@@ -72,12 +72,12 @@ namespace G
             string? @ref,
             double? weight)
         {
+            this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
-            this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
-            this.Type = type;
             this.Ref = @ref;
             this.Weight = weight;
+            this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
         }
 
         /// <summary>

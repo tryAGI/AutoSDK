@@ -62,6 +62,9 @@ namespace G
         /// Initializes a new instance of the <see cref="WebhookSecurityAndAnalysis" /> class.
         /// </summary>
         /// <param name="changes"></param>
+        /// <param name="repository">
+        /// Full Repository
+        /// </param>
         /// <param name="enterprise">
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
         /// on an enterprise account or an organization that's part of an enterprise account. For more information,<br/>
@@ -75,9 +78,6 @@ namespace G
         /// <param name="organization">
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
         /// organization, or when the event occurs from activity in a repository owned by an organization.
-        /// </param>
-        /// <param name="repository">
-        /// Full Repository
         /// </param>
         /// <param name="sender">
         /// A GitHub user.
@@ -94,10 +94,10 @@ namespace G
             global::G.SimpleUser? sender)
         {
             this.Changes = changes ?? throw new global::System.ArgumentNullException(nameof(changes));
-            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.Enterprise = enterprise;
             this.Installation = installation;
             this.Organization = organization;
+            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.Sender = sender;
         }
 

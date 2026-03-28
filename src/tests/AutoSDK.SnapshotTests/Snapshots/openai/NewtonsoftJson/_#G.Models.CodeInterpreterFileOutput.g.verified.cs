@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CodeInterpreterFileOutput" /> class.
         /// </summary>
+        /// <param name="files"></param>
         /// <param name="type">
         /// The type of the code interpreter file output. Always `files`.
         /// </param>
-        /// <param name="files"></param>
         public CodeInterpreterFileOutput(
             global::System.Collections.Generic.IList<global::G.CodeInterpreterFileOutputFile> files,
             global::G.CodeInterpreterFileOutputType type)
         {
-            this.Files = files ?? throw new global::System.ArgumentNullException(nameof(files));
             this.Type = type;
+            this.Files = files ?? throw new global::System.ArgumentNullException(nameof(files));
         }
 
         /// <summary>

@@ -63,9 +63,6 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `response.function_call_arguments.delta`.
-        /// </param>
         /// <param name="responseId">
         /// The ID of the response.
         /// </param>
@@ -81,6 +78,9 @@ namespace G
         /// <param name="delta">
         /// The arguments delta as a JSON string.
         /// </param>
+        /// <param name="type">
+        /// The event type, must be `response.function_call_arguments.delta`.
+        /// </param>
         public RealtimeServerEventResponseFunctionCallArgumentsDelta(
             string eventId,
             string responseId,
@@ -91,12 +91,12 @@ namespace G
             global::G.RealtimeServerEventResponseFunctionCallArgumentsDeltaType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
+            this.Type = type;
             this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
-            this.Type = type;
         }
 
         /// <summary>

@@ -52,10 +52,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FileSearchTool" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the file search tool. Always `file_search`.<br/>
-        /// Default Value: file_search
-        /// </param>
         /// <param name="vectorStoreIds">
         /// The IDs of the vector stores to search.
         /// </param>
@@ -64,6 +60,10 @@ namespace G
         /// </param>
         /// <param name="rankingOptions"></param>
         /// <param name="filters"></param>
+        /// <param name="type">
+        /// The type of the file search tool. Always `file_search`.<br/>
+        /// Default Value: file_search
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -74,8 +74,8 @@ namespace G
             global::G.Filters2? filters,
             global::G.FileSearchToolType type = global::G.FileSearchToolType.FileSearch)
         {
-            this.VectorStoreIds = vectorStoreIds ?? throw new global::System.ArgumentNullException(nameof(vectorStoreIds));
             this.Type = type;
+            this.VectorStoreIds = vectorStoreIds ?? throw new global::System.ArgumentNullException(nameof(vectorStoreIds));
             this.MaxNumResults = maxNumResults;
             this.RankingOptions = rankingOptions;
             this.Filters = filters;

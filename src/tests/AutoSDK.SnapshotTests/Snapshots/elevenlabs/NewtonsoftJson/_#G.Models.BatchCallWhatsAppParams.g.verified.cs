@@ -36,17 +36,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchCallWhatsAppParams" /> class.
         /// </summary>
-        /// <param name="whatsappPhoneNumberId"></param>
         /// <param name="whatsappCallPermissionRequestTemplateName"></param>
         /// <param name="whatsappCallPermissionRequestTemplateLanguageCode"></param>
+        /// <param name="whatsappPhoneNumberId"></param>
         public BatchCallWhatsAppParams(
             string whatsappCallPermissionRequestTemplateName,
             string whatsappCallPermissionRequestTemplateLanguageCode,
             string? whatsappPhoneNumberId)
         {
+            this.WhatsappPhoneNumberId = whatsappPhoneNumberId;
             this.WhatsappCallPermissionRequestTemplateName = whatsappCallPermissionRequestTemplateName ?? throw new global::System.ArgumentNullException(nameof(whatsappCallPermissionRequestTemplateName));
             this.WhatsappCallPermissionRequestTemplateLanguageCode = whatsappCallPermissionRequestTemplateLanguageCode ?? throw new global::System.ArgumentNullException(nameof(whatsappCallPermissionRequestTemplateLanguageCode));
-            this.WhatsappPhoneNumberId = whatsappPhoneNumberId;
         }
 
         /// <summary>

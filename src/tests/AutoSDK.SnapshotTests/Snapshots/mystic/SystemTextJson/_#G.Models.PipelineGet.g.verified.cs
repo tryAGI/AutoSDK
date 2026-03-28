@@ -101,10 +101,10 @@ namespace G
         /// <param name="image"></param>
         /// <param name="inputVariables"></param>
         /// <param name="outputVariables"></param>
-        /// <param name="extras"></param>
         /// <param name="id"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="extras"></param>
         /// <param name="accelerators"></param>
         /// <param name="cluster">
         /// A lean representation of a cluster when returned from an API call
@@ -134,10 +134,10 @@ namespace G
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.InputVariables = inputVariables ?? throw new global::System.ArgumentNullException(nameof(inputVariables));
             this.OutputVariables = outputVariables ?? throw new global::System.ArgumentNullException(nameof(outputVariables));
+            this.Extras = extras;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.Extras = extras;
             this.Accelerators = accelerators;
             this.Cluster = cluster;
             this.ScalingConfig = scalingConfig;

@@ -32,11 +32,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CodeInterpreterTextOutput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the code interpreter text output. Always `logs`.
-        /// </param>
         /// <param name="logs">
         /// The logs of the code interpreter tool call.
+        /// </param>
+        /// <param name="type">
+        /// The type of the code interpreter text output. Always `logs`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -45,8 +45,8 @@ namespace G
             string logs,
             global::G.CodeInterpreterTextOutputType type)
         {
-            this.Logs = logs ?? throw new global::System.ArgumentNullException(nameof(logs));
             this.Type = type;
+            this.Logs = logs ?? throw new global::System.ArgumentNullException(nameof(logs));
         }
 
         /// <summary>

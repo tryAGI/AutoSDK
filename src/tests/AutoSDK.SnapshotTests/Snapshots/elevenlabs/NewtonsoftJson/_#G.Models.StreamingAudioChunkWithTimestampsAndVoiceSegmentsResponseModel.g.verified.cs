@@ -45,14 +45,14 @@ namespace G
         /// <param name="audioBase64">
         /// Base64 encoded audio data
         /// </param>
+        /// <param name="voiceSegments">
+        /// Voice segments for the audio
+        /// </param>
         /// <param name="alignment">
         /// Timestamp information for each character in the original text
         /// </param>
         /// <param name="normalizedAlignment">
         /// Timestamp information for each character in the normalized text
-        /// </param>
-        /// <param name="voiceSegments">
-        /// Voice segments for the audio
         /// </param>
         public StreamingAudioChunkWithTimestampsAndVoiceSegmentsResponseModel(
             string audioBase64,
@@ -61,9 +61,9 @@ namespace G
             global::G.CharacterAlignmentResponseModel? normalizedAlignment)
         {
             this.AudioBase64 = audioBase64 ?? throw new global::System.ArgumentNullException(nameof(audioBase64));
-            this.VoiceSegments = voiceSegments ?? throw new global::System.ArgumentNullException(nameof(voiceSegments));
             this.Alignment = alignment;
             this.NormalizedAlignment = normalizedAlignment;
+            this.VoiceSegments = voiceSegments ?? throw new global::System.ArgumentNullException(nameof(voiceSegments));
         }
 
         /// <summary>

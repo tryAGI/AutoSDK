@@ -60,18 +60,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookDiscussionUnanswered" /> class.
         /// </summary>
-        /// <param name="action"></param>
         /// <param name="discussion">
         /// A Discussion in a repository.
         /// </param>
         /// <param name="oldAnswer"></param>
-        /// <param name="organization">
-        /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
-        /// organization, or when the event occurs from activity in a repository owned by an organization.
-        /// </param>
         /// <param name="repository">
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
         /// when the event occurs from activity in a repository.
+        /// </param>
+        /// <param name="action"></param>
+        /// <param name="organization">
+        /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
+        /// organization, or when the event occurs from activity in a repository owned by an organization.
         /// </param>
         /// <param name="sender">
         /// A GitHub user.
@@ -87,11 +87,11 @@ namespace G
             global::G.OrganizationSimpleWebhooks? organization,
             global::G.SimpleUser? sender)
         {
+            this.Action = action;
             this.Discussion = discussion ?? throw new global::System.ArgumentNullException(nameof(discussion));
             this.OldAnswer = oldAnswer ?? throw new global::System.ArgumentNullException(nameof(oldAnswer));
-            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
-            this.Action = action;
             this.Organization = organization;
+            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.Sender = sender;
         }
 

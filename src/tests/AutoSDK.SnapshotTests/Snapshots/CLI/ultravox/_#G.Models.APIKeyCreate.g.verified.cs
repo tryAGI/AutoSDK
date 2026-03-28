@@ -67,13 +67,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="APIKeyCreate" /> class.
         /// </summary>
+        /// <param name="name">
+        /// A free-form name for the API key. Need not be unique. 50 characters max.
+        /// </param>
+        /// <param name="creator">
+        /// Included only in responses
+        /// </param>
+        /// <param name="expiryDate">
+        /// Once API key expires, clients cannot use it anymore.
+        /// </param>
         /// <param name="prefix">
         /// Included only in responses
         /// </param>
         /// <param name="created">
-        /// Included only in responses
-        /// </param>
-        /// <param name="creator">
         /// Included only in responses
         /// </param>
         /// <param name="secret">
@@ -83,12 +89,6 @@ namespace G
         /// <param name="revoked">
         /// If the API key is revoked, clients cannot use it anymore. (This cannot be undone.)<br/>
         /// Included only in responses
-        /// </param>
-        /// <param name="name">
-        /// A free-form name for the API key. Need not be unique. 50 characters max.
-        /// </param>
-        /// <param name="expiryDate">
-        /// Once API key expires, clients cannot use it anymore.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -102,12 +102,12 @@ namespace G
             string secret = default!,
             bool revoked = default!)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Prefix = prefix;
             this.Created = created;
             this.Creator = creator;
             this.Secret = secret;
             this.Revoked = revoked;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ExpiryDate = expiryDate;
         }
 

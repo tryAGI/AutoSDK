@@ -92,15 +92,15 @@ namespace G
         /// Initializes a new instance of the <see cref="Comment" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="commentBy"></param>
         /// <param name="commentOn"></param>
-        /// <param name="parentId"></param>
         /// <param name="content"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
-        /// <param name="commentByName"></param>
         /// <param name="numSubComments"></param>
         /// <param name="numLikes"></param>
+        /// <param name="commentBy"></param>
+        /// <param name="parentId"></param>
+        /// <param name="commentByName"></param>
         /// <param name="likedByAuthUser"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -119,15 +119,15 @@ namespace G
             bool? likedByAuthUser)
         {
             this.Id = id;
+            this.CommentBy = commentBy;
             this.CommentOn = commentOn;
+            this.ParentId = parentId;
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.CommentByName = commentByName;
             this.NumSubComments = numSubComments;
             this.NumLikes = numLikes;
-            this.CommentBy = commentBy;
-            this.ParentId = parentId;
-            this.CommentByName = commentByName;
             this.LikedByAuthUser = likedByAuthUser;
         }
 

@@ -40,6 +40,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UserMessage" /> class.
         /// </summary>
+        /// <param name="content"></param>
         /// <param name="role">
         /// The role of an individual message.<br/>
         /// - `user`:  Input provided by the user. Any instructions given here that conflict<br/>
@@ -53,13 +54,12 @@ namespace G
         ///   charming French accent."<br/>
         /// Default Value: user
         /// </param>
-        /// <param name="content"></param>
         public UserMessage(
             string content,
             global::G.UserMessageRole? role)
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Role = role;
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
         }
 
         /// <summary>

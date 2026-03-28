@@ -118,13 +118,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ClientToolConfigOutput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of tool<br/>
-        /// Default Value: client
-        /// </param>
         /// <param name="name"></param>
         /// <param name="description">
         /// Description of when the tool should be used and what it does.
+        /// </param>
+        /// <param name="type">
+        /// The type of tool<br/>
+        /// Default Value: client
         /// </param>
         /// <param name="responseTimeoutSecs">
         /// The maximum time in seconds to wait for the tool call to complete. Must be between 1 and 120 seconds (inclusive).<br/>
@@ -186,9 +186,9 @@ namespace G
             global::G.DynamicVariablesConfig? dynamicVariables,
             global::G.ToolExecutionMode? executionMode)
         {
+            this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.Type = type;
             this.ResponseTimeoutSecs = responseTimeoutSecs;
             this.DisableInterruptions = disableInterruptions;
             this.ForcePreToolSpeech = forcePreToolSpeech;

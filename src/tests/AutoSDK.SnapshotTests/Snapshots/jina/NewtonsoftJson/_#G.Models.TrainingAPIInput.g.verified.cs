@@ -54,6 +54,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TrainingAPIInput" /> class.
         /// </summary>
+        /// <param name="input">
+        /// List of text and images and labels or a single text and image and label to train the classifier
+        /// </param>
         /// <param name="model">
         /// The identifier of the model.<br/>
         /// Available models and corresponding param size and dimension:<br/>
@@ -74,19 +77,16 @@ namespace G
         /// The visibility of the classifier when created. Will be ignored if `classifier_id` is provided<br/>
         /// Default Value: public
         /// </param>
-        /// <param name="input">
-        /// List of text and images and labels or a single text and image and label to train the classifier
-        /// </param>
         public TrainingAPIInput(
             global::G.AnyOf<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.TextExampleDoc, global::G.ImageExampleDoc>>, global::G.TextExampleDoc, global::G.ImageExampleDoc> input,
             string? model,
             string? classifierId,
             global::G.TrainingAPIInputVisibility? visibility)
         {
-            this.Input = input;
             this.Model = model;
             this.ClassifierId = classifierId;
             this.Visibility = visibility;
+            this.Input = input;
         }
 
         /// <summary>

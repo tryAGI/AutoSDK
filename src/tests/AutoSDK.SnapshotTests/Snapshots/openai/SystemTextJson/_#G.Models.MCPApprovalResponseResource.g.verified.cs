@@ -52,9 +52,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MCPApprovalResponseResource" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the item. Always `mcp_approval_response`.
-        /// </param>
         /// <param name="id">
         /// The unique ID of the approval response
         /// </param>
@@ -63,6 +60,9 @@ namespace G
         /// </param>
         /// <param name="approve">
         /// Whether the request was approved.
+        /// </param>
+        /// <param name="type">
+        /// The type of the item. Always `mcp_approval_response`.
         /// </param>
         /// <param name="reason">
         /// Optional reason for the decision.
@@ -77,10 +77,10 @@ namespace G
             global::G.MCPApprovalResponseResourceType type,
             string? reason)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ApprovalRequestId = approvalRequestId ?? throw new global::System.ArgumentNullException(nameof(approvalRequestId));
             this.Approve = approve;
-            this.Type = type;
             this.Reason = reason;
         }
 

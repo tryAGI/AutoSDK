@@ -102,9 +102,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FineTuneEvent2" /> class.
         /// </summary>
-        /// <param name="object"></param>
         /// <param name="createdAt"></param>
-        /// <param name="level"></param>
         /// <param name="message"></param>
         /// <param name="type"></param>
         /// <param name="paramCount"></param>
@@ -116,6 +114,8 @@ namespace G
         /// <param name="modelPath"></param>
         /// <param name="trainingOffset"></param>
         /// <param name="hash"></param>
+        /// <param name="object"></param>
+        /// <param name="level"></param>
         public FineTuneEvent2(
             string createdAt,
             string message,
@@ -132,7 +132,9 @@ namespace G
             global::G.FineTuneEventObject2 @object,
             global::G.FineTuneEventLevel? level)
         {
+            this.Object = @object;
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.Level = level;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Type = type;
             this.ParamCount = paramCount;
@@ -144,8 +146,6 @@ namespace G
             this.ModelPath = modelPath ?? throw new global::System.ArgumentNullException(nameof(modelPath));
             this.TrainingOffset = trainingOffset;
             this.Hash = hash ?? throw new global::System.ArgumentNullException(nameof(hash));
-            this.Object = @object;
-            this.Level = level;
         }
 
         /// <summary>

@@ -134,15 +134,9 @@ namespace G
         /// Parameter to specify a task to execute<br/>
         /// Example: deploy
         /// </param>
-        /// <param name="originalEnvironment">
-        /// Example: staging
-        /// </param>
         /// <param name="environment">
         /// Name for the target deployment environment.<br/>
         /// Example: production
-        /// </param>
-        /// <param name="description">
-        /// Example: Deploy request from hubot
         /// </param>
         /// <param name="createdAt">
         /// Example: 2012-07-20T01:19:13Z
@@ -155,6 +149,12 @@ namespace G
         /// </param>
         /// <param name="repositoryUrl">
         /// Example: https://api.github.com/repos/octocat/example
+        /// </param>
+        /// <param name="originalEnvironment">
+        /// Example: staging
+        /// </param>
+        /// <param name="description">
+        /// Example: Deploy request from hubot
         /// </param>
         /// <param name="transientEnvironment">
         /// Specifies if the given environment is will no longer exist at some point in the future. Default: false.<br/>
@@ -187,13 +187,13 @@ namespace G
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Task = task ?? throw new global::System.ArgumentNullException(nameof(task));
+            this.OriginalEnvironment = originalEnvironment;
             this.Environment = environment ?? throw new global::System.ArgumentNullException(nameof(environment));
+            this.Description = description;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.StatusesUrl = statusesUrl ?? throw new global::System.ArgumentNullException(nameof(statusesUrl));
             this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
-            this.OriginalEnvironment = originalEnvironment;
-            this.Description = description;
             this.TransientEnvironment = transientEnvironment;
             this.ProductionEnvironment = productionEnvironment;
             this.PerformedViaGithubApp = performedViaGithubApp;

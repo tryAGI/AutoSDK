@@ -32,11 +32,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PodcastURLSource" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of source to create.
-        /// </param>
         /// <param name="url">
         /// The URL to create the podcast from.
+        /// </param>
+        /// <param name="type">
+        /// The type of source to create.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -45,8 +45,8 @@ namespace G
             string url,
             string type = "url")
         {
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Type = type;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 
         /// <summary>

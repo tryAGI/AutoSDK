@@ -50,10 +50,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="InviteListResponse" /> class.
         /// </summary>
+        /// <param name="data"></param>
         /// <param name="object">
         /// The object type, which is always `list`
         /// </param>
-        /// <param name="data"></param>
         /// <param name="firstId">
         /// The first `invite_id` in the retrieved `list`
         /// </param>
@@ -73,8 +73,8 @@ namespace G
             string? lastId,
             bool? hasMore)
         {
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Object = @object;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.FirstId = firstId;
             this.LastId = lastId;
             this.HasMore = hasMore;

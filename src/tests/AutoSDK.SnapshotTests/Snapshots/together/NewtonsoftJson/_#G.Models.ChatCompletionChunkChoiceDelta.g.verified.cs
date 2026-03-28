@@ -51,8 +51,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionChunkChoiceDelta" /> class.
         /// </summary>
-        /// <param name="tokenId"></param>
         /// <param name="role"></param>
+        /// <param name="tokenId"></param>
         /// <param name="content"></param>
         /// <param name="toolCalls"></param>
         public ChatCompletionChunkChoiceDelta(
@@ -61,8 +61,8 @@ namespace G
             string? content,
             global::System.Collections.Generic.IList<global::G.ToolChoice2>? toolCalls)
         {
-            this.Role = role;
             this.TokenId = tokenId;
+            this.Role = role;
             this.Content = content;
             this.ToolCalls = toolCalls;
         }

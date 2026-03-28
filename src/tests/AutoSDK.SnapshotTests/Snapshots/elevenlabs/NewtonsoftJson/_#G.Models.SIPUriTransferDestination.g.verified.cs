@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="SIPUriTransferDestination" /> class.
         /// </summary>
+        /// <param name="sipUri"></param>
         /// <param name="type">
         /// Default Value: sip_uri
         /// </param>
-        /// <param name="sipUri"></param>
         public SIPUriTransferDestination(
             string sipUri,
             string? type)
         {
-            this.SipUri = sipUri ?? throw new global::System.ArgumentNullException(nameof(sipUri));
             this.Type = type;
+            this.SipUri = sipUri ?? throw new global::System.ArgumentNullException(nameof(sipUri));
         }
 
         /// <summary>

@@ -72,15 +72,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TransferToAgentToolResultSuccessModel" /> class.
         /// </summary>
+        /// <param name="fromAgent"></param>
+        /// <param name="toAgent"></param>
+        /// <param name="condition"></param>
         /// <param name="resultType">
         /// Default Value: transfer_to_agent_success
         /// </param>
         /// <param name="status">
         /// Default Value: success
         /// </param>
-        /// <param name="fromAgent"></param>
-        /// <param name="toAgent"></param>
-        /// <param name="condition"></param>
         /// <param name="delayMs">
         /// Default Value: 0
         /// </param>
@@ -100,11 +100,11 @@ namespace G
             bool? enableTransferredAgentFirstMessage,
             global::G.BranchInfoVariant1? branchInfo)
         {
+            this.ResultType = resultType;
+            this.Status = status;
             this.FromAgent = fromAgent ?? throw new global::System.ArgumentNullException(nameof(fromAgent));
             this.ToAgent = toAgent ?? throw new global::System.ArgumentNullException(nameof(toAgent));
             this.Condition = condition ?? throw new global::System.ArgumentNullException(nameof(condition));
-            this.ResultType = resultType;
-            this.Status = status;
             this.DelayMs = delayMs;
             this.TransferMessage = transferMessage;
             this.EnableTransferredAgentFirstMessage = enableTransferredAgentFirstMessage;

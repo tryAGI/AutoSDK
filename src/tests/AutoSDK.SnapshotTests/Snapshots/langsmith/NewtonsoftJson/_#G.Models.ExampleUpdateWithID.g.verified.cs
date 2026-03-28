@@ -66,6 +66,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ExampleUpdateWithID" /> class.
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="datasetId"></param>
         /// <param name="inputs"></param>
         /// <param name="outputs"></param>
@@ -75,7 +76,6 @@ namespace G
         /// <param name="overwrite">
         /// Default Value: false
         /// </param>
-        /// <param name="id"></param>
         public ExampleUpdateWithID(
             global::System.Guid id,
             global::System.Guid? datasetId,
@@ -86,7 +86,6 @@ namespace G
             global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split,
             bool? overwrite)
         {
-            this.Id = id;
             this.DatasetId = datasetId;
             this.Inputs = inputs;
             this.Outputs = outputs;
@@ -94,6 +93,7 @@ namespace G
             this.Metadata = metadata;
             this.Split = split;
             this.Overwrite = overwrite;
+            this.Id = id;
         }
 
         /// <summary>

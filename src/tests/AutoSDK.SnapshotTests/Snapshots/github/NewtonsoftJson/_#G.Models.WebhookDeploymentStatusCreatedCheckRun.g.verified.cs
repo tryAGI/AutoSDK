@@ -90,10 +90,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookDeploymentStatusCreatedCheckRun" /> class.
         /// </summary>
-        /// <param name="completedAt"></param>
-        /// <param name="conclusion">
-        /// The result of the completed check run. This value will be `null` until the check run has completed.
-        /// </param>
         /// <param name="detailsUrl"></param>
         /// <param name="externalId"></param>
         /// <param name="headSha">
@@ -112,6 +108,10 @@ namespace G
         /// The current status of the check run. Can be `queued`, `in_progress`, or `completed`.
         /// </param>
         /// <param name="url"></param>
+        /// <param name="completedAt"></param>
+        /// <param name="conclusion">
+        /// The result of the completed check run. This value will be `null` until the check run has completed.
+        /// </param>
         public WebhookDeploymentStatusCreatedCheckRun(
             string detailsUrl,
             string externalId,
@@ -126,6 +126,8 @@ namespace G
             global::System.DateTime? completedAt,
             global::G.WebhookDeploymentStatusCreatedCheckRunConclusion? conclusion)
         {
+            this.CompletedAt = completedAt;
+            this.Conclusion = conclusion;
             this.DetailsUrl = detailsUrl ?? throw new global::System.ArgumentNullException(nameof(detailsUrl));
             this.ExternalId = externalId ?? throw new global::System.ArgumentNullException(nameof(externalId));
             this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
@@ -136,8 +138,6 @@ namespace G
             this.StartedAt = startedAt;
             this.Status = status;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.CompletedAt = completedAt;
-            this.Conclusion = conclusion;
         }
 
         /// <summary>

@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="StaticChunkingStrategyRequestParam" /> class.
         /// </summary>
+        /// <param name="static"></param>
         /// <param name="type">
         /// Always `static`.
         /// </param>
-        /// <param name="static"></param>
         public StaticChunkingStrategyRequestParam(
             global::G.StaticChunkingStrategy @static,
             global::G.StaticChunkingStrategyRequestParamType type)
         {
-            this.Static = @static ?? throw new global::System.ArgumentNullException(nameof(@static));
             this.Type = type;
+            this.Static = @static ?? throw new global::System.ArgumentNullException(nameof(@static));
         }
 
         /// <summary>

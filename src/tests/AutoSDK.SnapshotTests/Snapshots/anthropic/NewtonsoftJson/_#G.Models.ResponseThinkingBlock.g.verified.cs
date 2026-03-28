@@ -37,19 +37,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseThinkingBlock" /> class.
         /// </summary>
+        /// <param name="thinking"></param>
+        /// <param name="signature"></param>
         /// <param name="type">
         /// Default Value: thinking
         /// </param>
-        /// <param name="thinking"></param>
-        /// <param name="signature"></param>
         public ResponseThinkingBlock(
             string thinking,
             string signature,
             global::G.ResponseThinkingBlockType type = global::G.ResponseThinkingBlockType.Thinking)
         {
+            this.Type = type;
             this.Thinking = thinking ?? throw new global::System.ArgumentNullException(nameof(thinking));
             this.Signature = signature ?? throw new global::System.ArgumentNullException(nameof(signature));
-            this.Type = type;
         }
 
         /// <summary>

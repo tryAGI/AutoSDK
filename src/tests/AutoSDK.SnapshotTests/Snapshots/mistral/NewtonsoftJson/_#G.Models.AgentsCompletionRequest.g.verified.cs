@@ -106,6 +106,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AgentsCompletionRequest" /> class.
         /// </summary>
+        /// <param name="messages">
+        /// The prompt(s) to generate completions for, encoded as a list of dict with role and content.
+        /// </param>
+        /// <param name="agentId">
+        /// The ID of the agent to use for this completion.
+        /// </param>
         /// <param name="maxTokens">
         /// The maximum number of tokens to generate in the completion. The token count of your prompt plus `max_tokens` cannot exceed the model's context length.
         /// </param>
@@ -118,9 +124,6 @@ namespace G
         /// </param>
         /// <param name="randomSeed">
         /// The seed to use for random sampling. If set, different calls will generate deterministic results.
-        /// </param>
-        /// <param name="messages">
-        /// The prompt(s) to generate completions for, encoded as a list of dict with role and content.
         /// </param>
         /// <param name="responseFormat"></param>
         /// <param name="tools"></param>
@@ -145,9 +148,6 @@ namespace G
         /// <param name="parallelToolCalls">
         /// Default Value: true
         /// </param>
-        /// <param name="agentId">
-        /// The ID of the agent to use for this completion.
-        /// </param>
         public AgentsCompletionRequest(
             global::System.Collections.Generic.IList<global::G.MessagesItem3> messages,
             string agentId,
@@ -164,12 +164,11 @@ namespace G
             global::G.Prediction? prediction,
             bool? parallelToolCalls)
         {
-            this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
-            this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.MaxTokens = maxTokens;
             this.Stream = stream;
             this.Stop = stop;
             this.RandomSeed = randomSeed;
+            this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.ResponseFormat = responseFormat;
             this.Tools = tools;
             this.ToolChoice = toolChoice;
@@ -178,6 +177,7 @@ namespace G
             this.N = n;
             this.Prediction = prediction;
             this.ParallelToolCalls = parallelToolCalls;
+            this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
         }
 
         /// <summary>

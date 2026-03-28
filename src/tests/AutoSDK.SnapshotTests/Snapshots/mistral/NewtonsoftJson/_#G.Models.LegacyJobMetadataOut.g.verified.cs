@@ -90,6 +90,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="LegacyJobMetadataOut" /> class.
         /// </summary>
+        /// <param name="details"></param>
         /// <param name="expectedDurationSeconds">
         /// The approximated time (in seconds) for the fine-tuning process to complete.
         /// </param>
@@ -112,7 +113,6 @@ namespace G
         /// <param name="deprecated">
         /// Default Value: true
         /// </param>
-        /// <param name="details"></param>
         /// <param name="epochs">
         /// The number of complete passes through the entire training dataset.
         /// </param>
@@ -136,7 +136,6 @@ namespace G
             int? trainingSteps,
             global::G.LegacyJobMetadataOutObject? @object)
         {
-            this.Details = details ?? throw new global::System.ArgumentNullException(nameof(details));
             this.ExpectedDurationSeconds = expectedDurationSeconds;
             this.Cost = cost;
             this.CostCurrency = costCurrency;
@@ -145,6 +144,7 @@ namespace G
             this.DataTokens = dataTokens;
             this.EstimatedStartTime = estimatedStartTime;
             this.Deprecated = deprecated;
+            this.Details = details ?? throw new global::System.ArgumentNullException(nameof(details));
             this.Epochs = epochs;
             this.TrainingSteps = trainingSteps;
             this.Object = @object;

@@ -41,14 +41,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ASTGreaterThanOrEqualsOperatorNodeOutput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: gte_operator
-        /// </param>
         /// <param name="left">
         /// Left operand of the binary operator.
         /// </param>
         /// <param name="right">
         /// Right operand of the binary operator.
+        /// </param>
+        /// <param name="type">
+        /// Default Value: gte_operator
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -58,9 +58,9 @@ namespace G
             global::G.Right6 right,
             string type = "gte_operator")
         {
+            this.Type = type;
             this.Left = left;
             this.Right = right;
-            this.Type = type;
         }
 
         /// <summary>

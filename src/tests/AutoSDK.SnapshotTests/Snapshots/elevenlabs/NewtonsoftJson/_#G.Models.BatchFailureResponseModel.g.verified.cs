@@ -43,22 +43,22 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchFailureResponseModel" /> class.
         /// </summary>
-        /// <param name="status">
-        /// Default Value: failure
-        /// </param>
         /// <param name="errorCode"></param>
         /// <param name="errorStatus"></param>
         /// <param name="errorMessage"></param>
+        /// <param name="status">
+        /// Default Value: failure
+        /// </param>
         public BatchFailureResponseModel(
             int errorCode,
             string errorStatus,
             string errorMessage,
             string status = "failure")
         {
+            this.Status = status;
             this.ErrorCode = errorCode;
             this.ErrorStatus = errorStatus ?? throw new global::System.ArgumentNullException(nameof(errorStatus));
             this.ErrorMessage = errorMessage ?? throw new global::System.ArgumentNullException(nameof(errorMessage));
-            this.Status = status;
         }
 
         /// <summary>

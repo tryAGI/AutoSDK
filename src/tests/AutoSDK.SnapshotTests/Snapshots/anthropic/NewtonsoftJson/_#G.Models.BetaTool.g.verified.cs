@@ -51,11 +51,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaTool" /> class.
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="description">
-        /// Description of what this tool does.<br/>
-        /// Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.
-        /// </param>
         /// <param name="name">
         /// Name of the tool.<br/>
         /// This is how the tool will be called by the model and in tool_use blocks.
@@ -63,6 +58,11 @@ namespace G
         /// <param name="inputSchema">
         /// [JSON schema](https://json-schema.org/draft/2020-12) for this tool's input.<br/>
         /// This defines the shape of the `input` that your tool accepts and that the model will produce.
+        /// </param>
+        /// <param name="type"></param>
+        /// <param name="description">
+        /// Description of what this tool does.<br/>
+        /// Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.
         /// </param>
         /// <param name="cacheControl"></param>
         public BetaTool(
@@ -72,10 +72,10 @@ namespace G
             string? description,
             global::G.CacheControlVariant113? cacheControl)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));
             this.Type = type;
             this.Description = description;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));
             this.CacheControl = cacheControl;
         }
 

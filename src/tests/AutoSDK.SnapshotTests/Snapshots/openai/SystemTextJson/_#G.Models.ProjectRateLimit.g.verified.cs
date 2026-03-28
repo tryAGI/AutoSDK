@@ -77,9 +77,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectRateLimit" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The object type, which is always `project.rate_limit`
-        /// </param>
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints.
         /// </param>
@@ -91,6 +88,9 @@ namespace G
         /// </param>
         /// <param name="maxTokensPer1Minute">
         /// The maximum tokens per minute.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `project.rate_limit`
         /// </param>
         /// <param name="maxImagesPer1Minute">
         /// The maximum images per minute. Only present for relevant models.
@@ -118,11 +118,11 @@ namespace G
             int? maxRequestsPer1Day,
             int? batch1DayMaxInputTokens)
         {
+            this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.MaxRequestsPer1Minute = maxRequestsPer1Minute;
             this.MaxTokensPer1Minute = maxTokensPer1Minute;
-            this.Object = @object;
             this.MaxImagesPer1Minute = maxImagesPer1Minute;
             this.MaxAudioMegabytesPer1Minute = maxAudioMegabytesPer1Minute;
             this.MaxRequestsPer1Day = maxRequestsPer1Day;

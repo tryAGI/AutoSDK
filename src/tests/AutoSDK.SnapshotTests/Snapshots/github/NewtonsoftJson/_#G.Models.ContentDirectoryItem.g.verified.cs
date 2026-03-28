@@ -88,13 +88,13 @@ namespace G
         /// <param name="size"></param>
         /// <param name="name"></param>
         /// <param name="path"></param>
-        /// <param name="content"></param>
         /// <param name="sha"></param>
         /// <param name="url"></param>
+        /// <param name="links"></param>
+        /// <param name="content"></param>
         /// <param name="gitUrl"></param>
         /// <param name="htmlUrl"></param>
         /// <param name="downloadUrl"></param>
-        /// <param name="links"></param>
         public ContentDirectoryItem(
             global::G.ContentDirectoryItemType type,
             int size,
@@ -112,13 +112,13 @@ namespace G
             this.Size = size;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
+            this.Content = content;
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
-            this.Content = content;
             this.GitUrl = gitUrl;
             this.HtmlUrl = htmlUrl;
             this.DownloadUrl = downloadUrl;
+            this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
         }
 
         /// <summary>

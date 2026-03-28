@@ -43,11 +43,11 @@ namespace G
         /// Initializes a new instance of the <see cref="Generation" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="prompt">
-        /// Prompt used for generations.
-        /// </param>
         /// <param name="generations">
         /// List of generated results
+        /// </param>
+        /// <param name="prompt">
+        /// Prompt used for generations.
         /// </param>
         /// <param name="meta"></param>
         public Generation(
@@ -57,8 +57,8 @@ namespace G
             global::G.ApiMeta? meta)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Generations = generations ?? throw new global::System.ArgumentNullException(nameof(generations));
             this.Prompt = prompt;
+            this.Generations = generations ?? throw new global::System.ArgumentNullException(nameof(generations));
             this.Meta = meta;
         }
 

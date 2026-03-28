@@ -48,11 +48,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChecksUpdateRequestOutput" /> class.
         /// </summary>
-        /// <param name="title">
-        /// **Required**.
-        /// </param>
         /// <param name="summary">
         /// Can contain Markdown.
+        /// </param>
+        /// <param name="title">
+        /// **Required**.
         /// </param>
         /// <param name="text">
         /// Can contain Markdown.
@@ -70,8 +70,8 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ChecksUpdateRequestOutputAnnotation>? annotations,
             global::System.Collections.Generic.IList<global::G.ChecksUpdateRequestOutputImage>? images)
         {
-            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
             this.Title = title;
+            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
             this.Text = text;
             this.Annotations = annotations;
             this.Images = images;

@@ -39,23 +39,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeClientEventConversationItemDelete" /> class.
         /// </summary>
+        /// <param name="itemId">
+        /// The ID of the item to delete.
+        /// </param>
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
         /// <param name="type">
         /// The event type, must be `conversation.item.delete`.
         /// </param>
-        /// <param name="itemId">
-        /// The ID of the item to delete.
-        /// </param>
         public RealtimeClientEventConversationItemDelete(
             string itemId,
             string? eventId,
             global::G.RealtimeClientEventConversationItemDeleteType type)
         {
-            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.EventId = eventId;
             this.Type = type;
+            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
         }
 
         /// <summary>

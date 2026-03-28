@@ -53,13 +53,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectServiceAccountApiKey" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The object type, which is always `organization.project.service_account.api_key`
-        /// </param>
         /// <param name="value"></param>
         /// <param name="name"></param>
         /// <param name="createdAt"></param>
         /// <param name="id"></param>
+        /// <param name="object">
+        /// The object type, which is always `organization.project.service_account.api_key`
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -70,11 +70,11 @@ namespace G
             string id,
             global::G.ProjectServiceAccountApiKeyObject @object)
         {
+            this.Object = @object;
             this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CreatedAt = createdAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Object = @object;
         }
 
         /// <summary>

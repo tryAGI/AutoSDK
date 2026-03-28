@@ -56,19 +56,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ComputerCallOutputItemParam" /> class.
         /// </summary>
-        /// <param name="id"></param>
         /// <param name="callId">
         /// The ID of the computer tool call that produced the output.
-        /// </param>
-        /// <param name="type">
-        /// The type of the computer tool call output. Always `computer_call_output`.<br/>
-        /// Default Value: computer_call_output
         /// </param>
         /// <param name="output">
         /// A computer screenshot image used with the computer use tool.
         /// </param>
+        /// <param name="id"></param>
         /// <param name="acknowledgedSafetyChecks"></param>
         /// <param name="status"></param>
+        /// <param name="type">
+        /// The type of the computer tool call output. Always `computer_call_output`.<br/>
+        /// Default Value: computer_call_output
+        /// </param>
         public ComputerCallOutputItemParam(
             string callId,
             global::G.ComputerScreenshotImage output,
@@ -77,10 +77,10 @@ namespace G
             global::G.ComputerCallOutputItemParamStatus2? status,
             global::G.ComputerCallOutputItemParamType type = global::G.ComputerCallOutputItemParamType.ComputerCallOutput)
         {
-            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
-            this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
             this.Id = id;
+            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Type = type;
+            this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
             this.AcknowledgedSafetyChecks = acknowledgedSafetyChecks;
             this.Status = status;
         }

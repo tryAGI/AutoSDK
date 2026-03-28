@@ -67,10 +67,10 @@ namespace G
         /// <param name="name"></param>
         /// <param name="accelerators"></param>
         /// <param name="status"></param>
+        /// <param name="consoleLink"></param>
         /// <param name="autoscaling">
         /// Base model for schemas.
         /// </param>
-        /// <param name="consoleLink"></param>
         /// <param name="useSpotInstances">
         /// Default Value: false
         /// </param>
@@ -92,8 +92,8 @@ namespace G
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Accelerators = accelerators ?? throw new global::System.ArgumentNullException(nameof(accelerators));
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
-            this.ConsoleLink = consoleLink ?? throw new global::System.ArgumentNullException(nameof(consoleLink));
             this.Autoscaling = autoscaling;
+            this.ConsoleLink = consoleLink ?? throw new global::System.ArgumentNullException(nameof(consoleLink));
             this.UseSpotInstances = useSpotInstances;
             this.NumPipelines = numPipelines;
         }

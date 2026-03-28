@@ -62,13 +62,13 @@ namespace G
         /// <param name="healthPercentage">
         /// Example: 100
         /// </param>
+        /// <param name="files"></param>
         /// <param name="description">
         /// Example: My first repository on GitHub!
         /// </param>
         /// <param name="documentation">
         /// Example: example.com
         /// </param>
-        /// <param name="files"></param>
         /// <param name="updatedAt">
         /// Example: 2017-02-28T19:09:29Z
         /// </param>
@@ -84,9 +84,9 @@ namespace G
             bool? contentReportsEnabled)
         {
             this.HealthPercentage = healthPercentage;
-            this.Files = files ?? throw new global::System.ArgumentNullException(nameof(files));
             this.Description = description;
             this.Documentation = documentation;
+            this.Files = files ?? throw new global::System.ArgumentNullException(nameof(files));
             this.UpdatedAt = updatedAt;
             this.ContentReportsEnabled = contentReportsEnabled;
         }

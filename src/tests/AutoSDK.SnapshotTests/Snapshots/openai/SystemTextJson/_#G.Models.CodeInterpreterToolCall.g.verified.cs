@@ -63,12 +63,6 @@ namespace G
         /// <param name="id">
         /// The unique ID of the code interpreter tool call.
         /// </param>
-        /// <param name="type">
-        /// The type of the code interpreter tool call. Always `code_interpreter_call`.
-        /// </param>
-        /// <param name="containerId">
-        /// The ID of the container used to run the code.
-        /// </param>
         /// <param name="code">
         /// The code to run.
         /// </param>
@@ -77,6 +71,12 @@ namespace G
         /// </param>
         /// <param name="results">
         /// The results of the code interpreter tool call.
+        /// </param>
+        /// <param name="type">
+        /// The type of the code interpreter tool call. Always `code_interpreter_call`.
+        /// </param>
+        /// <param name="containerId">
+        /// The ID of the container used to run the code.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -90,11 +90,11 @@ namespace G
             string? containerId)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Type = type;
+            this.ContainerId = containerId;
             this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
             this.Status = status;
             this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
-            this.Type = type;
-            this.ContainerId = containerId;
         }
 
         /// <summary>

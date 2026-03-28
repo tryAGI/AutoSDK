@@ -36,11 +36,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="LogprobItem" /> class.
         /// </summary>
-        /// <param name="text">
-        /// The text chunk for which the log probabilities was calculated.
-        /// </param>
         /// <param name="tokenIds">
         /// The token ids of each token used to construct the text chunk.
+        /// </param>
+        /// <param name="text">
+        /// The text chunk for which the log probabilities was calculated.
         /// </param>
         /// <param name="logprobs">
         /// The log probability of each token used to construct the text chunk.
@@ -50,8 +50,8 @@ namespace G
             string? text,
             global::System.Collections.Generic.IList<float>? logprobs)
         {
-            this.TokenIds = tokenIds ?? throw new global::System.ArgumentNullException(nameof(tokenIds));
             this.Text = text;
+            this.TokenIds = tokenIds ?? throw new global::System.ArgumentNullException(nameof(tokenIds));
             this.Logprobs = logprobs;
         }
 

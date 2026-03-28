@@ -51,11 +51,11 @@ namespace G
         /// <param name="type">
         /// The type of error (e.g., "invalid_request_error", "server_error").
         /// </param>
-        /// <param name="code">
-        /// Error code, if any.
-        /// </param>
         /// <param name="message">
         /// A human-readable error message.
+        /// </param>
+        /// <param name="code">
+        /// Error code, if any.
         /// </param>
         /// <param name="param">
         /// Parameter related to the error, if any.
@@ -71,8 +71,8 @@ namespace G
             string? eventId)
         {
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Code = code;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Param = param;
             this.EventId = eventId;
         }

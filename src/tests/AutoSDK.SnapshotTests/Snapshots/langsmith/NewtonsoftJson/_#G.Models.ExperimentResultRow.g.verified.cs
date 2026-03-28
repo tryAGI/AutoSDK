@@ -78,13 +78,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ExperimentResultRow" /> class.
         /// </summary>
-        /// <param name="rowId"></param>
         /// <param name="inputs"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="rowId"></param>
         /// <param name="expectedOutputs"></param>
         /// <param name="actualOutputs"></param>
         /// <param name="evaluationScores"></param>
-        /// <param name="startTime"></param>
-        /// <param name="endTime"></param>
         /// <param name="runName"></param>
         /// <param name="error"></param>
         /// <param name="runMetadata"></param>
@@ -100,13 +100,13 @@ namespace G
             string? error,
             object? runMetadata)
         {
-            this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
-            this.StartTime = startTime;
-            this.EndTime = endTime;
             this.RowId = rowId;
+            this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
             this.ExpectedOutputs = expectedOutputs;
             this.ActualOutputs = actualOutputs;
             this.EvaluationScores = evaluationScores;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
             this.RunName = runName;
             this.Error = error;
             this.RunMetadata = runMetadata;

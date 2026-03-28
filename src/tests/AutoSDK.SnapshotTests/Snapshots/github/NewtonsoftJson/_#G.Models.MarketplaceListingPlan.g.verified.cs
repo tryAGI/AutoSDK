@@ -138,13 +138,13 @@ namespace G
         /// <param name="hasFreeTrial">
         /// Example: true
         /// </param>
-        /// <param name="unitName"></param>
         /// <param name="state">
         /// Example: published
         /// </param>
         /// <param name="bullets">
         /// Example: [Up to 25 private repositories, 11 concurrent builds]
         /// </param>
+        /// <param name="unitName"></param>
         public MarketplaceListingPlan(
             string url,
             string accountsUrl,
@@ -170,9 +170,9 @@ namespace G
             this.YearlyPriceInCents = yearlyPriceInCents;
             this.PriceModel = priceModel;
             this.HasFreeTrial = hasFreeTrial;
+            this.UnitName = unitName;
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
             this.Bullets = bullets ?? throw new global::System.ArgumentNullException(nameof(bullets));
-            this.UnitName = unitName;
         }
 
         /// <summary>

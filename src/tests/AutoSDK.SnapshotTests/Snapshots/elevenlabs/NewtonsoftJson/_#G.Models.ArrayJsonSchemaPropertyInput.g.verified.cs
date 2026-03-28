@@ -36,19 +36,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ArrayJsonSchemaPropertyInput" /> class.
         /// </summary>
+        /// <param name="items"></param>
         /// <param name="type">
         /// Default Value: array
         /// </param>
         /// <param name="description"></param>
-        /// <param name="items"></param>
         public ArrayJsonSchemaPropertyInput(
             global::G.OneOf<global::G.LiteralJsonSchemaProperty, global::G.ObjectJsonSchemaPropertyInput, global::G.ArrayJsonSchemaPropertyInput> items,
             string? type,
             string? description)
         {
-            this.Items = items;
             this.Type = type;
             this.Description = description;
+            this.Items = items;
         }
 
         /// <summary>

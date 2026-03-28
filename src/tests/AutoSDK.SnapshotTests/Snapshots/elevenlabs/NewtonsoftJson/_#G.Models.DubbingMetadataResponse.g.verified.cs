@@ -82,18 +82,18 @@ namespace G
         /// <param name="status">
         /// The state this dub is in.
         /// </param>
-        /// <param name="sourceLanguage">
-        /// Once dubbing has completed, the ISO-639-1 code of the original media's source language.
-        /// </param>
         /// <param name="targetLanguages">
         /// The ISO-639-1 code of the languages this media has been dubbed into.
+        /// </param>
+        /// <param name="createdAt">
+        /// Timestamp this dub was created.
+        /// </param>
+        /// <param name="sourceLanguage">
+        /// Once dubbing has completed, the ISO-639-1 code of the original media's source language.
         /// </param>
         /// <param name="editable">
         /// Whether this dubbing project is editable in Dubbing Studio.<br/>
         /// Default Value: false
-        /// </param>
-        /// <param name="createdAt">
-        /// Timestamp this dub was created.
         /// </param>
         /// <param name="mediaMetadata">
         /// Metadata, such as the length in seconds and content type, of the dubbed content.
@@ -115,10 +115,10 @@ namespace G
             this.DubbingId = dubbingId ?? throw new global::System.ArgumentNullException(nameof(dubbingId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
-            this.TargetLanguages = targetLanguages ?? throw new global::System.ArgumentNullException(nameof(targetLanguages));
-            this.CreatedAt = createdAt;
             this.SourceLanguage = sourceLanguage;
+            this.TargetLanguages = targetLanguages ?? throw new global::System.ArgumentNullException(nameof(targetLanguages));
             this.Editable = editable;
+            this.CreatedAt = createdAt;
             this.MediaMetadata = mediaMetadata;
             this.Error = error;
         }

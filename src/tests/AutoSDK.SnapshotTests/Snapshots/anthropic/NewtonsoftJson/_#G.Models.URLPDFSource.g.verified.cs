@@ -30,14 +30,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="URLPDFSource" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="url"></param>
+        /// <param name="type"></param>
         public URLPDFSource(
             string url,
             global::G.URLPDFSourceType type)
         {
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Type = type;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 
         /// <summary>

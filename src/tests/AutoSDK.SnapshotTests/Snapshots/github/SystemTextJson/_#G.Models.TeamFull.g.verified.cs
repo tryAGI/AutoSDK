@@ -193,17 +193,6 @@ namespace G
         /// <param name="slug">
         /// Example: justice-league
         /// </param>
-        /// <param name="description">
-        /// Example: A great team.
-        /// </param>
-        /// <param name="privacy">
-        /// The level of privacy this team should have<br/>
-        /// Example: closed
-        /// </param>
-        /// <param name="notificationSetting">
-        /// The notification setting the team has set<br/>
-        /// Example: notifications_enabled
-        /// </param>
         /// <param name="permission">
         /// Permission that the team will have for its repositories<br/>
         /// Example: push
@@ -213,9 +202,6 @@ namespace G
         /// </param>
         /// <param name="repositoriesUrl">
         /// Example: https://api.github.com/organizations/1/team/1/repos
-        /// </param>
-        /// <param name="parent">
-        /// Groups of organization members that gives permissions on specified repositories.
         /// </param>
         /// <param name="membersCount">
         /// Example: 3
@@ -231,6 +217,20 @@ namespace G
         /// </param>
         /// <param name="organization">
         /// Team Organization
+        /// </param>
+        /// <param name="description">
+        /// Example: A great team.
+        /// </param>
+        /// <param name="privacy">
+        /// The level of privacy this team should have<br/>
+        /// Example: closed
+        /// </param>
+        /// <param name="notificationSetting">
+        /// The notification setting the team has set<br/>
+        /// Example: notifications_enabled
+        /// </param>
+        /// <param name="parent">
+        /// Groups of organization members that gives permissions on specified repositories.
         /// </param>
         /// <param name="ldapDn">
         /// Distinguished Name (DN) that team maps to within LDAP environment<br/>
@@ -266,18 +266,18 @@ namespace G
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
+            this.Description = description;
+            this.Privacy = privacy;
+            this.NotificationSetting = notificationSetting;
             this.Permission = permission ?? throw new global::System.ArgumentNullException(nameof(permission));
             this.MembersUrl = membersUrl ?? throw new global::System.ArgumentNullException(nameof(membersUrl));
             this.RepositoriesUrl = repositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(repositoriesUrl));
+            this.Parent = parent;
             this.MembersCount = membersCount;
             this.ReposCount = reposCount;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.Organization = organization ?? throw new global::System.ArgumentNullException(nameof(organization));
-            this.Description = description;
-            this.Privacy = privacy;
-            this.NotificationSetting = notificationSetting;
-            this.Parent = parent;
             this.LdapDn = ldapDn;
         }
 

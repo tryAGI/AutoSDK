@@ -45,11 +45,11 @@ namespace G
         /// Initializes a new instance of the <see cref="Function" /> class.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="parameters"></param>
         /// <param name="description"></param>
         /// <param name="strict">
         /// Default Value: false
         /// </param>
-        /// <param name="parameters"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -60,9 +60,9 @@ namespace G
             bool? strict)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
             this.Description = description;
             this.Strict = strict;
+            this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
         }
 
         /// <summary>

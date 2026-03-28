@@ -52,12 +52,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationItemTruncatePayload" /> class.
         /// </summary>
-        /// <param name="eventId">
-        /// Optional client-generated ID.
-        /// </param>
-        /// <param name="type">
-        /// The event type.
-        /// </param>
         /// <param name="itemId">
         /// The ID of the assistant message item to truncate.
         /// </param>
@@ -66,6 +60,12 @@ namespace G
         /// </param>
         /// <param name="audioEndMs">
         /// Inclusive duration up to which audio is truncated, in milliseconds.
+        /// </param>
+        /// <param name="eventId">
+        /// Optional client-generated ID.
+        /// </param>
+        /// <param name="type">
+        /// The event type.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -77,11 +77,11 @@ namespace G
             string? eventId,
             global::G.ConversationItemTruncatePayloadType type)
         {
+            this.EventId = eventId;
+            this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.ContentIndex = contentIndex;
             this.AudioEndMs = audioEndMs;
-            this.EventId = eventId;
-            this.Type = type;
         }
 
         /// <summary>

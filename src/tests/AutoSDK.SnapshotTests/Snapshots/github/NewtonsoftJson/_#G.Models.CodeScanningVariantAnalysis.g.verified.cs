@@ -111,6 +111,7 @@ namespace G
         /// <param name="queryPackUrl">
         /// The download url for the query pack.
         /// </param>
+        /// <param name="status"></param>
         /// <param name="createdAt">
         /// The date and time at which the variant analysis was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
         /// </param>
@@ -120,7 +121,6 @@ namespace G
         /// <param name="completedAt">
         /// The date and time at which the variant analysis was completed, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ. Will be null if the variant analysis has not yet completed or this information is not available.
         /// </param>
-        /// <param name="status"></param>
         /// <param name="actionsWorkflowRunId">
         /// The GitHub Actions workflow run used to execute this variant analysis. This is only available if the workflow run has started.
         /// </param>
@@ -151,10 +151,10 @@ namespace G
             this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
             this.QueryLanguage = queryLanguage;
             this.QueryPackUrl = queryPackUrl ?? throw new global::System.ArgumentNullException(nameof(queryPackUrl));
-            this.Status = status;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.CompletedAt = completedAt;
+            this.Status = status;
             this.ActionsWorkflowRunId = actionsWorkflowRunId;
             this.FailureReason = failureReason;
             this.ScannedRepositories = scannedRepositories;

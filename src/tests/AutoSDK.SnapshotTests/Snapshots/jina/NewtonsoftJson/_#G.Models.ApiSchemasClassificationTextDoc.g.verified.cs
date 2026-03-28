@@ -32,17 +32,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiSchemasClassificationTextDoc" /> class.
         /// </summary>
+        /// <param name="text"></param>
         /// <param name="id">
         /// The ID of the BaseDoc. This is useful for indexing in vector stores. If not set by user, it will automatically be assigned a random value<br/>
         /// Example: e10b550cf99e2e072e22420af5c6eb47
         /// </param>
-        /// <param name="text"></param>
         public ApiSchemasClassificationTextDoc(
             string text,
             string? id)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Id = id;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

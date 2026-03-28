@@ -109,9 +109,6 @@ namespace G
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `thread.message`.
-        /// </param>
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) for when the message was created.
         /// </param>
@@ -121,6 +118,15 @@ namespace G
         /// <param name="status">
         /// The status of the message, which can be either `in_progress`, `incomplete`, or `completed`.
         /// </param>
+        /// <param name="role">
+        /// The entity that produced the message. One of `user` or `assistant`.
+        /// </param>
+        /// <param name="content">
+        /// The content of the message in array of text and/or images.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `thread.message`.
+        /// </param>
         /// <param name="incompleteDetails">
         /// On an incomplete message, details about why the message is incomplete.
         /// </param>
@@ -129,12 +135,6 @@ namespace G
         /// </param>
         /// <param name="incompleteAt">
         /// The Unix timestamp (in seconds) for when the message was marked as incomplete.
-        /// </param>
-        /// <param name="role">
-        /// The entity that produced the message. One of `user` or `assistant`.
-        /// </param>
-        /// <param name="content">
-        /// The content of the message in array of text and/or images.
         /// </param>
         /// <param name="assistantId">
         /// If applicable, the ID of the [assistant](/docs/api-reference/assistants) that authored this message.
@@ -169,15 +169,15 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.CreatedAt = createdAt;
             this.ThreadId = threadId ?? throw new global::System.ArgumentNullException(nameof(threadId));
             this.Status = status;
-            this.Role = role;
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.Object = @object;
             this.IncompleteDetails = incompleteDetails;
             this.CompletedAt = completedAt;
             this.IncompleteAt = incompleteAt;
+            this.Role = role;
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.AssistantId = assistantId;
             this.RunId = runId;
             this.Attachments = attachments;

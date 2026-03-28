@@ -42,20 +42,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookStatusCommitCommitVerification" /> class.
         /// </summary>
-        /// <param name="payload"></param>
         /// <param name="reason"></param>
-        /// <param name="signature"></param>
         /// <param name="verified"></param>
+        /// <param name="payload"></param>
+        /// <param name="signature"></param>
         public WebhookStatusCommitCommitVerification(
             global::G.WebhookStatusCommitCommitVerificationReason reason,
             bool verified,
             string? payload,
             string? signature)
         {
-            this.Reason = reason;
-            this.Verified = verified;
             this.Payload = payload;
+            this.Reason = reason;
             this.Signature = signature;
+            this.Verified = verified;
         }
 
         /// <summary>

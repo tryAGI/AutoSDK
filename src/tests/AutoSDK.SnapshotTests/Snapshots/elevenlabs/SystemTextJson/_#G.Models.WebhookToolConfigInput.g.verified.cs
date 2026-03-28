@@ -114,13 +114,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookToolConfigInput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of tool<br/>
-        /// Default Value: webhook
-        /// </param>
         /// <param name="name"></param>
         /// <param name="description">
         /// Description of when the tool should be used and what it does.
+        /// </param>
+        /// <param name="apiSchema">
+        /// The schema for the outgoing webhoook, including parameters and URL specification<br/>
+        /// Example: {"method":"GET","path_params_schema":{"agent_id":{"type":"string"}},"query_params_schema":{"param1":{"type":"string"}},"request_body_schema":{"param1":{"type":"string"}},"request_headers":{"Authorization":"Bearer {api_key}"},"url":"https://example.com/agents/{agent_id}"}
+        /// </param>
+        /// <param name="type">
+        /// The type of tool<br/>
+        /// Default Value: webhook
         /// </param>
         /// <param name="responseTimeoutSecs">
         /// The maximum time in seconds to wait for the tool call to complete. Must be between 5 and 120 seconds (inclusive).<br/>
@@ -156,10 +160,6 @@ namespace G
         /// Determines when and how the tool executes: 'immediate' executes the tool right away when requested by the LLM, 'post_tool_speech' waits for the agent to finish speaking before executing, 'async' runs the tool in the background without blocking - best for long-running operations.<br/>
         /// Default Value: immediate
         /// </param>
-        /// <param name="apiSchema">
-        /// The schema for the outgoing webhoook, including parameters and URL specification<br/>
-        /// Example: {"method":"GET","path_params_schema":{"agent_id":{"type":"string"}},"query_params_schema":{"param1":{"type":"string"}},"request_body_schema":{"param1":{"type":"string"}},"request_headers":{"Authorization":"Bearer {api_key}"},"url":"https://example.com/agents/{agent_id}"}
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -178,10 +178,9 @@ namespace G
             global::G.DynamicVariablesConfig? dynamicVariables,
             global::G.ToolExecutionMode? executionMode)
         {
+            this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.ApiSchema = apiSchema ?? throw new global::System.ArgumentNullException(nameof(apiSchema));
-            this.Type = type;
             this.ResponseTimeoutSecs = responseTimeoutSecs;
             this.DisableInterruptions = disableInterruptions;
             this.ForcePreToolSpeech = forcePreToolSpeech;
@@ -191,6 +190,7 @@ namespace G
             this.ToolErrorHandlingMode = toolErrorHandlingMode;
             this.DynamicVariables = dynamicVariables;
             this.ExecutionMode = executionMode;
+            this.ApiSchema = apiSchema ?? throw new global::System.ArgumentNullException(nameof(apiSchema));
         }
 
         /// <summary>

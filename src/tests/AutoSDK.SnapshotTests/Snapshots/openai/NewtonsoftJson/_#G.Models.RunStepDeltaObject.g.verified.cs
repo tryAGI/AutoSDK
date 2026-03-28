@@ -39,11 +39,11 @@ namespace G
         /// <param name="id">
         /// The identifier of the run step, which can be referenced in API endpoints.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `thread.run.step.delta`.
-        /// </param>
         /// <param name="delta">
         /// The delta containing the fields that have changed on the run step.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `thread.run.step.delta`.
         /// </param>
         public RunStepDeltaObject(
             string id,
@@ -51,8 +51,8 @@ namespace G
             global::G.RunStepDeltaObjectObject @object)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.Object = @object;
+            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
         }
 
         /// <summary>

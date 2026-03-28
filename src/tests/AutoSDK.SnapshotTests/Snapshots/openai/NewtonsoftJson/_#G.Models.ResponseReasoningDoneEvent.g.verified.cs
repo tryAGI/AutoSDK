@@ -54,9 +54,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseReasoningDoneEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always 'response.reasoning.done'.
-        /// </param>
         /// <param name="itemId">
         /// The unique identifier of the item for which reasoning is finalized.
         /// </param>
@@ -72,6 +69,9 @@ namespace G
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always 'response.reasoning.done'.
+        /// </param>
         public ResponseReasoningDoneEvent(
             string itemId,
             int outputIndex,
@@ -80,12 +80,12 @@ namespace G
             int sequenceNumber,
             global::G.ResponseReasoningDoneEventType type)
         {
+            this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.ContentIndex = contentIndex;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.SequenceNumber = sequenceNumber;
-            this.Type = type;
         }
 
         /// <summary>

@@ -37,11 +37,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WhatsAppTemplateTextParam" /> class.
         /// </summary>
+        /// <param name="text"></param>
         /// <param name="parameterName"></param>
         /// <param name="type">
         /// Default Value: text
         /// </param>
-        /// <param name="text"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -50,9 +50,9 @@ namespace G
             string? parameterName,
             string? type)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.ParameterName = parameterName;
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

@@ -84,19 +84,19 @@ namespace G
         /// <param name="name">
         /// Name to reference the LLM. This will be used in other endpoints (like query) when using this LLM. If this name conflicts with a global LLM (a LLM that is preconfigured with the Vectara platform), then it will override that LLM for all usages.
         /// </param>
-        /// <param name="description">
-        /// Description of the LLM.
-        /// </param>
         /// <param name="model">
         /// The Claude model name to use (e.g. claude-3-5-sonnet-20241022, claude-3-opus-20240229, etc).
+        /// </param>
+        /// <param name="auth">
+        /// Authentication configuration for Anthropic LLM via direct Anthropic API (use RemoteAuth with header "x-api-key"), AWS Bedrock, or GCP Vertex AI Model Garden
+        /// </param>
+        /// <param name="description">
+        /// Description of the LLM.
         /// </param>
         /// <param name="uri">
         /// Optional custom endpoint URI for the Anthropic API. Defaults to https://api.anthropic.com/v1/messages if not specified when using direct Anthropic API (header auth with x-api-key). Not required when using Bedrock or Vertex authentication as the endpoint is determined from region/project configuration.<br/>
         /// Default Value: https://api.anthropic.com/v1/messages<br/>
         /// Example: https://api.anthropic.com/v1/messages
-        /// </param>
-        /// <param name="auth">
-        /// Authentication configuration for Anthropic LLM via direct Anthropic API (use RemoteAuth with header "x-api-key"), AWS Bedrock, or GCP Vertex AI Model Garden
         /// </param>
         /// <param name="headers">
         /// Optional additional headers to send with the request
@@ -120,10 +120,10 @@ namespace G
         {
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.Auth = auth;
             this.Description = description;
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Uri = uri;
+            this.Auth = auth;
             this.Headers = headers;
             this.TestModelParameters = testModelParameters;
             this.Capabilities = capabilities;

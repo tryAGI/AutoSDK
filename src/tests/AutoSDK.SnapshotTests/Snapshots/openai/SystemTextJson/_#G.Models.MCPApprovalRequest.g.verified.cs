@@ -53,9 +53,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MCPApprovalRequest" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the item. Always `mcp_approval_request`.
-        /// </param>
         /// <param name="id">
         /// The unique ID of the approval request.
         /// </param>
@@ -68,6 +65,9 @@ namespace G
         /// <param name="arguments">
         /// A JSON string of arguments for the tool.
         /// </param>
+        /// <param name="type">
+        /// The type of the item. Always `mcp_approval_request`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -78,11 +78,11 @@ namespace G
             string arguments,
             global::G.MCPApprovalRequestType type)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
-            this.Type = type;
         }
 
         /// <summary>

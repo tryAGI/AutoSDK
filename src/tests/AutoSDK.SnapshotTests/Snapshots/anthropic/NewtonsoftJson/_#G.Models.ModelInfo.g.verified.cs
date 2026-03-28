@@ -45,11 +45,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelInfo" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Object type.<br/>
-        /// For Models, this is always `"model"`.<br/>
-        /// Default Value: model
-        /// </param>
         /// <param name="id">
         /// Unique model identifier.
         /// </param>
@@ -59,16 +54,21 @@ namespace G
         /// <param name="createdAt">
         /// RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
         /// </param>
+        /// <param name="type">
+        /// Object type.<br/>
+        /// For Models, this is always `"model"`.<br/>
+        /// Default Value: model
+        /// </param>
         public ModelInfo(
             string id,
             string displayName,
             global::System.DateTime createdAt,
             global::G.ModelInfoType type = global::G.ModelInfoType.Model)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.CreatedAt = createdAt;
-            this.Type = type;
         }
 
         /// <summary>

@@ -101,6 +101,15 @@ namespace G
         /// <param name="createdAt">
         /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ.`
         /// </param>
+        /// <param name="htmlUrl">
+        /// The GitHub URL of the alert resource.
+        /// </param>
+        /// <param name="number">
+        /// The code scanning alert number.
+        /// </param>
+        /// <param name="rule"></param>
+        /// <param name="tool"></param>
+        /// <param name="url"></param>
         /// <param name="dismissedAt">
         /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
         /// </param>
@@ -108,20 +117,11 @@ namespace G
         /// <param name="dismissedReason">
         /// The reason for dismissing or closing the alert.
         /// </param>
-        /// <param name="htmlUrl">
-        /// The GitHub URL of the alert resource.
-        /// </param>
         /// <param name="instancesUrl"></param>
         /// <param name="mostRecentInstance"></param>
-        /// <param name="number">
-        /// The code scanning alert number.
-        /// </param>
-        /// <param name="rule"></param>
         /// <param name="state">
         /// State of a code scanning alert.
         /// </param>
-        /// <param name="tool"></param>
-        /// <param name="url"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -140,17 +140,17 @@ namespace G
             global::G.WebhookCodeScanningAlertFixedAlertState state)
         {
             this.CreatedAt = createdAt;
-            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.Number = number;
-            this.Rule = rule ?? throw new global::System.ArgumentNullException(nameof(rule));
-            this.Tool = tool ?? throw new global::System.ArgumentNullException(nameof(tool));
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.DismissedAt = dismissedAt;
             this.DismissedBy = dismissedBy;
             this.DismissedReason = dismissedReason;
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.InstancesUrl = instancesUrl;
             this.MostRecentInstance = mostRecentInstance;
+            this.Number = number;
+            this.Rule = rule ?? throw new global::System.ArgumentNullException(nameof(rule));
             this.State = state;
+            this.Tool = tool ?? throw new global::System.ArgumentNullException(nameof(tool));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 
         /// <summary>

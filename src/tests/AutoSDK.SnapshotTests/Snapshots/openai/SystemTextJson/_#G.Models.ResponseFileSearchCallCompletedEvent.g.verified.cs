@@ -46,9 +46,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseFileSearchCallCompletedEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.file_search_call.completed`.
-        /// </param>
         /// <param name="outputIndex">
         /// The index of the output item that the file search call is initiated.
         /// </param>
@@ -57,6 +54,9 @@ namespace G
         /// </param>
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.file_search_call.completed`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -67,10 +67,10 @@ namespace G
             int sequenceNumber,
             global::G.ResponseFileSearchCallCompletedEventType type)
         {
+            this.Type = type;
             this.OutputIndex = outputIndex;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.SequenceNumber = sequenceNumber;
-            this.Type = type;
         }
 
         /// <summary>

@@ -45,8 +45,8 @@ namespace G
         /// Initializes a new instance of the <see cref="LoraModelUploadIn" /> class.
         /// </summary>
         /// <param name="hfModelName"></param>
-        /// <param name="hfToken"></param>
         /// <param name="loraModelName"></param>
+        /// <param name="hfToken"></param>
         /// <param name="baseModelName"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -58,8 +58,8 @@ namespace G
             string? baseModelName)
         {
             this.HfModelName = hfModelName ?? throw new global::System.ArgumentNullException(nameof(hfModelName));
-            this.LoraModelName = loraModelName ?? throw new global::System.ArgumentNullException(nameof(loraModelName));
             this.HfToken = hfToken;
+            this.LoraModelName = loraModelName ?? throw new global::System.ArgumentNullException(nameof(loraModelName));
             this.BaseModelName = baseModelName;
         }
 

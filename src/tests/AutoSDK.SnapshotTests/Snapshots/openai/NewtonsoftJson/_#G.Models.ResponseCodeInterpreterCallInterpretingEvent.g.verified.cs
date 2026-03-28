@@ -42,9 +42,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseCodeInterpreterCallInterpretingEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.code_interpreter_call.interpreting`.
-        /// </param>
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
@@ -54,16 +51,19 @@ namespace G
         /// <param name="codeInterpreterCall">
         /// A tool call to run code.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.code_interpreter_call.interpreting`.
+        /// </param>
         public ResponseCodeInterpreterCallInterpretingEvent(
             int sequenceNumber,
             int outputIndex,
             global::G.CodeInterpreterToolCall codeInterpreterCall,
             global::G.ResponseCodeInterpreterCallInterpretingEventType type)
         {
+            this.Type = type;
             this.SequenceNumber = sequenceNumber;
             this.OutputIndex = outputIndex;
             this.CodeInterpreterCall = codeInterpreterCall ?? throw new global::System.ArgumentNullException(nameof(codeInterpreterCall));
-            this.Type = type;
         }
 
         /// <summary>

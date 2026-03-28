@@ -48,9 +48,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MCPListTools" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the item. Always `mcp_list_tools`.
-        /// </param>
         /// <param name="id">
         /// The unique ID of the list.
         /// </param>
@@ -59,6 +56,9 @@ namespace G
         /// </param>
         /// <param name="tools">
         /// The tools available on the server.
+        /// </param>
+        /// <param name="type">
+        /// The type of the item. Always `mcp_list_tools`.
         /// </param>
         /// <param name="error">
         /// Error message if the server could not list tools.
@@ -70,10 +70,10 @@ namespace G
             global::G.MCPListToolsType type,
             string? error)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
             this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
-            this.Type = type;
             this.Error = error;
         }
 

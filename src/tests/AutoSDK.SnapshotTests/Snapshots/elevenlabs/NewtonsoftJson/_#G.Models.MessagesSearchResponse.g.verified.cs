@@ -42,15 +42,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MessagesSearchResponse" /> class.
         /// </summary>
+        /// <param name="results"></param>
+        /// <param name="hasMore">
+        /// Whether there are more results available
+        /// </param>
         /// <param name="meta">
         /// Default Value: {}
         /// </param>
-        /// <param name="results"></param>
         /// <param name="nextCursor">
         /// Cursor for the next page of results
-        /// </param>
-        /// <param name="hasMore">
-        /// Whether there are more results available
         /// </param>
         public MessagesSearchResponse(
             global::System.Collections.Generic.IList<global::G.MessagesSearchResult> results,
@@ -58,10 +58,10 @@ namespace G
             global::G.ListResponseMeta? meta,
             string? nextCursor)
         {
-            this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
-            this.HasMore = hasMore;
             this.Meta = meta;
+            this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
             this.NextCursor = nextCursor;
+            this.HasMore = hasMore;
         }
 
         /// <summary>

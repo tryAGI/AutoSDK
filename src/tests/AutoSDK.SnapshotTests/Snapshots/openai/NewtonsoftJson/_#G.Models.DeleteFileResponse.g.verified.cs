@@ -37,16 +37,16 @@ namespace G
         /// Initializes a new instance of the <see cref="DeleteFileResponse" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="object"></param>
         /// <param name="deleted"></param>
+        /// <param name="object"></param>
         public DeleteFileResponse(
             string id,
             bool deleted,
             global::G.DeleteFileResponseObject @object)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Deleted = deleted;
             this.Object = @object;
+            this.Deleted = deleted;
         }
 
         /// <summary>

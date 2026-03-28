@@ -60,13 +60,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageEmbeddingsResult" /> class.
         /// </summary>
-        /// <param name="object"></param>
         /// <param name="inputTokens">
         /// The aggregated number of input tokens used.
         /// </param>
         /// <param name="numModelRequests">
         /// The count of requests made to the model.
         /// </param>
+        /// <param name="object"></param>
         /// <param name="projectId">
         /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
         /// </param>
@@ -88,9 +88,9 @@ namespace G
             string? apiKeyId,
             string? model)
         {
+            this.Object = @object;
             this.InputTokens = inputTokens;
             this.NumModelRequests = numModelRequests;
-            this.Object = @object;
             this.ProjectId = projectId;
             this.UserId = userId;
             this.ApiKeyId = apiKeyId;

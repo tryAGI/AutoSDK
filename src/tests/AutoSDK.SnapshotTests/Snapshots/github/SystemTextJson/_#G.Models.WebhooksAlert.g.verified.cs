@@ -133,19 +133,19 @@ namespace G
         /// <param name="affectedPackageName"></param>
         /// <param name="affectedRange"></param>
         /// <param name="createdAt"></param>
-        /// <param name="dismissReason"></param>
-        /// <param name="dismissedAt"></param>
-        /// <param name="dismisser"></param>
         /// <param name="externalIdentifier"></param>
-        /// <param name="externalReference"></param>
-        /// <param name="fixReason"></param>
-        /// <param name="fixedAt"></param>
-        /// <param name="fixedIn"></param>
         /// <param name="ghsaId"></param>
         /// <param name="id"></param>
         /// <param name="nodeId"></param>
         /// <param name="number"></param>
         /// <param name="severity"></param>
+        /// <param name="dismissReason"></param>
+        /// <param name="dismissedAt"></param>
+        /// <param name="dismisser"></param>
+        /// <param name="externalReference"></param>
+        /// <param name="fixReason"></param>
+        /// <param name="fixedAt"></param>
+        /// <param name="fixedIn"></param>
         /// <param name="state"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -172,19 +172,19 @@ namespace G
             this.AffectedPackageName = affectedPackageName ?? throw new global::System.ArgumentNullException(nameof(affectedPackageName));
             this.AffectedRange = affectedRange ?? throw new global::System.ArgumentNullException(nameof(affectedRange));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.DismissReason = dismissReason;
+            this.DismissedAt = dismissedAt;
+            this.Dismisser = dismisser;
             this.ExternalIdentifier = externalIdentifier ?? throw new global::System.ArgumentNullException(nameof(externalIdentifier));
+            this.ExternalReference = externalReference;
+            this.FixReason = fixReason;
+            this.FixedAt = fixedAt;
+            this.FixedIn = fixedIn;
             this.GhsaId = ghsaId ?? throw new global::System.ArgumentNullException(nameof(ghsaId));
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Number = number;
             this.Severity = severity ?? throw new global::System.ArgumentNullException(nameof(severity));
-            this.DismissReason = dismissReason;
-            this.DismissedAt = dismissedAt;
-            this.Dismisser = dismisser;
-            this.ExternalReference = externalReference;
-            this.FixReason = fixReason;
-            this.FixedAt = fixedAt;
-            this.FixedIn = fixedIn;
             this.State = state;
         }
 

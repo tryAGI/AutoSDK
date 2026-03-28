@@ -41,9 +41,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaMessageDeltaEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: message_delta
-        /// </param>
         /// <param name="delta"></param>
         /// <param name="usage">
         /// Billing and rate-limit usage.<br/>
@@ -52,14 +49,17 @@ namespace G
         /// For example, `output_tokens` will be non-zero, even for an empty string response from Claude.<br/>
         /// Total input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`.
         /// </param>
+        /// <param name="type">
+        /// Default Value: message_delta
+        /// </param>
         public BetaMessageDeltaEvent(
             global::G.BetaMessageDelta delta,
             global::G.BetaMessageDeltaUsage usage,
             global::G.BetaMessageDeltaEventType type = global::G.BetaMessageDeltaEventType.MessageDelta)
         {
+            this.Type = type;
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
-            this.Type = type;
         }
 
         /// <summary>

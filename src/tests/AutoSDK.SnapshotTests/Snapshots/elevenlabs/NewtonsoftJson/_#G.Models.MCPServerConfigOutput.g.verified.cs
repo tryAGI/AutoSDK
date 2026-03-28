@@ -121,6 +121,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MCPServerConfigOutput" /> class.
         /// </summary>
+        /// <param name="url">
+        /// The URL of the MCP server, if this contains a secret please store as a workspace secret, otherwise store as a plain string. Must use https
+        /// </param>
+        /// <param name="name"></param>
         /// <param name="approvalPolicy">
         /// Defines the MCP server-level approval policy for tool execution.<br/>
         /// Default Value: require_approval_all
@@ -132,9 +136,6 @@ namespace G
         /// The transport type used to connect to the MCP server<br/>
         /// Default Value: SSE
         /// </param>
-        /// <param name="url">
-        /// The URL of the MCP server, if this contains a secret please store as a workspace secret, otherwise store as a plain string. Must use https
-        /// </param>
         /// <param name="secretToken">
         /// The secret token (Authorization header) stored as a workspace secret or in-place secret
         /// </param>
@@ -144,7 +145,6 @@ namespace G
         /// <param name="authConnection">
         /// Optional auth connection to use for authentication with this MCP server
         /// </param>
-        /// <param name="name"></param>
         /// <param name="description"></param>
         /// <param name="forcePreToolSpeech">
         /// If true, all tools from this MCP server will require pre-tool execution speech<br/>
@@ -190,14 +190,14 @@ namespace G
             global::System.Collections.Generic.IList<global::G.MCPToolConfigOverride>? toolConfigOverrides,
             bool? disableCompression)
         {
-            this.Url = url;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ApprovalPolicy = approvalPolicy;
             this.ToolApprovalHashes = toolApprovalHashes;
             this.Transport = transport;
+            this.Url = url;
             this.SecretToken = secretToken;
             this.RequestHeaders = requestHeaders;
             this.AuthConnection = authConnection;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
             this.ForcePreToolSpeech = forcePreToolSpeech;
             this.DisableInterruptions = disableInterruptions;

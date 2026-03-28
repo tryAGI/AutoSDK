@@ -41,11 +41,11 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `response.done`.
-        /// </param>
         /// <param name="response">
         /// The response resource.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `response.done`.
         /// </param>
         public RealtimeServerEventResponseDone(
             string eventId,
@@ -53,8 +53,8 @@ namespace G
             global::G.RealtimeServerEventResponseDoneType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Response = response ?? throw new global::System.ArgumentNullException(nameof(response));
             this.Type = type;
+            this.Response = response ?? throw new global::System.ArgumentNullException(nameof(response));
         }
 
         /// <summary>

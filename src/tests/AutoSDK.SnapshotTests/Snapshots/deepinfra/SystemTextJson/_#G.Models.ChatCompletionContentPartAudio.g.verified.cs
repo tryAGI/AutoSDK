@@ -32,8 +32,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionContentPartAudio" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="inputAudio"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -41,8 +41,8 @@ namespace G
             global::G.InputAudio inputAudio,
             string type = "input_audio")
         {
-            this.InputAudio = inputAudio ?? throw new global::System.ArgumentNullException(nameof(inputAudio));
             this.Type = type;
+            this.InputAudio = inputAudio ?? throw new global::System.ArgumentNullException(nameof(inputAudio));
         }
 
         /// <summary>

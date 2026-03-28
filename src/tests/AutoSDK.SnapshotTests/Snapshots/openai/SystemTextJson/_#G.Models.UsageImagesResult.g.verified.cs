@@ -75,13 +75,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageImagesResult" /> class.
         /// </summary>
-        /// <param name="object"></param>
         /// <param name="images">
         /// The number of images processed.
         /// </param>
         /// <param name="numModelRequests">
         /// The count of requests made to the model.
         /// </param>
+        /// <param name="object"></param>
         /// <param name="source">
         /// When `group_by=source`, this field provides the source of the grouped usage result, possible values are `image.generation`, `image.edit`, `image.variation`.
         /// </param>
@@ -114,9 +114,9 @@ namespace G
             string? apiKeyId,
             string? model)
         {
+            this.Object = @object;
             this.Images = images;
             this.NumModelRequests = numModelRequests;
-            this.Object = @object;
             this.Source = source;
             this.Size = size;
             this.ProjectId = projectId;

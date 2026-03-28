@@ -54,9 +54,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseReasoningSummaryDeltaEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always 'response.reasoning_summary.delta'.
-        /// </param>
         /// <param name="itemId">
         /// The unique identifier of the item for which the reasoning summary is being updated.
         /// </param>
@@ -72,6 +69,9 @@ namespace G
         /// <param name="delta">
         /// The partial update to the reasoning summary content.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always 'response.reasoning_summary.delta'.
+        /// </param>
         public ResponseReasoningSummaryDeltaEvent(
             string itemId,
             int outputIndex,
@@ -80,12 +80,12 @@ namespace G
             object delta,
             global::G.ResponseReasoningSummaryDeltaEventType type)
         {
+            this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.SummaryIndex = summaryIndex;
             this.SequenceNumber = sequenceNumber;
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
-            this.Type = type;
         }
 
         /// <summary>

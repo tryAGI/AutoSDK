@@ -37,17 +37,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PostWorkspaceSecretRequest" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="name"></param>
         /// <param name="value"></param>
+        /// <param name="type"></param>
         public PostWorkspaceSecretRequest(
             string name,
             string value,
             string type = "new")
         {
+            this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
-            this.Type = type;
         }
 
         /// <summary>

@@ -46,13 +46,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PaginatedultravoxV1CorpusList" /> class.
         /// </summary>
+        /// <param name="results"></param>
         /// <param name="next">
         /// Example: http://api.example.org/accounts/?cursor=cD00ODY%3D"
         /// </param>
         /// <param name="previous">
         /// Example: http://api.example.org/accounts/?cursor=cj0xJnA9NDg3
         /// </param>
-        /// <param name="results"></param>
         /// <param name="total">
         /// Example: 123
         /// </param>
@@ -65,9 +65,9 @@ namespace G
             string? previous,
             int? total)
         {
-            this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
             this.Next = next;
             this.Previous = previous;
+            this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
             this.Total = total;
         }
 

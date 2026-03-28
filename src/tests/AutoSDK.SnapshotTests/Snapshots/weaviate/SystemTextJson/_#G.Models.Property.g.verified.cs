@@ -88,14 +88,14 @@ namespace G
         /// <param name="dataType">
         /// Data type of the property. If it starts with a capital (for example Person), may be a reference to another type.
         /// </param>
+        /// <param name="name">
+        /// The name of the property. Multiple words should be concatenated in camelCase, e.g. `nameOfAuthor`.
+        /// </param>
         /// <param name="description">
         /// Description of the property for documentation purposes.
         /// </param>
         /// <param name="moduleConfig">
         /// Configuration specific to modules in a property context.
-        /// </param>
-        /// <param name="name">
-        /// The name of the property. Multiple words should be concatenated in camelCase, e.g. `nameOfAuthor`.
         /// </param>
         /// <param name="indexInverted">
         /// (Deprecated) Whether to include this property in the inverted index. If `false`, this property cannot be used in `where` filters, `bm25` or `hybrid` search. &lt;br/&gt;&lt;br/&gt;Unrelated to vectorization behavior (deprecated as of v1.19; use indexFilterable or/and indexSearchable instead)<br/>
@@ -135,9 +135,9 @@ namespace G
             global::System.Collections.Generic.IList<global::G.NestedProperty>? nestedProperties)
         {
             this.DataType = dataType ?? throw new global::System.ArgumentNullException(nameof(dataType));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
             this.ModuleConfig = moduleConfig;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.IndexInverted = indexInverted;
             this.IndexFilterable = indexFilterable;
             this.IndexSearchable = indexSearchable;

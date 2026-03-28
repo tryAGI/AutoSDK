@@ -73,6 +73,10 @@ namespace G
         /// Initializes a new instance of the <see cref="ScalingConfigGet" /> class.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="args"></param>
+        /// <param name="id"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
         /// <param name="minimumNodes">
         /// Default Value: 0
         /// </param>
@@ -82,10 +86,6 @@ namespace G
         /// <param name="type">
         /// An enumeration.
         /// </param>
-        /// <param name="args"></param>
-        /// <param name="id"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -100,13 +100,13 @@ namespace G
             global::G.ScalingConfigType type)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.MinimumNodes = minimumNodes;
+            this.MaximumNodes = maximumNodes;
+            this.Type = type;
             this.Args = args ?? throw new global::System.ArgumentNullException(nameof(args));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.MinimumNodes = minimumNodes;
-            this.MaximumNodes = maximumNodes;
-            this.Type = type;
         }
 
         /// <summary>

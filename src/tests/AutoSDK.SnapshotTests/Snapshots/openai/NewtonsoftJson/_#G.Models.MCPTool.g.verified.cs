@@ -57,14 +57,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MCPTool" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the MCP tool. Always `mcp`.
-        /// </param>
         /// <param name="serverLabel">
         /// A label for this MCP server, used to identify it in tool calls.
         /// </param>
         /// <param name="serverUrl">
         /// The URL for the MCP server.
+        /// </param>
+        /// <param name="type">
+        /// The type of the MCP tool. Always `mcp`.
         /// </param>
         /// <param name="headers">
         /// Optional HTTP headers to send to the MCP server. Use for authentication<br/>
@@ -85,9 +85,9 @@ namespace G
             global::G.OneOf<global::System.Collections.Generic.IList<string>, global::G.MCPToolAllowedTools>? allowedTools,
             global::G.OneOf<global::G.MCPToolRequireApprovalEnum, global::G.MCPToolRequireApprovalEnum2?>? requireApproval)
         {
+            this.Type = type;
             this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
             this.ServerUrl = serverUrl ?? throw new global::System.ArgumentNullException(nameof(serverUrl));
-            this.Type = type;
             this.Headers = headers;
             this.AllowedTools = allowedTools;
             this.RequireApproval = requireApproval;

@@ -52,11 +52,11 @@ namespace G
         /// <param name="endpoint">
         /// The endpoint to be used for all requests in the batch. Currently /v1/chat/completions, /v1/completions are supported.
         /// </param>
-        /// <param name="completionWindow">
-        /// The time frame within which the batch should be processed. Currently only 24h is supported.
-        /// </param>
         /// <param name="metadata">
         /// Optional metadata to be stored with the batch.
+        /// </param>
+        /// <param name="completionWindow">
+        /// The time frame within which the batch should be processed. Currently only 24h is supported.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

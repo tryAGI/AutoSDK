@@ -305,7 +305,6 @@ namespace G
         /// <param name="contentsUrl"></param>
         /// <param name="contributorsUrl"></param>
         /// <param name="deploymentsUrl"></param>
-        /// <param name="description"></param>
         /// <param name="downloadsUrl"></param>
         /// <param name="eventsUrl"></param>
         /// <param name="fork"></param>
@@ -332,7 +331,6 @@ namespace G
         /// </param>
         /// <param name="nodeId"></param>
         /// <param name="notificationsUrl"></param>
-        /// <param name="owner"></param>
         /// <param name="private">
         /// Whether the repository is private or public.
         /// </param>
@@ -346,6 +344,8 @@ namespace G
         /// <param name="teamsUrl"></param>
         /// <param name="treesUrl"></param>
         /// <param name="url"></param>
+        /// <param name="description"></param>
+        /// <param name="owner"></param>
         public WebhookWorkflowRunRequestedWorkflowRunRepository(
             string archiveUrl,
             string assigneesUrl,
@@ -405,6 +405,7 @@ namespace G
             this.ContentsUrl = contentsUrl ?? throw new global::System.ArgumentNullException(nameof(contentsUrl));
             this.ContributorsUrl = contributorsUrl ?? throw new global::System.ArgumentNullException(nameof(contributorsUrl));
             this.DeploymentsUrl = deploymentsUrl ?? throw new global::System.ArgumentNullException(nameof(deploymentsUrl));
+            this.Description = description;
             this.DownloadsUrl = downloadsUrl ?? throw new global::System.ArgumentNullException(nameof(downloadsUrl));
             this.EventsUrl = eventsUrl ?? throw new global::System.ArgumentNullException(nameof(eventsUrl));
             this.Fork = fork;
@@ -427,6 +428,7 @@ namespace G
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.NotificationsUrl = notificationsUrl ?? throw new global::System.ArgumentNullException(nameof(notificationsUrl));
+            this.Owner = owner;
             this.Private = @private;
             this.PullsUrl = pullsUrl ?? throw new global::System.ArgumentNullException(nameof(pullsUrl));
             this.ReleasesUrl = releasesUrl ?? throw new global::System.ArgumentNullException(nameof(releasesUrl));
@@ -438,8 +440,6 @@ namespace G
             this.TeamsUrl = teamsUrl ?? throw new global::System.ArgumentNullException(nameof(teamsUrl));
             this.TreesUrl = treesUrl ?? throw new global::System.ArgumentNullException(nameof(treesUrl));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Description = description;
-            this.Owner = owner;
         }
 
         /// <summary>

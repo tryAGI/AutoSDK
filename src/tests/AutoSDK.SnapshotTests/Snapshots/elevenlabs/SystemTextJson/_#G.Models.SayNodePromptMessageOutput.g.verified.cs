@@ -32,11 +32,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="SayNodePromptMessageOutput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: prompt
-        /// </param>
         /// <param name="prompt">
         /// LLM prompt describing what message should be generated.
+        /// </param>
+        /// <param name="type">
+        /// Default Value: prompt
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -45,8 +45,8 @@ namespace G
             string prompt,
             string type = "prompt")
         {
-            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Type = type;
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
         }
 
         /// <summary>

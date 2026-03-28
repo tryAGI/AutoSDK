@@ -191,6 +191,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Pipeline" /> class.
         /// </summary>
+        /// <param name="recipe">
+        /// Recipe describes the components of a Pipeline and how they are connected.
+        /// </param>
         /// <param name="name">
         /// The name of the pipeline, defined by its parent and ID.<br/>
         /// - Format: `{parent_type}/{parent.id}/pipelines/{pipeline.id}`.<br/>
@@ -208,9 +211,6 @@ namespace G
         /// </param>
         /// <param name="description">
         /// Pipeline description.
-        /// </param>
-        /// <param name="recipe">
-        /// Recipe describes the components of a Pipeline and how they are connected.
         /// </param>
         /// <param name="createTime">
         /// Pipeline creation time.<br/>
@@ -314,11 +314,11 @@ namespace G
             string? profileImage,
             global::G.Endpoints? endpoints)
         {
-            this.Recipe = recipe ?? throw new global::System.ArgumentNullException(nameof(recipe));
             this.Name = name;
             this.Uid = uid;
             this.Id = id;
             this.Description = description;
+            this.Recipe = recipe ?? throw new global::System.ArgumentNullException(nameof(recipe));
             this.CreateTime = createTime;
             this.UpdateTime = updateTime;
             this.DeleteTime = deleteTime;

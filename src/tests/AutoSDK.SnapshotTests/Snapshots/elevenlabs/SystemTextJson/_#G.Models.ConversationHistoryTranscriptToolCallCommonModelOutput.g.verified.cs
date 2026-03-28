@@ -58,11 +58,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationHistoryTranscriptToolCallCommonModelOutput" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="requestId"></param>
         /// <param name="toolName"></param>
         /// <param name="paramsAsJson"></param>
         /// <param name="toolHasBeenCalled"></param>
+        /// <param name="type"></param>
         /// <param name="toolDetails"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -75,11 +75,11 @@ namespace G
             global::G.ToolType? type,
             global::G.ToolDetailsVariant12? toolDetails)
         {
+            this.Type = type;
             this.RequestId = requestId ?? throw new global::System.ArgumentNullException(nameof(requestId));
             this.ToolName = toolName ?? throw new global::System.ArgumentNullException(nameof(toolName));
             this.ParamsAsJson = paramsAsJson ?? throw new global::System.ArgumentNullException(nameof(paramsAsJson));
             this.ToolHasBeenCalled = toolHasBeenCalled;
-            this.Type = type;
             this.ToolDetails = toolDetails;
         }
 

@@ -70,9 +70,6 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `response.audio_transcript.delta`.
-        /// </param>
         /// <param name="responseId">
         /// The ID of the response.
         /// </param>
@@ -88,6 +85,9 @@ namespace G
         /// <param name="delta">
         /// The transcript delta.
         /// </param>
+        /// <param name="type">
+        /// The event type, must be `response.audio_transcript.delta`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -101,12 +101,12 @@ namespace G
             global::G.RealtimeServerEventResponseAudioTranscriptDeltaType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
+            this.Type = type;
             this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.ContentIndex = contentIndex;
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
-            this.Type = type;
         }
 
         /// <summary>

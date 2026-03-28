@@ -32,18 +32,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageReference" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: image
-        /// </param>
         /// <param name="url">
         /// The URL of the image
+        /// </param>
+        /// <param name="type">
+        /// Default Value: image
         /// </param>
         public ImageReference(
             string url,
             global::G.ImageReferenceType type = global::G.ImageReferenceType.Image)
         {
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Type = type;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 
         /// <summary>

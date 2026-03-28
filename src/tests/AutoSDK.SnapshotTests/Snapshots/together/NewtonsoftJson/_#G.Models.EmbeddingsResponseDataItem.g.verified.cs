@@ -36,17 +36,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbeddingsResponseDataItem" /> class.
         /// </summary>
-        /// <param name="object"></param>
         /// <param name="embedding"></param>
         /// <param name="index"></param>
+        /// <param name="object"></param>
         public EmbeddingsResponseDataItem(
             global::System.Collections.Generic.IList<double> embedding,
             int index,
             global::G.EmbeddingsResponseDataItemObject @object)
         {
+            this.Object = @object;
             this.Embedding = embedding ?? throw new global::System.ArgumentNullException(nameof(embedding));
             this.Index = index;
-            this.Object = @object;
         }
 
         /// <summary>

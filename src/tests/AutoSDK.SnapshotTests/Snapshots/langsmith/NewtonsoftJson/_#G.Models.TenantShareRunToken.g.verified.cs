@@ -67,7 +67,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TenantShareRunToken" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="shareToken"></param>
         /// <param name="createdAt"></param>
         /// <param name="runId"></param>
@@ -75,6 +74,7 @@ namespace G
         /// <param name="runType"></param>
         /// <param name="sessionId"></param>
         /// <param name="sessionName"></param>
+        /// <param name="type"></param>
         public TenantShareRunToken(
             string shareToken,
             global::System.DateTime createdAt,
@@ -85,10 +85,10 @@ namespace G
             string? sessionName,
             string type = "run")
         {
+            this.Type = type;
             this.ShareToken = shareToken ?? throw new global::System.ArgumentNullException(nameof(shareToken));
             this.CreatedAt = createdAt;
             this.RunId = runId;
-            this.Type = type;
             this.RunName = runName;
             this.RunType = runType;
             this.SessionId = sessionId;

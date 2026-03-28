@@ -146,6 +146,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Contributor" /> class.
         /// </summary>
+        /// <param name="type"></param>
+        /// <param name="contributions"></param>
         /// <param name="login"></param>
         /// <param name="id"></param>
         /// <param name="nodeId"></param>
@@ -162,9 +164,7 @@ namespace G
         /// <param name="reposUrl"></param>
         /// <param name="eventsUrl"></param>
         /// <param name="receivedEventsUrl"></param>
-        /// <param name="type"></param>
         /// <param name="siteAdmin"></param>
-        /// <param name="contributions"></param>
         /// <param name="email"></param>
         /// <param name="name"></param>
 #if NET7_0_OR_GREATER
@@ -193,8 +193,6 @@ namespace G
             string? email,
             string? name)
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
-            this.Contributions = contributions;
             this.Login = login;
             this.Id = id;
             this.NodeId = nodeId;
@@ -211,7 +209,9 @@ namespace G
             this.ReposUrl = reposUrl;
             this.EventsUrl = eventsUrl;
             this.ReceivedEventsUrl = receivedEventsUrl;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.SiteAdmin = siteAdmin;
+            this.Contributions = contributions;
             this.Email = email;
             this.Name = name;
         }

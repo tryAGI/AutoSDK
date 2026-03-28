@@ -145,10 +145,10 @@ namespace G
         /// <param name="pingUrl">
         /// Example: https://api.github.com/repos/octocat/Hello-World/hooks/1/pings
         /// </param>
+        /// <param name="lastResponse"></param>
         /// <param name="deliveriesUrl">
         /// Example: https://api.github.com/repos/octocat/Hello-World/hooks/1/deliveries
         /// </param>
-        /// <param name="lastResponse"></param>
         public Hook(
             string type,
             int id,
@@ -175,8 +175,8 @@ namespace G
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.TestUrl = testUrl ?? throw new global::System.ArgumentNullException(nameof(testUrl));
             this.PingUrl = pingUrl ?? throw new global::System.ArgumentNullException(nameof(pingUrl));
-            this.LastResponse = lastResponse ?? throw new global::System.ArgumentNullException(nameof(lastResponse));
             this.DeliveriesUrl = deliveriesUrl;
+            this.LastResponse = lastResponse ?? throw new global::System.ArgumentNullException(nameof(lastResponse));
         }
 
         /// <summary>

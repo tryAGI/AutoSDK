@@ -753,9 +753,6 @@ namespace G
         /// <param name="htmlUrl">
         /// Example: https://github.com/octocat/Hello-World
         /// </param>
-        /// <param name="description">
-        /// Example: This your first repo!
-        /// </param>
         /// <param name="fork"></param>
         /// <param name="url">
         /// Example: https://api.github.com/repos/octocat/Hello-World
@@ -874,19 +871,12 @@ namespace G
         /// <param name="cloneUrl">
         /// Example: https://github.com/octocat/Hello-World.git
         /// </param>
-        /// <param name="mirrorUrl">
-        /// Example: git:git.example.com/octocat/Hello-World
-        /// </param>
         /// <param name="hooksUrl">
         /// Example: http://api.github.com/repos/octocat/Hello-World/hooks
         /// </param>
         /// <param name="svnUrl">
         /// Example: https://svn.github.com/octocat/Hello-World
         /// </param>
-        /// <param name="homepage">
-        /// Example: https://github.com
-        /// </param>
-        /// <param name="language"></param>
         /// <param name="forksCount">
         /// Example: 9
         /// </param>
@@ -906,12 +896,6 @@ namespace G
         /// <param name="openIssuesCount">
         /// Example: 0
         /// </param>
-        /// <param name="isTemplate">
-        /// Example: true
-        /// </param>
-        /// <param name="topics">
-        /// Example: [octocat, atom, electron, API]
-        /// </param>
         /// <param name="hasIssues">
         /// Example: true
         /// </param>
@@ -922,19 +906,12 @@ namespace G
         /// Example: true
         /// </param>
         /// <param name="hasPages"></param>
-        /// <param name="hasDownloads">
-        /// Example: true
-        /// </param>
         /// <param name="hasDiscussions">
         /// Example: true
         /// </param>
         /// <param name="archived"></param>
         /// <param name="disabled">
         /// Returns whether or not this repository disabled.
-        /// </param>
-        /// <param name="visibility">
-        /// The repository visibility: public, private, or internal.<br/>
-        /// Example: public
         /// </param>
         /// <param name="pushedAt">
         /// Example: 2011-01-26T19:06:43Z
@@ -944,6 +921,38 @@ namespace G
         /// </param>
         /// <param name="updatedAt">
         /// Example: 2011-01-26T19:14:43Z
+        /// </param>
+        /// <param name="subscribersCount">
+        /// Example: 42
+        /// </param>
+        /// <param name="networkCount">
+        /// Example: 0
+        /// </param>
+        /// <param name="forks"></param>
+        /// <param name="openIssues"></param>
+        /// <param name="watchers"></param>
+        /// <param name="description">
+        /// Example: This your first repo!
+        /// </param>
+        /// <param name="mirrorUrl">
+        /// Example: git:git.example.com/octocat/Hello-World
+        /// </param>
+        /// <param name="homepage">
+        /// Example: https://github.com
+        /// </param>
+        /// <param name="language"></param>
+        /// <param name="isTemplate">
+        /// Example: true
+        /// </param>
+        /// <param name="topics">
+        /// Example: [octocat, atom, electron, API]
+        /// </param>
+        /// <param name="hasDownloads">
+        /// Example: true
+        /// </param>
+        /// <param name="visibility">
+        /// The repository visibility: public, private, or internal.<br/>
+        /// Example: public
         /// </param>
         /// <param name="permissions"></param>
         /// <param name="allowRebaseMerge">
@@ -1003,12 +1012,6 @@ namespace G
         /// <param name="webCommitSignoffRequired">
         /// Example: false
         /// </param>
-        /// <param name="subscribersCount">
-        /// Example: 42
-        /// </param>
-        /// <param name="networkCount">
-        /// Example: 0
-        /// </param>
         /// <param name="license">
         /// License Simple
         /// </param>
@@ -1021,10 +1024,7 @@ namespace G
         /// <param name="source">
         /// A repository on GitHub.
         /// </param>
-        /// <param name="forks"></param>
         /// <param name="masterBranch"></param>
-        /// <param name="openIssues"></param>
-        /// <param name="watchers"></param>
         /// <param name="anonymousAccessEnabled">
         /// Whether anonymous git access is allowed.<br/>
         /// Default Value: true
@@ -1148,6 +1148,7 @@ namespace G
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.Private = @private;
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Description = description;
             this.Fork = fork;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.ArchiveUrl = archiveUrl ?? throw new global::System.ArgumentNullException(nameof(archiveUrl));
@@ -1188,37 +1189,31 @@ namespace G
             this.TeamsUrl = teamsUrl ?? throw new global::System.ArgumentNullException(nameof(teamsUrl));
             this.TreesUrl = treesUrl ?? throw new global::System.ArgumentNullException(nameof(treesUrl));
             this.CloneUrl = cloneUrl ?? throw new global::System.ArgumentNullException(nameof(cloneUrl));
+            this.MirrorUrl = mirrorUrl;
             this.HooksUrl = hooksUrl ?? throw new global::System.ArgumentNullException(nameof(hooksUrl));
             this.SvnUrl = svnUrl ?? throw new global::System.ArgumentNullException(nameof(svnUrl));
+            this.Homepage = homepage;
+            this.Language = language;
             this.ForksCount = forksCount;
             this.StargazersCount = stargazersCount;
             this.WatchersCount = watchersCount;
             this.Size = size;
             this.DefaultBranch = defaultBranch ?? throw new global::System.ArgumentNullException(nameof(defaultBranch));
             this.OpenIssuesCount = openIssuesCount;
+            this.IsTemplate = isTemplate;
+            this.Topics = topics;
             this.HasIssues = hasIssues;
             this.HasProjects = hasProjects;
             this.HasWiki = hasWiki;
             this.HasPages = hasPages;
+            this.HasDownloads = hasDownloads;
             this.HasDiscussions = hasDiscussions;
             this.Archived = archived;
             this.Disabled = disabled;
+            this.Visibility = visibility;
             this.PushedAt = pushedAt;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.SubscribersCount = subscribersCount;
-            this.NetworkCount = networkCount;
-            this.Forks = forks;
-            this.OpenIssues = openIssues;
-            this.Watchers = watchers;
-            this.Description = description;
-            this.MirrorUrl = mirrorUrl;
-            this.Homepage = homepage;
-            this.Language = language;
-            this.IsTemplate = isTemplate;
-            this.Topics = topics;
-            this.HasDownloads = hasDownloads;
-            this.Visibility = visibility;
             this.Permissions = permissions;
             this.AllowRebaseMerge = allowRebaseMerge;
             this.TemplateRepository = templateRepository;
@@ -1235,11 +1230,16 @@ namespace G
             this.MergeCommitMessage = mergeCommitMessage;
             this.AllowForking = allowForking;
             this.WebCommitSignoffRequired = webCommitSignoffRequired;
+            this.SubscribersCount = subscribersCount;
+            this.NetworkCount = networkCount;
             this.License = license;
             this.Organization = organization;
             this.Parent = parent;
             this.Source = source;
+            this.Forks = forks;
             this.MasterBranch = masterBranch;
+            this.OpenIssues = openIssues;
+            this.Watchers = watchers;
             this.AnonymousAccessEnabled = anonymousAccessEnabled;
             this.CodeOfConduct = codeOfConduct;
             this.SecurityAndAnalysis = securityAndAnalysis;

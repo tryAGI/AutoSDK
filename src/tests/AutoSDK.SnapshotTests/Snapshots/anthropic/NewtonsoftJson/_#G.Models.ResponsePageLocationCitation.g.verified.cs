@@ -55,14 +55,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponsePageLocationCitation" /> class.
         /// </summary>
+        /// <param name="citedText"></param>
+        /// <param name="documentIndex"></param>
+        /// <param name="startPageNumber"></param>
+        /// <param name="endPageNumber"></param>
+        /// <param name="documentTitle"></param>
         /// <param name="type">
         /// Default Value: page_location
         /// </param>
-        /// <param name="citedText"></param>
-        /// <param name="documentIndex"></param>
-        /// <param name="documentTitle"></param>
-        /// <param name="startPageNumber"></param>
-        /// <param name="endPageNumber"></param>
         public ResponsePageLocationCitation(
             string citedText,
             int documentIndex,
@@ -71,12 +71,12 @@ namespace G
             string? documentTitle,
             global::G.ResponsePageLocationCitationType type = global::G.ResponsePageLocationCitationType.PageLocation)
         {
+            this.Type = type;
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.DocumentIndex = documentIndex;
+            this.DocumentTitle = documentTitle;
             this.StartPageNumber = startPageNumber;
             this.EndPageNumber = endPageNumber;
-            this.Type = type;
-            this.DocumentTitle = documentTitle;
         }
 
         /// <summary>

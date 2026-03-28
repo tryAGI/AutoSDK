@@ -78,6 +78,12 @@ namespace G
         /// <param name="repositorySelection">
         /// Describe whether all repositories have been selected or there's a selection involved
         /// </param>
+        /// <param name="repositoriesUrl">
+        /// Example: https://api.github.com/users/octocat/repos
+        /// </param>
+        /// <param name="account">
+        /// A GitHub user.
+        /// </param>
         /// <param name="singleFileName">
         /// Example: config.yaml
         /// </param>
@@ -86,12 +92,6 @@ namespace G
         /// </param>
         /// <param name="singleFilePaths">
         /// Example: [config.yml, .github/issue_TEMPLATE.md]
-        /// </param>
-        /// <param name="repositoriesUrl">
-        /// Example: https://api.github.com/users/octocat/repos
-        /// </param>
-        /// <param name="account">
-        /// A GitHub user.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -107,11 +107,11 @@ namespace G
         {
             this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
             this.RepositorySelection = repositorySelection;
-            this.RepositoriesUrl = repositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(repositoriesUrl));
-            this.Account = account ?? throw new global::System.ArgumentNullException(nameof(account));
             this.SingleFileName = singleFileName;
             this.HasMultipleSingleFiles = hasMultipleSingleFiles;
             this.SingleFilePaths = singleFilePaths;
+            this.RepositoriesUrl = repositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(repositoriesUrl));
+            this.Account = account ?? throw new global::System.ArgumentNullException(nameof(account));
         }
 
         /// <summary>

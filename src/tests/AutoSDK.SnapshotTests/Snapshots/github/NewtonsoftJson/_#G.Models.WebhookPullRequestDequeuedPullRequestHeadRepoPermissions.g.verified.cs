@@ -49,9 +49,9 @@ namespace G
         /// Initializes a new instance of the <see cref="WebhookPullRequestDequeuedPullRequestHeadRepoPermissions" /> class.
         /// </summary>
         /// <param name="admin"></param>
-        /// <param name="maintain"></param>
         /// <param name="pull"></param>
         /// <param name="push"></param>
+        /// <param name="maintain"></param>
         /// <param name="triage"></param>
         public WebhookPullRequestDequeuedPullRequestHeadRepoPermissions(
             bool admin,
@@ -61,9 +61,9 @@ namespace G
             bool? triage)
         {
             this.Admin = admin;
+            this.Maintain = maintain;
             this.Pull = pull;
             this.Push = push;
-            this.Maintain = maintain;
             this.Triage = triage;
         }
 

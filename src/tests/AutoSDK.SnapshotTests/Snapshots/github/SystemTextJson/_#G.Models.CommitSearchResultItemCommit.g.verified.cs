@@ -66,13 +66,13 @@ namespace G
         /// Initializes a new instance of the <see cref="CommitSearchResultItemCommit" /> class.
         /// </summary>
         /// <param name="author"></param>
-        /// <param name="committer">
-        /// Metaproperties for Git author/committer information.
-        /// </param>
         /// <param name="commentCount"></param>
         /// <param name="message"></param>
         /// <param name="tree"></param>
         /// <param name="url"></param>
+        /// <param name="committer">
+        /// Metaproperties for Git author/committer information.
+        /// </param>
         /// <param name="verification"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -87,11 +87,11 @@ namespace G
             global::G.Verification? verification)
         {
             this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
+            this.Committer = committer;
             this.CommentCount = commentCount;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Tree = tree ?? throw new global::System.ArgumentNullException(nameof(tree));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Committer = committer;
             this.Verification = verification;
         }
 

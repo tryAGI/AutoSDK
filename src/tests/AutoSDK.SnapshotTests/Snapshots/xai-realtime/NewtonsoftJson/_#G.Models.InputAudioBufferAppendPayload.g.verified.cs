@@ -36,21 +36,21 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="InputAudioBufferAppendPayload" /> class.
         /// </summary>
+        /// <param name="audio">
+        /// Base64-encoded audio data.
+        /// </param>
         /// <param name="type"></param>
         /// <param name="eventId">
         /// Optional event ID.
-        /// </param>
-        /// <param name="audio">
-        /// Base64-encoded audio data.
         /// </param>
         public InputAudioBufferAppendPayload(
             string audio,
             global::G.InputAudioBufferAppendPayloadType type,
             string? eventId)
         {
-            this.Audio = audio ?? throw new global::System.ArgumentNullException(nameof(audio));
             this.Type = type;
             this.EventId = eventId;
+            this.Audio = audio ?? throw new global::System.ArgumentNullException(nameof(audio));
         }
 
         /// <summary>

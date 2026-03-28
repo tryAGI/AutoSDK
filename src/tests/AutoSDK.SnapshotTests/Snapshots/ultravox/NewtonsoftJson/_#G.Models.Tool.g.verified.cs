@@ -52,16 +52,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Tool" /> class.
         /// </summary>
-        /// <param name="toolId">
-        /// Included only in responses
-        /// </param>
         /// <param name="name"></param>
-        /// <param name="created">
-        /// Included only in responses
-        /// </param>
         /// <param name="definition">
         /// The base definition of a tool that can be used during a call. Exactly one<br/>
         ///  implementation (http or client) should be set.
+        /// </param>
+        /// <param name="toolId">
+        /// Included only in responses
+        /// </param>
+        /// <param name="created">
+        /// Included only in responses
         /// </param>
         /// <param name="ownership">
         /// Included only in responses
@@ -73,10 +73,10 @@ namespace G
             global::System.DateTime created = default!,
             global::G.OwnershipEnum ownership = default!)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Definition = definition ?? throw new global::System.ArgumentNullException(nameof(definition));
             this.ToolId = toolId;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Created = created;
+            this.Definition = definition ?? throw new global::System.ArgumentNullException(nameof(definition));
             this.Ownership = ownership;
         }
 

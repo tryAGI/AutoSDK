@@ -32,11 +32,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ASTStringNodeOutput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: string_literal
-        /// </param>
         /// <param name="value">
         /// Value of this literal.
+        /// </param>
+        /// <param name="type">
+        /// Default Value: string_literal
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -45,8 +45,8 @@ namespace G
             string value,
             string type = "string_literal")
         {
-            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
             this.Type = type;
+            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
         }
 
         /// <summary>

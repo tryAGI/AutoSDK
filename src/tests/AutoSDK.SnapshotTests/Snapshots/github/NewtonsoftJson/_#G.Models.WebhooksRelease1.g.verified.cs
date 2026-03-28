@@ -140,31 +140,31 @@ namespace G
         /// </summary>
         /// <param name="assets"></param>
         /// <param name="assetsUrl"></param>
-        /// <param name="author"></param>
-        /// <param name="body"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="discussionUrl"></param>
         /// <param name="draft">
         /// Whether the release is a draft or published
         /// </param>
         /// <param name="htmlUrl"></param>
         /// <param name="id"></param>
-        /// <param name="name"></param>
         /// <param name="nodeId"></param>
         /// <param name="prerelease">
         /// Whether the release is identified as a prerelease or a full release.
         /// </param>
-        /// <param name="publishedAt"></param>
-        /// <param name="reactions"></param>
         /// <param name="tagName">
         /// The name of the tag.
         /// </param>
-        /// <param name="tarballUrl"></param>
         /// <param name="targetCommitish">
         /// Specifies the commitish value that determines where the Git tag is created from.
         /// </param>
         /// <param name="uploadUrl"></param>
         /// <param name="url"></param>
+        /// <param name="author"></param>
+        /// <param name="body"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="discussionUrl"></param>
+        /// <param name="name"></param>
+        /// <param name="publishedAt"></param>
+        /// <param name="reactions"></param>
+        /// <param name="tarballUrl"></param>
         /// <param name="zipballUrl"></param>
         public WebhooksRelease1(
             global::System.Collections.Generic.IList<global::G.WebhooksRelease1Asset> assets,
@@ -190,23 +190,23 @@ namespace G
         {
             this.Assets = assets ?? throw new global::System.ArgumentNullException(nameof(assets));
             this.AssetsUrl = assetsUrl ?? throw new global::System.ArgumentNullException(nameof(assetsUrl));
-            this.Draft = draft;
-            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.Id = id;
-            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.Prerelease = prerelease;
-            this.TagName = tagName ?? throw new global::System.ArgumentNullException(nameof(tagName));
-            this.TargetCommitish = targetCommitish ?? throw new global::System.ArgumentNullException(nameof(targetCommitish));
-            this.UploadUrl = uploadUrl ?? throw new global::System.ArgumentNullException(nameof(uploadUrl));
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Author = author;
             this.Body = body;
             this.CreatedAt = createdAt;
             this.DiscussionUrl = discussionUrl;
+            this.Draft = draft;
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Id = id;
             this.Name = name;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Prerelease = prerelease;
             this.PublishedAt = publishedAt;
             this.Reactions = reactions;
+            this.TagName = tagName ?? throw new global::System.ArgumentNullException(nameof(tagName));
             this.TarballUrl = tarballUrl;
+            this.TargetCommitish = targetCommitish ?? throw new global::System.ArgumentNullException(nameof(targetCommitish));
+            this.UploadUrl = uploadUrl ?? throw new global::System.ArgumentNullException(nameof(uploadUrl));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.ZipballUrl = zipballUrl;
         }
 

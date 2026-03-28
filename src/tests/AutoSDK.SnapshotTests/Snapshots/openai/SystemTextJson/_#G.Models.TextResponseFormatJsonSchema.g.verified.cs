@@ -60,13 +60,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TextResponseFormatJsonSchema" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of response format being defined. Always `json_schema`.
-        /// </param>
-        /// <param name="description">
-        /// A description of what the response format is for, used by the model to<br/>
-        /// determine how to respond in the format.
-        /// </param>
         /// <param name="name">
         /// The name of the response format. Must be a-z, A-Z, 0-9, or contain<br/>
         /// underscores and dashes, with a maximum length of 64.
@@ -74,6 +67,13 @@ namespace G
         /// <param name="schema">
         /// The schema for the response format, described as a JSON Schema object.<br/>
         /// Learn how to build JSON schemas [here](https://json-schema.org/).
+        /// </param>
+        /// <param name="type">
+        /// The type of response format being defined. Always `json_schema`.
+        /// </param>
+        /// <param name="description">
+        /// A description of what the response format is for, used by the model to<br/>
+        /// determine how to respond in the format.
         /// </param>
         /// <param name="strict">
         /// Whether to enable strict schema adherence when generating the output.<br/>
@@ -93,10 +93,10 @@ namespace G
             string? description,
             bool? strict)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Schema = schema ?? throw new global::System.ArgumentNullException(nameof(schema));
             this.Type = type;
             this.Description = description;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Schema = schema ?? throw new global::System.ArgumentNullException(nameof(schema));
             this.Strict = strict;
         }
 

@@ -136,18 +136,13 @@ namespace G
         /// Initializes a new instance of the <see cref="Me" /> class.
         /// </summary>
         /// <param name="uid"></param>
-        /// <param name="email"></param>
         /// <param name="emailVerified"></param>
-        /// <param name="requireEmailVerified">
-        /// Default Value: false
-        /// </param>
         /// <param name="displayName">
         /// Name that is used to identifythe account on the website
         /// </param>
         /// <param name="provider">
         /// Authentication provider, e.g. 'github'
         /// </param>
-        /// <param name="picture"></param>
         /// <param name="isAdmin"></param>
         /// <param name="name">
         /// Personal name
@@ -159,6 +154,11 @@ namespace G
         /// <param name="website">
         /// Company website address
         /// </param>
+        /// <param name="email"></param>
+        /// <param name="requireEmailVerified">
+        /// Default Value: false
+        /// </param>
+        /// <param name="picture"></param>
         /// <param name="isTeamAccount">
         /// Default Value: false
         /// </param>
@@ -195,17 +195,17 @@ namespace G
             global::G.MeVercelConnection2? vercelConnection)
         {
             this.Uid = uid ?? throw new global::System.ArgumentNullException(nameof(uid));
+            this.Email = email;
             this.EmailVerified = emailVerified;
+            this.RequireEmailVerified = requireEmailVerified;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Provider = provider ?? throw new global::System.ArgumentNullException(nameof(provider));
+            this.Picture = picture;
             this.IsAdmin = isAdmin;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.IsBusinessAccount = isBusinessAccount;
             this.Company = company ?? throw new global::System.ArgumentNullException(nameof(company));
             this.Website = website ?? throw new global::System.ArgumentNullException(nameof(website));
-            this.Email = email;
-            this.RequireEmailVerified = requireEmailVerified;
-            this.Picture = picture;
             this.IsTeamAccount = isTeamAccount;
             this.IsTeamOwner = isTeamOwner;
             this.TeamRole = teamRole;

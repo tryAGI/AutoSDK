@@ -65,8 +65,8 @@ namespace G
         /// <param name="token"></param>
         /// <param name="choices"></param>
         /// <param name="usage"></param>
-        /// <param name="seed"></param>
         /// <param name="finishReason"></param>
+        /// <param name="seed"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -82,8 +82,8 @@ namespace G
             this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
             this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
             this.Usage = usage;
-            this.FinishReason = finishReason;
             this.Seed = seed;
+            this.FinishReason = finishReason;
         }
 
         /// <summary>

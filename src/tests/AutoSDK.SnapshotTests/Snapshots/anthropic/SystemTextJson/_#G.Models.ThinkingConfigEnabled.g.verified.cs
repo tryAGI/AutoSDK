@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ThinkingConfigEnabled" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="budgetTokens">
         /// Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality. <br/>
         /// Must be ≥1024 and less than `max_tokens`.<br/>
         /// See [extended thinking](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking) for details.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -47,8 +47,8 @@ namespace G
             int budgetTokens,
             global::G.ThinkingConfigEnabledType type)
         {
-            this.BudgetTokens = budgetTokens;
             this.Type = type;
+            this.BudgetTokens = budgetTokens;
         }
 
         /// <summary>

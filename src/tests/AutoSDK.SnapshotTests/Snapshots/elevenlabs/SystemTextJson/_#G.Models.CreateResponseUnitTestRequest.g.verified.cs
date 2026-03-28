@@ -73,6 +73,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateResponseUnitTestRequest" /> class.
         /// </summary>
+        /// <param name="name"></param>
         /// <param name="fromConversationMetadata">
         /// Metadata of a conversation this test was created from (if applicable).
         /// </param>
@@ -92,7 +93,6 @@ namespace G
         /// <param name="failureExamples">
         /// Non-empty list of example responses that should be considered failures
         /// </param>
-        /// <param name="name"></param>
         /// <param name="parentFolderId">
         /// The ID of the parent folder. If not provided, the test will be created at the root level.
         /// </param>
@@ -110,7 +110,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.AgentFailureResponseExample>? failureExamples,
             string? parentFolderId)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.FromConversationMetadata = fromConversationMetadata;
             this.DynamicVariables = dynamicVariables;
             this.ChatHistory = chatHistory;
@@ -118,6 +117,7 @@ namespace G
             this.SuccessCondition = successCondition;
             this.SuccessExamples = successExamples;
             this.FailureExamples = failureExamples;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ParentFolderId = parentFolderId;
         }
 

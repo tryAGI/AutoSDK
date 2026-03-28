@@ -58,14 +58,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookMergeGroupChecksRequested" /> class.
         /// </summary>
+        /// <param name="mergeGroup">
+        /// A group of pull requests that the merge queue has grouped together to be merged.
+        /// </param>
         /// <param name="action"></param>
         /// <param name="installation">
         /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>
         /// for and sent to a GitHub App. For more information,<br/>
         /// see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
-        /// </param>
-        /// <param name="mergeGroup">
-        /// A group of pull requests that the merge queue has grouped together to be merged.
         /// </param>
         /// <param name="organization">
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
@@ -86,9 +86,9 @@ namespace G
             global::G.RepositoryWebhooks? repository,
             global::G.SimpleUser? sender)
         {
-            this.MergeGroup = mergeGroup ?? throw new global::System.ArgumentNullException(nameof(mergeGroup));
             this.Action = action;
             this.Installation = installation;
+            this.MergeGroup = mergeGroup ?? throw new global::System.ArgumentNullException(nameof(mergeGroup));
             this.Organization = organization;
             this.Repository = repository;
             this.Sender = sender;

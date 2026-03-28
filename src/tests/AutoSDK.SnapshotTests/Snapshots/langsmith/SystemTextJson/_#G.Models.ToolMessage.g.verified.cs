@@ -101,6 +101,7 @@ namespace G
         /// Initializes a new instance of the <see cref="ToolMessage" /> class.
         /// </summary>
         /// <param name="content"></param>
+        /// <param name="toolCallId"></param>
         /// <param name="additionalKwargs"></param>
         /// <param name="responseMetadata"></param>
         /// <param name="type">
@@ -108,7 +109,6 @@ namespace G
         /// </param>
         /// <param name="name"></param>
         /// <param name="id"></param>
-        /// <param name="toolCallId"></param>
         /// <param name="artifact"></param>
         /// <param name="status">
         /// Default Value: success
@@ -128,12 +128,12 @@ namespace G
             global::G.ToolMessageStatus? status)
         {
             this.Content = content;
-            this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
             this.AdditionalKwargs = additionalKwargs;
             this.ResponseMetadata = responseMetadata;
             this.Type = type;
             this.Name = name;
             this.Id = id;
+            this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
             this.Artifact = artifact;
             this.Status = status;
         }

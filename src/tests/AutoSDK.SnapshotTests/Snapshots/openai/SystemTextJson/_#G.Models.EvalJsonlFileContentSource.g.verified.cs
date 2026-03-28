@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EvalJsonlFileContentSource" /> class.
         /// </summary>
+        /// <param name="content">
+        /// The content of the jsonl file.
+        /// </param>
         /// <param name="type">
         /// The type of jsonl source. Always `file_content`.<br/>
         /// Default Value: file_content
-        /// </param>
-        /// <param name="content">
-        /// The content of the jsonl file.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -48,8 +48,8 @@ namespace G
             global::System.Collections.Generic.IList<global::G.EvalJsonlFileContentSourceContentItem> content,
             global::G.EvalJsonlFileContentSourceType type = global::G.EvalJsonlFileContentSourceType.FileContent)
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Type = type;
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
         }
 
         /// <summary>

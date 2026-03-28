@@ -66,14 +66,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookDeploymentReviewRequestedWorkflowJobRun" /> class.
         /// </summary>
-        /// <param name="conclusion"></param>
         /// <param name="createdAt"></param>
         /// <param name="environment"></param>
         /// <param name="htmlUrl"></param>
         /// <param name="id"></param>
-        /// <param name="name"></param>
         /// <param name="status"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="conclusion"></param>
+        /// <param name="name"></param>
         public WebhookDeploymentReviewRequestedWorkflowJobRun(
             string createdAt,
             string environment,
@@ -84,14 +84,14 @@ namespace G
             object? conclusion,
             string? name)
         {
+            this.Conclusion = conclusion;
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.Environment = environment ?? throw new global::System.ArgumentNullException(nameof(environment));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.Id = id;
+            this.Name = name;
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
-            this.Conclusion = conclusion;
-            this.Name = name;
         }
 
         /// <summary>

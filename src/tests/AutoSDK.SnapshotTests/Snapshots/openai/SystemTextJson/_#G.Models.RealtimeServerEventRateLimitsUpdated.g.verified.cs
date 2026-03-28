@@ -45,11 +45,11 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `rate_limits.updated`.
-        /// </param>
         /// <param name="rateLimits">
         /// List of rate limit information.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `rate_limits.updated`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -60,8 +60,8 @@ namespace G
             global::G.RealtimeServerEventRateLimitsUpdatedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.RateLimits = rateLimits ?? throw new global::System.ArgumentNullException(nameof(rateLimits));
             this.Type = type;
+            this.RateLimits = rateLimits ?? throw new global::System.ArgumentNullException(nameof(rateLimits));
         }
 
         /// <summary>

@@ -58,14 +58,14 @@ namespace G
         /// - `jina-embedding-l-en-v1`,	330,	1024<br/>
         /// For more information, please checkout our [technical blog](https://arxiv.org/abs/2307.11224).
         /// </param>
-        /// <param name="object">
-        /// Default Value: list
-        /// </param>
         /// <param name="data">
         /// A list of Embedding Objects returned by the embedding service
         /// </param>
         /// <param name="usage">
         /// Total usage of the request. Sums up the usage from each individual input
+        /// </param>
+        /// <param name="object">
+        /// Default Value: list
         /// </param>
         public ModelEmbeddingOutput(
             string model,
@@ -74,9 +74,9 @@ namespace G
             string? @object)
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
-            this.Object = @object;
         }
 
         /// <summary>

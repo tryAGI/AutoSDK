@@ -93,15 +93,15 @@ namespace G
         /// <param name="detector">
         /// A description of the detector used.
         /// </param>
+        /// <param name="scanned">
+        /// The time at which the snapshot was scanned.<br/>
+        /// Example: 2020-06-13T14:52:50-05:00
+        /// </param>
         /// <param name="metadata">
         /// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
         /// </param>
         /// <param name="manifests">
         /// A collection of package manifests, which are a collection of related dependencies declared in a file or representing a logical group of dependencies.
-        /// </param>
-        /// <param name="scanned">
-        /// The time at which the snapshot was scanned.<br/>
-        /// Example: 2020-06-13T14:52:50-05:00
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -121,9 +121,9 @@ namespace G
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
             this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
             this.Detector = detector ?? throw new global::System.ArgumentNullException(nameof(detector));
-            this.Scanned = scanned;
             this.Metadata = metadata;
             this.Manifests = manifests;
+            this.Scanned = scanned;
         }
 
         /// <summary>

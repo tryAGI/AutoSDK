@@ -32,19 +32,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UsersCreatePublicSshKeyForAuthenticatedUserRequest" /> class.
         /// </summary>
+        /// <param name="key">
+        /// The public SSH key to add to your GitHub account.
+        /// </param>
         /// <param name="title">
         /// A descriptive name for the new key.<br/>
         /// Example: Personal MacBook Air
-        /// </param>
-        /// <param name="key">
-        /// The public SSH key to add to your GitHub account.
         /// </param>
         public UsersCreatePublicSshKeyForAuthenticatedUserRequest(
             string key,
             string? title)
         {
-            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Title = title;
+            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
         }
 
         /// <summary>

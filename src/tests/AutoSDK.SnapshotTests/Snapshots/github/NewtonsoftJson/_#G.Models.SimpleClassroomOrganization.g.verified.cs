@@ -72,11 +72,11 @@ namespace G
         /// <param name="htmlUrl">
         /// Example: https://github.com/github
         /// </param>
-        /// <param name="name">
-        /// Example: Github - Code thigns happen here
-        /// </param>
         /// <param name="avatarUrl">
         /// Example: https://github.com/images/error/octocat_happy.gif
+        /// </param>
+        /// <param name="name">
+        /// Example: Github - Code thigns happen here
         /// </param>
         public SimpleClassroomOrganization(
             int id,
@@ -90,8 +90,8 @@ namespace G
             this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
             this.Name = name;
+            this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
         }
 
         /// <summary>

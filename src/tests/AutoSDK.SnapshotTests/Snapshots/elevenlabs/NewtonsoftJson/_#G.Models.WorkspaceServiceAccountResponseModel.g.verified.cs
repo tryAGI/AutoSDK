@@ -50,8 +50,8 @@ namespace G
         /// </summary>
         /// <param name="serviceAccountUserId"></param>
         /// <param name="name"></param>
-        /// <param name="createdAtUnix"></param>
         /// <param name="apiKeys"></param>
+        /// <param name="createdAtUnix"></param>
         /// <param name="defaultSharingGroups">
         /// Default Value: []
         /// </param>
@@ -64,8 +64,8 @@ namespace G
         {
             this.ServiceAccountUserId = serviceAccountUserId ?? throw new global::System.ArgumentNullException(nameof(serviceAccountUserId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.ApiKeys = apiKeys ?? throw new global::System.ArgumentNullException(nameof(apiKeys));
             this.CreatedAtUnix = createdAtUnix;
+            this.ApiKeys = apiKeys ?? throw new global::System.ArgumentNullException(nameof(apiKeys));
             this.DefaultSharingGroups = defaultSharingGroups;
         }
 

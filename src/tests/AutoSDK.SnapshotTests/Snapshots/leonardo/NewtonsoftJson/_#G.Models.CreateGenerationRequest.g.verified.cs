@@ -295,6 +295,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateGenerationRequest" /> class.
         /// </summary>
+        /// <param name="prompt">
+        /// The prompt used to generate images<br/>
+        /// Default Value: A majestic cat in the snow
+        /// </param>
         /// <param name="alchemy">
         /// Enable to use Alchemy. Note: The appropriate Alchemy version is selected for the specified model. For example, XL models will use Alchemy V2.<br/>
         /// Default Value: true
@@ -360,10 +364,6 @@ namespace G
         /// <param name="presetStyle">
         /// The style to generate images with. When photoReal is enabled, refer to the Guide section for a full list. When alchemy is disabled, use LEONARDO or NONE. When alchemy is enabled, use ANIME, CREATIVE, DYNAMIC, ENVIRONMENT, GENERAL, ILLUSTRATION, PHOTOGRAPHY, RAYTRACED, RENDER_3D, SKETCH_BW, SKETCH_COLOR, or NONE.<br/>
         /// Default Value: DYNAMIC
-        /// </param>
-        /// <param name="prompt">
-        /// The prompt used to generate images<br/>
-        /// Default Value: A majestic cat in the snow
         /// </param>
         /// <param name="promptMagic">
         /// Enable to use Prompt Magic.
@@ -458,7 +458,6 @@ namespace G
             string? canvasInitId,
             string? canvasMaskId)
         {
-            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Alchemy = alchemy;
             this.ContrastRatio = contrastRatio;
             this.Controlnets = controlnets;
@@ -482,6 +481,7 @@ namespace G
             this.PhotoRealVersion = photoRealVersion;
             this.PhotoRealStrength = photoRealStrength;
             this.PresetStyle = presetStyle;
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.PromptMagic = promptMagic;
             this.PromptMagicStrength = promptMagicStrength;
             this.PromptMagicVersion = promptMagicVersion;

@@ -72,10 +72,10 @@ namespace G
         /// <param name="sha">
         /// The latest commit SHA of the page.
         /// </param>
-        /// <param name="summary"></param>
         /// <param name="title">
         /// The current page title.
         /// </param>
+        /// <param name="summary"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -91,8 +91,8 @@ namespace G
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.PageName = pageName ?? throw new global::System.ArgumentNullException(nameof(pageName));
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
-            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Summary = summary;
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
         }
 
         /// <summary>

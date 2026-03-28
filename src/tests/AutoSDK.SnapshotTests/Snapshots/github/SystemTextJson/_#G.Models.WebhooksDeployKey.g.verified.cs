@@ -79,15 +79,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhooksDeployKey" /> class.
         /// </summary>
-        /// <param name="addedBy"></param>
         /// <param name="createdAt"></param>
         /// <param name="id"></param>
         /// <param name="key"></param>
-        /// <param name="lastUsed"></param>
         /// <param name="readOnly"></param>
         /// <param name="title"></param>
         /// <param name="url"></param>
         /// <param name="verified"></param>
+        /// <param name="addedBy"></param>
+        /// <param name="lastUsed"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -102,15 +102,15 @@ namespace G
             string? addedBy,
             string? lastUsed)
         {
+            this.AddedBy = addedBy;
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.Id = id;
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
+            this.LastUsed = lastUsed;
             this.ReadOnly = readOnly;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Verified = verified;
-            this.AddedBy = addedBy;
-            this.LastUsed = lastUsed;
         }
 
         /// <summary>

@@ -114,9 +114,9 @@ namespace G
         /// Example: https://api.github.com/repos/octocat/Hello-World/commits/6dcb09b5b57875f334f61aebed695e2e4193db5e/comments
         /// </param>
         /// <param name="commit1"></param>
+        /// <param name="parents"></param>
         /// <param name="author"></param>
         /// <param name="committer"></param>
-        /// <param name="parents"></param>
         /// <param name="stats"></param>
         /// <param name="files"></param>
 #if NET7_0_OR_GREATER
@@ -141,9 +141,9 @@ namespace G
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
             this.Commit1 = commit1 ?? throw new global::System.ArgumentNullException(nameof(commit1));
-            this.Parents = parents ?? throw new global::System.ArgumentNullException(nameof(parents));
             this.Author = author;
             this.Committer = committer;
+            this.Parents = parents ?? throw new global::System.ArgumentNullException(nameof(parents));
             this.Stats = stats;
             this.Files = files;
         }

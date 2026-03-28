@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategy" /> class.
         /// </summary>
+        /// <param name="static"></param>
         /// <param name="type">
         /// Always `static`.
         /// </param>
-        /// <param name="static"></param>
         public CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategy(
             global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategyStatic @static,
             global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategyType type)
         {
-            this.Static = @static ?? throw new global::System.ArgumentNullException(nameof(@static));
             this.Type = type;
+            this.Static = @static ?? throw new global::System.ArgumentNullException(nameof(@static));
         }
 
         /// <summary>

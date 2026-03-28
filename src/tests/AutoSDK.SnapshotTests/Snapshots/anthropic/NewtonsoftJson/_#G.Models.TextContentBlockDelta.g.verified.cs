@@ -31,16 +31,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TextContentBlockDelta" /> class.
         /// </summary>
+        /// <param name="text"></param>
         /// <param name="type">
         /// Default Value: text_delta
         /// </param>
-        /// <param name="text"></param>
         public TextContentBlockDelta(
             string text,
             global::G.TextContentBlockDeltaType type = global::G.TextContentBlockDeltaType.TextDelta)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

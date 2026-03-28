@@ -21,6 +21,7 @@ public record struct ModelData(
     bool IsBaseClass,
     bool IsDerivedClass,
     ImmutableArray<string> InheritedPropertyNames,
+    ImmutableArray<PropertyData> InheritedRequiredProperties,
     string DiscriminatorPropertyName,
     EquatableArray<(string GlobalClassName, string Discriminator)> DerivedTypes,
     string ClassName,

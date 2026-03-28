@@ -49,10 +49,10 @@ namespace G
         /// Initializes a new instance of the <see cref="SchemaOut" /> class.
         /// </summary>
         /// <param name="variant"></param>
+        /// <param name="fieldsIn"></param>
         /// <param name="schemaIn"></param>
         /// <param name="schemaOut1"></param>
         /// <param name="schemaStream"></param>
-        /// <param name="fieldsIn"></param>
         public SchemaOut(
             global::G.SchemaVariant variant,
             global::System.Collections.Generic.IList<global::G.ModelFieldInfo> fieldsIn,
@@ -61,10 +61,10 @@ namespace G
             object? schemaStream)
         {
             this.Variant = variant ?? throw new global::System.ArgumentNullException(nameof(variant));
-            this.FieldsIn = fieldsIn ?? throw new global::System.ArgumentNullException(nameof(fieldsIn));
             this.SchemaIn = schemaIn;
             this.SchemaOut1 = schemaOut1;
             this.SchemaStream = schemaStream;
+            this.FieldsIn = fieldsIn ?? throw new global::System.ArgumentNullException(nameof(fieldsIn));
         }
 
         /// <summary>

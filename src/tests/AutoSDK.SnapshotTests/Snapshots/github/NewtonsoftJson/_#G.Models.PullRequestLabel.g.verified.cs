@@ -64,9 +64,9 @@ namespace G
         /// <param name="nodeId"></param>
         /// <param name="url"></param>
         /// <param name="name"></param>
-        /// <param name="description"></param>
         /// <param name="color"></param>
         /// <param name="default"></param>
+        /// <param name="description"></param>
         public PullRequestLabel(
             long id,
             string nodeId,
@@ -80,9 +80,9 @@ namespace G
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description;
             this.Color = color ?? throw new global::System.ArgumentNullException(nameof(color));
             this.Default = @default;
-            this.Description = description;
         }
 
         /// <summary>

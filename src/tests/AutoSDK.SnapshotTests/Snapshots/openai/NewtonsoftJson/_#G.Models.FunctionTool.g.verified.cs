@@ -50,16 +50,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FunctionTool" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the function tool. Always `function`.<br/>
-        /// Default Value: function
-        /// </param>
         /// <param name="name">
         /// The name of the function to call.
         /// </param>
         /// <param name="description"></param>
         /// <param name="parameters"></param>
         /// <param name="strict"></param>
+        /// <param name="type">
+        /// The type of the function tool. Always `function`.<br/>
+        /// Default Value: function
+        /// </param>
         public FunctionTool(
             string name,
             string? description,
@@ -67,8 +67,8 @@ namespace G
             bool? strict,
             global::G.FunctionToolType type = global::G.FunctionToolType.Function)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
             this.Parameters = parameters;
             this.Strict = strict;

@@ -36,17 +36,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaBase64PDFSource" /> class.
         /// </summary>
+        /// <param name="data"></param>
         /// <param name="type"></param>
         /// <param name="mediaType"></param>
-        /// <param name="data"></param>
         public BetaBase64PDFSource(
             byte[] data,
             global::G.BetaBase64PDFSourceType type,
             global::G.BetaBase64PDFSourceMediaType mediaType)
         {
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Type = type;
             this.MediaType = mediaType;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
         }
 
         /// <summary>

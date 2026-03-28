@@ -44,10 +44,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MonitorRequest" /> class.
         /// </summary>
+        /// <param name="groups"></param>
         /// <param name="timezone">
         /// Default Value: UTC
         /// </param>
-        /// <param name="groups"></param>
         /// <param name="interval">
         /// Timedelta input.<br/>
         /// Default Value: {"days":7,"minutes":0,"hours":0}
@@ -62,8 +62,8 @@ namespace G
             global::G.TimedeltaInput? interval,
             global::G.TimedeltaInput? stride)
         {
-            this.Groups = groups ?? throw new global::System.ArgumentNullException(nameof(groups));
             this.Timezone = timezone;
+            this.Groups = groups ?? throw new global::System.ArgumentNullException(nameof(groups));
             this.Interval = interval;
             this.Stride = stride;
         }

@@ -102,14 +102,14 @@ namespace G
         /// <param name="name"></param>
         /// <param name="visibility"></param>
         /// <param name="default"></param>
+        /// <param name="runnersUrl"></param>
+        /// <param name="inherited"></param>
+        /// <param name="allowsPublicRepositories"></param>
         /// <param name="selectedRepositoriesUrl">
         /// Link to the selected repositories resource for this runner group. Not present unless visibility was set to `selected`
         /// </param>
-        /// <param name="runnersUrl"></param>
         /// <param name="hostedRunnersUrl"></param>
-        /// <param name="inherited"></param>
         /// <param name="inheritedAllowsPublicRepositories"></param>
-        /// <param name="allowsPublicRepositories"></param>
         /// <param name="workflowRestrictionsReadOnly">
         /// If `true`, the `restricted_to_workflows` and `selected_workflows` fields cannot be modified.<br/>
         /// Default Value: false
@@ -140,12 +140,12 @@ namespace G
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Visibility = visibility ?? throw new global::System.ArgumentNullException(nameof(visibility));
             this.Default = @default;
-            this.RunnersUrl = runnersUrl ?? throw new global::System.ArgumentNullException(nameof(runnersUrl));
-            this.Inherited = inherited;
-            this.AllowsPublicRepositories = allowsPublicRepositories;
             this.SelectedRepositoriesUrl = selectedRepositoriesUrl;
+            this.RunnersUrl = runnersUrl ?? throw new global::System.ArgumentNullException(nameof(runnersUrl));
             this.HostedRunnersUrl = hostedRunnersUrl;
+            this.Inherited = inherited;
             this.InheritedAllowsPublicRepositories = inheritedAllowsPublicRepositories;
+            this.AllowsPublicRepositories = allowsPublicRepositories;
             this.WorkflowRestrictionsReadOnly = workflowRestrictionsReadOnly;
             this.RestrictedToWorkflows = restrictedToWorkflows;
             this.SelectedWorkflows = selectedWorkflows;

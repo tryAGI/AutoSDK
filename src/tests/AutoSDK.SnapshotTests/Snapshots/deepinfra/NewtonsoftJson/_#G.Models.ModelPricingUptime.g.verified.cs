@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelPricingUptime" /> class.
         /// </summary>
+        /// <param name="centsPerSec"></param>
         /// <param name="type">
         /// Default Value: uptime
         /// </param>
-        /// <param name="centsPerSec"></param>
         public ModelPricingUptime(
             double centsPerSec,
             string? type)
         {
-            this.CentsPerSec = centsPerSec;
             this.Type = type;
+            this.CentsPerSec = centsPerSec;
         }
 
         /// <summary>

@@ -36,10 +36,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookCodeScanningAlertReopenedAlertTool" /> class.
         /// </summary>
-        /// <param name="guid"></param>
         /// <param name="name">
         /// The name of the tool used to generate the code scanning analysis alert.
         /// </param>
+        /// <param name="guid"></param>
         /// <param name="version">
         /// The version of the tool used to detect the alert.
         /// </param>
@@ -48,8 +48,8 @@ namespace G
             string? guid,
             string? version)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Guid = guid;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Version = version;
         }
 

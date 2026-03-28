@@ -185,6 +185,7 @@ namespace G
         /// Initializes a new instance of the <see cref="FinetuneResponse" /> class.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="status"></param>
         /// <param name="trainingFile"></param>
         /// <param name="validationFile"></param>
         /// <param name="model"></param>
@@ -201,7 +202,6 @@ namespace G
         /// <param name="learningRate"></param>
         /// <param name="evalSteps"></param>
         /// <param name="trainingType"></param>
-        /// <param name="status"></param>
         /// <param name="jobId"></param>
         /// <param name="events"></param>
         /// <param name="tokenCount"></param>
@@ -244,7 +244,6 @@ namespace G
             string? wandbUrl)
         {
             this.Id = id;
-            this.Status = status;
             this.TrainingFile = trainingFile;
             this.ValidationFile = validationFile;
             this.Model = model;
@@ -261,6 +260,7 @@ namespace G
             this.LearningRate = learningRate;
             this.EvalSteps = evalSteps;
             this.TrainingType = trainingType;
+            this.Status = status;
             this.JobId = jobId;
             this.Events = events;
             this.TokenCount = tokenCount;

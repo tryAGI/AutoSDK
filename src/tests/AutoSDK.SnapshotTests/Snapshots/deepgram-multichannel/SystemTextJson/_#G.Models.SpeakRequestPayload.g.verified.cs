@@ -38,10 +38,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="SpeakRequestPayload" /> class.
         /// </summary>
-        /// <param name="messageType"></param>
         /// <param name="text">
         /// Text to synthesize.
         /// </param>
+        /// <param name="messageType"></param>
         /// <param name="voice">
         /// Voice identifier.
         /// </param>
@@ -53,8 +53,8 @@ namespace G
             global::G.SpeakRequestPayloadMessageType messageType,
             string? voice)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.MessageType = messageType;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Voice = voice;
         }
 

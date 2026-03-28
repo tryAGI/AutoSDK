@@ -38,11 +38,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelPricingTokens" /> class.
         /// </summary>
+        /// <param name="centsPerInputToken"></param>
+        /// <param name="centsPerOutputToken"></param>
         /// <param name="type">
         /// Default Value: tokens
         /// </param>
-        /// <param name="centsPerInputToken"></param>
-        /// <param name="centsPerOutputToken"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -51,9 +51,9 @@ namespace G
             double centsPerOutputToken,
             string? type)
         {
+            this.Type = type;
             this.CentsPerInputToken = centsPerInputToken;
             this.CentsPerOutputToken = centsPerOutputToken;
-            this.Type = type;
         }
 
         /// <summary>

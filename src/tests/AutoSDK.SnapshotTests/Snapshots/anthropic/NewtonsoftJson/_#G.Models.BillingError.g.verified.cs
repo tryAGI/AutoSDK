@@ -32,18 +32,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BillingError" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: billing_error
-        /// </param>
         /// <param name="message">
         /// Default Value: Billing error
+        /// </param>
+        /// <param name="type">
+        /// Default Value: billing_error
         /// </param>
         public BillingError(
             string message,
             global::G.BillingErrorType type = global::G.BillingErrorType.BillingError)
         {
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Type = type;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
         }
 
         /// <summary>

@@ -136,22 +136,114 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         return modelData.IsDerivedClass && modelData.HasDeprecatedBaseClass;
     }
 
-    private static bool RequiresNewModifier(ModelData modelData, PropertyData property)
+    private static IEnumerable<PropertyData> GetDirectProperties(SchemaContext context)
+    {
+        var source = context.IsDerivedClass
+            ? context.DerivedClassContext.Children
+            : !context.Schema.IsEnum()
+                ? context.Children
+                : null;
+
+        if (source == null || source.Count == 0)
+        {
+            yield break;
+        }
+
+        var discriminatorPropertyName = context.IsBaseClass
+            ? context.Schema.Discriminator?.PropertyName
+            : null;
+        var hasDiscriminator = !string.IsNullOrWhiteSpace(discriminatorPropertyName);
+
+        for (var i = 0; i < source.Count; i++)
+        {
+            var child = source[i];
+            if (child is not { IsProperty: true, PropertyData: not null })
+            {
+                continue;
+            }
+
+            foreach (var property in child.ComputedProperties)
+            {
+                if (!hasDiscriminator || property.Id != discriminatorPropertyName)
+                {
+                    yield return property;
+                }
+            }
+        }
+    }
+
+    private static IEnumerable<PropertyData> GetInheritedProperties(ModelData modelData, bool requiredOnly = false)
     {
         if (!modelData.IsDerivedClass)
         {
-            return false;
+            yield break;
         }
 
-        for (var i = 0; i < modelData.InheritedPropertyNames.Length; i++)
+        var seenNames = new HashSet<string>(StringComparer.Ordinal);
+        SchemaContext? current = modelData.SchemaContext;
+
+        while (current is not null && current.IsDerivedClass)
         {
-            if (string.Equals(modelData.InheritedPropertyNames[i], property.Name, StringComparison.Ordinal))
+            var baseContext = current.BaseClassContext;
+            if (baseContext.ReferenceId is string baseReferenceId &&
+                !string.IsNullOrWhiteSpace(baseReferenceId) &&
+                current.ComponentSchemas?.TryGetValue(baseReferenceId, out var componentBaseContext) == true)
             {
-                return true;
+                baseContext = componentBaseContext;
             }
+            else
+            {
+                baseContext = baseContext.ResolvedReference ?? baseContext;
+            }
+
+            foreach (var property in GetDirectProperties(baseContext))
+            {
+                if ((requiredOnly && !property.IsRequired) || !seenNames.Add(property.Name))
+                {
+                    continue;
+                }
+
+                yield return property;
+            }
+
+            current = baseContext;
+        }
+    }
+
+    private static string GetConstructorParameter(
+        PropertyData property,
+        bool isRequiredKeywordSupported,
+        bool forceRequired = false,
+        string? parameterName = null)
+    {
+        parameterName ??= property.ParameterName;
+
+        if (forceRequired || property.IsRequired)
+        {
+            return $@"
+            {property.Type.CSharpType} {parameterName}";
         }
 
-        return false;
+        return property.Type.CSharpTypeNullability || string.IsNullOrWhiteSpace(property.DefaultValue)
+            ? $@"
+            {property.Type.CSharpType} {parameterName}"
+            : $@"
+            {property.Type.CSharpType} {parameterName}{GetDefaultValue(property, isRequiredKeywordSupported).TrimEnd(';')}";
+    }
+
+    private static string GetConstructorAssignment(
+        string target,
+        PropertyData property,
+        string? parameterName = null,
+        bool forceRequired = false)
+    {
+        parameterName ??= property.ParameterName;
+
+        return forceRequired || property.IsRequired
+            ? $@"
+            {target}.{property.Name} = {parameterName}{(property.Type.IsValueType ? string.Empty : $" ?? throw new global::System.ArgumentNullException(nameof({parameterName}))")};"
+            : $@"
+            {target}.{property.Name} = {parameterName};";
     }
 
     public static string GenerateClassModel(
@@ -164,11 +256,113 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
             ? " required"
             : string.Empty;
         var properties = modelData.Properties;
-        var hasAdditionalPropertiesProperty = properties.Any(x =>
-            x.Name == "AdditionalProperties");
+        var hasAdditionalPropertiesProperty = properties.Any(x => x.Name == "AdditionalProperties");
         var additionalPropertiesPostfix = modelData.ClassName == "AdditionalProperties" || hasAdditionalPropertiesProperty
             ? "2"
             : string.Empty;
+
+        var inheritedPropertyNames = new HashSet<string>(
+            modelData.InheritedPropertyNames,
+            StringComparer.Ordinal);
+        var inheritedRequiredPropertiesByName = modelData.InheritedRequiredProperties
+            .ToDictionary(static x => x.Name, static x => x, StringComparer.Ordinal);
+
+        var constructorProperties = properties
+            .Where(x => x.IsRequired || !x.IsDeprecated || inheritedRequiredPropertiesByName.ContainsKey(x.Name))
+            .ToArray();
+        var constructorBaseOnlyRequiredProperties = inheritedRequiredPropertiesByName.Values
+            .Where(x => properties.All(y => !string.Equals(y.Name, x.Name, StringComparison.Ordinal)))
+            .ToArray();
+        var requiredConstructorProperties = constructorProperties
+            .Where(x => x.IsRequired || inheritedRequiredPropertiesByName.ContainsKey(x.Name))
+            .ToArray();
+        var optionalConstructorProperties = constructorProperties
+            .Where(x => !x.IsRequired && !inheritedRequiredPropertiesByName.ContainsKey(x.Name))
+            .ToArray();
+        var optionalConstructorPropertiesWithoutDefaults = optionalConstructorProperties
+            .Where(x => x.Type.CSharpTypeNullability || string.IsNullOrWhiteSpace(x.DefaultValue))
+            .ToArray();
+        var optionalConstructorPropertiesWithDefaults = optionalConstructorProperties
+            .Where(x => !x.Type.CSharpTypeNullability && !string.IsNullOrWhiteSpace(x.DefaultValue))
+            .ToArray();
+        var orderedConstructorProperties = requiredConstructorProperties
+            .Concat(optionalConstructorPropertiesWithoutDefaults)
+            .Concat(optionalConstructorPropertiesWithDefaults)
+            .ToArray();
+        var hasConstructor = constructorProperties.Length > 0 || constructorBaseOnlyRequiredProperties.Length > 0;
+
+        var propertyDeclarations = properties.Select(property => @$"
+        {property.Summary.ToXmlDocumentationSummary(level: 8)}
+        {property.DefaultValue?.ClearForXml().ToXmlDocumentationDefault(level: 8)}
+        {property.Example?.ToXmlDocumentationExample(level: 8)}
+        {jsonSerializer.GeneratePropertyAttribute(property.Id, property.IsRequired)}
+        {jsonSerializer.GenerateConverterAttribute(property.ConverterType)}
+        {(property.IsRequired ? jsonSerializer.GenerateRequiredAttribute() : string.Empty)}
+        {(modelData.IsDeprecated || (property.Type is { IsDeprecated: true, IsAnyOfLike: false } && !property.IsRequired) ? $"[global::System.Obsolete(\"{(!string.IsNullOrWhiteSpace(modelData.DeprecationMessage) ? modelData.DeprecationMessage.ClearForCSharp() : "This property marked as deprecated.")}\")]" : TrimmedLine)}
+        public{(inheritedPropertyNames.Contains(property.Name) ? " new" : string.Empty)}{(property.IsRequired ? requiredKeyword : string.Empty)} {property.Type.CSharpType} {property.Name} {{ get; set; }}{GetDefaultValue(property, isRequiredKeywordSupported)}
+").Inject();
+
+        var constructorParameterDocumentation = requiredConstructorProperties
+            .Select(x => $@"
+        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}")
+            .Concat(constructorBaseOnlyRequiredProperties.Select(x => $@"
+        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}"))
+            .Concat(optionalConstructorPropertiesWithoutDefaults.Select(x => $@"
+        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}"))
+            .Concat(optionalConstructorPropertiesWithDefaults.Select(x => $@"
+        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}"))
+            .Inject();
+
+        var constructorParameters = string.Join(
+            ",",
+            requiredConstructorProperties.Select(x =>
+            {
+                var shareParameterWithBase = inheritedRequiredPropertiesByName.TryGetValue(x.Name, out var inheritedRequiredProperty) &&
+                                             string.Equals(inheritedRequiredProperty.Type.CSharpType, x.Type.CSharpType, StringComparison.Ordinal);
+
+                return GetConstructorParameter(
+                    x,
+                    isRequiredKeywordSupported,
+                    forceRequired: x.IsRequired || shareParameterWithBase);
+            }).Concat(
+                constructorBaseOnlyRequiredProperties.Select(x => GetConstructorParameter(
+                    x,
+                    isRequiredKeywordSupported,
+                    forceRequired: true)))
+            .Concat(optionalConstructorPropertiesWithoutDefaults.Select(x => GetConstructorParameter(
+                x,
+                isRequiredKeywordSupported)))
+            .Concat(optionalConstructorPropertiesWithDefaults.Select(x => GetConstructorParameter(
+                x,
+                isRequiredKeywordSupported))));
+
+        var constructorAssignments = constructorProperties.Select(x =>
+        {
+            var assignments = new List<string>(capacity: 2)
+            {
+                GetConstructorAssignment(
+                    target: "this",
+                    property: x,
+                    forceRequired: x.IsRequired || inheritedRequiredPropertiesByName.ContainsKey(x.Name)),
+            };
+
+            if (inheritedRequiredPropertiesByName.TryGetValue(x.Name, out var inheritedRequiredProperty) &&
+                string.Equals(inheritedRequiredProperty.Type.CSharpType, x.Type.CSharpType, StringComparison.Ordinal))
+            {
+                assignments.Add(GetConstructorAssignment(
+                    target: "base",
+                    property: inheritedRequiredProperty,
+                    parameterName: x.ParameterName,
+                    forceRequired: true));
+            }
+
+            return string.Concat(assignments);
+        }).Concat(
+            constructorBaseOnlyRequiredProperties.Select(x => GetConstructorAssignment(
+                target: "base",
+                property: x,
+                forceRequired: true)))
+            .Inject();
 
         return $@" 
     {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
@@ -180,18 +374,9 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         UnknownDerivedTypeHandling = global::System.Text.Json.Serialization.JsonUnknownDerivedTypeHandling.FallBackToBaseType)]
 {modelData.DerivedTypes.Select(x => $@"
     [global::System.Text.Json.Serialization.JsonDerivedType(typeof({x.GlobalClassName}), typeDiscriminator: ""{x.Discriminator}"")]").Inject()}" : TrimmedLine)}
-    public{(modelData.IsBaseClass ? "" : " sealed")} partial class {modelData.ClassName}{(!string.IsNullOrWhiteSpace(modelData.BaseClass) ? $" : {modelData.BaseClass}" : "")}
+    public{(modelData.IsBaseClass ? "" : " sealed")} partial class {modelData.ClassName}{(!string.IsNullOrWhiteSpace(modelData.BaseClass) ? $" : {modelData.BaseClass}" : string.Empty)}
     {{
-{properties.Select(property => @$"
-        {property.Summary.ToXmlDocumentationSummary(level: 8)}
-        {property.DefaultValue?.ClearForXml().ToXmlDocumentationDefault(level: 8)}
-        {property.Example?.ToXmlDocumentationExample(level: 8)}
-        {jsonSerializer.GeneratePropertyAttribute(property.Id, property.IsRequired)}
-        {jsonSerializer.GenerateConverterAttribute(property.ConverterType)}
-        {(property.IsRequired ? jsonSerializer.GenerateRequiredAttribute() : string.Empty)}
-        {(modelData.IsDeprecated || (property.Type is { IsDeprecated: true, IsAnyOfLike: false } && !property.IsRequired) ? $"[global::System.Obsolete(\"{(!string.IsNullOrWhiteSpace(modelData.DeprecationMessage) ? modelData.DeprecationMessage.ClearForCSharp() : "This property marked as deprecated.")}\")]" : TrimmedLine)}
-        public{(RequiresNewModifier(modelData, property) ? " new" : string.Empty)}{(property.IsRequired ? requiredKeyword : "")} {property.Type.CSharpType} {property.Name} {{ get; set; }}{GetDefaultValue(property, isRequiredKeywordSupported)}
-").Inject()}
+{propertyDeclarations}
 
 {(!modelData.IsDerivedClass ? $@" 
         {"Additional properties that are not explicitly defined in the schema".ToXmlDocumentationSummary(level: 8)}
@@ -199,12 +384,11 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties{additionalPropertiesPostfix} {{ get; set; }} = new global::System.Collections.Generic.Dictionary<string, object>();
  " : TrimmedLine)}
  
-{(properties.Any(static x => x.IsRequired || !x.IsDeprecated) ? $@"
+{(hasConstructor ? $@"
         /// <summary>
         /// Initializes a new instance of the <see cref=""{modelData.ClassName}"" /> class.
         /// </summary>
-{properties.Where(static x => x.IsRequired || !x.IsDeprecated).Select(x => $@"
-        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
+{constructorParameterDocumentation}
 {(modelData.Settings.UseSetsRequiredMembersAttributes is SdkFeatureUsage.Always or SdkFeatureUsage.InSupportedTargetFrameworks ? @$" 
 {(modelData.Settings.UseExperimentalAttributes is SdkFeatureUsage.InSupportedTargetFrameworks ? @" 
 #if NET7_0_OR_GREATER" : TrimmedLine)}
@@ -213,18 +397,9 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
 #endif" : TrimmedLine)}
  " : TrimmedLine)}
         public {modelData.ClassName}(
- {string.Join(",",
-     properties.Where(static x => x.IsRequired).Select(x => $@"
-            {x.Type.CSharpType} {x.ParameterName}").Concat(
-         properties.Where(static x => x is { IsRequired: false, IsDeprecated: false } && (x.Type.CSharpTypeNullability || string.IsNullOrWhiteSpace(x.DefaultValue))).Select(x => $@"
-            {x.Type.CSharpType} {x.ParameterName}")).Concat(
-         properties.Where(static x => x is { IsRequired: false, IsDeprecated: false } && !(x.Type.CSharpTypeNullability || string.IsNullOrWhiteSpace(x.DefaultValue))).Select(x => $@"
-            {x.Type.CSharpType} {x.ParameterName}{GetDefaultValue(x, isRequiredKeywordSupported).TrimEnd(';')}")))})
+ {constructorParameters})
         {{
-{properties.Where(static x => x.IsRequired).Select(x => $@"
-            this.{x.Name} = {x.ParameterName}{(x.Type.IsValueType ? "" : $" ?? throw new global::System.ArgumentNullException(nameof({x.ParameterName}))")};").Inject()}
-{properties.Where(static x => x is { IsRequired: false, IsDeprecated: false }).Select(x => $@"
-            this.{x.Name} = {x.ParameterName};").Inject()}
+{constructorAssignments}
         }}
  " : TrimmedLine)}
 {(properties.Any(static x => !x.IsDeprecated) ? $@"

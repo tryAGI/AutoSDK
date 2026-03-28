@@ -63,12 +63,12 @@ namespace G
         /// Initializes a new instance of the <see cref="FunctionMessage" /> class.
         /// </summary>
         /// <param name="content"></param>
+        /// <param name="name"></param>
         /// <param name="additionalKwargs"></param>
         /// <param name="responseMetadata"></param>
         /// <param name="type">
         /// Default Value: function
         /// </param>
-        /// <param name="name"></param>
         /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -82,10 +82,10 @@ namespace G
             string? id)
         {
             this.Content = content;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.AdditionalKwargs = additionalKwargs;
             this.ResponseMetadata = responseMetadata;
             this.Type = type;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Id = id;
         }
 

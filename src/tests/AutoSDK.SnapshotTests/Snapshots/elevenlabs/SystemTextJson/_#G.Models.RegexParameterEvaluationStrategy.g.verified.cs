@@ -32,10 +32,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RegexParameterEvaluationStrategy" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="pattern">
         /// A regex pattern to match the agent's response against.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -43,8 +43,8 @@ namespace G
             string pattern,
             string type = "regex")
         {
-            this.Pattern = pattern ?? throw new global::System.ArgumentNullException(nameof(pattern));
             this.Type = type;
+            this.Pattern = pattern ?? throw new global::System.ArgumentNullException(nameof(pattern));
         }
 
         /// <summary>

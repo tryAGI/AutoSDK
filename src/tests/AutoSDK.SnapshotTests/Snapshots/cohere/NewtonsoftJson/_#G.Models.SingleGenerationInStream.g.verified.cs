@@ -46,10 +46,10 @@ namespace G
         /// <param name="text">
         /// Full text of the generation.
         /// </param>
+        /// <param name="finishReason"></param>
         /// <param name="index">
         /// Refers to the nth generation. Only present when `num_generations` is greater than zero.
         /// </param>
-        /// <param name="finishReason"></param>
         public SingleGenerationInStream(
             string id,
             string text,
@@ -58,8 +58,8 @@ namespace G
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
-            this.FinishReason = finishReason;
             this.Index = index;
+            this.FinishReason = finishReason;
         }
 
         /// <summary>

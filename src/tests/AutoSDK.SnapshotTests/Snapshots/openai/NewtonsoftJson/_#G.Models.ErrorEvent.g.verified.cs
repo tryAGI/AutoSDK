@@ -30,14 +30,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ErrorEvent" /> class.
         /// </summary>
-        /// <param name="event"></param>
         /// <param name="data"></param>
+        /// <param name="event"></param>
         public ErrorEvent(
             global::G.Error data,
             global::G.ErrorEventEvent @event)
         {
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Event = @event;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
         }
 
         /// <summary>

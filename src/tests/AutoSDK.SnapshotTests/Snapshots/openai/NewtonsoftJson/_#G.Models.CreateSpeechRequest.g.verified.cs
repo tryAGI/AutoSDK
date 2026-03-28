@@ -63,11 +63,11 @@ namespace G
         /// <param name="input">
         /// The text to generate audio for. The maximum length is 4096 characters.
         /// </param>
-        /// <param name="instructions">
-        /// Control the voice of your generated audio with additional instructions. Does not work with `tts-1` or `tts-1-hd`.
-        /// </param>
         /// <param name="voice">
         /// Example: ash
+        /// </param>
+        /// <param name="instructions">
+        /// Control the voice of your generated audio with additional instructions. Does not work with `tts-1` or `tts-1-hd`.
         /// </param>
         /// <param name="responseFormat">
         /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.<br/>
@@ -87,8 +87,8 @@ namespace G
         {
             this.Model = model;
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
-            this.Voice = voice;
             this.Instructions = instructions;
+            this.Voice = voice;
             this.ResponseFormat = responseFormat;
             this.Speed = speed;
         }

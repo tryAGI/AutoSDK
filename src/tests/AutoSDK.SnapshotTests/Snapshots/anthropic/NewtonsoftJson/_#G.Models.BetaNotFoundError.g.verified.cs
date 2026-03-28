@@ -32,18 +32,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaNotFoundError" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: not_found_error
-        /// </param>
         /// <param name="message">
         /// Default Value: Not found
+        /// </param>
+        /// <param name="type">
+        /// Default Value: not_found_error
         /// </param>
         public BetaNotFoundError(
             string message,
             global::G.BetaNotFoundErrorType type = global::G.BetaNotFoundErrorType.NotFoundError)
         {
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Type = type;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
         }
 
         /// <summary>

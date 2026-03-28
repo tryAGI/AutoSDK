@@ -61,15 +61,15 @@ namespace G
         /// <param name="score">
         /// The similarity score for the result.
         /// </param>
+        /// <param name="content">
+        /// Content chunks from the file.
+        /// </param>
         /// <param name="attributes">
         /// Set of 16 key-value pairs that can be attached to an object. This can be <br/>
         /// useful for storing additional information about the object in a structured <br/>
         /// format, and querying for objects via API or the dashboard. Keys are strings <br/>
         /// with a maximum length of 64 characters. Values are strings with a maximum <br/>
         /// length of 512 characters, booleans, or numbers.
-        /// </param>
-        /// <param name="content">
-        /// Content chunks from the file.
         /// </param>
         public VectorStoreSearchResultItem(
             string fileId,
@@ -81,8 +81,8 @@ namespace G
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.Score = score;
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Attributes = attributes;
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
         }
 
         /// <summary>

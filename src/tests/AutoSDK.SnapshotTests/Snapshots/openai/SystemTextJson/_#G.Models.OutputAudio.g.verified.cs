@@ -39,14 +39,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputAudio" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the output audio. Always `output_audio`.
-        /// </param>
         /// <param name="data">
         /// Base64-encoded audio data from the model.
         /// </param>
         /// <param name="transcript">
         /// The transcript of the audio data from the model.
+        /// </param>
+        /// <param name="type">
+        /// The type of the output audio. Always `output_audio`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -56,9 +56,9 @@ namespace G
             string transcript,
             global::G.OutputAudioType type)
         {
+            this.Type = type;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Transcript = transcript ?? throw new global::System.ArgumentNullException(nameof(transcript));
-            this.Type = type;
         }
 
         /// <summary>

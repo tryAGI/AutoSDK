@@ -76,10 +76,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Eval" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The object type.<br/>
-        /// Default Value: eval
-        /// </param>
         /// <param name="id">
         /// Unique identifier for the evaluation.
         /// </param>
@@ -104,6 +100,10 @@ namespace G
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
         /// </param>
+        /// <param name="object">
+        /// The object type.<br/>
+        /// Default Value: eval
+        /// </param>
         public Eval(
             string id,
             string name,
@@ -113,12 +113,12 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::G.EvalObject @object = global::G.EvalObject.Eval)
         {
+            this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.DataSourceConfig = dataSourceConfig;
             this.TestingCriteria = testingCriteria ?? throw new global::System.ArgumentNullException(nameof(testingCriteria));
             this.CreatedAt = createdAt;
-            this.Object = @object;
             this.Metadata = metadata;
         }
 

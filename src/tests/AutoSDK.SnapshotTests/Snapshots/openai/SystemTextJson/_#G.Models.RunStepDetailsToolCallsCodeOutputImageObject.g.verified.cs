@@ -32,10 +32,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepDetailsToolCallsCodeOutputImageObject" /> class.
         /// </summary>
+        /// <param name="image"></param>
         /// <param name="type">
         /// Always `image`.
         /// </param>
-        /// <param name="image"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -43,8 +43,8 @@ namespace G
             global::G.RunStepDetailsToolCallsCodeOutputImageObjectImage image,
             global::G.RunStepDetailsToolCallsCodeOutputImageObjectType type)
         {
-            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.Type = type;
+            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
         }
 
         /// <summary>

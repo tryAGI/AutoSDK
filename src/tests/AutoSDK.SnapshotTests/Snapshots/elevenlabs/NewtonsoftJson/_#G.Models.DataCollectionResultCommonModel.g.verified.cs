@@ -43,9 +43,9 @@ namespace G
         /// Initializes a new instance of the <see cref="DataCollectionResultCommonModel" /> class.
         /// </summary>
         /// <param name="dataCollectionId"></param>
+        /// <param name="rationale"></param>
         /// <param name="value"></param>
         /// <param name="jsonSchema"></param>
-        /// <param name="rationale"></param>
         public DataCollectionResultCommonModel(
             string dataCollectionId,
             string rationale,
@@ -53,9 +53,9 @@ namespace G
             global::G.LiteralJsonSchemaProperty? jsonSchema)
         {
             this.DataCollectionId = dataCollectionId ?? throw new global::System.ArgumentNullException(nameof(dataCollectionId));
-            this.Rationale = rationale ?? throw new global::System.ArgumentNullException(nameof(rationale));
             this.Value = value;
             this.JsonSchema = jsonSchema;
+            this.Rationale = rationale ?? throw new global::System.ArgumentNullException(nameof(rationale));
         }
 
         /// <summary>

@@ -102,18 +102,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhooksTeam1" /> class.
         /// </summary>
+        /// <param name="id">
+        /// Unique identifier of the team
+        /// </param>
+        /// <param name="name">
+        /// Name of the team
+        /// </param>
         /// <param name="deleted"></param>
         /// <param name="description">
         /// Description of the team
         /// </param>
         /// <param name="htmlUrl"></param>
-        /// <param name="id">
-        /// Unique identifier of the team
-        /// </param>
         /// <param name="membersUrl"></param>
-        /// <param name="name">
-        /// Name of the team
-        /// </param>
         /// <param name="nodeId"></param>
         /// <param name="parent"></param>
         /// <param name="permission">
@@ -144,12 +144,12 @@ namespace G
             string? slug,
             string? url)
         {
-            this.Id = id;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Deleted = deleted;
             this.Description = description;
             this.HtmlUrl = htmlUrl;
+            this.Id = id;
             this.MembersUrl = membersUrl;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.NodeId = nodeId;
             this.Parent = parent;
             this.Permission = permission;

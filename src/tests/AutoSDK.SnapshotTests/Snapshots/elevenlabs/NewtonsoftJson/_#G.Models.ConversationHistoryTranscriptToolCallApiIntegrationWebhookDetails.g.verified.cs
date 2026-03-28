@@ -48,13 +48,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: api_integration_webhook
-        /// </param>
         /// <param name="integrationId"></param>
         /// <param name="credentialId"></param>
         /// <param name="integrationConnectionId"></param>
         /// <param name="webhookDetails"></param>
+        /// <param name="type">
+        /// Default Value: api_integration_webhook
+        /// </param>
         public ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails(
             string integrationId,
             string credentialId,
@@ -62,11 +62,11 @@ namespace G
             global::G.ConversationHistoryTranscriptToolCallWebhookDetails webhookDetails,
             string? type)
         {
+            this.Type = type;
             this.IntegrationId = integrationId ?? throw new global::System.ArgumentNullException(nameof(integrationId));
             this.CredentialId = credentialId ?? throw new global::System.ArgumentNullException(nameof(credentialId));
             this.IntegrationConnectionId = integrationConnectionId ?? throw new global::System.ArgumentNullException(nameof(integrationConnectionId));
             this.WebhookDetails = webhookDetails ?? throw new global::System.ArgumentNullException(nameof(webhookDetails));
-            this.Type = type;
         }
 
         /// <summary>

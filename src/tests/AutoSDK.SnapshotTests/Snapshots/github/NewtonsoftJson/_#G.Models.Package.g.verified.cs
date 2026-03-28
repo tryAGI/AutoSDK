@@ -118,14 +118,14 @@ namespace G
         /// <param name="visibility">
         /// Example: private
         /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
         /// <param name="owner">
         /// A GitHub user.
         /// </param>
         /// <param name="repository">
         /// Minimal Repository
         /// </param>
-        /// <param name="createdAt"></param>
-        /// <param name="updatedAt"></param>
         public Package(
             int id,
             string name,
@@ -146,10 +146,10 @@ namespace G
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.VersionCount = versionCount;
             this.Visibility = visibility;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.Owner = owner;
             this.Repository = repository;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
         }
 
         /// <summary>

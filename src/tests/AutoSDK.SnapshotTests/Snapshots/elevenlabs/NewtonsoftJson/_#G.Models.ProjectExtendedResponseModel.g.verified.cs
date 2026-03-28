@@ -301,9 +301,6 @@ namespace G
         /// <param name="createDateUnix">
         /// The creation date of the project.
         /// </param>
-        /// <param name="createdByUserId">
-        /// The user ID who created the project.
-        /// </param>
         /// <param name="defaultTitleVoiceId">
         /// The default title voice ID.
         /// </param>
@@ -313,11 +310,50 @@ namespace G
         /// <param name="defaultModelId">
         /// The default model ID.
         /// </param>
-        /// <param name="lastConversionDateUnix">
-        /// The last conversion date of the project.
-        /// </param>
         /// <param name="canBeDownloaded">
         /// Whether the project can be downloaded.
+        /// </param>
+        /// <param name="volumeNormalization">
+        /// Whether the project uses volume normalization.
+        /// </param>
+        /// <param name="state">
+        /// The state of the project.
+        /// </param>
+        /// <param name="accessLevel">
+        /// The access level of the project.
+        /// </param>
+        /// <param name="qualityCheckOn">
+        /// Whether quality check is enabled for this project.
+        /// </param>
+        /// <param name="qualityCheckOnWhenBulkConvert">
+        /// Whether quality check is enabled on the project when bulk converting.
+        /// </param>
+        /// <param name="qualityPreset">
+        /// The quality preset level of the project.
+        /// </param>
+        /// <param name="chapters">
+        /// List of chapters of the project and their metadata.
+        /// </param>
+        /// <param name="pronunciationDictionaryVersions">
+        /// List of pronunciation dictionary versions of the project and their metadata.
+        /// </param>
+        /// <param name="pronunciationDictionaryLocators">
+        /// List of pronunciation dictionary locators.
+        /// </param>
+        /// <param name="applyTextNormalization">
+        /// Whether text normalization is applied to the project.
+        /// </param>
+        /// <param name="assets">
+        /// List of uploaded assets e.g. videos, audios.
+        /// </param>
+        /// <param name="voices">
+        /// List of configured project voices.
+        /// </param>
+        /// <param name="createdByUserId">
+        /// The user ID who created the project.
+        /// </param>
+        /// <param name="lastConversionDateUnix">
+        /// The last conversion date of the project.
         /// </param>
         /// <param name="title">
         /// The title of the project.
@@ -352,23 +388,8 @@ namespace G
         /// <param name="isbnNumber">
         /// The ISBN number of the project.
         /// </param>
-        /// <param name="volumeNormalization">
-        /// Whether the project uses volume normalization.
-        /// </param>
-        /// <param name="state">
-        /// The state of the project.
-        /// </param>
-        /// <param name="accessLevel">
-        /// The access level of the project.
-        /// </param>
         /// <param name="fiction">
         /// Whether the project is fiction.
-        /// </param>
-        /// <param name="qualityCheckOn">
-        /// Whether quality check is enabled for this project.
-        /// </param>
-        /// <param name="qualityCheckOnWhenBulkConvert">
-        /// Whether quality check is enabled on the project when bulk converting.
         /// </param>
         /// <param name="creationMeta">
         /// The creation meta of the project.
@@ -399,29 +420,8 @@ namespace G
         /// <param name="agentSettings">
         /// Agent-related settings for the project
         /// </param>
-        /// <param name="qualityPreset">
-        /// The quality preset level of the project.
-        /// </param>
-        /// <param name="chapters">
-        /// List of chapters of the project and their metadata.
-        /// </param>
-        /// <param name="pronunciationDictionaryVersions">
-        /// List of pronunciation dictionary versions of the project and their metadata.
-        /// </param>
-        /// <param name="pronunciationDictionaryLocators">
-        /// List of pronunciation dictionary locators.
-        /// </param>
-        /// <param name="applyTextNormalization">
-        /// Whether text normalization is applied to the project.
-        /// </param>
         /// <param name="experimental">
         /// Experimental features for the project.
-        /// </param>
-        /// <param name="assets">
-        /// List of uploaded assets e.g. videos, audios.
-        /// </param>
-        /// <param name="voices">
-        /// List of configured project voices.
         /// </param>
         /// <param name="baseVoices">
         /// List of voices used by the project.
@@ -479,24 +479,12 @@ namespace G
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CreateDateUnix = createDateUnix;
+            this.CreatedByUserId = createdByUserId;
             this.DefaultTitleVoiceId = defaultTitleVoiceId ?? throw new global::System.ArgumentNullException(nameof(defaultTitleVoiceId));
             this.DefaultParagraphVoiceId = defaultParagraphVoiceId ?? throw new global::System.ArgumentNullException(nameof(defaultParagraphVoiceId));
             this.DefaultModelId = defaultModelId ?? throw new global::System.ArgumentNullException(nameof(defaultModelId));
-            this.CanBeDownloaded = canBeDownloaded;
-            this.VolumeNormalization = volumeNormalization;
-            this.State = state;
-            this.AccessLevel = accessLevel;
-            this.QualityCheckOn = qualityCheckOn;
-            this.QualityCheckOnWhenBulkConvert = qualityCheckOnWhenBulkConvert;
-            this.QualityPreset = qualityPreset;
-            this.Chapters = chapters ?? throw new global::System.ArgumentNullException(nameof(chapters));
-            this.PronunciationDictionaryVersions = pronunciationDictionaryVersions ?? throw new global::System.ArgumentNullException(nameof(pronunciationDictionaryVersions));
-            this.PronunciationDictionaryLocators = pronunciationDictionaryLocators ?? throw new global::System.ArgumentNullException(nameof(pronunciationDictionaryLocators));
-            this.ApplyTextNormalization = applyTextNormalization;
-            this.Assets = assets ?? throw new global::System.ArgumentNullException(nameof(assets));
-            this.Voices = voices ?? throw new global::System.ArgumentNullException(nameof(voices));
-            this.CreatedByUserId = createdByUserId;
             this.LastConversionDateUnix = lastConversionDateUnix;
+            this.CanBeDownloaded = canBeDownloaded;
             this.Title = title;
             this.Author = author;
             this.Description = description;
@@ -508,7 +496,12 @@ namespace G
             this.OriginalPublicationDate = originalPublicationDate;
             this.MatureContent = matureContent;
             this.IsbnNumber = isbnNumber;
+            this.VolumeNormalization = volumeNormalization;
+            this.State = state;
+            this.AccessLevel = accessLevel;
             this.Fiction = fiction;
+            this.QualityCheckOn = qualityCheckOn;
+            this.QualityCheckOnWhenBulkConvert = qualityCheckOnWhenBulkConvert;
             this.CreationMeta = creationMeta;
             this.SourceType = sourceType;
             this.ChaptersEnabled = chaptersEnabled;
@@ -518,7 +511,14 @@ namespace G
             this.PublicShareId = publicShareId;
             this.AspectRatio = aspectRatio;
             this.AgentSettings = agentSettings;
+            this.QualityPreset = qualityPreset;
+            this.Chapters = chapters ?? throw new global::System.ArgumentNullException(nameof(chapters));
+            this.PronunciationDictionaryVersions = pronunciationDictionaryVersions ?? throw new global::System.ArgumentNullException(nameof(pronunciationDictionaryVersions));
+            this.PronunciationDictionaryLocators = pronunciationDictionaryLocators ?? throw new global::System.ArgumentNullException(nameof(pronunciationDictionaryLocators));
+            this.ApplyTextNormalization = applyTextNormalization;
             this.Experimental = experimental;
+            this.Assets = assets ?? throw new global::System.ArgumentNullException(nameof(assets));
+            this.Voices = voices ?? throw new global::System.ArgumentNullException(nameof(voices));
             this.BaseVoices = baseVoices;
             this.PublishingRead = publishingRead;
         }

@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WhatsAppTemplateDocumentParam" /> class.
         /// </summary>
+        /// <param name="document"></param>
         /// <param name="type">
         /// Default Value: document
         /// </param>
-        /// <param name="document"></param>
         public WhatsAppTemplateDocumentParam(
             global::G.WhatsAppTemplateDocumentParamDetails document,
             string? type)
         {
-            this.Document = document ?? throw new global::System.ArgumentNullException(nameof(document));
             this.Type = type;
+            this.Document = document ?? throw new global::System.ArgumentNullException(nameof(document));
         }
 
         /// <summary>

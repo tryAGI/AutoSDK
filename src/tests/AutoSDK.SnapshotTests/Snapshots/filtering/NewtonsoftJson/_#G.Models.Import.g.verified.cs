@@ -156,14 +156,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Import" /> class.
         /// </summary>
-        /// <param name="vcs"></param>
-        /// <param name="useLfs"></param>
         /// <param name="vcsUrl">
         /// The URL of the originating repository.
         /// </param>
+        /// <param name="status"></param>
+        /// <param name="url"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="authorsUrl"></param>
+        /// <param name="repositoryUrl"></param>
+        /// <param name="vcs"></param>
+        /// <param name="useLfs"></param>
         /// <param name="svcRoot"></param>
         /// <param name="tfvcProject"></param>
-        /// <param name="status"></param>
         /// <param name="statusText"></param>
         /// <param name="failedStep"></param>
         /// <param name="errorMessage"></param>
@@ -176,10 +180,6 @@ namespace G
         /// <param name="projectChoices"></param>
         /// <param name="message"></param>
         /// <param name="authorsCount"></param>
-        /// <param name="url"></param>
-        /// <param name="htmlUrl"></param>
-        /// <param name="authorsUrl"></param>
-        /// <param name="repositoryUrl"></param>
         /// <param name="svnRoot"></param>
         public Import(
             string vcsUrl,
@@ -206,16 +206,12 @@ namespace G
             int? authorsCount,
             string? svnRoot)
         {
-            this.VcsUrl = vcsUrl ?? throw new global::System.ArgumentNullException(nameof(vcsUrl));
-            this.Status = status;
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
-            this.AuthorsUrl = authorsUrl ?? throw new global::System.ArgumentNullException(nameof(authorsUrl));
-            this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
             this.Vcs = vcs;
             this.UseLfs = useLfs;
+            this.VcsUrl = vcsUrl ?? throw new global::System.ArgumentNullException(nameof(vcsUrl));
             this.SvcRoot = svcRoot;
             this.TfvcProject = tfvcProject;
+            this.Status = status;
             this.StatusText = statusText;
             this.FailedStep = failedStep;
             this.ErrorMessage = errorMessage;
@@ -228,6 +224,10 @@ namespace G
             this.ProjectChoices = projectChoices;
             this.Message = message;
             this.AuthorsCount = authorsCount;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.AuthorsUrl = authorsUrl ?? throw new global::System.ArgumentNullException(nameof(authorsUrl));
+            this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
             this.SvnRoot = svnRoot;
         }
 

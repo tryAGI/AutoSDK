@@ -61,11 +61,11 @@ namespace G
         /// Initializes a new instance of the <see cref="TagValueWithTaggings" /> class.
         /// </summary>
         /// <param name="value"></param>
-        /// <param name="description"></param>
         /// <param name="id"></param>
         /// <param name="tagKeyId"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="description"></param>
         /// <param name="taggings"></param>
         public TagValueWithTaggings(
             string value,
@@ -77,11 +77,11 @@ namespace G
             global::System.Collections.Generic.IList<global::G.Tagging>? taggings)
         {
             this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+            this.Description = description;
             this.Id = id;
             this.TagKeyId = tagKeyId;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
-            this.Description = description;
             this.Taggings = taggings;
         }
 

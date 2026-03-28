@@ -42,14 +42,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionRequestFunctionMessage" /> class.
         /// </summary>
+        /// <param name="name">
+        /// The name of the function to call.
+        /// </param>
         /// <param name="role">
         /// The role of the messages author, in this case `function`.
         /// </param>
         /// <param name="content">
         /// The contents of the function message.
-        /// </param>
-        /// <param name="name">
-        /// The name of the function to call.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -59,9 +59,9 @@ namespace G
             global::G.ChatCompletionRequestFunctionMessageRole role,
             string? content)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Role = role;
             this.Content = content;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
         }
 
         /// <summary>

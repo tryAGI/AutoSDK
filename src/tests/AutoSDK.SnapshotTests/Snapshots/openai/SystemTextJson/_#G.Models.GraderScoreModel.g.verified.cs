@@ -58,20 +58,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GraderScoreModel" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The object type, which is always `score_model`.
-        /// </param>
         /// <param name="name">
         /// The name of the grader.
         /// </param>
         /// <param name="model">
         /// The model to use for the evaluation.
         /// </param>
-        /// <param name="samplingParams">
-        /// The sampling parameters for the model.
-        /// </param>
         /// <param name="input">
         /// The input text. This may include template strings.
+        /// </param>
+        /// <param name="type">
+        /// The object type, which is always `score_model`.
+        /// </param>
+        /// <param name="samplingParams">
+        /// The sampling parameters for the model.
         /// </param>
         /// <param name="range">
         /// The range of the score. Defaults to `[0, 1]`.
@@ -87,11 +87,11 @@ namespace G
             object? samplingParams,
             global::System.Collections.Generic.IList<double>? range)
         {
+            this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
-            this.Type = type;
             this.SamplingParams = samplingParams;
+            this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Range = range;
         }
 

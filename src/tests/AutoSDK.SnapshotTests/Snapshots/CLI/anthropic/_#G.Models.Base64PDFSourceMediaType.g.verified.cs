@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ApplicationPdf,
+        ApplicationDividepdf,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace G
         {
             return value switch
             {
-                Base64PDFSourceMediaType.ApplicationPdf => "application/pdf",
+                Base64PDFSourceMediaType.ApplicationDividepdf => "application/pdf",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace G
         {
             return value switch
             {
-                "application/pdf" => Base64PDFSourceMediaType.ApplicationPdf,
+                "application/pdf" => Base64PDFSourceMediaType.ApplicationDividepdf,
                 _ => null,
             };
         }

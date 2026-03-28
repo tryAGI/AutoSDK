@@ -52,15 +52,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="VectorStoreSearchResultsPage" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The object type, which is always `vector_store.search_results.page`
-        /// </param>
         /// <param name="searchQuery"></param>
         /// <param name="data">
         /// The list of search result items.
         /// </param>
         /// <param name="hasMore">
         /// Indicates if there are more results to fetch.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `vector_store.search_results.page`
         /// </param>
         /// <param name="nextPage">
         /// The token for the next page, if any.
@@ -75,10 +75,10 @@ namespace G
             global::G.VectorStoreSearchResultsPageObject @object,
             string? nextPage)
         {
+            this.Object = @object;
             this.SearchQuery = searchQuery ?? throw new global::System.ArgumentNullException(nameof(searchQuery));
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.HasMore = hasMore;
-            this.Object = @object;
             this.NextPage = nextPage;
         }
 

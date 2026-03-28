@@ -31,16 +31,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ErroredResult" /> class.
         /// </summary>
+        /// <param name="error"></param>
         /// <param name="type">
         /// Default Value: errored
         /// </param>
-        /// <param name="error"></param>
         public ErroredResult(
             global::G.ErrorResponse error,
             global::G.ErroredResultType type = global::G.ErroredResultType.Errored)
         {
-            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
             this.Type = type;
+            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
         }
 
         /// <summary>

@@ -122,7 +122,6 @@ namespace G
         /// <param name="after">
         /// The SHA of the most recent commit on `ref` after the push.
         /// </param>
-        /// <param name="baseRef"></param>
         /// <param name="before">
         /// The SHA of the most recent commit on `ref` before the push.
         /// </param>
@@ -138,13 +137,23 @@ namespace G
         /// <param name="deleted">
         /// Whether this push deleted the `ref`.
         /// </param>
+        /// <param name="forced">
+        /// Whether this push was a force push of the `ref`.
+        /// </param>
+        /// <param name="pusher">
+        /// Metaproperties for Git author/committer information.
+        /// </param>
+        /// <param name="ref">
+        /// The full git ref that was pushed. Example: `refs/heads/main` or `refs/tags/v3.14.1`.
+        /// </param>
+        /// <param name="repository">
+        /// A git repository
+        /// </param>
+        /// <param name="baseRef"></param>
         /// <param name="enterprise">
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
         /// on an enterprise account or an organization that's part of an enterprise account. For more information,<br/>
         /// see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
-        /// </param>
-        /// <param name="forced">
-        /// Whether this push was a force push of the `ref`.
         /// </param>
         /// <param name="headCommit"></param>
         /// <param name="installation">
@@ -155,15 +164,6 @@ namespace G
         /// <param name="organization">
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
         /// organization, or when the event occurs from activity in a repository owned by an organization.
-        /// </param>
-        /// <param name="pusher">
-        /// Metaproperties for Git author/committer information.
-        /// </param>
-        /// <param name="ref">
-        /// The full git ref that was pushed. Example: `refs/heads/main` or `refs/tags/v3.14.1`.
-        /// </param>
-        /// <param name="repository">
-        /// A git repository
         /// </param>
         /// <param name="sender">
         /// A GitHub user.
@@ -187,20 +187,20 @@ namespace G
             global::G.SimpleUser? sender)
         {
             this.After = after ?? throw new global::System.ArgumentNullException(nameof(after));
+            this.BaseRef = baseRef;
             this.Before = before ?? throw new global::System.ArgumentNullException(nameof(before));
             this.Commits = commits ?? throw new global::System.ArgumentNullException(nameof(commits));
             this.Compare = compare ?? throw new global::System.ArgumentNullException(nameof(compare));
             this.Created = created;
             this.Deleted = deleted;
-            this.Forced = forced;
-            this.Pusher = pusher ?? throw new global::System.ArgumentNullException(nameof(pusher));
-            this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
-            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
-            this.BaseRef = baseRef;
             this.Enterprise = enterprise;
+            this.Forced = forced;
             this.HeadCommit = headCommit;
             this.Installation = installation;
             this.Organization = organization;
+            this.Pusher = pusher ?? throw new global::System.ArgumentNullException(nameof(pusher));
+            this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
+            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.Sender = sender;
         }
 

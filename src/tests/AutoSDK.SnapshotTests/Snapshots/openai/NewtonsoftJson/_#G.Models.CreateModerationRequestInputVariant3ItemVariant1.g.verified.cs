@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateModerationRequestInputVariant3ItemVariant1" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Always `image_url`.
-        /// </param>
         /// <param name="imageUrl">
         /// Contains either an image URL or a data URL for a base64 encoded image.
+        /// </param>
+        /// <param name="type">
+        /// Always `image_url`.
         /// </param>
         public CreateModerationRequestInputVariant3ItemVariant1(
             global::G.CreateModerationRequestInputVariant3ItemVariant1ImageUrl imageUrl,
             global::G.CreateModerationRequestInputVariant3ItemVariant1Type type)
         {
-            this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
             this.Type = type;
+            this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
         }
 
         /// <summary>

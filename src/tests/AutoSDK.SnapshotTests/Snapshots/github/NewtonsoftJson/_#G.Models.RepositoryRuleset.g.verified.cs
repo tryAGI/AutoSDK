@@ -109,17 +109,17 @@ namespace G
         /// <param name="name">
         /// The name of the ruleset
         /// </param>
-        /// <param name="target">
-        /// The target of the ruleset
-        /// </param>
-        /// <param name="sourceType">
-        /// The type of the source of the ruleset
-        /// </param>
         /// <param name="source">
         /// The name of the source
         /// </param>
         /// <param name="enforcement">
         /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
+        /// </param>
+        /// <param name="target">
+        /// The target of the ruleset
+        /// </param>
+        /// <param name="sourceType">
+        /// The type of the source of the ruleset
         /// </param>
         /// <param name="bypassActors">
         /// The actors that can bypass the rules in this ruleset
@@ -152,10 +152,10 @@ namespace G
         {
             this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
-            this.Enforcement = enforcement;
             this.Target = target;
             this.SourceType = sourceType;
+            this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
+            this.Enforcement = enforcement;
             this.BypassActors = bypassActors;
             this.CurrentUserCanBypass = currentUserCanBypass;
             this.NodeId = nodeId;

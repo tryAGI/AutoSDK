@@ -95,18 +95,18 @@ namespace G
         /// <param name="htmlUrl"></param>
         /// <param name="commentsUrl"></param>
         /// <param name="commit"></param>
-        /// <param name="author">
-        /// A GitHub user.
-        /// </param>
-        /// <param name="committer">
-        /// Metaproperties for Git author/committer information.
-        /// </param>
         /// <param name="parents"></param>
         /// <param name="repository">
         /// Minimal Repository
         /// </param>
         /// <param name="score"></param>
         /// <param name="nodeId"></param>
+        /// <param name="author">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="committer">
+        /// Metaproperties for Git author/committer information.
+        /// </param>
         /// <param name="textMatches"></param>
         public CommitSearchResultItem(
             string url,
@@ -127,12 +127,12 @@ namespace G
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
             this.Commit = commit ?? throw new global::System.ArgumentNullException(nameof(commit));
+            this.Author = author;
+            this.Committer = committer;
             this.Parents = parents ?? throw new global::System.ArgumentNullException(nameof(parents));
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.Score = score;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.Author = author;
-            this.Committer = committer;
             this.TextMatches = textMatches;
         }
 

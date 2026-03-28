@@ -123,12 +123,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiIntegrationWebhookToolConfigInput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: api_integration_webhook
-        /// </param>
         /// <param name="name"></param>
         /// <param name="description">
         /// Description of when the tool should be used and what it does.
+        /// </param>
+        /// <param name="apiIntegrationId"></param>
+        /// <param name="apiIntegrationConnectionId"></param>
+        /// <param name="type">
+        /// Default Value: api_integration_webhook
         /// </param>
         /// <param name="responseTimeoutSecs">
         /// The maximum time in seconds to wait for the tool call to complete. Must be between 5 and 120 seconds (inclusive).<br/>
@@ -168,8 +170,6 @@ namespace G
         /// The version of the API integration tool<br/>
         /// Default Value: 1.0.0
         /// </param>
-        /// <param name="apiIntegrationId"></param>
-        /// <param name="apiIntegrationConnectionId"></param>
         /// <param name="apiSchemaOverrides">
         /// User overrides applied on top of the base api_schema
         /// </param>
@@ -191,11 +191,9 @@ namespace G
             string? toolVersion,
             global::G.ApiIntegrationWebhookOverridesInput? apiSchemaOverrides)
         {
+            this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.ApiIntegrationId = apiIntegrationId ?? throw new global::System.ArgumentNullException(nameof(apiIntegrationId));
-            this.ApiIntegrationConnectionId = apiIntegrationConnectionId ?? throw new global::System.ArgumentNullException(nameof(apiIntegrationConnectionId));
-            this.Type = type;
             this.ResponseTimeoutSecs = responseTimeoutSecs;
             this.DisableInterruptions = disableInterruptions;
             this.ForcePreToolSpeech = forcePreToolSpeech;
@@ -206,6 +204,8 @@ namespace G
             this.DynamicVariables = dynamicVariables;
             this.ExecutionMode = executionMode;
             this.ToolVersion = toolVersion;
+            this.ApiIntegrationId = apiIntegrationId ?? throw new global::System.ArgumentNullException(nameof(apiIntegrationId));
+            this.ApiIntegrationConnectionId = apiIntegrationConnectionId ?? throw new global::System.ArgumentNullException(nameof(apiIntegrationConnectionId));
             this.ApiSchemaOverrides = apiSchemaOverrides;
         }
 

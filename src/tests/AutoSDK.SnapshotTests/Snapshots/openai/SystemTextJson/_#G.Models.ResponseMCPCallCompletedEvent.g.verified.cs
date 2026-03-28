@@ -32,11 +32,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseMCPCallCompletedEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always 'response.mcp_call.completed'.
-        /// </param>
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always 'response.mcp_call.completed'.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -45,8 +45,8 @@ namespace G
             int sequenceNumber,
             global::G.ResponseMCPCallCompletedEventType type)
         {
-            this.SequenceNumber = sequenceNumber;
             this.Type = type;
+            this.SequenceNumber = sequenceNumber;
         }
 
         /// <summary>

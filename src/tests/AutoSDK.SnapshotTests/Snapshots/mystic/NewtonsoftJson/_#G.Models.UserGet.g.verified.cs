@@ -96,16 +96,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UserGet" /> class.
         /// </summary>
+        /// <param name="email"></param>
+        /// <param name="username"></param>
+        /// <param name="id"></param>
+        /// <param name="hasPassword"></param>
         /// <param name="firstname"></param>
         /// <param name="lastname"></param>
         /// <param name="company"></param>
         /// <param name="jobTitle"></param>
         /// <param name="avatarColour"></param>
         /// <param name="showTutorial"></param>
-        /// <param name="email"></param>
-        /// <param name="username"></param>
-        /// <param name="id"></param>
-        /// <param name="hasPassword"></param>
         /// <param name="roles"></param>
         /// <param name="teams"></param>
         /// <param name="selectedTeam"></param>
@@ -124,16 +124,16 @@ namespace G
             global::System.Collections.Generic.IList<global::G.UserTeam>? teams,
             string? selectedTeam)
         {
-            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
-            this.Username = username ?? throw new global::System.ArgumentNullException(nameof(username));
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.HasPassword = hasPassword;
             this.Firstname = firstname;
             this.Lastname = lastname;
             this.Company = company;
             this.JobTitle = jobTitle;
             this.AvatarColour = avatarColour;
             this.ShowTutorial = showTutorial;
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
+            this.Username = username ?? throw new global::System.ArgumentNullException(nameof(username));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.HasPassword = hasPassword;
             this.Roles = roles;
             this.Teams = teams;
             this.SelectedTeam = selectedTeam;

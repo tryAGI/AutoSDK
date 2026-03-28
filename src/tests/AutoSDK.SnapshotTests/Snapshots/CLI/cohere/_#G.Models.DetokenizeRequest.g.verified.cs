@@ -32,12 +32,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DetokenizeRequest" /> class.
         /// </summary>
+        /// <param name="model">
+        /// An optional parameter to provide the model name. This will ensure that the detokenization is done by the tokenizer used by that model.
+        /// </param>
         /// <param name="tokens">
         /// The list of tokens to be detokenized.<br/>
         /// Included only in requests
-        /// </param>
-        /// <param name="model">
-        /// An optional parameter to provide the model name. This will ensure that the detokenization is done by the tokenizer used by that model.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -46,8 +46,8 @@ namespace G
             string model,
             global::System.Collections.Generic.IList<int>? tokens)
         {
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Tokens = tokens;
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
         }
 
         /// <summary>

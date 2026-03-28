@@ -94,13 +94,13 @@ namespace G
         /// <param name="id"></param>
         /// <param name="manifest"></param>
         /// <param name="repoId"></param>
-        /// <param name="parentId"></param>
         /// <param name="commitHash"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="exampleRunIds"></param>
         /// <param name="numDownloads"></param>
         /// <param name="numViews"></param>
+        /// <param name="parentId"></param>
         /// <param name="parentCommitHash"></param>
         /// <param name="fullName"></param>
         public CommitWithLookups(
@@ -120,13 +120,13 @@ namespace G
             this.Id = id;
             this.Manifest = manifest ?? throw new global::System.ArgumentNullException(nameof(manifest));
             this.RepoId = repoId;
+            this.ParentId = parentId;
             this.CommitHash = commitHash ?? throw new global::System.ArgumentNullException(nameof(commitHash));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.ExampleRunIds = exampleRunIds ?? throw new global::System.ArgumentNullException(nameof(exampleRunIds));
             this.NumDownloads = numDownloads;
             this.NumViews = numViews;
-            this.ParentId = parentId;
             this.ParentCommitHash = parentCommitHash;
             this.FullName = fullName;
         }

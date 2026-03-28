@@ -49,8 +49,8 @@ namespace G
         /// <param name="createdAt">
         /// The timestamp that the task was submitted at.
         /// </param>
-        /// <param name="status"></param>
         /// <param name="progress"></param>
+        /// <param name="status"></param>
         public GetTasksResponseVariant4(
             global::System.Guid id,
             global::System.DateTime createdAt,
@@ -59,8 +59,8 @@ namespace G
         {
             this.Id = id;
             this.CreatedAt = createdAt;
-            this.Progress = progress;
             this.Status = status;
+            this.Progress = progress;
         }
 
         /// <summary>

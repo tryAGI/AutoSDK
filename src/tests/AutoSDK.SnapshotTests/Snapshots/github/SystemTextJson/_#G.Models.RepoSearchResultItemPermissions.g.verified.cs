@@ -52,10 +52,10 @@ namespace G
         /// Initializes a new instance of the <see cref="RepoSearchResultItemPermissions" /> class.
         /// </summary>
         /// <param name="admin"></param>
-        /// <param name="maintain"></param>
         /// <param name="push"></param>
-        /// <param name="triage"></param>
         /// <param name="pull"></param>
+        /// <param name="maintain"></param>
+        /// <param name="triage"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -67,10 +67,10 @@ namespace G
             bool? triage)
         {
             this.Admin = admin;
-            this.Push = push;
-            this.Pull = pull;
             this.Maintain = maintain;
+            this.Push = push;
             this.Triage = triage;
+            this.Pull = pull;
         }
 
         /// <summary>

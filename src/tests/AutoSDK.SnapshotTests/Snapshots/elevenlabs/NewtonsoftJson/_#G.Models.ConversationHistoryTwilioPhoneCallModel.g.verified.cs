@@ -65,9 +65,9 @@ namespace G
         /// <param name="phoneNumberId"></param>
         /// <param name="agentNumber"></param>
         /// <param name="externalNumber"></param>
-        /// <param name="type"></param>
         /// <param name="streamSid"></param>
         /// <param name="callSid"></param>
+        /// <param name="type"></param>
         public ConversationHistoryTwilioPhoneCallModel(
             global::G.ConversationHistoryTwilioPhoneCallModelDirection direction,
             string phoneNumberId,
@@ -81,9 +81,9 @@ namespace G
             this.PhoneNumberId = phoneNumberId ?? throw new global::System.ArgumentNullException(nameof(phoneNumberId));
             this.AgentNumber = agentNumber ?? throw new global::System.ArgumentNullException(nameof(agentNumber));
             this.ExternalNumber = externalNumber ?? throw new global::System.ArgumentNullException(nameof(externalNumber));
+            this.Type = type;
             this.StreamSid = streamSid ?? throw new global::System.ArgumentNullException(nameof(streamSid));
             this.CallSid = callSid ?? throw new global::System.ArgumentNullException(nameof(callSid));
-            this.Type = type;
         }
 
         /// <summary>

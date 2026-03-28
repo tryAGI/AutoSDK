@@ -124,9 +124,6 @@ namespace G
         /// <param name="nodeId">
         /// Example: MDE3OlB1bGxSZXF1ZXN0UmV2aWV3ODA=
         /// </param>
-        /// <param name="user">
-        /// A GitHub user.
-        /// </param>
         /// <param name="body">
         /// The text of the review.<br/>
         /// Example: This looks great.
@@ -141,6 +138,13 @@ namespace G
         /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/12
         /// </param>
         /// <param name="links"></param>
+        /// <param name="authorAssociation">
+        /// How the author is associated with the repository.<br/>
+        /// Example: OWNER
+        /// </param>
+        /// <param name="user">
+        /// A GitHub user.
+        /// </param>
         /// <param name="submittedAt"></param>
         /// <param name="commitId">
         /// A commit SHA for the review. If the commit object was garbage collected or forcibly deleted, then it no longer exists in Git and this value will be `null`.<br/>
@@ -148,10 +152,6 @@ namespace G
         /// </param>
         /// <param name="bodyHtml"></param>
         /// <param name="bodyText"></param>
-        /// <param name="authorAssociation">
-        /// How the author is associated with the repository.<br/>
-        /// Example: OWNER
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -172,17 +172,17 @@ namespace G
         {
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.User = user;
             this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
             this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.PullRequestUrl = pullRequestUrl ?? throw new global::System.ArgumentNullException(nameof(pullRequestUrl));
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
-            this.AuthorAssociation = authorAssociation;
-            this.User = user;
             this.SubmittedAt = submittedAt;
             this.CommitId = commitId;
             this.BodyHtml = bodyHtml;
             this.BodyText = bodyText;
+            this.AuthorAssociation = authorAssociation;
         }
 
         /// <summary>

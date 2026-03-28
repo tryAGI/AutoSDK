@@ -72,17 +72,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TransferToNumberResultTwilioSuccessModel" /> class.
         /// </summary>
+        /// <param name="transferNumber"></param>
+        /// <param name="agentMessage"></param>
+        /// <param name="conferenceName"></param>
         /// <param name="resultType">
         /// Default Value: transfer_to_number_twilio_success
         /// </param>
         /// <param name="status">
         /// Default Value: success
         /// </param>
-        /// <param name="transferNumber"></param>
         /// <param name="reason"></param>
         /// <param name="clientMessage"></param>
-        /// <param name="agentMessage"></param>
-        /// <param name="conferenceName"></param>
         /// <param name="postDialDigits"></param>
         /// <param name="note"></param>
         public TransferToNumberResultTwilioSuccessModel(
@@ -96,13 +96,13 @@ namespace G
             string? postDialDigits,
             string? note)
         {
-            this.TransferNumber = transferNumber ?? throw new global::System.ArgumentNullException(nameof(transferNumber));
-            this.AgentMessage = agentMessage ?? throw new global::System.ArgumentNullException(nameof(agentMessage));
-            this.ConferenceName = conferenceName ?? throw new global::System.ArgumentNullException(nameof(conferenceName));
             this.ResultType = resultType;
             this.Status = status;
+            this.TransferNumber = transferNumber ?? throw new global::System.ArgumentNullException(nameof(transferNumber));
             this.Reason = reason;
             this.ClientMessage = clientMessage;
+            this.AgentMessage = agentMessage ?? throw new global::System.ArgumentNullException(nameof(agentMessage));
+            this.ConferenceName = conferenceName ?? throw new global::System.ArgumentNullException(nameof(conferenceName));
             this.PostDialDigits = postDialDigits;
             this.Note = note;
         }

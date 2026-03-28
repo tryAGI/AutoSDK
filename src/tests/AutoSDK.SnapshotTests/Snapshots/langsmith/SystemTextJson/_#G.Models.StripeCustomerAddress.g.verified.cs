@@ -59,11 +59,11 @@ namespace G
         /// Initializes a new instance of the <see cref="StripeCustomerAddress" /> class.
         /// </summary>
         /// <param name="line1"></param>
-        /// <param name="line2"></param>
         /// <param name="city"></param>
-        /// <param name="state"></param>
         /// <param name="postalCode"></param>
         /// <param name="country"></param>
+        /// <param name="line2"></param>
+        /// <param name="state"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -76,11 +76,11 @@ namespace G
             string? state)
         {
             this.Line1 = line1 ?? throw new global::System.ArgumentNullException(nameof(line1));
+            this.Line2 = line2;
             this.City = city ?? throw new global::System.ArgumentNullException(nameof(city));
+            this.State = state;
             this.PostalCode = postalCode ?? throw new global::System.ArgumentNullException(nameof(postalCode));
             this.Country = country ?? throw new global::System.ArgumentNullException(nameof(country));
-            this.Line2 = line2;
-            this.State = state;
         }
 
         /// <summary>

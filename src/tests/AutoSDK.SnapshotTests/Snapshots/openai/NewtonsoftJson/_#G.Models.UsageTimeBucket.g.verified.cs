@@ -42,20 +42,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageTimeBucket" /> class.
         /// </summary>
-        /// <param name="object"></param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="result"></param>
+        /// <param name="object"></param>
         public UsageTimeBucket(
             int startTime,
             int endTime,
             global::System.Collections.Generic.IList<global::G.OneOf<global::G.UsageCompletionsResult, global::G.UsageEmbeddingsResult, global::G.UsageModerationsResult, global::G.UsageImagesResult, global::G.UsageAudioSpeechesResult, global::G.UsageAudioTranscriptionsResult, global::G.UsageVectorStoresResult, global::G.UsageCodeInterpreterSessionsResult, global::G.CostsResult>> result,
             global::G.UsageTimeBucketObject @object)
         {
+            this.Object = @object;
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.Result = result ?? throw new global::System.ArgumentNullException(nameof(result));
-            this.Object = @object;
         }
 
         /// <summary>

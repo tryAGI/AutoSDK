@@ -33,12 +33,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UsersCreateSshSigningKeyForAuthenticatedUserRequest" /> class.
         /// </summary>
+        /// <param name="key">
+        /// The public SSH key to add to your GitHub account. For more information, see "[Checking for existing SSH keys](https://docs.github.com/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys)."
+        /// </param>
         /// <param name="title">
         /// A descriptive name for the new key.<br/>
         /// Example: Personal MacBook Air
-        /// </param>
-        /// <param name="key">
-        /// The public SSH key to add to your GitHub account. For more information, see "[Checking for existing SSH keys](https://docs.github.com/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys)."
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -47,8 +47,8 @@ namespace G
             string key,
             string? title)
         {
-            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Title = title;
+            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
         }
 
         /// <summary>

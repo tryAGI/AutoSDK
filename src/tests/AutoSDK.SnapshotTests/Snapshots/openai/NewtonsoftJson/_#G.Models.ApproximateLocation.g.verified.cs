@@ -50,14 +50,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ApproximateLocation" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of location approximation. Always `approximate`.<br/>
-        /// Default Value: approximate
-        /// </param>
         /// <param name="country"></param>
         /// <param name="region"></param>
         /// <param name="city"></param>
         /// <param name="timezone"></param>
+        /// <param name="type">
+        /// The type of location approximation. Always `approximate`.<br/>
+        /// Default Value: approximate
+        /// </param>
         public ApproximateLocation(
             string? country,
             string? region,

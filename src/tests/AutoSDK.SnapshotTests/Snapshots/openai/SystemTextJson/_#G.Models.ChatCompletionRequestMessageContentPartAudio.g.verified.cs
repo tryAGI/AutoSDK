@@ -32,10 +32,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionRequestMessageContentPartAudio" /> class.
         /// </summary>
+        /// <param name="inputAudio"></param>
         /// <param name="type">
         /// The type of the content part. Always `input_audio`.
         /// </param>
-        /// <param name="inputAudio"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -43,8 +43,8 @@ namespace G
             global::G.ChatCompletionRequestMessageContentPartAudioInputAudio inputAudio,
             global::G.ChatCompletionRequestMessageContentPartAudioType type)
         {
-            this.InputAudio = inputAudio ?? throw new global::System.ArgumentNullException(nameof(inputAudio));
             this.Type = type;
+            this.InputAudio = inputAudio ?? throw new global::System.ArgumentNullException(nameof(inputAudio));
         }
 
         /// <summary>

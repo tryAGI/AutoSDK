@@ -157,8 +157,6 @@ namespace G
         /// Initializes a new instance of the <see cref="WebhookWorkflowJobQueuedWorkflowJob" /> class.
         /// </summary>
         /// <param name="checkRunUrl"></param>
-        /// <param name="completedAt"></param>
-        /// <param name="conclusion"></param>
         /// <param name="createdAt">
         /// The time that the job created.
         /// </param>
@@ -171,20 +169,22 @@ namespace G
         /// <param name="runAttempt"></param>
         /// <param name="runId"></param>
         /// <param name="runUrl"></param>
+        /// <param name="startedAt"></param>
+        /// <param name="status"></param>
+        /// <param name="steps"></param>
+        /// <param name="url"></param>
+        /// <param name="completedAt"></param>
+        /// <param name="conclusion"></param>
         /// <param name="runnerGroupId"></param>
         /// <param name="runnerGroupName"></param>
         /// <param name="runnerId"></param>
         /// <param name="runnerName"></param>
-        /// <param name="startedAt"></param>
-        /// <param name="status"></param>
         /// <param name="headBranch">
         /// The name of the current branch.
         /// </param>
         /// <param name="workflowName">
         /// The name of the workflow.
         /// </param>
-        /// <param name="steps"></param>
-        /// <param name="url"></param>
         public WebhookWorkflowJobQueuedWorkflowJob(
             string checkRunUrl,
             string createdAt,
@@ -211,6 +211,8 @@ namespace G
             string? workflowName)
         {
             this.CheckRunUrl = checkRunUrl ?? throw new global::System.ArgumentNullException(nameof(checkRunUrl));
+            this.CompletedAt = completedAt;
+            this.Conclusion = conclusion;
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
@@ -221,18 +223,16 @@ namespace G
             this.RunAttempt = runAttempt;
             this.RunId = runId;
             this.RunUrl = runUrl ?? throw new global::System.ArgumentNullException(nameof(runUrl));
-            this.StartedAt = startedAt;
-            this.Status = status;
-            this.Steps = steps ?? throw new global::System.ArgumentNullException(nameof(steps));
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.CompletedAt = completedAt;
-            this.Conclusion = conclusion;
             this.RunnerGroupId = runnerGroupId;
             this.RunnerGroupName = runnerGroupName;
             this.RunnerId = runnerId;
             this.RunnerName = runnerName;
+            this.StartedAt = startedAt;
+            this.Status = status;
             this.HeadBranch = headBranch;
             this.WorkflowName = workflowName;
+            this.Steps = steps ?? throw new global::System.ArgumentNullException(nameof(steps));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 
         /// <summary>

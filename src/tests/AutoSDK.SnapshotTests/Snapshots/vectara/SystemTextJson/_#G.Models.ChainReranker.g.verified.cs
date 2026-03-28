@@ -32,12 +32,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChainReranker" /> class.
         /// </summary>
+        /// <param name="rerankers">
+        /// Specify an array of rerankers to apply to search results consecutively.
+        /// </param>
         /// <param name="type">
         /// When the type is `chain`, you can then chain re-rankers together.<br/>
         /// Default Value: chain
-        /// </param>
-        /// <param name="rerankers">
-        /// Specify an array of rerankers to apply to search results consecutively.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -46,8 +46,8 @@ namespace G
             global::System.Collections.Generic.IList<global::G.SearchReranker> rerankers,
             string? type)
         {
-            this.Rerankers = rerankers ?? throw new global::System.ArgumentNullException(nameof(rerankers));
             this.Type = type;
+            this.Rerankers = rerankers ?? throw new global::System.ArgumentNullException(nameof(rerankers));
         }
 
         /// <summary>

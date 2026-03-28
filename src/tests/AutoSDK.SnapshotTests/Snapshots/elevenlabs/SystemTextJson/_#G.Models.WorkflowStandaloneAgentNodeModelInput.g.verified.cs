@@ -63,6 +63,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkflowStandaloneAgentNodeModelInput" /> class.
         /// </summary>
+        /// <param name="agentId">
+        /// The ID of the agent to transfer the conversation to.
+        /// </param>
         /// <param name="type">
         /// Default Value: standalone_agent
         /// </param>
@@ -71,9 +74,6 @@ namespace G
         /// </param>
         /// <param name="edgeOrder">
         /// The ids of outgoing edges in the order they should be evaluated.
-        /// </param>
-        /// <param name="agentId">
-        /// The ID of the agent to transfer the conversation to.
         /// </param>
         /// <param name="delayMs">
         /// Artificial delay in milliseconds applied before transferring the conversation.<br/>
@@ -98,10 +98,10 @@ namespace G
             string? transferMessage,
             bool? enableTransferredAgentFirstMessage)
         {
-            this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.Type = type;
             this.Position = position;
             this.EdgeOrder = edgeOrder;
+            this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.DelayMs = delayMs;
             this.TransferMessage = transferMessage;
             this.EnableTransferredAgentFirstMessage = enableTransferredAgentFirstMessage;

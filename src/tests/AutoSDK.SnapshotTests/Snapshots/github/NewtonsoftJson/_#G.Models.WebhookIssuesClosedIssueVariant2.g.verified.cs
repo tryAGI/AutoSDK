@@ -180,6 +180,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookIssuesClosedIssueVariant2" /> class.
         /// </summary>
+        /// <param name="state"></param>
         /// <param name="activeLockReason"></param>
         /// <param name="assignee"></param>
         /// <param name="assignees"></param>
@@ -201,7 +202,6 @@ namespace G
         /// <param name="performedViaGithubApp"></param>
         /// <param name="reactions"></param>
         /// <param name="repositoryUrl"></param>
-        /// <param name="state"></param>
         /// <param name="timelineUrl"></param>
         /// <param name="title"></param>
         /// <param name="updatedAt"></param>
@@ -236,7 +236,6 @@ namespace G
             string? url,
             global::G.WebhookIssuesClosedIssueVariant2User? user)
         {
-            this.State = state;
             this.ActiveLockReason = activeLockReason;
             this.Assignee = assignee;
             this.Assignees = assignees;
@@ -258,6 +257,7 @@ namespace G
             this.PerformedViaGithubApp = performedViaGithubApp;
             this.Reactions = reactions;
             this.RepositoryUrl = repositoryUrl;
+            this.State = state;
             this.TimelineUrl = timelineUrl;
             this.Title = title;
             this.UpdatedAt = updatedAt;

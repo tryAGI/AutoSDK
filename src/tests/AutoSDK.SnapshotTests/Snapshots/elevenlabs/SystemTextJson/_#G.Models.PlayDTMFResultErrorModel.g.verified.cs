@@ -43,13 +43,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PlayDTMFResultErrorModel" /> class.
         /// </summary>
+        /// <param name="error"></param>
         /// <param name="resultType">
         /// Default Value: play_dtmf_error
         /// </param>
         /// <param name="status">
         /// Default Value: error
         /// </param>
-        /// <param name="error"></param>
         /// <param name="details"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -60,9 +60,9 @@ namespace G
             string? status,
             string? details)
         {
-            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
             this.ResultType = resultType;
             this.Status = status;
+            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
             this.Details = details;
         }
 

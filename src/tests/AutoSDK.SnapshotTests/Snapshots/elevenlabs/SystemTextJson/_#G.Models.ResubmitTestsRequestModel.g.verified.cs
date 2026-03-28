@@ -47,11 +47,11 @@ namespace G
         /// <param name="testRunIds">
         /// List of test run IDs to resubmit
         /// </param>
-        /// <param name="agentConfigOverride">
-        /// Configuration overrides to use for testing. If not provided, the agent's default configuration will be used.
-        /// </param>
         /// <param name="agentId">
         /// Agent ID to resubmit tests for
+        /// </param>
+        /// <param name="agentConfigOverride">
+        /// Configuration overrides to use for testing. If not provided, the agent's default configuration will be used.
         /// </param>
         /// <param name="branchId">
         /// ID of the branch to run the tests on. If not provided, the tests will be run on the agent default configuration.
@@ -66,8 +66,8 @@ namespace G
             string? branchId)
         {
             this.TestRunIds = testRunIds ?? throw new global::System.ArgumentNullException(nameof(testRunIds));
-            this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.AgentConfigOverride = agentConfigOverride;
+            this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.BranchId = branchId;
         }
 

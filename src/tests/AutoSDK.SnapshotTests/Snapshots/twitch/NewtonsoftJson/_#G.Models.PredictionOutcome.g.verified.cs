@@ -71,9 +71,6 @@ namespace G
         /// <param name="channelPoints">
         /// The number of Channel Points spent by viewers on this outcome.
         /// </param>
-        /// <param name="topPredictors">
-        /// A list of viewers who were the top predictors; otherwise, **null** if none.
-        /// </param>
         /// <param name="color">
         /// The color that visually identifies this outcome in the UX. Possible values are:  <br/>
         ///   <br/>
@@ -81,6 +78,9 @@ namespace G
         /// * PINK<br/>
         ///   <br/>
         /// If the number of outcomes is two, the color is BLUE for the first outcome and PINK for the second outcome. If there are more than two outcomes, the color is BLUE for all outcomes.
+        /// </param>
+        /// <param name="topPredictors">
+        /// A list of viewers who were the top predictors; otherwise, **null** if none.
         /// </param>
         public PredictionOutcome(
             string id,
@@ -94,8 +94,8 @@ namespace G
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Users = users;
             this.ChannelPoints = channelPoints;
-            this.Color = color;
             this.TopPredictors = topPredictors;
+            this.Color = color;
         }
 
         /// <summary>

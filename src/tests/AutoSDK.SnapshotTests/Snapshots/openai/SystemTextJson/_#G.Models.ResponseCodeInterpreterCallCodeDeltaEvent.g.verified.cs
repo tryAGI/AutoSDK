@@ -46,9 +46,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseCodeInterpreterCallCodeDeltaEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.code_interpreter_call_code.delta`.
-        /// </param>
         /// <param name="outputIndex">
         /// The index of the output item that the code interpreter call is in progress.
         /// </param>
@@ -57,6 +54,9 @@ namespace G
         /// </param>
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.code_interpreter_call_code.delta`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -67,10 +67,10 @@ namespace G
             int sequenceNumber,
             global::G.ResponseCodeInterpreterCallCodeDeltaEventType type)
         {
+            this.Type = type;
             this.OutputIndex = outputIndex;
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.SequenceNumber = sequenceNumber;
-            this.Type = type;
         }
 
         /// <summary>

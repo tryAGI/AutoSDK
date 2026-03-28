@@ -59,12 +59,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeClientEventConversationItemTruncate" /> class.
         /// </summary>
-        /// <param name="eventId">
-        /// Optional client-generated ID used to identify this event.
-        /// </param>
-        /// <param name="type">
-        /// The event type, must be `conversation.item.truncate`.
-        /// </param>
         /// <param name="itemId">
         /// The ID of the assistant message item to truncate. Only assistant message <br/>
         /// items can be truncated.
@@ -77,6 +71,12 @@ namespace G
         /// the audio_end_ms is greater than the actual audio duration, the server <br/>
         /// will respond with an error.
         /// </param>
+        /// <param name="eventId">
+        /// Optional client-generated ID used to identify this event.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `conversation.item.truncate`.
+        /// </param>
         public RealtimeClientEventConversationItemTruncate(
             string itemId,
             int contentIndex,
@@ -84,11 +84,11 @@ namespace G
             string? eventId,
             global::G.RealtimeClientEventConversationItemTruncateType type)
         {
+            this.EventId = eventId;
+            this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.ContentIndex = contentIndex;
             this.AudioEndMs = audioEndMs;
-            this.EventId = eventId;
-            this.Type = type;
         }
 
         /// <summary>

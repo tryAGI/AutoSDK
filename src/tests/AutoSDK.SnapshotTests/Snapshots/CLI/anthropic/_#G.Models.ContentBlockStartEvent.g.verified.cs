@@ -41,11 +41,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentBlockStartEvent" /> class.
         /// </summary>
+        /// <param name="index"></param>
+        /// <param name="contentBlock"></param>
         /// <param name="type">
         /// Default Value: content_block_start
         /// </param>
-        /// <param name="index"></param>
-        /// <param name="contentBlock"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -54,9 +54,9 @@ namespace G
             global::G.ContentBlock2 contentBlock,
             global::G.ContentBlockStartEventType type = global::G.ContentBlockStartEventType.ContentBlockStart)
         {
+            this.Type = type;
             this.Index = index;
             this.ContentBlock = contentBlock;
-            this.Type = type;
         }
 
         /// <summary>

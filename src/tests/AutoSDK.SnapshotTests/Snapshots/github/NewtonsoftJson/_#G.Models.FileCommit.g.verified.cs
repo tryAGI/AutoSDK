@@ -30,14 +30,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FileCommit" /> class.
         /// </summary>
-        /// <param name="content"></param>
         /// <param name="commit"></param>
+        /// <param name="content"></param>
         public FileCommit(
             global::G.FileCommitCommit commit,
             global::G.FileCommitContent? content)
         {
-            this.Commit = commit ?? throw new global::System.ArgumentNullException(nameof(commit));
             this.Content = content;
+            this.Commit = commit ?? throw new global::System.ArgumentNullException(nameof(commit));
         }
 
         /// <summary>

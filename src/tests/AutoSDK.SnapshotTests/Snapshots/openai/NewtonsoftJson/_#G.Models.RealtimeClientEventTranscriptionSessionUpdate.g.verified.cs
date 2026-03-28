@@ -36,23 +36,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeClientEventTranscriptionSessionUpdate" /> class.
         /// </summary>
+        /// <param name="session">
+        /// Realtime transcription session object configuration.
+        /// </param>
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
         /// <param name="type">
         /// The event type, must be `transcription_session.update`.
         /// </param>
-        /// <param name="session">
-        /// Realtime transcription session object configuration.
-        /// </param>
         public RealtimeClientEventTranscriptionSessionUpdate(
             global::G.RealtimeTranscriptionSessionCreateRequest session,
             string? eventId,
             global::G.RealtimeClientEventTranscriptionSessionUpdateType type)
         {
-            this.Session = session ?? throw new global::System.ArgumentNullException(nameof(session));
             this.EventId = eventId;
             this.Type = type;
+            this.Session = session ?? throw new global::System.ArgumentNullException(nameof(session));
         }
 
         /// <summary>

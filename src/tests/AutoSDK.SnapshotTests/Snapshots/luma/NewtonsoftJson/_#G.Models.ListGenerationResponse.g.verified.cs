@@ -49,6 +49,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ListGenerationResponse" /> class.
         /// </summary>
+        /// <param name="generations">
+        /// The generations requested
+        /// </param>
         /// <param name="hasMore">
         /// Whether there are more generations
         /// </param>
@@ -61,9 +64,6 @@ namespace G
         /// <param name="offset">
         /// The offset of the generations requested
         /// </param>
-        /// <param name="generations">
-        /// The generations requested
-        /// </param>
         public ListGenerationResponse(
             global::System.Collections.Generic.IList<global::G.Generation> generations,
             bool? hasMore,
@@ -71,11 +71,11 @@ namespace G
             int? limit,
             int? offset)
         {
-            this.Generations = generations ?? throw new global::System.ArgumentNullException(nameof(generations));
             this.HasMore = hasMore;
             this.Count = count;
             this.Limit = limit;
             this.Offset = offset;
+            this.Generations = generations ?? throw new global::System.ArgumentNullException(nameof(generations));
         }
 
         /// <summary>

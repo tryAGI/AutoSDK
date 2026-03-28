@@ -36,23 +36,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EvaluateFactualConsistencyRequest" /> class.
         /// </summary>
-        /// <param name="modelParameters">
-        /// The model parameters for the evaluation.
-        /// </param>
         /// <param name="generatedText">
         /// The generated text (e.g., summary or answer) to evaluate for factual consistency.
         /// </param>
         /// <param name="sourceTexts">
         /// The source documents or text snippets against which to evaluate factual consistency.
         /// </param>
+        /// <param name="modelParameters">
+        /// The model parameters for the evaluation.
+        /// </param>
         public EvaluateFactualConsistencyRequest(
             string generatedText,
             global::System.Collections.Generic.IList<string> sourceTexts,
             global::G.EvaluateFactualConsistencyRequestModelParameters? modelParameters)
         {
+            this.ModelParameters = modelParameters;
             this.GeneratedText = generatedText ?? throw new global::System.ArgumentNullException(nameof(generatedText));
             this.SourceTexts = sourceTexts ?? throw new global::System.ArgumentNullException(nameof(sourceTexts));
-            this.ModelParameters = modelParameters;
         }
 
         /// <summary>

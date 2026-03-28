@@ -56,12 +56,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="EmbedByTypeResponse" /> class.
         /// </summary>
-        /// <param name="responseType"></param>
         /// <param name="id"></param>
-        /// <param name="embeddings">
-        /// An object with different embedding types. The length of each embedding type array will be the same as the length of the original `texts` array.<br/>
-        /// Included only in responses
-        /// </param>
+        /// <param name="responseType"></param>
         /// <param name="texts">
         /// The text entries for which embeddings were returned.
         /// </param>
@@ -69,6 +65,10 @@ namespace G
         /// The image entries for which embeddings were returned.
         /// </param>
         /// <param name="meta"></param>
+        /// <param name="embeddings">
+        /// An object with different embedding types. The length of each embedding type array will be the same as the length of the original `texts` array.<br/>
+        /// Included only in responses
+        /// </param>
         public EmbedByTypeResponse(
             string id,
             global::G.EmbedByTypeResponseResponseType? responseType,
@@ -77,8 +77,8 @@ namespace G
             global::G.ApiMeta? meta,
             global::G.EmbedByTypeResponseEmbeddings embeddings = default!)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ResponseType = responseType;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Embeddings = embeddings;
             this.Texts = texts;
             this.Images = images;

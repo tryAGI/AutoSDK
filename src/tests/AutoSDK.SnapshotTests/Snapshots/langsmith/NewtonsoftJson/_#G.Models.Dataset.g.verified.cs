@@ -103,6 +103,11 @@ namespace G
         /// Initializes a new instance of the <see cref="Dataset" /> class.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="id"></param>
+        /// <param name="tenantId"></param>
+        /// <param name="exampleCount"></param>
+        /// <param name="sessionCount"></param>
+        /// <param name="modifiedAt"></param>
         /// <param name="description"></param>
         /// <param name="createdAt"></param>
         /// <param name="inputsSchemaDefinition"></param>
@@ -114,11 +119,6 @@ namespace G
         /// <param name="dataType">
         /// Default Value: kv
         /// </param>
-        /// <param name="id"></param>
-        /// <param name="tenantId"></param>
-        /// <param name="exampleCount"></param>
-        /// <param name="sessionCount"></param>
-        /// <param name="modifiedAt"></param>
         /// <param name="lastSessionStartTime"></param>
         public Dataset(
             string name,
@@ -137,11 +137,6 @@ namespace G
             global::System.DateTime? lastSessionStartTime)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Id = id;
-            this.TenantId = tenantId;
-            this.ExampleCount = exampleCount;
-            this.SessionCount = sessionCount;
-            this.ModifiedAt = modifiedAt;
             this.Description = description;
             this.CreatedAt = createdAt;
             this.InputsSchemaDefinition = inputsSchemaDefinition;
@@ -149,6 +144,11 @@ namespace G
             this.ExternallyManaged = externallyManaged;
             this.Transformations = transformations;
             this.DataType = dataType;
+            this.Id = id;
+            this.TenantId = tenantId;
+            this.ExampleCount = exampleCount;
+            this.SessionCount = sessionCount;
+            this.ModifiedAt = modifiedAt;
             this.LastSessionStartTime = lastSessionStartTime;
         }
 

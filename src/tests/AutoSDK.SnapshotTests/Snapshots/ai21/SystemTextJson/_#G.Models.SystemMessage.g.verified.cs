@@ -42,6 +42,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="SystemMessage" /> class.
         /// </summary>
+        /// <param name="content"></param>
         /// <param name="role">
         /// The role of an individual message.<br/>
         /// - `user`:  Input provided by the user. Any instructions given here that conflict<br/>
@@ -55,7 +56,6 @@ namespace G
         ///   charming French accent."<br/>
         /// Default Value: system
         /// </param>
-        /// <param name="content"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -63,8 +63,8 @@ namespace G
             string content,
             global::G.SystemMessageRole? role)
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Role = role;
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
         }
 
         /// <summary>

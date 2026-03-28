@@ -37,14 +37,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PredictionContent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the predicted content you want to provide. This type is<br/>
-        /// currently always `content`.
-        /// </param>
         /// <param name="content">
         /// The content that should be matched when generating a model response.<br/>
         /// If generated tokens would match this content, the entire model response<br/>
         /// can be returned much more quickly.
+        /// </param>
+        /// <param name="type">
+        /// The type of the predicted content you want to provide. This type is<br/>
+        /// currently always `content`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -53,8 +53,8 @@ namespace G
             global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessageContentPartText>> content,
             global::G.PredictionContentType type)
         {
-            this.Content = content;
             this.Type = type;
+            this.Content = content;
         }
 
         /// <summary>

@@ -36,23 +36,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomSIPHeader" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: static
-        /// </param>
         /// <param name="key">
         /// The SIP header name (e.g., 'X-Customer-ID')
         /// </param>
         /// <param name="value">
         /// The header value
         /// </param>
+        /// <param name="type">
+        /// Default Value: static
+        /// </param>
         public CustomSIPHeader(
             string key,
             string value,
             string? type)
         {
+            this.Type = type;
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
-            this.Type = type;
         }
 
         /// <summary>

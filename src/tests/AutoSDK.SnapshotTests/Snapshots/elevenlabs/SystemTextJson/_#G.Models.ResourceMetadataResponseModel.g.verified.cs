@@ -68,23 +68,23 @@ namespace G
         /// <param name="resourceId">
         /// The ID of the resource.
         /// </param>
-        /// <param name="resourceName">
-        /// The name of the resource, if available.
-        /// </param>
         /// <param name="resourceType">
         /// The type of the resource.
-        /// </param>
-        /// <param name="creatorUserId">
-        /// The ID of the user who created the resource.
-        /// </param>
-        /// <param name="anonymousAccessLevelOverride">
-        /// The access level for anonymous users. If None, the resource is not shared publicly.
         /// </param>
         /// <param name="roleToGroupIds">
         /// A mapping of roles to group IDs. When the resource is shared with a user, the group id is the user's id.
         /// </param>
         /// <param name="shareOptions">
         /// List of options for sharing the resource further in the workspace. These are users who don't have access to the resource yet.
+        /// </param>
+        /// <param name="resourceName">
+        /// The name of the resource, if available.
+        /// </param>
+        /// <param name="creatorUserId">
+        /// The ID of the user who created the resource.
+        /// </param>
+        /// <param name="anonymousAccessLevelOverride">
+        /// The access level for anonymous users. If None, the resource is not shared publicly.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -99,12 +99,12 @@ namespace G
             global::G.ResourceMetadataResponseModelAnonymousAccessLevelOverride2? anonymousAccessLevelOverride)
         {
             this.ResourceId = resourceId ?? throw new global::System.ArgumentNullException(nameof(resourceId));
-            this.ResourceType = resourceType;
-            this.RoleToGroupIds = roleToGroupIds ?? throw new global::System.ArgumentNullException(nameof(roleToGroupIds));
-            this.ShareOptions = shareOptions ?? throw new global::System.ArgumentNullException(nameof(shareOptions));
             this.ResourceName = resourceName;
+            this.ResourceType = resourceType;
             this.CreatorUserId = creatorUserId;
             this.AnonymousAccessLevelOverride = anonymousAccessLevelOverride;
+            this.RoleToGroupIds = roleToGroupIds ?? throw new global::System.ArgumentNullException(nameof(roleToGroupIds));
+            this.ShareOptions = shareOptions ?? throw new global::System.ArgumentNullException(nameof(shareOptions));
         }
 
         /// <summary>

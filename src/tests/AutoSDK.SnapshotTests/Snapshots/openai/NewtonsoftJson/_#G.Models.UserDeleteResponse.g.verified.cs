@@ -36,17 +36,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UserDeleteResponse" /> class.
         /// </summary>
-        /// <param name="object"></param>
         /// <param name="id"></param>
         /// <param name="deleted"></param>
+        /// <param name="object"></param>
         public UserDeleteResponse(
             string id,
             bool deleted,
             global::G.UserDeleteResponseObject @object)
         {
+            this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Deleted = deleted;
-            this.Object = @object;
         }
 
         /// <summary>

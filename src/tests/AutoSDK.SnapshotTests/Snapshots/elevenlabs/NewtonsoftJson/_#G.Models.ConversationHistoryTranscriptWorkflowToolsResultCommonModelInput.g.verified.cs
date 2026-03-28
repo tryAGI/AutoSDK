@@ -96,8 +96,8 @@ namespace G
         /// <param name="errorType"></param>
         /// <param name="rawErrorMessage"></param>
         /// <param name="dynamicVariableUpdates"></param>
-        /// <param name="type"></param>
         /// <param name="result"></param>
+        /// <param name="type"></param>
         public ConversationHistoryTranscriptWorkflowToolsResultCommonModelInput(
             string requestId,
             string toolName,

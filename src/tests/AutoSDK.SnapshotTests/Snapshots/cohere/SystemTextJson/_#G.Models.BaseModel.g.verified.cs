@@ -49,16 +49,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseModel" /> class.
         /// </summary>
+        /// <param name="baseType">
+        /// The type of the base model.<br/>
+        /// Default Value: BASE_TYPE_UNSPECIFIED
+        /// </param>
         /// <param name="name">
         /// The name of the base model.
         /// </param>
         /// <param name="version">
         /// read-only. The version of the base model.<br/>
         /// Included only in responses
-        /// </param>
-        /// <param name="baseType">
-        /// The type of the base model.<br/>
-        /// Default Value: BASE_TYPE_UNSPECIFIED
         /// </param>
         /// <param name="strategy">
         /// Deprecated: The fine-tuning strategy.<br/>
@@ -73,9 +73,9 @@ namespace G
             string? version,
             global::G.Strategy? strategy)
         {
-            this.BaseType = baseType;
             this.Name = name;
             this.Version = version;
+            this.BaseType = baseType;
             this.Strategy = strategy;
         }
 

@@ -101,21 +101,12 @@ namespace G
         /// <param name="repository">
         /// Minimal Repository
         /// </param>
-        /// <param name="invitee">
-        /// A GitHub user.
-        /// </param>
-        /// <param name="inviter">
-        /// A GitHub user.
-        /// </param>
         /// <param name="permissions">
         /// The permission associated with the invitation.<br/>
         /// Example: read
         /// </param>
         /// <param name="createdAt">
         /// Example: 2016-06-13T14:52:50-05:00
-        /// </param>
-        /// <param name="expired">
-        /// Whether or not the invitation has expired
         /// </param>
         /// <param name="url">
         /// URL for the repository invitation<br/>
@@ -125,6 +116,15 @@ namespace G
         /// Example: https://github.com/octocat/Hello-World/invitations
         /// </param>
         /// <param name="nodeId"></param>
+        /// <param name="invitee">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="inviter">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="expired">
+        /// Whether or not the invitation has expired
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -142,14 +142,14 @@ namespace G
         {
             this.Id = id;
             this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
+            this.Invitee = invitee;
+            this.Inviter = inviter;
             this.Permissions = permissions;
             this.CreatedAt = createdAt;
+            this.Expired = expired;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
-            this.Invitee = invitee;
-            this.Inviter = inviter;
-            this.Expired = expired;
         }
 
         /// <summary>

@@ -50,9 +50,9 @@ namespace G
         /// </summary>
         /// <param name="label"></param>
         /// <param name="ref"></param>
-        /// <param name="repo"></param>
         /// <param name="sha"></param>
         /// <param name="user"></param>
+        /// <param name="repo"></param>
         public PullRequestHead(
             string label,
             string @ref,
@@ -62,9 +62,9 @@ namespace G
         {
             this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
             this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
+            this.Repo = repo;
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
             this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
-            this.Repo = repo;
         }
 
         /// <summary>

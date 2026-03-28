@@ -104,23 +104,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookProjectCardDeletedProjectCard" /> class.
         /// </summary>
-        /// <param name="afterId"></param>
         /// <param name="archived">
         /// Whether or not the card is archived
         /// </param>
-        /// <param name="columnId"></param>
         /// <param name="columnUrl"></param>
-        /// <param name="contentUrl"></param>
         /// <param name="createdAt"></param>
-        /// <param name="creator"></param>
         /// <param name="id">
         /// The project card's ID
         /// </param>
         /// <param name="nodeId"></param>
-        /// <param name="note"></param>
         /// <param name="projectUrl"></param>
         /// <param name="updatedAt"></param>
         /// <param name="url"></param>
+        /// <param name="afterId"></param>
+        /// <param name="columnId"></param>
+        /// <param name="contentUrl"></param>
+        /// <param name="creator"></param>
+        /// <param name="note"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -139,19 +139,19 @@ namespace G
             global::G.WebhookProjectCardDeletedProjectCardCreator? creator,
             string? note)
         {
+            this.AfterId = afterId;
             this.Archived = archived;
+            this.ColumnId = columnId;
             this.ColumnUrl = columnUrl ?? throw new global::System.ArgumentNullException(nameof(columnUrl));
+            this.ContentUrl = contentUrl;
             this.CreatedAt = createdAt;
+            this.Creator = creator;
             this.Id = id;
             this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Note = note;
             this.ProjectUrl = projectUrl ?? throw new global::System.ArgumentNullException(nameof(projectUrl));
             this.UpdatedAt = updatedAt;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.AfterId = afterId;
-            this.ColumnId = columnId;
-            this.ContentUrl = contentUrl;
-            this.Creator = creator;
-            this.Note = note;
         }
 
         /// <summary>

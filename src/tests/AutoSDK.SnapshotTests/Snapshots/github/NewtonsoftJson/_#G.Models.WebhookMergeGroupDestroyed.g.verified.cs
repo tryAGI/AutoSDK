@@ -64,6 +64,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookMergeGroupDestroyed" /> class.
         /// </summary>
+        /// <param name="mergeGroup">
+        /// A group of pull requests that the merge queue has grouped together to be merged.
+        /// </param>
         /// <param name="action"></param>
         /// <param name="reason">
         /// Explains why the merge group is being destroyed. The group could have been merged, removed from the queue (dequeued), or invalidated by an earlier queue entry being dequeued (invalidated).
@@ -72,9 +75,6 @@ namespace G
         /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>
         /// for and sent to a GitHub App. For more information,<br/>
         /// see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
-        /// </param>
-        /// <param name="mergeGroup">
-        /// A group of pull requests that the merge queue has grouped together to be merged.
         /// </param>
         /// <param name="organization">
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
@@ -96,10 +96,10 @@ namespace G
             global::G.RepositoryWebhooks? repository,
             global::G.SimpleUser? sender)
         {
-            this.MergeGroup = mergeGroup ?? throw new global::System.ArgumentNullException(nameof(mergeGroup));
             this.Action = action;
             this.Reason = reason;
             this.Installation = installation;
+            this.MergeGroup = mergeGroup ?? throw new global::System.ArgumentNullException(nameof(mergeGroup));
             this.Organization = organization;
             this.Repository = repository;
             this.Sender = sender;

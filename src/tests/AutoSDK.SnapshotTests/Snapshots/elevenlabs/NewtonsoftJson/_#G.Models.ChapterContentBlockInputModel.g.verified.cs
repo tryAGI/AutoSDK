@@ -36,16 +36,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChapterContentBlockInputModel" /> class.
         /// </summary>
-        /// <param name="subType"></param>
         /// <param name="nodes"></param>
+        /// <param name="subType"></param>
         /// <param name="blockId"></param>
         public ChapterContentBlockInputModel(
             global::System.Collections.Generic.IList<global::G.ChapterContentParagraphTtsNodeInputModel> nodes,
             global::G.ChapterContentBlockInputModelSubType2? subType,
             string? blockId)
         {
-            this.Nodes = nodes ?? throw new global::System.ArgumentNullException(nameof(nodes));
             this.SubType = subType;
+            this.Nodes = nodes ?? throw new global::System.ArgumentNullException(nameof(nodes));
             this.BlockId = blockId;
         }
 

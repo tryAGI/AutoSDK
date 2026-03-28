@@ -101,8 +101,8 @@ namespace G
         /// <param name="errorType"></param>
         /// <param name="rawErrorMessage"></param>
         /// <param name="dynamicVariableUpdates"></param>
-        /// <param name="type"></param>
         /// <param name="result"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

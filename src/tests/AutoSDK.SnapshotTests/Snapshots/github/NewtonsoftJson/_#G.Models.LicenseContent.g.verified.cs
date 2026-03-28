@@ -101,13 +101,13 @@ namespace G
         /// <param name="sha"></param>
         /// <param name="size"></param>
         /// <param name="url"></param>
-        /// <param name="htmlUrl"></param>
-        /// <param name="gitUrl"></param>
-        /// <param name="downloadUrl"></param>
         /// <param name="type"></param>
         /// <param name="content"></param>
         /// <param name="encoding"></param>
         /// <param name="links"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="gitUrl"></param>
+        /// <param name="downloadUrl"></param>
         /// <param name="license">
         /// License Simple
         /// </param>
@@ -131,13 +131,13 @@ namespace G
             this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
             this.Size = size;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.HtmlUrl = htmlUrl;
+            this.GitUrl = gitUrl;
+            this.DownloadUrl = downloadUrl;
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Encoding = encoding ?? throw new global::System.ArgumentNullException(nameof(encoding));
             this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
-            this.HtmlUrl = htmlUrl;
-            this.GitUrl = gitUrl;
-            this.DownloadUrl = downloadUrl;
             this.License = license;
         }
 

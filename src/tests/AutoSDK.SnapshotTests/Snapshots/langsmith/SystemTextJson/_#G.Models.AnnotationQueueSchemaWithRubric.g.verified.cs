@@ -100,6 +100,8 @@ namespace G
         /// Initializes a new instance of the <see cref="AnnotationQueueSchemaWithRubric" /> class.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="id"></param>
+        /// <param name="tenantId"></param>
         /// <param name="description"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
@@ -113,8 +115,6 @@ namespace G
         /// <param name="reservationMinutes">
         /// Default Value: 1
         /// </param>
-        /// <param name="id"></param>
-        /// <param name="tenantId"></param>
         /// <param name="sourceRuleId"></param>
         /// <param name="rubricItems"></param>
         /// <param name="rubricInstructions"></param>
@@ -137,8 +137,6 @@ namespace G
             string? rubricInstructions)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Id = id;
-            this.TenantId = tenantId;
             this.Description = description;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
@@ -146,6 +144,8 @@ namespace G
             this.NumReviewersPerItem = numReviewersPerItem;
             this.EnableReservations = enableReservations;
             this.ReservationMinutes = reservationMinutes;
+            this.Id = id;
+            this.TenantId = tenantId;
             this.SourceRuleId = sourceRuleId;
             this.RubricItems = rubricItems;
             this.RubricInstructions = rubricInstructions;

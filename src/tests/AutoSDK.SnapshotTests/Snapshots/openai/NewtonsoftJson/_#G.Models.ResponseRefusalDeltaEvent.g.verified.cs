@@ -54,9 +54,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseRefusalDeltaEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.refusal.delta`.
-        /// </param>
         /// <param name="itemId">
         /// The ID of the output item that the refusal text is added to.
         /// </param>
@@ -72,6 +69,9 @@ namespace G
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.refusal.delta`.
+        /// </param>
         public ResponseRefusalDeltaEvent(
             string itemId,
             int outputIndex,
@@ -80,12 +80,12 @@ namespace G
             int sequenceNumber,
             global::G.ResponseRefusalDeltaEventType type)
         {
+            this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.ContentIndex = contentIndex;
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.SequenceNumber = sequenceNumber;
-            this.Type = type;
         }
 
         /// <summary>

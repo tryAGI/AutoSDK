@@ -107,6 +107,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookDeploymentReviewRejected" /> class.
         /// </summary>
+        /// <param name="organization">
+        /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
+        /// organization, or when the event occurs from activity in a repository owned by an organization.
+        /// </param>
+        /// <param name="repository">
+        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
+        /// when the event occurs from activity in a repository.
+        /// </param>
+        /// <param name="sender">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="since"></param>
         /// <param name="action"></param>
         /// <param name="approver"></param>
         /// <param name="comment"></param>
@@ -120,19 +132,7 @@ namespace G
         /// for and sent to a GitHub App. For more information,<br/>
         /// see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
         /// </param>
-        /// <param name="organization">
-        /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
-        /// organization, or when the event occurs from activity in a repository owned by an organization.
-        /// </param>
-        /// <param name="repository">
-        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
-        /// when the event occurs from activity in a repository.
-        /// </param>
         /// <param name="reviewers"></param>
-        /// <param name="sender">
-        /// A GitHub user.
-        /// </param>
-        /// <param name="since"></param>
         /// <param name="workflowJobRun"></param>
         /// <param name="workflowJobRuns"></param>
         /// <param name="workflowRun"></param>
@@ -154,16 +154,16 @@ namespace G
             global::System.Collections.Generic.IList<global::G.WebhookDeploymentReviewRejectedWorkflowJobRun>? workflowJobRuns,
             global::G.WebhookDeploymentReviewRejectedWorkflowRun? workflowRun)
         {
-            this.Organization = organization ?? throw new global::System.ArgumentNullException(nameof(organization));
-            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
-            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
-            this.Since = since ?? throw new global::System.ArgumentNullException(nameof(since));
             this.Action = action;
             this.Approver = approver;
             this.Comment = comment;
             this.Enterprise = enterprise;
             this.Installation = installation;
+            this.Organization = organization ?? throw new global::System.ArgumentNullException(nameof(organization));
+            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
             this.Reviewers = reviewers;
+            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
+            this.Since = since ?? throw new global::System.ArgumentNullException(nameof(since));
             this.WorkflowJobRun = workflowJobRun;
             this.WorkflowJobRuns = workflowJobRuns;
             this.WorkflowRun = workflowRun;

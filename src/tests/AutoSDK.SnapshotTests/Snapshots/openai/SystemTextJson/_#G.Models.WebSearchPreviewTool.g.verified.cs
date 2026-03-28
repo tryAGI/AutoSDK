@@ -40,13 +40,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WebSearchPreviewTool" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the web search tool. One of `web_search_preview` or `web_search_preview_2025_03_11`.<br/>
-        /// Default Value: web_search_preview
-        /// </param>
         /// <param name="userLocation"></param>
         /// <param name="searchContextSize">
         /// High level guidance for the amount of context window space to use for the search. One of `low`, `medium`, or `high`. `medium` is the default.
+        /// </param>
+        /// <param name="type">
+        /// The type of the web search tool. One of `web_search_preview` or `web_search_preview_2025_03_11`.<br/>
+        /// Default Value: web_search_preview
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

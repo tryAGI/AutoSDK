@@ -42,9 +42,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseOutputItemDoneEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.output_item.done`.
-        /// </param>
         /// <param name="outputIndex">
         /// The index of the output item that was marked done.
         /// </param>
@@ -52,16 +49,19 @@ namespace G
         /// The sequence number of this event.
         /// </param>
         /// <param name="item"></param>
+        /// <param name="type">
+        /// The type of the event. Always `response.output_item.done`.
+        /// </param>
         public ResponseOutputItemDoneEvent(
             int outputIndex,
             int sequenceNumber,
             global::G.OutputItem item,
             global::G.ResponseOutputItemDoneEventType type)
         {
+            this.Type = type;
             this.OutputIndex = outputIndex;
             this.SequenceNumber = sequenceNumber;
             this.Item = item;
-            this.Type = type;
         }
 
         /// <summary>

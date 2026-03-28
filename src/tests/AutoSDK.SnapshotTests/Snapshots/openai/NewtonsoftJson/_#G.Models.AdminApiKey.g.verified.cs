@@ -96,19 +96,19 @@ namespace G
         /// The redacted value of the API key<br/>
         /// Example: sk-admin...def
         /// </param>
-        /// <param name="value">
-        /// The value of the API key. Only shown on create.<br/>
-        /// Example: sk-admin-1234abcd
-        /// </param>
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) of when the API key was created<br/>
         /// Example: 1711471533
+        /// </param>
+        /// <param name="owner"></param>
+        /// <param name="value">
+        /// The value of the API key. Only shown on create.<br/>
+        /// Example: sk-admin-1234abcd
         /// </param>
         /// <param name="lastUsedAt">
         /// The Unix timestamp (in seconds) of when the API key was last used<br/>
         /// Example: 1711471534
         /// </param>
-        /// <param name="owner"></param>
         public AdminApiKey(
             string @object,
             string id,
@@ -123,10 +123,10 @@ namespace G
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.RedactedValue = redactedValue ?? throw new global::System.ArgumentNullException(nameof(redactedValue));
-            this.CreatedAt = createdAt;
-            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.Value = value;
+            this.CreatedAt = createdAt;
             this.LastUsedAt = lastUsedAt;
+            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
         }
 
         /// <summary>

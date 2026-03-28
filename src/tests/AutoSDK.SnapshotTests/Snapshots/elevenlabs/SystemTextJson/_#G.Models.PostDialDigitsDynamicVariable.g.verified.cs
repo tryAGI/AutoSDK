@@ -31,11 +31,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PostDialDigitsDynamicVariable" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: dynamic
-        /// </param>
         /// <param name="value">
         /// The dynamic variable name to resolve
+        /// </param>
+        /// <param name="type">
+        /// Default Value: dynamic
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace G
             string value,
             string? type)
         {
-            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
             this.Type = type;
+            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
         }
 
         /// <summary>

@@ -131,6 +131,27 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DependabotAlert" /> class.
         /// </summary>
+        /// <param name="dismissedAt">
+        /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="dismissedBy">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="dismissedReason">
+        /// The reason that the alert was dismissed.
+        /// </param>
+        /// <param name="dismissedComment">
+        /// An optional comment associated with the alert's dismissal.
+        /// </param>
+        /// <param name="fixedAt">
+        /// The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="autoDismissedAt">
+        /// The time that the alert was auto-dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
+        /// Included only in responses
+        /// </param>
         /// <param name="number">
         /// The security alert number.<br/>
         /// Included only in responses
@@ -165,27 +186,6 @@ namespace G
         /// </param>
         /// <param name="updatedAt">
         /// The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
-        /// Included only in responses
-        /// </param>
-        /// <param name="dismissedAt">
-        /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
-        /// Included only in responses
-        /// </param>
-        /// <param name="dismissedBy">
-        /// A GitHub user.
-        /// </param>
-        /// <param name="dismissedReason">
-        /// The reason that the alert was dismissed.
-        /// </param>
-        /// <param name="dismissedComment">
-        /// An optional comment associated with the alert's dismissal.
-        /// </param>
-        /// <param name="fixedAt">
-        /// The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
-        /// Included only in responses
-        /// </param>
-        /// <param name="autoDismissedAt">
-        /// The time that the alert was auto-dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
         /// Included only in responses
         /// </param>
 #if NET7_0_OR_GREATER

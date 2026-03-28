@@ -57,20 +57,20 @@ namespace G
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `organization.project`
-        /// </param>
         /// <param name="name">
         /// The name of the project. This appears in reporting.
         /// </param>
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) of when the project was created.
         /// </param>
-        /// <param name="archivedAt">
-        /// The Unix timestamp (in seconds) of when the project was archived or `null`.
-        /// </param>
         /// <param name="status">
         /// `active` or `archived`
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `organization.project`
+        /// </param>
+        /// <param name="archivedAt">
+        /// The Unix timestamp (in seconds) of when the project was archived or `null`.
         /// </param>
         public Project(
             string id,
@@ -81,11 +81,11 @@ namespace G
             global::System.DateTimeOffset? archivedAt)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CreatedAt = createdAt;
-            this.Status = status;
-            this.Object = @object;
             this.ArchivedAt = archivedAt;
+            this.Status = status;
         }
 
         /// <summary>

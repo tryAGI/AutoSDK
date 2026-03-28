@@ -50,11 +50,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="WandbIntegrationOut" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: wandb
-        /// </param>
         /// <param name="project">
         /// The name of the project that the new run will be created under.
+        /// </param>
+        /// <param name="type">
+        /// Default Value: wandb
         /// </param>
         /// <param name="name">
         /// A display name to set for the run. If not set, will use the job ID as the name.
@@ -71,8 +71,8 @@ namespace G
             string? runName,
             string? url)
         {
-            this.Project = project ?? throw new global::System.ArgumentNullException(nameof(project));
             this.Type = type;
+            this.Project = project ?? throw new global::System.ArgumentNullException(nameof(project));
             this.Name = name;
             this.RunName = runName;
             this.Url = url;

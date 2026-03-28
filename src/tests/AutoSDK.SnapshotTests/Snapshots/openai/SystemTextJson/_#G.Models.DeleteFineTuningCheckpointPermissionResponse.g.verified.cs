@@ -42,11 +42,11 @@ namespace G
         /// <param name="id">
         /// The ID of the fine-tuned model checkpoint permission that was deleted.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always "checkpoint.permission".
-        /// </param>
         /// <param name="deleted">
         /// Whether the fine-tuned model checkpoint permission was successfully deleted.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always "checkpoint.permission".
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -57,8 +57,8 @@ namespace G
             global::G.DeleteFineTuningCheckpointPermissionResponseObject @object)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Deleted = deleted;
             this.Object = @object;
+            this.Deleted = deleted;
         }
 
         /// <summary>
