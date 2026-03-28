@@ -1,3 +1,5 @@
+using System.Collections.ObjectModel;
+
 namespace AutoSDK.Models.AsyncApi;
 
 /// <summary>
@@ -28,7 +30,7 @@ public sealed class AsyncApiServer
     /// <summary>
     /// Security requirements for this server.
     /// </summary>
-    public List<Dictionary<string, List<string>>> Security { get; set; } = new();
+    public Collection<Dictionary<string, List<string>>> Security { get; set; } = new();
 
     /// <summary>
     /// Constructs the full WebSocket URL.

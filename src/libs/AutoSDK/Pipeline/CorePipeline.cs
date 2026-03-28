@@ -657,8 +657,7 @@ public static class CorePipeline
             return string.Empty;
         }
 
-        var payloadRef = message.Payload["$ref"]?.GetValue<string>();
-        if (string.IsNullOrEmpty(payloadRef))
+        if (message.Payload["$ref"]?.GetValue<string>() is not { Length: > 0 } payloadRef)
         {
             return string.Empty;
         }

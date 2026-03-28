@@ -618,8 +618,7 @@ public static class AsyncApiExtensions
             {
                 foreach (var item in requiredArray)
                 {
-                    var name = item?.GetValue<string>();
-                    if (!string.IsNullOrEmpty(name))
+                    if (item?.GetValue<string>() is { Length: > 0 } name)
                     {
                         channel.BindingsQueryRequired.Add(name);
                     }
@@ -633,8 +632,7 @@ public static class AsyncApiExtensions
     private static AsyncApiMessage ParseMessage(JsonObject msgObj, JsonObject root)
     {
         // Handle $ref
-        var refValue = msgObj["$ref"]?.GetValue<string>();
-        if (!string.IsNullOrEmpty(refValue))
+        if (msgObj["$ref"]?.GetValue<string>() is { Length: > 0 } refValue)
         {
             var resolved = ResolveRef(root, refValue);
             if (resolved is JsonObject resolvedObj)

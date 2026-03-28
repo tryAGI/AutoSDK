@@ -1,3 +1,5 @@
+using System.Collections.ObjectModel;
+
 namespace AutoSDK.Models.AsyncApi;
 
 /// <summary>
@@ -33,12 +35,12 @@ public sealed class AsyncApiOperation
     /// <summary>
     /// Messages associated with this operation.
     /// </summary>
-    public List<AsyncApiOperationMessage> Messages { get; set; } = new();
+    public Collection<AsyncApiOperationMessage> Messages { get; set; } = new();
 
     /// <summary>
     /// References to operation traits (e.g., ["#/components/operationTraits/deepgram"]).
     /// </summary>
-    public List<string> TraitRefs { get; set; } = new();
+    public Collection<string> TraitRefs { get; set; } = new();
 
     /// <summary>
     /// Whether this is a send (client→server) operation.

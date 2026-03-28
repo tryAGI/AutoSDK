@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using System.Text.Json.Nodes;
 
 namespace AutoSDK.Models.AsyncApi;
@@ -33,7 +34,7 @@ public sealed class AsyncApiChannel
     /// Extracted from $ref paths like "#/servers/production".
     /// When non-empty, the first entry determines the base URL for this channel.
     /// </summary>
-    public List<string> ServerRefs { get; set; } = new();
+    public Collection<string> ServerRefs { get; set; } = new();
 
     /// <summary>
     /// Query parameters from bindings.ws.query.properties, keyed by parameter name.
@@ -54,5 +55,5 @@ public sealed class AsyncApiParameter
 {
     public string Description { get; set; } = string.Empty;
     public string Default { get; set; } = string.Empty;
-    public List<string> Enum { get; set; } = new();
+    public Collection<string> Enum { get; set; } = new();
 }

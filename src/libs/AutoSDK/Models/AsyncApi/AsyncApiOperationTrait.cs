@@ -1,3 +1,5 @@
+using System.Collections.ObjectModel;
+
 namespace AutoSDK.Models.AsyncApi;
 
 /// <summary>
@@ -10,7 +12,7 @@ public sealed class AsyncApiOperationTrait
     /// Security requirements from this trait.
     /// Each item is a map of security scheme name to scopes.
     /// </summary>
-    public List<Dictionary<string, List<string>>> Security { get; set; } = new();
+    public Collection<Dictionary<string, List<string>>> Security { get; set; } = new();
 
     /// <summary>
     /// Description of the trait.
