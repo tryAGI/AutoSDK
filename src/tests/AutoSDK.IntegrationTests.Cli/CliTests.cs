@@ -35,10 +35,26 @@ public class CliTests
         await GenerateAsync("deepgram-multichannel.json", targetFramework: "net10.0");
     }
 
+    [TestMethod]
+    public async Task Generate_WithInjectedApiKeyHeaderSecurityScheme_UsesFriendlyConstructorFileName()
+    {
+        await GenerateAsync(
+            "petstore.yaml",
+            targetFramework: "net10.0",
+            namespaceValue: "Qdrant",
+            clientClassName: "QdrantClient",
+            expectedGeneratedFile: "Qdrant.QdrantClient.Constructors.ApiKeyInHeader.g.cs",
+            additionalArguments: ["--security-scheme", "ApiKey:Header:api-key"]);
+    }
+
     private static async Task GenerateAsync(
         string spec,
         string targetFramework = "net8.0",
-        bool expectResponseStream = false)
+        bool expectResponseStream = false,
+        string namespaceValue = "Oag",
+        string clientClassName = "",
+        string? expectedGeneratedFile = null,
+        params string[] additionalArguments)
     {
         var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
         try
@@ -47,16 +63,27 @@ public class CliTests
 
             var currentDirectory = Directory.GetCurrentDirectory();
             var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
-            var generateResult = await RunDotnetAsync(
-                repositoryDirectory,
+            var generateArguments = new List<string>
+            {
                 "run",
                 "--disable-build-servers",
                 "--no-launch-profile",
                 "--project", "src/libs/AutoSDK.CLI",
                 "generate", spec.StartsWith("http") ? spec : $"specs/{spec}",
-                "--namespace", "Oag",
+                "--namespace", namespaceValue,
                 "--targetFramework", targetFramework,
-                "--output", tempDirectory);
+                "--output", tempDirectory,
+            };
+            if (!string.IsNullOrWhiteSpace(clientClassName))
+            {
+                generateArguments.Add("--clientClassName");
+                generateArguments.Add(clientClassName);
+            }
+            generateArguments.AddRange(additionalArguments);
+
+            var generateResult = await RunDotnetAsync(
+                repositoryDirectory,
+                generateArguments.ToArray());
             Console.WriteLine(generateResult.StandardOutput);
             Console.WriteLine(generateResult.StandardError);
             generateResult.ExitCode.Should().Be(0);
@@ -70,6 +97,13 @@ public class CliTests
                 Directory.EnumerateFiles(tempDirectory, "*.ResponseStream.g.cs", SearchOption.AllDirectories)
                     .Should()
                     .ContainSingle();
+            }
+
+            if (!string.IsNullOrWhiteSpace(expectedGeneratedFile))
+            {
+                File.Exists(Path.Combine(tempDirectory, expectedGeneratedFile))
+                    .Should()
+                    .BeTrue();
             }
 
             await File.WriteAllTextAsync(Path.Combine(tempDirectory, "Oag.csproj"), $@"<Project Sdk=""Microsoft.NET.Sdk"">

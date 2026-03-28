@@ -104,6 +104,44 @@ paths:
     }
 
     [TestMethod]
+    public void InjectSecuritySchemes_ApiKeyHeader_MainAuthorizationConstructor_UsesFriendlyNameInFileName()
+    {
+        // Arrange
+        var yaml = @"openapi: 3.0.1
+info:
+  title: Test
+  version: 1.0.0
+paths:
+  /test:
+    get:
+      operationId: getTest
+      responses:
+        '200':
+          description: OK
+";
+        var settings = Settings.Default with
+        {
+            Namespace = "Qdrant",
+            ClassName = "QdrantClient",
+            SecuritySchemes = new[] { "ApiKey:Header:api-key" }.ToImmutableArray(),
+        };
+
+        var document = yaml.GetOpenApiDocument(settings);
+        var authorizations = document.Security!
+            .SelectMany(x => x)
+            .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(
+                x.Key, settings, settings))
+            .ToImmutableArray()
+            .AsEquatableArray();
+
+        // Act
+        var file = Sources.MainAuthorizationConstructor(authorizations);
+
+        // Assert
+        file.Name.Should().Be("Qdrant.QdrantClient.Constructors.ApiKeyInHeader.g.cs");
+    }
+
+    [TestMethod]
     public void InjectSecuritySchemes_InvalidFormat_Skips()
     {
         // Arrange

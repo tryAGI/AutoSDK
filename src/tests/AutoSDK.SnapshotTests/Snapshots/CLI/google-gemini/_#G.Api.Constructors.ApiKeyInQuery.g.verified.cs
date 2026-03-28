@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.Constructors..g.cs
+﻿//HintName: G.Api.Constructors.ApiKeyInQuery.g.cs
 
 #nullable enable
 

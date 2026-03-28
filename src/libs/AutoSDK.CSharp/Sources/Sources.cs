@@ -356,7 +356,7 @@ public static partial class Sources
         var mainAuthorization = authorizations[0];
         
         return new FileWithName(
-            Name: $"{mainAuthorization.Settings.Namespace}.{mainAuthorization.Settings.ClassName}.Constructors.{mainAuthorization.Scheme.ToPropertyName()}.g.cs",
+            Name: $"{mainAuthorization.Settings.Namespace}.{mainAuthorization.Settings.ClassName}.Constructors.{mainAuthorization.FriendlyName}.g.cs",
             Text: GenerateMainAuthorizationConstructor(mainAuthorization));
     }
     
