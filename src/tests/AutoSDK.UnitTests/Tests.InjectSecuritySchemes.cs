@@ -183,6 +183,50 @@ paths:
     }
 
     [TestMethod]
+    public void InjectSecuritySchemes_OpenIdConnect_UsesNonEmptyFriendlyNameInFileNames()
+    {
+        var yaml = @"openapi: 3.0.1
+info:
+  title: Test
+  version: 1.0.0
+paths:
+  /test:
+    get:
+      operationId: getTest
+      security:
+        - oidc: []
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    oidc:
+      type: openIdConnect
+      openIdConnectUrl: https://example.com/.well-known/openid-configuration
+";
+        var settings = Settings.Default with
+        {
+            Namespace = "Oidc",
+            ClassName = "OidcClient",
+        };
+
+        var document = yaml.GetOpenApiDocument(settings);
+        var operation = document.Paths.Single().Value.Operations.Single().Value;
+        var authorizations = operation.Security!
+            .SelectMany(x => x)
+            .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(
+                x.Key, settings, settings))
+            .ToImmutableArray()
+            .AsEquatableArray();
+
+        authorizations.Should().HaveCount(1);
+        authorizations[0].FriendlyName.Should().Be("OpenIdConnect");
+        authorizations[0].MethodName.Should().Be("AuthorizeUsingOpenIdConnect");
+        Sources.Authorization(authorizations[0]).Name.Should().Be("Oidc.OidcClient.Authorizations.OpenIdConnect.g.cs");
+        Sources.MainAuthorizationConstructor(authorizations).Name.Should().Be("Oidc.OidcClient.Constructors.OpenIdConnect.g.cs");
+    }
+
+    [TestMethod]
     public void InjectSecuritySchemes_InvalidFormat_Skips()
     {
         // Arrange

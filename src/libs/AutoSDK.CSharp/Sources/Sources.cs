@@ -270,9 +270,15 @@ public static partial class Sources
         {
             return FileWithName.Empty;
         }
+
+        var fileNameWithoutExtension = client.FileNameWithoutExtension.TrimEnd('.');
+        if (string.IsNullOrWhiteSpace(fileNameWithoutExtension))
+        {
+            fileNameWithoutExtension = client.Settings.Namespace;
+        }
         
         return new FileWithName(
-            Name: $"{client.FileNameWithoutExtension}.JsonSerializerContext.g.cs",
+            Name: $"{fileNameWithoutExtension}.JsonSerializerContext.g.cs",
             Text: GenerateJsonSerializerContext(client, types, cancellationToken: cancellationToken));
     }
     

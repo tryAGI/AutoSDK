@@ -246,6 +246,51 @@ components:
     }
 
     [TestMethod]
+    public async Task Generate_DoesNotEmitDoubleDotGeneratedFileNames()
+    {
+        const string spec = """
+openapi: 3.0.1
+info:
+  title: HintNameRegression
+  version: 1.0.0
+paths:
+  /ping:
+    get:
+      operationId: ping
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PingResponse'
+components:
+  schemas:
+    PingResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "hint-name-regression.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "G",
+            assertGeneratedOutput: outputDirectory =>
+            {
+                var generatedFiles = Directory.EnumerateFiles(outputDirectory, "*", SearchOption.AllDirectories)
+                    .Select(Path.GetFileName)
+                    .ToArray();
+
+                generatedFiles.Should().NotContain(x => x != null && x.Contains("..", StringComparison.Ordinal));
+                generatedFiles.Should().Contain("G.JsonSerializerContext.g.cs");
+                return Task.CompletedTask;
+            });
+    }
+
+    [TestMethod]
     public async Task Generate_FreeFormObjectSchemas_UseGeneratedWrapperTypes()
     {
         const string spec = """

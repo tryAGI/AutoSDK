@@ -22,7 +22,8 @@ public static class CSharpAuthorizationFactory
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Header) => "ApiKeyInHeader",
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Query) => "ApiKeyInQuery",
             (SecuritySchemeType.OAuth2, _, _) => "OAuth2",
-            _ => scheme.Scheme?.ToPropertyName() ?? string.Empty,
+            (SecuritySchemeType.OpenIdConnect, _, _) => "OpenIdConnect",
+            _ => scheme.Name?.ToPropertyName() ?? scheme.Scheme?.ToPropertyName() ?? "Authorization",
         };
         string[] parameters = (scheme.Type, scheme.Scheme?.ToUpperInvariant(), scheme.In) switch
         {
@@ -41,6 +42,7 @@ public static class CSharpAuthorizationFactory
             {
                 (SecuritySchemeType.Http, _) => ParameterLocation.Header,
                 (SecuritySchemeType.OAuth2, _) => ParameterLocation.Header,
+                (SecuritySchemeType.OpenIdConnect, _) => ParameterLocation.Header,
                 _ => scheme.In,
             },
             parameters: parameters.ToImmutableArray().AsEquatableArray(),
