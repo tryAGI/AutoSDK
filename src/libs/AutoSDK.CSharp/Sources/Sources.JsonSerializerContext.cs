@@ -106,7 +106,9 @@ namespace {client.Settings.Namespace}
         HashSet<string> implicitlyDiscoveredTypes)
     {
         var explicitNames = new Dictionary<string, string>(StringComparer.Ordinal);
-        var usedNames = new HashSet<string>(StringComparer.Ordinal);
+        var usedNames = new HashSet<string>(
+            types.Select(GetImplicitTypeInfoPropertyName),
+            StringComparer.Ordinal);
 
         // Phase 1: Handle collisions among explicitly registered types
         foreach (var group in types.GroupBy(GetImplicitTypeInfoPropertyName).Where(group => group.Count() > 1))
@@ -124,11 +126,12 @@ namespace {client.Settings.Namespace}
                 var name = baseName;
                 var suffix = 2;
 
-                while (!usedNames.Add(name))
+                while (usedNames.Contains(name))
                 {
                     name = $"{baseName}_{suffix++}";
                 }
 
+                usedNames.Add(name);
                 explicitNames[type] = name;
             }
         }
@@ -160,11 +163,12 @@ namespace {client.Settings.Namespace}
             var name = baseName;
             var suffix = 3;
 
-            while (!usedNames.Add(name))
+            while (usedNames.Contains(name))
             {
                 name = $"{implicitName}{suffix++}";
             }
 
+            usedNames.Add(name);
             explicitNames[type] = name;
         }
 
@@ -195,11 +199,12 @@ namespace {client.Settings.Namespace}
             var name = baseName;
             var suffix = 3;
 
-            while (!usedNames.Add(name))
+            while (usedNames.Contains(name))
             {
                 name = $"{implicitName}{suffix++}";
             }
 
+            usedNames.Add(name);
             explicitNames[type] = name;
         }
 

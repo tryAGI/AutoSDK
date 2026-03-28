@@ -42,6 +42,12 @@ public class CliTests
     }
 
     [TestMethod]
+    public async Task Generate_TogetherSdk()
+    {
+        await GenerateAsync("together.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
     public async Task Generate_WithInjectedApiKeyHeaderSecurityScheme_UsesFriendlyConstructorFileName()
     {
         await GenerateAsync(
