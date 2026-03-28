@@ -134,6 +134,7 @@ namespace {client.Settings.Namespace}
         // Value types with nullable variants in JsonSerializerContextTypes cause STJ to
         // discover the inner non-nullable type implicitly. If the same type is also
         // explicitly registered via [JsonSerializable], SYSLIB1031 fires.
+        // Skip built-in types (System.*, C# aliases) — STJ handles those natively.
         foreach (var type in types)
         {
             if (explicitNames.ContainsKey(type))
@@ -142,6 +143,11 @@ namespace {client.Settings.Namespace}
             }
 
             if (!implicitlyDiscoveredTypes.Contains(type))
+            {
+                continue;
+            }
+
+            if (ShouldKeepDefaultTypeInfoPropertyName(type))
             {
                 continue;
             }
