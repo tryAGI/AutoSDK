@@ -143,7 +143,7 @@ public static class CSharpPipeline
                             Sources.AnyOfValidation(x, cancellationToken),
                         }))
                     .Concat([Sources.JsonSerializerContext(data.Converters, data.Types, cancellationToken)])
-                    .Concat([Sources.JsonSerializerContextTypes(data.Types, cancellationToken)])
+                    .Concat([Sources.JsonSerializerContextTypes(data.Converters, data.Types, cancellationToken)])
                     .Concat([Sources.Polyfills(settings, cancellationToken)])
                     .Concat([Sources.Exceptions(settings, cancellationToken)])
                     .Concat([Sources.PathBuilder(settings, cancellationToken)])

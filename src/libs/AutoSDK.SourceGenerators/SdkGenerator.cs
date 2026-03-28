@@ -112,8 +112,8 @@ public class SdkGenerator : IIncrementalGenerator
                 .AsFileWithName(), context, Id)
             .AddSource(context);
         data
-            .Select(static (x, _) => x.Types)
-            .SelectAndReportExceptions((x, c) => Sources.JsonSerializerContextTypes(x, c)
+            .Select(static (x, _) => (Converters: x.Converters, Types: x.Types))
+            .SelectAndReportExceptions((x, c) => Sources.JsonSerializerContextTypes(x.Converters, x.Types, c)
                 .AsFileWithName(), context, Id)
             .AddSource(context);
     

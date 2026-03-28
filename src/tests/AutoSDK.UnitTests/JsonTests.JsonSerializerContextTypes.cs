@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using AutoSDK.Generation;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
 using AutoSDK.TypeMapping;
@@ -170,5 +171,39 @@ public partial class JsonTests
                 }).Box()
             ]),
         }), makeNullableRootIfValueType: true).Should().Be("IListByteArrayArray");
+    }
+
+    [TestMethod]
+    public void JsonSerializerContextTypes_UsesConfiguredSdkNamespace()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+        };
+        var client = new Client(
+            Id: "Converters",
+            ClassName: string.Empty,
+            FileNameWithoutExtension: "G.",
+            InterfaceFileNameWithoutExtension: "G.I",
+            BaseUrl: string.Empty,
+            Clients: ImmutableArray<PropertyData>.Empty,
+            Summary: string.Empty,
+            BaseUrlSummary: string.Empty,
+            Settings: settings,
+            GlobalSettings: settings,
+            Converters: ImmutableArray<string>.Empty);
+        var systemEnvironment = T(TypeData.Default with
+        {
+            Namespace = "System",
+            CSharpTypeRaw = "global::System.Environment",
+        });
+
+        var file = Sources.JsonSerializerContextTypes(
+            client,
+            ImmutableArray.Create(systemEnvironment).AsEquatableArray());
+
+        file.Name.Should().Be("G.JsonSerializerContextTypes.g.cs");
+        file.Text.Should().Contain("namespace G");
+        file.Text.Should().NotContain("namespace System");
     }
 }

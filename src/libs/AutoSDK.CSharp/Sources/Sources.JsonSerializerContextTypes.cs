@@ -5,6 +5,7 @@ namespace AutoSDK.Generation;
 public static partial class Sources
 {
     public static string GenerateJsonSerializerContextTypes(
+        string @namespace,
         EquatableArray<TypeData> types,
         CancellationToken cancellationToken = default)
     {
@@ -25,7 +26,7 @@ public static partial class Sources
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
-namespace {types[0].Namespace}
+namespace {@namespace}
 {{
     {string.Empty.ToXmlDocumentationSummary(level: 4)}
     public sealed partial class JsonSerializerContextTypes

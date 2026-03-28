@@ -247,6 +247,7 @@ public static partial class Sources
     }
     
     public static FileWithName JsonSerializerContextTypes(
+        Client client,
         EquatableArray<TypeData> types,
         CancellationToken cancellationToken = default)
     {
@@ -256,8 +257,8 @@ public static partial class Sources
         }
         
         return new FileWithName(
-            Name: $"{types[0].Namespace}.JsonSerializerContextTypes.g.cs",
-            Text: GenerateJsonSerializerContextTypes(types, cancellationToken: cancellationToken));
+            Name: $"{client.Settings.Namespace}.JsonSerializerContextTypes.g.cs",
+            Text: GenerateJsonSerializerContextTypes(client.Settings.Namespace, types, cancellationToken: cancellationToken));
     }
     
     public static FileWithName JsonSerializerContext(
