@@ -61,6 +61,66 @@ components:
             });
     }
 
+    [TestMethod]
+    public async Task Generate_WithInlineOneOfInlineEnumsAndParentEnum_UsesQualifiedOneOfJsonConverter_AndBuilds()
+    {
+        const string spec = """
+openapi: 3.0.1
+info:
+  title: EnumOneOfInline
+  version: 1.0.0
+paths:
+  /voices:
+    get:
+      operationId: listVoices
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VoiceWrapper'
+components:
+  schemas:
+    VoiceWrapper:
+      type: object
+      properties:
+        language:
+          description: Two letter ISO 639-1 language code. Use "auto" for auto-detection.
+          enum:
+            - en
+            - auto
+          oneOf:
+            - type: string
+              title: ISO 639-1 Language Code
+              enum:
+                - en
+            - type: string
+              title: Auto-detect
+              enum:
+                - auto
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "enum-oneof-inline.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedContents = await Task.WhenAll(
+                    Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
+                        .Select(path => File.ReadAllTextAsync(path)));
+                var content = string.Join("\n\n", generatedContents);
+
+                content.Should().Contain(
+                    "[global::System.Text.Json.Serialization.JsonConverter(typeof(global::Oag.JsonConverters.OneOfJsonConverter<");
+                content.Should().NotContain(
+                    "JsonConverters.OneOf<");
+                content.Should().NotContain(
+                    ">JsonConverter))]");
+            });
+    }
+
     private static async Task GenerateFromContentAsync(
         string fileName,
         string specContent,

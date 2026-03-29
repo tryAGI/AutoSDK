@@ -66,4 +66,57 @@ public class OneOfEnumConverterTests
         generatedModel.Should().NotContain(
             "JsonConverters.OneOf<global::G.LanguageCode?, global::G.AutoDetect?>JsonConverter");
     }
+
+    [TestMethod]
+    public void InlineOneOfOfInlineEnumsWithParentEnum_UsesQualifiedOneOfJsonConverter()
+    {
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: enum-oneof-inline
+                              version: 1.0.0
+                            paths:
+                              /voices:
+                                get:
+                                  operationId: listVoices
+                                  responses:
+                                    '200':
+                                      description: ok
+                                      content:
+                                        application/json:
+                                          schema:
+                                            $ref: '#/components/schemas/VoiceWrapper'
+                            components:
+                              schemas:
+                                VoiceWrapper:
+                                  type: object
+                                  properties:
+                                    language:
+                                      description: Two letter ISO 639-1 language code. Use "auto" for auto-detection.
+                                      enum:
+                                        - en
+                                        - auto
+                                      oneOf:
+                                        - type: string
+                                          title: ISO 639-1 Language Code
+                                          enum:
+                                            - en
+                                        - type: string
+                                          title: Auto-detect
+                                          enum:
+                                            - auto
+                            """;
+
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, DefaultSettings), GlobalSettings: DefaultSettings));
+        var generatedModel = string.Join("\n\n", data.Classes.Select(x => Sources.GenerateModel(x)));
+
+        generatedModel.Should().Contain(
+            "[global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<");
+        generatedModel.Should().Contain(
+            "public global::G.OneOf<");
+        generatedModel.Should().NotContain(
+            "JsonConverters.OneOf<");
+        generatedModel.Should().NotContain(
+            ">JsonConverter))]");
+    }
 }

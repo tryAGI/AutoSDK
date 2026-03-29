@@ -52,24 +52,30 @@ public static class CSharpTypeDataExtensions
             return $"global::{type.GeneratedNamespace}.JsonConverters.UnixTimestampJsonConverter";
         }
 
-        if (type.IsEnum || (isAnyOfLike && (type.IsComponent || type.HasDiscriminator)))
-        {
-            return $"global::{type.GeneratedNamespace}.JsonConverters.{shortCSharpTypeWithoutNullability}JsonConverter";
-        }
-
         if (type.AnyOfCount > 0)
         {
-            return $"global::{type.GeneratedNamespace}.JsonConverters.AnyOfJsonConverter<{GetSubtypeList(type)}>";
+            return isAnyOfLike && (type.IsComponent || type.HasDiscriminator)
+                ? $"global::{type.GeneratedNamespace}.JsonConverters.{shortCSharpTypeWithoutNullability}JsonConverter"
+                : $"global::{type.GeneratedNamespace}.JsonConverters.AnyOfJsonConverter<{GetSubtypeList(type)}>";
         }
 
         if (type.OneOfCount > 0)
         {
-            return $"global::{type.GeneratedNamespace}.JsonConverters.OneOfJsonConverter<{GetSubtypeList(type)}>";
+            return isAnyOfLike && (type.IsComponent || type.HasDiscriminator)
+                ? $"global::{type.GeneratedNamespace}.JsonConverters.{shortCSharpTypeWithoutNullability}JsonConverter"
+                : $"global::{type.GeneratedNamespace}.JsonConverters.OneOfJsonConverter<{GetSubtypeList(type)}>";
         }
 
         if (type.AllOfCount > 0)
         {
-            return $"global::{type.GeneratedNamespace}.JsonConverters.AllOfJsonConverter<{GetSubtypeList(type)}>";
+            return isAnyOfLike && (type.IsComponent || type.HasDiscriminator)
+                ? $"global::{type.GeneratedNamespace}.JsonConverters.{shortCSharpTypeWithoutNullability}JsonConverter"
+                : $"global::{type.GeneratedNamespace}.JsonConverters.AllOfJsonConverter<{GetSubtypeList(type)}>";
+        }
+
+        if (type.IsEnum)
+        {
+            return $"global::{type.GeneratedNamespace}.JsonConverters.{shortCSharpTypeWithoutNullability}JsonConverter";
         }
 
         return string.Empty;
