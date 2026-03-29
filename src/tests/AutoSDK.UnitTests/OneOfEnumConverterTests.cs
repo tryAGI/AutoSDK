@@ -119,4 +119,55 @@ public class OneOfEnumConverterTests
         generatedModel.Should().NotContain(
             ">JsonConverter))]");
     }
+
+    [TestMethod]
+    public void InlineOneOfOfInlineEnumAndString_UsesQualifiedOneOfJsonConverter()
+    {
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: enum-oneof-inline-string
+                              version: 1.0.0
+                            paths:
+                              /test:
+                                get:
+                                  operationId: getTest
+                                  responses:
+                                    '200':
+                                      description: ok
+                                      content:
+                                        application/json:
+                                          schema:
+                                            $ref: '#/components/schemas/TestObject'
+                            components:
+                              schemas:
+                                TestObject:
+                                  type: object
+                                  properties:
+                                    voiceId:
+                                      oneOf:
+                                        - type: string
+                                          title: Preset Voices
+                                          enum:
+                                            - amy
+                                            - ansel
+                                            - autumn
+                                        - type: string
+                                          title: Custom Voice ID
+                            """;
+
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, DefaultSettings), GlobalSettings: DefaultSettings));
+        var generatedModel = string.Join("\n\n", data.Classes.Select(x => Sources.GenerateModel(x)));
+
+        generatedModel.Should().Contain(
+            "[global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<");
+        generatedModel.Should().Contain(
+            "public global::G.OneOf<");
+        generatedModel.Should().Contain(
+            "string");
+        generatedModel.Should().NotContain(
+            "JsonConverters.OneOf<");
+        generatedModel.Should().NotContain(
+            ">JsonConverter))]");
+    }
 }

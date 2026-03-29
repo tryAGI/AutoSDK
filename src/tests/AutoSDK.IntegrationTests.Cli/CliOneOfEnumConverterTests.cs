@@ -121,6 +121,61 @@ components:
             });
     }
 
+    [TestMethod]
+    public async Task Generate_WithInlineOneOfInlineEnumAndString_UsesQualifiedOneOfJsonConverter_AndBuilds()
+    {
+        const string spec = """
+openapi: 3.0.1
+info:
+  title: EnumOneOfInlineString
+  version: 1.0.0
+paths:
+  /test:
+    get:
+      operationId: getTest
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TestObject'
+components:
+  schemas:
+    TestObject:
+      type: object
+      properties:
+        voiceId:
+          oneOf:
+            - type: string
+              enum: [amy, ansel, autumn]
+              title: Preset Voices
+            - type: string
+              title: Custom Voice ID
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "enum-oneof-inline-string.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedContents = await Task.WhenAll(
+                    Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
+                        .Select(path => File.ReadAllTextAsync(path)));
+                var content = string.Join("\n\n", generatedContents);
+
+                content.Should().Contain(
+                    "[global::System.Text.Json.Serialization.JsonConverter(typeof(global::Oag.JsonConverters.OneOfJsonConverter<");
+                content.Should().Contain(
+                    "string>");
+                content.Should().NotContain(
+                    "JsonConverters.OneOf<");
+                content.Should().NotContain(
+                    ">JsonConverter))]");
+            });
+    }
+
     private static async Task GenerateFromContentAsync(
         string fileName,
         string specContent,
