@@ -200,6 +200,60 @@ public partial class DataTests
     }
 
     [TestMethod]
+    public void ConvenienceOverload_DoesNotFlattenCompositeAllOfRequestProperties()
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateModels = true,
+            GenerateSdk = true,
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            TargetFramework = "net8.0",
+        };
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: composite-allof-repro
+                              version: 1.0.0
+                            paths:
+                              /test:
+                                post:
+                                  operationId: createComposite
+                                  requestBody:
+                                    required: true
+                                    content:
+                                      application/json:
+                                        schema:
+                                          $ref: '#/components/schemas/CompositeRequest'
+                                  responses:
+                                    '200':
+                                      description: ok
+                            components:
+                              schemas:
+                                BaseRequest:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                CompositeRequest:
+                                  type: object
+                                  allOf:
+                                    - $ref: '#/components/schemas/BaseRequest'
+                                    - type: object
+                                      properties:
+                                        extra:
+                                          type: string
+                            """;
+
+        var data = Data.Prepare(((yaml, settings), GlobalSettings: settings));
+        var generatedMethod = string.Join("\n\n", data.Methods.Select(x => Sources.GenerateEndPoint(x)));
+
+        generatedMethod.Should().NotContain("string? extra");
+        generatedMethod.Should().NotContain("Extra = extra,");
+        generatedMethod.Should().NotContain("Id = id,");
+    }
+
+    [TestMethod]
     public void ExcludeDeprecatedOperations_UsesFernAvailability()
     {
         var settings = DefaultSettings with

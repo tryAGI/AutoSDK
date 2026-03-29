@@ -227,63 +227,81 @@ public static class CSharpEndPointFactory
             return properties;
         }
 
-        var source = sourceContext.IsDerivedClass
-            ? sourceContext.DerivedClassContext.Children
-            : !sourceContext.Schema.IsEnum()
-                ? sourceContext.Children
-                : null;
+        var directProperties = GetDirectRequestProperties(sourceContext);
+        if (directProperties.Length > 0)
+        {
+            return directProperties;
+        }
 
+        var current = sourceContext;
+        while (current.IsAllOf)
+        {
+            var source = GetPropertySource(current);
+            if (source == null || source.Count != 1 || source[0].IsProperty)
+            {
+                return [];
+            }
+
+            current = source[0].ResolvedReference ?? source[0];
+            if (current.ClassData?.Properties is { Length: > 0 } unwrappedProperties)
+            {
+                return unwrappedProperties;
+            }
+
+            directProperties = GetDirectRequestProperties(current);
+            if (directProperties.Length > 0)
+            {
+                return directProperties;
+            }
+        }
+
+        return [];
+    }
+
+    private static ImmutableArray<PropertyData> GetDirectRequestProperties(SchemaContext context)
+    {
+        var source = GetPropertySource(context);
         if (source == null || source.Count == 0)
         {
             return [];
         }
 
-        var discriminatorPropertyName = sourceContext.IsBaseClass
-            ? sourceContext.Schema.Discriminator?.PropertyName
+        var discriminatorPropertyName = context.IsBaseClass
+            ? context.Schema.Discriminator?.PropertyName
             : null;
         var hasDiscriminator = !string.IsNullOrWhiteSpace(discriminatorPropertyName);
 
         var builder = ImmutableArray.CreateBuilder<PropertyData>(source.Count);
         var seenNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-        CollectRequestProperties(source, builder, seenNames, hasDiscriminator, discriminatorPropertyName);
+
+        for (var i = 0; i < source.Count; i++)
+        {
+            var child = source[i];
+            if (child is not { IsProperty: true, PropertyData: not null })
+            {
+                continue;
+            }
+
+            foreach (var property in child.ComputedProperties)
+            {
+                if ((!hasDiscriminator || property.Id != discriminatorPropertyName) &&
+                    seenNames.Add(property.Name))
+                {
+                    builder.Add(property);
+                }
+            }
+        }
 
         return builder.ToImmutable();
     }
 
-    private static void CollectRequestProperties(
-        IList<SchemaContext> contexts,
-        ImmutableArray<PropertyData>.Builder builder,
-        HashSet<string> seenNames,
-        bool hasDiscriminator,
-        string? discriminatorPropertyName)
+    private static IList<SchemaContext>? GetPropertySource(SchemaContext context)
     {
-        for (var i = 0; i < contexts.Count; i++)
-        {
-            var child = contexts[i];
-            if (child is { IsProperty: true, PropertyData: not null })
-            {
-                foreach (var property in child.ComputedProperties)
-                {
-                    if ((!hasDiscriminator || property.Id != discriminatorPropertyName) &&
-                        seenNames.Add(property.Name))
-                    {
-                        builder.Add(property);
-                    }
-                }
-
-                continue;
-            }
-
-            if (child.Children.Count > 0)
-            {
-                CollectRequestProperties(
-                    child.Children,
-                    builder,
-                    seenNames,
-                    hasDiscriminator,
-                    discriminatorPropertyName);
-            }
-        }
+        return context.IsDerivedClass
+            ? context.DerivedClassContext.Children
+            : !context.Schema.IsEnum()
+                ? context.Children
+                : null;
     }
 
     private static string GetCodeSamplesRemarks(OpenApiOperation operation)

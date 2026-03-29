@@ -804,6 +804,60 @@ paths:
     }
 
     [TestMethod]
+    public async Task Generate_WithCompositeAllOfRequest_DoesNotFlattenWrapperProperties()
+    {
+        const string spec = """
+openapi: 3.0.1
+info:
+  title: composite-allof-repro
+  version: 1.0.0
+paths:
+  /test:
+    post:
+      operationId: createComposite
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompositeRequest'
+      responses:
+        '200':
+          description: ok
+components:
+  schemas:
+    BaseRequest:
+      type: object
+      properties:
+        id:
+          type: string
+    CompositeRequest:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseRequest'
+        - type: object
+          properties:
+            extra:
+              type: string
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "composite-allof-request.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedContents = await Task.WhenAll(
+                    Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
+                        .Select(path => File.ReadAllTextAsync(path)));
+                var content = string.Join("\n\n", generatedContents);
+
+                content.Should().NotContain("Extra = extra,");
+                content.Should().NotContain("Id = id,");
+            });
+    }
+
+    [TestMethod]
     public async Task Generate_WithCaseInsensitiveEnumCollisions_Builds()
     {
         const string spec = """
