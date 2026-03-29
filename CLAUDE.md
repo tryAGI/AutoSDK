@@ -46,6 +46,21 @@ dotnet tool install --global --add-source ./src/libs/AutoSDK.CLI/bin/Debug autos
 dotnet tool uninstall --global autosdk.cli
 ```
 
+## Scripts
+```bash
+# Sync OpenAPI specs from sibling SDK repos into specs/
+./scripts/sync-specs.sh
+
+# Pull/rebase all sibling SDK repos from origin/main
+./scripts/sync-all.sh
+
+# Show repos with uncommitted changes
+./scripts/sync-all.sh --dirty
+
+# Explicit parent directory
+./scripts/sync-all.sh /path/to/tryAGI
+```
+
 ## Architecture Overview
 
 ### Core Components
