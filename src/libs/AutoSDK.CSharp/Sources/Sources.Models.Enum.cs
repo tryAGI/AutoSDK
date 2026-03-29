@@ -18,7 +18,7 @@ public static partial class Sources
     {{
 {modelData.EnumValues.Select(property => @$"
         {property.Summary.ToXmlDocumentationSummary(level: 8)}
-        [global::System.Runtime.Serialization.EnumMember(Value=""{property.Id}"")]
+        [global::System.Runtime.Serialization.EnumMember(Value={property.Id.ToCSharpStringLiteral()})]
         {property.Name},
     ").Inject()}
     }}".RemoveBlankLinesWhereOnlyWhitespaces();
@@ -59,7 +59,7 @@ public static partial class Sources
             return value switch
             {{
 {modelData.EnumValues.Select(property => @$" 
-                {modelData.ClassName}.{property.Name} => ""{property.Id}"",
+                {modelData.ClassName}.{property.Name} => {property.Id.ToCSharpStringLiteral()},
  ").Inject()}
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             }};
@@ -71,7 +71,7 @@ public static partial class Sources
             return value switch
             {{
 {modelData.EnumValues.Select(property => @$" 
-                ""{property.Id}"" => {modelData.ClassName}.{property.Name},
+                {property.Id.ToCSharpStringLiteral()} => {modelData.ClassName}.{property.Name},
  ").Inject()}
                 _ => null,
             }};

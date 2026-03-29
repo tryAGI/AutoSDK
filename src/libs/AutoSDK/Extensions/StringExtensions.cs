@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Text;
 
 namespace AutoSDK.Extensions;
 
@@ -452,6 +453,73 @@ public static class StringExtensions
     public static string EscapeCSharpKeyword(this string text)
     {
         return CSharpKeywords.TryGetValue(text, out var escaped) ? escaped : text;
+    }
+
+    /// <summary>
+    /// Converts a string to a valid regular C# string literal.
+    /// </summary>
+    public static string ToCSharpStringLiteral(this string text)
+    {
+#pragma warning disable CA1510
+        if (text is null)
+        {
+            throw new ArgumentNullException(nameof(text));
+        }
+#pragma warning restore CA1510
+
+        var builder = new StringBuilder(text.Length + 2);
+        builder.Append('"');
+
+        foreach (var character in text)
+        {
+            switch (character)
+            {
+                case '\\':
+                    builder.Append("\\\\");
+                    break;
+                case '"':
+                    builder.Append("\\\"");
+                    break;
+                case '\0':
+                    builder.Append("\\0");
+                    break;
+                case '\a':
+                    builder.Append("\\a");
+                    break;
+                case '\b':
+                    builder.Append("\\b");
+                    break;
+                case '\f':
+                    builder.Append("\\f");
+                    break;
+                case '\n':
+                    builder.Append("\\n");
+                    break;
+                case '\r':
+                    builder.Append("\\r");
+                    break;
+                case '\t':
+                    builder.Append("\\t");
+                    break;
+                case '\v':
+                    builder.Append("\\v");
+                    break;
+                default:
+                    if (char.IsControl(character))
+                    {
+                        builder.Append("\\u");
+                        builder.Append(((int)character).ToString("x4", CultureInfo.InvariantCulture));
+                    }
+                    else
+                    {
+                        builder.Append(character);
+                    }
+                    break;
+            }
+        }
+
+        builder.Append('"');
+        return builder.ToString();
     }
     
     /// <summary>
