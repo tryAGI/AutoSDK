@@ -471,6 +471,8 @@ public static class Data
         var authorizations = openApiDocument.Security!
             .SelectMany(requirement => requirement.OrderBy(x => x.Key.Name ?? string.Empty, StringComparer.Ordinal))
             .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(x.Key, csharpSettings, csharpGlobalSettings))
+            .GroupBy(x => x.FriendlyName)
+            .Select(g => g.First())
             .ToArray();
 
         var convertersBuilder = ImmutableArray.CreateBuilder<string>();
@@ -820,6 +822,8 @@ public static class Data
         var authorizations = openApiDocument.Security!
             .SelectMany(requirement => requirement.OrderBy(x => x.Key.Name ?? string.Empty, StringComparer.Ordinal))
             .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(x.Key, settings, globalSettings))
+            .GroupBy(x => x.FriendlyName)
+            .Select(g => g.First())
             .ToArray();
 
         var convertersBuilder = ImmutableArray.CreateBuilder<string>();
