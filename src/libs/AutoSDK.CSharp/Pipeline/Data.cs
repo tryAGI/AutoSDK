@@ -216,7 +216,7 @@ public static class Data
             csharpSettings = settings;
         }
 
-        var resolvedTags = CSharpClientNameGenerator.ResolveTags(csharpSettings, allTags);
+        var provisionalTags = CSharpClientNameGenerator.CreateProvisionalTags(csharpSettings, allTags);
 
         var maxDepth = 20;
         for (var i = 0; i < schemas.Count; i++)
@@ -426,7 +426,7 @@ public static class Data
         var enums = enumsBuilder.ToImmutable();
         var anyOfDatas = anyOfBuilder.ToImmutable();
 
-        var operations = openApiDocument.GetOperations(csharpSettings, csharpGlobalSettings, filteredSchemas, resolvedTags);
+        var operations = openApiDocument.GetOperations(csharpSettings, csharpGlobalSettings, filteredSchemas, provisionalTags);
         ModelNameGenerator.ResolveCollisions(operations);
         
         var filteredOperations = settings.GenerateSdk || settings.GenerateMethods
@@ -454,8 +454,6 @@ public static class Data
         
         var methods = filteredOperations
             .SelectMany(CreateEndPoints)
-            .OrderBy(m => m.Tag.SafeName, StringComparer.Ordinal)
-            .ThenBy(m => m.NotAsyncMethodName, StringComparer.Ordinal)
             .ToImmutableArray();
 
         if (settings.GenerateCli)
@@ -535,20 +533,20 @@ public static class Data
                  settings.IncludeTags.Contains(x.Name)) &&
                 !settings.ExcludeTags.Contains(x.Name))
             .ToArray();
-        var resolvedIncludedTags = includedTags
-            .Select(tag => resolvedTags.TryGetValue(tag.Name ?? string.Empty, out var resolvedTag)
-                ? resolvedTag
-                : CSharpTagFactory.FromTag(tag, csharpSettings))
+        var activeTagNames = new HashSet<string>(
+            methods.Select(m => m.Tag.Name),
+            StringComparer.Ordinal);
+        var activeIncludedTags = includedTags
+            .Where(tag => tag.Name != null && activeTagNames.Contains(tag.Name))
             .ToArray();
-
-        // Filter tags to only those that actually have methods assigned.
-        // x-fern-sdk-group-name can reassign operations away from their original tags,
-        // leaving some tags with no methods. We exclude those to avoid generating
-        // empty sub-clients or orphaned CLI group commands.
-        var tagsWithMethods = new HashSet<string>(
-            methods.Select(m => m.Tag.SafeName));
-        resolvedIncludedTags = resolvedIncludedTags
-            .Where(tag => tagsWithMethods.Contains(tag.SafeName))
+        var resolvedIncludedTagsMap = CSharpClientNameGenerator.ResolveTags(csharpSettings, activeIncludedTags);
+        methods = methods
+            .Select(method => ResolveEndPointTag(method, resolvedIncludedTagsMap))
+            .OrderBy(m => m.Tag.SafeName, StringComparer.Ordinal)
+            .ThenBy(m => m.NotAsyncMethodName, StringComparer.Ordinal)
+            .ToImmutableArray();
+        var resolvedIncludedTags = activeIncludedTags
+            .Select(tag => resolvedIncludedTagsMap[tag.Name!])
             .OrderBy(tag => tag.SafeName, StringComparer.Ordinal)
             .ToArray();
         Client[] clients = settings.GenerateSdk || settings.GenerateConstructors ? [new Client(
@@ -694,7 +692,7 @@ public static class Data
         var allTags = coreResult.AllTags.ToArray();
         var includedTags = coreResult.IncludedTags.ToArray();
 
-        var resolvedTags = CSharpClientNameGenerator.ResolveTags(settings, allTags);
+        var provisionalTags = CSharpClientNameGenerator.CreateProvisionalTags(settings, allTags);
 #if NET
         var allocAfterNaming = GC.GetTotalAllocatedBytes(precise: true);
 #endif
@@ -773,7 +771,7 @@ public static class Data
         var enums = enumsBuilder.ToImmutable();
         var anyOfDatas = anyOfBuilder.ToImmutable();
 
-        var operations = openApiDocument.GetOperations(settings, globalSettings, filteredSchemas, resolvedTags);
+        var operations = openApiDocument.GetOperations(settings, globalSettings, filteredSchemas, provisionalTags);
         ModelNameGenerator.ResolveCollisions(operations);
 
         var filteredOperations = settings.GenerateSdk || settings.GenerateMethods
@@ -804,8 +802,6 @@ public static class Data
 
         var methods = filteredOperations
             .SelectMany(CreateEndPoints)
-            .OrderBy(m => m.Tag.SafeName, StringComparer.Ordinal)
-            .ThenBy(m => m.NotAsyncMethodName, StringComparer.Ordinal)
             .ToImmutableArray();
 
         if (settings.GenerateCli)
@@ -883,15 +879,20 @@ public static class Data
         convertersBuilder.Add($"global::{globalSettings.Namespace}.JsonConverters.UnixTimestampJsonConverter");
         var converters = convertersBuilder.ToImmutable();
 
-        var resolvedIncludedTags = includedTags
-            .Select(tag => resolvedTags.TryGetValue(tag.Name ?? string.Empty, out var resolvedTag)
-                ? resolvedTag
-                : CSharpTagFactory.FromTag(tag, settings))
+        var activeTagNames = new HashSet<string>(
+            methods.Select(m => m.Tag.Name),
+            StringComparer.Ordinal);
+        var activeIncludedTags = includedTags
+            .Where(tag => tag.Name != null && activeTagNames.Contains(tag.Name))
             .ToArray();
-
-        var tagsWithMethods = new HashSet<string>(methods.Select(m => m.Tag.SafeName));
-        resolvedIncludedTags = resolvedIncludedTags
-            .Where(tag => tagsWithMethods.Contains(tag.SafeName))
+        var resolvedIncludedTagsMap = CSharpClientNameGenerator.ResolveTags(settings, activeIncludedTags);
+        methods = methods
+            .Select(method => ResolveEndPointTag(method, resolvedIncludedTagsMap))
+            .OrderBy(m => m.Tag.SafeName, StringComparer.Ordinal)
+            .ThenBy(m => m.NotAsyncMethodName, StringComparer.Ordinal)
+            .ToImmutableArray();
+        var resolvedIncludedTags = activeIncludedTags
+            .Select(tag => resolvedIncludedTagsMap[tag.Name!])
             .OrderBy(tag => tag.SafeName, StringComparer.Ordinal)
             .ToArray();
 
@@ -1182,6 +1183,34 @@ public static class Data
 
             schema.Children = [..schema.Children.Where(x => !unresolvedReferences.Contains(x))];
         }
+    }
+
+    private static EndPoint ResolveEndPointTag(
+        EndPoint method,
+        IReadOnlyDictionary<string, Tag> resolvedTags)
+    {
+        if (method.Tag == Tag.Empty ||
+            string.IsNullOrWhiteSpace(method.Tag.Name) ||
+            !resolvedTags.TryGetValue(method.Tag.Name, out var resolvedTag) ||
+            resolvedTag.SafeName == method.Tag.SafeName)
+        {
+            return method;
+        }
+
+        var className = method.Settings.GroupByTags && resolvedTag != Tag.Empty
+            ? CSharpClientNameGenerator.Generate(resolvedTag)
+            : method.Settings.ClassName.Replace(".", string.Empty);
+
+        return method with
+        {
+            Tag = resolvedTag,
+            ClassName = className,
+            CliCommandClassName = resolvedTag != Tag.Empty && !string.IsNullOrWhiteSpace(resolvedTag.SafeName)
+                ? $"{resolvedTag.SafeName}{method.NotAsyncMethodName}Command"
+                : $"{method.NotAsyncMethodName}Command",
+            FileNameWithoutExtension = $"{method.Settings.Namespace}.{className}.{method.NotAsyncMethodName}",
+            InterfaceFileNameWithoutExtension = $"{method.Settings.Namespace}.I{className}.{method.NotAsyncMethodName}",
+        };
     }
 
     /// <summary>

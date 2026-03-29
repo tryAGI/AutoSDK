@@ -9,22 +9,29 @@ namespace AutoSDK.Naming.Clients;
 
 public static class CSharpClientNameGenerator
 {
+    public static IReadOnlyDictionary<string, Tag> CreateProvisionalTags(
+        CSharpSettings settings,
+        IEnumerable<OpenApiTag> tags)
+    {
+        tags = tags ?? throw new ArgumentNullException(nameof(tags));
+
+        var resolvedTags = new Dictionary<string, Tag>(StringComparer.Ordinal);
+        foreach (var tag in GetDistinctTags(tags))
+        {
+            resolvedTags[tag.Name!] = CSharpTagFactory.FromTag(tag, settings);
+        }
+
+        return new ReadOnlyDictionary<string, Tag>(resolvedTags);
+    }
+
     public static IReadOnlyDictionary<string, Tag> ResolveTags(
         CSharpSettings settings,
         IEnumerable<OpenApiTag> tags)
     {
         tags = tags ?? throw new ArgumentNullException(nameof(tags));
 
-        var distinctTags = tags
-            .Where(tag => tag.Name != null)
-            .GroupBy(tag => tag.Name!, StringComparer.Ordinal)
-            .Select(group => group
-                .OrderBy(tag => tag.Description ?? string.Empty, StringComparer.Ordinal)
-                .First())
-            .ToArray();
-
         var resolvedTags = new Dictionary<string, Tag>(StringComparer.Ordinal);
-        foreach (var group in distinctTags
+        foreach (var group in GetDistinctTags(tags)
                      .GroupBy(tag => GeneratePropertyName(settings, tag), StringComparer.OrdinalIgnoreCase))
         {
             var orderedTags = group
@@ -45,6 +52,17 @@ public static class CSharpClientNameGenerator
         }
 
         return new ReadOnlyDictionary<string, Tag>(resolvedTags);
+    }
+
+    private static OpenApiTag[] GetDistinctTags(IEnumerable<OpenApiTag> tags)
+    {
+        return tags
+            .Where(tag => tag.Name != null)
+            .GroupBy(tag => tag.Name!, StringComparer.Ordinal)
+            .Select(group => group
+                .OrderBy(tag => tag.Description ?? string.Empty, StringComparer.Ordinal)
+                .First())
+            .ToArray();
     }
 
     public static string Generate(Tag tag)
