@@ -142,17 +142,15 @@ public static class CSharpTypeMapper
         var enumValues = ImmutableArray<string>.Empty;
         if (isEnum)
         {
-            var enumSource = schema.Enum;
-            if (enumSource != null && enumSource.Count > 0)
+            var computedEnum = context.ComputeEnum();
+            if (computedEnum.Count > 0)
             {
-                var description = context.Parameter?.Description ?? schema.Description ?? string.Empty;
-                var nameBuilder = ImmutableArray.CreateBuilder<string>(enumSource.Count);
-                var idBuilder = ImmutableArray.CreateBuilder<string>(enumSource.Count);
-                foreach (var value in enumSource)
+                var nameBuilder = ImmutableArray.CreateBuilder<string>(computedEnum.Count);
+                var idBuilder = ImmutableArray.CreateBuilder<string>(computedEnum.Count);
+                foreach (var kvp in computedEnum)
                 {
-                    var ev = ((JsonNode?)value).ToEnumValue(description, context.Settings.ToEnumNamingSettings());
-                    nameBuilder.Add(ev.Name);
-                    idBuilder.Add(ev.Id);
+                    nameBuilder.Add(kvp.Value.Name);
+                    idBuilder.Add(kvp.Key);
                 }
 
                 properties = nameBuilder.MoveToImmutable();
