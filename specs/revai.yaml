@@ -1,0 +1,1265 @@
+openapi: 3.0.1
+info:
+  title: Rev.ai API
+  description: |
+    Rev.ai provides quality speech-to-text recognition, sentiment analysis, topic extraction, 
+    and language identification via a RESTful API. All APIs use Bearer token authentication.
+  version: "1.0.0"
+  contact:
+    email: support@rev.ai
+    name: Rev.ai Support
+  x-logo:
+    url: https://www.rev.ai/assets/images/rev-ai-logo.svg
+servers:
+  - description: Rev.ai API
+    url: https://api.rev.ai
+security:
+  - BearerAuth: []
+tags:
+  - name: Account
+    description: Account information
+  - name: Transcription Jobs
+    description: Async speech-to-text transcription
+  - name: Transcript
+    description: Retrieve transcription results
+  - name: Captions
+    description: Retrieve caption output (SRT/VTT)
+  - name: Sentiment Analysis Jobs
+    description: Sentiment analysis on text or transcripts
+  - name: Sentiment Analysis Results
+    description: Retrieve sentiment analysis results
+  - name: Topic Extraction Jobs
+    description: Topic extraction from text or transcripts
+  - name: Topic Extraction Results
+    description: Retrieve topic extraction results
+  - name: Language Identification Jobs
+    description: Language identification from audio
+  - name: Language Identification Results
+    description: Retrieve language identification results
+paths:
+  # ==================== Speech-to-Text API ====================
+  /speechtotext/v1/account:
+    get:
+      summary: Get Account
+      description: Get the developer's account information
+      operationId: GetAccount
+      tags: [Account]
+      responses:
+        "200":
+          description: Rev.ai Account
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Account"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+  /speechtotext/v1/jobs:
+    get:
+      summary: Get List of Transcription Jobs
+      description: Gets a list of transcription jobs submitted within the last 30 days in reverse chronological order up to the provided limit number of jobs per call.
+      operationId: GetListOfTranscriptionJobs
+      tags: [Transcription Jobs]
+      parameters:
+        - name: limit
+          in: query
+          description: Limits the number of jobs returned, default is 100, max is 1000
+          schema:
+            type: integer
+        - name: starting_after
+          in: query
+          description: If specified, returns transcription jobs submitted before the job with this id, exclusive
+          schema:
+            type: string
+      responses:
+        "200":
+          description: List of Rev.ai Transcription Jobs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/TranscriptionJob"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+    post:
+      summary: Submit Transcription Job
+      description: Starts an asynchronous job to transcribe speech-to-text for a media file. Media files can be specified by URL or uploaded directly.
+      operationId: SubmitTranscriptionJob
+      tags: [Transcription Jobs]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SubmitTranscriptionJobRequest"
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                media:
+                  type: string
+                  format: binary
+                  description: Audio/video file to transcribe (max 2GB)
+                options:
+                  $ref: "#/components/schemas/TranscriptionJobOptions"
+      responses:
+        "200":
+          description: Transcription Job Details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TranscriptionJob"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "413":
+          description: Payload Too Large - Media file exceeds size limit
+
+  /speechtotext/v1/jobs/{id}:
+    parameters:
+      - $ref: "#/components/parameters/JobId"
+    get:
+      summary: Get Transcription Job By Id
+      description: Returns information about a transcription job
+      operationId: GetTranscriptionJobById
+      tags: [Transcription Jobs]
+      responses:
+        "200":
+          description: Transcription Job Details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TranscriptionJob"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+    delete:
+      summary: Delete Transcription Job
+      description: Deletes a transcription job. All data related to the job will be permanently deleted. A job can only be deleted once it's completed.
+      operationId: DeleteTranscriptionJob
+      tags: [Transcription Jobs]
+      responses:
+        "204":
+          description: Job was successfully deleted
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          description: Job is still in progress and cannot be deleted
+
+  /speechtotext/v1/jobs/{id}/transcript:
+    parameters:
+      - $ref: "#/components/parameters/JobId"
+    get:
+      summary: Get Transcript
+      description: Returns the transcript for a completed transcription job in JSON or plain text format.
+      operationId: GetTranscript
+      tags: [Transcript]
+      parameters:
+        - name: Accept
+          in: header
+          description: "Output format: application/vnd.rev.transcript.v1.0+json for JSON or text/plain for plain text"
+          schema:
+            type: string
+            enum:
+              - application/vnd.rev.transcript.v1.0+json
+              - text/plain
+            default: application/vnd.rev.transcript.v1.0+json
+      responses:
+        "200":
+          description: Transcript output
+          content:
+            application/vnd.rev.transcript.v1.0+json:
+              schema:
+                $ref: "#/components/schemas/Transcript"
+            text/plain:
+              schema:
+                type: string
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          description: Job has not completed yet
+
+  /speechtotext/v1/jobs/{id}/captions:
+    parameters:
+      - $ref: "#/components/parameters/JobId"
+    get:
+      summary: Get Captions
+      description: Returns caption output for a transcription job in SRT or VTT format.
+      operationId: GetCaptions
+      tags: [Captions]
+      parameters:
+        - name: Accept
+          in: header
+          description: "Caption format: application/x-subrip for SRT or text/vtt for VTT"
+          schema:
+            type: string
+            enum:
+              - application/x-subrip
+              - text/vtt
+            default: application/x-subrip
+        - name: speaker_channel
+          in: query
+          description: Identifies which channel of the job output to caption
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Caption output
+          content:
+            application/x-subrip:
+              schema:
+                type: string
+            text/vtt:
+              schema:
+                type: string
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "406":
+          description: Invalid caption format requested
+        "409":
+          description: Job has not completed yet
+
+  # ==================== Sentiment Analysis API ====================
+  /sentiment_analysis/v1/jobs:
+    get:
+      summary: Get List of Sentiment Analysis Jobs
+      description: Gets a list of sentiment analysis jobs submitted within the last 30 days.
+      operationId: GetListOfSentimentAnalysisJobs
+      tags: [Sentiment Analysis Jobs]
+      parameters:
+        - name: limit
+          in: query
+          description: Limits the number of jobs returned, default is 100, max is 1000
+          schema:
+            type: integer
+        - name: starting_after
+          in: query
+          description: If specified, returns jobs submitted before the job with this id
+          schema:
+            type: string
+      responses:
+        "200":
+          description: List of Sentiment Analysis Jobs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/SentimentAnalysisJob"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+    post:
+      summary: Submit Sentiment Analysis Job
+      description: Starts an asynchronous sentiment analysis job. Input can be plain text, a JSON transcript, or reference a completed transcription job.
+      operationId: SubmitSentimentAnalysisJob
+      tags: [Sentiment Analysis Jobs]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SubmitSentimentAnalysisJobRequest"
+      responses:
+        "200":
+          description: Sentiment Analysis Job Details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SentimentAnalysisJob"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+  /sentiment_analysis/v1/jobs/{id}:
+    parameters:
+      - $ref: "#/components/parameters/JobId"
+    get:
+      summary: Get Sentiment Analysis Job By Id
+      description: Returns information about a sentiment analysis job
+      operationId: GetSentimentAnalysisJobById
+      tags: [Sentiment Analysis Jobs]
+      responses:
+        "200":
+          description: Sentiment Analysis Job Details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SentimentAnalysisJob"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+    delete:
+      summary: Delete Sentiment Analysis Job
+      description: Deletes a sentiment analysis job and all associated data.
+      operationId: DeleteSentimentAnalysisJob
+      tags: [Sentiment Analysis Jobs]
+      responses:
+        "204":
+          description: Job was successfully deleted
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          description: Job is still in progress and cannot be deleted
+
+  /sentiment_analysis/v1/jobs/{id}/result:
+    parameters:
+      - $ref: "#/components/parameters/JobId"
+    get:
+      summary: Get Sentiment Analysis Result
+      description: Returns the sentiment analysis result for a completed job.
+      operationId: GetSentimentAnalysisResult
+      tags: [Sentiment Analysis Results]
+      responses:
+        "200":
+          description: Sentiment Analysis Result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SentimentAnalysisResult"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          description: Job has not completed yet
+
+  # ==================== Topic Extraction API ====================
+  /topic_extraction/v1/jobs:
+    get:
+      summary: Get List of Topic Extraction Jobs
+      description: Gets a list of topic extraction jobs submitted within the last 30 days.
+      operationId: GetListOfTopicExtractionJobs
+      tags: [Topic Extraction Jobs]
+      parameters:
+        - name: limit
+          in: query
+          description: Limits the number of jobs returned, default is 100, max is 1000
+          schema:
+            type: integer
+        - name: starting_after
+          in: query
+          description: If specified, returns jobs submitted before the job with this id
+          schema:
+            type: string
+      responses:
+        "200":
+          description: List of Topic Extraction Jobs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/TopicExtractionJob"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+    post:
+      summary: Submit Topic Extraction Job
+      description: Starts an asynchronous topic extraction job. Input can be plain text, a JSON transcript, or reference a completed transcription job.
+      operationId: SubmitTopicExtractionJob
+      tags: [Topic Extraction Jobs]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SubmitTopicExtractionJobRequest"
+      responses:
+        "200":
+          description: Topic Extraction Job Details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TopicExtractionJob"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+  /topic_extraction/v1/jobs/{id}:
+    parameters:
+      - $ref: "#/components/parameters/JobId"
+    get:
+      summary: Get Topic Extraction Job By Id
+      description: Returns information about a topic extraction job
+      operationId: GetTopicExtractionJobById
+      tags: [Topic Extraction Jobs]
+      responses:
+        "200":
+          description: Topic Extraction Job Details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TopicExtractionJob"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+    delete:
+      summary: Delete Topic Extraction Job
+      description: Deletes a topic extraction job and all associated data.
+      operationId: DeleteTopicExtractionJob
+      tags: [Topic Extraction Jobs]
+      responses:
+        "204":
+          description: Job was successfully deleted
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          description: Job is still in progress and cannot be deleted
+
+  /topic_extraction/v1/jobs/{id}/result:
+    parameters:
+      - $ref: "#/components/parameters/JobId"
+    get:
+      summary: Get Topic Extraction Result
+      description: Returns the topic extraction result for a completed job.
+      operationId: GetTopicExtractionResult
+      tags: [Topic Extraction Results]
+      responses:
+        "200":
+          description: Topic Extraction Result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TopicExtractionResult"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          description: Job has not completed yet
+
+  # ==================== Language Identification API ====================
+  /languageid/v1/jobs:
+    get:
+      summary: Get List of Language Identification Jobs
+      description: Gets a list of language identification jobs submitted within the last 30 days.
+      operationId: GetListOfLanguageIdentificationJobs
+      tags: [Language Identification Jobs]
+      parameters:
+        - name: limit
+          in: query
+          description: Limits the number of jobs returned, default is 100, max is 1000
+          schema:
+            type: integer
+        - name: starting_after
+          in: query
+          description: If specified, returns jobs submitted before the job with this id
+          schema:
+            type: string
+      responses:
+        "200":
+          description: List of Language Identification Jobs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/LanguageIdentificationJob"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+    post:
+      summary: Submit Language Identification Job
+      description: Starts an asynchronous language identification job for an audio file. Identifies the spoken language from 57+ supported languages.
+      operationId: SubmitLanguageIdentificationJob
+      tags: [Language Identification Jobs]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SubmitLanguageIdentificationJobRequest"
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                media:
+                  type: string
+                  format: binary
+                  description: Audio/video file to identify language from
+                options:
+                  $ref: "#/components/schemas/LanguageIdentificationJobOptions"
+      responses:
+        "200":
+          description: Language Identification Job Details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LanguageIdentificationJob"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "413":
+          description: Payload Too Large
+
+  /languageid/v1/jobs/{id}:
+    parameters:
+      - $ref: "#/components/parameters/JobId"
+    get:
+      summary: Get Language Identification Job By Id
+      description: Returns information about a language identification job
+      operationId: GetLanguageIdentificationJobById
+      tags: [Language Identification Jobs]
+      responses:
+        "200":
+          description: Language Identification Job Details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LanguageIdentificationJob"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+    delete:
+      summary: Delete Language Identification Job
+      description: Deletes a language identification job and all associated data.
+      operationId: DeleteLanguageIdentificationJob
+      tags: [Language Identification Jobs]
+      responses:
+        "204":
+          description: Job was successfully deleted
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          description: Job is still in progress and cannot be deleted
+
+  /languageid/v1/jobs/{id}/result:
+    parameters:
+      - $ref: "#/components/parameters/JobId"
+    get:
+      summary: Get Language Identification Result
+      description: Returns the language identification result for a completed job.
+      operationId: GetLanguageIdentificationResult
+      tags: [Language Identification Results]
+      responses:
+        "200":
+          description: Language Identification Result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LanguageIdentificationResult"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          description: Job has not completed yet
+
+components:
+  parameters:
+    JobId:
+      name: id
+      in: path
+      required: true
+      description: Job ID
+      schema:
+        type: string
+
+  responses:
+    Unauthorized:
+      description: Authorization has been denied for this request
+      content:
+        application/problem+json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+    BadRequest:
+      description: Bad Request - Invalid parameters
+      content:
+        application/problem+json:
+          schema:
+            $ref: "#/components/schemas/ValidationErrorResponse"
+    NotFound:
+      description: Job not found
+      content:
+        application/problem+json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: |
+        All API requests must be authorized with an Authorization: Bearer header.
+        Developers can obtain their access token from their settings page at https://rev.ai/access_token.
+
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        title:
+          type: string
+          description: Short, human-readable summary of the problem type
+        status:
+          type: integer
+          description: HTTP status code of the error
+        type:
+          type: string
+          description: URI that identifies the problem
+
+    ValidationErrorResponse:
+      type: object
+      properties:
+        title:
+          type: string
+        status:
+          type: integer
+        type:
+          type: string
+        parameters:
+          type: object
+          description: Invalid properties mapped to a list of reasons
+          additionalProperties:
+            type: array
+            items:
+              type: string
+
+    Account:
+      type: object
+      description: Rev.ai Account Model
+      properties:
+        email:
+          type: string
+          description: Email of developer account
+          example: jay@rev.ai
+        balance_seconds:
+          type: integer
+          description: Amount of Rev.ai API credits remaining in seconds
+          example: 150
+
+    # ==================== Transcription Schemas ====================
+    TranscriptionJobOptions:
+      type: object
+      description: Options for transcription job submission
+      properties:
+        metadata:
+          type: string
+          nullable: true
+          maxLength: 512
+          description: Optional metadata
+        callback_url:
+          type: string
+          nullable: true
+          description: Optional callback URL to invoke when processing is complete
+        language:
+          type: string
+          nullable: true
+          default: en
+          description: Language code for transcription (ISO 639-1, or cmn for Mandarin)
+          enum: [en, ar, bg, ca, cmn, cs, da, de, el, es, fi, fr, hi, hr, hu, it, ja, ko, lt, lv, ms, nl, "no", pl, pt, ro, ru, sk, sl, sv, tr]
+        skip_diarization:
+          type: boolean
+          nullable: true
+          default: false
+          description: Skip speaker diarization
+        skip_punctuation:
+          type: boolean
+          nullable: true
+          default: false
+          description: Skip punctuation elements
+        remove_disfluencies:
+          type: boolean
+          nullable: true
+          default: false
+          description: Remove ums and uhs from transcript
+        filter_profanity:
+          type: boolean
+          nullable: true
+          default: false
+          description: Filter profanity from transcript
+        speaker_channels_count:
+          type: integer
+          nullable: true
+          minimum: 1
+          maximum: 8
+          description: Number of unique speaker channels in the audio
+        custom_vocabulary_id:
+          type: string
+          nullable: true
+          description: ID of a pre-completed custom vocabulary
+        delete_after_seconds:
+          type: integer
+          nullable: true
+          minimum: 0
+          maximum: 2592000
+          description: Auto-delete job after this many seconds
+        custom_vocabularies:
+          type: array
+          nullable: true
+          maxItems: 50
+          minItems: 1
+          items:
+            $ref: "#/components/schemas/CustomVocabulary"
+
+    CustomVocabulary:
+      type: object
+      required: [phrases]
+      properties:
+        phrases:
+          type: array
+          minItems: 1
+          maxItems: 6000
+          items:
+            type: string
+          description: Array of custom phrases to add to the lexicon
+
+    SubmitTranscriptionJobRequest:
+      type: object
+      required: [media_url]
+      properties:
+        media_url:
+          type: string
+          maxLength: 2048
+          description: Direct download URL for the media file
+        metadata:
+          type: string
+          nullable: true
+          maxLength: 512
+        callback_url:
+          type: string
+          nullable: true
+        language:
+          type: string
+          nullable: true
+          default: en
+          enum: [en, ar, bg, ca, cmn, cs, da, de, el, es, fi, fr, hi, hr, hu, it, ja, ko, lt, lv, ms, nl, "no", pl, pt, ro, ru, sk, sl, sv, tr]
+        skip_diarization:
+          type: boolean
+          nullable: true
+          default: false
+        skip_punctuation:
+          type: boolean
+          nullable: true
+          default: false
+        remove_disfluencies:
+          type: boolean
+          nullable: true
+          default: false
+        filter_profanity:
+          type: boolean
+          nullable: true
+          default: false
+        speaker_channels_count:
+          type: integer
+          nullable: true
+          minimum: 1
+          maximum: 8
+        custom_vocabulary_id:
+          type: string
+          nullable: true
+        delete_after_seconds:
+          type: integer
+          nullable: true
+          minimum: 0
+          maximum: 2592000
+        custom_vocabularies:
+          type: array
+          nullable: true
+          maxItems: 50
+          items:
+            $ref: "#/components/schemas/CustomVocabulary"
+
+    TranscriptionJob:
+      type: object
+      description: Rev.ai Transcription Job
+      properties:
+        id:
+          type: string
+          description: Job ID
+          example: Umx5c6F7pH7r
+        status:
+          type: string
+          description: Current status of the job
+          enum: [in_progress, transcribed, failed]
+        type:
+          type: string
+          description: Type of speech recognition performed
+          enum: [async]
+        created_on:
+          type: string
+          format: date-time
+          description: Job creation timestamp in ISO-8601 UTC
+        completed_on:
+          type: string
+          format: date-time
+          nullable: true
+          description: Job completion timestamp in ISO-8601 UTC
+        name:
+          type: string
+          nullable: true
+          description: Name of the file provided
+        media_url:
+          type: string
+          nullable: true
+          description: Media URL provided during submission
+        metadata:
+          type: string
+          nullable: true
+          description: Optional metadata
+        callback_url:
+          type: string
+          nullable: true
+        language:
+          type: string
+          nullable: true
+        duration_seconds:
+          type: number
+          format: double
+          nullable: true
+          description: Duration of the file in seconds
+        failure:
+          type: string
+          nullable: true
+          description: Reason for job failure
+          enum: [internal_processing, download_failure, duration_exceeded, duration_too_short, invalid_media, empty_media, transcription, insufficient_balance, invoicing_limit_exceeded]
+        failure_detail:
+          type: string
+          nullable: true
+          description: Human-readable failure reason
+        skip_diarization:
+          type: boolean
+          nullable: true
+        skip_punctuation:
+          type: boolean
+          nullable: true
+        remove_disfluencies:
+          type: boolean
+          nullable: true
+        filter_profanity:
+          type: boolean
+          nullable: true
+        speaker_channels_count:
+          type: integer
+          nullable: true
+        custom_vocabulary_id:
+          type: string
+          nullable: true
+        delete_after_seconds:
+          type: integer
+          nullable: true
+
+    Transcript:
+      type: object
+      description: Rev.ai Transcript
+      properties:
+        monologues:
+          type: array
+          items:
+            $ref: "#/components/schemas/Monologue"
+
+    Monologue:
+      type: object
+      properties:
+        speaker:
+          type: integer
+          description: Speaker ID
+        elements:
+          type: array
+          description: Array of transcript elements
+          items:
+            $ref: "#/components/schemas/TranscriptElement"
+
+    TranscriptElement:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Type of element
+          enum: [text, punct, unknown]
+        value:
+          type: string
+          description: Text value of the element
+        ts:
+          type: number
+          format: double
+          nullable: true
+          description: Start timestamp in seconds
+        end_ts:
+          type: number
+          format: double
+          nullable: true
+          description: End timestamp in seconds
+        confidence:
+          type: number
+          format: double
+          nullable: true
+          minimum: 0
+          maximum: 1
+          description: Confidence score (null for punct and unknown types)
+
+    # ==================== Sentiment Analysis Schemas ====================
+    SubmitSentimentAnalysisJobRequest:
+      type: object
+      properties:
+        json:
+          $ref: "#/components/schemas/Transcript"
+          description: JSON transcript to analyze (from Rev.ai transcription output)
+          nullable: true
+        text:
+          type: string
+          nullable: true
+          description: Plain text to analyze for sentiment
+        metadata:
+          type: string
+          nullable: true
+          maxLength: 512
+          description: Optional metadata
+        callback_url:
+          type: string
+          nullable: true
+          description: Optional callback URL
+        language:
+          type: string
+          nullable: true
+          description: Language of the input text
+        delete_after_seconds:
+          type: integer
+          nullable: true
+          minimum: 0
+          maximum: 2592000
+          description: Auto-delete job after this many seconds
+
+    SentimentAnalysisJob:
+      type: object
+      description: Rev.ai Sentiment Analysis Job
+      properties:
+        id:
+          type: string
+          description: Job ID
+        status:
+          type: string
+          description: Current status of the job
+          enum: [in_progress, completed, failed]
+        type:
+          type: string
+          description: Type of analysis performed
+        created_on:
+          type: string
+          format: date-time
+          description: Job creation timestamp in ISO-8601 UTC
+        completed_on:
+          type: string
+          format: date-time
+          nullable: true
+          description: Job completion timestamp
+        language:
+          type: string
+          nullable: true
+        metadata:
+          type: string
+          nullable: true
+        callback_url:
+          type: string
+          nullable: true
+        word_count:
+          type: integer
+          nullable: true
+          description: Number of words processed
+        failure:
+          type: string
+          nullable: true
+          description: Failure reason
+        failure_detail:
+          type: string
+          nullable: true
+          description: Human-readable failure reason
+        delete_after_seconds:
+          type: integer
+          nullable: true
+
+    SentimentAnalysisResult:
+      type: object
+      description: Sentiment Analysis Result
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: "#/components/schemas/SentimentMessage"
+
+    SentimentMessage:
+      type: object
+      properties:
+        content:
+          type: string
+          description: Text content analyzed
+        score:
+          type: number
+          format: double
+          description: Sentiment score from -1.0 (negative) to 1.0 (positive)
+        sentiment:
+          type: string
+          description: Overall sentiment classification
+          enum: [positive, negative, neutral]
+        offset:
+          type: number
+          format: double
+          nullable: true
+          description: Start offset timestamp in seconds
+        length:
+          type: number
+          format: double
+          nullable: true
+          description: Length/duration in seconds
+        ts:
+          type: number
+          format: double
+          nullable: true
+          description: Start timestamp in seconds
+        end_ts:
+          type: number
+          format: double
+          nullable: true
+          description: End timestamp in seconds
+        speaker:
+          type: integer
+          nullable: true
+          description: Speaker ID
+
+    # ==================== Topic Extraction Schemas ====================
+    SubmitTopicExtractionJobRequest:
+      type: object
+      properties:
+        json:
+          $ref: "#/components/schemas/Transcript"
+          description: JSON transcript to extract topics from
+          nullable: true
+        text:
+          type: string
+          nullable: true
+          description: Plain text to extract topics from
+        metadata:
+          type: string
+          nullable: true
+          maxLength: 512
+        callback_url:
+          type: string
+          nullable: true
+        language:
+          type: string
+          nullable: true
+        delete_after_seconds:
+          type: integer
+          nullable: true
+          minimum: 0
+          maximum: 2592000
+
+    TopicExtractionJob:
+      type: object
+      description: Rev.ai Topic Extraction Job
+      properties:
+        id:
+          type: string
+          description: Job ID
+        status:
+          type: string
+          description: Current status
+          enum: [in_progress, completed, failed]
+        type:
+          type: string
+        created_on:
+          type: string
+          format: date-time
+        completed_on:
+          type: string
+          format: date-time
+          nullable: true
+        language:
+          type: string
+          nullable: true
+        metadata:
+          type: string
+          nullable: true
+        callback_url:
+          type: string
+          nullable: true
+        word_count:
+          type: integer
+          nullable: true
+        failure:
+          type: string
+          nullable: true
+        failure_detail:
+          type: string
+          nullable: true
+        delete_after_seconds:
+          type: integer
+          nullable: true
+
+    TopicExtractionResult:
+      type: object
+      description: Topic Extraction Result
+      properties:
+        topics:
+          type: array
+          items:
+            $ref: "#/components/schemas/Topic"
+
+    Topic:
+      type: object
+      properties:
+        topic_name:
+          type: string
+          description: Name of the extracted topic
+        score:
+          type: number
+          format: double
+          description: Relevance score of the topic (0.0 to 1.0)
+        informants:
+          type: array
+          description: Text segments that mention this topic
+          items:
+            $ref: "#/components/schemas/TopicInformant"
+
+    TopicInformant:
+      type: object
+      properties:
+        content:
+          type: string
+          description: Text content mentioning the topic
+        ts:
+          type: number
+          format: double
+          nullable: true
+          description: Start timestamp in seconds
+        end_ts:
+          type: number
+          format: double
+          nullable: true
+          description: End timestamp in seconds
+        speaker:
+          type: integer
+          nullable: true
+          description: Speaker ID
+
+    # ==================== Language Identification Schemas ====================
+    LanguageIdentificationJobOptions:
+      type: object
+      properties:
+        metadata:
+          type: string
+          nullable: true
+          maxLength: 512
+        callback_url:
+          type: string
+          nullable: true
+        delete_after_seconds:
+          type: integer
+          nullable: true
+          minimum: 0
+          maximum: 2592000
+
+    SubmitLanguageIdentificationJobRequest:
+      type: object
+      properties:
+        media_url:
+          type: string
+          maxLength: 2048
+          description: Direct download URL for the audio file
+        metadata:
+          type: string
+          nullable: true
+          maxLength: 512
+        callback_url:
+          type: string
+          nullable: true
+        delete_after_seconds:
+          type: integer
+          nullable: true
+          minimum: 0
+          maximum: 2592000
+
+    LanguageIdentificationJob:
+      type: object
+      description: Rev.ai Language Identification Job
+      properties:
+        id:
+          type: string
+          description: Job ID
+        status:
+          type: string
+          description: Current status
+          enum: [in_progress, completed, failed]
+        type:
+          type: string
+        created_on:
+          type: string
+          format: date-time
+        completed_on:
+          type: string
+          format: date-time
+          nullable: true
+        media_url:
+          type: string
+          nullable: true
+        metadata:
+          type: string
+          nullable: true
+        callback_url:
+          type: string
+          nullable: true
+        failure:
+          type: string
+          nullable: true
+        failure_detail:
+          type: string
+          nullable: true
+        delete_after_seconds:
+          type: integer
+          nullable: true
+
+    LanguageIdentificationResult:
+      type: object
+      description: Language Identification Result
+      properties:
+        top_language:
+          type: string
+          description: ISO language code of the most likely language
+        language_confidences:
+          type: array
+          description: List of detected languages with confidence scores
+          items:
+            $ref: "#/components/schemas/LanguageConfidence"
+
+    LanguageConfidence:
+      type: object
+      properties:
+        language:
+          type: string
+          description: ISO language code
+        confidence:
+          type: number
+          format: double
+          minimum: 0
+          maximum: 1
+          description: Confidence score for the language detection

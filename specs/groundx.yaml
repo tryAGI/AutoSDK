@@ -1,0 +1,1536 @@
+openapi: 3.0.0
+info:
+  title: GroundX APIs
+  description: RAG Made Simple, Secure and Hallucination Free
+  version: 1.3.26
+  contact:
+    email: support@eyelevel.ai
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+  - description: GroundX Base URL
+    url: https://api.groundx.ai/api
+tags:
+  - name: Documents
+  - name: Search
+  - name: Buckets
+  - name: Groups
+  - name: Customer
+  - name: Health
+paths:
+  /v1/ingest/documents/remote:
+    post:
+      tags:
+        - Documents
+      summary: ingest_remote
+      description: >
+        Ingest documents hosted on public URLs to a GroundX bucket. 
+        
+        
+        Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+      operationId: Document_ingestRemote
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DocumentRemoteIngestRequest'
+      responses:
+        '200':
+          description: Documents successfully uploaded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IngestResponse'
+        '400':
+          description: Invalid document type or source URL
+        '401':
+          description: Unauthorized to update bucket with given ID
+  /v1/ingest/documents/local:
+    post:
+      tags:
+        - Documents
+      summary: ingest_local
+      description: >
+        Upload documents hosted on a local file system for ingestion into a GroundX bucket.
+        
+        
+        Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+      operationId: Document_ingestLocal
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/DocumentLocalIngestRequest'
+      responses:
+        '200':
+          description: Documents successfully uploaded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IngestResponse'
+        '400':
+          description: Invalid document type or source URL
+        '401':
+          description: Unauthorized to update bucket with ID
+  /v1/ingest/documents/website:
+    post:
+      tags:
+        - Documents
+      summary: crawl_website
+      description: >
+        Upload the content of a publicly accessible website for ingestion into a GroundX bucket. This is done by following links within a specified URL, recursively, up to a specified depth or number of pages.
+        
+        
+        Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+      operationId: Document_crawlWebsite
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WebsiteCrawlRequest'
+      responses:
+        '200':
+          description: Website successfully queued
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IngestResponse'
+        '400':
+          description: Invalid source URL
+        '401':
+          description: Unauthorized to update bucket with given ID
+  /v1/ingest/{processId}:
+    get:
+      tags:
+        - Documents
+      summary: get_processing_status_by_id
+      operationId: Document_getProcessingStatusById
+      description: >
+        Get the current status of an ingest, initiated with documents.ingest_remote, documents.ingest_local, or documents.crawl_website, by specifying the processId (the processId is included in the response of the documents.ingest functions).
+        
+        
+        Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+      parameters:
+        - name: processId
+          description: the processId for the ingest process being checked
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Look up success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProcessStatusResponse'
+        '400':
+          description: Invalid process ID
+        '401':
+          description: Unauthorized to access process with given ID
+  /v1/ingest/documents/{id}:
+    get:
+      tags:
+        - Documents
+      summary: lookup
+      operationId: Document_lookup
+      description: >
+        lookup the document(s) associated with a processId, bucketId, groupId, or projectId.
+        
+        
+        Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+      parameters:
+        - name: id
+          description: a processId, bucketId, groupId, or projectId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: n
+          description: The maximum number of returned documents. Accepts 1-100 with a default of 20.
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: filter
+          description: Only documents with names that contain the filter string will be returned in the results.
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: sort
+          description: The document attribute that will be used to sort the results.
+          in: query
+          required: false
+          schema:
+            $ref: "#/components/schemas/Sort"
+        - name: sortOrder
+          description: The order in which to sort the results. A value for sort must also be set.
+          in: query
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+        - name: status
+          description: A status filter on the get documents query. If this value is set, then only documents with this status will be returned in the results.
+          in: query
+          required: false
+          schema:
+            $ref: "#/components/schemas/ProcessingStatus"
+        - name: nextToken
+          description: A token for pagination. If the number of documents for a given query is larger than n, the response will include a "nextToken" value. That token can be included in this field to retrieve the next batch of n documents. 
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Look up success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentLookupResponse'
+        '400':
+          description: Invalid process, bucket, group, or project ID
+        '401':
+          description: Unauthorized to access process, bucket, group, or project with given ID
+  /v1/ingest/documents:
+    get:
+      tags:
+        - Documents
+      summary: list
+      operationId: Document_list
+      description: >
+        lookup all documents across all resources which are currently on GroundX
+        
+        
+        Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+      parameters:
+        - name: n
+          description: The maximum number of returned documents. Accepts 1-100 with a default of 20.
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: filter
+          description: Only documents with names that contain the filter string will be returned in the results.
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: sort
+          description: The document attribute that will be used to sort the results.
+          in: query
+          required: false
+          schema:
+            $ref: "#/components/schemas/Sort"
+        - name: sortOrder
+          description: The order in which to sort the results. A value for sort must also be set.
+          in: query
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+        - name: status
+          description: A status filter on the get documents query. If this value is set, then only documents with this status will be returned in the results.
+          in: query
+          required: false
+          schema:
+            $ref: "#/components/schemas/ProcessingStatus"
+        - name: nextToken
+          description: A token for pagination. If the number of documents for a given query is larger than n, the response will include a "nextToken" value. That token can be included in this field to retrieve the next batch of n documents. 
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Look up success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentListResponse'
+    delete:
+      tags:
+        - Documents
+      summary: delete (multiple)
+      description: >
+        Delete multiple documents hosted on GroundX
+        
+        
+        Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+      operationId: Documents_delete
+      parameters:
+        - name: documentIds
+          in: query
+          description: A list of documentIds which correspond to documents ingested by GroundX
+          required: true
+          schema:
+            type: array
+            items:
+              type: string
+              format: uuid
+          style: form
+          explode: false
+      responses:
+        '200':
+          description: Documents are queued to be deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IngestResponse'
+        '400':
+          description: Invalid document ID
+        '401':
+          description: Unauthorized to delete document with given ID
+  /v1/ingest/document/{documentId}:
+    delete:
+      tags:
+        - Documents
+      summary: delete (singular)
+      description: >
+        Delete a single document hosted on GroundX
+        
+        
+        Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+      operationId: Document_delete1
+      parameters:
+        - name: documentId
+          description: A documentId which correspond to a document ingested by GroundX
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Document successfully deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IngestResponse'
+        '400':
+          description: Invalid document ID
+        '401':
+          description: Unauthorized to delete document with given ID
+    get:
+      tags:
+        - Documents
+      summary: get
+      description: >
+        Look up an existing document by documentId.
+        
+        
+        Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+      operationId: Document_get
+      parameters:
+        - name: documentId
+          description: The documentId of the document for which GroundX information will be provided.
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Look up success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentResponse'
+        '400':
+          description: Invalid document ID
+        '401':
+          description: Unauthorized to access document with given ID
+  /v1/search/{id}:
+    post:
+      tags:
+        - Search
+      summary: search.content
+      operationId: Search_content
+      description: >
+        Search documents on GroundX for the most relevant information to a given query.
+        
+        
+        The result of this query is typically used in one of two ways; result['search']['text'] can be used to provide context to a language model, facilitating RAG, or result['search']['results'] can be used to observe chunks of text which are relevant to the query, facilitating citation.
+        
+        
+        Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+      parameters:
+        - description: The bucketId, groupId, projectId, or documentId to be searched. The document or documents within the specified container will be compared to the query, and relevant information will be extracted.
+          in: path
+          name: id
+          required: true
+          schema:
+            oneOf:
+              - type: integer
+              - type: string
+                format: uuid
+        - description: The maximum number of returned search results. Accepts 1-100 with a default of 20.
+          in: query
+          name: 'n'
+          required: false
+          schema:
+            type: integer
+            default: 20
+            minimum: 1
+            maximum: 100
+        - name: nextToken
+          description: A token for pagination. If the number of search results for a given query is larger than n, the response will include a "nextToken" value. That token can be included in this field to retrieve the next batch of n search results. 
+          in: query
+          required: false
+          schema:
+            type: string
+            example: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9'
+        - description: The amount of data returned with each search result. 0 == no search results, only the recommended context. 1 == search results but no searchData. 2 == search results and searchData.
+          in: query
+          name: 'verbosity'
+          required: false
+          schema:
+            type: integer
+            minimum: 0
+            maximum: 2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchRequest'
+      responses:
+        '200':
+          description: Search query success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+        '400':
+          description: Invalid request data
+        '401':
+          description: Unauthorized to access resource with given ID
+  /v1/search/documents:
+    post:
+      tags:
+        - Search
+      summary: search.documents
+      operationId: Search_documents
+      description: >
+        Search documents on GroundX for the most relevant information to a given query by documentId(s).
+
+
+        The result of this query is typically used in one of two ways; result['search']['text'] can be used to provide context to a language model, facilitating RAG, or result['search']['results'] can be used to observe chunks of text which are relevant to the query, facilitating citation.
+
+
+        Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+      parameters:
+        - description: The maximum number of returned search results. Accepts 1-100 with a default of 20.
+          in: query
+          name: 'n'
+          required: false
+          schema:
+            type: integer
+            default: 20
+            minimum: 1
+            maximum: 100
+        - name: nextToken
+          description: A token for pagination. If the number of search results for a given query is larger than n, the response will include a "nextToken" value. That token can be included in this field to retrieve the next batch of n search results.
+          in: query
+          required: false
+          schema:
+            type: string
+            example: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9'
+        - description: The amount of data returned with each search result. 0 == no search results, only the recommended context. 1 == search results but no searchData. 2 == search results and searchData.
+          in: query
+          name: 'verbosity'
+          required: false
+          schema:
+            type: integer
+            minimum: 0
+            maximum: 2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchDocumentsRequest'
+      responses:
+        '200':
+          description: Search query success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+        '400':
+          description: Invalid request data
+        '401':
+          description: Unauthorized to access resource with given ID
+  /v1/bucket:
+    get:
+      tags:
+        - Buckets
+      summary: list
+      description: >
+        List all buckets within your GroundX account
+        
+        
+        Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+      operationId: Bucket_list
+      parameters:
+        - name: n
+          description: The maximum number of returned buckets. Accepts 1-100 with a default of 20.
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: nextToken
+          description: A token for pagination. If the number of buckets for a given query is larger than n, the response will include a "nextToken" value. That token can be included in this field to retrieve the next batch of n buckets.
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Look up success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BucketListResponse'
+    post:
+      tags:
+        - Buckets
+      summary: create
+      operationId: Bucket_create
+      description: >
+        Create a new bucket.
+        
+        
+        Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BucketCreateRequest'
+      responses:
+        '200':
+          description: Bucket successfully created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BucketResponse'
+        '400':
+          description: Invalid body parameter
+  /v1/bucket/{bucketId}:
+    get:
+      tags:
+        - Buckets
+      summary: get
+      operationId: Bucket_get
+      description: >
+        Look up a specific bucket by its bucketId.
+        
+        
+        Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+      parameters:
+        - description: The bucketId of the bucket to look up.
+          in: path
+          name: bucketId
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Look up success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BucketResponse'
+        '400':
+          description: Invalid bucket ID
+        '401':
+          description: Unauthorized to access bucket with given ID
+    put:
+      tags:
+        - Buckets
+      summary: update
+      operationId: Bucket_update
+      description: >
+        Rename a bucket.
+        
+        
+        Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+      parameters:
+        - description: The bucketId of the bucket being updated.
+          in: path
+          name: bucketId
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BucketUpdateRequest'
+      responses:
+        '200':
+          description: Bucket successfully updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BucketUpdateResponse'
+        '400':
+          description: Invalid body parameter
+        '401':
+          description: Unauthorized to update bucket with given ID
+    delete:
+      tags:
+        - Buckets
+      summary: delete
+      description: >
+        Delete a bucket.
+        
+        
+        Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+      operationId: Bucket_delete
+      parameters:
+        - name: bucketId
+          description: The bucketId of the bucket being deleted.
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Bucket successfully deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+        '400':
+          description: Invalid bucket ID
+        '401':
+          description: Unauthorized to delete bucket with given ID
+  /v1/group:
+    get:
+      tags:
+        - Groups
+      summary: list
+      description: >
+        list all groups within your GroundX account.
+        
+        
+        Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+      operationId: Group_list
+      parameters:
+        - name: n
+          description: The maximum number of returned groups. Accepts 1-100 with a default of 20.
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: nextToken
+          description: A token for pagination. If the number of groups for a given query is larger than n, the response will include a "nextToken" value. That token can be included in this field to retrieve the next batch of n groups.
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful retrieval of groups
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupListResponse'
+    post:
+      tags:
+        - Groups
+      summary: create
+      operationId: Group_create
+      description: >
+        create a new group, a group being a collection of buckets which can be searched.
+        
+        
+        Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupCreateRequest'
+      responses:
+        '200':
+          description: Group successfully created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupResponse'
+        '400':
+          description: Invalid body parameter
+  /v1/group/{groupId}:
+    get:
+      tags:
+        - Groups
+      summary: get
+      operationId: Group_get
+      description: >
+        look up a specific group by its groupId.
+        
+        
+        Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+      parameters:
+        - description: The groupId of the group to look up.
+          in: path
+          name: groupId
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful retrieval of group
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupResponse'
+        '400':
+          description: Invalid group ID
+        '401':
+          description: Unauthorized to access group with given ID
+    put:
+      tags:
+        - Groups
+      summary: update
+      operationId: Group_update
+      description: >
+        Rename a group
+        
+        
+        Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+      parameters:
+        - description: The groupId of the group to update.
+          in: path
+          name: groupId
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupUpdateRequest'
+      responses:
+        '200':
+          description: Successful update of group
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupResponse'
+        '400':
+          description: Invalid body parameter
+        '401':
+          description: Unauthorized to update group with given ID
+    delete:
+      tags:
+        - Groups
+      summary: delete
+      description: >
+        Delete a group.
+        
+        
+        Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+      operationId: Group_delete
+      parameters:
+        - name: groupId
+          description: The groupId of the group to be deleted.
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Group successfully deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+        '400':
+          description: Invalid group ID
+        '401':
+          description: Unauthorized to delete group with given ID
+  /v1/group/{groupId}/bucket/{bucketId}:
+    post:
+      tags:
+        - Groups
+      summary: addBucket
+      operationId: Group_addBucket
+      description: >
+        Add an existing bucket to an existing group. Buckets and groups can be associated many to many.
+        
+        
+        Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+      parameters:
+        - description: The groupId of the group which the bucket will be added to.
+          in: path
+          name: groupId
+          required: true
+          schema:
+            type: integer
+        - description: The bucketId of the bucket being added to the group.
+          in: path
+          name: bucketId
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful update of group
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+        '400':
+          description: Invalid path parameter
+        '401':
+          description: Unauthorized to update group with given ID
+    delete:
+      tags:
+        - Groups
+      summary: removeBucket
+      operationId: Group_removeBucket
+      description: >
+        remove a bucket from a group. Buckets and groups can be associated many to many, this removes one bucket to group association without disturbing others.
+        
+        
+        Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+      parameters:
+        - description: The groupId of the group which the bucket will be removed from.
+          in: path
+          name: groupId
+          required: true
+          schema:
+            type: integer
+        - description: The bucketId of the bucket which will be removed from the group.
+          in: path
+          name: bucketId
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful update of group
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+        '400':
+          description: Invalid path parameter
+        '401':
+          description: Unauthorized to update group with given ID
+  /v1/customer:
+    get:
+      tags:
+        - Customer
+      summary: get
+      operationId: Customer_get
+      description: >
+        Get the account information associated with the API key.
+      responses:
+        '200':
+          description: Look up success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerResponse'
+  /v1/health:
+    get:
+      tags:
+        - Health
+      summary: list
+      operationId: Health_list
+      description: >
+        List the current health status of all services. Statuses update every 5 minutes.
+      responses:
+        '200':
+          description: Look up success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+  /v1/health/{service}:
+    get:
+      tags:
+        - Health
+      summary: get
+      operationId: Health_get
+      description: >
+        Look up the current health status of a specific service. Statuses update every 5 minutes.
+      parameters:
+        - description: The name of the service to look up.
+          in: path
+          name: service
+          example: search
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Look up success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+        '400':
+          description: Invalid service name
+components:
+  schemas:
+    SearchRequest:
+      type: object
+      required:
+        - query
+      properties:
+        query:
+          description: The search query to be used to find relevant documentation.
+          default: my search query
+          type: string
+          example: 'my search query'
+        relevance:
+          description: The minimum search relevance score required to include the result. By default, this is 10.0.
+          default: 10.0
+          type: number
+          format: float
+          example: 10.0
+    SearchDocumentsRequest:
+      type: object
+      required:
+        - query
+        - documentIds
+      properties:
+        query:
+          description: The search query to be used to find relevant documentation.
+          default: my search query
+          type: string
+          example: 'my search query'
+        documentIds:
+          description: An array of unique documentIds to be searched.
+          type: array
+          items:
+            type: string
+          example: ['docUUID1', 'docUUID2']
+        relevance:
+          description: The minimum search relevance score required to include the result. By default, this is 10.0.
+          default: 10.0
+          type: number
+          format: float
+          example: 10.0
+    SearchResponse:
+      type: object
+      required:
+        - search
+      properties:
+        search:
+          type: object
+          properties:
+            count:
+              description: Total results
+              type: integer
+            results:
+              type: array
+              description: Search results
+              items:
+                $ref: '#/components/schemas/SearchResultItem'
+            query:
+              description: The original search request query
+              type: string
+            score:
+              description: Confidence score in the search results
+              type: number
+            searchQuery:
+              description: The actual search query, if the search request query was re-written
+              type: string
+            text:
+              description: Suggested context for LLM completion
+              type: string
+            nextToken:
+              description: For paginated results
+              type: string
+    SearchResultItem:
+      type: object
+      properties:
+        boundingBoxes:
+          description: Coordinates corresponding to the areas of the document where the chunk appears
+          type: array
+          items:
+            $ref: "#/components/schemas/BoundingBoxDetail"
+        bucketId:
+          description: Content bucket the search result belongs to
+          type: integer
+        chunkId:
+          description: Unique system generated ID for the chunk
+          type: string
+        documentId:
+          description: Unique system generated ID for the document
+          format: uuid
+          type: string
+        fileName:
+          description: Name of ingested file
+          type: string
+        multimodalUrl:
+          description: An image clipping of the table or figure object from the document
+          format: uri
+          type: string
+        pageImages:
+          type: array
+          items:
+            description: A jpg of the page the chunk appears on
+            format: uri
+            type: string
+        score:
+          description: Confidence score in the search result
+          type: number
+        searchData:
+          description: Document, section, and chunk search data, both custom and system-generated
+          type: object
+        sourceUrl:
+          description: Source document URL
+          format: uri
+          type: string
+        suggestedText:
+          description: System-generated text, re-written for LLM completions
+          type: string
+        text:
+          description: Original text from the source document
+          type: string
+    GroupResponse:
+      type: object
+      required:
+        - group
+      properties:
+        group:
+          $ref: '#/components/schemas/GroupDetail'
+    GroupDetail:
+      type: object
+      required:
+        - groupId
+      properties:
+        buckets:
+          type: array
+          description: The content buckets associated with the group
+          items:
+            $ref: '#/components/schemas/BucketDetail'
+        created:
+          type: string
+          description: The data time when the group was created, in RFC3339 format
+          format: date-time
+          example: '2023-10-03T08:59:39.312Z'
+        fileCount:
+          type: integer
+          description: The number of files contained in the content buckets associated with the group
+        fileSize:
+          type: string
+          description: The total file size of files contained in the content buckets associated with the group
+          example: 3.1GB
+        groupId:
+          type: integer
+        name:
+          type: string
+        updated:
+          type: string
+          description: The data time when the group was last updated, in RFC3339 format
+          format: date-time
+          example: '2023-10-03T08:59:39.312Z'
+    BucketDetail:
+      type: object
+      required:
+        - bucketId
+      properties:
+        bucketId:
+          type: integer
+        created:
+          type: string
+          description: The data time when the bucket was created, in RFC3339 format
+          format: date-time
+          example: '2023-10-03T08:59:39.312Z'
+        fileCount:
+          type: integer
+          description: The number of files contained in the content bucket
+        fileSize:
+          type: string
+          description: The total file size of files contained in the content bucket
+          example: 3.1GB
+        name:
+          type: string
+        updated:
+          type: string
+          description: The data time when the bucket was last updated, in RFC3339 format
+          format: date-time
+          example: '2023-10-03T08:59:39.312Z'
+    BucketUpdateDetail:
+      type: object
+      required:
+        - bucketId
+      properties:
+        bucketId:
+          type: integer
+        name:
+          type: string
+    BucketResponse:
+      type: object
+      required:
+        - bucket
+      properties:
+        bucket:
+          $ref: '#/components/schemas/BucketDetail'
+    BucketUpdateResponse:
+      type: object
+      required:
+        - bucket
+      properties:
+        bucket:
+          $ref: '#/components/schemas/BucketUpdateDetail'
+    BucketCreateRequest:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          example: your_bucket_name
+    BucketUpdateRequest:
+      type: object
+      required:
+        - newName
+      properties:
+        newName:
+          description: The new name of the bucket being renamed.
+          type: string
+          example: your_bucket_name
+    GroupCreateRequest:
+      type: object
+      required:
+       - name
+      properties:
+        name:
+          description: The name of the group being created.
+          type: string
+          example: your_group_name
+        bucketName:
+          type: string
+          description: Specify bucketName to automatically create a bucket, by the name specified, and add it to the created group.
+          example: your_new_bucket_name
+    GroupUpdateRequest:
+      type: object
+      required:
+       - newName
+      properties:
+        newName:
+          description: The new name of the group being renamed.
+          type: string
+          example: your_group_name
+    BoundingBoxDetail:
+      type: object
+      properties:
+        bottomRightX:
+          type: number
+          description: The x coordinate of the lower right corner of the bounding box
+        bottomRightY:
+          type: number
+          description: The y coordinate of the lower right corner of the bounding box
+        pageNumber:
+          type: integer
+          description: The page number the bounding box appears on, using a 1-based array indexing (starts with page 1, not page 0)
+        topLeftX:
+          type: number
+          description: The x coordinate of the upper left corner of the bounding box
+        topLeftY:
+          type: number
+          description: The y coordinate of the upper left corner of the bounding box
+    DocumentDetail:
+      type: object
+      required:
+        - documentId
+      properties:
+        bucketId:
+          type: integer
+        documentId:
+          type: string
+          description: Unique system generated ID for the document
+          format: uuid
+        fileName:
+          type: string
+        fileSize:
+          type: string
+          description: The file size of the file stored in GroundX
+          example: 1.4MB
+        fileType:
+          $ref: '#/components/schemas/DocumentType'
+        processId:
+          type: string
+          description: Unique system generated ID for the ingest request
+          format: uuid
+        searchData:
+          type: object
+        sourceUrl:
+          type: string
+          description: Source document URL
+          format: uri
+        status:
+          $ref: "#/components/schemas/ProcessingStatus"
+        statusMessage:
+          type: string
+        xrayUrl:
+          type: string
+          description: Document X-Ray results
+          format: uri
+    DocumentResponse:
+      type: object
+      properties:
+        document:
+          $ref: "#/components/schemas/DocumentDetail"
+    DocumentRemoteIngestRequest:
+      type: object
+      required:
+        - documents
+      properties:
+        documents:
+          type: array
+          items:
+            type: object
+            required:
+              - bucketId
+              - sourceUrl
+            properties:
+              bucketId:
+                description: the bucketId of the bucket which this remote file will be ingested to.
+                type: integer
+                example: 1234
+              fileName:
+                description: The name of the file being ingested
+                type: string
+                example: my_file.txt
+              fileType:
+                $ref: '#/components/schemas/DocumentType'
+              searchData:
+                description: Custom metadata which can be used to influence GroundX's search functionality. This data can be used to further hone GroundX search.
+                type: object
+                example:
+                  key: value
+              sourceUrl:
+                type: string
+                description: The URL of the document being ingested by GroundX.
+                format: uri
+                example: https://my.source.url.com/file.txt
+    DocumentType:
+      description: The type of document (one of the seven currently supported file types)
+      type: string
+      enum:
+        - txt
+        - docx
+        - pptx
+        - xlsx
+        - pdf
+        - png
+        - jpg
+        - csv
+        - tsv
+        - json
+    DocumentLocalIngestRequest:
+      type: array
+      items:
+        type: object
+        required:
+          - blob
+          - metadata
+        properties:
+          blob:
+            description: The actual file being ingested.
+            type: string
+            format: binary
+          metadata:
+            type: object
+            required:
+              - bucketId
+              - fileName
+              - fileType
+            properties:
+              bucketId:
+                description: the bucketId of the bucket which this local file will be ingested to.
+                type: integer
+                example: 1234
+              fileName:
+                description: The name of the file being ingested
+                type: string
+                example: my_file.txt
+              fileType:
+                $ref: '#/components/schemas/DocumentType'
+              searchData:
+                description: Custom metadata which can be used to influence GroundX's search functionality. This data can be used to further hone GroundX search.
+                type: object
+                example:
+                  key: value
+    IngestResponse:
+      type: object
+      required:
+        - ingest
+      properties:
+        ingest:
+          type: object
+          required:
+            - processId
+            - status
+          properties:
+            processId:
+              type: string
+              format: uuid
+            status:
+              $ref: "#/components/schemas/ProcessingStatus"
+    ProcessStatusResponse:
+      type: object
+      required:
+        - ingest
+      properties:
+        ingest:
+          type: object
+          required:
+            - processId
+            - status
+          properties:
+            processId:
+              type: string
+              format: uuid
+            progress:
+              type: object
+              properties:
+                cancelled:
+                  type: object
+                  properties:
+                    documents:
+                      type: array
+                      items:
+                        $ref: "#/components/schemas/DocumentDetail"
+                    total:
+                      type: integer
+                complete:
+                  type: object
+                  properties:
+                    documents:
+                      type: array
+                      items:
+                        $ref: "#/components/schemas/DocumentDetail"
+                    total:
+                      type: integer
+                errors:
+                  type: object
+                  properties:
+                    documents:
+                      type: array
+                      items:
+                        $ref: "#/components/schemas/DocumentDetail"
+                    total:
+                      type: integer
+                processing:
+                  type: object
+                  properties:
+                    documents:
+                      type: array
+                      items:
+                        $ref: "#/components/schemas/DocumentDetail"
+                    total:
+                      type: integer
+            status:
+              $ref: "#/components/schemas/ProcessingStatus"
+            statusMessage:
+              type: string
+    ProcessingStatus:
+      type: string
+      enum:
+        - queued
+        - processing
+        - error
+        - complete
+        - cancelled
+    GroupListResponse:
+      type: object
+      properties:
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupDetail'
+    BucketListResponse:
+      type: object
+      properties:
+        buckets:
+          type: array
+          items:
+            $ref: '#/components/schemas/BucketDetail'
+    DocumentListResponse:
+      type: object
+      properties:
+        documents:
+          type: array
+          items:
+            $ref: "#/components/schemas/DocumentDetail"
+        nextToken:
+          type: string
+    DocumentLookupResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 20
+          description: The number of results returned in the current response
+        documents:
+          type: array
+          items:
+            $ref: "#/components/schemas/DocumentDetail"
+        nextToken:
+          type: string
+          example: The method you used is not supported for this query
+        total:
+          type: integer
+          example: 30
+          description: The total number of results found
+      example:
+        message: The method you used is not supported for this query
+    WebsiteCrawlRequest:
+      type: object
+      required:
+        - websites
+      properties:
+        websites:
+          type: array
+          items:
+            type: object
+            required:
+              - bucketId
+              - sourceUrl
+            properties:
+              bucketId:
+                description: the bucketId of the bucket which this website will be ingested to.
+                type: integer
+                example: 123
+              cap:
+                type: integer
+                description: The maximum number of pages to crawl
+                example: 100
+              depth:
+                type: integer
+                description: The maximum depth of linked pages to follow from the sourceUrl
+                example: 3
+              searchData:
+                description: Custom metadata which can be used to influence GroundX's search functionality. This data can be used to further hone GroundX search.
+                type: object
+                example:
+                  key: value
+              sourceUrl:
+                description: The URL from which the crawl is initiated.
+                type: string
+                format: uri
+                example: https://my.website.com
+    Sort:
+      description: The attribute to use to sort results
+      type: string
+      enum:
+        - name
+        - created
+    SortOrder:
+      description: The order in which to sort results
+      type: string
+      enum:
+        - asc
+        - desc
+    MessageResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: OK
+    MeterDetail:
+      type: object
+      description: Current usage and limits for the user for the given metric
+      properties:
+        max:
+          type: integer
+          description: Maximum limit for the current billing period
+        meterId:
+          type: string
+          description: Unique system generated ID for the meteric
+        value:
+          type: integer
+          description: Current usage for the current billing period
+    SubscriptionDetail:
+      type: object
+      description: Subscription information for the user, including current usage and limits
+      properties:
+        meters:
+          type: object
+          properties:
+            fileTokens:
+              $ref: '#/components/schemas/MeterDetail'
+            searches:
+              $ref: '#/components/schemas/MeterDetail'
+    CustomerDetail:
+      type: object
+      description: Account information for the user
+      properties:
+        email:
+          type: string
+          description: Email associated with the account
+          format: email
+        first:
+          type: string
+          description: Given name associated with the account, if known
+        last:
+          type: string
+          description: Family name associated with the account, if known
+        subscription:
+          $ref: '#/components/schemas/SubscriptionDetail'
+    CustomerResponse:
+      type: object
+      required:
+        - customer
+      properties:
+        customer:
+          $ref: '#/components/schemas/CustomerDetail'
+    HealthService:
+      type: object
+      required:
+        - lastUpdate
+        - service
+        - status
+      properties:
+        lastUpdate:
+          type: string
+          description: The data time when the service status was last updated, in RFC3339 format
+          format: date-time
+          example: '2023-10-03T08:59:39.312Z'
+        service:
+          type: string
+          description: The name of the service
+          example: search
+        status:
+          type: string
+          description: The health status of the service
+          enum:
+            - healthy
+            - degraded
+            - down
+            - unknown
+    HealthResponse:
+      type: object
+      required:
+        - health
+      properties:
+        health:
+          type: object
+          required:
+            - services
+          properties:
+            services:
+              type: array
+              items: 
+                $ref: '#/components/schemas/HealthService'
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+security:
+  - ApiKeyAuth: []

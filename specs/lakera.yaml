@@ -1,0 +1,462 @@
+openapi: 3.1.0
+info:
+  title: Lakera Guard API
+  description: |
+    Lakera Guard is an AI security platform that protects LLM applications from prompt injection, 
+    jailbreaks, PII leakage, harmful content, and other threats. It screens messages in real-time 
+    and returns structured verdicts with confidence scores.
+  version: "2.0"
+  contact:
+    name: Lakera
+    url: https://www.lakera.ai/
+  license:
+    name: Proprietary
+    url: https://www.lakera.ai/terms
+
+servers:
+  - url: https://api.lakera.ai
+    description: Guard API (content screening)
+
+security:
+  - BearerAuth: []
+
+paths:
+  /v2/guard:
+    post:
+      operationId: guard
+      summary: Screen content for threats
+      description: |
+        Screens messages for prompt injection, jailbreaks, PII, profanity, malicious links, 
+        unknown links, relevant languages, and other threats. Returns a boolean flagged verdict 
+        along with per-category results.
+        The messages array follows the OpenAI chat format with role and content fields.
+        You can optionally specify a policy to customize which detectors run and their thresholds.
+      tags:
+        - Guard
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GuardRequest'
+      responses:
+        '200':
+          description: Screening result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GuardResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized - invalid or missing API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v2/guard/results:
+    post:
+      operationId: guardResults
+      summary: Get detailed detection results
+      description: |
+        Similar to /v2/guard but returns detailed detection results with confidence scores, 
+        matched substrings, and additional metadata for each detector that triggered.
+        Use this endpoint when you need granular information about why content was flagged,
+        including exact text spans and detector confidence values.
+      tags:
+        - Guard
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GuardRequest'
+      responses:
+        '200':
+          description: Detailed screening results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GuardResultsResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized - invalid or missing API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: API key obtained from the Lakera platform (https://platform.lakera.ai)
+
+  schemas:
+    GuardRequest:
+      type: object
+      required:
+        - messages
+      properties:
+        messages:
+          type: array
+          description: Array of chat messages to screen. Follows the OpenAI chat format.
+          items:
+            $ref: '#/components/schemas/GuardMessage'
+          minItems: 1
+        policy:
+          $ref: '#/components/schemas/Policy'
+        breakdown:
+          type: boolean
+          description: If true, returns per-message breakdown in the results.
+          default: false
+        metadata:
+          type: object
+          description: Optional metadata to attach to this screening request for logging/tracking.
+          additionalProperties: true
+
+    GuardMessage:
+      type: object
+      required:
+        - role
+        - content
+      properties:
+        role:
+          type: string
+          enum:
+            - system
+            - user
+            - assistant
+          description: The role of the message author.
+        content:
+          oneOf:
+            - type: string
+              description: Text content of the message.
+            - type: array
+              description: Multi-part content (text and/or images).
+              items:
+                $ref: '#/components/schemas/ContentPart'
+
+    ContentPart:
+      type: object
+      required:
+        - type
+      properties:
+        type:
+          type: string
+          enum:
+            - text
+            - image_url
+          description: The type of content part.
+        text:
+          type: string
+          description: Text content (when type is text).
+        image_url:
+          $ref: '#/components/schemas/ImageUrl'
+
+    ImageUrl:
+      type: object
+      required:
+        - url
+      properties:
+        url:
+          type: string
+          description: URL of the image or base64-encoded data URI.
+
+    Policy:
+      type: object
+      description: Inline policy configuration that specifies which detectors to run and their thresholds.
+      properties:
+        prompt_injection:
+          $ref: '#/components/schemas/DetectorConfig'
+        jailbreak:
+          $ref: '#/components/schemas/DetectorConfig'
+        pii:
+          $ref: '#/components/schemas/PiiDetectorConfig'
+        profanity:
+          $ref: '#/components/schemas/DetectorConfig'
+        malicious_links:
+          $ref: '#/components/schemas/DetectorConfig'
+        unknown_links:
+          $ref: '#/components/schemas/DetectorConfig'
+        relevant_language:
+          $ref: '#/components/schemas/LanguageDetectorConfig'
+        moderated_content:
+          $ref: '#/components/schemas/ModeratedContentDetectorConfig'
+
+    DetectorConfig:
+      type: object
+      description: Configuration for a threat detector.
+      properties:
+        enabled:
+          type: boolean
+          description: Whether this detector is enabled.
+          default: true
+        threshold:
+          type: number
+          format: double
+          description: Confidence threshold (0.0 to 1.0). Content is flagged if the detector confidence exceeds this value.
+          minimum: 0.0
+          maximum: 1.0
+          default: 0.5
+
+    PiiDetectorConfig:
+      type: object
+      description: Configuration for the PII (Personally Identifiable Information) detector.
+      properties:
+        enabled:
+          type: boolean
+          description: Whether this detector is enabled.
+          default: true
+        threshold:
+          type: number
+          format: double
+          description: Confidence threshold (0.0 to 1.0).
+          minimum: 0.0
+          maximum: 1.0
+          default: 0.5
+        entities:
+          type: array
+          description: List of PII entity types to detect. If not specified, all entity types are detected.
+          items:
+            type: string
+
+    LanguageDetectorConfig:
+      type: object
+      description: Configuration for the relevant language detector.
+      properties:
+        enabled:
+          type: boolean
+          description: Whether this detector is enabled.
+          default: false
+        threshold:
+          type: number
+          format: double
+          description: Confidence threshold (0.0 to 1.0).
+          minimum: 0.0
+          maximum: 1.0
+          default: 0.5
+        languages:
+          type: array
+          description: List of ISO 639-1 language codes that are considered relevant.
+          items:
+            type: string
+
+    ModeratedContentDetectorConfig:
+      type: object
+      description: Configuration for the moderated content detector (toxicity, hate speech, etc.).
+      properties:
+        enabled:
+          type: boolean
+          description: Whether this detector is enabled.
+          default: true
+        threshold:
+          type: number
+          format: double
+          description: Confidence threshold (0.0 to 1.0).
+          minimum: 0.0
+          maximum: 1.0
+          default: 0.5
+        categories:
+          type: array
+          description: List of moderated content categories to detect.
+          items:
+            type: string
+            enum:
+              - hate
+              - harassment
+              - self_harm
+              - sexual
+              - violence
+
+    GuardResponse:
+      type: object
+      required:
+        - flagged
+      properties:
+        flagged:
+          type: boolean
+          description: Whether the content was flagged by any active detector.
+        categories:
+          $ref: '#/components/schemas/Categories'
+        breakdown:
+          type: array
+          description: Per-message breakdown (only present when breakdown was set to true in the request).
+          items:
+            $ref: '#/components/schemas/MessageBreakdown'
+
+    Categories:
+      type: object
+      description: Per-category flagging results.
+      properties:
+        prompt_injection:
+          type: boolean
+          description: Whether prompt injection was detected.
+        jailbreak:
+          type: boolean
+          description: Whether a jailbreak attempt was detected.
+        pii:
+          type: boolean
+          description: Whether PII was detected.
+        profanity:
+          type: boolean
+          description: Whether profanity was detected.
+        malicious_links:
+          type: boolean
+          description: Whether malicious links were detected.
+        unknown_links:
+          type: boolean
+          description: Whether unknown/unverified links were detected.
+        relevant_language:
+          type: boolean
+          description: Whether the content is NOT in a relevant language (true = irrelevant language detected).
+        moderated_content:
+          type: boolean
+          description: Whether moderated content (hate, harassment, etc.) was detected.
+
+    MessageBreakdown:
+      type: object
+      properties:
+        message_index:
+          type: integer
+          description: Index of the message in the input array.
+        flagged:
+          type: boolean
+          description: Whether this specific message was flagged.
+        categories:
+          $ref: '#/components/schemas/Categories'
+
+    GuardResultsResponse:
+      type: object
+      required:
+        - flagged
+        - results
+      properties:
+        flagged:
+          type: boolean
+          description: Whether the content was flagged by any active detector.
+        categories:
+          $ref: '#/components/schemas/Categories'
+        results:
+          type: array
+          description: Detailed results from each detector that ran.
+          items:
+            $ref: '#/components/schemas/DetectorResult'
+        breakdown:
+          type: array
+          description: Per-message breakdown with detailed results.
+          items:
+            $ref: '#/components/schemas/DetailedMessageBreakdown'
+
+    DetectorResult:
+      type: object
+      properties:
+        detector:
+          type: string
+          description: Name of the detector (e.g., prompt_injection, pii, jailbreak).
+        flagged:
+          type: boolean
+          description: Whether this detector flagged the content.
+        confidence:
+          type: number
+          format: double
+          description: Confidence score from 0.0 to 1.0.
+          minimum: 0.0
+          maximum: 1.0
+        matches:
+          type: array
+          description: Matched text spans or entities that triggered the detector.
+          items:
+            $ref: '#/components/schemas/DetectorMatch'
+
+    DetectorMatch:
+      type: object
+      properties:
+        text:
+          type: string
+          description: The matched text span.
+        start:
+          type: integer
+          description: Start character offset of the match in the original text.
+        end:
+          type: integer
+          description: End character offset of the match in the original text.
+        entity_type:
+          type: string
+          description: The type of entity detected (for PII detector), e.g., email, phone_number, credit_card.
+        confidence:
+          type: number
+          format: double
+          description: Confidence score for this specific match.
+          minimum: 0.0
+          maximum: 1.0
+
+    DetailedMessageBreakdown:
+      type: object
+      properties:
+        message_index:
+          type: integer
+          description: Index of the message in the input array.
+        flagged:
+          type: boolean
+          description: Whether this specific message was flagged.
+        categories:
+          $ref: '#/components/schemas/Categories'
+        results:
+          type: array
+          description: Detailed results for this specific message.
+          items:
+            $ref: '#/components/schemas/DetectorResult'
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error type/code.
+        message:
+          type: string
+          description: Human-readable error description.
+        details:
+          type: object
+          description: Additional error details.
+          additionalProperties: true
+
+tags:
+  - name: Guard
+    description: Screen content for threats including prompt injection, jailbreaks, PII, profanity, and malicious links.

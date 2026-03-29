@@ -1,0 +1,3604 @@
+openapi: 3.0.3
+info:
+  title: Humanloop API
+  description: |
+    Humanloop is a platform for prompt management, evaluation, and observability.
+    It provides tools for versioning prompts, running evaluations, managing datasets,
+    and logging LLM interactions.
+  version: "5.0"
+  contact:
+    name: Humanloop
+    url: https://humanloop.com
+
+servers:
+  - url: https://api.humanloop.com/v5
+    description: Production API
+
+security:
+  - BearerAuth: []
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: API Key
+
+  schemas:
+    UserResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the user.
+        email:
+          type: string
+          description: Email address of the user.
+        name:
+          type: string
+          description: Name of the user.
+      required:
+        - id
+
+    EnvironmentResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the environment.
+        name:
+          type: string
+          description: Name of the environment.
+        tag:
+          type: string
+          description: Tag for the environment.
+        createdAt:
+          type: string
+          format: date-time
+      required:
+        - id
+        - name
+
+    InputResponse:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the input variable.
+      required:
+        - name
+
+    MonitoringEvaluatorResponse:
+      type: object
+      properties:
+        evaluatorId:
+          type: string
+          description: ID of the Evaluator used for monitoring.
+        evaluatorVersionId:
+          type: string
+          description: Version ID of the Evaluator.
+        state:
+          type: string
+          enum: [active, inactive]
+          description: State of the monitoring evaluator.
+
+    EvaluatorAggregate:
+      type: object
+      properties:
+        evaluatorId:
+          type: string
+        evaluatorVersionId:
+          type: string
+        value:
+          type: number
+
+    ToolFunction:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the function.
+        description:
+          type: string
+          description: Description of the function.
+        parameters:
+          type: object
+          additionalProperties: true
+          description: JSON Schema defining the function parameters.
+        strict:
+          type: boolean
+          description: Whether strict mode is enabled.
+      required:
+        - name
+        - parameters
+
+    LinkedToolResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the linked tool.
+        name:
+          type: string
+          description: Name of the linked tool.
+        versionId:
+          type: string
+          description: Version ID of the linked tool.
+      required:
+        - id
+
+    ResponseFormat:
+      type: object
+      properties:
+        type:
+          type: string
+          description: "The format type, e.g. json_object."
+      required:
+        - type
+
+    ChatMessage:
+      type: object
+      properties:
+        role:
+          type: string
+          enum: [system, user, assistant, tool]
+          description: Role of the message author.
+        content:
+          type: string
+          description: The content of the message.
+        name:
+          type: string
+          description: Name of the message author.
+        toolCallId:
+          type: string
+          description: Tool call ID for tool messages.
+        toolCalls:
+          type: array
+          items:
+            $ref: '#/components/schemas/ToolCallResponse'
+          description: Tool calls made by the assistant.
+      required:
+        - role
+
+    ToolCallResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the tool call.
+        type:
+          type: string
+          description: Type of the tool call.
+        function:
+          type: object
+          properties:
+            name:
+              type: string
+            arguments:
+              type: string
+      required:
+        - id
+        - type
+
+    DatapointResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the datapoint.
+        inputs:
+          type: object
+          additionalProperties: true
+        target:
+          type: object
+          additionalProperties: true
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChatMessage'
+      required:
+        - id
+
+    DirectoryResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the directory.
+        path:
+          type: string
+          description: Path of the directory.
+        name:
+          type: string
+          description: Name of the directory.
+        parentId:
+          type: string
+          description: ID of the parent directory.
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+      required:
+        - id
+        - path
+        - name
+
+    PromptResponse:
+      type: object
+      description: Response model for a Prompt.
+      properties:
+        path:
+          type: string
+          description: Path of the Prompt, including the name, which is used as a unique identifier.
+        id:
+          type: string
+          description: Unique identifier for the Prompt.
+        directoryId:
+          type: string
+          description: ID of the directory that the file is in on Humanloop.
+        model:
+          type: string
+          description: "The model instance used, e.g. gpt-4."
+        endpoint:
+          type: string
+          description: The provider model endpoint used.
+        template:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChatMessage'
+          description: The template for the prompt as a list of chat messages.
+        provider:
+          type: string
+          description: The company providing the underlying model service.
+        maxTokens:
+          type: integer
+          description: The maximum number of tokens to generate.
+        temperature:
+          type: number
+          description: Sampling temperature for generation.
+        topP:
+          type: number
+          description: Nucleus sampling parameter.
+        stop:
+          type: string
+          description: Stop sequence.
+        presencePenalty:
+          type: number
+          description: Presence penalty value.
+        frequencyPenalty:
+          type: number
+          description: Frequency penalty value.
+        other:
+          type: object
+          additionalProperties: true
+          description: Other parameter values to be passed to the provider call.
+        seed:
+          type: integer
+          description: Seed for deterministic sampling.
+        responseFormat:
+          $ref: '#/components/schemas/ResponseFormat'
+        tools:
+          type: array
+          items:
+            $ref: '#/components/schemas/ToolFunction'
+        linkedTools:
+          type: array
+          items:
+            $ref: '#/components/schemas/LinkedToolResponse'
+        attributes:
+          type: object
+          additionalProperties: true
+          description: Additional fields to describe the Prompt.
+        versionName:
+          type: string
+          description: Unique name for the Prompt version.
+        versionDescription:
+          type: string
+          description: Description of the version.
+        description:
+          type: string
+          description: Description of the Prompt.
+        tags:
+          type: array
+          items:
+            type: string
+        readme:
+          type: string
+          description: Long description of the file.
+        name:
+          type: string
+          description: Name of the Prompt.
+        schema:
+          type: object
+          additionalProperties: true
+        versionId:
+          type: string
+          description: Unique identifier for the specific Prompt Version.
+        type:
+          type: string
+          enum: [prompt]
+        environments:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnvironmentResponse'
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/UserResponse'
+        lastUsedAt:
+          type: string
+          format: date-time
+        versionLogsCount:
+          type: integer
+          description: The number of logs generated for this Prompt Version.
+        totalLogsCount:
+          type: integer
+          description: The number of logs generated across all Prompt Versions.
+        inputs:
+          type: array
+          items:
+            $ref: '#/components/schemas/InputResponse'
+        evaluators:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonitoringEvaluatorResponse'
+        evaluatorAggregates:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvaluatorAggregate'
+      required:
+        - path
+        - id
+        - model
+        - name
+        - versionId
+        - createdAt
+        - updatedAt
+        - lastUsedAt
+        - versionLogsCount
+        - totalLogsCount
+        - inputs
+
+    PromptRequest:
+      type: object
+      description: Request to create or update a Prompt.
+      properties:
+        path:
+          type: string
+          description: "Path of the Prompt, including the name."
+        id:
+          type: string
+          description: ID for an existing Prompt.
+        model:
+          type: string
+          description: "The model instance used, e.g. gpt-4."
+        endpoint:
+          type: string
+          description: The provider model endpoint used.
+        template:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChatMessage'
+          description: The template for the prompt.
+        provider:
+          type: string
+          description: The company providing the underlying model service.
+        maxTokens:
+          type: integer
+          description: The maximum number of tokens to generate.
+        temperature:
+          type: number
+          description: Sampling temperature.
+        topP:
+          type: number
+        stop:
+          type: string
+        presencePenalty:
+          type: number
+        frequencyPenalty:
+          type: number
+        other:
+          type: object
+          additionalProperties: true
+        seed:
+          type: integer
+        responseFormat:
+          $ref: '#/components/schemas/ResponseFormat'
+        tools:
+          type: array
+          items:
+            $ref: '#/components/schemas/ToolFunction'
+        linkedTools:
+          type: array
+          items:
+            type: string
+          description: IDs of Tools linked to this prompt.
+        attributes:
+          type: object
+          additionalProperties: true
+        versionName:
+          type: string
+        versionDescription:
+          type: string
+        description:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        readme:
+          type: string
+      required:
+        - model
+
+    PaginatedPromptResponse:
+      type: object
+      properties:
+        records:
+          type: array
+          items:
+            $ref: '#/components/schemas/PromptResponse'
+        page:
+          type: integer
+        size:
+          type: integer
+        total:
+          type: integer
+      required:
+        - records
+        - page
+        - size
+        - total
+
+    PromptCallRequest:
+      type: object
+      description: Request to call a Prompt (proxied LLM call with logging).
+      properties:
+        versionId:
+          type: string
+          description: A specific Version ID of the Prompt to call.
+        environment:
+          type: string
+          description: Name of the Environment identifying a deployed version.
+        path:
+          type: string
+          description: Path of the Prompt.
+        id:
+          type: string
+          description: ID for an existing Prompt.
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChatMessage'
+          description: The messages passed to the provider.
+        prompt:
+          $ref: '#/components/schemas/PromptRequest'
+        inputs:
+          type: object
+          additionalProperties: true
+          description: The inputs passed to the prompt template.
+        source:
+          type: string
+          description: Identifies where the model was called from.
+        metadata:
+          type: object
+          additionalProperties: true
+        save:
+          type: boolean
+          description: Whether the request/response payloads will be stored.
+        logId:
+          type: string
+          description: Custom Log ID.
+        numSamples:
+          type: integer
+          description: The number of generations.
+        returnInputs:
+          type: boolean
+          description: Whether to return the inputs in the response.
+        traceParentId:
+          type: string
+          description: The ID of the parent Log to nest this Log under.
+        user:
+          type: string
+          description: End-user ID related to the Log.
+
+    PromptCallResponse:
+      type: object
+      description: Response from calling a Prompt.
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the log.
+        versionId:
+          type: string
+          description: Version ID of the Prompt used.
+        output:
+          type: string
+          description: Generated text output.
+        outputMessage:
+          $ref: '#/components/schemas/ChatMessage'
+        promptTokens:
+          type: integer
+        outputTokens:
+          type: integer
+        promptCost:
+          type: number
+        outputCost:
+          type: number
+        finishReason:
+          type: string
+        inputs:
+          type: object
+          additionalProperties: true
+        providerLatency:
+          type: number
+          description: Provider latency in seconds.
+        createdAt:
+          type: string
+          format: date-time
+      required:
+        - id
+
+    PromptLogRequest:
+      type: object
+      description: Request to log a Prompt call.
+      properties:
+        versionId:
+          type: string
+        environment:
+          type: string
+        runId:
+          type: string
+          description: Unique identifier for the Run.
+        path:
+          type: string
+        id:
+          type: string
+        outputMessage:
+          $ref: '#/components/schemas/ChatMessage'
+        promptTokens:
+          type: integer
+        reasoningTokens:
+          type: integer
+        outputTokens:
+          type: integer
+        promptCost:
+          type: number
+        outputCost:
+          type: number
+        finishReason:
+          type: string
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChatMessage'
+        prompt:
+          $ref: '#/components/schemas/PromptRequest'
+        startTime:
+          type: string
+          format: date-time
+        endTime:
+          type: string
+          format: date-time
+        output:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        error:
+          type: string
+        providerLatency:
+          type: number
+        inputs:
+          type: object
+          additionalProperties: true
+        source:
+          type: string
+        metadata:
+          type: object
+          additionalProperties: true
+        sourceDatapointId:
+          type: string
+        traceParentId:
+          type: string
+        user:
+          type: string
+        save:
+          type: boolean
+        logId:
+          type: string
+
+    CreatePromptLogResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the created log.
+        promptId:
+          type: string
+        versionId:
+          type: string
+        traceParentId:
+          type: string
+      required:
+        - id
+
+    DatasetResponse:
+      type: object
+      description: Response model for a Dataset.
+      properties:
+        path:
+          type: string
+          description: Path of the Dataset.
+        id:
+          type: string
+          description: Unique identifier for the Dataset.
+        directoryId:
+          type: string
+        name:
+          type: string
+          description: Name of the Dataset.
+        description:
+          type: string
+        schema:
+          type: object
+          additionalProperties: true
+        readme:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        versionId:
+          type: string
+          description: Unique identifier for the specific Dataset Version.
+        type:
+          type: string
+          enum: [dataset]
+        environments:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnvironmentResponse'
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/UserResponse'
+        lastUsedAt:
+          type: string
+          format: date-time
+        versionName:
+          type: string
+        versionDescription:
+          type: string
+        datapointsCount:
+          type: integer
+          description: The number of Datapoints in this Dataset version.
+        datapoints:
+          type: array
+          items:
+            $ref: '#/components/schemas/DatapointResponse'
+        attributes:
+          type: object
+          additionalProperties: true
+      required:
+        - path
+        - id
+        - name
+        - versionId
+        - createdAt
+        - updatedAt
+        - lastUsedAt
+        - datapointsCount
+
+    DatasetRequest:
+      type: object
+      description: Request to create or update a Dataset.
+      properties:
+        path:
+          type: string
+          description: Path of the Dataset.
+        id:
+          type: string
+        description:
+          type: string
+        datapoints:
+          type: array
+          items:
+            $ref: '#/components/schemas/DatapointResponse'
+        attributes:
+          type: object
+          additionalProperties: true
+        versionName:
+          type: string
+        versionDescription:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        readme:
+          type: string
+
+    PaginatedDatasetResponse:
+      type: object
+      properties:
+        records:
+          type: array
+          items:
+            $ref: '#/components/schemas/DatasetResponse'
+        page:
+          type: integer
+        size:
+          type: integer
+        total:
+          type: integer
+      required:
+        - records
+        - page
+        - size
+        - total
+
+    EvaluatorResponse:
+      type: object
+      description: Response model for an Evaluator.
+      properties:
+        path:
+          type: string
+          description: Path of the Evaluator.
+        id:
+          type: string
+          description: Unique identifier for the Evaluator.
+        directoryId:
+          type: string
+        versionName:
+          type: string
+        versionDescription:
+          type: string
+        spec:
+          type: object
+          additionalProperties: true
+          description: The evaluator specification.
+        name:
+          type: string
+          description: Name of the Evaluator.
+        description:
+          type: string
+        schema:
+          type: object
+          additionalProperties: true
+        readme:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        versionId:
+          type: string
+          description: Unique identifier for the specific Evaluator Version.
+        type:
+          type: string
+          enum: [evaluator]
+        environments:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnvironmentResponse'
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/UserResponse'
+        lastUsedAt:
+          type: string
+          format: date-time
+        versionLogsCount:
+          type: integer
+        totalLogsCount:
+          type: integer
+        inputs:
+          type: array
+          items:
+            $ref: '#/components/schemas/InputResponse'
+        evaluators:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonitoringEvaluatorResponse'
+        evaluatorAggregates:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvaluatorAggregate'
+        attributes:
+          type: object
+          additionalProperties: true
+      required:
+        - path
+        - id
+        - name
+        - versionId
+        - createdAt
+        - updatedAt
+        - lastUsedAt
+        - versionLogsCount
+        - totalLogsCount
+        - inputs
+
+    EvaluatorRequest:
+      type: object
+      description: Request to create or update an Evaluator.
+      properties:
+        path:
+          type: string
+        id:
+          type: string
+        spec:
+          type: object
+          additionalProperties: true
+          description: The evaluator specification.
+        attributes:
+          type: object
+          additionalProperties: true
+        versionName:
+          type: string
+        versionDescription:
+          type: string
+        description:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        readme:
+          type: string
+
+    PaginatedEvaluatorResponse:
+      type: object
+      properties:
+        records:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvaluatorResponse'
+        page:
+          type: integer
+        size:
+          type: integer
+        total:
+          type: integer
+      required:
+        - records
+        - page
+        - size
+        - total
+
+    EvaluationResponse:
+      type: object
+      description: Response model for an Evaluation.
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the Evaluation.
+        runsCount:
+          type: integer
+          description: Total number of Runs in the Evaluation.
+        evaluators:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvaluationEvaluatorResponse'
+        name:
+          type: string
+          description: Name of the Evaluation.
+        fileId:
+          type: string
+          description: ID of the File associated with the Evaluation.
+        createdAt:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/UserResponse'
+        updatedAt:
+          type: string
+          format: date-time
+        url:
+          type: string
+          description: URL to view the Evaluation on Humanloop.
+        status:
+          type: string
+          enum: [pending, running, completed, failed, cancelled]
+      required:
+        - id
+        - runsCount
+        - evaluators
+        - createdAt
+        - updatedAt
+
+    EvaluationEvaluatorResponse:
+      type: object
+      properties:
+        evaluatorId:
+          type: string
+        evaluatorVersionId:
+          type: string
+        name:
+          type: string
+        path:
+          type: string
+
+    EvaluationRequest:
+      type: object
+      description: Request to create an Evaluation.
+      properties:
+        fileId:
+          type: string
+          description: ID of the File to evaluate.
+        name:
+          type: string
+          description: Name of the Evaluation.
+        evaluatorIds:
+          type: array
+          items:
+            type: string
+          description: IDs of Evaluators to use.
+        datasetId:
+          type: string
+          description: ID of the Dataset to use.
+
+    PaginatedEvaluationResponse:
+      type: object
+      properties:
+        records:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvaluationResponse'
+        page:
+          type: integer
+        size:
+          type: integer
+        total:
+          type: integer
+      required:
+        - records
+        - page
+        - size
+        - total
+
+    ToolResponse:
+      type: object
+      description: Response model for a Tool.
+      properties:
+        path:
+          type: string
+          description: Path of the Tool.
+        id:
+          type: string
+          description: Unique identifier for the Tool.
+        directoryId:
+          type: string
+        function:
+          $ref: '#/components/schemas/ToolFunction'
+        sourceCode:
+          type: string
+          description: Code source of the Tool.
+        setupValues:
+          type: object
+          additionalProperties: true
+        attributes:
+          type: object
+          additionalProperties: true
+        toolType:
+          type: string
+          description: Type of Tool.
+        versionName:
+          type: string
+        versionDescription:
+          type: string
+        name:
+          type: string
+          description: Name of the Tool.
+        description:
+          type: string
+        readme:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        versionId:
+          type: string
+          description: Unique identifier for the specific Tool Version.
+        type:
+          type: string
+          enum: [tool]
+        environments:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnvironmentResponse'
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/UserResponse'
+        lastUsedAt:
+          type: string
+          format: date-time
+        versionLogsCount:
+          type: integer
+        totalLogsCount:
+          type: integer
+        inputs:
+          type: array
+          items:
+            $ref: '#/components/schemas/InputResponse'
+        evaluators:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonitoringEvaluatorResponse'
+        evaluatorAggregates:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvaluatorAggregate'
+        signature:
+          type: string
+      required:
+        - path
+        - id
+        - name
+        - versionId
+        - createdAt
+        - updatedAt
+        - lastUsedAt
+        - versionLogsCount
+        - totalLogsCount
+        - inputs
+
+    ToolRequest:
+      type: object
+      properties:
+        path:
+          type: string
+        id:
+          type: string
+        function:
+          $ref: '#/components/schemas/ToolFunction'
+        sourceCode:
+          type: string
+        setupValues:
+          type: object
+          additionalProperties: true
+        attributes:
+          type: object
+          additionalProperties: true
+        toolType:
+          type: string
+        versionName:
+          type: string
+        versionDescription:
+          type: string
+        description:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        readme:
+          type: string
+
+    PaginatedToolResponse:
+      type: object
+      properties:
+        records:
+          type: array
+          items:
+            $ref: '#/components/schemas/ToolResponse'
+        page:
+          type: integer
+        size:
+          type: integer
+        total:
+          type: integer
+      required:
+        - records
+        - page
+        - size
+        - total
+
+    FlowResponse:
+      type: object
+      description: Response model for a Flow.
+      properties:
+        path:
+          type: string
+        id:
+          type: string
+        directoryId:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        readme:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        versionId:
+          type: string
+        type:
+          type: string
+          enum: [flow]
+        environments:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnvironmentResponse'
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/UserResponse'
+        lastUsedAt:
+          type: string
+          format: date-time
+        versionName:
+          type: string
+        versionDescription:
+          type: string
+        attributes:
+          type: object
+          additionalProperties: true
+      required:
+        - path
+        - id
+        - name
+        - versionId
+        - createdAt
+        - updatedAt
+        - lastUsedAt
+
+    FlowRequest:
+      type: object
+      properties:
+        path:
+          type: string
+        id:
+          type: string
+        attributes:
+          type: object
+          additionalProperties: true
+        versionName:
+          type: string
+        versionDescription:
+          type: string
+        description:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        readme:
+          type: string
+
+    PaginatedFlowResponse:
+      type: object
+      properties:
+        records:
+          type: array
+          items:
+            $ref: '#/components/schemas/FlowResponse'
+        page:
+          type: integer
+        size:
+          type: integer
+        total:
+          type: integer
+      required:
+        - records
+        - page
+        - size
+        - total
+
+    AgentResponse:
+      type: object
+      description: Response model for an Agent.
+      properties:
+        path:
+          type: string
+        id:
+          type: string
+        directoryId:
+          type: string
+        model:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        readme:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        versionId:
+          type: string
+        type:
+          type: string
+          enum: [agent]
+        environments:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnvironmentResponse'
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/UserResponse'
+        lastUsedAt:
+          type: string
+          format: date-time
+        versionName:
+          type: string
+        versionDescription:
+          type: string
+        attributes:
+          type: object
+          additionalProperties: true
+        tools:
+          type: array
+          items:
+            $ref: '#/components/schemas/ToolFunction'
+        template:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChatMessage'
+        temperature:
+          type: number
+        maxTokens:
+          type: integer
+      required:
+        - path
+        - id
+        - name
+        - versionId
+        - createdAt
+        - updatedAt
+        - lastUsedAt
+
+    AgentRequest:
+      type: object
+      properties:
+        path:
+          type: string
+        id:
+          type: string
+        model:
+          type: string
+        template:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChatMessage'
+        tools:
+          type: array
+          items:
+            $ref: '#/components/schemas/ToolFunction'
+        linkedTools:
+          type: array
+          items:
+            type: string
+        attributes:
+          type: object
+          additionalProperties: true
+        versionName:
+          type: string
+        versionDescription:
+          type: string
+        description:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        readme:
+          type: string
+        temperature:
+          type: number
+        maxTokens:
+          type: integer
+
+    PaginatedAgentResponse:
+      type: object
+      properties:
+        records:
+          type: array
+          items:
+            $ref: '#/components/schemas/AgentResponse'
+        page:
+          type: integer
+        size:
+          type: integer
+        total:
+          type: integer
+      required:
+        - records
+        - page
+        - size
+        - total
+
+    AgentCallRequest:
+      type: object
+      properties:
+        versionId:
+          type: string
+        environment:
+          type: string
+        path:
+          type: string
+        id:
+          type: string
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChatMessage'
+        agent:
+          $ref: '#/components/schemas/AgentRequest'
+        inputs:
+          type: object
+          additionalProperties: true
+        source:
+          type: string
+        metadata:
+          type: object
+          additionalProperties: true
+        save:
+          type: boolean
+        logId:
+          type: string
+        traceParentId:
+          type: string
+        user:
+          type: string
+
+    AgentCallResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        versionId:
+          type: string
+        output:
+          type: string
+        outputMessage:
+          $ref: '#/components/schemas/ChatMessage'
+        promptTokens:
+          type: integer
+        outputTokens:
+          type: integer
+        finishReason:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+      required:
+        - id
+
+    PromptLogResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the Log.
+        promptId:
+          type: string
+        versionId:
+          type: string
+        output:
+          type: string
+        outputMessage:
+          $ref: '#/components/schemas/ChatMessage'
+        promptTokens:
+          type: integer
+        outputTokens:
+          type: integer
+        promptCost:
+          type: number
+        outputCost:
+          type: number
+        finishReason:
+          type: string
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChatMessage'
+        inputs:
+          type: object
+          additionalProperties: true
+        source:
+          type: string
+        metadata:
+          type: object
+          additionalProperties: true
+        providerLatency:
+          type: number
+        error:
+          type: string
+        traceParentId:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+      required:
+        - id
+        - createdAt
+
+    PaginatedLogResponse:
+      type: object
+      properties:
+        records:
+          type: array
+          items:
+            $ref: '#/components/schemas/PromptLogResponse'
+        page:
+          type: integer
+        size:
+          type: integer
+        total:
+          type: integer
+      required:
+        - records
+        - page
+        - size
+        - total
+
+    MoveRequest:
+      type: object
+      properties:
+        path:
+          type: string
+          description: New path to move the file to.
+      required:
+        - path
+
+    UpdateVersionRequest:
+      type: object
+      properties:
+        versionName:
+          type: string
+        versionDescription:
+          type: string
+
+    SetDeploymentRequest:
+      type: object
+      properties:
+        versionId:
+          type: string
+          description: Version ID to deploy.
+      required:
+        - versionId
+
+    UpdateMonitoringRequest:
+      type: object
+      properties:
+        activate:
+          type: array
+          items:
+            type: object
+            properties:
+              evaluatorId:
+                type: string
+              evaluatorVersionId:
+                type: string
+        deactivate:
+          type: array
+          items:
+            type: object
+            properties:
+              evaluatorId:
+                type: string
+              evaluatorVersionId:
+                type: string
+
+    FileResponse:
+      type: object
+      description: Union of all file response types.
+      properties:
+        path:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+          description: "Type of file: prompt, tool, dataset, evaluator, flow, agent."
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+      required:
+        - path
+        - id
+        - name
+        - type
+
+    PaginatedFileResponse:
+      type: object
+      properties:
+        records:
+          type: array
+          items:
+            $ref: '#/components/schemas/FileResponse'
+        page:
+          type: integer
+        size:
+          type: integer
+        total:
+          type: integer
+      required:
+        - records
+        - page
+        - size
+        - total
+
+    CreateDirectoryRequest:
+      type: object
+      properties:
+        path:
+          type: string
+          description: Path for the directory.
+        parentId:
+          type: string
+          description: ID of the parent directory.
+      required:
+        - path
+
+    UpdateDirectoryRequest:
+      type: object
+      properties:
+        path:
+          type: string
+        parentId:
+          type: string
+
+    LogToolRequest:
+      type: object
+      properties:
+        versionId:
+          type: string
+        environment:
+          type: string
+        path:
+          type: string
+        id:
+          type: string
+        output:
+          type: string
+        inputs:
+          type: object
+          additionalProperties: true
+        source:
+          type: string
+        metadata:
+          type: object
+          additionalProperties: true
+        startTime:
+          type: string
+          format: date-time
+        endTime:
+          type: string
+          format: date-time
+        error:
+          type: string
+        traceParentId:
+          type: string
+        save:
+          type: boolean
+        logId:
+          type: string
+
+    CallToolRequest:
+      type: object
+      properties:
+        versionId:
+          type: string
+        environment:
+          type: string
+        path:
+          type: string
+        id:
+          type: string
+        inputs:
+          type: object
+          additionalProperties: true
+        traceParentId:
+          type: string
+        save:
+          type: boolean
+        logId:
+          type: string
+
+    LogFlowRequest:
+      type: object
+      properties:
+        versionId:
+          type: string
+        environment:
+          type: string
+        path:
+          type: string
+        id:
+          type: string
+        output:
+          type: string
+        inputs:
+          type: object
+          additionalProperties: true
+        source:
+          type: string
+        metadata:
+          type: object
+          additionalProperties: true
+        startTime:
+          type: string
+          format: date-time
+        endTime:
+          type: string
+          format: date-time
+        error:
+          type: string
+        traceParentId:
+          type: string
+        save:
+          type: boolean
+        logId:
+          type: string
+
+    LogAgentRequest:
+      type: object
+      properties:
+        versionId:
+          type: string
+        environment:
+          type: string
+        path:
+          type: string
+        id:
+          type: string
+        output:
+          type: string
+        outputMessage:
+          $ref: '#/components/schemas/ChatMessage'
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChatMessage'
+        inputs:
+          type: object
+          additionalProperties: true
+        source:
+          type: string
+        metadata:
+          type: object
+          additionalProperties: true
+        promptTokens:
+          type: integer
+        outputTokens:
+          type: integer
+        startTime:
+          type: string
+          format: date-time
+        endTime:
+          type: string
+          format: date-time
+        error:
+          type: string
+        traceParentId:
+          type: string
+        save:
+          type: boolean
+        logId:
+          type: string
+
+    LogEvaluatorRequest:
+      type: object
+      properties:
+        versionId:
+          type: string
+        environment:
+          type: string
+        path:
+          type: string
+        id:
+          type: string
+        parentId:
+          type: string
+          description: The ID of the Log being evaluated.
+        source:
+          type: string
+        metadata:
+          type: object
+          additionalProperties: true
+        save:
+          type: boolean
+        logId:
+          type: string
+
+    CreateLogResponse:
+      type: object
+      properties:
+        id:
+          type: string
+      required:
+        - id
+
+    CallToolResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        output:
+          type: string
+
+    PopulatePromptRequest:
+      type: object
+      properties:
+        inputs:
+          type: object
+          additionalProperties: true
+        versionId:
+          type: string
+
+    PopulatePromptResponse:
+      type: object
+      properties:
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChatMessage'
+
+    DeserializePromptRequest:
+      type: object
+      properties:
+        content:
+          type: string
+          description: Raw .prompt file content.
+      required:
+        - content
+
+    UpdateEvaluationStatusRequest:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [pending, running, completed, failed, cancelled]
+
+    EvaluationRunResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the Run.
+        evaluationId:
+          type: string
+        versionId:
+          type: string
+        status:
+          type: string
+          enum: [pending, running, completed, failed, cancelled]
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+      required:
+        - id
+        - evaluationId
+
+paths:
+  /prompts:
+    get:
+      operationId: listPrompts
+      summary: List Prompts
+      description: Get a paginated list of Prompts.
+      tags: [Prompts]
+      parameters:
+        - name: page
+          in: query
+          schema: { type: integer }
+        - name: size
+          in: query
+          schema: { type: integer }
+        - name: name
+          in: query
+          schema: { type: string }
+        - name: userFilter
+          in: query
+          schema: { type: string }
+        - name: sortBy
+          in: query
+          schema: { type: string }
+        - name: order
+          in: query
+          schema: { type: string, enum: [asc, desc] }
+      responses:
+        '200':
+          description: Paginated list of Prompts.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedPromptResponse'
+
+    post:
+      operationId: upsertPrompt
+      summary: Upsert Prompt
+      description: Create or update a Prompt.
+      tags: [Prompts]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PromptRequest'
+      responses:
+        '200':
+          description: The Prompt.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PromptResponse'
+
+  /prompts/{id}:
+    get:
+      operationId: getPrompt
+      summary: Get Prompt
+      tags: [Prompts]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: versionId
+          in: query
+          schema: { type: string }
+        - name: environment
+          in: query
+          schema: { type: string }
+      responses:
+        '200':
+          description: The Prompt.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PromptResponse'
+
+    patch:
+      operationId: movePrompt
+      summary: Move Prompt
+      tags: [Prompts]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MoveRequest'
+      responses:
+        '200':
+          description: The moved Prompt.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PromptResponse'
+
+    delete:
+      operationId: deletePrompt
+      summary: Delete Prompt
+      tags: [Prompts]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '204':
+          description: Successfully deleted.
+
+  /prompts/{id}/versions:
+    get:
+      operationId: listPromptVersions
+      summary: List Prompt Versions
+      tags: [Prompts]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: status
+          in: query
+          schema: { type: string }
+      responses:
+        '200':
+          description: Prompt versions.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PromptResponse'
+
+  /prompts/{id}/versions/{versionId}:
+    delete:
+      operationId: deletePromptVersion
+      summary: Delete Prompt Version
+      tags: [Prompts]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: versionId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '204':
+          description: Deleted.
+
+    patch:
+      operationId: updatePromptVersion
+      summary: Update Prompt Version
+      tags: [Prompts]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: versionId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateVersionRequest'
+      responses:
+        '200':
+          description: Updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PromptResponse'
+
+  /prompts/{id}/environments:
+    get:
+      operationId: listPromptEnvironments
+      summary: List Prompt Environments
+      tags: [Prompts]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Environments.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EnvironmentResponse'
+
+  /prompts/{id}/environments/{environmentId}:
+    post:
+      operationId: setPromptDeployment
+      summary: Set Prompt Deployment
+      tags: [Prompts]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: environmentId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetDeploymentRequest'
+      responses:
+        '200':
+          description: Deployed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PromptResponse'
+
+    delete:
+      operationId: removePromptDeployment
+      summary: Remove Prompt Deployment
+      tags: [Prompts]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: environmentId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '204':
+          description: Removed.
+
+  /prompts/{id}/evaluators:
+    post:
+      operationId: updatePromptMonitoring
+      summary: Update Prompt Monitoring
+      tags: [Prompts]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateMonitoringRequest'
+      responses:
+        '200':
+          description: Updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PromptResponse'
+
+  /prompts/log:
+    post:
+      operationId: logPrompt
+      summary: Log Prompt
+      tags: [Prompts]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PromptLogRequest'
+      responses:
+        '200':
+          description: Created log.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreatePromptLogResponse'
+
+  /prompts/{id}/log/{logId}:
+    patch:
+      operationId: updatePromptLog
+      summary: Update Prompt Log
+      tags: [Prompts]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: logId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PromptLogRequest'
+      responses:
+        '200':
+          description: Updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreatePromptLogResponse'
+
+  /prompts/call:
+    post:
+      operationId: callPrompt
+      summary: Call Prompt
+      description: Call a Prompt with proxied LLM call and automatic logging.
+      tags: [Prompts]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PromptCallRequest'
+      responses:
+        '200':
+          description: Call response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PromptCallResponse'
+
+  /prompts/{id}/populate:
+    post:
+      operationId: populatePrompt
+      summary: Populate Prompt
+      tags: [Prompts]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PopulatePromptRequest'
+      responses:
+        '200':
+          description: Populated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PopulatePromptResponse'
+
+  /prompts/{id}/serialize:
+    get:
+      operationId: serializePrompt
+      summary: Serialize Prompt
+      tags: [Prompts]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: versionId
+          in: query
+          schema: { type: string }
+        - name: environment
+          in: query
+          schema: { type: string }
+      responses:
+        '200':
+          description: Serialized.
+          content:
+            application/json:
+              schema:
+                type: string
+
+  /prompts/deserialize:
+    post:
+      operationId: deserializePrompt
+      summary: Deserialize Prompt
+      tags: [Prompts]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeserializePromptRequest'
+      responses:
+        '200':
+          description: Deserialized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PromptResponse'
+
+  /datasets:
+    get:
+      operationId: listDatasets
+      summary: List Datasets
+      tags: [Datasets]
+      parameters:
+        - name: page
+          in: query
+          schema: { type: integer }
+        - name: size
+          in: query
+          schema: { type: integer }
+        - name: name
+          in: query
+          schema: { type: string }
+        - name: sortBy
+          in: query
+          schema: { type: string }
+        - name: order
+          in: query
+          schema: { type: string, enum: [asc, desc] }
+      responses:
+        '200':
+          description: Datasets.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedDatasetResponse'
+
+    post:
+      operationId: upsertDataset
+      summary: Upsert Dataset
+      tags: [Datasets]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DatasetRequest'
+      responses:
+        '200':
+          description: Dataset.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DatasetResponse'
+
+  /datasets/{id}:
+    get:
+      operationId: getDataset
+      summary: Get Dataset
+      tags: [Datasets]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: versionId
+          in: query
+          schema: { type: string }
+        - name: includeDatapoints
+          in: query
+          schema: { type: boolean }
+      responses:
+        '200':
+          description: Dataset.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DatasetResponse'
+
+    patch:
+      operationId: moveDataset
+      summary: Move Dataset
+      tags: [Datasets]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MoveRequest'
+      responses:
+        '200':
+          description: Moved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DatasetResponse'
+
+    delete:
+      operationId: deleteDataset
+      summary: Delete Dataset
+      tags: [Datasets]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '204':
+          description: Deleted.
+
+  /datasets/{id}/versions:
+    get:
+      operationId: listDatasetVersions
+      summary: List Dataset Versions
+      tags: [Datasets]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Versions.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DatasetResponse'
+
+  /datasets/{id}/environments/{environmentId}:
+    post:
+      operationId: setDatasetDeployment
+      summary: Set Dataset Deployment
+      tags: [Datasets]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: environmentId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetDeploymentRequest'
+      responses:
+        '200':
+          description: Deployed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DatasetResponse'
+
+    delete:
+      operationId: removeDatasetDeployment
+      summary: Remove Dataset Deployment
+      tags: [Datasets]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: environmentId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '204':
+          description: Removed.
+
+  /evaluators:
+    get:
+      operationId: listEvaluators
+      summary: List Evaluators
+      tags: [Evaluators]
+      parameters:
+        - name: page
+          in: query
+          schema: { type: integer }
+        - name: size
+          in: query
+          schema: { type: integer }
+        - name: name
+          in: query
+          schema: { type: string }
+        - name: sortBy
+          in: query
+          schema: { type: string }
+        - name: order
+          in: query
+          schema: { type: string, enum: [asc, desc] }
+      responses:
+        '200':
+          description: Evaluators.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedEvaluatorResponse'
+
+    post:
+      operationId: upsertEvaluator
+      summary: Upsert Evaluator
+      tags: [Evaluators]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EvaluatorRequest'
+      responses:
+        '200':
+          description: Evaluator.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EvaluatorResponse'
+
+  /evaluators/{id}:
+    get:
+      operationId: getEvaluator
+      summary: Get Evaluator
+      tags: [Evaluators]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: versionId
+          in: query
+          schema: { type: string }
+      responses:
+        '200':
+          description: Evaluator.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EvaluatorResponse'
+
+    patch:
+      operationId: moveEvaluator
+      summary: Move Evaluator
+      tags: [Evaluators]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MoveRequest'
+      responses:
+        '200':
+          description: Moved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EvaluatorResponse'
+
+    delete:
+      operationId: deleteEvaluator
+      summary: Delete Evaluator
+      tags: [Evaluators]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '204':
+          description: Deleted.
+
+  /evaluators/{id}/versions:
+    get:
+      operationId: listEvaluatorVersions
+      summary: List Evaluator Versions
+      tags: [Evaluators]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Versions.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EvaluatorResponse'
+
+  /evaluators/{id}/environments/{environmentId}:
+    post:
+      operationId: setEvaluatorDeployment
+      summary: Set Evaluator Deployment
+      tags: [Evaluators]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: environmentId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetDeploymentRequest'
+      responses:
+        '200':
+          description: Deployed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EvaluatorResponse'
+
+    delete:
+      operationId: removeEvaluatorDeployment
+      summary: Remove Evaluator Deployment
+      tags: [Evaluators]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: environmentId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '204':
+          description: Removed.
+
+  /evaluators/log:
+    post:
+      operationId: logEvaluator
+      summary: Log Evaluator
+      tags: [Evaluators]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LogEvaluatorRequest'
+      responses:
+        '200':
+          description: Created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateLogResponse'
+
+  /evaluators/{id}/evaluators:
+    post:
+      operationId: updateEvaluatorMonitoring
+      summary: Update Evaluator Monitoring
+      tags: [Evaluators]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateMonitoringRequest'
+      responses:
+        '200':
+          description: Updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EvaluatorResponse'
+
+  /evaluations:
+    get:
+      operationId: listEvaluations
+      summary: List Evaluations
+      tags: [Evaluations]
+      parameters:
+        - name: page
+          in: query
+          schema: { type: integer }
+        - name: size
+          in: query
+          schema: { type: integer }
+        - name: fileId
+          in: query
+          schema: { type: string }
+      responses:
+        '200':
+          description: Evaluations.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedEvaluationResponse'
+
+    post:
+      operationId: createEvaluation
+      summary: Create Evaluation
+      tags: [Evaluations]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EvaluationRequest'
+      responses:
+        '200':
+          description: Created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EvaluationResponse'
+
+  /evaluations/{id}:
+    get:
+      operationId: getEvaluation
+      summary: Get Evaluation
+      tags: [Evaluations]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Evaluation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EvaluationResponse'
+
+    patch:
+      operationId: updateEvaluation
+      summary: Update Evaluation
+      tags: [Evaluations]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateEvaluationStatusRequest'
+      responses:
+        '200':
+          description: Updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EvaluationResponse'
+
+  /evaluations/{id}/runs:
+    get:
+      operationId: listEvaluationRuns
+      summary: List Evaluation Runs
+      tags: [Evaluations]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Runs.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EvaluationRunResponse'
+
+  /evaluations/{id}/logs:
+    get:
+      operationId: listEvaluationLogs
+      summary: List Evaluation Logs
+      tags: [Evaluations]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: page
+          in: query
+          schema: { type: integer }
+        - name: size
+          in: query
+          schema: { type: integer }
+      responses:
+        '200':
+          description: Logs.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedLogResponse'
+
+  /tools:
+    get:
+      operationId: listTools
+      summary: List Tools
+      tags: [Tools]
+      parameters:
+        - name: page
+          in: query
+          schema: { type: integer }
+        - name: size
+          in: query
+          schema: { type: integer }
+        - name: name
+          in: query
+          schema: { type: string }
+        - name: sortBy
+          in: query
+          schema: { type: string }
+        - name: order
+          in: query
+          schema: { type: string, enum: [asc, desc] }
+      responses:
+        '200':
+          description: Tools.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedToolResponse'
+
+    post:
+      operationId: upsertTool
+      summary: Upsert Tool
+      tags: [Tools]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ToolRequest'
+      responses:
+        '200':
+          description: Tool.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ToolResponse'
+
+  /tools/{id}:
+    get:
+      operationId: getTool
+      summary: Get Tool
+      tags: [Tools]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: versionId
+          in: query
+          schema: { type: string }
+      responses:
+        '200':
+          description: Tool.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ToolResponse'
+
+    patch:
+      operationId: moveTool
+      summary: Move Tool
+      tags: [Tools]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MoveRequest'
+      responses:
+        '200':
+          description: Moved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ToolResponse'
+
+    delete:
+      operationId: deleteTool
+      summary: Delete Tool
+      tags: [Tools]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '204':
+          description: Deleted.
+
+  /tools/{id}/versions:
+    get:
+      operationId: listToolVersions
+      summary: List Tool Versions
+      tags: [Tools]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Versions.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ToolResponse'
+
+  /tools/{id}/environments/{environmentId}:
+    post:
+      operationId: setToolDeployment
+      summary: Set Tool Deployment
+      tags: [Tools]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: environmentId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetDeploymentRequest'
+      responses:
+        '200':
+          description: Deployed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ToolResponse'
+
+    delete:
+      operationId: removeToolDeployment
+      summary: Remove Tool Deployment
+      tags: [Tools]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: environmentId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '204':
+          description: Removed.
+
+  /tools/log:
+    post:
+      operationId: logTool
+      summary: Log Tool
+      tags: [Tools]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LogToolRequest'
+      responses:
+        '200':
+          description: Created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateLogResponse'
+
+  /tools/call:
+    post:
+      operationId: callTool
+      summary: Call Tool
+      tags: [Tools]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CallToolRequest'
+      responses:
+        '200':
+          description: Result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CallToolResponse'
+
+  /tools/{id}/evaluators:
+    post:
+      operationId: updateToolMonitoring
+      summary: Update Tool Monitoring
+      tags: [Tools]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateMonitoringRequest'
+      responses:
+        '200':
+          description: Updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ToolResponse'
+
+  /flows:
+    get:
+      operationId: listFlows
+      summary: List Flows
+      tags: [Flows]
+      parameters:
+        - name: page
+          in: query
+          schema: { type: integer }
+        - name: size
+          in: query
+          schema: { type: integer }
+        - name: name
+          in: query
+          schema: { type: string }
+        - name: sortBy
+          in: query
+          schema: { type: string }
+        - name: order
+          in: query
+          schema: { type: string, enum: [asc, desc] }
+      responses:
+        '200':
+          description: Flows.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedFlowResponse'
+
+    post:
+      operationId: upsertFlow
+      summary: Upsert Flow
+      tags: [Flows]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FlowRequest'
+      responses:
+        '200':
+          description: Flow.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlowResponse'
+
+  /flows/{id}:
+    get:
+      operationId: getFlow
+      summary: Get Flow
+      tags: [Flows]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: versionId
+          in: query
+          schema: { type: string }
+      responses:
+        '200':
+          description: Flow.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlowResponse'
+
+    patch:
+      operationId: moveFlow
+      summary: Move Flow
+      tags: [Flows]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MoveRequest'
+      responses:
+        '200':
+          description: Moved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlowResponse'
+
+    delete:
+      operationId: deleteFlow
+      summary: Delete Flow
+      tags: [Flows]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '204':
+          description: Deleted.
+
+  /flows/{id}/versions:
+    get:
+      operationId: listFlowVersions
+      summary: List Flow Versions
+      tags: [Flows]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Versions.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FlowResponse'
+
+  /flows/{id}/environments/{environmentId}:
+    post:
+      operationId: setFlowDeployment
+      summary: Set Flow Deployment
+      tags: [Flows]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: environmentId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetDeploymentRequest'
+      responses:
+        '200':
+          description: Deployed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlowResponse'
+
+    delete:
+      operationId: removeFlowDeployment
+      summary: Remove Flow Deployment
+      tags: [Flows]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: environmentId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '204':
+          description: Removed.
+
+  /flows/log:
+    post:
+      operationId: logFlow
+      summary: Log Flow
+      tags: [Flows]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LogFlowRequest'
+      responses:
+        '200':
+          description: Created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateLogResponse'
+
+  /flows/{id}/evaluators:
+    post:
+      operationId: updateFlowMonitoring
+      summary: Update Flow Monitoring
+      tags: [Flows]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateMonitoringRequest'
+      responses:
+        '200':
+          description: Updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlowResponse'
+
+  /agents:
+    get:
+      operationId: listAgents
+      summary: List Agents
+      tags: [Agents]
+      parameters:
+        - name: page
+          in: query
+          schema: { type: integer }
+        - name: size
+          in: query
+          schema: { type: integer }
+        - name: name
+          in: query
+          schema: { type: string }
+        - name: sortBy
+          in: query
+          schema: { type: string }
+        - name: order
+          in: query
+          schema: { type: string, enum: [asc, desc] }
+      responses:
+        '200':
+          description: Agents.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAgentResponse'
+
+    post:
+      operationId: upsertAgent
+      summary: Upsert Agent
+      tags: [Agents]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AgentRequest'
+      responses:
+        '200':
+          description: Agent.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentResponse'
+
+  /agents/{id}:
+    get:
+      operationId: getAgent
+      summary: Get Agent
+      tags: [Agents]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: versionId
+          in: query
+          schema: { type: string }
+      responses:
+        '200':
+          description: Agent.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentResponse'
+
+    patch:
+      operationId: moveAgent
+      summary: Move Agent
+      tags: [Agents]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MoveRequest'
+      responses:
+        '200':
+          description: Moved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentResponse'
+
+    delete:
+      operationId: deleteAgent
+      summary: Delete Agent
+      tags: [Agents]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '204':
+          description: Deleted.
+
+  /agents/{id}/versions:
+    get:
+      operationId: listAgentVersions
+      summary: List Agent Versions
+      tags: [Agents]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Versions.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AgentResponse'
+
+  /agents/{id}/environments/{environmentId}:
+    post:
+      operationId: setAgentDeployment
+      summary: Set Agent Deployment
+      tags: [Agents]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: environmentId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetDeploymentRequest'
+      responses:
+        '200':
+          description: Deployed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentResponse'
+
+    delete:
+      operationId: removeAgentDeployment
+      summary: Remove Agent Deployment
+      tags: [Agents]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+        - name: environmentId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '204':
+          description: Removed.
+
+  /agents/log:
+    post:
+      operationId: logAgent
+      summary: Log Agent
+      tags: [Agents]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LogAgentRequest'
+      responses:
+        '200':
+          description: Created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateLogResponse'
+
+  /agents/call:
+    post:
+      operationId: callAgent
+      summary: Call Agent
+      tags: [Agents]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AgentCallRequest'
+      responses:
+        '200':
+          description: Response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentCallResponse'
+
+  /agents/{id}/evaluators:
+    post:
+      operationId: updateAgentMonitoring
+      summary: Update Agent Monitoring
+      tags: [Agents]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateMonitoringRequest'
+      responses:
+        '200':
+          description: Updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentResponse'
+
+  /directories:
+    get:
+      operationId: listDirectories
+      summary: List Directories
+      tags: [Directories]
+      responses:
+        '200':
+          description: Directories.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DirectoryResponse'
+
+    post:
+      operationId: createDirectory
+      summary: Create Directory
+      tags: [Directories]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDirectoryRequest'
+      responses:
+        '200':
+          description: Created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DirectoryResponse'
+
+  /directories/{id}:
+    get:
+      operationId: getDirectory
+      summary: Get Directory
+      tags: [Directories]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Directory.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DirectoryResponse'
+
+    patch:
+      operationId: updateDirectory
+      summary: Update Directory
+      tags: [Directories]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDirectoryRequest'
+      responses:
+        '200':
+          description: Updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DirectoryResponse'
+
+    delete:
+      operationId: deleteDirectory
+      summary: Delete Directory
+      tags: [Directories]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '204':
+          description: Deleted.
+
+  /files:
+    get:
+      operationId: listFiles
+      summary: List Files
+      tags: [Files]
+      parameters:
+        - name: page
+          in: query
+          schema: { type: integer }
+        - name: size
+          in: query
+          schema: { type: integer }
+        - name: name
+          in: query
+          schema: { type: string }
+        - name: type
+          in: query
+          schema: { type: string, enum: [prompt, tool, dataset, evaluator, flow, agent] }
+        - name: sortBy
+          in: query
+          schema: { type: string }
+        - name: order
+          in: query
+          schema: { type: string, enum: [asc, desc] }
+      responses:
+        '200':
+          description: Files.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedFileResponse'
+
+  /files/by-path:
+    get:
+      operationId: getFileByPath
+      summary: Get File by Path
+      tags: [Files]
+      parameters:
+        - name: path
+          in: query
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: File.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FileResponse'
+
+  /logs:
+    get:
+      operationId: listLogs
+      summary: List Logs
+      tags: [Logs]
+      parameters:
+        - name: page
+          in: query
+          schema: { type: integer }
+        - name: size
+          in: query
+          schema: { type: integer }
+        - name: fileId
+          in: query
+          schema: { type: string }
+        - name: versionId
+          in: query
+          schema: { type: string }
+        - name: search
+          in: query
+          schema: { type: string }
+      responses:
+        '200':
+          description: Logs.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedLogResponse'
+
+  /logs/{id}:
+    get:
+      operationId: getLog
+      summary: Get Log
+      tags: [Logs]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Log.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PromptLogResponse'
+
+    delete:
+      operationId: deleteLog
+      summary: Delete Log
+      tags: [Logs]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '204':
+          description: Deleted.

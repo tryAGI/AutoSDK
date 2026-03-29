@@ -1,0 +1,1713 @@
+openapi: "3.1.0"
+info:
+  title: turbopuffer API
+  version: "0.0.1"
+  description: turbopuffer is a fast search engine that combines vector and full-text search using object storage.
+  termsOfService: https://turbopuffer.com/terms-of-service
+  contact: info@turbopuffer.com
+servers:
+  - url: https://{region}.turbopuffer.com
+    description: Production API servers
+    variables:
+      region:
+        description: The turbopuffer region to use.
+security:
+  - bearerAuth: []
+# Intentionally omitted endpoints:
+#
+# - get /v1/namespaces/{namespace} (export)
+#   Deprecated in favor of paging over v2 query APIs.
+#   (The columnar response format is not supported by Stainless.)
+#
+# - head /v1/namespaces/{namespace}
+#   Deprecated in favor of collecting the document count via count queries
+#   and the vector dimensionality via get /v1/namespaces/{namespace}/schema.
+#   (HEAD requests are not supported by Stainless.)
+paths:
+  /v1/namespaces:
+    get:
+      description: List namespaces.
+      parameters:
+        - name: cursor
+          in: query
+          description: Retrieve the next page of results.
+          schema: {type: string}
+        - name: prefix
+          in: query
+          description: Retrieve only the namespaces that match the prefix.
+          schema: {type: string}
+        - name: page_size
+          in: query
+          description: Limit the number of results per page.
+          schema: {type: integer, format: int32, minimum: 1, maximum: 1000}
+      responses:
+        "200":
+          description: A JSON array of namespace metadata.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  namespaces:
+                    type: array
+                    description: The list of namespaces.
+                    items: {$ref: "#/components/schemas/NamespaceSummary"}
+                  next_cursor:
+                    type: string
+                    description: The cursor to use to retrieve the next page of results.
+        default:
+          description: An error response.
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/ErrorResponse"}
+  /v1/namespaces/{namespace}/schema:
+    get:
+      description: Get namespace schema.
+      parameters:
+        - {$ref: "#/components/parameters/namespace"}
+      responses:
+        "200":
+          description: The schema of the namespace.
+          content:
+            application/json:
+              schema:
+                description: The response to a successful namespace schema request.
+                type: object
+                additionalProperties: {$ref: "#/components/schemas/AttributeSchemaConfig"}
+        default:
+          description: An error response.
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/ErrorResponse"}
+    post:
+      description: Update namespace schema.
+      parameters:
+        - {$ref: "#/components/parameters/namespace"}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: The desired schema for the namespace.
+              type: object
+              additionalProperties: {$ref: "#/components/schemas/AttributeSchema"}
+      responses:
+        "200":
+          description: The schema of the namespace.
+          content:
+            application/json:
+              schema:
+                description: The updated schema for the namespace.
+                type: object
+                additionalProperties: {$ref: "#/components/schemas/AttributeSchemaConfig"}
+        default:
+          description: An error response.
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/ErrorResponse"}
+  /v1/namespaces/{namespace}/metadata:
+    get:
+      description: Get metadata about a namespace.
+      parameters:
+        - {$ref: "#/components/parameters/namespace"}
+      responses:
+        "200":
+          description: The metadata of the namespace.
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/NamespaceMetadata"}
+        default:
+          description: An error response.
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/ErrorResponse"}
+  /v1/namespaces/{namespace}/hint_cache_warm:
+    get:
+      description: Signal turbopuffer to prepare for low-latency requests.
+      parameters:
+        - {$ref: "#/components/parameters/namespace"}
+      responses:
+        "202":
+          description: The status of the cache warm request.
+          content:
+            application/json:
+              schema:
+                description: The response to a successful cache warm request.
+                type: object
+                properties:
+                  status:
+                    const: "ACCEPTED"
+                    description: The status of the request.
+                  message:
+                    type: string
+                required: [status]
+        default:
+          description: An error response.
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/ErrorResponse"}
+  /v1/namespaces/{namespace}/_debug/recall:
+    post:
+      description: Evaluate recall.
+      parameters:
+        - {$ref: "#/components/parameters/namespace"}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                num:
+                  type: integer
+                  description: The number of searches to run.
+                top_k:
+                  type: integer
+                  description: Search for `top_k` nearest neighbors.
+                filters:
+                  x-stainless-any: true
+                  description: Filter by attributes. Same syntax as the query endpoint.
+                include_ground_truth:
+                  type: boolean
+                  description: Include ground truth data (query vectors and true nearest neighbors) in the response.
+                  default: false
+      responses:
+        "200":
+          description: The status of the cache warm request.
+          content:
+            application/json:
+              schema:
+                description: The response to a successful cache warm request.
+                type: object
+                properties:
+                  avg_recall:
+                    description: The average recall of the queries.
+                    type: number
+                  avg_exhaustive_count:
+                    description: The average number of documents retrieved by the exhaustive searches.
+                    type: number
+                  avg_ann_count:
+                    description: The average number of documents retrieved by the approximate nearest neighbor searches.
+                    type: number
+                  ground_truth:
+                    description: Ground truth data including query vectors and true nearest neighbors. Only included when include_ground_truth is true.
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        query_vector:
+                          description: The query vector used for this search.
+                          type: array
+                          items:
+                            type: number
+                        nearest_neighbors:
+                          description: The true nearest neighbors with their distances and vectors.
+                          type: array
+                          items: {$ref: "#/components/schemas/Row"}
+                      required: [query_vector, nearest_neighbors]
+                required: [avg_recall, avg_exhaustive_count, avg_ann_count]
+        default:
+          description: An error response.
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/ErrorResponse"}
+  /v2/namespaces/{namespace}:
+    post:
+      description: Create, update, or delete documents.
+      parameters:
+        - {$ref: "#/components/parameters/namespace"}
+      requestBody:
+        content:
+          application/json:
+            schema: {$ref: "#/components/schemas/Write"}
+      responses:
+        "200":
+          description: The status of the request.
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/WriteResult"}
+        default:
+          description: An error response.
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/ErrorResponse"}
+    delete:
+      description: Delete namespace.
+      parameters:
+        - {$ref: "#/components/parameters/namespace"}
+      responses:
+        "200":
+          description: The status of the deletion request.
+          content:
+            application/json:
+              schema:
+                description: The response to a successful namespace deletion request.
+                type: object
+                properties:
+                  status:
+                    const: "OK"
+                    description: The status of the request.
+                required: [status]
+        default:
+          description: An error response.
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/ErrorResponse"}
+  /v2/namespaces/{namespace}/query:
+    post:
+      description: Query, filter, full-text search and vector search documents.
+      parameters:
+        - {$ref: "#/components/parameters/namespace"}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              allOf:
+                - {$ref: "#/components/schemas/QueryConfig"}
+                - {$ref: "#/components/schemas/Query"}
+      responses:
+        "200":
+          description: The schema of the namespace.
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/QueryResult"}
+        default:
+          description: An error response.
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/ErrorResponse"}
+  /v2/namespaces/{namespace}/explain_query:
+    post:
+      description: Explain a query plan.
+      parameters:
+        - {$ref: "#/components/parameters/namespace"}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              allOf:
+                - {$ref: "#/components/schemas/QueryConfig"}
+                - {$ref: "#/components/schemas/Query"}
+      responses:
+        "200":
+          description: The query plan explanation.
+          content:
+            application/json:
+              schema:
+                description: The response to a successful query explain.
+                type: object
+                properties:
+                  plan_text:
+                    type: string
+                    description: The textual representation of the query plan.
+        default:
+          description: An error response.
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/ErrorResponse"}
+  /v2/namespaces/{namespace}/multi-query:
+    post:
+      description: Issue multiple concurrent queries filter or search documents.
+      parameters:
+        - {$ref: "#/components/parameters/namespace"}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              allOf:
+                - {$ref: "#/components/schemas/QueryConfig"}
+                - type: object
+                  required: [queries]
+                  properties:
+                    queries:
+                      type: array
+                      items: {$ref: "#/components/schemas/Query"}
+      responses:
+        "200":
+          description: The schema of the namespace.
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/MultiQueryResult"}
+        default:
+          description: An error response.
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/ErrorResponse"}
+components:
+  parameters:
+    namespace:
+      name: namespace
+      in: path
+      required: true
+      description: The name of the namespace.
+      schema: {type: string}
+  schemas:
+    NamespaceSummary:
+      description: A summary of a namespace.
+      type: object
+      properties:
+        id:
+          type: string
+          description: The namespace ID.
+      required: [id]
+    NamespaceMetadata:
+      description: Metadata about a namespace.
+      type: object
+      properties:
+        schema:
+          description: The schema of the namespace.
+          type: object
+          additionalProperties: {$ref: "#/components/schemas/AttributeSchemaConfig"}
+        approx_row_count:
+          type: integer
+          format: int64
+          description: The approximate number of rows in the namespace.
+        approx_logical_bytes:
+          type: integer
+          format: int64
+          description: The approximate number of logical bytes in the namespace.
+        created_at:
+          type: string
+          format: date-time
+          description: The timestamp when the namespace was created.
+        updated_at:
+          type: string
+          format: date-time
+          description: The timestamp when the namespace was last modified by a write operation.
+        encryption:
+          oneOf:
+            - type: object
+              properties:
+                sse:
+                  type: boolean
+                  description: Always true. Indicates that the namespace is encrypted with SSE.
+              required: [sse]
+            - type: object
+              description: Indicates that the namespace is encrypted with a customer-managed encryption key (CMEK).
+              properties:
+                cmek:
+                  type: object
+                  properties:
+                    key_name:
+                      type: string
+                      description: The name of the CMEK key in use.
+                  required: [key_name]
+              required: [cmek]
+        index:
+          oneOf:
+            - type: object
+              title: index-up-to-date
+              properties:
+                status:
+                  const: up-to-date
+              required: [status]
+            - type: object
+              title: index-updating
+              properties:
+                status:
+                  const: updating
+                unindexed_bytes:
+                  type: integer
+                  description: The number of bytes in the namespace that are in the write-ahead log but have not yet been indexed.
+              required: [status, unindexed_bytes]
+      required: [schema, approx_logical_bytes, approx_row_count, created_at, updated_at, encryption, index]
+    Write:
+      description: Create, update, or delete documents.
+      type: object
+      properties:
+        upsert_columns: {$ref: "#/components/schemas/Columns"}
+        upsert_rows:
+          type: array
+          items: {$ref: "#/components/schemas/Row"}
+        patch_columns: {$ref: "#/components/schemas/Columns"}
+        patch_rows:
+          type: array
+          items: {$ref: "#/components/schemas/Row"}
+        deletes:
+          type: array
+          items: {$ref: "#/components/schemas/Id"}
+        upsert_condition:
+          description: >
+            A condition evaluated against the current value of each document targeted by an upsert write. Only documents that pass the condition are upserted.
+
+          x-stainless-any: true
+        patch_condition:
+          description: >
+            A condition evaluated against the current value of each document targeted by a patch write. Only documents that pass the condition are patched.
+
+          x-stainless-any: true
+        delete_condition:
+          description: >
+            A condition evaluated against the current value of each document targeted by a delete write. Only documents that pass the condition are deleted.
+
+          x-stainless-any: true
+        distance_metric: {$ref: "#/components/schemas/DistanceMetric"}
+        schema:
+          description: >
+            The schema of the attributes attached to the documents.
+
+          type: object
+          additionalProperties: {$ref: "#/components/schemas/AttributeSchema"}
+        copy_from_namespace:
+          oneOf:
+            - type: string
+              description: The namespace to copy documents from.
+            - type: object
+              title: copy-from-namespace-config
+              properties:
+                source_namespace:
+                  type: string
+                  description: The namespace to copy documents from.
+                source_api_key:
+                  type: string
+                  description: (Optional) An API key for the organization containing the source namespace
+                source_region:
+                  type: string
+                  description: (Optional) The region of the source namespace.
+              required: [source_namespace]
+        delete_by_filter:
+          description: The filter specifying which documents to delete.
+          x-stainless-any: true
+        delete_by_filter_allow_partial:
+          type: boolean
+          description: Allow partial completion when filter matches too many documents.
+        patch_by_filter: {$ref: "#/components/schemas/PatchByFilter"}
+        patch_by_filter_allow_partial:
+          type: boolean
+          description: Allow partial completion when filter matches too many documents.
+        return_affected_ids:
+          type: boolean
+          description: >
+            If true, return the IDs of affected rows (deleted, patched, upserted) in the response. For filtered and conditional writes, only IDs for writes that succeeded will be included.
+
+          default: false
+        encryption: {$ref: "#/components/schemas/Encryption"}
+        disable_backpressure:
+          type: boolean
+          description: >
+            Disables write throttling (HTTP 429 responses) during high-volume ingestion.
+
+    PatchByFilter:
+      description: The patch and filter specifying which documents to patch.
+      required: [patch, filters]
+      properties:
+        patch:
+          type: object
+          additionalProperties: true
+        filters:
+          x-stainless-any: true
+          description: Filter by attributes. Same syntax as the query endpoint.
+    WriteBilling:
+      description: The billing information for a write request.
+      type: object
+      properties:
+        billable_logical_bytes_written:
+          type: integer
+          description: The number of billable logical bytes written to the namespace.
+        query: {$ref: "#/components/schemas/QueryBilling"}
+      required: [billable_logical_bytes_written]
+    WriteResult:
+      description: The response to a successful write request.
+      type: object
+      properties:
+        status:
+          const: "OK"
+          description: The status of the request.
+        message:
+          type: string
+          description: A message describing the result of the write request.
+        rows_affected:
+          type: integer
+          description: The number of rows affected by the write request.
+        rows_upserted:
+          type: integer
+          description: The number of rows upserted by the write request.
+        rows_patched:
+          type: integer
+          description: The number of rows patched by the write request.
+        rows_deleted:
+          type: integer
+          description: The number of rows deleted by the write request.
+        rows_remaining:
+          type: boolean
+          description: Whether more documents match the filter for partial operations.
+        upserted_ids:
+          type: array
+          description: >
+            The IDs of documents that were upserted. Only included when `return_affected_ids` is true and at least one document was upserted.
+
+          items: {$ref: "#/components/schemas/Id"}
+        patched_ids:
+          type: array
+          description: >
+            The IDs of documents that were patched. Only included when `return_affected_ids` is true and at least one document was patched.
+
+          items: {$ref: "#/components/schemas/Id"}
+        deleted_ids:
+          type: array
+          description: >
+            The IDs of documents that were deleted. Only included when `return_affected_ids` is true and at least one document was deleted.
+
+          items: {$ref: "#/components/schemas/Id"}
+        billing: {$ref: "#/components/schemas/WriteBilling"}
+      required: [status, message, rows_affected, billing]
+    Query:
+      description: Query, filter, full-text search and vector search documents.
+      type: object
+      properties:
+        rank_by:
+          description: >
+            How to rank the documents in the namespace.
+
+          x-stainless-any: true
+        top_k:
+          description: The number of results to return.
+          type: integer
+        filters:
+          description: >
+            Exact filters for attributes to refine search results for. Think of it as a SQL WHERE clause.
+
+          x-stainless-any: true
+        include_attributes: {$ref: "#/components/schemas/IncludeAttributes"}
+        exclude_attributes:
+          description: >
+            List of attribute names to exclude from the response. All other attributes will be included in the response.
+
+          type: array
+          items: {type: string}
+        aggregate_by:
+          description: >
+            Aggregations to compute over all documents in the namespace that match the filters.
+
+          type: object
+          additionalProperties: true
+        group_by:
+          description: >
+            Groups documents by the specified attributes (the "group key") before computing aggregates. Aggregates are computed separately for each group.
+
+          type: array
+          items: {type: string}
+        distance_metric: {$ref: "#/components/schemas/DistanceMetric"}
+        limit:
+          anyOf:
+            - type: integer
+            - {$ref: "#/components/schemas/Limit"}
+    QueryConfig:
+      description: Configuration options for a query.
+      type: object
+      properties:
+        vector_encoding: {$ref: "#/components/schemas/VectorEncoding"}
+        consistency:
+          description: The consistency level for a query.
+          type: object
+          properties:
+            level:
+              anyOf:
+                - const: strong
+                  description: >
+                    Strong consistency. Requires a round-trip to object storage to fetch the latest writes.
+
+                - const: eventual
+                  description: >
+                    Eventual consistency. Does not require a round-trip to object storage, but may not see the latest writes.
+
+              description: The query's consistency level.
+    QueryBilling:
+      description: The billing information for a query.
+      type: object
+      properties:
+        billable_logical_bytes_queried:
+          type: integer
+          description: The number of billable logical bytes queried from the namespace.
+        billable_logical_bytes_returned:
+          type: integer
+          description: The number of billable logical bytes returned from the query.
+      required: [billable_logical_bytes_queried, billable_logical_bytes_returned]
+    QueryPerformance:
+      description: The performance information for a query.
+      type: object
+      properties:
+        cache_hit_ratio:
+          type: number
+          description: The ratio of cache hits to total cache lookups.
+        cache_temperature:
+          type: string
+          description: A qualitative description of the cache hit ratio (`hot`, `warm`, or `cold`).
+        server_total_ms:
+          type: integer
+          description: >
+            Request time measured on the server, including time spent waiting for other queries to complete if the namespace was at its concurrency limit.
+
+        query_execution_ms:
+          type: integer
+          description: >
+            Request time measured on the server, excluding time spent waiting due to the namespace concurrency limit.
+
+        exhaustive_search_count:
+          type: integer
+          description: The number of unindexed documents processed by the query.
+        approx_namespace_size:
+          type: integer
+          description: the approximate number of documents in the namespace.
+      required:
+        - cache_hit_ratio
+        - cache_temperature
+        - server_total_ms
+        - query_execution_ms
+        - exhaustive_search_count
+        - approx_namespace_size
+    QueryResult:
+      description: The result of a query.
+      type: object
+      allOf:
+        - $ref: "#/components/schemas/SingleQueryResult"
+        - type: object
+          properties:
+            performance: {$ref: "#/components/schemas/QueryPerformance"}
+            billing: {$ref: "#/components/schemas/QueryBilling"}
+          required: [performance, billing]
+    MultiQueryResult:
+      description: The result of a multi-query.
+      type: object
+      properties:
+        results:
+          type: array
+          items: {$ref: "#/components/schemas/SingleQueryResult"}
+        performance: {$ref: "#/components/schemas/QueryPerformance"}
+        billing: {$ref: "#/components/schemas/QueryBilling"}
+      required: [performance, billing, results]
+    SingleQueryResult:
+      type: object
+      properties:
+        aggregations:
+          type: object
+          additionalProperties: true
+        aggregation_groups:
+          type: array
+          items: {$ref: "#/components/schemas/AggregationGroup"}
+        rows:
+          type: array
+          items: {$ref: "#/components/schemas/Row"}
+    Columns:
+      description: >
+        A list of documents in columnar format. Each key is a column name, mapped to an array of values for that column.
+
+      type: object
+      properties:
+        id:
+          type: array
+          description: The IDs of the documents.
+          items: {$ref: "#/components/schemas/Id"}
+        vector:
+          oneOf:
+            - type: array
+              description: The vector embeddings of the documents.
+              items: {$ref: "#/components/schemas/Vector"}
+            - {$ref: "#/components/schemas/Vector"}
+      required: [id]
+      additionalProperties:
+        type: array
+        items:
+          x-stainless-any: true
+        description: The attributes attached to each of the documents.
+    AggregationGroup:
+      description: A single aggregation group.
+      type: object
+      additionalProperties: true
+    Row:
+      description: A single document, in a row-based format.
+      type: object
+      properties:
+        id: {$ref: "#/components/schemas/Id"}
+        vector: {$ref: "#/components/schemas/Vector"}
+      required: [id]
+      additionalProperties: true
+    Id:
+      anyOf:
+        - description: A UUID.
+          type: string
+          format: uuid
+        - description: A string ID.
+          type: string
+        - description: An integer ID.
+          type: integer
+      description: An identifier for a document.
+    Vector:
+      description: A vector embedding associated with a document.
+      oneOf:
+        - description: A dense vector encoded as an array of floats.
+          type: array
+          items:
+            type: number
+            x-turbopuffer-width: 32
+        - description: A dense vector encoded as a base64 string.
+          type: string
+    VectorEncoding:
+      description: The encoding to use for vectors in the response.
+      oneOf:
+        - const: float
+        - const: base64
+    DistanceMetric:
+      anyOf:
+        - const: cosine_distance
+          description: >
+            Defined as `1 - cosine_similarity` and ranges from 0 to 2. Lower is better.
+
+        - const: euclidean_squared
+          description: Defined as `sum((x - y)^2)`. Lower is better.
+      description: A function used to calculate vector similarity.
+    Limit:
+      description: Limits the documents returned by a query.
+      type: object
+      properties:
+        total:
+          description: Limits the total number of documents returned.
+          type: integer
+        per:
+          description: >
+            Limits the number of documents with the same value for a set of attributes (the "limit key") that can appear in the results.
+
+          type: object
+          properties:
+            attributes:
+              description: The attributes to include in the limit key.
+              type: array
+              items: {type: string}
+            limit:
+              description: >
+                The maximum number of documents to return for each value of the limit key.
+
+              type: integer
+          required: [attributes, limit]
+      required: [total]
+    IncludeAttributes:
+      oneOf:
+        - description: >
+            When `true`, include all attributes in the response. When `false`, include no attributes in the response.
+
+          type: boolean
+        - description: >
+            Include exactly the specified attributes in the response.
+
+          type: array
+          items: {type: string}
+      description: Whether to include attributes in the response.
+    AttributeSchema:
+      description: The schema for an attribute attached to a document.
+      anyOf:
+        - type: string
+          title: AttributeTypeName
+          description: The data type of the attribute.
+        - {$ref: "#/components/schemas/AttributeSchemaConfig"}
+    AttributeSchemaConfig:
+      description: >
+        Detailed configuration for an attribute attached to a document.
+
+      type: object
+      properties:
+        type: {$ref: "#/components/schemas/AttributeType"}
+        filterable:
+          description: >
+            Whether or not the attributes can be used in filters.
+
+          type: boolean
+        regex:
+          description: >
+            Whether to enable Regex filters on this attribute.
+
+          type: boolean
+        full_text_search: {$ref: "#/components/schemas/FullTextSearch"}
+        ann: {$ref: "#/components/schemas/Ann"}
+      required: [type]
+    AttributeType:
+      description: >
+        The data type of the attribute. Valid values: string, int, uint, float, uuid, datetime, bool, []string, []int, []uint, []float, []uuid, []datetime, []bool, [DIMS]f16, [DIMS]f32.
+
+      type: string
+      # NOTE(benesch): it would be nice to use a stronger type than a string
+      # here. Unfortunately the vector type includes an arbitrary dimension
+      # (e.g., [384]f32), which means a simple string enum is not sufficiently
+      # expressive to represent this type, and Stainless isn't able to do anything
+      # interesting with the `pattern` constraint. So the `oneOf` below causes
+      # more trouble than it's worth.
+      #
+      # oneOf:
+      #   - const: string
+      #     title: string
+      #     description: A string.
+      #   - const: uint
+      #     title: uint
+      #     description: An unsigned integer.
+      #   - const: uuid
+      #     title: uuid
+      #     description: A UUID.
+      #   - const: bool
+      #     title: bool
+      #     description: A boolean.
+      #   - const: datetime
+      #     title: datetime
+      #     description: A date and time.
+      #   - const: "[]string"
+      #     title: "string_array"
+      #     description: An array of strings.
+      #   - const: "[]uint"
+      #     title: "uint_array"
+      #     description: An array of unsigned integers.
+      #   - const: "[]uuid"
+      #     title: "uuid_array"
+      #     description: An array of UUIDs.
+      #   - const: "[]datetime"
+      #     title: "datetime_array"
+      #     description: An array of date and time values.
+      #   - type: string
+      #     pattern: "^\\[\\d+\\]f(16|32)$"
+      #     title: "vector"
+      #     description: >
+      #       A vector embedding of a specific dimensionality and element width.
+    FullTextSearch:
+      description: >
+        Whether this attribute can be used as part of a BM25 full-text search. Requires the `string` or `[]string` type, and by default, BM25-enabled attributes are not filterable. You can override this by setting `filterable: true`.
+
+      oneOf:
+        - type: boolean
+          # Since Go doesn't support sum types, this syntax sugar is actually
+          # an ergonomic loss. So just force Go users to always use the full
+          # config by omitting this variant.
+          x-stainless-skip: [go]
+        - {$ref: "#/components/schemas/FullTextSearchConfig"}
+    FullTextSearchConfig:
+      description: Configuration options for full-text search.
+      type: object
+      properties:
+        k1:
+          type: number
+          description: >
+            The `k1` term saturation parameter for BM25. Defaults to `1.2`.
+
+        b:
+          type: number
+          description: >
+            The `b` document length normalization parameter for BM25. Defaults to `0.75`.
+
+        language: {$ref: "#/components/schemas/Language"}
+        stemming:
+          type: boolean
+          description: >
+            Language-specific stemming for the text. Defaults to `false` (i.e., do not stem).
+
+        remove_stopwords:
+          type: boolean
+          description: >
+            Removes common words from the text based on language. Defaults to `true` (i.e. remove common words).
+
+        ascii_folding:
+          type: boolean
+          description: >
+            Whether to convert each non-ASCII character in a token to its ASCII equivalent, if one exists (e.g., à -> a). Defaults to `false` (i.e., no folding).
+
+        case_sensitive:
+          type: boolean
+          description: >
+            Whether searching is case-sensitive. Defaults to `false` (i.e. case-insensitive).
+
+        max_token_length:
+          type: integer
+          description: >
+            Maximum length of a token in bytes. Tokens larger than this value during tokenization will be filtered out. Has to be between `1` and `254` (inclusive). Defaults to `39`.
+
+        tokenizer: {$ref: "#/components/schemas/Tokenizer"}
+    Language:
+      description: >
+        Describes the language of a text attribute. Defaults to `english`.
+
+      oneOf:
+        - const: arabic
+        - const: danish
+        - const: dutch
+        - const: english
+        - const: finnish
+        - const: french
+        - const: german
+        - const: greek
+        - const: hungarian
+        - const: italian
+        - const: norwegian
+        - const: portuguese
+        - const: romanian
+        - const: russian
+        - const: spanish
+        - const: swedish
+        - const: tamil
+        - const: turkish
+    Tokenizer:
+      description: The tokenizer to use for full-text search on an attribute. Defaults to `word_v3`.
+      oneOf:
+        - const: pre_tokenized_array
+        - const: word_v0
+        - const: word_v1
+        - const: word_v2
+        - const: word_v3
+    Ann:
+      description: >
+        Whether to create an approximate nearest neighbor index for the attribute. Can be a boolean or a detailed configuration object.
+
+      oneOf:
+        - type: boolean
+          # Since Go doesn't support sum types, this syntax sugar is actually
+          # an ergonomic loss. So just force Go users to always use the full
+          # config by omitting this variant.
+          x-stainless-skip: [go]
+        - {$ref: "#/components/schemas/AnnConfig"}
+    AnnConfig:
+      description: Configuration options for ANN (Approximate Nearest Neighbor) indexing.
+      type: object
+      properties:
+        distance_metric: {$ref: "#/components/schemas/DistanceMetric"}
+    Encryption:
+      description: The encryption configuration for a namespace.
+      type: object
+      properties:
+        cmek:
+          type: object
+          properties:
+            key_name:
+              type: string
+              description: >
+                The identifier of the CMEK key to use for encryption. For GCP, the fully-qualified resource name of the key. For AWS, the ARN of the key.
+
+          required: [key_name]
+    ErrorResponse:
+      description: The response to an unsuccessful request.
+      type: object
+      required:
+        - status
+        - error
+      properties:
+        status:
+          const: "error"
+          description: The status of the request.
+        error:
+          type: string
+          description: The error message.
+    # Not currently supported by Stainless, but used by custom codegen we've
+    # added on top.
+    AggregateBy:
+      description: >
+        An aggregate function to compute over all documents in the namespace.
+
+      anyOf:
+        - type: array
+          description: Count documents.
+          prefixItems:
+            - const: Count
+          additionalItems: false
+        - type: array
+          description: Sum the values of the given attribute.
+          prefixItems:
+            - const: Sum
+            - type: string
+              title: attr
+              description: >
+                The name of the attribute to sum (must be of numeric type).
+
+          additionalItems: false
+        - type: array
+          description: Count documents with a non-null value for the given attribute.
+          prefixItems:
+            - const: Count
+            - type: string
+              title: attr
+              description: >
+                The name of the attribute to count (only documents with non-null values for the attribute are counted).
+
+                DEPRECATED. Use `Count` instead.
+
+          x-turbopuffer-variant-name: CountDeprecated
+          # Drop this variant if it conflicts with the `Count` variant. This
+          # means the deprecation will be backwards incompatible in the SDKs
+          # where it conflicts, but that's a price we're willing to pay.
+          x-turbopuffer-variant-drop-on-conflict: true
+          additionalItems: false
+    Expr:
+      description: An expression that can be used in a filter.
+      anyOf:
+        - {$ref: "#/components/schemas/ExprRefNew"}
+    ExprRefNew:
+      description: A reference to an attribute in a new document.
+      type: object
+      properties:
+        $ref_new:
+          description: The name of the attribute referenced in the new document.
+          type: string
+      required: [$ref_new]
+    Bm25ClauseParams:
+      # Can't start with 'RankBy', otherwise apigen will handle this
+      description: Additional (optional) parameters for a single BM25 query clause.
+      type: object
+      properties:
+        last_as_prefix:
+          type: boolean
+          description: Whether to treat the last token in the query input as a literal prefix.
+      additionalProperties: false
+    ContainsAllTokensFilterParams:
+      # Can't start with 'Filter', otherwise apigen will handle this
+      description: Additional (optional) parameters for the ContainsAllTokens filter.
+      type: object
+      properties:
+        last_as_prefix:
+          type: boolean
+          description: Whether to treat the last token in the query input as a literal prefix.
+      additionalProperties: false
+    ContainsAnyTokenFilterParams:
+      # Can't start with 'Filter', otherwise apigen will handle this
+      description: Additional (optional) parameters for the ContainsAnyToken filter.
+      type: object
+      properties:
+        last_as_prefix:
+          type: boolean
+          description: Whether to treat the last token in the query input as a literal prefix.
+      additionalProperties: false
+    SaturateParams:
+      description: Additional parameters for the Saturate operator.
+      type: object
+      properties:
+        midpoint:
+          x-stainless-any: true
+          description: The midpoint of the Saturate operator.
+        exponent:
+          type: number
+          description: An exponent that helps further control the shape of the Saturate function.
+      additionalProperties: false
+    DecayParams:
+      description: Additional parameters for the Decay operator.
+      type: object
+      properties:
+        midpoint:
+          x-stainless-any: true
+          description: The midpoint of the Decay operator.
+        exponent:
+          type: number
+          description: An exponent that helps further control the shape of the Decay function.
+      additionalProperties: false
+    Filter:
+      anyOf:
+        - type: array
+          description: >
+            Exact match for attribute value. If `null`, matches documents missing the attribute.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: Eq
+            - x-stainless-any: true
+              title: value
+              description: The value of the filter.
+          additionalItems: false
+        - type: array
+          description: >
+            Inverse of `Eq`. If value is `null`, matches documents with the attribute.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: NotEq
+            - x-stainless-any: true
+              title: value
+              description: The value of the filter.
+          additionalItems: false
+        - type: array
+          description: >
+            Matches any attribute value contained in the provided list.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: In
+            - type: array
+              title: value
+              description: The value of the filter.
+              items: {x-stainless-any: true}
+          additionalItems: false
+        - type: array
+          description: >
+            Inverse of `In`, matches any attributes values not contained in the provided list.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: NotIn
+            - type: array
+              title: value
+              description: The value of the filter.
+              items: {x-stainless-any: true}
+          additionalItems: false
+        - type: array
+          description: >
+            Checks whether the selected array attribute contains the provided value.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: Contains
+            - x-stainless-any: true
+              title: value
+              description: The value of the filter.
+          additionalItems: false
+        - type: array
+          description: >
+            Inverse of Contains
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: NotContains
+            - x-stainless-any: true
+              title: value
+              description: The value of the filter.
+          additionalItems: false
+        - type: array
+          description: >
+            Checks whether the selected array attribute contains any of the values provided (intersection filter).
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: ContainsAny
+            - type: array
+              title: value
+              description: The value of the filter.
+              items: {x-stainless-any: true}
+          additionalItems: false
+        - type: array
+          description: >
+            Inverse of ContainsAny.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: NotContainsAny
+            - type: array
+              title: value
+              description: The value of the filter.
+              items: {x-stainless-any: true}
+          additionalItems: false
+        - type: array
+          description: >
+            For ints, this is a numeric less-than. For strings, lexicographic less-than. For datetimes, numeric less-than on millisecond representation.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: Lt
+            - x-stainless-any: true
+              title: value
+              description: The value of the filter.
+          additionalItems: false
+        - type: array
+          description: >
+            For ints, this is a numeric less-than-or-equal. For strings, lexicographic less-than-or-equal. For datetimes, numeric less-than-or-equal on millisecond representation.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: Lte
+            - x-stainless-any: true
+              title: value
+              description: The value of the filter.
+          additionalItems: false
+        - type: array
+          description: >
+            For ints, this is a numeric greater-than. For strings, lexicographic greater-than. For datetimes, numeric greater-than on millisecond representation.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: Gt
+            - x-stainless-any: true
+              title: value
+              description: The value of the filter.
+          additionalItems: false
+        - type: array
+          description: >
+            For ints, this is a numeric greater-than-or-equal. For strings, lexicographic greater-than-or-equal. For datetimes, numeric greater-than-or-equal on millisecond representation.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: Gte
+            - x-stainless-any: true
+              title: value
+              description: The value of the filter.
+          additionalItems: false
+        - type: array
+          description: >
+            Checks whether any element of an array attribute is less than the provided value, using the same rules as `Lt`.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: AnyLt
+            - x-stainless-any: true
+              title: value
+              description: The value of the filter.
+          additionalItems: false
+        - type: array
+          description: >
+            Checks whether any element of an array attribute is less than or equal to the provided value, using the same rules as `Lte`.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: AnyLte
+            - x-stainless-any: true
+              title: value
+              description: The value of the filter.
+          additionalItems: false
+        - type: array
+          description: >
+            Checks whether any element of an array attribute is greater than the provided value, using the same rules as `Gt`.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: AnyGt
+            - x-stainless-any: true
+              title: value
+              description: The value of the filter.
+          additionalItems: false
+        - type: array
+          description: >
+            Checks whether any element of an array attribute is greater than or equal to the provided value, using the same rules as `Gte`.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: AnyGte
+            - x-stainless-any: true
+              title: value
+              description: The value of the filter.
+          additionalItems: false
+        - type: array
+          description: >
+            Unix-style glob match against string values. The full syntax is described in the Rust `globset` crate documentation. Glob patterns with a concrete prefix like "foo*" internally compile to efficient range queries.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: Glob
+            - type: string
+              title: value
+              description: The value of the filter.
+          additionalItems: false
+        - type: array
+          description: >
+            Inverse of `Glob`, Unix-style glob filters against string attributes values. The full syntax is described in the Rust `globset` crate documentation.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: NotGlob
+            - type: string
+              title: value
+              description: The value of the filter.
+          additionalItems: false
+        - type: array
+          description: >
+            Case insensitive version of `Glob`.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: IGlob
+            - type: string
+              title: value
+              description: The value of the filter.
+          additionalItems: false
+        - type: array
+          description: >
+            Case insensitive version of `NotGlob`.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: NotIGlob
+            - type: string
+              title: value
+              description: The value of the filter.
+          additionalItems: false
+        - type: array
+          description: >
+            Regular expression match against string values. Requires the regex schema attribute to be enabled before use.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: Regex
+            - type: string
+              title: value
+              description: The regular expression to match against.
+          additionalItems: false
+        - type: array
+          description: >
+            Matches if all tokens in the input string are present in the attributes value. Requires that the attribute is configured for full-text search.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: ContainsAllTokens
+            - type: string
+              title: value
+              description: The string to search for.
+          additionalItems: false
+        - type: array
+          description: >
+            Matches if all tokens in the input string are present in the attributes value. Requires that the attribute is configured for full-text search.
+
+          prefixItems:
+            - type: string
+              description: The name of the attribute to apply the filter to.
+              title: attr
+            - const: ContainsAllTokens
+            - type: array
+              items: {type: string}
+              title: value
+              description: The tokens to search for.
+          additionalItems: false
+          x-turbopuffer-variant-name: ContainsAllTokensArray
+        - type: array
+          description: >
+            Matches if all tokens in the input string are present in the attributes value. Requires that the attribute is configured for full-text search.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: ContainsAllTokens
+            - type: string
+              title: value
+              description: The string to search for.
+            - $ref: "#/components/schemas/ContainsAllTokensFilterParams"
+              title: params
+          additionalItems: false
+          x-turbopuffer-variant-name: ContainsAllTokensWithParams
+        - type: array
+          description: >
+            Matches if all tokens in the input string are present in the attributes value. Requires that the attribute is configured for full-text search.
+
+          prefixItems:
+            - type: string
+              description: The name of the attribute to apply the filter to.
+              title: attr
+            - const: ContainsAllTokens
+            - type: array
+              items: {type: string}
+              title: value
+              description: The tokens to search for.
+            - $ref: "#/components/schemas/ContainsAllTokensFilterParams"
+              title: params
+          additionalItems: false
+          x-turbopuffer-variant-name: ContainsAllTokensArrayWithParams
+        - type: array
+          description: >
+            Matches if any of the tokens in the input string are present in the attribute value. Requires that the attribute is configured for full-text search.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: ContainsAnyToken
+            - type: string
+              title: value
+              description: The string to search for.
+          additionalItems: false
+        - type: array
+          description: >
+            Matches if any of the tokens in the input string array are present in the attribute value. Requires that the attribute is configured for full-text search.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: ContainsAnyToken
+            - type: array
+              items: {type: string}
+              title: value
+              description: The tokens to search for.
+          additionalItems: false
+          x-turbopuffer-variant-name: ContainsAnyTokenArray
+        - type: array
+          description: >
+            Matches if any of the tokens in the input string are present in the attribute value. Requires that the attribute is configured for full-text search.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: ContainsAnyToken
+            - type: string
+              title: value
+              description: The string to search for.
+            - $ref: "#/components/schemas/ContainsAnyTokenFilterParams"
+              title: params
+          additionalItems: false
+          x-turbopuffer-variant-name: ContainsAnyTokenWithParams
+        - type: array
+          description: >
+            Matches if any of the tokens in the input string array are present in the attribute value. Requires that the attribute is configured for full-text search.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: ContainsAnyToken
+            - type: array
+              items: {type: string}
+              title: value
+              description: The tokens to search for.
+            - $ref: "#/components/schemas/ContainsAnyTokenFilterParams"
+              title: params
+          additionalItems: false
+          x-turbopuffer-variant-name: ContainsAnyTokenArrayWithParams
+        - type: array
+          description: >
+            Matches if all the tokens in the input string are present in the attribute value, in the correct order (i.e., as a phrase). Requires that the attribute is configured for full-text search.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: ContainsTokenSequence
+            - type: string
+              title: value
+              description: The string to search for.
+          additionalItems: false
+        - type: array
+          description: >
+            Matches if all the tokens in the input string are present in the attribute value, in the correct order (i.e., as a phrase). Requires that the attribute is configured for full-text search.
+
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to apply the filter to.
+            - const: ContainsTokenSequence
+            - type: array
+              items: {type: string}
+              title: value
+              description: The tokens to search for.
+          additionalItems: false
+          x-turbopuffer-variant-name: ContainsTokenSequenceArray
+        - type: array
+          prefixItems:
+            - const: Not
+            - $ref: "#/components/schemas/Filter"
+              title: filter
+          additionalItems: false
+        - type: array
+          prefixItems:
+            - const: And
+            - type: array
+              items: {$ref: "#/components/schemas/Filter"}
+              title: filters
+          additionalItems: false
+        - type: array
+          prefixItems:
+            - const: Or
+            - type: array
+              items: {$ref: "#/components/schemas/Filter"}
+              title: filters
+          additionalItems: false
+    RankByVector:
+      type: array
+      prefixItems:
+        - type: string
+          title: attr
+          description: The name of the attribute to rank by.
+        - const: ANN
+        - type: array
+          items:
+            type: number
+            x-turbopuffer-width: 32
+          title: value
+      additionalItems: false
+    RankByKnn:
+      type: array
+      prefixItems:
+        - type: string
+          title: attr
+          description: The name of the attribute to rank by.
+        - const: kNN
+        - type: array
+          items:
+            type: number
+            x-turbopuffer-width: 32
+          title: value
+      additionalItems: false
+    RankByText:
+      anyOf:
+        - type: array
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to rank by.
+            - const: BM25
+            - type: string
+              description: The string to search for.
+              title: value
+          additionalItems: false
+        - type: array
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to rank by.
+            - const: BM25
+            - type: array
+              items: {type: string}
+              title: value
+              description: The tokens to search for.
+          additionalItems: false
+          x-turbopuffer-variant-name: BM25Array
+        - type: array
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to rank by.
+            - const: BM25
+            - type: string
+              description: The string to search for.
+              title: value
+            - $ref: "#/components/schemas/Bm25ClauseParams"
+              title: params
+          additionalItems: false
+          x-turbopuffer-variant-name: BM25WithParams
+        - type: array
+          prefixItems:
+            - type: string
+              title: attr
+              description: The name of the attribute to rank by.
+            - const: BM25
+            - type: array
+              items: {type: string}
+              title: value
+              description: The tokens to search for.
+            - $ref: "#/components/schemas/Bm25ClauseParams"
+              title: params
+          additionalItems: false
+          x-turbopuffer-variant-name: BM25ArrayWithParams
+        - type: array
+          prefixItems:
+            - const: Sum
+            - type: array
+              items: {$ref: "#/components/schemas/RankByText"}
+              title: subqueries
+          additionalItems: false
+        - type: array
+          prefixItems:
+            - const: Max
+            - type: array
+              items: {$ref: "#/components/schemas/RankByText"}
+              title: subqueries
+          additionalItems: false
+        - type: array
+          prefixItems:
+            - const: Product
+            - type: number
+              title: weight
+              description: The weight of the attribute.
+            - $ref: "#/components/schemas/RankByText"
+              title: subquery
+          additionalItems: false
+        - type: array
+          prefixItems:
+            - const: Product
+            - $ref: "#/components/schemas/RankByText"
+              title: subquery
+            - type: number
+              title: weight
+              description: The weight of the attribute.
+          additionalItems: false
+          x-turbopuffer-variant-drop-on-conflict: true
+        - $ref: "#/components/schemas/Filter"
+        - type: array
+          prefixItems:
+            - const: Attribute
+            - type: string
+              title: attr
+              description: the name of the attribute to rank by
+          additionalItems: false
+        - type: array
+          prefixItems:
+            - const: Saturate
+            - $ref: "#/components/schemas/RankByText"
+              title: subquery
+            - $ref: "#/components/schemas/SaturateParams"
+              title: params
+          additionalItems: false
+        - type: array
+          prefixItems:
+            - const: Decay
+            - $ref: "#/components/schemas/RankByText"
+              title: subquery
+            - $ref: "#/components/schemas/DecayParams"
+              title: params
+          additionalItems: false
+        - type: array
+          prefixItems:
+            - const: Dist
+            - $ref: "#/components/schemas/RankByText"
+              title: subquery
+            - x-stainless-any: true
+              title: origin
+          additionalItems: false
+    RankByAttributeOrder:
+      anyOf:
+        - const: asc
+          description: Ascending order.
+        - const: desc
+          description: Descending order.
+    RankByAttribute:
+      type: array
+      prefixItems:
+        - type: string
+          title: attr
+          description: The name of the attribute to rank by.
+        - $ref: "#/components/schemas/RankByAttributeOrder"
+          title: order
+      additionalItems: false
+    RankByAttributes:
+      type: array
+      items: {$ref: "#/components/schemas/RankByAttribute"}
+      description: >
+        Order by multiple attributes. Results are sorted by the first attribute, then by the second attribute for ties, and so on.
+
+    RankBy:
+      anyOf:
+        - {$ref: "#/components/schemas/RankByVector"}
+        - {$ref: "#/components/schemas/RankByKnn"}
+        - {$ref: "#/components/schemas/RankByText"}
+        - {$ref: "#/components/schemas/RankByAttribute"}
+        - {$ref: "#/components/schemas/RankByAttributes"}
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: API key

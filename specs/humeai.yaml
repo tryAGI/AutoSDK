@@ -1,0 +1,2772 @@
+openapi: 3.0.3
+info:
+  title: Hume AI API
+  description: >
+    Hume AI API for emotion recognition, expression measurement,
+    empathic voice interface (EVI), and text-to-speech (TTS).
+  version: "0.1.0"
+  contact:
+    name: Hume AI
+    url: https://hume.ai
+servers:
+  - url: https://api.hume.ai
+    description: Production
+
+security:
+  - BearerAuth: []
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: API key authentication using Bearer token
+
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error type
+        message:
+          type: string
+          description: Error message
+
+    EmotionScore:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the emotion
+        score:
+          type: number
+          format: double
+          description: Confidence score between 0 and 1
+
+    BoundingBox:
+      type: object
+      properties:
+        x:
+          type: number
+          format: double
+        "y":
+          type: number
+          format: double
+        w:
+          type: number
+          format: double
+        h:
+          type: number
+          format: double
+
+    TimeInterval:
+      type: object
+      properties:
+        begin:
+          type: number
+          format: double
+          description: Start time in seconds
+        end:
+          type: number
+          format: double
+          description: End time in seconds
+
+    FacePrediction:
+      type: object
+      properties:
+        frame:
+          type: integer
+          description: Frame number
+        time:
+          type: number
+          format: double
+          description: Time in seconds
+        bounding_box:
+          $ref: '#/components/schemas/BoundingBox'
+        prob:
+          type: number
+          format: double
+          description: Detection probability
+        emotions:
+          type: array
+          items:
+            $ref: '#/components/schemas/EmotionScore'
+        facs:
+          type: array
+          items:
+            $ref: '#/components/schemas/FacsScore'
+          nullable: true
+        descriptions:
+          type: array
+          items:
+            $ref: '#/components/schemas/DescriptionsScore'
+          nullable: true
+
+    FacsScore:
+      type: object
+      properties:
+        name:
+          type: string
+        score:
+          type: number
+          format: double
+
+    DescriptionsScore:
+      type: object
+      properties:
+        name:
+          type: string
+        score:
+          type: number
+          format: double
+
+    ProsodyPrediction:
+      type: object
+      properties:
+        time:
+          $ref: '#/components/schemas/TimeInterval'
+        emotions:
+          type: array
+          items:
+            $ref: '#/components/schemas/EmotionScore'
+
+    LanguagePrediction:
+      type: object
+      properties:
+        text:
+          type: string
+        position:
+          $ref: '#/components/schemas/PositionInterval'
+        emotions:
+          type: array
+          items:
+            $ref: '#/components/schemas/EmotionScore'
+        sentiment:
+          type: array
+          items:
+            $ref: '#/components/schemas/SentimentScore'
+          nullable: true
+        toxicity:
+          type: array
+          items:
+            $ref: '#/components/schemas/ToxicityScore'
+          nullable: true
+
+    PositionInterval:
+      type: object
+      properties:
+        begin:
+          type: integer
+        end:
+          type: integer
+
+    SentimentScore:
+      type: object
+      properties:
+        name:
+          type: string
+        score:
+          type: number
+          format: double
+
+    ToxicityScore:
+      type: object
+      properties:
+        name:
+          type: string
+        score:
+          type: number
+          format: double
+
+    BurstPrediction:
+      type: object
+      properties:
+        time:
+          $ref: '#/components/schemas/TimeInterval'
+        emotions:
+          type: array
+          items:
+            $ref: '#/components/schemas/EmotionScore'
+
+    NerPrediction:
+      type: object
+      properties:
+        entity:
+          type: string
+        position:
+          $ref: '#/components/schemas/PositionInterval'
+        link:
+          type: string
+          nullable: true
+        entity_confidence:
+          type: number
+          format: double
+        emotions:
+          type: array
+          items:
+            $ref: '#/components/schemas/EmotionScore'
+
+    FaceModelConfig:
+      type: object
+      properties:
+        fps_pred:
+          type: number
+          format: double
+          nullable: true
+        prob_threshold:
+          type: number
+          format: double
+          nullable: true
+        identify_faces:
+          type: boolean
+          nullable: true
+        min_face_size:
+          type: integer
+          nullable: true
+        facs:
+          type: object
+          nullable: true
+        descriptions:
+          type: object
+          nullable: true
+        save_faces:
+          type: boolean
+          nullable: true
+
+    ProsodyModelConfig:
+      type: object
+      properties:
+        granularity:
+          type: string
+          nullable: true
+          enum:
+            - word
+            - sentence
+            - conversational_turn
+            - utterance
+        identify_speakers:
+          type: boolean
+          nullable: true
+
+    LanguageModelConfig:
+      type: object
+      properties:
+        granularity:
+          type: string
+          nullable: true
+          enum:
+            - word
+            - sentence
+            - passage
+        sentiment:
+          type: object
+          nullable: true
+        toxicity:
+          type: object
+          nullable: true
+        identify_speakers:
+          type: boolean
+          nullable: true
+
+    BurstModelConfig:
+      type: object
+      nullable: true
+
+    NerModelConfig:
+      type: object
+      properties:
+        identify_speakers:
+          type: boolean
+          nullable: true
+
+    ModelsConfig:
+      type: object
+      properties:
+        face:
+          $ref: '#/components/schemas/FaceModelConfig'
+          nullable: true
+        prosody:
+          $ref: '#/components/schemas/ProsodyModelConfig'
+          nullable: true
+        language:
+          $ref: '#/components/schemas/LanguageModelConfig'
+          nullable: true
+        burst:
+          $ref: '#/components/schemas/BurstModelConfig'
+          nullable: true
+        ner:
+          $ref: '#/components/schemas/NerModelConfig'
+          nullable: true
+
+    TranscriptionConfig:
+      type: object
+      properties:
+        language:
+          type: string
+          nullable: true
+
+    InferenceBaseRequest:
+      type: object
+      properties:
+        models:
+          $ref: '#/components/schemas/ModelsConfig'
+          nullable: true
+        transcription:
+          $ref: '#/components/schemas/TranscriptionConfig'
+          nullable: true
+        urls:
+          type: array
+          items:
+            type: string
+            format: uri
+          nullable: true
+        text:
+          type: array
+          items:
+            type: string
+          nullable: true
+        callback_url:
+          type: string
+          format: uri
+          nullable: true
+        notify:
+          type: boolean
+          nullable: true
+
+    JobId:
+      type: object
+      properties:
+        job_id:
+          type: string
+
+    InferenceJob:
+      type: object
+      properties:
+        job_id:
+          type: string
+        user_id:
+          type: string
+          nullable: true
+        request:
+          $ref: '#/components/schemas/InferenceRequest'
+        state:
+          $ref: '#/components/schemas/JobState'
+        type:
+          type: string
+          enum:
+            - INFERENCE
+            - EMBEDDING_GENERATION
+            - CUSTOM_MODELS_INFERENCE
+            - TL_INFERENCE
+            - TRAINING
+        created_timestamp_ms:
+          type: integer
+          format: int64
+          nullable: true
+        started_timestamp_ms:
+          type: integer
+          format: int64
+          nullable: true
+        ended_timestamp_ms:
+          type: integer
+          format: int64
+          nullable: true
+
+    InferenceRequest:
+      type: object
+      properties:
+        models:
+          $ref: '#/components/schemas/ModelsConfig'
+          nullable: true
+        transcription:
+          $ref: '#/components/schemas/TranscriptionConfig'
+          nullable: true
+        urls:
+          type: array
+          items:
+            type: string
+          nullable: true
+        text:
+          type: array
+          items:
+            type: string
+          nullable: true
+        files:
+          type: array
+          items:
+            $ref: '#/components/schemas/SourceFile'
+          nullable: true
+
+    SourceFile:
+      type: object
+      properties:
+        filename:
+          type: string
+        content_type:
+          type: string
+        md5sum:
+          type: string
+
+    JobState:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+            - QUEUED
+            - IN_PROGRESS
+            - COMPLETED
+            - FAILED
+        created_timestamp_ms:
+          type: integer
+          format: int64
+          nullable: true
+        started_timestamp_ms:
+          type: integer
+          format: int64
+          nullable: true
+        ended_timestamp_ms:
+          type: integer
+          format: int64
+          nullable: true
+        message:
+          type: string
+          nullable: true
+
+    InferenceSourcePredictResult:
+      type: object
+      properties:
+        source:
+          $ref: '#/components/schemas/Source'
+        results:
+          $ref: '#/components/schemas/InferenceResults'
+
+    Source:
+      type: object
+      properties:
+        type:
+          type: string
+          enum: [url, file, text]
+        url:
+          type: string
+          nullable: true
+        filename:
+          type: string
+          nullable: true
+        content_type:
+          type: string
+          nullable: true
+        text:
+          type: string
+          nullable: true
+
+    InferenceResults:
+      type: object
+      properties:
+        predictions:
+          type: array
+          items:
+            $ref: '#/components/schemas/InferencePrediction'
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/InferenceError'
+
+    InferencePrediction:
+      type: object
+      properties:
+        file:
+          type: string
+          nullable: true
+        models:
+          $ref: '#/components/schemas/ModelsPredictions'
+
+    ModelsPredictions:
+      type: object
+      properties:
+        face:
+          $ref: '#/components/schemas/FaceModelPredictions'
+          nullable: true
+        prosody:
+          $ref: '#/components/schemas/ProsodyModelPredictions'
+          nullable: true
+        language:
+          $ref: '#/components/schemas/LanguageModelPredictions'
+          nullable: true
+        burst:
+          $ref: '#/components/schemas/BurstModelPredictions'
+          nullable: true
+        ner:
+          $ref: '#/components/schemas/NerModelPredictions'
+          nullable: true
+
+    FaceModelPredictions:
+      type: object
+      properties:
+        grouped_predictions:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupedFacePredictions'
+
+    ProsodyModelPredictions:
+      type: object
+      properties:
+        grouped_predictions:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupedProsodyPredictions'
+
+    LanguageModelPredictions:
+      type: object
+      properties:
+        grouped_predictions:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupedLanguagePredictions'
+
+    BurstModelPredictions:
+      type: object
+      properties:
+        grouped_predictions:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupedBurstPredictions'
+
+    NerModelPredictions:
+      type: object
+      properties:
+        grouped_predictions:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupedNerPredictions'
+
+    GroupedFacePredictions:
+      type: object
+      properties:
+        id:
+          type: string
+        predictions:
+          type: array
+          items:
+            $ref: '#/components/schemas/FacePrediction'
+
+    GroupedProsodyPredictions:
+      type: object
+      properties:
+        id:
+          type: string
+        predictions:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProsodyPrediction'
+
+    GroupedLanguagePredictions:
+      type: object
+      properties:
+        id:
+          type: string
+        predictions:
+          type: array
+          items:
+            $ref: '#/components/schemas/LanguagePrediction'
+
+    GroupedBurstPredictions:
+      type: object
+      properties:
+        id:
+          type: string
+        predictions:
+          type: array
+          items:
+            $ref: '#/components/schemas/BurstPrediction'
+
+    GroupedNerPredictions:
+      type: object
+      properties:
+        id:
+          type: string
+        predictions:
+          type: array
+          items:
+            $ref: '#/components/schemas/NerPrediction'
+
+    InferenceError:
+      type: object
+      properties:
+        message:
+          type: string
+        file:
+          type: string
+          nullable: true
+
+    PostedTts:
+      type: object
+      required:
+        - utterances
+      properties:
+        format:
+          $ref: '#/components/schemas/AudioFormat'
+          nullable: true
+        num_generations:
+          type: integer
+          nullable: true
+        utterances:
+          type: array
+          items:
+            $ref: '#/components/schemas/PostedUtterance'
+        context:
+          $ref: '#/components/schemas/PostedContext'
+          nullable: true
+
+    PostedUtterance:
+      type: object
+      required:
+        - text
+      properties:
+        text:
+          type: string
+        description:
+          type: string
+          nullable: true
+        voice:
+          $ref: '#/components/schemas/PostedUtteranceVoice'
+          nullable: true
+        speed:
+          type: number
+          format: double
+          nullable: true
+        trailing_silence:
+          type: number
+          format: double
+          nullable: true
+        instant_mode:
+          type: boolean
+          nullable: true
+
+    PostedUtteranceVoice:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        provider:
+          type: string
+          nullable: true
+          enum:
+            - HUME_AI
+            - CUSTOM
+
+    PostedContext:
+      type: object
+      properties:
+        generation_id:
+          type: string
+          nullable: true
+        utterances:
+          type: array
+          items:
+            $ref: '#/components/schemas/PostedUtterance'
+          nullable: true
+
+    AudioFormat:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+            - mp3
+            - pcm
+            - wav
+        sample_rate:
+          type: integer
+          nullable: true
+        bit_depth:
+          type: integer
+          nullable: true
+
+    ReturnTts:
+      type: object
+      properties:
+        generation_id:
+          type: string
+        generations:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReturnGeneration'
+        snippets:
+          type: array
+          items:
+            $ref: '#/components/schemas/Snippet'
+
+    ReturnGeneration:
+      type: object
+      properties:
+        generation_id:
+          type: string
+        duration:
+          type: number
+          format: double
+        audio:
+          type: string
+
+    Snippet:
+      type: object
+      properties:
+        audio:
+          type: string
+        generation_id:
+          type: string
+        snippet_id:
+          type: string
+        duration:
+          type: number
+          format: double
+
+    PostedVoice:
+      type: object
+      required:
+        - generation_id
+        - name
+      properties:
+        generation_id:
+          type: string
+        name:
+          type: string
+
+    ReturnVoice:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        provider:
+          type: string
+          enum:
+            - HUME_AI
+            - CUSTOM
+        created_on:
+          type: integer
+          format: int64
+        modified_on:
+          type: integer
+          format: int64
+
+    ReturnPagedVoices:
+      type: object
+      properties:
+        page_number:
+          type: integer
+        page_size:
+          type: integer
+        total_pages:
+          type: integer
+        voices_page:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReturnVoice'
+
+    ConvertVoiceJsonRequest:
+      type: object
+      properties:
+        source_audio:
+          type: string
+        source_voice_id:
+          type: string
+          nullable: true
+        target_voice_id:
+          type: string
+          nullable: true
+        target_voice_name:
+          type: string
+          nullable: true
+
+    PostedConfig:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+        version_description:
+          type: string
+          nullable: true
+        evi_version:
+          type: string
+          nullable: true
+        prompt:
+          $ref: '#/components/schemas/PostedConfigPromptSpec'
+          nullable: true
+        voice:
+          $ref: '#/components/schemas/PostedUtteranceVoice'
+          nullable: true
+        language_model:
+          $ref: '#/components/schemas/PostedLanguageModel'
+          nullable: true
+        ellm_model:
+          $ref: '#/components/schemas/PostedEllmModel'
+          nullable: true
+        tools:
+          type: array
+          items:
+            $ref: '#/components/schemas/PostedUserDefinedToolSpec'
+          nullable: true
+        builtin_tools:
+          type: array
+          items:
+            $ref: '#/components/schemas/PostedBuiltinTool'
+          nullable: true
+        event_messages:
+          $ref: '#/components/schemas/PostedEventMessageSpecs'
+          nullable: true
+        timeouts:
+          $ref: '#/components/schemas/PostedTimeoutSpecs'
+          nullable: true
+
+    PostedConfigPromptSpec:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        version:
+          type: integer
+          nullable: true
+        text:
+          type: string
+          nullable: true
+
+    PostedLanguageModel:
+      type: object
+      properties:
+        model_provider:
+          type: string
+          enum:
+            - OPEN_AI
+            - CUSTOM_LANGUAGE_MODEL
+            - ANTHROPIC
+            - FIREWORKS
+            - GROQ
+            - GOOGLE
+          nullable: true
+        model_resource:
+          type: string
+          nullable: true
+        temperature:
+          type: number
+          format: double
+          nullable: true
+
+    PostedEllmModel:
+      type: object
+      properties:
+        allow_short_responses:
+          type: boolean
+          nullable: true
+
+    PostedUserDefinedToolSpec:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        version:
+          type: integer
+          nullable: true
+
+    PostedBuiltinTool:
+      type: object
+      properties:
+        name:
+          type: string
+          enum:
+            - web_search
+            - hang_up
+        fallback_content:
+          type: string
+          nullable: true
+
+    PostedEventMessageSpecs:
+      type: object
+      properties:
+        on_new_chat:
+          $ref: '#/components/schemas/PostedEventMessageSpec'
+          nullable: true
+        on_inactivity_timeout:
+          $ref: '#/components/schemas/PostedEventMessageSpec'
+          nullable: true
+        on_max_duration_timeout:
+          $ref: '#/components/schemas/PostedEventMessageSpec'
+          nullable: true
+
+    PostedEventMessageSpec:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        text:
+          type: string
+          nullable: true
+
+    PostedTimeoutSpecs:
+      type: object
+      properties:
+        inactivity:
+          $ref: '#/components/schemas/PostedTimeoutSpecsInactivity'
+          nullable: true
+        max_duration:
+          $ref: '#/components/schemas/PostedTimeoutSpecsMaxDuration'
+          nullable: true
+
+    PostedTimeoutSpecsInactivity:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        duration_secs:
+          type: integer
+          nullable: true
+
+    PostedTimeoutSpecsMaxDuration:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        duration_secs:
+          type: integer
+          nullable: true
+
+    PostedConfigVersion:
+      type: object
+      properties:
+        version_description:
+          type: string
+          nullable: true
+        evi_version:
+          type: string
+          nullable: true
+        prompt:
+          $ref: '#/components/schemas/PostedConfigPromptSpec'
+          nullable: true
+        voice:
+          $ref: '#/components/schemas/PostedUtteranceVoice'
+          nullable: true
+        language_model:
+          $ref: '#/components/schemas/PostedLanguageModel'
+          nullable: true
+        ellm_model:
+          $ref: '#/components/schemas/PostedEllmModel'
+          nullable: true
+        tools:
+          type: array
+          items:
+            $ref: '#/components/schemas/PostedUserDefinedToolSpec'
+          nullable: true
+        builtin_tools:
+          type: array
+          items:
+            $ref: '#/components/schemas/PostedBuiltinTool'
+          nullable: true
+        event_messages:
+          $ref: '#/components/schemas/PostedEventMessageSpecs'
+          nullable: true
+        timeouts:
+          $ref: '#/components/schemas/PostedTimeoutSpecs'
+          nullable: true
+
+    PostedConfigName:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+
+    PostedConfigVersionDescription:
+      type: object
+      properties:
+        version_description:
+          type: string
+          nullable: true
+
+    ReturnConfig:
+      type: object
+      properties:
+        id:
+          type: string
+        version:
+          type: integer
+        version_type:
+          type: string
+          nullable: true
+        version_description:
+          type: string
+          nullable: true
+        name:
+          type: string
+        created_on:
+          type: integer
+          format: int64
+        modified_on:
+          type: integer
+          format: int64
+        evi_version:
+          type: string
+          nullable: true
+        prompt:
+          $ref: '#/components/schemas/ReturnConfigPromptSpec'
+          nullable: true
+        voice:
+          $ref: '#/components/schemas/ReturnVoice'
+          nullable: true
+        language_model:
+          $ref: '#/components/schemas/ReturnLanguageModel'
+          nullable: true
+        ellm_model:
+          $ref: '#/components/schemas/ReturnEllmModel'
+          nullable: true
+        tools:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReturnToolItem'
+          nullable: true
+        builtin_tools:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReturnBuiltinTool'
+          nullable: true
+        event_messages:
+          $ref: '#/components/schemas/ReturnEventMessageSpecs'
+          nullable: true
+        timeouts:
+          $ref: '#/components/schemas/ReturnTimeoutSpecs'
+          nullable: true
+
+    ReturnConfigPromptSpec:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        version:
+          type: integer
+          nullable: true
+        text:
+          type: string
+          nullable: true
+
+    ReturnLanguageModel:
+      type: object
+      properties:
+        model_provider:
+          type: string
+          nullable: true
+        model_resource:
+          type: string
+          nullable: true
+        temperature:
+          type: number
+          format: double
+          nullable: true
+
+    ReturnEllmModel:
+      type: object
+      properties:
+        allow_short_responses:
+          type: boolean
+          nullable: true
+
+    ReturnToolItem:
+      type: object
+      properties:
+        tool_type:
+          type: string
+          enum:
+            - BUILTIN
+            - FUNCTION
+        id:
+          type: string
+          nullable: true
+        version:
+          type: integer
+          nullable: true
+        name:
+          type: string
+          nullable: true
+
+    ReturnBuiltinTool:
+      type: object
+      properties:
+        tool_type:
+          type: string
+        name:
+          type: string
+        fallback_content:
+          type: string
+          nullable: true
+
+    ReturnEventMessageSpecs:
+      type: object
+      properties:
+        on_new_chat:
+          $ref: '#/components/schemas/ReturnEventMessageSpec'
+          nullable: true
+        on_inactivity_timeout:
+          $ref: '#/components/schemas/ReturnEventMessageSpec'
+          nullable: true
+        on_max_duration_timeout:
+          $ref: '#/components/schemas/ReturnEventMessageSpec'
+          nullable: true
+
+    ReturnEventMessageSpec:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        text:
+          type: string
+          nullable: true
+
+    ReturnTimeoutSpecs:
+      type: object
+      properties:
+        inactivity:
+          $ref: '#/components/schemas/ReturnTimeoutSpec'
+          nullable: true
+        max_duration:
+          $ref: '#/components/schemas/ReturnTimeoutSpec'
+          nullable: true
+
+    ReturnTimeoutSpec:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        duration_secs:
+          type: integer
+          nullable: true
+
+    ReturnPagedConfigs:
+      type: object
+      properties:
+        page_number:
+          type: integer
+        page_size:
+          type: integer
+        total_pages:
+          type: integer
+        configs_page:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReturnConfig'
+
+    PostedPrompt:
+      type: object
+      required:
+        - name
+        - text
+      properties:
+        name:
+          type: string
+        version_description:
+          type: string
+          nullable: true
+        text:
+          type: string
+
+    PostedPromptVersion:
+      type: object
+      required:
+        - text
+      properties:
+        version_description:
+          type: string
+          nullable: true
+        text:
+          type: string
+
+    PostedPromptName:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+
+    PostedPromptVersionDescription:
+      type: object
+      properties:
+        version_description:
+          type: string
+          nullable: true
+
+    ReturnPrompt:
+      type: object
+      properties:
+        id:
+          type: string
+        version:
+          type: integer
+        version_type:
+          type: string
+          nullable: true
+        version_description:
+          type: string
+          nullable: true
+        name:
+          type: string
+        created_on:
+          type: integer
+          format: int64
+        modified_on:
+          type: integer
+          format: int64
+        text:
+          type: string
+          nullable: true
+
+    ReturnPagedPrompts:
+      type: object
+      properties:
+        page_number:
+          type: integer
+        page_size:
+          type: integer
+        total_pages:
+          type: integer
+        prompts_page:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReturnPrompt'
+
+    PostedUserDefinedTool:
+      type: object
+      required:
+        - name
+        - parameters
+      properties:
+        name:
+          type: string
+        version_description:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        parameters:
+          type: string
+        fallback_content:
+          type: string
+          nullable: true
+
+    PostedUserDefinedToolVersion:
+      type: object
+      required:
+        - parameters
+      properties:
+        version_description:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        parameters:
+          type: string
+        fallback_content:
+          type: string
+          nullable: true
+
+    PostedUserDefinedToolName:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+
+    PostedUserDefinedToolVersionDescription:
+      type: object
+      properties:
+        version_description:
+          type: string
+          nullable: true
+
+    ReturnUserDefinedTool:
+      type: object
+      properties:
+        tool_type:
+          type: string
+          enum:
+            - BUILTIN
+            - FUNCTION
+        id:
+          type: string
+        version:
+          type: integer
+        version_type:
+          type: string
+          nullable: true
+        version_description:
+          type: string
+          nullable: true
+        name:
+          type: string
+        created_on:
+          type: integer
+          format: int64
+        modified_on:
+          type: integer
+          format: int64
+        description:
+          type: string
+          nullable: true
+        parameters:
+          type: string
+          nullable: true
+        fallback_content:
+          type: string
+          nullable: true
+
+    ReturnPagedUserDefinedTools:
+      type: object
+      properties:
+        page_number:
+          type: integer
+        page_size:
+          type: integer
+        total_pages:
+          type: integer
+        tools_page:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReturnUserDefinedTool'
+
+    ReturnChat:
+      type: object
+      properties:
+        id:
+          type: string
+        chat_group_id:
+          type: string
+        tag:
+          type: string
+          nullable: true
+        status:
+          type: string
+          enum:
+            - ACTIVE
+            - USER_ENDED
+            - USER_TIMEOUT
+            - MAX_DURATION_TIMEOUT
+            - ERROR
+        start_timestamp:
+          type: integer
+          format: int64
+        end_timestamp:
+          type: integer
+          format: int64
+          nullable: true
+        event_count:
+          type: integer
+          nullable: true
+        metadata:
+          type: string
+          nullable: true
+        config:
+          $ref: '#/components/schemas/ReturnConfig'
+          nullable: true
+
+    ReturnPagedChats:
+      type: object
+      properties:
+        page_number:
+          type: integer
+        page_size:
+          type: integer
+        total_pages:
+          type: integer
+        pagination_direction:
+          type: string
+          enum:
+            - ASC
+            - DESC
+          nullable: true
+        chats_page:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReturnChat'
+
+    ReturnChatEvent:
+      type: object
+      properties:
+        id:
+          type: string
+        chat_id:
+          type: string
+        timestamp:
+          type: integer
+          format: int64
+        role:
+          type: string
+          enum:
+            - USER
+            - ASSISTANT
+            - SYSTEM
+            - TOOL
+        type:
+          type: string
+          enum:
+            - SYSTEM_PROMPT
+            - USER_MESSAGE
+            - USER_INTERRUPTION
+            - AGENT_MESSAGE
+            - FUNCTION_CALL
+            - FUNCTION_CALL_RESPONSE
+        message_text:
+          type: string
+          nullable: true
+        emotion_features:
+          type: string
+          nullable: true
+        metadata:
+          type: string
+          nullable: true
+
+    ReturnChatPagedEvents:
+      type: object
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+          nullable: true
+        pagination_direction:
+          type: string
+          enum:
+            - ASC
+            - DESC
+          nullable: true
+        events_page:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReturnChatEvent'
+        metadata:
+          type: string
+          nullable: true
+        page_number:
+          type: integer
+        page_size:
+          type: integer
+        total_pages:
+          type: integer
+
+    ReturnChatAudioReconstruction:
+      type: object
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+          enum:
+            - QUEUED
+            - IN_PROGRESS
+            - COMPLETED
+            - FAILED
+          nullable: true
+        filename:
+          type: string
+          nullable: true
+        modified_on:
+          type: integer
+          format: int64
+          nullable: true
+        signed_audio_url:
+          type: string
+          nullable: true
+
+    ReturnChatGroup:
+      type: object
+      properties:
+        id:
+          type: string
+        first_start_timestamp:
+          type: integer
+          format: int64
+        most_recent_start_timestamp:
+          type: integer
+          format: int64
+        most_recent_chat_id:
+          type: string
+          nullable: true
+        num_chats:
+          type: integer
+        active:
+          type: boolean
+
+    ReturnPagedChatGroups:
+      type: object
+      properties:
+        page_number:
+          type: integer
+        page_size:
+          type: integer
+        total_pages:
+          type: integer
+        pagination_direction:
+          type: string
+          enum:
+            - ASC
+            - DESC
+          nullable: true
+        chat_groups_page:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReturnChatGroup'
+
+    ReturnChatGroupPagedChats:
+      type: object
+      properties:
+        id:
+          type: string
+        pagination_direction:
+          type: string
+          enum:
+            - ASC
+            - DESC
+          nullable: true
+        chats_page:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReturnChat'
+        page_number:
+          type: integer
+        page_size:
+          type: integer
+        total_pages:
+          type: integer
+
+    ReturnChatGroupPagedEvents:
+      type: object
+      properties:
+        id:
+          type: string
+        pagination_direction:
+          type: string
+          enum:
+            - ASC
+            - DESC
+          nullable: true
+        events_page:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReturnChatEvent'
+        page_number:
+          type: integer
+        page_size:
+          type: integer
+        total_pages:
+          type: integer
+
+    ReturnChatGroupPagedAudioReconstructions:
+      type: object
+      properties:
+        id:
+          type: string
+        pagination_direction:
+          type: string
+          enum:
+            - ASC
+            - DESC
+          nullable: true
+        audio_reconstructions_page:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReturnChatAudioReconstruction'
+        page_number:
+          type: integer
+        page_size:
+          type: integer
+        total_pages:
+          type: integer
+
+paths:
+  /v0/batch/jobs:
+    get:
+      operationId: listBatchJobs
+      summary: List batch jobs
+      description: List all batch inference jobs
+      tags: [Batch]
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [QUEUED, IN_PROGRESS, COMPLETED, FAILED]
+            nullable: true
+        - name: when
+          in: query
+          schema:
+            type: integer
+            format: int64
+            nullable: true
+        - name: timestamp_ms
+          in: query
+          schema:
+            type: integer
+            format: int64
+            nullable: true
+        - name: sort_by
+          in: query
+          schema:
+            type: string
+            enum: [created]
+            nullable: true
+        - name: direction
+          in: query
+          schema:
+            type: string
+            enum: [asc, desc]
+            nullable: true
+      responses:
+        '200':
+          description: List of batch jobs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/InferenceJob'
+    post:
+      operationId: startBatchInferenceJob
+      summary: Start a batch inference job
+      description: Submit media URLs or text for emotion analysis
+      tags: [Batch]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InferenceBaseRequest'
+      responses:
+        '200':
+          description: Job created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobId'
+
+  /v0/batch/jobs/{id}:
+    get:
+      operationId: getBatchJobDetails
+      summary: Get batch job details
+      tags: [Batch]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Job details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InferenceJob'
+
+  /v0/batch/jobs/{id}/predictions:
+    get:
+      operationId: getBatchJobPredictions
+      summary: Get batch job predictions
+      tags: [Batch]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Prediction results
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/InferenceSourcePredictResult'
+
+  /v0/batch/jobs/{id}/artifacts:
+    get:
+      operationId: getBatchJobArtifacts
+      summary: Get batch job artifacts
+      tags: [Batch]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Job artifacts
+          content:
+            application/zip:
+              schema:
+                type: string
+                format: binary
+
+  /v0/tts:
+    post:
+      operationId: synthesizeJson
+      summary: Synthesize speech (JSON)
+      tags: [TTS]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostedTts'
+      responses:
+        '200':
+          description: Synthesized audio in JSON
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnTts'
+
+  /v0/tts/file:
+    post:
+      operationId: synthesizeFile
+      summary: Synthesize speech (file)
+      tags: [TTS]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostedTts'
+      responses:
+        '200':
+          description: Synthesized audio file
+          content:
+            audio/mpeg:
+              schema:
+                type: string
+                format: binary
+
+  /v0/tts/stream/json:
+    post:
+      operationId: synthesizeJsonStreaming
+      summary: Synthesize speech streaming (JSON)
+      tags: [TTS]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostedTts'
+      responses:
+        '200':
+          description: Streaming JSON audio
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnTts'
+
+  /v0/tts/stream/file:
+    post:
+      operationId: synthesizeFileStreaming
+      summary: Synthesize speech streaming (file)
+      tags: [TTS]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostedTts'
+      responses:
+        '200':
+          description: Streaming audio file
+          content:
+            audio/mpeg:
+              schema:
+                type: string
+                format: binary
+
+  /v0/tts/voice_conversion/json:
+    post:
+      operationId: convertVoiceJson
+      summary: Convert voice (JSON)
+      tags: [TTS]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConvertVoiceJsonRequest'
+      responses:
+        '200':
+          description: Voice conversion result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnTts'
+
+  /v0/tts/voice_conversion/file:
+    post:
+      operationId: convertVoiceFile
+      summary: Convert voice (file)
+      tags: [TTS]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConvertVoiceJsonRequest'
+      responses:
+        '200':
+          description: Voice conversion audio file
+          content:
+            audio/mpeg:
+              schema:
+                type: string
+                format: binary
+
+  /v0/tts/voices:
+    get:
+      operationId: listVoices
+      summary: List TTS voices
+      tags: [Voices]
+      parameters:
+        - name: page_number
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: provider
+          in: query
+          schema:
+            type: string
+            enum: [HUME_AI, CUSTOM]
+            nullable: true
+        - name: name
+          in: query
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: List of voices
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnPagedVoices'
+    post:
+      operationId: createVoice
+      summary: Create a custom voice
+      tags: [Voices]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostedVoice'
+      responses:
+        '200':
+          description: Created voice
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnVoice'
+    delete:
+      operationId: deleteVoice
+      summary: Delete a custom voice
+      tags: [Voices]
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Voice deleted
+
+  /v0/evi/configs:
+    get:
+      operationId: listConfigs
+      summary: List EVI configs
+      tags: [Configs]
+      parameters:
+        - name: page_number
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: restrict_to_most_recent
+          in: query
+          schema:
+            type: boolean
+            nullable: true
+        - name: name
+          in: query
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: List of configs
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnPagedConfigs'
+    post:
+      operationId: createConfig
+      summary: Create an EVI config
+      tags: [Configs]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostedConfig'
+      responses:
+        '200':
+          description: Created config
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnConfig'
+
+  /v0/evi/configs/{id}:
+    get:
+      operationId: listConfigVersions
+      summary: List config versions
+      tags: [Configs]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: page_number
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: restrict_to_most_recent
+          in: query
+          schema:
+            type: boolean
+            nullable: true
+      responses:
+        '200':
+          description: Config versions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnPagedConfigs'
+    post:
+      operationId: createConfigVersion
+      summary: Create a config version
+      tags: [Configs]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostedConfigVersion'
+      responses:
+        '200':
+          description: Created config version
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnConfig'
+    delete:
+      operationId: deleteConfig
+      summary: Delete an EVI config
+      tags: [Configs]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Config deleted
+    patch:
+      operationId: updateConfigName
+      summary: Update config name
+      tags: [Configs]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostedConfigName'
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema:
+                type: string
+
+  /v0/evi/configs/{id}/version/{version}:
+    get:
+      operationId: getConfigVersion
+      summary: Get a config version
+      tags: [Configs]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Config version
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnConfig'
+    delete:
+      operationId: deleteConfigVersion
+      summary: Delete a config version
+      tags: [Configs]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Config version deleted
+    patch:
+      operationId: updateConfigDescription
+      summary: Update config version description
+      tags: [Configs]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostedConfigVersionDescription'
+      responses:
+        '200':
+          description: Updated config
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnConfig'
+
+  /v0/evi/prompts:
+    get:
+      operationId: listPrompts
+      summary: List EVI prompts
+      tags: [Prompts]
+      parameters:
+        - name: page_number
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: restrict_to_most_recent
+          in: query
+          schema:
+            type: boolean
+            nullable: true
+        - name: name
+          in: query
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: List of prompts
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnPagedPrompts'
+    post:
+      operationId: createPrompt
+      summary: Create an EVI prompt
+      tags: [Prompts]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostedPrompt'
+      responses:
+        '200':
+          description: Created prompt
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnPrompt'
+
+  /v0/evi/prompts/{id}:
+    get:
+      operationId: listPromptVersions
+      summary: List prompt versions
+      tags: [Prompts]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: page_number
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: restrict_to_most_recent
+          in: query
+          schema:
+            type: boolean
+            nullable: true
+      responses:
+        '200':
+          description: Prompt versions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnPagedPrompts'
+    post:
+      operationId: createPromptVersion
+      summary: Create a prompt version
+      tags: [Prompts]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostedPromptVersion'
+      responses:
+        '200':
+          description: Created prompt version
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnPrompt'
+    delete:
+      operationId: deletePrompt
+      summary: Delete a prompt
+      tags: [Prompts]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Prompt deleted
+    patch:
+      operationId: updatePromptName
+      summary: Update prompt name
+      tags: [Prompts]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostedPromptName'
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema:
+                type: string
+
+  /v0/evi/prompts/{id}/version/{version}:
+    get:
+      operationId: getPromptVersion
+      summary: Get a prompt version
+      tags: [Prompts]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Prompt version
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnPrompt'
+    delete:
+      operationId: deletePromptVersion
+      summary: Delete a prompt version
+      tags: [Prompts]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Prompt version deleted
+    patch:
+      operationId: updatePromptDescription
+      summary: Update prompt version description
+      tags: [Prompts]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostedPromptVersionDescription'
+      responses:
+        '200':
+          description: Updated prompt
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnPrompt'
+
+  /v0/evi/tools:
+    get:
+      operationId: listEviTools
+      summary: List EVI tools
+      tags: [EviTools]
+      parameters:
+        - name: page_number
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: restrict_to_most_recent
+          in: query
+          schema:
+            type: boolean
+            nullable: true
+        - name: name
+          in: query
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: List of tools
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnPagedUserDefinedTools'
+    post:
+      operationId: createEviTool
+      summary: Create an EVI tool
+      tags: [EviTools]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostedUserDefinedTool'
+      responses:
+        '200':
+          description: Created tool
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnUserDefinedTool'
+
+  /v0/evi/tools/{id}:
+    get:
+      operationId: listEviToolVersions
+      summary: List EVI tool versions
+      tags: [EviTools]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: page_number
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: restrict_to_most_recent
+          in: query
+          schema:
+            type: boolean
+            nullable: true
+      responses:
+        '200':
+          description: Tool versions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnPagedUserDefinedTools'
+    post:
+      operationId: createEviToolVersion
+      summary: Create an EVI tool version
+      tags: [EviTools]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostedUserDefinedToolVersion'
+      responses:
+        '200':
+          description: Created tool version
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnUserDefinedTool'
+    delete:
+      operationId: deleteEviTool
+      summary: Delete an EVI tool
+      tags: [EviTools]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Tool deleted
+    patch:
+      operationId: updateEviToolName
+      summary: Update EVI tool name
+      tags: [EviTools]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostedUserDefinedToolName'
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema:
+                type: string
+
+  /v0/evi/tools/{id}/version/{version}:
+    get:
+      operationId: getEviToolVersion
+      summary: Get an EVI tool version
+      tags: [EviTools]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Tool version
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnUserDefinedTool'
+    delete:
+      operationId: deleteEviToolVersion
+      summary: Delete an EVI tool version
+      tags: [EviTools]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Tool version deleted
+    patch:
+      operationId: updateEviToolDescription
+      summary: Update EVI tool description
+      tags: [EviTools]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostedUserDefinedToolVersionDescription'
+      responses:
+        '200':
+          description: Updated tool
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnUserDefinedTool'
+
+  /v0/evi/chats:
+    get:
+      operationId: listChats
+      summary: List EVI chats
+      tags: [Chats]
+      parameters:
+        - name: page_number
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: ascending_order
+          in: query
+          schema:
+            type: boolean
+            nullable: true
+        - name: config_id
+          in: query
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: List of chats
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnPagedChats'
+
+  /v0/evi/chats/{id}:
+    get:
+      operationId: listChatEvents
+      summary: List chat events
+      tags: [Chats]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: page_number
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: ascending_order
+          in: query
+          schema:
+            type: boolean
+            nullable: true
+      responses:
+        '200':
+          description: Chat events
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnChatPagedEvents'
+
+  /v0/evi/chats/{id}/audio:
+    get:
+      operationId: getChatAudio
+      summary: Get chat audio
+      tags: [Chats]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Chat audio reconstruction
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnChatAudioReconstruction'
+
+  /v0/evi/chat_groups:
+    get:
+      operationId: listChatGroups
+      summary: List chat groups
+      tags: [ChatGroups]
+      parameters:
+        - name: page_number
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: ascending_order
+          in: query
+          schema:
+            type: boolean
+            nullable: true
+        - name: config_id
+          in: query
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: List of chat groups
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnPagedChatGroups'
+
+  /v0/evi/chat_groups/{id}:
+    get:
+      operationId: getChatGroup
+      summary: Get a chat group
+      tags: [ChatGroups]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: page_number
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: ascending_order
+          in: query
+          schema:
+            type: boolean
+            nullable: true
+      responses:
+        '200':
+          description: Chat group
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnChatGroupPagedChats'
+
+  /v0/evi/chat_groups/{id}/events:
+    get:
+      operationId: listChatGroupEvents
+      summary: List chat group events
+      tags: [ChatGroups]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: page_number
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: ascending_order
+          in: query
+          schema:
+            type: boolean
+            nullable: true
+      responses:
+        '200':
+          description: Chat group events
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnChatGroupPagedEvents'
+
+  /v0/evi/chat_groups/{id}/audio:
+    get:
+      operationId: getChatGroupAudio
+      summary: Get chat group audio
+      tags: [ChatGroups]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: page_number
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+            nullable: true
+        - name: ascending_order
+          in: query
+          schema:
+            type: boolean
+            nullable: true
+      responses:
+        '200':
+          description: Chat group audio
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnChatGroupPagedAudioReconstructions'

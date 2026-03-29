@@ -1,0 +1,1195 @@
+openapi: 3.0.1
+info:
+  title: Sarvam AI API
+  description: |
+    Indian language AI platform providing speech-to-text, text-to-speech, translation,
+    transliteration, and language detection for 22+ Indian languages.
+  version: '1.0.0'
+  contact:
+    name: Sarvam AI
+    url: https://sarvam.ai
+servers:
+  - url: https://api.sarvam.ai
+    description: Production server
+security:
+  - BearerAuth: []
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+  schemas:
+    # ── Common ────────────────────────────────────────────────────────
+    ErrorDetail:
+      type: object
+      properties:
+        request_id:
+          type: string
+          nullable: true
+          description: Unique request identifier
+        message:
+          type: string
+          description: Error description
+        code:
+          type: string
+          description: Error code
+          enum:
+            - invalid_request_error
+            - internal_server_error
+            - unprocessable_entity_error
+            - insufficient_quota_error
+            - invalid_api_key_error
+            - authentication_error
+            - not_found_error
+            - rate_limit_exceeded_error
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/ErrorDetail'
+
+    # ── Translation ───────────────────────────────────────────────────
+    TranslateRequest:
+      type: object
+      required:
+        - input
+        - source_language_code
+        - target_language_code
+      properties:
+        input:
+          type: string
+          description: Text to translate (max 1000 chars for mayura:v1, 2000 for sarvam-translate:v1)
+        source_language_code:
+          type: string
+          description: 'Source language code (BCP-47) or "auto" for automatic detection with mayura:v1'
+          enum:
+            - auto
+            - bn-IN
+            - en-IN
+            - gu-IN
+            - hi-IN
+            - kn-IN
+            - ml-IN
+            - mr-IN
+            - od-IN
+            - pa-IN
+            - ta-IN
+            - te-IN
+            - as-IN
+            - brx-IN
+            - doi-IN
+            - kok-IN
+            - ks-IN
+            - mai-IN
+            - mni-IN
+            - ne-IN
+            - sa-IN
+            - sat-IN
+            - sd-IN
+            - ur-IN
+        target_language_code:
+          type: string
+          description: Target language code (BCP-47)
+          enum:
+            - bn-IN
+            - en-IN
+            - gu-IN
+            - hi-IN
+            - kn-IN
+            - ml-IN
+            - mr-IN
+            - od-IN
+            - pa-IN
+            - ta-IN
+            - te-IN
+            - as-IN
+            - brx-IN
+            - doi-IN
+            - kok-IN
+            - ks-IN
+            - mai-IN
+            - mni-IN
+            - ne-IN
+            - sa-IN
+            - sat-IN
+            - sd-IN
+            - ur-IN
+        speaker_gender:
+          type: string
+          description: Gender of the speaker for better translations
+          enum:
+            - Male
+            - Female
+        mode:
+          type: string
+          description: Tone or style of the translation
+          default: formal
+          enum:
+            - formal
+            - modern-colloquial
+            - classic-colloquial
+            - code-mixed
+        model:
+          type: string
+          description: Translation model to use
+          enum:
+            - mayura:v1
+            - sarvam-translate:v1
+        output_script:
+          type: string
+          nullable: true
+          description: Controls transliteration style applied to the output text
+          enum:
+            - roman
+            - fully-native
+            - spoken-form-in-native
+        numerals_format:
+          type: string
+          description: Format of numerals in the output
+          default: international
+          enum:
+            - international
+            - native
+
+    TranslateResponse:
+      type: object
+      properties:
+        request_id:
+          type: string
+          nullable: true
+          description: Unique request identifier
+        translated_text:
+          type: string
+          description: Translated text in the target language
+        source_language_code:
+          type: string
+          description: Detected or provided source language code
+
+    # ── Transliteration ───────────────────────────────────────────────
+    TransliterateRequest:
+      type: object
+      required:
+        - input
+        - source_language_code
+        - target_language_code
+      properties:
+        input:
+          type: string
+          description: Text to transliterate (max 1000 characters)
+        source_language_code:
+          type: string
+          description: Source language code (BCP-47) or "auto"
+          enum:
+            - auto
+            - en-IN
+            - hi-IN
+            - bn-IN
+            - gu-IN
+            - kn-IN
+            - ml-IN
+            - mr-IN
+            - od-IN
+            - pa-IN
+            - ta-IN
+            - te-IN
+        target_language_code:
+          type: string
+          description: Target language code (BCP-47)
+          enum:
+            - en-IN
+            - hi-IN
+            - bn-IN
+            - gu-IN
+            - kn-IN
+            - ml-IN
+            - mr-IN
+            - od-IN
+            - pa-IN
+            - ta-IN
+            - te-IN
+        numerals_format:
+          type: string
+          description: Format of numerals in the output
+          default: international
+          enum:
+            - international
+            - native
+        spoken_form:
+          type: boolean
+          description: Whether to convert text into a natural spoken form
+          default: false
+        spoken_form_numerals_language:
+          type: string
+          description: Language for spoken form numerals (only applies when spoken_form is true)
+          default: native
+          enum:
+            - english
+            - native
+
+    TransliterateResponse:
+      type: object
+      properties:
+        request_id:
+          type: string
+          nullable: true
+          description: Unique request identifier
+        transliterated_text:
+          type: string
+          description: Transliterated text in the target language script
+        source_language_code:
+          type: string
+          description: Detected or provided source language code
+
+    # ── Language Detection ────────────────────────────────────────────
+    DetectLanguageRequest:
+      type: object
+      required:
+        - input
+      properties:
+        input:
+          type: string
+          description: Text for language and script identification (max 1000 characters)
+
+    DetectLanguageResponse:
+      type: object
+      properties:
+        request_id:
+          type: string
+          nullable: true
+          description: Unique request identifier
+        language_code:
+          type: string
+          nullable: true
+          description: Detected language code (BCP-47)
+        script_code:
+          type: string
+          nullable: true
+          description: 'Detected script code (e.g., Latn, Deva, Beng, Gujr, Knda, Mlym, Orya, Guru, Taml, Telu)'
+
+    # ── Text-to-Speech ────────────────────────────────────────────────
+    TextToSpeechRequest:
+      type: object
+      required:
+        - text
+        - target_language_code
+      properties:
+        text:
+          type: string
+          description: Text to convert to speech (max 2500 chars for v3, 1500 for v2). Supports code-mixed text.
+        target_language_code:
+          type: string
+          description: Language code (BCP-47) for text normalization
+          enum:
+            - bn-IN
+            - en-IN
+            - gu-IN
+            - hi-IN
+            - kn-IN
+            - ml-IN
+            - mr-IN
+            - od-IN
+            - pa-IN
+            - ta-IN
+            - te-IN
+        model:
+          type: string
+          description: TTS model to use
+          default: 'bulbul:v3'
+          enum:
+            - 'bulbul:v2'
+            - 'bulbul:v3'
+        speaker:
+          type: string
+          description: 'Speaker voice (default: shubh for v3, anushka for v2)'
+          enum:
+            - shubh
+            - aditya
+            - ritu
+            - priya
+            - neha
+            - rahul
+            - pooja
+            - rohan
+            - simran
+            - kavya
+            - amit
+            - dev
+            - ishita
+            - shreya
+            - ratan
+            - varun
+            - manan
+            - sumit
+            - roopa
+            - kabir
+            - aayan
+            - ashutosh
+            - advait
+            - amelia
+            - sophia
+            - anand
+            - tanya
+            - tarun
+            - sunny
+            - mani
+            - gokul
+            - vijay
+            - shruti
+            - suhani
+            - mohit
+            - kavitha
+            - rehan
+            - soham
+            - rupali
+            - anushka
+        pitch:
+          type: number
+          description: 'Pitch adjustment (-0.75 to 0.75). v2 only.'
+          default: 0
+        pace:
+          type: number
+          description: 'Speech speed (v3: 0.5-2.0, v2: 0.3-3.0)'
+          default: 1.0
+        loudness:
+          type: number
+          description: 'Loudness (0.3-3.0). v2 only.'
+          default: 1.0
+        temperature:
+          type: number
+          description: 'Randomness/expressiveness (0.01-2.0). v3 only.'
+          default: 0.6
+        speech_sample_rate:
+          type: string
+          description: Audio sample rate in Hz
+          default: '24000'
+          enum:
+            - '8000'
+            - '16000'
+            - '22050'
+            - '24000'
+            - '32000'
+            - '44100'
+            - '48000'
+        output_audio_codec:
+          type: string
+          description: Output audio format
+          enum:
+            - mp3
+            - linear16
+            - mulaw
+            - alaw
+            - opus
+            - flac
+            - aac
+            - wav
+        enable_preprocessing:
+          type: boolean
+          description: 'Enable preprocessing. v2 only.'
+          default: false
+        dict_id:
+          type: string
+          description: 'Custom pronunciation dictionary ID. v3 only.'
+
+    TextToSpeechResponse:
+      type: object
+      properties:
+        request_id:
+          type: string
+          nullable: true
+          description: Unique request identifier
+        audios:
+          type: array
+          items:
+            type: string
+          description: Base64-encoded audio files
+
+    # ── Speech-to-Text ────────────────────────────────────────────────
+    SpeechToTextResponse:
+      type: object
+      properties:
+        request_id:
+          type: string
+          nullable: true
+          description: Unique request identifier
+        transcript:
+          type: string
+          description: Transcribed text from audio
+        timestamps:
+          type: object
+          nullable: true
+          description: Word-level timing data
+        diarized_transcript:
+          type: object
+          nullable: true
+          description: Speaker-identified transcript segments
+        language_code:
+          type: string
+          nullable: true
+          description: Detected language code (BCP-47)
+        language_probability:
+          type: number
+          nullable: true
+          description: Confidence score (0.0-1.0) for detected language
+
+    # ── Chat Completions ─────────────────────────────────────────────
+    ChatCompletionMessage:
+      type: object
+      required:
+        - role
+        - content
+      properties:
+        role:
+          type: string
+          description: The role of the message author
+          enum:
+            - system
+            - user
+            - assistant
+            - tool
+        content:
+          type: string
+          nullable: true
+          description: The content of the message
+        tool_calls:
+          type: array
+          nullable: true
+          description: Tool calls generated by the model
+          items:
+            $ref: '#/components/schemas/ChatCompletionToolCall'
+        tool_call_id:
+          type: string
+          nullable: true
+          description: Tool call ID (required for tool role)
+
+    ChatCompletionToolCall:
+      type: object
+      required:
+        - id
+        - type
+        - function
+      properties:
+        id:
+          type: string
+          description: Unique ID for this tool call
+        type:
+          type: string
+          description: The type of tool call
+          enum:
+            - function
+        function:
+          $ref: '#/components/schemas/ChatCompletionToolCallFunction'
+
+    ChatCompletionToolCallFunction:
+      type: object
+      required:
+        - name
+        - arguments
+      properties:
+        name:
+          type: string
+          description: The name of the function to call
+        arguments:
+          type: string
+          description: JSON-encoded arguments for the function
+
+    ChatCompletionTool:
+      type: object
+      required:
+        - type
+        - function
+      properties:
+        type:
+          type: string
+          description: The type of tool
+          enum:
+            - function
+        function:
+          $ref: '#/components/schemas/ChatCompletionToolFunction'
+
+    ChatCompletionToolFunction:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          description: The name of the function
+        description:
+          type: string
+          description: A description of what the function does
+        parameters:
+          type: object
+          description: JSON Schema describing the function parameters
+          additionalProperties: true
+
+    ChatCompletionRequest:
+      type: object
+      required:
+        - model
+        - messages
+      properties:
+        model:
+          type: string
+          description: Model ID to use for completion
+          enum:
+            - sarvam-105b
+            - sarvam-105b-32k
+            - sarvam-30b
+            - sarvam-30b-16k
+            - sarvam-m
+        messages:
+          type: array
+          description: List of messages in the conversation
+          items:
+            $ref: '#/components/schemas/ChatCompletionMessage'
+        temperature:
+          type: number
+          description: 'Sampling temperature (0-2). Default: 0.2'
+          default: 0.2
+        top_p:
+          type: number
+          description: 'Nucleus sampling parameter. Default: 1.0'
+          default: 1.0
+        max_tokens:
+          type: integer
+          description: Maximum number of tokens to generate
+        stream:
+          type: boolean
+          description: Whether to stream the response via SSE
+          default: false
+        stop:
+          type: array
+          items:
+            type: string
+          description: Up to 4 stop sequences
+        n:
+          type: integer
+          description: Number of completion choices to generate
+          default: 1
+        seed:
+          type: integer
+          description: Seed for deterministic sampling (beta)
+        frequency_penalty:
+          type: number
+          description: 'Frequency penalty (-2.0 to 2.0). Default: 0'
+          default: 0
+        presence_penalty:
+          type: number
+          description: 'Presence penalty (-2.0 to 2.0). Default: 0'
+          default: 0
+        reasoning_effort:
+          type: string
+          description: Level of reasoning effort
+          enum:
+            - low
+            - medium
+            - high
+        wiki_grounding:
+          type: boolean
+          description: Enable Wikipedia-based grounding
+          default: false
+        tools:
+          type: array
+          description: List of tools the model may call
+          items:
+            $ref: '#/components/schemas/ChatCompletionTool'
+        tool_choice:
+          type: string
+          description: 'Controls tool invocation: none, auto, required'
+          enum:
+            - none
+            - auto
+            - required
+
+    ChatCompletionChoice:
+      type: object
+      properties:
+        index:
+          type: integer
+          description: Index of this choice
+        message:
+          $ref: '#/components/schemas/ChatCompletionMessage'
+        finish_reason:
+          type: string
+          description: Reason the model stopped generating
+          enum:
+            - stop
+            - length
+            - tool_calls
+            - content_filter
+
+    ChatCompletionUsage:
+      type: object
+      properties:
+        prompt_tokens:
+          type: integer
+          description: Number of tokens in the prompt
+        completion_tokens:
+          type: integer
+          description: Number of tokens in the completion
+        total_tokens:
+          type: integer
+          description: Total tokens used
+
+    ChatCompletionResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique completion identifier
+        object:
+          type: string
+          description: Object type (always "chat.completion")
+        created:
+          type: integer
+          description: Unix timestamp of creation
+        model:
+          type: string
+          description: Model used for the completion
+        choices:
+          type: array
+          description: List of completion choices
+          items:
+            $ref: '#/components/schemas/ChatCompletionChoice'
+        usage:
+          $ref: '#/components/schemas/ChatCompletionUsage'
+
+    # ── Speech-to-Text-Translate ──────────────────────────────────────
+    SpeechToTextTranslateResponse:
+      type: object
+      properties:
+        request_id:
+          type: string
+          nullable: true
+          description: Unique request identifier
+        transcript:
+          type: string
+          description: Translated text in English
+        language_code:
+          type: string
+          nullable: true
+          description: Detected source language code (BCP-47)
+
+paths:
+  /v1/chat/completions:
+    post:
+      operationId: createChatCompletion
+      summary: Create a chat completion
+      description: |
+        Generates a model response for the given conversation. Supports Sarvam's
+        Indian language LLMs including Sarvam-105B, Sarvam-30B, and Sarvam-M.
+        Supports tool calling, streaming, and reasoning effort control.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatCompletionRequest'
+      responses:
+        '200':
+          description: Chat completion response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatCompletionResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Quota exceeded / rate limited
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /translate:
+    post:
+      operationId: translateText
+      summary: Translate text between languages
+      description: |
+        Translates text from one language to another. Supports 22+ Indian languages
+        plus English with options for formal, colloquial, and code-mixed styles.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TranslateRequest'
+      responses:
+        '200':
+          description: Successful translation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TranslateResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Quota exceeded / rate limited
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /transliterate:
+    post:
+      operationId: transliterateText
+      summary: Transliterate text between scripts
+      description: |
+        Converts text from one script to another while maintaining the same language.
+        Supports transliteration between Indic scripts and Roman script.
+        Max 1000 characters per request.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransliterateRequest'
+      responses:
+        '200':
+          description: Successful transliteration
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransliterateResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Quota exceeded / rate limited
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /text-lid:
+    post:
+      operationId: detectLanguage
+      summary: Detect language and script
+      description: |
+        Identifies the language and script of input text.
+        Max 1000 characters per request.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DetectLanguageRequest'
+      responses:
+        '200':
+          description: Language detected
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DetectLanguageResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Quota exceeded / rate limited
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /text-to-speech:
+    post:
+      operationId: convertTextToSpeech
+      summary: Convert text to speech
+      description: |
+        Converts text to natural speech using the Bulbul model.
+        Supports 10 Indian languages plus English with 30+ speaker voices.
+        Max 2500 characters per request (v3).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TextToSpeechRequest'
+      responses:
+        '200':
+          description: Audio generated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TextToSpeechResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Quota exceeded / rate limited
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /speech-to-text:
+    post:
+      operationId: transcribeSpeech
+      summary: Transcribe speech to text
+      description: |
+        Converts spoken language into written text. Supports multiple modes
+        including transcribe, translate, verbatim, translit, and codemix.
+        Audio files up to 30 seconds for synchronous processing.
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: 'Audio file (WAV, MP3, AAC, AIFF, OGG, OPUS, FLAC, MP4/M4A, AMR, WMA, WebM, PCM)'
+                model:
+                  type: string
+                  description: Speech-to-text model
+                  default: 'saarika:v2.5'
+                  enum:
+                    - 'saarika:v2.5'
+                    - 'saaras:v3'
+                mode:
+                  type: string
+                  description: 'Operation mode (saaras:v3 only)'
+                  default: transcribe
+                  enum:
+                    - transcribe
+                    - translate
+                    - verbatim
+                    - translit
+                    - codemix
+                language_code:
+                  type: string
+                  description: 'Language of the audio (BCP-47). Optional for saarika:v2.5.'
+                  enum:
+                    - unknown
+                    - hi-IN
+                    - bn-IN
+                    - kn-IN
+                    - ml-IN
+                    - mr-IN
+                    - od-IN
+                    - pa-IN
+                    - ta-IN
+                    - te-IN
+                    - en-IN
+                    - gu-IN
+                    - as-IN
+                    - ur-IN
+                    - ne-IN
+                    - kok-IN
+                    - ks-IN
+                    - sd-IN
+                    - sa-IN
+                    - sat-IN
+                    - mni-IN
+                    - brx-IN
+                    - mai-IN
+                    - doi-IN
+                input_audio_codec:
+                  type: string
+                  description: Required for PCM format files
+                  enum:
+                    - wav
+                    - x-wav
+                    - wave
+                    - mp3
+                    - mpeg
+                    - mpeg3
+                    - x-mp3
+                    - x-mpeg-3
+                    - aac
+                    - x-aac
+                    - aiff
+                    - x-aiff
+                    - ogg
+                    - opus
+                    - flac
+                    - x-flac
+                    - mp4
+                    - x-m4a
+                    - amr
+                    - x-ms-wma
+                    - webm
+                    - pcm_s16le
+                    - pcm_l16
+                    - pcm_raw
+      responses:
+        '200':
+          description: Transcription result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpeechToTextResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Quota exceeded / rate limited
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '503':
+          description: Service overloaded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /speech-to-text-translate:
+    post:
+      operationId: translateSpeech
+      summary: Transcribe and translate speech to English
+      description: |
+        Combines speech recognition and translation in a single step.
+        Converts spoken Indian language directly into English text.
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: 'Audio file (WAV, MP3, AAC, AIFF, OGG, OPUS, FLAC, MP4/M4A, AMR, WMA, WebM, PCM)'
+                model:
+                  type: string
+                  description: Speech-to-text model
+                  default: 'saaras:v3'
+                  enum:
+                    - 'saaras:v3'
+                language_code:
+                  type: string
+                  description: Language of the audio (BCP-47)
+                  enum:
+                    - unknown
+                    - hi-IN
+                    - bn-IN
+                    - kn-IN
+                    - ml-IN
+                    - mr-IN
+                    - od-IN
+                    - pa-IN
+                    - ta-IN
+                    - te-IN
+                    - en-IN
+                    - gu-IN
+                    - as-IN
+                    - ur-IN
+                    - ne-IN
+                    - kok-IN
+                    - ks-IN
+                    - sd-IN
+                    - sa-IN
+                    - sat-IN
+                    - mni-IN
+                    - brx-IN
+                    - mai-IN
+                    - doi-IN
+                input_audio_codec:
+                  type: string
+                  description: Required for PCM format files
+                  enum:
+                    - wav
+                    - x-wav
+                    - wave
+                    - mp3
+                    - mpeg
+                    - mpeg3
+                    - x-mp3
+                    - x-mpeg-3
+                    - aac
+                    - x-aac
+                    - aiff
+                    - x-aiff
+                    - ogg
+                    - opus
+                    - flac
+                    - x-flac
+                    - mp4
+                    - x-m4a
+                    - amr
+                    - x-ms-wma
+                    - webm
+                    - pcm_s16le
+                    - pcm_l16
+                    - pcm_raw
+      responses:
+        '200':
+          description: Translation result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpeechToTextTranslateResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Quota exceeded / rate limited
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '503':
+          description: Service overloaded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'

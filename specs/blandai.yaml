@@ -1,0 +1,1491 @@
+openapi: 3.0.3
+info:
+  title: Bland AI API
+  description: >-
+    Bland AI is an enterprise-grade platform for AI-powered phone calls.
+    It enables sending outbound calls, receiving inbound calls, managing
+    conversational pathways, batch calling, voice selection, and post-call
+    analysis.
+  version: "1.0.0"
+  contact:
+    name: Bland AI
+    url: https://bland.ai
+  termsOfService: https://bland.ai/terms
+
+servers:
+  - url: https://api.bland.ai
+    description: Production API
+
+security:
+  - BearerAuth: []
+
+tags:
+  - name: Calls
+    description: Send, manage, and analyze AI phone calls
+  - name: Batches
+    description: Create and manage batch call campaigns
+  - name: Pathways
+    description: Conversational pathway CRUD operations
+  - name: Numbers
+    description: Phone number management (inbound/outbound)
+  - name: Voices
+    description: Voice listing and management
+  - name: Account
+    description: Account information and billing
+
+paths:
+  # ============================================================
+  # CALLS
+  # ============================================================
+  /v1/calls:
+    post:
+      operationId: sendCall
+      summary: Send Call
+      description: >-
+        Send an AI phone call with a custom objective and actions.
+        Requires either a `task` (prompt) or `pathway_id`.
+      tags: [Calls]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SendCallRequest'
+      responses:
+        '200':
+          description: Call successfully queued
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SendCallResponse'
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Authentication failure
+        '402':
+          description: Billing issue (insufficient balance)
+
+    get:
+      operationId: listCalls
+      summary: List Calls
+      description: Returns metadata for calls dispatched by your account.
+      tags: [Calls]
+      parameters:
+        - name: from_number
+          in: query
+          description: Filter by originating phone number
+          schema:
+            type: string
+        - name: to_number
+          in: query
+          description: Filter by destination phone number
+          schema:
+            type: string
+        - name: from
+          in: query
+          description: Starting index (inclusive) for pagination
+          schema:
+            type: integer
+        - name: to
+          in: query
+          description: Ending index (exclusive) for pagination
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: Maximum number of calls to return (default 1000)
+          schema:
+            type: integer
+            default: 1000
+        - name: ascending
+          in: query
+          description: Sort calls chronologically ascending
+          schema:
+            type: boolean
+            default: false
+        - name: sort_by
+          in: query
+          description: Sort field
+          schema:
+            type: string
+            enum: [created_at, updated_at]
+            default: created_at
+        - name: start_date
+          in: query
+          description: Retrieve calls on or after this date (YYYY-MM-DD or ISO 8601)
+          schema:
+            type: string
+        - name: end_date
+          in: query
+          description: Retrieve calls on or before this date (YYYY-MM-DD or ISO 8601)
+          schema:
+            type: string
+        - name: completed
+          in: query
+          description: Filter by completion status
+          schema:
+            type: boolean
+        - name: batch_id
+          in: query
+          description: Retrieve calls from a specific batch
+          schema:
+            type: string
+        - name: answered_by
+          in: query
+          description: Filter by answer type (e.g. "human", "voicemail")
+          schema:
+            type: string
+        - name: inbound
+          in: query
+          description: Filter inbound (true) or outbound (false) calls
+          schema:
+            type: boolean
+        - name: campaign_id
+          in: query
+          description: Retrieve calls for a specific campaign
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of calls
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListCallsResponse'
+
+  /v1/calls/active:
+    get:
+      operationId: listActiveCalls
+      summary: List Active Calls
+      description: Returns all currently active calls for your account.
+      tags: [Calls]
+      responses:
+        '200':
+          description: List of active calls
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ActiveCall'
+                  errors:
+                    type: object
+                    nullable: true
+
+  /v1/calls/active/stop:
+    post:
+      operationId: stopAllActiveCalls
+      summary: Stop All Active Calls
+      description: Terminates all currently active calls for your account.
+      tags: [Calls]
+      responses:
+        '200':
+          description: All active calls stopped
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusResponse'
+
+  /v1/calls/{call_id}:
+    get:
+      operationId: getCallDetails
+      summary: Call Details
+      description: >-
+        Retrieve detailed information, metadata, and transcripts for a specific call.
+      tags: [Calls]
+      parameters:
+        - $ref: '#/components/parameters/CallId'
+      responses:
+        '200':
+          description: Call details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CallDetails'
+
+  /v1/calls/{call_id}/stop:
+    post:
+      operationId: stopCall
+      summary: Stop Active Call
+      description: Terminates a specific active call.
+      tags: [Calls]
+      parameters:
+        - $ref: '#/components/parameters/CallId'
+      responses:
+        '200':
+          description: Call ended
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusResponse'
+
+  /v1/calls/{call_id}/analyze:
+    post:
+      operationId: analyzeCall
+      summary: Analyze Call with AI
+      description: >-
+        Use AI to analyze a completed call's transcript and extract structured answers.
+      tags: [Calls]
+      parameters:
+        - $ref: '#/components/parameters/CallId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnalyzeCallRequest'
+      responses:
+        '200':
+          description: Analysis results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalyzeCallResponse'
+
+  /v1/recordings/{call_id}:
+    get:
+      operationId: getCallRecording
+      summary: Get Call Recording
+      description: Retrieve the audio recording for a completed call.
+      tags: [Calls]
+      parameters:
+        - $ref: '#/components/parameters/CallId'
+        - name: content-type
+          in: header
+          description: Audio format for the recording
+          schema:
+            type: string
+            enum: [audio/mpeg, audio/wav]
+            default: audio/wav
+      responses:
+        '200':
+          description: Audio stream of the recording
+          content:
+            audio/wav:
+              schema:
+                type: string
+                format: binary
+            audio/mpeg:
+              schema:
+                type: string
+                format: binary
+        '404':
+          description: Recording not found
+
+  # ============================================================
+  # BATCHES
+  # ============================================================
+  /v2/batches/create:
+    post:
+      operationId: createBatch
+      summary: Create Batch
+      description: >-
+        Create a batch of AI phone calls. Each call inherits global settings
+        unless overridden per call object.
+      tags: [Batches]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateBatchRequest'
+      responses:
+        '200':
+          description: Batch created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataResponse_BatchId'
+
+  /v2/batches/list:
+    get:
+      operationId: listBatches
+      summary: List Batches
+      description: Retrieve all batches created by your organization.
+      tags: [Batches]
+      parameters:
+        - name: take
+          in: query
+          description: Number of results to return
+          schema:
+            type: integer
+        - name: skip
+          in: query
+          description: Number of results to skip (pagination)
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: List of batches
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataResponse_BatchList'
+
+  /v2/batches/{batch_id}:
+    get:
+      operationId: getBatch
+      summary: Get Batch
+      description: Retrieve metadata for a specific batch.
+      tags: [Batches]
+      parameters:
+        - $ref: '#/components/parameters/BatchId'
+      responses:
+        '200':
+          description: Batch details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataResponse_Batch'
+
+  /v2/batches/{batch_id}/stop:
+    post:
+      operationId: stopBatch
+      summary: Stop Batch
+      description: Halt a batch that is currently running or scheduled.
+      tags: [Batches]
+      parameters:
+        - $ref: '#/components/parameters/BatchId'
+      responses:
+        '200':
+          description: Batch stopped
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataResponse_Null'
+
+  /v2/batches/{batch_id}/logs:
+    get:
+      operationId: getBatchLogs
+      summary: Get Batch Logs
+      description: Retrieve lifecycle and event logs for a specific batch.
+      tags: [Batches]
+      parameters:
+        - $ref: '#/components/parameters/BatchId'
+      responses:
+        '200':
+          description: Batch logs
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataResponse_BatchLogs'
+
+  # ============================================================
+  # PATHWAYS
+  # ============================================================
+  /v1/pathway:
+    get:
+      operationId: listPathways
+      summary: List All Pathways
+      description: >-
+        Retrieve information about all conversational pathways in your account,
+        including name, description, nodes, and edges.
+      tags: [Pathways]
+      responses:
+        '200':
+          description: List of pathways
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pathway'
+
+  /v1/pathway/create:
+    post:
+      operationId: createPathway
+      summary: Create Pathway
+      description: Create a new conversational pathway.
+      tags: [Pathways]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePathwayRequest'
+      responses:
+        '200':
+          description: Pathway created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreatePathwayResponse'
+
+  /v1/pathway/{pathway_id}:
+    get:
+      operationId: getPathway
+      summary: Get Pathway
+      description: >-
+        Retrieve detailed information about a specific conversational pathway,
+        including its nodes and edges.
+      tags: [Pathways]
+      parameters:
+        - $ref: '#/components/parameters/PathwayId'
+      responses:
+        '200':
+          description: Pathway details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pathway'
+
+    post:
+      operationId: updatePathway
+      summary: Update Pathway
+      description: Update a conversational pathway's name, description, nodes, and edges.
+      tags: [Pathways]
+      parameters:
+        - $ref: '#/components/parameters/PathwayId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePathwayRequest'
+      responses:
+        '200':
+          description: Pathway updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusResponse'
+
+    delete:
+      operationId: deletePathway
+      summary: Delete Pathway
+      description: Permanently delete a conversational pathway.
+      tags: [Pathways]
+      parameters:
+        - $ref: '#/components/parameters/PathwayId'
+      responses:
+        '200':
+          description: Pathway deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusResponse'
+
+  # ============================================================
+  # NUMBERS (Inbound)
+  # ============================================================
+  /v1/inbound:
+    get:
+      operationId: listInboundNumbers
+      summary: List Numbers
+      description: >-
+        Retrieve a list of all inbound phone numbers configured for your account,
+        along with their associated settings.
+      tags: [Numbers]
+      responses:
+        '200':
+          description: List of inbound numbers
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListInboundNumbersResponse'
+
+  /v1/inbound/{phone_number}:
+    get:
+      operationId: getInboundNumber
+      summary: Number Details
+      description: Retrieve configuration details for a specific inbound number.
+      tags: [Numbers]
+      parameters:
+        - $ref: '#/components/parameters/PhoneNumber'
+      responses:
+        '200':
+          description: Number details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InboundNumber'
+
+    post:
+      operationId: updateInboundNumber
+      summary: Update Inbound Number
+      description: Update the configuration for an inbound phone number.
+      tags: [Numbers]
+      parameters:
+        - $ref: '#/components/parameters/PhoneNumber'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateInboundNumberRequest'
+      responses:
+        '200':
+          description: Number updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusResponse'
+
+  /numbers/purchase:
+    post:
+      operationId: purchaseNumber
+      summary: Purchase Phone Number
+      description: >-
+        Purchase a new phone number for inbound calls ($15/mo subscription).
+      tags: [Numbers]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PurchaseNumberRequest'
+      responses:
+        '200':
+          description: Number purchased
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusResponse'
+
+  # ============================================================
+  # VOICES
+  # ============================================================
+  /v1/voices:
+    get:
+      operationId: listVoices
+      summary: List Voices
+      description: Retrieve all available voices, including public and custom voices.
+      tags: [Voices]
+      responses:
+        '200':
+          description: List of available voices
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Voice'
+
+  # ============================================================
+  # ACCOUNT
+  # ============================================================
+  /v1/me:
+    get:
+      operationId: getAccountDetails
+      summary: Account Details
+      description: Retrieve your account status, billing information, and total call count.
+      tags: [Account]
+      responses:
+        '200':
+          description: Account details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountDetails'
+
+# ================================================================
+# COMPONENTS
+# ================================================================
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: >-
+        API key obtained from the Bland AI dashboard settings page.
+        Pass as a Bearer token in the Authorization header.
+
+  parameters:
+    CallId:
+      name: call_id
+      in: path
+      required: true
+      description: Unique identifier for the call
+      schema:
+        type: string
+
+    BatchId:
+      name: batch_id
+      in: path
+      required: true
+      description: Unique identifier for the batch
+      schema:
+        type: string
+
+    PathwayId:
+      name: pathway_id
+      in: path
+      required: true
+      description: Unique identifier for the conversational pathway
+      schema:
+        type: string
+
+    PhoneNumber:
+      name: phone_number
+      in: path
+      required: true
+      description: Phone number in E.164 format (e.g. +12223334444)
+      schema:
+        type: string
+
+  schemas:
+    # ----------------------------------------------------------
+    # Request Schemas
+    # ----------------------------------------------------------
+    SendCallRequest:
+      type: object
+      required:
+        - phone_number
+      properties:
+        phone_number:
+          type: string
+          description: Phone number to call in E.164 format
+        task:
+          type: string
+          description: >-
+            Natural language instructions for the AI agent.
+            Required if pathway_id is not provided.
+        pathway_id:
+          type: string
+          description: >-
+            ID of a conversational pathway to follow.
+            Required if task is not provided.
+        pathway_version:
+          type: integer
+          description: Pathway version number to use (default is production version)
+        voice:
+          type: string
+          description: Voice ID or preset name (e.g. Josh, Florian, Derek, June, Nat, Paige)
+        first_sentence:
+          type: string
+          description: Specific opening phrase for the agent
+        persona_id:
+          type: string
+          description: ID of a pre-configured persona template
+        model:
+          type: string
+          description: Model type for the call
+          enum: [base, turbo]
+          default: base
+        language:
+          type: string
+          description: Language code for transcription and speech optimization
+          default: babel-en
+        temperature:
+          type: number
+          format: float
+          description: LLM randomness (0-1)
+          default: 0.7
+          minimum: 0
+          maximum: 1
+        wait_for_greeting:
+          type: boolean
+          description: Agent waits for callee to speak first
+          default: false
+        interruption_threshold:
+          type: integer
+          description: Patience level in ms before responding (lower = quicker response)
+          default: 500
+        from:
+          type: string
+          description: Caller ID number (must own the number)
+        timezone:
+          type: string
+          description: Timezone for the call (IANA format)
+          default: America/Los_Angeles
+        start_time:
+          type: string
+          description: Scheduled time in format YYYY-MM-DD HH:MM:SS -HH:MM
+        max_duration:
+          type: integer
+          description: Maximum call duration in minutes
+          default: 30
+        transfer_phone_number:
+          type: string
+          description: Phone number for transferring to a human
+        transfer_list:
+          type: object
+          description: Multiple transfer routing options keyed by department name
+          additionalProperties:
+            type: string
+        tools:
+          type: array
+          description: Array of custom tool and knowledge base IDs
+          items:
+            type: string
+        request_data:
+          type: object
+          description: Custom variables available in prompts and pathways
+          additionalProperties: true
+        background_track:
+          type: string
+          description: Background audio track
+          enum: [office, cafe, restaurant, "null"]
+          nullable: true
+        noise_cancellation:
+          type: boolean
+          description: Filter background noise
+          default: false
+        block_interruptions:
+          type: boolean
+          description: Prevent agent from processing user interruptions
+          default: false
+        record:
+          type: boolean
+          description: Record the call (access via recording_url)
+          default: false
+        voicemail:
+          $ref: '#/components/schemas/VoicemailConfig'
+        pronunciation_guide:
+          type: array
+          description: Guide pronunciation of specific words
+          items:
+            type: object
+            properties:
+              word:
+                type: string
+              pronunciation:
+                type: string
+        keywords:
+          type: array
+          description: Words boosted in transcription (optional "word:boost" format)
+          items:
+            type: string
+        webhook:
+          type: string
+          format: uri
+          description: HTTPS URL for post-call data delivery
+        webhook_events:
+          type: array
+          description: Event types to stream to webhook
+          items:
+            type: string
+            enum: [queue, call, latency, webhook, tool, dynamic_data, citations]
+        metadata:
+          type: object
+          description: Custom tracking data accessible regardless of call status
+          additionalProperties: true
+        summary_prompt:
+          type: string
+          description: Custom instructions for call summary generation (max 2000 chars)
+          maxLength: 2000
+        dispositions:
+          type: array
+          description: Outcome tags for call classification
+          items:
+            type: string
+        dynamic_data:
+          type: array
+          description: External API data integration configurations
+          items:
+            type: object
+            additionalProperties: true
+        ignore_button_press:
+          type: boolean
+          description: Disable DTMF keypad input
+        precall_dtmf_sequence:
+          type: string
+          description: DTMF digits played before call starts (0-9, *, #, w for pause)
+
+    AnalyzeCallRequest:
+      type: object
+      required:
+        - goal
+        - questions
+      properties:
+        goal:
+          type: string
+          description: Overall purpose of the call, providing context for AI analysis
+        questions:
+          type: array
+          description: >-
+            Array of question-answer pairs. Each entry is [question_text, expected_type].
+          items:
+            type: array
+            items:
+              type: string
+            minItems: 2
+            maxItems: 2
+
+    CreateBatchRequest:
+      type: object
+      required:
+        - call_objects
+        - global
+      properties:
+        call_objects:
+          type: array
+          description: List of individual call objects following the SendCall schema
+          items:
+            type: object
+            required:
+              - phone_number
+            properties:
+              phone_number:
+                type: string
+              task:
+                type: string
+              start_time:
+                type: string
+            additionalProperties: true
+        global:
+          type: object
+          description: >-
+            Global properties applied to all calls unless overridden.
+            Must include at least task or pathway_id. Must NOT include phone_number.
+          additionalProperties: true
+        description:
+          type: string
+          description: Short label for the batch (max 60 chars, shown in dashboard)
+          maxLength: 60
+          default: Untitled Batch
+        status_webhook:
+          type: string
+          format: uri
+          description: URL receiving POST updates at each lifecycle phase
+
+    CreatePathwayRequest:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          description: Name of the conversational pathway
+        description:
+          type: string
+          description: Description of the pathway
+
+    UpdatePathwayRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the pathway
+        description:
+          type: string
+          description: Description of the pathway
+        nodes:
+          type: array
+          description: Array of node objects in the conversation flow
+          items:
+            $ref: '#/components/schemas/PathwayNode'
+        edges:
+          type: array
+          description: Array of edge objects connecting nodes
+          items:
+            $ref: '#/components/schemas/PathwayEdge'
+
+    UpdateInboundNumberRequest:
+      type: object
+      required:
+        - prompt
+      properties:
+        prompt:
+          type: string
+          description: Instructions and context for the agent during inbound calls
+        voice:
+          type: string
+          description: Voice ID or preset name
+        first_sentence:
+          type: string
+          description: Opening phrase for the agent
+        model:
+          type: string
+          enum: [base, turbo]
+        language:
+          type: string
+          description: Language code (default en-US)
+        timezone:
+          type: string
+          default: America/Los_Angeles
+        background_track:
+          type: string
+          enum: [office, cafe, restaurant, "null"]
+          nullable: true
+        block_interruptions:
+          type: boolean
+        interruption_threshold:
+          type: integer
+        noise_cancellation:
+          type: boolean
+        transfer_phone_number:
+          type: string
+        transfer_list:
+          type: object
+          additionalProperties:
+            type: string
+        fallback_number:
+          type: string
+          description: Redirect number during maintenance
+        request_data:
+          type: object
+          additionalProperties: true
+        dynamic_data:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        max_duration:
+          type: integer
+          default: 30
+        record:
+          type: boolean
+        webhook:
+          type: string
+          format: uri
+        webhook_events:
+          type: array
+          items:
+            type: string
+
+    PurchaseNumberRequest:
+      type: object
+      properties:
+        area_code:
+          type: string
+          description: Three-digit area code for the phone number
+          default: "415"
+        country_code:
+          type: string
+          description: Country code (US or CA; contact support for others)
+          enum: [US, CA]
+          default: US
+        phone_number:
+          type: string
+          description: Exact number in E.164 format (overrides area_code if provided)
+
+    VoicemailConfig:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Voicemail message to leave
+        action:
+          type: string
+          description: Action to take on voicemail detection
+          enum: [hangup, leave_message, ignore]
+        sms:
+          type: string
+          description: Optional SMS message to send
+        sensitive:
+          type: boolean
+          description: Mark message as containing sensitive content
+
+    # ----------------------------------------------------------
+    # Response Schemas
+    # ----------------------------------------------------------
+    SendCallResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [success, error]
+        message:
+          type: string
+          description: Status explanation
+        call_id:
+          type: string
+          description: Unique call identifier (present on success)
+        batch_id:
+          type: string
+          nullable: true
+          description: Batch ID if part of a batch
+
+    ListCallsResponse:
+      type: object
+      properties:
+        total_count:
+          type: integer
+          description: Total calls matching filters
+        count:
+          type: integer
+          description: Number of calls returned in this response
+        calls:
+          type: array
+          items:
+            $ref: '#/components/schemas/CallSummary'
+
+    CallSummary:
+      type: object
+      properties:
+        call_id:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        call_length:
+          type: number
+          format: float
+          description: Duration in minutes
+        to:
+          type: string
+        from:
+          type: string
+        completed:
+          type: boolean
+        queue_status:
+          type: string
+        error_message:
+          type: string
+          nullable: true
+        answered_by:
+          type: string
+          nullable: true
+        batch_id:
+          type: string
+          nullable: true
+
+    CallDetails:
+      type: object
+      properties:
+        call_id:
+          type: string
+        call_length:
+          type: number
+          format: float
+          description: Duration in minutes
+        batch_id:
+          type: string
+          nullable: true
+        to:
+          type: string
+        from:
+          type: string
+        request_data:
+          type: object
+          additionalProperties: true
+        completed:
+          type: boolean
+        inbound:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+        started_at:
+          type: string
+          format: date-time
+          nullable: true
+        end_at:
+          type: string
+          format: date-time
+          nullable: true
+        queue_status:
+          type: string
+          description: Call progression status
+          enum: [new, queued, allocated, started, complete, error]
+        max_duration:
+          type: integer
+        error_message:
+          type: string
+          nullable: true
+        variables:
+          type: object
+          description: System and dynamic variables generated during the call
+          additionalProperties: true
+        answered_by:
+          type: string
+          description: Who answered the call
+          enum: [human, voicemail, unknown, no-answer]
+          nullable: true
+        record:
+          type: boolean
+        recording_url:
+          type: string
+          format: uri
+          nullable: true
+        metadata:
+          type: object
+          additionalProperties: true
+        summary:
+          type: string
+          nullable: true
+          description: AI-generated call summary
+        price:
+          type: number
+          format: float
+          description: Cost in USD
+        call_ended_by:
+          type: string
+          description: Who ended the call
+          enum: [ASSISTANT, USER]
+          nullable: true
+        pathway_id:
+          type: string
+          nullable: true
+        pathway_logs:
+          type: string
+          nullable: true
+        pathway_version:
+          type: integer
+          nullable: true
+        analysis_schema:
+          type: object
+          nullable: true
+          additionalProperties: true
+        analysis:
+          type: object
+          nullable: true
+          additionalProperties: true
+        concatenated_transcript:
+          type: string
+          nullable: true
+          description: Full call text without system messages
+        transcripts:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/TranscriptEntry'
+        status:
+          type: string
+          description: Final call status
+          enum: [completed, failed, busy, no-answer, canceled, unknown]
+        corrected_duration:
+          type: string
+          description: Actual call duration in seconds
+          nullable: true
+        voice_id:
+          type: string
+          nullable: true
+        transferred_to:
+          type: string
+          nullable: true
+        transferred_at:
+          type: string
+          format: date-time
+          nullable: true
+
+    TranscriptEntry:
+      type: object
+      properties:
+        id:
+          type: integer
+        created_at:
+          type: string
+          format: date-time
+        text:
+          type: string
+        user:
+          type: string
+          description: Speaker identifier (e.g. "agent", "user")
+
+    ActiveCall:
+      type: object
+      properties:
+        call_id:
+          type: string
+        user_id:
+          type: string
+        from:
+          type: string
+        to:
+          type: string
+        objective:
+          type: string
+        pathway_id:
+          type: string
+          nullable: true
+        start_time:
+          type: string
+          format: date-time
+        international:
+          type: string
+        status:
+          type: string
+          enum: [QUEUED, IN_PROGRESS]
+        timestamp:
+          type: string
+          description: Unix epoch in milliseconds
+
+    AnalyzeCallResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [success, error]
+        message:
+          type: string
+        answers:
+          type: array
+          items:
+            type: string
+        credits_used:
+          type: number
+          format: float
+
+    StatusResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [success, error]
+        message:
+          type: string
+
+    ErrorResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [error]
+        message:
+          type: string
+        errors:
+          type: array
+          items:
+            type: string
+
+    # -- Batch response wrappers --
+    DataResponse_BatchId:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            batch_id:
+              type: string
+        errors:
+          type: object
+          nullable: true
+
+    DataResponse_BatchList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Batch'
+        errors:
+          type: object
+          nullable: true
+
+    DataResponse_Batch:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/Batch'
+        errors:
+          type: object
+          nullable: true
+
+    DataResponse_Null:
+      type: object
+      properties:
+        data:
+          type: object
+          nullable: true
+        errors:
+          type: object
+          nullable: true
+
+    DataResponse_BatchLogs:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/BatchLogEntry'
+        errors:
+          type: object
+          nullable: true
+
+    Batch:
+      type: object
+      properties:
+        id:
+          type: string
+        user_id:
+          type: string
+          description: Organization ID
+        base_prompt:
+          type: string
+          description: JSON string with shared call properties
+        created_at:
+          type: string
+          format: date-time
+        call_objects:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        description:
+          type: string
+
+    BatchLogEntry:
+      type: object
+      properties:
+        id:
+          type: string
+        batch_id:
+          type: string
+        org_id:
+          type: string
+        event_type:
+          type: string
+          description: Event classification (e.g. "lifecycle", "complete")
+        timestamp:
+          type: string
+          format: date-time
+        payload:
+          type: object
+          additionalProperties: true
+
+    # -- Pathway schemas --
+    Pathway:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        nodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/PathwayNode'
+        edges:
+          type: array
+          items:
+            $ref: '#/components/schemas/PathwayEdge'
+
+    PathwayNode:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          description: >-
+            Node type (e.g. Default, End Call, Transfer Call, Webhook,
+            Knowledge Base, SMS, Custom Code)
+        data:
+          type: object
+          description: Node-specific configuration
+          additionalProperties: true
+
+    PathwayEdge:
+      type: object
+      properties:
+        source:
+          type: string
+          description: Source node ID
+        target:
+          type: string
+          description: Target node ID
+        data:
+          type: object
+          properties:
+            label:
+              type: string
+              description: Description of when this path is taken
+
+    CreatePathwayResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [success, error]
+        pathway_id:
+          type: string
+
+    # -- Number schemas --
+    ListInboundNumbersResponse:
+      type: object
+      properties:
+        inbound_numbers:
+          type: array
+          items:
+            $ref: '#/components/schemas/InboundNumber'
+
+    InboundNumber:
+      type: object
+      properties:
+        created_at:
+          type: string
+          format: date-time
+        phone_number:
+          type: string
+        prompt:
+          type: string
+        webhook:
+          type: string
+          nullable: true
+        voice_id:
+          type: integer
+          nullable: true
+        dynamic_data:
+          type: array
+          nullable: true
+          items:
+            type: object
+            additionalProperties: true
+        interruption_threshold:
+          type: integer
+          nullable: true
+        first_sentence:
+          type: string
+          nullable: true
+        transfer_phone_number:
+          type: string
+          nullable: true
+        record:
+          type: boolean
+        max_duration:
+          type: integer
+        background_track:
+          type: string
+          nullable: true
+        pathway_id:
+          type: string
+          nullable: true
+        fallback_number:
+          type: string
+          nullable: true
+
+    # -- Voice schema --
+    Voice:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        public:
+          type: boolean
+        tags:
+          type: array
+          items:
+            type: string
+        total_ratings:
+          type: integer
+        average_rating:
+          type: number
+          format: float
+
+    # -- Account schema --
+    AccountDetails:
+      type: object
+      properties:
+        status:
+          type: string
+          description: Account status (e.g. "active")
+        billing:
+          type: object
+          properties:
+            current_balance:
+              type: number
+              format: float
+              description: Current credit balance
+            refill_to:
+              type: number
+              format: float
+              nullable: true
+              description: Auto-refill threshold (null if disabled)
+        total_calls:
+          type: integer
+          description: Total number of calls made

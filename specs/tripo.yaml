@@ -1,0 +1,505 @@
+openapi: '3.2.0'
+info:
+  title: Tripo 3D Generation
+  description: use tripo to generate 3d models
+  version: 1.0.0
+servers:
+  - url: https://api.tripo3d.ai/v2/openapi
+paths:
+  '/task/{task_id}':
+    get:
+      summary: use the task_id created by createTask to get the status of a task
+      operationId: getTask
+      parameters:
+        - name: task_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: succeed
+          content:
+            application/json:
+              schema:
+                required:
+                  - code
+                  - data
+                type: object
+                properties:
+                  code:
+                    enum:
+                      - 0
+                    type: integer
+                  data:
+                    $ref: '#/components/schemas/Task'
+        '400':
+          description: failed
+          content:
+            application/json:
+              schema:
+                required:
+                  - code
+                  - message
+                  - suggestion
+                type: object
+                properties:
+                  code:
+                    enum:
+                      - 2000
+                      - 2001
+                    type: integer
+                  message:
+                    type: string
+                  suggestion:
+                    type: string
+  /upload:
+    post:
+      summary: upload a file
+      operationId: uploadFile
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              required:
+                - file
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+            encoding:
+              profileImage:
+                contentType: 'image/png, image/jpeg'
+      responses:
+        '200':
+          description: succeed
+          content:
+            application/json:
+              schema:
+                required:
+                  - code
+                  - data
+                type: object
+                properties:
+                  code:
+                    enum:
+                      - 0
+                    type: integer
+                  data:
+                    required:
+                      - image_token
+                    type: object
+                    properties:
+                      image_token:
+                        type: string
+        '400':
+          description: failed
+          content:
+            application/json:
+              schema:
+                required:
+                  - code
+                  - message
+                  - suggestion
+                type: object
+                properties:
+                  code:
+                    enum:
+                      - 2000
+                      - 2002
+                      - 2004
+                    type: integer
+                  message:
+                    type: string
+                  suggestion:
+                    type: string
+  /task:
+    post:
+      summary: create a task
+      operationId: createTask
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - required:
+                    - type
+                    - prompt
+                  type: object
+                  properties:
+                    type:
+                      enum:
+                        - text_to_model
+                      type: string
+                    prompt:
+                      maxLength: 1024
+                      type: string
+                    negative_prompt:
+                      maxLength: 1024
+                      type: string
+                    model_version:
+                      enum:
+                        - default
+                        - v1.3-20240522
+                        - v1.4-20240625
+                        - v2.0-20240919
+                      type: string
+                    face_limit:
+                      type: integer
+                    texture:
+                      type: boolean
+                    pbr:
+                      type: boolean
+                - required:
+                    - type
+                    - file
+                  type: object
+                  properties:
+                    type:
+                      enum:
+                        - image_to_model
+                      type: string
+                    file:
+                      required:
+                        - type
+                        - file_token
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                        file_token:
+                          type: string
+                    model_version:
+                      enum:
+                        - default
+                        - v1.3-20240522
+                        - v1.4-20240625
+                        - v2.0-20240919
+                      type: string
+                    face_limit:
+                      type: integer
+                    texture:
+                      type: boolean
+                    pbr:
+                      type: boolean
+                - required:
+                    - type
+                    - files
+                    - mode
+                  type: object
+                  properties:
+                    type:
+                      enum:
+                        - multiview_to_model
+                      type: string
+                    files:
+                      type: array
+                      items:
+                        required:
+                          - type
+                          - file_token
+                        type: object
+                        properties:
+                          type:
+                            type: string
+                          file_token:
+                            type: string
+                    mode:
+                      enum:
+                        - LEFT
+                        - RIGHT
+                      type: string
+                    model_version:
+                      enum:
+                        - default
+                        - v1.4-20240625
+                      type: string
+                    orthographic_projection:
+                      type: boolean
+                - required:
+                    - type
+                    - draft_model_task_id
+                  type: object
+                  properties:
+                    type:
+                      enum:
+                        - refine_model
+                      type: string
+                    draft_model_task_id:
+                      type: string
+                - required:
+                    - type
+                    - original_model_task_id
+                  type: object
+                  properties:
+                    type:
+                      enum:
+                        - animate_prerigcheck
+                      type: string
+                    original_model_task_id:
+                      type: string
+                - required:
+                    - type
+                    - original_model_task_id
+                  type: object
+                  properties:
+                    type:
+                      enum:
+                        - animate_rig
+                      type: string
+                    original_model_task_id:
+                      type: string
+                    out_format:
+                      type: string
+                - required:
+                    - type
+                    - original_model_task_id
+                    - animation
+                  type: object
+                  properties:
+                    type:
+                      enum:
+                        - animate_retarget
+                      type: string
+                    original_model_task_id:
+                      type: string
+                    out_format:
+                      type: string
+                    animation:
+                      enum:
+                        - preset:walk
+                        - preset:run
+                        - preset:dive
+                      type: string
+                - required:
+                    - type
+                    - style
+                    - original_model_task_id
+                  type: object
+                  properties:
+                    type:
+                      enum:
+                        - stylize_model
+                      type: string
+                    style:
+                      enum:
+                        - lego
+                        - voxel
+                        - voronoi
+                        - minecraft
+                      type: string
+                    original_model_task_id:
+                      type: string
+                    block_size:
+                      type: integer
+                - required:
+                    - type
+                    - format
+                    - original_model_task_id
+                  type: object
+                  properties:
+                    type:
+                      enum:
+                        - convert_model
+                      type: string
+                    format:
+                      enum:
+                        - GLTF
+                        - USDZ
+                        - FBX
+                        - OBJ
+                        - STL
+                      type: string
+                    original_model_task_id:
+                      type: string
+                    quad:
+                      type: boolean
+                    force_symmetry:
+                      type: boolean
+                    face_limit:
+                      type: integer
+                    flatten_bottom:
+                      type: boolean
+                    flatten_bottom_threshold:
+                      type: number
+                    texture_size:
+                      type: integer
+                    texture_format:
+                      enum:
+                        - BMP
+                        - DPX
+                        - HDR
+                        - JPEG
+                        - OPEN_EXR
+                        - PNG
+                        - TARGA
+                        - TIFF
+                        - WEBP
+                      type: string
+                    pivot_to_center_bottom:
+                      type: boolean
+      responses:
+        '200':
+          description: succeed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessTask'
+        '400':
+          description: failed
+          content:
+            application/json:
+              schema:
+                required:
+                  - code
+                  - message
+                  - suggestion
+                type: object
+                properties:
+                  code:
+                    enum:
+                      - 2000
+                      - 2002
+                      - 2003
+                      - 2004
+                      - 2006
+                      - 2007
+                      - 2008
+                      - 2010
+                    type: integer
+                  message:
+                    type: string
+                  suggestion:
+                    type: string
+  /user/balance:
+    get:
+      summary: get user balance
+      operationId: getBalance
+      responses:
+        '200':
+          description: succeed
+          content:
+            application/json:
+              schema:
+                required:
+                  - code
+                  - data
+                type: object
+                properties:
+                  code:
+                    enum:
+                      - 0
+                    type: integer
+                  data:
+                    $ref: '#/components/schemas/Balance'
+        '500':
+          description: failed
+          content:
+            application/json:
+              schema:
+                required:
+                  - code
+                  - message
+                  - suggestion
+                type: object
+                properties:
+                  code:
+                    enum:
+                      - 1001
+                    type: integer
+                  message:
+                    type: string
+                  suggestion:
+                    type: string
+components:
+  schemas:
+    Task:
+      required:
+        - task_id
+        - type
+        - status
+        - input
+        - output
+        - progress
+        - create_time
+      type: object
+      properties:
+        task_id:
+          type: string
+        type:
+          type: string
+        status:
+          enum:
+            - queued
+            - running
+            - success
+            - failed
+            - cancelled
+            - unknown
+            - banned
+            - expired
+          type: string
+        input:
+          type: object
+        output:
+          type: object
+          properties:
+            model:
+              type: string
+            base_model:
+              type: string
+            pbr_model:
+              type: string
+            rendered_image:
+              type: string
+        progress:
+          maximum: 100
+          minimum: 0
+          type: integer
+        create_time:
+          type: integer
+    SuccessTask:
+      required:
+        - code
+        - data
+      type: object
+      properties:
+        code:
+          enum:
+            - 0
+          type: integer
+        data:
+          required:
+            - task_id
+          type: object
+          properties:
+            task_id:
+              type: string
+              description: used for getTask
+    Balance:
+      required:
+        - code
+        - data
+      type: object
+      properties:
+        code:
+          enum:
+            - 0
+          type: integer
+        data:
+          required:
+            - balance
+            - frozen
+          type: object
+          properties:
+            balance:
+              type: number
+            frozen:
+              type: number
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security:
+  - bearer: [ ]

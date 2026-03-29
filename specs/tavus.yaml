@@ -1,0 +1,1474 @@
+openapi: 3.0.3
+info:
+  title: Tavus API
+  description: >-
+    Tavus is a conversational video AI platform that enables real-time,
+    human-like multimodal video conversations with AI replicas. Build
+    replicas, define persona behavior, generate videos, and manage
+    real-time conversations.
+  version: '2.0'
+  contact:
+    name: Tavus Support
+    email: support@tavus.io
+    url: https://docs.tavus.io
+
+servers:
+  - url: https://tavusapi.com
+
+security:
+  - ApiKeyAuth: []
+
+paths:
+  /v2/conversations:
+    post:
+      operationId: createConversation
+      summary: Create Conversation
+      description: >-
+        Start a real-time video conversation with your AI replica and persona.
+        The response includes a conversation_url to join the call or embed it.
+      tags: [Conversations]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateConversationRequest'
+      responses:
+        '200':
+          description: Conversation created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateConversationResponse'
+    get:
+      operationId: listConversations
+      summary: List Conversations
+      description: Returns a list of all conversations.
+      tags: [Conversations]
+      responses:
+        '200':
+          description: A list of conversations.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListConversationsResponse'
+
+  /v2/conversations/{conversation_id}:
+    get:
+      operationId: getConversation
+      summary: Get Conversation
+      description: >-
+        Returns a single conversation. Append ?verbose=true for additional
+        event data including transcript and perception analysis.
+      tags: [Conversations]
+      parameters:
+        - $ref: '#/components/parameters/ConversationId'
+        - name: verbose
+          in: query
+          description: Include additional event data.
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Conversation details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Conversation'
+    delete:
+      operationId: deleteConversation
+      summary: Delete Conversation
+      description: Deletes a single conversation.
+      tags: [Conversations]
+      parameters:
+        - $ref: '#/components/parameters/ConversationId'
+      responses:
+        '200':
+          description: Conversation deleted.
+
+  /v2/conversations/{conversation_id}/end:
+    post:
+      operationId: endConversation
+      summary: End Conversation
+      description: Ends a single conversation.
+      tags: [Conversations]
+      parameters:
+        - $ref: '#/components/parameters/ConversationId'
+      responses:
+        '200':
+          description: Conversation ended.
+
+  /v2/replicas:
+    post:
+      operationId: createReplica
+      summary: Create Replica
+      description: >-
+        Create a new replica using the latest phoenix-4 model.
+      tags: [Replicas]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateReplicaRequest'
+      responses:
+        '200':
+          description: Replica created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Replica'
+    get:
+      operationId: listReplicas
+      summary: List Replicas
+      description: Returns a list of all replicas.
+      tags: [Replicas]
+      responses:
+        '200':
+          description: A list of replicas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListReplicasResponse'
+
+  /v2/replicas/{replica_id}:
+    get:
+      operationId: getReplica
+      summary: Get Replica
+      description: Returns a single replica with training progress.
+      tags: [Replicas]
+      parameters:
+        - $ref: '#/components/parameters/ReplicaId'
+      responses:
+        '200':
+          description: Replica details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Replica'
+    delete:
+      operationId: deleteReplica
+      summary: Delete Replica
+      description: Deletes a replica.
+      tags: [Replicas]
+      parameters:
+        - $ref: '#/components/parameters/ReplicaId'
+      responses:
+        '200':
+          description: Replica deleted.
+
+  /v2/replicas/{replica_id}/name:
+    patch:
+      operationId: renameReplica
+      summary: Rename Replica
+      description: Renames a single replica.
+      tags: [Replicas]
+      parameters:
+        - $ref: '#/components/parameters/ReplicaId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RenameReplicaRequest'
+      responses:
+        '200':
+          description: Replica renamed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Replica'
+
+  /v2/personas:
+    post:
+      operationId: createPersona
+      summary: Create Persona
+      description: >-
+        Create and customize a persona's behavior and capabilities for CVI.
+      tags: [Personas]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePersonaRequest'
+      responses:
+        '200':
+          description: Persona created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Persona'
+    get:
+      operationId: listPersonas
+      summary: List Personas
+      description: Returns a list of all personas.
+      tags: [Personas]
+      responses:
+        '200':
+          description: A list of personas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListPersonasResponse'
+
+  /v2/personas/{persona_id}:
+    get:
+      operationId: getPersona
+      summary: Get Persona
+      description: Returns a single persona.
+      tags: [Personas]
+      parameters:
+        - $ref: '#/components/parameters/PersonaId'
+      responses:
+        '200':
+          description: Persona details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Persona'
+    patch:
+      operationId: patchPersona
+      summary: Patch Persona
+      description: >-
+        Updates a persona using JSON Patch (RFC 6902).
+      tags: [Personas]
+      parameters:
+        - $ref: '#/components/parameters/PersonaId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/JsonPatchOperation'
+      responses:
+        '200':
+          description: Persona updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Persona'
+    delete:
+      operationId: deletePersona
+      summary: Delete Persona
+      description: Deletes a single persona.
+      tags: [Personas]
+      parameters:
+        - $ref: '#/components/parameters/PersonaId'
+      responses:
+        '200':
+          description: Persona deleted.
+
+  /v2/videos:
+    post:
+      operationId: generateVideo
+      summary: Generate Video
+      description: >-
+        Generates a new video using a Replica and either a script or an audio file.
+      tags: [Videos]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerateVideoRequest'
+      responses:
+        '200':
+          description: Video generation started.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Video'
+    get:
+      operationId: listVideos
+      summary: List Videos
+      description: Returns a list of all videos.
+      tags: [Videos]
+      responses:
+        '200':
+          description: A list of videos.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListVideosResponse'
+
+  /v2/videos/{video_id}:
+    get:
+      operationId: getVideo
+      summary: Get Video
+      description: >-
+        Returns a single video. If ready, includes download_url, stream_url, and hosted_url.
+      tags: [Videos]
+      parameters:
+        - $ref: '#/components/parameters/VideoId'
+      responses:
+        '200':
+          description: Video details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Video'
+    delete:
+      operationId: deleteVideo
+      summary: Delete Video
+      description: Deletes a single video.
+      tags: [Videos]
+      parameters:
+        - $ref: '#/components/parameters/VideoId'
+      responses:
+        '200':
+          description: Video deleted.
+
+  /v2/videos/{video_id}/name:
+    patch:
+      operationId: renameVideo
+      summary: Rename Video
+      description: Renames a single video.
+      tags: [Videos]
+      parameters:
+        - $ref: '#/components/parameters/VideoId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RenameVideoRequest'
+      responses:
+        '200':
+          description: Video renamed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Video'
+
+  /v2/documents:
+    post:
+      operationId: createDocument
+      summary: Create Document
+      description: >-
+        Upload documents to your knowledge base for personas to reference.
+        Supports .pdf, .txt, .docx, .doc, .png, .jpg, .pptx, .csv, .xlsx and URLs.
+      tags: [Documents]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDocumentRequest'
+      responses:
+        '200':
+          description: Document created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Document'
+    get:
+      operationId: listDocuments
+      summary: List Documents
+      description: Retrieve a list of documents with optional filtering and pagination.
+      tags: [Documents]
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+        - name: tags
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of documents.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListDocumentsResponse'
+
+  /v2/documents/{document_id}:
+    get:
+      operationId: getDocument
+      summary: Get Document
+      description: Retrieve a specific document.
+      tags: [Documents]
+      parameters:
+        - $ref: '#/components/parameters/DocumentId'
+      responses:
+        '200':
+          description: Document details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Document'
+    patch:
+      operationId: updateDocument
+      summary: Update Document
+      description: Update document metadata.
+      tags: [Documents]
+      parameters:
+        - $ref: '#/components/parameters/DocumentId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDocumentRequest'
+      responses:
+        '200':
+          description: Document updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Document'
+    delete:
+      operationId: deleteDocument
+      summary: Delete Document
+      description: Delete a document.
+      tags: [Documents]
+      parameters:
+        - $ref: '#/components/parameters/DocumentId'
+      responses:
+        '200':
+          description: Document deleted.
+
+  /v2/documents/{document_id}/recrawl:
+    post:
+      operationId: recrawlDocument
+      summary: Recrawl Document
+      description: >-
+        Trigger a recrawl of a website document to fetch fresh content.
+      tags: [Documents]
+      parameters:
+        - $ref: '#/components/parameters/DocumentId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RecrawlDocumentRequest'
+      responses:
+        '200':
+          description: Recrawl initiated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Document'
+
+  /v2/guardrails:
+    post:
+      operationId: createGuardrails
+      summary: Create Guardrails
+      description: >-
+        Creates a new set of guardrails for a persona.
+      tags: [Guardrails]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateGuardrailsRequest'
+      responses:
+        '200':
+          description: Guardrails created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Guardrails'
+    get:
+      operationId: listGuardrails
+      summary: List Guardrails
+      description: Returns a list of all guardrails.
+      tags: [Guardrails]
+      responses:
+        '200':
+          description: A list of guardrails.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListGuardrailsResponse'
+
+  /v2/guardrails/{guardrails_id}:
+    get:
+      operationId: getGuardrails
+      summary: Get Guardrails
+      description: Returns a single set of guardrails.
+      tags: [Guardrails]
+      parameters:
+        - $ref: '#/components/parameters/GuardrailsId'
+      responses:
+        '200':
+          description: Guardrails details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Guardrails'
+    patch:
+      operationId: patchGuardrails
+      summary: Patch Guardrails
+      description: Update guardrails using JSON Patch operations.
+      tags: [Guardrails]
+      parameters:
+        - $ref: '#/components/parameters/GuardrailsId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/JsonPatchOperation'
+      responses:
+        '200':
+          description: Guardrails updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Guardrails'
+    delete:
+      operationId: deleteGuardrails
+      summary: Delete Guardrails
+      description: Deletes a single set of guardrails.
+      tags: [Guardrails]
+      parameters:
+        - $ref: '#/components/parameters/GuardrailsId'
+      responses:
+        '200':
+          description: Guardrails deleted.
+
+  /v2/objectives:
+    post:
+      operationId: createObjectives
+      summary: Create Objectives
+      description: >-
+        Creates a new objective for a persona.
+      tags: [Objectives]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateObjectivesRequest'
+      responses:
+        '200':
+          description: Objectives created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Objectives'
+    get:
+      operationId: listObjectives
+      summary: List Objectives
+      description: Returns a list of all objectives.
+      tags: [Objectives]
+      responses:
+        '200':
+          description: A list of objectives.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListObjectivesResponse'
+
+  /v2/objectives/{objectives_id}:
+    get:
+      operationId: getObjectives
+      summary: Get Objective
+      description: Returns a single objective.
+      tags: [Objectives]
+      parameters:
+        - $ref: '#/components/parameters/ObjectivesId'
+      responses:
+        '200':
+          description: Objective details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Objectives'
+    patch:
+      operationId: patchObjectives
+      summary: Patch Objective
+      description: Update an objective using JSON Patch operations.
+      tags: [Objectives]
+      parameters:
+        - $ref: '#/components/parameters/ObjectivesId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/JsonPatchOperation'
+      responses:
+        '200':
+          description: Objective updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Objectives'
+    delete:
+      operationId: deleteObjectives
+      summary: Delete Objective
+      description: Deletes a single objective.
+      tags: [Objectives]
+      parameters:
+        - $ref: '#/components/parameters/ObjectivesId'
+      responses:
+        '200':
+          description: Objective deleted.
+
+  /v2/memories/{memory_store}/{memory_id}:
+    delete:
+      operationId: deleteMemory
+      summary: Delete Memory
+      description: Delete a single memory from a memory store.
+      tags: [Memories]
+      parameters:
+        - name: memory_store
+          in: path
+          required: true
+          description: The memory store identifier.
+          schema:
+            type: string
+        - name: memory_id
+          in: path
+          required: true
+          description: The ID of the memory to delete.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Memory deleted.
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+
+  parameters:
+    ConversationId:
+      name: conversation_id
+      in: path
+      required: true
+      schema:
+        type: string
+    ReplicaId:
+      name: replica_id
+      in: path
+      required: true
+      schema:
+        type: string
+    PersonaId:
+      name: persona_id
+      in: path
+      required: true
+      schema:
+        type: string
+    VideoId:
+      name: video_id
+      in: path
+      required: true
+      schema:
+        type: string
+    DocumentId:
+      name: document_id
+      in: path
+      required: true
+      schema:
+        type: string
+    GuardrailsId:
+      name: guardrails_id
+      in: path
+      required: true
+      schema:
+        type: string
+    ObjectivesId:
+      name: objectives_id
+      in: path
+      required: true
+      schema:
+        type: string
+
+  schemas:
+    CreateConversationRequest:
+      type: object
+      properties:
+        persona_id:
+          type: string
+          description: The identifier of the persona to use.
+        replica_id:
+          type: string
+          description: The identifier of the replica. Required if persona has no default replica.
+        callback_url:
+          type: string
+          description: URL to receive webhook callbacks.
+        conversational_context:
+          type: string
+          description: Additional context for the LLM.
+        custom_greeting:
+          type: string
+          description: Custom greeting message.
+        language:
+          type: string
+          description: Conversation language or "multilingual" for auto-detection.
+        audio_only:
+          type: boolean
+          description: Start in audio-only mode.
+        max_call_duration:
+          type: integer
+          description: Maximum call length in seconds (max 3600).
+        idle_timeout:
+          type: integer
+          description: Timeout if no participant joins.
+        participant_left_timeout:
+          type: integer
+          description: Timeout after last participant leaves.
+        enable_closed_captions:
+          type: boolean
+          description: Enable closed captions.
+        is_private:
+          type: boolean
+          description: Create a private conversation requiring a meeting token.
+        max_participant_count:
+          type: integer
+          description: Maximum number of participants.
+        apply_greenscreen:
+          type: boolean
+          description: Apply green screen effect.
+        background_url:
+          type: string
+          description: Website URL for background.
+        background_image_url:
+          type: string
+          description: Image URL for background.
+        memory_stores:
+          type: array
+          items:
+            type: string
+          description: Memory store identifiers for cross-conversation memory.
+        enable_recording:
+          type: boolean
+          description: Enable conversation recording.
+        recording_s3_bucket_region:
+          type: string
+          description: AWS S3 bucket region for recordings.
+        recording_s3_bucket_name:
+          type: string
+          description: AWS S3 bucket name for recordings.
+        properties:
+          $ref: '#/components/schemas/ConversationProperties'
+        document_ids:
+          type: array
+          items:
+            type: string
+          description: Knowledge base document IDs to make available.
+
+    ConversationProperties:
+      type: object
+      properties:
+        max_call_duration:
+          type: integer
+        participant_left_timeout:
+          type: integer
+        participant_absent_timeout:
+          type: integer
+        enable_recording:
+          type: boolean
+        enable_closed_captions:
+          type: boolean
+        apply_greenscreen:
+          type: boolean
+        language:
+          type: string
+        recording_s3_bucket_region:
+          type: string
+        recording_s3_bucket_name:
+          type: string
+
+    CreateConversationResponse:
+      type: object
+      properties:
+        conversation_id:
+          type: string
+        conversation_url:
+          type: string
+        conversation_name:
+          type: string
+        status:
+          type: string
+        callback_url:
+          type: string
+        meeting_token:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+
+    Conversation:
+      type: object
+      properties:
+        conversation_id:
+          type: string
+        conversation_url:
+          type: string
+        conversation_name:
+          type: string
+        status:
+          type: string
+        replica_id:
+          type: string
+        persona_id:
+          type: string
+        callback_url:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        ended_at:
+          type: string
+          format: date-time
+        shutdown_reason:
+          type: string
+        transcript:
+          type: array
+          items:
+            $ref: '#/components/schemas/TranscriptMessage'
+
+    TranscriptMessage:
+      type: object
+      properties:
+        role:
+          type: string
+        content:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+
+    ListConversationsResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Conversation'
+
+    CreateReplicaRequest:
+      type: object
+      required:
+        - train_video_url
+      properties:
+        train_video_url:
+          type: string
+          description: Publicly accessible download link to the training video.
+        consent_video_url:
+          type: string
+          description: Publicly accessible download link to the consent video. Required for personal replicas.
+        replica_name:
+          type: string
+          description: Name for the replica.
+        callback_url:
+          type: string
+          description: URL to receive training status callbacks.
+        model_name:
+          type: string
+          description: Model to use (defaults to phoenix-4).
+          enum:
+            - phoenix-3
+            - phoenix-4
+        replica_type:
+          type: string
+          description: The type of replica.
+          enum:
+            - personal
+            - non_human
+        train_audio_url:
+          type: string
+        thumbnail_video_url:
+          type: string
+
+    Replica:
+      type: object
+      properties:
+        replica_id:
+          type: string
+        replica_name:
+          type: string
+        status:
+          type: string
+        model_name:
+          type: string
+        replica_type:
+          type: string
+        training_progress:
+          type: string
+        thumbnail_video_url:
+          type: string
+        error_message:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    RenameReplicaRequest:
+      type: object
+      required:
+        - replica_name
+      properties:
+        replica_name:
+          type: string
+
+    ListReplicasResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Replica'
+
+    CreatePersonaRequest:
+      type: object
+      properties:
+        persona_name:
+          type: string
+        system_prompt:
+          type: string
+          description: System prompt defining persona behavior. Required for full pipeline mode.
+        context:
+          type: string
+        default_replica_id:
+          type: string
+        pipeline_mode:
+          type: string
+          enum:
+            - full
+            - custom
+        layers:
+          $ref: '#/components/schemas/PersonaLayers'
+        guardrails_id:
+          type: string
+        objectives_id:
+          type: string
+        document_ids:
+          type: array
+          items:
+            type: string
+
+    PersonaLayers:
+      type: object
+      properties:
+        perception:
+          $ref: '#/components/schemas/PerceptionLayer'
+        stt:
+          $ref: '#/components/schemas/SttLayer'
+        conversational_flow:
+          $ref: '#/components/schemas/ConversationalFlowLayer'
+        llm:
+          $ref: '#/components/schemas/LlmLayer'
+        tts:
+          $ref: '#/components/schemas/TtsLayer'
+
+    PerceptionLayer:
+      type: object
+      properties:
+        perception_model:
+          type: string
+        ambient_awareness_queries:
+          type: array
+          items:
+            type: string
+        visual_awareness_queries:
+          type: array
+          items:
+            type: string
+        perception_analysis_queries:
+          type: array
+          items:
+            type: string
+        audio_awareness_queries:
+          type: array
+          items:
+            type: string
+        visual_tool_prompt:
+          type: string
+        visual_tools:
+          type: array
+          items:
+            $ref: '#/components/schemas/ToolDefinition'
+        audio_tool_prompt:
+          type: string
+        audio_tools:
+          type: array
+          items:
+            $ref: '#/components/schemas/ToolDefinition'
+
+    SttLayer:
+      type: object
+      properties:
+        stt_engine:
+          type: string
+        hotwords:
+          type: array
+          items:
+            type: string
+
+    ConversationalFlowLayer:
+      type: object
+      properties:
+        turn_detection_model:
+          type: string
+        turn_taking_patience:
+          type: string
+          enum:
+            - low
+            - medium
+            - high
+        replica_interruptibility:
+          type: string
+          enum:
+            - low
+            - medium
+            - high
+
+    LlmLayer:
+      type: object
+      properties:
+        model:
+          type: string
+        base_url:
+          type: string
+        api_key:
+          type: string
+        tools:
+          type: array
+          items:
+            $ref: '#/components/schemas/ToolDefinition'
+        speculative_inference:
+          type: boolean
+        headers:
+          type: object
+          additionalProperties:
+            type: string
+        extra_body:
+          type: object
+          additionalProperties: true
+        default_query:
+          type: object
+          additionalProperties:
+            type: string
+
+    TtsLayer:
+      type: object
+      properties:
+        tts_engine:
+          type: string
+        api_key:
+          type: string
+        external_voice_id:
+          type: string
+        tts_model_name:
+          type: string
+        tts_emotion_control:
+          type: string
+        voice_settings:
+          $ref: '#/components/schemas/VoiceSettings'
+
+    VoiceSettings:
+      type: object
+      properties:
+        speed:
+          type: string
+          enum:
+            - slowest
+            - slow
+            - normal
+            - fast
+            - fastest
+        emotion:
+          type: array
+          items:
+            type: string
+
+    ToolDefinition:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+            - function
+        function:
+          $ref: '#/components/schemas/ToolFunction'
+
+    ToolFunction:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        parameters:
+          type: object
+          additionalProperties: true
+
+    Persona:
+      type: object
+      properties:
+        persona_id:
+          type: string
+        persona_name:
+          type: string
+        system_prompt:
+          type: string
+        context:
+          type: string
+        default_replica_id:
+          type: string
+        pipeline_mode:
+          type: string
+        layers:
+          $ref: '#/components/schemas/PersonaLayers'
+        guardrails_id:
+          type: string
+        objectives_id:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    ListPersonasResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Persona'
+
+    GenerateVideoRequest:
+      type: object
+      required:
+        - replica_id
+      properties:
+        replica_id:
+          type: string
+          description: The replica to use for the video.
+        script:
+          type: string
+          description: Text for the replica to speak.
+        audio_url:
+          type: string
+          description: Audio file URL (.wav or .mp3) for lip-sync.
+        video_name:
+          type: string
+        callback_url:
+          type: string
+        background_url:
+          type: string
+          description: Website URL for background.
+        background_source_url:
+          type: string
+          description: Direct download link for video background.
+        transparent_background:
+          type: boolean
+        properties:
+          $ref: '#/components/schemas/VideoProperties'
+
+    VideoProperties:
+      type: object
+      properties:
+        background_scroll:
+          type: boolean
+        background_scroll_type:
+          type: string
+          enum:
+            - human
+            - smooth
+        background_scroll_depth:
+          type: string
+          enum:
+            - middle
+            - bottom
+        background_scroll_return:
+          type: string
+          enum:
+            - return
+            - halt
+
+    Video:
+      type: object
+      properties:
+        video_id:
+          type: string
+        video_name:
+          type: string
+        status:
+          type: string
+        replica_id:
+          type: string
+        script:
+          type: string
+        download_url:
+          type: string
+        stream_url:
+          type: string
+        hosted_url:
+          type: string
+        error_message:
+          type: string
+        status_details:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    RenameVideoRequest:
+      type: object
+      required:
+        - video_name
+      properties:
+        video_name:
+          type: string
+
+    ListVideosResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Video'
+
+    CreateDocumentRequest:
+      type: object
+      properties:
+        document_name:
+          type: string
+        file:
+          type: string
+          format: binary
+        document_url:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        callback_url:
+          type: string
+        crawl:
+          $ref: '#/components/schemas/CrawlConfig'
+
+    CrawlConfig:
+      type: object
+      properties:
+        depth:
+          type: integer
+          minimum: 1
+          maximum: 10
+        max_pages:
+          type: integer
+          minimum: 1
+          maximum: 100
+
+    Document:
+      type: object
+      properties:
+        document_id:
+          type: string
+        document_name:
+          type: string
+        status:
+          type: string
+        document_url:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        crawl:
+          $ref: '#/components/schemas/CrawlConfig'
+        crawl_count:
+          type: integer
+        last_crawled_at:
+          type: string
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    UpdateDocumentRequest:
+      type: object
+      properties:
+        document_name:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+
+    RecrawlDocumentRequest:
+      type: object
+      properties:
+        crawl:
+          $ref: '#/components/schemas/CrawlConfig'
+
+    ListDocumentsResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Document'
+
+    CreateGuardrailsRequest:
+      type: object
+      properties:
+        guardrails_name:
+          type: string
+        guardrails_prompt:
+          type: string
+        modality:
+          type: string
+        callback_url:
+          type: string
+
+    Guardrails:
+      type: object
+      properties:
+        guardrails_id:
+          type: string
+        guardrails_name:
+          type: string
+        guardrails_prompt:
+          type: string
+        modality:
+          type: string
+        callback_url:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    ListGuardrailsResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Guardrails'
+
+    CreateObjectivesRequest:
+      type: object
+      properties:
+        objective_name:
+          type: string
+        objective_prompt:
+          type: string
+        confirmation_mode:
+          type: string
+          enum:
+            - auto
+            - manual
+        output_variables:
+          type: array
+          items:
+            type: string
+        modality:
+          type: string
+        next_conditional_objectives:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConditionalObjective'
+        next_required_objective:
+          type: string
+        callback_url:
+          type: string
+
+    ConditionalObjective:
+      type: object
+      properties:
+        condition:
+          type: string
+        objective_id:
+          type: string
+
+    Objectives:
+      type: object
+      properties:
+        objectives_id:
+          type: string
+        objective_name:
+          type: string
+        objective_prompt:
+          type: string
+        confirmation_mode:
+          type: string
+        output_variables:
+          type: array
+          items:
+            type: string
+        modality:
+          type: string
+        next_conditional_objectives:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConditionalObjective'
+        next_required_objective:
+          type: string
+        callback_url:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    ListObjectivesResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Objectives'
+
+    JsonPatchOperation:
+      type: object
+      required:
+        - op
+        - path
+      properties:
+        op:
+          type: string
+          enum:
+            - add
+            - remove
+            - replace
+            - copy
+            - move
+            - test
+        path:
+          type: string
+        value: {}
+        from:
+          type: string

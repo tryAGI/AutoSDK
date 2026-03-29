@@ -1,0 +1,1470 @@
+openapi: 3.0.1
+info:
+  title: Meshcapade Me API
+  description: API for creating and managing 3D avatars, motions, and scenes
+  version: "1.24"
+  contact:
+    email: support@meshcapade.com
+servers:
+  - url: https://api.meshcapade.com/api/v1
+security:
+  - BearerAuth: []
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+  parameters:
+    AssetID:
+      name: assetID
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+    Limit:
+      name: limit
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+        default: 20
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+    Include:
+      name: include
+      in: query
+      schema:
+        type: string
+      description: Comma-separated relationship tags to include
+  schemas:
+    Gender:
+      type: string
+      enum: [NEUTRAL, MALE, FEMALE]
+    ModelVersion:
+      type: string
+      enum: [SMPLX, SMPLH, SUPR]
+    AssetState:
+      type: string
+      enum: [EMPTY, READY, ERROR, AWAITING_AFI_INPUT, PROCESSING, AWAITING_PROCESSING, AWAITING_UPLOAD, AWAITING_AFS_INPUT, AWAITING_AFV_INPUT, CANCELED]
+    AssetType:
+      type: string
+      enum: [IMAGE, JSON, AVATAR, ANIMATION, POSE_SEQUENCE, TEXTURE, MESH, VIDEO, MOTION, SCENE]
+    BuildState:
+      type: string
+      enum: [PENDING, PROCESSING, COMPLETED, ERROR, CANCELED, AWAITING_INPUT, AWAITING_PROCESSING, PREPARING]
+    BuildMethod:
+      type: string
+      enum: [ALIGN, REGRESS, UPDATE, RENDER, MEASURE, INGEST, FROM_IMAGES, EXPORT, FROM_BETAS, SHAPY, EXPORT_BLENDER, FROM_MEASUREMENTS, BEDLAM_CLIFF, FROM_SCANS, FROM_VIDEO, UPLOAD, SEARCH_MOTIONS, FROM_SMPL, FROM_SMPL_MOTION, FROM_SMPL_POSE, MOTION_BLEND, AFI2, EXPORT_GLOSS]
+    FileSource:
+      type: string
+      enum: [MESHCAPADE, GENERATED, UPLOAD, ON_PREM_PLACEHOLDER]
+    ExportFormat:
+      type: string
+      enum: [obj, fbx, glb]
+    ExportPose:
+      type: string
+      enum: [t, a, i, scan]
+    CompatibilityMode:
+      type: string
+      enum: [DEFAULT, OPTITEX, UNREAL]
+    URLResponse:
+      type: object
+      properties:
+        internal:
+          type: boolean
+        method:
+          type: string
+        path:
+          type: string
+    MeshMeasurements:
+      type: object
+      properties:
+        Ankle_girth:
+          type: number
+        Armscye_girth:
+          type: number
+        Back_shoulder_width:
+          type: number
+        Bust_girth:
+          type: number
+        Foot_length:
+          type: number
+        Height:
+          type: number
+        Inside_leg_height:
+          type: number
+        Lower_arm_length:
+          type: number
+        Neck_base_girth:
+          type: number
+        Shoulder_length:
+          type: number
+        Thigh_girth:
+          type: number
+        Top_hip_girth:
+          type: number
+        Upper_arm_length:
+          type: number
+        Waist_girth:
+          type: number
+        Weight:
+          type: number
+    BodyShape:
+      type: object
+      properties:
+        gender:
+          type: string
+        modelVersion:
+          type: string
+        shapeParameters:
+          type: array
+          items:
+            type: number
+        mesh_measurements:
+          $ref: '#/components/schemas/MeshMeasurements'
+    AvatarMetadata:
+      type: object
+      properties:
+        bodyShape:
+          $ref: '#/components/schemas/BodyShape'
+    AvatarAttributes:
+      type: object
+      properties:
+        created_at:
+          type: integer
+          format: int64
+        updated_at:
+          type: integer
+          format: int64
+        name:
+          type: string
+        owner:
+          type: string
+        state:
+          $ref: '#/components/schemas/AssetState'
+        type:
+          $ref: '#/components/schemas/AssetType'
+        origin:
+          $ref: '#/components/schemas/BuildMethod'
+        source:
+          $ref: '#/components/schemas/FileSource'
+        source_build_id:
+          type: string
+        url:
+          $ref: '#/components/schemas/URLResponse'
+        metadata:
+          $ref: '#/components/schemas/AvatarMetadata'
+    RelationshipItem:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+    AssetRelationships:
+      type: object
+      properties:
+        exported_mesh:
+          type: object
+          properties:
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/RelationshipItem'
+    AssetLinks:
+      type: object
+      properties:
+        self:
+          type: string
+        image_upload:
+          type: string
+    AssetResource:
+      type: object
+      properties:
+        type:
+          type: string
+        id:
+          type: string
+          format: uuid
+        attributes:
+          $ref: '#/components/schemas/AvatarAttributes'
+        links:
+          $ref: '#/components/schemas/AssetLinks'
+        relationships:
+          $ref: '#/components/schemas/AssetRelationships'
+    AssetResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/AssetResource'
+    AssetListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AssetResource'
+    ErrorDetail:
+      type: object
+      properties:
+        code:
+          type: string
+        detail:
+          type: string
+        status:
+          type: integer
+        title:
+          type: string
+    ErrorResponse:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ErrorDetail'
+
+    # ── Request Schemas ──
+    ExportRequest:
+      type: object
+      required: [format]
+      properties:
+        format:
+          $ref: '#/components/schemas/ExportFormat'
+        pose:
+          $ref: '#/components/schemas/ExportPose'
+        compatibilityMode:
+          $ref: '#/components/schemas/CompatibilityMode'
+        animation:
+          type: string
+        filename:
+          type: string
+        avatarSceneIndex:
+          type: integer
+    PatchAvatarRequest:
+      type: object
+      properties:
+        name:
+          type: string
+    MeasurementAvatarRequest:
+      type: object
+      properties:
+        gender:
+          $ref: '#/components/schemas/Gender'
+        measurements:
+          type: object
+          additionalProperties:
+            type: number
+          description: Key-value pairs of measurement names to values
+        modelVersion:
+          $ref: '#/components/schemas/ModelVersion'
+        name:
+          type: string
+    ImageTagLinks:
+      type: object
+      properties:
+        full_avatar_texture:
+          type: string
+    BetasAvatarRequest:
+      type: object
+      properties:
+        betas:
+          type: array
+          items:
+            type: number
+          description: SMPL shape parameters
+        fps:
+          type: number
+        gender:
+          $ref: '#/components/schemas/Gender'
+        images:
+          $ref: '#/components/schemas/ImageTagLinks'
+        input_measurements:
+          type: object
+          additionalProperties:
+            type: number
+        modelVersion:
+          $ref: '#/components/schemas/ModelVersion'
+        name:
+          type: string
+        poseName:
+          type: string
+        poses:
+          type: array
+          items:
+            type: array
+            items:
+              type: number
+        predicted_measurements:
+          type: object
+          additionalProperties:
+            type: number
+    CreateFromSMPLRequest:
+      type: object
+      properties:
+        name:
+          type: string
+    FitToImagesRequest:
+      type: object
+      properties:
+        imageMode:
+          type: string
+    FitToScansRequest:
+      type: object
+      properties:
+        initPose:
+          type: string
+        inputUnits:
+          type: string
+        lookAxis:
+          type: string
+        upAxis:
+          type: string
+    FitToVideoRequest:
+      type: object
+      properties:
+        lockFeet:
+          type: boolean
+        modelVersion:
+          type: string
+    SceneFromVideoRequest:
+      type: object
+      properties:
+        lockFeet:
+          type: boolean
+        maxPersonCount:
+          type: integer
+        modelVersion:
+          type: string
+        sceneName:
+          type: string
+    MotionBlendMotion:
+      type: object
+      properties:
+        motionId:
+          type: string
+    MotionBlendRequest:
+      type: object
+      properties:
+        avatarName:
+          type: string
+        gender:
+          type: string
+        motions:
+          type: array
+          items:
+            $ref: '#/components/schemas/MotionBlendMotion'
+        shapeParameters:
+          type: array
+          items:
+            type: number
+        sourceAvatarID:
+          type: string
+    SearchMotionsRequest:
+      type: object
+      properties:
+        text:
+          type: string
+          description: Text prompt for motion search
+        num_motions:
+          type: integer
+          description: Number of results to return
+    TeamCreateRequest:
+      type: object
+      properties:
+        name:
+          type: string
+    TeamRenameRequest:
+      type: object
+      properties:
+        name:
+          type: string
+    TeamInviteRequest:
+      type: object
+      properties:
+        email:
+          type: string
+    SubscriptionPaymentLinkRequest:
+      type: object
+      properties:
+        planId:
+          type: string
+    InfoResponse:
+      type: object
+      properties:
+        version:
+          type: string
+    HealthCheckResponse:
+      type: object
+      properties:
+        status:
+          type: string
+    RandomNameResponse:
+      type: object
+      properties:
+        name:
+          type: string
+
+paths:
+  # ════════════════════════════════════
+  # Info & Health
+  # ════════════════════════════════════
+  /info:
+    get:
+      operationId: getInfo
+      summary: Get API info
+      tags: [Info]
+      security: []
+      responses:
+        '200':
+          description: API information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InfoResponse'
+
+  /healthcheck/status:
+    get:
+      operationId: getHealthCheck
+      summary: API health check
+      tags: [Info]
+      security: []
+      responses:
+        '200':
+          description: Health status
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthCheckResponse'
+
+  # ════════════════════════════════════
+  # Assets
+  # ════════════════════════════════════
+  /assets:
+    get:
+      operationId: listAssets
+      summary: List assets (multi-type)
+      tags: [Assets]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/Include'
+      responses:
+        '200':
+          description: List of assets
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetListResponse'
+
+  /assets/random-name:
+    get:
+      operationId: getRandomName
+      summary: Generate a random asset name
+      tags: [Assets]
+      responses:
+        '200':
+          description: Random name
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RandomNameResponse'
+
+  # ════════════════════════════════════
+  # Avatars
+  # ════════════════════════════════════
+  /avatars:
+    get:
+      operationId: listAvatars
+      summary: List all avatars
+      tags: [Avatars]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/Include'
+      responses:
+        '200':
+          description: List of avatars
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetListResponse'
+
+  /avatars/{assetID}:
+    get:
+      operationId: getAvatar
+      summary: Get one avatar
+      tags: [Avatars]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Avatar details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    patch:
+      operationId: patchAvatar
+      summary: Update avatar name
+      tags: [Avatars]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchAvatarRequest'
+      responses:
+        '200':
+          description: Updated avatar
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+    delete:
+      operationId: deleteAvatar
+      summary: Delete avatar
+      tags: [Avatars]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Deleted
+
+  /avatars/{assetID}/export:
+    post:
+      operationId: exportAvatar
+      summary: Export/download avatar
+      tags: [Avatars]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExportRequest'
+      responses:
+        '200':
+          description: Export initiated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /avatars/{assetID}/build/cancel:
+    post:
+      operationId: cancelAvatarBuild
+      summary: Cancel avatar build
+      tags: [Avatars]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Build canceled
+
+  /avatars/{assetID}/preview:
+    post:
+      operationId: requestAvatarPreviewUpload
+      summary: Request upload URL for avatar preview image
+      tags: [Avatars]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Upload URL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  /avatars/{assetID}/measure:
+    post:
+      operationId: measureAvatar
+      summary: Measure avatar body measurements
+      tags: [Avatars]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Measurement initiated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  # ── Create Avatar from Images (AFI) ──
+  /avatars/create/from-images:
+    post:
+      operationId: createAvatarFromImages
+      summary: Initiate avatar creation from images
+      tags: [Avatars - From Images]
+      responses:
+        '200':
+          description: Avatar asset created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  /avatars/{assetID}/images:
+    post:
+      operationId: requestImageUpload
+      summary: Request image upload URL for AFI avatar
+      tags: [Avatars - From Images]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Upload URL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  /avatars/{assetID}/fit-to-images:
+    post:
+      operationId: fitToImages
+      summary: Start fitting avatar to uploaded images
+      tags: [Avatars - From Images]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FitToImagesRequest'
+      responses:
+        '200':
+          description: Fitting started
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  # ── Create Avatar from Measurements (AFM) ──
+  /avatars/create/from-measurements:
+    post:
+      operationId: createAvatarFromMeasurements
+      summary: Create avatar from body measurements
+      tags: [Avatars - From Measurements]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MeasurementAvatarRequest'
+      responses:
+        '200':
+          description: Avatar created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  # ── Create Avatar from Scans (AFS) ──
+  /avatars/create/from-scans:
+    post:
+      operationId: createAvatarFromScans
+      summary: Initiate avatar creation from 3D scans
+      tags: [Avatars - From Scans]
+      responses:
+        '200':
+          description: Avatar asset created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  /avatars/{assetID}/scans:
+    post:
+      operationId: requestScanUpload
+      summary: Request mesh upload URL for AFS avatar
+      tags: [Avatars - From Scans]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Upload URL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  /avatars/{assetID}/textures:
+    post:
+      operationId: requestTextureUpload
+      summary: Request texture upload URL for AFS avatar
+      tags: [Avatars - From Scans]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Upload URL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  /avatars/{assetID}/fit-to-scans:
+    post:
+      operationId: fitToScans
+      summary: Start fitting avatar to uploaded scans
+      tags: [Avatars - From Scans]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FitToScansRequest'
+      responses:
+        '200':
+          description: Fitting started
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  # ── Create Avatar from Video (AFV) ──
+  /avatars/create/from-video:
+    post:
+      operationId: createAvatarFromVideo
+      summary: Initiate avatar creation from video
+      tags: [Avatars - From Video]
+      responses:
+        '200':
+          description: Avatar asset created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  /avatars/{assetID}/video:
+    post:
+      operationId: requestVideoUploadForAvatar
+      summary: Request video upload URL for AFV avatar
+      tags: [Avatars - From Video]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Upload URL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  /avatars/{assetID}/fit-to-video:
+    post:
+      operationId: fitToVideo
+      summary: Start fitting avatar to uploaded video
+      tags: [Avatars - From Video]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FitToVideoRequest'
+      responses:
+        '200':
+          description: Fitting started
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  # ── Create Avatar from Betas ──
+  /avatars/create/from-betas:
+    post:
+      operationId: createAvatarFromBetas
+      summary: Create avatar from SMPL shape parameters
+      tags: [Avatars - From Betas]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BetasAvatarRequest'
+      responses:
+        '200':
+          description: Avatar created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  # ── Create from SMPL Codec ──
+  /create/from-smpl:
+    post:
+      operationId: createFromSMPL
+      summary: Create avatar from .smpl codec file
+      tags: [Avatars - From SMPL]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateFromSMPLRequest'
+      responses:
+        '200':
+          description: Avatar created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  # ════════════════════════════════════
+  # Meshes
+  # ════════════════════════════════════
+  /meshes:
+    get:
+      operationId: listMeshes
+      summary: List all meshes
+      tags: [Meshes]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Page'
+      responses:
+        '200':
+          description: List of meshes
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetListResponse'
+
+  /meshes/{assetID}:
+    get:
+      operationId: getMesh
+      summary: Get one mesh
+      tags: [Meshes]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Mesh details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+    delete:
+      operationId: deleteMesh
+      summary: Delete mesh
+      tags: [Meshes]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Deleted
+
+  /meshes/{assetID}/purchase:
+    post:
+      operationId: purchaseMesh
+      summary: Purchase a mesh asset
+      tags: [Meshes]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Purchased
+
+  /meshes/{assetID}/upload:
+    post:
+      operationId: requestMeshUpload
+      summary: Generate upload link for mesh
+      tags: [Meshes]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Upload URL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  # ════════════════════════════════════
+  # Images
+  # ════════════════════════════════════
+  /images:
+    get:
+      operationId: listImages
+      summary: List all images
+      tags: [Images]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Page'
+      responses:
+        '200':
+          description: List of images
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetListResponse'
+
+  /images/{assetID}:
+    get:
+      operationId: getImage
+      summary: Get one image
+      tags: [Images]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Image details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+    delete:
+      operationId: deleteImage
+      summary: Delete image
+      tags: [Images]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Deleted
+
+  /images/{assetID}/upload:
+    post:
+      operationId: requestImageAssetUpload
+      summary: Generate upload link for image
+      tags: [Images]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Upload URL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  # ════════════════════════════════════
+  # Videos
+  # ════════════════════════════════════
+  /videos:
+    get:
+      operationId: listVideos
+      summary: List all videos
+      tags: [Videos]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Page'
+      responses:
+        '200':
+          description: List of videos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetListResponse'
+
+  /videos/{assetID}:
+    get:
+      operationId: getVideo
+      summary: Get one video
+      tags: [Videos]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Video details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+    delete:
+      operationId: deleteVideo
+      summary: Delete video
+      tags: [Videos]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Deleted
+
+  /videos/{assetID}/upload:
+    post:
+      operationId: requestVideoAssetUpload
+      summary: Generate upload link for video
+      tags: [Videos]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Upload URL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  # ════════════════════════════════════
+  # Motions
+  # ════════════════════════════════════
+  /motions:
+    get:
+      operationId: listMotions
+      summary: List all motions
+      tags: [Motions]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Page'
+      responses:
+        '200':
+          description: List of motions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetListResponse'
+
+  /motions/{assetID}:
+    get:
+      operationId: getMotion
+      summary: Get one motion
+      tags: [Motions]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Motion details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+    delete:
+      operationId: deleteMotion
+      summary: Delete motion
+      tags: [Motions]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Deleted
+
+  /motions/{assetID}/upload:
+    post:
+      operationId: requestMotionUpload
+      summary: Generate upload link for motion
+      tags: [Motions]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Upload URL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  /motions/search:
+    post:
+      operationId: searchMotions
+      summary: Search motions by text
+      tags: [Motions]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchMotionsRequest'
+      responses:
+        '200':
+          description: Search results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetListResponse'
+
+  /motions/blend:
+    post:
+      operationId: blendMotions
+      summary: Blend two or more motions
+      tags: [Motions]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MotionBlendRequest'
+      responses:
+        '200':
+          description: Blend initiated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  # ════════════════════════════════════
+  # Scenes
+  # ════════════════════════════════════
+  /scenes:
+    get:
+      operationId: listScenes
+      summary: List all scenes
+      tags: [Scenes]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Page'
+      responses:
+        '200':
+          description: List of scenes
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetListResponse'
+
+  /scenes/{assetID}:
+    get:
+      operationId: getScene
+      summary: Get one scene
+      tags: [Scenes]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Scene details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  /scenes/{assetID}/export:
+    post:
+      operationId: exportScene
+      summary: Export/download scene
+      tags: [Scenes]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExportRequest'
+      responses:
+        '200':
+          description: Export initiated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  /scenes/{assetID}/build/cancel:
+    post:
+      operationId: cancelSceneBuild
+      summary: Cancel scene build
+      tags: [Scenes]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Build canceled
+
+  /scenes/{assetID}/preview:
+    post:
+      operationId: requestScenePreviewUpload
+      summary: Request upload URL for scene preview image
+      tags: [Scenes]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Upload URL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  /scenes/create/from-video:
+    post:
+      operationId: createSceneFromVideo
+      summary: Create scene from video
+      tags: [Scenes]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SceneFromVideoRequest'
+      responses:
+        '200':
+          description: Scene created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  /scenes/{assetID}/video:
+    post:
+      operationId: requestVideoUploadForScene
+      summary: Request video upload URL for scene
+      tags: [Scenes]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      responses:
+        '200':
+          description: Upload URL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  /scenes/{assetID}/fit-to-video:
+    post:
+      operationId: fitSceneToVideo
+      summary: Start scene fitting to video
+      tags: [Scenes]
+      parameters:
+        - $ref: '#/components/parameters/AssetID'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FitToVideoRequest'
+      responses:
+        '200':
+          description: Fitting started
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetResponse'
+
+  # ════════════════════════════════════
+  # User
+  # ════════════════════════════════════
+  /user/:
+    get:
+      operationId: getUser
+      summary: Get current user info
+      tags: [User]
+      responses:
+        '200':
+          description: User info
+          content:
+            application/json:
+              schema:
+                type: object
+
+  # ════════════════════════════════════
+  # Teams
+  # ════════════════════════════════════
+  /teams/:
+    post:
+      operationId: createTeam
+      summary: Create a team
+      tags: [Teams]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TeamCreateRequest'
+      responses:
+        '200':
+          description: Team created
+
+  /teams/{teamID}:
+    get:
+      operationId: getTeam
+      summary: Get team info
+      tags: [Teams]
+      parameters:
+        - name: teamID
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Team info
+    patch:
+      operationId: renameTeam
+      summary: Rename team
+      tags: [Teams]
+      parameters:
+        - name: teamID
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TeamRenameRequest'
+      responses:
+        '200':
+          description: Team renamed
+    delete:
+      operationId: deleteTeam
+      summary: Delete team
+      tags: [Teams]
+      parameters:
+        - name: teamID
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Team deleted
+
+  /teams/{teamID}/invite:
+    post:
+      operationId: inviteToTeam
+      summary: Invite user to team
+      tags: [Teams]
+      parameters:
+        - name: teamID
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TeamInviteRequest'
+      responses:
+        '200':
+          description: Invitation sent
+
+  /teams/{teamID}/invite/accept:
+    post:
+      operationId: acceptTeamInvite
+      summary: Accept team invitation
+      tags: [Teams]
+      parameters:
+        - name: teamID
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Invitation accepted
+
+  /teams/{teamID}/invite/invalidate:
+    post:
+      operationId: invalidateTeamInvite
+      summary: Invalidate team invitation
+      tags: [Teams]
+      parameters:
+        - name: teamID
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Invitation invalidated
+
+  /teams/{teamID}/kick:
+    post:
+      operationId: kickTeamMember
+      summary: Kick member from team
+      tags: [Teams]
+      parameters:
+        - name: teamID
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Member kicked
+
+  /teams/{teamID}/leave:
+    post:
+      operationId: leaveTeam
+      summary: Leave team
+      tags: [Teams]
+      parameters:
+        - name: teamID
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Left team
+
+  # ════════════════════════════════════
+  # Credits & Subscriptions
+  # ════════════════════════════════════
+  /credits/bundles:
+    get:
+      operationId: listCreditBundles
+      summary: List credit bundles
+      tags: [Credits]
+      responses:
+        '200':
+          description: Credit bundles
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /credits/bundles/{bundleID}/paymentlink:
+    post:
+      operationId: getCreditBundlePaymentLink
+      summary: Get checkout link for credit bundle
+      tags: [Credits]
+      parameters:
+        - name: bundleID
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Payment link
+
+  /subscriptions/paymentlink:
+    post:
+      operationId: getSubscriptionPaymentLink
+      summary: Get subscription checkout link
+      tags: [Subscriptions]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubscriptionPaymentLinkRequest'
+      responses:
+        '200':
+          description: Payment link
+
+  /subscriptions/cancel:
+    post:
+      operationId: cancelSubscription
+      summary: Cancel subscription
+      tags: [Subscriptions]
+      responses:
+        '200':
+          description: Subscription canceled

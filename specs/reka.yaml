@@ -1,0 +1,722 @@
+openapi: 3.0.3
+
+info:
+  title: Reka API
+  description: |
+    The Reka API provides access to Reka's AI models for chat completions, model management, and speech transcription/translation.
+  version: 1.0.0
+
+servers:
+  - url: https://api.reka.ai
+    description: Reka API
+
+security:
+  - ApiKeyAuth: []
+
+tags:
+  - name: Chat
+    description: Chat completion operations
+  - name: Models
+    description: Model management operations
+  - name: Speech
+    description: Speech transcription and translation operations
+
+paths:
+  /v1/chat/completions:
+    post:
+      operationId: createChatCompletion
+      tags:
+        - Chat
+      summary: Create a chat completion
+      description: Creates a chat completion for the provided messages and model.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateChatCompletionRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateChatCompletionResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+
+  /v1/transcription_or_translation:
+    post:
+      operationId: transcribeOrTranslate
+      tags:
+        - Speech
+      summary: Transcribe or translate audio
+      description: |
+        Transcribes audio to text and optionally translates it to a target language.
+        Supports three modes: transcription only, translation (text output), and
+        speech-to-speech translation (with audio output).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TranscribeOrTranslateRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TranscribeOrTranslateResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+
+  /v1/models:
+    get:
+      operationId: listModels
+      tags:
+        - Models
+      summary: List models
+      description: List models available to the user. Different users may have access to different models depending on their permissions.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListModelsResponse'
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+
+  schemas:
+    CreateChatCompletionRequest:
+      type: object
+      required:
+        - messages
+        - model
+      properties:
+        messages:
+          type: array
+          description: A list of messages comprising the conversation so far.
+          items:
+            $ref: '#/components/schemas/ChatMessageInput'
+        model:
+          type: string
+          description: ID of the model to use.
+        temperature:
+          type: number
+          format: double
+          default: 0.4
+          minimum: 0.0
+          maximum: 2.0
+          description: Controls randomness. 0.0 is deterministic.
+        max_tokens:
+          type: integer
+          default: 1024
+          description: The maximum number of tokens to generate.
+        top_p:
+          type: number
+          format: double
+          default: 0.95
+          minimum: 0.0
+          maximum: 1.0
+          description: Nucleus sampling threshold. Only tokens with cumulative probability up to top_p are considered.
+        top_k:
+          type: integer
+          default: 1024
+          description: Consider only top-k most probable tokens at each step.
+        frequency_penalty:
+          type: number
+          format: double
+          default: 0.0
+          description: Penalizes repeated tokens. Positive values reduce repetition.
+        presence_penalty:
+          type: number
+          format: double
+          default: 0.0
+          description: Penalizes tokens that have appeared in the output. Positive values encourage new topics.
+        stream:
+          type: boolean
+          default: false
+          description: If true, partial message deltas will be sent as server-sent events.
+        seed:
+          type: integer
+          nullable: true
+          description: Random seed for reproducibility.
+        stop:
+          type: array
+          nullable: true
+          items:
+            type: string
+          description: Up to 4 sequences where the API will stop generating further tokens.
+        tools:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/Tool'
+          description: A list of tools the model may call.
+        tool_choice:
+          type: string
+          nullable: true
+          enum:
+            - auto
+            - none
+            - tool
+          description: Controls which tool is called by the model.
+        research:
+          $ref: '#/components/schemas/ResearchConfig'
+        response_format:
+          $ref: '#/components/schemas/ResponseFormat'
+
+    ResearchConfig:
+      type: object
+      description: Configuration for the Reka Research model (reka-flash-research). Controls web search and parallel thinking.
+      properties:
+        web_search:
+          $ref: '#/components/schemas/WebSearchConfig'
+        parallel_thinking:
+          $ref: '#/components/schemas/ParallelThinkingConfig'
+
+    WebSearchConfig:
+      type: object
+      description: Web search configuration for the Research model.
+      properties:
+        enabled:
+          type: boolean
+          default: true
+          description: Whether web search is enabled. Enabled by default.
+        max_uses:
+          type: integer
+          nullable: true
+          description: Maximum number of web searches per request. Once reached, the agent reasons with available information.
+        allowed_domains:
+          type: array
+          nullable: true
+          items:
+            type: string
+          description: Whitelist of domains. Cannot be used with blocked_domains.
+        blocked_domains:
+          type: array
+          nullable: true
+          items:
+            type: string
+          description: Blacklist of domains. Cannot be used with allowed_domains.
+        user_location:
+          $ref: '#/components/schemas/UserLocation'
+
+    UserLocation:
+      type: object
+      description: Geographic context for localized search results.
+      properties:
+        approximate:
+          $ref: '#/components/schemas/ApproximateLocation'
+
+    ApproximateLocation:
+      type: object
+      description: Approximate geographic location. At least one field is required.
+      properties:
+        city:
+          type: string
+          description: City name (e.g., "San Francisco").
+        region:
+          type: string
+          description: State/region code (e.g., "CA").
+        country:
+          type: string
+          description: ISO 3166-1 country code (e.g., "US").
+        timezone:
+          type: string
+          description: IANA timezone (e.g., "America/Los_Angeles").
+
+    ParallelThinkingConfig:
+      type: object
+      description: Controls computational intensity for the Research model. Cannot be used with streaming.
+      properties:
+        mode:
+          type: string
+          enum:
+            - none
+            - low
+            - high
+          default: none
+          description: Computational intensity level. "none" is standard, "low" moderate, "high" maximum quality.
+
+    ResponseFormat:
+      type: object
+      description: Structured output configuration. Forces the model to return valid JSON matching a schema.
+      required:
+        - type
+      properties:
+        type:
+          type: string
+          enum:
+            - json_schema
+          description: The response format type. Currently only "json_schema" is supported.
+        json_schema:
+          $ref: '#/components/schemas/JsonSchemaConfig'
+
+    JsonSchemaConfig:
+      type: object
+      description: JSON Schema configuration for structured output.
+      required:
+        - name
+        - schema
+      properties:
+        name:
+          type: string
+          description: Name for the schema. Alphanumeric with underscores/dashes, max 64 characters.
+        description:
+          type: string
+          description: Description of the expected output format.
+        schema:
+          type: object
+          description: Valid JSON Schema defining the expected structure.
+          additionalProperties: true
+        strict:
+          type: boolean
+          default: false
+          description: Whether to enforce exact schema compliance.
+
+    ChatMessageInput:
+      type: object
+      required:
+        - role
+      properties:
+        role:
+          type: string
+          enum:
+            - user
+            - assistant
+            - tool
+          description: The role of the message author.
+        content:
+          description: The content of the message. Can be a string or an array of content parts.
+          oneOf:
+            - type: string
+            - type: array
+              items:
+                $ref: '#/components/schemas/ContentPart'
+          nullable: true
+        tool_calls:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/ToolCall'
+          description: Tool calls generated by the model.
+        tool_call_id:
+          type: string
+          nullable: true
+          description: Tool call that this message is responding to.
+
+    ContentPart:
+      type: object
+      required:
+        - type
+      properties:
+        type:
+          type: string
+          description: The type of content part.
+          enum:
+            - text
+            - image_url
+            - video_url
+            - audio_url
+            - pdf_url
+        text:
+          type: string
+          description: The text content. Required when type is "text".
+        image_url:
+          type: string
+          description: The image URL. Required when type is "image_url".
+        video_url:
+          type: string
+          description: The video URL. Required when type is "video_url".
+        audio_url:
+          type: string
+          description: The audio URL. Required when type is "audio_url".
+        pdf_url:
+          type: string
+          description: The PDF URL. Required when type is "pdf_url".
+
+    Tool:
+      type: object
+      required:
+        - name
+        - parameters
+      properties:
+        name:
+          type: string
+          description: The name of the function.
+        description:
+          type: string
+          description: A description of what the function does.
+        parameters:
+          type: object
+          description: The parameters the function accepts, described as a JSON Schema object.
+          additionalProperties: true
+
+    ToolCall:
+      type: object
+      required:
+        - id
+        - type
+        - function
+      properties:
+        id:
+          type: string
+          description: The ID of the tool call.
+        type:
+          type: string
+          description: The type of the tool call. Always "function".
+          enum:
+            - function
+        function:
+          $ref: '#/components/schemas/FunctionCall'
+
+    FunctionCall:
+      type: object
+      required:
+        - name
+        - arguments
+      properties:
+        name:
+          type: string
+          description: The name of the function to call.
+        arguments:
+          type: string
+          description: The arguments to call the function with, as a JSON string.
+
+    CreateChatCompletionResponse:
+      type: object
+      required:
+        - id
+        - model
+        - choices
+        - usage
+      properties:
+        id:
+          type: string
+          description: A unique identifier for the chat completion.
+        model:
+          type: string
+          description: The model used for the chat completion.
+        object:
+          type: string
+          description: The object type (e.g., "chat.completion").
+        created:
+          type: integer
+          description: Unix timestamp of when the completion was created.
+        system_fingerprint:
+          type: string
+          description: System fingerprint for the response.
+        choices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Choice'
+          description: A list of chat completion choices.
+        usage:
+          $ref: '#/components/schemas/Usage'
+
+    Choice:
+      type: object
+      required:
+        - index
+        - message
+      properties:
+        index:
+          type: integer
+          description: The index of the choice.
+        message:
+          $ref: '#/components/schemas/ChatMessageOutput'
+        finish_reason:
+          type: string
+          nullable: true
+          enum:
+            - stop
+            - length
+            - context
+            - tool_calls
+          description: The reason the model stopped generating tokens.
+
+    ChatMessageOutput:
+      type: object
+      required:
+        - role
+      properties:
+        role:
+          type: string
+          enum:
+            - user
+            - assistant
+            - tool
+          description: The role of the message author.
+        content:
+          type: string
+          nullable: true
+          description: The content of the message.
+        tool_calls:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/ToolCall'
+          description: Tool calls generated by the model.
+        reasoning_steps:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/ReasoningStep'
+          description: Chain-of-thought reasoning steps. Only present for Research model responses.
+        reasoning_content:
+          type: string
+          nullable: true
+          description: Full reasoning content as a single string. Only present for Research model responses.
+        annotations:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/Annotation'
+          description: Citation annotations referencing web sources. Only present for Research model responses.
+
+    Usage:
+      type: object
+      required:
+        - prompt_tokens
+        - completion_tokens
+        - total_tokens
+      properties:
+        prompt_tokens:
+          type: integer
+          description: Number of tokens in the prompt.
+        completion_tokens:
+          type: integer
+          description: Number of tokens in the generated completion.
+        total_tokens:
+          type: integer
+          description: Total number of tokens (prompt + completion).
+
+    ReasoningStep:
+      type: object
+      description: A single step in the Research model's chain-of-thought reasoning.
+      properties:
+        role:
+          type: string
+          enum:
+            - assistant
+            - tool
+          description: '"assistant" for agent reasoning, "tool" for tool execution results.'
+        reasoning_content:
+          type: string
+          nullable: true
+          description: Natural language explanation of the agent's intent before acting.
+        content:
+          nullable: true
+          description: Tool execution result or final content. Can be a string or a structured object (e.g., tool output).
+          oneOf:
+            - type: string
+            - type: object
+              additionalProperties: true
+        tool_calls:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/ReasoningToolCall'
+          description: Internal tools invoked during this step.
+        tool_call_id:
+          type: string
+          nullable: true
+          description: Links a tool result step to its originating tool call.
+
+    ReasoningToolCall:
+      type: object
+      description: An internal tool call made by the Research model.
+      properties:
+        tool_name:
+          type: string
+          description: The internal tool name (e.g., "search_web", "analyze").
+        arguments:
+          type: object
+          description: Arguments passed to the tool.
+          additionalProperties: true
+
+    Annotation:
+      type: object
+      description: A citation annotation referencing a web source.
+      required:
+        - type
+      properties:
+        type:
+          type: string
+          description: The annotation type. Always "url_citation".
+          enum:
+            - url_citation
+        url_citation:
+          $ref: '#/components/schemas/UrlCitation'
+
+    UrlCitation:
+      type: object
+      description: URL citation details with character-level positioning in the response content.
+      required:
+        - url
+        - title
+        - start_index
+        - end_index
+      properties:
+        url:
+          type: string
+          description: The web resource URL.
+        title:
+          type: string
+          description: Title of the cited resource.
+        start_index:
+          type: integer
+          description: Character position in content where the citation starts.
+        end_index:
+          type: integer
+          description: Character position in content where the citation ends.
+
+    ListModelsResponse:
+      type: object
+      required:
+        - data
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Model'
+          description: A list of available models.
+
+    Model:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+          description: The model identifier.
+
+    TranscribeOrTranslateRequest:
+      type: object
+      required:
+        - audio_url
+        - sampling_rate
+      properties:
+        audio_url:
+          type: string
+          description: URL to a WAV audio file (http/https) or a base64-encoded data URI (data:audio/wav;base64,...).
+        sampling_rate:
+          type: integer
+          default: 16000
+          description: Audio sampling rate in Hz. Recommended value is 16000.
+        target_language:
+          type: string
+          nullable: true
+          enum:
+            - french
+            - spanish
+            - japanese
+            - chinese
+            - korean
+            - italian
+            - portuguese
+            - german
+          description: Target language for translation. When omitted, only transcription is performed.
+        is_translate:
+          type: boolean
+          default: false
+          description: Set to true to indicate this is a translation request. Must be true when target_language is specified.
+        return_translation_audio:
+          type: boolean
+          default: false
+          description: Set to true to receive base64-encoded WAV audio of the translated speech. Requires is_translate and target_language.
+        temperature:
+          type: number
+          format: double
+          default: 0.0
+          description: Controls randomness in generation. Use 0.0 for deterministic output.
+        max_tokens:
+          type: integer
+          default: 1024
+          description: Maximum number of tokens to generate.
+
+    TranscribeOrTranslateResponse:
+      type: object
+      required:
+        - transcript
+      properties:
+        transcript:
+          type: string
+          description: Transcribed text in the original language.
+        translation:
+          type: string
+          nullable: true
+          description: Translated text in the target language. Only present when target_language is specified.
+        transcript_translation_with_timestamp:
+          type: array
+          items:
+            $ref: '#/components/schemas/TimestampSegment'
+          description: Array of word-level timing data with transcription segments.
+        audio_base64:
+          type: string
+          nullable: true
+          description: Base64-encoded WAV audio of the translated speech. Only present when return_translation_audio is true.
+
+    TimestampSegment:
+      type: object
+      required:
+        - start
+        - end
+        - transcript
+      properties:
+        start:
+          type: number
+          format: double
+          description: Start time of the segment in seconds from the beginning of the audio.
+        end:
+          type: number
+          format: double
+          description: End time of the segment in seconds from the beginning of the audio.
+        transcript:
+          type: string
+          description: The transcribed word or phrase for this time segment.
+
+    HTTPValidationError:
+      type: object
+      properties:
+        detail:
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+
+    ValidationError:
+      type: object
+      required:
+        - loc
+        - msg
+        - type
+      properties:
+        loc:
+          type: array
+          items:
+            oneOf:
+              - type: string
+              - type: integer
+          description: Location of the error.
+        msg:
+          type: string
+          description: Error message.
+        type:
+          type: string
+          description: Error type.

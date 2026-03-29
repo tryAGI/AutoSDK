@@ -1,0 +1,3290 @@
+openapi: 3.1.0
+info:
+    title: NanoNets
+    description: |
+        Welcome to [NanoNets](https://nanonets.com)' API Reference!
+        <br />
+        <br />
+        <br />
+        Use Postman to quickly test the API.
+        <br />
+        <br />
+        <a href="https://www.postman.com/run-collection/2fcb1195d85e7a98ad74" rel="noreferrer" target="_blank">
+          <img src="https://run.pstmn.io/button.svg" alt="Run in Postman" />
+        </a>
+        <br />
+        <br />
+        <br />
+        [Get an API Key](https://app.nanonets.com/#/keys)
+
+        # SDKs
+
+        We have Node.js SDKs that can be used to make predictions after [creating and training models on our web app](https://app.nanonets.com).
+
+        - Optical Character Recognition
+          - [NPM Package](https://www.npmjs.com/package/@nanonets/optical-character-recognition)
+          - NPM: `npm install @nanonets/optical-character-recognition`
+          - Yarn: `yarn add @nanonets/optical-character-recognition`
+        - Image Classification
+          - [NPM Package](https://www.npmjs.com/package/@nanonets/image-classification)
+          - NPM: `npm install @nanonets/image-classification`
+          - Yarn: `yarn add @nanonets/image-classification`
+    contact:
+        name: NanoNets Support
+        url: "https://nanonets.com"
+        email: support@nanonets.com
+    license:
+        name: MIT
+        url: "https://github.com/NanoNets/api-docs/blob/main/LICENSE"
+    version: 2.0.0
+    x-logo:
+        url: "https://nanonets.com/logo2.png"
+        altText: NanoNets
+servers:
+    - url: "https://app.nanonets.com/api/v2"
+      description: "NanoNets API v2"
+paths:
+    /OCR/Model/{model_id}:
+        get:
+            tags:
+                - ocrModelDetails
+            summary: Get Model Details by ID
+            description: Retrieve a specific model's details given its ID.
+            operationId: "ocr/model/id"
+            parameters:
+                - $ref: "#/components/parameters/modelId"
+            responses:
+                "200":
+                    $ref: "#/components/responses/modelObject"
+                "401":
+                    $ref: "#/components/responses/unauthorized"
+                "402":
+                    $ref: "#/components/responses/paymentRequired"
+            deprecated: false
+            x-codeSamples:
+                - lang: JavaScript
+                  label: Node.js
+                  source: >
+                      var request = require('request')
+
+                      const options = {
+                          url : 'https://app.nanonets.com/api/v2/OCR/Model/' + 'REPLACE_MODEL_ID',
+                          headers: {
+                              'Authorization' : 'Basic ' + Buffer.from('[[.ApiKey]]' + ':').toString('base64')
+                          }
+                      }
+
+                      request.get(options, function(err, httpResponse, body) {
+
+                        console.log(body)
+                      });
+                - lang: Python
+                  label: Python
+                  source: >
+                      import requests
+
+
+                      url = 'https://app.nanonets.com/api/v2/OCR/Model/' + {{model_id}}
+
+
+                      response = requests.request('GET', url,
+                      auth=requests.auth.HTTPBasicAuth('[[.ApiKey]]',''))
+
+
+                      print(response.text)
+                - lang: Shell
+                  label: CLI
+                  source: |
+                      curl --request GET \
+                        --url 'https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}' \
+                        -u '[[.ApiKey]]'
+                - lang: Go
+                  label: Go
+                  source: |
+                      package main
+
+                      import (
+                          "fmt"
+                          "net/http"
+                          "io/ioutil"
+                      )
+
+                      func main() {
+
+                          url := "https://app.nanonets.com/api/v2/OCR/Model/" + {{model_id}}
+
+                          req, _ := http.NewRequest("GET", url, nil)
+
+                          req.SetBasicAuth("[[.ApiKey]]", "")
+
+                          res, _ := http.DefaultClient.Do(req)
+
+                          defer res.Body.Close()
+                          body, _ := ioutil.ReadAll(res.Body)
+
+                          fmt.Println(res)
+                          fmt.Println(string(body))
+
+                      }
+                - lang: Ruby
+                  label: Ruby
+                  source: >
+                      require 'uri'
+                      require 'net/http'
+
+                      url = URI('https://app.nanonets.com/api/v2/OCR/Model/' + {{model_id}})
+
+                      http = Net::HTTP.new(url.host, url.port)
+                      http.use_ssl = true
+
+                      request = Net::HTTP::Get.new(url)
+                      request.basic_auth '[[.ApiKey]]', ''
+                      response = http.request(request)
+
+                      puts response.read_body
+                - lang: "C#"
+                  label: "C#"
+                  source: >
+                      var client = new RestClient("https://app.nanonets.com/api/v2/OCR/Model/" + {{model_id}});
+
+                      var request = new RestRequest(Method.GET);
+
+                      request.AddHeader("authorization", "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes("[[.ApiKey]]:")));
+
+                      IRestResponse response = client.Execute(request);
+                - lang: Java
+                  label: Java
+                  source: |
+                      OkHttpClient client = new OkHttpClient();
+
+                      Request request = new Request.Builder()
+                        .url("https://app.nanonets.com/api/v2/OCR/Model/" + {{model_id}})
+                        .get()
+                        .addHeader("authorization", Credentials.basic("[[.ApiKey]]", ""))
+                        .build();
+
+                      Response response = client.newCall(request).execute();
+    /OCR/Model/{model_id}/UploadUrls:
+        post:
+            tags:
+                - ocrUpload
+            summary: Upload Training Images by URLs
+            description: |
+                Upload training images to a model using image URLs.
+                Multiple images can be uploaded in the same request by adding more URLs in the `urls` array.
+                On successful upload, model information along with the total number of images per category will be received.
+            operationId: "ocr/upload/url"
+            parameters:
+                - $ref: "#/components/parameters/contentType"
+                - $ref: "#/components/parameters/modelId"
+            requestBody:
+                $ref: "#/components/requestBodies/urls"
+            responses:
+                "200":
+                    $ref: "#/components/responses/ok"
+                "202":
+                    $ref: "#/components/responses/partiallySuccessfulURL"
+                "400":
+                    $ref: "#/components/responses/missingURL"
+                "401":
+                    $ref: "#/components/responses/unauthorized"
+                "402":
+                    $ref: "#/components/responses/paymentRequired"
+                "404":
+                    $ref: "#/components/responses/notFound"
+            deprecated: false
+            x-codeSamples:
+                - lang: JavaScript
+                  label: Node.js
+                  source: >
+                      var request = require('request')
+
+                      const form_data = {"data": [{"filename":"https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg", "object": [{"name":"category1", "ocr_text":"text inside the bounding box", "bndbox": {"xmin": 1,"ymin": 1,"xmax": 100, "ymax": 100}}, {"name":"category2", "bndbox": {"xmin": 1,"ymin": 1,"xmax": 100, "ymax": 100}}]}], "urls": ["https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg"]}
+
+                      const options = {
+                          url : 'https://app.nanonets.com/api/v2/OCR/Model/{model_id}/UploadUrls/',
+                          body: JSON.stringify(form_data),
+                          headers: {
+                              'Authorization' : 'Basic ' + Buffer.from('[[.ApiKey]]' + ':').toString('base64'),
+                              'Content-Type': ""application/json""
+                          }
+                      }
+
+                      request.post(options, function(err, httpResponse, body) {
+
+                        console.log(body)
+                      });
+                - lang: Python
+                  label: Python
+                  source: |
+                      import requests
+
+                      url = "https://app.nanonets.com/api/v2/OCR/Model/{model_id}/UploadUrls/"
+
+                      payload = "{\"data\": [{\"filename\":\"https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg\", \"object\": [{\"name\":\"category1\", \"ocr_text\":\"text inside the bounding box\", \"bndbox\": {\"xmin\": 1,\"ymin\": 1,\"xmax\": 100, \"ymax\": 100}}, {\"name\":\"category2\", \"bndbox\": {\"xmin\": 1,\"ymin\": 1,\"xmax\": 100, \"ymax\": 100}}]}], \"urls\": [\"https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg\"]}"
+                      headers = {
+                          'Content-Type': ""application/json""
+                      }
+
+                      response = requests.request("POST", url, auth=requests.auth.HTTPBasicAuth('[[.ApiKey]]', ''), data=payload, headers=headers)
+
+                      print(response.text)
+                - lang: Shell
+                  label: CLI
+                  source: |
+                      curl --request POST \
+                          --url https://app.nanonets.com/api/v2/OCR/Model/{model_id}/UploadUrls/ \
+                          -u '[[.ApiKey]]' \
+                          -H 'Content-Type: "application/json"' \
+                          --data '{"data": [{"filename":"https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg", "object": [{"name":"category1", "ocr_text":"text inside the bounding box", "bndbox": {"xmin": 1,"ymin": 1,"xmax": 100, "ymax": 100}}, {"name":"category2", "bndbox": {"xmin": 1,"ymin": 1,"xmax": 100, "ymax": 100}}]}], "urls": ["https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg"]}'
+                - lang: Go
+                  label: Go
+                  source: |
+                      package main
+
+                      import (
+                          "fmt"
+                          "io/ioutil"
+                          "net/http"
+                          "strings"
+                      )
+
+                      func main() {
+
+                          url := "https://app.nanonets.com/api/v2/OCR/Model/REPLACE_MODEL_ID/UploadUrls/"
+
+                          payload := strings.NewReader("{\"data\": [{\"filename\":\"https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg\", \"object\": [{\"name\":\"category1\", \"ocr_text\":\"text inside the bounding box\", \"bndbox\": {\"xmin\": 1,\"ymin\": 1,\"xmax\": 100, \"ymax\": 100}}, {\"name\":\"category2\", \"bndbox\": {\"xmin\": 1,\"ymin\": 1,\"xmax\": 100, \"ymax\": 100}}]}], \"urls\": [\"https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg\"]}")
+
+                          req, _ := http.NewRequest("POST", url, payload)
+
+                          req.Header.Add("Content-Type", ""application/json"")
+                          req.SetBasicAuth("[[.ApiKey]]", "")
+
+                          res, _ := http.DefaultClient.Do(req)
+
+                          defer res.Body.Close()
+                          body, _ := ioutil.ReadAll(res.Body)
+
+                          fmt.Println(res)
+                          fmt.Println(string(body))
+
+                      }
+                - lang: Ruby
+                  label: Ruby
+                  source: |
+                      require 'uri'
+                      require 'net/http'
+
+                      url = URI("https://app.nanonets.com/api/v2/OCR/Model/REPLACE_MODEL_ID/UploadUrls/")
+
+                      http = Net::HTTP.new(url.host, url.port)
+                      http.use_ssl = true
+
+                      request = Net::HTTP::Post.new(url)
+                      request["Content-Type"] = '"application/json"'
+                      request.basic_auth '[[.ApiKey]]', ''
+                      request.body = "{\"data\": [{\"filename\":\"https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg\", \"object\": [{\"name\":\"category1\", \"ocr_text\":\"text inside the bounding box\", \"bndbox\": {\"xmin\": 1,\"ymin\": 1,\"xmax\": 100, \"ymax\": 100}}, {\"name\":\"category2\", \"bndbox\": {\"xmin\": 1,\"ymin\": 1,\"xmax\": 100, \"ymax\": 100}}]}], \"urls\": [\"https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg\"]}"
+
+                      response = http.request(request)
+                      puts response.read_body"
+                - lang: "C#"
+                  label: "C#"
+                  source: >
+                      var client = new
+                      RestClient("https://app.nanonets.com/api/v2/OCR/Model/REPLACE_MODEL_ID/UploadUrls/");
+
+                      var request = new RestRequest(Method.POST);
+
+                      request.AddHeader("authorization", "Basic [[.ApiKey]]");
+
+                      request.AddHeader("Content-Type", ""application/json"");
+
+                      request.AddParameter("undefined", "
+                      {"data": [{"filename":"https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg", "object":
+                      [{"name":"category1", "ocr_text": "text inside the bounding box", "bndbox": {"xmin": 1,"ymin":
+                      1,"xmax": 100, "ymax": 100}}, {"name":"category2", "ocr_text": "text inside the bounding box",
+                      "bndbox": {"xmin": 1,"ymin": 1,"xmax": 100, "ymax":
+                      100}}]}], "urls": ["https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg"]}",
+                      ParameterType.RequestBody);
+
+                      IRestResponse response = client.Execute(request);
+                - lang: Java
+                  label: Java
+                  source: >
+                      OkHttpClient client = new OkHttpClient();
+
+
+                      MediaType mediaType =
+                      MediaType.parse(""application/json"");
+
+                      RequestBody body = RequestBody.create(mediaType, "
+
+                      {"data": [{"filename":"https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg", "object":
+                      [{"name":"category1", "ocr_text": "text inside the bounding box", "bndbox": {"xmin": 1,"ymin":
+                      1,"xmax": 100, "ymax": 100}}, {"name":"category2", "ocr_text": "text inside the bounding box",
+                      "bndbox": {"xmin": 1,"ymin": 1,"xmax": 100, "ymax":
+                      100}}]}], "urls": ["https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg"]}");
+
+                      Request request = new Request.Builder()
+                        .url("https://app.nanonets.com/api/v2/OCR/Model/REPLACE_MODEL_ID/UploadUrls/")
+                        .post(body)
+                        .addHeader("Content-Type", ""application/json"")
+                        .addHeader("Authorization", Credentials.basic("[[.ApiKey]]", ""))
+                        .build();
+
+                      Response response = client.newCall(request).execute();
+    /OCR/Model/{model_id}/UploadFile:
+        post:
+            tags:
+                - ocrUpload
+            summary: Upload Training Images by File
+            description: |
+                Upload a training image to the specified model using a locally stored file.
+                On successful upload, model information along with the total number of images per category will be received.
+                <br />
+                <br />
+                **NOTE**: Batch file uploads are not supported by this end point.
+            operationId: "ocr/upload/file"
+            parameters:
+                - $ref: "#/components/parameters/modelId"
+            requestBody:
+                description: The parameters to be sent in the request's body.
+                content:
+                    "multipart/form-data":
+                        schema:
+                            type: object
+                            required:
+                                - data
+                                - file
+                            properties:
+                                data:
+                                    type: string
+                                    description: |
+                                        The name of the file to be uploaded.
+                                        <br />
+                                        **Format**: `"data": "[{"filename": "filename.ext"}]"`.
+                                        <br />
+                                        **NOTE**: The `filename` must be the same as the uploaded file name.
+                                file:
+                                    $ref: "#/components/schemas/file"
+                        encoding:
+                            file:
+                                contentType: "image/png, image/jpeg, application/pdf"
+                required: true
+            responses:
+                "200":
+                    $ref: "#/components/responses/ok"
+                "400":
+                    description: |
+                        - File missing. Check if the file has been included in the request.
+                        - Incorrect file type. Check if file you included is a valid PNG, JPEG or PDF file.
+                    x-summary: BAD REQUEST
+                "401":
+                    $ref: "#/components/responses/unauthorized"
+                "402":
+                    $ref: "#/components/responses/paymentRequired"
+                "404":
+                    $ref: "#/components/responses/notFound"
+            deprecated: false
+            x-codeSamples:
+                - lang: JavaScript
+                  label: Node.js
+                  source: >
+                      var request = require('request')
+
+                      var fs = require('fs')
+
+                      const form_data = {'file' : fs.createReadStream('REPLACE_IMAGE_PATH.jpg'), 'data' : JSON.stringify([
+                        {"filename":"REPLACE_IMAGE_FILENAME.jpg", "object":[{"name":"category1", "ocr_text":"text inside the bounding box", "bndbox": {"xmin": 1,"ymin":1,"xmax": 100, "ymax": 100}}]}])}
+
+                      const options = {
+                          url : 'https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/UploadFile/',
+                          formData: form_data,
+                          headers: {
+                              'Authorization' : 'Basic ' + Buffer.from('[[.ApiKey]]' + ':').toString('base64')
+                          }
+                      }
+
+                      request.post(options, function(err, httpResponse, body) {
+
+                        console.log(body)
+                      });
+                - lang: Python
+                  label: Python
+                  source: >
+                      import requests
+
+
+                      url = 'https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/UploadFile/'
+
+
+                      data = {'file' :open('REPLACE_IMAGE_PATH.jpg', 'rb'), 'data' :('',
+                      '[{"filename":"REPLACE_IMAGE_FILENAME.jpg", "object":
+                      [{"name":"category1", "ocr_text":"text inside the bounding box", "bndbox": {"xmin": 1,"ymin":
+                      1,"xmax": 100, "ymax": 100}}]}]')}
+
+
+                      response = requests.post(url, auth=requests.auth.HTTPBasicAuth('[[.ApiKey]]', ''), files=data)
+
+
+                      print(response.text)
+                - lang: Shell
+                  label: CLI
+                  source: |
+                      curl --request POST \
+                          --url 'https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/UploadFile/' \
+                          --header 'Accept: multipart/form-data' \
+                          -u '[[.ApiKey]]' \
+                          -F 'data=[{"filename":"REPLACE_IMAGE_FILENAME.jpg", "object": [{"name":"category1", "ocr_text":"text inside the bounding box", "bndbox": {"xmin": 1,"ymin": 1,"xmax": 100, "ymax": 100}}]}]' \
+                          -F 'file=@REPLACE_IMAGE_PATH.jpg'
+                - lang: Go
+                  label: Go
+                  source: |
+                      package main
+
+                      import (
+                          "bytes"
+                          "fmt"
+                          "io"
+                          "io/ioutil"
+                          "mime/multipart"
+                          "net/http"
+                          "os"
+                          "path/filepath"
+                      )
+
+                      func main() {
+
+                          url := "https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/UploadFile/"
+
+                          file, err := os.Open("test.jpg")
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+
+                          defer file.Close()
+
+                          body := &bytes.Buffer{}
+                          writer := multipart.NewWriter(body)
+
+                          part, err := writer.CreateFormFile("file", filepath.Base("test.jpg"))
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+                          _, err = io.Copy(part, file)
+
+                          writer.WriteField("data", `[{"filename":"REPLACE_IMAGE_FILENAME.jpg", "object": [{"name":"category1", "ocr_text":"text inside the bounding box", "bndbox": {"xmin": 1,"ymin": 1,"xmax": 100, "ymax": 100}}]}]`)
+                          contentType := writer.FormDataContentType()
+
+                          err = writer.Close()
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+
+                          req, _ := http.NewRequest("POST", url, body)
+
+                          req.Header.Add("Content-Type", contentType)
+                          req.SetBasicAuth("[[.ApiKey]]", "")
+
+                          res, _ := http.DefaultClient.Do(req)
+
+                          defer res.Body.Close()
+                          outputBody, _ := ioutil.ReadAll(res.Body)
+
+                          fmt.Println(res)
+                          fmt.Println(string(outputBody))
+
+                      }
+                - lang: Ruby
+                  label: Ruby
+                  source: |
+                      require 'uri'
+                      require 'net/http'
+                      require 'net/http/post/multipart'
+
+                      url = URI('https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/UploadFile/')
+
+                      http = Net::HTTP.new(url.host, url.port)
+                      http.use_ssl = true
+
+                      File.open('REPLACE_IMAGE_PATH.jpg') do |jpg|
+                        request = Net::HTTP::Post::Multipart.new url.path,
+                            'file' => UploadIO.new(jpg, 'image/jpeg', 'REPLACE_IMAGE_PATH.jpg'),
+                            'data' => '[{"filename":"REPLACE_IMAGE_FILENAME.jpg", "object":[{"name":"category1", "ocr_text":"text inside the bounding box", "bndbox":{"xmin":1,"ymin":1,"xmax":100, "ymax":100}}]}]'
+                        request.basic_auth '[[.ApiKey]]', ''
+                        response = Net::HTTP.start(url.host, url.port) do |http|
+                            http.request(request)
+                        end
+                        puts response.read_body
+                      end
+                - lang: "C#"
+                  label: "C#"
+                  source: |
+                      var client = new RestClient("https://app.nanonets.com/api/v2/OCR/UploadFile/");
+                      var request = new RestRequest(Method.POST);
+                      request.AddHeader("Authorization", "Basic [[.ApiKey]]");
+                      request.AddHeader("Accept", "multipart/form-data");
+                      request.AddParameter("data", "[{\"filename\":\"REPLACE_IMAGE_FILENAME.jpg\", \"object\": [{\"name\":\"category1\", \"ocr_text\":\"text inside the bounding box\", \"bndbox\": {\"xmin\": 1,\"ymin\": 1,\"xmax\": 100, \"ymax\": 100}}]}]");
+                      request.AddFile("file", "REPLACE_IMAGE_PATH.jpg");
+                      IRestResponse response = client.Execute(request);"
+                - lang: Java
+                  label: Java
+                  source: |
+                      private static final MediaType MEDIA_TYPE_JPG = MediaType.parse("image/jpeg");
+
+                      OkHttpClient client = new OkHttpClient();
+
+                      RequestBody requestBody = new MultipartBody.Builder()
+                              .setType(MultipartBody.FORM)
+                              .addFormDataPart("data", "[{\"filename\":\"REPLACE_IMAGE_FILENAME.jpg\", \"object\": [{\"name\":\"category1\", \"ocr_text\":\"text inside the bounding box\", \"bndbox\": {\"xmin\": 1,\"ymin\": 1,\"xmax\": 100, \"ymax\": 100}}]}]")
+                              .addFormDataPart("file", "REPLACE_IMAGE_PATH.jpg", RequestBody.create(MEDIA_TYPE_JPG, new File("REPLACE_IMAGE_PATH.jpg")))
+                              .build();
+
+                      request = new Request.Builder()
+                              .url("https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/UploadFile/")
+                              .post(requestBody)
+                              .addHeader("Authorization", Credentials.basic("[[.ApiKey]]", ""))
+                              .build();
+
+                      Response response = client.newCall(request).execute();"
+    /OCR/Model/{model_id}/Train:
+        post:
+            tags:
+                - ocrTrain
+            summary: Train Model
+            description: |
+                Train a model after uploading files to the model.
+                The same end point is to be used to re-train a model after uploading more files to improve the model.
+            operationId: "ocr/train"
+            parameters:
+                - $ref: "#/components/parameters/modelId"
+            responses:
+                "200":
+                    description: Request successful.
+                    content:
+                        "application/json":
+                            schema:
+                                type: object
+                            examples:
+                                ok:
+                                    summary: Request successful
+                                    description: >
+                                        200 OK: Request successful
+                                    value:
+                                        model_id: 00000000-0000-0000-0000-000000000000
+                                        model_type: ocr
+                                        state: 0
+                                        categories:
+                                            - name: category1
+                                              count: 0
+                                            - name: category2
+                                              count: 0
+                    x-summary: OK
+                "400":
+                    description: Model not ready for training. Check if the files for the model are uploaded.
+                    x-summary: BAD REQUEST
+                "401":
+                    $ref: "#/components/responses/unauthorized"
+                "402":
+                    description: This feature is only supported for paid models. ([Pricing](https://nanonets.com/pricing))
+                    x-summary: PAYMENT REQUIRED
+                "404":
+                    $ref: "#/components/responses/notFound"
+            deprecated: false
+            x-codeSamples:
+                - lang: JavaScript
+                  label: Node.js
+                  source: >
+                      var request = require('request')
+
+                      const options = {
+                          url : 'https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/Train/',
+                          headers: {
+                              'Authorization' : 'Basic ' + Buffer.from('[[.ApiKey]]' + ':').toString('base64')
+                          }
+                      }
+
+                      request.post(options, function(err, httpResponse, body) {
+
+                        console.log(body)
+                      });
+                - lang: Python
+                  label: Python
+                  source: |
+                      import requests
+
+                      url = 'https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/Train/'
+                      response = requests.request('POST', url, auth=requests.auth.HTTPBasicAuth('[[.ApiKey]]', ''))
+
+                      print(response.text)
+                - lang: Shell
+                  label: CLI
+                  source: |
+                      curl --request POST \
+                          --url 'https://app.nanonets.com/api/v2/OCR/REPLACE_MODEL_ID/Train/' \
+                          -u '[[.ApiKey]]'
+                - lang: Go
+                  label: Go
+                  source: |
+                      package main
+
+                      import (
+                          "fmt"
+                          "net/http"
+                          "io/ioutil"
+                      )
+
+                      func main() {
+
+                          url := "https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/Train/"
+
+                          req, _ := http.NewRequest("POST", url, nil)
+
+                          req.SetBasicAuth("[[.ApiKey]]", "")
+
+                          res, _ := http.DefaultClient.Do(req)
+
+                          defer res.Body.Close()
+                          body, _ := ioutil.ReadAll(res.Body)
+
+                          fmt.Println(res)
+                          fmt.Println(string(body))
+
+                      }
+                - lang: Ruby
+                  label: Ruby
+                  source: >
+                      require 'uri'
+                      require 'net/http'
+
+                      url = URI('https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/Train/')
+
+                      http = Net::HTTP.new(url.host, url.port)
+                      http.use_ssl = true
+
+                      request = Net::HTTP::Post.new(url)
+                      request.basic_auth '[[.ApiKey]]', ''
+
+                      response = http.request(request)
+                      puts response.read_body
+                - lang: "C#"
+                  label: "C#"
+                  source: >
+                      var client = new
+                      RestClient("https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/Train/");
+
+                      var request = new RestRequest(Method.POST);
+
+                      request.AddHeader("authorization", "Basic [[.ApiKey]]");
+
+                      IRestResponse response = client.Execute(request);
+                - lang: Java
+                  label: Java
+                  source: |
+                      OkHttpClient client = new OkHttpClient();
+
+                      Request request = new Request.Builder()
+                        .url("https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/Train/")
+                        .post(null)
+                        .addHeader("Authorization", Credentials.basic("[[.ApiKey]]", ""))
+                        .build();
+
+                      Response response = client.newCall(request).execute();
+    /Inferences/Model/{model_id}/ImageLevelInferences:
+        get:
+            tags:
+                - ocrPredict
+            summary: Get All Prediction Files
+            description: Retrieve the files that have been processed by the prediction end points.
+            operationId: "ocr/predict/getFile"
+            parameters:
+                - $ref: "#/components/parameters/modelId"
+                - name: start_day_interval
+                  in: query
+                  description: |
+                      The start of the interval for which prediction files are needed.
+                      <br />
+                      **Format**: Number of days since [Unix epoch time](https://www.epochconverter.com)
+                      <br />
+                      **Eg**: 1620130500 seconds / 86400 seconds per day ~ `18,751` days
+                  required: true
+                  schema:
+                      type: integer
+                - name: current_batch_day
+                  in: query
+                  description: |
+                      The end of the interval for which prediction files are needed.
+                      <br />
+                      **Format**: Number of days since [Unix epoch time](https://www.epochconverter.com)
+                      <br />
+                      **Eg**: 1630930872 seconds / 86400 seconds per day ~ `18,876` days
+                      <br />
+                      **NOTE**: The value of this parameter has to be greater than the value of the [`start_day_interval` parameter](#operation/ocr/predict/getfile!in=query&path=start_day_interval&t=request).
+                  required: true
+                  schema:
+                      type: integer
+            responses:
+                "200":
+                    description: Image object.
+                    content:
+                        "application/json":
+                            schema:
+                                type: object
+                            examples:
+                                ok:
+                                    summary: Request successful.
+                                    description: >
+                                        200 OK: Request successful
+                                    value:
+                                        moderated_images_count: 55
+                                        unmoderated_images_count: 156
+                                        moderated_images:
+                                            - model_id: category1
+                                              day_since_epoch: 18564
+                                              is_moderated: true
+                                              hour_of_day: 15
+                                              id: 00000000-0000-0000-0000-000000000000
+                                              url: uploadedfiles/00000000-0000-0000-0000-000000000000/PredictionImages/0000000001.jpeg
+                                              predicted_boxes:
+                                                  - label: invoice_id
+                                                    xmin: 616
+                                                    ymin: 321
+                                                    xmax: 984
+                                                    ymax: 357
+                                                    ocr_text: "877541"
+                                        unmoderated_images:
+                                            - model_id: 00000000-0000-0000-0000-000000000000
+                                              day_since_epoch: 18565
+                                              is_moderated: false
+                                              hour_of_day: 23
+                                              id: 00000000-0000-0000-0000-000000000000
+                                              url: uploadedfiles/00000000-0000-0000-0000-000000000000/PredictionImages/0000000002.jpeg
+                                              predicted_boxes:
+                                                  - label: seller_name
+                                                    xmin: 616
+                                                    ymin: 321
+                                                    xmax: 984
+                                                    ymax: 357
+                                                    ocr_text: "Apple"
+                    x-summary: OK
+                "401":
+                    $ref: "#/components/responses/unauthorized"
+                "402":
+                    $ref: "#/components/responses/paymentRequired"
+                "404":
+                    $ref: "#/components/responses/notFound"
+            deprecated: false
+            x-codeSamples:
+                - lang: JavaScript
+                  label: Node.js
+                  source: >
+                      var request = require('request')
+
+                      const options = {
+                          url : 'https://app.nanonets.com/api/v2/Inferences/Model/' + 'REPLACE_MODEL_ID' + '/ImageLevelInferences?start_day_interval={start_day}&current_batch_day={end_day}',
+                          headers: {
+                              'Authorization' : 'Basic ' + Buffer.from('[[.ApiKey]]' + ':').toString('base64')
+                          }
+                      }
+
+                      request.get(options, function(err, httpResponse, body) {
+
+                        console.log(body)
+                      });
+                - lang: Python
+                  label: Python
+                  source: >
+                      import requests
+
+
+                      url = 'https://app.nanonets.com/api/v2/Inferences/Model/' + 'REPLACE_MODEL_ID' + '/ImageLevelInferences?start_day_interval={start_day}&current_batch_day={end_day}'
+
+
+                      response = requests.request('GET', url,
+                      auth=requests.auth.HTTPBasicAuth('[[.ApiKey]]',''))
+
+
+                      print(response.text)
+                - lang: Shell
+                  label: CLI
+                  source: |
+                      curl --request GET \
+                        --url 'https://app.nanonets.com/api/v2/Inferences/Model/{{model_id}}/ImageLevelInferences?start_day_interval={start_day}&current_batch_day={end_day}' \
+                        -u '[[.ApiKey]]'
+                - lang: Go
+                  label: Go
+                  source: |
+                      package main
+
+                      import (
+                          "fmt"
+                          "net/http"
+                          "io/ioutil"
+                      )
+
+                      func main() {
+
+                          url := "https://app.nanonets.com/api/v2/Inferences/Model/{{model_id}}/ImageLevelInferences?start_day_interval={start_day}&current_batch_day={end_day}"
+
+                          req, _ := http.NewRequest("GET", url, nil)
+
+                          req.SetBasicAuth("[[.ApiKey]]", "")
+
+                          res, _ := http.DefaultClient.Do(req)
+
+                          defer res.Body.Close()
+                          body, _ := ioutil.ReadAll(res.Body)
+
+                          fmt.Println(res)
+                          fmt.Println(string(body))
+
+                      }
+                - lang: Ruby
+                  label: Ruby
+                  source: >
+                      require 'uri'
+                      require 'net/http'
+
+                      url = URI("https://app.nanonets.com/api/v2/Inferences/Model/{{model_id}}/ImageLevelInferences?start_day_interval={start_day}&current_batch_day={end_day}")
+
+                      http = Net::HTTP.new(url.host, url.port)
+                      http.use_ssl = true
+
+                      request = Net::HTTP::Get.new(url)
+                      request.basic_auth '[[.ApiKey]]', ''
+                      response = http.request(request)
+
+                      puts response.read_body
+                - lang: "C#"
+                  label: "C#"
+                  source: >
+                      var client = new RestClient("https://app.nanonets.com/api/v2/Inferences/Model/{{model_id}}/ImageLevelInferences?start_day_interval={start_day}&current_batch_day={end_day}");
+
+                      var request = new RestRequest(Method.GET);
+
+                      request.AddHeader("authorization", "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes("[[.ApiKey]]:")));
+
+                      IRestResponse response = client.Execute(request);
+                - lang: Java
+                  label: Java
+                  source: |
+                      OkHttpClient client = new OkHttpClient();
+
+                      Request request = new Request.Builder()
+                        .url("https://app.nanonets.com/api/v2/Inferences/Model/{{model_id}}/ImageLevelInferences?start_day_interval={start_day}&current_batch_day={end_day}")
+                        .get()
+                        .addHeader("authorization", Credentials.basic("[[.ApiKey]]", ""))
+                        .build();
+
+                      Response response = client.newCall(request).execute();
+    /Inferences/Model/{model_id}/ImageLevelInferences/{id}:
+        get:
+            tags:
+                - ocrPredict
+            summary: Get Prediction File by ID
+            description: Retrieve the prediction results of a particular file by its ID.
+            operationId: "ocr/predict/id"
+            parameters:
+                - $ref: "#/components/parameters/modelId"
+                - name: id
+                  in: path
+                  description: |
+                      The ID of the file for which the prediction has to be retrieved. It can be found in the response on uploading prediction files [synchronously](#operation/ocr/predict/file) or [asynchronously](#operation/ocr/predict/file/async) or while [retrieving all prediction file data](#operation/ocr/predict/getFile).
+                      <br />
+                      **Eg**: `0a0aa000-0000-0a0-aa00-000a0000000a`
+                  required: true
+                  schema:
+                      type: string
+            responses:
+                "200":
+                    $ref: "#/components/responses/okPrediction"
+                "401":
+                    $ref: "#/components/responses/unauthorized"
+                "402":
+                    $ref: "#/components/responses/paymentRequired"
+                "404":
+                    $ref: "#/components/responses/notFound"
+            deprecated: false
+            x-codeSamples:
+                - lang: JavaScript
+                  label: Node.js
+                  source: >
+                      var request = require('request')
+
+                      const options = {
+                          url : 'https://app.nanonets.com/api/v2/Inferences/Model/{{model_id}}/ImageLevelInferences/{{id}}',
+                          headers: {
+                              'Authorization' : 'Basic ' + Buffer.from('[[.ApiKey]]' + ':').toString('base64')
+                          }
+                      }
+
+                      request.get(options, function(err, httpResponse, body) {
+
+                        console.log(body)
+                      });
+                - lang: Python
+                  label: Python
+                  source: >
+                      import requests
+
+
+                      url = 'https://app.nanonets.com/api/v2/Inferences/Model/{{model_id}}/ImageLevelInferences/{{id}}'
+
+
+                      response = requests.request('GET', url,
+                      auth=requests.auth.HTTPBasicAuth('[[.ApiKey]]',''))
+
+
+                      print(response.text)
+                - lang: Shell
+                  label: CLI
+                  source: |
+                      curl --request GET \
+                        --url 'https://app.nanonets.com/api/v2/Inferences/Model/{{model_id}}/ImageLevelInferences/{{id}}' \
+                        -u '[[.ApiKey]]'
+                - lang: Go
+                  label: Go
+                  source: |
+                      package main
+
+                      import (
+                          "fmt"
+                          "net/http"
+                          "io/ioutil"
+                      )
+
+                      func main() {
+
+                          url := "https://app.nanonets.com/api/v2/Inferences/Model/{{model_id}}/ImageLevelInferences/{{id}}"
+
+                          req, _ := http.NewRequest("GET", url, nil)
+
+                          req.SetBasicAuth("[[.ApiKey]]", "")
+
+                          res, _ := http.DefaultClient.Do(req)
+
+                          defer res.Body.Close()
+                          body, _ := ioutil.ReadAll(res.Body)
+
+                          fmt.Println(res)
+                          fmt.Println(string(body))
+
+                      }
+                - lang: Ruby
+                  label: Ruby
+                  source: >
+                      require 'uri'
+                      require 'net/http'
+
+                      url = URI("https://app.nanonets.com/api/v2/Inferences/Model/{{model_id}}/ImageLevelInferences/{{id}}")
+
+                      http = Net::HTTP.new(url.host, url.port)
+                      http.use_ssl = true
+
+                      request = Net::HTTP::Get.new(url)
+                      request.basic_auth '[[.ApiKey]]', ''
+                      response = http.request(request)
+
+                      puts response.read_body
+                - lang: "C#"
+                  label: "C#"
+                  source: >
+                      var client = new RestClient("https://app.nanonets.com/api/v2/Inferences/Model/{{model_id}}/ImageLevelInferences/{{id}}");
+
+                      var request = new RestRequest(Method.GET);
+
+                      request.AddHeader("authorization", "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes("[[.ApiKey]]:")));
+
+                      IRestResponse response = client.Execute(request);
+                - lang: Java
+                  label: Java
+                  source: |
+                      OkHttpClient client = new OkHttpClient();
+
+                      Request request = new Request.Builder()
+                        .url("https://app.nanonets.com/api/v2/Inferences/Model/{{model_id}}/ImageLevelInferences/{{id}}")
+                        .get()
+                        .addHeader("authorization", Credentials.basic("[[.ApiKey]]", ""))
+                        .build();
+
+                      Response response = client.newCall(request).execute();
+    /OCR/Model/{model_id}/LabelUrls:
+        post:
+            tags:
+                - ocrPredict
+            summary: Prediction for Image URLs
+            description: |
+                Given image URL(s), extract data as per the label(s) specified in the model.
+                Multiple image URLs per request are allowed.
+            operationId: "ocr/predict/url"
+            parameters:
+                - $ref: "#/components/parameters/modelId"
+            requestBody:
+                $ref: "#/components/requestBodies/urls"
+            responses:
+                "200":
+                    $ref: "#/components/responses/okPrediction"
+                "202":
+                    $ref: "#/components/responses/partiallySuccessfulURL"
+                "400":
+                    $ref: "#/components/responses/missingURL"
+                "401":
+                    $ref: "#/components/responses/unauthorized"
+                "402":
+                    $ref: "#/components/responses/paymentRequired"
+                "404":
+                    $ref: "#/components/responses/notFound"
+            deprecated: false
+            x-codeSamples:
+                - lang: JavaScript
+                  label: Node.js
+                  source: >
+                      var request = require('request')
+
+                      var querystring = require('querystring')
+
+                      const form_data = {'urls' : ['https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg']}
+
+                      const options = {
+                          url : 'https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelUrls/',
+                          body: querystring.stringify(form_data),
+                          headers: {
+                              'Authorization' : 'Basic ' + Buffer.from('[[.ApiKey]]' + ':').toString('base64'),
+                              'Content-Type': 'application/x-www-form-urlencoded'
+                          }
+                      }
+
+                      request.post(options, function(err, httpResponse, body) {
+
+                        console.log(body)
+                      });
+                - lang: Python
+                  label: Python
+                  source: |
+                      import requests
+
+                      url = 'https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelUrls/'
+
+                      headers = {
+                          'accept': 'application/x-www-form-urlencoded'
+                      }
+
+                      data = {'urls' : ['https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg']}
+
+                      response = requests.request('POST', url, headers=headers, auth=requests.auth.HTTPBasicAuth('[[.ApiKey]]', ''), data=data)
+
+                      print(response.text)
+                - lang: Shell
+                  label: CLI
+                  source: |
+                      curl --request POST \
+                          --url 'https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelUrls/' \
+                          --header 'accept: application/x-www-form-urlencoded' \
+                          -d 'urls=https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg' \
+                          -u '[[.ApiKey]]'
+                - lang: Go
+                  label: Go
+                  source: |
+                      package main
+
+                      import (
+                          "bytes"
+                          "fmt"
+                          "io/ioutil"
+                          "net/http"
+                          "net/url"
+                      )
+
+                      func main() {
+
+                          labelUrl := "https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelUrls/"
+
+                          data := url.Values{}
+                          data.Add("urls", "https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg")
+
+                          req, _ := http.NewRequest("POST", labelUrl, bytes.NewBufferString(data.Encode()))
+
+                          req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
+                          req.SetBasicAuth("[[.ApiKey]]", "")
+
+                          res, _ := http.DefaultClient.Do(req)
+
+                          defer res.Body.Close()
+                          body, _ := ioutil.ReadAll(res.Body)
+
+                          fmt.Println(res)
+                          fmt.Println(string(body))
+
+                      }
+                - lang: Ruby
+                  label: Ruby
+                  source: |
+                      require 'uri'
+                      require 'net/http'
+
+                      url = URI('https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelUrls/')
+
+                      http = Net::HTTP.new(url.host, url.port)
+                      http.use_ssl = true
+
+                      request = Net::HTTP::Post.new(url)
+                      request["accept"] = 'application/x-www-form-urlencoded'
+                      request.basic_auth '[[.ApiKey]]', ''
+
+                      request.set_form_data({'urls' => ['https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg']})
+
+                      response = http.request(request)
+                      puts response.read_body
+                - lang: "C#"
+                  label: "C#"
+                  source: |
+                      var client = new RestClient("https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelUrls/");
+                      var request = new RestRequest(Method.POST);
+                      request.AddHeader("authorization", "Basic [[.ApiKey]]");
+                      request.AddHeader("accept", "application/x-www-form-urlencoded");
+                      request.AddParameter("urls", "https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg");
+                      IRestResponse response = client.Execute(request);
+                - lang: Java
+                  label: Java
+                  source: |
+                      OkHttpClient client = new OkHttpClient();
+
+                      RequestBody formBody = new FormBody.Builder()
+                              .add("urls", "https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg").build();
+
+                      Request request = new Request.Builder()
+                          .url("https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelUrls/")
+                          .post(formBody)
+                          .addHeader("Authorization", Credentials.basic("[[.ApiKey]]", ""))
+                          .build();
+
+                      Response response = client.newCall(request).execute();
+    /OCR/Model/{model_id}/LabelUrls/:
+        post:
+            tags:
+                - ocrPredict
+            summary: Async Prediction for Image URLs
+            description: |
+                Given image URL(s), extract data as per the label(s) specified in the model, <u>asynchronously</u>.
+                This end point will send back a response as soon as the file has been uploaded, with a file ID. To retrieve the extracted data from the uploaded file, please use this file ID and hit the [Get Prediction File by ID](#operation/ocr/predict/id) end point.
+            operationId: "ocr/predict/url/async"
+            parameters:
+                - $ref: "#/components/parameters/modelId"
+                - $ref: "#/components/parameters/async"
+            requestBody:
+                $ref: "#/components/requestBodies/urls"
+            responses:
+                "200":
+                    $ref: "#/components/responses/okAsync"
+                "400":
+                    $ref: "#/components/responses/missingURL"
+                "401":
+                    $ref: "#/components/responses/unauthorized"
+                "402":
+                    $ref: "#/components/responses/paymentRequired"
+                "404":
+                    $ref: "#/components/responses/notFound"
+            deprecated: false
+            x-codeSamples:
+                - lang: JavaScript
+                  label: Node.js
+                  source: >
+                      var request = require('request')
+
+                      var querystring = require('querystring')
+
+                      const form_data = {'urls' : ['https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg']}
+
+                      const options = {
+                          url : 'https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelUrls/?async=true',
+                          body: querystring.stringify(form_data),
+                          headers: {
+                              'Authorization' : 'Basic ' + Buffer.from('[[.ApiKey]]' + ':').toString('base64'),
+                              'Content-Type': 'application/x-www-form-urlencoded'
+                          }
+                      }
+
+                      request.post(options, function(err, httpResponse, body) {
+
+                        console.log(body)
+                      });
+                - lang: Python
+                  label: Python
+                  source: |
+                      import requests
+
+                      url = 'https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelUrls/?async=true'
+
+                      headers = {
+                          'accept': 'application/x-www-form-urlencoded'
+                      }
+
+                      data = {'urls' : ['https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg']}
+
+                      response = requests.request('POST', url, headers=headers, auth=requests.auth.HTTPBasicAuth('[[.ApiKey]]', ''), data=data)
+
+                      print(response.text)
+                - lang: Shell
+                  label: CLI
+                  source: |
+                      curl --request POST \
+                          --url 'https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelUrls/?async=true' \
+                          --header 'accept: application/x-www-form-urlencoded' \
+                          -d 'urls=https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg' \
+                          -u '[[.ApiKey]]'
+                - lang: Go
+                  label: Go
+                  source: |
+                      package main
+
+                      import (
+                          "bytes"
+                          "fmt"
+                          "io/ioutil"
+                          "net/http"
+                          "net/url"
+                      )
+
+                      func main() {
+
+                          labelUrl := "https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelUrls/?async=true"
+
+                          data := url.Values{}
+                          data.Add("urls", "https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg")
+
+                          req, _ := http.NewRequest("POST", labelUrl, bytes.NewBufferString(data.Encode()))
+
+                          req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
+                          req.SetBasicAuth("[[.ApiKey]]", "")
+
+                          res, _ := http.DefaultClient.Do(req)
+
+                          defer res.Body.Close()
+                          body, _ := ioutil.ReadAll(res.Body)
+
+                          fmt.Println(res)
+                          fmt.Println(string(body))
+
+                      }
+                - lang: Ruby
+                  label: Ruby
+                  source: |
+                      require 'uri'
+                      require 'net/http'
+
+                      url = URI('https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelUrls/?async=true')
+
+                      http = Net::HTTP.new(url.host, url.port)
+                      http.use_ssl = true
+
+                      request = Net::HTTP::Post.new(url)
+                      request["accept"] = 'application/x-www-form-urlencoded'
+                      request.basic_auth '[[.ApiKey]]', ''
+
+                      request.set_form_data({'urls' => ['https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg']})
+
+                      response = http.request(request)
+                      puts response.read_body
+                - lang: "C#"
+                  label: "C#"
+                  source: |
+                      var client = new RestClient("https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelUrls/?async=true");
+                      var request = new RestRequest(Method.POST);
+                      request.AddHeader("authorization", "Basic [[.ApiKey]]");
+                      request.AddHeader("accept", "application/x-www-form-urlencoded");
+                      request.AddParameter("urls", "https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg");
+                      IRestResponse response = client.Execute(request);
+                - lang: Java
+                  label: Java
+                  source: |
+                      OkHttpClient client = new OkHttpClient();
+
+                      RequestBody formBody = new FormBody.Builder()
+                              .add("urls", "https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg").build();
+
+                      Request request = new Request.Builder()
+                          .url("https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelUrls/?async=true")
+                          .post(formBody)
+                          .addHeader("Authorization", Credentials.basic("[[.ApiKey]]", ""))
+                          .build();
+
+                      Response response = client.newCall(request).execute();
+    /OCR/Model/{model_id}/LabelFile:
+        post:
+            tags:
+                - ocrPredict
+            summary: Prediction for Image File
+            description: Given an image file, extract data as per the label(s) specified in the model.
+            operationId: "ocr/predict/file"
+            parameters:
+                - $ref: "#/components/parameters/modelId"
+            requestBody:
+                $ref: "#/components/requestBodies/file"
+            responses:
+                "200":
+                    $ref: "#/components/responses/okPrediction"
+                "400":
+                    description: |
+                        - File missing. Check if a file has been included in the request.
+                        - Incorrect uploaded file. Check if the included file is a valid PNG, JPEG or PDF.
+                    x-summary: BAD REQUEST
+                "401":
+                    $ref: "#/components/responses/unauthorized"
+                "402":
+                    $ref: "#/components/responses/paymentRequired"
+                "404":
+                    $ref: "#/components/responses/notFound"
+            deprecated: false
+            x-codeSamples:
+                - lang: JavaScript
+                  label: Node.js
+                  source: >
+                      var request = require('request')
+
+                      var fs = require('fs')
+
+                      const form_data = {'modelId' : 'REPLACE_MODEL_ID', 'file' : fs.createReadStream('REPLACE_IMAGE_PATH.jpg')}
+
+                      const options = {
+                          url : 'https://app.nanonets.com/api/v2/OCR/Model/REPLACE_MODEL_ID/LabelFile/',
+                          formData: form_data,
+                          headers: {
+                              'Authorization' : 'Basic ' + Buffer.from('[[.ApiKey]]' + ':').toString('base64')
+                          }
+                      }
+
+                      request.post(options, function(err, httpResponse, body) {
+
+                        console.log(body)
+                      });
+                - lang: Python
+                  label: Python
+                  source: |
+                      import requests
+
+                      url = 'https://app.nanonets.com/api/v2/OCR/Model/REPLACE_MODEL_ID/LabelFile/'
+
+                      data = {'file': open('REPLACE_IMAGE_PATH.jpg', 'rb')}
+
+                      response = requests.post(url, auth=requests.auth.HTTPBasicAuth('[[.ApiKey]]', ''), files=data)
+
+                      print(response.text)
+                - lang: Shell
+                  label: CLI
+                  source: |
+                      curl --request POST \
+                          --url 'https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelFile/' \
+                          --header 'Accept: multipart/form-data' \
+                          -u '[[.ApiKey]]' \
+                          -F 'file=@REPLACE_IMAGE_PATH.jpg'
+                - lang: Go
+                  label: Go
+                  source: |
+                      package main
+
+                      import (
+                          "bytes"
+                          "fmt"
+                          "io"
+                          "io/ioutil"
+                          "mime/multipart"
+                          "net/http"
+                          "os"
+                          "path/filepath"
+                      )
+
+                      func main() {
+
+                          url := "https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelFile/"
+
+                          file, err := os.Open("REPLACE_IMAGE_PATH.jpg")
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+
+                          defer file.Close()
+
+                          body := &bytes.Buffer{}
+                          writer := multipart.NewWriter(body)
+
+                          part, err := writer.CreateFormFile("file", filepath.Base("REPLACE_IMAGE_PATH.jpg"))
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+                          _, err = io.Copy(part, file)
+
+                          contentType := writer.FormDataContentType()
+
+                          err = writer.Close()
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+
+                          req, _ := http.NewRequest("POST", url, body)
+
+                          req.Header.Add("Content-Type", contentType)
+                          req.SetBasicAuth("[[.ApiKey]]", "")
+
+                          res, _ := http.DefaultClient.Do(req)
+
+                          defer res.Body.Close()
+                          respBody, _ := ioutil.ReadAll(res.Body)
+
+                          fmt.Println(res)
+                          fmt.Println(string(respBody))
+
+                      }
+                - lang: Ruby
+                  label: Ruby
+                  source: |
+                      require 'uri'
+                      require 'net/http'
+                      require 'net/http/post/multipart'
+
+                      url = URI('https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelFile/')
+
+                      http = Net::HTTP.new(url.host, url.port)
+                      http.use_ssl = true
+
+                      File.open('test.jpg') do |jpg|
+                      request = Net::HTTP::Post::Multipart.new(url.path,
+                          'file' => UploadIO.new(jpg, 'image/jpeg', 'test.jpg'))
+                      request.basic_auth '[[.ApiKey]]', ''
+                      response = Net::HTTP.start(url.host, url.port) do |http|
+                          http.request(request)
+                      end
+                      puts response.read_body
+                      end
+                - lang: "C#"
+                  label: "C#"
+                  source: |
+                      var client = new RestClient("https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelFile/");
+                      var request = new RestRequest(Method.POST);
+                      request.AddHeader("Authorization", "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes("[[.ApiKey]]:")));
+                      request.AddHeader("Accept", "multipart/form-data");
+                      request.AddFile("file", "REPLACE_IMAGE_PATH.jpg");
+                      IRestResponse response = client.Execute(request);
+                - lang: Java
+                  label: Java
+                  source: |
+                      OkHttpClient client = new OkHttpClient();
+                      private static final MediaType MEDIA_TYPE_JPG = MediaType.parse("image/jpeg");
+
+                      OkHttpClient client = new OkHttpClient();
+
+                      RequestBody requestBody = new MultipartBody.Builder()
+                              .setType(MultipartBody.FORM)
+                              .addFormDataPart("file", "REPLACE_IMAGE_PATH.jpg", RequestBody.create(MEDIA_TYPE_JPG, new File("REPLACE_IMAGE_PATH.jpg")))
+                              .build();
+
+                      request = new Request.Builder()
+                              .url("https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelFile/")
+                              .post(requestBody)
+                              .addHeader("Authorization", Credentials.basic("[[.ApiKey]]", ""))
+                              .build();
+
+                      Response response = client.newCall(request).execute();
+    /OCR/Model/{model_id}/LabelFile/:
+        post:
+            tags:
+                - ocrPredict
+            summary: Async Prediction for Image File
+            description: |
+                Given an image file, extract data as per the label(s) specified in the model, <u>asynchronously</u>.
+                This end point will send back a response as soon as the file has been uploaded, with a file ID. To retrieve the extracted data from the uploaded file, please use this file ID and hit the [Get Prediction File by ID](#operation/ocr/predict/id) end point.
+            operationId: "ocr/predict/file/async"
+            parameters:
+                - $ref: "#/components/parameters/modelId"
+                - $ref: "#/components/parameters/async"
+            requestBody:
+                $ref: "#/components/requestBodies/file"
+            responses:
+                "200":
+                    $ref: "#/components/responses/okAsync"
+                "400":
+                    description: |
+                        - File missing. Check if a file has been included in the request.
+                        - Incorrect uploaded file. Check if the included file is a valid PNG, JPEG or PDF.
+                    x-summary: BAD REQUEST
+                "401":
+                    $ref: "#/components/responses/unauthorized"
+                "402":
+                    $ref: "#/components/responses/paymentRequired"
+                "404":
+                    $ref: "#/components/responses/notFound"
+            deprecated: false
+            x-codeSamples:
+                - lang: JavaScript
+                  label: Node.js
+                  source: >
+                      var request = require('request')
+
+                      var fs = require('fs')
+
+                      const form_data = {'modelId' : 'REPLACE_MODEL_ID', 'file' : fs.createReadStream('REPLACE_IMAGE_PATH.jpg')}
+
+                      const options = {
+                          url : 'https://app.nanonets.com/api/v2/OCR/Model/REPLACE_MODEL_ID/LabelFile/?async=true',
+                          formData: form_data,
+                          headers: {
+                              'Authorization' : 'Basic ' + Buffer.from('[[.ApiKey]]' + ':').toString('base64')
+                          }
+                      }
+
+                      request.post(options, function(err, httpResponse, body) {
+
+                        console.log(body)
+                      });
+                - lang: Python
+                  label: Python
+                  source: |
+                      import requests
+
+                      url = 'https://app.nanonets.com/api/v2/OCR/Model/REPLACE_MODEL_ID/LabelFile/?async=true'
+
+                      data = {'file': open('REPLACE_IMAGE_PATH.jpg', 'rb')}
+
+                      response = requests.post(url, auth=requests.auth.HTTPBasicAuth('[[.ApiKey]]', ''), files=data)
+
+                      print(response.text)
+                - lang: Shell
+                  label: CLI
+                  source: |
+                      curl --request POST \
+                          --url 'https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelFile/?async=true' \
+                          --header 'Accept: multipart/form-data' \
+                          -u '[[.ApiKey]]' \
+                          -F 'file=@REPLACE_IMAGE_PATH.jpg'
+                - lang: Go
+                  label: Go
+                  source: |
+                      package main
+
+                      import (
+                          "bytes"
+                          "fmt"
+                          "io"
+                          "io/ioutil"
+                          "mime/multipart"
+                          "net/http"
+                          "os"
+                          "path/filepath"
+                      )
+
+                      func main() {
+
+                          url := "https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelFile/?async=true"
+
+                          file, err := os.Open("REPLACE_IMAGE_PATH.jpg")
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+
+                          defer file.Close()
+
+                          body := &bytes.Buffer{}
+                          writer := multipart.NewWriter(body)
+
+                          part, err := writer.CreateFormFile("file", filepath.Base("REPLACE_IMAGE_PATH.jpg"))
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+                          _, err = io.Copy(part, file)
+
+                          contentType := writer.FormDataContentType()
+
+                          err = writer.Close()
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+
+                          req, _ := http.NewRequest("POST", url, body)
+
+                          req.Header.Add("Content-Type", contentType)
+                          req.SetBasicAuth("[[.ApiKey]]", "")
+
+                          res, _ := http.DefaultClient.Do(req)
+
+                          defer res.Body.Close()
+                          respBody, _ := ioutil.ReadAll(res.Body)
+
+                          fmt.Println(res)
+                          fmt.Println(string(respBody))
+
+                      }
+                - lang: Ruby
+                  label: Ruby
+                  source: |
+                      require 'uri'
+                      require 'net/http'
+                      require 'net/http/post/multipart'
+
+                      url = URI('https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelFile/?async=true')
+
+                      http = Net::HTTP.new(url.host, url.port)
+                      http.use_ssl = true
+
+                      File.open('test.jpg') do |jpg|
+                      request = Net::HTTP::Post::Multipart.new(url.path,
+                          'file' => UploadIO.new(jpg, 'image/jpeg', 'test.jpg'))
+                      request.basic_auth '[[.ApiKey]]', ''
+                      response = Net::HTTP.start(url.host, url.port) do |http|
+                          http.request(request)
+                      end
+                      puts response.read_body
+                      end
+                - lang: "C#"
+                  label: "C#"
+                  source: |
+                      var client = new RestClient("https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelFile/?async=true");
+                      var request = new RestRequest(Method.POST);
+                      request.AddHeader("Authorization", "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes("[[.ApiKey]]:")));
+                      request.AddHeader("Accept", "multipart/form-data");
+                      request.AddFile("file", "REPLACE_IMAGE_PATH.jpg");
+                      IRestResponse response = client.Execute(request);
+                - lang: Java
+                  label: Java
+                  source: |
+                      OkHttpClient client = new OkHttpClient();
+                      private static final MediaType MEDIA_TYPE_JPG = MediaType.parse("image/jpeg");
+
+                      OkHttpClient client = new OkHttpClient();
+
+                      RequestBody requestBody = new MultipartBody.Builder()
+                              .setType(MultipartBody.FORM)
+                              .addFormDataPart("file", "REPLACE_IMAGE_PATH.jpg", RequestBody.create(MEDIA_TYPE_JPG, new File("REPLACE_IMAGE_PATH.jpg")))
+                              .build();
+
+                      request = new Request.Builder()
+                              .url("https://app.nanonets.com/api/v2/OCR/Model/{{model_id}}/LabelFile/?async=true")
+                              .post(requestBody)
+                              .addHeader("Authorization", Credentials.basic("[[.ApiKey]]", ""))
+                              .build();
+
+                      Response response = client.newCall(request).execute();
+    /ImageCategorization/Models:
+        get:
+            tags:
+                - icModelDetails
+            summary: Get All Model Details
+            description: Get information of all models in an account, irrespective of the type of model (OCR model or Image Classification model).
+            operationId: "ic/model/all"
+            responses:
+                "200":
+                    $ref: "#/components/responses/modelObject"
+                "401":
+                    $ref: "#/components/responses/unauthorized"
+                "402":
+                    $ref: "#/components/responses/paymentRequired"
+            deprecated: false
+            x-codeSamples:
+                - lang: JavaScript
+                  label: Node.js
+                  source: >
+                      var request = require('request')
+
+                      const options = {
+                          url : 'https://app.nanonets.com/api/v2/ImageCategorization/Models/',
+                          headers: {
+                              'Authorization' : 'Basic ' + Buffer.from('[[.ApiKey]]' + ':').toString('base64')
+                          }
+                      }
+
+                      request.get(options, function(err, httpResponse, body) {
+
+                        console.log(body)
+                      });
+                - lang: Python
+                  label: Python
+                  source: >
+                      import requests
+
+
+                      url = 'https://app.nanonets.com/api/v2/ImageCategorization/Models/'
+
+
+                      response = requests.request('GET', url, auth= requests.auth.HTTPBasicAuth('[[.ApiKey]]', ''))
+
+
+                      print(response.text)
+                - lang: Shell
+                  label: CLI
+                  source: |
+                      curl --request GET \
+                        --url https://app.nanonets.com/api/v2/ImageCategorization/Models/ \
+                        -u '[[.ApiKey]]'
+                - lang: Go
+                  label: Go
+                  source: |
+                      package main
+
+                      import (
+                          "fmt"
+                          "net/http"
+                          "io/ioutil"
+                      )
+
+                      func main() {
+
+                          url := "https://app.nanonets.com/api/v2/ImageCategorization/Models/"
+
+                          req, err := http.NewRequest("GET", url, nil)
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+
+                          req.SetBasicAuth("[[.ApiKey]]", "")
+
+                          res, err := http.DefaultClient.Do(req)
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+
+                          defer res.Body.Close()
+                          body, err := ioutil.ReadAll(res.Body)
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+
+                          fmt.Println(res)
+                          fmt.Println(string(body))
+
+                      }
+                - lang: Ruby
+                  label: Ruby
+                  source: >
+                      require 'uri'
+                      require 'net/http'
+
+                      url = URI('https://app.nanonets.com/api/v2/ImageCategorization/Models/')
+
+                      http = Net::HTTP.new(url.host, url.port)
+                      http.use_ssl = true
+
+                      request = Net::HTTP::Get.new(url)
+                      request.basic_auth '[[.ApiKey]]', ''
+                      response = http.request(request)
+
+                      puts response.read_body
+                - lang: "C#"
+                  label: "C#"
+                  source: >
+                      var client = new
+                      RestClient("https://app.nanonets.com/api/v2/ImageCategorization/Models/");
+
+                      var request = new RestRequest(Method.GET);
+
+                      request.AddHeader("authorization", "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes("[[.ApiKey]]:")));
+
+                      IRestResponse response = client.Execute(request);
+                - lang: Java
+                  label: Java
+                  source: |
+                      OkHttpClient client = new OkHttpClient();
+
+                      Request request = new Request.Builder()
+                        .url("https://app.nanonets.com/api/v2/ImageCategorization/Models/")
+                        .get()
+                        .addHeader("authorization", Credentials.basic("[[.ApiKey]]", ""))
+                        .build();
+
+                      Response response = client.newCall(request).execute();
+    /ImageCategorization/Model:
+        get:
+            tags:
+                - icModelDetails
+            summary: Get Model Details by ID
+            description: Retrieve a specific model's details given its ID.
+            operationId: "ic/model/id"
+            parameters:
+                - name: id
+                  in: query
+                  description: |
+                      The ID of the model on which the operation is to be performed. It can be found in the model settings.
+                      <br />
+                      **Eg**: `0a0aa000-0000-0a0-aa00-000a0000000a`
+                  required: true
+                  schema:
+                      type: string
+            responses:
+                "200":
+                    $ref: "#/components/responses/modelObject"
+                "401":
+                    $ref: "#/components/responses/unauthorized"
+                "402":
+                    $ref: "#/components/responses/paymentRequired"
+                "404":
+                    $ref: "#/components/responses/notFound"
+            deprecated: false
+            x-codeSamples:
+                - lang: JavaScript
+                  label: Node.js
+                  source: >
+                      var request = require('request')
+
+                      const options = {
+                          url : 'https://app.nanonets.com/api/v2/ImageCategorization/Model/?modelId=REPLACE_MODEL_ID',
+                          headers: {
+                              'Authorization' : 'Basic ' + Buffer.from('[[.ApiKey]]' + ':').toString('base64'),
+                          }
+                      }
+
+                      request.get(options, function(err, httpResponse, body) {
+
+                        console.log(body)
+                      });
+                - lang: Python
+                  label: Python
+                  source: >
+                      import requests
+
+
+                      url = 'https://app.nanonets.com/api/v2/ImageCategorization/Model/'
+
+
+                      querystring = {'modelId': 'REPLACE_MODEL_ID'}
+
+
+                      response = requests.request('GET', url, auth=requests.auth.HTTPBasicAuth('[[.ApiKey]]',''), params=querystring)
+
+
+                      print(response.text)
+                - lang: Shell
+                  label: CLI
+                  source: |
+                      curl --request GET \
+                        --url 'https://app.nanonets.com/api/v2/ImageCategorization/Model/?id=REPLACE_MODEL_ID' \
+                        -u '[[.ApiKey]]'
+                - lang: Go
+                  label: Go
+                  source: |
+                      package main
+
+                      import (
+                          "fmt"
+                          "net/http"
+                          "io/ioutil"
+                      )
+
+                      func main() {
+
+                          url := "https://app.nanonets.com/api/v2/ImageCategorization/Model/?id=REPLACE_MODEL_ID"
+
+                          req, err := http.NewRequest("GET", url, nil)
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+
+                          req.SetBasicAuth("[[.ApiKey]]", "")
+
+                          res, err := http.DefaultClient.Do(req)
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+
+                          defer res.Body.Close()
+                          body, err := ioutil.ReadAll(res.Body)
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+
+                          fmt.Println(res)
+                          fmt.Println(string(body))
+
+                      }
+                - lang: Ruby
+                  label: Ruby
+                  source: >
+                      require 'uri'
+                      require 'net/http'
+
+                      url = URI('https://app.nanonets.com/api/v2/ImageCategorization/Model/?id=REPLACE_MODEL_ID')
+
+                      http = Net::HTTP.new(url.host, url.port)
+                      http.use_ssl = true
+
+                      request = Net::HTTP::Get.new(url)
+                      request.basic_auth '[[.ApiKey]]', ''
+                      response = http.request(request)
+
+                      puts response.read_body
+                - lang: "C#"
+                  label: "C#"
+                  source: >
+                      var client = new RestClient("https://app.nanonets.com/api/v2/ImageCategorization/Model/?id=REPLACE_MODEL_ID");
+
+                      var request = new RestRequest(Method.GET);
+
+                      request.AddHeader("authorization", "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes("[[.ApiKey]]:")));
+
+                      IRestResponse response = client.Execute(request);
+                - lang: Java
+                  label: Java
+                  source: |
+                      OkHttpClient client = new OkHttpClient();
+
+                      Request request = new Request.Builder()
+                        .url("https://app.nanonets.com/api/v2/ImageCategorization/Model/?id=REPLACE_MODEL_ID")
+                        .get()
+                        .addHeader("authorization", Credentials.basic("[[.ApiKey]]", ""))
+                        .build();
+
+                      Response response = client.newCall(request).execute();
+    /ImageCategorization/UploadUrls:
+        post:
+            tags:
+                - icUpload
+            summary: Upload Training Images by URLs
+            description: |
+                Upload training images to a model using image URLs.
+                Multiple images can be uploaded in the same request by adding more URLs in the `urls` array.
+                On successful upload, model information along with the total number of images per category will be received.
+            operationId: "ic/upload/url"
+            requestBody:
+                description: The parameters to be sent in the request's body.
+                content:
+                    "application/x-www-form-urlencoded":
+                        schema:
+                            type: object
+                            required:
+                                - modelId
+                                - category
+                                - urls
+                            properties:
+                                modelId:
+                                    $ref: "#/components/schemas/modelId"
+                                category:
+                                    $ref: "#/components/schemas/category"
+                                urls:
+                                    $ref: "#/components/schemas/urls"
+                required: true
+            responses:
+                "200":
+                    $ref: "#/components/responses/modelObject"
+                "202":
+                    $ref: "#/components/responses/partiallySuccessfulURL"
+                "400":
+                    description: |
+                        - Category not valid for model. Check if the model has the category used in the request.
+                        - URL(s) missing. Check if an array of file URLs has been included in the request.
+                    x-summary: BAD REQUEST
+                "401":
+                    $ref: "#/components/responses/unauthorized"
+                "402":
+                    $ref: "#/components/responses/paymentRequired"
+                "404":
+                    $ref: "#/components/responses/notFound"
+            deprecated: false
+            x-codeSamples:
+                - lang: JavaScript
+                  label: Node.js
+                  source: >
+                      var request = require('request')
+
+                      var querystring = require('querystring')
+
+                      const form_data = {'modelId' : 'REPLACE_MODEL_ID', 'category': 'category1', 'urls': ['https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg']}
+
+                      const options = {
+                          url : 'https://app.nanonets.com/api/v2/ImageCategorization/UploadUrls/',
+                          body: querystring.stringify(form_data),
+                          headers: {
+                              'Authorization' : 'Basic ' + Buffer.from('[[.ApiKey]]' + ':').toString('base64'),
+                              'Content-Type': 'application/x-www-form-urlencoded'
+                          }
+                      }
+
+                      request.post(options, function(err, httpResponse, body) {
+
+                        console.log(body)
+                      });
+                - lang: Python
+                  label: Python
+                  source: >
+                      import requests
+
+
+                      url = 'https://app.nanonets.com/api/v2/ImageCategorization/UploadUrls/'
+
+
+                      headers = {
+                          'accept': 'application/x-www-form-urlencoded'
+                      }
+
+
+                      data = {'modelId' : 'REPLACE_MODEL_ID', 'category': 'category1', 'urls': ['https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg']}
+
+
+                      response = requests.request('POST', url, headers=headers, auth= requests.auth.HTTPBasicAuth('[[.ApiKey]]', ''), data=data)
+
+
+                      print(response.text)
+                - lang: Shell
+                  label: CLI
+                  source: |
+                      curl --request POST \
+                        --url 'https://app.nanonets.com/api/v2/ImageCategorization/UploadUrls/' \
+                        --header 'accept: application/x-www-form-urlencoded' \
+                        -d 'modelId=REPLACE_MODEL_ID&category=category1&urls=https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg' \
+                        -u '[[.ApiKey]]'
+                - lang: Go
+                  label: Go
+                  source: |
+                      package main
+
+
+                      import (
+                          "bytes"
+                          "fmt"
+                          "io/ioutil"
+                          "net/http"
+                          "net/url"
+                      )
+
+
+                      func main() {
+                          UploadUrl := "https://app.nanonets.com/api/v2/ImageCategorization/UploadUrls/"
+
+
+                          data := url.Values{}
+                          data.Set("modelId", "REPLACE_MODEL_ID")
+                          data.Add("category", "category1")
+                          data.Add("urls", "https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg")
+
+
+                          req, err := http.NewRequest("POST", UploadUrl, bytes.NewBufferString(data.Encode()))
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+
+
+                          req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
+                          req.SetBasicAuth("[[.ApiKey]]", "")
+
+
+                          res, err := http.DefaultClient.Do(req)
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+                          defer res.Body.Close()
+
+
+                          body, err := ioutil.ReadAll(res.Body)
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+
+
+                          fmt.Println(res)
+                          fmt.Println(string(body))
+                      }
+                - lang: Ruby
+                  label: Ruby
+                  source: >
+                      require 'uri'
+                      require 'net/http'
+
+                      url = URI('https://app.nanonets.com/api/v2/ImageCategorization/UploadUrls/')
+
+                      http = Net::HTTP.new(url.host, url.port)
+                      http.use_ssl = true
+
+                      request = Net::HTTP::Post.new(url)
+                      request["accept"] = 'application/x-www-form-urlencoded'
+                      request.basic_auth '[[.ApiKey]]', ''
+                      request.set_form_data({'modelId' => 'REPLACE_MODEL_ID', 'category' => 'category1', 'urls' => ['https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg']})
+                      response = http.request(request)
+
+                      puts response.read_body
+                - lang: "C#"
+                  label: "C#"
+                  source: >
+                      var client = new RestClient("https://app.nanonets.com/api/v2/ImageCategorization/UploadUrls/");
+
+                      var request = new RestRequest(Method.POST);
+
+                      request.AddHeader("authorization", "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes("[[.ApiKey]]:")));
+
+                      request.AddHeader("accept", "application/x-www-form-urlencoded");
+
+                      request.AddParameter("modelId", "REPLACE_MODEL_ID");
+
+                      request.AddParameter("category", "category1");
+
+                      request.AddParameter("urls", "https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg");
+
+                      IRestResponse response = client.Execute(request);
+                - lang: Java
+                  label: Java
+                  source: |
+                      OkHttpClient client = new OkHttpClient();
+
+                      RequestBody formBody = new FormBody.Builder()
+                              .add("modelId", "REPLACE_MODEL_ID")
+                              .add("category", "category1")
+                              .add("urls", "https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg").build();
+
+                      Request request = new Request.Builder()
+                              .url("https://app.nanonets.com/api/v2/ImageCategorization/UploadUrls/")
+                              .post(formBody)
+                              .addHeader("Authorization", Credentials.basic("[[.ApiKey]]", ""))
+                              .build();
+
+                      Response response = client.newCall(request).execute();
+    /ImageCategorization/UploadFile:
+        post:
+            tags:
+                - icUpload
+            summary: Upload Training Images by File
+            description: |
+                Upload a training image to the specified model using a locally stored file.
+                On successful upload, model information along with the total number of images per category will be received.
+                <br />
+                **NOTE**: Batch file uploads are not supported by this end point.
+            operationId: "ic/upload/file"
+            requestBody:
+                description: The parameters to be sent in the request's body.
+                content:
+                    "multipart/form-data":
+                        schema:
+                            required:
+                                - modelId
+                                - category
+                                - file
+                            properties:
+                                modelId:
+                                    $ref: "#/components/schemas/modelId"
+                                category:
+                                    $ref: "#/components/schemas/category"
+                                file:
+                                    $ref: "#/components/schemas/file"
+                        encoding:
+                            file:
+                                contentType: image/png, image/jpeg, application/pdf
+                required: true
+            responses:
+                "200":
+                    $ref: "#/components/responses/modelObject"
+                "400":
+                    description: |
+                        Zero or one category in the request body.
+                        Add two or more categories in the `category` parameter.
+                    x-summary: BAD REQUEST
+                "401":
+                    $ref: "#/components/responses/unauthorized"
+                "402":
+                    $ref: "#/components/responses/paymentRequired"
+            deprecated: false
+            x-codeSamples:
+                - lang: JavaScript
+                  label: Node.js
+                  source: >
+                      var request = require('request')
+
+                      var fs = require('fs')
+
+                      const form_data = {'modelId' : 'REPLACE_MODEL_ID', 'category': 'category1', 'file': fs.createReadStream('REPLACE_IMAGE_PATH.jpg')}
+
+                      const options = {
+                          url : 'https://app.nanonets.com/api/v2/ImageCategorization/UploadFile/',
+                          formData: form_data,
+                          headers: {
+                              'Authorization' : 'Basic ' + Buffer.from('[[.ApiKey]]' + ':').toString('base64')
+                          }
+                      }
+
+                      request.post(options, function(err, httpResponse, body) {
+
+                        console.log(body)
+                      });
+                - lang: Python
+                  label: Python
+                  source: |
+                      import requests
+
+
+                      url = 'https://app.nanonets.com/api/v2/ImageCategorization/UploadFile/'
+
+
+                      data = {'file' :open('REPLACE_IMAGE_PATH.jpg', 'rb'),'category' :('', 'category1'), 'modelId' :('', 'REPLACE_MODEL_ID')}
+
+
+                      response = requests.post(url, auth= requests.auth.HTTPBasicAuth('[[.ApiKey]]', ''), files=data)
+                      print(response.text)
+                - lang: Shell
+                  label: CLI
+                  source: |
+                      curl --request POST \
+                        --url 'https://app.nanonets.com/api/v2/ImageCategorization/UploadFile/' \
+                        --header 'Accept: multipart/form-data' \
+                        -u '[[.ApiKey]]' \
+                        -F 'category=category1' \
+                        -F 'modelId=REPLACE_MODEL_ID' \
+                        -F 'file=@REPLACE_IMAGE_PATH.jpg'
+                - lang: Go
+                  label: Go
+                  source: |
+                      package main
+
+
+                      import (
+                          "bytes"
+                          "fmt"
+                          "io"
+                          "io/ioutil"
+                          "mime/multipart"
+                          "net/http"
+                          "os"
+                          "path/filepath"
+                      )
+
+
+                      func main() {
+                          url := "https://app.nanonets.com/api/v2/ImageCategorization/UploadFile/"
+                          file, err := os.Open("REPLACE_IMAGE_PATH.jpg")
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+                          defer file.Close()
+
+
+                          body := &bytes.Buffer{}
+                          writer := multipart.NewWriter(body)
+                          part, err := writer.CreateFormFile("file", filepath.Base("REPLACE_IMAGE_PATH.jpg"))
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+
+                          _, err = io.Copy(part, file)
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+
+
+                          writer.WriteField("category", "category1")
+                          writer.WriteField("modelId", "REPLACE_MODEL_ID")
+                          contentType := writer.FormDataContentType()
+                          err = writer.Close()
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+                          req, _ := http.NewRequest("POST", url, body)
+                          req.Header.Add("Content-Type", contentType)
+                          req.SetBasicAuth("[[.ApiKey]]", "")
+
+
+                          res, _ := http.DefaultClient.Do(req)
+                          defer res.Body.Close()
+                          output, _ := ioutil.ReadAll(res.Body)
+                          fmt.Println(res)
+                          fmt.Println(string(output))
+                      }
+                - lang: Ruby
+                  label: Ruby
+                  source: >
+                      require 'uri'
+                      require 'net/http'
+                      require 'net/http/post/multipart'
+
+                      url = URI('https://app.nanonets.com/api/v2/ImageCategorization/UploadFile/')
+
+                      http = Net::HTTP.new(url.host, url.port)
+                      http.use_ssl = true
+
+                      File.open('REPLACE_IMAGE_PATH.jpg') do |jpg|
+                        request = Net::HTTP::Post::Multipart.new(url.path,
+                          'file' => UploadIO.new(jpg, 'image/jpeg', 'REPLACE_IMAGE_PATH.jpg')
+                          'modelId' => 'REPLACE_MODEL_ID',
+                          'category' => 'category1')
+                        request.basic_auth '[[.ApiKey]]', ''
+                        response = Net::HTTP.start(url.host, url.port) do |http|
+                          http.request(request)
+                        end
+                        puts response.read_body
+                      end
+                - lang: "C#"
+                  label: "C#"
+                  source: >
+                      var client = new
+                      RestClient("https://app.nanonets.com/api/v2/ImageCategorization/UploadFile/");
+
+                      var request = new RestRequest(Method.POST);
+
+                      request.AddHeader("Authorization", "Basic " +
+                      Convert.ToBase64String(Encoding.Default.GetBytes("[[.ApiKey]]:")));
+
+                      request.AddHeader("Accept", "multipart/form-data");
+
+                      request.AddParameter("modelId", "REPLACE_MODEL_ID");
+
+                      request.AddParameter("category", "category1");
+
+                      request.AddFile("file", "REPLACE_IMAGE_PATH.jpg");
+
+                      IRestResponse response = client.Execute(request);
+                - lang: Java
+                  label: Java
+                  source: >
+                      private static final MediaType MEDIA_TYPE_JPG =
+                      MediaType.parse("image/jpeg");
+
+
+                      OkHttpClient client = new OkHttpClient();
+
+
+                      RequestBody requestBody = new MultipartBody.Builder()
+                              .setType(MultipartBody.FORM)
+                              .addFormDataPart("modelId", "REPLACE_MODEL_ID")
+                              .addFormDataPart("category", "category1")
+                              .addFormDataPart("file", "REPLACE_IMAGE_PATH.jpg", RequestBody.create(MEDIA_TYPE_JPG, new File("REPLACE_IMAGE_PATH.jpg")))
+                              .build();
+
+                      request = new Request.Builder()
+                              .url("https://app.nanonets.com/api/v2/ImageCategorization/UploadFile/")
+                              .post(requestBody)
+                              .addHeader("Authorization", Credentials.basic("[[.ApiKey]]", ""))
+                              .build();
+
+                      Response response = client.newCall(request).execute();
+    /ImageCategorization/Train:
+        post:
+            tags:
+                - icTrain
+            summary: Train Model
+            description: |
+                Train a model after uploading files to the model.
+                The same end point is to be used to re-train a model after uploading more files to improve the model.
+            operationId: "ic/train"
+            parameters:
+                - name: modelId
+                  in: query
+                  description: |
+                      The ID of the model on which the operation is to be performed.
+                      It can be found in the model settings.
+                      <br />
+                      **Eg**: `0a0aa000-0000-0a0-aa00-000a0000000a`
+                  required: true
+                  schema:
+                      type: string
+            responses:
+                "200":
+                    $ref: "#/components/responses/modelObject"
+                "400":
+                    description: Model not ready for training. Check if the files for the model are uploaded.
+                    x-summary: BAD REQUEST
+                "401":
+                    $ref: "#/components/responses/unauthorized"
+                "402":
+                    $ref: "#/components/responses/paymentRequired"
+                "404":
+                    $ref: "#/components/responses/notFound"
+            deprecated: false
+            x-codeSamples:
+                - lang: JavaScript
+                  label: Node.js
+                  source: >
+                      var request = require('request')
+
+                      const options = {
+                          url : `https://app.nanonets.com/api/v2/ImageCategorization/Train/?modelId=REPLACE_MODEL_ID`,
+                          headers: {
+                              'Authorization' : 'Basic ' + Buffer.from('[[.ApiKey]]' + ':').toString('base64'),
+                          }
+                      }
+
+                      request.post(options, function(err, httpResponse, body) {
+
+                        console.log(body)
+                      });
+                - lang: Python
+                  label: Python
+                  source: >
+                      import requests
+
+
+                      url = 'https://app.nanonets.com/api/v2/ImageCategorization/Train/'
+
+
+                      querystring = {'modelId': 'REPLACE_MODEL_ID'}
+
+
+                      response = requests.request('POST', url, headers=headers, auth=requests.auth.HTTPBasicAuth('[[.ApiKey]]', ''), params=querystring)
+
+
+                      print(response.text)
+                - lang: Shell
+                  label: CLI
+                  source: |
+                      curl --request POST \
+                        --url 'https://app.nanonets.com/api/v2/ImageCategorization/Train/?modelId=REPLACE_MODEL_ID' \
+                        -u '[[.ApiKey]]'
+                - lang: Go
+                  label: Go
+                  source: |
+                      package main
+
+                      import (
+                          "fmt"
+                          "net/http"
+                          "io/ioutil"
+                      )
+
+                      func main() {
+
+                          url := "https://app.nanonets.com/api/v2/ImageCategorization/Train/?modelId=REPLACE_MODEL_ID"
+
+                          req, _ := http.NewRequest("POST", url, nil)
+
+                          req.SetBasicAuth("[[.ApiKey]]", "")
+
+                          res, _ := http.DefaultClient.Do(req)
+
+                          defer res.Body.Close()
+                          body, _ := ioutil.ReadAll(res.Body)
+
+                          fmt.Println(res)
+                          fmt.Println(string(body))
+
+                      }
+                - lang: Ruby
+                  label: Ruby
+                  source: >
+                      require 'uri'
+                      require 'net/http'
+
+                      url = URI('https://app.nanonets.com/api/v2/ImageCategorization/Train/?modelId=REPLACE_MODEL_ID')
+
+                      http = Net::HTTP.new(url.host, url.port)
+                      http.use_ssl = true
+
+                      request = Net::HTTP::Post.new(url)
+                      request.basic_auth '[[.ApiKey]]', ''
+                      response = http.request(request)
+
+                      puts response.read_body
+                - lang: "C#"
+                  label: "C#"
+                  source: >
+                      var client = new
+                      RestClient("https://app.nanonets.com/api/v2/ImageCategorization/Train/?modelId=REPLACE_MODEL_ID");
+
+                      var request = new RestRequest(Method.POST);
+
+                      request.AddHeader("authorization", "Basic " +
+                      Convert.ToBase64String(Encoding.Default.GetBytes("[[.ApiKey]]:")));
+
+                      IRestResponse response = client.Execute(request);
+                - lang: Java
+                  label: Java
+                  source: |
+                      OkHttpClient client = new OkHttpClient();
+
+                      Request request = new Request.Builder()
+                        .url("https://app.nanonets.com/api/v2/ImageCategorization/Train/?modelId=REPLACE_MODEL_ID")
+                        .post(null)
+                        .addHeader("Authorization", Credentials.basic("[[.ApiKey]]", ""))
+                        .build();
+
+                      Response response = client.newCall(request).execute();
+    /ImageCategorization/LabelUrls:
+        post:
+            tags:
+                - icPredict
+            summary: Prediction for Image URLs
+            description: |
+                Given image URL(s), extract data as per the label(s) specified in the model.
+                Multiple image URLs per request are allowed.
+            operationId: "ic/predict/url"
+            requestBody:
+                description: The parameters to be sent in the request's body.
+                content:
+                    "application/x-www-form-urlencoded":
+                        schema:
+                            type: object
+                            required:
+                                - modelId
+                                - urls
+                            properties:
+                                modelId:
+                                    $ref: "#/components/schemas/modelId"
+                                urls:
+                                    $ref: "#/components/schemas/urls"
+                required: true
+            responses:
+                "200":
+                    $ref: "#/components/responses/modelObject"
+                "202":
+                    $ref: "#/components/responses/partiallySuccessfulURL"
+                "400":
+                    description: URL(s) missing. Check if an array of file URLs has been included in the request.
+                    x-summary: BAD REQUEST
+                "401":
+                    $ref: "#/components/responses/unauthorized"
+                "402":
+                    $ref: "#/components/responses/paymentRequired"
+                "404":
+                    $ref: "#/components/responses/notFound"
+            deprecated: false
+            x-codeSamples:
+                - lang: JavaScript
+                  label: Node.js
+                  source: >
+                      var request = require('request')
+
+                      var querystring = require('querystring')
+
+                      const form_data = {'modelId': 'REPLACE_MODEL_ID', 'urls' : ['https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg']}
+
+                      const options = {
+                          url : 'https://app.nanonets.com/api/v2/ImageCategorization/LabelUrls/',
+                          body: querystring.stringify(form_data),
+                          headers: {
+                              'Authorization' : 'Basic ' + Buffer.from('[[.ApiKey]]' + ':').toString('base64'),
+                              'Content-Type': 'application/x-www-form-urlencoded'
+                          }
+                      }
+
+                      request.post(options, function(err, httpResponse, body) {
+
+                        console.log(body)
+                      });
+                - lang: Python
+                  label: Python
+                  source: >
+                      import requests
+
+
+                      url =
+                      'https://app.nanonets.com/api/v2/ImageCategorization/LabelUrls/'
+
+
+                      headers = {
+                          'accept': 'application/x-www-form-urlencoded'
+                      }
+
+
+                      data = {'modelId': 'REPLACE_MODEL_ID', 'urls' : ['https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg']}
+
+
+                      response = requests.request('POST', url, headers=headers, auth=requests.auth.HTTPBasicAuth('[[.ApiKey]]', ''), data=data)
+
+
+                      print(response.text)
+                - lang: Shell
+                  label: CLI
+                  source: |
+                      curl --request POST \
+                        --url 'https://app.nanonets.com/api/v2/ImageCategorization/LabelUrls/' \
+                        --header 'accept: application/x-www-form-urlencoded' \
+                        -d 'modelId=REPLACE_MODEL_ID&urls=https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg' \
+                        -u '[[.ApiKey]]'
+                - lang: Go
+                  label: Go
+                  source: |
+                      package main
+
+                      import (
+                          "bytes"
+                          "fmt"
+                          "io/ioutil"
+                          "net/http"
+                          "net/url"
+                      )
+
+                      func main() {
+
+                          labelUrl := "https://app.nanonets.com/api/v2/ImageCategorization/LabelUrls/"
+
+                          data := url.Values{}
+                          data.Set("modelId", "REPLACE_MODEL_ID")
+                          data.Add("urls", "https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg")
+
+                          req, _ := http.NewRequest("POST", labelUrl, bytes.NewBufferString(data.Encode()))
+
+                          req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
+                          req.SetBasicAuth("[[.ApiKey]]", "")
+
+                          res, _ := http.DefaultClient.Do(req)
+
+                          defer res.Body.Close()
+                          body, _ := ioutil.ReadAll(res.Body)
+
+                          fmt.Println(res)
+                          fmt.Println(string(body))
+
+                      }
+                - lang: Ruby
+                  label: Ruby
+                  source: >
+                      require 'uri'
+                      require 'net/http'
+
+                      url = URI('https://app.nanonets.com/api/v2/ImageCategorization/LabelUrls/')
+
+                      http = Net::HTTP.new(url.host, url.port)
+                      http.use_ssl = true
+
+                      request = Net::HTTP::Post.new(url)
+                      request["accept"] = 'application/x-www-form-urlencoded'
+                      request.basic_auth '[[.ApiKey]]', ''
+                      request.set_form_data({'modelId' => 'REPLACE_MODEL_ID', 'urls' => ['https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg']})
+                      response = http.request(request)
+
+                      puts response.read_body
+                - lang: "C#"
+                  label: "C#"
+                  source: >
+                      var client = new
+                      RestClient("https://app.nanonets.com/api/v2/ImageCategorization/LabelUrls/");
+
+                      var request = new RestRequest(Method.POST);
+
+                      request.AddHeader("authorization", "Basic " +
+                      Convert.ToBase64String(Encoding.Default.GetBytes("[[.ApiKey]]:")));
+
+                      request.AddHeader("accept", "application/x-www-form-urlencoded");
+
+                      request.AddParameter("modelId", "REPLACE_MODEL_ID");
+
+                      request.AddParameter("urls", "https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg");
+
+                      IRestResponse response = client.Execute(request);
+                - lang: Java
+                  label: Java
+                  source: |
+                      OkHttpClient client = new OkHttpClient();
+
+                      RequestBody formBody = new FormBody.Builder()
+                              .add("modelId", "REPLACE_MODEL_ID")
+                              .add("urls", "https://nanonets.s3-us-west-2.amazonaws.com/test-images/test1.jpg").build();
+
+                      Request request = new Request.Builder()
+                          .url("https://app.nanonets.com/api/v2/ImageCategorization/LabelUrls/")
+                          .post(formBody)
+                          .addHeader("Authorization", Credentials.basic("[[.ApiKey]]", ""))
+                          .build();
+
+                      Response response = client.newCall(request).execute();
+    /ImageCategorization/LabelFile:
+        post:
+            tags:
+                - icPredict
+            summary: Prediction for Image File
+            description: Given an image file, extract data as per the label(s) specified in the model.
+            operationId: "ic/predict/file"
+            requestBody:
+                description: The parameters to be sent in the request's body.
+                content:
+                    "multipart/form-data":
+                        schema:
+                            type: object
+                            required:
+                                - modelId
+                                - file
+                            properties:
+                                modelId:
+                                    $ref: "#/components/schemas/modelId"
+                                file:
+                                    $ref: "#/components/schemas/file"
+                        encoding:
+                            file:
+                                contentType: image/png, image/jpeg, application/pdf
+                required: true
+            responses:
+                "200":
+                    $ref: "#/components/responses/modelObject"
+                "202":
+                    $ref: "#/components/responses/partiallySuccessfulURL"
+                "400":
+                    description: |
+                        - File missing. Check if a file has been included in the request.
+                        - Incorrect uploaded file. Check if the included file is a valid PNG, JPEG or PDF.
+                    x-summary: BAD REQUEST
+                "401":
+                    $ref: "#/components/responses/unauthorized"
+                "402":
+                    $ref: "#/components/responses/paymentRequired"
+                "404":
+                    $ref: "#/components/responses/notFound"
+            deprecated: false
+            x-codeSamples:
+                - lang: JavaScript
+                  label: Node.js
+                  source: >
+                      var request = require('request')
+
+                      var fs = require('fs')
+
+                      const form_data = {'modelId' : 'REPLACE_MODEL_ID', 'file' : fs.createReadStream('REPLACE_IMAGE_PATH.jpg')}
+
+                      const options = {
+                          url : 'https://app.nanonets.com/api/v2/ImageCategorization/LabelFile/',
+                          formData: form_data,
+                          headers: {
+                              'Authorization' : 'Basic ' + Buffer.from('[[.ApiKey]]' + ':').toString('base64')
+                          }
+                      }
+
+                      request.post(options, function(err, httpResponse, body) {
+
+                        console.log(body)
+                      });
+                - lang: Python
+                  label: Python
+                  source: |
+                      import requests
+
+                      url = 'https://app.nanonets.com/api/v2/ImageCategorization/LabelFile/'
+
+                      data = {'file': open('REPLACE_IMAGE_PATH.jpg', 'rb'), 'modelId': ('', 'REPLACE_MODEL_ID')}
+
+                      response = requests.post(url, auth= requests.auth.HTTPBasicAuth('[[.ApiKey]]', ''), files=data)
+
+                      print(response.text)
+                - lang: Shell
+                  label: CLI
+                  source: |
+                      curl --request POST \
+                        --url 'https://app.nanonets.com/api/v2/ImageCategorization/LabelFile/' \
+                        --header 'Accept: multipart/form-data' \
+                        -u '[[.ApiKey]]' \
+                        -F 'modelId=REPLACE_MODEL_ID' \
+                        -F 'file=@REPLACE_IMAGE_PATH.jpg'
+                - lang: Go
+                  label: Go
+                  source: |
+                      package main
+
+                      import (
+                          "bytes"
+                          "fmt"
+                          "io"
+                          "io/ioutil"
+                          "mime/multipart"
+                          "net/http"
+                          "os"
+                          "path/filepath"
+                      )
+
+                      func main() {
+
+                          url := "https://app.nanonets.com/api/v2/ImageCategorization/LabelFile/"
+
+                          file, err := os.Open("test.jpg")
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+
+                          defer file.Close()
+
+                          body := &bytes.Buffer{}
+                          writer := multipart.NewWriter(body)
+
+                          part, err := writer.CreateFormFile("file", filepath.Base("test.jpg"))
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+                          _, err = io.Copy(part, file)
+
+                          writer.WriteField("modelId", "REPLACE_MODEL_ID")
+
+                          contentType := writer.FormDataContentType()
+
+                          err = writer.Close()
+                          if err != nil {
+                              fmt.Println(err)
+                              return
+                          }
+
+                          req, _ := http.NewRequest("POST", url, body)
+
+                          req.Header.Add("Content-Type", contentType)
+                          req.SetBasicAuth("[[.ApiKey]]", "")
+
+                          res, _ := http.DefaultClient.Do(req)
+
+                          defer res.Body.Close()
+                          output, _ := ioutil.ReadAll(res.Body)
+
+                          fmt.Println(res)
+                          fmt.Println(string(output))
+
+                      }
+                - lang: Ruby
+                  label: Ruby
+                  source: |
+                      require 'uri'
+                      require 'net/http'
+                      require 'net/http/post/multipart'
+
+                      url = URI('https://app.nanonets.com/api/v2/ImageCategorization/LabelFile/')
+
+                      http = Net::HTTP.new(url.host, url.port)
+                      http.use_ssl = true
+
+                      File.open('test.jpg') do |jpg|
+                      request = Net::HTTP::Post::Multipart.new(url.path,
+                          'file' => UploadIO.new(jpg, 'image/jpeg', 'test.jpg'),
+                          'modelId' => 'REPLACE_MODEL_ID')
+                      request.basic_auth '[[.ApiKey]]', ''
+                      response = Net::HTTP.start(url.host, url.port) do |http|
+                          http.request(request)
+                      end
+                      puts response.read_body
+                      end
+                - lang: "C#"
+                  label: "C#"
+                  source: >
+                      var client = new
+                      RestClient("https://app.nanonets.com/api/v2/ImageCategorization/LabelFile/");
+
+                      var request = new RestRequest(Method.POST);
+
+                      request.AddHeader("Authorization", "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes("[[.ApiKey]]:")));
+
+                      request.AddHeader("Accept", "multipart/form-data");
+
+                      request.AddParameter("modelId", "REPLACE_MODEL_ID");
+
+                      request.AddFile("file", "REPLACE_IMAGE_PATH.jpg");
+
+                      IRestResponse response = client.Execute(request);
+                - lang: Java
+                  label: Java
+                  source: >
+                      OkHttpClient client = new OkHttpClient();
+
+                      private static final MediaType MEDIA_TYPE_JPG =
+                      MediaType.parse("image/jpeg");
+
+
+                      OkHttpClient client = new OkHttpClient();
+
+
+                      RequestBody requestBody = new MultipartBody.Builder()
+                              .setType(MultipartBody.FORM)
+                              .addFormDataPart("modelId", "REPLACE_MODEL_ID")
+                              .addFormDataPart("file", "REPLACE_IMAGE_PATH.jpg", RequestBody.create(MEDIA_TYPE_JPG, new File("REPLACE_IMAGE_PATH.jpg")))
+                              .build();
+
+                      request = new Request.Builder()
+                              .url("https://app.nanonets.com/api/v2/ImageCategorization/LabelFile/")
+                              .post(requestBody)
+                              .addHeader("Authorization", Credentials.basic("[[.ApiKey]]", ""))
+                              .build();
+
+                      Response response = client.newCall(request).execute();
+components:
+    schemas:
+        modelId:
+            type: string
+            description: |
+                The ID of the model on which the operation is to be performed.
+                It can be found in the model settings.
+                <br />
+                **Eg**: `0a0aa000-0000-0a0-aa00-000a0000000a`
+        category:
+            type: string
+            description: TBD
+        urls:
+            type: string
+            description: |
+                Array of URLs of the training files.
+                <br />
+                **Format**: PNG, JPEG and/or PDF
+        file:
+            type: string
+            format: binary
+            description: |
+                The file to be uploaded.
+                <br />
+                **Format**: PNG, JPEG or PDF
+    responses:
+        modelObject:
+            description: Request successful.
+            content:
+                "application/json":
+                    schema:
+                        type: object
+                    examples:
+                        ok:
+                            summary: Request successful
+                            description: >
+                                200 OK: Request successful
+                            value:
+                                model_id: 00000000-0000-0000-0000-000000000000
+                                model_type: ocr
+                                state: 0
+                                categories:
+                                    - name: category1
+                                      count: 0
+                                    - name: category2
+                                      count: 0
+            x-summary: OK
+        ok:
+            description: Request successful.
+            content:
+                "application/json":
+                    schema:
+                        type: object
+                    examples:
+                        ok:
+                            summary: Request successful
+                            description: >
+                                200 OK: Request successful
+                            value:
+                                Meta:
+                                    ModelID: 00000000-0000-0000-0000-000000000000
+                                    ModelType: ocr
+                                    State: 0
+                                    Categories:
+                                        - name: category1
+                                          count: 0
+                                        - name: category2
+                                          count: 0
+                                    Accuracy: 0
+                                    Status: Current Status
+                                Data:
+                                    - filename: example.jpeg
+                                      size:
+                                          width: 1024
+                                          height: 1024
+                                      object:
+                                          - name: category1
+                                            ocr_text: text inside the bounding box
+                                            bndbox:
+                                                xmin: 1
+                                                ymin: 1
+                                                xmax: 100
+                                                ymax: 100
+                                      id: 00000000-0000-0000-0000-000000000000
+            x-summary: OK
+        okPrediction:
+            description: Request successful.
+            content:
+                "application/json":
+                    schema:
+                        type: object
+                    examples:
+                        ok:
+                            summary: Prediction object.
+                            description: >
+                                200 OK: Request successful
+                            value:
+                                message: Success
+                                result:
+                                    - message: Success
+                                      input: string
+                                      prediction:
+                                          - label: category1
+                                            xmin: 0
+                                            ymin: 0
+                                            xmax: 100
+                                            ymax: 100
+                                            score: 0.9
+                                            ocr_text: string
+                                          - label: ""
+                                            ocr_text: table 1
+                                            type: table
+                                            score: 99.99
+                                            xmin: 159
+                                            xmax: 380
+                                            ymin: 1258
+                                            ymax: 1439
+                                            cells:
+                                                - row: 1
+                                                  col: 1
+                                                  row_span: 1
+                                                  col_span: 1
+                                                  label: col 1
+                                                  xmin: 159
+                                                  ymin: 1258
+                                                  xmax: 258
+                                                  ymax: 1357
+                                                  score: 99.99
+                                                  text: ocr text 1
+                                                - row: 1
+                                                  col: 2
+                                                  row_span: 1
+                                                  col_span: 1
+                                                  label: col 2
+                                                  xmin: 258
+                                                  ymin: 1258
+                                                  xmax: 380
+                                                  ymax: 1357
+                                                  score: 99.99
+                                                  text: ocr text 2
+                                                - row: 2
+                                                  col: 1
+                                                  row_span: 1
+                                                  col_span: 1
+                                                  label: col 1
+                                                  xmin: 159
+                                                  ymin: 1357
+                                                  xmax: 258
+                                                  ymax: 1439
+                                                  score: 99.99
+                                                  text: ocr text 3
+                                                - row: 2
+                                                  col: 2
+                                                  row_span: 1
+                                                  col_span: 1
+                                                  label: col 2
+                                                  xmin: 258
+                                                  ymin: 1357
+                                                  xmax: 380
+                                                  ymax: 1439
+                                                  score: 99.99902
+                                                  text: ocr text 4
+            x-summary: OK
+        okAsync:
+            description: |
+                The response can contain three status messages
+
+                - `success`: The file has been successfully processed.
+                - `pending`: The file is in the queue and will be processed.
+                - `failure`: There was an issue while processing the file. It has been re-tried three times. It is recommended to re-upload the file and if the issue persists, please [contact support](mailto:support@nanonets.com).
+            content:
+                "application/json":
+                    schema:
+                        type: object
+                    examples:
+                        ok:
+                            summary: Successful request.
+                            description: >
+                                200 OK: Request successful
+                            value:
+                                message: Success
+                                result:
+                                    - message: Success
+                                      result:
+                                          - message: "Success"
+                                            input: "filename.jpg"
+                                            prediction: []
+                                            page: 55
+                                            request_file_id: "00000000-0000-0000-0000-000000000000"
+                                            filepath: "uploadedfiles/00000000-0000-0000-0000-000000000000/PredictionImages/filename.jpeg"
+                                            id: "00000000-0000-0000-0000-000000000000"
+            x-summary: OK
+        partiallySuccessfulURL:
+            description: |
+                Request partially successful.
+                <br />
+                <br />
+                One or more URLs
+                - Might not be correct.
+                - Might be of the wrong file format.
+                - Got no response.
+            x-summary: ACCEPTED (Partially successful)
+        missingURL:
+            description: |
+                URL(s) missing.
+                Check if an array of file URLs has been included in the request.
+            x-summary: BAD REQUEST
+        unauthorized:
+            description: |
+                Request authorization unsuccessful.
+                <br />
+                - Please use a valid API key.
+                - Please check HTTP Basic Authorization Scheme format.
+            x-summary: UNAUTHORIZED
+        paymentRequired:
+            description: |
+                Free API call limit for the month has been exhausted.
+                Please [change the plan](https://app.nanonets.com/#/models) of the model.
+            x-summary: PAYMENT REQUIRED
+        notFound:
+            description: Model does not exist. Check if the model ID is correct.
+            x-summary: NOT FOUND
+    parameters:
+        contentType:
+            name: Content-Type
+            in: header
+            description: |
+                Set the ['Content-Type' header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) value.
+                <br />
+                **Eg**: `"Content-Type": ""application/json""`
+            required: true
+            schema:
+                type: string
+        modelId:
+            name: model_id
+            in: path
+            description: |
+                The ID of the model on which the operation is to be performed.
+                It can be found in the model settings.
+                <br />
+                **Eg**: `0a0aa000-0000-0a0-aa00-000a0000000a`
+            required: true
+            schema:
+                type: string
+        async:
+            name: async
+            in: query
+            description: |
+                Indicates that the request has to be processed asynchronously.
+                <br />
+                **NOTE**: `true` is the only accepted value.
+            required: true
+            schema:
+                type: boolean
+    requestBodies:
+        file:
+            description: The parameters to be sent in the request's body.
+            content:
+                "multipart/form-data":
+                    schema:
+                        type: object
+                        required:
+                            - file
+                        properties:
+                            file:
+                                type: string
+                                format: binary
+                                description: |
+                                    The file to be uploaded.
+                                    <br />
+                                    **Format**: PNG, JPEG or PDF
+                    encoding:
+                        file:
+                            contentType: image/png, image/jpeg, application/pdf
+            required: true
+        urls:
+            description: The parameters to be sent in the request's body.
+            content:
+                "application/x-www-form-urlencoded":
+                    schema:
+                        required:
+                            - urls
+                        properties:
+                            urls:
+                                type: string
+                                description: |
+                                    Array of URLs of the training files.
+                                    <br />
+                                    **Format**: PNG, JPEG and/or PDF
+            required: true
+    securitySchemes:
+        basicAuth:
+            type: http
+            description: |
+                The [Basic HTTP Authentication Scheme](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme) is used for authorization through the [Authorization header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization).
+                <br />
+                <br />
+                The Basic scheme consists of a username and password encoded using the [Base64 Encoding Scheme](https://developer.mozilla.org/en-US/docs/Glossary/Base64) in a particular format.
+                <br />
+                <br />
+                **Format**: `Authorization: "Basic <base64_string>"`
+                - **Eg**: `Authorization: "Basic MGEwYWEwMDAtMDtYGE6"`
+                - For the `base64_string`, please encode the string `<username>:<password>` using the [Base64 Encoding Scheme](https://developer.mozilla.org/en-US/docs/Glossary/Base64).
+                  - The `username` is the API Key. ([Get an API Key](https://app.nanonets.com/#/keys))
+                  - For the `password`
+                    - There is no password, please leave it blank.
+                    - So the `<username>:<password>` format is `<api_key>:`, which needs to be Base64 encoded to get the `base64_string`.
+                        
+                        **NOTE**: the colon (`:`) after the API key in `<api_key>:` needs to be Base64 encoded as well.
+
+                **NOTE**:
+                - All API requests must be made over HTTPS only. HTTP calls will fail.
+                - All API requests must have the `Authorization` header.
+                - All API requests from the browser will fail due to CORS policies.
+                - API Keys have full access to the user's account. **Please do not expose API Keys on the client.**
+                  - Please note that compiling, obfuscating, minifying or bundling (for example in React.js, Angular, Vue.js, React Native, etc.) **does not** hide the API Key and **it can still be extracted from the final application**.
+                  - The API Key should only be known to the server code and all client requests to the API must go through a server.
+                <br />
+                <br />
+            scheme: basic
+security:
+    - basicAuth: []
+tags:
+    - name: ocrModelDetails
+      description: |
+          Get the details of an existing Optical Character Recognition (OCR) model.
+          <br />
+          ([Create a model](https://app.nanonets.com) on the NanoNets web app.)
+      x-displayName: OCR Model Details
+    - name: ocrUpload
+      description: |
+          Upload training images to an existing Optical Character Recognition (OCR) model.
+          <br />
+          ([Create a model](https://app.nanonets.com) on the NanoNets web app.)
+          <br />
+          <br />
+          **NOTE**: These end points are only for uploading **training files** for the model and the same files cannot be directly used for prediction. (They need to be uploaded again through the [prediction end points](#tag/ocrPredict) for prediction.)
+      x-displayName: OCR Upload
+    - name: ocrTrain
+      description: |
+          Train an existing Optical Character Recognition (OCR) model.
+          <br />
+          ([Create a model](https://app.nanonets.com) on the NanoNets web app.)
+      x-displayName: OCR Train
+    - name: ocrPredict
+      description: |
+          Upload a file to an existing Optical Character Recognition (OCR) model and get the extracted data.
+          <br />
+          ([Create a model](https://app.nanonets.com) on the NanoNets web app.)
+      x-displayName: OCR Predict
+    - name: icModelDetails
+      description: |
+          Get the details of an existing Image Classification (IC) model.
+          <br />
+          ([Create a model](https://app.nanonets.com) on the NanoNets web app.)
+      x-displayName: IC Model Details
+    - name: icUpload
+      description: |
+          Upload training images to an existing Image Classification (IC) model.
+          <br />
+          ([Create a model](https://app.nanonets.com) on the NanoNets web app.)
+          <br />
+          <br />
+          **NOTE**: These end points are only for uploading **training files** for the model and the same files cannot be directly used for prediction. (They need to be uploaded again through the [prediction end points](#tag/icPredict) for prediction.)
+      x-displayName: IC Upload
+    - name: icTrain
+      description: |
+          Train an existing Image Classification (IC) model.
+          <br />
+          ([Create a model](https://app.nanonets.com) on the NanoNets web app.)
+      x-displayName: IC Train
+    - name: icPredict
+      description: |
+          Upload a file to an existing Image Classification (IC) model and get the predicted classification result.
+          <br />
+          ([Create a model](https://app.nanonets.com) on the NanoNets web app.)
+      x-displayName: IC Predict
+x-tagGroups:
+    - name: Optical Character Recognition (OCR)
+      tags:
+          - ocrModelDetails
+          - ocrUpload
+          - ocrTrain
+          - ocrPredict
+    - name: Image Classification (IC)
+      tags:
+          - icModelDetails
+          - icUpload
+          - icTrain
+          - icPredict

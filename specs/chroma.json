@@ -1,0 +1,5454 @@
+{
+  "components": {
+    "schemas": {
+      "AddCollectionRecordsPayload": {
+        "description": "Payload for adding records to a collection.\n\nRecords are added in batches. All arrays must have the same length, with each index\nrepresenting a single record. For example, `ids[0]`, `embeddings[0]`, `documents[0]`, etc.\nall belong to the same record.",
+        "properties": {
+          "documents": {
+            "items": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "type": [
+              "array",
+              "null"
+            ]
+          },
+          "embeddings": {
+            "$ref": "#/components/schemas/EmbeddingsPayload",
+            "description": "Embeddings for each record. Can contain the raw f32 arrays or base64 encoded strings."
+          },
+          "ids": {
+            "description": "Unique identifiers for each record.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "metadatas": {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "$ref": "#/components/schemas/HashMap"
+                }
+              ]
+            },
+            "type": [
+              "array",
+              "null"
+            ]
+          },
+          "uris": {
+            "items": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "type": [
+              "array",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "ids",
+          "embeddings"
+        ],
+        "type": "object"
+      },
+      "AddCollectionRecordsResponse": {
+        "type": "object"
+      },
+      "AttachFunctionRequest": {
+        "properties": {
+          "function_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "output_collection": {
+            "type": "string"
+          },
+          "params": {}
+        },
+        "required": [
+          "name",
+          "function_id",
+          "output_collection"
+        ],
+        "type": "object"
+      },
+      "AttachFunctionResponse": {
+        "properties": {
+          "attached_function": {
+            "$ref": "#/components/schemas/AttachedFunctionInfo"
+          },
+          "created": {
+            "description": "True if newly created, false if already existed (idempotent request).",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "attached_function",
+          "created"
+        ],
+        "type": "object"
+      },
+      "AttachedFunctionApiResponse": {
+        "description": "API response struct for attached function with function_name instead of function_id",
+        "properties": {
+          "completion_offset": {
+            "description": "Completion offset: the WAL position up to which the attached function has processed records",
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "database_id": {
+            "description": "Database name this attached function belongs to",
+            "type": "string"
+          },
+          "function_name": {
+            "description": "Name of the function (e.g., \"record_counter\", \"statistics\")",
+            "type": "string"
+          },
+          "id": {
+            "$ref": "#/components/schemas/AttachedFunctionUuid",
+            "description": "Unique identifier for the attached function"
+          },
+          "input_collection_id": {
+            "$ref": "#/components/schemas/CollectionUuid",
+            "description": "Source collection that triggers the attached function"
+          },
+          "min_records_for_invocation": {
+            "description": "Minimum number of new records required before the attached function runs again",
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "name": {
+            "description": "Human-readable name for the attached function instance",
+            "type": "string"
+          },
+          "output_collection": {
+            "description": "Name of target collection where attached function output is stored",
+            "type": "string"
+          },
+          "output_collection_id": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/CollectionUuid",
+                "description": "ID of the output collection (lazily filled in after creation)"
+              }
+            ]
+          },
+          "params": {
+            "description": "Optional JSON parameters for the function",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tenant_id": {
+            "description": "Tenant name this attached function belongs to",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "function_name",
+          "input_collection_id",
+          "output_collection",
+          "tenant_id",
+          "database_id",
+          "completion_offset",
+          "min_records_for_invocation"
+        ],
+        "type": "object"
+      },
+      "AttachedFunctionInfo": {
+        "properties": {
+          "function_name": {
+            "description": "Name of the function (e.g., \"record_counter\", \"statistics\").",
+            "type": "string"
+          },
+          "id": {
+            "description": "Unique identifier for the attached function.",
+            "type": "string"
+          },
+          "name": {
+            "description": "Human-readable name for the attached function instance.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "function_name"
+        ],
+        "type": "object"
+      },
+      "AttachedFunctionUuid": {
+        "description": "AttachedFunctionUuid is a wrapper around Uuid to provide a type for attached function identifiers.",
+        "format": "uuid",
+        "type": "string"
+      },
+      "BoolInvertedIndexConfig": {
+        "additionalProperties": false,
+        "type": "object"
+      },
+      "BoolInvertedIndexType": {
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/BoolInvertedIndexConfig"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "enabled",
+          "config"
+        ],
+        "type": "object"
+      },
+      "BoolValueType": {
+        "description": "Boolean value type index configurations",
+        "properties": {
+          "bool_inverted_index": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/BoolInvertedIndexType"
+              }
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "ChecklistResponse": {
+        "properties": {
+          "max_batch_size": {
+            "format": "int32",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "supports_base64_encoding": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "max_batch_size",
+          "supports_base64_encoding"
+        ],
+        "type": "object"
+      },
+      "Collection": {
+        "properties": {
+          "configuration_json": {
+            "$ref": "#/components/schemas/CollectionConfiguration"
+          },
+          "database": {
+            "type": "string"
+          },
+          "dimension": {
+            "format": "int32",
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "id": {
+            "$ref": "#/components/schemas/CollectionUuid"
+          },
+          "log_position": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "metadata": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/HashMap"
+              }
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "schema": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Schema"
+              }
+            ]
+          },
+          "tenant": {
+            "type": "string"
+          },
+          "version": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "configuration_json",
+          "tenant",
+          "database",
+          "log_position",
+          "version"
+        ],
+        "type": "object"
+      },
+      "CollectionConfiguration": {
+        "properties": {
+          "embedding_function": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/EmbeddingFunctionConfiguration"
+              }
+            ]
+          },
+          "hnsw": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/HnswConfiguration"
+              }
+            ]
+          },
+          "spann": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/SpannConfiguration"
+              }
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "CollectionUuid": {
+        "format": "uuid",
+        "type": "string"
+      },
+      "CreateCollectionPayload": {
+        "properties": {
+          "configuration": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/CollectionConfiguration"
+              }
+            ]
+          },
+          "get_or_create": {
+            "type": "boolean"
+          },
+          "metadata": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/HashMap"
+              }
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "schema": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Schema"
+              }
+            ]
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "CreateDatabasePayload": {
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "CreateDatabaseResponse": {
+        "type": "object"
+      },
+      "CreateTenantPayload": {
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "CreateTenantResponse": {
+        "type": "object"
+      },
+      "Database": {
+        "properties": {
+          "id": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "tenant": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "tenant"
+        ],
+        "type": "object"
+      },
+      "DeleteCollectionRecordsPayload": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/RawWhereFields"
+          },
+          {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "type": [
+                  "array",
+                  "null"
+                ]
+              },
+              "limit": {
+                "format": "int32",
+                "minimum": 0,
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              }
+            },
+            "type": "object"
+          }
+        ],
+        "description": "Payload for deleting records from a collection.\n\nRecords can be deleted by their IDs or by a metadata filter. At least one of `ids` or `where`\nmust be provided."
+      },
+      "DeleteCollectionRecordsResponse": {
+        "properties": {
+          "deleted": {
+            "format": "int32",
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "DeleteCollectionResponse": {
+        "type": "object"
+      },
+      "DeleteDatabaseResponse": {
+        "type": "object"
+      },
+      "DetachFunctionRequest": {
+        "properties": {
+          "delete_output": {
+            "description": "Whether to delete the output collection as well when detaching the function.",
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "DetachFunctionResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "success"
+        ],
+        "type": "object"
+      },
+      "EmbeddingFunctionConfiguration": {
+        "oneOf": [
+          {
+            "properties": {
+              "type": {
+                "enum": [
+                  "legacy"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "type": "object"
+          },
+          {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EmbeddingFunctionNewConfiguration"
+              },
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "known"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type"
+                ],
+                "type": "object"
+              }
+            ]
+          },
+          {
+            "properties": {
+              "type": {
+                "enum": [
+                  "unknown"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "type": "object"
+          }
+        ]
+      },
+      "EmbeddingFunctionNewConfiguration": {
+        "properties": {
+          "config": {},
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "config"
+        ],
+        "type": "object"
+      },
+      "EmbeddingsPayload": {
+        "oneOf": [
+          {
+            "items": {
+              "items": {
+                "format": "float",
+                "type": "number"
+              },
+              "type": "array"
+            },
+            "type": "array"
+          },
+          {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        ]
+      },
+      "ErrorResponse": {
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error",
+          "message"
+        ],
+        "type": "object"
+      },
+      "FloatInvertedIndexConfig": {
+        "additionalProperties": false,
+        "type": "object"
+      },
+      "FloatInvertedIndexType": {
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/FloatInvertedIndexConfig"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "enabled",
+          "config"
+        ],
+        "type": "object"
+      },
+      "FloatListValueType": {
+        "description": "Float list value type index configurations (for vectors)",
+        "properties": {
+          "vector_index": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/VectorIndexType"
+              }
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "FloatValueType": {
+        "description": "Float value type index configurations",
+        "properties": {
+          "float_inverted_index": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/FloatInvertedIndexType"
+              }
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "ForkCollectionPayload": {
+        "properties": {
+          "new_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "new_name"
+        ],
+        "type": "object"
+      },
+      "FtsIndexConfig": {
+        "additionalProperties": false,
+        "type": "object"
+      },
+      "FtsIndexType": {
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/FtsIndexConfig"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "enabled",
+          "config"
+        ],
+        "type": "object"
+      },
+      "GetAttachedFunctionResponse": {
+        "properties": {
+          "attached_function": {
+            "$ref": "#/components/schemas/AttachedFunctionApiResponse"
+          }
+        },
+        "required": [
+          "attached_function"
+        ],
+        "type": "object"
+      },
+      "GetRequestPayload": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/RawWhereFields"
+          },
+          {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "type": [
+                  "array",
+                  "null"
+                ]
+              },
+              "include": {
+                "$ref": "#/components/schemas/IncludeList"
+              },
+              "limit": {
+                "format": "int32",
+                "minimum": 0,
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "offset": {
+                "format": "int32",
+                "minimum": 0,
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              }
+            },
+            "type": "object"
+          }
+        ],
+        "description": "Records can be retrieved by their IDs or by a metadata filter. At least one of `ids` or `where`\nmust be provided. Use `include` to specify which fields to return in the response."
+      },
+      "GetResponse": {
+        "description": "All arrays have the same length, with each index representing a single record.\nOnly fields specified in the request's `include` parameter are populated.",
+        "properties": {
+          "documents": {
+            "items": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "type": [
+              "array",
+              "null"
+            ]
+          },
+          "embeddings": {
+            "items": {
+              "items": {
+                "format": "float",
+                "type": "number"
+              },
+              "type": "array"
+            },
+            "type": [
+              "array",
+              "null"
+            ]
+          },
+          "ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "include": {
+            "description": "List of fields that were included in this response.",
+            "items": {
+              "$ref": "#/components/schemas/Include"
+            },
+            "type": "array"
+          },
+          "metadatas": {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "$ref": "#/components/schemas/HashMap"
+                }
+              ]
+            },
+            "type": [
+              "array",
+              "null"
+            ]
+          },
+          "uris": {
+            "items": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "type": [
+              "array",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "ids",
+          "include"
+        ],
+        "type": "object"
+      },
+      "GetTenantResponse": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "resource_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "GetUserIdentityResponse": {
+        "properties": {
+          "databases": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "tenant": {
+            "type": "string"
+          },
+          "user_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "user_id",
+          "tenant",
+          "databases"
+        ],
+        "type": "object"
+      },
+      "HashMap": {
+        "additionalProperties": {
+          "oneOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "format": "int64",
+              "type": "integer"
+            },
+            {
+              "format": "double",
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/components/schemas/SparseVector"
+            },
+            {
+              "items": {
+                "type": "boolean"
+              },
+              "type": "array"
+            },
+            {
+              "items": {
+                "format": "int64",
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            {
+              "items": {
+                "format": "double",
+                "type": "number"
+              },
+              "type": "array"
+            },
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          ]
+        },
+        "propertyNames": {
+          "type": "string"
+        },
+        "type": "object"
+      },
+      "HeartbeatResponse": {
+        "properties": {
+          "nanosecond heartbeat": {
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "nanosecond heartbeat"
+        ],
+        "type": "object"
+      },
+      "HnswConfiguration": {
+        "additionalProperties": false,
+        "properties": {
+          "ef_construction": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "ef_search": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "max_neighbors": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "resize_factor": {
+            "format": "double",
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "space": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Space"
+              }
+            ]
+          },
+          "sync_threshold": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "HnswIndexConfig": {
+        "additionalProperties": false,
+        "description": "Configuration for HNSW vector index algorithm parameters",
+        "properties": {
+          "batch_size": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "ef_construction": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "ef_search": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "max_neighbors": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "num_threads": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "resize_factor": {
+            "format": "double",
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "sync_threshold": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "Include": {
+        "description": "Use this enum to specify which fields should be returned when retrieving records.",
+        "enum": [
+          "distances",
+          "documents",
+          "embeddings",
+          "metadatas",
+          "uris"
+        ],
+        "type": "string"
+      },
+      "IncludeList": {
+        "items": {
+          "$ref": "#/components/schemas/Include"
+        },
+        "type": "array"
+      },
+      "IndexStatusResponse": {
+        "properties": {
+          "num_indexed_ops": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "num_unindexed_ops": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "op_indexing_progress": {
+            "format": "float",
+            "type": "number"
+          },
+          "total_ops": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "op_indexing_progress",
+          "num_unindexed_ops",
+          "num_indexed_ops",
+          "total_ops"
+        ],
+        "type": "object"
+      },
+      "IntInvertedIndexConfig": {
+        "additionalProperties": false,
+        "type": "object"
+      },
+      "IntInvertedIndexType": {
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/IntInvertedIndexConfig"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "enabled",
+          "config"
+        ],
+        "type": "object"
+      },
+      "IntValueType": {
+        "description": "Integer value type index configurations",
+        "properties": {
+          "int_inverted_index": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/IntInvertedIndexType"
+              }
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "Key": {
+        "description": "Represents a field key in search queries.\n\nUsed for both selecting fields to return and building filter expressions.\nPredefined keys access special fields, while custom keys access metadata.\n\n# Predefined Keys\n\n- `Key::Document` - Document text content (`#document`)\n- `Key::Embedding` - Vector embeddings (`#embedding`)\n- `Key::Metadata` - All metadata fields (`#metadata`)\n- `Key::Score` - Search scores (`#score`)\n\n# Custom Keys\n\nUse `Key::field()` or `Key::from()` to reference metadata fields:\n\n```\nuse chroma_types::operator::Key;\n\nlet key = Key::field(\"author\");\nlet key = Key::from(\"title\");\n```\n\n# Examples\n\n## Building filters\n\n```\nuse chroma_types::operator::Key;\n\n// Equality\nlet filter = Key::field(\"status\").eq(\"published\");\n\n// Comparisons\nlet filter = Key::field(\"year\").gte(2020);\nlet filter = Key::field(\"score\").lt(0.9);\n\n// Set operations\nlet filter = Key::field(\"category\").is_in(vec![\"tech\", \"science\"]);\nlet filter = Key::field(\"status\").not_in(vec![\"deleted\", \"archived\"]);\n\n// Document content\nlet filter = Key::Document.contains(\"machine learning\");\nlet filter = Key::Document.regex(r\"\\bAPI\\b\");\n\n// Combining filters\nlet filter = Key::field(\"status\").eq(\"published\")\n    & Key::field(\"year\").gte(2020);\n```\n\n## Selecting fields\n\n```\nuse chroma_types::plan::SearchPayload;\nuse chroma_types::operator::Key;\n\nlet search = SearchPayload::default()\n    .select([\n        Key::Document,\n        Key::Score,\n        Key::field(\"title\"),\n        Key::field(\"author\"),\n    ]);\n```",
+        "oneOf": [
+          {
+            "enum": [
+              "Document"
+            ],
+            "type": "string"
+          },
+          {
+            "enum": [
+              "Embedding"
+            ],
+            "type": "string"
+          },
+          {
+            "enum": [
+              "Metadata"
+            ],
+            "type": "string"
+          },
+          {
+            "enum": [
+              "Score"
+            ],
+            "type": "string"
+          },
+          {
+            "properties": {
+              "MetadataField": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "MetadataField"
+            ],
+            "type": "object"
+          }
+        ]
+      },
+      "Quantization": {
+        "description": "Quantization implementation for SPANN vector index.",
+        "enum": [
+          "none",
+          "four_bit_rabit_q_with_u_search"
+        ],
+        "type": "string"
+      },
+      "QueryRequestPayload": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/RawWhereFields"
+          },
+          {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "type": [
+                  "array",
+                  "null"
+                ]
+              },
+              "include": {
+                "$ref": "#/components/schemas/IncludeList"
+              },
+              "n_results": {
+                "format": "int32",
+                "minimum": 0,
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "query_embeddings": {
+                "items": {
+                  "items": {
+                    "format": "float",
+                    "type": "number"
+                  },
+                  "type": "array"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "query_embeddings"
+            ],
+            "type": "object"
+          }
+        ]
+      },
+      "QueryResponse": {
+        "properties": {
+          "distances": {
+            "items": {
+              "items": {
+                "format": "float",
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "type": "array"
+            },
+            "type": [
+              "array",
+              "null"
+            ]
+          },
+          "documents": {
+            "items": {
+              "items": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "type": "array"
+            },
+            "type": [
+              "array",
+              "null"
+            ]
+          },
+          "embeddings": {
+            "items": {
+              "items": {
+                "items": {
+                  "format": "float",
+                  "type": "number"
+                },
+                "type": [
+                  "array",
+                  "null"
+                ]
+              },
+              "type": "array"
+            },
+            "type": [
+              "array",
+              "null"
+            ]
+          },
+          "ids": {
+            "items": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "type": "array"
+          },
+          "include": {
+            "items": {
+              "$ref": "#/components/schemas/Include"
+            },
+            "type": "array"
+          },
+          "metadatas": {
+            "items": {
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "$ref": "#/components/schemas/HashMap"
+                  }
+                ]
+              },
+              "type": "array"
+            },
+            "type": [
+              "array",
+              "null"
+            ]
+          },
+          "uris": {
+            "items": {
+              "items": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "type": "array"
+            },
+            "type": [
+              "array",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "ids",
+          "include"
+        ],
+        "type": "object"
+      },
+      "RawWhereFields": {
+        "properties": {
+          "where": {},
+          "where_document": {}
+        },
+        "type": "object"
+      },
+      "ReadLevel": {
+        "enum": [
+          "index_and_wal",
+          "index_only"
+        ],
+        "type": "string"
+      },
+      "Schema": {
+        "description": "Schema representation for collection index configurations\n\nThis represents the server-side schema structure used for index management",
+        "properties": {
+          "cmek": {
+            "description": "Customer-managed encryption key for collection data",
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "defaults": {
+            "$ref": "#/components/schemas/ValueTypes",
+            "description": "Default index configurations for each value type"
+          },
+          "keys": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ValueTypes"
+            },
+            "description": "Key-specific index overrides\nTODO(Sanket): Needed for backwards compatibility. Should remove after deploy.",
+            "propertyNames": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "source_attached_function_id": {
+            "description": "ID of the attached function that created this output collection (if applicable)",
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "defaults",
+          "keys"
+        ],
+        "type": "object"
+      },
+      "SearchPayload": {
+        "properties": {
+          "filter": {
+            "properties": {
+              "query_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "where_clause": {
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "group_by": {
+            "properties": {
+              "aggregate": {
+                "type": "object"
+              },
+              "keys": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "type": "object"
+          },
+          "limit": {
+            "properties": {
+              "limit": {
+                "type": "integer"
+              },
+              "offset": {
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          },
+          "rank": {
+            "type": "object"
+          },
+          "select": {
+            "properties": {
+              "keys": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "SearchRequestPayload": {
+        "properties": {
+          "read_level": {
+            "$ref": "#/components/schemas/ReadLevel",
+            "description": "Specifies whether to include unindexed data in the search results."
+          },
+          "searches": {
+            "items": {
+              "$ref": "#/components/schemas/SearchPayload"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "searches"
+        ],
+        "type": "object"
+      },
+      "SearchResponse": {
+        "properties": {
+          "documents": {
+            "items": {
+              "items": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "type": [
+                "array",
+                "null"
+              ]
+            },
+            "type": "array"
+          },
+          "embeddings": {
+            "items": {
+              "items": {
+                "items": {
+                  "format": "float",
+                  "type": "number"
+                },
+                "type": [
+                  "array",
+                  "null"
+                ]
+              },
+              "type": [
+                "array",
+                "null"
+              ]
+            },
+            "type": "array"
+          },
+          "ids": {
+            "items": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "type": "array"
+          },
+          "metadatas": {
+            "items": {
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "$ref": "#/components/schemas/HashMap"
+                  }
+                ]
+              },
+              "type": [
+                "array",
+                "null"
+              ]
+            },
+            "type": "array"
+          },
+          "scores": {
+            "items": {
+              "items": {
+                "format": "float",
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "type": [
+                "array",
+                "null"
+              ]
+            },
+            "type": "array"
+          },
+          "select": {
+            "items": {
+              "items": {
+                "$ref": "#/components/schemas/Key"
+              },
+              "type": "array"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "ids",
+          "documents",
+          "embeddings",
+          "metadatas",
+          "scores",
+          "select"
+        ],
+        "type": "object"
+      },
+      "Space": {
+        "enum": [
+          "l2",
+          "cosine",
+          "ip"
+        ],
+        "type": "string"
+      },
+      "SpannConfiguration": {
+        "additionalProperties": false,
+        "properties": {
+          "ef_construction": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "ef_search": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "max_neighbors": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "merge_threshold": {
+            "format": "int32",
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "reassign_neighbor_count": {
+            "format": "int32",
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "search_nprobe": {
+            "format": "int32",
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "space": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Space"
+              }
+            ]
+          },
+          "split_threshold": {
+            "format": "int32",
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "write_nprobe": {
+            "format": "int32",
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "SpannIndexConfig": {
+        "additionalProperties": false,
+        "description": "Configuration for SPANN vector index algorithm parameters",
+        "properties": {
+          "center_drift_threshold": {
+            "format": "float",
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "ef_construction": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "ef_search": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "initial_lambda": {
+            "format": "float",
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "max_neighbors": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "merge_threshold": {
+            "format": "int32",
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "nreplica_count": {
+            "format": "int32",
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "num_centers_to_merge_to": {
+            "format": "int32",
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "num_samples_kmeans": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "quantize": {
+            "$ref": "#/components/schemas/Quantization",
+            "description": "Quantization implementation for vector search (cloud-only feature)"
+          },
+          "reassign_neighbor_count": {
+            "format": "int32",
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "search_nprobe": {
+            "format": "int32",
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "search_rng_epsilon": {
+            "format": "float",
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "search_rng_factor": {
+            "format": "float",
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "split_threshold": {
+            "format": "int32",
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "write_nprobe": {
+            "format": "int32",
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "write_rng_epsilon": {
+            "format": "float",
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "write_rng_factor": {
+            "format": "float",
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "SparseVector": {
+        "description": "Represents a sparse vector using parallel arrays for indices and values.\n\nOn deserialization: accepts both old format `{\"indices\": [...], \"values\": [...]}`\nand new format `{\"#type\": \"sparse_vector\", \"indices\": [...], \"values\": [...]}`.\n\nOn serialization: always includes `#type` field with value `\"sparse_vector\"`.",
+        "properties": {
+          "indices": {
+            "description": "Dimension indices",
+            "items": {
+              "format": "int32",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "type": "array"
+          },
+          "tokens": {
+            "description": "Tokens corresponding to each index",
+            "items": {
+              "type": "string"
+            },
+            "type": [
+              "array",
+              "null"
+            ]
+          },
+          "values": {
+            "description": "Values corresponding to each index",
+            "items": {
+              "format": "float",
+              "type": "number"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "indices",
+          "values"
+        ],
+        "type": "object"
+      },
+      "SparseVectorIndexConfig": {
+        "additionalProperties": false,
+        "properties": {
+          "bm25": {
+            "description": "Whether this embedding is BM25",
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "embedding_function": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/EmbeddingFunctionConfiguration",
+                "description": "Embedding function configuration"
+              }
+            ]
+          },
+          "source_key": {
+            "description": "Key to source the sparse vector from",
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "SparseVectorIndexType": {
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/SparseVectorIndexConfig"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "enabled",
+          "config"
+        ],
+        "type": "object"
+      },
+      "SparseVectorValueType": {
+        "description": "Sparse vector value type index configurations",
+        "properties": {
+          "sparse_vector_index": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/SparseVectorIndexType"
+              }
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "StringInvertedIndexConfig": {
+        "additionalProperties": false,
+        "type": "object"
+      },
+      "StringInvertedIndexType": {
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/StringInvertedIndexConfig"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "enabled",
+          "config"
+        ],
+        "type": "object"
+      },
+      "StringValueType": {
+        "description": "String value type index configurations",
+        "properties": {
+          "fts_index": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/FtsIndexType"
+              }
+            ]
+          },
+          "string_inverted_index": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/StringInvertedIndexType"
+              }
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "UpdateCollectionConfiguration": {
+        "properties": {
+          "embedding_function": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/EmbeddingFunctionConfiguration"
+              }
+            ]
+          },
+          "hnsw": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/UpdateHnswConfiguration"
+              }
+            ]
+          },
+          "spann": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/UpdateSpannConfiguration"
+              }
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "UpdateCollectionPayload": {
+        "properties": {
+          "new_configuration": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/UpdateCollectionConfiguration"
+              }
+            ]
+          },
+          "new_metadata": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/HashMap"
+              }
+            ]
+          },
+          "new_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "UpdateCollectionRecordsPayload": {
+        "description": "Payload for updating existing records in a collection.\n\nRecords are added in batches. All arrays must have the same length, with each index\nrepresenting a single record. For example, `ids[0]`, `embeddings[0]`, `documents[0]`, etc.\nall belong to the same record.",
+        "properties": {
+          "documents": {
+            "items": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "type": [
+              "array",
+              "null"
+            ]
+          },
+          "embeddings": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/UpdateEmbeddingsPayload",
+                "description": "Updated embeddings for each record. Can contain the raw f32 arrays or base64 encoded strings."
+              }
+            ]
+          },
+          "ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "metadatas": {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "$ref": "#/components/schemas/HashMap"
+                }
+              ]
+            },
+            "type": [
+              "array",
+              "null"
+            ]
+          },
+          "uris": {
+            "items": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "type": [
+              "array",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "ids"
+        ],
+        "type": "object"
+      },
+      "UpdateCollectionRecordsResponse": {
+        "type": "object"
+      },
+      "UpdateCollectionResponse": {
+        "type": "object"
+      },
+      "UpdateEmbeddingsPayload": {
+        "oneOf": [
+          {
+            "items": {
+              "items": {
+                "format": "float",
+                "type": "number"
+              },
+              "type": [
+                "array",
+                "null"
+              ]
+            },
+            "type": "array"
+          },
+          {
+            "items": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "type": "array"
+          }
+        ]
+      },
+      "UpdateHnswConfiguration": {
+        "additionalProperties": false,
+        "properties": {
+          "batch_size": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "ef_search": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "max_neighbors": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "num_threads": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "resize_factor": {
+            "format": "double",
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "sync_threshold": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "UpdateSpannConfiguration": {
+        "additionalProperties": false,
+        "properties": {
+          "ef_search": {
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "search_nprobe": {
+            "format": "int32",
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "UpdateTenantPayload": {
+        "properties": {
+          "resource_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource_name"
+        ],
+        "type": "object"
+      },
+      "UpdateTenantResponse": {
+        "type": "object"
+      },
+      "UpsertCollectionRecordsPayload": {
+        "description": "Payload for upserting records in a collection.\n\nUpsert creates records if they don't exist, or updates them if they do.\nRecords are added in batches. All arrays must have the same length, with each index\nrepresenting a single record. For example, `ids[0]`, `embeddings[0]`, `documents[0]`, etc.\nall belong to the same record.",
+        "properties": {
+          "documents": {
+            "items": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "type": [
+              "array",
+              "null"
+            ]
+          },
+          "embeddings": {
+            "$ref": "#/components/schemas/EmbeddingsPayload",
+            "description": "Embeddings for each record. Can contain the raw f32 arrays or base64 encoded strings."
+          },
+          "ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "metadatas": {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "$ref": "#/components/schemas/HashMap"
+                }
+              ]
+            },
+            "type": [
+              "array",
+              "null"
+            ]
+          },
+          "uris": {
+            "items": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "type": [
+              "array",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "ids",
+          "embeddings"
+        ],
+        "type": "object"
+      },
+      "UpsertCollectionRecordsResponse": {
+        "type": "object"
+      },
+      "ValueTypes": {
+        "description": "Strongly-typed value type configurations\nContains optional configurations for each supported value type",
+        "properties": {
+          "bool": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/BoolValueType"
+              }
+            ]
+          },
+          "float": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/FloatValueType"
+              }
+            ]
+          },
+          "float_list": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/FloatListValueType"
+              }
+            ]
+          },
+          "int": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/IntValueType"
+              }
+            ]
+          },
+          "sparse_vector": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/SparseVectorValueType"
+              }
+            ]
+          },
+          "string": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/StringValueType"
+              }
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "Vec": {
+        "items": {
+          "properties": {
+            "configuration_json": {
+              "$ref": "#/components/schemas/CollectionConfiguration"
+            },
+            "database": {
+              "type": "string"
+            },
+            "dimension": {
+              "format": "int32",
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "id": {
+              "$ref": "#/components/schemas/CollectionUuid"
+            },
+            "log_position": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "metadata": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "$ref": "#/components/schemas/HashMap"
+                }
+              ]
+            },
+            "name": {
+              "type": "string"
+            },
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "$ref": "#/components/schemas/Schema"
+                }
+              ]
+            },
+            "tenant": {
+              "type": "string"
+            },
+            "version": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "configuration_json",
+            "tenant",
+            "database",
+            "log_position",
+            "version"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "VectorIndexConfig": {
+        "additionalProperties": false,
+        "properties": {
+          "embedding_function": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/EmbeddingFunctionConfiguration",
+                "description": "Embedding function configuration"
+              }
+            ]
+          },
+          "hnsw": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/HnswIndexConfig",
+                "description": "HNSW algorithm configuration"
+              }
+            ]
+          },
+          "source_key": {
+            "description": "Key to source the vector from",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "space": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Space",
+                "description": "Vector space for similarity calculation (cosine, l2, ip)"
+              }
+            ]
+          },
+          "spann": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/SpannIndexConfig",
+                "description": "SPANN algorithm configuration"
+              }
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "VectorIndexType": {
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/VectorIndexConfig"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "enabled",
+          "config"
+        ],
+        "type": "object"
+      },
+      "u32": {
+        "format": "int32",
+        "minimum": 0,
+        "type": "integer"
+      }
+    },
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "in": "header",
+        "name": "x-chroma-token",
+        "type": "apiKey"
+      }
+    }
+  },
+  "info": {
+    "description": "",
+    "license": {
+      "name": ""
+    },
+    "title": "chroma-frontend",
+    "version": "1.0.0"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/api/v2/auth/identity": {
+      "get": {
+        "description": "Returns the current user's identity, tenant, and databases.",
+        "operationId": "get_user_identity",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetUserIdentityResponse"
+                }
+              }
+            },
+            "description": "User identity"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get user identity",
+        "tags": [
+          "Authentication"
+        ]
+      }
+    },
+    "/api/v2/collections/{crn}": {
+      "get": {
+        "description": "Returns a collection by Chroma Resource Name.",
+        "operationId": "get_collection_by_crn",
+        "parameters": [
+          {
+            "description": "Chroma Resource Name",
+            "example": "my_tenant:my_database:my_collection",
+            "in": "path",
+            "name": "crn",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Collection"
+                }
+              }
+            },
+            "description": "Collection found"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Collection not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get collection by CRN",
+        "tags": [
+          "Collection"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "Get collection by CRN",
+            "lang": "typescript",
+            "source": "const collection = await client.getCollectionByCrn('my_tenant:my_database:my_collection');"
+          },
+          {
+            "label": "Get collection by CRN",
+            "lang": "python",
+            "source": "collection = client.get_collection_by_crn('my_tenant:my_database:my_collection')"
+          }
+        ],
+        "x-hidden": true
+      }
+    },
+    "/api/v2/healthcheck": {
+      "get": {
+        "description": "Returns the health status of the service.",
+        "operationId": "healthcheck",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "summary": "Healthcheck",
+        "tags": [
+          "System"
+        ],
+        "x-codeSamples": []
+      }
+    },
+    "/api/v2/heartbeat": {
+      "get": {
+        "description": "Returns a nanosecond timestamp of the current time.",
+        "operationId": "heartbeat",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HeartbeatResponse"
+                }
+              }
+            },
+            "description": "Success"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "summary": "Heartbeat",
+        "tags": [
+          "System"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "Heartbeat",
+            "lang": "typescript",
+            "source": "const timestamp = await client.heartbeat();"
+          },
+          {
+            "label": "Heartbeat",
+            "lang": "python",
+            "source": "timestamp = client.heartbeat()"
+          },
+          {
+            "label": "Heartbeat",
+            "lang": "rust",
+            "source": "let timestamp = client.heartbeat().await?;"
+          }
+        ]
+      }
+    },
+    "/api/v2/pre-flight-checks": {
+      "get": {
+        "description": "Returns basic readiness information.",
+        "operationId": "pre_flight_checks",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChecklistResponse"
+                }
+              }
+            },
+            "description": "Pre flight checks"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "summary": "Pre-flight checks",
+        "tags": [
+          "System"
+        ]
+      }
+    },
+    "/api/v2/reset": {
+      "post": {
+        "description": "Resets the database. Requires authorization.",
+        "operationId": "reset",
+        "responses": {
+          "200": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "description": "Reset successful"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Reset database",
+        "tags": [
+          "System"
+        ],
+        "x-hidden": true
+      }
+    },
+    "/api/v2/tenants": {
+      "post": {
+        "description": "Creates a new tenant.",
+        "operationId": "create_tenant",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTenantPayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateTenantResponse"
+                }
+              }
+            },
+            "description": "Tenant created successfully"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Create tenant",
+        "tags": [
+          "Tenant"
+        ]
+      }
+    },
+    "/api/v2/tenants/{tenant_name}": {
+      "get": {
+        "description": "Returns an existing tenant by name.",
+        "operationId": "get_tenant",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "in": "path",
+            "name": "tenant_name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "name": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+                  "resource_name": null
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/GetTenantResponse"
+                }
+              }
+            },
+            "description": "Tenant found"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Tenant not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get tenant",
+        "tags": [
+          "Tenant"
+        ]
+      },
+      "patch": {
+        "description": "Updates an existing tenant by name.",
+        "operationId": "update_tenant",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "in": "path",
+            "name": "tenant_name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTenantPayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateTenantResponse"
+                }
+              }
+            },
+            "description": "Tenant updated successfully"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Tenant not found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Tenant resource name already set"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Update tenant",
+        "tags": [
+          "Tenant"
+        ]
+      }
+    },
+    "/api/v2/tenants/{tenant}/databases": {
+      "get": {
+        "description": "Lists all databases for a tenant.",
+        "operationId": "list_databases",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Limit for pagination",
+            "example": 10,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "format": "int32",
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Offset for pagination",
+            "example": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "format": "int32",
+              "minimum": 0,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Vec"
+                }
+              }
+            },
+            "description": "List of databases"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "List databases",
+        "tags": [
+          "Database"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "List Databases",
+            "lang": "terminal",
+            "source": "chroma db list"
+          }
+        ]
+      },
+      "post": {
+        "description": "Creates a new database for a tenant.",
+        "operationId": "create_database",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateDatabasePayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateDatabaseResponse"
+                }
+              }
+            },
+            "description": "Database created successfully"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Create database",
+        "tags": [
+          "Database"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "Create Database",
+            "lang": "terminal",
+            "source": "chroma db create my-new-db"
+          }
+        ]
+      }
+    },
+    "/api/v2/tenants/{tenant}/databases/{database}": {
+      "delete": {
+        "description": "Deletes a database by name.",
+        "operationId": "delete_database",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Database name",
+            "in": "path",
+            "name": "database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteDatabaseResponse"
+                }
+              }
+            },
+            "description": "Database deleted successfully"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Delete database",
+        "tags": [
+          "Database"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "Delete Database",
+            "lang": "terminal",
+            "source": "chroma db delete my-db"
+          }
+        ]
+      },
+      "get": {
+        "description": "Returns a database by name.",
+        "operationId": "get_database",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Database name",
+            "in": "path",
+            "name": "database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Database"
+                }
+              }
+            },
+            "description": "Database retrieved successfully"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Database not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get database",
+        "tags": [
+          "Database"
+        ]
+      }
+    },
+    "/api/v2/tenants/{tenant}/databases/{database}/collections": {
+      "get": {
+        "description": "Lists all collections in a database.",
+        "operationId": "list_collections",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Database name",
+            "in": "path",
+            "name": "database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Limit for pagination",
+            "example": 10,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "format": "int32",
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Offset for pagination",
+            "example": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "format": "int32",
+              "minimum": 0,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Vec"
+                }
+              }
+            },
+            "description": "List of collections"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "List collections",
+        "tags": [
+          "Collection"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "List collections",
+            "lang": "typescript",
+            "source": "const collections = await client.listCollections({ limit: 10, offset: 0 });"
+          },
+          {
+            "label": "List collections",
+            "lang": "python",
+            "source": "collections = client.list_collections()"
+          },
+          {
+            "label": "List collections",
+            "lang": "rust",
+            "source": "let collections = client.list_collections(10, Some(0)).await?;"
+          }
+        ]
+      },
+      "post": {
+        "description": "Creates a new collection in a database.",
+        "operationId": "create_collection",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Database name",
+            "in": "path",
+            "name": "database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "configuration": null,
+                "get_or_create": false,
+                "metadata": {
+                  "key": "value"
+                },
+                "name": "my_collection",
+                "schema": null
+              },
+              "schema": {
+                "$ref": "#/components/schemas/CreateCollectionPayload"
+              }
+            }
+          },
+          "description": "Collection creation payload",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Collection"
+                }
+              }
+            },
+            "description": "Collection created successfully"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Create collection",
+        "tags": [
+          "Collection"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "Create collection",
+            "lang": "typescript",
+            "source": "const collection = await client.createCollection({ name: 'my_collection' });"
+          },
+          {
+            "label": "Create collection",
+            "lang": "python",
+            "source": "collection = client.create_collection(name='my_collection')"
+          },
+          {
+            "label": "Create collection",
+            "lang": "rust",
+            "source": "let collection = client.get_or_create_collection(\"my_collection\", None).await?;"
+          }
+        ]
+      }
+    },
+    "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}": {
+      "delete": {
+        "description": "Deletes a collection in a database.",
+        "operationId": "delete_collection",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Database name",
+            "in": "path",
+            "name": "database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Collection UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteCollectionResponse"
+                }
+              }
+            },
+            "description": "Collection deleted successfully"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Collection not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Delete collection",
+        "tags": [
+          "Collection"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "Delete collection",
+            "lang": "typescript",
+            "source": "await client.deleteCollection({ name: 'my_collection' });"
+          },
+          {
+            "label": "Delete collection",
+            "lang": "python",
+            "source": "client.delete_collection(name='my_collection')"
+          },
+          {
+            "label": "Delete collection",
+            "lang": "rust",
+            "source": "client.delete_collection(\"my_collection\").await?;"
+          }
+        ]
+      },
+      "get": {
+        "description": "Returns a collection by ID or name.",
+        "operationId": "get_collection",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Database name",
+            "in": "path",
+            "name": "database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Collection UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Collection"
+                }
+              }
+            },
+            "description": "Collection found"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Collection not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get collection",
+        "tags": [
+          "Collection"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "Get collection",
+            "lang": "typescript",
+            "source": "const collection = await client.getCollection({ name: 'my_collection' });"
+          },
+          {
+            "label": "Get collection",
+            "lang": "python",
+            "source": "collection = client.get_collection(name='my_collection')"
+          },
+          {
+            "label": "Get collection",
+            "lang": "rust",
+            "source": "let collection = client.get_collection(\"my_collection\").await?;"
+          }
+        ]
+      },
+      "put": {
+        "description": "Updates an existing collection's name or metadata.",
+        "operationId": "update_collection",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Database name",
+            "in": "path",
+            "name": "database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Collection UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "new_configuration": null,
+                "new_metadata": {
+                  "key": "value"
+                },
+                "new_name": "updated_collection_name"
+              },
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCollectionPayload"
+              }
+            }
+          },
+          "description": "Collection update payload",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateCollectionResponse"
+                }
+              }
+            },
+            "description": "Collection updated successfully"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Collection not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Update collection",
+        "tags": [
+          "Collection"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "Update collection",
+            "lang": "typescript",
+            "source": "await collection.modify({ name: 'new_name', metadata: { key: 'value' } });"
+          },
+          {
+            "label": "Update collection",
+            "lang": "python",
+            "source": "collection.modify(name='new_name', metadata={'key': 'value'})"
+          },
+          {
+            "label": "Update collection",
+            "lang": "rust",
+            "source": "use chroma_types::Metadata;\nlet mut metadata = Metadata::new();\nmetadata.insert(\"key\".to_string(), \"value\".into());\ncollection.modify(Some(\"new_name\"), Some(metadata)).await?;"
+          }
+        ]
+      }
+    },
+    "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/add": {
+      "post": {
+        "description": "Adds records to a collection.",
+        "operationId": "collection_add",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Database name",
+            "in": "path",
+            "name": "database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Collection UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddCollectionRecordsPayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddCollectionRecordsResponse"
+                }
+              }
+            },
+            "description": "Collection added successfully"
+          },
+          "400": {
+            "description": "Invalid data for collection addition"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Add records",
+        "tags": [
+          "Record"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "Add records",
+            "lang": "typescript",
+            "source": "await collection.add({ ids: ['id1', 'id2'], embeddings: [[0.1, 0.2], [0.3, 0.4]], documents: ['doc1', 'doc2'] });"
+          },
+          {
+            "label": "Add records",
+            "lang": "python",
+            "source": "collection.add(ids=['id1', 'id2'], embeddings=[[0.1, 0.2], [0.3, 0.4]], documents=['doc1', 'doc2'])"
+          },
+          {
+            "label": "Add records",
+            "lang": "rust",
+            "source": "collection.add(\n    vec![\"id1\".to_string(), \"id2\".to_string()],\n    vec![vec![0.1, 0.2], vec![0.3, 0.4]],\n    Some(vec![Some(\"doc1\".to_string()), Some(\"doc2\".to_string())]),\n    None,\n    None\n).await?;"
+          }
+        ]
+      }
+    },
+    "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/attached_functions/{name}/detach": {
+      "post": {
+        "description": "Detaches a function from a collection.",
+        "operationId": "detach_function",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Database name",
+            "in": "path",
+            "name": "database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Collection UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Function name",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DetachFunctionRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DetachFunctionResponse"
+                }
+              }
+            },
+            "description": "Function detached successfully"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Detach function",
+        "tags": [
+          "Function"
+        ]
+      }
+    },
+    "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count": {
+      "get": {
+        "description": "Returns the number of records in a collection.",
+        "operationId": "collection_count",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Database name",
+            "in": "path",
+            "name": "database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Collection UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Read level for consistency vs performance tradeoffs",
+            "in": "query",
+            "name": "read_level",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ReadLevel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/u32"
+                }
+              }
+            },
+            "description": "Number of records in the collection"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Collection not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get number of records",
+        "tags": [
+          "Record"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "Count records",
+            "lang": "typescript",
+            "source": "const count = await collection.count();"
+          },
+          {
+            "label": "Count records",
+            "lang": "python",
+            "source": "count = collection.count()"
+          },
+          {
+            "label": "Count records",
+            "lang": "rust",
+            "source": "let count = collection.count().await?;"
+          }
+        ]
+      }
+    },
+    "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/delete": {
+      "post": {
+        "description": "Deletes records in a collection. Can filter by IDs or metadata.",
+        "operationId": "collection_delete",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Database name",
+            "in": "path",
+            "name": "database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Collection UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteCollectionRecordsPayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteCollectionRecordsResponse"
+                }
+              }
+            },
+            "description": "Records deleted successfully"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Collection not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Delete records",
+        "tags": [
+          "Record"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "Delete records by IDs",
+            "lang": "typescript",
+            "source": "await collection.delete({ ids: ['id1', 'id2'] });"
+          },
+          {
+            "label": "Delete records by metadata filter",
+            "lang": "typescript",
+            "source": "await collection.delete({ where: { category: 'old' } });"
+          },
+          {
+            "label": "Delete records by IDs",
+            "lang": "python",
+            "source": "collection.delete(ids=['id1', 'id2'])"
+          },
+          {
+            "label": "Delete records by metadata filter",
+            "lang": "python",
+            "source": "collection.delete(where={'category': 'old'})"
+          },
+          {
+            "label": "Delete records by IDs",
+            "lang": "rust",
+            "source": "collection.delete(Some(vec![\"id1\".to_string(), \"id2\".to_string()]), None).await?;"
+          },
+          {
+            "label": "Delete records by metadata filter",
+            "lang": "rust",
+            "source": "use chroma_types::{Where, MetadataExpression, MetadataComparison, MetadataValue, PrimitiveOperator};\nlet where_clause = Where::Metadata(MetadataExpression {\n    key: \"category\".to_string(),\n    comparison: MetadataComparison::Primitive(PrimitiveOperator::Equal, MetadataValue::Str(\"old\".to_string())),\n});\ncollection.delete(None, Some(where_clause)).await?;"
+          }
+        ]
+      }
+    },
+    "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/fork": {
+      "post": {
+        "description": "Creates a fork of an existing collection.",
+        "operationId": "fork_collection",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Database name",
+            "in": "path",
+            "name": "database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Collection UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForkCollectionPayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Collection"
+                }
+              }
+            },
+            "description": "Collection forked successfully"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Collection not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Fork collection",
+        "tags": [
+          "Collection"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "Fork collection",
+            "lang": "typescript",
+            "source": "const forked = await collection.fork({ name: 'forked_collection' });"
+          },
+          {
+            "label": "Fork collection",
+            "lang": "python",
+            "source": "forked = collection.fork(new_name='forked_collection')"
+          },
+          {
+            "label": "Fork collection",
+            "lang": "rust",
+            "source": "let forked = collection.fork(\"forked_collection\").await?;"
+          }
+        ]
+      }
+    },
+    "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/functions/attach": {
+      "post": {
+        "description": "Attaches a function to a collection.",
+        "operationId": "attach_function",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Database name",
+            "in": "path",
+            "name": "database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Collection UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "function_id": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+                "name": "my_function",
+                "output_collection": "output_collection_name",
+                "params": {}
+              },
+              "schema": {
+                "$ref": "#/components/schemas/AttachFunctionRequest"
+              }
+            }
+          },
+          "description": "Function attachment request",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AttachFunctionResponse"
+                }
+              }
+            },
+            "description": " Function attached successfully"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Attach function",
+        "tags": [
+          "Function"
+        ]
+      }
+    },
+    "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/functions/{function_name}": {
+      "get": {
+        "description": "Returns an attached function by name.",
+        "operationId": "get_attached_function",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Database name",
+            "in": "path",
+            "name": "database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Collection UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Function name",
+            "in": "path",
+            "name": "function_name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAttachedFunctionResponse"
+                }
+              }
+            },
+            "description": "Attached function retrieved successfully"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Attached function not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get attached function",
+        "tags": [
+          "Function"
+        ]
+      }
+    },
+    "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/get": {
+      "post": {
+        "description": "Returns records from a collection by ID or metadata filter.",
+        "operationId": "collection_get",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Database name",
+            "in": "path",
+            "name": "database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Collection UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetRequestPayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "documents": [
+                    "Document 1",
+                    "Document 2"
+                  ],
+                  "embeddings": [
+                    [
+                      0.1,
+                      0.2,
+                      0.3
+                    ],
+                    [
+                      0.4,
+                      0.5,
+                      0.6
+                    ]
+                  ],
+                  "ids": [
+                    "record1",
+                    "record2"
+                  ],
+                  "include": [
+                    "documents",
+                    "metadatas",
+                    "embeddings"
+                  ],
+                  "metadatas": [
+                    {
+                      "key": "value"
+                    },
+                    {
+                      "key2": "value2"
+                    }
+                  ],
+                  "uris": null
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/GetResponse"
+                }
+              }
+            },
+            "description": "Records retrieved from the collection"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Collection not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get records",
+        "tags": [
+          "Record"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "Get records by IDs",
+            "lang": "typescript",
+            "source": "const results = await collection.get({ ids: ['id1', 'id2'] });"
+          },
+          {
+            "label": "Get records by metadata filter",
+            "lang": "typescript",
+            "source": "const results = await collection.get({ where: { category: 'science' }, limit: 10 });"
+          },
+          {
+            "label": "Get records by IDs",
+            "lang": "python",
+            "source": "results = collection.get(ids=['id1', 'id2'])"
+          },
+          {
+            "label": "Get records by metadata filter",
+            "lang": "python",
+            "source": "results = collection.get(where={'category': 'science'}, limit=10)"
+          },
+          {
+            "label": "Get records by IDs",
+            "lang": "rust",
+            "source": "use chroma_types::IncludeList;\nlet response = collection.get(\n    Some(vec![\"id1\".to_string(), \"id2\".to_string()]),\n    None,\n    None,\n    None,\n    Some(IncludeList::default_get())\n).await?;"
+          },
+          {
+            "label": "Get records by metadata filter",
+            "lang": "rust",
+            "source": "use chroma_types::{Where, MetadataExpression, MetadataComparison, MetadataValue, PrimitiveOperator, IncludeList};\nlet where_clause = Where::Metadata(MetadataExpression {\n    key: \"category\".to_string(),\n    comparison: MetadataComparison::Primitive(PrimitiveOperator::Equal, MetadataValue::Str(\"science\".to_string())),\n});\nlet response = collection.get(None, Some(where_clause), Some(10), None, None).await?;"
+          }
+        ]
+      }
+    },
+    "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/indexing_status": {
+      "get": {
+        "description": "Returns the indexing status of a collection.",
+        "operationId": "indexing_status",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Database name",
+            "in": "path",
+            "name": "database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Collection UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IndexStatusResponse"
+                }
+              }
+            },
+            "description": "Index status retrieved successfully"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Collection not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get indexing status",
+        "tags": [
+          "Record"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "Get indexing status",
+            "lang": "typescript",
+            "source": "const status: IndexingStatus = await collection.getIndexingStatus();"
+          },
+          {
+            "label": "Get indexing status",
+            "lang": "python",
+            "source": "status = collection.get_indexing_status()"
+          },
+          {
+            "label": "Get indexing status",
+            "lang": "rust",
+            "source": "let status = collection.get_indexing_status().await?;"
+          }
+        ]
+      }
+    },
+    "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query": {
+      "post": {
+        "description": "Queries a collection using dense vector search with metadata and full-text search filtering.",
+        "operationId": "collection_query",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Database name",
+            "in": "path",
+            "name": "database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Collection UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Limit for pagination",
+            "example": 10,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "format": "int32",
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Offset for pagination",
+            "example": 0,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "format": "int32",
+              "minimum": 0,
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "include": [
+                  "documents",
+                  "metadatas",
+                  "distances"
+                ],
+                "n_results": 10,
+                "query_embeddings": [
+                  [
+                    0.1,
+                    0.2,
+                    0.3
+                  ]
+                ]
+              },
+              "schema": {
+                "$ref": "#/components/schemas/QueryRequestPayload"
+              }
+            }
+          },
+          "description": "Query request payload",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueryResponse"
+                }
+              }
+            },
+            "description": "Records matching the query"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Collection not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Query collection",
+        "tags": [
+          "Record"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "Query with embeddings",
+            "lang": "typescript",
+            "source": "const results = await collection.query({ queryEmbeddings: [[0.1, 0.2, 0.3]], nResults: 10 });"
+          },
+          {
+            "label": "Query with text",
+            "lang": "typescript",
+            "source": "const results = await collection.query({ queryTexts: ['search text'], nResults: 10 });"
+          },
+          {
+            "label": "Query with embeddings",
+            "lang": "python",
+            "source": "results = collection.query(query_embeddings=[[0.1, 0.2, 0.3]], n_results=10)"
+          },
+          {
+            "label": "Query with text",
+            "lang": "python",
+            "source": "results = collection.query(query_texts=['search text'], n_results=10)"
+          },
+          {
+            "label": "Query with embeddings",
+            "lang": "rust",
+            "source": "let results = collection.query(\n    vec![vec![0.1, 0.2, 0.3]],\n    Some(10),\n    None,\n    None,\n    None\n).await?;"
+          },
+          {
+            "label": "Query with metadata filter",
+            "lang": "rust",
+            "source": "use chroma_types::{Where, MetadataExpression, MetadataComparison, MetadataValue, PrimitiveOperator};\nlet where_clause = Where::Metadata(MetadataExpression {\n    key: \"category\".to_string(),\n    comparison: MetadataComparison::Primitive(PrimitiveOperator::Equal, MetadataValue::Str(\"science\".to_string())),\n});\nlet results = collection.query(\n    vec![vec![0.1, 0.2, 0.3]],\n    Some(10),\n    Some(where_clause),\n    None,\n    None\n).await?;"
+          }
+        ]
+      }
+    },
+    "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/search": {
+      "post": {
+        "description": "Searches records from a collection with dense, sparse, or hybrid vector search.",
+        "operationId": "collection_search",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Database name",
+            "in": "path",
+            "name": "database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Collection UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "read_level": "IndexAndWal",
+                "searches": [
+                  {
+                    "n_results": 10,
+                    "query_embeddings": [
+                      [
+                        0.1,
+                        0.2,
+                        0.3
+                      ]
+                    ]
+                  }
+                ]
+              },
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequestPayload"
+              }
+            }
+          },
+          "description": "Search request payload",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchResponse"
+                }
+              }
+            },
+            "description": "Records searched from the collection"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Collection not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Search records",
+        "tags": [
+          "Record"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "Search with embeddings",
+            "lang": "typescript",
+            "source": "import { Search, K, Knn } from 'chromadb';\nconst results = await collection.search(new Search().rank(Knn({ query: [0.1, 0.2, 0.3], limit: 10 })));"
+          },
+          {
+            "label": "Search with embeddings",
+            "lang": "python",
+            "source": "from chromadb import Search, Knn\nsearch = Search().rank(Knn(query=[0.1, 0.2, 0.3], limit=10))\nresults = collection.search(search)"
+          },
+          {
+            "label": "Search with embeddings",
+            "lang": "rust",
+            "source": "use chroma_types::plan::{SearchPayload, ReadLevel};\nuse chroma_types::operator::{RankExpr, QueryVector, Key};\nlet search = SearchPayload::default()\n    .rank(RankExpr::Knn {\n        query: QueryVector::Dense(vec![0.1, 0.2, 0.3]),\n        key: Key::Embedding,\n        limit: 10,\n        default: None,\n        return_rank: false,\n    })\n    .limit(Some(10), 0)\n    .select([Key::Document, Key::Score]);\nlet results = collection.search(vec![search]).await?;"
+          },
+          {
+            "label": "Search with metadata filter",
+            "lang": "rust",
+            "source": "use chroma_types::plan::{SearchPayload, ReadLevel};\nuse chroma_types::operator::{RankExpr, QueryVector, Key};\nlet search = SearchPayload::default()\n    .r#where(Key::field(\"category\").eq(\"science\"))\n    .rank(RankExpr::Knn {\n        query: QueryVector::Dense(vec![0.1, 0.2, 0.3]),\n        key: Key::Embedding,\n        limit: 100,\n        default: None,\n        return_rank: false,\n    })\n    .limit(Some(10), 0)\n    .select([Key::Document, Key::Score]);\nlet results = collection.search(vec![search]).await?;"
+          }
+        ]
+      }
+    },
+    "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/update": {
+      "post": {
+        "description": "Updates records in a collection by ID.",
+        "operationId": "collection_update",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Database name",
+            "in": "path",
+            "name": "database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Collection UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCollectionRecordsPayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateCollectionRecordsResponse"
+                }
+              }
+            },
+            "description": "Collection updated successfully"
+          },
+          "404": {
+            "description": "Collection not found"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Update records",
+        "tags": [
+          "Record"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "Update records",
+            "lang": "typescript",
+            "source": "await collection.update({ ids: ['id1'], documents: ['updated doc'], metadatas: [{ key: 'value' }] });"
+          },
+          {
+            "label": "Update records",
+            "lang": "python",
+            "source": "collection.update(ids=['id1'], documents=['updated doc'], metadatas=[{'key': 'value'}])"
+          },
+          {
+            "label": "Update records",
+            "lang": "rust",
+            "source": "use chroma_types::UpdateMetadata;\nlet mut metadata = UpdateMetadata::new();\nmetadata.insert(\"key\".to_string(), chroma_types::UpdateMetadataValue::Str(\"value\".to_string()));\ncollection.update(\n    vec![\"id1\".to_string()],\n    None,\n    Some(vec![Some(\"updated doc\".to_string())]),\n    None,\n    Some(vec![Some(metadata)])\n).await?;"
+          }
+        ]
+      }
+    },
+    "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/upsert": {
+      "post": {
+        "description": "Upserts records in a collection (create if not exists, otherwise update).",
+        "operationId": "collection_upsert",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Database name",
+            "in": "path",
+            "name": "database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Collection UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "collection_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpsertCollectionRecordsPayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpsertCollectionRecordsResponse"
+                }
+              }
+            },
+            "description": "Records upserted successfully"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Collection not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Upsert records",
+        "tags": [
+          "Record"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "Upsert records",
+            "lang": "typescript",
+            "source": "await collection.upsert({ ids: ['id1', 'id2'], embeddings: [[0.1, 0.2], [0.3, 0.4]], documents: ['doc1', 'doc2'] });"
+          },
+          {
+            "label": "Upsert records",
+            "lang": "python",
+            "source": "collection.upsert(ids=['id1', 'id2'], embeddings=[[0.1, 0.2], [0.3, 0.4]], documents=['doc1', 'doc2'])"
+          },
+          {
+            "label": "Upsert records",
+            "lang": "rust",
+            "source": "collection.upsert(\n    vec![\"id1\".to_string(), \"id2\".to_string()],\n    vec![vec![0.1, 0.2], vec![0.3, 0.4]],\n    Some(vec![Some(\"doc1\".to_string()), Some(\"doc2\".to_string())]),\n    None,\n    None\n).await?;"
+          }
+        ]
+      }
+    },
+    "/api/v2/tenants/{tenant}/databases/{database}/collections_count": {
+      "get": {
+        "description": "Returns the total number of collections in a database.",
+        "operationId": "count_collections",
+        "parameters": [
+          {
+            "description": "Tenant UUID",
+            "example": "1e30d217-3d78-4f8c-b244-79381dc6a254",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Database name",
+            "in": "path",
+            "name": "database",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/u32"
+                }
+              }
+            },
+            "description": "Count of collections"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Server error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get number of collections",
+        "tags": [
+          "Collection"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "Count collections",
+            "lang": "typescript",
+            "source": "const count: number = await client.countCollections();"
+          },
+          {
+            "label": "Count collections",
+            "lang": "python",
+            "source": "count = client.count_collections()"
+          },
+          {
+            "label": "Count collections",
+            "lang": "rust",
+            "source": "let count = client.count_collections().await?;"
+          }
+        ]
+      }
+    },
+    "/api/v2/version": {
+      "get": {
+        "description": "Returns the version of the server.",
+        "operationId": "version",
+        "responses": {
+          "200": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Get server version"
+          }
+        },
+        "summary": "Get version",
+        "tags": [
+          "System"
+        ],
+        "x-codeSamples": [
+          {
+            "label": "Get version",
+            "lang": "typescript",
+            "source": "const version = await client.version();"
+          },
+          {
+            "label": "Get version",
+            "lang": "python",
+            "source": "version = client.get_version()"
+          }
+        ]
+      }
+    }
+  }
+}

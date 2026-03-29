@@ -1,0 +1,746 @@
+openapi: 3.0.3
+info:
+  title: Nightfall AI API
+  description: |
+    Nightfall AI provides data security and data loss prevention (DLP) capabilities.
+    Scan text and files for sensitive data including PII, PHI, PCI, secrets, and credentials.
+  version: "3.0"
+  contact:
+    name: Nightfall AI
+    url: https://nightfall.ai
+  license:
+    name: MIT
+
+servers:
+  - url: https://api.nightfall.ai
+    description: Nightfall AI Production API
+
+security:
+  - BearerAuth: []
+
+paths:
+  /v3/scan:
+    post:
+      operationId: scanText
+      summary: Scan text for sensitive data
+      description: |
+        Scans the provided plaintext payloads against the provided detectors and returns all findings.
+        Each index in the findings array corresponds one-to-one with the input request payload.
+        Maximum 500KB total payload size. Maximum 50,000 items in the payload array.
+      tags:
+        - Scanning
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScanTextRequest'
+      responses:
+        '200':
+          description: Scan completed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScanTextResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Too many requests
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v3/upload:
+    post:
+      operationId: initFileUpload
+      summary: Initialize a file upload session
+      description: |
+        Initializes a file upload session for asynchronous file scanning.
+        Returns an upload ID, chunk size, and other metadata needed to upload file chunks.
+      tags:
+        - FileScanning
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InitFileUploadRequest'
+      responses:
+        '200':
+          description: File upload session initialized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InitFileUploadResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Too many requests
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v3/upload/{fileId}:
+    patch:
+      operationId: uploadFileChunk
+      summary: Upload a file chunk
+      description: |
+        Uploads a chunk of file data to the specified upload session.
+        Use the X-Upload-Offset header to indicate the byte offset.
+      tags:
+        - FileScanning
+      parameters:
+        - name: fileId
+          in: path
+          required: true
+          description: The upload session ID returned from initFileUpload
+          schema:
+            type: string
+            format: uuid
+        - name: X-Upload-Offset
+          in: header
+          required: true
+          description: Byte offset for this chunk
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+      responses:
+        '204':
+          description: Chunk uploaded successfully
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Upload session not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Too many requests
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v3/upload/{fileId}/finish:
+    post:
+      operationId: completeFileUpload
+      summary: Complete a file upload
+      description: |
+        Marks a file upload session as complete after all chunks have been uploaded.
+      tags:
+        - FileScanning
+      parameters:
+        - name: fileId
+          in: path
+          required: true
+          description: The upload session ID
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Upload completed successfully
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Upload session not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Too many requests
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v3/upload/{fileId}/scan:
+    post:
+      operationId: scanUploadedFile
+      summary: Scan an uploaded file
+      description: |
+        Triggers an asynchronous scan of a previously uploaded and completed file.
+        Results are delivered via webhook or alert configuration.
+      tags:
+        - FileScanning
+      parameters:
+        - name: fileId
+          in: path
+          required: true
+          description: The upload session ID of the completed upload
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScanFileRequest'
+      responses:
+        '200':
+          description: File scan initiated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScanFileResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Upload not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Too many requests
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: |
+        Nightfall API key passed as a Bearer token.
+        Obtain from https://app.nightfall.ai.
+
+  schemas:
+    ScanTextRequest:
+      type: object
+      required:
+        - payload
+      properties:
+        payload:
+          type: array
+          description: List of text strings to scan. Maximum 50,000 items, 500KB total.
+          items:
+            type: string
+          maxItems: 50000
+        policy:
+          $ref: '#/components/schemas/ScanPolicy'
+        policyUUIDs:
+          type: array
+          description: UUIDs of pre-configured policies from the Nightfall Dashboard
+          items:
+            type: string
+
+    ScanPolicy:
+      type: object
+      description: Inline scan policy with detection rules and alert settings
+      properties:
+        detectionRules:
+          type: array
+          description: Inline detection rule definitions (up to 10)
+          items:
+            $ref: '#/components/schemas/DetectionRule'
+          maxItems: 10
+        detectionRuleUUIDs:
+          type: array
+          description: UUIDs of pre-configured detection rules
+          items:
+            type: string
+          maxItems: 10
+        contextBytes:
+          type: integer
+          description: Number of bytes of context to return around each finding
+          default: 0
+        defaultRedactionConfig:
+          $ref: '#/components/schemas/RedactionConfig'
+        alertConfig:
+          $ref: '#/components/schemas/AlertConfig'
+
+    DetectionRule:
+      type: object
+      required:
+        - detectors
+        - logicalOp
+      properties:
+        name:
+          type: string
+          description: Human-readable name for this detection rule
+        detectors:
+          type: array
+          description: List of detectors to apply
+          items:
+            $ref: '#/components/schemas/Detector'
+        logicalOp:
+          $ref: '#/components/schemas/LogicalOp'
+
+    Detector:
+      type: object
+      required:
+        - detectorType
+        - minConfidence
+      properties:
+        detectorUUID:
+          type: string
+          description: UUID of a pre-configured detector
+        minNumFindings:
+          type: integer
+          description: Minimum number of findings required
+          default: 0
+        minConfidence:
+          $ref: '#/components/schemas/Confidence'
+        displayName:
+          type: string
+          description: Display name for the detector
+        detectorType:
+          $ref: '#/components/schemas/DetectorType'
+        nightfallDetector:
+          type: string
+          description: |
+            Name of a built-in Nightfall detector (e.g., CREDIT_CARD_NUMBER,
+            US_SOCIAL_SECURITY_NUMBER, API_KEY, EMAIL_ADDRESS, PHONE_NUMBER,
+            IP_ADDRESS, PERSON_NAME)
+        regex:
+          $ref: '#/components/schemas/Regex'
+        wordList:
+          $ref: '#/components/schemas/WordList'
+        contextRules:
+          type: array
+          description: Rules for adjusting confidence based on context
+          items:
+            $ref: '#/components/schemas/ContextRule'
+        exclusionRules:
+          type: array
+          description: Rules for excluding certain matches
+          items:
+            $ref: '#/components/schemas/ExclusionRule'
+        redactionConfig:
+          $ref: '#/components/schemas/RedactionConfig'
+
+    DetectorType:
+      type: string
+      enum:
+        - NIGHTFALL_DETECTOR
+        - REGEX
+        - WORD_LIST
+
+    LogicalOp:
+      type: string
+      enum:
+        - ANY
+        - ALL
+      description: ANY = logical OR, ALL = logical AND
+
+    Confidence:
+      type: string
+      enum:
+        - VERY_UNLIKELY
+        - UNLIKELY
+        - POSSIBLE
+        - LIKELY
+        - VERY_LIKELY
+
+    MatchType:
+      type: string
+      enum:
+        - FULL
+        - PARTIAL
+
+    ExclusionType:
+      type: string
+      enum:
+        - REGEX
+        - WORD_LIST
+
+    Regex:
+      type: object
+      required:
+        - pattern
+      properties:
+        pattern:
+          type: string
+          description: Regular expression pattern
+        isCaseSensitive:
+          type: boolean
+          default: false
+
+    WordList:
+      type: object
+      required:
+        - values
+      properties:
+        values:
+          type: array
+          items:
+            type: string
+        isCaseSensitive:
+          type: boolean
+          default: false
+
+    ContextRule:
+      type: object
+      required:
+        - regex
+        - proximity
+        - confidenceAdjustment
+      properties:
+        regex:
+          $ref: '#/components/schemas/Regex'
+        proximity:
+          $ref: '#/components/schemas/Proximity'
+        confidenceAdjustment:
+          $ref: '#/components/schemas/ConfidenceAdjustment'
+
+    Proximity:
+      type: object
+      properties:
+        windowBefore:
+          type: integer
+          default: 0
+        windowAfter:
+          type: integer
+          default: 0
+
+    ConfidenceAdjustment:
+      type: object
+      required:
+        - fixedConfidence
+      properties:
+        fixedConfidence:
+          $ref: '#/components/schemas/Confidence'
+
+    ExclusionRule:
+      type: object
+      required:
+        - matchType
+        - exclusionType
+      properties:
+        matchType:
+          $ref: '#/components/schemas/MatchType'
+        exclusionType:
+          $ref: '#/components/schemas/ExclusionType'
+        regex:
+          $ref: '#/components/schemas/Regex'
+        wordList:
+          $ref: '#/components/schemas/WordList'
+
+    RedactionConfig:
+      type: object
+      description: How findings should be redacted (specify exactly one type)
+      properties:
+        maskConfig:
+          $ref: '#/components/schemas/MaskConfig'
+        infoTypeSubstitutionConfig:
+          $ref: '#/components/schemas/InfoTypeSubstitutionConfig'
+        substitutionConfig:
+          $ref: '#/components/schemas/SubstitutionConfig'
+        cryptoConfig:
+          $ref: '#/components/schemas/CryptoConfig'
+        removeFinding:
+          type: boolean
+          default: false
+
+    MaskConfig:
+      type: object
+      properties:
+        maskingChar:
+          type: string
+          default: "*"
+        charsToIgnore:
+          type: array
+          items:
+            type: string
+        numCharsToLeaveUnmasked:
+          type: integer
+          default: 0
+        maskLeftToRight:
+          type: boolean
+          default: false
+
+    InfoTypeSubstitutionConfig:
+      type: object
+      description: Replace finding with the matched detector name
+
+    SubstitutionConfig:
+      type: object
+      properties:
+        substitutionPhrase:
+          type: string
+
+    CryptoConfig:
+      type: object
+      properties:
+        publicKey:
+          type: string
+          description: RSA public key in PEM format
+
+    AlertConfig:
+      type: object
+      properties:
+        slack:
+          $ref: '#/components/schemas/SlackAlert'
+        email:
+          $ref: '#/components/schemas/EmailAlert'
+        url:
+          $ref: '#/components/schemas/WebhookAlert'
+
+    SlackAlert:
+      type: object
+      properties:
+        target:
+          type: string
+          description: "Slack channel (e.g., '#general')"
+
+    EmailAlert:
+      type: object
+      properties:
+        address:
+          type: string
+
+    WebhookAlert:
+      type: object
+      properties:
+        address:
+          type: string
+          description: Webhook URL (must accept HTTP POST)
+
+    ScanTextResponse:
+      type: object
+      properties:
+        findings:
+          type: array
+          description: Findings indexed one-to-one with input payload
+          items:
+            type: array
+            items:
+              $ref: '#/components/schemas/Finding'
+        redactedPayload:
+          type: array
+          description: Redacted payloads (if redaction was configured)
+          items:
+            type: string
+
+    Finding:
+      type: object
+      properties:
+        finding:
+          type: string
+          description: The matched sensitive text
+        redactedFinding:
+          type: string
+        beforeContext:
+          type: string
+        afterContext:
+          type: string
+        detector:
+          $ref: '#/components/schemas/DetectorMetadata'
+        confidence:
+          $ref: '#/components/schemas/Confidence'
+        location:
+          $ref: '#/components/schemas/FindingLocation'
+        redactedLocation:
+          $ref: '#/components/schemas/FindingLocation'
+        matchedDetectionRuleUUIDs:
+          type: array
+          items:
+            type: string
+        matchedDetectionRules:
+          type: array
+          items:
+            type: string
+        findingMetadata:
+          $ref: '#/components/schemas/FindingMetadata'
+
+    DetectorMetadata:
+      type: object
+      properties:
+        name:
+          type: string
+        uuid:
+          type: string
+
+    FindingLocation:
+      type: object
+      properties:
+        byteRange:
+          $ref: '#/components/schemas/LocationRange'
+        codepointRange:
+          $ref: '#/components/schemas/LocationRange'
+        rowRange:
+          $ref: '#/components/schemas/LocationRange'
+        columnRange:
+          $ref: '#/components/schemas/LocationRange'
+        commitHash:
+          type: string
+        commitAuthor:
+          type: string
+
+    LocationRange:
+      type: object
+      properties:
+        start:
+          type: integer
+          format: int64
+        end:
+          type: integer
+          format: int64
+
+    FindingMetadata:
+      type: object
+      properties:
+        apiKeyMetadata:
+          $ref: '#/components/schemas/APIKeyMetadata'
+
+    APIKeyMetadata:
+      type: object
+      properties:
+        status:
+          type: string
+        kind:
+          type: string
+        description:
+          type: string
+
+    InitFileUploadRequest:
+      type: object
+      required:
+        - fileSizeBytes
+      properties:
+        fileSizeBytes:
+          type: integer
+          format: int64
+
+    InitFileUploadResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        fileSizeBytes:
+          type: integer
+          format: int64
+        chunkSize:
+          type: integer
+          format: int64
+        mimeType:
+          type: string
+
+    ScanFileRequest:
+      type: object
+      properties:
+        policyUUID:
+          type: string
+        policy:
+          $ref: '#/components/schemas/FileScanPolicy'
+        requestMetadata:
+          type: string
+
+    FileScanPolicy:
+      type: object
+      properties:
+        webhookURL:
+          type: string
+          deprecated: true
+        detectionRules:
+          type: array
+          items:
+            $ref: '#/components/schemas/DetectionRule'
+          maxItems: 10
+        detectionRuleUUIDs:
+          type: array
+          items:
+            type: string
+          maxItems: 10
+        alertConfig:
+          $ref: '#/components/schemas/AlertConfig'
+
+    ScanFileResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        message:
+          type: string
+
+    ErrorResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        description:
+          type: string
+        additionalData:
+          type: object
+          additionalProperties:
+            type: string
+
+tags:
+  - name: Scanning
+    description: Scan text for sensitive data (PII, PHI, PCI, secrets, credentials)
+  - name: FileScanning
+    description: Upload and scan files for sensitive data

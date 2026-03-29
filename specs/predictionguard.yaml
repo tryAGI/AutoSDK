@@ -1,0 +1,3463 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "API Reference",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/responses": {
+      "post": {
+        "operationId": "responses",
+        "summary": "Responses",
+        "description": "Generate responses while also allowing for the utilization of various tools.",
+        "tags": [
+          ""
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/responses_Response_200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "General error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponsesRequestBadRequestError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed auth response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponsesRequestForbiddenError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "model": {
+                    "type": "string",
+                    "description": "The AI model to use for generating responses."
+                  },
+                  "input": {
+                    "$ref": "#/components/schemas/ResponsesPostRequestBodyContentApplicationJsonSchemaInput"
+                  },
+                  "instructions": {
+                    "type": "string",
+                    "description": "A system (or developer) message inserted into the model's context."
+                  },
+                  "max_output_tokens": {
+                    "type": "integer",
+                    "description": "The maximum number of tokens in the generated output."
+                  },
+                  "max_tool_calls": {
+                    "type": "integer",
+                    "description": "The maximum amount of tool calls the model is able to do."
+                  },
+                  "parallel_tool_calls": {
+                    "type": "boolean",
+                    "description": "Whether to enable parallel function calling during tool use."
+                  },
+                  "reasoning": {
+                    "$ref": "#/components/schemas/ResponsesPostRequestBodyContentApplicationJsonSchemaReasoning",
+                    "description": "Constrains effort on reasoning for reasoning models."
+                  },
+                  "stream": {
+                    "type": "boolean",
+                    "description": "Whether to stream back the model response. Not currently supported."
+                  },
+                  "stream_options": {
+                    "$ref": "#/components/schemas/ResponsesPostRequestBodyContentApplicationJsonSchemaStreamOptions",
+                    "description": "Extra parameters used when streaming the response."
+                  },
+                  "temperature": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The temperature parameter for controlling randomness in completions. Supports a range of 0.0-2.0."
+                  },
+                  "tool_choice": {
+                    "$ref": "#/components/schemas/ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice"
+                  },
+                  "tools": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ResponsesPostRequestBodyContentApplicationJsonSchemaToolsItems"
+                    },
+                    "description": "The content of the tool call."
+                  },
+                  "top_p": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The diversity of the generated text based on nucleus sampling. Supports a range of 0.0-1.0."
+                  },
+                  "safeguards": {
+                    "$ref": "#/components/schemas/ResponsesPostRequestBodyContentApplicationJsonSchemaSafeguards",
+                    "description": "Safeguards to run on the request."
+                  }
+                },
+                "required": [
+                  "model",
+                  "input"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/chat/completions": {
+      "post": {
+        "operationId": "chat-completions",
+        "summary": "Chat Completions",
+        "description": "Generate chat completions based on a conversation history.",
+        "tags": [
+          ""
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/chatCompletions_Response_200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "General error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChatCompletionsRequestBadRequestError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed auth response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChatCompletionsRequestForbiddenError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "model": {
+                    "type": "string",
+                    "description": "The chat model to use for generating completions."
+                  },
+                  "messages": {
+                    "$ref": "#/components/schemas/ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages"
+                  },
+                  "frequency_penalty": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "A value between -2.0 and 2.0, with positive values increasingly penalizing new tokens based on their frequency so far in order to decrease further occurrences."
+                  },
+                  "logit_bias": {
+                    "$ref": "#/components/schemas/ChatCompletionsPostRequestBodyContentApplicationJsonSchemaLogitBias",
+                    "description": "Modifies the likelihood of specified tokens appearing in a response."
+                  },
+                  "max_completion_tokens": {
+                    "type": "integer",
+                    "description": "The maximum number of tokens in the generated completion."
+                  },
+                  "parallel_tool_calls": {
+                    "type": "boolean",
+                    "description": "Whether to enable parallel function calling during tool use."
+                  },
+                  "presence_penalty": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "A value between -2.0 and 2.0, with positive values causing a flat reduction of new tokens based on their existing presence so far in order to decrease further occurrences."
+                  },
+                  "reasoning_effort": {
+                    "type": "string",
+                    "description": "Constrains effort on reasoning for reasoning models. Currently supported values are `low`, `medium`, and `high`. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response. Only supported by reasoning models."
+                  },
+                  "stop": {
+                    "$ref": "#/components/schemas/ChatCompletionsPostRequestBodyContentApplicationJsonSchemaStop"
+                  },
+                  "stream": {
+                    "type": "boolean",
+                    "description": "Whether to stream back the model response."
+                  },
+                  "stream_options": {
+                    "$ref": "#/components/schemas/ChatCompletionsPostRequestBodyContentApplicationJsonSchemaStreamOptions",
+                    "description": "Extra parameters used when streaming the response."
+                  },
+                  "temperature": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The temperature parameter for controlling randomness in completions. Supports a range of 0.0-2.0."
+                  },
+                  "tool_choice": {
+                    "$ref": "#/components/schemas/ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice"
+                  },
+                  "tools": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolsItems"
+                    },
+                    "description": "The content of the tool call."
+                  },
+                  "top_p": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The diversity of the generated text based on nucleus sampling. Supports a range of 0.0-1.0."
+                  },
+                  "top_k": {
+                    "type": "integer",
+                    "description": "The diversity of the generated text based on top-k sampling."
+                  },
+                  "output": {
+                    "$ref": "#/components/schemas/ChatCompletionsPostRequestBodyContentApplicationJsonSchemaOutput",
+                    "description": "Options to affect the output of the response."
+                  },
+                  "input": {
+                    "$ref": "#/components/schemas/ChatCompletionsPostRequestBodyContentApplicationJsonSchemaInput",
+                    "description": "Options to affect the input of the request."
+                  },
+                  "max_tokens": {
+                    "type": "integer",
+                    "description": "Deprecated. Please use max_completion_tokens."
+                  }
+                },
+                "required": [
+                  "model",
+                  "messages"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/completions": {
+      "post": {
+        "operationId": "completions",
+        "summary": "Completions",
+        "description": "Retrieve text completions based on the provided input.",
+        "tags": [
+          ""
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/completions_Response_200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "General error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompletionsRequestBadRequestError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed auth response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompletionsRequestForbiddenError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "model": {
+                    "type": "string",
+                    "description": "The chat model to use for generating completions."
+                  },
+                  "prompt": {
+                    "$ref": "#/components/schemas/CompletionsPostRequestBodyContentApplicationJsonSchemaPrompt"
+                  },
+                  "frequency_penalty": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "A value between -2.0 and 2.0, with positive values increasingly penalizing new tokens based on their frequency so far in order to decrease further occurrences."
+                  },
+                  "logit_bias": {
+                    "$ref": "#/components/schemas/CompletionsPostRequestBodyContentApplicationJsonSchemaLogitBias",
+                    "description": "Modifies the likelihood of specified tokens appearing in a response."
+                  },
+                  "max_tokens": {
+                    "type": "integer",
+                    "description": "The maximum number of tokens in the generated completion."
+                  },
+                  "presence_penalty": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "A value between -2.0 and 2.0, with positive values causing a flat reduction of new tokens based on their existing presence so far in order to decrease further occurrences."
+                  },
+                  "stop": {
+                    "$ref": "#/components/schemas/CompletionsPostRequestBodyContentApplicationJsonSchemaStop"
+                  },
+                  "stream": {
+                    "type": "boolean",
+                    "description": "Whether to stream back the model response."
+                  },
+                  "stream_options": {
+                    "$ref": "#/components/schemas/CompletionsPostRequestBodyContentApplicationJsonSchemaStreamOptions",
+                    "description": "Extra parameters used when streaming the response."
+                  },
+                  "temperature": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The temperature parameter for controlling randomness in completions. Supports a range of 0.0-2.0."
+                  },
+                  "top_p": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The diversity of the generated text based on nucleus sampling. Supports a range of 0.0-1.0."
+                  },
+                  "top_k": {
+                    "type": "integer",
+                    "description": "The diversity of the generated text based on top-k sampling."
+                  },
+                  "output": {
+                    "$ref": "#/components/schemas/CompletionsPostRequestBodyContentApplicationJsonSchemaOutput",
+                    "description": "Options to affect the output of the response."
+                  },
+                  "input": {
+                    "$ref": "#/components/schemas/CompletionsPostRequestBodyContentApplicationJsonSchemaInput",
+                    "description": "Options to affect the input of the request."
+                  }
+                },
+                "required": [
+                  "model",
+                  "prompt"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/embeddings": {
+      "post": {
+        "operationId": "embeddings",
+        "summary": "Embeddings",
+        "description": "Generate vector data points from text and images.",
+        "tags": [
+          ""
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/embeddings_Response_200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "General error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmbeddingsRequestBadRequestError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed auth response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmbeddingsRequestForbiddenError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "model": {
+                    "type": "string",
+                    "description": "The model to use for generating vectors."
+                  },
+                  "input": {
+                    "$ref": "#/components/schemas/EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput"
+                  },
+                  "truncate": {
+                    "type": "boolean",
+                    "description": "Boolean setting whether to truncate inputs. Not supported by bridgetower."
+                  },
+                  "truncation_direction": {
+                    "type": "string",
+                    "description": "Which direction to truncate, \"Left\" or \"Right\". Not supported by bridgetower."
+                  }
+                },
+                "required": [
+                  "model",
+                  "input"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/audio/transcriptions": {
+      "post": {
+        "operationId": "audio-transcription",
+        "summary": "Audio Transcription",
+        "description": "This endpoint allows you to transcribe audio.",
+        "tags": [
+          ""
+        ],
+        "parameters": [
+          {
+            "name": "Toxicity",
+            "in": "header",
+            "description": "Whether to check the output for toxicity.",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "Pii",
+            "in": "header",
+            "description": "Whether to check the output for Pii, and what to do if found. Supported values are 'replace' and 'block'.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Replace-Method",
+            "in": "header",
+            "description": "Method to replace any found PII. Supported values are 'category', 'fake', 'mask', and 'random'.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Entity-List",
+            "in": "header",
+            "description": "An array of entity types that the PII check should ignore.",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "Injection",
+            "in": "header",
+            "description": "Whether to check the output for a prompt injection.",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/audioTranscription_Response_200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "General error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AudioTranscriptionRequestBadRequestError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed auth response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AudioTranscriptionRequestForbiddenError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "model": {
+                    "type": "string",
+                    "description": "The transcription model to use."
+                  },
+                  "file": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "The audio file to upload."
+                  },
+                  "language": {
+                    "type": "string",
+                    "description": "The language the audio is in."
+                  },
+                  "prompt": {
+                    "type": "string",
+                    "description": "An optional text to guide the model's style or continue a previous audio segment."
+                  },
+                  "temperature": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "The temperature parameter for controlling randomness in transcription. Supports a range of 0.0-2.0."
+                  },
+                  "timestamps_granularities[]": {
+                    "$ref": "#/components/schemas/AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularities",
+                    "description": "Sets whether timestamps are returned and at what granularity."
+                  },
+                  "diarization": {
+                    "type": "boolean",
+                    "description": "Whether to diarize the audio and return speaker turns. Not currently supported in multi-tenant environments."
+                  },
+                  "response_format": {
+                    "type": "string",
+                    "description": "The format for the response object. Defaults to \"json\" and must be set to \"verbose_json\" when using diarization or timestamp granularities."
+                  }
+                },
+                "required": [
+                  "model",
+                  "file"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/documents/extract": {
+      "post": {
+        "operationId": "documents-extract",
+        "summary": "Documents Extract",
+        "description": "This endpoint allows you to parse text from documents using OCR.",
+        "tags": [
+          ""
+        ],
+        "parameters": [
+          {
+            "name": "Toxicity",
+            "in": "header",
+            "description": "Whether to check the output for toxicity.",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "Pii",
+            "in": "header",
+            "description": "Whether to check the output for Pii, and what to do if found. Supported values are 'replace' and 'block'.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Replace-Method",
+            "in": "header",
+            "description": "Method to replace any found PII. Supported values are 'category', 'fake', 'mask', and 'random'.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Entity-List",
+            "in": "header",
+            "description": "An array of entity types that the PII check should ignore.",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "Injection",
+            "in": "header",
+            "description": "Whether to check the output for a prompt injection.",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/documentsExtract_Response_200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "General error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentsExtractRequestBadRequestError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed auth response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentsExtractRequestForbiddenError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "The document file to upload."
+                  },
+                  "embedImages": {
+                    "type": "boolean",
+                    "description": "Whether to embed images from the document."
+                  },
+                  "outputFormat": {
+                    "type": "string",
+                    "description": "The output format for the content of the document."
+                  },
+                  "chunkDocument": {
+                    "type": "boolean",
+                    "description": "Whether to separate the document into chunks."
+                  },
+                  "chunkSize": {
+                    "type": "integer",
+                    "description": "The size of chunks for the documents."
+                  },
+                  "enableOCR": {
+                    "type": "boolean",
+                    "description": "Whether to enable OCR for document parsing."
+                  }
+                },
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rerank": {
+      "post": {
+        "operationId": "rerank",
+        "summary": "Rerank",
+        "description": "Rerank sorts text inputs by semantic relevance to a specified query.",
+        "tags": [
+          ""
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rerank_Response_200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "General error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RerankRequestBadRequestError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed auth response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RerankRequestForbiddenError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "model": {
+                    "type": "string",
+                    "description": "The model to use for reranking."
+                  },
+                  "query": {
+                    "type": "string",
+                    "description": "The query to rank against."
+                  },
+                  "documents": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Array of documents to rank."
+                  },
+                  "return_documents": {
+                    "type": "boolean",
+                    "description": "Boolean setting whether to return documents in output."
+                  }
+                },
+                "required": [
+                  "model",
+                  "query",
+                  "documents"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tokenize": {
+      "post": {
+        "operationId": "tokenize",
+        "summary": "Tokenize",
+        "description": "Generates tokens for a string using a model's tokenizer.",
+        "tags": [
+          ""
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenize_Response_200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "General error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenizeRequestBadRequestError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed auth response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenizeRequestForbiddenError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "model": {
+                    "type": "string",
+                    "description": "The name of the model to use for tokenization."
+                  },
+                  "input": {
+                    "type": "string",
+                    "description": "The text to tokenize."
+                  }
+                },
+                "required": [
+                  "model",
+                  "input"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/detokenize": {
+      "post": {
+        "operationId": "detokenize",
+        "summary": "Detokenize",
+        "description": "Generates text from tokens using a model's tokenizer.",
+        "tags": [
+          ""
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/detokenize_Response_200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "General error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DetokenizeRequestBadRequestError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed auth response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DetokenizeRequestForbiddenError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "model": {
+                    "type": "string",
+                    "description": "The name of the model to use for detokenization."
+                  },
+                  "tokens": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    },
+                    "description": "The tokens to turn into text."
+                  }
+                },
+                "required": [
+                  "model",
+                  "tokens"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/factuality": {
+      "post": {
+        "operationId": "factuality",
+        "summary": "Factuality",
+        "description": "Check the factuality of a given text compared to a reference.",
+        "tags": [
+          ""
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/factuality_Response_200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "General error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FactualityRequestBadRequestError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed auth response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FactualityRequestForbiddenError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "reference": {
+                    "type": "string",
+                    "description": "The reference text for comparison."
+                  },
+                  "text": {
+                    "type": "string",
+                    "description": "The text to be checked for factuality."
+                  }
+                },
+                "required": [
+                  "reference",
+                  "text"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/injection": {
+      "post": {
+        "operationId": "injection",
+        "summary": "Injection",
+        "description": "Injection detects potential prompt injection attacks.",
+        "tags": [
+          ""
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/injection_Response_200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "General error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InjectionRequestBadRequestError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed auth response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InjectionRequestForbiddenError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "prompt": {
+                    "$ref": "#/components/schemas/InjectionPostRequestBodyContentApplicationJsonSchemaPrompt"
+                  },
+                  "detect": {
+                    "type": "boolean",
+                    "description": "Whether to detect potential injection attacks."
+                  }
+                },
+                "required": [
+                  "prompt",
+                  "detect"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/PII": {
+      "post": {
+        "operationId": "pii",
+        "summary": "PII",
+        "description": "Replace personal information such as names, SSNs, and emails in a given text.",
+        "tags": [
+          ""
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pii_Response_200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "General error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PiiRequestBadRequestError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed auth response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PiiRequestForbiddenError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "prompt": {
+                    "$ref": "#/components/schemas/PiiPostRequestBodyContentApplicationJsonSchemaPrompt"
+                  },
+                  "replace": {
+                    "type": "boolean",
+                    "description": "Whether to replace personal information."
+                  },
+                  "replace_method": {
+                    "type": "string",
+                    "description": "The method to use (random, fake, category, mask)."
+                  },
+                  "entity_list": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "An array of entity types that the PII check should ignore."
+                  }
+                },
+                "required": [
+                  "prompt",
+                  "replace"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/toxicity": {
+      "post": {
+        "operationId": "toxicity",
+        "summary": "Toxicity",
+        "description": "Check the toxicity of a given text.",
+        "tags": [
+          ""
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/toxicity_Response_200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "General error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ToxicityRequestBadRequestError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed auth response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ToxicityRequestForbiddenError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "The text to check for toxicity."
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/models/{capability}": {
+      "get": {
+        "operationId": "models",
+        "summary": "Models",
+        "description": "Return available models for an endpoint and relevant metadata for them.",
+        "tags": [
+          ""
+        ],
+        "parameters": [
+          {
+            "name": "capability",
+            "in": "path",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ModelsCapabilityGetParametersCapability"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/models_Response_200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "General error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelsRequestBadRequestError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed auth response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelsRequestForbiddenError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mcp_servers": {
+      "get": {
+        "operationId": "mcp-servers",
+        "summary": "MCP Servers",
+        "description": "Return available MCP servers and tools included in those servers along with relevant metadata.",
+        "tags": [
+          ""
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/mcpServers_Response_200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "General error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/McpServersRequestBadRequestError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed auth response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/McpServersRequestForbiddenError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mcp_tools": {
+      "get": {
+        "operationId": "mcp-tools",
+        "summary": "MCP Tools",
+        "description": "Return available MCP tools by server with parameters and any relevant metadata.",
+        "tags": [
+          ""
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/mcpTools_Response_200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "General error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/McpToolsRequestBadRequestError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed auth response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/McpToolsRequestForbiddenError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.predictionguard.com"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentOneOf1ItemsImageUrl": {
+        "type": "object",
+        "properties": {},
+        "description": "The base64 content with this prefix `data:image/jpeg;base64,`",
+        "title": "ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentOneOf1ItemsImageUrl"
+      },
+      "ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentOneOf1Items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The type of content ('input_text', 'output_text', and 'input_image')."
+          },
+          "text": {
+            "type": "string",
+            "description": "The text to provide."
+          },
+          "image_url": {
+            "$ref": "#/components/schemas/ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentOneOf1ItemsImageUrl",
+            "description": "The base64 content with this prefix `data:image/jpeg;base64,`"
+          },
+          "detail": {
+            "type": "string",
+            "description": "Specifies the detail level of the image. Defaults to `auto`."
+          }
+        },
+        "title": "ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentOneOf1Items"
+      },
+      "ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent1": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentOneOf1Items"
+        },
+        "description": "The content of the message, used for file inputs.",
+        "title": "ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent1"
+      },
+      "ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "$ref": "#/components/schemas/ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent1"
+          }
+        ],
+        "title": "ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent"
+      },
+      "ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "description": "The role of the sender (user or assistant)."
+          },
+          "content": {
+            "$ref": "#/components/schemas/ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent"
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of input item."
+          },
+          "id": {
+            "type": "string",
+            "description": "The ID of the input item, typically used when inputting items that were output by the model."
+          },
+          "status": {
+            "type": "string",
+            "description": "The status of the input item, typically used when inputting items that were output by the model."
+          },
+          "arguments": {
+            "type": "string",
+            "description": "The arguments used for the tool call made by the model."
+          },
+          "call_id": {
+            "type": "string",
+            "description": "The call_id of the tool call made by the model. Generated by the model in the output."
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the tool used in the tool call from the previous output."
+          },
+          "output": {
+            "description": "Any type"
+          }
+        },
+        "required": [
+          "role",
+          "content"
+        ],
+        "title": "ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items"
+      },
+      "ResponsesPostRequestBodyContentApplicationJsonSchemaInput1": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items"
+        },
+        "description": "An array of input items used for generating completions.",
+        "title": "ResponsesPostRequestBodyContentApplicationJsonSchemaInput1"
+      },
+      "ResponsesPostRequestBodyContentApplicationJsonSchemaInput": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "$ref": "#/components/schemas/ResponsesPostRequestBodyContentApplicationJsonSchemaInput1"
+          }
+        ],
+        "title": "ResponsesPostRequestBodyContentApplicationJsonSchemaInput"
+      },
+      "ResponsesPostRequestBodyContentApplicationJsonSchemaReasoning": {
+        "type": "object",
+        "properties": {
+          "effort": {
+            "type": "string",
+            "description": "Effort level for reasoning, currently supported values are `low`, `medium`, and `high`. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response. Only supported by reasoning models."
+          }
+        },
+        "description": "Constrains effort on reasoning for reasoning models.",
+        "title": "ResponsesPostRequestBodyContentApplicationJsonSchemaReasoning"
+      },
+      "ResponsesPostRequestBodyContentApplicationJsonSchemaStreamOptions": {
+        "type": "object",
+        "properties": {
+          "include_usage": {
+            "type": "boolean",
+            "description": "Whether to include tokens used in the stream response objects."
+          }
+        },
+        "description": "Extra parameters used when streaming the response.",
+        "title": "ResponsesPostRequestBodyContentApplicationJsonSchemaStreamOptions"
+      },
+      "ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceOneOf1ToolsItems": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The type of tool."
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the tool of choice."
+          },
+          "server_label": {
+            "type": "string",
+            "description": "The label of the MCP server that the tool is on."
+          }
+        },
+        "title": "ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceOneOf1ToolsItems"
+      },
+      "ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "tools": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceOneOf1ToolsItems"
+            },
+            "description": "Allows for multiple tools to be set in tool_choice."
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the tool to use."
+          },
+          "server_label": {
+            "type": "string",
+            "description": "The label of the MCP server that the tool is on."
+          }
+        },
+        "description": "An object representing the tool to be chosen",
+        "title": "ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1"
+      },
+      "ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "$ref": "#/components/schemas/ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1"
+          }
+        ],
+        "title": "ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice"
+      },
+      "ResponsesPostRequestBodyContentApplicationJsonSchemaToolsItemsParameters": {
+        "type": "object",
+        "properties": {},
+        "description": "The parameters the tool accepts, described as a JSON Schema object.",
+        "title": "ResponsesPostRequestBodyContentApplicationJsonSchemaToolsItemsParameters"
+      },
+      "ResponsesPostRequestBodyContentApplicationJsonSchemaToolsItemsHeaders": {
+        "type": "object",
+        "properties": {},
+        "description": "The necessary headers needed for calling the MCP server.",
+        "title": "ResponsesPostRequestBodyContentApplicationJsonSchemaToolsItemsHeaders"
+      },
+      "ResponsesPostRequestBodyContentApplicationJsonSchemaToolsItems": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The type of tool to call."
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the tool to be called."
+          },
+          "parameters": {
+            "$ref": "#/components/schemas/ResponsesPostRequestBodyContentApplicationJsonSchemaToolsItemsParameters",
+            "description": "The parameters the tool accepts, described as a JSON Schema object."
+          },
+          "strict": {
+            "type": "boolean",
+            "description": "Whether to enable strict schema adherence when generating the tool call."
+          },
+          "description": {
+            "type": "string",
+            "description": "A description of what the tool does."
+          },
+          "server_label": {
+            "type": "string",
+            "description": "The label for the MCP server being used."
+          },
+          "server_url": {
+            "type": "string",
+            "description": "The URL for the MCP server being used."
+          },
+          "server_description": {
+            "type": "string",
+            "description": "The description of the MCP server being used."
+          },
+          "initials": {
+            "type": "string",
+            "description": "The initials of the MCP server being used. Used for the ID of the output object."
+          },
+          "authorization": {
+            "type": "string",
+            "description": "The authorization needed for the MCP server."
+          },
+          "headers": {
+            "$ref": "#/components/schemas/ResponsesPostRequestBodyContentApplicationJsonSchemaToolsItemsHeaders",
+            "description": "The necessary headers needed for calling the MCP server."
+          },
+          "allowed_tools": {
+            "type": "array",
+            "items": {
+              "description": "Any type"
+            },
+            "description": "An array of the tools in the MCP server that the model is allowed to use."
+          }
+        },
+        "title": "ResponsesPostRequestBodyContentApplicationJsonSchemaToolsItems"
+      },
+      "ResponsesPostRequestBodyContentApplicationJsonSchemaSafeguardsEntityListItems": {
+        "oneOf": [
+          {
+            "type": "string"
+          }
+        ],
+        "title": "ResponsesPostRequestBodyContentApplicationJsonSchemaSafeguardsEntityListItems"
+      },
+      "ResponsesPostRequestBodyContentApplicationJsonSchemaSafeguards": {
+        "type": "object",
+        "properties": {
+          "block_prompt_injection": {
+            "type": "boolean",
+            "description": "Set to true to detect prompt injection attacks."
+          },
+          "pii": {
+            "type": "string",
+            "description": "Set to either 'block' or 'replace'."
+          },
+          "pii_replace_method": {
+            "type": "string",
+            "description": "Set to either 'random', 'fake', 'category', 'mask'."
+          },
+          "entity_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResponsesPostRequestBodyContentApplicationJsonSchemaSafeguardsEntityListItems"
+            },
+            "description": "An array of entity types that the PII check should ignore."
+          },
+          "factuality": {
+            "type": "boolean",
+            "description": "Set to true to turn on factuality processing."
+          },
+          "toxicity": {
+            "type": "boolean",
+            "description": "Set to true to turn on toxicity processing."
+          }
+        },
+        "description": "Safeguards to run on the request.",
+        "title": "ResponsesPostRequestBodyContentApplicationJsonSchemaSafeguards"
+      },
+      "ResponsesPostResponsesContentApplicationJsonSchemaOutputItemsContent": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "The output text."
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of output content."
+          }
+        },
+        "description": "The content for the output object.",
+        "title": "ResponsesPostResponsesContentApplicationJsonSchemaOutputItemsContent"
+      },
+      "ResponsesPostResponsesContentApplicationJsonSchemaOutputItems": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The type of output object."
+          },
+          "id": {
+            "type": "string",
+            "description": "The ID of the output object."
+          },
+          "status": {
+            "type": "string",
+            "description": "The status of the output object."
+          },
+          "role": {
+            "type": "string",
+            "description": "The role of the output object."
+          },
+          "content": {
+            "$ref": "#/components/schemas/ResponsesPostResponsesContentApplicationJsonSchemaOutputItemsContent",
+            "description": "The content for the output object."
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the tool used in the output."
+          },
+          "call_id": {
+            "type": "string",
+            "description": "The call_id for the tool call used in the output,"
+          },
+          "arguments": {
+            "type": "string",
+            "description": "The arguments used for the tool call used in the output."
+          },
+          "server_label": {
+            "type": "string",
+            "description": "The label of the MCP server used in the output."
+          },
+          "output": {
+            "type": "string",
+            "description": "The output of the MCP tool call."
+          },
+          "error": {
+            "type": "string",
+            "description": "The error message from the MCP tool call."
+          }
+        },
+        "title": "ResponsesPostResponsesContentApplicationJsonSchemaOutputItems"
+      },
+      "responses_Response_200": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique ID for the chat completion."
+          },
+          "object": {
+            "type": "string",
+            "description": "Type of object (chat completion)."
+          },
+          "created_at": {
+            "type": "integer",
+            "description": "Timestamp of when the chat completion was created."
+          },
+          "status": {
+            "type": "string",
+            "description": "The status of the request."
+          },
+          "max_tool_calls": {
+            "type": "integer",
+            "description": "The max_tool_calls specified in the request."
+          },
+          "model": {
+            "type": "string",
+            "description": "The chat model used for generating completions."
+          },
+          "output": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResponsesPostResponsesContentApplicationJsonSchemaOutputItems"
+            },
+            "description": "The set of result outputs."
+          },
+          "instructions": {
+            "type": "string",
+            "description": "The instructions entered in the request input."
+          },
+          "max_output_tokens": {
+            "type": "integer",
+            "description": "The max_output_tokens value entered in the request input."
+          },
+          "parallel_tool_calls": {
+            "type": "integer",
+            "description": "The parallel_tool_calls value entered in the request input."
+          },
+          "temperature": {
+            "type": "number",
+            "format": "double",
+            "description": "The temperature value entered in the request input."
+          }
+        },
+        "title": "responses_Response_200"
+      },
+      "ResponsesRequestBadRequestError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "ResponsesRequestBadRequestError"
+      },
+      "ResponsesRequestForbiddenError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "ResponsesRequestForbiddenError"
+      },
+      "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentOneOf1ItemsImageUrl": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "The base64 content with this prefix `data:image/jpeg;base64,`"
+          },
+          "detail": {
+            "type": "string",
+            "description": "Specifies the detail level of the image. Defaults to `auto`."
+          }
+        },
+        "title": "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentOneOf1ItemsImageUrl"
+      },
+      "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentOneOf1Items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The type of content ('text', 'image_url')."
+          },
+          "text": {
+            "type": "string",
+            "description": "The text to provide."
+          },
+          "image_url": {
+            "$ref": "#/components/schemas/ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentOneOf1ItemsImageUrl"
+          }
+        },
+        "title": "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentOneOf1Items"
+      },
+      "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentOneOf1Items"
+        },
+        "description": "The content of the message, used for file inputs.",
+        "title": "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1"
+      },
+      "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "$ref": "#/components/schemas/ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1"
+          }
+        ],
+        "title": "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent"
+      },
+      "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1Items": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "description": "The role of the sender (user or assistant)."
+          },
+          "content": {
+            "$ref": "#/components/schemas/ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent"
+          }
+        },
+        "required": [
+          "role",
+          "content"
+        ],
+        "title": "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1Items"
+      },
+      "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1Items"
+        },
+        "description": "An array of messages used for generating completions.",
+        "title": "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1"
+      },
+      "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "$ref": "#/components/schemas/ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1"
+          }
+        ],
+        "title": "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages"
+      },
+      "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaLogitBias": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "description": "A string of the chosen token ID. Value is an int from -100 to 100."
+          }
+        },
+        "description": "Modifies the likelihood of specified tokens appearing in a response.",
+        "title": "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaLogitBias"
+      },
+      "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaStop": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        ],
+        "title": "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaStop"
+      },
+      "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaStreamOptions": {
+        "type": "object",
+        "properties": {
+          "include_usage": {
+            "type": "boolean",
+            "description": "Whether to include tokens used in the stream response objects."
+          }
+        },
+        "description": "Extra parameters used when streaming the response.",
+        "title": "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaStreamOptions"
+      },
+      "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceOneOf1Function": {
+        "type": "object",
+        "properties": {},
+        "description": "An object containing the name of the function",
+        "title": "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceOneOf1Function"
+      },
+      "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The type of tool."
+          },
+          "function": {
+            "$ref": "#/components/schemas/ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceOneOf1Function",
+            "description": "An object containing the name of the function"
+          }
+        },
+        "description": "An object representing the tool to be chosen",
+        "title": "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1"
+      },
+      "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "$ref": "#/components/schemas/ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1"
+          }
+        ],
+        "title": "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice"
+      },
+      "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolsItemsFunctionParameters": {
+        "type": "object",
+        "properties": {},
+        "description": "The parameters the function accepts, described as a JSON Schema object.",
+        "title": "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolsItemsFunctionParameters"
+      },
+      "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolsItemsFunction": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the function to be called."
+          },
+          "description": {
+            "type": "string",
+            "description": "A description of what the function does."
+          },
+          "parameters": {
+            "$ref": "#/components/schemas/ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolsItemsFunctionParameters",
+            "description": "The parameters the function accepts, described as a JSON Schema object."
+          },
+          "strict": {
+            "type": "boolean",
+            "description": "Whether to enable strict schema adherence when generating the function call."
+          }
+        },
+        "description": "The tool information.",
+        "title": "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolsItemsFunction"
+      },
+      "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolsItems": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The type of tool to call. Only 'function' is currently supported."
+          },
+          "function": {
+            "$ref": "#/components/schemas/ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolsItemsFunction",
+            "description": "The tool information."
+          }
+        },
+        "title": "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolsItems"
+      },
+      "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaOutput": {
+        "type": "object",
+        "properties": {
+          "factuality": {
+            "type": "boolean",
+            "description": "Set to true to turn on factuality processing."
+          },
+          "toxicity": {
+            "type": "boolean",
+            "description": "Set to true to turn on toxicity processing."
+          }
+        },
+        "description": "Options to affect the output of the response.",
+        "title": "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaOutput"
+      },
+      "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItems": {
+        "oneOf": [
+          {
+            "type": "string"
+          }
+        ],
+        "title": "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItems"
+      },
+      "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaInput": {
+        "type": "object",
+        "properties": {
+          "block_prompt_injection": {
+            "type": "boolean",
+            "description": "Set to true to detect prompt injection attacks."
+          },
+          "pii": {
+            "type": "string",
+            "description": "Set to either 'block' or 'replace'."
+          },
+          "pii_replace_method": {
+            "type": "string",
+            "description": "Set to either 'random', 'fake', 'category', 'mask'."
+          },
+          "entity_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItems"
+            },
+            "description": "An array of entity types that the PII check should ignore."
+          }
+        },
+        "description": "Options to affect the input of the request.",
+        "title": "ChatCompletionsPostRequestBodyContentApplicationJsonSchemaInput"
+      },
+      "ChatCompletionsPostResponsesContentApplicationJsonSchemaChoicesItemsDelta": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "description": "The role of the sender (user or assistant)."
+          },
+          "content": {
+            "type": "string",
+            "description": "The content of the message."
+          }
+        },
+        "description": "The incremental message delta (streaming only).",
+        "title": "ChatCompletionsPostResponsesContentApplicationJsonSchemaChoicesItemsDelta"
+      },
+      "ChatCompletionsPostResponsesContentApplicationJsonSchemaChoicesItemsMessageToolCallsItemsFunction": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the function."
+          },
+          "arguments": {
+            "type": "string",
+            "description": "The function arguments."
+          }
+        },
+        "description": "The tool call function data.",
+        "title": "ChatCompletionsPostResponsesContentApplicationJsonSchemaChoicesItemsMessageToolCallsItemsFunction"
+      },
+      "ChatCompletionsPostResponsesContentApplicationJsonSchemaChoicesItemsMessageToolCallsItems": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The autogenerated ID of the function."
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of tool called."
+          },
+          "function": {
+            "$ref": "#/components/schemas/ChatCompletionsPostResponsesContentApplicationJsonSchemaChoicesItemsMessageToolCallsItemsFunction",
+            "description": "The tool call function data."
+          }
+        },
+        "title": "ChatCompletionsPostResponsesContentApplicationJsonSchemaChoicesItemsMessageToolCallsItems"
+      },
+      "ChatCompletionsPostResponsesContentApplicationJsonSchemaChoicesItemsMessage": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "description": "The role of the sender (user or assistant)."
+          },
+          "content": {
+            "type": "string",
+            "description": "The content of the message."
+          },
+          "reasoning": {
+            "type": "string",
+            "description": "The reasoning content of the message."
+          },
+          "tool_calls": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChatCompletionsPostResponsesContentApplicationJsonSchemaChoicesItemsMessageToolCallsItems"
+            },
+            "description": "The tool call function."
+          }
+        },
+        "description": "A result choice.",
+        "title": "ChatCompletionsPostResponsesContentApplicationJsonSchemaChoicesItemsMessage"
+      },
+      "ChatCompletionsPostResponsesContentApplicationJsonSchemaChoicesItems": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "integer",
+            "description": "The index position in the collection."
+          },
+          "delta": {
+            "$ref": "#/components/schemas/ChatCompletionsPostResponsesContentApplicationJsonSchemaChoicesItemsDelta",
+            "description": "The incremental message delta (streaming only)."
+          },
+          "message": {
+            "$ref": "#/components/schemas/ChatCompletionsPostResponsesContentApplicationJsonSchemaChoicesItemsMessage",
+            "description": "A result choice."
+          },
+          "finish_reason": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The reason the generation finished."
+          },
+          "generated_text": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The complete generated text."
+          }
+        },
+        "title": "ChatCompletionsPostResponsesContentApplicationJsonSchemaChoicesItems"
+      },
+      "ChatCompletionsPostResponsesContentApplicationJsonSchemaUsagePromptTokensDetails": {
+        "type": "object",
+        "properties": {
+          "audio_tokens": {
+            "type": "integer",
+            "description": "The amount of audio tokens from any input audio files."
+          },
+          "cached_tokens": {
+            "type": "integer",
+            "description": "The amount of cached tokens used in the request prompt."
+          }
+        },
+        "description": "Further information about the amount of tokens used in the request prompt.",
+        "title": "ChatCompletionsPostResponsesContentApplicationJsonSchemaUsagePromptTokensDetails"
+      },
+      "ChatCompletionsPostResponsesContentApplicationJsonSchemaUsageCompletionTokensDetails": {
+        "type": "object",
+        "properties": {
+          "reasoning_tokens": {
+            "type": "integer",
+            "description": "The amount of reasoning tokens used by the model."
+          },
+          "accepted_prediction_tokens": {
+            "type": "integer",
+            "description": "The amount of tokens accepted during the request."
+          },
+          "rejected_prediction_tokens": {
+            "type": "integer",
+            "description": "The amount of tokens rejected during the request."
+          },
+          "audio_tokens": {
+            "type": "integer",
+            "description": "The amount of tokens used from output audio files"
+          }
+        },
+        "description": "Further information about the amount of tokens in the request completion.",
+        "title": "ChatCompletionsPostResponsesContentApplicationJsonSchemaUsageCompletionTokensDetails"
+      },
+      "ChatCompletionsPostResponsesContentApplicationJsonSchemaUsage": {
+        "type": "object",
+        "properties": {
+          "prompt_tokens": {
+            "type": "integer",
+            "description": "The amount of tokens included in the request prompt."
+          },
+          "prompt_tokens_details": {
+            "$ref": "#/components/schemas/ChatCompletionsPostResponsesContentApplicationJsonSchemaUsagePromptTokensDetails",
+            "description": "Further information about the amount of tokens used in the request prompt."
+          },
+          "completion_tokens": {
+            "type": "integer",
+            "description": "The amount of tokens included in the request completion."
+          },
+          "completion_tokens_details": {
+            "$ref": "#/components/schemas/ChatCompletionsPostResponsesContentApplicationJsonSchemaUsageCompletionTokensDetails",
+            "description": "Further information about the amount of tokens in the request completion."
+          },
+          "total_tokens": {
+            "type": "integer",
+            "description": "The total amount of tokens used in the entire request."
+          }
+        },
+        "description": "The amount of tokens used in the request.",
+        "title": "ChatCompletionsPostResponsesContentApplicationJsonSchemaUsage"
+      },
+      "chatCompletions_Response_200": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique ID for the chat completion."
+          },
+          "object": {
+            "type": "string",
+            "description": "Type of object (chat completion)."
+          },
+          "created": {
+            "type": "integer",
+            "description": "Timestamp of when the chat completion was created."
+          },
+          "model": {
+            "type": "string",
+            "description": "The chat model used for generating completions."
+          },
+          "choices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChatCompletionsPostResponsesContentApplicationJsonSchemaChoicesItems"
+            },
+            "description": "The set of result choices."
+          },
+          "usage": {
+            "$ref": "#/components/schemas/ChatCompletionsPostResponsesContentApplicationJsonSchemaUsage",
+            "description": "The amount of tokens used in the request."
+          }
+        },
+        "title": "chatCompletions_Response_200"
+      },
+      "ChatCompletionsRequestBadRequestError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "ChatCompletionsRequestBadRequestError"
+      },
+      "ChatCompletionsRequestForbiddenError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "ChatCompletionsRequestForbiddenError"
+      },
+      "CompletionsPostRequestBodyContentApplicationJsonSchemaPrompt": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        ],
+        "title": "CompletionsPostRequestBodyContentApplicationJsonSchemaPrompt"
+      },
+      "CompletionsPostRequestBodyContentApplicationJsonSchemaLogitBias": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "description": "A string of the chosen token ID. Value is an int from -100 to 100."
+          }
+        },
+        "description": "Modifies the likelihood of specified tokens appearing in a response.",
+        "title": "CompletionsPostRequestBodyContentApplicationJsonSchemaLogitBias"
+      },
+      "CompletionsPostRequestBodyContentApplicationJsonSchemaStop": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        ],
+        "title": "CompletionsPostRequestBodyContentApplicationJsonSchemaStop"
+      },
+      "CompletionsPostRequestBodyContentApplicationJsonSchemaStreamOptions": {
+        "type": "object",
+        "properties": {
+          "include_usage": {
+            "type": "boolean",
+            "description": "Whether to include tokens used in the stream response objects."
+          }
+        },
+        "description": "Extra parameters used when streaming the response.",
+        "title": "CompletionsPostRequestBodyContentApplicationJsonSchemaStreamOptions"
+      },
+      "CompletionsPostRequestBodyContentApplicationJsonSchemaOutput": {
+        "type": "object",
+        "properties": {
+          "factuality": {
+            "type": "boolean",
+            "description": "Set to true to turn on factuality processing."
+          },
+          "toxicity": {
+            "type": "boolean",
+            "description": "Set to true to turn on toxicity processing."
+          }
+        },
+        "description": "Options to affect the output of the response.",
+        "title": "CompletionsPostRequestBodyContentApplicationJsonSchemaOutput"
+      },
+      "CompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItems": {
+        "oneOf": [
+          {
+            "type": "string"
+          }
+        ],
+        "title": "CompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItems"
+      },
+      "CompletionsPostRequestBodyContentApplicationJsonSchemaInput": {
+        "type": "object",
+        "properties": {
+          "block_prompt_injection": {
+            "type": "boolean",
+            "description": "Set to true to detect prompt injection attacks."
+          },
+          "pii": {
+            "type": "string",
+            "description": "Set to either 'block' or 'replace'."
+          },
+          "pii_replace_method": {
+            "type": "string",
+            "description": "Set to either 'random', 'fake', 'category', 'mask'."
+          },
+          "entity_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItems"
+            },
+            "description": "An array of entity types that the PII check should ignore."
+          }
+        },
+        "description": "Options to affect the input of the request.",
+        "title": "CompletionsPostRequestBodyContentApplicationJsonSchemaInput"
+      },
+      "CompletionsPostResponsesContentApplicationJsonSchemaChoicesItems": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "integer",
+            "description": "The index position in the collection."
+          },
+          "text": {
+            "type": "string",
+            "description": "The generated text."
+          }
+        },
+        "title": "CompletionsPostResponsesContentApplicationJsonSchemaChoicesItems"
+      },
+      "completions_Response_200": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique ID for the completion."
+          },
+          "object": {
+            "type": "string",
+            "description": "Type of object (completion)."
+          },
+          "created": {
+            "type": "integer",
+            "description": "Timestamp of when the completion was created."
+          },
+          "model": {
+            "type": "string",
+            "description": "The model used for generating the result."
+          },
+          "choices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CompletionsPostResponsesContentApplicationJsonSchemaChoicesItems"
+            },
+            "description": "The set of result choices."
+          }
+        },
+        "title": "completions_Response_200"
+      },
+      "CompletionsRequestBadRequestError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "CompletionsRequestBadRequestError"
+      },
+      "CompletionsRequestForbiddenError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "CompletionsRequestForbiddenError"
+      },
+      "EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "The text to embed. You can choose to provide this or not."
+          },
+          "image": {
+            "type": "string",
+            "description": "The base64 encoding of an image. You can choose to provide this or not."
+          }
+        },
+        "description": "Use this option for multimodal input.",
+        "title": "EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3"
+      },
+      "EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "integer"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          {
+            "$ref": "#/components/schemas/EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3"
+          }
+        ],
+        "title": "EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items"
+      },
+      "EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput1": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items"
+        },
+        "description": "An array of strings or objects containing the text and/or images to be embedded.",
+        "title": "EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput1"
+      },
+      "EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "$ref": "#/components/schemas/EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput1"
+          }
+        ],
+        "title": "EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput"
+      },
+      "EmbeddingsPostResponsesContentApplicationJsonSchemaDataItems": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "integer",
+            "description": "The index position in the collection."
+          },
+          "embedding": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "double"
+            },
+            "description": "The array of vector values."
+          }
+        },
+        "title": "EmbeddingsPostResponsesContentApplicationJsonSchemaDataItems"
+      },
+      "embeddings_Response_200": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique ID for the embeddings."
+          },
+          "object": {
+            "type": "string",
+            "description": "Type of object (list)."
+          },
+          "created": {
+            "type": "integer",
+            "description": "Timestamp of when the embeddings was created."
+          },
+          "model": {
+            "type": "string",
+            "description": "The embeddings model used."
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmbeddingsPostResponsesContentApplicationJsonSchemaDataItems"
+            },
+            "description": "The set of vectorized data."
+          }
+        },
+        "title": "embeddings_Response_200"
+      },
+      "EmbeddingsRequestBadRequestError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "EmbeddingsRequestBadRequestError"
+      },
+      "EmbeddingsRequestForbiddenError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "EmbeddingsRequestForbiddenError"
+      },
+      "AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularities": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "array",
+            "items": {
+              "description": "Any type"
+            }
+          }
+        ],
+        "description": "Sets whether timestamps are returned and at what granularity.",
+        "title": "AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularities"
+      },
+      "AudioTranscriptionsPostResponsesContentApplicationJsonSchemaSegmentsItems": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "The id of the segment."
+          },
+          "text": {
+            "type": "string",
+            "description": "The text for the segment."
+          },
+          "start": {
+            "type": "number",
+            "format": "double",
+            "description": "The start time of the segment in seconds."
+          },
+          "end": {
+            "type": "number",
+            "format": "double",
+            "description": "The end time of the segment in seconds."
+          },
+          "speaker": {
+            "type": "string",
+            "description": "The speaker of the segment."
+          }
+        },
+        "title": "AudioTranscriptionsPostResponsesContentApplicationJsonSchemaSegmentsItems"
+      },
+      "AudioTranscriptionsPostResponsesContentApplicationJsonSchemaWordsItems": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "The text for the word."
+          },
+          "start": {
+            "type": "number",
+            "format": "double",
+            "description": "The start time of the word in seconds."
+          },
+          "end": {
+            "type": "number",
+            "format": "double",
+            "description": "The end time of the word in seconds."
+          },
+          "speaker": {
+            "type": "string",
+            "description": "The speaker of the word."
+          }
+        },
+        "title": "AudioTranscriptionsPostResponsesContentApplicationJsonSchemaWordsItems"
+      },
+      "audioTranscription_Response_200": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "The transcribed audio."
+          },
+          "task": {
+            "type": "string",
+            "description": "The task used in the request."
+          },
+          "language": {
+            "type": "string",
+            "description": "The language of the audio file."
+          },
+          "duration": {
+            "type": "number",
+            "format": "double",
+            "description": "The duration of the audio file in seconds."
+          },
+          "segments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AudioTranscriptionsPostResponsesContentApplicationJsonSchemaSegmentsItems"
+            },
+            "description": "An array containing objects with segment level data."
+          },
+          "words": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AudioTranscriptionsPostResponsesContentApplicationJsonSchemaWordsItems"
+            },
+            "description": "An array containing objects with word level data."
+          }
+        },
+        "title": "audioTranscription_Response_200"
+      },
+      "AudioTranscriptionRequestBadRequestError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "AudioTranscriptionRequestBadRequestError"
+      },
+      "AudioTranscriptionRequestForbiddenError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "AudioTranscriptionRequestForbiddenError"
+      },
+      "documentsExtract_Response_200": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "The parsed document title."
+          },
+          "contents": {
+            "type": "string",
+            "description": "The parsed document contents."
+          },
+          "count": {
+            "type": "integer",
+            "description": "The word count for the document."
+          }
+        },
+        "title": "documentsExtract_Response_200"
+      },
+      "DocumentsExtractRequestBadRequestError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "DocumentsExtractRequestBadRequestError"
+      },
+      "DocumentsExtractRequestForbiddenError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "DocumentsExtractRequestForbiddenError"
+      },
+      "RerankPostResponsesContentApplicationJsonSchemaResultsItems": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "integer",
+            "description": "The index position in the collection."
+          },
+          "relevance_score": {
+            "type": "number",
+            "format": "double",
+            "description": "The relevance ranking score."
+          },
+          "text": {
+            "type": "string",
+            "description": "The returned document"
+          }
+        },
+        "title": "RerankPostResponsesContentApplicationJsonSchemaResultsItems"
+      },
+      "rerank_Response_200": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique ID for the rerank response."
+          },
+          "object": {
+            "type": "string",
+            "description": "Type of object (list)."
+          },
+          "created": {
+            "type": "integer",
+            "description": "Timestamp of when the rerank response was created."
+          },
+          "model": {
+            "type": "string",
+            "description": "The rerank model used."
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RerankPostResponsesContentApplicationJsonSchemaResultsItems"
+            },
+            "description": "The set of rankings."
+          }
+        },
+        "title": "rerank_Response_200"
+      },
+      "RerankRequestBadRequestError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "RerankRequestBadRequestError"
+      },
+      "RerankRequestForbiddenError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "RerankRequestForbiddenError"
+      },
+      "TokenizePostResponsesContentApplicationJsonSchemaTokensItems": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "The converted token."
+          },
+          "start": {
+            "type": "integer",
+            "description": "The index the token starts at."
+          },
+          "stop": {
+            "type": "integer",
+            "description": "The index the token ends at."
+          },
+          "text": {
+            "type": "string",
+            "description": "The token as text."
+          }
+        },
+        "title": "TokenizePostResponsesContentApplicationJsonSchemaTokensItems"
+      },
+      "tokenize_Response_200": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique ID for the token."
+          },
+          "object": {
+            "type": "string",
+            "description": "Type of object (tokens)."
+          },
+          "created": {
+            "type": "integer",
+            "description": "Timestamp of when the tokens were generated."
+          },
+          "model": {
+            "type": "string",
+            "description": "The name of the model used."
+          },
+          "tokens": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TokenizePostResponsesContentApplicationJsonSchemaTokensItems"
+            },
+            "description": "An array of token data."
+          }
+        },
+        "title": "tokenize_Response_200"
+      },
+      "TokenizeRequestBadRequestError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "TokenizeRequestBadRequestError"
+      },
+      "TokenizeRequestForbiddenError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "TokenizeRequestForbiddenError"
+      },
+      "detokenize_Response_200": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique ID for the token."
+          },
+          "object": {
+            "type": "string",
+            "description": "Type of object (tokens)."
+          },
+          "created": {
+            "type": "integer",
+            "description": "Timestamp of when the tokens were generated."
+          },
+          "model": {
+            "type": "string",
+            "description": "The name of the model used."
+          },
+          "text": {
+            "type": "string",
+            "description": "The converted tokens"
+          }
+        },
+        "title": "detokenize_Response_200"
+      },
+      "DetokenizeRequestBadRequestError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "DetokenizeRequestBadRequestError"
+      },
+      "DetokenizeRequestForbiddenError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "DetokenizeRequestForbiddenError"
+      },
+      "FactualityPostResponsesContentApplicationJsonSchemaChecksItems": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "integer",
+            "description": "The index position in the collection."
+          },
+          "score": {
+            "type": "number",
+            "format": "double",
+            "description": "The factuality score."
+          }
+        },
+        "title": "FactualityPostResponsesContentApplicationJsonSchemaChecksItems"
+      },
+      "factuality_Response_200": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique ID for the factuality check."
+          },
+          "object": {
+            "type": "string",
+            "description": "Type of object (factuality.check)."
+          },
+          "created": {
+            "type": "integer",
+            "description": "Timestamp of when the factuality check was created."
+          },
+          "checks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FactualityPostResponsesContentApplicationJsonSchemaChecksItems"
+            },
+            "description": "The set of vectorized data."
+          }
+        },
+        "title": "factuality_Response_200"
+      },
+      "FactualityRequestBadRequestError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "FactualityRequestBadRequestError"
+      },
+      "FactualityRequestForbiddenError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "FactualityRequestForbiddenError"
+      },
+      "InjectionPostRequestBodyContentApplicationJsonSchemaPrompt": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        ],
+        "title": "InjectionPostRequestBodyContentApplicationJsonSchemaPrompt"
+      },
+      "InjectionPostResponsesContentApplicationJsonSchemaChecksItems": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "integer",
+            "description": "The index position in the collection."
+          },
+          "probability": {
+            "type": "number",
+            "format": "double",
+            "description": "The probability of a potential injection attack."
+          },
+          "status": {
+            "type": "string",
+            "description": "The response if this choice was successful."
+          }
+        },
+        "title": "InjectionPostResponsesContentApplicationJsonSchemaChecksItems"
+      },
+      "injection_Response_200": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique ID for the injection check."
+          },
+          "object": {
+            "type": "string",
+            "description": "Type of object (injection_check)."
+          },
+          "created": {
+            "type": "integer",
+            "description": "Timestamp of when the injection check was created."
+          },
+          "checks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InjectionPostResponsesContentApplicationJsonSchemaChecksItems"
+            },
+            "description": "The set of vectorized data."
+          }
+        },
+        "title": "injection_Response_200"
+      },
+      "InjectionRequestBadRequestError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "InjectionRequestBadRequestError"
+      },
+      "InjectionRequestForbiddenError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "InjectionRequestForbiddenError"
+      },
+      "PiiPostRequestBodyContentApplicationJsonSchemaPrompt": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        ],
+        "title": "PiiPostRequestBodyContentApplicationJsonSchemaPrompt"
+      },
+      "PiiPostResponsesContentApplicationJsonSchemaChecksItemsPiiTypeAndPositionsItems": {
+        "type": "object",
+        "properties": {
+          "start": {
+            "type": "integer",
+            "description": "The starting index of the pii item."
+          },
+          "end": {
+            "type": "integer",
+            "description": "The ending index of the pii item."
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of the pii item."
+          }
+        },
+        "title": "PiiPostResponsesContentApplicationJsonSchemaChecksItemsPiiTypeAndPositionsItems"
+      },
+      "PiiPostResponsesContentApplicationJsonSchemaChecksItems": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "integer",
+            "description": "The index position in the collection."
+          },
+          "prompt": {
+            "type": "string",
+            "description": "The prompt that was checked for PII. Only returned if no PII is present."
+          },
+          "new_prompt": {
+            "type": "string",
+            "description": "The new prompt with the replaced information."
+          },
+          "pii_type_and_positions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PiiPostResponsesContentApplicationJsonSchemaChecksItemsPiiTypeAndPositionsItems"
+            },
+            "description": "An array of PII metadata objects"
+          },
+          "status": {
+            "type": "string",
+            "description": "The response if this choice was successful."
+          }
+        },
+        "title": "PiiPostResponsesContentApplicationJsonSchemaChecksItems"
+      },
+      "pii_Response_200": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique ID for the PII check."
+          },
+          "object": {
+            "type": "string",
+            "description": "Type of object (pii_check)."
+          },
+          "created": {
+            "type": "integer",
+            "description": "Timestamp of when the PII check was created."
+          },
+          "checks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PiiPostResponsesContentApplicationJsonSchemaChecksItems"
+            },
+            "description": "The set of vectorized data."
+          }
+        },
+        "title": "pii_Response_200"
+      },
+      "PiiRequestBadRequestError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "PiiRequestBadRequestError"
+      },
+      "PiiRequestForbiddenError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "PiiRequestForbiddenError"
+      },
+      "ToxicityPostResponsesContentApplicationJsonSchemaChecksItems": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "integer",
+            "description": "The index position in the collection."
+          },
+          "score": {
+            "type": "number",
+            "format": "double",
+            "description": "The toxicity score."
+          }
+        },
+        "title": "ToxicityPostResponsesContentApplicationJsonSchemaChecksItems"
+      },
+      "toxicity_Response_200": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique ID for the toxicity check."
+          },
+          "object": {
+            "type": "string",
+            "description": "Type of object (toxicity.check)."
+          },
+          "created": {
+            "type": "integer",
+            "description": "Timestamp of when the toxicity check was created."
+          },
+          "checks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ToxicityPostResponsesContentApplicationJsonSchemaChecksItems"
+            },
+            "description": "The set of vectorized data."
+          }
+        },
+        "title": "toxicity_Response_200"
+      },
+      "ToxicityRequestBadRequestError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "ToxicityRequestBadRequestError"
+      },
+      "ToxicityRequestForbiddenError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "ToxicityRequestForbiddenError"
+      },
+      "ModelsCapabilityGetParametersCapability": {
+        "type": "string",
+        "enum": [
+          "chat-completion",
+          "chat-with-image",
+          "completion",
+          "embedding",
+          "embedding-with-image",
+          "tokenize",
+          "detokenize",
+          "rerank",
+          "tool_calling",
+          "reasoning"
+        ],
+        "description": "Optional path variable to allow for sorting by capability. Leave blank to see all models.",
+        "title": "ModelsCapabilityGetParametersCapability"
+      },
+      "ModelsCapabilityGetResponsesContentApplicationJsonSchemaDataItemsCapabilities": {
+        "type": "object",
+        "properties": {
+          "chat_completion": {
+            "type": "boolean"
+          },
+          "chat_with_image": {
+            "type": "boolean"
+          },
+          "completion": {
+            "type": "boolean"
+          },
+          "embedding": {
+            "type": "boolean"
+          },
+          "embedding_with_image": {
+            "type": "boolean"
+          },
+          "tokenize": {
+            "type": "boolean"
+          },
+          "detokenize": {
+            "type": "boolean"
+          },
+          "rerank": {
+            "type": "boolean"
+          },
+          "tool_calling": {
+            "type": "boolean"
+          },
+          "reasoning": {
+            "type": "boolean"
+          }
+        },
+        "description": "The available capabilities of the model.",
+        "title": "ModelsCapabilityGetResponsesContentApplicationJsonSchemaDataItemsCapabilities"
+      },
+      "ModelsCapabilityGetResponsesContentApplicationJsonSchemaDataItems": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The id of the model."
+          },
+          "object": {
+            "type": "string",
+            "description": "The object type (model)."
+          },
+          "created": {
+            "type": "integer",
+            "description": "The date the model was added."
+          },
+          "owned_by": {
+            "type": "string",
+            "description": "The name of the organization that owns the model (from huggingface)."
+          },
+          "description": {
+            "type": "string",
+            "description": "A short description of the model."
+          },
+          "max_context_length": {
+            "type": "integer",
+            "description": "The max context length of the model."
+          },
+          "prompt_format": {
+            "type": "string",
+            "description": "The name of the prompt format (if any) the model uses."
+          },
+          "capabilities": {
+            "$ref": "#/components/schemas/ModelsCapabilityGetResponsesContentApplicationJsonSchemaDataItemsCapabilities",
+            "description": "The available capabilities of the model."
+          }
+        },
+        "title": "ModelsCapabilityGetResponsesContentApplicationJsonSchemaDataItems"
+      },
+      "models_Response_200": {
+        "type": "object",
+        "properties": {
+          "object": {
+            "type": "string",
+            "description": "Type of object (list)."
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModelsCapabilityGetResponsesContentApplicationJsonSchemaDataItems"
+            },
+            "description": "The available models."
+          }
+        },
+        "title": "models_Response_200"
+      },
+      "ModelsRequestBadRequestError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "ModelsRequestBadRequestError"
+      },
+      "ModelsRequestForbiddenError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "ModelsRequestForbiddenError"
+      },
+      "McpServersGetResponsesContentApplicationJsonSchemaDataItems": {
+        "type": "object",
+        "properties": {
+          "server_label": {
+            "type": "string",
+            "description": "The id of the MCP server."
+          },
+          "object": {
+            "type": "string",
+            "description": "The object type (mcp_server)."
+          },
+          "created": {
+            "type": "integer",
+            "description": "The date the MCP server was added."
+          },
+          "owned_by": {
+            "type": "string",
+            "description": "The name of the organization that owns the MCP server."
+          },
+          "server_description": {
+            "type": "string",
+            "description": "A short description of the MCP server."
+          },
+          "available_tools": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "An array containing the available tools included in the MCP server."
+          }
+        },
+        "title": "McpServersGetResponsesContentApplicationJsonSchemaDataItems"
+      },
+      "mcpServers_Response_200": {
+        "type": "object",
+        "properties": {
+          "object": {
+            "type": "string",
+            "description": "Type of object (list)."
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/McpServersGetResponsesContentApplicationJsonSchemaDataItems"
+            },
+            "description": "The available MCP servers."
+          }
+        },
+        "title": "mcpServers_Response_200"
+      },
+      "McpServersRequestBadRequestError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "McpServersRequestBadRequestError"
+      },
+      "McpServersRequestForbiddenError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "McpServersRequestForbiddenError"
+      },
+      "McpToolsGetResponsesContentApplicationJsonSchemaDataItems": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The id of the MCP tool."
+          },
+          "object": {
+            "type": "string",
+            "description": "The object type (mcp_tool)."
+          },
+          "description": {
+            "type": "string",
+            "description": "A short description of the MCP tool."
+          },
+          "parameters": {
+            "description": "The parameters necessary for using the MCP tool."
+          },
+          "created": {
+            "type": "integer",
+            "description": "The date the MCP tool was added."
+          },
+          "owned_by": {
+            "type": "string",
+            "description": "The name of the organization that owns the MCP tool."
+          }
+        },
+        "description": "The MCP tool information.",
+        "title": "McpToolsGetResponsesContentApplicationJsonSchemaDataItems"
+      },
+      "mcpTools_Response_200": {
+        "type": "object",
+        "properties": {
+          "object": {
+            "type": "string",
+            "description": "Type of object (list)."
+          },
+          "data": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/McpToolsGetResponsesContentApplicationJsonSchemaDataItems"
+              }
+            },
+            "description": "The available mcp tools."
+          }
+        },
+        "title": "mcpTools_Response_200"
+      },
+      "McpToolsRequestBadRequestError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "McpToolsRequestBadRequestError"
+      },
+      "McpToolsRequestForbiddenError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Description of the error."
+          }
+        },
+        "title": "McpToolsRequestForbiddenError"
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ]
+}

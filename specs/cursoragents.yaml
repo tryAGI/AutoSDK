@@ -1,0 +1,1222 @@
+openapi: 3.0.3
+info:
+  title: Cursor Cloud Agents API
+  description: Programmatically create and manage AI-powered coding agents that work autonomously on your repositories
+  version: 0.1.0
+  contact:
+    email: background-agent-feedback@cursor.com
+
+servers:
+  - url: https://api.cursor.com
+    description: Production server
+
+security:
+  - bearerAuth: []
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: API key from Cursor Dashboard
+
+  schemas:
+    ImageDimension:
+      type: object
+      required:
+        - width
+        - height
+      properties:
+        width:
+          type: integer
+          minimum: 1
+          description: Width must be a positive integer
+        height:
+          type: integer
+          minimum: 1
+          description: Height must be a positive integer
+
+    Image:
+      type: object
+      required:
+        - data
+      properties:
+        data:
+          type: string
+          minLength: 1
+          description: Base64 encoded image data
+          example: 'iVBORw0KGgoAAAANSUhEUgAA...'
+        dimension:
+          $ref: '#/components/schemas/ImageDimension'
+
+    CreateAgentRequest:
+      type: object
+      required:
+        - prompt
+        - source
+      properties:
+        prompt:
+          type: object
+          required:
+            - text
+          properties:
+            text:
+              type: string
+              minLength: 1
+              description: The task or instructions for the agent to execute
+              example: 'Add a README.md file with installation instructions'
+            images:
+              type: array
+              maxItems: 5
+              items:
+                $ref: '#/components/schemas/Image'
+              description: Optional array of base64 encoded images (max 5)
+              example:
+                [
+                  {
+                    'data': 'iVBORw0KGgoAAAANSUhEUgAA...',
+                    'dimension': { 'width': 1024, 'height': 768 },
+                  },
+                ]
+        model:
+          type: string
+          minLength: 1
+          description: Set to an explicit model ID for launch requests, or use "default" to use the configured default model. When omitted, Cursor resolves your user default model, then your team default model, then a system default.
+          example: 'claude-4-sonnet'
+        source:
+          type: object
+          properties:
+            repository:
+              type: string
+              minLength: 1
+              description: The GitHub repository URL. Required unless prUrl is provided.
+              example: 'https://github.com/your-org/your-repo'
+            ref:
+              type: string
+              minLength: 1
+              description: Git ref (branch/tag) to use as the base branch
+              example: 'main'
+            prUrl:
+              type: string
+              format: uri
+              description: GitHub pull request URL. When provided, the agent works on this PR's repository and branches. Mutually exclusive with repository/ref.
+              example: 'https://github.com/your-org/your-repo/pull/123'
+        target:
+          type: object
+          properties:
+            autoCreatePr:
+              type: boolean
+              description: Whether to automatically create a pull request when the agent completes
+              default: false
+            openAsCursorGithubApp:
+              type: boolean
+              description: Whether to open the pull request as the Cursor GitHub App instead of as the user. Only applies if autoCreatePr is true.
+              default: false
+            skipReviewerRequest:
+              type: boolean
+              description: Whether to skip adding the user as a reviewer to the pull request. Only applies if autoCreatePr is true and the PR is opened as the Cursor GitHub App.
+              default: false
+            branchName:
+              type: string
+              minLength: 1
+              description: Custom branch name for the agent to create
+              example: 'feature/add-readme'
+            autoBranch:
+              type: boolean
+              description: Whether to create a new branch (true) or use the PR's existing head branch (false). Only applies when source.prUrl is provided.
+              default: true
+        webhook:
+          type: object
+          required:
+            - url
+          properties:
+            url:
+              type: string
+              format: uri
+              maxLength: 2048
+              description: URL to receive webhook notifications about agent status changes
+              example: 'https://example.com/webhooks/cursor-agent'
+            secret:
+              type: string
+              minLength: 32
+              maxLength: 256
+              description: Secret key for webhook payload verification
+              example: 'your-webhook-secret-key-minimum-32-characters'
+
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+              description: Human-readable error message
+            code:
+              type: string
+              description: Machine-readable error code
+
+    Artifact:
+      type: object
+      required:
+        - absolutePath
+        - sizeBytes
+        - updatedAt
+      properties:
+        absolutePath:
+          type: string
+          minLength: 1
+          description: Absolute artifact path in the cloud agent environment
+          example: '/opt/cursor/artifacts/screenshot.png'
+        sizeBytes:
+          type: integer
+          minimum: 0
+          description: Artifact file size in bytes
+          example: 12345
+        updatedAt:
+          type: string
+          format: date-time
+          description: Last modified timestamp for the artifact
+          example: '2024-01-15T11:02:00.000Z'
+
+    ListArtifactsResponse:
+      type: object
+      required:
+        - artifacts
+      properties:
+        artifacts:
+          type: array
+          description: Artifacts generated by the cloud agent. Returns at most 100 artifacts.
+          items:
+            $ref: '#/components/schemas/Artifact'
+
+    GetArtifactResponse:
+      type: object
+      required:
+        - url
+        - expiresAt
+      properties:
+        url:
+          type: string
+          format: uri
+          description: Temporary 15-minute presigned S3 URL for downloading the artifact
+          example: 'https://cloud-agent-artifacts.s3.us-east-1.amazonaws.com/...'
+        expiresAt:
+          type: string
+          format: date-time
+          description: When the presigned download URL expires
+          example: '2026-03-04T22:30:00.000Z'
+
+paths:
+  /v0/agents:
+    post:
+      summary: Launch an agent
+      description: Start a new cloud agent to work on your repository
+      operationId: createAgent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAgentRequest'
+      responses:
+        '201':
+          description: Agent created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - id
+                  - name
+                  - status
+                  - source
+                  - target
+                  - createdAt
+                properties:
+                  id:
+                    type: string
+                    description: Unique identifier for the cloud agent
+                    example: 'bc_abc123'
+                  name:
+                    type: string
+                    description: Name for the agent
+                    example: 'Add README Documentation'
+                  status:
+                    type: string
+                    enum: ['CREATING']
+                    description: Initial status of the newly created agent
+                    example: 'CREATING'
+                  source:
+                    type: object
+                    required:
+                      - repository
+                    properties:
+                      repository:
+                        type: string
+                        description: The GitHub repository URL
+                        example: 'https://github.com/your-org/your-repo'
+                      ref:
+                        type: string
+                        description: Git ref (branch/tag) used as the base branch
+                        example: 'main'
+                  target:
+                    type: object
+                    required:
+                      - url
+                    properties:
+                      branchName:
+                        type: string
+                        description: The Git branch name where the agent is working
+                        example: 'cursor/add-readme-1234'
+                      url:
+                        type: string
+                        description: URL to view the agent in Cursor Web
+                        example: 'https://cursor.com/agents?id=bc_abc123'
+                      prUrl:
+                        type: string
+                        description: URL of the pull request, if agent was created from a PR
+                        example: 'https://github.com/your-org/your-repo/pull/123'
+                      autoCreatePr:
+                        type: boolean
+                        description: Whether a pull request will be automatically created
+                        example: false
+                      openAsCursorGithubApp:
+                        type: boolean
+                        description: Whether the pull request will be opened as the Cursor GitHub App
+                        example: false
+                      skipReviewerRequest:
+                        type: boolean
+                        description: Whether to skip adding the user as a reviewer to the pull request
+                        example: false
+                  createdAt:
+                    type: string
+                    format: date-time
+                    description: When the agent was created
+                    example: '2024-01-15T10:30:00Z'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized - invalid or missing API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden - insufficient permissions, plan limits exceeded, or storage full
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    get:
+      summary: List agents
+      description: List all cloud agents for the authenticated user
+      operationId: listAgents
+      parameters:
+        - name: limit
+          in: query
+          required: false
+          description: Number of cloud agents to return
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 20
+        - name: cursor
+          in: query
+          required: false
+          description: Pagination cursor from the previous response
+          schema:
+            type: string
+            minLength: 1
+            example: 'bc_xyz789'
+        - name: prUrl
+          in: query
+          required: false
+          description: Filter agents by pull request URL
+          schema:
+            type: string
+            format: uri
+            example: 'https://github.com/your-org/your-repo/pull/123'
+      responses:
+        '200':
+          description: Agents retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - agents
+                properties:
+                  agents:
+                    type: array
+                    description: List of agents
+                    items:
+                      type: object
+                      required:
+                        - id
+                        - name
+                        - status
+                        - source
+                        - target
+                        - createdAt
+                      properties:
+                        id:
+                          type: string
+                          description: Unique identifier for the cloud agent
+                          example: 'bc_abc123'
+                        name:
+                          type: string
+                          description: Name for the agent
+                          example: 'Add README Documentation'
+                        status:
+                          type: string
+                          enum:
+                            [
+                              'RUNNING',
+                              'FINISHED',
+                              'ERROR',
+                              'CREATING',
+                              'EXPIRED',
+                            ]
+                          description: Current status of the cloud agent
+                          example: 'RUNNING'
+                        source:
+                          type: object
+                          properties:
+                            repository:
+                              type: string
+                              description: The GitHub repository URL
+                              example: 'https://github.com/your-org/your-repo'
+                            ref:
+                              type: string
+                              description: Git ref (branch/tag) used as the base branch
+                              example: 'main'
+                        target:
+                          type: object
+                          required:
+                            - url
+                          properties:
+                            branchName:
+                              type: string
+                              description: The Git branch name where the agent is working
+                              example: 'cursor/add-readme-1234'
+                            url:
+                              type: string
+                              description: URL to view the agent in Cursor Web
+                              example: 'https://cursor.com/agents?id=bc_abc123'
+                            prUrl:
+                              type: string
+                              description: URL to view the pull request in GitHub, if any
+                              example: 'https://github.com/your-org/your-repo/pull/1234'
+                            autoCreatePr:
+                              type: boolean
+                              description: Whether a pull request will be automatically created
+                              example: false
+                            openAsCursorGithubApp:
+                              type: boolean
+                              description: Whether the pull request will be opened as the Cursor GitHub App
+                              example: false
+                            skipReviewerRequest:
+                              type: boolean
+                              description: Whether to skip adding the user as a reviewer to the pull request
+                              example: false
+                        summary:
+                          type: string
+                          description: Summary of the agent's work
+                          example: 'Added README.md with installation instructions and usage examples'
+                        createdAt:
+                          type: string
+                          format: date-time
+                          description: When the agent was created
+                          example: '2024-01-15T10:30:00Z'
+                  nextCursor:
+                    type: string
+                    description: Cursor for fetching the next page of results
+                    example: 'bc_def456'
+        '400':
+          description: Invalid request - bad query parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized - invalid or missing API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden - insufficient permissions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /v0/agents/{id}:
+    get:
+      summary: Agent status
+      description: Retrieve the current status and results of a cloud agent
+      operationId: getAgent
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Unique identifier for the cloud agent
+          schema:
+            type: string
+            example: 'bc_abc123'
+      responses:
+        '200':
+          description: Agent details retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - id
+                  - name
+                  - status
+                  - source
+                  - target
+                  - createdAt
+                properties:
+                  id:
+                    type: string
+                    description: Unique identifier for the cloud agent
+                    example: 'bc_abc123'
+                  name:
+                    type: string
+                    description: Name for the agent
+                    example: 'Add README Documentation'
+                  status:
+                    type: string
+                    enum:
+                      ['RUNNING', 'FINISHED', 'ERROR', 'CREATING', 'EXPIRED']
+                    description: Current status of the cloud agent
+                    example: 'RUNNING'
+                  source:
+                    type: object
+                    properties:
+                      repository:
+                        type: string
+                        description: The GitHub repository URL
+                        example: 'https://github.com/your-org/your-repo'
+                      ref:
+                        type: string
+                        description: Git ref (branch/tag) used as the base branch
+                        example: 'main'
+                  target:
+                    type: object
+                    required:
+                      - url
+                    properties:
+                      branchName:
+                        type: string
+                        description: The Git branch name where the agent is working
+                        example: 'cursor/add-readme-1234'
+                      url:
+                        type: string
+                        description: URL to view the agent in Cursor Web
+                        example: 'https://cursor.com/agents?id=bc_abc123'
+                      prUrl:
+                        type: string
+                        description: URL to view the pull request in GitHub, if any
+                        example: 'https://github.com/your-org/your-repo/pull/1234'
+                      autoCreatePr:
+                        type: boolean
+                        description: Whether a pull request will be automatically created
+                        example: false
+                      openAsCursorGithubApp:
+                        type: boolean
+                        description: Whether the pull request will be opened as the Cursor GitHub App
+                        example: false
+                      skipReviewerRequest:
+                        type: boolean
+                        description: Whether to skip adding the user as a reviewer to the pull request
+                        example: false
+                  summary:
+                    type: string
+                    description: Summary of the agent's work
+                    example: 'Added README.md with installation instructions and usage examples'
+                  createdAt:
+                    type: string
+                    format: date-time
+                    description: When the agent was created
+                    example: '2024-01-15T10:30:00Z'
+        '400':
+          description: Invalid request - bad agent ID format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized - invalid or missing API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden - insufficient permissions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Agent not found or access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      summary: Delete an agent
+      description: Delete a cloud agent. This action is permanent and cannot be undone.
+      operationId: deleteAgent
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Unique identifier for the cloud agent
+          schema:
+            type: string
+            example: 'bc_abc123'
+      responses:
+        '200':
+          description: Agent deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - id
+                properties:
+                  id:
+                    type: string
+                    description: Unique identifier for the cloud agent
+                    example: 'bc_abc123'
+        '400':
+          description: Invalid request - bad agent ID format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized - invalid or missing API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden - insufficient permissions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Agent not found or access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Conflict - agent is deleted or archived
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /v0/agents/{id}/followup:
+    post:
+      summary: Add followup
+      description: Add a followup instruction to an existing cloud agent
+      operationId: addFollowup
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Unique identifier for the cloud agent
+          schema:
+            type: string
+            example: 'bc_abc123'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - prompt
+              properties:
+                prompt:
+                  type: object
+                  required:
+                    - text
+                  properties:
+                    text:
+                      type: string
+                      minLength: 1
+                      description: The followup instruction for the agent
+                      example: 'Also add a section about troubleshooting'
+                    images:
+                      type: array
+                      maxItems: 5
+                      items:
+                        $ref: '#/components/schemas/Image'
+                      description: Optional array of base64 encoded images (max 5)
+                      example:
+                        [
+                          {
+                            'data': 'iVBORw0KGgoAAAANSUhEUgAA...',
+                            'dimension': { 'width': 1024, 'height': 768 },
+                          },
+                        ]
+      responses:
+        '200':
+          description: Followup added successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - id
+                properties:
+                  id:
+                    type: string
+                    description: Unique identifier for the cloud agent
+                    example: 'bc_abc123'
+        '400':
+          description: Invalid request - bad agent ID format or invalid request body
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized - invalid or missing API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden - insufficient permissions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Agent not found or access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Conflict - agent is deleted or archived
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /v0/agents/{id}/stop:
+    post:
+      summary: Stop an agent
+      description: Stop a running cloud agent. This pauses the agent's execution without deleting it. Stopped agents cannot be resumed.
+      operationId: stopAgent
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Unique identifier for the cloud agent
+          schema:
+            type: string
+            example: 'bc_abc123'
+      responses:
+        '200':
+          description: Agent stopped successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - id
+                properties:
+                  id:
+                    type: string
+                    description: Unique identifier for the cloud agent
+                    example: 'bc_abc123'
+        '400':
+          description: Invalid request - bad agent ID format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized - invalid or missing API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden - insufficient permissions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Agent not found or access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Conflict - agent is deleted or archived
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /v0/agents/{id}/conversation:
+    get:
+      summary: Get agent conversation
+      description: Retrieve the conversation history of a cloud agent, including all user prompts and assistant responses
+      operationId: getAgentConversation
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Unique identifier for the cloud agent
+          schema:
+            type: string
+            example: 'bc_abc123'
+      responses:
+        '200':
+          description: Conversation retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - id
+                  - messages
+                properties:
+                  id:
+                    type: string
+                    description: Unique identifier for the cloud agent
+                    example: 'bc_abc123'
+                  messages:
+                    type: array
+                    description: Array of conversation messages ordered chronologically
+                    items:
+                      type: object
+                      required:
+                        - id
+                        - type
+                        - text
+                      properties:
+                        id:
+                          type: string
+                          description: Unique identifier for the message
+                          example: 'msg_123'
+                        type:
+                          type: string
+                          enum: ['user_message', 'assistant_message']
+                          description: Type of message - either from the user or the model
+                          example: 'user_message'
+                        text:
+                          type: string
+                          description: The content of the message
+                          example: 'Add a README.md file with installation instructions'
+        '400':
+          description: Invalid request - bad agent ID format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized - invalid or missing API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden - insufficient permissions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Agent not found or access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Conflict - agent is deleted or archived
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /v0/agents/{id}/artifacts:
+    get:
+      summary: List agent artifacts
+      description: List artifacts generated by a cloud agent created within the last 6 months. Returns at most 100 artifacts.
+      operationId: listAgentArtifacts
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Unique identifier for the cloud agent
+          schema:
+            type: string
+            example: 'bc-00000000-0000-0000-0000-000000000001'
+      responses:
+        '200':
+          description: Artifacts retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListArtifactsResponse'
+        '400':
+          description: Invalid request - bad agent ID format or artifacts expired for an agent older than 6 months
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized - invalid or missing API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden - insufficient permissions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Agent not found or access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /v0/agents/{id}/artifacts/download:
+    get:
+      summary: Download an artifact
+      description: Retrieve a temporary 15-minute presigned S3 URL for a specific artifact from an agent created within the last 6 months. The response includes both the URL and its expiration time.
+      operationId: getAgentArtifact
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Unique identifier for the cloud agent
+          schema:
+            type: string
+            example: 'bc-00000000-0000-0000-0000-000000000001'
+        - name: path
+          in: query
+          required: true
+          description: Absolute artifact path from the list artifacts response
+          schema:
+            type: string
+            minLength: 1
+            example: '/opt/cursor/artifacts/screenshot.png'
+      responses:
+        '200':
+          description: Artifact URL retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetArtifactResponse'
+        '400':
+          description: Invalid request - bad agent ID format, missing path query parameter, or artifacts expired for an agent older than 6 months
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized - invalid or missing API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden - insufficient permissions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Agent or artifact not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /v0/me:
+    get:
+      summary: API key info
+      description: Retrieve information about the API key being used for authentication
+      operationId: getMe
+      responses:
+        '200':
+          description: API key information retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - apiKeyName
+                  - createdAt
+                properties:
+                  apiKeyName:
+                    type: string
+                    description: The name of the API key
+                    example: 'Production API Key'
+                  createdAt:
+                    type: string
+                    format: date-time
+                    description: When the API key was created
+                    example: '2024-01-15T10:30:00Z'
+                  userEmail:
+                    type: string
+                    format: email
+                    description: Email address of the user who owns the API key (if available)
+                    example: 'developer@example.com'
+        '401':
+          description: Unauthorized - invalid or missing API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: API key not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v0/models:
+    get:
+      summary: List available models
+      description: Returns a recommended set of explicit model IDs for launch requests. This list excludes "default".
+      operationId: listModels
+      responses:
+        '200':
+          description: Models retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - models
+                properties:
+                  models:
+                    type: array
+                    description: Array of recommended explicit model IDs
+                    items:
+                      type: string
+                      minLength: 1
+                    example:
+                      [
+                        'claude-4-sonnet-thinking',
+                        'gpt-5.2',
+                        'claude-4.5-sonnet-thinking',
+                      ]
+        '401':
+          description: Unauthorized - invalid or missing API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v0/repositories:
+    get:
+      summary: List GitHub repositories
+      description: Retrieve a list of GitHub repositories accessible to the authenticated user
+      operationId: listRepositories
+      responses:
+        '200':
+          description: Repositories retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - repositories
+                properties:
+                  repositories:
+                    type: array
+                    description: Array of GitHub repositories the user has access to
+                    items:
+                      type: object
+                      required:
+                        - owner
+                        - name
+                        - repository
+                      properties:
+                        owner:
+                          type: string
+                          description: The owner of the repository (user or organization)
+                          example: 'your-org'
+                        name:
+                          type: string
+                          description: The name of the repository
+                          example: 'your-repo'
+                        repository:
+                          type: string
+                          format: uri
+                          description: The full URL to the GitHub repository
+                          example: 'https://github.com/your-org/your-repo'
+        '401':
+          description: Unauthorized - invalid or missing API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'

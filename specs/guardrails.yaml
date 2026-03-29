@@ -1,0 +1,824 @@
+openapi: 3.0.3
+info:
+  title: Guardrails API
+  version: 0.0.0
+  description: Guardrails AI API for LLM validation, hallucination detection, PII
+    protection, and content safety
+servers:
+- url: http://localhost:8000
+  description: Default self-hosted Guardrails server
+security:
+- BearerAuth: []
+paths:
+  /health-check:
+    get:
+      operationId: healthCheck
+      tags:
+      - Service Health
+      summary: Returns the status of the server
+      security:
+      - BearerAuth: []
+      responses:
+        '200':
+          description: Returns the status of the server
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthCheck'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpError'
+  /guards:
+    get:
+      operationId: getGuards
+      tags:
+      - guard
+      summary: Fetches the configuration for all Guards the user has access to.
+      security:
+      - BearerAuth: []
+      responses:
+        '200':
+          description: A list of Guards.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Guard'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpError'
+    post:
+      operationId: createGuard
+      tags:
+      - guard
+      summary: Creates a Guard
+      security:
+      - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Guard'
+      responses:
+        '200':
+          description: the new Guard
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Guard'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpError'
+  /guards/{guardName}:
+    get:
+      operationId: getGuard
+      tags:
+      - guard
+      summary: Fetches a specific Guard
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/GuardName'
+      - $ref: '#/components/parameters/AsOf'
+      responses:
+        '200':
+          description: the fetched Guard
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Guard'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpError'
+    put:
+      operationId: updateGuard
+      tags:
+      - guard
+      summary: Updates a Guard
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/GuardName'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Guard'
+      responses:
+        '200':
+          description: the updated Guard
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Guard'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpError'
+    delete:
+      operationId: deleteGuard
+      tags:
+      - guard
+      summary: Deletes a Guard
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/GuardName'
+      responses:
+        '200':
+          description: the deleted Guard
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Guard'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpError'
+  /guards/{guardName}/openai/v1/chat/completions:
+    post:
+      operationId: openaiChatCompletion
+      tags:
+      - openai
+      summary: OpenAI SDK compatible endpoint for Chat Completions
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/GuardName'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpenAIChatCompletionPayload'
+      responses:
+        '200':
+          description: The output of the completion
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpenAIChatCompletion'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpError'
+  /guards/{guardName}/validate:
+    post:
+      operationId: validate
+      tags:
+      - validate
+      summary: Runs the validations specified in a Guard
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/GuardName'
+      - $ref: '#/components/parameters/OpenAiApiKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ValidatePayload'
+      responses:
+        '200':
+          description: The output of the validation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationOutcome'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpError'
+  /guards/{guardName}/history/{callId}:
+    get:
+      operationId: getGuardHistory
+      tags:
+      - guard
+      summary: Fetches the history for a specific Guard execution by using the id
+        for the most recent Call
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/GuardName'
+      - $ref: '#/components/parameters/CallId'
+      responses:
+        '200':
+          description: the fetched Guard History
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Call'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpError'
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    GuardName:
+      name: guardName
+      in: path
+      description: Guard name
+      required: true
+      schema:
+        type: string
+    CallId:
+      name: callId
+      in: path
+      description: Call id
+      required: true
+      schema:
+        type: string
+    AsOf:
+      name: asOf
+      in: query
+      description: Used to query for data as it existed at this date and time
+      required: false
+      schema:
+        type: string
+        format: date-time
+    OpenAiApiKey:
+      name: x-openai-api-key
+      in: header
+      description: A valid OpenAI API Key for calling LLMs on your behalf
+      required: false
+      schema:
+        type: string
+  schemas:
+    HealthCheck:
+      type: object
+      properties:
+        status:
+          type: integer
+          description: A valid http status code
+        message:
+          type: string
+          description: A message explaining the status
+      required:
+      - status
+      - message
+    HttpError:
+      type: object
+      properties:
+        status:
+          type: integer
+          description: A valid http status code
+        message:
+          type: string
+          description: A message explaining the status
+        cause:
+          type: string
+          description: Used to describe the origin of an error if that original error
+            has meaning to the client.
+        fields:
+          type: object
+          description: Used to identify specific fields in a JSON body that caused
+            the error.
+          additionalProperties:
+            type: array
+            items:
+              type: string
+        context:
+          type: string
+          description: Used to identify what part of the request caused the error
+            for non-JSON payloads.
+      required:
+      - status
+      - message
+    Guard:
+      type: object
+      description: A Guard configuration for validating LLM outputs.
+      properties:
+        id:
+          type: string
+          description: The unique identifier for the Guard.
+        name:
+          type: string
+          description: The name for the Guard.
+        description:
+          type: string
+          description: A description that concisely states the expected behaviour
+            or purpose of the Guard.
+        validators:
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidatorReference'
+        history:
+          type: array
+          items:
+            $ref: '#/components/schemas/Call'
+          readOnly: true
+      required:
+      - id
+      - name
+    ValidatorReference:
+      type: object
+      description: A reference to a validator from the Guardrails Hub.
+      properties:
+        id:
+          type: string
+          description: The unique identifier for this Validator. Often the hub id;
+            e.g. guardrails/regex_match
+        'on':
+          type: string
+          description: A reference to the property this validator should be applied
+            against. Can be a valid JSON path or a meta-property such as 'messages'
+            or 'output'
+        onFail:
+          type: string
+          enum:
+          - exception
+          - filter
+          - fix
+          - fix_reask
+          - noop
+          - reask
+          - refrain
+          - custom
+          default: noop
+          description: The action to take when validation fails.
+        args:
+          type: array
+          items: {}
+          description: Positional arguments for the validator.
+        kwargs:
+          type: object
+          additionalProperties: {}
+          description: Keyword arguments for the validator.
+      required:
+      - id
+    ValidatePayload:
+      type: object
+      description: Payload for running validations on LLM output.
+      properties:
+        llmOutput:
+          type: string
+          description: The LLM output as a string or the input prompts for the LLM
+          example: stubbed llm output
+        numReasks:
+          type: integer
+          description: An override for the number of re-asks to perform
+        promptParams:
+          type: object
+          description: Additional params for llm prompts
+          additionalProperties: {}
+        llmApi:
+          type: string
+          description: The LLM API to use for validation
+          enum:
+          - openai.Completion.create
+          - openai.completions.create
+          - openai.ChatCompletion.create
+          - openai.chat.completions.create
+          - openai.Completion.acreate
+          - openai.ChatCompletion.acreate
+          - litellm.completion
+          - litellm.acompletion
+      additionalProperties: {}
+    ValidationOutcome:
+      type: object
+      description: The output from a Guard execution.
+      properties:
+        callId:
+          type: string
+          description: Foreign key to the most recent Call this resulted from.
+        rawLlmOutput:
+          type: string
+          description: The raw, unchanged string content from the LLM call.
+        validationSummaries:
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationSummary'
+        validatedOutput:
+          type: string
+          description: The validated, and potentially fixed, output from the LLM call
+            after undergoing validation.
+        reask:
+          description: If validation continuously fails and all allocated reasks are
+            used, this field will contain the final reask.
+          $ref: '#/components/schemas/Reask'
+        validationPassed:
+          type: boolean
+          description: A boolean to indicate whether or not the LLM output passed
+            validation.
+        error:
+          type: string
+          description: If the validation process raised a handleable exception, this
+            field will contain the error message.
+      required:
+      - callId
+    ValidationSummary:
+      type: object
+      description: Summary of a single validator's execution.
+      properties:
+        validatorName:
+          type: string
+          description: The class name of the validator.
+        validatorStatus:
+          type: string
+          enum:
+          - pass
+          - fail
+          description: Whether the validator passed or failed.
+        propertyPath:
+          type: string
+          description: The JSON path to the property which was validated.
+        failureReason:
+          type: string
+          description: The error message indicating why validation failed.
+        errorSpans:
+          type: array
+          items:
+            $ref: '#/components/schemas/ErrorSpan'
+      required:
+      - validatorName
+      - validatorStatus
+    ErrorSpan:
+      type: object
+      description: A span marking an error in the validated text.
+      properties:
+        start:
+          type: integer
+          description: The start index of the error span.
+        end:
+          type: integer
+          description: The end index of the error span.
+        reason:
+          type: string
+          description: The reason validation failed, specific to this chunk.
+      required:
+      - start
+      - end
+      - reason
+    Reask:
+      type: object
+      description: A reask request when validation fails.
+      properties:
+        incorrectValue:
+          type: string
+          description: The value that failed validation.
+        failResults:
+          type: array
+          items:
+            $ref: '#/components/schemas/FailResult'
+      additionalProperties: {}
+    FailResult:
+      type: object
+      description: The result from a failed validation.
+      properties:
+        outcome:
+          type: string
+          enum:
+          - fail
+          description: Always 'fail' for FailResult.
+        errorMessage:
+          type: string
+          description: The error message from the validator.
+        fixValue:
+          type: string
+          description: A suggested fix value from the validator.
+        errorSpans:
+          type: array
+          items:
+            $ref: '#/components/schemas/ErrorSpan'
+        metadata:
+          type: object
+          additionalProperties: {}
+          description: Additional metadata from the validator.
+        validatedChunk:
+          type: string
+          description: The chunk of data that was validated.
+      required:
+      - outcome
+      - errorMessage
+    Call:
+      type: object
+      description: Represents a single execution of a Guard.
+      properties:
+        id:
+          type: string
+          description: The unique identifier for this Call.
+        iterations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Iteration'
+          default: []
+        inputs:
+          $ref: '#/components/schemas/CallInputs'
+        exception:
+          type: string
+          description: Exception message if the call failed.
+      required:
+      - id
+    CallInputs:
+      type: object
+      description: The inputs for a Guard Call.
+      properties:
+        llmApi:
+          type: string
+          description: The LLM resource targeted by the user.
+        llmOutput:
+          type: string
+          description: The string output from an external LLM call.
+        messages:
+          type: array
+          items:
+            type: object
+            additionalProperties: {}
+          description: The messages for chat models.
+        promptParams:
+          type: object
+          additionalProperties: {}
+          description: Parameters to be formatted into the messages.
+        numReasks:
+          type: integer
+          description: The total number of times the LLM can be called to correct
+            output.
+        metadata:
+          type: object
+          additionalProperties: {}
+          description: Additional data to be used by Validators during execution.
+        fullSchemaReask:
+          type: boolean
+          description: Whether to perform reasks for the entire schema.
+        stream:
+          type: boolean
+          description: Whether to use streaming.
+        args:
+          type: array
+          items: {}
+          description: Positional arguments.
+        kwargs:
+          type: object
+          additionalProperties: {}
+          description: Keyword arguments.
+    Iteration:
+      type: object
+      description: Represents a single iteration within a Guard Call.
+      properties:
+        id:
+          type: string
+          description: The unique identifier for this iteration.
+        index:
+          type: integer
+          description: The zero-based index of this iteration.
+        callId:
+          type: string
+          description: The unique identifier for the Call this iteration belongs to.
+        inputs:
+          $ref: '#/components/schemas/Inputs'
+        outputs:
+          $ref: '#/components/schemas/Outputs'
+      required:
+      - id
+      - index
+      - callId
+    Inputs:
+      type: object
+      description: Input parameters for an iteration.
+      properties:
+        llmApi:
+          type: string
+          description: The LLM resource targeted by the user.
+        llmOutput:
+          type: string
+          description: The string output from an external LLM call.
+        messages:
+          type: array
+          items:
+            type: object
+            additionalProperties: {}
+          description: The messages for chat models.
+        promptParams:
+          type: object
+          additionalProperties: {}
+          description: Parameters to be formatted into the messages.
+        numReasks:
+          type: integer
+          description: The total number of times the LLM can be called.
+        metadata:
+          type: object
+          additionalProperties: {}
+          description: Additional data for Validators.
+        fullSchemaReask:
+          type: boolean
+          description: Whether to reask for the entire schema.
+        stream:
+          type: boolean
+          description: Whether to use streaming.
+    Outputs:
+      type: object
+      description: Output data from an iteration.
+      properties:
+        llmResponseInfo:
+          $ref: '#/components/schemas/LLMResponse'
+        rawOutput:
+          type: string
+          description: The string content from the LLM response.
+        parsedOutput:
+          type: string
+          description: The parsed output from the LLM.
+        validationResponse:
+          type: string
+          description: The validation response.
+        guardedOutput:
+          type: string
+          description: The guarded output after validation.
+        reasks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reask'
+        validatorLogs:
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidatorLog'
+        error:
+          type: string
+          description: Error message if an exception occurred.
+    LLMResponse:
+      type: object
+      description: Information from the LLM response.
+      properties:
+        promptTokenCount:
+          type: integer
+          description: Number of tokens in the prompt.
+        responseTokenCount:
+          type: integer
+          description: Number of tokens in the response.
+        output:
+          type: string
+          description: The LLM output text.
+        streamOutput:
+          type: array
+          items:
+            type: string
+          description: Stream output chunks.
+        asyncStreamOutput:
+          type: array
+          items:
+            type: string
+          description: Async stream output chunks.
+      required:
+      - output
+    ValidatorLog:
+      type: object
+      description: Log entry from a single validator execution.
+      properties:
+        validatorName:
+          type: string
+          description: The class name of the validator.
+        registeredName:
+          type: string
+          description: The registry id of the validator.
+        instanceId:
+          type: string
+          description: A unique identifier for the validator instance.
+        propertyPath:
+          type: string
+          description: The JSON path to the validated property.
+        valueBeforeValidation:
+          type: string
+          description: The value before validation was applied.
+        valueAfterValidation:
+          type: string
+          description: The value after validation was applied.
+        validationResult:
+          $ref: '#/components/schemas/ValidationResult'
+        startTime:
+          type: string
+          format: date-time
+          description: When validation started.
+        endTime:
+          type: string
+          format: date-time
+          description: When validation ended.
+      required:
+      - validatorName
+      - registeredName
+      - propertyPath
+    ValidationResult:
+      type: object
+      description: The output from a single Validator.
+      properties:
+        outcome:
+          type: string
+          enum:
+          - pass
+          - fail
+          description: Whether validation passed or failed.
+        metadata:
+          type: object
+          additionalProperties: {}
+          description: Additional metadata.
+        validatedChunk:
+          type: string
+          description: The chunk of data that was validated.
+        errorMessage:
+          type: string
+          description: Error message if validation failed.
+        fixValue:
+          type: string
+          description: A suggested fix value.
+        errorSpans:
+          type: array
+          items:
+            $ref: '#/components/schemas/ErrorSpan'
+        valueOverride:
+          type: string
+          description: An override value if validation passed.
+      required:
+      - outcome
+    OpenAIChatCompletionPayload:
+      type: object
+      description: OpenAI-compatible chat completion request payload.
+      properties:
+        model:
+          type: string
+          description: The model to use for the completion
+          example: gpt-3.5-turbo
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpenAIChatMessage'
+          description: The messages to use for the completion
+        max_tokens:
+          type: integer
+          description: The maximum number of tokens to generate
+        temperature:
+          type: number
+          description: The sampling temperature
+    OpenAIChatMessage:
+      type: object
+      description: A message in the OpenAI chat format.
+      properties:
+        role:
+          type: string
+          description: The role of the message
+        content:
+          type: string
+          description: The content of the message
+    OpenAIChatCompletion:
+      type: object
+      description: OpenAI-compatible chat completion response.
+      properties:
+        id:
+          type: string
+          description: The id
+        created:
+          type: string
+          description: The created date
+        model_name:
+          type: string
+          description: The model name
+        choices:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpenAIChatCompletionChoice'
+          description: The completion choices
+      required:
+      - id
+      - created
+      - model_name
+      - choices
+    OpenAIChatCompletionChoice:
+      type: object
+      description: A choice in the chat completion response.
+      properties:
+        role:
+          type: string
+          description: The role of the message
+        content:
+          type: string
+          description: The content of the message

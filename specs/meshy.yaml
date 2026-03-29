@@ -1,0 +1,1607 @@
+openapi: 3.0.1
+info:
+  title: Meshy AI API
+  description: API for AI-powered 3D and 2D content generation
+  version: "2.0"
+servers:
+  - url: https://api.meshy.ai
+security:
+  - BearerAuth: []
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+  schemas:
+    CreateTaskResponse:
+      type: object
+      required: [result]
+      properties:
+        result:
+          type: string
+          description: The ID of the created task
+    TaskError:
+      type: object
+      properties:
+        message:
+          type: string
+    TextureUrlSet:
+      type: object
+      properties:
+        base_color:
+          type: string
+          nullable: true
+        metallic:
+          type: string
+          nullable: true
+        normal:
+          type: string
+          nullable: true
+        roughness:
+          type: string
+          nullable: true
+    ModelUrls:
+      type: object
+      properties:
+        glb:
+          type: string
+          nullable: true
+        fbx:
+          type: string
+          nullable: true
+        obj:
+          type: string
+          nullable: true
+        mtl:
+          type: string
+          nullable: true
+        usdz:
+          type: string
+          nullable: true
+        stl:
+          type: string
+          nullable: true
+    ModelUrlsRemesh:
+      type: object
+      properties:
+        glb:
+          type: string
+          nullable: true
+        fbx:
+          type: string
+          nullable: true
+        obj:
+          type: string
+          nullable: true
+        usdz:
+          type: string
+          nullable: true
+        blend:
+          type: string
+          nullable: true
+        stl:
+          type: string
+          nullable: true
+    ModelUrlsImageTo3D:
+      type: object
+      properties:
+        glb:
+          type: string
+          nullable: true
+        fbx:
+          type: string
+          nullable: true
+        obj:
+          type: string
+          nullable: true
+        usdz:
+          type: string
+          nullable: true
+        mtl:
+          type: string
+          nullable: true
+        stl:
+          type: string
+          nullable: true
+        pre_remeshed_glb:
+          type: string
+          nullable: true
+    TaskStatus:
+      type: string
+      enum: [PENDING, IN_PROGRESS, SUCCEEDED, FAILED, CANCELED]
+    AiModel:
+      type: string
+      enum: [meshy-5, meshy-6, latest]
+      default: latest
+    ModelType:
+      type: string
+      enum: [standard, lowpoly]
+      default: standard
+    Topology:
+      type: string
+      enum: [quad, triangle]
+      default: triangle
+    SymmetryMode:
+      type: string
+      enum: ["off", auto, "on"]
+      default: auto
+    PoseMode:
+      type: string
+      enum: [a-pose, t-pose, ""]
+    TargetFormat3D:
+      type: string
+      enum: [glb, obj, fbx, stl, usdz]
+    TargetFormatRemesh:
+      type: string
+      enum: [glb, fbx, obj, usdz, blend, stl]
+    OriginAt:
+      type: string
+      enum: [bottom, center]
+    ImageAiModel:
+      type: string
+      enum: [nano-banana, nano-banana-pro]
+    AspectRatio:
+      type: string
+      enum: ["1:1", "16:9", "9:16", "4:3", "3:4"]
+      default: "1:1"
+    ErrorResponse:
+      type: object
+      properties:
+        message:
+          type: string
+
+    # ── Text to 3D ──
+    TextTo3DPreviewRequest:
+      type: object
+      required: [mode, prompt]
+      properties:
+        mode:
+          type: string
+          enum: [preview]
+        prompt:
+          type: string
+          maxLength: 600
+          description: Description of the 3D object to generate
+        model_type:
+          $ref: '#/components/schemas/ModelType'
+        art_style:
+          type: string
+          enum: [realistic, sculpture]
+          description: Deprecated for Meshy-6
+        ai_model:
+          $ref: '#/components/schemas/AiModel'
+        topology:
+          $ref: '#/components/schemas/Topology'
+        target_polycount:
+          type: integer
+          minimum: 100
+          maximum: 300000
+          default: 30000
+        should_remesh:
+          type: boolean
+          default: false
+        symmetry_mode:
+          $ref: '#/components/schemas/SymmetryMode'
+        pose_mode:
+          $ref: '#/components/schemas/PoseMode'
+        moderation:
+          type: boolean
+          default: false
+        target_formats:
+          type: array
+          items:
+            $ref: '#/components/schemas/TargetFormat3D'
+        auto_size:
+          type: boolean
+          default: false
+        origin_at:
+          $ref: '#/components/schemas/OriginAt'
+
+    TextTo3DRefineRequest:
+      type: object
+      required: [mode, preview_task_id]
+      properties:
+        mode:
+          type: string
+          enum: [refine]
+        preview_task_id:
+          type: string
+          description: ID of a SUCCEEDED preview task
+        enable_pbr:
+          type: boolean
+          default: false
+          description: Generate PBR texture maps
+        texture_prompt:
+          type: string
+          maxLength: 600
+        texture_image_url:
+          type: string
+          description: URL or base64 data URI for texture guidance
+        ai_model:
+          $ref: '#/components/schemas/AiModel'
+        moderation:
+          type: boolean
+          default: false
+        remove_lighting:
+          type: boolean
+          default: true
+          description: Remove highlights/shadows (meshy-6/latest only)
+        target_formats:
+          type: array
+          items:
+            $ref: '#/components/schemas/TargetFormat3D'
+        auto_size:
+          type: boolean
+          default: false
+        origin_at:
+          $ref: '#/components/schemas/OriginAt'
+
+    TextTo3DTask:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          description: text-to-3d-preview or text-to-3d-refine
+        model_urls:
+          $ref: '#/components/schemas/ModelUrls'
+        prompt:
+          type: string
+        art_style:
+          type: string
+        texture_prompt:
+          type: string
+        texture_image_url:
+          type: string
+        thumbnail_url:
+          type: string
+        progress:
+          type: integer
+          minimum: 0
+          maximum: 100
+        status:
+          $ref: '#/components/schemas/TaskStatus'
+        texture_urls:
+          type: array
+          items:
+            $ref: '#/components/schemas/TextureUrlSet'
+        started_at:
+          type: integer
+          format: int64
+          description: Milliseconds since epoch
+        created_at:
+          type: integer
+          format: int64
+        finished_at:
+          type: integer
+          format: int64
+        expires_at:
+          type: integer
+          format: int64
+        preceding_tasks:
+          type: integer
+          description: Queue position when PENDING
+        task_error:
+          $ref: '#/components/schemas/TaskError'
+
+    # ── Image to 3D ──
+    ImageTo3DRequest:
+      type: object
+      required: [image_url]
+      properties:
+        image_url:
+          type: string
+          description: Public URL or base64 data URI (.jpg/.jpeg/.png)
+        model_type:
+          $ref: '#/components/schemas/ModelType'
+        ai_model:
+          $ref: '#/components/schemas/AiModel'
+        topology:
+          $ref: '#/components/schemas/Topology'
+        target_polycount:
+          type: integer
+          minimum: 100
+          maximum: 300000
+          default: 30000
+        symmetry_mode:
+          $ref: '#/components/schemas/SymmetryMode'
+        should_remesh:
+          type: boolean
+          default: false
+        save_pre_remeshed_model:
+          type: boolean
+          default: false
+          description: Save pre-remesh GLB (requires should_remesh=true)
+        should_texture:
+          type: boolean
+          default: true
+        enable_pbr:
+          type: boolean
+          default: false
+        pose_mode:
+          $ref: '#/components/schemas/PoseMode'
+        texture_prompt:
+          type: string
+          maxLength: 600
+        texture_image_url:
+          type: string
+          description: URL or base64 for texture reference
+        moderation:
+          type: boolean
+          default: false
+        image_enhancement:
+          type: boolean
+          default: true
+          description: Optimize input image (meshy-6/latest only)
+        remove_lighting:
+          type: boolean
+          default: true
+          description: Remove highlights/shadows (meshy-6/latest only)
+        target_formats:
+          type: array
+          items:
+            $ref: '#/components/schemas/TargetFormat3D'
+        auto_size:
+          type: boolean
+          default: false
+        origin_at:
+          $ref: '#/components/schemas/OriginAt'
+
+    ImageTo3DTask:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        model_urls:
+          $ref: '#/components/schemas/ModelUrlsImageTo3D'
+        thumbnail_url:
+          type: string
+        texture_prompt:
+          type: string
+        texture_image_url:
+          type: string
+        progress:
+          type: integer
+        status:
+          $ref: '#/components/schemas/TaskStatus'
+        texture_urls:
+          type: array
+          items:
+            $ref: '#/components/schemas/TextureUrlSet'
+        preceding_tasks:
+          type: integer
+        task_error:
+          $ref: '#/components/schemas/TaskError'
+        created_at:
+          type: integer
+          format: int64
+        started_at:
+          type: integer
+          format: int64
+        finished_at:
+          type: integer
+          format: int64
+        expires_at:
+          type: integer
+          format: int64
+
+    # ── Multi-Image to 3D ──
+    MultiImageTo3DRequest:
+      type: object
+      required: [image_urls]
+      properties:
+        image_urls:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          maxItems: 4
+          description: 1-4 images (URLs or base64 data URIs)
+        ai_model:
+          $ref: '#/components/schemas/AiModel'
+        topology:
+          $ref: '#/components/schemas/Topology'
+        target_polycount:
+          type: integer
+          minimum: 100
+          maximum: 300000
+          default: 30000
+        symmetry_mode:
+          $ref: '#/components/schemas/SymmetryMode'
+        should_remesh:
+          type: boolean
+          default: false
+        save_pre_remeshed_model:
+          type: boolean
+          default: false
+        should_texture:
+          type: boolean
+          default: true
+        enable_pbr:
+          type: boolean
+          default: false
+        pose_mode:
+          $ref: '#/components/schemas/PoseMode'
+        texture_prompt:
+          type: string
+          maxLength: 600
+        texture_image_url:
+          type: string
+        moderation:
+          type: boolean
+          default: false
+        image_enhancement:
+          type: boolean
+          default: true
+        remove_lighting:
+          type: boolean
+          default: true
+        target_formats:
+          type: array
+          items:
+            $ref: '#/components/schemas/TargetFormat3D'
+        auto_size:
+          type: boolean
+          default: false
+        origin_at:
+          $ref: '#/components/schemas/OriginAt'
+
+    # ── Text to Image ──
+    TextToImageRequest:
+      type: object
+      required: [ai_model, prompt]
+      properties:
+        ai_model:
+          $ref: '#/components/schemas/ImageAiModel'
+        prompt:
+          type: string
+          description: Text description for image generation
+        generate_multi_view:
+          type: boolean
+          default: false
+          description: Generate multi-angle views (cannot use with aspect_ratio)
+        pose_mode:
+          type: string
+          enum: [a-pose, t-pose]
+        aspect_ratio:
+          $ref: '#/components/schemas/AspectRatio'
+
+    TextToImageTask:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        ai_model:
+          type: string
+        prompt:
+          type: string
+        status:
+          $ref: '#/components/schemas/TaskStatus'
+        progress:
+          type: integer
+        created_at:
+          type: integer
+          format: int64
+        started_at:
+          type: integer
+          format: int64
+        finished_at:
+          type: integer
+          format: int64
+        expires_at:
+          type: integer
+          format: int64
+        preceding_tasks:
+          type: integer
+        image_urls:
+          type: array
+          items:
+            type: string
+          description: Generated image URLs (multiple if multi-view)
+        task_error:
+          $ref: '#/components/schemas/TaskError'
+
+    # ── Image to Image ──
+    ImageToImageRequest:
+      type: object
+      required: [ai_model, prompt, reference_image_urls]
+      properties:
+        ai_model:
+          $ref: '#/components/schemas/ImageAiModel'
+        prompt:
+          type: string
+          description: Transformation description
+        reference_image_urls:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          maxItems: 5
+          description: 1-5 reference images
+        generate_multi_view:
+          type: boolean
+          default: false
+
+    ImageToImageTask:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        ai_model:
+          type: string
+        prompt:
+          type: string
+        status:
+          $ref: '#/components/schemas/TaskStatus'
+        progress:
+          type: integer
+        created_at:
+          type: integer
+          format: int64
+        started_at:
+          type: integer
+          format: int64
+        finished_at:
+          type: integer
+          format: int64
+        expires_at:
+          type: integer
+          format: int64
+        preceding_tasks:
+          type: integer
+        image_urls:
+          type: array
+          items:
+            type: string
+        task_error:
+          $ref: '#/components/schemas/TaskError'
+
+    # ── Remesh ──
+    RemeshRequest:
+      type: object
+      properties:
+        input_task_id:
+          type: string
+          description: ID of completed task to remesh
+        model_url:
+          type: string
+          description: Public URL or data URI (.glb/.gltf/.obj/.fbx/.stl)
+        target_formats:
+          type: array
+          items:
+            $ref: '#/components/schemas/TargetFormatRemesh'
+          default: [glb]
+        topology:
+          $ref: '#/components/schemas/Topology'
+        target_polycount:
+          type: integer
+          minimum: 100
+          maximum: 300000
+          default: 30000
+        resize_height:
+          type: number
+          description: Resize to height in meters (0 = no resize)
+          default: 0
+        auto_size:
+          type: boolean
+          default: false
+        origin_at:
+          $ref: '#/components/schemas/OriginAt'
+        convert_format_only:
+          type: boolean
+          description: Only convert format, skip remesh processing
+
+    RemeshTask:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        model_urls:
+          $ref: '#/components/schemas/ModelUrlsRemesh'
+        progress:
+          type: integer
+        status:
+          type: string
+          enum: [PENDING, IN_PROGRESS, SUCCEEDED, FAILED]
+        preceding_tasks:
+          type: integer
+        created_at:
+          type: integer
+          format: int64
+        started_at:
+          type: integer
+          format: int64
+        finished_at:
+          type: integer
+          format: int64
+        task_error:
+          $ref: '#/components/schemas/TaskError'
+
+    # ── Retexture ──
+    RetextureRequest:
+      type: object
+      properties:
+        input_task_id:
+          type: string
+          description: ID of completed task
+        model_url:
+          type: string
+          description: Public URL or data URI (.glb/.gltf/.obj/.fbx/.stl)
+        text_style_prompt:
+          type: string
+          maxLength: 600
+          description: Text description for texture style
+        image_style_url:
+          type: string
+          description: URL or data URI (.jpg/.jpeg/.png) for style reference
+        ai_model:
+          $ref: '#/components/schemas/AiModel'
+        enable_original_uv:
+          type: boolean
+          default: true
+          description: Preserve existing UV mapping
+        enable_pbr:
+          type: boolean
+          default: false
+        remove_lighting:
+          type: boolean
+          default: true
+          description: Remove highlights/shadows (meshy-6/latest only)
+        target_formats:
+          type: array
+          items:
+            $ref: '#/components/schemas/TargetFormat3D'
+
+    RetextureTask:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        model_urls:
+          $ref: '#/components/schemas/ModelUrls'
+        thumbnail_url:
+          type: string
+        text_style_prompt:
+          type: string
+        image_style_url:
+          type: string
+        progress:
+          type: integer
+        status:
+          $ref: '#/components/schemas/TaskStatus'
+        texture_urls:
+          type: array
+          items:
+            $ref: '#/components/schemas/TextureUrlSet'
+        preceding_tasks:
+          type: integer
+        task_error:
+          $ref: '#/components/schemas/TaskError'
+        created_at:
+          type: integer
+          format: int64
+        started_at:
+          type: integer
+          format: int64
+        finished_at:
+          type: integer
+          format: int64
+        expires_at:
+          type: integer
+          format: int64
+
+    # ── Rigging ──
+    RiggingRequest:
+      type: object
+      properties:
+        input_task_id:
+          type: string
+          description: ID of completed task
+        model_url:
+          type: string
+          description: Public URL or data URI to GLB file
+        height_meters:
+          type: number
+          default: 1.7
+          description: Character height in meters
+        texture_image_url:
+          type: string
+          description: UV-unwrapped base color texture (PNG)
+
+    BasicAnimations:
+      type: object
+      properties:
+        walking_glb_url:
+          type: string
+        walking_fbx_url:
+          type: string
+        walking_armature_glb_url:
+          type: string
+        running_glb_url:
+          type: string
+        running_fbx_url:
+          type: string
+        running_armature_glb_url:
+          type: string
+
+    RiggingResult:
+      type: object
+      properties:
+        rigged_character_fbx_url:
+          type: string
+        rigged_character_glb_url:
+          type: string
+        basic_animations:
+          $ref: '#/components/schemas/BasicAnimations'
+
+    RiggingTask:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        status:
+          $ref: '#/components/schemas/TaskStatus'
+        progress:
+          type: integer
+        created_at:
+          type: integer
+          format: int64
+        started_at:
+          type: integer
+          format: int64
+        finished_at:
+          type: integer
+          format: int64
+        expires_at:
+          type: integer
+          format: int64
+        task_error:
+          $ref: '#/components/schemas/TaskError'
+        preceding_tasks:
+          type: integer
+        result:
+          $ref: '#/components/schemas/RiggingResult'
+
+    # ── Animation ──
+    AnimationPostProcess:
+      type: object
+      required: [operation_type]
+      properties:
+        operation_type:
+          type: string
+          enum: [change_fps, fbx2usdz, extract_armature]
+        fps:
+          type: integer
+          enum: [24, 25, 30, 60]
+          default: 30
+          description: Target FPS (only for change_fps)
+
+    AnimationRequest:
+      type: object
+      required: [rig_task_id, action_id]
+      properties:
+        rig_task_id:
+          type: string
+          description: ID of completed rigging task
+        action_id:
+          type: integer
+          description: Animation action identifier
+        post_process:
+          $ref: '#/components/schemas/AnimationPostProcess'
+
+    AnimationResult:
+      type: object
+      properties:
+        animation_glb_url:
+          type: string
+        animation_fbx_url:
+          type: string
+        processed_usdz_url:
+          type: string
+        processed_armature_fbx_url:
+          type: string
+        processed_animation_fps_fbx_url:
+          type: string
+
+    AnimationTask:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        status:
+          $ref: '#/components/schemas/TaskStatus'
+        progress:
+          type: integer
+        created_at:
+          type: integer
+          format: int64
+        started_at:
+          type: integer
+          format: int64
+        finished_at:
+          type: integer
+          format: int64
+        expires_at:
+          type: integer
+          format: int64
+        task_error:
+          $ref: '#/components/schemas/TaskError'
+        preceding_tasks:
+          type: integer
+        result:
+          $ref: '#/components/schemas/AnimationResult'
+
+    # ── Balance ──
+    BalanceResponse:
+      type: object
+      properties:
+        balance:
+          type: integer
+          description: Current credit balance
+
+  parameters:
+    PageNum:
+      name: page_num
+      in: query
+      schema:
+        type: integer
+        default: 1
+        minimum: 1
+    PageSize:
+      name: page_size
+      in: query
+      schema:
+        type: integer
+        default: 10
+        minimum: 1
+        maximum: 50
+    SortBy:
+      name: sort_by
+      in: query
+      schema:
+        type: string
+        enum: ["+created_at", "-created_at"]
+
+paths:
+  # ════════════════════════════════════
+  # Text to 3D (v2)
+  # ════════════════════════════════════
+  /openapi/v2/text-to-3d:
+    post:
+      operationId: createTextTo3DTask
+      summary: Create a Text to 3D task (preview or refine)
+      tags: [Text to 3D]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: '#/components/schemas/TextTo3DPreviewRequest'
+                - $ref: '#/components/schemas/TextTo3DRefineRequest'
+              discriminator:
+                propertyName: mode
+                mapping:
+                  preview: '#/components/schemas/TextTo3DPreviewRequest'
+                  refine: '#/components/schemas/TextTo3DRefineRequest'
+      responses:
+        '200':
+          description: Task created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTaskResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized
+        '402':
+          description: Insufficient credits
+        '429':
+          description: Rate limit exceeded
+    get:
+      operationId: listTextTo3DTasks
+      summary: List Text to 3D tasks
+      tags: [Text to 3D]
+      parameters:
+        - $ref: '#/components/parameters/PageNum'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/SortBy'
+      responses:
+        '200':
+          description: List of tasks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TextTo3DTask'
+
+  /openapi/v2/text-to-3d/{id}:
+    get:
+      operationId: getTextTo3DTask
+      summary: Retrieve a Text to 3D task
+      tags: [Text to 3D]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Task details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TextTo3DTask'
+        '404':
+          description: Task not found
+    delete:
+      operationId: deleteTextTo3DTask
+      summary: Delete a Text to 3D task
+      tags: [Text to 3D]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Task deleted
+
+  # ════════════════════════════════════
+  # Image to 3D (v1)
+  # ════════════════════════════════════
+  /openapi/v1/image-to-3d:
+    post:
+      operationId: createImageTo3DTask
+      summary: Create an Image to 3D task
+      tags: [Image to 3D]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ImageTo3DRequest'
+      responses:
+        '200':
+          description: Task created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTaskResponse'
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '402':
+          description: Insufficient credits
+        '429':
+          description: Rate limit exceeded
+    get:
+      operationId: listImageTo3DTasks
+      summary: List Image to 3D tasks
+      tags: [Image to 3D]
+      parameters:
+        - $ref: '#/components/parameters/PageNum'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/SortBy'
+      responses:
+        '200':
+          description: List of tasks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ImageTo3DTask'
+
+  /openapi/v1/image-to-3d/{id}:
+    get:
+      operationId: getImageTo3DTask
+      summary: Retrieve an Image to 3D task
+      tags: [Image to 3D]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Task details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImageTo3DTask'
+        '404':
+          description: Task not found
+    delete:
+      operationId: deleteImageTo3DTask
+      summary: Delete an Image to 3D task
+      tags: [Image to 3D]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Task deleted
+
+  # ════════════════════════════════════
+  # Multi-Image to 3D (v1)
+  # ════════════════════════════════════
+  /openapi/v1/multi-image-to-3d:
+    post:
+      operationId: createMultiImageTo3DTask
+      summary: Create a Multi-Image to 3D task
+      tags: [Multi-Image to 3D]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MultiImageTo3DRequest'
+      responses:
+        '200':
+          description: Task created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTaskResponse'
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '402':
+          description: Insufficient credits
+        '429':
+          description: Rate limit exceeded
+    get:
+      operationId: listMultiImageTo3DTasks
+      summary: List Multi-Image to 3D tasks
+      tags: [Multi-Image to 3D]
+      parameters:
+        - $ref: '#/components/parameters/PageNum'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/SortBy'
+      responses:
+        '200':
+          description: List of tasks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ImageTo3DTask'
+
+  /openapi/v1/multi-image-to-3d/{id}:
+    get:
+      operationId: getMultiImageTo3DTask
+      summary: Retrieve a Multi-Image to 3D task
+      tags: [Multi-Image to 3D]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Task details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImageTo3DTask'
+        '404':
+          description: Task not found
+    delete:
+      operationId: deleteMultiImageTo3DTask
+      summary: Delete a Multi-Image to 3D task
+      tags: [Multi-Image to 3D]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Task deleted
+
+  # ════════════════════════════════════
+  # Text to Image (v1)
+  # ════════════════════════════════════
+  /openapi/v1/text-to-image:
+    post:
+      operationId: createTextToImageTask
+      summary: Create a Text to Image task
+      tags: [Text to Image]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TextToImageRequest'
+      responses:
+        '200':
+          description: Task created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTaskResponse'
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '402':
+          description: Insufficient credits
+        '429':
+          description: Rate limit exceeded
+    get:
+      operationId: listTextToImageTasks
+      summary: List Text to Image tasks
+      tags: [Text to Image]
+      parameters:
+        - $ref: '#/components/parameters/PageNum'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/SortBy'
+      responses:
+        '200':
+          description: List of tasks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TextToImageTask'
+
+  /openapi/v1/text-to-image/{id}:
+    get:
+      operationId: getTextToImageTask
+      summary: Retrieve a Text to Image task
+      tags: [Text to Image]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Task details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TextToImageTask'
+        '404':
+          description: Task not found
+    delete:
+      operationId: deleteTextToImageTask
+      summary: Delete a Text to Image task
+      tags: [Text to Image]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Task deleted
+
+  # ════════════════════════════════════
+  # Image to Image (v1)
+  # ════════════════════════════════════
+  /openapi/v1/image-to-image:
+    post:
+      operationId: createImageToImageTask
+      summary: Create an Image to Image task
+      tags: [Image to Image]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ImageToImageRequest'
+      responses:
+        '200':
+          description: Task created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTaskResponse'
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '402':
+          description: Insufficient credits
+        '429':
+          description: Rate limit exceeded
+    get:
+      operationId: listImageToImageTasks
+      summary: List Image to Image tasks
+      tags: [Image to Image]
+      parameters:
+        - $ref: '#/components/parameters/PageNum'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/SortBy'
+      responses:
+        '200':
+          description: List of tasks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ImageToImageTask'
+
+  /openapi/v1/image-to-image/{id}:
+    get:
+      operationId: getImageToImageTask
+      summary: Retrieve an Image to Image task
+      tags: [Image to Image]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Task details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImageToImageTask'
+        '404':
+          description: Task not found
+    delete:
+      operationId: deleteImageToImageTask
+      summary: Delete an Image to Image task
+      tags: [Image to Image]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Task deleted
+
+  # ════════════════════════════════════
+  # Remesh (v1)
+  # ════════════════════════════════════
+  /openapi/v1/remesh:
+    post:
+      operationId: createRemeshTask
+      summary: Create a Remesh task
+      tags: [Remesh]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RemeshRequest'
+      responses:
+        '200':
+          description: Task created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTaskResponse'
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '402':
+          description: Insufficient credits
+        '429':
+          description: Rate limit exceeded
+    get:
+      operationId: listRemeshTasks
+      summary: List Remesh tasks
+      tags: [Remesh]
+      parameters:
+        - $ref: '#/components/parameters/PageNum'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/SortBy'
+      responses:
+        '200':
+          description: List of tasks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RemeshTask'
+
+  /openapi/v1/remesh/{id}:
+    get:
+      operationId: getRemeshTask
+      summary: Retrieve a Remesh task
+      tags: [Remesh]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Task details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RemeshTask'
+        '404':
+          description: Task not found
+    delete:
+      operationId: deleteRemeshTask
+      summary: Delete a Remesh task
+      tags: [Remesh]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Task deleted
+
+  # ════════════════════════════════════
+  # Retexture (v1)
+  # ════════════════════════════════════
+  /openapi/v1/retexture:
+    post:
+      operationId: createRetextureTask
+      summary: Create a Retexture task
+      tags: [Retexture]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RetextureRequest'
+      responses:
+        '200':
+          description: Task created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTaskResponse'
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '402':
+          description: Insufficient credits
+        '429':
+          description: Rate limit exceeded
+    get:
+      operationId: listRetextureTasks
+      summary: List Retexture tasks
+      tags: [Retexture]
+      parameters:
+        - $ref: '#/components/parameters/PageNum'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/SortBy'
+      responses:
+        '200':
+          description: List of tasks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RetextureTask'
+
+  /openapi/v1/retexture/{id}:
+    get:
+      operationId: getRetextureTask
+      summary: Retrieve a Retexture task
+      tags: [Retexture]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Task details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RetextureTask'
+        '404':
+          description: Task not found
+    delete:
+      operationId: deleteRetextureTask
+      summary: Delete a Retexture task
+      tags: [Retexture]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Task deleted
+
+  # ════════════════════════════════════
+  # Rigging (v1)
+  # ════════════════════════════════════
+  /openapi/v1/rigging:
+    post:
+      operationId: createRiggingTask
+      summary: Create a Rigging task
+      tags: [Rigging]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RiggingRequest'
+      responses:
+        '200':
+          description: Task created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTaskResponse'
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '402':
+          description: Insufficient credits
+        '422':
+          description: Pose estimation failed
+        '429':
+          description: Rate limit exceeded
+
+  /openapi/v1/rigging/{id}:
+    get:
+      operationId: getRiggingTask
+      summary: Retrieve a Rigging task
+      tags: [Rigging]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Task details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RiggingTask'
+        '404':
+          description: Task not found
+    delete:
+      operationId: deleteRiggingTask
+      summary: Delete a Rigging task
+      tags: [Rigging]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Task deleted
+
+  # ════════════════════════════════════
+  # Animation (v1)
+  # ════════════════════════════════════
+  /openapi/v1/animations:
+    post:
+      operationId: createAnimationTask
+      summary: Create an Animation task
+      tags: [Animation]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnimationRequest'
+      responses:
+        '200':
+          description: Task created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTaskResponse'
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '402':
+          description: Insufficient credits
+        '404':
+          description: Rigging task not found
+        '429':
+          description: Rate limit exceeded
+
+  /openapi/v1/animations/{id}:
+    get:
+      operationId: getAnimationTask
+      summary: Retrieve an Animation task
+      tags: [Animation]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Task details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnimationTask'
+        '404':
+          description: Task not found
+    delete:
+      operationId: deleteAnimationTask
+      summary: Delete an Animation task
+      tags: [Animation]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Task deleted
+
+  # ════════════════════════════════════
+  # Balance (v1)
+  # ════════════════════════════════════
+  /openapi/v1/balance:
+    get:
+      operationId: getBalance
+      summary: Get credit balance
+      tags: [Balance]
+      responses:
+        '200':
+          description: Current balance
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BalanceResponse'
+        '401':
+          description: Unauthorized

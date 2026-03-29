@@ -1,0 +1,1508 @@
+openapi: 3.0.3
+info:
+  title: Brave Search API
+  description: |
+    Brave Search API provides access to web, image, video, and news search results,
+    as well as AI-powered summaries and autocomplete suggestions.
+    Authentication uses the X-Subscription-Token header with your API key.
+  version: '1.0.0'
+  contact:
+    name: Brave Search
+    url: https://brave.com/search/api/
+servers:
+  - url: https://api.search.brave.com/res/v1
+    description: Production server
+components:
+  schemas:
+    # ─── Common / Shared Types ───
+    Query:
+      type: object
+      description: Information about the original search query.
+      properties:
+        original:
+          type: string
+          description: The original query string as submitted.
+        show_strict_warning:
+          type: boolean
+          description: Whether the query has SafeSearch-filtered results.
+        altered:
+          type: string
+          description: The altered/corrected query, if any.
+        safesearch:
+          type: boolean
+          description: Whether SafeSearch is enabled.
+        is_navigational:
+          type: boolean
+          description: Whether the query is navigational in nature.
+        is_geolocal:
+          type: boolean
+          description: Whether the query has local intent.
+        local_decision:
+          type: string
+          description: Decision on local results relevance.
+        local_locations_idx:
+          type: integer
+          description: Index of the local location result.
+        is_trending:
+          type: boolean
+          description: Whether the query is trending.
+        is_news_breaking:
+          type: boolean
+          description: Whether the query is about breaking news.
+        ask_for_clarification:
+          type: boolean
+          description: Whether the search engine wants to ask for query clarification.
+        language:
+          type: string
+          description: Detected language of the query.
+        spellcheck_off:
+          type: boolean
+          description: Whether spellcheck is disabled.
+        country:
+          type: string
+          description: Detected country of the query.
+        bad_results:
+          type: boolean
+          description: Whether there are bad results.
+        should_fallback:
+          type: boolean
+          description: Whether a fallback query should be used.
+        lat:
+          type: string
+          description: Latitude for geolocation queries.
+        long:
+          type: string
+          description: Longitude for geolocation queries.
+        postal_code:
+          type: string
+          description: Postal code for geolocation queries.
+        city:
+          type: string
+          description: City for geolocation queries.
+        state:
+          type: string
+          description: State for geolocation queries.
+        header_country:
+          type: string
+          description: Country from request headers.
+        more_results_available:
+          type: boolean
+          description: Whether more results are available beyond the current page.
+        custom_location_label:
+          type: string
+          description: Custom label for location, if specified.
+        reddit_cluster:
+          type: string
+          description: Reddit cluster identifier, if applicable.
+    MetaUrl:
+      type: object
+      description: Aggregated URL information for a result.
+      properties:
+        scheme:
+          type: string
+          description: The URL scheme (e.g., https).
+        netloc:
+          type: string
+          description: The network location (domain).
+        hostname:
+          type: string
+          description: The hostname.
+        favicon:
+          type: string
+          description: URL to the site favicon.
+          format: uri
+        path:
+          type: string
+          description: The URL path.
+    Thumbnail:
+      type: object
+      description: Thumbnail image information.
+      properties:
+        src:
+          type: string
+          description: URL of the thumbnail image.
+          format: uri
+        original:
+          type: string
+          description: URL of the original image.
+          format: uri
+        logo:
+          type: boolean
+          description: Whether the thumbnail is a logo.
+    Profile:
+      type: object
+      description: Profile information for a content creator.
+      properties:
+        name:
+          type: string
+          description: Name of the profile.
+        long_name:
+          type: string
+          description: Full/long name of the profile.
+        url:
+          type: string
+          description: URL to the profile page.
+          format: uri
+        img:
+          type: string
+          description: URL of the profile image.
+          format: uri
+    # ─── Web Search Types ───
+    WebSearchResult:
+      type: object
+      description: A single web search result.
+      properties:
+        title:
+          type: string
+          description: Title of the web page.
+        url:
+          type: string
+          description: URL of the web page.
+          format: uri
+        is_source_local:
+          type: boolean
+          description: Whether the source is local.
+        is_source_both:
+          type: boolean
+          description: Whether the source is both local and non-local.
+        description:
+          type: string
+          description: Description or snippet from the web page.
+        page_age:
+          type: string
+          description: Age of the page (ISO 8601 date).
+        page_fetched:
+          type: string
+          description: When the page was last fetched.
+        profile:
+          $ref: '#/components/schemas/Profile'
+        language:
+          type: string
+          description: Language of the page content.
+        family_friendly:
+          type: boolean
+          description: Whether the page is family-friendly.
+        type:
+          type: string
+          description: Type of the result.
+          enum:
+            - search_result
+        subtype:
+          type: string
+          description: Subtype of the result (e.g., generic, faq).
+        meta_url:
+          $ref: '#/components/schemas/MetaUrl'
+        thumbnail:
+          $ref: '#/components/schemas/Thumbnail'
+        age:
+          type: string
+          description: Human-readable age of the result (e.g., "2 hours ago").
+        extra_snippets:
+          type: array
+          description: Additional snippets from the page.
+          items:
+            type: string
+    WebSearchResults:
+      type: object
+      description: Container for web search results.
+      properties:
+        type:
+          type: string
+          description: The type identifier (always "search").
+        results:
+          type: array
+          description: List of web search results.
+          items:
+            $ref: '#/components/schemas/WebSearchResult'
+        family_friendly:
+          type: boolean
+          description: Whether the results are family-friendly.
+    # ─── Discussions (Forum) ───
+    DiscussionResult:
+      type: object
+      description: A forum/discussion result.
+      properties:
+        type:
+          type: string
+          description: The type of the result.
+        data:
+          type: object
+          description: The discussion data.
+          properties:
+            title:
+              type: string
+              description: Title of the discussion.
+            url:
+              type: string
+              description: URL of the discussion.
+              format: uri
+            description:
+              type: string
+              description: Description or snippet.
+            age:
+              type: string
+              description: Human-readable age.
+            page_age:
+              type: string
+              description: Page age (ISO 8601).
+            meta_url:
+              $ref: '#/components/schemas/MetaUrl'
+            thumbnail:
+              $ref: '#/components/schemas/Thumbnail'
+            forum_name:
+              type: string
+              description: Name of the forum (e.g., Reddit).
+            num_answers:
+              type: integer
+              description: Number of answers/comments.
+            score:
+              type: string
+              description: Score/upvotes on the post.
+            question:
+              type: string
+              description: The question text.
+            top_comment:
+              type: string
+              description: The top/best comment.
+    Discussions:
+      type: object
+      description: Container for discussion/forum results.
+      properties:
+        type:
+          type: string
+          description: The type identifier.
+        results:
+          type: array
+          description: List of discussion results.
+          items:
+            $ref: '#/components/schemas/DiscussionResult'
+        mutated_by_goggles:
+          type: boolean
+          description: Whether results were modified by Goggles.
+    # ─── FAQ ───
+    FaqResult:
+      type: object
+      description: A FAQ result.
+      properties:
+        title:
+          type: string
+          description: The question.
+        url:
+          type: string
+          description: Source URL.
+          format: uri
+        answer:
+          type: string
+          description: The answer.
+        meta_url:
+          $ref: '#/components/schemas/MetaUrl'
+    Faq:
+      type: object
+      description: Container for FAQ results.
+      properties:
+        type:
+          type: string
+          description: The type identifier.
+        results:
+          type: array
+          description: List of FAQ results.
+          items:
+            $ref: '#/components/schemas/FaqResult'
+    # ─── Infobox ───
+    InfoboxResult:
+      type: object
+      description: An infobox / knowledge panel result.
+      properties:
+        type:
+          type: string
+          description: Subtype of the infobox.
+        position:
+          type: integer
+          description: Display position.
+        label:
+          type: string
+          description: Label/title of the infobox.
+        category:
+          type: string
+          description: Category of the infobox entity.
+        long_desc:
+          type: string
+          description: Long description of the entity.
+        thumbnail:
+          $ref: '#/components/schemas/Thumbnail'
+        attributes:
+          type: array
+          description: Key-value attributes about the entity.
+          items:
+            type: object
+            properties:
+              label:
+                type: string
+                description: Attribute label.
+              value:
+                type: string
+                description: Attribute value.
+        profiles:
+          type: array
+          description: Social profiles associated with the entity.
+          items:
+            $ref: '#/components/schemas/Profile'
+        website_url:
+          type: string
+          description: Official website URL.
+          format: uri
+        ratings:
+          type: array
+          description: Ratings from various sources.
+          items:
+            type: object
+            properties:
+              profile_name:
+                type: string
+                description: Name of the rating source.
+              rating_value:
+                type: number
+                format: double
+                description: The rating value.
+              best_rating:
+                type: number
+                format: double
+                description: Maximum possible rating.
+              review_count:
+                type: integer
+                description: Number of reviews.
+              is_tripadvisor:
+                type: boolean
+                description: Whether the rating is from TripAdvisor.
+    Infobox:
+      type: object
+      description: Container for infobox/knowledge panel results.
+      properties:
+        type:
+          type: string
+          description: The type identifier.
+        results:
+          type: array
+          description: List of infobox results.
+          items:
+            $ref: '#/components/schemas/InfoboxResult'
+    # ─── Videos ───
+    VideoData:
+      type: object
+      description: Data about a video result.
+      properties:
+        duration:
+          type: string
+          description: Duration of the video (e.g., "10:30").
+        views:
+          type: string
+          description: Number of views.
+        creator:
+          type: string
+          description: Creator/uploader of the video.
+        publisher:
+          type: string
+          description: Publisher/platform.
+        thumbnail:
+          $ref: '#/components/schemas/Thumbnail'
+        tags:
+          type: array
+          description: Tags associated with the video.
+          items:
+            type: string
+    VideoResult:
+      type: object
+      description: A single video search result.
+      properties:
+        type:
+          type: string
+          description: The type of the result.
+        url:
+          type: string
+          description: URL of the video page.
+          format: uri
+        title:
+          type: string
+          description: Title of the video.
+        description:
+          type: string
+          description: Description of the video.
+        age:
+          type: string
+          description: Human-readable age (e.g., "3 days ago").
+        page_age:
+          type: string
+          description: Age of the page (ISO 8601 date).
+        meta_url:
+          $ref: '#/components/schemas/MetaUrl'
+        thumbnail:
+          $ref: '#/components/schemas/Thumbnail'
+        video:
+          $ref: '#/components/schemas/VideoData'
+    VideoResults:
+      type: object
+      description: Container for video results.
+      properties:
+        type:
+          type: string
+          description: The type identifier.
+        results:
+          type: array
+          description: List of video results.
+          items:
+            $ref: '#/components/schemas/VideoResult'
+        mutated_by_goggles:
+          type: boolean
+          description: Whether results were modified by Goggles.
+    # ─── News ───
+    NewsResult:
+      type: object
+      description: A single news search result.
+      properties:
+        type:
+          type: string
+          description: The type of the result.
+        url:
+          type: string
+          description: URL of the news article.
+          format: uri
+        title:
+          type: string
+          description: Title of the news article.
+        description:
+          type: string
+          description: Description or snippet from the article.
+        age:
+          type: string
+          description: Human-readable age (e.g., "1 hour ago").
+        page_age:
+          type: string
+          description: Page age (ISO 8601 date).
+        meta_url:
+          $ref: '#/components/schemas/MetaUrl'
+        thumbnail:
+          $ref: '#/components/schemas/Thumbnail'
+        source:
+          type: string
+          description: News source name.
+        breaking:
+          type: boolean
+          description: Whether this is breaking news.
+        family_friendly:
+          type: boolean
+          description: Whether the article is family-friendly.
+    NewsResults:
+      type: object
+      description: Container for news results.
+      properties:
+        type:
+          type: string
+          description: The type identifier.
+        results:
+          type: array
+          description: List of news results.
+          items:
+            $ref: '#/components/schemas/NewsResult'
+        mutated_by_goggles:
+          type: boolean
+          description: Whether results were modified by Goggles.
+    # ─── Image Search Types ───
+    ImageProperties:
+      type: object
+      description: Properties of an image.
+      properties:
+        url:
+          type: string
+          description: URL of the full-size image.
+          format: uri
+        resized:
+          type: string
+          description: URL of the resized image.
+          format: uri
+        height:
+          type: integer
+          description: Height of the image in pixels.
+        width:
+          type: integer
+          description: Width of the image in pixels.
+        format:
+          type: string
+          description: Image file format (e.g., jpeg, png).
+        content_size:
+          type: string
+          description: File size of the image.
+        placeholder:
+          type: string
+          description: Base64-encoded low-quality placeholder image.
+    ImageResult:
+      type: object
+      description: A single image search result.
+      properties:
+        type:
+          type: string
+          description: The type of the result.
+        url:
+          type: string
+          description: URL of the page containing the image.
+          format: uri
+        title:
+          type: string
+          description: Title/alt text of the image.
+        description:
+          type: string
+          description: Description of the image.
+        source:
+          type: string
+          description: Source domain or site name.
+        page_fetched:
+          type: string
+          description: When the page was last fetched.
+        family_friendly:
+          type: boolean
+          description: Whether the image is family-friendly.
+        meta_url:
+          $ref: '#/components/schemas/MetaUrl'
+        thumbnail:
+          $ref: '#/components/schemas/Thumbnail'
+        properties:
+          $ref: '#/components/schemas/ImageProperties'
+    ImageSearchResults:
+      type: object
+      description: Container for image search results.
+      properties:
+        type:
+          type: string
+          description: The type identifier.
+        results:
+          type: array
+          description: List of image results.
+          items:
+            $ref: '#/components/schemas/ImageResult'
+    # ─── Suggest (Autocomplete) Types ───
+    SuggestResult:
+      type: object
+      description: A single autocomplete suggestion.
+      properties:
+        query:
+          type: string
+          description: The suggested search query.
+        is_entity:
+          type: boolean
+          description: Whether the suggestion is a known entity.
+        title:
+          type: string
+          description: Title of the entity, if applicable.
+        description:
+          type: string
+          description: Description of the entity, if applicable.
+        img:
+          type: string
+          description: URL of the entity image, if applicable.
+          format: uri
+    SuggestResults:
+      type: object
+      description: Container for autocomplete suggestion results.
+      properties:
+        type:
+          type: string
+          description: The type identifier.
+        results:
+          type: array
+          description: List of suggestions.
+          items:
+            $ref: '#/components/schemas/SuggestResult'
+    # ─── Summarizer Types ───
+    SummarizerSearchResult:
+      type: object
+      description: Response from the summarizer endpoint.
+      properties:
+        type:
+          type: string
+          description: The type identifier.
+        status:
+          type: string
+          description: Status of the summarization.
+          enum:
+            - complete
+            - partial
+            - failed
+        title:
+          type: string
+          description: Title of the summary.
+        summary:
+          type: array
+          description: Paragraphs of the summary.
+          items:
+            $ref: '#/components/schemas/SummaryMessage'
+        enrichments:
+          type: object
+          description: Enrichment data for the summary.
+          properties:
+            raw:
+              type: string
+              description: Raw enrichment text.
+        followups:
+          type: array
+          description: Follow-up questions.
+          items:
+            type: string
+        entities_info:
+          type: object
+          description: Information about entities mentioned in the summary.
+          additionalProperties:
+            $ref: '#/components/schemas/EntityInfo'
+    SummaryMessage:
+      type: object
+      description: A single paragraph or section in the summary.
+      properties:
+        type:
+          type: string
+          description: Type of the summary section (e.g., paragraph, token).
+        data:
+          type: string
+          description: The text content of the summary section.
+    EntityInfo:
+      type: object
+      description: Information about a named entity in the summary.
+      properties:
+        provider:
+          type: string
+          description: Data provider for the entity.
+        description:
+          type: string
+          description: Short description of the entity.
+        thumbnail:
+          $ref: '#/components/schemas/Thumbnail'
+        url:
+          type: string
+          description: URL for more info about the entity.
+          format: uri
+    # ─── Location (for Local) ───
+    LocationResult:
+      type: object
+      description: A local/location result.
+      properties:
+        type:
+          type: string
+          description: The result type.
+        id:
+          type: string
+          description: Unique identifier for the location.
+        provider_url:
+          type: string
+          description: URL of the location on the data provider.
+          format: uri
+        coordinates:
+          type: array
+          description: "Geographic coordinates [latitude, longitude]."
+          items:
+            type: number
+            format: double
+        zoom_level:
+          type: integer
+          description: Map zoom level for the location.
+        thumbnail:
+          $ref: '#/components/schemas/Thumbnail'
+        postal_address:
+          type: object
+          description: Postal address of the location.
+          properties:
+            type:
+              type: string
+              description: Address type.
+            country:
+              type: string
+              description: Country.
+            region:
+              type: string
+              description: Region/state.
+            postal_code:
+              type: string
+              description: Postal/ZIP code.
+            city:
+              type: string
+              description: City.
+            street_address:
+              type: string
+              description: Street address.
+            display_address:
+              type: string
+              description: Formatted display address.
+        opening_hours:
+          type: object
+          description: Opening hours information.
+          properties:
+            current_day:
+              type: array
+              description: Opening hours for the current day.
+              items:
+                type: object
+                properties:
+                  opens:
+                    type: string
+                    description: Opening time.
+                  closes:
+                    type: string
+                    description: Closing time.
+            days:
+              type: object
+              description: Opening hours by day of the week.
+              additionalProperties:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    opens:
+                      type: string
+                      description: Opening time.
+                    closes:
+                      type: string
+                      description: Closing time.
+        contact:
+          type: object
+          description: Contact information.
+          properties:
+            email:
+              type: string
+              description: Email address.
+            telephone:
+              type: string
+              description: Phone number.
+        price_range:
+          type: string
+          description: Price range indicator (e.g., "$$").
+        rating:
+          type: object
+          description: Rating information.
+          properties:
+            rating_value:
+              type: number
+              format: double
+              description: Average rating value.
+            best_rating:
+              type: number
+              format: double
+              description: Maximum possible rating.
+            review_count:
+              type: integer
+              description: Number of reviews.
+            profile:
+              $ref: '#/components/schemas/Profile'
+            is_tripadvisor:
+              type: boolean
+              description: Whether this rating is from TripAdvisor.
+        reviews:
+          type: array
+          description: List of reviews.
+          items:
+            type: object
+            properties:
+              author:
+                type: string
+                description: Review author.
+              title:
+                type: string
+                description: Review title.
+              date:
+                type: string
+                description: Review date.
+              description:
+                type: string
+                description: Review text.
+              rating:
+                type: object
+                properties:
+                  rating_value:
+                    type: number
+                    format: double
+                    description: Rating value.
+                  best_rating:
+                    type: number
+                    format: double
+                    description: Maximum rating.
+        timezone:
+          type: string
+          description: Timezone of the location.
+        timezone_offset:
+          type: string
+          description: Timezone UTC offset.
+        categories:
+          type: array
+          description: Categories/tags for the location.
+          items:
+            type: string
+        serves_cuisine:
+          type: array
+          description: Cuisine types served (for restaurants).
+          items:
+            type: string
+        name:
+          type: string
+          description: Name of the location.
+        description:
+          type: string
+          description: Description of the location.
+    Locations:
+      type: object
+      description: Container for local/location results.
+      properties:
+        type:
+          type: string
+          description: The type identifier.
+        results:
+          type: array
+          description: List of location results.
+          items:
+            $ref: '#/components/schemas/LocationResult'
+    # ─── Mixed / Ranking ───
+    MixedResponse:
+      type: object
+      description: Information about how results are mixed/ranked.
+      properties:
+        type:
+          type: string
+          description: The type identifier (always "mixed").
+        main:
+          type: array
+          description: Main result order, each entry references a result type and index.
+          items:
+            $ref: '#/components/schemas/ResultReference'
+        top:
+          type: array
+          description: Results placed at the top.
+          items:
+            $ref: '#/components/schemas/ResultReference'
+        side:
+          type: array
+          description: Results placed on the side.
+          items:
+            $ref: '#/components/schemas/ResultReference'
+    ResultReference:
+      type: object
+      description: Reference to a result in a specific category.
+      properties:
+        type:
+          type: string
+          description: The result type (e.g., web, videos, news, infobox).
+        index:
+          type: integer
+          description: Index of the result within its category.
+        all:
+          type: boolean
+          description: Whether all results of this type should be included.
+    # ─── Top-Level Response Types ───
+    WebSearchResponse:
+      type: object
+      description: Response from the web search endpoint.
+      properties:
+        type:
+          type: string
+          description: The type identifier.
+        discussions:
+          $ref: '#/components/schemas/Discussions'
+        faq:
+          $ref: '#/components/schemas/Faq'
+        infobox:
+          $ref: '#/components/schemas/Infobox'
+        locations:
+          $ref: '#/components/schemas/Locations'
+        mixed:
+          $ref: '#/components/schemas/MixedResponse'
+        news:
+          $ref: '#/components/schemas/NewsResults'
+        query:
+          $ref: '#/components/schemas/Query'
+        videos:
+          $ref: '#/components/schemas/VideoResults'
+        web:
+          $ref: '#/components/schemas/WebSearchResults'
+    ImageSearchResponse:
+      type: object
+      description: Response from the image search endpoint.
+      properties:
+        type:
+          type: string
+          description: The type identifier.
+        query:
+          $ref: '#/components/schemas/Query'
+        results:
+          type: array
+          description: List of image results.
+          items:
+            $ref: '#/components/schemas/ImageResult'
+    VideoSearchResponse:
+      type: object
+      description: Response from the video search endpoint.
+      properties:
+        type:
+          type: string
+          description: The type identifier.
+        query:
+          $ref: '#/components/schemas/Query'
+        results:
+          type: array
+          description: List of video results.
+          items:
+            $ref: '#/components/schemas/VideoResult'
+    NewsSearchResponse:
+      type: object
+      description: Response from the news search endpoint.
+      properties:
+        type:
+          type: string
+          description: The type identifier.
+        query:
+          $ref: '#/components/schemas/Query'
+        results:
+          type: array
+          description: List of news results.
+          items:
+            $ref: '#/components/schemas/NewsResult'
+    SuggestSearchResponse:
+      type: object
+      description: Response from the suggest/autocomplete endpoint.
+      properties:
+        type:
+          type: string
+          description: The type identifier.
+        query:
+          $ref: '#/components/schemas/Query'
+        results:
+          type: array
+          description: List of autocomplete suggestions.
+          items:
+            $ref: '#/components/schemas/SuggestResult'
+    ErrorResponse:
+      type: object
+      description: Error response from the API.
+      properties:
+        id:
+          type: string
+          description: Error identifier.
+        type:
+          type: string
+          description: Error type.
+        status:
+          type: integer
+          description: HTTP status code.
+        code:
+          type: string
+          description: Error code.
+        detail:
+          type: string
+          description: Detailed error message.
+paths:
+  /web/search:
+    get:
+      operationId: webSearch
+      summary: Web Search
+      description: |
+        Search the web using Brave Search. Returns web results, videos, news,
+        locations, infoboxes, discussions, FAQs, and related content.
+      parameters:
+        - name: q
+          in: query
+          required: true
+          description: The search query string. Maximum 400 characters and 50 words.
+          schema:
+            type: string
+        - name: country
+          in: query
+          required: false
+          description: |
+            Country code for search results (ISO 3166-1 alpha-2).
+            Used to boost results for the specified country.
+          schema:
+            type: string
+            default: us
+        - name: search_lang
+          in: query
+          required: false
+          description: |
+            Language code for search results (ISO 639-1).
+            Used to boost results in the specified language.
+          schema:
+            type: string
+            default: en
+        - name: ui_lang
+          in: query
+          required: false
+          description: User interface language preference (ISO 639-1).
+          schema:
+            type: string
+            default: en-US
+        - name: count
+          in: query
+          required: false
+          description: Number of results to return (1-20). Default is 20.
+          schema:
+            type: integer
+            default: 20
+            minimum: 1
+            maximum: 20
+        - name: offset
+          in: query
+          required: false
+          description: Zero-based offset for pagination. Maximum 9.
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+            maximum: 9
+        - name: safesearch
+          in: query
+          required: false
+          description: Filter adult content. "off", "moderate", or "strict".
+          schema:
+            type: string
+            enum:
+              - "off"
+              - moderate
+              - strict
+            default: moderate
+        - name: freshness
+          in: query
+          required: false
+          description: |
+            Filter results by discovery time. Values: pd (past day),
+            pw (past week), pm (past month), py (past year), or a date range
+            in format YYYY-MM-DDtoYYYY-MM-DD.
+          schema:
+            type: string
+        - name: text_decorations
+          in: query
+          required: false
+          description: Whether to include bold/highlighting markers in text snippets.
+          schema:
+            type: boolean
+            default: true
+        - name: spellcheck
+          in: query
+          required: false
+          description: Whether to enable spellcheck suggestions.
+          schema:
+            type: boolean
+            default: true
+        - name: result_filter
+          in: query
+          required: false
+          description: |
+            Comma-separated list of result types to include.
+            Available types: discussions, faq, infobox, news, query, summarizer, videos, web, locations.
+          schema:
+            type: string
+        - name: goggles_id
+          in: query
+          required: false
+          description: |
+            A Goggle URL to re-rank search results.
+            Goggles allow custom ranking of results.
+          schema:
+            type: string
+        - name: units
+          in: query
+          required: false
+          description: Unit system for displaying measurements. "metric" or "imperial".
+          schema:
+            type: string
+            enum:
+              - metric
+              - imperial
+        - name: extra_snippets
+          in: query
+          required: false
+          description: Whether to return up to 5 extra snippets per result.
+          schema:
+            type: boolean
+            default: false
+        - name: summary
+          in: query
+          required: false
+          description: |
+            Whether to include a summarizer key in the response.
+            The key can be used with the Summarizer endpoint.
+            Requires subscription with summarizer access.
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: Successful web search response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WebSearchResponse'
+        '401':
+          description: Unauthorized — invalid or missing API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Rate limit exceeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /images/search:
+    get:
+      operationId: imageSearch
+      summary: Image Search
+      description: Search for images using Brave Search.
+      parameters:
+        - name: q
+          in: query
+          required: true
+          description: The search query string. Maximum 400 characters and 50 words.
+          schema:
+            type: string
+        - name: country
+          in: query
+          required: false
+          description: Country code for results (ISO 3166-1 alpha-2).
+          schema:
+            type: string
+            default: us
+        - name: search_lang
+          in: query
+          required: false
+          description: Language code for results (ISO 639-1).
+          schema:
+            type: string
+            default: en
+        - name: count
+          in: query
+          required: false
+          description: Number of results to return (1-150). Default is 50.
+          schema:
+            type: integer
+            default: 50
+            minimum: 1
+            maximum: 150
+        - name: safesearch
+          in: query
+          required: false
+          description: Filter adult content.
+          schema:
+            type: string
+            enum:
+              - "off"
+              - moderate
+              - strict
+            default: moderate
+        - name: spellcheck
+          in: query
+          required: false
+          description: Whether to enable spellcheck suggestions.
+          schema:
+            type: boolean
+            default: true
+      responses:
+        '200':
+          description: Successful image search response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImageSearchResponse'
+        '401':
+          description: Unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Rate limit exceeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /videos/search:
+    get:
+      operationId: videoSearch
+      summary: Video Search
+      description: Search for videos using Brave Search.
+      parameters:
+        - name: q
+          in: query
+          required: true
+          description: The search query string. Maximum 400 characters and 50 words.
+          schema:
+            type: string
+        - name: country
+          in: query
+          required: false
+          description: Country code for results (ISO 3166-1 alpha-2).
+          schema:
+            type: string
+            default: us
+        - name: search_lang
+          in: query
+          required: false
+          description: Language code for results (ISO 639-1).
+          schema:
+            type: string
+            default: en
+        - name: count
+          in: query
+          required: false
+          description: Number of results to return (1-50). Default is 20.
+          schema:
+            type: integer
+            default: 20
+            minimum: 1
+            maximum: 50
+        - name: offset
+          in: query
+          required: false
+          description: Zero-based offset for pagination.
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - name: safesearch
+          in: query
+          required: false
+          description: Filter adult content.
+          schema:
+            type: string
+            enum:
+              - "off"
+              - moderate
+              - strict
+            default: moderate
+        - name: freshness
+          in: query
+          required: false
+          description: Filter by time (pd, pw, pm, py, or YYYY-MM-DDtoYYYY-MM-DD).
+          schema:
+            type: string
+        - name: spellcheck
+          in: query
+          required: false
+          description: Whether to enable spellcheck suggestions.
+          schema:
+            type: boolean
+            default: true
+      responses:
+        '200':
+          description: Successful video search response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VideoSearchResponse'
+        '401':
+          description: Unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Rate limit exceeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /news/search:
+    get:
+      operationId: newsSearch
+      summary: News Search
+      description: Search for news articles using Brave Search.
+      parameters:
+        - name: q
+          in: query
+          required: true
+          description: The search query string. Maximum 400 characters and 50 words.
+          schema:
+            type: string
+        - name: country
+          in: query
+          required: false
+          description: Country code for results (ISO 3166-1 alpha-2).
+          schema:
+            type: string
+            default: us
+        - name: search_lang
+          in: query
+          required: false
+          description: Language code for results (ISO 639-1).
+          schema:
+            type: string
+            default: en
+        - name: count
+          in: query
+          required: false
+          description: Number of results to return (1-50). Default is 20.
+          schema:
+            type: integer
+            default: 20
+            minimum: 1
+            maximum: 50
+        - name: offset
+          in: query
+          required: false
+          description: Zero-based offset for pagination.
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - name: safesearch
+          in: query
+          required: false
+          description: Filter adult content.
+          schema:
+            type: string
+            enum:
+              - "off"
+              - moderate
+              - strict
+            default: moderate
+        - name: freshness
+          in: query
+          required: false
+          description: Filter by time (pd, pw, pm, py, or YYYY-MM-DDtoYYYY-MM-DD).
+          schema:
+            type: string
+        - name: spellcheck
+          in: query
+          required: false
+          description: Whether to enable spellcheck suggestions.
+          schema:
+            type: boolean
+            default: true
+        - name: extra_snippets
+          in: query
+          required: false
+          description: Whether to return extra snippets per result.
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: Successful news search response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewsSearchResponse'
+        '401':
+          description: Unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Rate limit exceeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /suggest/search:
+    get:
+      operationId: suggest
+      summary: Suggest (Autocomplete)
+      description: Get autocomplete suggestions for a partial search query.
+      parameters:
+        - name: q
+          in: query
+          required: true
+          description: The partial search query for suggestions.
+          schema:
+            type: string
+        - name: country
+          in: query
+          required: false
+          description: Country code for results (ISO 3166-1 alpha-2).
+          schema:
+            type: string
+            default: us
+        - name: search_lang
+          in: query
+          required: false
+          description: Language code for results (ISO 639-1).
+          schema:
+            type: string
+            default: en
+        - name: count
+          in: query
+          required: false
+          description: Number of suggestions to return.
+          schema:
+            type: integer
+            default: 5
+            minimum: 1
+            maximum: 20
+        - name: rich
+          in: query
+          required: false
+          description: Whether to include rich suggestions with descriptions and images.
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: Successful suggest response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuggestSearchResponse'
+        '401':
+          description: Unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Rate limit exceeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /summarizer/search:
+    get:
+      operationId: summarize
+      summary: Summarizer
+      description: |
+        Get an AI-generated summary for a search query.
+        Requires a summarizer key obtained from the web search endpoint
+        (pass summary=true to web search first). The key is found in the
+        web search response under the summarizer field.
+      parameters:
+        - name: key
+          in: query
+          required: true
+          description: |
+            The summarizer key obtained from a prior web search response.
+            Get this by passing summary=true to the web search endpoint.
+          schema:
+            type: string
+        - name: entity_info
+          in: query
+          required: false
+          description: Whether to include entity information in the summary.
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: Successful summarizer response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SummarizerSearchResult'
+        '401':
+          description: Unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Invalid summarizer key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Rate limit exceeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'

@@ -1,0 +1,600 @@
+openapi: 3.0.2
+info:
+  title: Voyage API
+  description: 'The VoyageAI REST API. Please see https://docs.voyageai.com/reference
+    for more details.
+
+    '
+  version: '1.1'
+  contact:
+    name: VoyageAI Support
+    url: https://docs.voyageai.com/docs/faq
+    email: contact@voyageai.com
+  license:
+    name: MIT
+    url: https://github.com/voyage-ai/openapi/blob/main/LICENSE
+servers:
+- url: https://api.voyageai.com/v1
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: 'Authorization: Bearer'
+      x-default: $VOYAGE_API_KEY
+security:
+- ApiKeyAuth: []
+tags:
+- name: Endpoints
+paths:
+  /embeddings:
+    post:
+      tags:
+      - Endpoints
+      summary: Text embedding models
+      description: Voyage text embedding endpoint receives as input a string (or a
+        list of strings) and other arguments such as the preferred model name, and
+        returns a response containing a list of embeddings.
+      operationId: embeddings-api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - input
+              - model
+              properties:
+                input:
+                  type: object
+                  description: 'A single text string, or a list of texts as a list
+                    of strings, such as `["I like cats", "I also like dogs"]`. Currently,
+                    we have two constraints on the list: <ul>  <li> The maximum length
+                    of the list is 128. </li>  <li> The total number of tokens in
+                    the list is at most 1M for `voyage-3-lite`; 320K for `voyage-3`
+                    and `voyage-2`; and 120K for `voyage-3-large`, `voyage-code-3`,
+                    `voyage-large-2-instruct`, `voyage-finance-2`, `voyage-multilingual-2`,
+                    `voyage-law-2`, and `voyage-large-2`. </li> <ul>
+
+                    '
+                  oneOf:
+                  - type: string
+                  - type: array
+                    items:
+                      type: string
+                model:
+                  type: string
+                  description: 'Name of the model. Recommended options: `voyage-3-large`,
+                    `voyage-3`, `voyage-3-lite`, `voyage-code-3`, `voyage-finance-2`,
+                    `voyage-law-2`.
+
+                    '
+                input_type:
+                  type: string
+                  description: "Type of the input text. Defaults to `null`. Other\
+                    \ options: `query`, `document`. <ul> <li> When `input_type` is\
+                    \ `null`, the embedding model directly converts the inputs (`texts`)\
+                    \ into numerical vectors. For retrieval/search purposes, where\
+                    \ a \"query\" is used to search for relevant information among\
+                    \ a collection of data referred to as \"documents,\" we recommend\
+                    \ specifying whether your inputs (`texts`) are intended as queries\
+                    \ or documents by setting `input_type` to `query` or `document`,\
+                    \ respectively. In these cases, Voyage automatically prepends\
+                    \ a prompt to your `inputs` before vectorizing them, creating\
+                    \ vectors more tailored for retrieval/search tasks. Embeddings\
+                    \ generated with and without the `input_type` argument are compatible.\
+                    \ </li> <li> For transparency, the following prompts are prepended\
+                    \ to your input. </li>\n  <ul>\n    <li> For\_<code>query</code>,\
+                    \ the prompt is <i>\"Represent the query for retrieving supporting\
+                    \ documents:\_\".</i> </li>\n    <li> For\_<code>document</code>,\
+                    \ the prompt is <i>\"Represent the document for retrieval:\_\"\
+                    .</i> </li>\n  </ul> \n<ul> <ul>\n"
+                  enum:
+                  - null
+                  - query
+                  - document
+                  nullable: true
+                  default: null
+                truncation:
+                  type: boolean
+                  description: 'Whether to truncate the input texts to fit within
+                    the context length. Defaults to `true`. <ul>  <li> If `true`,
+                    an over-length input texts will be truncated to fit within the
+                    context length, before vectorized by the embedding model. </li>  <li>
+                    If `false`, an error will be raised if any given text exceeds
+                    the context length. </li>  </ul>
+
+                    '
+                  default: true
+                output_dimension:
+                  type: integer
+                  description: 'The number of dimensions for resulting output embeddings.
+                    Defaults to `null`. <ul> <li> Most models only support a single
+                    default dimension, used when `output_dimension` is set to `null`
+                    (see output embedding dimensions <a href="https://docs.voyageai.com/docs/embeddings"
+                    target="_blank">here</a>). </li> <li> `voyage-3-large` and `voyage-code-3`
+                    support the following `output_dimension` values: 2048, 1024 (default),
+                    512, and 256. </li> </ul>
+
+                    '
+                  nullable: true
+                  default: null
+                output_dtype:
+                  type: string
+                  description: 'The data type for the embeddings to be returned. Defaults
+                    to `float`. Other options: `int8`, `uint8`, `binary`, `ubinary`.
+                    `float` is supported for all models. `int8`, `uint8`, `binary`,
+                    and `ubinary` are supported by `voyage-3-large` and `voyage-code-3`.
+                    Please see our <a href="https://docs.voyageai.com/docs/flexible-dimensions-and-quantization#quantization"
+                    target="_blank">guide</a> for more details about output data types.
+                    <ul> <li> `float`: Each returned embedding is a list of 32-bit
+                    (4-byte) <a href="https://en.wikipedia.org/wiki/Single-precision_floating-point_format"
+                    target="_blank">single-precision floating-point</a> numbers. This
+                    is the default and provides the highest precision / retrieval
+                    accuracy. </li> <li> `int8` and `uint8`: Each returned embedding
+                    is a list of 8-bit (1-byte) integers ranging from -128 to 127
+                    and 0 to 255, respectively. </li> <li> `binary` and `ubinary`:
+                    Each returned embedding is a list of 8-bit integers that represent
+                    bit-packed, quantized single-bit embedding values: `int8` for
+                    `binary` and `uint8` for `ubinary`. The length of the returned
+                    list of integers is 1/8 of `output_dimension` (which is the actual
+                    dimension of the embedding). The `binary` type uses the offset
+                    binary method. Please refer to our guide for details on <a href="https://docs.voyageai.com/docs/flexible-dimensions-and-quantization#offset-binary"
+                    target="_blank">offset binary</a> and <a href="https://docs.voyageai.com/docs/flexible-dimensions-and-quantization#quantization"
+                    target="_blank">binary embeddings</a>.  </ul>
+
+                    '
+                  enum:
+                  - float
+                  - int8
+                  - uint8
+                  - binary
+                  - ubinary
+                  default: float
+                encoding_format:
+                  type: string
+                  description: "Format in which the embeddings are encoded. Defaults\
+                    \ to\_`null`. Other options: `base64`. <ul> <li> If\_`null`, each\
+                    \ embedding is an array of float numbers when `output_dtype` is\
+                    \ set to `float` and as an array of integers for all other values\
+                    \ of `output_dtype` (`int8`, `uint8`, `binary`, and `ubinary`).\
+                    \ <li> If\_`base64`, the embeddings are represented as a <a href=\"\
+                    https://docs.python.org/3/library/base64.html\" target=\"_blank\"\
+                    >Base64-encoded</a> NumPy array of: </li>\n  <ul>\n    <li> Floating-point\
+                    \ numbers (<a href=\"https://numpy.org/doc/2.1/user/basics.types.html#numerical-data-types\"\
+                    \ target=\"_blank\">numpy.float32</a>) for <code>output_dtype</code>\
+                    \ set to <code>float</code>. </li>\n    <li> Signed integers (<a\
+                    \ href=\"https://numpy.org/doc/2.1/user/basics.types.html#numerical-data-types\"\
+                    \ target=\"_blank\">numpy.int8</a>) for <code>output_dtype</code>\
+                    \ set to <code>int8</code> or <code>binary</code>. </li>\n   \
+                    \ <li> Unsigned integers (<a href=\"https://numpy.org/doc/2.1/user/basics.types.html#numerical-data-types\"\
+                    \ target=\"_blank\">numpy.uint8</a>) for <code>output_dtype</code>\
+                    \ set to <code>uint8</code> or <code>ubinary</code>. </li>\n \
+                    \ </ul> \n</ul>\n"
+                  enum:
+                  - null
+                  - base64
+                  nullable: true
+                  default: null
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                properties:
+                  object:
+                    type: string
+                    description: The object type, which is always "list".
+                  data:
+                    type: array
+                    description: An array of embedding objects.
+                    items:
+                      type: object
+                      properties:
+                        object:
+                          type: string
+                          description: The object type, which is always "embedding".
+                        embedding:
+                          type: array
+                          description: 'Each embedding is a vector represented as
+                            an array of float numbers when `output_dtype` is set to
+                            `float` and as an array of integers for all other values
+                            of `output_dtype` (`int8`, `uint8`, `binary`, and `ubinary`).
+                            The length of this vector varies depending on the specific
+                            model, `output_dimension`, and `output_dtype`.
+
+                            '
+                          items:
+                            type: number
+                        index:
+                          type: integer
+                          description: 'An integer representing the index of the embedding
+                            within the list of embeddings.
+
+                            '
+                  model:
+                    type: string
+                    description: Name of the model.
+                  usage:
+                    type: object
+                    properties:
+                      total_tokens:
+                        type: integer
+                        description: The total number of tokens used for computing
+                          the embeddings.
+        4XX:
+          description: 'Client error  <p> This indicates an issue with the request
+            format or frequency. Please see our  [Error Codes](https://docs.voyageai.com/docs/error-codes)
+            guide. </p>
+
+            '
+          content:
+            application/json:
+              schema:
+                properties:
+                  detail:
+                    type: string
+                    description: The error message.
+        5XX:
+          description: 'Server Error <p> This indicates our servers are experiencing
+            high traffic or having an unexpected issue. Please see our  [Error Codes](https://docs.voyageai.com/docs/error-codes)
+            guide. </p>
+
+            '
+  /multimodalembeddings:
+    post:
+      tags:
+      - Endpoints
+      summary: Multimodal embedding models
+      description: The Voyage multimodal embedding endpoint returns vector representations
+        for a given list of multimodal inputs consisting of text, images, or an interleaving
+        of both modalities.
+      operationId: multimodal-embeddings-api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - inputs
+              - model
+              properties:
+                inputs:
+                  type: array
+                  description: "A list of multimodal inputs to be vectorized.<br>\
+                    \ <br> A single input in the list is a dictionary containing a\
+                    \ single key\_`\"content\"`, whose value represents a sequence\
+                    \ of text and images. <ul>\n  <li> The value of\_<code>\"content\"\
+                    </code>\_is a list of dictionaries, each representing a single\
+                    \ piece of text or image. The dictionaries have four possible\
+                    \ keys:\n      <ol class=\"nested-ordered-list\">\n          <li>\
+                    \ <b>type</b>: Specifies the type of the piece of the content.\
+                    \ Allowed values are <code>text</code>, <code>image_url</code>,\
+                    \ or <code>image_base64</code>.</li>\n          <li> <b>text</b>:\
+                    \ Only present when <code>type</code> is <code>text</code>. The\
+                    \ value should be a text string.</li>\n          <li> <b>image_base64</b>:\
+                    \ Only present when <code>type</code> is <code>image_base64</code>.\
+                    \ The value should be a Base64-encoded image in the <a href=\"\
+                    https://developer.mozilla.org/en-US/docs/Web/URI/Schemes/data\"\
+                    \ target=\"_blank\">data URL</a> format <code>data:[&lt;mediatype&gt;];base64,&lt;data&gt;</code>.\
+                    \ Currently supported <code>mediatypes</code> are: <code>image/png</code>,\
+                    \ <code>image/jpeg</code>, <code>image/webp</code>, and <code>image/gif</code>.</li>\n\
+                    \          <li> <b>image_url</b>: Only present when <code>type</code>\
+                    \ is <code>image_url</code>. The value should be a URL linking\
+                    \ to the image. We support PNG, JPEG, WEBP, and GIF images.</li>\n\
+                    \      </ol>\n  </li>\n  <li> <b>Note</b>: Only one of the keys,\
+                    \ <code>image_base64</code> or <code>image_url</code>, should\
+                    \ be present in each dictionary for image data. Consistency is\
+                    \ required within a request, meaning each request should use either\
+                    \ <code>image_base64</code> or <code>image_url</code> exclusively\
+                    \ for images, not both.<br>\n  <br>\n  <details> <summary> Example\
+                    \ payload where <code>inputs</code>\_contains an image as a URL\
+                    \ </summary>\n      <br>\n      The <code>inputs</code> list contains\
+                    \ a single input, which consists of a piece of text and an image\
+                    \ (which is provided via a URL).\n      <pre><code>\n      {\n\
+                    \        \"inputs\": [\n          {   \n            \"content\"\
+                    : [\n              {   \n                \"type\": \"text\",\n\
+                    \                \"text\": \"This is a banana.\"\n           \
+                    \   },  \n              {   \n                \"type\": \"image_url\"\
+                    ,\n                \"image_url\": \"https://raw.githubusercontent.com/voyage-ai/voyage-multimodal-3/refs/heads/main/images/banana.jpg\"\
+                    \n              }   \n            ]   \n          }   \n     \
+                    \   ],  \n        \"model\": \"voyage-multimodal-3\"\n      }\n\
+                    \      </code></pre>\n  </details>\n  <details> <summary> Example\
+                    \ payload where <code>inputs</code>\_contains a Base64 image </summary>\n\
+                    \      <br>\n      Below is an equivalent example to the one above\
+                    \ where the image content is a Base64 image instead of a URL.\
+                    \ (Base64 images can be lengthy, so the example only shows a shortened\
+                    \ version.)\n      <pre><code>  \n      {\n        \"inputs\"\
+                    : [\n          {   \n            \"content\": [\n            \
+                    \  {   \n                \"type\": \"text\",\n               \
+                    \ \"text\": \"This is a banana.\"\n              },  \n      \
+                    \        {   \n                \"type\": \"image_base64\",\n \
+                    \               \"image_base64\": \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAA...\"\
+                    \n              }   \n            ]   \n          }   \n     \
+                    \   ],  \n        \"model\": \"voyage-multimodal-3\"\n      }\n\
+                    \      </code></pre>\n  </details>\n  </li>\n</ul>\n<span style=\"\
+                    font-size: 13px;\">The following constraints apply to the <code>inputs</code>\
+                    \ list:</span> <ul>\n    <li> The list must not contain more than\
+                    \ 1000 inputs. </li>\n    <li> Each image must not contain more\
+                    \ than 16 million pixels or be larger than 20 MB in size. </li>\n\
+                    \    <li> With every 560 pixels of an image being counted as a\
+                    \ token, each input in the list must not exceed 32,000 tokens,\
+                    \ and the total number of tokens across all inputs must not exceed\
+                    \ 320,000. </li>\n</ul>\n"
+                model:
+                  type: string
+                  description: 'Name of the model. Currently, the only supported model
+                    is `voyage-multimodal-3`.
+
+                    '
+                input_type:
+                  type: string
+                  description: "Type of the input. Defaults to `null`. Other options:\
+                    \ `query`, `document`. <ul> <li> When `input_type` is `null`,\
+                    \ the embedding model directly converts the `inputs` into numerical\
+                    \ vectors. For retrieval/search purposes, where a \"query\", which\
+                    \ can be text or image in this case, is used to search for relevant\
+                    \ information among a collection of data referred to as \"documents,\"\
+                    \ we recommend specifying whether your `inputs` are intended as\
+                    \ queries or documents by setting `input_type` to `query` or `document`,\
+                    \ respectively. In these cases, Voyage automatically prepends\
+                    \ a prompt to your `inputs` before vectorizing them, creating\
+                    \ vectors more tailored for retrieval/search tasks. Since inputs\
+                    \ can be multimodal, \"queries\" and \"documents\" can be text,\
+                    \ images, or an interleaving of both modalities. Embeddings generated\
+                    \ with and without the `input_type` argument are compatible. </li>\
+                    \ <li> For transparency, the following prompts are prepended to\
+                    \ your input. </li>\n  <ul>\n    <li> For\_<code>query</code>,\
+                    \ the prompt is <i>\"Represent the query for retrieving supporting\
+                    \ documents:\_\".</i> </li>\n    <li> For\_<code>document</code>,\
+                    \ the prompt is <i>\"Represent the document for retrieval:\_\"\
+                    .</i> </li>\n  </ul> \n<ul>\n"
+                  enum:
+                  - null
+                  - query
+                  - document
+                  nullable: true
+                  default: null
+                truncation:
+                  type: boolean
+                  description: 'Whether to truncate the inputs to fit within the context
+                    length. Defaults to `true`. <ul>  <li> If `true`, an over-length
+                    input will be truncated to fit within the context length before
+                    being vectorized by the embedding model. If the truncation happens
+                    in the middle of an image, the entire image will be discarded.
+                    </li> <li> If `false`, an error will be raised if any input exceeds
+                    the context length. </li>  </ul>
+
+                    '
+                  default: true
+                output_encoding:
+                  type: string
+                  description: 'Format in which the embeddings are encoded. Defaults
+                    to `null`. <ul> <li> If `null`, the embeddings are represented
+                    as a list of floating-point numbers. </li>  <li> If `base64`,
+                    the embeddings are represented as a Base64-encoded NumPy array
+                    of single-precision floats. </li>  </ul>
+
+                    '
+                  enum:
+                  - null
+                  - base64
+                  nullable: true
+                  default: null
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                properties:
+                  object:
+                    type: string
+                    description: The object type, which is always `list`.
+                  data:
+                    type: array
+                    description: An array of embedding objects.
+                    items:
+                      type: object
+                      properties:
+                        object:
+                          type: string
+                          description: The object type, which is always `embedding`.
+                        embedding:
+                          type: array
+                          description: 'The embedding vector consists of a list of
+                            floating-point numbers or a Base64-encoded NumPy array
+                            depending on `output_encoding`. The length of this vector
+                            varies depending on the specific model.
+
+                            '
+                        index:
+                          type: integer
+                          description: 'An integer representing the index of the embedding
+                            within the list of embeddings.
+
+                            '
+                  model:
+                    type: string
+                    description: Name of the model.
+                  usage:
+                    type: object
+                    properties:
+                      text_tokens:
+                        type: integer
+                        description: The total number of text tokens in the list of
+                          inputs.
+                      image_pixels:
+                        type: integer
+                        description: The total number of image pixels in the list
+                          of inputs.
+                      total_tokens:
+                        type: integer
+                        description: The combined total of text and image tokens.
+                          Every 560 pixels counts as a token.
+        4XX:
+          description: 'Client error  <p> This indicates an issue with the request
+            format or frequency. Please see our  [Error Codes](https://docs.voyageai.com/docs/error-codes)
+            guide. </p>
+
+            '
+          content:
+            application/json:
+              schema:
+                properties:
+                  detail:
+                    type: string
+                    description: The error message.
+        5XX:
+          description: 'Server Error <p> This indicates our servers are experiencing
+            high traffic or having an unexpected issue. Please see our  [Error Codes](https://docs.voyageai.com/docs/error-codes)
+            guide. </p>
+
+            '
+  /rerank:
+    post:
+      tags:
+      - Endpoints
+      summary: Rerankers
+      description: 'Voyage reranker endpoint receives as input a query, a list of
+        documents, and other arguments such as the model name, and returns a response
+        containing the reranking results.
+
+        '
+      operationId: reranker-api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - query
+              - documents
+              - model
+              properties:
+                query:
+                  type: string
+                  description: 'The query as a string. The query can contain a maximum
+                    of 4000 tokens for `rerank-2`, 2000 tokens for `rerank-2-lite`
+                    and `rerank-1`, and 1000 tokens for `rerank-lite-1`.
+
+                    '
+                documents:
+                  type: array
+                  description: "The documents to be reranked as a list of strings.\
+                    \ <ul> <li> The number of documents cannot exceed 1000. </li>\
+                    \ <li> The sum of the number of tokens in the query and the number\
+                    \ of tokens in any single document cannot exceed 16000 for `rerank-2`;\
+                    \ 8000 for `rerank-2-lite` and\_`rerank-1`; and 4000 for\_`rerank-lite-1`.\
+                    \ </li> <li> The total number of tokens, defined as \"the number\
+                    \ of query tokens \xD7 the number of documents + sum of the number\
+                    \ of tokens in all documents\", cannot exceed 600K for `rerank-2`\
+                    \ and `rerank-2-lite`, and 300K for `rerank-1` and `rerank-lite-1`.\
+                    \ Please see our <a href=\"https://docs.voyageai.com/docs/faq#what-is-the-total-number-of-tokens-for-the-rerankers\"\
+                    >FAQ</a>. </li> </ul>\n"
+                  items:
+                    type: string
+                model:
+                  type: string
+                  description: 'Name of the model. Recommended options: `rerank-2`,
+                    `rerank-2-lite`.
+
+                    '
+                top_k:
+                  type: integer
+                  description: 'The number of most relevant documents to return. If
+                    not specified, the reranking results of all documents will be
+                    returned.
+
+                    '
+                  nullable: true
+                  default: null
+                return_documents:
+                  type: boolean
+                  description: 'Whether to return the documents in the response. Defaults
+                    to `false`. <ul> <li> If `false`, the API will return a list of
+                    {"index", "relevance_score"} where "index" refers to the index
+                    of a document within the input list. </li> <li> If `true`, the
+                    API will return a list of {"index", "document", "relevance_score"}
+                    where "document" is the corresponding document from the input
+                    list. </li> </ul>
+
+                    '
+                  default: false
+                truncation:
+                  type: boolean
+                  description: "Whether to truncate the input to satisfy the \"context\
+                    \ length limit\" on the query and the documents. Defaults to `true`.\
+                    \ <ul> <li> If `true`,  the query and documents will be truncated\
+                    \ to fit within the context length limit, before processed by\
+                    \ the reranker model. </li> <li> If `false`, an error will be\
+                    \ raised when the query exceeds 4000 tokens for `rerank-2`; 2000\
+                    \ tokens `rerank-2-lite` and `rerank-1`; and 1000 tokens for `rerank-lite-1`,\
+                    \ or the sum of the number of tokens in the query and the number\
+                    \ of tokens in any single document exceeds 16000 for `rerank-2`;\
+                    \ 8000 for `rerank-2-lite` and\_`rerank-1`; and 4000 for\_`rerank-lite-1`.\
+                    \ </li> </ul>\n"
+                  default: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  object:
+                    type: string
+                    description: The object type, which is always "list".
+                  data:
+                    type: array
+                    description: 'An array of the reranking results, sorted by the
+                      descending order of relevance scores.
+
+                      '
+                    items:
+                      type: object
+                      properties:
+                        index:
+                          type: integer
+                          description: The index of the document in the input list.
+                        relevance_score:
+                          type: number
+                          description: The relevance score of the document with respect
+                            to the query.
+                        document:
+                          type: string
+                          description: 'The document string. Only returned when return_documents
+                            is set to true.
+
+                            '
+                  model:
+                    type: string
+                    description: Name of the model.
+                  usage:
+                    type: object
+                    properties:
+                      total_tokens:
+                        type: integer
+                        description: The total number of tokens used for computing
+                          the reranking.
+        4XX:
+          description: 'Client error  <p> This indicates an issue with the request
+            format or frequency. Please see our  [Error Codes](https://docs.voyageai.com/docs/error-codes)
+            guide. </p>
+
+            '
+          content:
+            application/json:
+              schema:
+                properties:
+                  detail:
+                    type: string
+                    description: The error message.
+        5XX:
+          description: 'Server Error <p> This indicates our servers are experiencing
+            high traffic or having an unexpected issue. Please see our  [Error Codes](https://docs.voyageai.com/docs/error-codes)
+            guide. </p>
+
+            '

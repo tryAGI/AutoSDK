@@ -1,0 +1,5319 @@
+openapi: 3.0.3
+info:
+  title: API
+  version: '1.0'
+servers:
+  - url: https://api.writer.com
+security:
+  - bearerAuth: []
+x-mint:
+  mcp:
+    enabled: true
+paths:
+  /v1/chat:
+    post:
+      security:
+        - bearerAuth: []
+      tags:
+        - Generation API
+      summary: Chat completion
+      description: >-
+        Generate a chat completion based on the provided messages. The response shown below is for
+        non-streaming. To learn about streaming responses, see the [chat completion
+        guide](https://dev.writer.com/home/chat-completion).
+      operationId: chat
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/chat_request'
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/chat_response'
+            text/event-stream:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/chat_completion_chunk'
+      x-codeSamples:
+        - lang: cURL
+          source: >-
+            curl --location --request POST https://api.writer.com/v1/chat \
+             --header "Authorization: Bearer <token>" \
+             --header "Content-Type: application/json" \
+            --data-raw '{"model":"palmyra-x5","messages":[{"content":"Write a memo summarizing this earnings
+            report.","role":"user"}]}'
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const chat = await client.chat.chat({
+                messages: [{ content: 'Write a memo summarizing this earnings report.', role: 'user' }],
+                model: 'palmyra-x5',
+              });
+
+              console.log(chat.id);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                # This is the default and can be omitted
+                api_key=os.environ.get("WRITER_API_KEY"),
+            )
+            chat = client.chat.chat(
+                messages=[{
+                    "content": "Write a memo summarizing this earnings report.",
+                    "role": "user",
+                }],
+                model="palmyra-x5",
+            )
+            print(chat.id)
+  /v1/completions:
+    post:
+      security:
+        - bearerAuth: []
+      tags:
+        - Generation API
+      summary: Text generation
+      description: >-
+        Generate text completions using the specified model and prompt. This endpoint is useful for text
+        generation tasks that don't require conversational context.
+      operationId: completions
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/completions_request'
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/completions_response'
+            text/event-stream:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/streaming_data'
+      x-codeSamples:
+        - lang: cURL
+          source: >-
+            curl --location --request POST https://api.writer.com/v1/completions \
+             --header "Authorization: Bearer <token>" \
+             --header "Content-Type: application/json" \
+            --data-raw '{"model":"palmyra-x-003-instruct","prompt":"Write me a short SEO article about camping
+            gear","max_tokens":150,"temperature":0.7,"top_p":0.9,"stop":["."],"best_of":1,"random_seed":42,"stream":false}'
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const completion = await client.completions.create({
+                model: 'palmyra-x-003-instruct',
+                prompt: 'Write me a short SEO article about camping gear',
+              });
+
+              console.log(completion.choices);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                # This is the default and can be omitted
+                api_key=os.environ.get("WRITER_API_KEY"),
+            )
+            completion = client.completions.create(
+                model="palmyra-x-003-instruct",
+                prompt="Write me a short SEO article about camping gear",
+            )
+            print(completion.choices)
+  /v1/models:
+    get:
+      security:
+        - bearerAuth: []
+      tags:
+        - Generation API
+      summary: List models
+      description: >-
+        Retrieve a list of available models that can be used for text generation, chat completions, and other
+        AI tasks.
+      operationId: models
+      x-mint:
+        mcp:
+          enabled: true
+          name: list-models
+          description: Get a list of available Writer AI models
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/models_response'
+      x-codeSamples:
+        - lang: cURL
+          source: |-
+            curl --location --request GET https://api.writer.com/v1/models \
+             --header "Authorization: Bearer <token>"
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const model = await client.models.list();
+
+              console.log(model.models);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                # This is the default and can be omitted
+                api_key=os.environ.get("WRITER_API_KEY"),
+            )
+            model = client.models.list()
+            print(model.models)
+  /v1/graphs:
+    get:
+      security:
+        - bearerAuth: []
+      summary: List graphs
+      description: Retrieve a list of Knowledge Graphs.
+      tags:
+        - KG API
+      operationId: findGraphsWithFileStatus
+      parameters:
+        - name: order
+          in: query
+          required: false
+          schema:
+            type: string
+            default: desc
+            enum:
+              - asc
+              - desc
+          description: Specifies the order of the results. Valid values are asc for ascending and desc for descending.
+        - name: before
+          in: query
+          required: false
+          schema:
+            type: string
+            format: uuid
+          description: >-
+            The ID of the first object in the previous page. This parameter instructs the API to return the
+            previous page of results.
+        - name: after
+          in: query
+          required: false
+          schema:
+            type: string
+            format: uuid
+          description: >-
+            The ID of the last object in the previous page. This parameter instructs the API to return the
+            next page of results.
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 50
+          description: >-
+            Specifies the maximum number of objects returned in a page. The default value is 50. The minimum
+            value is 1, and the maximum value is 100.
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/graphs_response'
+      x-codeSamples:
+        - lang: cURL
+          source: |-
+            curl --location --request GET https://api.writer.com/v1/graphs \
+             --header "Authorization: Bearer <token>"
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              // Automatically fetches more pages as needed.
+              for await (const graph of client.graphs.list()) {
+                console.log(graph.id);
+              }
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                # This is the default and can be omitted
+                api_key=os.environ.get("WRITER_API_KEY"),
+            )
+            page = client.graphs.list()
+            page = page.data[0]
+            print(page.id)
+    post:
+      security:
+        - bearerAuth: []
+      summary: Create graph
+      description: Create a new Knowledge Graph.
+      tags:
+        - KG API
+      operationId: createGraph
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/graph_request'
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/graph_response'
+      x-codeSamples:
+        - lang: cURL
+          source: |-
+            curl --location --request POST https://api.writer.com/v1/graphs \
+             --header "Authorization: Bearer <token>" \
+             --header "Content-Type: application/json" \
+            --data-raw '{"name":"string"}'
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const graph = await client.graphs.create({ name: 'name' });
+
+              console.log(graph.id);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                # This is the default and can be omitted
+                api_key=os.environ.get("WRITER_API_KEY"),
+            )
+            graph = client.graphs.create(
+                name="name",
+            )
+            print(graph.id)
+  /v1/graphs/question:
+    post:
+      security:
+        - bearerAuth: []
+      summary: Question
+      description: Ask a question to specified Knowledge Graphs.
+      tags:
+        - KG API
+      operationId: question
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/question_request'
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/question_response'
+              example:
+                question: What is the generic name for the drug Bavencio?
+                answer: avelumab
+                sources:
+                  - file_id: '1234'
+                    snippet: Bavencio is the brand name for avelumab.
+            text/event-stream:
+              schema:
+                $ref: '#/components/schemas/question_response_chunk'
+      x-codeSamples:
+        - lang: cURL
+          source: >-
+            curl --location --request POST https://api.writer.com/v1/graphs/question \
+             --header "Authorization: Bearer <token>" \
+             --header "Content-Type: application/json" \
+            --data-raw '{"graph_ids":["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],"question":"What is the generic
+            name for the drug Bavencio?"}'
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const question = await client.graphs.question({
+                graph_ids: ['182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e'],
+                question: 'What is the generic name for the drug Bavencio?'
+            });
+
+              console.log(question.answer);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                # This is the default and can be omitted
+                api_key=os.environ.get("WRITER_API_KEY"),
+            )
+            question = client.graphs.question(
+                graph_ids=["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+                question="What is the generic name for the drug Bavencio?"
+            )
+            print(question.answer)
+  /v1/graphs/{graph_id}:
+    get:
+      security:
+        - bearerAuth: []
+      summary: Retrieve graph
+      description: Retrieve a Knowledge Graph.
+      tags:
+        - KG API
+      operationId: findGraphWithFileStatus
+      parameters:
+        - name: graph_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          description: The unique identifier of the Knowledge Graph.
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/graph'
+      x-codeSamples:
+        - lang: cURL
+          source: |-
+            curl --location --request GET https://api.writer.com/v1/graphs/{graph_id} \
+             --header "Authorization: Bearer <token>"
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const graph = await client.graphs.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
+
+              console.log(graph.id);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                # This is the default and can be omitted
+                api_key=os.environ.get("WRITER_API_KEY"),
+            )
+            graph = client.graphs.retrieve(
+                "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            )
+            print(graph.id)
+    put:
+      security:
+        - bearerAuth: []
+      summary: Update graph
+      description: Update the name and description of a Knowledge Graph.
+      tags:
+        - KG API
+      operationId: updateGraph
+      parameters:
+        - name: graph_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          description: The unique identifier of the Knowledge Graph.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update_graph_request'
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/graph_response'
+      x-codeSamples:
+        - lang: cURL
+          source: >-
+            curl --location --request PUT https://api.writer.com/v1/graphs/{graph_id} \
+             --header "Authorization: Bearer <token>" \
+             --header "Content-Type: application/json" \
+            --data-raw '{"name":"string", "description":"string", "urls":[{"url":"https://example.com/docs",
+            "type":"sub_pages", "exclude_urls":["https://example.com/docs/private"]}]}'
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const graph = await client.graphs.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', 
+                { name: 'name', description: 'description' }
+              );
+
+              console.log(graph.id);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                # This is the default and can be omitted
+                api_key=os.environ.get("WRITER_API_KEY"),
+            )
+            graph = client.graphs.update(
+                graph_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                name="name",
+                description="description",
+            )
+            print(graph.id)
+    delete:
+      security:
+        - bearerAuth: []
+      summary: Delete graph
+      description: Delete a Knowledge Graph.
+      tags:
+        - KG API
+      operationId: deleteGraph
+      parameters:
+        - name: graph_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          description: The unique identifier of the Knowledge Graph.
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delete_graph_response'
+              example:
+                id: e7392337-1c4e-4bc9-aaf5-b719bf1e938a
+                deleted: true
+      x-codeSamples:
+        - lang: cURL
+          source: |-
+            curl --location --request DELETE https://api.writer.com/v1/graphs/{graph_id} \
+             --header "Authorization: Bearer <token>"
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const graph = await client.graphs.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
+
+              console.log(graph.id);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                # This is the default and can be omitted
+                api_key=os.environ.get("WRITER_API_KEY"),
+            )
+            graph = client.graphs.delete(
+                "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            )
+            print(graph.id)
+  /v1/graphs/{graph_id}/file:
+    post:
+      security:
+        - bearerAuth: []
+      summary: Add file to graph
+      description: Add a file to a Knowledge Graph.
+      tags:
+        - KG API
+      operationId: addFileToGraph
+      parameters:
+        - name: graph_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          description: The unique identifier of the Knowledge Graph.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/graph_file_request'
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/file_response'
+      x-codeSamples:
+        - lang: cURL
+          source: |-
+            curl --location --request POST https://api.writer.com/v1/graphs/{graph_id}/file \
+             --header "Authorization: Bearer <token>" \
+             --header "Content-Type: application/json" \
+            --data-raw '{"file_id":"string"}'
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const file = await client.graphs.addFileToGraph('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
+                file_id: 'file_id',
+              });
+
+              console.log(file.id);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                # This is the default and can be omitted
+                api_key=os.environ.get("WRITER_API_KEY"),
+            )
+            file = client.graphs.add_file_to_graph(
+                graph_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                file_id="file_id",
+            )
+            print(file.id)
+  /v1/graphs/{graph_id}/file/{file_id}:
+    delete:
+      security:
+        - bearerAuth: []
+      summary: Remove file from graph
+      description: Remove a file from a Knowledge Graph.
+      tags:
+        - KG API
+      operationId: removeFileFromGraph
+      parameters:
+        - name: graph_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          description: The unique identifier of the Knowledge Graph to which the files belong.
+        - name: file_id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The unique identifier of the file.
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delete_file_response'
+              example:
+                id: 7c36a365-392f-43ba-840d-8f3103b42572
+                deleted: true
+      x-codeSamples:
+        - lang: cURL
+          source: |-
+            curl --location --request DELETE https://api.writer.com/v1/graphs/{graph_id}/file/{file_id} \
+             --header "Authorization: Bearer <token>"
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const response = await client.graphs.removeFileFromGraph('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', 'file_id');
+
+              console.log(response.id);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                # This is the default and can be omitted
+                api_key=os.environ.get("WRITER_API_KEY"),
+            )
+            response = client.graphs.remove_file_from_graph(
+                file_id="file_id",
+                graph_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            )
+            print(response.id)
+  /v1/files/{file_id}:
+    get:
+      security:
+        - bearerAuth: []
+      summary: Retrieve file
+      description: >-
+        Retrieve detailed information about a specific file, including its metadata, status, and associated
+        graphs.
+      tags:
+        - File API
+      operationId: gatewayGetFile
+      parameters:
+        - name: file_id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The unique identifier of the file.
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/file_response'
+              example:
+                id: 7c36a365-392f-43ba-840d-8f3103b42572
+                created_at: '2024-07-10T13:34:28.301201Z'
+                name: example.pdf
+                graph_ids:
+                  - 704ffd94-de04-4de2-9f8b-f9fc04831edd
+                status: completed
+      x-codeSamples:
+        - lang: cURL
+          source: |-
+            curl --location --request GET https://api.writer.com/v1/files/{file_id} \
+             --header "Authorization: Bearer <token>"
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const file = await client.files.retrieve('file_id');
+
+              console.log(file.id);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                # This is the default and can be omitted
+                api_key=os.environ.get("WRITER_API_KEY"),
+            )
+            file = client.files.retrieve(
+                "file_id",
+            )
+            print(file.id)
+    delete:
+      security:
+        - bearerAuth: []
+      summary: Delete file
+      description: Permanently delete a file from the system. This action cannot be undone.
+      tags:
+        - File API
+      operationId: gatewayDeleteFile
+      parameters:
+        - name: file_id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The unique identifier of the file.
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delete_file_response'
+              example:
+                id: 7c36a365-392f-43ba-840d-8f3103b42572
+                deleted: true
+      x-codeSamples:
+        - lang: cURL
+          source: |-
+            curl --location --request DELETE https://api.writer.com/v1/files/{file_id} \
+             --header "Authorization: Bearer <token>"
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const file = await client.files.delete('file_id');
+
+              console.log(file.id);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                # This is the default and can be omitted
+                api_key=os.environ.get("WRITER_API_KEY"),
+            )
+            file = client.files.delete(
+                "file_id",
+            )
+            print(file.id)
+  /v1/files:
+    get:
+      security:
+        - bearerAuth: []
+      summary: List files
+      description: >-
+        Retrieve a paginated list of files with optional filtering by status, graph association, and file
+        type.
+      tags:
+        - File API
+      operationId: gatewayGetFiles
+      parameters:
+        - name: before
+          in: query
+          required: false
+          schema:
+            type: string
+          description: >-
+            The ID of the first object in the previous page. This parameter instructs the API to return the
+            previous page of results.
+        - name: after
+          in: query
+          required: false
+          schema:
+            type: string
+          description: >-
+            The ID of the last object in the previous page. This parameter instructs the API to return the
+            next page of results.
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 50
+          description: >-
+            Specifies the maximum number of objects returned in a page. The default value is 50. The minimum
+            value is 1, and the maximum value is 100.
+        - name: order
+          in: query
+          required: false
+          schema:
+            type: string
+            default: desc
+            enum:
+              - asc
+              - desc
+          description: Specifies the order of the results. Valid values are asc for ascending and desc for descending.
+        - name: graph_id
+          in: query
+          required: false
+          schema:
+            type: string
+            format: uuid
+          description: The unique identifier of the graph to which the files belong.
+        - name: status
+          in: query
+          required: false
+          schema:
+            enum:
+              - in_progress
+              - completed
+              - failed
+          description: Specifies the status of the files to retrieve. Valid values are in_progress, completed or failed.
+        - name: file_types
+          in: query
+          required: false
+          schema:
+            type: string
+          description: >-
+            The extensions of the files to retrieve. Separate multiple extensions with a comma. For example:
+            `pdf,jpg,docx`.
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/files_response'
+              example:
+                data:
+                  - id: 7c36a365-392f-43ba-840d-8f3103b42572
+                    name: example.pdf
+                    created_at: '2024-07-10T12:00:00Z'
+                    graph_ids:
+                      - 31a8b75a-9a90-432f-8861-942229125333
+                    status: in_progress
+                  - id: 4bbe6207-737e-486f-a287-c5e95536984a
+                    name: image.jpg
+                    created_at: '2024-07-09T15:30:00Z'
+                    graph_ids:
+                      - 31a8b75a-9a90-432f-8861-942229125333
+                    status: completed
+                  - id: efc86bb4-30a4-40c9-a52a-ecee0d7e071f
+                    name: document.txt
+                    created_at: '2024-07-08T16:00:00Z'
+                    graph_ids:
+                      - 31a8b75a-9a90-432f-8861-942229125333
+                    status: failed
+                has_more: false
+                first_id: 7c36a365-392f-43ba-840d-8f3103b42572
+                last_id: efc86bb4-30a4-40c9-a52a-ecee0d7e071f
+      x-codeSamples:
+        - lang: cURL
+          source: |-
+            curl --location --request GET https://api.writer.com/v1/files \
+             --header "Authorization: Bearer <token>"
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              // Automatically fetches more pages as needed.
+              for await (const file of client.files.list()) {
+                console.log(file.id);
+              }
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                # This is the default and can be omitted
+                api_key=os.environ.get("WRITER_API_KEY"),
+            )
+            page = client.files.list()
+            page = page.data[0]
+            print(page.id)
+    post:
+      security:
+        - bearerAuth: []
+      summary: Upload file
+      description: >-
+        Upload a new file to the system. Supports various file formats including PDF, DOC, DOCX, PPT, PPTX,
+        JPG, PNG, EML, HTML, SRT, CSV, XLS, and XLSX.
+      tags:
+        - File API
+      operationId: gatewayUploadFile
+      parameters:
+        - name: Content-Disposition
+          in: header
+          required: true
+          schema:
+            type: string
+          description: >-
+            The disposition type of the file, typically used to indicate the form-data name. Use `attachment`
+            with the filename parameter to specify the name of the file, for example: `attachment;
+            filename=example.pdf`.
+        - name: Content-Type
+          in: header
+          required: true
+          schema:
+            type: string
+          description: >-
+            The [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/MIME_types/Common_types) of the
+            file being uploaded. Supports `txt`, `doc`, `docx`, `ppt`, `pptx`, `jpg`, `png`, `eml`, `html`,
+            `pdf`, `srt`, `csv`, `xls`, `xlsx`, `mp3`, and `mp4` file extensions.
+        - name: Content-Length
+          in: header
+          required: true
+          schema:
+            type: integer
+            format: int64
+          description: The size of the file in bytes.
+        - name: graphId
+          in: query
+          required: false
+          schema:
+            type: string
+            format: uuid
+          description: >-
+            The unique identifier of the Knowledge Graph to associate the uploaded file with.
+
+
+            Note: The response from the upload endpoint does not include the `graphId` field, but the
+            association will be visible when you retrieve the file using the file retrieval endpoint.
+      requestBody:
+        content:
+          text/plain:
+            schema:
+              type: string
+              format: binary
+          application/msword:
+            schema:
+              type: string
+              format: binary
+          application/vnd.openxmlformats-officedocument.wordprocessingml.document:
+            schema:
+              type: string
+              format: binary
+          application/vnd.ms-powerpoint:
+            schema:
+              type: string
+              format: binary
+          application/vnd.openxmlformats-officedocument.presentationml.presentation:
+            schema:
+              type: string
+              format: binary
+          image/jpeg:
+            schema:
+              type: string
+              format: binary
+          image/png:
+            schema:
+              type: string
+              format: binary
+          message/rfc822:
+            schema:
+              type: string
+              format: binary
+          text/html:
+            schema:
+              type: string
+              format: binary
+          application/pdf:
+            schema:
+              type: string
+              format: binary
+          application/x-subrip:
+            schema:
+              type: string
+              format: binary
+          text/csv:
+            schema:
+              type: string
+              format: binary
+          application/vnd.ms-excel:
+            schema:
+              type: string
+              format: binary
+          application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/file_response'
+      x-codeSamples:
+        - lang: cURL
+          source: |-
+            curl --location --request POST https://api.writer.com/v1/files \
+             --header "Authorization: Bearer <token>"
+             --header "Accept: */*" \
+             --header "Content-Disposition: attachment; filename=descriptions.pdf" \
+             --header "Content-Length: size_in_bytes" \
+             --header "Content-Type: application/pdf" \
+             --data-binary "@descriptions.pdf"
+        - lang: JavaScript
+          source: |-
+            import fs from 'fs';
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const file = await client.files.upload({
+                content: fs.createReadStream('path/to/file/descriptions.pdf'),
+                'Content-Disposition': 'attachment; filename=descriptions.pdf',
+                'Content-Type': 'application/pdf',
+              });
+
+              console.log(file.id);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from pathlib import Path
+            from writerai import Writer
+
+            client = Writer(
+                # This is the default and can be omitted
+                api_key=os.environ.get("WRITER_API_KEY"),
+            )
+            file = client.files.upload(
+                content=Path('/path/to/file/descriptions.pdf'),
+                content_disposition="attachment; filename=descriptions.pdf",
+                content_type="application/pdf"
+            )
+            print(file.id)
+  /v1/files/{file_id}/download:
+    get:
+      security:
+        - bearerAuth: []
+      tags:
+        - File API
+      summary: Download file
+      description: >-
+        Download the binary content of a file. The response will contain the file data in the appropriate MIME
+        type.
+      operationId: gatewayDownloadFile
+      parameters:
+        - name: file_id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The unique identifier of the file.
+      responses:
+        '200':
+          description: File download successful
+          headers:
+            Content-Type:
+              description: The MIME type of the file being downloaded
+              required: true
+              schema:
+                type: object
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+              examples:
+                fileDownloadExample:
+                  summary: Example binary file download
+                  value: File contents
+      x-codeSamples:
+        - lang: cURL
+          source: |-
+            curl --location --request GET https://api.writer.com/v1/files/{file_id}/download \
+             --header "Authorization: Bearer <token>"
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const response = await client.files.download('file_id');
+
+              console.log(response);
+
+              const content = await response.blob();
+              console.log(content);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                # This is the default and can be omitted
+                api_key=os.environ.get("WRITER_API_KEY"),
+            )
+            response = client.files.download(
+                "file_id",
+            )
+            print(response)
+            content = response.read()
+            print(content)
+  /v1/files/retry:
+    post:
+      security:
+        - bearerAuth: []
+      tags:
+        - File API
+      summary: Retry failed files
+      description: >-
+        Retry processing of files that previously failed to process. This will re-attempt the processing of
+        the specified files.
+      operationId: gatewayRetryFailedFiles
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/retry_files_request'
+        required: true
+      responses:
+        '200':
+          description: The retry request is being processed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/retry_files_response'
+              example:
+                success: true
+      x-codeSamples:
+        - lang: cURL
+          source: |-
+            curl --location --request POST https://api.writer.com/v1/files/retry \
+             --header "Authorization: Bearer <token>" \
+             --header "Content-Type: application/json" \
+             --data-raw '{"file_ids":["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e", "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e", "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"]}'
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const response = await client.files.retry({
+                file_ids: [
+                  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+                  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+                  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+                ],
+              });
+
+              console.log(response.success);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                # This is the default and can be omitted
+                api_key=os.environ.get("WRITER_API_KEY"),
+            )
+            response = client.files.retry(
+                file_ids=["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e", "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e", "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            )
+            print(response.success)
+  /v1/applications:
+    get:
+      security:
+        - bearerAuth: []
+      tags:
+        - Generation API
+      summary: List applications
+      description: >-
+        Retrieves a paginated list of no-code agents (formerly called no-code applications) with optional
+        filtering and sorting capabilities.
+      parameters:
+        - name: order
+          in: query
+          required: false
+          description: Sort order for the results based on creation time.
+          schema:
+            type: string
+            default: desc
+            enum:
+              - asc
+              - desc
+        - name: before
+          in: query
+          required: false
+          description: Return results before this application ID for pagination.
+          schema:
+            type: string
+            format: uuid
+        - name: after
+          in: query
+          required: false
+          description: Return results after this application ID for pagination.
+          schema:
+            type: string
+            format: uuid
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of applications to return in the response.
+          schema:
+            type: integer
+            format: int32
+            default: 50
+        - name: type
+          in: query
+          required: false
+          description: Filter applications by their type.
+          schema:
+            $ref: '#/components/schemas/application_type'
+            default: generation
+      responses:
+        '200':
+          description: Successfully retrieved list of applications.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/get_applications_response'
+      x-codeSamples:
+        - lang: cURL
+          source: |-
+            curl --location --request GET https://api.writer.com/v1/applications \
+             --header "Authorization: Bearer <token>"
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              // Automatically fetches more pages as needed.
+              for await (const applicationListResponse of client.applications.list()) {
+                console.log(applicationListResponse.id);
+              }
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                api_key=os.environ.get("WRITER_API_KEY"),  # This is the default and can be omitted
+            )
+            page = client.applications.list()
+            page = page.data[0]
+            print(page.id)
+  /v1/applications/{application_id}:
+    get:
+      security:
+        - bearerAuth: []
+      tags:
+        - Generation API
+      summary: Application details
+      description: >-
+        Retrieves detailed information for a specific no-code agent (formerly called no-code applications),
+        including its configuration and current status.
+      parameters:
+        - name: application_id
+          in: path
+          required: true
+          description: Unique identifier of the application to retrieve.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved application details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/application_with_inputs'
+      x-codeSamples:
+        - lang: cURL
+          source: |-
+            curl --location --request GET https://api.writer.com/v1/applications/{application_id} \
+             --header "Authorization: Bearer <token>"
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const application = await client.applications.retrieve('application_id');
+
+              console.log(application.id);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                api_key=os.environ.get("WRITER_API_KEY"),  # This is the default and can be omitted
+            )
+            application = client.applications.retrieve(
+                "application_id",
+            )
+            print(application.id)
+    post:
+      security:
+        - bearerAuth: []
+      tags:
+        - Generation API
+      summary: Generate from application
+      description: Generate content from an existing no-code agent (formerly called no-code applications) with inputs.
+      operationId: generateContent
+      parameters:
+        - name: application_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          description: The unique identifier of a [no-code agent](/no-code/introduction) in AI Studio.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/generate_application_request'
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/generate_application_response'
+              example:
+                title: Alt text
+                suggestion: A modern dining room with a minimalist design.
+            text/event-stream:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/generate_application_response_chunk'
+      x-codeSamples:
+        - lang: cURL
+          source: |-
+            curl --location --request POST https://api.writer.com/v1/applications/{application_id} \
+             --header "Authorization: Bearer <token>" \
+             --header "Content-Type: application/json" \
+            --data-raw '{"inputs":[{"id": "Image ID", "value": ["12345"]}]}'
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const response = await client.applications.generateContent('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
+                inputs: [
+                  { id: 'id', value: ['string', 'string', 'string'] },
+                  { id: 'id', value: ['string', 'string', 'string'] },
+                  { id: 'id', value: ['string', 'string', 'string'] },
+                ],
+              });
+
+              console.log(response.suggestion);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                # This is the default and can be omitted
+                api_key=os.environ.get("WRITER_API_KEY"),
+            )
+            response = client.applications.generate_content(
+                application_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                inputs=[{
+                    "id": "id",
+                    "value": ["string", "string", "string"],
+                }, {
+                    "id": "id",
+                    "value": ["string", "string", "string"],
+                }, {
+                    "id": "id",
+                    "value": ["string", "string", "string"],
+                }],
+            )
+            print(response.suggestion)
+  /v1/applications/{application_id}/jobs:
+    get:
+      tags:
+        - template
+      summary: Retrieve all jobs
+      description: Retrieve all jobs created via the async API, linked to the provided application ID (or alias).
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: application_id
+          in: path
+          description: The ID of the no-code app for which to retrieve jobs.
+          required: true
+          schema:
+            type: string
+        - name: status
+          in: query
+          required: false
+          schema:
+            $ref: '#/components/schemas/api_job_status'
+        - name: offset
+          in: query
+          description: The pagination offset for retrieving the jobs.
+          required: false
+          schema:
+            type: integer
+            format: int64
+        - name: limit
+          in: query
+          description: The pagination limit for retrieving the jobs.
+          required: false
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/get_async_application_jobs_response'
+      x-codeSamples:
+        - lang: cURL
+          source: |-
+            curl --location --request GET https://api.writer.com/v1/applications/{application_id}/jobs \
+             --header "Authorization: Bearer <token>"
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              // Automatically fetches more pages as needed.
+              for await (const applicationGenerateAsyncResponse of client.applications.jobs.list('application_id')) {
+                console.log(applicationGenerateAsyncResponse.id);
+              }
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                api_key=os.environ.get("WRITER_API_KEY"),  # This is the default and can be omitted
+            )
+            page = client.applications.jobs.list(
+                application_id="application_id",
+            )
+            page = page.result[0]
+            print(page.id)
+    post:
+      tags:
+        - template
+      summary: Generate from application (async)
+      description: >-
+        Generate content asynchronously from an existing no-code agent (formerly called no-code applications)
+        with inputs.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: application_id
+          description: The ID of the no-code app for which to create a job.
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/generate_application_async_request'
+        required: true
+      responses:
+        '202':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/generate_application_async_response'
+      x-codeSamples:
+        - lang: cURL
+          source: |-
+            curl --location --request POST https://api.writer.com/v1/applications/{application_id}/jobs \
+             --header "Authorization: Bearer <token>" \
+             --header "Content-Type: application/json" \
+            --data-raw '{"inputs":[{"id": "Image ID", "value": ["12345"]}]}'
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const job = await client.applications.jobs.create('application_id', {
+                inputs: [{ id: 'id', value: ['string'] }],
+              });
+
+              console.log(job.id);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                api_key=os.environ.get("WRITER_API_KEY"),  # This is the default and can be omitted
+            )
+            job = client.applications.jobs.create(
+                application_id="application_id",
+                inputs=[{
+                    "id": "id",
+                    "value": ["string"],
+                }],
+            )
+            print(job.id)
+  /v1/applications/jobs/{job_id}/retry:
+    post:
+      tags:
+        - template
+      summary: Retry job execution
+      description: >-
+        Re-triggers the async execution of a single job previously created via the Async api and terminated in
+        error.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: job_id
+          description: The ID of the job to retry.
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/generate_application_async_response'
+      x-codeSamples:
+        - lang: cURL
+          source: |-
+            curl --location --request POST https://api.writer.com/v1/applications/jobs/{job_id}/retry \
+             --header "Authorization: Bearer <token>"
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const response = await client.applications.jobs.retry('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
+
+              console.log(response.id);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                api_key=os.environ.get("WRITER_API_KEY"),  # This is the default and can be omitted
+            )
+            response = client.applications.jobs.retry(
+                "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            )
+            print(response.id)
+  /v1/applications/jobs/{job_id}:
+    get:
+      tags:
+        - template
+      summary: Retrieve a single job
+      description: Retrieves a single job created via the Async API.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: job_id
+          description: The ID of the job to retrieve.
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/get_async_application_job_response'
+      x-codeSamples:
+        - lang: cURL
+          source: |-
+            curl --location --request GET https://api.writer.com/v1/applications/jobs/{job_id} \
+             --header "Authorization: Bearer <token>"
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const applicationGenerateAsyncResponse = await client.applications.jobs.retrieve(
+                '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+              );
+
+              console.log(applicationGenerateAsyncResponse.id);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                api_key=os.environ.get("WRITER_API_KEY"),  # This is the default and can be omitted
+            )
+            application_generate_async_response = client.applications.jobs.retrieve(
+                "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            )
+            print(application_generate_async_response.id)
+  /v1/applications/{application_id}/graphs:
+    get:
+      tags:
+        - template
+      summary: Retrieve graphs
+      description: Retrieve Knowledge Graphs associated with a no-code agent that has chat capabilities.
+      parameters:
+        - name: application_id
+          in: path
+          description: The ID of the no-code agent for which to retrieve Knowledge Graphs.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/application_graphs_response'
+      security:
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          source: |-
+            curl --location --request GET https://api.writer.com/v1/applications/{application_id}/graphs \
+             --header "Authorization: Bearer <token>"
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const applicationGraphsResponse = await client.applications.graphs.list('application_id');
+
+              console.log(applicationGraphsResponse.graph_ids);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                api_key=os.environ.get("WRITER_API_KEY"),  # This is the default and can be omitted
+            )
+            application_graphs_response = client.applications.graphs.list(
+                "application_id",
+            )
+            print(application_graphs_response.graph_ids)
+    put:
+      tags:
+        - template
+      summary: Associate graphs
+      description: Updates the list of Knowledge Graphs associated with a no-code chat agent.
+      parameters:
+        - name: application_id
+          in: path
+          description: >-
+            The ID of the no-code agent to update.
+
+
+            Only no-code agents with chat capabilities can have associated Knowledge Graphs. No-code agents
+            with text generation and research capabilities do not support Knowledge Graphs.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/application_graph_ids_request'
+        required: true
+      responses:
+        '200':
+          description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/application_graphs_response'
+      security:
+        - bearerAuth: []
+      x-codeSamples:
+        - lang: cURL
+          source: >-
+            curl --location --request PUT https://api.writer.com/v1/applications/{application_id}/graphs \
+             --header "Authorization: Bearer <token>" \
+             --header "Content-Type: application/json" \
+            --data-raw
+            '{"graph_ids":["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e","182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e","182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"]}'
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const applicationGraphsResponse = await client.applications.graphs.update('application_id', {
+                graph_ids: ['182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e'],
+              });
+
+              console.log(applicationGraphsResponse.graph_ids);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                api_key=os.environ.get("WRITER_API_KEY"),  # This is the default and can be omitted
+            )
+            application_graphs_response = client.applications.graphs.update(
+                application_id="application_id",
+                graph_ids=["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            )
+            print(application_graphs_response.graph_ids)
+  /v1/tools/ai-detect:
+    post:
+      security:
+        - bearerAuth: []
+      tags:
+        - Tools API
+      summary: AI detection
+      description: >-
+        Detects if content is AI- or human-generated, with a confidence score. Content must have at least 350
+        characters
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ai_detection_request'
+      responses:
+        '200':
+          description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ai_detection_response'
+      x-codeSamples:
+        - lang: cURL
+          source: >-
+            curl --location --request POST https://api.writer.com/v1/tools/ai-detect \
+             --header "Authorization: Bearer <token>" \
+             --header "Content-Type: application/json" \
+            --data-raw '{"input":"AI and ML continue to be at the forefront of technological advancements. In
+            2025, we can expect more sophisticated AI systems that can handle complex tasks with greater
+            efficiency. AI will play a crucial role in various sectors, including healthcare, finance, and
+            manufacturing. For instance, AI-powered diagnostic tools will become more accurate, helping
+            doctors detect diseases at an early stage. In finance, AI algorithms will enhance fraud detection
+            and risk management."}'
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const response = await client.tools.aiDetect({
+                input:
+                  'AI and ML continue to be at the forefront of technological advancements. In 2025, we can expect more sophisticated AI systems that can handle complex tasks with greater efficiency. AI will play a crucial role in various sectors, including healthcare, finance, and manufacturing. For instance, AI-powered diagnostic tools will become more accurate, helping doctors detect diseases at an early stage. In finance, AI algorithms will enhance fraud detection and risk management.',
+              });
+
+              console.log(response.label);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                api_key=os.environ.get("WRITER_API_KEY"),  # This is the default and can be omitted
+            )
+            response = client.tools.ai_detect(
+                input="AI and ML continue to be at the forefront of technological advancements. In 2025, we can expect more sophisticated AI systems that can handle complex tasks with greater efficiency. AI will play a crucial role in various sectors, including healthcare, finance, and manufacturing. For instance, AI-powered diagnostic tools will become more accurate, helping doctors detect diseases at an early stage. In finance, AI algorithms will enhance fraud detection and risk management.",
+            )
+            print(response.label)
+  /v1/tools/comprehend/medical:
+    post:
+      security:
+        - bearerAuth: []
+      tags:
+        - Tools API
+      summary: Medical comprehend
+      description: >-
+        Analyze unstructured medical text to extract entities labeled with standardized medical codes and
+        confidence scores.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/comprehend_medical_request'
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/medical_comprehend_response'
+      x-codeSamples:
+        - lang: cURL
+          source: >-
+            curl --location --request POST https://api.writer.com/v1/tools/comprehend/medical \
+             --header "Authorization: Bearer <token>" \
+             --header "Content-Type: application/json" \
+            --data-raw '{"content":"the symptoms are soreness, a temperature and
+            cough","response_type":"Entities"}'
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const medical = await client.tools.comprehend.medical({ content: 'the symptoms are soreness, a temperature and cough', response_type: 'Entities' });
+
+              console.log(medical.entities);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                # This is the default and can be omitted
+                api_key=os.environ.get("WRITER_API_KEY"),
+            )
+            medical = client.tools.comprehend.medical(
+                content="the symptoms are soreness, a temperature and cough",
+                response_type="Entities",
+            )
+            print(medical.entities)
+  /v1/tools/context-aware-splitting:
+    post:
+      security:
+        - bearerAuth: []
+      tags:
+        - Tools API
+      summary: Context-aware text splitting
+      description: >-
+        Splits a long block of text (maximum 4000 words) into smaller chunks while preserving the semantic
+        meaning of the text and context between the chunks.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/context_aware_text_splitting_request'
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/context_aware_splitting_response'
+      x-codeSamples:
+        - lang: cURL
+          source: |-
+            curl --location --request POST https://api.writer.com/v1/tools/context-aware-splitting \
+             --header "Authorization: Bearer <token>" \
+             --header "Content-Type: application/json" \
+            --data-raw '{"text":"text to split","strategy":"llm_split"}'
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const response = await client.tools.contextAwareSplitting({ strategy: 'llm_split', text: 'text to split' });
+
+              console.log(response.chunks);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                # This is the default and can be omitted
+                api_key=os.environ.get("WRITER_API_KEY"),
+            )
+            response = client.tools.context_aware_splitting(
+                strategy="llm_split",
+                text="text to split",
+            )
+            print(response.chunks)
+  /v1/tools/pdf-parser/{file_id}:
+    post:
+      security:
+        - bearerAuth: []
+      tags:
+        - Tools API
+      summary: Parse PDF
+      description: Parse PDF to other formats.
+      parameters:
+        - name: file_id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The unique identifier of the file.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/parse_pdf_request'
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/parse_pdf_response'
+      x-codeSamples:
+        - lang: cURL
+          source: |-
+            curl --location --request POST https://api.writer.com/v1/tools/pdf-parser/{file_id} \
+             --header "Authorization: Bearer <token>" \
+             --header "Content-Type: application/json" \
+            --data-raw '{"format":"text"}'
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const response = await client.tools.parsePdf('file_id', { format: 'text' });
+
+              console.log(response.content);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                # This is the default and can be omitted
+                api_key=os.environ.get("WRITER_API_KEY"),
+            )
+            response = client.tools.parse_pdf(
+                file_id="file_id",
+                format="text",
+            )
+            print(response.content)
+  /v1/tools/text-to-graph:
+    post:
+      security:
+        - bearerAuth: []
+      tags:
+        - Tools API
+      summary: Text-to-graph
+      description: Performs name entity recognition on the supplied text accepting a maximum of 35000 words.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/text_to_graph_request'
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/text_to_graph_response'
+              example:
+                graph:
+                  - - racecar [RACECAR]
+                    - has_component
+                    - brakes [COMPONENT]
+                  - - racecar [RACECAR]
+                    - can_perform
+                    - decelerate [ACTION]
+                  - - racecar [RACECAR]
+                    - has_property
+                    - powerful [PROPERTY]
+                  - - 200 km/h [VELOCITY]
+                    - decreased_to
+                    - 0 km/h [VELOCITY]
+                  - - decelerate [ACTION]
+                    - performed_by
+                    - racecar [RACECAR]
+      x-codeSamples:
+        - lang: cURL
+          source: >-
+            curl --location --request POST https://api.writer.com/v1/tools/text-to-graph \
+             --header "Authorization: Bearer <token>" \
+             --header "Content-Type: application/json" \
+            --data-raw '{"text":"A racecar has very powerful brakes that can decelerate from 200 km/h to 0
+            km/h in a few seconds"}'
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const response = await client.tools.textToGraph({ text: 'A racecar has very powerful brakes that can decelerate from 200 km/h to 0 km/h in a few seconds' });
+
+              console.log(response.graph);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                # This is the default and can be omitted
+                api_key=os.environ.get("WRITER_API_KEY"),
+            )
+            response = client.tools.text_to_graph(
+                text="A racecar has very powerful brakes that can decelerate from 200 km/h to 0 km/h in a few seconds",
+            )
+            print(response.graph)
+  /v1/tools/web-search:
+    post:
+      security:
+        - bearerAuth: []
+      tags:
+        - Tools API
+      summary: Web search
+      description: Search the web for information about a given query and return relevant results with source URLs.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/web_search_request'
+            example:
+              query: How do I get an API key for the Writer API?
+              include_domains:
+                - dev.writer.com
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/web_search_response'
+      x-codeSamples:
+        - lang: cURL
+          source: >-
+            curl --location --request POST https://api.writer.com/v1/tools/web-search \
+             --header "Authorization: Bearer <token>" \
+             --header "Content-Type: application/json" \
+            --data-raw '{"query":"How do I get an API key for the Writer
+            API?","include_domains":["dev.writer.com"]}'
+  /v1/vision:
+    post:
+      tags:
+        - Vision
+      summary: Analyze images
+      description: >-
+        Submit images and documents with a prompt to generate an analysis. Supports JPG, PNG, PDF, and TXT
+        files up to 7MB each.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/vision_request'
+            example:
+              model: palmyra-vision
+              variables:
+                - name: image_1
+                  file_id: f1234
+                - name: image_2
+                  file_id: f9876
+              prompt: Describe the difference between the image {{image_1}} and the image {{image_2}}.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                data: >-
+                  Image f1234 shows a densely crowded urban beach with many umbrellas, while image f9876
+                  depicts a sparsely populated tropical beach with clear turquoise water and lush greenery
+              schema:
+                $ref: '#/components/schemas/vision_response'
+      x-codeSamples:
+        - lang: cURL
+          source: >-
+            curl --location --request POST https://api.writer.com/v1/vision \
+             --header "Authorization: Bearer <token>" \
+             --header "Content-Type: application/json" \
+            --data-raw
+            '{"model":"palmyra-vision","variables":[{"name":"image_1","file_id":"f1234"},{"name":"image_2","file_id":"f9876"}],"prompt":"Describe
+            the difference between the image {{image_1}} and the image {{image_2}}."}'
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const visionResponse = await client.vision.analyze({
+                model: 'palmyra-vision',
+                prompt: 'Describe the difference between the image {{image_1}} and the image {{image_2}}.',
+                variables: [
+                  { name: 'image_1', file_id: 'f1234' },
+                  { name: 'image_2', file_id: 'f9876' },
+                ],
+              });
+
+              console.log(visionResponse.data);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                api_key=os.environ.get("WRITER_API_KEY"),  # This is the default and can be omitted
+            )
+            vision_response = client.vision.analyze(
+                model="palmyra-vision",
+                prompt="Describe the difference between the image {{image_1}} and the image {{image_2}}.",
+                variables=[{
+                    "name": "image_1",
+                    "file_id": "f1234",
+                }, {
+                    "name": "image_2",
+                    "file_id": "f9876",
+                }],
+            )
+            print(vision_response.data)
+  /v1/translation:
+    post:
+      tags:
+        - Translation
+      summary: Translate text
+      description: Translate text from one language to another.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/translation_request'
+            example:
+              model: palmyra-translate
+              source_language_code: en
+              target_language_code: es
+              text: Hello, world!
+              formality: true
+              length_control: true
+              mask_profanity: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                data: ¡Hola, mundo!
+              schema:
+                $ref: '#/components/schemas/translation_response'
+      x-codeSamples:
+        - lang: cURL
+          source: >-
+            curl --location --request POST https://api.writer.com/v1/translation \
+             --header "Authorization: Bearer <token>" \
+             --header "Content-Type: application/json" \
+            --data-raw
+            '{"model":"string","source_language_code":"string","target_language_code":"string","text":"string","formality":false,"length_control":false,"mask_profanity":false}'
+        - lang: JavaScript
+          source: |-
+            import Writer from 'writer-sdk';
+
+            const client = new Writer({
+              apiKey: process.env['WRITER_API_KEY'], // This is the default and can be omitted
+            });
+
+            async function main() {
+              const translationResponse = await client.translation.translate({
+                formality: true,
+                length_control: true,
+                mask_profanity: true,
+                model: 'palmyra-translate',
+                source_language_code: 'en',
+                target_language_code: 'es',
+                text: 'Hello, world!',
+              });
+
+              console.log(translationResponse.data);
+            }
+
+            main();
+        - lang: Python
+          source: |-
+            import os
+            from writerai import Writer
+
+            client = Writer(
+                api_key=os.environ.get("WRITER_API_KEY"),  # This is the default and can be omitted
+            )
+            translation_response = client.translation.translate(
+                formality=True,
+                length_control=True,
+                mask_profanity=True,
+                model="palmyra-translate",
+                source_language_code="en",
+                target_language_code="es",
+                text="Hello, world!",
+            )
+            print(translation_response.data)
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: >-
+        Bearer authentication header of the form `Bearer <token>`, where `<token>` is your [Writer API
+        key](https://dev.writer.com/api-reference/api-keys).
+  schemas:
+    model_info:
+      required:
+        - name
+        - id
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the particular LLM that you want to use.
+        id:
+          type: string
+          description: The ID of the particular LLM that you want to use
+    models_response:
+      required:
+        - models
+      type: object
+      properties:
+        models:
+          type: array
+          description: The [ID of the model](https://dev.writer.com/home/models) to use for processing the request.
+          items:
+            $ref: '#/components/schemas/model_info'
+      example:
+        models:
+          - name: Palmyra X 003 Instruct
+            id: palmyra-x-003-instruct
+          - name: Palmyra Med
+            id: palmyra-med
+          - name: Palmyra Financial
+            id: palmyra-fin
+          - name: Palmyra X4
+            id: palmyra-x4
+          - name: Palmyra X5
+            id: palmyra-x5
+          - name: Palmyra Creative
+            id: palmyra-creative
+    logprobs:
+      type: object
+      required:
+        - content
+        - refusal
+      nullable: true
+      properties:
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/logprobs_token'
+          nullable: true
+        refusal:
+          type: array
+          items:
+            $ref: '#/components/schemas/logprobs_token'
+          nullable: true
+    logprobs_token:
+      title: logprobs_token
+      required:
+        - token
+        - logprob
+        - top_logprobs
+      type: object
+      properties:
+        token:
+          type: string
+        logprob:
+          type: number
+          format: double
+        bytes:
+          type: array
+          items:
+            type: integer
+            format: int32
+        top_logprobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/top_log_prob'
+    top_log_prob:
+      title: top_log_prob
+      description: >-
+        An array of mappings for each token to its top log probabilities, showing detailed prediction
+        probabilities.
+      required:
+        - token
+        - logprob
+      type: object
+      properties:
+        token:
+          type: string
+        logprob:
+          type: number
+          format: double
+        bytes:
+          type: array
+          items:
+            type: integer
+            format: int32
+    completions_choice:
+      required:
+        - text
+      type: object
+      properties:
+        text:
+          type: string
+          description: The generated text output from the model, which forms the main content of the response.
+        log_probs:
+          $ref: '#/components/schemas/logprobs'
+    completions_response:
+      required:
+        - choices
+      type: object
+      properties:
+        choices:
+          type: array
+          items:
+            $ref: '#/components/schemas/completions_choice'
+          minItems: 1
+          description: >-
+            A list of choices generated by the model, each containing the text of the completion and
+            associated metadata such as log probabilities.
+        model:
+          type: string
+          description: The identifier of the model that was used to generate the responses in the 'choices' array.
+      example:
+        choices:
+          - text: Sure! Here's a search engine optimized article about...
+            log_probs: null
+        model: palmyra-x-003-instruct
+    streaming_data:
+      required:
+        - value
+      type: object
+      properties:
+        value:
+          type: string
+    map:
+      type: object
+      properties:
+        additional_properties:
+          type: number
+          format: double
+          description: For any additional_properties properties in the top_logprobs object
+    completions_request:
+      required:
+        - model
+        - prompt
+      type: object
+      properties:
+        model:
+          type: string
+          description: >-
+            The [ID of the model](https://dev.writer.com/home/models) to use for generating text. Supports
+            `palmyra-x5`, `palmyra-x4`, `palmyra-fin`, `palmyra-med`, `palmyra-creative`, and
+            `palmyra-x-003-instruct`.
+        prompt:
+          type: string
+          description: The input text that the model will process to generate a response.
+        max_tokens:
+          type: integer
+          format: int64
+          description: The maximum number of tokens that the model can generate in the response.
+        temperature:
+          type: number
+          format: double
+          description: >-
+            Controls the randomness of the model's outputs. Higher values lead to more random outputs, while
+            lower values make the model more deterministic.
+        top_p:
+          type: number
+          format: double
+          description: >-
+            Used to control the nucleus sampling, where only the most probable tokens with a cumulative
+            probability of top_p are considered for sampling, providing a way to fine-tune the randomness of
+            predictions.
+        stop:
+          oneOf:
+            - type: array
+              items:
+                type: string
+            - type: string
+          description: >-
+            Specifies stopping conditions for the model's output generation. This can be an array of strings
+            or a single string that the model will look for as a signal to stop generating further tokens.
+        best_of:
+          type: integer
+          format: int32
+          description: >-
+            Specifies the number of completions to generate and return the best one. Useful for generating
+            multiple outputs and choosing the best based on some criteria.
+        random_seed:
+          type: integer
+          format: int32
+          description: >-
+            A seed used to initialize the random number generator for the model, ensuring reproducibility of
+            the output when the same inputs are provided.
+        stream:
+          type: boolean
+          description: >-
+            Determines whether the model's output should be streamed. If true, the output is generated and
+            sent incrementally, which can be useful for real-time applications.
+      example:
+        model: palmyra-x-003-instruct
+        prompt: Write me an SEO article about...
+        max_tokens: 150
+        temperature: 0.7
+        top_p: 0.9
+        stop:
+          - .
+        best_of: 1
+        random_seed: 42
+        stream: false
+    fail_message:
+      required:
+        - description
+        - key
+        - extras
+      type: object
+      properties:
+        description:
+          type: string
+        key:
+          type: string
+        extras:
+          type: object
+          additionalProperties: true
+    fail_response:
+      required:
+        - tpe
+        - errors
+        - extras
+      type: object
+      properties:
+        tpe:
+          type: string
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/fail_message'
+        extras:
+          type: object
+          additionalProperties: true
+    chat_completion_choice:
+      required:
+        - index
+        - finish_reason
+        - message
+      type: object
+      properties:
+        index:
+          type: integer
+          format: int32
+          description: The index of the choice in the list of completions generated by the model.
+        finish_reason:
+          $ref: '#/components/schemas/chat_completion_finish_reason'
+          description: >-
+            Describes the condition under which the model ceased generating content. Common reasons include
+            'length' (reached the maximum output size), 'stop' (encountered a stop sequence), 'content_filter'
+            (harmful content filtered out), or 'tool_calls' (encountered tool calls).
+        message:
+          $ref: '#/components/schemas/chat_completion_response_message'
+        logprobs:
+          description: Log probability information for the choice.
+          $ref: '#/components/schemas/logprobs'
+    chat_completion_streaming_choice:
+      required:
+        - index
+        - finish_reason
+        - delta
+      type: object
+      properties:
+        index:
+          type: integer
+          format: int32
+          description: The index of the choice in the list of completions generated by the model.
+        finish_reason:
+          $ref: '#/components/schemas/chat_completion_finish_reason'
+          description: >-
+            Describes the condition under which the model ceased generating content. Common reasons include
+            'length' (reached the maximum output size), 'stop' (encountered a stop sequence), 'content_filter'
+            (harmful content filtered out), or 'tool_calls' (encountered tool calls).
+          nullable: true
+        message:
+          $ref: '#/components/schemas/chat_completion_response_message'
+        delta:
+          description: A chat completion delta generated by streamed model responses.
+          $ref: '#/components/schemas/chat_completion_streaming_delta'
+        logprobs:
+          description: Log probability information for the choice.
+          $ref: '#/components/schemas/logprobs'
+    chat_completion_finish_reason:
+      type: string
+      enum:
+        - stop
+        - length
+        - content_filter
+        - tool_calls
+    chat_request:
+      required:
+        - model
+        - messages
+      type: object
+      properties:
+        model:
+          type: string
+          description: >-
+            The [ID of the model](https://dev.writer.com/home/models) to use for creating the chat completion.
+            Supports `palmyra-x5`, `palmyra-x4`, `palmyra-fin`, `palmyra-med`, `palmyra-creative`, and
+            `palmyra-x-003-instruct`.
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/chat_message'
+          minItems: 1
+          description: >-
+            An array of message objects that form the conversation history or context for the model to respond
+            to. The array must contain at least one message.
+        max_tokens:
+          type: integer
+          format: int32
+          description: >-
+            Defines the maximum number of tokens (words and characters) that the model can generate in the
+            response. This can be adjusted to allow for longer or shorter responses as needed. The maximum
+            value varies by model. See the [models overview](/home/models) for more information about the
+            maximum number of tokens for each model.
+        temperature:
+          type: number
+          format: double
+          default: 1
+          description: >-
+            Controls the randomness or creativity of the model's responses. A higher temperature results in
+            more varied and less predictable text, while a lower temperature produces more deterministic and
+            conservative outputs.
+        top_p:
+          type: number
+          format: double
+          description: >-
+            Sets the threshold for "nucleus sampling," a technique to focus the model's token generation on
+            the most likely subset of tokens. Only tokens with cumulative probability above this threshold are
+            considered, controlling the trade-off between creativity and coherence.
+        'n':
+          type: integer
+          format: int32
+          description: >-
+            Specifies the number of completions (responses) to generate from the model in a single request.
+            This parameter allows for generating multiple responses, offering a variety of potential replies
+            from which to choose.
+        stop:
+          oneOf:
+            - type: array
+              items:
+                type: string
+            - type: string
+          description: >-
+            A token or sequence of tokens that, when generated, will cause the model to stop producing further
+            content. This can be a single token or an array of tokens, acting as a signal to end the output.
+        logprobs:
+          type: boolean
+          description: Specifies whether to return log probabilities of the output tokens.
+        stream:
+          type: boolean
+          description: >-
+            Indicates whether the response should be streamed incrementally as it is generated or only
+            returned once fully complete. Streaming can be useful for providing real-time feedback in
+            interactive applications.
+          default: false
+        tools:
+          type: array
+          description: >-
+            An array containing tool definitions for tools that the model can use to generate responses. The
+            tool definitions use JSON schema. You can define your own functions or use one of the built-in
+            `graph`, `llm`, `translation`, or `vision` tools. Note that you can only use one built-in tool
+            type in the array (only one of `graph`, `llm`, `translation`, or `vision`). You can pass multiple
+            [custom tools](https://dev.writer.com/home/tool-calling) of type `function` in the same request.
+          items:
+            $ref: '#/components/schemas/tool'
+            minItems: 1
+        tool_choice:
+          $ref: '#/components/schemas/tool_choice'
+        stream_options:
+          $ref: '#/components/schemas/stream_options'
+        response_format:
+          $ref: '#/components/schemas/response_format'
+    stream_options:
+      title: stream_options
+      description: Additional options for streaming.
+      required:
+        - include_usage
+      type: object
+      properties:
+        include_usage:
+          type: boolean
+          description: Indicate whether to include usage information.
+    response_format:
+      title: response_format
+      description: >-
+        The response format to use for the chat completion, available with `palmyra-x4` and `palmyra-x5`.
+
+
+        `text` is the default response format. [JSON Schema](https://json-schema.org/) is supported for
+        structured responses. If you specify `json_schema`, you must also provide a `json_schema` object.
+      required:
+        - type
+      type: object
+      properties:
+        type:
+          type: string
+          description: The type of response format to use.
+          enum:
+            - text
+            - json_schema
+        json_schema:
+          type: object
+          description: The JSON schema to use for the response format.
+    chat_response:
+      required:
+        - id
+        - object
+        - choices
+        - created
+        - model
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: >-
+            A globally unique identifier (UUID) for the response generated by the API. This ID can be used to
+            reference the specific operation or transaction within the system for tracking or debugging
+            purposes.
+        object:
+          type: string
+          description: The type of object returned, which is always `chat.completion` for chat responses.
+          enum:
+            - chat.completion
+        choices:
+          type: array
+          items:
+            $ref: '#/components/schemas/chat_completion_choice'
+          minItems: 1
+          description: >-
+            An array of objects representing the different outcomes or results produced by the model based on
+            the input provided.
+        created:
+          type: integer
+          format: int64
+          description: >-
+            The Unix timestamp (in seconds) when the response was created. This timestamp can be used to
+            verify the timing of the response relative to other events or operations.
+        model:
+          type: string
+          description: Identifies the specific model used to generate the response.
+        usage:
+          $ref: '#/components/schemas/chat_completion_usage'
+        system_fingerprint:
+          type: string
+          description: A string representing the backend configuration that the model runs with.
+        service_tier:
+          type: string
+          description: The service tier used for processing the request.
+    chat_completion_chunk:
+      required:
+        - id
+        - object
+        - created
+        - choices
+        - model
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: >-
+            A globally unique identifier (UUID) for the response generated by the API. This ID can be used to
+            reference the specific operation or transaction within the system for tracking or debugging
+            purposes.
+        object:
+          type: string
+          description: The type of object returned, which is always `chat.completion.chunk` for streaming chat responses.
+          enum:
+            - chat.completion.chunk
+        choices:
+          type: array
+          items:
+            $ref: '#/components/schemas/chat_completion_streaming_choice'
+          minItems: 1
+          description: >-
+            An array of objects representing the different outcomes or results produced by the model based on
+            the input provided.
+        created:
+          type: integer
+          format: int64
+          description: >-
+            The Unix timestamp (in seconds) when the response was created. This timestamp can be used to
+            verify the timing of the response relative to other events or operations.
+        model:
+          type: string
+          description: Identifies the specific model used to generate the response.
+        usage:
+          $ref: '#/components/schemas/chat_completion_usage'
+        system_fingerprint:
+          type: string
+        service_tier:
+          type: string
+    chat_completion_response_message:
+      required:
+        - content
+        - role
+        - refusal
+      type: object
+      description: >-
+        The chat completion message from the model. Note: this field is deprecated for streaming. Use `delta`
+        instead.
+      properties:
+        content:
+          type: string
+          description: >-
+            The text content produced by the model. This field contains the actual output generated,
+            reflecting the model's response to the input query or command.
+        role:
+          type: string
+          enum:
+            - assistant
+          description: Specifies the role associated with the content.
+        tool_calls:
+          type: array
+          items:
+            $ref: '#/components/schemas/tool_call'
+          minItems: 1
+          nullable: true
+        graph_data:
+          $ref: '#/components/schemas/graph_data'
+        llm_data:
+          $ref: '#/components/schemas/llm_data'
+        translation_data:
+          $ref: '#/components/schemas/translation_data'
+        web_search_data:
+          $ref: '#/components/schemas/web_search_data'
+        refusal:
+          type: string
+          nullable: true
+    chat_completion_streaming_delta:
+      type: object
+      description: >-
+        The chat completion message from the model. Note: this field is deprecated for streaming. Use `delta`
+        instead.
+      properties:
+        content:
+          type: string
+          description: >-
+            The text content produced by the model. This field contains the actual output generated,
+            reflecting the model's response to the input query or command.
+        role:
+          $ref: '#/components/schemas/chat_message_role'
+          description: >-
+            Specifies the role associated with the content, indicating whether the message is from the
+            'assistant' or another defined role, helping to contextualize the output within the interaction
+            flow.
+        tool_calls:
+          type: array
+          items:
+            $ref: '#/components/schemas/tool_call_streaming'
+          minItems: 1
+          nullable: true
+        graph_data:
+          $ref: '#/components/schemas/graph_data'
+        llm_data:
+          $ref: '#/components/schemas/llm_data'
+        translation_data:
+          $ref: '#/components/schemas/translation_data'
+        refusal:
+          type: string
+          nullable: true
+    chat_completion_usage:
+      title: chat_completion_usage
+      description: >-
+        Usage information for the chat completion response. Please note that at this time Knowledge Graph tool
+        usage is not included in this object.
+      required:
+        - prompt_tokens
+        - total_tokens
+        - completion_tokens
+      type: object
+      properties:
+        prompt_tokens:
+          type: integer
+          format: int32
+        total_tokens:
+          type: integer
+          format: int32
+        completion_tokens:
+          type: integer
+          format: int32
+        prompt_token_details:
+          $ref: '#/components/schemas/prompt_token_details'
+        completion_tokens_details:
+          $ref: '#/components/schemas/completion_token_details'
+    prompt_token_details:
+      title: prompt_token_details
+      required:
+        - cached_tokens
+      type: object
+      properties:
+        cached_tokens:
+          type: integer
+          format: int32
+    completion_token_details:
+      title: completion_token_details
+      required:
+        - reasoning_tokens
+      type: object
+      properties:
+        reasoning_tokens:
+          type: integer
+          format: int32
+    chat_message:
+      title: chat_message
+      required:
+        - role
+      type: object
+      properties:
+        content:
+          description: >-
+            The content of the message. Can be either a string (for text-only messages) or an array of content
+            fragments (for mixed text and image messages).
+          nullable: true
+          oneOf:
+            - type: string
+              title: TextContent
+            - type: array
+              title: MixedContent
+              items:
+                $ref: '#/components/schemas/composite_content'
+              minItems: 1
+        role:
+          $ref: '#/components/schemas/chat_message_request_role'
+        name:
+          type: string
+          description: >-
+            An optional name for the message sender. Useful for identifying different users, personas, or
+            tools in multi-participant conversations.
+          nullable: true
+        tool_call_id:
+          type: string
+          nullable: true
+        tool_calls:
+          type: array
+          items:
+            $ref: '#/components/schemas/tool_call'
+          nullable: true
+          minItems: 1
+        graph_data:
+          $ref: '#/components/schemas/graph_data'
+          nullable: true
+        refusal:
+          type: string
+          nullable: true
+    chat_message_role:
+      type: string
+      enum:
+        - user
+        - assistant
+        - system
+    chat_message_request_role:
+      type: string
+      description: >-
+        The role of the chat message. You can provide a system prompt by setting the role to `system`, or
+        specify that a message is the result of a [tool call](https://dev.writer.com/home/tool-calling) by
+        setting the role to `tool`.
+      enum:
+        - user
+        - assistant
+        - system
+        - tool
+    delete_file_response:
+      title: delete_file_response
+      required:
+        - id
+        - deleted
+      type: object
+      properties:
+        id:
+          type: string
+          description: A unique identifier of the deleted file.
+        deleted:
+          type: boolean
+          description: Indicates whether the file was successfully deleted.
+    retry_files_response:
+      title: retry_files_response
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Indicates whether the retry operation was successful.
+    file_response:
+      title: file_response
+      required:
+        - id
+        - created_at
+        - name
+        - graph_ids
+        - status
+      type: object
+      properties:
+        id:
+          type: string
+          description: A unique identifier of the file.
+        created_at:
+          type: string
+          format: date-time
+          description: The timestamp when the file was uploaded.
+        name:
+          type: string
+          description: The name of the file.
+        graph_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: >-
+            A list of Knowledge Graph IDs that the file is associated with.
+
+
+            If you provided a `graphId` during upload, the file is associated with that Knowledge Graph.
+            However, the `graph_ids` field in the upload response is an empty list. The association will be
+            visible in the `graph_ids` list when you retrieve the file using the file retrieval endpoint.
+        status:
+          type: string
+          description: The processing status of the file.
+    graph_type:
+      title: graph_type
+      description: |-
+        The type of Knowledge Graph:
+
+        - `manual`: files are uploaded via UI or API
+        - `connector`: files are uploaded via a data connector such as Google Drive or Confluence
+        - `web`: URLs are connected to the Knowledge Graph
+      type: string
+      enum:
+        - manual
+        - connector
+        - web
+    files_response:
+      title: files_response
+      required:
+        - data
+        - has_more
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/file_response'
+        has_more:
+          type: boolean
+          description: Indicates if there are more files available beyond the current page.
+        first_id:
+          type: string
+          description: The ID of the first file in the current response.
+        last_id:
+          type: string
+          description: The ID of the last file in the current response.
+    application_graph_ids_request:
+      title: application_graph_ids_request
+      required:
+        - graph_ids
+      type: object
+      properties:
+        graph_ids:
+          type: array
+          description: >-
+            A list of Knowledge Graph IDs to associate with the application. Note that this will replace the
+            existing list of Knowledge Graphs associated with the application, not add to it.
+          items:
+            type: string
+            format: uuid
+    application_graphs_response:
+      title: application_graphs_response
+      required:
+        - graph_ids
+      type: object
+      properties:
+        graph_ids:
+          type: array
+          description: A list of Knowledge Graphs associated with the application.
+          items:
+            type: string
+            format: uuid
+    graph_data:
+      title: graph_data
+      type: object
+      properties:
+        sources:
+          type: array
+          items:
+            $ref: '#/components/schemas/source'
+        status:
+          $ref: '#/components/schemas/graph_stage_status'
+        subqueries:
+          type: array
+          items:
+            $ref: '#/components/schemas/sub_query'
+        references:
+          $ref: '#/components/schemas/references'
+    llm_data:
+      title: llm_data
+      required:
+        - prompt
+        - model
+      type: object
+      nullable: true
+      properties:
+        prompt:
+          type: string
+          description: The prompt processed by the model.
+        model:
+          type: string
+          description: The model used by the tool.
+    translation_data:
+      title: translation_data
+      required:
+        - source_text
+        - source_language_code
+        - target_language_code
+      type: object
+      properties:
+        source_text:
+          type: string
+          description: The text the tool translated.
+        source_language_code:
+          type: string
+          description: The language code of the source text.
+        target_language_code:
+          type: string
+          description: The language code of the target text.
+    web_search_data:
+      title: web_search_data
+      required:
+        - sources
+      type: object
+      properties:
+        sources:
+          type: array
+          items:
+            type: object
+            properties:
+              url:
+                type: string
+              raw_content:
+                type: string
+    graph_response:
+      title: graph_response
+      required:
+        - id
+        - created_at
+        - name
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: A unique identifier of the Knowledge Graph.
+        created_at:
+          type: string
+          format: date-time
+          description: The timestamp when the Knowledge Graph was created.
+        name:
+          type: string
+          description: The name of the Knowledge Graph (max 255 characters).
+        description:
+          type: string
+          description: A description of the Knowledge Graph (max 255 characters).
+        urls:
+          type: array
+          description: An array of web connector URLs associated with this Knowledge Graph.
+          items:
+            $ref: '#/components/schemas/web_connector_url'
+    graph_stage_status:
+      title: graph_stage_status
+      type: string
+      nullable: true
+      enum:
+        - processing
+        - finished
+    delete_graph_response:
+      title: delete_graph_response
+      required:
+        - id
+        - deleted
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: A unique identifier of the deleted Knowledge Graph.
+        deleted:
+          type: boolean
+          description: Indicates whether the Knowledge Graph was successfully deleted.
+    retry_files_request:
+      title: retry_files_request
+      required:
+        - file_ids
+      type: object
+      properties:
+        file_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: The unique identifier of the files to retry.
+    graph_file_request:
+      title: graph_file_request
+      required:
+        - file_id
+      type: object
+      properties:
+        file_id:
+          type: string
+          description: The unique identifier of the file.
+    graph_file_status:
+      title: graph_file_status
+      required:
+        - in_progress
+        - completed
+        - failed
+        - total
+      type: object
+      properties:
+        in_progress:
+          type: integer
+          format: int64
+          description: The number of files currently being processed.
+        completed:
+          type: integer
+          format: int64
+          description: The number of files that have been successfully processed.
+        failed:
+          type: integer
+          format: int64
+          description: The number of files that failed to process.
+        total:
+          type: integer
+          format: int64
+          description: The total number of files associated with the Knowledge Graph.
+    graph_request:
+      title: graph_request
+      type: object
+      properties:
+        name:
+          type: string
+          description: >-
+            The name of the Knowledge Graph (max 255 characters). Omitting this field leaves the name
+            unchanged.
+        description:
+          type: string
+          description: >-
+            A description of the Knowledge Graph (max 255 characters). Omitting this field leaves the
+            description unchanged.
+    update_graph_request:
+      title: update_graph_request
+      type: object
+      properties:
+        name:
+          type: string
+          description: >-
+            The name of the Knowledge Graph (max 255 characters). Omitting this field leaves the name
+            unchanged.
+        description:
+          type: string
+          description: >-
+            A description of the Knowledge Graph (max 255 characters). Omitting this field leaves the
+            description unchanged.
+        urls:
+          type: array
+          description: >-
+            An array of web connector URLs to update for this Knowledge Graph. You can only connect URLs to
+            Knowledge Graphs with the type `web`. To clear the list of URLs, set this field to an empty array.
+          items:
+            $ref: '#/components/schemas/update_graph_web_url'
+    update_graph_web_url:
+      title: update_graph_web_url
+      required:
+        - url
+        - type
+      type: object
+      properties:
+        url:
+          type: string
+          description: The URL to be processed by the web connector.
+        exclude_urls:
+          type: array
+          description: An array of URLs to exclude from processing within this web connector.
+          items:
+            type: string
+        type:
+          $ref: '#/components/schemas/web_connector_url_type'
+          description: The type of web connector processing for this URL.
+    graphs_response:
+      title: graphs_response
+      required:
+        - data
+        - has_more
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/graph'
+        first_id:
+          type: string
+          format: uuid
+          description: The ID of the first Knowledge Graph in the current response.
+        last_id:
+          type: string
+          format: uuid
+          description: The ID of the last Knowledge Graph in the current response.
+        has_more:
+          type: boolean
+          description: Indicates if there are more Knowledge Graphs available beyond the current page.
+    graph:
+      title: graph
+      required:
+        - id
+        - created_at
+        - name
+        - file_status
+        - type
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: The unique identifier of the Knowledge Graph.
+        created_at:
+          type: string
+          format: date-time
+          description: The timestamp when the Knowledge Graph was created.
+        name:
+          type: string
+          description: The name of the Knowledge Graph.
+        description:
+          type: string
+          description: A description of the Knowledge Graph.
+        file_status:
+          $ref: '#/components/schemas/graph_file_status'
+          description: The processing status of files in the Knowledge Graph.
+        type:
+          $ref: '#/components/schemas/graph_type'
+          description: |-
+            The type of Knowledge Graph.
+
+            - `manual`: files are uploaded via UI or API
+            - `connector`: files are uploaded via a data connector such as Google Drive or Confluence
+            - `web`: URLs are connected to the Knowledge Graph
+        urls:
+          type: array
+          description: An array of web connector URLs associated with this Knowledge Graph.
+          items:
+            $ref: '#/components/schemas/web_connector_url'
+    web_connector_url:
+      title: web_connector_url
+      required:
+        - url
+        - status
+        - type
+      type: object
+      properties:
+        url:
+          type: string
+          description: The URL to be processed by the web connector.
+        status:
+          $ref: '#/components/schemas/web_connector_url_state'
+          description: The current status of the URL processing.
+        exclude_urls:
+          type: array
+          description: An array of URLs to exclude from processing within this web connector.
+          items:
+            type: string
+        type:
+          $ref: '#/components/schemas/web_connector_url_type'
+          description: The type of web connector processing for this URL.
+    web_connector_url_state:
+      title: web_connector_url_state
+      description: The state of a web connector URL processing.
+      required:
+        - status
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/web_connector_url_status'
+          description: The current status of the URL processing.
+        error_type:
+          $ref: '#/components/schemas/web_connector_url_error_type'
+          description: The type of error that occurred during processing, if any.
+    web_connector_url_type:
+      title: web_connector_url_type
+      description: The type of web connector processing for a URL.
+      type: string
+      enum:
+        - single_page
+        - sub_pages
+    web_connector_url_error_type:
+      title: web_connector_url_error_type
+      description: The type of error that can occur during web connector URL processing.
+      type: string
+      enum:
+        - invalid_url
+        - not_searchable
+        - not_found
+        - paywall_or_login_page
+        - unexpected_error
+    web_connector_url_status:
+      title: web_connector_url_status
+      description: The status of web connector URL processing.
+      type: string
+      enum:
+        - validating
+        - success
+        - error
+    generate_application_input:
+      title: generate_application_input
+      required:
+        - id
+        - value
+      type: object
+      properties:
+        id:
+          type: string
+          description: >-
+            The unique identifier for the input field from the application. All input types from the No-code
+            application are supported (i.e. Text input, Dropdown, File upload, Image input). The identifier
+            should be the name of the input type.
+        value:
+          type: array
+          items:
+            type: string
+          description: >-
+            The value for the input field. 
+
+
+            If the input type is "File upload", you must pass the `file_id` of an uploaded file. You cannot
+            pass a file object directly. See the [file upload
+            endpoint](https://dev.writer.com/api-reference/file-api/upload-files) for instructions on
+            uploading files or the [list files
+            endpoint](https://dev.writer.com/api-reference/file-api/get-all-files) for how to see a list of
+            uploaded files and their IDs.
+    generate_application_request:
+      title: generate_application_request
+      required:
+        - inputs
+      type: object
+      properties:
+        inputs:
+          type: array
+          items:
+            $ref: '#/components/schemas/generate_application_input'
+        stream:
+          type: boolean
+          description: >-
+            Indicates whether the response should be streamed. Currently only supported for research assistant
+            applications.
+    get_async_application_jobs_response:
+      title: get_async_application_jobs_response
+      required:
+        - result
+      type: object
+      properties:
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/get_async_application_job_response'
+        totalCount:
+          type: integer
+          format: int64
+          description: The total number of jobs associated with the application.
+        pagination:
+          type: object
+          properties:
+            offset:
+              type: integer
+              format: int64
+              description: The pagination offset for retrieving the jobs.
+            limit:
+              type: integer
+              format: int32
+              description: The pagination limit for retrieving the jobs.
+    get_async_application_job_response:
+      title: get_async_application_job_response
+      required:
+        - id
+        - status
+        - application_id
+        - created_at
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: The unique identifier for the job.
+        status:
+          $ref: '#/components/schemas/api_job_status'
+        application_id:
+          type: string
+          description: The ID of the application associated with this job.
+        created_at:
+          type: string
+          format: date-time
+          description: The timestamp when the job was created.
+        updated_at:
+          type: string
+          format: date-time
+          description: The timestamp when the job was last updated.
+        completed_at:
+          type: string
+          format: date-time
+          description: The timestamp when the job was completed.
+        data:
+          type: object
+          description: The result of the completed job, if applicable.
+          $ref: '#/components/schemas/generate_application_response'
+        error:
+          type: string
+          description: The error message if the job failed.
+    generate_application_async_request:
+      title: generate_application_async_request
+      required:
+        - inputs
+      type: object
+      properties:
+        inputs:
+          type: array
+          description: A list of input objects to generate content for.
+          items:
+            $ref: '#/components/schemas/generate_application_input'
+    generate_application_async_response:
+      title: generate_application_async_response
+      required:
+        - id
+        - status
+        - created_at
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: The unique identifier for the async job created.
+        status:
+          $ref: '#/components/schemas/api_job_status'
+        created_at:
+          type: string
+          format: date-time
+          description: The timestamp when the job was created.
+    retry_async_application_job_response:
+      title: retry_async_application_job_response
+      required:
+        - job_id
+      type: object
+      properties:
+        job_id:
+          type: string
+          description: The unique identifier for the retried async job.
+        status:
+          $ref: '#/components/schemas/api_job_status'
+        created_at:
+          type: string
+          format: date-time
+          description: The timestamp when the job was retried.
+        application_id:
+          type: string
+          description: The ID of the application associated with this retried job.
+    api_job_status:
+      title: api_job_status
+      description: The status of the job.
+      type: string
+      enum:
+        - in_progress
+        - failed
+        - completed
+    application_type:
+      title: application_type
+      description: The type of no-code application.
+      type: string
+      enum:
+        - generation
+    get_applications_response:
+      title: get_applications_response
+      description: Response object containing a paginated list of applications.
+      required:
+        - data
+        - has_more
+      type: object
+      properties:
+        data:
+          type: array
+          description: List of application objects with their configurations.
+          items:
+            $ref: '#/components/schemas/application_with_inputs'
+        first_id:
+          type: string
+          format: uuid
+          description: UUID of the first application in the current page.
+        last_id:
+          type: string
+          format: uuid
+          description: UUID of the last application in the current page.
+        has_more:
+          type: boolean
+          description: Indicates if there are more results available in subsequent pages.
+    application_with_inputs:
+      title: application_with_inputs
+      description: Detailed application object including its input configuration.
+      required:
+        - id
+        - name
+        - type
+        - status
+        - inputs
+        - created_at
+        - updated_at
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique identifier for the application.
+        name:
+          type: string
+          description: Display name of the application.
+        type:
+          $ref: '#/components/schemas/application_type'
+        status:
+          $ref: '#/components/schemas/application_status'
+        inputs:
+          type: array
+          description: List of input configurations for the application.
+          items:
+            $ref: '#/components/schemas/application_input'
+        created_at:
+          type: string
+          format: date-time
+          description: Timestamp when the application was created.
+        updated_at:
+          type: string
+          format: date-time
+          description: Timestamp when the application was last updated.
+        last_deployed_at:
+          type: string
+          format: date-time
+          description: Timestamp when the application was last deployed.
+    application_status:
+      title: application_status
+      description: >-
+        Current deployment status of the application. Note: currently only `deployed` applications are
+        returned.
+      type: string
+      enum:
+        - deployed
+        - draft
+    application_input:
+      title: application_input
+      description: Configuration for an individual input field in the application.
+      required:
+        - name
+        - input_type
+        - required
+      type: object
+      properties:
+        name:
+          type: string
+          description: Identifier for the input field.
+        input_type:
+          $ref: '#/components/schemas/application_input_type'
+        description:
+          type: string
+          description: Human-readable description of the input field's purpose.
+        required:
+          type: boolean
+          description: Indicates if this input field is mandatory.
+        options:
+          $ref: '#/components/schemas/application_input_options'
+    application_input_type:
+      title: application_input_type
+      description: Type of input field determining its behavior and validation rules.
+      type: string
+      enum:
+        - text
+        - dropdown
+        - file
+        - media
+    application_input_options:
+      description: Type-specific configuration options for input fields.
+      oneOf:
+        - $ref: '#/components/schemas/application_input_dropdown_options'
+        - $ref: '#/components/schemas/application_input_file_options'
+        - $ref: '#/components/schemas/application_input_media_options'
+        - $ref: '#/components/schemas/application_input_text_options'
+    application_input_dropdown_options:
+      title: Dropdown
+      description: Configuration options specific to dropdown-type input fields.
+      required:
+        - list
+      type: object
+      properties:
+        list:
+          type: array
+          description: List of available options in the dropdown menu.
+          items:
+            type: string
+    application_input_file_options:
+      title: File
+      description: Configuration options specific to file upload input fields.
+      required:
+        - max_files
+        - file_types
+        - max_word_count
+        - max_file_size_mb
+        - upload_types
+      type: object
+      properties:
+        max_files:
+          type: integer
+          format: int32
+          description: Maximum number of files that can be uploaded.
+        file_types:
+          type: array
+          description: List of allowed file extensions.
+          items:
+            type: string
+        max_word_count:
+          type: integer
+          format: int32
+          description: Maximum number of words allowed in text files.
+        max_file_size_mb:
+          type: integer
+          format: int32
+          description: Maximum file size allowed in megabytes.
+        upload_types:
+          type: array
+          description: List of allowed upload types for file inputs.
+          items:
+            $ref: '#/components/schemas/file_upload_type'
+    application_input_media_options:
+      title: Media
+      description: Configuration options specific to media upload input fields.
+      required:
+        - file_types
+        - max_image_size_mb
+      type: object
+      properties:
+        file_types:
+          type: array
+          description: List of allowed media file types.
+          items:
+            type: string
+        max_image_size_mb:
+          type: integer
+          format: int32
+          description: Maximum media file size allowed in megabytes.
+    application_input_text_options:
+      title: Text
+      description: Configuration options specific to text input fields.
+      required:
+        - max_fields
+        - min_fields
+      type: object
+      properties:
+        max_fields:
+          type: integer
+          format: int32
+          description: Maximum number of text fields allowed.
+        min_fields:
+          type: integer
+          format: int32
+          description: Minimum number of text fields required.
+    file_upload_type:
+      title: file_upload_type
+      description: Type of file upload method supported by the application.
+      type: string
+      enum:
+        - url
+        - file_id
+    generate_application_response:
+      title: generate_application_response
+      required:
+        - suggestion
+      type: object
+      properties:
+        title:
+          type: string
+          description: The name of the output field.
+        suggestion:
+          type: string
+          description: The response from the model specified in the application.
+    generate_application_response_chunk:
+      title: generate_application_response_chunk
+      required:
+        - delta
+      type: object
+      properties:
+        delta:
+          $ref: '#/components/schemas/generate_application_delta'
+    generate_application_delta:
+      title: generate_application_delta
+      type: object
+      properties:
+        title:
+          type: string
+          description: The name of the output.
+        content:
+          type: string
+          description: The main text output.
+        stages:
+          type: array
+          nullable: true
+          description: A list of stages that show the 'thinking process'.
+          items:
+            $ref: '#/components/schemas/generate_application_chunk_stage'
+          minItems: 1
+    generate_application_chunk_stage:
+      title: generate_application_chunk_stage
+      required:
+        - id
+        - content
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier for the stage.
+          format: uuid
+        content:
+          type: string
+          description: The text content of the stage.
+        sources:
+          type: array
+          nullable: true
+          description: A list of sources (URLs) that that stage used to process that particular step.
+          items:
+            type: string
+          minItems: 1
+    question_request:
+      title: question_request
+      required:
+        - graph_ids
+        - question
+      type: object
+      properties:
+        graph_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+          minItems: 1
+          description: The unique identifiers of the Knowledge Graphs to query.
+        subqueries:
+          type: boolean
+          description: Specify whether to include subqueries.
+          default: false
+        question:
+          type: string
+          description: The question to answer using the Knowledge Graph.
+        stream:
+          type: boolean
+          description: >-
+            Determines whether the model's output should be streamed. If true, the output is generated and
+            sent incrementally, which can be useful for real-time applications.
+          default: false
+        query_config:
+          $ref: '#/components/schemas/graph_query_config'
+          description: >-
+            Configuration options for Knowledge Graph queries, including search parameters and citation
+            settings.
+    question_response_chunk:
+      required:
+        - data
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/question_response'
+    question_response:
+      title: question_response
+      required:
+        - question
+        - answer
+        - sources
+      type: object
+      properties:
+        question:
+          type: string
+          description: The question that was asked.
+        answer:
+          type: string
+          description: The answer to the question.
+        sources:
+          type: array
+          items:
+            $ref: '#/components/schemas/source'
+        subqueries:
+          type: array
+          items:
+            $ref: '#/components/schemas/sub_query'
+        references:
+          $ref: '#/components/schemas/references'
+    source:
+      title: source
+      description: A source snippet containing text and fileId from Knowledge Graph content.
+      required:
+        - file_id
+        - snippet
+      type: object
+      nullable: true
+      properties:
+        file_id:
+          type: string
+          description: The unique identifier of the file in your Writer account.
+        snippet:
+          type: string
+          description: The exact text snippet from the source document that was used to support the response.
+    sub_query:
+      title: sub_query
+      description: >-
+        A sub-question generated to break down complex queries into more manageable parts, along with its
+        answer and supporting sources.
+      required:
+        - query
+        - answer
+        - sources
+      type: object
+      nullable: true
+      properties:
+        query:
+          type: string
+          description: The subquery that was generated to help answer the main question.
+        answer:
+          type: string
+          description: The answer to the subquery based on Knowledge Graph content.
+        sources:
+          type: array
+          description: Array of source snippets that were used to answer this subquery.
+          items:
+            $ref: '#/components/schemas/source'
+    tool:
+      type: object
+      discriminator:
+        propertyName: type
+        mapping:
+          function: '#/components/schemas/function_tool'
+          graph: '#/components/schemas/graph_tool'
+          llm: '#/components/schemas/llm_tool'
+          translation: '#/components/schemas/translation_tool'
+          vision: '#/components/schemas/vision_tool'
+          web_search: '#/components/schemas/web_search_tool'
+      oneOf:
+        - $ref: '#/components/schemas/function_tool'
+        - $ref: '#/components/schemas/graph_tool'
+        - $ref: '#/components/schemas/llm_tool'
+        - $ref: '#/components/schemas/translation_tool'
+        - $ref: '#/components/schemas/vision_tool'
+        - $ref: '#/components/schemas/web_search_tool'
+    function_tool:
+      title: Function tool
+      required:
+        - function
+        - type
+      type: object
+      properties:
+        type:
+          type: string
+          description: The type of tool.
+          enum:
+            - function
+        function:
+          $ref: '#/components/schemas/tool_function'
+    tool_function:
+      title: tool_function
+      description: A tool that uses a custom function.
+      required:
+        - name
+      type: object
+      properties:
+        description:
+          type: string
+          description: Description of the function.
+        name:
+          type: string
+          description: Name of the function.
+        parameters:
+          type: object
+          additionalProperties: true
+          description: The parameters of the function.
+    graph_tool:
+      title: Graph tool
+      required:
+        - function
+        - type
+      type: object
+      properties:
+        type:
+          type: string
+          description: The type of tool.
+          enum:
+            - graph
+        function:
+          $ref: '#/components/schemas/graph_function'
+    graph_function:
+      title: graph_function
+      description: A tool that uses Knowledge Graphs as context for responses.
+      required:
+        - graph_ids
+        - subqueries
+      type: object
+      properties:
+        description:
+          type: string
+          description: A description of the graph content.
+        graph_ids:
+          type: array
+          description: An array of graph IDs to use in the tool.
+          items:
+            type: string
+            format: uuid
+          minItems: 1
+        subqueries:
+          type: boolean
+          description: Boolean to indicate whether to include subqueries in the response.
+        query_config:
+          $ref: '#/components/schemas/graph_query_config'
+          description: >-
+            Configuration options for Knowledge Graph queries, including search parameters and citation
+            settings.
+    graph_query_config:
+      title: graph_query_config
+      description: Configuration options for Knowledge Graph queries.
+      type: object
+      properties:
+        max_subquestions:
+          type: integer
+          format: int32
+          minimum: 1
+          maximum: 10
+          default: 6
+          description: >-
+            Maximum number of subquestions to generate when processing complex queries. Set higher to improve
+            detail, set lower to reduce response time. Range: 1-10, Default: 6.
+        search_weight:
+          type: integer
+          format: int32
+          minimum: 0
+          maximum: 100
+          default: 50
+          description: >-
+            Weight given to search results when ranking and selecting relevant information. Higher values
+            (closer to 100) prioritize keyword-based matching, while lower values (closer to 0) prioritize
+            semantic similarity matching. Use higher values for exact keyword searches, lower values for
+            conceptual similarity searches. Range: 0-100, Default: 50.
+        grounding_level:
+          type: number
+          format: double
+          minimum: 0
+          maximum: 1
+          default: 0
+          description: >-
+            Level of grounding required for responses, controlling how closely answers must be tied to source
+            material. Set lower for grounded outputs, higher for creativity. Higher values (closer to 1.0)
+            allow more creative interpretation, while lower values (closer to 0.0) stick more closely to
+            source material. Range: 0.0-1.0, Default: 0.0.
+        max_snippets:
+          type: integer
+          format: int32
+          minimum: 1
+          maximum: 60
+          default: 30
+          description: >-
+            Maximum number of text snippets to retrieve from the Knowledge Graph for context. Works in concert
+            with `search_weight` to control best matches vs broader coverage. While technically supports 1-60,
+            values below 5 may return no results due to RAG implementation. Recommended range: 5-25. Due to
+            RAG system behavior, you may see more snippets than requested. Range: 1-60, Default: 30.
+        max_tokens:
+          type: integer
+          format: int32
+          minimum: 100
+          maximum: 8000
+          default: 4000
+          description: >-
+            Maximum number of tokens the model can generate in the response. This controls the length of the
+            AI's answer. Set higher for longer answers, set lower for shorter, faster answers. Range:
+            100-8000, Default: 4000.
+        keyword_threshold:
+          type: number
+          format: double
+          minimum: 0
+          maximum: 1
+          default: 0.7
+          description: >-
+            Threshold for keyword-based matching when searching Knowledge Graph content. Set higher for
+            stricter relevance, lower for broader range. Higher values (closer to 1.0) require stronger
+            keyword matches, while lower values (closer to 0.0) allow more lenient matching. Range: 0.0-1.0,
+            Default: 0.7.
+        semantic_threshold:
+          type: number
+          format: double
+          minimum: 0
+          maximum: 1
+          default: 0.7
+          description: >-
+            Threshold for semantic similarity matching when searching Knowledge Graph content. Set higher for
+            stricter relevance, lower for broader range. Higher values (closer to 1.0) require stronger
+            semantic similarity, while lower values (closer to 0.0) allow more lenient semantic matching.
+            Range: 0.0-1.0, Default: 0.7.
+        inline_citations:
+          type: boolean
+          default: false
+          description: >-
+            Whether to include inline citations in the response, showing which Knowledge Graph sources were
+            used. Default: false.
+    llm_tool:
+      title: LLM tool
+      required:
+        - function
+        - type
+      type: object
+      properties:
+        type:
+          type: string
+          description: The type of tool.
+          enum:
+            - llm
+        function:
+          $ref: '#/components/schemas/llm_function'
+    llm_function:
+      title: LLM function
+      description: A tool that uses another Writer model to generate a response.
+      required:
+        - description
+        - model
+      type: object
+      properties:
+        description:
+          type: string
+          description: A description of the model to use.
+        model:
+          type: string
+          description: The model to use.
+    vision_tool:
+      title: Vision tool
+      required:
+        - function
+        - type
+      type: object
+      properties:
+        type:
+          type: string
+          description: The type of tool.
+          enum:
+            - vision
+        function:
+          $ref: '#/components/schemas/vision_function'
+    vision_function:
+      title: Vision function
+      description: >-
+        A tool that uses Palmyra Vision to analyze images and documents. Supports JPG, PNG, PDF, and TXT files
+        up to 7MB each.
+      required:
+        - model
+        - variables
+      type: object
+      properties:
+        variables:
+          type: array
+          items:
+            $ref: '#/components/schemas/vision_tool_request_file_variable'
+        model:
+          type: string
+          description: The model to use for image analysis.
+          enum:
+            - palmyra-vision
+    vision_tool_request_file_variable:
+      title: Vision Tool Request File Variable
+      required:
+        - name
+        - file_id
+      type: object
+      properties:
+        name:
+          type: string
+          description: >-
+            The name of the file variable. You must reference this name in the `message.content` field of the
+            request to the chat completions endpoint. Use double curly braces (`{{}}`) to reference the file.
+            For example, `Describe the difference between the image {{image_1}} and the image {{image_2}}`.
+        file_id:
+          type: string
+          description: >-
+            The File ID of the file to analyze. The file must be uploaded to the Writer platform before you
+            use it with the Vision tool. Supported file types: JPG, PNG, PDF, TXT. The maximum allowed file
+            size is 7MB.
+    tool_call:
+      title: tool_call
+      type: object
+      required:
+        - id
+        - type
+        - function
+      properties:
+        index:
+          type: integer
+          format: int32
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+            - function
+        function:
+          $ref: '#/components/schemas/function'
+    tool_call_streaming:
+      title: tool_call
+      type: object
+      required:
+        - index
+      properties:
+        index:
+          type: integer
+          format: int32
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+            - function
+        function:
+          $ref: '#/components/schemas/function'
+    function:
+      title: function
+      type: object
+      required:
+        - arguments
+      properties:
+        name:
+          type: string
+        arguments:
+          type: string
+    tool_choice:
+      description: >-
+        Configure how the model will call functions:
+
+        - `auto`: allows the model to automatically choose the tool to use, or not call a tool
+
+        - `none`: disables tool calling; the model will instead generate a message
+
+        - `required`: requires the model to call one or more tools
+
+
+        You can also use a JSON object to force the model to call a specific tool. For example, `{"type":
+        "function", "function": {"name": "get_current_weather"}}` requires the model to call the
+        `get_current_weather` function, regardless of the prompt.
+      oneOf:
+        - $ref: '#/components/schemas/string_tool_choice'
+        - $ref: '#/components/schemas/json_object_tool_choice'
+    json_object_tool_choice:
+      title: JSON object
+      required:
+        - value
+      type: object
+      properties:
+        value:
+          type: object
+          description: >-
+            A JSON object that specifies the tool to call. For example, `{"type": "function", "function":
+            {"name": "get_current_weather"}}`
+          additionalProperties: true
+    string_tool_choice:
+      title: String
+      required:
+        - value
+      type: object
+      properties:
+        value:
+          $ref: '#/components/schemas/string_tool_choice_options'
+    string_tool_choice_options:
+      title: string_tool_choice_options
+      type: string
+      enum:
+        - none
+        - auto
+        - required
+    ai_detection_request:
+      title: ai_detection_request
+      required:
+        - input
+      type: object
+      properties:
+        input:
+          type: string
+          description: >-
+            The content to determine if it is AI- or human-generated. Content must have at least 350
+            characters.
+          example: >-
+            AI and ML continue to be at the forefront of technological advancements. In 2025, we can expect
+            more sophisticated AI systems that can handle complex tasks with greater efficiency. AI will play
+            a crucial role in various sectors, including healthcare, finance, and manufacturing. For instance,
+            AI-powered diagnostic tools will become more accurate, helping doctors detect diseases at an early
+            stage. In finance, AI algorithms will enhance fraud detection and risk management.
+    ai_detection_response:
+      title: ai_detection_response
+      required:
+        - label
+        - score
+      type: object
+      properties:
+        label:
+          type: string
+          enum:
+            - fake
+            - real
+          example: fake
+        score:
+          type: number
+          format: double
+          example: 0.6265060305595398
+    comprehend_medical_request:
+      title: comprehend_medical_request
+      required:
+        - content
+        - response_type
+      type: object
+      properties:
+        content:
+          type: string
+          description: The text to analyze.
+        response_type:
+          $ref: '#/components/schemas/comprehend_medical_type'
+          description: >-
+            The structure of the response to return. `Entities` returns medical entities, `RxNorm` returns
+            medication information, `ICD-10-CM` returns diagnosis codes, and `SNOMED CT` returns medical
+            concepts.
+    comprehend_medical_type:
+      title: comprehend_medical_type
+      type: string
+      enum:
+        - Entities
+        - RxNorm
+        - ICD-10-CM
+        - SNOMED CT
+    medical_comprehend_response:
+      title: medical_comprehend_response
+      required:
+        - entities
+      type: object
+      properties:
+        entities:
+          description: An array of medical entities extracted from the input text.
+          type: array
+          items:
+            $ref: '#/components/schemas/medical_comprehend_entity'
+    medical_comprehend_entity:
+      title: medical_comprehend_entity
+      required:
+        - category
+        - begin_offset
+        - end_offset
+        - text
+        - traits
+        - concepts
+        - score
+        - attributes
+        - type
+      type: object
+      properties:
+        category:
+          type: string
+        begin_offset:
+          type: integer
+          format: int64
+        end_offset:
+          type: integer
+          format: int64
+        text:
+          type: string
+        traits:
+          type: array
+          items:
+            $ref: '#/components/schemas/medical_comprehend_trait'
+        concepts:
+          type: array
+          items:
+            $ref: '#/components/schemas/medical_comprehend_concept'
+        score:
+          type: number
+          format: double
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/medical_comprehend_attribute'
+        type:
+          type: string
+    medical_comprehend_trait:
+      title: medical_comprehend_trait
+      required:
+        - score
+        - name
+      type: object
+      properties:
+        score:
+          type: number
+          format: double
+        name:
+          type: string
+    medical_comprehend_concept:
+      title: medical_comprehend_concept
+      required:
+        - code
+        - score
+        - description
+      type: object
+      properties:
+        code:
+          type: string
+        score:
+          type: number
+          format: double
+        description:
+          type: string
+    medical_comprehend_attribute:
+      title: medical_comprehend_attribute
+      required:
+        - relationship_score
+        - begin_offset
+        - end_offset
+        - text
+        - traits
+        - concepts
+        - score
+        - type
+      type: object
+      properties:
+        category:
+          type: string
+        relationship_score:
+          type: number
+          format: double
+        begin_offset:
+          type: integer
+          format: int64
+        end_offset:
+          type: integer
+          format: int64
+        text:
+          type: string
+        traits:
+          type: array
+          items:
+            $ref: '#/components/schemas/medical_comprehend_trait'
+        concepts:
+          type: array
+          items:
+            $ref: '#/components/schemas/medical_comprehend_concept'
+        score:
+          type: number
+          format: double
+        relationship_type:
+          type: string
+        type:
+          type: string
+    context_aware_text_splitting_request:
+      title: context_aware_text_splitting_request
+      required:
+        - text
+        - strategy
+      type: object
+      properties:
+        text:
+          type: string
+          description: The text to split into chunks.
+        strategy:
+          $ref: '#/components/schemas/splitting_strategy'
+          description: >-
+            The strategy to use for splitting the text into chunks. `llm_split` uses the language model to
+            split the text, `fast_split` uses a fast heuristic-based approach, and `hybrid_split` combines
+            both strategies.
+    splitting_strategy:
+      title: splitting_strategy
+      type: string
+      enum:
+        - llm_split
+        - fast_split
+        - hybrid_split
+    context_aware_splitting_response:
+      title: context_aware_splitting_response
+      required:
+        - chunks
+      type: object
+      properties:
+        chunks:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          description: An array of text chunks generated by splitting the input text based on the specified strategy.
+    parse_pdf_request:
+      title: parse_pdf_request
+      required:
+        - format
+      type: object
+      properties:
+        format:
+          $ref: '#/components/schemas/pdf_conversion_format'
+    pdf_conversion_format:
+      title: pdf_conversion_format
+      type: string
+      enum:
+        - text
+        - markdown
+      description: The format into which the PDF content should be converted.
+    parse_pdf_response:
+      title: parse_pdf_response
+      required:
+        - content
+      type: object
+      properties:
+        content:
+          type: string
+          description: The extracted content from the PDF file, converted to the specified format.
+    text_to_graph_request:
+      title: text_to_graph_request
+      required:
+        - text
+      type: object
+      properties:
+        text:
+          type: string
+          description: The text to convert into a graph structure. Maximum of 35,000 words.
+    text_to_graph_response:
+      title: text_to_graph_response
+      required:
+        - graph
+      type: object
+      properties:
+        graph:
+          type: array
+          description: >-
+            The graph structure generated from the input text, represented by a string array of entities and
+            relationships.
+          items:
+            type: array
+            description: >-
+              A string array of entities and relationships representing the graph structure generated from the
+              input text.
+            items:
+              type: string
+    vision_request:
+      title: Vision Request
+      required:
+        - model
+        - prompt
+        - variables
+      type: object
+      properties:
+        model:
+          type: string
+          description: The model to use for image analysis.
+          enum:
+            - palmyra-vision
+        prompt:
+          type: string
+          description: >-
+            The prompt to use for the image analysis. The prompt must include the name of each image variable,
+            surrounded by double curly braces (`{{}}`). For example, `Describe the difference between the
+            image {{image_1}} and the image {{image_2}}`.
+        variables:
+          type: array
+          items:
+            $ref: '#/components/schemas/vision_request_file_variable'
+    vision_request_file_variable:
+      title: Vision Request File Variable
+      description: >-
+        An array of file variables required for the analysis. The files must be uploaded to the Writer
+        platform before they can be used in a vision request. Learn how to upload files using the [Files
+        API](https://dev.writer.com/api-reference/file-api/upload-files).
+
+
+        Supported file types: JPG, PNG, PDF, TXT. The maximum allowed file size for each file is 7MB.
+      required:
+        - name
+        - file_id
+      type: object
+      properties:
+        name:
+          type: string
+          description: >-
+            The name of the file variable. You must reference this name in the prompt with double curly braces
+            (`{{}}`). For example, `Describe the difference between the image {{image_1}} and the image
+            {{image_2}}`.
+        file_id:
+          type: string
+          description: >-
+            The File ID of the file to analyze. The file must be uploaded to the Writer platform before it can
+            be used in a vision request. Supported file types: JPG, PNG, PDF, TXT (max 7MB each).
+    vision_response:
+      title: Vision Response
+      required:
+        - data
+      type: object
+      properties:
+        data:
+          type: string
+          description: The result of the image analysis.
+    translation_request:
+      title: Translation Request
+      required:
+        - model
+        - source_language_code
+        - target_language_code
+        - text
+        - formality
+        - length_control
+        - mask_profanity
+      type: object
+      properties:
+        model:
+          type: string
+          description: The model to use for translation.
+          enum:
+            - palmyra-translate
+        source_language_code:
+          type: string
+          description: >-
+            The [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) language code of the
+            original text to translate. For example, `en` for English, `zh` for Chinese, `fr` for French, `es`
+            for Spanish. If the language has a variant, the code appends the two-digit [ISO-3166 country
+            code](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes). For example, Mexican Spanish
+            is `es-MX`. See the [list of supported languages and language
+            codes](https://dev.writer.com/api-reference/translation-api/language-support).
+        target_language_code:
+          type: string
+          description: >-
+            The [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) language code of the
+            target language for the translation. For example, `en` for English, `zh` for Chinese, `fr` for
+            French, `es` for Spanish. If the language has a variant, the code appends the two-digit [ISO-3166
+            country code](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes). For example, Mexican
+            Spanish is `es-MX`. See the [list of supported languages and language
+            codes](https://dev.writer.com/api-reference/translation-api/language-support).
+        text:
+          type: string
+          description: The text to translate. Maximum of 100,000 words.
+        formality:
+          type: boolean
+          description: >-
+            Whether to use formal or informal language in the translation. See the [list of languages that
+            support
+            formality](https://dev.writer.com/api-reference/translation-api/language-support#formality). If
+            the language does not support formality, this parameter is ignored.
+        length_control:
+          type: boolean
+          description: >-
+            Whether to control the length of the translated text. See the [list of languages that support
+            length
+            control](https://dev.writer.com/api-reference/translation-api/language-support#length-control). If
+            the language does not support length control, this parameter is ignored.
+        mask_profanity:
+          type: boolean
+          description: >-
+            Whether to mask profane words in the translated text. See the [list of languages that do not
+            support profanity
+            masking](https://dev.writer.com/api-reference/translation-api/language-support#profanity-masking).
+            If the language does not support profanity masking, this parameter is ignored.
+    translation_response:
+      title: Translation Response
+      required:
+        - data
+      type: object
+      properties:
+        data:
+          type: string
+          description: The result of the translation.
+    translation_tool:
+      title: Translation tool
+      description: >-
+        A tool that uses Palmyra Translate to translate text. Note that this tool does not stream results. The
+        response is returned after the translation is complete.
+      required:
+        - function
+        - type
+      type: object
+      properties:
+        type:
+          type: string
+          description: The type of tool.
+          enum:
+            - translation
+        function:
+          $ref: '#/components/schemas/translation_function'
+    translation_function:
+      title: Translation function
+      description: A tool that uses Palmyra Translate to translate text.
+      required:
+        - model
+        - formality
+        - length_control
+        - mask_profanity
+      type: object
+      properties:
+        model:
+          type: string
+          description: The model to use for translation.
+          enum:
+            - palmyra-translate
+        source_language_code:
+          type: string
+          description: >-
+            Optional. The [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) language
+            code of the original text to translate. For example, `en` for English, `zh` for Chinese, `fr` for
+            French, `es` for Spanish. If the language has a variant, the code appends the two-digit [ISO-3166
+            country code](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes). If you do not provide
+            a language code, the LLM detects the language of the text.
+        target_language_code:
+          type: string
+          description: >-
+            Optional. The [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) language
+            code of the target language for the translation. For example, `en` for English, `zh` for Chinese,
+            `fr` for French, `es` for Spanish. If the language has a variant, the code appends the two-digit
+            [ISO-3166 country code](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes). If you do
+            not provide a language code, the LLM uses the content of the chat message to determine the target
+            language.
+        formality:
+          type: boolean
+          description: >-
+            Whether to use formal or informal language in the translation. See the [list of languages that
+            support
+            formality](https://dev.writer.com/api-reference/translation-api/language-support#formality). If
+            the language does not support formality, this parameter is ignored.
+        length_control:
+          type: boolean
+          description: >-
+            Whether to control the length of the translated text. See the [list of languages that support
+            length
+            control](https://dev.writer.com/api-reference/translation-api/language-support#length-control). If
+            the language does not support length control, this parameter is ignored.
+        mask_profanity:
+          type: boolean
+          description: >-
+            Whether to mask profane words in the translated text. See the [list of languages that do not
+            support profanity
+            masking](https://dev.writer.com/api-reference/translation-api/language-support#profanity-masking).
+            If the language does not support profanity masking, this parameter is ignored.
+    web_search_request:
+      type: object
+      properties:
+        query:
+          type: string
+          description: The search query.
+        topic:
+          type: string
+          enum:
+            - general
+            - news
+          default: general
+          description: >-
+            The search topic category. Use `news` for current events and news articles, or `general` for
+            broader web search.
+        search_depth:
+          type: string
+          enum:
+            - basic
+            - advanced
+          default: basic
+          description: |-
+            Controls search comprehensiveness:
+
+            - `basic`: Returns fewer but highly relevant results
+            - `advanced`: Performs a deeper search with more results
+        chunks_per_source:
+          type: integer
+          format: int32
+          description: >-
+            Only applies when `search_depth` is `advanced`. Specifies how many text segments to extract from
+            each source. Limited to 3 chunks maximum.
+        max_results:
+          type: integer
+          format: int32
+          description: Limits the number of search results returned. Cannot exceed 20 sources.
+        time_range:
+          type: string
+          enum:
+            - day
+            - week
+            - month
+            - year
+            - d
+            - w
+            - m
+            - 'y'
+          description: >-
+            Filters results to content published within the specified time range back from the current date.
+            For example, `week` or `w` returns results from the past 7 days.
+        days:
+          type: integer
+          format: int32
+          description: For news topic searches, specifies how many days of news coverage to include.
+        include_raw_content:
+          oneOf:
+            - type: string
+              enum:
+                - text
+                - markdown
+            - type: boolean
+          default: false
+          description: |-
+            Controls how raw content is included in search results:
+
+            - `text`: Returns plain text without formatting markup
+            - `markdown`: Returns structured content with markdown formatting (headers, links, bold text)
+            - `true`: Same as `markdown`
+            - `false`: Raw content is not included (default if unset)
+        include_answer:
+          type: boolean
+          default: true
+          description: >-
+            Whether to include a generated answer to the query in the response. If `false`, only search
+            results are returned.
+        include_domains:
+          type: array
+          items:
+            type: string
+          description: Domains to include in the search. If unset, the search includes all domains.
+        exclude_domains:
+          type: array
+          items:
+            type: string
+          description: Domains to exclude from the search. If unset, the search includes all domains.
+        country:
+          type: string
+          enum:
+            - afghanistan
+            - albania
+            - algeria
+            - andorra
+            - angola
+            - argentina
+            - armenia
+            - australia
+            - austria
+            - azerbaijan
+            - bahamas
+            - bahrain
+            - bangladesh
+            - barbados
+            - belarus
+            - belgium
+            - belize
+            - benin
+            - bhutan
+            - bolivia
+            - bosnia and herzegovina
+            - botswana
+            - brazil
+            - brunei
+            - bulgaria
+            - burkina faso
+            - burundi
+            - cambodia
+            - cameroon
+            - canada
+            - cape verde
+            - central african republic
+            - chad
+            - chile
+            - china
+            - colombia
+            - comoros
+            - congo
+            - costa rica
+            - croatia
+            - cuba
+            - cyprus
+            - czech republic
+            - denmark
+            - djibouti
+            - dominican republic
+            - ecuador
+            - egypt
+            - el salvador
+            - equatorial guinea
+            - eritrea
+            - estonia
+            - ethiopia
+            - fiji
+            - finland
+            - france
+            - gabon
+            - gambia
+            - georgia
+            - germany
+            - ghana
+            - greece
+            - guatemala
+            - guinea
+            - haiti
+            - honduras
+            - hungary
+            - iceland
+            - india
+            - indonesia
+            - iran
+            - iraq
+            - ireland
+            - israel
+            - italy
+            - jamaica
+            - japan
+            - jordan
+            - kazakhstan
+            - kenya
+            - kuwait
+            - kyrgyzstan
+            - latvia
+            - lebanon
+            - lesotho
+            - liberia
+            - libya
+            - liechtenstein
+            - lithuania
+            - luxembourg
+            - madagascar
+            - malawi
+            - malaysia
+            - maldives
+            - mali
+            - malta
+            - mauritania
+            - mauritius
+            - mexico
+            - moldova
+            - monaco
+            - mongolia
+            - montenegro
+            - morocco
+            - mozambique
+            - myanmar
+            - namibia
+            - nepal
+            - netherlands
+            - new zealand
+            - nicaragua
+            - niger
+            - nigeria
+            - north korea
+            - north macedonia
+            - norway
+            - oman
+            - pakistan
+            - panama
+            - papua new guinea
+            - paraguay
+            - peru
+            - philippines
+            - poland
+            - portugal
+            - qatar
+            - romania
+            - russia
+            - rwanda
+            - saudi arabia
+            - senegal
+            - serbia
+            - singapore
+            - slovakia
+            - slovenia
+            - somalia
+            - south africa
+            - south korea
+            - south sudan
+            - spain
+            - sri lanka
+            - sudan
+            - sweden
+            - switzerland
+            - syria
+            - taiwan
+            - tajikistan
+            - tanzania
+            - thailand
+            - togo
+            - trinidad and tobago
+            - tunisia
+            - turkey
+            - turkmenistan
+            - uganda
+            - ukraine
+            - united arab emirates
+            - united kingdom
+            - united states
+            - uruguay
+            - uzbekistan
+            - venezuela
+            - vietnam
+            - yemen
+            - zambia
+            - zimbabwe
+          description: Localizes search results to a specific country. Only applies to general topic searches.
+        stream:
+          type: boolean
+          default: false
+          description: Enables streaming of search results as they become available.
+    web_search_response:
+      title: web_search_response
+      required:
+        - query
+        - sources
+      type: object
+      properties:
+        query:
+          type: string
+          description: The search query that was submitted.
+        answer:
+          type: string
+          description: Generated answer based on the search results. Not included if `include_answer` is `false`.
+        sources:
+          type: array
+          description: The search results found.
+          items:
+            type: object
+            properties:
+              url:
+                type: string
+                description: URL of the search result.
+              raw_content:
+                type: string
+                description: Raw content from the source URL. Not included if `include_raw_content` is `false`.
+    web_search_tool:
+      title: Web search tool
+      required:
+        - function
+        - type
+      type: object
+      properties:
+        type:
+          type: string
+          description: The type of tool.
+          enum:
+            - web_search
+        function:
+          $ref: '#/components/schemas/web_search_function'
+    web_search_function:
+      title: web_search_function
+      description: A tool that uses web search to find information.
+      required:
+        - exclude_domains
+        - include_domains
+      type: object
+      properties:
+        exclude_domains:
+          type: array
+          description: An array of domains to exclude from the search results.
+          items:
+            type: string
+        include_domains:
+          type: array
+          description: An array of domains to include in the search results.
+          items:
+            type: string
+    composite_content:
+      title: composite_content
+      description: >-
+        A union type that can contain either text or image content fragments. This enables chat messages to
+        include mixed content types, allowing users to send both text and images in a single message. Note:
+        Image fragments are only supported with the Palmyra X5 model.
+      oneOf:
+        - $ref: '#/components/schemas/text_fragment'
+        - $ref: '#/components/schemas/image_fragment'
+    text_fragment:
+      title: Text
+      description: Represents a text content fragment within a chat message.
+      required:
+        - type
+        - text
+      type: object
+      properties:
+        type:
+          type: string
+          description: The type of content fragment. Must be `text` for text fragments.
+          enum:
+            - text
+        text:
+          type: string
+          description: The actual text content of the message fragment.
+    image_fragment:
+      title: Image
+      description: >-
+        Represents an image content fragment within a chat message. Note: This content type is only supported
+        with the Palmyra X5 model.
+      required:
+        - type
+        - image_url
+      type: object
+      properties:
+        type:
+          type: string
+          description: The type of content fragment. Must be `image_url` for image fragments.
+          enum:
+            - image_url
+        image_url:
+          type: object
+          description: The image URL object containing the location of the image.
+          required:
+            - url
+          properties:
+            url:
+              type: string
+              description: The URL pointing to the image file. Supports common image formats like JPEG, PNG, GIF, etc.
+    references:
+      title: references
+      description: >-
+        Detailed source information organized by reference type, providing comprehensive metadata about the
+        sources used to generate the response.
+      type: object
+      properties:
+        files:
+          type: array
+          description: Array of file-based references from uploaded documents in the Knowledge Graph.
+          items:
+            $ref: '#/components/schemas/file'
+          minItems: 1
+        web:
+          type: array
+          description: Array of web-based references from online sources accessed during the query.
+          items:
+            $ref: '#/components/schemas/web'
+          minItems: 1
+    file:
+      title: file
+      description: A file-based reference containing text snippets from uploaded documents in the Knowledge Graph.
+      required:
+        - text
+        - fileId
+        - score
+      type: object
+      properties:
+        text:
+          type: string
+          description: The exact text snippet from the source document that was used to support the response.
+        fileId:
+          type: string
+          description: The unique identifier of the file in your Writer account.
+        score:
+          type: number
+          description: Internal score used during the retrieval process for ranking and selecting relevant snippets.
+        page:
+          type: integer
+          format: int32
+          description: Page number where this snippet was found in the source document.
+        cite:
+          type: string
+          description: Unique citation ID that appears in inline citations within the response text (null if not cited).
+    web:
+      title: web
+      description: A web-based reference containing text snippets from online sources accessed during the query.
+      required:
+        - text
+        - url
+        - title
+        - score
+      type: object
+      properties:
+        text:
+          type: string
+          description: The exact text snippet from the web source that was used to support the response.
+        url:
+          type: string
+          description: The URL of the web page where this content was found.
+          format: uri
+        title:
+          type: string
+          description: The title of the web page where this content was found.
+        score:
+          type: number
+          description: Internal score used during the retrieval process for ranking and selecting relevant snippets.

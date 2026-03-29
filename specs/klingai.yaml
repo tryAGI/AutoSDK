@@ -1,0 +1,1433 @@
+openapi: 3.0.1
+info:
+  title: Kling AI API
+  description: API for AI-powered video and image generation, including text-to-video, image-to-video, video extension, lip sync, video effects, virtual try-on, and image generation.
+  version: "1.0"
+servers:
+  - url: https://api.klingai.com
+security:
+  - BearerAuth: []
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+  schemas:
+    CameraControlConfig:
+      type: object
+      properties:
+        horizontal:
+          type: integer
+          description: Horizontal movement. Range [-10, 10].
+        vertical:
+          type: integer
+          description: Vertical movement. Range [-10, 10].
+        pan:
+          type: integer
+          description: Pan movement. Range [-10, 10].
+        tilt:
+          type: integer
+          description: Tilt movement. Range [-10, 10].
+        roll:
+          type: integer
+          description: Roll movement. Range [-10, 10].
+        zoom:
+          type: integer
+          description: Zoom movement. Range [-10, 10].
+    CameraControl:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Camera control type.
+          enum:
+            - simple
+            - down_back
+            - forward_up
+            - right_turn_forward
+            - left_turn_forward
+        config:
+          $ref: '#/components/schemas/CameraControlConfig'
+    DynamicMask:
+      type: object
+      properties:
+        mask:
+          type: string
+          description: Mask image as Base64 string or URL.
+        trajectories:
+          type: array
+          description: Array of [x, y] coordinate pairs defining motion trajectory. 2-77 points.
+          items:
+            type: array
+            items:
+              type: number
+            minItems: 2
+            maxItems: 2
+    VoiceItem:
+      type: object
+      properties:
+        voice_id:
+          type: string
+          description: Voice ID for audio generation.
+        text:
+          type: string
+          description: Text to generate speech from.
+    ExpansionRatio:
+      type: object
+      required:
+        - top
+        - bottom
+        - left
+        - right
+      properties:
+        top:
+          type: number
+          description: Expansion ratio for top direction.
+        bottom:
+          type: number
+          description: Expansion ratio for bottom direction.
+        left:
+          type: number
+          description: Expansion ratio for left direction.
+        right:
+          type: number
+          description: Expansion ratio for right direction.
+    LipSyncInput:
+      type: object
+      required:
+        - video_url
+      properties:
+        video_url:
+          type: string
+          description: URL of the video for lip-sync.
+        audio_url:
+          type: string
+          description: URL of the audio file. Required if tts_text is not provided.
+        tts_text:
+          type: string
+          description: Text to generate speech for lip-sync. Required if audio_url is not provided.
+        tts_voice:
+          type: string
+          description: Voice ID for TTS generation.
+        tts_speed:
+          type: number
+          description: Speed of TTS generation.
+    EffectsInput:
+      type: object
+      required:
+        - image_urls
+        - effect_scene
+      properties:
+        image_urls:
+          type: array
+          description: Array of image URLs for the effect.
+          items:
+            type: string
+        effect_scene:
+          type: string
+          description: Effect scene type to apply.
+          enum:
+            - christmas
+            - spring_festival
+            - valentines_day
+            - new_year
+            - halloween
+            - thanksgiving
+            - old_photo_restoration
+            - dual_character
+    VideoResult:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Video ID.
+        url:
+          type: string
+          description: URL of the generated video.
+        duration:
+          type: string
+          description: Duration of the video in seconds.
+    ImageResult:
+      type: object
+      properties:
+        index:
+          type: integer
+          description: Image index.
+        url:
+          type: string
+          description: URL of the generated image.
+    TaskInfo:
+      type: object
+      properties:
+        external_task_id:
+          type: string
+          description: External task ID provided by the caller.
+    TaskResult:
+      type: object
+      properties:
+        videos:
+          type: array
+          items:
+            $ref: '#/components/schemas/VideoResult'
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImageResult'
+    TaskData:
+      type: object
+      properties:
+        task_id:
+          type: string
+          description: Unique task ID.
+        task_status:
+          type: string
+          description: Status of the task.
+          enum:
+            - submitted
+            - processing
+            - succeed
+            - failed
+        task_status_msg:
+          type: string
+          description: Human-readable task status message.
+        task_info:
+          $ref: '#/components/schemas/TaskInfo'
+        created_at:
+          type: integer
+          format: int64
+          description: Task creation timestamp (Unix milliseconds).
+        updated_at:
+          type: integer
+          format: int64
+          description: Task last update timestamp (Unix milliseconds).
+        task_result:
+          $ref: '#/components/schemas/TaskResult'
+    TaskResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: Response code. 0 indicates success.
+        message:
+          type: string
+          description: Response message.
+        request_id:
+          type: string
+          description: Unique request ID.
+        data:
+          $ref: '#/components/schemas/TaskData'
+    TaskListData:
+      type: object
+      properties:
+        task_id:
+          type: string
+          description: Unique task ID.
+        task_status:
+          type: string
+          description: Status of the task.
+          enum:
+            - submitted
+            - processing
+            - succeed
+            - failed
+        task_status_msg:
+          type: string
+          description: Human-readable task status message.
+        task_info:
+          $ref: '#/components/schemas/TaskInfo'
+        created_at:
+          type: integer
+          format: int64
+          description: Task creation timestamp.
+        updated_at:
+          type: integer
+          format: int64
+          description: Task last update timestamp.
+        task_result:
+          $ref: '#/components/schemas/TaskResult'
+    TaskListResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: Response code. 0 indicates success.
+        message:
+          type: string
+          description: Response message.
+        request_id:
+          type: string
+          description: Unique request ID.
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaskListData'
+    CreateTaskData:
+      type: object
+      properties:
+        task_id:
+          type: string
+          description: Unique task ID.
+        task_status:
+          type: string
+          description: Status of the task.
+        task_info:
+          $ref: '#/components/schemas/TaskInfo'
+        created_at:
+          type: integer
+          format: int64
+          description: Task creation timestamp (Unix milliseconds).
+        updated_at:
+          type: integer
+          format: int64
+          description: Task last update timestamp (Unix milliseconds).
+    CreateTaskResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: Response code. 0 indicates success.
+        message:
+          type: string
+          description: Response message.
+        request_id:
+          type: string
+          description: Unique request ID.
+        data:
+          $ref: '#/components/schemas/CreateTaskData'
+    ResourcePackage:
+      type: object
+      properties:
+        resource_pack_name:
+          type: string
+          description: Name of the resource package.
+        resource_pack_id:
+          type: string
+          description: Unique resource package ID.
+        resource_pack_type:
+          type: string
+          description: Type of the resource package.
+        total_quantity:
+          type: number
+          description: Total quantity of credits in the package.
+        remaining_quantity:
+          type: number
+          description: Remaining quantity of credits.
+        purchase_time:
+          type: integer
+          format: int64
+          description: Purchase timestamp (Unix milliseconds).
+        effective_time:
+          type: integer
+          format: int64
+          description: Effective start timestamp.
+        invalid_time:
+          type: integer
+          format: int64
+          description: Expiration timestamp.
+        status:
+          type: string
+          description: Status of the resource package.
+    AccountCostsData:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        resource_pack_subscribe_infos:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResourcePackage'
+    AccountCostsResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: Response code. 0 indicates success.
+        message:
+          type: string
+          description: Response message.
+        request_id:
+          type: string
+          description: Unique request ID.
+        data:
+          $ref: '#/components/schemas/AccountCostsData'
+    ErrorResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: Error code.
+        message:
+          type: string
+          description: Error message.
+        request_id:
+          type: string
+          description: Unique request ID.
+paths:
+  /v1/videos/text2video:
+    post:
+      operationId: createTextToVideo
+      summary: Create text-to-video task
+      description: Generate a video from a text prompt.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - prompt
+              properties:
+                model_name:
+                  type: string
+                  description: Model to use for generation.
+                  default: kling-v1
+                  enum:
+                    - kling-v1
+                    - kling-v1-5
+                    - kling-v1-6
+                    - kling-v2
+                    - kling-v2-1
+                prompt:
+                  type: string
+                  description: Text prompt for video generation. Max 2500 characters.
+                  maxLength: 2500
+                negative_prompt:
+                  type: string
+                  description: Negative prompt to exclude unwanted content. Max 2500 characters.
+                  maxLength: 2500
+                cfg_scale:
+                  type: number
+                  description: Classifier-free guidance scale. Range [0, 1]. Default 0.5.
+                  default: 0.5
+                mode:
+                  type: string
+                  description: Generation mode.
+                  default: std
+                  enum:
+                    - std
+                    - pro
+                aspect_ratio:
+                  type: string
+                  description: Aspect ratio of the output video.
+                  default: "16:9"
+                  enum:
+                    - "16:9"
+                    - "9:16"
+                    - "1:1"
+                duration:
+                  type: string
+                  description: Duration of the video in seconds.
+                  default: "5"
+                  enum:
+                    - "5"
+                    - "10"
+                sound:
+                  type: string
+                  description: Whether to generate audio for the video.
+                  default: "off"
+                  enum:
+                    - "on"
+                    - "off"
+                camera_control:
+                  $ref: '#/components/schemas/CameraControl'
+                callback_url:
+                  type: string
+                  description: URL to receive webhook callback when task completes.
+                external_task_id:
+                  type: string
+                  description: External task ID for tracking purposes.
+      responses:
+        '200':
+          description: Task created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTaskResponse'
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    get:
+      operationId: listTextToVideoTasks
+      summary: List text-to-video tasks
+      description: Query a paginated list of text-to-video tasks.
+      parameters:
+        - name: pageNum
+          in: query
+          schema:
+            type: integer
+            default: 1
+          description: Page number. Range [1, 1000].
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            default: 30
+          description: Number of tasks per page. Range [1, 500].
+      responses:
+        '200':
+          description: Task list retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskListResponse'
+  /v1/videos/text2video/{id}:
+    get:
+      operationId: getTextToVideoTask
+      summary: Get text-to-video task
+      description: Query the status and result of a specific text-to-video task.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Task ID or external task ID.
+      responses:
+        '200':
+          description: Task retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+  /v1/videos/image2video:
+    post:
+      operationId: createImageToVideo
+      summary: Create image-to-video task
+      description: Generate a video from an image input with optional prompt guidance.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                model_name:
+                  type: string
+                  description: Model to use for generation.
+                  default: kling-v1
+                  enum:
+                    - kling-v1
+                    - kling-v1-5
+                    - kling-v1-6
+                    - kling-v2
+                    - kling-v2-1
+                image:
+                  type: string
+                  description: Input image as Base64 string or URL. Formats supported are jpg, jpeg, png. Max size 10MB.
+                image_tail:
+                  type: string
+                  description: End frame image as Base64 string or URL.
+                prompt:
+                  type: string
+                  description: Text prompt for video generation guidance. Max 2500 characters.
+                  maxLength: 2500
+                negative_prompt:
+                  type: string
+                  description: Negative prompt to exclude unwanted content. Max 2500 characters.
+                  maxLength: 2500
+                cfg_scale:
+                  type: number
+                  description: Classifier-free guidance scale. Range [0, 1]. Default 0.5.
+                  default: 0.5
+                mode:
+                  type: string
+                  description: Generation mode.
+                  default: std
+                  enum:
+                    - std
+                    - pro
+                aspect_ratio:
+                  type: string
+                  description: Aspect ratio of the output video.
+                  default: "16:9"
+                  enum:
+                    - "16:9"
+                    - "9:16"
+                    - "1:1"
+                duration:
+                  type: string
+                  description: Duration of the video in seconds.
+                  default: "5"
+                  enum:
+                    - "5"
+                    - "10"
+                sound:
+                  type: string
+                  description: Whether to generate audio for the video.
+                  default: "off"
+                  enum:
+                    - "on"
+                    - "off"
+                static_mask:
+                  type: string
+                  description: Static mask image as Base64 string or URL.
+                dynamic_masks:
+                  type: array
+                  description: Array of dynamic mask groups. Max 6 groups.
+                  maxItems: 6
+                  items:
+                    $ref: '#/components/schemas/DynamicMask'
+                voice_list:
+                  type: array
+                  description: Array of voice items for audio. Max 2 voices.
+                  maxItems: 2
+                  items:
+                    $ref: '#/components/schemas/VoiceItem'
+                camera_control:
+                  $ref: '#/components/schemas/CameraControl'
+                callback_url:
+                  type: string
+                  description: URL to receive webhook callback when task completes.
+                external_task_id:
+                  type: string
+                  description: External task ID for tracking purposes.
+      responses:
+        '200':
+          description: Task created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTaskResponse'
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    get:
+      operationId: listImageToVideoTasks
+      summary: List image-to-video tasks
+      description: Query a paginated list of image-to-video tasks.
+      parameters:
+        - name: pageNum
+          in: query
+          schema:
+            type: integer
+            default: 1
+          description: Page number. Range [1, 1000].
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            default: 30
+          description: Number of tasks per page. Range [1, 500].
+      responses:
+        '200':
+          description: Task list retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskListResponse'
+  /v1/videos/image2video/{id}:
+    get:
+      operationId: getImageToVideoTask
+      summary: Get image-to-video task
+      description: Query the status and result of a specific image-to-video task.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Task ID or external task ID.
+      responses:
+        '200':
+          description: Task retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+  /v1/videos/video-extend:
+    post:
+      operationId: createVideoExtension
+      summary: Create video extension task
+      description: Extend the duration of an existing video.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - video_id
+              properties:
+                video_id:
+                  type: string
+                  description: ID of the video to extend.
+                prompt:
+                  type: string
+                  description: Optional text prompt to guide the extension. Max 2500 characters.
+                  maxLength: 2500
+                negative_prompt:
+                  type: string
+                  description: Negative prompt to exclude unwanted content. Max 2500 characters.
+                  maxLength: 2500
+                cfg_scale:
+                  type: number
+                  description: Classifier-free guidance scale. Range [0, 1]. Default 0.5.
+                  default: 0.5
+                callback_url:
+                  type: string
+                  description: URL to receive webhook callback when task completes.
+      responses:
+        '200':
+          description: Task created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTaskResponse'
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    get:
+      operationId: listVideoExtensionTasks
+      summary: List video extension tasks
+      description: Query a paginated list of video extension tasks.
+      parameters:
+        - name: pageNum
+          in: query
+          schema:
+            type: integer
+            default: 1
+          description: Page number. Range [1, 1000].
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            default: 30
+          description: Number of tasks per page. Range [1, 500].
+      responses:
+        '200':
+          description: Task list retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskListResponse'
+  /v1/videos/video-extend/{id}:
+    get:
+      operationId: getVideoExtensionTask
+      summary: Get video extension task
+      description: Query the status and result of a specific video extension task.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Task ID or external task ID.
+      responses:
+        '200':
+          description: Task retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+  /v1/videos/lip-sync:
+    post:
+      operationId: createLipSync
+      summary: Create lip-sync task
+      description: Create a lip-sync video by syncing audio to a video. Provide either audio_url or tts_text/tts_voice.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - input
+              properties:
+                input:
+                  $ref: '#/components/schemas/LipSyncInput'
+                model_name:
+                  type: string
+                  description: Model to use for lip-sync.
+                callback_url:
+                  type: string
+                  description: URL to receive webhook callback when task completes.
+      responses:
+        '200':
+          description: Task created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTaskResponse'
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    get:
+      operationId: listLipSyncTasks
+      summary: List lip-sync tasks
+      description: Query a paginated list of lip-sync tasks.
+      parameters:
+        - name: pageNum
+          in: query
+          schema:
+            type: integer
+            default: 1
+          description: Page number. Range [1, 1000].
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            default: 30
+          description: Number of tasks per page. Range [1, 500].
+      responses:
+        '200':
+          description: Task list retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskListResponse'
+  /v1/videos/lip-sync/{id}:
+    get:
+      operationId: getLipSyncTask
+      summary: Get lip-sync task
+      description: Query the status and result of a specific lip-sync task.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Task ID or external task ID.
+      responses:
+        '200':
+          description: Task retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+  /v1/videos/effects:
+    post:
+      operationId: createVideoEffects
+      summary: Create video effects task
+      description: Apply AI special effects to images, such as old photo restoration, holiday themes, and dual-character effects.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - input
+              properties:
+                input:
+                  $ref: '#/components/schemas/EffectsInput'
+                model_name:
+                  type: string
+                  description: Model to use for effects generation.
+                duration:
+                  type: string
+                  description: Duration of the output video.
+                callback_url:
+                  type: string
+                  description: URL to receive webhook callback when task completes.
+      responses:
+        '200':
+          description: Task created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTaskResponse'
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    get:
+      operationId: listVideoEffectsTasks
+      summary: List video effects tasks
+      description: Query a paginated list of video effects tasks.
+      parameters:
+        - name: pageNum
+          in: query
+          schema:
+            type: integer
+            default: 1
+          description: Page number. Range [1, 1000].
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            default: 30
+          description: Number of tasks per page. Range [1, 500].
+      responses:
+        '200':
+          description: Task list retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskListResponse'
+  /v1/videos/effects/{id}:
+    get:
+      operationId: getVideoEffectsTask
+      summary: Get video effects task
+      description: Query the status and result of a specific video effects task.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Task ID or external task ID.
+      responses:
+        '200':
+          description: Task retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+  /v1/videos/avatar:
+    post:
+      operationId: createAvatar
+      summary: Create avatar lip-sync task
+      description: Generate a talking avatar video from an image and audio/text input.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - image
+              properties:
+                image:
+                  type: string
+                  description: Avatar image as Base64 string or URL.
+                audio_id:
+                  type: string
+                  description: Audio ID for lip-sync. Either audio_id or sound_file is required.
+                sound_file:
+                  type: string
+                  description: Audio file as Base64 string or URL. Formats mp3, wav, m4a, aac. Max 5MB, 2-300 seconds.
+                prompt:
+                  type: string
+                  description: Text prompt for avatar generation. Max 2500 characters.
+                  maxLength: 2500
+                mode:
+                  type: string
+                  description: Generation mode.
+                  default: std
+                  enum:
+                    - std
+                    - pro
+                callback_url:
+                  type: string
+                  description: URL to receive webhook callback when task completes.
+      responses:
+        '200':
+          description: Task created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTaskResponse'
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    get:
+      operationId: listAvatarTasks
+      summary: List avatar tasks
+      description: Query a paginated list of avatar tasks.
+      parameters:
+        - name: pageNum
+          in: query
+          schema:
+            type: integer
+            default: 1
+          description: Page number. Range [1, 1000].
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            default: 30
+          description: Number of tasks per page. Range [1, 500].
+      responses:
+        '200':
+          description: Task list retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskListResponse'
+  /v1/videos/avatar/{id}:
+    get:
+      operationId: getAvatarTask
+      summary: Get avatar task
+      description: Query the status and result of a specific avatar task.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Task ID or external task ID.
+      responses:
+        '200':
+          description: Task retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+  /v1/images/generations:
+    post:
+      operationId: createImageGeneration
+      summary: Create image generation task
+      description: Generate images from a text prompt with optional image reference.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - prompt
+              properties:
+                model_name:
+                  type: string
+                  description: Model to use for generation.
+                  default: kling-v1
+                  enum:
+                    - kling-v1
+                    - kling-v1-5
+                    - kling-v2
+                prompt:
+                  type: string
+                  description: Text prompt for image generation. Max 2500 characters.
+                  maxLength: 2500
+                negative_prompt:
+                  type: string
+                  description: Negative prompt to exclude unwanted content. Max 2500 characters.
+                  maxLength: 2500
+                image:
+                  type: string
+                  description: Reference image as Base64 string or URL.
+                image_reference:
+                  type: string
+                  description: Type of image reference.
+                  enum:
+                    - subject
+                    - face
+                image_fidelity:
+                  type: number
+                  description: Fidelity to the reference image. Range [0, 1]. Default 0.5.
+                  default: 0.5
+                human_fidelity:
+                  type: number
+                  description: Fidelity to human features. Range [0, 1]. Default 0.45.
+                  default: 0.45
+                n:
+                  type: integer
+                  description: Number of images to generate. Range [1, 9].
+                  default: 1
+                aspect_ratio:
+                  type: string
+                  description: Aspect ratio of the output image.
+                  default: "16:9"
+                  enum:
+                    - "16:9"
+                    - "9:16"
+                    - "1:1"
+                    - "4:3"
+                    - "3:4"
+                    - "3:2"
+                    - "2:3"
+                resolution:
+                  type: string
+                  description: Resolution of the output image.
+                  default: 1k
+                  enum:
+                    - 1k
+                    - 2k
+                callback_url:
+                  type: string
+                  description: URL to receive webhook callback when task completes.
+                external_task_id:
+                  type: string
+                  description: External task ID for tracking purposes.
+      responses:
+        '200':
+          description: Task created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTaskResponse'
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    get:
+      operationId: listImageGenerationTasks
+      summary: List image generation tasks
+      description: Query a paginated list of image generation tasks.
+      parameters:
+        - name: pageNum
+          in: query
+          schema:
+            type: integer
+            default: 1
+          description: Page number. Range [1, 1000].
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            default: 30
+          description: Number of tasks per page. Range [1, 500].
+      responses:
+        '200':
+          description: Task list retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskListResponse'
+  /v1/images/generations/{id}:
+    get:
+      operationId: getImageGenerationTask
+      summary: Get image generation task
+      description: Query the status and result of a specific image generation task.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Task ID or external task ID.
+      responses:
+        '200':
+          description: Task retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+  /v1/images/multi-image-generations:
+    post:
+      operationId: createMultiImageGeneration
+      summary: Create multi-image generation task
+      description: Generate images by combining multiple reference images.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - prompt
+                - images
+              properties:
+                model_name:
+                  type: string
+                  description: Model to use for generation.
+                prompt:
+                  type: string
+                  description: Text prompt for generation. Max 2500 characters.
+                  maxLength: 2500
+                images:
+                  type: array
+                  description: Array of reference images as Base64 strings or URLs.
+                  items:
+                    type: string
+                aspect_ratio:
+                  type: string
+                  description: Aspect ratio of the output image.
+                  enum:
+                    - "16:9"
+                    - "9:16"
+                    - "1:1"
+                    - "4:3"
+                    - "3:4"
+                    - "3:2"
+                    - "2:3"
+                n:
+                  type: integer
+                  description: Number of images to generate. Range [1, 9].
+                  default: 1
+                callback_url:
+                  type: string
+                  description: URL to receive webhook callback when task completes.
+      responses:
+        '200':
+          description: Task created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTaskResponse'
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    get:
+      operationId: listMultiImageGenerationTasks
+      summary: List multi-image generation tasks
+      description: Query a paginated list of multi-image generation tasks.
+      parameters:
+        - name: pageNum
+          in: query
+          schema:
+            type: integer
+            default: 1
+          description: Page number. Range [1, 1000].
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            default: 30
+          description: Number of tasks per page. Range [1, 500].
+      responses:
+        '200':
+          description: Task list retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskListResponse'
+  /v1/images/multi-image-generations/{id}:
+    get:
+      operationId: getMultiImageGenerationTask
+      summary: Get multi-image generation task
+      description: Query the status and result of a specific multi-image generation task.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Task ID or external task ID.
+      responses:
+        '200':
+          description: Task retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+  /v1/images/image-expansion:
+    post:
+      operationId: createImageExpansion
+      summary: Create image expansion task
+      description: Expand an image by extending its borders.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - image
+                - expansion_ratio
+              properties:
+                image:
+                  type: string
+                  description: Input image as Base64 string or URL.
+                prompt:
+                  type: string
+                  description: Text prompt to guide the expansion.
+                expansion_ratio:
+                  $ref: '#/components/schemas/ExpansionRatio'
+                aspect_ratio:
+                  type: string
+                  description: Target aspect ratio.
+                  enum:
+                    - "16:9"
+                    - "9:16"
+                    - "1:1"
+                    - "4:3"
+                    - "3:4"
+                    - "3:2"
+                    - "2:3"
+                callback_url:
+                  type: string
+                  description: URL to receive webhook callback when task completes.
+      responses:
+        '200':
+          description: Task created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTaskResponse'
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    get:
+      operationId: listImageExpansionTasks
+      summary: List image expansion tasks
+      description: Query a paginated list of image expansion tasks.
+      parameters:
+        - name: pageNum
+          in: query
+          schema:
+            type: integer
+            default: 1
+          description: Page number. Range [1, 1000].
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            default: 30
+          description: Number of tasks per page. Range [1, 500].
+      responses:
+        '200':
+          description: Task list retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskListResponse'
+  /v1/images/image-expansion/{id}:
+    get:
+      operationId: getImageExpansionTask
+      summary: Get image expansion task
+      description: Query the status and result of a specific image expansion task.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Task ID or external task ID.
+      responses:
+        '200':
+          description: Task retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+  /v1/images/kolors-virtual-try-on:
+    post:
+      operationId: createVirtualTryOn
+      summary: Create virtual try-on task
+      description: Generate a virtual try-on image by placing garments on a person image.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - person_image_url
+                - cloth_image_urls
+              properties:
+                model_name:
+                  type: string
+                  description: Model to use for virtual try-on.
+                  default: kolors-virtual-try-on-v1-5
+                  enum:
+                    - kolors-virtual-try-on-v1
+                    - kolors-virtual-try-on-v1-5
+                person_image_url:
+                  type: string
+                  description: URL of the person image.
+                cloth_image_urls:
+                  type: array
+                  description: Array of garment image URLs. 1-5 items.
+                  minItems: 1
+                  maxItems: 5
+                  items:
+                    type: string
+                callback_url:
+                  type: string
+                  description: URL to receive webhook callback when task completes.
+      responses:
+        '200':
+          description: Task created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTaskResponse'
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    get:
+      operationId: listVirtualTryOnTasks
+      summary: List virtual try-on tasks
+      description: Query a paginated list of virtual try-on tasks.
+      parameters:
+        - name: pageNum
+          in: query
+          schema:
+            type: integer
+            default: 1
+          description: Page number. Range [1, 1000].
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            default: 30
+          description: Number of tasks per page. Range [1, 500].
+      responses:
+        '200':
+          description: Task list retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskListResponse'
+  /v1/images/kolors-virtual-try-on/{id}:
+    get:
+      operationId: getVirtualTryOnTask
+      summary: Get virtual try-on task
+      description: Query the status and result of a specific virtual try-on task.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Task ID or external task ID.
+      responses:
+        '200':
+          description: Task retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+  /account/costs:
+    get:
+      operationId: getAccountCosts
+      summary: Query resource packages
+      description: Query account resource packages and credit consumption.
+      parameters:
+        - name: start_time
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+          description: Start time in Unix milliseconds.
+        - name: end_time
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+          description: End time in Unix milliseconds.
+        - name: resource_pack_name
+          in: query
+          schema:
+            type: string
+          description: Filter by resource package name.
+      responses:
+        '200':
+          description: Account costs retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountCostsResponse'
